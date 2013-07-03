@@ -26,6 +26,7 @@
 + (const struct ClassicConnectionSession { }*)defaultClassicConnectionSession;
 + (id)sessionWithConfiguration:(id)arg1;
 + (id)sharedSession;
++ (void)_sendPendingCallbacksForSessionIdentifier:(id)arg1;
 + (void)_releaseProcessAssertionForSessionIdentifier:(id)arg1;
 
 - (void)dealloc;
@@ -67,12 +68,11 @@
 - (BOOL)can_delegate_downloadTask_didReceiveResponse;
 - (void)delegate_downloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2;
 - (BOOL)can_delegate_downloadTask_didFinishDownloadingToURL;
-- (id)delegateQueue;
 - (void)delegate_downloadTask:(id)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (BOOL)can_delegate_downloadTask_didWriteData;
-- (id)configuration;
 - (id)delegate_downloadTaskNeedsDownloadDirectory:(id)arg1;
 - (BOOL)can_delegate_downloadTaskNeedsDownloadDirectory;
+- (id)configuration;
 - (void)delegate_task:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (BOOL)can_delegate_task_didSendBodyData;
 - (void)delegate_task:(id)arg1 needNewBodyStream:(id)arg2;
@@ -81,6 +81,7 @@
 - (BOOL)can_delegate_dataTask_didReceiveData;
 - (void)delegate_task:(id)arg1 didCompleteWithError:(id)arg2;
 - (BOOL)can_delegate_task_didCompleteWithError;
+- (id)delegateQueue;
 - (void)delegate_dataTask:(id)arg1 willCacheResponse:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)can_delegate_dataTask_willCacheResponse;
 - (void)delegate_task:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;

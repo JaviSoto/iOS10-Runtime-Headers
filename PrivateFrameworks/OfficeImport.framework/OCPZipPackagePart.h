@@ -2,13 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUZipEntry;
+@class OISFUZipEntry;
 
 @interface OCPZipPackagePart : OCPPackagePart  {
-    SFUZipEntry *mEntry;
+    OISFUZipEntry *mEntry;
 }
 
-@property(readonly) SFUZipEntry * zipEntry;
+@property(readonly) OISFUZipEntry * zipEntry;
 
 
 - (id)initWithArchive:(id)arg1 location:(id)arg2 package:(id)arg3;

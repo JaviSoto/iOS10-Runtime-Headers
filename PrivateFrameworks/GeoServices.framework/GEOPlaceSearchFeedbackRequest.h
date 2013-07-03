@@ -77,9 +77,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (double)timestamp;
 - (int)sequenceNumber;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)setSequenceNumber:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

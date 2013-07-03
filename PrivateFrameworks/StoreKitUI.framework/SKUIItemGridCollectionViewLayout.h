@@ -19,9 +19,9 @@
 + (Class)layoutAttributesClass;
 
 - (id)oddRowBackgroundColor;
-- (id)evenRowBackgroundColor;
 - (void)setOddRowBackgroundColor:(id)arg1;
 - (void)setEvenRowBackgroundColor:(id)arg1;
+- (id)evenRowBackgroundColor;
 - (void)setNumberOfColumns:(int)arg1;
 - (int)numberOfColumns;
 - (id)init;

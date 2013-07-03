@@ -74,14 +74,12 @@
 - (void)_handleLocalChange:(struct __CFDictionary { }*)arg1;
 - (void)helperDidReloadAfterChangingDisplayedPeople:(id)arg1;
 - (void)_editAnimationTimerFired:(id)arg1;
-- (void)setEditing:(BOOL)arg1 saveChanges:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)pickerCancel:(id)arg1;
 - (void)startDelayingChangeNotifications;
 - (BOOL)isDelayingChangeNotifications;
 - (void)stopDelayingChangeNotificationsAndDeliverNow:(BOOL)arg1;
 - (void)_removeContextProviderOnMainThread;
 - (id)contextManager;
-- (void)setPersonViewDelegate:(id)arg1;
 - (void)cancelEditing:(BOOL)arg1;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
 - (BOOL)_updateAllDataForExternalChange;
@@ -94,7 +92,6 @@
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (BOOL)allowsSettingAsPreferredCardForName;
-- (void)setEditDelegate:(id)arg1;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
@@ -117,14 +114,10 @@
 - (id)personViewDelegate;
 - (void)setWillTweetLocationCallback:(id)arg1;
 - (BOOL)manuallyLinkPerson:(id)arg1;
-- (void)setObservesExternalChanges:(BOOL)arg1;
 - (BOOL)observesExternalChanges;
 - (void)forceUseLinkedInfos:(id)arg1 currentIndexInLinkedInfos:(int)arg2;
 - (void)setAllowsSettingAsPreferredCardForName:(BOOL)arg1;
-- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
-- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (BOOL)appearsInLinkingPeoplePicker;
-- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (BOOL)shouldShowLinkingUIOnCard;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (BOOL)badgeEmailPropertiesForMailVIP;
@@ -133,7 +126,6 @@
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setShouldAlignPersonHeaderViewToImage:(BOOL)arg1;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
-- (void)setAllowsDeletion:(BOOL)arg1;
 - (id)sharingDelegate;
 - (BOOL)allowsDeletion;
 - (id)editDelegate;
@@ -147,8 +139,15 @@
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
+- (void)setEditing:(BOOL)arg1 saveChanges:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)setObservesExternalChanges:(BOOL)arg1;
+- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
+- (void)setEditDelegate:(id)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
+- (void)setAllowsDeletion:(BOOL)arg1;
+- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
+- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (void)setDisplayedUIPerson:(id)arg1;
 - (id)displayedUIPerson;
 - (id)helper;
@@ -164,7 +163,6 @@
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsSharing;
@@ -175,6 +173,8 @@
 - (void)setCustomHeaderView:(id)arg1;
 - (id)customHeaderView;
 - (void)peoplePickerLinkButtonTapped;
+- (void)setPersonViewDelegate:(id)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (int)abViewControllerType;

@@ -13,7 +13,6 @@
 }
 
 
-- (void)disconnect;
 - (void)pluginElementDidOutputAttributedStrings:(id)arg1 nativeSampleBuffers:(id)arg2 forTime:(double)arg3;
 - (void)pluginElementDidSelectTextTrack:(id)arg1;
 - (void)pluginElementInBandAlternateTextTracksDidChange:(id)arg1;
@@ -22,6 +21,7 @@
 - (void)scheduleDeferredPropertiesWithOptionalDelay:(id)arg1;
 - (void)schedulePrepareToPlayWithOptionalDelay:(id)arg1;
 - (void)cancelPendingRequests;
+- (void)disconnect;
 - (id)initWithClient:(struct MediaPlayerPrivateIOS { int (**x1)(); int (**x2)(); struct MediaPlayer {} *x3; struct RetainPtr<NSObject> { struct NSObject { Class x_1_2_1; } *x_4_1_1; } x4; struct RetainPtr<WebCoreMediaPlayerNotificationHelper> { struct WebCoreMediaPlayerNotificationHelper { Class x_1_2_1; struct MediaPlayerPrivateIOS {} *x_1_2_2; BOOL x_1_2_3; } *x_5_1_1; } x5; struct RetainPtr<NSMutableDictionary> { struct NSMutableDictionary { Class x_1_2_1; } *x_6_1_1; } x6; int x7; int x8; struct InbandTextTrackPrivateAVFIOS {} *x9; struct Vector<WTF::RefPtr<WebCore::InbandTextTrackPrivateAVFIOS>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::InbandTextTrackPrivateAVFIOS> {} *x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; struct RefPtr<WebCore::MediaPlayerPrivateIOS::PlatformTextTrackMenuInterfaceIOS> { struct PlatformTextTrackMenuInterfaceIOS {} *x_11_1_1; } x11; int x12; int x13; unsigned int x14; float x15; int x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; }*)arg1;
 
 @end

@@ -25,8 +25,8 @@
 - (void)resolveGraphicPropertiesOfSeries:(id)arg1 forSeriesIndex:(unsigned int)arg2 isLine:(bool)arg3 colorMap:(id)arg4 colorScheme:(id)arg5;
 - (void)resolvedGraphicProperties:(id)arg1 autoFill:(id)arg2 autoStroke:(id)arg3 autoShadow:(BOOL)arg4 nullFill:(id)arg5 nullStroke:(id)arg6 nullShadow:(BOOL)arg7;
 - (id)autoStroke;
+- (id)autoFill;
 - (id)strokeWithColorIndex:(int)arg1;
 - (id)fillWithColorIndex:(unsigned int)arg1;
-- (id)autoFill;
 
 @end

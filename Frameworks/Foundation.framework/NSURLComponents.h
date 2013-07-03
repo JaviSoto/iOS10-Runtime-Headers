@@ -30,6 +30,7 @@
 - (void)setScheme:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setUser:(id)arg1;
 - (void)setPort:(id)arg1;
 - (id)init;
 - (id)initWithString:(id)arg1;
@@ -51,7 +52,6 @@
 - (void)setPercentEncodedUser:(id)arg1;
 - (void)setFragment:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setUser:(id)arg1;
 - (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
 - (id)URLRelativeToURL:(id)arg1;
 - (id)percentEncodedFragment;

@@ -96,8 +96,6 @@
 - (void)setBulletProperties:(id)arg1;
 - (void)setIndent:(double)arg1;
 - (BOOL)hasLineSpacing;
-- (void)setRightMargin:(double)arg1;
-- (void)setLeftMargin:(double)arg1;
 - (double)rightMargin;
 - (double)leftMargin;
 - (void)setWrap:(int)arg1;
@@ -107,6 +105,8 @@
 - (void)setLineSpacing:(id)arg1;
 - (id)lineSpacing;
 - (id)tabStops;
+- (void)setRightMargin:(double)arg1;
+- (void)setLeftMargin:(double)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

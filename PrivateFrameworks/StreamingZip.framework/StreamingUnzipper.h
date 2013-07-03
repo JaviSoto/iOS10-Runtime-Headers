@@ -25,6 +25,7 @@
 - (void)setupUnzipperWithOutputPath:(id)arg1 sandboxExtensionToken:(char *)arg2 md5Hashes:(id)arg3 hashedChunkSize:(unsigned long long)arg4 withReply:(id)arg5;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;
+- (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 

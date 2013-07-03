@@ -134,7 +134,6 @@
 - (BOOL)loadPVRTCData:(id)arg1 error:(id*)arg2;
 - (BOOL)loadWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (void)updateRequestedOperationsFromOptions:(id)arg1;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)imageData;
 - (void)setHeight:(unsigned int)arg1;
@@ -145,6 +144,7 @@
 - (id)label;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)format;
+- (void)setIndex:(unsigned int)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)setLabel:(id)arg1;

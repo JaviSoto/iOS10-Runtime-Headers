@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITextLayoutCache, NSArray, SKUIProductPageTableExpandableHeaderView, NSMutableIndexSet, SKUIColorScheme, SKUIClientContext;
+@class SKUIProductPageTableExpandableHeaderView, NSDateFormatter, SKUIClientContext, SKUIColorScheme, NSMutableIndexSet, SKUILayoutCache, NSArray;
 
 @interface SKUIProductPageTableUpdateHistorySection : SKUIProductPageTableSection  {
     SKUIClientContext *_clientContext;
@@ -10,13 +10,14 @@
     int _firstStringIndex;
     SKUIProductPageTableExpandableHeaderView *_headerView;
     NSArray *_releaseNotes;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
     SKUIColorScheme *_colorScheme;
+    NSDateFormatter *_dateFormatter;
 }
 
 @property int firstStringIndex;
 @property(copy) NSArray * releaseNotes;
-@property(retain) SKUITextLayoutCache * textLayoutCache;
+@property(retain) SKUILayoutCache * textLayoutCache;
 @property(retain) SKUIColorScheme * colorScheme;
 
 

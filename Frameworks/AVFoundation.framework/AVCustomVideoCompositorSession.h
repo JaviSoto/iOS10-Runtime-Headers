@@ -17,6 +17,7 @@
     NSError *_clientError;
     NSObject<OS_dispatch_queue> *_renderContextQ;
     AVVideoCompositionRenderContext *_renderContext;
+    NSObject<OS_dispatch_queue> *_finishedRequestQ;
 }
 
 + (id)sessionWithVideoComposition:(id)arg1 recyclingSession:(id)arg2;

@@ -2,18 +2,21 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSDictionary;
 
 @interface RadioAddStationRequest : RadioSyncRequest  {
+    NSDictionary *_matchDictionary;
     long long _persistentID;
     NSMutableDictionary *_stationDictionary;
 }
 
 
 - (id)initWithStationDictionary:(id)arg1;
+- (id)matchDictionary;
 - (id)changeList;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithStation:(id)arg1;
+- (id)initWithLibraryTrackDictionary:(id)arg1 useArtist:(BOOL)arg2;
 - (void)startWithAddStationCompletionHandler:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

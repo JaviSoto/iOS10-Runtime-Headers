@@ -35,11 +35,11 @@
 - (void)setItemImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setItemImageHidden:(BOOL)arg1;
 - (BOOL)isItemImageHidden;
-- (void)setColoringWithColorScheme:(id)arg1;
 - (id)itemImage;
 - (void)setCountdown:(id)arg1;
 - (void)setItemImage:(id)arg1;
 - (id)countdown;
+- (void)setColoringWithColorScheme:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setTitle:(id)arg1;

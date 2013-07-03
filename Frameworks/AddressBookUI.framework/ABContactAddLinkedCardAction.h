@@ -4,7 +4,7 @@
 
 @class CNContact, ABPeoplePickerNavigationController;
 
-@interface ABContactAddLinkedCardAction : ABContactAction <ABPeoplePickerNavigationControllerDelegate> {
+@interface ABContactAddLinkedCardAction : ABContactAction <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate> {
     CNContact *_chosenContact;
     ABPeoplePickerNavigationController *_peoplePicker;
     CNContact *_selectedContact;
@@ -17,6 +17,7 @@
 
 - (id)chosenContact;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerLinkButtonTapped;
 - (void)setSelectedContact:(id)arg1;
 - (id)selectedContact;

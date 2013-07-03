@@ -15,6 +15,7 @@
 @property float paddingSizeMultiplier;
 @property(retain) NSArray * dimensionConstraints;
 
++ (float)maximumDimensionBasedOnDeviceAdjustForTallness:(BOOL)arg1;
 + (void)initialize;
 
 - (id)dimensionConstraints;
@@ -30,6 +31,7 @@
 - (void)updateConstraints;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)didMoveToWindow;
 

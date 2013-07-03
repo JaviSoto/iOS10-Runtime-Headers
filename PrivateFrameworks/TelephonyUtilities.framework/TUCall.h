@@ -34,10 +34,10 @@
 @property BOOL unhold;
 
 
-- (void)disconnect;
 - (id)displayName;
 - (int)service;
 - (id)isoCountryCode;
+- (void)disconnect;
 - (void)setUnhold:(BOOL)arg1;
 - (void)setHold:(BOOL)arg1;
 - (id)callDurationString;
@@ -77,7 +77,6 @@
 - (BOOL)unhold;
 - (BOOL)hold;
 - (void)answer;
-- (double)startTime;
 - (BOOL)isOutgoing;
 - (BOOL)isConferenced;
 - (int)status;
@@ -93,6 +92,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)resume;
+- (double)startTime;
 - (id)smallImage;
 - (id)desktopImage;
 - (id)image;

@@ -12,8 +12,8 @@
     UITextLabel *_loadingLabel;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)removeLoadingUI;
 - (void)addLoadingUI;

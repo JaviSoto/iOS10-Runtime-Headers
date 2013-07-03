@@ -20,6 +20,7 @@
 }
 
 
+- (void)setKind:(id)arg1;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setPausingHandler:(id)arg1;
@@ -37,7 +38,6 @@
 - (id)_publishingAppBundleIdentifier;
 - (BOOL)isOld;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
-- (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)prioritize;
 - (void)pause;

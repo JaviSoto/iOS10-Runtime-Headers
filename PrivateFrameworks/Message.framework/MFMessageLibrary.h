@@ -9,10 +9,13 @@
 }
 
 
+- (void)setStoredIntegerPropertyWithName:(id)arg1 value:(id)arg2;
+- (id)storedIntegerPropertyWithName:(id)arg1;
 - (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
 - (void)setFlagsForMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4;
 - (id)remoteStoreForMessage:(id)arg1;
+- (void)updateFlagsForMessagesInPlace:(id)arg1 success:(BOOL*)arg2;
 - (void)deleteOfflineCacheDataForAccount:(int)arg1;
 - (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id)arg2;
 - (void)appendOfflineCacheReplayData:(id)arg1 forAccountID:(int)arg2;
@@ -51,6 +54,7 @@
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)oldestMessageInMailbox:(id)arg1;
 - (unsigned int)deletedCountForMailbox:(id)arg1;
+- (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
 - (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;

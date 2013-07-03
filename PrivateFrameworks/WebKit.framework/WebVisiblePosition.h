@@ -11,13 +11,13 @@
 + (id)_wrapVisiblePositionIfValid:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 + (id)_wrapVisiblePosition:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 
-- (BOOL)isEditable;
 - (id)enclosingRangeWithDictationPhraseAlternatives:(id*)arg1;
 - (BOOL)atAlphaNumericBoundaryInDirection:(int)arg1;
 - (BOOL)requiresContextForWordBoundary;
 - (BOOL)directionIsDownstream:(int)arg1;
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2 withAffinityDownstream:(BOOL)arg3;
 - (int)textDirection;
+- (BOOL)isEditable;
 - (struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })_visiblePosition;
 - (int)compare:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

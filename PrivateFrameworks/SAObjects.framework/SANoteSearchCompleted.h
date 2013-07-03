@@ -18,8 +18,8 @@
 - (id)encodedClassName;
 - (void)setNotes:(id)arg1;
 - (id)notes;
-- (id)results;
 - (void)setResults:(id)arg1;
+- (id)results;
 - (id)groupIdentifier;
 
 @end

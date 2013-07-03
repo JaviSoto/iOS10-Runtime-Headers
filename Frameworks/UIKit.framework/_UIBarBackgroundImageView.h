@@ -15,10 +15,10 @@
 
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)topStripView;
 - (void)removeTopStripView;
 - (void)updateTopStripViewCreateIfNecessary;
 - (void)setTranslucent:(BOOL)arg1;
+- (id)topStripView;
 - (BOOL)isTranslucent;
 
 @end

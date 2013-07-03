@@ -39,8 +39,8 @@
 - (id)initChat:(id)arg1 withSession:(id)arg2;
 - (id)playerIDs;
 - (float)volume;
-- (void)setVolume:(float)arg1;
 - (BOOL)isActive;
+- (void)setVolume:(float)arg1;
 - (id)name;
 - (void)dealloc;
 - (void)setActive:(BOOL)arg1;

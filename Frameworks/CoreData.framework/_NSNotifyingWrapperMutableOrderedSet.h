@@ -12,17 +12,16 @@
 
 
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (id)reversedOrderedSet;
-- (id)reverseObjectEnumerator;
 - (BOOL)isSubsetOfOrderedSet:(id)arg1;
 - (BOOL)intersectsOrderedSet:(id)arg1;
 - (void)unionOrderedSet:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3;
-- (id)firstObject;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
+- (id)reverseObjectEnumerator;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (void)intersectOrderedSet:(id)arg1;
 - (id)set;
@@ -65,6 +64,7 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)firstObject;
 - (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id)arg4;
 - (void)sortUsingComparator:(id)arg1;
 - (id)sortedArrayUsingComparator:(id)arg1;

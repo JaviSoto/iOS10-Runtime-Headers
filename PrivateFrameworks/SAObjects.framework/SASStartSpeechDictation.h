@@ -11,7 +11,6 @@
 @property(copy) NSString * applicationName;
 @property(copy) NSString * applicationVersion;
 @property BOOL censorSpeech;
-@property BOOL enableAutoEndpointing;
 @property(copy) NSString * fieldId;
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionId;
@@ -35,8 +34,6 @@
 - (void)setInteractionId:(id)arg1;
 - (id)interactionId;
 - (id)fieldId;
-- (void)setEnableAutoEndpointing:(BOOL)arg1;
-- (BOOL)enableAutoEndpointing;
 - (void)setCensorSpeech:(BOOL)arg1;
 - (BOOL)censorSpeech;
 - (void)setActivationToken:(id)arg1;
@@ -44,6 +41,7 @@
 - (id)encodedClassName;
 - (id)region;
 - (void)setRegion:(id)arg1;
+- (id)language;
 - (id)keyboardType;
 - (id)selectedText;
 - (void)setLanguage:(id)arg1;
@@ -53,7 +51,6 @@
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
-- (id)language;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setApplicationName:(id)arg1;
 - (void)setKeyboardType:(id)arg1;

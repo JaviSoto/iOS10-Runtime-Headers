@@ -27,10 +27,10 @@
 
 - (void)setChevron:(id)arg1;
 - (id)sourceTextAttributes;
+- (id)innerContentView;
 - (id)chevron;
 - (id)nameLabel;
 - (id)sourceLabel;
-- (id)innerContentView;
 - (void)setSourceTextAttributes:(id)arg1;
 - (id)nameTextAttributes;
 - (id)contentViewConstraints;

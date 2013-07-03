@@ -26,6 +26,7 @@
 @property(readonly) BOOL isPoorLinkQuality;
 @property(readonly) BOOL isRadioHot;
 @property(readonly) struct __CFString { }* currentRAT;
+@property(readonly) BOOL isLTEWithCDRX;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 
 

@@ -11,7 +11,6 @@
 }
 
 @property(readonly) <VKOverlay> * overlay;
-@property float brightness;
 @property VKOverlayContainerModel * containerModel;
 
 
@@ -24,7 +23,5 @@
 - (void)stylesheetDidChange;
 - (void)dealloc;
 - (id)overlay;
-- (float)brightness;
-- (void)setBrightness:(float)arg1;
 
 @end

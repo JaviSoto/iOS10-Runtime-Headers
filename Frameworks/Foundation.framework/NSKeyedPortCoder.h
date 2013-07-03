@@ -38,8 +38,8 @@
 - (void)dealloc;
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (double)decodeDoubleForKey:(id)arg1;
-- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (int)decodeIntegerForKey:(id)arg1;
+- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1;
 - (void)_setByref:(BOOL)arg1;
 - (void)_setBycopy:(BOOL)arg1;

@@ -30,6 +30,7 @@
     NSString *_cachedInboxFolderID;
     NSString *_cachedSentMessagesFolderID;
     NSString *_cachedTrashFolderID;
+    NSString *_cachedJunkFolderID;
     MFDAMailbox *_temporaryInbox;
     BOOL _loadedInitialMailboxList;
     BOOL _receivedInitialMailboxUpdate;
@@ -67,6 +68,7 @@
 - (id)_updateWatchedFolderIdsAndNotify:(BOOL)arg1;
 - (void)pushedFoldersPrefsChanged:(id)arg1;
 - (id)_inboxFolderID;
+- (id)_relativePathSpecialMailboxUidWithType:(int)arg1 create:(BOOL)arg2;
 - (id)_relativePathForType:(int)arg1;
 - (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
 - (id)syncAnchorForFolderID:(id)arg1 mailbox:(id*)arg2;
@@ -132,13 +134,13 @@
 - (id)uniqueIdForPersistentConnection;
 - (void)setDAAccount:(id)arg1;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
-- (BOOL)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)canGoOffline;
+- (id)accountForRenewingCredentials;
 - (BOOL)shouldArchiveByDefault;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5 newMessages:(id)arg6;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
-- (id)delegateeInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
+- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
 - (int)secureCompositionSigningPolicyForAddress:(id)arg1;
 - (BOOL)secureMIMEEnabled;
@@ -147,8 +149,8 @@
 - (id)accountPropertyForKey:(id)arg1;
 - (id)displayName;
 - (BOOL)isEnabledForDataclass:(id)arg1;
-- (BOOL)isActive;
 - (id)username;
+- (BOOL)isActive;
 - (id)hostname;
 - (void)invalidate;
 - (BOOL)sourceIsManaged;

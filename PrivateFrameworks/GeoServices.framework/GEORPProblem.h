@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPProblemContext, NSString, GEORPProblemCorrections;
+@class GEORPProblemContext, GEORPProblemCorrections;
 
 @interface GEORPProblem : PBCodable  {
     struct { 
@@ -10,48 +10,50 @@
         unsigned int count; 
         unsigned int size; 
     } _userPaths;
-    NSString *_iCloudUserAuthToken;
-    NSString *_iCloudUserRecordID;
     GEORPProblemContext *_problemContext;
     GEORPProblemCorrections *_problemCorrections;
     int _problemType;
     unsigned int _protocolVersion;
+    struct { 
+        unsigned int problemType : 1; 
+        unsigned int protocolVersion : 1; 
+    } _has;
 }
 
+@property BOOL hasProtocolVersion;
 @property unsigned int protocolVersion;
-@property(readonly) BOOL hasICloudUserRecordID;
-@property(retain) NSString * iCloudUserRecordID;
-@property(readonly) BOOL hasICloudUserAuthToken;
-@property(retain) NSString * iCloudUserAuthToken;
 @property(readonly) unsigned int userPathsCount;
 @property(readonly) int* userPaths;
+@property BOOL hasProblemType;
 @property int problemType;
+@property(readonly) BOOL hasProblemCorrections;
 @property(retain) GEORPProblemCorrections * problemCorrections;
+@property(readonly) BOOL hasProblemContext;
 @property(retain) GEORPProblemContext * problemContext;
 
 
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setHasProblemType:(BOOL)arg1;
 - (void)setUserPaths:(int*)arg1 count:(unsigned int)arg2;
 - (int*)userPaths;
+- (void)setHasProtocolVersion:(BOOL)arg1;
 - (id)problemContext;
+- (BOOL)hasProblemContext;
 - (id)problemCorrections;
+- (BOOL)hasProblemCorrections;
 - (void)setProblemType:(int)arg1;
 - (int)problemType;
+- (BOOL)hasProblemType;
 - (void)addUserPath:(int)arg1;
 - (int)userPathAtIndex:(unsigned int)arg1;
 - (void)clearUserPaths;
 - (unsigned int)userPathsCount;
-- (id)iCloudUserAuthToken;
-- (BOOL)hasICloudUserAuthToken;
-- (id)iCloudUserRecordID;
-- (BOOL)hasICloudUserRecordID;
 - (void)setProtocolVersion:(unsigned int)arg1;
 - (unsigned int)protocolVersion;
+- (BOOL)hasProtocolVersion;
 - (void)setProblemContext:(id)arg1;
 - (void)setProblemCorrections:(id)arg1;
-- (void)setICloudUserAuthToken:(id)arg1;
-- (void)setICloudUserRecordID:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -30,8 +30,9 @@
 - (void)showWithInitialItem:(id)arg1;
 - (void)showWithInitialURLs:(id)arg1;
 - (id)initWithParentViewController:(id)arg1;
-- (void)productPageCannotOpen:(id)arg1;
-- (void)productPage:(id)arg1 didSelectItem:(id)arg2;
+- (void)iPadProductPageCannotOpen:(id)arg1;
+- (void)iPadProductPage:(id)arg1 openURL:(id)arg2 viewControllerBlock:(id)arg3;
+- (void)iPadProductPage:(id)arg1 openItem:(id)arg2;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)productViewControllerDidFinish:(id)arg1;

@@ -27,6 +27,7 @@
 @property unsigned int operation;
 
 
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
 - (void)set_BOMCopier:(void*)arg1;
 - (void*)_BOMCopier;
 - (void)setInProgress:(BOOL)arg1;
@@ -39,7 +40,6 @@
 - (id)_temporaryCopierPath;
 - (id)inputURL;
 - (void)_fillOutputURLFromInputURL;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

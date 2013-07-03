@@ -5,12 +5,15 @@
 @interface AADeviceLocatorService : NSObject  {
     int _lastKnownState;
     BOOL _hasAttemptedToFetchState;
+    BOOL _wantsToEnable;
 }
 
 + (id)sharedInstance;
 
 - (void)disableInContext:(int)arg1 withWipeToken:(id)arg2;
 - (void)enableInContext:(int)arg1;
+- (BOOL)shouldEnable;
+- (void)setShouldEnable:(BOOL)arg1;
 - (BOOL)isChangingState;
 - (void)_updateStateAndNotify:(BOOL)arg1;
 - (BOOL)isEnabled;

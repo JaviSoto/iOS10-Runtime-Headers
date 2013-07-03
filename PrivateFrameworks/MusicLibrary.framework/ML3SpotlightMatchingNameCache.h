@@ -36,6 +36,7 @@
 }
 
 + (void)loadFromLibrary:(id)arg1 namesMatchingString:(id)arg2 cancelHandler:(id)arg3;
++ (void)initialize;
 
 - (id)_initWithLibrary:(id)arg1 matchString:(id)arg2 cancelHandler:(id)arg3;
 - (void)dealloc;

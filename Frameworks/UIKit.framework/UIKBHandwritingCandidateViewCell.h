@@ -5,9 +5,7 @@
 @class TIKeyboardCandidate, UIKBThemedView, UILabel;
 
 @interface UIKBHandwritingCandidateViewCell : UICollectionViewCell  {
-    UIKBThemedView *_themedView;
     TIKeyboardCandidate *_candidate;
-    UILabel *_label;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
@@ -15,21 +13,24 @@
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
     } _visualStyling;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _edgeInsets;
+    UILabel *_label;
+    UILabel *_secondaryLabel;
+    UIKBThemedView *_themedView;
 }
 
 @property(copy) TIKeyboardCandidate * candidate;
-@property(retain) UILabel * label;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property(retain) UILabel * label;
+@property(retain) UILabel * secondaryLabel;
 @property(retain) UIKBThemedView * themedView;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
-+ (id)font;
++ (id)secondaryLabelFont;
++ (id)labelFont;
++ (float)widthForCandidate:(id)arg1 visualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -38,14 +39,21 @@
 - (id)candidate;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)dealloc;
+- (void)updateThemedView;
+- (void)setSecondaryLabel:(id)arg1;
+- (id)secondaryLabel;
+- (void)updateLabels;
 - (id)themedView;
 - (void)setThemedView:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)reloadData;
+- (void)didMoveToWindow;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
 
 @end

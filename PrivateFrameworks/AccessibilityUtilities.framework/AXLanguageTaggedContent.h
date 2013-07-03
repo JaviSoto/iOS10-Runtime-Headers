@@ -2,9 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSMutableOrderedSet, NSString, NSLinguisticTagger, NSMutableArray;
+@class NSMutableOrderedSet, NSArray, NSString, NSLinguisticTagger, NSMutableArray;
 
 @interface AXLanguageTaggedContent : NSObject  {
+    NSArray *_currentDialects;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _currentChunk;
+    BOOL _predictedByTagger;
     BOOL _tagged;
     NSMutableArray *_tags;
     NSLinguisticTagger *_linguisticTagger;
@@ -18,24 +24,28 @@
 @property(retain) NSMutableOrderedSet * unpredictedAmbiguousLangMaps;
 @property(copy) NSString * userPreferredLangID;
 @property(retain) NSLinguisticTagger * linguisticTagger;
+@property(retain) NSArray * currentDialects;
 
 
 - (id)userPreferredLangID;
 - (id)unpredictedAmbiguousLangMaps;
 - (void)updateTagsForLocalePrefChange;
+- (id)primaryUnambiguousDialect;
 - (id)primaryAmbiguousDialect;
 - (BOOL)hasOnlyNonWesternLangMaps;
 - (BOOL)hasOnlyWesternLangMaps;
-- (id)unambiguousLangMaps;
 - (id)significantAmbiguousLangMapsForUserKeyboards;
 - (id)significantAmbiguousLangMaps;
 - (BOOL)langMapIsSignificant:(id)arg1;
 - (void)tagContent;
 - (void)enumeratePredictedTags:(id)arg1;
 - (void)enumerateUnpredictedTags:(id)arg1;
+- (id)unambiguousLangMaps;
+- (id)currentDialects;
 - (id)ambiguousLangMaps;
 - (void)_addTag;
 - (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setCurrentDialects:(id)arg1;
 - (void)setTagged:(BOOL)arg1;
 - (BOOL)isTagged;
 - (id)linguisticTagger;

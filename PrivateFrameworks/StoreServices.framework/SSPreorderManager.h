@@ -31,7 +31,7 @@
 - (void)reloadFromServer;
 - (id)init;
 - (void)dealloc;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

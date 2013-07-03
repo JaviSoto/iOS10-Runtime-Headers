@@ -9,8 +9,16 @@
     BOOL _groupHeader;
     BOOL _needsPaddingForIndexScrubber;
     BOOL _groupShowsAlternativeText;
+    BOOL _secondaryCandidateAppearance;
     NSIndexPath *_candidateIndexPath;
-    int _visualStyle;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
+    } _visualStyling;
+    int _candidatesVisualStyle;
     unsigned int _candidateNumber;
     unsigned int _rowIndex;
     int _edges;
@@ -21,7 +29,8 @@
 }
 
 @property(retain) NSIndexPath * candidateIndexPath;
-@property int visualStyle;
+@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property int candidatesVisualStyle;
 @property BOOL dummy;
 @property BOOL groupHeader;
 @property unsigned int candidateNumber;
@@ -30,6 +39,7 @@
 @property int edges;
 @property BOOL needsPaddingForIndexScrubber;
 @property BOOL groupShowsAlternativeText;
+@property BOOL secondaryCandidateAppearance;
 
 
 - (id)init;
@@ -43,6 +53,8 @@
 - (void)setGroupHeader:(BOOL)arg1;
 - (void)setCandidateIndexPath:(id)arg1;
 - (unsigned int)representedElementCategory;
+- (void)setSecondaryCandidateAppearance:(BOOL)arg1;
+- (BOOL)secondaryCandidateAppearance;
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (BOOL)groupShowsAlternativeText;
 - (BOOL)needsPaddingForIndexScrubber;
@@ -54,8 +66,10 @@
 - (id)candidateIndexPath;
 - (BOOL)groupHeader;
 - (BOOL)dummy;
-- (int)visualStyle;
-- (void)setVisualStyle:(int)arg1;
+- (int)candidatesVisualStyle;
+- (void)setCandidatesVisualStyle:(int)arg1;
+- (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (void)setEdges:(int)arg1;
 
 @end

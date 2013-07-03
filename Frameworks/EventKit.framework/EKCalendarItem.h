@@ -5,7 +5,8 @@
 @class EKAttendee, NSURL, NSTimeZone, EKStructuredLocation, EKOrganizer, NSString, EKCalendar, NSDate, NSArray;
 
 @interface EKCalendarItem : EKObject  {
-    int _actionsDisabledCachedValue;
+    BOOL _haveCachedActionsState;
+    int _actionsStateCachedValue;
     EKAttendee *_selfAttendee;
     NSString *_sharedItemCreatedByEmailAddress;
 }
@@ -59,7 +60,7 @@
 @property(readonly) BOOL allowsAlarmModifications;
 @property(readonly) BOOL allowsAttendeeModifications;
 @property(copy) NSArray * allAlarms;
-@property(readonly) BOOL actionsDisabled;
+@property(readonly) int actionsState;
 @property(readonly) BOOL requiresDetach;
 @property(getter=isDefaultAlarmRemoved) BOOL defaultAlarmRemoved;
 @property(copy) NSString * externalID;
@@ -69,6 +70,9 @@
 
 - (id)calendarItemExternalIdentifier;
 - (void)setAttendees:(id)arg1;
+- (id)organizer;
+- (BOOL)isAllDay;
+- (BOOL)validate:(id*)arg1;
 - (void)setSharedItemCreatedByEmailAddress:(id)arg1;
 - (void)setSharedItemModifiedTimeZone:(id)arg1;
 - (id)sharedItemModifiedTimeZone;
@@ -95,7 +99,7 @@
 - (void)setAllAlarms:(id)arg1;
 - (void)setAlarms:(id)arg1;
 - (BOOL)hasAlarms;
-- (BOOL)actionsDisabled;
+- (int)actionsState;
 - (void)setDefaultAlarmRemoved:(BOOL)arg1;
 - (BOOL)isDefaultAlarmRemoved;
 - (void)setLastModifiedDate:(id)arg1;
@@ -160,18 +164,15 @@
 - (void)updatePersistentObject;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
-- (id)organizer;
-- (BOOL)isAllDay;
-- (BOOL)validate:(id*)arg1;
 - (void)setAllDay:(BOOL)arg1;
-- (id)location;
-- (BOOL)isEditable;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (id)attachments;
 - (id)lastModifiedDate;
+- (BOOL)isEditable;
+- (id)location;
 - (id)calendarItemIdentifier;
 - (void)setLocation:(id)arg1;
 - (id)calendar;

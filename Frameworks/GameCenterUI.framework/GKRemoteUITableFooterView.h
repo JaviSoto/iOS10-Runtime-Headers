@@ -10,6 +10,8 @@
     GKButton *_button;
     NSDictionary *_attributes;
     NSArray *_replaceableConstraints;
+    float _buttonBaselineOffset;
+    int _layoutStyle;
 }
 
 @property <GKRemoteUIAuxiliaryViewDelegate> * delegate;
@@ -17,16 +19,22 @@
 @property(retain) NSDictionary * attributes;
 @property BOOL pinToBottom;
 @property(retain) NSArray * replaceableConstraints;
+@property float buttonBaselineOffset;
+@property int layoutStyle;
 
 
+- (void)setLayoutStyle:(int)arg1;
 - (void)tableViewDidUpdateContentInset:(id)arg1;
 - (void)objectModelDidChange:(id)arg1;
+- (void)setButtonBaselineOffset:(float)arg1;
 - (void)setPinToBottom:(BOOL)arg1;
 - (void)adjustSizeToFillSuperview:(id)arg1;
+- (float)buttonBaselineOffset;
 - (BOOL)pinToBottom;
 - (void)createButtonWithAttributes:(id)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;
+- (int)layoutStyle;
 - (void)setAttributes:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)button;

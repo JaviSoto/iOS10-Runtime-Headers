@@ -30,6 +30,7 @@
     NSString *_milesAbbreviation;
     NSString *_metersAbbreviation;
     NSString *_kilometersAbbreviation;
+    int _grQuality;
 }
 
 @property BOOL useLightText;
@@ -38,6 +39,7 @@
 
 - (id)_scaleViewFormattedStringForInteger:(int)arg1;
 - (id)_scaleViewFormattedStringForFloat:(float)arg1;
+- (id)_formattedStringForFloat:(float)arg1;
 - (void)_localizedDistanceStringsWithMeters:(unsigned int)arg1 imperial:(double)arg2 useFeet:(BOOL)arg3 inMetric:(BOOL)arg4 displaysYardsForShortDistances:(BOOL)arg5 strings:(id)arg6;
 - (void)_calculateSegments;
 - (void)_updateStrings;

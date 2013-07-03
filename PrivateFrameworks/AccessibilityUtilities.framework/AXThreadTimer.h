@@ -24,12 +24,12 @@
 @property(getter=isPending,readonly) BOOL pending;
 
 
+- (BOOL)isPending;
 - (id)initWithThread:(id)arg1;
 - (void)_runAfterDelay:(id)arg1;
 - (void)setTask:(id)arg1;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (id)task;
-- (BOOL)isPending;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
 - (BOOL)isActive;
 - (void)dealloc;

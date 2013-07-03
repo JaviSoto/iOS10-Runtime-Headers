@@ -22,8 +22,8 @@
 
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (void)initialize;
-+ (id)classNameDecodedForArchiveClassName:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1;
++ (id)classNameDecodedForArchiveClassName:(id)arg1;
 + (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 
 - (void)_setAllowedClasses:(id)arg1;

@@ -5,13 +5,13 @@
 @class NSString, <MPMediaPickerControllerDelegate>;
 
 @interface MPMediaPickerController : UIViewController  {
-    <MPMediaPickerControllerDelegate> *_delegate;
-    unsigned int _mediaTypes;
     id _modalContext;
-    NSString *_prompt;
     int _prevStatusBarStyle;
     unsigned int _allowsPickingMultipleItems : 1;
     unsigned int _showsCloudItems : 1;
+    unsigned int _mediaTypes;
+    <MPMediaPickerControllerDelegate> *_delegate;
+    NSString *_prompt;
 }
 
 @property(readonly) unsigned int mediaTypes;
@@ -21,8 +21,8 @@
 @property(copy) NSString * prompt;
 
 + (void)preheatMediaPicker;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_pickerDidPickItems:(id)arg1;
 - (void)setShowsCloudItems:(BOOL)arg1;

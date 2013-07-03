@@ -18,6 +18,7 @@
 - (id)limitedPersistentIDs;
 - (BOOL)requiresSmartLimiting;
 - (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingTerms:(id)arg4;
+- (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 - (id)enumerationDatabaseResultForSQL:(id)arg1 onConnection:(id)arg2 withParameters:(id)arg3;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
 - (unsigned int)countOfDistinctRowsForColumn:(id)arg1;

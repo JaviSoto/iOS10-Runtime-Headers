@@ -52,17 +52,17 @@
 @property(readonly) NSMutableDictionary * _backgroundImages;
 
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setBackBarButtonItem:(id)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (id)font;
+- (void)setContext:(id)arg1;
 - (void)dealloc;
 - (void)set_titleViewWidthForAnimations:(float)arg1;
 - (float)_titleViewWidthForAnimations;

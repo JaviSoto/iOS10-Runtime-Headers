@@ -48,9 +48,8 @@
 - (void)cleanupAfteriTunesSync;
 - (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
 - (void)updateModelAfterOTARestore;
-- (void)updateStackedImageCacheForAlbum:(id)arg1;
 - (void)updateCameraPreviewWellImage:(id)arg1;
-- (void)updateThumbnailsForPhoto:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
+- (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
 - (void)launchAssetsd;
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (void)createPhotoLibraryDatabase;
@@ -72,8 +71,8 @@
 - (unsigned int)secondsNeededToCleanupModelAfteriTunesRestore;
 - (void)getPhotosAndVideosCountWithHandler:(id)arg1;
 - (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
-- (void)setConnection:(id)arg1;
 - (id)init;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

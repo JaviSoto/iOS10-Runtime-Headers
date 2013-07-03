@@ -25,7 +25,6 @@
         unsigned int delegateBeganWithBoundary : 1; 
         unsigned int delegateEndedWithBoundary : 1; 
     } _collisionBehaviorFlags;
-    NSArray *_items;
 }
 
 @property(readonly) NSArray * items;

@@ -50,8 +50,9 @@
 - (void)_heartbeatChangedNotification:(id)arg1;
 - (id)_adPolicyEngine;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
-- (void)cancelQueuedAds;
+- (void)reportPlaybackEndedForTimeout;
 - (void)optimalTransmissionWindowDidOpen;
+- (void)cancelQueuedAds;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)didScheduleAd:(id)arg1;
 - (void)setStation:(id)arg1;

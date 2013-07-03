@@ -43,10 +43,10 @@
 - (void)setPages:(id)arg1;
 - (id)pages;
 - (id)volume;
-- (void)setVolume:(id)arg1;
 - (id)sourceType;
 - (id)number;
 - (void)setNumber:(id)arg1;
+- (void)setVolume:(id)arg1;
 - (id)document;
 - (id)year;
 - (void)setYear:(id)arg1;

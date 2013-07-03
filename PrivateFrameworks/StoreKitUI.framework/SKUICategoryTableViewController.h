@@ -9,10 +9,11 @@
     SKUICategory *_category;
     SKUIClientContext *_clientContext;
     <SKUICategoryTableViewControllerDelegate> *_delegate;
-    int _hiddenRows;
+    int _numberOfHiddenRows;
     NSURL *_selectedURL;
     NSURL *_defaultURL;
     BOOL _isRoot;
+    BOOL _childrenHaveArtwork;
 }
 
 @property(retain) SKUICategoryArtworkLoader * artworkLoader;
@@ -27,10 +28,9 @@
 
 - (id)selectedURL;
 - (void)setRoot:(BOOL)arg1;
-- (void)setNumberOfHiddenRows:(int)arg1;
 - (int)numberOfHiddenRows;
 - (id)defaultURL;
-- (void)setHiddenRows:(int)arg1;
+- (void)setNumberOfHiddenRows:(int)arg1;
 - (void)categoryArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forCategory:(id)arg3;
 - (void)categoryTableView:(id)arg1 didSelectCategory:(id)arg2;
 - (id)_categoryAtIndexPath:(id)arg1;

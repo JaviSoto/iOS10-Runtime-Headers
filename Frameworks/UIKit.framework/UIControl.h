@@ -39,8 +39,8 @@
 @property(getter=isTracking,readonly) BOOL tracking;
 @property(getter=isTouchInside,readonly) BOOL touchInside;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2;
 - (id)allTargets;
@@ -59,14 +59,14 @@
 - (BOOL)_wasLastHighlightSuccessful;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (BOOL)_hasActionForEventMask:(int)arg1;
-- (void)_sendDelayedActions:(BOOL)arg1;
+- (float)_highlightCornerRadius;
 - (void)sendActionsForControlEvents:(unsigned int)arg1;
-- (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
 - (unsigned int)allControlEvents;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (int)contentHorizontalAlignment;
 - (int)contentVerticalAlignment;
-- (float)_highlightCornerRadius;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
+- (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
+- (void)_sendDelayedActions:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;
 - (void)_sendDelayedActions;
@@ -86,13 +86,15 @@
 - (void)_cancelDelayedActions;
 - (void)setTracking:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setContentVerticalAlignment:(int)arg1;
 - (void)setContentHorizontalAlignment:(int)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (id)outlinePath;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
 - (BOOL)isTracking;
@@ -100,9 +102,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)isHighlighted;
-- (BOOL)isSelected;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

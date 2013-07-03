@@ -61,7 +61,6 @@
 - (id)refreshURL;
 - (void)setRefreshDelay:(int)arg1;
 - (int)refreshDelay;
-- (void)setServerInfo:(id)arg1;
 - (void)setAlert:(id)arg1;
 - (void)setInlineScript:(id)arg1;
 - (id)inlineScript;
@@ -127,6 +126,7 @@
 - (id)newNavigationControllerForPresentation;
 - (id)clientInfo;
 - (void)setClientInfo:(id)arg1;
+- (void)setServerInfo:(id)arg1;
 - (void)presentWithBlock:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;

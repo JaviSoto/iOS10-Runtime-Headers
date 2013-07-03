@@ -11,7 +11,6 @@
 }
 
 
-- (id)artist;
 - (id)album;
 - (void)setArtworkImageData:(id)arg1 mimeType:(id)arg2;
 - (id)adTrack;

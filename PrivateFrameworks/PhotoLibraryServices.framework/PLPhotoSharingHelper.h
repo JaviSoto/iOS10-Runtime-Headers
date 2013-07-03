@@ -13,8 +13,8 @@
 + (void)countOfAssetsInMstreamdSharingDownloadQueueWithCompletionBlock:(id)arg1;
 + (void)isMstreamdBusyPerformingSharingActivityWithCompletionBlock:(id)arg1;
 + (void)applicationIsInForeground:(BOOL)arg1;
-+ (void)prioritizeDownloadsForAsset:(id)arg1;
 + (void)prioritizeDownloadsForAlbumGUID:(id)arg1;
++ (void)checkServerModelForAlbum:(id)arg1;
 + (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
 + (void)markAlbumGUIDAsViewed:(id)arg1 clearUnseenAssetsCount:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2 derivativeType:(int)arg3 withSpecificationInfo:(id)arg4;
@@ -23,6 +23,7 @@
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
 + (void)deleteCommentWithGUIDFromServer:(id)arg1;
 + (void)publishCloudSharedCommentToServer:(id)arg1;
++ (BOOL)hasPhoneInvitationForAlbum:(id)arg1;
 + (void)refreshSubscriberListForAlbumGUID:(id)arg1;
 + (void)declinePendingInvitationForAlbum:(id)arg1;
 + (void)acceptPendingInvitationForAlbum:(id)arg1 completion:(id)arg2;
@@ -47,6 +48,7 @@
 + (void)initializeMSPlatform;
 + (void)pollForAlbumListUpdates;
 + (BOOL)accountMatchesEmail:(id)arg1;
++ (id)sharingEmail;
 + (BOOL)sharedStreamsExplictlyDisabled;
 + (BOOL)sharedStreamsUIEnabled;
 + (void)photosPreferencesChanged;
@@ -56,6 +58,9 @@
 + (id)directoryPathForUploadActivityForAlbumGUID:(id)arg1 create:(BOOL)arg2;
 + (BOOL)isBreadcrumbDebugEnabled;
 + (double)intervalBetweenPolls;
++ (id)_downloadRequestQueue;
++ (BOOL)_shouldDownloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2;
++ (double)intervalBetweenAlbumPolls;
 + (float)derivedAssetSmallDimensionLimitForType:(int)arg1;
 + (id)temporaryLargeVideoDerivativePathForCollectionGUID:(id)arg1;
 + (struct CGSize { float x1; float x2; })dimensionsOfVideoAtURL:(id)arg1;
@@ -63,6 +68,7 @@
 + (id)temporaryVideoPosterFramePathForCollectionGUID:(id)arg1;
 + (id)temporaryDerivativePathForCollectionGUID:(id)arg1;
 + (void)unsubscribeFromAlbum:(id)arg1;
++ (BOOL)isCellularConnection;
 + (void)writeUploadDebugBreadcrumbForAssetCollections:(id)arg1 state:(int)arg2 error:(id)arg3;
 + (void)trackUploadBatchSize:(unsigned int)arg1;
 + (void)resetAllLocalState;
@@ -80,6 +86,7 @@
 + (BOOL)sharedStreamsEnabled;
 + (void)forgetSharingPersonID:(id)arg1;
 + (id)sharingPersonID;
++ (void)downloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2 shouldPrioritize:(BOOL)arg3;
 + (void)clearCachedAccountState;
 + (void)deleteCloudSharedAssetsFromServer:(id)arg1 inSharedAlbum:(id)arg2;
 + (void)deleteCloudSharedAlbumFromServer:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 
+- (id)initWithName:(id)arg1 scale:(float)arg2;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
 - (id)initWithData:(id)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
-- (id)initWithName:(id)arg1 scale:(float)arg2;
 - (id)texture;
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGImage { }*)image;

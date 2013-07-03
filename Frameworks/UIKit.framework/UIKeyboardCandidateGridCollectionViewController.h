@@ -2,21 +2,32 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIKeyboardCandidateResultSet, <UIKeyboardCandidateGridCollectionViewControllerDelegate>, UIKeyboardCandidateGridCollectionView, UIKeyboardCandidateGridLayout, UIButton, UIView, <UIKeyboardCandidateListDelegate>, NSArray;
+@class UIKBCandidateCollectionView, TIKeyboardCandidateResultSet, <UIKeyboardCandidateGridCollectionViewControllerDelegate>, UIKeyboardCandidateGridCollectionView, UIKeyboardCandidateGridLayout, UIButton, UIView, <UIKeyboardCandidateListDelegate>, NSArray;
 
 @interface UIKeyboardCandidateGridCollectionViewController : UIViewController <UICollectionViewDataSource, UIKeyboardCandidateList, UIKeyboardCandidateGridLayoutDelegate> {
     BOOL _alwaysShowExtensionCandidates;
+    BOOL _hasSecondaryCandidates;
     BOOL _showsExtensionCandidates;
     BOOL _supportsNumberKeySelection;
+    BOOL _secondaryCandidatesViewIsCurrent;
     <UIKeyboardCandidateGridCollectionViewControllerDelegate> *_delegate;
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     TIKeyboardCandidateResultSet *_candidateSet;
     NSArray *_candidateGroups;
     float _rowHeight;
-    int _visualStyle;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
+    } _visualStyling;
+    int _candidatesVisualStyle;
     UIButton *_padInlineFloatingArrowButton;
     UIView *_headerView;
+    UIKBCandidateCollectionView *_secondaryCandidatesView;
     float _groupBarWidth;
+    unsigned int _previousInlineTextLength;
 }
 
 @property(readonly) UIKeyboardCandidateGridCollectionView * collectionView;
@@ -25,16 +36,24 @@
 @property(retain) TIKeyboardCandidateResultSet * candidateSet;
 @property(retain) NSArray * candidateGroups;
 @property float rowHeight;
-@property int visualStyle;
+@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property int candidatesVisualStyle;
 @property BOOL alwaysShowExtensionCandidates;
 @property(readonly) UIButton * padInlineFloatingArrowButton;
 @property(retain) UIView * headerView;
+@property BOOL hasSecondaryCandidates;
+@property(retain) UIKBCandidateCollectionView * secondaryCandidatesView;
 @property(readonly) UIKeyboardCandidateGridLayout * collectionViewGridLayout;
 @property float groupBarWidth;
 @property(readonly) BOOL hasGroupBar;
 @property BOOL showsExtensionCandidates;
 @property BOOL supportsNumberKeySelection;
+@property BOOL secondaryCandidatesViewIsCurrent;
+@property unsigned int previousInlineTextLength;
 
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (id)candidateSet;
 - (id)keyboardBehaviors;
@@ -54,6 +73,8 @@
 - (BOOL)alwaysShowExtensionCandidates;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
+- (void)setPreviousInlineTextLength:(unsigned int)arg1;
+- (unsigned int)previousInlineTextLength;
 - (id)candidateAtIndexPath:(id)arg1;
 - (void)stepOneLine:(BOOL)arg1;
 - (id)lastCandidateIndexPath;
@@ -63,6 +84,7 @@
 - (void)scrollViewIndexChanged:(id)arg1;
 - (void)setGroupBarWidth:(float)arg1;
 - (float)groupBarWidth;
+- (void)setHasSecondaryCandidates:(BOOL)arg1;
 - (void)setCandidateGroups:(id)arg1;
 - (BOOL)padInlineFloatingIsExpanded;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
@@ -73,8 +95,10 @@
 - (id)firstCandidateIndexPathInGroupAtIndex:(unsigned int)arg1;
 - (unsigned int)candidateIndexOffset;
 - (id)groupAtIndex:(unsigned int)arg1;
+- (BOOL)secondaryCandidatesViewIsCurrent;
 - (unsigned int)groupsCount;
 - (id)candidateListDelegate;
+- (void)setSecondaryCandidatesViewIsCurrent:(BOOL)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)padInlineFloatingExpand;
 - (id)candidateGroups;
@@ -83,14 +107,21 @@
 - (void)scrollToTopWithAnimation:(BOOL)arg1 revealHeaderView:(BOOL)arg2;
 - (void)scrollToTopWithAnimation:(BOOL)arg1;
 - (id)headerView;
-- (int)visualStyle;
-- (void)setVisualStyle:(int)arg1;
+- (void)setSecondaryCandidatesView:(id)arg1;
+- (int)candidatesVisualStyle;
+- (id)secondaryCandidatesView;
+- (BOOL)hasSecondaryCandidates;
+- (void)loadSecondaryCandidatesView;
+- (void)setCandidatesVisualStyle:(int)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (unsigned int)selectedSortMethodIndex;
+- (void)revealHiddenCandidates;
 - (void)candidatesDidChange;
 - (BOOL)hasPreviousPage;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
@@ -105,6 +136,8 @@
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (BOOL)isExtendedList;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (BOOL)hasNextPage;
 - (id)collectionView;
 - (void)loadView;
@@ -114,5 +147,6 @@
 - (float)rowHeight;
 - (void)setRowHeight:(float)arg1;
 - (void)reloadData;
+- (void)_axPostChange;
 
 @end

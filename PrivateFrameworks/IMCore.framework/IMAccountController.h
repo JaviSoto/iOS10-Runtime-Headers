@@ -62,7 +62,9 @@
 - (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
 - (BOOL)activateAccounts:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
 - (BOOL)canActivateAccounts:(id)arg1;
+- (BOOL)_deactivateAccounts:(id)arg1;
 - (BOOL)deactivateAccounts:(id)arg1 withDisable:(BOOL)arg2;
+- (BOOL)_deactivateAccount:(id)arg1;
 - (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
 - (id)operationalAccounts;
 - (BOOL)accountActive:(id)arg1;
@@ -87,8 +89,8 @@
 - (id)activeAccountsForService:(id)arg1;
 - (int)numberOfAccounts;
 - (id)activeAccounts;
-- (void)setReadOnly:(BOOL)arg1;
 - (id)accounts;
+- (void)setReadOnly:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
 - (BOOL)readOnly;

@@ -19,12 +19,12 @@
 - (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (BOOL)allowsKeyedCoding;
-- (BOOL)decodeBoolForKey:(id)arg1;
 - (id)decodePropertyListForKey:(id)arg1;
+- (BOOL)decodeBoolForKey:(id)arg1;
 - (double)decodeDoubleForKey:(id)arg1;
-- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (int)decodeIntegerForKey:(id)arg1;
+- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1;
 - (unsigned int)systemVersion;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;

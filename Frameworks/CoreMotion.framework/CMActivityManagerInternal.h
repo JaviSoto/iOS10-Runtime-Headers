@@ -37,8 +37,8 @@
 - (void)startActivityUpdatesWithHandlerPrivate:(id)arg1;
 - (void)stopWatchdogCheckinsPrivate;
 - (void)startWatchdogCheckinsPrivate;
-- (void)disconnect;
 - (void)connect;
+- (void)disconnect;
 - (id)init;
 - (void)dealloc;
 

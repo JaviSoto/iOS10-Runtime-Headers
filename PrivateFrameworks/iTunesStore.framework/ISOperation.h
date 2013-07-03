@@ -45,6 +45,7 @@
 - (void)setPowerAssertionIdentifier:(id)arg1;
 - (void)setSerializationLockIdentifiers:(id)arg1;
 - (void)sendDidTakeSerializationLocks;
+- (void)releasePowerAssertionsDuringBlock:(id)arg1;
 - (id)copySerializationLocks;
 - (BOOL)shouldMessageMainThread;
 - (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;

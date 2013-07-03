@@ -4,20 +4,23 @@
 
 @class NSArray, MPReshuffledArrayIndexMap, MPMediaQuery, NSMutableArray;
 
-@interface MPMediaQueryShuffledItems : NSObject <NSCoding, NSCopying> {
+@interface MPMediaQueryShuffledItems : NSObject <NSSecureCoding, NSCopying> {
     unsigned int _activeShuffleType;
     BOOL _dirty;
     NSMutableArray *_orderedArray;
     MPReshuffledArrayIndexMap *_indexMap;
     MPMediaQuery *_sourceMediaQuery;
     NSArray *_sourceMediaQueryItems;
+    BOOL _autoReshufflingDisabled;
 }
 
 @property(readonly) MPMediaQuery * sourceMediaQuery;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
 @property(readonly) NSArray * items;
 @property(readonly) unsigned int realShuffleType;
+@property BOOL autoReshufflingDisabled;
 
++ (BOOL)supportsSecureCoding;
 
 - (id)sourceMediaQuery;
 - (void)unshuffle;
@@ -40,6 +43,8 @@
 - (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 indexMap:(id)arg3 shuffleType:(unsigned int)arg4;
 - (void)setFocusedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })focusedRange;
+- (void)setAutoReshufflingDisabled:(BOOL)arg1;
+- (BOOL)autoReshufflingDisabled;
 - (unsigned int)realShuffleType;
 - (void)_resetCaches;
 - (id)items;

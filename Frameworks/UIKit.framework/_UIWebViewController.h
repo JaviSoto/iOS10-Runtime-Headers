@@ -33,9 +33,9 @@
 
 
 - (void)setURLString:(id)arg1;
-- (void)reload;
 - (id)URLString;
 - (float)estimatedProgress;
+- (void)reload;
 - (void)loadRequest:(id)arg1;
 - (id)pageTitle;
 - (BOOL)isLoading;

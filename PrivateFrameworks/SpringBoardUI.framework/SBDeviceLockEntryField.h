@@ -47,10 +47,10 @@
 - (id)_backgroundImage;
 - (void)setInterfaceOrientation:(int)arg1;
 - (id)textInputTraits;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isFirstResponder;
-- (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
-- (BOOL)isHighlighted;
+- (void)_handleKeyUIEvent:(id)arg1;
 
 @end

@@ -74,8 +74,8 @@
 @property(readonly) MFComposeScrollView * bodyScroller;
 @property(readonly) MFComposeTextContentView * bodyTextView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)multiField;
 - (id)imageSizeField;
@@ -170,6 +170,7 @@
 - (void)_cancelAnimations;
 - (void)automaticKeyboardFinishedDisappearing:(id)arg1;
 - (void)automaticKeyboardFinishedAppearing:(id)arg1;
+- (void)menuDidHide;
 - (void)_setupField:(id*)arg1 withLabel:(id)arg2 navTitle:(id)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)composeHeaderViewClicked:(id)arg1;
 - (void)cancelSearch;

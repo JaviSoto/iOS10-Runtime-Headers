@@ -27,7 +27,6 @@
     UIViewController *_rootViewController;
     UIColor *_savedBackgroundColor;
     NSMutableSet *_subtreeMonitoringViews;
-    NSMutableSet *_ancestorGeometryMonitoringViews;
     NSMutableSet *_tintViews;
     id _currentTintView;
     struct { 
@@ -91,7 +90,6 @@
 + (void*)createScreenIOSurface;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg4;
-+ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void)_removeWindowFromStack:(id)arg1;
 + (void)_popKeyWindow;
 + (void)_pushKeyWindow:(id)arg1;
@@ -111,18 +109,19 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)_hitTestToPoint:(struct CGPoint { float x1; float x2; })arg1 pathIndex:(int)arg2 forEvent:(id)arg3 screen:(id)arg4;
 + (void)_prepareWindowsForAppResume;
++ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
 + (void)_prepareWindowsForAppSuspend;
 + (id)_topVisibleWindowPassingTest:(id)arg1;
 + (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2;
-+ (unsigned int)_synchronizeDrawingAcrossProcesses;
 + (void)_synchronizeDrawing;
 + (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2 forAutolayoutRootViewsOnly:(BOOL)arg3;
++ (unsigned int)_synchronizeDrawingAcrossProcesses;
 + (id)keyWindow;
 + (void)_executeDeferredLaunchBlocks;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
@@ -162,7 +161,6 @@
 - (id)_uiib_candidateRedundantConstraints;
 - (void)_layoutEngineWillChange;
 - (void)_invalidateWindowInternalConstraints;
-- (id)_layoutEngineIfAvailable;
 - (id)_hostingHandle;
 - (void)updateConstraintsIfNeeded;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -171,6 +169,7 @@
 - (void)setupForOrientation:(int)arg1;
 - (float)_classicOffset;
 - (void)updateConstraints;
+- (id)_layoutEngineIfAvailable;
 - (void)_constraints_subviewWillChangeSuperview:(id)arg1;
 - (id)_responderWindow;
 - (void)_initializeLayoutEngine;
@@ -187,8 +186,6 @@
 - (void)_updateCurrentTintViewForPotentialTintView:(id)arg1;
 - (void)_tintViewDidChangeAppearance:(id)arg1;
 - (void)_writeLayerTreeToPath:(id)arg1;
-- (void)_unregisterViewForAncestorGeometryMonitoring:(id)arg1;
-- (void)_registerViewForAncestorGeometryMonitoring:(id)arg1;
 - (id)_subtreeMonitorsForView:(id)arg1;
 - (void)_unregisterViewForSubtreeMonitoring:(id)arg1;
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
@@ -246,7 +243,6 @@
 - (void)_transformLayerShouldMaskToBounds:(BOOL)arg1;
 - (void)_tagAsSpringboardPresentationWindow;
 - (id)initWithContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_ancestorGeometryMonitorsForView:(id)arg1;
 - (BOOL)resizesToFullScreen;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromWindow:(id)arg2;
 - (void)_updateCurrentTintView;
@@ -347,6 +343,7 @@
 - (void)_beginModalSession;
 - (id)rootViewController;
 - (id)_deepestUnambiguousResponder;
+- (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
 - (id)_touchData;
 - (void)synchronizeDrawingWithID:(int)arg1;
 - (BOOL)_needsShakesWhenInactive;

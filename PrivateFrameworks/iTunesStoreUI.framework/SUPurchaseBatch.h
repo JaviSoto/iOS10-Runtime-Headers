@@ -27,7 +27,6 @@
 @property(retain) NSArray * validPurchases;
 
 
-- (void)setErrors:(id)arg1;
 - (id)_copyUniqueErrorsFromErrors:(id)arg1;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (id)everythingFailedErrorForError:(id)arg1;
@@ -47,6 +46,7 @@
 - (id)continuations;
 - (id)errors;
 - (id)offers;
+- (void)setErrors:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (id)items;
 - (void)dealloc;

@@ -2,18 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIButton, UILabel;
+@class UIButton, UILabel, NSString, UIKBBackdropView;
 
 @interface UIKeyboardCandidateGridHeader : UIView  {
     UILabel *_inlineTextLabel;
     float _inlineTextRightMargin;
     UIButton *_toggleButton;
+    UIKBBackdropView *_backdropView;
 }
 
 @property(copy) NSString * inlineText;
 @property float inlineTextRightMargin;
 @property(retain) UIButton * toggleButton;
 @property(retain) UILabel * inlineTextLabel;
+@property(retain) UIKBBackdropView * backdropView;
 
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -24,6 +26,8 @@
 - (id)inlineTextLabel;
 - (void)setToggleButton:(id)arg1;
 - (void)setInlineTextLabel:(id)arg1;
+- (id)backdropView;
+- (void)setBackdropView:(id)arg1;
 - (id)inlineText;
 - (void)setInlineText:(id)arg1;
 - (void)layoutSubviews;

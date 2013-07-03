@@ -54,8 +54,8 @@
 
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (void)insertText:(id)arg1;
+- (BOOL)isEditable;
 - (BOOL)hasSelection;
 - (int)selectionState;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -105,7 +105,6 @@
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)tokenizer;
-- (id)inputDelegate;
 - (void)setInputDelegate:(id)arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
@@ -113,9 +112,6 @@
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
-- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
-- (id)endOfDocument;
-- (id)beginningOfDocument;
 - (void)unmarkText;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
@@ -123,10 +119,14 @@
 - (void)setSelectedTextRange:(id)arg1;
 - (id)selectedTextRange;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (id)textInRange:(id)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
+- (id)inputDelegate;
+- (id)textInRange:(id)arg1;
+- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
+- (id)endOfDocument;
+- (id)beginningOfDocument;
 - (void)takeTraitsFrom:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)textInputTraits;

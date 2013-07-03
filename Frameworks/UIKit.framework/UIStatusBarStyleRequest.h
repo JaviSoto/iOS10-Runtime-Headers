@@ -4,7 +4,8 @@
 
 @class NSNumber, UIColor;
 
-@interface UIStatusBarStyleRequest : NSObject <NSCopying> {
+@interface UIStatusBarStyleRequest : NSObject <NSMutableCopying, NSCopying> {
+    BOOL _legacy;
     int _style;
     int _legibilityStyle;
     UIColor *_foregroundColor;
@@ -12,6 +13,7 @@
 }
 
 @property(readonly) int style;
+@property(getter=isLegacy,readonly) BOOL legacy;
 @property(readonly) int legibilityStyle;
 @property(readonly) UIColor * foregroundColor;
 @property(readonly) NSNumber * overrideHeight;
@@ -23,9 +25,15 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithStyle:(int)arg1 legibilityStyle:(int)arg2 foregroundColor:(id)arg3 overrideHeight:(id)arg4;
+- (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4;
+- (BOOL)isLegacy;
 - (id)overrideHeight;
 - (int)legibilityStyle;
+- (BOOL)isDoubleHeight;
+- (BOOL)isTranslucent;
 
 @end

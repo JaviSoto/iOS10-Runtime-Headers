@@ -6,11 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, ABCardLinkedCardsGroup, ABCardFaceTimeGroup, ABPropertyLinkedCardsAction, ABContactView, CNContact, ABPropertyAction, ABContactAction, ABContactToggleBlockCallerAction, ABSiriContactContextProvider, NSMutableDictionary, ABContactCreateNewContactAction, ABCardGroup, ABContactAddToExistingContactAction, ABPropertyFaceTimeAction, ABContactHeaderView, NSArray, ABContactAddLinkedCardAction, <ABContactViewControllerDelegate>, ABContactAddFavoriteAction, UIView, ABContactAddNewFieldAction;
+@class NSDictionary, ABCardLinkedCardsGroup, ABCardFaceTimeGroup, ABPropertyLinkedCardsAction, NSMutableArray, NSString, ABContactView, CNContact, ABPropertyAction, ABContactAction, ABContactToggleBlockCallerAction, ABSiriContactContextProvider, <ABPresenterDelegate>, NSMutableDictionary, ABCardGroup, ABContactCreateNewContactAction, ABContactAddToExistingContactAction, ABPropertyFaceTimeAction, ABContactHeaderView, NSArray, ABContactAddLinkedCardAction, <ABContactViewControllerDelegate>, ABContactAddFavoriteAction, UIView, ABContactAddNewFieldAction;
 
 @interface ABContactViewController : UITableViewController <ABContactActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, IDSIDQueryControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
     NSArray *_displayedProperties;
     BOOL _needsReload;
+    BOOL _isMailVIP;
     BOOL _allowsEditing;
     BOOL _allowsActions;
     BOOL _allowsConferencing;
@@ -18,23 +19,25 @@
     BOOL _allowsAddToFavorites;
     BOOL _allowsContactBlocking;
     BOOL _allowsAddingToAddressBook;
-    BOOL _allowsAlerts;
     BOOL _shouldShowLinkedContacts;
     BOOL _allowsOnlyPhoneActions;
     BOOL _allowsOnlyFaceTimeActions;
     BOOL _hideCardActions;
-    BOOL _isMailVIP;
     CNContact *_contact;
+    NSString *_alternateName;
+    NSString *_message;
+    NSString *_primaryProperty;
     UIView *_personHeaderView;
     ABCardGroup *_cardTopGroup;
     ABCardGroup *_cardBottomGroup;
     ABCardGroup *_cardFooterGroup;
     <ABContactViewControllerDelegate> *_contactDelegate;
+    <ABPresenterDelegate> *_presentingDelegate;
     ABContactView *_displayContactView;
     ABContactView *_editingContactView;
     ABContactHeaderView *_displayHeaderView;
     ABContactHeaderView *_editingHeaderView;
-    NSArray *_mutableContacts;
+    NSMutableArray *_mutableContacts;
     NSDictionary *_propertyGroups;
     NSArray *_displayGroups;
     NSArray *_editingGroups;
@@ -44,6 +47,7 @@
     NSMutableDictionary *_cachedCellsHeights;
     NSMutableDictionary *_cachedCellsHeightsEditing;
     NSMutableDictionary *_cachedLabelWidth;
+    ABCardGroup *_cardPrimaryPropertyActionsGroup;
     ABCardGroup *_cardActionsGroup;
     ABCardGroup *_cardBlockContactGroup;
     ABCardFaceTimeGroup *_cardFaceTimeGroup;
@@ -67,6 +71,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _idQueryResultHandler;
 
+    NSMutableArray *_linkedContactsEdits;
 }
 
 @property(readonly) CNContact * contact;
@@ -80,22 +85,25 @@
 @property BOOL allowsAddToFavorites;
 @property BOOL allowsContactBlocking;
 @property BOOL allowsAddingToAddressBook;
-@property BOOL allowsAlerts;
 @property BOOL shouldShowLinkedContacts;
 @property BOOL allowsOnlyPhoneActions;
 @property BOOL allowsOnlyFaceTimeActions;
 @property BOOL hideCardActions;
 @property BOOL isMailVIP;
+@property(retain) NSString * alternateName;
+@property(retain) NSString * message;
+@property(retain) NSString * primaryProperty;
 @property(retain) UIView * personHeaderView;
 @property(retain) ABCardGroup * cardTopGroup;
 @property(retain) ABCardGroup * cardBottomGroup;
 @property(readonly) ABCardGroup * cardFooterGroup;
 @property <ABContactViewControllerDelegate> * contactDelegate;
+@property <ABPresenterDelegate> * presentingDelegate;
 @property(retain) ABContactView * displayContactView;
 @property(retain) ABContactView * editingContactView;
 @property(retain) ABContactHeaderView * displayHeaderView;
 @property(retain) ABContactHeaderView * editingHeaderView;
-@property(retain) NSArray * mutableContacts;
+@property(retain) NSMutableArray * mutableContacts;
 @property(retain) NSDictionary * propertyGroups;
 @property(retain) NSArray * displayGroups;
 @property(retain) NSArray * editingGroups;
@@ -105,6 +113,7 @@
 @property(retain) NSMutableDictionary * cachedCellsHeights;
 @property(retain) NSMutableDictionary * cachedCellsHeightsEditing;
 @property(retain) NSMutableDictionary * cachedLabelWidth;
+@property(retain) ABCardGroup * cardPrimaryPropertyActionsGroup;
 @property(retain) ABCardGroup * cardActionsGroup;
 @property(retain) ABCardGroup * cardBlockContactGroup;
 @property(readonly) ABCardFaceTimeGroup * cardFaceTimeGroup;
@@ -124,6 +133,7 @@
 @property(retain) ABContactAction * deleteContactAction;
 @property(retain) ABSiriContactContextProvider * siriContextProvider;
 @property(copy) id idQueryResultHandler;
+@property(retain) NSMutableArray * linkedContactsEdits;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
@@ -139,10 +149,10 @@
 - (id)cardFaceTimeGroup;
 - (void)setCardBlockContactGroup:(id)arg1;
 - (void)setCardActionsGroup:(id)arg1;
+- (void)setCardPrimaryPropertyActionsGroup:(id)arg1;
 - (id)cachedCellsHeightsEditing;
 - (id)cachedCellsHeights;
 - (void)setPropertyGroups:(id)arg1;
-- (void)setMutableContacts:(id)arg1;
 - (void)setEditingHeaderView:(id)arg1;
 - (void)setDisplayHeaderView:(id)arg1;
 - (void)setEditingContactView:(id)arg1;
@@ -150,24 +160,22 @@
 - (void)setCardBottomGroup:(id)arg1;
 - (void)setCardTopGroup:(id)arg1;
 - (void)setPersonHeaderView:(id)arg1;
-- (void)setIsMailVIP:(BOOL)arg1;
+- (void)setPrimaryProperty:(id)arg1;
 - (void)setHideCardActions:(BOOL)arg1;
 - (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
 - (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setShouldShowLinkedContacts:(BOOL)arg1;
-- (void)setAllowsAlerts:(BOOL)arg1;
-- (BOOL)allowsAlerts;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsContactBlocking:(BOOL)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1;
 - (float)desiredHeightForWidth:(float)arg1;
 - (struct { id x1; id x2; id x3; id x4; })transitionToEditing:(BOOL)arg1;
 - (void)reloadCardGroup:(id)arg1;
 - (void)removeActionWithTarget:(id)arg1 selector:(SEL)arg2 inGroup:(id)arg3;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4;
 - (id)cardActions;
+- (void)setIsMailVIP:(BOOL)arg1;
 - (int)numberOfGroupsInContactView:(id)arg1;
 - (void)propertyCellDidChangeLayout:(id)arg1;
 - (void)propertyCell:(id)arg1 performActionForItem:(id)arg2 withTransportType:(int)arg3;
@@ -191,7 +199,8 @@
 - (void)_updateEmailTransportButtons;
 - (void)_updatePhoneTransportButtons;
 - (void)_updateIMessageTransportButtons;
-- (id)_allPropertyItemsFromGroups:(id)arg1;
+- (id)_allDisplayPropertyItemsFromGroups:(id)arg1;
+- (id)cardPrimaryPropertyActionsGroup;
 - (void)setDeleteContactAction:(id)arg1;
 - (id)addNewFieldAction;
 - (id)cardEditingActionsGroup;
@@ -213,8 +222,10 @@
 - (void)setShareContactAction:(id)arg1;
 - (id)_shareContactAction;
 - (BOOL)allowsSharing;
+- (id)primaryProperty;
 - (void)setSendMessageAction:(id)arg1;
 - (id)_sendMessageActionAllowingEmailIDs:(BOOL)arg1;
+- (void)setLinkedContactsEdits:(id)arg1;
 - (id)cardLinkedCardsGroup;
 - (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
 - (float)cachedSingleLineCellHeight;
@@ -224,13 +235,13 @@
 - (id)cachedLabelWidth;
 - (BOOL)isMailVIP;
 - (BOOL)allowsActions;
-- (id)cardGroupForProperty:(id)arg1;
+- (void)setPresentingDelegate:(id)arg1;
 - (void)addedGroupWithName:(id)arg1;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
-- (void)_cacheHeight:(id)arg1 forIndexPath:(id)arg2;
 - (id)linkedCardsAction;
 - (id)faceTimeAction;
 - (id)sendMessageAction;
+- (void)_cacheHeight:(id)arg1 forIndexPath:(id)arg2;
 - (id)blockAction;
 - (void)addLinkedContact:(id)arg1;
 - (void)addToExistingContact:(id)arg1;
@@ -239,7 +250,6 @@
 - (id)createNewContactAction;
 - (id)addFavoriteAction;
 - (id)deleteContactAction;
-- (void)sender:(id)arg1 pushViewController:(id)arg2;
 - (void)contactView:(id)arg1 didSelectItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (id)cardEditingDeleteContactGroup;
 - (float)contactView:(id)arg1 heightForItemAtIndex:(int)arg2 inGroup:(id)arg3;
@@ -254,17 +264,21 @@
 - (int)_numberOfItemsInCustomGroup:(id)arg1;
 - (id)_cardGroupAtIndex:(int)arg1;
 - (id)siriContextProvider;
+- (void)_setupPrimaryPropertyActions;
 - (void)_setupEditingCardActions;
 - (void)_setupAddToAddressBookActions;
 - (void)_setupContactBlockingActions;
-- (void)_setupCardActions;
 - (void)_scrollContactView:(id)arg1 toVisibleGroupInContactView:(id)arg2;
 - (void)updateEditNavigationItemsAnimated:(BOOL)arg1;
-- (void)removeBackdropMasks;
+- (void)_setupCardActions;
 - (id)mutableContacts;
+- (void)saveLinkedContactChanges;
 - (void)_saveChangesForGroups:(id)arg1;
+- (void)setMutableContacts:(id)arg1;
+- (id)linkedContactsEdits;
 - (struct { id x1; id x2; id x3; id x4; })editingTransition;
 - (id)displayGroups;
+- (void)reloadDataIfNeeded;
 - (void)toggleEditing:(id)arg1;
 - (void)editCancel:(id)arg1;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4 destructive:(BOOL)arg5;
@@ -284,8 +298,10 @@
 - (void)setCachedCellsHeightsEditing:(id)arg1;
 - (void)setCachedCellsHeights:(id)arg1;
 - (id)cardActionsGroup;
+- (id)cardGroupForProperty:(id)arg1;
 - (void)setNameEditingGroups:(id)arg1;
 - (id)_loadNameEditingGroups;
+- (id)presentingDelegate;
 - (id)nameEditingGroups;
 - (id)personHeaderView;
 - (id)displayHeaderView;
@@ -293,7 +309,6 @@
 - (id)displayContactView;
 - (id)editingContactView;
 - (void)setIdQueryResultHandler:(id)arg1;
-- (id)contactView;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)setNeedsReloadLazy;
 - (void)setSiriContextProvider:(id)arg1;
@@ -302,13 +317,16 @@
 - (void)setGroupsAfterGroup:(id)arg1;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (void)sender:(id)arg1 presentActionSheet:(id)arg2;
+- (void)setAlternateName:(id)arg1;
 - (id)editingGroups;
-- (void)updateBackdropMasks;
 - (void)updateWithNewContact:(id)arg1;
 - (void)setEditingGroups:(id)arg1;
 - (void)contactGroupPickerDidCancel:(id)arg1;
 - (void)contactGroupPickerDidFinish:(id)arg1 withGroup:(id)arg2;
 - (id)alreadyPickedGroups;
+- (id)contactView;
+- (void)applyStyleProvider:(id)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)actionWasCanceled:(id)arg1;
 - (void)action:(id)arg1 presentViewController:(id)arg2 sender:(id)arg3;
@@ -318,8 +336,11 @@
 - (id)initWithContact:(id)arg1;
 - (id)displayedProperties;
 - (void)setDisplayedProperties:(id)arg1;
+- (void)setMessage:(id)arg1;
+- (id)alternateName;
 - (void)setContactDelegate:(id)arg1;
 - (id)contactDelegate;
+- (id)message;
 - (void)dealloc;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
@@ -329,7 +350,6 @@
 - (id)contentScrollView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)_reloadDataIfNeeded;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (float)heightForHeaderInTableView:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

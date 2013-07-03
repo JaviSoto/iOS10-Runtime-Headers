@@ -2,34 +2,39 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface SKUIEditorialComponent : SKUIPageComponent  {
     NSString *_bodyText;
+    NSArray *_links;
     int _maximumBodyLines;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
         float bodyFontSize; 
+        float linkSpacing; 
         int titleFontWeight; 
         float titleFontSize; 
+        float titleSpacing; 
     } _style;
     NSString *_titleText;
 }
 
 @property(readonly) NSString * bodyText;
 @property(readonly) NSString * titleText;
-@property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; int x4; float x5; } editorialStyle;
+@property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
+@property(readonly) NSArray * links;
 @property(readonly) int maximumBodyLines;
 
 
 - (id)titleText;
 - (int)maximumBodyLines;
 - (id)initWithBrickRoomText:(id)arg1;
-- (struct SKUIEditorialStyle { int x1; int x2; float x3; int x4; float x5; })editorialStyle;
+- (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
 - (void).cxx_destruct;
 - (id)bodyText;
+- (id)links;
 
 @end

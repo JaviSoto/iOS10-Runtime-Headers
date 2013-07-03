@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableDictionary, QLArchiveViewer, UILabel, MPVolumeView, _UIAsyncInvocation, NSNumberFormatter, QLPreviewItemsSource, NSMutableSet, UIView, UINavigationController, UIBarButtonItem, UIViewController<QLPreviewContentControllerProtocol>, QLProgressView, UITapGestureRecognizer, UIDocumentInteractionController, <QLPreviewItem>, NSString, UIImageView, NSURL;
+@class QLArchiveViewer, UILabel, MPVolumeView, _UIAsyncInvocation, NSNumberFormatter, QLPreviewItemsSource, NSDate, UIView, UIBarButtonItem, UINavigationController, UIViewController<QLPreviewContentControllerProtocol>, UIDocumentInteractionController, <QLPreviewItem>, NSString, NSMutableDictionary;
 
 @interface QLPreviewControllerReserved : NSObject  {
     <QLPreviewItem> *previewItem;
@@ -14,18 +14,16 @@
     int mode;
     int previousMode;
     QLPreviewItemsSource *itemsSource;
-    NSURL *currentPreviewItemURL;
-    NSMutableSet *preloadedPreviewItems;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     _UIAsyncInvocation *cancelViewServiceRequest;
-    int barStyle;
+    NSDate *timeoutDate;
     int previousToolbarStyle;
-    BOOL translucent;
     BOOL previousToolbarWasTranslucent;
     int previousStatusBarStyle;
     UINavigationController *navigationController;
     int overlayState;
     UIBarButtonItem *archiveItem;
+    UIBarButtonItem *listItem;
     UIBarButtonItem *titleItem;
     UIBarButtonItem *actionItem;
     BOOL scrubbing;
@@ -36,31 +34,10 @@
     MPVolumeView *volumeView;
     BOOL internalViewsLoaded;
     UIView *mainView;
-    UIView *clippingView;
-    BOOL clippingViewActive;
-    UIView *zoomView;
-    UIImageView *iconView;
-    UIView *sourceView;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } sourceFrame;
-    UIView *parentControllerView;
     unsigned int statusBarWasHidden : 1;
     unsigned int toolbarWasHidden : 1;
-    unsigned int isDelayingPresentation : 1;
-    unsigned int delayedItemIsLoaded : 1;
     unsigned int isInUIDICPopover : 1;
     NSNumberFormatter *indexFormatter;
-    QLProgressView *progressView;
-    UITapGestureRecognizer *_tapGestureRegnizer;
-    BOOL loadingProgressVisible;
     QLArchiveViewer *archiveViewer;
     UIDocumentInteractionController *interactionController;
     NSMutableDictionary *pdfPreviewDataCache;

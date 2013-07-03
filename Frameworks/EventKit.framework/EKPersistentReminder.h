@@ -18,6 +18,7 @@
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 
+- (BOOL)validate:(id*)arg1;
 - (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
 - (void)setDueDate:(id)arg1;
@@ -34,7 +35,6 @@
 - (unsigned int)displayOrder;
 - (void)setCompleted:(BOOL)arg1;
 - (int)entityType;
-- (BOOL)validate:(id*)arg1;
 - (BOOL)isCompleted;
 - (void)dealloc;
 - (id)description;

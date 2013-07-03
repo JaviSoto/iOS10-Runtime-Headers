@@ -35,8 +35,8 @@
 @property BOOL shouldShowStandardButtons;
 
 + (void)addAdditionalItemsToCalloutBar;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (id)htmlString;
@@ -88,8 +88,7 @@
 - (void)_finishedLoadingURLRequest:(id)arg1 success:(BOOL)arg2;
 - (void)replaceImages;
 - (void)didUndoOrRedo:(id)arg1;
-- (void)menuDidHide;
-- (void)reloadUserStyleSheet;
+- (void)updateQuoteLevelMenu;
 - (void)layoutWithMinimumSize;
 - (void)setPinHeight:(float)arg1;
 - (void)setMailComposeViewDelegate:(id)arg1;

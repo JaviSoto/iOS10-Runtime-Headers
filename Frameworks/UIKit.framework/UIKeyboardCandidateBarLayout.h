@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSArray;
 
 @interface UIKeyboardCandidateBarLayout : UICollectionViewLayout  {
     struct CGSize { 
@@ -10,21 +10,26 @@
         float height; 
     } _contentSize;
     NSMutableArray *_allAttributes;
+    NSArray *_edgeDummyCellAttributes;
 }
 
 @property(retain) NSMutableArray * allAttributes;
+@property(retain) NSArray * edgeDummyCellAttributes;
 
 + (id)layout;
 + (Class)layoutAttributesClass;
++ (id)dummyCellCollectionViewKind;
 
 - (id)init;
 - (void)dealloc;
 - (void)setAllAttributes:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEdgeDummyCellAttributes:(id)arg1;
 - (void)prepareLayout;
+- (id)edgeDummyCellAttributes;
 - (id)allAttributes;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 
 @end

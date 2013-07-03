@@ -25,6 +25,7 @@
 @property(readonly) unsigned int pointCount;
 @property struct PolylineCoordinate { unsigned int x1; float x2; } routeStart;
 @property struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
+@property(readonly) BOOL hasCompletedMapMatching;
 @property(readonly) BOOL isMapMatched;
 @property(readonly) VKPolylineOverlaySection * section;
 @property BOOL trafficSpeed;
@@ -34,6 +35,7 @@
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeStart;
 - (void)splitTrafficSegmentationAndAddTo:(id)arg1 with:(id)arg2;
 - (BOOL)isMapMatched;
+- (BOOL)hasCompletedMapMatching;
 - (id)initWithOverlay:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (void)assignPoints:(struct Vec2Imp<float> { float x1; float x2; }*)arg1 count:(unsigned int)arg2;
 - (struct Vec2Imp<float> { float x1; float x2; })interpolateAt:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg1;

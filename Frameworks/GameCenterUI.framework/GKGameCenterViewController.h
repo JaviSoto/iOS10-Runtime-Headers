@@ -16,6 +16,7 @@
 @property(retain) GKHostedGameCenterViewController * privateViewController;
 @property(retain) GKRemoteGameCenterViewController * remoteViewController;
 @property int leaderboardTimeScope;
+@property(retain) NSString * leaderboardIdentifier;
 @property(retain) NSString * leaderboardCategory;
 @property(retain) NSMutableDictionary * volatileProperties;
 
@@ -23,6 +24,8 @@
 + (BOOL)accessInstanceVariablesDirectly;
 
 - (void)setPrivateViewController:(id)arg1;
+- (void)setLeaderboardCategory:(id)arg1;
+- (id)leaderboardCategory;
 - (BOOL)_remoteControllerIsPresented;
 - (void)setGameCenterDelegate:(id)arg1;
 - (void)_flushVolatileProperties;
@@ -32,12 +35,12 @@
 - (void)setVolatileProperties:(id)arg1;
 - (id)remoteViewController;
 - (void)_setupChildViewController;
-- (id)leaderboardCategory;
 - (void)setLeaderboardTimeScope:(int)arg1;
 - (int)leaderboardTimeScope;
-- (void)setLeaderboardCategory:(id)arg1;
 - (void)notifyDelegateOnWillFinish;
 - (id)gameCenterDelegate;
+- (id)leaderboardIdentifier;
+- (void)setLeaderboardIdentifier:(id)arg1;
 - (void)setViewState:(int)arg1;
 - (int)viewState;
 - (id)init;

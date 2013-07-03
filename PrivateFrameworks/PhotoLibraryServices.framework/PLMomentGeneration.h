@@ -26,7 +26,8 @@
 - (id)_insertYearMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_insertMegaMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_insertMomentsForAssets:(id)arg1 inManagedObjectContext:(id)arg2;
-- (id)affectedMomentsForDate:(id)arg1 inContext:(id)arg2;
+- (id)affectedMomentsForAssetDateCreated:(id)arg1 inContext:(id)arg2;
+- (id)fetchMomentsForEarliestDate:(id)arg1 latestDate:(id)arg2 sorted:(BOOL)arg3 inContext:(id)arg4;
 - (id)momentPhotoLibrary;
 - (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id)arg3;
 - (id)_assets;

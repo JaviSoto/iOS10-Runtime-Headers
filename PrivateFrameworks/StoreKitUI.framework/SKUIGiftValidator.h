@@ -2,12 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUILoadURLOperation, NSURL;
+@class NSOperationQueue, SSVLoadURLOperation, NSURL;
 
 @interface SKUIGiftValidator : NSObject  {
     NSOperationQueue *_operationQueue;
     int _validationCount;
-    SKUILoadURLOperation *_validationOperation;
+    SSVLoadURLOperation *_validationOperation;
     NSURL *_validationURL;
 }
 

@@ -84,12 +84,12 @@
 - (void)setDeviceID:(id)arg1;
 - (id)deviceID;
 - (void)timeout:(id)arg1;
-- (void)setConnection:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 - (id)description;
 - (void)setState:(int)arg1;
 - (int)state;
+- (void)setConnection:(id)arg1;
 - (id)stringForState:(int)arg1;
 - (id)serviceName;
 - (id)initWithServiceName:(id)arg1;

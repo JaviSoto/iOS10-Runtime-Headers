@@ -48,10 +48,11 @@
 - (BOOL)_processHIDEvent:(struct __IOHIDEvent { }*)arg1 taskPort:(unsigned int)arg2 bundleId:(id)arg3;
 - (void)sendEvent:(id)arg1 afterTap:(id)arg2 useGSEvent:(BOOL)arg3 namedTaps:(id)arg4;
 - (void)_installEventTap:(id)arg1;
-- (void)_enumerateEventTapPairsUsingBlock:(id)arg1;
+- (id)_copyCurrentEventTapPairs;
 - (void)_setHIDEventTapCallback:(void*)arg1;
 - (void)_setGSEventTapCallback:(void*)arg1;
 - (void)_reorderEventTaps;
+- (void)_enumerateEventTapPairsUsingBlock:(id)arg1;
 - (void)setInstallationEventRepPost:(id)arg1;
 - (void)setInstallationHIDCallback:(id)arg1;
 - (void)setInstallationGSCallback:(id)arg1;

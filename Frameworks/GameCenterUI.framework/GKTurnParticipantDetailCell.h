@@ -6,7 +6,7 @@
 }
 
 
-- (void)updateLineLayoutConstraints;
 - (void)didUpdateModel;
+- (void)updateLineLayoutConstraints;
 
 @end

@@ -5,8 +5,13 @@
 @interface _UINavigationBarBackIndicatorView : UIImageView  {
 }
 
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (void)setAlpha:(float)arg1;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
 
 @end

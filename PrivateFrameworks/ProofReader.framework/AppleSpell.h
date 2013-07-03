@@ -33,8 +33,6 @@
 }
 
 
-- (void)clearCaches;
-- (id)bundle;
 - (void)addGuessesForKoreanWord:(id)arg1 toMutableArray:(id)arg2 includeAdditionalGuesses:(BOOL)arg3;
 - (id)spellServer:(id)arg1 modificationsForPinyinInputString:(id)arg2 geometryModelData:(id)arg3;
 - (id)spellServer:(id)arg1 _retainedFinalModificationsForPinyinInputString:(id)arg2 geometryModelData:(id)arg3;
@@ -88,7 +86,7 @@
 - (id)spellServer:(id)arg1 suggestCompletionsForPartialWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 inLanguage:(id)arg4;
 - (id)spellServer:(id)arg1 suggestGuessesForWord:(id)arg2 inLanguage:(id)arg3;
 - (id)spellServer:(id)arg1 suggestGuessesForKoreanWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 findMisspelledWordInString:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 languages:(id)arg4 orthography:(id)arg5 checkOrthography:(BOOL)arg6 mutableResults:(id)arg7 offset:(unsigned int)arg8 autocorrect:(BOOL)arg9 keyEventData:(id)arg10 appIdentifier:(id)arg11 wordCount:(int*)arg12 countOnly:(BOOL)arg13 correction:(id*)arg14;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })spellServer:(id)arg1 findMisspelledWordInString:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 languages:(id)arg4 topLanguages:(id)arg5 orthography:(id)arg6 checkOrthography:(BOOL)arg7 mutableResults:(id)arg8 offset:(unsigned int)arg9 autocorrect:(BOOL)arg10 keyEventData:(id)arg11 appIdentifier:(id)arg12 wordCount:(int*)arg13 countOnly:(BOOL)arg14 correction:(id*)arg15;
 - (id)_correctionForString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inString:(id)arg3 tagger:(id)arg4 taggerIndex:(unsigned int)arg5 dictionary:(id)arg6 language:(id)arg7 connection:(struct _PR_DB_IO { unsigned char x1; unsigned char x2; struct _PR_DOC_FORMAT { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned short x_3_1_7; unsigned short x_3_1_8; } x3; unsigned short x4; unsigned short x5; unsigned long *x6; unsigned char x7; short x8; short x9; short x10; short x11; unsigned short x12; struct _PR_DBINIT { struct _PR_FILE {} *x_13_1_1[1]; struct _PR_FILE {} *x_13_1_2; struct _PR_FILE {} *x_13_1_3; struct _PR_FILE {} *x_13_1_4; struct _PR_FILE {} *x_13_1_5; } x13; struct _RULEFILE {} *x14[1]; struct _PR_STATUS { unsigned int x_15_1_1; int x_15_1_2; unsigned short x_15_1_3; } x15; }*)arg8 keyEventData:(id)arg9 alternativeCorrection:(id*)arg10 isApostropheInsertion:(BOOL*)arg11;
 - (id)autocorrectionDictionaryForLanguage:(id)arg1;
 - (id)_orthographyByModifyingOrthography:(id)arg1 withLatinLanguage:(id)arg2;
@@ -105,10 +103,12 @@
 - (unsigned long)encodingForLanguage:(id)arg1;
 - (id)globalNegativeBindictDataArray;
 - (id)globalBindictDataArray;
+- (void)clearCaches;
 - (id)bindictDataArrayForLanguage:(id)arg1 index:(unsigned int)arg2;
 - (id)fallbackLocalizationForLanguage:(id)arg1;
 - (id)localizationForLanguage:(id)arg1;
 - (id)localizationsForLanguage:(id)arg1;
+- (id)bundle;
 - (void)resetTimer;
 - (id)init;
 - (id)spellServer:(id)arg1 alternativesForPinyinInputString:(id)arg2 language:(id)arg3;

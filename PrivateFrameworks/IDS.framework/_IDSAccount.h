@@ -86,7 +86,7 @@
 - (id)aliasStrings;
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
-- (void)clearCallerIDCachesForAccount:(id)arg1;
+- (void)clearCallerIDForAccount:(id)arg1;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)account:(id)arg1 displayNameChanged:(id)arg2;
@@ -102,10 +102,10 @@
 - (id)regionID;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (int)accountType;
 - (void)setPassword:(id)arg1;
-- (BOOL)isActive;
+- (int)accountType;
 - (void)_connect;
+- (BOOL)isActive;
 - (id)uniqueID;
 - (void)dealloc;
 - (id)description;

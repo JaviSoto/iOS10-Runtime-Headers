@@ -14,11 +14,11 @@
 + (id)htmlViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)htmlView;
 
+- (void)setDescriptionText:(id)arg1;
 - (id)html;
 - (id)descriptionText;
 - (id)encodedClassName;
 - (id)commands;
-- (void)setDescriptionText:(id)arg1;
 - (void)setHtml:(id)arg1;
 - (void)setCommands:(id)arg1;
 - (id)groupIdentifier;

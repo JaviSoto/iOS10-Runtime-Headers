@@ -26,13 +26,15 @@
 - (BOOL)_baseResignFirstResponder;
 - (BOOL)_baseBecomeFirstResponder;
 - (struct CGSize { float x1; float x2; })_viewSize;
+- (BOOL)_hasAnyCharacters;
 - (void)_deleteLastCharacter;
 - (void)_appendString:(id)arg1;
 - (id)_textField;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)customBackgroundColor;
-- (void)_setLuminosityBoost:(float)arg1;
 - (void)resetForFailedPasscode;
+- (void)_setLuminosityBoost:(float)arg1;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)reset;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;

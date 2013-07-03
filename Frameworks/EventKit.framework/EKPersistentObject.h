@@ -25,6 +25,7 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (BOOL)validate:(id*)arg1;
 - (void)setCommittedProperties:(id)arg1;
 - (id)committedProperties;
 - (void)primitiveSetDataValue:(id)arg1 forKey:(id)arg2;
@@ -90,14 +91,13 @@
 - (id)primitiveURLValueForKey:(id)arg1;
 - (id)primitiveStringValueForKey:(id)arg1;
 - (void)primitiveSetStringValue:(id)arg1 forKey:(id)arg2;
-- (BOOL)validate:(id*)arg1;
 - (void)rollback;
-- (void)reset;
-- (id)objectID;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (id)dirtyProperties;
 - (void)_setObjectID:(id)arg1;
 - (BOOL)isDirty;
+- (id)objectID;
+- (void)reset;
 - (BOOL)refresh;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

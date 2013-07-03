@@ -5,7 +5,6 @@
 @interface ACDTCCUtilities : NSObject  {
 }
 
-+ (id)_tccStatesKeyForAccountType:(id)arg1;
 + (struct __CFString { }*)_TCCServiceForAccountTypeID:(id)arg1;
 + (BOOL)clearAllTCCStatesForAccountType:(id)arg1;
 + (id)allTCCStatesForAccountType:(id)arg1;

@@ -68,12 +68,11 @@
 - (void)setCtag:(id)arg1;
 - (id)ctag;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
-- (void)setFileName:(id)arg1;
 - (void)setEmail:(id)arg1;
+- (void)setFileName:(id)arg1;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (BOOL)hasComments;
-- (id)timestamp;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)setLastName:(id)arg1;
@@ -84,6 +83,7 @@
 - (id)GUID;
 - (id)email;
 - (void)setTimestamp:(id)arg1;
+- (id)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)userInfo;

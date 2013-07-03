@@ -6,7 +6,7 @@
 }
 
 
-- (id)sectionTitle;
 - (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (id)sectionTitle;
 
 @end

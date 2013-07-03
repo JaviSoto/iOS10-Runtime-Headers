@@ -26,9 +26,9 @@
 - (void)lockDelegateLock;
 - (void)storeWillBeRemoved:(id)arg1;
 - (id)retainedDelegate;
-- (id)localPeerID;
 - (id)initWithPersistentStore:(id)arg1 localPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)store;
 - (id)storeName;
 - (id)init;

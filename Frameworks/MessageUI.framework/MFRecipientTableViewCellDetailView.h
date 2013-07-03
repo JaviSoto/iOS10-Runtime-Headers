@@ -2,13 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UILabel, UIColor, NSArray;
+@class UIColor, UILabel;
 
 @interface MFRecipientTableViewCellDetailView : UIView <MFTinting> {
     UIColor *_tintColor;
     BOOL _labelIsHidden;
-    NSArray *_withLabelLayoutConstraints;
-    NSArray *_sansLabelLayoutConstraints;
     BOOL _shouldDim;
     BOOL _highlighted;
     UILabel *_labelLabel;
@@ -20,12 +18,12 @@
 @property BOOL highlighted;
 @property BOOL shouldDim;
 
++ (id)labelStringAttributes;
 + (id)groupStringAttributes;
 + (id)defaultStringAttributes;
 + (float)lineHeight;
 
 - (void)_recalculateLabelColors;
-- (id)_layoutConstraintsWithLabelText:(BOOL)arg1;
 - (BOOL)shouldDim;
 - (void)setShouldDim:(BOOL)arg1;
 - (void)setTintColor:(id)arg1 animated:(BOOL)arg2;

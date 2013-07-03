@@ -19,8 +19,8 @@
 - (id)init;
 - (void)dealloc;
 - (id)description;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (id)queue;
 
 @end

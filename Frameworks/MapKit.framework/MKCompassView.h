@@ -2,29 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary, UIColor, NSAttributedString;
+@class CALayer;
 
 @interface MKCompassView : UIView  {
-    float _yaw;
-    float _degrees;
-    float _scale;
-    UIColor *_discColor;
-    UIColor *_ticColor;
-    UIColor *_arrowColor;
-    NSAttributedString *_nString;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _nStringDrawPoint;
-    NSDictionary *_degreeFontAttributes;
+    CALayer *_imageLayer;
 }
 
 @property float yaw;
 
 
 - (void)setYaw:(float)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)dealloc;
+- (void)layoutSubviews;
 
 @end

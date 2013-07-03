@@ -29,7 +29,6 @@
         unsigned int horizontallyResizable : 1; 
         unsigned int verticallyResizable : 1; 
     } _tcvFlags;
-    BOOL _tilingEnabled;
 }
 
 @property NSTextContainer * textContainer;
@@ -41,7 +40,7 @@
 @property struct CGSize { float x1; float x2; } minSize;
 @property struct CGSize { float x1; float x2; } maxSize;
 @property(copy) NSDictionary * linkTextAttributes;
-@property(getter=isTilingEnabled) BOOL tilingEnabled;
+@property BOOL usesTiledViews;
 @property int layoutOrientation;
 
 + (Class)layerClass;
@@ -55,6 +54,7 @@
 - (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })textContainerInset;
 - (id)linkTextAttributes;
+- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
 - (void)invalidateTextContainerOrigin;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
@@ -70,17 +70,16 @@
 - (BOOL)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withExtensionFactor:(float)arg2 minimumExtensionDistance:(float)arg3 repetitions:(unsigned int)arg4;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_extendedGlyphRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 maxGlyphIndex:(unsigned int)arg2 drawingToScreen:(BOOL)arg3;
 - (BOOL)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withExtension:(BOOL)arg2;
-- (BOOL)tilingEnabled;
 - (void)_ensureMinAndMaxSizesConsistentWithBounds;
 - (void)setLinkTextAttributes:(id)arg1;
 - (void)setTextContainerInset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHorizontallyResizable:(BOOL)arg1;
+- (BOOL)usesTiledViews;
 - (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUsesTiledViews:(BOOL)arg1;
 - (void)setVerticallyResizable:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
-- (BOOL)isTilingEnabled;
-- (void)setTilingEnabled:(BOOL)arg1;
+- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLayoutOrientation:(int)arg1;
 - (id)textContainer;
 - (BOOL)isHorizontallyResizable;

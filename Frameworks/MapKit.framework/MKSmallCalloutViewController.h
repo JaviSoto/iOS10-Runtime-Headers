@@ -18,15 +18,16 @@
 + (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void)setDetailView:(id)arg1;
+- (void)setCalloutSubtitle:(id)arg1;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setCalloutBackgroundView:(id)arg1;
 - (id)calloutBackgroundView;
 - (id)detailView;
-- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
-- (void)beginMapsTransitionMovingSideways;
 - (id)_smallCalloutView;
+- (void)updatePreferredContentSize;
+- (void)beginMapsTransitionMovingSideways;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
-- (void)setCalloutSubtitle:(id)arg1;
+- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
 - (void)setCalloutTitle:(id)arg1;
@@ -38,9 +39,9 @@
 - (void)setLeftView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

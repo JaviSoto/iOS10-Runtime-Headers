@@ -2,13 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, <SKUISearchFieldDelegate>, SKUICompletionList, SKUIClientContext, SKUILoadURLOperation, UISearchBar, UIViewController, ASSearchDisplayController;
+@class NSOperationQueue, SSVLoadURLOperation, <SKUISearchFieldDelegate>, SKUICompletionList, SKUIClientContext, UISearchBar, UIViewController, ASSearchDisplayController;
 
 @interface SKUISearchFieldController : NSObject <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
     SKUIClientContext *_clientContext;
     SKUICompletionList *_completionList;
     <SKUISearchFieldDelegate> *_delegate;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     NSOperationQueue *_operationQueue;
     ASSearchDisplayController *_searchDisplayController;
     int _numberOfSearchResults;

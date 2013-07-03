@@ -39,6 +39,12 @@
 @property NSObject<OS_dispatch_queue> * _queue;
 
 
+- (void)set_callback:(id)arg1;
+- (id)_callback;
+- (void)set_queue:(id)arg1;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 completionBlock:(id)arg5 queue:(id)arg6;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
+- (id)_queue;
 - (void)set_BOMCopier:(void*)arg1;
 - (void*)_BOMCopier;
 - (void)setInProgress:(BOOL)arg1;
@@ -51,12 +57,6 @@
 - (id)_temporaryCopierPath;
 - (id)inputURL;
 - (void)_fillOutputURLFromInputURL;
-- (void)set_callback:(id)arg1;
-- (id)_callback;
-- (void)set_queue:(id)arg1;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 completionBlock:(id)arg5 queue:(id)arg6;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
-- (id)_queue;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

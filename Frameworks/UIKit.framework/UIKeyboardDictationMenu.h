@@ -13,9 +13,9 @@
 - (void)setKeyboardDimmedForDictation:(BOOL)arg1;
 - (BOOL)centerPopUpOverKey;
 - (void)performShowAnimation;
-- (BOOL)usesDimmingView;
 - (struct CGSize { float x1; float x2; })preferredSize;
 - (BOOL)usesTable;
+- (BOOL)usesDimmingView;
 - (void)fade;
 - (void)fadeWithDelay:(double)arg1;
 - (void)hide;

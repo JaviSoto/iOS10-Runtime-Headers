@@ -29,8 +29,8 @@
 - (void)_updateLocationRunState;
 - (void)_assetContainerChanged:(id)arg1;
 - (void)_applicationStateChanged:(id)arg1;
-- (id)location;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (id)location;
 - (void)setEnabled:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;

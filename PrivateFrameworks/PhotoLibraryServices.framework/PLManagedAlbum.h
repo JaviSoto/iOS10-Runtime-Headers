@@ -6,12 +6,10 @@
 
 @interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAlbumProtocol> {
     BOOL _resolvingConflicts;
-    BOOL stackedImageNeedsUpdate;
     BOOL albumShouldBeAutomaticallyDeleted;
 }
 
 @property BOOL resolvingConflicts;
-@property BOOL stackedImageNeedsUpdate;
 @property BOOL albumShouldBeAutomaticallyDeleted;
 @property(readonly) NSString * uuid;
 @property(readonly) NSString * title;
@@ -59,7 +57,6 @@
 + (id)keyPathsForValuesAffectingApproximateCount;
 + (id)assetOrderByAbumUUIDs;
 + (id)pathToAssetAlbumOrderStructure;
-+ (BOOL)deviceSupportsStackedImages;
 + (void)clearAssetOrderByAbumUUIDs;
 
 - (void)setResolvingConflicts:(BOOL)arg1;
@@ -82,27 +79,24 @@
 - (id)_assetOrderByAssetUUID;
 - (void)_recalculateCachedCounts;
 - (unsigned int)_albumStandInCount;
+- (void)unregisterForChanges;
+- (void)registerForChanges;
 - (id)_keysToBeObserved;
 - (id)_expectedKeyAsset;
 - (BOOL)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3;
 - (void)setAlbumShouldBeAutomaticallyDeleted:(BOOL)arg1;
 - (BOOL)albumShouldBeAutomaticallyDeleted;
-- (void)setStackedImageNeedsUpdate:(BOOL)arg1;
-- (void)_handleStackedImageNeedsUpdate:(BOOL)arg1;
-- (BOOL)stackedImageNeedsUpdate;
 - (void)_updateKeyAssetIfNeeded;
 - (void)persistMetadataToFileSystem;
 - (void)refreshAssets;
 - (void)addAssetUsingiTunesAlbumOrder:(id)arg1;
-- (void)registerForChanges;
-- (void)unregisterForChanges;
 - (unsigned int)videosCount;
 - (unsigned int)assetsCount;
 - (unsigned int)approximateCount;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (id)mutableAssets;
 - (id)filteredIndexesForPredicate:(id)arg1;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (unsigned int)photosCount;
 - (void)didSave;
 - (void)awakeFromSnapshotEvents:(unsigned int)arg1;

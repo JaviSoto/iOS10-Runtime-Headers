@@ -34,6 +34,7 @@
 @property long long afterPromoClipID;
 @property(copy) NSDictionary * promoContent;
 @property(copy) NSString * debugMessage;
+@property(copy) NSDate * dateAdded;
 @property(readonly) NSDictionary * dictionaryRepresentation;
 
 
@@ -52,6 +53,7 @@
 - (int)likeStatus;
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
+- (id)dateAdded;
 - (id)copyrightText;
 - (long long)beforePromoClipID;
 - (id)artworkURLData;
@@ -80,6 +82,7 @@
 - (void)setAlbumID:(long long)arg1;
 - (void)setPreviewURL:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
+- (void)setDateAdded:(id)arg1;
 - (void)setStoreID:(long long)arg1;
 - (void)setWishListDate:(id)arg1;
 - (void)setInWishList:(BOOL)arg1;

@@ -43,6 +43,7 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

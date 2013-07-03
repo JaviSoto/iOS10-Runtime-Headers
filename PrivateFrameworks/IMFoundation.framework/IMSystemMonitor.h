@@ -68,7 +68,6 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isActive;
 - (void)setUserIdleToken:(int)arg1;
 - (int)userIdleToken;
 - (BOOL)isInBackground;
@@ -148,6 +147,7 @@
 - (void)_postScreenSaverStarted;
 - (void)_postScreenLocked;
 - (void)_deliverNotificationSelector:(SEL)arg1;
+- (BOOL)isActive;
 - (void)_unregisterForLoginWindowNotifications;
 - (void)_unregisterForRestoreNotifications;
 - (void)_registerForRestoreNotifications;

@@ -16,7 +16,7 @@
 - (id)observers;
 - (void)setObservers:(id)arg1;
 - (void)dealloc;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

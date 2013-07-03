@@ -40,7 +40,6 @@
 - (BOOL)isRawCaptureSupported;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
-- (void)_updateHDRSceneMonitoring;
 - (BOOL)isRawCaptureEnabled;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
@@ -53,7 +52,6 @@
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)isYoMamaWearsCombatBootsSupported;
 - (BOOL)isHDRSupported;
-- (void)didStartForSession:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)init;

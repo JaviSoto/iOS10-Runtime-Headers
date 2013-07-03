@@ -25,8 +25,8 @@
 - (BOOL)recoverBaselineMetadataWithImportContext:(id)arg1 error:(id*)arg2;
 - (BOOL)recoverMetadataWithError:(id*)arg1;
 - (id)initWithStore:(id)arg1 localPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)store;
 - (id)storeName;
 - (void)dealloc;

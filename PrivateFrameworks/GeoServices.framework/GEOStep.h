@@ -51,7 +51,6 @@
     } _has;
 }
 
-@property(readonly) int exitType;
 @property(readonly) unsigned int maneuverEndIndex;
 @property(readonly) unsigned int maneuverStartIndex;
 @property(readonly) BOOL hasHintFirstAnnouncementIndex;
@@ -101,13 +100,15 @@
 @property(retain) NSString * notice;
 
 
-- (id)intersectionNameInfo;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (BOOL)maneuverIsHighwayExit;
 - (void)shieldInfo:(id)arg1;
+- (id)intersectionNameInfo;
 - (int)hintFirstAnnouncementIndex;
 - (BOOL)hasHintFirstAnnouncementIndex;
 - (id)firstNameInfo;
+- (id)maneuverDescription;
 - (unsigned int)maneuverEndIndex;
 - (unsigned int)maneuverStartIndex;
 - (id)substeps;
@@ -215,6 +216,5 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)exitType;
 
 @end

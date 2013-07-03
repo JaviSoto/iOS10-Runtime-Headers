@@ -10,13 +10,13 @@
 @property(retain) NSString * tzid;
 
 
-- (BOOL)hasFloatingTimeZone;
 - (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
 - (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
 - (void)setTzid:(id)arg1;
 - (id)tzid;
 - (BOOL)hasTimeComponent;
 - (id)parametersToIncludeForChecksumVersion:(int)arg1;
+- (BOOL)hasFloatingTimeZone;
 - (id)initWithValue:(id)arg1;
 - (id)description;
 - (id)components;

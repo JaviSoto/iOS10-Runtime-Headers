@@ -78,8 +78,8 @@
 + (struct CGSize { float x1; float x2; })_legacy_adjustSizeForWebKitConstraining:(struct CGSize { float x1; float x2; })arg1 withFont:(id)arg2;
 + (id)_defaultAttributes;
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -100,6 +100,7 @@
 - (BOOL)isEnabled;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)minimumFontSize;
+- (id)_image;
 - (void)setMinimumScaleFactor:(float)arg1;
 - (float)minimumScaleFactor;
 - (void)_setDrawsDebugBaselines:(BOOL)arg1;
@@ -129,7 +130,6 @@
 - (float)_firstLineCapFrameOriginY;
 - (float)_firstLineBaselineOffsetFromBoundsTop;
 - (float)_capOffsetFromBoundsTop;
-- (int)_measuredNumberOfLines;
 - (float)preferredMaxLayoutWidth;
 - (BOOL)drawsUnderline;
 - (void)setDrawsUnderline:(BOOL)arg1;
@@ -180,6 +180,7 @@
 - (void)_setText:(id)arg1;
 - (void)_invalidateAsNeededForNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)currentTextColor;
+- (id)_compatabilityAttributedString;
 - (id)letterpressStyle;
 - (void)_setSynthesizedAttributedText:(id)arg1;
 - (id)_defaultAttributes;
@@ -187,6 +188,7 @@
 - (struct CGSize { float x1; float x2; })textSize;
 - (id)_stringDrawingContext;
 - (void)updateConstraints;
+- (int)_measuredNumberOfLines;
 - (void)setBaselineAdjustment:(int)arg1;
 - (void)_setMinimumFontSize:(float)arg1;
 - (void)setNumberOfLines:(int)arg1;
@@ -197,6 +199,7 @@
 - (BOOL)adjustsFontSizeToFitWidth;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_setFont:(id)arg1;
 - (id)_synthesizedAttributedText;
@@ -206,7 +209,6 @@
 - (id)_scriptingInfo;
 - (float)_baselineOffsetFromBottom;
 - (float)_minimumFontSize;
-- (BOOL)isHighlighted;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setAttributedText:(id)arg1;
@@ -224,5 +226,6 @@
 - (void)_gkUpdateWithCharacterCount:(int)arg1 numberOfCharactersAllowed:(int)arg2;
 - (BOOL)labelTextIsTruncated;
 - (id)accessibilityValue;
+- (BOOL)_accessibilityIsScannerElement;
 
 @end

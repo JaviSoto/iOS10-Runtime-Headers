@@ -15,8 +15,8 @@
 
 @property BOOL showsExtendedRangeSwitch;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (BOOL)showsExtendedRangeSwitch;
@@ -26,6 +26,7 @@
 - (id)usesExtendedRangeForSpecifier:(id)arg1;
 - (void)setUsesExtendedRange:(id)arg1 forSpecifier:(id)arg2;
 - (void)updateExampleFonts;
+- (void)sizeCategoryDidChange:(id)arg1;
 - (id)specifiers;
 - (void)dealloc;
 - (void)loadView;

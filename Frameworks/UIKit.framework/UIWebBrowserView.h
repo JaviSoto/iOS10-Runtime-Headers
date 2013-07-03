@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, DOMNode, NSTimer, NSObject<UIFormPeripheral>, <UIWebAutoFillDelegate>, UIWebFormDelegate, UIWebPDFView, NSMutableSet, UIWebFormAccessory, NSHashTable, UIResponder, UIWebTouchEventsGestureRecognizer;
+@class NSMutableArray, DOMNode, NSTimer, NSObject<UIFormPeripheral>, <UIWebAutoFillDelegate>, UIWebFormDelegate, UIWebPDFView, NSMutableSet, UIWebFormAccessory, NSHashTable, NSString, UIResponder, UIWebTouchEventsGestureRecognizer;
 
 @interface UIWebBrowserView : UIWebDocumentView <UIWebTouchEventsGestureRecognizerDelegate, UIWebFormAccessoryDelegate, _UIWebRotationDelegate> {
     UIWebFormAccessory *_accessory;
@@ -78,20 +78,22 @@
 @property BOOL alwaysDispatchesScrollEvents;
 @property <UIWebAutoFillDelegate> * autoFillDelegate;
 @property unsigned int audioSessionCategoryOverride;
+@property NSString * networkInterfaceName;
 
 + (void)initialize;
 + (float)preferredScrollDecelerationFactor;
 + (id)_PDFPageNumberLabel:(BOOL)arg1;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)_input;
-- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)networkInterfaceName;
 - (unsigned int)audioSessionCategoryOverride;
+- (BOOL)isEditable;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
@@ -127,7 +129,7 @@
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4;
 - (struct CGPoint { float x1; float x2; })_convertWindowPointToViewport:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)canAutoFill;
+- (void)_webViewFormEditedStatusHasChanged:(id)arg1;
 - (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForScrollView:(id)arg1;
 - (float)scaleForProposedNewScale:(float)arg1 andOldScale:(float)arg2;
@@ -187,9 +189,9 @@
 - (void)accessoryTab:(BOOL)arg1;
 - (BOOL)_hasSubviewContainingWebContent:(id)arg1;
 - (BOOL)_isAutoFilling;
-- (void)_webViewFormEditedStatusHasChanged:(id)arg1;
 - (id)autoFillDelegate;
 - (void)_keyboardDidChangeFrame:(id)arg1;
+- (void)setNetworkInterfaceName:(id)arg1;
 - (void)setAudioSessionCategoryOverride:(unsigned int)arg1;
 - (BOOL)alwaysDispatchesScrollEvents;
 - (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
@@ -235,9 +237,9 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_didScroll;
+- (BOOL)_requiresKeyboardWhenFirstResponder;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)keyCommands;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)_requiresKeyboardWhenFirstResponder;
 
 @end

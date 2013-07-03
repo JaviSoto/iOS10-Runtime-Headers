@@ -60,10 +60,10 @@
 - (BOOL)cancelDownload:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)removeObserver:(id)arg1;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (void)getDownloadsUsingBlock:(id)arg1;
-- (void)removeObserver:(id)arg1;
 
 @end

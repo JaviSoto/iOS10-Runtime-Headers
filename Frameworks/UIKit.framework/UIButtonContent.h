@@ -10,6 +10,7 @@
     UIImage *image;
     UIImage *background;
     UIColor *titleColor;
+    UIColor *imageColor;
     UIColor *shadowColor;
     NSNumber *drawingStroke;
 }
@@ -19,6 +20,7 @@
 @property(retain) UIImage * image;
 @property(retain) UIImage * background;
 @property(retain) UIColor * titleColor;
+@property(retain) UIColor * imageColor;
 @property(retain) UIColor * shadowColor;
 @property(retain) NSNumber * drawingStroke;
 @property(retain) _UIGraphicsLetterpressStyle * letterpressStyle;
@@ -37,6 +39,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDrawingStroke:(id)arg1;
 - (id)drawingStroke;
+- (void)setImageColor:(id)arg1;
+- (id)imageColor;
 - (void)setTitleColor:(id)arg1;
 - (id)titleColor;
 - (void)setBackground:(id)arg1;

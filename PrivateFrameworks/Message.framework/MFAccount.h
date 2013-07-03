@@ -24,6 +24,7 @@
 @property(retain) NSString * hostname;
 @property(retain) NSString * displayName;
 @property(copy) NSString * sourceApplicationBundleIdentifier;
+@property(readonly) ACAccount * accountForRenewingCredentials;
 
 + (id)saslProfileName;
 + (BOOL)isSSLEditable;
@@ -104,6 +105,7 @@
 - (unsigned int)portNumber;
 - (unsigned int)defaultPortNumber;
 - (unsigned int)defaultSecurePortNumber;
+- (id)accountForRenewingCredentials;
 - (BOOL)setCredentialItem:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)credentialItemForKey:(id)arg1 error:(id*)arg2;
 - (id)preferredAuthScheme;
@@ -123,19 +125,19 @@
 - (BOOL)requiresAuthentication;
 - (id)accountClass;
 - (id)accountPropertyForKey:(id)arg1;
+- (void)setPassword:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (id)credentialItemForKey:(id)arg1;
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
-- (void)setPassword:(id)arg1;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)parentAccountIdentifier;
 - (id)enabledDataclasses;
-- (BOOL)isActive;
 - (id)parentAccount;
 - (id)username;
+- (BOOL)isActive;
 - (void)setHostname:(id)arg1;
 - (id)hostname;
 - (id)init;

@@ -73,11 +73,11 @@
 - (void)incrementRevision;
 - (BOOL)deleteFromLibrary;
 - (BOOL)setValuesForPropertiesWithDictionary:(id)arg1;
+- (void)setValues:(id)arg1 forProperties:(id)arg2 async:(BOOL)arg3 withCompletionBlock:(id)arg4;
 - (BOOL)matchesPredicate:(id)arg1;
 - (BOOL)existsInLibrary;
 - (id)copyInLibrary:(id)arg1;
 - (void)didChangeValueForProperties:(id)arg1;
-- (void)setValues:(id)arg1 forProperties:(id)arg2 async:(BOOL)arg3 withCompletionBlock:(id)arg4;
 - (BOOL)setValues:(id)arg1 forProperties:(id)arg2;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (id)library;

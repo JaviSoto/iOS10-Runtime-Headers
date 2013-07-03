@@ -45,8 +45,8 @@
 - (id)initWithDictionary:(id)arg1 clientInterface:(id)arg2;
 - (void)loadFromDictionary:(id)arg1;
 - (id)placeholderString;
-- (int)location;
 - (float)width;
+- (int)location;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

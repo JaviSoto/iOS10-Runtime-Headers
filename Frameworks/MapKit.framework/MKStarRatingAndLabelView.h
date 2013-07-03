@@ -17,8 +17,8 @@
 @property int numberOfReviews;
 @property(retain) NSString * sourceName;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)reviewsLabel;
 - (id)starRatingView;

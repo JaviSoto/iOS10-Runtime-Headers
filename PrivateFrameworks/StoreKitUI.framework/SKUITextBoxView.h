@@ -19,6 +19,12 @@
     UILabel *_ratingLabel;
     UILabel *_subtitleLabel;
     struct __CTFrame { } *_textFrame;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _titleInsets;
     UILabel *_titleLabel;
     struct __CTFrame { } *_titleTextFrame;
     struct __CTLine { } *_truncationToken;
@@ -28,6 +34,7 @@
 
 @property(retain) SKUIColorScheme * colorScheme;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleInsets;
 @property int numberOfVisibleLines;
 @property int truncationStyle;
 @property(copy) NSString * moreButtonTitle;
@@ -36,6 +43,8 @@
 @property(copy) NSString * ratingText;
 
 
+- (void)setTitleInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleInsets;
 - (int)truncationStyle;
 - (int)numberOfVisibleLines;
 - (void)setTruncationStyle:(int)arg1;
@@ -54,9 +63,9 @@
 - (id)colorScheme;
 - (void)setRating:(float)arg1;
 - (float)rating;
-- (void)reset;
 - (void)setTitle:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)reset;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

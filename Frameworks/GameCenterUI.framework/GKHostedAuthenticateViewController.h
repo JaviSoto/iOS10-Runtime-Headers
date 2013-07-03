@@ -17,6 +17,7 @@
 
     UIAlertView *_alert;
     NSError *_error;
+    int _mode;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -26,6 +27,7 @@
 
 @property(retain) UIAlertView * alert;
 @property(retain) NSError * error;
+@property int mode;
 @property(copy) id dismissCompletionHandler;
 @property(copy) id completionHandler;
 @property BOOL disablesSignIn;
@@ -34,18 +36,21 @@
 
 - (void)setAlert:(id)arg1;
 - (id)alert;
-- (BOOL)disablesSignIn;
 - (void)setDisablesSignIn:(BOOL)arg1;
+- (BOOL)disablesSignIn;
+- (void)showPasswordChangeAlertWithURL:(id)arg1;
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)hostSideViewControllerClassName;
 - (id)serviceSideViewControllerClassName;
-- (id)init;
+- (id)initWithMode:(int)arg1;
+- (void)setMode:(int)arg1;
 - (void)dealloc;
 - (void)setError:(id)arg1;
 - (id)error;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (id)dismissCompletionHandler;
 - (void)setCompletionHandler:(id)arg1;
+- (int)mode;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;

@@ -2,10 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+@class NSArray;
+
 @interface ABCardLinkedCardsGroup : ABCardGroup  {
+    NSArray *_linkedContacts;
 }
 
+@property(retain) NSArray * linkedContacts;
 
+
+- (void)setLinkedContacts:(id)arg1;
+- (id)linkedContacts;
 - (id)editingItems;
 - (id)displayItems;
 - (id)title;

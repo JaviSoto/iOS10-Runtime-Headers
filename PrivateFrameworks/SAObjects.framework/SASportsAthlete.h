@@ -12,6 +12,7 @@
 @property(copy) NSArray * careerStatistics;
 @property(copy) NSString * firstName;
 @property(copy) NSArray * formattedMetadata;
+@property(copy) NSArray * formattedMetadataTypes;
 @property(copy) NSString * gender;
 @property(copy) NSString * height;
 @property(copy) NSNumber * injured;
@@ -36,6 +37,8 @@
 - (id)jerseyNumber;
 - (void)setInjured:(id)arg1;
 - (id)injured;
+- (void)setFormattedMetadataTypes:(id)arg1;
+- (id)formattedMetadataTypes;
 - (void)setFormattedMetadata:(id)arg1;
 - (id)formattedMetadata;
 - (void)setCareerStatistics:(id)arg1;

@@ -2,40 +2,53 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class ComplexCodeFooterView, NSString, UIButton;
+@class UIAlertView, NSString, UIButton;
 
-@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController  {
-    BOOL _inConfirmation;
-    NSString *_firstPasscodeEntry;
+@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+    NSString *_generatedCode;
     BOOL _passcodeMismatch;
-    UIButton *_complexCodeButton;
-    ComplexCodeFooterView *_descriptionFooterView;
-    BOOL _usingGeneratedCode;
-    BOOL _useComplexCode;
+    UIButton *_footerButton;
+    UIAlertView *_forgotSecurityCodeAlert;
+    BOOL _forgotCodeAlertHasApproveButton;
+    UIAlertView *_resetKeychainAlert;
+    UIAlertView *_weakSecurityCodeAlert;
+    BOOL _showsAdvancedSettings;
     int _mode;
+    int _securityCodeType;
+    NSString *_firstPasscodeEntry;
 }
 
 @property int mode;
-@property BOOL useComplexCode;
+@property int securityCodeType;
+@property BOOL showsAdvancedSettings;
+@property(retain) NSString * firstPasscodeEntry;
 
 
-- (BOOL)useComplexCode;
-- (void)textEntryViewDidChange:(id)arg1;
+- (void)setShowsAdvancedSettings:(BOOL)arg1;
+- (BOOL)showsAdvancedSettings;
 - (id)placeholderText;
-- (void)setUseComplexCode:(BOOL)arg1;
+- (void)textEntryViewDidChange:(id)arg1;
 - (void)didFinishEnteringPasscode:(id)arg1;
 - (void)animatePasscodeFieldLeft:(BOOL)arg1;
+- (void)updateNextButton;
+- (void)forgotSecurityCode;
 - (void)generateRandomCode;
+- (void)showAdvancedOptions;
 - (void)nextPressed;
-- (void)toggleCodeComplexity;
+- (id)textEntryCell;
+- (Class)textEntryCellClass;
 - (void)keyboardWillShow:(id)arg1;
+- (void)setFirstPasscodeEntry:(id)arg1;
+- (id)firstPasscodeEntry;
+- (void)setSecurityCodeType:(int)arg1;
+- (int)securityCodeType;
 - (id)specifiers;
-- (void)setSpecifier:(id)arg1;
 - (id)init;
 - (void)setMode:(int)arg1;
 - (void)dealloc;
 - (int)mode;
-- (void)loadView;
+- (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

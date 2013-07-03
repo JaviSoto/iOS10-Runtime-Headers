@@ -25,10 +25,10 @@
 - (id)locationManagerRoutine;
 - (void)setLocationManagerRoutine:(id)arg1;
 - (void)createConnection;
-- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

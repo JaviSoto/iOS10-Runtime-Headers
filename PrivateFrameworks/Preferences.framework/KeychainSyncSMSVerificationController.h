@@ -6,17 +6,16 @@
 
 @interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController  {
     NSString *_phoneNumber;
-    NSString *_countryCode;
+    NSString *_dialingPrefix;
 }
 
 @property(retain) NSString * phoneNumber;
-@property(retain) NSString * countryCode;
+@property(retain) NSString * dialingPrefix;
 
 
-- (id)placeholderText;
 - (id)specifiers;
-- (id)countryCode;
-- (void)setCountryCode:(id)arg1;
+- (id)dialingPrefix;
+- (void)setDialingPrefix:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (id)init;
 - (void)dealloc;

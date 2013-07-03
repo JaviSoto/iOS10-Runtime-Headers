@@ -2,19 +2,23 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABGroupWrapper;
+@class ABStyleProvider, ABGroupWrapper;
 
 @interface ABGroupTableCell : UITableViewCell <ABGroupWrapperDelegate> {
     ABGroupWrapper *_groupWrapper;
+    ABStyleProvider *_styleProvider;
 }
 
 @property(retain) ABGroupWrapper * groupWrapper;
+@property(retain) ABStyleProvider * styleProvider;
 
 
-- (id)groupWrapper;
 - (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (void)updateFromGroupWrapper;
+- (id)groupWrapper;
 - (void)setGroupWrapper:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)dealloc;
 
 @end

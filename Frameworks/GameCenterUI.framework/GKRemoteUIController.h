@@ -10,6 +10,7 @@
 
 @interface GKRemoteUIController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate, GKRemoteUIAuxiliaryViewDelegate> {
     BOOL _loading;
+    BOOL _shouldApplyGameCenterTheme;
     BOOL _accountChanged;
     BOOL _previousUseCustomBackButtonActionValue;
     BOOL _loadingInitialUI;
@@ -37,11 +38,13 @@
   /* Error parsing encoded ivar type info: @? */
     id _loadHandler;
 
+    int _layoutStyle;
 }
 
 @property(copy) id completionHandler;
 @property(retain) NSError * error;
 @property BOOL loading;
+@property BOOL shouldApplyGameCenterTheme;
 @property(readonly) NSString * bagKey;
 @property(readonly) NSURL * fallbackURL;
 @property(retain) NSString * authToken;
@@ -62,9 +65,11 @@
 @property(retain) NSURL * url;
 @property(copy) id loadHandler;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
+@property int layoutStyle;
 
 + (id)remoteUIController;
 
+- (void)setLayoutStyle:(int)arg1;
 - (BOOL)loading;
 - (void)setLoading:(BOOL)arg1;
 - (void)objectModel:(id)arg1 page:(id)arg2 toggledEditing:(BOOL)arg3;
@@ -93,10 +98,12 @@
 - (void)setLoader:(id)arg1;
 - (void)setObjectModels:(id)arg1;
 - (BOOL)accountChanged;
+- (void)setShouldApplyGameCenterTheme:(BOOL)arg1;
 - (void)loadInitialRemoteUIWithHandler:(id)arg1;
 - (void)configureFromBagKey:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)auxiliaryView:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)auxiliaryView:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
+- (id)addThemeInfoToAttributes:(id)arg1;
 - (void)updatePostbackDictionary:(id)arg1 withHandler:(id)arg2;
 - (void)takeValuesFromClientInfo:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)performAction:(int)arg1 withObjectModel:(id)arg2;
@@ -104,12 +111,13 @@
 - (void)presentObjectModel:(id)arg1 animated:(BOOL)arg2;
 - (void)popObjectModelAnimated:(BOOL)arg1;
 - (void)replaceObjectModelAtIndex:(unsigned int)arg1 withObjectObjectModel:(id)arg2;
-- (void)presentInParentNavigationController:(id)arg1;
+- (void)presentInParentNavigationController:(id)arg1 animated:(BOOL)arg2;
 - (void)setPresentedRemoteUIController:(id)arg1;
 - (id)presentedRemoteUIController;
 - (void)fireCompletionHandler;
 - (int)indexOfVisiblePage;
 - (id)staticViewControllers;
+- (void)updateAccountAndMarkComplete:(BOOL)arg1 completionHandler:(id)arg2;
 - (void)setAccountChanged:(BOOL)arg1;
 - (void)didLoadURL:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)loader;
@@ -121,6 +129,8 @@
 - (void)setLoadingInitialUI:(BOOL)arg1;
 - (void)setLoadHandler:(id)arg1;
 - (id)fallbackURL;
+- (BOOL)shouldApplyGameCenterTheme;
+- (int)layoutStyle;
 - (id)objectModels;
 - (void)setStaticViewControllers:(id)arg1;
 - (void)setNavigationController:(id)arg1;

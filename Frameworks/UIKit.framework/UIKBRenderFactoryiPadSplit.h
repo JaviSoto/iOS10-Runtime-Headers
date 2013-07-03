@@ -14,6 +14,7 @@
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
+- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;

@@ -35,12 +35,12 @@
 + (id)sharedInstance;
 
 - (void)reloadNetworkType;
-- (id)dataStatusIndicator;
 - (void)_reloadCellularRestriction;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (void)setNetworkType:(int)arg1;
 - (id)modemRegistrationStatus;
+- (id)dataStatusIndicator;
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;

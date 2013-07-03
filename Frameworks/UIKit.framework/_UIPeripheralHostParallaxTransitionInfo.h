@@ -2,15 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIPeripheralHostParallaxTransitionInfo : NSObject  {
-    BOOL _transitionToKeyboard;
+@interface _UIPeripheralHostParallaxTransitionInfo : NSObject <_UIPeripheralHostCustomTransition> {
     float _parallaxOffset;
     float _gapBetweenViews;
     int _style;
     int _operation;
 }
 
-@property BOOL transitionToKeyboard;
 @property float parallaxOffset;
 @property float gapBetweenViews;
 @property int style;
@@ -21,11 +19,10 @@
 - (int)style;
 - (float)parallaxOffset;
 - (float)gapBetweenViews;
-- (BOOL)transitionToKeyboard;
+- (void)computeTransition:(id)arg1 forHost:(id)arg2;
 - (void)setOperation:(int)arg1;
 - (int)operation;
 - (void)setParallaxOffset:(float)arg1;
 - (void)setGapBetweenViews:(float)arg1;
-- (void)setTransitionToKeyboard:(BOOL)arg1;
 
 @end

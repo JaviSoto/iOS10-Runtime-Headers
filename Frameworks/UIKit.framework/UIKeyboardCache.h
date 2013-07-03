@@ -19,8 +19,10 @@
 - (id)uniqueLayoutsFromInputModes:(id)arg1;
 - (id)dataForContext:(struct CGContext { }*)arg1;
 - (struct CGContext { }*)_imageContextForView:(id)arg1;
+- (struct CGContext { }*)_imageContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 invert:(BOOL)arg4;
 - (void)displayView:(id)arg1 fromLayout:(id)arg2;
 - (struct CGImage { }*)cachedImageForKey:(id)arg1 fromLayout:(id)arg2;
+- (struct CGImage { }*)cachedCompositeImageForCacheKeys:(id)arg1 fromLayout:(id)arg2;
 - (void)displayView:(id)arg1 imageWidth:(float)arg2 fromLayout:(id)arg3;
 - (id)displayImagesForView:(id)arg1 fromLayout:(id)arg2 imageFlags:(id)arg3;
 - (void)updateCacheForInputModes:(id)arg1;

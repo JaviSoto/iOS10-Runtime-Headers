@@ -44,7 +44,6 @@
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;
 - (BOOL)_unload:(id*)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
 - (id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;
 - (BOOL)isReadOnly;
 - (void)doFilesystemCleanupOnRemove:(BOOL)arg1;
@@ -68,6 +67,7 @@
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (id)objectIDFactoryForEntity:(id)arg1;
 - (id)metadata;
+- (void)setReadOnly:(BOOL)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

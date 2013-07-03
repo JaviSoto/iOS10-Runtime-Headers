@@ -29,8 +29,8 @@
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)_setAnnotationClass:(Class)arg1;
 + (id)title;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (double)expectedHeadingUpdateInterval;
 - (double)expectedCoordinateUpdateInterval;
@@ -49,19 +49,19 @@
 - (void)setHeading:(id)arg1;
 - (double)accuracy;
 - (void)setUpdating:(BOOL)arg1;
-- (id)location;
-- (void)reset;
-- (double)timestamp;
 - (int)source;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void)setSource:(int)arg1;
+- (void)reset;
 - (id)heading;
 - (struct { double x1; double x2; })coordinate;
 - (double)course;
+- (id)location;
+- (void)setSource:(int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (id)shortDescription;
+- (double)timestamp;
 - (id)init;
 - (void)dealloc;
 - (id)annotation;

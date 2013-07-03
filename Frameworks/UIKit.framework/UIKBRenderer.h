@@ -47,9 +47,9 @@
 - (void)renderKeyImageContents:(id)arg1 withTraits:(id)arg2;
 - (void)renderBackgroundTraits:(id)arg1 allowCaching:(BOOL)arg2;
 - (struct CGContext { }*)_contextForCacheImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_drawLinearGradient:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 horizontally:(BOOL)arg3;
-- (void)addRoundRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 radius:(float)arg2 corners:(unsigned int)arg3;
+- (void)_drawLinearGradient:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)addPathForRenderGeometry:(id)arg1;
+- (void)addRoundRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 radius:(float)arg2 corners:(unsigned int)arg3;
 - (void)addPathForTraits:(id)arg1 displayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (id)initWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 renderFlags:(int)arg4;
 - (void)renderShadowEffect:(id)arg1 withTraits:(id)arg2;

@@ -16,8 +16,8 @@
 - (void)writeTo:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (void)copyTo:(id)arg1;
-- (id)location;
 - (struct { double x1; double x2; })coordinate;
+- (id)location;
 - (void)setLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

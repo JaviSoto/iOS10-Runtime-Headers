@@ -22,7 +22,7 @@
 @property int buttonIndexForReturnKey;
 @property(retain) NSMutableDictionary * buttonHandlers;
 
-+ (void)showError:(id)arg1 withTitle:(id)arg2 defaultMessage:(id)arg3;
++ (id)showError:(id)arg1 withTitle:(id)arg2 defaultMessage:(id)arg3;
 + (id)alertViewWithTitle:(id)arg1 message:(id)arg2;
 + (id)_gkAlertWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitle:(id)arg4 dismissHandler:(id)arg5;
 

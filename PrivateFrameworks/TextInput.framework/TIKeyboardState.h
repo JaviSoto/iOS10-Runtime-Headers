@@ -4,7 +4,7 @@
 
 @class TIKeyboardLayout, NSString, TIKeyboardLayoutState, TIDocumentState, TIKeyboardCandidate;
 
-@interface TIKeyboardState : NSObject <NSSecureCoding> {
+@interface TIKeyboardState : NSObject <NSCopying, NSSecureCoding> {
     union { 
         int integerValue; 
         struct { 
@@ -18,6 +18,7 @@
             unsigned int wordLearningEnabled : 1; 
             unsigned int autocorrectionEnabled : 1; 
             unsigned int typologyLoggingEnabled : 1; 
+            unsigned int autocapitalizationEnabled : 1; 
             unsigned int autocapitalizationType : 2; 
             unsigned int keyboardType : 4; 
         } fields; 
@@ -46,12 +47,14 @@
 @property BOOL wordLearningEnabled;
 @property BOOL autocorrectionEnabled;
 @property BOOL typologyLoggingEnabled;
+@property BOOL autocapitalizationEnabled;
 @property unsigned int autocapitalizationType;
 @property unsigned int keyboardType;
 
 + (BOOL)supportsSecureCoding;
 
 - (unsigned int)autocapitalizationType;
+- (BOOL)autocapitalizationEnabled;
 - (BOOL)autocorrectionEnabled;
 - (BOOL)wordLearningEnabled;
 - (BOOL)typologyLoggingEnabled;
@@ -71,9 +74,11 @@
 - (unsigned int)keyboardType;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setKeyboardEventsLagging:(BOOL)arg1;
 - (void)setUserSelectedCurrentCandidate:(BOOL)arg1;
 - (void)setSuppressingCandidateSelection:(BOOL)arg1;
+- (void)setAutocapitalizationEnabled:(BOOL)arg1;
 - (void)setInputForMarkedText:(id)arg1;
 - (void)setShouldSkipCandidateSelection:(BOOL)arg1;
 - (void)setDocumentState:(id)arg1;

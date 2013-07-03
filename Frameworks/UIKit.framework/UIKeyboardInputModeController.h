@@ -40,6 +40,7 @@
 
 + (id)sharedInputModeController;
 
+- (id)inputModeWithIdentifier:(id)arg1;
 - (id)enabledInputModes;
 - (id)currentLanguage;
 - (id)defaultInputModes;
@@ -68,7 +69,6 @@
 - (id)suggestedInputModesForCurrentLocale:(BOOL)arg1 fallbackToDefaultInputModes:(BOOL)arg2;
 - (id)normalizedInputModes;
 - (void)updateCurrentInputMode:(id)arg1;
-- (id)inputModeWithIdentifier:(id)arg1;
 - (id)keyboardInputModes;
 - (void)setDefaultNormalizedInputModes:(id)arg1;
 - (void)setDefaultRawInputModes:(id)arg1;

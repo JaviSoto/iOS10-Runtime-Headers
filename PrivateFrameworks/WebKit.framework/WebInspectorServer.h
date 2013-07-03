@@ -11,12 +11,15 @@
 
 @interface WebInspectorServer : NSObject <WebInspectorXPCWrapperDelegate, WebInspectorClientRegistryDelegate> {
     BOOL _isEnabled;
+    BOOL _hasActiveDebugSession;
     int _notifyToken;
     WebInspectorXPCWrapper *_xpcConnection;
     WebInspectorServerWebViewConnectionController *_connectionController;
 }
 
 
+- (void)setHasActiveDebugSession:(BOOL)arg1;
+- (BOOL)hasActiveDebugSession;
 - (id)xpcConnection;
 - (void)xpcConnectionFailed:(id)arg1;
 - (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;

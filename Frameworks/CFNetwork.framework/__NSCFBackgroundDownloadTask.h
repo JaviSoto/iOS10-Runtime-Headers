@@ -14,5 +14,6 @@
 - (BOOL)finished;
 - (void)_onqueue_didWriteData:(long long)arg1 totalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;
 - (void)_onqueue_didFinishDownloadingToURL:(id)arg1;
+- (void)cancelByProducingResumeData:(id)arg1;
 
 @end

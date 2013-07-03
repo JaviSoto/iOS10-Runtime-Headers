@@ -17,6 +17,7 @@
     int _shuffleMode;
     BOOL _useApplicationSpecificQueue;
     BOOL _videoPlaybackEnabled;
+    BOOL _autoReshufflingDisabled;
 }
 
 @property BOOL allowsBackgroundVideo;
@@ -31,6 +32,7 @@
 @property(retain) MPMediaQuery * query;
 @property BOOL useApplicationSpecificQueue;
 @property BOOL videoPlaybackEnabled;
+@property BOOL autoReshufflingDisabled;
 
 
 - (BOOL)seeking;
@@ -51,6 +53,8 @@
 - (BOOL)allowsBackgroundVideo;
 - (void)setShuffleMode:(int)arg1;
 - (int)shuffleMode;
+- (void)setAutoReshufflingDisabled:(BOOL)arg1;
+- (BOOL)autoReshufflingDisabled;
 - (id)radioStation;
 - (int)repeatMode;
 - (void)setRepeatMode:(int)arg1;

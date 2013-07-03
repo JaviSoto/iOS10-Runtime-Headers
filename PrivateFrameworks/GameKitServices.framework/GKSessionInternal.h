@@ -157,9 +157,9 @@
 - (BOOL)isAvailable;
 - (id)sessionID;
 - (id)peerID;
-- (void)reset;
 - (id)displayName;
 - (void)setPort:(unsigned int)arg1;
+- (void)reset;
 - (BOOL)isBusy;
 - (unsigned int)port;
 - (void)setDelegate:(id)arg1;

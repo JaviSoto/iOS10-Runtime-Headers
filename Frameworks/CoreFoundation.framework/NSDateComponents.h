@@ -68,5 +68,8 @@
 - (int)valueForComponent:(unsigned int)arg1;
 - (void)setComponents:(id)arg1;
 - (id)conciseDescription;
+- (BOOL)isSameDayAsComponents:(id)arg1;
+- (BOOL)isSameYearAsComponents:(id)arg1;
+- (BOOL)isSameMonthAsComponents:(id)arg1;
 
 @end

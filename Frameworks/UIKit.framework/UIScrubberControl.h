@@ -54,8 +54,8 @@
 }
 
 + (BOOL)allowLayeredFillForKnob;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setDuration:(double)arg1;
 - (const struct { float x1; float x2; float x3; }*)metrics;

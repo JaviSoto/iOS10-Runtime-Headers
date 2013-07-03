@@ -74,6 +74,7 @@
 - (id)_bulletinRequestsForIDs:(id)arg1;
 - (BOOL)_isSectionIDRestricted:(id)arg1;
 - (id)_removalsForNoticesSection:(id)arg1 addition:(id)arg2 keepAddition:(BOOL*)arg3;
+- (void)_updateShowsMessagePreviewForBulletin:(id)arg1;
 - (void)_assignIDToBulletinRequest:(id)arg1;
 - (id)_favoritesListManager;
 - (void*)_addressBook;
@@ -160,6 +161,7 @@
 - (id)todayBulletinIDsForSectionID:(id)arg1;
 - (id)_updatesForObserver:(id)arg1 bulletinIDs:(id)arg2;
 - (id)_sectionInfoArrayForCategory:(int)arg1 effective:(BOOL)arg2;
+- (void)_clearBulletinIDs:(id)arg1 forSectionID:(id)arg2 shouldSync:(BOOL)arg3;
 - (void)_clearSection:(id)arg1;
 - (id)sortDescriptorsForSectionID:(id)arg1;
 - (unsigned int)_indexForNewDate:(id)arg1 inBulletinIDArray:(id)arg2 sortedAscendingByDateForKey:(id)arg3;
@@ -172,17 +174,19 @@
 - (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)_updateAllBulletinsForDataProviderIfSectionIsEnabled:(id)arg1;
 - (void)_sendUpdateSectionInfo:(id)arg1 inCategory:(int)arg2;
+- (BOOL)_didNotificationCenterSettingsChangeWithSectionInfo:(id)arg1 replacingSectionInfo:(id)arg2;
 - (void)_expireBulletinsAndRescheduleTimerIfNecessary;
 - (id)noticesBulletinIDsForSectionID:(id)arg1;
 - (void)_sortSectionIDs:(id)arg1 usingGuideArray:(id)arg2;
 - (id)_sortedSectionIDsForCategory:(int)arg1;
 - (id)_activeSectionIDsForCategory:(int)arg1;
 - (id)allBulletinIDsForSectionID:(id)arg1;
+- (id)_applicableSectionInfosForBulletin:(id)arg1 inSection:(id)arg2;
 - (void)_sendUpdateSectionOrderForCategory:(int)arg1;
 - (void)_writeClearedSections;
 - (void)_writeSectionInfo;
 - (id)_allBulletinsForSectionID:(id)arg1;
-- (void)_clearBulletinIDs:(id)arg1 forSectionID:(id)arg2 shouldSync:(BOOL)arg3;
+- (void)_clearBulletinIDs:(id)arg1 AndAllOtherBulletins:(BOOL)arg2 forSectionID:(id)arg3 shouldSync:(BOOL)arg4;
 - (void)_updateAllBulletinsForDataProvider:(id)arg1;
 - (void)_setClearedInfo:(id)arg1 forSectionID:(id)arg2;
 - (id)_bulletinsForIDs:(id)arg1;
@@ -196,6 +200,7 @@
 - (id)_effectiveSectionInfoForSectionInfo:(id)arg1;
 - (void)_removeSettingsGateway:(id)arg1;
 - (void)_clearBulletinIDIfPossible:(id)arg1 rescheduleExpirationTimer:(BOOL)arg2;
+- (unsigned int)_behaviorOverrideState;
 - (unsigned int)_activeBehaviorOverrideTypesConsideringSystemState:(BOOL)arg1;
 - (void)_removeObserver:(id)arg1;
 - (id)dataProviderForSectionID:(id)arg1;

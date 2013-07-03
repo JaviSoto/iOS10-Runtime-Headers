@@ -42,11 +42,12 @@
 + (id)_typologyBundle;
 + (id)_rivenBundle;
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (id)__geoBundle;
-+ (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
++ (id)_gkBundleWithIdentifier:(id)arg1;
++ (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 + (id)pathForITunesStoreResource:(id)arg1 ofType:(id)arg2;
 + (id)mediaPlayerBundle;
 + (id)__vkBundle;
@@ -56,6 +57,7 @@
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)builtInPlugInsPath;
+- (id)executablePath;
 - (id)resourcePath;
 - (unsigned int)versionNumber;
 - (Class)classNamed:(id)arg1;
@@ -66,7 +68,6 @@
 - (oneway void)release;
 - (BOOL)load;
 - (id)description;
-- (id)executablePath;
 - (id)preferredLocalizations;
 - (id)executableArchitectures;
 - (BOOL)preflightAndReturnError:(id*)arg1;
@@ -127,6 +128,7 @@
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
 - (id)_gkLocalizedName;
 - (id)_gkBundleVersion;
+- (id)PKSanitizedBundleIdentifier;
 - (id)newDataURLForResource:(id)arg1 ofType:(id)arg2 withMIMEType:(id)arg3;
 
 @end

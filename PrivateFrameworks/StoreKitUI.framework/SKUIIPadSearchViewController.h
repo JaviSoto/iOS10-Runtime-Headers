@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemCollectionController, SKUISearchRelatedView, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIMetricsController, <SKUISearchChildViewControllerDelegate>, SKUISearchPage, UICollectionView, NSDictionary, NSArray, SKUIProductPageOverlayController, SKUISearchResultGroupController, NSMutableDictionary;
+@class SKUIItemCollectionController, SKUISearchRelatedView, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIMetricsController, <SKUISearchChildViewControllerDelegate>, SKUISearchPage, UICollectionView, NSDictionary, NSArray, SKUIProductPageOverlayController, SKUISearchResultGroupController, NSString, NSMutableDictionary;
 
 @interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIProductPageOverlayDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
     UICollectionView *_collectionView;
@@ -14,6 +14,7 @@
     SKUISearchRelatedView *_relatedView;
     SKUIProductPageOverlayController *_overlayController;
     SKUISearchResultGroupController *_searchResultGroupController;
+    NSString *_previousRelatedSearchTerm;
     SKUISearchPage *_page;
     NSArray *_searchFacets;
     SKUIClientContext *_clientContext;
@@ -24,7 +25,8 @@
 @property(retain) SKUIClientContext * clientContext;
 @property <SKUISearchChildViewControllerDelegate> * delegate;
 @property(retain) SKUIMetricsController * metricsController;
-@property(retain) SKUISearchPage * searchPage;
+@property(readonly) SKUISearchPage * searchPage;
+@property(readonly) NSString * previousRelatedSearchTerm;
 @property(retain) NSArray * searchFacets;
 @property(retain) NSDictionary * facetSelections;
 
@@ -33,9 +35,8 @@
 - (void)_reloadView;
 - (void)_recordClickEventForEditorialAtIndex:(int)arg1;
 - (void)_recordClickEventForItemAtIndex:(int)arg1;
-- (void)_section:(int*)arg1 index:(int*)arg2 forIndexPath:(id)arg3;
+- (void)_spellCorrectionAction:(id)arg1;
 - (void)_recordClickEventForItemOfferAtIndex:(int)arg1;
-- (id)_indexPathForIndex:(int)arg1 inSection:(int)arg2;
 - (void)_reloadFacets;
 - (id)searchFacets;
 - (void)searchHeaderViewDidUpdateFacetSelections:(id)arg1;
@@ -47,12 +48,13 @@
 - (id)itemCollectionController:(id)arg1 cellLayoutForItemIndex:(int)arg2;
 - (void)_noResultsAction:(id)arg1;
 - (void)_recordClickEvent:(id)arg1 withCell:(id)arg2;
+- (int)_indexForItemIndex:(int)arg1;
 - (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
 - (int)_itemIndexForIndex:(int)arg1;
-- (int)_indexForItemIndex:(int)arg1;
 - (id)_itemCollectionController;
-- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndex:(unsigned int)arg2;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
+- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2;
+- (id)previousRelatedSearchTerm;
 - (void)searchRelatedViewDidSelectBackButton:(id)arg1;
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(int)arg2;
 - (id)metricsController;
@@ -61,7 +63,7 @@
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)setFacetSelections:(id)arg1;
 - (void)setSearchFacets:(id)arg1;
-- (void)setSearchPage:(id)arg1;
+- (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (void)setMetricsController:(id)arg1;
 - (id)facetSelections;
 - (void)_reloadOrientation:(int)arg1;
@@ -76,13 +78,13 @@
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)contentScrollView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;

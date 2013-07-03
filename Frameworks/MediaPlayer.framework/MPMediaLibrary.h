@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDate, NSHashTable, NSObject<OS_dispatch_queue>, QueryCriteriaResultsCache, CADisplayLink, NSString, NSURL, NSMutableDictionary, <MPMediaLibraryDataProviderPrivate>;
+@class NSDate, NSHashTable, NSObject<OS_dispatch_queue>, NSMutableArray, CADisplayLink, QueryCriteriaResultsCache, NSString, <MPMediaLibraryDataProviderPrivate>, NSMutableDictionary, NSURL;
 
-@interface MPMediaLibrary : NSObject <NSCoding> {
+@interface MPMediaLibrary : NSObject <NSSecureCoding> {
     <MPMediaLibraryDataProviderPrivate> *_libraryDataProvider;
     int _libraryChangeObservers;
     NSObject<OS_dispatch_queue> *_entityCacheQueue;
@@ -20,6 +20,8 @@
     NSMutableDictionary *_hasCollectionsDidLoadForCriteria;
     NSMutableDictionary *_countOfCollectionsDidLoadForCriteria;
     NSMutableDictionary *_countOfItemsDidLoadForCriteria;
+    NSMutableArray *_additionalLibraryFilterPredicates;
+    NSObject<OS_dispatch_queue> *_additionalLibraryFilterPredicatesAccessQueue;
     NSHashTable *_connectionAssertions;
     BOOL _disconnectAfterReleasingAssertions;
     float _connectionProgress;
@@ -98,6 +100,7 @@
 + (id)defaultMediaLibrary;
 + (id)deviceMediaLibrary;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)errorResolverForMediaItem:(id)arg1;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id)arg2;
@@ -110,6 +113,8 @@
 - (float)connectionProgress;
 - (id)connectionAssertionWithIdentifier:(id)arg1;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2;
+- (void)replaceLibraryFilterPredicate:(id)arg1 withPredicate:(id)arg2;
+- (void)removeLibraryFilterPredicate:(id)arg1;
 - (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)isArtworkIdenticalForItem:(id)arg1 otherItem:(id)arg2 compareRepresentativeItemArtwork:(BOOL)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
 - (BOOL)removePlaylist:(id)arg1;
@@ -138,16 +143,19 @@
 - (BOOL)libraryHasBeenModifiedWithToken:(id)arg1;
 - (id)modificationToken;
 - (int)removalReason;
+- (void)addLibraryFilterPredicate:(id)arg1;
 - (void)_reloadLibraryForInvisiblePropertyChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForDynamicPropertyChangeWithNotificationInfo:(id)arg1;
 - (void)setRemovalReason:(int)arg1;
 - (id)_initWithLibraryDataProvider:(id)arg1;
 - (int)cloudFilteringType;
+- (id)additionalLibraryFilterPredicates;
 - (id)_getCachedValueForQueryCritiera:(id)arg1 valueCriteriaCache:(id)arg2 entitiesForCriteriaCache:(id)arg3 didLoadBlocksByQueryCriteria:(id)arg4 valueLoadedFromEntitiesArrayBlock:(id)arg5 loadValueFromDataProviderBlock:(id)arg6;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (id)syncValidity;
+- (BOOL)isCurrentThreadInTransaction;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (void)connectWithCompletionHandler:(id)arg1;
 - (BOOL)requiresAuthentication;

@@ -14,13 +14,13 @@
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
 
-- (BOOL)_isOrdered;
 - (id)_markerSuffix;
 - (id)_unaffixedMarkerTitle;
 - (id)_unaffixedMarkerFormat;
 - (id)_markerSpecifier;
 - (id)_markerPrefix;
 - (id)_markerTitle;
+- (BOOL)_isOrdered;
 - (id)_markerAtIndex:(unsigned int)arg1 inText:(id)arg2;
 - (id)_unaffixedMarkerForItemNumber:(int)arg1;
 - (id)markerForItemNumber:(int)arg1;

@@ -16,6 +16,7 @@
 }
 
 
+- (void)showTable;
 - (void)suboutTable;
 - (void)_setupButtons;
 - (void)_setupSurroundingTableViews;
@@ -31,9 +32,8 @@
 - (void)setActiveRow:(int)arg1;
 - (void)selectRow:(int)arg1;
 - (void)_setupTable;
-- (void)showTable;
-- (id)_selectedImage;
 - (id)_unselectedImage;
+- (id)_selectedImage;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)buttonPressed:(id)arg1;

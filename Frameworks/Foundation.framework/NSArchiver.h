@@ -13,9 +13,9 @@
 }
 
 + (void)initialize;
++ (id)archivedDataWithRootObject:(id)arg1;
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 + (id)classNameEncodedForTrueClassName:(id)arg1;
-+ (id)archivedDataWithRootObject:(id)arg1;
 + (void)encodeClassName:(id)arg1 intoClassName:(id)arg2;
 
 - (id)data;

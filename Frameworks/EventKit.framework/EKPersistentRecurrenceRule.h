@@ -28,6 +28,7 @@
 
 + (id)relations;
 
+- (BOOL)validate:(id*)arg1;
 - (int)firstDayOfTheWeek;
 - (BOOL)shouldPinMonthDays;
 - (id)cachedEndDate;
@@ -49,7 +50,6 @@
 - (id)endDate;
 - (id)owner;
 - (int)entityType;
-- (BOOL)validate:(id*)arg1;
 - (id)_helper;
 - (BOOL)isDirty;
 - (void)setFrequency:(int)arg1;

@@ -2,12 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSMutableOrderedSet, NSString, AXDialectMap;
+@class AXDialectMap, NSString, NSMutableOrderedSet;
 
 @interface AXLanguageTag : NSObject  {
     BOOL _wasPredicted;
     NSString *_content;
-    AXDialectMap *_unambiguousDialect;
+    NSMutableOrderedSet *_unambiguousDialects;
     NSMutableOrderedSet *_ambiguousDialects;
     struct _NSRange { 
         unsigned int location; 
@@ -17,26 +17,30 @@
 
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property NSString * content;
-@property(retain) AXDialectMap * unambiguousDialect;
+@property(retain) NSMutableOrderedSet * unambiguousDialects;
 @property(retain) NSMutableOrderedSet * ambiguousDialects;
 @property(readonly) AXDialectMap * preferredAmbiguousDialect;
+@property(readonly) AXDialectMap * preferredUnambiguousDialect;
 @property(readonly) NSString * contentSubstring;
 @property(readonly) AXDialectMap * dialect;
 @property BOOL wasPredicted;
 
-+ (id)tagWithDialect:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 content:(id)arg3 predictedByTagger:(BOOL)arg4;
++ (id)tagWithDialects:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 content:(id)arg3 predictedByTagger:(BOOL)arg4;
 
 - (BOOL)wasPredicted;
 - (BOOL)canBeSpokenByLanguage:(id)arg1;
 - (void)addAmbiguousDialects:(id)arg1;
+- (BOOL)hasAmbigiousDialects;
 - (BOOL)canBeSpokenByDialect:(id)arg1;
 - (id)contentSubstring;
 - (id)dialect;
 - (void)setAmbiguousDialects:(id)arg1;
+- (void)setUnambiguousDialects:(id)arg1;
 - (id)preferredAmbiguousDialect;
-- (id)unambiguousDialect;
+- (id)preferredUnambiguousDialect;
+- (id)unambiguousDialects;
 - (id)ambiguousDialects;
-- (void)setUnambiguousDialect:(id)arg1;
+- (void)addUnambiguousDialect:(id)arg1;
 - (void)addAmbiguousDialect:(id)arg1;
 - (void)setWasPredicted:(BOOL)arg1;
 - (void)setContent:(id)arg1;

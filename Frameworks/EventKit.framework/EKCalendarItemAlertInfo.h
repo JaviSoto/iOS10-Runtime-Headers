@@ -46,9 +46,9 @@
 - (id)externalID;
 - (BOOL)allDay;
 - (int)proximity;
-- (id)location;
 - (id)entityID;
 - (id)title;
+- (id)location;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

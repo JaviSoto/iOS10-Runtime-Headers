@@ -15,8 +15,8 @@
 @property double z;
 
 
-- (double)timestamp;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (id)description;
 - (void)setZ:(double)arg1;
 - (double)z;

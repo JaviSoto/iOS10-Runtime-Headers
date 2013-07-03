@@ -4,7 +4,7 @@
 
 @class MPMediaPlaylist, MPMediaQueryCriteria, NSSet, MPMediaItemCollection, MPMediaQuerySectionInfo, MPMediaLibrary, NSArray;
 
-@interface MPMediaQuery : NSObject <NSCoding, NSCopying> {
+@interface MPMediaQuery : NSObject <NSSecureCoding, NSCopying> {
     MPMediaLibrary *_mediaLibrary;
     MPMediaQueryCriteria *_criteria;
     int _isFilteringDisabled;
@@ -65,6 +65,7 @@
 + (void)initFilteringDisabled;
 + (id)audiobooksQuery;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (void)setCriteria:(id)arg1;
 - (void)setUseSections:(BOOL)arg1;

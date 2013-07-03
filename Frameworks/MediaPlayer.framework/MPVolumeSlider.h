@@ -15,7 +15,6 @@
     UIView *_volumeWarningView;
     BOOL _volumeWarningBlinking;
     UIImage *_volumeWarningTrackImage;
-    UIView *_trackKnockoutView;
 }
 
 @property(readonly) int style;
@@ -23,9 +22,11 @@
 @property(copy) NSString * volumeAudioCategory;
 @property(retain) UIImage * volumeWarningTrackImage;
 @property(setter=_setIsOffScreen:) BOOL _isOffScreen;
+@property(readonly) UIView * _newVolumeWarningView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (id)volumeWarningTrackImage;
 - (BOOL)_isOffScreen;
@@ -35,6 +36,7 @@
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)_blinkWarningView;
+- (id)_newVolumeWarningView;
 - (void)_routeNameLabelAnimationDidEnd;
 - (void)_beginBlinkingWarningView;
 - (void)setVolumeAudioCategory:(id)arg1;
@@ -78,6 +80,7 @@
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
 - (id)accessibilityLabel;
-- (void)_updateVolumeFromAVController;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)updateVolumeValue;
 
 @end

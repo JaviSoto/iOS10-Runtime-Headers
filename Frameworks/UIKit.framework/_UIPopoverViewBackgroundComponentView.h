@@ -14,6 +14,7 @@
 - (void)dealloc;
 - (void)setDirectionSelector:(id)arg1;
 - (id)directionSelector;
+- (id)_generateBackdropMaskViewForFlag:(int)arg1;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

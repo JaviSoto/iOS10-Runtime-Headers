@@ -7,20 +7,23 @@
 @interface MPMediaLibraryDataProviderSystemML3 : MPMediaLibraryDataProviderML3  {
     long long _currentRevision;
     NSObject<OS_dispatch_queue> *_queue;
+    long _queueOnce;
 }
 
 + (id)_localizedCloudGeniusErrorForError:(id)arg1;
 + (id)_localizedGeniusErrorForError:(id)arg1;
 + (BOOL)_isGeniusEnabled;
 
+- (id)initWithLibrary:(id)arg1;
 - (id)_screenshotCacheIDForItemIdentifier:(long long)arg1;
 - (void)_loadArtworkImageForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
 - (id)_itemArtworkCacheIDForItemIdentifier:(long long)arg1;
 - (void)_loadArtworkImageDataForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 completionBlock:(id)arg3;
 - (id)_itemArtworkCacheIDForItemIdentifier:(long long)arg1 atPlaybackTime:(double)arg2;
 - (void)_seedCloudPlaylistWithTrack:(id)arg1 container:(id)arg2 completionBlock:(id)arg3;
-- (void)updateEntitesToCurrentRevision;
+- (void)_initInstanceVariableOnce;
 - (BOOL)supportsEntityChangeTrackingForMediaEntityType:(int)arg1 collectionGroupingType:(int)arg2 dataProviderClass:(out Class*)arg3;
+- (void)updateEntitesToCurrentRevision;
 - (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned int*)arg2 error:(id*)arg3;
 - (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
 - (void)releaseGeniusClusterPlaylist:(void*)arg1;

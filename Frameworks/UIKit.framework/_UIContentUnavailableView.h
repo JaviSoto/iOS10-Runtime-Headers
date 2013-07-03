@@ -19,6 +19,12 @@
     _UITextFieldRoundedRectBackgroundViewNeue *_buttonBackground;
     NSLayoutConstraint *titleToMessageConstraint;
     NSLayoutConstraint *messageToButtonConstraint;
+    UIView *_fromSnapshot;
+    UIView *_toSnapshot;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _fromSnapshotSize;
     NSString *_message;
     NSString *_buttonTitle;
 
@@ -28,29 +34,30 @@
 
 }
 
+@property(copy) NSString * title;
 @property(copy) NSString * message;
 @property(copy) NSString * buttonTitle;
 @property(copy) id buttonAction;
 
 
 - (void)setMessage:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)title;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)message;
 - (void)dealloc;
 - (void)setButtonAction:(id)arg1;
 - (id)buttonTitle;
-- (void)windowDidRotateNotification:(id)arg1;
 - (void)setButtonTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
+- (void)windowDidRotateNotification:(id)arg1;
+- (void)windowWillAnimateRotateNotification:(id)arg1;
 - (void)windowWillRotateNotification:(id)arg1;
 - (id)buttonAction;
-- (void)_updateAllMaskViews;
 - (void)_actionButtonPressed:(id)arg1;
 - (void)_updateViewHierarchy;
 - (void)updateConstraints;
-- (void)didMoveToSuperview;
 - (void)tintColorDidChange;
-- (void)layoutSubviews;
 - (void)didMoveToWindow;
 
 @end

@@ -47,8 +47,8 @@
 + (BOOL)shouldPropagateAppearanceCustomizations;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)disconnect;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -119,12 +119,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)__willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)prefersStatusBarHidden;
 - (int)preferredStatusBarStyle;
-- (BOOL)canBecomeFirstResponder;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (id)_accessibilityResponderElement;
 

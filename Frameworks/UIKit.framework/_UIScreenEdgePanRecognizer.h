@@ -53,8 +53,8 @@
 
 + (BOOL)_edgeSwipeNavigationGestureEnabled;
 
-- (void)reset;
 - (void)setSettings:(id)arg1;
+- (void)reset;
 - (id)initWithType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

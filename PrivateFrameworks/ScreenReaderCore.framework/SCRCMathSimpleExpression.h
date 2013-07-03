@@ -11,7 +11,6 @@
 @property(copy) NSString * content;
 
 
-- (void)setContent:(id)arg1;
 - (id)_functionNames;
 - (BOOL)isWordOrAbbreviation;
 - (BOOL)isFunctionName;
@@ -20,6 +19,7 @@
 - (id)latexMathModeDescription;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
 - (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (void)setContent:(id)arg1;
 - (id)content;
 - (void)dealloc;
 - (id)description;

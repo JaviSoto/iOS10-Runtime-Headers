@@ -27,7 +27,7 @@
 - (void)accountController:(id)arg1 accountRemoved:(id)arg2;
 - (void)accountController:(id)arg1 accountUpdated:(id)arg2;
 - (void)accountController:(id)arg1 accountAdded:(id)arg2;
-- (void)clearCallerIDCachesForAccount:(id)arg1;
+- (void)clearCallerIDForAccount:(id)arg1;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)registrationFailedForAccount:(id)arg1 needsDeletion:(id)arg2;

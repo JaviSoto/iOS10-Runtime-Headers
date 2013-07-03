@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SKUIIPhoneProductPageViewController, UIViewController, SKUIStorePageViewController;
+@class SKUIStorePageViewController, SKUIIPhoneProductPageViewController, UIViewController, SKStoreProductViewController;
 
-@interface SUSKUIStorePageViewController : SUViewController <SKUIIPhoneProductPageDelegate> {
+@interface SUSKUIStorePageViewController : SUViewController <SKUIIPhoneProductPageDelegate, SKStoreProductViewControllerDelegatePrivate> {
     UIViewController *_activeChildViewController;
     SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
+    SKStoreProductViewController *_remoteProductViewController;
     SKUIStorePageViewController *_storePageViewController;
 }
 
@@ -18,7 +19,10 @@
 - (id)initWithSection:(id)arg1;
 - (BOOL)iPhoneProductPage:(id)arg1 shouldOpenURL:(id)arg2;
 - (BOOL)iPhoneProductPage:(id)arg1 shouldOpenItem:(id)arg2;
+- (void)productViewController:(id)arg1 presentProductWithRequest:(id)arg2 animated:(BOOL)arg3;
+- (void)productViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (void)dealloc;
+- (void)dismissAnimated:(BOOL)arg1;
 - (void)loadView;
 
 @end

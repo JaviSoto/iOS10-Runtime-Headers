@@ -6,9 +6,10 @@
    See Warning(s) below.
  */
 
-@class GKDiscovery, NSDate, NSSet, GKMatch, NSMutableDictionary;
+@class GKDiscovery, NSDate, NSObject<OS_dispatch_queue>, GKMatch, NSSet, NSMutableDictionary;
 
 @interface GKMatchmaker : NSObject  {
+    NSObject<OS_dispatch_queue> *_lookForInviteQueue;
     BOOL _nearbyBrowsing;
     BOOL _nearbyAdvertising;
     BOOL _wasNearbyBrowsing;
@@ -34,6 +35,7 @@
     GKDiscovery *_nearbyDiscovery;
     NSDate *_nearbyQueryLastCheckDate;
     NSSet *_nearbyCompatibileHashes;
+    int _matching;
     double _nearbyQueryAllowance;
 }
 
@@ -52,6 +54,7 @@
 @property BOOL nearbyAdvertising;
 @property BOOL wasNearbyBrowsing;
 @property(readonly) BOOL hasInviteListener;
+@property int matching;
 
 + (id)syncQueue;
 + (id)sharedMatchmaker;
@@ -105,6 +108,7 @@
 - (void)cancelSentNearbyInvites;
 - (void)stopNearbyAdvertising;
 - (void)localPlayerRespondedToNearbyInvite:(id)arg1;
+- (int)matching;
 - (void)setWasNearbyBrowsing:(BOOL)arg1;
 - (BOOL)wasNearbyBrowsing;
 - (void)setNearbyAdvertising:(BOOL)arg1;
@@ -133,7 +137,7 @@
 - (void)finishMatchmakingForMatch:(id)arg1;
 - (void)findPlayersForHostedMatchRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setInviteHandler:(id)arg1;
-- (void)registeredListentersChanged:(id)arg1;
+- (void)registeredListentersChanged;
 - (int)responseForDeclineReason:(int)arg1;
 - (void)stopNearbyBrowsing;
 - (void)startNearbyBrowsing;
@@ -141,6 +145,7 @@
 - (void)cancelPendingInvitesAndMarkInviteComplete:(BOOL)arg1;
 - (void)cancelNearbyInvitesToPlayers:(id)arg1;
 - (void)matchWithRequest:(id)arg1 currentMatch:(id)arg2 currentPlayerIDs:(id)arg3 serverHosted:(BOOL)arg4 rematchID:(id)arg5 completionHandler:(id)arg6;
+- (void)setMatching:(int)arg1;
 - (void)invitePlayersWithRequest:(id)arg1 serverHosted:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)setMatch:(id)arg1;
 - (void)invitePlayersWithRequest:(id)arg1 serverHosted:(BOOL)arg2 onlineConnectionData:(id)arg3 completionHandler:(id)arg4;

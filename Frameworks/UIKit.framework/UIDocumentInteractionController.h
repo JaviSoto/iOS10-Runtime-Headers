@@ -101,7 +101,6 @@
 - (id)URL;
 - (id)extractSubitemFromArchive:(id)arg1 completion:(id)arg2;
 - (id)subitemsInArchive:(id)arg1;
-- (BOOL)isArchive;
 - (void)setAnnotation:(id)arg1;
 - (BOOL)_canSaveToCameraRollForType;
 - (id)_unzippedDocumentURL;
@@ -114,6 +113,7 @@
 - (BOOL)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldUnzipDocument;
 - (void)setUTI:(id)arg1;
+- (BOOL)_isPackageFilename:(id)arg1;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
 - (BOOL)_isValidURL:(id)arg1;
@@ -136,6 +136,7 @@
 - (BOOL)_setupPreviewController;
 - (BOOL)_documentNeedsHelpUnzippingForPreview;
 - (BOOL)_canUnzipDocumentForPreview;
+- (BOOL)isArchive;
 - (void)_unzipFileAndSetupPayload:(id)arg1;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_canUnzipDocumentAndPresentOptions;

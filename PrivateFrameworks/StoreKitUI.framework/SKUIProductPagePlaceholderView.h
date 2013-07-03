@@ -13,7 +13,7 @@
 @property(retain) UIColor * textColor;
 
 
-- (id)initWithPlaceholderString:(id)arg1;
+- (id)initWithPlaceholderString:(id)arg1 isPad:(BOOL)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void).cxx_destruct;
 - (id)textColor;

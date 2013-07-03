@@ -30,8 +30,8 @@
 - (id)initWithCategoryID:(id)arg1 forGame:(id)arg2 playerID:(id)arg3;
 - (id)badgeImage;
 - (void)setBadgeImage:(id)arg1;
-- (id)leaderboardCategory;
 - (void)setLeaderboardCategory:(id)arg1;
+- (id)leaderboardCategory;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (void)setPlayer:(id)arg1;

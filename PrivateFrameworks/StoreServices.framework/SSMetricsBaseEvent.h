@@ -28,7 +28,6 @@
 
 - (void)setPageContext:(id)arg1;
 - (void)setWindowOrientation:(id)arg1;
-- (id)clientVersion;
 - (void)setScreenHeight:(id)arg1;
 - (id)windowWidth;
 - (id)windowOrientation;
@@ -40,7 +39,6 @@
 - (void)setPixelRatio:(id)arg1;
 - (void)setOriginalTime:(double)arg1;
 - (void)setEventVersion:(id)arg1;
-- (void)setClientVersion:(id)arg1;
 - (void)setBaseVersion:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;
@@ -53,15 +51,17 @@
 - (void)setApplicationIdentifier:(id)arg1;
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
 - (void)setEventType:(id)arg1;
+- (void)setClientVersion:(id)arg1;
+- (id)clientVersion;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
 - (id)eventType;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (id)applicationIdentifier;
 - (id)description;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

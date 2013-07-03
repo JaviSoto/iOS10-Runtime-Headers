@@ -8,6 +8,7 @@
     UIView *_cell;
     SKUIClientContext *_clientContext;
     UIView *_contentView;
+    BOOL _parentWantsCellNeedsLayout;
 }
 
 @property(retain) SKUIClientContext * clientContext;
@@ -24,6 +25,7 @@
 - (id)clientContext;
 - (void)setBackgroundColor:(id)arg1;
 - (id)contentView;
+- (void)setNeedsLayout;
 - (void).cxx_destruct;
 - (id)initWithTableViewCell:(id)arg1;
 - (void)setSelected:(BOOL)arg1;

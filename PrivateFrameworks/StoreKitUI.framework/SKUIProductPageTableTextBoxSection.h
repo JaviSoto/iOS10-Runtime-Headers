@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITextLayoutCache, SKUIColorScheme, NSString, SKUIClientContext;
+@class SKUILayoutCache, SKUIColorScheme, NSString, SKUIClientContext;
 
 @interface SKUIProductPageTableTextBoxSection : SKUIProductPageTableSection  {
     SKUIClientContext *_clientContext;
@@ -10,11 +10,11 @@
     BOOL _isExpanded;
     int _stringIndex;
     NSString *_subtitle;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
     NSString *_title;
 }
 
-@property(retain) SKUITextLayoutCache * textLayoutCache;
+@property(retain) SKUILayoutCache * textLayoutCache;
 @property int stringIndex;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;

@@ -53,8 +53,8 @@
 @property(setter=_setBackgroundConstraints:,retain) NSArray * _backgroundConstraints;
 @property(getter=_isPalettePinningBarHidden,setter=_setPalettePinningBarHidden:) BOOL _palettePinningBarHidden;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;

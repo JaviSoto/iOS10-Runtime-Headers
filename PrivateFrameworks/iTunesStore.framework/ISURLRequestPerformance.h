@@ -31,8 +31,8 @@
 - (void)setReceivedResponseTime:(double)arg1;
 - (double)finishInterval;
 - (void)setFinishTime:(double)arg1;
-- (double)startTime;
 - (void)dealloc;
+- (double)startTime;
 - (void)setStartTime:(double)arg1;
 
 @end

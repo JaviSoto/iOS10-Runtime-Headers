@@ -199,7 +199,6 @@
 - (int)italic;
 - (int)bold;
 - (void)setBaseStyle:(id)arg1;
-- (void)setShadow:(int)arg1;
 - (void)setHidden:(int)arg1;
 - (void)setVerticalAlign:(int)arg1;
 - (int)verticalAlign;
@@ -216,6 +215,7 @@
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)kerning;
+- (void)setShadow:(int)arg1;
 - (void)setKerning:(unsigned short)arg1;
 - (id)initWithDocument:(id)arg1;
 - (id)symbolFont;

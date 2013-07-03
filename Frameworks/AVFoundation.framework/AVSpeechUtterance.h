@@ -24,22 +24,22 @@
 
 + (id)speechUtteranceWithString:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPostUtteranceDelay:(double)arg1;
 - (void)setPreUtteranceDelay:(double)arg1;
-- (void)setPitchMultiplier:(float)arg1;
 - (void)setSpeechString:(id)arg1;
-- (void)setVoice:(id)arg1;
 - (double)postUtteranceDelay;
 - (double)preUtteranceDelay;
 - (float)pitchMultiplier;
 - (id)speechString;
 - (id)voice;
 - (float)rate;
-- (void)setRate:(float)arg1;
 - (float)volume;
+- (void)setVoice:(id)arg1;
+- (void)setPitchMultiplier:(float)arg1;
+- (void)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (id)initWithString:(id)arg1;
 - (void)dealloc;

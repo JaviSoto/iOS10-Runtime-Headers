@@ -54,8 +54,8 @@
 
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -72,6 +72,7 @@
 - (void)setupCustomTimingCurve;
 - (void)_trackAnimation:(id)arg1 forProperty:(id)arg2 inLayer:(id)arg3;
 - (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(BOOL)arg2 skipDelegateAssignment:(BOOL)arg3 customCurve:(id)arg4;
+- (void)prepareAction:(id)arg1 forLayer:(id)arg2 forKey:(id)arg3;
 - (id)_defaultAnimationForKey:(id)arg1;
 - (void)sendDelegateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)pop;

@@ -24,6 +24,7 @@
 - (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })lockupStyle;
 - (id)initWithItemIdentifier:(long long)arg1 style:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 - (id)editorial;
+- (void)_setLockupStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg1;
 - (id)initWithItem:(id)arg1 style:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 - (void)_setItem:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;

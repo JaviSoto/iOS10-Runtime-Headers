@@ -70,6 +70,7 @@
 @property(retain) NSNumber * cloudMultipleContributorsEnabled;
 @property(retain) NSNumber * cloudMultipleContributorsEnabledLocal;
 @property(retain) NSDate * cloudLastInterestingChangeDate;
+@property(retain) NSDate * cloudCreationDate;
 @property(retain) NSDate * cloudLastContributionDate;
 @property(retain) NSString * cloudPersonID;
 @property(readonly) int cloudRelationshipStateValue;

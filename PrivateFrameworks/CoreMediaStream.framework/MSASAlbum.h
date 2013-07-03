@@ -68,9 +68,9 @@
 - (void)setURLString:(id)arg1;
 - (id)context;
 - (void)setMetadata:(id)arg1;
-- (void)setContext:(id)arg1;
 - (id)metadata;
 - (id)URLString;
+- (void)setContext:(id)arg1;
 - (id)GUID;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

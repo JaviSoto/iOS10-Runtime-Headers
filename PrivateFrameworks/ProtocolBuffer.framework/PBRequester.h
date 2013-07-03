@@ -105,9 +105,9 @@
 - (void)_startTimeoutTimer;
 - (id)httpRequestHeaders;
 - (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
+- (id)_languageLocale;
 - (id)_osVersion;
 - (id)_applicationID;
-- (id)_languageLocale;
 - (void)setNeedsCancel:(BOOL)arg1;
 - (void)setHttpResponseHeaders:(id)arg1;
 - (void)_removeTimeoutTimer;
@@ -127,13 +127,13 @@
 - (void)addRequest:(id)arg1;
 - (id)responseForRequest:(id)arg1;
 - (BOOL)isPaused;
-- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)resume;
 - (void)cancel;
 - (id)URL;
+- (void)setConnection:(id)arg1;
 - (void)_cleanup;
 - (void)_start;
 - (void)pause;

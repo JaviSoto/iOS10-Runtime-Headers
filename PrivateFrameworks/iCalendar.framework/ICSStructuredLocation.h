@@ -17,8 +17,6 @@
 @property(retain) NSString * routing;
 
 
-- (void)setFmtype:(id)arg1;
-- (id)fmtype;
 - (void)setRouting:(id)arg1;
 - (id)routing;
 - (void)setAbURLString:(id)arg1;
@@ -26,6 +24,8 @@
 - (void)setLoctype:(id)arg1;
 - (id)loctype;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)setFmtype:(id)arg1;
+- (id)fmtype;
 - (void)setRadius:(double)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setTitle:(id)arg1;

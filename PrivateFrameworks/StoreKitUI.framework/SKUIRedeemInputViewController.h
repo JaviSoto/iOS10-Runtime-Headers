@@ -21,7 +21,6 @@
 - (id)initWithRedeemCategory:(int)arg1;
 - (void)_cancelAction:(id)arg1;
 - (void)_redeemAction:(id)arg1;
-- (id)_newTermsButtonWithClientContext:(id)arg1;
 - (void)_textFieldTextDidChange:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1;
 - (void)_redeemConfigurationImagesDidLoad:(id)arg1;

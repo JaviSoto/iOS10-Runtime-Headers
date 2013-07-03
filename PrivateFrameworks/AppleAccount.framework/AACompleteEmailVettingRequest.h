@@ -12,8 +12,8 @@
 
 - (id)initWithURLString:(id)arg1 account:(id)arg2 token:(id)arg3;
 - (id)initWithAccount:(id)arg1 token:(id)arg2;
-- (id)urlString;
 - (id)bodyDictionary;
+- (id)urlString;
 - (void).cxx_destruct;
 
 @end

@@ -7,10 +7,10 @@
 @interface SASyncAnchor : AceObject <SAAceSerializable> {
 }
 
+@property int count;
 @property(copy) NSString * generation;
 @property(copy) NSString * key;
 @property(copy) NSString * validity;
-@property(copy) NSString * value;
 
 + (id)anchorWithDictionary:(id)arg1 context:(id)arg2;
 + (id)anchor;
@@ -20,10 +20,10 @@
 - (void)setGeneration:(id)arg1;
 - (id)encodedClassName;
 - (id)validity;
+- (int)count;
 - (id)groupIdentifier;
-- (void)setValue:(id)arg1;
 - (void)setKey:(id)arg1;
-- (id)value;
 - (id)key;
+- (void)setCount:(int)arg1;
 
 @end

@@ -26,6 +26,7 @@
 - (id)nsDictionaryFromXpcDictionary:(id)arg1;
 - (id)allocXpcMsg:(int)arg1 args:(id)arg2;
 - (id)allocXpcDictionaryWithNSDictionary:(id)arg1;
+- (void)sendAsyncMsg:(int)arg1 args:(id)arg2;
 - (void)checkOut;
 - (void)handleConnectionEvent:(id)arg1;
 - (BOOL)bluetoothExists;

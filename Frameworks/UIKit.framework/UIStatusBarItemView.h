@@ -23,8 +23,8 @@
 @property BOOL allowsUpdates;
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isVisible;
 - (int)textStyle;
@@ -54,6 +54,7 @@
 - (float)shadowPadding;
 - (float)standardPadding;
 - (void)setLayerContentsImage:(id)arg1;
+- (float)legibilityStrength;
 - (BOOL)allowsUpdates;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;

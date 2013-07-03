@@ -9,21 +9,33 @@
     NSString *_bundleIdentifier;
     GEOLatLng *_destination;
     GEOLatLng *_source;
+    struct { 
+        unsigned int timestamp : 1; 
+    } _has;
 }
 
+@property(readonly) BOOL hasBundleIdentifier;
 @property(retain) NSString * bundleIdentifier;
+@property(readonly) BOOL hasSource;
 @property(retain) GEOLatLng * source;
+@property(readonly) BOOL hasDestination;
 @property(retain) GEOLatLng * destination;
+@property BOOL hasTimestamp;
 @property double timestamp;
 
 
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (BOOL)hasDestination;
+- (BOOL)hasSource;
+- (BOOL)hasBundleIdentifier;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (double)timestamp;
 - (id)source;
 - (void)setSource:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)setBundleIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

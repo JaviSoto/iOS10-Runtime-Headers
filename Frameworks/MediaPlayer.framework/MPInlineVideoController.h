@@ -123,8 +123,8 @@
 @property unsigned long long visibleParts;
 @property BOOL autoPlayWhenLikelyToKeepUp;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)savedStatusBarStyle;
 - (BOOL)savedIsStatusBarHidden;
@@ -146,7 +146,7 @@
 - (void)_timedImageMetadataAvailable:(id)arg1;
 - (void)_playbackError:(id)arg1;
 - (void)_bufferingStateChanged:(id)arg1;
-- (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
+- (void)_hideOverlayDidEnd;
 - (void)_delayedShowLoadingIndicator;
 - (void)_flipFromChaptersDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_postScaleModeDidChange;
@@ -216,6 +216,7 @@
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
 - (void)overlay:(id)arg1 didEndUserEvent:(int)arg2;
+- (void)overlay:(id)arg1 didCancelUserEvent:(int)arg2;
 - (void)overlay:(id)arg1 didBeginUserEvent:(int)arg2;
 - (void)overlayTappedFullscreenButton:(id)arg1;
 - (void)overlayTappedBackButton:(id)arg1;

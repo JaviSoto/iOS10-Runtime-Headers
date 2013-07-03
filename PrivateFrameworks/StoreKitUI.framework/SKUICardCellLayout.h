@@ -12,7 +12,6 @@
     float _userRating;
     UIImageView *_userRatingImageView;
     UILabel *_userRatingLabel;
-    NSString *_artistName;
 }
 
 @property(copy) NSString * artistName;
@@ -23,18 +22,15 @@
 
 
 - (int)numberOfUserRatings;
-- (id)_newLabel;
 - (id)screenshotImage;
 - (id)initWithParentView:(id)arg1 backgroundImage:(id)arg2;
 - (void)layoutForItemOfferChange;
 - (void)setScreenshotImage:(id)arg1;
 - (void)resetLayout;
 - (id)initWithCollectionViewCell:(id)arg1;
-- (void)_reloadUserRatingViews;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setUserRating:(float)arg1;
 - (float)userRating;
-- (void)setIconImage:(id)arg1;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (void)setTitle:(id)arg1;

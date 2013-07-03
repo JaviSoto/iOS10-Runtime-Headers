@@ -32,6 +32,7 @@
 
 + (id)predicateWithCalendars:(id)arg1;
 
+- (BOOL)completed;
 - (int)sortOrder;
 - (BOOL)useDueDateAsCompletionDate;
 - (BOOL)useCompletionDateAsAlternate;
@@ -50,7 +51,6 @@
 - (void)setUseDueDateAsCompletionDate:(BOOL)arg1;
 - (void)setSearchTerm:(id)arg1;
 - (id)searchTerm;
-- (BOOL)completed;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setMaxResults:(unsigned int)arg1;

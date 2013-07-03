@@ -30,8 +30,8 @@
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
 - (void)setAlbumUUID:(id)arg1;
-- (id)photoLibrary;
 - (void)setPhotoLibrary:(id)arg1;
+- (id)photoLibrary;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)run;
 - (void)dealloc;

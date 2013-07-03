@@ -47,6 +47,7 @@
 + (void)_setShouldUseFontSmoothing:(BOOL)arg1;
 + (id)_decodeData:(id)arg1;
 + (void)_registerViewClass:(Class)arg1 representationClass:(Class)arg2 forURLScheme:(id)arg3;
++ (BOOL)_hasRemoteInspectorSession;
 + (BOOL)_isRemoteInspectorEnabled;
 + (void)_disableAutoStartRemoteInspector;
 + (void)_disableRemoteInspector;
@@ -105,12 +106,11 @@
 + (id)_productivityDocumentMIMETypes;
 + (void)_addUserStyleSheetToGroup:(id)arg1 world:(id)arg2 source:(id)arg3 url:(id)arg4 whitelist:(id)arg5 blacklist:(id)arg6;
 + (void)_removeUserStyleSheetsFromGroup:(id)arg1 world:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)typingStyle;
 - (void)stopSpeaking:(id)arg1;
-- (BOOL)isEditable;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)viewDidMoveToWindow;
 - (BOOL)becomeFirstResponder;
@@ -456,6 +456,7 @@
 - (BOOL)maintainsInactiveSelection;
 - (BOOL)_isUsingAcceleratedCompositing;
 - (void)_documentScaleChanged;
+- (BOOL)isEditable;
 - (void)_resetAllGeolocationPermission;
 - (void)_geolocationDidFailWithMessage:(id)arg1;
 - (void)_geolocationDidChangePosition:(id)arg1;
@@ -568,11 +569,11 @@
 - (void)dealloc;
 - (void)setHostApplicationBundleId:(id)arg1 name:(id)arg2;
 - (void)setAllowsRemoteInspection:(BOOL)arg1;
+- (BOOL)defersCallbacks;
 - (id)_touchEventRegions;
 - (void)_overflowScrollPositionChangedTo:(struct CGPoint { float x1; float x2; })arg1 forNode:(id)arg2 isUserScroll:(BOOL)arg3;
 - (void)_setUIWebViewUserAgentWithBuildVersion:(id)arg1;
 - (void)delete:(id)arg1;
-- (BOOL)defersCallbacks;
 - (id)customUserAgent;
 - (unsigned int)_pageCount;
 - (void)_setGapBetweenPages:(float)arg1;

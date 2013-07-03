@@ -16,6 +16,7 @@
     NSMutableDictionary *_downloadProperties;
     long long _expectedDownloadFileSize;
     NSArray *_filteredAssetTypes;
+    NSArray *_gratisIdentifiers;
     BOOL _ignoresForcedPasswordRestriction;
     SSItem *_item;
     SSItemOffer *_itemOffer;
@@ -40,6 +41,7 @@
 @property(copy) SSNetworkConstraints * networkConstraints;
 @property int batchIdentifier;
 @property long long expectedDownloadFileSize;
+@property(copy) NSArray * gratisIdentifiers;
 @property(copy) id requiredDeviceCapabilities;
 @property long long uniqueIdentifier;
 @property(readonly) NSData * databaseEncoding;
@@ -49,6 +51,7 @@
 - (void)setDownloadProperties:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;
 - (id)itemOffer;
+- (void)setGratisIdentifiers:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setExpectedDownloadFileSize:(long long)arg1;
 - (void)setRequestProperties:(id)arg1;
@@ -63,6 +66,7 @@
 - (id)downloadMetadata;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
 - (void)setBatchIdentifier:(int)arg1;
+- (id)gratisIdentifiers;
 - (long long)expectedDownloadFileSize;
 - (id)databaseEncoding;
 - (int)batchIdentifier;

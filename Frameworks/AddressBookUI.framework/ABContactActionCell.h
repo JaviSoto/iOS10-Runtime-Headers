@@ -19,6 +19,7 @@
 - (void)_updateTextFont;
 - (void)setTextAttributes:(id)arg1;
 - (id)textAttributes;
+- (void)tintColorDidChange;
 - (id)action;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

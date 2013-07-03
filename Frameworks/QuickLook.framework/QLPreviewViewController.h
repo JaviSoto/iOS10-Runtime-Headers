@@ -37,7 +37,6 @@
     QLDisplayBundle *_newDisplayBundle;
     NSTimer *_progressTimer;
     QLProgressView *_progressView;
-    BOOL _loadingProgressVisible;
     NSString *_loadingTextForMissingFiles;
     BOOL _overlayHidden;
     UIDocumentPasswordView *_documentPasswordView;
@@ -75,9 +74,12 @@
 - (void)_showGenericDisplayBundleForPreviewItem:(id)arg1;
 - (void)viewWasTappedOnPreviewItem:(id)arg1;
 - (void)_removeDisplayBundles;
+- (void)_hideProgressiveUI;
 - (void)_hidePasswordView;
+- (void)_updateProgressUIWithDuration:(double)arg1;
 - (void)refreshPreviewItem;
 - (void)_refreshPreviewItem:(BOOL)arg1 withPassword:(id)arg2;
+- (void)_showProgressUI;
 - (void)_prepareDisplayBundle:(id)arg1 preload:(BOOL)arg2 withHints:(id)arg3;
 - (void)_cancelScheduledShowProgressiveUI;
 - (void)_layoutViews;
@@ -94,6 +96,7 @@
 - (void)beginTrackingViewUpdates;
 - (int)airPlayMode;
 - (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
 - (void)cancelLoadIfNeeded;
 - (void)viewDidUpdateForPreviewItem:(id)arg1;
 - (void)previewItem:(id)arg1 requiresDisplayBundle:(id)arg2 withHints:(id)arg3;
@@ -101,14 +104,11 @@
 - (void)previewItemWillLoad:(id)arg1;
 - (void)progressViewWasTapped:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
-- (void)_showProgressUI;
-- (void)_hideProgressiveUI;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
-- (void)setIndex:(int)arg1;
 - (int)index;
+- (void)setIndex:(int)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;
@@ -116,9 +116,9 @@
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
-- (id)snapshotView;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
+- (id)snapshotView;
 
 @end

@@ -110,7 +110,6 @@
 - (void)setTotalNumberOfPhotos:(unsigned int)arg1;
 - (unsigned int)totalNumberOfPhotos;
 - (BOOL)hasTotalNumberOfPhotos;
-- (BOOL)hasCenter;
 - (id)openHoursAtIndex:(unsigned int)arg1;
 - (void)clearOpenHours;
 - (unsigned int)openHoursCount;
@@ -168,6 +167,7 @@
 - (void)setPhoneticName:(id)arg1;
 - (void)setNotice:(id)arg1;
 - (unsigned long long)uID;
+- (BOOL)hasCenter;
 - (BOOL)hasName;
 - (id)ratings;
 - (void)copyTo:(id)arg1;

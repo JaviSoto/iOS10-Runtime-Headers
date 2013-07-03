@@ -27,12 +27,12 @@
 - (BOOL)purgeMetadataForStoreMetadata:(id)arg1 withError:(id*)arg2;
 - (BOOL)purgeAndInitializeMetadataStoreFileWithError:(id*)arg1;
 - (id)initWithMetadataEntry:(id)arg1;
-- (id)ubiquityRootURL;
 - (id)metadataStoreFileLocation;
 - (id)createMinMetadataStoreKnowledgeVector:(id*)arg1;
 - (id)createMetadataStoreKnowledgeVector:(id*)arg1;
 - (id)metadataMOC;
 - (id)localPeerID;
+- (id)ubiquityRootURL;
 - (id)storeName;
 - (id)init;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAnimation, NSArray, VKPolylineOverlayPainter, VKMapCanvas, <VKRoutePreloadSession>, VKClassicGlobeCanvas, NSString, VKLabelMarker, <VKMapViewDelegate>, GEOMapRegion;
+@class VKAnimation, VKLabelMarker, NSArray, VKPolylineOverlayPainter, VKMapCanvas, <VKRoutePreloadSession>, GEOMapRegion, VKClassicGlobeCanvas, <VKMapViewDelegate>, NSString, CADisplay;
 
 @interface VKMapView : CALayer <VKInteractiveMapDelegate> {
     int _mapType;
@@ -14,7 +14,6 @@
     int _mapDisplayStyle;
     VKAnimation *_mapDisplayStyleAnimation;
     VKAnimation *_edgeInsetAnimation;
-    NSString *_localizedFlyoverBorderName;
 }
 
 @property BOOL shouldLoadFallbackTiles;
@@ -22,6 +21,7 @@
 @property <VKMapViewDelegate> * mapDelegate;
 @property BOOL staysCenteredDuringPinch;
 @property BOOL staysCenteredDuringRotation;
+@property(retain) CADisplay * hostDisplay;
 @property BOOL isPitchable;
 @property(getter=isPitched,readonly) BOOL pitched;
 @property(getter=isFullyPitched,readonly) BOOL fullyPitched;
@@ -56,7 +56,7 @@
 @property(getter=isFullyDrawn,readonly) BOOL fullyDrawn;
 @property int trackingCameraPanStyle;
 @property double trackingZoomScale;
-@property BOOL trackingAutoSelectsZoomScale;
+@property int annotationTrackingZoomStyle;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
 @property(readonly) BOOL canShowAnimationForPlaceCard;
 @property(readonly) VKLabelMarker * selectedLabelMarker;
@@ -78,11 +78,9 @@
 @property double userZoomFocusStyleMinGroundspanMeters;
 @property double userZoomFocusStyleMaxGroundspanMeters;
 @property struct Vec2Imp<float> { float x1; float x2; } deviceTilt;
-@property(copy) NSString * localizedFlyoverBorderName;
 
 + (id)installedStylesheetNames;
 
-- (id)localizedFlyoverBorderName;
 - (id)mapDelegate;
 - (BOOL)gridDisabled;
 - (BOOL)realisticLandDisabled;
@@ -193,6 +191,7 @@
 - (id)annotationMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)routePreloadSession;
 - (void)setRoutePreloadSession:(id)arg1;
+- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1;
 - (void)preloadNavigationSceneResources;
 - (int)trackingCameraPanStyle;
 - (void)setTrackingCameraPanStyle:(int)arg1;
@@ -251,14 +250,13 @@
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setAlwaysVisibleTrafficIncidents:(id)arg1;
 - (id)alwaysVisibleTrafficIncidents;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
-- (BOOL)trackingAutoSelectsZoomScale;
+- (void)setAnnotationTrackingZoomStyle:(int)arg1;
+- (int)annotationTrackingZoomStyle;
 - (void)_initializeGlobe;
 - (void)_createGlobe;
 - (BOOL)isShowingFlyover;
 - (BOOL)canShowFlyover;
 - (BOOL)supportsMapType:(int)arg1;
-- (void)setLocalizedFlyoverBorderName:(id)arg1;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (BOOL)rendersInBackground;
 - (void)setCanonicalSkyHeight:(double)arg1;
@@ -282,6 +280,8 @@
 - (BOOL)shouldLoadFallbackTiles;
 - (void)setShouldLoadFallbackTiles:(BOOL)arg1;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setHostDisplay:(id)arg1;
+- (id)hostDisplay;
 - (void)clearScene;
 - (void)debugShowTourJump:(BOOL)arg1;
 - (float)debugFramesPerSecond;
@@ -299,6 +299,7 @@
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (BOOL)localizeLabels;
 - (void)setStaysCenteredDuringPinch:(BOOL)arg1;
+- (void)resetContext;
 - (void)setDisplayRate:(int)arg1;
 - (int)displayRate;
 - (void)setTrafficEnabled:(BOOL)arg1;
@@ -344,8 +345,8 @@
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
 - (void)dealloc;
 - (void)willEnterForeground;
-- (void)forceLayout;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)forceLayout;
 - (void)_mapkit_configureFromDefaults:(BOOL)arg1;
 
 @end

@@ -17,19 +17,19 @@
 
 + (void)_endTopLevelGroupings;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
-- (void)removeAllActionsWithTarget:(id)arg1;
-- (BOOL)isRedoing;
-- (BOOL)isUndoing;
-- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (void)removeAllActions;
 - (BOOL)isUndoRegistrationEnabled;
 - (void)redo;
 - (void)undo;
+- (void)removeAllActionsWithTarget:(id)arg1;
 - (int)groupingLevel;
 - (void)setActionName:(id)arg1;
+- (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
+- (BOOL)isRedoing;
+- (BOOL)isUndoing;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;

@@ -36,11 +36,11 @@
 - (id)achievementID;
 - (id)friendsDataSource;
 - (id)collectionView:(id)arg1 forPickerInfo:(id)arg2 forIndexPath:(id)arg3;
-- (void)loadGamePlayersWithDispatchGroup:(id)arg1;
-- (void)loadRanksWithDispatchGroup:(id)arg1;
-- (void)loadAchievedWithDispatchGroup:(id)arg1;
-- (void)updatePickerInfosFromPlayers:(id)arg1;
 - (void)updatePickerInfosFromFriendPlayersOfGame:(id)arg1 outputPlayerIDs:(id*)arg2;
+- (void)loadGamePlayersWithUpdateNotifier:(id)arg1;
+- (void)loadRanksWithUpdateNotifier:(id)arg1;
+- (void)loadAchievedWithUpdateNotifier:(id)arg1;
+- (void)updatePickerInfosFromPlayers:(id)arg1;
 - (void)toggleSelectionForPlayerID:(id)arg1;
 - (id)allPickerInfos;
 - (BOOL)canSelectPlayerInfo:(id)arg1;
@@ -58,11 +58,10 @@
 - (id)selectedPlayerIDs;
 - (void)refreshSelectionState;
 - (void)collectionViewWillBecomeActive:(id)arg1;
-- (void)underlyingDataSourceLoadedWithGroup:(id)arg1;
 - (void)setMaxSelectable:(int)arg1;
 - (void)configureCollectionView:(id)arg1;
 - (void)configureDataSource;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (id)init;

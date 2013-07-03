@@ -6,7 +6,7 @@
 }
 
 
-- (id)urlString;
 - (id)bodyDictionary;
+- (id)urlString;
 
 @end

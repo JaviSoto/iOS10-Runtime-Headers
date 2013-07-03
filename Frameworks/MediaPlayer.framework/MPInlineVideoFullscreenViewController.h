@@ -30,7 +30,7 @@
 - (void)_showOverlayDidEnd;
 - (void)resetOverlayIdleTimer;
 - (void)_overlayIdleTimerFired:(id)arg1;
-- (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
+- (void)_hideOverlayDidEnd;
 - (void)hideLoadingIndicator;
 - (void)showLoadingIndicator;
 - (void)cancelOverlayIdleTimer;
@@ -42,6 +42,7 @@
 - (void)showAlternateTracks;
 - (void)swipableViewHadActivity:(id)arg1;
 - (void)overlay:(id)arg1 didEndUserEvent:(int)arg2;
+- (void)overlay:(id)arg1 didCancelUserEvent:(int)arg2;
 - (void)overlay:(id)arg1 didBeginUserEvent:(int)arg2;
 - (void)overlayTappedBackButton:(id)arg1;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
@@ -58,7 +59,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)item;
-- (BOOL)wantsFullScreenLayout;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
 

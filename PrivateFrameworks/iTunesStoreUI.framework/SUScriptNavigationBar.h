@@ -54,8 +54,8 @@
 - (id)attributeKeys;
 - (id)init;
 - (void)setNavigationItems:(id)arg1;
-- (int)barStyle;
 - (void)setTranslucent:(id)arg1;
+- (int)barStyle;
 - (void)setBarStyle:(int)arg1;
 - (id)navigationItems;
 - (void)setPrompt:(id)arg1;

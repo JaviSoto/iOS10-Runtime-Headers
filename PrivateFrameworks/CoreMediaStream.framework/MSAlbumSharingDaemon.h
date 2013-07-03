@@ -47,6 +47,7 @@
 - (id)persistentObjectForKey:(id)arg1 personID:(id)arg2;
 - (void)forgetEverythingCompletionBlock:(id)arg1;
 - (void)retrieveAssetsInAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2 personID:(id)arg3;
+- (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2;
 - (void)rejectInvitationWithGUID:(id)arg1 personID:(id)arg2;
 - (void)acceptInvitationWithGUID:(id)arg1 personID:(id)arg2;
@@ -119,7 +120,6 @@
 - (BOOL)isInRetryState;
 - (id)nextActivityDate;
 - (void)addAccessControlEntries:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3;
-- (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)setFocusAssetCollectionGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2 personID:(id)arg3;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2;

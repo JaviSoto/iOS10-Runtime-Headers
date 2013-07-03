@@ -8,8 +8,8 @@
     UIImageView *_pickedImage;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPicked:(BOOL)arg1;
 - (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;

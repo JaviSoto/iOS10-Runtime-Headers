@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKMemoryObserver, NSArray, VKDispatch, VKLayoutContext, NSMutableArray, VKWorld, VGLDisplayLink, VKCamera, VKScene;
+@class VKMemoryObserver, NSArray, CADisplay, VKDispatch, VKLayoutContext, NSMutableArray, VKWorld, VGLDisplayLink, VKCamera, VKScene;
 
 @interface VKScreenCanvas : VGLScreenCanvas <VKWorldDelegate, VKAnimationRunner, VKCameraControllerDelegate, VKCameraDelegate> {
     VKDispatch *_dispatch;
@@ -49,6 +49,7 @@
 @property BOOL debugPaintFrameRateGraph;
 @property BOOL debugEnableMultisampling;
 @property float debugFramesPerSecond;
+@property CADisplay * hostDisplay;
 @property int displayRate;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } fullyOccludedEdgeInsets;
@@ -71,7 +72,6 @@
 - (void)_updateDisplayRate;
 - (BOOL)updateDisplayLinkStatus;
 - (BOOL)wantsTimerTick;
-- (BOOL)wantsRender;
 - (void)adoptAnimation:(id)arg1;
 - (void)runOrAdoptAnimation:(id)arg1 run:(BOOL)arg2;
 - (void)onTimerFired:(id)arg1;
@@ -86,12 +86,13 @@
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })fullyOccludedEdgeInsets;
 - (void)setFullyOccludedEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)runAnimation:(id)arg1;
-- (BOOL)canRender;
 - (void)transferAnimationsTo:(id)arg1;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (BOOL)rendersInBackground;
 - (void)setIconsShouldAlignToPixels:(BOOL)arg1;
 - (BOOL)iconsShouldAlignToPixels;
+- (void)setHostDisplay:(id)arg1;
+- (id)hostDisplay;
 - (float)debugFramesPerSecond;
 - (void)setDebugEnableMultisampling:(BOOL)arg1;
 - (BOOL)debugEnableMultisampling;
@@ -105,6 +106,8 @@
 - (BOOL)isGesturing;
 - (void)cameraDidChange:(id)arg1;
 - (void)didEnterBackground;
+- (BOOL)wantsRender;
+- (BOOL)canRender;
 - (void)drawWithTimestamp:(double)arg1;
 - (void)didDrawView;
 - (id)camera;
@@ -120,8 +123,8 @@
 - (void)dealloc;
 - (id).cxx_construct;
 - (void)willEnterForeground;
-- (void)forceLayout;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)forceLayout;
 - (void)animationDidStop:(id)arg1;
 - (void)didReceiveMemoryWarning;
 

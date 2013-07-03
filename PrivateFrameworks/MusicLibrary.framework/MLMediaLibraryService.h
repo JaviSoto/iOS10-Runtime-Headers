@@ -21,6 +21,7 @@
 
 - (BOOL)connectionOpen;
 - (void)_invalidatePendingCompletionHandlersWithError:(id)arg1;
+- (void)validateDatabaseForLibrary:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)serviceProxy;
 - (id)_retrieveCompletionHandlerForToken:(struct NSNumber { Class x1; }*)arg1;
 - (struct NSNumber { Class x1; }*)_addPendingCompletionHandler:(id)arg1;
@@ -31,7 +32,6 @@
 - (void)closeServiceConnection;
 - (void)openServiceConnection;
 - (void)writerCanceledTransactionWithIdentifier:(id)arg1;
-- (void)validateDatabaseForLibrary:(id)arg1 withCompletionHandler:(id)arg2;
 - (oneway void)setOptions:(id)arg1 withCompletionHandler:(id)arg2;
 - (oneway void)executeTemplatedDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
 - (oneway void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 withCompletionHandler:(id)arg3;

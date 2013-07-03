@@ -25,6 +25,7 @@
 @property BOOL hasRecurrenceRules;
 
 
+- (BOOL)isAllDay;
 - (BOOL)needsAlert;
 - (id)calendarName;
 - (void)setParticipationStatusModifiedDate:(id)arg1;
@@ -36,10 +37,9 @@
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)eventFromEventStore:(id)arg1;
-- (BOOL)isAllDay;
 - (void)setAllDay:(BOOL)arg1;
-- (id)location;
 - (id)startDate;
+- (id)location;
 - (id)initWithType:(int)arg1;
 - (int)status;
 - (void)setLocation:(id)arg1;

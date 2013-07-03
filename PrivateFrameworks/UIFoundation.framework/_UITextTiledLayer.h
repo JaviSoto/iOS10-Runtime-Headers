@@ -27,7 +27,7 @@
     } _tileSize;
 }
 
-@property(getter=shouldDisableTiling) BOOL disableTiling;
+@property BOOL usesTiledLayers;
 @property struct CGSize { float x1; float x2; } tileSize;
 
 
@@ -47,7 +47,7 @@
 - (void)drawDirtyLayer:(id)arg1 intoContext:(struct CGContext { }*)arg2;
 - (id)init;
 - (void)dealloc;
-- (BOOL)shouldDisableTiling;
-- (void)setDisableTiling:(BOOL)arg1;
+- (BOOL)usesTiledLayers;
+- (void)setUsesTiledLayers:(BOOL)arg1;
 
 @end

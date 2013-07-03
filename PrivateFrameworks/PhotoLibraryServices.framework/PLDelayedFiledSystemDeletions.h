@@ -8,12 +8,14 @@
     NSMutableArray *_deletionInfos;
 }
 
++ (id)filesystemDeletionQueue;
 + (id)deletionsFromChangeHubEvent:(id)arg1;
 + (void)appendDescriptionForEvent:(id)arg1 toComponents:(id)arg2;
++ (void)waitForAllDelayedDeletionsToFinish;
 
 - (id)initWithFilesystemDeletionInfos:(id)arg1;
-- (void)deleteAllRemainingFilesAndThumbnailsCompletionHandler:(id)arg1;
 - (void)appendToXPCMessage:(id)arg1;
+- (void)deleteAllRemainingFilesAndThumbnailsWithPhotoLibrary:(id)arg1 completionHandler:(id)arg2;
 - (void)addFilesystemDeletionInfo:(id)arg1;
 - (id)debugDescription;
 - (void)dealloc;

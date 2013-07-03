@@ -17,8 +17,8 @@
 
 + (float)defaultLabelFontSize;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setLabel:(id)arg1;
 - (void)setKnobImage:(id)arg1;
@@ -74,9 +74,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityIdentifier;
 - (BOOL)isAccessibilityElement;
-- (id)accessibilityContainerElements;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (void)clearDelegateClearer;
 - (void)_axClearDelegate:(id)arg1;
+- (id)accessibilityContainerElements;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 
 @end

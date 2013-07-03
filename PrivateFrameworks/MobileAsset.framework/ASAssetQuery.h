@@ -20,8 +20,6 @@
 
 + (id)queryPredicateForProperties:(id)arg1;
 
-- (void)stopQuery;
-- (id)results;
 - (void)setPredicate:(id)arg1;
 - (void)setQueriesLocalAssetInformationOnly:(BOOL)arg1;
 - (void)startQuery:(id)arg1;
@@ -34,6 +32,8 @@
 - (void)setResults:(id)arg1;
 - (id)assetType;
 - (void)dealloc;
+- (void)stopQuery;
+- (id)results;
 - (id)predicate;
 
 @end

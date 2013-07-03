@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class RadioTrack, RadioAudioClip, MPAlternateTracks, NSData, MPQueueFeeder, MPImageCache, AVPlayerItem, MPRadioAdTrack, AVAsset, MPAVController, MPMediaItem, NSArray, NSObject<OS_dispatch_queue>, MPAlternateTextTrack, NSString, NSURL;
+@class RadioAudioClip, RadioTrack, MPAlternateTracks, NSData, MPQueueFeeder, AVPlayerItem, MPAVController, MPRadioAdTrack, AVAsset, MPMediaItem, MPImageCache, NSArray, NSObject<OS_dispatch_queue>, MPAlternateTextTrack, NSString, NSURL;
 
 @interface MPAVItem : NSObject  {
     AVAsset *_asset;
@@ -38,6 +38,7 @@
     float _loudnessInfoVolumeNormalization;
 }
 
+@property(readonly) NSString * assetFlavor;
 @property(readonly) MPMediaItem * mediaItem;
 @property(readonly) BOOL isRadioItem;
 @property(readonly) RadioTrack * radioTrack;
@@ -121,18 +122,19 @@
 + (id)URLFromPath:(id)arg1;
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 + (unsigned int)defaultScaleMode;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)artist;
 - (id)album;
+- (float)userRating;
 - (void)setRating:(float)arg1;
 - (id)audioClip;
-- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (id)_plistKeyForMPMediaItemProperty:(id)arg1;
-- (void)getStationDictionaryForDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (BOOL)MPSPWD_prioritizeDownloadSession;
 - (id)adTrack;
+- (id)assetFlavor;
 - (BOOL)wasDownloadedThisSession;
 - (id)mediaItem;
 - (BOOL)isRadioItem;
@@ -152,7 +154,6 @@
 - (BOOL)durationIsValid;
 - (id)localizedPositionInPlaylistString;
 - (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
-- (float)userRating;
 - (id)closedCaptionTimeMarkerForTime:(double)arg1;
 - (id)urlTimeMarkerForTime:(double)arg1;
 - (void)setClosedCaptionTimeMarkers:(id)arg1;
@@ -180,7 +181,6 @@
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
 - (BOOL)displayableTextLoaded;
 - (double)currentTimeDisplayOverride;
-- (BOOL)isExplicitTrack;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
@@ -250,6 +250,7 @@
 - (id)artworkImageData;
 - (id)radioTrack;
 - (BOOL)isAd;
+- (BOOL)isExplicitTrack;
 - (BOOL)supportsRewindAndFastForward15Seconds;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;

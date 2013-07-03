@@ -45,6 +45,7 @@
 @property BOOL assistiveTouchScannerPointPickerDefaultsToRescan;
 @property int assistiveTouchCursorColor;
 @property int assistiveTouchHeadMovementSensitivity;
+@property BOOL assistiveTouchSwitchUsageConfirmed;
 @property(retain) NSSet * assistiveTouchSwitches;
 @property int guidedAccessUsageCount;
 @property BOOL guidedAccessAXFeaturesEnabled;
@@ -95,6 +96,8 @@
 @property BOOL voiceOverShouldOutputToHearingAid;
 @property BOOL voiceOverBrailleGradeTwoAutoTranslateEnabled;
 @property BOOL allowHearingAidControlOnLockScreen;
+@property BOOL shouldStreamToLeftAid;
+@property BOOL shouldStreamToRightAid;
 @property(retain) NSMutableSet * registeredNotifications;
 @property(retain) NSMutableDictionary * synchronizeDomains;
 @property(retain) NSMutableDictionary * updateBlocks;
@@ -113,6 +116,8 @@
 - (id)accessibilityFeatureIDsForTripleClickOptions:(id)arg1;
 - (id)accessibilityTripleClickOptions;
 - (id)accessibilityFeatureStatus;
+- (void)setShouldStreamToRightAid:(BOOL)arg1;
+- (void)setShouldStreamToLeftAid:(BOOL)arg1;
 - (void)setAllowHearingAidControlOnLockScreen:(BOOL)arg1;
 - (void)setVoiceOverShouldOutputToHearingAid:(BOOL)arg1;
 - (float)voiceOverSpeakingRateForLanguage:(id)arg1;
@@ -166,6 +171,7 @@
 - (void)setGaxInternalSettingsUserAppProfile:(id)arg1;
 - (void)setGuidedAccessAXFeaturesEnabled:(BOOL)arg1;
 - (void)setGuidedAccessUsageCount:(int)arg1;
+- (void)setAssistiveTouchSwitchUsageConfirmed:(BOOL)arg1;
 - (void)setAssistiveTouchHeadMovementSensitivity:(int)arg1;
 - (void)setAssistiveTouchCursorColor:(int)arg1;
 - (void)setAssistiveTouchScannerSpeechRate:(double)arg1;
@@ -221,6 +227,8 @@
 - (BOOL)_switchFromRootUserIfNecessary:(id)arg1;
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (struct __CFString { }*)_domainNameForDomain:(int)arg1;
+- (BOOL)shouldStreamToRightAid;
+- (BOOL)shouldStreamToLeftAid;
 - (BOOL)allowHearingAidControlOnLockScreen;
 - (BOOL)voiceOverShouldOutputToHearingAid;
 - (BOOL)voiceOverBrailleGradeTwoAutoTranslateEnabled;
@@ -268,6 +276,7 @@
 - (id)gaxInternalSettingsUserAppProfile;
 - (BOOL)guidedAccessAXFeaturesEnabled;
 - (int)guidedAccessUsageCount;
+- (BOOL)assistiveTouchSwitchUsageConfirmed;
 - (int)assistiveTouchHeadMovementSensitivity;
 - (int)assistiveTouchCursorColor;
 - (BOOL)assistiveTouchScanTimeoutEnabled;

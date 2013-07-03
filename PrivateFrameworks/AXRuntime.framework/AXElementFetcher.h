@@ -33,7 +33,6 @@
 @property(readonly) BOOL willFetchElements;
 @property(readonly) NSArray * availableElements;
 @property int fetchPolicy;
-@property(retain) AXElement * currentApp;
 @property(getter=isEventManagementEnabled) BOOL eventManagementEnabled;
 @property(getter=isGroupingEnabled) BOOL groupingEnabled;
 @property BOOL shouldUsePadInterfaceHeuristics;
@@ -44,6 +43,7 @@
 @property <AXElementFetcherDelegate> * delegate;
 @property(retain) NSMapTable * fetchObservers;
 @property unsigned int activeFetchEvents;
+@property(retain) AXElement * currentApp;
 @property(retain) NSMutableDictionary * postFetchFilters;
 @property(retain) NSArray * elementCache;
 @property(retain) AXElementGroup * rootGroupCache;
@@ -130,7 +130,7 @@
 - (id)rootGroupCache;
 - (id)elementCache;
 - (void)setCurrentApp:(id)arg1;
-- (BOOL)updateCurrentApp;
+- (BOOL)_updateCurrentApp;
 - (BOOL)isGroupingEnabled;
 - (id)currentApp;
 - (BOOL)isFetchingElements;

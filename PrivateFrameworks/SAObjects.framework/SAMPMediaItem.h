@@ -26,8 +26,10 @@
 
 - (id)artist;
 - (id)album;
+- (id)dateAdded;
 - (void)setArtist:(id)arg1;
 - (void)setAlbum:(id)arg1;
+- (void)setDateAdded:(id)arg1;
 - (id)sortAlbum;
 - (id)sortArtist;
 - (void)setTrackNumber:(int)arg1;
@@ -36,8 +38,6 @@
 - (void)setPlaybackInfo:(id)arg1;
 - (id)playbackInfo;
 - (void)setDatePurchased:(id)arg1;
-- (void)setDateAdded:(id)arg1;
-- (id)dateAdded;
 - (void)setComposer:(id)arg1;
 - (void)setSortArtist:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;

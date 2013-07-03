@@ -34,7 +34,6 @@
 - (void)fillIterationKeyAttribute:(id)arg1 iteration:(int)arg2 rowOrColumn:(int)arg3 document:(id)arg4;
 - (void)getDrawingLayerIndices:(id*)arg1 themeLayers:(id*)arg2 lowestIndex:(int*)arg3;
 - (void)appendToLog:(id)arg1;
-- (id)log;
 - (void)_loadMetricsMasksWithDocument:(id)arg1;
 - (id)psdImageRefWithDocument:(id)arg1;
 - (void)addDrawingLayerIndex:(id)arg1 themeLayer:(id)arg2 toIndices:(id)arg3 layers:(id)arg4 lowestIndex:(int*)arg5;
@@ -47,6 +46,7 @@
 - (void)dealloc;
 - (void)setColumnCount:(id)arg1;
 - (id)columnCount;
+- (id)log;
 - (void)setIsActive:(id)arg1;
 - (id)relativePath;
 

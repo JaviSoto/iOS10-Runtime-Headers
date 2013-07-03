@@ -9,11 +9,11 @@
 - (id)_emojiBorderColor;
 - (id)_emojiCategoryControlKeyActiveTraits;
 - (id)_emojiCategoryControlKeyTraits;
+- (id)_emojiSpaceKeyBackgroundColorGradient;
+- (id)_emojiSpaceKeyActiveBackgroundColorGradient;
 - (id)_emojiDefaultControlKeyBackgroundColorGradient;
 - (id)_emojiDefaultControlKeyActiveBackgroundColorGradient;
 - (id)_emojiInputViewKeyBackgroundColorGradient;
-- (id)_emojiSpaceKeyActiveBackgroundColorGradient;
-- (id)_emojiSpaceKeyBackgroundColorGradient;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 
 @end

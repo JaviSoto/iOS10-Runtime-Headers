@@ -27,11 +27,12 @@
 
 - (id)_remotePreviewItemAtIndex:(int)arg1;
 - (void)_updateHostedWindowFrame;
-- (void)_getPDFPageAtIndex:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2 handler:(id)arg3;
-- (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id)arg2;
-- (int)sourceUUID;
-- (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_setNumberOfPreviewItems:(int)arg1;
+- (int)sourceUUID;
+- (void)_getPDFPageAtIndex:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2 handler:(id)arg3;
+- (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id)arg2;
+- (void)_setTransitioning:(BOOL)arg1;
 - (void)_willAnimateRotationTo:(int)arg1;
 - (id)clientProcessAlertViewForPreviewContentController:(id)arg1;
 - (void)previewContentControllerDidExitFullScreen:(id)arg1;
@@ -42,6 +43,7 @@
 - (void)beginScrubbing;
 - (id)printPageHelper;
 - (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)overlayWasTappedInPreviewContentController:(id)arg1;
 - (void)showContentsWasTappedInPreviewContentController:(id)arg1;
@@ -49,7 +51,6 @@
 - (void)previewContentController:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (void)previewContentController:(id)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)previewContentController:(id)arg1 didFailWithError:(id)arg2;
-- (void)previewContentController:(id)arg1 didUnloadItem:(id)arg2;
 - (void)previewContentController:(id)arg1 didLoadItem:(id)arg2 atIndex:(int)arg3 withError:(id)arg4;
 - (void)previewContentController:(id)arg1 didMoveToItem:(id)arg2 atIndex:(int)arg3;
 - (void)previewContentController:(id)arg1 willMoveToItemAtIndex:(int)arg2;
@@ -63,14 +64,14 @@
 - (void)willChangeContentFrame;
 - (void)configureWithParameters:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
 - (void)becomeForeground;
 - (void)enterBackground;
 - (int)numberOfPreviewItems;
 - (void)refreshCurrentPreviewItem;
+- (void)checkCurrentPreviewItem;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
 - (int)currentPreviewItemIndex;
-- (void)setTransitioning:(BOOL)arg1;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)purgeCache;
 - (void)setDataSource:(id)arg1;
@@ -82,6 +83,5 @@
 - (void)_willAppearInRemoteViewController;
 - (id)printPageRenderer;
 - (void)setBlockRemoteImages:(BOOL)arg1;
-- (void)reloadData;
 
 @end

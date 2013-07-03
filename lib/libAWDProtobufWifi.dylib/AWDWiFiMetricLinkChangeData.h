@@ -69,9 +69,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (unsigned long long)timestamp;
 - (void)setReason:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (unsigned int)reason;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

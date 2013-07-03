@@ -26,6 +26,11 @@
     float _distanceFromPreviousShieldLabel;
     int _preferredLabelPlacement;
     BOOL _isOnDualCarriageway;
+    BOOL _hasSharedRouteDirection;
+    struct Vec2Imp<float> { 
+        float x; 
+        float y; 
+    } _sharedRouteDirection;
     BOOL _foundRoads;
     BOOL _isOverpass;
     BOOL _isRouteOverpass;
@@ -55,6 +60,8 @@
 @property(readonly) VKLabelNavRoad * incomingRoad;
 @property float distanceFromPreviousShieldLabel;
 @property BOOL isOnDualCarriageway;
+@property(readonly) BOOL hasSharedRouteDirection;
+@property struct Vec2Imp<float> { float x1; float x2; } sharedRouteDirection;
 @property(readonly) BOOL isOnRoute;
 @property(readonly) BOOL isIntraRamp;
 @property(readonly) BOOL isTileEdgeJunction;
@@ -88,11 +95,14 @@
 - (void)setOverpassJunction:(id)arg1;
 - (id)overpassJunction;
 - (unsigned int)depthFromRoute;
+- (struct Vec2Imp<float> { float x1; float x2; })sharedRouteDirection;
+- (BOOL)hasSharedRouteDirection;
 - (void)setIsOnDualCarriageway:(BOOL)arg1;
 - (void)setDistanceFromPreviousShieldLabel:(float)arg1;
 - (float)distanceFromPreviousShieldLabel;
 - (int)preferredLabelPlacement;
 - (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)geoJunction;
+- (void)setSharedRouteDirection:(struct Vec2Imp<float> { float x1; float x2; })arg1;
 - (void)addRouteEdge:(const struct VKLabelNavRouteRoadEdge { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; struct { /* ? */ } *x3; }*)arg1 atA:(BOOL)arg2;
 - (int)largestRoadClass;
 - (BOOL)isOffRouteGraph;

@@ -35,6 +35,7 @@
     NSDictionary *_cachedBody;
     NSString *_dsAuthID;
     NSString *_dataUsageBundleIdentifier;
+    int _timeoutRetries;
     NSDictionary *_responseAlert;
     double _timeout;
     double _timeSent;
@@ -59,6 +60,8 @@
 @property(readonly) BOOL wantsBodySignature;
 @property(readonly) BOOL wantsCFNetworkTimeout;
 @property(readonly) BOOL wantsManagedRetries;
+@property(readonly) BOOL wantsExtraTimeoutRetry;
+@property(readonly) int maxTimeoutRetries;
 @property(readonly) BOOL wantsHTTPHeaders;
 @property(readonly) BOOL wantsCompressedBody;
 @property BOOL wantsBinaryPush;
@@ -69,6 +72,7 @@
 @property(readonly) BOOL wantsHTTPGet;
 @property(readonly) BOOL wantsAPSRetries;
 @property BOOL wantsResponse;
+@property int timeoutRetries;
 @property(readonly) BOOL ignoresNetworkConnectivity;
 @property(readonly) BOOL wantsCustomRetryInterval;
 @property(readonly) double customRetryInterval;
@@ -119,6 +123,8 @@
 - (id)clientInfo;
 - (id)serviceData;
 - (BOOL)highPriority;
+- (void)setTimeoutRetries:(int)arg1;
+- (int)timeoutRetries;
 - (void)setForceCellular:(BOOL)arg1;
 - (BOOL)forceCellular;
 - (void)setDSAuthID:(id)arg1;
@@ -155,6 +161,8 @@
 - (double)customRetryInterval;
 - (BOOL)wantsCustomRetryInterval;
 - (id)uniqueIDString;
+- (int)maxTimeoutRetries;
+- (BOOL)wantsExtraTimeoutRetry;
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (BOOL)isValidMessage;
 - (id)dataUsageBundleIdentifier;
@@ -184,11 +192,11 @@
 - (void)setCompletionBlock:(id)arg1;
 - (id)topic;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (double)timeSent;
 - (double)timeout;
+- (void)setContext:(id)arg1;
 - (unsigned int)uniqueID;
 - (id)init;
 - (id)userInfo;

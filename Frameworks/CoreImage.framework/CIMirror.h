@@ -19,8 +19,8 @@
 - (id)inputPoint;
 - (struct Rectangle { double x1; double x2; double x3; double x4; })computeDOD:(struct vec2 { float x1; float x2; })arg1 tst:(struct vec3 { float x1; float x2; float x3; })arg2 off:(struct vec4 { float x1; float x2; float x3; float x4; })arg3 mtx:(struct vec4 { float x1; float x2; float x3; float x4; })arg4;
 - (void)setInputPoint:(id)arg1;
-- (void)setInputAngle:(id)arg1;
 - (id)inputAngle;
+- (void)setInputAngle:(id)arg1;
 - (id)_kernel;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;

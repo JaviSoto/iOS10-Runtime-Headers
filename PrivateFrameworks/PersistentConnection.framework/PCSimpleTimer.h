@@ -46,6 +46,7 @@
 - (BOOL)disableSystemWaking;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)updateFireTime:(double)arg1 triggerOnGMTChange:(BOOL)arg2;
+- (BOOL)firingIsImminent;
 - (id)initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
 - (void)_fireTimerFired;
 - (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;

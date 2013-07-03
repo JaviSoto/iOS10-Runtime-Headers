@@ -24,15 +24,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (id)reversedOrderedSet;
-- (id)reverseObjectEnumerator;
 - (BOOL)isSubsetOfOrderedSet:(id)arg1;
 - (BOOL)intersectsOrderedSet:(id)arg1;
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)firstObject;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
+- (id)reverseObjectEnumerator;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (BOOL)isNSOrderedSet__;
 - (id)set;
@@ -80,6 +79,7 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)firstObject;
 - (id)objectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id)arg4;
 - (id)sortedArrayUsingComparator:(id)arg1;

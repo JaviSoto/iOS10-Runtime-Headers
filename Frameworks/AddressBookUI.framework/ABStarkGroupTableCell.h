@@ -12,9 +12,9 @@
 
 
 - (id)initWithStyleProvider:(id)arg1 reuseIdentifier:(id)arg2;
-- (id)groupWrapper;
 - (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (void)updateFromGroupWrapper;
+- (id)groupWrapper;
 - (void)setGroupWrapper:(id)arg1;
 - (void)dealloc;
 

@@ -13,7 +13,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    } _sizeForViewInPopover;
+    } _preferredContentSize;
     float _maxWidth;
     BOOL _shouldPositionTitleForMapsTransitionMovingSideways;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
@@ -21,7 +21,7 @@
     MKCalloutBackgroundView *_calloutBackgroundView;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } _sizeForViewInPopover;
+@property(readonly) struct CGSize { float x1; float x2; } _preferredContentSize;
 @property(retain) MKCalloutBackgroundView * calloutBackgroundView;
 @property(copy) NSString * calloutTitle;
 @property(copy) NSString * calloutSubtitle;
@@ -32,22 +32,22 @@
 
 - (id)_subtitleLabel;
 - (float)_widthWithoutTruncation;
-- (void)_updateSizeForViewInPopover;
 - (float)maxCenterTextWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerRect;
 - (float)_rightTextMargin;
 - (float)_leftTextMargin;
 - (void)setDetailView:(id)arg1;
+- (void)setCalloutSubtitle:(id)arg1;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setCalloutBackgroundView:(id)arg1;
 - (id)calloutBackgroundView;
 - (id)detailView;
-- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })_sizeForViewInPopover;
-- (void)beginMapsTransitionMovingSideways;
+- (struct CGSize { float x1; float x2; })_preferredContentSize;
 - (void)_preLayoutCenterSubviews;
+- (void)_updatePreferredContentSize;
+- (void)beginMapsTransitionMovingSideways;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
-- (void)setCalloutSubtitle:(id)arg1;
+- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
 - (void)setCalloutTitle:(id)arg1;

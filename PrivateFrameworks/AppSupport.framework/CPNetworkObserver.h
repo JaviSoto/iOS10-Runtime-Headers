@@ -33,9 +33,9 @@
 - (void)removeObserver:(id)arg1 forHostname:(id)arg2;
 - (id)init;
 - (void)dealloc;
+- (void)removeObserver:(id)arg1;
 - (void)removeNetworkReachableObserver:(id)arg1;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
 - (BOOL)isNetworkReachable;
-- (void)removeObserver:(id)arg1;
 
 @end

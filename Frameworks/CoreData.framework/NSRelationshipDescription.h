@@ -36,7 +36,6 @@
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (void)_createCachesAndOptimizeState;
-- (id)_initWithName:(id)arg1;
 - (BOOL)isIndexed;
 - (id)destinationEntity;
 - (unsigned int)minCount;
@@ -45,6 +44,7 @@
 - (unsigned int)deleteRule;
 - (BOOL)_isRelationship;
 - (BOOL)isToMany;
+- (id)_initWithName:(id)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

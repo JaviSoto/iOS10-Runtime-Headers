@@ -2,32 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBHandwritingQuadCurvePointFIFO, UITapGestureRecognizer, UIKBHandwritingStrokePointFIFO, UIKBHandwritingStrokeView, NSMutableArray, UIKBHandwritingBoxcarFilterPointFIFO;
+@class UIKBHandwritingQuadCurvePointFIFO, UIBezierPath, UIKBHandwritingStrokePointFIFO, UIKBHandwritingStrokeView, NSMutableArray, UIKBHandwritingBoxcarFilterPointFIFO;
 
 @interface UIKBHandwritingView : UIKBKeyView <UIGestureRecognizerDelegate> {
-    BOOL _isInking;
     UIKBHandwritingStrokeView *_strokeView;
     float _inkWidth;
     struct CGColor { } *_inkColor;
     struct CGImage { } *_inkMask;
-    UITapGestureRecognizer *_tapGestureRecognizer;
     NSMutableArray *_interpolatedPaths;
+    UIBezierPath *_currentPath;
     UIKBHandwritingStrokePointFIFO *_strokeFIFO;
     UIKBHandwritingBoxcarFilterPointFIFO *_smoothingFIFO;
     UIKBHandwritingQuadCurvePointFIFO *_interpolatingFIFO;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _firstInkPoint;
 }
 
 @property float inkWidth;
 @property struct CGColor { }* inkColor;
 @property struct CGImage { }* inkMask;
-@property BOOL isInking;
-@property(retain) UITapGestureRecognizer * tapGestureRecognizer;
-@property struct CGPoint { float x1; float x2; } firstInkPoint;
 @property(retain) NSMutableArray * interpolatedPaths;
+@property(retain) UIBezierPath * currentPath;
 @property(retain) UIKBHandwritingStrokePointFIFO * strokeFIFO;
 @property(retain) UIKBHandwritingBoxcarFilterPointFIFO * smoothingFIFO;
 @property(retain) UIKBHandwritingQuadCurvePointFIFO * interpolatingFIFO;
@@ -36,16 +29,9 @@
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (id).cxx_construct;
 - (void)send;
 - (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFirstInkPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })firstInkPoint;
-- (void)setTapGestureRecognizer:(id)arg1;
-- (void)handleTap:(id)arg1;
-- (BOOL)isInking;
-- (BOOL)shouldRecognizerTap:(id)arg1;
-- (id)tapGestureRecognizer;
+- (void)setCurrentPath:(id)arg1;
 - (id)strokeFIFO;
 - (void)setStrokeFIFO:(id)arg1;
 - (id)smoothingFIFO;
@@ -57,24 +43,24 @@
 - (void)setStrokeView:(id)arg1;
 - (void)setInkColor:(struct CGColor { }*)arg1;
 - (void)setInkWidth:(float)arg1;
-- (void)setIsInking:(BOOL)arg1;
 - (void)setInkMask:(struct CGImage { }*)arg1;
-- (float)inkWidth;
+- (id)currentPath;
 - (id)interpolatedPaths;
+- (float)inkWidth;
 - (struct CGImage { }*)inkMask;
 - (struct CGColor { }*)inkColor;
 - (void)deleteStrokesAtIndexes:(id)arg1;
+- (void)clearAndNotify:(BOOL)arg1;
 - (BOOL)shouldCache;
-- (void)setRenderConfig:(id)arg1;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (void)setRenderConfig:(id)arg1;
+- (void)log;
 - (BOOL)cancelTouchTracking;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)clear;
 
 @end

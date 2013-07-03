@@ -27,9 +27,9 @@
 
 - (int)waiterNum;
 - (void)setDataclasses:(int)arg1;
+- (int)dataclasses;
 - (void)setWaiter:(id)arg1;
 - (id)waiter;
-- (int)dataclasses;
 - (id)init;
 - (void)dealloc;
 - (id)description;

@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, UICollectionView, NSMutableArray, NSString, NSMapTable, SKUIProductPageOverlayController, NSURLRequest, SKUIResourceLoader, SKUIStorePage, SKUILoadURLOperation, <SKUIStorePageDataSource>, UIRefreshControl, SKUIArtworkRequest, SKUIClientContext, NSArray, SKUIMetricsController, SKUITextLayoutCache, UIImage, NSOperationQueue, <SKUIStorePageDelegate>, SKUIColorScheme;
+@class UIView, UICollectionView, NSMutableArray, NSString, NSMapTable, SKUIProductPageOverlayController, SKUILayoutCache, NSURLRequest, SKUIResourceLoader, SKUIStorePage, <SKUIStorePageDataSource>, UIRefreshControl, SKUIArtworkRequest, SSVLoadURLOperation, SKUIClientContext, NSArray, SKUIMetricsController, UIImage, NSOperationQueue, <SKUIStorePageDelegate>, SKUIColorScheme;
 
-@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUITextLayoutCacheDelegate, UICollectionViewDataSource, UIViewControllerRestoration> {
+@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUILayoutCacheDelegate, UICollectionViewDataSource, UIViewControllerRestoration> {
     SKUIProductPageOverlayController *_activeOverlayController;
     SKUIArtworkRequest *_backgroundArtworkRequest;
     UIImage *_backgroundImage;
@@ -23,7 +23,7 @@
     NSString *_lastDataConsumerClassName;
     NSURLRequest *_lastRequest;
     BOOL _loadOnAppear;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     NSMapTable *_menuSectionContexts;
     NSOperationQueue *_operationQueue;
     SKUIMetricsController *_metricsController;
@@ -34,7 +34,7 @@
     SKUIResourceLoader *_resourceLoader;
     NSMutableArray *_sections;
     SKUIStorePage *_storePage;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
 }
 
 @property(getter=isLoading,readonly) BOOL loading;
@@ -53,9 +53,10 @@
 - (void)_setSelectedIndex:(int)arg1 forMenuSection:(id)arg2;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)artworkLoaderDidIdle:(id)arg1;
+- (void)collectionView:(id)arg1 editorialView:(id)arg2 didSelectLink:(id)arg3;
 - (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id)arg3;
 - (void)cancelPageLoad;
-- (void)textLayoutCacheDidFinishBatch:(id)arg1;
+- (void)layoutCacheDidFinishBatch:(id)arg1;
 - (id)collectionView:(id)arg1 layout:(id)arg2 pageSectionForIndexPath:(id)arg3;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;

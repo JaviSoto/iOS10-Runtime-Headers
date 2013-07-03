@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoOverlayDelegate>, _UIBackdropView, MPAudioAndSubtitlesController, MPAVItem, UIStatusBar, UIButton, MPAVController, UILabel, <MPVideoControllerProtocol>, UIView, MPKnockoutButton, MPVolumeSlider, MPDetailSlider, UINavigationBar;
+@class <MPVideoOverlayDelegate>, _UIBackdropView, MPAudioAndSubtitlesController, UILabel, MPAVItem, UIActivityIndicatorView, UIButton, UIStatusBar, MPAVController, <MPVideoControllerProtocol>, UINavigationBar, MPVolumeSlider, MPDetailSlider;
 
 @interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
     int _style;
@@ -10,32 +10,32 @@
     MPAVController *_player;
     MPAVItem *_item;
     MPDetailSlider *_scrubber;
-    UIView *_bottomBarView;
     _UIBackdropView *_bottomBarBackdropView;
     UIButton *_playPauseButton;
     float _auxButtonsLeftEdge;
-    MPKnockoutButton *_airplayButton;
+    UIButton *_airplayButton;
     BOOL _allowsWirelessPlayback;
     BOOL _automaticallyHandleTransportControls;
     BOOL _ticking;
-    UIView *_topBarView;
     _UIBackdropView *_topBarBackdropView;
     UIStatusBar *_statusBar;
     UIButton *_doneButton;
+    UIActivityIndicatorView *_loadingIndicator;
+    UILabel *_loadingLabel;
     UIButton *_scaleButton;
     UILabel *_scrubInstructions1;
     UILabel *_scrubInstructions2;
     MPVolumeSlider *_volumeSlider;
     UIButton *_leftButton;
     UIButton *_rightButton;
-    MPKnockoutButton *_audioAndSubtitlesButton;
+    UIButton *_audioAndSubtitlesButton;
     MPAudioAndSubtitlesController *_audioAndSubtitlesController;
     BOOL _ignoreTouchUp;
     BOOL _isAnimatingScrubInstructions;
     BOOL _isShowingScrubInstructions;
     BOOL _shouldResumePlayback;
     int _seekDirection;
-    MPKnockoutButton *_fullscreenButton;
+    UIButton *_fullscreenButton;
     <MPVideoControllerProtocol> *_videoViewController;
     BOOL _navigationBarHidden;
     MPAVItem *_unimplementedItem;
@@ -58,8 +58,8 @@
 @property unsigned long long visibleParts;
 @property unsigned long long disabledParts;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (BOOL)automaticallyHandleTransportControls;
@@ -73,14 +73,19 @@
 - (void)_durationAvailable:(id)arg1;
 - (void)_alternateTracksAvailable:(id)arg1;
 - (void)_setAuxiliaryButton:(id)arg1 hidden:(BOOL)arg2 atX:(float*)arg3;
+- (void)_updateLoadingIndicator;
 - (void)_registerForItemNotifications:(id)arg1;
 - (void)_startSeeking;
 - (void)_notifyDelegateOfUserEvent:(int)arg1;
+- (void)_notifyDelegateOfUserEventCancel:(int)arg1;
+- (void)_buttonInteractionEnded:(id)arg1;
+- (void)_buttonInteractionCanceled:(id)arg1;
+- (void)_buttonInteractionBegan:(id)arg1;
 - (void)_notifyDelegateOfUserEventBegin:(int)arg1;
 - (void)_notifyDelegateOfUserEventEnd:(int)arg1;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)_registerForPlayerNotifications:(id)arg1;
 - (void)_updateVolumeSlider;
-- (void)_updateScaleButton;
 - (void)_itemChanged:(id)arg1;
 - (void)_configureAuxiliaryButtons;
 - (void)_unregisterForPlayerNotifications:(id)arg1;
@@ -97,7 +102,9 @@
 - (void)_skipButtonTouchDown:(id)arg1;
 - (void)_fullscreenButtonTapped:(id)arg1;
 - (void)_scaleButtonTapped:(id)arg1;
+- (void)_updateScaleButton;
 - (id)_imageNamed:(id)arg1;
+- (void)observeControl:(id)arg1;
 - (void)_doneButtonTapped:(id)arg1;
 - (id)_newFrostedGlassBackdropView;
 - (id)videoViewController;
@@ -140,6 +147,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (id)item;
 - (id)navigationBar;

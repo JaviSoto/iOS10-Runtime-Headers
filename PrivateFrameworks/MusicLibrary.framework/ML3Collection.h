@@ -5,6 +5,7 @@
 @interface ML3Collection : ML3Entity  {
 }
 
++ (BOOL)canonicalizeCollectionRepresentativeItemsWithWriteConnection:(id)arg1;
 + (id)artworkCacheIDProperty;
 + (id)trackForeignPersistentID;
 + (id)propertiesForGroupingKey;

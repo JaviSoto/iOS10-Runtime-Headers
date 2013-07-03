@@ -2,12 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIGift, NSOperationQueue, SKUIGiftConfiguration, SKUILoadURLOperation;
+@class SKUIGift, NSOperationQueue, SKUIGiftConfiguration, SSVLoadURLOperation;
 
 @interface SKUIGiftStepViewController : UIViewController  {
     SKUIGift *_gift;
     SKUIGiftConfiguration *_giftConfiguration;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     NSOperationQueue *_operationQueue;
 }
 

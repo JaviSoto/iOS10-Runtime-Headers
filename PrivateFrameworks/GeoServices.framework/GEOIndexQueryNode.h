@@ -26,11 +26,11 @@
 - (void)clearOperands;
 - (unsigned int)operandsCount;
 - (BOOL)hasValue;
-- (BOOL)hasField;
 - (void)addOperands:(id)arg1;
 - (void)setOperands:(id)arg1;
 - (void)setField:(id)arg1;
 - (id)field;
+- (BOOL)hasField;
 - (void)copyTo:(id)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

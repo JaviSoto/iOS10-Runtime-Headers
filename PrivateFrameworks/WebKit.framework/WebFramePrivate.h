@@ -16,6 +16,12 @@
     id internalLoadDelegate;
     BOOL shouldCreateRenderers;
     BOOL includedInWebKitStatistics;
+    struct RetainPtr<NSString> { 
+        struct NSString { Class x_0_1_1; } *m_ptr; 
+    } url;
+    struct RetainPtr<NSString> { 
+        struct NSString { Class x_0_1_1; } *m_ptr; 
+    } provisionalURL;
     BOOL isCommitting;
     BOOL isSingleLine;
 }
@@ -24,5 +30,7 @@
 - (void)setWebFrameView:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
+- (void).cxx_destruct;
+- (id).cxx_construct;
 
 @end

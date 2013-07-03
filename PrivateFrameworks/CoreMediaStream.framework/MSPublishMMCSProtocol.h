@@ -18,7 +18,6 @@
 
 
 - (void)_putItemsFailure;
-- (void)_closeFDForAsset:(id)arg1;
 - (void)_requestCompleted;
 - (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;
 - (id)_getUTIFromItem:(unsigned long long)arg1;

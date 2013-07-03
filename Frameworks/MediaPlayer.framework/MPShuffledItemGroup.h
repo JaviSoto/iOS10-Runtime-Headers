@@ -4,11 +4,12 @@
 
 @class NSMutableArray;
 
-@interface MPShuffledItemGroup : NSObject <NSCoding> {
+@interface MPShuffledItemGroup : NSObject <NSSecureCoding> {
     long long _groupPersistentID;
     NSMutableArray *_mutableItems;
 }
 
++ (BOOL)supportsSecureCoding;
 
 - (id)initWithGroupPersistentID:(long long)arg1;
 - (void).cxx_destruct;

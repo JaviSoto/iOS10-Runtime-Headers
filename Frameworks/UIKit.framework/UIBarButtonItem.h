@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbarButton, UIView, UIImage, NSString, UIBarButtonItem, UIColor, NSSet;
+@class UIColor, UIToolbarButton, UIView, UIImage, NSString, NSDictionary, UIBarButtonItem, NSSet;
 
 @interface UIBarButtonItem : UIBarItem <NSCoding> {
     NSString *_title;
@@ -43,8 +43,8 @@
     float _minimumWidth;
     float _maximumWidth;
     NSSet *_possibleSystemItems;
-    NSSet *_possibleItemVariations;
-    UIBarButtonItem *_itemVariation;
+    NSDictionary *_stylesForSizingTitles;
+    UIBarButtonItem *__itemVariation;
 }
 
 @property(getter=isEnabled) BOOL enabled;
@@ -70,6 +70,7 @@
 @property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
 @property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
 @property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
+@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
 @property BOOL selected;
 @property(setter=_setToolbarCharge:) float _toolbarCharge;
 @property(setter=_setMinimumWidth:) float _minimumWidth;
@@ -79,8 +80,8 @@
 + (Class)classForNavigationButton;
 + (id)_appearanceBlindViewClasses;
 + (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setTitle:(id)arg1;
@@ -105,11 +106,8 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
 - (void)_setMiniImage:(id)arg1;
 - (id)_miniImage;
-- (void)_setFlexible:(BOOL)arg1;
-- (void)_setItemVariation:(id)arg1;
 - (id)_itemVariation;
-- (void)_setPossibleItemVariations:(id)arg1;
-- (id)_possibleItemVariations;
+- (void)_setFlexible:(BOOL)arg1;
 - (void)_setMaximumWidth:(float)arg1;
 - (void)_setMinimumWidth:(float)arg1;
 - (float)_toolbarCharge;
@@ -123,6 +121,8 @@
 - (void)_setPossibleSystemItems:(id)arg1;
 - (void)_setSystemItem:(int)arg1;
 - (id)possibleTitles;
+- (id)itemVariation;
+- (id)_possibleItemVariations;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
 - (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)initWithImage:(id)arg1 landscapeImagePhone:(id)arg2 style:(int)arg3 target:(id)arg4 action:(SEL)arg5;
@@ -131,6 +131,7 @@
 - (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
 - (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
 - (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
+- (void)setPossibleTitles:(id)arg1;
 - (void)setCustomView:(id)arg1;
 - (void)setLandscapeImagePhone:(id)arg1;
 - (void)_setToolbarCharge:(float)arg1;
@@ -148,7 +149,8 @@
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (float)_width;
-- (void)setPossibleTitles:(id)arg1;
+- (void)_setItemVariation:(id)arg1;
+- (void)_setPossibleItemVariations:(id)arg1;
 - (id)initWithTitle:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setAction:(SEL)arg1;
 - (void)setSelected:(BOOL)arg1;
@@ -156,9 +158,11 @@
 - (float)_maximumWidth;
 - (float)_minimumWidth;
 - (id)_possibleSystemItems;
+- (void)_setStylesForSizingTitles:(id)arg1;
+- (id)_stylesForSizingTitles;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (id)scriptingID;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_leftRightImagePaddingForEdgeMarginInNavBar;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_leftRightImagePaddingForEdgeMarginInNavBarIsMini:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
 - (BOOL)_shouldBezelSystemButtonImage;
 - (void)setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
@@ -174,8 +178,8 @@
 - (BOOL)isSystemItem;
 - (id)_appearanceStorage;
 - (int)tag;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (void)setTag:(int)arg1;
 - (void)setView:(id)arg1;
 - (SEL)action;

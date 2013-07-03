@@ -94,10 +94,16 @@
     NSMutableDictionary *_headerFooterClassDict;
     float _topPadding;
     float _bottomPadding;
-    float _marginWidth;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _separatorInset;
     id _updateCompletionHandler;
     UIImage *_multiSelectCheckmarkImage;
     UIImage *_multiSelectNotSelectedImage;
+    id _deferredEditingHandler;
     struct { 
         unsigned int dataSourceNumberOfRowsInSection : 1; 
         unsigned int dataSourceCellForRow : 1; 
@@ -171,6 +177,7 @@
         unsigned int delegateDidUnhighlightRow : 1; 
         unsigned int delegateTitleForSwipeAccessory : 1; 
         unsigned int delegateSwipeAccessoryPushed : 1; 
+        unsigned int delegateShouldDrawTopSeparatorForSection : 1; 
         unsigned int style : 1; 
         unsigned int separatorStyle : 3; 
         unsigned int wasEditing : 1; 
@@ -226,6 +233,9 @@
         unsigned int ignorePinnedTableHeaderUpdates : 1; 
         unsigned int navigationGestureWasEnabledBeforeSwipeToDelete : 1; 
         unsigned int didDisableNavigationGesture : 1; 
+        unsigned int separatorsDrawAsOverlay : 1; 
+        unsigned int swipeToDeleteRowIsBeingDeleted : 1; 
+        unsigned int drawsSeparatorAtTopOfSections : 1; 
     } _tableFlags;
 }
 
@@ -238,6 +248,7 @@
 @property float estimatedRowHeight;
 @property float estimatedSectionHeaderHeight;
 @property float estimatedSectionFooterHeight;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 @property(retain) UIView * backgroundView;
 @property(getter=isEditing) BOOL editing;
 @property BOOL allowsSelection;
@@ -256,17 +267,17 @@
 @property(retain) UITouch * currentTouch;
 
 + (void)_initializeForIdiom:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
 - (id)_createPreparedCellForRowAtIndexPath:(id)arg1;
-- (void)setCountString:(id)arg1;
 - (void)reloadRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)reloadSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)insertSections:(id)arg1 withRowAnimation:(int)arg2;
+- (void)setCountString:(id)arg1;
 - (BOOL)isEditing;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -283,9 +294,11 @@
 - (void)setSectionIndexMinimumDisplayRowCount:(int)arg1;
 - (int)sectionIndexMinimumDisplayRowCount;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (BOOL)_separatorsDrawAsOverlay;
+- (void)_setSeparatorsDrawAsOverlay:(BOOL)arg1;
 - (BOOL)ignorePinnedTableHeaderUpdates;
 - (void)_setIgnorePinnedTableHeaderUpdates:(BOOL)arg1;
-- (BOOL)_hasHeaderFooterBelowCell:(id)arg1;
 - (void)_setSwipeToDeleteCell:(id)arg1;
 - (id)_swipeToDeleteCell;
 - (void)_swipeAccessoryButtonPushedInCell:(id)arg1;
@@ -351,6 +364,7 @@
 - (BOOL)_delegateImplementsEstimatedHeightForSectionFooter;
 - (BOOL)_delegateImplementsEstimatedHeightForSectionHeader;
 - (BOOL)_delegateImplementsEstimatedHeightForRowAtIndexPath;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_rawSeparatorInset;
 - (float)_marginWidth;
 - (void)_setMarginWidth:(float)arg1;
 - (void)_setPinsTableHeaderView:(BOOL)arg1;
@@ -375,6 +389,8 @@
 - (void)_setTopPadding:(float)arg1;
 - (BOOL)usesVariableMargins;
 - (void)setUsesVariableMargins:(BOOL)arg1;
+- (BOOL)_drawsSeparatorAtTopOfSections;
+- (void)_setDrawsSeparatorAtTopOfSections:(BOOL)arg1;
 - (void)setSeparatorBottomShadowColor:(id)arg1;
 - (void)setSeparatorTopShadowColor:(id)arg1;
 - (unsigned int)maximumNumberOfSectionIndexTitlesWithoutTruncation;
@@ -475,6 +491,8 @@
 - (BOOL)_estimatesSectionHeaderHeights;
 - (int)highlightedGlobalRow;
 - (int)maximumGlobalRowIndex;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (BOOL)_hasHeaderFooterBelowRowAtIndexPath:(id)arg1;
 - (id)sectionBorderColor;
 - (BOOL)_drawsTopShadowInGroupedSections;
 - (void)_accessoryButtonAction:(id)arg1;
@@ -484,7 +502,6 @@
 - (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
 - (id)tableFooterView;
 - (id)tableHeaderView;
-- (id)indexPathForCell:(id)arg1;
 - (id)_tableViewCellForContentView:(id)arg1;
 - (void)_userSelectRowAtPendingSelectionIndexPath:(id)arg1;
 - (void)_selectAllSelectedRows;
@@ -496,7 +513,6 @@
 - (void)_resetDragSwipeAndTouchSelectFlags;
 - (BOOL)_wantsSwipes;
 - (void)_handleSwipeDeleteGobbler:(id)arg1;
-- (void)_endSwipeToDeleteRowDidDelete:(BOOL)arg1;
 - (BOOL)highlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3;
 - (BOOL)_swipeCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_hasSwipeToDeleteRow;
@@ -561,14 +577,17 @@
 - (BOOL)_canEditRowAtIndexPath:(id)arg1;
 - (id)_visibleCells;
 - (void)_sendDidEndEditingForIndexPath:(id)arg1;
+- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_cleanupStateFromDeleteConfirmation;
 - (id)deleteConfirmationIndexPath;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (id)indexPathForRowAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_shouldDrawSeparatorAtTopOfSection:(int)arg1;
+- (id)indexPathForCell:(id)arg1;
 - (void)_endAnimatingCells;
 - (void)_updateBackgroundView;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 canEdit:(BOOL)arg3 editingStyle:(int)arg4 shouldIndentWhileEditing:(BOOL)arg5 showsReorderControl:(BOOL)arg6 accessoryType:(int)arg7 animated:(BOOL)arg8;
+- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 canEdit:(BOOL)arg4 editingStyle:(int)arg5 shouldIndentWhileEditing:(BOOL)arg6 showsReorderControl:(BOOL)arg7 accessoryType:(int)arg8 animated:(BOOL)arg9;
 - (BOOL)_canMoveRowAtIndexPath:(id)arg1;
 - (BOOL)_shouldIndentWhileEditingForRowAtIndexPath:(id)arg1;
 - (int)_editingStyleForRowAtIndexPath:(id)arg1;
@@ -608,6 +627,7 @@
 - (void)_resumeReloads;
 - (void)_adjustExtraSeparators;
 - (void)_numberOfRowsDidChange;
+- (void)_endSwipeToDeleteRowDidDelete:(BOOL)arg1;
 - (void)_updateWithItems:(id)arg1 updateSupport:(id)arg2;
 - (id)_arrayForUpdateAction:(int)arg1;
 - (void)_suspendReloads;
@@ -662,6 +682,7 @@
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)_shouldResignFirstResponderWithInteractionDisabled;
 - (BOOL)cancelTouchTracking;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -674,7 +695,6 @@
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
 - (BOOL)allowsMultipleSelection;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;

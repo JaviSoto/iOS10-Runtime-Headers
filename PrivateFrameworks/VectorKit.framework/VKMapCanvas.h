@@ -36,7 +36,6 @@
 @property BOOL allowDatelineWraparound;
 @property int trackingCameraPanStyle;
 @property double trackingZoomScale;
-@property BOOL trackingAutoSelectsZoomScale;
 @property(retain) VKCamera * defaultTrackingCamera;
 @property BOOL labelMarkerSelectionEnabled;
 @property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
@@ -57,6 +56,7 @@
 @property(readonly) double presentationYaw;
 @property(readonly) double pitch;
 @property(readonly) double altitude;
+@property int annotationTrackingZoomStyle;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
 @property(readonly) <VKTrackableAnnotation> * trackingAnnotation;
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
@@ -156,6 +156,7 @@
 - (id)annotationMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
 - (id)routePreloadSession;
 - (void)setRoutePreloadSession:(id)arg1;
+- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1;
 - (void)preloadNavigationSceneResources;
 - (int)trackingCameraPanStyle;
 - (void)setTrackingCameraPanStyle:(int)arg1;
@@ -216,8 +217,8 @@
 - (id)annotationMarkerDeselectionCallback;
 - (void)setAlwaysVisibleTrafficIncidents:(id)arg1;
 - (id)alwaysVisibleTrafficIncidents;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
-- (BOOL)trackingAutoSelectsZoomScale;
+- (void)setAnnotationTrackingZoomStyle:(int)arg1;
+- (int)annotationTrackingZoomStyle;
 - (void)setCanonicalSkyHeight:(double)arg1;
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
 - (BOOL)dynamicMapModesEnabled;

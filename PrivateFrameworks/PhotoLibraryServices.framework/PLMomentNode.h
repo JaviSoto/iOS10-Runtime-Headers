@@ -31,10 +31,10 @@
 - (BOOL)isVisited;
 - (void)setCluster:(id)arg1;
 - (BOOL)isMarked;
-- (id)location;
-- (id)objectID;
 - (id)creationDate;
+- (id)objectID;
 - (struct { double x1; double x2; })coordinate;
+- (id)location;
 - (void)dealloc;
 
 @end

@@ -85,8 +85,8 @@
 
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (void)insertText:(id)arg1;
+- (BOOL)isEditable;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)undoManager;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
@@ -144,10 +144,11 @@
 - (void)_invalidateTypingAttributes;
 - (void)_coordinateSelectionChange:(id)arg1;
 - (void)_sendDelegateChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
+- (void)_forceUnmarkTextDueToEditing;
 - (void)_setEmptyStringAttributes:(id)arg1;
 - (void)_teardownTextContainerView:(id)arg1;
 - (void)_setupTextContainerView:(id)arg1;
-- (void)_adjustDictationPlaceholderForChangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_cancelDictationIfNecessaryForChangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_updateFirstTextView;
 - (void)setPreviousSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_textContainerDidChangeView:(id)arg1;
@@ -156,6 +157,7 @@
 - (void)_clearSelectionUI;
 - (void)_removeDefinitionController;
 - (BOOL)_mightHaveSelection;
+- (void)_registerUndoOperationForReplacementWithActionName:(id)arg1 replacementText:(id)arg2;
 - (void)_insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2 replacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 resultLength:(unsigned int*)arg4;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeForBackwardsDelete;
 - (BOOL)_shouldHandleResponderAction:(SEL)arg1;
@@ -192,6 +194,7 @@
 - (void)setAllowsEditingTextAttributes:(BOOL)arg1;
 - (void)selectAll;
 - (id)textStylingAtPosition:(id)arg1 inDirection:(int)arg2;
+- (BOOL)_hasDictationPlaceholder;
 - (id)_textStorage;
 - (void)_selectionGeometryChanged;
 - (void)endSelectionChange;
@@ -209,7 +212,6 @@
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)tokenizer;
-- (id)inputDelegate;
 - (void)setInputDelegate:(id)arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
@@ -217,27 +219,29 @@
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
-- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
-- (id)endOfDocument;
-- (id)beginningOfDocument;
 - (void)unmarkText;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
 - (id)markedTextRange;
 - (void)setSelectedTextRange:(id)arg1;
 - (id)selectedTextRange;
-- (void)clearText;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (id)textInRange:(id)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (id)_layoutManager;
+- (void)clearText;
 - (int)atomStyle;
 - (BOOL)drawsAsAtom;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
+- (id)_filteredAttributedTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)inputDelegate;
+- (id)textInRange:(id)arg1;
+- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
+- (id)endOfDocument;
+- (id)beginningOfDocument;
 - (void)_invalidateEmptyStringAttributes;
 - (void)setTypingAttributes:(id)arg1;
 - (id)selectionView;

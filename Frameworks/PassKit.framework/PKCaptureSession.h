@@ -24,6 +24,7 @@
 - (void)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
+- (BOOL)isRunning;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

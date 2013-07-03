@@ -34,6 +34,7 @@
 + (id)noContentLightGradientBackgroundColor;
 + (id)_systemDestructiveTintColor;
 + (id)_systemInteractionTintColor;
++ (id)systemMidGrayColor;
 + (id)systemGrayColor;
 + (id)systemPinkColor;
 + (id)systemTealColor;
@@ -70,10 +71,10 @@
 + (id)tableCellPlainBackgroundColor;
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
 + (id)colorWithCIColor:(id)arg1;
++ (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)tableCellGroupedBackgroundColorLegacyWhite;
 + (id)__halfTransparentWhiteColor;
 + (id)__halfTransparentBlackColor;
-+ (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)selectionHighlightColor;
 + (id)insertionPointColor;
 + (id)_composedColorFromSourceColor:(id)arg1 destinationColor:(id)arg2 tintColor:(id)arg3 alpha:(float)arg4;
@@ -128,7 +129,6 @@
 + (id)cardCellSeparatorColor;
 + (id)cardCellBackgroundColor;
 + (id)_remoteUI_colorWithString:(id)arg1;
-+ (id)sb_colorFromComponentColor:(id)arg1 andAlpha:(float)arg2;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;

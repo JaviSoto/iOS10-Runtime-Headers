@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, GKBasicCollectionViewDataSource;
 
-@interface GKSplittingDataSource : GKCollectionViewDataSource <GKCollectionViewDataSourceListener> {
+@interface GKSplittingDataSource : GKCollectionViewDataSource  {
     GKBasicCollectionViewDataSource *_underlyingDataSource;
     NSMutableDictionary *_sectionToSectionInfo;
 }
@@ -24,7 +24,6 @@
 - (void)removeSection:(int)arg1;
 - (void)setSortDescriptors:(id)arg1 forSection:(int)arg2;
 - (void)setFilterPredicate:(id)arg1 forSection:(int)arg2;
-- (void)underlyingDataSourceLoadedWithGroup:(id)arg1;
 - (void)setItems:(id)arg1 forSection:(int)arg2;
 - (id)sectionInfoForSection:(int)arg1;
 - (void)removeItemAtIndexPath:(id)arg1;
@@ -34,7 +33,7 @@
 - (void)addSectionWithTitle:(id)arg1 sortDescriptors:(id)arg2;
 - (void)setUnderlyingDataSource:(id)arg1;
 - (void)configureDataSource;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (int)sectionCount;
 - (id)init;

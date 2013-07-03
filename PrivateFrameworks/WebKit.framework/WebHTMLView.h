@@ -18,11 +18,10 @@
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (void)initialize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)accessibilityRootElement;
-- (BOOL)_isEditable;
 - (void)viewDidMoveToWindow;
 - (void)willRemoveSubview:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -201,6 +200,7 @@
 - (void)_setPrinting:(BOOL)arg1 minimumPageLogicalWidth:(float)arg2 logicalHeight:(float)arg3 originalPageWidth:(float)arg4 originalPageHeight:(float)arg5 maximumShrinkRatio:(float)arg6 adjustViewSize:(BOOL)arg7 paginateScreenContent:(BOOL)arg8;
 - (BOOL)_isInScreenPaginationMode;
 - (void)_clearLastHitViewIfSelf;
+- (BOOL)_isEditable;
 - (BOOL)_hasSelectionOrInsertionPoint;
 - (void)_stopAutoscrollTimer;
 - (void)_autoscroll;

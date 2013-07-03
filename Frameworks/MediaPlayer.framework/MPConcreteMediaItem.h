@@ -4,7 +4,7 @@
 
 @class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary;
 
-@interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPCacheableConcreteMediaEntity> {
+@interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPMediaItemArrayPIDEncodableItem, MPCacheableConcreteMediaEntity> {
     MPMediaLibrary *_library;
     unsigned long long _persistentID;
     MPConcreteMediaEntityPropertiesCache *_propertiesCache;
@@ -18,8 +18,8 @@
 
 - (BOOL)existsInLibrary;
 - (void)invalidateCachedProperties;
-- (id)initWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 - (id)cachedPropertyValues;
+- (id)initWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 - (void)reallyIncrementPlayCount;
 - (double)nominalHasBeenPlayedThreshold;
 - (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(BOOL*)arg2;
@@ -32,6 +32,7 @@
 - (void)markNominalAmountHasBeenPlayed;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (id)valuesForProperties:(id)arg1;
+- (Class)itemArrayCoderPIDDataCodingClass;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
 - (id)initWithPersistentID:(unsigned long long)arg1;

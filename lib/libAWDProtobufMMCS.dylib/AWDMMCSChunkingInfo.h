@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libAWDProtobufMMCS.dylib
  */
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface AWDMMCSChunkingInfo : PBCodable  {
     long long _byteCount;
     long long _chunkCount;
     long long _duration;
     long long _startTime;
+    NSMutableArray *_chunkingErrors;
     int _errorCode;
     NSString *_errorDomain;
     BOOL _cancelled;
@@ -36,16 +37,23 @@
 @property int errorCode;
 @property BOOL hasCancelled;
 @property BOOL cancelled;
+@property(retain) NSMutableArray * chunkingErrors;
 
 
+- (id)chunkingErrors;
 - (void)setHasByteCount:(BOOL)arg1;
 - (void)setHasChunkCount:(BOOL)arg1;
+- (id)chunkingErrorAtIndex:(unsigned int)arg1;
+- (void)clearChunkingErrors;
+- (unsigned int)chunkingErrorsCount;
 - (void)setByteCount:(long long)arg1;
 - (long long)byteCount;
 - (BOOL)hasByteCount;
 - (void)setChunkCount:(long long)arg1;
 - (long long)chunkCount;
 - (BOOL)hasChunkCount;
+- (void)addChunkingError:(id)arg1;
+- (void)setChunkingErrors:(id)arg1;
 - (void)setHasCancelled:(BOOL)arg1;
 - (BOOL)hasCancelled;
 - (BOOL)readFrom:(id)arg1;
@@ -63,11 +71,11 @@
 - (void)setErrorCode:(int)arg1;
 - (int)errorCode;
 - (void)setDuration:(long long)arg1;
-- (long long)startTime;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (long long)startTime;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setStartTime:(long long)arg1;
 - (BOOL)cancelled;

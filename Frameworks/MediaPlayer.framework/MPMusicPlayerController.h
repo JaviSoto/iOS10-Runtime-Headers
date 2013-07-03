@@ -71,13 +71,13 @@
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (BOOL)isPreparedToPlay;
-- (int)playbackState;
 - (int)repeatMode;
 - (void)setRepeatMode:(int)arg1;
 - (float)volume;
-- (void)setVolume:(float)arg1;
 - (void)play;
 - (void)prepareToPlay;
+- (int)playbackState;
+- (void)setVolume:(float)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

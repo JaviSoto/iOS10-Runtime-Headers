@@ -15,9 +15,9 @@
 
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (id)results;
 - (void)setResults:(id)arg1;
 - (id)query;
+- (id)results;
 - (id)groupIdentifier;
 - (void)setQuery:(id)arg1;
 

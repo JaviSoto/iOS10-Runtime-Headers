@@ -31,13 +31,13 @@
 + (id)EBookDownloadManager;
 + (void)setDownloadHandler:(id)arg1;
 + (void)removePersistenceIdentifier:(id)arg1;
-+ (void)reconnectToLSApplicationWorkspace;
 + (void)retryAllRestoreDownloads;
 + (id)softwareDownloadKinds;
 + (id)IPodDownloadKinds;
 + (id)EBookDownloadKinds;
 + (void)_sendGlobalHandler:(id)arg1;
 + (id)softwareDownloadManager;
++ (void)reconnectToLSApplicationWorkspace;
 
 - (void)moveDownload:(id)arg1 afterDownload:(id)arg2 completionBlock:(id)arg3;
 - (void)_pauseDownloads:(id)arg1 completionBlock:(id)arg2;
@@ -80,6 +80,7 @@
 - (BOOL)canCancelDownload:(id)arg1;
 - (id)initWithDownloadKinds:(id)arg1;
 - (void)dealloc;
+- (void)removeObserver:(id)arg1;
 - (id)initWithManagerOptions:(id)arg1;
 - (void)resumeDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)addDownloads:(id)arg1 completionBlock:(id)arg2;
@@ -87,6 +88,5 @@
 - (void)getDownloadsUsingBlock:(id)arg1;
 - (void)cancelDownloads:(id)arg1 completionBlock:(id)arg2;
 - (void)finishDownloads:(id)arg1;
-- (void)removeObserver:(id)arg1;
 
 @end

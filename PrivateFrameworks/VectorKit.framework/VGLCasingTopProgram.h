@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VGLCasingTopProgram : VGLRealisticFadeProgram  {
+@interface VGLCasingTopProgram : VGLRealisticProgram  {
     struct _VGLColor { 
         float r; 
         float g; 

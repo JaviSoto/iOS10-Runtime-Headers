@@ -56,12 +56,12 @@
 - (void)_stopObservingPropertiesAndChildren;
 - (id)_initWithArchiveDictionary:(id)arg1;
 - (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
+- (void)setDefaultValues;
 - (void)_introspectKeys;
 - (void)_completeInitByApplyingArchiveDictionary:(id)arg1;
 - (void)_continueInitBySettingDefaultValues;
 - (id)_startInit;
 - (void)setValuesFromModel:(id)arg1;
-- (void)setDefaultValues;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

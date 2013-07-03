@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIReviewList, NSMutableIndexSet, SKUIStarRatingQueue, SKUIProductPageItem, <SKUIProductPageChildViewControllerDelegate>, SKUIFacebookLikeStatus, UIScrollView, SKUIClientContext, SKUIReviewsFacebookViewController, SKUIReviewConfiguration, SKUIReviewsHistogramViewController, SKUIProductPageTableView, SKUIProductPageHeaderViewController, SKUIIPadCustomerReviewsHeaderView, SKUILoadURLOperation, SKComposeReviewViewController, NSOperationQueue, SKUITextLayoutCache;
+@class SKUIStarRatingQueue, NSMutableIndexSet, SSVLoadURLOperation, SKUIProductPageItem, <SKUIProductPageChildViewControllerDelegate>, SKUILayoutCache, SKUIFacebookLikeStatus, SKUIClientContext, SKUIReviewsFacebookViewController, SKUIReviewConfiguration, SKUIReviewsHistogramViewController, SKUIProductPageTableView, UIScrollView, SKUIProductPageHeaderViewController, SKUIIPadCustomerReviewsHeaderView, SKComposeReviewViewController, NSOperationQueue, SKUIReviewList;
 
-@interface SKUIProductPageReviewsViewController : UIViewController <SKUITextLayoutCacheDelegate, SKComposeReviewDelegate, UITableViewDataSource, UITableViewDelegate, SKUIProductPageChildViewController> {
+@interface SKUIProductPageReviewsViewController : UIViewController <SKUILayoutCacheDelegate, SKComposeReviewDelegate, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
     SKComposeReviewViewController *_composeViewController;
     <SKUIProductPageChildViewControllerDelegate> *_delegate;
@@ -14,9 +14,9 @@
     SKUIReviewsHistogramViewController *_histogramViewController;
     BOOL _isPad;
     SKUIProductPageItem *_item;
-    SKUITextLayoutCache *_layoutCache;
+    SKUILayoutCache *_layoutCache;
     int _loadedPageCount;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     NSOperationQueue *_operationQueue;
     SKUIReviewConfiguration *_reviewConfiguration;
     SKUIReviewList *_reviewList;
@@ -40,6 +40,8 @@
 - (id)reviewConfiguration;
 - (id)productPageItem;
 - (id)initWithProductPageItem:(id)arg1 reviewConfiguration:(id)arg2;
+- (void)reviewsFacebookViewControllerDidChange:(id)arg1;
+- (id)_bottomBorderColorForScheme:(id)arg1;
 - (void)_sortSelectionAction:(id)arg1;
 - (void)_setReviewListWithResponse:(id)arg1 error:(id)arg2;
 - (void)_addReviewsFromResponse:(id)arg1 error:(id)arg2;
@@ -49,15 +51,11 @@
 - (void)_appSupportAction:(id)arg1;
 - (id)_textLayoutRequestWithText:(id)arg1;
 - (void)_resetPersonalStarRating;
-- (id)_bottomBorderColorForScheme:(id)arg1;
 - (id)_reviewsHeaderView;
 - (id)_histogramViewController;
-- (int)_sectionIndexForHistogram;
-- (int)_sectionIndexForFacebook;
+- (BOOL)_shouldShowLoadMoreCell;
 - (id)_loadMoreCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)_textBoxCellForTableView:(id)arg1 indexPath:(id)arg2;
-- (int)_sectionIndexForReviews;
-- (BOOL)_shouldShowLoadMoreCell;
 - (void)_loadNextPageIfNecessaryForOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_urlStringWithPageNumber:(int)arg1;
 - (id)facebookLikeStatus;
@@ -65,7 +63,7 @@
 - (void)setHeaderViewController:(id)arg1;
 - (id)headerViewController;
 - (void)_addHeaderView;
-- (void)textLayoutCacheDidFinishBatch:(id)arg1;
+- (void)layoutCacheDidFinishBatch:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)reviewComposeViewControllerDidFinish:(id)arg1;

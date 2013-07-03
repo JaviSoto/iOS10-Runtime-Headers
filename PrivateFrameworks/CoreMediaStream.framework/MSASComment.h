@@ -61,7 +61,6 @@
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (void)setContent:(id)arg1;
-- (id)timestamp;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;
@@ -72,6 +71,7 @@
 - (id)email;
 - (id)content;
 - (void)setTimestamp:(id)arg1;
+- (id)timestamp;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

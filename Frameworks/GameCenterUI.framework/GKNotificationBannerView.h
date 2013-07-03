@@ -22,12 +22,14 @@
   /* Error parsing encoded ivar type info: @? */
     id _touchHandler;
 
+    float _preferredWidthPad;
     double _duration;
 }
 
 @property(readonly) UIImageView * imageView;
 @property(readonly) GKLabel * titleLabel;
 @property(readonly) GKLabel * messageLabel;
+@property(readonly) float preferredWidthPad;
 @property double duration;
 @property(copy) id completionHandler;
 @property(copy) id touchHandler;
@@ -40,6 +42,7 @@
 - (id)touchHandler;
 - (void)setTouchHandler:(id)arg1;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
+- (float)preferredWidthPad;
 - (void)callCompletionHandler;
 - (void)_wasTouched:(id)arg1;
 - (void)setDuration:(double)arg1;

@@ -24,6 +24,11 @@
     int _excludedActivityCategories;
     NSArray *_activityTypeOrder;
     NSString *_mailAutosaveIdentifier;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _preCompletionHandler;
+
     NSArray *_activityItems;
     NSArray *_applicationActivities;
     UIActivityGroupListViewController *_activityGroupListViewController;
@@ -49,6 +54,7 @@
 @property BOOL allowsEmbedding;
 @property(retain) NSString * mailAutosaveIdentifier;
 @property(readonly) BOOL sourceIsManaged;
+@property(copy) id preCompletionHandler;
 @property(copy) NSArray * activityItems;
 @property(copy) NSArray * applicationActivities;
 @property(retain) UIActivityGroupListViewController * activityGroupListViewController;
@@ -73,8 +79,8 @@
 + (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setSubject:(id)arg1;
 - (id)subject;
@@ -92,6 +98,7 @@
 - (void)setActivityGroupListViewController:(id)arg1;
 - (id)activityGroupListViewController;
 - (id)applicationActivities;
+- (id)preCompletionHandler;
 - (void)setMailAutosaveIdentifier:(id)arg1;
 - (void)setAllowsEmbedding:(BOOL)arg1;
 - (void)setActivityTypeOrder:(id)arg1;
@@ -115,6 +122,7 @@
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1;
 - (void)setActivityItemProviderOperationQueue:(id)arg1;
 - (void)setActivity:(id)arg1;
+- (void)setPreCompletionHandler:(id)arg1;
 - (BOOL)airdropped;
 - (void)setAirdropped:(BOOL)arg1;
 - (BOOL)allowsEmbedding;

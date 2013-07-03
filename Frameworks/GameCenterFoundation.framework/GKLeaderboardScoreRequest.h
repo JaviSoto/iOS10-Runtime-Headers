@@ -11,6 +11,7 @@
     NSString *_groupIdentifier;
     BOOL _friendsOnly;
     int _timeScope;
+    BOOL _prefetch;
 }
 
 @property(copy) NSString * playerID;
@@ -19,6 +20,7 @@
 @property(copy) NSString * groupIdentifier;
 @property BOOL friendsOnly;
 @property int timeScope;
+@property(getter=isPrefetch) BOOL prefetch;
 
 + (id)requestForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)requestForPlayerIDs:(id)arg1;
@@ -26,12 +28,16 @@
 
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
+- (void)setPrefetch:(BOOL)arg1;
+- (BOOL)isPrefetch;
 - (BOOL)friendsOnly;
 - (id)gameBundleID;
 - (void)setFriendsOnly:(BOOL)arg1;
 - (void)setTimeScope:(int)arg1;
 - (void)setGameBundleID:(id)arg1;
 - (int)timeScope;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;

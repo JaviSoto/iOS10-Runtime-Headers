@@ -7,12 +7,14 @@
 @interface _UITextFieldRoundedRectBackgroundViewNeue : UITextFieldBackgroundView  {
     BOOL _customStrokeColor;
     BOOL _customFillColor;
+    float _cornerRadius;
     UIBezierPath *_customPath;
 }
 
 @property(copy) UIColor * strokeColor;
 @property(copy) UIColor * fillColor;
 @property float lineWidth;
+@property float cornerRadius;
 @property(copy) UIBezierPath * customPath;
 
 + (Class)layerClass;
@@ -22,6 +24,7 @@
 - (void)setFillColor:(id)arg1;
 - (id)strokeColor;
 - (id)fillColor;
+- (float)cornerRadius;
 - (float)lineWidth;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCustomPath:(id)arg1;
@@ -36,6 +39,7 @@
 - (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setActive:(BOOL)arg1;
 - (void)setStrokeColor:(id)arg1;
+- (void)setCornerRadius:(float)arg1;
 - (id)_layer;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setLineWidth:(float)arg1;

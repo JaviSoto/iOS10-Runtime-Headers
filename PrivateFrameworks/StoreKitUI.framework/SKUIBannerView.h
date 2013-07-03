@@ -6,6 +6,7 @@
 
 @interface SKUIBannerView : UIView  {
     UILabel *_artistNameLabel;
+    UIView *_bottomBorderView;
     SKUIClientContext *_clientContext;
     UIButton *_closeButton;
     UIImageView *_iconImageView;
@@ -37,12 +38,12 @@
 - (id)itemOffer;
 - (id)screenshotImages;
 - (void)_reloadItemState;
-- (id)_newDefaultLabel;
 - (void)setItemOffer:(id)arg1;
-- (void)setUserRating:(float)arg1;
 - (void)setScreenshotImages:(id)arg1;
 - (void)setItemState:(id)arg1;
 - (id)closeButton;
+- (id)_newDefaultLabel;
+- (void)setUserRating:(float)arg1;
 - (float)userRating;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;

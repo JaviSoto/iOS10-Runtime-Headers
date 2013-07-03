@@ -21,6 +21,11 @@
 + (id)currentContext;
 + (BOOL)setCurrentContext:(id)arg1;
 
+- (BOOL)presentRenderbuffer:(unsigned int)arg1;
+- (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;
+- (id)initWithAPI:(unsigned int)arg1;
+- (unsigned int)API;
+- (id)sharegroup;
 - (id)debugLabel;
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
 - (BOOL)setBlockFence:(id)arg1 onQueue:(struct dispatch_queue_s { }*)arg2;
@@ -30,11 +35,6 @@
 - (void)setDebugLabel:(id)arg1;
 - (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
-- (BOOL)presentRenderbuffer:(unsigned int)arg1;
-- (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;
-- (id)initWithAPI:(unsigned int)arg1;
-- (unsigned int)API;
-- (id)sharegroup;
 - (struct EAGLMacroContext { }*)GetMacroContextPrivate;
 - (void)dealloc;
 

@@ -29,6 +29,7 @@
 - (id)removeButton;
 - (void)setAddButton:(id)arg1;
 - (BOOL)removable;
+- (id)placeholderImageForParticipant:(id)arg1;
 - (void)participantChanged;
 - (void)removePressed;
 - (void)addPressed;

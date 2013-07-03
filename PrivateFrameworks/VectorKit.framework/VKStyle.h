@@ -43,6 +43,7 @@
 @property(retain) NSString * name;
 
 
+- (void)setVariant:(id)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })basicRoadColor;
 - (unsigned int*)inheritanceIndices;
 - (id)globals;
@@ -60,7 +61,6 @@
 - (id)skyDrawStyle;
 - (id)buildingStyle;
 - (id)trafficStyle;
-- (void)setVariant:(id)arg1;
 - (unsigned int)scoreForAttributes:(id)arg1 vectorType:(int)arg2 mapDisplayStyle:(int)arg3 iconTappable:(BOOL)arg4 locale:(id)arg5 targetDisplay:(int)arg6;
 - (unsigned int)scoreForStyleAttributes:(struct { unsigned int x1; int x2; int *x3; unsigned int x4; }*)arg1 count:(int)arg2;
 - (BOOL)isForMapDisplayStyle:(int)arg1 exclusively:(BOOL)arg2;

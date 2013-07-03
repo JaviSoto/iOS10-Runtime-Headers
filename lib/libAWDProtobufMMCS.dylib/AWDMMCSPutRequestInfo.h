@@ -9,6 +9,7 @@
     long long _startTime;
     long long _timestamp;
     NSMutableArray *_authHttpInfos;
+    NSMutableArray *_cancelErrors;
     int _cancelledErrorCode;
     NSString *_cancelledErrorDomain;
     NSMutableArray *_chunkingInfos;
@@ -16,6 +17,7 @@
     NSString *_clientId;
     NSMutableArray *_completeHttpInfos;
     NSMutableArray *_containerHttpInfos;
+    NSMutableArray *_errors;
     int _itemCount;
     int _itemsAlreadyPresentCount;
     int _itemsNotPresentCount;
@@ -66,8 +68,12 @@
 @property(retain) NSMutableArray * authHttpInfos;
 @property(retain) NSMutableArray * containerHttpInfos;
 @property(retain) NSMutableArray * completeHttpInfos;
+@property(retain) NSMutableArray * cancelErrors;
+@property(retain) NSMutableArray * errors;
 
 
+- (id)errors;
+- (id)cancelErrors;
 - (id)completeHttpInfos;
 - (id)containerHttpInfos;
 - (id)authHttpInfos;
@@ -79,6 +85,12 @@
 - (void)setHasItemCount:(BOOL)arg1;
 - (void)setHasRequestErrorCode:(BOOL)arg1;
 - (void)setHasCancelledErrorCode:(BOOL)arg1;
+- (id)errorAtIndex:(unsigned int)arg1;
+- (void)clearErrors;
+- (unsigned int)errorsCount;
+- (id)cancelErrorAtIndex:(unsigned int)arg1;
+- (void)clearCancelErrors;
+- (unsigned int)cancelErrorsCount;
 - (id)completeHttpInfosAtIndex:(unsigned int)arg1;
 - (void)clearCompleteHttpInfos;
 - (unsigned int)completeHttpInfosCount;
@@ -115,10 +127,14 @@
 - (id)cancelledErrorDomain;
 - (BOOL)hasCancelledErrorDomain;
 - (BOOL)hasClientId;
+- (void)addError:(id)arg1;
+- (void)addCancelError:(id)arg1;
 - (void)addCompleteHttpInfos:(id)arg1;
 - (void)addContainerHttpInfos:(id)arg1;
 - (void)addAuthHttpInfos:(id)arg1;
 - (void)addChunkingInfos:(id)arg1;
+- (void)setErrors:(id)arg1;
+- (void)setCancelErrors:(id)arg1;
 - (void)setCompleteHttpInfos:(id)arg1;
 - (void)setContainerHttpInfos:(id)arg1;
 - (void)setAuthHttpInfos:(id)arg1;
@@ -135,17 +151,17 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (int)itemCount;
 - (id)clientId;
 - (void)setClientId:(id)arg1;
-- (int)itemCount;
-- (long long)timestamp;
 - (void)setDuration:(long long)arg1;
-- (long long)startTime;
 - (void)setTimestamp:(long long)arg1;
+- (long long)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (long long)startTime;
 - (void)setStartTime:(long long)arg1;
 - (long long)duration;
 - (id)dictionaryRepresentation;

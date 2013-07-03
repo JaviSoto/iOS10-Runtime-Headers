@@ -19,6 +19,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _loadBlock;
 
+    int _originalStatusBarStyle;
     int _productPageStyle;
     SKRemoteProductViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceProductPageViewController> *_serviceProxy;
@@ -39,6 +40,7 @@
 + (void)_validateURL:(id)arg1 withSheetInfo:(id)arg2 completionBlock:(id)arg3;
 
 - (void)setAutomaticallyDismisses:(BOOL)arg1;
+- (void)loadProductWithPageDictionary:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)showsStoreButton;
 - (id)scriptContextDictionary;
 - (BOOL)automaticallyDismisses;
@@ -50,6 +52,7 @@
 - (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_didFinish;
 - (int)productPageStyle;
+- (void)_setLoadBlock:(id)arg1;
 - (void)_throwUnsupportedPresentationException;
 - (void)_requestRemoteViewController;
 - (void)setShowsStoreButton:(BOOL)arg1;
@@ -68,6 +71,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 

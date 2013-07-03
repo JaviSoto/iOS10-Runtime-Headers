@@ -19,8 +19,8 @@
 @property BOOL showsClearButtonWhenEmpty;
 @property <ABResponderDelegate> * responderDelegate;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)showsClearButtonWhenEmpty;
 - (void)setResponderDelegate:(id)arg1;

@@ -15,8 +15,8 @@
 
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
+- (void)setDtstamp:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

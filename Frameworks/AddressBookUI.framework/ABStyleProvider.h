@@ -169,6 +169,7 @@
 @property(readonly) UIColor * membersIndexTextColor;
 @property(readonly) UIColor * membersIndexTrackingBackgroundColor;
 @property(readonly) UIColor * membersHeaderBackgroundColor;
+@property(readonly) UIView * memberHeaderBackgroundView;
 @property(readonly) UIColor * membersBackgroundColor;
 @property(readonly) BOOL shouldPropagateStylesThroughUnknownPersonActions;
 @property(readonly) BOOL shouldPropagateStylesToPickers;
@@ -192,6 +193,7 @@
 @property(readonly) UIColor * groupAccountNameShadowColor;
 @property(readonly) struct CGSize { float x1; float x2; } groupAccountNameShadowOffset;
 @property(readonly) UIColor * groupCellBackgroundColor;
+@property(readonly) UIColor * groupHeaderBackgroudColor;
 @property(readonly) UIColor * groupCellTextColor;
 @property(readonly) UIColor * groupCellHighlightedTextColor;
 @property(readonly) UIColor * groupCellShadowColor;
@@ -204,8 +206,9 @@
 + (float)memberTextBaseline;
 + (id)defaultStyleProviderForStyle:(int)arg1;
 + (id)defaultStyleProvider;
-+ (id)_initializeSafeCategoryFromValidationManager;
++ (id)preferredContentSizeCategoryName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)shouldAdjustTableView:(id)arg1 forKeyboardOrdering:(BOOL)arg2;
 - (id)personValueBackgroundColor;
@@ -243,6 +246,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardValueInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardValueEditingInsets;
 - (float)cardHeaderViewTopMargin;
+- (id)_fontForTextStyle:(id)arg1;
 - (id)personValueColor;
 - (BOOL)searchControllerForceKeyboardDisplayEnabled;
 - (BOOL)serverSearchNavigationBarHidingEnabled;
@@ -250,9 +254,8 @@
 - (id)memberNameMeCardDisabledImage;
 - (id)memberNameMeCardSelectedImage;
 - (id)memberNameMeCardImage;
-- (unsigned int)membersCountToShowSections;
-- (BOOL)memberNameRespectsLargeTextSetting;
 - (float)memberNameFontSize;
+- (unsigned int)membersCountToShowSections;
 - (id)copyLocalizedPropertyName:(int)arg1 lowercase:(BOOL)arg2;
 - (id)copyLocalizedLabel:(id)arg1;
 - (id)cardCellFacebookBadge;
@@ -372,13 +375,9 @@
 - (BOOL)reloadCallAction;
 - (BOOL)refreshTinyActionCell;
 - (id)groupAccountNameShadowColor;
-- (id)groupAccountNameColor;
 - (int)groupCellSelectionStyle;
 - (id)groupCellShadowColor;
 - (id)groupCellHighlightedTextColor;
-- (id)groupCellTextColor;
-- (id)groupCellBackgroundColor;
-- (id)groupsTableBackgroundColor;
 - (BOOL)groupsTableShouldRemoveBackgroundView;
 - (BOOL)presentModalViewInPopover;
 - (BOOL)presentNewContactsControllersInPopover;
@@ -446,7 +445,7 @@
 - (id)memberNameMeCardTextColor;
 - (id)memberNameSelectedShadowColor;
 - (id)membersBackgroundColor;
-- (id)membersHeaderBackgroundColor;
+- (id)memberHeaderBackgroundView;
 - (id)newTableFooterViewForCellStyle:(int)arg1;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (int)abCellStyleForCardTableLinkingUI;
@@ -462,6 +461,7 @@
 - (id)memberNameShadowColor;
 - (int)cardCellSelectionStyle;
 - (id)memberNameTextColor;
+- (id)membersHeaderBackgroundColor;
 - (void)customSetEmphasized:(BOOL)arg1 onCell:(id)arg2;
 - (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
 - (BOOL)shouldPropagateStylesToPickers;
@@ -500,6 +500,11 @@
 - (id)personLabelColor;
 - (id)personValueFont;
 - (BOOL)labelPickerUsesOpaqueBackground;
+- (id)groupAccountNameColor;
+- (id)groupHeaderBackgroudColor;
+- (id)groupCellTextColor;
+- (id)groupCellBackgroundColor;
+- (id)groupsTableBackgroundColor;
 - (id)letterpressStyle;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 

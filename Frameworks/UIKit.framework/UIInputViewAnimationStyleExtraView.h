@@ -9,6 +9,7 @@
 @class UIView;
 
 @interface UIInputViewAnimationStyleExtraView : NSObject  {
+    int _clipContainerType;
     UIView *_view;
     int _alignment;
 
@@ -18,17 +19,20 @@
 
 }
 
+@property int clipContainerType;
 @property(retain) UIView * view;
 @property int alignment;
 @property(copy) id animation;
 
-+ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id)arg3;
++ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id)arg3 onSnapshot:(BOOL)arg4;
 
 - (void)setAlignment:(int)arg1;
 - (int)alignment;
 - (id)animation;
 - (void)setAnimation:(id)arg1;
 - (void)dealloc;
+- (void)setClipContainerType:(int)arg1;
+- (int)clipContainerType;
 - (void)setView:(id)arg1;
 - (id)view;
 

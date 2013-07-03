@@ -17,23 +17,23 @@
 @property(retain) NSMutableArray * entryPoints;
 
 
-- (id)entryPoints;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)hasLocation;
 - (id)entryPointAtIndex:(unsigned int)arg1;
 - (void)clearEntryPoints;
-- (unsigned int)entryPointsCount;
 - (void)addEntryPoint:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
 - (id)locationForWaypoint;
+- (id)entryPoints;
+- (unsigned int)entryPointsCount;
 - (void)copyTo:(id)arg1;
 - (id)placeSearchRequest;
 - (BOOL)hasPlaceSearchRequest;
 - (void)setPlaceSearchRequest:(id)arg1;
 - (id)location;
-- (id)initWithLocation:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (id)initWithLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

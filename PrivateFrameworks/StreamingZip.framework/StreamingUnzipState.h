@@ -85,20 +85,21 @@
 @property unsigned char streamState;
 @property BOOL currentLFIsStreamMetadata;
 
++ (id)unzipStateWithPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 error:(id*)arg4;
 
 - (unsigned long long)totalRecordCount;
 - (void)setRecordsProcessed:(unsigned long long)arg1;
 - (void)setUnfinishedCompressedData:(id)arg1;
 - (void)setIncompleteData:(id)arg1;
 - (void)_internalSetStreamState:(unsigned char)arg1;
-- (id)_removeAndRecreateDirectoryAtPath:(id)arg1;
+- (id)initWithPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 error:(id*)arg4;
 - (void)clearSavedState;
 - (id)_checkHashForOffset:(unsigned long long)arg1;
 - (id)finishStream;
+- (void)setLastChunkPartialHash:(id)arg1;
 - (void)setTotalRecordCount:(unsigned long long)arg1;
 - (void)setUnsureData:(id)arg1;
 - (void)setStreamInfoDict:(id)arg1;
-- (void)setLastChunkPartialHash:(id)arg1;
 - (void)markResumptionPointWithLastCompressedByte:(unsigned char)arg1;
 - (void)setUncompressedBytesOutput:(unsigned long long)arg1;
 - (unsigned long long)uncompressedBytesOutput;
@@ -134,7 +135,6 @@
 - (void)setCurrentOutputFD:(int)arg1;
 - (id)unzipPath;
 - (void)setStreamState:(unsigned char)arg1;
-- (id)initWithPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 error:(id*)arg4;
 - (unsigned long long)currentOffset;
 - (id)init;
 - (void)dealloc;

@@ -56,9 +56,9 @@
 - (void)setBarometricPressure:(id)arg1;
 - (id)barometricPressure;
 - (id)encodedClassName;
-- (void)setVisibility:(id)arg1;
 - (id)visibility;
 - (id)condition;
+- (void)setVisibility:(id)arg1;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
 - (void)setCondition:(id)arg1;

@@ -31,11 +31,11 @@
 - (void)setEmail:(id)arg1;
 - (void)setGender:(id)arg1;
 - (id)gender;
+- (void)setPassword:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;
 - (id)firstName;
-- (void)setPassword:(id)arg1;
 - (id)email;
 - (id)debugDescription;
 - (id)password;

@@ -26,14 +26,16 @@
 - (BOOL)allowStackingOfAlert:(id)arg1;
 - (BOOL)hasTranslucentBackground;
 - (BOOL)viewIsReadyToBeRemoved;
-- (void)finishedAnimatingOut;
-- (void)finishedAnimatingIn;
 - (void)animateViewOut;
+- (void)animateViewIn;
 - (void)viewWillAnimateOut;
+- (void)viewWillAnimateIn;
 - (BOOL)allowSuspension;
 - (void)setWallpaperTunnelActive:(BOOL)arg1;
 - (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
 - (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
+- (void)finishedAnimatingOut;
+- (void)finishedAnimatingIn;
 - (BOOL)isSlidingViewController;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
 - (BOOL)handleVolumeDownButtonPressed;

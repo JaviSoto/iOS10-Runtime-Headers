@@ -26,8 +26,8 @@
 
 - (id)_initSKUILoadProductPageOperation;
 - (id)initWithProductPageURL:(id)arg1;
-- (id)metricsPageEvent;
 - (void)setOutputBlock:(id)arg1;
+- (id)metricsPageEvent;
 - (id)outputBlock;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (void).cxx_destruct;

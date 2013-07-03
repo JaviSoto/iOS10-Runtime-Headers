@@ -30,7 +30,6 @@
 - (void)setVerticalAccuracy:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (void)setAltitude:(double)arg1;
-- (id)timestamp;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
 - (void)setDesiredAccuracy:(id)arg1;
@@ -43,6 +42,7 @@
 - (double)latitude;
 - (id)status;
 - (void)setTimestamp:(id)arg1;
+- (id)timestamp;
 - (void)setStatus:(id)arg1;
 - (double)direction;
 - (void)setDirection:(double)arg1;

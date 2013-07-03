@@ -35,6 +35,7 @@
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)supportedRenderPasses;
+- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1 context:(id)arg2;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (BOOL)disableRealisticLand;
 - (BOOL)disableRealisticRoads;

@@ -8,6 +8,7 @@
     BOOL _allSectionItemsVisible;
     BOOL _isPinned;
     BOOL _isPartOfGlobalPinningGroup;
+    BOOL _doesAbutLeftOfCollectionView;
     UICollectionView *_collectionView;
     float _unpinnedY;
     <UICollectionViewDataSource> *_dataSource;
@@ -33,11 +34,13 @@
 @property BOOL isPartOfGlobalPinningGroup;
 @property(retain) NSMutableDictionary * sharedAttributes;
 @property unsigned int gridLayoutLocation;
+@property BOOL doesAbutLeftOfCollectionView;
 
 
 - (unsigned int)gridLayoutLocation;
 - (BOOL)isPartOfGlobalPinningGroup;
 - (float)unpinnedY;
+- (void)setDoesAbutLeftOfCollectionView:(BOOL)arg1;
 - (void)setSharedAttributes:(id)arg1;
 - (void)setGridLayoutLocation:(unsigned int)arg1;
 - (void)setMaxTotalItemCount:(unsigned int)arg1;
@@ -56,6 +59,7 @@
 - (unsigned int)maxTotalItemCount;
 - (id)supplementaryMetrics;
 - (id)sharedAttributes;
+- (BOOL)doesAbutLeftOfCollectionView;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (id)init;

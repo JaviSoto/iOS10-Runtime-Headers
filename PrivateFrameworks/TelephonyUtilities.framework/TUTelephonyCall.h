@@ -9,9 +9,9 @@
 + (int)callStatusForCTCallStatusType:(int)arg1;
 
 - (struct __CTCall { }*)call;
-- (void)disconnect;
 - (int)service;
 - (id)isoCountryCode;
+- (void)disconnect;
 - (id)initWithCall:(struct __CTCall { }*)arg1;
 - (long)causeCode;
 - (BOOL)isEmergencyCall;
@@ -24,7 +24,6 @@
 - (BOOL)unhold;
 - (BOOL)hold;
 - (void)answer;
-- (double)startTime;
 - (BOOL)isOutgoing;
 - (BOOL)isConferenced;
 - (int)status;
@@ -40,5 +39,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)resume;
+- (double)startTime;
 
 @end

@@ -61,9 +61,9 @@
 - (int)separatorStyle;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (BOOL)isSelected;
 - (void)setSeparatorStyle:(int)arg1;
 - (id)_backgroundColor;
-- (BOOL)isSelected;
 - (void)layoutSubviews;
 
 @end

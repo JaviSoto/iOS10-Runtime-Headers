@@ -37,6 +37,8 @@
     float _enlargementStartZoom;
     float _enlargementScale;
     float _enlargementMaxScale;
+    float _brightness;
+    BOOL _hasBrightness;
 }
 
 @property(readonly) float width;
@@ -51,6 +53,8 @@
 @property(readonly) float enlargementStartZoom;
 @property(readonly) float enlargementScale;
 @property(readonly) float enlargementMaxScale;
+@property(readonly) float brightness;
+@property(readonly) BOOL hasBrightness;
 
 
 - (void)takeFromZoomInvariantProperties:(id)arg1;
@@ -60,6 +64,7 @@
 - (float)enlargementStartZoom;
 - (id)travelledTexture;
 - (id)obscuredTexture;
+- (BOOL)hasBrightness;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glossColor;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })travelledColor;
 - (float)strokeWidth;
@@ -69,6 +74,7 @@
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColor;
 - (void)dealloc;
 - (id).cxx_construct;
+- (float)brightness;
 - (id)variant;
 
 @end

@@ -11,8 +11,8 @@
 
 
 - (id)initWithTrackStoreIDs:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithTracks:(id)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 

@@ -33,7 +33,6 @@
 - (int)markerType;
 - (id)initWithMarkerType:(int)arg1;
 - (void)setMetadata:(id)arg1;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)metadata;
 - (void)setTitle:(id)arg1;
@@ -41,6 +40,7 @@
 - (void)setTime:(double)arg1;
 - (double)time;
 - (void)setDuration:(double)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setUrl:(id)arg1;

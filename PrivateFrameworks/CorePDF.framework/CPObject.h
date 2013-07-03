@@ -45,6 +45,7 @@
 - (void)accept:(id)arg1;
 - (id)newTakeChildrenAmong:(id)arg1;
 - (id)newTakeChildren;
+- (void)removeAll;
 - (void)addChildrenOf:(id)arg1;
 - (void)add:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)updateZOrder:(long)arg1;
@@ -71,7 +72,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)remove;
 - (void)setPage:(id)arg1;
-- (void)removeAll;
 - (id)previousSibling;
 - (id)parent;
 - (unsigned int)indexOf:(id)arg1;

@@ -75,8 +75,8 @@
 - (id)regionID;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (int)accountType;
 - (void)setPassword:(id)arg1;
+- (int)accountType;
 - (BOOL)isActive;
 - (id)uniqueID;
 - (void)dealloc;

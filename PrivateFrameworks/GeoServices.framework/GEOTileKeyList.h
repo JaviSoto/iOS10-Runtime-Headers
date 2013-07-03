@@ -10,6 +10,7 @@
     GEOTileKeyMap *_map;
     unsigned int _count;
     unsigned int _maxCount;
+    unsigned long _mutationsCount;
 }
 
 + (id)listFromXPCData:(id)arg1;

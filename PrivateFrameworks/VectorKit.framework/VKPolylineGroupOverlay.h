@@ -26,7 +26,7 @@
 - (id)boundingMapRegion;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

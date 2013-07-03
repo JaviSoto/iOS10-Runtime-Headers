@@ -2,26 +2,26 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSNumber, NSURL;
+@class NSURL, NSString;
 
 @interface SLTencentWeiboUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
-    NSNumber *_uid;
+    NSString *_openid;
     NSURL *_objectID;
 }
 
-@property(copy) NSNumber * uid;
+@property(copy) NSString * openid;
 @property(retain) NSURL * objectID;
 
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)openid;
+- (void)setOpenid:(id)arg1;
 - (void)setValuesWithUserDictionary:(id)arg1;
-- (void)setUid:(id)arg1;
 - (void)setObjectID:(id)arg1;
 - (id)objectID;
 - (void).cxx_destruct;
 - (id)description;
-- (id)uid;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

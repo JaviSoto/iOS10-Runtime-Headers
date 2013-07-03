@@ -2,15 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPanGestureRecognizer, NSArray, _UIPopoverView, <UIPopoverControllerDelegate>, UIView, UIBarButtonItem, UIViewController, _UIPopoverLayoutInfo, UIDimmingView, _UIDimmingBackdropView;
+@class UIPanGestureRecognizer, _UIPopoverView, <UIPopoverControllerDelegate>, UIView, UIBarButtonItem, UIViewController, _UIPopoverLayoutInfo, UIDimmingView, NSArray;
 
-@interface UIPopoverController : NSObject <UIGestureRecognizerDelegatePrivate, _UIDimmingBackdropViewDelegate, UIAppearanceContainer> {
+@interface UIPopoverController : NSObject <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate, UIAppearanceContainer> {
     id _delegate;
     UIViewController *_contentViewController;
     UIViewController *_splitParentController;
     _UIPopoverView *_popoverView;
     UIDimmingView *_dimmingView;
-    _UIDimmingBackdropView *_dimmingBackdropView;
     UIView *_layoutConstraintView;
     struct CGRect { 
         struct CGPoint { 
@@ -76,8 +75,6 @@
         unsigned int isInTextEffectsWindow : 1; 
         unsigned int isEmbeddingInView : 1; 
         unsigned int embeddedPresentationBounces : 1; 
-        unsigned int isModernPopover : 1; 
-        unsigned int usesCircleKnockout : 1; 
     } _popoverControllerFlags;
     BOOL _allowResizePastTargetRect;
     BOOL _dismissesOnRotation;
@@ -98,10 +95,10 @@
 @property(retain) UIViewController * contentViewController;
 @property struct CGSize { float x1; float x2; } popoverContentSize;
 @property(getter=isPopoverVisible,readonly) BOOL popoverVisible;
+@property unsigned int popoverArrowDirection;
 @property(copy) NSArray * passthroughViews;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } popoverLayoutMargins;
 @property(retain) Class popoverBackgroundViewClass;
-@property unsigned int popoverArrowDirection;
 @property(retain) UIDimmingView * dimmingView;
 @property BOOL allowResizePastTargetRect;
 @property BOOL dismissesOnRotation;
@@ -119,8 +116,8 @@
 + (BOOL)_showTargetRectPref;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
 + (BOOL)_popoversDisabled;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)init;
 - (void)setDelegate:(id)arg1;
@@ -144,15 +141,14 @@
 - (BOOL)dismissesOnRotation;
 - (BOOL)allowResizePastTargetRect;
 - (void)setDimmingView:(id)arg1;
-- (id)_dimmingBackdropView;
+- (void)presentPopoverFromBarButtonItem:(id)arg1;
+- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 preferredPresentationDirections:(unsigned int)arg3;
 - (void)_setIgnoresKeyboardNotifications:(BOOL)arg1;
 - (BOOL)_ignoresKeyboardNotifications;
 - (void)_stopWatchingForNavigationControllerNotifications:(id)arg1;
 - (void)_startWatchingForNavigationControllerNotifications:(id)arg1;
 - (void)_beginMapsTransitionToNewViewController:(id)arg1 arrowDirections:(unsigned int)arg2 slideDuration:(double)arg3 expandDuration:(double)arg4;
 - (void)_setContentViewController:(id)arg1 backgroundStyle:(int)arg2 animated:(BOOL)arg3;
-- (BOOL)_usePointyPopovers;
-- (void)presentPopoverFromBarButtonItem:(id)arg1;
 - (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4;
 - (unsigned int)popoverArrowDirection;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1;
@@ -179,10 +175,8 @@
 - (void)_setSplitParentController:(id)arg1;
 - (void)_beginMapsTransitionToNewViewController:(id)arg1 newTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 arrowDirections:(unsigned int)arg4 slideDuration:(double)arg5 expandDuration:(double)arg6;
 - (void)_updateDimmingViewTransformForInterfaceOrientationOfHostingWindow:(id)arg1;
-- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 preferredPresentationDirections:(unsigned int)arg3;
-- (void)_commonPresentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 preferredPresentationDirections:(unsigned int)arg3 animated:(BOOL)arg4;
+- (void)_commonPresentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)_startWatchingForScrollViewNotifications;
-- (BOOL)_isModernPopover;
 - (BOOL)isPresentingOrDismissing;
 - (BOOL)_shimPresentSlidingPopoverAnimated:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
@@ -215,7 +209,6 @@
 - (void)_setRetainsSelfWhilePresented:(BOOL)arg1;
 - (id)dimmingView;
 - (void)_setPopoverBackgroundStyle:(int)arg1;
-- (void)dimmingBackdropViewWasTapped:(id)arg1;
 - (unsigned int)_slideTransitionCount;
 - (void)_dismissPopoverAnimated:(BOOL)arg1 stateOnly:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_presentPopoverFromEdge:(int)arg1 ofView:(id)arg2 animated:(BOOL)arg3;
@@ -229,6 +222,7 @@
 - (void)setContentViewController:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;
 - (id)passthroughViews;
+- (void)dimmingViewWasTapped:(id)arg1;
 - (id)initWithContentViewController:(id)arg1;
 - (void)_newViewControllerWasPushed:(id)arg1;
 - (void)_newViewControllerWillBePushed:(id)arg1;

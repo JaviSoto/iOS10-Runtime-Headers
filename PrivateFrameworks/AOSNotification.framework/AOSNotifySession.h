@@ -27,6 +27,9 @@
 - (id)addFMFAccount:(id)arg1;
 - (void)didExitFMFRegion:(id)arg1 atLocation:(id)arg2;
 - (void)didEnterFMFRegion:(id)arg1 atLocation:(id)arg2;
+- (id)disableActivationLockUsingToken:(id)arg1;
+- (id)enableActivationLock;
+- (void)isActivationLockStateChangeInProgressWithCompletion:(id)arg1;
 - (id)disableFMIPUsingToken:(id)arg1 inContext:(int)arg2;
 - (id)enableFMIPInContext:(int)arg1;
 - (id)iCloudAccount;
@@ -43,6 +46,7 @@
 - (id)vetEmailAccount:(id)arg1;
 - (id)fmipAccount;
 - (id)storeAccount;
+- (void)activationLockStateWithCompletion:(id)arg1;
 - (void)fmipStateWithCompletion:(id)arg1;
 - (id)lostModeInfo;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;

@@ -8,12 +8,11 @@
 
 @property(readonly) BOOL isShowingDictationPlaceholder;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isShowingDictationPlaceholder;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (id)insertDictationResultPlaceholder;
-- (id)accessibilityLabel;
 
 @end

@@ -25,14 +25,14 @@
 - (id)description;
 - (float)blurSaturation;
 - (float)keyborderOpacity;
-- (BOOL)whiteText;
 - (BOOL)lightKeyboard;
+- (BOOL)whiteText;
 - (float)keycapOpacity;
 - (void)setKeyborderOpacity:(float)arg1;
 - (void)setKeycapOpacity:(float)arg1;
 - (void)setLightKeyboard:(BOOL)arg1;
 - (void)setBlurSaturation:(float)arg1;
-- (float)blurRadius;
 - (void)setBlurRadius:(float)arg1;
+- (float)blurRadius;
 
 @end

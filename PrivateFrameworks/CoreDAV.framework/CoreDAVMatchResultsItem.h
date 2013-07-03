@@ -24,9 +24,9 @@
 - (void)setRank:(id)arg1;
 - (id)region;
 - (void)setRegion:(id)arg1;
+- (id)language;
 - (void)dealloc;
 - (id)description;
 - (void)setLanguage:(id)arg1;
-- (id)language;
 
 @end

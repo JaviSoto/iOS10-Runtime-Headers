@@ -19,6 +19,11 @@
   /* Error parsing encoded ivar type info: @? */
     id _activeOverrideTypesChangedHandler;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _overrideStateChangeHandler;
+
     BBServerConnection *_connection;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -31,9 +36,11 @@
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)setOrderedSectionIDs:(id)arg1;
 - (void)setSectionOrderRule:(int)arg1;
+- (void)setBehaviorOverrideStateChangeHandler:(id)arg1;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;
+- (void)behaviorOverrideStateChanged:(unsigned int)arg1;
 - (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1;
 - (void)behaviorOverrideStatusChanged:(int)arg1;
 - (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;

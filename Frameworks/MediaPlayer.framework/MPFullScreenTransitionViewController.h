@@ -6,7 +6,6 @@
 }
 
 
-- (BOOL)wantsFullScreenLayout;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
 

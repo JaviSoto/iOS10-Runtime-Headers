@@ -67,7 +67,8 @@
 - (void)splitRouteLineAtAnnotation:(id)arg1;
 - (void)forEachSection:(id)arg1;
 - (void)createMeshIfNecessary:(BOOL)arg1 currentManeuver:(int)arg2;
-- (void)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 displayManeuvers:(BOOL)arg5 viewUnitsPerPoint:(double)arg6;
+- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(float)arg2;
+- (BOOL)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(BOOL)arg6;
 - (void)setSimplificationEpsilonPoints:(double)arg1;
 - (void)forEachMapMatchingSection:(id)arg1;
 - (BOOL)needsUpdate;

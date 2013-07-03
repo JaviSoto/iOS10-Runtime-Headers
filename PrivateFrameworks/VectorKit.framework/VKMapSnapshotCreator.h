@@ -12,6 +12,8 @@
     VKImageCanvas *_canvas;
     int _mapType;
     VKMapModel *_mapModel;
+    BOOL _didBecomeFullyDrawn;
+    BOOL _hasFailedTiles;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */

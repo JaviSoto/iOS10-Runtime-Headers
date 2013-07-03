@@ -97,8 +97,8 @@
 - (id)exportingPeerID;
 - (BOOL)loadComparisonMetadataWithError:(id*)arg1;
 - (BOOL)releaseContents:(id*)arg1;
-- (id)localPeerID;
 - (id)transactionLogLocation;
+- (id)localPeerID;
 - (BOOL)writeToDiskWithError:(id*)arg1 andUpdateFilenameInTransactionEntries:(id)arg2;
 - (void)setUseTemporaryLogLocation:(BOOL)arg1;
 - (id)transactionNumber;

@@ -16,21 +16,22 @@
 + (id)buttonWithWorldView:(id)arg1;
 + (Class)_activityIndicatorClass;
 + (id)_buttonWithUserTrackingView:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)_trackingFollowWithHeadingImage;
 - (id)_trackingFollowImage;
-- (id)_trackingNoneImage;
 - (id)_trackingEmptyImage;
 - (BOOL)_isHighlightedForState:(int)arg1;
 - (void)_updateForState:(int)arg1;
 - (void)_repositionViews;
+- (id)_trackingNoneImage;
 - (int)_state;
 - (void)dealloc;
 - (int)_activityIndicatorStyle;
 - (void)_setState:(int)arg1;
 - (id)controller;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
 - (void)updateForMiniBarState:(BOOL)arg1;
 - (void)sizeToFit;
 - (id)accessibilityHint;

@@ -6,6 +6,8 @@
 }
 
 
+- (id)thinKeycapsFontName;
+- (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 
 @end

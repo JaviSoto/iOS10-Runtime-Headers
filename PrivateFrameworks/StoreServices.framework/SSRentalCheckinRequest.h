@@ -2,19 +2,23 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber;
+@class NSNumber, NSArray;
 
 @interface SSRentalCheckinRequest : SSRequest  {
     NSNumber *_accountIdentifier;
     NSNumber *_rentalKeyIdentifier;
+    NSArray *_sinfs;
 }
 
+@property(readonly) NSArray * sinfs;
 @property(readonly) NSNumber * accountIdentifier;
 @property(readonly) NSNumber * rentalKeyIdentifier;
 
 
+- (id)sinfs;
 - (id)rentalKeyIdentifier;
 - (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
+- (id)initWithSinfs:(id)arg1;
 - (void)startWithConnectionResponseBlock:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;

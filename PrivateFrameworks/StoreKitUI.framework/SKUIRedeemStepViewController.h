@@ -15,11 +15,11 @@
 @property(retain) NSOperationQueue * operationQueue;
 
 
-- (void)setConfiguration:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void).cxx_destruct;
 - (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;
 

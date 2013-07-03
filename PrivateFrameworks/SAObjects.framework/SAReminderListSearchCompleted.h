@@ -15,8 +15,8 @@
 + (id)listSearchCompleted;
 
 - (id)encodedClassName;
-- (id)results;
 - (void)setResults:(id)arg1;
+- (id)results;
 - (id)groupIdentifier;
 
 @end

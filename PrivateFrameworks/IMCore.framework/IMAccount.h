@@ -305,6 +305,7 @@
 - (id)imHandlesForIMPerson:(id)arg1;
 - (id)personForIMHandle:(id)arg1;
 - (unsigned long long)defaultHandleCapabilities;
+- (id)_imHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2 knownIDStatus:(int)arg3 originalID:(id)arg4 countryCode:(id)arg5;
 - (id)existingIMHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2;
 - (id)imHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2;
 - (void)watchBuddiesIfNecessary;
@@ -415,13 +416,13 @@
 - (void)setUniqueID:(id)arg1;
 - (BOOL)isConnected;
 - (BOOL)useSSL;
+- (void)setPassword:(id)arg1;
 - (int)accountType;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
-- (void)setPassword:(id)arg1;
 - (void)setAccountDescription:(id)arg1;
-- (BOOL)isActive;
 - (id)accountDescription;
+- (BOOL)isActive;
 - (void)systemDidWake;
 - (void)systemWillSleep;
 - (id)countryCode;

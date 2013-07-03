@@ -152,6 +152,7 @@
 @property BOOL applicationSupportsShakeToEdit;
 @property(readonly) int applicationState;
 @property(readonly) double backgroundTimeRemaining;
+@property(readonly) int backgroundRefreshStatus;
 @property(getter=isProtectedDataAvailable,readonly) BOOL protectedDataAvailable;
 @property(readonly) int userInterfaceLayoutDirection;
 @property(readonly) NSString * preferredContentSizeCategory;
@@ -164,8 +165,7 @@
 + (id)sharedApplication;
 + (void)registerObjectForStateRestoration:(id)arg1 restorationIdentifier:(id)arg2;
 + (id)stringForInterfaceOrientation:(int)arg1;
-+ (int)barStyleForString:(id)arg1;
-+ (id)stringForBarStyle:(int)arg1;
++ (int)_backgroundStyleForString:(id)arg1;
 + (id)stringForStatusBarStyle:(int)arg1;
 + (BOOL)isRunningEventPump;
 + (BOOL)_isAfterCACommitHandlerInstalled;
@@ -179,8 +179,9 @@
 + (void)_startWindowServerIfNecessary;
 + (BOOL)rendersLocally;
 + (BOOL)registerAsSystemApp;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 + (void)shouldShowNetworkActivityIndicatorInRemoteApplication:(BOOL)arg1;
 
 - (void)endBackgroundTask:(unsigned int)arg1;
@@ -237,11 +238,14 @@
 - (BOOL)shouldRecordExtendedLaunchTime;
 - (void*)_getSymbol:(id)arg1 forFramework:(id)arg2;
 - (void)runTest:(id)arg1 forAnimation:(id)arg2;
-- (void)setDeviceOrientation:(int)arg1;
 - (void)_leak;
+- (void)setDeviceOrientation:(int)arg1;
+- (void)_rotationDuringTest:(id)arg1 options:(id)arg2;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (int)_testOrientation:(id)arg1 options:(id)arg2;
 - (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
+- (void)_cancelTestRotationObserver;
 - (void)stopCHUDRecording;
 - (void)_reportResults:(id)arg1;
 - (void)finishedIPTest:(id)arg1 extraResults:(id)arg2;
@@ -284,6 +288,7 @@
 - (BOOL)_usesPreMTAlertBehavior;
 - (void)endReceivingRemoteControlEvents;
 - (void)beginReceivingRemoteControlEvents;
+- (int)backgroundRefreshStatus;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1;
 - (void)clearKeepAliveTimeout;
 - (BOOL)setKeepAliveTimeout:(double)arg1 handler:(id)arg2;
@@ -321,6 +326,7 @@
 - (void)_setApplicationIsOpaque:(BOOL)arg1;
 - (void)setExpectsFaceContact:(BOOL)arg1;
 - (id)windows;
+- (void)clearHardwareKeyboardState;
 - (void)setHardwareKeyboardLayoutName:(id)arg1;
 - (id)textInputMode;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
@@ -460,7 +466,6 @@
 - (BOOL)isNetworkActivityIndicatorVisible;
 - (void)popRunLoopMode:(id)arg1;
 - (void)pushRunLoopMode:(id)arg1;
-- (BOOL)inUITrackingRunLoopMode;
 - (void)_unregisterForTimeChangedNotification;
 - (void)_unregisterForLocaleChangedNotification;
 - (void)_unregisterForLanguageChangedNotification;
@@ -493,6 +498,7 @@
 - (void)scheduleLocalNotification:(id)arg1;
 - (void)registerForRemoteNotificationTypes:(unsigned int)arg1;
 - (unsigned int)enabledRemoteNotificationTypes;
+- (void)_setBackgroundStyle:(int)arg1;
 - (void)setExpectsFaceContact:(BOOL)arg1 inLandscape:(BOOL)arg2;
 - (id)_rootViewControllers;
 - (void)_wheelChangedWithEvent:(id)arg1;
@@ -503,7 +509,7 @@
 - (void)handleKeyUIEvent:(id)arg1;
 - (void)_finishButtonEvent:(id)arg1;
 - (BOOL)_prepareButtonEvent:(id)arg1 type:(int)arg2 phase:(int)arg3 timestamp:(double)arg4;
-- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1;
+- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1 forceRebuild:(BOOL)arg2;
 - (void)_handleBackgroundURLSessionEvent:(struct __GSEvent { }*)arg1;
 - (void)_handleFetchInitiatedByRemoteNotificationBackgroundFetchEvent:(struct __GSEvent { }*)arg1;
 - (void)_handleOpportunisticFetchInitiatedByBackgroundFetchEvent:(struct __GSEvent { }*)arg1;
@@ -663,14 +669,17 @@
 - (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
 - (BOOL)_isClassic;
 - (void)_setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
-- (id)_implicitStatusBarHiddenAnimationParameters;
+- (id)_implicitStatusBarHiddenAnimationParametersWithViewController:(id)arg1 animation:(int)arg2;
 - (void)_setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
-- (id)_implicitStatusBarStyleAnimationParameters;
+- (id)_implicitStatusBarStyleAnimationParametersWithViewController:(id)arg1;
 - (id)_implicitStatusBarAnimationParametersWithClass:(Class)arg1;
 - (BOOL)_isSpringBoard;
 - (void)_setStatusBarShowsProgress:(BOOL)arg1;
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
+- (void)popRunLoopMode:(id)arg1 requester:(id)arg2;
+- (id)userInfoDictionaryForRunLoopMode:(id)arg1 requester:(id)arg2;
+- (void)pushRunLoopMode:(id)arg1 requester:(id)arg2;
 - (void)_run;
 - (void)_setDelegate:(id)arg1 assumeOwnership:(BOOL)arg2;
 - (int)_loadMainNibFileNamed:(id)arg1 bundle:(id)arg2;
@@ -699,6 +708,7 @@
 - (id)_extendLaunchTest;
 - (void)_runWithURL:(id)arg1 payload:(id)arg2 launchOrientation:(int)arg3 statusBarStyle:(int)arg4 statusBarHidden:(BOOL)arg5;
 - (void)_installAutoreleasePoolsIfNecessaryForMode:(struct __CFString { }*)arg1;
+- (void)_registerForBackgroundRefreshStatusChangedNotification;
 - (void)_registerForLegibilitySettingChangedNotification;
 - (void)_registerForPreferredContentSizeChangedNotification;
 - (void)_registerForNameLayerTreeNotification;
@@ -736,7 +746,6 @@
 - (BOOL)accessibilityPerformEscape;
 - (unsigned int)_accessibilityMachPort;
 - (id)accessibilityLabel;
-- (id)_axSubviews;
 - (BOOL)_accessibilityOverrideStartStopExtraExtras;
 - (BOOL)_accessibilityStartStopDictation;
 - (void)_accessibilityAVCaptureStarted:(id)arg1;
@@ -745,12 +754,13 @@
 - (void)_accessibilityKeyboardDidShow:(id)arg1;
 - (id)_accessibilityResponderElement;
 - (id)_accessibilitySummaryElement;
-- (id)_accessibilityUIWindowFindWithGlobalPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_accessibilityWindows;
+- (id)_accessibilityUIWindowFindWithGlobalPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_findContainerAccessibleElement:(id)arg1 first:(BOOL)arg2;
 - (id)_accessibilityFirstElement;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityElementFirst:(BOOL)arg1 last:(BOOL)arg2 forFocus:(BOOL)arg3;
+- (id)_axSubviews;
 - (void)_accessibilityFixPhysicalEvent:(id)arg1;
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityTypingCandidates;
@@ -759,9 +769,11 @@
 - (id)_accessibilityTitleBarElement;
 - (BOOL)_accessibilityDictationIsListening;
 - (id)_accessibilityCurrentHardwareKeyboardLayout;
+- (id)_accessibilityCurrentSoftwareKeyboardLayout;
 - (BOOL)_accessibilityHardwareKeyboardActive;
 - (void)_appendWindowsForAccessibilityElements:(id)arg1 withElement:(id)arg2;
 - (id)_axAllSubviews;
+- (void)_accessibilitySetAllowsNotificationsDuringSuspension:(BOOL)arg1;
 - (int)_accessibilityApplicationForPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)accessibilityAttributeValue:(int)arg1;
 - (void)_accessibilityInitialize;
@@ -780,8 +792,8 @@
 - (BOOL)_accessibilityDispatchKeyboardAction:(id)arg1;
 - (BOOL)accessibilityStartStopToggle;
 - (BOOL)_accessibilityAllowsNotificationsDuringSuspension;
-- (BOOL)_gkSendAction:(SEL)arg1 viaResponder:(id)arg2 withObject:(id)arg3;
 - (id)_gkTargetForAction:(SEL)arg1 viaResponder:(id)arg2;
+- (BOOL)_gkSendAction:(SEL)arg1 viaResponder:(id)arg2 withObject:(id)arg3;
 - (BOOL)isSuspendedForAnyReason;
 - (void)endCurrentPPT;
 - (void)beginPPTWithName:(id)arg1;

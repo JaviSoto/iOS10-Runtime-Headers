@@ -35,6 +35,7 @@
 - (void)setUseReadOnlyConnections:(BOOL)arg1;
 - (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned int)arg2;
 - (void)checkInConnection:(id)arg1;
+- (BOOL)closeDatabaseConnection:(id)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
 - (id)databasePath;
 - (id)init;

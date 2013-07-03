@@ -11,6 +11,7 @@
 
 @property(readonly) BOOL hasOriginalCoordinate;
 @property(retain) GEOLatLng * originalCoordinate;
+@property(readonly) BOOL hasCorrectedCoordinate;
 @property(retain) GEOLatLng * correctedCoordinate;
 
 
@@ -20,6 +21,7 @@
 - (void)setOriginalCoordinate:(id)arg1;
 - (id)originalCoordinate;
 - (id)correctedCoordinate;
+- (BOOL)hasCorrectedCoordinate;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

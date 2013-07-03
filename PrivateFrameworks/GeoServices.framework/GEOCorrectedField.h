@@ -32,8 +32,8 @@
 - (void)setIsMarkedIncorrect:(BOOL)arg1;
 - (BOOL)isMarkedIncorrect;
 - (BOOL)hasIsMarkedIncorrect;
-- (BOOL)hasCorrectedValue;
 - (id)correctedValue;
+- (BOOL)hasCorrectedValue;
 - (void)setCorrectedValue:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)displayName;

@@ -16,6 +16,7 @@
     BOOL _allowTempLogStorage;
     BOOL _useLocalStorage;
     NSObject<OS_dispatch_queue> *_processingQueue;
+    BOOL _throwOptimisticLockingException;
 }
 
 @property(readonly) NSString * localPeerID;
@@ -26,8 +27,11 @@
 @property(readonly) BOOL pendingTempLogMove;
 @property BOOL allowTempLogStorage;
 @property BOOL useLocalStorage;
+@property BOOL throwOptimisticLockingException;
 
 
+- (void)setThrowOptimisticLockingException:(BOOL)arg1;
+- (BOOL)throwOptimisticLockingException;
 - (BOOL)useLocalStorage;
 - (id)localRootLocation;
 - (void)setAllowTempLogStorage:(BOOL)arg1;
@@ -47,8 +51,8 @@
 - (void)managedObjectContextDidSave:(id)arg1;
 - (id)lastTransactionDate;
 - (void)setLastTransactionDate:(id)arg1;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)init;
 - (void)dealloc;
 - (id)description;

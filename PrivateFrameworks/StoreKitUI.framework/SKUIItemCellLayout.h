@@ -65,8 +65,8 @@
 - (id)iconImage;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1;
-- (BOOL)isHighlighted;
 - (BOOL)isSelected;
+- (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
 
 @end

@@ -30,7 +30,7 @@
 - (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
 - (void)_updateSubtitles:(id)arg1 forceRender:(BOOL)arg2;
 - (void)_subtitlesDidChange:(id)arg1;
-- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1 forceUpdate:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
 - (void)_disconnectContentLayerFromPlayer;
 - (void)_addAnimationsForSubtitleLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;

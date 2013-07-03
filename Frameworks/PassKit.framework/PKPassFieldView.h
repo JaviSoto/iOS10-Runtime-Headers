@@ -2,47 +2,53 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKDiffView, UILabel, PKPassField;
+@class PKPassColorProfile, PKDiffView, UILabel, PKPassFieldTemplate, PKPassField;
 
 @interface PKPassFieldView : UIView  {
+    BOOL _needsRecalculation;
     struct CGSize { 
         float width; 
         float height; 
-    } _cachedLabelSize;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _cachedValueSize;
-    BOOL _needsCachedSizeUpdate;
+    } _cachedSize;
+    int _background;
     PKPassField *_field;
+    PKPassFieldTemplate *_fieldTemplate;
+    PKPassColorProfile *_colorProfile;
     PKDiffView *_diffView;
     UILabel *_labelLabel;
     UILabel *_valueLabel;
 }
 
 @property(retain) PKPassField * field;
+@property(retain) PKPassFieldTemplate * fieldTemplate;
+@property(retain) PKPassColorProfile * colorProfile;
 @property(readonly) UILabel * labelLabel;
 @property(readonly) UILabel * valueLabel;
-@property(readonly) float minimumWidth;
 @property(retain) PKDiffView * diffView;
-@property BOOL needsCachedSizeUpdate;
 
++ (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
 
-- (void)setNeedsCachedSizeUpdate:(BOOL)arg1;
-- (BOOL)needsCachedSizeUpdate;
+- (BOOL)fitsInSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_textAttributesWithTextColor:(id)arg1 alignment:(int)arg2 lineBreakMode:(int)arg3;
 - (id)diffView;
 - (void)setDiffView:(id)arg1;
-- (void)_computeIntrinsicSizes;
-- (void)setValueAttributedText:(id)arg1;
-- (void)setLabelAttributedText:(id)arg1;
+- (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
+- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
+- (BOOL)_shouldDisplayLabel;
+- (void)setColorProfile:(id)arg1 background:(int)arg2;
 - (id)initWithField:(id)arg1 fieldTemplate:(id)arg2;
+- (void)setFieldTemplate:(id)arg1;
+- (id)fieldTemplate;
+- (void)setColorProfile:(id)arg1;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
+- (id)colorProfile;
 - (id)valueLabel;
 - (id)labelLabel;
 - (void)setField:(id)arg1;
 - (id)field;
 - (void)dealloc;
-- (float)minimumWidth;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 
 @end

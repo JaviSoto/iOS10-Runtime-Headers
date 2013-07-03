@@ -43,6 +43,7 @@
 - (id)chatForTransfer:(id)arg1;
 - (void)assignTransfer:(id)arg1 toHandle:(id)arg2;
 - (void)assignTransfer:(id)arg1 toMessage:(id)arg2 account:(id)arg3;
+- (BOOL)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 - (BOOL)hasActiveFileTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;

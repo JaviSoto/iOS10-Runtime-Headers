@@ -29,8 +29,8 @@
 - (unsigned int)memoryCapacity;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
-- (id)persistentIdentifier;
 - (void)removeAllCachedResponses;
+- (id)persistentIdentifier;
 - (void)removeCachedResponseForRequest:(id)arg1;
 
 @end

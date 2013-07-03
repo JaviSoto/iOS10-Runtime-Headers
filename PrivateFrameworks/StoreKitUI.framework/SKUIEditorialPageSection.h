@@ -2,13 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEditorialComponent, SKUITextBoxView, SKUIEditorialLayout;
+@class SKUIEditorialComponent, SKUIEditorialLayout;
 
 @interface SKUIEditorialPageSection : SKUIStorePageSection  {
     SKUIEditorialLayout *_editorialLayout;
-    float _edgePadding;
     BOOL _isExpanded;
-    SKUITextBoxView *_textBoxView;
 }
 
 @property(readonly) SKUIEditorialComponent * pageComponent;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLFetchingAlbum, NSObject<PLAlbumProtocol>, PLGenericAlbum, NSCalendar, PLWStackedImageCache, NSSet, PLThumbnailManager, NSArray, PLManagedObjectContext, PLInFlightAssetsAlbum, NSMutableDictionary, PLManagedAlbum, NSMutableArray;
+@class PLFetchingAlbum, NSObject<PLAlbumProtocol>, PLGenericAlbum, NSCalendar, NSSet, PLThumbnailManager, NSArray, PLManagedObjectContext, PLInFlightAssetsAlbum, NSMutableDictionary, PLManagedAlbum, NSMutableArray;
 
 @interface PLPhotoLibrary : NSObject  {
     BOOL _listeningForITunesSyncing;
@@ -17,7 +17,6 @@
     NSCalendar *_exifConversionCalendar;
     NSMutableDictionary *_photoStreamAlbumsByStreamID;
     NSMutableArray *_photoStreamAlbums;
-    PLWStackedImageCache *_stackedImageCache;
     NSSet *_imageFileExtensions;
     NSSet *_rawImageFileExtensions;
     NSSet *_audioFileExtensions;
@@ -47,6 +46,8 @@
 @property(readonly) NSArray * photoStreamAlbumsForPreferences;
 
 + (BOOL)_assetsLibrary_isSharedPhotoStreamsSupportEnabled;
++ (BOOL)isAlbumSynced:(id)arg1;
++ (id)syncedAlbumSubtitleStringFormat;
 + (id)calculatedDisplayableIndexesForAlbum:(struct NSObject { Class x1; }*)arg1 count:(unsigned int)arg2;
 + (void)resetSyncedAssetsDCIMDirectory;
 + (void)initializeGraphicsServices;
@@ -77,6 +78,7 @@
 + (BOOL)isCrashRecoveryDisabled;
 + (void)disableCrashRecovery:(BOOL)arg1;
 + (void)handlePossibleCoreDataError:(id)arg1;
++ (id)syncInfoPath;
 + (id)iTunesSyncedAssetThumbnailsDirectory;
 + (id)iTunesPhotosDirectory;
 + (id)photoStreamsDataDirectory;
@@ -158,6 +160,7 @@
 - (void)userDeleteAlbums:(id)arg1;
 - (id)placeAlbums;
 - (id)wallpaperAlbums;
+- (struct NSObject { Class x1; }*)albumWithUuid:(id)arg1;
 - (struct NSObject { Class x1; }*)eventWithName:(id)arg1 andImportSessionIdentifier:(id)arg2;
 - (void)addInflightAsset:(id)arg1;
 - (struct NSObject { Class x1; }*)inFlightAssetsAlbum;
@@ -185,7 +188,6 @@
 - (id)albumListForContentMode:(int)arg1;
 - (struct NSObject { Class x1; }*)eventAlbumContainingPhoto:(id)arg1;
 - (struct NSObject { Class x1; }*)syncProgressAlbum;
-- (struct NSObject { Class x1; }*)albumWithUuid:(id)arg1;
 - (BOOL)isAudioFileExtension:(id)arg1;
 - (BOOL)isRawImageFileExtension:(id)arg1;
 - (BOOL)isNonRawImageFileExtension:(id)arg1;

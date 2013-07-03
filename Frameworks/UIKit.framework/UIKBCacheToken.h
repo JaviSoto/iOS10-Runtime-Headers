@@ -7,6 +7,7 @@
 @interface UIKBCacheToken : NSObject <NSCopying> {
     NSMutableArray *_components;
     NSString *_name;
+    float _scale;
     int _emptyFields;
     int _renderFlags;
 }
@@ -20,8 +21,8 @@
 @property int emptyFields;
 @property(readonly) BOOL hasKey;
 
-+ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 + (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKeyMask:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
@@ -30,6 +31,7 @@
 
 - (struct CGSize { float x1; float x2; })size;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithName:(id)arg1;
 - (id)name;
 - (id)string;
 - (void)dealloc;
@@ -40,8 +42,13 @@
 - (int)displayHint;
 - (void)setRowHint:(int)arg1;
 - (int)rowHint;
+- (id)stringForComponentArray:(id)arg1 additionalValues:(id)arg2;
+- (id)stringForConstruction:(id)arg1;
+- (int)_writeArray:(id)arg1 toStr:(char *)arg2 maxLen:(int)arg3;
+- (int)_writeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toStr:(char *)arg2 maxLen:(int)arg3;
+- (int)_writeNumber:(float)arg1 toStr:(char *)arg2;
+- (int)_writeString:(id)arg1 toStr:(char *)arg2 maxLen:(int)arg3;
 - (id)initWithComponents:(id)arg1 name:(id)arg2;
-- (id)initWithComponents:(id)arg1 name:(id)arg2 emptyFields:(int)arg3;
 - (int)renderFlags;
 - (id)stringForRenderFlags:(int)arg1 lightKeyboard:(BOOL)arg2;
 - (id)stringForSplitState:(BOOL)arg1;

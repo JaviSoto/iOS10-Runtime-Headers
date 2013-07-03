@@ -2,13 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBRenderConfig, NSTimer, UIKBKeyView, UIView, UIKBTree, NSString, UIKBCacheToken, NSMutableDictionary, CALayer;
+@class UIKBRenderConfig, NSTimer, UIKBKeyView, UIKBSplitImageView, UIKBTree, NSString, UIKBCacheToken, NSMutableDictionary;
 
-@interface UIKBKeyplaneView : UIView <UIKBCacheableView> {
+@interface UIKBKeyplaneView : UIKBSplitImageView <UIKBCacheableView> {
     UIKBTree *_keyplane;
     UIKBTree *_defaultKeyplane;
     UIKBCacheToken *_cacheToken;
-    UIView *_splitRight;
     UIKBKeyView *_candidateGapView;
     NSMutableDictionary *_subviewIndex;
     NSMutableDictionary *_activeViewIndex;
@@ -18,9 +17,9 @@
     BOOL _performingDeactivation;
     BOOL _shouldDrawRect;
     UIKBRenderConfig *_renderConfig;
-    CALayer *_keyBorders;
-    CALayer *_keyBackgrounds;
-    CALayer *_keyCaps;
+    UIKBSplitImageView *_keyBorders;
+    UIKBSplitImageView *_keyBackgrounds;
+    UIKBSplitImageView *_keyCaps;
 }
 
 @property(retain) UIKBTree * keyplane;
@@ -32,8 +31,8 @@
 @property(readonly) float cachedWidth;
 @property(readonly) BOOL keepNonPersistent;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -45,7 +44,7 @@
 - (Class)classForKey:(id)arg1;
 - (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)containingViewForKey:(id)arg1 withState:(int)arg2;
-- (void)deactivateKey:(id)arg1 isStateDowngrade:(BOOL)arg2;
+- (void)deactivateKey:(id)arg1 previousState:(int)arg2;
 - (void)removeKeyFromDelayedDeactivationSet:(id)arg1;
 - (void)scheduleDelayedDeactivation;
 - (void)performDelayedDeactivation:(id)arg1;
@@ -53,11 +52,11 @@
 - (BOOL)_shouldDrawLowResBackground;
 - (int)cornerMaskForKey:(id)arg1 recursive:(BOOL)arg2;
 - (id)defaultKeyplane;
+- (id)_setupSplitImageViewIfNeeded:(id)arg1 withImage:(struct CGImage { }*)arg2;
 - (id)cacheToken;
-- (id)_setupLayerIfNoLayer:(id)arg1 withContents:(id)arg2;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
-- (void)deactivateKey:(id)arg1;
+- (void)deactivateAdaptiveKey:(id)arg1;
 - (id)viewForKey:(id)arg1;
 - (void)deactivateKeys;
 - (void)updateDecorationViewsIfNeeded;

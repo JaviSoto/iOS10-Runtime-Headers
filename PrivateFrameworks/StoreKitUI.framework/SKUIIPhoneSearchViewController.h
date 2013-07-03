@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchChildViewControllerDelegate>, SKUIMetricsController, SKUIClientContext, UICollectionView, SKUISearchPage, SKUISearchResultGroupController, SKUISearchRelatedView, NSString, SKUIItemCollectionController, NSMutableDictionary;
+@class <SKUISearchChildViewControllerDelegate>, SKUIMetricsController, SKUIClientContext, SKUIGiftThemeCollectionView, SKUISearchPage, SKUISearchResultGroupController, SKUISearchRelatedView, NSString, SKUIItemCollectionController, NSMutableDictionary;
 
 @interface SKUIIPhoneSearchViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, SKUISearchResultGroupControllerDelegate, SKUIItemCollectionDelegate, SKUISearchRelatedViewDelegate> {
     SKUIClientContext *_clientContext;
-    UICollectionView *_collectionView;
+    SKUIGiftThemeCollectionView *_collectionView;
     <SKUISearchChildViewControllerDelegate> *_delegate;
     SKUIItemCollectionController *_itemCollectionController;
     NSMutableDictionary *_indexesByItemIndex;
@@ -38,13 +38,13 @@
 - (void)_recordClickEventForItemOffer:(id)arg1 atIndexPath:(id)arg2;
 - (void)_recordClickEventForEditorial:(id)arg1 atIndexPath:(id)arg2;
 - (void)_recordClickEventForItem:(id)arg1 atIndexPath:(id)arg2;
+- (int)_indexForItemIndex:(int)arg1;
 - (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
 - (int)_itemIndexForIndex:(int)arg1;
-- (int)_indexForItemIndex:(int)arg1;
 - (id)_itemCollectionController;
 - (void)_reloadScreenshotHeight;
-- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndex:(unsigned int)arg2;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
+- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2;
 - (id)previousRelatedSearchTerm;
 - (void)searchRelatedViewDidSelectBackButton:(id)arg1;
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(int)arg2;
@@ -65,10 +65,12 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)contentScrollView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 
 @end

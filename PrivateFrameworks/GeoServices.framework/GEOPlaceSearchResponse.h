@@ -55,6 +55,8 @@
 - (void)setStatusCodeInfo:(int)arg1;
 - (int)statusCodeInfo;
 - (BOOL)hasStatusCodeInfo;
+- (id)suggestionMetadata;
+- (BOOL)hasSuggestionMetadata;
 - (id)suggestionEntryListsAtIndex:(unsigned int)arg1;
 - (void)clearSuggestionEntryLists;
 - (unsigned int)suggestionEntryListsCount;
@@ -70,12 +72,10 @@
 - (void)addSuggestionEntryLists:(id)arg1;
 - (void)addSearch:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
+- (void)setSuggestionMetadata:(id)arg1;
 - (void)setSuggestionEntryLists:(id)arg1;
 - (void)setSearchs:(id)arg1;
 - (void)setPlaceResults:(id)arg1;
-- (id)suggestionMetadata;
-- (BOOL)hasSuggestionMetadata;
-- (void)setSuggestionMetadata:(id)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (int)localSearchProviderID;

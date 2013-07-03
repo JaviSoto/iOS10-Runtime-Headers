@@ -10,8 +10,8 @@
 }
 
 
-- (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithLibraryTrackDictionaries:(id)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 - (void).cxx_destruct;
 - (void)cancel;
 

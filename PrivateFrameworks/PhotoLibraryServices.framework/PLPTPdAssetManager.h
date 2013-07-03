@@ -43,8 +43,8 @@
 - (id)fileManager;
 - (void)setFileManager:(id)arg1;
 - (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssets:(id)arg2 deletedAssets:(id)arg3 changedAssets:(id)arg4;
-- (id)photoLibrary;
 - (void)setPhotoLibrary:(id)arg1;
+- (id)photoLibrary;
 - (id)managedObjectContext;
 - (id)init;
 - (void)setDelegate:(id)arg1;

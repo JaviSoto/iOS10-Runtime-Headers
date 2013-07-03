@@ -10,8 +10,8 @@
 }
 
 
-- (id)initWithParentNodeID:(unsigned long long)arg1;
 - (void)startWithCachedCompletionHandler:(id)arg1 networkCompletionHandler:(id)arg2;
+- (id)initWithParentNodeID:(unsigned long long)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

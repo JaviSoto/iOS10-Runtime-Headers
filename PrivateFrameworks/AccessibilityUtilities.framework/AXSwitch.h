@@ -35,10 +35,10 @@
 - (int)buttonNumber;
 - (void)setKeyCode:(unsigned short)arg1;
 - (struct NSString { Class x1; }*)source;
-- (void)setSource:(struct NSString { Class x1; }*)arg1;
 - (unsigned short)keyCode;
 - (id)uuid;
 - (void)setType:(struct NSString { Class x1; }*)arg1;
+- (void)setSource:(struct NSString { Class x1; }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;

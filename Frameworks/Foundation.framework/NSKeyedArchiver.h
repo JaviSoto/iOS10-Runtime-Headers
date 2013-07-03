@@ -23,14 +23,14 @@
 }
 
 + (void)initialize;
++ (id)archivedDataWithRootObject:(id)arg1;
 + (id)classNameForClass:(Class)arg1;
 + (void)setClassName:(id)arg1 forClass:(Class)arg2;
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
-+ (id)archivedDataWithRootObject:(id)arg1;
 
 - (void)setOutputFormat:(unsigned int)arg1;
-- (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)setRequiresSecureCoding:(BOOL)arg1;
+- (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;

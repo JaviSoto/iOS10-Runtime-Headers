@@ -129,7 +129,6 @@
 - (id)mutableAssets;
 - (id)filteredIndexesForPredicate:(id)arg1;
 - (void)batchFetchAssets:(id)arg1;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;

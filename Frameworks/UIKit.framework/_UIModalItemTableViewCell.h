@@ -15,8 +15,8 @@
 @property(retain) UIColor * fullWidthSeparatorColor;
 @property(readonly) UIView * topSeparatorView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)fullWidthSeparatorColor;

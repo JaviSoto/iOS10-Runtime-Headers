@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MPMediaQuerySection : NSObject <NSCoding, NSCopying> {
+@interface MPMediaQuerySection : NSObject <NSSecureCoding, NSCopying> {
     NSString *_title;
     unsigned int _sectionIndexTitleIndex;
     struct _NSRange { 
@@ -17,6 +17,7 @@
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property unsigned int sectionIndexTitleIndex;
 
++ (BOOL)supportsSecureCoding;
 
 - (void)setSectionIndexTitleIndex:(unsigned int)arg1;
 - (unsigned int)sectionIndexTitleIndex;

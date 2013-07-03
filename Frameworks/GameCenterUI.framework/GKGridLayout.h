@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSMutableOrderedSet, GKSectionMetrics, NSMutableArray, NSIndexPath, NSMutableSet, GKDataSourceMetrics, NSMutableDictionary, NSSet;
+@class NSArray, NSMutableOrderedSet, GKSectionMetrics, NSMutableArray, NSIndexPath, GKCollectionViewDataSource, NSMutableSet, GKDataSourceMetrics, NSMutableDictionary, NSSet;
 
 @interface GKGridLayout : UICollectionViewLayout  {
     struct __CFDictionary { } *_sectionToPresentationData;
@@ -11,6 +11,7 @@
     BOOL _hideAboveSegmentOnAppear;
     BOOL _noMoreShowMore;
     BOOL _lastInvalidateDueToBoundsChange;
+    BOOL _movedItemsInUpdateCarrySections;
     unsigned int _portraitInterleavedSectionsCount;
     unsigned int _landscapeInterleavedSectionsCount;
     NSSet *_visibleIndexPathsFilter;
@@ -23,14 +24,19 @@
     NSMutableDictionary *_indexPathToSupplementary;
     NSMutableDictionary *_indexPathToDecoration;
     NSMutableDictionary *_indexPathToItem;
+    NSMutableDictionary *_oldIndexPathToSupplementary;
+    NSMutableDictionary *_oldIndexPathToDecoration;
+    NSMutableDictionary *_oldIndexPathToItem;
     NSMutableDictionary *_indexPathToMetrics;
     NSMutableSet *_revealedIndexPaths;
     NSIndexPath *_indexPathOfTouchedShowMore;
     NSMutableDictionary *_keyToMetricData;
+    NSMutableDictionary *_oldSectionToMetricKeys;
     int _metricsInvalidationCount;
-    NSMutableSet *_disappearingIndexPaths;
-    NSMutableSet *_appearingIndexPaths;
+    NSArray *_currentUpdateItems;
     NSMutableSet *_knownSupplementaryKinds;
+    GKCollectionViewDataSource *_dataSourceForUpdate;
+    unsigned int _updateType;
     struct CGSize { 
         float width; 
         float height; 
@@ -52,29 +58,36 @@
 @property(retain) NSMutableDictionary * indexPathToSupplementary;
 @property(retain) NSMutableDictionary * indexPathToDecoration;
 @property(retain) NSMutableDictionary * indexPathToItem;
+@property(retain) NSMutableDictionary * oldIndexPathToSupplementary;
+@property(retain) NSMutableDictionary * oldIndexPathToDecoration;
+@property(retain) NSMutableDictionary * oldIndexPathToItem;
 @property(retain) NSMutableDictionary * indexPathToMetrics;
 @property(retain) NSMutableSet * revealedIndexPaths;
 @property(retain) NSIndexPath * indexPathOfTouchedShowMore;
 @property BOOL noMoreShowMore;
 @property(retain) NSMutableDictionary * keyToMetricData;
+@property(retain) NSMutableDictionary * oldSectionToMetricKeys;
 @property(getter=isLastInvalidateDueToBoundsChange) BOOL lastInvalidateDueToBoundsChange;
 @property int metricsInvalidationCount;
-@property(retain) NSMutableSet * disappearingIndexPaths;
-@property(retain) NSMutableSet * appearingIndexPaths;
+@property(retain) NSArray * currentUpdateItems;
 @property(retain) NSMutableSet * knownSupplementaryKinds;
+@property(retain) GKCollectionViewDataSource * dataSourceForUpdate;
+@property unsigned int updateType;
+@property BOOL movedItemsInUpdateCarrySections;
 
 + (Class)layoutAttributesClass;
 
+- (BOOL)movedItemsInUpdateCarrySections;
+- (id)dataSourceForUpdate;
 - (void)setKnownSupplementaryKinds:(id)arg1;
 - (id)knownSupplementaryKinds;
-- (void)setAppearingIndexPaths:(id)arg1;
-- (id)appearingIndexPaths;
-- (void)setDisappearingIndexPaths:(id)arg1;
-- (id)disappearingIndexPaths;
+- (id)currentUpdateItems;
 - (void)setMetricsInvalidationCount:(int)arg1;
 - (int)metricsInvalidationCount;
 - (void)setLastInvalidateDueToBoundsChange:(BOOL)arg1;
 - (BOOL)isLastInvalidateDueToBoundsChange;
+- (void)setOldSectionToMetricKeys:(id)arg1;
+- (id)oldSectionToMetricKeys;
 - (void)setKeyToMetricData:(id)arg1;
 - (id)keyToMetricData;
 - (void)setNoMoreShowMore:(BOOL)arg1;
@@ -83,6 +96,12 @@
 - (id)revealedIndexPaths;
 - (void)setIndexPathToMetrics:(id)arg1;
 - (id)indexPathToMetrics;
+- (void)setOldIndexPathToItem:(id)arg1;
+- (id)oldIndexPathToItem;
+- (void)setOldIndexPathToDecoration:(id)arg1;
+- (id)oldIndexPathToDecoration;
+- (void)setOldIndexPathToSupplementary:(id)arg1;
+- (id)oldIndexPathToSupplementary;
 - (void)setIndexPathToItem:(id)arg1;
 - (id)indexPathToItem;
 - (void)setIndexPathToDecoration:(id)arg1;
@@ -98,7 +117,6 @@
 - (float)segmentedHeaderPinningOffset;
 - (void)setHiddenSearchBarOffset:(float)arg1;
 - (float)hiddenSearchBarOffset;
-- (id)visibleIndexPathsFilter;
 - (void)setHideAboveSegmentOnAppear:(BOOL)arg1;
 - (BOOL)hideAboveSegmentOnAppear;
 - (BOOL)hideSearchBarOnAppear;
@@ -108,6 +126,11 @@
 - (unsigned int)_prepareDecorationLayoutForSection:(int)arg1 offset:(unsigned int)arg2;
 - (void)setLandscapeInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
+- (void)setMovedItemsInUpdateCarrySections:(BOOL)arg1;
+- (void)setDataSourceForUpdate:(id)arg1;
+- (void)setCurrentUpdateItems:(id)arg1;
+- (id)finalLayoutAttributesForSlidingAwayItemAtIndexPath:(id)arg1;
+- (id)initialLayoutAttributesForSlidingInItemAtIndexPath:(id)arg1;
 - (void)setRevealedIndexPaths:(id)arg1;
 - (void)setIndexPathOfTouchedShowMore:(id)arg1;
 - (id)cellAttributesNearestToSupplementaryAttributes:(id)arg1;
@@ -135,6 +158,7 @@
 - (float)calculatedBottomPaddingForSection:(int)arg1;
 - (id)presentationDataForSection:(int)arg1;
 - (int)indexOfSupplementaryMetricsOfKind:(id)arg1 inList:(id)arg2;
+- (void)refreshMetrics;
 - (struct CGSize { float x1; float x2; })_sizeAdjustedForTabBarSettingsBasedOnSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)filteredTotalItemCountForSection:(int)arg1;
 - (id)metricDataForSection:(int)arg1;
@@ -145,23 +169,31 @@
 - (void)setDataSourceMetrics:(id)arg1;
 - (id)defaultSectionMetricsInternal;
 - (void)setDefaultSectionMetricsInternal:(id)arg1;
-- (void)setVisibleIndexPathsFilter:(id)arg1;
+- (id)revealMoreForSectionIndex:(int)arg1 revealCount:(unsigned int)arg2 andDeleteItemCount:(unsigned int)arg3;
+- (id)visibleIndexPathsFilter;
 - (id)revealMoreForSectionIndex:(int)arg1;
+- (void)prepareForUpdate:(unsigned int)arg1 inDataSource:(id)arg2;
+- (void)prepareForMovingItemsCarryingSections;
+- (void)setVisibleIndexPathsFilter:(id)arg1;
 - (void)forceFullInvalidate;
 - (id)dataSourceMetrics;
 - (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)setUpdateType:(unsigned int)arg1;
+- (unsigned int)updateType;
 - (void)_resetState;
 - (id)init;
 - (void)dealloc;
 - (void)finalizeCollectionViewUpdates;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (void)finalizeAnimatedBoundsChange;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)prepareForAnimatedBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -169,8 +201,8 @@
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (void)invalidateLayout;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 
 @end

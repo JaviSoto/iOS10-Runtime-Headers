@@ -75,10 +75,10 @@
 - (id)annotations;
 - (void)addAnnotations:(id)arg1;
 - (void)showAnnotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)updateVisibleAnnotations;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (void)updateVisibleAnnotations;
 - (void)setAnnotationRepresentationsAreAddedImmediately:(BOOL)arg1;
 - (BOOL)annotationRepresentationsAreAddedImmediately;
 - (id)init;

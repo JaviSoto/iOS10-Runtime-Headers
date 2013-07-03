@@ -20,7 +20,6 @@
 - (id)_redirectURLs;
 - (BOOL)_lastVisitWasHTTPNonGet;
 - (void)_setLastVisitWasFailure:(BOOL)arg1;
-- (BOOL)lastVisitWasFailure;
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (id)_transientPropertyForKey:(id)arg1;
 - (id)targetItem;
@@ -62,6 +61,7 @@
 - (struct CGPoint { float x1; float x2; })_scrollPoint;
 - (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
 - (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)lastVisitWasFailure;
 - (BOOL)_scaleIsInitial;
 - (float)_scale;
 - (id)target;

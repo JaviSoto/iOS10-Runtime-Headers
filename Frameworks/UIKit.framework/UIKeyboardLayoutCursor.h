@@ -21,7 +21,7 @@
 - (void)setSelectedKeyIndex:(int)arg1;
 - (BOOL)acceptsDirectionInput;
 - (void)physicalKeyDownWithEvent:(id)arg1;
-- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2;
+- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 

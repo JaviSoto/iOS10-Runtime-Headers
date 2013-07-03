@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPTimeMarker, UIActivityIndicatorView, MPDetailSlider, MPButton, UILabel, <MPPlaybackControlsDelegate>, UIView, MPAVItem, UIImage, MPAVController, CABasicAnimation;
+@class UIImage, UILabel, MPAVItem, CABasicAnimation, UIActivityIndicatorView, MPAVController, MPButton, UIView, <MPPlaybackControlsDelegate>, MPDetailSlider, MPTimeMarker, NSString;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     UIActivityIndicatorView *_activityIndicator;
@@ -51,6 +51,7 @@
 @property(readonly) BOOL shuffleIsOn;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
+@property(readonly) NSString * localizedScrubSpeedText;
 @property(readonly) UIImage * mailButtonImage;
 @property(readonly) BOOL shouldOverrideProgressTimeLabelStyle;
 @property(readonly) UIImage * repeatButtonImage;
@@ -60,6 +61,9 @@
 @property(readonly) BOOL detailScrubbingHidesControls;
 
 + (unsigned int)defaultVisibleParts;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
@@ -116,6 +120,7 @@
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
+- (id)localizedScrubSpeedText;
 - (void)unregisterForPlayerNotifications;
 - (void)registerForPlayerNotifications;
 - (unsigned long long)disabledParts;

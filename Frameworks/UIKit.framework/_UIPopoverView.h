@@ -26,8 +26,8 @@
 @property UIPopoverController * popoverController;
 
 + (id)popoverViewContainingView:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contentView;
@@ -48,9 +48,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)standardChromeView;
 - (int)backgroundStyle;
-- (void)setBackgroundStyle:(int)arg1;
-- (void)setArrowOffset:(float)arg1;
 - (float)arrowOffset;
+- (void)setArrowOffset:(float)arg1;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)_presentationInPopoverDidEndForViewController:(id)arg1;
 - (void)_presentationInPopoverDidBeginForViewController:(id)arg1;
 - (void)_presentationInPopoverWillEndForViewController:(id)arg1;

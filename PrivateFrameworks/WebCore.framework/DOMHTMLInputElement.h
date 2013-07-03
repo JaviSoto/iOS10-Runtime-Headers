@@ -35,7 +35,6 @@
 @property(readonly) NSURL * absoluteImageURL;
 
 
-- (void)setReadOnly:(BOOL)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
 - (id)size;
@@ -49,6 +48,7 @@
 - (void)setSelectionRange:(int)arg1 end:(int)arg2;
 - (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
 - (void)setRangeText:(id)arg1;
+- (void)select;
 - (void)stepDown:(int)arg1;
 - (void)stepUp:(int)arg1;
 - (void)setIncremental:(BOOL)arg1;
@@ -87,6 +87,7 @@
 - (id)autocapitalize;
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setAutocomplete:(id)arg1;
+- (id)autocomplete;
 - (void)setSrc:(id)arg1;
 - (id)src;
 - (void)click;
@@ -114,19 +115,18 @@
 - (id)align;
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
+- (void)_setAutofilled:(BOOL)arg1;
 - (BOOL)_isAutofilled;
 - (void)_replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2 selectingFromIndex:(int)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRange;
 - (id)step;
 - (void)setType:(id)arg1;
+- (void)setReadOnly:(BOOL)arg1;
 - (void)setSize:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;
 - (BOOL)_isEdited;
-- (void)_setAutofilled:(BOOL)arg1;
-- (id)autocomplete;
-- (void)select;
 - (BOOL)readOnly;
 - (id)placeholder;
 - (id)absoluteImageURL;

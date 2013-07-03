@@ -15,6 +15,7 @@
     NSMutableDictionary *_usedUniqueNames;
     NSMutableSet *_knownConflictingNames;
     int _nameStyle;
+    BOOL _buildingChatSiblings;
 }
 
 

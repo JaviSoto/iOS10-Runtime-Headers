@@ -34,8 +34,8 @@
 - (id)styleProvider;
 - (void*)context;
 - (void)setDefaultValue:(id)arg1;
-- (void)setContext:(void*)arg1;
 - (id)defaultValue;
+- (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

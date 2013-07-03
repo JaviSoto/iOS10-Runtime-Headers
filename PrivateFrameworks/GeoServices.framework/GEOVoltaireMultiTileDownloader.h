@@ -50,8 +50,8 @@
 - (BOOL)useStatusCodes;
 - (BOOL)requireWiFi;
 - (double)elapsed;
-- (void)setAuditToken:(id)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
+- (void)setAuditToken:(id)arg1;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
 - (void)setDelegate:(id)arg1;

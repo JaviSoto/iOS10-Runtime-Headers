@@ -51,8 +51,8 @@
 - (void)setBoundApplicationIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
-- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)_iconForStyle:(id)arg1;
+- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
 - (struct CGSize { float x1; float x2; })_largestImageSize:(id)arg1;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;

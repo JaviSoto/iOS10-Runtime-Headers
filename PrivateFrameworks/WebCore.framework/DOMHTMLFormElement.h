@@ -18,7 +18,6 @@
 @property(readonly) int length;
 
 
-- (void)setMethod:(id)arg1;
 - (void)reset;
 - (void)submit;
 - (void)setAutocapitalize:(id)arg1;
@@ -26,10 +25,12 @@
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setNoValidate:(BOOL)arg1;
 - (BOOL)noValidate;
+- (void)setMethod:(id)arg1;
 - (void)setEncoding:(id)arg1;
 - (void)setEnctype:(id)arg1;
 - (id)enctype;
 - (void)setAutocomplete:(id)arg1;
+- (id)autocomplete;
 - (void)setAcceptCharset:(id)arg1;
 - (id)acceptCharset;
 - (BOOL)checkValidity;
@@ -39,7 +40,6 @@
 - (void)setTarget:(id)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;
-- (id)autocomplete;
 - (BOOL)autocorrect;
 - (void)setAction:(id)arg1;
 - (id)action;

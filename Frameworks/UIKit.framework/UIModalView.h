@@ -83,19 +83,19 @@
 + (id)visibleAlert;
 + (id)_popupAlertBackground;
 + (void)noteOrientationChangingTo:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isVisible;
 - (void)_layoutIfNeeded;
+- (void)setContext:(id)arg1;
 - (void)layout;
 - (id)message;
 - (void)setDelegate:(id)arg1;
@@ -103,6 +103,7 @@
 - (id)delegate;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)replaceAlert:(id)arg1;
@@ -200,7 +201,6 @@
 - (BOOL)requiresPortraitOrientation;
 - (void)_setDefaultButton:(id)arg1;
 - (id)_addButtonWithTitleText:(id)arg1;
-- (id)buttonTitleAtIndex:(int)arg1;
 - (id)keyboard;
 - (BOOL)_isAnimating;
 - (id)textField;
@@ -225,12 +225,12 @@
 - (float)_maxHeight;
 - (int)defaultButtonIndex;
 - (int)numberOfRows;
+- (BOOL)canBecomeFirstResponder;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)setCancelButtonIndex:(int)arg1;
 - (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (BOOL)canBecomeFirstResponder;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityPerformEscape;
 - (id)accessibilityLabel;

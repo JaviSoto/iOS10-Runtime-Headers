@@ -35,6 +35,5 @@
 - (void)dealloc;
 - (id)selectionView;
 - (void)prepareForReuse;
-- (void)didMoveToWindow;
 
 @end

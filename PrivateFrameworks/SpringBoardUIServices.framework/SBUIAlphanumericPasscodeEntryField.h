@@ -16,7 +16,7 @@
 
 - (void)notePasscodeFieldTextDidChange;
 - (void)setCustomBackgroundColor:(id)arg1;
-- (void)resetForFailedPasscode;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)dealloc;
 - (void)setBackgroundAlpha:(float)arg1;
 - (id)initWithDefaultSize;

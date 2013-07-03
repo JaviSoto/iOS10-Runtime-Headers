@@ -17,8 +17,8 @@
 - (id)utterances;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
-- (void)setLanguage:(id)arg1;
 - (id)language;
+- (void)setLanguage:(id)arg1;
 - (id)groupIdentifier;
 
 @end

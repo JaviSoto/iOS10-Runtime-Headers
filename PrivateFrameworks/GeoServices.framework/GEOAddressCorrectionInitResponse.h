@@ -23,12 +23,12 @@
 
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
 - (id)addressLocation;
 - (BOOL)hasAddressLocation;
+- (void)setAddressLocation:(id)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
 - (void)setStatusCode:(int)arg1;
 - (BOOL)hasStatusCode;
-- (void)setAddressLocation:(id)arg1;
 - (id)addressID;
 - (BOOL)hasAddressID;
 - (void)setAddressID:(id)arg1;

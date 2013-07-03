@@ -7,12 +7,14 @@
     BOOL _shouldAnimateConnection;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
+- (float)alphaForConnected:(BOOL)arg1;
 - (void)performPendedActions;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
+- (void)setVisible:(BOOL)arg1;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

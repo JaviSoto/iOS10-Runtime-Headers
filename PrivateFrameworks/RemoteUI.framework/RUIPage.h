@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class RUIPage, RUIObjectModel, UIToolbar, RUIPasscodeView, RUISpinnerView, RUITableView, UIView, NSDictionary, UIBarButtonItem, NSArray, RUIWebView, NSString, NSMutableArray;
+@class RUIPage, RUIObjectModel, UIToolbar, UILabel, RUIPasscodeView, RUISpinnerView, RUITableView, UIView, NSDictionary, UIBarButtonItem, NSArray, RUIWebView, NSString, NSMutableArray;
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
     NSString *_pageID;
@@ -28,9 +28,17 @@
     RUIObjectModel *_objectModel;
     RUIPage *_parentPage;
     NSMutableArray *_childPages;
+    BOOL _showsTitlesAsHeaderViews;
     int _loadingIndicatorStyle;
     NSDictionary *_middleToolbarButton;
     UIBarButtonItem *_middleToolbarItem;
+    float _customMargin;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _titleLabelPadding;
 }
 
 @property(copy) NSString * pageID;
@@ -42,6 +50,9 @@
 @property(retain) NSString * validationFunction;
 @property(copy) NSString * navTitle;
 @property(copy) NSString * loadingTitle;
+@property BOOL showsTitlesAsHeaderViews;
+@property(readonly) UILabel * titleLabel;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleLabelPadding;
 @property int loadingIndicatorStyle;
 @property(getter=isLoading) BOOL loading;
 @property BOOL hidesBackButton;
@@ -58,6 +69,7 @@
 @property RUIObjectModel * objectModel;
 @property(readonly) NSArray * childPages;
 @property(readonly) RUIPage * parentPage;
+@property float customMargin;
 @property(readonly) NSArray * accessoryViews;
 
 
@@ -67,6 +79,8 @@
 - (id)parentPage;
 - (id)childPages;
 - (id)middleToolbarButton;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleLabelPadding;
+- (BOOL)showsTitlesAsHeaderViews;
 - (id)leftToolbarButton;
 - (id)rightToolbarButton;
 - (id)leftNavigationBarButton;
@@ -74,11 +88,12 @@
 - (id)loadingTitle;
 - (id)validationFunction;
 - (id)pageID;
+- (BOOL)hasSpinnerView;
 - (id)spinnerViewOM;
+- (BOOL)hasPasscodeView;
 - (id)passcodeViewOM;
 - (BOOL)hasWebView;
 - (id)webViewOM;
-- (BOOL)hasTableView;
 - (void)_updateParentPage;
 - (void)_addChildPage:(id)arg1;
 - (void)setMiddleToolbarButton:(id)arg1;
@@ -87,6 +102,8 @@
 - (void)setLeftNavigationBarButton:(id)arg1;
 - (void)setRightNavigationBarButton:(id)arg1;
 - (void)setHasToolbar;
+- (void)setShowsTitlesAsHeaderViews:(BOOL)arg1;
+- (float)customMargin;
 - (void)setValidationFunction:(id)arg1;
 - (void)setPageID:(id)arg1;
 - (void)setNavTitle:(id)arg1;
@@ -113,9 +130,13 @@
 - (id)middleToolbarItem;
 - (id)leftToolbarItem;
 - (id)rightToolbarItem;
+- (void)setTitleLabelPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)loadingIndicatorStyle;
+- (void)_reloadTitleLabel;
+- (BOOL)hasTableView;
 - (void)_updateLoadingUI;
 - (void)setLoadingIndicatorStyle:(int)arg1;
+- (void)setCustomMargin:(float)arg1;
 - (BOOL)isLoading;
 - (id)init;
 - (void)dealloc;
@@ -137,5 +158,6 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)hidesBackButton;
 - (id)containerView;
+- (id)titleLabel;
 
 @end

@@ -5,8 +5,8 @@
 @interface _UIScrollsToTopInitiatorView : UIView  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)_shouldSeekHigherPriorityTouchTarget;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

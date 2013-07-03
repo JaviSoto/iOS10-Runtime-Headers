@@ -36,7 +36,6 @@
 - (void)setAuthenticationPluginManager:(id)arg1;
 - (id)authenticationPluginManager;
 - (id)masterCredentialForAccountIdentifier:(id)arg1;
-- (void)performSanityCheckOnDatabase;
 - (void)deleteAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)updateAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)addAccountNoSave:(id)arg1 error:(id*)arg2;
@@ -68,12 +67,11 @@
 - (BOOL)isMigrationInProgress;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (void)setClient:(id)arg1;
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)_remoteAccountStore;
+- (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;
 - (void)isTetheredSyncingEnabledForDataclass:(id)arg1 completion:(id)arg2;
-- (void)promptUserForCredentialsWithAccount:(id)arg1 withHandler:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
@@ -121,6 +119,7 @@
 - (void)_connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
 - (id)initWithClient:(id)arg1;
 - (BOOL)notificationsEnabled;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)filter;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;

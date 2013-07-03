@@ -22,6 +22,7 @@
 - (void)setInputWeights:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
+- (BOOL)_isIdentity;
 - (id)outputImage;
 - (void)setDefaults;
 

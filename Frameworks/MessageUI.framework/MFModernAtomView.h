@@ -16,8 +16,8 @@
     unsigned int _disabledPresentationOptions;
     UIView *_baselineView;
     BOOL _isPrimaryAddressAtom;
-    BOOL _selected;
     BOOL _separatorHidden;
+    BOOL _selected;
     UIFont *_titleFont;
     unsigned int _presentationOptions;
 }
@@ -49,8 +49,9 @@
 + (float)horizontalPadding;
 + (float)defaultHeight;
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (id)badgeIconView;
 - (id)accessoryIconView;
@@ -64,9 +65,9 @@
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setScalingFactor:(float)arg1;
 - (BOOL)separatorHidden;
-- (float)_rightInset;
 - (float)preferredWidth;
 - (float)_leftInset;
+- (float)_rightInset;
 - (void)_updateFontIfNecessary;
 - (float)_rightPadding;
 - (float)_leftPadding;
@@ -77,29 +78,31 @@
 - (BOOL)isPrimaryAddressAtom;
 - (int)_preferredIconVariant;
 - (unsigned int)presentationOptions;
-- (id)effectiveTintColor;
 - (void)_setEffectiveTintColor:(id)arg1;
+- (id)effectiveTintColor;
 - (void)setTitleFont:(id)arg1;
 - (float)scalingFactor;
 - (void)_invalidatePresentationOptions;
-- (struct CGPoint { float x1; float x2; })baselinePoint;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationOptions:(unsigned int)arg2 separatorStyle:(int)arg3;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)dealloc;
 - (id)titleFont;
+- (struct CGPoint { float x1; float x2; })baselinePoint;
 - (id)viewForBaselineLayout;
 - (id)backgroundView;
 - (int)separatorStyle;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSeparatorStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
-- (BOOL)isSelected;
 - (id)titleLabel;
 - (void)layoutSubviews;
+- (id)accessibilityHint;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 
 @end

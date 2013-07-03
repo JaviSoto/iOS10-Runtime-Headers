@@ -49,8 +49,6 @@
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)keyPathsForValuesAffectingAttributedDisplayName;
-+ (id)automatchMonogramImage:(id)arg1;
 + (int)sizeForPhotoSize:(int)arg1;
 + (void)preloadImagesForPlayers:(id)arg1 size:(int)arg2;
 
@@ -64,11 +62,10 @@
 - (void)loadGamesPlayed:(id)arg1;
 - (void)declineFriendRequestWithCompletionHandler:(id)arg1;
 - (void)acceptFriendRequestWithCompletionHandler:(id)arg1;
-- (id)identifiableNameIncludingSurname:(BOOL)arg1;
 - (void)loadGamesPlayedIncludingInstalledGames:(BOOL)arg1 completionHandler:(id)arg2;
 - (void)loadCommonFriends:(BOOL)arg1 asPlayersWithCompletionHandler:(id)arg2;
 - (id)lastPlayedGame;
-- (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
+- (id)displayNameWithOptions:(unsigned char)arg1;
 - (id)emails;
 - (void)loadProfileWithCompletionHandler:(id)arg1;
 - (void)setFriends:(id)arg1;
@@ -96,14 +93,10 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageURLForPhotoSizeList;
-- (id)attributedDisplayName;
+- (id)imageSourceForPlaceholders;
 - (id)placeholderImageForType:(unsigned char)arg1;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
-- (id)quotedAlias:(id)arg1 withFont:(id)arg2 foreColor:(id)arg3 shadowColor:(id)arg4;
-- (id)attributedIdentifiableName:(id)arg1 withFont:(id)arg2 foreColor:(id)arg3 shadowColor:(id)arg4;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
-- (id)photoURLForSize:(int)arg1;
 - (id)placeholderImage;
+- (id)photoURLForSize:(int)arg1;
 - (void)loadPhotoForSize:(int)arg1 withCompletionHandler:(id)arg2;
 
 @end

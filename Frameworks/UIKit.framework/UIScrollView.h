@@ -209,8 +209,8 @@
 + (void)_scrollWithNSTimer:(BOOL)arg1;
 + (SEL)_panGestureAction;
 + (SEL)_pinchGestureAction;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2 animationCurve:(int)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -528,7 +528,7 @@
 - (void)_accessibilityScrollToTopWithAnnouncement:(BOOL)arg1 touchLocation:(struct CGPoint { float x1; float x2; })arg2 originalHandler:(id)arg3;
 - (id)_accessibilityFirstLastOpaqueElement:(BOOL)arg1;
 - (BOOL)_accessibilityShouldAnimateScrollToVisible;
-- (void)_accessibilityApplyScrollContent:(struct CGPoint { float x1; float x2; })arg1 sendScrollStatus:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)accessibilityApplyScrollContent:(struct CGPoint { float x1; float x2; })arg1 sendScrollStatus:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)_accessibilityUseContentInset;
 - (id)_accessibilityFindRefreshControl;
 - (void)_accessibilityCurrentPage:(int*)arg1 totalPages:(int*)arg2;

@@ -105,8 +105,8 @@
 - (double)distanceFromPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 - (void)getFormOfWay:(int*)arg1 roadClass:(int*)arg2 at:(unsigned int)arg3;
 - (id)routeNames;
-- (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(BOOL)arg2 uniquePointRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (int)transportTypeForStep:(id)arg1;
+- (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(BOOL)arg2 uniquePointRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
@@ -115,14 +115,13 @@
 - (id)simplifiedDescription;
 - (unsigned int)distanceFromStepIndex:(unsigned int)arg1 toStepIndex:(unsigned int)arg2;
 - (int)formOfWayAt:(unsigned int)arg1;
-- (unsigned int)stepIndexForPointIndex:(unsigned int)arg1;
 - (id)newETARouteFromStepIndex:(unsigned int)arg1 stepPercentRemaining:(double)arg2;
 - (unsigned int)indexForStepID:(unsigned int)arg1;
 - (BOOL)unpackBasicPoints;
 - (void)unpackZilchPoints;
 - (void*)controlPoints;
+- (unsigned int)stepIndexForPointIndex:(unsigned int)arg1;
 - (struct { double x1; double x2; })pointAt:(unsigned int)arg1;
-- (void)updateJapanTollManeuvers;
 - (BOOL)unpackLatLngVertices;
 - (id)advisoryNotices;
 - (id)steps;

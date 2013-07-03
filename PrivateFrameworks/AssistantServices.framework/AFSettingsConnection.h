@@ -23,6 +23,8 @@
 - (void)_setVoices:(id)arg1;
 - (id)_settingsService;
 - (id)_settingsServiceWithErrorHandler:(id)arg1;
+- (void)setLanguage:(id)arg1 withCompletion:(id)arg2;
+- (void)setOutputVoice:(id)arg1 withCompletion:(id)arg2;
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)setOutputVoice:(id)arg1;
 - (void)setDictationEnabled:(BOOL)arg1;

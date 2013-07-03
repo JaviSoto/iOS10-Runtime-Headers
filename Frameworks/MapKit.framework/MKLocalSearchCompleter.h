@@ -25,10 +25,10 @@
 - (BOOL)resultsAreCurrent;
 - (BOOL)isSearching;
 - (void)retry;
-- (id)results;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
+- (id)results;
 - (void)setFragment:(id)arg1;
 
 @end

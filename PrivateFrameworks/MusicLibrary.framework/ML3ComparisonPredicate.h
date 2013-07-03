@@ -28,6 +28,7 @@
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsString:(id)arg6;
+- (id)valueToBindForOperation:(int)arg1;
 - (id)transformFunction;
 - (id)treatNullAsString;
 - (BOOL)caseInsensitive;

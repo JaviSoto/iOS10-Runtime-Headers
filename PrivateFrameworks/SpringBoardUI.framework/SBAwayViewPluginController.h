@@ -19,11 +19,14 @@
   /* Error parsing encoded ivar type info: @? */
     id _disableTransitionBlock;
 
+    unsigned int _effectivePresentationStyle;
 }
 
 @property(retain) UIView * view;
 @property int orientation;
 @property BOOL viewCanBeDisplayed;
+@property(getter=_effectivePresentationStyle,setter=_setEffectivePresentationStyle:) unsigned int effectivePresentationStyle;
+@property(getter=isAlwaysFullscreen) BOOL alwaysFullscreen;
 
 + (void)disableBundleNamed:(id)arg1;
 + (void)enableBundleNamed:(id)arg1;
@@ -31,6 +34,9 @@
 + (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
 + (id)_serializedDataForContext:(id)arg1;
 
+- (id)legibilitySettings;
+- (void)_setEffectivePresentationStyle:(unsigned int)arg1;
+- (unsigned int)_effectivePresentationStyle;
 - (BOOL)viewCanBeDisplayed;
 - (unsigned int)overlayStyle;
 - (void)lockScreenMediaControlsShown:(BOOL)arg1;
@@ -67,6 +73,7 @@
 - (void)deviceLockViewWillShow;
 - (BOOL)isAlwaysFullscreen;
 - (void)setAlwaysFullscreen:(BOOL)arg1;
+- (BOOL)allowsTimer;
 - (BOOL)allowsControlCenter;
 - (BOOL)allowsNotificationCenter;
 - (BOOL)shouldAutoHideNotifications;
@@ -105,6 +112,7 @@
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (id)backgroundView;
 - (void)setView:(id)arg1;
 - (int)orientation;
 - (id)view;

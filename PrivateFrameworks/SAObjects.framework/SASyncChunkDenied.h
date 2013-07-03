@@ -2,17 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASyncAnchor, NSArray;
+@class NSArray, SASyncAnchor, NSString;
 
 @interface SASyncChunkDenied : SABaseClientBoundCommand <SAClientBoundCommand> {
 }
 
-@property(copy) NSArray * callbacks;
 @property(retain) SASyncAnchor * current;
 @property int errorCode;
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 @property(copy) NSString * appId;
+@property(copy) NSArray * callbacks;
 
 + (id)chunkDeniedWithErrorCode:(int)arg1;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,8 +20,6 @@
 
 - (id)current;
 - (id)initWithErrorCode:(int)arg1;
-- (void)setCallbacks:(id)arg1;
-- (id)callbacks;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
 - (void)setCurrent:(id)arg1;

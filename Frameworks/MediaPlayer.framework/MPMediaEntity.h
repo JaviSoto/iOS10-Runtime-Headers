@@ -4,7 +4,7 @@
 
 @class MPMediaItem, MPMediaLibrary;
 
-@interface MPMediaEntity : NSObject <NSCopying, NSCoding> {
+@interface MPMediaEntity : NSObject <NSCopying, NSSecureCoding> {
 }
 
 @property(readonly) BOOL isDownloadable;
@@ -16,6 +16,7 @@
 @property(readonly) MPMediaItem * representativeItem;
 
 + (BOOL)canFilterByProperty:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)isPurchasableStoreOffer;
 - (BOOL)isDownloadableStoreOffer;

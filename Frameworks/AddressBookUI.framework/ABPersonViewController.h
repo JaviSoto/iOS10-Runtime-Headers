@@ -5,6 +5,7 @@
 @class UIFont, ABContactViewController, <ABPersonViewControllerDelegate>, UIView, UIImage, NSString, NSArray;
 
 @interface ABPersonViewController : UIViewController <ABContactViewControllerDelegate, UIViewControllerRestoration> {
+    BOOL _badgeEmailPropertiesForMailVIP;
     BOOL _allowsEditing;
     BOOL _allowsActions;
     BOOL _shouldShowLinkedPeople;
@@ -14,7 +15,6 @@
     BOOL _allowsContactBlocking;
     BOOL _allowsOnlyPhoneActions;
     BOOL _allowsOnlyFaceTimeActions;
-    BOOL _badgeEmailPropertiesForMailVIP;
     BOOL _highlightedImportant;
     void *_addressBook;
     void *_displayedPerson;
@@ -76,7 +76,7 @@
 - (void)replaceActionWithTarget:(id)arg1 selector:(SEL)arg2 withTitle:(id)arg3 target:(id)arg4 selector:(SEL)arg5 location:(int)arg6 destructive:(BOOL)arg7;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 location:(int)arg3;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 location:(int)arg4 destructive:(BOOL)arg5;
-- (void)setPersonViewDelegate:(id)arg1;
+- (void)setContactViewController:(id)arg1;
 - (void)cancelEditing:(BOOL)arg1;
 - (void)personViewController:(id)arg1 willSetEditing:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
@@ -90,7 +90,6 @@
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (BOOL)allowsSettingAsPreferredCardForName;
-- (void)setEditDelegate:(id)arg1;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
 - (void)setHighlightedImportant:(BOOL)arg1;
@@ -121,10 +120,7 @@
 - (BOOL)manuallyLinkPerson:(id)arg1;
 - (void)forceUseLinkedInfos:(id)arg1 currentIndexInLinkedInfos:(int)arg2;
 - (void)setAllowsSettingAsPreferredCardForName:(BOOL)arg1;
-- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
-- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (BOOL)appearsInLinkingPeoplePicker;
-- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (BOOL)shouldShowLinkingUIOnCard;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (BOOL)badgeEmailPropertiesForMailVIP;
@@ -133,7 +129,6 @@
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setShouldAlignPersonHeaderViewToImage:(BOOL)arg1;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
-- (void)setAllowsDeletion:(BOOL)arg1;
 - (BOOL)allowsDeletion;
 - (id)editDelegate;
 - (id)attribution;
@@ -146,12 +141,15 @@
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
+- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
+- (void)setEditDelegate:(id)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
+- (void)setAllowsDeletion:(BOOL)arg1;
+- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
+- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (void)setDisplayedUIPerson:(id)arg1;
 - (id)displayedUIPerson;
-- (void)setContactViewController:(id)arg1;
-- (id)contactViewController;
 - (void)loadContactViewController;
 - (BOOL)allowsCancel;
 - (void*)displayedPerson;
@@ -163,7 +161,6 @@
 - (void)setAllowsContactBlocking:(BOOL)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsOnlyFaceTimeActions;
 - (BOOL)allowsOnlyPhoneActions;
@@ -176,6 +173,9 @@
 - (id)personHeaderView;
 - (void)setCustomHeaderView:(id)arg1;
 - (id)customHeaderView;
+- (id)contactViewController;
+- (void)setPersonViewDelegate:(id)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setStyleProvider:(id)arg1;

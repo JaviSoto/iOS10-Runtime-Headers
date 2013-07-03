@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, UIColor, UIView, NSDictionary, <ABContactViewDataSource>, <ABContactViewDelegate>;
+@class <ABContactViewDelegate>, ABContactHeaderView, UIView, NSDictionary, <ABContactViewDataSource>, CNContact, UIColor;
 
 @interface ABContactView : UITableView  {
     UIView *_customHeaderView;
@@ -21,6 +21,7 @@
 }
 
 @property(retain) UIView * customHeaderView;
+@property(readonly) ABContactHeaderView * defaultHeaderView;
 @property(readonly) CNContact * contact;
 @property <ABContactViewDataSource> * dataSource;
 @property <ABContactViewDelegate> * delegate;
@@ -49,17 +50,17 @@
 + (BOOL)isFixedValueProperty:(id)arg1;
 + (BOOL)isMultiValueProperty:(id)arg1;
 
-- (void)setSelectedCellBackgroundColor:(id)arg1;
 - (void)applyCellAppearance:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contact:(id)arg2;
-- (id)valueTextAttributes;
-- (id)selectedCellBackgroundColor;
-- (void)setValueTextAttributes:(id)arg1;
+- (id)defaultHeaderView;
 - (void)setActionTextAttributes:(id)arg1;
 - (id)actionTextAttributes;
+- (void)setValueTextAttributes:(id)arg1;
+- (id)valueTextAttributes;
 - (void)setLabelTextAttributes:(id)arg1;
 - (id)labelTextAttributes;
-- (id)defaultHeaderView;
+- (void)setSelectedCellBackgroundColor:(id)arg1;
+- (id)selectedCellBackgroundColor;
 - (void)setCustomHeaderView:(id)arg1;
 - (id)customHeaderView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 contact:(id)arg3;
@@ -67,6 +68,7 @@
 - (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
 - (void)updateFontSizes;
+- (void)setAttributesFromContactView:(id)arg1;
 - (id)contact;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;

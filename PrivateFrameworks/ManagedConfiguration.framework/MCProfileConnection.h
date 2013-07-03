@@ -41,7 +41,6 @@
 - (void)retrieveCloudConfigurationDetailsCompletionBlock:(id)arg1;
 - (void)storeCloudConfigurationDetails:(id)arg1;
 - (id)autonomousSingleAppModePermittedBundleIDs;
-- (int)photoAccessLevel;
 - (void)parentalControlsSetAllowPasscodeAccessToNonWhitelistedApps:(BOOL)arg1;
 - (BOOL)parentalControlsAllowPasscodeAccessToNonWhitelistedApps;
 - (BOOL)isParentalControlsAllowPasscodeAccessToNonWhitelistedAppsUIForcedByRestrictions;
@@ -53,7 +52,6 @@
 - (BOOL)isInSingleAppMode;
 - (void)lockdownDidReceiveActivationRecord:(id)arg1;
 - (int)hostMayPairWithOptions:(id)arg1 challenge:(id)arg2;
-- (id)airPlayPasswordForDestinationWithMACAddress:(id)arg1 outError:(id*)arg2;
 - (void)setWebContentFilterUserBlacklistedURLStrings:(id)arg1;
 - (id)webContentFilterEffectiveBlacklistedURLStrings;
 - (id)webContentFilterUserBlacklistedURLStrings;
@@ -70,11 +68,15 @@
 - (id)publicMessageCenter;
 - (id)messageCenter;
 - (void)checkCarrierProfileForceInstallation:(BOOL)arg1;
+- (BOOL)isActivationLockAllowed;
+- (BOOL)isLockScreenTodayViewAllowed;
+- (BOOL)isLockScreenNotificationsViewAllowed;
+- (BOOL)isAirDropAllowed;
+- (BOOL)isAppRatingLimitInEffect;
 - (BOOL)isAppInstallationAllowed;
 - (BOOL)isLockScreenWiFiModificationAllowed;
 - (BOOL)isWebTextDefineAllowed;
 - (void)setAutomaticAppUpdatesAllowed:(BOOL)arg1;
-- (BOOL)isAutomaticAppUpdatesAllowed;
 - (BOOL)isOTAPKIUpdatesAllowed;
 - (BOOL)isVehicleUIAllowed;
 - (BOOL)isCloudKeychainSyncAllowed;
@@ -248,8 +250,9 @@
 - (int)appWhitelistState;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
+- (BOOL)isAutomaticAppUpdatesAllowed;
 - (void)addObserver:(id)arg1;
 - (id)_init;
-- (void)removeObserver:(id)arg1;
 
 @end

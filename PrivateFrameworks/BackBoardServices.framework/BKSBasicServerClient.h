@@ -12,9 +12,9 @@
 
 + (id)wrapperWithConnection:(id)arg1;
 
-- (void)setConnection:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

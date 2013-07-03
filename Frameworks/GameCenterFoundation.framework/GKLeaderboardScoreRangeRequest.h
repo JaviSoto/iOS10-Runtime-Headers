@@ -13,6 +13,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (BOOL)isEqual:(id)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)initWithCoder:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUIProductPageTableHeaderOnlySection, SKUIClientContext, SKUIProductPageTableTextBoxSection, NSMutableArray, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageItem, SKUIProductPageTableViewController, UIScrollView, SKUITextLayoutCache, SKUIProductPageHeaderViewController;
+@class NSOperationQueue, SKUIProductPageTableHeaderOnlySection, SKUIClientContext, SKUIProductPageTableTextBoxSection, NSMutableArray, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageItem, SKUIProductPageTableViewController, SKUILayoutCache, UIScrollView, SKUIProductPageHeaderViewController;
 
 @interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -15,7 +15,7 @@
     NSMutableArray *_sections;
     SKUIProductPageTableTextBoxSection *_storeNotesSection;
     SKUIProductPageTableViewController *_tableViewController;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
     SKUIProductPageTableTextBoxSection *_whatsNewSection;
 }
 
@@ -26,7 +26,7 @@
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 
-+ (float)defaultPageWidth;
++ (float)defaultPageWidthForUserInterfaceIdiom:(int)arg1;
 
 - (void)screenshotsWillBeginDragging:(id)arg1;
 - (id)_copyrightSection;

@@ -48,6 +48,7 @@
 - (void)scrollViewDidBeginScrolling;
 - (void)scrollViewDidShowPixels:(float)arg1;
 - (id)displayedGrabberBar;
+- (id)lockBar;
 - (void)setUsesLockBar:(BOOL)arg1;
 - (void)setLockBarLabel:(id)arg1;
 - (BOOL)hasGrabberImage;
@@ -65,7 +66,6 @@
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setWellAlpha:(float)arg1;
 - (id)initForIncomingCallWaitingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)lockBar;
 - (void)setOptionsShown:(BOOL)arg1;
 - (void)setIncomingOptionsDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

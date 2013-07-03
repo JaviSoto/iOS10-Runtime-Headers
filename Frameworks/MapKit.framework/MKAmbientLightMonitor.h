@@ -10,7 +10,6 @@
     int _ambientLightLevel;
     BOOL _debugLogLux;
     struct __IOHIDEventSystemClient { } *_client;
-    struct __IOHIDServiceClient { } *_service;
     struct deque<float, std::__1::allocator<float> > { 
         struct __split_buffer<float *, std::__1::allocator<float *> > { 
             float **__first_; 

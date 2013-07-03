@@ -9,7 +9,6 @@
 + (int)version;
 + (BOOL)accessInstanceVariablesDirectly;
 
-- (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
@@ -17,8 +16,9 @@
 - (id)_retainedURIString;
 - (long long)_referenceData64;
 - (id)entity;
-- (BOOL)isTemporaryID;
 - (id)persistentStore;
+- (BOOL)isTemporaryID;
+- (id)URIRepresentation;
 - (BOOL)_tryRetain;
 - (BOOL)_isDeallocating;
 - (id)description;

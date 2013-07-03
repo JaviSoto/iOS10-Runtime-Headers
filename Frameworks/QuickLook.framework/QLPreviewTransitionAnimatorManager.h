@@ -4,7 +4,7 @@
 
 @class <QLPreviewTransitionAnimatorDelegate>;
 
-@interface QLPreviewTransitionAnimatorManager : NSObject <UIViewControllerTransitioningDelegate> {
+@interface QLPreviewTransitionAnimatorManager : NSObject <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate> {
     <QLPreviewTransitionAnimatorDelegate> *_delegate;
 }
 
@@ -12,6 +12,7 @@
 
 + (id)sharedManager;
 
+- (id)animatorForShowing:(BOOL)arg1 previewController:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)animationControllerForDismissedController:(id)arg1;

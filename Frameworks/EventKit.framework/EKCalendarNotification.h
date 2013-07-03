@@ -38,11 +38,11 @@
 - (BOOL)alerted;
 - (id)URI;
 - (void)setObjectID:(id)arg1;
-- (id)objectID;
 - (void)setTitle:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (id)title;
 - (id)emailAddress;
+- (id)objectID;
 - (id)initWithType:(int)arg1;
 - (void)setType:(int)arg1;
 - (id)name;

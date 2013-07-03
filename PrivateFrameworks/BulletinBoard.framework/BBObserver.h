@@ -27,6 +27,7 @@
         unsigned int sizeForThumbSize : 1; 
         unsigned int purgeReferences : 1; 
         unsigned int alertBehaviorOverrides : 1; 
+        unsigned int alertBehaviorOverrideState : 1; 
         unsigned int invalidatedBulletinIDs : 1; 
         unsigned int serverConnectionChanged : 1; 
         unsigned int serverReceivedResponse : 1; 
@@ -75,6 +76,7 @@
 - (void)_registerBulletin:(id)arg1 withTransactionID:(unsigned int)arg2;
 - (void)_dequeueBulletinUpdateIfPossibleForSection:(id)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
+- (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
 - (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 - (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;

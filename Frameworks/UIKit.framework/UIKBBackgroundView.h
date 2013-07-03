@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBRenderConfig, UIView, UIKBTree, NSString;
+@class UIKBRenderConfig, UIKBTree, NSString;
 
-@interface UIKBBackgroundView : UIView <UIKBCacheableView> {
+@interface UIKBBackgroundView : UIKBSplitImageView <UIKBCacheableView> {
     UIKBTree *_keyplane;
     int _visualStyle;
     id _geometryCacheKey;
@@ -49,8 +49,6 @@
         } size; 
     } _splitRightCacheRect;
     int _topCorners;
-    UIView *_splitLeft;
-    UIView *_splitRight;
     BOOL _isSplit;
     BOOL _centerFilled;
     BOOL _hasCandidateKeys;

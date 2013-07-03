@@ -32,7 +32,7 @@
 - (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
 - (id)clientContext;
 - (void).cxx_destruct;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

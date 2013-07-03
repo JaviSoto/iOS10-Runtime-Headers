@@ -57,10 +57,8 @@
 - (void)handleChatInvitationSent:(id)arg1;
 - (void)handleChatStateChanged:(id)arg1;
 - (void)handleModelStateChanged:(id)arg1;
-- (void)uncacheTelephonyCall:(id)arg1;
-- (void)cacheTelephonyCall:(id)arg1;
-- (void)uncacheFaceTimeAudioCall:(id)arg1;
-- (void)cacheFaceTimeAudioCall:(id)arg1;
+- (void)notifyTelephonyCallDealloced;
+- (void)notifyFaceTimeAudioCallDealloced;
 - (void)_handleCallControlFailure:(id)arg1;
 - (void)forceUpdateOfCallList;
 - (void)forceDisconnectOfCall:(id)arg1;

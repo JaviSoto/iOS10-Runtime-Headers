@@ -9,20 +9,20 @@
 
 @property(copy) NSString * language;
 
++ (id)speechVoices;
 + (id)voiceWithLanguage:(id)arg1;
 + (id)currentLanguageCode;
-+ (id)speechVoices;
 + (void)load;
 + (BOOL)supportsSecureCoding;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)language;
 - (void)setLanguage:(id)arg1;
 - (id)description;
+- (id)language;
 - (id)initWithLanguage:(id)arg1;
 
 @end

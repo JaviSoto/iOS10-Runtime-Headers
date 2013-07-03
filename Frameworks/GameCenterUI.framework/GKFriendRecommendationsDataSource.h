@@ -6,11 +6,10 @@
 }
 
 
-- (BOOL)shouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (id)sectionTitle;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (void)configureCollectionView:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 
 @end

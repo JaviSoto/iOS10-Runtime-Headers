@@ -62,7 +62,6 @@
 - (double)elapsed;
 - (void)setConn:(id)arg1;
 - (void)setUseCookies:(BOOL)arg1;
-- (void)setAuditToken:(id)arg1;
 - (void)setEditionHeader:(id)arg1;
 - (id)editionHeader;
 - (void)setRequireWiFi:(BOOL)arg1;
@@ -71,6 +70,7 @@
 - (unsigned int)tileEdition;
 - (id)localizationTile;
 - (id)baseTile;
+- (void)setAuditToken:(id)arg1;
 - (id)userAgent;
 - (void)setData:(id)arg1;
 - (void)setUserAgent:(id)arg1;

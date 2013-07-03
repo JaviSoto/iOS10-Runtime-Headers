@@ -89,8 +89,8 @@
 + (id)_bottomAnchorImage;
 + (id)_backgroundImage;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setTitle:(id)arg1;
 - (id)title;

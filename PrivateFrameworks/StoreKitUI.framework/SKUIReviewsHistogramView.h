@@ -53,9 +53,9 @@
 - (id)appSupportButton;
 - (id)initWithClientContext:(id)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
-- (void)setUserRating:(float)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (void)setUserRating:(float)arg1;
 - (float)userRating;
 - (void)setTitle:(id)arg1;
 - (id)title;

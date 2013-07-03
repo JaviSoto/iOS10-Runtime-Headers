@@ -19,21 +19,20 @@
 
 + (id)purchasedConsumer;
 + (id)updatesConsumer;
-+ (id)wishlistConsumer;
-+ (id)chartsConsumer;
-+ (id)gridConsumer;
-+ (id)productPageConsumer;
 + (id)swooshConsumer;
++ (id)productPageConsumer;
++ (id)wishlistConsumer;
++ (id)gridConsumer;
++ (id)chartsConsumer;
 + (id)lockupConsumerWithSize:(int)arg1 itemKind:(int)arg2;
 + (id)giftThemeLetterboxConsumer;
 + (id)giftThemePosterConsumer;
 + (id)giftThemeConsumer;
-+ (id)giftResultLetterboxConsumer;
-+ (id)giftResultPosterConsumer;
 + (id)giftResultConsumer;
 + (id)giftComposeLetterboxConsumer;
 + (id)giftComposePosterConsumer;
 + (id)giftComposeConsumer;
++ (id)consumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)cardConsumer;
 + (id)smartBannerConsumer;
 

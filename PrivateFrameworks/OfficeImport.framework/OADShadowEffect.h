@@ -24,7 +24,7 @@
 - (float)angle;
 - (void)setAngle:(float)arg1;
 - (void)setColor:(id)arg1;
-- (float)blurRadius;
 - (void)setBlurRadius:(float)arg1;
+- (float)blurRadius;
 
 @end

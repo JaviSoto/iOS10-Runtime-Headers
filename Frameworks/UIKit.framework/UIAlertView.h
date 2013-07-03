@@ -121,14 +121,13 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_alertWindow;
 + (id)_alertViewForWindow:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (id)alertViewWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (BOOL)resignFirstResponder;
@@ -137,6 +136,7 @@
 - (void)removeFromSuperview;
 - (BOOL)isVisible;
 - (void)_layoutIfNeeded;
+- (void)setContext:(id)arg1;
 - (void)layout;
 - (id)message;
 - (void)setDelegate:(id)arg1;
@@ -145,9 +145,9 @@
 - (void)_willRotateKeyboard;
 - (void)_useLegacyUI:(BOOL)arg1;
 - (BOOL)_shouldUseUndoStyle;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)showWithAnimationType:(int)arg1;
 - (void)_addTextEntryFieldsWithStyle:(int)arg1;
-- (void)_setAccessoryViewController:(id)arg1;
 - (void)_nukeOldTextFields;
 - (BOOL)forceHorizontalButtonsLayout;
 - (void)setForceHorizontalButtonsLayout:(BOOL)arg1;
@@ -181,6 +181,7 @@
 - (void)_updateFrameForDisplay;
 - (void)_alertSheetTextFieldDidChange:(id)arg1;
 - (void)_keyboardHiddingAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_setAccessoryViewController:(id)arg1;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1 coveredBySpringBoardAlert:(BOOL)arg2;
 - (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
@@ -195,6 +196,7 @@
 - (id)_firstOtherButton;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)replaceAlert:(id)arg1;
 - (void)_prepareForDisplay;
@@ -287,8 +289,6 @@
 - (id)_addButtonWithTitleText:(id)arg1;
 - (void)_loginFieldDidChangeForItem:(id)arg1;
 - (void)_passwordFieldDidChangeForItem:(id)arg1;
-- (id)buttonTitleAtIndex:(int)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)keyboard;
 - (BOOL)_isAnimating;
 - (void)_keyboardDidHide:(id)arg1;
@@ -316,6 +316,7 @@
 - (int)defaultButtonIndex;
 - (int)numberOfRows;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
+- (BOOL)canBecomeFirstResponder;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)show;
 - (void)_useUndoStyle:(BOOL)arg1;
@@ -323,7 +324,6 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (BOOL)canBecomeFirstResponder;
 - (id)titleLabel;
 - (BOOL)accessibilityPerformEscape;
 - (void)_accessibilitySendAlert;

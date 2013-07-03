@@ -7,6 +7,7 @@
 
 + (id)sharedFrameLoadDelegate;
 
+- (void)webView:(id)arg1 didLayout:(unsigned int)arg2;
 - (void)webView:(id)arg1 didRemoveFrameFromHierarchy:(id)arg2;
 - (void)webView:(id)arg1 didClearInspectorWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;

@@ -15,6 +15,7 @@
 + (id)orderingTermsForITTGTrackOrder:(unsigned long)arg1 descending:(BOOL)arg2;
 + (void)updateAllBookmarkableStoreBookmarkMetadataIdentifiersOnConnection:(id)arg1;
 + (BOOL)trackValueAreInTheCloud:(id)arg1;
++ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (id)composersDefaultOrderingProperties;
 + (id)albumAndArtistDefaultOrderingProperties;
 + (id)artistAllAlbumsDefaultOrderingProperties;
@@ -39,7 +40,7 @@
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)joinClausesForProperty:(id)arg1;
 + (id)unsettableProperties;
-+ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
++ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibraryWithConnection:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (id)defaultOrderingProperties;

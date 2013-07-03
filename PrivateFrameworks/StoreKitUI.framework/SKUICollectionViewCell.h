@@ -17,9 +17,9 @@
 
 
 - (BOOL)showsCellSeparators;
-- (void)setShowsCellSeparators:(BOOL)arg1;
 - (void)_updateBorderVisibility;
 - (BOOL)_showsRightBorder;
+- (void)setShowsCellSeparators:(BOOL)arg1;
 - (void)_setPosition:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void).cxx_destruct;

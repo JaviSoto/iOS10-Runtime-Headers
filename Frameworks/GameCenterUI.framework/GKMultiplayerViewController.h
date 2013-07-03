@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKMatchRequest, GKGame, GKMultiplayerActivityView, GKMultiplayerDataSource, GKMultiplayerHeaderView, GKMultiplayerBubbleView, NSString;
+@class GKMatchRequest, NSString, GKGame, GKMultiplayerDataSource;
 
 @interface GKMultiplayerViewController : GKCollectionViewController  {
     BOOL _showCancelButton;
@@ -10,9 +10,6 @@
     GKMatchRequest *_matchRequest;
     NSString *_defaultInvitationMessage;
     GKGame *_game;
-    GKMultiplayerHeaderView *_header;
-    GKMultiplayerBubbleView *_bubbleFooter;
-    GKMultiplayerActivityView *_statusFooter;
 }
 
 @property(readonly) GKMatchRequest * matchRequest;
@@ -21,15 +18,8 @@
 @property(retain) GKGame * game;
 @property(readonly) GKMultiplayerDataSource * multiplayerDataSource;
 @property BOOL addButtonEnabled;
-@property(retain) GKMultiplayerHeaderView * header;
-@property(retain) GKMultiplayerBubbleView * bubbleFooter;
-@property(retain) GKMultiplayerActivityView * statusFooter;
 
 
-- (void)setHeader:(id)arg1;
-- (void)setStatusFooter:(id)arg1;
-- (id)statusFooter;
-- (void)setBubbleFooter:(id)arg1;
 - (void)setAddButtonEnabled:(BOOL)arg1;
 - (BOOL)addButtonEnabled;
 - (void)setDefaultInvitationMessage:(id)arg1;
@@ -41,7 +31,6 @@
 - (void)addAutomatchPlayer;
 - (void)setShowCancelButton:(BOOL)arg1;
 - (id)initWithMatchRequest:(id)arg1;
-- (id)bubbleFooter;
 - (void)playNow;
 - (void)invitePlayers:(id)arg1;
 - (void)willPresentPlayerPicker:(id)arg1;
@@ -52,9 +41,9 @@
 - (void)dataSource:(id)arg1 didRefreshItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveItemsAtIndexPaths:(id)arg2;
 - (void)updateVisibleRemoveButtons;
-- (id)multiplayerDataSource;
 - (void)dataSource:(id)arg1 didInsertItemsAtIndexPaths:(id)arg2;
 - (void)cancelButtonPressed;
+- (id)multiplayerDataSource;
 - (void)setupCancelButton;
 - (void)setPlayerRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)playersToInvite:(id)arg1;
@@ -67,8 +56,8 @@
 - (void)cancel;
 - (BOOL)showCancelButton;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewDidLoad;
-- (id)header;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

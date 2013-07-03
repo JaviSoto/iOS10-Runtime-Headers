@@ -63,11 +63,11 @@
 - (int)loadState;
 - (id)contentURL;
 - (BOOL)isAirPlayVideoActive;
-- (int)playbackState;
 - (int)repeatMode;
 - (void)setRepeatMode:(int)arg1;
 - (void)play;
 - (void)prepareToPlay;
+- (int)playbackState;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

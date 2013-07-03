@@ -62,11 +62,11 @@
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (void)removeAssetsAtIndexes:(id)arg1;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
+- (void)unregisterForChanges;
 - (BOOL)didRegisteredWithUserInterfaceContext;
+- (void)registerForChanges;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (BOOL)isRegisteredForChanges;
-- (void)registerForChanges;
-- (void)unregisterForChanges;
 - (id)diagnosticInformation;
 - (BOOL)supportsDiagnosticInformation;
 - (id)localizedLocationNames;

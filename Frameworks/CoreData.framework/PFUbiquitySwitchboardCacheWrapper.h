@@ -33,6 +33,7 @@
 
 
 - (BOOL)writeReceiptFile:(BOOL)arg1 error:(id*)arg2;
+- (void)_appWillResignActive:(id)arg1;
 - (id)globalIDCache;
 - (void)setBaselineKV:(id)arg1;
 - (id)peerReceipt;
@@ -46,8 +47,8 @@
 - (id)baselineKV;
 - (id)transactionHistoryCache;
 - (id)peerRangeCache;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)storeName;
 - (id)init;
 - (void)dealloc;

@@ -7,8 +7,8 @@
 
 + (id)sharedTrafficSupport;
 
-- (struct CGImage { }*)imageForIncidentType:(int)arg1 contentScale:(float)arg2;
 - (struct CGImage { }*)imageForGEOIncidentType:(int)arg1 contentScale:(float)arg2;
+- (struct CGImage { }*)imageForIncidentType:(int)arg1 contentScale:(float)arg2;
 - (int)_convertType:(int)arg1;
 - (id)localizedSubtitleForStreet:(id)arg1 crossStreet:(id)arg2;
 - (id)localizedTitleForIncidentType:(int)arg1 laneType:(int)arg2 laneCount:(unsigned int)arg3;

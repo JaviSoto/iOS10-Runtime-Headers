@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKBubbleStackedContentView : GKStackedContentView  {
+@interface GKBubbleStackedContentView : GKContiguousContainerView  {
     float _paddingBase;
     float _paddingSizeMultiplier;
 }
@@ -11,6 +11,7 @@
 @property float paddingSizeMultiplier;
 @property(readonly) float paddingSize;
 
++ (float)paddingBaseBasedOnDeviceAdjustForTallness:(BOOL)arg1;
 + (void)initialize;
 
 - (float)paddingBase;

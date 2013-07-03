@@ -2,16 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString, GKTextStyleImpl, GKLabel, GKTextStyle;
+@class NSString, GKTextStyle, GKLabel;
 
 @interface GKTextView : UITextView  {
-    GKTextStyleImpl *__baseStyle;
+    GKTextStyle *__baseStyle;
     GKTextStyle *_appliedStyle;
     GKLabel *_placeholderLabel;
 }
 
 @property(retain) NSString * placeholderText;
-@property(retain) GKTextStyleImpl * _baseStyle;
+@property(retain) GKTextStyle * _baseStyle;
 @property(retain) GKTextStyle * appliedStyle;
 @property GKLabel * placeholderLabel;
 
@@ -24,10 +24,10 @@
 - (id)_baseStyle;
 - (void)_gkTextViewDidChange;
 - (void)setPlaceholderLabel:(id)arg1;
+- (void)replayAndApplyStyle;
 - (void)updatePlaceholderVisibility;
 - (id)placeholderLabel;
 - (void)set_baseStyle:(id)arg1;
-- (void)replayAndApplyStyle;
 - (void)applyTextStyle:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;

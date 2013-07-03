@@ -2,25 +2,32 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UILabel;
+@class UISegmentedControl, UILabel;
 
 @interface GKFriendRequestCell : GKBasePlayerCell  {
     UILabel *_messageLabel;
     UILabel *_whenLabel;
+    UISegmentedControl *_actionControl;
 }
 
 @property(retain) UILabel * messageLabel;
 @property(retain) UILabel * whenLabel;
+@property(retain) UISegmentedControl * actionControl;
 
++ (void)applyFriendRequest:(id)arg1 messageStringToLabel:(id)arg2 showAlias:(BOOL)arg3;
 + (void)registerCellClassesWithCollectionView:(id)arg1;
 + (Class)cellClassForPlayer:(id)arg1;
 
+- (void)setMessageLabel:(id)arg1;
+- (void)setActionControl:(id)arg1;
+- (id)actionControl;
+- (void)selectedSegmentedControl:(id)arg1;
 - (void)setWhenLabel:(id)arg1;
 - (id)whenLabel;
 - (void)didUpdateModel;
-- (void)setMessageLabel:(id)arg1;
+- (void)updateLineLayoutConstraints;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)messageLabel;
-- (void)didMoveToWindow;
 
 @end

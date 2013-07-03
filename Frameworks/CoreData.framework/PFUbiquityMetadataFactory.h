@@ -13,7 +13,6 @@
 + (id)sharedFactory;
 + (void)initialize;
 
-- (id)newMetadataManagedObjectModel;
 - (void)removeAllCoordinatorsForRootLocation:(id)arg1;
 - (void)addModelingToolUserInfoToProperty:(id)arg1;
 - (void)addModelingToolUserInfoToEntity:(id)arg1;
@@ -26,6 +25,7 @@
 - (void)removeCachedCoordinatorsForLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
 - (id)entryForLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
 - (id)newStackForLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3 error:(id*)arg4;
+- (id)newMetadataManagedObjectModel;
 - (id)init;
 - (void)dealloc;
 - (id)description;

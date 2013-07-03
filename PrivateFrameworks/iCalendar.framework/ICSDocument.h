@@ -11,7 +11,6 @@
 + (void)suppressParserSyntaxErrorLogging;
 + (int)ICSChecksumVersionSpecifiedInOptions:(unsigned int)arg1;
 
-- (id)ICSDataWithOptions:(unsigned int)arg1;
 - (id)ICSChecksumForVersion:(int)arg1;
 - (id)initWithData:(id)arg1 encoding:(unsigned int)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 - (id)initWithICSString:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
@@ -19,6 +18,7 @@
 - (id)initWithCalendar:(id)arg1;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (BOOL)validate:(id*)arg1;
+- (id)ICSDataWithOptions:(unsigned int)arg1;
 - (id)initWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)calendar;
 - (void)dealloc;

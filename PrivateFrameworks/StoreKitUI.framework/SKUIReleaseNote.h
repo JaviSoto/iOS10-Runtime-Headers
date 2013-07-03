@@ -2,23 +2,24 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface SKUIReleaseNote : NSObject  {
     NSString *_changeNotes;
-    NSString *_dateString;
+    NSDate *_date;
     NSString *_versionString;
 }
 
 @property(readonly) NSString * changeNotes;
-@property(readonly) NSString * dateString;
+@property(readonly) NSDate * date;
 @property(readonly) NSString * versionString;
 
++ (id)dateFormatter;
 
-- (id)initWithReleaseNoteDictionary:(id)arg1;
+- (id)initWithReleaseNoteDictionary:(id)arg1 dateFormatter:(id)arg2;
 - (id)changeNotes;
-- (id)dateString;
 - (id)versionString;
+- (id)date;
 - (void).cxx_destruct;
 
 @end

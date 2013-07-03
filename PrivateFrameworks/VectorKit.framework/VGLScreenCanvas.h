@@ -46,6 +46,8 @@
 - (BOOL)useMultisampling;
 - (void)preloadResources;
 - (void)didEnterBackground;
+- (BOOL)wantsRender;
+- (BOOL)canRender;
 - (void)drawWithTimestamp:(double)arg1;
 - (void)setGlClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)isDrawable;

@@ -34,8 +34,8 @@
 + (id)_typeDescriptionForAlbumListType:(int)arg1;
 + (id)_singletonListWithType:(int)arg1 library:(id)arg2;
 + (id)_albumListWithType:(int)arg1 inManagedObjectContext:(id)arg2;
-+ (id)albumListInManagedObjectContext:(id)arg1;
 + (id)allStreamedAlbumsListInManagedObjectContext:(id)arg1;
++ (id)albumListInManagedObjectContext:(id)arg1;
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)placesAlbumListInPhotoLibrary:(id)arg1;
 + (id)allStreamedAlbumsListInPhotoLibrary:(id)arg1;
@@ -70,11 +70,11 @@
 - (void)unregisterAllDerivedAlbums;
 - (id)_prettyDescription;
 - (unsigned int)albumsCount;
+- (void)unregisterForChanges;
 - (BOOL)didRegisteredWithUserInterfaceContext;
+- (void)registerForChanges;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (BOOL)isRegisteredForChanges;
-- (void)registerForChanges;
-- (void)unregisterForChanges;
 - (id)albums;
 - (id)containers;
 - (void)didSave;

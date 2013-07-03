@@ -24,7 +24,6 @@
 
 
 - (void)_succeedWithSnapshot:(id)arg1;
-- (BOOL)_checkIfThrottled;
 - (void)startWithQueue:(id)arg1 completionHandler:(id)arg2;
 - (void)startWithCompletionHandler:(id)arg1;
 - (void)_failWithError:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIColor, NSString, NSSet;
+@class UIImage, UIColor, NSString, NSSet, NSDictionary;
 
 @interface UINavigationButton : UIButton  {
     NSSet *_possibleTitles;
@@ -16,9 +16,11 @@
     id _appearanceStorage;
     NSSet *_possibleSystemItems;
     unsigned int _size : 2;
+    unsigned int _wantsLetterpressTitle : 1;
     float _minimumWidth;
     float _maximumWidth;
     int _buttonItemStyle;
+    NSDictionary *_stylesForSizingTitles;
     Class _appearanceGuideClass;
 }
 
@@ -32,10 +34,11 @@
 @property float maximumWidth;
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setButtonItemStyle:) int _buttonItemStyle;
+@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
 
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -48,6 +51,8 @@
 - (void)setImage:(id)arg1;
 - (void)dealloc;
 - (void)_setAppearanceGuideClass:(Class)arg1;
+- (void)_setStylesForSizingTitles:(id)arg1;
+- (id)_stylesForSizingTitles;
 - (void)_setButtonItemStyle:(int)arg1;
 - (int)_buttonItemStyle;
 - (float)maximumWidth;
@@ -71,7 +76,8 @@
 - (id)initWithTitle:(id)arg1 style:(int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
-- (void)_updateTitleForLetterpress;
+- (void)_setWantsLetterpressTitle;
+- (BOOL)_usesSelectedFontTraits;
 - (void)setMaximumWidth:(float)arg1;
 - (void)setMinimumWidth:(float)arg1;
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
@@ -97,12 +103,13 @@
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;
+- (void)_updateTitleForLetterpress;
 - (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (BOOL)_hasBaselineAlignedAbsoluteVerticalPosition:(out float*)arg1 withinNavBar:(id)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
-- (int)barStyle;
 - (void)_setTintColor:(id)arg1;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
+- (int)barStyle;
 - (void)_UIAppearance_setTintColor:(id)arg1;
 - (void)setNavigationBarTintColor:(id)arg1;
 - (void)setBarStyle:(int)arg1;
@@ -116,6 +123,7 @@
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityPerformEscape;

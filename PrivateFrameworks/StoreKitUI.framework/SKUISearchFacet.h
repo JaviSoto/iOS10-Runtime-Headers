@@ -20,8 +20,8 @@
 - (void)setQueryParameter:(id)arg1;
 - (void)setLabels:(id)arg1;
 - (void)setValues:(id)arg1;
-- (id)values;
 - (id)labels;
+- (id)values;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

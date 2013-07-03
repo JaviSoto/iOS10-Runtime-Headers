@@ -14,7 +14,7 @@
     BOOL _largeSpacing;
     int _numberOfUserRatings;
     UIColor *_primaryTextColor;
-    UIColor *_titleTextColor;
+    UIColor *_secondaryTextColor;
     UILabel *_titleLabel;
     float _userRating;
     SKUICellImageView *_userRatingImageView;
@@ -41,9 +41,9 @@
 - (id)initWithParentView:(id)arg1;
 - (id)initWithCollectionViewCell:(id)arg1;
 - (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setColoringWithColorScheme:(id)arg1;
-- (void)_reloadUserRatingViews;
 - (void)setNumberOfUserRatings:(int)arg1;
+- (void)_reloadUserRatingViews;
+- (void)setColoringWithColorScheme:(id)arg1;
 - (void)setUserRating:(float)arg1;
 - (float)userRating;
 - (void)setIconImage:(id)arg1;

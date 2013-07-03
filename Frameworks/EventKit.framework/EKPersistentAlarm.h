@@ -25,6 +25,7 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (BOOL)validate:(id*)arg1;
 - (void)setAlarmType:(int)arg1;
 - (int)alarmType;
 - (void)setExternalData:(id)arg1;
@@ -47,7 +48,6 @@
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
-- (BOOL)validate:(id*)arg1;
 - (int)proximity;
 - (id)location;
 - (void)setLocation:(id)arg1;

@@ -145,8 +145,9 @@
 @property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
@@ -218,10 +219,10 @@
 - (void)_setNavigationCompletion:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id)arg4;
 - (BOOL)_isTransitionVisibleFrom:(id)arg1 toLayoutAttributes:(id)arg2;
-- (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(BOOL)arg8;
+- (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(BOOL)arg8 customAnimationsType:(unsigned int)arg9;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3;
-- (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2;
+- (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
+- (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
 - (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (void)_addControlledSubview:(id)arg1 atZIndex:(int)arg2;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 newContentSize:(struct CGSize { float x1; float x2; })arg3 andOldContentSize:(struct CGSize { float x1; float x2; })arg4;
@@ -240,20 +241,20 @@
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)performBatchUpdates:(id)arg1 completion:(id)arg2;
-- (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (BOOL)_visible;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)collectionViewLayout;
-- (int)numberOfItemsInSection:(int)arg1;
 - (void)registerClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
+- (id)collectionViewLayout;
+- (void)insertItemsAtIndexPaths:(id)arg1;
+- (int)numberOfItemsInSection:(int)arg1;
 - (void)registerClass:(Class)arg1 forCellWithReuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
-- (id)indexPathsForSelectedItems;
 - (id)cellForItemAtIndexPath:(id)arg1;
 - (id)indexPathsForVisibleItems;
+- (id)indexPathsForSelectedItems;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)setCollectionViewLayout:(id)arg1;
@@ -265,12 +266,12 @@
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (id)backgroundView;
 - (BOOL)_indexPathIsValid:(id)arg1;
-- (id)indexPathForCell:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)_reloadDataIfNeeded;
 - (BOOL)allowsSelection;
 - (void)_setupCellAnimations;
 - (void)setAllowsSelection:(BOOL)arg1;
+- (id)indexPathForCell:(id)arg1;
 - (void)_updateBackgroundView;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
@@ -284,6 +285,7 @@
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
@@ -295,7 +297,6 @@
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;
-- (BOOL)canBecomeFirstResponder;
 - (BOOL)allowsMultipleSelection;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)layoutSubviews;
@@ -308,7 +309,10 @@
 - (int)accessibilityElementCount;
 - (id)accessibilityElementAtIndex:(int)arg1;
 - (int)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityCollectionCellElementForIndexPath:(id)arg1;
 - (id)_accessibilityFuzzyHitTest:(struct CGPoint { float x1; float x2; }*)arg1 withEvent:(id)arg2;
+- (id)_accessibilitySortedElementsWithin;
+- (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (id)accessibilityCellForRowAtIndexPath:(id)arg1;
 - (void)_accessibilityInitializeInternalData:(id)arg1;
 - (void)_resetAXData;
@@ -317,9 +321,9 @@
 - (id)axData;
 - (BOOL)accessibilityShouldBypassColletionViewAccessibility;
 - (int)_axGlobalRowForIndexPath:(id)arg1;
-- (id)accessibilityCollectionCellElementForIndexPath:(id)arg1;
 - (id)_accessibilityOtherCollectionViewItems;
 - (id)_axIndexPathForGlobalRow:(int)arg1;
+- (id)_accessibilityIndexPathOfDirectSubviewForDescendantElement:(id)arg1 subviewKind:(int*)arg2;
 - (void)setAccessibilityShouldSpeakItemReorderEvents:(BOOL)arg1;
 - (void)setAccessibilityShouldBypassColletionViewAccessibility:(BOOL)arg1;
 - (BOOL)isAccessibilityOpaqueElementProvider;
@@ -330,5 +334,6 @@
 - (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
 - (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
 - (void)_gkRegisterCellClass:(Class)arg1;
+- (id)_gkVisibleCellForIndexPath:(id)arg1;
 
 @end

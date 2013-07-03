@@ -69,6 +69,7 @@
 - (void)setPlaybackQueueCommitHandler:(id)arg1;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (BOOL)isPlaybackQueueTransactionActive;
+- (void)_setPreparesItemsForPlaybackAsynchronously:(BOOL)arg1;
 - (void)advanceToNextItem;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (void)setDisallowsAMRAudio:(BOOL)arg1;
@@ -108,9 +109,9 @@
 - (id)_player;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (float)rate;
-- (void)setRate:(float)arg1;
 - (void)play;
 - (id)items;
+- (void)setRate:(float)arg1;
 - (int)status;
 - (id)init;
 - (void)dealloc;

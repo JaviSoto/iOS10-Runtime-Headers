@@ -20,8 +20,8 @@
 - (void)setHiding:(BOOL)arg1;
 - (id)initWithRemoveControl:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isRotating;
-- (BOOL)isHighlighted;
 
 @end

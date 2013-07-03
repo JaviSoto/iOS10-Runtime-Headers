@@ -103,8 +103,9 @@
 + (id)keyboardWithName:(id)arg1 screen:(id)arg2;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -136,6 +137,7 @@
 - (BOOL)autoShift;
 - (BOOL)shift;
 - (void)setKeyboardName:(id)arg1;
+- (id)currentKeyplaneView;
 - (void)handleDelayedCentroidUpdate;
 - (struct CGImage { }*)renderedKeyplaneWithToken:(id)arg1 split:(BOOL)arg2;
 - (struct CGImage { }*)renderedImageWithToken:(id)arg1;
@@ -145,7 +147,9 @@
 - (void)cancelTouchIfNecessaryForInfo:(id)arg1;
 - (void)swipeDetected:(id)arg1;
 - (void)updateShiftKeyState;
+- (void)fadeMenu:(id)arg1 forKey:(id)arg2 withDelay:(float)arg3;
 - (void)upActionShift;
+- (void)fadeMenu:(id)arg1 forKey:(id)arg2;
 - (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6;
 - (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (void)touchMultitapTimer;
@@ -168,6 +172,7 @@
 - (void)completeCommitTouchesPrecedingTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
 - (BOOL)shouldCommitPrecedingTouchesForTouchDownWithActions:(unsigned int)arg1;
 - (void)playKeyClickSound;
+- (void)hideMenu:(id)arg1 forKey:(id)arg2;
 - (BOOL)shouldSkipResponseToGlobeKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (int)playKeyClickSoundOn;
 - (void)touchDownWithKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 executionContext:(id)arg3;
@@ -185,9 +190,10 @@
 - (void)prepareForSplitTransition;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (id)touchForKey:(id)arg1;
+- (void)showMenu:(id)arg1 forKey:(id)arg2;
 - (void)showPopupVariantsForKey:(id)arg1;
 - (unsigned int)downActionFlagsForKey:(id)arg1;
-- (void)clearHandwritingStrokesIfNeeded;
+- (void)clearHandwritingStrokesIfNeededAndNotify:(BOOL)arg1;
 - (void)handleMultitapTimerFired;
 - (void)multitapExpired;
 - (void)multitapInterrupted;
@@ -225,6 +231,7 @@
 - (BOOL)shouldShowDictationKey;
 - (int)stateForKey:(id)arg1;
 - (struct CGImage { }*)renderedImageWithStateFallbacksForToken:(id)arg1;
+- (struct CGImage { }*)cachedCompositeImageWithCacheKey:(id)arg1;
 - (void)rebuildSplitTransitionViewFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;
 - (void)setCurrencyKeysForCurrentLocaleOnKeyplane:(id)arg1;
@@ -264,7 +271,6 @@
 - (id)keyplaneNamed:(id)arg1;
 - (id)keyplaneForKey:(id)arg1;
 - (id)baseKeyForString:(id)arg1;
-- (void)setRenderConfig:(id)arg1;
 - (void)setLayoutTag:(id)arg1;
 - (void)updateKeyCentroids;
 - (id)localizedInputMode;
@@ -290,8 +296,10 @@
 - (BOOL)usesAutoShift;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)fadeWithInvocation:(id)arg1;
 - (void)setAutoshift:(BOOL)arg1;
-- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2;
+- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
+- (id)currentKeyplane;
 - (BOOL)performReturnAction;
 - (void)didRotate;
 - (void)willRotate;
@@ -307,7 +315,9 @@
 - (BOOL)hasCandidateKeys;
 - (void)clearUnusedObjects:(BOOL)arg1;
 - (id)candidateList;
+- (void)setRenderConfig:(id)arg1;
 - (id)renderConfig;
+- (void)logHandwritingData;
 - (void)setKeyboardAppearance:(int)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)willMoveToWindow:(id)arg1;

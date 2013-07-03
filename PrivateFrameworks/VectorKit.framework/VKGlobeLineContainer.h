@@ -15,15 +15,15 @@
     <VKGlobeLineContainerDelegate> *_delegate;
     NSMutableArray *_overlays;
     VKGlobeViewWrapper *_wrapper;
-    struct map<VKPolylineOverlay *, altitude::RouteLineData *, std::__1::less<VKPolylineOverlay *>, vk_allocator<std::__1::pair<VKPolylineOverlay *const, altitude::RouteLineData *> > > { 
-        struct __tree<std::__1::pair<VKPolylineOverlay *, altitude::RouteLineData *>, std::__1::__map_value_compare<VKPolylineOverlay *, altitude::RouteLineData *, std::__1::less<VKPolylineOverlay *>, true>, vk_allocator<std::__1::pair<VKPolylineOverlay *, altitude::RouteLineData *> > > { 
-            struct __tree_node<std::__1::pair<VKPolylineOverlay *, altitude::RouteLineData *>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, vk_allocator<std::__1::__tree_node<std::__1::pair<VKPolylineOverlay *, altitude::RouteLineData *>, void *> > > { 
+    struct map<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, vk_allocator<std::__1::pair<VKPolylineOverlay *const, std::__1::weak_ptr<altitude::RouteLineData> > > > { 
+        struct __tree<std::__1::pair<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, std::__1::__map_value_compare<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, true>, vk_allocator<std::__1::pair<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> > > > { 
+            struct __tree_node<std::__1::pair<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, vk_allocator<std::__1::__tree_node<std::__1::pair<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<VKPolylineOverlay *, altitude::RouteLineData *, std::__1::less<VKPolylineOverlay *>, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, true> > { 
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
@@ -31,7 +31,7 @@
     VKPolylineOverlay *_selectedPolyline;
     NSMutableSet *_persistentOverlays;
     struct VKGlobeRouteSplit { int (**x1)(); id x2; } *_routeSplit;
-    struct VKGlobeRouteStyle { float x1; float x2; float x3; struct Color { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; } x4; struct Color { unsigned char x_5_1_1; unsigned char x_5_1_2; unsigned char x_5_1_3; unsigned char x_5_1_4; } x5; struct Color { unsigned char x_6_1_1; unsigned char x_6_1_2; unsigned char x_6_1_3; unsigned char x_6_1_4; } x6; struct Color { unsigned char x_7_1_1; unsigned char x_7_1_2; unsigned char x_7_1_3; unsigned char x_7_1_4; } x7; struct Color { unsigned char x_8_1_1; unsigned char x_8_1_2; unsigned char x_8_1_3; unsigned char x_8_1_4; } x8; float x9; float x10; float x11; float x12; } *_routeStyle;
+    struct VKGlobeRouteStyle { float x1; float x2; float x3; struct Color { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; } x4; struct Color { unsigned char x_5_1_1; unsigned char x_5_1_2; unsigned char x_5_1_3; unsigned char x_5_1_4; } x5; struct Color { unsigned char x_6_1_1; unsigned char x_6_1_2; unsigned char x_6_1_3; unsigned char x_6_1_4; } x6; struct Color { unsigned char x_7_1_1; unsigned char x_7_1_2; unsigned char x_7_1_3; unsigned char x_7_1_4; } x7; struct Color { unsigned char x_8_1_1; unsigned char x_8_1_2; unsigned char x_8_1_3; unsigned char x_8_1_4; } x8; float x9; float x10; float x11; float x12; float x13; } *_routeStyle;
 }
 
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
@@ -43,7 +43,6 @@
 - (void)_recreateLinesIfNeeded;
 - (void)setSelected:(id)arg1 selected:(BOOL)arg2;
 - (void)removeLine:(id)arg1;
-- (void)clearRouteLines;
 - (id)initWithGlobeViewWrapper:(id)arg1 stylesheet:(id)arg2;
 - (void)polylineGroup:(id)arg1 didSelectPolyline:(id)arg2;
 - (void)polylineGroup:(id)arg1 didRemovePolyline:(id)arg2;

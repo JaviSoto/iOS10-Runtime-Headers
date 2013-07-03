@@ -6,6 +6,7 @@
 
 @interface UIKBRenderTraits : NSObject <NSCopying> {
     NSMutableArray *_renderEffects;
+    BOOL _honorControlOpacity;
     BOOL _controlOpacities;
     UIKBRenderGeometry *_geometry;
     UIKBGradient *_backgroundGradient;
@@ -53,8 +54,8 @@
 - (id)fallbackSymbolStyle;
 - (id)layeredForegroundGradient;
 - (id)layeredBackgroundGradient;
-- (id)backgroundGradient;
 - (float)forceOpacity;
+- (id)backgroundGradient;
 - (void)removeAllRenderEffects;
 - (void)setLayeredForegroundGradient:(id)arg1;
 - (void)setControlOpacities:(BOOL)arg1;
@@ -69,10 +70,10 @@
 - (void)setVariantTraits:(id)arg1;
 - (void)setVariantGeometries:(id)arg1;
 - (void)addRenderEffect:(id)arg1;
-- (void)setLayeredBackgroundGradient:(id)arg1;
 - (id)symbolStyle;
 - (void)setSymbolStyle:(id)arg1;
 - (id)geometry;
+- (void)setLayeredBackgroundGradient:(id)arg1;
 - (void)setBackgroundGradient:(id)arg1;
 
 @end

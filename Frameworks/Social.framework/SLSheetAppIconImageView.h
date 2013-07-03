@@ -4,7 +4,7 @@
 
 @class UIImage;
 
-@interface SLSheetAppIconImageView : SLSheetPreviewImageView  {
+@interface SLSheetAppIconImageView : SLSheetImagePreviewView  {
     UIImage *_shadowImage;
 }
 

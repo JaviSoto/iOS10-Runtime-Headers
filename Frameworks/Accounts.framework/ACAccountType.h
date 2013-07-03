@@ -36,11 +36,9 @@
 + (BOOL)supportsSecureCoding;
 
 - (void)setObjectID:(id)arg1;
-- (id)objectID;
 - (void)setSupportsMultipleAccounts:(BOOL)arg1;
 - (BOOL)accessGranted;
 - (void)setCredentialProtectionPolicy:(id)arg1;
-- (void)setVisibility:(int)arg1;
 - (void)setAccountTypeDescription:(id)arg1;
 - (id)initWithManagedAccountType:(id)arg1 accountStore:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 description:(id)arg2;
@@ -48,7 +46,6 @@
 - (id)credentialProtectionPolicy;
 - (int)visibility;
 - (id)syncableDataclasses;
-- (id)accountStore;
 - (void)setSupportsAuthentication:(int)arg1;
 - (id)accountTypeDescription;
 - (void)setCredentialType:(id)arg1;
@@ -56,8 +53,11 @@
 - (id)initWithManagedAccountType:(id)arg1;
 - (int)supportsAuthentication;
 - (BOOL)supportsMultipleAccounts;
+- (id)accountStore;
 - (id)accessKeys;
 - (void)setAccountStore:(id)arg1;
+- (id)objectID;
+- (void)setVisibility:(int)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

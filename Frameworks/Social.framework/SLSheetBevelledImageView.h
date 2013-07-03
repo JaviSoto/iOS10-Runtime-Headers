@@ -4,7 +4,7 @@
 
 @class CALayer;
 
-@interface SLSheetBevelledImageView : SLSheetPreviewImageView  {
+@interface SLSheetBevelledImageView : SLSheetImagePreviewView  {
     CALayer *_frameLayer;
 }
 

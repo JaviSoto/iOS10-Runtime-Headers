@@ -32,15 +32,15 @@
 + (void)_updateStateRestorationIdentifierMap;
 + (void)_cleanupAllStateRestorationTables;
 + (void)_startDeferredTrackingObjectsWithIdentifiers;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)nextResponder;
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
+- (BOOL)isEditable;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedNSRange;
 - (id)undoManager;
 - (id)firstResponder;
@@ -148,6 +148,7 @@
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_isTransitioningFromView:(id)arg1;
 - (void)_moveWithEvent:(id)arg1;
+- (BOOL)_requiresKeyboardWhenFirstResponder;
 - (BOOL)_isRootForKeyResponderCycle;
 - (id)_responderWindow;
 - (BOOL)isFirstResponder;
@@ -157,6 +158,7 @@
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (id)_previousKeyResponder;
 - (id)_nextKeyResponder;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)_containsResponder:(id)arg1;
 - (id)_responderForBecomeFirstResponder;
 - (void)setRestorationIdentifier:(id)arg1;
@@ -198,8 +200,6 @@
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_responderForEditing;
-- (BOOL)_requiresKeyboardWhenFirstResponder;
-- (BOOL)canBecomeFirstResponder;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (int)_accessibilityLineEndPosition;
 - (int)_accessibilityLineStartPosition;

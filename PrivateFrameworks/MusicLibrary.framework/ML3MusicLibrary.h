@@ -8,7 +8,6 @@
     NSString *_libraryUID;
     NSObject<OS_dispatch_queue> *_atomicityQueue;
     BOOL _reloadForMediaServiceNeeded;
-    NSMutableArray *_validatingConnections;
     NSMutableArray *_artworkConversionCompletionHandlers;
     NSString *_artworkConverterPIDNotifyName;
     int _artworkConverterPIDToken;
@@ -25,6 +24,7 @@
     _LibraryNotification *_displayValuesNotify;
     _LibraryNotification *_syncGenerationNotify;
     _LibraryNotification *_libraryUIDNotify;
+    int _systemLanguageChangedToken;
     id _mcSettingsObserver;
     id _loggingObserver;
     int _willDeleteDatabaseNotifyToken;
@@ -34,6 +34,7 @@
     BOOL _isHomeSharingLibrary;
     BOOL _hasEverConnectedTo;
     BOOL _keepPresignedValidyAfterVerification;
+    BOOL _currentThreadHasWriterConnectionCheckedOut;
     ML3DatabaseConnectionPool *_connectionPool;
     NSString *_databasePath;
     NSArray *_libraryEntityFilterPredicates;
@@ -60,6 +61,7 @@
 @property BOOL keepPresignedValidyAfterVerification;
 @property(retain) NSArray * libraryEntityFilterPredicates;
 @property(retain) NSArray * libraryContainerFilterPredicates;
+@property(readonly) BOOL currentThreadHasWriterConnectionCheckedOut;
 
 + (id)unitTestableLibraryForTest:(id)arg1 basePath:(id)arg2 setupSQLFilenames:(id)arg3;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
@@ -73,8 +75,7 @@
 + (BOOL)migrateToCurrentUserVersionUsingConnection:(id)arg1 musicLibrary:(id)arg2;
 + (id)allTriggersSQL;
 + (id)indexSchemaSQL;
-+ (BOOL)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
-+ (int)userVersionUsingConnection:(id)arg1;
++ (BOOL)buildDatabaseTablesUsingConnection:(id)arg1 popuplateDatabaseTablesOnConnectionBlock:(id)arg2;
 + (int)currentUserVersion;
 + (BOOL)createTriggersUsingConnection:(id)arg1;
 + (BOOL)createIndexesUsingConnection:(id)arg1;
@@ -83,10 +84,14 @@
 + (id)itemIndexSchemaSQL;
 + (BOOL)defaultRememberBookmarkTimeForMediaType:(unsigned long)arg1;
 + (BOOL)defaultExcludeFromShuffleForMediaType:(unsigned long)arg1;
++ (int)userVersionUsingConnection:(id)arg1;
++ (BOOL)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
++ (BOOL)updateSortMapOnConnection:(id)arg1;
 + (id)systemCurrentLanguage;
 + (id)sortMapNewSchemaSQL;
 + (BOOL)inTransactionUpdateSearchMapOnConnection:(id)arg1;
 + (BOOL)inTransactionUpdateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(BOOL)arg2;
++ (id)localizedSectionDictionary;
 + (BOOL)updateTrackIntegrityOnConnection:(id)arg1;
 + (void)enumerateSortMapTablesUsingBlock:(id)arg1;
 + (id)sectionIndexTitleForSectionHeader:(id)arg1;
@@ -101,7 +106,7 @@
 + (id)mediaFolderRelativePath:(id)arg1;
 + (id)_purgeableTrackPredicateWithUrgency:(unsigned int)arg1;
 + (BOOL)automaticDatabaseArtworkConversionEnabled;
-+ (BOOL)updateSortMapOnConnection:(id)arg1;
++ (BOOL)updateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(BOOL)arg2;
 + (BOOL)orderingLanguageMatchesSystemUsingConnection:(id)arg1;
 + (id)allTables;
 + (BOOL)_hasArtworkConversionManifestTasksRemainingUsingConnection:(id)arg1;
@@ -109,11 +114,11 @@
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
 + (id)fallbackGeniusDatabaseFilePath;
 + (void)configureMediaLibraryDatabaseConnection:(id)arg1;
-+ (BOOL)buildDatabaseTablesUsingConnection:(id)arg1 popuplateDatabaseTablesOnConnectionBlock:(id)arg2;
 + (id)geniusDatabaseFilePath;
 + (id)sharedLibraryDatabasePath;
 + (id)pathForResourceFileOrFolder:(int)arg1;
 + (id)sharedLibrary;
++ (id)localizedSortingDetailsDictionary;
 + (id)sectionIndexTitles;
 + (void)initialize;
 + (void)buildDatabaseFromHomeSharingConnection:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3;
@@ -122,12 +127,7 @@
 - (void)updateOrderingLanguagesForCurrentLanguage;
 - (void)setIsHomeSharingLibrary:(BOOL)arg1;
 - (BOOL)prepareUnitTestDatabaseWithSQLFromContentsOfFile:(id)arg1 error:(id*)arg2;
-- (void)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2;
-- (BOOL)finishImportSession:(id)arg1;
-- (BOOL)removeTrack:(id)arg1 withSessionRef:(id)arg2;
-- (BOOL)updateTrack:(id)arg1 withSessionRef:(id)arg2;
-- (BOOL)addTrack:(id)arg1 withSessionRef:(id)arg2;
-- (id)beginImportSessionWithConnection:(id)arg1;
+- (BOOL)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2;
 - (id)locationKindForKind:(id)arg1;
 - (BOOL)resetAllContents;
 - (BOOL)removeLocationsForItemsMissingAssets;
@@ -146,6 +146,7 @@
 - (id)albumForAlbumArtistPersistentID:(long long)arg1 albumName:(id)arg2 feedURL:(id)arg3 seasonNumber:(id)arg4 compilation:(BOOL)arg5;
 - (id)artistForArtistName:(id)arg1 seriesName:(id)arg2;
 - (id)artistGroupingKeyForArtistName:(id)arg1 seriesName:(id)arg2;
+- (BOOL)currentThreadHasWriterConnectionCheckedOut;
 - (id)libraryContainerFilterPredicates;
 - (id)libraryEntityFilterPredicates;
 - (void)setDatabasePath:(id)arg1;
@@ -181,7 +182,6 @@
 - (id)accountCacheDatabase;
 - (BOOL)emptyAllTables;
 - (void)performReadOnlyDatabaseTransactionWithBlock:(id)arg1;
-- (void)reconnectToDatabase;
 - (BOOL)mediaRestrictionEnabled;
 - (id)currentDevicePurchasesPlaylist;
 - (void)setLibraryUID:(id)arg1;
@@ -191,6 +191,7 @@
 - (BOOL)isHomeSharingLibrary;
 - (void)connectionPool:(id)arg1 createdNewConnection:(id)arg2;
 - (void)connectionWillCloseDatabase:(id)arg1;
+- (BOOL)connectionCloseDeletedDatabase:(id)arg1;
 - (void)connectionDidOpenDatabase:(id)arg1;
 - (void)connectionWillOpenDatabase:(id)arg1;
 - (void)_noteUnnecessaryConversionForDeviceTypeFromArtworkFormat:(unsigned int)arg1 toArtworkFormat:(unsigned int)arg2;
@@ -237,6 +238,7 @@
 - (BOOL)validateDatabaseWithTimeout:(double)arg1;
 - (id)databaseInfo;
 - (void)_delayableNotifyPost:(id)arg1 localNotificationName:(id)arg2;
+- (void)reconnectToDatabase;
 - (void)_enqueueLocalNotificationName:(id)arg1 isSourceExternal:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 readOnly:(BOOL)arg2 populateUnitTestTablesBlock:(id)arg3;
 - (id)connectionPool;
@@ -260,6 +262,7 @@
 - (id)preferredAudioTracks;
 - (id)libraryUID;
 - (unsigned int)sectionIndexTitleIndexForSectionIndex:(unsigned int)arg1;
+- (BOOL)isCurrentThreadInTransaction;
 - (id)localizedSectionIndexTitles;
 - (id)localizedSectionHeaderForSectionIndex:(unsigned int)arg1;
 - (long long)syncGenerationID;
@@ -267,6 +270,7 @@
 - (id)valueForDatabaseProperty:(id)arg1;
 - (long long)persistentID;
 - (id)databasePath;
+- (BOOL)removeSource:(int)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)initWithPath:(id)arg1;

@@ -28,11 +28,11 @@
 
 
 - (void*)context;
-- (void)setContext:(void*)arg1;
 - (id)initWithFlags:(unsigned int)arg1 timeout:(double)arg2 wifiTimeout:(double)arg3 completionBlock:(id)arg4;
 - (void)_timerHit:(id)arg1;
 - (void)_setTimer;
 - (id)initWithFlags:(unsigned int)arg1 options:(unsigned int)arg2 timeout:(double)arg3 wifiTimeout:(double)arg4 completionBlock:(id)arg5;
+- (void)setContext:(void*)arg1;
 - (void)dealloc;
 - (void)cancel;
 - (void)_cancel;

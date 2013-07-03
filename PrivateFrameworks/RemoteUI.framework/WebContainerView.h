@@ -18,8 +18,8 @@
 - (id)webView;
 - (void)dealloc;
 - (void)setWebView:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
 
 @end

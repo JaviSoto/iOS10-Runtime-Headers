@@ -44,7 +44,7 @@
 - (id)viewForBaselineLayout;
 - (void)updateConstraints;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

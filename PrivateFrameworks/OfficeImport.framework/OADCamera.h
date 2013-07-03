@@ -12,9 +12,7 @@
 }
 
 
-- (void)setZoom:(float)arg1;
 - (void)setFieldOfView:(float)arg1;
-- (float)zoom;
 - (float)fieldOfView;
 - (void)setCameraType:(int)arg1;
 - (int)cameraType;
@@ -24,6 +22,8 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (float)zoom;
+- (void)setZoom:(float)arg1;
 - (void)setRotation:(id)arg1;
 
 @end

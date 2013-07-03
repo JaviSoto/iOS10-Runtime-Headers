@@ -14,9 +14,7 @@
 + (id)baseCommand;
 
 - (void)setRefId:(id)arg1;
-- (id)refId;
 - (void)setAceId:(id)arg1;
-- (id)aceId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

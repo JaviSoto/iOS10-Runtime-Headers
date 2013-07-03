@@ -32,8 +32,8 @@
 @property(readonly) UIImage * attributionImage;
 
 + (id)newImageWithName:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)multiplePhotoBackdropEnabled;
 - (void)setMultiplePhotoBackdropEnabled:(BOOL)arg1;

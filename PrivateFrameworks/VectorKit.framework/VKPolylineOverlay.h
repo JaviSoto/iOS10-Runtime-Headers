@@ -11,6 +11,32 @@
     GEOZilchDecoder *_zilchDecoder;
     struct __CFSet { } *_observers;
     unsigned int _firstVisiblePoint;
+    BOOL _isReadyForSnapping;
+    struct unordered_map<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> >, std::__1::hash<VKPolylineOverlaySection *>, std::__1::equal_to<VKPolylineOverlaySection *>, vk_allocator<std::__1::pair<VKPolylineOverlaySection *const, std::__1::vector<VGLRect, vk_allocator<VGLRect> > > > > { 
+        struct __hash_table<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, std::__1::__unordered_map_hasher<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> >, std::__1::hash<VKPolylineOverlaySection *>, true>, std::__1::__unordered_map_equal<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> >, std::__1::equal_to<VKPolylineOverlaySection *>, true>, vk_allocator<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > > > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *> > > { 
+                    struct __hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *> > { 
+                        struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> *> { 
+                    struct __hash_node<std::__1::pair<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> > >, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> >, std::__1::hash<VKPolylineOverlaySection *>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKPolylineOverlaySection *, std::__1::vector<VGLRect, vk_allocator<VGLRect> >, std::__1::equal_to<VKPolylineOverlaySection *>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    } _sectionToRectsMap;
     double _trafficTimeStamp;
     VKTrafficSegmentsAlongRoute *_trafficSegments;
 }
@@ -30,14 +56,15 @@
 
 
 - (unsigned int)firstVisiblePoint;
-- (BOOL)isSnapping;
+- (BOOL)isSnappingForSceneTiles;
 - (void)updateSnappedPathsForLocation:(id)arg1;
 - (void)setFirstVisiblePoint:(unsigned int)arg1;
 - (struct { double x1; double x2; })coordinateAtIndex:(unsigned int)arg1;
-- (void)_addPolylinePathsForSection:(id)arg1 rects:(const struct vector<VKRect, std::__1::allocator<VKRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg2 toPaths:(id)arg3;
+- (void)_addPolylinePathsForSection:(id)arg1 toPaths:(id)arg2;
 - (void)_addPaths:(id)arg1 forObserver:(id)arg2;
 - (void)_snapPaths:(id)arg1 completionHandler:(id)arg2;
-- (void)_addSnappedPolylinePathsForSection:(id)arg1 rects:(const struct vector<VKRect, std::__1::allocator<VKRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg2 toPaths:(id)arg3;
+- (void)_addSnappedPolylinePathsForSection:(id)arg1 toPaths:(id)arg2;
+- (void)_addSnappedPolylinePathsForSection:(id)arg1 toPaths:(id)arg2 localRects:(const struct vector<VGLRect, vk_allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, vk_allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg3;
 - (BOOL)_meetsMinimumPathLengthBetweenStart:(unsigned int)arg1 end:(unsigned int)arg2;
 - (BOOL)resetTrafficWithRoute:(id)arg1 WithStep:(struct RouteCalibration { unsigned int x1; float x2; }*)arg2 trafficWalking:(struct TrafficWalking { double x1; int x2; int x3; unsigned int *x4; unsigned int *x5; }*)arg3 routeIndex:(int*)arg4;
 - (void)calibrate:(struct RouteCalibration { unsigned int x1; float x2; }*)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 forDistance:(unsigned int)arg4;
@@ -47,6 +74,7 @@
 - (void)_buildSectionsFromRoute:(id)arg1;
 - (double)trafficTimeStamp;
 - (id)getPathsForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 shouldSnapToRoads:(BOOL)arg4 snappingCompletionHandler:(id)arg5;
+- (BOOL)updateRectsForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 shouldSnapToRoads:(BOOL)arg4;
 - (BOOL)supportsSnapping;
 - (void)_didReceiveMemoryWarning;
 - (void)forEachSnappedPath:(id)arg1;
@@ -64,7 +92,9 @@
 - (unsigned int)pointCount;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (void)addObserver:(id)arg1;
+- (void).cxx_destruct;
+- (id).cxx_construct;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

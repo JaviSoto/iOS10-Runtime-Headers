@@ -24,9 +24,9 @@
 - (float)keyInsetBottom;
 - (float)keyCornerRadius;
 - (float)_row4ControlSegmentWidth;
-- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
-- (BOOL)_popupStyleForKey:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
+- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
@@ -39,12 +39,15 @@
 - (float)dismissKeyFontSize;
 - (float)dictationKeyFontSize;
 - (float)internationalKeyFontSize;
-- (float)deleteKeyFontSize;
 - (float)moreKeyFontSize;
+- (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
+- (id)thinKeycapsFontName;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
+- (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 
 @end

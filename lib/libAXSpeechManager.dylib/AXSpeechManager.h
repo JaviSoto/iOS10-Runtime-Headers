@@ -31,6 +31,9 @@
 - (void)speechSynthesizer:(id)arg1 didPauseSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
+- (BOOL)isPaused;
+- (void)pauseSpeaking:(int)arg1;
+- (void)dispatchSpeechAction:(id)arg1;
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
 - (id)originalSpeechRateForJobOverride;
 - (void)stopSpeaking;
@@ -38,22 +41,19 @@
 - (void)_testSpeechTransforms;
 - (void)_speechJobFinished:(BOOL)arg1 action:(id)arg2;
 - (void)_isSpeaking:(id)arg1;
+- (void)stopSpeaking:(int)arg1;
 - (void)_stopSpeaking:(id)arg1;
 - (void)_continueSpeaking;
 - (void)_pauseSpeaking:(id)arg1;
 - (void)_dispatchSpeechAction:(id)arg1;
 - (BOOL)speechEnabled;
 - (void)_clearSpeechQueue;
+- (void)clearSpeechQueue;
+- (BOOL)isSpeaking;
 - (void)_startNextSpeechJob;
 - (void)_initialize;
 - (void)setIsPaused:(BOOL)arg1;
 - (void)continueSpeaking;
-- (void)pauseSpeaking:(int)arg1;
-- (void)clearSpeechQueue;
-- (void)stopSpeaking:(int)arg1;
-- (void)dispatchSpeechAction:(id)arg1;
-- (BOOL)isPaused;
-- (BOOL)isSpeaking;
 - (id)init;
 - (void)dealloc;
 

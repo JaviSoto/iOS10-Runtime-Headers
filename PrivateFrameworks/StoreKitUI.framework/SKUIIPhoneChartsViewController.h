@@ -31,7 +31,6 @@
 
 - (id)_selectedViewController;
 - (id)_viewControllerWithIndex:(int)arg1;
-- (void)_segmentedControlAction:(id)arg1;
 - (int)_chartIndexForChartViewController:(id)arg1;
 - (void)_showSelectedViewController;
 - (id)_artworkContextForChart:(id)arg1;
@@ -43,6 +42,7 @@
 - (id)itemList:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)setArtworkLoader:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(int)arg1;
+- (void)_segmentedControlAction:(id)arg1;
 - (id)artworkLoader;
 - (id)charts;
 - (void)setClientContext:(id)arg1;

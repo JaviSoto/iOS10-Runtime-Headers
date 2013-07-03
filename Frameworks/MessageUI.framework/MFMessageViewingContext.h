@@ -85,10 +85,10 @@
 - (void)_setMessageBody:(id)arg1;
 - (void)_setContent:(id)arg1;
 - (void)loadMore;
-- (BOOL)hasLoaded;
 - (id)initWithMessage:(id)arg1 attachmentManager:(id)arg2;
 - (void)cancelLoad;
 - (id)messageBody;
+- (BOOL)hasLoaded;
 - (id)attachments;
 - (id)uniqueID;
 - (id)content;

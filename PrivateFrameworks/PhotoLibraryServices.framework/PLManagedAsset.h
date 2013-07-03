@@ -20,6 +20,7 @@
 
 @property(retain) NSString * cloudBatchID;
 @property(retain) NSDate * cloudBatchPublishDate;
+@property(retain) NSDate * cloudServerPublishDate;
 @property(retain) NSString * cloudAssetGUID;
 @property(retain) NSString * cloudCollectionGUID;
 @property(retain) NSDictionary * cloudMetadata;
@@ -131,19 +132,19 @@
 @property int thumbnailIndex;
 
 + (void)markAssetAsRecentlyUsed:(id)arg1;
-+ (id)sortedCloudSharedAssetsWithDerivativesInLibrary:(id)arg1;
++ (id)sortedCloudSharedAssetsWithPlaceholderKind:(int)arg1 ascending:(BOOL)arg2 inLibrary:(id)arg3;
 + (id)cloudSharedAssetsWithGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)allCloudSharedAssetsInLibrary:(id)arg1;
 + (id)persistedRecentlyUsedGUIDS;
 + (id)recentlyUsedGUIDsPath;
 + (id)uuidFromAssetURL:(id)arg1;
 + (id)fileURLFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
++ (int)wildcatCachedStackImageFormat;
 + (int)wildcatPhotoScrubberFormat;
 + (int)formatForThumbnailGeneration;
 + (int)landscapeScrubberThumbnailFormat;
 + (int)portraitScrubberThumbnailFormat;
 + (int)feedEntryThumbnailFormat;
-+ (int)seaOfPhotosLargeThumbnailFormat;
 + (id)keyPathsForValuesAffectingIsJPEG;
 + (id)keyPathsForValuesAffectingMimeType;
 + (id)keyPathsForValuesAffectingUtiType;
@@ -166,6 +167,7 @@
 + (unsigned int)countAssetsWithKind:(short)arg1 inManagedObjectContext:(id)arg2;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(int)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(BOOL)arg7;
 + (id)assetWithObjectID:(id)arg1 inLibrary:(id)arg2;
++ (id)assetsWithUUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (id)extensionForLargeThumbnailFile;
@@ -178,7 +180,6 @@
 + (int)indexSheetUnbakedFormat;
 + (int)posterThumbnailFormat;
 + (int)fullSizeImageFormat;
-+ (int)wildcatCachedStackImageFormat;
 + (int)masterThumbnailFormat;
 + (int)wildcatIndexSheetFormat;
 + (id)slalomRegionsPathForMainFilePath:(id)arg1;
@@ -193,7 +194,7 @@
 + (id)URLForMetadataWithExtension:(id)arg1 forMediaInMainDirectory:(id)arg2 withFilename:(id)arg3;
 + (id)assetWithUUID:(id)arg1 inLibrary:(id)arg2;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(int)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6;
-+ (id)assetsWithUUIDs:(id)arg1 inLibrary:(id)arg2;
++ (id)assetsWithUUIDs:(id)arg1 includePendingChanges:(BOOL)arg2 inLibrary:(id)arg3;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
 + (id)assetWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (unsigned int)countUsedAssetsWithKind:(short)arg1 inManagedObjectContext:(id)arg2;
@@ -349,6 +350,8 @@
 - (int)thumbnailIndex;
 - (void)setHighDynamicRangeTypeValue:(int)arg1;
 - (void)setIsInFlight:(BOOL)arg1;
+- (void)unregisterForChanges;
+- (void)registerForChanges;
 - (BOOL)isCloudPlaceholder;
 - (BOOL)isStreamedVideo;
 - (id)thumbnailIdentifier;
@@ -388,8 +391,6 @@
 - (void)setLocationFromImageProperties:(id)arg1;
 - (void)setThumbnailDataFromImageProperties:(id)arg1;
 - (id)pathForOriginalFile;
-- (void)registerForChanges;
-- (void)unregisterForChanges;
 - (void)setEffectiveThumbnailIndex:(unsigned int)arg1;
 - (id)pathForLargeThumbnailFile;
 - (id)fileURLForThumbnailFile;
@@ -411,15 +412,15 @@
 - (id)assetURL;
 - (void)delete;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)location;
 - (void)willSave;
 - (void)prepareForDeletion;
 - (void)awakeFromSnapshotEvents:(unsigned int)arg1;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
-- (BOOL)isEditable;
 - (short)assetKind;
+- (BOOL)isEditable;
+- (id)location;
 - (BOOL)isVideo;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (void)setLocation:(id)arg1;

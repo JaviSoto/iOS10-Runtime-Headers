@@ -60,6 +60,9 @@
 - (BOOL)hasAttachments;
 - (void)setAttendees:(id)arg1;
 - (void)setAttachments:(id)arg1;
+- (id)organizer;
+- (BOOL)isAllDay;
+- (BOOL)validate:(id*)arg1;
 - (void)itemDidReplicateInNewCalendar:(id)arg1;
 - (id)moveToCalendar:(id)arg1 skipItem:(id)arg2;
 - (void)removeDetachedItem:(id)arg1;
@@ -138,11 +141,7 @@
 - (int)sequence;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
-- (id)organizer;
-- (BOOL)isAllDay;
-- (BOOL)validate:(id*)arg1;
 - (void)setAllDay:(BOOL)arg1;
-- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setCreationDate:(id)arg1;
@@ -150,6 +149,7 @@
 - (id)attachments;
 - (id)startDate;
 - (id)lastModifiedDate;
+- (id)location;
 - (id)uniqueID;
 - (void)setLocation:(id)arg1;
 - (id)init;

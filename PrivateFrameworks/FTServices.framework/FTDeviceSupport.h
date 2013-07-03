@@ -83,6 +83,7 @@
 - (int)deviceType;
 - (BOOL)supportsBackFacingCamera;
 - (BOOL)supportsFrontFacingCamera;
+- (BOOL)callingAvailable;
 - (id)telephoneNumber;
 - (id)userAgentString;
 - (id)productName;
@@ -110,7 +111,6 @@
 - (BOOL)iMessageBlocked;
 - (BOOL)iMessageAvailable;
 - (BOOL)callingBlocked;
-- (BOOL)callingAvailable;
 - (BOOL)commCenterDead;
 - (void)_registerForInternalCoreTelephonyNotifications;
 - (void)_carrierChanged;

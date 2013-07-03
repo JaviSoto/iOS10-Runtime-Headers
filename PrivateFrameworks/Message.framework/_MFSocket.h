@@ -41,7 +41,6 @@
 
 - (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (BOOL)usesOpportunisticSockets;
-- (BOOL)isCellularConnection;
 - (unsigned int)remotePortNumber;
 - (void)setEventHandler:(id)arg1;
 - (int)readBytes:(char *)arg1 length:(unsigned long)arg2;
@@ -64,6 +63,7 @@
 - (void)setClientCertificates:(id)arg1;
 - (id)clientCertificates;
 - (BOOL)isWritable;
+- (BOOL)isCellularConnection;
 - (BOOL)isReadable;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;

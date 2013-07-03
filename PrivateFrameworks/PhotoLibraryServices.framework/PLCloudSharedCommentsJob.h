@@ -21,10 +21,10 @@
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
 + (void)locallyProcessDeletedComments:(id)arg1 info:(id)arg2;
-+ (void)locallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
 + (id)directoryPathForInFlightComments:(BOOL)arg1;
 + (void)deleteSharedCommentFromServer:(id)arg1;
 + (void)publishCommentToServer:(id)arg1;
++ (void)locallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
 
 - (void)setAlbumGUID:(id)arg1;
 - (id)albumGUID;

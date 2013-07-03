@@ -32,8 +32,8 @@
 @property(retain) UIColor * actionsColor;
 @property(retain) UIImageView * chevron;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)textFieldChanged:(id)arg1;
 - (id)actionsColor;
@@ -61,6 +61,8 @@
 - (BOOL)allowsActions;
 - (void)updateWithPropertyItem:(id)arg1;
 - (void)setActionsColor:(id)arg1;
+- (void)setValueTextAttributes:(id)arg1;
+- (void)setLabelTextAttributes:(id)arg1;
 - (id)firstResponderItem;
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;
@@ -69,11 +71,12 @@
 - (void)dealloc;
 - (id)textField;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_updateView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
-- (void)_axUpdateAccessibilityForLabel;
-- (BOOL)_axIsEditing;
 - (void)_accessibilityLoadAccessibilityInformation;
+- (BOOL)_axIsEditing;
+- (void)_axUpdateAccessibilityForLabel;
 
 @end

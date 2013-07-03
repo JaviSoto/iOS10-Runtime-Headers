@@ -43,6 +43,8 @@
         double widthEnlargementScale; 
         double maxEnlargement; 
         float arrowMinZoom; 
+        float selectedArrowMinZoom; 
+        float brightnessRealistic; 
     } _style;
     struct { 
         double v[4][4]; 
@@ -60,12 +62,14 @@
     BOOL _showArrows;
     VKAnimation *_arrowCrossFadeAnimation;
     BOOL _showTraffic;
+    BOOL _forceRoutelineUpdate;
     int _stencilValue;
     float _contentScale;
     VGLRenderState *_renderState;
     VKTrafficDrawStyle *_trafficDrawStyle;
     unsigned int _targetDisplayStep;
     float _crossfadingDisplayStep;
+    BOOL _wasInRealisticMode;
 }
 
 @property BOOL selected;
@@ -75,13 +79,15 @@
 
 
 - (void)setShowTraffic:(BOOL)arg1;
-- (void)updateRouteLineStencilValue:(int)arg1;
 - (void)drawArrowsWithContext:(id)arg1;
-- (void)prepareToDrawWithContext:(id)arg1;
 - (void)setNeedsLayoutForPolyline:(id)arg1;
 - (void)_populateRenderBuffer:(id)arg1 matrix:(const union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; }*)arg2 halfWidth:(float)arg3 context:(id)arg4;
 - (void)_drawRealisticWithContext:(id)arg1;
 - (void)_drawRegularWithContext:(id)arg1;
+- (void)prepareToDrawWithContext:(id)arg1;
+- (void)updateRouteLineStencilValue:(int)arg1;
+- (void)drawWithContext:(id)arg1 tiles:(id)arg2 prepare:(BOOL)arg3 updateStencil:(BOOL)arg4;
+- (float)routeLineWidthForCamera:(id)arg1 canvasSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_releaseTextures;
 - (id)polyline;
 - (void)_didReceiveMemoryWarning;

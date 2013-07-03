@@ -16,7 +16,6 @@
     double _timeInterval;
     NSMutableDictionary *_targetPoints;
     int _i;
-    NSArray *_items;
 }
 
 @property(readonly) NSArray * items;

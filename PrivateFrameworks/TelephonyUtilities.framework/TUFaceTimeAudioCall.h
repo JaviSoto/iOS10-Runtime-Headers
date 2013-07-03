@@ -9,9 +9,9 @@
 }
 
 
-- (void)disconnect;
 - (int)service;
 - (id)isoCountryCode;
+- (void)disconnect;
 - (BOOL)needsManualInCallSounds;
 - (BOOL)managesAudioInterruptions;
 - (id)audioMode;
@@ -27,7 +27,6 @@
 - (id)initWithChat:(id)arg1;
 - (id)remoteParticipant;
 - (id)chat;
-- (double)startTime;
 - (BOOL)isOutgoing;
 - (BOOL)isConferenced;
 - (int)status;
@@ -42,5 +41,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)resume;
+- (double)startTime;
 
 @end

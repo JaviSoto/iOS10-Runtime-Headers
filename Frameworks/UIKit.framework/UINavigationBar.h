@@ -95,13 +95,12 @@
 + (id)_bottomColorForBackgroundImage:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 + (void)_initializeForIdiom:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)setLocked:(BOOL)arg1;
 - (id)items;
-- (void)setRightMargin:(float)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -110,6 +109,7 @@
 - (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setNeedsLayout;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRightMargin:(float)arg1;
 - (BOOL)isLocked;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -139,13 +139,13 @@
 - (void)showButtonsWithLeftTitle:(id)arg1 rightTitle:(id)arg2;
 - (void)drawBackButtonBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStyle:(int)arg2 pressed:(BOOL)arg3;
 - (unsigned int)animationDisabledCount;
-- (id)promptView;
 - (id)currentRightView;
 - (id)barTintColor;
 - (id)_titleTextColor;
 - (id)buttonItemTextColor;
 - (id)buttonItemShadowColor;
 - (void)setForceFullHeightInLandscape:(BOOL)arg1;
+- (int)_statusBarStyle;
 - (void)_cancelInProgressPushOrPop;
 - (void)setNavigationItems:(id)arg1;
 - (void)_cancelInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
@@ -178,7 +178,6 @@
 - (id)_effectiveBackIndicatorTransitionMaskImage;
 - (void)_backgroundFadeDidFinish:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4;
-- (int)barStyle;
 - (float)topItemAlpha;
 - (void)_barSizeDidChangeAndSoDidHeight:(BOOL)arg1;
 - (BOOL)_wantsLetterpressContent;
@@ -203,7 +202,7 @@
 - (void)_setIsContainedInPopover:(BOOL)arg1;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
-- (void)_updateNavigationBarItemsForStyle:(int)arg1;
+- (int)barStyle;
 - (BOOL)_wantsAdaptiveBackdrop;
 - (void)_updateNavigationBarItemsForStyle:(int)arg1 previousTintColor:(id)arg2;
 - (id)_currentRightViews;
@@ -241,7 +240,6 @@
 - (id)_popNavigationItemWithTransition:(int)arg1;
 - (void)_crossFadeToBarBackgroundImageForItem:(id)arg1;
 - (void)_startBarStyleAnimation:(int)arg1 withTintColor:(id)arg2;
-- (int)_currentBarStyle;
 - (void)_startPushAnimationFromItems:(id)arg1 fromBarStyle:(int)arg2;
 - (void)_resetBackgroundImageAsNecessary;
 - (void)_setBarStyle:(int)arg1;
@@ -275,10 +273,12 @@
 - (int)_defaultBarMetrics;
 - (id)currentBackButton;
 - (int)_activeBarMetrics;
+- (id)promptView;
 - (id)_shadowView;
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)_tintViewAppearanceDidChange;
 - (void)_propagateEffectiveBarTintColorWithPreviousColor:(id)arg1;
+- (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
 - (void)_updatePaletteBackgroundIfNecessary;
 - (void)_updateBackgroundImage;
 - (void)_layoutBackgroundViewConsideringAdaptiveBackdropAndChangedHeight:(BOOL)arg1;
@@ -286,6 +286,8 @@
 - (void)_updateBackgroundColor;
 - (void)_updateBackIndicatorImage;
 - (void)_setNeedsUpdateBackIndicatorImage:(BOOL)arg1;
+- (void)_updateNavigationBarItemsForStyle:(int)arg1;
+- (int)_currentBarStyle;
 - (void)_palette:(id)arg1 isAttaching:(BOOL)arg2 didComplete:(BOOL)arg3;
 - (id)_backgroundViewForPalette:(id)arg1;
 - (void)_setReversesButtonTextShadowOffsetWhenPressed:(BOOL)arg1;
@@ -325,6 +327,7 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)tintColorDidChange;
 - (void)invalidateIntrinsicContentSize;
+- (void)setTintColor:(id)arg1;
 - (BOOL)_canDrawContent;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;

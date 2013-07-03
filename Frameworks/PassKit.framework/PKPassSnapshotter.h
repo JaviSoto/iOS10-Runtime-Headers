@@ -2,10 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassLibrary;
+@class UIWindow, PKPassLibrary, NSObject<OS_dispatch_semaphore>;
 
 @interface PKPassSnapshotter : NSObject  {
     PKPassLibrary *_passLibrary;
+    NSObject<OS_dispatch_semaphore> *_snapshotSem;
+    UIWindow *_snapshotWindow;
+    float _scale;
 }
 
 + (void)purgeCacheOfPassSnapshotsWithUinqueID:(id)arg1;
@@ -13,9 +16,10 @@
 - (void)snapshotWithUniqueID:(id)arg1 completion:(id)arg2;
 - (void)snapshotWithPass:(id)arg1 completion:(id)arg2;
 - (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
-- (void)_cacheSnapshot:(id)arg1 withKey:(id)arg2;
-- (id)_snapshot:(id)arg1 resizedToSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_cachedSnapshotWithKey:(id)arg1;
+- (void)_cacheImage:(struct CGImage { }*)arg1 withKey:(id)arg2;
+- (void)_performSnapshot:(id)arg1;
+- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
+- (struct CGImage { }*)_cachedImageWithKey:(id)arg1;
 - (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
 - (id)init;
 - (void)dealloc;

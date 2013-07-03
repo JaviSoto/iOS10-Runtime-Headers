@@ -17,9 +17,9 @@
 - (int)rowID;
 - (struct { int x1; int x2; })CADObjectID;
 - (int)entityType;
-- (id)URIRepresentation;
 - (id)entityName;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)URIRepresentation;
 - (BOOL)isTemporary;
 - (id)stringRepresentation;
 - (BOOL)isEqual:(id)arg1;

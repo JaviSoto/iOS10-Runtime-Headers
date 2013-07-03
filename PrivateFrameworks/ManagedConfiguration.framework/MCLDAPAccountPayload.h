@@ -36,8 +36,8 @@
 - (id)subtitle1Label;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)title;
 - (void)setPassword:(id)arg1;
+- (id)title;
 - (void)setUsername:(id)arg1;
 - (id)username;
 - (id)accountDescription;

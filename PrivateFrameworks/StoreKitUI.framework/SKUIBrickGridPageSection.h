@@ -35,7 +35,6 @@
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
-- (int)coloringOffset;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

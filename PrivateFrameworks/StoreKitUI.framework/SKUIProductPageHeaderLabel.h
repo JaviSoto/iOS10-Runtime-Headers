@@ -10,8 +10,10 @@
     NSString *_contentRating;
     UIImage *_contentRatingImage;
     UIColor *_ratingColor;
+    BOOL _isPad;
 }
 
+@property BOOL isPad;
 @property(copy) NSString * text;
 @property(retain) UIColor * textColor;
 @property(retain) NSString * contentRating;
@@ -23,6 +25,8 @@
 - (struct __CTFramesetter { }*)_newTextFramesetter;
 - (id)_imageForContentRating:(id)arg1;
 - (void)setRatingColor:(id)arg1;
+- (void)setIsPad:(BOOL)arg1;
+- (BOOL)isPad;
 - (void)setContentRating:(id)arg1;
 - (id)contentRating;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

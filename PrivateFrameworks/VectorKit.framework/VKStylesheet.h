@@ -37,7 +37,6 @@
 
 - (unsigned int)updateStamp;
 - (BOOL)canSelectIcons;
-- (int)targetMapDisplayStyle;
 - (id)defaultGenericShieldStyle;
 - (float)targetBlendingFactor;
 - (float)shieldBrightnessForDisplayStyle:(int)arg1;
@@ -51,15 +50,16 @@
 - (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4;
 - (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3;
 - (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2;
+- (int)targetMapDisplayStyle;
 - (void)setCanSelectIcons:(BOOL)arg1;
-- (float)blendingFactor;
-- (void)setBlendingFactor:(float)arg1;
 - (void)setTargetMapDisplayStyle:(int)arg1;
 - (void)prepareStyleVariantsForMapDisplayStyle:(int)arg1;
 - (id)styleGlobalProperties;
 - (int)mapDisplayStyle;
 - (BOOL)supportsMapDisplayStyle:(int)arg1;
 - (int)targetDisplay;
+- (void)setBlendingFactor:(float)arg1;
+- (float)blendingFactor;
 - (void)setTargetDisplay:(int)arg1;
 - (id)sheetName;
 - (id)init;

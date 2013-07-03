@@ -5,22 +5,32 @@
 @class NSString, SSURLConnectionRequest;
 
 @interface RadioSearchRequest : RadioRequest  {
-    unsigned int _numberOfSearchResults;
     SSURLConnectionRequest *_request;
-    NSString *_searchResultCategory;
+    BOOL _excludeFeaturedStations;
     NSString *_searchTerm;
+    int _searchCategory;
+    unsigned int _numberOfSearchResults;
+    unsigned int _searchResultsOffset;
 }
 
-@property(copy) NSString * searchResultCategory;
+@property(readonly) NSString * searchTerm;
+@property int searchCategory;
 @property unsigned int numberOfSearchResults;
+@property unsigned int searchResultsOffset;
+@property BOOL excludeFeaturedStations;
 
 
 - (void)setNumberOfSearchResults:(unsigned int)arg1;
-- (void)setSearchResultCategory:(id)arg1;
-- (id)searchResultCategory;
+- (void)setExcludeFeaturedStations:(BOOL)arg1;
+- (BOOL)excludeFeaturedStations;
+- (void)setSearchResultsOffset:(unsigned int)arg1;
+- (unsigned int)searchResultsOffset;
 - (unsigned int)numberOfSearchResults;
+- (void)setSearchCategory:(int)arg1;
+- (int)searchCategory;
 - (void)startWithSearchCompletionHandler:(id)arg1;
 - (id)initWithSearchTerm:(id)arg1;
+- (id)searchTerm;
 - (id)init;
 - (void).cxx_destruct;
 - (void)cancel;

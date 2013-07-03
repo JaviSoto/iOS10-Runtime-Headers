@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageHeaderViewDelegate>, UIImage, SKUIProductPageItem, SKUIFacebookLikeStatus, SKUIClientContext, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SKUIItem, UIPopoverController, SKUILoadURLOperation, SKUIItemArtworkContext, NSOperationQueue;
+@class <SKUIProductPageHeaderViewDelegate>, UIImage, SSVLoadURLOperation, SKUIProductPageItem, SKUIFacebookLikeStatus, SKUIClientContext, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SKUIItem, UIPopoverController, SKUIItemArtworkContext, NSOperationQueue;
 
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
     UIPopoverController *_activityPopoverController;
@@ -14,8 +14,8 @@
     UIImage *_iconImage;
     SKUIItem *_item;
     long long _itemIdentifier;
-    SKUILoadURLOperation *_loadIconOperation;
-    SKUILoadURLOperation *_loadUberOperation;
+    SSVLoadURLOperation *_loadIconOperation;
+    SSVLoadURLOperation *_loadUberOperation;
     NSOperationQueue *_operationQueue;
     UIImage *_placeholderImage;
     SKUIProductPageItem *_productPageItem;

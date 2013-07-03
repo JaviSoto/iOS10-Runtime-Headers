@@ -8,7 +8,6 @@
     struct __CFSet { } *dictionary;
     NSData *data;
     int size;
-    int mtime;
 }
 
 

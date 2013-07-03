@@ -31,7 +31,6 @@
 @property int baseWritingDirection;
 
 
-- (void)reset;
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
@@ -65,6 +64,7 @@
 - (id)resultsForLogging;
 - (void)setFileTransferGUIDs:(id)arg1;
 - (id)fileTransferGUIDs;
+- (void)reset;
 - (int)baseWritingDirection;
 - (id)backgroundColor;
 - (id)foregroundColor;

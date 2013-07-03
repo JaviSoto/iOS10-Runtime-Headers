@@ -60,6 +60,7 @@
         double z; 
     } _previousReference;
     double _previousCourse;
+    double _previousOffset;
     struct VKCircularBuffer<double> { struct vector<double, vk_allocator<double> > { double *x_1_1_1; double *x_1_1_2; struct __compressed_pair<double *, vk_allocator<double> > { double *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; boolx3; double x4; } *_rotationRateBuffer;
     double _previousStepTime;
     VKAnimation *_tapZoomAnimation;
@@ -236,6 +237,7 @@
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setZoomScale:(double)arg1;
 - (double)zoomScale;
+- (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

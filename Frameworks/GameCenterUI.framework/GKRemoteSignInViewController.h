@@ -12,6 +12,7 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 
+- (void)populateInitialStateForRemoteView:(id)arg1;
 - (BOOL)serviceNeedsLocalPlayer;
 - (void)remoteViewControllerIsCanceling;
 

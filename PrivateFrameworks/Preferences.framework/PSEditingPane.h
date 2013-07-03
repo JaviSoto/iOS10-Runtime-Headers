@@ -18,13 +18,17 @@
 - (void)addNewValue;
 - (BOOL)wantsNewButton;
 - (id)specifierLabel;
+- (id)scrollViewToBeInsetted;
 - (BOOL)handlesDoneButton;
 - (id)preferenceValue;
 - (void)viewDidBecomeVisible;
 - (id)preferenceSpecifier;
 - (void)setPreferenceValue:(id)arg1;
 - (void)setPreferenceSpecifier:(id)arg1;
+- (void)layoutInsetContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)requiresKeyboard;
+- (void)insetContent;
+- (BOOL)shouldInsetContent;
 - (BOOL)changed;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;

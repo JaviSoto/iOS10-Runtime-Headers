@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILabel, <ABPropertyCellDelegate>, ABPropertyAction, ABTransportButton;
+@class UILabel, <ABPropertyCellDelegate>, NSDictionary, ABPropertyAction, ABTransportButton;
 
 @interface ABFaceTimeCell : ABContactCell  {
     UILabel *_faceTimeLabel;
@@ -11,6 +11,7 @@
     ABPropertyAction *_transportAction1;
     ABPropertyAction *_transportAction2;
     <ABPropertyCellDelegate> *_delegate;
+    NSDictionary *_labelTextAttributes;
 }
 
 @property(retain) UILabel * faceTimeLabel;
@@ -19,6 +20,7 @@
 @property(retain) ABPropertyAction * transportAction1;
 @property(retain) ABPropertyAction * transportAction2;
 @property <ABPropertyCellDelegate> * delegate;
+@property(copy) NSDictionary * labelTextAttributes;
 
 + (BOOL)requiresConstraintBasedLayout;
 
@@ -31,6 +33,8 @@
 - (id)transportIcon1;
 - (id)faceTimeLabel;
 - (void)transportButtonClicked:(id)arg1;
+- (void)setLabelTextAttributes:(id)arg1;
+- (id)labelTextAttributes;
 - (void)performDefaultAction;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

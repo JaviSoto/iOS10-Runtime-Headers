@@ -67,9 +67,9 @@
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (void)_playSystemSound:(unsigned long)arg1;
-- (int)_graphicsQuality;
 - (void)endGeneratingDeviceOrientationNotifications;
 - (void)beginGeneratingDeviceOrientationNotifications;
+- (int)_graphicsQuality;
 - (BOOL)isProximityMonitoringEnabled;
 - (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (id)systemVersion;

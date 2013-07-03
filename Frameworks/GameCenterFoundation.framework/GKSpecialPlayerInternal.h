@@ -10,11 +10,11 @@
 - (id)playerID;
 - (void)setValidPieces:(unsigned char)arg1;
 - (unsigned char)validPieces;
+- (id)compositeName;
 - (id)photos;
 - (void)setPhotos:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (id)alias;
-- (id)displayName;
 - (BOOL)isLoaded;
 
 @end

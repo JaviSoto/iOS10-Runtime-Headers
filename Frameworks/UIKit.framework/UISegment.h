@@ -40,8 +40,8 @@
 @property(readonly) UIView * badgeView;
 
 + (id)_backgroundImageWithStorage:(id)arg1 style:(int)arg2 mini:(BOOL)arg3 state:(unsigned int)arg4 position:(unsigned int)arg5 drawMode:(int*)arg6 defaultBlock:(id)arg7;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPosition:(unsigned int)arg1;
@@ -52,6 +52,7 @@
 - (id)viewForBaselineLayout;
 - (float)_idealWidth;
 - (id)infoName;
+- (void)_forceInfoDisplay;
 - (void)animateRemoveForWidth:(float)arg1;
 - (void)animateAdd:(BOOL)arg1;
 - (void)setShowDivider:(BOOL)arg1;
@@ -70,7 +71,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingInsets;
 - (void)_invalidateInfoConstraints;
-- (void)_forceInfoDisplay;
 - (void)_setEnabledAppearance:(BOOL)arg1;
 - (id)_currentOptionsStyleTextShadowColor;
 - (id)_currentOptionsStyleTextColor;
@@ -94,7 +94,9 @@
 - (void)setBadgeValue:(id)arg1;
 - (void)updateConstraints;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)isSelected;
 - (int)controlSize;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)setControlSize:(int)arg1;
@@ -106,8 +108,6 @@
 - (void)setTintColor:(id)arg1;
 - (id)_tintColorArchivingKey;
 - (BOOL)useBlockyMagnificationInClassic;
-- (BOOL)isHighlighted;
-- (BOOL)isSelected;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITextLayout : NSObject  {
+@interface SKUITextLayout : NSObject <SKUICachedLayout> {
     struct __CTFramesetter { } *_framesetter;
     BOOL _requiresTruncation;
     struct CGSize { 

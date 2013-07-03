@@ -45,10 +45,10 @@
 - (void)copy:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (id)initWithView:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
 
 @end

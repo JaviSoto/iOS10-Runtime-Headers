@@ -23,25 +23,23 @@
 - (void)_viewAnimatedOut;
 - (float)_slideOutAnimationDuration;
 - (float)_slideOutAnimationDelay;
-- (void)animateDisplayIn:(float)arg1 middleDelay:(float)arg2;
-- (void)performAnimateDisplayIn;
-- (void)prepareToAnimateDisplayIn;
+- (void)_performAnimateDisplayIn;
 - (BOOL)shouldShowBottomBar;
 - (BOOL)isShowingWallpaper;
 - (id)newBottomBar;
 - (id)newTopBar;
 - (BOOL)hasTranslucentBackground;
 - (BOOL)viewIsReadyToBeRemoved;
-- (void)finishedAnimatingOut;
-- (void)finishedAnimatingIn;
 - (void)animateViewOut;
+- (void)animateViewIn;
 - (void)viewWillAnimateOut;
+- (void)viewWillAnimateIn;
+- (void)finishedAnimatingIn;
 - (BOOL)isSlidingViewController;
 - (void)dealloc;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
 - (id)backgroundView;
 
 @end

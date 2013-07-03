@@ -9,8 +9,8 @@
     int _count;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)count;
 - (void)dealloc;

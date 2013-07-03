@@ -68,14 +68,12 @@
 - (void)setAltitude:(int)arg1;
 - (BOOL)hasAltitude;
 - (BOOL)hasTimestamp;
-- (BOOL)hasType;
 - (id)latLng;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setLatLng:(id)arg1;
+- (BOOL)hasType;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (void)copyTo:(id)arg1;
-- (id)initWithLocation:(id)arg1;
-- (double)timestamp;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
 - (double)heading;
@@ -84,7 +82,9 @@
 - (double)verticalAccuracy;
 - (int)altitude;
 - (void)setType:(int)arg1;
+- (id)initWithLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

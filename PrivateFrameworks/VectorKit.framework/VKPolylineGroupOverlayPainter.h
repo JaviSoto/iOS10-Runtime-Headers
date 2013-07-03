@@ -28,6 +28,5 @@
 - (void)stylesheetDidChange;
 - (BOOL)showTraffic;
 - (void)dealloc;
-- (void)setBrightness:(float)arg1;
 
 @end

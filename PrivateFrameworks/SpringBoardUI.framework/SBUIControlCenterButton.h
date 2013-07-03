@@ -5,7 +5,6 @@
 @class <SBUIControlCenterButtonDelegate>, UIImage;
 
 @interface SBUIControlCenterButton : UIButton <SBUIControlCenterControl> {
-    int _maskUpdatesNeeded;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -16,18 +15,20 @@
     UIImage *_bgMaskImage;
     UIImage *_glyphMaskImage;
     UIImage *_selectedGlyphMaskImage;
+    float _naturalHeight;
 }
 
 @property <SBUIControlCenterButtonDelegate> * delegate;
 @property(setter=setBGMaskImage:,retain) UIImage * bgMaskImage;
 @property(retain) UIImage * glyphMaskImage;
 @property(retain) UIImage * selectedGlyphMaskImage;
+@property float naturalHeight;
 
 + (id)roundRectButton;
 + (id)circularButton;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })visibleContentInsets;
 + (id)_roundRectBackgroundImage;
-+ (id)_buttonWithBGImage:(id)arg1 glyphImage:(id)arg2;
++ (id)_buttonWithBGImage:(id)arg1 glyphImage:(id)arg2 naturalHeight:(float)arg3;
 + (id)_circleBackgroundImage;
 + (id)roundRectButtonWithGlyphImage:(id)arg1;
 + (id)circularButtonWithGlyphImage:(id)arg1;
@@ -35,10 +36,9 @@
 - (struct CGSize { float x1; float x2; })visibleContentSize;
 - (void)_updateDisabledImage;
 - (void)_updateForStateChange;
-- (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
+- (void)setNaturalHeight:(float)arg1;
 - (void)_updateHighlightImage;
 - (void)_updateNormalImage;
-- (BOOL)_drawingAsSelected;
 - (id)selectedGlyphMaskImage;
 - (id)glyphMaskImage;
 - (id)bgMaskImage;
@@ -47,12 +47,16 @@
 - (void)setBGMaskImage:(id)arg1;
 - (void)_pressAction;
 - (void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 glyphImage:(id)arg3;
+- (void)_setBackgroundImage:(id)arg1 naturalHeight:(float)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 glyphImage:(id)arg3 naturalHeight:(float)arg4;
 - (void)controlConfigurationDidChangeForState:(int)arg1;
 - (void)controlAppearanceDidChangeForState:(int)arg1;
 - (int)_currentState;
+- (BOOL)_drawingAsSelected;
+- (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)naturalHeight;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

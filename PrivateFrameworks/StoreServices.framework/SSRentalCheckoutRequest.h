@@ -9,17 +9,21 @@
     long long _downloadIdentifier;
     NSNumber *_rentalKeyIdentifier;
     NSArray *_sinfs;
+    BOOL _shouldValidateRentalInfo;
 }
 
 @property(readonly) NSArray * sinfs;
 @property(readonly) NSNumber * accountIdentifier;
 @property(readonly) NSNumber * rentalKeyIdentifier;
 @property(readonly) long long downloadIdentifier;
+@property BOOL shouldValidateRentalInfo;
 
 
 - (id)initWithDownloadIdentifier:(long long)arg1;
 - (id)sinfs;
 - (long long)downloadIdentifier;
+- (void)setShouldValidateRentalInfo:(BOOL)arg1;
+- (BOOL)shouldValidateRentalInfo;
 - (id)rentalKeyIdentifier;
 - (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
 - (id)initWithSinfs:(id)arg1;

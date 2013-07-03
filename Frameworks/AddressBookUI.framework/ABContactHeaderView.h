@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, UITableView, UILabel, UIView, NSDictionary, <ABPresenterDelegate>, ABContactPhotoView, UIColor, CNContact;
+@class NSArray, NSString, UITableView, UILabel, UIView, NSDictionary, <ABPresenterDelegate>, ABContactPhotoView, UIColor, CNContact;
 
 @interface ABContactHeaderView : UIView <UITableViewDelegate, UITableViewDataSource> {
     ABContactPhotoView *_photoView;
@@ -18,6 +18,8 @@
     NSDictionary *_nameTextAttributes;
     NSDictionary *_taglineTextAttributes;
     NSArray *_editingGroups;
+    NSString *_alternateName;
+    NSString *_message;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -33,14 +35,17 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
 @property(getter=isEditing) BOOL editing;
 @property(retain) NSArray * editingGroups;
+@property(retain) NSString * alternateName;
+@property(retain) NSString * message;
 
 + (BOOL)requiresConstraintBasedLayout;
 
+- (void)setAlternateName:(id)arg1;
 - (id)editingGroups;
 - (id)taglineTextAttributes;
 - (id)nameTextAttributes;
-- (void)updateBackdropMasks;
 - (id)selectEditingGroupAtIndex:(unsigned int)arg1;
+- (void)saveContactPhoto;
 - (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (void)setEditingGroups:(id)arg1;
@@ -53,18 +58,26 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
 - (void)setTaglineTextAttributes:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
+- (void)menuWillHide:(id)arg1;
 - (void)updateFontSizes;
 - (id)_taglineStringForContact:(id)arg1;
+- (void)handleNameLabelLongPress:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (BOOL)isEditing;
 - (void)setBackgroundColor:(id)arg1;
+- (id)alternateName;
 - (id)backgroundColor;
+- (id)message;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)setNeedsUpdateConstraints;
+- (void)copy:(id)arg1;
 - (void)updateConstraints;
 - (void)setEditing:(BOOL)arg1;
 - (void)willMoveToSuperview:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

@@ -80,7 +80,6 @@
 - (BOOL)addAttachmentData:(id)arg1 typeIdentifier:(id)arg2 filename:(id)arg3;
 - (BOOL)addAttachmentURL:(id)arg1 withAlternateFilename:(id)arg2;
 - (void)setMessageComposeDelegate:(id)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;

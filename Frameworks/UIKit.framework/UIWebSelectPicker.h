@@ -19,8 +19,8 @@
 @property(retain) NSArray * _cachedItems;
 @property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)_singleSelectionItem;

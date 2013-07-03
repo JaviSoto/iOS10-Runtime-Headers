@@ -80,6 +80,7 @@
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned int)arg2;
 
 - (BOOL)isPaused;
+- (void)setKind:(id)arg1;
 - (id)init;
 - (id)userInfo;
 - (id)localizedDescription;
@@ -109,7 +110,6 @@
 - (BOOL)isOld;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (id)acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
-- (void)setKind:(id)arg1;
 - (BOOL)isIndeterminate;
 - (id)pausingHandler;
 - (id)cancellationHandler;

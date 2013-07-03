@@ -29,7 +29,6 @@
     QLPDFHanderDelegateForwarder *_forwarder;
 }
 
-+ (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
 
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
@@ -56,10 +55,10 @@
 - (id)pdfPreviewData;
 - (int)airPlayMode;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (void)setPreviewMode:(int)arg1;
 - (void)cancelLoad;
 - (void)loadWithHints:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;

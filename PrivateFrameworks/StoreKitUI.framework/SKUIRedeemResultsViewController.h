@@ -2,16 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, SKUITextBoxView, NSMutableArray, SKUIGiftItemView, SKUIRedeemResultMessageView, SKUIItemStateCenter, UITableView, UIButton, SKUITextLayout, SKUIRedeem, NSOperationQueue, UIImageView;
+@class SKUIItemStateCenter, NSOperationQueue, UIImageView, SKUITextBoxView, UIButton, SKUIGiftItemView, UIImage, SKUITextLayout, SKUIRedeemResultMessageView, SKUIRedeem;
 
-@interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, UITableViewDataSource, UITableViewDelegate> {
+@interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
     UIButton *_anotherButton;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInsetAdjustments;
     BOOL _extendedMessageIsExpanded;
     SKUITextLayout *_extendedMessageTextLayout;
     SKUITextBoxView *_extendedMessageView;
@@ -23,9 +17,6 @@
     NSOperationQueue *_operationQueue;
     SKUIRedeem *_redeem;
     int _redeemCategory;
-    UIImageView *_redeemSuccessImageView;
-    NSMutableArray *_sections;
-    UITableView *_tableView;
 }
 
 @property(readonly) SKUIRedeem * redeem;
@@ -36,36 +27,29 @@
 - (void)setRedeemCategory:(int)arg1;
 - (int)redeemCategory;
 - (id)initWithRedeem:(id)arg1;
-- (id)_anotherButtonSection;
+- (void)redeemResultsView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)_linksSection;
 - (id)_extendedMessageViewSection;
+- (id)_headerImageViewSection;
+- (id)_anotherButtonSection;
+- (id)_messageViewSection;
 - (id)_itemViewSection;
 - (id)_resultImageViewSection;
-- (id)_messageViewSection;
-- (id)_headerImageViewSection;
+- (id)_emptySection;
 - (void)_openAction:(id)arg1;
-- (void)_setItemImage:(id)arg1;
 - (void)_extendedMessageAction:(id)arg1;
 - (void)_redeemAnotherAction:(id)arg1;
 - (void)_reloadResultViewMessage;
-- (void)_redeemPreflightImagesDidLoad:(id)arg1;
-- (void)_reloadSectionsIfNecessary;
+- (void)_setItemImage:(id)arg1;
 - (void)_setHeaderImage:(id)arg1;
-- (id)_itemImage;
 - (id)_itemView;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
+- (void)_reloadSections;
 - (void)_doneAction:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (id)_tableView;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)_item;
 
 @end

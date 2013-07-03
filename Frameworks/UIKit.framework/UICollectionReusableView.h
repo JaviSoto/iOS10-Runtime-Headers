@@ -34,8 +34,8 @@
 - (void)_setLayoutAttributes:(id)arg1;
 - (BOOL)_disableRasterizeInAnimations;
 - (void)_setBaseLayoutAttributes:(id)arg1;
-- (void)applyLayoutAttributes:(id)arg1;
 - (id)_collectionView;
+- (void)applyLayoutAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (id)reuseIdentifier;
 - (id)initWithCoder:(id)arg1;

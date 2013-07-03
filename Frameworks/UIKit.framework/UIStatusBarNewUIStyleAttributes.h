@@ -18,6 +18,7 @@
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (id)initWithRequest:(id)arg1;
 - (id)newForegroundStyleWithHeight:(float)arg1;
+- (int)legibilityStyle;
 - (BOOL)isTranslucent;
 
 @end

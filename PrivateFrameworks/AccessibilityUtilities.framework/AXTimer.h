@@ -26,6 +26,7 @@
 + (id)timerTargettingMainAccessQueue;
 + (void)initialize;
 
+- (BOOL)isPending;
 - (void)setAutomaticallyCancelPendingBlockUponSchedulingNewBlock:(BOOL)arg1;
 - (void)afterDelay:(double)arg1 processReadingBlock:(id)arg2;
 - (id)dispatchTimer;
@@ -43,7 +44,6 @@
 - (void)setAccessQueueIsExternal:(BOOL)arg1;
 - (void)setAccessQueue:(id)arg1;
 - (id)initWithTargetAccessQueue:(id)arg1;
-- (BOOL)isPending;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
 - (BOOL)isActive;
 - (id)label;

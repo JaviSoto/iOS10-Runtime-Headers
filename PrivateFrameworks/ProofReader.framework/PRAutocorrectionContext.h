@@ -7,12 +7,14 @@
 
 + (id)autocorrectionContextOfType:(unsigned int)arg1;
 
-- (void)reset;
+- (double)validSequenceCorrectionThreshold;
+- (void)setValidSequenceCorrectionThreshold:(double)arg1;
 - (id)prefixes;
 - (void)addInputCharacter:(unsigned short)arg1 geometryData:(id)arg2;
 - (id)removedModifications;
 - (id)addedModifications;
 - (id)currentModifications;
 - (void)addInputCharacter:(unsigned short)arg1 geometryModel:(void*)arg2 geometryData:(id)arg3;
+- (void)reset;
 
 @end

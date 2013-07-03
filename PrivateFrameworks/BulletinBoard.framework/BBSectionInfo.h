@@ -67,6 +67,7 @@
 - (void)_dissociateDataProviderSectionInfo:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;
 - (void)setSubsectionPriority:(int)arg1;
+- (int)subsectionPriority;
 - (void)_addSubsection:(id)arg1;
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;
 - (BOOL)displaysCriticalBulletins;
@@ -104,7 +105,6 @@
 - (id)effectiveSectionInfo;
 - (id)effectiveSectionInfoWithFactoryInfo:(id)arg1;
 - (id)factorySectionID;
-- (int)subsectionPriority;
 - (BOOL)showsInLockScreen;
 - (unsigned int)alertType;
 - (BOOL)showsInNotificationCenter;

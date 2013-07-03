@@ -15,6 +15,7 @@
 @property(readonly) float capHeight;
 @property(readonly) float xHeight;
 @property(readonly) float lineHeight;
+@property(readonly) float leading;
 
 + (id)defaultFontForUsage:(id)arg1;
 + (id)preferredFontForUsage:(id)arg1 contentSizeCategoryName:(id)arg2;
@@ -47,8 +48,8 @@
 + (id)_ui_bulletFontForFont:(id)arg1;
 + (void)ab_setIgnoreUserFontSize:(BOOL)arg1;
 + (BOOL)_shouldUseDefaultFont;
++ (BOOL)ab_preferredContentSizeCategoryIsAccessibilityCategory;
 + (id)ab_preferredContentSizeCategoryName;
-+ (id)ab_preferredFontForTextStyle:(id)arg1 emphasized:(BOOL)arg2;
 + (id)ab_preferredFontForTextStyle:(id)arg1;
 
 - (unsigned int)mostCompatibleStringEncoding;
@@ -110,6 +111,8 @@
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)ab_italicFont;
+- (id)ab_boldFont;
 - (struct __CTFont { }*)_gkCTFont;
 - (struct CGPoint { float x1; float x2; })mf_originPointFromMidlinePoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })mf_caplinePointFromBaselinePoint:(struct CGPoint { float x1; float x2; })arg1;

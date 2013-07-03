@@ -85,7 +85,7 @@
 - (void)_logCurrentError;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (void)_updateProfilingLevel;
-- (void)_handleDatabaseDeletion;
+- (void)_onBackgroundQueueHandleDatabaseDeletion;
 - (id)_shortDescription;
 - (BOOL)_isSharedMediaLibraryDatabase;
 - (void)setProfilingLevel:(int)arg1;
@@ -122,9 +122,9 @@
 - (id)databasePath;
 - (BOOL)performTransactionWithBlock:(id)arg1;
 - (BOOL)isOpen;
-- (void)setReadOnly:(BOOL)arg1;
 - (BOOL)isReadOnly;
 - (void)flush;
+- (void)setReadOnly:(BOOL)arg1;
 - (id)init;
 - (BOOL)close;
 - (BOOL)open;

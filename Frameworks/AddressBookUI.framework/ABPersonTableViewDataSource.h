@@ -146,8 +146,8 @@
 @property BOOL badgeEmailPropertiesForMailVIP;
 @property(retain) UITableViewCell * partiallySelectedCell;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (BOOL)badgeEmailPropertiesForMailVIP;
@@ -188,7 +188,6 @@
 - (void)reloadDeleteButton;
 - (void)reloadPreferredPersonForName;
 - (void)reloadNameData;
-- (void)setAllowsDeletion:(BOOL)arg1;
 - (void)setShouldShowContactSourcesStringAsMessage:(BOOL)arg1;
 - (void)updateForConferencingAvailabilityChange;
 - (void)updateLinkingUI:(id)arg1;
@@ -319,12 +318,10 @@
 - (void)_enumerateContextPointersForProperty:(int)arg1 usingBlock:(id)arg2;
 - (void)propertyGroup:(id*)arg1 orActions:(id*)arg2 forSection:(int)arg3 whenEditing:(BOOL)arg4;
 - (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
-- (void)setAlternateName:(id)arg1;
 - (BOOL)isAttributionEnabled;
 - (id)attribution;
 - (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
 - (id)pickersDelegate;
-- (id)linkingDelegate;
 - (BOOL)isPinning;
 - (id)lastActiveMultiCellIndexPath;
 - (void)updateByAddingFieldForProperty:(int)arg1 whenEditing:(BOOL)arg2;
@@ -345,7 +342,6 @@
 - (id)messageDetailFont;
 - (id)messageFont;
 - (id)messageDetail;
-- (int)primaryProperty;
 - (id)namePropertyGroup;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -357,6 +353,8 @@
 - (BOOL)isInFullEditingMode;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
+- (void)setAllowsDeletion:(BOOL)arg1;
+- (id)linkingDelegate;
 - (void)endEditingTransactions;
 - (id)namePropertyGroup:(id)arg1 primaryValueForProperty:(int)arg2;
 - (int)insertionProperty;
@@ -369,12 +367,14 @@
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsSharing;
+- (int)primaryProperty;
 - (BOOL)allowsActions;
 - (id)personHeaderView;
+- (void)setAlternateName:(id)arg1;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;

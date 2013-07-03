@@ -31,8 +31,9 @@
 - (id)_existingAccountSiblingsForHandle:(id)arg1;
 - (void)reassessIMHandleForUniqueName:(id)arg1;
 - (int)nameStyle;
-- (void)_clearChatSiblingsForGUID:(id)arg1;
-- (void)_clearAccountSiblingsForGUID:(id)arg1;
+- (BOOL)_buildingChatSiblings;
+- (void)_clearChatSiblingsForGUID:(id)arg1 handle:(id)arg2;
+- (void)_clearAccountSiblingsForGUID:(id)arg1 handle:(id)arg2;
 - (void)unregisterIMHandle:(id)arg1;
 - (void)registerIMHandle:(id)arg1;
 - (void)clearSiblingCacheForIMHandle:(id)arg1;

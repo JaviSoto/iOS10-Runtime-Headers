@@ -6,6 +6,7 @@
 
 @interface AFSpeechRecorder : NSObject <AVVoiceControllerRecordDelegate, AFSpeechCapturing> {
     <AFSpeechCapturingDelegate> *_delegate;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_queue> *_queue;
     AVVoiceController *_voiceController;
     NSObject<OS_dispatch_source> *_powerUpdateTimer;
@@ -25,7 +26,9 @@
 @property <AFSpeechCapturingPowerDelegate> * powerDelegate;
 
 
+- (void)setPowerDelegate:(id)arg1;
 - (id)powerDelegate;
+- (void)startUpdatingPower;
 - (void)prepareSpeechCapture;
 - (void)stopUpdatingPower;
 - (void)_setAlertsIfNeeded;
@@ -33,12 +36,12 @@
 - (int)_voiceActivationMode;
 - (id)_currentDeviceContext;
 - (id)_voiceController;
+- (float)peakPower;
+- (void)updatePower;
 - (void)stopSpeechCapture;
 - (void)cancelSpeechCaptureSuppressingAlert:(BOOL)arg1;
-- (void)startUpdatingPower;
 - (void)startSpeechCaptureForMode:(int)arg1 useAutomaticEndpointing:(BOOL)arg2;
 - (void)setSpeechEvent:(int)arg1 deviceIdentifier:(id)arg2;
-- (void)setPowerDelegate:(id)arg1;
 - (void)releaseAudioSession;
 - (void)voiceControllerEndRecordInterruption:(id)arg1;
 - (void)voiceControllerBeginRecordInterruption:(id)arg1;
@@ -54,5 +57,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)_setMode:(int)arg1;
+- (void)preheat;
+- (float)averagePower;
 
 @end

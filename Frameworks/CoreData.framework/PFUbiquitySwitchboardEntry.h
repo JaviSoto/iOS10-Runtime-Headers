@@ -32,7 +32,7 @@
 @property(readonly) PFUbiquityFilePresenter * localFilePresenter;
 @property(readonly) PFUbiquityContainerMonitor * monitor;
 @property(readonly) PFUbiquitySetupAssistant * finishingSetupAssistant;
-@property(readonly) PFUbiquitySwitchboardEntryMetadata * metadata;
+@property(retain) PFUbiquitySwitchboardEntryMetadata * metadata;
 
 
 - (id)finishingSetupAssistant;
@@ -61,9 +61,10 @@
 - (void)setUbiquityRootLocation:(id)arg1;
 - (id)metaForStoreName:(id)arg1;
 - (id)cacheWrapperForStoreName:(id)arg1;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
 - (void)unregisterPersistentStore:(id)arg1;
+- (id)localPeerID;
+- (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)storeName;
 - (id)init;

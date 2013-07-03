@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKObjectPool, NSString, NSCache, VKPShieldVariant, NSDictionary;
+@class VKObjectPool, NSString, NSCache, VKPShieldVariant, NSDictionary, NSMutableDictionary;
 
 @interface VKShieldArtwork : NSObject <VKObjectPoolObject> {
     float _scale;
@@ -29,16 +29,15 @@
         float x; 
         float y; 
     } _center;
+    NSMutableDictionary *_textSpecificArtworks;
 }
-
-@property(readonly) struct CGSize { float x1; float x2; } size;
 
 
 - (id)imageWithShieldText:(id)arg1;
+- (void)setTextSpecificArtwork:(id)arg1 forStrings:(id)arg2;
 - (id)initWithPackedVariant:(id)arg1 imageAtlas:(id)arg2 quadSize:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4 extraScale:(float)arg5;
 - (struct CGImage { }*)newImageWithShieldText:(id)arg1 centerPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (void)setPool:(id)arg1 withKey:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
 - (void)dealloc;
 - (id).cxx_construct;
 

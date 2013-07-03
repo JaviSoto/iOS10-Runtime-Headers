@@ -38,8 +38,8 @@
 @property(getter=_mescalSession,setter=_setMescalSession:,retain) SUMescalSession * _mescalSession;
 @property(getter=_performanceMetrics,setter=_setPerformanceMetrics:,retain) ISURLRequestPerformance * _performanceMetrics;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setMescalSession:(id)arg1;
 - (id)_mescalSession;

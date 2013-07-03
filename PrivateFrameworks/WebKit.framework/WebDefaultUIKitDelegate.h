@@ -19,6 +19,7 @@
 - (id)checkSpellingOfString:(id)arg1;
 - (void)webViewDidLayout:(id)arg1;
 - (void)deleteFromInput;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didHideFullScreenForPlugInView:(id)arg2;

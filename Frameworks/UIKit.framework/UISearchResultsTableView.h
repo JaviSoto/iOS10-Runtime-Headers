@@ -13,8 +13,8 @@
 @property UISearchDisplayController * controller;
 @property(getter=_topShadowView,setter=_setTopShadowView:,retain) UIView * _topShadowView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setController:(id)arg1;
 - (void)_setTopShadowView:(id)arg1;

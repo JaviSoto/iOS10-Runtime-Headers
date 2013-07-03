@@ -18,8 +18,8 @@
 @property int idiom;
 @property(readonly) UIStatusBarForegroundStyleAttributes * foregroundStyle;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (void)setIdiom:(int)arg1;

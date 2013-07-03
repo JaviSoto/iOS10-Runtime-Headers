@@ -26,8 +26,8 @@
 - (void)determineGroupIDWithCompletionHandler:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
-- (void)clearCaches;
 - (void)setPassword:(id)arg1;
+- (void)clearCaches;
 - (id)init;
 - (id)password;
 - (void)dealloc;

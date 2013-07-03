@@ -81,10 +81,10 @@
 - (void)setDatabaseID:(unsigned int)arg1;
 - (void)setSessionID:(unsigned int)arg1;
 - (unsigned int)sessionID;
-- (void)disconnect;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
+- (void)disconnect;
 - (id)initWithBaseURL:(id)arg1;
 - (id)password;
 - (id)baseURL;

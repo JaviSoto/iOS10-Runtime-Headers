@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, UIImage, UIToolbar, _UIBackdropView, UILabel, UIView, UIPopoverController, UIWindow, NSString, <UIActionSheetDelegate>, UIImageView, NSMutableArray;
+@class NSAttributedString, UIGestureRecognizer, UIImage, UIToolbar, _UIBackdropView, UILabel, UIView, UIPopoverController, UIWindow, <UIActionSheetDelegate>, NSString, UIImageView, NSMutableArray;
 
 @interface UIActionSheet : UIView  {
     <UIActionSheetDelegate> *_delegate;
@@ -89,12 +89,14 @@
         unsigned int useCustomSelectedButtonGlyph : 1; 
         unsigned int usesNewStyle : 1; 
         unsigned int isDesaturated : 1; 
+        unsigned int creatingPopoverForDisplay : 1; 
     } _modalViewFlags;
     int _actionSheetStyle;
     UIImage *_selectedButtonGlyphImage;
     UIImage *_selectedButtonGlyphHighlightedImage;
     UIImageView *_shadowImageView;
     _UIBackdropView *_backdropView;
+    UIGestureRecognizer *_dimViewGestureRecognizer;
     UIImage *_dimViewImage;
 }
 
@@ -110,13 +112,12 @@
 + (Class)_popoverControllerClass;
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_popupAlertBackground;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setIndexOfSelectedButton:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -126,6 +127,7 @@
 - (void)removeFromSuperview;
 - (BOOL)isVisible;
 - (void)_layoutIfNeeded;
+- (void)setContext:(id)arg1;
 - (void)layout;
 - (id)message;
 - (void)setDelegate:(id)arg1;
@@ -139,12 +141,14 @@
 - (void)setDestructiveButtonIndex:(int)arg1;
 - (int)destructiveButtonIndex;
 - (int)actionSheetStyle;
+- (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)setSelectedButtonGlyphHighlightedImage:(id)arg1;
 - (void)setSelectedButtonGlyphImage:(id)arg1;
 - (int)threeColumnsLayoutMode;
 - (void)setUseThreeColumnsButtonsLayout:(BOOL)arg1;
 - (void)setUseTwoColumnsButtonsLayout:(BOOL)arg1;
 - (void)setInPopover:(BOOL)arg1;
+- (void)_resizeDimViewAnimatingUp:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)_buttonAtIndex:(int)arg1;
 - (id)buttonAtIndex:(int)arg1;
@@ -152,12 +156,14 @@
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)_attributedTitleString;
 - (void)_setAttributedTitleString:(id)arg1;
+- (BOOL)_shouldHaveBackdropView;
 - (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_presentPopoverInCenterOfWindowForView:(id)arg1;
 - (void)presentSheetInPopoverView:(id)arg1;
 - (id)_presentingViewForView:(id)arg1;
 - (void)_presentViaResponderChain:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(unsigned int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
 - (void)_presentFromBarButtonItem:(id)arg1 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 backgroundStyle:(int)arg6 animated:(BOOL)arg7;
+- (void)_removeBackdropViewIfNecessary;
 - (void)_transitionToLegacyAppearanceIfNecessary;
 - (void)showFromToolbar:(id)arg1;
 - (void)setThreeColumnsLayoutMode:(int)arg1;
@@ -165,8 +171,11 @@
 - (int)twoColumnsLayoutMode;
 - (BOOL)useThreeColumnsButtonsLayout;
 - (BOOL)useTwoColumnsButtonsLayout;
-- (struct CGSize { float x1; float x2; })_maxSize;
+- (void)_applyParallaxToContentIfNecessary;
 - (void)_transitionUIInView:(id)arg1 toSaturated:(BOOL)arg2;
+- (void)_installGestureRecognizerInDimView;
+- (BOOL)_shouldParallax;
+- (void)_handleTap:(id)arg1;
 - (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
 - (void)presentSheetInContentView:(id)arg1;
@@ -183,6 +192,7 @@
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (int)numberOfLinesInTitle;
@@ -269,8 +279,6 @@
 - (void)_createBodyTextLabelIfNeeded;
 - (void)setAlertSheetStyle:(int)arg1;
 - (BOOL)requiresPortraitOrientation;
-- (id)buttonTitleAtIndex:(int)arg1;
-- (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)keyboard;
 - (BOOL)_isAnimating;
 - (id)textField;
@@ -290,22 +298,25 @@
 - (void)showInView:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
+- (struct CGSize { float x1; float x2; })_maxSize;
 - (id)_titleLabel;
 - (void)setDefaultButton:(id)arg1;
 - (id)defaultButton;
 - (id)textFieldAtIndex:(int)arg1;
 - (float)_maxHeight;
 - (int)defaultButtonIndex;
+- (float)_separatorInset;
 - (int)numberOfRows;
-- (id)interactionTintColor;
-- (void)setInteractionTintColor:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (id)_normalInheritedTintColor;
+- (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (BOOL)_canDrawContent;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)setCancelButtonIndex:(int)arg1;
 - (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (BOOL)canBecomeFirstResponder;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

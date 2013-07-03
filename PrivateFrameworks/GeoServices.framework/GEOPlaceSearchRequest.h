@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, GEOBusinessOptions, GEOLatLng, GEOLocation, NSMutableArray, GEOAddress, NSString, GEOMapRegion, GEOClientCapabilities, GEOIndexQueryNode;
+@class NSData, GEOBusinessOptions, GEOLatLng, GEOLocation, GEOSuggestionsOptions, NSMutableArray, GEOAddress, NSString, GEOMapRegion, GEOClientCapabilities, GEOIndexQueryNode;
 
 @interface GEOPlaceSearchRequest : PBRequest  {
     struct { 
@@ -65,8 +65,7 @@
     int _sequenceNumber;
     NSMutableArray *_serviceTags;
     int _sessionID;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
+    GEOSuggestionsOptions *_suggestionsOptions;
     NSString *_suggestionsPrefix;
     int _transportTypeForTravelTimes;
     NSData *_zilchPoints;
@@ -208,10 +207,6 @@
 @property double distanceTraveled;
 @property BOOL hasIncludeSpokenNames;
 @property BOOL includeSpokenNames;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property(retain) NSData * suggestionMetadata;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(retain) NSData * suggestionEntryMetadata;
 @property(readonly) BOOL hasDeviceTimeZone;
 @property(retain) NSString * deviceTimeZone;
 @property(readonly) BOOL hasClientCapabilities;
@@ -220,6 +215,8 @@
 @property BOOL includeTravelTime;
 @property BOOL hasTransportTypeForTravelTimes;
 @property int transportTypeForTravelTimes;
+@property(readonly) BOOL hasSuggestionsOptions;
+@property(retain) GEOSuggestionsOptions * suggestionsOptions;
 @property BOOL hasGeoId;
 @property long long geoId;
 @property BOOL hasIncludeQuads;
@@ -355,6 +352,8 @@
 - (void)setIncludeQuads:(BOOL)arg1;
 - (BOOL)includeQuads;
 - (BOOL)hasIncludeQuads;
+- (id)suggestionsOptions;
+- (BOOL)hasSuggestionsOptions;
 - (void)setTransportTypeForTravelTimes:(int)arg1;
 - (int)transportTypeForTravelTimes;
 - (BOOL)hasTransportTypeForTravelTimes;
@@ -363,10 +362,6 @@
 - (BOOL)hasIncludeTravelTime;
 - (id)deviceTimeZone;
 - (BOOL)hasDeviceTimeZone;
-- (id)suggestionEntryMetadata;
-- (BOOL)hasSuggestionEntryMetadata;
-- (id)suggestionMetadata;
-- (BOOL)hasSuggestionMetadata;
 - (void)setIncludeSpokenNames:(BOOL)arg1;
 - (BOOL)includeSpokenNames;
 - (BOOL)hasIncludeSpokenNames;
@@ -461,9 +456,8 @@
 - (void)setPreserveFields:(id)arg1;
 - (void)setSearchContext:(id)arg1;
 - (void)clearSearchSubstrings;
+- (void)setSuggestionsOptions:(id)arg1;
 - (void)setDeviceTimeZone:(id)arg1;
-- (void)setSuggestionEntryMetadata:(id)arg1;
-- (void)setSuggestionMetadata:(id)arg1;
 - (void)setFilterByBusinessTelephones:(id)arg1;
 - (void)setPhoneticLocaleIdentifier:(id)arg1;
 - (void)setInputLanguage:(id)arg1;
@@ -506,14 +500,14 @@
 - (void)setMapRegion:(id)arg1;
 - (void)setSessionID:(int)arg1;
 - (int)sessionID;
-- (id)location;
-- (double)timestamp;
 - (void)setMaxResults:(int)arg1;
 - (int)maxResults;
 - (int)sequenceNumber;
 - (id)search;
+- (id)location;
 - (void)setLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)setSequenceNumber:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

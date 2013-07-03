@@ -9,8 +9,8 @@
 @property int orientationAnimation;
 
 
-- (int)orientationAnimation;
 - (BOOL)shouldAnimate;
+- (int)orientationAnimation;
 - (void)setOrientationAnimation:(int)arg1;
 - (id)initWithDefaultParameters;
 

@@ -14,8 +14,8 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_disconnect;
 - (BOOL)_connect;
+- (BOOL)_disconnect;
 - (void)_disconnected;
 - (BOOL)isItemInList:(id)arg1;
 - (id)copyAllItems;

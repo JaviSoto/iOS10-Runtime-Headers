@@ -39,6 +39,7 @@
 - (id)localDescription;
 - (void)setShouldPin:(BOOL)arg1;
 - (void)setDesiredHeight:(float)arg1;
+- (void)setKind:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
 - (id)init;
@@ -46,6 +47,5 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)kind;
-- (void)setKind:(id)arg1;
 
 @end

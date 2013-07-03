@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSObject<OS_dispatch_queue>;
 
-@interface MPReshuffledArrayIndexMap : NSObject <NSCoding, NSCopying> {
+@interface MPReshuffledArrayIndexMap : NSObject <NSSecureCoding, NSCopying> {
     unsigned int _arrayCount;
     unsigned int _identityIndexesCount;
     NSObject<OS_dispatch_queue> *_shuffledIndexesQueue;
@@ -13,11 +13,13 @@
         unsigned int location; 
         unsigned int length; 
     } _focusedRange;
+    BOOL _autoReshufflingDisabled;
 }
 
 @property struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
 @property(readonly) unsigned int countOfArrayIndexMappings;
 
++ (BOOL)supportsSecureCoding;
 
 - (void)setFocusedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })focusedRange;
@@ -25,6 +27,7 @@
 - (unsigned int)countOfArrayIndexMappings;
 - (id)initWithSourceArrayCount:(unsigned int)arg1 identityArraysCount:(unsigned int)arg2;
 - (BOOL)_onQueueExtendMap;
+- (BOOL)_canExtendShuffleMapToCount:(unsigned int)arg1;
 - (id)initWithSourceArrayCount:(unsigned int)arg1 identityIndexesCount:(unsigned int)arg2;
 - (void)dealloc;
 - (void).cxx_destruct;

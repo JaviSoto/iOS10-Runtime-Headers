@@ -32,11 +32,11 @@
 - (id)_initWithEntityMappings:(id)arg1;
 - (BOOL)_hasInferredMappingNeedingValidation;
 - (void)_setIsEditable:(BOOL)arg1;
-- (BOOL)isEditable;
 - (void)_createCachesAndOptimizeState;
 - (void)_throwIfNotEditable;
 - (void)setEntityMappings:(id)arg1;
 - (id)entityMappings;
+- (BOOL)isEditable;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

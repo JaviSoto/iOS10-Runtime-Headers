@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBackdropViewSettings;
+@class _UIBackdropViewSettings, UIColor;
 
 @interface _UIBackdropColorSettings : NSObject  {
     float _averageHue;
@@ -20,6 +20,7 @@
 @property float averageSaturation;
 @property float averageBrightness;
 @property float contrast;
+@property(readonly) UIColor * color;
 @property _UIBackdropViewSettings * parentSettings;
 @property float previousAverageHue;
 @property float previousAverageSaturation;
@@ -27,6 +28,7 @@
 @property float previousContrast;
 
 
+- (id)color;
 - (BOOL)applyCABackdropLayerStatistics:(id)arg1;
 - (float)previousContrast;
 - (float)previousAverageBrightness;
@@ -37,9 +39,10 @@
 - (void)setPreviousAverageBrightness:(float)arg1;
 - (void)setPreviousAverageSaturation:(float)arg1;
 - (void)setPreviousAverageHue:(float)arg1;
+- (float)averageHue;
 - (void)setParentSettings:(id)arg1;
 - (float)contrast;
-- (float)averageHue;
+- (void)setDefaultValues;
 - (float)averageBrightness;
 - (float)averageSaturation;
 - (void)setContrast:(float)arg1;
@@ -47,6 +50,5 @@
 - (void)setAverageSaturation:(float)arg1;
 - (void)setAverageHue:(float)arg1;
 - (void)setValuesFromModel:(id)arg1;
-- (void)setDefaultValues;
 
 @end

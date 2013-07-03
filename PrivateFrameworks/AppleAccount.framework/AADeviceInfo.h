@@ -13,10 +13,10 @@
 
 + (id)userAgentHeader;
 + (id)signatureWithDictionary:(id)arg1;
-+ (id)apnsToken;
 + (id)serialNumber;
 + (id)clientInfoHeader;
 + (id)appleIDClientIdentifier;
++ (id)apnsToken;
 + (id)osVersion;
 + (id)udid;
 + (id)productVersion;
@@ -27,10 +27,10 @@
 - (id)deviceClass;
 - (id)osName;
 - (id)productType;
-- (id)apnsToken;
 - (id)serialNumber;
 - (id)deviceInfoDictionary;
 - (id)appleIDClientIdentifier;
+- (id)apnsToken;
 - (id)osVersion;
 - (id)udid;
 - (id)productVersion;

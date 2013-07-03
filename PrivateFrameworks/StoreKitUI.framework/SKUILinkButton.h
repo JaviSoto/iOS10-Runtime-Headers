@@ -8,6 +8,7 @@
 
 @property(readonly) int arrowStyle;
 
++ (id)buttonWithArrowStyle:(int)arg1;
 
 - (int)arrowStyle;
 - (float)_linkImagePaddingLeft;

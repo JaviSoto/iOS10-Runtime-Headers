@@ -47,16 +47,6 @@
 
 - (void)_adjustWiFiAutoAssociation;
 - (void)_adjustWiFiAutoAssociationLocked;
-- (void)setLock:(id)arg1;
-- (BOOL)isWiFiEnabled;
-- (BOOL)isWiFiAssociated;
-- (id)wiFiScaledRate;
-- (id)wiFiScaledRSSI;
-- (id)wiFiSignalStrength;
-- (BOOL)willTryToSearchForWiFiNetwork;
-- (BOOL)willTryToAutoAssociateWiFiNetwork;
-- (BOOL)isHostingWiFiHotSpot;
-- (void)_createWiFiManager;
 - (void)set_suspendDormancyAssertion:(void*)arg1;
 - (void*)_suspendDormancyAssertion;
 - (void)setDataContextActive:(BOOL)arg1;
@@ -105,6 +95,16 @@
 - (void)_adjustCellularAutoAssociation;
 - (BOOL)isDataConnectionActive;
 - (void)setDataConnectionActive:(BOOL)arg1;
+- (void)setLock:(id)arg1;
+- (BOOL)isWiFiEnabled;
+- (BOOL)isWiFiAssociated;
+- (id)wiFiScaledRate;
+- (id)wiFiScaledRSSI;
+- (id)wiFiSignalStrength;
+- (BOOL)willTryToSearchForWiFiNetwork;
+- (BOOL)willTryToAutoAssociateWiFiNetwork;
+- (BOOL)isHostingWiFiHotSpot;
+- (void)_createWiFiManager;
 - (void)refresh;
 - (id)init;
 - (void)dealloc;

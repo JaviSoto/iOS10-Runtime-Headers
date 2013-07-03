@@ -20,8 +20,8 @@
 - (BOOL)hasEtag;
 - (void)setEtag:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (double)timestamp;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -99,9 +99,9 @@
 - (void)_prepareModel;
 - (id)_initBackgroundModelWithPersistentStoreCoordinator:(id)arg1;
 - (void)noteTrackWasSkippedForStation:(id)arg1;
-- (void)markTracksNeedRefreshForStation:(id)arg1;
 - (id)stationSortOrdering;
 - (unsigned long long)authenticatedAccountIdentifier;
+- (void)markTracksNeedRefreshForStation:(id)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
 - (id)context;
 - (void)controllerDidChangeContent:(id)arg1;

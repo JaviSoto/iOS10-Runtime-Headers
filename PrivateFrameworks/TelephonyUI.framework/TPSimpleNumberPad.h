@@ -14,6 +14,9 @@
 @property BOOL showsDeleteButton;
 
 + (id)_numberPadCharacters;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (BOOL)showsDeleteButton;
 - (void)_updateDeleteButton;

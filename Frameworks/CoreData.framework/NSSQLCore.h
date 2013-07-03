@@ -164,6 +164,7 @@
 - (id)_prepareResultsFromResultSet:(struct { int x1; int x2; double x3; int x4; unsigned int x5; int x6; int x7; unsigned long long x8; unsigned long long x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 29; } x10; int x11; struct FetchResultsRowListHeader_st {} **x12; void **x13; void *x14; void *x15; void *x16; }*)arg1 usingFetchPlan:(id)arg2 withMatchingRows:(id*)arg3;
 - (id)_prepareDictionaryResultsFromResultSet:(struct { int x1; int x2; double x3; int x4; unsigned int x5; int x6; int x7; unsigned long long x8; unsigned long long x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 29; } x10; int x11; struct FetchResultsRowListHeader_st {} **x12; void **x13; void *x14; void *x15; void *x16; }*)arg1 usingFetchPlan:(id)arg2;
 - (int)fileProtectionLevel;
+- (id)externalDataLinksDirectory;
 - (id)_availableChannel;
 - (void)registerChannel:(id)arg1;
 - (id)_availableChannelFromRegisteredChannels;
@@ -184,7 +185,6 @@
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (void)resetExternalDataReferencesDirectories;
 - (id)channels;
-- (void)_disconnect;
 - (void)_performPostSaveTasks;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
@@ -192,12 +192,11 @@
 - (void)commitTransaction;
 - (void)beginTransaction;
 - (id)model;
-- (void)setCurrentContext:(id)arg1;
 - (id)adapter;
 - (id)entityForFetchRequest:(id)arg1;
 - (id)rowForObjectID:(id)arg1;
 - (void)setDatabaseUUID:(id)arg1;
-- (id)externalDataLinksDirectory;
+- (id)_externalDataLinksDirectory;
 - (id)_storeInfoForEntityDescription:(id)arg1;
 - (Class)_objectIDClass;
 - (BOOL)loadMetadata:(id*)arg1;
@@ -218,6 +217,8 @@
 - (id)externalDataReferencesDirectory;
 - (id)objectIDFactoryForEntity:(id)arg1;
 - (id)metadata;
+- (void)_disconnect;
+- (void)setCurrentContext:(id)arg1;
 - (void)dealloc;
 - (id)identifier;
 - (id)presentedItemOperationQueue;

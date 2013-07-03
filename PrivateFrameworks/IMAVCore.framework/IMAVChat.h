@@ -294,6 +294,7 @@
 - (void)_cacheBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_noteFirstFrame;
 - (void)_postNotificationName:(id)arg1 participant:(id)arg2 userInfo:(id)arg3;
+- (id)_imHandles;
 - (BOOL)isUsingWifi;
 - (BOOL)_usesRelay;
 - (id)_relayConnectDuration;
@@ -324,10 +325,12 @@
 - (BOOL)_processVCResponseDict:(id)arg1;
 - (id)participantPeerMatchingIMHandle:(id)arg1;
 - (void)endChatWithReason:(unsigned int)arg1 error:(int)arg2;
-- (void)endChatWithReason:(unsigned int)arg1;
 - (void)_insertRemoteParticipant:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_vccInitDidFinish:(id)arg1;
+- (void)_breakCallsIfNecessary:(BOOL)arg1;
 - (void)_setActiveConference;
+- (void)endChatWithReason:(unsigned int)arg1;
+- (BOOL)_isCallUpgradeTo:(id)arg1;
 - (void)_postStateToDelegateIfNecessary;
 - (void)_submitCallEndedLoggingWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (void)_endChatWithReason:(unsigned int)arg1 andError:(int)arg2;
@@ -335,7 +338,6 @@
 - (void)_clearInvitationTimeoutTimer;
 - (void)_clearFirstFrameTimeoutTimer;
 - (void)_clearConnectionTimeoutTimer;
-- (id)_imHandles;
 - (void)_setCallerProperties:(id)arg1;
 - (id)_initWith:(id)arg1 invitedBy:(id)arg2 sessionID:(unsigned int)arg3 GUID:(id)arg4 video:(BOOL)arg5 extraProperties:(id)arg6;
 - (id)initiatorParticipant;
@@ -360,6 +362,7 @@
 - (void)cancelInvitation;
 - (void)beginChat;
 - (void)_setIsCallUpgrade:(BOOL)arg1;
+- (BOOL)_isVideoUpgradeTo:(id)arg1;
 - (void)_setConferenceID:(id)arg1;
 - (id)initIncomingFrom:(id)arg1 isVideo:(BOOL)arg2 callerProperties:(id)arg3;
 - (id)localParticipant;

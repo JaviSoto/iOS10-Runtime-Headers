@@ -2,38 +2,37 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString, PSEditableTableCell, PSSpecifier, <KeychainSyncPhoneSettingsFragmentDelegate>;
+@class PSListController, PSSpecifier, <KeychainSyncPhoneSettingsFragmentDelegate>, NSString, PSEditableTableCell, KeychainSyncCountryInfo, NSArray;
 
 @interface KeychainSyncPhoneSettingsFragment : NSObject  {
     NSArray *_specifiers;
     PSSpecifier *_phoneNumberSpecifier;
-    PSSpecifier *_countryCodeSpecifier;
+    PSSpecifier *_countrySpecifier;
+    PSListController *_listController;
     NSString *_phoneNumber;
-    NSString *_countryCode;
+    KeychainSyncCountryInfo *_countryInfo;
     <KeychainSyncPhoneSettingsFragmentDelegate> *_delegate;
 }
 
 @property(readonly) NSArray * specifiers;
 @property(retain) NSString * phoneNumber;
-@property(retain) NSString * countryCode;
+@property(retain) KeychainSyncCountryInfo * countryInfo;
 @property(readonly) PSEditableTableCell * phoneNumberCell;
-@property(readonly) PSEditableTableCell * countryCodeCell;
 @property <KeychainSyncPhoneSettingsFragmentDelegate> * delegate;
 
 
+- (void)setCountryInfo:(id)arg1;
 - (void)reloadSpecifiers;
 - (id)specifiers;
 - (id)initWithListController:(id)arg1;
+- (id)countryInfo;
 - (id)unformattedPhoneNumber;
-- (id)countryCodeCell;
 - (id)phoneNumberCell;
 - (id)phoneNumberForSpecifier:(id)arg1;
 - (void)setPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
-- (id)countryCodeForSpecifier:(id)arg1;
-- (void)setCountryCode:(id)arg1 forSpecifier:(id)arg2;
+- (id)dialingCountryInfoForSpecifier:(id)arg1;
+- (void)setDialingCountryInfo:(id)arg1 forSpecifier:(id)arg2;
 - (void)textFieldChanged:(id)arg1;
-- (id)countryCode;
-- (void)setCountryCode:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)resignFirstResponder;
 - (void)setDelegate:(id)arg1;

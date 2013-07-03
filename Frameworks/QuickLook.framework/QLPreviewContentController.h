@@ -63,13 +63,12 @@
 - (void)_scheduleAdjacentPreviewItems;
 - (void)_removeNonCachedPreviewViewControllers;
 - (void)_updateBackgroundWithDuration:(double)arg1;
-- (void)_updateTapRecognizer;
+- (id)currentPreviewViewController;
 - (id)_previewViewControllerForPreviewItemIndex:(unsigned int)arg1;
 - (id)_previewControllerForPreviewItem:(id)arg1 createIfNeeded:(BOOL)arg2 withIndex:(int)arg3;
 - (void)_cachePreviewViewController:(id)arg1;
 - (id)_copyPreviewControllerForPreview:(id)arg1 withIndex:(int)arg2;
 - (id)_cachedPreviewControllerForPreviewItem:(id)arg1 withIndex:(int)arg2;
-- (id)currentPreviewViewController;
 - (void)_updateScreenConfiguration;
 - (void)_deactivateAirPlay;
 - (void)_hideMenuController;
@@ -95,6 +94,7 @@
 - (void)beginScrubbing;
 - (id)printPageHelper;
 - (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
 - (void)viewDidUpdateForPreviewItem:(id)arg1;
 - (void)previewItem:(id)arg1 requiresDisplayBundle:(id)arg2 withHints:(id)arg3;
 - (void)previewItemDidLoad:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
@@ -105,13 +105,13 @@
 - (void)willChangeContentFrame;
 - (void)configureWithParameters:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
 - (void)becomeForeground;
 - (void)enterBackground;
 - (void)refreshCurrentPreviewItem;
+- (void)checkCurrentPreviewItem;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
 - (int)currentPreviewItemIndex;
-- (void)setTransitioning:(BOOL)arg1;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (id)currentPreviewItem;
 - (void)setBackgroundColor:(id)arg1;
@@ -129,7 +129,6 @@
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
 - (id)printPageRenderer;
 - (void)setBlockRemoteImages:(BOOL)arg1;
-- (id)snapshotView;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -137,11 +136,11 @@
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
+- (id)snapshotView;
+- (BOOL)canBecomeFirstResponder;
 - (void)didReceiveMemoryWarning;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
-- (void)reloadData;
 
 @end

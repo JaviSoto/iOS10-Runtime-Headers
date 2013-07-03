@@ -28,8 +28,8 @@
 - (void)setLastNameItem:(id)arg1;
 - (void)setFirstNameItem:(id)arg1;
 - (id)copyParseRules;
-- (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
+- (void)setDtstamp:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setLastName:(id)arg1;

@@ -20,10 +20,13 @@
     } _maxImageSize;
     NSString *_seeAllTitle;
     NSURL *_seeAllURL;
+    BOOL _seeAllHidden;
     SKUISwooshView *_swooshView;
     int _swooshType;
+    unsigned int _visibleLockupFields;
 }
 
+@property(getter=isSeeAllHidden) BOOL seeAllHidden;
 @property(readonly) SKUIItemArtworkContext * artworkContext;
 @property(readonly) NSArray * items;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
@@ -32,11 +35,14 @@
 
 + (int)_swooshTypeForItems:(id)arg1;
 
+- (BOOL)isSeeAllHidden;
 - (void)setSwooshType:(int)arg1;
 - (void)setItemsWithLockups:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })seeAllButtonFrame;
+- (void)setSeeAllHidden:(BOOL)arg1;
 - (id)initWithItemList:(id)arg1;
 - (void)_seeAllAction:(id)arg1;
+- (struct CGSize { float x1; float x2; })_maximumCellSizeForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_newArtworkContextForSwooshType:(int)arg1;
 - (void)unhideImages;
 - (id)popImageViewForItemAtIndex:(int)arg1;
@@ -47,6 +53,7 @@
 - (int)swooshType;
 - (id)artworkContext;
 - (void)setColorScheme:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (id)items;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

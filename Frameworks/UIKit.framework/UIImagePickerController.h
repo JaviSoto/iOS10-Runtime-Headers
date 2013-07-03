@@ -49,8 +49,8 @@
 + (BOOL)isCameraDeviceAvailable:(int)arg1;
 + (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(int)arg2;
 + (BOOL)isSourceTypeAvailable:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)sourceType;
 - (id)init;

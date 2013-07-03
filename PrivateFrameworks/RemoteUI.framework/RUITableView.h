@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UITableView, NSMutableArray, UIPickerView, NSDictionary, RUIObjectModel, UIDatePicker, RUITableViewRow;
+@class UITableView, NSMutableArray, RUITableHeaderView, UIPickerView, NSDictionary, RUIObjectModel, NSString, UIDatePicker, RUITableViewRow;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     NSMutableArray *_sections;
@@ -17,7 +17,7 @@
     BOOL _registeredForNotifications;
     float _lastLayoutWidth;
     float _fullscreenCellHeight;
-    float _customMargin;
+    RUITableHeaderView *_headerView;
     NSDictionary *_headerViewAttributes;
     NSDictionary *_footerViewAttributes;
 }
@@ -26,15 +26,16 @@
 @property(readonly) NSMutableArray * sections;
 @property(retain) RUITableViewRow * defaultFirstResponderRow;
 @property RUIObjectModel * objectModel;
+@property(readonly) RUITableHeaderView * headerView;
 @property(retain) NSDictionary * headerViewAttributes;
 @property(retain) NSDictionary * footerViewAttributes;
+@property(retain) NSString * headerTitle;
 
 
 - (id)footerViewAttributes;
 - (id)headerViewAttributes;
 - (void)sectionActivatedButton:(id)arg1 attributes:(id)arg2;
 - (void)_setBottomInset:(float)arg1;
-- (void)setCustomMargin:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectPickerFrame;
 - (void)_clearPickers;
 - (void)activateRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
@@ -66,13 +67,15 @@
 - (id)sourceURL;
 - (id)init;
 - (void)dealloc;
+- (void)setHeaderTitle:(id)arg1;
+- (id)headerTitle;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)tableView;
+- (id)headerView;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (float)marginForTableView:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;

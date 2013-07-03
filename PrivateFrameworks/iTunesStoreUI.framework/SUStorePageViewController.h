@@ -61,8 +61,8 @@
 @property(getter=_reloadsWhenCacheExpired,setter=_setReloadsWhenCacheExpired:) BOOL _reloadsWhenCacheExpired;
 @property(getter=_isCacheExpired,readonly) BOOL _cacheExpired;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)sectionSegmentedControl;
 - (id)sectionGroup;

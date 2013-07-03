@@ -10,8 +10,8 @@
 
 @property(retain) NSArray * passThroughViews;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPassThroughViews:(id)arg1;
 - (id)passThroughViews;

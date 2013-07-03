@@ -9,6 +9,7 @@
 }
 
 
+- (void)deleteSafariPersistentURLCacheStorage;
 - (void)deleteSafariSecurityOrigin:(id)arg1;
 - (void)deleteAllSafariSecurityOrigins;
 - (void)getSafariWebDataUsageWithCompletion:(id)arg1;

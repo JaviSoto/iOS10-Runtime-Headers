@@ -10,11 +10,13 @@
 - (float)dismissKeyFontSize;
 - (float)dictationKeyFontSize;
 - (float)internationalKeyFontSize;
-- (float)deleteKeyFontSize;
 - (float)moreKeyFontSize;
+- (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;
 - (float)controlColumnWidthFactor;
+- (id)thinKeycapsFontName;
+- (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 
 @end

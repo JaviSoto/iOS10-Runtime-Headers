@@ -2,17 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABNewPersonViewControllerDelegate>, ABPersonViewControllerHelper, ABContactsFilter, ABPersonTableViewDataSource, ABContactViewController, <ABStyleProvider>;
+@class ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABContactViewController, <ABPresenterDelegate>, <ABStyleProvider>, ABContactsFilter, <ABNewPersonViewControllerDelegate>;
 
 @interface ABNewPersonViewController : UIViewController <ABContactViewControllerDelegate> {
     void *_addressBook;
     void *_displayedPerson;
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
+    ABContactViewController *_contactViewController;
     void *_parentGroup;
     ABPersonViewControllerHelper *_helper;
     ABPersonTableViewDataSource *_dataSource;
+    <ABStyleProvider> *_styleProvider;
     ABContactsFilter *_parentContactsFilter;
-    ABContactViewController *_contactViewController;
+    <ABPresenterDelegate> *_presentingDelegate;
 }
 
 @property <ABNewPersonViewControllerDelegate> * newPersonViewDelegate;
@@ -24,12 +26,11 @@
 @property BOOL savesNewContactOnSuspend;
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(retain) ABContactsFilter * parentContactsFilter;
+@property(readonly) ABContactViewController * contactViewController;
+@property <ABPresenterDelegate> * presentingDelegate;
 @property BOOL showsCancelButton;
-@property(retain) ABContactViewController * contactViewController;
 
 
-- (void)setContactViewController:(id)arg1;
-- (id)contactViewController;
 - (id)parentContactsFilter;
 - (id)helper;
 - (BOOL)savesNewContactOnSuspend;
@@ -39,8 +40,11 @@
 - (void)setSavesNewContactOnSuspend:(BOOL)arg1;
 - (void)setParentContactsFilter:(id)arg1;
 - (void*)displayedPerson;
+- (void)setPresentingDelegate:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (id)presentingDelegate;
 - (void)setNewPersonViewDelegate:(id)arg1;
+- (id)contactViewController;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;

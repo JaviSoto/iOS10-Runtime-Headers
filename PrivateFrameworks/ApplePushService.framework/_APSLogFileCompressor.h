@@ -10,9 +10,9 @@
 
 + (id)sharedInstance;
 
+- (void)compressPath:(id)arg1 toPath:(id)arg2;
 - (void)fileCopierDidFinish:(id)arg1;
 - (void)fileCopierDidStart:(id)arg1;
-- (void)compressPath:(id)arg1 toPath:(id)arg2;
 - (id)init;
 - (void)dealloc;
 

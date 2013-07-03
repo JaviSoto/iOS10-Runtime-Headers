@@ -13,8 +13,8 @@
 @property(readonly) NSURL * url;
 @property(readonly) NSAttributedString * disclosureArrow;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)disclosureArrow;
 - (id)attributedStringWithImage:(id)arg1;

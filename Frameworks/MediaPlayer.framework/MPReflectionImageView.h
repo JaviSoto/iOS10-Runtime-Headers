@@ -14,8 +14,8 @@
 @property(readonly) UIImageView * imageView;
 
 + (float)defaultReflectionHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)squareImage;
 - (void)setAlbumVisible:(BOOL)arg1 reflectionVisible:(BOOL)arg2;

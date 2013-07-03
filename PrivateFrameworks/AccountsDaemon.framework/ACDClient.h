@@ -35,8 +35,8 @@
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)database;
 - (void)setBundleID:(id)arg1;
-- (struct __CFBundle { }*)bundle;
 - (id)pid;
+- (struct __CFBundle { }*)bundle;
 - (id)initWithConnection:(id)arg1;
 - (id)bundleID;
 - (BOOL)hasEntitlement:(id)arg1;

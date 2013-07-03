@@ -624,6 +624,16 @@
         } u; 
         unsigned char count; 
     } iconCornerRadius;
+    struct VKProfileSparseRamp<unsigned int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                unsigned int value; 
+                unsigned char hi; 
+            } v[2]; 
+            unsigned int *extra; 
+        } u; 
+        unsigned char count; 
+    } iconSourceStyleAttribute;
     struct VKProfileSparseRamp<VKBlendMode> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -832,6 +842,46 @@
         } u; 
         unsigned char count; 
     } collisionRank;
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    } shieldCollisionOrder;
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    } shieldCollisionRank;
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    } arrowCollisionOrder;
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    } arrowCollisionRank;
     struct VKProfileSparseRamp<signed char> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -890,7 +940,7 @@
 - (double)minimumRoadLabelSpacingForZoom:(int)arg1 scaleFactor:(int)arg2;
 - (double)minimumRoadArrowSpacingForZoom:(int)arg1;
 - (double)mapWidthInEmsForZoom:(int)arg1 scaleFactor:(int)arg2;
-- (void)getLabelStyle:(struct VKLabelStyle { BOOL x1; unsigned int x2; float x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; unsigned int x7; float x8; float x9; struct { int x_10_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_10_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_10_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_10_1_4; int x_10_1_5; struct _VGLColor { float x_6_2_1; float x_6_2_2; float x_6_2_3; float x_6_2_4; } x_10_1_6; int x_10_1_7; int x_10_1_8; float x_10_1_9; struct _VGLColor { float x_10_2_1; float x_10_2_2; float x_10_2_3; float x_10_2_4; } x_10_1_10; struct CGSize { float x_11_2_1; float x_11_2_2; } x_10_1_11; float x_10_1_12; struct _VGLColor { float x_13_2_1; float x_13_2_2; float x_13_2_3; float x_13_2_4; } x_10_1_13; float x_10_1_14; float x_10_1_15; float x_10_1_16; } x10; int x11; BOOL x12; float x13; float x14; struct _VGLColor { float x_15_1_1; float x_15_1_2; float x_15_1_3; float x_15_1_4; } x15; struct _VGLColor { float x_16_1_1; float x_16_1_2; float x_16_1_3; float x_16_1_4; } x16; int x17; int x18; int x19; BOOL x20; BOOL x21; BOOL x22; float x23; int x24; float x25; float x26; float x27; float x28; float x29; float x30; BOOL x31; float x32; int x33; float x34; int x35; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_36_1_1; } x36; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_37_1_1; } x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_38_1_1; } x38; struct FontOptions { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_6_1; unsigned int x_1_6_2; char *x_1_6_3; } x_1_5_1; struct __short { union { unsigned char x_1_7_1; BOOL x_1_7_2; } x_2_6_1; BOOL x_2_6_2[11]; } x_1_5_2; struct __raw { unsigned long x_3_6_1[3]; } x_1_5_3; } x_1_4_1; } x_1_3_1; } x_1_2_1; } x_39_1_1; boolx_39_1_2; float x_39_1_3; boolx_39_1_4; float x_39_1_5; float x_39_1_6; } x39; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getLabelStyle:(struct VKLabelStyle { BOOL x1; unsigned int x2; float x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; unsigned int x7; float x8; float x9; struct { int x_10_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_10_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_10_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_10_1_4; int x_10_1_5; struct _VGLColor { float x_6_2_1; float x_6_2_2; float x_6_2_3; float x_6_2_4; } x_10_1_6; int x_10_1_7; int x_10_1_8; float x_10_1_9; struct _VGLColor { float x_10_2_1; float x_10_2_2; float x_10_2_3; float x_10_2_4; } x_10_1_10; struct CGSize { float x_11_2_1; float x_11_2_2; } x_10_1_11; float x_10_1_12; struct _VGLColor { float x_13_2_1; float x_13_2_2; float x_13_2_3; float x_13_2_4; } x_10_1_13; float x_10_1_14; float x_10_1_15; float x_10_1_16; unsigned int x_10_1_17; } x10; int x11; BOOL x12; float x13; float x14; struct _VGLColor { float x_15_1_1; float x_15_1_2; float x_15_1_3; float x_15_1_4; } x15; struct _VGLColor { float x_16_1_1; float x_16_1_2; float x_16_1_3; float x_16_1_4; } x16; int x17; int x18; int x19; BOOL x20; BOOL x21; BOOL x22; float x23; int x24; float x25; float x26; float x27; float x28; float x29; float x30; BOOL x31; float x32; int x33; float x34; int x35; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_36_1_1; } x36; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_37_1_1; } x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_38_1_1; } x38; struct FontOptions { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_6_1; unsigned int x_1_6_2; char *x_1_6_3; } x_1_5_1; struct __short { union { unsigned char x_1_7_1; BOOL x_1_7_2; } x_2_6_1; BOOL x_2_6_2[11]; } x_1_5_2; struct __raw { unsigned long x_3_6_1[3]; } x_1_5_3; } x_1_4_1; } x_1_3_1; } x_1_2_1; } x_39_1_1; boolx_39_1_2; float x_39_1_3; boolx_39_1_4; float x_39_1_5; float x_39_1_6; } x39; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (unsigned char)dedupeRank;
 - (unsigned int)minArrowZoom;
 - (BOOL)areTextBoxesEverVisible;

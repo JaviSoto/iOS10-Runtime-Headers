@@ -2,19 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, NSDictionary, NSMutableArray, NSMutableDictionary;
+@class NSMutableDictionary, NSString, NSDictionary, NSMutableArray, NSMapTable;
 
 @interface _MKScaleUnitsView : UIView  {
     BOOL _useLightText;
     double _segmentLengthInPixels;
     float _unitsWidth;
     float _justUnitsWidth;
-    unsigned int _previousNumberOfSegments;
     NSDictionary *_legendAttributes;
     NSMutableArray *_strings;
     NSString *_legendBaseString;
     NSString *_unitsString;
-    NSMutableDictionary *_legendStringWidthCache;
+    NSString *_unpaddedUnitsString;
+    NSMapTable *_legendStringWidthCache;
+    NSMutableDictionary *_legendStringForDistanceStringCache;
 }
 
 @property BOOL useLightText;
@@ -22,22 +23,26 @@
 @property(readonly) float unitsWidth;
 @property(retain) NSString * legendBaseString;
 @property(retain) NSString * unitsString;
+@property(copy) NSString * unpaddedUnitsString;
 
 
+- (id)unitsString;
 - (float)unitsWidth;
 - (BOOL)useLightText;
 - (void)setSegmentLengthInPixels:(double)arg1;
+- (BOOL)canDisplaySegment:(int)arg1;
 - (void)clearCaches:(id)arg1;
+- (id)_uncachedLegendStringsForDistanceString:(id)arg1;
 - (id)_legendStringForDistanceString:(id)arg1 appendUnits:(BOOL)arg2 index:(int)arg3;
 - (void)_calculateLegend:(BOOL)arg1;
 - (void)setLegendBaseString:(id)arg1;
 - (id)legendBaseString;
 - (float)_widthForString:(id)arg1 attributes:(id)arg2;
+- (void)setUnpaddedUnitsString:(id)arg1;
 - (void)setUnitsString:(id)arg1;
-- (id)unitsString;
+- (id)unpaddedUnitsString;
 - (void)setUseLightText:(BOOL)arg1;
 - (void)setUnits:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
 - (void)dealloc;
 

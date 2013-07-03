@@ -9,19 +9,23 @@
     id _parameter;
     NSString *_title;
     int _urlType;
+    NSString *_subtarget;
 }
 
 @property int actionType;
 @property(retain) id parameter;
 @property(retain) NSString * title;
+@property(copy) NSString * subtarget;
 @property int urlType;
 
 + (id)buttonWithTitle:(id)arg1;
 
+- (id)subtarget;
 - (void)_openURLWithRequest:(id)arg1;
 - (id)_accountURLForURL:(id)arg1 authenticationContext:(id)arg2;
 - (void)setUrlType:(int)arg1;
 - (int)_urlTypeForString:(id)arg1;
+- (void)setSubtarget:(id)arg1;
 - (int)_actionTypeForString:(id)arg1;
 - (id)parameter;
 - (int)urlType;

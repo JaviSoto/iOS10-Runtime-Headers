@@ -21,6 +21,7 @@
 @property(retain) NSMutableSet * removedItems;
 
 
+- (BOOL)validate:(id*)arg1;
 - (void)setRemovedItems:(id)arg1;
 - (id)removedItems;
 - (void)setAddedItems:(id)arg1;
@@ -40,10 +41,9 @@
 - (BOOL)itemsWereAdded;
 - (void)updatePersistentObject;
 - (void)didCommit;
-- (BOOL)validate:(id*)arg1;
 - (void)rollback;
-- (void)reset;
 - (id)items;
+- (void)reset;
 - (void)refresh;
 - (unsigned int)count;
 - (void)dealloc;

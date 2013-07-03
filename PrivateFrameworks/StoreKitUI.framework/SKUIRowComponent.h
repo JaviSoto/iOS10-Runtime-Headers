@@ -2,15 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
+@class UIColor, NSArray;
 
 @interface SKUIRowComponent : SKUIPageComponent  {
+    UIColor *_backgroundColor;
     NSArray *_childComponents;
     NSArray *_columnWidths;
     int _missingItemCount;
     int _numberOfColumns;
 }
 
+@property(readonly) UIColor * backgroundColor;
 @property(readonly) NSArray * childComponents;
 @property(readonly) NSArray * columnWidths;
 @property(readonly) int numberOfColumns;
@@ -26,6 +28,7 @@
 - (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
+- (id)backgroundColor;
 - (int)numberOfColumns;
 - (void).cxx_destruct;
 - (id)description;

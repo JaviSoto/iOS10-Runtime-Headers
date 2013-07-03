@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICategoryArtworkLoader, UISegmentedControl, SKUISegmentedControl, SKUIClientContext, <SKUICategoryControllerDelegate>, SKUICategory, UIBarButtonItem, UIViewController, NSArray, UIPopoverController, SKUICategoryTableViewController, SKUILoadURLOperation, NSOperationQueue, NSURL;
+@class SKUICategoryArtworkLoader, UISegmentedControl, SSVLoadURLOperation, SKUISegmentedControl, SKUIClientContext, <SKUICategoryControllerDelegate>, SKUICategory, UIBarButtonItem, UIViewController, NSArray, UIPopoverController, SKUICategoryTableViewController, NSOperationQueue, NSURL;
 
 @interface SKUICategoryController : NSObject <SKUICategoryTableViewControllerDelegate, UIPopoverControllerDelegate> {
     SKUICategoryArtworkLoader *_artworkLoader;
@@ -11,7 +11,7 @@
     UIViewController *_contentsController;
     NSURL *_defaultURL;
     <SKUICategoryControllerDelegate> *_delegate;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     NSOperationQueue *_operationQueue;
     UIPopoverController *_popover;
     SKUICategory *_rootCategory;

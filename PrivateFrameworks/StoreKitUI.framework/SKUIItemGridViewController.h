@@ -2,10 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, NSMutableIndexSet, SKUIItemCollectionController, SKUIIconDataConsumer, SKUIClientContext, <SKUIItemGridDelegate>, SKUIAccountButtonsViewController, SKUIUber, NSArray, UICollectionView, SKUIItemArtworkContext, NSOperationQueue, NSMutableArray;
+@class UIImage, NSMutableIndexSet, SKUIItemCollectionController, SKUIIconDataConsumer, SKUIClientContext, <SKUIItemGridDelegate>, SKUIUber, NSArray, UICollectionView, SKUIItemArtworkContext, NSOperationQueue, NSMutableArray;
 
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIAccountButtonsViewController *_accountButtonsViewController;
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     <SKUIItemGridDelegate> *_delegate;
@@ -31,12 +30,12 @@
 @property(retain) SKUIIconDataConsumer * iconDataConsumer;
 @property(retain) SKUIItemArtworkContext * artworkContext;
 @property struct CGSize { float x1; float x2; } imageBoundingSize;
-@property(readonly) NSArray * indexPathsForSelectedItems;
 @property(copy) NSArray * items;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) SKUIUber * uber;
 
 
+- (void)unhideIcons;
 - (void)setItemCellClass:(Class)arg1;
 - (id)popIconImageViewForItemAtIndex:(int)arg1;
 - (id)initWithRowHeight:(float)arg1;
@@ -44,7 +43,6 @@
 - (void)setIconDataConsumer:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(int)arg1;
 - (id)iconDataConsumer;
-- (void)unhideIcons;
 - (struct CGSize { float x1; float x2; })imageBoundingSize;
 - (BOOL)shouldCacheAheadWhenIdleForItemCollectionController:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visibleItemRangeForItemCollectionController:(id)arg1;
@@ -65,13 +63,10 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)_collectionView;
-- (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (id)indexPathsForSelectedItems;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;

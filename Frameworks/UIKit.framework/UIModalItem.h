@@ -6,13 +6,18 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSMutableArray, UITextInputTraits, UIView, _UIModalItemBackgroundView, _UIModalItemContentView, NSString, UIViewController, <UIModalItemDelegate>;
+@class UITextInputTraits, NSArray, NSMutableArray, NSAttributedString, <UIModalItemDelegate>, UIView, NSString, _UIModalItemContentView, UIViewController, _UIModalItemBackgroundView;
 
 @interface UIModalItem : NSObject  {
     NSString *_title;
     NSString *_message;
     NSString *_cancelButtonTitle;
     NSString *_defaultButtonTitle;
+    NSAttributedString *_titleAttributedString;
+    NSAttributedString *_messageAttributedString;
+    NSString *_subtitleString;
+    int _titleMaxLineNumber;
+    int _messageMaxLineNumber;
     NSMutableArray *_otherButtonsTitles;
     int _itemType;
     <UIModalItemDelegate> *_delegate;
@@ -43,6 +48,7 @@
     BOOL _isPresented;
     BOOL _isVisible;
     BOOL _isBeingDismissed;
+    BOOL _isHidden;
     UIViewController *_viewController;
     UIViewController *_hostingViewController;
     UIViewController *_anchorViewController;
@@ -83,10 +89,16 @@
 @property int presentAnimationType;
 @property int dismissAnimationType;
 @property(getter=_viewController,setter=_setViewController:,retain) UIViewController * _viewController;
+@property(copy) NSAttributedString * titleAttributedString;
+@property(copy) NSAttributedString * messageAttributedString;
+@property(copy) NSString * subtitleString;
+@property int titleMaxLineNumber;
+@property int messageMaxLineNumber;
 @property(retain) _UIModalItemContentView * contentView;
 @property(retain) _UIModalItemBackgroundView * backgroundView;
 @property BOOL isBeingDismissed;
 @property int dismissIndex;
+@property BOOL isHidden;
 
 + (id)modalItemWithType:(int)arg1 title:(id)arg2 message:(id)arg3 buttonTitles:(id)arg4 completion:(id)arg5;
 
@@ -95,6 +107,7 @@
 - (id)title;
 - (id)contentView;
 - (id)_contentView;
+- (BOOL)isHidden;
 - (void)setType:(int)arg1;
 - (void)setContentView:(id)arg1;
 - (id)message;
@@ -106,6 +119,12 @@
 - (void)setButtonTitles:(id)arg1;
 - (id)buttonTitles;
 - (void)setContentViewController:(id)arg1;
+- (void)setMessageMaxLineNumber:(int)arg1;
+- (void)setTitleMaxLineNumber:(int)arg1;
+- (void)setSubtitleString:(id)arg1;
+- (void)setMessageAttributedString:(id)arg1;
+- (id)messageAttributedString;
+- (void)setTitleAttributedString:(id)arg1;
 - (void)setContentViewControllerSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPasswordPlaceholderString:(id)arg1;
 - (void)setLoginPlaceholderString:(id)arg1;
@@ -136,12 +155,16 @@
 - (void)setPasswordString:(id)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 otherButtonTitles:(id)arg3 completion:(id)arg4 delegate:(id)arg5;
 - (void)setDefaultButtonIndex:(int)arg1;
+- (void)setIsHidden:(BOOL)arg1;
 - (void)_setRepresentedView:(id)arg1;
 - (id)_representedView;
 - (BOOL)isBeingDismissed;
 - (id)viewController;
 - (id)_viewController;
 - (struct CGSize { float x1; float x2; })contentViewControllerSize;
+- (int)messageMaxLineNumber;
+- (int)titleMaxLineNumber;
+- (id)titleAttributedString;
 - (id)textFieldAtIndex:(int)arg1;
 - (void)_loginFieldTextDidChange;
 - (void)_passwordFieldTextDidChange;
@@ -157,6 +180,7 @@
 - (id)_otherButtonsTitles;
 - (id)_cancelButtonTitle;
 - (int)modalItemInputStyle;
+- (id)subtitleString;
 - (id)backgroundView;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCancelButtonIndex:(int)arg1;

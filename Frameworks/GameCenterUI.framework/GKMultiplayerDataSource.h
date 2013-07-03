@@ -11,10 +11,10 @@
     int _maxPlayers;
     int _automatchPlayers;
     NSString *_footerStatus;
+    GKMultiplayerFooterView *_footerView;
     NSMutableOrderedSet *_players;
     NSMutableDictionary *_playerStatus;
     GKMultiplayerHeaderView *_headerView;
-    GKMultiplayerFooterView *_footerView;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -27,11 +27,11 @@
 @property BOOL removingEnabled;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } headerPlayerRange;
 @property(copy) NSString * footerStatus;
+@property(retain) GKMultiplayerFooterView * footerView;
 @property(retain) NSMutableOrderedSet * players;
 @property(retain) NSMutableDictionary * playerStatus;
 @property BOOL autoMatching;
 @property(retain) GKMultiplayerHeaderView * headerView;
-@property(retain) GKMultiplayerFooterView * footerView;
 
 
 - (id)playerStatus;
@@ -47,7 +47,6 @@
 - (BOOL)shouldRevertStatus:(int)arg1;
 - (int)statusForPlayerWithID:(id)arg1;
 - (void)updateParticipantsAnimated:(BOOL)arg1;
-- (id)players;
 - (void)setParticipantsWithPlayers:(id)arg1 andStatuses:(id)arg2;
 - (id)playersInvited;
 - (void)failedToInvitePlayers;
@@ -58,9 +57,9 @@
 - (void)setFooterStatus:(id)arg1;
 - (void)setRemovingEnabled:(BOOL)arg1;
 - (void)addPlayers:(id)arg1 withStatus:(int)arg2;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setStatus:(int)arg1 forPlayers:(id)arg2;
 - (id)playersToBeInvited;
-- (void)setPlayers:(id)arg1;
 - (id)currentPlayers;
 - (void)finishRevertingPlayers;
 - (int)maxAvailablePlayers;
@@ -72,7 +71,8 @@
 - (void)addPlayers:(id)arg1 withStatus:(int)arg2 replaceAutomatches:(BOOL)arg3;
 - (void)setAutomatchPlayers:(int)arg1;
 - (void)configureCollectionView:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)setPlayers:(id)arg1;
+- (id)players;
 - (void)setMaxPlayers:(int)arg1;
 - (void)setMinPlayers:(int)arg1;
 - (int)maxPlayers;

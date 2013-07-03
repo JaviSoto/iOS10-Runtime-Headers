@@ -24,11 +24,11 @@
 - (id)initWithPropertiesClass:(Class)arg1;
 - (unsigned long)id;
 - (id)clientData;
-- (id)drawableProperties;
 - (void)setParent:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setDrawableProperties:(id)arg1;
 - (BOOL)hidden;
+- (id)drawableProperties;
 - (void)dealloc;
 - (id)parent;
 

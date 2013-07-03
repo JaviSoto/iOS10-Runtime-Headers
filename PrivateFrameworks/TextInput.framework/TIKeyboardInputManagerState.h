@@ -110,16 +110,15 @@
 - (unsigned int)inputCount;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setUsesCandidateSelection:(BOOL)arg1;
 - (BOOL)needsKeyHitTestResults;
 - (BOOL)canHandleKeyHitTest;
 - (BOOL)ignoresDeadKeys;
 - (id)keyEventMap;
-- (BOOL)inputStringIsExemptFromChecker;
 - (id)autocorrectionRecordForInputString;
 - (BOOL)commitsAcceptedCandidate;
 - (id)shadowTyping;
 - (id)wordSeparator;
+- (BOOL)inputStringIsExemptFromChecker;
 - (BOOL)stringEndsWord:(id)arg1;
 - (BOOL)inputStringAcceptsCurrentCandidateIfSelected:(id)arg1;
 - (BOOL)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
@@ -134,9 +133,10 @@
 - (id)searchStringForMarkedText;
 - (BOOL)supportsSetPhraseBoundary;
 - (BOOL)usesAutoDeleteWord;
-- (BOOL)usesCandidateSelection;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (BOOL)supportsNumberKeySelection;
+- (void)setUsesCandidateSelection:(BOOL)arg1;
+- (BOOL)usesCandidateSelection;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

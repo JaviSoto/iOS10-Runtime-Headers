@@ -19,8 +19,8 @@
 - (id)initWithConnection:(id)arg1 replyQueue:(id)arg2;
 - (void)setReplyQueue:(id)arg1;
 - (id)replyQueue;
-- (void)setConnection:(id)arg1;
 - (void)dealloc;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

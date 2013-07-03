@@ -22,7 +22,6 @@
 + (void)initialize;
 + (id)standardMailWebPreferencesForDisplayStyle:(int)arg1 regenerate:(BOOL)arg2;
 
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (void)setHiddenPageCSSAnimationSuspensionEnabled:(BOOL)arg1;
 - (BOOL)hiddenPageCSSAnimationSuspensionEnabled;
@@ -45,6 +44,7 @@
 - (BOOL)regionBasedColumnsEnabled;
 - (void)setRegionBasedColumnsEnabled:(BOOL)arg1;
 - (BOOL)notificationsEnabled;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (BOOL)shouldDisplayTextDescriptions;
 - (void)setShouldDisplayTextDescriptions:(BOOL)arg1;
 - (BOOL)shouldDisplayCaptions;
@@ -65,6 +65,7 @@
 - (BOOL)mockScrollbarsEnabled;
 - (BOOL)mediaPlaybackAllowsInline;
 - (BOOL)mediaPlaybackRequiresUserGesture;
+- (id)networkInterfaceName;
 - (void)setNetworkDataUsageTrackingEnabled:(bool)arg1;
 - (BOOL)networkDataUsageTrackingEnabled;
 - (unsigned int)audioSessionCategoryOverride;
@@ -289,6 +290,7 @@
 - (void)setMediaPlaybackRequiresUserGesture:(BOOL)arg1;
 - (void)setMediaPlaybackAllowsInline:(BOOL)arg1;
 - (void)setShrinksStandaloneImagesToFit:(BOOL)arg1;
+- (void)setNetworkInterfaceName:(id)arg1;
 - (void)setAudioSessionCategoryOverride:(unsigned int)arg1;
 - (void)_setAllowMultiElementImplicitFormSubmission:(BOOL)arg1;
 - (void)_setMinimumZoomFontSize:(float)arg1;

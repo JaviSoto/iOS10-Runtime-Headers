@@ -11,25 +11,27 @@
     NSSet *_commands;
     NSString *_serviceToken;
     NSMutableDictionary *_pendingSends;
+    unsigned int _delegateCapabilities;
 }
 
 @property(readonly) BOOL isActive;
 @property(readonly) IDSAccount * account;
 
 
+- (void)setDelegateCapabilities:(unsigned int)arg1;
 - (void)account:(id)arg1 devicesChanged:(id)arg2;
 - (void)account:(id)arg1 isActiveChanged:(BOOL)arg2;
-- (void)_callDelegatesWithBlock:(id)arg1;
 - (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2 delegateContext:(id)arg3;
+- (void)_callDelegatesWithBlock:(id)arg1;
 - (void)messageIdentifier:(id)arg1 updatedWithResponseCode:(int)arg2 error:(id)arg3 lastCall:(BOOL)arg4;
 - (void)messageReceived:(id)arg1 withGUID:(id)arg2 withPayload:(id)arg3 forTopic:(id)arg4 fromID:(id)arg5;
 - (void)daemonDisconnected;
 - (void)requestKeepAlive;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (BOOL)isActive;
 - (void)_connect;
+- (BOOL)isActive;
 - (id)account;
 - (void)dealloc;
 

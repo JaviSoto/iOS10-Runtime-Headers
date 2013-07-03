@@ -8,7 +8,6 @@
     PFUbiquityLocation *_ubiquityRootLocation;
     NSString *_localPeerID;
     NSURL *_presentedItemURL;
-    unsigned long long _lastFSEventIdentifier;
     NSObject<OS_dispatch_queue> *_processingQueue;
     BOOL _scheduledProcessingBlock;
     NSMutableArray *_pendingURLs;
@@ -25,6 +24,7 @@
 @property(readonly) NSURL * primaryPresentedItemURL;
 
 + (id)sharedPrivateOperationQueue;
++ (void)startDownloadForItems:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
 + (void)initialize;
 
 - (id)locationToStatus;
@@ -40,14 +40,12 @@
 - (void)logImportWasCancelled:(id)arg1;
 - (void)logWasImported:(id)arg1;
 - (void)logWasExported:(id)arg1;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)init;
 - (void)dealloc;
 - (id)description;
-- (void)setLastPresentedItemEventIdentifier:(unsigned long long)arg1;
 - (void)presentedSubitemUbiquityDidChangeAtURL:(id)arg1;
-- (unsigned long long)lastPresentedItemEventIdentifier;
 - (id)presentedItemOperationQueue;
 - (void)presentedSubitemDidChangeAtURL:(id)arg1;
 - (void)relinquishPresentedItemToWriter:(id)arg1;

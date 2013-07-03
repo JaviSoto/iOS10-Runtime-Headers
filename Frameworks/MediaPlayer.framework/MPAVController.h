@@ -94,6 +94,7 @@
     NSDate *_itemDidChangeDate;
     unsigned int _stallBackgroundTaskIdentifier;
     BOOL _shouldSkipToNextTrackOnResumeFromInterruption;
+    BOOL _autoReshufflingDisabled;
     MPAVDestinationBrowser *_destinationBrowser;
 }
 
@@ -111,6 +112,7 @@
 @property(readonly) NSString * routeNameForVolumeControl;
 @property(readonly) unsigned int activeRepeatType;
 @property(readonly) unsigned int activeShuffleType;
+@property BOOL autoReshufflingDisabled;
 @property(readonly) MPAVItem * currentItem;
 @property double currentTime;
 @property(readonly) double currentMonotonousTime;
@@ -163,6 +165,8 @@
 + (void)initialize;
 + (id)sharedInstance;
 
+- (void)setAutoReshufflingDisabled:(BOOL)arg1;
+- (BOOL)autoReshufflingDisabled;
 - (void)setShouldSkipToNextTrackOnResumeFromInterruption:(BOOL)arg1;
 - (BOOL)shouldSkipToNextTrackOnResumeFromInterruption;
 - (double)nextFadeOutDuration;
@@ -194,6 +198,7 @@
 - (BOOL)forceRestartPlaybackIfNecessary;
 - (void)playChapterTimeMarkerAtIndex:(unsigned int)arg1;
 - (void)playItemAtIndex:(unsigned int)arg1;
+- (void)disconnectPlaylistManagerForTeardown;
 - (double)currentMonotonousTime;
 - (BOOL)isRewindHoldingAtStart;
 - (BOOL)isSeekingOrScrubbing;
@@ -282,7 +287,6 @@
 - (void)finalizeBookkeepingNow;
 - (void)ensureHasAVPlaylistManager;
 - (void)_setActionAtEndAttributeForState:(unsigned int)arg1;
-- (void)_disconnectAVPlaylistManagerWithReason:(int)arg1;
 - (void)applyShuffleSettings;
 - (void)applyRepeatSettings;
 - (BOOL)_setRate:(float)arg1 forScanning:(BOOL)arg2;
@@ -297,6 +301,7 @@
 - (void)_delayedSetCurrentTime;
 - (void)skipToSeekableEnd;
 - (void)pauseWithFadeout:(float)arg1;
+- (void)_disconnectAVPlaylistManagerWithReason:(int)arg1;
 - (void)_setAVControllerQueueFeeder:(id)arg1 startQueueIndex:(unsigned int)arg2;
 - (void)_switchToFeeder:(id)arg1 mode:(int)arg2 index:(unsigned int)arg3 play:(BOOL)arg4 configureFeederBlock:(id)arg5;
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
@@ -406,13 +411,13 @@
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setEQPreset:(int)arg1;
 - (float)rate;
-- (BOOL)setRate:(float)arg1;
 - (float)volume;
-- (void)setVolume:(float)arg1;
 - (void)play;
 - (void)beginInterruption;
 - (BOOL)isPlaying;
 - (id)dateFormatter;
+- (BOOL)setRate:(float)arg1;
+- (void)setVolume:(float)arg1;
 - (id)init;
 - (BOOL)isValid;
 - (void)dealloc;

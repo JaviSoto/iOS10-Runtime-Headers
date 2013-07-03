@@ -4,27 +4,29 @@
 
 @class NSString;
 
-@interface SKUITextLayoutRequest : NSObject <NSCopying> {
-    BOOL _bold;
+@interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
     float _fontSize;
+    int _fontWeight;
     int _numberOfLines;
     NSString *_text;
     unsigned char _textAlignment;
     float _width;
 }
 
-@property(getter=isBold) BOOL bold;
 @property float fontSize;
+@property int fontWeight;
 @property unsigned char textAlignment;
 @property int numberOfLines;
 @property(copy) NSString * text;
 @property float width;
+@property(readonly) Class layoutClass;
 
 
-- (BOOL)isBold;
-- (void)setBold:(BOOL)arg1;
+- (Class)layoutClass;
 - (void)setWidth:(float)arg1;
 - (float)width;
+- (void)setFontWeight:(int)arg1;
+- (int)fontWeight;
 - (id)text;
 - (float)fontSize;
 - (id)init;

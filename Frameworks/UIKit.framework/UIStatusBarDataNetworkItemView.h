@@ -10,8 +10,8 @@
     BOOL _showRSSI;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)_dataNetworkImage;
 - (id)_stringForRSSI;

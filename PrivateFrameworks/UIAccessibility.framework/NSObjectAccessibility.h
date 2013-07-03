@@ -5,9 +5,9 @@
 @interface NSObjectAccessibility : NSObjectAccessibility_super  {
 }
 
++ (id)_initializeSafeCategoryFromValidationManager;
 + (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)accessibilityUserDefinedActivationPoint;
 - (id)accessibilityUserDefinedLanguage;

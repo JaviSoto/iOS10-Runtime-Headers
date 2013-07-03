@@ -9,9 +9,9 @@
 + (void)initialize;
 
 - (float)location;
-- (id)initWithLocation:(float)arg1;
 - (BOOL)isDoubleStop;
 - (void)setLocation:(float)arg1;
+- (id)initWithLocation:(float)arg1;
 - (BOOL)isOpacityStop;
 - (BOOL)isColorStop;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

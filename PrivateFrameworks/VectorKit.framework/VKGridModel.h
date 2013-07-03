@@ -45,6 +45,7 @@
 - (id)mapModel;
 - (void)setSimpleGridEnabled:(BOOL)arg1;
 - (void)stylesheetDidChange;
+- (void)updateGridColor;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)supportedRenderPasses;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;

@@ -5,49 +5,32 @@
 @class UIColor;
 
 @interface SKUIColorScheme : NSObject <NSCopying, NSSecureCoding> {
-    UIColor *_alternateCellColor;
     UIColor *_backgroundColor;
-    UIColor *_cellColor;
-    UIColor *_headerTextColor;
-    UIColor *_primaryHighlightedTextColor;
+    UIColor *_highlightedTextColor;
     UIColor *_primaryTextColor;
-    UIColor *_separatorColor;
-    UIColor *_separatorHighlightColor;
-    UIColor *_titleTextColor;
+    UIColor *_secondaryTextColor;
 }
 
 @property(readonly) int schemeStyle;
 @property(copy) UIColor * backgroundColor;
-@property(copy) UIColor * headerTextColor;
+@property(copy) UIColor * highlightedTextColor;
 @property(copy) UIColor * primaryTextColor;
-@property(copy) UIColor * titleTextColor;
-@property(copy) UIColor * cellColor;
-@property(copy) UIColor * alternateCellColor;
-@property(readonly) UIColor * separatorColor;
-@property(readonly) UIColor * separatorHighlightColor;
-@property(readonly) UIColor * primaryHighlightedTextColor;
+@property(copy) UIColor * secondaryTextColor;
 
 + (BOOL)supportsSecureCoding;
 
-- (void)setTitleTextColor:(id)arg1;
-- (id)titleTextColor;
-- (id)separatorHighlightColor;
+- (void)setSecondaryTextColor:(id)arg1;
+- (id)secondaryTextColor;
 - (void)setPrimaryTextColor:(id)arg1;
-- (id)primaryTextColor;
-- (id)primaryHighlightedTextColor;
-- (void)setHeaderTextColor:(id)arg1;
-- (id)headerTextColor;
-- (void)setCellColor:(id)arg1;
-- (id)cellColor;
-- (void)setAlternateCellColor:(id)arg1;
-- (id)alternateCellColor;
 - (int)schemeStyle;
 - (id)initWithColorSchemeDictionary:(id)arg1;
+- (id)primaryTextColor;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)separatorColor;
+- (void)setHighlightedTextColor:(id)arg1;
+- (id)highlightedTextColor;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

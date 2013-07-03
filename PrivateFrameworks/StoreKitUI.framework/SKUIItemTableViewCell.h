@@ -4,13 +4,15 @@
 
 @class SKUIItemCellLayout;
 
-@interface SKUIItemTableViewCell : SKUITableViewCell  {
+@interface SKUIItemTableViewCell : SKUITableViewCell <SKUICellLayoutParentView> {
+    BOOL _layoutNeedsLayout;
 }
 
 @property(readonly) SKUIItemCellLayout * layout;
 
 
 - (void)configureForItem:(id)arg1 rowIndex:(int)arg2;
+- (void)setCellLayoutNeedsLayout;
 - (void)setBackgroundColor:(id)arg1;
 - (id)layout;
 - (void)prepareForReuse;

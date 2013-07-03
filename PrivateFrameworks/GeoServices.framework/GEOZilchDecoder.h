@@ -2,10 +2,6 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class <GEOMapAccessRestrictions>, NSObject<OS_dispatch_queue>;
 
 @interface GEOZilchDecoder : GEOMapRequestManager  {
@@ -18,20 +14,14 @@
         } __m_; 
     } _lock;
     <GEOMapAccessRestrictions> *_mapAccessRestrictions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileErrorHandler;
-
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * decoderQueue;
-@property(copy) id tileErrorHandler;
 @property <GEOMapAccessRestrictions> * mapAccessRestrictions;
 
 + (BOOL)decodingSupported;
 
-- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2;
+- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (void)setMapAccessRestrictions:(id)arg1;
 - (id)mapAccessRestrictions;
 - (id)decoderQueue;
@@ -39,8 +29,6 @@
 - (void)requestComplete:(id)arg1;
 - (void)trackRequest:(id)arg1;
 - (void)setMapDataQueue:(id)arg1;
-- (void)setTileErrorHandler:(id)arg1;
-- (id)tileErrorHandler;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

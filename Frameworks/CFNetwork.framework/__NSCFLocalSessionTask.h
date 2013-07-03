@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_data>, NSInputStream, NSData, __NSCFLocalSessionBridge, __NSCFURLSession, NSURL;
+@class __NSCFURLSession, NSObject<OS_dispatch_source>, NSInputStream, __NSCFLocalSessionBridge, NSObject<OS_dispatch_data>, NSData, NSURL;
 
 @interface __NSCFLocalSessionTask : __NSCFURLSessionTask  {
     BOOL _pendingResponseDisposition;
@@ -30,6 +30,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _async_initialization;
 
+    NSObject<OS_dispatch_source> *_resourceTimeout;
 }
 
 @property(retain) struct _CFURLConnection { }* cfConn;
@@ -45,10 +46,13 @@
 @property(retain) __NSCFURLSession * session;
 @property unsigned int suspendCount;
 @property(copy) id async_initialization;
+@property(retain) NSObject<OS_dispatch_source> * resourceTimeout;
 
 
 - (void)dealloc;
 - (id)description;
+- (void)setResourceTimeout:(id)arg1;
+- (id)resourceTimeout;
 - (unsigned int)suspendCount;
 - (void)setPendingResponseDisposition_didFinish:(BOOL)arg1;
 - (BOOL)pendingResponseDisposition_didFinish;
@@ -64,7 +68,6 @@
 - (void)suspend;
 - (void)cancel_without_error;
 - (void)cancel;
-- (void)cancel_with_error:(id)arg1;
 - (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
 - (void)_onqueue_needNewBodyStream:(id)arg1 withCompletion:(id)arg2;
 - (void)_onqueue_didReceiveDispatchData:(id)arg1;
@@ -73,6 +76,8 @@
 - (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id)arg3;
 - (id)_onqueue_strippedMutableRequest;
 - (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;
+- (void)cancel_with_error:(id)arg1;
+- (id)timeoutError;
 - (id)error:(id)arg1 code:(int)arg2;
 - (void)cancel0:(bool)arg1 forcedError:(id)arg2;
 - (id)async_initialization;
@@ -95,6 +100,7 @@
 - (void)setUploadData:(id)arg1;
 - (void)setUploadFile:(id)arg1;
 - (void)setCfConn:(struct _CFURLConnection { }*)arg1;
+- (void)setConnection:(struct _CFURLConnection { }*)arg1;
 - (struct _CFURLConnection { }*)cfConn;
 - (id)bridge;
 - (id)initWithTask:(id)arg1;

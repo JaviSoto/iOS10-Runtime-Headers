@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImageView, UIImage, NSString, SKUITextBoxView;
+@class UIImageView, UIView, NSString, UIImage, SKUIEditorialCellLayout;
 
 @interface SKUIBrickGridCollectionViewCell : UICollectionViewCell  {
     NSString *_accessibilityLabel;
@@ -13,7 +13,8 @@
         float bottom; 
         float right; 
     } _contentInsets;
-    SKUITextBoxView *_editorialView;
+    SKUIEditorialCellLayout *_editorialCellLayout;
+    UIView *_editorialContainerView;
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;

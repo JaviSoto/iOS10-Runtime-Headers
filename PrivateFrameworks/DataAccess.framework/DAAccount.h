@@ -9,6 +9,7 @@
     BOOL _hasInitted;
     BOOL _shouldPromptForPassword;
     BOOL _shouldUseOpportunisticSockets;
+    BOOL _wasUserInitiated;
     NSMutableDictionary *_haveWarnedAboutCertDict;
     DAStatusReport *_statusReport;
     struct __CFDictionary { } *_consumers;
@@ -16,8 +17,6 @@
     DATaskManager *_taskManager;
     BOOL _shouldFailAllTasks;
     BOOL _isValidating;
-    int _dataclasses;
-    int _daAccountVersion;
     NSArray *_appIdsForPasswordPrompt;
     NSMutableDictionary *_dataclassPropertyURLsByDataclass;
 }
@@ -40,6 +39,7 @@
 @property(retain) NSData * signingIdentityPersistentReference;
 @property(retain) NSData * encryptionIdentityPersistentReference;
 @property BOOL shouldDoInitialAutodiscovery;
+@property(readonly) BOOL shouldAutodiscoverAccountProperties;
 @property(readonly) NSString * scheme;
 @property(copy) NSURL * principalURL;
 @property(copy) NSString * principalPath;
@@ -50,6 +50,7 @@
 @property(readonly) BOOL shouldFailAllTasks;
 @property(readonly) NSData * identityPersist;
 @property BOOL shouldUseOpportunisticSockets;
+@property BOOL wasUserInitiated;
 @property BOOL isValidating;
 @property(readonly) DAStatusReport * statusReport;
 @property(retain) NSMutableDictionary * dataclassPropertyURLsByDataclass;
@@ -89,12 +90,10 @@
 - (int)_actionForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
 - (void)setDataclassPropertyURLsByDataclass:(id)arg1;
 - (id)appIdsForPasswordPrompt;
-- (void)setDAAccountVersion:(int)arg1;
-- (int)daAccountVersion;
+- (void)setWasUserInitiated:(BOOL)arg1;
 - (void)setShouldUseOpportunisticSockets:(BOOL)arg1;
 - (void)setShouldPromptForPassword:(BOOL)arg1;
 - (BOOL)shouldPromptForPassword;
-- (int)enabledDataclassesBitmask;
 - (BOOL)isSubscribedCalendarAccount;
 - (BOOL)isGoogleAccount;
 - (BOOL)isCalDAVChildAccount;
@@ -118,10 +117,11 @@
 - (void)stopMonitoringFolders;
 - (void)stopMonitoringFoldersWithIDs:(id)arg1;
 - (BOOL)monitorFolderWithID:(id)arg1;
+- (BOOL)shouldAutodiscoverAccountProperties;
 - (void)setShouldDoInitialAutodiscovery:(BOOL)arg1;
-- (BOOL)shouldDoInitialAutodiscovery;
 - (BOOL)autodiscoverAccountConfigurationWithConsumer:(id)arg1;
 - (void)discoverInitialPropertiesWithConsumer:(id)arg1;
+- (BOOL)saveModifiedPropertiesOnBackingAccount;
 - (void)checkValidityOnAccountStore:(id)arg1 withConsumer:(id)arg2;
 - (BOOL)accountContainsEmailAddress:(id)arg1;
 - (id)domainOnly;
@@ -137,22 +137,27 @@
 - (void)resumeMonitoringFoldersWithIDs:(id)arg1;
 - (void)removeAccountPropertyForKey:(id)arg1;
 - (id)spinnerIdentifiers;
+- (int)enabledDataclassesBitmask;
 - (void)setEnabled:(BOOL)arg1 forDADataclass:(int)arg2;
 - (BOOL)enabledForAnyDADataclasses:(int)arg1;
 - (id)scheduleIdentifier;
 - (id)syncStoreIdentifier;
 - (void)resetAccountID;
+- (BOOL)upgradeAccount;
+- (void)setDAAccountVersion:(int)arg1;
+- (int)daAccountVersion;
 - (void)dropAssertionsAndRenewCredentialsWithHandler:(id)arg1;
+- (BOOL)wasUserInitiated;
 - (BOOL)isValidating;
 - (void)saveAccountProperties;
 - (id)_exceptionsDict;
+- (void)saveAccountPropertiesWithCompletionHandler:(id)arg1;
 - (void)setIdentityCertificatePersistentID:(id)arg1 managedByProfile:(BOOL)arg2;
 - (BOOL)_isIdentityManagedByProfile;
 - (BOOL)monitorFoldersWithIDs:(id)arg1;
+- (BOOL)shouldDoInitialAutodiscovery;
 - (void)setIsValidating:(BOOL)arg1;
 - (void)setUseSSL:(BOOL)arg1;
-- (void)setAccountIntProperty:(int)arg1 forKey:(id)arg2;
-- (int)accountIntPropertyForKey:(id)arg1;
 - (id)urlFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)dataclassPropertyURLsByDataclass;
 - (id)backingAccountInfo;
@@ -162,6 +167,8 @@
 - (id)stateString;
 - (id)statusReport;
 - (BOOL)enabledForDADataclass:(int)arg1;
+- (void)setAccountIntProperty:(int)arg1 forKey:(id)arg2;
+- (int)accountIntPropertyForKey:(id)arg1;
 - (id)initWithBackingAccountInfo:(id)arg1;
 - (void)ingestBackingAccountInfoProperties;
 - (void)_setPersistentUUID:(id)arg1;
@@ -172,7 +179,7 @@
 - (id)signingIdentityPersistentReference;
 - (void)cancelSearchQuery:(id)arg1;
 - (void)performSearchQuery:(id)arg1;
-- (id)delegateeInvitationICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
+- (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
@@ -198,6 +205,8 @@
 - (id)principalURL;
 - (BOOL)useSSL;
 - (void)setHost:(id)arg1;
+- (void)setPassword:(id)arg1;
+- (void)setUser:(id)arg1;
 - (void)tearDown;
 - (BOOL)isDisabled;
 - (id)persistentUUID;
@@ -207,17 +216,16 @@
 - (id)emailAddress;
 - (id)displayName;
 - (id)accountID;
-- (void)setPassword:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)setAccountDescription:(id)arg1;
-- (void)reload;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)dataclassProperties;
 - (id)username;
 - (id)accountDescription;
 - (void)setPort:(int)arg1;
+- (void)reload;
 - (id)password;
 - (id)user;
 - (int)port;
@@ -225,6 +233,5 @@
 - (id)scheme;
 - (void)dealloc;
 - (id)description;
-- (void)setUser:(id)arg1;
 
 @end

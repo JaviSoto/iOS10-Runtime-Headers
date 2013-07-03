@@ -143,10 +143,6 @@
 @property(readonly) VGLMesh * meshForUnitTextureInverted;
 @property unsigned int activeTexture;
 
-+ (id)_contextStack;
-+ (id)_contextStackForQueue:(id)arg1;
-+ (void)popContext;
-+ (void)pushContext:(id)arg1 queue:(id)arg2;
 
 - (id)VAO;
 - (BOOL)colorMask;
@@ -156,6 +152,7 @@
 - (struct { float x1; float x2; float x3; float x4; })scissorRect;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })framerateGraphColor;
 - (BOOL)drawFramerateGraph;
+- (id)eaglContext;
 - (id)gpu;
 - (id)programFactoryCohort;
 - (id)newRenderbuffer;
@@ -163,7 +160,6 @@
 - (id)newBuffer;
 - (id)newVAO;
 - (id)newOcclusionResource:(int)arg1;
-- (void)performWhileCurrentContext:(id)arg1;
 - (BOOL)isCurrentContext;
 - (void)dumpCounts;
 - (BOOL)checkForError;
@@ -206,8 +202,6 @@
 - (void)setColorMask:(BOOL)arg1;
 - (BOOL)renderbufferStorage:(unsigned int)arg1 fromCanvas:(id)arg2;
 - (id)initWithGPU:(id)arg1 sharegroup:(id)arg2;
-- (void)_makeActive;
-- (id)eaglContext;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })pixelSpaceMatrix;
 - (void)drawFramerateGraphMethod;
 - (void)drawTriangleFan:(int)arg1 nv:(int)arg2 pv:(float*)arg3;
@@ -246,7 +240,6 @@
 - (void)pushRenderState;
 - (void)setDepthMask:(BOOL)arg1;
 - (void)drawUnitSquareMesh;
-- (void)setDepthTest:(BOOL)arg1;
 - (void)drawUnitSquare;
 - (void)fillRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
 - (void)drawRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
@@ -258,11 +251,14 @@
 - (void)setFramerateGraphColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDrawFramerateGraph:(BOOL)arg1;
 - (float)averageFPS;
+- (void)_pop:(void*)arg1;
+- (BOOL)_push:(void**)arg1;
 - (void)setStencilFunc:(int)arg1 ref:(unsigned char)arg2 mask:(unsigned char)arg3;
 - (void)setStencilOpFail:(int)arg1 zFail:(int)arg2 zPass:(int)arg3;
 - (void)setColorMaskRed:(BOOL)arg1 green:(BOOL)arg2 blue:(BOOL)arg3 alpha:(BOOL)arg4;
 - (id)meshForUnitTexture;
 - (void)setProgram:(id)arg1;
+- (void)setDepthTest:(BOOL)arg1;
 - (void)setStencilTest:(BOOL)arg1;
 - (void)setClearDepth:(float)arg1;
 - (void)setClearStencil:(unsigned char)arg1;
@@ -285,7 +281,9 @@
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
 - (void)dealloc;
 - (id).cxx_construct;
+- (id)description;
 - (void)present;
+- (void)perform:(id)arg1;
 - (void)setLineWidth:(float)arg1;
 
 @end

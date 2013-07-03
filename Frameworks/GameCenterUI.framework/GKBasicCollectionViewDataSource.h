@@ -41,9 +41,9 @@
 - (id)indexPathsForItem:(id)arg1;
 - (void)collectionViewDidBecomeInactive:(id)arg1;
 - (id)sectionTitle;
+- (void)preloadImagesForItems:(id)arg1 startingAtIndex:(unsigned int)arg2 loadBlock:(id)arg3;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
-- (void)preloadImagesForItems:(id)arg1 startingAtIndex:(unsigned int)arg2 loadBlock:(id)arg3;
 - (void)configureCollectionView:(id)arg1;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)items;

@@ -15,8 +15,8 @@
 + (id)newFileCoordinatorForUbiquitousExternalDataReferenceLocation:(id)arg1;
 
 - (BOOL)shouldRetryForError:(id)arg1 ignoreFile:(BOOL*)arg2;
-- (id)localPeerID;
 - (void)coordinateReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
+- (id)localPeerID;
 - (void)dealloc;
 - (id)initWithFilePresenter:(id)arg1;
 

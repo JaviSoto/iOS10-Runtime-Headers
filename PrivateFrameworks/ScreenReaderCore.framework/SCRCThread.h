@@ -27,7 +27,6 @@
 + (void)initialize;
 + (id)activity;
 
-- (void)_setKey:(id)arg1;
 - (double)performSelector:(SEL)arg1 onTarget:(id)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 objects:(id)arg5;
 - (void)_processQueueFromTimer;
 - (void)_processQueue;
@@ -38,6 +37,7 @@
 - (void)setIsInvalid:(BOOL)arg1;
 - (double)lastStartTime;
 - (void)_enqueueTask:(id)arg1 cancelMask:(unsigned long)arg2 lastStartTime:(double*)arg3;
+- (void)_setKey:(id)arg1;
 - (id)_initWithKey:(id)arg1 task:(id)arg2;
 - (void)_setName:(id)arg1;
 - (id)init;

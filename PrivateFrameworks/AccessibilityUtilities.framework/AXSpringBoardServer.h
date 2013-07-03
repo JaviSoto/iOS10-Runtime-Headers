@@ -23,6 +23,8 @@
 - (BOOL)isGuidedAccessActive;
 - (void)hideNotificationCenter;
 - (void)copyStringToPasteboard:(id)arg1;
+- (void)openAppSwitcher;
+- (BOOL)isAppSwitcherVisible;
 - (void)showNotificationCenter;
 - (void)showControlCenter:(BOOL)arg1;
 - (BOOL)isControlCenterVisible;
@@ -37,7 +39,7 @@
 - (BOOL)isRingerMuted;
 - (BOOL)isSideSwitchUsedForOrientation;
 - (void)resetDimTimer;
-- (BOOL)isVideoPlaying;
+- (BOOL)isMediaPlaying;
 - (void)setSystemGesturesEnabled:(BOOL)arg1;
 - (BOOL)isOrientationLocked;
 - (BOOL)isSystemSleeping;
@@ -50,7 +52,6 @@
 - (void)toggleHearingControl;
 - (void)openSCATCustomGestureCreation;
 - (void)openAssistiveTouchCustomGestureCreation;
-- (void)openAppSwitcher;
 - (void)openVoiceControl;
 - (BOOL)isSiriVisible;
 - (void)openSiri;
@@ -71,8 +72,8 @@
 - (id)_handleGestureOverrideResult:(id)arg1;
 - (id)_handleReplyResult:(id)arg1;
 - (void)_didConnectToServer;
-- (void)setVolume:(float)arg1;
 - (int)pid;
+- (void)setVolume:(float)arg1;
 - (id)init;
 - (void)dealloc;
 - (int)activeInterfaceOrientation;

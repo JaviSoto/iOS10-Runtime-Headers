@@ -7,6 +7,7 @@
 @interface GKAuthenticateResponse : GKInternalRepresentation  {
     BOOL _loginDisabled;
     BOOL _passwordChangeRequired;
+    BOOL _shouldShowLinkAccountsUI;
     NSString *_accountName;
     NSString *_playerID;
     NSString *_authToken;
@@ -21,6 +22,7 @@
 @property int environment;
 @property BOOL passwordChangeRequired;
 @property(retain) NSURL * passwordChangeURL;
+@property BOOL shouldShowLinkAccountsUI;
 
 + (id)secureCodedPropertyKeys;
 
@@ -28,9 +30,11 @@
 - (id)accountName;
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
+- (BOOL)shouldShowLinkAccountsUI;
 - (id)passwordChangeURL;
 - (BOOL)passwordChangeRequired;
 - (BOOL)loginDisabled;
+- (void)setShouldShowLinkAccountsUI:(BOOL)arg1;
 - (void)setPasswordChangeURL:(id)arg1;
 - (void)setPasswordChangeRequired:(BOOL)arg1;
 - (void)setLoginDisabled:(BOOL)arg1;

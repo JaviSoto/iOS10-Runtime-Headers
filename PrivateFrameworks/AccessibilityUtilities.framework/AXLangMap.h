@@ -12,6 +12,7 @@
     NSString *_generalLanguageID;
     AXDialectMap *_userPreferredDialect;
     NSArray *_alternateLanguageIDs;
+    NSArray *_associatedAmbiguousLanguages;
 }
 
 @property(getter=isWestern) BOOL western;
@@ -19,14 +20,16 @@
 @property(copy) NSString * generalLanguageID;
 @property(retain) NSArray * alternateLanguageIDs;
 @property(retain) NSArray * dialects;
+@property(retain) NSArray * associatedAmbiguousLanguages;
 @property(readonly) AXDialectMap * defaultDialect;
 @property(readonly) AXDialectMap * userLocaleDialect;
 @property AXDialectMap * userPreferredDialect;
 
 
+- (id)associatedAmbiguousLanguages;
 - (id)dialectWithLocaleIdentifier:(id)arg1;
 - (id)defaultDialect;
-- (id)initWithLanguageID:(id)arg1 isWestern:(BOOL)arg2 isAmbiguous:(BOOL)arg3 dialects:(id)arg4 alternateLanguageIDs:(id)arg5;
+- (id)initWithLanguageID:(id)arg1 isWestern:(BOOL)arg2 isAmbiguous:(BOOL)arg3 dialects:(id)arg4 alternateLanguageIDs:(id)arg5 associatedAmbiguousLanguages:(id)arg6;
 - (id)userLocaleDialect;
 - (id)userPreferredDialect;
 - (BOOL)isAmbiguous;
@@ -36,6 +39,7 @@
 - (void)setUserPreferredDialect:(id)arg1;
 - (id)dialects;
 - (id)generalLanguageID;
+- (void)setAssociatedAmbiguousLanguages:(id)arg1;
 - (void)setDialects:(id)arg1;
 - (void)setAlternateLanguageIDs:(id)arg1;
 - (void)setGeneralLanguageID:(id)arg1;

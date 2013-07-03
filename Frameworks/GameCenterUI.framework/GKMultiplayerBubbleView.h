@@ -2,21 +2,29 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKBubbleWithLabelControl;
+@class GKTextBubbleControl, GKHorizontalBubbleControlsView;
 
 @interface GKMultiplayerBubbleView : UIView  {
-    GKBubbleWithLabelControl *_inviteButton;
-    GKBubbleWithLabelControl *_playButton;
+    GKTextBubbleControl *_inviteButton;
+    GKTextBubbleControl *_playButton;
+    GKHorizontalBubbleControlsView *_bubblesView;
 }
 
-@property GKBubbleWithLabelControl * inviteButton;
-@property GKBubbleWithLabelControl * playButton;
+@property(retain) GKTextBubbleControl * inviteButton;
+@property(retain) GKTextBubbleControl * playButton;
+@property(retain) GKHorizontalBubbleControlsView * bubblesView;
 
 
-- (id)playButton;
-- (id)inviteButton;
+- (void)setBubblesView:(id)arg1;
+- (id)bubblesView;
 - (void)setPlayButton:(id)arg1;
+- (id)playButton;
 - (void)setInviteButton:(id)arg1;
+- (id)inviteButton;
+- (void)scatterOutBubblesWithCompletion:(id)arg1;
+- (void)floatInBubbles;
+- (void)setBubblesHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 
 @end

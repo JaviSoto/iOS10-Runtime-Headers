@@ -36,10 +36,10 @@
 - (void)setUpdated:(id)arg1;
 - (id)updated;
 - (id)copyParseRules;
-- (void)setCreated:(id)arg1;
-- (void)setDtstamp:(id)arg1;
 - (id)dtstamp;
 - (id)created;
+- (void)setCreated:(id)arg1;
+- (void)setDtstamp:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

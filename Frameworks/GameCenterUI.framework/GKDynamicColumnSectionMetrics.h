@@ -10,6 +10,7 @@
 @property unsigned int columnsInPortrait;
 @property unsigned int columnsInLandscape;
 
++ (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2 forIdiom:(int)arg3;
 + (id)dynamicColumnSectionMetricsWithColumnsInPortrait:(unsigned int)arg1 columnsInLandscape:(unsigned int)arg2;
 
 - (unsigned int)columnsInLandscape;
@@ -17,7 +18,7 @@
 - (void)setColumnsInLandscape:(unsigned int)arg1;
 - (void)setColumnsInPortrait:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })itemSizeForCollectionView:(id)arg1;
-- (id)init;
+- (id)initWithIdiom:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

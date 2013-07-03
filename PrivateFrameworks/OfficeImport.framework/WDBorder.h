@@ -19,7 +19,6 @@
 - (BOOL)isEqualToBorder:(id)arg1;
 - (unsigned char)space;
 - (void)setSpace:(unsigned char)arg1;
-- (void)setShadow:(BOOL)arg1;
 - (void)setWidth:(unsigned char)arg1;
 - (unsigned char)width;
 - (void)setFrame:(BOOL)arg1;
@@ -33,6 +32,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setShadow:(BOOL)arg1;
 - (void)setColor:(id)arg1;
 
 @end

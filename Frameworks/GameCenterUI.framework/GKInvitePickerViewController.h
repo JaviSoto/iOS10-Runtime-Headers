@@ -20,7 +20,6 @@
 - (void)setHiddenPlayers:(id)arg1;
 - (id)splitingDataSource;
 - (id)initWithGame:(id)arg1 selectedPlayerIDs:(id)arg2 hiddenPlayers:(id)arg3;
-- (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned int)arg2 didSelectDataSourceWithIndex:(int)arg3;
 - (void)setSupportsNearby:(BOOL)arg1;
 - (void)configureDataSource;
 - (void)dealloc;

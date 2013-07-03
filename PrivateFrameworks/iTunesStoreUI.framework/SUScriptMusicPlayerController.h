@@ -65,13 +65,13 @@
 - (void)endSeeking;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
-- (id)playbackState;
 - (id)repeatMode;
 - (void)setRepeatMode:(id)arg1;
 - (id)volume;
-- (void)setVolume:(id)arg1;
 - (void)play;
+- (id)playbackState;
 - (id)attributeKeys;
+- (void)setVolume:(id)arg1;
 - (void)dealloc;
 - (void)pause;
 - (void)stop;

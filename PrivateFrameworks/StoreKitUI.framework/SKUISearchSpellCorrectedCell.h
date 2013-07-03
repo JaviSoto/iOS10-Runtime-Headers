@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImageView, UILabel, NSString, SKUIClientContext;
+@class UIImageView, UILabel, NSString, UIButton, UIControl, SKUIClientContext;
 
 @interface SKUISearchSpellCorrectedCell : UICollectionViewCell  {
     BOOL _autoCorrected;
@@ -12,6 +12,7 @@
     int _preAutoCorrectCount;
     NSString *_searchTerm;
     NSString *_spellCorrectedTerm;
+    UIButton *_spellCorrectionButton;
 }
 
 @property(retain) SKUIClientContext * clientContext;
@@ -19,8 +20,10 @@
 @property(copy) NSString * spellCorrectedTerm;
 @property BOOL autoCorrected;
 @property int preAutoCorrectCount;
+@property(readonly) UIControl * spellCorrectionButton;
 
 
+- (id)spellCorrectionButton;
 - (void)_reloadLabel;
 - (void)setPreAutoCorrectCount:(int)arg1;
 - (int)preAutoCorrectCount;

@@ -14,8 +14,8 @@
     } _scrollOrigin;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_adjustScrollers;
 - (int)verticalScrollingMode;

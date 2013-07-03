@@ -28,12 +28,15 @@
 
 + (id)sharedInstance;
 
+- (id)_activeAudioCall;
+- (id)_activeFaceTimeCall;
+- (BOOL)_hasActiveAudioCall;
+- (BOOL)_hasActiveFaceTimeCall;
 - (BOOL)_hasActiveTelephonyCall;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_callStateForType:(unsigned int)arg1;
 - (id)_calls;
 - (void)__setTelephonyCallState:(unsigned int)arg1;
-- (id)calls;
 - (void)_postStateChangeIfNecessary;
 - (unsigned int)_telephonyCallState;
 - (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(BOOL)arg4 type:(unsigned int)arg5;
@@ -43,18 +46,15 @@
 - (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setACCallState:(unsigned int)arg1;
 - (void)_setAVCallState:(unsigned int)arg1;
+- (void)_updateACCallState;
+- (void)_updateAVCallState;
 - (unsigned int)_callState;
+- (id)calls;
 - (void)_sendProxyUpdate;
 - (void)_addACChatProxy:(id)arg1;
 - (void)_addAVChatProxy:(id)arg1;
-- (id)_activeFaceTimeCall;
-- (id)_activeAudioCall;
-- (BOOL)_hasActiveAudioCall;
-- (BOOL)_hasActiveFaceTimeCall;
 - (void)_updateOverallChatState;
-- (void)_updateAVCallState;
 - (void)_updateAVChatProxyWithInfo:(id)arg1;
-- (void)_updateACCallState;
 - (void)_updateACChatProxyWithInfo:(id)arg1;
 - (unsigned int)callState;
 - (id)init;

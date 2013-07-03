@@ -18,6 +18,7 @@
     <DATask> *_activeModalTask;
     int _state;
     NSTimer *_managerIdleTimer;
+    NSTimer *_userInitiatedSyncTimer;
 }
 
 @property DAAccount * account;
@@ -33,7 +34,6 @@
 - (void)taskEndModal:(id)arg1;
 - (void)taskRequestModal:(id)arg1;
 - (void)taskDidFinish:(id)arg1;
-- (BOOL)_hasTasksIndicatingARunningSync;
 - (void)_logSyncEnd;
 - (void)cancelAllTasks;
 - (void)submitQueuedTask:(id)arg1;
@@ -45,6 +45,8 @@
 - (void)_retainPowerAssertionForTask:(id)arg1;
 - (id)_getQueuedModalTasks;
 - (id)_getModalHeldIndependentTasks;
+- (void)_clearUserInitiatedSyncTimer;
+- (BOOL)_hasTasksIndicatingARunningSync;
 - (void)_useOpportunisticSocketsAgain;
 - (BOOL)_hasTasksForcingNetworkConnection;
 - (void)_scheduleStartModal:(id)arg1;

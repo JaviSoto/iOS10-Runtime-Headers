@@ -88,6 +88,7 @@
 - (id)localLocationsURL;
 - (void)setWebLocationsURL:(id)arg1;
 - (id)webLocationsURL;
+- (BOOL)isBundled;
 - (id)allImageSetsLoadingIfNecessary;
 - (void)flushCachedImageSets;
 - (BOOL)isEqualToPassIncludingMetadata:(id)arg1;
@@ -149,16 +150,15 @@
 - (id)passTypeIdentifier;
 - (id)archivedPass;
 - (id)pluralLocalizedName;
-- (BOOL)isBundled;
 - (BOOL)isUpdatable;
 - (BOOL)hasTimeOrLocationRelevancyInfo;
 - (id)backFaceImage;
 - (id)frontFaceImage;
 - (id)partialFrontFaceImage;
 - (BOOL)imageSetIsLoaded:(int)arg1;
-- (void)setExpirationDate:(id)arg1;
 - (id)organizationName;
 - (id)serialNumber;
+- (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
 - (void)setUniqueID:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;

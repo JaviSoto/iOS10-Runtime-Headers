@@ -136,9 +136,9 @@
 - (void)setCanvas:(id)arg1;
 - (id)camera;
 - (struct Vec3Imp<double> { double x1; double x2; double x3; })light;
-- (double)timestamp;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)dealloc;
 - (id).cxx_construct;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

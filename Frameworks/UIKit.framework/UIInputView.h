@@ -74,18 +74,16 @@
 - (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)layoutMergedSubviews;
 - (void)setInputViewStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
 - (void)willBeginSplitTransition;
 - (float)contentRatio;
 - (int)inputViewStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2 useSplitViews:(BOOL)arg3;
 - (float)_additionalClipHeight;
 - (void)_setNeedsContentSizeUpdate;
 - (id)rightContentView;
 - (id)leftContentView;
 - (void)setContentRatio:(float)arg1;
-- (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
-- (void)_endSplitTransitionIfNeeded:(BOOL)arg1;
-- (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
 - (BOOL)_isToolbars;
 - (void)didEndSplitTransition;
 - (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2;
@@ -98,7 +96,11 @@
 - (BOOL)_isSplit;
 - (int)_clipCornersOfView:(id)arg1;
 - (id)_inheritedRenderConfig;
+- (void)_endSplitTransitionIfNeeded:(BOOL)arg1;
+- (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
+- (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
 - (void)_setRenderConfig:(id)arg1;
 - (BOOL)_isTransitioning;
+- (void)_updateBackgroundColor;
 
 @end

@@ -19,9 +19,9 @@
 - (id)addLevelOverride;
 - (long)listId;
 - (id)listDefinition;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)document;
+- (void)setIndex:(unsigned int)arg1;
 - (void)dealloc;
 
 @end

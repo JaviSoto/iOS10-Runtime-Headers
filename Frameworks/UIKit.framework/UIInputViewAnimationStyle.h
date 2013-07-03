@@ -25,6 +25,7 @@
 @property(readonly) BOOL isAnimationCompleted;
 @property(retain) NSMutableArray * extraViews;
 @property BOOL placeholderKeyboard;
+@property(readonly) BOOL useCustomTransition;
 @property BOOL force;
 
 + (id)animationStyleImmediate;
@@ -48,8 +49,9 @@
 - (void)setForce:(BOOL)arg1;
 - (void)setIgnoreNewAnimations:(BOOL)arg1;
 - (void)setPlaceholderKeyboard:(BOOL)arg1;
-- (BOOL)isAnimationCompleted;
 - (BOOL)delayForTransaction;
+- (BOOL)useCustomTransition;
+- (BOOL)isAnimationCompleted;
 - (void)setPersistUntilComplete:(BOOL)arg1;
 - (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (void)setExtraOptions:(unsigned int)arg1;

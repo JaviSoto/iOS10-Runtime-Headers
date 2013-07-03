@@ -37,9 +37,9 @@
 - (unsigned int)publicStatus;
 - (id)calendarItem;
 - (BOOL)alerted;
-- (id)timestamp;
 - (unsigned int)changeType;
 - (id)deleteCount;
+- (id)timestamp;
 - (id)calendar;
 
 @end

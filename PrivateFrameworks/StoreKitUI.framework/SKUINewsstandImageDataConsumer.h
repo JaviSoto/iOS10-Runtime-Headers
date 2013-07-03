@@ -2,12 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, UIColor, NSString;
+@class SKUIColorScheme, UIColor;
 
 @interface SKUINewsstandImageDataConsumer : SKUIImageDataConsumer <NSCopying> {
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
-    NSString *_imageString;
     struct CGSize { 
         float width; 
         float height; 
@@ -24,18 +23,19 @@
 
 + (id)purchasedConsumer;
 + (id)updatesConsumer;
++ (id)newsstandSwooshConsumer;
++ (id)swooshConsumer;
 + (id)newsstandRoomConsumer;
++ (id)productPageConsumer;
 + (id)wishlistConsumer;
++ (id)roomConsumer;
 + (id)mixedChartsConsumer;
 + (id)chartsConsumer;
 + (id)lockupConsumerWithSize:(int)arg1;
-+ (id)roomConsumer;
-+ (id)productPageConsumer;
-+ (id)swooshConsumer;
-+ (id)newsstandSwooshConsumer;
 + (id)giftThemeConsumer;
 + (id)giftResultConsumer;
 + (id)giftComposeConsumer;
++ (id)consumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)cardConsumer;
 + (id)smartBannerConsumer;
 

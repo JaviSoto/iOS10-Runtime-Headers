@@ -12,6 +12,8 @@
     unsigned int _iconRectWidth;
     unsigned int _iconRectX;
     unsigned int _iconRectY;
+    unsigned int _matchingStyleAttributeKey;
+    int _matchingStyleAttributeValue;
     NSString *_name;
     unsigned int _quadIndex;
     struct { 
@@ -21,9 +23,12 @@
         unsigned int iconRectWidth : 1; 
         unsigned int iconRectX : 1; 
         unsigned int iconRectY : 1; 
+        unsigned int matchingStyleAttributeKey : 1; 
+        unsigned int matchingStyleAttributeValue : 1; 
     } _has;
 }
 
+@property(readonly) BOOL hasName;
 @property(retain) NSString * name;
 @property unsigned int atlasIndex;
 @property unsigned int quadIndex;
@@ -39,14 +44,22 @@
 @property unsigned int iconRectWidth;
 @property BOOL hasIconRectHeight;
 @property unsigned int iconRectHeight;
+@property BOOL hasMatchingStyleAttributeKey;
+@property unsigned int matchingStyleAttributeKey;
+@property BOOL hasMatchingStyleAttributeValue;
+@property int matchingStyleAttributeValue;
 
 
+- (void)setHasMatchingStyleAttributeValue:(BOOL)arg1;
+- (void)setHasMatchingStyleAttributeKey:(BOOL)arg1;
 - (void)setHasIconRectHeight:(BOOL)arg1;
 - (void)setHasIconRectWidth:(BOOL)arg1;
 - (void)setHasIconRectY:(BOOL)arg1;
 - (void)setHasIconRectX:(BOOL)arg1;
 - (void)setHasAnchorPointY:(BOOL)arg1;
 - (void)setHasAnchorPointX:(BOOL)arg1;
+- (void)setMatchingStyleAttributeValue:(int)arg1;
+- (void)setMatchingStyleAttributeKey:(unsigned int)arg1;
 - (void)setIconRectHeight:(unsigned int)arg1;
 - (unsigned int)iconRectHeight;
 - (BOOL)hasIconRectHeight;
@@ -67,10 +80,15 @@
 - (BOOL)hasAnchorPointX;
 - (void)setQuadIndex:(unsigned int)arg1;
 - (void)setAtlasIndex:(unsigned int)arg1;
+- (int)matchingStyleAttributeValue;
+- (unsigned int)matchingStyleAttributeKey;
+- (BOOL)hasMatchingStyleAttributeValue;
+- (BOOL)hasMatchingStyleAttributeKey;
 - (unsigned int)atlasIndex;
 - (unsigned int)quadIndex;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (BOOL)hasName;
 - (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

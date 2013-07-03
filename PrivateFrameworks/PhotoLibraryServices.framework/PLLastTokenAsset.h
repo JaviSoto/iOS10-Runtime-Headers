@@ -22,5 +22,6 @@
 - (void)removeObjectFromLastAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inLastAssetsAtIndex:(unsigned int)arg2;
 - (void)addLastAssetsObject:(id)arg1;
+- (void)willSave;
 
 @end

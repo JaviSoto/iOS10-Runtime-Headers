@@ -15,7 +15,6 @@
 
 - (void)doCleanupForURL:(id)arg1;
 - (id)temporaryLinksDirectoryForStore:(id)arg1;
-- (void)removeDirectory:(id)arg1;
 - (BOOL)registerURLForCleanup:(id)arg1;
 - (void)_doCleanupForDir:(id)arg1 exceptURLs:(id)arg2;
 - (void)_deleteIfNecessary:(id)arg1;

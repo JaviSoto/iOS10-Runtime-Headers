@@ -237,10 +237,6 @@
 - (int)deleted;
 - (void)setWidth:(short)arg1;
 - (short)width;
-- (void)setBottomMargin:(short)arg1;
-- (void)setRightMargin:(short)arg1;
-- (void)setTopMargin:(short)arg1;
-- (void)setLeftMargin:(short)arg1;
 - (short)rightMargin;
 - (short)leftMargin;
 - (short)bottomMargin;
@@ -250,6 +246,10 @@
 - (int)textDirection;
 - (id)document;
 - (void)setPosition:(short)arg1;
+- (void)setBottomMargin:(short)arg1;
+- (void)setTopMargin:(short)arg1;
+- (void)setRightMargin:(short)arg1;
+- (void)setLeftMargin:(short)arg1;
 - (void)setVerticalAlignment:(int)arg1;
 - (int)verticalAlignment;
 - (id)init;

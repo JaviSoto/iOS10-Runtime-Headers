@@ -15,6 +15,7 @@
     AVPropertyStorage *propertyStorage;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
     NSMutableDictionary *pendingFigPlayerProperties;
+    NSArray *expectedAssetTypes;
     AVPlayerItem *currentItem;
     AVPlayerItem *lastItem;
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
@@ -46,6 +47,7 @@
     NSObject<OS_dispatch_queue> *subtitleQueue;
     NSDictionary *currentSubtitlesPayload;
     BOOL autoSwitchStreamVariants;
+    BOOL preparesItemsForPlaybackAsynchronously;
 }
 
 

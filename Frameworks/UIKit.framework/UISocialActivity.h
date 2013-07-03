@@ -18,9 +18,9 @@
 
 - (void)dealloc;
 - (id)composedImage;
+- (id)socialComposeViewController;
 - (void)setSocialComposeViewController:(id)arg1;
 - (int)_maxImageDataSize;
-- (id)socialComposeViewController;
 - (int)_blockingActivityItemTypes;
 - (int)_activityItemTypes;
 - (void)setComposedImage:(id)arg1;

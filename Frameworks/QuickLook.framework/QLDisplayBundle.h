@@ -46,14 +46,11 @@
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
 
 + (BOOL)needsAVControls;
-+ (id)backgroundColorForBackgroundType:(int)arg1;
-+ (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
 + (double)allowedLoadingDelay;
 
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
 - (id)gestureRecognizersForFullScreenDisplay;
-- (BOOL)overlayOwnedByDisplayBundle;
 - (void)endScrubbing;
 - (void)scrubToValue:(double)arg1;
 - (void)beginScrubbing;
@@ -66,11 +63,11 @@
 - (int)airPlayMode;
 - (BOOL)canCopyToPasteboard;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
-- (int)backgroundType;
 - (void)requiresDisplayBundle:(id)arg1 withHints:(id)arg2;
 - (void)didFailLoadingWithError:(id)arg1;
 - (BOOL)overlayIsHidden;
 - (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
 - (void)cancelLoadIfNeeded;
 - (BOOL)canBeCached;
 - (void)viewDidUpdate;
@@ -85,16 +82,15 @@
 - (void)loadWithHints:(id)arg1;
 - (void)togglePlayState;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
 - (void)enterBackground;
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
 - (void)setLoading:(BOOL)arg1;
-- (void)setIndex:(int)arg1;
-- (int)index;
 - (void)setPassword:(id)arg1;
+- (int)index;
 - (BOOL)loaded;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
+- (void)setIndex:(int)arg1;
 - (id)init;
 - (id)password;
 - (void)setDelegate:(id)arg1;

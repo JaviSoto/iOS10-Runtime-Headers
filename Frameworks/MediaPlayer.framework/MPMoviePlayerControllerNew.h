@@ -199,13 +199,13 @@
 - (id)timedMetadata;
 - (BOOL)disallowsAMRAudio;
 - (BOOL)isAirPlayVideoActive;
-- (int)playbackState;
 - (int)repeatMode;
 - (void)setRepeatMode:(int)arg1;
 - (id)errorLog;
 - (id)accessLog;
 - (void)play;
 - (void)prepareToPlay;
+- (int)playbackState;
 - (void)setBackgroundColor:(id)arg1;
 - (id)init;
 - (void)dealloc;

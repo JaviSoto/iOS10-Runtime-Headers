@@ -17,13 +17,13 @@
 @property BOOL isValid;
 
 
-- (void)setIsValid:(BOOL)arg1;
 - (id)photoLibrary;
 - (id)initWithAssetsLibrary:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)setAssetsLibrary:(id)arg1;
 - (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
 - (id)assetsLibrary;
+- (void)setIsValid:(BOOL)arg1;
 - (BOOL)isValid;
 - (void)dealloc;
 

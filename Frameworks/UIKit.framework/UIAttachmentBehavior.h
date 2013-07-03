@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, PKPhysicsJointDistance, PKExtendedPhysicsBody;
+@class PKPhysicsJoint, NSArray, PKExtendedPhysicsBody;
 
 @interface UIAttachmentBehavior : UIDynamicBehavior  {
     struct CGPoint { 
@@ -18,7 +18,7 @@
         float y; 
     } _anchorPointB;
     PKExtendedPhysicsBody *_anchorBody;
-    PKPhysicsJointDistance *_joint;
+    PKPhysicsJoint *_joint;
     float _damping;
     float _frequency;
     float _length;
@@ -27,6 +27,7 @@
         unsigned int dampingSet : 1; 
         unsigned int frequencySet : 1; 
         unsigned int lengthSet : 1; 
+        unsigned int isRevolute : 1; 
     } _stateFlags;
     int _attachedBehaviorType;
 }
@@ -56,6 +57,7 @@
 - (void)_associate;
 - (id)initWithItem:(id)arg1 attachedToItem:(id)arg2;
 - (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_reevaluateJoint;
 - (void)_changedParameter;
 - (id)initWithItem:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 attachedToItem:(id)arg3 point:(struct CGPoint { float x1; float x2; })arg4;
 - (id)initWithItem:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg3;

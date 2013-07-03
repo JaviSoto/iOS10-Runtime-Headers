@@ -2,14 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSString, NSPersistentStoreCoordinator, NSManagedObjectContext, NSDictionary;
+@class NSString, NSPersistentStoreCoordinator, NSManagedObjectContext, NSMutableDictionary;
 
 @interface ACDDatabaseMigrator : NSObject  {
     NSManagedObjectContext *_migrationContext;
     NSPersistentStoreCoordinator *_privateCoordinator;
     NSPersistentStoreCoordinator *_realCoordinator;
     NSString *_databasePath;
-    NSDictionary *_realOptions;
+    NSMutableDictionary *_realOptions;
 }
 
 

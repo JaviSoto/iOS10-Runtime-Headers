@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSArray *_sections;
     NSArray *_sectionIndexTitles;
 }
@@ -13,6 +13,7 @@
 @property(copy) NSArray * sectionIndexTitles;
 @property(readonly) unsigned int count;
 
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
 - (void)setSectionIndexTitles:(id)arg1;

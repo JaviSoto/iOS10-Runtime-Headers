@@ -161,11 +161,10 @@
 + (BOOL)_isCompatibilityTextField;
 + (void)_preheatDictationIfNecessary;
 + (BOOL)_isDisplayingShortcutViewController;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)resignFirstResponder;
@@ -176,6 +175,7 @@
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMinimumFontSize:(float)arg1;
 - (void)insertText:(id)arg1;
+- (BOOL)isEditable;
 - (BOOL)hasSelection;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)undoManager;
@@ -205,6 +205,9 @@
 - (id)_baselineLayoutLabel;
 - (id)_baselineLayoutConstraints;
 - (BOOL)_inPopover;
+- (void)_setBackgroundStrokeWidth:(float)arg1;
+- (void)_setBackgroundFillColor:(id)arg1;
+- (void)_setBackgroundStrokeColor:(id)arg1;
 - (id)selectedAttributedText;
 - (void)setLabelOffset:(float)arg1;
 - (void)setBecomesFirstResponderOnClearButtonTap:(BOOL)arg1;
@@ -437,7 +440,6 @@
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)tokenizer;
-- (id)inputDelegate;
 - (void)setInputDelegate:(id)arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
@@ -445,25 +447,26 @@
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
-- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
-- (id)endOfDocument;
-- (id)beginningOfDocument;
 - (void)unmarkText;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
 - (id)markedTextRange;
 - (void)setSelectedTextRange:(id)arg1;
 - (id)selectedTextRange;
-- (void)clearText;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (id)textInRange:(id)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
+- (void)clearText;
 - (int)atomStyle;
 - (BOOL)drawsAsAtom;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
+- (id)inputDelegate;
+- (id)textInRange:(id)arg1;
+- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
+- (id)endOfDocument;
+- (id)beginningOfDocument;
 - (int)textAlignment;
 - (void)attachFieldEditor:(id)arg1;
 - (void)willAttachFieldEditor:(id)arg1;
@@ -505,6 +508,7 @@
 - (void)setProgress:(float)arg1;
 - (id)_scriptingInfo;
 - (void)tintColorDidChange;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)_canDrawContent;
 - (void)_encodeBackgroundColorWithCoder:(id)arg1;
 - (void)_windowBecameKey;
@@ -517,7 +521,6 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
 - (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;

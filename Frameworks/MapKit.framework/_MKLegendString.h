@@ -2,25 +2,24 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
+@class NSAttributedString;
 
-@interface _MKLegendString : NSObject  {
-    NSString *string;
-    float x;
+@interface _MKLegendString : CALayer  {
+    NSAttributedString *string;
     float halfWidth;
 }
 
-@property(retain) NSString * string;
-@property float x;
+@property(retain) NSAttributedString * string;
 @property float halfWidth;
 
 
 - (float)halfWidth;
 - (void)setHalfWidth:(float)arg1;
+- (void)drawInContext:(struct CGContext { }*)arg1;
+- (id)actionForKey:(id)arg1;
+- (id)init;
 - (void)setString:(id)arg1;
 - (id)string;
 - (void)dealloc;
-- (void)setX:(float)arg1;
-- (float)x;
 
 @end

@@ -32,7 +32,6 @@
 - (void)_didExitFullScreen;
 - (void)_willEnterFullScreenWithContext:(id)arg1;
 - (void)_setAVState:(id)arg1 forPreviewItem:(id)arg2;
-- (void)_previewContentControllerDidUnloadItem:(id)arg1;
 - (void)_previewContentControllerDidLoadItem:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)_previewContentControllerReceivedTapOnURL:(id)arg1;
 - (void)_previewContentControllerDidMoveToItemAtIndex:(int)arg1;
@@ -51,21 +50,22 @@
 - (void)beginScrubbing;
 - (id)printPageHelper;
 - (int)previewMode;
+- (void)setPreviewMode:(int)arg1;
 - (void)togglePlayState;
 - (void)forceResignFirstResponder;
 - (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)willChangeContentFrame;
-- (void)setPreviewController:(id)arg1;
 - (void)configureWithParameters:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)setPreviewMode:(int)arg1;
 - (void)becomeForeground;
 - (void)enterBackground;
+- (void)setPreviewController:(id)arg1;
 - (int)numberOfPreviewItems;
 - (void)refreshCurrentPreviewItem;
+- (void)checkCurrentPreviewItem;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
 - (int)currentPreviewItemIndex;
-- (void)setTransitioning:(BOOL)arg1;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
@@ -79,6 +79,5 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)reloadData;
 
 @end

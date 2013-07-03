@@ -12,10 +12,6 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)stopQuery;
-- (id)results;
-- (BOOL)startQuery;
-- (void)setSearchScopes:(id)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (id)sortDescriptors;
@@ -24,7 +20,11 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)startQuery;
+- (void)setSearchScopes:(id)arg1;
+- (void)stopQuery;
 - (BOOL)isStarted;
+- (id)results;
 - (id)groupedResults;
 - (id)valueLists;
 - (unsigned int)indexOfResult:(id)arg1;

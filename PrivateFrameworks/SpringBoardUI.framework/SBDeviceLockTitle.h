@@ -24,7 +24,7 @@
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
 
 @end

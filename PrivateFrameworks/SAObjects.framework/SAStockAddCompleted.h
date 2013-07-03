@@ -25,10 +25,10 @@
 - (void)setStockReferences:(id)arg1;
 - (id)stockReferences;
 - (id)encodedClassName;
-- (id)results;
 - (void)setResults:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (id)results;
 - (id)groupIdentifier;
 
 @end

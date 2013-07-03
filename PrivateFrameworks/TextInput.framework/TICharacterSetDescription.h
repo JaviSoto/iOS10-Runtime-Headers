@@ -25,13 +25,16 @@
 - (id)initWithCharactersInString:(id)arg1;
 - (id)initWithBaseCharacterSet:(long)arg1;
 - (id)newCharacterSetFromDescription;
-- (BOOL)inverted;
 - (id)charactersAddedToBase;
+- (BOOL)inverted;
 - (long)baseIdentifier;
 - (id)initWithBase:(long)arg1 additionalCharacters:(id)arg2 inverted:(BOOL)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

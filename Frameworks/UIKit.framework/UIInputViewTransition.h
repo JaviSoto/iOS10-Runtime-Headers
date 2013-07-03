@@ -104,11 +104,22 @@
             float width; 
             float height; 
         } size; 
+    } snapshotViewBeginFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     } snapshotViewEndFrame;
 }
 
 @property(retain) UIInputViewSet * oldSet;
 @property(retain) UISnapshotView * snapshotView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewBeginFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewEndFrame;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
 @property BOOL cancelled;
@@ -133,8 +144,8 @@
 @property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterBegin;
 @property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterEnd;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (void)dealloc;
@@ -150,6 +161,7 @@
 - (struct CGPoint { float x1; float x2; })deprecatedCenterBegin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deprecatedBounds;
 - (void)setSnapshotViewEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSnapshotViewBeginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSnapshotView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFloatingFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFloatingFrame;
@@ -166,19 +178,19 @@
 - (void)setBeginFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNewSet:(id)arg1;
 - (void)setOldSet:(id)arg1;
+- (int)cancelState;
 - (int)transitioningState;
 - (void)setAnimationState:(int)arg1;
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)endState;
 - (BOOL)requiresAutomaticAppearanceEnabled;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
-- (id)snapshotView;
 - (BOOL)fadeAccessoryView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewBeginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
 - (id)newSet;
 - (id)oldSet;
 - (BOOL)shouldRecomputeEndFrame;
-- (int)cancelState;
 - (void)setIgnoreFrameChanges:(BOOL)arg1;
 - (int)animationState;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrameScreen;
@@ -192,6 +204,7 @@
 - (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setAnimationStartTime:(double)arg1;
+- (id)snapshotView;
 - (BOOL)cancelled;
 
 @end

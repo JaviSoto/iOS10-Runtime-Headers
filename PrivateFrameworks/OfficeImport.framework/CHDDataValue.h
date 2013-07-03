@@ -31,8 +31,8 @@
 - (id)initWithIndex:(int)arg1 value:(struct EDValue { int x1; union { boolx_2_1_1; double x_2_1_2; id x_2_1_3; unsigned int x_2_1_4; int x_2_1_5; } x2; }*)arg2;
 - (void)setContentFormatId:(unsigned int)arg1;
 - (unsigned int)contentFormatId;
-- (void)setIndex:(int)arg1;
 - (int)index;
+- (void)setIndex:(int)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (id).cxx_construct;

@@ -8,13 +8,21 @@
     BOOL _showsCandidateNumber;
     BOOL _dummy;
     BOOL _usesGroupHeaderAppearance;
+    BOOL _secondaryCandidateAppearance;
     NSString *_text;
     NSString *_alternativeText;
     unsigned int _candidateNumber;
     int _edges;
     float _rowHeight;
     float _rightPadding;
-    int _visualStyle;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
+    } _visualStyling;
+    int _candidatesVisualStyle;
     int _textAlignment;
     float _cellPadding;
     float _minimumWidth;
@@ -45,10 +53,12 @@
 @property unsigned int candidateNumber;
 @property BOOL showsCandidateNumber;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
+@property BOOL secondaryCandidateAppearance;
 @property int edges;
 @property float rowHeight;
 @property float rightPadding;
-@property int visualStyle;
+@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property int candidatesVisualStyle;
 @property int textAlignment;
 @property struct CGSize { float x1; float x2; } size;
 @property struct CGSize { float x1; float x2; } candidateNumberSize;
@@ -59,9 +69,11 @@
 + (float)widthForCandidate:(id)arg1 candidateNumber:(unsigned int)arg2 visualStyle:(int)arg3;
 + (struct CGSize { float x1; float x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
 + (float)rightPaddingForIndex;
++ (struct CGColor { }*)legacy_outlineShadowColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
++ (struct CGColor { }*)legacy_outlineColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (id)reuseIdentifier;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (struct CGSize { float x1; float x2; })size;
@@ -80,6 +92,8 @@
 - (BOOL)canShowCandidateNumber;
 - (void)drawBackgroundAndBorders;
 - (float)rightPadding;
+- (void)setSecondaryCandidateAppearance:(BOOL)arg1;
+- (BOOL)secondaryCandidateAppearance;
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (void)setCellPadding:(float)arg1;
 - (void)setRightPadding:(float)arg1;
@@ -93,8 +107,10 @@
 - (unsigned int)candidateNumber;
 - (BOOL)showsCandidateNumber;
 - (BOOL)dummy;
-- (int)visualStyle;
-- (void)setVisualStyle:(int)arg1;
+- (int)candidatesVisualStyle;
+- (void)setCandidatesVisualStyle:(int)arg1;
+- (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (int)textAlignment;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;

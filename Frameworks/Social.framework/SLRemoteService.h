@@ -2,10 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSSet, NSString, NSData;
+@class NSURL, UIImage, NSString, NSSet, NSBundle;
 
 @interface SLRemoteService : SLService <NSSecureCoding> {
     int _maximumVideoCount;
+    UIImage *_activityImage;
+    NSBundle *_serviceBundle;
     BOOL _serviceRegionTargetIsChina;
     BOOL _addDeviceClassToRequest;
     NSString *_xpcServiceIdentifier;
@@ -23,7 +25,8 @@
     NSSet *_supportedVideoAssetURLSchemes;
     NSString *_shareSheetHostingBundleIdentifier;
     NSString *_shareSheetClassName;
-    NSData *_activityImageData;
+    NSString *_activityImageName;
+    NSURL *_serviceBundleURL;
 }
 
 @property(retain) NSString * xpcServiceIdentifier;
@@ -44,7 +47,9 @@
 @property BOOL addDeviceClassToRequest;
 @property(retain) NSString * shareSheetHostingBundleIdentifier;
 @property(retain) NSString * shareSheetClassName;
-@property(retain) NSData * activityImageData;
+@property(retain) NSString * activityImageName;
+@property(retain) NSURL * serviceBundleURL;
+@property(readonly) NSBundle * serviceBundle;
 
 + (id)_cachedServiceWithType:(id)arg1;
 + (id)_cachedServices;
@@ -61,21 +66,22 @@
 - (void)setMaximumVideoCount:(int)arg1;
 - (id)initWithServiceBundle:(id)arg1 socialInfoDictionary:(id)arg2;
 - (id)localizedServiceName;
+- (id)_activityImageForImageResourceName:(id)arg1 inBundle:(id)arg2;
+- (id)activityImageName;
 - (BOOL)_isSupportedURL:(id)arg1 withSupportedSchemes:(id)arg2;
 - (id)xpcServiceIdentifier;
 - (id)_encodableStringProperties;
 - (id)supportedVideoAssetURLSchemes;
 - (id)supportedImageAssetURLSchemes;
 - (BOOL)addDeviceClassToRequest;
-- (id)activityImageData;
 - (BOOL)serviceRegionTargetIsChina;
+- (id)serviceBundleURL;
 - (id)serviceTypeIdentifier;
 - (id)_authenticationStyleIdentifierMappings;
 - (BOOL)_isValidAuthenicationStyleIdentifier:(id)arg1;
 - (id)_requiredInfoDictKeys;
 - (id)integerPropertyKeyMappings;
-- (void)setActivityImageData:(id)arg1;
-- (id)_activityImageDataForImageResourceName:(id)arg1 inBundle:(id)arg2;
+- (void)setActivityImageName:(id)arg1;
 - (void)setSupportedVideoAssetURLSchemes:(id)arg1;
 - (void)setSupportedImageAssetURLSchemes:(id)arg1;
 - (id)_setFromArrayWithKey:(id)arg1 inDictionary:(id)arg2;
@@ -90,7 +96,9 @@
 - (void)setLocalizedServiceName:(id)arg1;
 - (void)setXpcServiceIdentifier:(id)arg1;
 - (void)setServiceTypeIdentifier:(id)arg1;
+- (void)setServiceBundleURL:(id)arg1;
 - (BOOL)infoDictHasRequiredKeys:(id)arg1;
+- (id)serviceBundle;
 - (id)composeViewController;
 - (BOOL)supportsVideoURL:(id)arg1;
 - (BOOL)supportsImageURL:(id)arg1;

@@ -16,8 +16,8 @@
 @property BOOL highlighted;
 @property BOOL shouldDim;
 
-+ (id)highlightedStringAttributes;
 + (id)regularStringAttributes;
++ (id)highlightedStringAttributes;
 + (id)defaultStringAttributes;
 + (float)height;
 

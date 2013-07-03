@@ -20,9 +20,9 @@
 - (void)setUseCount:(unsigned int)arg1;
 - (unsigned int)useCount;
 - (id)initWithConnection:(id)arg1;
-- (void)setConnection:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

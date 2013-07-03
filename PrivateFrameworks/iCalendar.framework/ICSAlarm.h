@@ -28,6 +28,12 @@
 + (int)actionFromICSString:(id)arg1;
 + (id)name;
 
+- (BOOL)x_apple_local_default_alarm;
+- (void)setX_apple_local_default_alarm:(BOOL)arg1;
+- (BOOL)x_apple_default_alarm;
+- (BOOL)isNoneAlarm;
+- (id)x_wr_alarmuid;
+- (void)fixAlarm;
 - (id)relatedTo;
 - (id)acknowledged;
 - (id)x_apple_proximity;
@@ -36,12 +42,6 @@
 - (void)setX_apple_default_alarm:(BOOL)arg1;
 - (void)setX_apple_proximity:(id)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
-- (BOOL)x_apple_local_default_alarm;
-- (void)setX_apple_local_default_alarm:(BOOL)arg1;
-- (BOOL)x_apple_default_alarm;
-- (BOOL)isNoneAlarm;
-- (id)x_wr_alarmuid;
-- (void)fixAlarm;
 - (void)setAction:(int)arg1;
 - (int)action;
 

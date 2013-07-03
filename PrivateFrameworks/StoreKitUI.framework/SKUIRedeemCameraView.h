@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIRedeemTextField, UIView, UIImage, NSString, SKUIRedeemCameraLandingView, <SKUIRedeemCameraViewDelegate>;
+@class UIButton, UIView, UIImage, NSString, SKUIRedeemCameraLandingView, <SKUIRedeemCameraViewDelegate>, SKUIRedeemTextField;
 
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate> {
     <SKUIRedeemCameraViewDelegate> *_delegate;
@@ -10,6 +10,7 @@
     SKUIRedeemCameraLandingView *_landingView;
     UIView *_overlay;
     UIView *_redeemerView;
+    UIButton *_termsButton;
     SKUIRedeemTextField *_textField;
 }
 
@@ -28,6 +29,7 @@
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
 - (void)_landingButtonAction:(id)arg1;
 - (id)initWithClientContext:(id)arg1;
+- (void)_termsButtonAction:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;

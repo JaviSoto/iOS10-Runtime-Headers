@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITextLayoutCache, SKUIColorScheme, <SKUIProductPageChildViewController>, SKUIClientContext, UITableView, SKUIProductPageTableView, SKUIProductPageHeaderViewController, <SKUIProductPageChildViewControllerDelegate>, UIColor, NSArray;
+@class SKUIColorScheme, <SKUIProductPageChildViewController>, SKUIClientContext, UITableView, SKUIProductPageTableView, SKUIProductPageHeaderViewController, <SKUIProductPageChildViewControllerDelegate>, SKUILayoutCache, UIColor, NSArray;
 
 @interface SKUIProductPageTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     SKUIClientContext *_clientContext;
@@ -14,13 +14,13 @@
     UIColor *_color;
     NSArray *_sections;
     SKUIProductPageTableView *_tableView;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) SKUIColorScheme * colorScheme;
 @property(copy) NSArray * sections;
-@property(retain) SKUITextLayoutCache * textLayoutCache;
+@property(retain) SKUILayoutCache * textLayoutCache;
 @property(readonly) UITableView * tableView;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;

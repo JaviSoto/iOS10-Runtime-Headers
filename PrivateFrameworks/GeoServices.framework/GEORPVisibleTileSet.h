@@ -3,25 +3,35 @@
  */
 
 @interface GEORPVisibleTileSet : PBCodable  {
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; } *_tileKeys;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_tileKeys;
     unsigned int _tileKeysCount;
     unsigned int _tileKeysSpace;
     unsigned int _identifier;
     int _style;
+    struct { 
+        unsigned int identifier : 1; 
+        unsigned int style : 1; 
+    } _has;
 }
 
+@property BOOL hasStyle;
 @property int style;
+@property BOOL hasIdentifier;
 @property unsigned int identifier;
 @property(readonly) unsigned int tileKeysCount;
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; }* tileKeys;
+@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* tileKeys;
 
 
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 count:(unsigned int)arg2;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)tileKeys;
-- (void)addTileKey:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })tileKeyAtIndex:(unsigned int)arg1;
+- (void)setHasIdentifier:(BOOL)arg1;
+- (void)setHasStyle:(BOOL)arg1;
+- (BOOL)hasIdentifier;
+- (BOOL)hasStyle;
+- (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)tileKeys;
+- (void)addTileKey:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })tileKeyAtIndex:(unsigned int)arg1;
 - (unsigned int)tileKeysCount;
 - (void)clearTileKeys;
 - (void)copyTo:(id)arg1;

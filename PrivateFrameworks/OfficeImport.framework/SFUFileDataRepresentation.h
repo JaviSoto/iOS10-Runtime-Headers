@@ -2,16 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, SFUCryptoKey;
+@class NSString, OISFUCryptoKey;
 
-@interface SFUFileDataRepresentation : SFUDataRepresentation  {
+@interface SFUFileDataRepresentation : OISFUDataRepresentation  {
     NSString *mPath;
     int mSharedFd;
     long long mFileLength;
     unsigned long mFileType;
     BOOL mHasFileAttributes;
     long long mPlaintextDataLength;
-    SFUCryptoKey *mCryptoKey;
+    OISFUCryptoKey *mCryptoKey;
     BOOL mDeleteFileWhenDone;
 }
 

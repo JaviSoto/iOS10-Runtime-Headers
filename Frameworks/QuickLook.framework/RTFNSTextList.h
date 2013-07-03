@@ -14,13 +14,13 @@
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
 
-- (BOOL)_isOrdered;
 - (id)_markerSuffix;
 - (id)_unaffixedMarkerTitle;
 - (id)_unaffixedMarkerFormat;
 - (id)_markerSpecifier;
 - (id)_markerPrefix;
 - (id)_markerTitle;
+- (BOOL)_isOrdered;
 - (id)_unaffixedMarkerForItemNumber:(int)arg1;
 - (id)markerForItemNumber:(int)arg1;
 - (id)_markerForMarkerFormat:(id)arg1 itemNumber:(int)arg2 isNumbered:(BOOL*)arg3 substitutionStart:(unsigned int*)arg4 end:(unsigned int*)arg5 specifierStart:(unsigned int*)arg6 end:(unsigned int*)arg7;

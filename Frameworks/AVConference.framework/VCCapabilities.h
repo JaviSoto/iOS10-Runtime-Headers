@@ -63,9 +63,9 @@
 - (void)setIsDTLSEnabled:(BOOL)arg1;
 - (BOOL)isAudioEnabled;
 - (BOOL)isKeyExchangeEnabled;
+- (BOOL)isDTLSEnabled;
 - (void)setPreferredAudioCodec:(unsigned int)arg1;
 - (unsigned int)preferredAudioCodec;
-- (BOOL)isDTLSEnabled;
 - (id)initWithEncodedDictionary:(id)arg1;
 - (BOOL)isVideoEnabled;
 - (void)setIsVideoEnabled:(BOOL)arg1;

@@ -50,7 +50,9 @@
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (id)cacheDisplayString;
 - (id)variantDisplayString;
-- (BOOL)canFadeOut;
+- (BOOL)dynamicDisplayTypeHint;
+- (float)fadeOutDuration;
+- (BOOL)canFadeOutFromState:(int)arg1 toState:(int)arg2;
 - (void)setForceMultitap:(BOOL)arg1;
 - (void)setSplitMode:(int)arg1;
 - (int)splitMode;
@@ -99,9 +101,9 @@
 - (BOOL)boolForProperty:(id)arg1;
 - (int)variantType;
 - (BOOL)behavesAsShiftKey;
-- (int)flickDirection;
 - (int)highlightedVariantIndex;
 - (BOOL)forceMultitap;
+- (int)flickDirection;
 - (BOOL)modifiesKeyplane;
 - (id)alternateKeyplaneName;
 - (BOOL)avoidsLanguageIndicator;
@@ -153,6 +155,7 @@
 - (int)intForProperty:(id)arg1;
 - (int)rendering;
 - (int)displayRowHint;
+- (int)visualStyle;
 - (void)setHighlightedVariantIndex:(int)arg1;
 - (void)setSubtrees:(id)arg1;
 - (void)setShape:(id)arg1;
@@ -162,10 +165,11 @@
 - (void)setRepresentedString:(id)arg1;
 - (void)setDisplayString:(id)arg1;
 - (int)clipCorners;
+- (void)setVisualStyle:(int)arg1;
 - (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)displayType;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
 - (id)geometry;
+- (int)displayType;
 - (id)keyplaneForKey:(id)arg1;
 - (void)setLayoutTag:(id)arg1;
 - (BOOL)isShiftKeyPlaneChooser;
@@ -174,10 +178,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (BOOL)isSplit;
 - (BOOL)disabled;
-- (int)visualStyle;
-- (void)setVisualStyle:(int)arg1;
-- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (int)textAlignment;
 - (void)setVisible:(BOOL)arg1;
 - (void)setTextAlignment:(int)arg1;

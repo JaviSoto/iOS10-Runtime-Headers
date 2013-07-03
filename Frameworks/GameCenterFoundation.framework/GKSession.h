@@ -28,6 +28,7 @@
 - (id)displayNameForPeer:(id)arg1;
 - (void)disconnectFromAllPeers;
 - (id)privateDelegate;
+- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 sessionMode:(int)arg3;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (void)setPrivateDelegate:(id)arg1;
 - (BOOL)wifiEnabled;
@@ -45,7 +46,6 @@
 - (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (double)disconnectTimeout;
 - (void)setDisconnectTimeout:(double)arg1;
-- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 sessionMode:(int)arg3;
 - (BOOL)isAvailable;
 - (id)sessionID;
 - (id)peerID;

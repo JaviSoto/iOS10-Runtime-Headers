@@ -21,8 +21,8 @@
 
 + (float)textFontSize;
 + (float)labelFontSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)hasBackgroundGradient;
 - (void)setBackgroundGradientView:(id)arg1;

@@ -7,6 +7,7 @@
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     UIModalItem *_modalItem;
     UILabel *_titleLabel;
+    UILabel *_subtitleLabel;
     UILabel *_messageLabel;
     UITextField *_loginTextField;
     UITextField *_passwordTextField;
@@ -17,6 +18,10 @@
         float height; 
     } _accessoryViewControllerSize;
     UIView *_accessoryViewControllerContrainerView;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _actualViewControllerSize;
     UIButton *_cancelButton;
     UIButton *_defaultButton;
     int _cancelButtonIndex;
@@ -27,12 +32,18 @@
         float height; 
     } _presentingSize;
     _UIModalItemsPresentingViewController *_presentingViewController;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _maxSize;
 }
 
 @property UIModalItem * modalItem;
 @property struct CGSize { float x1; float x2; } presentingSize;
+@property struct CGSize { float x1; float x2; } maxSize;
 @property _UIModalItemsPresentingViewController * presentingViewController;
 @property(readonly) UILabel * titleLabel;
+@property(readonly) UILabel * subtitleLabel;
 @property(readonly) UILabel * messageLabel;
 @property(readonly) UITextField * loginTextField;
 @property(readonly) UITextField * passwordTextField;
@@ -44,6 +55,7 @@
 @property(readonly) int cancelButtonIndex;
 @property(readonly) int defaultButtonIndex;
 @property(readonly) UITableView * buttonTable;
+@property struct CGSize { float x1; float x2; } actualViewControllerSize;
 
 
 - (void)layout;
@@ -57,21 +69,27 @@
 - (struct CGSize { float x1; float x2; })accessoryViewControllerSize;
 - (id)accessoryViewController;
 - (id)messageLabel;
+- (id)subtitleLabel;
+- (void)setActualViewControllerSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })actualViewControllerSize;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setPresentingSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })presentingSize;
+- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setModalItem:(id)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (id)loginTextField;
 - (id)passwordTextField;
-- (id)modalItem;
 - (void)textFieldValueDidChange:(id)arg1;
+- (id)modalItem;
 - (int)defaultButtonIndex;
 - (void)_createViewControllerContentView;
 - (void)_createAndConfigureButtonTable;
 - (void)_createAndConfigureTextFieldsForInputStyle:(int)arg1;
 - (void)_createAndConfigureMessageLabel;
+- (void)_createAndConfigureSubtitleLabel;
 - (void)_createAndConfigureTitleLabel;
+- (struct CGSize { float x1; float x2; })maxSize;
 - (id)presentingViewController;
 - (int)cancelButtonIndex;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -101,6 +101,7 @@
 - (BOOL)remoteObjectExists;
 - (BOOL)localObjectExists;
 - (void)__setCapabilities:(unsigned int)arg1;
+- (void)_addressBookChanged:(id)arg1;
 - (id)_servicesToDeny;
 - (id)_servicesToAllow;
 - (void)sendABInformationToDaemon;
@@ -117,7 +118,6 @@
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)_addressBookChanged:(id)arg1;
 - (unsigned int)_capabilities;
 - (id)listener;
 

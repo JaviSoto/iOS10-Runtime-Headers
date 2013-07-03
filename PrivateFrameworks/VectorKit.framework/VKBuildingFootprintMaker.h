@@ -61,15 +61,9 @@
         } __end_cap_; 
     } _landmarkHeights;
     VGLMeshVendor *_landmarksMeshVendor;
-    struct DiscontinuityEdgeInfo { 
-        VGLMeshVendor *meshVendor; 
-    } _sharedDiscontinuityEdgeInfo;
-    struct DiscontinuityEdgeInfo { 
-        VGLMeshVendor *meshVendor; 
-    } _regularDiscontinuityEdgeInfo;
-    struct DiscontinuityEdgeInfo { 
-        VGLMeshVendor *meshVendor; 
-    } _realisticDiscontinuityEdgeInfo;
+    struct DiscontinuityEdgeInfo { id x1; boolx2; unsigned int x3; } *_sharedDiscontinuityEdgeInfo;
+    struct DiscontinuityEdgeInfo { id x1; boolx2; unsigned int x3; } *_regularDiscontinuityEdgeInfo;
+    struct DiscontinuityEdgeInfo { id x1; boolx2; unsigned int x3; } *_realisticDiscontinuityEdgeInfo;
     struct unordered_map<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> >, std::__1::hash<int>, std::__1::equal_to<int>, vk_allocator<std::__1::pair<const int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> > > > > { 
         struct __hash_table<std::__1::pair<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> > >, std::__1::__unordered_map_hasher<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> >, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> >, std::__1::equal_to<int>, true>, vk_allocator<std::__1::pair<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> > > > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::pair<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> > >, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<int, std::__1::vector<const vk::DiscontinuityEdgeInfo *, vk_allocator<const vk::DiscontinuityEdgeInfo *> > >, void *> *> > > { 

@@ -66,6 +66,8 @@
 
 + (id)eventWithEventStore:(id)arg1;
 
+- (id)organizer;
+- (BOOL)isAllDay;
 - (int)attendeeCount;
 - (id)_dateForNextOccurrence;
 - (void)revert;
@@ -170,8 +172,6 @@
 - (id)eventStore;
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)canSetAvailability;
-- (id)organizer;
-- (BOOL)isAllDay;
 - (void)setAllDay:(BOOL)arg1;
 - (void)rollback;
 - (id)title;

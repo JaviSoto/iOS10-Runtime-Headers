@@ -27,8 +27,8 @@
 - (id)initWithBannerRoomContext:(id)arg1;
 - (void)_setLinkItem:(id)arg1;
 - (id)initWithComponentContext:(id)arg1;
-- (id)initWithCustomPageContext:(id)arg1;
 - (id)countdown;
+- (id)initWithCustomPageContext:(id)arg1;
 - (id)artwork;
 - (id)accessibilityLabel;
 - (void).cxx_destruct;

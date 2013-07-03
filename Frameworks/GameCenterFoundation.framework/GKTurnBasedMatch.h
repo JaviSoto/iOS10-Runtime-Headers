@@ -46,6 +46,7 @@
 + (void)loadMatchWithID:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadTurnBasedMatchSummaries:(id)arg1;
 + (void)loadMatchesWithCompletionHandler:(id)arg1;
++ (id)_localizableMessageWithKey:(id)arg1 arguments:(id)arg2 defaultMessage:(id)arg3;
 + (void)loadTurnBasedMatchDetailsForMatchIDs:(id)arg1 loadGameData:(BOOL)arg2 withCompletionHandler:(id)arg3;
 + (id)matchesWithInternalRepresentations:(id)arg1;
 + (void)loadTurnBasedMatchSummariesIncludingCompatibleBundleID:(BOOL)arg1 withCompletionHandler:(id)arg2;

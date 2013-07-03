@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUISearchResultGroup, SKUIClientContext, <SKUISearchResultGroupControllerDelegate>, NSMutableArray, NSMutableIndexSet, NSMutableDictionary;
+@class NSOperationQueue, SKUISearchResultGroup, SKUIClientContext, <SKUISearchResultGroupControllerDelegate>, NSIndexSet, NSMutableArray, NSMutableIndexSet, NSMutableDictionary;
 
 @interface SKUISearchResultGroupController : NSObject  {
     SKUISearchResultGroup *_resultGroup;
     <SKUISearchResultGroupControllerDelegate> *_delegate;
     NSOperationQueue *_operationQueue;
     SKUIClientContext *_clientContext;
+    NSMutableIndexSet *_itemIndexesToLoad;
     NSMutableIndexSet *_editorialIndexesToLoad;
     NSMutableIndexSet *_editorialItemIdentifierIndexesToLoad;
     NSMutableArray *_editorialItemArtworkIndexPathsToLoad;
@@ -16,6 +17,7 @@
     NSMutableDictionary *_artworksByIndex;
     NSMutableDictionary *_entitiesByIndex;
     NSMutableDictionary *_itemArtworksByIndexPath;
+    NSIndexSet *_onScreenIndexes;
 }
 
 @property <SKUISearchResultGroupControllerDelegate> * delegate;
@@ -25,18 +27,21 @@
 + (id)_compositedImageForImages:(id)arg1;
 + (struct CGSize { float x1; float x2; })_editorialItemSizeWithCount:(int)arg1;
 
-- (id)identifierAtIndex:(unsigned int)arg1;
+- (void)updateForVisibleIndexes:(id)arg1;
 - (id)editorialArtworkAtIndex:(unsigned int)arg1;
 - (id)initWithSearchResultGroup:(id)arg1 clientContext:(id)arg2;
+- (id)identifierAtIndex:(unsigned int)arg1;
 - (void)_setArtworkResponse:(id)arg1 error:(id)arg2 forIndex:(unsigned int)arg3;
 - (void)_setEditorialResponse:(id)arg1 error:(id)arg2 forIndex:(unsigned int)arg3;
 - (void)_setEditorialItemIdentifierResponse:(id)arg1 error:(id)arg2 forIndex:(unsigned int)arg3;
 - (void)_setEditorialItemArtworkResponse:(id)arg1 error:(id)arg2 forIndexPath:(id)arg3;
 - (id)editorialAtIndex:(unsigned int)arg1;
+- (void)_setItemResponse:(id)arg1 error:(id)arg2 forIndexes:(id)arg3;
 - (void)_loadArtworkAtIndex:(unsigned int)arg1;
 - (void)_loadEditorialAtIndex:(unsigned int)arg1;
 - (void)_loadEditorialItemIdentifiersAtIndex:(unsigned int)arg1;
 - (void)_loadEditorialItemArtworkAtIndexPath:(id)arg1;
+- (void)_loadItemsAtIndexes:(id)arg1;
 - (void)_loadMore;
 - (id)entityAtIndex:(unsigned int)arg1;
 - (int)entityTypeAtIndex:(int)arg1;

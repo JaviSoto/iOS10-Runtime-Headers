@@ -11,8 +11,8 @@
 + (id)cloudDownloadButtonWithStyle:(int)arg1;
 + (int)_buttonTypeForCloudDownloadButtonStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)cloudButtonStyle;
 - (void)setCloudButtonStyle:(int)arg1;

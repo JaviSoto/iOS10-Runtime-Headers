@@ -86,8 +86,8 @@
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)setItems:(id)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 

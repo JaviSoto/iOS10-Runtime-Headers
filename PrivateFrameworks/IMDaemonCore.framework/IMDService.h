@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSString, NSBundle, NSDictionary;
+@class NSDictionary, NSBundle, NSString;
 
 @interface IMDService : NSObject <IMSystemMonitorListener> {
     NSBundle *_bundle;
     Class _sessionClass;
+    NSString *_internalName;
     NSDictionary *_accountDefaults;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProperties;
@@ -87,9 +88,9 @@
 - (Class)accountClass;
 - (id)serviceProperties;
 - (id)internalName;
-- (id)bundle;
 - (void)systemDidStartBackup;
 - (void)systemDidEnterMemoryPressure;
+- (id)bundle;
 - (void)dealloc;
 - (id)description;
 - (id)initWithBundle:(id)arg1;

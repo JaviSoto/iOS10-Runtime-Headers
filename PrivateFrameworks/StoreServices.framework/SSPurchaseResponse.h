@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSPurchase, NSError, SSURLConnectionResponse, NSMutableDictionary;
+@class SSPurchase, NSError, NSArray, SSURLConnectionResponse, NSMutableDictionary;
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
     BOOL _cancelsPurchaseBatch;
+    NSArray *_downloadIdentifiers;
     NSError *_error;
     SSPurchase *_purchase;
     SSURLConnectionResponse *_response;
@@ -16,11 +17,14 @@
 @property(copy) NSError * error;
 @property(copy) SSPurchase * purchase;
 @property(retain) SSURLConnectionResponse * URLResponse;
+@property(copy) NSArray * downloadIdentifiers;
 
 
 - (id)URLResponse;
 - (id)transactionIdentifierForItemIdentifier:(long long)arg1;
+- (id)downloadIdentifiers;
 - (void)setURLResponse:(id)arg1;
+- (void)setDownloadIdentifiers:(id)arg1;
 - (void)setCancelsPurchaseBatch:(BOOL)arg1;
 - (BOOL)cancelsPurchaseBatch;
 - (id)purchase;

@@ -28,6 +28,7 @@
 
 + (id)sharedInstance;
 
+- (BOOL)blockOutgoingInvitationsDuringCall;
 - (void)set_delegates:(id)arg1;
 - (id)_delegates;
 - (BOOL)_ready;
@@ -49,7 +50,6 @@
 - (BOOL)microphoneCapable;
 - (void)updateActiveConference;
 - (void)cancelVCRequestWithBuddy:(id)arg1 vcProps:(id)arg2 forAccount:(id)arg3 conferenceID:(id)arg4;
-- (BOOL)blockOutgoingInvitationsDuringCall;
 - (void)_dumpCaps;
 - (void)pushCachedVCCapsToDaemon;
 - (BOOL)_shouldObserveConferences;

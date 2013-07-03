@@ -88,7 +88,6 @@
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 - (void)resetConnection;
 - (void)processSocketReadSSL;
-- (void)processSocketRead;
 - (void)processSocketWrite:(unsigned char)arg1;
 - (void)receivedSSLConnectionData:(id)arg1 recordType:(unsigned short)arg2;
 - (BOOL)sendChannelBindingMsgWithDict:(id)arg1 error:(id*)arg2;
@@ -107,6 +106,7 @@
 - (void)setBindingResponseHandler:(id)arg1;
 - (void)setAllocationResponseHandler:(id)arg1;
 - (void)setReceiveHandler:(id)arg1;
+- (void)processSocketRead;
 - (void)finalize;
 - (void)dealloc;
 - (void)setTerminationHandler:(id)arg1;

@@ -25,8 +25,8 @@
 - (long long)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1;
-- (id)photoLibrary;
 - (void)setPhotoLibrary:(id)arg1;
+- (id)photoLibrary;
 - (id)album;
 - (void)setAlbum:(id)arg1;
 - (id)managedObjectContext;

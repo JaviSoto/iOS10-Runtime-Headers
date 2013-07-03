@@ -20,7 +20,7 @@
     NSObject<OS_dispatch_source> *_timer;
     unsigned int _sessionID;
     int _componentType;
-    unsigned short _version;
+    unsigned short _clientVersion;
     unsigned char _udid[41];
     NSArray *_frameworkList;
     NSMutableDictionary *_backendDict;

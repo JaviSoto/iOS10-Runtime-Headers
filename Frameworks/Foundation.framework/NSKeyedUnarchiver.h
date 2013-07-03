@@ -23,9 +23,9 @@
 
 + (id)unarchiveObjectWithFile:(id)arg1;
 + (void)initialize;
++ (id)unarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
-+ (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;

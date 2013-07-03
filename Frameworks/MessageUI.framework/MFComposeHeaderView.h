@@ -20,6 +20,9 @@
 + (float)separatorHeight;
 + (float)preferredHeight;
 + (id)defaultFont;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)refreshPreferredContentSize;
 - (void)addCenteredLayoutConstraintForView:(id)arg1;
@@ -41,5 +44,6 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_automationID;
 - (void)layoutSubviews;
+- (BOOL)_accessibilityOverridesInvisibility;
 
 @end

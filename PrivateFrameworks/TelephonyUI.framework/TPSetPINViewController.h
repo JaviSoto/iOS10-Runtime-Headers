@@ -53,8 +53,8 @@
 - (id)promptTextForNewPIN;
 - (id)promptTextForOldPIN;
 - (unsigned int)minPINLength;
-- (id)numberPad;
 - (void)_updateStatusLabel;
+- (id)numberPad;
 - (void)_updateNavBarButtons;
 - (void)_updateDeleteAllowed;
 - (unsigned int)maxPINLength;

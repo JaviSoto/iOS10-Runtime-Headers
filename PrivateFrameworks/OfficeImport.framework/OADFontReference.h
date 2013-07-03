@@ -11,9 +11,9 @@
 
 
 - (void)applyToParagraphProperties:(id)arg1;
-- (void)setIndex:(int)arg1;
 - (int)index;
 - (id)color;
+- (void)setIndex:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

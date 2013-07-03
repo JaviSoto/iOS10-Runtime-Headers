@@ -2,23 +2,22 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSInvocation;
+@class NSArray;
 
 @interface GKRequestIdentifier : NSObject <NSCopying> {
     unsigned int _savedHash;
-    NSInvocation *_invocation;
+    SEL _selector;
+    NSArray *_arguments;
 }
-
-@property(retain) NSInvocation * invocation;
 
 + (id)requestIdentifierForInvocation:(id)arg1;
 
+- (id)_argumentsForInvocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setInvocation:(id)arg1;
-- (id)invocation;
+- (id)initWithInvocation:(id)arg1;
 
 @end

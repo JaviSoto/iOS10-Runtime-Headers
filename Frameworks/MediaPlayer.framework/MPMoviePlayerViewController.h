@@ -29,9 +29,9 @@
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
-- (BOOL)canBecomeFirstResponder;
 
 @end

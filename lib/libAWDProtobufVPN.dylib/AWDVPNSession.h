@@ -134,9 +134,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (unsigned long long)timestamp;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

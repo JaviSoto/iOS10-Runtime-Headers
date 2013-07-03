@@ -32,14 +32,14 @@
 - (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (long long)dbQueueNextCommandSequenceNumber;
 - (BOOL)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
-- (void)enqueueAssetForDownload:(id)arg1 album:(id)arg2;
+- (void)enqueueAssetForDownload:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)enqueueAssetCollectionForUpload:(id)arg1 album:(id)arg2;
 - (void)addPendingAssetCollectionGUID:(id)arg1 albumGUID:(id)arg2;
 - (void)enqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 pendingOnAssetCollectionGUID:(id)arg5;
 - (long long)countOfEnqueuedCommand:(id)arg1;
-- (void)setParams:(id)arg1 forCommandWithIdentifier:(long long)arg2;
 - (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5 sequenceNumber:(long long)arg6;
 - (void)dbQueueRemoveCommandIdentifier:(long long)arg1;
+- (void)setParams:(id)arg1 forCommandWithIdentifier:(long long)arg2;
 - (BOOL)hasItemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
 - (int)assetCollectionsInUploadQueue;
 - (long long)countOfEnqueuedCommands;

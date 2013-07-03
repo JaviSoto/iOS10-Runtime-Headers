@@ -13,6 +13,8 @@
 
 - (void)setTransitionInfo:(id)arg1;
 - (id)transitionInfo;
+- (void)_animateTransition:(id)arg1;
+- (void)_animateTransitionInTwoParts:(id)arg1;
 - (void)dealloc;
 - (void)animationEnded:(BOOL)arg1;
 - (void)animateTransition:(id)arg1;

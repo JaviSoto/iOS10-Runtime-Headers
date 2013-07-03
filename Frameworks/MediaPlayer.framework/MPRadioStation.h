@@ -4,7 +4,7 @@
 
 @class NSString, RadioStation;
 
-@interface MPRadioStation : NSObject <NSCoding, NSCopying> {
+@interface MPRadioStation : NSObject <NSSecureCoding, NSCopying> {
     RadioStation *_station;
 }
 
@@ -12,6 +12,7 @@
 @property(readonly) NSString * localizedName;
 @property(readonly) NSString * localizedDescription;
 
++ (BOOL)supportsSecureCoding;
 
 - (id)_station;
 - (void)fetchArtworkWithCompletionBlock:(id)arg1;

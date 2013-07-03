@@ -34,8 +34,8 @@
 @property(copy) NSString * destinationName;
 @property(copy) id layoutSubviewsPostflightHandler;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)layoutSubviewsPostflightHandler;
 - (int)destinationPlaceholderStyle;

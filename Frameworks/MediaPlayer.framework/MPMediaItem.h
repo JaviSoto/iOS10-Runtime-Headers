@@ -92,6 +92,7 @@
 - (void)markNominalAmountHasBeenPlayed;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (id)valuesForProperties:(id)arg1;
+- (Class)itemArrayCoderPIDDataCodingClass;
 - (id)_libraryLinkPlaylistName;
 - (id)_libraryLinkArtist;
 - (id)_libraryLinkKind;
@@ -115,10 +116,10 @@
 - (id)lastPlayedDate;
 - (unsigned int)mediaType;
 - (id)title;
-- (double)startTime;
 - (unsigned int)year;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (double)startTime;
 - (void)didReceiveMemoryWarning;
 - (id)valueForProperty:(id)arg1;
 - (id)initWithCoder:(id)arg1;

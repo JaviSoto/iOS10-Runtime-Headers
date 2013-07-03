@@ -319,7 +319,6 @@
 - (BOOL)limitReadAhead;
 - (id)currentDate;
 - (BOOL)seekToDate:(id)arg1;
-- (unsigned int)playbackState;
 - (void)setCurrentTime:(double)arg1;
 - (BOOL)muted;
 - (double)currentTime;
@@ -327,6 +326,7 @@
 - (id)accessLog;
 - (float)volume;
 - (void)play;
+- (unsigned int)playbackState;
 - (void)_unregisterForNotifications;
 - (int)interfaceOrientation;
 - (void)setDelegate:(id)arg1;

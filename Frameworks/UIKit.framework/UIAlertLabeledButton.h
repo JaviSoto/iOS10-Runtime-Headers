@@ -12,8 +12,8 @@
 @property(readonly) UILabel * typeLabel;
 @property float titleOffset;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)typeLabel;

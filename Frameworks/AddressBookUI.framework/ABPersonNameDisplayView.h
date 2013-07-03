@@ -51,8 +51,6 @@
 - (float)minimumHeight;
 - (void)setPrimaryPropertyFormattingCountryCode:(id)arg1;
 - (id)primaryPropertyFormattingCountryCode;
-- (void)setPrimaryProperty:(int)arg1;
-- (int)primaryProperty;
 - (id)namePropertyGroup;
 - (void)_setSubviewsHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
@@ -79,6 +77,8 @@
 - (void)abMenuControllerWillHide;
 - (void)abMenuControllerWillShow:(id)arg1;
 - (BOOL)abShouldShowMenu;
+- (void)setPrimaryProperty:(int)arg1;
+- (int)primaryProperty;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)setMessage:(id)arg1;

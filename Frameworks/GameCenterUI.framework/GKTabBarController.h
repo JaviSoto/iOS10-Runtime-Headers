@@ -25,6 +25,7 @@
 - (BOOL)_hasBubbleFlowRootViewController;
 - (id)modalChildViewControllers;
 - (void)dealloc;
+- (id)viewControllers;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;

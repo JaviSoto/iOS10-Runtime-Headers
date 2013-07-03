@@ -19,11 +19,23 @@
 - (id)shortTopArrowPinnedView;
 - (id)shortTopArrowView;
 - (id)shortBottomArrowLeftEndCapView;
+- (float)shortArtNoArrowTopGradientEnd;
+- (float)shortArtRightArrowBase;
 - (id)shortTopArrowLeftEndCapView;
+- (float)shortArtArrowTopGradientEnd;
+- (float)bottomEndCapHeight;
+- (float)noArrowTopGradientEnd;
+- (float)sideArrowStart;
+- (float)clampArrowBase;
 - (id)viewWithContentsImage:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 center:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 antialiasingMask:(unsigned int)arg4 directionSelector:(id)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsCenterForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { float x1; float x2; })arg2;
+- (float)capCornerRadius;
+- (float)arrowTopGradientEnd;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { float x1; float x2; })arg2;
+- (float)topArrowStart;
+- (BOOL)modern;
 - (id)templateImageForDirection:(id)arg1 shortArtwork:(BOOL)arg2;
+- (float)arrowBase;
 - (id)rightArrowView;
 - (id)rightArrowTopEndCapView;
 - (id)rightArrowPinnedBottomView;
@@ -39,5 +51,6 @@
 - (id)topArrowPinnedView;
 - (id)topArrowLeftEndCapView;
 - (id)initWithBackgroundStyle:(int)arg1;
+- (float)arrowHeight;
 
 @end

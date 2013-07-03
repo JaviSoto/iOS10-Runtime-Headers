@@ -34,8 +34,8 @@
 - (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(BOOL)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 messageIdentifier:(id)arg2 updatedWithResponseCode:(int)arg3 error:(id)arg4 lastCall:(BOOL)arg5;
 - (void)connection:(id)arg1 devicesChanged:(id)arg2;
-- (void)_callDelegatesWithBlock:(id)arg1;
 - (void)connection:(id)arg1 isActiveChanged:(BOOL)arg2;
+- (void)_callDelegatesWithBlock:(id)arg1;
 - (void)requestKeepAlive;
 - (id)devices;
 - (void)removeDelegate:(id)arg1;

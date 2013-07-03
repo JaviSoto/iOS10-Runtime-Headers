@@ -9,7 +9,7 @@
     NSArray *_items;
     NSString *_credit;
     NSString *_balance;
-    NSDictionary *_thankYouParameters;
+    NSDictionary *_thankYouDictionary;
     NSURL *_redirectURL;
     UIImage *_headerImage;
     SKUIArtworkList *_headerArtworkList;
@@ -21,7 +21,7 @@
 @property(retain) NSArray * items;
 @property(copy) NSString * credit;
 @property(copy) NSString * balance;
-@property(retain) NSDictionary * thankYouParameters;
+@property(retain) NSDictionary * thankYouDictionary;
 @property(retain) NSURL * redirectURL;
 @property(retain) UIImage * headerImage;
 @property(retain) SKUIArtworkList * headerArtworkList;
@@ -32,16 +32,16 @@
 
 
 - (void)setHideItemView:(BOOL)arg1;
-- (void)setLinks:(id)arg1;
+- (BOOL)hideItemView;
 - (void)setHeaderArtworkList:(id)arg1;
-- (void)setThankYouParameters:(id)arg1;
-- (id)thankYouParameters;
+- (void)setThankYouDictionary:(id)arg1;
 - (void)setBalance:(id)arg1;
 - (void)setCredit:(id)arg1;
-- (BOOL)hideItemView;
+- (id)thankYouDictionary;
 - (id)balance;
 - (id)credit;
 - (id)headerArtworkList;
+- (void)setLinks:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (id)headerImage;
 - (void)setRedirectURL:(id)arg1;

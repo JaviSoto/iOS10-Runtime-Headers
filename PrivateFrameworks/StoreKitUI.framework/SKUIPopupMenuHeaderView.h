@@ -2,11 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIFont, SKUIMenuViewController, UIButton, <SKUIPopupMenuDelegate>, UILabel, NSString, UIPopoverController, NSArray;
+@class UILabel, UIButton, UIView, <SKUIPopupMenuDelegate>, NSString, SKUIMenuViewController, UIPopoverController, NSArray;
 
-@interface SKUIPopupMenuHeaderView : SKUIHeaderView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
+@interface SKUIPopupMenuHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
+    UIView *_bottomBorderView;
     <SKUIPopupMenuDelegate> *_delegate;
     UIButton *_menuButton;
+    UILabel *_menuLabel;
+    NSString *_menuLabelTitle;
     NSArray *_menuItemTitles;
     SKUIMenuViewController *_menuViewController;
     UIPopoverController *_menuPopoverController;
@@ -16,27 +19,30 @@
 
 @property <SKUIPopupMenuDelegate> * delegate;
 @property(copy) NSArray * menuItemTitles;
+@property(copy) NSString * menuLabelTitle;
 @property int selectedMenuItemIndex;
 @property(copy) NSString * title;
-@property(copy) UIFont * titleFont;
 
 
-- (void)setTitleFont:(id)arg1;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (int)selectedMenuItemIndex;
+- (id)menuLabelTitle;
 - (id)menuItemTitles;
 - (void)setSelectedMenuItemIndex:(int)arg1;
 - (void)_menuButtonAction:(id)arg1;
 - (void)_reloadMenuButton;
 - (void)setMenuItemTitles:(id)arg1;
+- (void)setMenuLabelTitle:(id)arg1;
+- (void)setColoringWithColorScheme:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)setBackgroundColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (id)titleFont;
 - (id)_titleLabel;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;

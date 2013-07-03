@@ -49,7 +49,6 @@
 + (void)setAudioSessionProperties:(id)arg1;
 + (void)refreshLoggingParameters;
 
-- (BOOL)setServerInfo:(id)arg1;
 - (void)serverReconnected;
 - (void)setRemoteVideoLayerContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 camera:(int)arg2;
 - (void)setNetworkQualityGraphLayer:(id)arg1;
@@ -75,6 +74,7 @@
 - (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
 - (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 withUserInfo:(id)arg4 error:(id)arg5;
 - (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
+- (BOOL)setServerInfo:(id)arg1;
 - (int)remoteFrameWidthForCallID:(int)arg1;
 - (int)remoteFrameHeightForCallID:(int)arg1;
 - (void)stopNetworkQualityUpdateTimer;

@@ -45,9 +45,9 @@
 - (id)approximateLocation;
 - (void)removeNode:(id)arg1;
 - (id)initWithObjectID:(id)arg1;
-- (id)objectID;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)objectID;
 - (id)init;
 - (void)dealloc;
 

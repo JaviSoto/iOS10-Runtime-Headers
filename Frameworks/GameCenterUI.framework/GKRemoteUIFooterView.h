@@ -5,24 +5,40 @@
 @class GKLabel;
 
 @interface GKRemoteUIFooterView : UIView <RemoteUITableFooter> {
+    BOOL _shouldApplyGameCenterTheme;
     GKLabel *_textLabel;
     float _leftMargin;
     float _rightMargin;
+    float _bottomMargin;
+    float _paragraphMargin;
+    int _layoutStyle;
 }
 
 @property(retain) GKLabel * textLabel;
 @property float leftMargin;
 @property float rightMargin;
+@property float bottomMargin;
+@property float paragraphMargin;
+@property BOOL shouldApplyGameCenterTheme;
+@property int layoutStyle;
 
 
+- (void)setLayoutStyle:(int)arg1;
 - (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (void)setParagraphMargin:(float)arg1;
+- (float)paragraphMargin;
 - (void)setTextLabel:(id)arg1;
 - (id)attributedStringForString:(id)arg1 withStyle:(id)arg2;
+- (void)setShouldApplyGameCenterTheme:(BOOL)arg1;
+- (BOOL)shouldApplyGameCenterTheme;
+- (int)layoutStyle;
 - (id)initWithAttributes:(id)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setLeftMargin:(float)arg1;
 - (float)rightMargin;
 - (float)leftMargin;
+- (float)bottomMargin;
+- (void)setBottomMargin:(float)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setLeftMargin:(float)arg1;
 - (void)dealloc;
 - (id)textLabel;
 

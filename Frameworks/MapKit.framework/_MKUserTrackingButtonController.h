@@ -26,9 +26,9 @@
 - (BOOL)_shouldAnimateFromState:(int)arg1 toState:(int)arg2;
 - (id)_imageForState:(int)arg1;
 - (void)_authorizationStatusChanged:(id)arg1;
-- (id)initWithTarget:(id)arg1 userTrackingView:(id)arg2 imageView:(id)arg3 button:(id)arg4;
 - (void)setUserTrackingView:(id)arg1;
 - (id)userTrackingView;
+- (id)initWithTarget:(id)arg1 userTrackingView:(id)arg2 imageView:(id)arg3 button:(id)arg4;
 - (void)_goToNextMode:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

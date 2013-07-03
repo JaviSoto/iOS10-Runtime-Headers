@@ -83,6 +83,8 @@
 - (id)_gkFormatedWhenStringWithOptions:(unsigned int)arg1;
 - (id)_gkServerTimestamp;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (BOOL)isBeforeDate:(id)arg1;
+- (BOOL)isAfterDate:(id)arg1;
 - (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 - (BOOL)PKIsYesterday;
 - (BOOL)PKIsTomorrow;

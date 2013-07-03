@@ -47,7 +47,6 @@
 + (void)setAccountStore:(id)arg1;
 + (id)person;
 
-- (int)recordID;
 - (BOOL)hasPreferredPhoto;
 - (void)setAsPreferredPersonForPhoto;
 - (void)mergeProperties:(id)arg1 fromRecord:(void*)arg2;
@@ -88,8 +87,10 @@
 - (id)preferredPhotoThumbnail;
 - (id)photoThumbnail;
 - (BOOL)hasValidRecordID;
+- (int)recordID;
 - (id)phoneticName;
 - (void*)source;
+- (void*)record;
 - (void*)addressBook;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -98,7 +99,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)kind;
-- (void*)record;
 - (void)setValue:(void*)arg1 forProperty:(int)arg2;
 - (id)valueForProperty:(int)arg1;
 

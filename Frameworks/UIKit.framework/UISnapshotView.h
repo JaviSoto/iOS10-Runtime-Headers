@@ -81,6 +81,7 @@
 - (void)_positionImageView;
 - (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
 - (void)setVerticalStretchEnabled:(BOOL)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;
 - (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
@@ -88,7 +89,6 @@
 - (void)setEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setStatusBarTintColor:(id)arg1;
 - (void)captureSnapshotOfView:(id)arg1 withSnapshotType:(int)arg2;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct CGPoint { float x1; float x2; })_contentOffset;
 - (void)setShadowView:(id)arg1;
 - (id)shadowView;

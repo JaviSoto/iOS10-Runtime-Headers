@@ -20,6 +20,7 @@
 + (void)setOSVersion:(id)arg1;
 + (void)setAppID:(id)arg1;
 + (void)setLogRequestResponseDirectory:(id)arg1;
++ (id)_logRequestResponseDirectory;
 
 - (id)logResponseToFile;
 - (id)logRequestToFile;

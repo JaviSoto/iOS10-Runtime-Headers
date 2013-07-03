@@ -49,8 +49,8 @@
 + (Class)_moreNavigationControllerClass;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)becomeFirstResponder;
 - (void)setDelegate:(id)arg1;
@@ -64,6 +64,8 @@
 - (BOOL)showsEditButtonOnLeft;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
 - (int)_tabBarPosition;
+- (void)tabBarAvailableBoundsForItemsDidChange:(id)arg1;
+- (void)tabBarProfileDidChange:(id)arg1;
 - (void)beginCustomizingTabBar:(id)arg1;
 - (void)setTabBar:(id)arg1;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
@@ -91,6 +93,7 @@
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)transientViewController;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
+- (unsigned int)_effectiveMaxItemsForViewControllers:(id)arg1;
 - (void)_tabBarItemClicked:(id)arg1;
 - (id)moreNavigationController;
 - (id)customizableViewControllers;

@@ -45,8 +45,8 @@
 + (id)_foregroundColor;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 + (id)_backgroundColor;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)_contentView;
 - (void)dealloc;

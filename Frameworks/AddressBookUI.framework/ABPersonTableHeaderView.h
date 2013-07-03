@@ -38,8 +38,8 @@
 @property(retain) UIView * extraHeaderView;
 @property BOOL extraHeaderViewAlignsToImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setExtraHeaderViewAlignsToImage:(BOOL)arg1;
 - (BOOL)extraHeaderViewAlignsToImage;
@@ -52,7 +52,6 @@
 - (void)deselectAnimated:(BOOL)arg1;
 - (void)setRepresentsLinkedPeople:(BOOL)arg1;
 - (void)setExtraHeaderView:(id)arg1;
-- (void)setAlternateName:(id)arg1;
 - (id)personForImageView;
 - (id)_imageShadowView;
 - (void)reloadNameDataButNotModelAnimated:(BOOL)arg1;
@@ -87,6 +86,7 @@
 - (void)reloadImageData;
 - (id)entryFieldForRow:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (void)setAlternateName:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)setMessage:(id)arg1;

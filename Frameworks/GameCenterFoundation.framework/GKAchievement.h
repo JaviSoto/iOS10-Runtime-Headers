@@ -64,8 +64,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)canBeShared;
-- (void)_gkSetSharingInfo:(id)arg1;
 - (id)fetchSharingInfo;
+- (void)_gkSetSharingInfo:(id)arg1;
 - (id)_gkSharingInfo;
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;

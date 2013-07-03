@@ -16,9 +16,9 @@
 @property(retain) GKLoadableContentStateMachine * loadingMachine;
 
 
-- (void)setViewsToHideWhileLoading:(id)arg1;
 - (id)viewsToHideWhileLoading;
 - (void)setLoadingState:(id)arg1;
+- (void)setViewsToHideWhileLoading:(id)arg1;
 - (void)setLoadingMachine:(id)arg1;
 - (id)loadingMachine;
 - (void)didExitLoadedState;

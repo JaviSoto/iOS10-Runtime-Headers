@@ -11,7 +11,10 @@
     NSString *_endColorName;
     NSArray *_colors;
     float _middleLocation;
+    BOOL _horizontal;
 }
+
+@property BOOL horizontal;
 
 + (id)gradientWithName:(id)arg1;
 + (id)gradientWith3Colors:(id)arg1 middleLocation:(float)arg2;
@@ -26,5 +29,7 @@
 - (id)initWith3Colors:(id)arg1 middleLocation:(float)arg2;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2;
 - (id)initWithFlatColor:(id)arg1;
+- (BOOL)horizontal;
+- (void)setHorizontal:(BOOL)arg1;
 
 @end

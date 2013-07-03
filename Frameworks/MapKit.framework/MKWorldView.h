@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MKBasicMapView, UIGestureRecognizer, MKAnnotationView, MKMapGestureController, VKMapView, NSTimer, UITapGestureRecognizer, MKUserLocation, VKLabelMarker, GEOMapRegion, UILongPressGestureRecognizer, UILabel, VKPuckAnimator, UITextView, UIPanGestureRecognizer, NSArray, MKNewAnnotationContainerView, MKMapAnnotationManager, <MKWorldViewDelegate>, UIImageView, UIView;
+@class MKBasicMapView, UIGestureRecognizer, MKAnnotationView, MKMapGestureController, NSMutableSet, VKMapView, NSTimer, UITapGestureRecognizer, MKUserLocation, GEOMapRegion, VKLabelMarker, UILongPressGestureRecognizer, UILabel, VKPuckAnimator, UITextView, UIPanGestureRecognizer, NSArray, MKNewAnnotationContainerView, MKMapAnnotationManager, <MKWorldViewDelegate>, UIImageView, UIView;
 
 @interface MKWorldView : UIView <VKMapViewDelegate, UIGestureRecognizerDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKMapGestureControllerDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate> {
     UIView *_contentView;
@@ -49,6 +49,7 @@
     MKMapGestureController *_gestureController;
     BOOL _shouldSplitRouteLine;
     MKAnnotationView *_longPressStartAnnotationView;
+    NSMutableSet *_rasterOverlays;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -103,6 +104,7 @@
         unsigned int delegateImplementsDidChangeVisibleRegion : 1; 
         unsigned int delegateImplementsShouldSelectLabelMarker : 1; 
         unsigned int delegateImplementsWillSelectLabelMarker : 1; 
+        unsigned int delegateImplementsDidSelectLabelMarker : 1; 
         unsigned int delegateImplementsLabelMarkerCalloutAccessoryControlTapped : 1; 
         unsigned int delegateImplementsDidDeselectLabelMarker : 1; 
         unsigned int delegateImplementsDidBecomePitched : 1; 
@@ -163,7 +165,7 @@
 @property int labelScaleFactor;
 @property(readonly) BOOL hasUserLocation;
 @property BOOL showsUserLocation;
-@property BOOL trackingAutoSelectsZoomScale;
+@property int userTrackingZoomStyle;
 @property int userTrackingMode;
 @property BOOL showingTraffic;
 @property(getter=isLoadingEnabled) BOOL loadingEnabled;
@@ -183,9 +185,10 @@
 @property BOOL rendersInBackground;
 
 + (id)mapRegionWithCenterCoordinate:(struct { double x1; double x2; })arg1 zoomScale:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
+- (void)setTiltEnabled:(BOOL)arg1;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { double x1; double x2; double x3; })arg2 course:(double)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
@@ -211,6 +214,8 @@
 - (void)mapViewDidFailLoadingTiles:(id)arg1 withError:(id)arg2;
 - (void)mapViewDidFinishLoadingTiles:(id)arg1;
 - (void)mapViewDidStartLoadingTiles:(id)arg1;
+- (void)removeRasterOverlay:(id)arg1;
+- (void)addRasterOverlay:(id)arg1;
 - (void)setTracePlaybackSpeedMultiplier:(double)arg1;
 - (id)selectedLabelMarker;
 - (BOOL)shouldHideOffscreenSelectedAnnotation;
@@ -231,7 +236,6 @@
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 animated:(BOOL)arg2;
 - (id)mapRegionOfInterest;
 - (void)setMapRegion:(id)arg1 animated:(BOOL)arg2;
-- (void)setMapDisplayStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)mapView:(id)arg1 showingFlyoverDidChange:(BOOL)arg2;
 - (void)mapView:(id)arg1 canShowFlyoverDidChange:(BOOL)arg2;
 - (void)mapView:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
@@ -241,8 +245,6 @@
 - (void)removeOverlay:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
 - (void)removePersistentOverlay:(id)arg1;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
-- (BOOL)trackingAutoSelectsZoomScale;
 - (BOOL)isShowingFlyover;
 - (BOOL)canShowFlyover;
 - (void)setRendersInBackground:(BOOL)arg1;
@@ -263,6 +265,8 @@
 - (void)setVectorKitConsoleEnabled:(BOOL)arg1;
 - (BOOL)isVectorKitConsoleEnabled;
 - (BOOL)isDebugConsoleEnabled;
+- (void)setUserTrackingZoomStyle:(int)arg1;
+- (int)userTrackingZoomStyle;
 - (void)setUserInteractionPausesLocationUpdates:(BOOL)arg1;
 - (BOOL)userInteractionPausesLocationUpdates;
 - (void)setShowingTraffic:(BOOL)arg1;
@@ -398,7 +402,6 @@
 - (id)_mapRegionWithCenterCoordinate:(struct { double x1; double x2; })arg1 zoomScale:(float)arg2;
 - (void)addAnnotations:(id)arg1;
 - (float)_zoomScaleForMapRegion:(id)arg1;
-- (void)setTiltEnabled:(BOOL)arg1;
 - (void)setRotationEnabled:(BOOL)arg1;
 - (void)pauseUserLocationUpdates;
 - (void)resumeUserLocationUpdates;
@@ -461,5 +464,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)didMoveToWindow;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
+- (id)accessibilityContainerElements;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

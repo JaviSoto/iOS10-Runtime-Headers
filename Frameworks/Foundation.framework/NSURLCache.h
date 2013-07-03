@@ -13,16 +13,18 @@
 + (void)_performDiskCacheSync;
 + (void)setSharedURLCache:(id)arg1;
 
-- (struct _CFURLCache { }*)_CFURLCache;
 - (id)init;
 - (void)dealloc;
 - (id)_initWithExistingCFURLCache:(struct _CFURLCache { }*)arg1;
+- (struct _CFURLCache { }*)_CFURLCache;
 - (unsigned int)currentDiskUsage;
 - (unsigned int)currentMemoryUsage;
 - (unsigned int)diskCapacity;
 - (unsigned int)memoryCapacity;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
+- (void)removeAllCachedResponses;
+- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
 - (void)_diskCacheScheduleRemoval:(id)arg1;
 - (void)_diskCacheScheduleWrite:(id)arg1;
 - (id)_diskCacheGet:(id)arg1;
@@ -56,8 +58,6 @@
 - (void)_memoryCacheAppendNodeToLRUList:(id)arg1;
 - (void)_memoryCacheRemoveNodeFromLRUList:(id)arg1;
 - (id)_diskCacheDefaultPath;
-- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
-- (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)setDiskCapacity:(unsigned int)arg1;
 - (void)setMemoryCapacity:(unsigned int)arg1;

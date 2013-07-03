@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, NSAttributedString, _UIButtonMaskAnimationView, NSString, UIImage, UIColor, NSArray;
+@class UIImageView, UILabel, NSAttributedString, UIView, _UIButtonMaskAnimationView, NSString, UIImage, UIColor, NSArray;
 
 @interface UIButton : UIControl <NSCoding> {
     struct __CFDictionary { } *_contentLookup;
@@ -41,8 +41,14 @@
         unsigned int titleFrozen : 1; 
     } _buttonFlags;
     _UIButtonMaskAnimationView *_maskAnimationView;
-    UIImageView *_selectionView;
+    UIView *_selectionView;
     NSArray *_contentConstraints;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _internalTitlePaddingInsets;
 }
 
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
@@ -62,9 +68,12 @@
 @property(readonly) NSAttributedString * currentAttributedTitle;
 @property(readonly) UILabel * titleLabel;
 @property(readonly) UIImageView * imageView;
+@property(readonly) UIColor * _currentImageColor;
 @property(setter=_setContentConstraints:,copy) NSArray * _contentConstraints;
+@property(setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _internalTitlePaddingInsets;
 
 + (void)initialize;
++ (id)_defaultImageColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultTitleColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)_xImage;
@@ -75,7 +84,6 @@
 + (id)_infoDarkImage;
 + (id)_plusImage;
 + (id)_detailDisclosureImage;
-+ (id)_disabledColorForButton:(id)arg1;
 + (id)_infoLightImage;
 + (id)_selectedIndicatorImage;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(float)arg4;
@@ -84,8 +92,8 @@
 + (id)_defaultNormalTitleColor;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
 + (id)buttonWithType:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)currentAttributedTitle;
 - (void)setTitle:(id)arg1;
@@ -103,8 +111,11 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (unsigned long long)defaultAccessibilityTraits;
+- (void)_setInternalTitlePaddingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_internalTitlePaddingInsets;
 - (id)_contentConstraints;
 - (void)_setAttributedTitle:(id)arg1 forStates:(unsigned int)arg2;
+- (void)_setImageColor:(id)arg1 forStates:(unsigned int)arg2;
 - (int)_drawingStyleForState:(unsigned int)arg1;
 - (void)_setDrawingStyle:(int)arg1 forState:(unsigned int)arg2;
 - (void)_setLetterpressStyle:(id)arg1 forState:(unsigned int)arg2;
@@ -112,11 +123,12 @@
 - (void)_setShouldHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })titleShadowOffset;
-- (BOOL)_usesSelectedFontTraits;
 - (id)currentBackgroundImage;
 - (id)currentTitleShadowColor;
+- (id)_currentImageColor;
 - (id)currentTitleColor;
 - (void)setAttributedTitle:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setImageColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setImageEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setReversesTitleShadowWhenHighlighted:(BOOL)arg1;
 - (BOOL)reversesTitleShadowWhenHighlighted;
@@ -147,14 +159,14 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 calculatePositionForEmptyTitle:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleEdgeInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_combinedContentPaddingInsets;
 - (id)attributedTitleForState:(unsigned int)arg1;
+- (id)_imageColorForState:(unsigned int)arg1;
 - (id)_attributedTitleForState:(unsigned int)arg1;
 - (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(BOOL*)arg2;
 - (id)_shadowColorForState:(unsigned int)arg1;
 - (id)_titleColorForState:(unsigned int)arg1;
 - (id)_titleForState:(unsigned int)arg1;
-- (id)_highlightPath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_outsetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (float)_drawingStrokeForState:(unsigned int)arg1;
@@ -165,6 +177,7 @@
 - (id)_borderColorForState:(unsigned int)arg1;
 - (float)_selectedIndicatorAlpha;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
+- (id)_selectedIndicatorViewWithImage:(id)arg1;
 - (BOOL)_hasHighlightColor;
 - (BOOL)_hasDrawingStyle;
 - (void)_setupImageView;
@@ -178,6 +191,7 @@
 - (void)setShowsTouchWhenHighlighted:(BOOL)arg1;
 - (void)_invalidateContentConstraints;
 - (void)_setContentConstraints:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (id)titleShadowColorForState:(unsigned int)arg1;
 - (id)titleColorForState:(unsigned int)arg1;
 - (void)_setShadowColor:(id)arg1 forStates:(unsigned int)arg2;
@@ -210,6 +224,7 @@
 - (BOOL)_isModernButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
+- (BOOL)_usesSelectedFontTraits;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1;
@@ -238,7 +253,6 @@
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)tintColorDidChange;
-- (id)outlinePath;
 - (void)invalidateIntrinsicContentSize;
 - (int)_lineBreakMode;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;

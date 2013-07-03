@@ -38,8 +38,8 @@
 - (id)initWithDirectionsResponse:(id)arg1 sourceName:(id)arg2 destinationName:(id)arg3;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 routeImage:(struct CGImage { }*)arg4 geoResponse:(id)arg5;
 - (unsigned int)transportType;
-- (id)route;
 - (unsigned int)distance;
+- (id)route;
 - (id)source;
 - (id)mapsURL;
 - (void)dealloc;

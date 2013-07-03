@@ -16,10 +16,10 @@
 
 + (id)layerWithRenditions:(id)arg1 name:(id)arg2 index:(unsigned int)arg3;
 
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (float)translateFromWidthsOrHeightsToLeftsOrTops:(id)arg1 leftsOrTops:(id*)arg2;
 - (id)initWithRenditions:(id)arg1 name:(id)arg2 index:(unsigned int)arg3;
+- (void)setIndex:(unsigned int)arg1;
 - (void)calculateColumLefts:(id*)arg1 rowTops:(id*)arg2 totalSize:(struct CGSize { float x1; float x2; }*)arg3 forPartFeatures:(unsigned int)arg4;
 - (void)setRenditions:(id)arg1;
 - (id)renditions;

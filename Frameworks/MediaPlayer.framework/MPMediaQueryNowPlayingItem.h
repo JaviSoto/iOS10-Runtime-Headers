@@ -14,6 +14,7 @@
 
 - (id)artist;
 - (id)album;
+- (float)userRating;
 - (void)setRating:(float)arg1;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (id)_chapterTitleForTime:(double)arg1;
@@ -25,13 +26,11 @@
 - (id)mediaItem;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)reevaluateType;
-- (float)userRating;
 - (id)titlesForTime:(double)arg1;
 - (BOOL)supportsAddStation;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (BOOL)isExplicitTrack;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
@@ -56,6 +55,7 @@
 - (id)chapterTimeMarkers;
 - (id)artworkMIMEType;
 - (id)artworkImageData;
+- (BOOL)isExplicitTrack;
 - (BOOL)supportsRewindAndFastForward15Seconds;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;

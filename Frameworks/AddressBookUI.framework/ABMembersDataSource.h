@@ -25,6 +25,7 @@
 @property void* addressBook;
 
 
+- (id)indexPathForDisplayedMemberIndex:(unsigned int)arg1 inTableView:(id)arg2;
 - (void)_invalidateMeCard;
 - (unsigned int)displayedMemberIndexForIndexPath:(id)arg1 inTableView:(id)arg2;
 - (int)globalRowForBanner;
@@ -35,9 +36,8 @@
 - (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
 - (void)setBannerView:(id)arg1 inTableView:(id)arg2;
-- (BOOL)shouldShowGroups;
-- (id)indexPathForDisplayedMemberIndex:(unsigned int)arg1 inTableView:(id)arg2;
 - (id)bannerView;
+- (BOOL)shouldShowGroups;
 - (int)globalRowForDisplayedMemberIndex:(unsigned int)arg1;
 - (void)setModel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
@@ -59,6 +59,7 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

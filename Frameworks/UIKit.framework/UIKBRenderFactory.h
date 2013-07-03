@@ -19,6 +19,7 @@
 + (Class)factoryClassForVisualStyle:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 + (id)segmentedControlColor:(BOOL)arg1;
 + (id)factoryForVisualStyle:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 renderConfig:(id)arg2;
++ (id)cacheKeyForString:(id)arg1 withRenderFlags:(int)arg2 renderConfig:(id)arg3;
 + (id)lightweightFactoryForVisualStyle:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 renderConfig:(id)arg2;
 + (BOOL)_enabled;
 
@@ -26,16 +27,15 @@
 - (void)setRivenSizeFactor:(float)arg1;
 - (float)rivenSizeFactor;
 - (id)thinTextFontName;
-- (id)thinKeycapsFontName;
 - (BOOL)shouldClearBaseDisplayStringForVariants;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
 - (id)globalEmojiKeyImageName;
-- (BOOL)useBlueThemingForKey:(id)arg1;
 - (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2;
 - (BOOL)lightweightFactory;
 - (id)segmentTraits;
+- (void)lowQualityTraits:(id)arg1;
 - (void)setLightweightFactory:(BOOL)arg1;
 - (id)initWithRenderConfig:(id)arg1 skipLayoutSegments:(BOOL)arg2;
 - (void)scaleTraits:(id)arg1;
@@ -44,13 +44,16 @@
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (void)addLayoutSegment:(id)arg1;
+- (BOOL)useBlueThemingForKey:(id)arg1;
 - (void)removeAllLayoutSegments;
 - (id)controlKeyBackgroundColorName;
 - (id)displayContentsForKey:(id)arg1;
 - (id)traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (id)cacheKeyForString:(id)arg1 withRenderFlags:(int)arg2;
+- (id)thinKeycapsFontName;
+- (id)lightPadKeycapsFontName;
 - (id)defaultKeyBackgroundColorName;
 - (id)lightTextFontName;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;

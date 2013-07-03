@@ -25,6 +25,7 @@
 - (int)productPageStylePhone;
 - (int)productPageStylePad;
 - (int)productPageStyleAutomatic;
+- (id)productURL;
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (int)productPageStyleBanner;
@@ -32,7 +33,6 @@
 - (void)setProductURL:(id)arg1;
 - (void)setProductParameters:(id)arg1;
 - (id)productParameters;
-- (id)productURL;
 - (int)productPageStyle;
 - (void)setProductPageStyle:(int)arg1;
 - (id)attributeKeys;

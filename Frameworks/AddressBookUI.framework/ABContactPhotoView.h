@@ -2,12 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImageView, CNContact, <ABPresenterDelegate>, UILabel;
+@class UIImageView, CNContact, <ABPresenterDelegate>, UIImage, NSDictionary, UILabel;
 
 @interface ABContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate> {
     BOOL _editing;
     CNContact *_contact;
     <ABPresenterDelegate> *_delegate;
+    NSDictionary *_photoPickerInfo;
+    UIImage *_currentThumbnailImage;
+    UIImage *_currentImage;
     UIImageView *_contactImageView;
     UILabel *_addPhotoLabel;
     UILabel *_editPhotoLabel;
@@ -17,14 +20,17 @@
 @property(retain) CNContact * contact;
 @property(getter=isEditing) BOOL editing;
 @property <ABPresenterDelegate> * delegate;
+@property(retain) NSDictionary * photoPickerInfo;
+@property(retain) UIImage * currentThumbnailImage;
+@property(retain) UIImage * currentImage;
 @property(retain) UIImageView * contactImageView;
 @property(retain) UILabel * addPhotoLabel;
 @property(retain) UILabel * editPhotoLabel;
 @property(retain) UIImageView * attributionImageView;
 
 + (id)supportedPasteboardTypes;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setEditPhotoLabel:(id)arg1;
 - (void)setAddPhotoLabel:(id)arg1;
@@ -37,17 +43,27 @@
 - (void)setAttributionImageView:(id)arg1;
 - (void)updateAttributionBadge;
 - (void)updatePhotoWithImage:(id)arg1;
+- (void)updatePhoto;
+- (void)setPhotoPickerInfo:(id)arg1;
+- (void)setCurrentImage:(id)arg1;
 - (void)setHighlightedFrame:(BOOL)arg1;
 - (void)_zoomContactPhoto;
 - (void)_presentPhotoEditingSheet;
+- (id)currentImageData;
+- (void)setCurrentThumbnailImage:(id)arg1;
+- (id)_fixImageCropping:(id)arg1;
+- (id)photoPickerInfo;
+- (id)currentThumbnailImage;
+- (id)currentImageDataAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)attributionImageView;
 - (id)contactImageView;
 - (id)addPhotoLabel;
 - (id)editPhotoLabel;
-- (void)menuWillHide:(id)arg1;
 - (void)longPressGesture:(id)arg1;
 - (void)tapGesture:(id)arg1;
-- (void)updatePhoto;
+- (void)reloadPhoto;
+- (void)saveEdits;
+- (void)menuWillHide:(id)arg1;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setContact:(id)arg1;
 - (id)contact;
@@ -59,12 +75,13 @@
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)copy:(id)arg1;
+- (id)currentImage;
 - (void)setEditing:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
+- (BOOL)canBecomeFirstResponder;
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (unsigned long long)accessibilityTraits;

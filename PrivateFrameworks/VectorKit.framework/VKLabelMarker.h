@@ -26,6 +26,7 @@
 - (id)incident;
 - (BOOL)isTrafficIncident;
 - (BOOL)isOneWayArrow;
+- (id)iconName;
 - (id)initWithManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg1 infoLabel:(const struct shared_ptr<vk::InfoLabel> { struct InfoLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 contentScale:(float)arg3;
 - (id)debugAnchorPointString;
 - (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2;
@@ -38,6 +39,7 @@
 - (id)title;
 - (struct { double x1; double x2; })coordinate;
 - (struct { double x1; double x2; double x3; double x4; })bounds;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (BOOL)isSelectable;

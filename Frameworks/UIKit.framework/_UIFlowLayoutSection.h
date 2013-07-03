@@ -128,6 +128,7 @@
 - (void)setFixedItemSize:(BOOL)arg1;
 - (id)addItem;
 - (void)setItemsCount:(int)arg1;
+- (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)endMargin;
 - (id)layoutInfo;
 - (int)itemsCount;
@@ -145,7 +146,6 @@
 - (BOOL)fixedItemSize;
 - (float)footerDimension;
 - (float)headerDimension;
-- (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)rows;
 - (id)snapshot;
 

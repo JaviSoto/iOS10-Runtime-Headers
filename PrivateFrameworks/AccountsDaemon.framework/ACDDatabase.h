@@ -15,11 +15,15 @@
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 @property int version;
 
-+ (void)resetPeristentStoreCoordinator;
++ (void)_resetPeristentStoreCoordinator;
++ (void)_removePersistentStoreAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
++ (void)_replacePersistentStoreAtURL:(id)arg1 withCleanStoreForCoordinator:(id)arg2;
++ (BOOL)_isUnrecoverableDatabaseError:(id)arg1;
++ (BOOL)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id*)arg4;
++ (id)_optionsForOpeningPersistentStore;
 + (id)_sharedPersistentCoordinatorForStoreAtPath:(id)arg1;
 + (id)defaultPath;
 + (struct __CFString { }*)_copyRootPath;
-+ (void)_removeFilesAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
 + (id)_managedObjectModel;
 
 - (id)_accountPropertyWithKey:(id)arg1 owner:(id)arg2;

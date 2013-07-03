@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSIndexSet, NSLock, PLLargeImageLoader, NSDictionary, PLPhotoLibrary, <PLThumbPersistenceManager>, NSMutableDictionary, NSArray;
+@class NSMutableSet, NSIndexSet, NSLock, PLLargeImageLoader, NSDictionary, PLPhotoLibrary, <PLThumbPersistenceManager>, NSMutableDictionary, NSArray;
 
 @interface PLThumbnailManager : NSObject  {
     PLPhotoLibrary *_photoLibrary;
@@ -17,10 +17,14 @@
     PLLargeImageLoader *_largeImageLoaderFullScreen;
     PLLargeImageLoader *_largeImageLoaderFilledScreen;
     PLLargeImageLoader *_largeImageLoaderFilledHalfScreen;
+    NSMutableSet *_previouslyRequestedThumbnailFixOIDs;
+    NSMutableSet *_requestedThumbnailFixAssets;
+    id _observerToken;
 }
 
 @property PLPhotoLibrary * photoLibrary;
 @property(readonly) NSMutableDictionary * thumbManagersByFormat;
+@property(retain) id observerToken;
 
 + (id)cameraPreviewWellAssetUUID;
 + (id)cameraPreviewWellImage;
@@ -34,7 +38,7 @@
 + (id)cameraPreviewWellImageFileURL;
 + (void)resetThumbnails;
 + (BOOL)hasRebuildThumbnailsRequest;
-+ (void)removeRebuildThumbnailsRequest;
++ (void)removeRebuildThumbnailsRequest:(const char *)arg1;
 + (BOOL)useImageTableForFormat:(int)arg1;
 + (id)supportedThumbnailFormats;
 + (int)thumbnailVersion;
@@ -59,12 +63,15 @@
 - (id)_anyImageTable;
 - (id)_dataForAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_thumbManagerForFormat:(int*)arg1;
+- (void)setPhotoLibrary:(id)arg1;
+- (id)observerToken;
+- (void)setObserverToken:(id)arg1;
 - (int)_rebuildAssetThumbnailsWithLimit:(int)arg1 error:(id*)arg2;
 - (BOOL)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3 allowPlaceholder:(BOOL)arg4;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 allowPlaceholder:(BOOL)arg9;
 - (id)photoLibrary;
-- (void)setPhotoLibrary:(id)arg1;
+- (void)clearPhotoLibrary;
 - (id)initWithWeakPhotoLibrary:(id)arg1;
 - (void)dealloc;
 

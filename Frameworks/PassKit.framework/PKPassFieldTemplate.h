@@ -9,6 +9,7 @@
     NSNumber *_boxedVerticalPadding;
     NSNumber *_boxedSuppressesLabel;
     NSNumber *_boxedValueCanWrap;
+    NSNumber *_boxedSuppressesEmptyLabel;
     UIFont *_labelFont;
     UIFont *_valueFont;
     Class _viewSubclass;
@@ -19,12 +20,14 @@
 @property(retain) UIFont * labelFont;
 @property(retain) UIFont * valueFont;
 @property BOOL suppressesLabel;
+@property BOOL suppressesEmptyLabel;
 @property BOOL valueCanWrap;
 @property(retain) Class viewSubclass;
 @property(retain) NSNumber * boxedTextAlignment;
 @property(retain) NSNumber * boxedVerticalPadding;
 @property(retain) NSNumber * boxedSuppressesLabel;
 @property(retain) NSNumber * boxedValueCanWrap;
+@property(retain) NSNumber * boxedSuppressesEmptyLabel;
 
 + (id)fieldTemplateWithViewSubclass:(Class)arg1;
 + (id)fieldTemplateWithVerticalPadding:(float)arg1;
@@ -33,12 +36,15 @@
 
 - (void)setValueCanWrap:(BOOL)arg1;
 - (BOOL)valueCanWrap;
+- (void)setSuppressesEmptyLabel:(BOOL)arg1;
+- (BOOL)suppressesEmptyLabel;
 - (void)setSuppressesLabel:(BOOL)arg1;
 - (BOOL)suppressesLabel;
 - (Class)viewSubclass;
-- (id)labelFont;
 - (void)setBoxedValueCanWrap:(id)arg1;
 - (id)boxedValueCanWrap;
+- (void)setBoxedSuppressesEmptyLabel:(id)arg1;
+- (id)boxedSuppressesEmptyLabel;
 - (void)setBoxedSuppressesLabel:(id)arg1;
 - (id)boxedSuppressesLabel;
 - (void)setBoxedVerticalPadding:(id)arg1;
@@ -52,6 +58,7 @@
 - (float)verticalPadding;
 - (void)setLabelFont:(id)arg1;
 - (void)dealloc;
+- (id)labelFont;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
 

@@ -27,8 +27,8 @@
 - (id)transactionEntries;
 - (void)setCacheWrapper:(id)arg1;
 - (id)cacheWrapper;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (id)store;
 - (id)storeName;
 - (void)dealloc;

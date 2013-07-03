@@ -57,11 +57,11 @@
 - (BOOL)openURL:(id)arg1 withOptions:(id)arg2;
 - (id)remoteObserver;
 - (BOOL)establishConnection;
+- (void)removeObserver:(id)arg1;
 - (id)deviceIdentifierForVendor;
 - (id)URLOverrideForURL:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)publicURLSchemes;
 - (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
 
 @end

@@ -81,8 +81,8 @@
 - (void)willMoveToSuperview:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)sizeToFit;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setAttributedTitle:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;

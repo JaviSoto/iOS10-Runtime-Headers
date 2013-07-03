@@ -16,6 +16,8 @@
 - (struct CGPoint { float x1; float x2; })positionForShow;
 - (void)endpointButtonPressed;
 - (void)returnToKeyboard;
+- (void)prepareForReturnToKeyboard;
+- (void)finishReturnToKeyboard;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)show;
 - (void)layoutSubviews;

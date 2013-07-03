@@ -75,8 +75,6 @@
 - (void)setWidthFraction:(float)arg1;
 - (float)widthFraction;
 - (BOOL)hasWidthFraction;
-- (unsigned int)secondaryColor;
-- (void)setSecondaryColor:(unsigned int)arg1;
 - (void)setHasFillColor:(BOOL)arg1;
 - (BOOL)hasFillColor;
 - (BOOL)readFrom:(id)arg1;
@@ -88,6 +86,8 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (unsigned int)secondaryColor;
+- (void)setSecondaryColor:(unsigned int)arg1;
 - (id)dictionaryRepresentation;
 
 @end

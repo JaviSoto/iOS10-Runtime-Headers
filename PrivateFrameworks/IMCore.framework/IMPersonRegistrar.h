@@ -15,8 +15,8 @@
 - (void)set_personMap:(id)arg1;
 - (id)_personMap;
 - (void)_dumpAllPersons;
-- (void)unregisterPerson:(id)arg1;
 - (id)personForUniqueID:(id)arg1;
+- (void)unregisterPerson:(id)arg1;
 - (void)registerPerson:(id)arg1;
 - (void)dealloc;
 

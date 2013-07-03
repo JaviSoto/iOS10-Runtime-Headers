@@ -76,6 +76,7 @@
 - (BOOL)prepareRecordWithSettings:(id)arg1 error:(id*)arg2;
 - (BOOL)setCurrentContext:(id)arg1 error:(id*)arg2;
 - (void)releaseAudioSession;
+- (void)prewarmAudioSession;
 - (id)initWithContext:(id)arg1 error:(id*)arg2;
 - (BOOL)isRecording;
 - (void)setStopOnBargeInEnabled:(BOOL)arg1;

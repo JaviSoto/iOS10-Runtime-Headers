@@ -5,6 +5,7 @@
 @interface ACDAccountStoreInterface : NSObject  {
 }
 
++ (id)_buildXPCInterface;
 + (id)XPCInterface;
 
 

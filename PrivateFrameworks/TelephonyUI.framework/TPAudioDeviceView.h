@@ -12,17 +12,15 @@
 
 @property BOOL blursBackground;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setActiveRow:(int)arg1;
 - (void)recomputeContentInsets;
 - (void)selectRow:(int)arg1;
 - (void)_setupTable;
-- (void)setBlursBackground:(BOOL)arg1;
-- (BOOL)blursBackground;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setBlursBackground:(BOOL)arg1;
+- (BOOL)blursBackground;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -30,6 +28,5 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)showTable;
 
 @end

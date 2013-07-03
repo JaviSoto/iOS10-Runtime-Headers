@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSLayoutConstraint, UIColor, UILabel;
+@class NSLayoutConstraint, UILabel, UIColor, UIView;
 
 @interface TPStarkInCallButton : UIButton  {
     BOOL _toggledOn;
@@ -10,6 +10,7 @@
     NSLayoutConstraint *_horizontalPositioningConstraint;
     int _inCallButtonType;
     UIColor *_unhighlightedBackgroundColor;
+    UIView *_toggledOnView;
 }
 
 @property(retain) UILabel * buttonLabel;
@@ -18,14 +19,17 @@
 @property BOOL toggledOn;
 @property(readonly) int specialLayoutType;
 @property(retain) UIColor * unhighlightedBackgroundColor;
+@property(retain) UIView * toggledOnView;
 
 
+- (void)setToggledOnView:(id)arg1;
+- (id)toggledOnView;
 - (id)unhighlightedBackgroundColor;
 - (void)setUnhighlightedBackgroundColor:(id)arg1;
+- (id)buttonLabel;
 - (void)setButtonLabel:(id)arg1;
 - (id)initForButtonType:(int)arg1;
 - (int)specialLayoutType;
-- (id)buttonLabel;
 - (void)setToggledOn:(BOOL)arg1;
 - (BOOL)toggledOn;
 - (int)inCallButtonType;

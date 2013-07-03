@@ -20,8 +20,8 @@
 @property float rightContentMargin;
 @property(retain) UIColor * separatorColor;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setRightContentMargin:(float)arg1;
 - (BOOL)showSeparator;

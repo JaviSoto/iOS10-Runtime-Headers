@@ -4,9 +4,11 @@
 
 @interface VKPuckDrawStyle : VKDrawStyle  {
     BOOL hasCircleBrightness;
+    BOOL hasArrowBrightness;
     BOOL hasArrowColor;
     BOOL hasArrowColorStale;
     float circleBrightness;
+    float arrowBrightness;
     struct _VGLColor { 
         float r; 
         float g; 
@@ -22,14 +24,18 @@
 }
 
 @property(readonly) float circleBrightness;
+@property(readonly) float arrowBrightness;
 @property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } arrowColor;
 @property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } arrowColorStale;
 @property(readonly) BOOL hasCircleBrightness;
+@property(readonly) BOOL hasArrowBrightness;
 @property(readonly) BOOL hasArrowColor;
 @property(readonly) BOOL hasArrowColorStale;
 
 
 - (void)takeFromZoomInvariantProperties:(id)arg1;
+- (float)arrowBrightness;
+- (BOOL)hasArrowBrightness;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })arrowColorStale;
 - (BOOL)hasArrowColorStale;
 - (float)circleBrightness;

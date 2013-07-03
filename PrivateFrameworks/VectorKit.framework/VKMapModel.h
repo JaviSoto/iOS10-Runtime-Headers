@@ -42,6 +42,7 @@
     VKStylesheet *_activeStylesheet;
     VKStylesheet *_defaultStylesheet;
     VKStylesheet *_hybridStylesheet;
+    VKStylesheet *_satelliteStylesheet;
     double _zoomLevel;
     int _mapType;
     <VKMapModelDelegate> *_delegate;
@@ -176,6 +177,7 @@
 - (unsigned int)supportedRenderPasses;
 - (void)debugHighlightLabelAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1 viewTransform:(id)arg2;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(BOOL)arg2 canvasSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1 context:(id)arg2;
 - (void)preloadNavigationSceneResourcesWithContext:(id)arg1;
 - (id)navTileSource;
 - (void)setLimitingNavCameraHeight:(BOOL)arg1;

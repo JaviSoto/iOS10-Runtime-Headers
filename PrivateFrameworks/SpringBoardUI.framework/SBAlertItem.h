@@ -59,7 +59,6 @@
 - (void)setOrderOverSBAlert:(BOOL)arg1;
 - (void)performUnlockAction;
 - (double)autoDismissInterval;
-- (float)lockLabelFontSize;
 - (id)shortLockLabel;
 - (id)lockLabel;
 - (void)playPresentationSound;

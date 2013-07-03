@@ -12,8 +12,8 @@
 
 
 - (void)dealloc;
-- (void)setBackdropView:(id)arg1;
 - (id)backdropView;
+- (void)setBackdropView:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 
 @end

@@ -18,6 +18,7 @@
 @property(copy) NSArray * recipientAddresses;
 
 
+- (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)recipientViewDidResignFirstResponder:(id)arg1;

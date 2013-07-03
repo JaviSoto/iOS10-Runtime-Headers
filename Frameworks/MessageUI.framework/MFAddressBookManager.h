@@ -10,6 +10,7 @@
 + (BOOL)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
+- (void)_handleAddressBookPrefsChangeNotification;
 - (void)_handleAddressBookChangeNotification;
 - (void)removeClient:(id)arg1;
 - (void)addClient:(id)arg1;

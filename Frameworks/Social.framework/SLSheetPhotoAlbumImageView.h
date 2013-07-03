@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class UILabel, NSMutableArray, CALayer;
+@class UILabel, NSString, CALayer, NSMutableArray;
 
-@interface SLSheetPhotoAlbumImageView : SLSheetPreviewImageView  {
+@interface SLSheetPhotoAlbumImageView : SLSheetImagePreviewView  {
     CALayer *_frameLayer;
     CALayer *_glossLayer;
     NSMutableArray *_frameViews;
@@ -12,16 +12,18 @@
     int _imageQuantity;
     int _numPreviewImagesAdded;
     UILabel *_imageCountLabel;
+    NSString *_forcedItemCountString;
     BOOL _updateLayout;
 }
 
 + (unsigned int)displayedFrameMaximum;
 
-- (id)_imageCountString;
+- (void)setItemCountString:(id)arg1;
 - (id)initWithPrincipalAttachments:(id)arg1;
 - (struct CGSize { float x1; float x2; })_currentSize;
 - (BOOL)_shouldDisplayImageCountLabel;
 - (void)addPreviewImage:(id)arg1;
+- (id)_itemCountString;
 - (void)setPreviewImage:(id)arg1 forAttachment:(id)arg2;
 - (void)barMetricsDidChange;
 - (void).cxx_destruct;

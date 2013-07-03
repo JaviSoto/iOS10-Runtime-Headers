@@ -4,7 +4,7 @@
 
 @class UIImageView;
 
-@interface SKUISlideshowAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
+@interface SKUISlideshowAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
     UIImageView *_imageView;
 }
 

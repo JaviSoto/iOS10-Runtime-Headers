@@ -40,8 +40,8 @@
 - (id)extraChildItems;
 - (id)payloadAsString;
 - (void)setAttributes:(id)arg1;
-- (void)setPayload:(id)arg1;
 - (BOOL)validate;
+- (void)setPayload:(id)arg1;
 - (void)write:(id)arg1;
 - (id)payload;
 - (id)init;

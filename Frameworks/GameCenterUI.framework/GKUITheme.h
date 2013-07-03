@@ -17,6 +17,7 @@
 @property(readonly) GKNetworkImageSource * photoDetailSource;
 @property(readonly) GKNetworkImageSource * photoLeaderboardSource;
 @property(readonly) GKNetworkImageSource * iconLeaderboardListSource;
+@property(readonly) GKNetworkImageSource * iconLeaderboardSetListSource;
 @property(readonly) GKNetworkImageSource * leaderboardCategoryIconSourceSmall;
 @property(readonly) GKNetworkImageSource * untreatedAchievementImageSource;
 @property(readonly) GKGameListIconBrush * gameListIconBrush;
@@ -27,6 +28,7 @@
 @property(readonly) UIImage * interactiveRatingStarsForeground;
 @property(readonly) UIImage * interactiveRatingStarsBackground;
 @property(readonly) struct CGSize { float x1; float x2; } formSheetSize;
+@property(readonly) float formSheetCornerRadius;
 @property(retain) NSCache * resourceCache;
 
 + (id)sharedTheme;
@@ -51,6 +53,7 @@
 - (id)removePlayerButtonImage;
 - (id)addPlayerButtonImage;
 - (id)photoLeaderboardSource;
+- (id)iconLeaderboardSetListSource;
 - (id)iconLeaderboardListSource;
 - (id)achievementIconSourcePad;
 - (id)achievementIconSource;
@@ -81,9 +84,10 @@
 - (id)resourceCache;
 - (void)clearResourceCache;
 - (id)untreatedAchievementImageSource;
+- (float)formSheetCornerRadius;
 - (id)photoDetailSource;
 - (id)photoListSource;
-- (id)statusDotImageSelected:(BOOL)arg1;
+- (id)statusDotImage;
 - (id)init;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })formSheetSize;

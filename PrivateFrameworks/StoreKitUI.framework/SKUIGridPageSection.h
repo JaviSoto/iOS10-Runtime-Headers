@@ -2,15 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageOverlayController, SKUIGridComponent, SKUIClientContext, NSMapTable, NSMutableIndexSet, SKUIItemArtworkContext, NSString, SKUIMissingItemLoader;
+@class SKUIProductPageOverlayController, SKUIGridComponent, SKUIClientContext, NSMapTable, NSMutableIndexSet, NSString, SKUIMissingItemLoader;
 
-@interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
+@interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIEmbeddedMediaViewDelegate, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     NSMapTable *_artworkRequests;
     SKUIClientContext *_clientContext;
+    BOOL _containsLockups;
     NSMapTable *_editorialLayouts;
     NSMutableIndexSet *_hiddenIconIndexSet;
     BOOL _isLandscape;
     BOOL _isPad;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _lockupImageBoundingSize;
     SKUIMissingItemLoader *_missingItemLoader;
     NSString *_moreButtonTitle;
     int _numberOfColumns;
@@ -18,7 +23,6 @@
     int _overlaySourceItemIndex;
     int _screenScale;
     NSMapTable *_lockupArtworkContexts;
-    SKUIItemArtworkContext *_itemArtworkContext;
 }
 
 @property(readonly) SKUIGridComponent * pageComponent;
@@ -26,22 +30,38 @@
 
 - (id)cellForIndexPath:(id)arg1;
 - (id)_cellImageForItem:(id)arg1 lockupSize:(int)arg2;
+- (id)_newSizeToFitArtworkRequestWithArtwork:(id)arg1 mediaIndex:(int)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForMediaIndex:(int)arg1;
+- (float)_heightForMedia:(id)arg1 width:(float)arg2;
+- (float)_mediaWidthForMediaIndex:(int)arg1 gridWidth:(float)arg2;
+- (float)_heightForLockup:(id)arg1;
+- (float)_heightForEditorialLockup:(id)arg1;
 - (id)_artworkContextForLockupSize:(int)arg1;
 - (void)_reloadItemCell:(id)arg1 withLockup:(id)arg2 index:(int)arg3;
-- (void)_reloadLockupCell:(id)arg1 withLockup:(id)arg2 index:(int)arg3;
-- (void)_enumateVisibleItemsWithBlock:(id)arg1;
+- (void)_reloadEditorialLockupCell:(id)arg1 withLockup:(id)arg2 index:(int)arg3;
+- (void)_enumerateVisibleIndexPathsWithBlock:(id)arg1;
+- (void)_enumerateVisibleItemsWithBlock:(id)arg1;
+- (void)_updateVisibileEditorialWithInterfaceOrientation:(int)arg1;
+- (id)_editorialLayoutForEditorial:(id)arg1;
+- (id)_editorialLayoutForLockup:(id)arg1;
 - (void)_enumerateItemsFromStartIndex:(int)arg1 withBlock:(id)arg2;
 - (void)_loadImageForItem:(id)arg1 lockupSize:(int)arg2 loader:(id)arg3 reason:(int)arg4;
+- (void)_selectItem:(id)arg1 withIndex:(int)arg2;
 - (id)_itemForIndex:(int)arg1;
 - (void)_setPositionForClickEvent:(id)arg1 withElementIndex:(int)arg2;
-- (float)_heightForEditorialLockup:(id)arg1;
+- (float)_heightForMediaAtIndexPath:(id)arg1;
+- (float)_heightForEditorialAtIndexPath:(id)arg1;
+- (float)_heightForEditorialLockupAtIndexPath:(id)arg1;
+- (float)_heightForLockupAtIndexPath:(id)arg1;
+- (id)_mediaCellWithMedia:(id)arg1 indexPath:(id)arg2;
 - (id)_itemCellWithLockups:(id)arg1 indexPath:(id)arg2;
-- (id)_lockupCellWithLockups:(id)arg1 indexPath:(id)arg2;
+- (id)_editorialLockupCellWithLockups:(id)arg1 indexPath:(id)arg2;
+- (id)_editorialCellWithEditorials:(id)arg1 indexPath:(id)arg2;
 - (void)_loadMissingItemsFromIndex:(int)arg1 withReason:(int)arg2;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
 - (id)_popSourceViewForOverlayController:(id)arg1;
-- (id)_editorialLayoutForComponent:(id)arg1;
 - (id)_missingItemLoader;
+- (void)mediaView:(id)arg1 playbackStateDidChange:(int)arg2;
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
@@ -57,7 +77,6 @@
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
-- (int)coloringOffset;
 - (id)initWithPageComponent:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)dealloc;

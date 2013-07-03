@@ -34,12 +34,12 @@
 - (void)donePressed:(id)arg1;
 - (void)setIsRequestingRemoteViewController:(BOOL)arg1;
 - (BOOL)isRequestingRemoteViewController;
+- (id)remoteViewReadyHandler;
 - (void)setShouldPresentRemoteViewController:(BOOL)arg1;
 - (void)resetRemoteViewController;
 - (BOOL)presentingRemoteViewController;
 - (BOOL)shouldPresentRemoteViewController;
 - (BOOL)gkIsDisappearing;
-- (id)remoteViewReadyHandler;
 - (void)setGkIsDisappearing:(BOOL)arg1;
 - (void)setPresentingRemoteViewController:(BOOL)arg1;
 - (void)requestRemoteViewControllerIfNeeded;

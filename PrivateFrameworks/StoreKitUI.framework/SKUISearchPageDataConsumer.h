@@ -4,7 +4,7 @@
 
 @class SKUIClientContext, NSString;
 
-@interface SKUISearchPageDataConsumer : SKUIDataConsumer  {
+@interface SKUISearchPageDataConsumer : SSVURLDataConsumer  {
     SKUIClientContext *_clientContext;
     NSString *_searchTerm;
 }

@@ -87,8 +87,8 @@
 - (id)price;
 - (id)requests;
 - (id)volume;
-- (void)setVolume:(id)arg1;
 - (void)setOpen:(id)arg1;
+- (void)setVolume:(id)arg1;
 - (id)status;
 - (void)setStatus:(id)arg1;
 - (id)open;

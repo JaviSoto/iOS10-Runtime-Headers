@@ -54,6 +54,7 @@
 - (id)reviewsURLString;
 - (id)privacyPolicyURLString;
 - (id)licenseAgreementURLString;
+- (void)_setInAppPurchases:(id)arg1;
 - (void)_setVersionHistory:(id)arg1;
 - (id)installationRequirementsDescription;
 - (id)contentRatingAdvisories;

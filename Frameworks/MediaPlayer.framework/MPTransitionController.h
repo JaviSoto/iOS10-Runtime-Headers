@@ -51,9 +51,9 @@
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
 - (id)toViewController;
 - (id)fromViewController;
 - (float)duration;
-- (void)removeObserver:(id)arg1;
 
 @end

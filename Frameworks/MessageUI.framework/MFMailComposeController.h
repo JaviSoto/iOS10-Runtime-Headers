@@ -108,8 +108,8 @@
 + (id)signatureMarkupForSendingEmailAddress:(id)arg1;
 + (void)initialize;
 + (id)signature;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
 - (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
@@ -173,8 +173,6 @@
 - (id)_missingIdentityErrorWithFormat:(id)arg1 title:(id)arg2;
 - (id)addressForMissingIdentity;
 - (void)_showMissingIdentityAlert;
-- (id)unknownPersonViewController;
-- (id)personViewController;
 - (id)errorsByRecipient;
 - (id)certificatesByRecipient;
 - (unsigned int)_defaultAtomPresentationOptions;
@@ -186,7 +184,6 @@
 - (void)setErrorsByRecipient:(id)arg1;
 - (void)setCertificatesByRecipient:(id)arg1;
 - (void)_updateTableCell:(id)arg1 isChecked:(BOOL)arg2;
-- (void)removeAddressAtIndex:(unsigned int)arg1 field:(int)arg2;
 - (void)didSelectCellAtRow:(unsigned int)arg1;
 - (id)_reformattedAddressAtIndex:(unsigned int)arg1;
 - (unsigned int)_reloadNumberOfReformattedAddressesWithMaximumWidth:(float)arg1 defaultFontSize:(float)arg2;
@@ -201,19 +198,22 @@
 - (void)_setLastFocusedRecipientView:(id)arg1;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (BOOL)_anyRecipientViewContainsAddress:(id)arg1;
+- (void)_updateAutoBccWithSendingAddress:(id)arg1;
 - (void)_dismissPersonCard;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
-- (void)setRecentRecipientPresentingCard:(id)arg1;
-- (void)setAtomPresentingCard:(id)arg1;
-- (void)setUnknownPersonViewController:(id)arg1;
-- (void)setPersonViewController:(id)arg1;
 - (void)_popoverWillBePresented:(id)arg1;
 - (void)_applicationDidResume;
 - (void)_updateRecipientAtomStyles;
 - (void)_finishEnteringRecipients;
 - (void)_dismissPeoplePicker:(id)arg1;
 - (void)clearInitialTitle;
+- (void)setRecentRecipientPresentingCard:(id)arg1;
+- (void)setAtomPresentingCard:(id)arg1;
+- (void)setUnknownPersonViewController:(id)arg1;
+- (void)setPersonViewController:(id)arg1;
+- (id)unknownPersonViewController;
+- (id)personViewController;
 - (int)_fieldForAddressField:(id)arg1;
 - (void)_saveMessageValues;
 - (void)_restoreMessageValues;
@@ -261,6 +261,7 @@
 - (id)popoverManagerCreateIfNeeded:(BOOL)arg1;
 - (id)compositionContext;
 - (id)_allRecipientViews;
+- (void)removeAddressAtIndex:(unsigned int)arg1 field:(int)arg2;
 - (void)addAddress:(id)arg1 field:(int)arg2;
 - (id)addressesForField:(int)arg1;
 - (void)_setRecipients:(id)arg1 forField:(int)arg2;

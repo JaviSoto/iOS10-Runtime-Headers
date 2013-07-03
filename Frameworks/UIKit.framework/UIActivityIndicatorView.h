@@ -54,8 +54,8 @@
 + (id)_loadResourcesForStyle:(int)arg1;
 + (BOOL)_isModernStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setWidth:(float)arg1;
 - (float)width;
@@ -131,11 +131,11 @@
 - (void)stopAnimating;
 - (BOOL)isAnimating;
 - (void)stopAnimation;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)setAnimationDuration:(double)arg1;
-- (BOOL)isHighlighted;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;

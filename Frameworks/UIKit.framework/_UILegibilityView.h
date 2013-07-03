@@ -2,36 +2,50 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIImage;
+@class _UILegibilitySettings, UIImageView, UIImage;
 
 @interface _UILegibilityView : UIView  {
-    int _style;
+    BOOL _hidesImage;
+    _UILegibilitySettings *_settings;
     UIImage *_image;
     UIImage *_shadowImage;
+    float _strength;
     UIImageView *_imageView;
     UIImageView *_shadowImageView;
 }
 
-@property int style;
+@property(readonly) int style;
+@property(retain) _UILegibilitySettings * settings;
 @property(retain) UIImage * image;
 @property(retain) UIImage * shadowImage;
+@property float strength;
+@property BOOL hidesImage;
 @property(retain) UIImageView * imageView;
 @property(retain) UIImageView * shadowImageView;
 
 
-- (void)setStyle:(int)arg1;
+- (void)setSettings:(id)arg1;
 - (id)image;
 - (int)style;
 - (void)setImage:(id)arg1;
 - (void)dealloc;
+- (BOOL)hidesImage;
+- (void)updateForChangedSettings:(id)arg1;
+- (void)setStyle:(int)arg1 image:(id)arg2 shadowImage:(id)arg3;
+- (void)setHidesImage:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits;
+- (id)initWithSettings:(id)arg1 strength:(float)arg2 image:(id)arg3;
 - (void)setShadowImageView:(id)arg1;
 - (id)shadowImageView;
-- (void)setStyle:(int)arg1 image:(id)arg2 shadowImage:(id)arg3;
+- (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;
+- (id)initWithStyle:(int)arg1 image:(id)arg2 shadowImage:(id)arg3;
+- (float)strength;
+- (void)setStrength:(float)arg1;
 - (id)initWithStyle:(int)arg1 image:(id)arg2;
+- (id)settings;
 - (void)setImageView:(id)arg1;
 - (void)setImage:(id)arg1 shadowImage:(id)arg2;
-- (id)initWithStyle:(int)arg1 image:(id)arg2 shadowImage:(id)arg3;
+- (id)initWithSettings:(id)arg1 strength:(float)arg2 image:(id)arg3 shadowImage:(id)arg4;
 - (id)imageView;
 - (void)setShadowImage:(id)arg1;
 - (id)shadowImage;

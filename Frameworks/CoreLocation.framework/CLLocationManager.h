@@ -55,12 +55,15 @@
 + (void)setDefaultEffectiveBundleIdentifier:(id)arg1;
 + (void)setAuthorizationStatus:(BOOL)arg1 forBundle:(id)arg2;
 + (void)setAuthorizationStatus:(BOOL)arg1 forBundleIdentifier:(id)arg2;
++ (int)regionMonitoringAuthorizationStatusForBundle:(id)arg1;
++ (int)regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1;
 + (BOOL)deferredLocationUpdatesAvailable;
 + (BOOL)regionMonitoringEnabled;
 + (BOOL)regionMonitoringAvailable;
 + (BOOL)significantLocationChangeMonitoringAvailable;
 + (void)setLocationServicesEnabled:(BOOL)arg1;
 + (BOOL)locationServicesEnabled:(BOOL)arg1;
++ (int)_regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)_authorizationStatus;
 + (BOOL)headingAvailable;
@@ -142,7 +145,6 @@
 - (id)rangedRegions;
 - (void)setPausesLocationUpdatesAutomatically:(BOOL)arg1;
 - (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
-- (id)location;
 - (id)heading;
 - (void)startUpdatingHeading;
 - (BOOL)headingAvailable;
@@ -151,6 +153,7 @@
 - (void)startUpdatingLocation;
 - (BOOL)locationServicesEnabled;
 - (void)stopUpdatingLocation;
+- (id)location;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

@@ -20,18 +20,19 @@
 + (id)bannerWindow;
 + (id)queue;
 
-- (BOOL)bannerVisible;
 - (BOOL)bannerAnimating;
-- (id)currentBanner;
 - (void)_showBanner:(id)arg1 showDimmingView:(BOOL)arg2;
 - (id)bannerSemaphore;
 - (struct CGPoint { float x1; float x2; })_hiddenBannerPosition;
-- (void)_hideBanner:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_visibleBannerPosition;
 - (void)setCurrentBanner:(id)arg1;
 - (void)setBannerVisible:(BOOL)arg1;
 - (void)setBannerAnimating:(BOOL)arg1;
 - (void)_layoutBanner:(id)arg1 orientation:(int)arg2 animated:(BOOL)arg3;
+- (void)_hideBanner:(id)arg1;
+- (id)currentBanner;
+- (BOOL)bannerVisible;
+- (void)handleSwipe;
 - (void)orientationChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;

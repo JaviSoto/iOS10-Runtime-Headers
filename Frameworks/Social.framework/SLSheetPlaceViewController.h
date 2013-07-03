@@ -40,6 +40,8 @@
 - (void)setPlaces:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionForPlaces:(id)arg1;
 - (id)places;
+- (void)_centerMapForPlaces;
+- (BOOL)_forceSelectPlace:(id)arg1 setMapAnnotation:(BOOL)arg2;
 - (BOOL)searchEnabled;
 - (void)_restoreFromSearch;
 - (id)placeDataSource;
@@ -49,8 +51,7 @@
 - (float)_mapHeightForInterfaceOrientation:(int)arg1;
 - (float)_preferredViewHeight;
 - (id)selectionDelegate;
-- (void)_centerMapForPlaces;
-- (BOOL)_forceSelectPlace:(id)arg1 setMapAnnotation:(BOOL)arg2;
+- (void)_centerMapWithSelectedPlace:(id)arg1;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
 - (void)setAccount:(id)arg1;
@@ -67,7 +68,6 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;

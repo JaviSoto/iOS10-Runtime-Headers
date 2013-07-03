@@ -25,10 +25,10 @@
 - (oneway void)speechRequestDidContinue;
 - (oneway void)speechRequestDidPause;
 - (oneway void)speechRequestDidStopWithSuccess:(BOOL)arg1 phonemesSpoken:(id)arg2 error:(id)arg3;
-- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 - (id)request;
 

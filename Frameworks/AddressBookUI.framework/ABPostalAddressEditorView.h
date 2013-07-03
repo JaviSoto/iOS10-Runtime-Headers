@@ -7,6 +7,7 @@
 @interface ABPostalAddressEditorView : UIControl <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, ABCountryPickerControllerDelegate> {
     CNPostalAddress *_address;
     <ABPresenterDelegate> *_delegate;
+    NSDictionary *_valueTextAttributes;
     UITableView *_tableView;
     NSDictionary *_addressFormats;
     NSArray *_cellsLayout;
@@ -15,6 +16,7 @@
 
 @property(copy) CNPostalAddress * address;
 @property <ABPresenterDelegate> * delegate;
+@property(copy) NSDictionary * valueTextAttributes;
 @property(retain) UITableView * tableView;
 @property(copy) NSDictionary * addressFormats;
 @property(copy) NSArray * cellsLayout;
@@ -33,10 +35,13 @@
 - (id)cellsLayout;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (void)countryPickerDidCancel:(id)arg1;
+- (void)setValueTextAttributes:(id)arg1;
+- (id)valueTextAttributes;
 - (void)setAddress:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

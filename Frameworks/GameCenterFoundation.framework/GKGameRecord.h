@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKChallenge, GKPlayer, GKGameRecordInternal, GKScore, NSString, GKAchievement, NSDate;
+@class NSString, GKAchievement, GKPlayer, GKGameRecordInternal, GKChallenge, NSDate;
 
 @interface GKGameRecord : GKGame  {
     GKPlayer *_player;
@@ -31,7 +31,6 @@
 @property(readonly) unsigned int maxRank;
 @property(readonly) unsigned int friendRank;
 @property(readonly) unsigned int maxFriendRank;
-@property(readonly) GKScore * score;
 @property(readonly) BOOL supportsLeaderboardSets;
 @property(readonly) unsigned int numberOfLeaderboardSets;
 @property(readonly) NSString * defaultLeaderboardIdentifier;
@@ -72,7 +71,6 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)score;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

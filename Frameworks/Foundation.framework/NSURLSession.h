@@ -21,7 +21,7 @@
 - (void)setSessionDescription:(id)arg1;
 - (id)sessionDescription;
 - (id)delegate;
-- (id)delegateQueue;
 - (id)configuration;
+- (id)delegateQueue;
 
 @end

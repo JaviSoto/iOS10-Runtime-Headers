@@ -53,10 +53,10 @@
 - (float)pageOffset;
 - (BOOL)isHeaderOrFooter;
 - (float)pageHeight;
-- (void)setTopMargin:(float)arg1;
-- (void)setLeftMargin:(float)arg1;
 - (float)leftMargin;
 - (float)topMargin;
+- (void)setTopMargin:(float)arg1;
+- (void)setLeftMargin:(float)arg1;
 - (id)init;
 - (void)dealloc;
 - (unsigned int)currentPage;

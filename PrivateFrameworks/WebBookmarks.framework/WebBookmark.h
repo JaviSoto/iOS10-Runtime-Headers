@@ -141,16 +141,16 @@
 - (id)initFolderWithParentID:(unsigned int)arg1;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
 - (BOOL)isDeletable;
-- (void)setDateAdded:(id)arg1;
 - (id)dateAdded;
+- (void)setDateAdded:(id)arg1;
 - (unsigned int)parentID;
 - (void)setAddress:(id)arg1;
 - (id)extraAttributes;
 - (void)setExtraAttributes:(id)arg1;
 - (BOOL)isInserted;
-- (BOOL)isEditable;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (BOOL)isEditable;
 - (BOOL)isHidden;
 - (id)init;
 - (id)iconData;

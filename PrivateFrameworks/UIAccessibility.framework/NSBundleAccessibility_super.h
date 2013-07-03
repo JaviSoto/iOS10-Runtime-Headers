@@ -5,8 +5,8 @@
 @interface NSBundleAccessibility_super : UIAccessibilitySafeCategory  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)loadAndReturnError:(id*)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;

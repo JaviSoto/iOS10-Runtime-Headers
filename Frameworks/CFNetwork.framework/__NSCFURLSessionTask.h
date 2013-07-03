@@ -16,6 +16,7 @@
     long long _countOfBytesSent;
     long long _countOfBytesExpectedToSend;
     long long _countOfBytesExpectedToReceive;
+    double _startTime;
 }
 
 @property unsigned int taskIdentifier;
@@ -29,6 +30,7 @@
 @property(copy) NSString * taskDescription;
 @property int state;
 @property(copy) NSError * error;
+@property double startTime;
 
 + (BOOL)supportsSecureCoding;
 
@@ -39,12 +41,13 @@
 - (id)taskDescription;
 - (long long)countOfBytesExpectedToSend;
 - (long long)countOfBytesSent;
-- (void)setOriginalRequest:(id)arg1;
 - (unsigned int)taskIdentifier;
 - (long long)countOfBytesExpectedToReceive;
+- (void)setOriginalRequest:(id)arg1;
 - (void)resume;
 - (void)suspend;
 - (void)cancel;
+- (double)startTime;
 - (id)currentRequest;
 - (void)setCountOfBytesExpectedToSend:(long long)arg1;
 - (void)setCountOfBytesSent:(long long)arg1;
@@ -64,6 +67,7 @@
 - (id)initWithTask:(id)arg1;
 - (id)initWithRequest:(id)arg1 ident:(unsigned int)arg2;
 - (void)_onqueue_connection_suspend;
+- (void)setStartTime:(double)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

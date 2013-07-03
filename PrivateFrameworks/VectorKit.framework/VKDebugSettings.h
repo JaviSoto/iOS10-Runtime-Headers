@@ -37,10 +37,11 @@
     BOOL _altitudeMipmapSatellite;
     BOOL _altitudeMipmapFlyover;
     BOOL _altitudeShowNightLight;
-    BOOL _altitudeShowFlyoverDemarcation;
     BOOL _altitudeNoTiltLimit;
     float _altitudeLodScale;
     float _altitudeAnimationSpinTime;
+    float _altitudeTileQualityThreshold;
+    float _altitudeForceGridTime;
     BOOL _altitudeProfilingEnabled;
     unsigned int _altitudeProfilingType;
     unsigned int _altitudeProfilingZones;
@@ -103,13 +104,14 @@
 @property BOOL altitudeMipmapSatellite;
 @property BOOL altitudeMipmapFlyover;
 @property BOOL altitudeShowNightLight;
-@property BOOL altitudeShowFlyoverDemarcation;
 @property BOOL altitudeNoTiltLimit;
 @property BOOL altitudeProfilingEnabled;
 @property unsigned int altitudeProfilingType;
 @property unsigned int altitudeProfilingZones;
 @property float altitudeLodScale;
 @property float altitudeAnimationSpinTime;
+@property float altitudeTileQualityThreshold;
+@property float altitudeForceGridTime;
 @property(retain) NSString * altitudeTelemetryURL;
 @property BOOL dynamicMapModesEnabled;
 @property BOOL isInstalledInLockScreen;
@@ -160,7 +162,6 @@
 - (void)setAltitudeHighResSatellite:(BOOL)arg1;
 - (void)setAltitudeNoTiltLimit:(BOOL)arg1;
 - (BOOL)altitudeNoTiltLimit;
-- (void)setAltitudeShowFlyoverDemarcation:(BOOL)arg1;
 - (void)setAltitudeShowNightLight:(BOOL)arg1;
 - (void)setAltitudeMipmapFlyover:(BOOL)arg1;
 - (void)setAltitudeMipmapSatellite:(BOOL)arg1;
@@ -212,10 +213,11 @@
 - (void)setHideDirectionalArrows:(BOOL)arg1;
 - (BOOL)isInstalledInLockScreen;
 - (BOOL)enableLoggingInLockScreen;
+- (float)altitudeForceGridTime;
+- (float)altitudeTileQualityThreshold;
 - (BOOL)useStaticTrafficFeed;
 - (float)altitudeAnimationSpinTime;
 - (float)altitudeLodScale;
-- (BOOL)altitudeShowFlyoverDemarcation;
 - (BOOL)altitudeShowNightLight;
 - (BOOL)altitudeMipmapFlyover;
 - (BOOL)altitudeMipmapSatellite;
@@ -226,6 +228,8 @@
 - (void)setTourAnimationStepDuration:(float)arg1;
 - (void)setTourAnimationCameraOffset:(float)arg1;
 - (void)setTourAnimationAltitude:(float)arg1;
+- (void)setAltitudeForceGridTime:(float)arg1;
+- (void)setAltitudeTileQualityThreshold:(float)arg1;
 - (void)setAltitudeAnimationSpinTime:(float)arg1;
 - (void)setAltitudeShowTileBounds:(BOOL)arg1;
 - (void)setAltitudePauseLoading:(BOOL)arg1;

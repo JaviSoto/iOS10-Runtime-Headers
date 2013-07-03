@@ -2,18 +2,18 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
+@class UIView;
 
 @interface UIStatusBarBatteryItemView : UIStatusBarItemView  {
     int _capacity;
     int _state;
     BOOL _persistentAnimationsEnabled;
-    UIImageView *_accessoryImageView;
+    UIView *_accessoryView;
     int _animateionFrameRate;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (void)_decreaseAnimationRate;
@@ -27,6 +27,7 @@
 - (BOOL)_needsAccessoryImage;
 - (void)_updateBatteryAnimation;
 - (float)extraRightPadding;
+- (float)legibilityStrength;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;

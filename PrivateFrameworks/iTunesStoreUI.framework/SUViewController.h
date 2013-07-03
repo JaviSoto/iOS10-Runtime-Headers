@@ -107,9 +107,9 @@
 - (void)applicationWillEnterForeground;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)setTitle:(id)arg1;
-- (void)reload;
 - (BOOL)becomeFirstResponder;
 - (BOOL)isVisible;
+- (void)reload;
 - (BOOL)isLoading;
 - (double)defaultPNGExpirationTime;
 - (int)interfaceOrientation;
@@ -135,6 +135,7 @@
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
@@ -143,6 +144,5 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)applicationWillSuspend;
 - (id)navigationItem;
-- (BOOL)canBecomeFirstResponder;
 
 @end

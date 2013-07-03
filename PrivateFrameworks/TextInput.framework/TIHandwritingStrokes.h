@@ -20,10 +20,10 @@
 - (id).cxx_construct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)removeAllStrokes;
 - (void)endStroke;
 - (struct CGPoint { float x1; float x2; })pointAtIndex:(unsigned int)arg1 inStrokeAtIndex:(unsigned int)arg2;
 - (unsigned int)numberOfPointsInStrokeAtIndex:(unsigned int)arg1;
-- (void)removeAllStrokes;
 - (void)removeStrokeAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfStrokes;
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;

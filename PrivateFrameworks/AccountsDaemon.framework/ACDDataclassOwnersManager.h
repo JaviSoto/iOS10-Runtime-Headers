@@ -2,21 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class <ACDDataclassOwnersManagerProtocol>, NSObject<OS_dispatch_semaphore>, NSXPCConnection;
+@class <ACDDataclassOwnersManagerProtocol>, NSXPCConnection;
 
 @interface ACDDataclassOwnersManager : NSObject  {
     <ACDDataclassOwnersManagerProtocol> *_remoteDOM;
     NSXPCConnection *_connection;
-    NSObject<OS_dispatch_semaphore> *_remoteCallSemaphore;
-    NSObject<OS_dispatch_semaphore> *_performCallSemaphore;
 }
 
 
 - (id)actionsForAddingAccount:(id)arg1 affectingDataclass:(id)arg2;
-- (void)_waitForPerformCallCompletion;
-- (void)_signalPerformCallCompletion;
-- (void)_waitForRemoteCallCompletion;
-- (void)_signalRemoteCallCompletion;
 - (id)_remoteDOM;
 - (void)_connectToRemoteDataclassOwnersManager;
 - (id)actionsForDeletingAccount:(id)arg1 affectingDataclass:(id)arg2;
@@ -24,7 +18,6 @@
 - (id)actionsForEnablingDataclass:(id)arg1 onAccount:(id)arg2;
 - (BOOL)performDataclassActions:(id)arg1 forAccount:(id)arg2 withChildren:(id)arg3;
 - (BOOL)isPerformingDataclassActionsForAccount:(id)arg1;
-- (id)init;
 - (void).cxx_destruct;
 
 @end

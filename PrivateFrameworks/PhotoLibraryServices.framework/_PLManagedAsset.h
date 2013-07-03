@@ -31,7 +31,6 @@
 @property int originalFilesizeValue;
 @property(retain) NSString * originalPath;
 @property(retain) NSString * importSessionID;
-@property(retain) NSString * title;
 @property(retain) NSNumber * orientation;
 @property short orientationValue;
 @property(retain) NSNumber * duration;

@@ -18,9 +18,11 @@
             struct SnappedPathMapMatchingSection {} *__first_; 
         } __ptr_; 
     } _mapMatchingSection;
+    BOOL _hasCompletedMapMatching;
 }
 
 @property(readonly) BOOL isMapMatching;
+@property(readonly) BOOL hasCompletedMapMatching;
 @property(retain) NSArray * edges;
 @property(readonly) const struct RouteMapMatchingSection { int (**x1)(); }* mapMatchingSection;
 
@@ -31,15 +33,16 @@
 - (BOOL)hasObserver:(id)arg1;
 - (BOOL)isMapMatching;
 - (BOOL)isMapMatched;
+- (BOOL)hasCompletedMapMatching;
 - (id)initWithOverlay:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (const struct RouteMapMatchingSection { int (**x1)(); }*)mapMatchingSection;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)description;
+- (BOOL)removeObserver:(id)arg1;
 - (id)edges;
 - (void)setEdges:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (BOOL)removeObserver:(id)arg1;
 
 @end

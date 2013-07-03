@@ -17,6 +17,7 @@
 @property(readonly) NSString * inverseName;
 
 
+- (BOOL)validate:(id*)arg1;
 - (id)relationName;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
@@ -28,10 +29,9 @@
 - (id)initWithOwner:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3;
 - (void)didCommit;
 - (id)owner;
-- (BOOL)validate:(id*)arg1;
 - (void)rollback;
-- (void)reset;
 - (BOOL)isDirty;
+- (void)reset;
 - (void)refresh;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

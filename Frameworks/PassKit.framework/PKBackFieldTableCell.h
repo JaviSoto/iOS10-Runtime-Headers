@@ -24,7 +24,7 @@
 - (struct CGSize { float x1; float x2; })_sizeForValueTextWithWidth:(float)arg1;
 - (void)_setupTextAttributes;
 - (id)_attributedStringByParsingLinksInString:(id)arg1;
-- (id)initWithField:(id)arg1;
+- (id)initWithField:(id)arg1 showLinks:(BOOL)arg2;
 - (void)setShowLinks:(BOOL)arg1;
 - (void)setField:(id)arg1;
 - (id)field;

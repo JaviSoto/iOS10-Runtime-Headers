@@ -5,6 +5,7 @@
 @class VKObjectPool, NSString, NSMutableArray, VGLIcon;
 
 @interface VKIconArtwork : NSObject <VKObjectPoolObject> {
+    BOOL _hasIcon;
     VGLIcon *_icon;
     NSMutableArray *_completionHandlers;
     VKObjectPool *_pool;

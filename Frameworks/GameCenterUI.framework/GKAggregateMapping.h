@@ -33,9 +33,9 @@
 - (id)localIndexPathForGlobalIndexPath:(id)arg1;
 - (id)tagForGlobalSection:(int)arg1;
 - (id)globalIndexPathForLocalIndexPath:(id)arg1;
-- (unsigned int)globalSectionForLocalSection:(unsigned int)arg1;
 - (unsigned int)localSectionForGlobalSection:(unsigned int)arg1;
 - (unsigned int)updateMappingsStartingWithGlobalSection:(unsigned int)arg1;
+- (unsigned int)globalSectionForLocalSection:(unsigned int)arg1;
 - (void)setDynamicTag:(id)arg1;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (void)setSectionCount:(int)arg1;

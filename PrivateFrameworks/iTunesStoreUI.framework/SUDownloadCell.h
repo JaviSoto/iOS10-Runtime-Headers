@@ -9,15 +9,15 @@
     UISlider *_progressBar;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)_isDownloadResumable:(id)arg1;
 - (void)_reloadProgressBar;
 - (void)_reloadAccessoryButton;
 - (void)reloadForStatusChange;
-- (void)setConfiguration:(id)arg1;
 - (void)dealloc;
+- (void)setConfiguration:(id)arg1;
 - (BOOL)handleTap;
 - (void)_accessoryButtonAction:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

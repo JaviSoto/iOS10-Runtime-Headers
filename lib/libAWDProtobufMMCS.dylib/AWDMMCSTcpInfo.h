@@ -3,6 +3,10 @@
  */
 
 @interface AWDMMCSTcpInfo : PBCodable  {
+    unsigned long long _tcpiCellRxbytes;
+    unsigned long long _tcpiCellRxpackets;
+    unsigned long long _tcpiCellTxbytes;
+    unsigned long long _tcpiCellTxpackets;
     unsigned long long _tcpiRxbytes;
     unsigned long long _tcpiRxduplicatebytes;
     unsigned long long _tcpiRxoutoforderbytes;
@@ -12,6 +16,10 @@
     unsigned long long _tcpiTxpackets;
     unsigned long long _tcpiTxretransmitbytes;
     unsigned long long _tcpiTxunacked;
+    unsigned long long _tcpiWifiRxbytes;
+    unsigned long long _tcpiWifiRxpackets;
+    unsigned long long _tcpiWifiTxbytes;
+    unsigned long long _tcpiWifiTxpackets;
     unsigned int _tcpiFlags;
     int _tcpiLastOutif;
     unsigned int _tcpiOptions;
@@ -32,7 +40,14 @@
     unsigned int _tcpiSndWscale;
     unsigned int _tcpiSrtt;
     unsigned int _tcpiState;
+    int _tcpiSynrexmits;
+    int _tcpiUnused1;
+    unsigned int _tcpiUnused2;
     struct { 
+        unsigned int tcpiCellRxbytes : 1; 
+        unsigned int tcpiCellRxpackets : 1; 
+        unsigned int tcpiCellTxbytes : 1; 
+        unsigned int tcpiCellTxpackets : 1; 
         unsigned int tcpiRxbytes : 1; 
         unsigned int tcpiRxduplicatebytes : 1; 
         unsigned int tcpiRxoutoforderbytes : 1; 
@@ -42,6 +57,10 @@
         unsigned int tcpiTxpackets : 1; 
         unsigned int tcpiTxretransmitbytes : 1; 
         unsigned int tcpiTxunacked : 1; 
+        unsigned int tcpiWifiRxbytes : 1; 
+        unsigned int tcpiWifiRxpackets : 1; 
+        unsigned int tcpiWifiTxbytes : 1; 
+        unsigned int tcpiWifiTxpackets : 1; 
         unsigned int tcpiFlags : 1; 
         unsigned int tcpiLastOutif : 1; 
         unsigned int tcpiOptions : 1; 
@@ -62,6 +81,9 @@
         unsigned int tcpiSndWscale : 1; 
         unsigned int tcpiSrtt : 1; 
         unsigned int tcpiState : 1; 
+        unsigned int tcpiSynrexmits : 1; 
+        unsigned int tcpiUnused1 : 1; 
+        unsigned int tcpiUnused2 : 1; 
     } _has;
 }
 
@@ -123,8 +145,41 @@
 @property unsigned long long tcpiRxoutoforderbytes;
 @property BOOL hasTcpiSndBw;
 @property unsigned long long tcpiSndBw;
+@property BOOL hasTcpiSynrexmits;
+@property int tcpiSynrexmits;
+@property BOOL hasTcpiUnused1;
+@property int tcpiUnused1;
+@property BOOL hasTcpiUnused2;
+@property unsigned int tcpiUnused2;
+@property BOOL hasTcpiCellRxpackets;
+@property unsigned long long tcpiCellRxpackets;
+@property BOOL hasTcpiCellRxbytes;
+@property unsigned long long tcpiCellRxbytes;
+@property BOOL hasTcpiCellTxpackets;
+@property unsigned long long tcpiCellTxpackets;
+@property BOOL hasTcpiCellTxbytes;
+@property unsigned long long tcpiCellTxbytes;
+@property BOOL hasTcpiWifiRxpackets;
+@property unsigned long long tcpiWifiRxpackets;
+@property BOOL hasTcpiWifiRxbytes;
+@property unsigned long long tcpiWifiRxbytes;
+@property BOOL hasTcpiWifiTxpackets;
+@property unsigned long long tcpiWifiTxpackets;
+@property BOOL hasTcpiWifiTxbytes;
+@property unsigned long long tcpiWifiTxbytes;
 
 
+- (void)setHasTcpiWifiTxbytes:(BOOL)arg1;
+- (void)setHasTcpiWifiTxpackets:(BOOL)arg1;
+- (void)setHasTcpiWifiRxbytes:(BOOL)arg1;
+- (void)setHasTcpiWifiRxpackets:(BOOL)arg1;
+- (void)setHasTcpiCellTxbytes:(BOOL)arg1;
+- (void)setHasTcpiCellTxpackets:(BOOL)arg1;
+- (void)setHasTcpiCellRxbytes:(BOOL)arg1;
+- (void)setHasTcpiCellRxpackets:(BOOL)arg1;
+- (void)setHasTcpiUnused2:(BOOL)arg1;
+- (void)setHasTcpiUnused1:(BOOL)arg1;
+- (void)setHasTcpiSynrexmits:(BOOL)arg1;
 - (void)setHasTcpiSndBw:(BOOL)arg1;
 - (void)setHasTcpiRxoutoforderbytes:(BOOL)arg1;
 - (void)setHasTcpiRxduplicatebytes:(BOOL)arg1;
@@ -154,6 +209,39 @@
 - (void)setHasTcpiSndWscale:(BOOL)arg1;
 - (void)setHasTcpiOptions:(BOOL)arg1;
 - (void)setHasTcpiState:(BOOL)arg1;
+- (void)setTcpiWifiTxbytes:(unsigned long long)arg1;
+- (unsigned long long)tcpiWifiTxbytes;
+- (BOOL)hasTcpiWifiTxbytes;
+- (void)setTcpiWifiTxpackets:(unsigned long long)arg1;
+- (unsigned long long)tcpiWifiTxpackets;
+- (BOOL)hasTcpiWifiTxpackets;
+- (void)setTcpiWifiRxbytes:(unsigned long long)arg1;
+- (unsigned long long)tcpiWifiRxbytes;
+- (BOOL)hasTcpiWifiRxbytes;
+- (void)setTcpiWifiRxpackets:(unsigned long long)arg1;
+- (unsigned long long)tcpiWifiRxpackets;
+- (BOOL)hasTcpiWifiRxpackets;
+- (void)setTcpiCellTxbytes:(unsigned long long)arg1;
+- (unsigned long long)tcpiCellTxbytes;
+- (BOOL)hasTcpiCellTxbytes;
+- (void)setTcpiCellTxpackets:(unsigned long long)arg1;
+- (unsigned long long)tcpiCellTxpackets;
+- (BOOL)hasTcpiCellTxpackets;
+- (void)setTcpiCellRxbytes:(unsigned long long)arg1;
+- (unsigned long long)tcpiCellRxbytes;
+- (BOOL)hasTcpiCellRxbytes;
+- (void)setTcpiCellRxpackets:(unsigned long long)arg1;
+- (unsigned long long)tcpiCellRxpackets;
+- (BOOL)hasTcpiCellRxpackets;
+- (void)setTcpiUnused2:(unsigned int)arg1;
+- (unsigned int)tcpiUnused2;
+- (BOOL)hasTcpiUnused2;
+- (void)setTcpiUnused1:(int)arg1;
+- (int)tcpiUnused1;
+- (BOOL)hasTcpiUnused1;
+- (void)setTcpiSynrexmits:(int)arg1;
+- (int)tcpiSynrexmits;
+- (BOOL)hasTcpiSynrexmits;
 - (void)setTcpiSndBw:(unsigned long long)arg1;
 - (unsigned long long)tcpiSndBw;
 - (BOOL)hasTcpiSndBw;

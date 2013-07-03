@@ -86,6 +86,7 @@
         int iRemoteCellTech; 
         unsigned int dwCellularUniqueTag; 
         unsigned short wCellularMTU; 
+        int bIfUpgrade; 
         struct tagCONNRESULT {} *next; 
     } currentConnResult;
     LoopbackSocketTunnel *tunnel;

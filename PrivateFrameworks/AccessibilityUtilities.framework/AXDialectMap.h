@@ -28,6 +28,8 @@
 @property(retain) NSCharacterSet * secondaryLanguageRange;
 
 
+- (void)setVoiceName:(id)arg1;
+- (id)voiceName;
 - (BOOL)canSpeakString:(id)arg1;
 - (BOOL)canSpeakLongCharacter:(unsigned long)arg1;
 - (BOOL)isDialectSecondaryForCharacter:(unsigned short)arg1;
@@ -42,13 +44,11 @@
 - (id)langManager;
 - (id)languageNameAndLocaleInNativeLocale;
 - (id)languageNameAndLocaleInCurrentLocale;
-- (id)voiceName;
 - (id)langMap;
 - (void)setLangMap:(id)arg1;
 - (void)setSpecificLanguageID:(id)arg1;
 - (void)setSecondaryLanguageRange:(id)arg1;
 - (void)setSpeakableCharacters:(id)arg1;
-- (void)setVoiceName:(id)arg1;
 - (id)basicDescription;
 - (id)specificLanguageID;
 - (id)debugDescription;

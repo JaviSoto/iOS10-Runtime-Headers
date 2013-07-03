@@ -37,6 +37,7 @@
 @property(readonly) NSDictionary * feedbackDictionaryRepresentation;
 @property(copy) NSString * debugMessage;
 @property(copy) NSData * artworkURLData;
+@property(copy) NSDate * dateAdded;
 @property(readonly) NSDictionary * dictionaryRepresentation;
 @property(readonly) NSManagedObject * managedObject;
 @property(readonly) NSManagedObjectContext * context;
@@ -59,6 +60,7 @@
 - (int)likeStatus;
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
+- (id)dateAdded;
 - (id)copyrightText;
 - (long long)beforePromoClipID;
 - (id)artworkURLData;
@@ -86,6 +88,7 @@
 - (void)setAlbum:(id)arg1;
 - (void)setPreviewURL:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
+- (void)setDateAdded:(id)arg1;
 - (void)setStoreID:(long long)arg1;
 - (void)setWishListDate:(id)arg1;
 - (void)setInWishList:(BOOL)arg1;
@@ -100,9 +103,9 @@
 - (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1;
 - (long long)storeID;
 - (id)context;
-- (id)objectID;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)objectID;
 - (void)setDuration:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

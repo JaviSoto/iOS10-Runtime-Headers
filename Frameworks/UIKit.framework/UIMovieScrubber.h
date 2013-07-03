@@ -74,6 +74,7 @@
         unsigned int delegateEditingAnimationFinished : 1; 
         unsigned int delegateWidthDeltaOriginXDelta : 1; 
     } _sliderFlags;
+    float _edgeInset;
 }
 
 @property double value;
@@ -90,17 +91,18 @@
 @property double zoomDelay;
 @property BOOL showTimeViews;
 @property(readonly) BOOL isInsideNavigationBar;
+@property float edgeInset;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
 @property(getter=isEditing) BOOL editing;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isEditable;
 - (void)setDataSource:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (id)dataSource;
@@ -108,6 +110,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (float)edgeInset;
 - (void)setMinimumTrimLength:(double)arg1;
 - (double)minimumTrimLength;
 - (void)setMaximumTrimLength:(double)arg1;
@@ -116,12 +119,12 @@
 - (BOOL)showTimeViews;
 - (void)setZoomDelay:(double)arg1;
 - (double)zoomDelay;
+- (double)trimEndValue;
+- (double)trimStartValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentMargins;
 - (void)animateAfterEdit;
 - (BOOL)thumbIsVisible;
 - (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
-- (double)trimStartValue;
-- (double)trimEndValue;
 - (void)_cancelTrackPressIfNeccessaryWithTouch:(id)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;
 - (float)_valueForTouch:(id)arg1;
@@ -131,7 +134,7 @@
 - (void)_trackPressWasHeld;
 - (void)setTrimStartValue:(double)arg1;
 - (void)setTrimEndValue:(double)arg1;
-- (float)_editingFrameDeltaXForValue:(float)arg1 handle:(int)arg2;
+- (void)setEdgeInset:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
@@ -140,8 +143,7 @@
 - (void)_animateAfterEdit:(BOOL)arg1;
 - (void)animateCancelEdit;
 - (void)_cancelTrackPress:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForEndValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForStartValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRectForStartTime:(double)arg1 endTime:(double)arg2;
 - (void)setThumbIsVisible:(BOOL)arg1;
 - (void)_trimAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;

@@ -10,6 +10,7 @@
 @property(retain) SALocation * address;
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
+@property(copy) NSString * currencySymbol;
 @property(copy) NSString * description;
 @property(copy) NSString * extSessionGuid;
 @property(copy) NSDictionary * identifierMap;
@@ -18,6 +19,7 @@
 @property(retain) SALocalSearchOperationHours * operationHours;
 @property(copy) NSString * phoneNumber;
 @property(copy) NSArray * photoList;
+@property(copy) NSString * priceRange;
 @property(copy) NSArray * reviewList;
 
 + (id)business2WithDictionary:(id)arg1 context:(id)arg2;
@@ -32,6 +34,8 @@
 - (id)offerLists;
 - (void)setIdentifierMap:(id)arg1;
 - (id)identifierMap;
+- (void)setPriceRange:(id)arg1;
+- (id)priceRange;
 - (id)reviewList;
 - (void)setExtSessionGuid:(id)arg1;
 - (id)extSessionGuid;
@@ -48,6 +52,8 @@
 - (id)categories;
 - (id)phoneNumber;
 - (id)groupIdentifier;
+- (void)setCurrencySymbol:(id)arg1;
+- (id)currencySymbol;
 - (void)setName:(id)arg1;
 - (id)address;
 

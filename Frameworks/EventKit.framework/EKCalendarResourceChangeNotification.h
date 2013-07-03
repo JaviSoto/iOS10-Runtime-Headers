@@ -62,9 +62,9 @@
 - (id)resourceChangeFromEventStore:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
 - (BOOL)allDay;
-- (id)location;
 - (unsigned int)changeType;
 - (id)startDate;
+- (id)location;
 - (id)deleteCount;
 - (id)initWithType:(int)arg1;
 - (void)setLocation:(id)arg1;

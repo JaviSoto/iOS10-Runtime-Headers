@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSArray;
+@class SAVoice, NSArray, NSString, NSNumber;
 
 @interface SASetAssistantData : SABaseCommand <SAServerBoundCommand> {
 }
@@ -24,6 +24,7 @@
 @property(copy) NSNumber * storefront;
 @property(copy) NSString * temperatureUnit;
 @property(copy) NSString * timeZoneId;
+@property(retain) SAVoice * ttsVoice;
 @property(copy) NSNumber * twentyFourHourTimeDisplay;
 @property(copy) NSNumber * uiScale;
 @property BOOL voiceOver;
@@ -39,6 +40,8 @@
 - (id)uiScale;
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
 - (id)twentyFourHourTimeDisplay;
+- (void)setTtsVoice:(id)arg1;
+- (id)ttsVoice;
 - (void)setTemperatureUnit:(id)arg1;
 - (id)temperatureUnit;
 - (void)setStorefront:(id)arg1;

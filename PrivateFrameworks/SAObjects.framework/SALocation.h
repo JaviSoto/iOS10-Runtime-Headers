@@ -26,7 +26,6 @@
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 + (id)location;
 
-- (id)entryPoints;
 - (void)setAccuracy:(id)arg1;
 - (void)setStateCode:(id)arg1;
 - (id)stateCode;
@@ -41,6 +40,7 @@
 - (void)setPostalCode:(id)arg1;
 - (id)postalCode;
 - (void)setEntryPoints:(id)arg1;
+- (id)entryPoints;
 - (id)subThoroughfare;
 - (id)thoroughfare;
 - (void)setSubThoroughfare:(id)arg1;

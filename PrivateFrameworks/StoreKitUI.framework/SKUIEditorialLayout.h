@@ -2,27 +2,34 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEditorialComponent, SKUITextLayoutCache;
+@class SKUIEditorialComponent, SKUILayoutCache;
 
 @interface SKUIEditorialLayout : NSObject  {
     SKUIEditorialComponent *_editorial;
+    int _landscapeLinkLayoutIndex;
     int _landscapeTextLayoutIndex;
     int _landscapeTitleLayoutIndex;
     float _landscapeWidth;
+    int _portraitLinkLayoutIndex;
     int _portraitTextLayoutIndex;
     int _portraitTitleLayoutIndex;
     float _portraitWidth;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
 }
 
+@property(readonly) SKUIEditorialComponent * editorialComponent;
 
+
+- (id)editorialComponent;
+- (id)_linkLayoutRequestWithTotalWidth:(float)arg1;
 - (id)_titleTextLayoutRequestWithTotalWidth:(float)arg1;
 - (id)_bodyTextLayoutRequestWithTotalWidth:(float)arg1;
+- (id)titleTextLayoutForOrientation:(int)arg1;
+- (id)linkLayoutForOrientation:(int)arg1;
 - (float)layoutHeightForOrientation:(int)arg1 expanded:(BOOL)arg2;
+- (id)bodyTextLayoutForOrientation:(int)arg1;
 - (void)setLayoutWidth:(float)arg1 forOrientation:(int)arg2;
 - (id)initWithEditorial:(id)arg1 layoutCache:(id)arg2;
-- (id)titleTextLayoutForOrientation:(int)arg1;
-- (id)bodyTextLayoutForOrientation:(int)arg1;
 - (void)enqueueLayoutRequests;
 - (void).cxx_destruct;
 

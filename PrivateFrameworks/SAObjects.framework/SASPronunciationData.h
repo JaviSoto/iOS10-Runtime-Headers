@@ -27,8 +27,8 @@
 - (void)setApgId:(id)arg1;
 - (id)apgId;
 - (id)encodedClassName;
-- (void)setLanguage:(id)arg1;
 - (id)language;
+- (void)setLanguage:(id)arg1;
 - (id)orthography;
 - (id)groupIdentifier;
 

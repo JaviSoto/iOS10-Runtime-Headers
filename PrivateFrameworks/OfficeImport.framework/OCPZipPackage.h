@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUZipArchive, NSMutableDictionary;
+@class OISFUZipArchive, NSMutableDictionary;
 
 @interface OCPZipPackage : OCPPackage  {
-    SFUZipArchive *mArchive;
+    OISFUZipArchive *mArchive;
     NSMutableDictionary *mParts;
 }
 

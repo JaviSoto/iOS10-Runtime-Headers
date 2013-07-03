@@ -105,7 +105,6 @@
 - (id)previewResponse;
 - (id)safeRequestForRequest:(id)arg1;
 - (id)previewRequest;
-- (void)setConnection:(id)arg1;
 - (id)data;
 - (id)password;
 - (void)setDelegate:(id)arg1;
@@ -113,6 +112,7 @@
 - (id)delegate;
 - (void)cancel;
 - (void)setError:(id)arg1;
+- (void)setConnection:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (int)pageCount;
 - (id)connection;

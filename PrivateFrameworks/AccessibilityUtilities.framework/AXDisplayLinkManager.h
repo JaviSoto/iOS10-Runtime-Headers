@@ -43,13 +43,13 @@
 - (void)_setShouldInvalidate:(BOOL)arg1;
 - (BOOL)_shouldInvalidate;
 - (void)_displayDidRefresh:(id)arg1;
+- (BOOL)isPaused;
 - (void)_setDisplayLink:(id)arg1;
 - (void)_setRemovedTargetActions:(id)arg1;
 - (void)_setAddedTargetActions:(id)arg1;
 - (void)_setActiveTargetActions:(id)arg1;
-- (BOOL)isPaused;
-- (double)timestamp;
 - (int)frameInterval;
+- (double)timestamp;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

@@ -6,6 +6,6 @@
 }
 
 
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 
 @end

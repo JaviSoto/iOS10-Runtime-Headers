@@ -17,10 +17,7 @@
     unsigned int _searchSequenceNumber;
     NSOperationQueue *_operationQueue;
     <ABMembersControllerDelegate> *_membersControllerDelegate;
-    BOOL _resumeForPhoneApp;
     BOOL _showingCardFromSearch;
-    BOOL _wasKeyboardShowing;
-    BOOL _shouldRestoreScrollPosition;
     BOOL _shouldDeactivateSearch;
     NSIndexPath *_selectedIndexPath;
     BOOL _searchEnabled;
@@ -55,8 +52,6 @@
 - (id)selectedCell;
 - (void)setCellsCreated:(unsigned int)arg1;
 - (unsigned int)cellsCreated;
-- (void)loadState;
-- (void)saveState:(void*)arg1;
 - (void)stopScrolling;
 - (void)setMembersControllerDelegate:(id)arg1;
 - (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
@@ -69,17 +64,15 @@
 - (id)currentSearchText;
 - (void)_searchForWords:(id)arg1;
 - (id)_localizedStringForError:(int)arg1;
+- (BOOL)isServerSearchGroup;
 - (void)_cancelGALSearch;
+- (void)cancelSearchingAnimated:(BOOL)arg1;
 - (BOOL)shouldShowGroups;
 - (id)currentTableView;
 - (void)setSearchPalette:(id)arg1;
 - (id)searchPalette;
 - (void)_updateEmptyTableViewAnimated:(BOOL)arg1;
 - (void)_reselectLastSelectedCellIfNeeded;
-- (void)cancelSearchingAnimated:(BOOL)arg1;
-- (BOOL)isServerSearchGroup;
-- (void)restoreScrollPosition;
-- (void)saveScrollPosition:(void*)arg1;
 - (id)tableViewPathToMember:(void*)arg1;
 - (int)globalIndexOfMember:(void*)arg1;
 - (BOOL)isSearching;
@@ -95,14 +88,12 @@
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (void)reload;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)setAddressBook:(void*)arg1;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)contentView;
+- (void)reload;
 - (void)dealloc;
-- (void)resume;
-- (void)suspend;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (BOOL)_shouldDeactivateOnCancelButtonClicked;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
@@ -117,7 +108,6 @@
 - (void)setParentViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)didReceiveMemoryWarning;
 - (id)operationQueue;
 
 @end

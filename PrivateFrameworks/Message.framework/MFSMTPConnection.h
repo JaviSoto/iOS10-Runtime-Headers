@@ -48,7 +48,7 @@
 - (BOOL)_supportsExtension:(id)arg1;
 - (BOOL)_supportsSaveSentExtension;
 - (BOOL)_hasParameter:(id)arg1 forKeyword:(id)arg2;
-- (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorMessage:(id*)arg5 serverResponse:(id*)arg6 displayError:(BOOL*)arg7 errorCode:(int*)arg8;
+- (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(BOOL*)arg8 errorCode:(int*)arg9;
 - (void)setUseSaveSent:(BOOL)arg1 toFolder:(id)arg2;
 - (BOOL)supportsBinaryMime;
 - (BOOL)supports8BitMime;

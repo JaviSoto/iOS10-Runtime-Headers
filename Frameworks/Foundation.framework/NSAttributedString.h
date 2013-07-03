@@ -27,8 +27,6 @@
 + (id)scrcStringWithLiteralString:(id)arg1;
 + (id)scrcStringWithFormat:(id)arg1;
 + (id)attributedStringWithFormatAndAttributes:(id)arg1;
-+ (struct __CTParagraphStyle { }*)_gkCTParagraphStyleWithLineBreakMode:(unsigned char)arg1 textAlignment:(unsigned char)arg2 lineHeight:(float)arg3 leading:(float)arg4;
-+ (struct __CTParagraphStyle { }*)_gkCTParagraphStyleWithLineBreakMode:(unsigned char)arg1;
 
 - (void)enumerateAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
@@ -122,13 +120,6 @@
 - (id)scrcStringByAppendingAttributedString:(id)arg1;
 - (id)scrcStringByAddingAttribute:(id)arg1 value:(id)arg2;
 - (BOOL)scrcContainsPause;
-- (float)flushFactorForParagraphAtIndex:(int)arg1 isNaturallyRTL:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })_gkSizeWithMinFontSize:(float)arg1 actualFontSize:(float*)arg2 forWidth:(float)arg3;
-- (void)_gkDrawInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_gkDrawAdjustingFontSizeInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct CGSize { float x1; float x2; })_gkSize;
-- (id)_gkInstantiateCoreTextRenderer;
-- (struct CGSize { float x1; float x2; })_gkSizeWithConstraints:(struct CGSize { float x1; float x2; })arg1;
 - (id)MP_attributedStringByAddingAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
 
 @end

@@ -30,15 +30,14 @@
 - (void)_signInAction:(id)arg1;
 - (id)_emptyWishlistView;
 - (void)_finishSignInWithResponse:(id)arg1 error:(id)arg2;
-- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)_wishlist;
 - (void)_deleteItemsAtIndexPaths:(id)arg1;
-- (id)_itemListViewController;
 - (void)_reloadNavigationBarAnimated:(BOOL)arg1;
 - (void)_reloadWishlist;
 - (void)_syncWishlist;
 - (int)_wishlistState;
 - (void)_reloadChildView;
+- (id)_itemListViewController;
 - (void)_wishlistDidChangeNotification:(id)arg1;
 - (void)itemList:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemList:(id)arg1 didDeselectItem:(id)arg2 atIndexPath:(id)arg3;
@@ -54,6 +53,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)contentScrollView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 
 @end

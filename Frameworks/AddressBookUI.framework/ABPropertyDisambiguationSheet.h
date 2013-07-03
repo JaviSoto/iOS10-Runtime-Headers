@@ -5,8 +5,10 @@
 @class ABPropertyGroupItem;
 
 @interface ABPropertyDisambiguationSheet : ABActionSheet  {
+    id _sender;
 }
 
+@property id sender;
 @property(readonly) BOOL needsDisambiguation;
 @property(readonly) ABPropertyGroupItem * defaultPropertyItem;
 
@@ -15,5 +17,7 @@
 - (id)defaultPropertyItem;
 - (BOOL)needsDisambiguation;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
+- (void)setSender:(id)arg1;
+- (id)sender;
 
 @end

@@ -38,6 +38,7 @@
 @property(readonly) UIPanGestureRecognizer * panGestureRecognizer;
 
 
+- (void)setTiltEnabled:(BOOL)arg1;
 - (id)twoFingerLongPressGestureRecognizer;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;
@@ -58,7 +59,6 @@
 - (id)twoFingerTapGestureRecognizer;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
-- (void)setTiltEnabled:(BOOL)arg1;
 - (void)setRotationEnabled:(BOOL)arg1;
 - (void)startUserInteractionFromExternalGesture;
 - (void)stopUserInteractionFromExternalGesture;

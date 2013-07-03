@@ -21,9 +21,9 @@
 - (id)nameLabel;
 - (void)setGameRecord:(id)arg1;
 - (id)gameRecord;
+- (void)didUpdateModel;
 - (id)iconView;
 - (void)setRepresentedItem:(id)arg1;
-- (void)didUpdateModel;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

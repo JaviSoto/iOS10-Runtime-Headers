@@ -4,7 +4,7 @@
 
 @class NSDate, NSArray, NSProtocolChecker, NSMutableArray, NSDictionary, NSString, NSMutableDictionary, NSData;
 
-@interface IMDaemonListener : NSObject <IDSIDQueryControllerDelegate> {
+@interface IMDaemonListener : NSObject  {
     NSMutableDictionary *_properties;
     NSMutableDictionary *_persistentProperties;
     NSMutableArray *_deferredChatMessages;
@@ -49,7 +49,6 @@
 - (void)removeHandler:(id)arg1;
 - (void)addHandler:(id)arg1;
 - (BOOL)hasPostedSetupComplete;
-- (void)receivedIDStatusCache:(id)arg1;
 - (void)accountRemoved:(id)arg1;
 - (void)_noteDisconnected;
 - (BOOL)isSetupComplete;

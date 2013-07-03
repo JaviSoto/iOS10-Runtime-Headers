@@ -54,9 +54,9 @@
 - (void)deleteUnusedFramebuffers;
 - (void)setUseMultisampling:(BOOL)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (int)height;
 - (int)width;
+- (void)setContext:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 

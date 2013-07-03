@@ -89,6 +89,7 @@
 + (id)albumWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumWithUUID:(id)arg1 inLibrary:(id)arg2;
 + (id)allAlbumsInManagedObjectContext:(id)arg1;
++ (id)allSyncedAlbumsInManagedObjectContext:(id)arg1;
 + (struct NSObject { Class x1; }*)albumFromGroupURL:(id)arg1 photoLibrary:(id)arg2;
 + (id)insertNewAlbumWithKind:(int)arg1 title:(id)arg2 intoLibrary:(id)arg3;
 + (id)allPhotoStreamAssetsAlbumInLibrary:(id)arg1;
@@ -110,13 +111,13 @@
 - (id)_prettyDescription;
 - (id)_compactDebugDescription;
 - (id)_kindDescription;
+- (void)unregisterForChanges;
 - (BOOL)didRegisteredWithUserInterfaceContext;
+- (void)registerForChanges;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (BOOL)isRegisteredForChanges;
 - (void)setKindValue:(int)arg1;
 - (id)photoLibrary;
-- (void)registerForChanges;
-- (void)unregisterForChanges;
 - (id)localizedLocationNames;
 - (BOOL)canShowComments;
 - (unsigned int)videosCount;
@@ -141,7 +142,6 @@
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (BOOL)hasUnseenContentBoolValue;
 - (void)batchFetchAssets:(id)arg1;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
@@ -152,6 +152,7 @@
 - (id)posterImage;
 - (unsigned int)photosCount;
 - (void)setUuid:(id)arg1;
+- (void)setKind:(id)arg1;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
@@ -165,6 +166,5 @@
 - (id)description;
 - (id)localizedTitle;
 - (id)kind;
-- (void)setKind:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
     unsigned int _modifierFlags;
     BOOL _keyRepeating;
     BOOL _popupVariant;
+    unsigned int _keyboardFlags;
     unsigned short _keyCode;
     BOOL _tabKey;
     int _characterSet;
@@ -39,6 +40,7 @@
 @property(readonly) unsigned int modifierFlags;
 @property(getter=isKeyRepeating,readonly) BOOL keyRepeating;
 @property(getter=isPopupVariant,readonly) BOOL popupVariant;
+@property(readonly) unsigned int keyboardFlags;
 @property(readonly) unsigned short keyCode;
 @property(getter=isTabKey,readonly) BOOL tabKey;
 @property(readonly) int characterSet;
@@ -54,8 +56,8 @@
 @property BOOL wasHandled;
 
 
-- (double)timestamp;
 - (id)_modiferFlagsDescription;
+- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
 - (id)_eventDescription;
 - (id)_typeDescription;
 - (id)_touchPhasesDescription;
@@ -79,9 +81,11 @@
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (void)setWasHandled:(BOOL)arg1;
 - (unsigned short)keyCode;
+- (unsigned int)keyboardFlags;
 - (BOOL)isTabKey;
 - (BOOL)isPopupVariant;
 - (int)characterSet;
+- (double)timestamp;
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)description;
@@ -89,7 +93,7 @@
 - (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint { float x1; float x2; })arg2 deltaX:(float)arg3 deltaY:(float)arg4;
 - (BOOL)wasHandled;
 - (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
-- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
+- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 withFlags:(unsigned int)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
 - (int)type;
 
 @end

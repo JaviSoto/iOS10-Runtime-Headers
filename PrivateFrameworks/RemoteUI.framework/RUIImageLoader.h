@@ -28,7 +28,6 @@
 + (id)sharedImageLoader;
 
 - (void)_locked_imageLoadStarted:(id)arg1;
-- (id)notificationCenter;
 - (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
 - (BOOL)isLoadingImages;
 - (void)_loadingStatusChanged;
@@ -41,6 +40,7 @@
 - (void)_startLoader;
 - (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
 - (void)_imageLoadFinished:(id)arg1;
+- (id)notificationCenter;
 - (id)init;
 
 @end

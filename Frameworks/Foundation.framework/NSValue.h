@@ -10,8 +10,8 @@
 @interface NSValue : NSObject <NSCopying, NSSecureCoding> {
 }
 
-+ (id)valueWithNonretainedObject:(id)arg1;
 + (id)valueWithPointer:(const void*)arg1;
++ (id)valueWithNonretainedObject:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)value:(const void*)arg1 withObjCType:(const char *)arg2;

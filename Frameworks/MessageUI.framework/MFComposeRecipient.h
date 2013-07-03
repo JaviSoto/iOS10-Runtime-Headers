@@ -26,8 +26,8 @@
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)originContext;
 - (id)preferredSendingAddress;
@@ -44,15 +44,16 @@
 - (id)supportedDragTypes;
 - (id)_unformattedAddress;
 - (id)placeholderName;
-- (id)compositeName;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
 - (id)uncommentedAddress;
 - (id)commentedAddress;
 - (id)shortName;
+- (id)compositeName;
 - (int)recordID;
 - (int)property;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
+- (void*)record;
 - (id)label;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -60,7 +61,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(int)arg1;
 - (int)identifier;
-- (void*)record;
 - (id)displayString;
 - (BOOL)isGroup;
 - (id)address;

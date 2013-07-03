@@ -41,6 +41,7 @@
 @property(readonly) NSArray * relatedNames;
 @property(readonly) NSArray * socialProfiles;
 @property(readonly) NSArray * postalAddresses;
+@property(getter=isUnified,readonly) BOOL unified;
 @property(readonly) NSString * displayName;
 @property(readonly) int recordID;
 @property(readonly) void* record;
@@ -65,9 +66,9 @@
 @property(readonly) NSArray * linkedContacts;
 
 + (id)propertyForPropertyID:(int)arg1;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 + (id)propertiesFromPropertyIDs:(id)arg1;
 + (id)contactWithStateRestorationCoder:(id)arg1 addressBook:(void*)arg2;
++ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 + (int)defaultNameOrder;
 + (id)contactWithRecord:(void*)arg1;
 + (int)propertyIDForProperty:(id)arg1;
@@ -76,7 +77,6 @@
 - (id)nameSuffix;
 - (id)namePrefix;
 - (id)birthday;
-- (int)recordID;
 - (id)textTone;
 - (id)ringtone;
 - (id)postalAddresses;
@@ -87,13 +87,12 @@
 - (id)urlAddresses;
 - (id)preferredContactForName;
 - (id)note;
-- (id)phoneticFullName;
 - (id)phoneticFamilyName;
 - (id)phoneticMiddleName;
 - (id)phoneticGivenName;
 - (id)previousFamilyName;
 - (id)middleName;
-- (void)setLinkedContacts:(id)arg1;
+- (void)removePhoto;
 - (BOOL)hasLinkedContacts;
 - (BOOL)isEqualToContact:(id)arg1;
 - (id)_CNLabelFromABLabel:(struct __CFString { }*)arg1;
@@ -112,34 +111,40 @@
 - (unsigned int)recordType;
 - (id)primarySourceName;
 - (id)givenName;
+- (void)reloadRecord;
 - (BOOL)isReadonly;
 - (id)phoneNumbers;
-- (void)setImageData:(id)arg1 forFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)removePhoto;
-- (id)preferredContactForPhoto;
-- (void)setPhoto:(id)arg1;
 - (id)largestAvailablePhoto;
+- (id)preferredContactForPhoto;
+- (BOOL)isUnified;
+- (void)setPhoto:(id)arg1;
+- (void)setImageData:(id)arg1 forFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)organizationName;
 - (id)departmentName;
 - (id)jobTitle;
 - (id)nickname;
+- (id)phoneticFullName;
 - (int)contactType;
 - (id)photoThumbnail;
 - (BOOL)deleteContact;
 - (void*)originalRecord;
 - (BOOL)isUnknown;
+- (void)setLinkedContacts:(id)arg1;
 - (id)linkedContacts;
 - (BOOL)hasValidRecordID;
 - (id)emailAddresses;
+- (int)recordID;
 - (BOOL)isFacebook;
 - (int)nameOrder;
 - (void*)source;
 - (id)displayName;
 - (id)fullName;
+- (void*)record;
 - (id)initWithRecord:(void*)arg1;
 - (void*)addressBook;
-- (void)setSource:(void*)arg1;
 - (void)setAddressBook:(void*)arg1;
+- (void)setSource:(void*)arg1;
 - (id)familyName;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -150,6 +155,5 @@
 - (id)identifier;
 - (id)_squareImage:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_squareCropRectForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void*)record;
 
 @end

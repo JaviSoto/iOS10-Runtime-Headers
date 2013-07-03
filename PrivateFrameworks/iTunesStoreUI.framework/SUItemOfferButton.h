@@ -22,8 +22,8 @@
 
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 + (double)defaultAnimationDuration;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setShowingConfirmation:(BOOL)arg1;
 - (id)itemOfferButtonStyle;

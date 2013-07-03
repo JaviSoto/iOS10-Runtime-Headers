@@ -21,14 +21,12 @@
     float _greyPuckAlphaScale;
     VGLRenderState *_puckRenderState;
     struct { 
-        float alphaScale; 
         struct { 
             double v[4][4]; 
         } arrowMatrix; 
         struct { 
             double v[4][4]; 
         } circleMatrix; 
-        int depthMode; 
         struct _VGLColor { 
             float r; 
             float g; 
@@ -50,6 +48,7 @@
         float a; 
     } _arrowColorStale;
     float _circleBrightness;
+    float _arrowBrightness;
 }
 
 @property BOOL shouldBillboard;

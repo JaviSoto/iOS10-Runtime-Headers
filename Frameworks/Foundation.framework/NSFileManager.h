@@ -10,19 +10,18 @@
 + (id)cacheDirectoryPathWithName:(id)arg1;
 + (BOOL)ensureDirectoryExists:(id)arg1;
 
+- (BOOL)isUbiquitousItemAtURL:(id)arg1;
 - (id)URLForUbiquityContainerIdentifier:(id)arg1;
-- (id)subpathsAtPath:(id)arg1;
 - (id)subpathsOfDirectoryAtPath:(id)arg1 error:(id*)arg2;
 - (id)ubiquityIdentityToken;
-- (BOOL)startDownloadingUbiquitousItemAtURL:(id)arg1 error:(id*)arg2;
 - (BOOL)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
-- (BOOL)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id*)arg4;
-- (id)enumeratorAtURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned int)arg3 errorHandler:(id)arg4;
-- (BOOL)isUbiquitousItemAtURL:(id)arg1;
 - (BOOL)linkItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (id)_web_pathWithUniqueFilenameForPath:(id)arg1;
+- (id)enumeratorAtURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned int)arg3 errorHandler:(id)arg4;
+- (id)subpathsAtPath:(id)arg1;
 - (id)contentsAtPath:(id)arg1;
+- (BOOL)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id*)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -47,6 +46,7 @@
 - (id)URLForPublishingUbiquitousItemAtURL:(id)arg1 expirationDate:(id*)arg2 error:(id*)arg3;
 - (BOOL)evictUbiquitousItemAtURL:(id)arg1 error:(id*)arg2;
 - (BOOL)setUbiquitous:(BOOL)arg1 itemAtURL:(id)arg2 destinationURL:(id)arg3 error:(id*)arg4;
+- (BOOL)startDownloadingUbiquitousItemAtURL:(id)arg1 error:(id*)arg2;
 - (BOOL)replaceItemAtURL:(id)arg1 withItemAtURL:(id)arg2 backupItemName:(id)arg3 options:(unsigned int)arg4 resultingItemURL:(id*)arg5 error:(id*)arg6;
 - (BOOL)createSymbolicLinkAtURL:(id)arg1 withDestinationURL:(id)arg2 error:(id*)arg3;
 - (id)_attributesOfItemAtURL:(id)arg1 filterResourceFork:(BOOL)arg2 error:(id*)arg3;

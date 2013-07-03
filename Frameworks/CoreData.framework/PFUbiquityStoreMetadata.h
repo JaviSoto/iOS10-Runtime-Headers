@@ -39,7 +39,7 @@
 - (id)initWithUbiquityName:(id)arg1 andUbiquityRootLocation:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (id)peerStateForPeerID:(id)arg1;
 - (void)setStoreOptions:(id)arg1;
-- (id)ubiquityRootURL;
 - (id)ubiquityRootLocation;
+- (id)ubiquityRootURL;
 
 @end

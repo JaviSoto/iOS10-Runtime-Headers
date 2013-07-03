@@ -53,7 +53,6 @@
 - (id)defaultTheme;
 - (id)styleMatrix;
 - (id)colorScheme;
-- (void)setIsHidden:(BOOL)arg1;
 - (BOOL)isHidden;
 - (id)colorMap;
 - (id)animation;
@@ -62,6 +61,7 @@
 - (void)dealloc;
 - (void)setBackground:(id)arg1;
 - (id)background;
+- (void)setIsHidden:(BOOL)arg1;
 - (id)transition;
 - (void)setTransition:(id)arg1;
 - (void)setName:(id)arg1;

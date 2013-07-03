@@ -30,9 +30,10 @@
 - (void)observeSheetActions:(id)arg1;
 - (void)_updateCellForSheetAction:(id)arg1;
 - (id)serviceIconImage;
+- (void)setServiceIconImage:(id)arg1;
+- (float)_preferredTableViewHeight;
 - (void)resetSheetActions;
 - (id)sheetActions;
-- (void)setServiceIconImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)contentView;
 - (void)setContentView:(id)arg1;
@@ -43,6 +44,7 @@
 - (id)tableView;
 - (void)loadView;
 - (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
 - (id)navigationItem;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -128,10 +128,6 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setBaseWritingDirection:(int)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (void)setBottomMargin:(float)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setTopMargin:(float)arg1;
-- (void)setLeftMargin:(float)arg1;
 - (float)rightMargin;
 - (float)leftMargin;
 - (float)bottomMargin;
@@ -144,6 +140,10 @@
 - (void)_paragraphInTable;
 - (void)_setCurrentBorderEdge:(unsigned int)arg1 isTable:(BOOL)arg2;
 - (BOOL)_currentTableCellIsPlaceholder;
+- (void)setBottomMargin:(float)arg1;
+- (void)setTopMargin:(float)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setLeftMargin:(float)arg1;
 - (void)setViewScale:(int)arg1;
 - (void)setViewKind:(int)arg1;
 - (struct CGSize { float x1; float x2; })viewSize;

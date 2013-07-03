@@ -5,8 +5,8 @@
 @interface NSObjectAccessibility_super : UIAccessibilitySafeCategory  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 
 @end

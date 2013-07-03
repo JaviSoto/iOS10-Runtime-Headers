@@ -21,8 +21,8 @@
 @property(copy) id block;
 
 
-- (void)setBlock:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setBlock:(id)arg1;
 - (id)block;
 - (id)queue;
 

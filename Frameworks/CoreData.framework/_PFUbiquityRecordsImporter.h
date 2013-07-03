@@ -99,8 +99,8 @@
 - (void)requestBaselineRollForStore:(id)arg1;
 - (void)operationDidFinish:(id)arg1;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (id)localPeerID;
 - (id)ubiquityRootLocation;
+- (id)localPeerID;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)storeName;
 - (id)init;

@@ -25,6 +25,7 @@
 - (void)setRemoteAccountStore:(id)arg1;
 - (id)remoteAccountStore;
 - (id)effectiveBundleID;
+- (id)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;
 - (BOOL)isTetheredSyncingEnabledForDataclass:(id)arg1;
@@ -41,7 +42,6 @@
 - (void)clearAllPermissionsGrantedForAccountType:(id)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (id)appPermissionsForAccountType:(id)arg1;
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)accessKeysForAccountType:(id)arg1;
 - (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)supportedDataclassesForAccountType:(id)arg1;
@@ -69,6 +69,7 @@
 - (void)insertAccountType:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)accountsWithAccountType:(id)arg1;
 - (id)accounts;
+- (void)accountTypeWithIdentifier:(id)arg1 completion:(id)arg2;
 - (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)initWithEffectiveBundleID:(id)arg1;
@@ -77,7 +78,6 @@
 - (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)_saveAccount:(id)arg1 forPID:(id)arg2 verify:(BOOL)arg3 dataclassActions:(id)arg4 completion:(id)arg5;
 - (id)_remoteAccountStore;
-- (void)promptUserForCredentialsWithAccount:(id)arg1 withHandler:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
@@ -85,7 +85,9 @@
 - (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id)arg2;
 - (void)disconnectFromRemoteAccountStore;
 - (void)_connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
+- (id)_initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
 - (id)displayTypeForAccountWithIdentifier:(id)arg1;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -102,5 +104,10 @@
 - (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id)arg2;
 - (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id)arg2;
 - (id)aa_appleAccountType;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
+- (id)da_accounts;
+- (id)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
+- (id)da_accountsEnabledForDADataclasses:(int)arg1;
 
 @end

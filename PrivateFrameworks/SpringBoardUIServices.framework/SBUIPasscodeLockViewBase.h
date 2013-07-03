@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBUIColorStatistics, SBUIPasscodeEntryField, UIColor, NSString, <SBUIPasscodeLockViewDelegate>, <SBUIColorStatisticsProvider>;
+@class <SBFLegibilitySettingsProvider>, _UILegibilitySettings, SBUIPasscodeEntryField, NSString, <SBUIPasscodeLockViewDelegate>, <SBUIPasscodeLockViewDelegate_Internal>, UIColor;
 
-@interface SBUIPasscodeLockViewBase : UIView <SBUIColorStatisticsProviderDelegate, SBUIPasscodeLockView> {
-    <SBUIPasscodeLockViewDelegate> *_delegate;
+@interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView> {
+    <SBUIPasscodeLockViewDelegate_Internal> *_delegate;
     int _style;
     NSString *_passcode;
     BOOL _playsKeypadSounds;
@@ -14,10 +14,10 @@
     float _backgroundAlpha;
     UIColor *_customBackgroundColor;
     SBUIPasscodeEntryField *_entryField;
-    <SBUIColorStatisticsProvider> *_backgroundColorStatisticsProvider;
+    <SBFLegibilitySettingsProvider> *_backgroundLegibilitySettingsProvider;
     BOOL _shouldResetForFailedPasscodeAttempt;
     float _luminanceBoost;
-    SBUIColorStatistics *_colorStatistics;
+    _UILegibilitySettings *_legibilitySettings;
 }
 
 @property int style;
@@ -31,15 +31,17 @@
 @property BOOL showsEmergencyCallButton;
 @property float backgroundAlpha;
 @property(retain) UIColor * customBackgroundColor;
-@property(retain) <SBUIColorStatisticsProvider> * backgroundColorStatisticsProvider;
+@property(retain) <SBFLegibilitySettingsProvider> * backgroundLegibilitySettingsProvider;
 
 
 - (void)_setEntryField:(id)arg1;
 - (id)_entryField;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
 - (BOOL)shouldResetForFailedPasscodeAttempt;
-- (void)setBackgroundColorStatisticsProvider:(id)arg1;
-- (id)backgroundColorStatisticsProvider;
+- (void)_sendDelegateKeypadKeyUp;
+- (void)_sendDelegateKeypadKeyDown;
+- (void)setBackgroundLegibilitySettingsProvider:(id)arg1;
+- (id)backgroundLegibilitySettingsProvider;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)customBackgroundColor;
 - (float)backgroundAlpha;
@@ -47,16 +49,16 @@
 - (BOOL)showsStatusField;
 - (BOOL)playsKeypadSounds;
 - (id)passcode;
-- (void)_setColorStatistics:(id)arg1;
+- (void)resetForFailedPasscode;
 - (void)_setLuminosityBoost:(float)arg1;
 - (float)_luminosityBoost;
 - (void)_luminanceBoostDidChange;
 - (void)_evaluateLuminance;
-- (void)colorStatisticsProviderColorStatisticsChanged:(id)arg1;
-- (void)resetForFailedPasscode;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;
+- (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)reset;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -67,6 +69,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)setBackgroundAlpha:(float)arg1;
+- (void)_setLegibilitySettings:(id)arg1;
 - (BOOL)canResignFirstResponder;
 - (BOOL)isFirstResponder;
 - (BOOL)canBecomeFirstResponder;

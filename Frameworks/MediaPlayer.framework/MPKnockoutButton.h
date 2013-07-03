@@ -2,19 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPKnockoutButton : UIButton  {
-    float _defaultAlpha;
+@interface MPKnockoutButton : MPButton  {
 }
 
-@property float defaultAlpha;
++ (id)easyTouchButtonWithType:(int)arg1;
 
-+ (id)buttonWithType:(int)arg1;
-
-- (float)defaultAlpha;
-- (void)_updateMask;
-- (void)setDefaultAlpha:(float)arg1;
-- (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
-- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)willMoveToWindow:(id)arg1;
+- (void)_updateForStateChangeAnimated:(BOOL)arg1;
+- (BOOL)_drawingAsSelected;
+- (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)didMoveToSuperview;
 
 @end

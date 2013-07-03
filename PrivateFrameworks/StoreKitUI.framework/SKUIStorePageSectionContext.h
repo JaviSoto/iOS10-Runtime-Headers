@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, SKUIMetricsController, UICollectionView, SKUIItemOfferButtonAppearance, SKUIResourceLoader, SKUITextLayoutCache, SKUIStorePageViewController;
+@class SKUIColorScheme, SKUIMetricsController, UICollectionView, SKUIItemOfferButtonAppearance, SKUILayoutCache, SKUIResourceLoader, SKUIStorePageViewController;
 
 @interface SKUIStorePageSectionContext : NSObject  {
     UICollectionView *_collectionView;
@@ -11,7 +11,7 @@
     SKUIMetricsController *_metricsController;
     SKUIStorePageViewController *_parentViewController;
     SKUIResourceLoader *_resourceLoader;
-    SKUITextLayoutCache *_textLayoutCache;
+    SKUILayoutCache *_textLayoutCache;
 }
 
 @property(readonly) UICollectionView * collectionView;
@@ -20,7 +20,7 @@
 @property(readonly) SKUIMetricsController * metricsController;
 @property(readonly) SKUIStorePageViewController * parentViewController;
 @property(readonly) SKUIResourceLoader * resourceLoader;
-@property(readonly) SKUITextLayoutCache * textLayoutCache;
+@property(readonly) SKUILayoutCache * textLayoutCache;
 
 
 - (id)itemOfferButtonAppearance;

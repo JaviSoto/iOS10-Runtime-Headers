@@ -22,6 +22,7 @@
     NSString *_ocean;
     NSString *_postCode;
     NSString *_postCodeExtension;
+    NSString *_postCodeFull;
     NSString *_premise;
     NSString *_premises;
     NSString *_subAdministrativeArea;
@@ -66,6 +67,8 @@
 @property(readonly) BOOL hasPremise;
 @property(retain) NSString * premise;
 @property(retain) NSMutableArray * subPremises;
+@property(readonly) BOOL hasPostCodeFull;
+@property(retain) NSString * postCodeFull;
 @property(readonly) unsigned int geoIdsCount;
 @property(readonly) long long* geoIds;
 
@@ -80,6 +83,8 @@
 - (long long)geoIdAtIndex:(unsigned int)arg1;
 - (void)clearGeoIds;
 - (unsigned int)geoIdsCount;
+- (id)postCodeFull;
+- (BOOL)hasPostCodeFull;
 - (id)subPremiseAtIndex:(unsigned int)arg1;
 - (void)clearSubPremises;
 - (unsigned int)subPremisesCount;
@@ -94,6 +99,7 @@
 - (void)addSubPremise:(id)arg1;
 - (void)addDependentLocality:(id)arg1;
 - (void)addAreaOfInterest:(id)arg1;
+- (void)setPostCodeFull:(id)arg1;
 - (void)setSubPremises:(id)arg1;
 - (void)setPremise:(id)arg1;
 - (void)setDependentLocalitys:(id)arg1;

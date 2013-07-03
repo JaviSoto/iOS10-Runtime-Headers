@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPagePlaceholderScrollView, SKUIColorScheme, UIScrollView, SKUIProductPageHeaderViewController, SKUIClientContext, <SKUIProductPageChildViewControllerDelegate>;
+@class SKUIColorScheme, UIActivityIndicatorView, SKUIClientContext, SKUIProductPageHeaderViewController, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPagePlaceholderScrollView, UIScrollView;
 
 @interface SKUIProductPagePlaceholderViewController : UIViewController <UIScrollViewDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -10,6 +10,8 @@
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIProductPagePlaceholderScrollView *_scrollView;
     <SKUIProductPageChildViewControllerDelegate> *_delegate;
+    int _style;
+    UIActivityIndicatorView *_indicator;
 }
 
 @property(retain) SKUIClientContext * clientContext;
@@ -21,16 +23,19 @@
 
 - (void)setHeaderViewController:(id)arg1;
 - (id)headerViewController;
+- (void)_addHeaderView;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (id)_scrollView;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)scrollView;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
+- (id)initWithStyle:(int)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 
 @end

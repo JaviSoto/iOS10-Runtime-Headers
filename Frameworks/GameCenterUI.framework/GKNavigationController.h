@@ -15,7 +15,6 @@
 - (void)_deferTransitionOfType:(int)arg1 withViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)deferredTransitions;
 - (void)_performDeferredTransition;
-- (void)_setupUnifiedBlur;
 - (void)setDeferredTransitions:(id)arg1;
 - (void)setupGKNavigationController;
 - (id)init;
@@ -27,7 +26,6 @@
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
 - (id)popViewControllerAnimated:(BOOL)arg1;
 
 @end

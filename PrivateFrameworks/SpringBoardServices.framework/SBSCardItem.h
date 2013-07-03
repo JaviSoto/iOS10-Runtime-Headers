@@ -32,13 +32,13 @@
 - (id)thumbnail;
 - (id)sortDate;
 - (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 classification:(int)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
+- (void)setAttachmentData:(id)arg1;
 - (id)attachmentData;
 - (id)bundleName;
 - (BOOL)requiresPasscode;
 - (id)body;
 - (id)iconData;
 - (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 requiresPasscode:(BOOL)arg5 bundleName:(id)arg6 userInfo:(id)arg7;
-- (void)setAttachmentData:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 iconData:(id)arg2 title:(id)arg3 body:(id)arg4 requiresPasscode:(BOOL)arg5 bundleName:(id)arg6 attachmentData:(id)arg7 userInfo:(id)arg8;
 - (void)setBundleName:(id)arg1;
 - (void)setRequiresPasscode:(BOOL)arg1;

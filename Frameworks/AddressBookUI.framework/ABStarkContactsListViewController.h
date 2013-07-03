@@ -2,20 +2,28 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABMembersDataSource, ABModel;
+@class <ABStarkContactsListViewControllerDelegate>, ABMembersDataSource, ABModel;
 
-@interface ABStarkContactsListViewController : UITableViewController <ABMembersDataSourceDelegate> {
+@interface ABStarkContactsListViewController : UITableViewController <ABMembersDataSourceDelegate, ABContactViewControllerDelegate> {
     ABMembersDataSource *_dataSource;
     ABModel *_model;
+    <ABStarkContactsListViewControllerDelegate> *_peoplePickerDelegate;
 }
+
+@property <ABStarkContactsListViewControllerDelegate> * peoplePickerDelegate;
 
 
 - (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (BOOL)abDataSourceAllowsShowingPersonsCards:(id)arg1;
 - (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
+- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
 - (id)initWithModel:(id)arg1;
+- (id)peoplePickerDelegate;
+- (id)init;
 - (void)dealloc;
+- (void)setPeoplePickerDelegate:(id)arg1;
 - (void)viewDidLoad;
+- (id)initWithStyle:(int)arg1;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

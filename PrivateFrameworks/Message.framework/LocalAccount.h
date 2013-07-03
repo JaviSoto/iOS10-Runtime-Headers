@@ -29,8 +29,8 @@
 - (BOOL)canGoOffline;
 - (BOOL)supportsArchiving;
 - (BOOL)deleteInPlaceForMailbox:(id)arg1;
-- (id)displayName;
 - (void)setPassword:(id)arg1;
+- (id)displayName;
 - (void)setUsername:(id)arg1;
 - (BOOL)isActive;
 - (void)setHostname:(id)arg1;

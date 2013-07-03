@@ -18,10 +18,10 @@
 @property(readonly) NSManagedObjectContext * context;
 
 
-- (long long)trackStoreID;
 - (id)stationName;
 - (void)setStationName:(id)arg1;
 - (void)setTrackStoreID:(long long)arg1;
+- (long long)trackStoreID;
 - (id)initWithManagedObject:(id)arg1 context:(id)arg2;
 - (id)managedObject;
 - (void)_radioModelWasDeletedNotification:(id)arg1;

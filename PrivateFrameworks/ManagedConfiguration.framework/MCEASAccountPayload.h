@@ -65,10 +65,10 @@
 - (id)subtitle1Label;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (void)setPassword:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (id)title;
 - (id)emailAddress;
-- (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
 - (id)accountDescription;

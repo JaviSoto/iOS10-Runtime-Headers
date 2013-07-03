@@ -10,6 +10,7 @@
     MFMessageCriterion *_criterion;
     unsigned int _serverMessageCount;
     unsigned int _serverUnreadCount;
+    unsigned int _fetchWindow;
 }
 
 @property(retain) NSDate * earliestReceivedDate;
@@ -47,6 +48,9 @@
 - (id)_memberMessagesWithCompactionNotification:(id)arg1;
 - (void)_handleFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
 - (id)filterMessagesByMembership:(id)arg1;
+- (unsigned int)_calculateFetchWindowWithAdditionalMultiple:(BOOL)arg1;
+- (unsigned int)_fetchWindowMinimum;
+- (unsigned int)_fetchWindowMultiple;
 - (void)setEarliestReceivedDate:(id)arg1;
 - (void)addCountsForMessages:(id)arg1 shouldUpdateUnreadCount:(BOOL)arg2;
 - (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2;
@@ -77,6 +81,9 @@
 - (BOOL)hasMessageForAccount:(id)arg1;
 - (unsigned int)unreadCountMatchingCriterion:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
+- (unsigned int)growFetchWindow;
+- (void)invalidateFetchWindow;
+- (BOOL)shouldGrowFetchWindow;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (BOOL)shouldCancel;
 - (void)setFlagsForAllMessagesFromDictionary:(id)arg1;
@@ -88,6 +95,7 @@
 - (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
+- (unsigned int)fetchWindow;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (unsigned int)totalCount;
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;

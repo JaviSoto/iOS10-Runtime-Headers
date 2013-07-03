@@ -2,45 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIDimmingBackdropViewDelegate>, NSArray;
-
-@interface _UIDimmingBackdropView : _UIBackdropView  {
-    BOOL _inPassthroughHitTest;
-    BOOL _ignoresTouches;
-    <_UIDimmingBackdropViewDelegate> *_delegate;
-    NSArray *_passthroughViews;
+@interface _UIDimmingBackdropView : UIView  {
 }
 
-@property <_UIDimmingBackdropViewDelegate> * delegate;
-@property(retain) NSArray * passthroughViews;
-@property BOOL ignoresTouches;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
-
-- (id)init;
-- (void)setDelegate:(id)arg1;
-- (void)dealloc;
-- (id)delegate;
-- (BOOL)autosizesToFitSuperview;
-- (void)addCircleMaskForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
-- (void)addMaskViewForView:(id)arg1;
-- (void)removeMaskViews;
-- (BOOL)ignoresTouches;
-- (void)setPassthroughViews:(id)arg1;
-- (id)passthroughViews;
-- (void)setIgnoresTouches:(BOOL)arg1;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityIdentifier;
-- (BOOL)accessibilityViewIsModal;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)accessibilityActivate;
-- (id)accessibilityLabel;
-- (id)_accessibilityObscuredScreenAllowedViews;
-- (BOOL)_accessibilityCoversScreen;
-- (BOOL)_accessibilityCanDismiss;
 
 @end

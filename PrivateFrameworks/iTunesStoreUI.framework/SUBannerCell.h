@@ -9,14 +9,14 @@
     UIButton *_rightButton;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_reloadButtons;
 - (void)_buttonAction:(id)arg1;
-- (void)setConfiguration:(id)arg1;
 - (void)reloadView;
 - (void)dealloc;
+- (void)setConfiguration:(id)arg1;
 - (id)_newButton;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

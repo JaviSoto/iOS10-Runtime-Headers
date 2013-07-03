@@ -10,6 +10,7 @@
     CALayer *_bottomLayer;
     CALayer *_rightLayer;
     _SLSheetMaskLayer *_sheetMaskLayer;
+    CALayer *_solidSheetMaskLayer;
     UIColor *_backgroundColor;
     struct CGRect { 
         struct CGPoint { 
@@ -40,6 +41,7 @@
 
 
 - (void)animateSheetMaskFromOldSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)restoreSheetCutout;
 - (void)removeSheetCutout;
 - (id)initWithBackgroundColor:(id)arg1 cornerRadius:(float)arg2;
 - (void)updateMaskWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maskRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

@@ -13,8 +13,8 @@
 @property(readonly) MPFullScreenVideoOverlay * overlayView;
 @property int autorotationState;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)inhibitOverlay;
 - (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;

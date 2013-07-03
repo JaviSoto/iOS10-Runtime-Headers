@@ -16,12 +16,14 @@
     NSDate *_leaveSteadyStateDate;
     NSString *_loggingIdentifier;
     NSString *_algorithmName;
+    unsigned int _countOfGrowthActions;
 }
 
 @property(readonly) NSString * loggingIdentifier;
 @property(readonly) double currentKeepAliveInterval;
 @property double minimumKeepAliveInterval;
 @property double maximumKeepAliveInterval;
+@property(readonly) unsigned int countOfGrowthActions;
 @property(readonly) NSDictionary * cacheInfo;
 
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
@@ -29,6 +31,7 @@
 
 - (id)loggingIdentifier;
 - (id)cacheInfo;
+- (unsigned int)countOfGrowthActions;
 - (BOOL)useIntervalIfImprovement:(double)arg1;
 - (id)initWithCacheInfo:(id)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
 - (double)_steadyStateTimeout;

@@ -16,6 +16,7 @@
 
 
 - (struct CGSize { float x1; float x2; })_viewSize;
+- (BOOL)_hasAnyCharacters;
 - (float)_entryFieldIndicatorWidthPadding;
 - (float)_entryFieldIndicatorDiameter;
 - (void)_deleteLastCharacter;
@@ -24,7 +25,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)_setLuminosityBoost:(float)arg1;
-- (void)resetForFailedPasscode;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)reset;
 - (void)dealloc;
 - (void)setBackgroundAlpha:(float)arg1;

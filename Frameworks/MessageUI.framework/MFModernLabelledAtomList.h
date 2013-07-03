@@ -36,33 +36,35 @@
 + (id)primaryLabelFont;
 + (id)defaultLabelFont;
 + (id)defaultLabelTextColor;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
-- (void)crossFadeLabelVisibility:(BOOL)arg1 atomSeparatorStyle:(int)arg2 animationDuration:(double)arg3;
-- (void)setAddressAtomScale:(float)arg1;
-- (void)enumerateAddressAtomsUsingBlock:(id)arg1;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 atomPresentationOptions:(unsigned int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
-- (void)setAddressAtomSeparatorStyle:(int)arg1;
-- (struct CGPoint { float x1; float x2; })baselinePointForRow:(unsigned int)arg1;
 - (void)setPrimary:(BOOL)arg1;
 - (void)setUsePadDisplayStyle:(BOOL)arg1;
+- (id)labelTextColor;
+- (void)crossFadeLabelVisibility:(BOOL)arg1 atomSeparatorStyle:(int)arg2 animationDuration:(double)arg3;
 - (void)setAtomAlpha:(float)arg1;
-- (id)addressAtoms;
 - (id)atomDisplayStrings;
 - (void)updateAtomsForVIP;
 - (void)setLabelVisible:(BOOL)arg1;
-- (id)labelText;
-- (void)setFirstLineWidth:(float)arg1;
-- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
-- (id)labelTextColor;
-- (BOOL)primary;
-- (BOOL)usePadDisplayStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (id)labelText;
+- (void)setAddressAtomScale:(float)arg1;
+- (void)enumerateAddressAtomsUsingBlock:(id)arg1;
+- (void)setFirstLineWidth:(float)arg1;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 atomPresentationOptions:(unsigned int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
+- (void)setAddressAtomSeparatorStyle:(int)arg1;
+- (struct CGPoint { float x1; float x2; })baselinePointForRow:(unsigned int)arg1;
 - (BOOL)isLabelVisible;
+- (id)addressAtoms;
 - (void)_setNeedsReflow;
 - (void)setFirstLineWidth:(float)arg1 reflow:(BOOL)arg2;
-- (void)addressBookDidChange:(id)arg1;
+- (BOOL)primary;
 - (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
 - (void)_reflow;
+- (void)addressBookDidChange:(id)arg1;
+- (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
+- (BOOL)usePadDisplayStyle;
 - (void)setLabelTextColor:(id)arg1;
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -76,5 +78,6 @@
 - (unsigned int)numberOfRows;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (unsigned long long)accessibilityTraits;
 
 @end

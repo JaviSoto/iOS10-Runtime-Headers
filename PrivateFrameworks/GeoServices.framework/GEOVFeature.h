@@ -272,8 +272,8 @@
 - (void)setUID:(long long)arg1;
 - (BOOL)hasUID;
 - (void)setHasType:(BOOL)arg1;
-- (BOOL)hasType;
 - (long long)uID;
+- (BOOL)hasType;
 - (void)copyTo:(id)arg1;
 - (float)endOffset;
 - (float)startOffset;

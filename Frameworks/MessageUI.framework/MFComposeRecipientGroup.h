@@ -19,14 +19,14 @@
 - (BOOL)isRemovableFromSearchResults;
 - (id)unlocalizedLabel;
 - (id)placeholderName;
-- (id)compositeName;
 - (id)commentedAddress;
+- (id)compositeName;
 - (int)recordID;
 - (int)property;
+- (void*)record;
 - (id)label;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (void*)record;
 - (id)displayString;
 - (BOOL)isGroup;
 - (id)address;

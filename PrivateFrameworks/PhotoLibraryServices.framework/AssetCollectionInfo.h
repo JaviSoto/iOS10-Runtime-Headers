@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class MSAsset, NSString, NSDictionary;
+@class NSString, NSDictionary, NSNumber, NSDate;
 
 @interface AssetCollectionInfo : NSObject <NSSecureCoding> {
     BOOL _isMine;
@@ -11,7 +11,9 @@
     NSString *_GUID;
     NSString *_personID;
     NSDictionary *_metaData;
-    MSAsset *_assetToRetrieve;
+    NSNumber *_width;
+    NSNumber *_height;
+    NSDate *_timestamp;
 }
 
 @property(readonly) NSString * GUID;
@@ -20,18 +22,22 @@
 @property(readonly) BOOL hasVideoAsset;
 @property(readonly) BOOL isDeletable;
 @property(readonly) NSDictionary * metaData;
-@property(readonly) MSAsset * assetToRetrieve;
+@property(readonly) NSNumber * width;
+@property(readonly) NSNumber * height;
+@property(readonly) NSDate * timestamp;
 
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)hasVideoAsset;
 - (BOOL)isMine;
 - (BOOL)isDeletable;
-- (id)assetToRetrieve;
 - (id)metaData;
 - (id)initWithAssetCollection:(id)arg1;
 - (id)personID;
+- (id)height;
+- (id)width;
 - (id)GUID;
+- (id)timestamp;
 - (void)dealloc;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

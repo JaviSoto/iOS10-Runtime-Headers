@@ -77,6 +77,7 @@
 - (id)storeKV;
 - (id)filesInsertedInTransaction;
 - (id)addManagedObject:(id)arg1 withTransactionType:(int)arg2 andStoreExportContext:(id)arg3 withError:(id*)arg4;
+- (void)resetFromOptimisticLockingException;
 - (void)generatePeerStates;
 - (void)reserveTransactionNumberWithStoreExportContext:(id)arg1;
 - (void)_setFilesDeletedInTransaction:(id)arg1;

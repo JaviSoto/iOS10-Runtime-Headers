@@ -21,6 +21,7 @@
 @property(readonly) Class itemClass;
 @property BOOL fullScreenPlaybackQueue;
 @property(readonly) BOOL userCanChangeShuffleAndRepeatType;
+@property(readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
 @property(readonly) NSDictionary * preferredLanguages;
 @property(readonly) BOOL trackChangesCanEndPlayback;
 @property(retain) <NSObject> * representedObject;
@@ -50,6 +51,7 @@
 - (unsigned int)realRepeatType;
 - (BOOL)userCanChangeShuffleAndRepeatType;
 - (BOOL)trackChangesCanEndPlayback;
+- (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (BOOL)canSkipToPreviousItem;
 - (BOOL)canSeek;

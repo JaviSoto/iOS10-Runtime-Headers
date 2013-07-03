@@ -9,6 +9,8 @@
 
 @property int alternativeSelectCount;
 @property int characterChangeCount;
+@property(copy) NSString * correctionSource;
+@property(copy) NSString * correctionText;
 @property(copy) NSString * interactionId;
 @property(copy) NSString * sessionId;
 @property(copy) NSString * aceId;
@@ -18,6 +20,10 @@
 + (id)speechCorrectionStatistics;
 
 - (id)sessionId;
+- (void)setCorrectionText:(id)arg1;
+- (id)correctionText;
+- (void)setCorrectionSource:(id)arg1;
+- (id)correctionSource;
 - (void)setCharacterChangeCount:(int)arg1;
 - (int)characterChangeCount;
 - (void)setAlternativeSelectCount:(int)arg1;

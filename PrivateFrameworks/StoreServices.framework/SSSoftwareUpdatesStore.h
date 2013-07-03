@@ -21,6 +21,7 @@
 
 - (void)_sendStoreDidChange;
 - (void)showApplicationBadgeForPendingUpdates;
+- (void)removeUpdateBulletins;
 - (void)reloadFromServerWithCompletionBlock:(id)arg1;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (void)getUpdatesWithCompletionBlock:(id)arg1;

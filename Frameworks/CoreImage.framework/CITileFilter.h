@@ -24,8 +24,8 @@
 - (void)setInputCenter:(id)arg1;
 - (id)_kernel_source;
 - (id)_kernel_name;
-- (void)setInputAngle:(id)arg1;
 - (id)inputAngle;
+- (void)setInputAngle:(id)arg1;
 - (id)_kernel;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;

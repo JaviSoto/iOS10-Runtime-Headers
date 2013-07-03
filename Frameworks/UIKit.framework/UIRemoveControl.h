@@ -24,8 +24,8 @@
 + (BOOL)removeConfirmationsVisibleInView:(id)arg1;
 + (float)removeButtonWidth;
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)removeFromSuperview;
 - (void)setTarget:(id)arg1;
@@ -70,12 +70,12 @@
 - (BOOL)_isInsertControl;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
 - (id)_interceptEvent:(id)arg1;
-- (void)isHighlighted;
 - (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;
 - (id)initWithTarget:(id)arg1;

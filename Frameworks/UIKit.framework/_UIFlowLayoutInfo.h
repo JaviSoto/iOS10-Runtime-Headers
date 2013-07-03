@@ -54,11 +54,11 @@
 - (void)setDimension:(float)arg1;
 - (void)setRowAlignmentOptions:(id)arg1;
 - (id)addSection;
-- (void)setHorizontal:(BOOL)arg1;
 - (float)dimension;
 - (id)rowAlignmentOptions;
 - (BOOL)horizontal;
 - (void)invalidate:(BOOL)arg1;
+- (void)setHorizontal:(BOOL)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (id)snapshot;

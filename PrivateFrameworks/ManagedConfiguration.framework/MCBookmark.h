@@ -19,6 +19,7 @@
 - (id)initWithSerializableDictionary:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (BOOL)isEqual:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -20,8 +20,8 @@
 @property(retain) TPButton * sideButtonRight;
 @property int type;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setEndButton:(id)arg1;
 - (void)setAcceptButton:(id)arg1;

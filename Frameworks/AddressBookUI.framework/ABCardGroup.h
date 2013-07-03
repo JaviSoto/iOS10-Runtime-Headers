@@ -29,7 +29,6 @@
 - (void)setUseSplitActions:(BOOL)arg1;
 - (void)setContact:(id)arg1;
 - (id)contact;
-- (void)removeActionWithTitle:(id)arg1;
 - (void)removeActionWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (id)actionItems;
@@ -38,6 +37,7 @@
 - (BOOL)addSpacerFromPreviousGroup;
 - (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
 - (void)addAction:(id)arg1 withTitle:(id)arg2;
+- (void)removeActionWithTitle:(id)arg1;
 - (id)_loadActionItems;
 - (id)initWithContact:(id)arg1;
 - (id)displayItems;

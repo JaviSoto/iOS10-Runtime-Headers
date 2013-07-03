@@ -9,6 +9,7 @@
     BOOL _shouldCrashOnError;
     BOOL _shouldReportToServer;
     BOOL _forceDoNotReport;
+    BOOL _debugBuild;
     unsigned int _numberOfValidationErrors;
     NSString *_validationTargetName;
     NSString *_overrideProcessName;
@@ -18,6 +19,7 @@
 @property BOOL forceDoNotReport;
 @property(copy) NSString * validationTargetName;
 @property(copy) NSString * overrideProcessName;
+@property(getter=isDebugBuild) BOOL debugBuild;
 @property BOOL shouldLogToConsole;
 @property BOOL shouldCrashOnError;
 @property BOOL shouldReportToServer;
@@ -26,6 +28,14 @@
 
 + (id)sharedInstance;
 
+- (BOOL)validateProtocol:(id)arg1 hasRequiredInstanceMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1;
+- (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2;
+- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2 returnType:(char *)arg3 parameterCount:(unsigned int)arg4;
+- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1 hasClassMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1 isKindOfClass:(id)arg2;
+- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
 - (BOOL)forceDoNotReport;
 - (BOOL)shouldReportToServer;
 - (BOOL)shouldCrashOnError;
@@ -34,7 +44,6 @@
 - (BOOL)validateProtocol:(id)arg1 hasProperty:(id)arg2;
 - (BOOL)validateProtocol:(id)arg1 hasRequiredClassMethod:(id)arg2;
 - (BOOL)validateProtocol:(id)arg1 hasOptionalClassMethod:(id)arg2;
-- (BOOL)validateProtocol:(id)arg1 hasRequiredInstanceMethod:(id)arg2;
 - (BOOL)validateProtocol:(id)arg1 hasOptionalInstanceMethod:(id)arg2;
 - (BOOL)validateClass:(id)arg1 conformsToProtocol:(id)arg2;
 - (BOOL)validateClass:(id)arg1 hasProperty:(id)arg2;
@@ -44,6 +53,7 @@
 - (BOOL)_validateClass:(id)arg1 hasMethod:(id)arg2 methodType:(int)arg3 returnType:(id)arg4 arguments:(id)arg5;
 - (id)overrideProcessName;
 - (id)consoleErrorMessages;
+- (BOOL)isDebugBuild;
 - (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(BOOL)arg5;
 - (void)_printConsoleReport:(BOOL)arg1 isDelayed:(BOOL)arg2;
 - (unsigned int)numberOfValidationErrors;
@@ -51,19 +61,13 @@
 - (void)setShouldReportToServer:(BOOL)arg1;
 - (void)setShouldCrashOnError:(BOOL)arg1;
 - (void)setShouldLogToConsole:(BOOL)arg1;
+- (void)setDebugBuild:(BOOL)arg1;
 - (void)setForceDoNotReport:(BOOL)arg1;
 - (void)setNumberOfValidationErrors:(unsigned int)arg1;
 - (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3 safeCategoryInstallationHandler:(id)arg4;
 - (void)setConsoleErrorMessages:(id)arg1;
 - (void)setValidationTargetName:(id)arg1;
 - (void)setOverrideProcessName:(id)arg1;
-- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
-- (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2;
-- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2 returnType:(char *)arg3 parameterCount:(unsigned int)arg4;
-- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2;
-- (BOOL)validateClass:(id)arg1 hasClassMethod:(id)arg2;
-- (BOOL)validateClass:(id)arg1 isKindOfClass:(id)arg2;
-- (BOOL)validateClass:(id)arg1;
 - (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2 withType:(char *)arg3;
 - (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3;
 - (id)init;

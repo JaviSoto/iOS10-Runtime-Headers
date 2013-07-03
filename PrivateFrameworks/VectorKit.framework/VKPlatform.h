@@ -6,6 +6,7 @@
     unsigned int _memSize;
     int _numCPUs;
     BOOL _proceduralRoadAlpha;
+    BOOL _useCheapTrafficShader;
     BOOL _shouldUseTrafficAlphaHack;
     BOOL _supportsBuildingStrokes;
     BOOL _supports3DBuildingStrokes;
@@ -25,11 +26,13 @@
 @property(readonly) BOOL supportsHiResBuildings;
 @property(readonly) BOOL supportsDepthDependentBuildings;
 @property(readonly) BOOL proceduralRoadAlpha;
+@property(readonly) BOOL useCheapTrafficShader;
 @property(readonly) unsigned int memorySize;
 
 + (id)sharedPlatform;
 
 - (BOOL)shouldUseTrafficAlphaHack;
+- (BOOL)useCheapTrafficShader;
 - (BOOL)proceduralRoadAlpha;
 - (unsigned int)memorySize;
 - (BOOL)canMakeSharingThumbnails;

@@ -83,10 +83,10 @@
 - (void)setMailbox:(id)arg1;
 - (id)statusMessage;
 - (void)setMaxCount:(unsigned int)arg1;
-- (void)reset;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (BOOL)isActive;
+- (void)reset;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

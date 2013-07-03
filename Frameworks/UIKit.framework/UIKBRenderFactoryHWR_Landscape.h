@@ -11,6 +11,7 @@
 - (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
 - (BOOL)deleteKeyAdjacentToCandidates;
 - (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
+- (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 

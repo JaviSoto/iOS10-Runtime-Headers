@@ -30,6 +30,7 @@
 @property BOOL useFlaggedForUnreadCount;
 @property BOOL includeRelatedMessages;
 
++ (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)hasAttachmentsCriterion;
 + (id)includesMeCriterion;
 + (id)unreadMessageCriterion;
@@ -38,7 +39,6 @@
 + (void)_updateAddressComments:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1;
-+ (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)stringForCriterionType:(int)arg1;
 + (int)criterionTypeForString:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
@@ -48,9 +48,11 @@
 + (id)criterionForMailboxURL:(id)arg1;
 
 - (BOOL)hasNonFullTextSearchableCriterion;
-- (id)criteriaSatisfyingPredicate:(int (*)())arg1;
+- (id)extractedUnreadCriterion;
+- (id)extractedDateCriterion;
 - (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 contentIndex:(id)arg4 mailboxIDs:(id)arg5;
 - (id)criterionForSQL;
+- (id)criteriaSatisfyingPredicate:(int (*)())arg1;
 - (id)criterionByApplyingTransform:(id)arg1;
 - (BOOL)includesCriterionSatisfyingPredicate:(int (*)())arg1 restrictive:(BOOL)arg2;
 - (void)_addCriteriaSatisfyingPredicate:(int (*)())arg1 toCollector:(id)arg2;

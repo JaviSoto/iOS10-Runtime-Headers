@@ -24,11 +24,11 @@
 
 - (void)setBubbleLocations:(id)arg1;
 - (id)bubbleLocations;
-- (void)setBubbleViews:(id)arg1;
 - (id)visibleBubbleSet;
 - (void)performLayout;
 - (void)setVisibleBubbleSet:(id)arg1;
 - (void)showBubble:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 atAngle:(float)arg3;
+- (void)setBubbleViews:(id)arg1;
 - (id)bubbleViews;
 - (void)setRadius:(float)arg1;
 - (float)radius;

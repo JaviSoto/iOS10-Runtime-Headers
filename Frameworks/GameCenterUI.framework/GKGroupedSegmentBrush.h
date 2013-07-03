@@ -40,16 +40,16 @@
 - (void)setOccupiedWidth:(float)arg1;
 - (float)occupiedWidth;
 - (void)setSegmentBrushes:(id)arg1;
-- (void)setRoundedCorners:(int)arg1;
-- (int)roundedCorners;
 - (void)setOuterEdges:(int)arg1;
 - (int)outerEdges;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
 - (id)renderedImageIdentifier;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
 - (void)setShadowColor:(id)arg1;
 - (void)setBorderWidth:(float)arg1;
 - (float)borderWidth;
 - (id)shadowColor;
 - (void)dealloc;
+- (void)setRoundedCorners:(int)arg1;
+- (int)roundedCorners;
 
 @end

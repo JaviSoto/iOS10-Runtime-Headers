@@ -90,10 +90,11 @@
 + (void)willEndEditingInTextView:(id)arg1;
 + (id)activeInstance;
 + (id)sharedInstance;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
+- (id)language;
 - (id)init;
 - (void)dealloc;
 - (void)setState:(int)arg1;
@@ -109,6 +110,7 @@
 - (void)dictationConnection:(id)arg1 didHypothesizePhrases:(id)arg2 languageModel:(id)arg3;
 - (void)restartDictationForTypeAndTalk;
 - (void)dismissDictationView:(id)arg1;
+- (void)releaseConnection;
 - (void)errorAnimationDidFinish;
 - (float)audioLevel;
 - (void)setHasPreheated:(BOOL)arg1;
@@ -117,9 +119,12 @@
 - (BOOL)discardNextHypothesis;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })insertionRange;
 - (id)previousHypothesis;
+- (void)finishDictationRecognition:(id)arg1;
 - (void)insertSerializedDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
-- (id)resultWithSmartSpaces:(id)arg1;
+- (id)resultWithTrailingSpace:(id)arg1;
 - (struct __CFString { }*)resultTransformForLanguageModel:(id)arg1;
+- (BOOL)needsLeadingSpaceForPhrases:(id)arg1;
+- (BOOL)needsTrailingSpaceForPhrases:(id)arg1;
 - (id)dictationPhraseArrayFromDictationResult:(id)arg1;
 - (void)startConnectionForReason:(int)arg1;
 - (void)setupForStreamingDictationStart;
@@ -130,6 +135,7 @@
 - (void)cancelRecordingLimitTimer;
 - (BOOL)isInDebuggingMode;
 - (void)releaseConnectionAfterDictationRequest;
+- (void)endSessionIfNecessaryForTransitionFromState:(int)arg1 toState:(int)arg2;
 - (void)setupForDictationStart;
 - (void)setupConnectionOptions;
 - (id)selectedTextForInputDelegate:(id)arg1;
@@ -138,7 +144,6 @@
 - (id)fieldIdentifierInputDelegate:(id)arg1;
 - (id)supportedDictationLanguages:(id)arg1;
 - (BOOL)wasDisabledDueToTelephonyActivity;
-- (void)releaseConnection;
 - (BOOL)_shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
 - (BOOL)_shouldDeleteBackwardInInputDelegate:(id)arg1;
 - (void)setDiscardNextHypothesis:(BOOL)arg1;
@@ -157,17 +162,16 @@
 - (void)releaseConnectionAfterStatisticsLogging;
 - (id)connectionForStatisticsLogging;
 - (id)assistantCompatibleLanguageCodeForInputMode:(id)arg1;
-- (id)inputModeThatInvokedDictation;
 - (BOOL)dictationEnabled;
-- (id)language;
 - (BOOL)disabledDueToTelephonyActivity;
 - (void)delayedTelephonyCheckingSetup;
 - (void)willEndEditingInInputDelegate:(id)arg1;
 - (void)setPerformTestOperationForEditing:(BOOL)arg1;
+- (id)inputModeThatInvokedDictation;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (BOOL)supportsInputMode:(id)arg1 error:(id*)arg2;
-- (void)startDictationFromLayout;
+- (void)switchToDictationInputMode;
 - (void)startDictation;
 - (void)stopDictation;
 - (void)cancelDictation;

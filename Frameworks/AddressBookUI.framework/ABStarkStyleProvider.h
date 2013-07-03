@@ -13,9 +13,8 @@
 - (id)memberNameMeCardDisabledImage;
 - (id)memberNameMeCardSelectedImage;
 - (id)memberNameMeCardImage;
-- (unsigned int)membersCountToShowSections;
-- (BOOL)memberNameRespectsLargeTextSetting;
 - (float)memberNameFontSize;
+- (unsigned int)membersCountToShowIndex;
 - (struct CGSize { float x1; float x2; })memberNameShadowOffset;
 - (id)memberNameBoldFont;
 - (id)memberNameRegularFont;

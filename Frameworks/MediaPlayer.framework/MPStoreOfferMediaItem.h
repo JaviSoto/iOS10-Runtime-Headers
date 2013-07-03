@@ -4,7 +4,7 @@
 
 @class MPStoreOfferContentRating, NSDictionary;
 
-@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSCoding, NSCopying> {
+@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSSecureCoding, NSCopying> {
     NSDictionary *_lookupCollectionPropertyValues;
     unsigned int _indexInCollectionItems;
     int _preferredStoreOfferVariant;
@@ -29,6 +29,7 @@
 + (BOOL)canRequestStoreOfferForLocalMediaItems:(id)arg1;
 + (id)defaultPropertyValues;
 + (BOOL)canFilterByProperty:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)isDownloadable;
 - (id)_lookupOfferDictionaries;

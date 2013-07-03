@@ -103,7 +103,6 @@
 - (void)setIsWEP:(BOOL)arg1;
 - (BOOL)isWEP;
 - (void)setEncryptionType:(id)arg1;
-- (void)setIsHidden:(BOOL)arg1;
 - (void)setSsid:(id)arg1;
 - (id)encryptionType;
 - (id)displayedOperatorName;
@@ -137,6 +136,7 @@
 - (id)password;
 - (void).cxx_destruct;
 - (id)description;
+- (void)setIsHidden:(BOOL)arg1;
 - (void)setPriority:(id)arg1;
 - (id)priority;
 - (int)proxyType;

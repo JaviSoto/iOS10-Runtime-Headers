@@ -22,7 +22,9 @@
 + (BOOL)includeNotesInVCards;
 + (BOOL)includeREVInVCards;
 
+- (void*)record;
 - (id)vCardRepresentationForMode:(int)arg1;
+- (id)initWithVCardRepresentation:(id)arg1;
 - (void)_appendPropValue:(id)arg1 forExternalPropKey:(id)arg2 toOutString:(id)arg3 usingDelimiter:(id)arg4;
 - (id)propertyLineForIMPPProperty:(id)arg1 groupCount:(int*)arg2;
 - (id)propertyLineForInstantMessageHandles:(id)arg1 groupCount:(int*)arg2;
@@ -59,8 +61,6 @@
 - (id)initWithRecord:(void*)arg1;
 - (id)init;
 - (void)dealloc;
-- (void*)record;
-- (id)initWithVCardRepresentation:(id)arg1;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (void*)valueForProperty:(unsigned int)arg1;
 

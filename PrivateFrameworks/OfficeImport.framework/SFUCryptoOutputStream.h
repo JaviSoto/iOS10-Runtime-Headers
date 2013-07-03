@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUCryptor, <SFUOutputStream>;
+@class OISFUCryptor, <SFUOutputStream>;
 
 @interface SFUCryptoOutputStream : NSObject <SFUOutputStream> {
     <SFUOutputStream> *mBaseStream;
-    SFUCryptor *mCryptor;
+    OISFUCryptor *mCryptor;
     BOOL mIsClosed;
     BOOL mComputeCrc32;
     unsigned int mCrc32;

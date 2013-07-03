@@ -10,8 +10,10 @@
         int alignment; 
         int bodyFontWeight; 
         float bodyFontSize; 
+        float linkSpacing; 
         int titleFontWeight; 
         float titleFontSize; 
+        float titleSpacing; 
     } _editorialStyle;
     int _gridType;
     struct SKUILockupStyle { 
@@ -25,13 +27,13 @@
 
 @property(readonly) int gridType;
 @property(readonly) NSArray * children;
-@property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; int x4; float x5; } editorialStyle;
+@property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
 @property(readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
 @property(readonly) BOOL showsIndexNumbers;
 
 
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
-- (struct SKUIEditorialStyle { int x1; int x2; float x3; int x4; float x5; })editorialStyle;
+- (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
 - (BOOL)showsIndexNumbers;
 - (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })lockupStyle;
 - (id)initWithGridItems:(id)arg1;

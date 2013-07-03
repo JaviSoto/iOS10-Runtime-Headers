@@ -6,19 +6,16 @@
 
 @interface SKUIItemOfferButtonAppearance : NSObject  {
     UIColor *_buttonColor;
-    int _colorSchemeStyle;
-    BOOL _isUbered;
-    UIColor *_titleDisabledColor;
-    UIColor *_titleColor;
+    UIColor *_confirmationColor;
 }
 
-@property(readonly) UIColor * titleColor;
-@property(readonly) UIColor * titleDisabledColor;
+@property(readonly) UIColor * buttonColor;
+@property(readonly) UIColor * confirmationColor;
 
 
-- (id)titleDisabledColor;
+- (id)confirmationColor;
 - (id)initWithColorScheme:(id)arg1;
+- (id)buttonColor;
 - (void).cxx_destruct;
-- (id)titleColor;
 
 @end

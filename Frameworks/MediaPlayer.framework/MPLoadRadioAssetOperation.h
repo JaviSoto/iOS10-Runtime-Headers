@@ -9,6 +9,7 @@
 @class NSString, NSObject<OS_dispatch_queue>, NSLock, AVAssetCache, RadioRequestContext;
 
 @interface MPLoadRadioAssetOperation : NSOperation  {
+    BOOL _applyPreloadDuration;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -33,12 +34,12 @@
 - (id)initWithRadioAVItem:(id)arg1 context:(id)arg2;
 - (id)_sinfsForAssetDictionary:(id)arg1;
 - (void)_saveDownloadKeyCookieForAssetDictionary:(id)arg1 URL:(id)arg2;
-- (id)_errorForInvalidPurchaseResponse:(id)arg1;
+- (id)_errorForInvalidPurchaseResponse:(id)arg1 heartbeatToken:(id)arg2;
 - (id)_assetDictionaryForPurchaseResponse:(id)arg1;
 - (id)assetBlock;
-- (id)_assetWithPurchaseResponse:(id)arg1 error:(id*)arg2;
+- (id)_assetWithPurchaseResponse:(id)arg1 heartbeatToken:(id)arg2 error:(id*)arg3;
 - (id)_bodyData:(id*)arg1;
-- (id)_heartbeatTokenString:(id*)arg1;
+- (id)_heartbeatTokenData:(id*)arg1;
 - (id)_initMPLoadRadioAssetOperation;
 - (id)assetCache;
 - (void).cxx_destruct;

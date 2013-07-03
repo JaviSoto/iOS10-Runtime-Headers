@@ -4,7 +4,7 @@
 
 @class MPMediaPlaylist, NSArray, NSString, MPMediaQuery;
 
-@interface MPGeniusMix : NSObject <MPStoreDownloadManagerObserver, NSCoding, NSCopying> {
+@interface MPGeniusMix : NSObject <MPStoreDownloadManagerObserver, NSSecureCoding, NSCopying> {
     MPMediaPlaylist *_playlist;
     MPMediaQuery *_seedTracksQuery;
     NSArray *_representativeArtists;
@@ -23,6 +23,7 @@
 + (id)artworkCacheDirectoryPath;
 + (id)artworkImageForMediaItem:(id)arg1 scaleMode:(int)arg2;
 + (id)mixQueue;
++ (BOOL)supportsSecureCoding;
 
 - (void)preloadRepresentativeImageWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (id)representativeArtists;
@@ -34,7 +35,7 @@
 - (void)_generateMixImageWithTileLength:(float)arg1 imageDidLoadBlock:(id)arg2;
 - (void)_onQueueLoadRepresentativeImageWithTileLength:(float)arg1;
 - (BOOL)_observeMixImageLoadingWithImageDidLoadBlock:(id)arg1;
-- (id)_cachedRepresentativeImagePath;
+- (id)_cachedRepresentativeImagePathWithTileLength:(float)arg1;
 - (id)_cacheDirectoryPath;
 - (unsigned long long)_entityArtworkCacheHashForRepresentativeItems:(id)arg1 ensureItemArtworkFilesExist:(BOOL)arg2;
 - (id)_representativeImageItemsWithMaxCount:(unsigned int)arg1;

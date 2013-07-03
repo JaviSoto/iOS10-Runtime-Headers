@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDate, UIViewController, GKSignInViewController, GKEventEmitter, UIAlertView, NSDictionary, NSString, NSInvocation, GKInvite, NSArray;
+@class NSDate, GKEventEmitter<GKLocalPlayerListener>, NSArray, UIAlertView, UIViewController<GKAuthenticateViewController>, NSDictionary, UIViewController, NSString, GKInvite, NSInvocation;
 
 @interface GKLocalPlayer : GKPlayer <NSCoding, NSSecureCoding> {
     BOOL _authenticated;
@@ -38,15 +38,14 @@
     NSString *_lastAccountNameAuthenticated;
     NSInvocation *_currentFriendRequestInvocation;
     unsigned int _failedLogins;
-    NSArray *_friendRequests;
     NSDictionary *_authenticateAlertDictionary;
     int _environment;
     NSString *_lastAuthPlayerID;
     NSDate *_lastAuthDate;
     UIViewController *_rootViewController;
     UIViewController *_activeViewController;
-    GKEventEmitter *_eventEmitter;
-    GKSignInViewController *_signInViewController;
+    GKEventEmitter<GKLocalPlayerListener> *_eventEmitter;
+    UIViewController<GKAuthenticateViewController> *_signInViewController;
 }
 
 @property(getter=isAuthenticated) BOOL authenticated;
@@ -59,7 +58,6 @@
 @property(retain) NSString * lastName;
 @property(retain) GKInvite * acceptedInvite;
 @property(readonly) BOOL canChangePhoto;
-@property(retain) NSArray * friendRequests;
 @property(retain) NSString * lastUsernameAttempted;
 @property(retain) NSString * lastAccountNameAuthenticated;
 @property(getter=isPurpleBuddyAccount) BOOL purpleBuddyAccount;
@@ -70,7 +68,7 @@
 @property(readonly) NSString * facebookUserID;
 @property(readonly) NSString * iCloudUserID;
 @property(getter=isFindable,readonly) BOOL findable;
-@property(retain) GKEventEmitter * eventEmitter;
+@property(retain) GKEventEmitter<GKLocalPlayerListener> * eventEmitter;
 @property(copy) id authenticationCompletionHandler;
 @property(copy) id validateAccountCompletionHandler;
 @property(retain) UIAlertView * loginAlertView;
@@ -84,7 +82,7 @@
 @property unsigned int failedLogins;
 @property(retain) UIViewController * rootViewController;
 @property(retain) UIViewController * activeViewController;
-@property(retain) GKSignInViewController * signInViewController;
+@property(retain) UIViewController<GKAuthenticateViewController> * signInViewController;
 @property(retain) NSDictionary * authenticateAlertDictionary;
 
 + (id)localPlayer;
@@ -120,6 +118,7 @@
 - (BOOL)isNewToGameCenter;
 - (id)lastAuthPlayerID;
 - (id)lastAuthDate;
+- (void)removeFriend:(id)arg1 block:(id)arg2;
 - (void)setNewToGameCenter:(BOOL)arg1;
 - (id)acceptedInvite;
 - (void)loadFriendRecommendationsWithCompletionHandler:(id)arg1;
@@ -142,9 +141,6 @@
 - (void)loadDefaultLeaderboardCategoryIDWithCompletionHandler:(id)arg1;
 - (void)setDefaultLeaderboardCategoryID:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)hasEmailAddress:(id)arg1;
-- (void)addFriendRequest:(id)arg1;
-- (void)removeFriend:(id)arg1 block:(id)arg2;
-- (void)removeFriendRequestForPlayerID:(id)arg1;
 - (void)sendFriendRequest:(id)arg1 toAliases:(id)arg2 players:(id)arg3 emailAddresses:(id)arg4 twitterScreenNames:(id)arg5 facebookIDs:(id)arg6 rid:(id)arg7 block:(id)arg8;
 - (void)loadFriendRequests:(id)arg1;
 - (void)addEmail:(id)arg1 withCompletionHandler:(id)arg2;
@@ -154,12 +150,9 @@
 - (void)loadGameRecommendationsWithCompletionHandler:(id)arg1;
 - (void)loadFriendsWithCompletionHandler:(id)arg1;
 - (void)updateFromLocalPlayer:(id)arg1;
-- (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
+- (id)displayNameWithOptions:(unsigned char)arg1;
 - (void)setAcceptedInvite:(id)arg1;
 - (void)bundleIDIsCompatibleWithCurrentGame:(id)arg1 handler:(id)arg2;
-- (id)friendRequestForPlayerID:(id)arg1;
-- (id)friendRequests;
-- (void)setFriendRequests:(id)arg1;
 - (void)_addEmail:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadProfileWithCompletionHandler:(id)arg1;
 - (id)friends;
@@ -183,12 +176,9 @@
 - (void)setRootViewController:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
 - (void)setPhoto:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)deletePhoto;
 - (void)signOutWithCompletionHandler:(id)arg1;
-- (void)showAuthenticateForInGameNavController:(id)arg1 popOnAuthenticate:(BOOL)arg2 completionHandler:(id)arg3;
-- (void)showChangePasswordViewController;
 - (void)_showViewControllerForLegacyApps:(id)arg1;
 - (void)_showWelcomeBanner;
 - (void)showAccountControllerForMode:(int)arg1;

@@ -21,10 +21,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)authenticationMethod;
 - (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
-- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (id)distinguishedNames;
 - (BOOL)receivesCredentialSecurely;
 - (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (id)proxyType;
 - (id)realm;
 - (id)_internalInit;

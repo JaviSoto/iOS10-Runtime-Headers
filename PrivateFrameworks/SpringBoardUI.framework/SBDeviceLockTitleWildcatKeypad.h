@@ -19,8 +19,8 @@
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (id)_backgroundImage;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
 
 @end

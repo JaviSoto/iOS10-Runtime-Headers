@@ -8,10 +8,12 @@
 + (void)setClassesForSelectorsReplyingWithCandidatesInInterface:(id)arg1;
 + (void)setClassesForSelectorsReplyingWithOperationsInInterface:(id)arg1;
 + (id)serverInterface;
++ (id)inputManagerForInputMode:(id)arg1 isHardwareKeyboardMode:(BOOL)arg2;
 
 - (void)generateReplacementsForString:(id)arg1 keyLayout:(id)arg2 continuation:(id)arg3;
+- (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1 keyboardState:(id)arg2 continuation:(id)arg3;
 - (void)handleAcceptedCandidate:(id)arg1 keyboardState:(id)arg2 continuation:(id)arg3;
-- (void)generateCandidatesWithKeyboardState:(id)arg1 maxCandidateCount:(unsigned int)arg2 continuation:(id)arg3;
+- (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 continuation:(id)arg3;
 - (void)handleKeyboardInput:(id)arg1 keyboardState:(id)arg2 continuation:(id)arg3;
 - (void)syncToKeyboardState:(id)arg1 continuation:(id)arg2;
 - (void)candidateRejected:(id)arg1;

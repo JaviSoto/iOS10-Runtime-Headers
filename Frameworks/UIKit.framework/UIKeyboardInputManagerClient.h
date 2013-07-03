@@ -12,7 +12,6 @@
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)conformsToProtocol:(id)arg1;
@@ -20,6 +19,7 @@
 - (BOOL)isKindOfClass:(Class)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
+- (void)setConnection:(id)arg1;
 - (void)handleError:(id)arg1 forRequest:(id)arg2;
 - (void)handleRequest:(id)arg1;
 - (id)connection;

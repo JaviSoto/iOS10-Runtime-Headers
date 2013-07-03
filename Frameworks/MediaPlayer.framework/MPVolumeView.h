@@ -43,8 +43,8 @@
 @property BOOL routeButtonShowsTouchWhenHighlighted;
 @property unsigned int routePopoverPermittedArrowDirections;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setRoutePopoverPermittedArrowDirections:(unsigned int)arg1;
 - (unsigned int)routePopoverPermittedArrowDirections;

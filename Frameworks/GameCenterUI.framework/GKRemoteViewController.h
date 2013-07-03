@@ -49,9 +49,10 @@
 - (void)setViewDidAppear:(BOOL)arg1;
 - (int)_desiredStatusBarStyle;
 - (void)setDirtyProperties:(id)arg1;
+- (void)populateInitialStateForRemoteView:(id)arg1;
+- (BOOL)serviceNeedsStatusBarHeightHack;
 - (BOOL)serviceNeedsLocalPlayer;
 - (BOOL)serviceNeedsCurrentGame;
-- (BOOL)serviceNeedsStatusBarHeightHack;
 - (BOOL)didSetRemoteGame;
 - (void)setManagingViewController:(id)arg1;
 - (id)observedKeyPaths;

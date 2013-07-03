@@ -8,8 +8,8 @@
 
 @property BOOL allowsHeaderAndFooterToFloat;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)allowsHeaderAndFooterToFloat;
 - (void)setAllowsHeaderAndFooterToFloat:(BOOL)arg1;

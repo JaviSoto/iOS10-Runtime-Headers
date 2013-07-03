@@ -2,22 +2,28 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
+@class NSString, NSMutableArray;
 
 @interface GEOSuggestionEntryList : PBCodable  {
+    NSString *_localizedSectionHeader;
     NSMutableArray *_suggestionEntries;
 }
 
 @property(retain) NSMutableArray * suggestionEntries;
+@property(readonly) BOOL hasLocalizedSectionHeader;
+@property(retain) NSString * localizedSectionHeader;
 
 
 - (id)suggestionEntries;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)localizedSectionHeader;
+- (BOOL)hasLocalizedSectionHeader;
 - (id)suggestionEntriesAtIndex:(unsigned int)arg1;
 - (void)clearSuggestionEntries;
 - (unsigned int)suggestionEntriesCount;
 - (void)addSuggestionEntries:(id)arg1;
+- (void)setLocalizedSectionHeader:(id)arg1;
 - (void)setSuggestionEntries:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

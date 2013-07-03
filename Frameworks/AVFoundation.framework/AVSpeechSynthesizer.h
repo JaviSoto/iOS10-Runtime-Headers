@@ -14,15 +14,15 @@
 @property(getter=isSpeaking,readonly) BOOL speaking;
 @property(getter=isPaused,readonly) BOOL paused;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
-- (BOOL)pauseSpeakingAtBoundary:(int)arg1;
-- (BOOL)stopSpeakingAtBoundary:(int)arg1;
-- (void)speakUtterance:(id)arg1;
-- (BOOL)continueSpeaking;
 - (BOOL)isPaused;
 - (BOOL)isSpeaking;
+- (BOOL)stopSpeakingAtBoundary:(int)arg1;
+- (BOOL)continueSpeaking;
+- (BOOL)pauseSpeakingAtBoundary:(int)arg1;
+- (void)speakUtterance:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (id)init;

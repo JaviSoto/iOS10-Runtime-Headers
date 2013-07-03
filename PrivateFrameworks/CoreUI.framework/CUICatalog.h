@@ -16,9 +16,9 @@
 - (unsigned int)_themeRef;
 - (id)imageWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3;
 - (id)imageWithName:(id)arg1 scaleFactor:(float)arg2;
-- (id)initWithName:(id)arg1 fromBundle:(id)arg2;
 - (id)newShapeEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
 - (id)newTextEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
+- (BOOL)requiredDrawOfUnstyledGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5;
 - (id)newShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)newShapeEffectPresetWithStylePresetName:(id)arg1 state:(int)arg2 presentationState:(int)arg3 value:(int)arg4 resolution:(unsigned int)arg5;
 - (BOOL)hasStylePresetWithName:(id)arg1;
@@ -33,6 +33,7 @@
 - (id)_themeStore;
 - (id)debugDescription;
 - (void)dealloc;
+- (id)initWithName:(id)arg1 fromBundle:(id)arg2;
 - (id)imageByStylingImage:(struct CGImage { }*)arg1 stylePresetName:(id)arg2 styleConfiguration:(id)arg3 foregroundColor:(struct CGColor { }*)arg4 scale:(float)arg5;
 - (struct { float x1; float x2; float x3; float x4; })styledInsetsForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3 scale:(float)arg4;
 

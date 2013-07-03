@@ -23,9 +23,9 @@
 - (void)setReference:(id)arg1;
 - (void)setTextMark:(id)arg1;
 - (void)setDosPath:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
 - (id)reference;
 - (id)descriptionText;
-- (void)setDescriptionText:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)dealloc;
 - (void)setPath:(id)arg1;

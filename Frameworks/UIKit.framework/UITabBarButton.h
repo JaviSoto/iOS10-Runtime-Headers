@@ -38,6 +38,7 @@
     } _infoOffset;
     UIImage *_customSelectedIndicatorImage;
     NSValue *_labelOffsetValue;
+    BOOL _isLowProfileButton;
     BOOL _selectedImageColoringIsStale;
     BOOL _centerAllContents;
     Class _appearanceGuideClass;
@@ -48,11 +49,12 @@
 @property(readonly) UITabBarButtonLabel * tabBarButtonLabel;
 @property(setter=_setCenterAllContents:) BOOL _centerAllContents;
 @property(setter=_setSelectedImageColoringIsStale:) BOOL _selectedImageColoringIsStale;
+@property(readonly) BOOL _isLowProfileButton;
 
 + (id)_defaultLabelColor;
 + (id)_defaultLabelFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_isSelected;
@@ -63,6 +65,7 @@
 - (BOOL)_centerAllContents;
 - (void)_setSelectedImageColoringIsStale:(BOOL)arg1;
 - (BOOL)_selectedImageColoringIsStale;
+- (BOOL)_isLowProfileButton;
 - (void)setLabelOffsetValue:(id)arg1;
 - (id)labelOffsetValue;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustment;
@@ -74,12 +77,14 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabBarHitRect;
 - (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
+- (id)initLowProfileWithLabel:(id)arg1;
 - (id)_selectedIndicatorView;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (id)tabBarButtonLabel;
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (void)_updateInfoFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSelectedIndicator;
+- (void)_layoutSubviewsLowProfile;
 - (void)_setSelected:(BOOL)arg1;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
@@ -95,10 +100,13 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)tintColorDidChange;
 - (Class)_appearanceGuideClass;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityRowRange;

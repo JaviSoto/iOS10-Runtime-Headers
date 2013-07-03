@@ -28,6 +28,7 @@
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
+- (id)_attributes;
 - (id)fontDescriptorWithFamily:(id)arg1;
 - (id)fontDescriptorWithSymbolicTraits:(unsigned int)arg1;
 - (unsigned int)symbolicTraits;
@@ -43,7 +44,6 @@
 - (id)postscriptName;
 - (id)initWithFontAttributes:(id)arg1;
 - (id)_initWithFontAttributes:(id)arg1 options:(unsigned int)arg2;
-- (id)_attributes;
 - (float)pointSize;
 - (id)init;
 - (id)objectForKey:(id)arg1;

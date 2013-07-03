@@ -7,28 +7,37 @@
 @interface MKBasicMapView : UIView  {
     UIView *_hostView;
     VKMapView *_mapView;
+    double _mapModeStartTime;
 }
 
 @property(readonly) VKMapView * mapView;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property BOOL rendersInBackground;
+@property double mapModeStartTime;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isPointValidForGesturing:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (BOOL)rendersInBackground;
+- (double)mapModeStartTime;
 - (float)calloutContainerCanvasScale;
 - (struct CGSize { float x1; float x2; })calloutContainerCanvasSize;
 - (void)addCalloutSubview:(id)arg1;
+- (BOOL)_isThirdPartyApp;
+- (void)_updateStatsForTimeSpentInCurrentMapType:(BOOL)arg1;
+- (void)_updateForCurrentScreen;
 - (void)_animateCanvasForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateMapViewHidden;
 - (void)_enterBackground:(id)arg1;
 - (void)_enterForeground:(id)arg1;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toCameraModelPointToView:(id)arg2;
+- (void)setMapModeStartTime:(double)arg1;
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toCoordinateFromView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
+- (void)updateStatsForTimeSpentInCurrentMapType;
+- (void)updateStatsForSwitchingToMapType:(int)arg1;
 - (id)mapView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andGlobe:(BOOL)arg2 shouldRasterize:(BOOL)arg3;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -36,8 +45,7 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)dealloc;
+- (void)willMoveToWindow:(id)arg1;
 - (void)didMoveToWindow;
-- (id)accessibilityContainerElements;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

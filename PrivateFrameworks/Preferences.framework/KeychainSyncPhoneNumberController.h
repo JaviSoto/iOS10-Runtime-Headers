@@ -4,9 +4,8 @@
 
 @class <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment;
 
-@interface KeychainSyncPhoneNumberController : PSListController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewController> {
+@interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewController> {
     KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;
-    <KeychainSyncViewControllerDelegate> *_delegate;
 }
 
 @property <KeychainSyncViewControllerDelegate> * delegate;
@@ -15,10 +14,8 @@
 - (void)nextPressed;
 - (void)reloadSpecifiers;
 - (id)specifiers;
-- (void)phoneSettingsFragment:(id)arg1 didChangePhoneNumber:(id)arg2 countryCode:(id)arg3;
-- (void)setDelegate:(id)arg1;
+- (void)phoneSettingsFragment:(id)arg1 didChangePhoneNumber:(id)arg2 countryInfo:(id)arg3;
 - (void)dealloc;
-- (id)delegate;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;

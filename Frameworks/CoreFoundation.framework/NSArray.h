@@ -42,17 +42,16 @@
 + (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
-- (id)reverseObjectEnumerator;
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
-- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
-- (id)firstObject;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (id)arrayByExcludingObjectsInArray:(id)arg1;
+- (id)reverseObjectEnumerator;
+- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (id)arrayByExcludingToObjectsInArray:(id)arg1;
 - (id)arrayByApplyingSelector:(SEL)arg1;
 - (id)initWithOrderedSet:(id)arg1;
@@ -111,6 +110,7 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)firstObject;
 - (id)objectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id)arg4;
 - (id)sortedArrayUsingComparator:(id)arg1;
@@ -207,7 +207,6 @@
 - (id)_IDsFromURIs;
 - (id)_URIsFromIDs;
 - (id)_FTFilteredArrayForAPS;
-- (id)specifierForID:(id)arg1;
 - (id)_gkFirstObject;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
@@ -217,8 +216,10 @@
 - (id)_gkMapConcurrentlyWithBlock:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkOrderedSet;
-- (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2;
-- (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
+- (id)specifierForID:(id)arg1;
+- (id)_gkBubbleOfType:(int)arg1;
+- (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2;
+- (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2 usingSelector:(SEL)arg3;
 - (id)_sa_mappedArrayWithBlock:(id)arg1;
 - (BOOL)MPIsEmpty;
 - (id)MSDeepCopy;
@@ -276,8 +277,8 @@
 - (id)cr_copyConcurrentlyByApplyingTransform:(id)arg1;
 - (unsigned int)cr_binaryInsertionIndexOfObject:(id)arg1 usingComparator:(id)arg2 match:(BOOL*)arg3;
 - (unsigned int)mf_indexOfMailboxDictionaryWithName:(id)arg1;
+- (unsigned int)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 - (id)mf_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2;
 - (id)mf_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
-- (unsigned int)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 
 @end

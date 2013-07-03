@@ -22,7 +22,6 @@
 - (id)bindVariables;
 - (void)removeAllBindVariables;
 - (id)fakeEntityForFetch;
-- (void)clearCaches;
 - (BOOL)isImpossibleCondition;
 - (id)bindIntarrays;
 - (void)setSQLString:(id)arg1;
@@ -33,6 +32,7 @@
 - (void)setImpossibleCondition:(BOOL)arg1;
 - (unsigned int)addBindVariable:(id)arg1;
 - (id)entity;
+- (void)clearCaches;
 - (void)dealloc;
 - (id)description;
 

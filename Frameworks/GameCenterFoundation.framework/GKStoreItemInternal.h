@@ -32,8 +32,8 @@
 
 - (unsigned int)numberOfUserRatings;
 - (void)setNumberOfUserRatings:(unsigned int)arg1;
-- (void)setExpirationDate:(id)arg1;
 - (void)setAdamID:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
 - (void)setPriceDisplay:(id)arg1;
 - (id)priceDisplay;
 - (void)setArtistName:(id)arg1;

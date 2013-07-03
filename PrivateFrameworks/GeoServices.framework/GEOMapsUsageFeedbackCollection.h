@@ -12,10 +12,18 @@
     double _sessionRelativeTimestamp;
     int _actionType;
     GEOPlaceActionDetails *_placeActionDetails;
+    struct { 
+        unsigned int sessionID : 1; 
+        unsigned int sessionRelativeTimestamp : 1; 
+        unsigned int actionType : 1; 
+    } _has;
 }
 
+@property BOOL hasSessionID;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property BOOL hasActionType;
 @property int actionType;
+@property BOOL hasSessionRelativeTimestamp;
 @property double sessionRelativeTimestamp;
 @property(readonly) BOOL hasPlaceActionDetails;
 @property(retain) GEOPlaceActionDetails * placeActionDetails;
@@ -23,14 +31,20 @@
 
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setHasSessionRelativeTimestamp:(BOOL)arg1;
 - (id)placeActionDetails;
 - (BOOL)hasPlaceActionDetails;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (double)sessionRelativeTimestamp;
+- (BOOL)hasSessionRelativeTimestamp;
 - (void)setPlaceActionDetails:(id)arg1;
+- (void)setHasActionType:(BOOL)arg1;
 - (void)setActionType:(int)arg1;
 - (int)actionType;
+- (BOOL)hasActionType;
 - (void)copyTo:(id)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
+- (BOOL)hasSessionID;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)isEqual:(id)arg1;

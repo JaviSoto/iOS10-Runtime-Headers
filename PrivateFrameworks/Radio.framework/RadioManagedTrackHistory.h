@@ -14,10 +14,10 @@
 @property long long trackStoreID;
 
 
-- (long long)trackStoreID;
 - (id)stationName;
 - (void)setStationName:(id)arg1;
 - (void)setTrackStoreID:(long long)arg1;
+- (long long)trackStoreID;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
 - (id)stationHash;

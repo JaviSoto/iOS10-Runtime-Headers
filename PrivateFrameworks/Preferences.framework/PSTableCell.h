@@ -38,8 +38,8 @@
 + (Class)cellClassForSpecifier:(id)arg1;
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (int)cellStyle;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
 
 - (void)setLongTapRecognizer:(id)arg1;
@@ -89,11 +89,11 @@
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)canBecomeFirstResponder;
 - (id)scriptingInfoWithChildren;
 - (id)_automationID;
 - (SEL)action;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
 - (void)setChecked:(BOOL)arg1;
 - (id)titleLabel;
 - (void)layoutSubviews;
@@ -109,6 +109,7 @@
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
+- (BOOL)_accessibilityLanguageOverriddesUser;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_accessibilityUserTestingChildren;
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;

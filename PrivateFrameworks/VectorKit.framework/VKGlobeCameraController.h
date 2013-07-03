@@ -97,6 +97,8 @@
         } _startTiltLimitDirection; 
     } _cameraManager;
     double _currentDoublePanPitch;
+    BOOL _isPitching;
+    BOOL _isRotating;
 }
 
 @property struct GlobeView { int (**x1)(); }* globeView;
@@ -171,7 +173,7 @@
 - (void)stopTrackingAnnotation;
 - (BOOL)isTrackingHeading;
 - (id)trackingAnnotation;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
+- (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (id)mapRegion;
 - (double)yaw;

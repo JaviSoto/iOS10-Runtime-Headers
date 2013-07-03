@@ -93,6 +93,7 @@
 - (void)setIsStartOfRoadName:(BOOL)arg1;
 - (void)setIsOnRoute:(BOOL)arg1;
 - (void)appendSimplifiedWorldRoadPoints:(struct vector<geo::Vec2Imp<double>, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x1; struct Vec2Imp<double> {} *x2; struct __compressed_pair<geo::Vec2Imp<double> *, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x_3_1_1; } x3; }*)arg1;
+- (void)recreateRoadSignWithAlignment:(int)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2;
 - (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7;
 - (id)shieldGroup;
 - (BOOL)hasVisibleShields;
@@ -112,10 +113,9 @@
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
 - (void)clearRoadSign;
 - (id)_newLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct VKPoint { double x1; double x2; double x3; })arg3 alignment:(int)arg4;
+- (int)roadSignAlignment;
 - (BOOL)_findLabelAnchorPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
 - (float)_findRoadOffsetForDistanceToRay:(float)arg1 rayStart:(struct VKPoint { double x1; double x2; double x3; })arg2 rayVector:(struct Vec2Imp<float> { float x1; float x2; })arg3 roadGraph:(id)arg4;
-- (void)recreateRoadSignWithAlignment:(int)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2;
-- (int)roadSignAlignment;
 - (id)labelWithType:(BOOL)arg1;
 - (BOOL)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
 - (BOOL)isOnRoute;

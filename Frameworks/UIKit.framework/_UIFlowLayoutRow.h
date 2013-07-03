@@ -38,9 +38,9 @@
 @property BOOL fixedItemSize;
 
 
-- (void)setIndex:(int)arg1;
 - (int)index;
 - (id)items;
+- (void)setIndex:(int)arg1;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

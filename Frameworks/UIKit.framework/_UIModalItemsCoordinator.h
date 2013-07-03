@@ -10,26 +10,35 @@
     NSMutableArray *_allPresentingSessions;
 }
 
-+ (void)_desaturateUI;
 + (void)_resaturateUI;
++ (void)_desaturateUI;
++ (void)_desaturateUIForSB;
++ (void)_resaturateUIForSB;
 + (void)_getRidOfViewControllerForAlerts;
 + (void)_getRidOfViewControllerForSBAlerts;
 + (id)sharedModalItemsCoordinator;
 + (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
 
 - (void)dealloc;
+- (void)showAfterSpringBoardAlert:(BOOL)arg1;
+- (void)hideForSpringBoardAlert:(BOOL)arg1;
+- (void)_hidePresentingSessionForModalItem:(id)arg1 keepDimmingView:(BOOL)arg2 animated:(BOOL)arg3;
 - (id)hostingViewControllerForViewController:(id)arg1 andModalItem:(id)arg2 create:(BOOL)arg3;
 - (id)presentingViewControllerForItem:(id)arg1 create:(BOOL)arg2;
 - (id)_rootViewControllerForModalItem:(id)arg1;
-- (void)_notifyDelegateWillDismissItem:(id)arg1 withIndex:(int)arg2;
+- (id)_presentingSessionForViewController:(id)arg1 ofItemsType:(int)arg2;
 - (void)_notifyDissmissedItem:(id)arg1;
 - (void)_showNextModalItemIfNecessaryAfterHiddingItem:(id)arg1 showingItem:(id)arg2 animate:(BOOL)arg3;
-- (void)_notifyDelegateDidDismissItem:(id)arg1 withIndex:(int)arg2;
-- (void)_notifyDelegateDidPresentItem:(id)arg1;
-- (void)_notifyDelegateWillPresentItem:(id)arg1;
+- (void)_hideModalItemsForType:(int)arg1 presentingViewController:(id)arg2 dimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
+- (void)_showModalItemsForType:(int)arg1 presentingViewController:(id)arg2 undimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
 - (id)_presentingViewControllerForAlertCompatibility;
 - (id)_presentingViewControllerForSBCompatibility;
 - (void)_presentItem:(id)arg1 inViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)_addItemToStack:(id)arg1 forPresentingViewController:(id)arg2;
+- (void)_notifyDelegateDidPresentItem:(id)arg1;
+- (void)_notifyDelegateWillPresentItem:(id)arg1;
+- (void)_notifyDelegateDidDismissItem:(id)arg1 withIndex:(int)arg2;
+- (void)_notifyDelegateWillDismissItem:(id)arg1 withIndex:(int)arg2;
 - (void)_dismissItem:(id)arg1 withTappedButtonIndex:(int)arg2 animated:(BOOL)arg3 notifyDelegate:(BOOL)arg4;
 - (void)_notifyDelegateModalItem:(id)arg1 tappedButtonAtIndex:(int)arg2;
 

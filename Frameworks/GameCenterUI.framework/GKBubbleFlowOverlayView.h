@@ -7,7 +7,6 @@
 @interface GKBubbleFlowOverlayView : UIView  {
     GKValueWithCaptionBubbleControl *_gamesBubble;
     GKValueWithCaptionBubbleControl *_friendsBubble;
-    GKValueWithCaptionBubbleControl *_declineBubble;
     GKValueWithCaptionBubbleControl *_requestsBubble;
     GKValueWithCaptionBubbleControl *_challengesBubble;
     GKValueWithCaptionBubbleControl *_turnsBubble;
@@ -16,7 +15,6 @@
 
 @property(retain) GKValueWithCaptionBubbleControl * gamesBubble;
 @property(retain) GKValueWithCaptionBubbleControl * friendsBubble;
-@property(retain) GKValueWithCaptionBubbleControl * declineBubble;
 @property(retain) GKValueWithCaptionBubbleControl * requestsBubble;
 @property(retain) GKValueWithCaptionBubbleControl * challengesBubble;
 @property(retain) GKValueWithCaptionBubbleControl * turnsBubble;
@@ -32,8 +30,6 @@
 - (id)challengesBubble;
 - (void)setRequestsBubble:(id)arg1;
 - (id)requestsBubble;
-- (void)setDeclineBubble:(id)arg1;
-- (id)declineBubble;
 - (void)setFriendsBubble:(id)arg1;
 - (id)friendsBubble;
 - (void)setGamesBubble:(id)arg1;

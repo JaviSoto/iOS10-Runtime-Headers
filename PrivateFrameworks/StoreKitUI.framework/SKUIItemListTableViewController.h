@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemListTableDelegate>, SKUIItemList, SKUILoadURLOperation, SKUIClientContext, NSOperationQueue, NSMutableIndexSet, SKUIUber, SKUIItemArtworkContext, SKUIIconDataConsumer, SKUIItemCollectionController, SKUIResourceLoader;
+@class SSVLoadURLOperation, SKUIItemList, <SKUIItemListTableDelegate>, SKUIClientContext, NSOperationQueue, NSMutableIndexSet, SKUIUber, SKUIItemArtworkContext, SKUIIconDataConsumer, SKUIItemCollectionController, SKUIResourceLoader;
 
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
     SKUIClientContext *_clientContext;
@@ -18,7 +18,7 @@
     SKUIItemArtworkContext *_artworkContext;
     SKUIItemCollectionController *_itemCollectionController;
     SKUIItemList *_itemList;
-    SKUILoadURLOperation *_loadMoreOperation;
+    SSVLoadURLOperation *_loadMoreOperation;
     BOOL _loadsMoreItems;
     NSOperationQueue *_operationQueue;
     float _rowHeight;
@@ -57,6 +57,7 @@
 - (id)_itemListCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)_loadRemainingItemsWithPriority:(int)arg1;
 - (void)setArtworkLoader:(id)arg1;
+- (void)unhideIcons;
 - (void)setItemCellClass:(Class)arg1;
 - (id)popIconImageViewForItemAtIndex:(int)arg1;
 - (void)setIconDataConsumer:(id)arg1;
@@ -64,7 +65,6 @@
 - (id)iconDataConsumer;
 - (id)_loadMoreCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)artworkLoader;
-- (void)unhideIcons;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (struct CGSize { float x1; float x2; })imageBoundingSize;
 - (void)itemTableView:(id)arg1 didConfirmItemOfferForTableViewCell:(id)arg2;

@@ -88,10 +88,10 @@
 - (void)_processChanges;
 - (void)postNote:(struct __CFString { }*)arg1;
 - (void)_enableUpdates;
+- (void)performBlock:(id)arg1;
 - (void)_sendNote;
 - (void)startObserver;
 - (void)_disableUpdates;
-- (void)performBlock:(id)arg1;
 - (void)dealloc;
 - (void)setQueryQueue:(id)arg1;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;

@@ -28,6 +28,7 @@
 - (BOOL)userNameIsEditable;
 - (void)setFailureCount:(int)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setUser:(id)arg1;
 - (void)setSender:(id)arg1;
 - (id)init;
 - (id)password;
@@ -35,6 +36,5 @@
 - (void)dealloc;
 - (BOOL)hasPassword;
 - (id)sender;
-- (void)setUser:(id)arg1;
 
 @end

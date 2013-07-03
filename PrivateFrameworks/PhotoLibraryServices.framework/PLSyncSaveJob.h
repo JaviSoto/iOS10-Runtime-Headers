@@ -49,9 +49,9 @@
 - (void)setSortToken:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (id)location;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
+- (id)location;
 - (id)uuid;
 - (BOOL)isVideo;
 - (void)setLocation:(id)arg1;

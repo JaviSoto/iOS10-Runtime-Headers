@@ -55,16 +55,16 @@
 @property int focusBubbleType;
 
 
-- (id)effectiveView;
 - (int)focusBubbleType;
+- (id)effectiveView;
 - (void)setEffectiveView:(id)arg1;
 - (void)setFocusBubbleType:(int)arg1;
 - (void)setBubbles:(id)arg1;
 - (id)bubbles;
 - (void)setDuration:(double)arg1;
-- (double)startTime;
 - (id)init;
 - (id)description;
+- (double)startTime;
 - (void)setStartTime:(double)arg1;
 - (double)duration;
 

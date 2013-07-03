@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLRenderState, VKPolygonDrawStyle, NSMutableArray, VGLTexture;
+@class VGLRenderState, VGLMesh, VKPolygonDrawStyle, NSMutableArray, VGLTexture;
 
 @interface VKGroundCoverMapModel : VKMapTileModel <VKMapLayer> {
     NSMutableArray *_sortedTiles;
@@ -17,13 +17,17 @@
     float _layoutMaxZ;
     float _layoutContentScale;
     BOOL _needsLandSettingsUpdate;
+    VGLMesh *_groundMesh;
+    int _groundMeshCapacity;
 }
 
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;
 
+- (id)groundMeshForTiles:(id)arg1 relativeToTile:(id)arg2;
 - (void)loadLandSettingsForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
 - (void)updateVegetationSettingsFromStylesheet;
+- (void)activeTileGroupChanged;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;

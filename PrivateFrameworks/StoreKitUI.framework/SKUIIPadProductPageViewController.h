@@ -4,7 +4,7 @@
 
 @class SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUINetworkErrorViewController, SKUIFacebookLikeStatus, SKUIClientContext, <SKUIIPadProductPageDelegate>, SKUIProductPage, ACAccountStore, SKUIMetricsController, UIView, SKUIItem, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUILoadProductPageOperation, SKUISwooshArrayViewController, NSOperationQueue, NSURL;
 
-@interface SKUIIPadProductPageViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, SKUISwooshViewControllerDelegate> {
+@interface SKUIIPadProductPageViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate> {
     ACAccountStore *_accountStore;
     SKUIClientContext *_clientContext;
     <SKUIIPadProductPageDelegate> *_delegate;
@@ -36,7 +36,6 @@
 
 - (id)initWithProductPage:(id)arg1;
 - (id)productPage;
-- (BOOL)productPageChildShouldOpenItem:(id)arg1;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)_relatedViewController;
 - (id)_detailsViewController;
@@ -45,21 +44,21 @@
 - (id)_viewControllerForSectionIndex:(int)arg1;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
 - (void)_setFacebookLikeStatus:(id)arg1;
+- (void)_reloadHeaderViewController;
 - (void)_sendCannotOpen;
 - (void)_reloadFacebookLikeStatus;
 - (id)_reviewsViewController;
 - (void)_selectSectionIndex:(int)arg1;
-- (void)_reloadHeaderViewController;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
 - (id)_initSKUIIPadProductPageViewController;
-- (BOOL)productPageChildShouldOpenURL:(id)arg1;
 - (struct CGPoint { float x1; float x2; })topContentOffset;
 - (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
+- (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
+- (void)productPageChildOpenURL:(id)arg1 viewControllerBlock:(id)arg2;
+- (void)productPageChildOpenItem:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
-- (void)swooshDidSelectSeeAll:(id)arg1;
-- (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;
 - (void)_setMetricsController:(id)arg1;
 - (id)_placeholderViewController;
 - (id)initWithItem:(id)arg1;

@@ -43,9 +43,6 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 + (id)team;
 
-- (id)secondaryColor;
-- (void)setPrimaryColor:(id)arg1;
-- (void)setSecondaryColor:(id)arg1;
 - (void)setWins:(id)arg1;
 - (id)wins;
 - (void)setWinPercentage:(id)arg1;
@@ -64,7 +61,6 @@
 - (id)rankings;
 - (void)setQualificationPosition:(id)arg1;
 - (id)qualificationPosition;
-- (id)primaryColor;
 - (void)setPointsFor:(id)arg1;
 - (id)pointsFor;
 - (void)setPointsAgainst:(id)arg1;
@@ -95,20 +91,24 @@
 - (void)setAwayLosses:(id)arg1;
 - (id)awayLosses;
 - (void)setAbbreviatedName:(id)arg1;
-- (id)abbreviatedName;
 - (void)setAthletes:(id)arg1;
 - (id)athletes;
 - (void)setStatistics:(id)arg1;
 - (id)news;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (id)abbreviatedName;
 - (void)setPoints:(id)arg1;
-- (id)location;
 - (id)points;
 - (void)setGroupName:(id)arg1;
 - (id)statistics;
+- (id)location;
 - (id)groupName;
 - (void)setLocation:(id)arg1;
+- (id)secondaryColor;
+- (id)primaryColor;
+- (void)setSecondaryColor:(id)arg1;
+- (void)setPrimaryColor:(id)arg1;
 - (id)groupIdentifier;
 
 @end

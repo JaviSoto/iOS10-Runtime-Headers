@@ -39,13 +39,13 @@
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)setInitialTrackIndex:(unsigned int)arg1;
 - (unsigned int)initialTrackIndex;
-- (void)reloadTracksForPlayingStation;
 - (id)_tracksWithPromotionalContentFromTracks:(id)arg1;
 - (void)_insertAdTrack:(id)arg1 afterCurrentItemIndex:(unsigned int)arg2;
 - (void)_cancelScheduledAds;
+- (void)_prefetchArtworkForNextTrack;
 - (BOOL)_endPlaybackIfNecessaryForNetworkType;
-- (void)_updateIsExplicitContentRestrictedForProfileConnection:(id)arg1;
 - (void)loadArtworkImageForItem:(id)arg1 completionHandler:(id)arg2;
+- (void)_updateIsExplicitContentRestrictedForProfileConnection:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
 - (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2 initialTrackIndex:(unsigned int)arg3 startPlayback:(BOOL)arg4;
@@ -60,9 +60,11 @@
 - (void)_itemIsBannedDidChangedNotification:(id)arg1;
 - (void)_songBeganResponseNotification:(id)arg1;
 - (void)_didFailToLoadAdNotification:(id)arg1;
+- (void)reloadTracksForPlayingStation;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)setAVController:(id)arg1;
 - (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingAds:(BOOL)arg5;
+- (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (BOOL)canSkipToPreviousItem;
 - (BOOL)canSeek;

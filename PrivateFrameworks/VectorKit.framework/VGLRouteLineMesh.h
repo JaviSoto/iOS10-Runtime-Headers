@@ -33,6 +33,8 @@
 @property(readonly) VGLCenterLineMeshVendor * slowTrafficMeshVendor;
 @property(readonly) VGLCenterLineMeshVendor * mediumTrafficMeshVendor;
 
++ (float)arrowHeadSizeForRouteLineWidth:(float)arg1;
++ (float)arrowTailSizeForRouteLineWidth:(float)arg1;
 
 - (void)setSplitLocation:(float)arg1;
 - (void)pushDebugArrowRangeStart:(int)arg1 startOffset:(float)arg2 end:(int)arg3 endOffset:(float)arg4 maneuverIndex:(int)arg5;

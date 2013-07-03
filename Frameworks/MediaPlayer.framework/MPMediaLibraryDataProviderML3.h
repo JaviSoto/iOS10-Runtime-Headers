@@ -5,13 +5,13 @@
 @class ML3MusicLibrary, NSArray, NSString, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate> {
+    NSString *_uniqueIdentifier;
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
     unsigned int _backgroundTask;
     unsigned int _backgroundTaskCount;
     BOOL _hasScheduledEventPosting;
     ML3MusicLibrary *_library;
     int _refreshState;
-    NSString *_uniqueIdentifier;
 }
 
 @property(retain) ML3MusicLibrary * library;
@@ -35,7 +35,7 @@
 - (void)_coalesceEvents;
 - (BOOL)_dataProviderSupportsEntityChangeTracking;
 - (id)systemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2;
-- (id)ML3SystemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2;
+- (id)ML3SystemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2 additionalFilterPredicates:(id)arg3;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id)arg4;
 - (void)_loadValueForAggregateFunction:(id)arg1 entityClass:(Class)arg2 property:(id)arg3 query:(id)arg4 completionBlock:(id)arg5;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
@@ -59,8 +59,8 @@
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (void)loadProperties:(id)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 itemBlock:(id)arg2 collectionBlock:(id)arg3;
-- (void)setLibraryContainerFilterPredicatesWithCloudFilteringType:(int)arg1;
-- (void)setLibraryEntityFilterPredicatesWithCloudFilteringType:(int)arg1;
+- (void)setLibraryContainerFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;
+- (void)setLibraryEntityFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;
 - (id)collectionResultSetForQueryCriteria:(id)arg1;
 - (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
@@ -70,6 +70,7 @@
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (id)syncValidity;
+- (BOOL)isCurrentThreadInTransaction;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (id)preferredSubtitleLanguages;
 - (id)preferredAudioLanguages;

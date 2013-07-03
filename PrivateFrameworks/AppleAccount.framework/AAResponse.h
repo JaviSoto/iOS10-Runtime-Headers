@@ -15,7 +15,9 @@
 @property(readonly) NSString * protocolVersion;
 
 
+- (id)_stringWithDescriptionForResponseError:(id)arg1;
 - (void)_parsePlistResponse:(id)arg1;
+- (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)responseDictionary;

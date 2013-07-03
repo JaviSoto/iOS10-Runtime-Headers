@@ -12,8 +12,8 @@
 
 
 - (id)copyParseRules;
-- (void)setAttendee:(id)arg1;
 - (id)attendee;
+- (void)setAttendee:(id)arg1;
 - (void)dealloc;
 
 @end

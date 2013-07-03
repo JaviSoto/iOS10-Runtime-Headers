@@ -14,9 +14,9 @@
 
 - (void)addCaptionText:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
 - (id)timeMarkers;
+- (id)language;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setLanguage:(id)arg1;
-- (id)language;
 
 @end

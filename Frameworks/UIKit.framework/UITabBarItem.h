@@ -50,8 +50,8 @@
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
 + (id)_appearanceBlindViewClasses;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)setTitle:(id)arg1;
@@ -81,11 +81,11 @@
 - (struct UIOffset { float x1; float x2; })titlePositionAdjustment;
 - (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (BOOL)viewIsCustom;
-- (void)_updateViewForIdiom:(int)arg1 positionItems:(BOOL)arg2;
 - (int)_barMetrics;
 - (int)_imageStyle;
 - (void)_updateViewForIdiom:(int)arg1;
 - (void)_updateButtonForTintColor:(id)arg1 selected:(BOOL)arg2;
+- (void)_updateViewForIdiom:(int)arg1 positionItems:(BOOL)arg2;
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 idiom:(int)arg3;
 - (void)_setImageStyle:(int)arg1;
 - (void)_setBarMetrics:(int)arg1;

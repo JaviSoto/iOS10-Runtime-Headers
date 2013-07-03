@@ -15,6 +15,7 @@
 @property(readonly) SKUIResourceLoader * artworkLoader;
 @property(retain) SKUIImageDataConsumer * imageDataConsumer;
 @property(readonly) UIImage * placeholderImage;
+@property(readonly) struct CGSize { float x1; float x2; } imageSize;
 
 
 - (id)initWithArtworkLoader:(id)arg1;
@@ -25,9 +26,10 @@
 - (void)setImageDataConsumer:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)placeholderImage;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)init;
 - (void).cxx_destruct;
-- (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 
 @end

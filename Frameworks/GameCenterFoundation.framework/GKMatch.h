@@ -146,13 +146,13 @@
 - (unsigned int)expectedPlayerCount;
 - (id)playerIDs;
 - (void)disconnect;
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)delegate;
 - (void)setSession:(id)arg1;
+- (void)setConnection:(id)arg1;
 - (id)session;
 - (BOOL)connected:(id)arg1;
 - (id)connection;

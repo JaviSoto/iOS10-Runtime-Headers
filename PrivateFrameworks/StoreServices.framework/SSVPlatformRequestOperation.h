@@ -30,12 +30,9 @@
 
 - (void)setImageProfile:(id)arg1;
 - (id)imageProfile;
-- (void)setResponseBlock:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)_makeLocalMescalRequest;
 - (void)_makeLocalJSSignRequest;
-- (id)responseBlock;
-- (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
 - (void)_enumerateQueryParametersUsingBlock:(id)arg1;
 - (id)itemIdentifiers;
 - (id)_callerValue;
@@ -45,6 +42,9 @@
 - (id)keyProfile;
 - (id)valueForRequestParameter:(id)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (void)setResponseBlock:(id)arg1;
+- (id)responseBlock;
+- (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (void).cxx_destruct;
 - (void)main;

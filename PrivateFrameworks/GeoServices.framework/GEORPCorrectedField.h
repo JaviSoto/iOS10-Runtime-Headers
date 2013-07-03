@@ -11,10 +11,12 @@
     NSString *_originalValue;
     BOOL _isMarkedIncorrect;
     struct { 
+        unsigned int field : 1; 
         unsigned int isMarkedIncorrect : 1; 
     } _has;
 }
 
+@property BOOL hasField;
 @property int field;
 @property(readonly) BOOL hasFieldName;
 @property(retain) NSString * fieldName;
@@ -29,16 +31,18 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setHasIsMarkedIncorrect:(BOOL)arg1;
+- (void)setHasField:(BOOL)arg1;
 - (void)setIsMarkedIncorrect:(BOOL)arg1;
 - (BOOL)isMarkedIncorrect;
 - (BOOL)hasIsMarkedIncorrect;
-- (BOOL)hasCorrectedValue;
 - (id)fieldName;
 - (BOOL)hasFieldName;
 - (void)setField:(int)arg1;
 - (int)field;
+- (BOOL)hasField;
 - (void)setFieldName:(id)arg1;
 - (id)correctedValue;
+- (BOOL)hasCorrectedValue;
 - (id)originalValue;
 - (BOOL)hasOriginalValue;
 - (void)setCorrectedValue:(id)arg1;

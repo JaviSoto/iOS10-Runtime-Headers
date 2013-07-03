@@ -29,14 +29,14 @@
 + (void)_clearActiveKeyboard;
 + (BOOL)isInHardwareKeyboardMode;
 + (void)removeAllDynamicDictionaries;
-+ (id)activeKeyboard;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
++ (id)activeKeyboard;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -48,7 +48,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)_isAutomaticKeyboard;
-- (void)_clearCurrentInputManager;
 - (void)_acceptCurrentCandidate;
 - (void)_setInputMode:(id)arg1;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
@@ -88,7 +87,6 @@
 - (id)_getCurrentKeyplaneName;
 - (id)_getCurrentKeyboardName;
 - (BOOL)caretVisible;
-- (BOOL)stringIsExemptFromChecker:(id)arg1;
 - (BOOL)returnKeyEnabled;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;

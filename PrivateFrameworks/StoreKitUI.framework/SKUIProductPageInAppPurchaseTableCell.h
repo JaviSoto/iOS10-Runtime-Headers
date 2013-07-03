@@ -2,19 +2,24 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel, NSString, UIView;
+@class NSString, UILabel;
 
 @interface SKUIProductPageInAppPurchaseTableCell : SKUITableViewCell  {
-    UIView *_indexBorderRight;
     UILabel *_indexLabel;
-    UIView *_nameBorderLeft;
     UILabel *_nameLabel;
     UILabel *_priceLabel;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentInsets;
 }
 
 @property(copy) NSString * indexString;
 @property(copy) NSString * priceString;
 @property(copy) NSString * productName;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 
 - (void)setProductName:(id)arg1;
@@ -25,7 +30,10 @@
 - (id)productName;
 - (void)setBackgroundColor:(id)arg1;
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;
 
 @end

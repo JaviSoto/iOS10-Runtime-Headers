@@ -20,8 +20,8 @@
 + (id)functionWithName:(id)arg1;
 + (void)CAMLParserStartElement:(id)arg1;
 
-- (id)_initWithName:(int)arg1;
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2;
+- (id)_initWithName:(int)arg1;
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2 parameterFunction:(int (*)())arg3 context:(void*)arg4;
 - (unsigned long)outputCount;
 - (unsigned long)inputCount;

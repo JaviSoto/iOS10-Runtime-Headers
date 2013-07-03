@@ -35,7 +35,6 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)mediaTypes;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)initWithCoder:(id)arg1;

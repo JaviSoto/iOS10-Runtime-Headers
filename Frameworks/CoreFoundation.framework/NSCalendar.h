@@ -76,5 +76,9 @@
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)date:(id)arg1 isSameYearAsDate:(id)arg2;
+- (BOOL)date:(id)arg1 isSameDayAsDate:(id)arg2;
+- (id)_timeOnlyComponentsForDate:(id)arg1;
+- (id)_dateOnlyComponentsForDate:(id)arg1;
 
 @end

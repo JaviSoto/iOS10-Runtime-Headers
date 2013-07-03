@@ -6,5 +6,9 @@
 }
 
 
+- (float)deleteKeyFontSize;
+- (float)returnKeyFontSize;
+- (float)keyplaneSwitchKeyFontSize;
+- (float)spaceKeyFontSize;
 
 @end

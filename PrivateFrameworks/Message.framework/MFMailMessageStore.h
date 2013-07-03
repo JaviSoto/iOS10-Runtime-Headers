@@ -82,7 +82,7 @@
 - (unsigned int)unreadCountMatchingCriterion:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
 - (unsigned int)growFetchWindow;
-- (void)recalculateFetchWindow;
+- (void)invalidateFetchWindow;
 - (BOOL)shouldGrowFetchWindow;
 - (unsigned int)serverUnreadCount;
 - (unsigned int)serverUnreadOnlyOnServerCount;

@@ -31,7 +31,7 @@
 @property(readonly) double rawDownloadTotal;
 
 + (id)sharedITunesStoreDownloadManager;
-+ (id)newObserverForRadioTrack:(id)arg1;
++ (id)newObserverForRadioTrackStoreID:(long long)arg1;
 + (id)newObserverForMediaCollection:(id)arg1;
 + (id)newObserverForMediaItem:(id)arg1;
 + (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(BOOL)arg2 storeID:(long long)arg3;

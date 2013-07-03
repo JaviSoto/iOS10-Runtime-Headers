@@ -22,7 +22,7 @@
 - (BOOL)setPreferredPolarPattern:(id)arg1 error:(id*)arg2;
 - (id)supportedPolarPatterns;
 - (id)preferredPolarPattern;
-- (void)configureOrientationAndPatterns:(id)arg1;
+- (void)configurePolarPatterns:(id)arg1;
 - (id)initWithRawSourceDescription:(id)arg1 andOwningPortID:(id)arg2;
 - (id)selectedPolarPattern;
 - (id)privateGetOwningPortID;

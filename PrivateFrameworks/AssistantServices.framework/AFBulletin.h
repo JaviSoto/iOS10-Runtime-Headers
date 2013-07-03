@@ -40,8 +40,8 @@
 - (id)recencyDate;
 - (id)bulletinID;
 - (id)sectionID;
-- (id)endDate;
 - (BOOL)isAllDay;
+- (id)endDate;
 - (id)title;
 - (BOOL)isRead;
 - (id)message;

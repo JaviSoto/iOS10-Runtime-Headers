@@ -16,8 +16,8 @@
 
 
 - (void)dealloc;
-- (id)remoteSession;
 - (void)setTaskDescription:(id)arg1;
+- (id)remoteSession;
 - (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned int)arg4;
 - (void)setRemoteSession:(id)arg1;
 - (unsigned int)ident;

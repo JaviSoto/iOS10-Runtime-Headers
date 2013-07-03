@@ -7,10 +7,10 @@
 }
 
 
+- (id)executablePath;
 - (struct __CFBundle { }*)cfBundle;
 - (id)initWithCFBundle:(struct __CFBundle { }*)arg1;
 - (void)dealloc;
-- (id)executablePath;
 - (id)bundleIdentifier;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;

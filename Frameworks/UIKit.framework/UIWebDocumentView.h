@@ -252,14 +252,14 @@
 + (double)getTimestamp;
 + (id)standardTextViewPreferences;
 + (Class)layerClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)setPaused:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
 - (void)setInteractionDelegate:(id)arg1;
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (void)setBaseWritingDirection:(int)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -272,6 +272,7 @@
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)suppressesIncrementalRendering;
 - (void)insertText:(id)arg1;
+- (BOOL)isEditable;
 - (int)selectionBaseWritingDirection;
 - (BOOL)hasSelection;
 - (int)selectionState;
@@ -291,7 +292,7 @@
 - (void)writeDataToPasteboard:(id)arg1;
 - (id)checkSpellingOfString:(id)arg1;
 - (void)deleteFromInput;
-- (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
 - (void)webView:(id)arg1 didHideFullScreenForPlugInView:(id)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;
 - (id)webView:(id)arg1 plugInViewWithArguments:(id)arg2 fromPlugInPackage:(id)arg3;
@@ -516,7 +517,6 @@
 - (void)_notifyPlugInViewsOfWillBeginZooming;
 - (void)sendScrollEventIfNecessary;
 - (BOOL)inPopover;
-- (BOOL)isCaretInEmptyParagraph;
 - (void)toggleBaseWritingDirection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_shortcutPresentationRect;
 - (id)selectionRectsForDOMRange:(id)arg1;
@@ -526,6 +526,7 @@
 - (void)_finishedUsingDictationPlaceholder;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromSelectedFrameCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dictationPlaceholderHasBeenRemoved;
+- (BOOL)isCaretInEmptyParagraph;
 - (BOOL)hasRangedSelection;
 - (id)dictationResultMetadataForRange:(id)arg1;
 - (void)setRangeToRestoreAfterDictation:(id)arg1;
@@ -719,7 +720,6 @@
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)tokenizer;
-- (id)inputDelegate;
 - (void)setInputDelegate:(id)arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
@@ -727,9 +727,6 @@
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
-- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
-- (id)endOfDocument;
-- (id)beginningOfDocument;
 - (void)unmarkText;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
@@ -738,10 +735,14 @@
 - (id)selectedTextRange;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (id)textInRange:(id)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
+- (id)inputDelegate;
+- (id)textInRange:(id)arg1;
+- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
+- (id)endOfDocument;
+- (id)beginningOfDocument;
 - (void)takeTraitsFrom:(id)arg1;
 - (void)setTypingAttributes:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -769,6 +770,7 @@
 - (void)didMoveToSuperview;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)deferredBecomeFirstResponder;
+- (BOOL)canBecomeFirstResponder;
 - (id)_responderForBecomeFirstResponder;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
@@ -782,7 +784,6 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (void)_setTextColor:(id)arg1;
@@ -797,6 +798,7 @@
 - (BOOL)isAccessibilityElement;
 - (id)_accessibilityResponderElement;
 - (BOOL)_accessibilityIsFirstElementForFocus;
+- (void)_axZoomToCenterWithScale:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
 - (id)_accessibilityDocumentView;
 - (id)_accessibilityRootObject;

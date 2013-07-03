@@ -21,6 +21,7 @@
 @property(retain) NSObject<OS_dispatch_source> * dispatchTimer;
 
 
+- (BOOL)isPending;
 - (void)setPending:(BOOL)arg1;
 - (id)initWithTargetSerialQueue:(id)arg1;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
@@ -31,7 +32,6 @@
 - (void)setDispatchTimer:(id)arg1;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)_reallyCancel;
-- (BOOL)isPending;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
 - (BOOL)isActive;
 - (id)init;

@@ -15,15 +15,18 @@
 }
 
 @property double transactionTimeout;
+@property BOOL operationQueueEnabled;
 
 + (id)writerErrorWithCode:(int)arg1 description:(id)arg2;
 
 - (void)setTransactionTimeout:(double)arg1;
 - (double)transactionTimeout;
 - (id)_transactionForProcessIdentifier:(int)arg1;
+- (BOOL)operationQueueEnabled;
+- (void)setOperationQueueEnabled:(BOOL)arg1;
 - (void)cancelActiveTransactionForProcess:(int)arg1;
 - (void)_handleDebugSignal;
-- (void)cancelAllActiveDatabaseOperations;
+- (void)cancelAllActiveDatabaseOperationsAndWaitUntilFinished:(BOOL)arg1;
 - (id)_mediaLibraryForPath:(id)arg1;
 - (id)_transactionForIdentifier:(id)arg1;
 - (void)_destroyTransactionForIdentifier:(id)arg1 forceRelinquishConnection:(BOOL)arg2;

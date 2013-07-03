@@ -20,7 +20,7 @@
 @property(copy) NSString * contentSizeCategory;
 @property(copy) UIFontDescriptor * fontDescriptor;
 
-+ (id)fontCacheKeyWithFontDescriptor:(id)arg1;
++ (id)fontCacheKeyWithFontDescriptor:(id)arg1 pointSize:(float)arg2;
 + (id)fontCacheKeyWithTextStyle:(id)arg1 contentSizeCategory:(id)arg2;
 + (id)systemFontCacheKeyWithTraits:(int)arg1 pointSize:(float)arg2;
 + (id)fontCacheKeyWithFontName:(id)arg1 traits:(int)arg2 pointSize:(float)arg3;

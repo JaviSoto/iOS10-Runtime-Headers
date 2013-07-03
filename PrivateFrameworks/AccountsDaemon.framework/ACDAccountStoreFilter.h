@@ -22,10 +22,10 @@
 - (void)setBackingAccountStore:(id)arg1;
 - (id)backingAccountStore;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
+- (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;
 - (void)isTetheredSyncingEnabledForDataclass:(id)arg1 completion:(id)arg2;
-- (void)promptUserForCredentialsWithAccount:(id)arg1 withHandler:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;

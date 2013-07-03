@@ -16,10 +16,11 @@
 - (void)layoutChanged:(id)arg1;
 - (void)valueChanged:(id)arg1;
 - (id)addressEditor;
+- (void)setPresentingDelegate:(id)arg1;
+- (void)updateWithPropertyItem:(id)arg1;
+- (void)setValueTextAttributes:(id)arg1;
 - (id)firstResponderItem;
-- (void)setCardGroupItem:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)updateConstraints;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

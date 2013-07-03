@@ -46,14 +46,15 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousCollapsedFrame;
 @property(readonly) UIKeyboardCandidateSortControl * sortSelectionBar;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct CGSize { float x1; float x2; })size;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)candidateSet;
 - (id)keyboardBehaviors;
+- (id)candidates;
 - (BOOL)hasCandidates;
 - (id)currentCandidate;
 - (void)setPosition:(int)arg1;
@@ -73,18 +74,17 @@
 - (BOOL)isAcceptableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 afterScrollBy:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inlineRect;
 - (BOOL)isReducedWidth;
-- (id)inlineText;
 - (id)collectionViewController;
 - (void)candidateListShouldBeDismissed:(id)arg1;
 - (id)activeCandidateList;
-- (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
 - (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
-- (id)candidateListDelegate;
 - (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
+- (id)candidateListDelegate;
 - (void)padInlineFloatingViewExpand:(id)arg1;
 - (BOOL)padInlineFloatingViewIsExpanded:(id)arg1;
+- (id)inlineText;
 - (void)candidatesDidChange;
 - (BOOL)handleTabKeyWithShift:(BOOL)arg1;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
@@ -100,6 +100,7 @@
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (BOOL)isExtendedList;
+- (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (int)position;

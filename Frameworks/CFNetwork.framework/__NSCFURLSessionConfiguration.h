@@ -16,6 +16,7 @@
     BOOL __cookieStorageSet;
     BOOL _tasks_created_suspended;
     BOOL _skip_download_unlink;
+    BOOL _saveRequestsInResumeData;
     BOOL __preventsIdleSleep;
     BOOL __usePipeliningHeuristics;
     BOOL __startSynchronously;
@@ -29,7 +30,6 @@
     NSDictionary *_HTTPAdditionalHeaders;
     int _HTTPMaximumConnectionsPerHost;
     NSArray *_protocolClasses;
-    NSURLCredentialStorage *_URLCredentialStorage;
     NSURLCredentialStorage *__credStorage;
     NSURLCache *__urlCache;
     NSHTTPCookieStorage *__cookieStorage;
@@ -61,7 +61,7 @@
 @property(copy) NSDictionary * HTTPAdditionalHeaders;
 @property int HTTPMaximumConnectionsPerHost;
 @property(copy) NSArray * protocolClasses;
-@property(getter=URLCredentialStoreage,setter=setURLCredentialStorage:,retain) NSURLCredentialStorage * URLCredentialStorage;
+@property(getter=URLCredentialStorage,setter=setURLCredentialStorage:,retain) NSURLCredentialStorage * URLCredentialStorage;
 @property(retain) NSURLCredentialStorage * _credStorage;
 @property BOOL _credStorageSet;
 @property(getter=URLCache,setter=setURLCache:,retain) NSURLCache * URLCache;
@@ -76,6 +76,7 @@
 @property double connectionCacheCellPurgeTimeout;
 @property BOOL tasks_created_suspended;
 @property BOOL skip_download_unlink;
+@property BOOL saveRequestsInResumeData;
 @property(copy) NSDictionary * _cfurlConnectionProperties;
 @property(copy) NSDictionary * _socketStreamProperties;
 @property BOOL _preventsIdleSleep;
@@ -90,10 +91,8 @@
 
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)URLCredentialStoreage;
 - (id)URLCredentialStorage;
 - (id)URLCache;
-- (id)HTTPCookieStorage_ifSet;
 - (void)setURLCredentialStorage:(id)arg1;
 - (void)setURLCache:(id)arg1;
 - (void)setHTTPCookieStorage:(id)arg1;
@@ -144,7 +143,6 @@
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (unsigned int)networkServiceType;
 - (void)setTimeoutIntervalForResource:(double)arg1;
-- (double)timeoutIntervalForResource;
 - (void)setTimeoutIntervalForRequest:(double)arg1;
 - (double)timeoutIntervalForRequest;
 - (void)setRequestCachePolicy:(unsigned int)arg1;
@@ -154,6 +152,7 @@
 - (id)initWithDisposition:(id)arg1;
 - (void)set_socketStreamProperties:(id)arg1;
 - (void)set_cfurlConnectionProperties:(id)arg1;
+- (void)setSaveRequestsInResumeData:(BOOL)arg1;
 - (void)setSkip_download_unlink:(BOOL)arg1;
 - (void)setTasks_created_suspended:(BOOL)arg1;
 - (void)setConnectionCacheCellPurgeTimeout:(double)arg1;
@@ -168,7 +167,9 @@
 - (id)identifier;
 - (void)setHTTPAdditionalHeaders:(id)arg1;
 - (id)HTTPAdditionalHeaders;
+- (BOOL)saveRequestsInResumeData;
 - (BOOL)skip_download_unlink;
+- (double)timeoutIntervalForResource;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

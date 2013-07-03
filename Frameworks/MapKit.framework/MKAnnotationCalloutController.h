@@ -13,6 +13,8 @@
 @property <MKAnnotationCalloutControllerDelegate> * delegate;
 @property(retain) MKAnnotationView * annotationView;
 
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)hideCalloutAnimated:(BOOL)arg1;
 - (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
@@ -41,5 +43,7 @@
 - (id)delegate;
 - (void)_setTitle:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)init;
+- (void)_axCloseCallout:(id)arg1;
 
 @end

@@ -6,7 +6,15 @@
 
 @interface SKUIRedeemResultLinksTableViewSection : SKUITableViewSection  {
     NSArray *_links;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentInsets;
 }
+
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 
 - (id)initWithLinks:(id)arg1;
@@ -15,5 +23,7 @@
 - (int)numberOfRowsInSection;
 - (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
 - (void).cxx_destruct;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

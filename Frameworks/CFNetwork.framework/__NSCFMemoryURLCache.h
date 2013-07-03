@@ -2,12 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSMutableArray;
+
 @interface __NSCFMemoryURLCache : NSObject  {
+    unsigned int _memoryCapacity;
+    unsigned int _currentLength;
+    NSMutableDictionary *_memoryStorage;
+    NSMutableArray *_memoryStorageLRU;
+    NSObject<OS_dispatch_queue> *_memoryQueue;
 }
 
 + (void)initialize;
 
-- (id)init;
+- (void)dealloc;
 - (id)description;
 - (unsigned int)currentDiskUsage;
 - (unsigned int)currentMemoryUsage;
@@ -15,8 +22,10 @@
 - (unsigned int)memoryCapacity;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
-- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
+- (id)initMemoryCache;
+- (id)initEmptyCache;
 - (void)removeAllCachedResponses;
+- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)setDiskCapacity:(unsigned int)arg1;
 - (void)setMemoryCapacity:(unsigned int)arg1;

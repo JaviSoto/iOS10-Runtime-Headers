@@ -29,12 +29,8 @@
 - (void)setFocusAlbumGUIDByPersonID:(id)arg1;
 - (void)setFocusAlbumTimerByPersonID:(id)arg1;
 - (void)setForegroundPingTimerContextByPersonID:(id)arg1;
-- (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2 personID:(id)arg3;
-- (void)commentWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
-- (void)commentGUIDsForAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
 - (void)isAssetCollectionWithGUID:(id)arg1 markedAsUnviewedPersonID:(id)arg2 completionBlock:(id)arg3;
 - (void)videoURLForAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
-- (void)assetCollectionGUIDsInAlbumWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
 - (void)invitationWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
 - (void)invitationGUIDsForPersonID:(id)arg1 completionBlock:(id)arg2;
 - (void)accessControlWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
@@ -61,6 +57,7 @@
 - (void)_sendMessageReliably:(id)arg1;
 - (void)_sendMessageReliably:(id)arg1 data:(id)arg2 successHandler:(id)arg3 failureHandler:(id)arg4;
 - (void)isBusyCompletionBlock:(id)arg1;
+- (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2;
 - (void)rejectInvitationWithGUID:(id)arg1 personID:(id)arg2;
 - (void)acceptInvitationWithGUID:(id)arg1 personID:(id)arg2;
@@ -93,10 +90,13 @@
 - (void)retryOutstandingActivities;
 - (void)addAccessControlEntries:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)assetsInDownloadQueueCountForPersonID:(id)arg1 completionBlock:(id)arg2;
-- (void)assetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
-- (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
+- (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2 personID:(id)arg3;
 - (void)setFocusAssetCollectionGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)setFocusAlbum:(id)arg1 forPersonID:(id)arg2;
+- (void)assetCollectionGUIDsInAlbumWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
+- (void)assetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
+- (void)commentGUIDsForAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
+- (void)commentWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2 personID:(id)arg3;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2;
 - (void)addComments:(id)arg1 toAssetCollectionWithGUID:(id)arg2 personID:(id)arg3;
@@ -119,9 +119,9 @@
 - (void)refreshResetSync:(BOOL)arg1 personID:(id)arg2;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

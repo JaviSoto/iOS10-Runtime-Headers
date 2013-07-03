@@ -70,7 +70,6 @@
 @property long long geoId;
 
 
-- (id)entryPoints;
 - (id)firstRating;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
@@ -93,10 +92,7 @@
 - (BOOL)hasIsDisputed;
 - (id)entryPointAtIndex:(unsigned int)arg1;
 - (void)clearEntryPoints;
-- (unsigned int)entryPointsCount;
 - (void)setAddressGeocodeAccuracy:(int)arg1;
-- (int)addressGeocodeAccuracy;
-- (BOOL)hasAddressGeocodeAccuracy;
 - (void)clearBusiness;
 - (unsigned int)businessCount;
 - (id)phoneticAddress;
@@ -111,7 +107,6 @@
 - (void)setPhoneticAddress:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (void)setHasUID:(BOOL)arg1;
-- (BOOL)hasCenter;
 - (id)phoneticName;
 - (BOOL)hasPhoneticName;
 - (BOOL)hasVersion;
@@ -119,14 +114,22 @@
 - (BOOL)hasUID;
 - (void)setPhoneticName:(id)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (BOOL)hasType;
 - (long long)uID;
 - (void)setAddress:(id)arg1;
+- (id)arrivalMapRegionForTransportType:(int)arg1;
+- (id)arrivalMapRegion;
+- (BOOL)hasType;
+- (int)addressGeocodeAccuracy;
+- (BOOL)hasAddressGeocodeAccuracy;
+- (id)entryPoints;
+- (unsigned int)entryPointsCount;
+- (BOOL)hasCenter;
 - (BOOL)hasName;
 - (id)firstBusiness;
 - (id)businessAtIndex:(unsigned int)arg1;
 - (id)business;
 - (id)addressDictionary;
+- (double)radialDistance;
 - (void)copyTo:(id)arg1;
 - (id)mapRegion;
 - (BOOL)hasMapRegion;

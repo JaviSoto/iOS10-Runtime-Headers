@@ -96,10 +96,10 @@
 - (void)setAuthToken:(id)arg1;
 - (id)protocolVersion;
 - (id)accountPropertyForKey:(id)arg1;
+- (void)setPassword:(id)arg1;
 - (id)displayName;
 - (id)lastName;
 - (id)firstName;
-- (void)setPassword:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 - (id)supportedDataclasses;
 - (id)propertiesForDataclass:(id)arg1;

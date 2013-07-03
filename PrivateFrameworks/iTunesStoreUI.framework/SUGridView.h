@@ -56,8 +56,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)tableView;
-- (id)indexPathForCell:(id)arg1;
 - (float)marginForTableView:(id)arg1;
+- (id)indexPathForCell:(id)arg1;
 - (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;

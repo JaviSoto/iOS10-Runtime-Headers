@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUILoadURLOperation, SKUIIncompatibleAppView, SKUIProductPageHeaderViewController, SKUIItemArtworkContext, UIImage, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageItem, UIScrollView;
+@class SSVLoadURLOperation, NSOperationQueue, SKUIIncompatibleAppView, SKUIProductPageHeaderViewController, SKUIItemArtworkContext, UIImage, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageItem, UIScrollView;
 
 @interface SKUIIncompatibleAppViewController : SKUIViewController <SKUIProductPageChildViewController> {
     SKUIItemArtworkContext *_artworkContext;
@@ -10,7 +10,7 @@
     SKUIProductPageHeaderViewController *_headerViewController;
     UIImage *_iconImage;
     SKUIProductPageItem *_incompatibleItem;
-    SKUILoadURLOperation *_loadIconOperation;
+    SSVLoadURLOperation *_loadIconOperation;
     SKUIIncompatibleAppView *_incompatibleView;
     NSOperationQueue *_operationQueue;
 }

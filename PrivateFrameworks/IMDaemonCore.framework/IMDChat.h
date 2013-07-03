@@ -16,6 +16,7 @@
     NSString *_lastAddressedLocalHandle;
     NSArray *_participants;
     FZMessage *_lastMessage;
+    NSMutableDictionary *_chatInfo;
     int _state;
     unsigned char _style;
     unsigned int _unreadCount;
@@ -43,7 +44,6 @@
 @property(readonly) NSDictionary * dictionaryRepresentation;
 @property(readonly) NSDictionary * chatProperties;
 @property(readonly) BOOL isArchived;
-@property(readonly) NSMutableDictionary * copyDictionaryRepresentation;
 
 
 - (void)updateDisplayName:(id)arg1;
@@ -58,9 +58,11 @@
 - (id)lastAddressedLocalHandle;
 - (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 chatIdentifier:(id)arg4 participants:(id)arg5 roomName:(id)arg6 displayName:(id)arg7 lastAddressedLocalHandle:(id)arg8 state:(int)arg9 style:(unsigned char)arg10;
 - (void)setLastMessage:(id)arg1;
+- (id)copyDictionaryRepresentation:(BOOL)arg1;
 - (unsigned int)unreadCount;
 - (void)removeParticipants:(id)arg1;
 - (void)addParticipants:(id)arg1;
+- (void)_updateCachedParticipants;
 - (void)setParticipants:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
 - (void)setLastAddressedLocalHandle:(id)arg1;
@@ -73,7 +75,6 @@
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (id)accountID;
-- (id)copyDictionaryRepresentation;
 - (id)service;
 - (void)setAccountID:(id)arg1;
 - (id)account;

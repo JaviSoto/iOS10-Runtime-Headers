@@ -9,7 +9,6 @@
 @interface UIViewAnimationBlockDelegate : NSObject  {
     BOOL _didBeginBlockAnimation;
     BOOL _allowUserInteraction;
-    BOOL _deferOnCommonModes;
     BOOL _isZeroDuration;
 
   /* Unexpected information at end of encoded ivar type: ? */

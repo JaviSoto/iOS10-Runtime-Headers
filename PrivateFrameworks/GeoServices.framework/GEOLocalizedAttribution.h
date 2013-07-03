@@ -39,12 +39,12 @@
 - (void)copyTo:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
+- (id)language;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (void)setLanguage:(id)arg1;
-- (id)language;
 - (id)dictionaryRepresentation;
 
 @end

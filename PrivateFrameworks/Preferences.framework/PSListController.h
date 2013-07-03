@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSNumber, UIKeyboard, UIAlertView, UITableView, UIActionSheet, NSMutableArray, NSString, UIPopoverController, NSMutableDictionary, NSArray;
+@class NSNumber, UIKeyboard, UITableView, NSMutableArray, UIActionSheet, UIView, UIAlertView, NSString, UIPopoverController, NSMutableDictionary, NSArray;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     NSMutableArray *_prequeuedReusablePSTableCells;
@@ -10,6 +10,7 @@
     BOOL _cachesCells;
     BOOL _reusesCells;
     BOOL _forceSynchronousIconLoadForCreatedCells;
+    UIView *_containerView;
     UITableView *_table;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
@@ -35,16 +36,19 @@
         float y; 
     } _contentOffsetWithKeyboard;
     NSNumber *_marginWidth;
+    BOOL _edgeToEdgeCells;
 }
 
 @property BOOL forceSynchronousIconLoadForCreatedCells;
+@property BOOL edgeToEdgeCells;
 
 + (BOOL)displaysButtonBar;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)popupStylePopoverController;
 - (void)showPINSheet:(id)arg1;
+- (void)setEdgeToEdgeCells:(BOOL)arg1;
 - (BOOL)forceSynchronousIconLoadForCreatedCells;
 - (void)_setNotShowingSetupController;
 - (BOOL)shouldReloadSpecifiersOnResume;
@@ -80,7 +84,6 @@
 - (BOOL)containsSpecifier:(id)arg1;
 - (int)indexOfSpecifierID:(id)arg1;
 - (void)reloadSpecifierID:(id)arg1;
-- (void)reloadSpecifier:(id)arg1;
 - (void)reloadSpecifierAtIndex:(int)arg1;
 - (void)setSpecifiers:(id)arg1;
 - (void)reloadIconForSpecifierForBundle:(id)arg1;
@@ -95,6 +98,7 @@
 - (BOOL)performButtonActionForSpecifier:(id)arg1;
 - (BOOL)performActionForSpecifier:(id)arg1;
 - (id)controllerForSpecifier:(id)arg1;
+- (void)_handleActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (BOOL)performConfirmationCancelActionForSpecifier:(id)arg1;
@@ -116,6 +120,7 @@
 - (void)migrateSpecifierMetadataFrom:(id)arg1 to:(id)arg2;
 - (id)specifierAtIndex:(int)arg1;
 - (id)_createGroupIndices:(id)arg1;
+- (BOOL)edgeToEdgeCells;
 - (Class)tableViewClass;
 - (void)_returnKeyPressed:(id)arg1;
 - (void)_unloadBundleControllers;
@@ -164,11 +169,12 @@
 - (void)setCachesCells:(BOOL)arg1;
 - (void)reloadSpecifiers;
 - (id)specifiers;
+- (void)reloadSpecifier:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
-- (id)bundle;
 - (void)setTitle:(id)arg1;
 - (void)handleURL:(id)arg1;
+- (id)bundle;
 - (void)reload;
 - (void)setMarginWidth:(id)arg1;
 - (id)table;
@@ -194,7 +200,9 @@
 - (int)tableView:(id)arg1 titleAlignmentForFooterInSection:(int)arg2;
 - (int)tableView:(id)arg1 titleAlignmentForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 detailTextForHeaderInSection:(int)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;

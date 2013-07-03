@@ -36,7 +36,7 @@
 - (void)setIsInWishList:(BOOL)arg1;
 - (void)setIsLiked:(BOOL)arg1;
 - (void)setIsBanned:(BOOL)arg1;
-- (void)getStationDictionaryForDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)_sendLikeOrBanRequestWithStatus:(int)arg1;
 - (BOOL)isInWishList;
 - (id)initWithRadioTrack:(id)arg1;
@@ -58,7 +58,6 @@
 - (BOOL)supportsAddStation;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
-- (BOOL)isExplicitTrack;
 - (unsigned int)countForQueueFeeder;
 - (id)urlTimeMarkers;
 - (id)artworkTimeMarkers;
@@ -71,6 +70,7 @@
 - (id)radioTrack;
 - (BOOL)isBanned;
 - (BOOL)isLiked;
+- (BOOL)isExplicitTrack;
 - (id)mainTitle;
 - (unsigned long long)persistentID;
 - (id)title;

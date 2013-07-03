@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSMutableArray, NSMapTable;
 
-@interface GKCollectionViewAggregateDataSource : GKCollectionViewDataSource <GKCollectionViewDataSourceListener> {
+@interface GKCollectionViewAggregateDataSource : GKCollectionViewDataSource  {
     NSMutableArray *_mappings;
     NSMapTable *_dataSourceToMappings;
     NSMutableDictionary *_globalSectionToMappings;
@@ -23,41 +23,41 @@
 - (id)dataSourceToMappings;
 - (void)setMappings:(id)arg1;
 - (void)setDataSource:(id)arg1 forTag:(id)arg2;
-- (void)removeDataSourceWithTag:(id)arg1;
+- (void)removeDataSource:(id)arg1;
 - (void)addDataSource:(id)arg1 withTag:(id)arg2;
 - (id)globalSectionsForLocal:(id)arg1 dataSource:(id)arg2;
 - (id)globalIndexPathsForLocal:(id)arg1 dataSource:(id)arg2;
 - (id)allDataSources;
 - (id)mappingForGlobalSection:(int)arg1;
-- (void)updateMappings;
 - (id)mappingForDataSource:(id)arg1;
+- (void)updateMappings;
 - (id)wrapperForView:(id)arg1 mapping:(id)arg2;
 - (id)mappings;
 - (id)createMetricsTreeWithGridLayout:(id)arg1;
+- (BOOL)containsDataSource:(id)arg1;
+- (unsigned int)sectionForDataSource:(id)arg1;
 - (id)dataSourceForSection:(unsigned int)arg1;
 - (id)localDescription;
 - (id)collectionView:(id)arg1 evaluateFactoryForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3 isRecursive:(BOOL)arg4;
-- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)item:(id)arg1 matchesSearchTerms:(id)arg2 inSection:(int)arg3;
-- (void)resetViewFactories;
-- (void)collectionViewWillBecomeActive:(id)arg1;
-- (id)indexPathsForItem:(id)arg1;
-- (void)collectionViewDidBecomeInactive:(id)arg1;
+- (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2;
 - (void)dataSourceDidReloadData:(id)arg1;
-- (void)dataSource:(id)arg1 performBatchUpdates:(id)arg2;
 - (void)dataSource:(id)arg1 didMoveSection:(int)arg2 toSection:(int)arg3;
 - (void)dataSource:(id)arg1 didRefreshSections:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;
 - (void)dataSource:(id)arg1 didInsertSections:(id)arg2;
 - (void)dataSource:(id)arg1 didMoveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
-- (BOOL)shouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (BOOL)item:(id)arg1 matchesSearchTerms:(id)arg2 inSection:(int)arg3;
+- (void)resetViewFactories;
+- (void)collectionViewWillBecomeActive:(id)arg1;
+- (id)indexPathsForItem:(id)arg1;
+- (void)collectionViewDidBecomeInactive:(id)arg1;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)dataSource:(id)arg1 didRefreshItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didInsertItemsAtIndexPaths:(id)arg2;
 - (void)configureCollectionView:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDescription;
 - (void)setSectionCount:(unsigned int)arg1;

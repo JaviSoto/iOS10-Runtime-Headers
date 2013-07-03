@@ -38,7 +38,6 @@
 - (BOOL)_inputAccessoryViewSupportsSplit;
 - (BOOL)_inputViewSupportsSplit;
 - (BOOL)_inputViewIsVisible;
-- (id)_themableInputAccessoryView;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(BOOL)arg3;
 - (BOOL)_inputViewSetSupportsSplit;
 - (id)restorableResponder;
@@ -51,9 +50,9 @@
 - (void)setSplitHeightDelta:(float)arg1;
 - (void)_setSplitProgress:(float)arg1;
 - (void)_beginSplitTransitionIfNeeded;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputAccessoryViewBounds;
 - (void)refreshPresentation;
 - (BOOL)inSyncWithOrientation:(int)arg1 forKeyboard:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputAccessoryViewBounds;
 - (id)_splittableInputAccessoryView;
 - (BOOL)__isCKAccessoryView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightInputViewSetFrame;
@@ -65,6 +64,7 @@
 - (BOOL)_inputViewIsSplit;
 - (BOOL)inputViewKeyboardCanSplit;
 - (int)keyboardOrientation:(id)arg1;
+- (id)_themableInputAccessoryView;
 - (id)keyboard;
 - (BOOL)visible;
 - (BOOL)supportsSplit;

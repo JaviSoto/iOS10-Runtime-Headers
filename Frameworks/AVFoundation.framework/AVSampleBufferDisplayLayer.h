@@ -18,12 +18,12 @@
 - (void)stopRequestingMediaData;
 - (struct OpaqueCMTimebase { }*)controlTimebase;
 - (void)setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
+- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (long)_createVideoQueue;
 - (void)_setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_refreshAboveHighWaterLevel;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (BOOL)isReadyForMoreMediaData;
-- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_addAnimationsForContentLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
 - (id)videoGravity;
 - (void)setVideoGravity:(id)arg1;

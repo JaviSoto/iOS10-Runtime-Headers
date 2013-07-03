@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class SLPlace, SLMicroBlogMentionsViewController, SLMicroBlogAccountsTableViewController, SLMicroBlogUserRecord, UILabel, SLMicroBlogActiveAccountView, SLSheetPlaceViewController, SLSheetAction, NSObject<SLMicroBlogSheetDelegate>, NSArray;
+@class SLSheetPlaceViewController, SLPlace, SLMicroBlogMentionsViewController, SLMicroBlogAccountsTableViewController, SLMicroBlogUserRecord, UILabel, SLMicroBlogActiveAccountView, NSString, SLSheetAction, NSObject<SLMicroBlogSheetDelegate>, NSArray;
 
 @interface SLMicroBlogComposeViewController : SLComposeServiceViewController <UITextViewDelegate, SLMicroBlogMentionsDelegate, SLMicroBlogAccountsTableViewControllerDelegate, SLSheetPlaceViewControllerDelegate> {
     NSObject<SLMicroBlogSheetDelegate> *_microBlogSheetDelegate;
+    NSString *_serviceAccountTypeIdentifier;
     SLMicroBlogMentionsViewController *_mentionsViewController;
     unsigned int _mentionStartLocation;
     BOOL _rotatedDuringAccountsPopover;
@@ -20,6 +21,7 @@
     SLPlace *_currentPlace;
     UILabel *_countLabel;
     int _shortenedURLCost;
+    int _maxURLLength;
     BOOL _isPresentingPlaces;
     SLMicroBlogActiveAccountView *_activeAccountView;
 }
@@ -37,6 +39,7 @@
 - (void)mentionsViewController:(id)arg1 finishedWithResult:(id)arg2;
 - (id)_mentionsSearchString;
 - (void)_presentMentionsViewControllerIfApplicableForSearchString:(id)arg1;
+- (void)_dismissMentionsViewController;
 - (void)applyMention:(id)arg1;
 - (void)_presentMentionsViewControllerWithSearchString:(id)arg1;
 - (void)noteCheckedInWithDaemon;
@@ -49,7 +52,6 @@
 - (id)_accountSheetAction;
 - (void)_performLocationAction;
 - (void)_presentAccountPickerController;
-- (void)_dismissMentionsViewController;
 - (void)_beginLoadingAccountProfileImages;
 - (id)microBlogSheetDelegate;
 - (void)noteLocationInfoChanged:(id)arg1;

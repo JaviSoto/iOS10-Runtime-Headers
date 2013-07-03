@@ -22,8 +22,8 @@
 @property(readonly) NSArray * touches;
 
 
-- (struct CGPoint { float x1; float x2; })location;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (struct CGPoint { float x1; float x2; })location;
 - (void)dealloc;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;

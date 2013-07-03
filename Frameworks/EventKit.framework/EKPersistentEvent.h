@@ -45,6 +45,8 @@
 
 - (void)removeAction:(id)arg1;
 - (void)addAction:(id)arg1;
+- (id)organizer;
+- (BOOL)validate:(id*)arg1;
 - (int)birthdayId;
 - (BOOL)isMeeting;
 - (id)committedStartDate;
@@ -87,8 +89,6 @@
 - (void)setInvitationStatus:(unsigned int)arg1;
 - (unsigned int)invitationStatus;
 - (int)entityType;
-- (id)organizer;
-- (BOOL)validate:(id*)arg1;
 - (BOOL)isEditable;
 - (BOOL)refresh;
 - (void)setActions:(id)arg1;

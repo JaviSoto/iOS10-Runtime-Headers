@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSObject<GKTurnBasedEventHandlerDelegate>;
+@class NSObject<GKTurnBasedEventHandlerDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface GKTurnBasedEventHandler : NSObject  {
+    NSObject<OS_dispatch_queue> *_lookForEventQueue;
     BOOL _didBecomeActive;
     NSObject<GKTurnBasedEventHandlerDelegate> *_delegateWeak;
 }
@@ -18,6 +19,7 @@
 - (BOOL)didBecomeActive;
 - (void)callTurnEventForMatch:(id)arg1 userTapped:(BOOL)arg2;
 - (void)lookForEvent;
+- (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

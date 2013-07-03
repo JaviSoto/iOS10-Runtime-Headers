@@ -40,7 +40,7 @@
 + (id)_accountWithPath:(id)arg1;
 + (BOOL)getConfigurationFromServerForEmail:(id)arg1;
 + (BOOL)usernameIsEmailAddress;
-+ (void)updateEmailALiasesForActiveAccounts;
++ (void)updateEmailAliasesForActiveAccounts;
 + (id)mailboxUidFromActiveAccountsForURL:(id)arg1;
 + (id)accountWithURLString:(id)arg1;
 + (id)URLForInfo:(id)arg1;
@@ -161,15 +161,13 @@
 - (void)setMailboxUid:(id)arg1 forMailboxType:(int)arg2;
 - (id)transferDisabledMailboxUids;
 - (BOOL)shouldExpungeMessagesOnDelete;
+- (id)allMailMailboxUid;
 - (BOOL)canAppendMessages;
 - (void)fetchMailboxList;
 - (void)nowWouldBeAGoodTimeToStartBackgroundSynchronization;
 - (BOOL)_shouldConfigureMailboxCache;
 - (void)invalidateAndDelete;
 - (id)emailAddressesAndAliases;
-- (void)setLastEmailAliasesSyncDate:(id)arg1;
-- (id)lastEmailAliasesSyncDate;
-- (id)fromEmailAddresses;
 - (void)setReceiveEmailAliasAddresses:(id)arg1;
 - (id)receiveEmailAliasAddressesList;
 - (void)pushUpdateForAliasData;
@@ -202,7 +200,7 @@
 - (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4;
 - (void)setDeliveryAccount:(id)arg1;
 - (BOOL)canReceiveNewMailNotifications;
-- (BOOL)updateEmailAliases;
+- (void)setLastEmailAliasesSyncDate:(id)arg1;
 - (int)emptyFrequencyForMailboxType:(int)arg1;
 - (id)mailboxUidForInfo:(id)arg1;
 - (id)_URLForInfo:(id)arg1;
@@ -244,6 +242,8 @@
 - (id)allLocalMailboxUids;
 - (id)allMailboxUids;
 - (BOOL)_assignSpecialMailboxToAppropriateIvar:(id)arg1 forType:(int)arg2;
+- (BOOL)updateEmailAliases;
+- (id)lastEmailAliasesSyncDate;
 - (id)fromEmailAddressesIncludingDisabled;
 - (id)receiveEmailAliasAddresses;
 - (id)emailAddressesDictionary;
@@ -298,10 +298,11 @@
 - (void)setUnreadCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (void)unregisterStore:(id)arg1 forUid:(id)arg2;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
-- (id)delegateeInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
+- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
 - (int)secureCompositionSigningPolicyForAddress:(id)arg1;
 - (BOOL)secureMIMEEnabled;
+- (id)fromEmailAddresses;
 - (id)library;
 - (void)setLibrary:(id)arg1;
 - (void)saveState;

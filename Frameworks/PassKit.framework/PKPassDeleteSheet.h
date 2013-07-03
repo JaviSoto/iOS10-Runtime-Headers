@@ -27,7 +27,7 @@
 - (void)finished:(BOOL)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)showInView:(id)arg1;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)actionSheetCancel:(id)arg1;
 
 @end

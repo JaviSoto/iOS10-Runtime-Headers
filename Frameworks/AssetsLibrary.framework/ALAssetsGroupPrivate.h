@@ -26,7 +26,6 @@
 @property BOOL isCloudSharedGroup;
 
 
-- (void)setIsValid:(BOOL)arg1;
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (void)setIsCloudSharedGroup:(BOOL)arg1;
@@ -47,6 +46,7 @@
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)library;
 - (void)setLibrary:(id)arg1;
+- (void)setIsValid:(BOOL)arg1;
 - (id)propertyValues;
 - (BOOL)isValid;
 - (void)dealloc;

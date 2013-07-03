@@ -31,8 +31,8 @@
 + (unsigned int)_zIndex;
 + (float)accuracyDiameter:(float)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPresentationCourse:(double)arg1;
 - (double)presentationCourse;

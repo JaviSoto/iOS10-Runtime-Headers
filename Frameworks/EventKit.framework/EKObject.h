@@ -26,6 +26,7 @@
 
 
 - (void)setDirtyProperties:(id)arg1;
+- (BOOL)validate:(id*)arg1;
 - (void)setWeakRelations:(id)arg1;
 - (id)weakRelations;
 - (void)setRelations:(id)arg1;
@@ -62,15 +63,14 @@
 - (BOOL)isNew;
 - (id)owner;
 - (id)relations;
-- (BOOL)validate:(id*)arg1;
 - (id)propertyName;
 - (void)setPropertyName:(id)arg1;
 - (void)rollback;
-- (void)reset;
 - (BOOL)hasChanges;
-- (id)objectID;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (id)dirtyProperties;
+- (id)objectID;
+- (void)reset;
 - (BOOL)refresh;
 - (void)setFlags:(unsigned long)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -14,6 +14,14 @@
 + (id)supportedNonImageMIMETypes;
 
 - (id)title;
+- (id)matchLabels:(id)arg1 againstElement:(id)arg2;
+- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
+- (id)controlsInForm:(id)arg1;
+- (id)currentForm;
+- (id)formForElement:(id)arg1;
+- (BOOL)elementIsPassword:(id)arg1;
+- (BOOL)elementDoesAutoComplete:(id)arg1;
+- (id)elementWithName:(id)arg1 inForm:(id)arg2;
 - (BOOL)canSaveAsWebArchive;
 - (id)documentSource;
 - (BOOL)canProvideDocumentSource;
@@ -28,15 +36,5 @@
 - (id)init;
 - (void)finalize;
 - (void)dealloc;
-- (id)controlsInForm:(id)arg1;
-- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
-- (id)matchLabels:(id)arg1 againstElement:(id)arg2;
-- (id)formForElement:(id)arg1;
-- (id)currentForm;
-- (BOOL)elementIsPassword:(id)arg1;
-- (BOOL)elementDoesAutoComplete:(id)arg1;
-- (id)elementWithName:(id)arg1 inForm:(id)arg2;
-- (BOOL)formElementLooksLikeCreditCardNumberField:(id)arg1;
-- (BOOL)formElementLooksLikeSecurityCodeField:(id)arg1;
 
 @end

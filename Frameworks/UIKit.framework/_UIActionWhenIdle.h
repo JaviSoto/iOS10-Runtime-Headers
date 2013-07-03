@@ -13,6 +13,7 @@
 + (id)actionWhenIdleWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 
 - (void)invoke;
+- (BOOL)isValid;
 - (void)invalidate;
 - (void)dealloc;
 - (void)setInvocation:(id)arg1;

@@ -68,11 +68,11 @@
 - (void)turnBasedMatchDetailViewControllerDidAcceptInvitation:(id)arg1;
 - (void)handleTurnBasedEvent:(id)arg1;
 - (void)configureViewFactories;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
 - (id)matchRequest;
 - (void)cancelButtonPressed;
 - (void)configureDataSource;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (id)init;

@@ -19,7 +19,6 @@
 @property(readonly) NSString * GUID;
 
 
-- (id)serviceNameForIDQuery;
 - (id)callerID;
 - (void)reIdentify;
 - (void)reregister;
@@ -29,7 +28,7 @@
 - (id)certForURI:(id)arg1;
 - (BOOL)_isDeviceRegistered;
 - (void)_updateAccountStatusToUnregistered:(BOOL)arg1;
-- (void)clearCallerIDCaches;
+- (void)clearCallerID;
 - (void)activeDevicesUpdated;
 - (void)refreshRegistration;
 - (void)loginServiceSession;

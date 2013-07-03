@@ -24,8 +24,8 @@
 @property BOOL highlightsOnlyContentView;
 @property(getter=isHighlighted) BOOL highlighted;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_removeSubviewsForConfiguration;
 - (id)_clippedImageForImage:(id)arg1;
@@ -44,17 +44,17 @@
 - (BOOL)highlightsOnlyContentView;
 - (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setDeleteConfirmationVisisble:(BOOL)arg1;
-- (void)setConfiguration:(id)arg1;
 - (void)reloadView;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (void)setClipCorners:(int)arg1;
 - (int)clipCorners;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
-- (BOOL)isHighlighted;
 - (void)layoutSubviews;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;

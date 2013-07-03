@@ -55,8 +55,8 @@
 - (float)kerning;
 - (void)setTextOpacity:(float)arg1;
 - (void)setKerning:(float)arg1;
-- (void)setTextOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })textOffset;
+- (void)setTextOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontSize:(float)arg1;
 - (float)minFontSize;
 - (void)setMinFontSize:(float)arg1;

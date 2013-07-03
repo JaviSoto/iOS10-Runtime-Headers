@@ -42,10 +42,10 @@
 - (unsigned short)unicode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
 - (void)setClipIndex:(unsigned int)arg1;
+- (void)setUser:(id)arg1;
 - (BOOL)isVisible;
 - (id)init;
 - (id)user;
 - (void)dealloc;
-- (void)setUser:(id)arg1;
 
 @end

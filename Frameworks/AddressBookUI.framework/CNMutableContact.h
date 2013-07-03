@@ -65,16 +65,16 @@
 - (void)setPhoneticMiddleName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;
 - (void)setPreviousFamilyName:(id)arg1;
+- (void)setFamilyName:(id)arg1;
 - (void)setMiddleName:(id)arg1;
+- (void)setGivenName:(id)arg1;
 - (struct __CFString { }*)_ABLabelFromCNLabel:(id)arg1;
-- (BOOL)saveContact;
 - (void)_setStringMultiValueForProperty:(int)arg1 values:(id)arg2;
 - (void)_setMultiValueForProperty:(int)arg1 values:(id)arg2 valueFromCNValue:(id)arg3;
 - (BOOL)isEqualToContact:(id)arg1;
 - (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2;
-- (void)setFamilyName:(id)arg1;
-- (void)setGivenName:(id)arg1;
+- (BOOL)saveContact;
 - (BOOL)unlinkContact;
 - (BOOL)linkToContact:(id)arg1;
 - (BOOL)saveContactInAddressBook:(void*)arg1;
@@ -83,5 +83,6 @@
 - (void)setEmailAddresses:(id)arg1;
 - (id)initWithRecord:(void*)arg1;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 
 @end

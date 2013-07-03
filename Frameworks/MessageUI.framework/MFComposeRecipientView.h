@@ -55,8 +55,8 @@
 @property int hideLastAtomComma;
 @property(retain) MFComposeRecipient * placeholderRecipient;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isSeparatorHidden;
 - (unsigned int)defaultAtomPresentationOptions;
@@ -91,12 +91,12 @@
 - (void)clearAllAddressAtomPresentationOptions;
 - (id)placeholderRecipient;
 - (void)_addRecord:(void*)arg1 identifier:(int)arg2;
-- (void)_reflowAnimated:(BOOL)arg1;
 - (void)addRecipient:(id)arg1 index:(unsigned int)arg2 animate:(BOOL)arg3;
 - (void)_removeUncommentedAddress:(id)arg1;
 - (void)_removeAddressAtomPresentationOptionsForRecipient:(id)arg1;
 - (void)_addUncommentedAddress:(id)arg1;
 - (void)_removeAllRecipients;
+- (void)_reflowAnimated:(BOOL)arg1;
 - (void)_cancelDelayTimer;
 - (void)setHideLastAtomComma:(int)arg1;
 - (void)addButtonClicked:(id)arg1;
@@ -115,6 +115,7 @@
 - (void)dragCompletedForItem:(id)arg1 success:(BOOL)arg2;
 - (void)dropItem:(id)arg1;
 - (id)viewForDragSource;
+- (void)_setNeedsReflow;
 - (void)setSeparatorHidden:(BOOL)arg1;
 - (void)setAddressAtomPresentationOptions:(unsigned int)arg1 forRecipient:(id)arg2;
 - (void)setDefaultAtomPresentationOptions:(unsigned int)arg1;
@@ -134,7 +135,6 @@
 - (BOOL)didIgnoreFirstResponderResign;
 - (float)offsetForRowWithTextField;
 - (float)textFieldOffsetForNumberOfRowsToScroll:(unsigned int)arg1 numberOfRowsAboveField:(int)arg2;
-- (void)_setNeedsReflow;
 - (void)refreshPreferredContentSize;
 - (void)composeRecipientAtomSelectNext:(id)arg1;
 - (void)composeRecipientAtomSelectPrevious:(id)arg1;

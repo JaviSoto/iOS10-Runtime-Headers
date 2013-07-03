@@ -23,7 +23,7 @@
 - (void)styleToolbar:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 
 @end

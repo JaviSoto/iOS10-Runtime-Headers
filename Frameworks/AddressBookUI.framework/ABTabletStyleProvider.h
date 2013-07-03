@@ -29,9 +29,9 @@
 - (id)cardTableCellBorderColor;
 - (id)personHeaderShadowColor;
 - (BOOL)membersSearchBarIsInTableHeader;
-- (id)membersHeaderBackgroundColor;
 - (int)abCellStyleForGroupsTablePlain;
 - (id)personValueEmphasizedColor;
+- (id)membersHeaderBackgroundColor;
 - (BOOL)searchIsAlwaysActive;
 - (int)separatorStyleForCellStyle:(int)arg1;
 - (int)abCellStyleForMembersTable;

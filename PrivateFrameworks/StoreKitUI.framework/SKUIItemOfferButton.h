@@ -2,10 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, UIImageView, SKUICircleProgressIndicator, UILabel, UIView, SKUIItemOfferButtonAppearance, SKUIFocusedTouchGestureRecognizer, NSString, UIColor, <SKUIItemOfferButtonDelegate>;
+@class UIImageView, SKUICircleProgressIndicator, UILabel, UIView, UIImage, SKUIFocusedTouchGestureRecognizer, NSString, UIColor, <SKUIItemOfferButtonDelegate>;
 
 @interface SKUIItemOfferButton : UIControl  {
-    SKUIItemOfferButtonAppearance *_appearance;
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
     UIImageView *_cloudArrowImageView;
@@ -22,6 +21,10 @@
     BOOL _showsConfirmationState;
     unsigned int _state;
     NSString *_title;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _titleFitSize;
     UILabel *_titleLabel;
     BOOL _universal;
 }
@@ -35,7 +38,6 @@
 @property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
 @property BOOL showsConfirmationState;
 @property int progressType;
-@property(retain) SKUIItemOfferButtonAppearance * appearance;
 @property(getter=isUniversal) BOOL universal;
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageInsetsForProgressType:(int)arg1;
@@ -57,14 +59,15 @@
 - (void)setShowsConfirmationState:(BOOL)arg1;
 - (void)setFillStyle:(int)arg1;
 - (void)_cancelGestureAction:(id)arg1;
-- (void)_sendWillAnimate;
 - (void)_setProgressVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateForProgressFinished:(BOOL)arg1;
 - (void)setProgressType:(int)arg1 animated:(BOOL)arg2;
 - (id)_activeTintColor;
 - (void)_reloadForCurrentState;
+- (void)_sendWillAnimate;
 - (void)setShowingConfirmation:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setAppearance:(id)arg1;
+- (void)removeButtonStateAnimations;
+- (void)setColoringWithAppearance:(id)arg1;
 - (BOOL)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
 - (void)_removeCancelGestureRecognizer;
 - (id)confirmationTitle;
@@ -74,7 +77,6 @@
 - (id)title;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)image;
 - (void)setImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -88,7 +90,6 @@
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)tintColorDidChange;
-- (id)appearance;
 - (id)_basicAnimationWithKeyPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;

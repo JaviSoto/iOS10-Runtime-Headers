@@ -15,16 +15,16 @@
 @property int userRatingCount;
 @property(retain) NSString * userRatingCountString;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)userRatingCount;
 - (void)setUserRatingCountString:(id)arg1;
 - (void)setUserRatingCount:(int)arg1;
 - (id)userRatingCountString;
 - (void)setUserRating:(float)arg1;
-- (void)reloadView;
 - (float)userRating;
+- (void)reloadView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

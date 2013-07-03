@@ -36,6 +36,7 @@
 - (void*)getValueForKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (oneway void)release;
 - (id)delegate;
 - (void)setAirplaneMode:(BOOL)arg1;
 

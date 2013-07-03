@@ -32,7 +32,7 @@
 - (struct CGSize { float x1; float x2; })_passcodeFieldSize;
 - (struct CGSize { float x1; float x2; })_viewSize;
 - (void)setCustomBackgroundColor:(id)arg1;
-- (void)resetForFailedPasscode;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (id)okButton;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -42,8 +42,8 @@
 - (BOOL)canResignFirstResponder;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)isFirstResponder;
-- (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)canBecomeFirstResponder;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (void)layoutSubviews;
 
 @end

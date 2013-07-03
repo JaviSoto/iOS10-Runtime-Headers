@@ -8,14 +8,14 @@
     BOOL _shouldDisplayChallengePlayButton;
     GKGameCenterViewController *_delegateWeak;
     int _viewState;
-    NSString *_leaderboardCategory;
+    NSString *_leaderboardIdentifier;
     int _leaderboardTimeScope;
 }
 
 @property GKGameCenterViewController * delegate;
 @property int viewState;
 @property int leaderboardTimeScope;
-@property(retain) NSString * leaderboardCategory;
+@property(retain) NSString * leaderboardIdentifier;
 @property BOOL shouldDisplayChallengePlayButton;
 @property(retain) GKGame * game;
 
@@ -24,19 +24,20 @@
 
 - (void)setShouldDisplayChallengePlayButton:(BOOL)arg1;
 - (BOOL)shouldDisplayChallengePlayButton;
-- (void)setCurrentViewState:(int)arg1;
 - (void)setAPIControllerFlags:(struct { BOOL x1; })arg1;
 - (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id)arg1;
 - (void)playPressedForChallenge:(id)arg1;
+- (void)remoteControllerDidSelectLeaderboardTimeScope:(id)arg1;
+- (void)remoteControllerDidSelectLeaderboardIdentifier:(id)arg1;
 - (void)remoteControllerDidChangeViewState:(id)arg1;
 - (id)observedKeyPaths;
 - (BOOL)_dismissSelfAfterGettingShouldFinish;
 - (void)remoteViewControllerIsFinishing;
 - (void)remoteViewControllerIsCanceling;
-- (id)leaderboardCategory;
 - (void)setLeaderboardTimeScope:(int)arg1;
 - (int)leaderboardTimeScope;
-- (void)setLeaderboardCategory:(id)arg1;
+- (id)leaderboardIdentifier;
+- (void)setLeaderboardIdentifier:(id)arg1;
 - (void)setViewState:(int)arg1;
 - (int)viewState;
 - (void)setDelegate:(id)arg1;

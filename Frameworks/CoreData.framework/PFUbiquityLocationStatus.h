@@ -24,7 +24,7 @@
 @property(readonly) BOOL isLive;
 @property(readonly) BOOL isDeleted;
 @property(readonly) BOOL isDownloaded;
-@property(readonly) BOOL isDownloading;
+@property BOOL isDownloading;
 @property(readonly) BOOL isUploaded;
 @property(readonly) BOOL isUploading;
 @property(readonly) BOOL isScheduled;
@@ -37,13 +37,13 @@
 
 
 - (int)numNotifications;
-- (id)location;
 - (BOOL)isFailed;
 - (BOOL)isScheduled;
 - (BOOL)isExported;
 - (BOOL)isImported;
 - (BOOL)isUploading;
 - (BOOL)isUploaded;
+- (void)setIsDownloading:(BOOL)arg1;
 - (BOOL)isDownloading;
 - (BOOL)isDownloaded;
 - (BOOL)isLive;
@@ -54,10 +54,11 @@
 - (void)logWasScheduled;
 - (void)logWasImported;
 - (void)checkFileURLState;
-- (id)initWithLocation:(id)arg1;
 - (void)statusDidChange;
 - (BOOL)getBoolResourceFromURL:(id)arg1 forKey:(id)arg2;
 - (BOOL)isDeleted;
+- (id)location;
+- (id)initWithLocation:(id)arg1;
 - (id)init;
 - (unsigned int)hash;
 - (void)dealloc;

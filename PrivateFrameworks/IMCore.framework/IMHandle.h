@@ -158,8 +158,8 @@
 + (void)_loadStatusNames;
 + (id)imHandlesForIMPerson:(id)arg1;
 + (id)filterIMHandlesForBestAccountSiblings:(id)arg1;
-+ (void)setNotificationsEnabled:(BOOL)arg1;
 + (BOOL)notificationsEnabled;
++ (void)setNotificationsEnabled:(BOOL)arg1;
 
 - (void)requestValueOfProperty:(id)arg1;
 - (void)setPersonStatus:(unsigned int)arg1;
@@ -308,6 +308,7 @@
 - (id)otherServiceIDs;
 - (id)resource;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3;
+- (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3 knownIDStatus:(int)arg4;
 - (void)_updateOriginalID:(id)arg1;
 - (void)_setOriginalID:(id)arg1;
 - (id)originalID;

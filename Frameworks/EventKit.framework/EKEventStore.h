@@ -248,7 +248,6 @@
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (void)rollback;
 - (id)registeredObjects;
-- (void)reset;
 - (void)setDeletedObjects:(id)arg1;
 - (void)setUpdatedObjects:(id)arg1;
 - (void)setInsertedObjects:(id)arg1;
@@ -257,6 +256,7 @@
 - (id)insertedObjects;
 - (int)sequenceNumber;
 - (id)sources;
+- (void)reset;
 - (id)init;
 - (void)setFlags:(unsigned long)arg1;
 - (id)calendarWithIdentifier:(id)arg1;

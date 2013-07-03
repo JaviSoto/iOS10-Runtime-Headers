@@ -126,8 +126,8 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (id)properties;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)context;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
@@ -206,7 +206,6 @@
 - (id)layerAtTime:(double)arg1;
 - (id)layerBeingDrawn;
 - (BOOL)layoutIsActive;
-- (void)setMeshTransform:(id)arg1;
 - (BOOL)_canDisplayConcurrently;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })convertDoubleRect:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toLayer:(id)arg2;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })convertDoubleRect:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
@@ -384,6 +383,7 @@
 - (BOOL)allowsWeakReference;
 - (id)delegate;
 - (id)actions;
+- (void)setMeshTransform:(id)arg1;
 - (void)setAllowsEdgeAntialiasing:(BOOL)arg1;
 - (void)setHitTestsAsOpaque:(BOOL)arg1;
 - (BOOL)opaque;

@@ -18,8 +18,8 @@
 - (id)primary;
 - (id)encodedClassName;
 - (id)source;
-- (void)setSource:(id)arg1;
 - (void)setPosition:(id)arg1;
+- (void)setSource:(id)arg1;
 - (id)position;
 - (id)groupIdentifier;
 

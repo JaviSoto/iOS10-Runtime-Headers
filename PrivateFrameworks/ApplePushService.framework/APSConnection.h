@@ -70,7 +70,6 @@
 - (void)_sendOutgoingMessage:(id)arg1 fake:(BOOL)arg2;
 - (id)_listForIdentifierOnIvarQueue:(unsigned int)arg1;
 - (void)_onIvarQueue_setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3 sendToDaemon:(BOOL)arg4;
-- (void)_disconnectOnIvarQueue;
 - (void)_cancelConnectionOnIvarQueue;
 - (void)_deliverConnectionStatusChange:(BOOL)arg1;
 - (void)setMessageSize:(unsigned int)arg1;
@@ -86,6 +85,7 @@
 - (void)_shutdownFromDealloc;
 - (void)_disconnectFromDealloc;
 - (void)_shutdownOnIvarQueue;
+- (void)_disconnectOnIvarQueue;
 - (void)_connectIfNecessaryOnIvarQueue;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
 - (void)sendOutgoingMessage:(id)arg1;

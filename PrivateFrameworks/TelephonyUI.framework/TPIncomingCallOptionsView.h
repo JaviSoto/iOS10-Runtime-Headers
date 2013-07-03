@@ -42,14 +42,15 @@
 @property BOOL optionsShown;
 @property(readonly) BOOL hasGrabberImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)usesLockBar;
 - (void)scrollViewDidEndScrollingWithShownPixels:(float)arg1;
 - (void)scrollViewDidBeginScrolling;
 - (void)scrollViewDidShowPixels:(float)arg1;
 - (id)displayedGrabberBar;
+- (id)lockBar;
 - (void)setUsesLockBar:(BOOL)arg1;
 - (void)setLockBarLabel:(id)arg1;
 - (BOOL)hasGrabberImage;
@@ -67,7 +68,6 @@
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setWellAlpha:(float)arg1;
 - (id)initForIncomingCallWaitingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)lockBar;
 - (void)setOptionsShown:(BOOL)arg1;
 - (void)setIncomingOptionsDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -84,9 +84,9 @@
 - (void)reloadData;
 - (void)start;
 - (BOOL)isAccessibilityElement;
+- (void)_axClearDelegate:(id)arg1;
+- (void)_axClearDelegateClearer;
 - (id)accessibilityContainerElements;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_axClearDelegateClearer;
-- (void)_axClearDelegate:(id)arg1;
 
 @end

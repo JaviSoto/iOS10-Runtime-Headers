@@ -191,7 +191,6 @@
 - (id)alertSuppressionContexts;
 - (void)setExpirationEvents:(unsigned int)arg1;
 - (unsigned int)expirationEvents;
-- (void)setExpirationDate:(id)arg1;
 - (void)setWantsFullscreenPresentation:(BOOL)arg1;
 - (BOOL)wantsFullscreenPresentation;
 - (void)setUnlockActionLabelOverride:(id)arg1;
@@ -245,6 +244,7 @@
 - (void)setButtons:(id)arg1;
 - (id)sectionID;
 - (void)setRecordID:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
 - (id)recordID;
 - (id)expirationDate;
 - (void)setEndDate:(id)arg1;
@@ -253,13 +253,13 @@
 - (void)setMessage:(id)arg1;
 - (id)topic;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)attachments;
 - (id)observers;
 - (void)setObservers:(id)arg1;
 - (void)setActions:(id)arg1;
+- (void)setContext:(id)arg1;
 - (id)content;
 - (id)message;
 - (id)init;

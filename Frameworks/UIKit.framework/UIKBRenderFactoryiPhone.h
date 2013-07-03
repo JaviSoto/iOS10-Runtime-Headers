@@ -8,12 +8,13 @@
 
 - (id)shiftedControlKeyTraits;
 - (float)_row4ControlSegmentWidth;
-- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
+- (float)dualStringBottomAdditionalOffsetForDisplayContents:(id)arg1;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantPaddedFrameInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
 - (BOOL)_popupStyleForKey:(id)arg1;
+- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;

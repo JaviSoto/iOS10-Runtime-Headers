@@ -12,10 +12,10 @@
 + (float)arrowHeight;
 + (BOOL)wantsDefaultContentAppearance;
 
-- (float)_shadowRadius;
-- (float)_shadowOpacity;
-- (void)setArrowOffset:(float)arg1;
 - (float)arrowOffset;
+- (void)setArrowOffset:(float)arg1;
+- (float)_shadowOpacity;
+- (float)_shadowRadius;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (unsigned int)arrowDirection;
 - (struct CGSize { float x1; float x2; })_shadowOffset;

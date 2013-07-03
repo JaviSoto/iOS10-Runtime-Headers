@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDimmingView, UIInputSwitcherTableView, UIInputSwitcherSelectionExtraView, NSTimer, UIInputSwitcherShadowView;
+@class UIInputSwitcherSelectionExtraView, UIKeyboardLayoutStar, NSTimer, UIKBTree, UIInputSwitcherShadowView, UIDimmingView, UIInputSwitcherTableView;
 
 @interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
     UIInputSwitcherTableView *m_table;
@@ -33,20 +33,23 @@
     int m_visibleRows;
     int m_firstVisibleRow;
     int m_mode;
-    double dismissDelay;
     UIDimmingView *m_dimmingView;
     BOOL _usesStraightLeftEdge;
-    double _dismissDelay;
+    BOOL _usesDarkTheme;
+    UIKBTree *_referenceKey;
+    UIKeyboardLayoutStar *_layout;
 }
 
 @property int mode;
-@property double dismissDelay;
 @property(readonly) BOOL usesTable;
 @property BOOL usesStraightLeftEdge;
+@property BOOL usesDarkTheme;
+@property UIKBTree * referenceKey;
+@property UIKeyboardLayoutStar * layout;
 
 + (id)viewThatContainsBaseKey;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -54,11 +57,15 @@
 - (BOOL)isVisible;
 - (id)font;
 - (void)setNeedsDisplay;
+- (void)setLayout:(id)arg1;
+- (id)layout;
 - (id)table;
 - (void)setMode:(int)arg1;
 - (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popupRect;
 - (float)minYOfLastTableCellForSelectionExtraView;
 - (BOOL)centerPopUpOverKey;
+- (void)setUsesDarkTheme:(BOOL)arg1;
 - (void)setHighlightForRowAtIndexPath:(id)arg1 highlight:(BOOL)arg2;
 - (id)subtitleFont;
 - (id)subtitleForItemAtIndex:(int)arg1;
@@ -68,32 +75,37 @@
 - (void)endScrolling:(id)arg1;
 - (void)setNeedsDisplayForTopBottomCells;
 - (void)setNeedsDisplayForCell:(id)arg1;
-- (double)dismissDelay;
 - (void)_delayedFade;
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (id)referenceKey;
+- (void)setReferenceKey:(id)arg1;
+- (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (void)performShowAnimation;
+- (void)insertSelExtraView;
 - (void)highlightRow:(int)arg1;
 - (int)defaultSelectedIndex;
-- (BOOL)usesDimmingView;
+- (void)setupShadowViewWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUsesStraightLeftEdge:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })preferredSize;
-- (void)setDismissDelay:(double)arg1;
+- (BOOL)usesShadowView;
 - (BOOL)usesTable;
 - (id)maskForShadowViewBlurredBackground;
+- (BOOL)usesDarkTheme;
 - (BOOL)usesStraightLeftEdge;
+- (BOOL)usesDimmingView;
 - (id)dimmingView;
 - (void)showAsHUD;
 - (void)autoscrollTimerFired:(id)arg1;
 - (void)stopAnyAutoscrolling;
 - (void)selectItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)fade;
 - (void)fadeWithDelay:(double)arg1;
-- (void)showAsPopupFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 openByTap:(BOOL)arg3;
-- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)showAsPopupFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (int)numberOfItems;
 - (void)hide;
+- (void)setRenderConfig:(id)arg1;
 - (int)mode;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

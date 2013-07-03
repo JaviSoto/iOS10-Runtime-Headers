@@ -22,6 +22,7 @@
 }
 
 @property(readonly) struct __CFString { }* currentRAT;
+@property(readonly) BOOL isLTEWithCDRX;
 @property(readonly) int interfaceIdentifier;
 @property(readonly) int linkQuality;
 @property(readonly) BOOL isInterfaceUsable;
@@ -37,6 +38,7 @@
 - (void)_setupWWANMonitor;
 - (id)initWithDelegateQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)_forwardConfigurationOnIvarQueue;
+- (BOOL)isLTEWithCDRX;
 - (struct __CFString { }*)currentRAT;
 - (int)interfaceIdentifier;
 - (BOOL)isRadioHot;

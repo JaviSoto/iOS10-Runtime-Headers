@@ -40,6 +40,7 @@
 - (void)_finishServiceViewControllerRequestWithSuccess:(BOOL)arg1;
 - (void)_configureRemoteViewContoller;
 - (void)_didEndDelayingCompositionPresentation;
+- (double)_delayedPresentationTimeout;
 - (void)_beginDelayingCompositionPresenation;
 - (void)_notifyCompositionDidFinish;
 - (void)_cancelComposition:(id)arg1;

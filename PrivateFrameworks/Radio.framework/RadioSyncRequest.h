@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSMutableSet, SSURLConnectionRequest, NSObject<OS_dispatch_queue>, NSDictionary;
+@class NSMutableSet, SSURLConnectionRequest, NSObject<OS_dispatch_queue>, NSDictionary, NSString;
 
 @interface RadioSyncRequest : RadioRequest  {
     NSObject<OS_dispatch_queue> *_artworkQueue;
@@ -14,14 +14,18 @@
     BOOL _disableArtworkLoading;
     BOOL _includeCleanTracksOnly;
     BOOL _isAutomaticUpdate;
+    NSString *_referer;
 }
 
 @property BOOL disableArtworkLoading;
 @property BOOL includeCleanTracksOnly;
 @property BOOL isAutomaticUpdate;
 @property BOOL requireTracksBeforeCompletion;
+@property(copy) NSString * referer;
 
 
+- (void)setReferer:(id)arg1;
+- (id)referer;
 - (void)setIsAutomaticUpdate:(BOOL)arg1;
 - (BOOL)isAutomaticUpdate;
 - (BOOL)includeCleanTracksOnly;
@@ -31,8 +35,10 @@
 - (BOOL)requireTracksBeforeCompletion;
 - (void)requireTracksBeforeCompletionForStationPeristentID:(long long)arg1;
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
-- (id)_updateModel:(id)arg1 withChangeDictionary:(id)arg2 changeType:(int*)arg3;
+- (id)_updateModel:(id)arg1 withChangeDictionary:(id)arg2 changeType:(int*)arg3 loadArtworkSynchronously:(BOOL)arg4;
+- (id)_stationSortOrderForChanges:(id)arg1;
 - (id)_sortedChangesByType:(id)arg1;
+- (id)matchDictionary;
 - (id)changeList;
 - (id)initWithGlobalVersion:(unsigned long long)arg1;
 - (void)startWithCompletionHandler:(id)arg1;

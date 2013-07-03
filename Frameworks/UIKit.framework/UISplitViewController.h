@@ -36,6 +36,7 @@
         } size; 
     } _rotatingToMasterViewFrame;
     NSArray *_cornerImageViews;
+    UIView *_underBarSeparatorView;
     unsigned int _slideTransitionCount;
     UIView *_masterBackgroundView;
     BOOL _presentsInFadingPopover;
@@ -70,8 +71,8 @@
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_commonInit;
 - (void)setDelegate:(id)arg1;
@@ -89,6 +90,7 @@
 - (void)setHidesMasterViewInPortrait:(BOOL)arg1;
 - (void)setLeftColumnWidth:(float)arg1;
 - (float)gutterWidth;
+- (void)_setupUnderBarSeparatorViewForOrientation:(int)arg1;
 - (void)_updateMasterViewControllerFrame;
 - (void)_removeRoundedCorners;
 - (void)_setupRoundedCorners;

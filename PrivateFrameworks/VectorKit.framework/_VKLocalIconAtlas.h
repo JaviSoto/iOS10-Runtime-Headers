@@ -7,5 +7,6 @@
 
 
 - (struct CGImage { }*)_createImageForName:(id)arg1 contentScale:(float)arg2;
+- (struct CGImage { }*)_createImageForStyleAttributeKey:(unsigned int)arg1 value:(int)arg2 contentScale:(float)arg3;
 
 @end

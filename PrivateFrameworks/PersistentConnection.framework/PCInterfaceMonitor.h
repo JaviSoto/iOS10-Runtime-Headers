@@ -18,12 +18,14 @@
 @property(readonly) BOOL isPoorLinkQuality;
 @property(readonly) BOOL isRadioHot;
 @property(readonly) struct __CFString { }* currentRAT;
+@property(readonly) BOOL isLTEWithCDRX;
 
 + (BOOL)isPoorLinkQuality:(int)arg1;
 + (id)stringForLinkQuality:(int)arg1;
 + (id)sharedInstanceForIdentifier:(int)arg1;
 
 - (id)initWithInterfaceIdentifier:(int)arg1;
+- (BOOL)isLTEWithCDRX;
 - (struct __CFString { }*)currentRAT;
 - (int)interfaceIdentifier;
 - (BOOL)isRadioHot;

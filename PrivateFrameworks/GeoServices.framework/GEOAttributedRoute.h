@@ -32,6 +32,7 @@
 - (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtStep:(unsigned long)arg1;
 - (void)setCurrentDisplayStep:(unsigned int)arg1;
 - (void)setManeuverDisplaySteps:(id)arg1;
+- (bool)_needsCornerOffsetAt:(unsigned int)arg1;
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
 - (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtStep:(unsigned long)arg1 metersPerPoint:(double)arg2;

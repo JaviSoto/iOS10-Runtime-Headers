@@ -36,7 +36,6 @@
 - (BOOL)isSearching;
 - (void)retry;
 - (id)context;
-- (id)results;
 - (void)setContext:(id)arg1;
 - (id)init;
 - (id)fragment;
@@ -46,6 +45,7 @@
 - (id)delegate;
 - (id)identifier;
 - (void)cancel;
+- (id)results;
 - (void)setFragment:(id)arg1;
 
 @end

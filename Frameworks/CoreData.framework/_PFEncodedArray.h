@@ -11,8 +11,8 @@
 }
 
 
-- (const id*)_values;
 - (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (const id*)_values;
 - (id)init;
 - (id)mutableCopy;
 - (id)objectAtIndex:(unsigned int)arg1;

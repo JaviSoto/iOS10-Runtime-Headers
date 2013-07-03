@@ -48,8 +48,8 @@
 + (BOOL)buttonImagesUseBackgroundImage;
 + (unsigned long long)defaultVisibleParts;
 + (int)buttonType;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)updateVisibleButtonImages;
 - (BOOL)alwaysHidesSystemVolumeHUD;
@@ -65,9 +65,9 @@
 - (id)disabledButtonImageForPart:(unsigned long long)arg1;
 - (void)buttonUp:(id)arg1;
 - (void)buttonDown:(id)arg1;
-- (void)_handleTapForPart:(unsigned long long)arg1;
-- (void)_handleReleaseForPart:(unsigned long long)arg1;
-- (void)_handleHoldForPart:(unsigned long long)arg1;
+- (BOOL)_handleTapForPart:(unsigned long long)arg1;
+- (BOOL)_handleReleaseForPart:(unsigned long long)arg1;
+- (BOOL)_handleHoldForPart:(unsigned long long)arg1;
 - (id)highlightedButtonImageForPart:(unsigned long long)arg1;
 - (id)buttonImageForPart:(unsigned long long)arg1;
 - (id)playButtonImage;

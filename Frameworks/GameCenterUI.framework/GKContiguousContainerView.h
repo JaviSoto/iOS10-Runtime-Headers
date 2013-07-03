@@ -26,9 +26,9 @@
 - (BOOL)vertical;
 - (id)baselineView;
 - (void)_addContiguousSubviews:(id)arg1;
-- (void)setOverlap:(float)arg1;
 - (void)setApplyOrthogonalConstraints:(BOOL)arg1;
 - (void)setBaselineView:(id)arg1;
+- (void)setOverlap:(float)arg1;
 - (void)replaceSubviews:(id)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;

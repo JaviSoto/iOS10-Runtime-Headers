@@ -14,9 +14,9 @@
 @property(copy) NSString * title;
 
 
-- (void)setColoringWithColorScheme:(id)arg1;
 - (id)contentChildView;
 - (void)setContentChildView:(id)arg1;
+- (void)setColoringWithColorScheme:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;

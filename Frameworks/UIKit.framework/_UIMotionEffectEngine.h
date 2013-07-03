@@ -53,13 +53,15 @@
     BOOL _slowUpdatesEnabled;
     BOOL _pendingSlowDown;
     _UIMotionEffectEngineLogger *_motionLogger;
+    int _thermalNotificationToken;
     int _targetInterfaceOrientation;
 }
 
 @property(readonly) NSArray * suspensionReasons;
 @property(setter=_setTargetInterfaceOrientation:) int _targetInterfaceOrientation;
 
-+ (BOOL)_motionEffectsAreSupported;
++ (BOOL)_motionEffectsSupported;
++ (BOOL)_motionEffectsEnabled;
 
 - (id)init;
 - (id)debugDescription;
@@ -69,9 +71,9 @@
 - (void)_scheduleUpdateWithDeviceMotion:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; boolx6; boolx7; boolx8; }*)arg1 timestamp:(double)arg2;
 - (void)_startGeneratingUpdates;
 - (BOOL)_shouldGenerateUpdates;
-- (BOOL)_isSuspended;
 - (void)_startOrStopGeneratingUpdates;
 - (void)_handleLatestDeviceMotion;
+- (BOOL)_isSuspended;
 - (void)_applyEffectsFromAnalyzer:(id)arg1;
 - (BOOL)_shouldSuspendApplicationForHysteresisGivenLastAppliedViewerOffset:(struct UIOffset { float x1; float x2; })arg1 newViewerOffset:(struct UIOffset { float x1; float x2; })arg2 wasSuspendingApplicationForHysteresis:(BOOL)arg3;
 - (void)_toggleSlowUpdates;

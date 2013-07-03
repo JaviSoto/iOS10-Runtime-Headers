@@ -157,7 +157,6 @@
 - (void)addressBookChangedLocally:(struct __CFDictionary { }*)arg1;
 - (void)setCardContentProvider:(id)arg1;
 - (BOOL)allowsSettingAsPreferredCardForName;
-- (void)setEditDelegate:(id)arg1;
 - (id)controllerTableView;
 - (BOOL)isLocation;
 - (id)displayedPeople;
@@ -210,12 +209,12 @@
 - (BOOL)disablePopoverUpdates;
 - (id)viewControllerToPresentModal;
 - (BOOL)hasPopoverController;
-- (id)linkingDelegate;
 - (void)personTableViewDataSource:(id)arg1 didUpdateValueForProperty:(int)arg2;
 - (BOOL)personTableViewDataSourceShouldShowLinkedPeople:(id)arg1;
 - (void)personTableViewDataSourceShouldIgnoreNextLocalChange:(id)arg1;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationController:(id)arg1 requestedLinkForPerson:(id)arg2;
+- (void)setEditDelegate:(id)arg1;
+- (id)linkingDelegate;
 - (void)loadViewWithPerson:(id)arg1 allowDeletion:(BOOL)arg2 allowActions:(BOOL)arg3;
 - (id)reusableCancelButton;
 - (void)ignoreNextLocalChange;
@@ -241,6 +240,7 @@
 - (BOOL)isReadonly;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(id)arg1;
 - (void)setStyleProvider:(id)arg1;

@@ -25,8 +25,8 @@
 - (id)allWallpaperURLs;
 - (void)updateAsNeeded;
 - (id)initWithPhotoLibrary:(id)arg1;
-- (id)photoLibrary;
 - (void)setPhotoLibrary:(id)arg1;
+- (id)photoLibrary;
 - (id)managedObjectContext;
 - (id)init;
 - (void)dealloc;

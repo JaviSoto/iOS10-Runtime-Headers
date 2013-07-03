@@ -66,9 +66,9 @@
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (int)rate;
-- (void)setRate:(int)arg1;
 - (void)setDateFormat:(id)arg1;
 - (id)startDate;
+- (void)setRate:(int)arg1;
 - (BOOL)loaded;
 - (void)setType:(int)arg1;
 - (void).cxx_destruct;

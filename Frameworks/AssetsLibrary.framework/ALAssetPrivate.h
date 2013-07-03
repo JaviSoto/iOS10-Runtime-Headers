@@ -17,7 +17,6 @@
 @property(retain) PLPhotoLibrary * _photoLibrary;
 
 
-- (void)setIsValid:(BOOL)arg1;
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (void)set_photoLibrary:(id)arg1;
@@ -26,6 +25,7 @@
 - (id)library;
 - (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
+- (void)setIsValid:(BOOL)arg1;
 - (id)photo;
 - (BOOL)isValid;
 - (void)dealloc;

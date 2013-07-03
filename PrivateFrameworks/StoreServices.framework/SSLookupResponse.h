@@ -25,14 +25,14 @@
 
 - (id)itemForKey:(id)arg1;
 - (id)metricsConfiguration;
-- (id)metricsPageEvent;
-- (void)setExpirationDate:(id)arg1;
 - (id)responseDictionary;
-- (void)_setMetricsPageEvent:(id)arg1;
 - (id)appStoreURLWithReason:(int)arg1 initialIndex:(int)arg2;
-- (id)initWithLocationResponseDictionary:(id)arg1;
 - (void)_enumerateItemsWithBlock:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
+- (id)initWithLocationResponseDictionary:(id)arg1;
 - (id)initWithResponseDictionary:(id)arg1;
+- (void)_setMetricsPageEvent:(id)arg1;
+- (id)metricsPageEvent;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)expirationDate;

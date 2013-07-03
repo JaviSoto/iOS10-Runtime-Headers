@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, VGLMesh, VKRealisticPolygonMaker, NSMutableArray, NSMutableDictionary;
+@class NSArray, VGLMesh, VKRealisticPolygonMaker, VKStyle, NSMutableArray, NSMutableDictionary;
 
 @interface VKRealisticRoadGroup : NSObject  {
     struct VKTileKey { 
@@ -24,12 +24,7 @@
     float _roadShadowRamp;
     float _roadShadowWidth;
     float _roadShadowTaperLength;
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _casingColor;
+    VKStyle *_style;
     float _casingShadowRamp;
     struct _VGLColor { 
         float r; 
@@ -49,7 +44,7 @@
 @property(readonly) float roadShadowRamp;
 @property(readonly) float roadShadowWidth;
 @property(readonly) float roadShadowTaperLength;
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } casingColor;
+@property(retain) VKStyle * style;
 @property(readonly) float casingShadowRamp;
 @property(readonly) NSArray * roadMeshes;
 @property(readonly) VGLMesh * roadShadows;
@@ -60,7 +55,6 @@
 
 
 - (float)casingShadowRamp;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColor;
 - (float)roadShadowTaperLength;
 - (float)roadShadowWidth;
 - (float)roadShadowRamp;
@@ -74,10 +68,11 @@
 - (int)renderZ;
 - (void)updateComponentsWithModelViewProjectionMatrix:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1 contentScale:(float)arg2;
 - (void)addRoadForPolygon:(const struct Vec2Imp<float> { float x1; float x2; }*)arg1 pointCount:(unsigned int)arg2 characteristicPoints:(const struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; }*)arg3 characteristicPointCount:(unsigned int)arg4 withStyle:(id)arg5;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColorVariantWithBlendingFactor:(float)arg1;
 - (id)initWithTile:(id)arg1;
 - (id)_meshForStyle:(id)arg1 tileKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2 scale:(float)arg3;
 - (unsigned int)triangleCount;
+- (void)setStyle:(id)arg1;
+- (id)style;
 - (void)dealloc;
 - (id).cxx_construct;
 

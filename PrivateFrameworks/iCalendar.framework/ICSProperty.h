@@ -11,8 +11,6 @@
 }
 
 
-- (void)addParametersFromDictionary:(id)arg1;
-- (id)allParameters;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (BOOL)isMultiValued;
 - (void)setParameters:(id)arg1;
@@ -31,6 +29,8 @@
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
 - (id)propertiesToIncludeForChecksumVersion:(int)arg1;
+- (void)addParametersFromDictionary:(id)arg1;
+- (id)allParameters;
 - (id)parameters;
 - (id)stringValue;
 - (void)dealloc;

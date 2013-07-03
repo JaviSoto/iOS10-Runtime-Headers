@@ -6,16 +6,17 @@
    See Warning(s) below.
  */
 
-@class GKTextField, GKGame, UIAlertView, GKLabel, UIActivityIndicatorView, UIScrollView, GKFakeTableGroupView, GKButton, UIView, AAUICredentialRecoveryController, GKSignInInputView, NSString;
+@class GKTextField, GKGame, GKLabel, UIAlertView, UIActivityIndicatorView, UIScrollView, GKFakeTableGroupView, GKButton, UIView, AAUICredentialRecoveryController, GKSignInInputView, NSString;
 
 @interface GKSignInViewController : GKViewController <AAUICredentialRecoveryPresentationDelegate, GKAuthenticateViewController, UITextFieldDelegate, UIScrollViewDelegate> {
     BOOL _disablesSignIn;
-    UIScrollView *_scrollView;
+    BOOL _constraintsCreated;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _completionHandler;
 
+    UIScrollView *_scrollView;
     GKGame *_game;
     GKButton *_createAccountButton;
     GKButton *_iForgotButton;
@@ -24,6 +25,10 @@
     GKLabel *_loginPromptLabel;
     GKLabel *_usernameLabel;
     GKLabel *_passwordLabel;
+    GKTextField *_usernameField;
+    GKTextField *_passwordField;
+    GKFakeTableGroupView *_fakeTableGroupView;
+    GKSignInInputView *_signInInputView;
     UIAlertView *_alert;
     int _alertTag;
 
@@ -35,14 +40,9 @@
     int _failedSignInCount;
     UIView *_bubbleContainer;
     AAUICredentialRecoveryController *_credentialRecoveryController;
-    GKTextField *_usernameField;
-    GKTextField *_passwordField;
-    GKFakeTableGroupView *_fakeTableGroupView;
-    GKSignInInputView *_signInInputView;
 }
 
 @property(retain) UIScrollView * scrollView;
-@property(copy) id completionHandler;
 @property(retain) GKGame * game;
 @property(retain) GKButton * createAccountButton;
 @property(retain) GKButton * iForgotButton;
@@ -51,6 +51,11 @@
 @property(retain) GKLabel * loginPromptLabel;
 @property(retain) GKLabel * usernameLabel;
 @property(retain) GKLabel * passwordLabel;
+@property(retain) GKTextField * usernameField;
+@property(retain) GKTextField * passwordField;
+@property(retain) GKFakeTableGroupView * fakeTableGroupView;
+@property(retain) GKSignInInputView * signInInputView;
+@property BOOL constraintsCreated;
 @property(retain) UIAlertView * alert;
 @property int alertTag;
 @property(copy) id alertDismissHandler;
@@ -58,10 +63,7 @@
 @property int failedSignInCount;
 @property(retain) UIView * bubbleContainer;
 @property(retain) AAUICredentialRecoveryController * credentialRecoveryController;
-@property(retain) GKTextField * usernameField;
-@property(retain) GKTextField * passwordField;
-@property(retain) GKFakeTableGroupView * fakeTableGroupView;
-@property(retain) GKSignInInputView * signInInputView;
+@property(copy) id completionHandler;
 @property BOOL disablesSignIn;
 
 
@@ -70,12 +72,6 @@
 - (void)credentialRecoveryController:(id)arg1 needsPresentationOfViewController:(id)arg2;
 - (void)credentialRecoveryController:(id)arg1 finishedWithSuccess:(BOOL)arg2;
 - (void)credentialRecoveryController:(id)arg1 didFailWithError:(id)arg2;
-- (void)setSignInInputView:(id)arg1;
-- (id)signInInputView;
-- (void)setFakeTableGroupView:(id)arg1;
-- (id)fakeTableGroupView;
-- (void)setPasswordField:(id)arg1;
-- (void)setUsernameField:(id)arg1;
 - (void)setCredentialRecoveryController:(id)arg1;
 - (id)credentialRecoveryController;
 - (void)setBubbleContainer:(id)arg1;
@@ -83,6 +79,14 @@
 - (void)setFailedSignInCount:(int)arg1;
 - (int)failedSignInCount;
 - (id)lastUsername;
+- (void)setConstraintsCreated:(BOOL)arg1;
+- (BOOL)constraintsCreated;
+- (void)setSignInInputView:(id)arg1;
+- (id)signInInputView;
+- (void)setFakeTableGroupView:(id)arg1;
+- (id)fakeTableGroupView;
+- (void)setPasswordField:(id)arg1;
+- (void)setUsernameField:(id)arg1;
 - (void)setPasswordLabel:(id)arg1;
 - (id)passwordLabel;
 - (void)setUsernameLabel:(id)arg1;
@@ -97,44 +101,43 @@
 - (void)setCreateAccountButton:(id)arg1;
 - (id)createAccountButton;
 - (void)showViewController:(id)arg1;
+- (void)setDisablesSignIn:(BOOL)arg1;
 - (BOOL)disablesSignIn;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectToKeepVisibleAboveKeyboardWithinView:(id)arg1;
 - (void)updateTableInsetsForKeyboardHeight:(float)arg1;
 - (id)alertDismissHandler;
-- (void)showAccountRemoteUIForMode:(int)arg1;
 - (BOOL)handleUnderlyingAuthenticationError:(id)arg1;
 - (void)setLastUsername:(id)arg1;
+- (void)showAccountRemoteUIForMode:(int)arg1;
 - (void)setAlertDismissHandler:(id)arg1;
 - (void)clearPassword;
 - (void)authenticateRequestCompletedWithErrorResponse:(id)arg1 error:(id)arg2;
 - (id)progressIndicator;
 - (id)usernameField;
-- (void)signIn;
-- (void)showInputView;
 - (void)updatePlaceholderTextForEnvironment;
 - (void)iForgotSelected;
 - (void)createNewAccount;
-- (void)prepareInputView;
+- (void)createSubviews;
+- (void)signIn;
 - (void)cancelSignIn;
 - (void)keyboardWillHideShow:(id)arg1;
 - (BOOL)shouldAdjustInsetsForKeyboard;
-- (void)setDisablesSignIn:(BOOL)arg1;
+- (void)showInputView;
+- (void)createConstraints;
 - (void)showPasswordChangeAlertWithURL:(id)arg1;
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)viewsToAnimateOutWhileDisappearingWithBubbleFlow;
 - (id)viewsToAnimateInWhileAppearingWithBubbleFlow;
 - (void)viewWillDisappearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
+- (void)viewDidAppearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
+- (void)viewWillAppearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
 - (double)bubbleFlowSubviewFadeOutDelay;
 - (double)bubbleFlowSubviewFadeOutDuration;
 - (double)bubbleFlowAnimateInDuration;
-- (struct CGSize { float x1; float x2; })finalSizeForBubbleOfType:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalScreenFrameInViewCoordinatesForBubbleOfType:(int)arg1;
-- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })finalPositionInViewCoordinatesWithZForBubbleOfType:(int)arg1;
-- (struct CGPoint { float x1; float x2; })finalPositionInViewCoordinatesForBubbleOfType:(int)arg1;
-- (id)animatorForTransitionInZFromVC:(id)arg1;
+- (id)bubbleAnimatorForTransitionFromViewController:(id)arg1;
 - (BOOL)_gkUsesBubbleFlowModalPresentation;
 - (double)bubbleFlowAnimateOutDuration;
-- (void)viewDidAppearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
 - (void)stopLoadingIndicator;
 - (void)startLoadingIndicator;
 - (int)alertTag;
@@ -149,6 +152,7 @@
 - (void)setCompletionHandler:(id)arg1;
 - (id)scrollView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -156,6 +160,7 @@
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (id)completionHandler;
 - (void)setScrollView:(id)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

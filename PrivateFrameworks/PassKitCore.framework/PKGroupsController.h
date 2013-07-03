@@ -22,6 +22,7 @@
 @property <PKGroupsControllerDelegate> * delegate;
 
 
+- (void)reloadGroups;
 - (void)_fixIndicesFrom:(unsigned int)arg1 through:(unsigned int)arg2;
 - (void)_fixIndicesFrom:(unsigned int)arg1;
 - (id)_passesDictionaryFromSet:(id)arg1;
@@ -39,7 +40,7 @@
 - (id)_copyRemoteCatalog;
 - (void)_removeGroup:(id)arg1 notify:(BOOL)arg2;
 - (unsigned int)_indexOfGroupID:(id)arg1;
-- (void)_reloadGroupsWithCompletion:(id)arg1;
+- (void)reloadGroupsWithCompletion:(id)arg1;
 - (void)_updateStateWithCatalog:(id)arg1 passes:(id)arg2 notify:(BOOL)arg3;
 - (void)handleUserPassDelete:(id)arg1;
 - (void)passLibrary:(id)arg1 receivedUpdatedCatalog:(id)arg2 passes:(id)arg3;
@@ -51,7 +52,6 @@
 - (void)endUserReordering;
 - (void)beginUserReordering;
 - (unsigned int)groupIndexForPassUniqueID:(id)arg1;
-- (void)reloadGroups;
 - (void)loadGroupsSynchronously;
 - (unsigned int)indexOfGroup:(id)arg1;
 - (id)init;

@@ -7,6 +7,7 @@
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding> {
     BOOL _isEyesFree;
     BOOL _useAutomaticEndpointing;
+    BOOL _useFreshContext;
     int _event;
     NSString *_btDeviceAddress;
     NSString *_serverCommandId;
@@ -18,20 +19,23 @@
 @property BOOL isEyesFree;
 @property(copy) NSString * serverCommandId;
 @property BOOL useAutomaticEndpointing;
+@property BOOL useFreshContext;
 @property double activationEventTime;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)setActivationEventTime:(double)arg1;
 - (double)activationEventTime;
+- (void)setUseFreshContext:(BOOL)arg1;
+- (BOOL)useFreshContext;
 - (BOOL)useAutomaticEndpointing;
 - (void)setServerCommandId:(id)arg1;
 - (void)setIsEyesFree:(BOOL)arg1;
 - (BOOL)isEyesFree;
 - (void)setBtDeviceAddress:(id)arg1;
-- (id)serverCommandId;
 - (id)btDeviceAddress;
 - (int)activationEvent;
+- (id)serverCommandId;
 - (void)setActivationEvent:(int)arg1;
 - (void).cxx_destruct;
 - (void)setUseAutomaticEndpointing:(BOOL)arg1;

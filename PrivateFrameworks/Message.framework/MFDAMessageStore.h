@@ -32,10 +32,13 @@
 - (BOOL)canFetchSearchResults;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
+- (unsigned int)growFetchWindow;
+- (BOOL)shouldGrowFetchWindow;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (int)fetchNumMessages:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (void)setFlagsForAllMessagesFromDictionary:(id)arg1;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (unsigned int)fetchWindow;
 - (BOOL)hasMoreFetchableMessages;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
 - (BOOL)wantsLineEndingConversionForMIMEPart:(id)arg1;

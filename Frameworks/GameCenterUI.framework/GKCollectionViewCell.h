@@ -2,25 +2,53 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray;
+@class GKHairlineView, UIView, GKEditActionsView, CALayer, UICollectionView;
 
 @interface GKCollectionViewCell : UICollectionViewCell  {
+    BOOL _shouldDisplaySwipeToEditAccessories;
+    BOOL _doesAbutLeftEdge;
     id _representedItem;
-    NSArray *_contentViewSizeConstraints;
+    UIView *_gkContentView;
+    GKEditActionsView *_editActionsView;
+    UICollectionView *_collectionView;
+    CALayer *_leftGradientMask;
+    GKHairlineView *_topHairline;
+    GKHairlineView *_bottomHairline;
 }
 
 @property(retain) id representedItem;
-@property(retain) NSArray * contentViewSizeConstraints;
+@property(readonly) UIView * gkContentView;
+@property(readonly) GKEditActionsView * editActionsView;
+@property BOOL shouldDisplaySwipeToEditAccessories;
+@property(retain) UICollectionView * collectionView;
+@property(retain) CALayer * leftGradientMask;
+@property BOOL doesAbutLeftEdge;
+@property(retain) GKHairlineView * topHairline;
+@property(retain) GKHairlineView * bottomHairline;
 
 
-- (void)setContentViewSizeConstraints:(id)arg1;
-- (id)contentViewSizeConstraints;
+- (BOOL)doesAbutLeftEdge;
+- (id)leftGradientMask;
+- (BOOL)shouldDisplaySwipeToEditAccessories;
+- (id)editActionsView;
+- (void)closeForDelete;
+- (void)setShouldDisplaySwipeToEditAccessories:(BOOL)arg1;
+- (void)updateSharedAttributes:(id)arg1;
+- (void)setDoesAbutLeftEdge:(BOOL)arg1;
+- (id)bottomHairline;
+- (id)topHairline;
+- (void)setBottomHairline:(id)arg1;
+- (void)setTopHairline:(id)arg1;
+- (void)setLeftGradientMask:(id)arg1;
+- (void)didUpdateModel;
 - (void)setRepresentedItem:(id)arg1;
 - (id)representedItem;
-- (void)didUpdateModel;
+- (id)gkContentView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (void)setCollectionView:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
+- (id)collectionView;
 - (void)prepareForReuse;
 
 @end

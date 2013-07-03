@@ -64,8 +64,8 @@
 - (id)convertedAnalysisString;
 - (id)analysisString;
 - (BOOL)isConversionCandidate;
-- (struct MecabraCandidateBase { int (**x1)(); int x2; }*)rawCandidate;
 - (id)surface;
+- (struct MecabraCandidateBase { int (**x1)(); int x2; }*)rawCandidate;
 - (struct ConversionCandidate { int (**x1)(); int x2; }*)rawConversionCandidate;
 - (id)dictionaryReading;
 - (unsigned short)matchType;

@@ -23,7 +23,7 @@
     double _beganDoublePanPitch;
     BOOL _isPitchable;
     BOOL _isPitchIncreasing;
-    BOOL _trackingAutoSelectsZoomScale;
+    int _annotationTrackingZoomStyle;
     BOOL _staysCenteredDuringPinch;
     double _lastRotation;
     BOOL _rotationLowZoomSnappingEnabled;
@@ -59,7 +59,7 @@
 @property BOOL allowDatelineWraparound;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property double canonicalSkyHeight;
-@property BOOL trackingAutoSelectsZoomScale;
+@property int annotationTrackingZoomStyle;
 @property BOOL shouldLimitTrackingCameraHeight;
 @property int trackingCameraPanStyle;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
@@ -191,8 +191,8 @@
 - (void)stopTrackingAnnotation;
 - (BOOL)isTrackingHeading;
 - (id)trackingAnnotation;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
-- (BOOL)trackingAutoSelectsZoomScale;
+- (void)setAnnotationTrackingZoomStyle:(int)arg1;
+- (int)annotationTrackingZoomStyle;
 - (void)setCanonicalSkyHeight:(double)arg1;
 - (id)detailedDescription;
 - (BOOL)isPitchable;

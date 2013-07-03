@@ -42,6 +42,7 @@
 - (void)_clearHighlightViews;
 - (BOOL)updateHighlightBubbleWobble:(BOOL)arg1;
 - (id)initWithBrowserView:(id)arg1;
+- (void)clearBrowserView;
 - (id)searchText;
 
 @end

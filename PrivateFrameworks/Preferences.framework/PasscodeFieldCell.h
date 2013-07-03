@@ -22,6 +22,7 @@
 
 - (id)passcodeText;
 - (void)setPasscodeText:(id)arg1;
+- (void)_setSecureTextEntry:(BOOL)arg1;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)insertText:(id)arg1;

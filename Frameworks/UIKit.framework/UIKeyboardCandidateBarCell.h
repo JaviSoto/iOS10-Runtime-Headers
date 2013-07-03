@@ -24,13 +24,14 @@
 @property(readonly) float cachedWidth;
 @property(readonly) BOOL keepNonPersistent;
 
-+ (float)height;
 + (id)font;
++ (BOOL)highlightAffectsBackground;
++ (id)textColorWithHighlight:(BOOL)arg1 whiteText:(BOOL)arg2;
 + (float)widthForCandidateText:(id)arg1;
-+ (id)collectionViewKind;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
 + (id)reuseIdentifier;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -48,6 +49,7 @@
 - (void)setEndsLastPage:(BOOL)arg1;
 - (void)setBeginsFirstPage:(BOOL)arg1;
 - (void)updateIsAtLeftEdgeState;
+- (void)updateLabels;
 - (id)themedView;
 - (void)setThemedView:(id)arg1;
 - (BOOL)keepNonPersistent;
@@ -59,6 +61,7 @@
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)didMoveToWindow;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLanguage;
 - (id)accessibilityLabel;

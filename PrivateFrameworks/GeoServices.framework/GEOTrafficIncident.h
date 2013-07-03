@@ -72,17 +72,16 @@
 - (void)setUID:(long long)arg1;
 - (BOOL)hasUID;
 - (void)setHasType:(BOOL)arg1;
-- (BOOL)hasType;
 - (double)endTime;
 - (void)setEndTime:(double)arg1;
 - (long long)uID;
+- (BOOL)hasType;
 - (void)copyTo:(id)arg1;
-- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)location;
 - (int)vertexCount;
 - (void)setType:(int)arg1;
-- (double)startTime;
 - (void)setLocation:(id)arg1;
 - (void)setInfo:(id)arg1;
 - (id)info;
@@ -90,6 +89,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (double)startTime;
 - (void)setStartTime:(double)arg1;
 - (int)type;
 - (id)dictionaryRepresentation;

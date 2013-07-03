@@ -69,7 +69,6 @@
 - (BOOL)connectUsingSettings:(id)arg1;
 - (void)_setupNetworkLogging;
 - (BOOL)usesOpportunisticSockets;
-- (BOOL)isCellularConnection;
 - (void)enableExcessiveKeepaliveDetection:(BOOL)arg1;
 - (void)enableThroughputMonitoring:(BOOL)arg1;
 - (void)setAllowsFallbacks:(BOOL)arg1;
@@ -83,6 +82,7 @@
 - (unsigned int)bytesWritten;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
+- (BOOL)isCellularConnection;
 - (unsigned int)bytesRead;
 - (double)lastUsedTime;
 - (id)capabilities;

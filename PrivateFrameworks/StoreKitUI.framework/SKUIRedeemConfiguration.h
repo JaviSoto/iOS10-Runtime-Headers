@@ -18,11 +18,11 @@
 @property(retain) UIImage * successImage;
 
 
+- (id)successImage;
 - (id)landingImage;
 - (void)_loadURLsWithDictionary:(id)arg1;
 - (void)setSuccessImage:(id)arg1;
 - (void)setLandingImage:(id)arg1;
-- (id)successImage;
 - (void)loadImages;
 - (id)initWithOperationQueue:(id)arg1 category:(int)arg2;
 - (void)setInputImage:(id)arg1;

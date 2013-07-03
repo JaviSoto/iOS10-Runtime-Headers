@@ -34,6 +34,8 @@
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
 - (id)sectionParameters;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
+- (void)clearedInfoForAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id)arg2;
+- (BOOL)canClearAllBulletins;
 - (BOOL)syncsBulletinDismissal;
 - (id)sortKey;
 - (void)setIdentity:(id)arg1;

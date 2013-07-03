@@ -14,8 +14,8 @@
 
 + (id)customAttributes;
 
-- (void)setInputAngle:(id)arg1;
 - (id)inputAngle;
+- (void)setInputAngle:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;

@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImage, UIFont, ABPersonTableViewSharingDelegate, <ABStyleProvider>, ABContactViewController, UIView, NSArray, <ABUnknownPersonViewControllerDelegate>, ABPersonTableViewDataSource, NSString, ABUIPerson, ABPersonTableViewActionsDelegate, ABPersonViewControllerHelper;
+@class UIActionSheet, NSMutableArray, UIImage, UIFont, ABPersonTableViewSharingDelegate, UITableView, <ABStyleProvider>, ABContactViewController, UIView, NSArray, <ABUnknownPersonViewControllerDelegate>, ABPersonTableViewDataSource, NSString, ABUIPerson, ABPersonTableViewActionsDelegate, ABPersonViewControllerHelper;
 
-@interface ABUnknownPersonViewController : UIViewController <ABContactViewControllerDelegate, UIActionSheetDelegate> {
+@interface ABUnknownPersonViewController : UIViewController <ABContactViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
     void *_addressBook;
     void *_displayedPerson;
     BOOL _allowsActions;
@@ -28,6 +28,14 @@
     NSArray *_displayedProperties;
     ABContactViewController *_contactViewController;
     int _style;
+    NSString *_primaryCNProperty;
+    NSString *_primaryCountryCode;
+    UITableView *_vCardTableView;
+    NSArray *_vCards;
+    NSArray *_vCardsProperties;
+    UIActionSheet *_addAllVCardsSheet;
+    NSMutableArray *_unmergedRecords;
+    UIActionSheet *_unmergedAlertSheet;
 }
 
 @property <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
@@ -72,20 +80,51 @@
 @property(copy) NSString * attribution;
 @property(retain) ABContactViewController * contactViewController;
 @property int style;
+@property(retain) NSString * primaryCNProperty;
+@property(retain) NSString * primaryCountryCode;
+@property(retain) UITableView * vCardTableView;
+@property(retain) NSArray * vCards;
+@property(retain) NSArray * vCardsProperties;
+@property(retain) UIActionSheet * addAllVCardsSheet;
+@property(retain) NSMutableArray * unmergedRecords;
+@property(retain) UIActionSheet * unmergedAlertSheet;
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
 
+- (void)setVCardsProperties:(id)arg1;
 - (void)presentPeoplePickerNavigationControllerForMergeToContact;
 - (void)presentNewContactViewControllerForAddToContacts;
 - (void)presentShareContactSheet;
 - (void)presentAddToContactsSheet;
 - (id)initWithVCardData:(id)arg1;
+- (void)showUnmergedContactsAlert;
+- (id)vCardsProperties;
+- (id)findMatchingCardsForRecord:(void*)arg1;
+- (void)setUnmergedRecords:(id)arg1;
+- (void)setUnmergedAlertSheet:(id)arg1;
+- (id)unmergedRecords;
+- (id)primaryPropertyStringForContact:(id)arg1;
+- (id)primaryCountryCode;
+- (id)primaryCNProperty;
+- (void)setPrimaryCountryCode:(id)arg1;
+- (void)setPrimaryCNProperty:(id)arg1;
+- (void)addUnmergedRecords;
+- (id)unmergedAlertSheet;
+- (void)addToExistingContacts;
+- (void)createNewContacts;
+- (void)setAddAllVCardsSheet:(id)arg1;
+- (id)addAllVCardsSheet;
+- (void)setVCardTableView:(id)arg1;
+- (id)vCardTableView;
+- (id)vCards;
+- (void)setVCards:(id)arg1;
 - (void)setIsLocation:(BOOL)arg1;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(int)arg3 withActionGrouping:(int)arg4 ordering:(int)arg5;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(int)arg4 withActionGrouping:(int)arg5 ordering:(int)arg6;
 - (void)replaceActionWithTarget:(id)arg1 selector:(SEL)arg2 withTitle:(id)arg3 target:(id)arg4 selector:(SEL)arg5 location:(int)arg6 destructive:(BOOL)arg7;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 location:(int)arg3;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 location:(int)arg4 destructive:(BOOL)arg5;
+- (void)setContactViewController:(id)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
 - (id)customFooterView;
@@ -119,13 +158,11 @@
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
 - (BOOL)allowsSendingTextMessage;
 - (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
-- (void)setAlternateName:(id)arg1;
 - (id)attribution;
 - (id)customMessageView;
 - (id)messageDetailFont;
 - (id)messageFont;
 - (id)messageDetail;
-- (void)setPrimaryProperty:(int)arg1;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;
@@ -134,8 +171,6 @@
 - (void)setUnknownPersonViewDelegate:(id)arg1;
 - (void)setDisplayedUIPerson:(id)arg1;
 - (id)displayedUIPerson;
-- (void)setContactViewController:(id)arg1;
-- (id)contactViewController;
 - (id)helper;
 - (BOOL)savesNewContactOnSuspend;
 - (void)loadContactViewController;
@@ -146,12 +181,12 @@
 - (id)newActionButton;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)setPersonHeaderView:(id)arg1;
+- (void)setPrimaryProperty:(int)arg1;
 - (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
 - (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsContactBlocking:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
-- (void)setAllowsConferencing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsOnlyFaceTimeActions;
 - (BOOL)allowsOnlyPhoneActions;
@@ -164,6 +199,9 @@
 - (id)personHeaderView;
 - (void)setCustomHeaderView:(id)arg1;
 - (id)customHeaderView;
+- (void)setAlternateName:(id)arg1;
+- (id)contactViewController;
+- (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (int)abViewControllerType;
@@ -181,11 +219,17 @@
 - (id)message;
 - (id)init;
 - (void)dealloc;
+- (void)dismissAnimated:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)_mf_initWithRecentGroup:(id)arg1;
 - (id)_mf_initWithEmailAddress:(id)arg1;
 

@@ -12,13 +12,14 @@
 
 + (id)arrayWithCapacity:(unsigned int)arg1;
 + (id)nonRetainingArray;
++ (id)copyNonRetainingArray;
 + (id)nonRetainingArray;
 
-- (void)sortUsingSelector:(SEL)arg1;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
-- (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
+- (void)sortUsingSelector:(SEL)arg1;
 - (void)removeFirstObject;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
+- (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromSet:(id)arg2;
@@ -68,11 +69,11 @@
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addObject:(id)arg1;
+- (void)removeObjectIdenticalTo:(id)arg1;
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)sortUsingComparator:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)setOrderedSet:(id)arg1;
-- (void)removeObjectIdenticalTo:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;

@@ -19,8 +19,13 @@
 + (id)audiovisualTypes;
 + (id)_avfValidationPlist;
 + (id)audiovisualMIMETypes;
-+ (id)_UTTypes;
 + (id)_figMIMETypes;
++ (id)_UTTypes;
++ (id)_streamingUTTypes;
++ (id)_fileUTTypes;
++ (id)_figFilePathExtensions;
++ (id)_figStreamingMIMETypes;
++ (id)_figFileMIMETypes;
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 
 - (void)_handleURLRequest:(id)arg1;

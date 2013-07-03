@@ -26,10 +26,10 @@
 - (void)handleResponseDictionary:(id)arg1;
 - (BOOL)wantsHTTPGet;
 - (id)bagKey;
+- (id)language;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setLanguage:(id)arg1;
-- (id)language;
 
 @end

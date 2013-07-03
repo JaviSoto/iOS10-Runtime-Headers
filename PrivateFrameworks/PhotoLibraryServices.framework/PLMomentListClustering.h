@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDateFormatter, NSMutableDictionary, NSMutableSet;
+@class NSMutableDictionary, NSMutableSet, NSDateFormatter, NSMapTable;
 
 @interface PLMomentListClustering : NSObject  {
     unsigned int __defaultNumberOfAssetsRequiredForSeeding;
@@ -10,6 +10,7 @@
     unsigned int __minimumNumberOfAssetsToAvoidYearAccumulation;
     NSMutableDictionary *__clustersByYearAndMonth;
     NSMutableSet *__visitedMoments;
+    NSMapTable *__cachedLocationsByMoment;
     NSDateFormatter *__debugDateFormatter;
     double __maximumTimeThreshold;
     double __maximumTimeThresholdBetweenMomentsWithLocation;
@@ -30,8 +31,10 @@
 @property(readonly) unsigned int _minimumNumberOfAssetsToAvoidYearAccumulation;
 @property(readonly) NSMutableDictionary * _clustersByYearAndMonth;
 @property(readonly) NSMutableSet * _visitedMoments;
+@property(setter=_setCachedLocationsByMoment:,retain) NSMapTable * _cachedLocationsByMoment;
 @property(readonly) NSDateFormatter * _debugDateFormatter;
 
++ (double)maximumTimeThresholdBetweenMoments;
 
 - (id)_debugDateFormatter;
 - (id)_visitedMoments;
@@ -46,13 +49,16 @@
 - (unsigned int)_expandMegaMomentList:(id)arg1 fromPeakMoment:(id)arg2 towardPreviousMomentsInMoments:(id)arg3;
 - (id)_insertNewMegaMomentListWithMoment:(id)arg1 inManagedObjectContext:(id)arg2;
 - (unsigned int)_defaultNumberOfAssetsRequiredForSeeding;
+- (void)_setCachedLocationsByMoment:(id)arg1;
 - (void)_createMomentListClusterCacheForMoments:(id)arg1;
 - (void)_verifyMomentsAreSorted:(id)arg1;
+- (id)_cachedLocationsByMoment;
 - (BOOL)_shouldMegaMomentList:(id)arg1 includeMoment:(id)arg2 withPeakMoment:(id)arg3 recentMoment:(id)arg4 recentMomentWithLocation:(id)arg5 forwards:(BOOL)arg6;
 - (double)_maximumTimeThresholdBetweenMomentsWithoutLocation;
 - (double)_maximumDistanceThresholdFromPeak;
 - (double)_maximumDistanceThresholdBetweenMoments;
 - (double)_maximumTimeThresholdBetweenMomentsWithLocation;
+- (id)_cachedLocationForMoment:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

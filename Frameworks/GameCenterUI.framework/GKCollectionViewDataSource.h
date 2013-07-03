@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSMutableDictionary, NSHashTable, NSString, GKGridLayoutMetrics, <GKCollectionViewDataSourceListener>, GKSectionMetrics;
+@class NSMutableDictionary, NSHashTable, NSString, GKGridLayoutMetrics, <GKCollectionViewDataSourceDelegate>, GKSectionMetrics;
 
-@interface GKCollectionViewDataSource : NSObject <UICollectionViewDataSource> {
-    <GKCollectionViewDataSourceListener> *_delegate;
+@interface GKCollectionViewDataSource : NSObject <GKCollectionViewDataSourceDelegate, UICollectionViewDataSource> {
+    <GKCollectionViewDataSourceDelegate> *_delegate;
     NSString *_defaultSearchKey;
     GKGridLayoutMetrics *_dataSourceMetricsInternal;
     GKSectionMetrics *_defaultSectionMetricsInternal;
@@ -15,10 +15,10 @@
     NSMutableDictionary *_sectionsToSearchKeys;
 }
 
-@property <GKCollectionViewDataSourceListener> * delegate;
 @property(retain) NSString * defaultSearchKey;
 @property(copy) GKSectionMetrics * defaultSectionMetrics;
 @property(copy) GKGridLayoutMetrics * dataSourceMetrics;
+@property <GKCollectionViewDataSourceDelegate> * delegate;
 @property(retain) GKGridLayoutMetrics * dataSourceMetricsInternal;
 @property(retain) GKSectionMetrics * defaultSectionMetricsInternal;
 @property(readonly) BOOL isRootDataSource;
@@ -29,11 +29,6 @@
 
 
 - (id)listeners;
-- (void)notifyReloadData;
-- (void)notifySectionMovedFrom:(int)arg1 to:(int)arg2;
-- (void)notifyItemMovedFromIndexPath:(id)arg1 toIndexPaths:(id)arg2;
-- (void)notifyItemsRefreshedAtIndexPaths:(id)arg1;
-- (void)notifyItemsInsertedAtIndexPaths:(id)arg1;
 - (id)sectionsToSearchKeys;
 - (void)setSectionsToMetrics:(id)arg1;
 - (id)sectionsToMetrics;
@@ -42,11 +37,20 @@
 - (id)dataSourceMetricsInternal;
 - (void)setDefaultSearchKey:(id)arg1;
 - (id)defaultSearchKey;
+- (void)notifyBatchUpdate:(id)arg1;
+- (void)notifyDidReloadData;
+- (void)notifySectionsMovedWithItems;
+- (void)notifySectionMovedFrom:(int)arg1 to:(int)arg2;
+- (void)notifyItemMovedFromIndexPath:(id)arg1 toIndexPaths:(id)arg2;
+- (void)notifyItemsRefreshedAtIndexPaths:(id)arg1;
+- (void)notifyItemsInsertedAtIndexPaths:(id)arg1;
 - (id)createMetricsTreeWithGridLayout:(id)arg1;
 - (id)metricsForSection:(int)arg1;
 - (void)setDefaultSectionMetrics:(id)arg1;
 - (void)setDataSourceMetrics:(id)arg1;
 - (void)setSearchKey:(id)arg1 forSection:(int)arg2;
+- (BOOL)containsDataSource:(id)arg1;
+- (unsigned int)sectionForDataSource:(id)arg1;
 - (id)dataSourceForSection:(unsigned int)arg1;
 - (id)localDescription;
 - (id)supplementaryViewFactoryForKind:(id)arg1 atIndexPath:(id)arg2;
@@ -60,7 +64,6 @@
 - (void)setSectionsToSearchKeys:(id)arg1;
 - (id)searchKeyForSection:(int)arg1;
 - (BOOL)isRootDataSource;
-- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 completionHandler:(id)arg3;
 - (void)enumerateItemsAndIndexPathsUsingBlock:(id)arg1;
 - (BOOL)item:(id)arg1 matchesSearchTerms:(id)arg2 inSection:(int)arg3;
 - (void)resetViewFactories;
@@ -68,18 +71,17 @@
 - (id)indexPathsForItem:(id)arg1;
 - (void)collectionViewDidBecomeInactive:(id)arg1;
 - (void)notifyItemsRemovedAtIndexPaths:(id)arg1;
-- (void)notifyPerformBatchUpdates:(id)arg1;
 - (void)notifySectionsRefreshed:(id)arg1;
 - (void)notifySectionsRemoved:(id)arg1;
 - (void)notifySectionsInserted:(id)arg1;
 - (void)registerSupplementaryViewKind:(id)arg1 withFactory:(id)arg2;
 - (void)setMetrics:(id)arg1 forSection:(int)arg2;
 - (id)dataSourceMetrics;
-- (BOOL)shouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)configureCollectionView:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)setListeners:(id)arg1;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)init;

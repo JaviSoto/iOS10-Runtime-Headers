@@ -23,7 +23,6 @@
 @property(copy) NSString * accessKey;
 
 
-- (void)setReadOnly:(BOOL)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
 - (void)setMaxLength:(int)arg1;
@@ -34,6 +33,7 @@
 - (void)setSelectionRange:(int)arg1 end:(int)arg2;
 - (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
 - (void)setRangeText:(id)arg1;
+- (void)select;
 - (void)setSelectionDirection:(id)arg1;
 - (id)selectionDirection;
 - (void)setSelectionEnd:(int)arg1;
@@ -59,11 +59,11 @@
 - (BOOL)autofocus;
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
+- (void)setReadOnly:(BOOL)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;
 - (BOOL)_isEdited;
-- (void)select;
 - (BOOL)readOnly;
 - (int)rows;
 - (id)placeholder;

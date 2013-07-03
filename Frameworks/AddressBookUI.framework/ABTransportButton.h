@@ -15,8 +15,8 @@
 @property(retain) UIImage * image;
 
 + (id)transportButton;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)glyphColor;
 - (id)_imageNameForType:(int)arg1;

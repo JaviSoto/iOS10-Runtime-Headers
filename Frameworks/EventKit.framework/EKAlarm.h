@@ -32,6 +32,7 @@
 + (int)_currentAuthorizationStatus;
 + (id)alarmWithRelativeOffset:(double)arg1;
 
+- (BOOL)validate:(id*)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (id)locationRelation;
 - (BOOL)isSnoozedAlarm;
@@ -63,7 +64,6 @@
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
 - (id)externalID;
-- (BOOL)validate:(id*)arg1;
 - (int)proximity;
 - (id)init;
 - (void)setOwner:(id)arg1;

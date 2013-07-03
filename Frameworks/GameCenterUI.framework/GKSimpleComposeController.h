@@ -26,7 +26,6 @@
 
 
 - (void)donePressed;
-- (id)players;
 - (void)setToField:(id)arg1;
 - (id)toField;
 - (id)doneHandler;
@@ -37,6 +36,7 @@
 - (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id)arg2;
 - (void)setDefaultMessage:(id)arg1;
 - (void)setPlayers:(id)arg1;
+- (id)players;
 - (void)dealloc;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;

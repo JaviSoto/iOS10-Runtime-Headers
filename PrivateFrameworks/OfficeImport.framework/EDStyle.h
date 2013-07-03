@@ -62,10 +62,10 @@
 - (void)setFill:(id)arg1;
 - (bool)isFillOverridden;
 - (bool)isFontOverridden;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (void)setParent:(id)arg1;
 - (id)font;
+- (void)setIndex:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

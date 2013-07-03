@@ -2,39 +2,43 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBackdropView, UIKBRenderConfig, UIKeyboardCornerView;
+@class UIKBInputBackdropView, UIKBRenderConfig, UIKeyboardCornerView;
 
 @interface UIPeripheralHostView : UIView  {
     int _explicitLayoutCount;
     UIKeyboardCornerView *_cornerViewLeft;
     UIKeyboardCornerView *_cornerViewRight;
-    _UIBackdropView *_inputBackdropView;
-    _UIBackdropView *_inputAccessoryBackdropView;
+    UIKBInputBackdropView *_inputBackdropView;
+    UIKBInputBackdropView *_inputAccessoryBackdropView;
     UIKBRenderConfig *_renderConfig;
 }
 
 @property(readonly) UIKeyboardCornerView * cornerViewLeft;
 @property(readonly) UIKeyboardCornerView * cornerViewRight;
+@property(readonly) UIKBInputBackdropView * inputBackdropView;
+@property(readonly) UIKBInputBackdropView * inputAccessoryBackdropView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)dealloc;
-- (void)syncInputAccessoryViewBackdropToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)explicitLayout;
 - (void)endExplicitLayout;
-- (void)syncInputViewBackdropToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)beginExplicitLayout;
+- (id)inputAccessoryBackdropView;
+- (void)syncInputAccessoryViewBackdropToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)inputBackdropView;
+- (void)syncInputViewBackdropToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)cornerViewRight;
 - (id)cornerViewLeft;
+- (void)updateBackdropViewForInputAccessoryView:(BOOL)arg1;
 - (int)_clipCornersOfView:(id)arg1;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_inheritedRenderConfig;
 - (int)textEffectsVisibilityLevel;
 - (void)_setRenderConfig:(id)arg1;
-- (void)setKeyboardAppearance:(int)arg1;
 - (void)didAddSubview:(id)arg1;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

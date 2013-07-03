@@ -11,11 +11,10 @@
 + (id)currentQueue;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)waitUntilAllOperationsAreFinished;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
-- (id)operations;
 - (void)setSuspended:(BOOL)arg1;
 - (void)cancelAllOperations;
+- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (id)operations;
 - (BOOL)isSuspended;
 - (id)init;
 - (void)addOperationWithBlock:(id)arg1;
@@ -25,6 +24,7 @@
 - (id)description;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
 - (unsigned int)operationCount;
+- (void)waitUntilAllOperationsAreFinished;
 - (void)setOvercommitsOperations:(BOOL)arg1;
 - (BOOL)overcommitsOperations;
 - (int)maxConcurrentOperationCount;

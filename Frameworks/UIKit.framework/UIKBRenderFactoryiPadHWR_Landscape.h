@@ -10,8 +10,8 @@
 - (float)dismissKeyFontSize;
 - (float)dictationKeyFontSize;
 - (float)internationalKeyFontSize;
-- (float)deleteKeyFontSize;
 - (float)moreKeyFontSize;
+- (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
 - (float)controlColumnWidthFactor;
 

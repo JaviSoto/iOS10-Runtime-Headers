@@ -7,23 +7,18 @@
 @interface SKUIStorePageSection : NSObject <SKUIProductPageOverlayDelegate> {
     SKUIPageComponent *_component;
     SKUIStorePageSectionContext *_context;
-    int _initialColoringIndex;
     SKUIProductPageOverlayController *_overlayController;
     int _sectionIndex;
 }
 
 @property(readonly) SKUIPageComponent * pageComponent;
 @property(readonly) SKUIStorePageSectionContext * context;
-@property int initialColoringIndex;
 @property int sectionIndex;
-@property(readonly) int coloringOffset;
 @property(readonly) BOOL fitsToHeight;
 @property(readonly) int numberOfCells;
 
 
 - (id)cellForIndexPath:(id)arg1;
-- (int)initialColoringIndex;
-- (void)showPageWithLink:(id)arg1;
 - (id)performItemOfferActionForItem:(id)arg1;
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
@@ -31,7 +26,7 @@
 - (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)showProductViewControllerWithItem:(id)arg1;
-- (id)backgroundColorForRowAtIndexPath:(id)arg1;
+- (id)backgroundColorForIndexPath:(id)arg1;
 - (id)_clickEventWithElementName:(id)arg1 index:(int)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
@@ -49,8 +44,7 @@
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
-- (int)coloringOffset;
-- (void)setInitialColoringIndex:(int)arg1;
+- (void)showPageWithLink:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)setSectionIndex:(int)arg1;
 - (int)sectionIndex;

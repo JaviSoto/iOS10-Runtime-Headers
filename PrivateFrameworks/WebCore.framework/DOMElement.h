@@ -36,6 +36,7 @@
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
+- (BOOL)hasAttribute:(id)arg1;
 - (BOOL)webkitMatchesSelector:(id)arg1;
 - (void)scrollByPages:(int)arg1;
 - (void)scrollByLines:(int)arg1;
@@ -86,7 +87,6 @@
 - (id)nextElementSibling;
 - (id)firstElementChild;
 - (int)structuralComplexityContribution;
-- (BOOL)hasAttribute:(id)arg1;
 - (int)offsetHeight;
 - (int)offsetWidth;
 - (id)getElementsByTagName:(id)arg1;

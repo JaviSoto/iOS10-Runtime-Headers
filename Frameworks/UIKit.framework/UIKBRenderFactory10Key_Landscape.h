@@ -7,5 +7,6 @@
 
 
 - (float)controlColumnWidthFactor;
+- (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
 
 @end

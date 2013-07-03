@@ -39,11 +39,11 @@
 - (id)initWithPrinter:(id)arg1;
 - (id)printer;
 - (void)setPrinter:(id)arg1;
-- (void)textDidChange:(id)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)textDidChange:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;

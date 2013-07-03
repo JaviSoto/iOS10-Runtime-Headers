@@ -6,7 +6,6 @@
 
 @interface IMPerson : NSObject  {
     BOOL _registered;
-    BOOL _beingTornDown;
     int _recordID;
 }
 
@@ -17,7 +16,7 @@
 @property(readonly) NSString * name;
 @property(readonly) NSString * fullName;
 @property(readonly) NSString * displayName;
-@property(readonly) NSString * shortName;
+@property(readonly) NSString * abbreviatedName;
 @property(copy) NSString * nickname;
 @property(copy) NSString * firstName;
 @property(copy) NSString * lastName;
@@ -33,7 +32,6 @@
 @property(readonly) void* _recordRef;
 @property(readonly) int _recordID;
 @property(readonly) BOOL _registered;
-@property(readonly) BOOL _beingTornDown;
 
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonForPerson:(id)arg1;
@@ -62,20 +60,19 @@
 - (BOOL)isCompany;
 - (id)allHandlesForProperty:(id)arg1;
 - (id)imHandleRegistrarGUID;
-- (BOOL)_beingTornDown;
 - (void)setEmails:(id)arg1;
 - (id)imageDataWithoutLoading;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;
+- (id)abbreviatedName;
 - (BOOL)isEqualToIMPerson:(id)arg1;
 - (void)setValues:(id)arg1 forProperty:(id)arg2;
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
-- (id)shortName;
 - (id)initWithABRecordID:(int)arg1;
 - (id)valuesForIMProperty:(id)arg1;
-- (int)recordID;
 - (void)setPhoneNumbers:(id)arg1;
 - (id)phoneNumbers;
 - (id)nickname;
+- (int)recordID;
 - (id)emails;
 - (void)save;
 - (void)setLastName:(id)arg1;
@@ -96,7 +93,6 @@
 - (id)name;
 - (void)finalize;
 - (void)dealloc;
-- (oneway void)release;
 - (id)description;
 
 @end

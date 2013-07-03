@@ -167,11 +167,11 @@
 - (id)collectionName;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setBundleVersion:(id)arg1;
-- (BOOL)isInstalled;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)bundleVersion;
 - (void)setBundleIdentifier:(id)arg1;
+- (BOOL)isInstalled;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)_reloadProperties;

@@ -47,9 +47,11 @@
 + (id)_bestInterpretationForDictationResult:(id)arg1;
 + (id)excludedElementsForHTML;
 + (BOOL)_isCompatibilityTextView;
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (BOOL)isEditing;
-- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -58,6 +60,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
 - (void)insertText:(id)arg1;
+- (BOOL)isEditable;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)undoManager;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
@@ -190,7 +193,6 @@
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (id)tokenizer;
-- (id)inputDelegate;
 - (void)setInputDelegate:(id)arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
@@ -198,9 +200,6 @@
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
-- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
-- (id)endOfDocument;
-- (id)beginningOfDocument;
 - (void)unmarkText;
 - (void)setMarkedTextStyle:(id)arg1;
 - (id)markedTextStyle;
@@ -208,11 +207,15 @@
 - (void)setSelectedTextRange:(id)arg1;
 - (id)selectedTextRange;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (id)textInRange:(id)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
 - (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)inputDelegate;
+- (id)textInRange:(id)arg1;
+- (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
+- (id)endOfDocument;
+- (id)beginningOfDocument;
 - (int)textAlignment;
 - (void)setTypingAttributes:(id)arg1;
 - (id)textInputView;
@@ -234,17 +237,17 @@
 - (void)setScrollEnabled:(BOOL)arg1;
 - (id)_automationValue;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
+- (BOOL)_requiresKeyboardWhenFirstResponder;
 - (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)didMoveToSuperview;
 - (BOOL)isFirstResponder;
+- (BOOL)canBecomeFirstResponder;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)_requiresKeyboardWhenFirstResponder;
-- (BOOL)canBecomeFirstResponder;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setAttributedText:(id)arg1;
@@ -253,5 +256,6 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_accessibilityDataDetectorScheme:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

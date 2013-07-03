@@ -7,6 +7,7 @@
 @interface SAStartRequest : SABaseCommand <SAServerBoundCommand> {
 }
 
+@property BOOL clearContext;
 @property BOOL eyesFree;
 @property BOOL handsFree;
 @property(copy) NSString * motionActivity;
@@ -20,6 +21,7 @@
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startRequest;
 
+- (BOOL)clearContext;
 - (void)setTalkOnly:(BOOL)arg1;
 - (BOOL)talkOnly;
 - (void)setHandsFree:(BOOL)arg1;
@@ -30,6 +32,7 @@
 - (id)motionConfidence;
 - (void)setMotionActivity:(id)arg1;
 - (id)motionActivity;
+- (void)setClearContext:(BOOL)arg1;
 - (id)encodedClassName;
 - (id)utterance;
 - (void)setUtterance:(id)arg1;

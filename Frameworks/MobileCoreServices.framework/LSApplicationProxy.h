@@ -13,6 +13,7 @@
     NSArray *_UIBackgroundModes;
     NSArray *_audioComponents;
     BOOL _profileValidated;
+    BOOL _isInstalled;
     BOOL _isPlaceholder;
     BOOL _isAppUpdate;
     BOOL _isNewsstandApp;
@@ -22,6 +23,7 @@
     NSString *_signerIdentity;
     NSDictionary *_entitlements;
     NSDictionary *_environmentVariables;
+    NSDictionary *_groupContainers;
     NSArray *_machOUUIDs;
     NSString *_vendorID;
     NSString *_vendorName;
@@ -50,8 +52,10 @@
 @property(readonly) NSArray * directionsModes;
 @property(readonly) NSArray * UIBackgroundModes;
 @property(readonly) NSArray * audioComponents;
+@property(readonly) NSDictionary * groupContainers;
 @property(readonly) NSUUID * deviceIdentifierForVendor;
 @property(readonly) NSProgress * installProgress;
+@property(readonly) BOOL isInstalled;
 @property(readonly) unsigned int installType;
 @property(readonly) BOOL isPlaceholder;
 @property(readonly) BOOL isAppUpdate;
@@ -61,6 +65,7 @@
 
 + (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
++ (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2 server:(BOOL)arg3;
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)_gkMetadataForBundleURL:(id)arg1;
@@ -72,11 +77,13 @@
 - (unsigned int)hash;
 - (BOOL)isRestricted;
 - (unsigned int)installType;
+- (BOOL)isInstalled;
 - (BOOL)profileValidated;
 - (id)privateDocumentTypeOwner;
 - (id)installProgressSync;
 - (id)UIBackgroundModes;
 - (id)directionsModes;
+- (id)groupContainers;
 - (id)environmentVariables;
 - (id)entitlements;
 - (id)signerIdentity;
@@ -95,7 +102,7 @@
 - (id)resourcesDirectoryURL;
 - (id)iconStyleDomain;
 - (BOOL)privateDocumentIconAllowOverride;
-- (id)_initWithApplicationIdentifier:(id)arg1 bundleType:(unsigned int)arg2 name:(id)arg3 containerURL:(id)arg4 resourcesDirectoryURL:(id)arg5 iconsDictionary:(id)arg6 iconFileNames:(id)arg7 iconIsPrerendered:(BOOL)arg8;
+- (id)_initWithApplicationIdentifier:(id)arg1 bundleType:(unsigned int)arg2 name:(id)arg3 containerURL:(id)arg4 resourcesDirectoryURL:(id)arg5 iconsDictionary:(id)arg6 iconFileNames:(id)arg7 iconIsPrerendered:(BOOL)arg8 server:(BOOL)arg9;
 - (id)installProgress;
 - (BOOL)isAppUpdate;
 - (BOOL)isPlaceholder;

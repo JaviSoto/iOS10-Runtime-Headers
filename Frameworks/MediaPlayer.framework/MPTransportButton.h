@@ -10,8 +10,9 @@
 
 @property(retain) MPAVController * player;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)setPlayer:(id)arg1;
 - (id)player;

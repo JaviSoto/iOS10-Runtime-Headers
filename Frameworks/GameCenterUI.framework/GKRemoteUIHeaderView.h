@@ -25,8 +25,8 @@
 - (id)initWithAttributes:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (float)height;
-- (void)setBottomMargin:(float)arg1;
 - (float)bottomMargin;
+- (void)setBottomMargin:(float)arg1;
 - (void)dealloc;
 - (id)textLabel;
 

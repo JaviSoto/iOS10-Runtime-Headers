@@ -27,11 +27,11 @@
 - (void)_handleEvent:(id)arg1;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
 - (id)initWithConnection:(id)arg1;
-- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
+- (void)setConnection:(id)arg1;
 - (id)tag;
 - (void)setTag:(id)arg1;
 - (id)connection;

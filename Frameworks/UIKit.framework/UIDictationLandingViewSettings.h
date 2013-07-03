@@ -6,11 +6,17 @@
     BOOL _useBlackWave;
     float _fadeInDuration;
     float _fadeOutDuration;
+    float _shrinkDuration;
+    float _colorTransitionInDuration;
+    float _colorTransitionOutDuration;
     float _circleRPM;
 }
 
 @property float fadeInDuration;
 @property float fadeOutDuration;
+@property float shrinkDuration;
+@property float colorTransitionInDuration;
+@property float colorTransitionOutDuration;
 @property float circleRPM;
 @property BOOL useBlackWave;
 
@@ -18,12 +24,18 @@
 
 - (id)init;
 - (float)circleRPM;
+- (float)shrinkDuration;
 - (float)fadeInDuration;
 - (void)setCircleRPM:(float)arg1;
+- (void)setColorTransitionOutDuration:(float)arg1;
+- (void)setColorTransitionInDuration:(float)arg1;
+- (void)setShrinkDuration:(float)arg1;
 - (void)setFadeOutDuration:(float)arg1;
 - (void)setFadeInDuration:(float)arg1;
 - (void)setUseBlackWave:(BOOL)arg1;
 - (BOOL)useBlackWave;
+- (float)colorTransitionOutDuration;
+- (float)colorTransitionInDuration;
 - (float)fadeOutDuration;
 
 @end

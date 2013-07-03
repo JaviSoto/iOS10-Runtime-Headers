@@ -53,10 +53,15 @@
 - (void)_webkit_invokeAndHandleException:(id)arg1;
 - (int)_firstXPCProxyReplyHandlerArgumentIndex;
 - (BOOL)_gkHasReplyBlock;
+- (void)_gkInvokeOnceWithTarget:(id)arg1;
+- (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
 - (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
 - (id)_gkReplyHandlerInvocation;
+- (void)_gkClearCopiedArguments;
 - (void)_gkCopyArguments;
 - (void)_gkPrintBlockSignature;
+- (void)_gkClearTarget;
+- (void)_gkInvokeOnce;
 - (void)_gkPrepareForCallWithError:(id)arg1;
 - (BOOL)mf_shouldLogInvocation;
 

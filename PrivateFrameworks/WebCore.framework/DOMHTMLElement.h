@@ -49,7 +49,6 @@
 - (void)setLang:(id)arg1;
 - (id)lang;
 - (void)setIdName:(id)arg1;
-- (id)idName;
 - (void)setDir:(id)arg1;
 - (id)dir;
 - (void)click;
@@ -60,6 +59,7 @@
 - (BOOL)hidden;
 - (void)setInnerHTML:(id)arg1;
 - (int)structuralComplexityContribution;
+- (id)idName;
 - (BOOL)isContentEditable;
 - (id)innerText;
 - (id)innerHTML;

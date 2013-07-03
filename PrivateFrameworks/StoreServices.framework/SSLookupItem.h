@@ -29,8 +29,8 @@
 - (id)offers;
 - (id)lookupDictionary;
 - (id)productPageURL;
-- (id)artwork;
 - (float)userRating;
+- (id)artwork;
 - (float)userRatingForCurrentVersion;
 - (int)numberOfUserRatingsForCurrentVersion;
 - (BOOL)isPOIBased;

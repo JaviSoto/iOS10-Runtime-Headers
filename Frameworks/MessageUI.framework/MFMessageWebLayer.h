@@ -65,8 +65,8 @@
 + (void)endBlockingRemoteImages;
 + (void)beginBlockingRemoteImagesExceptForMessageWebLayer:(id)arg1;
 + (void)initialize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)_elementHasDefinedWidth:(id)arg1;
 - (id)_rangeOfFirstText;
@@ -127,6 +127,7 @@
 - (void)addMessageContentURL:(id)arg1;
 - (id)_createInlinePluginElementWithHTMLRepresentation:(id)arg1 inDocument:(id)arg2;
 - (void)_replaceElement:(id)arg1 with:(id)arg2;
+- (BOOL)usePadDisplayStyle;
 - (void)_updatePendingFrameAdjustment;
 - (BOOL)applyFrameAdjustmentsImmediately;
 - (void)_sendDelegateSizeDidChange;
@@ -135,10 +136,7 @@
 - (void)setBottomReplyRange:(id)arg1;
 - (void)setReformattingContext:(id)arg1;
 - (void)setOriginalHTMLString:(id)arg1;
-- (void)reloadUserStyleSheet;
-- (BOOL)usePadDisplayStyle;
 - (int)displayStyle;
-- (void)reload;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)stopLoadingAndClear;
 - (void)_webthread_webView:(id)arg1 tileDidDraw:(id)arg2;
@@ -149,6 +147,7 @@
 - (BOOL)webView:(id)arg1 shouldPaintBrokenImageForURL:(id)arg2;
 - (id)webThreadWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (id)webThreadWebView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
+- (void)reload;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;

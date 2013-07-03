@@ -262,9 +262,9 @@
 - (void)setObservers:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
 - (void)cancel;
 - (void)addObserver:(id)arg1;
 - (void)start;
-- (void)removeObserver:(id)arg1;
 
 @end

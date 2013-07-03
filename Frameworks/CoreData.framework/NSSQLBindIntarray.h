@@ -18,8 +18,8 @@
 - (id)initWithValue:(id)arg1;
 - (void)setTableName:(id)arg1;
 - (id)tableName;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
+- (void)setIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (void)setValue:(id)arg1;
 - (id)value;

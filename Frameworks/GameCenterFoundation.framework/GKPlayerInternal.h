@@ -37,11 +37,13 @@
 @property(readonly) BOOL isLocalPlayer;
 @property(readonly) BOOL isAnonymousPlayer;
 @property(readonly) BOOL isUnknownPlayer;
+@property(readonly) BOOL isAutomatchPlayer;
 @property(readonly) BOOL isLoaded;
 @property unsigned short numberOfFriendsInCommon;
 @property unsigned short numberOfGamesInCommon;
 @property(retain) NSString * firstName;
 @property(retain) NSString * lastName;
+@property(retain) NSString * compositeName;
 @property(retain) NSString * status;
 @property(retain) NSDate * lastPlayedDate;
 @property(retain) GKGameInternal * lastPlayedGame;
@@ -63,7 +65,8 @@
 @property(retain) NSNumber * iCloudUserID;
 @property unsigned int flags;
 
-+ (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
++ (id)compositeNameForFirstName:(id)arg1 lastName:(id)arg2;
++ (id)displayNameWithOptions:(unsigned char)arg1 alias:(id)arg2 composite:(id)arg3;
 + (id)secureCodedPropertyKeys;
 
 - (void)setLastPlayedDate:(id)arg1;
@@ -81,7 +84,6 @@
 - (void)setNumberOfGamesInCommon:(unsigned short)arg1;
 - (void)setNumberOfGames:(unsigned short)arg1;
 - (void)setNumberOfFriendsInCommon:(unsigned short)arg1;
-- (void)setNumberOfFriends:(unsigned short)arg1;
 - (void)setNumberOfTurns:(unsigned short)arg1;
 - (void)setNumberOfRequests:(unsigned short)arg1;
 - (void)setAllowNearbyMultiplayer:(BOOL)arg1;
@@ -96,8 +98,10 @@
 - (void)setFacebookUserID:(id)arg1;
 - (id)facebookUserID;
 - (void)setLastPlayedGame:(id)arg1;
+- (void)setCompositeName:(id)arg1;
 - (void)setValidPieces:(unsigned char)arg1;
 - (unsigned char)validPieces;
+- (id)compositeName;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
 - (BOOL)isFriend;
 - (id)photos;
@@ -107,8 +111,10 @@
 - (unsigned short)numberOfGamesInCommon;
 - (unsigned short)numberOfGames;
 - (unsigned short)numberOfFriendsInCommon;
-- (unsigned short)numberOfFriends;
 - (id)lastPlayedGame;
+- (id)displayNameWithOptions:(unsigned char)arg1;
+- (void)setNumberOfFriends:(unsigned short)arg1;
+- (unsigned short)numberOfFriends;
 - (BOOL)isUnderage;
 - (void)setFriends:(id)arg1;
 - (id)friends;
@@ -124,7 +130,6 @@
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)alias;
-- (id)displayName;
 - (id)lastName;
 - (id)firstName;
 - (id)status;

@@ -13,8 +13,8 @@
 
 - (void)setAdditionalSlideHeight:(float)arg1;
 - (float)additionalSlideHeight;
-- (int)hideAnimation;
 - (BOOL)shouldAnimate;
+- (int)hideAnimation;
 - (void)setHideAnimation:(int)arg1;
 - (id)initWithDefaultParameters;
 

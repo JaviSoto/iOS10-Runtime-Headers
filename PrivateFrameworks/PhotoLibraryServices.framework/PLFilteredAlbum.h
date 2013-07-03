@@ -81,6 +81,7 @@
 @property(retain) NSNumber * cloudMultipleContributorsEnabled;
 @property(retain) NSNumber * cloudMultipleContributorsEnabledLocal;
 @property(retain) NSDate * cloudLastInterestingChangeDate;
+@property(retain) NSDate * cloudCreationDate;
 @property(retain) NSDate * cloudLastContributionDate;
 @property(retain) NSString * cloudPersonID;
 @property(readonly) int cloudRelationshipStateValue;
@@ -131,6 +132,7 @@
 - (struct NSObject { Class x1; }*)backingAlbum;
 - (id)filterParameters;
 - (id)userEditableAssets;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3;
 - (id)localizedLocationNames;
 - (BOOL)canShowComments;
 - (void)setKeyAsset:(id)arg1;
@@ -164,7 +166,6 @@
 - (BOOL)hasUnseenContentBoolValue;
 - (id)mutableAssets;
 - (void)batchFetchAssets:(id)arg1;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
@@ -179,6 +180,8 @@
 - (id)cloudPersonID;
 - (void)setCloudLastContributionDate:(id)arg1;
 - (id)cloudLastContributionDate;
+- (void)setCloudCreationDate:(id)arg1;
+- (id)cloudCreationDate;
 - (void)setCloudLastInterestingChangeDate:(id)arg1;
 - (id)cloudLastInterestingChangeDate;
 - (void)setCloudMultipleContributorsEnabledLocal:(id)arg1;

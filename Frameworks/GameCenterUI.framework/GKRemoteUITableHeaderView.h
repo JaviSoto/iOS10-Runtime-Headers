@@ -12,6 +12,7 @@
     GKButton *_button;
     NSDictionary *_attributes;
     NSArray *_replaceableConstraints;
+    int _layoutStyle;
 }
 
 @property <GKRemoteUIAuxiliaryViewDelegate> * delegate;
@@ -21,21 +22,30 @@
 @property(retain) GKButton * button;
 @property(retain) NSDictionary * attributes;
 @property(retain) NSArray * replaceableConstraints;
+@property int layoutStyle;
 
 
+- (void)setLayoutStyle:(int)arg1;
 - (void)objectModelDidChange:(id)arg1;
 - (void)setSubLabel:(id)arg1;
+- (float)labelTopOffset;
+- (float)labelBaselineToButtonBaselineOffset;
+- (float)labelBaselineToSubLabelTopOffset;
 - (id)subLabel;
+- (float)labelBaselineOffset;
 - (void)applyConstraints;
 - (void)createButtonWithAttributes:(id)arg1;
 - (void)createSubLabelWithAttributes:(id)arg1;
 - (void)createLabelWithAttributes:(id)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;
+- (int)layoutStyle;
 - (void)setAttributes:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (float)height;
+- (float)rightMargin;
+- (float)leftMargin;
 - (float)bottomMargin;
 - (id)button;
 - (id)label;

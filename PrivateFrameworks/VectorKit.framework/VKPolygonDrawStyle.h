@@ -80,6 +80,12 @@
         } u; 
         unsigned char count; 
     } outerStrokeColor;
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    } _casingColor;
     struct VKProfileSparseRamp<int> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -157,6 +163,7 @@
 
 @property(retain) NSString * name;
 @property float variation;
+@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } casingColor;
 
 
 - (BOOL)fancyCasingsVisibleAtZoom:(float)arg1;
@@ -174,6 +181,7 @@
 - (int)textureBlendMode;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })nonAnimatedFillColorAtZoom:(float)arg1;
 - (id)descriptionAtZoom:(float)arg1;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColor;
 - (id)preferredTextureNameAtZoom:(float)arg1;
 - (BOOL)casingsVisibleAtZoom:(float)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })strokeColorAtZoom:(float)arg1;

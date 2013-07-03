@@ -37,6 +37,7 @@
 - (void)setContentFilterEnabled:(BOOL)arg1;
 - (void)setRestrictWebEnabled:(BOOL)arg1;
 - (BOOL)restrictWebEnabled;
+- (BOOL)contentFilterListsAllowURL:(id)arg1;
 - (BOOL)canEditAlwaysAllowHTTPS;
 - (BOOL)canEditOverridesAllowed;
 - (void)setOverridesAllowed:(BOOL)arg1;
@@ -62,6 +63,7 @@
 - (BOOL)whiteListContainsURL:(id)arg1;
 - (BOOL)whiteListEnabled;
 - (BOOL)contentFilterEnabled;
+- (BOOL)autoWhitelistContainsURL:(id)arg1;
 - (BOOL)contentFilterOverriddenWhiteListContainsURL:(id)arg1;
 - (BOOL)contentFilterOverriddenBlackListContainsURL:(id)arg1;
 - (BOOL)contentFilterOverridesEnabled;

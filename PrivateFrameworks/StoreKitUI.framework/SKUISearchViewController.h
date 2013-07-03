@@ -2,12 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIMetricsController, SKUILoadURLOperation, SKUISearchPage, SKUIIPhoneSearchViewController, NSMutableArray, NSDictionary, SKUISearchFieldController, NSURL, SKUIIPadSearchViewController;
+@class SSVLoadURLOperation, SKUIMetricsController, NSArray, SKUIIPhoneSearchViewController, SKUISearchPage, NSMutableArray, NSDictionary, SKUISearchFieldController, NSURL, SKUIIPadSearchViewController;
 
 @interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate> {
     SKUIIPhoneSearchViewController *_iPhoneViewController;
     SKUIIPadSearchViewController *_iPadViewController;
-    SKUILoadURLOperation *_loadOperation;
+    SSVLoadURLOperation *_loadOperation;
     SKUIMetricsController *_metricsController;
     SKUISearchPage *_page;
     SKUISearchFieldController *_searchFieldController;

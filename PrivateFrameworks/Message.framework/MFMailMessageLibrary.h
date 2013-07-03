@@ -95,6 +95,7 @@
 - (BOOL)_canSelectMessagesWithOptions:(unsigned int)arg1 db:(struct sqlite3 { }*)arg2;
 - (id)_messageForStatement:(struct sqlite3_stmt { }*)arg1 options:(unsigned int)arg2 timestamp:(unsigned long long)arg3 isProtectedDataAvailable:(BOOL)arg4;
 - (unsigned int)countOfRelatedMessagesMatchingCriterion:(id)arg1 forConversationsContainingMessagesMatchingCriterion:(id)arg2 forMailbox:(id)arg3;
+- (unsigned int)includesMeCountForMailbox:(id)arg1;
 - (unsigned int)attachmentCountForMailbox:(id)arg1;
 - (unsigned int)flaggedCountForMailbox:(id)arg1;
 - (unsigned int)integerForQuery:(id)arg1 withTextArgument:(id)arg2;
@@ -123,7 +124,10 @@
 - (void)_reconcileAfterKeybagUnlock;
 - (void)_setProtectedDataAvailabilityState:(int)arg1;
 - (void)_removeCachedLibraryMessageWithLibraryID:(unsigned int)arg1;
+- (void)setStoredIntegerPropertyWithName:(id)arg1 value:(id)arg2;
+- (id)storedIntegerPropertyWithName:(id)arg1;
 - (id)remoteStoreForMessage:(id)arg1;
+- (void)updateFlagsForMessagesInPlace:(id)arg1 success:(BOOL*)arg2;
 - (void)deleteOfflineCacheDataForAccount:(int)arg1;
 - (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id)arg2;
 - (void)appendOfflineCacheReplayData:(id)arg1 forAccountID:(int)arg2;
@@ -160,6 +164,7 @@
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)oldestMessageInMailbox:(id)arg1;
 - (unsigned int)deletedCountForMailbox:(id)arg1;
+- (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
 - (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;

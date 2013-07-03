@@ -3,7 +3,6 @@
  */
 
 @interface SBUIControlCenterLabel : UILabel <SBUIControlCenterControl> {
-    int _maskUpdatesNeeded;
 }
 
 

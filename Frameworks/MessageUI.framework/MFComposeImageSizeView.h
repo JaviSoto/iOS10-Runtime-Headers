@@ -8,8 +8,8 @@
     UISegmentedControl *_segmentedControl;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (unsigned long)_segmentIndexForScale:(unsigned int)arg1;
 - (void)segmentedControlChanged;

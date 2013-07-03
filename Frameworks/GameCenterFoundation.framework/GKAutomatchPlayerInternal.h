@@ -5,11 +5,9 @@
 @interface GKAutomatchPlayerInternal : GKSpecialPlayerInternal  {
 }
 
-+ (id)fullNameWithFirstName:(id)arg1 lastName:(id)arg2;
 
 - (id)playerID;
 - (BOOL)isAutomatchPlayer;
 - (id)alias;
-- (id)displayName;
 
 @end

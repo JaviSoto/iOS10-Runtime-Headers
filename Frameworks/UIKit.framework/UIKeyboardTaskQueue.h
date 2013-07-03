@@ -36,8 +36,8 @@
 - (void)finishExecution;
 - (void)setExecutionContext:(id)arg1;
 - (id)executionContext;
-- (void)addTask:(id)arg1;
 - (void)performTask:(id)arg1;
+- (void)addTask:(id)arg1;
 - (void)waitUntilAllTasksAreFinished;
 - (BOOL)isMainThreadExecutingTask;
 - (void)unlock;

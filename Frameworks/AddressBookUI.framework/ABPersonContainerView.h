@@ -25,8 +25,8 @@
 @property ABPersonTableViewDataSource * dataSource;
 @property(readonly) UIScrollView<ABPersonTabsScrollView> * currentScrollView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)contentSwitchingTabsBorder;
 - (id)contentSwitchingTabsPocketShadow;

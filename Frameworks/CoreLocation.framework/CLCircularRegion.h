@@ -3,7 +3,6 @@
  */
 
 @interface CLCircularRegion : CLRegion  {
-    id _internal;
 }
 
 @property(readonly) struct { double x1; double x2; } center;
@@ -11,12 +10,10 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (double)radius;
 - (struct { double x1; double x2; })center;
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;

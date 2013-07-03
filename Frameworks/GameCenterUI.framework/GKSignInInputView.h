@@ -6,18 +6,18 @@
 
 @interface GKSignInInputView : UIView  {
     NSLayoutConstraint *_topToSignInBaselineConstraint;
-    NSLayoutConstraint *_signInBaselineToPromptTextBaselineConstraint;
+    NSLayoutConstraint *_signInBaselineToPromptTextTopConstraint;
     NSLayoutConstraint *_promptTextBaselineToFakeTableGroupTopConstraint;
-    NSLayoutConstraint *_fakeTableGroupBottomToiForgotBaselineConstraint;
+    NSLayoutConstraint *_iForgotBaselineToBottomConstraint;
     NSLayoutConstraint *_fakeTableGroupBottomToCogTopConstraint;
     NSLayoutConstraint *_iForgotBaselineToCreateNewBaselineConstraint;
     NSLayoutConstraint *_inputViewHeightConstraint;
 }
 
 @property(retain) NSLayoutConstraint * topToSignInBaselineConstraint;
-@property(retain) NSLayoutConstraint * signInBaselineToPromptTextBaselineConstraint;
+@property(retain) NSLayoutConstraint * signInBaselineToPromptTextTopConstraint;
 @property(retain) NSLayoutConstraint * promptTextBaselineToFakeTableGroupTopConstraint;
-@property(retain) NSLayoutConstraint * fakeTableGroupBottomToiForgotBaselineConstraint;
+@property(retain) NSLayoutConstraint * iForgotBaselineToBottomConstraint;
 @property(retain) NSLayoutConstraint * fakeTableGroupBottomToCogTopConstraint;
 @property(retain) NSLayoutConstraint * iForgotBaselineToCreateNewBaselineConstraint;
 @property(retain) NSLayoutConstraint * inputViewHeightConstraint;
@@ -29,12 +29,12 @@
 - (id)iForgotBaselineToCreateNewBaselineConstraint;
 - (void)setFakeTableGroupBottomToCogTopConstraint:(id)arg1;
 - (id)fakeTableGroupBottomToCogTopConstraint;
-- (void)setFakeTableGroupBottomToiForgotBaselineConstraint:(id)arg1;
-- (id)fakeTableGroupBottomToiForgotBaselineConstraint;
+- (void)setIForgotBaselineToBottomConstraint:(id)arg1;
+- (id)iForgotBaselineToBottomConstraint;
 - (void)setPromptTextBaselineToFakeTableGroupTopConstraint:(id)arg1;
 - (id)promptTextBaselineToFakeTableGroupTopConstraint;
-- (void)setSignInBaselineToPromptTextBaselineConstraint:(id)arg1;
-- (id)signInBaselineToPromptTextBaselineConstraint;
+- (void)setSignInBaselineToPromptTextTopConstraint:(id)arg1;
+- (id)signInBaselineToPromptTextTopConstraint;
 - (void)setTopToSignInBaselineConstraint:(id)arg1;
 - (id)topToSignInBaselineConstraint;
 - (id)allVariableConstraints;

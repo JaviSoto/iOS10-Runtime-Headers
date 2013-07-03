@@ -8,6 +8,7 @@
     int _deviceType;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSKeyValueStore *_keyValueStore;
+    NSString *_legacyUserAgent;
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
     id _mediaLibraryIdentifier;
@@ -21,6 +22,7 @@
 
 @property(copy) NSString * softwareLibraryIdentifier;
 @property(readonly) NSString * storeFrontIdentifier;
+@property(readonly) NSString * legacyUserAgent;
 @property(readonly) NSString * userAgent;
 @property(readonly) NSSet * automaticDownloadKinds;
 @property(readonly) int deviceType;
@@ -63,6 +65,7 @@
 - (void)setMediaLibraryIdentifier:(id)arg1;
 - (void)minusAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)enableAllAutomaticDownloadKindsWithCompletionBlock:(id)arg1;
+- (id)userAgentWithClientName:(id)arg1 version:(id)arg2;
 - (void)showPromptWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)setStoreFrontWithResponseHeaders:(id)arg1;
 - (void)setCellularNetworkingAllowed:(BOOL)arg1;
@@ -70,6 +73,8 @@
 - (void)getCellularNetworkingAllowedWithBlock:(id)arg1;
 - (void)getAvailableItemKindsWithBlock:(id)arg1;
 - (id)copyStoreFrontRequestHeaders;
+- (id)_fairPlayDeviceTypeString;
+- (id)_diskCapacityString;
 - (int)_deviceClass;
 - (int)_deviceTypeForUnknownAppleTV:(id)arg1;
 - (int)_deviceTypeForUnknownIPod:(id)arg1;
@@ -86,12 +91,13 @@
 - (id)_copyProductType;
 - (void)_updateAutomaticDownloadKinds:(id)arg1 withValue:(id)arg2 completionBlock:(id)arg3;
 - (int)_deviceType;
-- (id)_newUserAgentWithClientName:(id)arg1 version:(id)arg2 isCachable:(BOOL*)arg3;
+- (id)_newModernUserAgentWithClientName:(id)arg1 version:(id)arg2 isCachable:(BOOL*)arg3;
+- (id)_newLegacyUserAgent:(BOOL*)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (void)_cacheKeyValueStoreValues;
 - (BOOL)_getDeviceType:(unsigned int*)arg1 error:(id*)arg2;
 - (id)storeFrontIdentifier;
-- (id)userAgentWithClientName:(id)arg1 version:(id)arg2;
+- (id)legacyUserAgent;
 - (BOOL)supportsDeviceCapability:(int)arg1;
 - (id)productVersion;
 - (id)userAgent;

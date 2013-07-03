@@ -24,13 +24,13 @@
 + (id)touchEventWithStage:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 timestamp:(double)arg4 pathIndex:(int)arg5 forcedKeyCode:(int)arg6;
 + (BOOL)supportsSecureCoding;
 
-- (struct CGPoint { float x1; float x2; })location;
-- (double)timestamp;
 - (int)forcedKeyCode;
 - (int)pathIndex;
 - (float)radius;
+- (struct CGPoint { float x1; float x2; })location;
 - (int)stage;
 - (id)initWithStage:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 timestamp:(double)arg4 pathIndex:(int)arg5 forcedKeyCode:(int)arg6;
+- (double)timestamp;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

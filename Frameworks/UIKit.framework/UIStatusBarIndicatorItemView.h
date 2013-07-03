@@ -5,8 +5,8 @@
 @interface UIStatusBarIndicatorItemView : UIStatusBarItemView  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)contentsImage;
 - (unsigned long long)accessibilityTraits;

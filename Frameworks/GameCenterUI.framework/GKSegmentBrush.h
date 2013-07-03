@@ -57,16 +57,14 @@
 - (id)innerFillImage;
 - (void)setCurveRadius:(float)arg1;
 - (float)curveRadius;
-- (void)setRoundedCorners:(unsigned int)arg1;
-- (unsigned int)roundedCorners;
 - (void)setDrawnEdges:(int)arg1;
 - (int)drawnEdges;
 - (void)setOuterEdges:(int)arg1;
 - (int)outerEdges;
 - (unsigned int)columnIndex;
 - (struct CGPath { }*)innerShadowPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 input:(id)arg2;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
 - (id)renderedImageIdentifier;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (void)setShadowColor:(id)arg1;
@@ -76,5 +74,7 @@
 - (float)borderWidth;
 - (id)shadowColor;
 - (void)dealloc;
+- (void)setRoundedCorners:(unsigned int)arg1;
+- (unsigned int)roundedCorners;
 
 @end

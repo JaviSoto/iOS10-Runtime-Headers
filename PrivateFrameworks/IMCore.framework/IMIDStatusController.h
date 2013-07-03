@@ -2,28 +2,27 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableDictionary;
+@class NSMutableSet;
 
 @interface IMIDStatusController : NSObject  {
-    NSMutableDictionary *_idStatusCache;
+    NSMutableSet *_servicesRegistered;
 }
 
-@property(retain) NSMutableDictionary * _idStatusCache;
+@property(retain) NSMutableSet * _servicesRegistered;
 
 + (id)sharedInstance;
 
-- (void)IDQueryCompletedWithFromURI:(id)arg1 idStatusUpdates:(id)arg2 service:(id)arg3 success:(BOOL)arg4 error:(id)arg5;
-- (void)set_idStatusCache:(id)arg1;
-- (id)_idStatusCache;
+- (void)set_servicesRegistered:(id)arg1;
+- (id)_servicesRegistered;
 - (int)statusForID:(id)arg1 onService:(id)arg2;
-- (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;
 - (void)requestStatusForID:(id)arg1 onService:(id)arg2;
+- (void)_requestStatusForID:(id)arg1 onService:(id)arg2 onAccount:(id)arg3;
+- (void)_processIDStatusResponseForURI:(id)arg1 resultStatus:(int)arg2 forService:(id)arg3;
 - (int)_idStatusForID:(id)arg1 onAccount:(id)arg2;
 - (int)_idStatusForID:(id)arg1 onService:(id)arg2;
-- (void)_updateCacheWithIDStatusChanges:(id)arg1;
+- (int)__statusForID:(id)arg1 onService:(id)arg2 isCanonicalized:(BOOL)arg3;
+- (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;
 - (int)_statusForCanonicalizedID:(id)arg1 onService:(id)arg2;
-- (void)_purgeCache;
-- (void)_loadWithCache:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

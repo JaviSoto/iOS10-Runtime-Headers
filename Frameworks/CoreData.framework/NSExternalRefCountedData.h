@@ -30,11 +30,11 @@
 - (int)externalReferenceCount;
 - (int)decrementRefCount;
 - (void)incrementRefCount;
-- (double)timestamp;
 - (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
 - (void)_initializeRelationshipCaches;
 - (id)objectID;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)dealloc;
 - (unsigned int)retainCount;
 - (oneway void)release;

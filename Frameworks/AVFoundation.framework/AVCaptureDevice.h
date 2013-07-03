@@ -17,11 +17,14 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMinFrameDuration;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMaxFrameDuration;
 
++ (void)requestAccessForMediaType:(id)arg1 completionHandler:(id)arg2;
++ (int)authorizationStatusForMediaType:(id)arg1;
 + (id)_devices;
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)defaultDeviceWithMediaType:(id)arg1;
 + (id)devices;
 + (id)devicesWithMediaType:(id)arg1;
++ (void)initialize;
 
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)doesHandleNotification:(id)arg1;
@@ -34,7 +37,6 @@
 - (BOOL)isYoMamaWearsCombatBootsSupported;
 - (BOOL)HDRUsesPreBracketedFrameAsEV0;
 - (BOOL)isHDRSupported;
-- (float)videoZoomUpsamplingThreshold;
 - (void)cancelVideoZoomRamp;
 - (BOOL)isRampingVideoZoom;
 - (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
@@ -111,6 +113,10 @@
 - (id)formats;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isMachineReadableCodeDetectionSupported;
+- (BOOL)isYoMamaWearsFancyGlasses;
+- (void)setYoMamaWearsFancyGlassesDetectionEnabled:(BOOL)arg1;
+- (BOOL)isYoMamaWearsFancyGlassesDetectionEnabled;
+- (BOOL)isYoMamaWearsFancyGlassesDetectionSupported;
 - (void)setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
 - (BOOL)isFaceDetectionDebugMetadataReportingEnabled;
 - (int)faceRectangleAngle;

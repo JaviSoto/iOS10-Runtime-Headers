@@ -79,16 +79,16 @@
 @property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
 @property(readonly) int barPosition;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
-- (void)setController:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (BOOL)drawsBackground;
+- (void)setController:(id)arg1;
 - (int)autocapitalizationType;
 - (id)text;
 - (int)keyboardType;
@@ -155,6 +155,7 @@
 - (void)_cancelButtonPressed;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
 - (void)_updateMagnifyingGlassView;
+- (void)_effectiveBarTintColorDidChange:(BOOL)arg1;
 - (void)_setShowsScopeBar:(BOOL)arg1 animateOpacity:(BOOL)arg2;
 - (void)_setUpScopeBar;
 - (id)controller;
@@ -226,10 +227,10 @@
 - (id)backgroundImageForBarMetrics:(int)arg1;
 - (int)barPosition;
 - (int)_barPosition;
-- (int)barStyle;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
+- (int)barStyle;
 - (void)setBarStyle:(int)arg1;
 - (void)_setBarPosition:(int)arg1;
 - (void)_updateOpacity;
@@ -248,9 +249,10 @@
 - (void)willMoveToWindow:(id)arg1;
 - (BOOL)isFirstResponder;
 - (void)tintColorDidChange;
+- (BOOL)canBecomeFirstResponder;
+- (void)setTintColor:(id)arg1;
 - (BOOL)isTranslucent;
 - (id)_statusBarTintColor;
-- (BOOL)canBecomeFirstResponder;
 - (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;

@@ -2,21 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioRequestContext, NSObject<OS_dispatch_queue>;
+@class RadioRequestContext, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface RadioRequest : NSObject  {
     int _errorCode;
     NSObject<OS_dispatch_queue> *_queue;
     RadioRequestContext *_requestContext;
     int _status;
+    NSDictionary *_unparsedResponseDictionary;
 }
 
 @property(copy) RadioRequestContext * requestContext;
 @property(readonly) int status;
 @property(readonly) int errorCode;
+@property(readonly) NSDictionary * unparsedResponseDictionary;
 
 + (void)loadServiceConfigurationWithCompletionHandler:(id)arg1;
 
+- (id)unparsedResponseDictionary;
+- (void)setUnparsedResponseDictionary:(id)arg1;
 - (void)setRequestContext:(id)arg1;
 - (id)requestContext;
 - (void)_loadRadioURLBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id)arg2;

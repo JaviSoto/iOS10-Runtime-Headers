@@ -27,11 +27,11 @@
 - (void)startWithHistoryCompletionHandler:(id)arg1;
 - (void)setMaxNumberOfTracks:(unsigned int)arg1;
 - (unsigned int)maxNumberOfTracks;
-- (void)startWithCompletionHandler:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
 - (id)stationHash;
 - (long long)stationID;
+- (void)startWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (void)cancel;

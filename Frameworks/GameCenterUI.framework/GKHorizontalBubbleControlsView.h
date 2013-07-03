@@ -6,20 +6,21 @@
 
 @interface GKHorizontalBubbleControlsView : UIView  {
     NSArray *_bubbles;
-    float _offsetFromCenter;
+    float _overlap;
 }
 
 @property(retain) NSArray * bubbles;
-@property float offsetFromCenter;
+@property float overlap;
 
 
-- (float)offsetFromCenter;
-- (void)setOffsetFromCenter:(float)arg1;
+- (float)overlap;
+- (void)setOverlap:(float)arg1;
 - (void)setBubbles:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)bubbles;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 
 @end

@@ -218,12 +218,12 @@
 - (BOOL)accountShouldBeAlwaysLoggedIn;
 - (void)_updateConnectionMonitorWithRemoteHost:(id)arg1;
 - (void)leaveAllChats;
-- (void)_processConnectionMonitorUpdate;
 - (void)_updateRoutingTimerWithInterval:(double)arg1;
 - (void)_clearConnectionMonitor;
 - (void)_clearAutoReconnectTimer;
 - (void)_abandonPWFetcher;
 - (void)_abandonSystemProxySettingsFetcher;
+- (void)_processConnectionMonitorUpdate;
 - (void)_updateConnectionMonitorFromAccountDefaultsIgnoringProxy:(BOOL)arg1;
 - (void)_networkChanged:(id)arg1;
 - (id)_newHashForChat:(id)arg1 style:(unsigned char)arg2;
@@ -280,8 +280,8 @@
 - (unsigned short)proxyPort;
 - (id)displayName;
 - (id)accountID;
-- (BOOL)isActive;
 - (void)userNotificationDidFinish:(id)arg1;
+- (BOOL)isActive;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)systemDidUnlock;
 - (id)service;

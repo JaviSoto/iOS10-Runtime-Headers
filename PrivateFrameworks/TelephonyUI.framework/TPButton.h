@@ -27,8 +27,8 @@
 + (float)maxWidthForCenterButton;
 + (float)defaultWidthForCenterButton;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)shineLabelView;
 - (void)setDisabledButtonColor:(int)arg1;
@@ -45,18 +45,19 @@
 - (void)_animationWillBegin;
 - (void)setShineLabelOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUsesShineLabelWithText:(id)arg1;
-- (void)setBlursBackground:(BOOL)arg1;
-- (BOOL)blursBackground;
 - (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)dealloc;
+- (void)setBlursBackground:(BOOL)arg1;
+- (BOOL)blursBackground;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
+- (id)accessibilityValue;
 - (id)accessibilityLabel;
 
 @end

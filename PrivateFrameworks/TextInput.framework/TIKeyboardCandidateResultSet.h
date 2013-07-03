@@ -15,6 +15,7 @@
     NSDictionary *_showExtensionCandidates;
     NSArray *_initiallyHiddenCandidates;
     unsigned int _generatedCandidateCount;
+    unsigned int _batchCandidateLocation;
 }
 
 @property(retain) NSArray * candidates;
@@ -30,6 +31,7 @@
 @property(readonly) BOOL hasMetadata;
 @property BOOL excludedExtensionCandidates;
 @property unsigned int generatedCandidateCount;
+@property unsigned int batchCandidateLocation;
 @property(readonly) BOOL isDummySet;
 
 + (id)dummySet;
@@ -37,12 +39,15 @@
 + (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 excludedExtensionCandidates:(BOOL)arg9;
 + (BOOL)supportsSecureCoding;
 
-- (void)setGeneratedCandidateCount:(unsigned int)arg1;
-- (unsigned int)generatedCandidateCount;
 - (void)setExcludedExtensionCandidates:(BOOL)arg1;
-- (BOOL)excludedExtensionCandidates;
 - (void)setDefaultCandidate:(id)arg1;
+- (BOOL)isSubsetOf:(id)arg1;
 - (BOOL)isDummySet;
+- (void)setBatchCandidateLocation:(unsigned int)arg1;
+- (void)setGeneratedCandidateCount:(unsigned int)arg1;
+- (BOOL)excludedExtensionCandidates;
+- (unsigned int)generatedCandidateCount;
+- (unsigned int)batchCandidateLocation;
 - (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 excludedExtensionCandidates:(BOOL)arg9;
 - (void)setSortMethodGroups:(id)arg1;
 - (id)sortMethodGroups;
@@ -64,6 +69,7 @@
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)positionInCandidateList:(id)arg1;
+- (id)setByAppendingSet:(id)arg1;
 - (BOOL)hasMetadata;
 - (id)firstCandidate;
 - (id)initWithCoder:(id)arg1;

@@ -28,8 +28,8 @@
 + (BOOL)launchFieldTestIfNeeded:(id)arg1;
 + (BOOL)shouldStringAutoDial:(id)arg1 givenLastChar:(BOOL)arg2;
 + (void)_delayedDeactivate;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
 - (void)performTapActionEndForHighlightedKey;

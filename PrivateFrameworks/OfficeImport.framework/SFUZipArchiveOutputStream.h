@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUMoveableFileOutputStream, SFUCryptoKey, SFUZipOutputEntry, <SFUOutputStream>, NSMutableArray, NSData, SFUZipFreeSpaceEntry;
+@class OISFUCryptoKey, SFUMoveableFileOutputStream, SFUZipOutputEntry, <SFUOutputStream>, NSMutableArray, NSData, SFUZipFreeSpaceEntry;
 
 @interface SFUZipArchiveOutputStream : NSObject <SFUSimpleOutputStream> {
     SFUMoveableFileOutputStream *mOutputStream;
-    SFUCryptoKey *mCryptoKey;
+    OISFUCryptoKey *mCryptoKey;
     NSData *mPassphraseHint;
     NSData *mEncryptedDocumentUuid;
     NSMutableArray *mEntries;

@@ -36,6 +36,8 @@
         unsigned int size; 
     } _strokeDashPatterns;
     unsigned int _alternateFillColor;
+    unsigned int _arrowCollisionOrder;
+    float _arrowCollisionRank;
     unsigned int _arrowColor;
     unsigned int _arrowHaloColor;
     float _arrowHeight;
@@ -59,6 +61,7 @@
     float _casingsStrokeColor;
     float _casingsStrokeWidth;
     float _casingsWidth;
+    unsigned int _curbColor;
     unsigned int _dropShadowColor;
     unsigned int _fancyCasingsColor;
     unsigned int _fancyCasingsStrokeColor;
@@ -125,6 +128,7 @@
     int _labelIconGlyphStyle;
     unsigned int _labelIconHaloColor;
     float _labelIconHaloSize;
+    int _labelIconSource;
     int _labelIconStyle;
     int _labelLayer;
     unsigned int _labelLineWrap;
@@ -172,6 +176,8 @@
     NSString *_secondFillTexture;
     int _secondFillTextureBlendMode;
     float _secondFillTextureOpacity;
+    unsigned int _shieldCollisionOrder;
+    float _shieldCollisionRank;
     float _shieldTiltLimit;
     unsigned int _strokeColor;
     float _strokeWidth;
@@ -225,6 +231,8 @@
     BOOL _yieldsToOnscreenLabels;
     struct { 
         unsigned int alternateFillColor : 1; 
+        unsigned int arrowCollisionOrder : 1; 
+        unsigned int arrowCollisionRank : 1; 
         unsigned int arrowColor : 1; 
         unsigned int arrowHaloColor : 1; 
         unsigned int arrowHeight : 1; 
@@ -248,6 +256,7 @@
         unsigned int casingsStrokeColor : 1; 
         unsigned int casingsStrokeWidth : 1; 
         unsigned int casingsWidth : 1; 
+        unsigned int curbColor : 1; 
         unsigned int dropShadowColor : 1; 
         unsigned int fancyCasingsColor : 1; 
         unsigned int fancyCasingsStrokeColor : 1; 
@@ -310,6 +319,7 @@
         unsigned int labelIconGlyphStyle : 1; 
         unsigned int labelIconHaloColor : 1; 
         unsigned int labelIconHaloSize : 1; 
+        unsigned int labelIconSource : 1; 
         unsigned int labelIconStyle : 1; 
         unsigned int labelLayer : 1; 
         unsigned int labelLineWrap : 1; 
@@ -354,6 +364,8 @@
         unsigned int routeEnlargementStartZoom : 1; 
         unsigned int secondFillTextureBlendMode : 1; 
         unsigned int secondFillTextureOpacity : 1; 
+        unsigned int shieldCollisionOrder : 1; 
+        unsigned int shieldCollisionRank : 1; 
         unsigned int shieldTiltLimit : 1; 
         unsigned int strokeColor : 1; 
         unsigned int strokeWidth : 1; 
@@ -620,6 +632,8 @@
 @property(retain) NSString * labelIconGlowTexture;
 @property BOOL hasLabelIconGlowBlendMode;
 @property int labelIconGlowBlendMode;
+@property BOOL hasLabelIconSource;
+@property int labelIconSource;
 @property BOOL hasFillTextureOpacity;
 @property float fillTextureOpacity;
 @property BOOL hasFillTextureBlendMode;
@@ -692,6 +706,14 @@
 @property BOOL showShieldTextAsLabel;
 @property BOOL hasShowLabelAsShield;
 @property BOOL showLabelAsShield;
+@property BOOL hasShieldCollisionOrder;
+@property unsigned int shieldCollisionOrder;
+@property BOOL hasShieldCollisionRank;
+@property float shieldCollisionRank;
+@property BOOL hasArrowCollisionOrder;
+@property unsigned int arrowCollisionOrder;
+@property BOOL hasArrowCollisionRank;
+@property float arrowCollisionRank;
 @property BOOL hasLabelHeightSmall;
 @property float labelHeightSmall;
 @property BOOL hasLabelHeightSmallCurve;
@@ -790,8 +812,11 @@
 @property unsigned int puckArrowColorStale;
 @property BOOL hasRenderEndCaps;
 @property BOOL renderEndCaps;
+@property BOOL hasCurbColor;
+@property unsigned int curbColor;
 
 
+- (void)setHasCurbColor:(BOOL)arg1;
 - (void)setHasRenderEndCaps:(BOOL)arg1;
 - (void)setHasPuckArrowColorStale:(BOOL)arg1;
 - (void)setHasPuckArrowColor:(BOOL)arg1;
@@ -839,6 +864,10 @@
 - (void)setHasLabelHeightSmallCurveLimit:(BOOL)arg1;
 - (void)setHasLabelHeightSmallCurve:(BOOL)arg1;
 - (void)setHasLabelHeightSmall:(BOOL)arg1;
+- (void)setHasArrowCollisionRank:(BOOL)arg1;
+- (void)setHasArrowCollisionOrder:(BOOL)arg1;
+- (void)setHasShieldCollisionRank:(BOOL)arg1;
+- (void)setHasShieldCollisionOrder:(BOOL)arg1;
 - (void)setHasShowLabelAsShield:(BOOL)arg1;
 - (void)setHasShowShieldTextAsLabel:(BOOL)arg1;
 - (void)setHasGenericShieldDropShadowColor:(BOOL)arg1;
@@ -874,6 +903,7 @@
 - (void)setHasSecondFillTextureOpacity:(BOOL)arg1;
 - (void)setHasFillTextureBlendMode:(BOOL)arg1;
 - (void)setHasFillTextureOpacity:(BOOL)arg1;
+- (void)setHasLabelIconSource:(BOOL)arg1;
 - (void)setHasLabelIconGlowBlendMode:(BOOL)arg1;
 - (void)setHasLabelIconBadgeLightBlendMode:(BOOL)arg1;
 - (void)setHasLabelIconBadgeLightColor:(BOOL)arg1;
@@ -978,6 +1008,9 @@
 - (void)setHasStrokeColor:(BOOL)arg1;
 - (void)setHasFillColor:(BOOL)arg1;
 - (void)setHasVisible:(BOOL)arg1;
+- (void)setCurbColor:(unsigned int)arg1;
+- (unsigned int)curbColor;
+- (BOOL)hasCurbColor;
 - (void)setRenderEndCaps:(BOOL)arg1;
 - (BOOL)renderEndCaps;
 - (BOOL)hasRenderEndCaps;
@@ -1121,6 +1154,18 @@
 - (void)setLabelHeightSmall:(float)arg1;
 - (float)labelHeightSmall;
 - (BOOL)hasLabelHeightSmall;
+- (void)setArrowCollisionRank:(float)arg1;
+- (float)arrowCollisionRank;
+- (BOOL)hasArrowCollisionRank;
+- (void)setArrowCollisionOrder:(unsigned int)arg1;
+- (unsigned int)arrowCollisionOrder;
+- (BOOL)hasArrowCollisionOrder;
+- (void)setShieldCollisionRank:(float)arg1;
+- (float)shieldCollisionRank;
+- (BOOL)hasShieldCollisionRank;
+- (void)setShieldCollisionOrder:(unsigned int)arg1;
+- (unsigned int)shieldCollisionOrder;
+- (BOOL)hasShieldCollisionOrder;
 - (void)setShowLabelAsShield:(BOOL)arg1;
 - (BOOL)showLabelAsShield;
 - (BOOL)hasShowLabelAsShield;
@@ -1228,6 +1273,9 @@
 - (void)setFillTextureOpacity:(float)arg1;
 - (float)fillTextureOpacity;
 - (BOOL)hasFillTextureOpacity;
+- (void)setLabelIconSource:(int)arg1;
+- (int)labelIconSource;
+- (BOOL)hasLabelIconSource;
 - (void)setLabelIconGlowBlendMode:(int)arg1;
 - (int)labelIconGlowBlendMode;
 - (BOOL)hasLabelIconGlowBlendMode;

@@ -22,7 +22,7 @@
 - (id)lastCharacterBeforeBackspace;
 - (id)_statusBackgroundView;
 - (id)_statusTitleView;
-- (void)_noteKeyUp;
+- (void)_noteKeyUp:(id)arg1;
 - (void)_noteStringEntered:(id)arg1 eligibleForPlayingSounds:(BOOL)arg2;
 - (void)_noteBackspaceHit;
 - (id)_numericEntryFieldIfExists;
@@ -52,8 +52,8 @@
 - (void)setCustomBackgroundColor:(id)arg1;
 - (float)backgroundAlpha;
 - (id)passcode;
-- (void)_luminanceBoostDidChange;
 - (void)resetForFailedPasscode;
+- (void)_luminanceBoostDidChange;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)reset;

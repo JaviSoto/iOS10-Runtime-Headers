@@ -22,7 +22,6 @@
 
 
 - (BOOL)supportsSoftBankCodePoints;
-- (id)fromEmailAddresses;
 - (id)firstEmailAddress;
 - (id)fromEmailAddressesIncludingDisabled;
 - (id)fullUserName;
@@ -32,6 +31,7 @@
 - (id)_initWithProperties:(id)arg1;
 - (id)mailAccount;
 - (BOOL)restrictsRepliesAndForwards;
+- (id)fromEmailAddresses;
 - (BOOL)_isRestricted;
 - (id)emailAddresses;
 - (id)username;

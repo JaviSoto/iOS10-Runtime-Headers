@@ -10,7 +10,7 @@
 @property float rowHeight;
 @property unsigned int highlightedRowIndex;
 
-+ (id)backgroundColor;
++ (struct CGColor { }*)backgroundColor;
 + (id)collectionViewKind;
 + (id)reuseIdentifier;
 

@@ -28,8 +28,8 @@
 - (id)refreshControl;
 - (void)setRefreshControl:(id)arg1;
 - (id)attributedTitle;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (void)setAttributedTitle:(id)arg1;
 
 @end

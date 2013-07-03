@@ -8,10 +8,12 @@
     NSError *_savedError;
     NSMutableDictionary *_ctags;
     NSMutableDictionary *_syncTokens;
+    BOOL _forceClearCalendarHomeSyncToken;
     NSString *_calendarHomeSyncToken;
     BOOL _useCalendarHomeSyncReport;
     NSMutableDictionary *_pathToLocalCalendar;
     NSMutableSet *_localCalendarsWithNoPath;
+    NSMutableSet *_updatedCalendars;
     BOOL _didFinish;
     BOOL _didMakeCalendars;
     BOOL _isSecondRefresh;

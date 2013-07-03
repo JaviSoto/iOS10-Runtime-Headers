@@ -9,6 +9,7 @@
     GKBubbleView *_bubbleView;
 }
 
+@property(getter=isSharedBubble,readonly) BOOL sharedBubble;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenFrame;
 @property(readonly) struct CGPoint { float x1; float x2; } screenPosition;
 @property(readonly) struct CGSize { float x1; float x2; } screenSize;
@@ -30,6 +31,7 @@
 - (void)didTouchDown;
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })worldPositionForScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })worldPosition;
+- (BOOL)isSharedBubble;
 - (void)setBubbleView:(id)arg1;
 - (id)bubbleView;
 - (id)contentsWrapperView;

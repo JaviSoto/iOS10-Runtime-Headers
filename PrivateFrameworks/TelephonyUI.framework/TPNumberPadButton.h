@@ -38,8 +38,8 @@
 + (float)verticalPadding;
 + (float)horizontalPadding;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (float)alphaOutsideAndInsideRing;

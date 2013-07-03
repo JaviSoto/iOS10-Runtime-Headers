@@ -16,6 +16,7 @@
 @property(readonly) UIColor * emphasizedTextOnDarkBackgroundColor;
 @property(readonly) UIColor * systemInteractionColor;
 @property(readonly) UIColor * disabledButtonTitleColor;
+@property(readonly) UIColor * windowBackgroundColor;
 @property(readonly) UIColor * viewBackgroundColor;
 @property(readonly) UIColor * floatingHeaderViewBackgroundColor;
 @property(readonly) UIColor * pinnedHeaderViewBackgroundColor;
@@ -29,6 +30,8 @@
 @property(readonly) UIColor * challengesTintColor;
 @property(readonly) UIColor * shareTintColor;
 @property(readonly) UIColor * monogramBackgroundColor;
+@property(readonly) UIColor * cellActionDestructiveColor;
+@property(readonly) UIColor * cellActionColor;
 
 + (id)paletteFromImage:(id)arg1;
 + (id)sharedPalette;
@@ -38,22 +41,25 @@
 - (id)challengesTintColor;
 - (id)friendRequestTintColor;
 - (id)disabledButtonTitleColor;
-- (id)textOnDarkBackgroundColor;
 - (id)monogramBackgroundColor;
+- (id)textOnDarkBackgroundColor;
 - (id)removeItemTextColor;
 - (id)bubbleTextColor;
 - (id)friendTintColor;
 - (id)localPlayerTintColor;
-- (id)emphasizedTextOnDarkBackgroundColor;
-- (id)systemInteractionColor;
 - (id)friendRequestCaptionTintColor;
-- (id)standardTextColor;
+- (id)windowBackgroundColor;
+- (id)systemInteractionColor;
+- (id)emphasizedTextOnDarkBackgroundColor;
 - (id)emphasizedTextColor;
 - (id)pinnedHeaderViewBackgroundColor;
 - (id)floatingHeaderViewBackgroundColor;
 - (id)separatorLineColor;
 - (id)activityIndicatorColor;
 - (id)viewBackgroundColor;
+- (id)cellActionColor;
+- (id)cellActionDestructiveColor;
+- (id)standardTextColor;
 - (id)selectedTextColor;
 
 @end

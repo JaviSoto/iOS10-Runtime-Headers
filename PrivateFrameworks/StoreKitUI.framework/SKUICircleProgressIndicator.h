@@ -37,6 +37,7 @@
 + (id)_borderImage;
 
 - (void)_setHidesBorderView:(BOOL)arg1;
+- (void)_startIndeterminateAnimation;
 - (void)_animateValueOnDisplayLink:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -49,12 +50,13 @@
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setProgress:(float)arg1;
 - (void)tintColorDidChange;
-- (BOOL)isHighlighted;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 - (BOOL)isIndeterminate;
 
 @end

@@ -2,16 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUIColorScheme, SKUIClientContext, <SKUISwooshViewControllerDelegate>, NSMutableArray, SKUIProductPageHeaderViewController, SKUIPlatformRequestOperation, SKUIResourceLoader, UIScrollView, NSArray;
+@class NSOperationQueue, SKUIColorScheme, SKUIMetricsController, SKUIClientContext, NSMutableArray, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController, SSVPlatformRequestOperation, SKUIResourceLoader, UIScrollView, NSArray;
 
 @interface SKUISwooshArrayViewController : UIViewController <SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate, SKUIProductPageChildViewController> {
     SKUIResourceLoader *_artworkLoader;
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
-    <SKUISwooshViewControllerDelegate> *_delegate;
+    <SKUIProductPageChildViewControllerDelegate> *_delegate;
     SKUIProductPageHeaderViewController *_headerViewController;
+    SKUIMetricsController *_metricsController;
     NSOperationQueue *_operationQueue;
-    SKUIPlatformRequestOperation *_platformOperation;
+    SSVPlatformRequestOperation *_platformOperation;
     UIScrollView *_scrollView;
     NSMutableArray *_swooshArtworkLoaders;
     NSArray *_swooshComponents;
@@ -20,8 +21,9 @@
 
 @property(copy) NSArray * swooshComponents;
 @property(retain) SKUIClientContext * clientContext;
+@property(retain) SKUIMetricsController * metricsController;
 @property(retain) SKUIColorScheme * colorScheme;
-@property id delegate;
+@property <SKUIProductPageChildViewControllerDelegate> * delegate;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) UIScrollView * scrollView;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
@@ -29,24 +31,24 @@
 
 - (id)_artworkLoader;
 - (id)swooshComponents;
-- (void)unhideIcons;
 - (void)setSwooshComponents:(id)arg1;
-- (id)popIconImageViewForItem:(id)arg1;
 - (void)loadMissingItemData;
-- (id)clickEventWithItem:(id)arg1 metricsController:(id)arg2;
-- (id)clickEventForSeeAllForViewController:(id)arg1 metricsController:(id)arg2;
 - (id)initWithSwooshComponents:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;
 - (id)headerViewController;
 - (void)_addMissingItemsWithResponse:(id)arg1 error:(id)arg2;
 - (void)_layoutSwooshViews;
+- (id)_clickEventForSeeAllForViewController:(id)arg1;
+- (id)_clickEventWithItem:(id)arg1;
 - (void)_addHeaderView;
 - (void)_reloadChildViewControllers;
 - (void)_loadMissingItemsIfNecessary;
 - (void)swooshDidSelectSeeAll:(id)arg1;
 - (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;
 - (id)swoosh:(id)arg1 imageForCellAtIndex:(int)arg2;
+- (id)metricsController;
 - (void)artworkLoaderDidIdle:(id)arg1;
+- (void)setMetricsController:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (void)setClientContext:(id)arg1;
@@ -62,5 +64,6 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;
+- (BOOL)isLoaded;
 
 @end

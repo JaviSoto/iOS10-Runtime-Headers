@@ -5,7 +5,7 @@
 @class PKPassColorProfile, PKPassBucketTemplate, NSArray, PKPass, NSMutableArray;
 
 @interface PKPassBucketView : UIView  {
-    NSMutableArray *_fieldViewDictionaries;
+    NSMutableArray *_fieldViews;
     int _background;
     PKPass *_pass;
     PKPassBucketTemplate *_bucketTemplate;
@@ -20,9 +20,6 @@
 
 
 - (id)bucket;
-- (id)_valueAttributedStringForField:(id)arg1 template:(id)arg2;
-- (id)_labelAttributedStringForField:(id)arg1 template:(id)arg2;
-- (unsigned int)_layoutFormatOptionsForTemplate:(id)arg1;
 - (void)_measureAndFitSubviews;
 - (void)_updateSubviews;
 - (int)_backgroundForBucketTemplate:(id)arg1;
@@ -34,8 +31,7 @@
 - (id)colorProfile;
 - (void)setPass:(id)arg1;
 - (id)pass;
-- (id)init;
 - (void)dealloc;
-- (void)updateConstraints;
+- (void)layoutSubviews;
 
 @end

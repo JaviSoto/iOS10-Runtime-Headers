@@ -8,6 +8,7 @@
     BOOL _hasCustomAssociatedView;
     UIButton *_customButton;
     _MKUserTrackingButtonController *_controller;
+    BOOL _isLegacy;
     UIImage *_trackingEmptyImage;
     UIImage *_trackingNoneImage;
     UIImage *_trackingFollowImage;
@@ -26,17 +27,15 @@
 @property(setter=_setUserTrackingView:,retain) <MKUserTrackingView> * _userTrackingView;
 
 + (Class)_activityIndicatorClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
-- (id)_navigationBar;
 - (id)_toolbar;
 - (void)setMapView:(id)arg1;
 - (id)initWithWorldView:(id)arg1;
 - (id)initWithMapView:(id)arg1;
 - (id)_trackingFollowWithHeadingImage;
 - (id)_trackingFollowImage;
-- (id)_trackingNoneImage;
 - (id)_trackingEmptyImage;
 - (BOOL)_isHighlightedForState:(int)arg1;
 - (void)_updateForState:(int)arg1;
@@ -44,12 +43,14 @@
 - (void)set_navigationBar:(id)arg1;
 - (void)_repositionViews;
 - (void)set_toolbar:(id)arg1;
-- (id)_associatedView;
 - (void)_setUserTrackingView:(id)arg1;
 - (id)_userTrackingView;
+- (id)_associatedView;
+- (id)_navigationBar;
 - (id)initWithWorldView:(id)arg1 forceSilverStyle:(BOOL)arg2;
 - (id)_initWithUserTrackingView:(id)arg1;
 - (void)set_associatedView:(id)arg1;
+- (id)_trackingNoneImage;
 - (void)_goToNextMode:(id)arg1;
 - (id)mapView;
 - (int)_state;

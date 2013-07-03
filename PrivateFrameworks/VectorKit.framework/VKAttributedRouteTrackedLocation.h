@@ -52,8 +52,8 @@
 - (void)updatedWithProjectedRouteMatch:(id)arg1;
 - (id)matchedLocation;
 - (id)initWithRoute:(id)arg1;
-- (id)route;
 - (id)rawLocation;
+- (id)route;
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)description;

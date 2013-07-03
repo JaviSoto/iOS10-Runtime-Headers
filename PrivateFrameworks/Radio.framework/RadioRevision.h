@@ -10,8 +10,8 @@
 @property long long stationID;
 
 
-- (int)revisionType;
 - (long long)revisionID;
+- (int)revisionType;
 - (void)setRevisionType:(int)arg1;
 - (void)setRevisionID:(long long)arg1;
 - (void)setStationID:(long long)arg1;

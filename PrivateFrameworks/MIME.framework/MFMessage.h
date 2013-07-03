@@ -67,6 +67,7 @@
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
 - (BOOL)needsDateReceived;
+- (id)subjectIfCached;
 - (id)messageURL;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;

@@ -65,6 +65,9 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
 + (void)_prepareScreensForAppResume;
 + (id)_workspaceCapableScreens;
++ (id)sbs_screenTypes;
++ (id)sbs_snapshotImagePathComponent:(int)arg1;
++ (id)sbs_launchImageInfoPlistKeyModifier:(int)arg1;
 
 - (id)currentMode;
 - (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
@@ -122,13 +125,14 @@
 - (id)_capabilityForKey:(id)arg1;
 - (id)mirroredScreen;
 - (id)snapshot;
+- (id)snapshotView;
 - (int)_imageOrientation;
 - (void)_prepareForWindow;
 - (id)_name;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_jailedBoundsEdgeInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
 - (float)_horizontalPixelScale;
 - (float)_rotation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_jailedBoundsEdgeInsets;
 - (int)bitsPerComponent;
 - (float)_pointsPerInch;
 - (float)_scale;
@@ -142,5 +146,12 @@
 - (int)_userInterfaceIdiom;
 - (float)scale;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)sbs_snapshotImagePathComponent;
+- (id)sbs_launchImageInfoPlistKeyModifier;
+- (BOOL)sbs_isCloned;
+- (BOOL)sbs_isMainScreen;
+- (BOOL)sbs_isStarkScreen;
+- (id)_display;
+- (id)_mapkit_display;
 
 @end

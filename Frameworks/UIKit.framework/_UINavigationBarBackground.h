@@ -27,8 +27,8 @@
 @property BOOL barWantsAdaptiveBackdrop;
 @property BOOL barForcesOpaqueBackground;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -38,13 +38,13 @@
 - (BOOL)barForcesOpaqueBackground;
 - (BOOL)barWantsAdaptiveBackdrop;
 - (id)barTintColor;
-- (int)barStyle;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
 - (id)_currentCustomBackground;
 - (void)_setIsContainedInPopover:(BOOL)arg1;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
+- (int)barStyle;
 - (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)updateBackgroundImage;

@@ -12,7 +12,9 @@
 + (id)indexSet;
 
 - (void)_garbageCollectStorageIfNecessary;
+- (unsigned long)_positionOfIndex:(unsigned long long)arg1;
 - (void)_incrementStorageIfNecessaryForCount:(unsigned int)arg1;
+- (unsigned long)_insertionPositionOfIndex:(unsigned long long)arg1;
 - (void)addIndex:(unsigned long long)arg1;
 - (BOOL)containsIndex:(unsigned long long)arg1;
 - (unsigned long long)firstIndex;

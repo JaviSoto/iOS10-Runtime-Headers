@@ -23,14 +23,14 @@
 - (BOOL)_isIdenticalFault:(id)arg1;
 - (BOOL)_shouldProcessKVOChange;
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
-- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
-- (void)makeObjectsPerformSelector:(SEL)arg1;
 - (id)relationship;
 - (id)source;
 - (void)turnIntoFault;
 - (BOOL)isFault;
 - (void)willRead;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)makeObjectsPerformSelector:(SEL)arg1;
 - (BOOL)isEqualToSet:(id)arg1;
 - (id)objectEnumerator;
 - (id)allObjects;

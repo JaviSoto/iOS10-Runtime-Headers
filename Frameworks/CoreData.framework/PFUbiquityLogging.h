@@ -12,10 +12,10 @@
 + (BOOL)canLogMessageAtLevel:(int)arg1;
 + (void)initialize;
 
-- (void)userDefaultsChanged:(id)arg1;
 - (int)desiredLogLevel;
 - (void)setDesiredLogLevel:(int)arg1;
 - (void)checkUserDefaults;
+- (void)userDefaultsChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

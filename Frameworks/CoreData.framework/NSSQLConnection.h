@@ -83,7 +83,6 @@
 - (void)deleteRow:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)insertRow:(id)arg1;
-- (void)disconnect;
 - (void)releaseSQLStatement;
 - (void)resetSQLStatement;
 - (void)bindTempTableForBindIntarray:(id)arg1;
@@ -95,6 +94,7 @@
 - (void)endFetch;
 - (BOOL)isOpen;
 - (id)columnsToFetch;
+- (void)disconnect;
 - (void)finalize;
 - (void)dealloc;
 

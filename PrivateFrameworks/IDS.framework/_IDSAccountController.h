@@ -20,17 +20,20 @@
 @property(readonly) NSString * serviceName;
 
 
-- (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 completionHandler:(id)arg3;
+- (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
 - (void)_loadCachedAccountsWithDictionaries:(id)arg1;
 - (void)_loadCachedAccounts;
-- (void)_callDelegatesWithBlock:(id)arg1;
 - (void)addAccount:(id)arg1;
+- (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id)arg3;
+- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id)arg6;
 - (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id)arg5;
 - (void)setupAccountWithLoginID:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
+- (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
 - (id)accountWithUniqueID:(id)arg1;
 - (id)accountWithLoginID:(id)arg1 service:(id)arg2;
 - (id)enabledAccounts;
 - (id)initWithService:(id)arg1 delegateContext:(id)arg2;
+- (void)_callDelegatesWithBlock:(id)arg1;
 - (void)setupCompleteForAccount:(id)arg1 transactionID:(id)arg2 setupError:(id)arg3;
 - (void)accountDisabled:(id)arg1 onService:(id)arg2;
 - (void)accountEnabled:(id)arg1 onService:(id)arg2;

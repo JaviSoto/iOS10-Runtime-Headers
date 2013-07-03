@@ -4,13 +4,12 @@
 
 @class UIView, NSArray, UITableViewIndex, UIKeyboardCandidateGridCollectionViewController;
 
-@interface UIKeyboardCandidateGridCollectionView : UICollectionView  {
+@interface UIKeyboardCandidateGridCollectionView : UIKBCandidateCollectionView  {
     float _indexMaximumHeight;
     UIKeyboardCandidateGridCollectionViewController *_parentViewController;
     float _previousGroupBarStartingY;
     UITableViewIndex *_index;
     UIView *_headerView;
-    NSArray *_indexTitles;
 }
 
 @property UIKeyboardCandidateGridCollectionViewController * parentViewController;
@@ -26,6 +25,7 @@
 - (void)setIndexTitles:(id)arg1;
 - (id)indexTitles;
 - (void)dealloc;
+- (BOOL)isCellVisible:(id)arg1;
 - (void)delayUpdateIndex;
 - (void)showIndex:(BOOL)arg1;
 - (float)previousGroupBarStartingY;
@@ -36,7 +36,6 @@
 - (float)groupBarStartingY;
 - (void)keyboardWillShowNotification:(id)arg1;
 - (void)keyboardDidHideNotification:(id)arg1;
-- (BOOL)isCellVisible:(id)arg1;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (void)setHeaderView:(id)arg1;
 - (void)scrollToBottomWithAnimation:(BOOL)arg1;

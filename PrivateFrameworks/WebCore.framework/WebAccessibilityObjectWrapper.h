@@ -12,13 +12,15 @@
     unsigned long long m_accessibilityTraitsFromAncestor;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)accessibilityTitleElement;
 - (id)accessibilityHeaderElements;
 - (id)accessibilityLinkedElement;
 - (id)accessibilityURL;
+- (float)_accessibilityMaxValue;
+- (float)_accessibilityMinValue;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityColumnRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityRowRange;
 - (BOOL)accessibilityIsComboBox;

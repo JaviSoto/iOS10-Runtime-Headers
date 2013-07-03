@@ -13,8 +13,8 @@
 @property(readonly) unsigned short fileHFSFlags;
 @property(readonly) unsigned long long fileHFSResourceForkSize;
 
-+ (id)dictionaryWithDictionary:(id)arg1;
 + (id)sharedKeySetForKeys:(id)arg1;
++ (id)dictionaryWithDictionary:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 + (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
@@ -123,14 +123,6 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)bks_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
-- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
-- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
-- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
-- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
-- (id)MCDeepCopy;
-- (id)MCMutableDeepCopy;
-- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)archiveData;
 - (id)dictionaryFromChanges:(id)arg1;
 - (id)plistData;
@@ -147,13 +139,21 @@
 - (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
-- (id)asQueryParameterString;
 - (id)_webkit_numberForKey:(id)arg1;
 - (id)_webkit_arrayForKey:(id)arg1;
 - (BOOL)_webkit_boolForKey:(id)arg1;
 - (int)_webkit_intForKey:(id)arg1;
 - (id)_webkit_stringForKey:(id)arg1;
 - (id)_webkit_objectForMIMEType:(id)arg1;
+- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
+- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
+- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
+- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
+- (id)MCDeepCopy;
+- (id)MCMutableDeepCopy;
+- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)asQueryParameterString;
 - (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
 - (BOOL)_ui_dictionaryContainsUIStringDrawingKeys;
 - (BOOL)_boolForKey:(id)arg1;
@@ -165,8 +165,6 @@
 - (id)mutableDeepAutoreleasedCopy;
 - (id)_geo_newXPCObject;
 - (id)_FTFilteredDictionaryForAPS;
-- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
-- (int)abCompare:(id)arg1;
 - (id)gksDeepMutableCopy;
 - (id)deepCopy;
 - (id)_gkImageUrlForSize:(int)arg1;
@@ -175,8 +173,10 @@
 - (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
 - (id)_gkImageUrlForSize:(int)arg1 foundSize:(out unsigned int*)arg2;
 - (id)_gkImageUrlWithFallbacksForSize:(int)arg1;
-- (id)_sa_mappedDictionaryWithBlock:(id)arg1;
+- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
+- (int)abCompare:(id)arg1;
 - (BOOL)MR_isEqualToDictionary:(id)arg1;
+- (id)_sa_mappedDictionaryWithBlock:(id)arg1;
 - (id)ML3StringForKey:(id)arg1;
 - (id)MSDeepCopy;
 - (id)MSMutableDeepCopy;

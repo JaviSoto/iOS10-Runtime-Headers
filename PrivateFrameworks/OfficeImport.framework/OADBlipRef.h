@@ -27,9 +27,9 @@
 - (void)setEffects:(id)arg1;
 - (id)effects;
 - (id)blip;
-- (void)setIndex:(long)arg1;
 - (long)index;
 - (BOOL)isNull;
+- (void)setIndex:(long)arg1;
 - (unsigned int)effectCount;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

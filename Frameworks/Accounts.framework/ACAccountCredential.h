@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSMutableSet, NSString, ACAccount, NSDate, NSMutableDictionary;
+@class NSDate, NSMutableSet, NSString, ACAccount, NSSet, NSMutableDictionary;
 
 @interface ACAccountCredential : NSObject <NSSecureCoding> {
     NSMutableDictionary *_credentialItems;
@@ -19,11 +19,13 @@
 @property(copy) NSString * oauthTokenSecret;
 @property(copy) NSString * password;
 @property(copy) NSString * credentialType;
+@property(readonly) NSSet * dirtyProperties;
 @property(getter=isDirty) BOOL dirty;
 @property(getter=isEmpty) BOOL empty;
 @property(copy) NSString * oauthRefreshToken;
 @property(retain) NSDate * expiryDate;
 @property(copy) NSString * findMyiPhoneToken;
+@property(copy) NSString * mapsToken;
 
 + (id)nonPersistentKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
 + (id)supportedKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
@@ -32,11 +34,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)expiryDate;
+- (void)setPassword:(id)arg1;
 - (id)oauthToken;
 - (id)oauthTokenSecret;
 - (void)setFindMyiPhoneToken:(id)arg1;
 - (void)setEmpty:(BOOL)arg1;
 - (void)setDirty:(BOOL)arg1;
+- (void)setMapsToken:(id)arg1;
+- (id)mapsToken;
 - (id)findMyiPhoneToken;
 - (id)oauthRefreshToken;
 - (id)keysForCredentialItems;
@@ -45,12 +50,12 @@
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
 - (id)initWithPassword:(id)arg1;
 - (id)initWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
-- (void)setPassword:(id)arg1;
 - (void)setOauthTokenSecret:(id)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setOauthRefreshToken:(id)arg1;
 - (void)setOauthToken:(id)arg1;
 - (id)credentialItems;
+- (id)dirtyProperties;
 - (void)setCredentialType:(id)arg1;
 - (id)credentialType;
 - (void)_markPropertyDirty:(id)arg1;

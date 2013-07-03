@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKGroupsController, PKUsageNotificationServer, NSTimer, PKPassGroupStackView, <PKPassGroupsViewControllerDelegate>;
+@class PKGroupsController, PKUsageNotificationServer, NSTimer, PKPassGroupStackView, NSMutableArray, <PKPassGroupsViewControllerDelegate>;
 
 @interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKCodeAcquisitionDelegate> {
     PKGroupsController *_groupsController;
@@ -15,6 +15,8 @@
     unsigned long long tick;
     unsigned long long tock;
     NSTimer *_passViewedNotificationTimer;
+    BOOL _passesAreOutdated;
+    NSMutableArray *_blocksQueuedForUpdateCompletion;
     PKUsageNotificationServer *_usageServer;
     <PKPassGroupsViewControllerDelegate> *_delegate;
 }
@@ -48,6 +50,7 @@
 - (void)allowIdleTimer;
 - (void)presentPassWithUniqueID:(id)arg1;
 - (void)presentGroupWithIndex:(unsigned int)arg1;
+- (void)_presentWithUpdatedPasses:(id)arg1;
 - (void)_applyPresentationState;
 - (void)_handleApplicationdidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;

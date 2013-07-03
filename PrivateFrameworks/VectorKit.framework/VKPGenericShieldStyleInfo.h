@@ -57,7 +57,6 @@
 - (void)setHasTextColor:(BOOL)arg1;
 - (void)setHasBorderColor:(BOOL)arg1;
 - (void)setHasBackgroundColor:(BOOL)arg1;
-- (void)setHasStyle:(BOOL)arg1;
 - (void)setTextDropShadowColor:(unsigned int)arg1;
 - (BOOL)hasTextDropShadowColor;
 - (void)setTextDropShadowSize:(float)arg1;
@@ -71,7 +70,6 @@
 - (BOOL)hasTextColor;
 - (BOOL)hasBorderColor;
 - (BOOL)hasBackgroundColor;
-- (BOOL)hasStyle;
 - (unsigned int)textDropShadowColor;
 - (float)textDropShadowSize;
 - (float)textDropShadowOffsetAtIndex:(unsigned int)arg1;
@@ -80,6 +78,8 @@
 - (float)textStrokeSize;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setHasStyle:(BOOL)arg1;
+- (BOOL)hasStyle;
 - (void)copyTo:(id)arg1;
 - (void)setBackgroundColor:(unsigned int)arg1;
 - (void)setStyle:(int)arg1;

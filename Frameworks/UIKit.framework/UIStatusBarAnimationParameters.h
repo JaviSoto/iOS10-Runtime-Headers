@@ -23,14 +23,14 @@
 + (void)animateWithParameters:(id)arg1 fromCurrentState:(BOOL)arg2 animations:(id)arg3 completion:(id)arg4;
 
 - (void)setDuration:(double)arg1;
-- (double)startTime;
 - (id)init;
 - (void)dealloc;
+- (double)startTime;
 - (void)setAnimationFactory:(id)arg1;
 - (id)animationFactory;
 - (id)initWithEmptyParameters;
-- (double)delay;
 - (BOOL)shouldAnimate;
+- (double)delay;
 - (int)curve;
 - (void)setStartTime:(double)arg1;
 - (void)setCurve:(int)arg1;

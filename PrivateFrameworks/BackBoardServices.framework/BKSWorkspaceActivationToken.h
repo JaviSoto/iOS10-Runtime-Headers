@@ -11,9 +11,9 @@
 @property(retain) NSDate * timestamp;
 
 
-- (id)timestamp;
 - (void)setTimestamp:(id)arg1;
 - (id)shortDescription;
+- (id)timestamp;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;

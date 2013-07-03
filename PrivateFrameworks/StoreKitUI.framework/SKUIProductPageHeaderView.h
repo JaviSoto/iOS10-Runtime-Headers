@@ -67,14 +67,14 @@
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setHeaderImage:(id)arg1;
 - (id)headerImage;
-- (void)setNumberOfUserRatings:(int)arg1;
 - (id)itemState;
 - (id)itemOffer;
 - (void)setItemOffer:(id)arg1;
-- (void)setUserRating:(float)arg1;
 - (void)setItemState:(id)arg1;
+- (void)setNumberOfUserRatings:(int)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (void)setUserRating:(float)arg1;
 - (float)userRating;
 - (void)setIconImage:(id)arg1;
 - (void)setArtistName:(id)arg1;

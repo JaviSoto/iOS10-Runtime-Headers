@@ -7,13 +7,15 @@
 @interface GKFamiliarPlayerInternal : GKPlayerInternal  {
     NSString *_firstName;
     NSString *_lastName;
+    NSString *_compositeName;
 }
 
 + (id)secureCodedPropertyKeys;
 
+- (void)setCompositeName:(id)arg1;
+- (id)compositeName;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (id)displayName;
 - (id)lastName;
 - (id)firstName;
 - (void)dealloc;

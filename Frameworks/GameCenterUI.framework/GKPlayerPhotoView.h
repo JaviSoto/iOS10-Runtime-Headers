@@ -6,13 +6,17 @@
 
 @interface GKPlayerPhotoView : UIImageView <GKPlayerPhotoContainer> {
     GKPlayer *_player;
+    int _onAdaptiveBackground;
 }
 
+@property(getter=isOnAdaptiveBackground) int onAdaptiveBackground;
 @property(retain) GKPlayer * player;
 
++ (void)initialize;
 
+- (int)isOnAdaptiveBackground;
 - (void)refreshPhoto;
-- (void)applyMonogramImage;
+- (void)setOnAdaptiveBackground:(int)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
 - (void)dealloc;

@@ -32,9 +32,11 @@
 @property(readonly) BOOL supportsMultiplayer;
 @property(readonly) BOOL supportsTurnBasedMultiplayer;
 
++ (BOOL)isPreferences;
 + (void)markGameRecommendationsViewed:(id)arg1 complete:(id)arg2;
 + (void)markGameRecommendationsDisplayed:(id)arg1 complete:(id)arg2;
 + (void)updateGames:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadTopGamesWithCompletionHandler:(id)arg1;
 + (void)loadGamesWithBundleIDs:(id)arg1 withCompletionHandler:(id)arg2;
 + (BOOL)isGameCenter;
 + (id)currentGame;
@@ -62,7 +64,6 @@
 - (BOOL)isSandboxed;
 - (BOOL)isGameCenter;
 - (id)internal;
-- (BOOL)isInstalled;
 - (BOOL)isDownloading;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)init;
@@ -71,6 +72,7 @@
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)isInstalled;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -89,8 +91,8 @@
 - (id)URLStringForImageWithShineIfNeeded;
 - (id)imageSourceForIconStyle:(int)arg1;
 - (id)loadIconForStyle:(int)arg1 withCompletionHandler:(id)arg2;
-- (void)_gkSetSharingInfo:(id)arg1;
 - (id)fetchSharingInfo;
+- (void)_gkSetSharingInfo:(id)arg1;
 - (id)_gkSharingInfo;
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;

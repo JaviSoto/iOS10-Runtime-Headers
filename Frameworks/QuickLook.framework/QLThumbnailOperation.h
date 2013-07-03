@@ -18,9 +18,9 @@
 @property(retain) UIImage * image;
 
 
-- (void)setIndex:(int)arg1;
 - (int)index;
 - (struct CGSize { float x1; float x2; })size;
+- (void)setIndex:(int)arg1;
 - (id)image;
 - (void)setImage:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

@@ -137,9 +137,9 @@
 - (void)setTracking:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
+- (BOOL)isSelected;
 - (id)reuseIdentifier;
 - (BOOL)isTracking;
-- (BOOL)isSelected;
 - (void)_setHiddenForOffscreen:(BOOL)arg1;
 - (id)detailCalloutAccessoryView;
 - (void)setDetailCalloutAccessoryView:(id)arg1;

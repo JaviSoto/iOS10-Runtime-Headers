@@ -43,6 +43,7 @@
         unsigned int flipsIfNeeded : 1; 
         unsigned int allowNonContig : 1; 
         unsigned int useNonContig : 1; 
+        unsigned int inBackgroundLayout : 1; 
     } _lmFlags;
     id _delegate;
     unsigned short _textViewResizeDisableStack;
@@ -148,10 +149,8 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_blockRowRangeForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_blockRowRangeForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 completeRows:(BOOL*)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_blockRangeForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_mergeLayoutHoles;
 - (void)_mergeGlyphHoles;
 - (void)showAttachmentCell:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 characterIndex:(unsigned int)arg3;
-- (void)_fillLayoutHoleAtIndex:(unsigned int)arg1 desiredNumberOfLines:(unsigned int)arg2;
 - (void)setBaselineOffset:(float)arg1 forGlyphAtIndex:(unsigned int)arg2;
 - (void)drawSpellingUnderlineForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 spellingState:(int)arg2 inGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 lineFragmentGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 containerOrigin:(struct CGPoint { float x1; float x2; })arg6;
 - (void)showAttachment:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 textContainer:(id)arg3 characterIndex:(unsigned int)arg4;
@@ -166,6 +165,8 @@
 - (id)_glyphDescriptionForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_lineFragmentDescription:(BOOL)arg1;
 - (id)_lineFragmentDescriptionForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 includeGlyphLocations:(BOOL)arg2;
+- (void)_fillLayoutHoleAtIndex:(unsigned int)arg1 desiredNumberOfLines:(unsigned int)arg2;
+- (void)_mergeLayoutHoles;
 - (unsigned int)_smallEncodingGlyphIndexForCharacterIndex:(unsigned int)arg1 startOfRange:(BOOL)arg2 okToFillHoles:(BOOL)arg3 considerNulls:(BOOL)arg4;
 - (void)_fillLayoutHoleForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 desiredNumberOfLines:(unsigned int)arg2 isSoft:(BOOL)arg3;
 - (void)_invalidateDisplayIfNeeded;
@@ -314,6 +315,7 @@
 - (id)glyphGenerator;
 - (void)_clearTemporaryAttributes;
 - (void)_invalidateInsertionPoint;
+- (void)_markSelfAsDirtyForBackgroundLayout:(id)arg1;
 - (void)_invalidateUsageForTextContainersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_setRowArrayCache:(id)arg1;
 - (void)_firstTextViewChanged;

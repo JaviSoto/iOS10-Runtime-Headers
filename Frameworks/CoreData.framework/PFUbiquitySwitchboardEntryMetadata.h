@@ -18,10 +18,12 @@
     PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
     PFUbiquityRecordsImporterSchedulingContext *_schedulingContext;
     BOOL _useLocalStorage;
+    BOOL _useLocaAccount;
     NSObject<OS_dispatch_queue> *_privateQueue;
+    BOOL _useLocalAccount;
 }
 
-@property(readonly) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
+@property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
 @property(readonly) _PFUbiquityRecordsImporter * importer;
 @property(readonly) _PFUbiquityRecordsExporter * exporter;
 @property(retain) PFUbiquityLocation * ubiquityRootLocation;
@@ -31,9 +33,12 @@
 @property(readonly) NSSQLCore * privateStore;
 @property(readonly) PFUbiquityRecordsImporterSchedulingContext * schedulingContext;
 @property BOOL useLocalStorage;
+@property BOOL useLocalAccount;
 
 
+- (BOOL)useLocalAccount;
 - (id)activeModelVersionHash;
+- (void)setUseLocalAccount:(BOOL)arg1;
 - (id)exporter;
 - (void)removePersistentStore:(id)arg1;
 - (void)addPersistentStore:(id)arg1;
@@ -46,6 +51,7 @@
 - (void)setUbiquityRootLocation:(id)arg1;
 - (void)setUseLocalStorage:(BOOL)arg1;
 - (id)importer;
+- (void)setCacheWrapper:(id)arg1;
 - (id)cacheWrapper;
 - (id)ubiquityRootLocation;
 - (id)stores;

@@ -76,7 +76,7 @@
 - (void)deleteSheet:(id)arg1 didComplete:(BOOL)arg2;
 - (BOOL)_isIngestingPass;
 - (void)_autoscrollIfNecessary;
-- (void)_animateGroupView:(id)arg1 toIndex:(unsigned int)arg2 reorderAfter:(double)arg3;
+- (void)_animateGroupView:(id)arg1 toIndex:(unsigned int)arg2 referenceView:(id)arg3 orderAbove:(BOOL)arg4 reorderAfter:(double)arg5;
 - (unsigned int)_indexForPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_reorderPositionChangedForGroupView:(id)arg1 velocity:(struct CGPoint { float x1; float x2; })arg2;
 - (float)_xPositionForGroupView:(id)arg1 forState:(int)arg2;

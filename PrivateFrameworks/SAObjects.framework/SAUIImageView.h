@@ -15,15 +15,15 @@
 + (id)imageViewWithDictionary:(id)arg1 context:(id)arg2;
 + (id)imageView;
 
+- (void)setDescriptionText:(id)arg1;
 - (id)descriptionText;
 - (id)encodedClassName;
 - (id)commands;
-- (void)setDescriptionText:(id)arg1;
 - (void)setCommands:(id)arg1;
 - (id)image;
 - (void)setImage:(id)arg1;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (id)groupIdentifier;
 
 @end

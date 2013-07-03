@@ -7,8 +7,8 @@
     BOOL _sunlightMode;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;

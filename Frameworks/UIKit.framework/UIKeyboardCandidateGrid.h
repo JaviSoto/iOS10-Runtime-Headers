@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateGridCollectionViewController, <UICollectionViewDelegate>, TIKeyboardCandidateResultSet, NSArray, UIImageView, UIKeyboardCandidateGridHeader, UIView, <UIKeyboardCandidateListDelegate>, NSString, NSMutableDictionary, UIKeyboardCandidateSortControl;
+@class UIKeyboardCandidateSortControl, UIKeyboardCandidateGridCollectionViewController, UIKBBackdropView, <UIKeyboardCandidateListDelegate>, UIView, NSArray, TIKeyboardCandidateResultSet, <UICollectionViewDelegate>, UIKeyboardCandidateGridHeader, NSString, NSMutableDictionary, UIImageView;
 
 @interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateGridCollectionViewControllerDelegate> {
     UIImageView *_backgroundView;
@@ -18,7 +18,8 @@
     UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
     unsigned int _numberOfColumns;
     <UICollectionViewDelegate> *_scrollViewDelegate;
-    int _visualStyle;
+    int _candidatesVisualStyle;
+    UIKBBackdropView *_backdropView;
     NSArray *_sortedCandidates;
     NSString *_inlineText;
 }
@@ -29,16 +30,17 @@
 @property(retain) NSArray * sortedCandidates;
 @property(retain) NSString * inlineText;
 @property unsigned int numberOfColumns;
-@property int visualStyle;
+@property int candidatesVisualStyle;
 @property UIKeyboardCandidateSortControl * sortBar;
 @property UIKeyboardCandidateGridHeader * gridHeader;
 @property <UICollectionViewDelegate> * scrollViewDelegate;
 @property <UIKeyboardCandidateListDelegate> * candidateListDelegate;
 @property(readonly) NSMutableDictionary * collectionViewControllers;
 @property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
+@property(retain) UIKBBackdropView * backdropView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)candidateSet;
@@ -67,20 +69,22 @@
 - (void)statusBarFrameWillChange:(id)arg1;
 - (void)setDrawBottomShadow:(BOOL)arg1;
 - (void)setDrawTopShadow:(BOOL)arg1;
-- (id)inlineText;
+- (id)backdropView;
+- (void)setBackdropView:(id)arg1;
 - (void)sortSelectionBarAction:(id)arg1;
 - (void)setCollectionViewController:(id)arg1;
 - (id)collectionViewController;
 - (void)candidateListShouldBeDismissed:(id)arg1;
-- (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
 - (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
-- (id)candidateListDelegate;
 - (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
+- (id)candidateListDelegate;
 - (BOOL)padInlineFloatingViewIsExpanded:(id)arg1;
-- (int)visualStyle;
-- (void)setVisualStyle:(int)arg1;
+- (int)candidatesVisualStyle;
+- (void)setCandidatesVisualStyle:(int)arg1;
+- (unsigned int)selectedSortMethodIndex;
+- (id)inlineText;
 - (void)candidatesDidChange;
 - (BOOL)hasPreviousPage;
 - (BOOL)handleTabKeyWithShift:(BOOL)arg1;
@@ -97,6 +101,7 @@
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (BOOL)isExtendedList;
+- (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (BOOL)hasNextPage;

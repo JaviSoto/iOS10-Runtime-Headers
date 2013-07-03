@@ -28,15 +28,15 @@
 @property BOOL isPrimaryAddressAtom;
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2 useAbbreviatedName:(BOOL)arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)unmodifiedAddressString;
 - (int)ABPropertyType;
 - (BOOL)isDisplayStringFromAddressBook;
 - (void)setAtomFont:(id)arg1;
 - (id)atomFont;
-- (id)_VIPImageNameForStyle:(int)arg1 selected:(BOOL)arg2;
+- (void)addressBookDidChange:(id)arg1;
 - (id)initWithAddress:(id)arg1 presentationOptions:(unsigned int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 addressBook:(void*)arg5;
 - (void)_updateABPerson;
 - (void)_displayStringDidChange;
@@ -47,8 +47,6 @@
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (BOOL)isPrimaryAddressAtom;
 - (unsigned int)presentationOptions;
-- (void)addressBookDidChange:(id)arg1;
-- (struct CGPoint { float x1; float x2; })baselinePoint;
 - (void)setAddress:(id)arg1;
 - (id)emailAddress;
 - (void*)ABPerson;
@@ -61,6 +59,7 @@
 - (void)dealloc;
 - (int)identifier;
 - (id)displayString;
+- (struct CGPoint { float x1; float x2; })baselinePoint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
 - (int)separatorStyle;
 - (void)setSeparatorStyle:(int)arg1;

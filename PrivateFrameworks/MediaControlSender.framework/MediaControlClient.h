@@ -23,6 +23,7 @@
 - (void)setVolume:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getVolumeWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)setRate:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)setPosition:(float)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)setPosition:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPositionWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPlaybackInfoWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;

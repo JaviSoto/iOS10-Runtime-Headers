@@ -60,6 +60,7 @@
 @property(readonly) NSString * aa_accountTypeString;
 @property(readonly) ACAccount * aa_fmipAccount;
 @property(readonly) NSString * aa_fmipToken;
+@property(readonly) NSString * aa_mapsToken;
 @property(readonly) NSString * aa_accountFooterText;
 @property(readonly) NSDictionary * aa_accountFooterButton;
 @property(readonly) NSDictionary * aa_accountFirstDisplayAlert;
@@ -108,7 +109,6 @@
 + (id)aa_dataclassesBoundToPrimaryAppleAccount;
 
 - (id)accountPropertyForKey:(id)arg1;
-- (id)objectID;
 - (id)accountType;
 - (void)setAccountType:(id)arg1;
 - (void)setAccountPropertiesTransformer:(id)arg1;
@@ -142,11 +142,9 @@
 - (id)initWithAccountType:(id)arg1;
 - (id)shortDebugName;
 - (void)_loadAllCachedProperties;
-- (void)reload;
 - (id)credential;
 - (id)dirtyProperties;
 - (BOOL)isEnabledForDataclass:(id)arg1;
-- (id)accountStore;
 - (id)displayAccount;
 - (void)setSupportsAuthentication:(BOOL)arg1;
 - (void)setAuthenticated:(BOOL)arg1;
@@ -161,7 +159,6 @@
 - (id)enabledAndSyncableDataclasses;
 - (id)enabledDataclasses;
 - (id)provisionedDataclasses;
-- (BOOL)isActive;
 - (id)creationDate;
 - (void)_markAccountPropertyDirty:(id)arg1;
 - (id)accountPropertiesTransformer;
@@ -181,11 +178,15 @@
 - (void)_installCredentialsChangedObserver;
 - (BOOL)supportsAuthentication;
 - (void)_clearCachedCredentials;
+- (id)accountStore;
 - (void)_clearDirtyProperties;
 - (void)_clearCachedChildAccounts;
 - (void)_setObjectID:(id)arg1;
 - (BOOL)isDirty;
 - (void)_setAccountStore:(id)arg1;
+- (BOOL)isActive;
+- (id)objectID;
+- (void)reload;
 - (void)refresh;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -221,9 +222,11 @@
 - (id)aa_accountFirstDisplayAlert;
 - (id)aa_accountFooterButton;
 - (id)aa_accountFooterText;
+- (id)aa_mapsToken;
 - (id)aa_fmipToken;
 - (id)aa_authTokenWithError:(id*)arg1;
 - (id)aa_protocolVersion;
+- (void)aa_setPrimaryEmailVerified:(BOOL)arg1;
 - (BOOL)aa_isPrimaryEmailVerified;
 - (void)aa_setPrimaryAccount:(BOOL)arg1;
 - (id)aa_accountTypeString;
@@ -231,6 +234,7 @@
 - (id)aa_firstName;
 - (id)aa_displayName;
 - (id)aa_childMailAccount;
+- (void)aa_setMapsToken:(id)arg1;
 - (id)aa_fmipAccount;
 - (void)aa_setNeedsToVerifyTerms:(BOOL)arg1;
 - (BOOL)aa_needsToVerifyTerms;
@@ -239,7 +243,6 @@
 - (void)aa_updateWithProvisioningResponse:(id)arg1;
 - (id)aa_appleIDAliases;
 - (BOOL)aa_isPrimaryAccount;
-- (void)aa_setPrimaryEmailVerified:(BOOL)arg1;
 - (void)aa_setPassword:(id)arg1;
 - (id)aa_primaryEmail;
 - (id)aa_personID;

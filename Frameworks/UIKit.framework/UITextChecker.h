@@ -24,6 +24,7 @@
 + (id)bestLanguageForString:(id)arg1 fromAlternatives:(id)arg2 currentLanguage:(id)arg3 insertionPointIndex:(unsigned int)arg4 scriptForBestLanguage:(id*)arg5;
 + (int)uniqueSpellDocumentTag;
 + (void)queryLocalUpdateAssets:(id)arg1;
++ (void)setString:(id)arg1 isExemptFromChecker:(BOOL)arg2;
 
 - (BOOL)isWordInUserDictionaries:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)init;

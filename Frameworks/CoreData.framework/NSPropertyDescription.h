@@ -44,16 +44,13 @@
 - (void)setTransient:(BOOL)arg1;
 - (void)setOptional:(BOOL)arg1;
 - (void)_initializeExtraIVars;
-- (BOOL)_isOrdered;
 - (BOOL)_isToManyRelationship;
-- (void)setReadOnly:(BOOL)arg1;
 - (BOOL)_skipValidation;
 - (void)_restoreValidation;
 - (void)_stripForMigration;
 - (void)_setEntitysReferenceID:(long)arg1;
 - (BOOL)isStoredInExternalRecord;
 - (BOOL)isIndexedBySpotlight;
-- (BOOL)_isEditable;
 - (id)elementID;
 - (void)setElementID:(id)arg1;
 - (void)setVersionHashModifier:(id)arg1;
@@ -70,7 +67,6 @@
 - (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (id)_rawValidationWarnings;
 - (id)_rawValidationPredicates;
-- (id)_initWithName:(id)arg1;
 - (id)validationWarnings;
 - (id)validationPredicates;
 - (void)_throwIfNotEditable;
@@ -85,6 +81,10 @@
 - (id)entity;
 - (long)_entitysReferenceID;
 - (BOOL)_isRelationship;
+- (BOOL)_isEditable;
+- (id)_initWithName:(id)arg1;
+- (void)setReadOnly:(BOOL)arg1;
+- (BOOL)_isOrdered;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -83,7 +83,7 @@
 - (BOOL)setInputGain:(float)arg1 error:(id*)arg2;
 - (BOOL)setPreferredOutputNumberOfChannels:(int)arg1 error:(id*)arg2;
 - (BOOL)setPreferredInputNumberOfChannels:(int)arg1 error:(id*)arg2;
-- (BOOL)requestRecordPermission;
+- (void)requestRecordPermission:(id)arg1;
 - (BOOL)setCategory:(id)arg1 withOptions:(unsigned int)arg2 error:(id*)arg3;
 - (void)privateUpdateAudioFormat:(id)arg1;
 - (void)privateUpdateAudioFormats:(id)arg1;

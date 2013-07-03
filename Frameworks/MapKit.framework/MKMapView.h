@@ -166,6 +166,8 @@
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionThatFitsMapType:(unsigned int)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg3 minZoomLevel:(float)arg4 maxZoomLevel:(float)arg5;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (BOOL)_isVisible;
+- (int)animationType;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { double x1; double x2; double x3; })arg2 course:(double)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
@@ -272,10 +274,6 @@
 - (BOOL)canRotateForHeading;
 - (BOOL)hasRenderedSomething;
 - (BOOL)isUserLocationVisible;
-- (void)setPitchEnabled:(BOOL)arg1;
-- (BOOL)isPitchEnabled;
-- (void)setRotateEnabled:(BOOL)arg1;
-- (BOOL)isRotateEnabled;
 - (void)setCenteringRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)set_zoomScale:(float)arg1;
 - (void)set_rotationState:(int)arg1;
@@ -294,7 +292,6 @@
 - (void)setScaleEnabled:(BOOL)arg1;
 - (BOOL)isLoadingEnabled;
 - (id)_startEffectsTimer;
-- (int)animationType;
 - (id)_defaultLocationTimer;
 - (Class)_calloutViewClass;
 - (void)_setCalloutViewClass:(Class)arg1;
@@ -404,7 +401,6 @@
 - (float)_zoomLevelForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 includeAccessoryPadding:(BOOL)arg2;
 - (struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_zoomRegionForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 maxZoomLevel:(int)arg3 minZoomLevel:(int)arg4;
 - (int)_viewIndexForSubview:(id)arg1;
-- (BOOL)_isVisible;
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toCoordinateFromView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)disableLiveTracking;
@@ -457,6 +453,7 @@
 - (BOOL)calloutViewContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_addDebugGesture;
 - (void)handleLongPress:(id)arg1;
+- (void)handleTap:(id)arg1;
 - (void)toggleLocationConsole:(id)arg1;
 - (void)_updateIconsShouldAlignToPixels;
 - (void)_stopTrackingHeading;
@@ -487,7 +484,11 @@
 - (void)setUserTrackingMode:(int)arg1;
 - (int)userTrackingMode;
 - (void)set_startEffectsTimer:(id)arg1;
+- (BOOL)isRotateEnabled;
+- (BOOL)isPitchEnabled;
 - (BOOL)showsUserLocation;
+- (void)setRotateEnabled:(BOOL)arg1;
+- (void)setPitchEnabled:(BOOL)arg1;
 - (void)setShowsUserLocation:(BOOL)arg1;
 - (id)_commonInitAndEnableLoading:(BOOL)arg1 fromIB:(BOOL)arg2;
 - (void)_updateAttribution;
@@ -526,7 +527,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forViewPrintFormatter:(id)arg2;
-- (void)handleTap:(id)arg1;
 - (BOOL)isScrolling;
 - (float)_zoomScale;
 - (BOOL)isZoomEnabled;

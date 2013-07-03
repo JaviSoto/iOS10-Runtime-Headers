@@ -30,6 +30,7 @@
             float height; 
         } size; 
     } _keyboardFrame;
+    float _keyboardHeight;
     BOOL _isInTransition;
     UIModalItem *_itemBeingPresented;
     UIModalItem *_itemBeingDismissed;
@@ -37,23 +38,30 @@
 
 @property BOOL isInTransition;
 @property UIModalItem * currentItem;
-@property(readonly) UIModalItem * itemBeingPresented;
-@property(readonly) UIModalItem * itemBeingDismissed;
+@property(retain) UIModalItem * itemBeingPresented;
+@property(retain) UIModalItem * itemBeingDismissed;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
-- (id)itemBeingPresented;
-- (id)itemBeingDismissed;
 - (void)setCurrentItem:(id)arg1;
-- (id)currentItem;
 - (void)setIsInTransition:(BOOL)arg1;
+- (void)_showItem:(id)arg1 animated:(BOOL)arg2 undimmSpotlight:(BOOL)arg3;
+- (void)_showDimmingView:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_hide;
+- (void)_showDimmingViewAnimated:(BOOL)arg1;
+- (void)_hideDimmingViewAnimated:(BOOL)arg1;
 - (void)_dismissMe:(id)arg1 animated:(BOOL)arg2;
 - (void)hideModalItem:(id)arg1 animated:(BOOL)arg2;
 - (void)displayModalItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_hideItem:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithModalItemType:(int)arg1;
+- (id)currentItem;
+- (void)_hideAnimated:(BOOL)arg1 dimmSpotlight:(BOOL)arg2;
+- (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4 keepDimmingView:(BOOL)arg5;
+- (id)itemBeingPresented;
+- (id)itemBeingDismissed;
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyPresentingAnimationStartingStateForModalItem:(id)arg1 view:(id)arg2;
@@ -62,6 +70,9 @@
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
 - (BOOL)isInTransition;
 - (void)keyboardChanged:(id)arg1;
+- (void)keyfirstResponderChanged:(id)arg1;
+- (void)setItemBeingDismissed:(id)arg1;
+- (void)setItemBeingPresented:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

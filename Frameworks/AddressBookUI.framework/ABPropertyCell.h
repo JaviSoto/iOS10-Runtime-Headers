@@ -2,19 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSLayoutConstraint, UIResponder, UILabel, <ABPropertyCellDelegate>, UIView, NSDictionary, ABPropertyGroupItem;
+@class NSLayoutConstraint, UIResponder, UILabel, <ABPropertyCellDelegate>, UIView, NSDictionary, <ABPresenterDelegate>, ABPropertyGroupItem;
 
 @interface ABPropertyCell : ABContactCell  {
+    float _labelWidth;
     BOOL _allowsEditing;
     UILabel *_labelLabel;
     UILabel *_valueLabel;
     UIView *_innerContentView;
     UIResponder *_firstResponderItem;
-    float _labelWidth;
     <ABPropertyCellDelegate> *_delegate;
+    <ABPresenterDelegate> *_presentingDelegate;
     NSDictionary *_labelTextAttributes;
     NSDictionary *_valueTextAttributes;
-    NSLayoutConstraint *_cellWidthConstraint;
+    NSLayoutConstraint *_labelWidthConstraint;
 }
 
 @property(readonly) ABPropertyGroupItem * propertyItem;
@@ -25,25 +26,28 @@
 @property BOOL allowsEditing;
 @property float labelWidth;
 @property <ABPropertyCellDelegate> * delegate;
+@property <ABPresenterDelegate> * presentingDelegate;
 @property(copy) NSDictionary * labelTextAttributes;
 @property(copy) NSDictionary * valueTextAttributes;
-@property(retain) NSLayoutConstraint * cellWidthConstraint;
+@property(retain) NSLayoutConstraint * labelWidthConstraint;
 
 + (float)labelsPadding;
 + (float)cellHeight;
 + (BOOL)requiresConstraintBasedLayout;
 
 - (id)valueLabel;
-- (float)labelWidth;
-- (void)setCellWidthConstraint:(id)arg1;
-- (id)cellWidthConstraint;
 - (void)_adjustCellLayoutForSectionLocation:(int)arg1;
+- (void)setLabelWidthConstraint:(id)arg1;
+- (float)labelWidth;
 - (id)labelLabel;
-- (void)setLabelWidth:(float)arg1;
+- (id)labelWidthConstraint;
 - (id)innerContentView;
+- (void)setLabelWidth:(float)arg1;
+- (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
-- (id)valueTextAttributes;
+- (id)presentingDelegate;
 - (void)setValueTextAttributes:(id)arg1;
+- (id)valueTextAttributes;
 - (void)setLabelTextAttributes:(id)arg1;
 - (id)labelTextAttributes;
 - (id)firstResponderItem;
@@ -64,6 +68,7 @@
 - (void)updateConstraints;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)tintColorDidChange;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

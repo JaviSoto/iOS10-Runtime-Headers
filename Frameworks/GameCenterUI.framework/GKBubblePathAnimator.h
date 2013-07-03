@@ -8,6 +8,7 @@
 + (id)hiTimingFunction;
 + (id)sharedBubblePathAnimator;
 
+- (double)minimumDurationForViewAnimations;
 - (void)animateTransition:(id)arg1 completionHandler:(id)arg2;
 - (void)animateTransition:(id)arg1;
 

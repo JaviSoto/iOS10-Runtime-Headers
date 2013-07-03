@@ -18,8 +18,8 @@
 - (void)setStocks:(id)arg1;
 - (id)stocks;
 - (id)encodedClassName;
-- (id)results;
 - (void)setResults:(id)arg1;
+- (id)results;
 - (id)groupIdentifier;
 
 @end

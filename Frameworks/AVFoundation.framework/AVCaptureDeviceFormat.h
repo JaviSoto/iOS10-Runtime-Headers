@@ -28,6 +28,7 @@
 - (BOOL)supportsHighProfileH264;
 - (int)rawBitDepth;
 - (BOOL)isHighResPhotoFormat;
+- (BOOL)supportsDynamicCrop;
 - (struct CGSize { float x1; float x2; })_maxVideoDimensions;
 - (BOOL)supportsVideoZoom;
 - (struct { int x1; int x2; })sensorDimensions;
@@ -48,6 +49,8 @@
 - (void)setDefaultActiveMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDefaultActiveMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)videoSupportedFrameRateRanges;
+- (id)videoZoomSupportedUpscaleStages;
+- (id)videoZoomSupportedDownscaleStages;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })highestSupportedVideoFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lowestSupportedVideoFrameDuration;
 - (struct opaqueCMFormatDescription { }*)formatDescription;

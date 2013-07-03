@@ -22,7 +22,6 @@
 - (id)initWithPrincipal:(id)arg1 calendar:(id)arg2 nextCtag:(id)arg3 nextSyncToken:(id)arg4;
 - (void)_syncEventsForMerge;
 - (void)_processAddedOrModified:(id)arg1 removed:(id)arg2;
-- (void)_reallySyncCalendar;
 - (id)_distantFutureEndDate;
 - (BOOL)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
 - (BOOL)getScheduleChanges;

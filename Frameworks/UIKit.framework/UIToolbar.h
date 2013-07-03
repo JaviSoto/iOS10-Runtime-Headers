@@ -52,8 +52,8 @@
 + (Class)defaultButtonClass;
 + (float)defaultHeightForBarSize:(int)arg1;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (id)items;
@@ -104,6 +104,8 @@
 - (void)positionButtons:(id)arg1 tags:(int*)arg2 count:(int)arg3 group:(int)arg4;
 - (id)createButtonWithDescription:(id)arg1;
 - (id)initInView:(id)arg1 withItemList:(id)arg2;
+- (void)_frameOrCenterChanged;
+- (void)_frameOrBoundsChangedWithVisibleSizeChange:(BOOL)arg1 wasMinibar:(BOOL)arg2;
 - (id)_currentButtons;
 - (void)_showButtons:(int*)arg1 withCount:(int)arg2 group:(int)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(int)arg6;
 - (float)_edgeMarginForBorderedItem:(BOOL)arg1 isText:(BOOL)arg2;
@@ -141,13 +143,13 @@
 - (void)_setWantsLetterpressContent:(BOOL)arg1;
 - (int)barPosition;
 - (int)_barPosition;
-- (int)barStyle;
 - (BOOL)_wantsLetterpressContent;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
 - (id)_currentCustomBackground;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
+- (int)barStyle;
 - (void)_customViewChangedForButtonItem:(id)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)removeConstraint:(id)arg1;
@@ -158,6 +160,7 @@
 - (void)_updateOpacity;
 - (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 - (id)_shadowView;
+- (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
 - (void)_updateBackgroundImage;
 - (id)_effectiveBarTintColor;
 - (void)_updateBackgroundColor;
@@ -168,7 +171,9 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)tintColorDidChange;
 - (void)invalidateIntrinsicContentSize;
+- (void)setTintColor:(id)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (id)scriptingInfoWithChildren;
 - (BOOL)isTranslucent;
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;

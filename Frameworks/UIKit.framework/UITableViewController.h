@@ -20,8 +20,8 @@
 @property BOOL clearsSelectionOnViewWillAppear;
 @property(retain) UIRefreshControl * refreshControl;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)init;
 - (BOOL)respondsToSelector:(SEL)arg1;

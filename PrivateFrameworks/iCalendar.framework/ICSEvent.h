@@ -54,11 +54,6 @@
 
 + (id)name;
 
-- (void)setX_calendarserver_private_comment:(id)arg1;
-- (void)setTransp:(int)arg1;
-- (void)setX_apple_needs_reply:(BOOL)arg1;
-- (id)x_calendarserver_private_comment;
-- (int)transp;
 - (BOOL)isDefaultAlarmDeleted;
 - (void)setX_apple_ews_busystatus:(int)arg1;
 - (int)x_apple_ews_busystatus;
@@ -79,5 +74,10 @@
 - (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
 - (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (BOOL)validate:(id*)arg1;
+- (void)setX_calendarserver_private_comment:(id)arg1;
+- (void)setTransp:(int)arg1;
+- (void)setX_apple_needs_reply:(BOOL)arg1;
+- (id)x_calendarserver_private_comment;
+- (int)transp;
 
 @end

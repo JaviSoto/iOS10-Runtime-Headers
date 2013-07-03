@@ -41,6 +41,8 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)applicationDidResume;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)reloadData;
 
 @end

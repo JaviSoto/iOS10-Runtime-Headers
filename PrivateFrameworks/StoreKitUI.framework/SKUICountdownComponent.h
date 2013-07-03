@@ -12,8 +12,8 @@
 
 
 - (void)setCountdown:(id)arg1;
-- (id)initWithCustomPageContext:(id)arg1;
 - (id)countdown;
+- (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
 - (void).cxx_destruct;
 

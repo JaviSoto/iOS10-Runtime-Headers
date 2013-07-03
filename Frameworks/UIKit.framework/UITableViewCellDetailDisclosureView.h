@@ -9,11 +9,16 @@
     UIImageView *_disclosureView;
 }
 
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)dealloc;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
+- (id)accessibilityIdentification;
 
 @end

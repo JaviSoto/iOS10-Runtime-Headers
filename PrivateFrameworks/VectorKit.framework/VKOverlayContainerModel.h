@@ -17,7 +17,6 @@
     NSMapTable *_persistentOverlaysToPainters;
     NSMutableSet *_persistentOverlays;
     <VKRouteMatchedAnnotationPresentation> *_routeLineSplitAnnotation;
-    float _brightness;
     VKSkyModel *_skyModel;
     struct { 
         struct VKPoint { 
@@ -39,7 +38,6 @@
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property(readonly) NSSet * persistentOverlays;
 @property(retain) VKSkyModel * skyModel;
-@property float brightness;
 @property(readonly) VKStylesheet * stylesheet;
 
 + (BOOL)reloadOnStylesheetChange;
@@ -71,7 +69,5 @@
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)delegate;
-- (float)brightness;
-- (void)setBrightness:(float)arg1;
 
 @end

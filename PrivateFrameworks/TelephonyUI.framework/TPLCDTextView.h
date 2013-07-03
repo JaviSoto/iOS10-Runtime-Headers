@@ -32,8 +32,8 @@
 }
 
 + (float)defaultMinimumFontSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)resetAnimation;
 - (void)setAnimatesIfTruncated:(BOOL)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIView, NSMutableArray;
+@class NSArray, NSString, UIView, TIKeyboardCandidateResultSet, NSMutableArray;
 
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
     struct CGRect { 
@@ -30,22 +30,27 @@
     int m_promptTextType;
     float m_originalTypedTextRectCorrectionAmount;
     unsigned int m_usageTrackingMask;
+    TIKeyboardCandidateResultSet *_candidateResultSet;
 }
 
 @property unsigned int usageTrackingMask;
+@property(readonly) TIKeyboardCandidateResultSet * candidates;
+@property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)keyboardBehaviors;
+- (id)candidateResultSet;
+- (id)candidates;
 - (BOOL)hasCandidates;
 - (id)currentCandidate;
 - (void)dealloc;
 - (id)typedTextAnimationView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shadowFrameForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)textEffectsVisibilityLevelWhenKey;
+- (int)textEffectsVisibilityLevelInKeyboardWindow;
 - (void)dismiss;
 - (BOOL)isAcceptableTextEffectsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 afterScrollBy:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })correctionFrameFromDesiredFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textHeight:(int)arg2 withExtraGap:(float)arg3;
@@ -67,6 +72,7 @@
 - (void)setUsageTrackingMask:(unsigned int)arg1;
 - (id)activeCandidateList;
 - (unsigned int)usageTrackingMask;
+- (id)inlineText;
 - (void)candidatesDidChange;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
@@ -80,6 +86,7 @@
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (BOOL)isExtendedList;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidateResultSet:(id)arg1;
 - (int)textEffectsVisibilityLevel;
 - (void)setSelectedItem:(unsigned int)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;

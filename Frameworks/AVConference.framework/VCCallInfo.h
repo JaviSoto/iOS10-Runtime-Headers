@@ -27,6 +27,7 @@
     BOOL usesInitialFECImplementation;
     BOOL supportsDynamicMaxBitrate;
     BOOL supportsSpecialAACBundle;
+    BOOL supportsSKEOptimization;
     unsigned long visibleRectCropping;
     BOOL useNewPLCalc;
     double firstDegradedMeasure;
@@ -52,6 +53,7 @@
 @property(readonly) BOOL isIOS;
 @property(readonly) BOOL usesInitialFECImplementation;
 @property BOOL supportsDynamicMaxBitrate;
+@property BOOL supportsSKEOptimization;
 @property(readonly) BOOL supportsSpecialAACBundle;
 @property unsigned long visibleRectCropping;
 @property(readonly) BOOL useNewPLCalc;
@@ -81,6 +83,7 @@
 - (BOOL)usesInitialFECImplementation;
 - (void)setConnectionData:(id)arg1;
 - (unsigned char)u8Version;
+- (BOOL)supportsSKEOptimization;
 - (id)relayConnectionData;
 - (void)setRelayConnectionData:(id)arg1;
 - (id)relayUpdate;
@@ -96,6 +99,7 @@
 - (BOOL)isVideoQualityDegraded;
 - (BOOL)updateWithCurrentFramerate:(double)arg1 bitrate:(double)arg2 packetLossRate:(float)arg3 time:(double)arg4;
 - (BOOL)videoIsPaused;
+- (void)setSupportsSKEOptimization:(BOOL)arg1;
 - (void)setParticipantID:(id)arg1;
 - (id)participantID;
 - (void)setMaxBandwidth:(unsigned long)arg1;

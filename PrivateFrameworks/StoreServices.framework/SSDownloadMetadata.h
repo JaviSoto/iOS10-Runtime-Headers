@@ -60,6 +60,7 @@
 - (BOOL)isContentRestricted;
 - (void)setCopyright:(id)arg1;
 - (id)copyright;
+- (void)setReleaseDateString:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (id)fileExtension;
 - (id)sortTitle;
@@ -72,7 +73,6 @@
 - (BOOL)shouldDownloadAutomatically;
 - (void)setTransitMapDataURL:(id)arg1;
 - (void)setShouldDownloadAutomatically:(BOOL)arg1;
-- (void)setReleaseDateString:(id)arg1;
 - (void)setRedownloadDownload:(BOOL)arg1;
 - (void)setMD5HashStrings:(id)arg1 numberOfBytesToHash:(id)arg2;
 - (void)setKeyStyle:(int)arg1;
@@ -218,6 +218,7 @@
 - (id)primaryAssetURL;
 - (id)newDownloadProperties;
 - (id)networkName;
+- (void)setKind:(id)arg1;
 - (id)longDescription;
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -231,7 +232,6 @@
 - (id)kind;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
-- (void)setKind:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)setDictionary:(id)arg1;
 - (id)bundleIdentifier;

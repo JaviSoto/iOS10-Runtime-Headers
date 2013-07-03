@@ -24,8 +24,8 @@
 - (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
 - (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
 - (unsigned int)sqlType;
-- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
+- (void)setIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (unsigned int)retainCount;
 - (oneway void)release;

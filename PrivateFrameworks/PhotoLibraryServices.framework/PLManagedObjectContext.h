@@ -105,9 +105,10 @@
 - (id)initWithConcurrencyType:(unsigned int)arg1 useSharedPersistentStoreCoordinator:(BOOL)arg2;
 - (void)recordAssetForDupeAnalysis:(id)arg1;
 - (void)recordAssetForMomentUpdate:(id)arg1;
-- (void)recordAssetForCloudFeedUpdate:(id)arg1;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
+- (void)recordAssetForCloudFeedUpdate:(id)arg1;
 - (BOOL)mergingChanges;
+- (void)setPhotoLibrary:(id)arg1;
 - (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
 - (id)photoLibrary;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
@@ -115,7 +116,6 @@
 - (BOOL)isUserInterfaceContext;
 - (void)setHasMetadataChanges:(BOOL)arg1;
 - (BOOL)hasMetadataChanges;
-- (void)setPhotoLibrary:(id)arg1;
 - (void)setIsBackingALAssetsLibrary:(BOOL)arg1;
 - (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
 - (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;

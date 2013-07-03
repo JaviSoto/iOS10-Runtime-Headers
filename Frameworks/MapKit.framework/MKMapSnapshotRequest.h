@@ -40,9 +40,9 @@
 - (void)setRequester:(id)arg1;
 - (id)requester;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (struct { double x1; double x2; })coordinate;
+- (void)setContext:(id)arg1;
 - (id)image;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;

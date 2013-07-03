@@ -17,8 +17,8 @@
 + (id)viewWithRemoteContextID:(unsigned int)arg1;
 + (id)viewWithHostedWindowHostingHandle:(id)arg1;
 + (Class)layerClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (BOOL)_actsAsTintView;

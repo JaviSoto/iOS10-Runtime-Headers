@@ -9,9 +9,9 @@
     int _animatingToNumberOfVisibleColumns;
     UIView *_borderView0;
     UIView *_borderView1;
-    UIView *_headerBackgroundView;
     int _columnChangeAnimationCount;
     NSArray *_columnViews;
+    UIView *_headerBackgroundView;
     NSArray *_headerViews;
     int _numberOfVisibleColumns;
 }

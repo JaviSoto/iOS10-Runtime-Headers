@@ -77,7 +77,6 @@
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (unsigned int)networkServiceType;
 - (void)setTimeoutIntervalForResource:(double)arg1;
-- (double)timeoutIntervalForResource;
 - (void)setTimeoutIntervalForRequest:(double)arg1;
 - (double)timeoutIntervalForRequest;
 - (void)setRequestCachePolicy:(unsigned int)arg1;
@@ -87,6 +86,7 @@
 - (id)identifier;
 - (void)setHTTPAdditionalHeaders:(id)arg1;
 - (id)HTTPAdditionalHeaders;
+- (double)timeoutIntervalForResource;
 - (void)setUseOpportunisticNetworking:(BOOL)arg1;
 - (BOOL)useOpportunisticNetworking;
 

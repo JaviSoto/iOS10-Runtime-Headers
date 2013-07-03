@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUINewsstandImageDataConsumer, NSMutableDictionary, SKUIColorScheme, UIColor, SKUIIconDataConsumer, SKUIProductImageDataConsumer;
+@class SKUINewsstandImageDataConsumer, NSMutableDictionary, SKUIColorScheme, UIColor, SKUIProductImageDataConsumer, SKUIIconDataConsumer;
 
 @interface SKUIItemArtworkContext : NSObject  {
+    UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
     SKUIProductImageDataConsumer *_generalImageConsumer;
     SKUIIconDataConsumer *_iconConsumer;
@@ -12,7 +13,6 @@
     SKUINewsstandImageDataConsumer *_newsstandConsumer;
     NSMutableDictionary *_placeholders;
     SKUIProductImageDataConsumer *_posterConsumer;
-    UIColor *_backgroundColor;
 }
 
 @property(retain) SKUIProductImageDataConsumer * generalConsumer;

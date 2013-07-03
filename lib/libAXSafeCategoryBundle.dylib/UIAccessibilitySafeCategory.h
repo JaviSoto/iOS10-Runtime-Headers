@@ -9,9 +9,9 @@
 
 @property(copy) NSString * accessibilityIdentifier;
 
++ (void)installCategoryOnClassNamed:(id)arg1;
 + (void)_addCategoryMethod:(struct objc_method { }*)arg1 toClass:(Class)arg2 isClass:(BOOL)arg3;
 + (id)installCategoryOnClassNamed:(id)arg1 isManaged:(BOOL)arg2;
-+ (void)installCategoryOnClassNamed:(id)arg1;
 
 
 @end

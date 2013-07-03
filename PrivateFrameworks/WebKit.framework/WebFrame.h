@@ -21,7 +21,7 @@
 
 - (void)selectNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedNSRange;
-- (void)reload;
+- (id)parentFrame;
 - (void)setBaseWritingDirection:(int)arg1;
 - (struct PassRefPtr<WebCore::Range> { struct Range {} *x1; })_convertToDOMRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_convertToNSRange:(struct Range { unsigned int x1; struct RefPtr<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_3_1_1; int x_3_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_4_1_1; int x_4_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
@@ -49,6 +49,7 @@
 - (id)childFrames;
 - (id)findFrameNamed:(id)arg1;
 - (void)reloadFromOrigin;
+- (void)reload;
 - (void)loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
 - (void)loadRequest:(id)arg1;
 - (id)provisionalDataSource;
@@ -199,7 +200,6 @@
 - (void)clearRangedSelectionInitialExtent;
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (id)selectionRects;
-- (id)parentFrame;
 - (void)_setVisibleSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)scrollableNodeAtViewportLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)deepestNodeAtViewportLocation:(struct CGPoint { float x1; float x2; })arg1;
@@ -269,13 +269,7 @@
 - (BOOL)needsLayout;
 - (void)_handleKeyEvent:(id)arg1;
 - (void)stopLoading;
-- (BOOL)isOrphaned;
-- (BOOL)containsAnyFocusedFormFields;
-- (BOOL)containsAnyFormFields;
-- (id)allFormFields;
 - (BOOL)isMainFrame;
-- (void)_collectFormFieldElementsIntoArray:(id)arg1 upToLimit:(unsigned int)arg2 onlyIncludeFocusedElements:(BOOL)arg3;
-- (id)_topFrame;
 - (BOOL)isTexty;
 - (BOOL)containsOnlySelectableElements;
 - (oneway void)_webcore_releaseOnWebThread;

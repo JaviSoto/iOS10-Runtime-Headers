@@ -11,6 +11,9 @@
     NSMutableArray *_addedRemovedModifications;
     NSMutableArray *_prefixes;
     char *_buffer;
+    char *_altBuffer;
+    char *_altBufferScores;
+    NSMutableArray *_geometryDataArray;
     unsigned int *_syllableLengthArray;
     void *_connection;
     unsigned int _length;
@@ -22,17 +25,20 @@
     unsigned int _endIndex;
     unsigned int _abbreviatedSyllableCount;
     unsigned int _previouslyAnalyzedLength;
+    double _validSequenceCorrectionThreshold;
     BOOL _lastSyllableIsPartial;
 }
 
 
-- (void)reset;
 - (void)_addPrefixes;
 - (void)_removePrefixes;
+- (void)_addValidSequenceReplacements;
 - (void)_addEnglishWordsQuickly:(BOOL)arg1;
 - (void)_addSpecialEnglishWords;
 - (BOOL)_addEnglishWordsEndingAtIndex:(unsigned int)arg1 quickly:(BOOL)arg2;
 - (BOOL)_addEnglishWordForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 quickly:(BOOL)arg2;
+- (double)validSequenceCorrectionThreshold;
+- (void)setValidSequenceCorrectionThreshold:(double)arg1;
 - (id)prefixes;
 - (id)removedModifications;
 - (id)addedModifications;
@@ -46,6 +52,7 @@
 - (void)_addTranspositions;
 - (void)_advanceIndexes;
 - (void)_removeModificationsAndMoveStartingPoint;
+- (void)reset;
 - (id)init;
 - (void)dealloc;
 - (id)description;

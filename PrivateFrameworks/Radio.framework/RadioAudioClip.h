@@ -16,9 +16,9 @@
 @property(readonly) NSManagedObjectContext * context;
 
 
-- (long long)purchaseID;
 - (BOOL)isSkippable;
 - (id)assetURL;
+- (long long)purchaseID;
 - (void)setIsSkippable:(BOOL)arg1;
 - (void)setPurchaseID:(long long)arg1;
 - (void)setAssetURL:(id)arg1;

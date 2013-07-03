@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class SSURLConnectionRequest;
+@class SSURLConnectionRequest, NSObject<OS_dispatch_queue>;
 
 @interface RadioGetFeaturedStationsRequest : RadioRequest  {
-    unsigned int _stationCount;
+    NSObject<OS_dispatch_queue> *_artworkQueue;
     SSURLConnectionRequest *_request;
+    unsigned int _stationCount;
     BOOL _disableCachedResponses;
 }
 
@@ -16,9 +17,10 @@
 - (void)setDisableCachedResponses:(BOOL)arg1;
 - (BOOL)disableCachedResponses;
 - (void)startWithFeaturedStationsCompletionHandler:(id)arg1;
-- (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2;
+- (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2 loadArtworkSynchronously:(BOOL)arg3;
 - (id)initWithStationCount:(unsigned int)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
+- (id)init;
 - (void).cxx_destruct;
 - (void)cancel;
 

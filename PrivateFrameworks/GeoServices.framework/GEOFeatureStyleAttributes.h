@@ -15,6 +15,8 @@
 - (BOOL)isDrivable;
 - (BOOL)isTunnel;
 - (BOOL)isRailway;
+- (int)rampDirection;
+- (int)rampType;
 - (BOOL)isRamp;
 - (void)sort;
 - (int)drivingSide;

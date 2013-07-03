@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
+@class NSMapTable, NSArray;
 
 @interface UIDynamicItemBehavior : UIDynamicBehavior  {
     BOOL _useDefaultViewPropertiesApplier;
@@ -16,6 +16,8 @@
         unsigned int rotationEnabledChanged : 1; 
         unsigned int useDefaultViewPropertiesApplierChanged : 1; 
     } _stateFlags;
+    NSMapTable *_cachedAngularVelocities;
+    NSMapTable *_cachedLinearVelocities;
     BOOL _allowsRotation;
     float _elasticity;
     float _friction;
@@ -42,6 +44,7 @@
 - (BOOL)allowsRotation;
 - (void)_commonInit;
 - (id)init;
+- (void)dealloc;
 - (id)description;
 - (void)setUseDefaultViewPropertiesApplier:(BOOL)arg1;
 - (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1 toItem:(id)arg2;

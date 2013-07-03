@@ -21,12 +21,12 @@
 - (void)setTokenData:(id)arg1;
 - (void)setPid:(int)arg1;
 - (id)context;
-- (void)setContext:(id)arg1;
 - (int)pid;
-- (void)setConnection:(id)arg1;
+- (void)setContext:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

@@ -2,23 +2,30 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImageView, ABPropertyGroupAlertItem;
+@class ABPropertyGroupAlertItem, UIImageView, NSLayoutConstraint;
 
 @interface ABPropertyAlertCell : ABPropertyCell <ABPickerControllerDelegate> {
+    float _labelWidth;
+    NSLayoutConstraint *_labelWidthConstraint;
     UIImageView *_chevron;
 }
 
 @property(readonly) ABPropertyGroupAlertItem * alertItem;
+@property(retain) NSLayoutConstraint * labelWidthConstraint;
 @property(retain) UIImageView * chevron;
 
 
 - (id)_vibrationManager;
 - (id)_toneManger;
+- (void)setLabelWidthConstraint:(id)arg1;
+- (float)labelWidth;
+- (id)labelWidthConstraint;
 - (id)alertItem;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (void)setChevron:(id)arg1;
 - (id)chevron;
+- (void)setLabelWidth:(float)arg1;
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;
 - (BOOL)shouldPerformDefaultAction;

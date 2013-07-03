@@ -22,8 +22,8 @@
 - (id)initWithEmailResults:(id)arg1;
 - (id)initWithResults:(id)arg1;
 - (id)encodedClassName;
-- (id)results;
 - (void)setResults:(id)arg1;
+- (id)results;
 - (id)groupIdentifier;
 
 @end

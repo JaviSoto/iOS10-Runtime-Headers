@@ -42,21 +42,22 @@
 @property(copy) id outputBlock;
 
 
-- (void)setRecordsMetrics:(BOOL)arg1;
-- (void)setExpiredOutputBlock:(id)arg1;
-- (id)metricsPageEvent;
 - (id)cachedURLResponse;
 - (id)URLRequest;
+- (void)setRecordsMetrics:(BOOL)arg1;
 - (void)setOutputBlock:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
 - (BOOL)recordsMetrics;
+- (id)metricsPageEvent;
 - (void)dispatchSync:(id)arg1;
 - (void)dispatchAsync:(id)arg1;
 - (void)_keepAliveTimer:(id)arg1;
 - (id)dataConsumer;
+- (void)_releaseOutputBlocks;
 - (id)outputBlock;
 - (long)_runRunLoopUntilStopped;
 - (void)_stopIfCancelled;
+- (void)setExpiredOutputBlock:(id)arg1;
 - (id)_outputForData:(id)arg1 error:(id*)arg2;
 - (void)_finishWithData:(id)arg1;
 - (void)_applyResponseToMetrics:(id)arg1;

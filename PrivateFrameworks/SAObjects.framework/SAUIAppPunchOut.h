@@ -8,6 +8,7 @@
 }
 
 @property(retain) SAUIAddViews * alternativePunchOut;
+@property BOOL appAvailableInStorefront;
 @property(copy) NSString * appDisplayName;
 @property(retain) SAUIImageResource * appIcon;
 @property(copy) NSDictionary * appIconMap;
@@ -36,6 +37,8 @@
 - (id)appIcon;
 - (void)setAppDisplayName:(id)arg1;
 - (id)appDisplayName;
+- (void)setAppAvailableInStorefront:(BOOL)arg1;
+- (BOOL)appAvailableInStorefront;
 - (void)setAlternativePunchOut:(id)arg1;
 - (id)alternativePunchOut;
 - (void)setProviderId:(id)arg1;

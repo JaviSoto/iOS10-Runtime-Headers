@@ -68,7 +68,7 @@
 - (void)setReferenceShiftSpeed:(float)arg1;
 - (void)setReferenceShiftEnabled:(BOOL)arg1;
 - (void)setInputSmoothingFactor:(float)arg1;
-- (void)setDirectionalLockEnabled:(BOOL)arg1;
 - (void)setDefaultValues;
+- (void)setDirectionalLockEnabled:(BOOL)arg1;
 
 @end

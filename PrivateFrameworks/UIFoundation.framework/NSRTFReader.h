@@ -133,13 +133,8 @@
 }
 
 
-- (void)setReadOnly:(int)arg1;
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBottomMargin:(float)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setTopMargin:(float)arg1;
-- (void)setLeftMargin:(float)arg1;
 - (id)attributedString;
 - (void)setDefaultTabInterval:(float)arg1;
 - (int)baseWritingDirection;
@@ -173,6 +168,11 @@
 - (id)_currentTableCell;
 - (unsigned int)textFlow;
 - (void)setTextFlow:(unsigned int)arg1;
+- (void)setBottomMargin:(float)arg1;
+- (void)setTopMargin:(float)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setLeftMargin:(float)arg1;
+- (void)setReadOnly:(int)arg1;
 - (void)setCocoaSubVersion:(int)arg1;
 - (void)setCocoaVersion:(int)arg1;
 - (void)setViewScale:(int)arg1;

@@ -45,6 +45,9 @@
 @property(copy) NSURL * ownerIdentityAddress;
 @property(copy) NSString * ownerIdentityFirstName;
 @property(copy) NSString * ownerIdentityLastName;
+@property(copy) NSString * bulkRequests;
+@property(copy) NSString * subcalAccountID;
+@property(copy) NSString * pushKey;
 
 + (id)relations;
 + (id)defaultPropertiesToLoad;
@@ -59,7 +62,12 @@
 - (BOOL)canBeShared;
 - (BOOL)canBePublished;
 - (void)setSharees:(id)arg1;
+- (void)setBulkRequests:(id)arg1;
+- (void)setPushKey:(id)arg1;
+- (id)bulkRequests;
+- (id)pushKey;
 - (void)setSubscribed:(BOOL)arg1;
+- (BOOL)validate:(id*)arg1;
 - (void)setIsFacebookBirthdayCalendar:(BOOL)arg1;
 - (void)setSchedulingProhibited:(BOOL)arg1;
 - (void)setSharingInvitation:(BOOL)arg1;
@@ -69,6 +77,8 @@
 - (void)setUUID:(id)arg1;
 - (void)setColorDisplayOnly:(BOOL)arg1;
 - (BOOL)isColorDisplayOnly;
+- (void)setSubcalAccountID:(id)arg1;
+- (id)subcalAccountID;
 - (void)setOwnerIdentityLastName:(id)arg1;
 - (void)setOwnerIdentityFirstName:(id)arg1;
 - (void)setOwnerIdentityAddress:(id)arg1;
@@ -122,13 +132,12 @@
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
-- (BOOL)validate:(id*)arg1;
 - (id)source;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void)setSource:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
+- (void)setSource:(id)arg1;
 - (id)init;
 - (id)description;
 - (id)UUID;

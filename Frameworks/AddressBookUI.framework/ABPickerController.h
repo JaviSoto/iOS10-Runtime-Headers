@@ -28,15 +28,15 @@
 - (id)builtinItems;
 - (id)customItems;
 - (BOOL)allowsCustomItems;
-- (void)setAllowsCustomItems:(BOOL)arg1;
 - (void)donePicker:(id)arg1;
+- (void)setAllowsCustomItems:(BOOL)arg1;
 - (void)setCustomItems:(id)arg1;
 - (id)titleForAddCustomItem;
 - (id)titleForPickerItem:(id)arg1;
 - (void)setBuiltinItems:(id)arg1;
 - (void)setTableViewController:(id)arg1;
-- (id)tableViewController;
 - (void)cancelPicker:(id)arg1;
+- (id)tableViewController;
 - (id)_itemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)selectedItem;
@@ -50,5 +50,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

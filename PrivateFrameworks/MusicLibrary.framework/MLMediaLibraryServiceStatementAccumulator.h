@@ -25,9 +25,9 @@
 - (unsigned int)priorityLevel;
 - (id)existingTransactionIdentifier;
 - (unsigned int)statementThreshold;
-- (void)_onQueueFlushAndWait:(BOOL)arg1;
-- (void)flushAndWait:(BOOL)arg1;
-- (void)enqueueStatement:(id)arg1;
+- (BOOL)_onQueueFlushAndWait:(BOOL)arg1;
+- (BOOL)flushAndWait:(BOOL)arg1;
+- (BOOL)enqueueStatement:(id)arg1;
 - (void)setStatementThreshold:(unsigned int)arg1;
 - (void)setPriorityLevel:(unsigned int)arg1;
 - (void)setExistingTransactionIdentifier:(id)arg1;

@@ -23,8 +23,8 @@
 
 - (BOOL)writeRawPixelsToURL:(id)arg1 error:(id*)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3;
-- (struct CGContext { }*)CGContext;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 data:(void*)arg4;
+- (struct CGContext { }*)CGContext;
 - (struct CGSize { float x1; float x2; })size;
 - (id)image;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

@@ -6,9 +6,9 @@
 }
 
 
-- (id)initWithDuration:(id)arg1;
 - (BOOL)isDurationBased;
 - (void)fixAlarmTrigger;
+- (id)initWithDuration:(id)arg1;
 - (id)initWithDate:(id)arg1;
 - (void)setDuration:(id)arg1;
 - (void)setDate:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class UILabel, UIImageView, UIView;
 
-@interface SLSheetVideoPreviewView : SLSheetPreviewImageView  {
+@interface SLSheetVideoPreviewView : SLSheetImagePreviewView  {
     UIView *_infoBar;
     UIImageView *_videoGlyphView;
     UILabel *_durationLabel;

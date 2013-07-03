@@ -14,9 +14,9 @@
 
 
 - (void)_preloadImagesForItems:(id)arg1;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)sectionTitle;
 - (void)configureCollectionView:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (void)setPlayer:(id)arg1;

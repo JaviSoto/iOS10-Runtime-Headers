@@ -22,11 +22,11 @@
 - (id)effectsView;
 - (void)setIsMuteButtonWithImage:(id)arg1;
 - (void)setIsActiveRoute:(BOOL)arg1;
+- (void)dealloc;
 - (void)setBlursBackground:(BOOL)arg1;
 - (BOOL)blursBackground;
-- (void)dealloc;
-- (void)setBackdropView:(id)arg1;
 - (id)backdropView;
+- (void)setBackdropView:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 

@@ -10,12 +10,20 @@
     unsigned int _selectedSortIndex;
     UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
     UIKeyboardCandidateSortControl *_scrollViewSortControl;
+    struct { 
+        unsigned int idiom : 6; 
+        unsigned int landscape : 1; 
+        unsigned int split : 1; 
+        unsigned int appearance : 8; 
+        unsigned int rendering : 16; 
+    } _visualStyling;
 }
 
 @property(readonly) TIKeyboardCandidateResultSet * candidateResultSet;
 @property unsigned int selectedSortIndex;
 @property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
 @property(retain) UIKeyboardCandidateSortControl * scrollViewSortControl;
+@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 
 - (void)addSubview:(id)arg1;
@@ -25,6 +33,7 @@
 - (id)currentCandidate;
 - (void)displayLayer:(id)arg1;
 - (void)dealloc;
+- (id).cxx_construct;
 - (id)groupedCandidatesFromCandidateSet:(id)arg1 forSortIndex:(unsigned int)arg2;
 - (void)setScrollViewSortControl:(id)arg1;
 - (void)sortSelectionBarAction:(id)arg1;
@@ -37,7 +46,6 @@
 - (void)clearCollectionViewController;
 - (void)updateCollectionViewController;
 - (BOOL)isTenKey;
-- (void)setRenderConfig:(id)arg1;
 - (id)headerViewForCandidateSet:(id)arg1;
 - (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
 - (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
@@ -54,6 +62,9 @@
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (BOOL)isExtendedList;
+- (void)setRenderConfig:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
+- (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 
 @end

@@ -18,9 +18,9 @@
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)region;
 - (void)setRegion:(id)arg1;
+- (id)language;
 - (void)setInfo:(id)arg1;
 - (id)info;
 - (void)setLanguage:(id)arg1;
-- (id)language;
 
 @end

@@ -2,14 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, UIPercentDrivenInteractiveTransition, SKUIClientContext, <SKUISlideshowViewControllerDataSource>, SKUISlideshowGalleryBarView, UIPageViewController, <SKUISlideshowViewControllerDelegate>, NSMutableDictionary;
+@class NSOperationQueue, UIPercentDrivenInteractiveTransition, SKUIClientContext, <SKUISlideshowViewControllerDataSource>, UIPageViewController, <SKUISlideshowViewControllerDelegate>, NSMutableDictionary;
 
-@interface SKUISlideshowViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, SKUISlideshowGalleryBarViewDelegate, SKUISlideshowItemViewControllerDelegate, UIViewControllerTransitioningDelegate> {
+@interface SKUISlideshowViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, SKUISlideshowItemViewControllerDelegate, UIViewControllerTransitioningDelegate> {
     SKUIClientContext *_clientContext;
     UIPageViewController *_pageViewController;
     NSOperationQueue *_remoteLoadQueue;
     NSMutableDictionary *_itemViewControllersCache;
-    SKUISlideshowGalleryBarView *_galleryBar;
     UIPercentDrivenInteractiveTransition *_transition;
     BOOL _overlayVisible;
     BOOL _shouldCancelDelayedOverlayVisibilityChange;
@@ -37,15 +36,11 @@
 - (void)_restoreStatusBarAppearanceState;
 - (void)_saveStatusBarAppearanceState;
 - (void)_contentViewTapped:(id)arg1;
-- (void)_loadGalleryImages;
 - (void)_updateCurrentIndex;
 - (id)_itemViewControllerForIndex:(int)arg1;
 - (id)currentItemViewController;
 - (void)slideshowItemViewControllerDidDismissWithPinchGesture:(id)arg1 ratio:(float)arg2;
 - (void)slideshowItemViewControllerDidBeginPinchGesture:(id)arg1;
-- (void)galleryBarView:(id)arg1 didSelectIndex:(unsigned int)arg2;
-- (void)userStoppedInteractingWithGalleryBarView:(id)arg1;
-- (void)userBeganInteractingWithGalleryBarView:(id)arg1;
 - (void)setCurrentIndex:(int)arg1;
 - (void)_doneButtonTapped:(id)arg1;
 - (void)setClientContext:(id)arg1;
@@ -63,8 +58,8 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)interactionControllerForDismissal:(id)arg1;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (id)animatorForDismissedController:(id)arg1;
+- (id)animatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;

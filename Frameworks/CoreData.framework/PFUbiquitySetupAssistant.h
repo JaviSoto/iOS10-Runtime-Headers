@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSObject<OS_dispatch_semaphore>, PFUbiquityBaseline, NSMutableSet, PFUbiquityPeerState, NSString, PFUbiquityContainerIdentifier, PFUbiquityStoreMetadata, NSMutableArray, NSPersistentStore, PFUbiquityPeerReceipt, PFUbiquityKnowledgeVector, NSMutableDictionary, NSMetadataQuery, PFUbiquityMigrationAssistant, PFUbiquityLocation, <NSObject><NSCopying><NSCoding>, NSPersistentStoreCoordinator, PFUbiquityMigrationManager, PFUbiquitySwitchboardEntry, NSOperationQueue, _PFUbiquityStack, NSURL;
+@class NSDictionary, NSObject<OS_dispatch_semaphore>, PFUbiquityBaseline, NSMutableSet, PFUbiquityPeerState, NSMutableArray, PFUbiquityContainerIdentifier, NSString, PFUbiquityStoreMetadata, NSPersistentStore, PFUbiquityPeerReceipt, PFUbiquityKnowledgeVector, NSMutableDictionary, PFUbiquityMigrationAssistant, PFUbiquityLocation, <NSObject><NSCopying><NSCoding>, NSPersistentStoreCoordinator, NSError, PFUbiquityMigrationManager, PFUbiquitySwitchboardEntry, _PFUbiquityStack, NSURL;
 
 @interface PFUbiquitySetupAssistant : NSObject  {
     NSMutableDictionary *_options;
@@ -66,21 +66,24 @@
     NSMutableSet *_logLocationsExportedDuringSideLoad;
     NSMutableDictionary *_gidToRid;
     NSMutableDictionary *_entityNameToGidSet;
-    NSObject<OS_dispatch_semaphore> *_querySemaphore;
-    int _notifyToken;
-    BOOL _initialSyncComplete;
-    NSMetadataQuery *_query;
-    NSOperationQueue *_queryQueue;
+    NSObject<OS_dispatch_semaphore> *_initialSyncSemaphore;
+    int _initialSyncComplete;
     NSMutableArray *_queryLocations;
     BOOL _notifyAboutSetupProgress;
     int _numSetupTries;
     unsigned int _retryDelaySec;
+    BOOL _failSetup;
+    NSError *_failSetupError;
     BOOL _gotAccountChange;
+    BOOL _cacheFilePresenterForUbiquityRoot;
 }
 
 @property(readonly) NSDictionary * options;
 @property(readonly) BOOL ubiquityEnabled;
 @property(readonly) BOOL needsMetadataRecovery;
+@property(readonly) NSString * localPeerID;
+@property(readonly) NSURL * ubiquityRootURL;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 @property(readonly) PFUbiquityLocation * localRootLocation;
 @property(readonly) PFUbiquityContainerIdentifier * containerIdentifier;
 @property(readonly) BOOL useLocalAccount;
@@ -89,6 +92,9 @@
 @property BOOL abortSetup;
 @property(readonly) PFUbiquityKnowledgeVector * storeKV;
 @property unsigned int retryDelaySec;
+@property BOOL cacheFilePresenterForUbiquityRoot;
+@property BOOL failSetup;
+@property(retain) NSError * failSetupError;
 
 + (void)cleanUserDefaultsForStore:(id)arg1;
 + (BOOL)ubiquityMetadataTablesPresentInStore:(id)arg1;
@@ -101,16 +107,18 @@
 + (id)findContainerIDForToken:(id)arg1 storeName:(id)arg2 haveExistingMappings:(BOOL*)arg3;
 + (void)removeUbiquityMetadataFromStore:(id)arg1;
 
+- (BOOL)cacheFilePresenterForUbiquityRoot;
+- (id)failSetupError;
+- (void)setFailSetup:(BOOL)arg1;
+- (BOOL)failSetup;
 - (void)setRetryDelaySec:(unsigned int)arg1;
 - (unsigned int)retryDelaySec;
 - (BOOL)abortSetup;
 - (BOOL)storeWasMigrated;
-- (BOOL)useLocalAccount;
 - (id)containerIdentifier;
 - (BOOL)needsMetadataRecovery;
 - (void)_setUbiquityRootLocation:(id)arg1 storeName:(id)arg2 localPeerID:(id)arg3 andModelVersionHash:(id)arg4;
-- (void)queryGatheringProgress:(id)arg1;
-- (void)queryDidUpdate:(id)arg1;
+- (BOOL)isInitialSyncComplete;
 - (BOOL)checkAndPerformMigrationForStore:(id)arg1 error:(id*)arg2;
 - (BOOL)rewriteTransactionLogs:(id)arg1 toMatchStore:(id)arg2 error:(id*)arg3;
 - (id)createSetOfLocalLogLocations:(id*)arg1;
@@ -118,11 +126,7 @@
 - (void)exportedLog:(id)arg1;
 - (BOOL)migrateMetadataRoot:(id*)arg1;
 - (id)migrationAssistant;
-- (void)queryStartedGathering:(id)arg1;
-- (void)queryDidFinish:(id)arg1;
-- (void)cancelNotify;
 - (void)initialSyncComplete;
-- (BOOL)isInitialSyncComplete;
 - (BOOL)seedStore:(id)arg1 error:(id*)arg2;
 - (BOOL)pruneStagingDirectoryForStore:(id)arg1 error:(id*)arg2;
 - (BOOL)moveLocalLogFilesToUbiquityLocation:(id*)arg1;
@@ -133,7 +137,6 @@
 - (BOOL)initializeStack:(id*)arg1;
 - (BOOL)initializeContainerIdentifierWithStore:(id)arg1 error:(id*)arg2;
 - (BOOL)initializeReceiptFile:(id*)arg1;
-- (BOOL)canReadFromUbiquityRootLocation:(id*)arg1;
 - (BOOL)cleanUpFromFailedSetup:(id*)arg1;
 - (BOOL)finishSetupForStore:(id)arg1 error:(id*)arg2;
 - (void)finishSetupWithRetry:(id)arg1;
@@ -142,10 +145,17 @@
 - (id)getCurrentUbiquityIdentityToken;
 - (id)longDescription;
 - (BOOL)doPostValidationInit:(id*)arg1;
+- (void)setFailSetupError:(id)arg1;
+- (BOOL)useLocalAccount;
 - (id)storeKV;
 - (void)setAbortSetup:(BOOL)arg1;
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (id)localRootLocation;
+- (id)ubiquityRootLocation;
+- (id)localPeerID;
+- (id)ubiquityRootURL;
+- (BOOL)canReadFromUbiquityRootLocation:(id*)arg1;
+- (void)setCacheFilePresenterForUbiquityRoot:(BOOL)arg1;
 - (BOOL)performCoordinatorPostStoreSetup:(id)arg1 error:(id*)arg2;
 - (void)setStoreWasMigrated:(BOOL)arg1;
 - (id)actualStoreFileURL;

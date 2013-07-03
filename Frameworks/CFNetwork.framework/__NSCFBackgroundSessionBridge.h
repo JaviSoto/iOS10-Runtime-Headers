@@ -26,6 +26,8 @@
 - (id)taskForIdentifier:(unsigned int)arg1;
 - (id)requestWithCookiesApplied:(id)arg1;
 - (void)recreateExistingTasks:(id)arg1;
+- (void)cameIntoForeground:(id)arg1;
+- (void)wentToBackground:(id)arg1;
 - (void)cleanupConfig;
 - (void)setupBackgroundSession;
 - (void)setupXPCConnection;

@@ -28,9 +28,9 @@
 - (struct __IDXIndex { }*)characterInfoDictionary;
 - (id)informationDictionary;
 - (void)setCurrentCharacter:(id)arg1;
+- (int)language;
 - (id)init;
 - (void)dealloc;
 - (void)setLanguage:(int)arg1;
-- (int)language;
 
 @end

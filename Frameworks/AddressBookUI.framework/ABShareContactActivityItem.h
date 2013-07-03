@@ -16,6 +16,7 @@
 - (id)initWithContact:(id)arg1;
 - (void)dealloc;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

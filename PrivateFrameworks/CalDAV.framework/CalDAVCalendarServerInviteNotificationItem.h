@@ -40,8 +40,8 @@
 - (id)supportedCalendarComponentSet;
 - (void)setSupportedCalendarComponentSet:(id)arg1;
 - (id)copyParseRules;
-- (void)setOrganizer:(id)arg1;
 - (id)organizer;
+- (void)setOrganizer:(id)arg1;
 - (void)setUid:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (id)summary;

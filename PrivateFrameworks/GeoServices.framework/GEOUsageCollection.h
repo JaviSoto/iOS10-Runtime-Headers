@@ -103,10 +103,10 @@
 - (BOOL)hasSessionID;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
-- (double)timestamp;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

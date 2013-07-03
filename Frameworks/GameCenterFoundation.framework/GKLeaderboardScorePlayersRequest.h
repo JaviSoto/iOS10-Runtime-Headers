@@ -14,6 +14,7 @@
 
 - (void)setPlayerIDs:(id)arg1;
 - (id)playerIDs;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

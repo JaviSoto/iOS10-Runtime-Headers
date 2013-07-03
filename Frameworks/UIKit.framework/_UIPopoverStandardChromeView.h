@@ -2,12 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@class _UIBackdropView, NSArray, UIView;
 
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView  {
     UIView *_arrowView;
     UIView *_leftCapView;
     UIView *_rightCapView;
+    _UIBackdropView *_blurView;
+    NSArray *_dimmingViews;
     float _arrowOffset;
     unsigned int _arrowDirection;
     int _backgroundStyle;
@@ -35,9 +37,14 @@
 - (BOOL)isArrowVisible;
 - (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (int)backgroundStyle;
+- (float)arrowOffset;
+- (void)setArrowOffset:(float)arg1;
 - (void)setBackgroundStyle:(int)arg1;
 - (BOOL)wouldPinForOffset:(float)arg1;
 - (BOOL)hasComponentViews;
+- (id)_shadowPath;
+- (float)_shadowOpacity;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsUpOrDown;
@@ -47,19 +54,19 @@
 - (float)maxNonPinnedOffset;
 - (float)minNonPinnedOffset;
 - (void)_loadNecessaryViews;
-- (void)setArrowOffset:(float)arg1;
-- (float)arrowOffset;
+- (float)_shadowRadius;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (unsigned int)arrowDirection;
+- (struct CGSize { float x1; float x2; })_shadowOffset;
 - (void)motionCancelled:(int)arg1 withEvent:(id)arg2;
 - (void)motionBegan:(int)arg1 withEvent:(id)arg2;
 - (BOOL)isPinned;
-- (void)willMoveToWindow:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 
 @end

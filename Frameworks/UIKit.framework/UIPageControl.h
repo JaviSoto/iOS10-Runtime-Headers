@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSMutableArray, UIImage;
+@class UIImage, UIColor, _UILegibilitySettings, NSMutableArray;
 
 @interface UIPageControl : UIControl  {
     NSMutableArray *_indicators;
@@ -14,10 +14,9 @@
     } _pageControlFlags;
     UIImage *_currentPageImage;
     UIImage *_pageImage;
-    int style;
     UIColor *_currentPageIndicatorTintColor;
     UIColor *_pageIndicatorTintColor;
-    int _legibilityStyle;
+    _UILegibilitySettings *_legibilitySettings;
 }
 
 @property int numberOfPages;
@@ -27,16 +26,18 @@
 @property(retain) UIColor * pageIndicatorTintColor;
 @property(retain) UIColor * currentPageIndicatorTintColor;
 @property(getter=_legibilityStyle,setter=_setLegibilityStyle:) int legibilityStyle;
+@property(getter=_legibilitySettings,setter=_setLegibilitySettings:) _UILegibilitySettings * legibilitySettings;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (int)_legibilityStyle;
+- (id)_legibilitySettings;
 - (id)pageIndicatorTintColor;
 - (id)currentPageIndicatorTintColor;
+- (int)_legibilityStyle;
 - (void)_setLegibilityStyle:(int)arg1;
 - (int)_displayedPage;
 - (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
@@ -46,6 +47,7 @@
 - (BOOL)hidesForSinglePage;
 - (void)setHidesForSinglePage:(BOOL)arg1;
 - (int)currentPage;
+- (void)_setLegibilitySettings:(id)arg1;
 - (id)_modernIndicatorImageEnabled:(BOOL)arg1;
 - (float)_modernCornerRadius;
 - (id)_modernColorEnabled:(BOOL)arg1;

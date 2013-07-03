@@ -17,8 +17,8 @@
 
 
 - (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
-- (id)handleInfo;
 - (BOOL)isBetterDefinedThan:(id)arg1;
+- (id)handleInfo;
 - (int)compareIDs:(id)arg1;
 - (void)setID:(id)arg1;
 - (void)setUnformattedID:(id)arg1;

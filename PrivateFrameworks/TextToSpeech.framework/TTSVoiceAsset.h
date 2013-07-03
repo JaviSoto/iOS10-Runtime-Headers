@@ -20,13 +20,13 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (BOOL)isInstalled;
 - (id)languages;
 - (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5;
 - (int)gender;
 - (int)footprint;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)name;
+- (BOOL)isInstalled;
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;

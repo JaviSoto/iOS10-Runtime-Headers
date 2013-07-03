@@ -89,8 +89,8 @@
 @property float _activationGapHeight;
 @property float _additionalNonCollapsingHeightAboveSearchBar;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)isActive;
 - (void)windowDidRotate:(id)arg1;
@@ -145,6 +145,7 @@
 - (void)navigationControllerDidShowViewController:(id)arg1;
 - (void)_popoverKeyboardDidHide:(id)arg1;
 - (void)_popoverKeyboardDidShow:(id)arg1;
+- (void)_sendDelegateDidBeginDidEndSearch;
 - (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
 - (void)_hoistSearchBar;
 - (BOOL)_showsResultsForEmptyField;

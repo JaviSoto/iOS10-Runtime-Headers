@@ -69,11 +69,11 @@
 - (float)animationScaleForCurrentZ;
 - (struct CGPoint { float x1; float x2; })offsetForVertexAtIndex:(int)arg1;
 - (void)applyAnimationToVertices:(struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)setupVerticesAndFacesAnimated:(BOOL)arg1;
 - (void)chooseMoveAnimation;
 - (BOOL)randomBOOL;
 - (void)choosePointAnimations;
 - (float)randomFloatBetweenMin:(float)arg1 andMax:(float)arg2;
-- (void)setupVerticesAndFacesAnimated:(BOOL)arg1;
 - (int)bubbleType;
 - (void)setBubbleType:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

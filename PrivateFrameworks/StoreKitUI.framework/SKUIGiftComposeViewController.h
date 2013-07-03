@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, NSObject<OS_dispatch_source>, SKUIGiftValidator, SKUIGiftItemView, UITableView, SKUIGiftValidationResponse, SKUIGiftAmountSection, SKUIGiftSendDateSection, SKUIGiftAddressingSection, UIView, UIPopoverController, UIDatePicker, NSMutableArray, NSIndexPath;
+@class UIImage, NSObject<OS_dispatch_source>, SKUIGiftValidator, SKUIGiftItemView, UITableView, SKUIGiftValidationResponse, SKUIGiftAmountSection, SKUIGiftSendDateSection, SKUIGiftAddressingSection, UIView, UIPopoverController, UIDatePicker, SKUIGiftTermsAndConditionsSection, NSMutableArray, NSIndexPath;
 
 @interface SKUIGiftComposeViewController : SKUIGiftStepViewController <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     SKUIGiftAddressingSection *_addressingSection;
@@ -20,6 +20,7 @@
     NSIndexPath *_showDatePickerIndexPathAfterKeyboardDismiss;
     UITableView *_tableView;
     BOOL _tappedNextWhileValidating;
+    SKUIGiftTermsAndConditionsSection *_termsSection;
     NSObject<OS_dispatch_source> *_validationTimer;
     SKUIGiftValidator *_validator;
 }

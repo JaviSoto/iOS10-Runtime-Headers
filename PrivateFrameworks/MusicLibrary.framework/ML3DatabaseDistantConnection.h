@@ -40,8 +40,8 @@
 - (struct sqlite3 { }*)_sqliteHandle;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(BOOL)arg4;
 - (BOOL)isOpen;
-- (void)setReadOnly:(BOOL)arg1;
 - (BOOL)isReadOnly;
+- (void)setReadOnly:(BOOL)arg1;
 - (BOOL)close;
 - (void).cxx_destruct;
 

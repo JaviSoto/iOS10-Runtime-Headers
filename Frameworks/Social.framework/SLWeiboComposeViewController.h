@@ -8,12 +8,13 @@
     SLWeiboSession *_remoteSession;
 }
 
++ (id)serviceBundle;
 
 - (void)presentNoAccountsAlert;
 - (void)tearDownSession;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (id)session;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

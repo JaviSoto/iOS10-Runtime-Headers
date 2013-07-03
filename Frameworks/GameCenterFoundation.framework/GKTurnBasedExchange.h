@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKTurnBasedExchangeInternal, GKTurnBasedMatch, NSArray, NSDate, NSString, NSData, GKTurnBasedParticipant;
+@class GKTurnBasedExchangeInternal, GKTurnBasedMatch, NSArray, NSData, NSString, NSDate, GKTurnBasedParticipant;
 
 @interface GKTurnBasedExchange : NSObject  {
     BOOL _status;
@@ -11,7 +11,6 @@
     GKTurnBasedExchangeInternal *_internal;
     NSArray *_replies;
     NSArray *_recipients;
-    NSDate *_timedoutAt;
 }
 
 @property(retain) NSString * exchangeID;
@@ -23,7 +22,6 @@
 @property(readonly) NSDate * sendDate;
 @property(retain) NSDate * timeoutDate;
 @property(retain) NSDate * completionDate;
-@property(retain) NSDate * timedoutAt;
 @property(retain) NSArray * replies;
 @property(retain) GKTurnBasedExchangeInternal * internal;
 @property GKTurnBasedMatch * match;
@@ -31,9 +29,6 @@
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 
-- (void)removeWithCompletionHandler:(id)arg1;
-- (void)setTimedoutAt:(id)arg1;
-- (id)timedoutAt;
 - (void)replyWithLocalizableMessageKey:(id)arg1 arguments:(id)arg2 data:(id)arg3 completionHandler:(id)arg4;
 - (void)cancelWithLocalizableMessageKey:(id)arg1 arguments:(id)arg2 completionHandler:(id)arg3;
 - (void)_updateInternalFromMatchInternal:(id)arg1;

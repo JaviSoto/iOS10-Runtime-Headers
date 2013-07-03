@@ -35,6 +35,7 @@
 }
 
 + (id)copyFromLibrary:(id)arg1 cancelHandler:(id)arg2;
++ (void)initialize;
 
 - (id)_initWithLibrary:(id)arg1 cancelHandler:(id)arg2;
 - (void)dealloc;

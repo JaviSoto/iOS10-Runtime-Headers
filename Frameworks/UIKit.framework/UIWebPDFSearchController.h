@@ -29,7 +29,6 @@
 @property(retain) NSString * searchString;
 
 
-- (id)results;
 - (id)searchString;
 - (void)setSearchString:(id)arg1;
 - (void)setResults:(id)arg1;
@@ -37,6 +36,7 @@
 - (void)dealloc;
 - (void)resume;
 - (void)cancel;
+- (id)results;
 - (BOOL)searching;
 - (void)searchDidTimeOut:(id)arg1;
 - (void)search:(id)arg1;

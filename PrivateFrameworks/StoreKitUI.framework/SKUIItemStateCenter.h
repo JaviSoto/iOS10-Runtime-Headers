@@ -10,6 +10,7 @@
     BOOL _canAccessPurchaseHistory;
     SSDownloadManager *_downloadManager;
     NSMutableArray *_finishLoadBlocks;
+    int _gratisState;
     int _loadCount;
     NSMutableDictionary *_itemStates;
     NSObject<OS_dispatch_queue> *_observerQueue;
@@ -27,6 +28,7 @@
 
 - (void)_reloadDownloadManager;
 - (void)_restrictionsChangedNotification:(id)arg1;
+- (void)reloadGratisEligibilityWithBundleIdentifiers:(id)arg1 clientContext:(id)arg2;
 - (id)performActionForItem:(id)arg1 withCompletionBlock:(id)arg2;
 - (BOOL)isItemRestrictedWithParentalControlsRank:(int)arg1;
 - (void)finishLoadingWithCompletionBlock:(id)arg1;
@@ -36,8 +38,9 @@
 - (void)_setInstalledItems:(id)arg1;
 - (void)_setPurchaseHistoryItemsWithIdentifiers:(id)arg1;
 - (void)_notifyObserversOfRestrictionsChange;
+- (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
 - (void)_removePurchasingItemsForPurchases:(id)arg1;
-- (void)_removePurchasingItem:(id)arg1;
+- (void)_replacePurchasingItem:(id)arg1 withDownloadIDs:(id)arg2;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
 - (id)_addState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
 - (id)_newPurchasesWithItems:(id)arg1 transaction:(id)arg2;
@@ -52,15 +55,16 @@
 - (void)_fireFinishLoadBlocksIfNecessary;
 - (void)_reloadSoftwareLibrary;
 - (void)_reloadPurchaseHistory;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_setDownloads:(id)arg1;
 - (void)reloadFromServer;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
 - (BOOL)isRunningInStoreDemoMode;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)addObserver:(id)arg1;
-- (void)removeObserver:(id)arg1;
 
 @end

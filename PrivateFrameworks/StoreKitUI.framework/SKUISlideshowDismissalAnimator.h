@@ -4,7 +4,7 @@
 
 @class UIImageView;
 
-@interface SKUISlideshowDismissalAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
+@interface SKUISlideshowDismissalAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
     UIImageView *_imageView;
     struct CGRect { 
         struct CGPoint { 

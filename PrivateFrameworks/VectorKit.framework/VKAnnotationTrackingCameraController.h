@@ -39,8 +39,8 @@
         float right; 
     } _edgeInsets;
     int _annotationMarkersAnimatingInCount;
+    int _zoomStyle;
     struct { 
-        unsigned int autoSelectsZoomScale : 1; 
         unsigned int hasPendingChange : 1; 
         unsigned int paused : 1; 
         unsigned int trackingHeading : 1; 
@@ -54,12 +54,12 @@
 }
 
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property BOOL autoSelectsZoomScale;
+@property int zoomStyle;
 @property(readonly) <VKTrackableAnnotation> * annotation;
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
 
 
-- (BOOL)autoSelectsZoomScale;
+- (int)zoomStyle;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
 - (double)_zoomLevelForCameraPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
@@ -67,7 +67,7 @@
 - (void)updateFramerate;
 - (void)pauseAnimation;
 - (void)resumeAnimation;
-- (void)setAutoSelectsZoomScale:(BOOL)arg1;
+- (void)setZoomStyle:(int)arg1;
 - (void)didAnimateInAnnotationMarkers:(id)arg1;
 - (void)willAnimateInAnnotationMarkers:(id)arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;

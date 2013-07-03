@@ -34,9 +34,9 @@
 - (void)setAccountCredits:(id)arg1;
 - (BOOL)isTermsAndConditionsHidden;
 - (id)accountCredits;
+- (id)_termsChevronImage;
 - (void)_layoutForIPad;
 - (void)_layoutForIPhone;
-- (id)_termsChevronImage;
 - (id)initWithClientContext:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;

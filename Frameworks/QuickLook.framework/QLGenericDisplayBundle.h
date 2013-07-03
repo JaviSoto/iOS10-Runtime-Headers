@@ -12,7 +12,6 @@
 @property(retain) NSError * error;
 
 
-- (void)_showLoadingProgress:(BOOL)arg1;
 - (void)_loadPreviewItemInfos;
 - (void)genericViewDidClickOnArchiveButton:(id)arg1;
 - (void)discardAirPlayView;

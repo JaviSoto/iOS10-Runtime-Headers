@@ -9,8 +9,8 @@
 }
 
 
-- (id)results;
 - (void)dealloc;
+- (id)results;
 - (void)_zapResultArray;
 - (id)subgroups;
 - (id)attribute;

@@ -7,6 +7,7 @@
 @interface PCPersistentTimer : NSObject <PCLoggingDelegate, CUTPowerMonitorDelegate> {
     double _fireTime;
     double _startTime;
+    unsigned int _guidancePriority;
     double _minimumEarlyFireProportion;
     BOOL _triggerOnGMTChange;
     BOOL _disableSystemWaking;
@@ -19,22 +20,28 @@
 
 @property double minimumEarlyFireProportion;
 @property BOOL disableSystemWaking;
+@property(readonly) double fireTime;
 @property(readonly) NSString * loggingIdentifier;
 
++ (double)_currentGuidanceTime;
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
++ (void)_updateTime:(double)arg1 forGuidancePriority:(unsigned int)arg2;
 
 - (BOOL)disableSystemWaking;
 - (double)minimumEarlyFireProportion;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
+- (double)fireTime;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
+- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 guidancePriority:(unsigned int)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (double)_earlyFireTime;
 - (double)_nextForcedAlignmentAbsoluteTime;
+- (BOOL)firingIsImminent;
 - (void)_fireTimerFired;
 - (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)_updateTimers;
-- (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
+- (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 guidancePriority:(unsigned int)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6 triggerOnGMTChange:(BOOL)arg7;
 - (id)loggingIdentifier;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)setDisableSystemWaking:(BOOL)arg1;

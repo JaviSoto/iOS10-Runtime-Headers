@@ -30,8 +30,8 @@
 @property struct CGSize { float x1; float x2; } shadowOffset;
 @property BOOL disallowsSetContentOffset;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)disallowsSetContentOffset;
 - (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -51,10 +51,10 @@
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
 - (void)setTextColor:(id)arg1;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)isHighlighted;
 - (id)parent;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;

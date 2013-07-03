@@ -4,7 +4,7 @@
 
 @class UIImageView;
 
-@interface SLSheetMusicAlbumImageView : SLSheetPreviewImageView  {
+@interface SLSheetMusicAlbumImageView : SLSheetImagePreviewView  {
     UIImageView *_previewView;
 }
 

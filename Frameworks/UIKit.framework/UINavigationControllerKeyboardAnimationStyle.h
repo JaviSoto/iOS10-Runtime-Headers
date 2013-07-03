@@ -2,41 +2,30 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class _UIViewControllerTransitionContext;
+@class _UIViewControllerTransitionContext, UINavigationControllerKeyboardAnimationStyleInfo;
 
 @interface UINavigationControllerKeyboardAnimationStyle : UIInputViewAnimationStyle  {
-    BOOL isAnimationCompleted;
     BOOL _disableAlongsideView;
     _UIViewControllerTransitionContext *_context;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _previousCompleteHandler;
-
+    UINavigationControllerKeyboardAnimationStyleInfo *_info;
 }
 
 @property(readonly) _UIViewControllerTransitionContext * context;
-@property(copy) id previousCompleteHandler;
-@property BOOL isAnimationCompleted;
 @property BOOL disableAlongsideView;
+@property(readonly) UINavigationControllerKeyboardAnimationStyleInfo * info;
 
 + (id)animationStyleWithoutAlongsideViewAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3 context:(id)arg4;
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3 context:(id)arg4;
 
 - (id)context;
 - (id)initWithContext:(id)arg1;
+- (id)info;
 - (void)dealloc;
-- (BOOL)isAnimationCompleted;
 - (BOOL)delayForTransaction;
+- (BOOL)useCustomTransition;
+- (BOOL)isAnimationCompleted;
 - (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (BOOL)disableAlongsideView;
 - (void)setDisableAlongsideView:(BOOL)arg1;
-- (id)previousCompleteHandler;
-- (void)setIsAnimationCompleted:(BOOL)arg1;
-- (void)setPreviousCompleteHandler:(id)arg1;
 
 @end

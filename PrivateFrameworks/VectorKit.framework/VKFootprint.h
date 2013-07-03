@@ -37,6 +37,12 @@
     double _minDepth;
     double _maxDepth;
     double _centerDepth;
+    int _cornerGroundPointsCount;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
+    } _cornerGroundPoints[12];
 }
 
 @property(readonly) struct { double x1; double x2; double x3; double x4; } boundingRect;
@@ -46,8 +52,11 @@
 @property(readonly) double centerDepth;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } furthestGroundPoint;
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } nearestGroundPoint;
+@property(readonly) struct VKPoint { double x1; double x2; double x3; }* cornerGroundPoints;
+@property(readonly) int cornerGroundPointsCount;
 
 
+- (int)cornerGroundPointsCount;
 - (struct VKPoint { double x1; double x2; double x3; })nearestGroundPoint;
 - (struct VKPoint { double x1; double x2; double x3; })furthestGroundPoint;
 - (double)centerDepth;
@@ -56,6 +65,7 @@
 - (struct VKFootprintConvexHull_struct { int x1; struct VKPoint { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2[6]; struct Vec3Imp<double> { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3[6]; })convexHull;
 - (BOOL)containsGroundPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg1;
 - (BOOL)rejectsRect:(const struct { double x1; double x2; double x3; double x4; }*)arg1;
+- (struct VKPoint { double x1; double x2; double x3; }*)cornerGroundPoints;
 - (void)computeFromCamera:(id)arg1;
 - (id).cxx_construct;
 - (struct { double x1; double x2; double x3; double x4; })boundingRect;

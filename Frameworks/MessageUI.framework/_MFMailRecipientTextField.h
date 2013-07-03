@@ -5,10 +5,13 @@
 @interface _MFMailRecipientTextField : MFComposeTextField  {
 }
 
++ (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)customOverlayContainer;
 - (void)paste:(id)arg1;
 - (id)_previousKeyResponder;
 - (void)_handleKeyUIEvent:(id)arg1;
+- (id)accessibilityLabel;
 
 @end

@@ -64,13 +64,9 @@
 - (int)tonePickerTableViewSeparatorStyle;
 - (BOOL)tonePickerUsesOpaqueBackground;
 - (id)groupAccountNameShadowColor;
-- (id)groupAccountNameColor;
 - (int)groupCellSelectionStyle;
 - (id)groupCellShadowColor;
 - (id)groupCellHighlightedTextColor;
-- (id)groupCellTextColor;
-- (id)groupCellBackgroundColor;
-- (id)groupsTableBackgroundColor;
 - (BOOL)groupsTableShouldRemoveBackgroundView;
 - (BOOL)presentModalViewInPopover;
 - (BOOL)presentNewContactsControllersInPopover;
@@ -141,7 +137,7 @@
 - (id)memberNameMeCardTextColor;
 - (id)memberNameSelectedShadowColor;
 - (id)membersBackgroundColor;
-- (id)membersHeaderBackgroundColor;
+- (id)memberHeaderBackgroundView;
 - (id)newTableFooterViewForCellStyle:(int)arg1;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (int)abCellStyleForCardTableLinkingUI;
@@ -157,6 +153,7 @@
 - (id)memberNameShadowColor;
 - (int)cardCellSelectionStyle;
 - (id)memberNameTextColor;
+- (id)membersHeaderBackgroundColor;
 - (id)_accessoryDisclosureIndicatorHighlightedImageShadowed;
 - (id)_accessoryDisclosureIndicatorHighlightedImage;
 - (id)_accessoryDisclosureIndicatorImageShadowed;
@@ -188,5 +185,10 @@
 - (int)abCellStyleForCardTableWhenEditing:(BOOL)arg1;
 - (id)personLabelColor;
 - (BOOL)labelPickerUsesOpaqueBackground;
+- (id)groupAccountNameColor;
+- (id)groupHeaderBackgroudColor;
+- (id)groupCellTextColor;
+- (id)groupCellBackgroundColor;
+- (id)groupsTableBackgroundColor;
 
 @end

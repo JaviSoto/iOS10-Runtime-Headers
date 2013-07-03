@@ -29,9 +29,9 @@
 - (double)endTime;
 - (void)setEndTime:(double)arg1;
 - (id)text;
-- (double)startTime;
 - (void).cxx_destruct;
 - (id)description;
+- (double)startTime;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (void)setStartTime:(double)arg1;

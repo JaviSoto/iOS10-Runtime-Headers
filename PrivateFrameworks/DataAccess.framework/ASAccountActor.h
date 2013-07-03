@@ -39,7 +39,7 @@
 - (oneway void)stopMonitoringAllFolders;
 - (oneway void)monitorFoldersForUpdates:(id)arg1;
 - (id)folderIDsThatExternalClientsCareAboutForDataclasses:(int)arg1 withTag:(id*)arg2;
-- (id)delegateeInvitationICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
+- (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (int)performMoveRequests:(id)arg1 consumer:(id)arg2;
 - (oneway void)cancelTaskWithID:(int)arg1;

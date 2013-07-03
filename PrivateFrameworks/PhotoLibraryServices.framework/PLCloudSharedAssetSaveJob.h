@@ -33,24 +33,21 @@
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
 + (id)placeholderImageProperties;
++ (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
 + (void)deleteCloudSharedAssetsWithCloudGUIDs:(id)arg1 info:(id)arg2;
 + (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6;
 + (void)downloadPendingAssetsForPersonID:(id)arg1 info:(id)arg2;
-+ (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (id)_dcimDirectoryForFileURL:(id)arg1;
 + (BOOL)_lightweightReimportCacheDirectoryExists;
-+ (id)_pathForPendingAssetsPersonID:(id)arg1;
 + (id)_lightweightReimportPhotoCloudSharingAlbumInfoForAlbumWithCloudGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (id)nextDCIMSaveFileURLForCloudPersonID:(id)arg1 cloudAlbumGUID:(id)arg2 fileExtension:(id)arg3;
-+ (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;
++ (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 
 - (void)setCurrentCloudAssetCollection:(id)arg1;
 - (id)currentCloudAssetCollection;
+- (int)attemptLightweightReimportAssetData;
 - (BOOL)_createPlaceHolder;
-- (void)savePendingAssets:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
-- (int)attemptLightweightReimportAssetDataForFixedAssetArray:(id*)arg1;
-- (id)assetsToRetriveForAssetMetadataForCurrentCollectionWithExistingPlaceHolderKind:(int)arg1;
 - (BOOL)_processSaveAssetWithPlaceholderKind:(int)arg1 withAssetDataFilePath:(id)arg2;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;

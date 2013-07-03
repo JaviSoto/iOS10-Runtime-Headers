@@ -29,8 +29,8 @@
 @property(retain) UIImage * halfStarHighlightedImage;
 @property(retain) UIImage * emptyStarHighlightedImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setEmptyStarHighlightedImage:(id)arg1;
 - (id)emptyStarHighlightedImage;
@@ -51,8 +51,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)setPadding:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
+- (void)setHighlighted:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (id)accessibilityLabel;

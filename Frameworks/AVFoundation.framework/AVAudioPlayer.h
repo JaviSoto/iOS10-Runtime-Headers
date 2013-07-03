@@ -36,11 +36,9 @@
 - (float)pan;
 - (void)setPan:(float)arg1;
 - (float)rate;
-- (void)setRate:(float)arg1;
 - (BOOL)enableRate;
 - (void)setEnableRate:(BOOL)arg1;
 - (float)volume;
-- (void)setVolume:(float)arg1;
 - (BOOL)playAtTime:(double)arg1;
 - (BOOL)play;
 - (BOOL)prepareToPlay;
@@ -62,6 +60,8 @@
 - (BOOL)isMeteringEnabled;
 - (BOOL)isPlaying;
 - (id)impl;
+- (void)setRate:(float)arg1;
+- (void)setVolume:(float)arg1;
 - (id)data;
 - (void)setDelegate:(id)arg1;
 - (void)finalize;

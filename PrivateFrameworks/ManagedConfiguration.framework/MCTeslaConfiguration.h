@@ -30,10 +30,10 @@
 - (id)connectionError;
 - (BOOL)isFetching;
 - (void)fetchConfigurationWithCompletionBlock:(id)arg1;
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

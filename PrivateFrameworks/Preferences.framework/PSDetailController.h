@@ -26,5 +26,6 @@
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 
 @end

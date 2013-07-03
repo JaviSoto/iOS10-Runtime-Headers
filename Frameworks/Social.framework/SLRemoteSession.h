@@ -19,8 +19,8 @@
 - (void)setDatabase:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)database;
-- (void)setConnection:(id)arg1;
 - (void).cxx_destruct;
+- (void)setConnection:(id)arg1;
 - (id)connection;
 
 @end

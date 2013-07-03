@@ -5,8 +5,8 @@
 @interface _UIEmojiPageControl : UIPageControl  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_setCurrentPage:(int)arg1;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;

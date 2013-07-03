@@ -36,15 +36,15 @@
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (void)insertItemsAtIndexPaths:(id)arg1;
 - (int)numberOfItemsInSection:(int)arg1;
-- (id)indexPathsForSelectedItems;
 - (id)cellForItemAtIndexPath:(id)arg1;
 - (id)indexPathsForVisibleItems;
+- (id)indexPathsForSelectedItems;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 - (id)indexPathForCell:(id)arg1;

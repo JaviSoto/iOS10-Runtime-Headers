@@ -39,10 +39,7 @@
 - (BOOL)shouldAllowLinkingPersonWithRecordID:(int)arg1;
 - (BOOL)manuallyLinkPerson:(id)arg1;
 - (void)forceUseLinkedInfos:(id)arg1 currentIndexInLinkedInfos:(int)arg2;
-- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
-- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (BOOL)appearsInLinkingPeoplePicker;
-- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (id)linkedInfoAtRow:(int)arg1;
 - (void)_finalizeLinkChanges;
 - (BOOL)isLinkedCard;
@@ -59,6 +56,9 @@
 - (BOOL)shouldAllowLinkingAnotherContact;
 - (void)setUpdateShouldAllowLinkingAnotherContact:(BOOL)arg1;
 - (BOOL)shouldShowLinkedPeople;
+- (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
+- (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
+- (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (id)helper;
 - (id)initWithHelper:(id)arg1;
 - (void)setDataSource:(id)arg1;

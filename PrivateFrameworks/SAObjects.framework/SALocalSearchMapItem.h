@@ -37,8 +37,8 @@
 - (id)attributions;
 - (void)setAttributions:(id)arg1;
 - (id)distance;
-- (id)location;
 - (id)detail;
+- (id)location;
 - (id)label;
 - (void)setLocation:(id)arg1;
 - (void)setLabel:(id)arg1;

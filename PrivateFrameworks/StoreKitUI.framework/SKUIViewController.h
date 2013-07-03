@@ -24,6 +24,7 @@
 
 - (void)wishlist:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)_wishlistPopoverDidDismiss;
+- (void)_reloadForOrientation:(int)arg1;
 - (void)_showDialogWithError:(id)arg1;
 - (void)_wishlistAction:(id)arg1;
 - (id)_wishlistButtonItem;
@@ -37,6 +38,8 @@
 - (id)clientContext;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)reloadData;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;

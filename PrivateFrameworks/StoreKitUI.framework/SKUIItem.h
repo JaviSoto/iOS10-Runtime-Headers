@@ -5,6 +5,10 @@
 @class SKUIArtworkList, SKUIUber, SKUIItemOffer, NSString, NSURL, NSMutableDictionary, NSArray;
 
 @interface SKUIItem : NSObject <SKUICacheCoding> {
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _ageBandRange;
     NSString *_artistName;
     SKUIArtworkList *_artworks;
     NSString *_bundleID;
@@ -30,6 +34,7 @@
     NSString *_versionString;
 }
 
+@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } ageBandRange;
 @property(readonly) NSString * artistName;
 @property(readonly) NSString * bundleIdentifier;
 @property(readonly) NSURL * largestArtworkURL;
@@ -67,22 +72,25 @@
 - (unsigned int)deviceFamilies;
 - (id)categoryName;
 - (id)artworks;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })ageBandRange;
 - (id)largestArtworkURL;
 - (BOOL)hasPrerenderedArtwork;
 - (id)primaryItemOffer;
 - (int)parentalControlsRank;
 - (id)cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
+- (float)userRating;
 - (id)requiredCapabilities;
 - (long long)versionIdentifier;
 - (id)artworkURLForSize:(int)arg1;
-- (float)userRating;
 - (id)initWithLookupDictionary:(id)arg1;
 - (long long)itemIdentifier;
 - (int)itemKind;
 - (id)artistName;
 - (id)title;
 - (id)versionString;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (BOOL)isNewsstandApp;
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

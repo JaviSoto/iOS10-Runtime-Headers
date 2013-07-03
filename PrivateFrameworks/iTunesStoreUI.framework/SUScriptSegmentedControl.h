@@ -91,7 +91,7 @@
 - (id)selectedIndex;
 - (float)maximumWidth;
 - (void)setMaximumWidth:(float)arg1;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 
 @end

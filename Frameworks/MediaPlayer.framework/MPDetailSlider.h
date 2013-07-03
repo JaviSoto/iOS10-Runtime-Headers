@@ -15,7 +15,7 @@
     BOOL _canCommit;
     double _currentTime;
     id _delegate;
-    UIImageView *_downloadingTrackOverlay;
+    UIView *_downloadingTrackOverlay;
     double _duration;
     UIImageView *_glowDetailScrubImageView;
     BOOL _isTracking;
@@ -35,7 +35,6 @@
     int _timeLabelStyle;
     UIImageView *_thumbImageView;
     float _trackInset;
-    UIView *_trackKnockoutView;
     float _detailScrubbingVerticalRange;
 }
 
@@ -53,8 +52,8 @@
 
 + (Class)labelClass;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (float)minTimeLabelWidth;
 - (int)timeLabelStyle;
@@ -70,15 +69,16 @@
 - (id)_colorSliceImageWithColor:(id)arg1 height:(float)arg2;
 - (id)_modernThumbImageWithColor:(id)arg1 height:(float)arg2 includeShadow:(BOOL)arg3;
 - (BOOL)allowsScrubbing;
+- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
 - (void)_resetScrubInfo;
 - (void)_autoscrubTick:(id)arg1;
-- (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
 - (void)_commitValue;
 - (void)_updateTimeDisplayForTime:(double)arg1;
 - (void)_updateForAvailableDuraton;
 - (void)_setValueWhileTracking:(float)arg1 duration:(double)arg2;
 - (void)_updateTrackInset;
 - (id)_stringForInverseCurrentTime:(double)arg1;
+- (float)timeLabelHorizontalOffsetForStyle:(int)arg1;
 - (id)_stringForCurrentTime:(double)arg1;
 - (id)timeLabelShadowColorForStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })timeLabelShadowOffsetForStyle:(int)arg1;
@@ -105,7 +105,6 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)_setUseLookNeue:(BOOL)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (id)currentThumbImage;
 - (id)createThumbView;

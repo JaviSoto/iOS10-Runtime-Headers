@@ -193,8 +193,8 @@
 - (BOOL)hasLocation;
 - (void)setHeading:(id)arg1;
 - (id)currentLocation;
-- (void)reset;
 - (BOOL)isWiFiEnabled;
+- (void)reset;
 - (id)heading;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setEnabled:(BOOL)arg1;

@@ -25,8 +25,8 @@
 - (id)showAllSpecifier;
 - (int)_groupIndex;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 collapseAfterCount:(int)arg3;
-- (void)reloadSpecifier:(id)arg1;
 - (id)specifiers;
+- (void)reloadSpecifier:(id)arg1;
 - (void)dealloc;
 
 @end

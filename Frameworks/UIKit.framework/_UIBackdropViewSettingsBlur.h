@@ -6,7 +6,7 @@
 }
 
 
-- (void)computeOutputSettingsUsingModel:(id)arg1;
 - (void)setDefaultValues;
+- (void)computeOutputSettingsUsingModel:(id)arg1;
 
 @end

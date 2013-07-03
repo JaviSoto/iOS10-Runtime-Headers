@@ -68,7 +68,6 @@
 - (BOOL)_isOptimizedForEncoding;
 - (void)_flattenProperties;
 - (void)_setIsEditable:(BOOL)arg1;
-- (BOOL)isEditable;
 - (void)_addEntity:(id)arg1;
 - (void)_removeEntity:(id)arg1;
 - (id)_entityForName:(id)arg1;
@@ -77,6 +76,7 @@
 - (id)entitiesForConfiguration:(id)arg1;
 - (id)versionHash;
 - (id)entitiesByName;
+- (BOOL)isEditable;
 - (id)init;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;

@@ -10,9 +10,9 @@
 @property(getter=isActivityAvailable,readonly) BOOL activityAvailable;
 
 
-- (BOOL)isActivityAvailable;
 - (id)activityHandler;
 - (void)setActivityHandler:(id)arg1;
+- (BOOL)isActivityAvailable;
 - (id)init;
 - (void)dealloc;
 

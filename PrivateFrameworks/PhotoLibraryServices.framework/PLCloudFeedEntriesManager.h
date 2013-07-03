@@ -12,7 +12,6 @@
 
 + (id)sharedManager;
 
-- (void)rebuildAllEntries:(id)arg1;
 - (id)_invitationDeclinedEntryForInvitationRecord:(id)arg1;
 - (id)_firstEntryOnOrAfterDate:(id)arg1;
 - (id)_assetSortingComparator;
@@ -53,6 +52,7 @@
 - (id)_singleEntryOfType:(int)arg1 forInvitationRecord:(id)arg2;
 - (id)_singleEntryOfType:(int)arg1 forSharedAlbum:(id)arg2;
 - (id)_firstEntryRelativeToDate:(id)arg1 ascending:(BOOL)arg2 includeSameDate:(BOOL)arg3;
+- (void)rebuildAllEntries:(id)arg1;
 - (void)processAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 completionHandler:(id)arg7;
 - (id)_library;
 - (id)init;

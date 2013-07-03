@@ -10,8 +10,11 @@
     long long _startTime;
     int _errorCode;
     NSString *_errorDomain;
+    NSMutableArray *_httpErrors;
     int _httpStatus;
+    NSString *_interfaceIdentifier;
     NSString *_locatorHostname;
+    NSString *_locatorPeerAddress;
     unsigned int _locatorPort;
     NSString *_locatorScheme;
     int _requestSize;
@@ -68,8 +71,14 @@
 @property BOOL hasCancelled;
 @property BOOL cancelled;
 @property(retain) NSMutableArray * tcpInfos;
+@property(retain) NSMutableArray * httpErrors;
+@property(readonly) BOOL hasInterfaceIdentifier;
+@property(retain) NSString * interfaceIdentifier;
+@property(readonly) BOOL hasLocatorPeerAddress;
+@property(retain) NSString * locatorPeerAddress;
 
 
+- (id)httpErrors;
 - (id)tcpInfos;
 - (void)setHasCancelled:(BOOL)arg1;
 - (void)setHasTimedOut:(BOOL)arg1;
@@ -80,6 +89,12 @@
 - (void)setHasResponseReceivedDuration:(BOOL)arg1;
 - (void)setHasConnectionReused:(BOOL)arg1;
 - (void)setHasLocatorPort:(BOOL)arg1;
+- (id)locatorPeerAddress;
+- (BOOL)hasLocatorPeerAddress;
+- (BOOL)hasInterfaceIdentifier;
+- (id)httpErrorAtIndex:(unsigned int)arg1;
+- (void)clearHttpErrors;
+- (unsigned int)httpErrorsCount;
 - (id)tcpInfoAtIndex:(unsigned int)arg1;
 - (void)clearTcpInfos;
 - (unsigned int)tcpInfosCount;
@@ -111,7 +126,11 @@
 - (BOOL)hasLocatorHostname;
 - (id)locatorScheme;
 - (BOOL)hasLocatorScheme;
+- (void)addHttpError:(id)arg1;
 - (void)addTcpInfo:(id)arg1;
+- (void)setLocatorPeerAddress:(id)arg1;
+- (void)setInterfaceIdentifier:(id)arg1;
+- (void)setHttpErrors:(id)arg1;
 - (void)setTcpInfos:(id)arg1;
 - (void)setLocatorHostname:(id)arg1;
 - (void)setLocatorScheme:(id)arg1;
@@ -127,15 +146,16 @@
 - (BOOL)hasStartTime;
 - (void)copyTo:(id)arg1;
 - (id)errorDomain;
+- (id)interfaceIdentifier;
 - (BOOL)timedOut;
 - (void)setErrorCode:(int)arg1;
 - (int)errorCode;
 - (void)setDuration:(long long)arg1;
-- (long long)startTime;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (long long)startTime;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setStartTime:(long long)arg1;
 - (BOOL)cancelled;

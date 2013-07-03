@@ -33,7 +33,6 @@
 + (BOOL)valueSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (id)newEffectiveSettingsByApplyingRestrictions:(id)arg1 toSettings:(id)arg2;
-+ (id)valueSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 + (BOOL)unionValuesForFeature:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
 + (BOOL)intersectedValuesForFeature:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
 + (BOOL)restrictedValue:(id)arg1 changedBetweenOldRestrictions:(id)arg2 andNewRestrictions:(id)arg3;
@@ -55,6 +54,7 @@
 + (int)appWhitelistStateWithSettingsDictionary:(id)arg1;
 + (id)unionValuesSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 + (BOOL)isWebContentFilterUIActiveWithRestrictionDictionary:(id)arg1;
++ (id)valueSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 + (id)defaultParametersForUnionValuesSetting:(id)arg1;
 + (id)defaultParametersForIntersectedValuesSetting:(id)arg1;
 + (id)defaultParametersForValueSetting:(id)arg1;

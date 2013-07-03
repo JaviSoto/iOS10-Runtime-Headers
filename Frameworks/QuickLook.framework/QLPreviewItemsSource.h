@@ -40,15 +40,15 @@
 - (int)numberOfUIItems;
 - (id)UIItemAtIndex:(int)arg1;
 - (int)currentUIItemIndex;
-- (BOOL)shouldShowFileList;
 - (BOOL)isViewingArchive;
+- (BOOL)shouldShowFileList;
 - (void)preparedPreviewItemAtIndex:(int)arg1 completionBlock:(id)arg2;
 - (id)previewItemAtIndex:(int)arg1;
 - (int)numberOfPreviewItems;
 - (id)realPreviewItemAtIndex:(int)arg1;
 - (BOOL)prepared;
-- (int)realCurrentPreviewItemIndex;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
+- (int)realCurrentPreviewItemIndex;
 - (void)setRealCurrentPreviewItemIndex:(int)arg1;
 - (int)currentPreviewItemIndex;
 - (id)realCurrentPreviewItem;

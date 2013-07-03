@@ -19,13 +19,13 @@
 @property AXDialectMap * dialectForSystemLanguage;
 @property AXDialectMap * dialectForCurrentLocale;
 
++ (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1;
 + (id)stringByReplacingFatWidthCharactersWithBasicCharacters:(id)arg1;
 + (id)commonPunctuationCharacters;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
-+ (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1;
 + (id)sharedInstance;
 
-- (BOOL)isCharacterCommon:(unsigned short)arg1;
+- (id)descriptionOfWord:(id)arg1 forLanguage:(id)arg2;
 - (id)ambiguousDialectsFromUserKeyboardPreferences;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)characterSetForRanges:(id)arg1;
@@ -33,6 +33,7 @@
 - (id)commonCharacters;
 - (id)dialectForLanguageID:(id)arg1;
 - (id)_preferredLanguageIDsFromUserSelectedKeyboards;
+- (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (void)updateCachedDialects;
 - (id)dialectForCurrentLocale;
 - (id)dialectForSystemLanguage;
@@ -44,9 +45,9 @@
 - (void)setCommonCharacters:(id)arg1;
 - (void)_handleUserLocaleDidChange:(id)arg1;
 - (void)setUserLocale:(id)arg1;
+- (BOOL)isCharacterCommon:(unsigned short)arg1;
 - (id)userLocale;
 - (id)basicDescription;
-- (id)descriptionOfWord:(id)arg1 forLanguage:(id)arg2;
 - (id)init;
 - (id)debugDescription;
 - (void)dealloc;

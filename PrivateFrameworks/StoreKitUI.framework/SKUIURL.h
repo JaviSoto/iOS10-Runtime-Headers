@@ -12,9 +12,11 @@
 @property(readonly) NSURL * underlyingURL;
 @property(readonly) NSString * actionString;
 @property(readonly) NSDictionary * queryStringDictionary;
+@property(readonly) NSString * redeemCode;
 @property(readonly) NSString * searchTerm;
 
 
+- (id)redeemCode;
 - (id)_queryDictionary;
 - (id)valueForQueryParameter:(id)arg1;
 - (id)actionString;

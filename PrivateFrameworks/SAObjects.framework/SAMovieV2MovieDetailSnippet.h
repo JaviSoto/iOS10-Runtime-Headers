@@ -16,6 +16,7 @@
 @property(copy) NSURL * iTunesUri;
 @property BOOL is3d;
 @property(copy) NSURL * lowresTrailerUri;
+@property(copy) NSURL * movieIdentifier;
 @property(retain) SAMovieV2ReviewListSnippet * movieReviewListSnippet;
 @property(copy) NSString * name;
 @property(copy) NSNumber * playTrailer;
@@ -35,6 +36,8 @@
 
 - (void)setMovieReviewListSnippet:(id)arg1;
 - (id)movieReviewListSnippet;
+- (void)setMovieIdentifier:(id)arg1;
+- (id)movieIdentifier;
 - (void)setLowresTrailerUri:(id)arg1;
 - (id)lowresTrailerUri;
 - (void)setHiresTrailerUri:(id)arg1;

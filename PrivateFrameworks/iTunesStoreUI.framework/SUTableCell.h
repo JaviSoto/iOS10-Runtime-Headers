@@ -30,8 +30,8 @@
 @property(retain) UIColor * topBorderColor;
 @property BOOL usesSubviews;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (id)topBorderColor;
 - (id)bottomBorderColor;
@@ -48,11 +48,11 @@
 - (void)setDrawAsDisabled:(BOOL)arg1;
 - (BOOL)drawAsDisabled;
 - (BOOL)highlightsOnlyContentView;
-- (void)setConfiguration:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPosition:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)dealloc;
 - (id)configuration;
+- (void)setConfiguration:(id)arg1;
 - (void)setClipCorners:(int)arg1;
 - (int)clipCorners;
 - (void)setShowingDeleteConfirmation:(BOOL)arg1;

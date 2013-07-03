@@ -21,8 +21,9 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (struct __CFAttributedString { }*)cfAttributedString;
-- (void)replaceString:(struct __CFString { }*)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (void)replaceString:(struct __CFString { }*)arg1;
+- (BOOL)hasAttribute:(id)arg1;
 - (unsigned int)length;
 - (id)initWithString:(id)arg1;
 - (void)appendString:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasAttribute:(id)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)uppercaseString;
 - (id)lowercaseString;

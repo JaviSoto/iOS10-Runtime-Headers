@@ -14,8 +14,8 @@
 @property(retain) UIImage * tableIcon;
 @property(retain) UIImage * highlightedTableIcon;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)highlightedTableIcon;

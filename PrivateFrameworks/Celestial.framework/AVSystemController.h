@@ -14,6 +14,7 @@
 - (void)handleServerDied;
 - (BOOL)allowUserToExceedEUVolumeLimit;
 - (BOOL)currentRouteHasVolumeControl;
+- (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
 - (id)volumeCategoryForAudioCategory:(id)arg1;
 - (id)routeForCategory:(id)arg1;
 - (BOOL)enablePortDiscovery:(BOOL)arg1;

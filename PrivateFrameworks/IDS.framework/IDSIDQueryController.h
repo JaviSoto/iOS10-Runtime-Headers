@@ -12,11 +12,16 @@
 
 - (BOOL)requestIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
 - (BOOL)requestIDStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
-- (id)idStatusForDestinations:(id)arg1 service:(id)arg2;
-- (void)requestIDStatusCache;
-- (void)forgetPeerTokensForURI:(id)arg1 fromURI:(id)arg2 fromService:(id)arg3;
-- (void)noteRemoteDecryptionErrorForToken:(id)arg1 forURI:(id)arg2 fromURI:(id)arg3 type:(int)arg4;
-- (void)startQueryForDestinations:(id)arg1 fromAccount:(id)arg2 fromURI:(id)arg3 fromService:(id)arg4 forSending:(BOOL)arg5;
+- (void)removeDelegate:(id)arg1 forService:(id)arg2 listenerID:(id)arg3;
+- (void)addDelegate:(id)arg1 forService:(id)arg2 listenerID:(id)arg3 queue:(id)arg4;
+- (BOOL)_flushQueryCacheForService:(id)arg1;
+- (BOOL)_warmupQueryCacheForService:(id)arg1;
+- (int)_currentCachedIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3;
+- (BOOL)_hasCacheForService:(id)arg1;
+- (BOOL)currentIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
+- (BOOL)refreshIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
+- (BOOL)currentIDStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
+- (BOOL)refreshIDStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
 - (void)addListenerID:(id)arg1 forService:(id)arg2;
 - (BOOL)removeListenerID:(id)arg1 forService:(id)arg2;
 - (void)removeDelegate:(id)arg1;

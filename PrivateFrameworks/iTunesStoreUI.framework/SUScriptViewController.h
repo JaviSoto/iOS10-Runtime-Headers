@@ -63,8 +63,6 @@
 - (id)topBackgroundColor;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)dismissModalViewControllerWithTransition:(id)arg1;
-- (void)presentModalViewController:(id)arg1 withTransition:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (id)attributeKeys;
 - (id)backgroundColor;
@@ -77,6 +75,8 @@
 - (void)setToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (id)splitViewController;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissModalViewControllerWithTransition:(id)arg1;
+- (void)presentModalViewController:(id)arg1 withTransition:(id)arg2;
 - (id)modalViewController;
 - (void)setWantsFullScreenLayout:(id)arg1;
 - (void)setModalPresentationStyle:(id)arg1;

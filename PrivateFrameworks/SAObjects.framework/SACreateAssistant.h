@@ -24,8 +24,8 @@
 - (id)encodedClassName;
 - (void)setConnectionType:(id)arg1;
 - (id)connectionType;
-- (void)setLanguage:(id)arg1;
 - (id)language;
+- (void)setLanguage:(id)arg1;
 - (id)groupIdentifier;
 
 @end

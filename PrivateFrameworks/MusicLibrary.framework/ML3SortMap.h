@@ -2,16 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSMutableArray, ML3DatabaseConnection, NSMutableDictionary;
+@class ML3MusicLibrary, NSMutableArray, NSData, ML3DatabaseConnection, NSMutableDictionary;
 
 @interface ML3SortMap : NSObject  {
     ML3DatabaseConnection *_connection;
     ML3MusicLibrary *_library;
     NSMutableDictionary *_nameOrders;
     NSMutableArray *_entries;
+    NSData *_minSortKey;
+    NSData *_maxSortKey;
+    long long _smallestNameDelta;
 }
 
 
+- (id)_sortKeyString:(id)arg1;
+- (long long)_sortKeyDistance:(id)arg1 sortKey2:(id)arg2 offset:(unsigned int)arg3;
+- (id)_maxSortKeyForEntry:(id)arg1 iPhoneSortKeyBuilder:(struct iPhoneSortKeyBuilder { }*)arg2;
+- (id)_minSortKeyForEntry:(id)arg1 iPhoneSortKeyBuilder:(struct iPhoneSortKeyBuilder { }*)arg2;
+- (long long)_maxNameOrderForSortMapEntry:(id)arg1 iPhoneSortKeyBuilder:(struct iPhoneSortKeyBuilder { }*)arg2;
+- (long long)_minNameOrderForSortMapEntry:(id)arg1 iPhoneSortKeyBuilder:(struct iPhoneSortKeyBuilder { }*)arg2;
 - (BOOL)loadExistingSortedEntries;
 - (BOOL)_insertSortedNameEntriesIntoSortMap:(id)arg1;
 - (id)_sortedNameEntriesToInsertForNames:(id)arg1;

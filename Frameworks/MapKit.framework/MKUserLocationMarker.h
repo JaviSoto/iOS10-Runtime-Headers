@@ -23,8 +23,8 @@
 @property(retain) UIColor * tintColor;
 
 + (unsigned int)_zIndex;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPresentationCourse:(double)arg1;
 - (double)presentationCourse;
@@ -43,8 +43,8 @@
 - (void)setOpacity:(float)arg1;
 - (float)opacity;
 - (void)dealloc;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 - (id)accessibilityLocality;

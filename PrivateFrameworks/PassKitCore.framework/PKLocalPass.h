@@ -30,6 +30,7 @@
 - (id)fileAccessor;
 - (id)localizedString:(id)arg1 forPassAtURL:(id)arg2;
 - (BOOL)removePassAtURL:(id)arg1 error:(id*)arg2;
+- (id)_localizationKeyForMultipleDiff;
 - (BOOL)moveToFileURL:(id)arg1;
 - (BOOL)movePassAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (id)serializedFileWrapperFromPassURL:(id)arg1;

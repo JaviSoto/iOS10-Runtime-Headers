@@ -24,7 +24,6 @@
 }
 
 
-- (void)reset;
 - (id)removedModifications;
 - (id)addedModifications;
 - (id)currentModifications;
@@ -37,6 +36,7 @@
 - (void)_addTranspositions;
 - (void)_advanceIndexes;
 - (void)_removeModificationsAndMoveStartingPoint;
+- (void)reset;
 - (id)init;
 - (void)dealloc;
 - (id)description;

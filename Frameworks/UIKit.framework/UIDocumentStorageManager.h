@@ -20,6 +20,7 @@
 + (void)requestSharedManager:(id)arg1;
 
 - (id)init;
+- (void)removeObserver:(id)arg1;
 - (void)updateObserver:(id)arg1 withSortDescriptors:(id)arg2;
 - (id)observeContentsOfUbiquitousContainersWithIdentifiers:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
 - (id)observeContentsOfDirectory:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
@@ -46,6 +47,5 @@
 - (void)runSetupProcessWithCompletionHandler:(id)arg1;
 - (void)_ubiquityIdentityTokenChanged;
 - (id)_initWithCompletionHandler:(id)arg1;
-- (void)removeObserver:(id)arg1;
 
 @end

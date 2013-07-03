@@ -33,12 +33,12 @@
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (void)setImportant:(BOOL)arg1;
-- (void)setDueDate:(id)arg1;
-- (id)dueDate;
-- (void)setCompleted:(BOOL)arg1;
 - (BOOL)completed;
 - (void)setTrigger:(id)arg1;
 - (id)trigger;
+- (void)setDueDate:(id)arg1;
+- (id)dueDate;
+- (void)setCompleted:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (id)subject;

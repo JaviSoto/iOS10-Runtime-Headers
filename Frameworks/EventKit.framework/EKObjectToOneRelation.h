@@ -10,6 +10,7 @@
 }
 
 
+- (BOOL)validate:(id*)arg1;
 - (void)_setRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_unload;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
@@ -21,10 +22,9 @@
 - (id)relatedObject;
 - (id)initWithObject:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3 weak:(BOOL)arg4;
 - (void)didCommit;
-- (BOOL)validate:(id*)arg1;
 - (void)rollback;
-- (void)reset;
 - (void)_clear;
+- (void)reset;
 - (void)refresh;
 - (void)dealloc;
 - (id)description;

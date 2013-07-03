@@ -45,6 +45,7 @@
 - (void)setLock:(id)arg1;
 - (id)currentSSID;
 - (id)currentWiFiNetworkPowerUsage;
+- (double)_wifiMeasurementErrorForInterval:(double)arg1;
 - (BOOL)isWiFiEnabled;
 - (BOOL)isWiFiAssociated;
 - (id)wiFiScaledRate;

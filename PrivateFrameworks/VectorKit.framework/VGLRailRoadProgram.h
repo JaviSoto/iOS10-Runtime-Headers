@@ -24,11 +24,11 @@
 
 - (float)railroadPatternScaler;
 - (void)setRailroadPatternScaler:(float)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })secondaryColor;
 - (void)updateTextureMappingGlobalScaler:(float)arg1;
-- (void)setSecondaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTextureMappingGlobalScaler:(float)arg1;
 - (void)setup;
 - (id).cxx_construct;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })secondaryColor;
+- (void)setSecondaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end

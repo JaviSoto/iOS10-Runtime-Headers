@@ -13,6 +13,7 @@
 
 
 - (id)initWithPlaceResult:(id)arg1 response:(id)arg2 request:(id)arg3;
+- (void)applyToPlaceSearchRequest:(id)arg1;
 - (id)mapItem;
 - (void)sendFeedback;
 - (id)highlightsForLine:(unsigned int)arg1;

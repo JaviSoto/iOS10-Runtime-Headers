@@ -8,7 +8,7 @@
 
 @class UIView, UIPopoverController, _MKPopoverEmbeddingView, MKSmallCalloutViewController;
 
-@interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <_MKPopoverEmbeddingViewWindowDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate> {
+@interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <_MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate> {
     UIPopoverController *_popoverController;
     MKSmallCalloutViewController *_calloutViewController;
 
@@ -28,6 +28,7 @@
 
 - (void)embeddingView:(id)arg1 didMoveToWindow:(id)arg2;
 - (void)embeddingView:(id)arg1 willMoveToWindow:(id)arg2;
+- (void)_updatePopoverContentSize:(BOOL)arg1;
 - (void)_snapLayoutConstraintsViewToContainerBounds;
 - (void)hideCalloutAnimated:(BOOL)arg1;
 - (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
@@ -44,6 +45,8 @@
 - (BOOL)calloutContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (void)_setTitle:(id)arg1;
+- (void)_popoverControllerDidFinishMapsTransitionExpanding:(id)arg1;
+- (void)_popoverControllerWillBeginMapsTransitionMovingSideways:(id)arg1;
 - (id)popoverController;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 

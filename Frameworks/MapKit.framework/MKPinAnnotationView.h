@@ -25,7 +25,7 @@
 + (id)_bounceAnimation;
 + (struct CGPoint { float x1; float x2; })_calloutOffset;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_desiredBounds;
-+ (id)_pinsWithType:(int)arg1;
++ (id)_pinsWithType:(int)arg1 mapDisplayStyle:(int)arg2;
 + (struct CGSize { float x1; float x2; })_perceivedSize;
 + (id)_reuseIdentifier;
 + (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; } x4; }*)_shadowImage;
@@ -40,7 +40,6 @@
 - (void)_dropFromPoint:(struct CGPoint { float x1; float x2; })arg1 shadowStartPoint:(struct CGPoint { float x1; float x2; })arg2 distance:(float)arg3 maxDistance:(float)arg4 withDelay:(double)arg5;
 - (void)_stopDropAnimationAndDropToPosition;
 - (void)_stopDrop;
-- (void)_invalidateImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (BOOL)animatesDrop;
 - (void)setAnimatesDrop:(BOOL)arg1;
@@ -61,6 +60,8 @@
 - (unsigned int)pinColor;
 - (void)_removeAllAnimations;
 - (id)_pins;
+- (void)_invalidateImage;
+- (void)_setMapDisplayStyle:(int)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_updatePinType;
 - (int)_pinType;
@@ -75,9 +76,9 @@
 - (id)description;
 - (void)setAnnotation:(id)arg1;
 - (void)_reset;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)isHighlighted;
 - (void)_setDelegate:(id)arg1;
 - (id)_delegate;
 

@@ -9,10 +9,10 @@
 
 - (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
 - (id)titleForRow:(int)arg1 inComponent:(int)arg2;
+- (int)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(int)arg3 currentRow:(int)arg4;
 - (int)yearForRow:(int)arg1;
 - (int)numberOfRowsForCalendarUnit:(unsigned int)arg1;
 - (id)selectedDateComponents;
 - (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(int)arg2;
-- (void)loadDate:(id)arg1 animated:(BOOL)arg2;
 
 @end

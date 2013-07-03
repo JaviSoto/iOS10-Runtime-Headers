@@ -22,6 +22,7 @@
 @property(copy) NSString * ratingDescription;
 
 + (unsigned int)ratingSystemFromString:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void)setRatingSystem:(unsigned int)arg1;
 - (int)ratingLevel;

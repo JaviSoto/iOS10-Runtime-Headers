@@ -2,23 +2,23 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOClientETARequest, GEOQuickETARequest, GEODirectionsRouteRequest;
+@class GEODirectionsRouteRequest, GEOClientETARequest, NSString, GEOQuickETARequest;
 
 @interface GEOQuickETARequester : NSObject  {
     GEOQuickETARequest *_request;
     GEOClientETARequest *_simpleETARequest;
     GEODirectionsRouteRequest *_directionsETARequest;
-    BOOL _loggingEnabled;
+    NSString *_loggingFacility;
 }
 
-@property BOOL loggingEnabled;
+@property(copy) NSString * loggingFacility;
 
 
 - (void)calculateETAWithHandler:(id)arg1;
-- (void)setLoggingEnabled:(BOOL)arg1;
+- (void)setLoggingFacility:(id)arg1;
+- (id)loggingFacility;
 - (void)_calculateRoutingETAWithHandler:(id)arg1;
 - (void)_calculateSimpleETAWithHandler:(id)arg1;
-- (BOOL)loggingEnabled;
 - (void)dealloc;
 - (void)cancel;
 - (id)initWithRequest:(id)arg1;

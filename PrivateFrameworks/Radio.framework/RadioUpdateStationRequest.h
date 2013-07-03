@@ -22,11 +22,11 @@
 - (id)seeds;
 - (id)_updatedStationDictionary;
 - (id)changeList;
-- (void)startWithCompletionHandler:(id)arg1;
 - (void)setStationDescription:(id)arg1;
 - (void)setSongMixType:(int)arg1;
 - (int)songMixType;
 - (id)stationDescription;
+- (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithStation:(id)arg1;
 - (id)init;
 - (id)name;

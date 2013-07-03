@@ -17,7 +17,6 @@
 - (BOOL)saveChats;
 - (BOOL)loadChatsWithCompletionBlock:(id)arg1;
 - (id)_chatInfoForSaving;
-- (id)_chatInfo;
 - (void)addMessage:(id)arg1 toChat:(id)arg2;
 - (void)removeChat:(id)arg1;
 - (void)updateStateForChat:(id)arg1 forcePost:(BOOL)arg2;
@@ -35,6 +34,7 @@
 - (id)existingChatWithIdentifier:(id)arg1 account:(id)arg2;
 - (void)addChat:(id)arg1;
 - (id)existingChatForID:(id)arg1 account:(id)arg2;
+- (id)_chatInfo;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
 - (id)existingChatsForIDs:(id)arg1 onService:(id)arg2 style:(unsigned char)arg3;
 - (void)updateStateForChat:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 forcePost:(BOOL)arg4;

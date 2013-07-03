@@ -10,12 +10,14 @@
 @property(retain) SASportsEntity * awayEntity;
 @property(copy) NSArray * awayLineScores;
 @property(copy) NSString * awayScore;
+@property(copy) NSNumber * awayShootoutPoints;
 @property(copy) NSString * currentPeriod;
 @property(copy) NSNumber * expectedLineScoreCount;
 @property(copy) NSString * favoredEntity;
 @property(retain) SASportsEntity * homeEntity;
 @property(copy) NSArray * homeLineScores;
 @property(copy) NSString * homeScore;
+@property(copy) NSNumber * homeShootoutPoints;
 @property(copy) NSString * line;
 @property(copy) NSString * location;
 @property(copy) NSString * locationName;
@@ -54,8 +56,8 @@
 - (id)matchupOrder;
 - (void)setLocationName:(id)arg1;
 - (id)locationName;
-- (void)setLine:(id)arg1;
-- (id)line;
+- (void)setHomeShootoutPoints:(id)arg1;
+- (id)homeShootoutPoints;
 - (void)setHomeScore:(id)arg1;
 - (id)homeScore;
 - (void)setHomeLineScores:(id)arg1;
@@ -68,6 +70,8 @@
 - (id)expectedLineScoreCount;
 - (void)setCurrentPeriod:(id)arg1;
 - (id)currentPeriod;
+- (void)setAwayShootoutPoints:(id)arg1;
+- (id)awayShootoutPoints;
 - (void)setAwayScore:(id)arg1;
 - (id)awayScore;
 - (void)setAwayLineScores:(id)arg1;
@@ -80,13 +84,15 @@
 - (id)encodedClassName;
 - (void)setTimeRemaining:(id)arg1;
 - (id)timeRemaining;
-- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (id)startTime;
+- (id)location;
 - (id)status;
 - (void)setLocation:(id)arg1;
 - (void)setStatus:(id)arg1;
+- (id)startTime;
+- (id)line;
+- (void)setLine:(id)arg1;
 - (void)setStartTime:(id)arg1;
 - (id)groupIdentifier;
 

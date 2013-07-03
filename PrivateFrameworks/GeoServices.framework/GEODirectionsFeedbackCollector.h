@@ -17,7 +17,7 @@
 
 - (id)routeIDs;
 - (id)currentDirectionsFeedback;
-- (void)endFeedbackSession;
+- (void)endFeedbackSessionWithLocationWhereRouteWasCancelled:(id)arg1;
 - (void)addRouteID:(id)arg1 stepID:(unsigned int)arg2;
 - (void)startFeedbackSessionForResponseID:(id)arg1;
 - (void)setRouteIDs:(id)arg1;

@@ -28,7 +28,6 @@
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
 - (float)bluetoothBatteryExtraPadding;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
-- (id)bluetoothImageForConnected:(BOOL)arg1;
 - (float)airplaneItemExtraMargin;
 - (BOOL)shouldAnimateBattery;
 - (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;

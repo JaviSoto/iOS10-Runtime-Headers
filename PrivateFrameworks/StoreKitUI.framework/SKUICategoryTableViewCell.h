@@ -2,10 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
+@class UIView;
+
 @interface SKUICategoryTableViewCell : UITableViewCell  {
+    UIView *_separatorView;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _expectedImageSize;
+    BOOL _layoutNeedsLayout;
 }
 
+@property struct CGSize { float x1; float x2; } expectedImageSize;
 
+
+- (struct CGSize { float x1; float x2; })expectedImageSize;
+- (void)setExpectedImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 

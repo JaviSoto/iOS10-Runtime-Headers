@@ -7,13 +7,16 @@
 @interface PSPasscodeField : UIView <UIKeyInput> {
     NSMutableArray *_dashViews;
     NSMutableArray *_dotViews;
+    NSMutableArray *_digitViews;
     NSMutableString *_stringValue;
+    BOOL _securePasscodeEntry;
     <PSPasscodeFieldDelegate> *_delegate;
     unsigned int _numberOfEntryFields;
 }
 
 @property <PSPasscodeFieldDelegate> * delegate;
 @property(readonly) unsigned int numberOfEntryFields;
+@property BOOL securePasscodeEntry;
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property int spellCheckingType;
@@ -24,6 +27,8 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
+- (void)setSecurePasscodeEntry:(BOOL)arg1;
+- (BOOL)securePasscodeEntry;
 - (id)initWithNumberOfEntryFields:(unsigned int)arg1;
 - (void)insertText:(id)arg1;
 - (int)keyboardType;

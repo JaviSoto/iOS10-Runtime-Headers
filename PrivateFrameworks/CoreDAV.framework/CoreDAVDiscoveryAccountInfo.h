@@ -66,6 +66,7 @@
 - (BOOL)handleCertificateError:(id)arg1;
 - (BOOL)handleTrustChallenge:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleTrustChallenge:(id)arg1;
+- (id)oauthInfoProvider;
 - (void)setShouldFailAllTasks:(BOOL)arg1;
 - (id)serverComplianceClasses;
 - (id)serverHeaders;
@@ -79,10 +80,11 @@
 - (id)principalURL;
 - (void)setScheme:(id)arg1;
 - (void)setHost:(id)arg1;
+- (void)setPassword:(id)arg1;
+- (void)setUser:(id)arg1;
 - (id)oauthToken;
 - (BOOL)success;
 - (id)accountID;
-- (void)setPassword:(id)arg1;
 - (void)setAccountID:(id)arg1;
 - (void)setPort:(int)arg1;
 - (id)password;
@@ -95,6 +97,5 @@
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)url;
-- (void)setUser:(id)arg1;
 
 @end

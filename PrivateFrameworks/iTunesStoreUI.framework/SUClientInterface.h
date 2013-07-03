@@ -40,6 +40,7 @@
 - (void)setLightKeyColor:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;
 - (void)setWasLaunchedFromLibrary:(BOOL)arg1;
+- (void)setAppearance:(id)arg1;
 - (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(BOOL)arg2;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (void)_setIgnoresExpectedClientsProtocol:(BOOL)arg1;
@@ -68,7 +69,6 @@
 - (id)viewControllerFactory;
 - (id)lightKeyColor;
 - (id)darkKeyColor;
-- (void)setAppearance:(id)arg1;
 - (id)clientIdentifier;
 - (void)setClientIdentifier:(id)arg1;
 - (id)userAgent;

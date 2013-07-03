@@ -7,6 +7,7 @@
 @interface SKUIMediaComponent : SKUIPageComponent  {
     NSString *_accessibilityLabel;
     int _alignment;
+    double _duration;
     long long _mediaIdentifier;
     int _mediaType;
     NSString *_mediaURLString;
@@ -18,6 +19,7 @@
 
 @property(readonly) NSString * accessibilityLabel;
 @property(readonly) int alignment;
+@property(readonly) double duration;
 @property(readonly) long long mediaIdentifier;
 @property(readonly) int mediaType;
 @property(readonly) NSString * mediaURLString;
@@ -42,5 +44,6 @@
 - (id)accessibilityLabel;
 - (int)alignment;
 - (void).cxx_destruct;
+- (double)duration;
 
 @end

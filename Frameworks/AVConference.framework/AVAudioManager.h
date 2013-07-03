@@ -2,12 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-@class NSObject<OS_dispatch_queue>, AVAudioDevice, NSDictionary;
+@class NSObject<OS_dispatch_queue>, AVAudioDevice, NSDictionary, NSMutableArray;
 
 @interface AVAudioManager : NSObject  {
     int direction;
     int audioRefCount;
-    int connectionRefCount;
     int internalBlockSize;
     int hardwareSampleRate;
     struct AudioStreamBasicDescription { 
@@ -23,7 +22,6 @@
     } vpioFormat;
     BOOL usingFloat;
     BOOL isGKVoiceChat;
-    BOOL forcedTearDown;
     BOOL enableSpeakerPhone;
     BOOL isUsingSuppression;
     BOOL isTetheredDisplayMode;
@@ -45,6 +43,11 @@
     int currentSampleRate;
     int currentMinSamplesPerFrame;
     BOOL currentReceiverStatus;
+    struct AudioEventQueue_t { } *eventQ;
+    NSMutableArray *spkrConfList;
+    NSMutableArray *micConfList;
+    BOOL micInUse;
+    BOOL spkrInUse;
 }
 
 @property BOOL shouldSetupAudioSession;
@@ -79,11 +82,16 @@
 - (void)tearDownAudioIO:(BOOL)arg1;
 - (void)AUIOTeardown:(BOOL)arg1;
 - (void)AUIOSetup:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg1 minSamplesPerFrame:(int)arg2 allowAudioRecording:(BOOL)arg3 ignoreRefCount:(BOOL)arg4 operatingMode:(int)arg5 completionHandler:(id)arg6;
+- (void)processEventQueue;
 - (void)cleanupAUIOSetupWithResult:(long)arg1 completionHandler:(id)arg2;
 - (void)setShouldSetupAudioSession:(BOOL)arg1;
 - (void)setClientPID:(int)arg1;
 - (BOOL)setCurrentInputDevice:(id)arg1;
+- (void)removeConference:(id)arg1;
+- (void)addConference:(id)arg1;
 - (int)clientPID;
+- (void)onPlaySound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 averagePower:(float)arg5;
+- (void)onCaptureSound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 timeStampDelta:(int)arg5 bufferedSamples:(int)arg6 hostTime:(double)arg7 averagePower:(float)arg8 voiceActivity:(unsigned long)arg9;
 - (BOOL)usingFloat;
 - (BOOL)isUsingSuppression;
 - (void)setIsUsingSuppression:(BOOL)arg1;

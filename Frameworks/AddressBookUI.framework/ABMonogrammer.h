@@ -2,10 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIFont, UIColor, UIImage;
+@class UIImage, UIColor, NSString, UIFont;
 
 @interface ABMonogrammer : NSObject  {
-    UIImage *_defaultMonogram;
+    UIImage *_silhouetteMonogram;
+    UIImage *_questionMarkMonogram;
+    UIImage *_knockoutMaskMonogram;
+    float _innerBorderWidth;
+    NSString *_silhouetteImageName;
+    int _monogrammerStyle;
     BOOL _textKnockout;
     float _diameter;
     UIColor *_backgroundColor;
@@ -20,23 +25,36 @@
 @property BOOL textKnockout;
 
 
-- (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (BOOL)textKnockout;
-- (id)initialsForFirstName:(id)arg1 lastName:(id)arg2;
-- (id)defaultMonogram;
-- (id)monogramWithInitials:(id)arg1;
-- (id)monogramWithImageData:(struct __CFData { }*)arg1;
 - (float)diameter;
-- (id)initialsForPerson:(void*)arg1;
-- (void)clearMonogramCache;
+- (id)defaultMonogram;
+- (id)maskForMonogram;
+- (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)monogramForPerson:(void*)arg1;
 - (BOOL)hasMonogramForPerson:(void*)arg1;
+- (id)silhouetteImageName;
+- (float)innerBorderWidth;
 - (void)setTextKnockout:(BOOL)arg1;
 - (void)setDiameter:(float)arg1;
+- (void)monogramsAsFlatImages;
+- (id)initWithStyle:(int)arg1 diameter:(float)arg2;
+- (id)questionMarkMonogram;
+- (id)knockoutMaskMonogram;
+- (id)_copyMonogramWithKnockoutMask;
+- (id)_copyMonogramWithSilhouette;
+- (id)_initialsForFirstName:(id)arg1 lastName:(id)arg2;
+- (id)monogramForPerson:(void*)arg1 isPersonImage:(BOOL*)arg2;
+- (id)silhouetteMonogram;
+- (id)_copyMonogramWithInitials:(id)arg1;
+- (id)_copyMonogramWithImageData:(struct __CFData { }*)arg1;
+- (BOOL)hasImageOrInitialsForPerson:(void*)arg1;
+- (id)_initialsForPerson:(void*)arg1;
+- (void)_clearMonogramCache;
 - (void)setBackgroundColor:(id)arg1;
 - (id)font;
 - (id)backgroundColor;
 - (id)init;
+- (void)dealloc;
 - (id)textColor;
 - (void)setTextColor:(id)arg1;
 - (void)setFont:(id)arg1;

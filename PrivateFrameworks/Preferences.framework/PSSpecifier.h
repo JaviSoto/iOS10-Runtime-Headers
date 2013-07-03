@@ -50,11 +50,11 @@
 + (int)keyboardTypeForString:(id)arg1;
 + (int)autoCapsTypeForString:(id)arg1;
 + (int)autoCorrectionTypeForNumber:(id)arg1;
-+ (id)emptyGroupSpecifier;
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 + (id)groupSpecifierWithName:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
++ (id)emptyGroupSpecifier;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setShowContentString:(BOOL)arg1;
 - (void)setConfirmationCancelAction:(SEL)arg1;
@@ -69,7 +69,6 @@
 - (id)shortTitleDictionary;
 - (void)setupIconImageWithBundle:(id)arg1;
 - (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3 usingLocalizedTitleSorting:(BOOL)arg4;
-- (void)setValues:(id)arg1 titles:(id)arg2;
 - (void)loadValuesAndTitlesFromDataSource;
 - (void)setShortTitleDictionary:(id)arg1;
 - (void)setTitleDictionary:(id)arg1;
@@ -83,6 +82,7 @@
 - (BOOL)showContentString;
 - (void)removePropertyForKey:(id)arg1;
 - (void)setKeyboardType:(int)arg1 autoCaps:(int)arg2 autoCorrection:(int)arg3;
+- (void)setValues:(id)arg1 titles:(id)arg2;
 - (void)setProperties:(id)arg1;
 - (void)setValues:(id)arg1;
 - (id)values;

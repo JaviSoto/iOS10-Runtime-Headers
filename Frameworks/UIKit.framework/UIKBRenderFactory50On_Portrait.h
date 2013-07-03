@@ -6,8 +6,14 @@
 }
 
 
+- (float)deleteKeyFontSize;
+- (float)returnKeyFontSize;
+- (float)keyplaneSwitchKeyFontSize;
+- (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;
 - (float)controlColumnWidthFactor;
+- (id)thinKeycapsFontName;
+- (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 
 @end

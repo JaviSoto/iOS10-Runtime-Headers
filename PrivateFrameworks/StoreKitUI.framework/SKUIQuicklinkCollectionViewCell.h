@@ -10,8 +10,8 @@
 
 
 - (void)configureForLink:(id)arg1;
-- (void)_linkButtonAction:(id)arg1;
 - (id)_linkButton;
+- (void)_linkButtonAction:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

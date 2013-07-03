@@ -2,15 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIArtworkRequestDelegate>, NSURL, SKUIDataConsumer;
+@class <SKUIArtworkRequestDelegate>, NSURL, SSVURLDataConsumer;
 
 @interface SKUIArtworkRequest : SKUIResourceRequest <NSCopying> {
-    SKUIDataConsumer *_dataConsumer;
+    SSVURLDataConsumer *_dataConsumer;
     <SKUIArtworkRequestDelegate> *_delegate;
     NSURL *_url;
 }
 
-@property(retain) SKUIDataConsumer * dataConsumer;
+@property(retain) SSVURLDataConsumer * dataConsumer;
 @property <SKUIArtworkRequestDelegate> * delegate;
 @property(copy) NSURL * URL;
 

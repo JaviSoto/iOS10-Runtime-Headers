@@ -26,6 +26,8 @@
 @property BOOL showsCancelButton;
 @property(retain) UIControl<SBUIPasscodeNumberPadButton> * downButton;
 
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inputButtonCircleSpacing;
++ (struct CGSize { float x1; float x2; })_inputButtonCircleSize;
 + (id)_buttonForCharacter:(unsigned int)arg1;
 
 - (id)downButton;

@@ -2,21 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKTurnBasedExchangeReplyInternal, NSString, GKTurnBasedParticipant, NSData;
+@class GKTurnBasedExchangeReplyInternal, GKTurnBasedMatch, GKTurnBasedParticipant, NSString, NSData;
 
 @interface GKTurnBasedExchangeReply : NSObject  {
     GKTurnBasedParticipant *recipient;
     GKTurnBasedExchangeReplyInternal *_internal;
+    GKTurnBasedMatch *_matchWeak;
 }
 
 @property(retain) GKTurnBasedParticipant * recipient;
 @property(readonly) NSString * message;
 @property(retain) NSData * data;
 @property(retain) GKTurnBasedExchangeReplyInternal * internal;
+@property GKTurnBasedMatch * match;
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 
+- (void)setMatch:(id)arg1;
+- (id)match;
 - (id)recipient;
 - (void)setInternal:(id)arg1;
 - (id)internal;

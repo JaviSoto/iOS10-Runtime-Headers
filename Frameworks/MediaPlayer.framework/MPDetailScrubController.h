@@ -30,7 +30,7 @@
     double _duration;
 }
 
-@property(retain) UIControl<MPDetailedScrubbing> * scrubbingControl;
+@property UIControl<MPDetailedScrubbing> * scrubbingControl;
 @property <MPDetailScrubControllerDelegate> * delegate;
 @property double duration;
 @property float scrubbingVerticalRange;

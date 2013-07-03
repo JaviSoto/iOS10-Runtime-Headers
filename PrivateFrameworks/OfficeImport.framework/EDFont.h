@@ -62,7 +62,6 @@
 - (bool)isBoldOverridden;
 - (void)setBold:(bool)arg1;
 - (void)setItalic:(bool)arg1;
-- (void)setShadow:(bool)arg1;
 - (void)setHeight:(double)arg1;
 - (double)height;
 - (void)setOutline:(bool)arg1;
@@ -73,6 +72,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setWeight:(unsigned int)arg1;
 - (unsigned int)weight;
+- (void)setShadow:(bool)arg1;
 - (void)setColor:(id)arg1;
 - (void)setName:(id)arg1;
 

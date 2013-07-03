@@ -82,7 +82,7 @@
 - (id)thumbTintColor;
 - (void)setThumbTintColor:(id)arg1;
 - (void)_setPressed:(BOOL)arg1;
-- (id)tintColor;
 - (void)setTintColor:(id)arg1;
+- (id)tintColor;
 
 @end

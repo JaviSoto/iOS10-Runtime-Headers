@@ -86,6 +86,8 @@
 - (BOOL)isActive;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

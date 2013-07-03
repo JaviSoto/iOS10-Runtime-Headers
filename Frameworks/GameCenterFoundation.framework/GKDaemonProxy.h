@@ -21,15 +21,15 @@
 @property NSXPCConnection * connection;
 
 + (id)multiplayerServicePrivateProxy;
++ (id)gameStatServicePrivateProxy;
 + (id)linkedAccountsServicePrivateProxy;
-+ (id)accountServicePrivateProxy;
 + (id)utilityServicePrivateProxy;
++ (id)accountServicePrivateProxy;
 + (id)linkedAccountsServiceProxy;
 + (id)bulletinServicePrivateProxy;
 + (id)bulletinServiceProxy;
 + (id)challengeServicePrivateProxy;
 + (id)challengeServiceProxy;
-+ (id)gameStatServicePrivateProxy;
 + (id)gameServiceProxy;
 + (id)turnBasedServicePrivateProxy;
 + (id)turnBasedServiceProxy;
@@ -57,6 +57,7 @@
 - (oneway void)respondedToNearbyInvite:(id)arg1;
 - (oneway void)setCurrentGame:(id)arg1 sandboxed:(BOOL)arg2 reply:(id)arg3;
 - (oneway void)setPreferencesValues:(id)arg1;
+- (void)_replyToDuplicatesForRequest:(id)arg1 withInvocation:(id)arg2 queue:(id)arg3;
 - (id)replyQueueForRequestSelector:(SEL)arg1;
 - (void)buildServiceLookupIfNeccessary;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
@@ -78,11 +79,11 @@
 - (void)buildServiceLookup;
 - (void)addInterface:(id)arg1 toLookup:(id)arg2;
 - (oneway void)setLocalPlayer:(id)arg1 authenticated:(BOOL)arg2 reply:(id)arg3;
-- (void)setConnection:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
+- (void)setConnection:(id)arg1;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)connection;
 

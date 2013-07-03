@@ -35,14 +35,14 @@
 @property(retain) UIColor * tintColor;
 @property int drawMode;
 @property(setter=_setTemplateImageRenderingEffects:) unsigned int _templateImageRenderingEffects;
+@property(setter=_setAnimatesContents:) BOOL _animatesContents;
 @property(setter=_setDefaultRenderingMode:) int _defaultRenderingMode;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _edgeInsetsForEffects;
 @property(setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid;
 @property(setter=_setMasksTemplateImages:) BOOL _masksTemplateImages;
-@property(setter=_setAnimatesContents:) BOOL _animatesContents;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -57,6 +57,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (unsigned long long)defaultAccessibilityTraits;
+- (void)_setAnimatesContents:(BOOL)arg1;
 - (void)_setEdgeInsetsForEffectsAreValid:(BOOL)arg1;
 - (BOOL)_edgeInsetsForEffectsAreValid;
 - (void)setAnimating:(BOOL)arg1;
@@ -70,7 +71,6 @@
 - (void)setAnimationImages:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (void)startAnimating;
-- (void)_setAnimatesContents:(BOOL)arg1;
 - (void)_templateSettingsDidChange;
 - (void)_updateMasking;
 - (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
@@ -98,6 +98,7 @@
 - (id)highlightedImage;
 - (id)highlightedAnimationImages;
 - (id)animationImages;
+- (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_setTemplateImageRenderingEffects:(unsigned int)arg1;
 - (unsigned int)_templateImageRenderingEffects;
@@ -113,7 +114,6 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)setAnimationDuration:(double)arg1;
-- (BOOL)isHighlighted;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;

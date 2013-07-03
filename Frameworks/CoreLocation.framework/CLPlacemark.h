@@ -45,8 +45,8 @@
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 region:(id)arg3 areasOfInterest:(id)arg4;
 - (id)areasOfInterest;
-- (id)location;
 - (id)country;
+- (id)location;
 - (id)name;
 - (void)dealloc;
 - (id)description;

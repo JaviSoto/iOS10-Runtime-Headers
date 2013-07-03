@@ -11,6 +11,7 @@
 
 @property(readonly) NSString * fmipToken;
 @property(readonly) NSString * authToken;
+@property(readonly) NSString * mapsToken;
 @property(readonly) NSString * personID;
 @property(readonly) NSString * HSAAction;
 @property(readonly) NSString * HSAData;
@@ -22,6 +23,7 @@
 - (id)HSAAction;
 - (id)personID;
 - (id)authToken;
+- (id)mapsToken;
 - (void).cxx_destruct;
 
 @end

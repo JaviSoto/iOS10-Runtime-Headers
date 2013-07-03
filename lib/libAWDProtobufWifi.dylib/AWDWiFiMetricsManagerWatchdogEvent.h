@@ -7,7 +7,7 @@
     int _available;
     unsigned int _deviceIdentifierMap;
     unsigned int _flags;
-    unsigned int _reason;
+    int _reason;
     unsigned int _subreason;
     unsigned int _version;
     struct { 
@@ -30,7 +30,7 @@
 @property BOOL hasAvailable;
 @property int available;
 @property BOOL hasReason;
-@property unsigned int reason;
+@property int reason;
 @property BOOL hasSubreason;
 @property unsigned int subreason;
 @property BOOL hasDeviceIdentifierMap;
@@ -59,12 +59,12 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (unsigned long long)timestamp;
 - (int)available;
-- (void)setReason:(unsigned int)arg1;
+- (void)setReason:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)setFlags:(unsigned int)arg1;
-- (unsigned int)reason;
+- (int)reason;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

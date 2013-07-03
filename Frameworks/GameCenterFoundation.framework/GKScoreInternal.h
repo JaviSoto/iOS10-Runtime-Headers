@@ -48,9 +48,9 @@
 - (void)setLeaderboardIdentifier:(id)arg1;
 - (id)serverRepresentation;
 - (unsigned long long)context;
-- (void)setContext:(unsigned long long)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
+- (void)setContext:(unsigned long long)arg1;
 - (id)date;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

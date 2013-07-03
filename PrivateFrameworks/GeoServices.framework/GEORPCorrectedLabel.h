@@ -15,6 +15,7 @@
 
 @property(readonly) BOOL hasOriginalValue;
 @property(retain) NSString * originalValue;
+@property(readonly) BOOL hasCorrectedValue;
 @property(retain) NSString * correctedValue;
 @property(readonly) BOOL hasFeatureRegion;
 @property(retain) GEOMapRegion * featureRegion;
@@ -32,6 +33,7 @@
 - (id)featureRegion;
 - (BOOL)hasFeatureRegion;
 - (id)correctedValue;
+- (BOOL)hasCorrectedValue;
 - (id)originalValue;
 - (BOOL)hasOriginalValue;
 - (void)clearFeatureHandles;

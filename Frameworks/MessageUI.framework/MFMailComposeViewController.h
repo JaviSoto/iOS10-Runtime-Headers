@@ -15,6 +15,8 @@
   /* Error parsing encoded ivar type info: @? */
     id _setupAnimationBlock;
 
+    BOOL _didChangeStatusBarStyle;
+    int _savedStatusBarStyle;
 }
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
@@ -48,8 +50,10 @@
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)autosaveWithHandler:(id)arg1;
 - (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)shouldAutorotate;
 

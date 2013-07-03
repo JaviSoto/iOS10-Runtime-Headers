@@ -17,8 +17,8 @@
 @property(retain) UIView * accessoryView;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;
 - (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

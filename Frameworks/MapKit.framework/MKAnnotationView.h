@@ -31,6 +31,7 @@
     BOOL _explicitlyHidden;
     BOOL _hiddenForOffscreen;
     float _mapPitchRadians;
+    int _mapDisplayStyle;
     MKAnnotationManager *_annotationManager;
     <MKAnnotation> *_annotation;
     UICalloutView *_calloutView;
@@ -87,6 +88,7 @@
 @property(setter=_setPresentationCourse:) double _presentationCourse;
 @property(getter=_isAnimatingToCoordinate,setter=_setAnimatingToCoordinate:) BOOL _animatingToCoordinate;
 @property(getter=_isTracking,setter=_setTracking:) BOOL _tracking;
+@property(getter=_mapDisplayStyle,setter=_setMapDisplayStyle:) int mapDisplayStyle;
 @property(copy) id _calloutHitTest;
 @property(setter=_setAnnotationManager:) MKAnnotationManager * _annotationManager;
 @property(readonly) VKAnchorWrapper * anchor;
@@ -103,8 +105,8 @@
 + (BOOL)_followsTerrain;
 + (id)_disclosureCalloutButton;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (struct CGPoint { float x1; float x2; })centerOffset;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
@@ -146,6 +148,8 @@
 - (void)_resetZIndex;
 - (id)_contentLayer;
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
+- (void)_setMapDisplayStyle:(int)arg1;
+- (int)_mapDisplayStyle;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setMapRotationRadians:(float)arg1;
@@ -189,11 +193,11 @@
 - (id)_containerView;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
+- (BOOL)isSelected;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)reuseIdentifier;
-- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isHighlighted;
-- (BOOL)isSelected;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
@@ -202,6 +206,7 @@
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 - (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
+- (id)_axCalloutView;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;

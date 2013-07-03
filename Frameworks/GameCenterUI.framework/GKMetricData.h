@@ -10,6 +10,8 @@
     unsigned int _filteredTotalItemCount;
     NSMutableArray *_headerPinnableAttributes;
     NSMutableArray *_footerPinnableAttributes;
+    NSMutableArray *_itemAttributesNearHeaders;
+    NSMutableArray *_itemAttributesNearFooters;
 }
 
 @property(readonly) GKSectionMetrics * sectionMetrics;
@@ -19,8 +21,12 @@
 @property unsigned int filteredTotalItemCount;
 @property(retain) NSMutableArray * headerPinnableAttributes;
 @property(retain) NSMutableArray * footerPinnableAttributes;
+@property(retain) NSMutableArray * itemAttributesNearHeaders;
+@property(retain) NSMutableArray * itemAttributesNearFooters;
 
 
+- (id)itemAttributesNearFooters;
+- (id)itemAttributesNearHeaders;
 - (id)footerPinnableAttributes;
 - (id)headerPinnableAttributes;
 - (void)setFilteredTotalItemCount:(unsigned int)arg1;
@@ -28,6 +34,8 @@
 - (void)setCurrentMaxVisibleItemCount:(unsigned int)arg1;
 - (unsigned int)currentMaxVisibleItemCount;
 - (void)addAttributes:(id)arg1 forLocation:(unsigned int)arg2;
+- (void)setItemAttributesNearFooters:(id)arg1;
+- (void)setItemAttributesNearHeaders:(id)arg1;
 - (void)setFooterPinnableAttributes:(id)arg1;
 - (void)setHeaderPinnableAttributes:(id)arg1;
 - (void)setMetrics:(id)arg1;

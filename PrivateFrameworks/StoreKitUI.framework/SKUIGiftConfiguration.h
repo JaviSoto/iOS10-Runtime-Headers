@@ -66,8 +66,8 @@
 - (id)clientContext;
 - (id)senderName;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)currencySymbol;
-- (void)removeObserver:(id)arg1;
 
 @end

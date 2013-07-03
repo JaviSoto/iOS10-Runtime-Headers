@@ -28,7 +28,6 @@
 
 + (id)sharedInstance;
 
-- (struct __SecIdentity { }*)copyIdentity;
 - (void)set_hasShownWaitingAlertThisSession:(BOOL)arg1;
 - (BOOL)_hasShownWaitingAlertThisSession;
 - (void)set_hasShownMismatchedSIM:(BOOL)arg1;
@@ -39,6 +38,7 @@
 - (void)set_settingUpActivationState:(BOOL)arg1;
 - (BOOL)_settingUpActivationState;
 - (id)uniqueDeviceIdentifier;
+- (struct __SecIdentity { }*)copyIdentity;
 - (BOOL)isExpired;
 - (BOOL)isActivated;
 - (BOOL)isCarrierInstall;

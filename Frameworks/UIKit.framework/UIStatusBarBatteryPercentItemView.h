@@ -8,8 +8,8 @@
     NSString *_percentString;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (int)textStyle;
 - (void)dealloc;

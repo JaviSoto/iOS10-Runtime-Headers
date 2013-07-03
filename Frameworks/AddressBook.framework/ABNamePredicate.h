@@ -39,7 +39,6 @@
 - (BOOL)matchWholeWords;
 - (void*)addressBook;
 - (id)queryJoinsInCompound:(BOOL)arg1;
-- (void)setSource:(void*)arg1;
 - (id)_personNameKeys;
 - (void*)tokenizations;
 - (void)setSources:(id)arg1;
@@ -49,6 +48,7 @@
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)queryWhereString;
 - (void)setAddressBook:(void*)arg1;
+- (void)setSource:(void*)arg1;
 - (id)init;
 - (void)setGroup:(void*)arg1;
 - (id)name;

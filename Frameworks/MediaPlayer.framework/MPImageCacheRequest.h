@@ -47,7 +47,6 @@
 @property <MPImageRequestDelegate> * delegate;
 
 
-- (void)_sendErrorToDelegate:(id)arg1;
 - (id)uniqueKey;
 - (void)setInterpolationQuality:(int)arg1;
 - (int)interpolationQuality;
@@ -57,8 +56,10 @@
 - (id)finalPlaceholderImage;
 - (BOOL)canRequestSynchronously;
 - (void)_getGeometryForCreatingNewImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; }*)arg3 contentSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
-- (void)_sendImageToDelegate:(id)arg1;
+- (void)_finishWithImage:(id)arg1;
 - (BOOL)decodeOnFetch;
+- (void)_finishWithDelegate:(id)arg1;
+- (void)_finishWithBlock:(id)arg1;
 - (id)_newBitmapImageFromImage:(id)arg1 finalSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_canUseInputImageAsFinalOutput:(id)arg1;
 - (struct CGSize { float x1; float x2; })finalSize;

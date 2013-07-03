@@ -21,8 +21,8 @@
 - (void)setUpdated:(int)arg1;
 - (int)updated;
 - (id)copyParseRules;
-- (void)setCreated:(int)arg1;
 - (int)created;
+- (void)setCreated:(int)arg1;
 - (id)init;
 
 @end

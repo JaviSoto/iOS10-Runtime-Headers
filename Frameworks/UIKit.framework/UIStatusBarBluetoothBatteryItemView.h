@@ -6,8 +6,8 @@
     int _capacity;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (float)extraLeftPadding;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;

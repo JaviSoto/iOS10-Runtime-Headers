@@ -65,7 +65,6 @@
 - (struct Vec2Imp<float> { float x1; float x2; })alphaRamp;
 - (float)zoomShift;
 - (float)alphaScaler;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })secondaryColor;
 - (void)updateTextureMappingGlobalScaler:(float)arg1;
 - (void)setFadingFactor:(struct Vec2Imp<float> { float x1; float x2; })arg1;
 - (void)setTrafficPattern:(struct { float x1; float x2; float x3; float x4; })arg1;
@@ -74,13 +73,14 @@
 - (void)setGlowScale:(float)arg1;
 - (void)setAlphaRamp:(struct Vec2Imp<float> { float x1; float x2; })arg1;
 - (void)setAlphaScaler:(float)arg1;
-- (void)setPrimaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSecondaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTextureMappingGlobalScaler:(float)arg1;
 - (void)setDrivingDirection:(float)arg1;
 - (float)drivingDirection;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })primaryColor;
 - (void)setup;
 - (id).cxx_construct;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })secondaryColor;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })primaryColor;
+- (void)setSecondaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPrimaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 
 @end
