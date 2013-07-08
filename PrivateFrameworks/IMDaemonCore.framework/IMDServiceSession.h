@@ -211,6 +211,7 @@
 - (id)broadcaster;
 - (BOOL)allowedAsChild;
 - (void)autoReconnect;
+- (void)_processPotentialNetworkChange;
 - (void)_setPendingConnectionMonitorUpdate;
 - (void)_reconnectIfNecessary;
 - (void)logoutServiceSession;
@@ -225,6 +226,7 @@
 - (void)_abandonSystemProxySettingsFetcher;
 - (void)_processConnectionMonitorUpdate;
 - (void)_updateConnectionMonitorFromAccountDefaultsIgnoringProxy:(BOOL)arg1;
+- (void)_callMonitorStateChanged:(id)arg1;
 - (void)_networkChanged:(id)arg1;
 - (id)_newHashForChat:(id)arg1 style:(unsigned char)arg2;
 - (void)_setAutoReconnectTimer;
@@ -280,8 +282,8 @@
 - (unsigned short)proxyPort;
 - (id)displayName;
 - (id)accountID;
-- (void)userNotificationDidFinish:(id)arg1;
 - (BOOL)isActive;
+- (void)userNotificationDidFinish:(id)arg1;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)systemDidUnlock;
 - (id)service;

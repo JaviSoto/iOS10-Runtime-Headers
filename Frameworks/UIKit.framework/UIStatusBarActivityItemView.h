@@ -11,8 +11,8 @@
     BOOL _newsstandActivity;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (int)_activityIndicatorStyle;

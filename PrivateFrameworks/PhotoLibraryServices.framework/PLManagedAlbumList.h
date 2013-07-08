@@ -29,12 +29,13 @@
 + (id)wallpaperAlbumListInPhotoLibrary:(id)arg1;
 + (void)persistAlbumListUUIDs:(id)arg1 type:(int)arg2 allowsOverwrite:(BOOL)arg3;
 + (BOOL)isValidTypeForPersistence:(int)arg1;
-+ (id)eventListInManagedObjectContext:(id)arg1;
 + (unsigned int)_priorityForAlbumKind:(int)arg1;
 + (id)_typeDescriptionForAlbumListType:(int)arg1;
 + (id)_singletonListWithType:(int)arg1 library:(id)arg2;
 + (id)_albumListWithType:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)allStreamedAlbumsListInManagedObjectContext:(id)arg1;
++ (id)eventListInManagedObjectContext:(id)arg1;
++ (id)importListInManagedObjectContext:(id)arg1;
 + (id)albumListInManagedObjectContext:(id)arg1;
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)placesAlbumListInPhotoLibrary:(id)arg1;
@@ -43,6 +44,7 @@
 + (BOOL)isValidPathForPersistence:(id)arg1;
 + (id)facesAlbumListInPhotoLibrary:(id)arg1;
 + (id)eventListInPhotoLibrary:(id)arg1;
++ (id)importListInPhotoLibrary:(id)arg1;
 + (id)albumListInPhotoLibrary:(id)arg1;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;

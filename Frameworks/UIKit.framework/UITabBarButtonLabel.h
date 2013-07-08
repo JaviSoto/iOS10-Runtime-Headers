@@ -2,21 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UITabBarItemAppearanceStorage;
+@class _UITabBarItemAppearanceStorage, UIColor;
 
 @interface UITabBarButtonLabel : UILabel  {
     float _boundsWidth;
     _UITabBarItemAppearanceStorage *_appearanceStorage;
     BOOL _isSelected;
     Class _appearanceGuideClass;
+    UIColor *_unselectedTintColor;
 }
 
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
+@property(getter=_unselectedTintColor,setter=_setUnselectedTintColor:,retain) UIColor * unselectedTintColor;
 
 
 - (void)dealloc;
+- (id)_unselectedTintColor;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
+- (void)_setUnselectedTintColor:(id)arg1;
 - (void)sizeToFitBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)updateTextColorsForSelection;
 - (void)setSelected:(BOOL)arg1;
@@ -26,5 +30,6 @@
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)tintColorDidChange;
 - (Class)_appearanceGuideClass;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

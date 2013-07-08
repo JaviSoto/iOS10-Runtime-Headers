@@ -45,7 +45,7 @@
 - (id)settingsFooter;
 - (id)settingsHeader;
 - (id)settingsLabel;
-- (id)settingsNicknameButton;
+- (id)settingsButton;
 - (id)settingsLinkText;
 - (id)remoteUINickNameLabel;
 - (id)remoteUINickNameField;
@@ -85,12 +85,15 @@
 - (id)viewBackground;
 - (id)smallInfo;
 - (id)small;
+- (id)selectedBuyButtonTitle;
+- (id)buyButtonTitle;
 - (id)bannerMessage;
 - (id)header1;
 - (id)header0;
 - (void)applyToLabel:(id)arg1;
 - (id)palette;
 - (void)setFontSize:(float)arg1 rebaseSelector:(SEL)arg2;
+- (id)resolveFont;
 - (id)initEmpty;
 - (void)applyScaleForMesh;
 - (id)copyWithBaseClass:(Class)arg1;
@@ -138,6 +141,7 @@
 - (unsigned int)hash;
 - (id)copy;
 - (void)dealloc;
+- (id)description;
 - (id)sectionHeader;
 - (id)buttonTitle;
 - (void)setColor:(id)arg1;

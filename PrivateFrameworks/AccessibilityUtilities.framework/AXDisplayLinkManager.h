@@ -48,8 +48,8 @@
 - (void)_setRemovedTargetActions:(id)arg1;
 - (void)_setAddedTargetActions:(id)arg1;
 - (void)_setActiveTargetActions:(id)arg1;
-- (int)frameInterval;
 - (double)timestamp;
+- (int)frameInterval;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

@@ -54,8 +54,8 @@
 
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

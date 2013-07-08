@@ -15,8 +15,6 @@
 @property(retain) NSString * logResponseToFile;
 
 
-- (id)logResponseToFile;
-- (id)logRequestToFile;
 - (id)initForwardGeocodeWithAddress:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1 includeBusinessOptions:(BOOL)arg2;
 - (void)setGeocodeProvider:(unsigned short)arg1;
@@ -26,6 +24,8 @@
 - (id)initForwardGeocodeWithAddressString:(id)arg1;
 - (id)initForwardGeocodeWithAddressDictionary:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1;
+- (id)logResponseToFile;
+- (id)logRequestToFile;
 - (void)dealloc;
 
 @end

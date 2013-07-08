@@ -19,8 +19,8 @@
 - (id)to;
 - (void)setFrom:(id)arg1;
 - (id)from;
-- (void)setColorSpace:(int)arg1;
 - (int)colorSpace;
+- (void)setColorSpace:(int)arg1;
 - (int)direction;
 - (void)setDirection:(int)arg1;
 

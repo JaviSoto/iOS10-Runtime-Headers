@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL, NSString;
+@class NSString;
 
 @interface NSFileWatcherObservations : NSObject  {
     BOOL _attributesChanged;
@@ -10,18 +10,18 @@
     BOOL _deleted;
     BOOL _moved;
     NSString *_lastObservedPath;
-    BOOL _didResetURL;
-    NSURL *_url;
+    BOOL _didResetPath;
+    NSString *_path;
 }
 
 
-- (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (void)notifyObserver:(id)arg1;
-- (void)addMoveToURL:(id)arg1;
-- (void)addMoveToPath:(id)arg1;
+- (void)addAnnouncedMoveToPath:(id)arg1;
+- (void)addDetectedMoveToPath:(id)arg1;
 - (void)addDeletion;
 - (void)addContentsChange;
 - (void)addAttributeChange;
+- (id)initWithPath:(id)arg1;
 
 @end

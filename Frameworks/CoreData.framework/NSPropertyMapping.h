@@ -23,6 +23,7 @@
 - (id)_transformValidations;
 - (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
 - (void)_setIsEditable:(BOOL)arg1;
+- (BOOL)isEditable;
 - (void)_createCachesAndOptimizeState;
 - (void)_throwIfNotEditable;
 - (void)_setTransformValidations:(id)arg1;
@@ -30,7 +31,6 @@
 - (void)setValueExpression:(id)arg1;
 - (id)valueExpression;
 - (id)_propertyTransforms;
-- (BOOL)isEditable;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;

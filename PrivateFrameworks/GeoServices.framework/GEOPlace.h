@@ -5,6 +5,7 @@
 @class GEORating, GEOBusiness, GEOLatLng, NSMutableArray, GEOMapRegion, NSString, GEOAddress;
 
 @interface GEOPlace : PBCodable  {
+    double _area;
     long long _geoId;
     long long _uID;
     GEOAddress *_address;
@@ -23,6 +24,7 @@
     int _version;
     BOOL _isDisputed;
     struct { 
+        unsigned int area : 1; 
         unsigned int geoId : 1; 
         unsigned int uID : 1; 
         unsigned int addressGeocodeAccuracy : 1; 
@@ -33,7 +35,6 @@
     } _has;
 }
 
-@property(readonly) NSString * yelpID;
 @property(readonly) GEOBusiness * firstBusiness;
 @property(readonly) GEORating * firstRating;
 @property BOOL hasUID;
@@ -66,20 +67,22 @@
 @property(retain) NSString * spokenName;
 @property(readonly) BOOL hasSpokenAddress;
 @property(retain) NSString * spokenAddress;
+@property BOOL hasArea;
+@property double area;
 @property BOOL hasGeoId;
 @property long long geoId;
 
 
-- (id)firstRating;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
+- (void)setHasArea:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasIsDisputed:(BOOL)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setGeoId:(long long)arg1;
 - (long long)geoId;
 - (BOOL)hasGeoId;
+- (void)setArea:(double)arg1;
+- (BOOL)hasArea;
 - (id)spokenAddress;
 - (BOOL)hasSpokenAddress;
 - (id)spokenName;
@@ -117,6 +120,7 @@
 - (long long)uID;
 - (void)setAddress:(id)arg1;
 - (id)arrivalMapRegionForTransportType:(int)arg1;
+- (id)firstRating;
 - (id)arrivalMapRegion;
 - (BOOL)hasType;
 - (int)addressGeocodeAccuracy;
@@ -134,6 +138,9 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (double)area;
 - (struct { double x1; double x2; })coordinate;
 - (void)setType:(int)arg1;
 - (id)center;
@@ -149,13 +156,5 @@
 - (void)setName:(id)arg1;
 - (int)version;
 - (id)address;
-- (id)clRegion;
-- (id)clLocation;
-- (id)initWithCLLocation:(id)arg1;
-- (id)businessName;
-- (BOOL)hasSingleBusiness;
-- (id)yelpID;
-- (unsigned long long)businessID;
-- (id)initWithPlacemark:(id)arg1;
 
 @end

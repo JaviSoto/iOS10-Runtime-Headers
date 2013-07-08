@@ -66,9 +66,9 @@
 - (BOOL)dirtyStateMayAffectExceptionDates;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
+- (void)reset;
 - (void)setFrequency:(int)arg1;
 - (int)frequency;
-- (void)reset;
 - (id)init;
 - (void)setOwner:(id)arg1;
 - (id)calendarIdentifier;

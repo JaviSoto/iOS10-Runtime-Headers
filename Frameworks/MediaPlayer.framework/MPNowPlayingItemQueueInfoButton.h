@@ -22,8 +22,8 @@
 @property unsigned int allowedDisplayTypes;
 @property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setInfoURL:(id)arg1;
 - (id)infoURL;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, NSAttributedString, UIView, _UIButtonMaskAnimationView, NSString, UIImage, UIColor, NSArray;
+@class NSAttributedString, UIImageView, UILabel, UIFont, UIView, _UIButtonMaskAnimationView, NSString, UIImage, UIColor, NSArray;
 
 @interface UIButton : UIControl <NSCoding> {
     struct __CFDictionary { } *_contentLookup;
@@ -42,6 +42,7 @@
     } _buttonFlags;
     _UIButtonMaskAnimationView *_maskAnimationView;
     UIView *_selectionView;
+    UIFont *_lazyTitleViewFont;
     NSArray *_contentConstraints;
     struct UIEdgeInsets { 
         float top; 
@@ -92,8 +93,8 @@
 + (id)_defaultNormalTitleColor;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
 + (id)buttonWithType:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)currentAttributedTitle;
 - (void)setTitle:(id)arg1;
@@ -218,13 +219,11 @@
 - (void)updateConstraints;
 - (float)_highlightCornerRadius;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
-- (BOOL)_shouldDelaySendingTouchesEndedActionUntilNextRunLoop;
 - (void)setSelected:(BOOL)arg1;
 - (id)_imageView;
 - (BOOL)_isModernButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
-- (BOOL)_usesSelectedFontTraits;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1;
@@ -236,7 +235,9 @@
 - (void)setImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitle:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitleShadowColor:(id)arg1 forStates:(unsigned int)arg2;
+- (void)_setTitleFrozen:(BOOL)arg1;
 - (void)_setFont:(id)arg1;
+- (BOOL)_isTitleFrozen;
 - (void)setTitleEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setBackgroundImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setAdjustsImageWhenDisabled:(BOOL)arg1;
@@ -254,6 +255,7 @@
 - (void)_willMoveToWindow:(id)arg1;
 - (void)tintColorDidChange;
 - (void)invalidateIntrinsicContentSize;
+- (void)setTintColor:(id)arg1;
 - (int)_lineBreakMode;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (int)_buttonType;
@@ -274,7 +276,6 @@
 - (BOOL)isAccessibilityElement;
 - (id)_accessibilityImagePath;
 - (void)ab_addConferenceIcon;
-- (id)_accessibilityInfoButtonContext;
 - (void)configureFromScriptButton:(id)arg1;
 
 @end

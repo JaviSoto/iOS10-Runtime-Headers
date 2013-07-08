@@ -36,6 +36,7 @@
 + (id)cameraPreviewWellImageQueue;
 + (void)saveCameraPreviewWellImage:(struct CGImage { }*)arg1 uuid:(id)arg2;
 + (id)cameraPreviewWellImageFileURL;
++ (void)saveCameraPreviewWellImageForAsset:(id)arg1;
 + (void)resetThumbnails;
 + (BOOL)hasRebuildThumbnailsRequest;
 + (void)removeRebuildThumbnailsRequest:(const char *)arg1;
@@ -43,7 +44,6 @@
 + (id)supportedThumbnailFormats;
 + (int)thumbnailVersion;
 + (id)_allPossibleThumbnailFormats;
-+ (void)saveCameraPreviewWellImageForAsset:(id)arg1;
 + (int)thumbnailFormat;
 + (id)defaultThumbnailsDirectory;
 + (void)removeObsoleteMetadata;
@@ -51,23 +51,25 @@
 + (BOOL)isMissingThumbnailTables;
 
 - (id)thumbManagersByFormat;
+- (id)thumbnailJPEGPathForPhoto:(id)arg1;
 - (id)preheatItemSourceForFormat:(int)arg1;
 - (id)_tableDescriptions;
 - (id)compactImageTables;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;
 - (void)deleteThumbnailsWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
 - (void)setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;
+- (BOOL)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (struct __CFDictionary { }*)placeholderThumbnailDataByFormatID;
 - (void)setThumbnails:(struct __CFDictionary { }*)arg1 forPhoto:(id)arg2;
 - (id)_dataForInFlightAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_anyImageTable;
+- (void)_horse_setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;
 - (id)_dataForAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_thumbManagerForFormat:(int*)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (id)observerToken;
 - (void)setObserverToken:(id)arg1;
 - (int)_rebuildAssetThumbnailsWithLimit:(int)arg1 error:(id*)arg2;
-- (BOOL)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3 allowPlaceholder:(BOOL)arg4;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 allowPlaceholder:(BOOL)arg9;
 - (id)photoLibrary;

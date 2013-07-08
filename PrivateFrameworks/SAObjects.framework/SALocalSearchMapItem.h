@@ -18,8 +18,8 @@
 @property(retain) SALocation * location;
 @property(copy) NSNumber * placeId;
 
-+ (id)mapItem;
 + (id)mapItemWithDictionary:(id)arg1 context:(id)arg2;
++ (id)mapItem;
 
 - (void)setPlaceId:(id)arg1;
 - (id)placeId;
@@ -37,8 +37,8 @@
 - (id)attributions;
 - (void)setAttributions:(id)arg1;
 - (id)distance;
-- (id)detail;
 - (id)location;
+- (id)detail;
 - (id)label;
 - (void)setLocation:(id)arg1;
 - (void)setLabel:(id)arg1;

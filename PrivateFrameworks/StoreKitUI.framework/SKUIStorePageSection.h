@@ -27,7 +27,7 @@
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)showProductViewControllerWithItem:(id)arg1;
 - (id)backgroundColorForIndexPath:(id)arg1;
-- (id)_clickEventWithElementName:(id)arg1 index:(int)arg2;
+- (id)_clickEventWithElementName:(id)arg1 index:(int)arg2 fieldData:(id)arg3;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (void)prefetchResourcesWithReason:(int)arg1;

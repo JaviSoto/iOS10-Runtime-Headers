@@ -20,7 +20,6 @@
 }
 
 
-- (void)setKind:(id)arg1;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setPausingHandler:(id)arg1;
@@ -28,8 +27,6 @@
 - (void)setPrioritizable:(BOOL)arg1;
 - (void)setCancellable:(BOOL)arg1;
 - (void)setPausable:(BOOL)arg1;
-- (void)unpublish;
-- (void)publish;
 - (void)dealloc;
 - (void)cancel;
 - (void)_invokeUnpublishingHandler;
@@ -37,10 +34,13 @@
 - (id)_initWithForwarder:(id)arg1 publishingAppBundleID:(id)arg2 values:(id)arg3 isOld:(BOOL)arg4;
 - (id)_publishingAppBundleIdentifier;
 - (BOOL)isOld;
-- (void)acknowledgeWithSuccess:(BOOL)arg1;
+- (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)prioritize;
 - (void)pause;
+- (void)acknowledgeWithSuccess:(BOOL)arg1;
+- (void)unpublish;
+- (void)publish;
 - (void)resignCurrent;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
 - (void)setTotalUnitCount:(long long)arg1;

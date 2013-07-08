@@ -57,7 +57,6 @@
 - (void)setFooterStatus:(id)arg1;
 - (void)setRemovingEnabled:(BOOL)arg1;
 - (void)addPlayers:(id)arg1 withStatus:(int)arg2;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)setStatus:(int)arg1 forPlayers:(id)arg2;
 - (id)playersToBeInvited;
 - (id)currentPlayers;
@@ -71,6 +70,7 @@
 - (void)addPlayers:(id)arg1 withStatus:(int)arg2 replaceAutomatches:(BOOL)arg3;
 - (void)setAutomatchPlayers:(int)arg1;
 - (void)configureCollectionView:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)setPlayers:(id)arg1;
 - (id)players;
 - (void)setMaxPlayers:(int)arg1;

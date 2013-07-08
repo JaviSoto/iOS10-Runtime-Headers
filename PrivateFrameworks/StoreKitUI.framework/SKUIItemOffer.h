@@ -28,6 +28,7 @@
 - (id)actionParameters;
 - (id)initWithRedownloadToken:(id)arg1;
 - (id)initWithOfferDictionary:(id)arg1;
+- (id)initWithButtonText:(id)arg1;
 - (void)_setFileSizeWithFlavors:(id)arg1;
 - (void)_setFileSizeWithAssets:(id)arg1;
 - (id)cacheRepresentation;

@@ -99,8 +99,8 @@
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
-- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_sendDelayedActions;
+- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

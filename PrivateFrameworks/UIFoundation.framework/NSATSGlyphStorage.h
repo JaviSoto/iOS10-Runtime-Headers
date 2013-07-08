@@ -63,11 +63,11 @@
 - (bool)_resolvePositionalStakeGlyphsForLineFragment:(struct __CTLine { }*)arg1 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 minPosition:(float)arg3 maxPosition:(float)arg4 maxLineFragmentWidth:(float)arg5 breakHint:(int*)arg6;
 - (struct __CTRun { }*)_createEllipsisRunWithStringRange:(struct { int x1; int x2; })arg1 attributes:(struct __CFDictionary { }*)arg2;
 - (id)childGlyphStorageWithCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)typesetter;
 - (void)_flushCachedObjects;
 - (struct __CTTypesetter { }*)createCTTypesetter;
 - (void)setGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 characterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithTypesetter:(id)arg1;
+- (id)typesetter;
 - (void)finalize;
 - (void)dealloc;
 - (oneway void)release;

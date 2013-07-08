@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SSVLoadURLOperation, <SKUISearchFieldDelegate>, SKUICompletionList, SKUIClientContext, UISearchBar, UIViewController, ASSearchDisplayController;
+@class NSOperationQueue, SSVLoadURLOperation, <SKUISearchFieldDelegate>, SKUICompletionList, SKUIClientContext, UISearchBar, NSString, ASSearchDisplayController, UIViewController;
 
 @interface SKUISearchFieldController : NSObject <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
+    NSString *_baseHintsURLString;
     SKUIClientContext *_clientContext;
     SKUICompletionList *_completionList;
     <SKUISearchFieldDelegate> *_delegate;
@@ -34,6 +35,7 @@
 - (id)clientContext;
 - (void)setSearchTerm:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)_reloadData;

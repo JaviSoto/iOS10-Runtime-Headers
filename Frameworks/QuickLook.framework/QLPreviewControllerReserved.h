@@ -2,7 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLArchiveViewer, UILabel, MPVolumeView, _UIAsyncInvocation, NSNumberFormatter, QLPreviewItemsSource, NSDate, UIView, UIBarButtonItem, UINavigationController, UIViewController<QLPreviewContentControllerProtocol>, UIDocumentInteractionController, <QLPreviewItem>, NSString, NSMutableDictionary;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class QLArchiveViewer, UILabel, MPVolumeView, _UIAsyncInvocation, NSNumberFormatter, QLPreviewItemsSource, UIDocumentInteractionController, UIBarButtonItem, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, <QLPreviewItem>, NSString, NSMutableDictionary, NSTimer;
 
 @interface QLPreviewControllerReserved : NSObject  {
     <QLPreviewItem> *previewItem;
@@ -16,7 +20,12 @@
     QLPreviewItemsSource *itemsSource;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     _UIAsyncInvocation *cancelViewServiceRequest;
-    NSDate *timeoutDate;
+    NSTimer *timeoutTimer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id readyBlock;
+
     int previousToolbarStyle;
     BOOL previousToolbarWasTranslucent;
     int previousStatusBarStyle;

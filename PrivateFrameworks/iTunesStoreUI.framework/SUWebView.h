@@ -23,8 +23,8 @@
 @property(retain) UIColor * topBackgroundColor;
 @property(readonly) id windowScriptObject;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTopBackgroundColor:(id)arg1;
 - (id)topBackgroundColor;
@@ -46,8 +46,8 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)accessibilityScroll:(int)arg1;
 - (BOOL)accessibilityPerformEscape;
-- (BOOL)_accessibilitySUWebViewIsScrollAncestor;
 - (BOOL)_accessibilityIsScrollAncestor;
 - (void)accessibilityScrollRightPage;
+- (BOOL)_accessibilitySUWebViewIsScrollAncestor;
 
 @end

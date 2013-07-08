@@ -13,6 +13,7 @@
     } _size;
     UIColor *_backgroundColor;
     UIColor *_sectionBorderColor;
+    float _sectionBorderWidth;
     UIColor *_separatorColor;
     UIColor *_topShadowColor;
     UIColor *_bottomShadowColor;
@@ -22,6 +23,12 @@
     float _rightPhase;
     int _sectionLocation;
     int _selectionStyle;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _separatorInset;
 }
 
 @property BOOL opaque;
@@ -29,6 +36,7 @@
 @property struct CGSize { float x1; float x2; } size;
 @property(retain) UIColor * backgroundColor;
 @property(retain) UIColor * sectionBorderColor;
+@property float sectionBorderWidth;
 @property(retain) UIColor * separatorColor;
 @property(retain) UIColor * topShadowColor;
 @property(retain) UIColor * bottomShadowColor;
@@ -38,6 +46,7 @@
 @property float rightPhase;
 @property int sectionLocation;
 @property int selectionStyle;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 
 
 - (void)setBackgroundColor:(id)arg1;
@@ -58,19 +67,23 @@
 - (float)leftPhase;
 - (void)setSelectionColor:(id)arg1;
 - (id)selectionColor;
+- (float)sectionBorderWidth;
 - (id)bottomShadowColor;
 - (void)setSectionLocation:(int)arg1;
+- (void)setSectionBorderWidth:(float)arg1;
 - (BOOL)opaque;
 - (id)topShadowColor;
 - (int)sectionLocation;
 - (int)selectionStyle;
 - (BOOL)selected;
 - (void)setSelectionStyle:(int)arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)sectionBorderColor;
 - (void)setBottomShadowColor:(id)arg1;
 - (void)setTopShadowColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setSectionBorderColor:(id)arg1;
 - (id)separatorColor;
 

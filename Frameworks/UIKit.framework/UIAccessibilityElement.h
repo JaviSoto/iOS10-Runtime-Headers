@@ -19,8 +19,8 @@
 @property unsigned long long accessibilityTraits;
 @property(copy) NSString * accessibilityIdentifier;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithAccessibilityContainer:(id)arg1;
 - (id)accessibilityDelegate;
@@ -54,6 +54,7 @@
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (BOOL)_accessibilitySupportsActivateAction;
+- (float)_accessibilityActivationDelay;
 - (id)_accessibilityAutomaticIdentifier;
 - (void)_accessibilitySetValue:(id)arg1;
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;

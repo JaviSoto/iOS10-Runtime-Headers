@@ -32,6 +32,7 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (id)dictionaryRepresentation;
 - (id)mutableDictionary;
 - (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
@@ -43,7 +44,6 @@
 - (void)setItem:(const void*)arg1 forKey:(const void*)arg2;
 - (id)valuePointerFunctions;
 - (id)keyPointerFunctions;
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
 - (id)enumerator;
 - (void)removeAllItems;

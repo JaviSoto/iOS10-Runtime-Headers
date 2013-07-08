@@ -12,17 +12,26 @@
     int _separatorStyle;
     UIView *_topSeparatorView;
     UIView *_bottomSeparatorView;
+    UIColor *_selectionTintColor;
+    float _sectionBorderWidth;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _separatorInset;
     struct { 
         unsigned int selected : 1; 
     } _groupBackgroundFlags;
-    UIColor *_selectionTintColor;
 }
 
 @property int sectionLocation;
 @property int selectionStyle;
 @property int separatorStyle;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 @property(retain) UIColor * selectionTintColor;
 @property(getter=isSelected) BOOL selected;
+@property float sectionBorderWidth;
 
 + (void)initialize;
 + (void)_flushCacheOnNotification:(id)arg1;
@@ -44,9 +53,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsRect:(BOOL)arg1;
 - (float)_pixelDisplayedImageHeight;
 - (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
+- (float)sectionBorderWidth;
 - (id)_bottomShadowColor;
 - (id)_topShadowColor;
 - (void)setSectionLocation:(int)arg1;
+- (void)setSectionBorderWidth:(float)arg1;
 - (id)_topShadowViewWithColor:(id)arg1;
 - (id)_contentMaskLayer;
 - (int)sectionLocation;
@@ -59,9 +70,11 @@
 - (id)_sectionBorderColor;
 - (id)_separatorColor;
 - (int)separatorStyle;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)isSelected;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setSeparatorStyle:(int)arg1;
 - (id)_backgroundColor;
 - (void)layoutSubviews;

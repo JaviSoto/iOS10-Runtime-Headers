@@ -9,8 +9,8 @@
     UINavigationBar *_navBar;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })_updateLabelTextColorAndFontReturningShadowOffset_legacy;

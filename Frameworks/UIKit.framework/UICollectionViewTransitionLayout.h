@@ -54,8 +54,10 @@
 - (id)nextLayout;
 - (id)currentLayout;
 - (id)initWithCurrentLayout:(id)arg1 nextLayout:(id)arg2;
+- (BOOL)_supportsAdvancedTransitionAnimations;
 - (void)setTransitionProgress:(float)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setCollectionView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_newVisibleBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_oldVisibleBounds;

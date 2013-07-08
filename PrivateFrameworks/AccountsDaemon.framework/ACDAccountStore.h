@@ -67,6 +67,7 @@
 - (BOOL)isMigrationInProgress;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (void)setClient:(id)arg1;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)_remoteAccountStore;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
@@ -119,7 +120,6 @@
 - (void)_connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
 - (id)initWithClient:(id)arg1;
 - (BOOL)notificationsEnabled;
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)filter;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;

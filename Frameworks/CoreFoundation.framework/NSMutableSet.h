@@ -7,7 +7,6 @@
 
 + (id)setWithCapacity:(unsigned int)arg1;
 + (id)nonRetainingSet;
-+ (id)_vk_newWeakSet;
 
 - (void)unionOrderedSet:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;

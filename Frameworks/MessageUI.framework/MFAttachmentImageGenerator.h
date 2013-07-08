@@ -11,6 +11,7 @@
     } _textSize;
     NSString *_displayString;
     UIImage *_image;
+    float _maxImageHeight;
 }
 
 + (id)pngDataForAttachment:(id)arg1 dimensions:(struct CGSize { float x1; float x2; }*)arg2;

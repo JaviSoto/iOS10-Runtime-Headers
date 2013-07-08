@@ -83,6 +83,7 @@
 - (id)attributeKeys;
 - (void)setLineCap:(id)arg1;
 - (void)setLineJoin:(id)arg1;
+- (void)setMiterLimit:(float)arg1;
 - (float)miterLimit;
 - (id)lineJoin;
 - (id)lineCap;
@@ -91,7 +92,6 @@
 - (void)dealloc;
 - (float)shadowBlur;
 - (void)setShadowBlur:(float)arg1;
-- (void)setMiterLimit:(float)arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)clip;
 - (void)stroke;

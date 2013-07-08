@@ -17,6 +17,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 

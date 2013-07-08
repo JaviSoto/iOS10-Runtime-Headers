@@ -22,6 +22,7 @@
 - (void)_setupNewConnectionForAccount:(id)arg1;
 - (void)_processAccountSet:(id)arg1;
 - (void)_logConnectionMap;
+- (BOOL)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (BOOL)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (id)initWithService:(id)arg1 commands:(id)arg2 delegateContext:(id)arg3;
 - (void)accountController:(id)arg1 accountDisabled:(id)arg2;

@@ -36,8 +36,8 @@
 + (id)primaryLabelFont;
 + (id)defaultLabelFont;
 + (id)defaultLabelTextColor;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setPrimary:(BOOL)arg1;
 - (void)setUsePadDisplayStyle:(BOOL)arg1;

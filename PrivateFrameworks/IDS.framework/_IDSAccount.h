@@ -104,8 +104,8 @@
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (int)accountType;
-- (void)_connect;
 - (BOOL)isActive;
+- (void)_connect;
 - (id)uniqueID;
 - (void)dealloc;
 - (id)description;

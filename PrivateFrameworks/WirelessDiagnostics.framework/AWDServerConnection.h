@@ -9,6 +9,7 @@
 
 - (void)flushToQueue:(id)arg1 block:(id)arg2;
 - (unsigned long long)getAWDTimestamp;
+- (BOOL)registerConfigChangeCallback:(id)arg1;
 - (BOOL)registerQueriableMetricCallbackForLogging:(id)arg1;
 - (BOOL)registerQueriableMetricCallback:(id)arg1 forIdentifier:(unsigned long)arg2;
 - (BOOL)submitMetric:(id)arg1;

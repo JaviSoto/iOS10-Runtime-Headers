@@ -77,6 +77,7 @@
 - (id)nameSuffix;
 - (id)namePrefix;
 - (id)birthday;
+- (int)recordID;
 - (id)textTone;
 - (id)ringtone;
 - (id)postalAddresses;
@@ -112,7 +113,6 @@
 - (id)primarySourceName;
 - (id)givenName;
 - (void)reloadRecord;
-- (BOOL)isReadonly;
 - (id)phoneNumbers;
 - (id)largestAvailablePhoto;
 - (id)preferredContactForPhoto;
@@ -130,11 +130,11 @@
 - (BOOL)deleteContact;
 - (void*)originalRecord;
 - (BOOL)isUnknown;
+- (BOOL)isReadonly;
 - (void)setLinkedContacts:(id)arg1;
 - (id)linkedContacts;
 - (BOOL)hasValidRecordID;
 - (id)emailAddresses;
-- (int)recordID;
 - (BOOL)isFacebook;
 - (int)nameOrder;
 - (void*)source;
@@ -143,8 +143,8 @@
 - (void*)record;
 - (id)initWithRecord:(void*)arg1;
 - (void*)addressBook;
-- (void)setAddressBook:(void*)arg1;
 - (void)setSource:(void*)arg1;
+- (void)setAddressBook:(void*)arg1;
 - (id)familyName;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

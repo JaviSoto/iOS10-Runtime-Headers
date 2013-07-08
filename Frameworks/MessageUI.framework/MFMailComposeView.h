@@ -74,8 +74,8 @@
 @property(readonly) MFComposeScrollView * bodyScroller;
 @property(readonly) MFComposeTextContentView * bodyTextView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)multiField;
 - (id)imageSizeField;

@@ -30,8 +30,8 @@
 @property(retain) UIColor * topBorderColor;
 @property BOOL usesSubviews;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)topBorderColor;
 - (id)bottomBorderColor;

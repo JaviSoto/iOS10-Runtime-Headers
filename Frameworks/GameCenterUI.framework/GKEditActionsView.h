@@ -2,12 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray, GKCollectionViewCell, CALayer;
+@class GKCollectionViewCell, NSArray, CALayer;
 
 @interface GKEditActionsView : UIView <UIActionSheetDelegate> {
     float _visibleWidth;
     CALayer *_maskLayer;
-    NSArray *_editActions;
     GKCollectionViewCell *_cell;
     NSArray *_editActionConstraints;
     NSArray *_actionButtons;
@@ -15,7 +14,6 @@
 
 @property float visibleWidth;
 @property(retain) CALayer * maskLayer;
-@property(retain) NSArray * editActions;
 @property GKCollectionViewCell * cell;
 @property(retain) NSArray * editActionConstraints;
 @property(retain) NSArray * actionButtons;
@@ -23,16 +21,14 @@
 
 - (id)actionButtons;
 - (id)editActionConstraints;
-- (id)editActions;
 - (void)setMaskLayer:(id)arg1;
 - (id)maskLayer;
 - (void)prepareActionButtons;
-- (void)setEditActions:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cell:(id)arg2;
 - (void)setEditActionConstraints:(id)arg1;
+- (void)setActionButtons:(id)arg1;
 - (void)didTouchMoreEditAction:(id)arg1;
 - (void)didTouchEditAction:(id)arg1;
-- (void)setActionButtons:(id)arg1;
 - (void)dealloc;
 - (float)visibleWidth;
 - (void)setCell:(id)arg1;

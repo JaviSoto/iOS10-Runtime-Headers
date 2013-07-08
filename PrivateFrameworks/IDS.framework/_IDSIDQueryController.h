@@ -43,9 +43,7 @@
 - (void)_requestCachedStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id)arg4;
 - (void)_requestCacheForService:(id)arg1 completionBlock:(id)arg2;
 - (void)_disconnectFromQueryService;
-- (void)_connectToQueryService;
 - (id)__sendMessage:(id)arg1 queue:(id)arg2 reply:(id)arg3 failBlock:(id)arg4 waitForReply:(BOOL)arg5;
-- (void)_disconnectedFromQueryService;
 - (void)___oldDealloc;
 - (void)_purgeIDStatusCache;
 - (void)_callDelegatesWithBlock:(id)arg1;

@@ -36,10 +36,11 @@
 - (void)finishExecution;
 - (void)setExecutionContext:(id)arg1;
 - (id)executionContext;
-- (void)performTask:(id)arg1;
+- (id)scheduleTask:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3;
 - (void)addTask:(id)arg1;
 - (void)waitUntilAllTasksAreFinished;
 - (BOOL)isMainThreadExecutingTask;
+- (void)performTask:(id)arg1;
 - (void)unlock;
 - (void)lock;
 

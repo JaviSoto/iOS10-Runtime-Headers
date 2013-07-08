@@ -26,13 +26,13 @@
 - (int)rssiHistoryAtIndex:(unsigned int)arg1;
 - (void)clearRssiHistorys;
 - (unsigned int)rssiHistorysCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

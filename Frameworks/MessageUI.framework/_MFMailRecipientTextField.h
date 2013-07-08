@@ -5,8 +5,8 @@
 @interface _MFMailRecipientTextField : MFComposeTextField  {
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)customOverlayContainer;
 - (void)paste:(id)arg1;

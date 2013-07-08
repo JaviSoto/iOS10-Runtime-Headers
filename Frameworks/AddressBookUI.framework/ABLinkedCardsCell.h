@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImageView, UIView, <ABPropertyCellDelegate>, UILabel, NSDictionary;
+@class UIImageView, <ABPropertyCellDelegate>, UILabel, NSDictionary;
 
 @interface ABLinkedCardsCell : ABContactCell  {
+    BOOL _displayConstraintsActive;
+    BOOL _editingConstraintsActive;
     UILabel *_sourceLabel;
     UILabel *_nameLabel;
-    UIView *_innerContentView;
     <ABPropertyCellDelegate> *_delegate;
     NSDictionary *_sourceTextAttributes;
     NSDictionary *_nameTextAttributes;
@@ -16,10 +17,11 @@
 
 @property(readonly) UILabel * sourceLabel;
 @property(readonly) UILabel * nameLabel;
-@property(readonly) UIView * innerContentView;
 @property <ABPropertyCellDelegate> * delegate;
 @property(copy) NSDictionary * sourceTextAttributes;
 @property(copy) NSDictionary * nameTextAttributes;
+@property BOOL displayConstraintsActive;
+@property BOOL editingConstraintsActive;
 @property(retain) UIImageView * chevron;
 
 + (float)cellHeightForEditing:(BOOL)arg1;
@@ -27,10 +29,13 @@
 
 - (void)setChevron:(id)arg1;
 - (id)sourceTextAttributes;
-- (id)innerContentView;
 - (id)chevron;
+- (void)setEditingConstraintsActive:(BOOL)arg1;
+- (BOOL)editingConstraintsActive;
 - (id)nameLabel;
 - (id)sourceLabel;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
+- (BOOL)displayConstraintsActive;
 - (void)setSourceTextAttributes:(id)arg1;
 - (id)nameTextAttributes;
 - (id)contentViewConstraints;
@@ -43,7 +48,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)setNeedsUpdateConstraints;
 - (void)updateConstraints;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

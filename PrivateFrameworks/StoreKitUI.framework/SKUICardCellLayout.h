@@ -23,11 +23,9 @@
 
 - (int)numberOfUserRatings;
 - (id)screenshotImage;
-- (id)initWithParentView:(id)arg1 backgroundImage:(id)arg2;
 - (void)layoutForItemOfferChange;
 - (void)setScreenshotImage:(id)arg1;
 - (void)resetLayout;
-- (id)initWithCollectionViewCell:(id)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setUserRating:(float)arg1;
 - (float)userRating;

@@ -24,14 +24,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (id)reversedOrderedSet;
+- (id)reverseObjectEnumerator;
 - (BOOL)isSubsetOfOrderedSet:(id)arg1;
 - (BOOL)intersectsOrderedSet:(id)arg1;
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
-- (id)reverseObjectEnumerator;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (BOOL)isNSOrderedSet__;
 - (id)set;

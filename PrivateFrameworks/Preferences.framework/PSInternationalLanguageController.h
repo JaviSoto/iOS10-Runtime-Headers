@@ -10,8 +10,8 @@
 
 @property(retain) NSMutableDictionary * cellCache;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)generateLanguageCellCache;
 - (id)cellCache;

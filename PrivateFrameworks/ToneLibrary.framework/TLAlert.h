@@ -35,14 +35,14 @@
 
 - (id)_targetQueue;
 - (BOOL)_shouldOverrideMasterSwitches;
-- (id)vibrationIdentifier;
-- (id)toneIdentifier;
 - (void)_setVibrationIdentifier:(id)arg1;
 - (void)_setToneIdentifier:(id)arg1;
 - (void)_setShouldOverrideMasterSwitches:(BOOL)arg1;
 - (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
 - (BOOL)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
+- (id)vibrationIdentifier;
+- (id)toneIdentifier;
 - (id)initWithType:(int)arg1;
 - (void)_setTargetQueue:(id)arg1;
 - (void)dealloc;

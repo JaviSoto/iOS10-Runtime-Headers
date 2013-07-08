@@ -13,9 +13,7 @@
 @property(retain) SLDatabase * database;
 
 
-- (id)_clientLocalizedApplicationName;
 - (BOOL)clientHasEntitlement:(id)arg1;
-- (id)_clientBundleID;
 - (void)setDatabase:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)database;

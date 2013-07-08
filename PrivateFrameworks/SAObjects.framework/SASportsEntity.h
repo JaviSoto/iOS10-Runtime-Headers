@@ -8,7 +8,9 @@
 }
 
 @property(copy) NSURL * image;
+@property(copy) NSURL * largeImage;
 @property(retain) SASportsLeague * league;
+@property(copy) NSURL * listImage;
 @property(copy) NSString * name;
 @property(retain) SAUIAppPunchOut * punchout;
 
@@ -17,12 +19,16 @@
 
 - (void)setPunchout:(id)arg1;
 - (id)punchout;
+- (void)setListImage:(id)arg1;
+- (id)listImage;
 - (void)setLeague:(id)arg1;
 - (id)league;
+- (void)setLargeImage:(id)arg1;
+- (id)largeImage;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)name;
 - (id)groupIdentifier;
 - (void)setName:(id)arg1;

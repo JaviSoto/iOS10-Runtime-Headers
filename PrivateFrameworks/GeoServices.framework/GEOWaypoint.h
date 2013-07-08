@@ -17,8 +17,6 @@
 @property(retain) NSMutableArray * entryPoints;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasLocation;
 - (id)entryPointAtIndex:(unsigned int)arg1;
 - (void)clearEntryPoints;
@@ -31,14 +29,15 @@
 - (id)placeSearchRequest;
 - (BOOL)hasPlaceSearchRequest;
 - (void)setPlaceSearchRequest:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)location;
-- (void)setLocation:(id)arg1;
 - (id)initWithLocation:(id)arg1;
+- (void)setLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)initWithMapItem:(id)arg1 includeEntryPoints:(BOOL)arg2;
 
 @end

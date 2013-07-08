@@ -24,13 +24,13 @@
 
 + (float)defaultRowHeight;
 
-- (void)setDescriptionLabel:(id)arg1;
-- (id)descriptionLabel;
 - (id)valueLabel;
 - (void)setBadgeView:(id)arg1;
 - (void)setPointsLabel:(id)arg1;
 - (id)pointsLabel;
 - (void)setValueLabel:(id)arg1;
+- (void)setDescriptionLabel:(id)arg1;
+- (id)descriptionLabel;
 - (void)establishConstraints;
 - (id)pointsContainerView;
 - (void)setPointsContainerView:(id)arg1;

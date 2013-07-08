@@ -14,7 +14,6 @@
 
 - (id)cellForIndexPath:(id)arg1;
 - (void)swoosh:(id)arg1 didChangePlaybackState:(int)arg2 forItemAtIndex:(int)arg3;
-- (id)_metricsLocationIdentifierForIndex:(int)arg1;
 - (id)_newArtworkRequestWithArtwork:(id)arg1;
 - (void)swoosh:(id)arg1 willDisplayCellAtIndex:(int)arg2;
 - (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;

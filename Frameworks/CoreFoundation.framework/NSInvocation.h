@@ -19,8 +19,6 @@
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)_gkInvocationWithBlock:(id)arg1;
-+ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(char *)arg3;
-+ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)invocationWithBlock:(id)arg1;
 + (void)executeBlock:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
@@ -55,6 +53,7 @@
 - (BOOL)_gkHasReplyBlock;
 - (void)_gkInvokeOnceWithTarget:(id)arg1;
 - (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
+- (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
 - (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
 - (id)_gkReplyHandlerInvocation;
 - (void)_gkClearCopiedArguments;

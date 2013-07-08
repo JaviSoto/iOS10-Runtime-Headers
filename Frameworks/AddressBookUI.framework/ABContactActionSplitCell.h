@@ -2,17 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton;
+@class UIButton, UIView;
 
 @interface ABContactActionSplitCell : ABContactCell  {
     UIButton *_leftLabel;
     UIButton *_rightLabel;
+    UIView *_spacer;
 }
 
 @property(readonly) UIButton * leftLabel;
 @property(readonly) UIButton * rightLabel;
+@property(readonly) UIView * spacer;
 
 
+- (id)spacer;
 - (id)rightLabel;
 - (void)_setupButton:(id)arg1 forAction:(id)arg2;
 - (id)leftLabel;

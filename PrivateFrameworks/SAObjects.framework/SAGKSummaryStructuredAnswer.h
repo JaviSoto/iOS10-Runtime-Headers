@@ -28,8 +28,8 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)text;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)setText:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (id)category;

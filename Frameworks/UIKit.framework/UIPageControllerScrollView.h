@@ -10,8 +10,8 @@
 
 @property UIPageController * pageController;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -19,10 +19,12 @@
 - (id)pageController;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_scrollViewDidEndDecelerating;
-- (int)_abuttedPagingEdges;
+- (unsigned int)_abuttedPagingEdges;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillBeginDragging;
 - (void)layoutSubviews;
+- (float)_accessibilityScrollHeightDistance;
+- (float)_accessibilityScrollWidthDistance;
 - (float)_accessibilityScrollAnimationDurationDelay;
 - (void)_accessibilitySendScrollStatus;
 - (id)_accessibilityScrollStatus;

@@ -20,8 +20,8 @@
 }
 
 
-- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
 - (long long)ratingLevel;
+- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
 - (void)parseItemData:(id)arg1;
 - (id)deduplicationPredicates;
 - (BOOL)hasValueForProperty:(unsigned int)arg1;

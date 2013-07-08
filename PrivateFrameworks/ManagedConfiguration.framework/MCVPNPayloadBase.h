@@ -82,11 +82,11 @@
 - (id)atom;
 - (void)_validateVPNPayload:(id)arg1;
 - (void)setProxyPassword:(id)arg1;
-- (id)proxyPassword;
 - (void)setCertificateUUID:(id)arg1;
 - (id)certificateUUID;
 - (void)setPasswordRequired:(BOOL)arg1;
 - (BOOL)passwordRequired;
+- (id)proxyPassword;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setPassword:(id)arg1;
 - (id)password;

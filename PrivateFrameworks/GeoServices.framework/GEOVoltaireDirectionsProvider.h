@@ -16,14 +16,14 @@
 + (void)setUsePersistentConnection:(BOOL)arg1;
 + (id)providerURL;
 
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
 - (void)cleanupRequester;
 - (void)cancelProviderRequest;
 - (void)startProviderWithRequest:(id)arg1;
 - (void)setRequester:(id)arg1;
 - (id)requester;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

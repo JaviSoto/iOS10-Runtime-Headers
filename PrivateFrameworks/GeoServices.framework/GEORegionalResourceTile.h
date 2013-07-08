@@ -23,8 +23,6 @@
 @property(retain) NSMutableArray * iconChecksums;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)childrenAtIndex:(unsigned int)arg1;
 - (void)clearChildrens;
 - (void)setChildrens:(id)arg1;
@@ -49,6 +47,8 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

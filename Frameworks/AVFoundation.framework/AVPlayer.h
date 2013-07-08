@@ -158,7 +158,7 @@
 - (void)seekToDate:(id)arg1;
 - (void)setRate:(float)arg1 withVolumeRampDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_setCurrentItem:(id)arg1;
-- (void)_createPlayer:(int)arg1 asyncSetUp:(BOOL)arg2 item:(id)arg3 preparationRequested:(BOOL)arg4 completionHandler:(id)arg5;
+- (void)_createPlayer:(int)arg1 item:(id)arg2 preparationRequested:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (BOOL)_insertPlaybackItemOfItem:(id)arg1 inPlayerQueueAfterPlaybackItemOfItem:(id)arg2;
 - (void)_setNeroVideoGravityOnFigPlayer;
@@ -203,10 +203,10 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (id)vibrationPattern;
 - (void)setVibrationPattern:(id)arg1;
+- (id)dispatchQueue;
 - (float)rate;
 - (float)volume;
 - (void)play;
-- (id)dispatchQueue;
 - (float)_rate;
 - (void)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;

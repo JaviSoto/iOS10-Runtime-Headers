@@ -17,14 +17,15 @@
 @property(readonly) AVAudioSessionDataSourceDescription * preferredDataSource;
 
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawPortArray:(id)arg2;
++ (BOOL)privateMatchesInputs:(id)arg1 toRawInputs:(id)arg2;
 + (id)privateCreateOrConfigure:(id)arg1 withRawPortDescription:(id)arg2;
 
 - (id)preferredDataSource;
 - (BOOL)isHeadphones;
 - (void)configureChannelsAndDataSources:(id)arg1;
 - (id)initWithRawPortDescription:(id)arg1;
-- (BOOL)privateMatchesRawDescription:(id)arg1;
 - (id)privateGetID;
+- (BOOL)privateMatchesRawDescription:(id)arg1;
 - (BOOL)isEqualToPort:(id)arg1;
 - (struct PortDescriptionImpl { id x1; id x2; id x3; id x4; boolx5; id x6; id x7; id x8; }*)privateGetImplementation;
 - (id)UID;

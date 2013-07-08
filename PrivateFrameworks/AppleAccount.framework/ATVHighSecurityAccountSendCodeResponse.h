@@ -5,8 +5,6 @@
 @class NSDictionary;
 
 @interface ATVHighSecurityAccountSendCodeResponse : AAResponse  {
-    BOOL _success;
-    NSDictionary *_userDisplayStrings;
 }
 
 @property(readonly) BOOL success;
@@ -15,6 +13,5 @@
 
 - (id)userDisplayStrings;
 - (BOOL)success;
-- (void).cxx_destruct;
 
 @end

@@ -16,7 +16,7 @@
     unsigned int _numberOfAchievementPoints;
     union { 
         struct { 
-            unsigned int _validPieces : 8; 
+            unsigned int _unused : 8; 
             unsigned int _purpleBuddyAccount : 1; 
             unsigned int _underage : 1; 
             unsigned int _photoPending : 1; 
@@ -32,7 +32,6 @@
 @property(retain) NSString * playerID;
 @property(retain) NSString * alias;
 @property(retain) NSDictionary * photos;
-@property unsigned char validPieces;
 @property(readonly) BOOL isFriend;
 @property(readonly) BOOL isLocalPlayer;
 @property(readonly) BOOL isAnonymousPlayer;
@@ -76,8 +75,8 @@
 - (id)accountName;
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
-- (BOOL)isPurpleBuddyAccount;
 - (BOOL)isAutomatchPlayer;
+- (BOOL)isPurpleBuddyAccount;
 - (BOOL)isUnknownPlayer;
 - (BOOL)isAnonymousPlayer;
 - (void)setNumberOfAchievementPoints:(unsigned int)arg1;
@@ -99,8 +98,6 @@
 - (id)facebookUserID;
 - (void)setLastPlayedGame:(id)arg1;
 - (void)setCompositeName:(id)arg1;
-- (void)setValidPieces:(unsigned char)arg1;
-- (unsigned char)validPieces;
 - (id)compositeName;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
 - (BOOL)isFriend;

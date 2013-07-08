@@ -48,8 +48,8 @@
 - (void)setDefaultMessage:(id)arg1;
 - (void)setPlayerIDs:(id)arg1;
 - (id)playerIDs;
-- (void)setChallenge:(id)arg1;
 - (id)challenge;
+- (void)setChallenge:(id)arg1;
 - (void)dealloc;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (id)dismissCompletionHandler;

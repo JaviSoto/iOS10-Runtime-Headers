@@ -144,8 +144,6 @@
 - (void)setCardEditingActionsGroup:(id)arg1;
 - (void)setAddLinkedCardAction:(id)arg1;
 - (void)setLinkedCardsAction:(id)arg1;
-- (void)setFaceTimeAction:(id)arg1;
-- (void)setCardLinkedCardsGroup:(id)arg1;
 - (id)cardFaceTimeGroup;
 - (void)setCardBlockContactGroup:(id)arg1;
 - (void)setCardActionsGroup:(id)arg1;
@@ -182,16 +180,17 @@
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewValue:(id)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewLabel:(id)arg3;
 - (void)action:(id)arg1 pushViewController:(id)arg2 sender:(id)arg3;
+- (BOOL)_modelHasChanges;
 - (id)cardFooterGroup;
 - (BOOL)hideCardActions;
 - (id)cardBottomGroup;
 - (id)_addGroupsInArray:(id)arg1 afterGroup:(id)arg2;
 - (id)cardTopGroup;
+- (void)setCardLinkedCardsGroup:(id)arg1;
 - (id)_addLinkedCardAction;
 - (id)_linkedCardsAction;
 - (BOOL)shouldShowLinkedContacts;
 - (void)addCardGroup:(id)arg1 afterGroup:(id)arg2;
-- (id)_faceTimeAction;
 - (BOOL)allowsConferencing;
 - (id)idQueryResultHandler;
 - (BOOL)allowsOnlyFaceTimeActions;
@@ -200,6 +199,8 @@
 - (void)_updatePhoneTransportButtons;
 - (void)_updateIMessageTransportButtons;
 - (id)_allDisplayPropertyItemsFromGroups:(id)arg1;
+- (void)setFaceTimeAction:(id)arg1;
+- (id)_faceTimeAction;
 - (id)cardPrimaryPropertyActionsGroup;
 - (void)setDeleteContactAction:(id)arg1;
 - (id)addNewFieldAction;
@@ -274,6 +275,7 @@
 - (id)mutableContacts;
 - (void)saveLinkedContactChanges;
 - (void)_saveChangesForGroups:(id)arg1;
+- (void)_linkEditableContactForEditedReadOnlyContact;
 - (void)setMutableContacts:(id)arg1;
 - (id)linkedContactsEdits;
 - (struct { id x1; id x2; id x3; id x4; })editingTransition;
@@ -294,6 +296,7 @@
 - (id)_loadDisplayGroups;
 - (void)_reloadFaceTimeGroup;
 - (void)_reloadPropertyGroups;
+- (void)_reloadLinkedCardsGroup;
 - (void)setCachedSingleLineCellHeight:(float)arg1;
 - (void)setCachedCellsHeightsEditing:(id)arg1;
 - (void)setCachedCellsHeights:(id)arg1;
@@ -365,6 +368,7 @@
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

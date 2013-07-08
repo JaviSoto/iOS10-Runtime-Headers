@@ -7,6 +7,7 @@
 @interface SAPhoneCallHistory : SAPhoneCallSearchResult  {
 }
 
+@property(copy) NSNumber * blocked;
 @property(copy) NSNumber * callCount;
 @property(copy) NSNumber * faceTime;
 @property(copy) NSNumber * faceTimeAudio;
@@ -19,6 +20,7 @@
 - (void)setMissed:(id)arg1;
 - (void)setCallCount:(id)arg1;
 - (id)callCount;
+- (id)blocked;
 - (void)setOutgoing:(id)arg1;
 - (id)outgoing;
 - (id)missed;
@@ -28,6 +30,7 @@
 - (id)faceTime;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setBlocked:(id)arg1;
 - (id)groupIdentifier;
 
 @end

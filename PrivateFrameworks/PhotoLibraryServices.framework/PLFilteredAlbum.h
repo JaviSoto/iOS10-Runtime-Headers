@@ -132,7 +132,7 @@
 - (struct NSObject { Class x1; }*)backingAlbum;
 - (id)filterParameters;
 - (id)userEditableAssets;
-- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
 - (id)localizedLocationNames;
 - (BOOL)canShowComments;
 - (void)setKeyAsset:(id)arg1;

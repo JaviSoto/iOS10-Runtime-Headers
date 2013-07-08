@@ -15,8 +15,8 @@
 @property(retain) UIKBThemedView * themedView;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (BOOL)needsToUpdateSortControlForTitles:(id)arg1;

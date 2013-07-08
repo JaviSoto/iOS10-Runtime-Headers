@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class _UIBackdropView, TPShineLabelView;
+@class _UIBackdropView, SBFGlintyStringView;
 
 @interface TPButton : UIButton  {
     int _color;
@@ -12,11 +12,11 @@
         float height; 
     } offsetForshineLabel;
     BOOL _blursBackground;
-    TPShineLabelView *_shineLabelView;
+    SBFGlintyStringView *_shineLabelView;
 }
 
 @property BOOL blursBackground;
-@property(retain) TPShineLabelView * shineLabelView;
+@property(retain) SBFGlintyStringView * shineLabelView;
 
 + (id)acceptVideoButtonImage;
 + (id)answerButtonImage;
@@ -27,8 +27,8 @@
 + (float)maxWidthForCenterButton;
 + (float)defaultWidthForCenterButton;
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)shineLabelView;
 - (void)setDisabledButtonColor:(int)arg1;

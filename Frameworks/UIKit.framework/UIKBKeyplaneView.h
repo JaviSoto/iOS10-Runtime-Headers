@@ -31,8 +31,8 @@
 @property(readonly) float cachedWidth;
 @property(readonly) BOOL keepNonPersistent;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -52,7 +52,7 @@
 - (BOOL)_shouldDrawLowResBackground;
 - (int)cornerMaskForKey:(id)arg1 recursive:(BOOL)arg2;
 - (id)defaultKeyplane;
-- (id)_setupSplitImageViewIfNeeded:(id)arg1 withImage:(struct CGImage { }*)arg2;
+- (id)_setupSplitImageViewIfNeeded:(id)arg1 withImage:(id)arg2;
 - (id)cacheToken;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;

@@ -69,11 +69,11 @@
 - (void)setCalscale:(id)arg1;
 - (id)systemTimeZoneForDate:(id)arg1;
 - (void)addComponent:(id)arg1;
+- (void)setComponents:(id)arg1;
 - (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (void)setMethod:(int)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setComponents:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (id)version;
 - (int)method;

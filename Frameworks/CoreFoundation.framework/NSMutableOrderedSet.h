@@ -74,6 +74,7 @@
 - (void)minusSet:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (void)removeLastObject;
+- (Class)classForCoder;
 - (void)sortUsingDescriptors:(id)arg1;
 - (void)filterUsingPredicate:(id)arg1;
 - (void)pl_removeObjectsInArray:(id)arg1;

@@ -29,7 +29,6 @@
 + (int)daysSince1970;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
-+ (id)_mapkit_dateWithAbsoluteTime:(double)arg1;
 + (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
 + (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
 + (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
@@ -86,11 +85,11 @@
 - (BOOL)isBeforeDate:(id)arg1;
 - (BOOL)isAfterDate:(id)arg1;
 - (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
+- (id)mf_descriptionForMimeHeaders;
+- (id)mf_replyPrefixForSender:(id)arg1;
 - (BOOL)PKIsYesterday;
 - (BOOL)PKIsTomorrow;
 - (BOOL)PKIsToday;
 - (BOOL)PKIsEqualToDateIgnoringTime:(id)arg1;
-- (id)mf_descriptionForMimeHeaders;
-- (id)mf_replyPrefixForSender:(id)arg1;
 
 @end

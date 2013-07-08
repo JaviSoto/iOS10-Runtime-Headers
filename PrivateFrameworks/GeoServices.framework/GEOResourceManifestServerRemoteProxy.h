@@ -2,11 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSObject<OS_dispatch_queue>, <GEOResourceManifestServerProxyDelegate>, NSObject<OS_xpc_object>;
+@class NSHashTable, NSObject<OS_xpc_object>, NSLock, NSObject<OS_dispatch_queue>, <GEOResourceManifestServerProxyDelegate>;
 
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
     <GEOResourceManifestServerProxyDelegate> *_delegate;
     NSObject<OS_xpc_object> *_conn;
+    NSLock *_connLock;
+    NSHashTable *_cancellingConnections;
+    NSLock *_cancellingConnectionsLock;
     int _closedCount;
     BOOL _started;
     BOOL _hiDPI;

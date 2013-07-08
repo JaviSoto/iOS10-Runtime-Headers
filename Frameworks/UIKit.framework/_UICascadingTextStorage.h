@@ -38,7 +38,7 @@
 - (void)_setShadow:(id)arg1;
 - (id)_shadow;
 - (id)_defaultAttributes;
-- (int)_resolvedTextAlignment;
+- (int)_ui_resolvedTextAlignment;
 - (id)defaultAttributes;
 - (int)textAlignment;
 - (void)setDefaultAttributes:(id)arg1;

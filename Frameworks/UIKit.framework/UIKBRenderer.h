@@ -2,14 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSData, NSString, UIImage;
 
 @interface UIKBRenderer : NSObject  {
     struct CGContext { } *_cachingContext;
+    BOOL _opaque;
     struct CGContext { } *_ctx;
     float _scale;
     int _renderFlags;
     NSString *_cacheKey;
+    UIImage *_renderedImage;
     struct CGSize { 
         float width; 
         float height; 
@@ -17,12 +19,16 @@
 }
 
 @property(readonly) struct CGContext { }* context;
+@property(readonly) NSData * contextData;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) float scale;
+@property(readonly) BOOL opaque;
 @property(readonly) int renderFlags;
+@property(readonly) UIImage * renderedImage;
 @property(retain) NSString * cacheKey;
 
-+ (id)rendererWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 renderFlags:(int)arg4;
++ (struct CGContext { }*)imageContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3 invert:(BOOL)arg4;
++ (id)rendererWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 opaque:(BOOL)arg4 renderFlags:(int)arg5;
 
 - (struct CGContext { }*)context;
 - (struct CGSize { float x1; float x2; })size;
@@ -40,6 +46,7 @@
 - (struct CGPath { }*)_thinShiftGlyphPath;
 - (struct CGPath { }*)_thickShiftGlyphPath;
 - (BOOL)_drawKeyString:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3;
+- (BOOL)_drawSingleSymbol:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3;
 - (void)_drawKeyImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withStyle:(id)arg3;
 - (void)_renderVariantsFromKeyContents:(id)arg1 withTraits:(id)arg2;
 - (void)renderKeyPathContents:(id)arg1 withTraits:(id)arg2;
@@ -51,13 +58,18 @@
 - (void)addPathForRenderGeometry:(id)arg1;
 - (void)addRoundRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 radius:(float)arg2 corners:(unsigned int)arg3;
 - (void)addPathForTraits:(id)arg1 displayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-- (id)initWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 renderFlags:(int)arg4;
+- (void)ensureContext;
+- (id)initWithContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 withScale:(float)arg3 opaque:(BOOL)arg4 renderFlags:(int)arg5;
 - (void)renderShadowEffect:(id)arg1 withTraits:(id)arg2;
 - (void)renderEdgeEffect:(id)arg1 withTraits:(id)arg2;
 - (int)renderFlags;
 - (void)setCacheKey:(id)arg1;
+- (id)contextData;
+- (id)renderedImage;
+- (BOOL)loadCachedImageForHashString:(id)arg1;
 - (id)cacheKey;
 - (void)renderBackgroundTraits:(id)arg1;
+- (BOOL)opaque;
 - (void)renderKeyContents:(id)arg1 withTraits:(id)arg2;
 - (float)scale;
 

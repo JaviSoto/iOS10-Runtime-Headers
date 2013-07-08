@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSXPCInterface, NSXPCConnection, NSObject<OS_xpc_object>;
+@class NSMutableSet, NSXPCConnection, NSObject<OS_xpc_object>, NSXPCInterface;
 
 @interface NSXPCDecoder : NSXPCCoder  {
     NSObject<OS_xpc_object> *_oolObjects;
@@ -17,7 +17,7 @@
         int type; 
     } _rootObject;
     unsigned int _collectionPointer;
-    struct __CFSet { } *_cache;
+    NSMutableSet *_cache;
     id _allowedClassesList[128];
     int _allowedClassesIndex;
 }
@@ -41,7 +41,8 @@
 - (int)decodeIntegerForKey:(id)arg1;
 - (SEL)replyToSelector;
 - (const char *)_decodeCStringForKey:(id)arg1;
-- (void)_setCache:(struct __CFSet { }*)arg1;
+- (id)decodeXPCObjectForKey:(id)arg1;
+- (void)_setCache:(id)arg1;
 - (void)set_connection:(id)arg1;
 - (void)setReplyToSelector:(SEL)arg1;
 - (void)setInterface:(id)arg1;
@@ -49,7 +50,7 @@
 - (id)_initWithRootXPCObject:(id)arg1;
 - (id)decodeInvocation;
 - (id)_connection;
-- (id)decodeXPCObjectForKey:(id)arg1;
+- (id)decodeXPCObjectOfType:(struct _xpc_type_s { }*)arg1 forKey:(id)arg2;
 - (float)decodeFloatForKey:(id)arg1;
 - (id)allowedClasses;
 - (void)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(BOOL)arg3;

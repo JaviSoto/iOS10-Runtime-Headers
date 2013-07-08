@@ -49,11 +49,9 @@
 - (void)setGender:(int)arg1;
 - (void)setUseCustomVoice:(BOOL)arg1;
 - (void)setFootprint:(int)arg1;
-- (void)setVoiceName:(id)arg1;
 - (int)gender;
 - (int)footprint;
 - (id)outputPath;
-- (id)voiceName;
 - (unsigned int)audioQueueFlags;
 - (unsigned int)audioSessionID;
 - (BOOL)audioSessionIDIsValid;
@@ -62,6 +60,8 @@
 - (long)vocalizerFootprint;
 - (BOOL)maintainsInput;
 - (void)setLanguageCode:(id)arg1;
+- (id)voiceName;
+- (void)setVoiceName:(id)arg1;
 - (double)rate;
 - (double)volume;
 - (void)setRate:(double)arg1;

@@ -13,9 +13,9 @@
 - (void)removeItemAtIndexPath:(id)arg1;
 - (void)configureCollectionView:(id)arg1;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
-- (void)setKind:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)kind;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)setKind:(int)arg1;
 
 @end

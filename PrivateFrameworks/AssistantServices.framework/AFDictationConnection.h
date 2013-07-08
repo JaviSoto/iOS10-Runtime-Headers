@@ -22,11 +22,9 @@
 + (void)fetchSupportedLanguageCodes:(id)arg1;
 
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2 options:(id)arg3 forLanguage:(id)arg4;
-- (void)setRecordingAlertRoute:(int)arg1;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
 - (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)_tellSpeechDelegateDidHypothesizeSpeechPhrases:(id)arg1 languageModel:(id)arg2;
-- (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
 - (void)_willCancelDictation;
 - (id)_assistantDictationService;
 - (void)_willStartDictation;
@@ -36,13 +34,14 @@
 - (void)_willCompleteDictation;
 - (void)_willFailDictationWithError:(id)arg1;
 - (void)_clearConnections;
+- (float)peakPower;
 - (void)stopSpeech;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidCancel;
 - (void)_tellSpeechDelegateRecordingDidEnd;
 - (void)_tellSpeechDelegateRecordingDidBegin;
-- (float)peakPower;
 - (void)_tellSpeechDelegateRecordingWillBegin;
+- (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
 - (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
 - (void)_tellSpeechDelegateRecordingDidFail:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -51,13 +50,13 @@
 - (id)delegate;
 - (void)preheat;
 - (BOOL)currentlyUsingLocalDication;
-- (void)beginAvailabilityMonitoring;
 - (void)stopSpeechWithOptions:(id)arg1;
 - (void)cancelSpeech;
 - (void)endSession;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 options:(id)arg2 forLanguage:(id)arg3;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (float)averagePower;
+- (void)beginAvailabilityMonitoring;
 - (void)cancelAvailabilityMonitoring;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (BOOL)dictationIsAvailableForLanguage:(id)arg1;

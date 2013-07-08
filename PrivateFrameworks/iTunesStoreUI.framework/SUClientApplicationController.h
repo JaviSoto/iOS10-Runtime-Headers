@@ -62,6 +62,7 @@
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)displayClientURL:(id)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
+- (id)defaultPNGNameForSuspend;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)presentExternalURLViewController:(id)arg1;
 - (void)_reloadWithSectionsResponse:(id)arg1;
@@ -76,7 +77,6 @@
 - (void)_dialogDidFinishNotification:(id)arg1;
 - (void)_cancelSuspendAfterDialogsDismissed;
 - (id)topNavigationController;
-- (id)defaultPNGNameForSuspend;
 - (void)_handleFinishedLoadSectionsOperation:(id)arg1;
 - (void)_presentSectionFetchUI;
 - (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;

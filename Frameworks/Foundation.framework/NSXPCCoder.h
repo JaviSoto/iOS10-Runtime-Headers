@@ -15,9 +15,10 @@
 - (id)init;
 - (id)userInfo;
 - (void)dealloc;
+- (id)decodeXPCObjectForKey:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)encodeXPCObject:(id)arg1 forKey:(id)arg2;
-- (id)decodeXPCObjectForKey:(id)arg1;
+- (id)decodeXPCObjectOfType:(struct _xpc_type_s { }*)arg1 forKey:(id)arg2;
 - (BOOL)requiresSecureCoding;
 
 @end

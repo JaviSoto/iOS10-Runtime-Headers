@@ -8,13 +8,14 @@
     NSString *_percentString;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (int)textStyle;
 - (void)dealloc;
 - (BOOL)animatesDataChange;
 - (float)extraRightPadding;
+- (BOOL)cachesImage;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
 - (int)textAlignment;

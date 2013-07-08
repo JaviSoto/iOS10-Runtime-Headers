@@ -2,26 +2,31 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UISegmentedControl, UILabel;
+@class GKButton, UILabel;
 
 @interface GKFriendRequestCell : GKBasePlayerCell  {
     UILabel *_messageLabel;
     UILabel *_whenLabel;
-    UISegmentedControl *_actionControl;
+    GKButton *_acceptButton;
+    GKButton *_declineButton;
 }
 
 @property(retain) UILabel * messageLabel;
 @property(retain) UILabel * whenLabel;
-@property(retain) UISegmentedControl * actionControl;
+@property(retain) GKButton * acceptButton;
+@property(retain) GKButton * declineButton;
 
 + (void)applyFriendRequest:(id)arg1 messageStringToLabel:(id)arg2 showAlias:(BOOL)arg3;
 + (void)registerCellClassesWithCollectionView:(id)arg1;
 + (Class)cellClassForPlayer:(id)arg1;
 
+- (void)setAcceptButton:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
-- (void)setActionControl:(id)arg1;
-- (id)actionControl;
-- (void)selectedSegmentedControl:(id)arg1;
+- (void)setDeclineButton:(id)arg1;
+- (id)declineButton;
+- (id)acceptButton;
+- (void)didTouchDecline:(id)arg1;
+- (void)didTouchAccept:(id)arg1;
 - (void)setWhenLabel:(id)arg1;
 - (id)whenLabel;
 - (void)didUpdateModel;

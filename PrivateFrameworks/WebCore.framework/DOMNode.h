@@ -79,8 +79,8 @@
 @property(readonly) BOOL isContentEditable;
 
 + (id)_nodeFromJSWrapper:(struct OpaqueJSValue { }*)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)insertBefore:(id)arg1 refChild:(id)arg2;
 - (id)localName;
@@ -165,7 +165,6 @@
 - (BOOL)isHorizontalWritingMode;
 - (void)showPlaceholderIfNecessary;
 - (void)hidePlaceholder;
-- (id)_subresourceURLs;
 - (id)rangeOfContents;
 - (id)endPosition;
 - (id)startPosition;
@@ -182,8 +181,8 @@
 - (BOOL)isTextControl;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (BOOL)isEditing;
-- (void)insertText:(id)arg1;
 - (BOOL)isEditable;
+- (void)insertText:(id)arg1;
 - (BOOL)hasSelection;
 - (int)selectionState;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -345,7 +344,6 @@
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (id)_keyInput;
 - (id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2;
-- (unsigned long)_characterInRelationToRangedSelection:(int)arg1;
 - (int)_indexForTextPosition:(id)arg1;
 - (id)_fullRange;
 - (id)_selectableText;
@@ -360,6 +358,7 @@
 - (BOOL)_selectionAtDocumentStart;
 - (void)_selectAll;
 - (void)_replaceCurrentWordWithText:(id)arg1;
+- (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
 - (id)_fullText;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (unsigned long)_characterAfterCaretSelection;
@@ -367,7 +366,9 @@
 - (unsigned long)_characterInRelationToCaretSelection:(int)arg1;
 - (void)_deleteForwardAndNotify:(BOOL)arg1;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
+- (void)_expandSelectionToBackwardDeletionCluster;
 - (void)_moveCurrentSelection:(int)arg1;
+- (unsigned long)_characterInRelationToRangedSelection:(int)arg1;
 - (unsigned long)_characterBeforeCaretSelection;
 - (void)_setGestureRecognizers;
 - (void)_unmarkText;

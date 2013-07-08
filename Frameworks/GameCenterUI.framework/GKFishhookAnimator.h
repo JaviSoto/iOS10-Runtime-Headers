@@ -6,6 +6,7 @@
 }
 
 
+- (int)animatorType;
 - (void)animateTransition:(id)arg1;
 
 @end

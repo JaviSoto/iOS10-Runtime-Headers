@@ -16,6 +16,7 @@
 
 
 - (id)html;
+- (id)userStyleSheet;
 - (void)setHtml:(id)arg1;
 - (id)sourceURL;
 - (void)setBaseURL:(id)arg1;

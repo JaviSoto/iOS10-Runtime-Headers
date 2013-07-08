@@ -96,6 +96,7 @@
 - (void)setStateStack:(id)arg1;
 - (void)setDeclineAndRemindIsAvailable:(BOOL)arg1;
 - (void)setDeclineAndMessageIsAvailable:(BOOL)arg1;
+- (void)setBottomMargin:(float)arg1;
 - (float)bottomMargin;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addSubview:(id)arg1;
@@ -103,7 +104,6 @@
 - (int)currentState;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;
-- (void)setBottomMargin:(float)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

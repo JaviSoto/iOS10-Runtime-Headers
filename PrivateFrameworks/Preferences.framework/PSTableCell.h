@@ -38,9 +38,9 @@
 + (Class)cellClassForSpecifier:(id)arg1;
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (int)cellStyle;
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setLongTapRecognizer:(id)arg1;
 - (id)longTapRecognizer;

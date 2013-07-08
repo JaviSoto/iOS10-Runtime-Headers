@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, MFInvocationQueue, NSObject<OS_dispatch_queue>;
+@class MFInvocationQueue, NSObject<OS_dispatch_queue>, NSLock, NSMutableDictionary;
 
 @interface MFAttachmentManager : NSObject  {
     NSObject<OS_dispatch_queue> *_arrayAccessQueue;
@@ -10,6 +10,7 @@
     NSMutableDictionary *_providers;
     NSMutableDictionary *_attachments;
     NSMutableDictionary *_metadata;
+    NSLock *_metaDataLock;
 }
 
 + (id)allManagers;

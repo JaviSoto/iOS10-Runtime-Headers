@@ -42,6 +42,7 @@
 @property(retain) NSURL * streamURL;
 @property(retain) NSURL * streamCertificateURL;
 @property(retain) NSURL * streamKeyURL;
+@property(getter=isSharingEnabled) BOOL sharingEnabled;
 @property(getter=isShared) BOOL shared;
 @property(getter=isSubscribed) BOOL subscribed;
 @property int subscriberCount;
@@ -86,6 +87,7 @@
 - (void)setSkipFrequency:(int)arg1;
 - (void)setSkipEnabled:(BOOL)arg1;
 - (void)setShareToken:(id)arg1;
+- (void)setSharingEnabled:(BOOL)arg1;
 - (void)setShared:(BOOL)arg1;
 - (void)setSeedTracks:(id)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
@@ -101,6 +103,7 @@
 - (void)setAdData:(id)arg1;
 - (void)setAdamID:(long long)arg1;
 - (BOOL)likesEnabled;
+- (BOOL)isSharingEnabled;
 - (BOOL)isShared;
 - (BOOL)isPreview;
 - (BOOL)isPremiumPlacement;

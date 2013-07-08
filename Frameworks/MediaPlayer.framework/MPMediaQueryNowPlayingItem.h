@@ -10,6 +10,7 @@
 
 @property(readonly) MPMediaItem * mediaItem;
 
++ (void)setShouldAlwaysAirplayFromCloud:(BOOL)arg1;
 + (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
 
 - (id)artist;

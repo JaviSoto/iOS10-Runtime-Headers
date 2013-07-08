@@ -33,8 +33,8 @@
 - (void)addItems:(id)arg1;
 - (id)colors;
 - (id)color;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (void)setString:(id)arg1;
 - (id)name;

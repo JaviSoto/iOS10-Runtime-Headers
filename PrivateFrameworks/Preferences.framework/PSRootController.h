@@ -16,8 +16,8 @@
 + (id)domainForSpecifier:(id)arg1;
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)didDismissFormSheetView;
 - (void)willDismissFormSheetView;

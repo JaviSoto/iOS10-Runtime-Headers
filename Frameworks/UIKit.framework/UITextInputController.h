@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UITextInputControllerTokenizer, UITextInputTraits, _UITextUndoOperationTyping, UITextRange, UITextPosition, <UITextInputControllerDelegate>, <UITextInputDelegate>, _UIDictationAttachment, _UITextServiceSession, <UITextInputTokenizer>, NSDictionary, _UITextUndoManager, NSLayoutManager, UIView<UITextInput>, UITextChecker, NSHashTable, NSArray, UIView;
+@class _UITextInputControllerTokenizer, UITextInputTraits, _UITextUndoOperationTyping, UITextRange, UITextPosition, <UITextInputControllerDelegate>, <UITextInputDelegate>, _UIDictationAttachment, _UITextServiceSession, <UITextInputTokenizer>, NSArray, _UITextUndoManager, NSLayoutManager, UIView<UITextInput>, UITextChecker, NSHashTable, NSDictionary, UIView;
 
 @interface UITextInputController : NSObject <UITextInput, UITextInputAdditions> {
     <UITextInputDelegate> *_inputDelegate;
@@ -16,7 +16,6 @@
     _UITextServiceSession *_definitionSession;
     _UITextServiceSession *_learnSession;
     UITextInputTraits *_textInputTraits;
-    NSDictionary *_typingAttributes;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -47,6 +46,7 @@
     BOOL _allowsEditingTextAttributes;
     BOOL _continuousSpellCheckingEnabled;
     NSDictionary *_emptyStringAttributes;
+    NSDictionary *_typingAttributes;
     <UITextInputControllerDelegate> *_delegate;
     struct _NSRange { 
         unsigned int location; 
@@ -85,8 +85,8 @@
 
 
 - (BOOL)isEditing;
-- (void)insertText:(id)arg1;
 - (BOOL)isEditable;
+- (void)insertText:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)undoManager;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;

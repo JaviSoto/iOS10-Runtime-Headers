@@ -2,19 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewTransitionAnimatorDelegate>;
-
 @interface QLPreviewTransitionAnimatorManager : NSObject <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate> {
-    <QLPreviewTransitionAnimatorDelegate> *_delegate;
 }
-
-@property <QLPreviewTransitionAnimatorDelegate> * delegate;
 
 + (id)sharedManager;
 
 - (id)animatorForShowing:(BOOL)arg1 previewController:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 

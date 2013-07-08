@@ -21,7 +21,7 @@
 - (void)submitPIN;
 - (void)viewDidLayout;
 - (void)populatePostbackDictionary:(id)arg1;
-- (id)pinView;
+- (id)passcodeView;
 - (void)setObjectModel:(id)arg1;
 - (id)objectModel;
 - (void)dealloc;

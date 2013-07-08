@@ -22,7 +22,7 @@
 - (BOOL)acceptsDirectionInput;
 - (void)physicalKeyDownWithEvent:(id)arg1;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
-- (void)setKeyboardAppearance:(int)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
+- (void)setKeyboardAppearance:(int)arg1;
 
 @end

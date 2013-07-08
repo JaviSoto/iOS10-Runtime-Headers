@@ -30,9 +30,9 @@
 @property int matrixLoc;
 
 
-- (void)setMatrix:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg1;
 - (void)setMatrixLoc:(int)arg1;
 - (int)matrixLoc;
+- (void)setMatrix:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg1;
 - (id)textureCubeMap;
 - (BOOL)dirtyUniforms;
 - (void)setDirtyUniforms:(BOOL)arg1;

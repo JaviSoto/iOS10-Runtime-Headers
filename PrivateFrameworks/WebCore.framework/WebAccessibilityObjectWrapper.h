@@ -12,8 +12,9 @@
     unsigned long long m_accessibilityTraitsFromAncestor;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)accessibilityTitleElement;
 - (id)accessibilityHeaderElements;
@@ -64,6 +65,8 @@
 - (void)accessibilitySetPostedNotificationCallback:(int (*)())arg1 withContext:(void*)arg2;
 - (struct CGPoint { float x1; float x2; })accessibilityClickPoint;
 - (int)accessibilityMathLineThickness;
+- (id)accessibilityMathPrescripts;
+- (id)accessibilityMathPostscripts;
 - (BOOL)accessibilityARIALiveRegionIsAtomic;
 - (id)accessibilityARIARelevantStatus;
 - (id)accessibilityARIALiveRegionStatus;
@@ -128,6 +131,8 @@
 - (BOOL)accessibilityCanFuzzyHitTest;
 - (BOOL)_prepareAccessibilityCall;
 - (struct CGPoint { float x1; float x2; })convertPointToScreenSpace:(struct FloatPoint { float x1; float x2; }*)arg1;
+- (id)accessibilityPlatformMathSuperscriptKey;
+- (id)accessibilityPlatformMathSubscriptKey;
 - (BOOL)fileUploadButtonReturnsValueInTitle;
 - (void)accessibilityPostedNotification:(id)arg1;
 - (void)postInvalidStatusChangedNotification;
@@ -158,6 +163,7 @@
 - (BOOL)accessibilityActivate;
 - (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)ariaLandmarkRoleDescription;
 - (void)_accessibilityUnregister;
 - (id)_accessibilityMathEquationRootObject;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3 sawAXElement:(BOOL*)arg4;
@@ -173,6 +179,10 @@
 - (void)_repostLoadCompleteNotification;
 - (void)_repostWebNotificaton:(id)arg1;
 - (void)_repostFocusChangeNotification;
+- (BOOL)_isCheckBox;
+- (void)postScreenChangeNotification;
+- (BOOL)isScreenReaderRunning;
+- (id)screenReaderVersion;
 - (id)_accessibilityScrollAncestor;
 - (id)_accessibilityUserTestingElementBaseType;
 - (id)_accessibilityParentView;
@@ -215,11 +225,5 @@
 - (BOOL)_accessibilityScrollToVisible;
 - (void)_accessibilityDecreaseSelection:(id)arg1;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
-- (BOOL)_isCheckBox;
-- (id)accessibilityMathPostscripts;
-- (id)accessibilityMathPrescripts;
-- (void)postScreenChangeNotification;
-- (BOOL)isScreenReaderRunning;
-- (id)screenReaderVersion;
 
 @end

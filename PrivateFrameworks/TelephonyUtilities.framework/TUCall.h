@@ -34,10 +34,10 @@
 @property BOOL unhold;
 
 
+- (void)disconnect;
 - (id)displayName;
 - (int)service;
 - (id)isoCountryCode;
-- (void)disconnect;
 - (void)setUnhold:(BOOL)arg1;
 - (void)setHold:(BOOL)arg1;
 - (id)callDurationString;
@@ -95,7 +95,7 @@
 - (double)startTime;
 - (id)smallImage;
 - (id)desktopImage;
-- (id)image;
 - (id)_image;
+- (id)image;
 
 @end

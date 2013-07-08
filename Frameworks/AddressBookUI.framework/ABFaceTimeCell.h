@@ -5,6 +5,7 @@
 @class UILabel, <ABPropertyCellDelegate>, NSDictionary, ABPropertyAction, ABTransportButton;
 
 @interface ABFaceTimeCell : ABContactCell  {
+    BOOL _displayConstraintsActive;
     UILabel *_faceTimeLabel;
     ABTransportButton *_transportIcon1;
     ABTransportButton *_transportIcon2;
@@ -21,6 +22,7 @@
 @property(retain) ABPropertyAction * transportAction2;
 @property <ABPropertyCellDelegate> * delegate;
 @property(copy) NSDictionary * labelTextAttributes;
+@property BOOL displayConstraintsActive;
 
 + (BOOL)requiresConstraintBasedLayout;
 
@@ -32,6 +34,8 @@
 - (id)transportIcon2;
 - (id)transportIcon1;
 - (id)faceTimeLabel;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
+- (BOOL)displayConstraintsActive;
 - (void)transportButtonClicked:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (id)labelTextAttributes;

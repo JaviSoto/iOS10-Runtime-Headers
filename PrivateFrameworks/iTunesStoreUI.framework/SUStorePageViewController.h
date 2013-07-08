@@ -61,8 +61,8 @@
 @property(getter=_reloadsWhenCacheExpired,setter=_setReloadsWhenCacheExpired:) BOOL _reloadsWhenCacheExpired;
 @property(getter=_isCacheExpired,readonly) BOOL _cacheExpired;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)sectionSegmentedControl;
 - (id)sectionGroup;
@@ -79,6 +79,7 @@
 - (BOOL)decidePolicyForWebNavigationAction:(id)arg1 request:(id)arg2 decisionListener:(id)arg3;
 - (BOOL)showPreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)hidePreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (BOOL)isShowingPreviewOverlay;
 - (void)menuViewControllerDidCancel:(id)arg1;
 - (void)menuViewController:(id)arg1 didTapButton:(id)arg2;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
@@ -87,7 +88,6 @@
 - (void)_sectionControlAction:(id)arg1;
 - (id)setDisplayedSectionGroup:(id)arg1;
 - (BOOL)_isInTransientViewController;
-- (BOOL)isShowingPreviewOverlay;
 - (void)_navigationMenuButtonAction:(id)arg1;
 - (void)_setRightNavigationItem:(id)arg1 forTag:(int)arg2;
 - (void)_setLeftNavigationItem:(id)arg1 forTag:(int)arg2;

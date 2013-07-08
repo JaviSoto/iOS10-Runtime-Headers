@@ -20,9 +20,11 @@
 
 - (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

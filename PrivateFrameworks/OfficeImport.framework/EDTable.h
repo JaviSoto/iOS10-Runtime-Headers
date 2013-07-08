@@ -71,6 +71,7 @@
 - (void)setShowLastColumn:(bool)arg1;
 - (bool)showLastColumn;
 - (void)setStyleName:(id)arg1;
+- (id)styleName;
 - (id)tableColumns;
 - (void)setStyleIndex:(unsigned int)arg1;
 - (unsigned int)styleIndex;
@@ -78,7 +79,6 @@
 - (unsigned int)totalsRowCount;
 - (unsigned int)headerRowCount;
 - (id)tableRange;
-- (id)styleName;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (void)setStyle:(id)arg1;

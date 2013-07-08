@@ -102,7 +102,6 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (id)initWithError:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setKind:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
@@ -115,5 +114,6 @@
 - (id)buttons;
 - (void)setDefaultButtonIndex:(int)arg1;
 - (int)defaultButtonIndex;
+- (void)setKind:(int)arg1;
 
 @end

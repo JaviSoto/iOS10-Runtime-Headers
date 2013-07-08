@@ -29,13 +29,13 @@
 @property(retain) NSArray * places;
 
 
-- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (void)setPlaceDataSource:(id)arg1;
 - (void)setSearchEnabled:(BOOL)arg1;
 - (void)setSelectionDelegate:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)setSelectedPlace:(id)arg1;
 - (id)initWithPlaceDataSource:(id)arg1 effectiveBundle:(id)arg2;
+- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (id)_placeForRow:(int)arg1;
 - (void)setPlaces:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionForPlaces:(id)arg1;
@@ -56,6 +56,7 @@
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
 - (void)setAccount:(id)arg1;
 - (id)account;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;

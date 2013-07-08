@@ -11,6 +11,7 @@
     float _desiredWidth;
     float _desiredHeight;
     NSString *_kind;
+    int _animateWithSection;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -24,12 +25,15 @@
 @property(getter=isHidden) BOOL hidden;
 @property BOOL shouldPinGlobal;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
+@property int animateWithSection;
 
 + (id)supplementaryMetrics;
 
+- (int)animateWithSection;
 - (BOOL)shouldPinGlobal;
 - (float)desiredWidth;
 - (struct CGSize { float x1; float x2; })sizeForCollectionView:(id)arg1;
+- (void)setAnimateWithSection:(int)arg1;
 - (void)setDesiredWidth:(float)arg1;
 - (BOOL)shouldPin;
 - (float)desiredHeight;
@@ -39,7 +43,6 @@
 - (id)localDescription;
 - (void)setShouldPin:(BOOL)arg1;
 - (void)setDesiredHeight:(float)arg1;
-- (void)setKind:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
 - (id)init;
@@ -47,5 +50,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)kind;
+- (void)setKind:(id)arg1;
 
 @end

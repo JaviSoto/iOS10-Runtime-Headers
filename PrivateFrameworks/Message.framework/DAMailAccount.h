@@ -149,13 +149,13 @@
 - (id)accountPropertyForKey:(id)arg1;
 - (id)displayName;
 - (BOOL)isEnabledForDataclass:(id)arg1;
-- (id)username;
 - (BOOL)isActive;
+- (id)username;
+- (id)uniqueId;
 - (id)hostname;
 - (void)invalidate;
 - (BOOL)sourceIsManaged;
 - (void)dealloc;
 - (id)identifier;
-- (id)uniqueId;
 
 @end

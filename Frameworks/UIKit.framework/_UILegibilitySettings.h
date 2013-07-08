@@ -10,12 +10,10 @@
     UIColor *_primaryColor;
     UIColor *_secondaryColor;
     UIColor *_shadowColor;
-    NSString *_shadowCompositingFilterName;
     float _shadowRadius;
     float _shadowAlpha;
-    float _outerGlowSize;
-    float _outerGlowAlpha;
     float _imageOutset;
+    NSString *_shadowCompositingFilterName;
 }
 
 @property int style;
@@ -23,12 +21,10 @@
 @property(retain) UIColor * primaryColor;
 @property(retain) UIColor * secondaryColor;
 @property(retain) UIColor * shadowColor;
-@property(copy) NSString * shadowCompositingFilterName;
 @property float shadowRadius;
 @property float shadowAlpha;
-@property float outerGlowSize;
-@property float outerGlowAlpha;
 @property float imageOutset;
+@property(copy) NSString * shadowCompositingFilterName;
 
 + (id)sharedInstanceForStyle:(int)arg1;
 
@@ -40,21 +36,18 @@
 - (int)style;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (float)imageOutset;
-- (float)outerGlowAlpha;
-- (float)outerGlowSize;
-- (float)shadowAlpha;
 - (id)shadowCompositingFilterName;
+- (float)imageOutset;
+- (float)shadowAlpha;
 - (id)secondaryColor;
+- (id)initWithStyle:(int)arg1 primaryColor:(id)arg2 secondaryColor:(id)arg3 shadowColor:(id)arg4;
 - (id)initWithContentColor:(id)arg1;
 - (id)primaryColor;
-- (void)setSecondaryColor:(id)arg1;
-- (void)setPrimaryColor:(id)arg1;
 - (void)setShadowCompositingFilterName:(id)arg1;
 - (void)setImageOutset:(float)arg1;
-- (void)setOuterGlowAlpha:(float)arg1;
-- (void)setOuterGlowSize:(float)arg1;
 - (void)setShadowAlpha:(float)arg1;
+- (void)setSecondaryColor:(id)arg1;
+- (void)setPrimaryColor:(id)arg1;
 - (void)setPropertiesForStyle:(int)arg1;
 - (id)initWithStyle:(int)arg1 contentColor:(id)arg2;
 - (id)contentColor;

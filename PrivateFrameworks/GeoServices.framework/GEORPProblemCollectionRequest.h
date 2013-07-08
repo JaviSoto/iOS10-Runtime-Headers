@@ -29,10 +29,6 @@
 @property(retain) NSData * devicePushToken;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)devicePushToken;
 - (BOOL)hasDevicePushToken;
 - (id)osRelease;
@@ -56,6 +52,10 @@
 - (unsigned int)requestElementsCount;
 - (void)setRequestElements:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

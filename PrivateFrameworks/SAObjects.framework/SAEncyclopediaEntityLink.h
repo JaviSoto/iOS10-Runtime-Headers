@@ -17,8 +17,8 @@
 
 - (id)encodedClassName;
 - (void)setDescription:(id)arg1;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)name;
 - (id)description;
 - (id)link;

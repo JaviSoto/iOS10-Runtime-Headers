@@ -83,9 +83,9 @@
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (id)currentKeyplane;
 - (BOOL)performReturnAction;
-- (id)taskQueue;
 - (id)activationIndicatorView;
 - (BOOL)shouldShowIndicator;
+- (id)taskQueue;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (void)deactivateActiveKeys;
@@ -93,10 +93,10 @@
 - (void)clearUnusedObjects:(BOOL)arg1;
 - (id)candidateList;
 - (void)setRenderConfig:(id)arg1;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (int)orientation;
 - (void)setShift:(BOOL)arg1;

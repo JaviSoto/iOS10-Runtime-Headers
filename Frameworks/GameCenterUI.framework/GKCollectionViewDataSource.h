@@ -68,6 +68,7 @@
 - (BOOL)item:(id)arg1 matchesSearchTerms:(id)arg2 inSection:(int)arg3;
 - (void)resetViewFactories;
 - (void)collectionViewWillBecomeActive:(id)arg1;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)indexPathsForItem:(id)arg1;
 - (void)collectionViewDidBecomeInactive:(id)arg1;
 - (void)notifyItemsRemovedAtIndexPaths:(id)arg1;
@@ -77,7 +78,6 @@
 - (void)registerSupplementaryViewKind:(id)arg1 withFactory:(id)arg2;
 - (void)setMetrics:(id)arg1 forSection:(int)arg2;
 - (id)dataSourceMetrics;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)configureCollectionView:(id)arg1;

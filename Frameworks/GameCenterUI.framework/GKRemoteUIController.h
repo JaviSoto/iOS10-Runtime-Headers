@@ -14,6 +14,7 @@
     BOOL _accountChanged;
     BOOL _previousUseCustomBackButtonActionValue;
     BOOL _loadingInitialUI;
+    BOOL _complete;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -66,6 +67,7 @@
 @property(copy) id loadHandler;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 @property int layoutStyle;
+@property BOOL complete;
 
 + (id)remoteUIController;
 
@@ -80,6 +82,7 @@
 - (id)objectModel:(id)arg1 tableHeaderViewForAttributes:(id)arg2 page:(id)arg3;
 - (Class)objectModel:(id)arg1 customFooterClassForSection:(id)arg2;
 - (Class)objectModel:(id)arg1 customHeaderClassForSection:(id)arg2;
+- (void)objectModel:(id)arg1 configureTableSection:(id)arg2 page:(id)arg3;
 - (void)objectModel:(id)arg1 configureTableRow:(id)arg2 page:(id)arg3;
 - (void)objectModel:(id)arg1 configureTableView:(id)arg2 page:(id)arg3;
 - (void)objectModelPressedBack:(id)arg1;
@@ -114,7 +117,6 @@
 - (void)presentInParentNavigationController:(id)arg1 animated:(BOOL)arg2;
 - (void)setPresentedRemoteUIController:(id)arg1;
 - (id)presentedRemoteUIController;
-- (void)fireCompletionHandler;
 - (int)indexOfVisiblePage;
 - (id)staticViewControllers;
 - (void)updateAccountAndMarkComplete:(BOOL)arg1 completionHandler:(id)arg2;
@@ -123,6 +125,7 @@
 - (id)loader;
 - (void)loadURL:(id)arg1 postData:(id)arg2;
 - (id)postbackDataForDictionary:(id)arg1;
+- (void)fireCompletionHandler;
 - (id)loadHandler;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (id)postBodyForInitialLoad;
@@ -150,6 +153,8 @@
 - (void)dealloc;
 - (void)setError:(id)arg1;
 - (id)error;
+- (BOOL)complete;
+- (void)setComplete:(BOOL)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)viewControllers;

@@ -33,6 +33,7 @@
 + (id)sharedInstance;
 
 - (id)storeContentLanguage;
+- (id)defaultPNGNameForSuspend;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)prepareForSuspend;
@@ -60,7 +61,6 @@
 - (void)_dialogDidFinishNotification:(id)arg1;
 - (void)_cancelSuspendAfterDialogsDismissed;
 - (id)topNavigationController;
-- (id)defaultPNGNameForSuspend;
 - (void)_handleFinishedLoadSectionsOperation:(id)arg1;
 - (void)_presentSectionFetchUI;
 - (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;

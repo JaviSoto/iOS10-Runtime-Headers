@@ -16,7 +16,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (float)heightForHeaderInTableView:(id)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (id)containerView;
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

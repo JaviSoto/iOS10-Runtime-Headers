@@ -17,13 +17,13 @@
 + (id)_disambiguated_due_to_CIImage_colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)clearColor;
 + (id)whiteColor;
-+ (id)_disambiguated_due_to_CIImage_colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
-+ (id)redColor;
 + (id)brownColor;
 + (id)_markedTextBackgroundColor;
++ (id)_disambiguated_due_to_CIImage_colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)blueColor;
++ (id)redColor;
++ (id)colorWithPatternImage:(id)arg1;
 + (id)blackColor;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
@@ -32,6 +32,9 @@
 + (id)_translucentPaperTextureColor;
 + (id)noContentDarkGradientBackgroundColor;
 + (id)noContentLightGradientBackgroundColor;
++ (id)_systemMidGrayTintColor;
++ (id)_barStyleBlackHairlineShadowColor;
++ (id)_barHairlineShadowColor;
 + (id)_systemDestructiveTintColor;
 + (id)_systemInteractionTintColor;
 + (id)systemMidGrayColor;
@@ -86,11 +89,11 @@
 + (id)tableSeparatorLightColor;
 + (id)groupTableViewBackgroundColor;
 + (id)tableBackgroundColor;
-+ (id)_barHairlineShadowColor;
 + (id)_grayColorForFontSize:(float)arg1;
 + (id)_systemColorWithName:(id)arg1;
 + (id)systemBlueColor;
 + (id)_alternateSystemInteractionTintColor;
++ (id)tableCellDefaultSelectionTintColor;
 + (id)purpleColor;
 + (id)orangeColor;
 + (id)yellowColor;
@@ -129,9 +132,6 @@
 + (id)cardCellSeparatorColor;
 + (id)cardCellBackgroundColor;
 + (id)_remoteUI_colorWithString:(id)arg1;
-+ (id)_mapkit_userLocationAccuracyRingFillColor;
-+ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
-+ (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)tangierScrollViewTexturedBackgroundColor;
 + (id)tableViewCellDarkBlueTextColor;
 + (id)transparentGrayCheckerboardColor;
@@ -141,15 +141,15 @@
 + (id)colorWithPKColor:(id)arg1;
 
 - (void)setStroke;
-- (struct CGColor { }*)CGColor;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithCIColor:(id)arg1;
 - (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;
 - (float)alphaComponent;
-- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)setFill;
+- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (struct CGColor { }*)CGColor;
 - (void)set;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -174,7 +174,6 @@
 - (id)tpImageFromColor;
 - (id)colorByAlteringOpacityToPercentage:(float)arg1;
 - (id)darkerColorByPercentage:(float)arg1;
-- (BOOL)_mapkit_isWhite;
 - (id)initWithStyleString:(id)arg1;
 
 @end

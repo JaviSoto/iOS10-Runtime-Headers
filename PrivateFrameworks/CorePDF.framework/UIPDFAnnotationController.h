@@ -94,8 +94,8 @@
 - (void)layoutAnnotationViews:(id)arg1;
 - (void)setDrawingSurface:(id)arg1;
 - (id)initWithPageView:(id)arg1;
-- (id)marginNoteImage:(id)arg1;
 - (void)addAnnotation:(id)arg1;
+- (id)marginNoteImage:(id)arg1;
 - (void)setNeedsDisplay;
 - (id)init;
 - (void)setDelegate:(id)arg1;

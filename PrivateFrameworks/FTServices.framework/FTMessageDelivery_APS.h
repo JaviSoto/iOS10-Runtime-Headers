@@ -41,6 +41,7 @@
 - (void)_noteMessageSent:(id)arg1 ftMessage:(id)arg2 body:(id)arg3;
 - (id)_apsMessageForMessage:(id)arg1 body:(id)arg2;
 - (void)_messageSendTimedOut:(id)arg1;
+- (void)_messageACKTimedOut:(id)arg1;
 - (void)_clearMapForMessageID:(id)arg1;
 - (void)_setMapForMessage:(id)arg1 apsMessage:(id)arg2 messageBody:(id)arg3 timeoutTime:(double)arg4 timeoutSelector:(SEL)arg5 retries:(id)arg6;
 - (void)_messageNeedsRetry:(id)arg1;

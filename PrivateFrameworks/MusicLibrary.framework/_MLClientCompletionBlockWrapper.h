@@ -22,20 +22,29 @@
   /* Error parsing encoded ivar type info: @? */
     id _queryCompletionHandler;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _progressCompletionHandler;
+
 }
 
 @property(copy) id libraryCompletionHandler;
 @property(copy) id transactionCompletionHandler;
 @property(copy) id queryCompletionHandler;
+@property(copy) id progressCompletionHandler;
 
 + (id)emptyClientCompletionBlock;
++ (id)clientCompletionBlockWithImportStatusHandler:(id)arg1;
 + (id)clientCompletionBlockWithQueryResultHandler:(id)arg1;
 + (id)clientCompletionBlockWithTransactionHandler:(id)arg1;
 + (id)clientCompletionBlockWithLibraryHandler:(id)arg1;
 
+- (void)setProgressCompletionHandler:(id)arg1;
 - (void)setQueryCompletionHandler:(id)arg1;
 - (void)setTransactionCompletionHandler:(id)arg1;
 - (void)setLibraryCompletionHandler:(id)arg1;
+- (id)progressCompletionHandler;
 - (id)queryCompletionHandler;
 - (id)transactionCompletionHandler;
 - (id)libraryCompletionHandler;

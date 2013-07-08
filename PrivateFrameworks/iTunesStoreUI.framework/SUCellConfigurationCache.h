@@ -11,8 +11,8 @@
 
 @property(retain) id cellContext;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)setCellContext:(id)arg1;

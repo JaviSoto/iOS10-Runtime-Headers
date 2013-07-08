@@ -8,8 +8,8 @@
 
 - (id)monogramBackgroundColor;
 - (id)textOnDarkBackgroundColor;
-- (id)windowBackgroundColor;
 - (id)floatingHeaderViewBackgroundColor;
 - (id)viewBackgroundColor;
+- (id)windowBackgroundColor;
 
 @end

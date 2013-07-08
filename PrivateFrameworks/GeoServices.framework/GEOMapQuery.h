@@ -74,8 +74,6 @@
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasClientImgMaxHeight:(BOOL)arg1;
@@ -132,6 +130,8 @@
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setUserLocation:(id)arg1;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (int)requestType;

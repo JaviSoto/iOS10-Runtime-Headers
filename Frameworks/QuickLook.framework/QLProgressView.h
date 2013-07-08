@@ -2,16 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class UILabel, <QLProgressViewDelegate>, UIActivityIndicatorView, NSString;
+@class UILabel, NSString, UIActivityIndicatorView;
 
 @interface QLProgressView : UIView  {
-    <QLProgressViewDelegate> *_delegate;
     int _backgroundColorType;
     UIActivityIndicatorView *_progressIndicator;
     UILabel *_loadingTextLabel;
 }
 
-@property <QLProgressViewDelegate> * delegate;
 @property(copy) NSString * loadingText;
 @property int backgroundColorType;
 
@@ -21,10 +19,7 @@
 - (int)backgroundColorType;
 - (void)setBackgroundColorType:(int)arg1;
 - (id)init;
-- (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)_update;
 

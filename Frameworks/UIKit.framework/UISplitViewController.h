@@ -71,8 +71,8 @@
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_commonInit;
 - (void)setDelegate:(id)arg1;

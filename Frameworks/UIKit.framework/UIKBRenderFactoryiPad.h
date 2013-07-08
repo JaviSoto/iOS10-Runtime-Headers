@@ -8,6 +8,8 @@
 
 - (float)dualStringKeyMiddleMargin;
 - (struct CGPoint { float x1; float x2; })dualStringKeyOffset;
+- (float)defaultVariantSizeThreshold;
+- (struct CGSize { float x1; float x2; })defaultVariantGeometrySize;
 - (float)facemarkKeyFontSize;
 - (float)emailDotKeyFontSize;
 - (float)smallKanaKeyFontSize;
@@ -22,11 +24,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shiftKeySymbolFrame;
 - (float)symbolFrameInset;
 - (float)keyInsetBottom;
-- (float)keyCornerRadius;
 - (float)_row4ControlSegmentWidth;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
-- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
+- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
@@ -45,6 +47,7 @@
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
+- (float)keyCornerRadius;
 - (id)thinKeycapsFontName;
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)lightKeycapsFontName;

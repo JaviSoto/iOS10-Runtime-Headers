@@ -177,6 +177,7 @@
 - (id)title;
 - (id)attachments;
 - (id)startDate;
+- (id)uniqueId;
 - (BOOL)refresh;
 - (int)status;
 - (id)init;
@@ -185,7 +186,6 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)uniqueId;
 - (double)duration;
 
 @end

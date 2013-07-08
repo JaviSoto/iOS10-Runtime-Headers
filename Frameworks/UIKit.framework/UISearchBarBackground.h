@@ -9,6 +9,7 @@
     NSMutableDictionary *_customBackgroundImages;
     NSMutableDictionary *_generatedBackgroundImages;
     int _barPosition;
+    unsigned int _searchBarStyle;
     unsigned int _barStyle : 3;
     unsigned int _barTranslucence : 3;
     unsigned int _usesEmbeddedAppearance : 1;
@@ -18,6 +19,7 @@
 }
 
 @property int barStyle;
+@property unsigned int searchBarStyle;
 @property(retain) UIColor * barTintColor;
 @property(getter=isTranslucent) BOOL translucent;
 @property BOOL usesEmbeddedAppearance;
@@ -34,13 +36,14 @@
 - (id)backgroundImagePrompt;
 - (id)_createBackgroundImageForBarStyle:(int)arg1 alpha:(float)arg2;
 - (void)_updateBackgroundImageIfPossible;
-- (void)_setActingAsNavBar:(BOOL)arg1 isTopBar:(BOOL)arg2;
+- (unsigned int)searchBarStyle;
 - (BOOL)usesEmbeddedAppearance;
+- (void)setSearchBarStyle:(unsigned int)arg1;
 - (id)_backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
 - (void)_setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)setUsesContiguousBarBackground:(BOOL)arg1;
 - (BOOL)_hasCustomBackgroundImage;
-- (void)_setBarHasController:(BOOL)arg1;
+- (void)_setBehavesAsIfSearchBarHasController:(BOOL)arg1;
 - (void)setUsesEmbeddedAppearance:(BOOL)arg1;
 - (id)barTintColor;
 - (int)_barPosition;

@@ -34,6 +34,7 @@
 @property unsigned int impressionThreshold;
 @property(getter=isPremiumPlacement) BOOL premiumPlacement;
 @property(getter=isShared) BOOL shared;
+@property(getter=isSharingEnabled) BOOL sharingEnabled;
 @property(getter=isSubscribed) BOOL subscribed;
 @property int subscriberCount;
 @property(copy) NSString * shareToken;
@@ -72,6 +73,7 @@
 - (void)setSkipFrequency:(int)arg1;
 - (void)setSkipEnabled:(BOOL)arg1;
 - (void)setShareToken:(id)arg1;
+- (void)setSharingEnabled:(BOOL)arg1;
 - (void)setShared:(BOOL)arg1;
 - (void)setSeedTracks:(id)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
@@ -87,6 +89,7 @@
 - (void)setAdData:(id)arg1;
 - (void)setAdamID:(long long)arg1;
 - (BOOL)likesEnabled;
+- (BOOL)isSharingEnabled;
 - (BOOL)isShared;
 - (BOOL)isPreview;
 - (BOOL)isPremiumPlacement;

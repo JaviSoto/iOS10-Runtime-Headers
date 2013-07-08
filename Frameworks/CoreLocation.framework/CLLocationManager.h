@@ -35,8 +35,6 @@
 
 + (BOOL)isRangingAvailable;
 + (int)authorizationStatusForBundle:(id)arg1;
-+ (BOOL)isMonitoringAvailableForClass:(Class)arg1;
-+ (BOOL)mapCorrectionAvailable;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (void)setEntityAuthorized:(BOOL)arg1 forLocationDictionary:(id)arg2;
 + (BOOL)isEntityAuthorizedForLocationDictionary:(id)arg1;
@@ -58,8 +56,10 @@
 + (int)regionMonitoringAuthorizationStatusForBundle:(id)arg1;
 + (int)regionMonitoringAuthorizationStatusForBundleIdentifier:(id)arg1;
 + (BOOL)deferredLocationUpdatesAvailable;
++ (BOOL)mapCorrectionAvailable;
 + (BOOL)regionMonitoringEnabled;
 + (BOOL)regionMonitoringAvailable;
++ (BOOL)isMonitoringAvailableForClass:(Class)arg1;
 + (BOOL)significantLocationChangeMonitoringAvailable;
 + (void)setLocationServicesEnabled:(BOOL)arg1;
 + (BOOL)locationServicesEnabled:(BOOL)arg1;
@@ -71,25 +71,21 @@
 + (int)authorizationStatus;
 + (id)sharedManager;
 
+- (void)setActivityType:(int)arg1;
 - (struct __CLClient { }*)internalClient;
 - (BOOL)locationServicesApproved;
+- (void)setHeadingOrientation:(int)arg1;
 - (void)setHeadingFilter:(double)arg1;
-- (void)dismissHeadingCalibrationDisplay;
-- (int)headingOrientation;
-- (double)distanceFilter;
-- (void)setActivityType:(int)arg1;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (double)desiredAccuracy;
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (id)initWithEffectiveBundle:(id)arg1;
-- (double)expectedGpsUpdateInterval;
-- (void)setHeadingOrientation:(int)arg1;
+- (double)desiredAccuracy;
 - (void)startUpdatingLocationWithPrompt;
 - (void)stopMonitoringForRegion:(id)arg1;
 - (id)monitoredRegions;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 - (void)registerAsLocationClient;
+- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
+- (BOOL)isLocationServicesPreferencesDialogEnabled;
 - (void)setPersistentMonitoringEnabled:(BOOL)arg1;
 - (BOOL)isPersistentMonitoringEnabled;
 - (id)technologiesInUse;
@@ -107,6 +103,8 @@
 - (void)startTechStatusUpdates;
 - (void)stopAppStatusUpdates;
 - (void)startAppStatusUpdates;
+- (void)dismissHeadingCalibrationDisplay;
+- (int)headingOrientation;
 - (double)headingFilter;
 - (void)historicLocationsFromDate:(id)arg1 forInterval:(double)arg2;
 - (void)disallowDeferredLocationUpdates;
@@ -118,8 +116,10 @@
 - (double)bestAccuracy;
 - (BOOL)supportInfo;
 - (void)setSupportInfo:(BOOL)arg1;
+- (double)expectedGpsUpdateInterval;
 - (BOOL)locationServicesAvailable;
 - (BOOL)pausesLocationUpdatesAutomatically;
+- (double)distanceFilter;
 - (void)pauseLocationUpdates:(BOOL)arg1;
 - (void)resumeLocationUpdates;
 - (void)onClientEventInterrupted:(id)arg1;
@@ -145,6 +145,7 @@
 - (id)rangedRegions;
 - (void)setPausesLocationUpdatesAutomatically:(BOOL)arg1;
 - (void)onClientEvent:(int)arg1 supportInfo:(id)arg2;
+- (id)location;
 - (id)heading;
 - (void)startUpdatingHeading;
 - (BOOL)headingAvailable;
@@ -153,7 +154,6 @@
 - (void)startUpdatingLocation;
 - (BOOL)locationServicesEnabled;
 - (void)stopUpdatingLocation;
-- (id)location;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

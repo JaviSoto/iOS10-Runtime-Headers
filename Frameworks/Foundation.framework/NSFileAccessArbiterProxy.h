@@ -15,6 +15,7 @@
 
 - (void)finalize;
 - (void)dealloc;
+- (void)_makeProvider:(id)arg1 observePresentationChangeOfKind:(id)arg2 withPresenterID:(id)arg3 url:(id)arg4 newURL:(id)arg5;
 - (void)_makeProvider:(id)arg1 cancelProvidingItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3;
 - (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3 completionHandler:(id)arg4;
 - (void)_makePresenter:(id)arg1 setLastPresentedItemEventIdentifier:(unsigned long long)arg2;
@@ -28,9 +29,9 @@
 - (void)_makePresenter:(id)arg1 reacquireFromReadingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned int)arg3 subitemURL:(id)arg4 completionHandler:(id)arg5;
 - (void)_makePresenter:(id)arg1 relinquishToReadingClaimWithID:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
+- (id)_writeRelinquishmentForPresenter:(id)arg1;
 - (void)_makePresenter:(id)arg1 accommodateDisconnectionWithCompletionHandler:(id)arg2;
 - (void)_makePresenter:(id)arg1 accommodateDeletionWithSubitemURL:(id)arg2 completionHandler:(id)arg3;
-- (id)_writeRelinquishmentForPresenter:(id)arg1;
 - (void)_makePresenter:(id)arg1 relinquishToAccessClaimWithID:(id)arg2 ifNecessaryUsingSelector:(SEL)arg3 recordingRelinquishment:(id)arg4 continuer:(id)arg5;
 - (id)_readRelinquishmentForPresenter:(id)arg1;
 - (void)_makePresenter:(id)arg1 saveChangesWithCompletionHandler:(id)arg2;

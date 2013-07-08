@@ -27,15 +27,15 @@
 - (void)setWifidBootTimeDiff:(double)arg1;
 - (double)wifidBootTimeDiff;
 - (BOOL)hasWifidBootTimeDiff;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setPid:(unsigned int)arg1;
+- (unsigned long long)timestamp;
 - (unsigned int)pid;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (unsigned long long)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

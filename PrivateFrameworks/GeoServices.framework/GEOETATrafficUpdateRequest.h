@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORouteAttributes, GEOLocation, NSMutableArray, GEOClientCapabilities;
+@class GEORouteAttributes, GEOLocation, NSData, NSMutableArray, GEOClientCapabilities;
 
 @interface GEOETATrafficUpdateRequest : PBRequest  {
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
     NSMutableArray *_destinationWaypoints;
+    NSData *_directionsResponseID;
     GEORouteAttributes *_routeAttributes;
     NSMutableArray *_routes;
     NSMutableArray *_serviceTags;
@@ -27,13 +28,11 @@
 @property(retain) NSMutableArray * routes;
 @property(readonly) BOOL hasClientCapabilities;
 @property(retain) GEOClientCapabilities * clientCapabilities;
+@property(readonly) BOOL hasDirectionsResponseID;
+@property(retain) NSData * directionsResponseID;
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)destinationWaypoints;
 - (void)setHasIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (id)destinationWaypointAtIndex:(unsigned int)arg1;
@@ -45,10 +44,13 @@
 - (void)addDestinationWaypoint:(id)arg1;
 - (void)setDestinationWaypoints:(id)arg1;
 - (id)routes;
+- (id)directionsResponseID;
+- (BOOL)hasDirectionsResponseID;
 - (id)routeAtIndex:(unsigned int)arg1;
 - (void)clearRoutes;
 - (unsigned int)routesCount;
 - (void)addRoute:(id)arg1;
+- (void)setDirectionsResponseID:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (id)serviceTags;
 - (id)serviceTagAtIndex:(unsigned int)arg1;
@@ -66,6 +68,10 @@
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

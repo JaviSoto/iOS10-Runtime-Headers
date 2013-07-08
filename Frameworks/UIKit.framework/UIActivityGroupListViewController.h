@@ -28,8 +28,8 @@
 @property(retain) UIControl * dimView;
 @property(retain) UIActivityGroupView * groupView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)contentView;
 - (void)setContentView:(id)arg1;

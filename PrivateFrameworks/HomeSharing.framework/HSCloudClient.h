@@ -32,7 +32,6 @@
 - (void)_serverUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
 - (void)uploadItemProperties;
-- (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
 - (void)resetConfiguration:(id)arg1;
 - (void)loadArtworkInfoForSagaIDs:(id)arg1 completionHandler:(id)arg2;
@@ -58,7 +57,9 @@
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (BOOL)isCellularDataRestricted;
+- (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -70,7 +71,6 @@
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)canShowCloudDownloadButtons;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;

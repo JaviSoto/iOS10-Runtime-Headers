@@ -18,12 +18,12 @@
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDOMElement:(id)arg1;
 
-- (void)setProperty:(id)arg1 value:(id)arg2;
 - (id)initWithDOMElement:(id)arg1;
 - (id)imageRepresentation;
 - (id)newImageView;
 - (id)newLabelForElementWithText:(id)arg1;
 - (id)element;
+- (void)setProperty:(id)arg1 value:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frame;
 - (id)webView;

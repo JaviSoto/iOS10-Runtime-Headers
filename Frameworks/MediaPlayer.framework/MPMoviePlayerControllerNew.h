@@ -59,7 +59,6 @@
 
 - (void)_setMovieTitle:(id)arg1;
 - (void)_setMovieSubtitle:(id)arg1;
-- (id)_navigationBar;
 - (id)timedMetadataForKey:(id)arg1;
 - (void)cancelAllThumbnailImageRequests;
 - (id)thumbnailImageAtTime:(double)arg1 timeOption:(int)arg2;
@@ -86,6 +85,7 @@
 - (id)_resolvedContentURL;
 - (double)_playableStartTime;
 - (double)_playableEndTime;
+- (id)_navigationBar;
 - (id)_movieTitle;
 - (id)_movieSubtitle;
 - (BOOL)_isTVOutEnabled;

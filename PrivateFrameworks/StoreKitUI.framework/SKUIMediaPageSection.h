@@ -20,7 +20,6 @@
 - (id)cellForIndexPath:(id)arg1;
 - (void)mediaView:(id)arg1 playbackStateDidChange:(int)arg2;
 - (void)_loadImageWithReason:(int)arg1;
-- (id)_metricsLocationID;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (void)prefetchResourcesWithReason:(int)arg1;

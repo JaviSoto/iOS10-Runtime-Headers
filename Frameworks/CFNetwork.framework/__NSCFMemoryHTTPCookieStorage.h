@@ -3,6 +3,7 @@
  */
 
 @interface __NSCFMemoryHTTPCookieStorage : NSObject  {
+    id _internal;
 }
 
 + (void)initialize;

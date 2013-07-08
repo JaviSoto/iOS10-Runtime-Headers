@@ -42,8 +42,8 @@
 - (id)readerConnection;
 - (BOOL)closeDatabaseConnection:(id)arg1;
 - (id)initWithDatabasePath:(id)arg1 maxReaders:(unsigned int)arg2 maxWriters:(unsigned int)arg3;
-- (void)setUseDistantWriterConnections:(BOOL)arg1;
 - (id)_connectionForWriting:(BOOL)arg1 useThreadConnection:(BOOL)arg2;
+- (void)setUseDistantWriterConnections:(BOOL)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
 - (id)databasePath;
 - (void)closeAllConnections;

@@ -18,7 +18,6 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)setRemoveOnDiskRepresentationOnDealloc:(BOOL)arg1;
 - (BOOL)removeOnDiskRepresentationOnDealloc;
 - (id)localizedDescriptionForDiff:(id)arg1;
 - (id)diff:(id)arg1;
@@ -39,6 +38,8 @@
 - (id)loadContentFromPassURL:(id)arg1;
 - (void)checkRevocationStatusForPassAtURL:(id)arg1 completion:(id)arg2;
 - (BOOL)getResourceValue:(id*)arg1 forKey:(id)arg2 forPassAtURL:(id)arg3 error:(id*)arg4;
+- (void)setRemoveOnDiskRepresentationOnDealloc:(BOOL)arg1;
+- (void)_cleanupOldPassCaches;
 - (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2;
 - (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2 error:(id*)arg3;
 - (id)_groupingIDFromPassDictionary:(id)arg1;

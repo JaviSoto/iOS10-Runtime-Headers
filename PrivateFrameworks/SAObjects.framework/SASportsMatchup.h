@@ -84,9 +84,9 @@
 - (id)encodedClassName;
 - (void)setTimeRemaining:(id)arg1;
 - (id)timeRemaining;
+- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (id)location;
 - (id)status;
 - (void)setLocation:(id)arg1;
 - (void)setStatus:(id)arg1;

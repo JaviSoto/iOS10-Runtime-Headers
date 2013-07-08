@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSOperationQueue, SFAirDropActivityViewController, UIActivityGroupListViewController, UIActivity, NSString, UIViewController, NSArray;
+@class NSOperationQueue, UIActivityGroupListViewController, SFAirDropActivityViewController, <UIActivityViewControllerDelegate>, UIActivity, UIViewController, NSString, NSArray;
 
 @interface UIActivityViewController : UIViewController <UIViewControllerRestoration, SFAirDropActivityViewControllerDelegate> {
     BOOL _useBlackPopoverStyle;
@@ -29,6 +29,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _preCompletionHandler;
 
+    <UIActivityViewControllerDelegate> *_airDropDelegate;
     NSArray *_activityItems;
     NSArray *_applicationActivities;
     UIActivityGroupListViewController *_activityGroupListViewController;
@@ -55,6 +56,7 @@
 @property(retain) NSString * mailAutosaveIdentifier;
 @property(readonly) BOOL sourceIsManaged;
 @property(copy) id preCompletionHandler;
+@property <UIActivityViewControllerDelegate> * airDropDelegate;
 @property(copy) NSArray * activityItems;
 @property(copy) NSArray * applicationActivities;
 @property(retain) UIActivityGroupListViewController * activityGroupListViewController;
@@ -79,8 +81,8 @@
 + (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setSubject:(id)arg1;
 - (id)subject;
@@ -98,6 +100,8 @@
 - (void)setActivityGroupListViewController:(id)arg1;
 - (id)activityGroupListViewController;
 - (id)applicationActivities;
+- (void)setAirDropDelegate:(id)arg1;
+- (id)airDropDelegate;
 - (id)preCompletionHandler;
 - (void)setMailAutosaveIdentifier:(id)arg1;
 - (void)setAllowsEmbedding:(BOOL)arg1;
@@ -111,6 +115,7 @@
 - (void)_mailAutosaveWithHandler:(id)arg1;
 - (float)_displayHeight;
 - (void)_updateActivityItems:(id)arg1;
+- (void)airDropActivityDidSuccessfullyStartTransfer;
 - (void)airDropActivityDidSuccessfullyCompleteTransfer;
 - (void)airDropActivityRequestingSharedItemsWithCompletionHandler:(id)arg1;
 - (id)activityItemProviderOperationQueue;

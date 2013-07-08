@@ -20,8 +20,8 @@
 - (id)encodedClassName;
 - (id)commands;
 - (void)setCommands:(id)arg1;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
 - (id)groupIdentifier;

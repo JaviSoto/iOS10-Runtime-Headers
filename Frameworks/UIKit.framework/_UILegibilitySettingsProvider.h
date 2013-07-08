@@ -6,6 +6,8 @@
 
 @interface _UILegibilitySettingsProvider : NSObject  {
     BOOL _accumulatorIsPrimed;
+    float _mostRecentSaturation;
+    float _accumulatedSaturation;
     float _mostRecentBrightness;
     float _accumulatedBrightness;
     UIColor *_contentColor;
@@ -13,6 +15,8 @@
     double _nextChangeBarrier;
 }
 
+@property float mostRecentSaturation;
+@property float accumulatedSaturation;
 @property float mostRecentBrightness;
 @property float accumulatedBrightness;
 @property(retain) UIColor * contentColor;
@@ -24,16 +28,20 @@
 
 - (int)currentStyle;
 - (float)mostRecentBrightness;
+- (void)setMostRecentSaturation:(float)arg1;
+- (float)mostRecentSaturation;
 - (id)contentColor;
 - (double)nextChangeBarrier;
 - (void)setNextChangeBarrier:(double)arg1;
 - (void)setCurrentStyle:(int)arg1;
 - (void)setAccumulatorIsPrimed:(BOOL)arg1;
 - (void)setAccumulatedBrightness:(float)arg1;
+- (void)setAccumulatedSaturation:(float)arg1;
 - (BOOL)accumulatorIsPrimed;
 - (void)setMostRecentBrightness:(float)arg1;
 - (void)setContentColor:(id)arg1;
 - (float)accumulatedBrightness;
+- (float)accumulatedSaturation;
 - (BOOL)accumulateChangesToContentColor:(id)arg1;
 - (void)clearContentColorAccumulator;
 - (id)settings;

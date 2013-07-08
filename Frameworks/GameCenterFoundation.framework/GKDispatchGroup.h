@@ -31,8 +31,8 @@
 - (BOOL)isLoggingEnabled;
 - (void)notifyOnQueue:(id)arg1 block:(id)arg2;
 - (void)notifyOnMainQueueWithBlock:(id)arg1;
-- (id)result;
 - (id)_values;
+- (id)result;
 - (void)setResult:(id)arg1;
 - (id)init;
 - (void)setGroup:(id)arg1;

@@ -100,7 +100,9 @@
 - (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
 - (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
 - (void)_setRenderConfig:(id)arg1;
-- (BOOL)_isTransitioning;
 - (void)_updateBackgroundColor;
+- (id)tintColor;
+- (BOOL)_isTransitioning;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

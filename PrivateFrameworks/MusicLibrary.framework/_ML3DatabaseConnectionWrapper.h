@@ -7,14 +7,18 @@
 @interface _ML3DatabaseConnectionWrapper : NSObject  {
     ML3DatabaseConnection *_connection;
     NSThread *_owningThread;
+    NSThread *_borrowingThread;
     unsigned int _useCount;
 }
 
 @property(retain) ML3DatabaseConnection * connection;
 @property(retain) NSThread * owningThread;
+@property(retain) NSThread * borrowingThread;
 @property unsigned int useCount;
 
 
+- (void)setBorrowingThread:(id)arg1;
+- (id)borrowingThread;
 - (void)setOwningThread:(id)arg1;
 - (id)owningThread;
 - (void)setUseCount:(unsigned int)arg1;

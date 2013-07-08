@@ -34,7 +34,7 @@
 - (id)_manifestURL;
 - (void)_updateManifest;
 - (void)_scheduleTileGroupUpdateTimerWithTimeInterval:(double)arg1;
-- (void)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
+- (BOOL)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
 - (void)_retainResource:(id)arg1;
 - (id)_resourceInfosForTileGroup:(id)arg1;
 - (void)_tileGroupTimerFired:(id)arg1;

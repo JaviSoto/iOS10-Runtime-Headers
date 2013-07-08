@@ -49,13 +49,13 @@
 - (void)setButtonAction:(id)arg1;
 - (id)buttonTitle;
 - (void)setButtonTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
 - (void)windowDidRotateNotification:(id)arg1;
 - (void)windowWillAnimateRotateNotification:(id)arg1;
 - (void)windowWillRotateNotification:(id)arg1;
 - (id)buttonAction;
 - (void)_actionButtonPressed:(id)arg1;
 - (void)_updateViewHierarchy;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
 - (void)updateConstraints;
 - (void)tintColorDidChange;
 - (void)didMoveToWindow;

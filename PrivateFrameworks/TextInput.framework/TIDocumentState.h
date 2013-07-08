@@ -24,10 +24,13 @@
 + (id)documentStateWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)documentStateWithContextBefore:(id)arg1 markedText:(id)arg2 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 contextAfter:(id)arg4;
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
++ (BOOL)string:(id)arg1 isConsistentPrefixWithString:(id)arg2;
++ (BOOL)string:(id)arg1 isConsistentSuffixWithString:(id)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)documentStateOfDocument:(id)arg1;
 
 - (id)initWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)documentStateAfterTrimmingContextToLength:(unsigned int)arg1;
 - (unsigned int)inputIndexWithTerminatorPredicate:(id)arg1;
 - (id)inputStemWithTerminatorPredicate:(id)arg1;
 - (id)wordPrefixOfString:(id)arg1 withTerminatorPredicate:(id)arg2 reverse:(BOOL)arg3;
@@ -48,14 +51,21 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)documentStateAfterReplacingText:(id)arg1 withText:(id)arg2;
 - (id)inputStringWithTerminatorPredicate:(id)arg1;
 - (id)documentStateAfterInsertingTextAfterSelection:(id)arg1;
+- (id)documentStateAfterTrimmingContextToWords:(unsigned int)arg1 terminatorPredicate:(id)arg2;
 - (id)documentStateAfterInsertingText:(id)arg1;
 - (id)documentStateAfterSettingMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2 inDocument:(id)arg3;
+- (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2;
+- (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2;
+- (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id)arg3;
+- (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id)arg3;
 - (id)initWithDocument:(id)arg1;
+- (BOOL)hasSufficientContextBeforeInputWithTerminatorPredicate:(id)arg1;
 
 @end

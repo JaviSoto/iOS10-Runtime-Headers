@@ -6,13 +6,13 @@
    See Warning(s) below.
  */
 
-@class UIModalItem, NSMutableArray, UIView;
+@class _UIModalItem, NSMutableArray, UIView;
 
 @interface _UIModalItemsPresentingViewController : UIViewController  {
     NSMutableArray *_items;
     NSMutableArray *_itemsViews;
     UIView *_backgroundView;
-    UIModalItem *_currentItem;
+    _UIModalItem *_currentItem;
     UIView *_currentItemView;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -32,17 +32,17 @@
     } _keyboardFrame;
     float _keyboardHeight;
     BOOL _isInTransition;
-    UIModalItem *_itemBeingPresented;
-    UIModalItem *_itemBeingDismissed;
+    _UIModalItem *_itemBeingPresented;
+    _UIModalItem *_itemBeingDismissed;
 }
 
 @property BOOL isInTransition;
-@property UIModalItem * currentItem;
-@property(retain) UIModalItem * itemBeingPresented;
-@property(retain) UIModalItem * itemBeingDismissed;
+@property _UIModalItem * currentItem;
+@property(retain) _UIModalItem * itemBeingPresented;
+@property(retain) _UIModalItem * itemBeingDismissed;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)setCurrentItem:(id)arg1;
@@ -60,11 +60,11 @@
 - (id)currentItem;
 - (void)_hideAnimated:(BOOL)arg1 dimmSpotlight:(BOOL)arg2;
 - (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4 keepDimmingView:(BOOL)arg5;
-- (id)itemBeingPresented;
-- (id)itemBeingDismissed;
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyPresentingAnimationStartingStateForModalItem:(id)arg1 view:(id)arg2;
+- (id)itemBeingPresented;
+- (id)itemBeingDismissed;
 - (id)_createViewForItem:(id)arg1;
 - (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;

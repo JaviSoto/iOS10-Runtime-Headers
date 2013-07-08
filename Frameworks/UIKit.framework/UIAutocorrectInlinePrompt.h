@@ -29,6 +29,8 @@
     int m_index;
     int m_promptTextType;
     float m_originalTypedTextRectCorrectionAmount;
+    float m_maxX;
+    BOOL _showHiddenCandidatesOnly;
     unsigned int m_usageTrackingMask;
     TIKeyboardCandidateResultSet *_candidateResultSet;
 }
@@ -36,9 +38,10 @@
 @property unsigned int usageTrackingMask;
 @property(readonly) TIKeyboardCandidateResultSet * candidates;
 @property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
+@property BOOL showHiddenCandidatesOnly;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -57,8 +60,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })horizontallySquishedCorrectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_candidateSelected:(id)arg1;
 - (float)maximumCandidateWidth;
+- (void)setCandidateSet:(id)arg1 showHiddenCandidatesOnly:(BOOL)arg2;
 - (unsigned int)numberOfShownItems;
-- (void)setCandidateObject:(id)arg1 candidateSet:(id)arg2 type:(int)arg3 typedText:(id)arg4 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 maxX:(float)arg6;
+- (void)setCandidateObject:(id)arg1 candidateSet:(id)arg2 type:(int)arg3 typedText:(id)arg4 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 maxX:(float)arg6 showHiddenCandidatesOnly:(BOOL)arg7;
 - (void)removePromptSubviews;
 - (id)correction;
 - (id)typedText;
@@ -72,7 +76,10 @@
 - (void)setUsageTrackingMask:(unsigned int)arg1;
 - (id)activeCandidateList;
 - (unsigned int)usageTrackingMask;
+- (void)setShowHiddenCandidatesOnly:(BOOL)arg1;
+- (BOOL)showHiddenCandidatesOnly;
 - (id)inlineText;
+- (void)revealHiddenCandidates;
 - (void)candidatesDidChange;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
@@ -84,6 +91,7 @@
 - (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (BOOL)isHiddenCandidatesList;
 - (BOOL)isExtendedList;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCandidateResultSet:(id)arg1;

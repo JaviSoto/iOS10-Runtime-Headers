@@ -32,8 +32,8 @@
 - (void)setInternal:(id)arg1;
 - (id)internal;
 - (id)initWithInternalRepresentation:(id)arg1;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

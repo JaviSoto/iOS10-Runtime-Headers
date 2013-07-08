@@ -39,6 +39,7 @@
 - (id)sourceEntityVersionHash;
 - (id)_initWithSourceEntityDescription:(id)arg1 destinationEntityDescription:(id)arg2;
 - (void)_setIsEditable:(BOOL)arg1;
+- (BOOL)isEditable;
 - (void)_createCachesAndOptimizeState;
 - (void)_throwIfNotEditable;
 - (void)setMappingType:(unsigned int)arg1;
@@ -54,7 +55,6 @@
 - (id)destinationEntityName;
 - (unsigned int)mappingType;
 - (id)sourceEntityName;
-- (BOOL)isEditable;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;

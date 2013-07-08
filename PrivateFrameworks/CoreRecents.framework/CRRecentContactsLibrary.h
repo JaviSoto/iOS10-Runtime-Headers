@@ -23,6 +23,8 @@
 - (void)_scanRecentsTableAndCreateGroupsForDomain:(id)arg1 onCompletion:(id)arg2;
 - (int)_daemonProcessID;
 - (id)copyRecentsForDomain:(id)arg1;
+- (id)copyOrderedRecentsForSearchText:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 kinds:(id)arg4;
+- (void)setImplicitGroupThreshold:(unsigned int)arg1 forDomain:(id)arg2;
 - (unsigned int)implicitGroupThresholdForDomain:(id)arg1;
 - (BOOL)_removeRecentContactsWithRecentIDs:(id)arg1 syncKeys:(id)arg2 recentsDomain:(id)arg3 error:(out id*)arg4;
 - (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 source:(id)arg4 userInitiated:(BOOL)arg5;
@@ -31,11 +33,9 @@
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 synchronously:(BOOL)arg3 callback:(id)arg4;
 - (unsigned int)maxDateEventsPerRecentContact;
 - (void)requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 comparator:(id)arg3 queue:(id)arg4 completion:(id)arg5;
-- (id)copyOrderedRecentsForSearchText:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 kinds:(id)arg4;
-- (void)setImplicitGroupThreshold:(unsigned int)arg1 forDomain:(id)arg2;
 - (BOOL)removeRecentContacts:(id)arg1 error:(out id*)arg2;
-- (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 userInitiated:(BOOL)arg4;
 - (id)_createServiceOnQueue:(id)arg1;
+- (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 userInitiated:(BOOL)arg4;
 - (id)init;
 - (void)dealloc;
 - (void)start;

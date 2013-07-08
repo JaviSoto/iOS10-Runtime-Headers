@@ -9,6 +9,7 @@
 - (float)defaultPathWeight;
 - (float)symbolFrameInset;
 - (float)keyInsetBottom;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (id)dictationKeyImageName;
@@ -17,6 +18,8 @@
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
+- (float)keyCornerRadius;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 

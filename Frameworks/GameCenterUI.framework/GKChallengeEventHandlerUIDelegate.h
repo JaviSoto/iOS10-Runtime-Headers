@@ -6,7 +6,6 @@
 }
 
 
-- (void)loadPhotoAndGoalTextForPlayer:(id)arg1 challenge:(id)arg2 hander:(id)arg3;
 - (void)showRemotelyCompletedBannerForReceivingPlayer:(id)arg1 challenge:(id)arg2 handler:(id)arg3;
 - (void)showLocallyCompletedBannerForIssuingPlayer:(id)arg1 challenge:(id)arg2 handler:(id)arg3;
 - (void)showReceivedBannerForIssuingPlayer:(id)arg1 challenge:(id)arg2 handler:(id)arg3;

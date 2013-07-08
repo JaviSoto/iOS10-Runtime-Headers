@@ -9,6 +9,7 @@
     NSDictionary *_initializationOptions;
     struct OpaqueFigAsset { } *_figAsset;
     long _figAssetCreationStatus;
+    long _figAssetOnce;
     AVAssetInspector *_assetInspector;
     long _assetInspectorOnce;
     NSObject<OS_dispatch_queue> *_completionHandlerQueue;

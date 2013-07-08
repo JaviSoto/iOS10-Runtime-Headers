@@ -49,7 +49,7 @@
 
 - (void)setStorePage:(id)arg1;
 - (id)storePage;
-- (id)_visibleMetricsImpressionsDictionary;
+- (id)_visibleMetricsImpressionsString;
 - (void)_setSelectedIndex:(int)arg1 forMenuSection:(id)arg2;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)artworkLoaderDidIdle:(id)arg1;

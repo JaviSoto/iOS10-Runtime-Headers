@@ -127,6 +127,7 @@
 - (BOOL)_gkIsGameCenterEnabled;
 - (id)_gkItemName;
 - (id)_gkBundle;
+- (void)_gkDetachITunesMetadata;
 - (BOOL)_gkIsAppleInternal;
 - (BOOL)_gkIsInstalled;
 - (id)_gkITunesMetadata;

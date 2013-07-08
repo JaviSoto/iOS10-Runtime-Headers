@@ -100,13 +100,14 @@
 - (void)saveUserInfo;
 - (id)userInfoObjectForKey:(id)arg1;
 - (BOOL)setChildren:(id)arg1;
-- (void)setAttributes:(unsigned int)arg1;
 - (id)extraAttributes;
 - (void)setExtraAttributes:(id)arg1;
+- (void)setAttributes:(unsigned int)arg1;
 - (id)store;
 - (id)displayName;
 - (id)initWithAccount:(id)arg1;
 - (id)account;
+- (id)uniqueId;
 - (void)setParent:(id)arg1;
 - (BOOL)isVisible;
 - (id)URLString;
@@ -122,7 +123,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)URL;
 - (BOOL)isSelectable;
-- (id)uniqueId;
 - (unsigned int)attributes;
 - (id)parent;
 - (int)type;

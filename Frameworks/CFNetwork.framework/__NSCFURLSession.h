@@ -2,28 +2,30 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NSURLSessionDelegate>, NSOperationQueue, NSString, __NSCFURLSessionConfiguration, NSObject<OS_dispatch_queue>, __NSCFSessionBridge;
+@class NSOperationQueue, __NSCFURLSession, NSObject<OS_dispatch_queue>, __NSCFURLSessionConfiguration, __NSCFSessionBridge, NSString, <NSURLSessionDelegate>;
 
 @interface __NSCFURLSession : NSObject  {
+    __NSCFURLSessionConfiguration *_nsCFConfig;
     BOOL _invalid;
     NSOperationQueue *_delegateQueue;
     <NSURLSessionDelegate> *_delegate;
-    __NSCFURLSessionConfiguration *_configuration;
     NSString *_sessionDescription;
     NSObject<OS_dispatch_queue> *_workQueue;
     __NSCFSessionBridge *_connectionSession;
+    __NSCFURLSession *_extraRetain;
 }
 
 @property(readonly) NSOperationQueue * delegateQueue;
 @property(readonly) <NSURLSessionDelegate> * delegate;
-@property(readonly) __NSCFURLSessionConfiguration * configuration;
+@property(copy) __NSCFURLSessionConfiguration * configuration;
 @property(copy) NSString * sessionDescription;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 @property(retain) __NSCFSessionBridge * connectionSession;
 @property BOOL invalid;
+@property(retain) __NSCFURLSession * extraRetain;
 
-+ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (const struct ClassicConnectionSession { }*)defaultClassicConnectionSession;
++ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (id)sessionWithConfiguration:(id)arg1;
 + (id)sharedSession;
 + (void)_sendPendingCallbacksForSessionIdentifier:(id)arg1;
@@ -31,6 +33,8 @@
 
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setExtraRetain:(id)arg1;
+- (id)extraRetain;
 - (void)setInvalid:(BOOL)arg1;
 - (BOOL)invalid;
 - (void)setConnectionSession:(id)arg1;
@@ -38,32 +42,39 @@
 - (id)sessionDescription;
 - (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
 - (BOOL)can_delegate_downloadTask_didResumeAtOffset;
-- (void)delegate_didBecomeInvalidWithError:(id)arg1;
-- (BOOL)can_delegate_didBecomeInvalidWithError;
 - (id)downloadTaskWithResumeData:(id)arg1 completionHandler:(id)arg2;
-- (id)downloadTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (id)downloadTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithResumeData:(id)arg1;
-- (id)downloadTaskWithRequest:(id)arg1;
+- (id)downloadTaskWithURL:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2 completionHandler:(id)arg3;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2 completionHandler:(id)arg3;
 - (id)uploadTaskWithStreamedRequest:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2;
-- (id)dataTaskWithHTTPGetRequest:(id)arg1 completionHandler:(id)arg2;
-- (id)dataTaskWithHTTPGetRequest:(id)arg1;
+- (id)dataTaskWithURL:(id)arg1 completionHandler:(id)arg2;
+- (id)dataTaskWithURL:(id)arg1;
 - (id)dataTaskWithRequest:(id)arg1;
+- (id)dataTaskWithHTTPGetRequest:(id)arg1;
+- (id)dataTaskWithHTTPGetRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)getTasksWithCompletionHandler:(id)arg1;
 - (void)flushWithCompletionHandler:(id)arg1;
 - (void)resetWithCompletionHandler:(id)arg1;
 - (void)finishTasksAndInvalidate;
 - (void)invalidateAndCancel;
+- (id)getConfiguration;
 - (id)delegate;
+- (id)downloadTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (id)downloadTaskWithRequest:(id)arg1;
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)_onqueue_withTasks:(id)arg1;
+- (void)_onqueue_completeInvalidation:(BOOL)arg1;
+- (void)_onqueue_completeInvalidationFinal;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (id)connectionSession;
 - (BOOL)isBackgroundSession;
 - (void)setWorkQueue:(id)arg1;
+- (void)delegate_didFinishEventsForBackgroundURLSession;
+- (BOOL)can_delegate_didFinishEventsForBackgroundURLSession;
 - (void)delegate_downloadTask:(id)arg1 didReceiveResponse:(id)arg2;
 - (BOOL)can_delegate_downloadTask_didReceiveResponse;
 - (void)delegate_downloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2;
@@ -95,5 +106,6 @@
 - (void)delegate_dataTask:(id)arg1 didReceiveResponse:(id)arg2 completionHandler:(id)arg3;
 - (id)workQueue;
 - (BOOL)can_delegate_dataTask_didReceiveResponse;
+- (void)setConfiguration:(id)arg1;
 
 @end

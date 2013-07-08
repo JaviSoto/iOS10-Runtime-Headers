@@ -2,16 +2,21 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface MCRestrictionsPayload : MCPayload  {
     NSMutableDictionary *_restrictions;
+    NSString *_iCloudPassword;
 }
+
+@property(retain) NSString * iCloudPassword;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (void)setICloudPassword:(id)arg1;
+- (id)iCloudPassword;
 - (void)_insertRestrictedBoolForKey:(id)arg1 value:(id)arg2 preferenc:(BOOL)arg3;
 - (id)_unionStrings;
 - (id)_intersectionStrings;
@@ -25,6 +30,5 @@
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void).cxx_destruct;
-- (id)description;
 
 @end

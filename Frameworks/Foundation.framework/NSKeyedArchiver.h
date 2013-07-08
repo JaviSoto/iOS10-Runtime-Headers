@@ -29,8 +29,8 @@
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 
 - (void)setOutputFormat:(unsigned int)arg1;
-- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (id)init;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;

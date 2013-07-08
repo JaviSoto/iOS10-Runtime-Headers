@@ -100,6 +100,7 @@
     } _viewControllerFlags;
     int _retainCount;
     BOOL _ignoreAppSupportedOrientations;
+    BOOL _viewHostsLayoutEngine;
     NSString *_storyboardIdentifier;
     <UIViewControllerTransitioningDelegate> *_transitioningDelegate;
     BOOL _modalPresentationCapturesStatusBarAppearance;
@@ -271,9 +272,10 @@
 + (void)_traverseViewControllerHierarchyWithDelayedRelease:(id)arg1;
 + (id)_currentStatusBarHiddenViewController;
 + (id)_currentStatusBarStyleViewController;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
++ (void)_gkShowGameCenterGamesInStore;
 + (void)_endAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 + (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
 + (void)_iTunesStoreUI_enqueueTransitionSafeInvocation:(id)arg1;
@@ -317,11 +319,14 @@
 - (void)dismissModalItem:(id)arg1 withTappedButtonIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)presentModalItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentModalItem:(id)arg1 animated:(BOOL)arg2 dontPresentAndAddToStack:(BOOL)arg3;
+- (void)presentModalItem:(id)arg1 replacing:(id)arg2 animated:(BOOL)arg3;
+- (void)presentModalItem:(id)arg1 replacing:(id)arg2 animated:(BOOL)arg3 dontPresentAndAddToStack:(BOOL)arg4;
 - (void)_setUseTelephonyUI:(BOOL)arg1;
 - (BOOL)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
 - (void)attentionClassDumpUser:(id)arg1 yesItsUsAgain:(id)arg2 althoughSwizzlingAndOverridingPrivateMethodsIsFun:(id)arg3 itWasntMuchFunWhenYourAppStoppedWorking:(id)arg4 pleaseRefrainFromDoingSoInTheFutureOkayThanksBye:(id)arg5;
+- (id)_uiCollectionView;
 - (BOOL)useLayoutToLayoutNavigationTransitions;
 - (id)_animatorForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)_unembedContentView;
@@ -333,6 +338,7 @@
 - (void)_presentViewControllerForStateRestoration:(id)arg1;
 - (id)storyboardIdentifier;
 - (id)_restorationClassName;
+- (BOOL)_isContainmentChanging;
 - (void)cancelBeginAppearanceTransition;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 duration:(double)arg3 options:(unsigned int)arg4 animations:(id)arg5 completion:(id)arg6;
 - (void)addChildViewController:(id)arg1;
@@ -409,7 +415,6 @@
 - (void)_beginDelayingPresentation;
 - (void)userDidCancelPopoverView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_ancestorViewControllerIsInPopover;
 - (void)_setModalPresentationStyle:(int)arg1;
 - (void)_sheetPresentAnimationDidStop;
 - (void)setIsSheet:(BOOL)arg1;
@@ -460,6 +465,8 @@
 - (float)_statusBarHeightForCurrentInterfaceOrientation;
 - (BOOL)_isViewController;
 - (id)_vanillaInit;
+- (BOOL)_viewHostsLayoutEngine;
+- (void)_setViewHostsLayoutEngine:(BOOL)arg1;
 - (void)_setUsesSharedView:(BOOL)arg1;
 - (void)_setShouldSynthesizeSupportedOrientations:(BOOL)arg1;
 - (void)_prepareForDismissalInPopover:(id)arg1;
@@ -475,7 +482,9 @@
 - (id)_bottomLayoutGuide;
 - (id)_topLayoutGuide;
 - (void)_setNavigationControllerContentOffsetAdjustment:(float)arg1;
+- (void)_primitiveSetNavigationControllerContentOffsetAdjustment:(float)arg1;
 - (void)_setNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_primitiveSetNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)_isAppearingOrAppeared;
 - (BOOL)searchBarHidNavBar;
 - (void)_setSearchDisplayController:(id)arg1 retain:(BOOL)arg2;
@@ -542,6 +551,7 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_presentingViewControllerWillChange:(id)arg1;
+- (BOOL)_ancestorViewControllerIsInPopover;
 - (void)_setModalSourceViewController:(id)arg1;
 - (id)_customInteractionControllerForPresentation:(id)arg1;
 - (int)_transitionForModalTransitionStyle:(int)arg1 appearing:(BOOL)arg2;
@@ -576,7 +586,6 @@
 - (id)modalTransitionView;
 - (id)_nonModalParentViewController;
 - (void)unloadViewIfReloadable;
-- (id)existingView;
 - (void)purgeMemoryForReason:(int)arg1;
 - (id)_description;
 - (void)_traverseViewControllerHierarchyFromLevel:(int)arg1 withBlock:(id)arg2;
@@ -606,6 +615,8 @@
 - (id)_ancestorViewControllerOfClass:(Class)arg1 allowModalParent:(BOOL)arg2;
 - (id)_modalPresenter:(int)arg1;
 - (id)_rootAncestorViewController;
+- (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
+- (id)existingView;
 - (id)_nonModalAncestorViewController;
 - (id)_nonModalAncestorViewControllerStopAtIsPresentationContext:(BOOL)arg1;
 - (BOOL)definesPresentationContext;
@@ -671,6 +682,7 @@
 - (BOOL)_isPresentationContextByDefault;
 - (void)_doCommonSetup;
 - (void)_installLayoutGuidesAndConstraintsIfNecessary;
+- (void)_inferLayoutGuidesFromSubviews;
 - (void)accessibilityLargeTextDidChange;
 - (void)applicationWantsViewsToDisappear;
 - (void)_didReceiveMemoryWarning:(id)arg1;
@@ -792,12 +804,12 @@
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
 - (BOOL)ab_shouldShowNavBarButtons;
-- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkPresentActivityViewControllerForActivityItems:(id)arg1 fromView:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_gkRestoreStatusBarStyle:(BOOL)arg1;
 - (void)_gkSaveStatusBarStyle:(BOOL)arg1;
 - (void)setGkPopoverController:(id)arg1;
 - (id)gkPopoverController;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkPresentActivityViewController:(id)arg1 fromView:(id)arg2;
 - (void)_gkDismissActivityViewControllerAnimated:(BOOL)arg1;
@@ -819,6 +831,8 @@
 - (BOOL)_gkUsesBubbleFlowModalPresentation;
 - (void)_gkPresentSendDialogForChallenge:(id)arg1 selectPlayers:(id)arg2 defaultMessage:(id)arg3;
 - (void)_gkPresentChallengeVC:(id)arg1;
+- (void)_gkSetMasterDetailViewController:(id)arg1;
+- (id)_gkMasterDetailViewController;
 - (BOOL)_gkShouldUsePadUI;
 - (int)_gkDesiredUserInterfaceIdiom;
 - (void)presentMoviePlayerViewControllerAnimated:(id)arg1;

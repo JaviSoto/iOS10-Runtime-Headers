@@ -28,14 +28,6 @@
 
 + (id)sharedInstance;
 
-- (BOOL)validateProtocol:(id)arg1 hasRequiredInstanceMethod:(id)arg2;
-- (BOOL)validateClass:(id)arg1;
-- (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2;
-- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2 returnType:(char *)arg3 parameterCount:(unsigned int)arg4;
-- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2;
-- (BOOL)validateClass:(id)arg1 hasClassMethod:(id)arg2;
-- (BOOL)validateClass:(id)arg1 isKindOfClass:(id)arg2;
-- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
 - (BOOL)forceDoNotReport;
 - (BOOL)shouldReportToServer;
 - (BOOL)shouldCrashOnError;
@@ -70,6 +62,14 @@
 - (void)setOverrideProcessName:(id)arg1;
 - (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2 withType:(char *)arg3;
 - (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3;
+- (BOOL)validateProtocol:(id)arg1 hasRequiredInstanceMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1 hasClassMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1 isKindOfClass:(id)arg2;
+- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2;
+- (BOOL)validateClass:(id)arg1;
+- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
+- (BOOL)validateClass:(id)arg1 hasInstanceVariable:(id)arg2;
+- (BOOL)validateClass:(id)arg1 hasInstanceMethod:(id)arg2 returnType:(char *)arg3 parameterCount:(unsigned int)arg4;
 - (id)init;
 - (void)dealloc;
 

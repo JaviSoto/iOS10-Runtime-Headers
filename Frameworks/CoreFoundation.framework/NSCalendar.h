@@ -10,7 +10,6 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 + (id)autoupdatingCurrentCalendar;
-+ (id)_mapkit_gregorianCalendar;
 
 - (id)PMSymbol;
 - (id)AMSymbol;

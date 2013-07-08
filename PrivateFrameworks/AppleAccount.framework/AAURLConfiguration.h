@@ -33,11 +33,17 @@
 @property(readonly) NSString * finishProvisioningURL;
 @property(readonly) NSString * syncMachineURL;
 @property(readonly) NSString * loginDelegatesURL;
+@property(readonly) NSString * deviceListURL;
+@property(readonly) NSString * sendCodeURL;
+@property(readonly) NSString * verifyCodeURL;
 
 + (id)urlConfiguration;
 + (void)reset;
 
 - (id)iForgotUIURL;
+- (id)verifyCodeURL;
+- (id)sendCodeURL;
+- (id)deviceListURL;
 - (id)syncMachineURL;
 - (id)finishProvisioningURL;
 - (id)ckAppLoginCheckURL;

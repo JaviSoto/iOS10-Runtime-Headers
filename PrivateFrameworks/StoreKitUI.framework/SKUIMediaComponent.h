@@ -4,7 +4,7 @@
 
 @class NSString, SKUIArtworkList;
 
-@interface SKUIMediaComponent : SKUIPageComponent  {
+@interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSString *_accessibilityLabel;
     int _alignment;
     double _duration;
@@ -39,6 +39,7 @@
 - (id)metricsElementName;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
+- (id)valueForMetricsField:(id)arg1;
 - (int)mediaType;
 - (id)title;
 - (id)accessibilityLabel;

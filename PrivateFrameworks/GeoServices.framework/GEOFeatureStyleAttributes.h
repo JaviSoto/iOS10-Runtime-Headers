@@ -10,13 +10,13 @@
 }
 
 
-- (BOOL)isFreeway;
-- (BOOL)isWalkable;
 - (BOOL)isDrivable;
-- (BOOL)isTunnel;
+- (BOOL)isWalkable;
 - (BOOL)isRailway;
+- (BOOL)isFreeway;
 - (int)rampDirection;
 - (int)rampType;
+- (BOOL)isTunnel;
 - (BOOL)isRamp;
 - (void)sort;
 - (int)drivingSide;

@@ -44,10 +44,6 @@
 @property int localSearchProviderID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (void)setHasPositionInResults:(BOOL)arg1;
 - (void)setHasNumberOfResults:(BOOL)arg1;
 - (void)setHasFeedbackType:(BOOL)arg1;
@@ -77,9 +73,13 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (double)timestamp;
 - (int)sequenceNumber;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)setSequenceNumber:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

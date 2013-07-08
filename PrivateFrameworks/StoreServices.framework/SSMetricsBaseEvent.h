@@ -20,6 +20,7 @@
 @property(retain) NSString * applicationIdentifier;
 @property(retain) NSNumber * clientVersion;
 @property(retain) NSNumber * previousClientVersion;
+@property(retain) NSString * topic;
 @property(retain) NSString * userAgent;
 @property(retain) NSString * pageContext;
 @property(retain) NSNumber * accountIdentifier;
@@ -28,13 +29,14 @@
 
 - (void)setPageContext:(id)arg1;
 - (void)setWindowOrientation:(id)arg1;
-- (void)setScreenHeight:(id)arg1;
+- (void)setTopic:(id)arg1;
 - (id)windowWidth;
 - (id)windowOrientation;
 - (id)windowHeight;
 - (void)setWindowWidth:(id)arg1;
 - (void)setWindowHeight:(id)arg1;
 - (void)setScreenWidth:(id)arg1;
+- (void)setScreenHeight:(id)arg1;
 - (void)setPreviousClientVersion:(id)arg1;
 - (void)setPixelRatio:(id)arg1;
 - (void)setOriginalTime:(double)arg1;
@@ -55,6 +57,7 @@
 - (id)clientVersion;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
+- (id)topic;
 - (id)eventType;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;

@@ -65,10 +65,6 @@
 + (id)elementWithAXUIElement:(struct __AXUIElement { }*)arg1;
 + (id)elementWithUIElement:(id)arg1;
 
-- (void)scrollToBottom;
-- (void)scrollToTop;
-- (void)autoscrollInDirection:(int)arg1;
-- (BOOL)isAutoscrolling;
 - (BOOL)representsScannerGroup;
 - (void)setUiElement:(id)arg1;
 - (void)decreaseAutoscrollSpeed;
@@ -137,6 +133,10 @@
 - (id)previousElementsWithCount:(unsigned int)arg1;
 - (id)nextElementsWithCount:(unsigned int)arg1;
 - (id)parentGroup;
+- (void)scrollToBottom;
+- (void)scrollToTop;
+- (void)autoscrollInDirection:(int)arg1;
+- (BOOL)isAutoscrolling;
 - (BOOL)isScreenLocked;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)language;

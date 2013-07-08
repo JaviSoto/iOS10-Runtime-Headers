@@ -27,9 +27,9 @@
 - (id)_actionSheet;
 - (id)actions;
 - (id)localizedTitle;
-- (void)_showActionSheet;
 - (void)_handleActionAndFinish:(id)arg1;
 - (id)defaultAction;
+- (void)_showActionSheet;
 - (BOOL)allowInteraction;
 - (void)handleLongPress;
 - (void)handleTap;

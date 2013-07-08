@@ -24,8 +24,8 @@
 - (id)localizationBundle;
 - (id)copyArchivableContext;
 - (id)messageBody;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (void)dealloc;
 - (void)loadView;

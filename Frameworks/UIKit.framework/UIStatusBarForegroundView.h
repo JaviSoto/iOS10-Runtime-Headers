@@ -18,15 +18,17 @@
 @property int idiom;
 @property(readonly) UIStatusBarForegroundStyleAttributes * foregroundStyle;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)setIdiom:(int)arg1;
 - (void)reflowItemViewsForgettingEitherSideItemHistory;
-- (void)reflowItemViews:(BOOL)arg1;
 - (void)reflowItemViewsCrossfadingCenter:(id)arg1 duration:(double)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(id)arg2;
+- (void)reflowItemViews:(BOOL)arg1;
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;
 - (BOOL)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(float*)arg4 allowSwap:(BOOL)arg5 swappedItem:(id*)arg6;
 - (float)edgePadding;
@@ -42,6 +44,7 @@
 - (void)startIgnoringData;
 - (id)foregroundStyle;
 - (int)idiom;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)_accessibilityFuzzyHitTestElements;
 

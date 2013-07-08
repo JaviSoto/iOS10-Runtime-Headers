@@ -62,6 +62,7 @@
 - (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
+- (id)valueForMetricsField:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;
 

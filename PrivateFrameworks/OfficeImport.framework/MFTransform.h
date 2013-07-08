@@ -69,8 +69,8 @@
 - (struct CGPoint { float x1; float x2; })getWindowOrg;
 - (void)setWorldMatrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getWorldMatrix;
-- (int)updateTransform;
 - (id)initWithDriver:(id)arg1;
+- (int)updateTransform;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

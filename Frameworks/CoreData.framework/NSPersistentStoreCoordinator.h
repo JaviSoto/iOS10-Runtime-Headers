@@ -72,6 +72,7 @@
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
 - (id)_persistentStoreForIdentifier:(id)arg1;
 - (id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;
+- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
@@ -83,7 +84,6 @@
 - (id)managedObjectModel;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (BOOL)setURL:(id)arg1 forPersistentStore:(id)arg2;
-- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
 - (void)finalize;
 - (void)dealloc;
 - (void)unlock;

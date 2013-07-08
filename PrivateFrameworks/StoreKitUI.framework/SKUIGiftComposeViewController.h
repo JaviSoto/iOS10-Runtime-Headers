@@ -52,12 +52,12 @@
 - (void)_recipientsDidChangeNotification:(id)arg1;
 - (void)_keyboardChangeNotification:(id)arg1;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;
+- (id)_headerView;
 - (void)_reloadSections;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
-- (id)_headerView;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;

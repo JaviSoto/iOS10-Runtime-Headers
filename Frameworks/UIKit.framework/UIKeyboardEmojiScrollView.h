@@ -20,8 +20,8 @@
 @property(retain) UIView * pressIndicator;
 @property BOOL whiteText;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setScrollDelay:(double)arg1;
 - (void)dealloc;

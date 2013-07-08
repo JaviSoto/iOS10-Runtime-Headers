@@ -30,8 +30,8 @@
 - (float)positionOfSliceBoundary:(int)arg1;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (id)_themeStore;
-- (struct CGImage { }*)image;
 - (int)blendMode;
+- (struct CGImage { }*)image;
 - (id)name;
 - (void)dealloc;
 - (id)description;

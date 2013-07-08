@@ -60,6 +60,7 @@
 - (bool)canWrite;
 - (id)downloadFile;
 - (id)fileCompletion;
+- (void)_private_posixError:(int)arg1;
 - (void)cancelByProducingResumeData:(id)arg1;
 - (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;
 - (void)_private_fileCompletion;
@@ -67,7 +68,6 @@
 - (id)createResumeInformation:(id)arg1;
 - (void)_private_errorCompletion;
 - (void)reportProgress:(unsigned long)arg1;
-- (void)_private_posixError:(int)arg1;
 - (void)checkWrite;
 - (void)setWriteBuffer:(id)arg1;
 - (void)setDownloadFile:(id)arg1;

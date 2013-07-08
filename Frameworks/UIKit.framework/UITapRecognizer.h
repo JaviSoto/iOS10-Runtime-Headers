@@ -45,6 +45,7 @@
 - (double)maximumSingleTapDuration;
 - (void)startTapTimer:(double)arg1;
 - (void)_interactionEndedTouch:(BOOL)arg1;
+- (float)_effectiveAllowableMovement;
 - (struct CGPoint { float x1; float x2; })_locationOnScreen;
 - (void)_beginInteraction;
 - (void)tooSlow:(id)arg1;

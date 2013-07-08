@@ -69,14 +69,16 @@
 - (void)remoteUIWebViewControllerDonePressed:(id)arg1;
 - (id)tableFooterViewForAttributes:(id)arg1;
 - (id)tableHeaderViewForAttributes:(id)arg1;
+- (Class)customTableCellClassForTableViewRow:(id)arg1;
 - (Class)customFooterClassForSection:(id)arg1;
 - (Class)customHeaderClassForSection:(id)arg1;
+- (void)configureSection:(id)arg1;
 - (void)configureRow:(id)arg1;
 - (void)configureTableView:(id)arg1;
 - (void)setPages:(id)arg1;
 - (id)pages;
 - (void)_displaySupplementalPage:(id)arg1;
-- (void)pinViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
+- (void)passcodeViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOM:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;

@@ -10,6 +10,7 @@
 @property(retain) NSNumber * externalFlags;
 @property(retain) NSNumber * externalServerIntId;
 @property(retain) NSNumber * deletedFlag;
+@property(retain) NSNumber * externalSequenceNumber;
 @property(retain) NSString * summary;
 @property(retain) NSString * author;
 @property(retain) NSDate * modificationDate;
@@ -33,6 +34,7 @@
 @property unsigned long long flags;
 @property(retain) NSData * externalRepresentation;
 @property(retain) NSString * externalContentRef;
+@property unsigned long long sequenceNumber;
 
 
 - (BOOL)hasValidServerIntId;
@@ -50,8 +52,10 @@
 - (BOOL)isMarkedForDeletion;
 - (void)markForDeletion;
 - (void)setContent:(id)arg1;
+- (unsigned long long)sequenceNumber;
 - (BOOL)containsAttachments;
 - (id)content;
+- (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setFlags:(unsigned long long)arg1;
 - (unsigned long long)flags;
 

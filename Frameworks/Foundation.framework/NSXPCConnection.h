@@ -33,8 +33,8 @@
     NSXPCInterface *_remoteObjectInterface;
     NSString *_serviceName;
     NSXPCListenerEndpoint *_endpoint;
-    void *_eCache;
-    void *_dCache;
+    id _eCache;
+    id _dCache;
 }
 
 @property(getter=ml_isValid,setter=ml_setValid:) BOOL ml_valid;
@@ -115,5 +115,8 @@
 - (void)start;
 - (BOOL)ml_isValid;
 - (void)ml_setValid:(BOOL)arg1;
+- (id)sl_localizedClientName;
+- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (id)_clientBundleID;
 
 @end

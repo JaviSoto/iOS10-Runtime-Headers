@@ -17,13 +17,20 @@
   /* Error parsing encoded ivar type info: @? */
     id _dataProviderBlock;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _flushBlock;
+
 }
 
 
+- (void)_figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 didFlushLegibleOutputWithDictionaryKey:(id)arg2;
 - (void)_figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 didOutputAttributedStrings:(id)arg2 nativeSampleBuffers:(id)arg3 atItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 withLegibleOutputsDictionaryKey:(id)arg5;
 - (void)_collectUncollectables_onlyToBeCalledFromDeallocOrFinalize;
 - (void)_unregisterFromNotifications;
 - (void)_registerForNotifications;
+- (void)setFlushBlock:(id)arg1;
 - (void)setDataProviderBlock:(id)arg1;
 - (id)initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 figLegibleOutputsDictionaryKey:(id)arg2;
 - (id)init;

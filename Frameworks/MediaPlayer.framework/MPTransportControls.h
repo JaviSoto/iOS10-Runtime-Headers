@@ -48,8 +48,8 @@
 + (BOOL)buttonImagesUseBackgroundImage;
 + (unsigned long long)defaultVisibleParts;
 + (int)buttonType;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)updateVisibleButtonImages;
 - (BOOL)alwaysHidesSystemVolumeHUD;
@@ -116,7 +116,7 @@
 - (void)setAlpha:(float)arg1;
 - (id)target;
 - (BOOL)accessibilityViewIsModal;
-- (void)_accessibilityApplyIDsToTransformButtons;
 - (void)_accessibilityLoadAccessibilityInformation;
+- (void)_accessibilityApplyIDsToTransformButtons;
 
 @end

@@ -32,8 +32,6 @@
 @property(retain) UIColor * actionsColor;
 @property(retain) UIImageView * chevron;
 
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)textFieldChanged:(id)arg1;
 - (id)actionsColor;
@@ -41,8 +39,9 @@
 - (float)labelValueSpacing;
 - (void)setStar:(id)arg1;
 - (void)setVseparator:(id)arg1;
-- (id)labelButton;
 - (id)_constraintsToOverlapView:(id)arg1 onView:(id)arg2;
+- (id)labelButton;
+- (void)_setupEditingViews;
 - (id)vseparator;
 - (void)labelButtonClicked:(id)arg1;
 - (void)updateTransportButtons;
@@ -73,10 +72,5 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (BOOL)_axIsEditing;
-- (void)_axUpdateAccessibilityForLabel;
 
 @end

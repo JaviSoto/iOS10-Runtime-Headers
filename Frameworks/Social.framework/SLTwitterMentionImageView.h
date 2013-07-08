@@ -13,8 +13,8 @@
 
 
 - (void)setupViews;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void).cxx_destruct;
 
 @end

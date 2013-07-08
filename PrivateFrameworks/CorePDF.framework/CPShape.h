@@ -59,6 +59,7 @@
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setLineCap:(int)arg1;
 - (void)setLineJoin:(int)arg1;
+- (void)setMiterLimit:(float)arg1;
 - (float)miterLimit;
 - (int)lineJoin;
 - (int)lineCap;
@@ -74,7 +75,6 @@
 - (void)setPath:(struct CGPath { }*)arg1;
 - (struct CGPath { }*)path;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
-- (void)setMiterLimit:(float)arg1;
 - (void)setLineWidth:(float)arg1;
 - (id)attributes;
 

@@ -30,8 +30,8 @@
 
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
-- (void)setColumnIndex:(int)arg1;
 - (int)columnIndex;
+- (void)setColumnIndex:(int)arg1;
 - (BOOL)isRequired;
 - (void)setMaxLength:(unsigned int)arg1;
 - (unsigned int)maxLength;

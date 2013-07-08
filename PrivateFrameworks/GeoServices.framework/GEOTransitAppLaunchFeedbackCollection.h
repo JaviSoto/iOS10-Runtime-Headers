@@ -24,18 +24,18 @@
 @property double timestamp;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasDestination;
 - (BOOL)hasSource;
 - (BOOL)hasBundleIdentifier;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (double)timestamp;
 - (id)source;
 - (void)setSource:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)setBundleIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

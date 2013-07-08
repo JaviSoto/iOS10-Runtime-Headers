@@ -53,6 +53,18 @@
     } _embeddedTargetRect;
     int _popoverControllerStyle;
     BOOL _ignoresKeyboardNotifications;
+    UIView *_currentPresentationView;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _currentPresentationRectInView;
+    unsigned int _originalArrowDirections;
     unsigned int draggingChildScrollViewCount;
     id _target;
     SEL _didEndSelector;
@@ -61,7 +73,7 @@
     unsigned int _toViewAutoResizingMask;
     UIViewController *_slidingViewController;
     UIView *_presentingView;
-    int _presentationEdge;
+    unsigned int _presentationEdge;
     int _presentationDirection;
     int _presentationState;
     BOOL _didPresentInActiveSequence;
@@ -104,7 +116,7 @@
 @property BOOL dismissesOnRotation;
 @property(retain) _UIPopoverLayoutInfo * preferredLayoutInfo;
 @property(getter=_presentingView,setter=_setPresentingView:) UIView * presentingView;
-@property(getter=_presentationEdge,setter=_setPresentationEdge:) int presentationEdge;
+@property(getter=_presentationEdge,setter=_setPresentationEdge:) unsigned int presentationEdge;
 @property(setter=_setIgnoresKeyboardNotifications:) BOOL _ignoresKeyboardNotifications;
 @property BOOL showsTargetRect;
 @property BOOL showsOrientationMarker;
@@ -116,15 +128,15 @@
 + (BOOL)_showTargetRectPref;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
 + (BOOL)_popoversDisabled;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)setPopoverArrowDirection:(unsigned int)arg1;
-- (int)_presentationEdge;
+- (unsigned int)_presentationEdge;
 - (id)_presentingView;
 - (id)preferredLayoutInfo;
 - (BOOL)_retainsSelfWhilePresented;
@@ -141,8 +153,6 @@
 - (BOOL)dismissesOnRotation;
 - (BOOL)allowResizePastTargetRect;
 - (void)setDimmingView:(id)arg1;
-- (void)presentPopoverFromBarButtonItem:(id)arg1;
-- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 preferredPresentationDirections:(unsigned int)arg3;
 - (void)_setIgnoresKeyboardNotifications:(BOOL)arg1;
 - (BOOL)_ignoresKeyboardNotifications;
 - (void)_stopWatchingForNavigationControllerNotifications:(id)arg1;
@@ -179,12 +189,13 @@
 - (void)_startWatchingForScrollViewNotifications;
 - (BOOL)isPresentingOrDismissing;
 - (BOOL)_shimPresentSlidingPopoverAnimated:(BOOL)arg1;
+- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animate:(BOOL)arg5;
 - (struct CGPoint { float x1; float x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 - (Class)_defaultChromeViewClass;
-- (void)_presentPopoverBySlidingIn:(BOOL)arg1 fromEdge:(int)arg2 ofView:(id)arg3 animated:(BOOL)arg4 stateOnly:(BOOL)arg5 notifyDelegate:(BOOL)arg6;
+- (void)_presentPopoverBySlidingIn:(BOOL)arg1 fromEdge:(unsigned int)arg2 ofView:(id)arg3 animated:(BOOL)arg4 stateOnly:(BOOL)arg5 notifyDelegate:(BOOL)arg6;
 - (void)_resetSlideTransitionCount;
 - (void)_postludeForDismissal;
-- (void)_setPresentationEdge:(int)arg1;
+- (void)_setPresentationEdge:(unsigned int)arg1;
 - (void)_setPresentingView:(id)arg1;
 - (void)_setPresentationState:(int)arg1;
 - (int)_presentationState;
@@ -211,12 +222,12 @@
 - (void)_setPopoverBackgroundStyle:(int)arg1;
 - (unsigned int)_slideTransitionCount;
 - (void)_dismissPopoverAnimated:(BOOL)arg1 stateOnly:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
-- (void)_presentPopoverFromEdge:(int)arg1 ofView:(id)arg2 animated:(BOOL)arg3;
+- (void)_presentPopoverFromEdge:(unsigned int)arg1 ofView:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopoverFromBarButtonItem:(id)arg1 permittedArrowDirections:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)setPopoverBackgroundViewClass:(Class)arg1;
 - (id)_initWithContentViewController:(id)arg1 popoverControllerStyle:(int)arg2;
 - (void)_setGesturesEnabled:(BOOL)arg1;
-- (id)_gestureRecognizerForPresentationFromEdge:(int)arg1;
+- (id)_gestureRecognizerForPresentationFromEdge:(unsigned int)arg1;
 - (void)_setManagingSplitViewController:(id)arg1;
 - (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)setContentViewController:(id)arg1;

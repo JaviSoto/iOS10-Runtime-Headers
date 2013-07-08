@@ -63,10 +63,11 @@
 @property(readonly) UIView * textInputView;
 @property int selectionAffinity;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
+- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -75,7 +76,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
 - (void)insertText:(id)arg1;
-- (BOOL)isEditable;
 - (BOOL)hasSelection;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)undoManager;

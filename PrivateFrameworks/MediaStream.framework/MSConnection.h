@@ -16,6 +16,7 @@
 
 - (void)abortActivitiesForPersonID:(id)arg1;
 - (void)handleSubscriptionPushForPersonID:(id)arg1;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (BOOL)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)_waitForMessageToBeSent;
 - (id)_machErrorWithUnderlyingError:(id)arg1;

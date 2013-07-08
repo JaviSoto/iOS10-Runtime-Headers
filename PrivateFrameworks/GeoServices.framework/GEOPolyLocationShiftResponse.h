@@ -18,8 +18,6 @@
 @property double radius;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setParameters:(double*)arg1 count:(unsigned int)arg2;
 - (void)setRadius:(double)arg1;
 - (void)addParameters:(double)arg1;
@@ -28,6 +26,8 @@
 - (unsigned int)parametersCount;
 - (double*)parameters;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)radius;
 - (int)status;
 - (void)setStatus:(int)arg1;

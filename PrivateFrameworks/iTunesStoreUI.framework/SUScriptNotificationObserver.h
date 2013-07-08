@@ -9,8 +9,8 @@
     struct __CFSet { } *_receivers;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_accessibilityPerformScrollRight;
 - (void)_accessibilityPerformScrollLeft;

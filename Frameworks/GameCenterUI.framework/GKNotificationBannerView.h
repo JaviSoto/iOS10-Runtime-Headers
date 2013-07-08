@@ -38,10 +38,12 @@
 
 - (void)showWithTouchHandler:(id)arg1;
 - (void)showWithCompletionHandler:(id)arg1;
+- (id)initWithTitle:(id)arg1 player:(id)arg2 message:(id)arg3;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (id)touchHandler;
 - (void)setTouchHandler:(id)arg1;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
+- (id)initWithTitle:(id)arg1 imageView:(id)arg2 message:(id)arg3;
 - (float)preferredWidthPad;
 - (void)callCompletionHandler;
 - (void)_wasTouched:(id)arg1;

@@ -40,12 +40,12 @@
 - (id)initWithDirectorySource:(void*)arg1 addressBook:(void*)arg2;
 - (id)initWithGroups:(id)arg1 sources:(id)arg2 addressBook:(void*)arg3;
 - (BOOL)showsAllContacts;
+- (BOOL)isEditable;
 - (id)copyDictionaryRepresentation;
 - (id)sources;
 - (id)groups;
 - (void*)addressBook;
 - (id)initWithAddressBook:(void*)arg1;
-- (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;

@@ -122,8 +122,8 @@
 + (id)URLFromPath:(id)arg1;
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 + (unsigned int)defaultScaleMode;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)artist;
 - (id)album;
@@ -234,8 +234,8 @@
 - (void)setOverrideDuration:(double)arg1;
 - (void)setSelectedAlternateTextTrack:(id)arg1;
 - (id)selectedAlternateTextTrack;
-- (BOOL)isAssetLoaded;
 - (void)setAlternateAudioTrackID:(int)arg1;
+- (BOOL)isAssetLoaded;
 - (void)setVideoID:(id)arg1;
 - (id)alternateTracks;
 - (double)timeOfSeekableStart;

@@ -27,14 +27,16 @@
 @property(readonly) BOOL frontFaceBodyContentCreated;
 
 
+- (id)snapshotOfFrontFace;
+- (void)setSuppressedContent:(int)arg1;
+- (id)initWithPass:(id)arg1 content:(int)arg2;
+- (id)pass;
 - (int)suppressedContent;
 - (void)flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
 - (void)updateValidityDisplay;
 - (BOOL)frontFaceBodyContentCreated;
 - (BOOL)showingFront;
 - (void)setBackFaceIsTall:(BOOL)arg1;
-- (void)setSuppressedContent:(int)arg1;
-- (id)snapshotOfFrontFace;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
 - (struct CGSize { float x1; float x2; })sizeOfFrontFace;
 - (struct CGSize { float x1; float x2; })sizeOfBackFace;
@@ -50,7 +52,6 @@
 - (void)_updateFrontFaceSuppressedContent;
 - (BOOL)backFaceIsTall;
 - (void)setContentMode:(int)arg1 withDuration:(double)arg2;
-- (id)initWithPass:(id)arg1 content:(int)arg2;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)registerForEnterBackgroundNotification;
 - (void)unregisterForEnterBackgroundNotification;
@@ -59,7 +60,6 @@
 - (void)prepareForFlip;
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
-- (id)pass;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)uniqueID;
 - (void)setDelegate:(id)arg1;

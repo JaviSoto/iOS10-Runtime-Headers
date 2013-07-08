@@ -11,8 +11,8 @@
     struct __CFDictionary { } *_gestureRecognizersByWindow;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)description;

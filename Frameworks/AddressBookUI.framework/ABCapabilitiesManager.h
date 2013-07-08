@@ -21,6 +21,7 @@
 - (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
 - (BOOL)isEmailConfigured;
 - (BOOL)hasCameraCapability;
+- (BOOL)hasSiriCapability;
 - (BOOL)hasVibratorCapability;
 - (BOOL)hasCellularDataCapability;
 - (BOOL)hasTelephonyCapability;

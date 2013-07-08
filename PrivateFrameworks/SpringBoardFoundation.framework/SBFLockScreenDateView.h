@@ -7,8 +7,10 @@
 @interface SBFLockScreenDateView : UIView  {
     UILabel *_timeLabel;
     UILabel *_dateLabel;
+    BOOL _useLegibilityLabels;
     _UILegibilityLabel *_legibilityTimeLabel;
     _UILegibilityLabel *_legibilityDateLabel;
+    float _timeAlpha;
     float _dateAlpha;
     NSDate *_date;
     <SBFLockScreenDateFormatter> *_formatter;
@@ -29,14 +31,15 @@
 @property float dateAlphaPercentage;
 
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (float)dateStrength;
 - (float)timeStrength;
 - (id)formatter;
 - (float)dateBaselineOffsetFromOrigin;
+- (void)setDateHidden:(BOOL)arg1;
 - (BOOL)isDateHidden;
 - (void)setDateAlphaPercentage:(float)arg1;
 - (void)setTimeStrength:(float)arg1;
@@ -45,16 +48,20 @@
 - (void)_layoutDateLabel;
 - (void)_layoutTimeLabel;
 - (float)dateAlphaPercentage;
-- (void)_setDateAlpha:(float)arg1;
-- (void)_useLegibilityLabels:(BOOL)arg1;
+- (float)_effectiveDateAlpha;
+- (void)_updateLabelAlpha;
 - (id)_dateFont;
 - (id)_timeFont;
+- (void)_setDateAlpha:(float)arg1;
+- (void)_updateLegibilityLabels;
+- (void)_updateLabels;
+- (void)_useLegibilityLabels:(BOOL)arg1;
+- (void)_addLabels;
 - (void)updateFormat;
 - (float)timeBaselineOffsetFromOrigin;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setFormatter:(id)arg1;
 - (id)legibilitySettings;
-- (void)setDateHidden:(BOOL)arg1;
 - (void)setContentAlpha:(float)arg1 withDateVisible:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)date;

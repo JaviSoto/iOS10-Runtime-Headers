@@ -15,11 +15,11 @@
 + (void)initialize;
 
 - (void)setValueForKey:(id)arg1 value:(id)arg2;
+- (void)removeValueForKey:(id)arg1;
 - (void)removeAllValues;
 - (void)getValueForKey:(id)arg1 usingFunction:(id)arg2;
 - (id)_className;
 - (id)initWithDomain:(id)arg1;
-- (void)removeValueForKey:(id)arg1;
 - (void)dealloc;
 - (id)valueForKey:(id)arg1;
 

@@ -53,8 +53,8 @@
 
 + (id)_defaultLabelColor;
 + (id)_defaultLabelFont;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -97,7 +97,6 @@
 - (id)_newButton;
 - (void)_sizeView:(id)arg1 toPossibleTitles:(id)arg2 pressedTitle:(id)arg3;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;
-- (BOOL)_shouldDelaySendingTouchesEndedActionUntilNextRunLoop;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_setLastHighlightSuccessful:(BOOL)arg1;
 - (void)_setAppearanceGuideClass:(Class)arg1;

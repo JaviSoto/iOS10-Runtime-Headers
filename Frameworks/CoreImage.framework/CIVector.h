@@ -21,8 +21,9 @@
 + (id)vectorWithString:(id)arg1;
 
 - (float)valueAtIndex:(unsigned long)arg1;
-- (struct CGPoint { float x1; float x2; })CGPointValue;
 - (float*)_values;
+- (struct CGPoint { float x1; float x2; })CGPointValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (id)initWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -35,7 +36,6 @@
 - (float)Z;
 - (float)Y;
 - (float)X;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (id)stringRepresentation;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
 - (id)init;

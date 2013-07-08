@@ -88,11 +88,11 @@
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (void)reload;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)setAddressBook:(void*)arg1;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)contentView;
-- (void)reload;
 - (void)dealloc;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (BOOL)_shouldDeactivateOnCancelButtonClicked;

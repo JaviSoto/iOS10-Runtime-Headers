@@ -14,7 +14,7 @@
 + (id)sharedPhotoStreamsHelper;
 
 - (void)resetServerState;
-- (void)enumerateMasterHashesForAssets:(id)arg1 withBlock:(id)arg2;
+- (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id)arg2;
 - (void)resume_mstreamd:(id)arg1;
 - (id)pause_mstreamd;
 - (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(BOOL)arg3;
@@ -28,6 +28,7 @@
 - (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
 - (BOOL)shouldPublishScreenShots;
 - (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
+- (BOOL)dequeueAssetsForPSPublishing:(id)arg1;
 - (BOOL)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
 - (void)writeDidPublishBreadcrumbforHash:(id)arg1 imagePath:(id)arg2;
 - (void)writeDidEnqueueBreadcrumbForHash:(id)arg1 imagePath:(id)arg2;
@@ -43,7 +44,7 @@
 - (void)pollForNewSubscriptionContent;
 - (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
 - (void)resetMstreamdStateForPersonID:(id)arg1;
-- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6;
+- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6 publicGlobalUUID:(id*)arg7;
 - (void)savePhotoStreamMetadata:(id)arg1 forAsset:(id)arg2;
 - (id)photoStreamsPublishStreamID;
 - (void)clearCachedAccountState;

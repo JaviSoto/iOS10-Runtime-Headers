@@ -66,11 +66,11 @@
 - (id)propertyName;
 - (void)setPropertyName:(id)arg1;
 - (void)rollback;
+- (void)reset;
 - (BOOL)hasChanges;
+- (id)objectID;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (id)dirtyProperties;
-- (id)objectID;
-- (void)reset;
 - (BOOL)refresh;
 - (void)setFlags:(unsigned long)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -66,9 +66,9 @@
 + (void)setScreenTraits:(id)arg1;
 + (float)heightForInterfaceOrientation:(int)arg1;
 + (unsigned int)numberOfRows;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -97,10 +97,9 @@
 - (float)upArrowWidth;
 - (void)setCandidateViews:(id)arg1;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1 candidateView:(id)arg2 section:(int)arg3;
+- (BOOL)hasScrolled;
 - (unsigned int)currentCandidateViewIndex;
 - (id)_indexPathForCandidateFromIndexPath:(id)arg1 inCandidateView:(id)arg2;
-- (id)_indexPathForLastVisibleItem;
-- (id)_indexPathForFirstVisibleItem;
 - (void)_showPageAtIndexPath:(id)arg1;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1;
 - (void)_showCandidateAtIndex:(unsigned int)arg1 inSection:(int)arg2 scrollCellToVisible:(BOOL)arg3 animated:(BOOL)arg4;
@@ -110,10 +109,12 @@
 - (void)setFilteredCandidates:(id)arg1;
 - (void)setDidSkipLayout:(BOOL)arg1;
 - (void)setSkippedSetCandidatesBlock:(id)arg1;
+- (id)_indexPathForLastVisibleItem;
 - (id)dragStartPreviousPageIndexPath;
 - (id)_candidateViewForSection:(int)arg1;
 - (BOOL)canExtend;
 - (id)dragStartNextPageIndexPath;
+- (id)_indexPathForFirstVisibleItem;
 - (struct CGPoint { float x1; float x2; })dragStartOffset;
 - (void)setDragStartPreviousPageIndexPath:(id)arg1;
 - (id)_previousPageIndexPath;
@@ -146,7 +147,6 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)hasScrolled;
 - (id)inlineText;
 - (void)revealHiddenCandidates;
 - (void)candidatesDidChange;
@@ -161,6 +161,7 @@
 - (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (BOOL)isHiddenCandidatesList;
 - (BOOL)isExtendedList;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;

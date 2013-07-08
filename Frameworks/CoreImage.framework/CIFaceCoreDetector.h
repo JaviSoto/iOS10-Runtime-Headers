@@ -15,12 +15,12 @@
 
 
 - (id)context;
+- (void)setContext:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })ctmForImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
 - (void)setFaceCoreDetector:(id)arg1;
 - (id)faceCoreDetector;
 - (id)createFaceCoreDataFromCIImage:(id)arg1 width:(unsigned int*)arg2 height:(unsigned int*)arg3;
 - (id)adjustedImageFromImage:(id)arg1 orientation:(int)arg2 inverseCTM:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3;
-- (void)setContext:(id)arg1;
 - (id)featuresInImage:(id)arg1;
 - (id)initWithContext:(id)arg1 options:(id)arg2;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;

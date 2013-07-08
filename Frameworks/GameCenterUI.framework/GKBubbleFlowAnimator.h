@@ -9,13 +9,18 @@
 
 - (void)_returnBubblesFromTransitionView:(id)arg1 forTransitionWithInfo:(id)arg2;
 - (void)_moveBubblesToTransitionView:(id)arg1 forTransitionWithInfo:(id)arg2;
+- (id)_transitionInfoForBubbleFlowRotationOfViewController:(id)arg1;
 - (void)invalidateBubblePositionsForViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)animateBubblesFromViewController:(id)arg1 toViewController:(id)arg2 completion:(id)arg3;
-- (void)_setupBubblePathAnimator:(id)arg1 forTransitionWithInfo:(id)arg2 usingFromBubbles:(BOOL)arg3 usingToBubbles:(BOOL)arg4;
+- (void)_addKeyframesForBubbleControlAnimationsForTransitionWithBubblesGoingOffscreenAndInfo:(id)arg1;
+- (void)_addKeyframesForBubbleControlAnimationsForTransitionWithBubblesComingOnscreenAndInfo:(id)arg1;
+- (void)_addKeyframesForBubbleControlAnimationsForTransitionWithBubblesStayingOnscreenAndInfo:(id)arg1;
 - (void)_addKeyframesForCustomToAnimationsForTransitionWithInfo:(id)arg1;
 - (void)_addKeyframesForCustomFromAnimationsForTransitionWithInfo:(id)arg1;
+- (id)_pathTransitionInfoFromPathAnimator:(id)arg1 forTransitionWithInfo:(id)arg2;
+- (id)_transitionInfoForBubbleFlowSimpleUpdateOfViewController:(id)arg1;
 - (id)_savvyViewControllerForViewController:(id)arg1;
-- (id)_transitionInfoForBubbleFlowRotationOfViewController:(id)arg1;
+- (id)_transitionInfoForBubbleFlowInvalidationOfViewController:(id)arg1;
 - (void)_animateBubblesTransitionWithInfo:(id)arg1 completion:(id)arg2;
 - (id)transitionInfoForBubbleFlowTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 - (void)_stopIdleAnimatingOffscreenBubblesAfterTransitionWithInfo:(id)arg1;
@@ -32,6 +37,7 @@
 - (void)overlayViewNeedsUpdateForRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewController:(id)arg1 willAnimateRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3;
 - (id)tabBarController:(id)arg1 animatorForFromViewController:(id)arg2 toViewController:(id)arg3;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 
 @end

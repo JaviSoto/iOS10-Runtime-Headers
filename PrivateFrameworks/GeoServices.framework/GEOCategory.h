@@ -21,8 +21,6 @@
 @property(retain) NSMutableArray * localizedNames;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)localizedNames;
 - (void)setHasGeoOntologyId:(BOOL)arg1;
 - (id)localizedNamesAtIndex:(unsigned int)arg1;
@@ -34,6 +32,8 @@
 - (void)addLocalizedNames:(id)arg1;
 - (void)setLocalizedNames:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (id)alias;
 - (BOOL)isEqual:(id)arg1;

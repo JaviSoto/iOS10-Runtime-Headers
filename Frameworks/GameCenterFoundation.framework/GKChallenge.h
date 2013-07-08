@@ -60,17 +60,17 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)smallIconSource;
 - (id)detailFromText;
 - (id)detailGoalText;
 - (id)listGoalText;
 - (id)listTitleText;
 - (id)iconURLString;
-- (id)iconSource;
 - (void)loadImageWithSource:(id)arg1 URLString:(id)arg2 withHandler:(id)arg3;
 - (id)smallIconURLString;
-- (id)smallIconSource;
-- (id)alertGoalText;
+- (id)iconSource;
 - (void)loadBannerImageWithHandler:(id)arg1;
+- (id)alertGoalText;
 - (id)composeGoalText;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 

@@ -10,6 +10,7 @@
     GEOLocation *_currentUserLocation;
     int _departureTime;
     unsigned int _mainTransportTypeMaxRouteCount;
+    NSData *_originalDirectionsResponseID;
     NSData *_originalRouteID;
     NSData *_originalRouteZilchPoints;
     GEORouteAttributes *_routeAttributes;
@@ -42,6 +43,8 @@
 @property unsigned int timeSinceLastRerouteRequest;
 @property(readonly) BOOL hasClientCapabilities;
 @property(retain) GEOClientCapabilities * clientCapabilities;
+@property(readonly) BOOL hasOriginalDirectionsResponseID;
+@property(retain) NSData * originalDirectionsResponseID;
 @property BOOL hasDepartureTime;
 @property int departureTime;
 @property BOOL hasGetRouteForZilchPoints;
@@ -49,10 +52,6 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)serviceTags;
 - (id)waypoints;
 - (void)setHasGetRouteForZilchPoints:(BOOL)arg1;
@@ -68,6 +67,8 @@
 - (void)setDepartureTime:(int)arg1;
 - (int)departureTime;
 - (BOOL)hasDepartureTime;
+- (id)originalDirectionsResponseID;
+- (BOOL)hasOriginalDirectionsResponseID;
 - (id)clientCapabilities;
 - (BOOL)hasClientCapabilities;
 - (void)setTimeSinceLastRerouteRequest:(unsigned int)arg1;
@@ -92,6 +93,7 @@
 - (void)addServiceTag:(id)arg1;
 - (void)addWaypoint:(id)arg1;
 - (void)setServiceTags:(id)arg1;
+- (void)setOriginalDirectionsResponseID:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setOriginalRouteZilchPoints:(id)arg1;
 - (void)setOriginalRouteID:(id)arg1;
@@ -100,6 +102,10 @@
 - (void)setWaypoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

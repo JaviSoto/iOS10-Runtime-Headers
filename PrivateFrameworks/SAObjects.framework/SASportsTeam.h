@@ -99,10 +99,10 @@
 - (id)encodedClassName;
 - (id)abbreviatedName;
 - (void)setPoints:(id)arg1;
+- (id)location;
 - (id)points;
 - (void)setGroupName:(id)arg1;
 - (id)statistics;
-- (id)location;
 - (id)groupName;
 - (void)setLocation:(id)arg1;
 - (id)secondaryColor;

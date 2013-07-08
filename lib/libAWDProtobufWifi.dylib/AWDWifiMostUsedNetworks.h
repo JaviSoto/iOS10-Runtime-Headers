@@ -49,9 +49,9 @@
 - (void)setSecurityType:(unsigned int)arg1;
 - (unsigned int)securityType;
 - (BOOL)hasSecurityType;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

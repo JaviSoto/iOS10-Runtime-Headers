@@ -51,6 +51,7 @@
 - (unsigned int)_calculateFetchWindowWithAdditionalMultiple:(BOOL)arg1;
 - (unsigned int)_fetchWindowMinimum;
 - (unsigned int)_fetchWindowMultiple;
+- (BOOL)_isSingleCoreDevice;
 - (void)setEarliestReceivedDate:(id)arg1;
 - (void)addCountsForMessages:(id)arg1 shouldUpdateUnreadCount:(BOOL)arg2;
 - (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2;

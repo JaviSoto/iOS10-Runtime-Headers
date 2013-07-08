@@ -21,7 +21,6 @@
 @property(readonly) CLLocation * location;
 @property(readonly) struct { double x1; double x2; } coordinate;
 
-+ (id)partialAssetRepresentingNodeFetchRequestInManagedObjectContext:(id)arg1;
 
 - (id)initWithPartialFetchDictionary:(id)arg1;
 - (id)initWithManagedAsset:(id)arg1;
@@ -31,10 +30,10 @@
 - (BOOL)isVisited;
 - (void)setCluster:(id)arg1;
 - (BOOL)isMarked;
-- (id)creationDate;
-- (id)objectID;
-- (struct { double x1; double x2; })coordinate;
 - (id)location;
+- (id)objectID;
+- (id)creationDate;
+- (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 
 @end

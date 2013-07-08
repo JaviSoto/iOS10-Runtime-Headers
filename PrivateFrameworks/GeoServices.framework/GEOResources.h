@@ -22,6 +22,8 @@
     NSString *_locationShiftURL;
     NSString *_mapMatchURL;
     NSString *_polyLocationShiftURL;
+    NSString *_problemStatusURL;
+    NSString *_problemSubmissionURL;
     NSMutableArray *_regionalResources;
     NSString *_releaseInfo;
     NSString *_resourcesURL;
@@ -88,10 +90,12 @@
 @property(retain) NSString * addressCorrectionUpdateURL;
 @property(readonly) BOOL hasPolyLocationShiftURL;
 @property(retain) NSString * polyLocationShiftURL;
+@property(readonly) BOOL hasProblemSubmissionURL;
+@property(retain) NSString * problemSubmissionURL;
+@property(readonly) BOOL hasProblemStatusURL;
+@property(retain) NSString * problemStatusURL;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)xmlChecksums;
 - (id)iconChecksums;
 - (id)fontChecksums;
@@ -103,6 +107,10 @@
 - (id)fonts;
 - (id)textures;
 - (id)tileGroups;
+- (id)problemStatusURL;
+- (BOOL)hasProblemStatusURL;
+- (id)problemSubmissionURL;
+- (BOOL)hasProblemSubmissionURL;
 - (id)polyLocationShiftURL;
 - (BOOL)hasPolyLocationShiftURL;
 - (id)addressCorrectionUpdateURL;
@@ -186,6 +194,8 @@
 - (void)addTexture:(id)arg1;
 - (void)addStyleSheet:(id)arg1;
 - (void)addTileGroup:(id)arg1;
+- (void)setProblemStatusURL:(id)arg1;
+- (void)setProblemSubmissionURL:(id)arg1;
 - (void)setPolyLocationShiftURL:(id)arg1;
 - (void)setAddressCorrectionUpdateURL:(id)arg1;
 - (void)setAddressCorrectionInitURL:(id)arg1;
@@ -231,6 +241,8 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)styleSheets;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

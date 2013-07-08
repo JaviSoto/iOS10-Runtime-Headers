@@ -8,6 +8,7 @@
     int _socketDescriptor;
     NSMutableArray *_messageQueue;
     bool_reliableUDP;
+    unsigned short _communicationID;
     NSObject<OS_dispatch_queue> *_networkProcQueue;
     NSObject<OS_dispatch_source> *_readSource;
     NSObject<OS_dispatch_source> *_timer;

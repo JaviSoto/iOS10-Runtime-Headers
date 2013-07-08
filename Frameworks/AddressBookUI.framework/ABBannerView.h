@@ -13,8 +13,8 @@
 @property(copy) NSString * value;
 
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1 value:(id)arg2;
 - (void)setTitle:(id)arg1;

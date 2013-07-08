@@ -12,8 +12,8 @@
 
 @property(retain) TPIncomingCallOptionsView * optionsView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setupAndAddToView:(id)arg1;
 - (void)setOptionsView:(id)arg1;

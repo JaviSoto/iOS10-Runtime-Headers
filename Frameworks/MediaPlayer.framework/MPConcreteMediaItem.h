@@ -15,6 +15,7 @@
 + (void)didChangeEntityWithDataProviderEntityClass:(Class)arg1 persistentID:(unsigned long long)arg2 deleted:(BOOL)arg3;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)existsInLibrary;
 - (void)invalidateCachedProperties;
@@ -45,6 +46,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

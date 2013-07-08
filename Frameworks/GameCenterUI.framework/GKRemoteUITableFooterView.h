@@ -4,7 +4,7 @@
 
 @class <GKRemoteUIAuxiliaryViewDelegate>, GKButton, NSArray, NSDictionary;
 
-@interface GKRemoteUITableFooterView : UIView <RUIPageAccessory> {
+@interface GKRemoteUITableFooterView : UIView <RUIPageAccessory, RemoteUITableFooter> {
     BOOL _pinToBottom;
     <GKRemoteUIAuxiliaryViewDelegate> *_delegate;
     GKButton *_button;
@@ -24,6 +24,7 @@
 
 
 - (void)setLayoutStyle:(int)arg1;
+- (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
 - (void)tableViewDidUpdateContentInset:(id)arg1;
 - (void)objectModelDidChange:(id)arg1;
 - (void)setButtonBaselineOffset:(float)arg1;

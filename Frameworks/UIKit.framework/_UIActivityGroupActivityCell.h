@@ -12,8 +12,8 @@
 @property(retain) _UIActivityFunctionImageView * activityImageView;
 @property(retain) UILabel * activityLabel;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)activityLabel;

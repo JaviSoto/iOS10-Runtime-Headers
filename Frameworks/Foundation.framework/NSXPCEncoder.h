@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSXPCConnection, <NSXPCEncoderDelegate>, NSObject<OS_xpc_object>;
+@class <NSXPCEncoderDelegate>, NSXPCConnection, NSObject<OS_xpc_object>, NSMutableSet;
 
 @interface NSXPCEncoder : NSXPCCoder  {
     NSObject<OS_xpc_object> *_oolObjects;
@@ -13,7 +13,7 @@
     BOOL _askForReplacement;
     void **_encoder;
     unsigned long long _genericIndex;
-    struct __CFSet { } *_cache;
+    NSMutableSet *_cache;
 }
 
 @property NSXPCConnection * _connection;
@@ -40,7 +40,7 @@
 - (id)_replaceObject:(id)arg1;
 - (void)_encodeCString:(const char *)arg1 forKey:(id)arg2;
 - (id)_createRootXPCObject;
-- (void)_setCache:(struct __CFSet { }*)arg1;
+- (void)_setCache:(id)arg1;
 - (void)set_connection:(id)arg1;
 - (void)encodeInvocation:(id)arg1;
 - (id)_connection;

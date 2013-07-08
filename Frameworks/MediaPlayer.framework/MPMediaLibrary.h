@@ -102,6 +102,7 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
+- (BOOL)isCurrentThreadInTransaction;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id)arg2;
 - (id)_syncValidity;
@@ -155,7 +156,6 @@
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (id)syncValidity;
-- (BOOL)isCurrentThreadInTransaction;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (void)connectWithCompletionHandler:(id)arg1;
 - (BOOL)requiresAuthentication;

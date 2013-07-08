@@ -110,6 +110,7 @@
         unsigned int disableStyleOverrides : 1; 
         unsigned int legibilityAccessibilitySettingEnabled : 1; 
         unsigned int viewControllerBasedStatusBarAppearance : 1; 
+        unsigned int fakingRequiresHighResolution : 1; 
     } _applicationFlags;
     UIColor *_defaultTopNavBarTintColor;
     int _undoButtonIndex;
@@ -179,9 +180,9 @@
 + (void)_startWindowServerIfNecessary;
 + (BOOL)rendersLocally;
 + (BOOL)registerAsSystemApp;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 + (void)shouldShowNetworkActivityIndicatorInRemoteApplication:(BOOL)arg1;
 
 - (void)endBackgroundTask:(unsigned int)arg1;
@@ -238,14 +239,13 @@
 - (BOOL)shouldRecordExtendedLaunchTime;
 - (void*)_getSymbol:(id)arg1 forFramework:(id)arg2;
 - (void)runTest:(id)arg1 forAnimation:(id)arg2;
-- (void)_leak;
 - (void)setDeviceOrientation:(int)arg1;
-- (void)_rotationDuringTest:(id)arg1 options:(id)arg2;
+- (void)_leak;
+- (void)rotateIfNeeded:(int)arg1 completion:(id)arg2;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (int)_testOrientation:(id)arg1 options:(id)arg2;
 - (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
-- (void)_cancelTestRotationObserver;
 - (void)stopCHUDRecording;
 - (void)_reportResults:(id)arg1;
 - (void)finishedIPTest:(id)arg1 extraResults:(id)arg2;
@@ -302,6 +302,7 @@
 - (void)_endShowingNetworkActivityIndicator;
 - (void)_beginShowingNetworkActivityIndicator;
 - (BOOL)_taskSuspendingUnsupported;
+- (BOOL)_fakingRequiresHighResolution;
 - (BOOL)_requiresHighResolution;
 - (BOOL)_isViewContentScalingDisabled;
 - (void)presentLocalNotificationNow:(id)arg1;
@@ -329,14 +330,15 @@
 - (void)clearHardwareKeyboardState;
 - (void)setHardwareKeyboardLayoutName:(id)arg1;
 - (id)textInputMode;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (id)keyCommands;
 - (void)handleKeyHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_handleHIDEvent:(struct __IOHIDEvent { }*)arg1;
+- (void)_updateSnapshotForBackgroundApplication:(BOOL)arg1;
 - (void)_cancelUnfinishedTouchesForEvent:(id)arg1;
 - (BOOL)_isSendingEventForProgrammaticTouchCancellation;
 - (void)_cancelViewProcessingOfTouches:(id)arg1 withEvent:(id)arg2 sendingTouchesCancelledToViewsOfTouches:(id)arg3;
 - (void)_cancelGestureRecognizersForView:(id)arg1;
+- (void)_cancelPhysicalButtonsWithType:(int)arg1;
 - (BOOL)_didEatCurrentTouch;
 - (void)_eatCurrentTouch;
 - (void)_playbackEvents:(id)arg1 atPlaybackRate:(float)arg2 messageWhenDone:(id)arg3 withSelector:(SEL)arg4;
@@ -414,6 +416,7 @@
 - (BOOL)isHandlingOpenShortCut;
 - (BOOL)canOpenURL:(id)arg1;
 - (void)updateSuspendedSettings:(id)arg1;
+- (id)_snapshotContextWithName:(id)arg1 screen:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
@@ -551,13 +554,13 @@
 - (BOOL)_shouldFakeForegroundTransitionForBackgroundFetch;
 - (void)_handleApplicationSuspend:(struct __GSEvent { }*)arg1 eventInfo:(void*)arg2;
 - (void)_replyToBackgroundFetchRequestWithResult:(unsigned int)arg1 remoteNotificationToken:(id)arg2 sequenceNumber:(id)arg3 updateApplicationSnapshot:(BOOL)arg4;
-- (void)_updateSnapshotAndStateRestorationArchiveForBackgroundEvent:(id)arg1;
+- (void)_updateSnapshotAndStateRestorationArchiveForBackgroundEvent:(id)arg1 saveState:(BOOL)arg2 exitIfCouldNotRestoreState:(BOOL)arg3;
 - (void)terminateWithSuccess;
-- (id)_physicalButtonsEvent;
 - (void)_cancelAllTouches;
-- (void)_cancelTouches:(id)arg1 withEvent:(id)arg2;
 - (void)_cancelTouches:(id)arg1 withEvent:(id)arg2 includingGestures:(BOOL)arg3 notificationBlock:(id)arg4;
 - (void)_cancelGestureRecognizers:(id)arg1;
+- (void)_cancelTouches:(id)arg1 withEvent:(id)arg2;
+- (id)_physicalButtonsEvent;
 - (id)_gestureRecognizersForResponder:(id)arg1;
 - (id)_keyWindowForScreen:(id)arg1;
 - (void)_setPhysicalButton:(id)arg1 forType:(int)arg2;
@@ -595,7 +598,7 @@
 - (id)userCachesDirectory;
 - (BOOL)removeDefaultImage:(id)arg1 forScreen:(id)arg2;
 - (void)prepareForDefaultImageSnapshot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationSnapshotRectForScreen:(id)arg1 orientation:(int)arg2;
+- (BOOL)_shouldUseHiResForClassic;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationSnapshotRectForOrientation:(int)arg1;
 - (BOOL)_shouldZoom;
 - (void)applicationOpenURL:(id)arg1;
@@ -621,6 +624,7 @@
 - (void)_terminateWithStatus:(int)arg1;
 - (void)applicationWillTerminate;
 - (BOOL)reportApplicationSuspended;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationSnapshotRectForScreen:(id)arg1 orientation:(int)arg2;
 - (id)pathToDefaultImageNamed:(id)arg1 forScreen:(id)arg2;
 - (struct CGImage { }*)_createDefaultImageSnapshotForScreen:(id)arg1;
 - (void)prepareForDefaultImageSnapshotForScreen:(id)arg1;
@@ -696,7 +700,6 @@
 - (void)setReceivesMemoryWarnings:(BOOL)arg1;
 - (void)_notifySpringBoardOfStatusBarOrientationChangeAndFenceWithAnimationDuration:(double)arg1;
 - (void)_createStatusBarWithRequestedStyle:(int)arg1 orientation:(int)arg2 hidden:(BOOL)arg3;
-- (int)_validateStatusBarStyle:(int)arg1;
 - (BOOL)_applicationLaunchesIntoPortrait;
 - (BOOL)_supportedInterfaceOrientationsIsEnabled;
 - (BOOL)systemIsAnimatingApplicationLifecycleEvent;
@@ -760,7 +763,7 @@
 - (id)_accessibilityFirstElement;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityElementFirst:(BOOL)arg1 last:(BOOL)arg2 forFocus:(BOOL)arg3;
-- (id)_axSubviews;
+- (void)_appendKeyboardWindow:(id)arg1 forModalWindow:(id)arg2 allWindows:(id)arg3;
 - (void)_accessibilityFixPhysicalEvent:(id)arg1;
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityTypingCandidates;
@@ -770,6 +773,7 @@
 - (BOOL)_accessibilityDictationIsListening;
 - (id)_accessibilityCurrentHardwareKeyboardLayout;
 - (id)_accessibilityCurrentSoftwareKeyboardLayout;
+- (id)_axSubviews;
 - (BOOL)_accessibilityHardwareKeyboardActive;
 - (void)_appendWindowsForAccessibilityElements:(id)arg1 withElement:(id)arg2;
 - (id)_axAllSubviews;

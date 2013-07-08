@@ -140,8 +140,8 @@
 - (void)setCompletionBlock:(id)arg1;
 - (void*)context;
 - (void)reset;
-- (void)loadRequest:(id)arg1;
 - (void)setContext:(void*)arg1;
+- (void)loadRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SSVLoadURLOperation, SKUIItemList, <SKUIItemListTableDelegate>, SKUIClientContext, NSOperationQueue, NSMutableIndexSet, SKUIUber, SKUIItemArtworkContext, SKUIIconDataConsumer, SKUIItemCollectionController, SKUIResourceLoader;
+@class SKUIResourceLoader, NSMutableIndexSet, SSVLoadURLOperation, SKUIItemCollectionController, SKUIClientContext, SKUIItemList, <SKUIItemListTableDelegate>, SKUIUber, SKUIItemArtworkContext, NSString, NSOperationQueue, SKUIIconDataConsumer;
 
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
     SKUIClientContext *_clientContext;
@@ -43,6 +43,7 @@
 @property int separatorStyle;
 @property(getter=isSuspended) BOOL suspended;
 @property(retain) SKUIUber * uber;
+@property(readonly) NSString * visibleMetricsImpressions;
 
 
 - (void)setItemList:(id)arg1;
@@ -50,7 +51,7 @@
 - (void)setLoadsMoreItems:(BOOL)arg1;
 - (BOOL)loadsMoreItems;
 - (void)itemTableView:(id)arg1 didRemoveCell:(id)arg2;
-- (id)visibleMetricsImpressionsWithLocationPrefix:(id)arg1;
+- (id)visibleMetricsImpressions;
 - (void)setItemArtworkContext:(id)arg1;
 - (void)deleteRowsAtIndexPaths:(id)arg1;
 - (void)_finishLoadMoreOperationWithItems:(id)arg1 error:(id)arg2;

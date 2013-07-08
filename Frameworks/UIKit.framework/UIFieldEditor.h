@@ -69,8 +69,8 @@
 + (id)sharedFieldEditor;
 + (id)activeFieldEditor;
 + (void)releaseSharedInstance;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -86,14 +86,14 @@
 - (id)style;
 - (id)typingAttributes;
 - (void)setTextContainer:(id)arg1;
-- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })textContainerInset;
-- (id)linkTextAttributes;
-- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
-- (void)invalidateTextContainerOrigin;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (unsigned int)layoutManager:(id)arg1 shouldGenerateGlyphs:(const unsigned short*)arg2 properties:(const int*)arg3 characterIndexes:(const unsigned int*)arg4 font:(id)arg5 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
+- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
+- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
+- (void)invalidateTextContainerOrigin;
+- (id)linkTextAttributes;
 - (int)layoutOrientation;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -161,7 +161,6 @@
 - (BOOL)_clearOnEditIfNeeded;
 - (BOOL)hasText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_unobscuredSecureRange;
-- (id)_textContainer;
 - (id)_layoutManager;
 - (void)clearText;
 - (int)atomStyle;
@@ -176,6 +175,7 @@
 - (id)endOfDocument;
 - (id)beginningOfDocument;
 - (void)setAttributedText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
+- (id)_textContainer;
 - (void)_setValue:(id)arg1 forTextAttribute:(id)arg2;
 - (void)_obscureLastCharacter;
 - (void)setSelection:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

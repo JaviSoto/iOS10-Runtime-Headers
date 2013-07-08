@@ -50,7 +50,7 @@
 - (void)synchronize;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (BOOL)dictationIsEnabled;
 - (id)languageCode;
+- (BOOL)dictationIsEnabled;
 
 @end

@@ -16,8 +16,6 @@
 @property(retain) NSMutableArray * trafficIncidents;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (struct { int x1; int x2; }*)createUnpackedVerticesWithGutterSize:(int)arg1;
 - (id)trafficIncidents;
 - (id)trafficSegments;
@@ -35,6 +33,8 @@
 - (void)setTrafficSegments:(id)arg1;
 - (void)setVertices:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

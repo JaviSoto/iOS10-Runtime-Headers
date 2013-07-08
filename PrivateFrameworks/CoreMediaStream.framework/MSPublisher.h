@@ -86,16 +86,17 @@
 - (BOOL)_isInRetryState;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)computeHashForAsset:(id)arg1;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 outError:(id*)arg2;
 - (BOOL)enqueueAssetCollections:(id)arg1 outError:(id*)arg2;
 - (void)reenqueueQuarantinedAssetCollections;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)publish;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (int)_stop;
 - (void)deactivate;
+- (void)publish;
 - (void)stop;
 - (void)abort;
 

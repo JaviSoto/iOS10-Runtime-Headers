@@ -37,7 +37,7 @@
 - (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
-- (void)_processTokenAssetJob:(id)arg1;
+- (void)_processAvalancheJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1;
 - (void)_processVideoJob:(id)arg1;

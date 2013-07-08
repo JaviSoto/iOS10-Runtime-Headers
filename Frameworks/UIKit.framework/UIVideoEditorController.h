@@ -26,6 +26,8 @@
 - (id)videoPath;
 - (void)editVideoViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
+- (void)_setVideoURL:(id)arg1;
+- (id)_videoURL;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)_setupControllers;
 - (BOOL)_didRevertStatusBar;

@@ -11,7 +11,7 @@
         unsigned int bulletinsWithRequestParameters : 1; 
         unsigned int bulletinsFilteredByDEPRECATED : 1; 
         unsigned int bulletinsFilteredByEnabledSectionsDEPRECATED : 1; 
-        unsigned int clearedInfoForAllBulletins : 1; 
+        unsigned int clearedInfoAndBulletinsForClearingAllBulletins : 1; 
         unsigned int clearedInfoForBulletins : 1; 
         unsigned int clearedInfoForBulletinsDEPRECATED : 1; 
         unsigned int attachmentPNGDataForRecordID : 1; 

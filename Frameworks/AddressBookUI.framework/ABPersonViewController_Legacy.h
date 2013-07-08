@@ -168,7 +168,6 @@
 - (BOOL)allowsSharing;
 - (BOOL)allowsActions;
 - (void)editCancel:(id)arg1;
-- (BOOL)isReadonly;
 - (id)personHeaderView;
 - (void)setCustomHeaderView:(id)arg1;
 - (id)customHeaderView;
@@ -177,6 +176,7 @@
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
+- (BOOL)isReadonly;
 - (int)abViewControllerType;
 - (BOOL)supportedInterfaceOrientation:(int)arg1;
 - (void)updateNavigationButtons;

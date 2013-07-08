@@ -32,9 +32,9 @@
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (int)sourceType;
+- (void)reset;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void)reset;
 - (BOOL)refresh;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;

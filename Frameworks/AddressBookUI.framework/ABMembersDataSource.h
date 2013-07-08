@@ -26,7 +26,6 @@
 
 
 - (id)indexPathForDisplayedMemberIndex:(unsigned int)arg1 inTableView:(id)arg2;
-- (void)_invalidateMeCard;
 - (unsigned int)displayedMemberIndexForIndexPath:(id)arg1 inTableView:(id)arg2;
 - (int)globalRowForBanner;
 - (struct __CFDictionary { }*)sectionHeaderSortingIndices;
@@ -35,6 +34,7 @@
 - (id)titleForHeaderInSection:(int)arg1;
 - (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
+- (void)_invalidateMeCard;
 - (void)setBannerView:(id)arg1 inTableView:(id)arg2;
 - (id)bannerView;
 - (BOOL)shouldShowGroups;

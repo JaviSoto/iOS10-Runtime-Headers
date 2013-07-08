@@ -31,8 +31,8 @@
 @property struct CGSize { float x1; float x2; } shadowOffset;
 
 + (float)lineHeightWithFont:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)abUITextView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
 - (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;

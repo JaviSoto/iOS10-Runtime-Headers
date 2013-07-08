@@ -12,6 +12,7 @@
     BOOL _layoutTilesInMainThread;
     BOOL _tilingModeIsLocked;
     BOOL _allowsPaintingAndScriptsWhilePanning;
+    BOOL _editingTilingModeEnabled;
 }
 
 
@@ -27,6 +28,7 @@
 - (id)wakWindow;
 - (BOOL)layoutTilesInMainThread;
 - (BOOL)tileDrawingEnabled;
+- (BOOL)editingTilingModeEnabled;
 - (void)setTileDrawingEnabled:(BOOL)arg1;
 - (BOOL)logsTilingChanges;
 - (void)setLogsTilingChanges:(BOOL)arg1;
@@ -57,6 +59,7 @@
 - (void)setTilesOpaque:(BOOL)arg1;
 - (void)setTilingArea:(int)arg1;
 - (void)removeAllNonVisibleTiles;
+- (void)setEditingTilingModeEnabled:(BOOL)arg1;
 - (void)layoutTilesNow;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
 - (void)setTilingEnabled:(BOOL)arg1;

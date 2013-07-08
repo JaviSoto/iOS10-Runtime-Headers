@@ -15,11 +15,11 @@
 + (id)copyNonRetainingArray;
 + (id)nonRetainingArray;
 
-- (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)sortUsingSelector:(SEL)arg1;
+- (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)removeFirstObject;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
-- (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromSet:(id)arg2;
@@ -105,16 +105,6 @@
 - (void)removeItemAtIndex:(unsigned int)arg1;
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
-- (void)_mapkit_makeObjectsPerformSelector:(SEL)arg1;
-- (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1;
-- (void)_mapkit_sortUsingLongitude;
-- (void)_mapkit_sortUsingLatitude;
-- (id)_mapkit_popLastObject;
-- (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1 ascending:(BOOL)arg2;
-- (void)_mapkit_sortUsingLongitudeAscending:(BOOL)arg1;
-- (void)_mapkit_sortUsingLatitudeAscending:(BOOL)arg1;
-- (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1;
-- (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(BOOL)arg2;
 - (void)removeAllObjectsWithClass:(Class)arg1;
 - (void)mf_moveObjectAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (BOOL)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;

@@ -29,13 +29,14 @@
 @property(retain) UIFont * titleFont;
 @property(retain) UIColor * textColor;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTitleFont:(id)arg1;
 - (void)setSubtitleFont:(id)arg1;
 - (id)bottomBorderColor;
 - (void)setBottomBorderColor:(id)arg1;
+- (void)setIndex:(int)arg1;
 - (int)index;
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -44,7 +45,6 @@
 - (void)setStyle:(int)arg1;
 - (void)setShadowColor:(id)arg1;
 - (id)shadowColor;
-- (void)setIndex:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)style;
 - (void)dealloc;

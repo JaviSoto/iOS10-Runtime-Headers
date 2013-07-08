@@ -15,10 +15,10 @@
 
 
 - (void)updateInfo:(id)arg1;
-- (id)_attributes;
 - (void)setReplacement:(id)arg1;
 - (id)initWithURL:(id)arg1 itemUpdateInfo:(id)arg2;
 - (id)replacement;
+- (id)_attributes;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (id)path;

@@ -89,8 +89,8 @@
 - (id)activeAccountsForService:(id)arg1;
 - (int)numberOfAccounts;
 - (id)activeAccounts;
-- (id)accounts;
 - (void)setReadOnly:(BOOL)arg1;
+- (id)accounts;
 - (id)init;
 - (void)dealloc;
 - (BOOL)readOnly;

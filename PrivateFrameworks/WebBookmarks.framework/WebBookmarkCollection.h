@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WebBookmark, WebBookmarkTitleWordTokenizer;
+@class WebBookmark, WFUserSettings, WebBookmarkTitleWordTokenizer;
 
 @interface WebBookmarkCollection : NSObject  {
     struct sqlite3 { } *_db;
@@ -11,10 +11,13 @@
     WebBookmark *_rootBookmark;
     BOOL _merging;
     BOOL _dirty;
-    BOOL _whiteListRestrictionModeEnabled;
+    WFUserSettings *_webFilterUserSettings;
+    int _webFilterRestrictionType;
 }
 
 @property(getter=isMerging) BOOL merging;
+@property(getter=isWebFilterEnabled,readonly) BOOL webFilterEnabled;
+@property(getter=isWebFilterWhiteListOnlyModeEnabled,readonly) BOOL webFilterWhiteListOnlyModeEnabled;
 
 + (id)safariBookmarkCollection;
 + (unsigned long long)readingListArchivesDiskUsage;
@@ -28,7 +31,6 @@
 
 - (unsigned int)generation;
 - (BOOL)containsOnlyStockBookmarks;
-- (id)syncStringForKey:(id)arg1;
 - (id)bookmarksDictionary;
 - (BOOL)_syncPropertyExistsForKey:(id)arg1;
 - (BOOL)_deleteSyncPropertyForKey:(id)arg1;
@@ -37,15 +39,17 @@
 - (BOOL)_syncAdd:(id)arg1 toParent:(unsigned int)arg2 withOrderIndex:(unsigned int)arg3 error:(id*)arg4;
 - (id)_bookmarkDictionaryForSqliteRow:(struct sqlite3_stmt { }*)arg1 recursive:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)_addChildrenOfID:(unsigned int)arg1 toCollection:(id)arg2 recursive:(BOOL)arg3 error:(id*)arg4;
-- (void)_registerForWebFilterConfigurationChangedNotification;
+- (id)favoritesFolderList;
+- (void)setFavoritesFolderIdentifier:(unsigned int)arg1;
+- (BOOL)isWebFilterEnabled;
+- (void)_webFilterConfigurationChanged;
 - (id)_bookmarksInListWhere:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
-- (void)clearBuiltinBookmarks;
+- (void)clearBuiltinDeviceBookmarks;
 - (unsigned int)rollingReadingListMaximumCount;
 - (void)rollOutReadingListItemIfNeededToMakeRoomForOneNewItem;
 - (BOOL)rollOutLastReadingListItem;
 - (id)firstReadingListBookmarkNeedingArchiveInMode:(int)arg1;
 - (unsigned int)countReadingListBookmarksNeedingArchiveInMode:(int)arg1;
-- (void)postBookmarksDidReloadNotification;
 - (unsigned int)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(BOOL)arg2;
 - (id)firstReadingListBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2;
 - (id)readingListBookmarksMatchingString:(id)arg1 maxResults:(unsigned int)arg2 onlyArchivedBookmarks:(BOOL)arg3;
@@ -56,7 +60,6 @@
 - (BOOL)reorderList:(id)arg1 moveBookmarkAtIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (BOOL)reorderBookmark:(id)arg1 toIndex:(unsigned int)arg2;
 - (BOOL)deleteBookmark:(id)arg1;
-- (unsigned int)webFilterWhiteListFolderBookmarkID;
 - (id)bookmarksNeedingIcons;
 - (BOOL)shouldFetchIconForBookmark:(id)arg1;
 - (id)bookmarksBarList;
@@ -64,9 +67,9 @@
 - (id)subfoldersOfID:(unsigned int)arg1;
 - (id)bookmarkAtPath:(id)arg1;
 - (id)readingListFolder;
-- (id)bookmarksBarBookmark;
 - (id)bookmarkWithUUID:(id)arg1;
 - (void)localeSettingsChanged;
+- (BOOL)updateReadingListWebFilterStatusForUnsetItemsOnly:(BOOL)arg1;
 - (BOOL)markArchivedReadingListItemsAsNonRecoverable;
 - (BOOL)cleanupReadingListArchives;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
@@ -74,6 +77,9 @@
 - (id)webFilterWhiteList;
 - (id)webFilterWhiteListFolder;
 - (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
+- (id)bookmarksBarBookmark;
+- (id)syncStringForKey:(id)arg1;
+- (void)postBookmarksDidReloadNotification;
 - (BOOL)_incrementDAVGeneration;
 - (void)_collectChangesOfType:(int)arg1 withClause:(id)arg2 intoArray:(id)arg3;
 - (BOOL)_indexBookmarkID:(unsigned int)arg1 title:(id)arg2;
@@ -101,6 +107,8 @@
 - (BOOL)_importSyncAnchorPlist:(id)arg1;
 - (BOOL)_importBookmarksPlist:(id)arg1;
 - (void)_rerunMigrationsIfNecessary;
+- (void)_migrateSchemaVersion36ToVersion37;
+- (void)_migrateSchemaVersion35ToVersion36;
 - (void)_migrateSchemaVersion34ToVersion35;
 - (void)_migrateSchemaVersion33ToVersion34;
 - (void)_migrateSchemaVersion32ToVersion33;
@@ -131,6 +139,7 @@
 - (void)_migrateSchemaVersion5ToVersion6;
 - (void)_migrateSchemaVersion4ToVersion5;
 - (void)_migrateSchemaVersion3ToVersion4;
+- (BOOL)deleteAllFavoriteIcons;
 - (BOOL)_rebuildAncestorTable;
 - (void)_normalizeDatabaseURLs;
 - (BOOL)_indexAllTitleWords;
@@ -156,9 +165,10 @@
 - (void)_postBookmarksFolderContentsDidChangeNotification:(unsigned int)arg1;
 - (unsigned int)_specialIDForBookmarkBeingSaved:(id)arg1;
 - (void)_simulateCrashWithDescription:(id)arg1;
-- (BOOL)saveBookmark:(id)arg1 startReadingListFetcher:(BOOL)arg2;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1 countOnly:(BOOL)arg2;
-- (BOOL)_isWebFilterWhiteListOnlyModeEnabled;
+- (unsigned int)_parentIdentifierForBookmarksNeedingIcons;
+- (id)favoritesFolder;
+- (unsigned int)webFilterWhiteListFolderBookmarkID;
 - (id)listWithSpecialID:(unsigned int)arg1;
 - (id)_rootFolderHiddenChildrenClause;
 - (id)listWithID:(unsigned int)arg1 skipOffset:(unsigned int)arg2 includeHidden:(BOOL)arg3;
@@ -167,14 +177,20 @@
 - (id)listWithID:(unsigned int)arg1 skipOffset:(unsigned int)arg2;
 - (id)bookmarkWithID:(unsigned int)arg1;
 - (id)rootBookmark;
+- (BOOL)isWebFilterWhiteListOnlyModeEnabled;
 - (int)_finalizeStatementIfNotNull:(struct sqlite3_stmt { }*)arg1;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1;
 - (BOOL)vacuum;
 - (id)purgeableReadingListItems;
 - (int)_executeSQLWithCString:(const char *)arg1;
+- (BOOL)markWebContentFilterAllowsAllReadingListItems;
+- (BOOL)saveBookmark:(id)arg1 startReadingListFetcher:(BOOL)arg2;
+- (id)_readingListItemsWhere:(id)arg1;
 - (int)_executeSQL:(id)arg1;
 - (unsigned int)readingListFolderBookmarkID;
 - (BOOL)saveBookmark:(id)arg1;
+- (void)_registerForWebFilterConfigurationChangedNotification;
+- (id)webFilterUserSettings;
 - (BOOL)_migrateBookmarksPlist:(id)arg1 syncAnchorPlist:(id)arg2;
 - (void)_migrateToCurrentSchema;
 - (id)_errorForMostRecentSQLiteErrorWithErrorCode:(int)arg1;
@@ -183,7 +199,6 @@
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(BOOL)arg4;
 - (id)initWithPath:(id)arg1 checkIntegrity:(BOOL)arg2;
 - (void)_registerForSyncBookmarksFileChangedNotification;
-- (void)_readWhiteListRestrictionMode;
 - (BOOL)syncSetString:(id)arg1 forKey:(id)arg2;
 - (BOOL)_openDatabaseAtPath:(id)arg1 checkIntegrity:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)_markBookmarkID:(unsigned int)arg1 added:(BOOL)arg2;

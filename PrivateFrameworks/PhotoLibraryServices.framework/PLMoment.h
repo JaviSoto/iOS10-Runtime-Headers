@@ -21,7 +21,6 @@
 @property(retain) PLMomentList * yearMomentList;
 @property(retain) PLMomentList * megaMomentList;
 @property(retain) PLMomentLibrary * momentLibrary;
-@property(retain) PLManagedAsset * keyAsset;
 @property(retain) NSData * approximateLocationData;
 @property(retain) NSData * reverseLocationData;
 @property BOOL reverseLocationDataIsValid;
@@ -34,6 +33,7 @@
 @property(readonly) unsigned int photosCount;
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
+@property(retain) PLManagedAsset * keyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 
@@ -71,10 +71,13 @@
 - (BOOL)supportsDiagnosticInformation;
 - (id)localizedLocationNames;
 - (BOOL)canShowComments;
+- (void)setKeyAsset:(id)arg1;
+- (id)keyAsset;
 - (unsigned int)videosCount;
 - (unsigned int)assetsCount;
 - (unsigned int)approximateCount;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (id)mutableAssets;
 - (void)delete;
 - (unsigned int)photosCount;
 - (BOOL)validateForUpdate:(id*)arg1;

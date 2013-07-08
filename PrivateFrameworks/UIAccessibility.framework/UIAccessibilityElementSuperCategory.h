@@ -5,9 +5,9 @@
 @interface UIAccessibilityElementSuperCategory : UIAccessibilityElementSuperCategory_super  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (BOOL)_accessibilityProvidesOwnFrame;
 - (id)initWithAccessibilityContainer:(id)arg1;
@@ -16,6 +16,7 @@
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_accessibilitySetValue:(id)arg1;
 - (id)_accessibilityAutomaticIdentifier;
+- (float)_accessibilityActivationDelay;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (id)accessibilityLabel;
 - (id)accessibilityValue;

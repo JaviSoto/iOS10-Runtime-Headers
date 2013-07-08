@@ -6,6 +6,6 @@
 }
 
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

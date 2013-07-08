@@ -18,6 +18,7 @@
 - (void)setAdvanceIntervalForDelegateInvocation:(double)arg1;
 - (id)_hostOrNil;
 - (double)advanceIntervalForDelegateInvocation;
+- (void)_dataSourceSignaledFlush;
 - (void)_dataSourceProvidedAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (BOOL)_isAttachedToHost;
 - (id)initWithDependencyFactory:(id)arg1 mediaSubtypesForNativeRepresentation:(id)arg2;

@@ -28,6 +28,7 @@
 }
 
 
+- (unsigned int)wordCount;
 - (id)spacers;
 - (void)setSpacers:(id)arg1;
 - (id)gutters;
@@ -72,7 +73,6 @@
 - (struct CGPoint { float x1; float x2; }*)outerVertices;
 - (void)accept:(id)arg1;
 - (id)textLinesInZone;
-- (unsigned int)wordCount;
 - (double)area;
 - (BOOL)contains:(id)arg1;
 - (unsigned int)vertexCount;

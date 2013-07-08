@@ -14,8 +14,6 @@
 + (id)mainRunLoop;
 + (id)currentRunLoop;
 + (id)_new:(id)arg1;
-+ (void)set_mapkit_networkIORunLoop:(id)arg1;
-+ (id)_mapkit_networkIORunLoop;
 
 - (void)runUntilDate:(id)arg1;
 - (id)currentMode;

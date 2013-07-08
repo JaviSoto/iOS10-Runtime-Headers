@@ -23,6 +23,7 @@
     SEL _selector;
     NSXPCInterface *_interface;
     NSDictionary *_userInfo;
+    unsigned long long _proxyNumber;
 }
 
 @property SEL selector;
@@ -31,11 +32,13 @@
 @property(copy) id cleanupBlock;
 @property(retain) NSXPCInterface * interface;
 @property(retain) NSDictionary * userInfo;
+@property unsigned long long proxyNumber;
 
 
 - (id)userInfo;
 - (void)dealloc;
 - (SEL)selector;
+- (void)setProxyNumber:(unsigned long long)arg1;
 - (void)setCleanupBlock:(id)arg1;
 - (void)setErrorBlock:(id)arg1;
 - (void)setReplyBlock:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)setUserInfo:(id)arg1;
 - (void)setInterface:(id)arg1;
 - (id)interface;
+- (unsigned long long)proxyNumber;
 - (void)setSelector:(SEL)arg1;
 
 @end

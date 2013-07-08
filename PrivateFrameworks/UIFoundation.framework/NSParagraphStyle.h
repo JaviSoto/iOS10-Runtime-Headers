@@ -39,6 +39,8 @@
 @property(readonly) float lineHeightMultiple;
 @property(readonly) float paragraphSpacingBefore;
 @property(readonly) float hyphenationFactor;
+@property(readonly) NSArray * tabStops;
+@property(readonly) float defaultTabInterval;
 
 + (int)_defaultWritingDirection;
 + (id)defaultParagraphStyle;
@@ -65,9 +67,9 @@
 - (int)headerLevel;
 - (void)_allocExtraData;
 - (id)textLists;
-- (id)textBlocks;
 - (float)tighteningFactorForTruncation;
 - (float)hyphenationFactor;
+- (id)textBlocks;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

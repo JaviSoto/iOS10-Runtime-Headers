@@ -66,18 +66,17 @@
 
 - (void)setPitch:(float)arg1;
 - (float)volume;
-- (void)setCompletionCallback:(id)arg1;
-- (void)setOnWillSpeakRangeCallback:(id)arg1;
-- (void)setOnResumeCallback:(id)arg1;
-- (void)setOnPauseCallback:(id)arg1;
-- (void)setOnSpeechStartCallback:(id)arg1;
-- (void)setSpeakingRate:(float)arg1;
 - (void)setSpeechRequest:(id)arg1;
 - (id)speechRequest;
+- (void)setOnSpeechStartCallback:(id)arg1;
 - (id)onSpeechStartCallback;
+- (void)setOnWillSpeakRangeCallback:(id)arg1;
 - (id)onWillSpeakRangeCallback;
+- (void)setOnResumeCallback:(id)arg1;
 - (id)onResumeCallback;
+- (void)setOnPauseCallback:(id)arg1;
 - (id)onPauseCallback;
+- (void)setCompletionCallback:(id)arg1;
 - (id)completionCallback;
 - (void)setShouldDetectLanguage:(BOOL)arg1;
 - (BOOL)shouldDetectLanguage;
@@ -86,6 +85,7 @@
 - (void)setCannotInterrupt:(BOOL)arg1;
 - (BOOL)cannotInterrupt;
 - (BOOL)shouldQueue;
+- (void)setSpeakingRate:(float)arg1;
 - (float)speakingRate;
 - (void)preprocessAction;
 - (id)_detectLanguageFromContent;

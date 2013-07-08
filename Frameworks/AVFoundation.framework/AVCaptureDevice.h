@@ -106,7 +106,7 @@
 - (BOOL)lockForConfiguration:(id*)arg1;
 - (BOOL)isLockedForConfiguration;
 - (struct OpaqueCMClock { }*)deviceClock;
-- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2;
+- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2 resetZoom:(BOOL)arg3;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
@@ -140,13 +140,13 @@
 - (BOOL)_startUsingDevice:(id*)arg1;
 - (void)setActiveInput:(id)arg1;
 - (id)activeInput;
-- (BOOL)isConnected;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (void)_setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)activeFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (BOOL)isConnected;
 - (BOOL)isOpen;
 - (id)uniqueID;
 - (id)init;

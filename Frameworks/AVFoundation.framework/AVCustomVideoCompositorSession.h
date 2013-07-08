@@ -28,13 +28,13 @@
 - (void)requestDidCancel:(id)arg1;
 - (void)request:(id)arg1 didFinishWithError:(id)arg2;
 - (void)request:(id)arg1 didFinishWithComposedPixelBuffer:(struct __CVBuffer { }*)arg2;
-- (void)clearClientError;
-- (id)clientError;
 - (void)_willDeallocOrFinalize;
 - (void)_cleanupFigCallbacks;
 - (long)_setupFigCallbacks;
 - (id)initWithVideoComposition:(id)arg1;
 - (struct OpaqueFigVideoCompositor { }*)_copyFigVideoCompositor;
+- (id)getAndClearClientError;
+- (void)detachVideoComposition;
 - (id)customVideoCompositor;
 - (void)setVideoComposition:(id)arg1;
 - (void)finalize;

@@ -32,8 +32,6 @@
 @property int localSearchProviderID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)actionCaptures;
 - (void)setHasPlaceID:(BOOL)arg1;
 - (id)actionCaptureAtIndex:(unsigned int)arg1;
@@ -55,6 +53,8 @@
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (BOOL)hasSessionID;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)isEqual:(id)arg1;

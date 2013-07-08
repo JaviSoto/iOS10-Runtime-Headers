@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIPanGestureRecognizer, PKGroup, PKPassView, UILongPressGestureRecognizer, UIPageControl, PKReusablePassViewQueue, UIView, <PKPassGroupViewDelegate>, _UIInterpolatingMotionEffect, UIScrollView, NSMutableDictionary;
+@class UIPanGestureRecognizer, PKGroup, PKPassView, UIInterpolatingMotionEffect, UILongPressGestureRecognizer, UIPageControl, PKReusablePassViewQueue, UIView, <PKPassGroupViewDelegate>, UIScrollView, NSMutableDictionary;
 
 @interface PKPassGroupView : UIView <WLCardViewDelegate, PKGroupDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate> {
     NSMutableDictionary *_passViewsByUniqueID;
@@ -17,8 +17,8 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     BOOL _canPan;
-    _UIInterpolatingMotionEffect *_horizontalMotionEffect;
-    _UIInterpolatingMotionEffect *_verticalMotionEffect;
+    UIInterpolatingMotionEffect *_horizontalMotionEffect;
+    UIInterpolatingMotionEffect *_verticalMotionEffect;
     PKGroup *_group;
     <PKPassGroupViewDelegate> *_delegate;
     float _verticalMotionRelativeValue;
@@ -36,6 +36,7 @@
 @property(readonly) <PKPassGroupViewDelegate> * delegate;
 
 
+- (void)_handleLongPress:(id)arg1;
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didInsertPass:(id)arg2 atIndex:(unsigned int)arg3;
@@ -88,7 +89,6 @@
 - (BOOL)passViewBackGrowsCentered:(id)arg1;
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
-- (void)_handleLongPress:(id)arg1;
 - (id)groupID;
 - (void)removeFromSuperview;
 - (void)setPresentationState:(int)arg1;

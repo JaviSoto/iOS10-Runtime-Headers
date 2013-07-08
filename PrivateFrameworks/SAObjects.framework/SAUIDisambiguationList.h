@@ -15,6 +15,7 @@
 @property(copy) NSString * speakableFinalDelimiter;
 @property(copy) NSString * speakableSelectionResponse;
 @property(copy) NSString * speakableSuffix;
+@property(copy) NSString * title;
 
 + (id)disambiguationListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)disambiguationList;
@@ -34,6 +35,8 @@
 - (void)setSelectionResponse:(id)arg1;
 - (id)selectionResponse;
 - (id)encodedClassName;
+- (void)setTitle:(id)arg1;
+- (id)title;
 - (id)items;
 - (void)setItems:(id)arg1;
 - (id)groupIdentifier;

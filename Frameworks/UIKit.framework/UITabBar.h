@@ -39,7 +39,6 @@
     float _itemSpacing;
     int _barMetrics;
     int _imageStyle;
-    int _tabBarTabStyle;
 }
 
 @property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
@@ -61,7 +60,6 @@
 @property(setter=_setBarOrientation:) int _barOrientation;
 @property(setter=_setForcesOpaqueBackground:) BOOL _forcesOpaqueBackground;
 @property(setter=_setBackgroundNeedsUpdate:) BOOL _backgroundNeedsUpdate;
-@property(setter=_setTabBarTabStyle:) int _tabBarTabStyle;
 @property(setter=_setNextSelectionSlideDuration:) float _nextSelectionSlideDuration;
 @property(setter=_setTabButtonWidth:) float _tabButtonWidth;
 @property(setter=_setInterTabButtonSpacing:) float _interTabButtonSpacing;
@@ -74,8 +72,8 @@
 + (id)_tabBarForView:(id)arg1;
 + (float)_buttonGap;
 + (void)_initializeForIdiom:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setLocked:(BOOL)arg1;
 - (id)items;
@@ -93,8 +91,7 @@
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)_isHidden:(id)arg1;
-- (void)_positionLowProfileTabBarButtons:(id)arg1;
-- (id)_uncenteredLowProfileTabBarButtonFramesForItems:(id)arg1;
+- (void)_configureItems:(id)arg1;
 - (void)_updateAppearanceCustomizationIfNecessaryForItem:(id)arg1;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_finishCustomizeAnimation:(id)arg1;
@@ -103,8 +100,6 @@
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (void)dismissCustomizeSheet:(BOOL)arg1;
 - (void)_tabBarFinishedAnimating;
-- (int)_tabBarTabStyle;
-- (int)_barMetrics;
 - (void)setItemPositioning:(int)arg1;
 - (int)itemPositioning;
 - (void)_setDividerImageViews:(id)arg1;
@@ -123,8 +118,7 @@
 - (float)_tabButtonWidth;
 - (void)_setTabButtonWidth:(float)arg1;
 - (void)_setTabBarTabStyle:(int)arg1;
-- (int)_imageStyle;
-- (id)dividerImageForLeftItemState:(unsigned int)arg1 rightItemState:(unsigned int)arg2;
+- (int)_tabBarTabStyle;
 - (void)_effectiveBarTintColorDidChange;
 - (void)_updateTintedImages:(id)arg1 selected:(BOOL)arg2;
 - (void)_dismissCustomizeSheet:(BOOL)arg1;
@@ -132,21 +126,19 @@
 - (BOOL)_backgroundNeedsUpdate;
 - (int)_effectiveBarOrientation;
 - (void)_hideItemsAnimated:(BOOL)arg1;
+- (int)_imageStyle;
 - (void)_showItemsAnimated:(BOOL)arg1;
 - (void)_animateSelectionChangeFromView:(id)arg1 toView:(id)arg2 duration:(float)arg3;
 - (void)_updateDividerImagesIfNecessary;
 - (void)_invalidateDividerImages;
 - (id)_topmostDividerImageView;
 - (void)_doCommonTabBarInit;
-- (void)setDividerImage:(id)arg1 forLeftItemState:(unsigned int)arg2 rightItemState:(unsigned int)arg3;
 - (void)_setImageStyle:(int)arg1;
 - (void)_setBarMetrics:(int)arg1;
 - (float)itemSpacing;
 - (void)setItemSpacing:(float)arg1;
 - (float)itemWidth;
 - (void)setItemWidth:(float)arg1;
-- (float)_widthOfItems:(id)arg1;
-- (void)_configureItems:(id)arg1;
 - (void)_setBackgroundNeedsUpdate:(BOOL)arg1;
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelShadowColor:(id)arg1;
@@ -156,6 +148,7 @@
 - (void)_setBackgroundImage:(id)arg1;
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_configureTabBarReplacingItem:(id)arg1 withNewItem:(id)arg2 dragging:(BOOL)arg3 swapping:(BOOL)arg4;
+- (int)_barMetrics;
 - (void)setSelectedImageTintColor:(id)arg1;
 - (id)selectedImageTintColor;
 - (void)setSelectionIndicatorImage:(id)arg1;
@@ -176,8 +169,6 @@
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)setBackgroundImage:(id)arg1;
 - (BOOL)isCustomizing;
-- (unsigned int)_numberOfTabsThatFitForItems:(id)arg1;
-- (BOOL)_isLowProfileBar;
 - (void)beginCustomizingItems:(id)arg1;
 - (void)setSelectedItem:(id)arg1;
 - (void)_setBarOrientation:(int)arg1;

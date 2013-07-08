@@ -21,8 +21,6 @@
 + (double)threadPriority;
 + (id)currentThread;
 + (void)_im_runBlock:(id)arg1;
-+ (void)_mapkit_runThread:(id)arg1;
-+ (id)_mapkit_networkIOThread;
 
 - (id)init;
 - (id)name;

@@ -10,5 +10,6 @@
 - (float)returnKeyFontSize;
 - (float)keyplaneSwitchKeyFontSize;
 - (float)spaceKeyFontSize;
+- (float)keyCornerRadius;
 
 @end

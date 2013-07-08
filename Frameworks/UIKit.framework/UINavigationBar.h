@@ -95,12 +95,13 @@
 + (id)_bottomColorForBackgroundImage:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 + (void)_initializeForIdiom:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)setLocked:(BOOL)arg1;
 - (id)items;
+- (void)setRightMargin:(float)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -109,7 +110,6 @@
 - (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setNeedsLayout;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setRightMargin:(float)arg1;
 - (BOOL)isLocked;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -122,6 +122,7 @@
 - (id)_backdropViewLayerGroupName;
 - (BOOL)_forcesOpaqueBackground;
 - (BOOL)_needsUpdateBackIndicatorImage;
+- (id)_backgroundBackdropSettings;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_setAutoAdjustTitle:(BOOL)arg1;
 - (void)_navBarButtonPressed:(id)arg1;

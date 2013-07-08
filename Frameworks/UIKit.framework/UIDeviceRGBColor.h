@@ -13,13 +13,13 @@
 
 
 - (void)setStroke;
-- (struct CGColor { }*)CGColor;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (float)alphaComponent;
-- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)setFill;
+- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (struct CGColor { }*)CGColor;
 - (void)set;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

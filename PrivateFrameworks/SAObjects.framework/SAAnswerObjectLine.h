@@ -18,8 +18,8 @@
 - (id)imageInverted;
 - (id)encodedClassName;
 - (id)text;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)setText:(id)arg1;
 - (id)groupIdentifier;
 

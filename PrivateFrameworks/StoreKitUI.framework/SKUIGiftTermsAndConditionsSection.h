@@ -11,7 +11,7 @@
 
 - (void)_termsAction:(id)arg1;
 - (id)headerViewForTableView:(id)arg1;
-- (void).cxx_destruct;
 - (id)_headerView;
+- (void).cxx_destruct;
 
 @end

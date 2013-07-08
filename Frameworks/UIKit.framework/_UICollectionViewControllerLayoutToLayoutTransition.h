@@ -4,17 +4,15 @@
 
 @class UIPercentDrivenInteractiveTransition, UICollectionViewLayout;
 
-@interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioningEx> {
+@interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     BOOL _crossFadeNavigationBar;
     BOOL _crossFadeBottomBars;
     BOOL _interactionAborted;
-    float _transitionDuration;
     UICollectionViewLayout *_toLayout;
     UIPercentDrivenInteractiveTransition *_interactionController;
     int _operation;
 }
 
-@property float transitionDuration;
 @property(retain) UICollectionViewLayout * toLayout;
 @property BOOL crossFadeNavigationBar;
 @property BOOL crossFadeBottomBars;
@@ -30,9 +28,7 @@
 - (id)toLayout;
 - (void)setCrossFadeBottomBars:(BOOL)arg1;
 - (void)setCrossFadeNavigationBar:(BOOL)arg1;
-- (void)setTransitionDuration:(float)arg1;
 - (void)setToLayout:(id)arg1;
-- (float)transitionDuration;
 - (BOOL)_shouldCrossFadeBottomBars;
 - (BOOL)_shouldCrossFadeNavigationBar;
 - (void)animationEnded:(BOOL)arg1;

@@ -3,11 +3,18 @@
  */
 
 @interface _PFWeakReference : NSObject  {
-    void *_weakValue;
+    id _object;
+    unsigned int _objectAddress;
 }
 
+@property(readonly) id object;
 
-- (void*)pointer;
-- (id)initWithPointer:(void*)arg1;
++ (id)weakReferenceWithObject:(id)arg1;
+
+- (id)initWithObject:(id)arg1;
+- (id)object;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (void)dealloc;
 
 @end

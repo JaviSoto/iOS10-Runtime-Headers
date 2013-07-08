@@ -12,9 +12,9 @@
 @property(readonly) int recordID;
 
 
+- (int)recordID;
 - (id)propertyForID:(int)arg1;
 - (id)initWithABRecord:(void*)arg1;
-- (int)recordID;
 - (void*)ABRecord;
 - (id)uniqueID;
 

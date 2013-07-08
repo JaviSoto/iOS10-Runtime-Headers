@@ -7,7 +7,8 @@
 
 + (unsigned short)providerID;
 
+- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)cancelRequest;
-- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 
 @end

@@ -43,6 +43,7 @@
 - (void)decodeIfNecessary;
 - (id)bodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
+- (BOOL)hasContents;
 - (id)contentsForTextSystem;
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4;
@@ -110,7 +111,6 @@
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
 - (id)contentID;
 - (void)setContentID:(id)arg1;
-- (BOOL)hasContents;
 - (id)attachmentURLs;
 - (void)setLanguages:(id)arg1;
 - (id)languages;

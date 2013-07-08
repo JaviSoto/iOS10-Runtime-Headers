@@ -12,10 +12,10 @@
 
 + (Class)responseClass;
 
-- (id)bodyDictionary;
 - (id)initWithAccount:(id)arg1 withAppleIDParameters:(id)arg2 signingSession:(id)arg3;
 - (id)urlString;
 - (id)urlRequest;
+- (id)bodyDictionary;
 - (void).cxx_destruct;
 
 @end

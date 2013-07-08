@@ -5,6 +5,7 @@
 @class _UIBackdropColorSettings, _UIBackdropView, UIColor, UIImage, NSString;
 
 @interface _UIBackdropViewSettings : NSObject  {
+    BOOL _explicitlySetGraphicsQuality;
     BOOL _requiresColorStatistics;
     BOOL _highlighted;
     BOOL _selected;
@@ -23,6 +24,7 @@
     int _graphicsQuality;
     _UIBackdropColorSettings *_colorSettings;
     int _renderingHint;
+    int _stackingLevel;
     float _grayscaleTintLevel;
     float _grayscaleTintAlpha;
     float _grayscaleTintMaskAlpha;
@@ -48,9 +50,11 @@
 @property _UIBackdropView * backdrop;
 @property int style;
 @property int graphicsQuality;
+@property BOOL explicitlySetGraphicsQuality;
 @property BOOL requiresColorStatistics;
 @property(retain) _UIBackdropColorSettings * colorSettings;
 @property int renderingHint;
+@property int stackingLevel;
 @property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isSelected) BOOL selected;
 @property(getter=isEnabled) BOOL enabled;
@@ -87,6 +91,7 @@
 
 + (id)settingsForStyle:(int)arg1 graphicsQuality:(int)arg2;
 + (id)settingsForPrivateStyle:(int)arg1;
++ (id)darkeningTintColor;
 + (id)settingsForPrivateStyle:(int)arg1 graphicsQuality:(int)arg2;
 + (id)settingsForStyle:(int)arg1;
 
@@ -104,6 +109,7 @@
 - (void)setColorSettings:(id)arg1;
 - (void)setBackdrop:(id)arg1;
 - (BOOL)blursWithHardEdges;
+- (void)setStackinglevel:(int)arg1;
 - (void)setBlursWithHardEdges:(BOOL)arg1;
 - (id)backdrop;
 - (void)setRunLoopObserver:(struct __CFRunLoopObserver { }*)arg1;
@@ -116,6 +122,7 @@
 - (id)legibleColor;
 - (float)grayscaleTintMaskAlpha;
 - (float)filterMaskAlpha;
+- (BOOL)explicitlySetGraphicsQuality;
 - (void)setCombinedTintColor:(id)arg1;
 - (id)combinedTintColor;
 - (float)colorTintMaskAlpha;
@@ -127,13 +134,17 @@
 - (void)scheduleSettingsDidChangeIfNeeded;
 - (void)setZoomsBack:(BOOL)arg1;
 - (void)setBlurQuality:(id)arg1;
+- (void)setStackingLevel:(int)arg1;
 - (void)setAppliesTintAndBlurSettings:(BOOL)arg1;
 - (void)setStatisticsInterval:(double)arg1;
-- (void)setGraphicsQuality:(int)arg1;
 - (void)setUsesContentView:(BOOL)arg1;
 - (void)setUsesBackdropEffectView:(BOOL)arg1;
 - (void)decrementSuppressSettingsDidChange;
+- (void)setGraphicsQuality:(int)arg1;
+- (void)setExplicitlySetGraphicsQuality:(BOOL)arg1;
 - (void)incrementSuppressSettingsDidChange;
+- (id)initWithDefaultValuesForGraphicsQuality:(int)arg1;
+- (int)stackingLevel;
 - (int)renderingHint;
 - (void)setLegibleColor:(id)arg1;
 - (void)setFilterMaskImage:(id)arg1;
@@ -166,8 +177,8 @@
 - (float)colorTintAlpha;
 - (id)colorTint;
 - (BOOL)usesColorTintView;
-- (float)grayscaleTintAlpha;
 - (float)grayscaleTintLevel;
+- (float)grayscaleTintAlpha;
 - (BOOL)usesGrayscaleTintView;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (id)colorSettings;

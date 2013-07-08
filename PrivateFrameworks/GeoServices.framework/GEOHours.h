@@ -19,8 +19,6 @@
 
 
 - (int*)days;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)timeRanges;
 - (void)setDays:(int*)arg1 count:(unsigned int)arg2;
 - (id)timeRangeAtIndex:(unsigned int)arg1;
@@ -33,6 +31,8 @@
 - (void)addTimeRange:(id)arg1;
 - (void)setTimeRanges:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -18,10 +18,10 @@
 
 - (void)setAuthorId:(unsigned int)arg1;
 - (unsigned int)authorId;
+- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)text;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setIndex:(unsigned int)arg1;
 - (id)init;
 - (id)date;
 - (void)dealloc;

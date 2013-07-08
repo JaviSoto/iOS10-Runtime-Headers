@@ -52,8 +52,8 @@
 
 + (Class)labelClass;
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (float)minTimeLabelWidth;
 - (int)timeLabelStyle;
@@ -126,7 +126,7 @@
 - (void)accessibilityDecrement;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
-- (void)_axPostUpdate;
 - (void)_accessibilityCommitPositionChange;
+- (void)_axPostUpdate;
 
 @end

@@ -22,13 +22,13 @@
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)smallIconSource;
 - (id)detailGoalText;
 - (id)listGoalText;
 - (id)listTitleText;
 - (id)iconURLString;
-- (id)iconSource;
 - (id)smallIconURLString;
-- (id)smallIconSource;
+- (id)iconSource;
 - (id)alertGoalText;
 - (id)composeGoalText;
 

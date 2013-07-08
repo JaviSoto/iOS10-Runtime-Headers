@@ -49,7 +49,7 @@
 - (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(unsigned int)arg3;
 - (id)mf_markupURL;
 - (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(unsigned int)arg1;
-- (BOOL)isPass;
 - (id)pass;
+- (BOOL)isPass;
 
 @end

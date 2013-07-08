@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVolumeController, UIImageView, UILabel, NSTimer, UIView, UIImage, NSString, MPAVController;
+@class MPVolumeController, UIImageView, UILabel, NSTimer, UIView, UIImage, MPAudioDeviceController, MPAVController, NSString;
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate> {
     MPVolumeController *_volumeController;
@@ -15,6 +15,7 @@
     UIView *_volumeWarningView;
     BOOL _volumeWarningBlinking;
     UIImage *_volumeWarningTrackImage;
+    MPAudioDeviceController *_audioDeviceController;
 }
 
 @property(readonly) int style;
@@ -24,9 +25,9 @@
 @property(setter=_setIsOffScreen:) BOOL _isOffScreen;
 @property(readonly) UIView * _newVolumeWarningView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)volumeWarningTrackImage;
 - (BOOL)_isOffScreen;

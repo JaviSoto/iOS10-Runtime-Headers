@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, UITableView, UILabel, UIView, NSDictionary, <ABPresenterDelegate>, ABContactPhotoView, UIColor, CNContact;
 
-@interface ABContactHeaderView : UIView <UITableViewDelegate, UITableViewDataSource> {
+@interface ABContactHeaderView : UIView <UITableViewDelegate, UITableViewDataSource, ABPropertyGroupItemDelegate> {
     ABContactPhotoView *_photoView;
     UILabel *_nameLabel;
     UILabel *_taglineLabel;
@@ -48,8 +48,8 @@
 - (void)saveContactPhoto;
 - (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)updateWithNewContact:(id)arg1;
-- (void)setEditingGroups:(id)arg1;
 - (id)initWithContact:(id)arg1 withEditingGroups:(id)arg2 personHeaderView:(id)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)propertyItem:(id)arg1 didChangeValue:(id)arg2;
 - (float)_topMarginToNameBaselineWithName:(id)arg1 tagline:(id)arg2;
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;
@@ -60,6 +60,7 @@
 - (void)setNameTextAttributes:(id)arg1;
 - (void)menuWillHide:(id)arg1;
 - (void)updateFontSizes;
+- (void)setEditingGroups:(id)arg1;
 - (id)_taglineStringForContact:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
 - (void)setMessage:(id)arg1;
@@ -76,6 +77,7 @@
 - (void)updateConstraints;
 - (void)setEditing:(BOOL)arg1;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)tintColorDidChange;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

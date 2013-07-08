@@ -19,10 +19,10 @@
 - (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)changedIndexes;
 - (void)enumerateMovesWithBlock:(id)arg1;
-- (id)insertedIndexes;
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
 - (struct NSObject { Class x1; }*)albumList;
+- (id)insertedIndexes;
 - (id)deletedObjects;
 - (id)insertedObjects;
 - (id)object;

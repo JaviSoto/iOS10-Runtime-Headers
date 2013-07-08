@@ -7,12 +7,17 @@
 @interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController  {
     NSString *_phoneNumber;
     NSString *_dialingPrefix;
+    unsigned int _verificationCodeLength;
 }
 
 @property(retain) NSString * phoneNumber;
 @property(retain) NSString * dialingPrefix;
+@property unsigned int verificationCodeLength;
 
 
+- (unsigned int)numberOfPasscodeFields;
+- (unsigned int)verificationCodeLength;
+- (void)setVerificationCodeLength:(unsigned int)arg1;
 - (id)specifiers;
 - (id)dialingPrefix;
 - (void)setDialingPrefix:(id)arg1;

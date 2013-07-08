@@ -57,10 +57,10 @@
 - (float)_elasticityForItem:(id)arg1;
 - (float)angularVelocityForItem:(id)arg1;
 - (void)addAngularVelocity:(float)arg1 forItem:(id)arg2;
-- (float)angleForItem:(id)arg1;
-- (void)setAngle:(float)arg1 forItem:(id)arg2;
-- (struct CGPoint { float x1; float x2; })positionForItem:(id)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
+- (float)_angleForItem:(id)arg1;
+- (void)_setAngle:(float)arg1 forItem:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_positionForItem:(id)arg1;
+- (void)_setPosition:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
 - (struct CGPoint { float x1; float x2; })linearVelocityForItem:(id)arg1;
 - (void)addLinearVelocity:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
 - (void)setAngularResistance:(float)arg1;

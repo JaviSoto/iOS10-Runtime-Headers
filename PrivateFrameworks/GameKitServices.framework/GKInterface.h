@@ -21,9 +21,9 @@
 
 - (void)setBsdName:(id)arg1;
 - (id)bsdName;
+- (void)setIndex:(id)arg1;
 - (id)index;
 - (void)setType:(id)arg1;
-- (void)setIndex:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)setPriority:(unsigned int)arg1;

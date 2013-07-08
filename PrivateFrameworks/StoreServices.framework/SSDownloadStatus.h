@@ -32,7 +32,6 @@
 - (void)setOperationProgress:(id)arg1;
 - (void)setContentRestricted:(BOOL)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (void)setPaused:(BOOL)arg1;
 - (BOOL)isPaused;
 - (BOOL)isFailed;
 - (BOOL)isPausable;
@@ -41,6 +40,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setError:(id)arg1;
 - (id)error;
+- (void)setPaused:(BOOL)arg1;
 - (float)percentComplete;
 
 @end

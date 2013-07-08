@@ -51,6 +51,7 @@
 - (void)synchronizeEnabledState;
 - (void)resetToFallbackRange;
 - (void)setRecordID:(int)arg1;
+- (int)recordID;
 - (void)setPrivilegeTypes:(unsigned int)arg1;
 - (unsigned int)privilegeTypes;
 - (void)setToComponents:(id)arg1;
@@ -63,7 +64,6 @@
 - (id)toComponents;
 - (id)fromComponents;
 - (void)setOverrides:(id)arg1;
-- (int)recordID;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;
 - (void)setValid:(BOOL)arg1;

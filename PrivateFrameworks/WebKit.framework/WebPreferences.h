@@ -22,6 +22,7 @@
 + (void)initialize;
 + (id)standardMailWebPreferencesForDisplayStyle:(int)arg1 regenerate:(BOOL)arg2;
 
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (void)setHiddenPageCSSAnimationSuspensionEnabled:(BOOL)arg1;
 - (BOOL)hiddenPageCSSAnimationSuspensionEnabled;
@@ -44,7 +45,6 @@
 - (BOOL)regionBasedColumnsEnabled;
 - (void)setRegionBasedColumnsEnabled:(BOOL)arg1;
 - (BOOL)notificationsEnabled;
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (BOOL)shouldDisplayTextDescriptions;
 - (void)setShouldDisplayTextDescriptions:(BOOL)arg1;
 - (BOOL)shouldDisplayCaptions;
@@ -89,8 +89,6 @@
 - (BOOL)usePreHTML5ParserQuirks;
 - (void)setHyperlinkAuditingEnabled:(BOOL)arg1;
 - (BOOL)hyperlinkAuditingEnabled;
-- (void)setMemoryInfoEnabled:(BOOL)arg1;
-- (BOOL)memoryInfoEnabled;
 - (void)setPaginateDuringLayoutEnabled:(BOOL)arg1;
 - (BOOL)paginateDuringLayoutEnabled;
 - (void)setSpatialNavigationEnabled:(BOOL)arg1;

@@ -16,8 +16,8 @@
     BOOL _clearCurrentPrinter;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;

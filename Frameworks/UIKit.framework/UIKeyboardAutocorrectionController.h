@@ -18,6 +18,7 @@
 
 
 - (id)autocorrection;
+- (BOOL)hasAutocorrection;
 - (void)dealloc;
 - (void)setRequestedAutocorrection:(BOOL)arg1;
 - (void)setDeferredAutocorrection:(BOOL)arg1;
@@ -28,6 +29,5 @@
 - (BOOL)needsAutocorrection;
 - (void)setNeedsAutocorrection;
 - (void)setAutocorrection:(id)arg1;
-- (BOOL)hasAutocorrection;
 
 @end

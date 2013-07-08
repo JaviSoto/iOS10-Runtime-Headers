@@ -13,8 +13,8 @@
 @property(retain) Class dataSourceClass;
 @property(retain) SUStructuredPage * structuredPage;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (Class)dataSourceClass;
 - (id)newTermsAndConditionsFooter;

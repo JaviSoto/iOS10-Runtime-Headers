@@ -62,7 +62,6 @@
 - (void)_reloadEditorialCell:(id)arg1 forComponent:(id)arg2 columnIndex:(int)arg3;
 - (void)_reloadLockupCell:(id)arg1 forComponent:(id)arg2 columnIndex:(int)arg3;
 - (void)_reloadEditorialLockupCell:(id)arg1 forComponent:(id)arg2 columnIndex:(int)arg3;
-- (id)_metricsLocationIdentifierForColumnIndex:(int)arg1;
 - (void)mediaView:(id)arg1 playbackStateDidChange:(int)arg2;
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;

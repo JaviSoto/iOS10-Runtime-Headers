@@ -20,10 +20,10 @@
 - (id)contentControllerDelegate;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (void)reload;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
 - (id)contentView;
-- (void)reload;
 - (id)init;
 - (void)dealloc;
 - (void)displayScrollerIndicators;

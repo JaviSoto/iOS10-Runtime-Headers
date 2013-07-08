@@ -18,14 +18,14 @@
 @property unsigned int locationIndex;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasLocationIndex:(BOOL)arg1;
 - (void)setLocationIndex:(unsigned int)arg1;
 - (unsigned int)locationIndex;
 - (BOOL)hasLocationIndex;
 - (BOOL)hasLocation;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)location;
 - (void)setLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

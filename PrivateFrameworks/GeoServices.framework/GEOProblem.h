@@ -119,9 +119,6 @@
 @property(retain) NSString * preferredSearchDisplayLocation;
 
 
-- (id)visibleTileSets;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)directionsProblems;
 - (id)viewportImages;
 - (void)setHasPreferredSearchResultIndex:(BOOL)arg1;
@@ -195,6 +192,7 @@
 - (void)setRegion:(id)arg1;
 - (void)setHttpInfo:(id)arg1;
 - (void)setCorrectedPlace:(id)arg1;
+- (id)visibleTileSets;
 - (void)setHasPinType:(BOOL)arg1;
 - (id)tileStateLog;
 - (BOOL)hasTileStateLog;
@@ -239,6 +237,8 @@
 - (BOOL)hasPlaceSearchRequest;
 - (BOOL)hasSessionID;
 - (void)setPlaceSearchRequest:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)isEqual:(id)arg1;

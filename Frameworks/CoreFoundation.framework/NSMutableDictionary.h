@@ -47,6 +47,10 @@
 - (void)_web_setInt:(int)arg1 forKey:(id)arg2;
 - (void)bks_setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)sbs_setSafeObject:(id)arg1 forKey:(id)arg2;
+- (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
+- (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
+- (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
+- (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)_web_setObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
@@ -55,11 +59,6 @@
 - (void)_webkit_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
 - (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
-- (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
-- (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
-- (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
-- (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
-- (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
 - (id)MSASAddIsErrorRecovery;

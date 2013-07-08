@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoOverlayDelegate>, _UIBackdropView, MPAudioAndSubtitlesController, UILabel, MPAVItem, UIActivityIndicatorView, UIButton, UIStatusBar, MPAVController, <MPVideoControllerProtocol>, UINavigationBar, MPVolumeSlider, MPDetailSlider;
+@class <MPVideoOverlayDelegate>, _UIBackdropView, MPAudioAndSubtitlesController, UILabel, MPAVItem, UIActivityIndicatorView, UIButton, UIStatusBar, MPAVController, <MPVideoControllerProtocol>, MPAudioVideoRoutingPopoverController, UINavigationBar, MPVolumeSlider, MPDetailSlider;
 
-@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
+@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, UIPopoverControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
     int _style;
     <MPVideoOverlayDelegate> *_delegate;
     MPAVController *_player;
     MPAVItem *_item;
+    MPAudioVideoRoutingPopoverController *_airplayPopover;
     MPDetailSlider *_scrubber;
     _UIBackdropView *_bottomBarBackdropView;
     UIButton *_playPauseButton;
@@ -58,9 +59,9 @@
 @property unsigned long long visibleParts;
 @property unsigned long long disabledParts;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (BOOL)automaticallyHandleTransportControls;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAreaInsets;
@@ -147,6 +148,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (id)item;
@@ -155,11 +157,11 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)didMoveToWindow;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_axUpdatePlayPauseButton;
-- (void)_axUpdateScaleButton;
-- (void)_axAnnotateLeftRightButtons;
-- (void)_axAnnotateAllButtons;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
+- (void)_axUpdateScaleButton;
+- (void)_axUpdatePlayPauseButton;
+- (void)_axAnnotateLeftRightButtons;
+- (void)_axAnnotateAllButtons;
 
 @end

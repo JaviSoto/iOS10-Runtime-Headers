@@ -12,9 +12,9 @@
 + (id)assistantPayloadWithDictionary:(id)arg1 context:(id)arg2;
 + (id)assistantPayload;
 
-- (id)encodedClassName;
-- (id)utterance;
 - (void)setUtterance:(id)arg1;
+- (id)utterance;
+- (id)encodedClassName;
 - (id)groupIdentifier;
 
 @end

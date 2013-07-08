@@ -50,17 +50,18 @@
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
 + (id)_appearanceBlindViewClasses;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)nextResponder;
+- (BOOL)_isSelected;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
@@ -81,16 +82,18 @@
 - (struct UIOffset { float x1; float x2; })titlePositionAdjustment;
 - (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (BOOL)viewIsCustom;
-- (int)_barMetrics;
-- (int)_imageStyle;
 - (void)_updateViewForIdiom:(int)arg1;
 - (void)_updateButtonForTintColor:(id)arg1 selected:(BOOL)arg2;
 - (void)_updateViewForIdiom:(int)arg1 positionItems:(BOOL)arg2;
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 idiom:(int)arg3;
+- (int)_imageStyle;
 - (void)_setImageStyle:(int)arg1;
 - (void)_setBarMetrics:(int)arg1;
 - (void)_setTitleTextAttributeValue:(id)arg1 forAttributeKey:(id)arg2 state:(unsigned int)arg3;
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3 idiom:(int)arg4;
+- (int)_barMetrics;
+- (void)_updateToMatchCurrentState;
+- (void)_setSelected:(BOOL)arg1;
 - (void)setSelectedImage:(id)arg1;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)_internalTemplateImage;

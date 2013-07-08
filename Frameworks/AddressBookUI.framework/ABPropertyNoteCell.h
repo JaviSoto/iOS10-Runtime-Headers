@@ -10,8 +10,8 @@
 
 @property(retain) UITextView * textView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)textViewEditingDidEnd:(id)arg1;
 - (void)textViewChanged:(id)arg1;
@@ -20,6 +20,7 @@
 - (void)setLabelTextAttributes:(id)arg1;
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;
+- (BOOL)shouldPerformDefaultAction;
 - (void)performDefaultAction;
 - (void)setBackgroundColor:(id)arg1;
 - (id)textView;

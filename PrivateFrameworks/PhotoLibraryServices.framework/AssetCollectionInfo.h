@@ -34,10 +34,10 @@
 - (id)metaData;
 - (id)initWithAssetCollection:(id)arg1;
 - (id)personID;
+- (id)timestamp;
 - (id)height;
 - (id)width;
 - (id)GUID;
-- (id)timestamp;
 - (void)dealloc;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

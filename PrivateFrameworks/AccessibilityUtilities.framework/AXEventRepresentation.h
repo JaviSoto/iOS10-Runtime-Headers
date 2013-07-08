@@ -67,7 +67,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (struct __GSEvent { }*)newGSEventRef;
-- (struct __IOHIDEvent { }*)newHIDEventRef;
 - (unsigned int)firstPathContextId;
 - (id)denormalizedEventRepresentation:(BOOL)arg1;
 - (id)normalizedEventRepresentation:(BOOL)arg1;
@@ -99,12 +98,13 @@
 - (void)setTaskPort:(unsigned int)arg1;
 - (unsigned int)taskPort;
 - (struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)newEventRecord;
+- (struct __IOHIDEvent { }*)newHIDEventRef;
 - (void)setData:(id)arg1;
+- (struct CGPoint { float x1; float x2; })location;
 - (int)pid;
 - (void)setTime:(unsigned long long)arg1;
 - (unsigned long long)time;
 - (void*)window;
-- (struct CGPoint { float x1; float x2; })location;
 - (unsigned int)contextId;
 - (void)setType:(unsigned int)arg1;
 - (int)subtype;

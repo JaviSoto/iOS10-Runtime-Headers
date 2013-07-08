@@ -12,6 +12,7 @@
     UIKeyboardCandidateGridHeader *_gridHeader;
     BOOL _drawTopShadow;
     BOOL _drawBottomShadow;
+    BOOL _showHiddenCandidatesOnly;
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     TIKeyboardCandidateResultSet *_candidateSet;
     NSMutableDictionary *_collectionViewControllers;
@@ -38,9 +39,11 @@
 @property(readonly) NSMutableDictionary * collectionViewControllers;
 @property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
 @property(retain) UIKBBackdropView * backdropView;
+@property BOOL showHiddenCandidatesOnly;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)candidateSet;
@@ -74,17 +77,20 @@
 - (void)sortSelectionBarAction:(id)arg1;
 - (void)setCollectionViewController:(id)arg1;
 - (id)collectionViewController;
+- (void)setCandidateSet:(id)arg1 showHiddenCandidatesOnly:(BOOL)arg2;
 - (void)candidateListShouldBeDismissed:(id)arg1;
+- (void)setShowHiddenCandidatesOnly:(BOOL)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
+- (BOOL)showHiddenCandidatesOnly;
 - (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
 - (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
 - (id)candidateListDelegate;
 - (BOOL)padInlineFloatingViewIsExpanded:(id)arg1;
 - (int)candidatesVisualStyle;
 - (void)setCandidatesVisualStyle:(int)arg1;
-- (unsigned int)selectedSortMethodIndex;
 - (id)inlineText;
+- (void)revealHiddenCandidates;
 - (void)candidatesDidChange;
 - (BOOL)hasPreviousPage;
 - (BOOL)handleTabKeyWithShift:(BOOL)arg1;
@@ -100,6 +106,7 @@
 - (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (BOOL)isHiddenCandidatesList;
 - (BOOL)isExtendedList;
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
@@ -108,5 +115,6 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
+- (void)setAccessibilityElementsHidden:(BOOL)arg1;
 
 @end

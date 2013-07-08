@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAUIAppPunchOut, NSDate, SAMicroblogTwitterPostAuthor, NSURL;
+@class SAMicroblogTwitterPostAuthor, SADecoratedString, SAUIAppPunchOut, NSString, NSURL, NSDate, NSArray;
 
 @interface SAMicroblogMicroblogSearchResultPost : SAMicroblogMicroblogSearchResultBase  {
 }
 
 @property(copy) NSString * content;
 @property(copy) NSDate * creationTime;
+@property(retain) SADecoratedString * decoratedContent;
 @property(copy) NSArray * embeddedHashtags;
 @property(copy) NSArray * embeddedImages;
 @property(copy) NSArray * embeddedLinks;
@@ -37,6 +38,8 @@
 - (id)embeddedImages;
 - (void)setEmbeddedHashtags:(id)arg1;
 - (id)embeddedHashtags;
+- (void)setDecoratedContent:(id)arg1;
+- (id)decoratedContent;
 - (void)setCreationTime:(id)arg1;
 - (id)creationTime;
 - (void)setWebAddress:(id)arg1;

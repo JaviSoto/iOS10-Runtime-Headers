@@ -24,6 +24,7 @@
 - (id)requestParameters;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

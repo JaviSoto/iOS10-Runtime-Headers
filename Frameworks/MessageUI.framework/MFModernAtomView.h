@@ -37,6 +37,7 @@
 @property(readonly) MFModernAtomBackgroundView * backgroundView;
 @property(readonly) MFModernAtomIconView * badgeIconView;
 @property(readonly) MFModernAtomIconView * accessoryIconView;
+@property(readonly) UIActivityIndicatorView * activityIndicator;
 
 + (struct CGPoint { float x1; float x2; })defaultBaselinePoint;
 + (id)_badgeImagesForPresentationOptions:(unsigned int)arg1 iconOrder:(const unsigned int*)arg2 orderingLength:(unsigned int)arg3 tintColor:(id)arg4 large:(BOOL)arg5 variant:(int)arg6;
@@ -49,9 +50,9 @@
 + (float)horizontalPadding;
 + (float)defaultHeight;
 + (id)defaultFont;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)badgeIconView;
 - (id)accessoryIconView;
@@ -64,10 +65,10 @@
 - (void)setPresentationOptions:(unsigned int)arg1;
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setScalingFactor:(float)arg1;
-- (BOOL)separatorHidden;
 - (float)preferredWidth;
 - (float)_leftInset;
 - (float)_rightInset;
+- (BOOL)separatorHidden;
 - (void)_updateFontIfNecessary;
 - (float)_rightPadding;
 - (float)_leftPadding;
@@ -88,6 +89,7 @@
 - (id)title;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)dealloc;
+- (id)activityIndicator;
 - (id)titleFont;
 - (struct CGPoint { float x1; float x2; })baselinePoint;
 - (id)viewForBaselineLayout;

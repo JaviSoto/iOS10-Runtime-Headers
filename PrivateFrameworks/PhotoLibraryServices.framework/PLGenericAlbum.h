@@ -59,6 +59,7 @@
 + (id)insertAlbumWithKind:(int)arg1 title:(id)arg2 uuid:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)insertNewFaceAlbumIntoLibrary:(id)arg1;
 + (id)insertNewCloudSharedAlbumWithTitle:(id)arg1 lastInterestingDate:(id)arg2 intoLibrary:(id)arg3;
++ (id)insertNewSyncedEventIntoLibrary:(id)arg1;
 + (id)insertNewAlbumIntoLibrary:(id)arg1;
 + (id)insertNewAlbumWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inLibrary:(id)arg2;
@@ -72,6 +73,7 @@
 + (id)allPanoramasAlbumInLibrary:(id)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
++ (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)_insertNewAlbumWithKind:(int)arg1 title:(id)arg2 lastInterestingDate:(id)arg3 intoLibrary:(id)arg4;
 + (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -152,7 +154,6 @@
 - (id)posterImage;
 - (unsigned int)photosCount;
 - (void)setUuid:(id)arg1;
-- (void)setKind:(id)arg1;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
@@ -166,5 +167,6 @@
 - (id)description;
 - (id)localizedTitle;
 - (id)kind;
+- (void)setKind:(id)arg1;
 
 @end

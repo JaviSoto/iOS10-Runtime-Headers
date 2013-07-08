@@ -57,6 +57,7 @@
     int _maxBusinessReviews;
     int _maxResults;
     NSString *_phoneticLocaleIdentifier;
+    int _placeTypeLimit;
     GEOAddress *_preserveFields;
     int _resultOffset;
     NSString *_search;
@@ -103,6 +104,7 @@
         unsigned int localSearchProviderID : 1; 
         unsigned int maxBusinessReviews : 1; 
         unsigned int maxResults : 1; 
+        unsigned int placeTypeLimit : 1; 
         unsigned int resultOffset : 1; 
         unsigned int searchSource : 1; 
         unsigned int sequenceNumber : 1; 
@@ -217,6 +219,8 @@
 @property int transportTypeForTravelTimes;
 @property(readonly) BOOL hasSuggestionsOptions;
 @property(retain) GEOSuggestionsOptions * suggestionsOptions;
+@property BOOL hasPlaceTypeLimit;
+@property int placeTypeLimit;
 @property BOOL hasGeoId;
 @property long long geoId;
 @property BOOL hasIncludeQuads;
@@ -256,11 +260,6 @@
 @property int searchSource;
 
 
-- (id)initWithPlace:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)filterByBusinessTelephones;
 - (id)filterByBusinessCategorys;
 - (void)setHasSearchSource:(BOOL)arg1;
@@ -277,6 +276,7 @@
 - (struct { int x1; int x2; int x3; }*)searchSubstrings;
 - (void)setHasExcludeAddressInResults:(BOOL)arg1;
 - (void)setHasIncludeQuads:(BOOL)arg1;
+- (void)setHasPlaceTypeLimit:(BOOL)arg1;
 - (void)setHasTransportTypeForTravelTimes:(BOOL)arg1;
 - (void)setHasIncludeTravelTime:(BOOL)arg1;
 - (void)setHasIncludeSpokenNames:(BOOL)arg1;
@@ -352,6 +352,9 @@
 - (void)setIncludeQuads:(BOOL)arg1;
 - (BOOL)includeQuads;
 - (BOOL)hasIncludeQuads;
+- (void)setPlaceTypeLimit:(int)arg1;
+- (int)placeTypeLimit;
+- (BOOL)hasPlaceTypeLimit;
 - (id)suggestionsOptions;
 - (BOOL)hasSuggestionsOptions;
 - (void)setTransportTypeForTravelTimes:(int)arg1;
@@ -489,6 +492,7 @@
 - (void)setClientCapabilities:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
+- (id)initWithPlace:(id)arg1;
 - (void)addBusinessID:(unsigned long long)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
@@ -498,16 +502,20 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)setSessionID:(int)arg1;
 - (int)sessionID;
+- (id)location;
+- (double)timestamp;
 - (void)setMaxResults:(int)arg1;
 - (int)maxResults;
 - (int)sequenceNumber;
 - (id)search;
-- (id)location;
 - (void)setLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)setSequenceNumber:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
@@ -517,6 +525,5 @@
 - (id)address;
 - (void)_applyDeviceLocation;
 - (void)_setCLClientLocation:(const struct { int x1; int x2; struct { double x_3_1_1; double x_3_1_2; } x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; int x14; double x15; int x16; struct { double x_17_1_1; double x_17_1_2; } x17; double x18; }*)arg1;
-- (void)_applyBasicSearchProperties:(BOOL)arg1;
 
 @end

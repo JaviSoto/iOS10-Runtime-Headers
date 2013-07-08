@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSMutableDictionary;
+@class UIColor, NSString;
 
 @interface UIStatusBarNewUIForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes  {
     UIColor *_backgroundColor;
-    NSMutableDictionary *_tintedImageCache;
+    NSString *_uniqueIdentifier;
     BOOL _isTintColorBlack;
     UIColor *_tintColor;
 }
@@ -16,9 +16,9 @@
 
 - (void)dealloc;
 - (id)proportionalFontForFont:(id)arg1;
+- (BOOL)_shouldUseBoldFontForStyle:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
 - (BOOL)_isForegroundColorSafe:(id)arg1;
-- (float)batteryInsidesCornerRadius;
 - (float)_roundDimension:(float)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
 - (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 charging:(BOOL)arg3;
@@ -31,15 +31,14 @@
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
 - (float)bluetoothBatteryExtraPadding;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
-- (BOOL)shouldAnimateBattery;
 - (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
 - (float)batteryAccessoryMargin;
-- (BOOL)useModernChargingEffect;
 - (id)textForNetworkType:(int)arg1;
+- (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
 - (float)edgePadding;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2 tintColor:(id)arg3 backgroundColor:(id)arg4;
+- (id)uniqueIdentifier;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
 - (id)tintColor;
-- (id)imageNamed:(id)arg1;
 
 @end

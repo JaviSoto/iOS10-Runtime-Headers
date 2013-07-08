@@ -3,7 +3,6 @@
  */
 
 @interface ATVHighSecurityAccountVerifyCodeResponse : AAResponse  {
-    BOOL _success;
 }
 
 @property(readonly) BOOL success;

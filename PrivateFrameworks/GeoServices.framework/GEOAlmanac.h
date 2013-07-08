@@ -16,9 +16,9 @@
 @property(readonly) BOOL isDayLight;
 
 
-- (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3;
 - (double)intervalForNextAstronomicalChange;
 - (BOOL)isDayLight;
+- (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1;
 - (double)intervalForNextAstronomicalChangeFromTime:(double)arg1;
 - (BOOL)isDayLightForTime:(double)arg1;

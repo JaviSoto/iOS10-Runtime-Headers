@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSString, NSMutableArray, NSMutableDictionary;
+@class IMTimer, NSArray, NSString, NSMutableArray, NSMutableDictionary;
 
 @interface IMChatRegistry : NSObject <NSFastEnumeration> {
     NSMutableArray *_allChats;
@@ -14,6 +14,8 @@
     NSMutableArray *_pendingQueries;
     NSMutableArray *_waitingForQueries;
     NSString *_historyModificationStamp;
+    IMTimer *_markAsReadTimer;
+    double _timerStartTimeInterval;
     BOOL _firstLoad;
     BOOL _loading;
     BOOL _daemonHadTerminated;
@@ -58,6 +60,8 @@
 - (BOOL)_postMessageSentNotifications;
 - (void)_setDefaultNumberOfMessagesToLoad:(unsigned int)arg1;
 - (unsigned int)_defaultNumberOfMessagesToLoad;
+- (void)_clearMarkAsReadTimerIfNecessary;
+- (void)_startMarkAsReadTimerIfNecessary;
 - (id)_chatsWithMessage:(id)arg1;
 - (id)_chatForChatDictionary:(id)arg1 chatItems:(id)arg2 allowCreate:(BOOL)arg3 createdChat:(BOOL*)arg4 outGUID:(id*)arg5;
 - (id)existingChatWithChatIdentifier:(id)arg1;
@@ -118,6 +122,7 @@
 - (void)leftChat:(id)arg1;
 - (void)setupComplete;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
+- (void)systemApplicationDidResume;
 - (BOOL)_isLoading;
 - (id)init;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;

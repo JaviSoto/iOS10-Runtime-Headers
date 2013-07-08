@@ -5,14 +5,13 @@
 @class NSString;
 
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell  {
-    BOOL _showsCandidateNumber;
     BOOL _dummy;
     BOOL _usesGroupHeaderAppearance;
     BOOL _secondaryCandidateAppearance;
     NSString *_text;
     NSString *_alternativeText;
     unsigned int _candidateNumber;
-    int _edges;
+    unsigned int _edges;
     float _rowHeight;
     float _rightPadding;
     struct { 
@@ -51,10 +50,9 @@
 @property(copy) NSString * text;
 @property(copy) NSString * alternativeText;
 @property unsigned int candidateNumber;
-@property BOOL showsCandidateNumber;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 @property BOOL secondaryCandidateAppearance;
-@property int edges;
+@property unsigned int edges;
 @property float rowHeight;
 @property float rightPadding;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
@@ -64,7 +62,6 @@
 @property struct CGSize { float x1; float x2; } candidateNumberSize;
 @property float cellPadding;
 @property float minimumWidth;
-@property(readonly) BOOL canShowCandidateNumber;
 
 + (float)widthForCandidate:(id)arg1 candidateNumber:(unsigned int)arg2 visualStyle:(int)arg3;
 + (struct CGSize { float x1; float x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
@@ -72,9 +69,9 @@
 + (struct CGColor { }*)legacy_outlineShadowColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (struct CGColor { }*)legacy_outlineColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (id)reuseIdentifier;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (struct CGSize { float x1; float x2; })size;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -89,7 +86,6 @@
 - (struct CGSize { float x1; float x2; })candidateNumberSize;
 - (void)drawText;
 - (void)drawTextWithCandidateNumber;
-- (BOOL)canShowCandidateNumber;
 - (void)drawBackgroundAndBorders;
 - (float)rightPadding;
 - (void)setSecondaryCandidateAppearance:(BOOL)arg1;
@@ -97,15 +93,14 @@
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (void)setCellPadding:(float)arg1;
 - (void)setRightPadding:(float)arg1;
-- (int)edges;
+- (unsigned int)edges;
 - (void)setUsesGroupHeaderAppearance:(BOOL)arg1;
 - (void)setDummy:(BOOL)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
-- (void)setShowsCandidateNumber:(BOOL)arg1;
 - (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)usesGroupHeaderAppearance;
 - (unsigned int)candidateNumber;
-- (BOOL)showsCandidateNumber;
+- (BOOL)shouldShowCandidateNumber;
 - (BOOL)dummy;
 - (int)candidatesVisualStyle;
 - (void)setCandidatesVisualStyle:(int)arg1;
@@ -119,7 +114,7 @@
 - (void)setMinimumWidth:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
-- (void)setEdges:(int)arg1;
+- (void)setEdges:(unsigned int)arg1;
 - (void)setText:(id)arg1;
 - (float)rowHeight;
 - (void)setRowHeight:(float)arg1;

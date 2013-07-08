@@ -12,6 +12,7 @@
 @property unsigned int numberOfTouchesRequired;
 @property(setter=_setButtonType:) int _buttonType;
 
++ (double)delayForRepeatNumber:(int)arg1;
 
 - (void)dealloc;
 - (void)_nextStep:(id)arg1;

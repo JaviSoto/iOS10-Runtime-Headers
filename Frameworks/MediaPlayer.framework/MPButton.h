@@ -19,8 +19,8 @@
 + (float)easyTouchDefaultCharge;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })easyTouchDefaultHitRectInsets;
 + (id)easyTouchButtonWithType:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setHoldDelayInterval:(double)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectInsets;

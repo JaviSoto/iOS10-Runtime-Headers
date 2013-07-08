@@ -23,9 +23,8 @@
 @property double postUtteranceDelay;
 
 + (id)speechUtteranceWithString:(id)arg1;
++ (void)initialize;
 + (BOOL)supportsSecureCoding;
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)setPostUtteranceDelay:(double)arg1;
 - (void)setPreUtteranceDelay:(double)arg1;
@@ -46,6 +45,5 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
 
 @end

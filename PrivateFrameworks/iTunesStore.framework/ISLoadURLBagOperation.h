@@ -17,6 +17,7 @@
 - (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (BOOL)_setURLBagWithDictionary:(id)arg1 response:(id)arg2 error:(id*)arg3;
 - (void)_addHeadersToRequestProperties:(id)arg1;
+- (void)_sendPingsForURLBag:(id)arg1;
 - (void)_postBagDidLoadNotificationWithURLBag:(id)arg1;
 - (void)_setOutputURLBag:(id)arg1;
 - (id)initWithBagContext:(id)arg1;

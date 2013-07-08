@@ -88,6 +88,7 @@
 - (id)copy;
 - (void)dealloc;
 - (id)description;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (id)dump;
 - (BOOL)containsKeys:(const void**)arg1 values:(const void**)arg2 count:(unsigned int)arg3;
 - (void)zeroPairedEntries;
@@ -104,7 +105,6 @@
 - (void)setItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
 - (id)valuePointerFunctions;
 - (id)keyPointerFunctions;
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
 - (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
 - (void)rehash;
 - (unsigned int)rehashAround:(unsigned int)arg1;

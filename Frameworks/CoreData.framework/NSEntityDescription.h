@@ -72,6 +72,7 @@
 - (id)_newMappingForPropertiesOfRange:(unsigned int)arg1;
 - (BOOL)_isInheritedPropertyNamed:(id)arg1;
 - (struct __CFSet { }*)_collectSubentities;
+- (BOOL)_isEditable;
 - (void)_flattenProperties;
 - (id)_localRelationshipNamed:(id)arg1;
 - (void)_setIsEditable:(BOOL)arg1;
@@ -118,6 +119,7 @@
 - (id)_propertySearchMapping;
 - (long)_modelsReferenceID;
 - (void)_createCachesAndOptimizeState;
+- (id)_initWithName:(id)arg1;
 - (void)_throwIfNotEditable;
 - (id)_propertyNamed:(id)arg1;
 - (BOOL)_subentitiesIncludes:(id)arg1;
@@ -127,8 +129,6 @@
 - (id)renamingIdentifier;
 - (id)propertiesByName;
 - (id)attributeKeys;
-- (BOOL)_isEditable;
-- (id)_initWithName:(id)arg1;
 - (id)init;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;

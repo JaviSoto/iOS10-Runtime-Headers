@@ -20,6 +20,7 @@
 @property(copy) NSDictionary * overrideValues;
 @property int environment;
 @property(retain) NSString * storeBagURL;
+@property unsigned int mescalSetupRetries;
 @property BOOL ignoreSandbox;
 @property unsigned int loginDisableThreshold;
 @property BOOL allowUnsignedBag;
@@ -156,6 +157,8 @@
 - (unsigned int)loginDisableThreshold;
 - (void)setIgnoreSandbox:(BOOL)arg1;
 - (BOOL)ignoreSandbox;
+- (void)setMescalSetupRetries:(unsigned int)arg1;
+- (unsigned int)mescalSetupRetries;
 - (void)setUseTestProtocols:(BOOL)arg1;
 - (void)setAllowUnsignedBag:(BOOL)arg1;
 - (BOOL)allowUnsignedBag;
@@ -171,9 +174,9 @@
 - (unsigned int)maxDefaultPlayersP2P;
 - (void)setTimeInterval:(double)arg1 forKey:(struct __CFString { }*)arg2;
 - (double)timeIntervalForKey:(struct __CFString { }*)arg1 defaultValue:(double)arg2;
+- (BOOL)isStoreDemoModeEnabled;
 - (void)setUnsignedIntegerValue:(int)arg1 forKey:(struct __CFString { }*)arg2;
 - (int)unsignedIntegerValueForKey:(struct __CFString { }*)arg1 defaultValue:(int)arg2;
-- (BOOL)isStoreDemoModeEnabled;
 - (void)setBooleanValue:(BOOL)arg1 forKey:(struct __CFString { }*)arg2;
 - (BOOL)booleanValueForKey:(struct __CFString { }*)arg1;
 - (void)setIntegerValue:(int)arg1 forKey:(struct __CFString { }*)arg2;

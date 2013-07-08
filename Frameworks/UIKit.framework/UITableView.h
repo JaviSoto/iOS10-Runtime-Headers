@@ -88,6 +88,7 @@
         float bottom; 
         float right; 
     } _sectionContentInset;
+    float _sectionBorderWidth;
     UITouch *_currentTouch;
     UIRefreshControl *_refreshControl;
     NSMutableDictionary *_cellClassDict;
@@ -223,7 +224,6 @@
         unsigned int displayingCellContentStringCallout : 1; 
         unsigned int longPressAutoscrollingActive : 1; 
         unsigned int adjustsRowHeightsForSectionLocation : 1; 
-        unsigned int customSectionContentInsetSet : 1; 
         unsigned int inInit : 1; 
         unsigned int inSetBackgroundColor : 1; 
         unsigned int usingCustomBackgroundView : 1; 
@@ -236,6 +236,8 @@
         unsigned int separatorsDrawAsOverlay : 1; 
         unsigned int swipeToDeleteRowIsBeingDeleted : 1; 
         unsigned int drawsSeparatorAtTopOfSections : 1; 
+        unsigned int separatorBackdropOverlayBlendMode : 3; 
+        unsigned int doneFirstLayout : 1; 
     } _tableFlags;
 }
 
@@ -263,21 +265,20 @@
 @property(retain) UIColor * separatorColor;
 @property(retain) UIView * tableHeaderView;
 @property(retain) UIView * tableFooterView;
-@property(getter=_sectionContentInset,setter=_setSectionContentInset:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
 @property(retain) UITouch * currentTouch;
 
 + (void)_initializeForIdiom:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 + (void)_accessibilityPerformValidations:(id)arg1;
 
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
 - (id)_createPreparedCellForRowAtIndexPath:(id)arg1;
+- (void)setCountString:(id)arg1;
 - (void)reloadRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)reloadSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)insertSections:(id)arg1 withRowAnimation:(int)arg2;
-- (void)setCountString:(id)arg1;
 - (BOOL)isEditing;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -293,10 +294,15 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)setSectionIndexMinimumDisplayRowCount:(int)arg1;
 - (int)sectionIndexMinimumDisplayRowCount;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionContentInset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (void)setEstimatedSectionFooterHeight:(float)arg1;
+- (float)estimatedSectionFooterHeight;
+- (void)setEstimatedSectionHeaderHeight:(float)arg1;
+- (float)estimatedSectionHeaderHeight;
+- (void)setEstimatedRowHeight:(float)arg1;
+- (float)estimatedRowHeight;
+- (BOOL)_isEditingForSwipeDeletion;
+- (int)_separatorBackdropOverlayBlendMode;
 - (BOOL)_separatorsDrawAsOverlay;
-- (void)_setSeparatorsDrawAsOverlay:(BOOL)arg1;
 - (BOOL)ignorePinnedTableHeaderUpdates;
 - (void)_setIgnorePinnedTableHeaderUpdates:(BOOL)arg1;
 - (void)_setSwipeToDeleteCell:(id)arg1;
@@ -310,7 +316,6 @@
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutTargetRectForCell:(id)arg1;
-- (float)_backgroundInset;
 - (float)_heightForSeparator;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
@@ -366,7 +371,6 @@
 - (BOOL)_delegateImplementsEstimatedHeightForRowAtIndexPath;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_rawSeparatorInset;
 - (float)_marginWidth;
-- (void)_setMarginWidth:(float)arg1;
 - (void)_setPinsTableHeaderView:(BOOL)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)_adjustsRowHeightsForSectionLocation;
@@ -420,12 +424,6 @@
 - (float)sectionHeaderHeight;
 - (void)setSectionIndexBackgroundColor:(id)arg1;
 - (id)sectionIndexBackgroundColor;
-- (float)estimatedSectionFooterHeight;
-- (void)setEstimatedSectionFooterHeight:(float)arg1;
-- (float)estimatedSectionHeaderHeight;
-- (void)setEstimatedSectionHeaderHeight:(float)arg1;
-- (float)estimatedRowHeight;
-- (void)setEstimatedRowHeight:(float)arg1;
 - (void)_setHeaderAndFooterViewsFloat:(BOOL)arg1;
 - (void)_setSectionIndexTrackingBackgroundColor:(id)arg1;
 - (id)_sectionIndexTrackingBackgroundColor;
@@ -447,6 +445,7 @@
 - (float)_animationDuration;
 - (void)_setDisplaysCellContentStringsOnTapAndHold:(BOOL)arg1;
 - (BOOL)_displaysCellContentStringsOnTapAndHold;
+- (void)_setSeparatorsDrawAsOverlay:(BOOL)arg1;
 - (BOOL)_pathIsHidden:(id)arg1;
 - (BOOL)_indexPathIsValid:(id)arg1;
 - (id)indexPathsForSelectedRows;
@@ -461,6 +460,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForFooterInSection:(int)arg1;
 - (void)_installSwipeToDeleteGobbler;
 - (id)_titleForSwipeAccessoryButtonForRowAtIndexPath:(id)arg1;
+- (float)_backgroundInset;
 - (int)separatorStyle;
 - (int)_sectionForFooterView:(id)arg1;
 - (int)_sectionForHeaderView:(id)arg1;
@@ -489,10 +489,14 @@
 - (BOOL)_estimatesSectionFooterHeights;
 - (BOOL)_delegateWantsHeaderTitleForSection:(int)arg1;
 - (BOOL)_estimatesSectionHeaderHeights;
+- (void)_unhighlightAllRowsAndHighlightGlobalRow:(int)arg1;
 - (int)highlightedGlobalRow;
+- (void)_shiftHighlightByAmount:(int)arg1;
 - (int)maximumGlobalRowIndex;
 - (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)_hasHeaderFooterBelowRowAtIndexPath:(id)arg1;
+- (void)_setSectionBorderWidth:(float)arg1;
+- (float)_sectionBorderWidth;
+- (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
 - (id)sectionBorderColor;
 - (BOOL)_drawsTopShadowInGroupedSections;
 - (void)_accessoryButtonAction:(id)arg1;
@@ -524,8 +528,10 @@
 - (void)setBackgroundView:(id)arg1;
 - (void)_setBackgroundColor:(id)arg1 animated:(BOOL)arg2;
 - (void)_backgroundColorAnimationDidStop;
+- (BOOL)_hasHeaderFooterBelowRowAtIndexPath:(id)arg1;
 - (id)separatorBottomShadowColor;
 - (id)separatorTopShadowColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundContentInset;
 - (void)_selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
 - (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)unhighlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
@@ -582,16 +588,18 @@
 - (id)deleteConfirmationIndexPath;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (id)indexPathForRowAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_highlightFirstVisibleRowIfAppropriate;
+- (BOOL)_shouldDrawSeparatorAtBottomOfSection:(int)arg1;
 - (BOOL)_shouldDrawSeparatorAtTopOfSection:(int)arg1;
 - (id)indexPathForCell:(id)arg1;
 - (void)_endAnimatingCells;
 - (void)_updateBackgroundView;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 canEdit:(BOOL)arg4 editingStyle:(int)arg5 shouldIndentWhileEditing:(BOOL)arg6 showsReorderControl:(BOOL)arg7 accessoryType:(int)arg8 animated:(BOOL)arg9;
+- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 canEdit:(BOOL)arg4 editingStyle:(int)arg5 shouldIndentWhileEditing:(BOOL)arg6 showsReorderControl:(BOOL)arg7 accessoryType:(int)arg8 animated:(BOOL)arg9 updateSeparators:(BOOL)arg10;
 - (BOOL)_canMoveRowAtIndexPath:(id)arg1;
 - (BOOL)_shouldIndentWhileEditingForRowAtIndexPath:(id)arg1;
 - (int)_editingStyleForRowAtIndexPath:(id)arg1;
-- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 animated:(BOOL)arg4;
+- (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 animated:(BOOL)arg4 updateSeparators:(BOOL)arg5;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_beginAnimatingCells;
 - (void)_updateCellContentStringCallout:(id)arg1;
@@ -599,6 +607,8 @@
 - (void)_reuseTableViewSubview:(id)arg1 viewType:(int)arg2;
 - (id)_cellReuseMapForType:(int)arg1;
 - (void)_setupSectionView:(id)arg1 isHeader:(BOOL)arg2 forSection:(int)arg3;
+- (void)_setMarginWidth:(float)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (float)_spacingForExtraSeparators;
 - (BOOL)_shouldDisplayExtraSeparatorsAtOffset:(float*)arg1;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2;
@@ -615,6 +625,7 @@
 - (id)_sectionFooterViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(int)arg2 floating:(BOOL)arg3 reuseViewIfPossible:(BOOL)arg4;
 - (BOOL)allowsFooterViewsToFloat;
 - (id)_sectionHeaderViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(int)arg2 floating:(BOOL)arg3 reuseViewIfPossible:(BOOL)arg4;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionContentInset;
 - (BOOL)allowsHeaderViewsToFloat;
 - (BOOL)_delegateWantsFooterForSection:(int)arg1;
 - (BOOL)_delegateWantsHeaderForSection:(int)arg1;
@@ -731,8 +742,8 @@
 - (void)_setAccessibilitySearchTableViewVisible;
 - (void)_setAccessibilitySearchTableViewHidden;
 - (void)_accessibilityClearChildren;
-- (BOOL)_accessibilitySearchControllerDimmingViewVisible;
 - (BOOL)_accessibilitySearchTableViewVisible;
+- (BOOL)_accessibilitySearchControllerDimmingViewVisible;
 - (id)_accessibilitySearchResultsTableView;
 - (id)_accessibilityFooterElement;
 - (BOOL)_axSearchForSearchResultsView:(id)arg1;
@@ -745,8 +756,10 @@
 - (id)_accessibilityFuzzyHitTest:(struct CGPoint { float x1; float x2; }*)arg1 withEvent:(id)arg2;
 - (id)_accessibilityInternalData;
 - (id)_accessibilityTableViewCellElementForIndexPath:(id)arg1;
+- (BOOL)_accessibilityShouldVerifyTableViewCellsAreVisibleByHitTesting;
 - (void)accessibilityFindMockParentForTableViewCell:(id)arg1;
 - (id)accessibilityCellForRowAtIndexPath:(id)arg1;
+- (id)_accessibilityVisibleHeaderSections;
 - (void)_setAccessibilitySearchControllerDimmingViewVisible;
 - (void)_setAccessibilitySearchControllerDimmingViewHidden;
 - (id)accessibilityTableViewCellAccessibilityElementForTableViewCell:(id)arg1;

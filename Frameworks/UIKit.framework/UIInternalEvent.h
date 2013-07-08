@@ -7,8 +7,8 @@
     struct __IOHIDEvent { } *_hidEvent;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)_setGSEvent:(struct __GSEvent { }*)arg1;

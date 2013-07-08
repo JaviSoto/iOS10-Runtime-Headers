@@ -32,9 +32,9 @@
 - (void)_writeData:(id)arg1 forThumbIdentifier:(id)arg2;
 - (void)_writeImage:(id)arg1 forThumbIdentifier:(id)arg2;
 - (id)thumbnailForImage:(id)arg1 videoDuration:(id)arg2;
-- (id)thumbnailPathForThumbIdentifier:(id)arg1;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
 - (id)preheatItemForAsset:(id)arg1;
+- (id)thumbnailPathForThumbIdentifier:(id)arg1;
 - (id)imageWithIdentifier:(id)arg1;
 - (id)_debugDescription;
 - (BOOL)usesThumbIdentifiers;

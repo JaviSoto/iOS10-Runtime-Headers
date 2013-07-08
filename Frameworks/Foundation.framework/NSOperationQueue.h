@@ -11,10 +11,10 @@
 + (id)currentQueue;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)setSuspended:(BOOL)arg1;
-- (void)cancelAllOperations;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (id)operations;
+- (void)setSuspended:(BOOL)arg1;
+- (void)cancelAllOperations;
 - (BOOL)isSuspended;
 - (id)init;
 - (void)addOperationWithBlock:(id)arg1;

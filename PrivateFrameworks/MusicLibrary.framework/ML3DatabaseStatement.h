@@ -41,8 +41,8 @@
 - (struct sqlite3_stmt { }*)sqliteStatement;
 - (int)clearBindings;
 - (id)sql;
-- (BOOL)isReadOnly;
 - (int)reset;
+- (BOOL)isReadOnly;
 - (int)step;
 - (BOOL)isBusy;
 - (void)dealloc;

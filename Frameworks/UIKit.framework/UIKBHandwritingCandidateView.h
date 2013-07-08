@@ -58,6 +58,7 @@
 - (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (BOOL)isHiddenCandidatesList;
 - (BOOL)isExtendedList;
 - (void)setRenderConfig:(id)arg1;
 - (void)setCandidatesCollectionView:(id)arg1;

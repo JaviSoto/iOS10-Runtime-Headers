@@ -14,12 +14,12 @@
 @property(retain) GEODownloadMetadata * metadata;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasResources;
 - (void)setResources:(id)arg1;
 - (id)resources;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (BOOL)isEqual:(id)arg1;

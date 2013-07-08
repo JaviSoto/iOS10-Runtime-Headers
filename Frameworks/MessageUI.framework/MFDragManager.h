@@ -50,10 +50,10 @@
 - (void)_cleanUpAfterDragCompleted;
 - (void)_processGestureUpdate;
 - (void)enumerateDragContextsUsingBlock:(id)arg1;
+- (void)_handleLongPress:(id)arg1;
 - (void)cancelCurrentDragOperation;
 - (void)removeDragContext:(id)arg1;
 - (void)addDragContext:(id)arg1;
-- (void)_handleLongPress:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;

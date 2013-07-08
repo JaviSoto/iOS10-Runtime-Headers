@@ -2,16 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKMatchRequest, GKGame, GKTurnBasedMatchDetailViewController, GKTurnBasedMatchesDataSource, GKTurnBasedInviteViewController, <UIStateRestoring>, NSString, <GKTurnBasedMatchesViewControllerDelegate>, UIPopoverController;
+@class GKMatchRequest, GKGame, GKTurnBasedMatchesDataSource, <UIStateRestoring>, NSString, <GKTurnBasedMatchesViewControllerDelegate>, UIPopoverController;
 
 @interface GKTurnBasedMatchesViewController : GKCollectionViewController <UIPopoverControllerDelegate, UIStateRestoring, UIViewControllerRestoration, UICollectionViewDelegate, GKTurnBasedInviteViewControllerDelegate, GKTurnBasedMatchDetailViewControllerDelegate> {
     BOOL _showExistingMatches;
     <GKTurnBasedMatchesViewControllerDelegate> *_delegateWeak;
     GKGame *_game;
     GKMatchRequest *_matchRequest;
-    GKTurnBasedInviteViewController *_inviteController;
     GKTurnBasedMatchesDataSource *_matchesDataSource;
-    GKTurnBasedMatchDetailViewController *_detailController;
     int _maxMatchesSeen;
     NSString *_matchIDWaitingForTurnEvent;
     UIPopoverController *_detailPopover;
@@ -20,11 +18,9 @@
 @property(retain) GKGame * game;
 @property(retain) GKMatchRequest * matchRequest;
 @property(readonly) BOOL isInGame;
-@property(retain) GKTurnBasedInviteViewController * inviteController;
 @property <GKTurnBasedMatchesViewControllerDelegate> * delegate;
 @property BOOL showExistingMatches;
 @property(retain) GKTurnBasedMatchesDataSource * matchesDataSource;
-@property(retain) GKTurnBasedMatchDetailViewController * detailController;
 @property int maxMatchesSeen;
 @property(retain) NSString * matchIDWaitingForTurnEvent;
 @property(retain) UIPopoverController * detailPopover;
@@ -37,17 +33,13 @@
 - (id)matchIDWaitingForTurnEvent;
 - (void)setMaxMatchesSeen:(int)arg1;
 - (int)maxMatchesSeen;
-- (id)detailController;
-- (id)inviteController;
 - (void)setMatchIDWaitingForTurnEvent:(id)arg1;
 - (void)notifyGameWithMatch:(id)arg1 orError:(id)arg2;
 - (void)launchGameAndShowMatchID:(id)arg1;
-- (void)setInviteController:(id)arg1;
 - (void)showDetailForMatch:(id)arg1;
 - (void)showMatchID:(id)arg1;
 - (void)acceptInviteForMatch:(id)arg1;
 - (void)setDetailPopover:(id)arg1;
-- (void)setDetailController:(id)arg1;
 - (void)showInviteControllerAnimated:(BOOL)arg1;
 - (void)detailPressedForMatch:(id)arg1;
 - (void)addPressed;
@@ -57,6 +49,8 @@
 - (BOOL)showExistingMatches;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)collectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)didEnterNoContentState;
+- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)turnBasedInviteViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)turnBasedInviteViewController:(id)arg1 didCreateMatchID:(id)arg2;
 - (void)turnBasedInviteViewControllerWasCancelled:(id)arg1;
@@ -68,7 +62,6 @@
 - (void)turnBasedMatchDetailViewControllerDidAcceptInvitation:(id)arg1;
 - (void)handleTurnBasedEvent:(id)arg1;
 - (void)configureViewFactories;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
 - (id)matchRequest;
 - (void)cancelButtonPressed;

@@ -61,9 +61,9 @@
 @property(readonly) BOOL detailScrubbingHidesControls;
 
 + (unsigned int)defaultVisibleParts;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;

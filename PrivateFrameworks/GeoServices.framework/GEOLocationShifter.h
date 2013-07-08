@@ -35,15 +35,15 @@
 @property(copy) id successHandler;
 
 
-- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
 - (id)shiftRequest;
+- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
 - (void)_requestShiftFunctionForLocation:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
 - (id)shiftFunction;
 - (void)_applyLocationShift:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
-- (void)setSuccessHandler:(id)arg1;
 - (BOOL)locationShiftEnabled;
 - (void)setCoordinateAccuracy:(double)arg1;
 - (void)_shiftAndReturnCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
+- (void)setSuccessHandler:(id)arg1;
 - (double)coordinateAccuracy;
 - (id)successHandler;
 - (struct { double x1; double x2; })coordinateToShift;

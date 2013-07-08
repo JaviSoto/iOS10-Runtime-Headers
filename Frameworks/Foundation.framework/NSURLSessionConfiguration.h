@@ -4,9 +4,8 @@
 
 @class NSHTTPCookieStorage, NSString, NSArray, NSDictionary, NSURLCache, NSURLCredentialStorage;
 
-@interface NSURLSessionConfiguration : NSObject <NSCopying, NSSecureCoding> {
+@interface NSURLSessionConfiguration : NSObject <NSCopying> {
     BOOL _allowsCellularAccess;
-    BOOL _useOpportunisticNetworking;
     BOOL _discretionary;
     BOOL _HTTPShouldUsePipelining;
     BOOL _HTTPShouldSetCookies;
@@ -33,7 +32,6 @@
 @property double timeoutIntervalForResource;
 @property unsigned int networkServiceType;
 @property BOOL allowsCellularAccess;
-@property BOOL useOpportunisticNetworking;
 @property(getter=isDiscretionary) BOOL discretionary;
 @property(copy) NSDictionary * connectionProxyDictionary;
 @property int TLSMinimumSupportedProtocol;
@@ -87,7 +85,5 @@
 - (void)setHTTPAdditionalHeaders:(id)arg1;
 - (id)HTTPAdditionalHeaders;
 - (double)timeoutIntervalForResource;
-- (void)setUseOpportunisticNetworking:(BOOL)arg1;
-- (BOOL)useOpportunisticNetworking;
 
 @end

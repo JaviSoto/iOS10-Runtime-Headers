@@ -41,8 +41,6 @@
 @property(readonly) unsigned int* validSubManifestVersions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setValidSubManifestVersions:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)validSubManifestVersions;
 - (void)setHasZ:(BOOL)arg1;
@@ -78,6 +76,8 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

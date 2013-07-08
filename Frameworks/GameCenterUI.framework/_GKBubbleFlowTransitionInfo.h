@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray, UIViewController, UIViewController<GKBubbleFlowableViewController>, GKBubblePathAnimator;
+@class NSArray, _GKBubbleFlowPathTransitionInfo, UIViewController, UIViewController<GKBubbleFlowableViewController>, GKBubblePathAnimator;
 
 @interface _GKBubbleFlowTransitionInfo : NSObject <NSCopying> {
     UIViewController<GKBubbleFlowableViewController> *_toVC;
@@ -87,19 +87,22 @@
     GKBubblePathAnimator *_toPathAnimator;
     GKBubblePathAnimator *_fromPathAnimator;
     GKBubblePathAnimator *_onlyPathAnimator;
+    _GKBubbleFlowPathTransitionInfo *_toPathTransitionInfo;
+    _GKBubbleFlowPathTransitionInfo *_fromPathTransitionInfo;
+    _GKBubbleFlowPathTransitionInfo *_onlyPathTransitionInfo;
     BOOL _fadedOutRealFromView;
     BOOL _disableInteractionDuringTransition;
 }
 
-@property UIViewController<GKBubbleFlowableViewController> * toVC;
-@property UIViewController<GKBubbleFlowableViewController> * fromVC;
-@property UIViewController * toWrapperVC;
-@property UIViewController * fromWrapperVC;
-@property UIViewController * containingViewController;
+@property(retain) UIViewController<GKBubbleFlowableViewController> * toVC;
+@property(retain) UIViewController<GKBubbleFlowableViewController> * fromVC;
+@property(retain) UIViewController * toWrapperVC;
+@property(retain) UIViewController * fromWrapperVC;
+@property(retain) UIViewController * containingViewController;
 @property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } toFlags;
 @property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } fromFlags;
-@property NSArray * fromBubbles;
-@property NSArray * toBubbles;
+@property(retain) NSArray * fromBubbles;
+@property(retain) NSArray * toBubbles;
 @property int toFocusBubbleType;
 @property int fromFocusBubbleType;
 @property int transitionType;
@@ -114,9 +117,12 @@
 @property double relativeFadeOutDuration;
 @property double relativeCrossfadeDuration;
 @property double relativeFadeInDuration;
-@property GKBubblePathAnimator * toPathAnimator;
-@property GKBubblePathAnimator * fromPathAnimator;
-@property GKBubblePathAnimator * onlyPathAnimator;
+@property(retain) GKBubblePathAnimator * toPathAnimator;
+@property(retain) GKBubblePathAnimator * fromPathAnimator;
+@property(retain) GKBubblePathAnimator * onlyPathAnimator;
+@property(retain) _GKBubbleFlowPathTransitionInfo * toPathTransitionInfo;
+@property(retain) _GKBubbleFlowPathTransitionInfo * fromPathTransitionInfo;
+@property(retain) _GKBubbleFlowPathTransitionInfo * onlyPathTransitionInfo;
 @property BOOL fadedOutRealFromView;
 @property BOOL disableInteractionDuringTransition;
 @property(readonly) BOOL animated;
@@ -128,6 +134,12 @@
 - (BOOL)disableInteractionDuringTransition;
 - (void)setFadedOutRealFromView:(BOOL)arg1;
 - (BOOL)fadedOutRealFromView;
+- (void)setOnlyPathTransitionInfo:(id)arg1;
+- (id)onlyPathTransitionInfo;
+- (void)setFromPathTransitionInfo:(id)arg1;
+- (id)fromPathTransitionInfo;
+- (void)setToPathTransitionInfo:(id)arg1;
+- (id)toPathTransitionInfo;
 - (void)setOnlyPathAnimator:(id)arg1;
 - (void)setFromPathAnimator:(id)arg1;
 - (void)setToPathAnimator:(id)arg1;
@@ -180,6 +192,7 @@
 - (void)setDuration:(double)arg1;
 - (BOOL)animated;
 - (id)init;
+- (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)startTime;

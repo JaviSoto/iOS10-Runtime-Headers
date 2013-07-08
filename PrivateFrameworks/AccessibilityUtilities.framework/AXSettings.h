@@ -31,7 +31,7 @@
 @property BOOL assistiveTouchInputHoldEnabled;
 @property double assistiveTouchDelayAfterInput;
 @property BOOL assistiveTouchDelayAfterInputEnabled;
-@property double assistiveTouchAxisSweepDuration;
+@property float assistiveTouchAxisSweepSpeed;
 @property double assistiveTouchActionRepeatInterval;
 @property BOOL assistiveTouchActionRepeatEnabled;
 @property int assistiveTouchScanCycles;
@@ -47,6 +47,12 @@
 @property int assistiveTouchHeadMovementSensitivity;
 @property BOOL assistiveTouchSwitchUsageConfirmed;
 @property(retain) NSSet * assistiveTouchSwitches;
+@property BOOL assistiveTouchScannerMenuIncludeHomeItem;
+@property BOOL assistiveTouchScannerMenuIncludeScrollItem;
+@property BOOL assistiveTouchScannerMenuIncludeDeviceItem;
+@property BOOL assistiveTouchScannerMenuIncludeGesturesItem;
+@property BOOL assistiveTouchScannerMenuIncludeSettingsItem;
+@property(readonly) int assistiveTouchScannerIncludedMenuItems;
 @property int guidedAccessUsageCount;
 @property BOOL guidedAccessAXFeaturesEnabled;
 @property(retain) NSDictionary * gaxInternalSettingsUserAppProfile;
@@ -67,6 +73,10 @@
 @property int internalLoggingColorTheme;
 @property BOOL validateSecondPartyApps;
 @property BOOL includeBacktraceInLogs;
+@property BOOL writeAXLogsToFile;
+@property BOOL ignoreAXAssertions;
+@property BOOL ignoreAXServerEntitlements;
+@property BOOL logAXNotificationPosting;
 @property BOOL voiceOverHearingAidRoutingEnabled;
 @property BOOL skipHearingAidMFiAuth;
 @property BOOL enableHearingAidReporter;
@@ -152,6 +162,10 @@
 - (void)setSkipHearingAidMFiAuth:(BOOL)arg1;
 - (void)setVoiceOverHearingAidRoutingEnabled:(BOOL)arg1;
 - (void)setInternalLoggingColorTheme:(int)arg1;
+- (void)setLogAXNotificationPosting:(BOOL)arg1;
+- (void)setIgnoreAXServerEntitlements:(BOOL)arg1;
+- (void)setIgnoreAXAssertions:(BOOL)arg1;
+- (void)setWriteAXLogsToFile:(BOOL)arg1;
 - (void)setIncludeBacktraceInLogs:(BOOL)arg1;
 - (void)setValidateSecondPartyApps:(BOOL)arg1;
 - (void)setAssistiveTouchHeadlessModeEnabled:(BOOL)arg1;
@@ -191,7 +205,13 @@
 - (void)setAssistiveTouchDelayAfterInput:(double)arg1;
 - (void)setAssistiveTouchActionRepeatEnabled:(BOOL)arg1;
 - (void)setAssistiveTouchActionRepeatInterval:(double)arg1;
-- (void)setAssistiveTouchAxisSweepDuration:(double)arg1;
+- (void)setAssistiveTouchAxisSweepSpeed:(float)arg1;
+- (int)assistiveTouchScannerIncludedMenuItems;
+- (void)setAssistiveTouchScannerMenuIncludeSettingsItem:(BOOL)arg1;
+- (void)setAssistiveTouchScannerMenuIncludeGesturesItem:(BOOL)arg1;
+- (void)setAssistiveTouchScannerMenuIncludeDeviceItem:(BOOL)arg1;
+- (void)setAssistiveTouchScannerMenuIncludeScrollItem:(BOOL)arg1;
+- (void)setAssistiveTouchScannerMenuIncludeHomeItem:(BOOL)arg1;
 - (void)setAssistiveTouchScannerMenuLabelsEnabled:(BOOL)arg1;
 - (void)setAssistiveTouchScannerCompactMenuEnabled:(BOOL)arg1;
 - (void)setAssistiveTouchGroupElementsEnabled:(BOOL)arg1;
@@ -257,6 +277,8 @@
 - (BOOL)enableHearingAidReporter;
 - (BOOL)skipHearingAidMFiAuth;
 - (BOOL)voiceOverHearingAidRoutingEnabled;
+- (BOOL)logAXNotificationPosting;
+- (BOOL)ignoreAXServerEntitlements;
 - (BOOL)validateSecondPartyApps;
 - (int)internalLoggingColorTheme;
 - (BOOL)assistiveTouchHeadlessModeEnabled;
@@ -276,6 +298,11 @@
 - (id)gaxInternalSettingsUserAppProfile;
 - (BOOL)guidedAccessAXFeaturesEnabled;
 - (int)guidedAccessUsageCount;
+- (BOOL)assistiveTouchScannerMenuIncludeSettingsItem;
+- (BOOL)assistiveTouchScannerMenuIncludeGesturesItem;
+- (BOOL)assistiveTouchScannerMenuIncludeDeviceItem;
+- (BOOL)assistiveTouchScannerMenuIncludeScrollItem;
+- (BOOL)assistiveTouchScannerMenuIncludeHomeItem;
 - (BOOL)assistiveTouchSwitchUsageConfirmed;
 - (int)assistiveTouchHeadMovementSensitivity;
 - (int)assistiveTouchCursorColor;
@@ -283,7 +310,7 @@
 - (BOOL)assistiveTouchScannerPointPickerDefaultsToRescan;
 - (BOOL)assistiveTouchActionRepeatEnabled;
 - (double)assistiveTouchActionRepeatInterval;
-- (double)assistiveTouchAxisSweepDuration;
+- (float)assistiveTouchAxisSweepSpeed;
 - (BOOL)assistiveTouchDelayAfterInputEnabled;
 - (double)assistiveTouchDelayAfterInput;
 - (BOOL)assistiveTouchInputHoldEnabled;
@@ -313,7 +340,9 @@
 - (double)assistiveTouchSpeed;
 - (BOOL)assistiveTouchOpenMenuSwaggleEnabled;
 - (BOOL)assistiveTouchAlwaysShowMenuEnabled;
+- (BOOL)ignoreAXAssertions;
 - (BOOL)includeBacktraceInLogs;
+- (BOOL)writeAXLogsToFile;
 - (id)init;
 
 @end

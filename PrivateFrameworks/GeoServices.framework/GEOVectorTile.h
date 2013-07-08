@@ -112,19 +112,6 @@
 @property(readonly) BOOL dataIncludesConnectivity;
 
 
-- (unsigned int)polygonsVertexCount;
-- (unsigned int)linesVertexCount;
-- (struct { unsigned short x1; }*)overpasses;
-- (struct { /* ? */ }**)sortedPointsOnRoad;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)pointsOnRoad;
-- (struct { struct { /* ? */ } *x1; unsigned int x2; struct _NSRange {} *x3; unsigned int x4; }*)lineVertices;
-- (void)forEachJunction:(id)arg1;
-- (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; char *x2; unsigned int x3; }*)threeDBuildings;
-- (struct { struct { struct { id x_1_2_1; char *x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; unsigned long long x_1_2_8; BOOL x_1_2_9; unsigned long long x_1_2_10; float x_1_2_11; id x_1_2_12; int x_1_2_13; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; struct { float x_9_2_1; float x_9_2_2; float x_9_2_3; float x_9_2_4; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; } x1; unsigned int x2; unsigned int x3; BOOL x4; }*)buildingFootprints;
-- (unsigned int)threeDBuildingsCount;
-- (unsigned int)buildingFootprintsCount;
-- (unsigned int)hiResBuildingFootprintsCount;
-- (struct { struct { struct { id x_1_2_1; char *x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; unsigned long long x_1_2_8; BOOL x_1_2_9; unsigned long long x_1_2_10; float x_1_2_11; id x_1_2_12; int x_1_2_13; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; struct { float x_9_2_1; float x_9_2_2; float x_9_2_3; float x_9_2_4; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; } x1; unsigned int x2; unsigned int x3; BOOL x4; }*)hiResBuildingFootprints;
 - (BOOL)_readExtendedPointAttributes:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readHiResBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_read3DBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
@@ -154,11 +141,21 @@
 - (BOOL)hasComputedJunctions;
 - (unsigned int)junctionsCount;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)junctions;
+- (struct { unsigned short x1; }*)overpasses;
+- (unsigned int)threeDBuildingsCount;
+- (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; char *x2; unsigned int x3; }*)threeDBuildings;
+- (unsigned int)hiResBuildingFootprintsCount;
+- (struct { struct { struct { id x_1_2_1; char *x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; unsigned long long x_1_2_8; BOOL x_1_2_9; unsigned long long x_1_2_10; float x_1_2_11; id x_1_2_12; int x_1_2_13; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; struct { float x_9_2_1; float x_9_2_2; float x_9_2_3; float x_9_2_4; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; } x1; unsigned int x2; unsigned int x3; BOOL x4; }*)hiResBuildingFootprints;
+- (unsigned int)buildingFootprintsCount;
+- (struct { struct { struct { id x_1_2_1; char *x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; unsigned long long x_1_2_8; BOOL x_1_2_9; unsigned long long x_1_2_10; float x_1_2_11; id x_1_2_12; int x_1_2_13; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; struct { float x_9_2_1; float x_9_2_2; float x_9_2_3; float x_9_2_4; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; } x1; unsigned int x2; unsigned int x3; BOOL x4; }*)buildingFootprints;
 - (unsigned int)coastlinesCount;
 - (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)coastlines;
 - (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)multiSectionFeatureForGeoID:(unsigned long long)arg1;
 - (BOOL)dataIncludesConnectivity;
+- (unsigned int)polygonsVertexCount;
+- (unsigned int)linesVertexCount;
 - (void)forEachJunctionInRoad:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)arg1 visitor:(id)arg2;
+- (void)forEachJunction:(id)arg1;
 - (void)forEachEdgeOnJunction:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)arg1 visitor:(id)arg2;
 - (void)forEachPolygon:(id)arg1;
 - (void)forEachPoint:(id)arg1;
@@ -166,7 +163,10 @@
 - (struct { float x1; float x2; }*)polygonLabelPositions;
 - (id)baseHeightsPool;
 - (id)extrusionHeightsPool;
+- (struct { /* ? */ }**)sortedPointsOnRoad;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)pointsOnRoad;
 - (struct { struct { /* ? */ } *x1; unsigned int x2; struct _NSRange {} *x3; unsigned int x4; }*)curveLineVertices;
+- (struct { struct { /* ? */ } *x1; unsigned int x2; struct _NSRange {} *x3; unsigned int x4; }*)lineVertices;
 - (id)initWithTileData:(id)arg1 localizationData:(id)arg2 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3;
 - (void)forEachEdgeInRoad:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)arg1 visitTwice:(BOOL)arg2 visitor:(id)arg3;
 - (unsigned int)polygonsCount;

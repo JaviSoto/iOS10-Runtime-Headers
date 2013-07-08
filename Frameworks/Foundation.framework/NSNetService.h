@@ -31,7 +31,6 @@
 - (unsigned int)hash;
 - (id)name;
 - (id)domain;
-- (void)publish;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;
@@ -41,6 +40,7 @@
 - (void)startMonitoring;
 - (BOOL)getInputStream:(out id*)arg1 outputStream:(out id*)arg2;
 - (void)_dispatchCallBackWithError:(struct { int x1; int x2; })arg1;
+- (void)publish;
 - (void)setIncludesPeerToPeer:(BOOL)arg1;
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
 - (id)initWithCFNetService:(struct __CFNetService { }*)arg1;

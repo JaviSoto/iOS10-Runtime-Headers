@@ -18,8 +18,8 @@
 
 @property(readonly) float deltaFromDefaultTrackWidth;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (float)deltaFromDefaultTrackWidth;
 - (float)fps;

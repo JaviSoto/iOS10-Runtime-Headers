@@ -40,6 +40,7 @@
 + (void)releaseSegmentCache;
 + (void)writeImage:(id)arg1 toData:(id*)arg2 thumbnailFormat:(int)arg3 videoDuration:(id)arg4 width:(int*)arg5 height:(int*)arg6 bytesPerRow:(int*)arg7 dataWidth:(int*)arg8 dataHeight:(int*)arg9 dataOffset:(int*)arg10;
 
+- (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 asset:(id)arg4;
 - (void)compactWithOccupiedIndexes:(id)arg1;
 - (id)preflightCompactionWithOccupiedIndexes:(id)arg1;
 - (id)photoUUIDToIndexMap;
@@ -49,7 +50,6 @@
 - (id)imageDataAtIndex:(unsigned int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;
 - (id)preheatItemForAsset:(id)arg1;
 - (int)entryCount;
-- (void)ensureIndexExists:(int)arg1;
 - (void)preheatImageDataAtIndexes:(id)arg1;
 - (void)preheatImageDataAtIndex:(unsigned int)arg1;
 - (void)deleteEntryWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
@@ -70,11 +70,11 @@
 - (void)_verifyThumbnailDataForIndex:(unsigned int)arg1 uuid:(id)arg2;
 - (BOOL)_compactWithOccupiedIndexes:(id)arg1 outPhotoUUIDToIndexMap:(id*)arg2;
 - (void)_flushEntryAtAddress:(void*)arg1;
-- (id)dataForEntryAtIndex:(unsigned int)arg1;
+- (id)dataForEntryAtIndex:(unsigned int)arg1 createIfNeeded:(BOOL)arg2;
 - (void)_flushEntryAtAddress:(void*)arg1 count:(int)arg2;
-- (void)_addEntriesIfNecessaryForIndex:(int)arg1;
 - (void)_setEntryCount:(int)arg1;
 - (void)_updateSegmentCount;
+- (void)_addEntriesIfNecessaryForIndex:(int)arg1;
 - (void)_reloadSegmentAtIndex:(int)arg1;
 - (id)_segmentAtIndex:(int)arg1;
 - (void)_releaseSegmentAtIndex:(int)arg1;

@@ -20,9 +20,9 @@
 - (void)MapSectionStyleAt:(id)arg1;
 - (id)initWithWDSection:(id)arg1 breakAtStart:(BOOL)arg2 breakAtEnd:(BOOL)arg3 parent:(id)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (float)leftMargin;
-- (float)topMargin;
 - (void)setTopMargin:(float)arg1;
 - (void)setLeftMargin:(float)arg1;
+- (float)leftMargin;
+- (float)topMargin;
 
 @end

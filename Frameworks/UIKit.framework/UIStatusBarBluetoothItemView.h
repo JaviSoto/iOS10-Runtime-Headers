@@ -7,8 +7,8 @@
     BOOL _shouldAnimateConnection;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (float)alphaForConnected:(BOOL)arg1;
 - (void)performPendedActions;

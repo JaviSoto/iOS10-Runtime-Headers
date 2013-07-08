@@ -11,8 +11,8 @@
     BOOL _tracking;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setLockView:(id)arg1;
 - (void)beginTracking:(id)arg1;

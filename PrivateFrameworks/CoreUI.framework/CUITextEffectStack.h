@@ -12,7 +12,7 @@
 - (float)effectiveInteriorFillOpacity;
 - (void)_drawShadow:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; struct CGPoint { float x_8_1_1; float x_8_1_2; } x8; })arg1 forGlyphs:(const unsigned short*)arg2 inContext:(struct CGContext { }*)arg3 usingFont:(struct __CTFont { }*)arg4 atPositions:(const struct CGPoint { float x1; float x2; }*)arg5 count:(unsigned long)arg6;
 - (void)_drawShadow:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; struct CGPoint { float x_8_1_1; float x_8_1_2; } x8; })arg1 forGlyphs:(const unsigned short*)arg2 inContext:(struct CGContext { }*)arg3 usingFont:(struct __CTFont { }*)arg4 withAdvances:(const struct CGSize { float x1; float x2; }*)arg5 count:(unsigned long)arg6;
-- (struct CGColor { }*)newBackgroundPatternColorWithSize:(struct CGSize { float x1; float x2; })arg1 contentScale:(float)arg2;
+- (struct CGColor { }*)newBackgroundPatternColorWithSize:(struct CGSize { float x1; float x2; })arg1 contentScale:(float)arg2 forContext:(struct CGContext { }*)arg3;
 - (void)drawProcessedMask:(struct CGContext { }*)arg1 atBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inContext:(struct CGContext { }*)arg3 withScale:(float)arg4;
 - (struct CGContext { }*)newGlyphMaskContextForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContext:(struct CGContext { }*)arg2 withScale:(float)arg3;
 - (BOOL)useCoreImageRendering;

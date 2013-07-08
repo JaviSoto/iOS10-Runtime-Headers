@@ -135,9 +135,10 @@
 - (void)setUsername:(id)arg1;
 - (id)parentAccountIdentifier;
 - (id)enabledDataclasses;
+- (BOOL)isActive;
 - (id)parentAccount;
 - (id)username;
-- (BOOL)isActive;
+- (id)uniqueId;
 - (void)setHostname:(id)arg1;
 - (id)hostname;
 - (id)init;
@@ -146,7 +147,6 @@
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)identifier;
-- (id)uniqueId;
 - (void)setActive:(BOOL)arg1;
 - (id)serviceName;
 - (id)type;

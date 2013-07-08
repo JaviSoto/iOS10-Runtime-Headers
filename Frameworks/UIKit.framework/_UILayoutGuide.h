@@ -2,21 +2,37 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString, NSArray;
+
 @interface _UILayoutGuide : UIView <UILayoutSupport> {
+    BOOL _allowsArchivingAsSubview;
     BOOL _horizontal;
+    NSArray *_constraintsToRemoveAtRuntime;
+    NSString *_archivedIdentifier;
 }
 
-@property(getter=isHorizontal,readonly) BOOL _horizontal;
+@property(getter=isHorizontal,setter=_setHorizontal:) BOOL _horizontal;
+@property(setter=_setArchivedIdentifier:,copy) NSString * _archivedIdentifier;
+@property(setter=_setAllowsArchivingAsSubview:) BOOL _allowsArchivingAsSubview;
+@property(setter=_setConstraintsToRemoveAtRuntime:,copy) NSArray * _constraintsToRemoveAtRuntime;
 @property(readonly) float length;
 
 + (id)_horizontalLayoutGuide;
 + (id)_verticalLayoutGuide;
++ (id)classFallbacksForKeyedArchiver;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isHorizontal;
 - (float)length;
+- (void)dealloc;
+- (void)_setHorizontal:(BOOL)arg1;
+- (void)_setArchivedIdentifier:(id)arg1;
+- (void)_setAllowsArchivingAsSubview:(BOOL)arg1;
 - (void)_setUpCounterDimensionConstraint;
 - (id)_relevantLayoutVariables;
+- (void)_setConstraintsToRemoveAtRuntime:(id)arg1;
+- (id)_constraintsToRemoveAtRuntime;
+- (id)_archivedIdentifier;
 - (BOOL)_allowsArchivingAsSubview;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

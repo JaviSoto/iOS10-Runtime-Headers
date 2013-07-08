@@ -8,8 +8,11 @@
     NSString *_deviceId;
 }
 
++ (Class)responseClass;
 
 - (id)initWithAccount:(id)arg1 deviceId:(id)arg2;
+- (id)urlString;
+- (id)urlRequest;
 - (void).cxx_destruct;
 
 @end

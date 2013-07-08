@@ -19,11 +19,13 @@
     NSNumber *_createCount;
     NSNumber *_updateCount;
     NSNumber *_deleteCount;
+    NSDate *_startDateForNextOccurrence;
 }
 
 @property(retain) NSString * location;
 @property(retain) NSString * calendarName;
 @property(retain) NSDate * startDate;
+@property(retain) NSDate * startDateForNextOccurrence;
 @property(retain) NSDate * endDate;
 @property BOOL allDay;
 @property(retain) NSString * eventID;
@@ -38,6 +40,7 @@
 
 
 - (id)eventID;
+- (id)startDateForNextOccurrence;
 - (BOOL)needsAlert;
 - (void)setTitleChanged:(BOOL)arg1;
 - (void)setLocationChanged:(BOOL)arg1;
@@ -51,6 +54,7 @@
 - (void)setChangeType:(unsigned int)arg1;
 - (void)setEventID:(id)arg1;
 - (id)calendarName;
+- (void)setStartDateForNextOccurrence:(id)arg1;
 - (void)setCalendarName:(id)arg1;
 - (BOOL)locationChanged;
 - (BOOL)titleChanged;
@@ -62,9 +66,9 @@
 - (id)resourceChangeFromEventStore:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
 - (BOOL)allDay;
+- (id)location;
 - (unsigned int)changeType;
 - (id)startDate;
-- (id)location;
 - (id)deleteCount;
 - (id)initWithType:(int)arg1;
 - (void)setLocation:(id)arg1;

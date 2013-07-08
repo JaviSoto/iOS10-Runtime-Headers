@@ -21,7 +21,6 @@
         unsigned int location; 
         unsigned int length; 
     } _currentRange;
-    BOOL _loaded;
     GKScore *_comparePlayerScore;
     NSError *_error;
     NSObject<OS_dispatch_queue> *_loadQueue;
@@ -33,7 +32,6 @@
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } totalRange;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } displayedRange;
 @property(retain) GKScore * comparePlayerScore;
-@property(readonly) BOOL loaded;
 @property(retain) NSError * error;
 @property(readonly) NSObject<OS_dispatch_queue> * loadQueue;
 @property(retain) NSMutableArray * allScores;
@@ -43,7 +41,7 @@
 - (int)maxLoadedScores;
 - (id)scoresInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)scoreAtIndex:(int)arg1;
-- (BOOL)insertLeaderboardScores:(id)arg1;
+- (id)insertLeaderboardScores:(id)arg1;
 - (id)allScores;
 - (void)initRangeAndQueue;
 - (void)setDisplayedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -59,7 +57,6 @@
 - (id)game;
 - (void)setPlayer:(id)arg1;
 - (id)player;
-- (BOOL)loaded;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (void)dealloc;
 - (void)setError:(id)arg1;

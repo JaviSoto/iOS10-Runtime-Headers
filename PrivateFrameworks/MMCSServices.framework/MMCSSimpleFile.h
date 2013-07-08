@@ -37,6 +37,8 @@
 - (id)requestorID;
 - (void)setEncryptionBehavior:(int)arg1;
 - (int)encryptionBehavior;
+- (void)setFd:(int)arg1;
+- (int)fd;
 - (void)setSignature:(id)arg1;
 - (void)setRequestURL:(id)arg1;
 - (void)setRequestorID:(id)arg1;
@@ -55,8 +57,6 @@
 - (id)init;
 - (void)dealloc;
 - (id)description;
-- (void)setFd:(int)arg1;
-- (int)fd;
 - (double)progress;
 - (void)setProgress:(double)arg1;
 - (id)signature;

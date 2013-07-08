@@ -10,7 +10,6 @@
 + (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
 + (id)functionWithName:(id)arg1;
 + (id)uiFunctionWithControlPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
-+ (id)sigmoidFunction;
 
 - (id)CAMLType;
 - (void)getControlPointAtIndex:(unsigned long)arg1 values:(float[2])arg2;

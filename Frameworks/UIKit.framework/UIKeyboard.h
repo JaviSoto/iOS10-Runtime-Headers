@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextInputTraits, UIImage;
+@class UITextInputTraits, UIView;
 
 @interface UIKeyboard : UIView <UIKeyboardImplGeometryDelegate> {
-    UIImage *m_snapshot;
+    UIView *m_snapshot;
     UITextInputTraits *m_defaultTraits;
     BOOL m_typingDisabled;
     BOOL m_minimized;
@@ -35,8 +35,8 @@
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

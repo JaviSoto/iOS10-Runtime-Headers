@@ -45,6 +45,7 @@
 - (void)_clearAssetCacheForItem:(id)arg1;
 - (void)_updateVisualEngagementWithApplicationState:(int)arg1;
 - (void)_deviceOrientationDidChangeNotification:(id)arg1;
+- (void)_radioConfigurationDidChangeNotification:(id)arg1;
 - (void)_stationEntryResponseNotification:(id)arg1;
 - (void)_hideAdViewNotification:(id)arg1;
 - (void)_heartbeatChangedNotification:(id)arg1;
@@ -57,7 +58,6 @@
 - (void)didScheduleAd:(id)arg1;
 - (void)setStation:(id)arg1;
 - (void)_songBeganResponseNotification:(id)arg1;
-- (void)_radioConfigurationDidChangeNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;

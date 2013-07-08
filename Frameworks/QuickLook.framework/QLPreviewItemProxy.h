@@ -36,13 +36,13 @@
 - (void)consumeFileExtension;
 - (void)issueFileExtension;
 - (void)setPassword:(id)arg1;
+- (void)setIndex:(int)arg1;
 - (int)index;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setContentType:(id)arg1;
 - (id)contentType;
 - (id)uuid;
-- (void)setIndex:(int)arg1;
 - (id)password;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

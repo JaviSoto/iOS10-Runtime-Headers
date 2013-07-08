@@ -14,18 +14,21 @@
     BOOL _sendDisabled;
 }
 
+@property(readonly) NSDictionary * fieldsMap;
 @property(retain) SSMetricsConfiguration * childConfiguration;
 
 
 - (id)initWithStorePlatformData:(id)arg1;
 - (void)setChildConfiguration:(id)arg1;
 - (id)initWithGlobalConfiguration:(id)arg1;
+- (id)valueForConfigurationKey:(id)arg1;
 - (id)tokenStringWithElements:(id)arg1;
 - (id)reportingURLString;
 - (double)reportingFrequency;
 - (id)pingURLs;
 - (BOOL)isSendDisabled;
 - (BOOL)isEventTypeBlacklisted:(id)arg1;
+- (id)fieldsMap;
 - (id)compoundStringWithElements:(id)arg1;
 - (id)eventFields;
 - (id)blacklistedEventFields;

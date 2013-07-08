@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GKTextField, GKGame, GKLabel, UIAlertView, UIActivityIndicatorView, UIScrollView, GKFakeTableGroupView, GKButton, UIView, AAUICredentialRecoveryController, GKSignInInputView, NSString;
+@class GKTextField, GKGame, GKLabel, UIAlertView, UIActivityIndicatorView, UIScrollView, GKFakeTableGroupView, GKButton, UIView, GKAccountRemoteUIController, AAUICredentialRecoveryController, GKSignInInputView, NSString;
 
 @interface GKSignInViewController : GKViewController <AAUICredentialRecoveryPresentationDelegate, GKAuthenticateViewController, UITextFieldDelegate, UIScrollViewDelegate> {
     BOOL _disablesSignIn;
@@ -18,6 +18,7 @@
 
     UIScrollView *_scrollView;
     GKGame *_game;
+    GKAccountRemoteUIController *_accountController;
     GKButton *_createAccountButton;
     GKButton *_iForgotButton;
     UIActivityIndicatorView *_progressIndicator;
@@ -44,6 +45,7 @@
 
 @property(retain) UIScrollView * scrollView;
 @property(retain) GKGame * game;
+@property(retain) GKAccountRemoteUIController * accountController;
 @property(retain) GKButton * createAccountButton;
 @property(retain) GKButton * iForgotButton;
 @property(retain) UIActivityIndicatorView * progressIndicator;
@@ -106,6 +108,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectToKeepVisibleAboveKeyboardWithinView:(id)arg1;
 - (void)updateTableInsetsForKeyboardHeight:(float)arg1;
 - (id)alertDismissHandler;
+- (void)loadAccountRemoteUIForMode:(int)arg1 completionHandler:(id)arg2;
+- (void)presentAccountRemoteUIControllerAnimated:(BOOL)arg1;
+- (id)accountController;
+- (void)setAccountController:(id)arg1;
+- (void)accountRemoteUIController:(id)arg1 finishedWithError:(id)arg2;
+- (void)presentError:(id)arg1 forAccountRemoteUIController:(id)arg2;
 - (BOOL)handleUnderlyingAuthenticationError:(id)arg1;
 - (void)setLastUsername:(id)arg1;
 - (void)showAccountRemoteUIForMode:(int)arg1;

@@ -10,6 +10,7 @@
     SKUIStoreDialogController *_dialogController;
     NSString *_metricsConfigurationIdentifier;
     NSMutableArray *_navigationHistory;
+    NSString *_navigationHistoryPersistenceKey;
     NSString *_storeFrontIdentifier;
     NSDictionary *_strings;
     SSURLBag *_urlBag;
@@ -22,6 +23,7 @@
 @property(readonly) SSURLBag * URLBag;
 @property(readonly) NSArray * navigationHistory;
 @property(copy) NSString * metricsConfigurationIdentifier;
+@property(copy) NSString * navigationHistoryPersistenceKey;
 
 + (id)defaultContext;
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
@@ -29,7 +31,10 @@
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
 - (id)clientInterface;
 - (int)userInterfaceIdiomOverride;
+- (void)setNavigationHistoryPersistenceKey:(id)arg1;
+- (id)navigationHistoryPersistenceKey;
 - (void)setMetricsConfigurationIdentifier:(id)arg1;
+- (id)_navigationHistory;
 - (id)metricsConfigurationIdentifier;
 - (id)localizedAlertWithError:(id)arg1;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;

@@ -32,8 +32,6 @@
 @property(retain) GEORPProblemContext * problemContext;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasProblemType:(BOOL)arg1;
 - (void)setUserPaths:(int*)arg1 count:(unsigned int)arg2;
 - (int*)userPaths;
@@ -55,6 +53,8 @@
 - (void)setProblemContext:(id)arg1;
 - (void)setProblemCorrections:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

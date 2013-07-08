@@ -14,8 +14,8 @@
 @property(readonly) UIColor * currentSubtitleShadowColor;
 @property(readonly) UILabel * subtitleLabel;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)_subtitledContentForState:(unsigned int)arg1;
 - (id)subtitleShadowColorForState:(unsigned int)arg1;

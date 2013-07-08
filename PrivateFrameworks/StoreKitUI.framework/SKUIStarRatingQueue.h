@@ -2,16 +2,21 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue;
+@class NSOperationQueue, UIWindow;
 
 @interface SKUIStarRatingQueue : NSObject  {
     NSOperationQueue *_queue;
+    UIWindow *_window;
 }
+
+@property UIWindow * window;
 
 
 - (void)_setRating:(int)arg1 forItem:(id)arg2 account:(id)arg3 completionBlock:(id)arg4;
 - (void)setRating:(int)arg1 forItem:(id)arg2 completionBlock:(id)arg3;
+- (id)window;
 - (id)init;
 - (void).cxx_destruct;
+- (void)setWindow:(id)arg1;
 
 @end

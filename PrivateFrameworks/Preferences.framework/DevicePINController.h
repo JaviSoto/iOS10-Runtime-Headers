@@ -63,6 +63,7 @@
 - (int)_getScreenType;
 - (BOOL)validatePIN:(id)arg1;
 - (struct CGSize { float x1; float x2; })pinContentSizeForViewInPopover;
+- (struct CGSize { float x1; float x2; })overallContentSizeForViewInPopover;
 - (void)_updateUI;
 - (struct __CFString { }*)defaultsID;
 - (BOOL)useProgressiveDelays;

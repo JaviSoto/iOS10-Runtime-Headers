@@ -17,6 +17,7 @@
             unsigned int splitKeyboardMode : 1; 
             unsigned int wordLearningEnabled : 1; 
             unsigned int autocorrectionEnabled : 1; 
+            unsigned int shortcutConversionEnabled : 1; 
             unsigned int typologyLoggingEnabled : 1; 
             unsigned int autocapitalizationEnabled : 1; 
             unsigned int autocapitalizationType : 2; 
@@ -46,6 +47,7 @@
 @property BOOL splitKeyboardMode;
 @property BOOL wordLearningEnabled;
 @property BOOL autocorrectionEnabled;
+@property BOOL shortcutConversionEnabled;
 @property BOOL typologyLoggingEnabled;
 @property BOOL autocapitalizationEnabled;
 @property unsigned int autocapitalizationType;
@@ -55,6 +57,7 @@
 
 - (unsigned int)autocapitalizationType;
 - (BOOL)autocapitalizationEnabled;
+- (BOOL)shortcutConversionEnabled;
 - (BOOL)autocorrectionEnabled;
 - (BOOL)wordLearningEnabled;
 - (BOOL)typologyLoggingEnabled;
@@ -86,6 +89,7 @@
 - (void)setSplitKeyboardMode:(BOOL)arg1;
 - (void)setAutocorrectionEnabled:(BOOL)arg1;
 - (void)setKeyLayout:(id)arg1;
+- (void)setShortcutConversionEnabled:(BOOL)arg1;
 - (void)setNeedsCandidateMetadata:(BOOL)arg1;
 - (void)setCurrentCandidate:(id)arg1;
 - (void)setLayoutState:(id)arg1;

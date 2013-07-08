@@ -28,8 +28,8 @@
 @property(getter=_legibilityStyle,setter=_setLegibilityStyle:) int legibilityStyle;
 @property(getter=_legibilitySettings,setter=_setLegibilitySettings:) _UILegibilitySettings * legibilitySettings;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
@@ -48,12 +48,15 @@
 - (void)setHidesForSinglePage:(BOOL)arg1;
 - (int)currentPage;
 - (void)_setLegibilitySettings:(id)arg1;
-- (id)_modernIndicatorImageEnabled:(BOOL)arg1;
+- (id)_indicatorImageEnabled:(BOOL)arg1;
 - (float)_modernCornerRadius;
 - (id)_modernColorEnabled:(BOOL)arg1;
+- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
+- (BOOL)_shouldDrawLegibly;
 - (void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
 - (id)_correctIdiomaticNameForImageNamed:(id)arg1;
-- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3;
 - (BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
@@ -61,8 +64,7 @@
 - (void)_updateCurrentPageDisplay;
 - (void)_setDisplayedPage:(int)arg1;
 - (void)_setCurrentPage:(int)arg1;
-- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
-- (BOOL)_shouldDrawLegibly;
+- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2;
 - (id)_pageIndicatorImage;
 - (id)_customPageIndicatorImageForPage:(int)arg1;
 - (id)_customPageIndicatorCurrentImageForPage:(int)arg1;

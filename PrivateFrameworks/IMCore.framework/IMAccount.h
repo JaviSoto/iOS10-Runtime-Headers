@@ -421,8 +421,8 @@
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (void)setAccountDescription:(id)arg1;
-- (id)accountDescription;
 - (BOOL)isActive;
+- (id)accountDescription;
 - (void)systemDidWake;
 - (void)systemWillSleep;
 - (id)countryCode;

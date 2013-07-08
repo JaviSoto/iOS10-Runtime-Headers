@@ -23,6 +23,7 @@
 + (id)sharedDatabaseForURL:(id)arg1 type:(id)arg2;
 
 - (void)setCachedEntries:(id)arg1;
+- (BOOL)dirty;
 - (id)cachedEntries;
 - (void)setVersionNumber:(unsigned int)arg1;
 - (id)initWithURL:(id)arg1 type:(id)arg2;
@@ -39,7 +40,6 @@
 - (id)identifiersForEntry:(id)arg1;
 - (BOOL)sqliteDatabaseMigrated;
 - (unsigned int)lastSeedValue;
-- (BOOL)dirty;
 - (void)setDirty:(BOOL)arg1;
 - (unsigned int)versionNumber;
 

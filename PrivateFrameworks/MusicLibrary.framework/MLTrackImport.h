@@ -10,12 +10,10 @@
     NSArray *_chapters;
     NSMutableDictionary *_properties;
     BOOL _shouldAddToPurchasedPlaylist;
-    BOOL _shouldDeleteExistingArtwork;
     BOOL _assignArtworkCacheIDFromAlbum;
 }
 
 @property(copy) NSData * artworkData;
-@property BOOL shouldDeleteExistingArtwork;
 @property(copy) NSString * assetFilePath;
 @property(copy) NSArray * chapters;
 @property(copy) MLContentRating * contentRating;
@@ -28,8 +26,6 @@
 + (void)initialize;
 
 - (void)setArtworkData:(id)arg1;
-- (void)setShouldDeleteExistingArtwork:(BOOL)arg1;
-- (BOOL)shouldDeleteExistingArtwork;
 - (void)setShouldAddToPurchasedPlaylist:(BOOL)arg1;
 - (BOOL)shouldAddToPurchasedPlaylist;
 - (id)chapters;

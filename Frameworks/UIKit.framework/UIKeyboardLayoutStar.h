@@ -103,9 +103,9 @@
 + (id)keyboardWithName:(id)arg1 screen:(id)arg2;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -147,14 +147,17 @@
 - (void)cancelTouchIfNecessaryForInfo:(id)arg1;
 - (void)swipeDetected:(id)arg1;
 - (void)updateShiftKeyState;
+- (void)handleKeyboardMenusForTouch:(id)arg1;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2 withDelay:(float)arg3;
 - (void)upActionShift;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2;
-- (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6;
+- (void)continueFromInternationalActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
+- (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
 - (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (void)touchMultitapTimer;
 - (BOOL)shouldSendTouchUpToInputManager:(id)arg1;
 - (void)completeRetestForTouchUp:(id)arg1 timestamp:(double)arg2 interval:(double)arg3 executionContext:(id)arg4;
+- (id)activeTouchForInteraction:(int)arg1;
 - (BOOL)shouldRetestKey:(id)arg1 withKeyplane:(id)arg2;
 - (void)refreshGhostKeyState;
 - (unsigned int)upActionFlagsForKey:(id)arg1;
@@ -164,10 +167,10 @@
 - (id)infoForTouch:(id)arg1;
 - (void)deleteActionWithExecutionContext:(id)arg1;
 - (void)completeDeleteActionForTouchDownWithActions:(unsigned int)arg1 executionContext:(id)arg2;
-- (id)activeTouchForInteraction:(int)arg1;
 - (void)downActionShiftWithKey:(id)arg1;
 - (id)preTouchKeyplaneName;
 - (void)completeSendStringActionForTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
+- (void)incrementPunctuationIfNeeded:(id)arg1;
 - (id)createKeyEventForStringAction:(id)arg1 forKey:(id)arg2 isPopupVariant:(BOOL)arg3 isMultitap:(BOOL)arg4 isFlick:(BOOL)arg5;
 - (void)completeCommitTouchesPrecedingTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
 - (BOOL)shouldCommitPrecedingTouchesForTouchDownWithActions:(unsigned int)arg1;
@@ -194,10 +197,11 @@
 - (void)showPopupVariantsForKey:(id)arg1;
 - (unsigned int)downActionFlagsForKey:(id)arg1;
 - (void)clearHandwritingStrokesIfNeededAndNotify:(BOOL)arg1;
+- (id)activeMultitapCompleteKey;
 - (void)handleMultitapTimerFired;
 - (void)multitapExpired;
 - (void)multitapInterrupted;
-- (id)multitapCompleteKey;
+- (id)multitapCompleteKeys;
 - (BOOL)handwritingPlane;
 - (BOOL)isLongPressedKey:(id)arg1;
 - (id)activeKey;

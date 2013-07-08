@@ -37,6 +37,7 @@
 
 
 - (int)numNotifications;
+- (id)location;
 - (BOOL)isFailed;
 - (BOOL)isScheduled;
 - (BOOL)isExported;
@@ -54,11 +55,10 @@
 - (void)logWasScheduled;
 - (void)logWasImported;
 - (void)checkFileURLState;
+- (id)initWithLocation:(id)arg1;
 - (void)statusDidChange;
 - (BOOL)getBoolResourceFromURL:(id)arg1 forKey:(id)arg2;
 - (BOOL)isDeleted;
-- (id)location;
-- (id)initWithLocation:(id)arg1;
 - (id)init;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -12,8 +12,8 @@
 @property(getter=isVisible) BOOL visible;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isVisible;
 - (void)dealloc;

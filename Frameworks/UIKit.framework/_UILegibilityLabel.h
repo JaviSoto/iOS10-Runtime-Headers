@@ -21,13 +21,15 @@
 @property(retain) CAFilter * shadowImageColorFilter;
 @property int options;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)font;
+- (float)baselineOffset;
 - (void)setString:(id)arg1;
 - (id)string;
+- (void)dealloc;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4;
 - (void)setShadowImageColorFilter:(id)arg1;
 - (id)shadowImageColorFilter;
@@ -42,7 +44,6 @@
 - (void)updateForChangedSettings:(id)arg1;
 - (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;
 - (void)setOptions:(int)arg1;
-- (float)baselineOffset;
 - (void)setFont:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)options;

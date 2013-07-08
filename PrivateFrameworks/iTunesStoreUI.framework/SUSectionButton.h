@@ -38,8 +38,8 @@
 - (id)displayTitle;
 - (id)imageURL;
 - (id)accessibilityTitle;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;

@@ -79,8 +79,8 @@
 - (void)workQueueSetGlobalResetSyncTimerDate:(id)arg1;
 - (void)workQueueSetPostForegroundTimerDate:(id)arg1;
 - (void)workQueueSetPushTimerDate:(id)arg1;
-- (id)focusAssetCollectionGUID;
 - (id)focusAlbumGUID;
+- (id)focusAssetCollectionGUID;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (id)personID;

@@ -11,10 +11,10 @@
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCIColor:(id)arg1;
 
-- (struct CGColor { }*)CGColor;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)colorUsingCGColorSpace:(struct CGColorSpace { }*)arg1;
 - (id)initWithCIColor:(id)arg1;
+- (struct CGColor { }*)CGColor;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

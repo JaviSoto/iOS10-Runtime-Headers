@@ -27,8 +27,8 @@
 - (id)initWithObjectIDURI:(id)arg1 fileURLs:(id)arg2 thumbnailIndex:(unsigned int)arg3 thumbnailIdentifier:(id)arg4 uuid:(id)arg5 timestamp:(unsigned long long)arg6;
 - (unsigned int)thumbnailIndex;
 - (id)thumbnailIdentifier;
-- (id)uuid;
 - (unsigned long long)timestamp;
+- (id)uuid;
 - (void)dealloc;
 - (id)description;
 

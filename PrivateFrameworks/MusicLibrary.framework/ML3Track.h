@@ -5,8 +5,8 @@
 @interface ML3Track : ML3Entity  {
 }
 
-+ (id)importChaptersByParsingAsset:(id)arg1;
 + (id)flattenedChapterDataFromDAAPInfoDictionary:(id)arg1 trackPersistentID:(long long)arg2;
++ (id)importChaptersByParsingAsset:(id)arg1;
 + (id)flattenedChapterDataFromSyncInfoDictionaries:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)flattenedChapterDataWithImportChapters:(id)arg1 library:(id)arg2 trackPersistentID:(long long)arg3;
 + (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;

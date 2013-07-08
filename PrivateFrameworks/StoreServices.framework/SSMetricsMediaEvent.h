@@ -15,9 +15,10 @@
 
 - (void)setMediaURL:(id)arg1;
 - (void)setMediaEventType:(id)arg1;
-- (void)setLocationDescription:(id)arg1;
+- (void)setLocationWithEventLocations:(id)arg1;
 - (id)mediaURL;
 - (id)mediaEventType;
+- (void)setLocationDescription:(id)arg1;
 - (id)locationDescription;
 - (id)itemIdentifier;
 - (void)setItemIdentifier:(id)arg1;

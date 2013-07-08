@@ -19,6 +19,17 @@
     UIView *_maskView;
     BOOL _triggerPresentationAnimationOnKeyboard;
     BOOL _hasPresentedSheet;
+    BOOL _isPerformationRotation;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _sheetFrameStartingRotation;
     UIViewController *_viewControllerForTrackingSheetSize;
     UIViewController *_autoCompletionViewControllerForTrackingSheetSize;
     BOOL _wasPresented;
@@ -55,6 +66,7 @@
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
++ (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)setConstraints:(id)arg1;
 - (void)setAttachments:(id)arg1;
@@ -80,6 +92,7 @@
 - (void)updateKeyboardSize;
 - (void)_animateSheetCancelFinished;
 - (void)_animateSheetPresentationFinished;
+- (void)animateSheetPresentationWithDuration:(double)arg1;
 - (void)_animateCardSendFinished;
 - (void)_animateVignetteMaskFromSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (void)showKeyboardAnimated:(BOOL)arg1;
@@ -98,7 +111,7 @@
 - (void)downsampleImageAttachment:(id)arg1;
 - (BOOL)validateAttachments;
 - (BOOL)suppressKeyboard;
-- (void)animateSheetPresentationWithDuration:(double)arg1;
+- (void)_presentSheet;
 - (id)sheetRootViewController;
 - (void)_positionSheetViewForViewController:(id)arg1;
 - (void)_positionVignetteForSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -160,7 +173,9 @@
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)updateViewConstraints;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;

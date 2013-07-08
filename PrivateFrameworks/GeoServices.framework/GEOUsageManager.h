@@ -2,20 +2,45 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOUsageCollectionRequest, GEORequester, NSTimer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface GEOUsageManager : NSObject  {
+@class NSMapTable, NSTimer, NSLock, GEOUsageCollectionRequest, GEORequester;
+
+@interface GEOUsageManager : NSObject <PBRequesterDelegate> {
     GEORequester *_requester;
     GEOUsageCollectionRequest *_request;
+    NSLock *_requestLock;
     NSTimer *_updateTimer;
     BOOL _isAppActive;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _backgroundTaskStart;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _backgroundTaskEnd;
+
+    NSMapTable *_requesterToBackgroundTask;
 }
+
+@property(copy) id backgroundTaskStart;
+@property(copy) id backgroundTaskEnd;
 
 + (void)setUsePersistentConnection:(BOOL)arg1;
 + (id)sharedManager;
 
+- (void)setBackgroundTaskEnd:(id)arg1;
+- (id)backgroundTaskEnd;
+- (void)setBackgroundTaskStart:(id)arg1;
+- (id)backgroundTaskStart;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
+- (void)_endBackgroundTaskForRequester:(id)arg1;
+- (void)_startBackgroundTaskForRequester:(id)arg1;
 - (id)_usageURL;
 - (void)_sendUsageToServer;
 - (void)_scheduleUpdateTimer;
@@ -27,6 +52,9 @@
 - (void)_updateTimerFired:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
 - (void)_cleanupTimer;
 - (id)init;
 - (void)dealloc;

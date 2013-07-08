@@ -33,6 +33,8 @@
 }
 
 
+- (void)clearCaches;
+- (id)bundle;
 - (void)addGuessesForKoreanWord:(id)arg1 toMutableArray:(id)arg2 includeAdditionalGuesses:(BOOL)arg3;
 - (id)spellServer:(id)arg1 modificationsForPinyinInputString:(id)arg2 geometryModelData:(id)arg3;
 - (id)spellServer:(id)arg1 _retainedFinalModificationsForPinyinInputString:(id)arg2 geometryModelData:(id)arg3;
@@ -103,12 +105,10 @@
 - (unsigned long)encodingForLanguage:(id)arg1;
 - (id)globalNegativeBindictDataArray;
 - (id)globalBindictDataArray;
-- (void)clearCaches;
 - (id)bindictDataArrayForLanguage:(id)arg1 index:(unsigned int)arg2;
 - (id)fallbackLocalizationForLanguage:(id)arg1;
 - (id)localizationForLanguage:(id)arg1;
 - (id)localizationsForLanguage:(id)arg1;
-- (id)bundle;
 - (void)resetTimer;
 - (id)init;
 - (id)spellServer:(id)arg1 alternativesForPinyinInputString:(id)arg2 language:(id)arg3;

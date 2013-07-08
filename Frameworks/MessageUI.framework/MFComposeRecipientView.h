@@ -55,10 +55,10 @@
 @property int hideLastAtomComma;
 @property(retain) MFComposeRecipient * placeholderRecipient;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
-- (BOOL)isSeparatorHidden;
 - (unsigned int)defaultAtomPresentationOptions;
 - (BOOL)focused;
 - (double)inputDelay;
@@ -80,6 +80,7 @@
 - (void)setDidIgnoreFirstResponderResign:(BOOL)arg1;
 - (BOOL)_shouldShowCorecipientsIndicatorAtom;
 - (float)_topRowTextWidth;
+- (BOOL)isSeparatorHidden;
 - (void)_updateLayoutConstraintsAndGetNumberOfRows:(out unsigned int*)arg1 textFieldWillBeLastRow:(out BOOL*)arg2;
 - (unsigned int)_addressAtomPresentationOptionsForRecipient:(id)arg1;
 - (int)hideLastAtomComma;

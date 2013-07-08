@@ -17,8 +17,8 @@
 @property(retain) UIImagePickerController * imagePickerController;
 
 
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)dealloc;
 - (void)setPerson:(void*)arg1;
 - (void*)person;

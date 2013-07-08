@@ -39,8 +39,8 @@
 @property(getter=isTracking,readonly) BOOL tracking;
 @property(getter=isTouchInside,readonly) BOOL touchInside;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2;
 - (id)allTargets;
@@ -57,6 +57,8 @@
 - (BOOL)touchDragged;
 - (BOOL)_touchHasHighlighted;
 - (BOOL)_wasLastHighlightSuccessful;
+- (void)_sendDelayedActions;
+- (void)_delayActions;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (BOOL)_hasActionForEventMask:(int)arg1;
 - (float)_highlightCornerRadius;
@@ -69,9 +71,6 @@
 - (void)_sendDelayedActions:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;
-- (void)_sendDelayedActions;
-- (void)_delayActions;
-- (BOOL)_shouldDelaySendingTouchesEndedActionUntilNextRunLoop;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)isTouchInside;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

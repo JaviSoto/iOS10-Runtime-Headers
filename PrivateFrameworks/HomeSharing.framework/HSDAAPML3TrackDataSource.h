@@ -11,8 +11,8 @@
 }
 
 
-- (id)createImportItem;
 - (id)importItemAtIndex:(unsigned int)arg1;
+- (id)createImportItem;
 - (id)initWithItemsResponseData:(id)arg1;
 - (unsigned int)itemCount;
 - (void)invalidate;

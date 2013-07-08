@@ -33,12 +33,12 @@
 - (BOOL)shouldApplyGameCenterTheme;
 - (int)layoutStyle;
 - (id)initWithAttributes:(id)arg1;
-- (float)rightMargin;
-- (float)leftMargin;
-- (float)bottomMargin;
 - (void)setBottomMargin:(float)arg1;
 - (void)setRightMargin:(float)arg1;
 - (void)setLeftMargin:(float)arg1;
+- (float)rightMargin;
+- (float)leftMargin;
+- (float)bottomMargin;
 - (void)dealloc;
 - (id)textLabel;
 

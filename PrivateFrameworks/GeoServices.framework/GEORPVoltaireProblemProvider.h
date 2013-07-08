@@ -9,28 +9,40 @@
 @class GEORequester;
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
-    GEORequester *_requester;
+    GEORequester *_submissionRequester;
+    GEORequester *_statusRequester;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
-    id _errorHandler;
+    id _submissionErrorHandler;
 
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
-    id _finishedHandler;
+    id _submissionFinishedHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _statusErrorHandler;
+
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _statusFinishedHandler;
 
 }
 
++ (void)_resetURLs;
 + (unsigned short)providerID;
 + (void)setUsePersistentConnection:(BOOL)arg1;
-+ (void)_resetURL;
 
+- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)cancelRequest;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)cancelRequest;
-- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (id)init;
 - (void)dealloc;
 

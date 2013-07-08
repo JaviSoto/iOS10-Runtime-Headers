@@ -14,12 +14,16 @@
     UIView *_rightToNumberPadFiller;
     UIView *_bottomToNumberPadFiller;
     NSString *_lastCharacterBeforeBackspace;
+    BOOL _undoInputOnTouchCancellation;
 }
 
+@property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) BOOL undoInputOnTouchCancellation;
 @property(retain) NSString * lastCharacterBeforeBackspace;
 
 
 - (id)lastCharacterBeforeBackspace;
+- (void)_setUndoInputOnTouchCancellation:(BOOL)arg1;
+- (BOOL)_undoInputOnTouchCancellation;
 - (id)_statusBackgroundView;
 - (id)_statusTitleView;
 - (void)_noteKeyUp:(id)arg1;

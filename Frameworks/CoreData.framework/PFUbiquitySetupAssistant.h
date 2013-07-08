@@ -106,6 +106,7 @@
 + (id)createDefaultLocalPeerID;
 + (id)findContainerIDForToken:(id)arg1 storeName:(id)arg2 haveExistingMappings:(BOOL*)arg3;
 + (void)removeUbiquityMetadataFromStore:(id)arg1;
++ (void)initialize;
 
 - (BOOL)cacheFilePresenterForUbiquityRoot;
 - (id)failSetupError;

@@ -78,8 +78,6 @@
 
 
 - (id)photos;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)starRatings;
 - (id)attributions;
 - (id)localizedCategories;
@@ -171,6 +169,8 @@
 - (BOOL)hasName;
 - (id)ratings;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)sources;
 - (void)setSources:(id)arg1;
 - (id)center;

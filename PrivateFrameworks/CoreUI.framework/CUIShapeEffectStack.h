@@ -142,7 +142,6 @@
 - (id)imageWithInnerGlowOfImage:(id)arg1;
 - (id)imageWithColorOverlayOfImage:(id)arg1;
 - (id)imageWithInteriorGradientFillOfImage:(id)arg1;
-- (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
 - (void)_addExtraShadowFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_addBevelEmbossFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_addEngraveShadowFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
@@ -152,6 +151,7 @@
 - (void)_setInteriorGradientFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_setColorFillFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_precompositeColorOverlayInnerGradient;
+- (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
 - (void)scaleEffectParametersBy:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectPaddingWithScale:(float)arg1;
 - (id)processedImageFromShapeImage:(id)arg1 withScale:(float)arg2;

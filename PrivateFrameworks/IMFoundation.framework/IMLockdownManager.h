@@ -17,7 +17,6 @@
 @property(readonly) BOOL isCarrierInstall;
 @property(readonly) BOOL isActivated;
 @property(readonly) BOOL isExpired;
-@property(readonly) struct __SecIdentity { }* copyIdentity;
 @property(readonly) NSString * uniqueDeviceIdentifier;
 @property(setter=_setState:) unsigned int _state;
 @property BOOL _settingUpActivationState;
@@ -38,11 +37,9 @@
 - (void)set_settingUpActivationState:(BOOL)arg1;
 - (BOOL)_settingUpActivationState;
 - (id)uniqueDeviceIdentifier;
-- (struct __SecIdentity { }*)copyIdentity;
 - (BOOL)isExpired;
 - (BOOL)isActivated;
 - (BOOL)isCarrierInstall;
-- (unsigned int)_state;
 - (void)_resetActivationState;
 - (void)_activationFailed;
 - (int)lockdownState;
@@ -53,5 +50,6 @@
 - (id)description;
 - (BOOL)_isInternalInstall;
 - (void)_setState:(unsigned int)arg1;
+- (unsigned int)_state;
 
 @end

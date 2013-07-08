@@ -17,7 +17,6 @@
 + (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3;
 + (id)sharedInstance;
 
-- (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)rebuildUnreadMessageCount;
 - (void)rebuildLastFailedMessageID;
 - (void)setSuppressDatabaseUpdates:(BOOL)arg1;
@@ -66,6 +65,7 @@
 - (id)messageWithGUID:(id)arg1;
 - (void)_performInitialHousekeeping;
 - (void)setModificationStamp:(id)arg1;
+- (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)updateUnformattedID:(id)arg1 forBuddyID:(id)arg2 onService:(id)arg3;
 - (void)performBlock:(id)arg1;

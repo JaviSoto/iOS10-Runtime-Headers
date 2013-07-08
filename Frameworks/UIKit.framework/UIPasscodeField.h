@@ -19,8 +19,8 @@
 
 + (Class)textFieldClass;
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setShowsOKButton:(BOOL)arg1;
 - (BOOL)becomeFirstResponder;

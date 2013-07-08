@@ -11,11 +11,11 @@
 
 
 - (void)setStroke;
-- (struct CGColor { }*)CGColor;
 - (id)initWithCIColor:(id)arg1;
-- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)setFill;
+- (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (struct CGColor { }*)CGColor;
 - (void)set;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

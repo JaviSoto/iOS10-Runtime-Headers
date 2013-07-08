@@ -281,6 +281,10 @@
 - (long)headerMargin;
 - (long)pageHeight;
 - (long)pageWidth;
+- (void)setBottomMargin:(long)arg1;
+- (void)setRightMargin:(long)arg1;
+- (void)setTopMargin:(long)arg1;
+- (void)setLeftMargin:(long)arg1;
 - (long)rightMargin;
 - (long)leftMargin;
 - (long)bottomMargin;
@@ -288,10 +292,6 @@
 - (int)textDirection;
 - (id)document;
 - (id)text;
-- (void)setBottomMargin:(long)arg1;
-- (void)setTopMargin:(long)arg1;
-- (void)setRightMargin:(long)arg1;
-- (void)setLeftMargin:(long)arg1;
 - (void)dealloc;
 - (id).cxx_construct;
 - (void)setColumnCount:(unsigned short)arg1;

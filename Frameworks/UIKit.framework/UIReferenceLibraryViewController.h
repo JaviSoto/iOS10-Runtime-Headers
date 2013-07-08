@@ -6,23 +6,15 @@
    See Warning(s) below.
  */
 
-@class UIViewController, UIWindow, UILabel, UIButton, UIView, NSString, UINavigationController, UITableViewController, NSArray;
+@class NSArray, NSString, UIWindow, UIViewController, UINavigationController, UITableViewController;
 
-@interface UIReferenceLibraryViewController : UIViewController <_UIShortDefinitionViewDelegate, _UILongDefinitionViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface UIReferenceLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSString *_term;
     NSArray *_definitionValues;
-    UIView *_diddlyDoView;
-    UIView *_buttonsView;
-    UILabel *_dictionaryLabel;
-    UIButton *_doneButton;
-    UIView *_headerView;
-    UIView *_contentView;
-    UIView *_footerView;
-    UIView *_dictionaryDisplayView;
-    int _oldPopoverStyle;
     UINavigationController *_baseNavController;
     UITableViewController *_multiDefViewController;
     UIViewController *_longDefViewController;
+    int _oldPopoverStyle;
     UIWindow *_rotationDecider;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -45,36 +37,26 @@
 + (id)_foregroundColor;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 + (id)_backgroundColor;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
-- (id)_contentView;
 - (void)dealloc;
 - (id)_rotationDecider;
-- (id)_dictionaryDisplayView;
-- (void)_definitionValueWasChosen:(id)arg1;
-- (id)_buttonsView;
-- (id)_diddlyDoView;
-- (id)_dictionaryLabel;
+- (id)_dictionaryDefinitionAttributes;
+- (id)_pressedButtonImage;
+- (id)_defaultButtonImage;
+- (void)_installRequiredElementsOnViewController:(id)arg1;
 - (void)_doneButtonPressed:(id)arg1;
 - (void)_searchWikipedia:(id)arg1;
 - (void)_searchWeb:(id)arg1;
-- (id)_buttonWithTitle:(id)arg1;
-- (id)_dictionaryDefinitionAttributes;
 - (void)_setRotationDecider:(id)arg1;
 - (id)initWithTerm:(id)arg1;
-- (void)_backButtonWasTapped:(id)arg1;
-- (id)_pressedButtonImage;
-- (id)_defaultButtonImage;
 - (id)_colorAttributes;
 - (id)_localizedDictionaryTitleAttributes;
 - (id)_diddlyDoViewLineColor;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (id)dismissCompletionHandler;
-- (id)_doneButton;
-- (id)_footerView;
 - (id)_foregroundColor;
-- (id)_headerView;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)viewDidLoad;
@@ -85,10 +67,8 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 

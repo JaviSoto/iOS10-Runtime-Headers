@@ -34,6 +34,7 @@
 - (void)setLineDashPattern:(id)arg1;
 - (void)setLineCap:(id)arg1;
 - (void)setLineJoin:(id)arg1;
+- (void)setMiterLimit:(float)arg1;
 - (void)setStrokeEnd:(float)arg1;
 - (void)setStrokeStart:(float)arg1;
 - (float)strokeEnd;
@@ -57,7 +58,6 @@
 - (struct CGPath { }*)path;
 - (void)setFillRule:(id)arg1;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
-- (void)setMiterLimit:(float)arg1;
 - (void)setLineWidth:(float)arg1;
 
 @end

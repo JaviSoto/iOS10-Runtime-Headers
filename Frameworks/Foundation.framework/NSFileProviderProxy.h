@@ -7,6 +7,7 @@
 
 
 - (id)provideItemAtURL:(id)arg1 forAccessClaimWithID:(id)arg2 completionHandler:(id)arg3;
+- (void)observePresentationChangeOfKind:(id)arg1 withPresenterID:(id)arg2 url:(id)arg3 newURL:(id)arg4;
 - (void)forwardUsingMessageSender:(id)arg1;
 - (void)setItemLocation:(id)arg1;
 

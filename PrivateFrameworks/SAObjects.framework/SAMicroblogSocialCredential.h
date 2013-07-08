@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSString * accessToken;
+@property(copy) NSString * personalizationPermission;
 @property(copy) NSString * socialNetwork;
 @property(copy) NSString * tokenSecret;
 
@@ -19,6 +20,8 @@
 - (id)tokenSecret;
 - (void)setSocialNetwork:(id)arg1;
 - (id)socialNetwork;
+- (void)setPersonalizationPermission:(id)arg1;
+- (id)personalizationPermission;
 - (id)accessToken;
 - (id)encodedClassName;
 - (id)groupIdentifier;

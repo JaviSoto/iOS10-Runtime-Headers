@@ -4,7 +4,7 @@
 
 @class <QLPreviewControllerDelegate>, <QLPreviewControllerDataSource>, QLPreviewControllerReserved, <QLPreviewItem>;
 
-@interface QLPreviewController : UIViewController <QLPreviewTransitionAnimatorDelegate> {
+@interface QLPreviewController : UIViewController  {
     QLPreviewControllerReserved *_reserved;
 }
 
@@ -26,7 +26,6 @@
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (id)_fixedSpaceItemWithWidth:(float)arg1;
 - (void)_hideOverlayWithStatusBar:(BOOL)arg1 duration:(double)arg2;
-- (void)_showOverlayWithStatusBar:(BOOL)arg1 duration:(double)arg2;
 - (BOOL)_updateAVState;
 - (id)_flexibleSpaceItem;
 - (BOOL)_updateActionItem;
@@ -44,7 +43,6 @@
 - (void)doneButtonTapped:(id)arg1;
 - (void)customActionButtonTapped:(id)arg1;
 - (void)actionButtonTapped:(id)arg1;
-- (void)_startWaiting;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)overlayWasTappedInPreviewContentController:(id)arg1;
 - (void)showContentsWasTappedInPreviewContentController:(id)arg1;
@@ -63,6 +61,7 @@
 - (void)_prepareDelayedAppearance;
 - (id)previewContentController;
 - (id)passThroughViewsForIndexSheet;
+- (void)animateWhenReadyWithBlock:(id)arg1;
 - (BOOL)showActionAsDefaultButton;
 - (void)setShowActionAsDefaultButton:(BOOL)arg1;
 - (BOOL)useCustomActionButton;
@@ -82,18 +81,19 @@
 - (void)_createControls;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentFrameForRemoteView;
 - (BOOL)_overlayVisible;
+- (void)_startWaiting;
 - (void)_addPreviewContentController;
 - (void)_loadInternalViews;
 - (void)_setupWithMode:(int)arg1 parentViewController:(id)arg2;
 - (void)_contentWasTapped;
 - (void)_setControlsOverlayVisible:(BOOL)arg1 withStatusBar:(BOOL)arg2 duration:(double)arg3;
 - (void)_showGenericDisplayBundle;
-- (void)_stopWaiting;
 - (void)_setCurrentPreviewItemIndex:(int)arg1 fromClient:(BOOL)arg2 showContentsIfPossible:(BOOL)arg3;
 - (id)previewItemAtIndex:(int)arg1;
 - (int)numberOfPreviewItems;
 - (void)refreshCurrentPreviewItem;
 - (void)_configurePreviewContentController;
+- (void)_showOverlayWithStatusBar:(BOOL)arg1 duration:(double)arg2;
 - (void)_showContentsIfPossibleAnimated:(BOOL)arg1;
 - (void)_updateToolbar:(BOOL)arg1;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
@@ -107,6 +107,7 @@
 - (id)currentPreviewItem;
 - (id)itemsSource;
 - (void)_unloadInternalViews;
+- (void)_stopWaiting;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (void)_commonInit;

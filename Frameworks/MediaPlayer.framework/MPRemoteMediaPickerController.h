@@ -13,10 +13,10 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 
-- (void)setMediaPickerController:(id)arg1;
 - (id)mediaPickerController;
 - (void)remoteMediaPickerDidCancel;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
+- (void)setMediaPickerController:(id)arg1;
 - (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

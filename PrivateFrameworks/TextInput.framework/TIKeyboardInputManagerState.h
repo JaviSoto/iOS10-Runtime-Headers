@@ -22,6 +22,7 @@
             unsigned int commitsAcceptedCandidate : 1; 
             unsigned int nextInputWouldStartSentence : 1; 
             unsigned int inputStringIsExemptFromChecker : 1; 
+            unsigned int suppressPlaceholderCandidate : 1; 
         } fields; 
     } _mask;
     BOOL _shouldAddModifierSymbolsToWordCharacters;
@@ -66,6 +67,7 @@
 @property unsigned int inputCount;
 @property BOOL nextInputWouldStartSentence;
 @property BOOL inputStringIsExemptFromChecker;
+@property BOOL suppressPlaceholderCandidate;
 @property(copy) TIKeyboardCandidate * autocorrectionRecordForInputString;
 @property(copy) NSString * shadowTyping;
 @property(copy) NSString * searchStringForMarkedText;
@@ -89,6 +91,7 @@
 - (void)setInputCount:(unsigned int)arg1;
 - (void)setWordSeparator:(id)arg1;
 - (void)setAutocorrectionRecordForInputString:(id)arg1;
+- (void)setSuppressPlaceholderCandidate:(BOOL)arg1;
 - (void)setUsesAutoDeleteWord:(BOOL)arg1;
 - (void)setSuppressCompletionsForFieldEditor:(BOOL)arg1;
 - (void)setSupportsSetPhraseBoundary:(BOOL)arg1;
@@ -114,15 +117,16 @@
 - (BOOL)canHandleKeyHitTest;
 - (BOOL)ignoresDeadKeys;
 - (id)keyEventMap;
+- (BOOL)suppressPlaceholderCandidate;
 - (id)autocorrectionRecordForInputString;
 - (BOOL)commitsAcceptedCandidate;
 - (id)shadowTyping;
-- (id)wordSeparator;
 - (BOOL)inputStringIsExemptFromChecker;
-- (BOOL)stringEndsWord:(id)arg1;
 - (BOOL)inputStringAcceptsCurrentCandidateIfSelected:(id)arg1;
 - (BOOL)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
 - (id)replacementForDoubleSpace;
+- (id)wordSeparator;
+- (BOOL)stringEndsWord:(id)arg1;
 - (BOOL)acceptInputString:(id)arg1;
 - (BOOL)suppliesCompletions;
 - (BOOL)suppressCompletionsForFieldEditor;

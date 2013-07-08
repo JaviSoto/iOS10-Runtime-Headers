@@ -20,8 +20,8 @@
 - (id)unlocalizedLabel;
 - (id)placeholderName;
 - (id)commentedAddress;
-- (id)compositeName;
 - (int)recordID;
+- (id)compositeName;
 - (int)property;
 - (void*)record;
 - (id)label;

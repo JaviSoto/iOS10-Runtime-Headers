@@ -82,10 +82,10 @@
 - (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
 - (id)initWithData:(id)arg1 archiver:(id)arg2;
 - (id)_initWithArchiver:(id)arg1;
+- (void)setReadOnly:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDefaultTabInterval:(float)arg1;
 - (float)defaultTabInterval;
-- (void)setReadOnly:(int)arg1;
 - (void)setCocoaSubVersion:(int)arg1;
 - (void)setCocoaVersion:(int)arg1;
 - (float)floatCocoaVersion;

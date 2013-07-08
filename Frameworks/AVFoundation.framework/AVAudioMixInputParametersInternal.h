@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface AVAudioMixInputParametersInternal : NSObject  {
     int trackID;
     NSMutableArray *ramps;
+    NSString *audioTimePitchAlgorithm;
     struct opaqueMTAudioProcessingTap { } *tap;
 }
 

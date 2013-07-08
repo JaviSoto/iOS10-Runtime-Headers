@@ -25,6 +25,7 @@
 @property(copy) id action;
 @property(setter=_isPrimitiveBehavior:) BOOL _isPrimitiveBehavior;
 
++ (void)initialize;
 
 - (id)items;
 - (id)init;

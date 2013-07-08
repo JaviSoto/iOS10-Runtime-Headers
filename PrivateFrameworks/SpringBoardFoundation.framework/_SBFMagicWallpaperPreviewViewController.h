@@ -13,14 +13,14 @@
 }
 
 
+- (void)resetFormattersIfNecessary;
+- (id)formatDateAsDayOfWeekMonthDayStyle:(id)arg1;
+- (id)formatDateAsTimeNoAMPM:(id)arg1;
 - (void)_startUpdateTimer;
 - (float)_timeBaselineY;
 - (void)_stopUpdateTimer;
 - (id)initWithWallpaper:(id)arg1 options:(id)arg2;
 - (void)_layoutDateView;
-- (void)resetFormattersIfNecessary;
-- (id)formatDateAsDayOfWeekMonthDayStyle:(id)arg1;
-- (id)formatDateAsTimeNoAMPM:(id)arg1;
 - (void)dealloc;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)loadView;

@@ -5,9 +5,9 @@
 @interface NSBundleAccessibility : NSBundleAccessibility_super  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
 + (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)_loadAXBundleForBundleOnMainThread;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;

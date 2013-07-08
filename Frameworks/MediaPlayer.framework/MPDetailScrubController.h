@@ -7,7 +7,8 @@
 @interface MPDetailScrubController : NSObject  {
     BOOL _didBeginTracking;
     BOOL _needsCommit;
-    BOOL _canCommit;
+    unsigned int _skippedCommits;
+    float _accumulatedDelta;
     struct CGPoint { 
         float x; 
         float y; 

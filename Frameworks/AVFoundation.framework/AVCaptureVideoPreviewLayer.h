@@ -35,7 +35,6 @@
 - (BOOL)isChromaNoiseReductionSupported;
 - (BOOL)isMirroringSupported;
 - (void)updateInternalStateForCaptureOptions:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
 - (void)_updateCaptureDeviceTransform;
 - (BOOL)_isMirrored;
 - (BOOL)_automaticallyAdjustsMirroring;
@@ -75,6 +74,7 @@
 - (void)dealloc;
 - (void)setSession:(id)arg1;
 - (id)session;
+- (void)setPaused:(BOOL)arg1;
 - (int)orientation;
 - (id)connection;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

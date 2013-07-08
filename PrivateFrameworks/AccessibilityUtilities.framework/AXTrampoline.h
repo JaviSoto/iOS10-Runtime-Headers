@@ -22,10 +22,10 @@
 + (void)methodDoesNotExistSentinal;
 
 - (void)setWarnAboutUnknownSelectors:(BOOL)arg1;
-- (Class)targetClass;
 - (BOOL)callerIsClass;
 - (int (*)())_findIMPForSelector:(SEL)arg1;
 - (BOOL)warnAboutUnknownSelectors;
+- (Class)targetClass;
 - (void)setTargetClass:(Class)arg1;
 - (void)setCaller:(id)arg1;
 - (id)initWithCaller:(id)arg1 targetClass:(Class)arg2;
@@ -33,5 +33,6 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
+- (id)description;
 
 @end

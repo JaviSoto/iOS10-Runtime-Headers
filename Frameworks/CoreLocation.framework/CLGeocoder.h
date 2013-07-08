@@ -15,6 +15,7 @@
 - (void)cancelGeocode;
 - (void)geocodeAddressString:(id)arg1 completionHandler:(id)arg2;
 - (void)geocodeAddressDictionary:(id)arg1 completionHandler:(id)arg2;
+- (void)reverseGeocodeLocation:(id)arg1 completionHandler:(id)arg2;
 - (void)reverseGeocodeLocation:(id)arg1 localResultsOnly:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)_notifyResult:(id)arg1 error:(id)arg2;
 - (void)_notifyError:(id)arg1;
@@ -30,7 +31,6 @@
 - (BOOL)isGeocoding;
 - (void)reverseGeocodeLocation:(id)arg1 heading:(double)arg2 completionHandler:(id)arg3;
 - (void)reverseGeocodeLocation:(id)arg1 heading:(double)arg2 localResultsOnly:(BOOL)arg3 completionHandler:(id)arg4;
-- (void)reverseGeocodeLocation:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (void)dealloc;
 

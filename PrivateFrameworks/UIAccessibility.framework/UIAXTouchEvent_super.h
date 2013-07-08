@@ -5,8 +5,8 @@
 @interface UIAXTouchEvent_super : UIAccessibilitySafeCategory  {
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 
 @end

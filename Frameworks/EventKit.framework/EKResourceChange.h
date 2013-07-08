@@ -45,10 +45,10 @@
 - (void)clearAlertedStatus;
 - (id)calendarItem;
 - (BOOL)alerted;
+- (id)timestamp;
 - (unsigned int)changeType;
 - (id)emailAddress;
 - (id)deleteCount;
-- (id)timestamp;
 - (id)calendar;
 - (id)name;
 

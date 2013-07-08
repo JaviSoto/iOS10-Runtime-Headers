@@ -49,14 +49,10 @@
 - (unsigned int)_sweepDirectionForGlyphAtIndex:(long)arg1;
 - (BOOL)_usesScreenFonts;
 - (id)_getATSTypesetterGuts;
-- (float)baselineOffsetInLayoutManager:(id)arg1 glyphIndex:(unsigned int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })layoutCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forLayoutManager:(id)arg2 maximumNumberOfLineFragments:(unsigned int)arg3;
 - (void)_setBaselineRenderingMode:(BOOL)arg1;
 - (void)_setForceWordWrapping:(BOOL)arg1;
 - (BOOL)_forceWordWrapping;
-- (void)layoutGlyphsInLayoutManager:(id)arg1 startingAtGlyphIndex:(unsigned int)arg2 maxNumberOfLineFragments:(unsigned int)arg3 nextGlyphIndex:(unsigned int*)arg4;
 - (BOOL)_layoutLineFragmentStartingWithGlyphAtIndex:(unsigned int*)arg1 characterIndex:(unsigned int*)arg2 atPoint:(struct CGPoint { float x1; float x2; }*)arg3 renderingContext:(id*)arg4;
-- (unsigned int)actionForControlCharacterAtIndex:(unsigned int)arg1;
 - (void)endParagraph;
 - (void)beginParagraph;
 - (void)_flushCachedObjects;
@@ -68,6 +64,10 @@
 - (struct __CTTypesetter { }*)_ctTypesetter;
 - (const char *)_bidiLevels;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (void)layoutGlyphsInLayoutManager:(id)arg1 startingAtGlyphIndex:(unsigned int)arg2 maxNumberOfLineFragments:(unsigned int)arg3 nextGlyphIndex:(unsigned int*)arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })layoutCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forLayoutManager:(id)arg2 maximumNumberOfLineFragments:(unsigned int)arg3;
+- (unsigned int)actionForControlCharacterAtIndex:(unsigned int)arg1;
+- (float)baselineOffsetInLayoutManager:(id)arg1 glyphIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (oneway void)release;
 - (BOOL)_tryRetain;

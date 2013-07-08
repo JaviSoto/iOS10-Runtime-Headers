@@ -2,6 +2,8 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
+@class NSArray;
+
 @interface NSMutableParagraphStyle : NSParagraphStyle  {
 }
 
@@ -18,6 +20,8 @@
 @property float lineHeightMultiple;
 @property float paragraphSpacingBefore;
 @property float hyphenationFactor;
+@property(copy) NSArray * tabStops;
+@property float defaultTabInterval;
 
 
 - (void)setBaseWritingDirection:(int)arg1;

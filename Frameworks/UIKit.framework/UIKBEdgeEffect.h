@@ -6,13 +6,13 @@
 
 @interface UIKBEdgeEffect : NSObject <UIKBRenderEffect> {
     struct CGColor { } *_color;
-    int _edges;
+    unsigned int _edges;
     float _inset;
     float _weight;
     UIKBGradient *_gradient;
 }
 
-@property int edges;
+@property unsigned int edges;
 @property float inset;
 @property(retain) UIKBGradient * gradient;
 @property(readonly) BOOL isValid;
@@ -21,7 +21,7 @@
 @property(readonly) struct CGColor { }* color;
 @property float weight;
 
-+ (id)effectWithColor:(id)arg1 edges:(int)arg2 inset:(float)arg3 weight:(float)arg4;
++ (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 
 - (struct CGColor { }*)color;
 - (id)gradient;
@@ -33,11 +33,11 @@
 - (SEL)renderSelector;
 - (BOOL)renderUnder;
 - (float)inset;
-- (id)initWithColor:(id)arg1 edges:(int)arg2 inset:(float)arg3 weight:(float)arg4;
+- (id)initWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 - (float)weight;
-- (int)edges;
+- (unsigned int)edges;
 - (void)setGradient:(id)arg1;
-- (void)setEdges:(int)arg1;
+- (void)setEdges:(unsigned int)arg1;
 - (void)setInset:(float)arg1;
 
 @end

@@ -24,8 +24,8 @@
 @property BOOL highlightsOnlyContentView;
 @property(getter=isHighlighted) BOOL highlighted;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_removeSubviewsForConfiguration;
 - (id)_clippedImageForImage:(id)arg1;

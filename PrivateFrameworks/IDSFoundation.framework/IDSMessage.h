@@ -16,7 +16,6 @@
 
 
 - (id)messageBody;
-- (BOOL)wantsAPSRetries;
 - (void)setDeliveryStatusContext:(id)arg1;
 - (id)deliveryStatusContext;
 - (void)setWantsDeliveryStatus:(id)arg1;
@@ -24,6 +23,7 @@
 - (id)userAgentHeaderString;
 - (BOOL)wantsUserAgentInHeaders;
 - (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsAPSRetries;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

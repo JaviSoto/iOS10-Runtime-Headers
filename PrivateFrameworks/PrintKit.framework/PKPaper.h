@@ -69,6 +69,10 @@
 - (id)baseName;
 - (void)addToMediaCol:(struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; }*)arg1;
 - (id)nameWithoutSuffixes:(id)arg1;
+- (void)setBottomMargin:(int)arg1;
+- (void)setRightMargin:(int)arg1;
+- (void)setTopMargin:(int)arg1;
+- (void)setLeftMargin:(int)arg1;
 - (id)rollInfo;
 - (int)rightMargin;
 - (int)leftMargin;
@@ -80,10 +84,6 @@
 - (int)minHeight;
 - (void)setRollInfo:(id)arg1;
 - (id)initWithWidth:(int)arg1 Height:(int)arg2 Left:(int)arg3 Top:(int)arg4 Right:(int)arg5 Bottom:(int)arg6 localizedName:(id)arg7 codeName:(id)arg8;
-- (void)setBottomMargin:(int)arg1;
-- (void)setTopMargin:(int)arg1;
-- (void)setRightMargin:(int)arg1;
-- (void)setLeftMargin:(int)arg1;
 - (struct CGSize { float x1; float x2; })paperSize;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

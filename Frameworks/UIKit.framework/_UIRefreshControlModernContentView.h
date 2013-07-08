@@ -2,13 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, CAReplicatorLayer, CALayer;
+@class _UIRefreshControlModernReplicatorView, UILabel, UIView;
 
 @interface _UIRefreshControlModernContentView : _UIRefreshControlContentView  {
     BOOL _animationsAreValid;
-    CALayer *_replicatorContainer;
-    CAReplicatorLayer *_replicatorLayer;
-    CALayer *_seed;
+    UIView *_replicatorContainer;
+    _UIRefreshControlModernReplicatorView *_replicatorView;
+    UIView *_seed;
     BOOL _hasFinishedRevealing;
     UILabel *_textLabel;
     BOOL _areAnimationsValid;
@@ -23,18 +23,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)style;
 - (void)dealloc;
-- (float)currentPopStiffness;
-- (id)_springAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
-- (void)_goAway;
-- (id)_goingAwayAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 beginTime:(double)arg4 duration:(double)arg5;
-- (id)_tickAnimation;
+- (float)_effectiveScrollViewHeight;
 - (void)_tick;
-- (id)_instanceAlphaOffsetAnimation;
-- (id)_spinningAnimation;
-- (id)_revealingFadeAnimation;
-- (id)_revealingAnimation;
+- (float)currentPopStiffness;
 - (void)_reveal;
 - (id)_effectiveTintColorWithAlpha:(float)arg1;
+- (void)_goAway;
 - (void)_spin;
 - (void)_resetToRevealingState;
 - (void)_updateTimeOffsetOfRelevantLayers;

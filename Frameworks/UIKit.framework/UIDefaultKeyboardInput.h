@@ -54,8 +54,8 @@
 
 
 - (BOOL)isEditing;
-- (void)insertText:(id)arg1;
 - (BOOL)isEditable;
+- (void)insertText:(id)arg1;
 - (BOOL)hasSelection;
 - (int)selectionState;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

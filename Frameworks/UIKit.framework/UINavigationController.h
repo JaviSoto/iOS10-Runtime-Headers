@@ -13,7 +13,6 @@
     UINavigationBar *_navigationBar;
     Class _navigationBarClass;
     UIToolbar *_toolbar;
-    UIView *_rightAuxiliaryContentView;
     UIView *_navigationTransitionView;
     float _bottomInsetDelta;
     UIViewController *_disappearingViewController;
@@ -23,6 +22,7 @@
     UITapGestureRecognizer *_backGestureRecognizer;
     _UINavigationControllerPalette *_topPalette;
     _UINavigationControllerPalette *_freePalette;
+    _UINavigationControllerPalette *_transitioningTopPalette;
     struct { 
         unsigned int isAppearingAnimated : 1; 
         unsigned int isAlreadyPoppingNavigationItem : 1; 
@@ -43,8 +43,6 @@
         unsigned int useSystemPopoverBarAppearance : 1; 
         unsigned int isCustomTransition : 1; 
         unsigned int isBuiltinTransition : 1; 
-        unsigned int displaysStaticScrollBars : 1; 
-        unsigned int navigationTransitionViewAccountsForRightAuxView : 1; 
         unsigned int resetDidHideOnCancel : 1; 
         unsigned int delegateWillShowViewController : 1; 
         unsigned int delegateDidShowViewController : 1; 
@@ -57,10 +55,12 @@
         unsigned int delegateShouldUseBuiltinInteractionController : 1; 
         unsigned int delegateSupportedInterfaceOrientations : 1; 
         unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
+        unsigned int delegateLayoutTransitioningClass : 1; 
         unsigned int navigationBarHidesCompletelyOffscreen : 1; 
-        unsigned int clipUnderlapWhileTransitioning; 
+        unsigned int clipUnderlapWhileTransitioning : 1; 
         unsigned int isCrossfadingOutTabBar : 1; 
         unsigned int isCrossfadingInTabBar : 1; 
+        unsigned int skipContentInsetCalculation : 1; 
     } _navigationControllerFlags;
     BOOL _interactiveTransition;
     BOOL __usingBuiltinAnimator;
@@ -117,9 +117,9 @@
 
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (BOOL)becomeFirstResponder;
@@ -202,7 +202,6 @@
 - (id)_updateNavigationBarHandler;
 - (void)_startCustomTransition:(id)arg1;
 - (void)_startTransition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
-- (void)_resizeNavigationTransitionViewForTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 - (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_expectedContentInsetDeltaForViewController:(id)arg1;
 - (float)_scrollViewBottomContentInsetForViewController:(id)arg1;
@@ -228,21 +227,14 @@
 - (void)_forceOpaqueBarOpacitiesIfNeeded;
 - (id)_transitionAnimationContext;
 - (void)_performBackGesture:(id)arg1;
-- (void)_setDisplaysStaticScrollBars:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)viewControllers;
 - (id)_viewControllerForDisappearCallback;
 - (void)_updateBarsForCurrentInterfaceOrientation;
-- (void)_placeScrollBarInRightAuxView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleFrameForRightAuxViewWithStaticScrollBar:(id)arg1;
-- (void)_didAddStaticScrollBar:(id)arg1;
-- (id)_visibleStaticScrollBar;
-- (BOOL)_displaysStaticScrollBars;
-- (id)_lazyRightAuxiliaryContentView;
 - (void)_hideShowToolbarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)_positionToolbarHidden:(BOOL)arg1 edge:(int)arg2 crossFade:(id)arg3;
-- (void)_positionToolbarHidden:(BOOL)arg1 edge:(int)arg2;
-- (void)_setToolbarHidden:(BOOL)arg1 edge:(int)arg2 duration:(double)arg3;
+- (void)_positionToolbarHidden:(BOOL)arg1 edge:(unsigned int)arg2 crossFade:(id)arg3;
+- (void)_positionToolbarHidden:(BOOL)arg1 edge:(unsigned int)arg2;
+- (void)_setToolbarHidden:(BOOL)arg1 edge:(unsigned int)arg2 duration:(double)arg3;
 - (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_configureToolbar;
 - (void)_positionToolbarHidden:(BOOL)arg1;
@@ -250,23 +242,22 @@
 - (void)_layoutTopViewControllerInSheet;
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_startInteractiveNavbarTransition;
-- (void)_positionPaletteHidden:(BOOL)arg1 edge:(int)arg2;
-- (void)_positionNavigationBarHidden:(BOOL)arg1 edge:(int)arg2;
-- (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(int)arg2 edge:(int*)arg3 duration:(double*)arg4;
+- (void)_positionPaletteHidden:(BOOL)arg1 edge:(unsigned int)arg2;
+- (void)_positionNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2;
+- (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(int)arg2 edge:(unsigned int*)arg3 duration:(double*)arg4;
 - (int)lastOperation;
 - (BOOL)wasLastOperationAnimated;
 - (void)_repositionPaletteWithNavigationBarHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
 - (void)_layoutTopViewController;
 - (void)_setNavigationBarHidesCompletelyOffscreen:(BOOL)arg1;
-- (void)_positionPaletteHidden:(BOOL)arg1 edge:(int)arg2 initialOffset:(float)arg3;
-- (struct CGPoint { float x1; float x2; })_computeTopBarCenter:(id)arg1 hidden:(BOOL)arg2 edge:(int)arg3 center:(struct CGPoint { float x1; float x2; })arg4 offset:(float)arg5;
+- (void)_positionPaletteHidden:(BOOL)arg1 edge:(unsigned int)arg2 initialOffset:(float)arg3;
+- (struct CGPoint { float x1; float x2; })_computeTopBarCenter:(id)arg1 hidden:(BOOL)arg2 edge:(unsigned int)arg3 center:(struct CGPoint { float x1; float x2; })arg4 offset:(float)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForPalette:(id)arg1;
-- (void)_positionNavigationBarHidden:(BOOL)arg1 edge:(int)arg2 initialOffset:(float)arg3;
-- (void)_positionTopBar:(id)arg1 hidden:(BOOL)arg2 edge:(int)arg3 center:(struct CGPoint { float x1; float x2; })arg4 offset:(float)arg5;
-- (void)_setNavigationBarHidden:(BOOL)arg1 edge:(int)arg2 duration:(double)arg3;
-- (void)_setNavigationBarHidden:(BOOL)arg1 edgeIfNotNavigating:(int)arg2 duration:(double)arg3;
-- (BOOL)_isTransitioning;
+- (void)_positionNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2 initialOffset:(float)arg3;
+- (void)_positionTopBar:(id)arg1 hidden:(BOOL)arg2 edge:(unsigned int)arg3 center:(struct CGPoint { float x1; float x2; })arg4 offset:(float)arg5;
+- (void)_setNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2 duration:(double)arg3;
+- (void)_setNavigationBarHidden:(BOOL)arg1 edgeIfNotNavigating:(unsigned int)arg2 duration:(double)arg3;
 - (void)setNavigationBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_positionNavigationBarHidden:(BOOL)arg1;
 - (void)_cancelInteractiveTransition:(float)arg1 transitionContext:(id)arg2;
@@ -276,6 +267,7 @@
 - (void)_navigationTransitionView:(id)arg1 didCancelTransition:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4 wrapperView:(id)arg5;
 - (void)navigationTransitionView:(id)arg1 didEndTransition:(int)arg2 fromView:(id)arg3 toView:(id)arg4;
 - (id)navigationTransitionView;
+- (BOOL)_isPerformingLayoutToLayoutTransition;
 - (int)_keyboardDirectionForTransition:(int)arg1 orderingIn:(BOOL)arg2;
 - (int)_deferredTransition;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForWrapperViewForViewController:(id)arg1;
@@ -291,15 +283,15 @@
 - (BOOL)_toolbarIsAnimatingInteractively;
 - (void)_updateInteractiveBarTransition:(id)arg1 withUUID:(id)arg2 percent:(float)arg3 isFinished:(BOOL)arg4 didComplete:(BOOL)arg5 completionSpeed:(float)arg6 completionCurve:(int)arg7;
 - (BOOL)_navbarIsAppearingInteractively;
-- (float)customNavigationTransitionDuration;
 - (void)_setNavbarAnimationId:(id)arg1;
 - (id)_startInteractiveBarTransition:(id)arg1;
 - (void)_setBarAnimationWasCancelled:(BOOL)arg1;
 - (id)_navbarAnimationId;
 - (id)_toolbarAnimationId;
-- (void)_hideOrShowRightAuxViewIfNeededWithTransition:(int)arg1;
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(int)arg1;
+- (void)_propagateContentAdjustmentsForControllersWithSharedViews;
 - (void)_startDeferredTransitionIfNeeded;
+- (float)customNavigationTransitionDuration;
 - (id)_customInteractionController:(id)arg1;
 - (void)setCustomNavigationTransitionDuration:(float)arg1;
 - (id)_customTransitionController:(BOOL)arg1;
@@ -342,6 +334,8 @@
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)searchBarHidNavBar;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
@@ -419,6 +413,7 @@
 - (BOOL)_shouldUseBuiltinInteractionController;
 - (id)_existingToolbar;
 - (id)navigationBar;
+- (BOOL)_isTransitioning;
 - (id)_interactionController;
 - (BOOL)_clipUnderlapWhileTransitioning;
 - (id)initWithCoder:(id)arg1;

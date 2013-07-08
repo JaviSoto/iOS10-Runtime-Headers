@@ -9,19 +9,28 @@
     UIView *_contentView;
     UIView *_headerView;
     UIView *_previewOverlayView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentViewInsets;
 }
 
 @property(retain) UIView * backdropView;
 @property(retain) UIView * contentView;
 @property(retain) UIView * headerView;
 @property(retain) UIView * previewOverlayView;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentViewInsets;
 
 
+- (void)setContentViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)previewOverlayView;
 - (void)setPreviewOverlayView:(id)arg1;
 - (id)contentView;
 - (void)setContentView:(id)arg1;
 - (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 - (id)backdropView;
 - (void)setBackdropView:(id)arg1;
 - (void)setHeaderView:(id)arg1;

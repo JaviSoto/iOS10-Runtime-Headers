@@ -21,12 +21,15 @@
 @property(readonly) NSURL * presentedItemURL;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSDictionary * locationToStatus;
+@property(readonly) NSDictionary * locationToSafeSaveFile;
 @property(readonly) NSURL * primaryPresentedItemURL;
 
++ (void)registerInitialSyncHandlerForURL:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
 + (id)sharedPrivateOperationQueue;
 + (void)startDownloadForItems:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
 + (void)initialize;
 
+- (id)locationToSafeSaveFile;
 - (id)locationToStatus;
 - (void)unregisterSafeSaveFile:(id)arg1;
 - (void)registerSafeSaveFile:(id)arg1;

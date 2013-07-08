@@ -14,7 +14,7 @@
 + (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 
-- (struct CGColor { }*)CGColor;
+- (struct CGColorSpace { }*)colorSpace;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (float)alpha;
@@ -22,7 +22,7 @@
 - (float)green;
 - (float)red;
 - (id)stringRepresentation;
-- (struct CGColorSpace { }*)colorSpace;
+- (struct CGColor { }*)CGColor;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

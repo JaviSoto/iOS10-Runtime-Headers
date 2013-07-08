@@ -19,6 +19,7 @@
 @property BOOL shouldDimIrrelevantInformation;
 
 + (id)cellForRecipient:(id)arg1;
++ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1;
 + (id)_copyAttributedStringRepresentationOfGroupRecipient:(id)arg1 withSortedRecipientList:(id)arg2;
 + (id)_tintedAttributedString:(id)arg1 toColor:(id)arg2 shouldDim:(BOOL)arg3;
 + (id)_attributedStringRepresentationOfCompleteMatchesForRecipient:(id)arg1 constrainedToWidth:(float)arg2 overflowRecipients:(out id*)arg3 useHighlighting:(BOOL)arg4;
@@ -26,8 +27,8 @@
 + (float)heightWithRecipient:(id)arg1 width:(float)arg2;
 + (float)height;
 + (id)identifier;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)shouldDimIrrelevantInformation;
 - (void)setCellImage:(id)arg1 highlightedImage:(id)arg2;

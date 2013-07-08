@@ -23,6 +23,7 @@
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) UIImage * icon;
+@property(readonly) BOOL isFolder;
 
 
 - (void)setUIItemIndex:(int)arg1;
@@ -31,6 +32,7 @@
 - (id)initWithArchiveController:(id)arg1 path:(id)arg2;
 - (void)unarchiveWithCompletionBlock:(id)arg1;
 - (int)previewItemIndex;
+- (BOOL)isFolder;
 - (void)cancelIconUpdate;
 - (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id)arg2;
 - (id)icon;

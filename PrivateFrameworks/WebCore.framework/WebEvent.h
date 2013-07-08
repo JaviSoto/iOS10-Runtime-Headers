@@ -56,6 +56,7 @@
 @property BOOL wasHandled;
 
 
+- (double)timestamp;
 - (id)_modiferFlagsDescription;
 - (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
 - (id)_eventDescription;
@@ -85,7 +86,6 @@
 - (BOOL)isTabKey;
 - (BOOL)isPopupVariant;
 - (int)characterSet;
-- (double)timestamp;
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)description;

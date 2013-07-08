@@ -37,10 +37,6 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)destinations;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
 - (void)setHasTimepoint:(BOOL)arg1;
@@ -67,6 +63,10 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -244,8 +244,8 @@
 - (void)setButtons:(id)arg1;
 - (id)sectionID;
 - (void)setRecordID:(id)arg1;
-- (void)setExpirationDate:(id)arg1;
 - (id)recordID;
+- (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
 - (void)setEndDate:(id)arg1;
 - (id)endDate;
@@ -253,13 +253,13 @@
 - (void)setMessage:(id)arg1;
 - (id)topic;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)attachments;
 - (id)observers;
 - (void)setObservers:(id)arg1;
 - (void)setActions:(id)arg1;
-- (void)setContext:(id)arg1;
 - (id)content;
 - (id)message;
 - (id)init;

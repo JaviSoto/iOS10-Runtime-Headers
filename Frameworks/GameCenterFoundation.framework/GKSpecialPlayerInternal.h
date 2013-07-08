@@ -8,8 +8,6 @@
 
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
-- (void)setValidPieces:(unsigned char)arg1;
-- (unsigned char)validPieces;
 - (id)compositeName;
 - (id)photos;
 - (void)setPhotos:(id)arg1;

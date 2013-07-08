@@ -146,8 +146,8 @@
 @property BOOL badgeEmailPropertiesForMailVIP;
 @property(retain) UITableViewCell * partiallySelectedCell;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (BOOL)badgeEmailPropertiesForMailVIP;
@@ -280,6 +280,7 @@
 - (void)reloadDataIncludingHeaderView:(BOOL)arg1;
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
 - (void)_updateDeleteButtonIfNeededForFooterView:(id)arg1;
+- (id)_footerView;
 - (void)setDisplayedProperties:(struct __CFArray { }*)arg1 andRefreshUI:(BOOL)arg2;
 - (void)invalidateAllPropertyGroups;
 - (void)updateContactSourcesStringIfNeeded;
@@ -395,7 +396,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)_footerView;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (id)tableView;

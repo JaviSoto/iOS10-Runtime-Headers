@@ -77,6 +77,7 @@
 - (id)_rowAlignmentOptions;
 - (void)_setRowAlignmentsOptions:(id)arg1;
 - (void)_invalidateButKeepAllInfo;
+- (void)_invalidateButKeepDelegateInfo;
 - (struct CGSize { float x1; float x2; })synchronizeLayout;
 - (id)finalLayoutAttributesForFooterInDeletedSection:(int)arg1;
 - (id)finalLayoutAttributesForHeaderInDeletedSection:(int)arg1;
@@ -102,7 +103,6 @@
 - (id)indexesForSectionFootersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexesForSectionHeadersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexPathsForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
-- (void)_invalidateButKeepDelegateInfo;
 - (id)indexesForSectionFootersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
 - (id)indexesForSectionHeadersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingData:(id)arg2;
 - (struct CGSize { float x1; float x2; })itemSize;

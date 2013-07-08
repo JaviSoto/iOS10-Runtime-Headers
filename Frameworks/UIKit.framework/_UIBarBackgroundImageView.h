@@ -13,8 +13,8 @@
 @property(getter=isTranslucent) BOOL translucent;
 
 
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)removeTopStripView;
 - (void)updateTopStripViewCreateIfNecessary;
 - (void)setTranslucent:(BOOL)arg1;

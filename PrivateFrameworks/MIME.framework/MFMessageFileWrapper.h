@@ -20,11 +20,11 @@
 - (id)symbolicLinkDestination;
 - (BOOL)isImageFile;
 - (id)icsRepresentation;
+- (BOOL)isPDFFile;
 - (void)setMeetingStorePersistentID:(id)arg1;
 - (unsigned long)creator;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
 - (BOOL)isUnzippableFile;
-- (BOOL)isPDFFile;
 - (id)fileProtection;
 - (void)setFileProtection:(id)arg1;
 - (void)setICSRepresentation:(id)arg1;

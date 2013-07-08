@@ -37,8 +37,8 @@
 - (BOOL)isAccessory;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
-- (void)connect;
 - (void)disconnect;
+- (void)connect;
 - (int)compare:(id)arg1;
 - (id)name;
 - (void)dealloc;

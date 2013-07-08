@@ -22,7 +22,6 @@
 - (void)pushJob:(id)arg1 animated:(BOOL)arg2;
 - (void)willReappear;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

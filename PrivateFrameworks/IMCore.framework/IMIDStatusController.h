@@ -16,9 +16,9 @@
 - (id)_servicesRegistered;
 - (int)statusForID:(id)arg1 onService:(id)arg2;
 - (void)requestStatusForID:(id)arg1 onService:(id)arg2;
+- (int)_idStatusForID:(id)arg1 onAccount:(id)arg2;
 - (void)_requestStatusForID:(id)arg1 onService:(id)arg2 onAccount:(id)arg3;
 - (void)_processIDStatusResponseForURI:(id)arg1 resultStatus:(int)arg2 forService:(id)arg3;
-- (int)_idStatusForID:(id)arg1 onAccount:(id)arg2;
 - (int)_idStatusForID:(id)arg1 onService:(id)arg2;
 - (int)__statusForID:(id)arg1 onService:(id)arg2 isCanonicalized:(BOOL)arg3;
 - (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;

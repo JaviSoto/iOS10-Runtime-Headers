@@ -21,7 +21,6 @@
 - (id)initWithContext:(id)arg1;
 - (id)info;
 - (void)dealloc;
-- (BOOL)delayForTransaction;
 - (BOOL)useCustomTransition;
 - (BOOL)isAnimationCompleted;
 - (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;

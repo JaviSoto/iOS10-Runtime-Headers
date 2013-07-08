@@ -21,6 +21,7 @@
 - (void)selectRowsWithCachedStatement:(id)arg1;
 - (void)selectRowsWithStatement:(id)arg1;
 - (void)selectRowsWithFetchRequest:(id)arg1;
+- (void)setCurrentContext:(id)arg1;
 - (id)_propertiesToFetch;
 - (void)setCurrentEntity:(id)arg1;
 - (void)endFetchAndRecycleStatement:(BOOL)arg1;
@@ -29,7 +30,6 @@
 - (void)endFetch;
 - (id)initWithSQLCore:(id)arg1;
 - (id)sqlCore;
-- (void)setCurrentContext:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (id)connection;

@@ -2,6 +2,8 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
+@class NSDictionary;
+
 @interface NSTextTab : NSObject <NSCopying, NSCoding> {
     struct { 
         unsigned int alignment : 4; 
@@ -12,6 +14,11 @@
     id _reserved;
 }
 
+@property(readonly) int alignment;
+@property(readonly) float location;
+@property(readonly) NSDictionary * options;
+
++ (id)columnTerminatorsForLocale:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 

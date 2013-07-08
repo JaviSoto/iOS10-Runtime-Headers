@@ -44,12 +44,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setHashString:(id)arg1;
 - (id)variantGeometries;
 - (void)setFallbackSymbolStyle:(id)arg1;
+- (void)setHashString:(id)arg1;
 - (id)highlightedVariantTraits;
 - (void)overlayWithTraits:(id)arg1;
-- (id)hashString;
 - (id)renderEffects;
 - (id)fallbackSymbolStyle;
 - (id)layeredForegroundGradient;
@@ -61,6 +60,7 @@
 - (void)setControlOpacities:(BOOL)arg1;
 - (id)secondarySymbolStyle;
 - (void)setSecondarySymbolStyle:(id)arg1;
+- (id)hashString;
 - (void)modifyForMasking;
 - (BOOL)controlOpacities;
 - (void)setGeometry:(id)arg1;

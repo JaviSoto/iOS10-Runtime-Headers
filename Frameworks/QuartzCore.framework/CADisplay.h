@@ -40,6 +40,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id)currentMode;
+- (id)uniqueId;
 - (BOOL)isCloned;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeBounds;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
@@ -53,7 +54,6 @@
 - (id)name;
 - (id)description;
 - (BOOL)isSupported;
-- (id)uniqueId;
 - (BOOL)isExternal;
 - (unsigned int)displayId;
 - (void)setCurrentMode:(id)arg1;

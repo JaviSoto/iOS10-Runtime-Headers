@@ -17,8 +17,6 @@
 @property(retain) NSMutableArray * problemStatus;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)problemStatus;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (id)problemStatusAtIndex:(unsigned int)arg1;
@@ -29,6 +27,8 @@
 - (void)addProblemStatus:(id)arg1;
 - (void)setProblemStatus:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

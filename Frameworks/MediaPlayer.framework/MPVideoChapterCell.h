@@ -15,8 +15,8 @@
 @property(retain) MPTimeMarker * timeMarker;
 @property(retain) MPImageCache * artworkImageCache;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)artworkImageCache;
 - (id)timeMarker;
@@ -29,8 +29,8 @@
 - (void)setTimeColumnWidth:(float)arg1;
 - (void)setCurrent:(BOOL)arg1;
 - (void)setTimeMarker:(id)arg1;
-- (unsigned int)index;
 - (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)prepareForReuse;

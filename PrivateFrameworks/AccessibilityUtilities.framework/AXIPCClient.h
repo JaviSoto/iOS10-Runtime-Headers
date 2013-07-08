@@ -43,7 +43,6 @@
 + (id)allClients;
 + (void)initialize;
 
-- (BOOL)isConnected;
 - (id)clientIdentifier;
 - (void)setServerPort:(struct __CFMachPort { }*)arg1;
 - (void)establishConnectionWithTimeout:(double)arg1 completion:(id)arg2;
@@ -67,6 +66,7 @@
 - (unsigned int)clientCallbackPort;
 - (void)setClientIdentifier:(id)arg1;
 - (BOOL)connectWithError:(id*)arg1;
+- (BOOL)isConnected;
 - (void)setPortDeathHandler:(id)arg1;
 - (id)sendMessage:(id)arg1 withError:(id*)arg2;
 - (void)sendSimpleMessage:(id)arg1;

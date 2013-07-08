@@ -11,10 +11,10 @@
 @property(readonly) unsigned int revisionID;
 
 
-- (unsigned int)revisionID;
 - (id)initWithInterfaceID:(unsigned int)arg1 revisionID:(unsigned int)arg2;
 - (unsigned int)interfaceID;
 - (id)canonicalResponseForResponse:(id)arg1;
+- (unsigned int)revisionID;
 - (double)timeoutInterval;
 - (BOOL)isConcurrent;
 

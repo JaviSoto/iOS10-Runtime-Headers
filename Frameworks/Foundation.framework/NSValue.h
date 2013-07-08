@@ -10,8 +10,8 @@
 @interface NSValue : NSObject <NSCopying, NSSecureCoding> {
 }
 
-+ (id)valueWithPointer:(const void*)arg1;
 + (id)valueWithNonretainedObject:(id)arg1;
++ (id)valueWithPointer:(const void*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
@@ -38,10 +38,6 @@
 + (id)valueWithCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 + (id)_gkValueWithGLKVector3:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
 + (id)valueWithML3NameOrder:(struct { long long x1; int x2; })arg1;
-+ (id)_mapkit_valueWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-+ (id)_mapkit_valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (id)valueWithMKCoordinateSpan:(struct { double x1; double x2; })arg1;
-+ (id)valueWithMKCoordinate:(struct { double x1; double x2; })arg1;
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -92,21 +88,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_gkGLKVector3Value;
 - (struct { long long x1; int x2; })ML3NameOrderValue;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })MKMapRectValue;
-- (id)_mapkit_initWithMKMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
-- (id)_mapkit_initWithZoomRegion:(struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)_mapkit_initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })CADoubleRectValue;
-- (id)_mapkit_initWithCADoubleRect:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CADoublePoint { double x1; double x2; })CADoublePointValue;
-- (id)_mapkit_initWithCADoublePoint:(struct CADoublePoint { double x1; double x2; })arg1;
-- (id)_mapkit_initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_mapkit_CGAffineTransformValue;
-- (struct CGPoint { float x1; float x2; })_mapkit_CGPointValue;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_CGRectValue;
-- (struct { double x1; double x2; })MKCoordinateSpanValue;
-- (struct { double x1; double x2; })MKCoordinateValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
 - (struct CGSize { float x1; float x2; })cgSizeValue;
 - (struct CGPoint { float x1; float x2; })cgPointValue;

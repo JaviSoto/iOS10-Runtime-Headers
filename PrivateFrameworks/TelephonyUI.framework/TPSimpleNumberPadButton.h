@@ -5,7 +5,9 @@
 @interface TPSimpleNumberPadButton : TPNumberPadLightStyleButton  {
 }
 
++ (id)disabledImageForCharacter:(unsigned int)arg1;
 + (float)verticalPadding;
 
+- (void)setGreyedOut:(BOOL)arg1;
 
 @end

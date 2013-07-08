@@ -29,7 +29,6 @@
 @property(retain) CTCarrier * subscriberCellularProvider;
 @property(copy) id subscriberCellularProviderDidUpdateNotifier;
 @property(readonly) NSString * currentRadioAccessTechnology;
-@property(readonly) NSDictionary * signalStrength;
 @property(retain) NSString * cellId;
 @property(retain) NSString * cachedCurrentRadioAccessTechnology;
 @property(retain) NSDictionary * cachedSignalStrength;

@@ -11,8 +11,8 @@
     unsigned int _align : 2;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTime:(id)arg1;
 - (id)time;

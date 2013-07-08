@@ -6,8 +6,8 @@
     int _iconType;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;

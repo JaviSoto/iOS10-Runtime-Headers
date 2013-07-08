@@ -28,6 +28,7 @@
 - (id)textValue;
 - (BOOL)hidesNextButton;
 - (void)passcodeField:(id)arg1 didUpdateEnteredPasscode:(id)arg2;
+- (unsigned int)numberOfPasscodeFields;
 - (id)placeholderText;
 - (void)textEntryViewDidChange:(id)arg1;
 - (void)didFinishEnteringPasscode:(id)arg1;

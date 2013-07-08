@@ -25,7 +25,10 @@
 @property(retain) UIPDFSelection * selection;
 
 
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
 - (void)removeAllAnnotations;
+- (id)annotations;
 - (id)copyPage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBoxAccountForRotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBox;
@@ -42,12 +45,9 @@
 - (void)setPageImage:(id)arg1;
 - (id)initWithCGPDFPage:(struct CGPDFPage { }*)arg1;
 - (struct CGPDFPage { }*)CGPage;
-- (void)addAnnotation:(id)arg1;
-- (void)removeAnnotation:(id)arg1;
-- (id)annotations;
 - (struct CGSize { float x1; float x2; })size;
-- (void)setDocument:(id)arg1;
 - (id)document;
+- (void)setDocument:(id)arg1;
 - (void)refresh;
 - (unsigned int)rotation;
 - (id)string;

@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableAudioMixInputParametersInternal;
+@class NSString, AVMutableAudioMixInputParametersInternal;
 
 @interface AVMutableAudioMixInputParameters : AVAudioMixInputParameters  {
     AVMutableAudioMixInputParametersInternal *_mutableInputParameters;
 }
 
 @property int trackID;
+@property(copy) NSString * audioTimePitchAlgorithm;
 @property(retain) struct opaqueMTAudioProcessingTap { }* audioTapProcessor;
 
 + (id)audioMixInputParameters;

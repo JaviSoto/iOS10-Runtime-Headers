@@ -13,5 +13,6 @@
 - (oneway void)release;
 - (id)retain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id)arg4;
 
 @end

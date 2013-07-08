@@ -35,8 +35,8 @@
 - (void)_updateHandleImages;
 - (float)edgeInset;
 - (int)handleForPoint:(struct CGPoint { float x1; float x2; })arg1 hitOffset:(float*)arg2;
-- (void)setEdgeInset:(float)arg1;
 - (void)bounce;
+- (void)setEdgeInset:(float)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)layoutSubviews;
 

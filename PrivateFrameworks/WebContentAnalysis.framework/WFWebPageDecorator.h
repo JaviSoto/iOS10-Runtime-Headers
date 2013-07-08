@@ -40,8 +40,8 @@
 - (int)numberOfKnownImagePixels;
 - (id)pageContent;
 - (int)numberOfImages;
-- (id)plainText;
 - (int)wordCount;
+- (id)plainText;
 - (id)tags;
 - (void)setURLString:(id)arg1;
 - (id)URLString;

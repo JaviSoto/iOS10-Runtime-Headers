@@ -33,11 +33,11 @@
 + (id)alertSoundWithSystemSoundID:(unsigned long)arg1;
 + (id)_possiblyCachedAlertSoundForInitializedSound:(id)arg1;
 
-- (id)vibrationIdentifier;
-- (id)toneIdentifier;
 - (id)initWithToneAlert:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithToneAlert:(int)arg1;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3;
+- (id)vibrationIdentifier;
+- (id)toneIdentifier;
 - (BOOL)isRepeating;
 - (id)ringtoneName;
 - (unsigned int)soundBehavior;

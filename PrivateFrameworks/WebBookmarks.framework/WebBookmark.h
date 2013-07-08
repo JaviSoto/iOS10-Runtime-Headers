@@ -20,6 +20,7 @@
     NSData *_iconData;
     BOOL _locallyAdded;
     int _archiveStatus;
+    int _webFilterStatus;
     NSDictionary *_extraAttributes;
     NSDictionary *_localAttributes;
     unsigned int _id;
@@ -36,6 +37,7 @@
 @property(retain) NSString * previewText;
 @property BOOL locallyAdded;
 @property int archiveStatus;
+@property int webFilterStatus;
 @property(retain) NSDate * dateLastArchived;
 @property(retain) NSDate * dateAdded;
 @property(retain) NSDate * dateLastViewed;
@@ -80,7 +82,7 @@
 - (id)siteName;
 - (id)nextPageURLs;
 - (void)setNextPageURLs:(id)arg1;
-- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastViewed:(id)arg3 dateLastFetched:(id)arg4;
+- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastFetched:(id)arg3;
 - (void)setSourceBundleID:(id)arg1;
 - (id)sourceBundleID;
 - (void)setSourceLocalizedAppName:(id)arg1;
@@ -100,6 +102,7 @@
 - (void)_setHidden:(BOOL)arg1;
 - (void)_setInserted:(BOOL)arg1;
 - (void)_setID:(unsigned int)arg1;
+- (int)webFilterStatus;
 - (BOOL)locallyAdded;
 - (BOOL)fullArchiveAvailable;
 - (void)_setOrderIndex:(unsigned int)arg1;
@@ -108,6 +111,7 @@
 - (void)setDateLastArchived:(id)arg1;
 - (unsigned long long)archiveSize;
 - (id)dateLastViewed;
+- (void)setWebFilterStatus:(int)arg1;
 - (void)setArchiveStatus:(int)arg1;
 - (int)archiveStatus;
 - (void)setFetchedIconData:(BOOL)arg1;
@@ -119,15 +123,12 @@
 - (BOOL)isBookmarksMenuFolder;
 - (BOOL)isBookmarksBarFolder;
 - (id)initWhiteListBookmarkWithTitle:(id)arg1 address:(id)arg2;
-- (id)initBuiltinFolderWithTitle:(id)arg1;
-- (id)initBuiltinBookmarkWithTitle:(id)arg1 address:(id)arg2;
+- (id)initBuiltinDeviceBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (id)shortTypeDescription;
-- (void)_markAsBuiltin;
 - (void)_setParentID:(unsigned int)arg1;
 - (void)setLocalAttributes:(id)arg1;
 - (id)localAttributes;
 - (unsigned int)_orderIndex;
-- (BOOL)isFolder;
 - (BOOL)isReadingListFolder;
 - (void)clearArchive;
 - (BOOL)isReadingListItem;
@@ -143,14 +144,15 @@
 - (BOOL)isDeletable;
 - (id)dateAdded;
 - (void)setDateAdded:(id)arg1;
+- (BOOL)isFolder;
 - (unsigned int)parentID;
 - (void)setAddress:(id)arg1;
 - (id)extraAttributes;
 - (void)setExtraAttributes:(id)arg1;
 - (BOOL)isInserted;
+- (BOOL)isEditable;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (BOOL)isEditable;
 - (BOOL)isHidden;
 - (id)init;
 - (id)iconData;

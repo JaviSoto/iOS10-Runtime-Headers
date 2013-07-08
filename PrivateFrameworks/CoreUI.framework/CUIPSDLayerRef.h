@@ -15,8 +15,8 @@
 - (id)imageIsZeroSizeImage:(BOOL*)arg1;
 - (struct CGImage { }*)createCGImage;
 - (id)initWithImageRef:(id)arg1 layerIndex:(unsigned int)arg2;
-- (id)image;
 - (id)gradient;
+- (id)image;
 - (void)dealloc;
 
 @end

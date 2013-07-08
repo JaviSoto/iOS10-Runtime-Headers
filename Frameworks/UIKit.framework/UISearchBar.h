@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UITextField, UIColor, UILabel, UIButton, _UISearchBarScopeBarBackground, UIBarButtonItem, UIView, NSArray, _UISearchBarNavigationItem, NSString, <UISearchBarDelegate>, UIImageView;
+@class UIImage, UIColor, _UIBackdropView, UILabel, UIButton, _UISearchBarScopeBarBackground, UIBarButtonItem, UIView, NSArray, UISearchBarTextField, _UISearchBarNavigationItem, NSString, <UISearchBarDelegate>, UIImageView;
 
 @interface UISearchBar : UIView <UIStatusBarTinting, _UIBarPositioningInternal, UIBarPositioning> {
-    UITextField *_searchField;
+    UISearchBarTextField *_searchField;
     UILabel *_promptLabel;
     UIButton *_cancelButton;
     <UISearchBarDelegate> *_delegate;
@@ -29,6 +29,9 @@
     _UISearchBarNavigationItem *_navigationItem;
     _UISearchBarScopeBarBackground *_scopeBarBackgroundView;
     UIBarButtonItem *_animatedAppearanceBarButtonItem;
+    _UIBackdropView *_backdrop;
+    unsigned int _backdropStyle;
+    UIView *_maskView;
     struct { 
         unsigned int barStyle : 3; 
         unsigned int showsBookmarkButton : 1; 
@@ -43,13 +46,16 @@
         unsigned int searchResultsButtonSelected : 1; 
         unsigned int pretendsIsInBar : 1; 
         unsigned int disabled : 1; 
-        unsigned int extendingBackground : 1; 
         unsigned int backgroundLayoutNeedsUpdate : 1; 
         unsigned int containedInNavigationPalette : 1; 
+        unsigned int drawsBackgroundInPalette : 1; 
+        unsigned int centerPlaceholder : 1; 
     } _searchBarFlags;
+    BOOL __forceCenteredPlaceholderLayout;
     UIColor *_statusBarTintColor;
     UIView *_inputAccessoryView;
     int _barPosition;
+    unsigned int _searchBarStyle;
 }
 
 @property int barStyle;
@@ -63,6 +69,7 @@
 @property(getter=isSearchResultsButtonSelected) BOOL searchResultsButtonSelected;
 @property(retain) UIColor * tintColor;
 @property(retain) UIColor * barTintColor;
+@property unsigned int searchBarStyle;
 @property(getter=isTranslucent) BOOL translucent;
 @property int autocapitalizationType;
 @property int autocorrectionType;
@@ -77,22 +84,25 @@
 @property struct UIOffset { float x1; float x2; } searchFieldBackgroundPositionAdjustment;
 @property struct UIOffset { float x1; float x2; } searchTextPositionAdjustment;
 @property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
+@property BOOL _forceCenteredPlaceholderLayout;
 @property(readonly) int barPosition;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
+- (void)setController:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (BOOL)drawsBackground;
-- (void)setController:(id)arg1;
 - (int)autocapitalizationType;
 - (id)text;
 - (int)keyboardType;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_commonInit;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -100,14 +110,13 @@
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (BOOL)_extendingBackground;
+- (void)_updateBackgroundWithBackdropSettings:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1;
 - (BOOL)_isEnabled;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
 - (void)_setCancelButtonText:(id)arg1;
 - (BOOL)_textFieldShouldScrollToVisibleWhenBecomingFirstResponder:(id)arg1;
 - (void)setPretendsIsInBar:(BOOL)arg1;
-- (void)_setActingAsNavBar:(BOOL)arg1 isTopBar:(BOOL)arg2;
 - (void)_setScopeBarSegmentsEnabled:(BOOL)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupCancelButtonWithAppearance:(id)arg1;
@@ -117,6 +126,13 @@
 - (void)_searchFieldBeginEditing;
 - (BOOL)pretendsIsInBar;
 - (id)_scopeBarBackgroundView;
+- (void)set_forceCenteredPlaceholderLayout:(BOOL)arg1;
+- (BOOL)_forceCenteredPlaceholderLayout;
+- (unsigned int)searchBarStyle;
+- (void)setCenterPlaceholder:(BOOL)arg1;
+- (unsigned int)_backdropStyle;
+- (void)_setBackdropStyle:(unsigned int)arg1;
+- (void)_setBackgroundLayoutNeedsUpdate:(BOOL)arg1;
 - (BOOL)_containedInNavigationPalette;
 - (id)_animatedAppearanceBarButtonItem;
 - (struct UIOffset { float x1; float x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
@@ -140,6 +156,8 @@
 - (BOOL)usesEmbeddedAppearance;
 - (BOOL)combinesLandscapeBars;
 - (void)setCombinesLandscapeBars:(BOOL)arg1;
+- (BOOL)drawsBackgroundInPalette;
+- (void)setDrawsBackgroundInPalette:(BOOL)arg1;
 - (void)_setShowsCancelButton:(BOOL)arg1;
 - (BOOL)showsCancelButton;
 - (BOOL)showsBookmarkButton;
@@ -151,6 +169,7 @@
 - (void)didMoveToWindow:(id)arg1;
 - (id)_scopeBar;
 - (id)searchField;
+- (void)setSearchBarStyle:(unsigned int)arg1;
 - (BOOL)_isAtTop;
 - (void)_cancelButtonPressed;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
@@ -161,6 +180,7 @@
 - (id)controller;
 - (id)_makeShadowView;
 - (id)_navigationBarForShadow;
+- (id)_viewForChildViews;
 - (float)_searchFieldHeight;
 - (void)_layoutBackgroundViewConsideringTopBarStatusAndChangedHeight:(BOOL)arg1;
 - (BOOL)_scopeBarIsVisible;
@@ -173,8 +193,8 @@
 - (BOOL)_isInBar;
 - (void)_setBarTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (float)_landscapeScopeBarWidth;
-- (void)_hideShowAnimationDidFinish;
 - (void)_destroyCancelButton;
+- (void)_allowCursorToAppear:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateRightView;
 - (void)_bookmarkButtonPressed;
@@ -183,8 +203,11 @@
 - (void)_updateScopeBarBackground;
 - (id)_currentSeparatorImage;
 - (void)_updateSearchFieldArt;
+- (void)_setMaskBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setMaskActive:(BOOL)arg1;
 - (BOOL)_shouldDisplayShadow;
 - (void)_setShadowVisibleIfNecessary:(BOOL)arg1;
+- (BOOL)centerPlaceholder;
 - (struct UIOffset { float x1; float x2; })searchFieldBackgroundPositionAdjustment;
 - (struct UIOffset { float x1; float x2; })searchTextPositionAdjustment;
 - (id)placeholder;
@@ -205,6 +228,7 @@
 - (void)setSearchFieldBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setShortcutConversionType:(int)arg1;
 - (int)shortcutConversionType;
+- (id)_placeholderColor;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (id)inputAccessoryView;
@@ -248,6 +272,7 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)willMoveToWindow:(id)arg1;
 - (BOOL)isFirstResponder;
+- (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
 - (void)tintColorDidChange;
 - (BOOL)canBecomeFirstResponder;
 - (void)setTintColor:(id)arg1;
@@ -257,7 +282,9 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)setText:(id)arg1;
+- (void)sendSubviewToBack:(id)arg1;
 - (void)layoutSubviews;
+- (void)bringSubviewToFront:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

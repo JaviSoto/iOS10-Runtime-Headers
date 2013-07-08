@@ -31,6 +31,7 @@
 @property(readonly) float preferredVolume;
 @property(readonly) NSDictionary * loudnessInfo;
 @property(readonly) float nominalFrameRate;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minSampleDuration;
 @property(readonly) NSArray * segments;
 @property(readonly) NSArray * commonMetadata;
 @property(readonly) NSArray * availableMetadataFormats;
@@ -48,6 +49,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
 - (float)nominalFrameRate;
 - (id)loudnessInfo;
 - (id)extendedLanguageTag;

@@ -21,6 +21,7 @@
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (BOOL)alwaysCopiesSampleData;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (id)_errorForOSStatus:(long)arg1;
 - (id)customVideoCompositor;
 - (void)setVideoComposition:(id)arg1;
 - (void)_setVideoComposition:(id)arg1 customVideoCompositorSession:(id)arg2;

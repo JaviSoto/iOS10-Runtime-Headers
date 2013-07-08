@@ -29,9 +29,9 @@
 + (void)handleITunesStoreResponseHeaders:(id)arg1 withAccountIdentifier:(id)arg2;
 + (void)addITunesStoreHeadersToRequest:(id)arg1 withAccountIdentifier:(id)arg2;
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
-+ (id)pingOperationWithUrl:(id)arg1;
 + (id)_restrictionsHeaderValue;
 + (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3;
++ (id)pingOperationWithUrl:(id)arg1;
 
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (void)setShouldSendXTokenHeader:(BOOL)arg1;

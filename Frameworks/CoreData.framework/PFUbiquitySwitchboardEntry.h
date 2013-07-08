@@ -18,6 +18,7 @@
     BOOL _finishedSetupForStore;
     BOOL _hasScheduledFinishBlock;
     BOOL _finishedInitializingForStore;
+    int _pendingFailedLogScans;
     int _finishLock;
     PFUbiquitySetupAssistant *_finishingSetupAssistant;
     NSObject<OS_dispatch_queue> *_privateQueue;

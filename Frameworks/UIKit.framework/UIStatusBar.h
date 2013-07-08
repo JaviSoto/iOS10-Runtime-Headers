@@ -63,8 +63,9 @@
     UIStatusBarStyleAnimationParameters *_nextTintTransition;
     NSNumber *_overrideHeight;
     BOOL _persistentAnimationsEnabled;
-    BOOL _homeItemsDisabled;
     BOOL _simulatesLegacyAppearance;
+    BOOL _serverUpdatesDisabled;
+    BOOL _homeItemsDisabled;
     <UIStatusBarStyleDelegate> *_styleDelegate;
     UIColor *_foregroundColor;
     int _legibilityStyle;
@@ -73,8 +74,9 @@
 @property <UIStatusBarStyleDelegate> * styleDelegate;
 @property UIStatusBarWindow * statusBarWindow;
 @property BOOL persistentAnimationsEnabled;
-@property BOOL homeItemsDisabled;
 @property BOOL simulatesLegacyAppearance;
+@property BOOL serverUpdatesDisabled;
+@property BOOL homeItemsDisabled;
 @property(retain) UIColor * foregroundColor;
 @property int legibilityStyle;
 @property(copy) UIStatusBarStyleRequest * styleRequest;
@@ -96,8 +98,8 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForStyle:(int)arg1 orientation:(int)arg2 inWindowOfSize:(struct CGSize { float x1; float x2; })arg3;
 + (int)defaultStyleForRequestedStyle:(int)arg1 styleOverrides:(int)arg2;
 + (id)statusBarTintColorForNavBarTintColor:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (int)currentStyle;
 - (void)setForegroundColor:(id)arg1;
@@ -110,6 +112,7 @@
 - (void)setHomeItemsDisabled:(BOOL)arg1;
 - (void)_clearOverrideHeight;
 - (void)_setOverrideHeight:(float)arg1;
+- (void)setServerUpdatesDisabled:(BOOL)arg1;
 - (void)setStyleRequest:(id)arg1;
 - (void)setLegibilityStyle:(int)arg1;
 - (void)setSimulatesLegacyAppearance:(BOOL)arg1;
@@ -133,6 +136,7 @@
 - (void)forgetEitherSideHistory;
 - (void)forceUpdateGlowAnimation;
 - (void)forceUpdateData:(BOOL)arg1;
+- (BOOL)serverUpdatesDisabled;
 - (BOOL)_touchShouldProduceReturnEvent;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (float)_hiddenAlphaForHideAnimationParameters:(id)arg1;
@@ -200,6 +204,7 @@
 - (void)forceUpdateDoubleHeightStatus;
 - (id)_backgroundView;
 - (void)layoutSubviews;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)shouldGroupAccessibilityChildren;
 - (BOOL)_accessibilityAlwaysOrderedFirst;
 

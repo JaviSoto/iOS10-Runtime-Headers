@@ -30,9 +30,9 @@
 @property(retain) NSDictionary * AVURLAssetOptions;
 
 + (Class)layerClass;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)setAVURLAssetOptions:(id)arg1;
 - (id)AVURLAssetOptions;

@@ -15,8 +15,8 @@
 @property int userRatingCount;
 @property(retain) NSString * userRatingCountString;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (int)userRatingCount;
 - (void)setUserRatingCountString:(id)arg1;

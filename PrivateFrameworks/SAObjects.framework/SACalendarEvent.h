@@ -48,12 +48,12 @@
 - (id)endDate;
 - (void)setAllDay:(BOOL)arg1;
 - (BOOL)allDay;
+- (id)location;
+- (void)setReadOnly:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)startDate;
-- (id)location;
 - (void)setLocation:(id)arg1;
-- (void)setReadOnly:(id)arg1;
 - (id)readOnly;
 - (id)groupIdentifier;
 

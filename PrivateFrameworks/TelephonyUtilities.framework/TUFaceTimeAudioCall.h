@@ -9,9 +9,9 @@
 }
 
 
+- (void)disconnect;
 - (int)service;
 - (id)isoCountryCode;
-- (void)disconnect;
 - (BOOL)needsManualInCallSounds;
 - (BOOL)managesAudioInterruptions;
 - (id)audioMode;

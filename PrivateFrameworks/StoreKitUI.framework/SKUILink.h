@@ -4,7 +4,7 @@
 
 @class SKUIItem, SKUICountdown, NSString, NSNumber, NSURL;
 
-@interface SKUILink : NSObject  {
+@interface SKUILink : NSObject <SSMetricsEventFieldProvider> {
     SKUICountdown *_countdown;
     SKUIItem *_item;
     NSNumber *_itemIdentifier;
@@ -26,6 +26,7 @@
 - (void)_setItem:(id)arg1;
 - (id)initWithComponentContext:(id)arg1;
 - (BOOL)isActionable;
+- (id)valueForMetricsField:(id)arg1;
 - (id)itemIdentifier;
 - (id)title;
 - (id)initWithURL:(id)arg1;

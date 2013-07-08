@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, CAMeshTransform, NSString, CALayer, NSDictionary;
+@class CAMeshTransform, NSString, NSArray, CALayer, NSDictionary;
 
 @interface CALayer : NSObject <CAPropertyInfo, NSCoding, CAMediaTiming> {
     struct _CALayerIvars { 
@@ -18,8 +18,6 @@
     } _attr;
 }
 
-@property(readonly) CALayer * currentLayer;
-@property(readonly) CALayer * _mapKit_mapLayer;
 @property(copy) NSArray * states;
 @property(copy) NSArray * stateTransitions;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
@@ -126,8 +124,8 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (id)properties;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)context;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
@@ -139,7 +137,6 @@
 - (void)setEdgeAntialiasingMask:(unsigned int)arg1;
 - (void*)regionBeingDrawn;
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
-- (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
 - (void)scrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)setCanDrawConcurrently:(BOOL)arg1;
@@ -415,6 +412,7 @@
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
 - (void)setAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setMass:(float)arg1;
+- (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
 - (double)duration;
 - (struct CGPoint { float x1; float x2; })position;
 - (void)setName:(id)arg1;
@@ -432,10 +430,5 @@
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_gkRecursiveDescription;
 - (id)_gkDescriptionWithChildren:(int)arg1;
-- (BOOL)getPresentationValue:(id*)arg1 forKey:(id)arg2 removeAnimation:(BOOL)arg3;
-- (id)currentLayer;
-- (BOOL)getPresentationValue:(id*)arg1 forValueKey:(id)arg2 animationKey:(id)arg3 removeAnimation:(BOOL)arg4;
-- (void)_mapkit_addAnimation:(id)arg1 forKey:(id)arg2 completion:(id)arg3;
-- (id)_mapKit_mapLayer;
 
 @end

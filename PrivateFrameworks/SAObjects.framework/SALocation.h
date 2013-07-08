@@ -26,11 +26,11 @@
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 + (id)location;
 
-- (void)setAccuracy:(id)arg1;
 - (void)setStateCode:(id)arg1;
 - (id)stateCode;
 - (void)setRegionType:(id)arg1;
 - (id)regionType;
+- (void)setAccuracy:(id)arg1;
 - (void)setRelativeDistance:(id)arg1;
 - (id)relativeDistance;
 - (void)setTimezoneId:(id)arg1;

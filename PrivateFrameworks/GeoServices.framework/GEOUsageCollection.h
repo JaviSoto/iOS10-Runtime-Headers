@@ -60,8 +60,6 @@
 @property(retain) NSString * hwMachine;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setTileUsages:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)tileUsages;
 - (void)setHasProbeID:(BOOL)arg1;
@@ -101,12 +99,14 @@
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (BOOL)hasSessionID;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (double)timestamp;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

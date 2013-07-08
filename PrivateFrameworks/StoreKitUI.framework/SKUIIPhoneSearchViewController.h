@@ -49,7 +49,7 @@
 - (void)searchRelatedViewDidSelectBackButton:(id)arg1;
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(int)arg2;
 - (id)metricsController;
-- (id)_visibleMetricsImpressionsDictionary;
+- (id)_visibleMetricsImpressionsString;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (void)setMetricsController:(id)arg1;

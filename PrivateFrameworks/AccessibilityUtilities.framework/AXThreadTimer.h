@@ -29,11 +29,11 @@
 - (void)_runAfterDelay:(id)arg1;
 - (void)setTask:(id)arg1;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
-- (id)task;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
 - (BOOL)isActive;
 - (void)dealloc;
 - (void)cancel;
+- (id)task;
 - (BOOL)isCancelled;
 
 @end

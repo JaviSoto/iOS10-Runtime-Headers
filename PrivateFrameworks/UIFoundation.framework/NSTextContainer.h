@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSLayoutManager, NSArray;
+@class NSLayoutManager, NSDictionary, NSArray;
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
     NSLayoutManager *_layoutManager;
@@ -27,6 +27,7 @@
     float _cacheBoundsMinY;
     float _cacheBoundsMaxY;
     int _layoutOrientation;
+    NSDictionary *_attributesForExtraLineFragment;
 }
 
 @property(readonly) BOOL isSimpleRectangularTextContainer;
@@ -46,6 +47,7 @@
 - (void)setLineBreakMode:(int)arg1;
 - (int)lineBreakMode;
 - (void)setExclusionPaths:(id)arg1;
+- (id)attributesForExtraLineFragment;
 - (void)replaceLayoutManager:(id)arg1;
 - (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)exclusionPaths;
@@ -61,14 +63,14 @@
 - (unsigned int)maximumNumberOfLines;
 - (BOOL)isSimpleRectangularTextContainer;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
-- (id)textView;
 - (void)setLayoutManager:(id)arg1;
 - (void)_commonInit;
-- (id)layoutManager;
-- (float)lineFragmentPadding;
-- (struct CGSize { float x1; float x2; })containerSize;
-- (int)layoutOrientation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (id)layoutManager;
+- (id)textView;
+- (struct CGSize { float x1; float x2; })containerSize;
+- (float)lineFragmentPadding;
+- (int)layoutOrientation;
 - (id)init;
 - (void)dealloc;
 - (id)description;
@@ -76,6 +78,7 @@
 - (BOOL)widthTracksTextView;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)coordinateAccess:(id)arg1;
+- (void)setAttributesForExtraLineFragment:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

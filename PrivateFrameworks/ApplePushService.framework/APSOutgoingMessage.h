@@ -26,12 +26,12 @@
 - (unsigned int)_effectiveSendTimeout;
 - (void)setCritical:(BOOL)arg1;
 - (void)setPayloadFormat:(int)arg1;
+- (id)timestamp;
 - (void)setMessageID:(unsigned int)arg1;
 - (unsigned int)messageID;
 - (BOOL)wasCancelled;
 - (unsigned int)timeout;
 - (void)setTimestamp:(id)arg1;
-- (id)timestamp;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setTimeout:(unsigned int)arg1;
 - (void)setPriority:(int)arg1;

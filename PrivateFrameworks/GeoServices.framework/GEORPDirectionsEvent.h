@@ -50,8 +50,6 @@
 @property long long errorCode;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasSynthesizedStepManeuverType:(BOOL)arg1;
 - (void)setHasSwitchedToResponseIndex:(BOOL)arg1;
@@ -87,6 +85,8 @@
 - (void)setHasType:(BOOL)arg1;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)errorDomain;
 - (void)setErrorCode:(long long)arg1;
 - (long long)errorCode;

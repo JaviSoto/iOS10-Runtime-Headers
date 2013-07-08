@@ -77,8 +77,8 @@
 - (int)layer;
 - (int)status;
 - (void)dealloc;
-- (id)outputSettings;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)languageCode;
+- (id)outputSettings;
 
 @end

@@ -63,7 +63,6 @@
 - (void)MMCSEngine:(id)arg1 didFinishGettingAsset:(id)arg2 path:(id)arg3 error:(id)arg4;
 - (void)MMCSEngine:(id)arg1 didMakeGetProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4;
 - (void)MMCSEngine:(id)arg1 logPerformanceMetrics:(id)arg2;
-- (id)focusAssetCollectionGUID;
 - (id)focusAlbumGUID;
 - (BOOL)hasShutDown;
 - (id)_canceledError;
@@ -75,6 +74,7 @@
 - (void)workQueueRetryOutstandingActivities;
 - (void)setBackoffManager:(id)arg1;
 - (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
+- (id)focusAssetCollectionGUID;
 - (void)cancelCompletionBlock:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;

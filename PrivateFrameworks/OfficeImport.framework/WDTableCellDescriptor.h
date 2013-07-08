@@ -118,16 +118,16 @@
 - (BOOL)isRightMarginOverridden;
 - (BOOL)isLeftMarginOverridden;
 - (void)setWidth:(short)arg1;
+- (void)setBottomMargin:(short)arg1;
+- (void)setRightMargin:(short)arg1;
+- (void)setTopMargin:(short)arg1;
+- (void)setLeftMargin:(short)arg1;
 - (short)rightMargin;
 - (short)leftMargin;
 - (short)bottomMargin;
 - (short)topMargin;
 - (void)setNoWrap:(BOOL)arg1;
 - (BOOL)noWrap;
-- (void)setBottomMargin:(short)arg1;
-- (void)setTopMargin:(short)arg1;
-- (void)setRightMargin:(short)arg1;
-- (void)setLeftMargin:(short)arg1;
 - (void)setVerticalAlignment:(int)arg1;
 - (int)verticalAlignment;
 

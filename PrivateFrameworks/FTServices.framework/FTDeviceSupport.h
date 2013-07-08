@@ -80,6 +80,7 @@
 
 + (id)sharedInstance;
 
+- (BOOL)supportsSimultaneousVoiceAndDataRightNow;
 - (int)deviceType;
 - (BOOL)supportsBackFacingCamera;
 - (BOOL)supportsFrontFacingCamera;
@@ -101,7 +102,6 @@
 - (void)_simStatusChanged:(id)arg1;
 - (void)_handleSIMInserted:(id)arg1;
 - (BOOL)wantsBreakBeforeMake;
-- (BOOL)supportsSimultaneousVoiceAndDataRightNow;
 - (id)telephonyCapabilities;
 - (id)deviceTypeIDPrefix;
 - (id)deviceIDPrefix;

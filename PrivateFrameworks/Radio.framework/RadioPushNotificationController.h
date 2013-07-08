@@ -20,8 +20,8 @@
 - (id)_portNameForEnvironmentName:(id)arg1;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
-- (BOOL)notificationsEnabled;
 - (void)setNotificationsEnabled:(BOOL)arg1;
+- (BOOL)notificationsEnabled;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

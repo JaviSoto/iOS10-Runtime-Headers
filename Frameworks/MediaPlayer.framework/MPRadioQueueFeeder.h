@@ -31,11 +31,9 @@
 @property unsigned int initialTrackIndex;
 
 + (BOOL)shouldRestorePlaybackQueue;
-+ (void)_radioConfigurationDidChangeNotification:(id)arg1;
++ (void)setMinimumDurationToPlayToCountForHistory:(double)arg1;
 + (id)imageCache;
-+ (void)initialize;
 
-- (void)_cellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)setInitialTrackIndex:(unsigned int)arg1;
 - (unsigned int)initialTrackIndex;
@@ -56,6 +54,7 @@
 - (void)setStation:(id)arg1;
 - (void)_cancelPlaybackTimer;
 - (void)_updatePlaybackTimerForDeviceStateChange;
+- (void)_cellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_itemIsBannedDidChangedNotification:(id)arg1;
 - (void)_songBeganResponseNotification:(id)arg1;
@@ -64,6 +63,7 @@
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)setAVController:(id)arg1;
 - (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingAds:(BOOL)arg5;
+- (unsigned int)realRepeatType;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (BOOL)canSkipToPreviousItem;

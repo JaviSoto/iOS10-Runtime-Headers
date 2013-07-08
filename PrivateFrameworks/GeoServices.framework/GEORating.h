@@ -20,7 +20,6 @@
     } _has;
 }
 
-@property(readonly) float numberOfStars;
 @property BOOL hasScore;
 @property double score;
 @property BOOL hasMaxScore;
@@ -37,8 +36,6 @@
 
 
 - (id)reviews;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasNumberOfReviews:(BOOL)arg1;
 - (void)setHasNumberOfRatings:(BOOL)arg1;
 - (void)setHasMaxScore:(BOOL)arg1;
@@ -64,6 +61,8 @@
 - (id)uRL;
 - (BOOL)hasURL;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
@@ -72,6 +71,5 @@
 - (double)score;
 - (void)setURL:(id)arg1;
 - (id)dictionaryRepresentation;
-- (float)numberOfStars;
 
 @end

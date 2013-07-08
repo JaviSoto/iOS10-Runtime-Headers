@@ -9,8 +9,8 @@
     UISlider *_progressBar;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)_isDownloadResumable:(id)arg1;
 - (void)_reloadProgressBar;

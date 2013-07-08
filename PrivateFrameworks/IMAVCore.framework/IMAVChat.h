@@ -164,6 +164,7 @@
 + (id)activeChat;
 + (void)setDefaultConnectionTimeoutTime:(double)arg1;
 + (void)setDefaultInvitationTimeoutTime:(double)arg1;
++ (id)_chatListLock;
 + (id)_acceptedChats;
 + (id)_proxyRepresentationForIMHandle:(id)arg1;
 + (id)_avChatWithMatchingIMHandles:(id)arg1 video:(BOOL)arg2;
@@ -353,7 +354,7 @@
 - (id)_initOutgoingTo:(id)arg1 isVideo:(BOOL)arg2 GUID:(id)arg3;
 - (void)declineInvitationWithResponse:(unsigned int)arg1;
 - (id)_timings;
-- (void)_submitCallStartedLoggingWithRecipientID:(id)arg1 isCaller:(BOOL)arg2;
+- (void)_submitCallStartedLoggingWithRecipientID:(id)arg1 isCaller:(BOOL)arg2 isVideo:(BOOL)arg3;
 - (id)initiatorIMHandle;
 - (void)_peerID:(id)arg1 changedTo:(id)arg2;
 - (void)handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3;
@@ -371,7 +372,6 @@
 - (void)_clearCache;
 - (id)conferenceID;
 - (id)participants;
-- (void)setPaused:(BOOL)arg1;
 - (BOOL)isPaused;
 - (unsigned int)sessionID;
 - (BOOL)isActive;
@@ -407,6 +407,7 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)state;
+- (void)setPaused:(BOOL)arg1;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 
 @end

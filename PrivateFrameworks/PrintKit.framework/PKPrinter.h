@@ -71,7 +71,7 @@
 + (BOOL)urfIsOptional;
 + (id)printerWithName:(id)arg1;
 
-- (void)updateType;
+- (id)location;
 - (id)displayName;
 - (void)setPort:(id)arg1;
 - (void)setHostname:(id)arg1;
@@ -100,6 +100,7 @@
 - (id)rollFromAttrs:(struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; }*)arg1;
 - (void)reconfirmWithForce:(BOOL)arg1;
 - (void)setAccessStateFromTXT:(id)arg1;
+- (void)updateType;
 - (id)TXTRecord;
 - (void)setIsFromMCProfile:(BOOL)arg1;
 - (BOOL)isBonjour;
@@ -108,7 +109,6 @@
 - (void)setIsLocal:(BOOL)arg1;
 - (id)initWithName:(id)arg1 TXT:(id)arg2;
 - (BOOL)isLocal;
-- (id)location;
 - (id)uuid;
 - (id)hostname;
 - (id)port;

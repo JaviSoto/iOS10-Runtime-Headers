@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel;
+@class NSString, UILabel;
 
 @interface UIDatePickerWeekMonthDayView : UIView  {
     struct { 
@@ -11,11 +11,13 @@
     BOOL _isModern;
     UILabel *_dateLabel;
     UILabel *_weekdayLabel;
+    NSString *_formattedDateString;
     float _weekdayWidth;
 }
 
 @property(readonly) UILabel * dateLabel;
 @property(readonly) UILabel * weekdayLabel;
+@property(copy) NSString * formattedDateString;
 @property float weekdayWidth;
 @property BOOL weekdayLast;
 @property BOOL isModern;
@@ -24,6 +26,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (float)weekdayWidth;
+- (void)setFormattedDateString:(id)arg1;
+- (id)formattedDateString;
 - (void)setWeekdayLast:(BOOL)arg1;
 - (BOOL)weekdayLast;
 - (void)setWeekdayWidth:(float)arg1;

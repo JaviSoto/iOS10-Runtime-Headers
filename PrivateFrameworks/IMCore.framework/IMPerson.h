@@ -38,8 +38,11 @@
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)allPeople;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 identifier:(int*)arg6;
++ (void)_setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 addressBook:(void*)arg4;
++ (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;
++ (void)_setCachedQueriesEnabled:(BOOL)arg1;
 + (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
@@ -69,10 +72,10 @@
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
 - (id)initWithABRecordID:(int)arg1;
 - (id)valuesForIMProperty:(id)arg1;
+- (int)recordID;
 - (void)setPhoneNumbers:(id)arg1;
 - (id)phoneNumbers;
 - (id)nickname;
-- (int)recordID;
 - (id)emails;
 - (void)save;
 - (void)setLastName:(id)arg1;

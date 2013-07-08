@@ -49,6 +49,7 @@
 
 - (void*)context;
 - (void)setPredicate:(id)arg1;
+- (void)setContext:(void*)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (void)setPrefetchProperties:(id)arg1;
 - (id)prefetchProperties;
@@ -62,7 +63,6 @@
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
 - (void)setProgressBlock:(id)arg1;
-- (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

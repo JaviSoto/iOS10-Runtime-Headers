@@ -21,8 +21,8 @@
 @property BOOL isMapViewPlugIn;
 @property BOOL isiAdPlugIn;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)invalidateGState;
 - (void)viewDidMoveToWindow;

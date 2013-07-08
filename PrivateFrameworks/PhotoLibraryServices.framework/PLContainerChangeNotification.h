@@ -53,9 +53,9 @@
 - (id)_managedObject;
 - (id)changedIndexes;
 - (void)enumerateMovesWithBlock:(id)arg1;
-- (id)insertedIndexes;
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
+- (id)insertedIndexes;
 - (id)deletedObjects;
 - (id)insertedObjects;
 - (id)init;

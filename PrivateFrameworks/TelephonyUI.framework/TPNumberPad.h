@@ -13,11 +13,10 @@
 @property(retain) NSArray * buttons;
 @property float buttonBackgroundAlpha;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
-- (BOOL)numberButtonsEnabled;
 - (float)buttonBackgroundAlpha;
 - (void)replaceButton:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)buttonLongPressedViaGesture:(id)arg1;
@@ -27,6 +26,7 @@
 - (void)_layoutGrid;
 - (void)_addButton:(id)arg1;
 - (void)buttonLongPressed:(id)arg1;
+- (BOOL)numberButtonsEnabled;
 - (id)initWithButtons:(id)arg1;
 - (void)setNumberButtonsEnabled:(BOOL)arg1;
 - (void)setButtonBackgroundAlpha:(float)arg1;

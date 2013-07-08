@@ -8,8 +8,8 @@
 
 @property(readonly) BOOL isShowingDictationPlaceholder;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isShowingDictationPlaceholder;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;

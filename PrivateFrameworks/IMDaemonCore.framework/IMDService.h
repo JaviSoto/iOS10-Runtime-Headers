@@ -88,9 +88,9 @@
 - (Class)accountClass;
 - (id)serviceProperties;
 - (id)internalName;
+- (id)bundle;
 - (void)systemDidStartBackup;
 - (void)systemDidEnterMemoryPressure;
-- (id)bundle;
 - (void)dealloc;
 - (id)description;
 - (id)initWithBundle:(id)arg1;

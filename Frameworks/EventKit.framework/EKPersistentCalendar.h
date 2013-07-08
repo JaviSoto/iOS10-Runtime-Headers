@@ -135,9 +135,9 @@
 - (id)source;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)setSource:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (BOOL)isHidden;
-- (void)setSource:(id)arg1;
 - (id)init;
 - (id)description;
 - (id)UUID;

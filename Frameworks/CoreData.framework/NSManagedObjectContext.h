@@ -56,8 +56,8 @@
     int _ignoreChangeNotification;
     id _editors;
     id *_debuggingRecords;
-    id _childObjectStores;
-    id _reserved2;
+    id _tombstonedIDs;
+    id _childIDMappings;
 }
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
@@ -66,7 +66,6 @@
 + (void)initialize;
 + (BOOL)accessInstanceVariablesDirectly;
 
-- (void)performBlock:(id)arg1;
 - (id)_parentProcessSaveRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (id)_parentObjectsForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (void)_copyChildObject:(id)arg1 toParentObject:(id)arg2 fromChildContext:(id)arg3;
@@ -147,6 +146,7 @@
 - (void)_informParentStore:(id)arg1 noLongerInterestedInObjects:(id)arg2;
 - (id)_newUnchangedLockedObjects;
 - (id)parentContext;
+- (void)performBlock:(id)arg1;
 - (void)mergeChangesFromContextDidSaveNotification:(id)arg1;
 - (void)detectConflictsForObject:(id)arg1;
 - (void)refreshObject:(id)arg1 mergeChanges:(BOOL)arg2;
@@ -156,6 +156,7 @@
 - (id)registeredObjects;
 - (void)assignObject:(id)arg1 toPersistentStore:(id)arg2;
 - (void)setUndoManager:(id)arg1;
+- (void)reset;
 - (BOOL)retainsRegisteredObjects;
 - (void)setRetainsRegisteredObjects:(BOOL)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
@@ -167,6 +168,8 @@
 - (unsigned int)concurrencyType;
 - (void)setMergePolicy:(id)arg1;
 - (id)_initWithParentObjectStore:(unsigned long)arg1;
+- (void)redo;
+- (void)undo;
 - (void)_prepareUnprocessedDeletionAfterRefresh:(id)arg1;
 - (void)_refaultObject:(id)arg1 globalID:(id)arg2 boolean:(BOOL)arg3;
 - (id)_committedSnapshotForObject:(id)arg1;
@@ -244,9 +247,6 @@
 - (id)deletedObjects;
 - (id)updatedObjects;
 - (id)insertedObjects;
-- (void)reset;
-- (void)redo;
-- (void)undo;
 - (id)undoManager;
 - (id)init;
 - (id)userInfo;

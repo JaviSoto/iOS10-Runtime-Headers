@@ -41,7 +41,9 @@
 - (void)setCMSSignatureHeaderName:(id)arg1;
 - (id)CMSSignatureHeaderName;
 - (id)userAgent;
+- (void)setMethod:(id)arg1;
 - (void)performCompletionBlock:(id)arg1;
+- (struct __SecIdentity { }*)copyIdentity;
 - (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
 - (void)_beginTransaction;
 - (id)permanentlyRedirectedURL;
@@ -51,10 +53,8 @@
 - (void)setData:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)initWithURL:(id)arg1 method:(id)arg2;
-- (struct __SecIdentity { }*)copyIdentity;
 - (void)setContentType:(id)arg1;
 - (id)contentType;
-- (void)setMethod:(id)arg1;
 - (double)timeout;
 - (id)data;
 - (void)dealloc;

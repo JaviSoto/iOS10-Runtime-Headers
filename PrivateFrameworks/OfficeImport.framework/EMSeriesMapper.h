@@ -12,9 +12,9 @@
 - (unsigned int)chartType;
 - (float)strokeWidth;
 - (unsigned int)markerType;
+- (id)values;
 - (float)offset;
 - (struct CGColor { }*)strokeColor;
 - (struct CGColor { }*)fillColor;
-- (id)values;
 
 @end

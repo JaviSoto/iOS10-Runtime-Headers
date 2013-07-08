@@ -12,16 +12,16 @@
 
 
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (id)reversedOrderedSet;
+- (id)reverseObjectEnumerator;
 - (BOOL)isSubsetOfOrderedSet:(id)arg1;
 - (BOOL)intersectsOrderedSet:(id)arg1;
 - (void)unionOrderedSet:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
-- (id)reverseObjectEnumerator;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
 - (void)intersectOrderedSet:(id)arg1;
 - (id)set;

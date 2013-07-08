@@ -5,8 +5,6 @@
 @class NSDictionary, NSArray;
 
 @interface ATVHighSecurityAccountDeviceListResponse : AAResponse  {
-    NSArray *_devices;
-    NSDictionary *_userDisplayStrings;
 }
 
 @property(readonly) NSArray * devices;
@@ -15,6 +13,5 @@
 
 - (id)userDisplayStrings;
 - (id)devices;
-- (void).cxx_destruct;
 
 @end

@@ -21,6 +21,7 @@
 + (id)collectionWithItems:(id)arg1;
 + (id)sortTitlePropertyForGroupingType:(int)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)MPSD_hasDownloadableItem;
 - (BOOL)MPSD_hasDownloadingItem;

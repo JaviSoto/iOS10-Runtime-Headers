@@ -22,8 +22,8 @@
 @property(readonly) NSArray * touches;
 
 
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })location;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)dealloc;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
@@ -37,8 +37,8 @@
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (id)touches;
 - (struct CGPoint { float x1; float x2; })centroid;
-- (void)_appendSubclassDescription:(id)arg1;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (void)_appendSubclassDescription:(id)arg1;
 - (void)setAllowableMovement:(float)arg1;
 - (void)_resetGestureRecognizer;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
@@ -52,6 +52,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (float)_touchSloppinessFactor;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (int)_buttonType;

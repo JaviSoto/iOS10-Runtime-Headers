@@ -6,7 +6,7 @@
 
 @interface GEOZilchDecoder : GEOMapRequestManager  {
     NSObject<OS_dispatch_queue> *_decoderQueue;
-    NSObject<OS_dispatch_queue> *_mapDataQueue;
+    NSObject<OS_dispatch_queue> *_requestQueue;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
@@ -21,14 +21,14 @@
 
 + (BOOL)decodingSupported;
 
-- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (void)setMapAccessRestrictions:(id)arg1;
 - (id)mapAccessRestrictions;
 - (id)decoderQueue;
-- (id)mapDataQueue;
+- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (void)requestComplete:(id)arg1;
 - (void)trackRequest:(id)arg1;
-- (void)setMapDataQueue:(id)arg1;
+- (void)setRequestQueue:(id)arg1;
+- (id)requestQueue;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

@@ -45,9 +45,9 @@
 - (void)setSearchString:(id)arg1;
 - (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
+- (void)setSource:(void*)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
-- (void)setSource:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

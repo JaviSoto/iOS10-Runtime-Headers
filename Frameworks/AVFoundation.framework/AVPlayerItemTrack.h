@@ -14,14 +14,15 @@
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
-- (id)_audioVolumeCurve;
 - (void)setLoudnessInfo:(id)arg1;
 - (float)currentVideoFrameRate;
 - (id)fallbackTrack;
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 - (id)_playerItem;
+- (void)_setAudioTimePitchAlgorithm:(id)arg1;
 - (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
+- (id)_audioVolumeCurve;
 - (id)assetTrack;
 - (struct OpaqueFigPlaybackItem { }*)_figPlaybackItem;
 - (id)loudnessInfo;

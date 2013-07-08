@@ -70,8 +70,8 @@
 - (id)itemImages;
 - (BOOL)isTransient;
 - (id)title;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;

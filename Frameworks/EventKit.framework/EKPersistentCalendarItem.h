@@ -142,6 +142,7 @@
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
+- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setCreationDate:(id)arg1;
@@ -149,7 +150,6 @@
 - (id)attachments;
 - (id)startDate;
 - (id)lastModifiedDate;
-- (id)location;
 - (id)uniqueID;
 - (void)setLocation:(id)arg1;
 - (id)init;

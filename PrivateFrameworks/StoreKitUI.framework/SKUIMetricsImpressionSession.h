@@ -2,15 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary;
+@class NSArray, NSString, NSMutableString, NSMutableArray;
 
 @interface SKUIMetricsImpressionSession : NSObject  {
-    NSMutableDictionary *_impressions;
+    NSMutableArray *_impressionIdentifiers;
+    NSMutableString *_impressionsString;
 }
 
+@property(readonly) NSArray * impressionIdentifiers;
+@property(readonly) NSString * impressionsString;
 
-- (void)addLocationIdentifier:(id)arg1 forItemIdentifier:(long long)arg2;
-- (id)impressionsDictionary;
+
+- (void)addItemIdentifier:(long long)arg1;
+- (id)impressionsString;
+- (id)impressionIdentifiers;
 - (id)init;
 - (void).cxx_destruct;
 

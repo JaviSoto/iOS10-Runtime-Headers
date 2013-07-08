@@ -128,11 +128,11 @@
 - (id)rootDirectory;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)storeOptions;
+- (void)clearCaches;
 - (BOOL)save:(id*)arg1;
 - (id)persistentStoreCoordinator;
 - (id)managedObjectModel;
 - (id)managedObjectContext;
-- (void)clearCaches;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

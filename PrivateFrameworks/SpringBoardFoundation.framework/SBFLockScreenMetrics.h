@@ -5,6 +5,8 @@
 @interface SBFLockScreenMetrics : NSObject  {
 }
 
++ (float)slideToUnlockInset;
++ (float)slideToUnlockFontSize;
 + (float)cameraGrabberInset;
 + (float)dateViewBaselineY;
 

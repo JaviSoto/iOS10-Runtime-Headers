@@ -150,7 +150,6 @@
 - (id)backingLayerColor;
 - (void)addLayers:(BOOL)arg1;
 - (struct CGColor { }*)highLightColor;
-- (void)didBecomeActive:(id)arg1;
 - (void)setShowTextAnnotations:(BOOL)arg1;
 - (void)setAllowHighlighting:(BOOL)arg1;
 - (void)setAllowMenu:(BOOL)arg1;

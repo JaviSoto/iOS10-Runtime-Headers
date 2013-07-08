@@ -2,13 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, <MPMediaPickerControllerDelegate>;
+@class MPRemoteMediaPickerController, _UIAsyncInvocation, UIPopoverController, <MPMediaPickerControllerDelegate>, NSString;
 
 @interface MPMediaPickerController : UIViewController  {
+    _UIAsyncInvocation *_cancelRequest;
     id _modalContext;
     int _prevStatusBarStyle;
-    unsigned int _allowsPickingMultipleItems : 1;
-    unsigned int _showsCloudItems : 1;
+    MPRemoteMediaPickerController *_remoteViewController;
+    BOOL _allowsPickingMultipleItems;
+    BOOL _showsCloudItems;
+    UIPopoverController *_containingPopover;
     unsigned int _mediaTypes;
     <MPMediaPickerControllerDelegate> *_delegate;
     NSString *_prompt;
@@ -21,22 +24,33 @@
 @property(copy) NSString * prompt;
 
 + (void)preheatMediaPicker;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
-- (void)_pickerDidPickItems:(id)arg1;
 - (void)setShowsCloudItems:(BOOL)arg1;
 - (BOOL)showsCloudItems;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (BOOL)allowsPickingMultipleItems;
+- (void)remoteMediaPickerDidCancel;
+- (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
+- (void)_forceDismissal;
+- (id)_serviceViewControllerProxy;
+- (BOOL)_hasAddedRemoteView;
 - (void)_pickerDidCancel;
+- (void)_pickerDidPickItems:(id)arg1;
+- (void)_sendSettingsToService;
 - (id)initWithMediaTypes:(unsigned int)arg1;
+- (void)_resetRemoteViewController;
+- (void)_requestRemoteViewController;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)_addRemoteView;
 - (unsigned int)mediaTypes;
+- (void)_willResignContentViewControllerOfPopover:(id)arg1;
+- (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;

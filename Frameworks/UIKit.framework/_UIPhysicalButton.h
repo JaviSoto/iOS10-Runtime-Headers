@@ -25,10 +25,10 @@
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 
 
+- (double)timestamp;
 - (id)window;
 - (void)setType:(int)arg1;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)dealloc;
 - (void)_abandonForwardingRecord;
 - (id)_mutableForwardingRecord;

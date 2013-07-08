@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, CALayer, UIColor, UIScreen, _UIResponderSelectionCursor, NSUndoManager, NSMutableSet, UIView, UIViewController, NSArray, NSISEngine, _UISystemGestureGateGestureRecognizer, UIResponder;
+@class NSMutableArray, CALayer, UIColor, UIScreen, _UIResponderSelectionCursor, NSUndoManager, NSMutableSet, UIView, UIViewController, NSArray, _UISystemGestureGateGestureRecognizer, UIResponder;
 
 @interface UIWindow : UIView <NSISEngineDelegate> {
     id _delegate;
@@ -67,7 +67,6 @@
     BOOL __usesLegacySupportedOrientationChecks;
     NSArray *_windowInternalConstraints;
     NSArray *_rootViewConstraints;
-    NSISEngine *_layoutEngine;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -84,9 +83,9 @@
 @property(setter=_setDeferredLaunchBlock:,copy) id _deferredLaunchBlock;
 @property(setter=_setLegacyOrientationChecks:) BOOL _legacyOrientationChecks;
 @property(setter=_setRootViewConstraints:,copy) NSArray * _rootViewConstraints;
-@property(setter=_setLayoutEngine:,retain) NSISEngine * _layoutEngine;
 
 + (id)_findWithDisplayPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)_statusBarControllingWindow;
 + (void*)createScreenIOSurface;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg4;
@@ -120,8 +119,8 @@
 + (id)keyWindow;
 + (void)_executeDeferredLaunchBlocks;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
@@ -140,8 +139,8 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)representation;
 - (void)setContentView:(id)arg1;
-- (id)screen;
 - (void)_commonInit;
+- (id)screen;
 - (int)interfaceOrientation;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -153,13 +152,13 @@
 - (unsigned int)_expectedWindowInternalConstraintsCount;
 - (BOOL)_isLoweringAnchoringConstraints;
 - (id)_centerExpressionInContainer:(id)arg1 vertical:(BOOL)arg2;
+- (BOOL)hasAmbiguousLayout;
 - (id)_redundantConstraints;
 - (id)_uiib_layoutEngineCreatingIfNecessary;
-- (id)_layoutEngineConsultingOverride;
-- (id)_layoutEngineIfAvailableConsultingOverride;
-- (id)_layoutEngineCreateIfNecessaryConsultingOverride;
+- (void)exerciseAmbiguityInLayout;
+- (id)_descendantWithAmbiguousLayout;
 - (id)_uiib_candidateRedundantConstraints;
-- (void)_layoutEngineWillChange;
+- (void)_initializeLayoutEngine;
 - (void)_invalidateWindowInternalConstraints;
 - (id)_hostingHandle;
 - (void)updateConstraintsIfNeeded;
@@ -172,11 +171,10 @@
 - (id)_layoutEngineIfAvailable;
 - (void)_constraints_subviewWillChangeSuperview:(id)arg1;
 - (id)_responderWindow;
-- (void)_initializeLayoutEngine;
 - (void)_updateConstraintsAtWindowLevelIfNeeded;
+- (void)_switchToLayoutEngine:(id)arg1;
 - (id)_layoutEngineCreateIfNecessary;
 - (BOOL)_usesLegacySupportedOrientationChecks;
-- (void)_setLayoutEngine:(id)arg1;
 - (id)_windowInternalConstraints;
 - (id)_rootLayer;
 - (void)_geometryDidChangeForView:(id)arg1;
@@ -256,8 +254,7 @@
 - (BOOL)_canPromoteFromKeyWindowStack;
 - (void)becomeKeyWindow;
 - (void)resignKeyWindow;
-- (void)_rebuildLayoutFromScratch;
-- (id)_layoutEngine;
+- (id)_effectiveScreen;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -294,6 +291,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
+- (float)_chargeMultiplicationFactor;
+- (float)_touchSloppinessFactor;
 - (void)_setHidden:(BOOL)arg1 forced:(BOOL)arg2;
 - (void)_updateToInterfaceOrientation:(int)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)addRootViewControllerViewIfPossible;
@@ -359,9 +358,6 @@
 - (void)makeKeyAndVisible;
 - (BOOL)_clearMouseView;
 - (id)_screen;
-- (void)constraintsDidChangeInEngine:(id)arg1;
-- (void)engine:(id)arg1 willBreakConstraint:(id)arg2 dueToMutuallyExclusiveConstraints:(id)arg3;
-- (id)engine:(id)arg1 markerForConstraintToBreakAmongConstraints:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;

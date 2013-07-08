@@ -23,6 +23,9 @@
 @property(retain) NSLayoutConstraint * topViewAttributeTopConstraint;
 @property(retain) id statusBarChangeObserver;
 
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_monitorStatusBarHeightChanges:(BOOL)arg1;
@@ -35,13 +38,17 @@
 - (id)behindView;
 - (id)bottomView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 topViewHeight:(float)arg2;
-- (void)collapseTopView;
+- (void)adjustTopAttributeConstantByDelta:(float)arg1;
 - (void)configureInteractionForContainment:(BOOL)arg1;
-- (void)updateTopViewHeight:(float)arg1 animate:(BOOL)arg2;
+- (void)updateTopViewHeight:(float)arg1 animateUpdate:(BOOL)arg2;
+- (void)collapseTopView;
+- (void)updateTopAttributeConstant:(float)arg1;
+- (void)updateTopViewHeight:(float)arg1;
 - (void)setBottomViewUserInteractionEnabled:(BOOL)arg1;
 - (id)topView;
-- (void)didMoveToSuperview;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityObscuredScreenAllowedViews;
+- (BOOL)_accessibilityObscuredScreenAllowsView:(id)arg1;
 
 @end

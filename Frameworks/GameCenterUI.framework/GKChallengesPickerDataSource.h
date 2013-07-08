@@ -14,8 +14,8 @@
 - (id)initWithChallenge:(id)arg1;
 - (BOOL)canSelectPlayerInfo:(id)arg1;
 - (void)configureDataSource;
-- (void)setChallenge:(id)arg1;
 - (id)challenge;
+- (void)setChallenge:(id)arg1;
 - (void)dealloc;
 
 @end

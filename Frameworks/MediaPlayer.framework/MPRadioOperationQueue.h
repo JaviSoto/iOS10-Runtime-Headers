@@ -35,8 +35,8 @@
 - (void)_addOperationWhenWarm:(id)arg1;
 - (void)_finishAssetLoadWithKey:(id)arg1 asset:(id)arg2 error:(id)arg3;
 - (void)sendPlayEvents:(id)arg1 forStation:(id)arg2 completionBlock:(id)arg3;
-- (void)getTracksWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)loadRadioConfigurationWithCompletionBlock:(id)arg1;
+- (void)getTracksWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)loadAssetForItem:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)assetCache;
 - (id)init;

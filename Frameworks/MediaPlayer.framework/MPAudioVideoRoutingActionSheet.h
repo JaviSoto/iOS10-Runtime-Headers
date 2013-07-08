@@ -27,6 +27,7 @@
 
 - (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id)arg5;
 - (void)showWithValidInterfaceOrientationsBlock:(id)arg1 completionHandler:(id)arg2;
+- (void)showWithValidInterfaceOrientationMaskBlock:(id)arg1 windowLevel:(float)arg2 completionHandler:(id)arg3;
 - (void)_debugButtonAction:(id)arg1;
 - (BOOL)_isDeviceVideoRoute:(id)arg1;
 - (id)_availableRoutes;

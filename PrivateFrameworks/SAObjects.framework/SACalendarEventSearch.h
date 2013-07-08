@@ -38,10 +38,10 @@
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
+- (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)startDate;
-- (id)location;
 - (void)setLocation:(id)arg1;
 - (id)groupIdentifier;
 

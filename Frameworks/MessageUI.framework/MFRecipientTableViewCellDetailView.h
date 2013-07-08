@@ -20,6 +20,7 @@
 
 + (id)labelStringAttributes;
 + (id)groupStringAttributes;
++ (id)highlightedStringAttributes;
 + (id)defaultStringAttributes;
 + (float)lineHeight;
 

@@ -28,8 +28,9 @@
 
 + (id)_unadjustedValueForMPProperty:(id)arg1 withDefaultValue:(id)arg2;
 
-- (id)initWithLibrary:(id)arg1;
+- (BOOL)isCurrentThreadInTransaction;
 - (id)library;
+- (id)initWithLibrary:(id)arg1;
 - (BOOL)_removeEntitiesWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 entityClass:(Class)arg3;
 - (void)setLibrary:(id)arg1;
 - (void)_coalesceEvents;
@@ -70,7 +71,6 @@
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (id)syncValidity;
-- (BOOL)isCurrentThreadInTransaction;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (id)preferredSubtitleLanguages;
 - (id)preferredAudioLanguages;

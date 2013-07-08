@@ -24,6 +24,5 @@
 - (void)setPeoplePickerDelegate:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithStyle:(int)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

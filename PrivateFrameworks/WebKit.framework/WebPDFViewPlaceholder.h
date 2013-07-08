@@ -16,6 +16,7 @@
         float width; 
         float height; 
     } _containerSize;
+    BOOL _didCompleteLayout;
 }
 
 @property NSObject<WebPDFViewPlaceholderDelegate> * delegate;
@@ -26,6 +27,7 @@
 @property(readonly) unsigned int totalPages;
 @property(retain) NSString * title;
 @property struct CGSize { float x1; float x2; } containerSize;
+@property(readonly) BOOL didCompleteLayout;
 
 + (Class)_representationClassForWebFrame:(id)arg1;
 + (id)supportedMIMETypes;
@@ -39,11 +41,12 @@
 - (void)_updateTitleForDocumentIfAvailable;
 - (struct CGSize { float x1; float x2; })_computePageRects:(struct CGPDFDocument { }*)arg1;
 - (void)_notifyDidCompleteLayout;
+- (BOOL)didCompleteLayout;
 - (void)_updateTitleForURL:(id)arg1;
-- (void)setDocument:(struct CGPDFDocument { }*)arg1;
 - (void)setPageYOrigins:(id)arg1;
 - (void)setPageRects:(id)arg1;
 - (struct CGPDFDocument { }*)document;
+- (void)setDocument:(struct CGPDFDocument { }*)arg1;
 - (id)pageRects;
 - (id)documentSource;
 - (BOOL)canProvideDocumentSource;
@@ -65,6 +68,7 @@
 - (id)delegate;
 - (void)simulateClickOnLinkToURL:(id)arg1;
 - (id)pageYOrigins;
+- (void)clearDocument;
 - (void)didUnlockDocument;
 - (struct CGPDFDocument { }*)doc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;

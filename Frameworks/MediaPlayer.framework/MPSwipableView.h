@@ -18,8 +18,8 @@
 @property int simultaneousGestureTypes;
 @property <MPSwipableViewDelegate> * swipeDelegate;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setSimultaneousGestureTypes:(int)arg1;
 - (int)enabledGestureTypes;

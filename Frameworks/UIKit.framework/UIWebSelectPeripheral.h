@@ -13,8 +13,8 @@
 @property(retain) <UIWebFormControl> * _selectControl;
 
 + (id)createPeripheralWithDOMHTMLSelectElement:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)beginEditing;
 - (void)dealloc;

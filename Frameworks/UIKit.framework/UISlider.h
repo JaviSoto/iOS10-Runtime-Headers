@@ -57,9 +57,9 @@
 @property(readonly) UIImage * currentMinimumTrackImage;
 @property(readonly) UIImage * currentMaximumTrackImage;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -145,8 +145,8 @@
 - (void)setThumbTintColor:(id)arg1;
 - (void)setMaximumTrackTintColor:(id)arg1;
 - (void)setMinimumTrackTintColor:(id)arg1;
-- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_sendDelayedActions;
+- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

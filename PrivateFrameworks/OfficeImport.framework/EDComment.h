@@ -9,8 +9,8 @@
 }
 
 
-- (void)setColumnIndex:(int)arg1;
 - (int)columnIndex;
+- (void)setColumnIndex:(int)arg1;
 - (bool)isVisible;
 - (void)setRowIndex:(int)arg1;
 - (int)rowIndex;

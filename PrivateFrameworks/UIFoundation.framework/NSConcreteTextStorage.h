@@ -26,8 +26,8 @@
 - (BOOL)fixesAttributesLazily;
 - (BOOL)_lockForWritingWithExceptionHandler:(BOOL)arg1;
 - (void)_setForceFixAttributes:(BOOL)arg1;
-- (BOOL)_lockForReading;
 - (void)_unlock;
+- (BOOL)_lockForReading;
 - (id)init;
 - (unsigned int)length;
 - (id)initWithString:(id)arg1;

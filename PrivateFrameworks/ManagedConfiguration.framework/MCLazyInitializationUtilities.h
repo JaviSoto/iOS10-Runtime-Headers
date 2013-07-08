@@ -9,6 +9,7 @@
 + (void)initCoreText;
 + (void)initImageIO;
 + (void)initAddressBook;
++ (void)loadNSBundleAtURL:(id)arg1 completionBlock:(id)arg2;
 + (void)loadBundleAtURL:(id)arg1 completionBlock:(id)arg2;
 
 

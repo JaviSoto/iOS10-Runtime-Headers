@@ -15,15 +15,15 @@
 @property(retain) NSString * personID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)personID;
 - (BOOL)hasPersonID;
 - (BOOL)hasToken;
 - (void)setPersonID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)token;
 - (void)setToken:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

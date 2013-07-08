@@ -228,6 +228,7 @@
 - (void)setLoggingEnabled:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (id)clientIdentifier;
+- (void)log:(id)arg1;
 - (id)accounts;
 - (void)openURL:(id)arg1;
 - (id)attributeKeys;
@@ -255,7 +256,6 @@
 - (void)setWindow:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)navigationBar;
-- (void)log:(id)arg1;
 - (id)protocol;
 
 @end

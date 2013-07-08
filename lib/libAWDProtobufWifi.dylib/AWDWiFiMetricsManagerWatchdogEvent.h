@@ -38,11 +38,11 @@
 
 
 - (void)setHasAvailable:(BOOL)arg1;
-- (void)setHasFlags:(BOOL)arg1;
 - (BOOL)hasAvailable;
-- (BOOL)hasFlags;
+- (void)setHasFlags:(BOOL)arg1;
 - (void)setHasSubreason:(BOOL)arg1;
 - (void)setHasReason:(BOOL)arg1;
+- (BOOL)hasFlags;
 - (void)setSubreason:(unsigned int)arg1;
 - (unsigned int)subreason;
 - (BOOL)hasSubreason;
@@ -52,17 +52,17 @@
 - (unsigned int)deviceIdentifierMap;
 - (BOOL)hasDeviceIdentifierMap;
 - (void)setAvailable:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (BOOL)hasVersion;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (unsigned long long)timestamp;
 - (int)available;
 - (void)setReason:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (unsigned long long)timestamp;
 - (void)setFlags:(unsigned int)arg1;
 - (int)reason;
 - (BOOL)isEqual:(id)arg1;

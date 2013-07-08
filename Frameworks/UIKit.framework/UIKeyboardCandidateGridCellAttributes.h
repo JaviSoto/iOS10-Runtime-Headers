@@ -21,7 +21,7 @@
     int _candidatesVisualStyle;
     unsigned int _candidateNumber;
     unsigned int _rowIndex;
-    int _edges;
+    unsigned int _edges;
     struct CGSize { 
         float width; 
         float height; 
@@ -36,7 +36,7 @@
 @property unsigned int candidateNumber;
 @property unsigned int rowIndex;
 @property struct CGSize { float x1; float x2; } rowSize;
-@property int edges;
+@property unsigned int edges;
 @property BOOL needsPaddingForIndexScrubber;
 @property BOOL groupShowsAlternativeText;
 @property BOOL secondaryCandidateAppearance;
@@ -58,7 +58,7 @@
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (BOOL)groupShowsAlternativeText;
 - (BOOL)needsPaddingForIndexScrubber;
-- (int)edges;
+- (unsigned int)edges;
 - (struct CGSize { float x1; float x2; })rowSize;
 - (void)setDummy:(BOOL)arg1;
 - (unsigned int)candidateNumber;
@@ -70,6 +70,6 @@
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
-- (void)setEdges:(int)arg1;
+- (void)setEdges:(unsigned int)arg1;
 
 @end

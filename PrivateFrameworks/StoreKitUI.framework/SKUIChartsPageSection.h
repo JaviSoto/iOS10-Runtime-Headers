@@ -18,7 +18,7 @@
 - (id)cellForIndexPath:(id)arg1;
 - (void)chartsViewController:(id)arg1 didSelectItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
 - (id)chartsViewController:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
-- (void)_recordClickEvent:(id)arg1 withItemIndex:(int)arg2 chartIndex:(int)arg3;
+- (void)_recordClickEvent:(id)arg1 withItem:(id)arg2 itemIndex:(int)arg3 chartIndex:(int)arg4;
 - (id)_chartsViewController;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;

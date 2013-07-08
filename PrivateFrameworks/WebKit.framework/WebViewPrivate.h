@@ -103,6 +103,7 @@
         int (*didRunInsecureContentFunc)(); 
         int (*didDetectXSSFunc)(); 
         int (*didRemoveFrameFromHierarchyFunc)(); 
+        int (*webThreadDidLayoutFunc)(); 
     } frameLoadDelegateImplementations;
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 

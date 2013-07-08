@@ -34,6 +34,7 @@
     BOOL _shouldInternationalizeNumbers;
     BOOL _supportsOfflineTransfers;
     BOOL _shouldDisableDeactivation;
+    BOOL _ignoresNetworkConnectivity;
     BOOL _isPersistent;
     BOOL _isPlugInService;
     BOOL _allowsMultipleConnections;
@@ -54,6 +55,7 @@
 @property(readonly) BOOL supportsIDStatusLookup;
 @property(readonly) BOOL supportsOfflineTransfers;
 @property(readonly) BOOL isPersistent;
+@property(readonly) BOOL ignoresNetworkConnectivity;
 @property(readonly) int maxAttachmentSize;
 @property(readonly) int maxChatParticipants;
 @property(readonly) unsigned int IDSensitivity;
@@ -96,6 +98,7 @@
 - (BOOL)supportsMutatingGroupMembers;
 - (BOOL)supportsPresence;
 - (BOOL)supportsOfflineTransfers;
+- (BOOL)ignoresNetworkConnectivity;
 - (BOOL)supportsRegistration;
 - (BOOL)handlesChatInvites;
 - (BOOL)supportsAuthorization;

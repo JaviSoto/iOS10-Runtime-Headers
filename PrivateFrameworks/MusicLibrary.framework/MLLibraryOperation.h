@@ -18,9 +18,9 @@
 - (BOOL)isWorkIdenticalToOperation:(id)arg1;
 - (void)setOperationSuccess:(BOOL)arg1;
 - (void)setOperationError:(id)arg1;
-- (id)initWithLibrary:(id)arg1;
 - (BOOL)operationSuccess;
 - (id)library;
+- (id)initWithLibrary:(id)arg1;
 - (id)operationError;
 - (void).cxx_destruct;
 - (void)main;

@@ -31,6 +31,7 @@
 - (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
 - (void)_setupManagedObjectContext;
 - (id)objectForObjectURI:(id)arg1;
+- (id)managedObjectIDForURI:(id)arg1;
 - (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
 - (void)deleteAccountPropertyWithKey:(id)arg1 owner:(id)arg2;
 - (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2 sortDescriptor:(id)arg3;

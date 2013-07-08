@@ -50,7 +50,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftSwitchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })_switchWellContainerPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_switchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })_knobPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_knobPositionOn:(BOOL)arg1 pressed:(BOOL)arg2 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_knobBoundsPressed:(BOOL)arg1;
 - (void)_transitionKnobToOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_transitionKnobToPressed:(BOOL)arg1 animated:(BOOL)arg2;

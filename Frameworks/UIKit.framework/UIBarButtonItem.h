@@ -80,8 +80,8 @@
 + (Class)classForNavigationButton;
 + (id)_appearanceBlindViewClasses;
 + (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setTitle:(id)arg1;
@@ -93,9 +93,9 @@
 - (id)window;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
-- (id)image;
 - (int)style;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
@@ -114,9 +114,11 @@
 - (struct UIOffset { float x1; float x2; })backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
 - (void)setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (float)backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
+- (void)setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (struct UIOffset { float x1; float x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
 - (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
+- (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (void)_setPossibleSystemItems:(id)arg1;
 - (void)_setSystemItem:(int)arg1;
@@ -165,8 +167,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_leftRightImagePaddingForEdgeMarginInNavBarIsMini:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
 - (BOOL)_shouldBezelSystemButtonImage;
-- (void)setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
-- (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_updateView;
 - (void)setIsMinibarView:(BOOL)arg1;

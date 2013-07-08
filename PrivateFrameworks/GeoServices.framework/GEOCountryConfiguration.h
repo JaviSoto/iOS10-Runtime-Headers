@@ -17,11 +17,13 @@
 @property(copy) NSString * countryCode;
 @property(readonly) BOOL currentCountrySupportsTraffic;
 @property(readonly) BOOL currentCountrySupportsDirections;
+@property(readonly) BOOL currentCountrySupportsNavigation;
 
 + (id)sharedConfiguration;
 
 - (BOOL)currentCountrySupportsTraffic;
 - (BOOL)currentCountrySupportsDirections;
+- (BOOL)currentCountrySupportsNavigation;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(int*)arg3;
 - (id)countryDefaultForKey:(id)arg1 sourcePtr:(int*)arg2;
 - (void)_registerNetworkDefaults;

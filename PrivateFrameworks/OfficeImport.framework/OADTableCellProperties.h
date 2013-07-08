@@ -79,16 +79,16 @@
 - (BOOL)isTopMarginOverridden;
 - (BOOL)isRightMarginOverridden;
 - (BOOL)isLeftMarginOverridden;
+- (void)setBottomMargin:(float)arg1;
+- (void)setRightMargin:(float)arg1;
+- (void)setTopMargin:(float)arg1;
+- (void)setLeftMargin:(float)arg1;
 - (float)rightMargin;
 - (float)leftMargin;
 - (float)bottomMargin;
 - (float)topMargin;
 - (int)textFlow;
 - (void)setTextFlow:(int)arg1;
-- (void)setBottomMargin:(float)arg1;
-- (void)setTopMargin:(float)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setLeftMargin:(float)arg1;
 - (void)dealloc;
 - (id)fill;
 

@@ -252,14 +252,14 @@
 + (double)getTimestamp;
 + (id)standardTextViewPreferences;
 + (Class)layerClass;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
-- (void)setPaused:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
 - (void)setInteractionDelegate:(id)arg1;
 - (BOOL)isEditing;
+- (BOOL)isEditable;
 - (void)setBaseWritingDirection:(int)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -272,7 +272,6 @@
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)suppressesIncrementalRendering;
 - (void)insertText:(id)arg1;
-- (BOOL)isEditable;
 - (int)selectionBaseWritingDirection;
 - (BOOL)hasSelection;
 - (int)selectionState;
@@ -434,6 +433,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentFrame;
 - (id)webSelectionAssistant;
 - (BOOL)hasPlugInSubviews;
+- (void)setPaused:(BOOL)arg1;
 - (id)implementationWebView;
 - (void)replaceSelectionWithWebArchive:(id)arg1 selectReplacement:(BOOL)arg2 smartReplace:(BOOL)arg3;
 - (id)dictationInterpretations;

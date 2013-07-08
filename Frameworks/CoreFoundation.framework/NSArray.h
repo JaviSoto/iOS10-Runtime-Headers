@@ -42,16 +42,16 @@
 + (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
+- (id)reverseObjectEnumerator;
 - (id)initWithOrderedSet:(id)arg1 copyItems:(BOOL)arg2;
+- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)arrayByExcludingObjectsInArray:(id)arg1;
-- (id)reverseObjectEnumerator;
-- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (id)arrayByExcludingToObjectsInArray:(id)arg1;
 - (id)arrayByApplyingSelector:(SEL)arg1;
 - (id)initWithOrderedSet:(id)arg1;
@@ -207,6 +207,7 @@
 - (id)_IDsFromURIs;
 - (id)_URIsFromIDs;
 - (id)_FTFilteredArrayForAPS;
+- (id)specifierForID:(id)arg1;
 - (id)_gkFirstObject;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
@@ -216,7 +217,6 @@
 - (id)_gkMapConcurrentlyWithBlock:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkOrderedSet;
-- (id)specifierForID:(id)arg1;
 - (id)_gkBubbleOfType:(int)arg1;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2 usingSelector:(SEL)arg3;
@@ -227,10 +227,6 @@
 - (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSDSPAssetCollectionWithMasterFileHash:(id)arg1;
-- (unsigned int)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
-- (id)_mapkit_arrayByRemovingObject:(id)arg1;
-- (id)_mapkit_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 - (unsigned int)pl_indexOfLastObjectPassingTest:(id)arg1;
 - (unsigned int)pl_indexOfFirstObjectPassingTest:(id)arg1;
 - (unsigned int)pl_indexOfLastObjectInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 passingTest:(id)arg2;

@@ -118,8 +118,8 @@
 - (id)_themeStore;
 - (unsigned int)themeIndex;
 - (id)imageForSliceIndex:(int)arg1;
-- (id)image;
 - (int)blendMode;
+- (id)image;
 - (id)init;
 - (void)dealloc;
 - (id)description;

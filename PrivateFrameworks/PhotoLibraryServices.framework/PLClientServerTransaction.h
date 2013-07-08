@@ -21,6 +21,7 @@
 + (void)removeTransactionFromUserInfo:(id)arg1;
 + (void)addTransaction:(id)arg1 toUserInfo:(id)arg2;
 + (id)beginClientTransaction;
++ (id)_queue;
 
 - (void)setTransactionToken:(id)arg1;
 - (id)transactionToken;

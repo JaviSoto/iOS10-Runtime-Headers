@@ -2,19 +2,23 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class PFUbiquityKnowledgeVector, PFUbiquityLocation;
+@class NSDate, PFUbiquityKnowledgeVector, PFUbiquityLocation;
 
 @interface PFUbiquityPeerReceipt : PFUbiquitySafeSaveFile  {
     PFUbiquityKnowledgeVector *_kv;
+    NSDate *_writeDate;
 }
 
 @property(readonly) PFUbiquityLocation * receiptFileLocation;
 @property(readonly) PFUbiquityKnowledgeVector * kv;
+@property(retain) NSDate * writeDate;
 
 
+- (void)setWriteDate:(id)arg1;
 - (id)receiptFileLocation;
 - (BOOL)writeFileToLocation:(id)arg1 error:(id*)arg2;
 - (BOOL)loadFileFromLocation:(id)arg1 error:(id*)arg2;
+- (id)writeDate;
 - (id)initWithLocalPeerID:(id)arg1 andReceiptFileLocation:(id)arg2;
 - (id)initWithLocalPeerID:(id)arg1 receiptPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 andUbiquityRootLocation:(id)arg5;
 - (id)kv;

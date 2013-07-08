@@ -77,12 +77,11 @@
 - (id)additionalHeaderValues;
 - (void)setSuccess:(BOOL)arg1;
 - (id)userAgentHeader;
+- (void)setHost:(id)arg1;
 - (id)principalURL;
 - (void)setScheme:(id)arg1;
-- (void)setHost:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
-- (id)oauthToken;
 - (BOOL)success;
 - (id)accountID;
 - (void)setAccountID:(id)arg1;

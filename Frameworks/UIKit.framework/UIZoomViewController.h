@@ -11,8 +11,8 @@
 
 @property(readonly) UIWindow * window;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)window;
 - (id)screen;

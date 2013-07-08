@@ -18,6 +18,7 @@
 - (void*)_secAccessibilityForDAKeychainAccessibility:(int)arg1;
 - (struct __CFDictionary { }*)_DACopyMutableQueryForAccountWithPersistentUUID:(id)arg1;
 - (void)removePersistentCredentials;
+- (BOOL)canAccessCredentialsWithAccessibility:(int)arg1;
 - (int)_daKeychainAccessibilityForSecAccessibility:(void*)arg1;
 - (void)migratePasswordForAccount:(id)arg1;
 

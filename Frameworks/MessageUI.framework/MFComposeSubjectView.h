@@ -11,8 +11,8 @@
 
 @property(readonly) UITextField * textField;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)refreshPreferredContentSize;
 - (BOOL)becomeFirstResponder;

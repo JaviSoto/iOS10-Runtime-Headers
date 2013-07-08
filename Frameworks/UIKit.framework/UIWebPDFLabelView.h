@@ -20,11 +20,11 @@
 - (void)_fadeOutAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (double)_fadeOutDelay;
 - (double)_fadeOutDuration;
+- (void)showNowInSuperView:(id)arg1 atOrigin:(struct CGPoint { float x1; float x2; })arg2 withText:(id)arg3 animated:(BOOL)arg4;
 - (void)setCurrentPageIndex:(unsigned int)arg1;
 - (unsigned int)currentPageIndex;
-- (void)showNowInSuperView:(id)arg1 atOrigin:(struct CGPoint { float x1; float x2; })arg2 withText:(id)arg3 animated:(BOOL)arg4;
-- (void)fadeOut;
 - (BOOL)isTimerInstalled;
+- (void)fadeOut;
 - (void)clearTimer;
 - (void)sizeToFit;
 - (void)setText:(id)arg1;

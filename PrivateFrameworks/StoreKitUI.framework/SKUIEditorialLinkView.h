@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)_newButton;
+- (void)tintColorDidChange;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 

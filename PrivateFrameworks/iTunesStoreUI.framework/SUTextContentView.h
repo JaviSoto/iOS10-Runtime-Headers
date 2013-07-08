@@ -10,8 +10,8 @@
 
 @property(retain) NSString * placeholder;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setBackgroundColor:(id)arg1;
 - (BOOL)resignFirstResponder;

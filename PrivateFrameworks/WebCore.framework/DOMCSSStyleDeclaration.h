@@ -16,8 +16,9 @@
 
 - (void)setPitch:(id)arg1;
 - (id)fontStyle;
-- (id)volume;
 - (void)setContent:(id)arg1;
+- (id)volume;
+- (void)setVisibility:(id)arg1;
 - (id)visibility;
 - (void)setBackgroundColor:(id)arg1;
 - (id)cursor;
@@ -43,7 +44,6 @@
 - (void)setVolume:(id)arg1;
 - (void)setVoiceFamily:(id)arg1;
 - (id)voiceFamily;
-- (void)setVisibility:(id)arg1;
 - (void)setVerticalAlign:(id)arg1;
 - (id)verticalAlign;
 - (void)setUnicodeBidi:(id)arg1;

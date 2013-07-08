@@ -17,6 +17,7 @@
     BOOL _moveAfterSave;
     NSError *_safeSaveError;
     NSObject<OS_dispatch_semaphore> *_safeSaveSemaphore;
+    BOOL _isRegistered;
 }
 
 @property(readonly) PFUbiquityLocation * permanentLocation;
@@ -24,6 +25,7 @@
 @property(retain) PFUbiquityLocation * currentLocation;
 @property(readonly) NSString * localPeerID;
 @property(readonly) NSError * safeSaveError;
+@property(readonly) BOOL isRegistered;
 @property(readonly) BOOL continueCheckingUpload;
 @property(readonly) BOOL safeSaveSuccess;
 @property(readonly) BOOL moveAfterSave;
@@ -73,6 +75,7 @@
 - (BOOL)safeSaveFile:(BOOL)arg1 moveToPermanentLocation:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)loadFile:(id*)arg1;
 - (BOOL)existsInCloud;
+- (BOOL)isRegistered;
 - (id)init;
 - (void)dealloc;
 - (id)description;

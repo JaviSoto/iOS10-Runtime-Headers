@@ -57,8 +57,8 @@
 - (void)addChildren:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)add:(id)arg1;
-- (void)setDocument:(id)arg1;
 - (id)document;
+- (void)setDocument:(id)arg1;
 - (id)lastChild;
 - (id)page;
 - (id)nextSibling;

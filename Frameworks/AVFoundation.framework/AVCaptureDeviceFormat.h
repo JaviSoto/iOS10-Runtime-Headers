@@ -17,7 +17,7 @@
 @property(readonly) float videoMaxZoomFactor;
 @property(readonly) float videoZoomFactorUpscaleThreshold;
 
-+ (id)deviceFormatWithDictionary:(id)arg1 deviceProperties:(id)arg2 mediaType:(id)arg3 mediaSubType:(int)arg4;
++ (id)deviceFormatWithDictionary:(id)arg1 deviceProperties:(id)arg2 mediaType:(id)arg3;
 + (void)initialize;
 
 - (int)visCompanionSupportedFormatsArrayIndex;
@@ -26,6 +26,8 @@
 - (BOOL)needsPhotoPreviewDPCC;
 - (BOOL)needsPhotoTNR;
 - (BOOL)supportsHighProfileH264;
+- (id)videoZoomSupportedUpscaleStages;
+- (id)videoZoomSupportedDownscaleStages;
 - (int)rawBitDepth;
 - (BOOL)isHighResPhotoFormat;
 - (BOOL)supportsDynamicCrop;
@@ -33,7 +35,7 @@
 - (BOOL)supportsVideoZoom;
 - (struct { int x1; int x2; })sensorDimensions;
 - (struct { int x1; int x2; })outputDimensions;
-- (id)initWithDictionary:(id)arg1 deviceProperties:(id)arg2 mediaType:(id)arg3 mediaSubType:(int)arg4;
+- (id)initWithDictionary:(id)arg1 deviceProperties:(id)arg2 mediaType:(id)arg3;
 - (id)_stringForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 frameRateRanges:(id)arg2;
 - (BOOL)isExperimental;
 - (float)videoZoomFactorUpscaleThreshold;
@@ -41,16 +43,13 @@
 - (int)supportedStabilizationMethod;
 - (BOOL)isVideoBinned;
 - (float)videoFieldOfView;
+- (id)formatDictionary;
 - (BOOL)isPhotoFormat;
 - (BOOL)supportsLowLightBoost;
+- (id)videoSupportedFrameRateRanges;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMinFrameDuration;
-- (id)formatDictionary;
-- (void)setDefaultActiveMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setDefaultActiveMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)videoSupportedFrameRateRanges;
-- (id)videoZoomSupportedUpscaleStages;
-- (id)videoZoomSupportedDownscaleStages;
+- (BOOL)isDefaultActiveFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })highestSupportedVideoFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lowestSupportedVideoFrameDuration;
 - (struct opaqueCMFormatDescription { }*)formatDescription;

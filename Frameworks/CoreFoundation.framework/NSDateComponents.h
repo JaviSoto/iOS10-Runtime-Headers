@@ -7,18 +7,18 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)namesForComponents:(unsigned int)arg1;
-+ (unsigned int)largerComponentsRelativeToComponent:(unsigned int)arg1;
-+ (unsigned int)smallerComponentsRelativeToComponent:(unsigned int)arg1;
++ (id)_ui_namesForComponents:(unsigned int)arg1;
++ (unsigned int)_ui_largerComponentsRelativeToComponent:(unsigned int)arg1;
++ (unsigned int)_ui_smallerComponentsRelativeToComponent:(unsigned int)arg1;
 + (unsigned int)smaller:(BOOL)arg1 componentsRelativeToComponent:(unsigned int)arg2;
 
 - (id)init;
 - (BOOL)isValidDateInCalendar:(id)arg1;
 - (BOOL)isValidDate;
-- (BOOL)isLeapMonthSet;
-- (id)calendar;
 - (void)setValue:(int)arg1 forComponent:(unsigned int)arg2;
 - (int)valueForComponent:(unsigned int)arg1;
+- (BOOL)isLeapMonthSet;
+- (id)calendar;
 - (void)setCalendar:(id)arg1;
 - (int)nanosecond;
 - (int)quarter;
@@ -64,10 +64,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setValue:(int)arg1 forComponent:(unsigned int)arg2;
-- (int)valueForComponent:(unsigned int)arg1;
-- (void)setComponents:(id)arg1;
-- (id)conciseDescription;
+- (void)_ui_setComponents:(id)arg1;
+- (id)_ui_conciseDescription;
+- (void)_ui_setValue:(int)arg1 forComponent:(unsigned int)arg2;
+- (int)_ui_valueForComponent:(unsigned int)arg1;
 - (BOOL)isSameDayAsComponents:(id)arg1;
 - (BOOL)isSameYearAsComponents:(id)arg1;
 - (BOOL)isSameMonthAsComponents:(id)arg1;

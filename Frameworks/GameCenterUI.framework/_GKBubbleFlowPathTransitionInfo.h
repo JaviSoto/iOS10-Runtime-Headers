@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UIView, NSArray;
+@class UIView, NSDictionary, NSArray;
 
 @interface _GKBubbleFlowPathTransitionInfo : NSObject  {
     double _startTime;
@@ -28,6 +28,8 @@
         } ; 
         float v[3]; 
     } _bubbleStartPositionsByType[12];
+    BOOL _couldUseFallbackAnimator;
+    NSDictionary *_auxiliaryInfo;
     union _GLKVector3 { 
         struct { 
             float x; 
@@ -53,8 +55,14 @@
 @property UIView * effectiveView;
 @property NSArray * bubbles;
 @property int focusBubbleType;
+@property BOOL couldUseFallbackAnimator;
+@property(retain) NSDictionary * auxiliaryInfo;
 
 
+- (void)setAuxiliaryInfo:(id)arg1;
+- (id)auxiliaryInfo;
+- (void)setCouldUseFallbackAnimator:(BOOL)arg1;
+- (BOOL)couldUseFallbackAnimator;
 - (int)focusBubbleType;
 - (id)effectiveView;
 - (void)setEffectiveView:(id)arg1;
@@ -63,6 +71,7 @@
 - (id)bubbles;
 - (void)setDuration:(double)arg1;
 - (id)init;
+- (void)dealloc;
 - (id)description;
 - (double)startTime;
 - (void)setStartTime:(double)arg1;

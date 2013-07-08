@@ -13,7 +13,7 @@
 - (void)finalize;
 - (void)dealloc;
 - (void)invokeErrorBlockForSequence:(unsigned long)arg1 withError:(id)arg2;
-- (unsigned long long)sequenceForReplyBlock:(id)arg1 errorBlock:(id)arg2 cleanupBlock:(id)arg3 protocol:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
+- (unsigned long long)sequenceForReplyBlock:(id)arg1 errorBlock:(id)arg2 cleanupBlock:(id)arg3 protocol:(id)arg4 selector:(SEL)arg5 proxyNumber:(unsigned long long)arg6 userInfo:(id)arg7;
 - (void)cleanupReplyBlocksWithError:(id)arg1;
 - (id)replyInfoForSequence:(unsigned long long)arg1;
 

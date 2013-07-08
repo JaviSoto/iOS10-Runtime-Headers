@@ -45,6 +45,7 @@
     float _animatingAppearanceNavigationSearchBarWidth;
     UIColor *_dimmingOverlayColor;
     UIView *_tableViewBackgroundHeaderView;
+    int _unactivatedBarPosition;
     struct { 
         unsigned int visible : 1; 
         unsigned int animating : 1; 
@@ -62,6 +63,7 @@
         unsigned int searchBarCanBeHoisted : 1; 
         unsigned int animatingSearchResultsDisappearance : 1; 
         unsigned int navigationBarShadowWasHidden : 1; 
+        unsigned int hoistingSearchBar : 1; 
     } _searchDisplayControllerFlags;
     BOOL _displaysSearchBarInNavigationBar;
     unsigned int _navigationBarSearchFieldSizing;
@@ -89,8 +91,8 @@
 @property float _activationGapHeight;
 @property float _additionalNonCollapsingHeightAboveSearchBar;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isActive;
 - (void)windowDidRotate:(id)arg1;
@@ -99,6 +101,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)set_activationGapHeight:(float)arg1;
+- (float)_activationGapHeight;
 - (void)setDisplaysSearchBarInNavigationBar:(BOOL)arg1;
 - (void)setSearchResultsTitle:(id)arg1;
 - (id)searchResultsDelegate;
@@ -135,7 +138,6 @@
 - (BOOL)_searchBarInNavigationControllerComponent;
 - (void)_updatePinnedSearchBar;
 - (void)showHideAnimationDidFinish;
-- (float)_activationGapHeight;
 - (void)set_additionalNonCollapsingHeightAboveSearchBar:(float)arg1;
 - (float)_dimmingViewAlpha;
 - (void)_enableParentScrollViews;
@@ -172,6 +174,7 @@
 - (void)_watchContainingTableViewForScrolling:(BOOL)arg1;
 - (void)_indexBarFrameChanged:(id)arg1;
 - (void)_updateSearchBarForTableViewIndexBar:(id)arg1;
+- (void)_updateTableHeaderBackgroundViewInTableView:(id)arg1 amountScrolledUnder:(float)arg2;
 - (id)_containingTableView;
 - (void)_destroyManagedTableView;
 - (void)_configureNewSearchBar;
@@ -185,13 +188,13 @@
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (BOOL)_searchBarShouldScrollToVisible:(id)arg1;
 - (void)_animateNavigationBarSearchBarAppearance:(id)arg1;
-- (id)searchContentsController;
 - (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(int)arg2;
 - (unsigned int)navigationBarSearchFieldSizing;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
 - (void)_updateSearchBarMaskIfNecessary;
+- (id)searchContentsController;
 - (id)_topShadowView;
 - (id)_dimmingViewColor;
 - (void)setActive:(BOOL)arg1;

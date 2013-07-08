@@ -31,8 +31,6 @@
     id _claimerOrNil;
     NSObject<OS_dispatch_semaphore> *_claimerWaiterOrNull;
     id _sandboxToken;
-    BOOL _didMakePresentersRelinquishToWriter;
-    BOOL _revokingIsInexorable;
 }
 
 + (BOOL)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
@@ -48,7 +46,6 @@
 - (BOOL)isGranted;
 - (void)devalueOldClaim:(id)arg1;
 - (void)revoked;
-- (BOOL)willBeRevoked;
 - (id)newClaimerWaiter;
 - (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id)arg3;
 - (void)makeProviderOfItemAtLocation:(id)arg1 provideThenContinue:(id)arg2;

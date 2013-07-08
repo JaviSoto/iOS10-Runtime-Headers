@@ -9,12 +9,12 @@
     BOOL albumShouldBeAutomaticallyDeleted;
 }
 
+@property(retain) NSOrderedSet * assets;
 @property BOOL resolvingConflicts;
 @property BOOL albumShouldBeAutomaticallyDeleted;
 @property(readonly) NSString * uuid;
 @property(readonly) NSString * title;
 @property(readonly) NSString * localizedTitle;
-@property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int approximateCount;
 @property(readonly) unsigned int assetsCount;
 @property(readonly) unsigned int photosCount;
@@ -84,7 +84,7 @@
 - (id)_keysToBeObserved;
 - (id)_expectedKeyAsset;
 - (BOOL)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
-- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
 - (void)setAlbumShouldBeAutomaticallyDeleted:(BOOL)arg1;
 - (BOOL)albumShouldBeAutomaticallyDeleted;
 - (void)_updateKeyAssetIfNeeded;

@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class SSURLConnectionRequest;
+@class NSString, SSURLConnectionRequest;
 
 @interface RadioShareInfoRequest : RadioRequest  {
     SSURLConnectionRequest *_request;
     int _shareType;
     long long _stationID;
+    NSString *_stationHash;
 }
 
 

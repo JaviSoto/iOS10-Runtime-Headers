@@ -82,18 +82,17 @@
 
 + (void)initialize;
 + (float)preferredScrollDecelerationFactor;
-+ (id)_PDFPageNumberLabel:(BOOL)arg1;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)_input;
+- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)networkInterfaceName;
 - (unsigned int)audioSessionCategoryOverride;
-- (BOOL)isEditable;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
@@ -123,11 +122,10 @@
 - (void)_setSelectedDOMRangeAndUpdateUI:(id)arg1;
 - (void)_clearSelectionAndUI;
 - (BOOL)_dumpWebArchiveAtPath:(id)arg1;
-- (void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)messagesMatchingMask:(int)arg1;
 - (void)_setAddressViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4;
 - (struct CGPoint { float x1; float x2; })_convertWindowPointToViewport:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_webViewFormEditedStatusHasChanged:(id)arg1;
 - (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
@@ -145,12 +143,10 @@
 - (void)_noteOverflowScrollViewPendingDeletion:(id)arg1;
 - (void)_noteOverflowScrollViewPendingInsertion:(id)arg1;
 - (struct CGSize { float x1; float x2; })_defaultScrollViewContentSize;
-- (struct CGPoint { float x1; float x2; })_originForPDFPageLabelInSuperview:(id)arg1;
-- (unsigned int)_firstVisiblePDFPageNumber;
 - (void)clearMessagesMatchingMask:(int)arg1;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4 toValue:(float)arg5;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4 toValue:(float)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_activeRectForRectToCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_handleDeferredEvents;
 - (void)_deferWebEvent:(id)arg1;

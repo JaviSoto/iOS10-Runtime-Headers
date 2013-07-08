@@ -15,12 +15,12 @@
 
 @property BOOL showsExtendedRangeSwitch;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
-- (BOOL)showsExtendedRangeSwitch;
 - (void)setShowsExtendedRangeSwitch:(BOOL)arg1;
+- (BOOL)showsExtendedRangeSwitch;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;
 - (void)setDynamicTypeValue:(id)arg1 forSpecifier:(id)arg2;
 - (id)usesExtendedRangeForSpecifier:(id)arg1;

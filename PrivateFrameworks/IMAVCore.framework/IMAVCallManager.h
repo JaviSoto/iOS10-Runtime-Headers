@@ -34,13 +34,15 @@
 - (BOOL)_hasActiveFaceTimeCall;
 - (BOOL)_hasActiveTelephonyCall;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
+- (id)_nonRetainingChatList;
 - (unsigned int)_callStateForType:(unsigned int)arg1;
 - (id)_calls;
 - (void)__setTelephonyCallState:(unsigned int)arg1;
 - (void)_postStateChangeIfNecessary;
 - (unsigned int)_telephonyCallState;
 - (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(BOOL)arg4 type:(unsigned int)arg5;
-- (id)_nonRetainingChatList;
+- (id)_copyMutableFTCalls;
+- (id)_mutableFTCalls;
 - (id)_FTCalls;
 - (void)_setACCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
@@ -51,8 +53,10 @@
 - (unsigned int)_callState;
 - (id)calls;
 - (void)_sendProxyUpdate;
+- (void)_removeIMAVChatFromChatList:(id)arg1;
 - (void)_addACChatProxy:(id)arg1;
 - (void)_addAVChatProxy:(id)arg1;
+- (void)_addIMAVChatToChatList:(id)arg1;
 - (void)_updateOverallChatState;
 - (void)_updateAVChatProxyWithInfo:(id)arg1;
 - (void)_updateACChatProxyWithInfo:(id)arg1;

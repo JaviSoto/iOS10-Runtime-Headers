@@ -32,8 +32,6 @@
 @property(retain) NSData * suggestionEntryMetadata;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSuggestionEntryIndex:(BOOL)arg1;
 - (void)setHasSuggestionsEntryListIndex:(BOOL)arg1;
 - (id)suggestionEntryMetadata;
@@ -51,6 +49,8 @@
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (BOOL)hasSessionID;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)isEqual:(id)arg1;

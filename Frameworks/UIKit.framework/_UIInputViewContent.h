@@ -18,6 +18,7 @@
 - (void)set_unclippableCorners:(int)arg1;
 - (int)_unclippableCorners;
 - (void)_updateCornerClipping;
+- (void)_setToolbarBackgroundView:(id)arg1;
 - (void)_setToolbarBackgroundImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputView:(id)arg2;
 - (struct CGSize { float x1; float x2; })_sizeFittingContentViews;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSNumber, UIKeyboard, UITableView, NSMutableArray, UIActionSheet, UIView, UIAlertView, NSString, UIPopoverController, NSMutableDictionary, NSArray;
+@class UIKeyboard, UITableView, NSMutableArray, UIActionSheet, UIView, UIAlertView, NSString, UIPopoverController, NSMutableDictionary, NSArray;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     NSMutableArray *_prequeuedReusablePSTableCells;
@@ -35,7 +35,6 @@
         float x; 
         float y; 
     } _contentOffsetWithKeyboard;
-    NSNumber *_marginWidth;
     BOOL _edgeToEdgeCells;
 }
 
@@ -43,8 +42,8 @@
 @property BOOL edgeToEdgeCells;
 
 + (BOOL)displaysButtonBar;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)popupStylePopoverController;
 - (void)showPINSheet:(id)arg1;
@@ -163,7 +162,6 @@
 - (int)indexOfSpecifier:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
 - (void)setSpecifierID:(id)arg1;
-- (void)readPSListControllerPropertiesWithDictionary:(id)arg1;
 - (void)setReusesCells:(BOOL)arg1;
 - (void)clearCache;
 - (void)setCachesCells:(BOOL)arg1;
@@ -172,11 +170,10 @@
 - (void)reloadSpecifier:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
+- (id)bundle;
 - (void)setTitle:(id)arg1;
 - (void)handleURL:(id)arg1;
-- (id)bundle;
 - (void)reload;
-- (void)setMarginWidth:(id)arg1;
 - (id)table;
 - (id)init;
 - (void)dealloc;

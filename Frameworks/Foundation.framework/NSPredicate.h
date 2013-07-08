@@ -10,8 +10,8 @@
 }
 
 + (id)predicateWithBlock:(id)arg1;
-+ (id)predicateWithValue:(BOOL)arg1;
 + (id)predicateWithFormat:(id)arg1;
++ (id)predicateWithValue:(BOOL)arg1;
 + (void)initialize;
 + (id)predicateWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)predicateWithFormat:(id)arg1 arguments:(char *)arg2;

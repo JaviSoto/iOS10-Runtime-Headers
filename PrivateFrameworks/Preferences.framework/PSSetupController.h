@@ -10,8 +10,8 @@
     PSRootController *_parentRootController;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)popControllerOnParent;
 - (void)pushControllerOnParentWithSpecifier:(id)arg1;

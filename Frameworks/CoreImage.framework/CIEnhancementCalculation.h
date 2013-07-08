@@ -2,17 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class EnhancementHistogram;
+@class CIEnhancementHistogram;
 
 @interface CIEnhancementCalculation : NSObject  {
     struct { 
         float i; 
         float q; 
     } originalFaceColor;
-    EnhancementHistogram *lumHist;
-    EnhancementHistogram *rgbSumHist;
-    EnhancementHistogram *satHist;
-    EnhancementHistogram *borderHist;
+    CIEnhancementHistogram *lumHist;
+    CIEnhancementHistogram *rgbSumHist;
+    CIEnhancementHistogram *satHist;
+    CIEnhancementHistogram *borderHist;
     float exposureValue;
     float maxShadow;
     float minShadow;
@@ -23,10 +23,10 @@
 }
 
 @property(readonly) struct { float x1; float x2; } originalFaceColor;
-@property(readonly) EnhancementHistogram * lumHist;
-@property(readonly) EnhancementHistogram * rgbSumHist;
-@property(readonly) EnhancementHistogram * satHist;
-@property(readonly) EnhancementHistogram * borderHist;
+@property(readonly) CIEnhancementHistogram * lumHist;
+@property(readonly) CIEnhancementHistogram * rgbSumHist;
+@property(readonly) CIEnhancementHistogram * satHist;
+@property(readonly) CIEnhancementHistogram * borderHist;
 
 + (float)bestWarmthForI:(float)arg1 q:(float)arg2 percentChange:(float*)arg3;
 

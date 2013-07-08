@@ -117,6 +117,7 @@
 - (void)setPropertyValue:(id)arg1 forName:(id)arg2;
 - (void)removeComponent:(id)arg1;
 - (void)addComponent:(id)arg1;
+- (void)setComponents:(id)arg1;
 - (void)setProperty:(id)arg1 forName:(id)arg2;
 - (id)propertiesForName:(id)arg1;
 - (id)parametersToIncludeForChecksumVersion:(int)arg1;
@@ -144,10 +145,10 @@
 - (void)setAttendee:(id)arg1;
 - (unsigned int)sequence;
 - (void)setUid:(id)arg1;
+- (id)location;
 - (void)setSummary:(id)arg1;
 - (id)summary;
 - (id)attach;
-- (id)location;
 - (void)setDuration:(id)arg1;
 - (int)status;
 - (void)setLocation:(id)arg1;
@@ -156,7 +157,6 @@
 - (id)debugDescription;
 - (void)dealloc;
 - (id)description;
-- (void)setComponents:(id)arg1;
 - (id)uid;
 - (void)setUrl:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;

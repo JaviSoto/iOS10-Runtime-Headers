@@ -28,8 +28,6 @@
 @property BOOL isMarkedIncorrect;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasIsMarkedIncorrect:(BOOL)arg1;
 - (void)setHasField:(BOOL)arg1;
 - (void)setIsMarkedIncorrect:(BOOL)arg1;
@@ -48,6 +46,8 @@
 - (void)setCorrectedValue:(id)arg1;
 - (void)setOriginalValue:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

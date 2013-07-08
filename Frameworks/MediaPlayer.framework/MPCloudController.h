@@ -28,6 +28,7 @@
 + (BOOL)isMediaApplication;
 + (id)sharedCloudController;
 
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (BOOL)isCellularDataRestricted;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)isUpdateInProgress;
@@ -41,7 +42,6 @@
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)canShowCloudDownloadButtons;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (void)isCellularDataRestrictedDidChangeNotification:(id)arg1;
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;

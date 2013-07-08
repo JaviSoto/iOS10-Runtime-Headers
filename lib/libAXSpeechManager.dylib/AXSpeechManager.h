@@ -32,11 +32,11 @@
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
 - (BOOL)isPaused;
-- (void)pauseSpeaking:(int)arg1;
-- (void)dispatchSpeechAction:(id)arg1;
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
 - (id)originalSpeechRateForJobOverride;
 - (void)stopSpeaking;
+- (void)pauseSpeaking:(int)arg1;
+- (void)dispatchSpeechAction:(id)arg1;
 - (void)setSpeechEnabled:(BOOL)arg1;
 - (void)_testSpeechTransforms;
 - (void)_speechJobFinished:(BOOL)arg1 action:(id)arg2;

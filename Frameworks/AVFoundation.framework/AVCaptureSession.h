@@ -18,9 +18,9 @@
 @property(readonly) struct OpaqueCMClock { }* masterClock;
 
 + (BOOL)automaticallyNotifiesObserversOfMasterClock;
-+ (id)allSessionPresets;
 + (id)publicSessionPresets;
 + (id)_createCaptureOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3 errorStatus:(int*)arg4;
++ (id)allSessionPresets;
 + (id)avCaptureSessionPlist;
 + (void)initialize;
 

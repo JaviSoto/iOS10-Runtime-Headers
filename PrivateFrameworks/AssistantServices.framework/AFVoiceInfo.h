@@ -11,7 +11,7 @@
 }
 
 @property(readonly) NSString * languageCode;
-@property(readonly) int gender;
+@property int gender;
 @property BOOL isCustom;
 
 + (BOOL)supportsSecureCoding;
@@ -19,6 +19,7 @@
 - (BOOL)isCustom;
 - (void)setIsCustom:(BOOL)arg1;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(BOOL)arg3;
+- (void)setGender:(int)arg1;
 - (int)gender;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

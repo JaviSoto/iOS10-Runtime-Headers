@@ -54,8 +54,8 @@
 + (id)_loadResourcesForStyle:(int)arg1;
 + (BOOL)_isModernStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setWidth:(float)arg1;
 - (float)width;

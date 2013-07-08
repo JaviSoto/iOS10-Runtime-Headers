@@ -8,8 +8,8 @@
     NSString *_notChargingString;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;

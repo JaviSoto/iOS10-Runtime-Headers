@@ -109,6 +109,7 @@
 + (id)aa_dataclassesBoundToPrimaryAppleAccount;
 
 - (id)accountPropertyForKey:(id)arg1;
+- (id)objectID;
 - (id)accountType;
 - (void)setAccountType:(id)arg1;
 - (void)setAccountPropertiesTransformer:(id)arg1;
@@ -142,6 +143,7 @@
 - (id)initWithAccountType:(id)arg1;
 - (id)shortDebugName;
 - (void)_loadAllCachedProperties;
+- (void)reload;
 - (id)credential;
 - (id)dirtyProperties;
 - (BOOL)isEnabledForDataclass:(id)arg1;
@@ -159,6 +161,7 @@
 - (id)enabledAndSyncableDataclasses;
 - (id)enabledDataclasses;
 - (id)provisionedDataclasses;
+- (BOOL)isActive;
 - (id)creationDate;
 - (void)_markAccountPropertyDirty:(id)arg1;
 - (id)accountPropertiesTransformer;
@@ -184,9 +187,6 @@
 - (void)_setObjectID:(id)arg1;
 - (BOOL)isDirty;
 - (void)_setAccountStore:(id)arg1;
-- (BOOL)isActive;
-- (id)objectID;
-- (void)reload;
 - (void)refresh;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -245,9 +245,9 @@
 - (BOOL)aa_isPrimaryAccount;
 - (void)aa_setPassword:(id)arg1;
 - (id)aa_primaryEmail;
-- (id)aa_personID;
 - (id)aa_authToken;
 - (id)aa_password;
+- (id)aa_personID;
 - (void)aa_removeCerts;
 - (void)aa_configureCerts;
 

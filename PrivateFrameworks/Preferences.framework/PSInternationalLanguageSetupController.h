@@ -8,8 +8,8 @@
     NSString *_languageToSet;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)language:(id)arg1;
 - (void)setLanguage:(id)arg1 specifier:(id)arg2;

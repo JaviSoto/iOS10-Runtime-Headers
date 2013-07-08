@@ -51,8 +51,8 @@
 - (id)characterProperties;
 - (id)paragraphProperties;
 - (id)text;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (void)setText:(id)arg1;

@@ -185,6 +185,7 @@
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (void)resetExternalDataReferencesDirectories;
 - (id)channels;
+- (void)_disconnect;
 - (void)_performPostSaveTasks;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
@@ -192,6 +193,7 @@
 - (void)commitTransaction;
 - (void)beginTransaction;
 - (id)model;
+- (void)setCurrentContext:(id)arg1;
 - (id)adapter;
 - (id)entityForFetchRequest:(id)arg1;
 - (id)rowForObjectID:(id)arg1;
@@ -217,8 +219,6 @@
 - (id)externalDataReferencesDirectory;
 - (id)objectIDFactoryForEntity:(id)arg1;
 - (id)metadata;
-- (void)_disconnect;
-- (void)setCurrentContext:(id)arg1;
 - (void)dealloc;
 - (id)identifier;
 - (id)presentedItemOperationQueue;

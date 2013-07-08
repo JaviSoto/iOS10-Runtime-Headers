@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UITableView, NSMutableArray, RUITableHeaderView, UIPickerView, NSDictionary, RUIObjectModel, NSString, UIDatePicker, RUITableViewRow;
+@class RUITableViewRow, UITableView, NSMutableArray, UIPickerView, RUITableHeaderView, NSDictionary, RUIObjectModel, NSString, UIDatePicker, _UIBackdropView;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     NSMutableArray *_sections;
@@ -11,6 +11,7 @@
     BOOL _showSelectPicker;
     UIDatePicker *_datePicker;
     BOOL _showDatePicker;
+    _UIBackdropView *_pickerBackdrop;
     RUITableViewRow *_defaultFirstResponderRow;
     BOOL _viewShrunk;
     RUIObjectModel *_objectModel;
@@ -54,6 +55,7 @@
 - (void)rowIsFirstResponder:(id)arg1;
 - (id)sourceURLForRUITableViewRow;
 - (void)textFieldStartedEditing:(id)arg1;
+- (Class)tableCellClassForTableViewRow:(id)arg1;
 - (void)setFooterViewAttributes:(id)arg1;
 - (void)setHeaderViewAttributes:(id)arg1;
 - (id)objectModelRowForIndexPath:(id)arg1;
@@ -76,6 +78,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(int)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;

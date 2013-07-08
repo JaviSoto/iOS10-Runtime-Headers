@@ -17,13 +17,13 @@
 + (id)valueWithEntry:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)timestamp;
 - (BOOL)matchesEntry:(id)arg1;
 - (void)setShortcut:(id)arg1;
 - (id)shortcut;
 - (void)setPhrase:(id)arg1;
 - (id)phrase;
 - (void)setTimestamp:(id)arg1;
-- (id)timestamp;
 - (void)dealloc;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

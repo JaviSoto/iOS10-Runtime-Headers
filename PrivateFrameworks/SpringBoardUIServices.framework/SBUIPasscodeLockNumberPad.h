@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UIView, UILabel, UIControl<SBUIPasscodeNumberPadButton>, UIColor, <SBUIPasscodeLockNumberPadDelegate>, SBNumberPadWithDelegate;
+@class SBNumberPadWithDelegate, UILabel, UIControl<SBUIPasscodeNumberPadButton>, UIView, <SBUIPasscodeLockNumberPadDelegate>, UIColor, NSArray;
 
 @interface SBUIPasscodeLockNumberPad : UIView <SBNumberPadDelegate> {
     SBNumberPadWithDelegate *_numberPad;
@@ -24,6 +24,7 @@
 @property BOOL showsBackspaceButton;
 @property BOOL showsEmergencyCallButton;
 @property BOOL showsCancelButton;
+@property(readonly) NSArray * buttons;
 @property(retain) UIControl<SBUIPasscodeNumberPadButton> * downButton;
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inputButtonCircleSpacing;
@@ -51,6 +52,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)buttons;
 - (void)setBackgroundAlpha:(float)arg1;
 - (BOOL)showsCancelButton;
 - (id)initWithDefaultSize;

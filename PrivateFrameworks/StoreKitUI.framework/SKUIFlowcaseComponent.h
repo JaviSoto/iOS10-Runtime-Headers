@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface SKUIFlowcaseComponent : SKUIPageComponent  {
+@interface SKUIFlowcaseComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSArray *_flowcaseItems;
     int _missingItemCount;
 }
@@ -19,6 +19,7 @@
 - (BOOL)isMissingItemData;
 - (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
 - (int)componentType;
+- (id)valueForMetricsField:(id)arg1;
 - (void).cxx_destruct;
 
 @end

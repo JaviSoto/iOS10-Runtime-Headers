@@ -62,6 +62,7 @@
 + (id)_keepAliveCachePath;
 + (Class)growthAlgorithmClass;
 
+- (void)log:(id)arg1;
 - (double)keepAliveGracePeriod;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
 - (void)setEnableNonCellularConnections:(BOOL)arg1;
@@ -121,6 +122,5 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)isRunning;
-- (void)log:(id)arg1;
 
 @end

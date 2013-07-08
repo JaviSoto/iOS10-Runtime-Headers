@@ -20,10 +20,10 @@
 - (void)setHintCapacity:(unsigned int)arg1;
 - (unsigned int)capacity;
 - (unsigned int)elementSize;
-- (void*)elementAtIndex:(unsigned int)arg1;
 - (void)removeElementAtIndex:(unsigned int)arg1;
 - (void)insertElements:(void*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (id)initWithElementSize:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (void*)elementAtIndex:(unsigned int)arg1;
 - (id)init;
 - (unsigned int)count;
 - (void)dealloc;

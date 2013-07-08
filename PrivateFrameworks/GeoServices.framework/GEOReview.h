@@ -28,8 +28,6 @@
 @property(retain) NSString * uid;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasReviewTime:(BOOL)arg1;
 - (BOOL)hasUid;
 - (id)reviewer;
@@ -46,6 +44,8 @@
 - (void)setScore:(double)arg1;
 - (BOOL)hasScore;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

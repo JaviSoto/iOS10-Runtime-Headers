@@ -9,8 +9,8 @@
     UIImageView *_disclosureView;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)dealloc;

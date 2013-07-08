@@ -67,6 +67,7 @@
 - (id)MMCSError;
 - (void)setMMCSItemID:(unsigned long long)arg1;
 - (unsigned long long)MMCSItemID;
+- (id)MMCSItemType;
 - (int)MMCSOpenNewFileDescriptor;
 - (id)metadataValueForKey:(id)arg1;
 - (BOOL)isPhoto;

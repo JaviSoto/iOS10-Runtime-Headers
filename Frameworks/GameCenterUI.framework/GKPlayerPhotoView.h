@@ -15,6 +15,7 @@
 + (void)initialize;
 
 - (int)isOnAdaptiveBackground;
+- (void)refreshPhotoWithCompletionHandler:(id)arg1;
 - (void)refreshPhoto;
 - (void)setOnAdaptiveBackground:(int)arg1;
 - (void)setPlayer:(id)arg1;

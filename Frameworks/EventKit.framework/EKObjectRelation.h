@@ -30,8 +30,8 @@
 - (void)didCommit;
 - (id)owner;
 - (void)rollback;
-- (BOOL)isDirty;
 - (void)reset;
+- (BOOL)isDirty;
 - (void)refresh;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

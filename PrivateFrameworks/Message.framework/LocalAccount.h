@@ -33,7 +33,7 @@
 - (id)displayName;
 - (void)setUsername:(id)arg1;
 - (BOOL)isActive;
-- (void)setHostname:(id)arg1;
 - (id)uniqueId;
+- (void)setHostname:(id)arg1;
 
 @end

@@ -10,10 +10,12 @@
     BOOL showsExtendedList;
     BOOL followsZhuyin;
     BOOL spaceConfirmation;
+    BOOL _hasAutocorrection;
     BOOL _showsCandidatesInLayout;
 }
 
 @property BOOL hasInput;
+@property BOOL hasAutocorrection;
 @property BOOL hasCandidates;
 @property BOOL hasCandidateSelected;
 @property BOOL hasNextPage;
@@ -24,6 +26,7 @@
 
 
 - (BOOL)showsCandidatesInLayout;
+- (BOOL)hasAutocorrection;
 - (BOOL)spaceConfirmation;
 - (BOOL)followsZhuyin;
 - (BOOL)showsExtendedList;
@@ -37,6 +40,7 @@
 - (void)setHasNextPage:(BOOL)arg1;
 - (void)setHasCandidateSelected:(BOOL)arg1;
 - (void)setHasCandidates:(BOOL)arg1;
+- (void)setHasAutocorrection:(BOOL)arg1;
 - (void)setHasInput:(BOOL)arg1;
 - (BOOL)hasNextPage;
 

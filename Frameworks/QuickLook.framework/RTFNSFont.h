@@ -16,8 +16,8 @@
 
 + (id)userFixedPitchFontOfSize:(float)arg1;
 + (id)fontWithName:(id)arg1 size:(float)arg2;
-+ (id)systemFontOfSize:(float)arg1;
 + (id)userFontOfSize:(float)arg1;
++ (id)systemFontOfSize:(float)arg1;
 
 - (float)fontSize;
 - (unsigned int)mostCompatibleStringEncoding;

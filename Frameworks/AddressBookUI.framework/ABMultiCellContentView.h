@@ -40,8 +40,8 @@
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 + (Class)classForProperty:(int)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setShouldIgnoreEndEditing:(BOOL)arg1;
 - (BOOL)shouldIgnoreEndEditing;
@@ -98,10 +98,10 @@
 - (void)setAbCellStyle:(int)arg1;
 - (void)reloadFromModel;
 - (BOOL)isEditing;
+- (void)reload;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)reload;
 - (id)init;
 - (void)dealloc;
 - (void)setCell:(id)arg1;

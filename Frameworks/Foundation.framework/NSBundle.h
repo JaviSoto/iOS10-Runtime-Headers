@@ -42,16 +42,14 @@
 + (id)_typologyBundle;
 + (id)_rivenBundle;
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 + (id)__geoBundle;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_gkBundleWithIdentifier:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 + (id)pathForITunesStoreResource:(id)arg1 ofType:(id)arg2;
 + (id)mediaPlayerBundle;
-+ (id)__vkBundle;
-+ (id)_mapkitBundle;
 + (id)pathForITunesResource:(id)arg1 ofType:(id)arg2;
 
 - (id)objectForInfoDictionaryKey:(id)arg1;
@@ -124,6 +122,8 @@
 - (id)_gkPathForInviteSound;
 - (BOOL)_gkIsBadgingEnabled;
 - (id)_gkPathForSoundWithName:(id)arg1;
+- (BOOL)_gkIsGameCenterUIService;
+- (BOOL)_gkIsGameCenter;
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
 - (id)_gkLocalizedName;

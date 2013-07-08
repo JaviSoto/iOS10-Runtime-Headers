@@ -88,6 +88,12 @@
         float x; 
         float y; 
     } _previousCenterOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _previousContentInset;
     float _currentInteractiveTransitionProgress;
     float _previousInteractiveTransitionProgress;
     _UIDynamicAnimationGroup *_endInteractiveTransitionAnimationGroup;
@@ -145,9 +151,9 @@
 @property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
@@ -216,9 +222,9 @@
 - (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (void)_updateTrackedLayoutValuesWith:(id)arg1;
 - (void)_updateTransitionWithProgress:(float)arg1;
+- (void)setCollectionViewLayout:(id)arg1;
 - (void)_setNavigationCompletion:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id)arg4;
-- (BOOL)_isTransitionVisibleFrom:(id)arg1 toLayoutAttributes:(id)arg2;
 - (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(BOOL)arg8 customAnimationsType:(unsigned int)arg9;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
@@ -257,7 +263,6 @@
 - (id)indexPathsForSelectedItems;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
-- (void)setCollectionViewLayout:(id)arg1;
 - (id)_currentTouch;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
@@ -283,6 +288,7 @@
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;
@@ -311,15 +317,13 @@
 - (int)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityCollectionCellElementForIndexPath:(id)arg1;
 - (id)_accessibilityFuzzyHitTest:(struct CGPoint { float x1; float x2; }*)arg1 withEvent:(id)arg2;
-- (id)_accessibilitySortedElementsWithin;
-- (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (id)accessibilityCellForRowAtIndexPath:(id)arg1;
 - (void)_accessibilityInitializeInternalData:(id)arg1;
 - (void)_resetAXData;
 - (BOOL)accessibilityShouldSpeakItemReorderEvents;
 - (id)accessibilityCreatePrepareCellForIndexPath:(id)arg1;
 - (id)axData;
-- (BOOL)accessibilityShouldBypassColletionViewAccessibility;
+- (BOOL)accessibilityCollectionViewBehavesLikeUIViewAccessibility;
 - (int)_axGlobalRowForIndexPath:(id)arg1;
 - (id)_accessibilityOtherCollectionViewItems;
 - (id)_axIndexPathForGlobalRow:(int)arg1;
@@ -328,6 +332,9 @@
 - (void)setAccessibilityShouldBypassColletionViewAccessibility:(BOOL)arg1;
 - (BOOL)isAccessibilityOpaqueElementProvider;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityUserTestingVisibleCells;
+- (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
+- (id)_accessibilitySortedElementsWithin;
 - (id)_accessibilityScannerGroupElements;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;

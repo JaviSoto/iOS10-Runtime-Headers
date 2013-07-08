@@ -22,6 +22,7 @@
 @property(readonly) int height;
 
 
+- (id)location;
 - (int)height;
 - (int)width;
 - (id)contentWindow;
@@ -37,7 +38,6 @@
 - (id)frameBorder;
 - (void)setSrc:(id)arg1;
 - (id)src;
-- (id)location;
 - (void)setMarginWidth:(id)arg1;
 - (id)marginWidth;
 - (void)setLocation:(id)arg1;

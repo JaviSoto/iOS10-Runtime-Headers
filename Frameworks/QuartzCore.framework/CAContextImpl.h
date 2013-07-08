@@ -14,6 +14,7 @@
 
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 - (unsigned int)createSlot;
+- (struct CGColorSpace { }*)colorSpace;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (struct Context { }*)renderContext;
 - (void)setLayer:(id)arg1;
@@ -22,7 +23,6 @@
 - (id)initRemoteWithOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
 - (id)layer;
-- (struct CGColorSpace { }*)colorSpace;
 - (void)invalidate;
 - (void)dealloc;
 - (BOOL)valid;

@@ -18,6 +18,7 @@
 @property(readonly) IDSAccount * account;
 
 
+- (BOOL)sendServerMessage:(id)arg1 command:(id)arg2;
 - (void)setDelegateCapabilities:(unsigned int)arg1;
 - (void)account:(id)arg1 devicesChanged:(id)arg2;
 - (void)account:(id)arg1 isActiveChanged:(BOOL)arg2;
@@ -30,8 +31,8 @@
 - (void)requestKeepAlive;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (void)_connect;
 - (BOOL)isActive;
+- (void)_connect;
 - (id)account;
 - (void)dealloc;
 

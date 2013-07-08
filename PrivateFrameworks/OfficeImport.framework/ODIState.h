@@ -30,6 +30,7 @@
 
 - (void)setDefaultStyleLabelName:(id)arg1 forPointType:(int)arg2;
 - (id)defaultStyleLabelNameForPointType:(int)arg1;
+- (int)pointIndex;
 - (id)presentationNameForPointType:(int)arg1;
 - (id)initWithDiagram:(id)arg1 group:(id)arg2 drawingTheme:(id)arg3;
 - (void)setPointIndex:(int)arg1;
@@ -41,7 +42,6 @@
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)diagram;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
-- (int)pointIndex;
 - (int)pointCount;
 - (id)textStyle;
 - (void)setTextStyle:(id)arg1;

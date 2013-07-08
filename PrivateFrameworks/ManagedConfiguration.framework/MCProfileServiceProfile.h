@@ -23,6 +23,7 @@
 - (BOOL)confirmInstallation;
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;
 - (id)enrollmentIdentityPersistentID;
+- (id)challenge;
 - (id)deviceAttributes;
 - (void)setURLString:(id)arg1;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
@@ -31,7 +32,6 @@
 - (id)payloads;
 - (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
 - (id)stubDictionary;
-- (id)challenge;
 - (id)URLString;
 - (void).cxx_destruct;
 - (id)description;

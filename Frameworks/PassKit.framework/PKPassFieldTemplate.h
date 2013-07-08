@@ -41,6 +41,7 @@
 - (void)setSuppressesLabel:(BOOL)arg1;
 - (BOOL)suppressesLabel;
 - (Class)viewSubclass;
+- (id)labelFont;
 - (void)setBoxedValueCanWrap:(id)arg1;
 - (id)boxedValueCanWrap;
 - (void)setBoxedSuppressesEmptyLabel:(id)arg1;
@@ -58,7 +59,6 @@
 - (float)verticalPadding;
 - (void)setLabelFont:(id)arg1;
 - (void)dealloc;
-- (id)labelFont;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
 

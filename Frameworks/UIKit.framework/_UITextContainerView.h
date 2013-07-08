@@ -5,9 +5,11 @@
 @class NSTextContainer, NSDictionary, NSLayoutManager, NSTextStorage;
 
 @interface _UITextContainerView : UIView <NSUITextViewCommonMethods> {
-    struct CGSize { 
-        float width; 
-        float height; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _textContainerInset;
     struct CGPoint { 
         float x; 
@@ -34,7 +36,7 @@
 @property NSTextContainer * textContainer;
 @property(readonly) NSTextStorage * textStorage;
 @property(readonly) NSLayoutManager * layoutManager;
-@property struct CGSize { float x1; float x2; } textContainerInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textContainerInset;
 @property(getter=isHorizontallyResizable) BOOL horizontallyResizable;
 @property(getter=isVerticallyResizable) BOOL verticallyResizable;
 @property struct CGSize { float x1; float x2; } minSize;
@@ -51,16 +53,16 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTextContainer:(id)arg1;
-- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })textContainerInset;
-- (id)linkTextAttributes;
-- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
-- (void)invalidateTextContainerOrigin;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
-- (id)textStorage;
+- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
 - (id)layoutManager;
+- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
+- (void)invalidateTextContainerOrigin;
+- (id)linkTextAttributes;
 - (int)layoutOrientation;
+- (id)textStorage;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -72,7 +74,7 @@
 - (BOOL)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withExtension:(BOOL)arg2;
 - (void)_ensureMinAndMaxSizesConsistentWithBounds;
 - (void)setLinkTextAttributes:(id)arg1;
-- (void)setTextContainerInset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTextContainerInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHorizontallyResizable:(BOOL)arg1;
 - (BOOL)usesTiledViews;
 - (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
@@ -86,6 +88,7 @@
 - (struct CGSize { float x1; float x2; })minSize;
 - (void)_didScroll;
 - (void)sizeToFit;
+- (void)tintColorDidChange;
 - (struct CGSize { float x1; float x2; })maxSize;
 
 @end

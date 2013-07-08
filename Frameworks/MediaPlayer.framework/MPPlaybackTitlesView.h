@@ -19,8 +19,8 @@
 @property unsigned int marqueeScrollableIndex;
 @property(readonly) UIView * contentView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setShowingLoadingUI:(BOOL)arg1;
 - (void)setMarqueeScrollableIndex:(unsigned int)arg1;

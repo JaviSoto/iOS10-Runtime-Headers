@@ -71,6 +71,7 @@
 @property(retain) NSValue * splitLeftRect;
 @property(retain) NSValue * splitRightRect;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddedInsets;
 
 + (id)geometryWithShape:(id)arg1;
 + (id)geometryWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -80,9 +81,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)adjustForLeftTranslucentGapsInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)adjustForTranslucentGapsInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)adjustForTranslucentGapsWithSize:(struct CGSize { float x1; float x2; })arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (unsigned int)adjustForTranslucentGapsWithSize:(struct CGSize { float x1; float x2; })arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddedInsets;
 - (id)similarShape;
 - (id)iPadVariantGeometries:(unsigned int)arg1;
 - (id)iPhoneVariantGeometries:(unsigned int)arg1;
@@ -90,8 +90,6 @@
 - (void)overlayWithGeometry:(id)arg1;
 - (void)setDetachedVariants:(BOOL)arg1;
 - (float)roundRectRadius;
-- (id)splitRightRect;
-- (id)splitLeftRect;
 - (BOOL)detachedVariants;
 - (int)popupBias;
 - (int)roundRectCorners;
@@ -99,17 +97,19 @@
 - (id)initWithShape:(id)arg1;
 - (void)applyInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPopupSource:(struct CGPoint { float x1; float x2; })arg1;
-- (int)adjustForTranslucentGapsInFrame_10Key:(float)arg1 isInBottomRow:(BOOL)arg2;
-- (id)copyForPopupDirection:(int)arg1;
-- (id)copyForFlickDirection:(int)arg1;
-- (void)adjustToTopIfNeeded;
-- (void)makeIntegral;
+- (unsigned int)adjustForTranslucentGapsInFrameWithSize_10Key:(struct CGSize { float x1; float x2; })arg1 centerX:(float)arg2 isInBottomRow:(BOOL)arg3;
+- (id)copyForPopupDirection:(int)arg1 scale:(float)arg2;
+- (id)copyForFlickDirection:(int)arg1 scale:(float)arg2;
+- (void)adjustToTopWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)makeIntegralWithScale:(float)arg1;
 - (void)applyOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (id)_copyForDirection:(int)arg1 positionFactor:(float)arg2 sizeFactor:(float)arg3;
+- (id)_copyForDirection:(int)arg1 positionFactor:(float)arg2 sizeFactor:(float)arg3 scale:(float)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })symbolFrame;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
 - (int)flickDirection;
 - (void)setFlickDirection:(int)arg1;
+- (id)splitRightRect;
+- (id)splitLeftRect;
 - (void)setSplitRightRect:(id)arg1;
 - (void)setSplitLeftRect:(id)arg1;
 - (void)setRoundRectRadius:(float)arg1;

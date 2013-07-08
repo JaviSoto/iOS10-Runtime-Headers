@@ -28,11 +28,11 @@
 + (id)clearColor;
 + (id)whiteColor;
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
-+ (id)redColor;
 + (id)brownColor;
 + (id)blueColor;
++ (id)redColor;
++ (id)colorWithPatternImage:(id)arg1;
 + (id)blackColor;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)purpleColor;
@@ -70,12 +70,12 @@
 - (float)redComponent;
 - (BOOL)isBlack;
 - (BOOL)isOpaque;
-- (struct CGColor { }*)CGColor;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (float)alphaComponent;
-- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)colorWithAlphaComponent:(float)arg1;
+- (void)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (struct CGColor { }*)CGColor;
 - (void)set;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

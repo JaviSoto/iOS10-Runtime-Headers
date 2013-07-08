@@ -53,6 +53,7 @@
 - (void)launchAssetsd;
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (void)createPhotoLibraryDatabase;
+- (void)deleteAssetWithURL:(id)arg1 handler:(id)arg2;
 - (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
 - (void)addGroupWithName:(id)arg1 handler:(id)arg2;
 - (id)imageDataForAsset:(id)arg1 format:(int)arg2;
@@ -64,6 +65,7 @@
 - (void)waitUntilConnectionSendsAllMessages;
 - (id)sendQueue;
 - (id)replyQueue;
+- (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 - (void)getLibrarySizes:(id)arg1;
 - (void)dataMigrationWillFinish;
 - (void)repairPotentialModelCorruption;

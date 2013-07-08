@@ -4,19 +4,19 @@
 
 @class NSString;
 
-@interface SKUIPageComponent : NSObject  {
-    NSString *_metricsLocationIdentifier;
+@interface SKUIPageComponent : NSObject <SSMetricsEventFieldProvider> {
+    int _metricsLocationPosition;
 }
 
 @property(readonly) int componentType;
 @property(getter=isMissingItemData,readonly) BOOL missingItemData;
 @property(readonly) NSString * metricsElementName;
-@property(copy) NSString * metricsLocationIdentifier;
+@property int metricsLocationPosition;
 
 
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
-- (void)_setMetricsLocationIdentifier:(id)arg1;
-- (id)metricsLocationIdentifier;
+- (void)_setMetricsLocationPosition:(int)arg1;
+- (int)metricsLocationPosition;
 - (void)_enumerateMissingItemIdentifiersFromLockups:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
 - (void)_enumerateMissingItemIdentifiersFromLinks:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
 - (void)_enumerateMissingItemIdentifiersFromBricks:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
@@ -25,6 +25,6 @@
 - (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
-- (void).cxx_destruct;
+- (id)valueForMetricsField:(id)arg1;
 
 @end

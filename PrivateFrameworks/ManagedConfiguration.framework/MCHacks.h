@@ -7,6 +7,7 @@
 
 + (id)sharedHacks;
 
+- (BOOL)isSetupBuddyDone;
 - (void)_sendChangeNotificationsBasedOnDefaultsRemovalByDomain:(id)arg1;
 - (void)_sendChangeNotificationsBasedOnDefaultsAdditionByDomain:(id)arg1;
 - (id)_deviceSpecificDefaultSettings;
@@ -17,5 +18,6 @@
 - (id)_selectLargestNumberFromSortedArray:(id)arg1 equalToOrLessThanNumber:(id)arg2;
 - (id)_permittedGracePeriodNumbers;
 - (BOOL)_applyHeuristicsToRestrictions:(id)arg1 forProfile:(id)arg2 outError:(id*)arg3;
+- (BOOL)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
 
 @end

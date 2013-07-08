@@ -21,7 +21,7 @@
 - (void)setPositionY:(id)arg1;
 - (void)setPositionX:(id)arg1;
 - (void)setImpressions:(id)arg1;
-- (void)setLocationDescription:(id)arg1;
+- (void)setLocationWithEventLocations:(id)arg1;
 - (void)setTargetType:(id)arg1;
 - (void)setActionDetails:(id)arg1;
 - (void)setTargetURL:(id)arg1;
@@ -29,11 +29,12 @@
 - (void)setTargetIdentifier:(id)arg1;
 - (id)targetURL;
 - (id)targetType;
+- (void)setLocationDescription:(id)arg1;
+- (id)locationDescription;
 - (id)actionDetails;
 - (id)impressions;
 - (id)positionY;
 - (id)positionX;
-- (id)locationDescription;
 - (void)setActionType:(id)arg1;
 - (id)actionType;
 - (id)init;

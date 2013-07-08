@@ -4,7 +4,7 @@
 
 @class NSDate, NSString, NSTimeZone;
 
-@interface EKEventPredicate : EKPredicate  {
+@interface EKEventPredicate : EKPredicate <EKDefaultPropertiesLoading> {
     NSDate *_startDate;
     NSDate *_endDate;
     NSString *_uuid;
@@ -28,6 +28,7 @@
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 eventUUID:(id)arg4 calendars:(id)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
+- (id)defaultPropertiesToLoad;
 - (id)startDate;
 - (id)timeZone;
 - (BOOL)isEqual:(id)arg1;

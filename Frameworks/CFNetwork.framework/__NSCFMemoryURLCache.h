@@ -5,6 +5,7 @@
 @class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSMutableArray;
 
 @interface __NSCFMemoryURLCache : NSObject  {
+    id _internal;
     unsigned int _memoryCapacity;
     unsigned int _currentLength;
     NSMutableDictionary *_memoryStorage;

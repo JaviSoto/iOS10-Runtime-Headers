@@ -39,6 +39,7 @@
 @property(copy) NSString * TVSignalType;
 
 
+- (id)uniqueId;
 - (void)setOrientation:(id)arg1;
 - (id)TVSignalType;
 - (void)setTVSignalType:(id)arg1;
@@ -87,7 +88,6 @@
 - (void)dealloc;
 - (id)description;
 - (float)contrast;
-- (id)uniqueId;
 - (unsigned int)displayId;
 - (float)overscanAmount;
 - (int)tag;

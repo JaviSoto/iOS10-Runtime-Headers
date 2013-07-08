@@ -42,13 +42,12 @@
 - (id)friendRequestTintColor;
 - (id)disabledButtonTitleColor;
 - (id)monogramBackgroundColor;
-- (id)textOnDarkBackgroundColor;
 - (id)removeItemTextColor;
 - (id)bubbleTextColor;
 - (id)friendTintColor;
 - (id)localPlayerTintColor;
+- (id)textOnDarkBackgroundColor;
 - (id)friendRequestCaptionTintColor;
-- (id)windowBackgroundColor;
 - (id)systemInteractionColor;
 - (id)emphasizedTextOnDarkBackgroundColor;
 - (id)emphasizedTextColor;
@@ -59,6 +58,7 @@
 - (id)viewBackgroundColor;
 - (id)cellActionColor;
 - (id)cellActionDestructiveColor;
+- (id)windowBackgroundColor;
 - (id)standardTextColor;
 - (id)selectedTextColor;
 

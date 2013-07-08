@@ -13,8 +13,8 @@
 
 - (void)connect;
 - (id)source;
-- (id)label;
 - (void)setSource:(id)arg1;
+- (id)label;
 - (void)dealloc;
 - (void)setDestination:(id)arg1;
 - (id)destination;

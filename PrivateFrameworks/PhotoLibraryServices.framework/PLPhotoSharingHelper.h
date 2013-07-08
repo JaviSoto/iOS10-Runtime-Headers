@@ -19,6 +19,7 @@
 + (void)markAlbumGUIDAsViewed:(id)arg1 clearUnseenAssetsCount:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2 derivativeType:(int)arg3 withSpecificationInfo:(id)arg4;
 + (id)temporaryThumbnailPathForCollectionGUID:(id)arg1;
++ (id)temporaryDerivativePathForCollectionGUID:(id)arg1;
 + (id)derivativesForMasterAsset:(id)arg1 withSpecifications:(id)arg2;
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
 + (void)deleteCommentWithGUIDFromServer:(id)arg1;
@@ -41,6 +42,7 @@
 + (BOOL)canAcceptPendingInvitationForAlbum:(id)arg1 error:(id*)arg2;
 + (BOOL)canCreateStreamInPhotoLibrary:(id)arg1 error:(id*)arg2;
 + (int)maxVideoLengthForPublishing;
++ (int)maxNumDerivativesToDownloadPerPush;
 + (int)maxCharactersPerComment;
 + (int)maxSubscribersPerStream;
 + (int)maxAssetsPerStream;
@@ -66,7 +68,7 @@
 + (struct CGSize { float x1; float x2; })dimensionsOfVideoAtURL:(id)arg1;
 + (id)temporarySmallVideoDerivativePathForCollectionGUID:(id)arg1;
 + (id)temporaryVideoPosterFramePathForCollectionGUID:(id)arg1;
-+ (id)temporaryDerivativePathForCollectionGUID:(id)arg1;
++ (id)temporaryVideoPathForCollectionGUID:(id)arg1;
 + (void)unsubscribeFromAlbum:(id)arg1;
 + (BOOL)isCellularConnection;
 + (void)writeUploadDebugBreadcrumbForAssetCollections:(id)arg1 state:(int)arg2 error:(id)arg3;

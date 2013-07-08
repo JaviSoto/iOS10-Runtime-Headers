@@ -15,6 +15,7 @@
     BOOL _loggingEnabled;
     SSMetricsConfiguration *_pageConfiguration;
     NSString *_pageContext;
+    NSString *_topic;
     NSString *_userAgent;
     NSString *_windowOrientation;
 }
@@ -25,6 +26,7 @@
 @property(copy) NSNumber * accountIdentifier;
 @property(copy) NSString * applicationIdentifier;
 @property(copy) NSString * pageContext;
+@property(copy) NSString * topic;
 @property(copy) NSString * userAgent;
 @property(copy) NSString * windowOrientation;
 
@@ -34,11 +36,17 @@
 - (void)flushImmediately;
 - (void)setPageContext:(id)arg1;
 - (void)_recordActiveImpressions;
+- (id)itemOfferClickEventWithItem:(id)arg1 locationPosition:(int)arg2;
+- (id)clickEventWithItem:(id)arg1 locationPosition:(int)arg2;
+- (id)locationWithPosition:(int)arg1 type:(id)arg2 fieldData:(id)arg3;
+- (id)locationWithPageComponent:(id)arg1;
 - (BOOL)canRecordEventWithType:(id)arg1;
 - (id)activeImpressionsSession;
 - (void)recordEvent:(id)arg1;
+- (void)pingURLs:(id)arg1;
 - (void)setPageConfiguration:(id)arg1;
 - (void)setWindowOrientation:(id)arg1;
+- (void)setTopic:(id)arg1;
 - (id)windowOrientation;
 - (id)pageContext;
 - (void)setApplicationIdentifier:(id)arg1;
@@ -47,6 +55,7 @@
 - (id)compoundStringWithElements:(id)arg1;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
+- (id)topic;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (id)applicationIdentifier;

@@ -2,17 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class SBFWallpaperPreBlurSettings, _UILegibilitySettings, UIImageView, NSTimer, SBFWallpaperParallaxSettings, _UILegibilitySettingsProvider, <SBFWallpaperViewLegibilityObserver>, NSMutableSet, UIView, UIColor, <SBFWallpaperViewInternalObserver>;
+@class SBFWallpaperPreBlurSettings, _UILegibilitySettings, UIImageView, NSTimer, SBFWallpaperParallaxSettings, UIView, _UILegibilitySettingsProvider, <SBFWallpaperViewLegibilityObserver>, <SBFWallpaperViewInternalObserver>, UIColor;
 
 @interface SBFWallpaperView : UIView <_UISettingsKeyObserver> {
     UIImageView *_topGradientView;
     UIImageView *_bottomGradientView;
+    UIView *_parallaxView;
+    float _parallaxScaleFactor;
     int _variant;
     _UILegibilitySettingsProvider *_legibilitySettingsProvider;
     _UILegibilitySettings *_legibilitySettings;
     UIColor *_lastAverageColor;
     NSTimer *_colorSampleTimer;
-    NSMutableSet *_mappedBackdropKeys;
+    BOOL _shouldGenerateBlurredImagesWhenVisible;
+    BOOL _generatingBlurredImages;
     SBFWallpaperParallaxSettings *_parallaxSettings;
     BOOL _filtersAverageColor;
     BOOL _continuousColorSamplingEnabled;
@@ -36,8 +39,8 @@
 @property(retain) SBFWallpaperPreBlurSettings * blurSettings;
 
 + (BOOL)_allowsParallax;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)blurSettings;
 - (void)setInternalObserver:(id)arg1;
@@ -48,31 +51,35 @@
 - (BOOL)filtersAverageColor;
 - (float)zoomFactor;
 - (id)legibilityObserver;
-- (BOOL)_isVisible;
+- (float)parallaxScaleFactor;
 - (BOOL)isDisplayingWallpaper:(id)arg1;
-- (id)imageForBackdropStyle:(int)arg1 includeTint:(BOOL)arg2;
-- (id)blurredImage;
+- (id)imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2 destinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)blurredImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (void)setGeneratesBlurredImages:(BOOL)arg1;
 - (void)setBlurSettings:(id)arg1;
 - (void)setFiltersAverageColor:(BOOL)arg1;
 - (void)setZoomFactor:(float)arg1;
 - (BOOL)_shouldShowBottomGradient;
 - (BOOL)_shouldShowTopGradient;
 - (BOOL)_legibilityStyleRequiresGradients;
+- (void)_stopGeneratingBlurredImages;
+- (void)_startGeneratingBlurredImages;
+- (BOOL)_isVisible;
+- (void)_applyParallaxSettings;
 - (void)_handleVisibilityChange;
-- (void)_updateContentTransform;
-- (id)_generateImageForBackdropStyle:(int)arg1 includeTint:(BOOL)arg2;
-- (id)_mappedImageKeyForStyle:(int)arg1 includingTint:(BOOL)arg2;
-- (id)_generateBlurredImage;
-- (id)_mappedBlurredImageKey;
-- (id)_displayedImage;
-- (void)_invalidateBlurs;
+- (id)_displayedImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2 destinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)_blurredImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (id)_blurReplacementImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (void)_updateGeneratingBlurs;
+- (void)_notifyBlursInvalidated;
 - (void)_cleanupAfterAnimatingGradients;
 - (void)_handleVariantChange;
 - (void)_updateGradientAlpha;
 - (void)_prepareToAnimateGradients;
 - (void)setVariant:(int)arg1 withAnimationFactory:(id)arg2;
-- (void)_applyParallaxSettings;
-- (void)_removeMappedBlurs;
+- (void)_updateContentViewScale;
+- (void)_updateParallaxScaleFactor;
 - (void)_updateParallaxSettings;
 - (id)_computeAverageColor;
 - (void)setParallaxEnabled:(BOOL)arg1;
@@ -83,8 +90,10 @@
 - (id)legibilitySettings;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contentView;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setContentView:(id)arg1;
+- (void)invalidate;
 - (void)dealloc;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)layoutSubviews;

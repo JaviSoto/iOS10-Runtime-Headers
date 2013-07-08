@@ -12,10 +12,10 @@
 
 + (id)defaultFileLogger;
 
+- (void)log:(id)arg1;
 - (void)dealloc;
 - (id)filePath;
 - (void)setFilePath:(id)arg1;
-- (void)log:(id)arg1;
 - (id)initWithFilePath:(id)arg1;
 
 @end

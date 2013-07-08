@@ -29,10 +29,10 @@
 
 + (id)syntheticTouchWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 
+- (double)timestamp;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (id)window;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)set_pathMajorRadius:(float)arg1;
 - (void)setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })getLocationInWindow;

@@ -11,8 +11,12 @@
 @property(readonly) BOOL isWalking;
 @property(readonly) BOOL isRunning;
 @property(readonly) BOOL isDriving;
+@property(readonly) BOOL maybeExitingVehicle;
+@property(readonly) BOOL hasExitedVehicle;
 
 
+- (BOOL)hasExitedVehicle;
+- (BOOL)maybeExitingVehicle;
 - (BOOL)isDriving;
 - (BOOL)isWalking;
 - (BOOL)isMoving;

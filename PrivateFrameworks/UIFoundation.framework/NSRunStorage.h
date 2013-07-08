@@ -32,10 +32,10 @@
 - (id)initWithRunStorage:(id)arg1;
 - (void)_deallocData;
 - (void)_allocData:(unsigned long)arg1;
-- (void)insertElement:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 coalesceRuns:(BOOL)arg3;
-- (void)removeElementsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 coalesceRuns:(BOOL)arg2;
 - (void)replaceElementsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withElement:(void*)arg2 coalesceRuns:(BOOL)arg3;
 - (id)initWithElementSize:(unsigned int)arg1 capacity:(unsigned int)arg2;
+- (void)removeElementsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 coalesceRuns:(BOOL)arg2;
+- (void)insertElement:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 coalesceRuns:(BOOL)arg3;
 - (id)init;
 - (unsigned int)count;
 - (void)dealloc;

@@ -23,8 +23,8 @@
 - (id)modelID;
 - (void)stopUsingDevice;
 - (BOOL)startUsingDevice:(id*)arg1;
-- (BOOL)isConnected;
 - (id)devicePropertiesDictionary;
+- (BOOL)isConnected;
 - (id)uniqueID;
 - (id)init;
 - (id)localizedName;

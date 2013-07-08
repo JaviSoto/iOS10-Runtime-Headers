@@ -14,10 +14,9 @@
 + (float)highlightCrossfadeNormalFadeDuration;
 + (float)highlightCrossfadeHighlightBeginTime;
 + (float)highlightCrossfadeNormalBeginTime;
-+ (id)imageKeyForCharacter:(unsigned int)arg1;
-+ (id)colorForHighlightedKeypadGlyphs;
-+ (id)colorForKeypadGlyphs;
 + (float)verticalPadding;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
++ (id)imageForCharacter:(unsigned int)arg1;
 + (float)horizontalPadding;
 
 - (id)defaultColor;

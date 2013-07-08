@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILocalizedIndexedCollation, NSArray, NSString, <ABCountryPickerControllerDelegate>, NSDictionary, UITableViewController;
+@class UILocalizedIndexedCollation, NSArray, NSString, <ABCountryPickerControllerDelegate>, UITableViewController;
 
 @interface ABCountryPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate> {
     NSString *_selectedCountryCode;
@@ -10,8 +10,6 @@
     UILocalizedIndexedCollation *_collation;
     NSArray *_countries;
     NSArray *_sections;
-    NSArray *_sectionIndexTitles;
-    NSDictionary *_indexToSections;
 }
 
 @property(copy) NSString * selectedCountryCode;
@@ -20,25 +18,19 @@
 @property(retain) UILocalizedIndexedCollation * collation;
 @property(copy) NSArray * countries;
 @property(copy) NSArray * sections;
-@property(copy) NSArray * sectionIndexTitles;
-@property(copy) NSDictionary * indexToSections;
 
 
 - (void)setTableViewController:(id)arg1;
 - (void)setSelectedCountryCode:(id)arg1;
 - (id)selectedCountryCode;
-- (void)setIndexToSections:(id)arg1;
-- (void)setSectionIndexTitles:(id)arg1;
 - (id)countries;
 - (void)setCollation:(id)arg1;
 - (void)_configureSections;
 - (void)setCountries:(id)arg1;
-- (id)indexToSections;
 - (id)collation;
 - (void)cancelPicker:(id)arg1;
 - (id)tableViewController;
 - (void)_loadCountryCodes;
-- (id)sectionIndexTitles;
 - (id)sections;
 - (void)dealloc;
 - (void)setSections:(id)arg1;

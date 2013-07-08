@@ -29,13 +29,13 @@
 - (void)setBannerVisible:(BOOL)arg1;
 - (void)setBannerAnimating:(BOOL)arg1;
 - (void)_layoutBanner:(id)arg1 orientation:(int)arg2 animated:(BOOL)arg3;
-- (void)_hideBanner:(id)arg1;
+- (void)_hideBanner:(id)arg1 quickly:(BOOL)arg2;
 - (id)currentBanner;
 - (BOOL)bannerVisible;
-- (void)handleSwipe;
 - (void)orientationChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)handlePan:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 

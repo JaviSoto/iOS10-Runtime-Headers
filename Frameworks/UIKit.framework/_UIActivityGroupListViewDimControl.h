@@ -10,9 +10,9 @@
 
 @property(retain) UIButton * cancelButton;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)setCancelButton:(id)arg1;

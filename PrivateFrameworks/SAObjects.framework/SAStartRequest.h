@@ -28,14 +28,14 @@
 - (BOOL)handsFree;
 - (void)setEyesFree:(BOOL)arg1;
 - (BOOL)eyesFree;
+- (void)setUtterance:(id)arg1;
+- (id)utterance;
 - (void)setMotionConfidence:(id)arg1;
 - (id)motionConfidence;
 - (void)setMotionActivity:(id)arg1;
 - (id)motionActivity;
 - (void)setClearContext:(BOOL)arg1;
 - (id)encodedClassName;
-- (id)utterance;
-- (void)setUtterance:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (id)origin;
 - (id)groupIdentifier;

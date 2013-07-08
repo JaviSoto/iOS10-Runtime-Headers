@@ -15,7 +15,7 @@
     NSUUID *_uuid;
 }
 
-@property(readonly) int action;
+@property int action;
 @property(copy) NSString * name;
 @property(retain) NSString * source;
 @property(retain) NSString * type;
@@ -35,15 +35,16 @@
 - (int)buttonNumber;
 - (void)setKeyCode:(unsigned short)arg1;
 - (struct NSString { Class x1; }*)source;
+- (void)setSource:(struct NSString { Class x1; }*)arg1;
 - (unsigned short)keyCode;
 - (id)uuid;
 - (void)setType:(struct NSString { Class x1; }*)arg1;
-- (void)setSource:(struct NSString { Class x1; }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (void)setAction:(int)arg1;
 - (int)action;
 - (struct NSString { Class x1; }*)type;
 - (void)setName:(id)arg1;

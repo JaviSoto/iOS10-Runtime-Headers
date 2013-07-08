@@ -22,6 +22,7 @@
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setFont:(id)arg1;
+- (void)_setWantsAutolayout;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

@@ -42,6 +42,8 @@
 - (void)setFacebookLikeStatus:(id)arg1;
 - (void)_shareButtonAction:(id)arg1;
 - (void)_itemOfferButtonAction:(id)arg1;
+- (void)_setItemState:(id)arg1 animated:(BOOL)arg2;
+- (id)_ageBandString;
 - (void)_artistButtonAction:(id)arg1;
 - (void)_showActivityViewControllerFromView:(id)arg1;
 - (id)_facebookFriendsString;

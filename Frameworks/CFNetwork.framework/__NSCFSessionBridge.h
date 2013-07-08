@@ -13,8 +13,8 @@
 - (id)downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)dataTaskForRequest:(id)arg1 completion:(id)arg2;
-- (id)copyTasks;
-- (void)disavowSession;
+- (void)invalidateSession:(BOOL)arg1 withQueue:(id)arg2 completion:(id)arg3;
 - (id)initWithConfiguration:(id)arg1 session:(id)arg2 queue:(id)arg3;
+- (id)copyTasks;
 
 @end

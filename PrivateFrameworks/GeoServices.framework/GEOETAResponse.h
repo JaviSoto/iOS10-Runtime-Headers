@@ -25,8 +25,6 @@
 @property(readonly) struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* problemDetails;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)etaResults;
 - (id)originPlaceSearchResponse;
 - (BOOL)hasOriginPlaceSearchResponse;
@@ -45,6 +43,8 @@
 - (unsigned int)problemDetailsCount;
 - (void)clearProblemDetails;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

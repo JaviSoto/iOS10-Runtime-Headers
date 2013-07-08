@@ -142,8 +142,8 @@
 + (void)accessibilityInitializeBundle;
 + (id)accessibilityBundles;
 + (id)_accessibilityTextChecker;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 + (id)_gkDefaultKeymap;
 + (BOOL)_gk_swizzleSelector:(SEL)arg1 toUseImplementationFromSelector:(SEL)arg2 originalImplementation:(int (**)())arg3;
 + (void)cancelPreviousPerformRequestsWithNonRetainedTarget:(id)arg1;
@@ -361,11 +361,11 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
 - (unsigned long long)defaultAccessibilityTraits;
-- (id)disconnect;
 - (void)setRemoteProtocol:(id)arg1;
 - (id)proxyWithRemoteProtocol:(id)arg1;
 - (id)proxyWithNewTarget:(id)arg1 label:(id)arg2 errorHandler:(id)arg3;
 - (id)proxyWithNewTarget:(id)arg1 queue:(id)arg2 errorHandler:(id)arg3;
+- (id)_uikit_disconnect;
 - (id)className;
 - (id)valueForBlock:(id)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3;
 - (id)valueForSelector:(SEL)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3 copyValue:(BOOL)arg4 withObjects:(id)arg5;
@@ -504,6 +504,10 @@
 - (int)accessibilityCompareGeometry:(id)arg1;
 - (id)_accessibilityFindAncestor:(id)arg1 startWithSelf:(BOOL)arg2;
 - (id)_accessibilityFindDescendant:(id)arg1;
+- (id)_accessibilityFindElementInDirection:(int)arg1 searchTraits:(unsigned long long)arg2 allowOutOfBoundsChild:(BOOL)arg3;
+- (id)_accessibilitySortedElementsWithin;
+- (void)_accessibilityScrollOpaqueElementIntoView:(int)arg1 previousScroller:(id)arg2;
+- (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (BOOL)_accessibilityUsesSpecialKeyboardDismiss;
 - (void)_accessibilitySetCurrentWordInPageContext:(id)arg1;
 - (void)_accessibilitySetWantsOpaqueElementProviders:(BOOL)arg1;
@@ -714,6 +718,7 @@
 - (BOOL)_accessibilityIsNotFirstElement;
 - (id)accessibilityAttributeValue:(int)arg1;
 - (BOOL)_accessibilityElementShouldBeInvalid;
+- (void)_accessibilityPostAnnouncement:(id)arg1;
 - (void)_setAccessibilityIsMainWindow:(BOOL)arg1;
 - (void)_accessibilitySetAnimationsInProgress:(BOOL)arg1;
 - (void)_accessibilitySetSortPriority:(int)arg1;
@@ -721,10 +726,13 @@
 - (id)_accessibilityDescendantOfType:(Class)arg1;
 - (BOOL)_accessibilityCanDismissPopoverController:(id)arg1;
 - (id)accessibilityMenuActions;
+- (BOOL)_accessibilitySortCollectionViewLogically;
 - (id)_accessibilityBriefLabel;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_accessibilityContentInset;
 - (BOOL)_accessibilityRespectsTableScrollEnabledFlag;
 - (id)isAccessibilityUserDefinedScrollAncestor;
 - (int)_accessibilityCompareGeometryForViewOrDictionary:(id)arg1;
+- (id)_accessibilitySearchSubtreesAfterChildElement:(id)arg1 direction:(int)arg2 searchTraits:(unsigned long long)arg3 allowOutOfBoundsChild:(BOOL)arg4;
 - (BOOL)_accessibilityOverridesInvisibility;
 - (id)isAccessibilityUserDefinedWindow;
 - (id)accessibilityPlaceholderValue;
@@ -751,7 +759,6 @@
 - (void)_accessibilitySetCameraIrisOpen:(BOOL)arg1;
 - (void)_accessibilityLoadAccessibilityInformation;
 - (id)accessibilityIdentification;
-- (void)_accessibilityPostAnnouncement:(id)arg1;
 - (int)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityElementAtIndex:(int)arg1;
 - (int)accessibilityElementCount;
@@ -785,11 +792,11 @@
 - (BOOL)_accessibilityHasActionBlockForKey:(unsigned long)arg1;
 - (void)_accessibilitySetActionBlock:(id)arg1 withValue:(id)arg2 forKey:(unsigned long)arg3;
 - (BOOL)_accessibilityHandleMagicTap;
-- (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
 - (BOOL)_accessibilityBoolValueForKey:(id)arg1;
 - (void)_accessibilitySetBoolValue:(BOOL)arg1 forKey:(id)arg2;
-- (id)_accessibilityValueForKey:(id)arg1;
 - (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
+- (id)_accessibilityValueForKey:(id)arg1;
+- (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
 - (BOOL)accessibilityPerformAction:(int)arg1 withValue:(id)arg2;
 - (void)_accessibilitySetAssignedValue:(id)arg1 forKey:(id)arg2;
 - (void)_accessibilityRemoveValueForKey:(id)arg1;
@@ -840,6 +847,7 @@
 - (id)isAccessibilityUserDefinedElement;
 - (id)accessibilityUserDefinedLabel;
 - (id)accessibilityUserDefinedTraits;
+- (id)accessibilityUserDefinedShouldGroupChildren;
 - (id)accessibilityUserDefinedValue;
 - (id)accessibilityUserDefinedFrame;
 - (id)accessibilityUserDefinedIdentifier;
@@ -862,10 +870,10 @@
 - (void)_gkRefreshPhotoForPlayer:(id)arg1 completionHandler:(id)arg2;
 - (void)_gkSetupAccountWithParamaters:(id)arg1 completionHandler:(id)arg2;
 - (id)_gkAuthenticatedPlayerID;
-- (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)mainThreadProxy;
 - (id)delayedProxy:(double)arg1;
 - (id)blockingMainThreadProxy;
+- (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (void)dispatchAsyncWithCancellationIdentifier:(id)arg1 delay:(double)arg2 queue:(id)arg3 block:(id)arg4;
 - (BOOL)cancelPreviousDispatchAsyncWithCancellationIdentifier:(id)arg1;
 - (id)_MPCancellableDispatchAccessQueue;
@@ -876,9 +884,6 @@
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (BOOL)setAudioVideoControllerRepeatMode:(int)arg1;
 - (int)audioVideoControllerRepeatMode;
-- (BOOL)_mapkit_isInternalAnnotation;
-- (BOOL)_mapkit_internalAnnotationAllowsCustomView;
-- (BOOL)_mapkit_isInternalAnnotationView;
 - (BOOL)isNull;
 - (BOOL)mf_tryLockWithPriority;
 - (void)mf_lockWithPriority;

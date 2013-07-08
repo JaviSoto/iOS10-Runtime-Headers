@@ -18,9 +18,9 @@
 - (void)setWebViewWidth:(float)arg1;
 - (float)webViewWidth;
 - (id)webViewForMarkup:(id)arg1;
-- (void)webViewDidFinishLoading:(id)arg1;
 - (void)setStylesheet:(id)arg1;
 - (id)stylesheet;
+- (void)webViewDidFinishLoading:(id)arg1;
 - (void)dealloc;
 
 @end

@@ -32,15 +32,15 @@
 + (void)_updateStateRestorationIdentifierMap;
 + (void)_cleanupAllStateRestorationTables;
 + (void)_startDeferredTrackingObjectsWithIdentifiers;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
+- (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)nextResponder;
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
-- (BOOL)isEditable;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedNSRange;
 - (id)undoManager;
 - (id)firstResponder;
@@ -60,7 +60,6 @@
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (id)_keyInput;
 - (id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2;
-- (unsigned long)_characterInRelationToRangedSelection:(int)arg1;
 - (int)_indexForTextPosition:(id)arg1;
 - (id)_fullRange;
 - (id)_selectableText;
@@ -75,6 +74,7 @@
 - (BOOL)_selectionAtDocumentStart;
 - (void)_selectAll;
 - (void)_replaceCurrentWordWithText:(id)arg1;
+- (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
 - (id)_fullText;
 - (id)_rangeOfEnclosingWord:(id)arg1;
@@ -83,7 +83,9 @@
 - (unsigned long)_characterInRelationToCaretSelection:(int)arg1;
 - (void)_deleteForwardAndNotify:(BOOL)arg1;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
+- (void)_expandSelectionToBackwardDeletionCluster;
 - (void)_moveCurrentSelection:(int)arg1;
+- (unsigned long)_characterInRelationToRangedSelection:(int)arg1;
 - (unsigned long)_characterBeforeCaretSelection;
 - (void)_setGestureRecognizers;
 - (void)_unmarkText;
@@ -121,6 +123,7 @@
 - (id)inputView;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)motionCancelled:(int)arg1 withEvent:(id)arg2;
 - (void)motionBegan:(int)arg1 withEvent:(id)arg2;
 - (BOOL)canResignFirstResponder;
@@ -185,7 +188,6 @@
 - (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (BOOL)_canShowTextServices;
 - (id)textInputMode;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (id)keyCommands;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;

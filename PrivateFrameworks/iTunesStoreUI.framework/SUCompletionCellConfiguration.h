@@ -6,8 +6,8 @@
 }
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;

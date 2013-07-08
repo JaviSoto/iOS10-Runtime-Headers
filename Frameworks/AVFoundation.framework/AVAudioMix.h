@@ -13,10 +13,10 @@
 
 - (void)setInputParameters:(id)arg1;
 - (id)inputParameters;
-- (struct opaqueMTAudioProcessingTap { }*)_audioTapProcessorForTrackID:(int)arg1;
-- (id)_audioVolumeCurveForTrackID:(int)arg1;
+- (id)_audioMixInputParametersForTrackID:(int)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

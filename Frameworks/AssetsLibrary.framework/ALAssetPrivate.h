@@ -13,10 +13,12 @@
 
 @property ALAssetsLibrary * library;
 @property BOOL isValid;
+@property(getter=isDeletable,readonly) BOOL deletable;
 @property(retain) PLManagedAsset * photo;
 @property(retain) PLPhotoLibrary * _photoLibrary;
 
 
+- (BOOL)isDeletable;
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (void)set_photoLibrary:(id)arg1;

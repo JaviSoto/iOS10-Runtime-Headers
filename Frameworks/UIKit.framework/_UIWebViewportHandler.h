@@ -5,6 +5,7 @@
 @class <_UIWebViewportHandlerDelegate>;
 
 @interface _UIWebViewportHandler : NSObject  {
+    BOOL _initialConfigurationHasBeenSentToDelegate;
     struct _UIWebViewportConfiguration { 
         struct CGSize { 
             float width; 
@@ -30,7 +31,6 @@
         float width; 
         float height; 
     } _availableViewSize;
-    unsigned int _configurationChangeFlags;
     BOOL _classicViewportMode;
     <_UIWebViewportHandlerDelegate> *_delegate;
     struct CGRect { 
@@ -57,7 +57,6 @@
 @property(readonly) struct _UIWebViewportConfiguration { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; boolx5; } rawViewConfiguration;
 
 
-- (id)init;
 - (void)setDelegate:(id)arg1;
 - (id).cxx_construct;
 - (id)delegate;

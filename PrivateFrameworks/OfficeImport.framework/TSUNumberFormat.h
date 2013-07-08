@@ -62,6 +62,7 @@
 - (id)numberFormatBySettingBase:(unsigned char)arg1;
 - (id)numberFormatBySettingPrefixString:(id)arg1;
 - (id)initCustomFormatWithFormatString:(id)arg1 currencyCode:(id)arg2 showThousandsSeparator:(BOOL)arg3 fractionAccuracy:(int)arg4 scaleFactor:(double)arg5 interstitialStrings:(id)arg6 interstitialStringInsertionIndexes:(id)arg7 indexFromRightOfLastDigitPlaceholder:(unsigned short)arg8 minimumIntegerWidth:(unsigned char)arg9 decimalWidth:(unsigned char)arg10 numberOfNonSpaceIntegerPlaceholderDigits:(unsigned char)arg11 numberOfNonSpaceDecimalPlaceholderDigits:(unsigned char)arg12 isTextFormat:(BOOL)arg13 formatName:(id)arg14;
+- (id)stringFromString:(id)arg1;
 - (id)chartLabelStringFromDouble:(double)arg1;
 - (id)stringFromDouble:(double)arg1 decimalPlaces:(unsigned short)arg2 minimumDecimalPlaces:(unsigned short)arg3;
 - (id)stringFromDouble:(double)arg1 minimumDecimalPlaces:(unsigned short)arg2;
@@ -101,7 +102,6 @@
 - (id)initWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(BOOL)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(BOOL)arg7 fractionAccuracy:(int)arg8;
 - (void)setFormatName:(id)arg1;
 - (id)formatName;
-- (id)stringFromString:(id)arg1;
 - (int)valueType;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

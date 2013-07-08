@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, UIWindow, UILabel, <UIAlertViewDelegate>, UIView, NSMutableArray, UIModalItem, NSString, NSMutableDictionary, UIViewController;
+@class _UIModalItem, UIToolbar, UIWindow, UILabel, <UIAlertViewDelegate>, UIView, NSMutableArray, NSString, UIViewController, NSMutableDictionary;
 
 @interface UIAlertView : UIView  {
     <UIAlertViewDelegate> *_delegate;
@@ -93,13 +93,13 @@
         unsigned int useLookNeue : 1; 
     } _modalViewFlags;
     NSMutableArray *_buttonTitlesNeue;
-    UIModalItem *_representedModalItem;
     NSString *_titleTextNeue;
     NSString *_messageTextNeue;
     UIViewController *_hostingViewControllerNeue;
     UIWindow *_windowFOrSBNeueCompatibility;
     UIView *_accessoryView;
     UIViewController *_accessoryViewController;
+    _UIModalItem *_representedModalItem;
 }
 
 @property(copy) id complete;
@@ -121,13 +121,14 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_alertWindow;
 + (id)_alertViewForWindow:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 + (id)alertViewWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (BOOL)resignFirstResponder;
@@ -136,7 +137,6 @@
 - (void)removeFromSuperview;
 - (BOOL)isVisible;
 - (void)_layoutIfNeeded;
-- (void)setContext:(id)arg1;
 - (void)layout;
 - (id)message;
 - (void)setDelegate:(id)arg1;
@@ -148,6 +148,8 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)showWithAnimationType:(int)arg1;
 - (void)_addTextEntryFieldsWithStyle:(int)arg1;
+- (void)_showByReplacingPreviousAlertAnimated:(BOOL)arg1;
+- (id)_representedModalItemView;
 - (void)_nukeOldTextFields;
 - (BOOL)forceHorizontalButtonsLayout;
 - (void)setForceHorizontalButtonsLayout:(BOOL)arg1;
@@ -164,6 +166,8 @@
 - (id)_destructiveButton;
 - (void)_setDestructiveButton:(id)arg1;
 - (void)setKeyboardShowsOnPopup:(BOOL)arg1;
+- (void)_showByReplacingAlert:(id)arg1 animated:(BOOL)arg2;
+- (id)_representedModalItem;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(int)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(int)arg2 atOffset:(float)arg3;
 - (id)_modalItemForNeueCompatibility;

@@ -27,18 +27,18 @@
 + (id)_deleteImageBackground:(float)arg1;
 + (id)_multiSelectNotSelectedImage;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (void)setRotated:(BOOL)arg1;
 - (void)_toggleRotate;
 - (void)_updateImageView;
 - (id)_minusView;
 - (id)_currentImage;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
 - (void)setRotated:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setRotated:(BOOL)arg1;
 - (id)_shadowImage;
 - (BOOL)isRotated;
 - (BOOL)isHiding;

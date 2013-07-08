@@ -6,24 +6,19 @@
 
 @interface MSMSPlatform : NSObject <MSPlatform> {
     BOOL _isPerfLoggingEnabled;
-    NSData *_developmentPushToken;
-    NSData *_productionPushToken;
+    NSData *_pushToken;
 }
 
-@property(readonly) NSData * productionPushToken;
-@property(readonly) NSData * developmentPushToken;
+@property(retain) NSData * pushToken;
 @property BOOL isPerfLoggingEnabled;
 
 + (id)thePlatform;
 
 - (void)setIsPerfLoggingEnabled:(BOOL)arg1;
 - (BOOL)isPerfLoggingEnabled;
-- (id)OSVersion;
-- (void)setPushToken:(id)arg1 production:(BOOL)arg2;
-- (id)socketOptions;
-- (id)developmentPushToken;
-- (id)productionPushToken;
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
+- (id)OSVersion;
+- (id)socketOptions;
 - (id)_accountForPersonID:(id)arg1;
 - (BOOL)_mayPerformFileTransfer;
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
@@ -50,6 +45,8 @@
 - (Class)sharingPluginClass;
 - (Class)subscriberPluginClass;
 - (Class)publisherPluginClass;
+- (void)setPushToken:(id)arg1;
+- (id)pushToken;
 - (id)init;
 - (void).cxx_destruct;
 

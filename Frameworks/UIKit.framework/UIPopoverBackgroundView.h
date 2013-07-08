@@ -8,6 +8,8 @@
 @property float arrowOffset;
 @property unsigned int arrowDirection;
 
++ (float)cornerRadius;
++ (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (float)arrowBase;
 + (float)arrowHeight;

@@ -71,8 +71,8 @@
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)name;

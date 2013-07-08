@@ -28,6 +28,7 @@
 - (void)_viewAppleID;
 - (void)_reloadRestrictions;
 - (void)_reloadAccountsButton;
+- (id)_buttonsView;
 - (void)_accountStoreChangedNotification:(id)arg1;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;
 - (BOOL)isTermsAndConditionsHidden;
@@ -39,7 +40,6 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)_buttonsView;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

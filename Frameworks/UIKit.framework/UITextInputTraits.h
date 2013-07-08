@@ -98,7 +98,6 @@
 - (void)setSuppressReturnKeyStyling:(BOOL)arg1;
 - (BOOL)suppressReturnKeyStyling;
 - (void)setShortcutConversionType:(int)arg1;
-- (int)shortcutConversionType;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setAcceptsSplitKeyboard:(BOOL)arg1;
 - (void)setAcceptsFloatingKeyboard:(BOOL)arg1;
@@ -130,6 +129,7 @@
 - (void)setLearnsCorrections:(BOOL)arg1;
 - (BOOL)learnsCorrections;
 - (BOOL)acceptsFloatingKeyboard;
+- (int)shortcutConversionType;
 - (BOOL)acceptsSplitKeyboard;
 - (struct __CFCharacterSet { }*)textTrimmingSet;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;

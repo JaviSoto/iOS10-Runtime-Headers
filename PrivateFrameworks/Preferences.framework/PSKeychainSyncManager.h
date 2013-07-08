@@ -12,7 +12,6 @@
     BOOL _joiningCircle;
     int _circleNotificationToken;
     int _flow;
-    BOOL _pinCodeWasGenerated;
     UIAlertView *_passwordPrompt;
     UIAlertView *_incorrectRecoveryCodesAlert;
     UIAlertView *_devicePINChoiceAlert;
@@ -59,7 +58,9 @@
     UIViewController *_resetPromptControllerHost;
     PSSetupController *_settingsSetupController;
     PSRootController *_buddyNavigationController;
-    NSString *_pinCode;
+    NSString *_securityCodeRecoveryAttempt;
+    NSString *_stagedSecurityCode;
+    int _stagedSecurityCodeType;
 }
 
 @property(getter=isRunningInBuddy,readonly) BOOL runningInBuddy;
@@ -74,9 +75,10 @@
 @property(retain) UIViewController * resetPromptControllerHost;
 @property(retain) PSSetupController * settingsSetupController;
 @property(retain) PSRootController * buddyNavigationController;
-@property(retain) NSString * pinCode;
+@property(retain) NSString * securityCodeRecoveryAttempt;
+@property(readonly) NSString * stagedSecurityCode;
+@property(readonly) int stagedSecurityCodeType;
 
-+ (BOOL)isSimpleSecurityCode:(id)arg1;
 + (id)sharedManager;
 
 - (id)buddyNavigationController;
@@ -87,36 +89,41 @@
 - (id)resetCompletion;
 - (id)changeSecurityCodeCompletion;
 - (void)promptForDevicePasscodeChangeToPasscode:(id)arg1;
+- (void)disableKeychainSyncWithCompletion:(id)arg1;
 - (void)showResetAndJoinFlowOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)showEnableFlowWithNavigationController:(id)arg1 completion:(id)arg2;
-- (void)showChangeSecurityCodeFlowWithSpecifier:(id)arg1 overController:(id)arg2 complexOnly:(BOOL)arg3 completion:(id)arg4;
+- (void)showChangeSecurityCodeFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
 - (void)showRecoveryFlowWithNavigationController:(id)arg1 completion:(id)arg2;
 - (void)showEnableEscrowFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
 - (void)pinChoiceAlertDidChooseToUseDevicePasscode:(BOOL)arg1;
 - (void)setAppleIDPassword:(id)arg1;
 - (id)passwordPromptCompletion;
-- (id)pinCode;
+- (int)stagedSecurityCodeType;
 - (void)_enableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;
+- (id)securityCodeRecoveryAttempt;
 - (void)keychainSyncPhoneNumberController:(id)arg1 didCompleteWithPhoneNumber:(id)arg2 countryInfo:(id)arg3;
+- (id)stagedSecurityCode;
 - (void)joinCircleAndEnableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;
-- (void)_changeToNewSecurityCode:(id)arg1 isSimple:(BOOL)arg2 wasGenerated:(BOOL)arg3 smsTarget:(id)arg4 smsTargetCountryInfo:(id)arg5;
+- (void)_changeToNewSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4;
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
 - (void)_autoVetSMSValidationWithToken:(id)arg1;
+- (void)setSecurityCodeRecoveryAttempt:(id)arg1;
 - (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
 - (void)_callCompletionWithStatus:(int)arg1 error:(id)arg2;
 - (void)_finishedWithStatus:(int)arg1 error:(id)arg2;
 - (void)_showGenericEnableErrorAlert;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id)arg1;
-- (void)setPinCode:(id)arg1;
-- (BOOL)changeSecurityCode:(id)arg1 isSimple:(BOOL)arg2 wasGenerated:(BOOL)arg3 smsTarget:(id)arg4 smsTargetCountryInfo:(id)arg5 error:(id*)arg6;
+- (void)setStagedSecurityCode:(id)arg1 type:(int)arg2;
+- (BOOL)changeSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4 error:(id*)arg5;
 - (id)appleIDPassword;
 - (id)appleIDUsername;
 - (void)handleCircleChangedNotification;
 - (void)setCircleJoinCompletion:(id)arg1;
-- (void)promptForPasswordOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)setPasswordPromptControllerHost:(id)arg1;
 - (void)setPasswordPromptCompletion:(id)arg1;
 - (void)setAppleIDUsername:(id)arg1;
+- (void)promptForPasswordOverController:(id)arg1 withCompletion:(id)arg2;
+- (BOOL)_errorRequiresPasswordPrompt:(id)arg1;
 - (void)_showResetFlowOverController:(id)arg1 withEnableBackupText:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)stopNavigationSpinner;
 - (void)startNavigationSpinnerInViewController:(id)arg1;

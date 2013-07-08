@@ -8,8 +8,8 @@
 }
 
 
-- (unsigned int)index;
 - (void)setIndex:(unsigned int)arg1;
+- (unsigned int)index;
 - (void)setValue:(double)arg1;
 - (double)value;
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSNumber, NSObject, NSManagedObject, PLMoment, PLLastTokenAsset, NSMutableSet, NSString, NSData, NSSet;
+@class NSDate, NSNumber, NSObject, NSManagedObject, PLMoment, NSMutableSet, NSString, NSData, NSSet;
 
 @interface _PLManagedAsset : PLManagedObject  {
 }
@@ -53,14 +53,13 @@
 @property(retain) NSNumber * originalWidth;
 @property short originalWidthValue;
 @property(retain) NSData * originalHash;
+@property(retain) NSString * publicGlobalUUID;
 @property(retain) PLMoment * moment;
-@property(retain) PLMoment * momentBeingKeyAssetFor;
 @property(retain) NSData * reverseLocationData;
 @property BOOL reverseLocationDataIsValid;
-@property(retain) NSString * lastUUID;
-@property(retain) NSNumber * lastSelectionType;
+@property(retain) NSString * avalancheUUID;
+@property(retain) NSNumber * avalanchePickType;
 @property(retain) NSNumber * visibilityState;
-@property(retain) PLLastTokenAsset * lastTokenAsset;
 
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
@@ -134,6 +133,7 @@
 - (id)albumsBeingKeyAssetForSet;
 - (void)setKindValue:(short)arg1;
 - (short)orientationValue;
+- (void)setPublicGlobalUUID:(id)arg1;
 - (void)setOriginalHash:(id)arg1;
 - (void)setOrientationValue:(short)arg1;
 - (id)originalFilename;
@@ -145,6 +145,7 @@
 - (id)albumsSet;
 - (void)setCompleteValue:(BOOL)arg1;
 - (id)originalHash;
+- (id)publicGlobalUUID;
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (short)kindValue;

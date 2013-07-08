@@ -14,9 +14,9 @@
 - (id)memberNameMeCardSelectedImage;
 - (id)memberNameMeCardImage;
 - (float)memberNameFontSize;
+- (id)memberNameBoldFont;
 - (unsigned int)membersCountToShowIndex;
 - (struct CGSize { float x1; float x2; })memberNameShadowOffset;
-- (id)memberNameBoldFont;
 - (id)memberNameRegularFont;
 - (id)memberNameDisabledTextColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })memberNameInsets;

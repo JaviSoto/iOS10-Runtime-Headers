@@ -15,8 +15,8 @@
 @property(readonly) NSURLRequest * urlRequest;
 @property BOOL flushCache;
 
-+ (Class)responseClass;
 + (id)protocolVersion;
++ (Class)responseClass;
 
 - (BOOL)flushCache;
 - (id)urlCredential;
@@ -24,12 +24,12 @@
 - (void)setDeviceProvisioningOneTimePassword:(id)arg1;
 - (id)initWithURLString:(id)arg1;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
-- (id)bodyDictionary;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)performRequestWithHandler:(id)arg1;
 - (void)setFlushCache:(BOOL)arg1;
 - (id)urlString;
 - (id)urlRequest;
+- (id)bodyDictionary;
 - (void)dealloc;
 - (void).cxx_destruct;
 

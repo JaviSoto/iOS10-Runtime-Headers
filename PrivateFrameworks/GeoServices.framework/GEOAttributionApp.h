@@ -14,8 +14,6 @@
 
 
 - (id)handledSchemes;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)handledSchemesAtIndex:(unsigned int)arg1;
 - (void)clearHandledSchemes;
 - (unsigned int)handledSchemesCount;
@@ -24,6 +22,8 @@
 - (void)setHandledSchemes:(id)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -24,10 +24,12 @@
 - (void)setGiftDelegate:(id)arg1;
 - (id)giftDelegate;
 - (id)gift;
+- (void)_clientContextDidLoadWithContext:(id)arg1 error:(id)arg2;
 - (void)_configurationDidLoadWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_finishGiftingWithResult:(BOOL)arg1;
 - (void)_finishAuthenticateWithResponse:(id)arg1 error:(id)arg2;
 - (void)_loadGiftConfiguration;
+- (id)_localizedString:(id)arg1;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;

@@ -17,10 +17,12 @@
     NSSet *_possibleSystemItems;
     unsigned int _size : 2;
     unsigned int _wantsLetterpressTitle : 1;
+    BOOL _isFontScaleInvalid;
     float _minimumWidth;
     float _maximumWidth;
     int _buttonItemStyle;
     NSDictionary *_stylesForSizingTitles;
+    float _fontScaleAdjustment;
     Class _appearanceGuideClass;
 }
 
@@ -35,22 +37,27 @@
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setButtonItemStyle:) int _buttonItemStyle;
 @property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
+@property(setter=_setFontScaleAdjustment:) float _fontScaleAdjustment;
+@property(setter=_setFontScaleInvalid:) BOOL _isFontScaleInvalid;
 
 + (id)defaultFont;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStyle:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (id)image;
 - (int)style;
 - (id)initWithImage:(id)arg1;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)dealloc;
 - (void)_setAppearanceGuideClass:(Class)arg1;
+- (float)_fontScaleAdjustment;
+- (void)_setFontScaleInvalid:(BOOL)arg1;
+- (BOOL)_isFontScaleInvalid;
 - (void)_setStylesForSizingTitles:(id)arg1;
 - (id)_stylesForSizingTitles;
 - (void)_setButtonItemStyle:(int)arg1;
@@ -77,9 +84,9 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
 - (void)_setWantsLetterpressTitle;
-- (BOOL)_usesSelectedFontTraits;
 - (void)setMaximumWidth:(float)arg1;
 - (void)setMinimumWidth:(float)arg1;
+- (void)_setFontScaleAdjustment:(float)arg1;
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
@@ -95,11 +102,13 @@
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 possibleSystemItems:(id)arg6 tintColor:(id)arg7 applyBezel:(BOOL)arg8 forButtonItemStyle:(int)arg9;
 - (void)_updateStyle;
+- (void)_setTitleFrozen:(BOOL)arg1;
 - (void)_updateTitleColorsForState:(unsigned int)arg1;
+- (id)_adjustedDefaultTitleFont;
 - (void)_updateContentInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_buttonTitleEdgeInsets;
-- (int)_barButtonItemStyle;
 - (id)_tintColor;
+- (int)_barButtonItemStyle;
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;

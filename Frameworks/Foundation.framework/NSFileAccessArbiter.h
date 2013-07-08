@@ -10,7 +10,6 @@
     NSMutableDictionary *_accessClaimsByID;
     NSMutableDictionary *_subarbitrationClaimsByID;
     NSMutableDictionary *_reactorsByID;
-    NSMutableDictionary *_watchersByPresenterID;
     NSFileAccessNode *_rootNode;
     NSObject<OS_xpc_object> *_superarbitrationServer;
 }
@@ -34,12 +33,8 @@
 - (void)_revokeAccessClaimForID:(id)arg1 fromLocal:(BOOL)arg2;
 - (void)_sendSubarbitersMessageWithKind:(id)arg1 parameters:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
-- (void)_tiePresenter:(id)arg1 toItemAtURL:(id)arg2;
-- (void)_startWatchingItemAtURL:(id)arg1 forPresenter:(id)arg2 withLastEventID:(id)arg3;
-- (void)_stopWatchingItemForPresenterForID:(id)arg1;
 - (void)_grantAccessClaim:(id)arg1;
 - (void)_handleMessage:(id)arg1 forSubarbitrationClaim:(id)arg2 server:(id)arg3;
-- (void)_revokeAccessClaim:(id)arg1;
 - (void)_handleCanceledClient:(id)arg1;
 - (void)_handleMessage:(id)arg1 fromClient:(id)arg2;
 - (void)writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(id)arg2 toItemAtURL:(id)arg3 withClientID:(id)arg4 name:(id)arg5;

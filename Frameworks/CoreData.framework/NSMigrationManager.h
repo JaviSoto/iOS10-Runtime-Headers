@@ -30,7 +30,6 @@
 + (void)setMigrationDebugLevel:(int)arg1;
 + (int)migrationDebugLevel;
 
-- (float)migrationProgress;
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2;
 - (BOOL)_doThirdPassForMapping:(id)arg1 error:(id*)arg2;
 - (BOOL)_validateAllObjectsAfterMigration:(id*)arg1;
@@ -40,6 +39,7 @@
 - (id)fetchRequestForSourceEntityNamed:(id)arg1 predicateString:(id)arg2 includesSubentities:(BOOL)arg3;
 - (void)setUsesStoreSpecificMigrationManager:(BOOL)arg1;
 - (void)cancelMigrationWithError:(id)arg1;
+- (float)migrationProgress;
 - (id)destinationInstancesForSourceRelationshipNamed:(id)arg1 sourceInstances:(id)arg2;
 - (id)destinationInstancesForEntityMappingNamed:(id)arg1 sourceInstances:(id)arg2;
 - (id)sourceContext;
@@ -51,6 +51,7 @@
 - (void)_doCleanupOnFailure:(id)arg1;
 - (id)currentPropertyMapping;
 - (id)currentEntityMapping;
+- (void)reset;
 - (id)destinationEntityForEntityMapping:(id)arg1;
 - (id)sourceInstancesForEntityMappingNamed:(id)arg1 destinationInstances:(id)arg2;
 - (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
@@ -60,7 +61,6 @@
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2;
 - (id)destinationModel;
 - (id)sourceModel;
-- (void)reset;
 - (id)userInfo;
 - (void)dealloc;
 - (void)setUserInfo:(id)arg1;

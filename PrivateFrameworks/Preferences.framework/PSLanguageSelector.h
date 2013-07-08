@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 
+- (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (void)_setLanguage:(id)arg1;
 - (void)_loadSupportedLanguages;
 - (id)supportedLanguages;

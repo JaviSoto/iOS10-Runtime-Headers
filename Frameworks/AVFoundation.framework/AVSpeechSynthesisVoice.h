@@ -12,17 +12,11 @@
 + (id)speechVoices;
 + (id)voiceWithLanguage:(id)arg1;
 + (id)currentLanguageCode;
-+ (void)load;
++ (void)initialize;
 + (BOOL)supportsSecureCoding;
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
 
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setLanguage:(id)arg1;
-- (id)description;
-- (id)language;
-- (id)initWithLanguage:(id)arg1;
 
 @end

@@ -2,15 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment;
+@class UIAlertView, <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment;
 
-@interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, KeychainSyncViewController> {
+@interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate, KeychainSyncViewController> {
     KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;
+    UIAlertView *_invalidPhoneNumberAlert;
 }
 
 @property <KeychainSyncViewControllerDelegate> * delegate;
 
 
+- (void)controllerDone;
 - (void)nextPressed;
 - (void)reloadSpecifiers;
 - (id)specifiers;
@@ -19,5 +21,6 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

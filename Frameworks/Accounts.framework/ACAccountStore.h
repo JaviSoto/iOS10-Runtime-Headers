@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> *_replyQueue;
     BOOL _shouldSendClientState;
     BOOL _notificationsEnabled;
+    id _daemonAccountStoreDidChangeObserver;
     <ACDAccountStoreProtocol> *_remoteAccountStore;
 }
 
@@ -42,6 +43,7 @@
 - (void)clearAllPermissionsGrantedForAccountType:(id)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (id)appPermissionsForAccountType:(id)arg1;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)accessKeysForAccountType:(id)arg1;
 - (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)supportedDataclassesForAccountType:(id)arg1;
@@ -67,6 +69,7 @@
 - (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccountType:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)insertAccountType:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)accountsWithAccountType:(id)arg1 completion:(id)arg2;
 - (id)accountsWithAccountType:(id)arg1;
 - (id)accounts;
 - (void)accountTypeWithIdentifier:(id)arg1 completion:(id)arg2;
@@ -87,13 +90,11 @@
 - (void)_connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
 - (id)_initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
 - (id)displayTypeForAccountWithIdentifier:(id)arg1;
-- (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)accountWithAppleID:(id)arg1;
 - (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
-- (id)aa_primaryAppleAccount;
 - (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id)arg3;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id)arg2;
@@ -104,6 +105,7 @@
 - (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id)arg2;
 - (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id)arg2;
 - (id)aa_appleAccountType;
+- (id)aa_primaryAppleAccount;
 - (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
 - (id)da_accounts;
 - (id)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3;

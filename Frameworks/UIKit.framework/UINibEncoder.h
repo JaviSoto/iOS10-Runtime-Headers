@@ -26,9 +26,9 @@
 + (id)archivedDataWithRootObject:(id)arg1;
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 
+- (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
-- (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (void)setDelegate:(id)arg1;

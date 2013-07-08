@@ -134,8 +134,6 @@
 - (void)setTcpInfos:(id)arg1;
 - (void)setLocatorHostname:(id)arg1;
 - (void)setLocatorScheme:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (BOOL)hasErrorCode;
 - (BOOL)hasErrorDomain;
@@ -145,6 +143,8 @@
 - (void)setHasStartTime:(BOOL)arg1;
 - (BOOL)hasStartTime;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)errorDomain;
 - (id)interfaceIdentifier;
 - (BOOL)timedOut;

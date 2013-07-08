@@ -13,11 +13,11 @@
 }
 
 
+- (int)recordID;
 - (struct __CFString { }*)sortKey;
 - (id)namePieces;
 - (long)highlightIndex;
 - (id)initWithRecordID:(int)arg1 highlightIndex:(long)arg2 group:(BOOL)arg3 namePieces:(id)arg4 sortKey:(struct __CFString { }*)arg5;
-- (int)recordID;
 - (void)dealloc;
 - (BOOL)isGroup;
 

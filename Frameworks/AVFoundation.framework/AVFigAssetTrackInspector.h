@@ -35,6 +35,7 @@
 - (BOOL)isExcludedFromAutoselectionInTrackGroup;
 - (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
 - (float)nominalFrameRate;
 - (id)loudnessInfo;
 - (id)extendedLanguageTag;

@@ -116,7 +116,6 @@
 - (BOOL)isPlaybackBufferFull;
 - (BOOL)isPlaybackLikelyToKeepUp;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
-- (id)audioTimePitchAlgorithm;
 - (void)setSeekingWaitsForVideoCompositionRendering:(BOOL)arg1;
 - (void)setWillNeverSeekBackwardsHint:(BOOL)arg1;
 - (BOOL)willNeverSeekBackwardsHint;
@@ -160,6 +159,7 @@
 - (id)_seekableTimeRanges;
 - (id)_audioTimePitchAlgorithm;
 - (void)_applyAudioMix;
+- (id)audioTimePitchAlgorithm;
 - (BOOL)_continuesPlayingDuringPrerollForRateChange;
 - (BOOL)_continuesPlayingDuringPrerollForSeek;
 - (BOOL)_willNeverSeekBackwardsHint;

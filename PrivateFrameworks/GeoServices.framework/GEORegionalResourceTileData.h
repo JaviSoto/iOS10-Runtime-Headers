@@ -13,8 +13,6 @@
 @property(retain) NSMutableArray * attributions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)iconAtIndex:(unsigned int)arg1;
 - (void)clearIcons;
 - (unsigned int)iconsCount;
@@ -26,6 +24,8 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

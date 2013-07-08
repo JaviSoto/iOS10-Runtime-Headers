@@ -103,18 +103,15 @@
 
 
 - (double)distanceFromPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
-- (void)getFormOfWay:(int*)arg1 roadClass:(int*)arg2 at:(unsigned int)arg3;
-- (id)routeNames;
 - (int)transportTypeForStep:(id)arg1;
-- (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(BOOL)arg2 uniquePointRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
 - (id)newETARoute;
+- (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(BOOL)arg2 uniquePointRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (id)simplifiedDescription;
 - (unsigned int)distanceFromStepIndex:(unsigned int)arg1 toStepIndex:(unsigned int)arg2;
 - (int)formOfWayAt:(unsigned int)arg1;
+- (void)getFormOfWay:(int*)arg1 roadClass:(int*)arg2 at:(unsigned int)arg3;
 - (id)newETARouteFromStepIndex:(unsigned int)arg1 stepPercentRemaining:(double)arg2;
 - (unsigned int)indexForStepID:(unsigned int)arg1;
 - (BOOL)unpackBasicPoints;
@@ -123,6 +120,7 @@
 - (unsigned int)stepIndexForPointIndex:(unsigned int)arg1;
 - (struct { double x1; double x2; })pointAt:(unsigned int)arg1;
 - (BOOL)unpackLatLngVertices;
+- (id)routeNames;
 - (id)advisoryNotices;
 - (id)steps;
 - (void)setIncidentIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -218,6 +216,8 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)distance;
 - (unsigned int)pointCount;
 - (id)debugDescription;
@@ -228,10 +228,5 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;
-- (id)instructionsForStep:(id)arg1;
-- (double)distanceBetweenStep:(id)arg1 andStep:(id)arg2;
-- (double)distanceBetweenRoutePointIndex:(unsigned int)arg1 toPointIndex:(unsigned int)arg2;
-- (double)distanceBetweenLocation:(struct { double x1; double x2; })arg1 nextPointIndex:(unsigned int)arg2 toPointIndex:(unsigned int)arg3;
-- (struct CGImage { }*)_mapKitImage;
 
 @end

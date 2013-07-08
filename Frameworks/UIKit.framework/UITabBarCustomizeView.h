@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UISnapshotView, UITabBar, UITabBarItem, UITabBarItemProxy, NSMutableArray;
+@class NSArray, UITabBarItemProxy, UISnapshotView, UIImageView, UILabel, NSMutableArray, UITabBar, UITabBarItem;
 
 @interface UITabBarCustomizeView : UIView  {
     UITabBar *_tabBar;
@@ -13,28 +13,47 @@
     UISnapshotView *_dragImage;
     UIImageView *_replacementGlow;
     UITabBarItem *_replaceItem;
+    UILabel *_titleLabel;
     struct CGPoint { 
         float x; 
         float y; 
     } _startPoint;
-    int _gridCount;
+    int _itemsInRowCount;
     float _gridOffset;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _firstItemRect;
+    UITabBarItem *_selectedBeforeItem;
+    NSArray *_availableItems;
 }
 
-+ (void)_initializeSafeCategory;
+@property(retain) NSArray * availableItems;
+
 + (id)_initializeSafeCategoryFromValidationManager;
 + (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (id)availableItems;
 - (void)tabBarTouchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setTabBar:(id)arg1 currentItems:(id)arg2 availableItems:(id)arg3;
 - (void)tabBarTouchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)_finishTouchesEndedChangeAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)itemInTabBarWithTouches:(id)arg1 withEvent:(id)arg2;
 - (void)adjustDragImageWithTouches:(id)arg1 withEvent:(id)arg2;
+- (void)tintTabBarItemsForEdit:(BOOL)arg1;
+- (void)setAvailableItems:(id)arg1;
+- (void)updateProxiesSelection;
+- (int)_barMetrics;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -15,7 +15,9 @@
 - (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;
 - (float)controlColumnWidthFactor;
+- (float)keyCornerRadius;
 - (id)thinKeycapsFontName;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)lightKeycapsFontName;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 

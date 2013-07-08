@@ -44,6 +44,7 @@
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2;
 - (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 usingBlock:(id)arg3;
+- (BOOL)deleteAllEntitiesFromLibraryWithDeletionType:(int)arg1 usingConnection:(id)arg2;
 - (BOOL)deleteAllEntitiesFromLibrary;
 - (long long)anyEntityPersistentID;
 - (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 distinct:(BOOL)arg3;
@@ -75,8 +76,8 @@
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
 - (unsigned int)countOfEntities;
-- (id)library;
 - (BOOL)hasEntities;
+- (id)library;
 - (Class)entityClass;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (id)sections;

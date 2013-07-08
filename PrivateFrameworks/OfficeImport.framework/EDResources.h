@@ -30,8 +30,8 @@
 - (id)themes;
 - (id)initWithStringOptimization:(bool)arg1;
 - (id)contentFormats;
-- (id)borders;
 - (id)styles;
+- (id)borders;
 - (id)fonts;
 - (id)border;
 - (id)colors;

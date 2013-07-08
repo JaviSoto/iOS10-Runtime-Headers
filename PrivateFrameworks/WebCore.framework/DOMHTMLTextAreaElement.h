@@ -23,6 +23,7 @@
 @property(copy) NSString * accessKey;
 
 
+- (void)setReadOnly:(BOOL)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
 - (void)setMaxLength:(int)arg1;
@@ -59,7 +60,6 @@
 - (BOOL)autofocus;
 - (void)setAccessKey:(id)arg1;
 - (id)accessKey;
-- (void)setReadOnly:(BOOL)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;

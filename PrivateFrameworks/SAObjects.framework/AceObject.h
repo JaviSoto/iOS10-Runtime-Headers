@@ -29,7 +29,6 @@
 + (id)_newAceObjectWithMutableDictionary:(id)arg1;
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
-+ (void)load;
 + (BOOL)supportsSecureCoding;
 
 - (void)forceEagerDeserialization;

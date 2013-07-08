@@ -12,8 +12,8 @@
 @property(getter=isEditingDisabled) BOOL editingDisabled;
 @property(retain) ABMultiCellContentView * multiCellContentView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setEditingDisabled:(BOOL)arg1;
 - (BOOL)isEditingDisabled;

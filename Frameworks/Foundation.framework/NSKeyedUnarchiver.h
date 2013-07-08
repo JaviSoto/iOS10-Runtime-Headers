@@ -31,7 +31,6 @@
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1;
-+ (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 
 - (void)setRequiresSecureCoding:(BOOL)arg1;
 - (void)setAllowedClasses:(id)arg1;

@@ -31,10 +31,11 @@
 - (void)_showNextModalItemIfNecessaryAfterHiddingItem:(id)arg1 showingItem:(id)arg2 animate:(BOOL)arg3;
 - (void)_hideModalItemsForType:(int)arg1 presentingViewController:(id)arg2 dimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)_showModalItemsForType:(int)arg1 presentingViewController:(id)arg2 undimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
+- (id)_presentingViewControllerForAlertCompatibilityCreateIfNeeded:(BOOL)arg1;
 - (id)_presentingViewControllerForAlertCompatibility;
 - (id)_presentingViewControllerForSBCompatibility;
-- (void)_presentItem:(id)arg1 inViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)_addItemToStack:(id)arg1 forPresentingViewController:(id)arg2;
+- (void)_presentItem:(id)arg1 replacingItem:(id)arg2 inViewController:(id)arg3 animated:(BOOL)arg4;
+- (void)_addItemToStack:(id)arg1 replacingItem:(id)arg2 forPresentingViewController:(id)arg3;
 - (void)_notifyDelegateDidPresentItem:(id)arg1;
 - (void)_notifyDelegateWillPresentItem:(id)arg1;
 - (void)_notifyDelegateDidDismissItem:(id)arg1 withIndex:(int)arg2;

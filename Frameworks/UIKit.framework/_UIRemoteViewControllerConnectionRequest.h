@@ -18,6 +18,7 @@
     NSString *_viewServiceBundleIdentifier;
     NSString *_viewControllerClassName;
     NSArray *_serializedAppearanceCustomizations;
+    BOOL _legacyAppearance;
     id _exportedHostingObject;
     <_UIViewServiceDeputyXPCInterface> *_serviceViewControllerDeputyInterface;
     _UIAsyncInvocation *_cancelInvocationForCurrentOperation;
@@ -28,7 +29,7 @@
     _UIAsyncInvocation *_requestCancellationInvocation;
 }
 
-+ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 useXPCObjects:(BOOL)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
++ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(BOOL)arg4 useXPCObjects:(BOOL)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(id)arg8;
 
 - (void)dealloc;
 - (void)_didFinishEstablishingConnection;

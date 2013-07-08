@@ -16,7 +16,7 @@
 @property(getter=isVisible,readonly) BOOL visible;
 
 
-- (void)_updateIcon:(id)arg1 forCell:(id)arg2;
+- (void)_updateIcon:(id)arg1 forCell:(id)arg2 template:(BOOL)arg3;
 - (struct CGSize { float x1; float x2; })_imageSize;
 - (void)_cancelUpdateThumbnails;
 - (void)_updateThumbnails;
@@ -37,5 +37,6 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

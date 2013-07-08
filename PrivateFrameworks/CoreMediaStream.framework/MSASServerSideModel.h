@@ -113,6 +113,7 @@
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishRetrievingAsset:(id)arg2 inAlbum:(id)arg3 error:(id)arg4;
+- (void)MSASStateMachine:(id)arg1 didFinishEnqueueingAssetsForDownload:(id)arg2 inAlbumWithGUID:(id)arg3;
 - (BOOL)MSASStateMachine:(id)arg1 didQueryIsAssetCollectionWithGUIDInModel:(id)arg2;
 - (id)MSASStateMachineDidRequestAssetCollectionStateCtagForAssetCollectionWithGUID:(id)arg1 info:(id)arg2;
 - (id)MSASStateMachineDidRequestAlbumWithGUID:(id)arg1;
@@ -129,7 +130,7 @@
 - (void)MSASStateMachine:(id)arg1 willCheckForCommentChangesInAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishUnsubscribingFromAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishSubscribingToAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
-- (void)MSASStateMachine:(id)arg1 didFinishUpdatingAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
+- (void)MSASStateMachine:(id)arg1 didFinishUpdatingAssetCollections:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 willUpdateAssetCollections:(id)arg2 inAlbum:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishGettingAccessControls:(id)arg2 forAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFindNewURLString:(id)arg2 forAlbumWithGUID:(id)arg3 info:(id)arg4;
@@ -153,6 +154,7 @@
 - (void)setMaxGroupedCallbackEventBatchCount:(int)arg1;
 - (int)maxGroupedCallbackEventBatchCount;
 - (BOOL)errorIsCancellation:(id)arg1;
+- (id)focusAssetCollectionGUID;
 - (id)serverSideConfiguration;
 - (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2;
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;

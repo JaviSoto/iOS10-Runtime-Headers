@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMenuViewControllerDelegate>, NSArray;
+@class <SKUIMenuViewControllerDelegate>, UIColor, NSArray;
 
 @interface SKUIMenuViewController : UITableViewController  {
+    UIColor *_borderColor;
     <SKUIMenuViewControllerDelegate> *_delegate;
     int _indexOfCheckedTitle;
     NSArray *_menuTitles;

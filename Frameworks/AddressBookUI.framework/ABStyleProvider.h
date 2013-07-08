@@ -207,8 +207,8 @@
 + (id)defaultStyleProviderForStyle:(int)arg1;
 + (id)defaultStyleProvider;
 + (id)preferredContentSizeCategoryName;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)shouldAdjustTableView:(id)arg1 forKeyboardOrdering:(BOOL)arg2;
 - (id)personValueBackgroundColor;
@@ -346,6 +346,8 @@
 - (float)cardNotesMinimumHeightWhenEditing:(BOOL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardLabelInsets;
 - (float)cardMaxHeightForSwellTextViewWhenEditing:(BOOL)arg1;
+- (id)memberNamePlaceholderFont;
+- (id)memberNameBoldFont;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardValueInsetsWhenEditing:(BOOL)arg1;
 - (float)personViewRowHeightWhenEditing:(BOOL)arg1;
 - (id)cardLabelTextFont;
@@ -364,8 +366,6 @@
 - (id)memberNameBoldFontForSectionHeader;
 - (unsigned int)membersCountToShowIndex;
 - (struct CGSize { float x1; float x2; })memberNameShadowOffset;
-- (id)memberNamePlaceholderFont;
-- (id)memberNameBoldFont;
 - (id)memberNameRegularFont;
 - (id)memberNameDisabledTextColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })memberNameInsets;

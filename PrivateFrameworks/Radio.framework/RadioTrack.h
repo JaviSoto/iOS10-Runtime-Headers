@@ -103,9 +103,9 @@
 - (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1;
 - (long long)storeID;
 - (id)context;
+- (id)objectID;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (id)objectID;
 - (void)setDuration:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

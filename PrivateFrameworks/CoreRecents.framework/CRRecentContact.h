@@ -83,7 +83,6 @@
 - (void)setRecentID:(long long)arg1;
 - (id)initWithContactID:(long long)arg1;
 - (void)setAddress:(id)arg1;
-- (void)setKind:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)displayName;
@@ -99,6 +98,7 @@
 - (id)weight;
 - (id)kind;
 - (BOOL)isGroup;
+- (void)setKind:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)address;
 - (void)_setAddressBookContext:(id)arg1;

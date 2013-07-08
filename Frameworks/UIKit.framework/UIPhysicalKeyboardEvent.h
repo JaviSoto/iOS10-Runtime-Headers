@@ -8,6 +8,7 @@
     NSString *_modifiedInput;
     NSString *_unmodifiedInput;
     NSString *_shiftModifiedInput;
+    NSString *_commandModifiedInput;
     NSString *_markedInput;
     int _modifierFlags;
     int _inputFlags;
@@ -17,6 +18,7 @@
 @property(retain) NSString * _modifiedInput;
 @property(retain) NSString * _unmodifiedInput;
 @property(retain) NSString * _shiftModifiedInput;
+@property(retain) NSString * _commandModifiedInput;
 @property(retain) NSString * _markedInput;
 @property(retain) NSString * _privateInput;
 @property int _modifierFlags;
@@ -31,15 +33,17 @@
 - (void)dealloc;
 - (id)_privateInput;
 - (id)_shiftModifiedInput;
+- (id)_commandModifiedInput;
 - (void)set_privateInput:(id)arg1;
+- (void)set_commandModifiedInput:(id)arg1;
 - (void)set_shiftModifiedInput:(id)arg1;
 - (void)set_markedInput:(id)arg1;
 - (void)set_unmodifiedInput:(id)arg1;
 - (void)set_inputFlags:(int)arg1;
 - (void)set_modifierFlags:(int)arg1;
 - (id)_markedInput;
-- (id)_cloneEvent;
 - (void)_privatizeInput;
+- (id)_cloneEvent;
 - (void)set_modifiedInput:(id)arg1;
 - (id)_unmodifiedInput;
 - (int)_inputFlags;

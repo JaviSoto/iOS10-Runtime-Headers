@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSOperationQueue, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class MPMediaPredicate, NSArray, NSOperationQueue, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface MPEnabledMediaTypesMonitor : NSObject  {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_completionHandlers;
     BOOL _ignoreLibraryDidChangeNotifications;
     BOOL _monitoringActive;
+    MPMediaPredicate *_enabledMediaTypesPredicate;
     BOOL _hidesSecondPartyMediaTypes;
     unsigned int _enabledMediaTypes;
     unsigned int _enabledIfPresentMediaTypes;

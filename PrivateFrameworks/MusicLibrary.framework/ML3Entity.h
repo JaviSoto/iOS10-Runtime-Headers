@@ -60,9 +60,9 @@
 + (BOOL)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deletionType:(int)arg3 revisionType:(int)arg4 usingConnection:(id)arg5;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (BOOL)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 connection:(id)arg4;
-+ (id)anyInLibrary:(id)arg1 predicate:(id)arg2;
 + (id)defaultOrderingProperties;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
++ (id)anyInLibrary:(id)arg1 predicate:(id)arg2;
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)disambiguatedSQLForProperty:(id)arg1;
@@ -80,8 +80,8 @@
 - (void)didChangeValueForProperties:(id)arg1;
 - (BOOL)setValues:(id)arg1 forProperties:(id)arg2;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
-- (id)library;
 - (id)initWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
+- (id)library;
 - (void)setLibrary:(id)arg1;
 - (BOOL)setValues:(const id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
 - (long long)persistentID;

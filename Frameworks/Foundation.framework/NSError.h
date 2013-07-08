@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURL, NSString, NSDictionary;
+@class NSString, NSDictionary;
 
 @interface NSError : NSObject <NSCopying, NSSecureCoding> {
     void *_reserved;
@@ -16,12 +16,6 @@
     NSDictionary *_userInfo;
 }
 
-@property(getter=_mapkit_isCLDenied,readonly) BOOL _mapkit_CLDenied;
-@property(getter=_mapkit_isCLLocationUnknown,readonly) BOOL _mapkit_CLLocationUnknown;
-@property(getter=_mapkit_isCLHeadingFailure,readonly) BOOL _mapkit_CLHeadingFailure;
-@property(getter=_mapkit_isCLErrorNetwork,readonly) BOOL _mapkit_CLErrorNetwork;
-@property(readonly) NSURL * _mapkit_locationErrorSettingsURL;
-
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 failingURL:(id)arg3;
@@ -29,16 +23,16 @@
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
 + (BOOL)supportsSecureCoding;
++ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 underlyingError:(id)arg4 errorType:(id)arg5;
++ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 errorType:(id)arg4;
++ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 suggestion:(id)arg4 USEnglishSuggestion:(id)arg5 underlyingError:(id)arg6 errorType:(id)arg7;
++ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 errorType:(id)arg4;
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(int)arg3;
 + (void)_webkit_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (id)_webKitErrorWithCode:(int)arg1 failingURL:(id)arg2;
 + (id)_webkit_errorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 + (void)_registerWebKitErrors;
 + (id)_webKitErrorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
-+ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 underlyingError:(id)arg4 errorType:(id)arg5;
-+ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 errorType:(id)arg4;
-+ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 suggestion:(id)arg4 USEnglishSuggestion:(id)arg5 underlyingError:(id)arg6 errorType:(id)arg7;
-+ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 errorType:(id)arg4;
 + (id)ax_errorWithDomain:(id)arg1 description:(id)arg2;
 + (id)errorWithBTResult:(id)arg1;
 + (id)_geo_errorFromXPCData:(id)arg1;
@@ -101,8 +95,6 @@
 - (id)_cocoaErrorString:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_webkit_initWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
-- (id)_initWithPluginErrorCode:(int)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
 - (id)MCErrorType;
 - (BOOL)MCContainsErrorDomain:(id)arg1 code:(int)arg2;
 - (id)MCCopyAsPrimaryError;
@@ -110,6 +102,8 @@
 - (id)MCUSEnglishDescription;
 - (id)MCFindPrimaryError;
 - (id)MCVerboseDescription;
+- (id)_webkit_initWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
+- (id)_initWithPluginErrorCode:(int)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
 - (id)ax_nonRedundantDescription;
 - (id)_geo_newXPCData;
 - (id)zilchDecoderTileLoadingError;
@@ -119,7 +113,6 @@
 - (BOOL)isFatalError;
 - (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
 - (id)errorBySettingFatalError:(BOOL)arg1;
-- (id)tl_nonRedundantDescription;
 - (BOOL)MSASStateMachineIsCanceledError;
 - (id)MSMakePrimaryError;
 - (BOOL)MSContainsErrorWithDomain:(id)arg1 code:(int)arg2;
@@ -144,16 +137,7 @@
 - (BOOL)MMCSIsFatalError;
 - (BOOL)MMCSIsNetworkConditionsError;
 - (BOOL)MMCSIsAuthorizationError;
-- (id)_mapkit_locationErrorSettingsURL;
-- (BOOL)_mapkit_isCLErrorNetwork;
-- (BOOL)_mapkit_isCLHeadingFailure;
-- (BOOL)_mapkit_isCLDenied;
-- (BOOL)_mapkit_isCLLocationUnknown;
-- (id)_mapkit_error;
-- (int)_mapkit_underlyingGEOError;
-- (int)_mapkit_directionsErrorCode;
-- (BOOL)_mapkit_isDirectionsError;
-- (id)_mapkit_directionsErrorWithDetail:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1;
+- (id)tl_nonRedundantDescription;
 - (id)encodeableError;
 - (id)encodeableError;
 - (id)encodeableError;

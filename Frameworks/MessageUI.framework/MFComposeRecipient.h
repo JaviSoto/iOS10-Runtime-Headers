@@ -26,8 +26,8 @@
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)originContext;
 - (id)preferredSendingAddress;
@@ -48,8 +48,8 @@
 - (id)uncommentedAddress;
 - (id)commentedAddress;
 - (id)shortName;
-- (id)compositeName;
 - (int)recordID;
+- (id)compositeName;
 - (int)property;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;

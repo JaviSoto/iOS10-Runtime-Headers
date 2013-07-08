@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileAccessNode, NSString, NSMapTable;
+@class NSFileAccessNode, NSString, NSMutableDictionary;
 
 @interface NSFileAccessNode : NSObject  {
     NSFileAccessNode *_parent;
@@ -10,7 +10,7 @@
     NSString *_normalizedName;
     NSFileAccessNode *_symbolicLinkDestination;
     unsigned int _symbolicLinkReferenceCount;
-    NSMapTable *_childrenByNormalizedName;
+    NSMutableDictionary *_childrenByNormalizedName;
     id _presenterOrPresenters;
     id _provider;
     id _accessClaimOrClaims;
@@ -35,6 +35,7 @@
 - (void)addProgressSubscriber:(id)arg1;
 - (void)removeProgressPublisher:(id)arg1;
 - (void)addProgressPublisher:(id)arg1;
+- (id)urlOfSubitemAtPath:(id)arg1 plusPath:(id)arg2;
 - (void)removeAccessClaim:(id)arg1;
 - (void)addAccessClaim:(id)arg1;
 - (BOOL)itemIsItemAtLocation:(id)arg1;
@@ -42,9 +43,7 @@
 - (void)setArbitrationBoundary;
 - (void)forEachPresenterOfContainingItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemOrContainingItemPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfContainingFilePackagePerformProcedure:(id)arg1;
-- (id)itemProvider;
 - (void)forEachReactorToItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachRelevantAccessClaimPerformProcedure:(id)arg1;
 - (void)setParent:(id)arg1 name:(id)arg2;
@@ -68,11 +67,14 @@
 - (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 create:(BOOL)arg3;
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
+- (id)normalizationOfChildName:(id)arg1;
 - (void)removeChildForNormalizedName:(id)arg1;
 - (void)removeSelfIfUseless;
+- (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)setProvider:(id)arg1;
 - (void)addPresenter:(id)arg1;
 - (void)removePresenter:(id)arg1;
+- (id)itemProvider;
 - (id)descriptionWithIndenting:(id)arg1;
 - (id)parent;
 - (id)url;

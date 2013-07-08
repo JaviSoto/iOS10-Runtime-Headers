@@ -38,8 +38,8 @@
 @property(retain) UIView * extraHeaderView;
 @property BOOL extraHeaderViewAlignsToImage;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setExtraHeaderViewAlignsToImage:(BOOL)arg1;
 - (BOOL)extraHeaderViewAlignsToImage;

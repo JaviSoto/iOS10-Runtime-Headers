@@ -40,6 +40,7 @@
 - (id)conferencePhoneCallViews;
 - (id)mergedCallNumberTypeOrDurationLabel;
 - (id)mergedCallNameLabel;
+- (void)_updateMergedCallHorizontalSizeConstraints;
 - (void)updateAndShowMergedCallLabelsIfNecessary;
 - (id)phoneCallViewForPhoneCall:(id)arg1;
 - (id)phoneCallViewsArray;

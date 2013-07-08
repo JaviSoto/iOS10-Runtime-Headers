@@ -5,10 +5,8 @@
 @interface PKExtendedPhysicsBody : PKPhysicsBody  {
     int _associations;
     float _areaFactor;
-    BOOL _isView;
 }
 
-@property BOOL isView;
 @property float normalizedDensity;
 
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
@@ -21,8 +19,6 @@
 - (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)init;
 - (id)description;
-- (BOOL)isView;
-- (void)setIsView:(BOOL)arg1;
 - (void)associate;
 - (BOOL)dissociate;
 - (float)normalizedDensity;

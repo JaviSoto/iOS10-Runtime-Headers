@@ -13,14 +13,14 @@
 @property(retain) NSMutableArray * languages;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)languageAtIndex:(unsigned int)arg1;
 - (void)clearLanguages;
 - (unsigned int)languagesCount;
 - (void)addLanguage:(id)arg1;
 - (void)setLanguages:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)languages;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

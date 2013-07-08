@@ -14,10 +14,10 @@
 
 - (void)setAdjustsMaxConcurrentOperationCount:(BOOL)arg1;
 - (BOOL)adjustsMaxConcurrentOperationCount;
-- (void)setSuspended:(BOOL)arg1;
-- (void)cancelAllOperations;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (id)operations;
+- (void)setSuspended:(BOOL)arg1;
+- (void)cancelAllOperations;
 - (id)init;
 - (void)addOperation:(id)arg1;
 - (id)name;

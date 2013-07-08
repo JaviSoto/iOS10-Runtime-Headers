@@ -85,8 +85,7 @@
 - (id)createCDATASection:(id)arg1;
 - (id)createComment:(id)arg1;
 - (id)createTextNode:(id)arg1;
-- (BOOL)webkitHidden;
-- (id)webkitVisibilityState;
+- (id)visibilityState;
 - (id)compatMode;
 - (void)setSelectedStylesheetSet:(id)arg1;
 - (id)selectedStylesheetSet;
@@ -116,6 +115,7 @@
 - (id)documentElement;
 - (id)createRange;
 - (id)characterSet;
+- (BOOL)hidden;
 - (id)createDocumentFragment;
 - (id)createElementNS:(id)arg1 :(id)arg2;
 - (id)createElementNS:(id)arg1 qualifiedName:(id)arg2;
@@ -135,7 +135,6 @@
 - (id)URLWithAttributeString:(id)arg1;
 - (id)webFrame;
 - (id)_documentRange;
-- (id)_focusableNodes;
 - (id)createBlockPlaceholder;
 
 @end

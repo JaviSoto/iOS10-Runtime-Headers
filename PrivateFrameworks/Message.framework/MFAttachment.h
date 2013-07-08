@@ -128,6 +128,7 @@
 - (id)icsRepresentation;
 - (BOOL)isDisplayableInlineWithData:(id)arg1;
 - (BOOL)isRestrictedMIMEType;
+- (BOOL)isPDFFile;
 - (BOOL)isContentTypeDisplayableByMobileMail;
 - (id)filenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 - (void)setMeetingStorePersistentID:(id)arg1;
@@ -141,11 +142,10 @@
 - (BOOL)isMedia;
 - (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
 - (BOOL)isDisplayableInline;
-- (BOOL)isPDFFile;
 - (void)setEventID:(id)arg1;
 - (id)contentType;
 - (id)fileAttributes;
-- (BOOL)isPass;
 - (id)pass;
+- (BOOL)isPass;
 
 @end

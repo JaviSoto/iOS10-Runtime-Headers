@@ -17,9 +17,9 @@
 @property(readonly) SCRCPhotoEvaluatorResult * luminanceResult;
 
 
-- (id)peopleResult;
 - (id)luminanceResult;
 - (id)blurResult;
+- (id)peopleResult;
 - (id)colorResult;
 - (id)initWithBlurResult:(id)arg1 colorResult:(id)arg2 peopleResult:(id)arg3 luminanceResult:(id)arg4;
 - (void)dealloc;

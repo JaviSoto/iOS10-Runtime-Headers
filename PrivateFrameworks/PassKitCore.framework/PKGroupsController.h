@@ -11,7 +11,8 @@
     NSMutableDictionary *_groupsByGroupID;
     NSMutableDictionary *_indicesByGroupID;
     NSMutableDictionary *_groupIDsByPassUniqueID;
-    BOOL _userReordering;
+    BOOL _suppressRemoteUpdates;
+    BOOL _enqueueRemoteUpdates;
     PKCatalog *_catalogBeforeReordering;
     NSMutableArray *_enqueuedUpdates;
     NSArray *_localPasses;
@@ -39,6 +40,7 @@
 - (void)_moveGroup:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3 notify:(BOOL)arg4;
 - (id)_copyRemoteCatalog;
 - (void)_removeGroup:(id)arg1 notify:(BOOL)arg2;
+- (void)reloadGroupsAndNotify:(BOOL)arg1 completion:(id)arg2;
 - (unsigned int)_indexOfGroupID:(id)arg1;
 - (void)reloadGroupsWithCompletion:(id)arg1;
 - (void)_updateStateWithCatalog:(id)arg1 passes:(id)arg2 notify:(BOOL)arg3;
@@ -49,8 +51,8 @@
 - (id)initLimited;
 - (void)handleUserPassIngestionWithData:(id)arg1 completion:(id)arg2;
 - (void)moveGroupAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (void)endUserReordering;
-- (void)beginUserReordering;
+- (void)enableRemoteUpdates;
+- (void)suppressRemoteUpdates:(BOOL)arg1;
 - (unsigned int)groupIndexForPassUniqueID:(id)arg1;
 - (void)loadGroupsSynchronously;
 - (unsigned int)indexOfGroup:(id)arg1;

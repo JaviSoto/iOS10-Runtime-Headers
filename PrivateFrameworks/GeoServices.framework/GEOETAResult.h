@@ -26,8 +26,6 @@
 @property(retain) GEOPlaceSearchResponse * placeSearchResponse;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasLiveTravelTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (id)placeSearchResponse;
@@ -42,6 +40,8 @@
 - (unsigned int)historicTravelTime;
 - (BOOL)hasHistoricTravelTime;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -11,13 +11,13 @@
 }
 
 
+- (unsigned int)columnIndex;
 - (int)filtersRelation;
 - (id)filterAtIndex:(unsigned int)arg1;
 - (unsigned int)filterCount;
 - (void)addFilter:(id)arg1;
 - (void)setFiltersRelation:(int)arg1;
 - (void)setColumnIndex:(unsigned int)arg1;
-- (unsigned int)columnIndex;
 - (id)init;
 - (void)dealloc;
 

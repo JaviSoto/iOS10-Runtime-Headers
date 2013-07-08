@@ -22,10 +22,10 @@
 - (id)_diffDescription;
 - (void)_calculateDiffs;
 - (id)changedIndexes;
-- (id)insertedIndexes;
 - (id)deletedIndexes;
 - (BOOL)shouldReload;
 - (id)album;
+- (id)insertedIndexes;
 - (id)init;
 - (id)object;
 - (void)dealloc;

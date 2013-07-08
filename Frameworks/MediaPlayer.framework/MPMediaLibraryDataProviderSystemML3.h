@@ -15,11 +15,13 @@
 + (BOOL)_isGeniusEnabled;
 
 - (id)initWithLibrary:(id)arg1;
+- (BOOL)_formatCanUsePipeline:(unsigned int)arg1;
 - (id)_screenshotCacheIDForItemIdentifier:(long long)arg1;
 - (void)_loadArtworkImageForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
 - (id)_itemArtworkCacheIDForItemIdentifier:(long long)arg1;
 - (void)_loadArtworkImageDataForMLArtworkFormatID:(unsigned int)arg1 artworkCacheID:(id)arg2 completionBlock:(id)arg3;
 - (id)_itemArtworkCacheIDForItemIdentifier:(long long)arg1 atPlaybackTime:(double)arg2;
+- (BOOL)_formatShouldUseNativeSize:(unsigned int)arg1;
 - (void)_seedCloudPlaylistWithTrack:(id)arg1 container:(id)arg2 completionBlock:(id)arg3;
 - (void)_initInstanceVariableOnce;
 - (BOOL)supportsEntityChangeTrackingForMediaEntityType:(int)arg1 collectionGroupingType:(int)arg2 dataProviderClass:(out Class*)arg3;

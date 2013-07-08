@@ -48,8 +48,8 @@
 - (void)dealloc;
 - (void)setCollectionView:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
-- (void)setLabel:(id)arg1;
 - (id)collectionView;
+- (void)setLabel:(id)arg1;
 - (void)updateConstraints;
 - (void)prepareForReuse;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

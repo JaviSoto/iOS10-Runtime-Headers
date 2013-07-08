@@ -95,10 +95,10 @@
 - (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)setViewBox:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
 - (int)activateTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (id)createPath;
 - (id)createSolidBrush:(id)arg1;
 - (id)createPen:(int)arg1 :(int)arg2 :(id)arg3 :(double*)arg4;
 - (id)createFont:(int)arg1;
-- (id)createPath;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)dealloc;
 - (id).cxx_construct;

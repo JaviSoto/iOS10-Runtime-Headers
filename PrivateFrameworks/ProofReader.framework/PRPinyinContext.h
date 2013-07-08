@@ -30,6 +30,7 @@
 }
 
 
+- (void)reset;
 - (void)_addPrefixes;
 - (void)_removePrefixes;
 - (void)_addValidSequenceReplacements;
@@ -52,7 +53,6 @@
 - (void)_addTranspositions;
 - (void)_advanceIndexes;
 - (void)_removeModificationsAndMoveStartingPoint;
-- (void)reset;
 - (id)init;
 - (void)dealloc;
 - (id)description;

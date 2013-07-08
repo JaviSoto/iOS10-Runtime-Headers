@@ -106,9 +106,9 @@
 @property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
 
 
+- (BOOL)ignoresNetworkConnectivity;
 - (void)setTopic:(id)arg1;
 - (id)_cachedBody;
-- (BOOL)ignoresNetworkConnectivity;
 - (BOOL)wantsJSONBody;
 - (id)messageBodyUsingCache;
 - (id)requiredKeys;
@@ -136,7 +136,6 @@
 - (void)setClientInfo:(id)arg1;
 - (void)setHighPriority:(BOOL)arg1;
 - (id)messageBody;
-- (BOOL)wantsAPSRetries;
 - (void)setWantsBinaryPush:(BOOL)arg1;
 - (void)setWantsIntegerUniqueIDs:(BOOL)arg1;
 - (BOOL)_usingOutgoingPush;
@@ -158,6 +157,7 @@
 - (id)userAgentHeaderString;
 - (BOOL)wantsUserAgentInHeaders;
 - (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsAPSRetries;
 - (double)customRetryInterval;
 - (BOOL)wantsCustomRetryInterval;
 - (id)uniqueIDString;
@@ -192,11 +192,11 @@
 - (void)setCompletionBlock:(id)arg1;
 - (id)topic;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (double)timeSent;
 - (double)timeout;
-- (void)setContext:(id)arg1;
 - (unsigned int)uniqueID;
 - (id)init;
 - (id)userInfo;

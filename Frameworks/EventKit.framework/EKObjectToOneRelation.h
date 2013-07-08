@@ -23,8 +23,8 @@
 - (id)initWithObject:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3 weak:(BOOL)arg4;
 - (void)didCommit;
 - (void)rollback;
-- (void)_clear;
 - (void)reset;
+- (void)_clear;
 - (void)refresh;
 - (void)dealloc;
 - (id)description;

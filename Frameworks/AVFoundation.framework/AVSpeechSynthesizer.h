@@ -14,8 +14,7 @@
 @property(getter=isSpeaking,readonly) BOOL speaking;
 @property(getter=isPaused,readonly) BOOL paused;
 
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
++ (void)initialize;
 
 - (BOOL)isPaused;
 - (BOOL)isSpeaking;
@@ -25,14 +24,5 @@
 - (void)speakUtterance:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (id)init;
-- (id)speechManager;
-- (id)speechQueue;
-- (void)_speakUtterance:(id)arg1;
-- (void)_enqueueNextJob;
-- (void)setInflightUtterance:(id)arg1;
-- (void)_handleSpeechDone:(id)arg1 successful:(BOOL)arg2;
-- (int)_convertBoundary:(int)arg1;
-- (id)inflightUtterance;
 
 @end

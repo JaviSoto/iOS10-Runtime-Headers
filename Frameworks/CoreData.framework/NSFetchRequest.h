@@ -65,12 +65,14 @@
 - (id)havingPredicate;
 - (void)setEntity:(id)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
+- (BOOL)_isEditable;
 - (void)_throwIfNotEditable;
 - (BOOL)hasChanges;
 - (unsigned int)fetchOffset;
 - (id)propertiesToFetch;
 - (BOOL)returnsObjectsAsFaults;
 - (id)propertiesToGroupBy;
+- (unsigned int)resultType;
 - (unsigned int)requestType;
 - (void)setPredicate:(id)arg1;
 - (void)setIncludesPendingChanges:(BOOL)arg1;
@@ -83,8 +85,6 @@
 - (BOOL)includesPropertyValues;
 - (id)entity;
 - (id)entityName;
-- (unsigned int)resultType;
-- (BOOL)_isEditable;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

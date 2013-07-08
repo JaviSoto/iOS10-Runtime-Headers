@@ -11,13 +11,19 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class __NSCFURLSession;
+@class __NSCFURLSession, NSObject<OS_dispatch_queue>;
 
 @interface __NSCFLocalSessionBridge : __NSCFSessionBridge  {
     __NSCFURLSession *_session;
     unsigned int _identSeed;
     struct __CFURLConnectionSession { } *_connectionSession;
     struct __CFDictionary { } *_tasks;
+    NSObject<OS_dispatch_queue> *_invalidateQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _invalidateCallback;
+
 }
 
 
@@ -41,17 +47,19 @@
 - (void)operationCompleted:(id)arg1;
 - (void)bridgeInvalidated:(id)arg1;
 - (void)statusMessage:(struct __CFString { }*)arg1;
-- (const struct ClassicConnectionSession { int (**x1)(); int (**x2)(); struct _CFURLSessionConfiguration {} *x3; struct XCookieStorage {} *x4; int x5; int x6; id x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; id x10; struct URLProtocolRegistry {} *x11; struct __CFSet {} *x12; struct ClassicConnectionSession {} *x13; struct RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *> {} *x14; }*)classicConnectionSession;
-     /* Encoded args for previous method: r^{ClassicConnectionSession=^^?^^?^{_CFURLSessionConfiguration}^{XCookieStorage}ii@@?@^{URLProtocolRegistry}^{__CFSet}^{ClassicConnectionSession}^{RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *>}}8@0:4 */
+- (const struct ClassicConnectionSession { int (**x1)(); int (**x2)(); struct _CFURLSessionConfiguration {} *x3; struct XCookieStorage {} *x4; int x5; id x6; id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; struct URLProtocolRegistry {} *x10; struct __CFSet {} *x11; struct ClassicConnectionSession {} *x12; struct RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *> {} *x13; }*)classicConnectionSession;
+     /* Encoded args for previous method: r^{ClassicConnectionSession=^^?^^?^{_CFURLSessionConfiguration}^{XCookieStorage}i@@?@^{URLProtocolRegistry}^{__CFSet}^{ClassicConnectionSession}^{RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *>}}8@0:4 */
 
 - (void)flushStorageWithCompletionHandler:(id)arg1;
 - (void)resetStorageWithCompletionHandler:(id)arg1;
 - (id)downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)dataTaskForRequest:(id)arg1 completion:(id)arg2;
-- (id)copyTasks;
-- (void)disavowSession;
+- (void)invalidateSession:(BOOL)arg1 withQueue:(id)arg2 completion:(id)arg3;
 - (id)initWithConfiguration:(id)arg1 session:(id)arg2 queue:(id)arg3;
+- (id)copyTasks;
+- (void)_onqueue_checkForCompletion;
+- (void)_onqueue_invokeInvalidateCallback;
 - (void)taskTerminating:(id)arg1;
 - (void)replaceTask:(id)arg1 withDownloadTask:(id)arg2;
 

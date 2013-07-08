@@ -24,8 +24,6 @@
 @property(retain) NSMutableArray * attributionApps;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)bestLocalizedAttribution;
 - (id)attributionApps;
 - (id)localizedAttributions;
@@ -50,6 +48,8 @@
 - (unsigned int)sourceVersion;
 - (id)sourceIdentifier;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

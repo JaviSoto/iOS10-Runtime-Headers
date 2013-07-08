@@ -30,6 +30,7 @@
     unsigned int _rightFlexibleSpaceCount;
     NSMutableDictionary *_backgroundImages;
     float __titleViewWidthForAnimations;
+    float __idealCustomTitleWidth;
 }
 
 @property(copy) NSString * title;
@@ -49,21 +50,24 @@
 @property(setter=_setLeftItemSpaceList:,copy) NSArray * _leftItemSpaceList;
 @property(setter=_setRightItemSpaceList:,copy) NSArray * _rightItemSpaceList;
 @property float _titleViewWidthForAnimations;
+@property(setter=_setIdealCustomTitleWidth:) float _idealCustomTitleWidth;
 @property(readonly) NSMutableDictionary * _backgroundImages;
 
 + (id)defaultFont;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setBackBarButtonItem:(id)arg1;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (id)font;
-- (void)setContext:(id)arg1;
 - (void)dealloc;
+- (void)_setIdealCustomTitleWidth:(float)arg1;
+- (float)_idealCustomTitleWidth;
 - (void)set_titleViewWidthForAnimations:(float)arg1;
 - (float)_titleViewWidthForAnimations;
 - (unsigned int)_rightFlexibleSpaceCount;

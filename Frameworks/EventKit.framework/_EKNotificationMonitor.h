@@ -28,6 +28,7 @@
     NSMutableArray *_culledRecentlyRepliedNotifications;
     BOOL _initialCheck;
     BOOL _shouldInstallPersistentTimer;
+    BOOL _useSyncIdleTimer;
     BOOL _loadRecentlyRepliedNotifications;
 }
 
@@ -42,7 +43,6 @@
 - (id)initForBulletinBoardWithEventStoreGetter:(id)arg1;
 - (void)_notifyForUnalertedNotifications:(id)arg1;
 - (unsigned int)_checkForNotifications:(id)arg1;
-- (int)_doesEvent:(id)arg1 occurAfterDate:(id)arg2;
 - (id)_notificationFromEvent:(id)arg1;
 - (void)adjust;
 - (unsigned int)_checkForRecentlyRepliedNotifications:(id)arg1;

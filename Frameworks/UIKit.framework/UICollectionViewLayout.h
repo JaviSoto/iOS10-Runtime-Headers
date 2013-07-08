@@ -53,12 +53,12 @@
 - (struct CGPoint { float x1; float x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
-- (void)_prepareForTransitionFromLayout:(id)arg1;
-- (void)_prepareForTransitionToLayout:(id)arg1;
 - (void)_didFinishLayoutTransitionAnimations:(BOOL)arg1;
 - (void)_finalizeLayoutTransition;
 - (BOOL)_supportsAdvancedTransitionAnimations;
 - (struct CGPoint { float x1; float x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 keyItemIndexPath:(id)arg2;
+- (void)_prepareForTransitionFromLayout:(id)arg1;
+- (void)_prepareForTransitionToLayout:(id)arg1;
 - (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (void)finalizeAnimatedBoundsChange;
 - (void)_finalizeCollectionViewItemAnimations;
@@ -86,8 +86,8 @@
 - (void)prepareLayout;
 - (void)invalidateLayout;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)collectionView;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

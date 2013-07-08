@@ -21,6 +21,7 @@
 @property(copy) NSArray * buttons;
 @property BOOL editing;
 
++ (id)_explanationLabelDefaultAttributes;
 
 - (id)warningLabelText;
 - (id)secureLabelText;

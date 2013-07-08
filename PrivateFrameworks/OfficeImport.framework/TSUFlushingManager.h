@@ -31,6 +31,7 @@
 - (BOOL)controlsActiveObject:(id)arg1;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
 - (void)memoryLevelIncreased:(int)arg1 was:(int)arg2;
+- (void)didEnterBackground;
 - (void)safeToFlush:(id)arg1 wasAccessed:(BOOL)arg2;
 - (void)unsafeToFlush:(id)arg1;
 - (void)doneWithObject:(id)arg1;
@@ -50,7 +51,6 @@
 - (void)advanceClock;
 - (void)_stopFlushingObjects;
 - (void)_startFlushingObjects;
-- (void)didEnterBackground;
 - (id)init;
 - (void)removeObject:(id)arg1;
 - (void)addObject:(id)arg1;

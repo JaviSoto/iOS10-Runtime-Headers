@@ -2,21 +2,43 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UITextView;
+@class NSURL, NSString, UITextView;
 
-@interface PSFooterHyperlinkView : UIView <PSHeaderFooterView> {
-    UITextView *_hyperlink;
+@interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
+    UITextView *_textView;
+    NSString *_text;
+    NSURL *_URL;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _linkRange;
+    id _target;
+    SEL _action;
 }
 
-@property(retain) UITextView * hyperlink;
+@property(retain) NSString * text;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } linkRange;
+@property id target;
+@property SEL action;
+@property(retain) NSURL * URL;
 
 
-- (id)hyperlink;
-- (void)setHyperlink:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })linkRange;
+- (void)_linkify;
+- (void)setLinkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (float)preferredHeightForWidth:(float)arg1;
 - (id)initWithSpecifier:(id)arg1;
+- (id)text;
+- (void)setTarget:(id)arg1;
 - (void)dealloc;
+- (id)URL;
+- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)setAction:(SEL)arg1;
+- (SEL)action;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setText:(id)arg1;
 - (void)layoutSubviews;
+- (void)setURL:(id)arg1;
+- (id)target;
 
 @end

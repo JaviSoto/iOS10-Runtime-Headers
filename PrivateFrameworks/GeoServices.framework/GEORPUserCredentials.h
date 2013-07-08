@@ -14,9 +14,8 @@
 @property(readonly) BOOL hasICloudUserMapsAuthToken;
 @property(retain) NSString * iCloudUserMapsAuthToken;
 
++ (id)_credentialsForPrimaryICloudAccount;
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)iCloudUserMapsAuthToken;
 - (BOOL)hasICloudUserMapsAuthToken;
 - (id)iCloudUserPersonID;
@@ -24,6 +23,8 @@
 - (void)setICloudUserMapsAuthToken:(id)arg1;
 - (void)setICloudUserPersonID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

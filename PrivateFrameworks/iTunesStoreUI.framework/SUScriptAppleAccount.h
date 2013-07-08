@@ -27,11 +27,11 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)accountType;
+- (void)reload;
 - (id)credential;
 - (id)username;
 - (id)accountDescription;
 - (id)attributeKeys;
-- (void)reload;
 - (void)dealloc;
 - (id)identifier;
 

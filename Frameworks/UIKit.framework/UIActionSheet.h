@@ -110,14 +110,17 @@
 @property(getter=isVisible,readonly) BOOL visible;
 
 + (Class)_popoverControllerClass;
++ (id)_newCancelButtonFont;
++ (id)_newFontForButtons;
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_popupAlertBackground;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setIndexOfSelectedButton:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (id)context;
+- (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -127,7 +130,6 @@
 - (void)removeFromSuperview;
 - (BOOL)isVisible;
 - (void)_layoutIfNeeded;
-- (void)setContext:(id)arg1;
 - (void)layout;
 - (id)message;
 - (void)setDelegate:(id)arg1;
@@ -161,6 +163,7 @@
 - (void)_presentPopoverInCenterOfWindowForView:(id)arg1;
 - (void)presentSheetInPopoverView:(id)arg1;
 - (id)_presentingViewForView:(id)arg1;
+- (void)_assertIfValidForView:(id)arg1;
 - (void)_presentViaResponderChain:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(unsigned int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
 - (void)_presentFromBarButtonItem:(id)arg1 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 backgroundStyle:(int)arg6 animated:(BOOL)arg7;
 - (void)_removeBackdropViewIfNecessary;

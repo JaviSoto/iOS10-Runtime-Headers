@@ -22,8 +22,8 @@
 - (BOOL)isTranscoding;
 - (id)initWithBevel:(BOOL)arg1;
 - (void)positionPreviewView;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void).cxx_destruct;
 
 @end

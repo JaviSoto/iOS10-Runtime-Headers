@@ -14,5 +14,6 @@
 - (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
 - (float)controlColumnWidthFactor;
+- (float)keyCornerRadius;
 
 @end

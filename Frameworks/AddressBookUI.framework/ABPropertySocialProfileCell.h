@@ -17,6 +17,6 @@
 - (id)profile;
 - (void)dealloc;
 - (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

@@ -32,11 +32,11 @@
 - (id)headerViewForTableView:(id)arg1;
 - (void)setSendDateStyle:(int)arg1;
 - (void)setSendDate:(id)arg1;
+- (id)_headerView;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (int)numberOfRowsInSection;
 - (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
 - (id)sendDate;
 - (void).cxx_destruct;
-- (id)_headerView;
 
 @end

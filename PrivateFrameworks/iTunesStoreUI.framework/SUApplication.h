@@ -13,8 +13,8 @@
 @property(copy) UIColor * interactionTintColor;
 @property(retain) UIWindow * window;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)runTestInvocation:(id)arg1;
 - (void)_runScriptTestWithOptions:(id)arg1;

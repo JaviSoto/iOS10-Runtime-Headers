@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIModalItemsPresentingViewController, UITableView, UILabel, UIButton, UIView, UIModalItem, UITextField, NSMutableArray, UIViewController;
+@class _UIModalItemsPresentingViewController, _UIModalItem, UITableView, UILabel, UIButton, UIView, UITextField, NSMutableArray, UIViewController;
 
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    UIModalItem *_modalItem;
+    _UIModalItem *_modalItem;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UILabel *_messageLabel;
@@ -38,7 +38,7 @@
     } _maxSize;
 }
 
-@property UIModalItem * modalItem;
+@property _UIModalItem * modalItem;
 @property struct CGSize { float x1; float x2; } presentingSize;
 @property struct CGSize { float x1; float x2; } maxSize;
 @property _UIModalItemsPresentingViewController * presentingViewController;

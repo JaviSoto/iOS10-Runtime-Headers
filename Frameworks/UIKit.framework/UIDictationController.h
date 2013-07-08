@@ -18,13 +18,13 @@
     UIAlertView *_dictationAvailableSoonAlert;
     BOOL _connectionWasAlreadyAliveForStatisticsLogging;
     UIDictationTestOps *_dictationDebuggingOperations;
+    NSString *_language;
     BOOL cancelledByWaitingForLocalResults;
     BOOL dictationStartedFromGesture;
     BOOL _performTestOperationForEditing;
     BOOL _discardNextHypothesis;
     BOOL _hasPreheated;
     NSString *_previousHypothesis;
-    NSString *_language;
     NSString *_inputModeThatInvokedDictation;
     struct _NSRange { 
         unsigned int location; 
@@ -36,13 +36,13 @@
 @property(copy) NSString * previousHypothesis;
 @property BOOL discardNextHypothesis;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } insertionRange;
-@property(retain) NSString * language;
 @property BOOL hasPreheated;
 @property BOOL dictationStartedFromGesture;
 @property(retain) NSString * inputModeThatInvokedDictation;
 
 + (id)stringForViewMode:(int)arg1;
 + (void)logDictationString:(id)arg1;
++ (void)didBeginEditingInTextView:(id)arg1;
 + (id)attributedStringForDictationResult:(id)arg1 andCorrectionIdentifier:(id)arg2;
 + (BOOL)takesPhysicalButtonsEnded:(id)arg1 forTextView:(id)arg2;
 + (BOOL)takesPhysicalButtonsBegan:(id)arg1 forTextView:(id)arg2;
@@ -53,8 +53,8 @@
 + (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (BOOL)usingTypeAndTalk;
 + (BOOL)isTextViewOnStarkScreen:(id)arg1;
-+ (void)enableGestureHandlerIfNecessary;
 + (void)logCorrectionStatistics;
++ (void)enableGestureHandlerIfNecessary;
 + (void)disableGestureHandler;
 + (BOOL)shouldEnableGestureHandler;
 + (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
@@ -67,7 +67,6 @@
 + (BOOL)setupForOpeningConnections;
 + (BOOL)openAssistantFrameworkIfNecessary;
 + (void)poppedLastDebuggingOp;
-+ (void)didBeginEditingInTextView:(id)arg1;
 + (void)keyboardDidUpdateOnScreenStatus;
 + (BOOL)shouldHideSelectionUIForTextView:(id)arg1;
 + (void)updateLandingView;
@@ -82,16 +81,15 @@
 + (BOOL)shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
 + (BOOL)shouldDeleteBackwardInInputDelegate:(id)arg1;
 + (id)inputModeNameForDictation;
-+ (void)keyboardDidSetDelegate;
++ (void)keyboardWillChangeFromDelegate:(id)arg1 toDelegate:(id)arg2;
 + (void)keyboardDidSetInputMode;
 + (id)bestInterpretationForDictationResult:(id)arg1;
 + (id)metadataDictionaryForCorrectionIdentifier:(id)arg1;
 + (id)serializedDictationPhrases:(id)arg1;
-+ (void)willEndEditingInTextView:(id)arg1;
 + (id)activeInstance;
 + (id)sharedInstance;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
 - (id)language;
@@ -130,13 +128,14 @@
 - (void)setupForStreamingDictationStart;
 - (void)startRecordingLimitTimer;
 - (void)setLanguage:(id)arg1;
+- (id)languageCodeForAssistantLanguageCode:(id)arg1;
 - (void)setInsertionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPreviousHypothesis:(id)arg1;
 - (void)cancelRecordingLimitTimer;
 - (BOOL)isInDebuggingMode;
 - (void)releaseConnectionAfterDictationRequest;
 - (void)endSessionIfNecessaryForTransitionFromState:(int)arg1 toState:(int)arg2;
-- (void)setupForDictationStart;
+- (void)setupForDictationStartForReason:(int)arg1;
 - (void)setupConnectionOptions;
 - (id)selectedTextForInputDelegate:(id)arg1;
 - (id)postfixTextForInputDelegate:(id)arg1;
@@ -165,7 +164,6 @@
 - (BOOL)dictationEnabled;
 - (BOOL)disabledDueToTelephonyActivity;
 - (void)delayedTelephonyCheckingSetup;
-- (void)willEndEditingInInputDelegate:(id)arg1;
 - (void)setPerformTestOperationForEditing:(BOOL)arg1;
 - (id)inputModeThatInvokedDictation;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;

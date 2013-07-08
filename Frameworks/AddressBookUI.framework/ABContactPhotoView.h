@@ -29,8 +29,8 @@
 @property(retain) UIImageView * attributionImageView;
 
 + (id)supportedPasteboardTypes;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setEditPhotoLabel:(id)arg1;
 - (void)setAddPhotoLabel:(id)arg1;

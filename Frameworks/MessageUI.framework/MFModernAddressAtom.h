@@ -28,8 +28,9 @@
 @property BOOL isPrimaryAddressAtom;
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2 useAbbreviatedName:(BOOL)arg3;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)unmodifiedAddressString;
 - (int)ABPropertyType;

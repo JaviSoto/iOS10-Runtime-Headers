@@ -15,13 +15,13 @@
 @property(retain) NSString * originator;
 
 
+- (id)scheduleResponse;
 - (void)setScheduleResponse:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)initWithOriginator:(id)arg1 attendees:(id)arg2 outboxURL:(id)arg3 payload:(id)arg4;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)scheduleResponse;
 - (void)setOriginator:(id)arg1;
 - (id)originator;
 - (id)attendees;

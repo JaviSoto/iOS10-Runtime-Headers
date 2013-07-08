@@ -36,11 +36,15 @@
 - (BOOL)isEV0CaptureEnabled;
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (BOOL)isHDRCaptureEnabled;
+- (void)setSquareCropEnabled:(BOOL)arg1;
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (BOOL)isRawCaptureSupported;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
 - (BOOL)isRawCaptureEnabled;
+- (BOOL)squareCropEnabled;
+- (void)setSuppressesShutterSound:(BOOL)arg1;
+- (BOOL)suppressesShutterSound;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
 - (int)HDRMode;
@@ -56,7 +60,7 @@
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)outputSettings;
 - (void)setOutputSettings:(id)arg1;
+- (id)outputSettings;
 
 @end

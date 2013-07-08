@@ -8,6 +8,7 @@
     BOOL _deleteFromDBOnly;
 }
 
+@property(retain) NSOrderedSet * assets;
 @property(retain) NSNumber * cloudRelationshipState;
 @property(retain) NSNumber * cloudRelationshipStateLocal;
 @property(retain) NSNumber * isOwned;
@@ -17,7 +18,6 @@
 @property(readonly) NSString * uuid;
 @property(readonly) NSString * title;
 @property(readonly) NSString * localizedTitle;
-@property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int approximateCount;
 @property(readonly) unsigned int assetsCount;
 @property(readonly) unsigned int photosCount;

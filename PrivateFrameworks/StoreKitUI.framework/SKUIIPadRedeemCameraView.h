@@ -30,8 +30,8 @@
 - (id)text;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

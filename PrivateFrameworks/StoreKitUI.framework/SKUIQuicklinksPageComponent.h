@@ -4,7 +4,7 @@
 
 @class NSString, NSArray;
 
-@interface SKUIQuicklinksPageComponent : SKUIPageComponent  {
+@interface SKUIQuicklinksPageComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSArray *_links;
     NSString *_title;
 }
@@ -18,6 +18,7 @@
 - (id)metricsElementName;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
+- (id)valueForMetricsField:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;
 - (id)links;

@@ -52,8 +52,8 @@
 + (Class)defaultButtonClass;
 + (float)defaultHeightForBarSize:(int)arg1;
 + (float)defaultHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (id)items;
@@ -81,6 +81,7 @@
 - (void)_buttonDownDelayed:(id)arg1;
 - (id)_customToolbarAppearance;
 - (BOOL)_isLocked;
+- (id)_repositionedItemsFromItems:(id)arg1 withBarButtonFrames:(id*)arg2 withHitRects:(id*)arg3 buttonIndexes:(id*)arg4 textButtonIndexes:(id*)arg5;
 - (void)_cleanupAdaptiveBackdrop;
 - (void)_layoutBackgroundViewConsideringStatusBar;
 - (BOOL)_supportsAdaptiveBackground;

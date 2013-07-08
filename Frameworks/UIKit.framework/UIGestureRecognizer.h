@@ -2,18 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPhysicalButtonsEvent, <UIGestureRecognizerDelegate>, UIView, NSMutableSet, NSMutableArray, UITouchesEvent;
+@class UIPhysicalButtonsEvent, UIView, <UIGestureRecognizerDelegate>, NSMutableSet, UITouchesEvent, NSMutableArray;
 
 @interface UIGestureRecognizer : NSObject  {
     NSMutableArray *_targets;
     NSMutableArray *_delayedTouches;
     UIView *_view;
+    UITouchesEvent *_updateEvent;
+    UIPhysicalButtonsEvent *_updateButtonEvent;
     <UIGestureRecognizerDelegate> *_delegate;
-    NSMutableSet *_failureRequirements;
-    NSMutableSet *_failureDependents;
-    NSMutableSet *_dynamicFailureRequirements;
-    NSMutableSet *_dynamicFailureDependents;
-    id _failureMap;
     NSMutableSet *_friends;
     int _state;
     struct { 
@@ -30,21 +27,30 @@
         unsigned int privateDelegateCanBePrevented : 1; 
         unsigned int privateDelegateShouldRecognizeSimultaneously : 1; 
         unsigned int privateDelegateShouldReceiveTouch : 1; 
+        unsigned int privateDelegateShouldRequireFailure : 1; 
+        unsigned int privateDelegateShouldBeRequiredToFail : 1; 
         unsigned int subclassShouldRequireFailure : 1; 
         unsigned int subclassShouldBeRequiredToFail : 1; 
+        unsigned int privateSubclassShouldRequireFailure : 1; 
+        unsigned int privateSubclassShouldBeRequiredToFail : 1; 
+        unsigned int hasSubclassDynamicFailureRequirements : 1; 
+        unsigned int hasDelegateDynamicFailureRequirements : 1; 
+        unsigned int queriedFailureRequirements : 1; 
         unsigned int cancelsTouchesInView : 1; 
         unsigned int delaysTouchesBegan : 1; 
         unsigned int delaysTouchesEnded : 1; 
         unsigned int disabled : 1; 
         unsigned int dirty : 1; 
-        unsigned int queriedFailureRequirements : 1; 
         unsigned int delivered : 1; 
         unsigned int continuous : 1; 
         unsigned int requiresDelayedBegan : 1; 
         unsigned int requiresSystemGesturesToFail : 1; 
     } _gestureFlags;
-    UITouchesEvent *_updateEvent;
-    UIPhysicalButtonsEvent *_updateButtonEvent;
+    NSMutableSet *_failureRequirements;
+    NSMutableSet *_failureDependents;
+    NSMutableSet *_dynamicFailureRequirements;
+    NSMutableSet *_dynamicFailureDependents;
+    id _failureMap;
 }
 
 @property(readonly) int state;
@@ -72,6 +78,8 @@
 - (id)_briefDescription;
 - (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
 - (void)removeFailureRequirement:(id)arg1;
+- (void)_addDynamicFailureRequirement:(id)arg1;
+- (void)_addDynamicFailureDependent:(id)arg1;
 - (void)_exclude;
 - (void)_cancelRecognition;
 - (BOOL)_isExcludedByGesture:(id)arg1;
@@ -79,10 +87,15 @@
 - (int)_depthFirstViewCompare:(id)arg1;
 - (void)_resetIfFinished;
 - (void)_delayedUpdateGesture;
-- (void)_queryFailureRequirements;
+- (BOOL)_requiresGestureRecognizerToFail:(id)arg1;
 - (void)_touchWasCancelled:(id)arg1;
 - (float)_distanceBetweenTouches:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
+- (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (BOOL)shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (BOOL)_hasTargets;
+- (id)_delayedTouches;
 - (void)_setFailureMap:(id)arg1;
 - (id)_failureMap;
 - (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(int)arg4;
@@ -95,10 +108,6 @@
 - (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (void)_updateGestureWithEvent:(id)arg1 buttonEvent:(id)arg2;
-- (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
-- (void)_addDynamicFailureDependent:(id)arg1;
-- (void)_addDynamicFailureRequirement:(id)arg1;
-- (BOOL)_requiresGestureRecognizerToFail:(id)arg1;
 - (void)_delayTouchesForEvent:(id)arg1;
 - (void)_clearDelayedTouches;
 - (void)_delayTouch:(id)arg1 forEvent:(id)arg2;

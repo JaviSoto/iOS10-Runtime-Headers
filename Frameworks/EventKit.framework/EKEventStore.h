@@ -207,6 +207,7 @@
 - (BOOL)markResourceChangeAlerted:(id)arg1 error:(id*)arg2;
 - (void)markEventAlerted:(id)arg1;
 - (id)remindersMatchingPredicate:(id)arg1;
+- (id)calendarWithIdentifier:(id)arg1;
 - (id)sharedCalendarInvitationsForEntityTypes:(unsigned int)arg1;
 - (id)predicateForRemindersWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(BOOL)arg3 completed:(BOOL)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 searchTerm:(id)arg7 sortOrder:(int)arg8 maxResults:(unsigned int)arg9;
 - (id)predicateForCompletedRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
@@ -230,7 +231,7 @@
 - (id)_calendarWithID:(id)arg1;
 - (id)objectWithObjectID:(id)arg1;
 - (BOOL)_calendar:(id)arg1 supportsEntityType:(unsigned int)arg2;
-- (id)registerFetchedObjectWithID:(id)arg1 defaultLoadedProperties:(id)arg2;
+- (id)registerFetchedObjectWithID:(id)arg1 withDefaultLoadedProperties:(id)arg2 inSet:(id)arg3;
 - (void)_saveWithoutNotify;
 - (id)_allCalendars;
 - (BOOL)commit:(id*)arg1;
@@ -248,6 +249,7 @@
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (void)rollback;
 - (id)registeredObjects;
+- (void)reset;
 - (void)setDeletedObjects:(id)arg1;
 - (void)setUpdatedObjects:(id)arg1;
 - (void)setInsertedObjects:(id)arg1;
@@ -256,10 +258,8 @@
 - (id)insertedObjects;
 - (int)sequenceNumber;
 - (id)sources;
-- (void)reset;
 - (id)init;
 - (void)setFlags:(unsigned long)arg1;
-- (id)calendarWithIdentifier:(id)arg1;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
 - (void)dealloc;

@@ -26,9 +26,6 @@
 + (id)systemLocale;
 + (BOOL)supportsSecureCoding;
 + (id)autoupdatingCurrentLocale;
-+ (void)_mapkit_overrideDistanceUnit:(int)arg1;
-+ (void)_mapkit_overrideGuidanceUnit:(int)arg1;
-+ (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
 + (id)currentDeviceLanguageForFacebook;
 
 - (id)init;
@@ -48,9 +45,5 @@
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)_mapkit_useYardsForShortDistances;
-- (BOOL)_mapkit_guidanceUsesMetricSystem;
-- (id)_mapkit_objectForKey:(id)arg1;
-- (BOOL)_mapkit_distanceUsesMetricSystem;
 
 @end

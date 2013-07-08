@@ -100,6 +100,7 @@
 - (BOOL)_tryToUnlockDocumentWithPassword:(id)arg1;
 - (void)snapshotComplete;
 - (void)prepareForSnapshot:(BOOL)arg1;
+- (unsigned int)firstVisiblePageNumber;
 - (id)_addPageAtIndex:(unsigned int)arg1;
 - (id)initWithWebPDFViewPlaceholder:(id)arg1;
 - (id)documentData;
@@ -143,7 +144,6 @@
 - (void)setPdfPlaceHolderView:(id)arg1;
 - (void)setBackgroundColorForUnRenderedContent:(id)arg1;
 - (id)uiPDFDocument;
-- (unsigned int)firstVisiblePageNumber;
 - (id)_selection;
 - (void)didRotate:(id)arg1;
 - (void)willRotate:(id)arg1;

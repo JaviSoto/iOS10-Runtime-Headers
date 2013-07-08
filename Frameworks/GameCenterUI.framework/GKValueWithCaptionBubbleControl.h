@@ -30,11 +30,12 @@
 - (id)smallValueStyle;
 - (void)setCaptionLabel:(id)arg1;
 - (BOOL)smallText;
+- (void)blinkOutThenInWithValueText:(id)arg1 captionText:(id)arg2 afterDelay:(double)arg3;
 - (void)labelDidApplyStyle:(id)arg1;
 - (void)setSmallText:(BOOL)arg1;
-- (void)setCaptionText:(id)arg1;
 - (id)attributedValueText;
 - (id)attributedCaptionText;
+- (void)setCaptionText:(id)arg1;
 - (void)updateTextFieldsFor3DScaling;
 - (void)setAttributedValueText:(id)arg1;
 - (void)_updateValueTextLabel;

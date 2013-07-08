@@ -56,8 +56,6 @@
 - (void)setChunkingErrors:(id)arg1;
 - (void)setHasCancelled:(BOOL)arg1;
 - (BOOL)hasCancelled;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (BOOL)hasErrorCode;
 - (BOOL)hasErrorDomain;
@@ -67,6 +65,8 @@
 - (void)setHasStartTime:(BOOL)arg1;
 - (BOOL)hasStartTime;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)errorDomain;
 - (void)setErrorCode:(int)arg1;
 - (int)errorCode;

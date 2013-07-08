@@ -66,6 +66,7 @@
 - (void)revealSearchResult:(id)arg1 andZoomIn:(BOOL)arg2;
 - (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1;
 - (void)removeViewFromSuperview;
+- (id)findOnPageHighlighter;
 - (id)searchController;
 - (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;

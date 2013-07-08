@@ -14,7 +14,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
 - (BOOL)_popupStyleForKey:(id)arg1;
-- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2;
+- (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;

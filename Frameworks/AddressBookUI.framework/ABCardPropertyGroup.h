@@ -35,6 +35,7 @@
 - (BOOL)isMultiLine;
 - (BOOL)allowsAdding;
 - (id)_nextAvailableServiceInServices:(id)arg1;
+- (void)_updateNameValuesForItems:(id)arg1;
 - (id)propertyItems;
 - (id)_itemToBeMergedWith:(id)arg1 fromItems:(id)arg2 forEditing:(BOOL)arg3;
 - (BOOL)_shoulShowGroupWhenEditing:(BOOL)arg1;

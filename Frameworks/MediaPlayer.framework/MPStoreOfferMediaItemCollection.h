@@ -44,6 +44,7 @@
 - (int)preferredStoreOfferVariant;
 - (id)itemsByRemovingLocalItems;
 - (id)initWithLookupResponseCollectionDictionary:(id)arg1 preferredStoreOfferVariant:(int)arg2;
+- (id)valuesForProperties:(id)arg1;
 - (id)mediaLibrary;
 - (unsigned long long)persistentID;
 - (id)title;

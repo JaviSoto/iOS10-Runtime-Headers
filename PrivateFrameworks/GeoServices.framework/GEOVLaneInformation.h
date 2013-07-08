@@ -11,11 +11,11 @@
 @property unsigned int validityMask;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setValidityMask:(unsigned int)arg1;
 - (unsigned int)validityMask;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (unsigned int)style;
 - (BOOL)isEqual:(id)arg1;

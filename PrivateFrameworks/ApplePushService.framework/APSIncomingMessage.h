@@ -17,8 +17,8 @@
 - (BOOL)wasLastMessageFromStorage;
 - (void)setFromStorage:(BOOL)arg1;
 - (BOOL)wasFromStorage;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
+- (void)setTimestamp:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (int)priority;
 

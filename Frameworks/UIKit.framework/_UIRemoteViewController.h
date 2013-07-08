@@ -47,8 +47,9 @@
 + (BOOL)shouldPropagateAppearanceCustomizations;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
 - (id)disconnect;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -65,7 +66,7 @@
 - (void)__sendNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 hidden:(BOOL)arg2;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(BOOL)arg1;
-- (void)__viewServicePopoverDidChangeContentSize:(id)arg1 animated:(BOOL)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
+- (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
 - (void)__setViewServiceIsDisplayingPopover:(BOOL)arg1;
 - (void)__dismissTextServiceSessionAnimated:(BOOL)arg1;
 - (void)__showServiceForText:(id)arg1 type:(int)arg2 fromRectValue:(id)arg3 replyHandler:(id)arg4;
@@ -85,6 +86,7 @@
 - (void)_restoreTextEffectsRemoteView;
 - (struct { unsigned int x1[8]; })serviceAuditToken;
 - (void)_terminateUnconditionallyThen:(id)arg1;
+- (void)_updateTintColor;
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (void)_applicationDidFinishSuspendSnapshot:(id)arg1;
 - (void)_hostDidEnterBackground:(id)arg1;

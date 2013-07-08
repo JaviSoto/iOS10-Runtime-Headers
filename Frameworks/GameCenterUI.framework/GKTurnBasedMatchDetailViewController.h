@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSObject<GKTurnBasedMatchDetailViewControllerDelegate>, GKTurnBasedMatch, NSString, UIBarButtonItem, GKTurnBasedParticipantsDataSource, GKTurnBasedMatchDetailHeaderView;
+@class NSObject<GKTurnBasedMatchDetailViewControllerDelegate>, GKTurnBasedMatch, UIBarButtonItem, GKTurnBasedParticipantsDataSource, GKTurnBasedMatchDetailHeaderView;
 
 @interface GKTurnBasedMatchDetailViewController : GKBasicCollectionViewController <SKStoreProductViewControllerDelegate> {
     BOOL _isInGame;
@@ -19,7 +19,6 @@
 @property BOOL isInGame;
 @property NSObject<GKTurnBasedMatchDetailViewControllerDelegate> * delegate;
 @property(retain) GKTurnBasedParticipantsDataSource * participantsDataSource;
-@property(readonly) NSString * playingWithString;
 @property(retain) UIBarButtonItem * rightBarButtonItem;
 @property(retain) GKTurnBasedMatchDetailHeaderView * headerView;
 @property BOOL didFloatInBubbles;
@@ -35,7 +34,6 @@
 - (id)participantsDataSource;
 - (void)setIsInGame:(BOOL)arg1;
 - (BOOL)isInGame;
-- (id)playingWithString;
 - (void)animateOutBubbleWithFocus:(int)arg1 completion:(id)arg2;
 - (void)quitMatch:(id)arg1;
 - (void)declineInvitation:(id)arg1;

@@ -24,8 +24,6 @@
 @property int maxManeuverTypeSupported;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasMaxManeuverTypeSupported:(BOOL)arg1;
 - (void)setMaxManeuverTypeSupported:(int)arg1;
 - (int)maxManeuverTypeSupported;
@@ -40,6 +38,8 @@
 - (void)setAppMinorVersion:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

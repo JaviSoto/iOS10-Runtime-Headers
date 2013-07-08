@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSListController, PSSpecifier, <KeychainSyncPhoneSettingsFragmentDelegate>, NSString, PSEditableTableCell, KeychainSyncCountryInfo, NSArray;
+@class PSListController, PSSpecifier, PSEditableTableCell, <KeychainSyncPhoneSettingsFragmentDelegate>, PSPhoneNumberSpecifier, NSString, KeychainSyncCountryInfo, NSArray;
 
 @interface KeychainSyncPhoneSettingsFragment : NSObject  {
     NSArray *_specifiers;
-    PSSpecifier *_phoneNumberSpecifier;
+    PSPhoneNumberSpecifier *_phoneNumberSpecifier;
     PSSpecifier *_countrySpecifier;
     PSListController *_listController;
     NSString *_phoneNumber;

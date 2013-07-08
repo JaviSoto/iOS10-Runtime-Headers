@@ -5,6 +5,7 @@
 @class UIImage, SKUIItemState, SKUIItemOfferButton, UILabel, SKUIProductPageHeaderLabel, SKUIClientContext, UIButton, UIControl, SKUIColorScheme, SKUIItemOffer, NSString, UIImageView;
 
 @interface SKUIProductPageHeaderView : UIView <SKUIItemOfferButtonDelegate> {
+    UILabel *_ageBandLabel;
     UIButton *_artistButton;
     SKUIClientContext *_clientContext;
     NSString *_contentRatingName;
@@ -32,6 +33,7 @@
 @property(copy) NSString * title;
 @property(copy) NSString * inAppPurchasesString;
 @property(copy) NSString * contentRatingName;
+@property(copy) NSString * ageBandString;
 @property(readonly) UIControl * artistButton;
 @property(retain) SKUIColorScheme * colorScheme;
 @property(retain) UIImage * headerImage;
@@ -55,11 +57,13 @@
 - (void)setHeaderImageHeight:(float)arg1;
 - (void)setFacebookFriendsString:(id)arg1;
 - (void)setContentRatingName:(id)arg1;
+- (void)setAgeBandString:(id)arg1;
 - (id)inAppPurchasesString;
 - (id)facebookFriendsString;
 - (id)contentRatingName;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
+- (id)ageBandString;
 - (id)initWithClientContext:(id)arg1;
 - (void)setRestricted:(BOOL)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;

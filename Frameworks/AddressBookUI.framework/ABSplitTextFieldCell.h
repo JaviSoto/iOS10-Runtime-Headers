@@ -2,25 +2,29 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UITextField, ABRepeatingGradientSeparatorView;
+@class UITextField, ABRepeatingGradientSeparatorView, UIView;
 
 @interface ABSplitTextFieldCell : UITableViewCell  {
     UITextField *_textFieldLeft;
     UITextField *_textFieldRight;
     ABRepeatingGradientSeparatorView *_separator;
+    UIView *_spacer;
 }
 
 @property(retain) UITextField * textFieldLeft;
 @property(retain) UITextField * textFieldRight;
 @property(retain) ABRepeatingGradientSeparatorView * separator;
+@property(retain) UIView * spacer;
 
 + (BOOL)requiresConstraintBasedLayout;
 
+- (void)setSpacer:(id)arg1;
 - (void)setSeparator:(id)arg1;
 - (void)setTextFieldRight:(id)arg1;
 - (void)setTextFieldLeft:(id)arg1;
 - (id)textFieldRight;
 - (id)textFieldLeft;
+- (id)spacer;
 - (id)separator;
 - (void)dealloc;
 - (void)setNeedsUpdateConstraints;

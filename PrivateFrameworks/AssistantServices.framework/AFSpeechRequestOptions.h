@@ -8,10 +8,12 @@
     BOOL _isEyesFree;
     BOOL _useAutomaticEndpointing;
     BOOL _useFreshContext;
+    BOOL _isInitialBringUp;
     int _event;
     NSString *_btDeviceAddress;
     NSString *_serverCommandId;
     double _activationEventTime;
+    double _expectedActivationEventTime;
 }
 
 @property int activationEvent;
@@ -21,9 +23,15 @@
 @property BOOL useAutomaticEndpointing;
 @property BOOL useFreshContext;
 @property double activationEventTime;
+@property double expectedActivationEventTime;
+@property BOOL isInitialBringUp;
 
 + (BOOL)supportsSecureCoding;
 
+- (void)setIsInitialBringUp:(BOOL)arg1;
+- (BOOL)isInitialBringUp;
+- (void)setExpectedActivationEventTime:(double)arg1;
+- (double)expectedActivationEventTime;
 - (void)setActivationEventTime:(double)arg1;
 - (double)activationEventTime;
 - (void)setUseFreshContext:(BOOL)arg1;
@@ -34,9 +42,9 @@
 - (BOOL)isEyesFree;
 - (void)setBtDeviceAddress:(id)arg1;
 - (id)btDeviceAddress;
-- (int)activationEvent;
 - (id)serverCommandId;
 - (void)setActivationEvent:(int)arg1;
+- (int)activationEvent;
 - (void).cxx_destruct;
 - (void)setUseAutomaticEndpointing:(BOOL)arg1;
 - (id)initWithActivationEvent:(int)arg1;

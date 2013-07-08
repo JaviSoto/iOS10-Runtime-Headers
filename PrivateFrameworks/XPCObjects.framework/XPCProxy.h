@@ -60,11 +60,11 @@
 - (id)connection;
 - (id)target;
 - (void)setErrorHandler:(id)arg1;
-- (id)disconnect;
 - (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)_disconnectionInvocation;
 - (id)proxyWithNewTarget:(id)arg1 label:(id)arg2 errorHandler:(id)arg3;
 - (id)proxyWithNewTarget:(id)arg1 queue:(id)arg2 errorHandler:(id)arg3;
+- (id)_uikit_disconnect;
 - (id)_awaitingReply;
 
 @end

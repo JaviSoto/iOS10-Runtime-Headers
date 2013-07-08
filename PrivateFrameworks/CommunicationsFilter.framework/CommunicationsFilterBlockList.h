@@ -14,14 +14,14 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_connect;
 - (BOOL)_disconnect;
+- (BOOL)_connect;
 - (void)_disconnected;
 - (BOOL)isItemInList:(id)arg1;
 - (id)copyAllItems;
 - (void)removeItemForAllServices:(id)arg1;
 - (void)addItemForAllServices:(id)arg1;
-- (BOOL)_sendXPCRequest:(id)arg1 completionBlock:(id)arg2;
+- (void)_sendXPCRequest:(id)arg1 completionBlock:(id)arg2;
 - (id)_sendSynchronousXPCRequest:(id)arg1;
 - (id)init;
 - (void)dealloc;

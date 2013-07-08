@@ -20,8 +20,8 @@
 @property float rightMargin;
 @property int style;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)hideAccountButton;
 - (void)_termsAndConditionsAction:(id)arg1;
@@ -37,11 +37,11 @@
 - (void)_buttonAction:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
+- (void)setRightMargin:(float)arg1;
 - (float)rightMargin;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
-- (void)setRightMargin:(float)arg1;
 - (void)dealloc;
 - (void)sizeToFit;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

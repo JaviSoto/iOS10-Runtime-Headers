@@ -103,6 +103,7 @@
 - (id)subitemsInArchive:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (BOOL)_canSaveToCameraRollForType;
+- (BOOL)_isPackageArchive:(id)arg1;
 - (id)_unzippedDocumentURL;
 - (void)_setUnzippedDocumentURL:(id)arg1;
 - (id)_pathsInArchive:(id)arg1;
@@ -113,7 +114,6 @@
 - (BOOL)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldUnzipDocument;
 - (void)setUTI:(id)arg1;
-- (BOOL)_isPackageFilename:(id)arg1;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
 - (BOOL)_isValidURL:(id)arg1;

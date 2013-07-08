@@ -49,7 +49,6 @@
 - (void)setForce:(BOOL)arg1;
 - (void)setIgnoreNewAnimations:(BOOL)arg1;
 - (void)setPlaceholderKeyboard:(BOOL)arg1;
-- (BOOL)delayForTransaction;
 - (BOOL)useCustomTransition;
 - (BOOL)isAnimationCompleted;
 - (void)setPersistUntilComplete:(BOOL)arg1;

@@ -68,6 +68,7 @@
 - (id)publicMessageCenter;
 - (id)messageCenter;
 - (void)checkCarrierProfileForceInstallation:(BOOL)arg1;
+- (BOOL)isAssistantUserGeneratedContentAllowed;
 - (BOOL)isActivationLockAllowed;
 - (BOOL)isLockScreenTodayViewAllowed;
 - (BOOL)isLockScreenNotificationsViewAllowed;
@@ -75,6 +76,7 @@
 - (BOOL)isAppRatingLimitInEffect;
 - (BOOL)isAppInstallationAllowed;
 - (BOOL)isLockScreenWiFiModificationAllowed;
+- (BOOL)isAdTrackingLimited;
 - (BOOL)isWebTextDefineAllowed;
 - (void)setAutomaticAppUpdatesAllowed:(BOOL)arg1;
 - (BOOL)isOTAPKIUpdatesAllowed;

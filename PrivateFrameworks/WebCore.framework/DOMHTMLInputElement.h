@@ -35,6 +35,7 @@
 @property(readonly) NSURL * absoluteImageURL;
 
 
+- (void)setReadOnly:(BOOL)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
 - (id)size;
@@ -121,7 +122,6 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRange;
 - (id)step;
 - (void)setType:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
 - (void)setSize:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;

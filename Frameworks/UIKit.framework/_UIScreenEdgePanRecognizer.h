@@ -25,7 +25,7 @@
     } _initialTouchLocation;
     double _initialTouchTimestamp;
     int _initialInterfaceOrientation;
-    int _touchedRegion;
+    unsigned int _touchedRegion;
     UIDelayedAction *_recognitionTimer;
     struct CGPoint { 
         float x; 
@@ -35,35 +35,35 @@
     int _type;
     BOOL _requiresLongPress;
     BOOL _requiresFlatThumb;
-    int _targetEdges;
+    unsigned int _targetEdges;
     int _state;
-    int _recognizedRegion;
+    unsigned int _recognizedRegion;
     <_UIScreenEdgePanRecognizerDelegate> *_delegate;
     _UIScreenEdgePanRecognizerSettings *_settings;
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property int targetEdges;
+@property unsigned int targetEdges;
 @property BOOL requiresFlatThumb;
 @property(readonly) int state;
-@property(readonly) int recognizedRegion;
+@property(readonly) unsigned int recognizedRegion;
 @property(getter=isRequiringLongPress,readonly) BOOL requiringLongPress;
 @property <_UIScreenEdgePanRecognizerDelegate> * delegate;
 @property(retain) _UIScreenEdgePanRecognizerSettings * settings;
 
 + (BOOL)_edgeSwipeNavigationGestureEnabled;
 
-- (void)setSettings:(id)arg1;
 - (void)reset;
+- (void)setSettings:(id)arg1;
 - (id)initWithType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (int)state;
 - (id)settings;
-- (int)recognizedRegion;
+- (unsigned int)recognizedRegion;
 - (BOOL)requiresFlatThumb;
-- (int)targetEdges;
+- (unsigned int)targetEdges;
 - (void)setRequiresFlatThumb:(BOOL)arg1;
 - (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)incorporateTouchSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
@@ -71,11 +71,11 @@
 - (void)_idleTimerElapsed:(id)arg1;
 - (void)_longPressTimerElapsed:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
-- (int)_targetEdges;
+- (unsigned int)_targetEdges;
 - (void)_incorporateInitialTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
 - (void)_incorporateIncrementalSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
 - (void)_setState:(int)arg1;
-- (void)setTargetEdges:(int)arg1;
+- (void)setTargetEdges:(unsigned int)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (int)_type;
 - (BOOL)isRequiringLongPress;

@@ -63,7 +63,6 @@
 - (BOOL)showHeaderView;
 - (BOOL)showStatusBar;
 - (BOOL)showDate;
-- (BOOL)disablesAwayItemsCompletely;
 - (BOOL)showAwayItems;
 - (id)bundleIDForUnlock;
 - (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
@@ -76,10 +75,10 @@
 - (BOOL)allowsTimer;
 - (BOOL)allowsControlCenter;
 - (BOOL)allowsNotificationCenter;
-- (BOOL)shouldAutoHideNotifications;
 - (BOOL)shouldShowLockStatusBarTime;
 - (BOOL)shouldDisableOnUnlock;
 - (BOOL)shouldDisableOnRelock;
+- (unsigned int)notificationBehavior;
 - (BOOL)viewWantsFullscreenLayout;
 - (id)enableTransitionBlock;
 - (id)_disableTransitionBlock;
@@ -91,6 +90,8 @@
 - (void)alwaysFullscreenValueHasChanged;
 - (BOOL)canBeAlwaysFullscreen;
 - (double)viewFadeInDuration;
+- (BOOL)shouldAutoHideNotifications;
+- (BOOL)disablesAwayItemsCompletely;
 - (BOOL)viewWantsOverlayLayout;
 - (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
 - (void)_setDisableTransitionBlock:(id)arg1;

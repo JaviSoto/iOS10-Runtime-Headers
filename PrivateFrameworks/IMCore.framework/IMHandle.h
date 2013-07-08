@@ -158,8 +158,8 @@
 + (void)_loadStatusNames;
 + (id)imHandlesForIMPerson:(id)arg1;
 + (id)filterIMHandlesForBestAccountSiblings:(id)arg1;
-+ (BOOL)notificationsEnabled;
 + (void)setNotificationsEnabled:(BOOL)arg1;
++ (BOOL)notificationsEnabled;
 
 - (void)requestValueOfProperty:(id)arg1;
 - (void)setPersonStatus:(unsigned int)arg1;
@@ -330,9 +330,9 @@
 - (id)statusMessage;
 - (id)emails;
 - (void)setEmail:(id)arg1;
-- (void)_postNotification:(id)arg1;
 - (BOOL)hasLocation;
 - (BOOL)hasName;
+- (void)_postNotification:(id)arg1;
 - (void)_registerForNotifications;
 - (id)siblings;
 - (id)lastName;

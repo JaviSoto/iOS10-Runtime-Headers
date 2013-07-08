@@ -24,6 +24,7 @@
 
 + (id)sharedController;
 
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (BOOL)_hasWiFiCapability;
 - (BOOL)_hasCellularCapability;
 - (void)_wifiEnabledDidChangeNotification:(id)arg1;
@@ -31,14 +32,13 @@
 - (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
 - (BOOL)_uncachedIsShowingAllVideo;
 - (BOOL)_uncachedIsShowingAllMusic;
-- (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (BOOL)_uncachedIsAutoDownloadOnCellularAllowed;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (BOOL)isCellularDataRestricted;
 - (BOOL)_isAutoDownloadOnCellularAllowed;
+- (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)_handleTelephonyNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (BOOL)canShowCloudDownloadButtons;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (BOOL)hasProperNetworkConditionsToPlayMedia;
 - (BOOL)canShowCloudVideo;
 - (BOOL)canShowCloudMusic;

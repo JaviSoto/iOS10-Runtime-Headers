@@ -78,8 +78,8 @@
 + (struct CGSize { float x1; float x2; })_legacy_adjustSizeForWebKitConstraining:(struct CGSize { float x1; float x2; })arg1 withFont:(id)arg2;
 + (id)_defaultAttributes;
 + (id)defaultFont;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -103,11 +103,11 @@
 - (id)_image;
 - (void)setMinimumScaleFactor:(float)arg1;
 - (float)minimumScaleFactor;
+- (void)_commonInit;
+- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
 - (void)_setDrawsDebugBaselines:(BOOL)arg1;
 - (BOOL)_drawsDebugBaselines;
-- (void)_commonInit;
 - (BOOL)_usesSimpleTextEffects;
-- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isAccessibilityElementByDefault;
@@ -139,7 +139,6 @@
 - (BOOL)_shouldDrawUnderlinesLikeWebKit;
 - (void)_setWordRoundingEnabled:(BOOL)arg1;
 - (void)_setInSecondConstraintsPass:(BOOL)arg1;
-- (float)_lastLineBaseline;
 - (int)baselineAdjustment;
 - (void)setAdjustsLetterSpacingToFitWidth:(BOOL)arg1;
 - (float)shadowBlur;
@@ -176,6 +175,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3;
 - (void)setLetterpressStyle:(id)arg1;
 - (BOOL)adjustsLetterSpacingToFitWidth;
+- (BOOL)_attributedStringHasAttributesNotCoveredByPrimitives;
 - (void)_setTextAlignment:(int)arg1;
 - (void)_setText:(id)arg1;
 - (void)_invalidateAsNeededForNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
@@ -198,6 +198,7 @@
 - (void)setTextAlignment:(int)arg1;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (float)_lastLineBaseline;
 - (void)setTextColor:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;

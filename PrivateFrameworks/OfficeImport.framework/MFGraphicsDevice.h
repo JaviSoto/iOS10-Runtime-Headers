@@ -112,8 +112,8 @@
 - (int)setTextJustification:(int)arg1 :(int)arg2;
 - (int)setTextColour:(id)arg1;
 - (int)deleteObject:(int)arg1;
+- (int)setMiterLimit:(double)arg1;
 - (void)done;
 - (void)dealloc;
-- (int)setMiterLimit:(double)arg1;
 
 @end

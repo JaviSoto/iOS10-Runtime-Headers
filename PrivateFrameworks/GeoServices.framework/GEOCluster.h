@@ -19,8 +19,6 @@
 @property(readonly) int* indexs;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setIndexs:(int*)arg1 count:(unsigned int)arg2;
 - (int*)indexs;
 - (int)indexAtIndex:(unsigned int)arg1;
@@ -28,6 +26,8 @@
 - (unsigned int)indexsCount;
 - (BOOL)hasContainer;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)addIndex:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

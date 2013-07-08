@@ -9,8 +9,8 @@
 @property float previousCellHeight;
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (float)previousCellHeight;
 - (void)setPreviousCellHeight:(float)arg1;

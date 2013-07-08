@@ -18,8 +18,8 @@
 - (id)linkedAnswerGroups;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)query;
 - (id)groupIdentifier;
 - (void)setQuery:(id)arg1;

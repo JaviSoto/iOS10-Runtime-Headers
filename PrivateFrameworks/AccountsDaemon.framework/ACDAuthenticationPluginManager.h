@@ -13,7 +13,6 @@
 
 - (id)_descriptionForRenewalResult:(int)arg1;
 - (void)_handleRenewalCompletionResult:(int)arg1 forAccount:(id)arg2 renewalID:(id)arg3 accountStore:(id)arg4 error:(id)arg5;
-- (id)_pluginIdentifierForAuthenticationType:(id)arg1;
 - (void)_handleVerificationCompletionForAccount:(id)arg1 verifiedAccount:(id)arg2 error:(id)arg3 client:(id)arg4 shouldSave:(BOOL)arg5;
 - (id)_authCapableParentAccountForAccount:(id)arg1;
 - (id)_pluginForAuthenticationType:(id)arg1;

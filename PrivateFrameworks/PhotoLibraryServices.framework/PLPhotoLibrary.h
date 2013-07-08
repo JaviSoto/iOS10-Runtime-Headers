@@ -39,6 +39,7 @@
 @property(readonly) NSArray * userAlbums;
 @property(readonly) NSArray * imagePickerAlbums;
 @property(readonly) NSArray * wallpaperAlbums;
+@property(readonly) NSArray * importAlbums;
 @property(readonly) NSArray * eventAlbums;
 @property(readonly) NSArray * faceAlbums;
 @property(readonly) NSArray * placeAlbums;
@@ -84,12 +85,16 @@
 + (id)photoStreamsDataDirectory;
 + (id)iTunesSyncedFaceDataDirectory;
 + (id)iTunesSyncedFaceAlbumThumbnailsDirectory;
++ (int)createSqliteErrorIndicatorFile;
 + (id)sqliteErrorIndicatorFilePath;
 + (id)photoMetadataDirectoryURL;
 + (id)photoDataMiscDirectory;
++ (id)libraryAvailableIndicatorFilePath;
 + (id)dupeAnalysisNeededFilePath;
 + (id)momentAnalysisNeededFilePath;
 + (id)migrationIndicatorFilePath;
++ (void)setLibraryAvailableIndicatorState:(BOOL)arg1;
++ (BOOL)libraryAvailableIndicatorState;
 + (id)persistedAlbumDataDirectoryURL;
 + (id)iTunesSyncedAssetsDirectory;
 + (id)pathToAssetsToAlbumsMapping;
@@ -123,7 +128,7 @@
 - (BOOL)isImageFileExtension:(id)arg1;
 - (id)masterFilenameFromSidecarFileInfo:(id)arg1;
 - (id)masterURLFromSidecarURLs:(id)arg1;
-- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 orBatchToken:(id)arg3 sidecarFileInfo:(id)arg4 progress:(id)arg5 importSessionIdentifier:(id)arg6 isImported:(BOOL)arg7 previewImage:(id)arg8 thumbnailImage:(id)arg9 savedAssetType:(int)arg10 replacementUUID:(id)arg11 extendedInfo:(id)arg12 thumbnailsData:(struct __CFDictionary { }*)arg13 withUUID:(id)arg14;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(int)arg9 replacementUUID:(id)arg10 extendedInfo:(id)arg11 thumbnailsData:(struct __CFDictionary { }*)arg12 withUUID:(id)arg13;
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)imageForFormat:(int)arg1 forAsset:(id)arg2;
@@ -159,6 +164,7 @@
 - (id)albumListForAlbumOfKind:(int)arg1;
 - (void)userDeleteAlbums:(id)arg1;
 - (id)placeAlbums;
+- (id)importAlbums;
 - (id)wallpaperAlbums;
 - (struct NSObject { Class x1; }*)albumWithUuid:(id)arg1;
 - (struct NSObject { Class x1; }*)eventWithName:(id)arg1 andImportSessionIdentifier:(id)arg2;

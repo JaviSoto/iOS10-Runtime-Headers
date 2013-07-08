@@ -7,16 +7,13 @@
     unsigned int _drawsLetterPress : 1;
 }
 
-@property(getter=isHighlighted) BOOL highlighted;
-
 + (id)_defaultColor;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)effectiveTextColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })baselinePoint;
-- (void)setHighlighted:(BOOL)arg1;
 - (id)accessibilityHint;
 - (BOOL)isAccessibilityElement;
 - (BOOL)_accessibilityIsScannerElement;

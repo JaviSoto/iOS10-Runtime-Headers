@@ -42,8 +42,8 @@
 - (void)updatePersistentObject;
 - (void)didCommit;
 - (void)rollback;
-- (id)items;
 - (void)reset;
+- (id)items;
 - (void)refresh;
 - (unsigned int)count;
 - (void)dealloc;

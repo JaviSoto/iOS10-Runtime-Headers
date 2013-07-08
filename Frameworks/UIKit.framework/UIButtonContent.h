@@ -31,8 +31,8 @@
 - (id)title;
 - (void)setShadowColor:(id)arg1;
 - (id)shadowColor;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (BOOL)isEmpty;
 - (void)dealloc;
 - (id)description;

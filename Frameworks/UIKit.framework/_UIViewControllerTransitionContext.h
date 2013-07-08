@@ -14,7 +14,6 @@
         unsigned int interactorImplementsCompletionSpeed : 1; 
         unsigned int interactorImplementsCompletionCurve : 1; 
         unsigned int transitionWasCancelled : 1; 
-        unsigned int transitionIsInFlight : 1; 
         unsigned int transitionIsCompleting : 1; 
     } _transitionContextFlags;
     BOOL _initiallyInteractive;
@@ -39,6 +38,7 @@
     float __completionVelocity;
     int __completionCurve;
     _UIViewControllerTransitionCoordinator *__auxContext;
+    int __state;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -66,9 +66,9 @@
 @property(setter=_setCompletionVelocity:) float _completionVelocity;
 @property(setter=_setCompletionCurve:) int _completionCurve;
 @property(setter=_setTransitionIsCompleting:) BOOL _transitionIsCompleting;
-@property(setter=_setTransitionIsInFlight:) BOOL _transitionIsInFlight;
 @property(setter=_setAuxContext:,retain) _UIViewControllerTransitionCoordinator * _auxContext;
 @property(setter=_setDuration:) double _duration;
+@property(setter=_setState:) int _state;
 @property(setter=_setInteractiveUpdateHandler:,copy) id _interactiveUpdateHandler;
 @property(setter=_setPostInteractiveCompletionHandler:,copy) id _postInteractiveCompletionHandler;
 @property(setter=_setPresentationStyle:) int presentationStyle;
@@ -79,7 +79,6 @@
 - (double)_duration;
 - (id)init;
 - (void)dealloc;
-- (void)_setCompletionCurve:(int)arg1;
 - (void)_setCompletionVelocity:(float)arg1;
 - (BOOL)_transitionIsCompleting;
 - (BOOL)_transitionIsInFlight;
@@ -100,9 +99,11 @@
 - (void)_setIsPresentation:(BOOL)arg1;
 - (void)_setPresentationStyle:(int)arg1;
 - (id)_completionHandler;
+- (void)_setState:(int)arg1;
 - (BOOL)initiallyInteractive;
 - (id)_interactor;
 - (id)_animator;
+- (void)_setCompletionCurve:(int)arg1;
 - (void)_setContainerView:(id)arg1;
 - (void)_setIsAnimated:(BOOL)arg1;
 - (void)__runAlongsideAnimations;
@@ -114,13 +115,13 @@
 - (void)_setTransitionIsInFlight:(BOOL)arg1;
 - (void)_setPostInteractiveCompletionHandler:(id)arg1;
 - (id)_postInteractiveCompletionHandler;
-- (int)_completionCurve;
 - (float)_completionVelocity;
 - (id)_auxContext;
 - (void)_setWillCompleteHandler:(id)arg1;
 - (id)_willCompleteHandler;
 - (BOOL)_isPresentation;
 - (id)_transitionCoordinator;
+- (int)_state;
 - (void)_setDuration:(double)arg1;
 - (void)_updateInteractiveTransitionWithoutTrackingPercentComplete:(float)arg1;
 - (void)finishInteractiveTransition;
@@ -130,6 +131,7 @@
 - (void)completeTransition:(BOOL)arg1;
 - (BOOL)transitionWasCancelled;
 - (BOOL)isInteractive;
+- (int)_completionCurve;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameForViewController:(id)arg1;
 - (id)containerView;

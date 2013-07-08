@@ -26,13 +26,13 @@
 @property(retain) NSString * bundleIdentifierForDataUsage;
 
 
+- (BOOL)_disconnect;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;
 - (void)setForceCellularIfPossible:(BOOL)arg1;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)forceCellularIfPossible;
 - (id)bundleIdentifierForDataUsage;
 - (BOOL)_connect;
-- (BOOL)_disconnect;
 - (void)_disconnected;
 - (void)dealloc;
 - (void)load;

@@ -41,24 +41,23 @@
     BOOL _skipUnlink;
     NSObject<OS_dispatch_io> *_writeIO;
     NSObject<OS_dispatch_queue> *_workQueue;
-    int _fd;
     NSString *_path;
+    int _error;
 }
 
 @property(retain) NSObject<OS_dispatch_io> * writeIO;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property int fd;
 @property bool finished;
 @property(retain) NSString * path;
 @property BOOL skipUnlink;
+@property int error;
 
 
 - (void)dealloc;
 - (id).cxx_construct;
 - (BOOL)skipUnlink;
-- (void)setFd:(int)arg1;
 - (id)writeIO;
-- (int)fd;
+- (id)ioChannel;
 - (void)setPath:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setWriteIO:(id)arg1;
@@ -73,6 +72,8 @@
 - (id)initWithExistingFile:(id)arg1 expectedSize:(long long)arg2;
 - (void)setSkipUnlink:(BOOL)arg1;
 - (id)initTempFileWithDirectory:(id)arg1;
+- (void)setError:(int)arg1;
+- (int)error;
 - (id)workQueue;
 
 @end

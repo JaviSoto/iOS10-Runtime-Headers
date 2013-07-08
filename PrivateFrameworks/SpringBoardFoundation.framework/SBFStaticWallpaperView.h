@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class UIImage;
+@class UIImage, NSMutableSet;
 
 @interface SBFStaticWallpaperView : SBFWallpaperView  {
+    NSMutableSet *_mappedBackdropKeys;
     UIImage *_image;
 }
 
@@ -12,12 +13,15 @@
 
 + (BOOL)_allowsParallax;
 
+- (id)_mappedImageKeyForParameters:(struct { int x1; int x2; int x3; })arg1 includingTint:(BOOL)arg2;
+- (void)_removeMappedBlurs;
 - (BOOL)isDisplayingWallpaper:(id)arg1;
-- (id)_generateImageForBackdropStyle:(int)arg1 includeTint:(BOOL)arg2;
-- (id)_generateBlurredImage;
-- (id)_displayedImage;
+- (id)_displayedImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2 destinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)_blurredImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)_computeAverageColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)image;
 - (void)dealloc;
 

@@ -21,8 +21,8 @@
 - (void)setNearbyPlayer:(id)arg1 reachable:(BOOL)arg2;
 - (id)nearbyDelegate;
 - (void)setNearbyDelegate:(id)arg1;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)sectionTitle;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)didUpdateModel;
 - (void)setNearbyPlayers:(id)arg1;
 - (id)nearbyPlayers;

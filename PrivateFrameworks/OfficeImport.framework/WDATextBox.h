@@ -18,8 +18,8 @@
 - (void)setOle:(BOOL)arg1;
 - (unsigned long)nextTextBoxId;
 - (void)setParent:(id)arg1;
-- (void)setDocument:(id)arg1;
 - (id)document;
+- (void)setDocument:(id)arg1;
 - (id)text;
 - (id)init;
 - (void)dealloc;

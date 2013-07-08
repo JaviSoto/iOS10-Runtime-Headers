@@ -21,16 +21,15 @@
 @property(readonly) GEOLocation * currentLocation;
 
 
-- (id)initWithSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
-- (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
 - (id)arrivalDate;
 - (id)departureDate;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
 - (int)transportType;
 - (id)currentLocation;
 - (id)source;
 - (void)dealloc;
 - (id)description;
 - (id)destination;
-- (id)initWithDirectionsRequest:(id)arg1;
 
 @end

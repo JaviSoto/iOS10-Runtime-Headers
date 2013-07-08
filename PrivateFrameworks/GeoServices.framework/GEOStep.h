@@ -100,8 +100,6 @@
 @property(retain) NSString * notice;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)maneuverIsHighwayExit;
 - (void)shieldInfo:(id)arg1;
 - (id)intersectionNameInfo;
@@ -208,6 +206,8 @@
 - (BOOL)hasNotice;
 - (void)setNotice:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setInstructions:(id)arg1;
 - (id)instructions;
 - (unsigned int)distance;

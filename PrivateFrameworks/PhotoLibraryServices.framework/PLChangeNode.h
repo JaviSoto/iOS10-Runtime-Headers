@@ -29,7 +29,7 @@
 - (void)processDelayedCloudFeedAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 transaction:(id)arg7;
 - (id)createXPCObjectFromDidSaveNotification:(id)arg1;
 - (void)sendChangeHubEventForDidSaveNotification:(id)arg1;
-- (void)sendEventToChangeHub:(id)arg1 transaction:(id)arg2;
+- (id)sendEventToChangeHub:(id)arg1 transaction:(id)arg2;
 - (void)distributeRemoteContextDidSaveEvent:(id)arg1 withGroup:(id)arg2 transaction:(id)arg3;
 - (void)_processDeletionsFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedDupeAnalysisFromChangeHubEvent:(id)arg1 transaction:(id)arg2;

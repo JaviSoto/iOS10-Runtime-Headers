@@ -57,13 +57,14 @@
 - (id)annotationID;
 - (id)newSelection;
 - (void)setDrawingLayer:(id)arg1;
+- (void)setAnnotationView:(id)arg1;
 - (void)setAssociatedAnnotationID:(id)arg1;
 - (void)setAnnotationID:(id)arg1;
 - (void)setPageView:(id)arg1;
-- (int)annotationType;
 - (id)annotationView;
-- (void)setAnnotationView:(id)arg1;
+- (int)annotationType;
 - (void)setData:(id)arg1;
+- (void)setIndex:(int)arg1;
 - (int)index;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)archive;
@@ -76,7 +77,6 @@
 - (struct CGColor { }*)color;
 - (id)contents;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)setIndex:(int)arg1;
 - (id)drawingLayer;
 - (id)init;
 - (id)data;

@@ -12,6 +12,7 @@
 
 - (void)_dumpOutAllIMHandles;
 - (void)imHandleInfoChanged:(id)arg1;
+- (void)reassessIMHandleForUniqueName:(id)arg1;
 - (void)setNameStyle:(int)arg1;
 - (void)_addressBookChanged;
 - (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(BOOL)arg2;
@@ -29,7 +30,6 @@
 - (id)_existingChatSiblingsForHandle:(id)arg1;
 - (id)_accountSiblingsForHandle:(id)arg1;
 - (id)_existingAccountSiblingsForHandle:(id)arg1;
-- (void)reassessIMHandleForUniqueName:(id)arg1;
 - (int)nameStyle;
 - (BOOL)_buildingChatSiblings;
 - (void)_clearChatSiblingsForGUID:(id)arg1 handle:(id)arg2;

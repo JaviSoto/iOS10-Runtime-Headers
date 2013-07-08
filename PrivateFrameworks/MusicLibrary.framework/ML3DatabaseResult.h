@@ -18,9 +18,9 @@
 - (id)initWithStatement:(id)arg1;
 - (id)stringValueForFirstRowAndColumn;
 - (id)objectForFirstRowAndColumn;
-- (long long)int64ValueForFirstRowAndColumn;
 - (BOOL)hasAtLeastOneRow;
 - (void)enumerateRowsWithBlock:(id)arg1;
+- (long long)int64ValueForFirstRowAndColumn;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

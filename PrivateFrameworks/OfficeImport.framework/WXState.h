@@ -86,8 +86,8 @@
 - (id)drawingState;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (BOOL)isThumbnail;
-- (void)setDocument:(id)arg1;
 - (id)document;
+- (void)setDocument:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

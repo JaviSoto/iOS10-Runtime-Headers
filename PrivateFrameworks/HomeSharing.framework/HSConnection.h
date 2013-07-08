@@ -82,9 +82,9 @@
 - (void)setSessionID:(unsigned int)arg1;
 - (unsigned int)sessionID;
 - (void)setPassword:(id)arg1;
+- (void)disconnect;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (void)disconnect;
 - (id)initWithBaseURL:(id)arg1;
 - (id)password;
 - (id)baseURL;

@@ -32,8 +32,8 @@
 @property(readonly) UIView * caretView;
 @property(readonly) UITextRangeView * rangeView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)removeFromSuperview;
 - (void)detach;

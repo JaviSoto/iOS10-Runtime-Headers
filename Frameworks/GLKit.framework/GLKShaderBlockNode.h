@@ -58,6 +58,7 @@
 - (void)setPropertyClass:(int)arg1;
 - (int)propertyClass;
 - (int)unrollCt;
+- (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;
 - (void)setParent:(id)arg1;
 - (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
@@ -65,7 +66,6 @@
 - (void)setType:(int)arg1;
 - (id)next;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })mask;
-- (void)setIndex:(unsigned int)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

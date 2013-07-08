@@ -25,16 +25,17 @@
 - (double)timestampForProperty:(id)arg1;
 - (id)relatedObjectIDsForProperty:(id)arg1;
 - (void)updateMissingRelationshipCachesFromOriginal:(id)arg1;
+- (void)releaseRelationshipCaches;
 - (void)copyRelationshipCachesFrom:(id)arg1;
 - (void)incrementExternalReferenceCount:(int)arg1;
 - (int)externalReferenceCount;
 - (int)decrementRefCount;
 - (void)incrementRefCount;
+- (double)timestamp;
 - (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
 - (void)_initializeRelationshipCaches;
 - (id)objectID;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)dealloc;
 - (unsigned int)retainCount;
 - (oneway void)release;

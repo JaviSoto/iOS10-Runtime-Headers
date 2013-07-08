@@ -9,9 +9,6 @@
 + (id)axAttributedStringWithString:(id)arg1;
 + (id)string;
 
-- (BOOL)isAXAttributedString;
-- (void)convertAttachmentsWithBlock:(id)arg1;
-- (void)setAttributes:(id)arg1;
 - (id)axAttributedStringDescription;
 - (id)coalescedFontAttributes;
 - (id)attributeValueForKey:(id)arg1;
@@ -21,6 +18,9 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (struct __CFAttributedString { }*)cfAttributedString;
+- (BOOL)isAXAttributedString;
+- (void)convertAttachmentsWithBlock:(id)arg1;
+- (void)setAttributes:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)replaceString:(struct __CFString { }*)arg1;
 - (BOOL)hasAttribute:(id)arg1;

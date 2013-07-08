@@ -1,7 +1,7 @@
 iOS7-Runtime-Headers
 ====================
 
-iOS7 Beta 2
+iOS7 Beta 3
 
 ### How to export
 

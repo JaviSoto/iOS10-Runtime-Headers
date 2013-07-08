@@ -49,13 +49,14 @@
 + (Class)_moreNavigationControllerClass;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)becomeFirstResponder;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)_ignoreUnselectedTabsForStateRestoration;
 - (id)_interactor;
 - (void)setMoreChildViewControllers:(id)arg1;
 - (id)moreChildViewControllers;
@@ -64,8 +65,6 @@
 - (BOOL)showsEditButtonOnLeft;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
 - (int)_tabBarPosition;
-- (void)tabBarAvailableBoundsForItemsDidChange:(id)arg1;
-- (void)tabBarProfileDidChange:(id)arg1;
 - (void)beginCustomizingTabBar:(id)arg1;
 - (void)setTabBar:(id)arg1;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
@@ -93,7 +92,6 @@
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)transientViewController;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
-- (unsigned int)_effectiveMaxItemsForViewControllers:(id)arg1;
 - (void)_tabBarItemClicked:(id)arg1;
 - (id)moreNavigationController;
 - (id)customizableViewControllers;
@@ -148,6 +146,7 @@
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)loadView;
 - (void)_populateArchivedChildViewControllers:(id)arg1;

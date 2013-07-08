@@ -33,6 +33,8 @@
     int _automaticOptimizationDisabledCount;
     int _engineDelegateCallsDisabledCount;
     int _variableDelegateCallsDisabledCount;
+    unsigned int _totalChangeCount;
+    unsigned int _changeCountAtLastOptimization;
     BOOL _shouldIntegralize;
     BOOL _revertsAfterUnsatisfiabilityHandler;
     BOOL _accumulatingRemovals;

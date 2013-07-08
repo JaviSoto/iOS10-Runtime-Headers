@@ -13,8 +13,8 @@
 - (void)destroyNativeObject;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (int)tag;

@@ -21,8 +21,8 @@
 @property(retain) UIView * backgroundView;
 @property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setTabsLayoutManager:(id)arg1;
 - (id)tabsLayoutManager;

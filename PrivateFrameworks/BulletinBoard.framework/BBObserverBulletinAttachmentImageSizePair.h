@@ -17,8 +17,8 @@
 
 
 - (struct CGSize { float x1; float x2; })size;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
 

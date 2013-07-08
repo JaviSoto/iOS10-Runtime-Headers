@@ -37,9 +37,9 @@
 
 - (void)writeData:(id)arg1;
 - (unsigned long long)seekToEndOfFile;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 - (void)setPort:(id)arg1;
 - (void)synchronizeFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
 - (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
 - (id)init;
 - (id)port;

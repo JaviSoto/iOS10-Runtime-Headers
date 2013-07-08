@@ -23,8 +23,8 @@
 
 @property <ABPersonImageDataDelegate> * imageDataDelegate;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)imageDataDelegate;
 - (BOOL)hasMultipleActions;
@@ -59,8 +59,8 @@
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (id)_createImagePicker;
 - (void)takePhoto;
-- (id)contentView;
 - (void)reload;
+- (id)contentView;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (void)resume;

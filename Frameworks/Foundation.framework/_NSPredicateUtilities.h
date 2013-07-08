@@ -5,6 +5,7 @@
 @interface _NSPredicateUtilities : NSObject  {
 }
 
++ (id)log:(id)arg1;
 + (id)distinct:(id)arg1;
 + (id)modulus:(id)arg1 by:(id)arg2;
 + (id)noindex:(id)arg1;
@@ -42,7 +43,6 @@
 + (id)exp:(id)arg1;
 + (id)raise:(id)arg1 toPower:(id)arg2;
 + (id)ln:(id)arg1;
-+ (id)log:(id)arg1;
 + (id)sqrt:(id)arg1;
 + (id)divide:(id)arg1 by:(id)arg2;
 + (id)multiply:(id)arg1 by:(id)arg2;

@@ -34,11 +34,12 @@
 - (void)unsettle;
 - (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
 - (void)watchItem;
-- (void)startWithObserver:(id)arg1;
 - (void)settle;
 - (void)setLastObservedEventID:(unsigned long long)arg1;
 - (id)initWithQueue:(id)arg1;
+- (void)setObserver:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)stop;
+- (void)start;
 
 @end

@@ -51,10 +51,8 @@
 @property unsigned int historicTravelTime;
 
 
-- (id)incidentsOnReRoutes;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)incidentsOffReRoutes;
+- (id)incidentsOnReRoutes;
 - (id)incidentsOnETARoutes;
 - (id)invalidSectionZilchPoints;
 - (id)reroutedRoutes;
@@ -116,6 +114,8 @@
 - (void)setRouteID:(id)arg1;
 - (void)setSteps:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

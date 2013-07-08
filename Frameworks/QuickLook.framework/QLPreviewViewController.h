@@ -4,7 +4,7 @@
 
 @class QLGenericView, QLProgressView, <QLPreviewItemInteractionDelegate>, NSTimer, UIView, <QLPreviewItem>, NSString, QLDisplayBundle, UIDocumentPasswordView;
 
-@interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, UIDocumentPasswordViewDelegate, QLProgressViewDelegate, QLSwippableItemProtocol> {
+@interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, UIDocumentPasswordViewDelegate, QLSwippableItemProtocol> {
     <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
     <QLPreviewItem> *_previewItem;
     int _index;
@@ -69,10 +69,10 @@
 - (void)_showPasswordView;
 - (void)previewItem:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (void)previewItem:(id)arg1 willShowOverlayWithDuration:(double)arg2;
+- (void)viewWasTappedOnPreviewItem:(id)arg1;
 - (void)_swapDisplayBundles;
 - (void)_scheduleShowProgressiveUI;
 - (void)_showGenericDisplayBundleForPreviewItem:(id)arg1;
-- (void)viewWasTappedOnPreviewItem:(id)arg1;
 - (void)_removeDisplayBundles;
 - (void)_hideProgressiveUI;
 - (void)_hidePasswordView;
@@ -102,13 +102,12 @@
 - (void)previewItem:(id)arg1 requiresDisplayBundle:(id)arg2 withHints:(id)arg3;
 - (void)previewItemDidLoad:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)previewItemWillLoad:(id)arg1;
-- (void)progressViewWasTapped:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
-- (int)index;
 - (void)setIndex:(int)arg1;
+- (int)index;
 - (id)init;
 - (void)dealloc;
 - (id)description;

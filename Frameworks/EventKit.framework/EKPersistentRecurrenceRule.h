@@ -27,6 +27,7 @@
 @property(readonly) BOOL shouldPinMonthDays;
 
 + (id)relations;
++ (id)defaultPropertiesToLoad;
 
 - (BOOL)validate:(id*)arg1;
 - (int)firstDayOfTheWeek;

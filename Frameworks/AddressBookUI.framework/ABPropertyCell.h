@@ -7,6 +7,8 @@
 @interface ABPropertyCell : ABContactCell  {
     float _labelWidth;
     BOOL _allowsEditing;
+    BOOL _displayConstraintsActive;
+    BOOL _editingConstraintsActive;
     UILabel *_labelLabel;
     UILabel *_valueLabel;
     UIView *_innerContentView;
@@ -29,6 +31,8 @@
 @property <ABPresenterDelegate> * presentingDelegate;
 @property(copy) NSDictionary * labelTextAttributes;
 @property(copy) NSDictionary * valueTextAttributes;
+@property BOOL displayConstraintsActive;
+@property BOOL editingConstraintsActive;
 @property(retain) NSLayoutConstraint * labelWidthConstraint;
 
 + (float)labelsPadding;
@@ -36,12 +40,18 @@
 + (BOOL)requiresConstraintBasedLayout;
 
 - (id)valueLabel;
+- (void)setNeedsUpdateEditingConstraints;
+- (void)setNeedsUpdateDisplayConstraints;
 - (void)_adjustCellLayoutForSectionLocation:(int)arg1;
 - (void)setLabelWidthConstraint:(id)arg1;
 - (float)labelWidth;
 - (id)labelLabel;
 - (id)labelWidthConstraint;
 - (id)innerContentView;
+- (void)setEditingConstraintsActive:(BOOL)arg1;
+- (BOOL)editingConstraintsActive;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
+- (BOOL)displayConstraintsActive;
 - (void)setLabelWidth:(float)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
@@ -61,7 +71,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)setNeedsUpdateConstraints;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
 - (void)copy:(id)arg1;

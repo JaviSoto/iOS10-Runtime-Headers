@@ -9,8 +9,10 @@
     NSMutableArray *_segmentTraits;
     float _rivenSizeFactor;
     BOOL _lightweightFactory;
+    float _scale;
 }
 
+@property float scale;
 @property(readonly) UIKBRenderConfig * renderConfig;
 @property(readonly) NSArray * segmentTraits;
 @property float rivenSizeFactor;
@@ -22,17 +24,20 @@
 + (id)cacheKeyForString:(id)arg1 withRenderFlags:(int)arg2 renderConfig:(id)arg3;
 + (id)lightweightFactoryForVisualStyle:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 renderConfig:(id)arg2;
 + (BOOL)_enabled;
++ (int)_graphicsQuality;
 
+- (void)setScale:(float)arg1;
 - (void)dealloc;
 - (void)setRivenSizeFactor:(float)arg1;
 - (float)rivenSizeFactor;
 - (id)thinTextFontName;
 - (BOOL)shouldClearBaseDisplayStringForVariants;
 - (id)dictationKeyImageName;
+- (id)handwritingMoreKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
 - (id)globalEmojiKeyImageName;
-- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2;
+- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2 controlOpacities:(BOOL)arg3;
 - (BOOL)lightweightFactory;
 - (id)segmentTraits;
 - (void)lowQualityTraits:(id)arg1;
@@ -49,7 +54,10 @@
 - (id)controlKeyBackgroundColorName;
 - (id)displayContentsForKey:(id)arg1;
 - (id)traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (float)keyCornerRadius;
 - (id)thinKeycapsFontName;
+- (void)modifyTraitsForDetachedInputSwitcher:(id)arg1 withKey:(id)arg2;
+- (float)translucentGapWidth;
 - (id)lightPadKeycapsFontName;
 - (id)defaultKeyBackgroundColorName;
 - (id)lightTextFontName;
@@ -58,5 +66,6 @@
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (id)renderConfig;
+- (float)scale;
 
 @end

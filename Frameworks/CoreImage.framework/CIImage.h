@@ -47,7 +47,6 @@
 - (id)initWithContentsOfFile:(id)arg1 options:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1 options:(id)arg2;
 - (id)initWithCGImageSource:(struct CGImageSource { }*)arg1 index:(unsigned long)arg2 options:(id)arg3;
-- (id)initWithData:(id)arg1 options:(id)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransformForOrientation:(int)arg1;
 - (id)initWithColorR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
 - (id)initWithColor:(id)arg1;
@@ -63,6 +62,7 @@
 - (void*)_internalRepresentation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
 - (id)_initWithInternalRepresentation:(void*)arg1;
+- (id)initWithData:(id)arg1 options:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

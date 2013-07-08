@@ -24,13 +24,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)score;
+- (id)smallIconSource;
 - (id)detailGoalText;
 - (id)listGoalText;
 - (id)listTitleText;
 - (id)iconURLString;
-- (id)iconSource;
 - (id)smallIconURLString;
-- (id)smallIconSource;
+- (id)iconSource;
 - (id)alertGoalText;
 - (id)composeGoalText;
 

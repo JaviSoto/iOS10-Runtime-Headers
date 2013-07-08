@@ -41,6 +41,7 @@
 - (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)entriesForPerson:(void*)arg1;
 - (id)entryFromEntries:(id)arg1 type:(int)arg2 property:(int)arg3 identifier:(int)arg4 value:(id)arg5 label:(id)arg6;
+- (BOOL)_isValueForEntry:(id)arg1 equalToValue:(id)arg2;
 - (id)entriesForPeople:(id)arg1;
 - (void)_loadList;
 - (void)_entryIdentityChanged:(id)arg1;

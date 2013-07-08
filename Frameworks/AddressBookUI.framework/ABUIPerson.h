@@ -47,6 +47,7 @@
 + (void)setAccountStore:(id)arg1;
 + (id)person;
 
+- (int)recordID;
 - (BOOL)hasPreferredPhoto;
 - (void)setAsPreferredPersonForPhoto;
 - (void)mergeProperties:(id)arg1 fromRecord:(void*)arg2;
@@ -83,11 +84,10 @@
 - (void*)copyPropertyValue:(int)arg1;
 - (id)secondarySourceName;
 - (id)primarySourceName;
-- (BOOL)isReadonly;
 - (id)preferredPhotoThumbnail;
 - (id)photoThumbnail;
+- (BOOL)isReadonly;
 - (BOOL)hasValidRecordID;
-- (int)recordID;
 - (id)phoneticName;
 - (void*)source;
 - (void*)record;

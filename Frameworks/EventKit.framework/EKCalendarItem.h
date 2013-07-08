@@ -165,14 +165,14 @@
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
+- (id)location;
+- (BOOL)isEditable;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (id)attachments;
 - (id)lastModifiedDate;
-- (BOOL)isEditable;
-- (id)location;
 - (id)calendarItemIdentifier;
 - (void)setLocation:(id)arg1;
 - (id)calendar;

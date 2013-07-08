@@ -32,7 +32,6 @@
 + (BOOL)canSendAttachments;
 + (BOOL)canSendSubject;
 + (void)_setupAccountMonitor;
-+ (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
 + (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (void)_serviceAvailabilityChanged:(id)arg1;
@@ -40,6 +39,7 @@
 + (BOOL)_canSendText;
 + (void)initialize;
 + (BOOL)isSupportedAttachmentUTI:(id)arg1;
++ (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;
 + (BOOL)isiMessageEnabled;
 + (BOOL)isMMSEnabled;
 + (BOOL)canSendText;

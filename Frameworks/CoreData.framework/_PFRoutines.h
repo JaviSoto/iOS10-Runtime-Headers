@@ -5,7 +5,6 @@
 @interface _PFRoutines : NSObject  {
 }
 
-+ (BOOL)isUbiquitousItemAtURL:(id)arg1;
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id*)arg2;
 + (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id*)arg2;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
@@ -44,6 +43,7 @@
 + (id)_getPFBundleVersionNumber;
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (BOOL)_generateObjectIDMaptableForArray:(id)arg1 withMapping:(id*)arg2 andEntries:(id*)arg3;
++ (BOOL)isUbiquitousItemAtURL:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byAddingItems:(id)arg2;
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;

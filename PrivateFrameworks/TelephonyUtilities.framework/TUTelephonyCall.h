@@ -9,9 +9,9 @@
 + (int)callStatusForCTCallStatusType:(int)arg1;
 
 - (struct __CTCall { }*)call;
+- (void)disconnect;
 - (int)service;
 - (id)isoCountryCode;
-- (void)disconnect;
 - (id)initWithCall:(struct __CTCall { }*)arg1;
 - (long)causeCode;
 - (BOOL)isEmergencyCall;

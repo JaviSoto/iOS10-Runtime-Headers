@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, CNLabeledValue, NSString, CNContact, NSURL;
+@class NSArray, CNLabeledValue, NSString, CNContact, <ABPropertyGroupItemDelegate>, NSURL;
 
 @interface ABPropertyGroupItem : ABCardGroupItem  {
     BOOL _allowsIMessage;
@@ -14,6 +14,7 @@
     NSString *_property;
     NSArray *_contacts;
     CNContact *_contact;
+    <ABPropertyGroupItemDelegate> *_delegate;
 }
 
 @property(retain) NSArray * labeledValues;
@@ -21,6 +22,7 @@
 @property(readonly) NSString * property;
 @property(copy) NSArray * contacts;
 @property(retain) CNContact * contact;
+@property <ABPropertyGroupItemDelegate> * delegate;
 @property BOOL allowsIMessage;
 @property BOOL allowsPhone;
 @property BOOL allowsEmail;
@@ -67,7 +69,6 @@
 - (id)displayLabel;
 - (void)updateLabeledValueWithLabel:(id)arg1;
 - (BOOL)canRemove;
-- (BOOL)isReadonly;
 - (id)displayValue;
 - (BOOL)isFavoriteOfType:(int)arg1;
 - (void)setContacts:(id)arg1;
@@ -77,6 +78,7 @@
 - (void)mergeItem:(id)arg1;
 - (void)updateLabeledValueWithValue:(id)arg1;
 - (id)emptyLabeledValue;
+- (BOOL)isReadonly;
 - (void)setContact:(id)arg1;
 - (id)contact;
 - (id)contacts;
@@ -84,7 +86,9 @@
 - (id)initWithProperty:(id)arg1;
 - (id)init;
 - (BOOL)isEmpty;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)delegate;
 
 @end

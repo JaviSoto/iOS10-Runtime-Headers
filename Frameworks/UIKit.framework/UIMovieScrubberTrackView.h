@@ -62,7 +62,7 @@
 - (void)_setOverlayViewIsZoomed:(BOOL)arg1 minValue:(float)arg2 maxValue:(float)arg3;
 - (void)_zoomAnimation:(id)arg1 didFinish:(id)arg2 context:(id)arg3;
 - (void)_reallyReloadData;
-- (id)_createImageViewForTimestamp:(id)arg1;
+- (id)_createImageViewForTimestamp:(id)arg1 isSummaryThumbnail:(BOOL)arg2;
 - (void)setEndValue:(double)arg1;
 - (void)setStartValue:(double)arg1;
 - (void)animateFillFramesAway;

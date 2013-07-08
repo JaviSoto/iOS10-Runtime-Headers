@@ -27,8 +27,8 @@
 + (id)componentsWithString:(id)arg1;
 
 - (void)setPercentEncodedQuery:(id)arg1;
-- (void)setScheme:(id)arg1;
 - (void)setHost:(id)arg1;
+- (void)setScheme:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)setPort:(id)arg1;

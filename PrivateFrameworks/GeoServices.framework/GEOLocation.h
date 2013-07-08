@@ -44,11 +44,8 @@
 @property BOOL hasCourse;
 @property double course;
 
-+ (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
 
 - (void)setHasCourse:(BOOL)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasHeading:(BOOL)arg1;
 - (void)setHasSpeed:(BOOL)arg1;
 - (void)setHasVerticalAccuracy:(BOOL)arg1;
@@ -74,6 +71,10 @@
 - (BOOL)hasType;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)initWithLocation:(id)arg1;
+- (double)timestamp;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
 - (double)heading;
@@ -82,9 +83,7 @@
 - (double)verticalAccuracy;
 - (int)altitude;
 - (void)setType:(int)arg1;
-- (id)initWithLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
@@ -92,7 +91,5 @@
 - (int)type;
 - (id)dictionaryRepresentation;
 - (id)_initWithCLClientLocation:(const struct { int x1; int x2; struct { double x_3_1_1; double x_3_1_2; } x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; int x14; double x15; int x16; struct { double x_17_1_1; double x_17_1_2; } x17; double x18; }*)arg1;
-- (id)initWithCLLocation:(id)arg1 course:(double)arg2;
-- (id)initWithCLLocation:(id)arg1;
 
 @end

@@ -69,8 +69,8 @@
 - (void)computeTransform;
 - (struct CGColor { }*)highlightColor;
 - (id)owner;
-- (void)setDocument:(id)arg1;
 - (id)document;
+- (void)setDocument:(id)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (id)init;

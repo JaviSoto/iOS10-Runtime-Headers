@@ -36,10 +36,10 @@
 + (void)_resetURL;
 + (int)localSearchProviderID;
 
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 spellingSuggestion:(id)arg5 refinement:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 spellingSuggestion:(id)arg5 refinement:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;

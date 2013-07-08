@@ -42,8 +42,6 @@
 
 
 - (id)suggestionEntryLists;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)searchs;
 - (id)placeResults;
 - (void)setHasTurnaroundTime:(BOOL)arg1;
@@ -84,6 +82,8 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

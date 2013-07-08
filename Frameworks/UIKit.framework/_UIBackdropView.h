@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, _UIBackdropEffectView, NSHashTable, UIColor, CAFilter, _UIBackdropViewSettings, UIImage, NSString, <_UIBackdropViewObserver>, UIView, NSMutableSet;
+@class UIImage, UIColor, _UIBackdropViewSettings, <_UIBackdropViewObserver>, UIView, NSMutableSet, CAFilter, NSHashTable, _UIBackdropEffectView, NSMutableDictionary, <_UIBackdropViewGraphicsQualityChangeDelegate>, NSString;
 
 @interface _UIBackdropView : UIView  {
+    BOOL _usesGroupFilters;
     BOOL _autosizesToFitSuperview;
     BOOL _computesColorSettings;
     BOOL _appliesOutputSettingsAutomatically;
@@ -27,6 +28,7 @@
     <_UIBackdropViewObserver> *_observer;
     _UIBackdropViewSettings *_inputSettings;
     _UIBackdropViewSettings *_outputSettings;
+    _UIBackdropViewSettings *_savedInputSettingsDuringRenderInContext;
     int _configuration;
     _UIBackdropEffectView *_backdropEffectView;
     NSString *_groupName;
@@ -58,6 +60,7 @@
     float _previousBackdropStatisticsGreen;
     float _previousBackdropStatisticsBlue;
     float _previousBackdropStatisticsContrast;
+    <_UIBackdropViewGraphicsQualityChangeDelegate> *_graphicsQualityChangeDelegate;
     NSString *__blurQuality;
     float __blurRadius;
     float __saturationDeltaFactor;
@@ -73,6 +76,7 @@
 @property double appliesOutputSettingsAnimationDuration;
 @property(retain) _UIBackdropViewSettings * inputSettings;
 @property(retain) _UIBackdropViewSettings * outputSettings;
+@property(retain) _UIBackdropViewSettings * savedInputSettingsDuringRenderInContext;
 @property(readonly) UIView * effectView;
 @property int configuration;
 @property BOOL appliesOutputSettingsAutomaticallyEnabledComputesColorSettings;
@@ -84,6 +88,7 @@
 @property BOOL allowsColorSettingsSuppression;
 @property(retain) _UIBackdropEffectView * backdropEffectView;
 @property(copy) NSString * groupName;
+@property BOOL usesGroupFilters;
 @property(retain) UIImage * filterMaskImage;
 @property(retain) UIView * grayscaleTintView;
 @property(retain) UIImage * grayscaleTintMaskImage;
@@ -117,12 +122,15 @@
 @property float previousBackdropStatisticsGreen;
 @property float previousBackdropStatisticsBlue;
 @property float previousBackdropStatisticsContrast;
+@property <_UIBackdropViewGraphicsQualityChangeDelegate> * graphicsQualityChangeDelegate;
 @property(copy) NSString * _blurQuality;
 @property float _blurRadius;
 @property float _saturationDeltaFactor;
 @property BOOL _backdropVisible;
 @property(setter=setZoomsBack:) BOOL _zoomsBack;
 
++ (void)adjustGraphicsQualityForAccessibilityIfNeeded:(id)arg1;
++ (void)setAllBackdropViewsToGraphicsQuality:(int)arg1;
 + (void)restoreColorSettingsForRequester:(id)arg1;
 + (void)suppressColorSettingsForRequester:(id)arg1;
 + (void)restoreColorSettingsForDidBecomeActive:(id)arg1;
@@ -131,8 +139,9 @@
 + (void)suppressColorSettingsForRunLoopModePush:(id)arg1;
 + (id)allBackdropViews;
 + (Class)defaultSettingsClass;
-+ (void)_initializeSafeCategory;
++ (Class)layerClass;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)observer;
 - (id)observers;
@@ -156,6 +165,7 @@
 - (void)set_saturationDeltaFactor:(float)arg1;
 - (void)set_blurRadius:(float)arg1;
 - (void)set_blurQuality:(id)arg1;
+- (void)setGraphicsQualityChangeDelegate:(id)arg1;
 - (void)setPreviousBackdropStatisticsContrast:(float)arg1;
 - (float)previousBackdropStatisticsContrast;
 - (void)setPreviousBackdropStatisticsBlue:(float)arg1;
@@ -168,15 +178,16 @@
 - (void)setBlursBackground:(BOOL)arg1;
 - (BOOL)blursBackground;
 - (void)setRequiresTintViews:(BOOL)arg1;
+- (void)setSavedInputSettingsDuringRenderInContext:(id)arg1;
+- (id)savedInputSettingsDuringRenderInContext;
 - (void)transitionIncrementallyToPrivateStyle:(int)arg1 weighting:(float)arg2;
 - (void)transitionToColor:(id)arg1;
-- (void)transitionToPrivateStyle:(int)arg1;
 - (void)_setBlursBackground:(BOOL)arg1;
 - (void)setUsesZoom;
+- (BOOL)usesGroupFilters;
 - (void)applyOverlayBlendMode:(int)arg1 toView:(id)arg2;
 - (void)removeMaskViews;
 - (void)setMaskMode:(int)arg1;
-- (void)setObserver:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settings:(id)arg2;
 - (double)appliesOutputSettingsAnimationDuration;
 - (void)transitionComplete;
@@ -218,6 +229,7 @@
 - (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2;
 - (void)setBlurRadiusSetOnce:(BOOL)arg1;
 - (BOOL)blurRadiusSetOnce;
+- (void)_updateFilters;
 - (id)tintFilter;
 - (id)colorSaturateFilter;
 - (id)gaussianBlurFilter;
@@ -256,7 +268,6 @@
 - (void)applySettingsWithBuiltInAnimation:(id)arg1;
 - (BOOL)appliesOutputSettingsAutomatically;
 - (BOOL)applyingBackdropChanges;
-- (id)outputSettings;
 - (id)backdropEffectView;
 - (void)clearUpdateInputBoundsRunLoopObserver;
 - (id)computeAndApplySettingsNotificationObserver;
@@ -269,10 +280,16 @@
 - (void)setInputSettings:(id)arg1;
 - (BOOL)autosizesToFitSuperview;
 - (void)setAutosizesToFitSuperview:(BOOL)arg1;
+- (id)backdropViewLayer;
+- (id)graphicsQualityChangeDelegate;
 - (BOOL)wantsColorSettings;
 - (void)setWantsColorSettings:(BOOL)arg1;
 - (BOOL)computesColorSettings;
 - (BOOL)allowsColorSettingsSuppression;
+- (void)didCallRenderInContextOnBackdropViewLayer;
+- (void)willCallRenderInContextOnBackdropViewLayer;
+- (void)setAppliesOutputSettingsAnimationDuration:(double)arg1;
+- (void)setUsesGroupFilters:(BOOL)arg1;
 - (float)_saturationDeltaFactor;
 - (id)_blurQuality;
 - (float)_blurRadius;
@@ -286,9 +303,9 @@
 - (BOOL)isBackdropVisible;
 - (void)setZoomsBack:(BOOL)arg1;
 - (void)setBlurQuality:(id)arg1;
-- (void)transitionToSettings:(id)arg1;
-- (void)setAppliesOutputSettingsAnimationDuration:(double)arg1;
 - (id)initWithSettings:(id)arg1;
+- (void)transitionToSettings:(id)arg1;
+- (void)transitionToPrivateStyle:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 privateStyle:(int)arg2;
 - (void)setFilterMaskImage:(id)arg1;
 - (void)setSaturationDeltaFactor:(float)arg1;
@@ -303,6 +320,7 @@
 - (void)setBlurHardEdges:(int)arg1;
 - (id)inputSettings;
 - (id)initWithPrivateStyle:(int)arg1;
+- (id)outputSettings;
 - (void)didMoveToSuperview;
 - (void)setBlurRadius:(float)arg1;
 - (float)saturationDeltaFactor;
@@ -313,6 +331,7 @@
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)addObserver:(id)arg1;
+- (void)setObserver:(id)arg1;
 - (BOOL)accessibilityElementsHidden;
 
 @end

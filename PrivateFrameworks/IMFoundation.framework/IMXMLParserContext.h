@@ -13,12 +13,12 @@
 @property(readonly) NSArray * resultsForLogging;
 
 
+- (void)reset;
 - (id)inContent;
 - (id)initWithContent:(id)arg1;
 - (id)initWithContentAsData:(id)arg1;
 - (id)inContentAsData;
 - (id)resultsForLogging;
-- (void)reset;
 - (id)name;
 - (void)dealloc;
 

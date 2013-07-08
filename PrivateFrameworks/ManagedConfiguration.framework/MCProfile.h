@@ -76,6 +76,7 @@
 + (int)evaluateTrustOfCertificateChain:(id)arg1;
 + (id)missingFieldErrorWithField:(id)arg1;
 + (BOOL)checkString:(id)arg1 isOneOfStrings:(id)arg2 key:(id)arg3 errorDomain:(id)arg4 errorCode:(int)arg5 errorString:(id)arg6 outError:(id*)arg7;
++ (int)evaluateTrustOfCertificateChain:(id)arg1 outIsAllowedToWriteDefaults:(BOOL*)arg2;
 + (id)profileWithDictionary:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(BOOL)arg3 outError:(id*)arg4;
 + (id)removeOptionalNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 + (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
@@ -108,12 +109,12 @@
 - (id)expiryDate;
 - (BOOL)mustInstallNonInteractively;
 - (id)localizedConsentText;
-- (id)signerCertificates;
 - (BOOL)isEncrypted;
 - (int)trustLevel;
 - (void)setSignerCertificates:(id)arg1;
 - (id)organization;
 - (BOOL)isSigned;
+- (id)signerCertificates;
 - (id)earliestCertificateExpiryDate;
 - (id)localizedPayloadSummaryByType;
 - (BOOL)isManagedByProfileService;

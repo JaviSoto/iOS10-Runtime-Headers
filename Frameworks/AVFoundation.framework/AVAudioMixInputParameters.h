@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAudioMixInputParametersInternal;
+@class AVAudioMixInputParametersInternal, NSString;
 
 @interface AVAudioMixInputParameters : NSObject <NSCopying, NSMutableCopying> {
     AVAudioMixInputParametersInternal *_inputParameters;
 }
 
 @property(readonly) int trackID;
+@property(readonly) NSString * audioTimePitchAlgorithm;
 @property(readonly) struct opaqueMTAudioProcessingTap { }* audioTapProcessor;
 
 
@@ -19,12 +20,15 @@
 - (void)setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
 - (void)_setRamps:(id)arg1;
 - (id)_volumeCurveAsString;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
+- (id)audioTimePitchAlgorithm;
 - (struct opaqueMTAudioProcessingTap { }*)audioTapProcessor;
 - (id)_audioVolumeCurve;
 - (void)setTrackID:(int)arg1;
 - (int)trackID;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

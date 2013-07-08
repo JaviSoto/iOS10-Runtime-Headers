@@ -2,15 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString, NSUUID;
+@class NSNumber, NSString, NSUUID;
 
 @interface PKBeacon : NSObject <NSSecureCoding> {
     NSUUID *_proximityUUID;
+    NSNumber *_major;
+    NSNumber *_minor;
     NSString *_name;
     NSString *_relevantText;
 }
 
 @property(retain) NSUUID * proximityUUID;
+@property(retain) NSNumber * major;
+@property(retain) NSNumber * minor;
 @property(retain) NSString * name;
 @property(retain) NSString * relevantText;
 
@@ -18,9 +22,13 @@
 
 - (id)proximityUUIDAsString;
 - (void)setProximityUUIDWithString:(id)arg1;
+- (void)setMinor:(id)arg1;
+- (void)setMajor:(id)arg1;
 - (void)setProximityUUID:(id)arg1;
 - (void)setRelevantText:(id)arg1;
 - (id)relevantText;
+- (id)minor;
+- (id)major;
 - (id)proximityUUID;
 - (id)name;
 - (void)dealloc;

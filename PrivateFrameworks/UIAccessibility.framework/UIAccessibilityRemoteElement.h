@@ -15,6 +15,7 @@
 }
 
 @property(retain) NSString * uuid;
+@property(readonly) unsigned long long uuidHash;
 @property int remotePid;
 @property unsigned int contextId;
 @property unsigned int machPort;
@@ -34,6 +35,7 @@
 - (BOOL)onClientSide;
 - (id)accessibilityContainerElements;
 - (int)remotePid;
+- (unsigned long long)uuidHash;
 - (void)setMachPort:(unsigned int)arg1;
 - (void)setOnClientSide:(BOOL)arg1;
 - (void)setRemoteChildrenDelegate:(id)arg1;

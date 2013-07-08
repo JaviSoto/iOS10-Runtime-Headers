@@ -2,10 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSetupController, PSSpecifier, NSString, PSKeychainSyncManager, KeychainSyncPhoneSettingsFragment, KeychainSyncCountryInfo, KeychainSyncDevicePINController, NSArray;
+@class PSSetupController, PSSpecifier, NSString, PSKeychainSyncManager, UIAlertView, KeychainSyncPhoneSettingsFragment, KeychainSyncCountryInfo, KeychainSyncDevicePINController, NSArray;
 
 @interface PSAccountSecurityController : PSListController <KeychainSyncViewControllerDelegate, KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate> {
-    PSSpecifier *_simplePasscodeSwitch;
     PSSpecifier *_recoverySwitch;
     NSArray *_passcodeSpecifiers;
     PSSetupController *_devicePasscodeChangeSetupController;
@@ -14,8 +13,9 @@
     NSString *_SMSTarget;
     KeychainSyncCountryInfo *_SMSTargetCountryInfo;
     BOOL _secureBackupEnabled;
-    BOOL _toggleSimpleness;
     PSKeychainSyncManager *_manager;
+    UIAlertView *_invalidPhoneNumberAlert;
+    UIAlertView *_changeDevicePasscodeAlert;
     BOOL _usesSimpleSecurityCode;
     NSString *_securityCode;
 }
@@ -26,18 +26,18 @@
 
 - (void)setUsesSimpleSecurityCode:(BOOL)arg1;
 - (BOOL)usesSimpleSecurityCode;
+- (id)useSimpleSecurityCodeForSpecifier:(id)arg1;
 - (void)navDonePressed;
 - (void)navCancelPressed;
+- (void)saveSMSTargetChanges;
 - (id)securityCode;
 - (void)_showSecurityCodeChangeSheetOnSpecifier:(id)arg1;
 - (void)setSecurityCode:(id)arg1;
-- (void)resetKeychainSync:(id)arg1;
+- (void)_setShowsDoneButton:(BOOL)arg1;
 - (id)passcodeSpecifiers;
 - (id)useRecoveryForSepecifier:(id)arg1;
 - (void)setUseRecovery:(id)arg1 specifier:(id)arg2;
 - (void)changeSecurityCode:(id)arg1;
-- (id)useSimpleSecurityCodeForSpecifier:(id)arg1;
-- (void)setUseSimpleSecurityCode:(id)arg1 specifier:(id)arg2;
 - (void)keychainSyncController:(id)arg1 didFinishWithResult:(id)arg2 error:(id)arg3;
 - (void)cancelPressed;
 - (void)reloadSpecifiers;

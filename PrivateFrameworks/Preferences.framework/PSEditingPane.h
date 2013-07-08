@@ -2,13 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier;
+@class PSSpecifier, UIViewController;
 
 @interface PSEditingPane : UIView  {
     PSSpecifier *_specifier;
     id _delegate;
     unsigned int _requiresKeyboard : 1;
+    UIViewController *_viewController;
 }
+
+@property UIViewController * viewController;
 
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
@@ -37,5 +40,7 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (id)viewController;
+- (void)setViewController:(id)arg1;
 
 @end

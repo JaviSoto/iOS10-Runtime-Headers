@@ -65,6 +65,7 @@
 - (void)setAlignment:(int)arg1;
 - (int)alignment;
 - (void)setLineJoin:(int)arg1;
+- (void)setMiterLimit:(float)arg1;
 - (float)miterLimit;
 - (int)lineJoin;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
@@ -72,6 +73,5 @@
 - (id)init;
 - (void)dealloc;
 - (id).cxx_construct;
-- (void)setMiterLimit:(float)arg1;
 
 @end

@@ -73,6 +73,10 @@
         unsigned int delegateDidCancelEditing : 1; 
         unsigned int delegateEditingAnimationFinished : 1; 
         unsigned int delegateWidthDeltaOriginXDelta : 1; 
+        unsigned int delegateDidBeginAnimatingZoom : 1; 
+        unsigned int delegateDidEndAnimatingZoom : 1; 
+        unsigned int delegateWillZoom : 1; 
+        unsigned int dataSourceRequestThumbnailImageIsSummmary : 1; 
     } _sliderFlags;
     float _edgeInset;
 }
@@ -83,6 +87,9 @@
 @property double maximumTrimLength;
 @property double trimStartValue;
 @property double trimEndValue;
+@property(readonly) double zoomMinimumValue;
+@property(readonly) double zoomMaximumValue;
+@property(getter=isZoomAnimating,readonly) BOOL zoomAnimating;
 @property BOOL thumbIsVisible;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isContinuous) BOOL continuous;
@@ -96,13 +103,13 @@
 @property(getter=isEditing) BOOL editing;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
+- (BOOL)isEditable;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEditable;
 - (void)setDataSource:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (id)dataSource;
@@ -119,22 +126,26 @@
 - (BOOL)showTimeViews;
 - (void)setZoomDelay:(double)arg1;
 - (double)zoomDelay;
+- (BOOL)isZoomAnimating;
+- (double)zoomMaximumValue;
+- (double)zoomMinimumValue;
+- (void)forceUnzoom;
+- (BOOL)forceZoom;
 - (double)trimEndValue;
 - (double)trimStartValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentMargins;
 - (void)animateAfterEdit;
 - (BOOL)thumbIsVisible;
-- (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
 - (void)_cancelTrackPressIfNeccessaryWithTouch:(id)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;
 - (float)_valueForTouch:(id)arg1;
 - (int)_editingHandleWithTouch:(id)arg1;
 - (BOOL)pointInsideThumb:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setRotationDisabled:(BOOL)arg1;
+- (void)_setZoomAnimating:(BOOL)arg1;
 - (void)_trackPressWasHeld;
 - (void)setTrimStartValue:(double)arg1;
 - (void)setTrimEndValue:(double)arg1;
-- (void)setEdgeInset:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
@@ -146,6 +157,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRectForStartTime:(double)arg1 endTime:(double)arg2;
 - (void)setThumbIsVisible:(BOOL)arg1;
 - (void)_trimAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)setEdgeInset:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
 - (void)_sliderValueDidChange:(id)arg1;
 - (void)setZoomAnimationDuration:(double)arg1;
@@ -154,7 +166,7 @@
 - (id)movieScrubberTrackView:(id)arg1 evenlySpacedTimestamps:(int)arg2 startingAt:(id)arg3 endingAt:(id)arg4;
 - (double)movieScrubberTrackViewDuration:(id)arg1;
 - (float)movieScrubberTrackViewThumbnailAspectRatio:(id)arg1;
-- (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2;
+- (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2 isSummaryThumbnail:(BOOL)arg3;
 - (double)movieScrubberTrackViewZoomAnimationDelay:(id)arg1;
 - (double)movieScrubberTrackViewZoomAnimationDuration:(id)arg1;
 - (void)movieScrubberTrackViewDidFinishRequestingThumbnails:(id)arg1;
@@ -171,8 +183,8 @@
 - (void)setValue:(double)arg1 animated:(BOOL)arg2;
 - (void)_initSubviews;
 - (void)setEditable:(BOOL)arg1;
-- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_sendDelayedActions;
+- (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

@@ -17,6 +17,7 @@
 @property int gkFocusBubbleType;
 
 
+- (int)lastKnownOrientation;
 - (void)setShouldUpdateContentOnlyWhenAuthenticated:(BOOL)arg1;
 - (void)pushFullScreenViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)displayUsingSplitNavigationBar;
@@ -28,6 +29,7 @@
 - (void)dealloc;
 - (void)popToRootViewControllerAnimated:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

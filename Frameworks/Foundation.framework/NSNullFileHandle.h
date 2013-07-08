@@ -8,8 +8,8 @@
 
 - (void)writeData:(id)arg1;
 - (unsigned long long)seekToEndOfFile;
-- (void)synchronizeFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (void)synchronizeFile;
 - (void)setReadabilityHandler:(id)arg1;
 - (id)readabilityHandler;
 - (void)setWriteabilityHandler:(id)arg1;

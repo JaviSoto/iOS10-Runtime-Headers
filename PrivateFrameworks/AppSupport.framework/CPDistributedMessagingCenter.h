@@ -21,6 +21,7 @@
 
 + (id)centerNamed:(id)arg1;
 
+- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
 - (id)delayReply;
 - (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
 - (void)runServerOnCurrentThread;
@@ -28,7 +29,6 @@
 - (void)stopServer;
 - (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
-- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
 - (id)_requiredEntitlement;
 - (BOOL)_isTaskEntitled:(struct { unsigned int x1[8]; }*)arg1;
 - (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { unsigned int x1[8]; }*)arg4;

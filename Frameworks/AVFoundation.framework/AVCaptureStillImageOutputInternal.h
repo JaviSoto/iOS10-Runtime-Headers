@@ -6,6 +6,7 @@
 
 @interface AVCaptureStillImageOutputInternal : NSObject  {
     NSMutableArray *stillImageRequests;
+    BOOL squareCropEnabled;
     struct CGSize { 
         float width; 
         float height; 
@@ -22,6 +23,7 @@
     BOOL rawCaptureEnabled;
     BOOL yoMamaWearsCombatBootsSupported;
     BOOL yoMamaWearsCombatBootsEnabled;
+    BOOL suppressesShutterSound;
 }
 
 

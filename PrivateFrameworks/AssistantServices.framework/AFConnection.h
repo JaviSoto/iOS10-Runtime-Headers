@@ -2,20 +2,22 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFSpeechRecorder, NSString, NSXPCConnection, <AFAssistantUIService>, <AFSpeechDelegate>, NSMutableDictionary;
+@class NSString, NSXPCConnection, <AFAssistantUIService>, <AFSpeechDelegate>, NSMutableDictionary;
 
 @interface AFConnection : NSObject  {
     NSXPCConnection *_connection;
     NSString *_outstandingRequestClass;
+    BOOL _hasActiveRequest;
+    NSMutableDictionary *_replyHandlerForAceId;
     unsigned int _stateInSync : 1;
     unsigned int _shouldSpeak : 1;
     unsigned int _isCapturingSpeech : 1;
     unsigned int _hasOutstandingRequest : 1;
-    BOOL _hasActiveRequest;
-    NSMutableDictionary *_replyHandlerForAceId;
-    AFSpeechRecorder *_speechRecorder;
-    BOOL _clientStateIsInSync;
-    BOOL _voiceOverIsActive;
+    unsigned int _audioSessionID;
+    float _averagePower;
+    float _peakPower;
+    unsigned int _clientStateIsInSync : 1;
+    unsigned int _voiceOverIsActive : 1;
     <AFAssistantUIService> *_delegate;
     <AFSpeechDelegate> *_speechDelegate;
 }
@@ -32,7 +34,6 @@
 + (BOOL)assistantIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
 + (id)outputVoice;
 + (void)beginMonitoringAvailability;
-+ (id)_sharedSpeechRecorder;
 + (BOOL)isAvailable;
 + (id)currentLanguageCode;
 + (void)initialize;
@@ -49,10 +50,9 @@
 - (void)clearAndSetApplicationContext;
 - (void)sendReplyCommand:(id)arg1;
 - (void)sendGenericAceCommand:(id)arg1;
+- (float)peakPower;
 - (void)startRequestWithCorrectedText:(id)arg1 forSpeechIdentifier:(id)arg2;
 - (void)stopSpeech;
-- (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;
-- (void)startSpeechRequestWithOptions:(id)arg1;
 - (void)startDirectActionRequestWithString:(id)arg1;
 - (void)startRequestWithText:(id)arg1;
 - (void)setLockState:(BOOL)arg1 screenLocked:(BOOL)arg2;
@@ -61,25 +61,25 @@
 - (void)_tellSpeechDelegateRecordingDidCancel;
 - (void)_tellSpeechDelegateRecordingDidEnd;
 - (void)_tellSpeechDelegateRecordingDidBegin;
+- (void)_tellSpeechDelegateRecordingWillBegin;
 - (void)_tellDelegateRequestFinished;
+- (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
 - (void)_doCommand:(id)arg1 reply:(id)arg2;
 - (void)setApplicationContextFromFrontmostAppIncludingBulletins:(id)arg1;
 - (void)clearAndSetApplicationContextWithBulletins:(id)arg1;
 - (void)clearContext;
 - (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
-- (float)peakPower;
-- (void)updatePower;
 - (void)rollbackRequest;
 - (void)updateSpeechOptions:(id)arg1;
-- (void)_tellSpeechDelegateRecordingWillBegin;
+- (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;
 - (void)_extendRequestTimeout;
-- (void)_startRecordingWithRecorder:(id)arg1 options:(id)arg2;
+- (void)startSpeechRequestWithOptions:(id)arg1;
 - (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
 - (void)_requestWillBeginWithRequestClass:(id)arg1 isSpeechRequest:(BOOL)arg2;
 - (void)setIsStark:(BOOL)arg1;
-- (id)_speechRecorder;
 - (void)_willCancelRequest;
 - (void)setVoiceOverIsActive:(BOOL)arg1;
+- (void)_setAudioSessionID:(unsigned int)arg1;
 - (void)_setShouldSpeak:(BOOL)arg1;
 - (id)_clientService;
 - (void)_invokeRequestTimeout;
@@ -89,6 +89,7 @@
 - (void)_tellSpeechDelegateRecordingDidFail:(id)arg1;
 - (void)_willFailRequestWithError:(id)arg1;
 - (void)_willCompleteRequest;
+- (void)_tellDelegateAudioSessionIDChanged:(unsigned int)arg1;
 - (void)_tellDelegateShouldSpeakChanged:(BOOL)arg1;
 - (BOOL)shouldSpeak;
 - (void)_cancelRequestTimeout;

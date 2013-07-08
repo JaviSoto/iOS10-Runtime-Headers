@@ -10,8 +10,8 @@
 
 @property(retain) UIControl * control;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)controlValue;
 - (void)controlChanged:(id)arg1;

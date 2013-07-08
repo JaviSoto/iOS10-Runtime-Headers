@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray, NSMutableOrderedSet, GKSectionMetrics, NSMutableArray, NSIndexPath, GKCollectionViewDataSource, NSMutableSet, GKDataSourceMetrics, NSMutableDictionary, NSSet;
+@class NSArray, NSMutableOrderedSet, GKSectionMetrics, GKCollectionViewLayoutAttributes, NSMutableArray, NSIndexPath, GKCollectionViewDataSource, NSMutableSet, GKDataSourceMetrics, NSMutableDictionary, NSSet;
 
 @interface GKGridLayout : UICollectionViewLayout  {
     struct __CFDictionary { } *_sectionToPresentationData;
@@ -12,6 +12,7 @@
     BOOL _noMoreShowMore;
     BOOL _lastInvalidateDueToBoundsChange;
     BOOL _movedItemsInUpdateCarrySections;
+    BOOL _displayClipView;
     unsigned int _portraitInterleavedSectionsCount;
     unsigned int _landscapeInterleavedSectionsCount;
     NSSet *_visibleIndexPathsFilter;
@@ -37,6 +38,7 @@
     NSMutableSet *_knownSupplementaryKinds;
     GKCollectionViewDataSource *_dataSourceForUpdate;
     unsigned int _updateType;
+    GKCollectionViewLayoutAttributes *_clipViewAttributes;
     struct CGSize { 
         float width; 
         float height; 
@@ -74,9 +76,14 @@
 @property(retain) GKCollectionViewDataSource * dataSourceForUpdate;
 @property unsigned int updateType;
 @property BOOL movedItemsInUpdateCarrySections;
+@property BOOL displayClipView;
+@property(retain) GKCollectionViewLayoutAttributes * clipViewAttributes;
 
 + (Class)layoutAttributesClass;
 
+- (id)clipViewAttributes;
+- (void)setDisplayClipView:(BOOL)arg1;
+- (BOOL)displayClipView;
 - (BOOL)movedItemsInUpdateCarrySections;
 - (id)dataSourceForUpdate;
 - (void)setKnownSupplementaryKinds:(id)arg1;
@@ -128,7 +135,10 @@
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setMovedItemsInUpdateCarrySections:(BOOL)arg1;
 - (void)setDataSourceForUpdate:(id)arg1;
+- (void)setUpdateType:(unsigned int)arg1;
 - (void)setCurrentUpdateItems:(id)arg1;
+- (BOOL)shouldSlideOutSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
+- (BOOL)shouldSlideInSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)finalLayoutAttributesForSlidingAwayItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForSlidingInItemAtIndexPath:(id)arg1;
 - (void)setRevealedIndexPaths:(id)arg1;
@@ -143,20 +153,22 @@
 - (struct CGSize { float x1; float x2; })laidOutContentSize;
 - (float)applyTopPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (float)applyBottomPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
-- (void)applyNearbyCellAttributesToSupplementaryViews;
 - (void)rebuildLayout;
+- (void)applyNearbyCellAttributesToSupplementaryViews;
 - (void)_filterPinnedAttributesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)calculateCollectionViewContentSize;
 - (void)finalizeGlobalPresentationDataWithSectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)updatePresentationDataForLastInterleavedSections;
 - (unsigned int)_prepareItemLayoutForSection:(int)arg1;
 - (int)_prepareSupplementaryLayoutForSection:(int)arg1 atLocation:(unsigned int)arg2 offset:(int)arg3;
 - (id)firstVisibleIndexAtOrAfterItem:(int)arg1 itemCount:(int)arg2 inSection:(int)arg3;
+- (void)setClipViewAttributes:(id)arg1;
 - (void)updatePresentationDataInSection:(int)arg1 withAttributes:(id)arg2 supplementaryInHeader:(BOOL)arg3;
 - (float)yOffsetForSection:(int)arg1;
-- (unsigned int)sectionsPerRow;
 - (BOOL)_areWePortrait;
 - (float)calculatedBottomPaddingForSection:(int)arg1;
 - (id)presentationDataForSection:(int)arg1;
+- (unsigned int)sectionsPerRow;
 - (int)indexOfSupplementaryMetricsOfKind:(id)arg1 inList:(id)arg2;
 - (void)refreshMetrics;
 - (struct CGSize { float x1; float x2; })_sizeAdjustedForTabBarSettingsBasedOnSize:(struct CGSize { float x1; float x2; })arg1;
@@ -171,6 +183,8 @@
 - (void)setDefaultSectionMetricsInternal:(id)arg1;
 - (id)revealMoreForSectionIndex:(int)arg1 revealCount:(unsigned int)arg2 andDeleteItemCount:(unsigned int)arg3;
 - (id)visibleIndexPathsFilter;
+- (void)disableClipView;
+- (void)enableClipView;
 - (id)revealMoreForSectionIndex:(int)arg1;
 - (void)prepareForUpdate:(unsigned int)arg1 inDataSource:(id)arg2;
 - (void)prepareForMovingItemsCarryingSections;
@@ -178,7 +192,6 @@
 - (void)forceFullInvalidate;
 - (id)dataSourceMetrics;
 - (id)_gkDescriptionWithChildren:(int)arg1;
-- (void)setUpdateType:(unsigned int)arg1;
 - (unsigned int)updateType;
 - (void)_resetState;
 - (id)init;

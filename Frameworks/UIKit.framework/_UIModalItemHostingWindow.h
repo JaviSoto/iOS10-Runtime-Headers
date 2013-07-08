@@ -5,6 +5,10 @@
 @interface _UIModalItemHostingWindow : UIWindow  {
 }
 
++ (id)_initializeSafeCategoryFromValidationManager;
++ (void)_accessibilityPerformValidations:(id)arg1;
++ (void)_initializeSafeCategory;
 
+- (BOOL)accessibilityViewIsModal;
 
 @end

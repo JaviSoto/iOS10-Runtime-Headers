@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
@@ -30,7 +31,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
 

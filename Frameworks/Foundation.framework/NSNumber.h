@@ -36,7 +36,6 @@
 + (id)_gkServerTimeInterval:(double)arg1;
 + (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithFloatZero;
-+ (id)numberWithCGFloat:(float)arg1;
 + (id)cr_numberWithCRContactID:(long long)arg1;
 + (id)cr_numberWithCRRecentID:(long long)arg1;
 
@@ -106,8 +105,6 @@
 - (unsigned long long)itemIdentifierValue;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
-- (id)initWithCGFloat:(float)arg1;
-- (float)cgFloatValue;
 - (float)CGFloatValue;
 - (void)appendJsonStringToString:(id)arg1;
 - (long long)cr_CRRecentIDValue;

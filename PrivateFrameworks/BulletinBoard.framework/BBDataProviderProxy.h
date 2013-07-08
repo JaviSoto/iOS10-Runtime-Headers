@@ -46,7 +46,7 @@
 - (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id)arg2;
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
-- (void)clearedInfoForAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id)arg2;
+- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
 - (void)ping:(id)arg1;
 - (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
 - (void)setSectionID:(id)arg1;

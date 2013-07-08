@@ -9,8 +9,8 @@
     UIButton *_rightButton;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)_reloadButtons;
 - (void)_buttonAction:(id)arg1;

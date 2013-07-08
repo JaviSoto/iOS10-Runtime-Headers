@@ -82,11 +82,11 @@
 - (id)getBkColour;
 - (id)getTextColour;
 - (id)getSelectedPalette;
+- (void)setMiterLimit:(double)arg1;
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setPath:(id)arg1;
 - (void)setFont:(id)arg1;
-- (void)setMiterLimit:(double)arg1;
 
 @end

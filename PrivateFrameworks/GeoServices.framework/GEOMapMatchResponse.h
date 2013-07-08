@@ -22,8 +22,6 @@
 @property(retain) NSData * zilchPoints;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasMatchingStatus:(BOOL)arg1;
 - (void)setMatchingStatus:(int)arg1;
 - (int)matchingStatus;
@@ -34,6 +32,8 @@
 - (BOOL)hasZilchPoints;
 - (void)setZilchPoints:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

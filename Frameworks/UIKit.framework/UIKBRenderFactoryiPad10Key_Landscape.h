@@ -9,5 +9,6 @@
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (float)controlColumnWidthFactor;
+- (float)keyCornerRadius;
 
 @end

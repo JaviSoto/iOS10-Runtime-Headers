@@ -11,9 +11,9 @@
 @property(retain) GKTurnBasedMatch * match;
 
 
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (id)sectionTitle;
 - (void)configureCollectionView:(id)arg1;
+- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)setMatch:(id)arg1;
 - (id)match;
 - (void)dealloc;

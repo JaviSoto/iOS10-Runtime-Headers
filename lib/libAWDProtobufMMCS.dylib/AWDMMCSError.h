@@ -29,9 +29,9 @@
 - (BOOL)hasDomain;
 - (void)addUnderlyingErrors:(id)arg1;
 - (void)setUnderlyingErrors:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setCode:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

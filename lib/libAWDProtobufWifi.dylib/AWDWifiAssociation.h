@@ -61,14 +61,14 @@
 - (void)setDeauthSourceOui:(id)arg1;
 - (void)setSecurity:(id)arg1;
 - (void)setBssidOui:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (BOOL)hasError;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (BOOL)hasError;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

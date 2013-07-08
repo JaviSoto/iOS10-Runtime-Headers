@@ -16,8 +16,8 @@
 @property BOOL isMeCard;
 @property(retain) ABMemberNameView * contactNameView;
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (BOOL)isMeCard;
 - (void)setContactNameView:(id)arg1;

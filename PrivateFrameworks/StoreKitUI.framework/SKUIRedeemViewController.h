@@ -22,6 +22,9 @@
 - (id)initialCode;
 - (void)setInitialCode:(id)arg1;
 - (id)initWithRedeemCategory:(int)arg1;
+- (void)_showRootViewController;
+- (void)_clientContextDidLoadWithContext:(id)arg1 error:(id)arg2;
+- (void)_cancelButtonAction:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void).cxx_destruct;

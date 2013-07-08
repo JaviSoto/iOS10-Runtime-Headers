@@ -72,9 +72,9 @@
 - (float)fontWeight;
 - (float)fontStretch;
 - (BOOL)isHorizontal;
+- (id)fontName;
 - (float)underlineThickness;
 - (float)xHeight;
-- (id)fontName;
 - (void)finalize;
 - (void)dealloc;
 - (float)leading;

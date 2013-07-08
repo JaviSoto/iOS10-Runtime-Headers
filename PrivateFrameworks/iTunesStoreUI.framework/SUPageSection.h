@@ -36,8 +36,8 @@
 - (void)_setURL:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)userInfo;

@@ -65,6 +65,10 @@
 
 + (void)initialize;
 + (id)_allDynamicAnimators;
++ (void)_unregisterAnimator:(id)arg1;
++ (void)_registerAnimator:(id)arg1;
++ (void)_clearReferenceViewFromAnimators:(id)arg1;
++ (void)_referenceViewSizeChanged:(id)arg1;
 
 - (void)didEndContact:(id)arg1;
 - (void)didBeginContact:(id)arg1;
@@ -110,16 +114,18 @@
 - (void)_evaluateLocalBehaviors;
 - (void)_stop;
 - (BOOL)_isWorldActive;
-- (void)_defaultMapper:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 angle:(float)arg3 isView:(BOOL)arg4;
+- (void)_defaultMapper:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 angle:(float)arg3 itemType:(unsigned int)arg4;
 - (void)_runBlockPostSolverIfNeeded:(id)arg1;
 - (id)_keyForItem:(id)arg1;
-- (id)referenceView;
 - (void)_setupWorld;
 - (void)_unregisterBehavior:(id)arg1;
 - (void)_registerBehavior:(id)arg1;
+- (void)_checkBehavior:(id)arg1;
 - (void)_traverseBehaviorHierarchy:(id)arg1;
 - (id)_referenceSystem;
 - (double)elapsedTime;
+- (void)_clearReferenceView;
+- (id)referenceView;
 - (id)initWithReferenceSystem:(id)arg1;
 - (void)_setRunning:(BOOL)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

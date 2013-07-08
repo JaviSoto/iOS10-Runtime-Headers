@@ -18,10 +18,11 @@
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (void)initialize;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)accessibilityRootElement;
+- (BOOL)_isEditable;
 - (void)viewDidMoveToWindow;
 - (void)willRemoveSubview:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -200,7 +201,6 @@
 - (void)_setPrinting:(BOOL)arg1 minimumPageLogicalWidth:(float)arg2 logicalHeight:(float)arg3 originalPageWidth:(float)arg4 originalPageHeight:(float)arg5 maximumShrinkRatio:(float)arg6 adjustViewSize:(BOOL)arg7 paginateScreenContent:(BOOL)arg8;
 - (BOOL)_isInScreenPaginationMode;
 - (void)_clearLastHitViewIfSelf;
-- (BOOL)_isEditable;
 - (BOOL)_hasSelectionOrInsertionPoint;
 - (void)_stopAutoscrollTimer;
 - (void)_autoscroll;
@@ -215,10 +215,10 @@
 - (id)_topHTMLView;
 - (BOOL)_shouldInsertText:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(int)arg3;
 - (id)_selectedRange;
-- (id)_frame;
 - (void)viewDidMoveToHostWindow;
 - (void)viewWillMoveToHostWindow:(id)arg1;
 - (void)closeIfNotCurrentView;
+- (id)_frame;
 - (id)_pluginController;
 - (void)setNeedsLayout:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionRect;

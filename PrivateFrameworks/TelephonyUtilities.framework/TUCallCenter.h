@@ -26,7 +26,6 @@
 - (void)createdOutgoingIMAVChat:(id)arg1;
 - (void)invitedToIMAVChat:(id)arg1;
 - (void)handleCallerIDChanged:(id)arg1;
-- (BOOL)_currentCallIsTelephonyCall;
 - (void)disconnectAllCalls;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (void)resumeCall:(id)arg1;
@@ -43,9 +42,11 @@
 - (id)_callerUnavailableUserInfoForCall:(id)arg1 reason:(unsigned int)arg2 error:(int)arg3;
 - (id)_callStatusUserInfoForUserInfo:(id)arg1;
 - (void)handleCallStatusChanged:(id)arg1 userInfo:(id)arg2;
-- (BOOL)_currentCallIsFaceTimeAudioCall;
-- (BOOL)_allCallsAreFaceTimeAudioCalls;
-- (BOOL)_allCallsAreTelephonyCalls;
+- (BOOL)_anyCallsSupportCallModelForService:(int)arg1;
+- (BOOL)_currentCallsSupportCallModelForService:(int)arg1;
+- (BOOL)_allCallsSupportCallModelForService:(int)arg1;
+- (BOOL)_onlySupportsCallModelForService:(int)arg1;
+- (BOOL)_supportsCallModelForService:(int)arg1;
 - (void)answerCall:(id)arg1;
 - (void)disconnectCall:(id)arg1;
 - (id)callWithStatus:(int)arg1;

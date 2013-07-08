@@ -14,10 +14,10 @@
 @property(readonly) NSObject<OS_xpc_object> * connection;
 
 
-- (id)sendMessageWithSynchronousReply:(id)arg1;
 - (id)messageReplyingTo:(id)arg1;
 - (BOOL)hasBoolEntitlement:(id)arg1;
 - (void)setMessageHandlers:(id)arg1;
+- (id)sendMessageWithSynchronousReply:(id)arg1;
 - (void)sendMessage:(id)arg1 withReplyHandler:(id)arg2;
 - (void)setHandler:(id)arg1 forMessageNamed:(const char *)arg2;
 - (id)messageWithName:(const char *)arg1;

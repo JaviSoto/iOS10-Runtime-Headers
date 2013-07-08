@@ -15,11 +15,13 @@
 @property(readonly) UIImage * icon;
 @property(readonly) int level;
 @property(readonly) int previewItemIndex;
+@property(readonly) BOOL isFolder;
 
 + (id)uiItemForPreviewItem:(id)arg1 index:(int)arg2;
 + (id)genericIconForPreviewItem:(id)arg1;
 
 - (int)previewItemIndex;
+- (BOOL)isFolder;
 - (void)cancelIconUpdate;
 - (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id)arg2;
 - (id)icon;

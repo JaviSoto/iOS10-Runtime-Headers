@@ -148,9 +148,7 @@
 - (BOOL)_setAutoExposureBias:(float)arg1;
 - (BOOL)_setFocusWithMode:(int)arg1 pointOfInterest:(id)arg2;
 - (void)_restoreColorProperties;
-- (void)_addMissingPresetSensorFormatsAndDefaultFrameRates:(id)arg1;
 - (void)_teardownFigRecorderForTorchApps;
-- (id)_deviceFormatMatchingWidth:(int)arg1 height:(int)arg2 minFrameRate:(int)arg3 maxFrameRate:(int)arg4 pixelFormat:(int)arg5 inFormatsArray:(id)arg6;
 - (id)initWithProperties:(id)arg1 sensorProperties:(id)arg2;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (BOOL)doesHandleNotification:(id)arg1;
@@ -223,7 +221,7 @@
 - (BOOL)isFlashAvailable;
 - (BOOL)hasFlash;
 - (struct OpaqueCMClock { }*)deviceClock;
-- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2;
+- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2 resetZoom:(BOOL)arg3;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
@@ -251,7 +249,6 @@
 - (void)stopUsingDevice;
 - (BOOL)startUsingDevice:(id*)arg1;
 - (void)setActiveInput:(id)arg1;
-- (BOOL)isConnected;
 - (id)devicePropertiesDictionary;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
@@ -259,6 +256,7 @@
 - (id)activeFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (BOOL)isConnected;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)uniqueID;
 - (id)init;

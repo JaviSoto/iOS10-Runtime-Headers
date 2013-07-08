@@ -398,8 +398,8 @@
     unsigned short maxPacketLength;
     double lastTierSwitch;
     BOOL audioTierHysteresis;
-    long long totalSentBytes;
-    long long totalReceivedBytes;
+    long long initialSentBytes;
+    long long initialReceivedBytes;
     VCJitterBuffer *vcJitterBuffer;
     struct tagHANDLE { int x1; } *hVideoReceiver;
     struct tagHANDLE { int x1; } *hVideoTransmitter;
@@ -435,6 +435,7 @@
     struct SKEStateOpaque { } *skeState;
     struct __CFData { } *secretKey;
     unsigned int dwRTT_ice;
+    NSObject<OS_dispatch_queue> *timestampQueue;
 }
 
 @property(copy) NSString * peerCN;

@@ -35,13 +35,16 @@
 - (int)differenceInMonths:(id)arg1;
 - (id)calendarDateWithDate:(id)arg1;
 - (id)calendarDateInTimeZone:(id)arg1;
+- (id)calendarDateByAddingYears:(int)arg1;
 - (id)calendarDateByAddingMonths:(int)arg1;
 - (id)calendarDateByAddingWeeks:(int)arg1;
+- (id)componentsWithoutTime;
 - (id)initWithAbsoluteTime:(double)arg1 internalTimeZone:(id)arg2;
 - (unsigned int)daysInMonth;
 - (id)calendarDateForWeekWithWeekStart:(long)arg1 daysSinceWeekStart:(int*)arg2;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })differenceAsGregorianUnits:(id)arg1 flags:(unsigned long)arg2;
 - (id)initWithGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 internalTimeZone:(id)arg2;
+- (id)componentsIncludingTime:(BOOL)arg1;
 - (id)initWithDateComponents:(id)arg1 timeZone:(id)arg2;
 - (id)initWithGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2;
 - (id)initWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;

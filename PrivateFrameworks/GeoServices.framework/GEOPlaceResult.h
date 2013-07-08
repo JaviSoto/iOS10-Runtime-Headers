@@ -41,8 +41,6 @@
 @property(retain) NSMutableArray * matchedTokens;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)matchedTokens;
 - (id)namedFeatures;
 - (id)unmatchedStrings;
@@ -89,6 +87,8 @@
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)quad;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

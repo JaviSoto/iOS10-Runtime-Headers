@@ -237,12 +237,12 @@
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (BOOL)allowsAddingToAddressBook;
-- (BOOL)isReadonly;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setDisplayedPerson:(id)arg1;
+- (BOOL)isReadonly;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)updateRecord;

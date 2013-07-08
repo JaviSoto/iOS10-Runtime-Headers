@@ -11,8 +11,8 @@
 @property(readonly) double timestamp;
 
 
-- (int)subtype;
 - (double)timestamp;
+- (int)subtype;
 - (BOOL)isKeyDown;
 - (void)_setTimestamp:(double)arg1;
 - (id)_triggeringPhysicalButton;

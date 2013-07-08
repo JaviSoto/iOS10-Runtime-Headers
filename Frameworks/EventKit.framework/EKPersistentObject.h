@@ -73,7 +73,7 @@
 - (BOOL)pushDirtyProperties:(id*)arg1;
 - (BOOL)_isPendingUpdate;
 - (BOOL)_isPendingDelete;
-- (void)_takeValuesForDefaultProperties:(id)arg1;
+- (void)_takeValuesForDefaultProperties:(id)arg1 inSet:(id)arg2;
 - (void)takeValues:(id)arg1 forProperties:(id)arg2;
 - (BOOL)_isPendingInsert;
 - (id)eventStore;
@@ -92,12 +92,12 @@
 - (id)primitiveStringValueForKey:(id)arg1;
 - (void)primitiveSetStringValue:(id)arg1 forKey:(id)arg2;
 - (void)rollback;
+- (void)reset;
+- (id)objectID;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (id)dirtyProperties;
 - (void)_setObjectID:(id)arg1;
 - (BOOL)isDirty;
-- (id)objectID;
-- (void)reset;
 - (BOOL)refresh;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

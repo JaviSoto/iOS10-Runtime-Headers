@@ -23,6 +23,7 @@
     NSMutableArray *_delayedCloudFeedInvitationRecordUpdates;
     NSMutableArray *_delayedDupeAnalysisNormalInserts;
     NSMutableArray *_delayedDupeAnalysisCloudInserts;
+    NSMutableSet *_avalancheUUIDsForUpdate;
     PLPhotoLibrary *_photoLibrary;
     <PLManagedObjectContextPTPNotificationDelegate> *_ptpNotificationDelegate;
     BOOL _regenerateVideoThumbnails;
@@ -76,6 +77,7 @@
 - (BOOL)savingDuringMerge;
 - (void)setChangeHubConnection:(id)arg1;
 - (id)changeHubConnection;
+- (id)getAndClearRecordedAvalancheUUIDsForUpdate;
 - (void)appendDelayedDupeAnalysisToXPCMessage:(id)arg1;
 - (void)getDelayedDupeAnalysisNormalInserts:(id*)arg1 cloudInserts:(id*)arg2;
 - (void)appendDelayedCloudFeedDataToXPCMessage:(id)arg1;
@@ -106,6 +108,7 @@
 - (void)recordAssetForDupeAnalysis:(id)arg1;
 - (void)recordAssetForMomentUpdate:(id)arg1;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
+- (void)recordAvalancheUUIDForUpdate:(id)arg1;
 - (void)recordAssetForCloudFeedUpdate:(id)arg1;
 - (BOOL)mergingChanges;
 - (void)setPhotoLibrary:(id)arg1;

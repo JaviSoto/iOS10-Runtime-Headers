@@ -76,7 +76,8 @@
 - (void)__saveStateForSession:(id)arg1 restorationAnchor:(id)arg2 completionHandler:(id)arg3;
 - (void)__dimmingViewWasTapped;
 - (void)__textServiceDidDismiss;
-- (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2;
+- (void)__setHostTintColor:(id)arg1 tintAdjustmentMode:(int)arg2;
+- (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2 legacyAppearance:(BOOL)arg3;
 - (void)__scrollToTopFromTouchAtViewLocation:(id)arg1 resultHandler:(id)arg2;
 - (void)__hostedActionSheetDidDismissWithClickedButtonIndex:(int)arg1;
 - (void)__hostedActionSheetClickedButtonAtIndex:(int)arg1;
@@ -96,7 +97,7 @@
 - (void)__hostViewDidAppear:(BOOL)arg1;
 - (void)__hostViewWillAppear:(BOOL)arg1 inInterfaceOrientation:(int)arg2 statusBarHeight:(float)arg3 completionHandler:(id)arg4;
 - (void)__hostReadyToReceiveMessagesFromServiceViewController;
-- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 hostAccessibilityServerPort:(id)arg3 canShowTextServices:(BOOL)arg4 replyHandler:(id)arg5;
+- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 legacyAppearance:(BOOL)arg3 hostAccessibilityServerPort:(id)arg4 canShowTextServices:(BOOL)arg5 replyHandler:(id)arg6;
 - (void)__setContentSize:(id)arg1;
 - (void)_presentActionSheet:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(unsigned int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
 - (void)_dismissActionSheet:(id)arg1 withClickedButtonIndex:(int)arg2 animated:(BOOL)arg3;
@@ -107,6 +108,7 @@
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)_updateSupportedInterfaceOrientationsIfNecessary;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;

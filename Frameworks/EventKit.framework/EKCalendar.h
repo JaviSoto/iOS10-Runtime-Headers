@@ -145,13 +145,13 @@
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
+- (void)reset;
 - (id)source;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void)reset;
+- (void)setSource:(id)arg1;
 - (BOOL)refresh;
 - (BOOL)isHidden;
-- (void)setSource:(id)arg1;
 - (struct CGColor { }*)CGColor;
 - (id)init;
 - (id)calendarIdentifier;

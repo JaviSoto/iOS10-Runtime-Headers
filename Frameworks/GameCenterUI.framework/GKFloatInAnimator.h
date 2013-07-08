@@ -3,13 +3,26 @@
  */
 
 @interface GKFloatInAnimator : GKBubblePathAnimator  {
+    BOOL _useWelcomeSpringValues;
     int _focusBubbleType;
+    float _delayIncrement;
+    float _additionalDelay;
 }
 
 @property int focusBubbleType;
+@property float delayIncrement;
+@property BOOL useWelcomeSpringValues;
+@property float additionalDelay;
 
 
+- (void)setAdditionalDelay:(float)arg1;
+- (float)additionalDelay;
+- (BOOL)useWelcomeSpringValues;
+- (float)delayIncrement;
 - (id)floatBubblesSortedLeftToRightInContext:(id)arg1;
+- (void)setUseWelcomeSpringValues:(BOOL)arg1;
+- (void)setDelayIncrement:(float)arg1;
+- (int)animatorType;
 - (int)focusBubbleType;
 - (void)setFocusBubbleType:(int)arg1;
 - (id)init;

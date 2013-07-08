@@ -61,7 +61,6 @@
 
 - (id)attributedString;
 - (id)initWithDOMRange:(id)arg1;
-- (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithPath:(id)arg1 options:(id)arg2;
 - (void)_load;
 - (void)_loadUsingWebKitOnMainThread;
@@ -124,6 +123,7 @@
 - (id)_specifiedStyleForElement:(id)arg1;
 - (id)_computedStyleForElement:(id)arg1;
 - (void)_loadWebKit;
+- (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)documentAttributes;
 - (void)setMutableAttributedString:(id)arg1;
 - (void)dealloc;

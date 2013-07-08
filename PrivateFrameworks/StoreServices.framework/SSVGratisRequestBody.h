@@ -24,13 +24,13 @@
 - (id)JSONBodyData;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
-- (id)bodyDictionary;
 - (int)requestStyle;
 - (id)bundleIdentifiers;
 - (void)setValue:(id)arg1 forBodyParameter:(id)arg2;
 - (id)propertyListBodyData;
 - (id)initWithRequestStyle:(int)arg1;
 - (id)itemIdentifiers;
+- (id)bodyDictionary;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void).cxx_destruct;

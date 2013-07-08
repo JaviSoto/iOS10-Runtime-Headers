@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class Protocol, NSString, NSXPCListener, NSXPCInterface;
+@class Protocol, NSArray, NSString, NSXPCListener, NSXPCInterface;
 
 @interface SLServiceListener : NSObject <NSXPCListenerDelegate> {
     Class _sessionClass;
@@ -11,6 +11,7 @@
     NSXPCListener *_listener;
     NSString *_persistentStoreName;
     NSString *_managedObjectModelPath;
+    NSArray *_allowedEntitlements;
     NSString *_serviceName;
 }
 
@@ -26,7 +27,9 @@
 - (id)managedObjectModelPath;
 - (void)setPersistentStoreName:(id)arg1;
 - (void)beginAcceptingConnections;
+- (void)restrictToClientsWithEntitlements:(id)arg1;
 - (id)initWithExportedSessionClass:(Class)arg1 serviceProtocol:(id)arg2;
+- (BOOL)_verifyAuthorizationForConnection:(id)arg1;
 - (void)setServiceName:(id)arg1;
 - (void).cxx_destruct;
 - (id)persistentStoreName;

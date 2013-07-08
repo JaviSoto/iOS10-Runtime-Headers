@@ -20,9 +20,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setShadow:(id)arg1;
+- (void)setStrength:(float)arg1;
 - (BOOL)matchesSettings:(id)arg1 strength:(float)arg2;
 - (float)strength;
-- (void)setStrength:(float)arg1;
 - (id)settings;
 
 @end

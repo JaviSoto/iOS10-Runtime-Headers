@@ -39,13 +39,16 @@
 + (BOOL)_fixupSyncedAssetAttributesInStore:(id)arg1;
 + (BOOL)_resetDupesAnalysisInStore:(id)arg1 resetHashes:(BOOL)arg2;
 + (BOOL)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
-+ (BOOL)_updateKindSubtypeForExistingPanoramaPhotosInStore:(id)arg1;
++ (BOOL)_fixupImportedAssetsInStore:(id)arg1;
++ (BOOL)_fixupImportedEventsInStore:(id)arg1;
++ (BOOL)_updateKindSubtypeForPanoramaPhotosNeedsReset:(BOOL)arg1 inStore:(id)arg2;
 + (BOOL)_resetThumbnailsAndInitiateRebuildRequest;
 + (BOOL)_initiateLightweightReimportOfAllPhotoCloudSharingMetadataInStore:(id)arg1;
 + (BOOL)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
 + (BOOL)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
 + (BOOL)_repairSingletonObjectsInDatabaseForOfflineStore:(id)arg1;
 + (void)_forceCreateIndexOnOrderedAssets:(BOOL)arg1;
++ (BOOL)postProcessMigratedStore:(id)arg1 fromVersion:(int)arg2;
 + (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id*)arg3;
 + (BOOL)_deletePhotoCloudSharingMetadataInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (BOOL)_populateLightweightReimportDirectoryWithPhotoCloudSharingAssetsInManagedObjectContext:(id)arg1 error:(id*)arg2;
@@ -53,9 +56,10 @@
 + (id)_newSyncedPropertiesByAssetUUIDs:(BOOL)arg1;
 + (void)validateCurrentModelVersion;
 + (BOOL)postProcessThumbnailsOnly;
-+ (BOOL)postProcessMigratedStore:(id)arg1 fromVersion:(int)arg2;
++ (BOOL)attemptLightweightMigrationOnStore:(id)arg1 fromVersion:(int)arg2 metadata:(id)arg3;
 + (BOOL)shouldAttemptLightweightMigration;
 + (int)currentModelVersion;
++ (BOOL)didCreateSqliteErrorFileForLightweightMigration;
 + (void)waitForDataMigratorToExit;
 + (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
 + (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;
@@ -68,7 +72,6 @@
 + (void)repairPotentialModelCorruption;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 
-- (BOOL)_shouldReimportCameraRollAssets;
 - (void)resumePhotoStreams;
 - (void)pausePhotoStreams;
 - (id)_syncedPropertiesForAssetUUID:(id)arg1;

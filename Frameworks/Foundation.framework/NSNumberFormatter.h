@@ -84,10 +84,13 @@
 - (id)perMillSymbol;
 - (void)setPercentSymbol:(id)arg1;
 - (id)percentSymbol;
+- (BOOL)_hasSetInternationalCurrencySymbol;
 - (void)setInternationalCurrencySymbol:(id)arg1;
 - (id)internationalCurrencySymbol;
 - (void)setCurrencySymbol:(id)arg1;
+- (BOOL)_hasSetCurrencySymbol;
 - (id)currencySymbol;
+- (BOOL)_hasSetCurrencyCode;
 - (void)setCurrencyCode:(id)arg1;
 - (id)currencyCode;
 - (void)setNegativeSuffix:(id)arg1;

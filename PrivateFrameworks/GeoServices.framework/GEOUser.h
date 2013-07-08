@@ -15,13 +15,13 @@
 @property(retain) GEOPhoto * image;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasImage;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
-- (id)image;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;

@@ -12,6 +12,7 @@
 @property <MSMediaStreamDaemonDelegate> * delegate;
 
 
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)abortAllActivityForPersonID:(id)arg1;
 - (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
 - (BOOL)mayDownloadPersonID:(id)arg1;

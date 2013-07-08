@@ -35,9 +35,9 @@
 - (id)infoText;
 - (void)setActionBubble:(id)arg1;
 - (id)bubbleText;
+- (id)playingWithString;
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;
-- (id)playingWithString;
 - (void)setBubbleText:(id)arg1;
 - (void)setInfoText:(id)arg1;
 - (id)actionBubble;

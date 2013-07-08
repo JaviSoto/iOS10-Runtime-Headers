@@ -11,10 +11,12 @@
     UIView *_2ButtonsSeparators;
     UIView *_tableViewTopSeparator;
     UIScrollView *_labelsScrollView;
+    BOOL _moveFirstButtonToBottom;
+    BOOL _use2TableViews;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layout;

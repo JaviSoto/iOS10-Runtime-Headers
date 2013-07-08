@@ -13,6 +13,7 @@
 @property(retain) GKBubbleFlowRootViewController * bubbleFlowRootViewController;
 
 
+- (int)lastKnownOrientation;
 - (void)clearInterstitialViewAnimated:(BOOL)arg1;
 - (void)showInterstitialViewAnimated:(BOOL)arg1;
 - (BOOL)tabBarCovered;
@@ -27,6 +28,7 @@
 - (void)dealloc;
 - (id)viewControllers;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 

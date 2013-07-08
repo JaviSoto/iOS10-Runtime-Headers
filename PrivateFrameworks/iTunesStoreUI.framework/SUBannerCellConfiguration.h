@@ -8,8 +8,8 @@
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 + (float)minimumRowHeight;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (struct CGSize { float x1; float x2; })_imageSizeForLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)reloadAfterArtworkLoad;

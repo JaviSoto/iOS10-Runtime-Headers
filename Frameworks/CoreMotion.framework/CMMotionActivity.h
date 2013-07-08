@@ -27,8 +27,8 @@
 @property(readonly) BOOL automotive;
 
 
-- (BOOL)running;
 - (BOOL)automotive;
+- (BOOL)running;
 - (BOOL)walking;
 - (BOOL)stationary;
 - (BOOL)unknown;

@@ -142,8 +142,6 @@
 - (void)setRequestErrorDomain:(id)arg1;
 - (void)setCancelledErrorDomain:(id)arg1;
 - (void)setItemCount:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (BOOL)hasDuration;
 - (void)setHasStartTime:(BOOL)arg1;
@@ -151,12 +149,14 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)itemCount;
 - (id)clientId;
 - (void)setClientId:(id)arg1;
+- (long long)timestamp;
 - (void)setDuration:(long long)arg1;
 - (void)setTimestamp:(long long)arg1;
-- (long long)timestamp;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

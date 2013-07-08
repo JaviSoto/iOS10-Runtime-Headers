@@ -27,6 +27,7 @@
 - (void)_fadeInViewController:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)_removeChildren;
 - (void)_tapAction:(id)arg1;
+- (void)_frameAction:(id)arg1;
 - (void)showViewController:(id)arg1 withFlipTransition:(id)arg2 completionBlock:(id)arg3;
 - (void)dismissWithFlipTransition:(id)arg1 completionBlock:(id)arg2;
 - (void)dismissWithFadeTransitionCompletionBlock:(id)arg1;

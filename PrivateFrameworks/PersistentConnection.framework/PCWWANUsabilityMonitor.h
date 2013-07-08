@@ -17,6 +17,7 @@
     NSString *_interfaceName;
     PCInterfaceUsabilityMonitor *_interfaceMonitor;
     struct __CFString { } *_currentRAT;
+    int _powerlogCDRXToken;
     long _wwanContextID;
     struct dispatch_queue_s { } *_ctServerQueue;
 }

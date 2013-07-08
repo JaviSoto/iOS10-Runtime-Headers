@@ -83,7 +83,6 @@
 - (id)thumbnailImageScalingSpecification;
 - (id)derivativeImageScalingSpecification;
 - (void)setPhoneInvitations:(id)arg1;
-- (id)focusAssetCollectionGUID;
 - (id)focusAlbumGUID;
 - (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned int)arg2 inAlbum:(id)arg3 completionBlock:(id)arg4;
 - (void)videoURLForAssetCollection:(id)arg1 inAlbum:(id)arg2 completionBlock:(id)arg3;
@@ -205,6 +204,7 @@
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (id)persistentObjectForKey:(id)arg1;
 - (void)refreshServerSideConfig;
+- (id)focusAssetCollectionGUID;
 - (id)serverSideConfiguration;
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)acceptInvitationWithToken:(id)arg1 info:(id)arg2 completionBlock:(id)arg3;

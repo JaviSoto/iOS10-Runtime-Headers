@@ -27,8 +27,8 @@
 - (id)encodedClassName;
 - (void)setPropertyGroups:(id)arg1;
 - (id)propertyGroups;
-- (id)image;
 - (void)setImage:(id)arg1;
+- (id)image;
 - (id)name;
 - (id)groupIdentifier;
 - (void)setName:(id)arg1;

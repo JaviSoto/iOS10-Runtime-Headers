@@ -28,6 +28,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id)initWithEntity:(id)arg1;
+- (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_storeIdentifier;
 - (void)_setPersistentStore:(id)arg1;
@@ -35,9 +36,8 @@
 - (id)_referenceData;
 - (id)_retainedURIString;
 - (id)entity;
-- (id)persistentStore;
 - (BOOL)isTemporaryID;
-- (id)URIRepresentation;
+- (id)persistentStore;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)finalize;

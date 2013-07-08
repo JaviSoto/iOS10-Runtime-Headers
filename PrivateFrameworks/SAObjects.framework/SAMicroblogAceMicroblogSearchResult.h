@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAUIAppPunchOut, NSString, SAMicroblogTwitterPostAuthor, NSArray, SASnippetSubtitle, NSURL;
+@class SADecoratedString, SASnippetSubtitle, SAUIAppPunchOut, NSString, NSURL, SAMicroblogTwitterPostAuthor, NSArray;
 
 @interface SAMicroblogAceMicroblogSearchResult : SADomainObject  {
 }
@@ -14,6 +14,7 @@
 @property(copy) NSArray * resultPosts;
 @property(retain) SASnippetSubtitle * resultSummary;
 @property(copy) NSArray * resultUsers;
+@property(retain) SADecoratedString * summary;
 @property(copy) NSURL * webAddress;
 
 + (id)aceMicroblogSearchResultWithDictionary:(id)arg1 context:(id)arg2;
@@ -35,6 +36,8 @@
 - (id)globalAuthor;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setSummary:(id)arg1;
+- (id)summary;
 - (id)query;
 - (id)groupIdentifier;
 - (void)setQuery:(id)arg1;

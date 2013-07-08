@@ -45,6 +45,7 @@
 - (void)setOrientation:(int)arg1;
 - (id)name;
 - (void)_clearGraphicsQualityOverride;
+- (BOOL)_hasGraphicsQualityOverride;
 - (void)_setGraphicsQualityOverride:(int)arg1;
 - (BOOL)_isTTYEnabled;
 - (void)_setBatteryLevel:(float)arg1;

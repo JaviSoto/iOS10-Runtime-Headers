@@ -8,8 +8,11 @@
     NSString *_hsaCode;
 }
 
++ (Class)responseClass;
 
 - (id)initWithAccount:(id)arg1 deviceId:(id)arg2 hsaCode:(id)arg3;
+- (id)urlString;
+- (id)urlRequest;
 - (void).cxx_destruct;
 
 @end

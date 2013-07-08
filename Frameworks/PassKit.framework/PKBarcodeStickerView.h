@@ -11,6 +11,7 @@
     NSMutableArray *_stickerConstraints;
     NSMutableArray *_matteConstraints;
     UILabel *_altTextLabel;
+    int _layoutMode;
     BOOL _drawBarcode;
     int _validity;
 }
@@ -20,10 +21,13 @@
 
 + (struct CGSize { float x1; float x2; })_sizeForBarcode:(id)arg1;
 
-- (void)_generateMatteRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { float x1; float x2; })arg4;
-- (void)setValidity:(int)arg1;
-- (id)initWithBarcode:(id)arg1 validityState:(int)arg2;
+- (void)_updateValidity;
 - (id)matteView;
+- (void)_generateMatteRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { float x1; float x2; })arg4;
+- (id)_resizedBarcode:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })_varianceForBarcode:(id)arg1;
+- (void)setValidity:(int)arg1;
+- (id)initWithBarcode:(id)arg1 validityState:(int)arg2 layoutMode:(int)arg3;
 - (int)validity;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

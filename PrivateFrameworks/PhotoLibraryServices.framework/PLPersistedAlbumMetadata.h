@@ -42,7 +42,6 @@
 - (id)albumFromDataInManagedObjectContext:(id)arg1;
 - (id)initWithPersistedDataAtPath:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (void)setKind:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)uuid;
@@ -50,5 +49,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)kind;
+- (void)setKind:(id)arg1;
 
 @end

@@ -107,9 +107,9 @@
 - (void)applicationWillEnterForeground;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)setTitle:(id)arg1;
+- (void)reload;
 - (BOOL)becomeFirstResponder;
 - (BOOL)isVisible;
-- (void)reload;
 - (BOOL)isLoading;
 - (double)defaultPNGExpirationTime;
 - (int)interfaceOrientation;
@@ -118,6 +118,7 @@
 - (void)dealloc;
 - (void)setSection:(id)arg1;
 - (id)inputAccessoryView;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (id)moreListSelectedImage;
 - (id)moreListImage;
 - (id)tabBarItem;
@@ -137,7 +138,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)applicationDidResume;
 - (void)didReceiveMemoryWarning;

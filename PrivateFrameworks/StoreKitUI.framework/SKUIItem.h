@@ -4,7 +4,7 @@
 
 @class SKUIArtworkList, SKUIUber, SKUIItemOffer, NSString, NSURL, NSMutableDictionary, NSArray;
 
-@interface SKUIItem : NSObject <SKUICacheCoding> {
+@interface SKUIItem : NSObject <SKUICacheCoding, SSMetricsEventFieldProvider> {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -64,7 +64,6 @@
 
 - (id)productPageURLString;
 - (int)numberOfUserRatings;
-- (id)itemKindString;
 - (id)uber;
 - (int)newsstandBindingType;
 - (int)newsstandBindingEdge;
@@ -74,6 +73,7 @@
 - (id)artworks;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ageBandRange;
 - (id)largestArtworkURL;
+- (id)itemKindString;
 - (BOOL)hasPrerenderedArtwork;
 - (id)primaryItemOffer;
 - (int)parentalControlsRank;
@@ -84,6 +84,7 @@
 - (long long)versionIdentifier;
 - (id)artworkURLForSize:(int)arg1;
 - (id)initWithLookupDictionary:(id)arg1;
+- (id)valueForMetricsField:(id)arg1;
 - (long long)itemIdentifier;
 - (int)itemKind;
 - (id)artistName;

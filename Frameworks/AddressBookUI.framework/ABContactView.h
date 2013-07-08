@@ -44,8 +44,8 @@
 + (id)cellIdentifierForSplitActions;
 + (id)cellIdentifierForActions;
 + (id)cellIdentifierForClass:(Class)arg1;
-+ (id)nameProperties;
 + (id)allCardProperties;
++ (id)nameProperties;
 + (id)requiredNameProperties;
 + (BOOL)isFixedValueProperty:(id)arg1;
 + (BOOL)isMultiValueProperty:(id)arg1;

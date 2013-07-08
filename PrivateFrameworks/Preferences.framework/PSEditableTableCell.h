@@ -22,8 +22,8 @@
 @property PSListController * controllerDelegate;
 
 + (int)cellStyle;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setControllerDelegate:(id)arg1;
 - (id)controllerDelegate;

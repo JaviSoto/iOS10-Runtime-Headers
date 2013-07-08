@@ -19,10 +19,7 @@
 @property(retain) CALayer * highlightedGlyphLayer;
 @property unsigned int character;
 
-+ (id)imageForCharacter:(unsigned int)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
-+ (id)highlightedImageKeyForCharacter:(unsigned int)arg1;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
 + (BOOL)usesTelephonyGlyphsWhereAvailable;
 + (float)unhighlightCrossfadeHighlightFadeDuration;
 + (float)unhighlightCrossfadeNormalFadeDuration;
@@ -32,14 +29,14 @@
 + (float)highlightCrossfadeNormalFadeDuration;
 + (float)highlightCrossfadeHighlightBeginTime;
 + (float)highlightCrossfadeNormalBeginTime;
-+ (id)imageKeyForCharacter:(unsigned int)arg1;
-+ (id)colorForHighlightedKeypadGlyphs;
-+ (id)colorForKeypadGlyphs;
 + (float)verticalPadding;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
++ (id)imageForCharacter:(unsigned int)arg1;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
 + (float)horizontalPadding;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)_initializeSafeCategory;
 + (id)_initializeSafeCategoryFromValidationManager;
++ (void)_initializeSafeCategory;
 
 - (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (float)alphaOutsideAndInsideRing;

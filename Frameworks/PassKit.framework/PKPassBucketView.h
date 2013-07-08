@@ -19,18 +19,19 @@
 @property(retain) NSArray * bucket;
 
 
+- (id)pass;
 - (id)bucket;
-- (void)_measureAndFitSubviews;
+- (void)_measureAndFitVariablySizedSubviews;
+- (void)_measureAndFitEvenlySizedSubviews;
 - (void)_updateSubviews;
 - (int)_backgroundForBucketTemplate:(id)arg1;
 - (void)setBucket:(id)arg1;
 - (void)setColorProfile:(id)arg1;
 - (void)setBucketTemplate:(id)arg1;
+- (void)setPass:(id)arg1;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
 - (id)bucketTemplate;
 - (id)colorProfile;
-- (void)setPass:(id)arg1;
-- (id)pass;
 - (void)dealloc;
 - (void)layoutSubviews;
 

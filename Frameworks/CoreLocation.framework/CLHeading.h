@@ -2,15 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSDate, NSString;
+@class NSDate;
 
 @interface CLHeading : NSObject <NSCopying, NSSecureCoding> {
     id _internal;
 }
 
-@property(readonly) double heading;
-@property(readonly) BOOL hasGeomagneticVector;
-@property(readonly) NSString * compactDescription;
 @property(readonly) double magneticHeading;
 @property(readonly) double trueHeading;
 @property(readonly) double headingAccuracy;
@@ -23,10 +20,10 @@
 
 - (double)trueHeading;
 - (id)initWithClientHeading:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; })arg1;
+- (id)timestamp;
 - (double)headingAccuracy;
 - (double)magneticHeading;
 - (id)shortDescription;
-- (id)timestamp;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,9 +32,5 @@
 - (double)x;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
-- (BOOL)hasGeomagneticVector;
-- (id)compactDescription;
-- (double)heading;
 
 @end

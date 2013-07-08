@@ -41,9 +41,9 @@
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
 - (id)requestURLForConnection:(id)arg1;
 - (id)initWithAction:(id)arg1;
+- (void)setMethod:(int)arg1;
 - (void)setBodyData:(id)arg1;
 - (id)bodyData;
-- (void)setMethod:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)action;

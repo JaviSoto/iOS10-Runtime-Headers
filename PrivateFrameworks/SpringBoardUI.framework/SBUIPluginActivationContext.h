@@ -13,8 +13,8 @@
 @property int activationEvent;
 
 
-- (int)activationEvent;
 - (void)setActivationEvent:(int)arg1;
+- (int)activationEvent;
 - (id)screen;
 - (void)dealloc;
 - (void)setScreen:(id)arg1;
