@@ -29,8 +29,6 @@
 @property(retain) UIFont * titleFont;
 @property(retain) UIColor * textColor;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTitleFont:(id)arg1;
 - (void)setSubtitleFont:(id)arg1;
@@ -57,7 +55,5 @@
 - (void)setTextColor:(id)arg1;
 - (void)sizeToFit;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

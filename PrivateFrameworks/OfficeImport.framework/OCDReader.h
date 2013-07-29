@@ -37,11 +37,11 @@
 - (BOOL)isThumbnail;
 - (id)read;
 - (void)setFileName:(id)arg1;
-- (void)setData:(id)arg1;
 - (id)data;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)setData:(id)arg1;
 - (BOOL)start;
 - (id)fileName;
 

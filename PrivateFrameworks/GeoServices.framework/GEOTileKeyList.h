@@ -15,10 +15,10 @@
 
 + (id)listFromXPCData:(id)arg1;
 
+- (void)sort:(id)arg1;
 - (id)newXPCData;
 - (BOOL)removeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)removeKeysMatchingPredicate:(id)arg1;
-- (void)sort:(id)arg1;
 - (id)sublistWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)listWithout:(id)arg1;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)firstKey;

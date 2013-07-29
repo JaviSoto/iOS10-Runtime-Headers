@@ -60,13 +60,10 @@
 - (int)likeStatus;
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
-- (id)dateAdded;
 - (id)copyrightText;
-- (long long)beforePromoClipID;
 - (id)artworkURLData;
 - (id)albumURL;
 - (long long)albumID;
-- (long long)afterPromoClipID;
 - (id)actionTextForStyle:(int)arg1;
 - (id)debugMessage;
 - (long long)shuffleSeed;
@@ -90,9 +87,12 @@
 - (void)setTrackInfo:(id)arg1;
 - (void)setDateAdded:(id)arg1;
 - (void)setStoreID:(long long)arg1;
+- (id)dateAdded;
 - (void)setWishListDate:(id)arg1;
 - (void)setInWishList:(BOOL)arg1;
 - (id)initWithManagedObject:(id)arg1 context:(id)arg2;
+- (long long)afterPromoClipID;
+- (long long)beforePromoClipID;
 - (id)managedObject;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
 - (void)setArtworkURL:(id)arg1;

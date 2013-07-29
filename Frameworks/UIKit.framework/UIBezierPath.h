@@ -28,12 +28,12 @@
 @property float flatness;
 @property BOOL usesEvenOddFillRule;
 
-+ (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)shadowBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(unsigned int)arg2;
 + (id)_roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 cornerRadius:(float)arg3 segments:(int)arg4;
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 withCornerRadius:(float)arg3;
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(unsigned int)arg2;
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTopCornerRadius:(float)arg2 withBottomCornerRadius:(float)arg3;
++ (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)bezierPathWithArcCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 + (id)bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 byRoundingCorners:(unsigned int)arg2 cornerRadii:(struct CGSize { float x1; float x2; })arg3;
 + (id)_bezierPathWithArcRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
@@ -57,6 +57,7 @@
 - (id)init;
 - (BOOL)isEmpty;
 - (void)dealloc;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setUsesEvenOddFillRule:(BOOL)arg1;
 - (void)setFlatness:(float)arg1;
@@ -99,8 +100,5 @@
 - (id)_initWithCGMutablePath:(struct CGPath { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)ax_description;
-- (void)ax_enumerateElementsUsingBlock:(id)arg1;
-- (id)ax_descriptionForPathElement:(const struct CGPathElement { int x1; struct CGPoint {} *x2; }*)arg1;
 
 @end

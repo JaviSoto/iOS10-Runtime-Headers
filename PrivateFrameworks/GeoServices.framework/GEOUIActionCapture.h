@@ -21,6 +21,8 @@
 @property int sequenceNumber;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasActionType:(BOOL)arg1;
 - (BOOL)hasDuration;
@@ -30,8 +32,6 @@
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (BOOL)hasSequenceNumber;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (int)sequenceNumber;
 - (void)setDuration:(double)arg1;
 - (void)setSequenceNumber:(int)arg1;

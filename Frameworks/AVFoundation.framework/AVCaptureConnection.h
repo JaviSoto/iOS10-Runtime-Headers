@@ -33,15 +33,15 @@
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
 
-- (void)setVideoRetainedBufferCountHint:(int)arg1;
 - (void)setEnablesVideoStabilizationWhenAvailable:(BOOL)arg1;
+- (void)setVideoRetainedBufferCountHint:(int)arg1;
 - (BOOL)isVideoStabilizationEnabled;
 - (void)setVideoScaleAndCropFactor:(float)arg1;
 - (void)setVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
+- (BOOL)isVideoMaxFrameDurationSet;
 - (BOOL)isVideoMaxFrameDurationSupported;
 - (void)setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
+- (BOOL)isVideoMinFrameDurationSet;
 - (BOOL)isVideoMinFrameDurationSupported;
 - (void)setVideoOrientation:(int)arg1;
 - (void)setAutomaticallyAdjustsVideoMirroring:(BOOL)arg1;
@@ -51,6 +51,7 @@
 - (void)removeInputPort:(id)arg1;
 - (void)addInputPort:(id)arg1;
 - (BOOL)isVideoRetainedBufferCountHintSupported;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMaxFrameDuration;
 - (void)_setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMinFrameDuration;
 - (id)sourceDevice;
@@ -68,14 +69,16 @@
 - (int)videoRetainedBufferCountHint;
 - (float)videoScaleAndCropFactor;
 - (float)videoMaxScaleAndCropFactor;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
 - (int)videoOrientation;
 - (BOOL)automaticallyAdjustsVideoMirroring;
 - (id)audioChannels;
 - (id)videoPreviewLayer;
 - (id)output;
-- (id)inputPorts;
 - (float)getPeakAudioLevelForChannel:(id)arg1;
 - (float)getAvgAudioLevelForChannel:(id)arg1;
+- (id)inputPorts;
 - (BOOL)isLive;
 - (BOOL)isActive;
 - (void)setEnabled:(BOOL)arg1;

@@ -8,7 +8,7 @@
 
 
 - (BOOL)_validOptions:(id)arg1;
-- (int)_argumentTypeAtIndex:(unsigned long)arg1;
+- (int)_argumentTypeAtIndex:(int)arg1;
 - (void*)_internalRepresentation;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (id)init;

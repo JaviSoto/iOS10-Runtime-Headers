@@ -37,6 +37,7 @@
 @property(readonly) BOOL excludesEntitiesWithBlankNames;
 @property(readonly) BOOL specifiesPlaylistItems;
 @property(readonly) BOOL willGroupEntities;
+@property BOOL ignoreSystemFilterPredicates;
 
 + (void)setFilteringDisabled:(BOOL)arg1;
 + (id)genresQuery;
@@ -69,6 +70,8 @@
 
 - (void)setCriteria:(id)arg1;
 - (void)setUseSections:(BOOL)arg1;
+- (void)setIgnoreSystemFilterPredicates:(BOOL)arg1;
+- (BOOL)ignoreSystemFilterPredicates;
 - (BOOL)MPSD_hasDownloadingEntities;
 - (BOOL)MPSD_hasDownloadableEntities;
 - (id)MPSD_mediaQueryForDownloadingEntities;

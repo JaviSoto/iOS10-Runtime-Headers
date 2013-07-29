@@ -5,11 +5,11 @@
 @interface PSGuidedAccessSettingsDetail : NSObject <PSSettingsDetail> {
 }
 
++ (unsigned int)guidedAccessAvailability;
 + (void)enterGuidedAccessMode;
 + (void)setGuidedAccessSwitchEnabled:(BOOL)arg1;
 + (BOOL)guidedAccessHasPasscode;
 + (id)preferencesURL;
-+ (unsigned int)guidedAccessAvailability;
 + (id)iconImage;
 
 

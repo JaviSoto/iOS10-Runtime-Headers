@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUINetworkErrorViewController, SKUIFacebookLikeStatus, SKUIClientContext, <SKUIIPadProductPageDelegate>, SKUIProductPage, ACAccountStore, SKUIMetricsController, UIView, SKUIItem, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUILoadProductPageOperation, SKUISwooshArrayViewController, NSOperationQueue, NSURL;
+@class SKUINetworkErrorViewController, SKUISwooshArrayViewController, ACAccountStore, SKUIProductPageReviewsViewController, SKUIProductPageHeaderViewController, SSMetricsPageEvent, NSURLRequest, SKUIProductPage, SKUIItem, <SKUIIPadProductPageDelegate>, SKUIProductPageDetailsViewController, SKUIIncompatibleAppViewController, SKUIClientContext, SKUIFacebookLikeStatus, SKUIMetricsController, SKUILoadProductPageOperation, SKUIProductPagePlaceholderViewController, NSOperationQueue, UIView, NSURL;
 
-@interface SKUIIPadProductPageViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate> {
+@interface SKUIIPadProductPageViewController : UIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate> {
     ACAccountStore *_accountStore;
     SKUIClientContext *_clientContext;
     <SKUIIPadProductPageDelegate> *_delegate;
@@ -13,6 +13,8 @@
     SKUIFacebookLikeStatus *_facebookLikeStatus;
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIItem *_item;
+    SKUIIncompatibleAppViewController *_incompatibleViewController;
+    SSMetricsPageEvent *_lastPageEvent;
     SKUILoadProductPageOperation *_loadOperation;
     long long _lookupItemIdentifier;
     SKUIMetricsController *_metricsController;
@@ -24,7 +26,7 @@
     SKUISwooshArrayViewController *_relatedViewController;
     SKUIProductPageReviewsViewController *_reviewsViewController;
     int _selectedSectionIndex;
-    NSURL *_url;
+    NSURLRequest *_urlRequest;
 }
 
 @property(readonly) SKUIItem * item;
@@ -35,10 +37,11 @@
 
 
 - (id)initWithProductPage:(id)arg1;
-- (id)productPage;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)_relatedViewController;
 - (id)_detailsViewController;
+- (void)_showIncompatibleView;
+- (BOOL)_isIncompatibleItem;
 - (void)_showError:(id)arg1;
 - (void)_showViewController:(id)arg1;
 - (id)_viewControllerForSectionIndex:(int)arg1;
@@ -53,14 +56,19 @@
 - (id)_initSKUIIPadProductPageViewController;
 - (struct CGPoint { float x1; float x2; })topContentOffset;
 - (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
+- (id)metricsControllerForProductPageHeader:(id)arg1;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
 - (void)productPageChildOpenURL:(id)arg1 viewControllerBlock:(id)arg2;
 - (void)productPageChildOpenItem:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
+- (id)activeMetricsController;
 - (void)_setMetricsController:(id)arg1;
+- (void)_metricsEnterEventNotification:(id)arg1;
+- (id)productPage;
 - (id)_placeholderViewController;
+- (void)configureMetricsWithPageEvent:(id)arg1;
 - (id)initWithItem:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
@@ -77,5 +85,6 @@
 - (id)item;
 - (void)viewDidLayoutSubviews;
 - (void)reloadData;
+- (id)initWithURLRequest:(id)arg1;
 
 @end

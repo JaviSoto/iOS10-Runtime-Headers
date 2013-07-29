@@ -2,16 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable, NSMutableArray;
+@class NSMapTable;
 
 @interface _UIModalItemsCoordinator : NSObject  {
     NSMapTable *_presentingSessionsMapTable;
     NSMapTable *_sessionForItemMapTable;
-    NSMutableArray *_allPresentingSessions;
 }
 
-+ (void)_resaturateUI;
-+ (void)_desaturateUI;
+@property(retain) NSMapTable * presentingSessionsMapTable;
+@property(retain) NSMapTable * sessionForItemMapTable;
+
 + (void)_desaturateUIForSB;
 + (void)_resaturateUIForSB;
 + (void)_getRidOfViewControllerForAlerts;
@@ -19,6 +19,7 @@
 + (id)sharedModalItemsCoordinator;
 + (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
 
+- (id)init;
 - (void)dealloc;
 - (void)showAfterSpringBoardAlert:(BOOL)arg1;
 - (void)hideForSpringBoardAlert:(BOOL)arg1;
@@ -27,8 +28,12 @@
 - (id)presentingViewControllerForItem:(id)arg1 create:(BOOL)arg2;
 - (id)_rootViewControllerForModalItem:(id)arg1;
 - (id)_presentingSessionForViewController:(id)arg1 ofItemsType:(int)arg2;
+- (void)setSessionForItemMapTable:(id)arg1;
+- (void)setPresentingSessionsMapTable:(id)arg1;
 - (void)_notifyDissmissedItem:(id)arg1;
-- (void)_showNextModalItemIfNecessaryAfterHiddingItem:(id)arg1 showingItem:(id)arg2 animate:(BOOL)arg3;
+- (void)_showNextModalItemIfNecessaryAfterHidingItem:(id)arg1 showingItem:(id)arg2 animate:(BOOL)arg3;
+- (id)presentingSessionsMapTable;
+- (id)sessionForItemMapTable;
 - (void)_hideModalItemsForType:(int)arg1 presentingViewController:(id)arg2 dimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)_showModalItemsForType:(int)arg1 presentingViewController:(id)arg2 undimSpotlightView:(BOOL)arg3 animated:(BOOL)arg4;
 - (id)_presentingViewControllerForAlertCompatibilityCreateIfNeeded:(BOOL)arg1;
@@ -36,6 +41,7 @@
 - (id)_presentingViewControllerForSBCompatibility;
 - (void)_presentItem:(id)arg1 replacingItem:(id)arg2 inViewController:(id)arg3 animated:(BOOL)arg4;
 - (void)_addItemToStack:(id)arg1 replacingItem:(id)arg2 forPresentingViewController:(id)arg3;
+- (void)_updateItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_notifyDelegateDidPresentItem:(id)arg1;
 - (void)_notifyDelegateWillPresentItem:(id)arg1;
 - (void)_notifyDelegateDidDismissItem:(id)arg1 withIndex:(int)arg2;

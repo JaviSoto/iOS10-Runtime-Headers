@@ -9,6 +9,17 @@
 }
 
 
+- (void)writeFixed64:(unsigned long long)arg1 forTag:(unsigned short)arg2;
+- (void)writeSint64:(long long)arg1 forTag:(unsigned short)arg2;
+- (void)writeInt8:(BOOL)arg1;
+- (void)writeProtoBuffer:(id)arg1;
+- (void)writeBigEndianShortThenString:(id)arg1;
+- (void)writeBigEndianFixed32:(unsigned int)arg1;
+- (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
+- (void)writeTag:(unsigned short)arg1 andType:(unsigned char)arg2;
+- (void)writeBareVarint:(unsigned long long)arg1;
+- (void)writeUint8:(unsigned char)arg1;
+- (void)writeBigEndianFixed16:(unsigned short)arg1;
 - (void)writeFloat:(float)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed32:(unsigned int)arg1 forTag:(unsigned short)arg2;
 - (void)writeSfixed64:(long long)arg1 forTag:(unsigned short)arg2;
@@ -21,17 +32,6 @@
 - (void)writeDouble:(double)arg1 forTag:(unsigned short)arg2;
 - (void)writeInt32:(int)arg1 forTag:(unsigned short)arg2;
 - (void)writeString:(id)arg1 forTag:(unsigned short)arg2;
-- (void)writeFixed64:(unsigned long long)arg1 forTag:(unsigned short)arg2;
-- (void)writeSint64:(long long)arg1 forTag:(unsigned short)arg2;
-- (void)writeInt8:(BOOL)arg1;
-- (void)writeProtoBuffer:(id)arg1;
-- (void)writeBigEndianShortThenString:(id)arg1;
-- (void)writeBigEndianFixed32:(unsigned int)arg1;
-- (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
-- (void)writeTag:(unsigned short)arg1 andType:(unsigned char)arg2;
-- (void)writeBareVarint:(unsigned long long)arg1;
-- (void)writeUint8:(unsigned char)arg1;
-- (void)writeBigEndianFixed16:(unsigned short)arg1;
 - (BOOL)writeData:(id)arg1;
 - (id)init;
 - (id)data;

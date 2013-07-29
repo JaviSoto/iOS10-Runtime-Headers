@@ -19,15 +19,15 @@
 @property BOOL cachedImageIsAvailable;
 
 
+- (void)cancelPreheatRequest;
+- (void)startPreheatRequest;
+- (BOOL)addImageHandler:(id)arg1;
+- (id)cachedImage;
+- (id)cachedImageIfAvailable;
 - (void)setCachedImageIsAvailable:(BOOL)arg1;
 - (BOOL)cachedImageIsAvailable;
 - (void)_cacheImage;
 - (id)initWithAsset:(id)arg1 format:(int)arg2;
-- (BOOL)addImageHandler:(id)arg1;
-- (id)cachedImageIfAvailable;
-- (id)cachedImage;
-- (void)cancelPreheatRequest;
-- (void)startPreheatRequest;
 - (void)dealloc;
 
 @end

@@ -29,7 +29,6 @@
 - (void)setDefaultImage:(id)arg1;
 - (id)defaultImage;
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forIdentifier:(id)arg3;
-- (id)processAndCacheImage:(id)arg1 forIdentifier:(id)arg2;
 - (id)fastCachedOrDefaultImageForIdentifier:(id)arg1;
 - (id)fastCachedOrDefaultImageForForKey:(id)arg1;
 - (unsigned int)cacheCostForImage:(id)arg1;
@@ -50,9 +49,10 @@
 - (id)renderedImageWithImage:(id)arg1 returnContext:(id*)arg2;
 - (id)renderedImageWithImage:(id)arg1 defaultSize:(struct CGSize { float x1; float x2; })arg2 returnContext:(id*)arg3;
 - (void)clearCachedImageForIdentifier:(id)arg1;
-- (id)initWithName:(id)arg1 imageBrush:(id)arg2;
 - (void)didReceiveCacheInvalidation:(id)arg1;
 - (id)imageBrush;
+- (id)processAndCacheImage:(id)arg1 forIdentifier:(id)arg2;
+- (id)initWithName:(id)arg1 imageBrush:(id)arg2;
 - (id)cachedImageForIdentifier:(id)arg1;
 - (id)cache;
 - (id)name;

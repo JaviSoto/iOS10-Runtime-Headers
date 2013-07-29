@@ -33,8 +33,6 @@
 @property(retain) NSDictionary * downloadOptions;
 
 
-- (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
-- (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
 - (void)setGarbageCollectionBehavior:(int)arg1;
 - (void)beginDownloadWithOptions:(id)arg1;
 - (void)setProgressHandler:(id)arg1;
@@ -50,6 +48,8 @@
 - (id)assetType;
 - (void)purge:(id)arg1;
 - (void)cancelDownload:(id)arg1;
+- (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
+- (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
 - (int)garbageCollectionBehavior;
 - (BOOL)purgeAndReturnError:(id*)arg1;
 - (BOOL)cancelDownloadAndReturnError:(id*)arg1;
@@ -67,5 +67,7 @@
 - (id)identifier;
 - (int)state;
 - (id)attributes;
+- (int)_contentVersion;
+- (int)_formatVersion;
 
 @end

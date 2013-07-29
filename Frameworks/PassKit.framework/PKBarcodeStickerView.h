@@ -19,6 +19,7 @@
 @property int validity;
 @property(readonly) UIView * matteView;
 
++ (struct PKBarcodeQuietZone { float x1; float x2; float x3; float x4; })_quiteZoneForBarcode:(id)arg1;
 + (struct CGSize { float x1; float x2; })_sizeForBarcode:(id)arg1;
 
 - (void)_updateValidity;

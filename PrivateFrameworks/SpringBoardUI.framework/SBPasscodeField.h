@@ -29,10 +29,10 @@
 - (BOOL)isOkayButtonEnabled;
 - (void)setIsAlphanumericField:(BOOL)arg1;
 - (id)_initWithStyle:(int)arg1;
-- (void)setShowsOKButton:(BOOL)arg1;
 - (int)clearButtonMode;
 - (void)setClearButtonMode:(int)arg1;
 - (BOOL)showsCancelButton;
+- (void)setShowsOKButton:(BOOL)arg1;
 - (void)_textDidChange;
 - (void)_updateFields;
 - (void)setNumberOfEntryFields:(int)arg1 opaqueBackground:(BOOL)arg2;

@@ -44,7 +44,9 @@
         unsigned int delivered : 1; 
         unsigned int continuous : 1; 
         unsigned int requiresDelayedBegan : 1; 
+        unsigned int willBeginAfterSatisfyingFailureRequirements : 1; 
         unsigned int requiresSystemGesturesToFail : 1; 
+        unsigned int acceptsFailureRequirements : 1; 
     } _gestureFlags;
     NSMutableSet *_failureRequirements;
     NSMutableSet *_failureDependents;
@@ -76,6 +78,7 @@
 - (int)state;
 - (void)_detach;
 - (id)_briefDescription;
+- (BOOL)_acceptsFailureRequirements;
 - (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
 - (void)removeFailureRequirement:(id)arg1;
 - (void)_addDynamicFailureRequirement:(id)arg1;
@@ -109,6 +112,7 @@
 - (BOOL)_affectedByGesture:(id)arg1;
 - (void)_updateGestureWithEvent:(id)arg1 buttonEvent:(id)arg2;
 - (void)_delayTouchesForEvent:(id)arg1;
+- (void)_willBeginAfterSatisfyingFailureRequirements;
 - (void)_clearDelayedTouches;
 - (void)_delayTouch:(id)arg1 forEvent:(id)arg2;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
@@ -116,10 +120,11 @@
 - (BOOL)_shouldBegin;
 - (void)_clearUpdateTimer;
 - (void)_enqueueDelayedTouchesToSend;
-- (void)_relatedGestureReleased:(id)arg1;
+- (void)_clearReferencesToRelatedGesture:(id)arg1;
 - (BOOL)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (BOOL)_shouldReceiveTouch:(id)arg1;
 - (BOOL)delaysTouchesBegan;
+- (void)_setAcceptsFailureRequiments:(BOOL)arg1;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (void)setCancelsTouchesInView:(BOOL)arg1;
 - (void)_resetGestureRecognizer;
@@ -157,5 +162,6 @@
 - (void)_invalidate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)pu_cancel;
 
 @end

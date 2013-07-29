@@ -96,8 +96,8 @@
 - (BOOL)_load;
 - (BOOL)isValid;
 - (void)dealloc;
-- (BOOL)isRevoked;
 - (id)bundleIdentifier;
+- (BOOL)isRevoked;
 - (id)initWithContentsOfFile:(id)arg1;
 
 @end

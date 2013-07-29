@@ -28,7 +28,6 @@
 @property(readonly) NSURL * absoluteImageURL;
 
 
-- (void)setData:(id)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)height;
@@ -66,6 +65,7 @@
 - (id)code;
 - (id)absoluteImageURL;
 - (id)form;
+- (void)setData:(id)arg1;
 - (id)type;
 - (void)setName:(id)arg1;
 - (id)contentFrame;

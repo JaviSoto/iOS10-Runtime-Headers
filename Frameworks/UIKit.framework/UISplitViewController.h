@@ -71,8 +71,6 @@
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_commonInit;
 - (void)setDelegate:(id)arg1;
@@ -143,20 +141,19 @@
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)unloadViewForced:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_axModalizeViewControllerViews;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;

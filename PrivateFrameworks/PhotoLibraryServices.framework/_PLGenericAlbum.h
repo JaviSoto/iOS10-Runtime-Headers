@@ -13,6 +13,8 @@
 @property(retain) NSNumber * kind;
 @property(retain) NSDictionary * slideshowSettings;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property int pendingItemsCount;
 @property int pendingItemsType;
 

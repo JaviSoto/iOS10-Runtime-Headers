@@ -18,7 +18,6 @@
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 selector:(SEL)arg3;
 + (BOOL)supportsSecureCoding;
 
-- (void)_setKey:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -27,6 +26,7 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)reversedSortDescriptor;
 - (void)_setAscending:(BOOL)arg1;
+- (void)_setKey:(id)arg1;
 - (void)allowEvaluation;
 - (BOOL)_isEqualToSortDescriptor:(id)arg1;
 - (id)comparator;

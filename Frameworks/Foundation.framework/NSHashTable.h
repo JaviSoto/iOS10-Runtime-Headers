@@ -45,5 +45,6 @@
 - (id)pointerFunctions;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)_mapkit_removeObjects:(id)arg1;
 
 @end

@@ -24,6 +24,8 @@
 @property(retain) GEOMapRegion * mapRegion;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasZoomLevel:(BOOL)arg1;
 - (void)setZoomLevel:(float)arg1;
 - (float)zoomLevel;
@@ -35,8 +37,6 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)coordinate;
 - (void)setImage:(id)arg1;
 - (id)image;

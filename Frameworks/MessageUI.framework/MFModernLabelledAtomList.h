@@ -36,10 +36,7 @@
 + (id)primaryLabelFont;
 + (id)defaultLabelFont;
 + (id)defaultLabelTextColor;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setPrimary:(BOOL)arg1;
 - (void)setUsePadDisplayStyle:(BOOL)arg1;
 - (id)labelTextColor;
 - (void)crossFadeLabelVisibility:(BOOL)arg1 atomSeparatorStyle:(int)arg2 animationDuration:(double)arg3;
@@ -47,7 +44,6 @@
 - (id)atomDisplayStrings;
 - (void)updateAtomsForVIP;
 - (void)setLabelVisible:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
 - (id)labelText;
 - (void)setAddressAtomScale:(float)arg1;
 - (void)enumerateAddressAtomsUsingBlock:(id)arg1;
@@ -65,6 +61,8 @@
 - (void)addressBookDidChange:(id)arg1;
 - (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
 - (BOOL)usePadDisplayStyle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (void)setPrimary:(BOOL)arg1;
 - (void)setLabelTextColor:(id)arg1;
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -78,6 +76,5 @@
 - (unsigned int)numberOfRows;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned long long)accessibilityTraits;
 
 @end

@@ -6,17 +6,17 @@
 }
 
 + (id)authSchemesForAccount:(id)arg1 connection:(id)arg2;
-+ (id)knownSchemes;
 + (void)registerSchemeClass:(Class)arg1;
 + (id)schemeWithName:(id)arg1;
++ (id)knownSchemes;
 + (void)initialize;
 
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
 - (BOOL)hasEncryption;
 - (unsigned int)defaultPortForAccount:(id)arg1;
 - (Class)authenticatorClass;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (Class)connectionClassForAccountClass:(Class)arg1;
+- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (BOOL)requiresPassword;
 - (id)humanReadableName;
 - (id)name;

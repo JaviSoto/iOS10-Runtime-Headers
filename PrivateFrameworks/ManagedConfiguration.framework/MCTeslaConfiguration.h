@@ -23,13 +23,13 @@
 @property(getter=isFetching) BOOL fetching;
 
 
-- (void)setCallback:(id)arg1;
-- (id)callback;
 - (void)setFetching:(BOOL)arg1;
 - (void)fetchDidFailWithError:(id)arg1;
 - (id)connectionError;
 - (BOOL)isFetching;
 - (void)fetchConfigurationWithCompletionBlock:(id)arg1;
+- (void)setCallback:(id)arg1;
+- (id)callback;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

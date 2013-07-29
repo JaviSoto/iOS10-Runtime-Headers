@@ -35,8 +35,8 @@
 @property(copy) id successHandler;
 
 
-- (id)shiftRequest;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
+- (id)shiftRequest;
 - (void)_requestShiftFunctionForLocation:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
 - (id)shiftFunction;
 - (void)_applyLocationShift:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;

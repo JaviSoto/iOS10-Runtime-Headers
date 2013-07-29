@@ -32,6 +32,7 @@
 - (void)_maximize;
 - (void)_minimize;
 - (void)_setMinimized:(BOOL)arg1;
+- (float)_statusTitleWidth;
 - (float)_statusFieldHeight;
 - (float)_keyboardToEntryFieldOffset;
 - (void)_notifyDelegateThatEmergencyCallButtonWasPressed;
@@ -52,6 +53,7 @@
 - (void)setCustomBackgroundColor:(id)arg1;
 - (float)backgroundAlpha;
 - (id)passcode;
+- (void)_updateStatusText:(id)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (BOOL)resignFirstResponder;

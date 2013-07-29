@@ -2,35 +2,22 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSDate, _UILegibilityView, CADisplayLink;
+@class _UILegibilityView;
 
 @interface SBLockScreenTimerDialView : UIView <SBLegibility> {
-    _UILegibilityView *_faceView;
     _UILegibilityView *_dialView;
-    CADisplayLink *_displayLink;
-    float _secondsPerRotation;
-    NSDate *_endDate;
+    float _strength;
 }
 
-@property(retain) NSDate * endDate;
-@property float secondsPerRotation;
+@property float strength;
 
 
-- (void)setSecondsPerRotation:(float)arg1;
-- (float)secondsPerRotation;
-- (void)_displayLinkFired:(id)arg1;
 - (id)_newDialViewForSettings:(id)arg1;
-- (id)_newFaceViewForSettings:(id)arg1;
-- (void)setEndDate:(id)arg1;
-- (id)endDate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)updateForChangedSettings:(id)arg1;
 - (void)setStrength:(float)arg1;
-- (void)startAnimating;
-- (void)stopAnimating;
-- (BOOL)isAnimating;
+- (float)strength;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)layoutSubviews;
 
 @end

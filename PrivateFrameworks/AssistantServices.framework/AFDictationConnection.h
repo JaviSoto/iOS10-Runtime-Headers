@@ -8,6 +8,8 @@
     NSXPCConnection *_assistantConnection;
     NSString *_lastUsedLanguage;
     <AFDictationDelegate> *_delegate;
+    unsigned int _stateInSync : 1;
+    unsigned int _audioSessionID;
     float _averagePower;
     float _peakPower;
     BOOL _isCapturingSpeech;
@@ -25,25 +27,31 @@
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
 - (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)_tellSpeechDelegateDidHypothesizeSpeechPhrases:(id)arg1 languageModel:(id)arg2;
+- (void)_tellSpeechDelegateRecordingDidBegin;
 - (void)_willCancelDictation;
-- (id)_assistantDictationService;
 - (void)_willStartDictation;
 - (void)_availabilityChanged:(id)arg1;
 - (id)_assistantConnection;
+- (void)prepareWithOptions:(id)arg1;
 - (void)_registerInvalidationHandlerForXPCConnection:(id)arg1;
 - (void)_willCompleteDictation;
 - (void)_willFailDictationWithError:(id)arg1;
+- (id)_assistantDictationService;
 - (void)_clearConnections;
 - (float)peakPower;
+- (unsigned int)audioSessionID;
 - (void)stopSpeech;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidCancel;
 - (void)_tellSpeechDelegateRecordingDidEnd;
-- (void)_tellSpeechDelegateRecordingDidBegin;
 - (void)_tellSpeechDelegateRecordingWillBegin;
 - (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
 - (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
+- (void)_setAudioSessionID:(unsigned int)arg1;
+- (void)_connectionInterrupted;
 - (void)_tellSpeechDelegateRecordingDidFail:(id)arg1;
+- (void)_tellDelegateAudioSessionIDChanged:(unsigned int)arg1;
+- (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -60,5 +68,6 @@
 - (void)cancelAvailabilityMonitoring;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (BOOL)dictationIsAvailableForLanguage:(id)arg1;
+- (void)_updateState;
 
 @end

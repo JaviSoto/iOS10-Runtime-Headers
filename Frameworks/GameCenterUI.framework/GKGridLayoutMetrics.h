@@ -18,14 +18,15 @@
 
 - (int)prepareLayout:(id)arg1 startingAtSection:(int)arg2;
 - (void)removeSupplementaryMetricsForKey:(id)arg1;
-- (void)mergeSupplementaryMetricsFromEnclosingMetrics:(id)arg1 atLocation:(unsigned int)arg2;
+- (void)mergeSupplementaryMetricsFromEnclosingMetrics:(id)arg1 atLocation:(unsigned int)arg2 globalRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)listForLocation:(unsigned int)arg1;
 - (void)enumerateSupplementaryMetricsUsingBlock:(id)arg1;
-- (void)addSupplementaryMetrics:(id)arg1 forKey:(id)arg2 atLocation:(unsigned int)arg3;
 - (id)keyListForLocation:(unsigned int)arg1;
 - (void)setLayoutKey:(id)arg1;
 - (void)replaceSupplementaryMetrics:(id)arg1 forKey:(id)arg2;
 - (id)supplementaryMetricsForKey:(id)arg1;
+- (void)addSupplementaryMetrics:(id)arg1 forKey:(id)arg2 atLocation:(unsigned int)arg3;
+- (void)enumerateSupplementaryLocations:(id)arg1;
 - (id)layoutKey;
 - (void)setLocationToKeyList:(id)arg1;
 - (id)locationToKeyList;

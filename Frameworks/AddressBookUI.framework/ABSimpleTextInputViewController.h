@@ -34,8 +34,8 @@
 - (void)setStringValue:(id)arg1;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;

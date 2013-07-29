@@ -13,8 +13,6 @@
 @property(retain) Class dataSourceClass;
 @property(retain) SUStructuredPage * structuredPage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (Class)dataSourceClass;
 - (id)newTermsAndConditionsFooter;
@@ -46,6 +44,5 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)reloadData;
-- (void)_accessibilityClearTable:(id)arg1;
 
 @end

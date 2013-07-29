@@ -13,8 +13,8 @@
 - (id)sortedCookiesUsingDescriptors:(id)arg1;
 - (void)setCookieAcceptPolicy:(unsigned int)arg1;
 - (unsigned int)cookieAcceptPolicy;
-- (void)deleteCookie:(id)arg1;
 - (void)setCookie:(id)arg1;
+- (void)deleteCookie:(id)arg1;
 - (id)cookies;
 - (id)cookiesForURL:(id)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;

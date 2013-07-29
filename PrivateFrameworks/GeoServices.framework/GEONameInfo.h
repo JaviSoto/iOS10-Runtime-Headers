@@ -32,6 +32,8 @@
 @property int signType;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasSignType:(BOOL)arg1;
 - (void)setHasPhoneticType:(BOOL)arg1;
 - (void)setHasShieldType:(BOOL)arg1;
@@ -52,8 +54,6 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;

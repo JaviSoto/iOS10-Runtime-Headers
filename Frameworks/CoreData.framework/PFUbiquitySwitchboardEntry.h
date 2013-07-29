@@ -18,7 +18,6 @@
     BOOL _finishedSetupForStore;
     BOOL _hasScheduledFinishBlock;
     BOOL _finishedInitializingForStore;
-    int _pendingFailedLogScans;
     int _finishLock;
     PFUbiquitySetupAssistant *_finishingSetupAssistant;
     NSObject<OS_dispatch_queue> *_privateQueue;
@@ -39,11 +38,11 @@
 - (id)finishingSetupAssistant;
 - (id)monitor;
 - (void)setActiveStoreCount:(unsigned int)arg1;
+- (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id)arg2;
 - (void)afterDelay:(double)arg1 executeBlockOnPrivateQueue:(id)arg2;
 - (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id)arg5;
 - (void)monitorStateChanged:(id)arg1;
 - (void)containerStateChanged:(id)arg1;
-- (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id)arg2;
 - (void)setupFinished;
 - (void)containerIdentifierChanged:(id)arg1;
 - (void)filePresenterNoticedBaselineFileChange:(id)arg1;

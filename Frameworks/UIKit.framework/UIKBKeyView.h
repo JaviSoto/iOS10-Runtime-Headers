@@ -22,6 +22,7 @@
     CALayer *_keyBorders;
     CALayer *_keyBackgrounds;
     CALayer *_keyCaps;
+    int _renderedKeyState;
     BOOL _usesControlOpacities;
     BOOL _renderAsMask;
     UIKeyboardMenuView *_popupMenu;
@@ -49,10 +50,12 @@
 - (BOOL)usesControlOpacities;
 - (id)popupMenu;
 - (void)setUsesControlOpacities:(BOOL)arg1;
+- (BOOL)_shouldUpdateLayers;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
 - (BOOL)renderAsMask;
 - (int)cachedRenderFlags;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawFrame;
+- (BOOL)_viewShouldBeOpaque;
 - (id)_setupLayerIfNoLayer:(id)arg1 withContents:(id)arg2;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
 - (void)setPopupMenu:(id)arg1;

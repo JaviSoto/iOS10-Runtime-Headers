@@ -12,15 +12,11 @@
 @property(readonly) UILabel * typeLabel;
 @property float titleOffset;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)typeLabel;
 - (void)setTitleOffset:(float)arg1;
 - (float)titleOffset;
 - (void)layoutSubviews;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
 
 @end

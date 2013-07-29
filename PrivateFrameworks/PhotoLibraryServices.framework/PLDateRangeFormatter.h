@@ -9,11 +9,13 @@
     NSDateFormatter *_sameDayDateFormatter;
     NSDateFormatter *_sameDayNoYearDateFormatter;
     NSDateFormatter *_dayOfTheWeekDateFormatter;
+    NSDateFormatter *_yearDateFormatter;
     NSDateFormatter *_relativeDateFormatterDay;
     struct UDateIntervalFormat { } *_monthDayIntervalFormat;
     struct UDateIntervalFormat { } *_monthDayNoYearIntervalFormat;
     struct UDateIntervalFormat { } *_differentMonthDayIntervalFormat;
     struct UDateIntervalFormat { } *_differentMonthDayNoYearIntervalFormat;
+    struct UDateIntervalFormat { } *_yearIntervalFormat;
     struct UDateIntervalFormat { } *_timeIntervalFormat;
     struct UDateIntervalFormat { } *_dayOfTheWeekIntervalFormat;
     BOOL _includeDayNumbers;
@@ -22,6 +24,7 @@
     BOOL _useShortMonths;
     BOOL _useShortDaysInRanges;
     BOOL _useTime;
+    BOOL _yearOnly;
 }
 
 @property BOOL includeDayNumbers;
@@ -30,20 +33,21 @@
 @property BOOL useShortMonths;
 @property BOOL useShortDaysInRanges;
 @property BOOL useTime;
+@property BOOL yearOnly;
 @property BOOL autoUpdateOnChanges;
 
 + (void)_dumpAllDateCombinationsWithFormatters;
 
+- (void)setAutoUpdateOnChanges:(BOOL)arg1;
 - (BOOL)useTime;
 - (void)_updateCurrentDateAndDumpDateCombinationWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4 calendarUnit:(unsigned int)arg5 value:(int)arg6;
 - (BOOL)autoUpdateOnChanges;
-- (void)setAutoUpdateOnChanges:(BOOL)arg1;
 - (void)_dumpDateCombinations;
-- (void)useDefaultLongFormat;
 - (void)_dumpRelativeCombinationsForDate:(id)arg1;
 - (void)_updateStartAndEndDatesAndDumpDateCombinationWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4 calendarUnit:(unsigned int)arg5 value:(int)arg6;
 - (void)_dumpDateCombinationWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4;
 - (void)_updateDateComponents:(id)arg1 withValueValue:(int)arg2 forCalendarUnit:(unsigned int)arg3;
+- (void)setYearOnly:(BOOL)arg1;
 - (void)setUseTime:(BOOL)arg1;
 - (void)setUseShortDaysInRanges:(BOOL)arg1;
 - (void)setUseShortMonths:(BOOL)arg1;
@@ -54,6 +58,7 @@
 - (void)updateFormatsWithLocale:(id)arg1;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3;
+- (BOOL)yearOnly;
 - (id)_formattedDateWithUDateFormatter:(struct UDateIntervalFormat { }*)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (BOOL)_date:(id)arg1 isWithinDaysInThePast:(int)arg2;
 - (BOOL)_date:(id)arg1 isWithinDaysInThePast:(int)arg2 fromCurrentDate:(id)arg3;
@@ -64,7 +69,7 @@
 - (BOOL)includeDayNumbers;
 - (BOOL)useShortMonths;
 - (void)_releaseUDateFormatter:(struct UDateIntervalFormat { }*)arg1;
-- (void)useDefaultCompactFormat;
+- (void)configureForFormatPreset:(unsigned int)arg1;
 - (id)formattedDate:(id)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)_postChangeNotification;

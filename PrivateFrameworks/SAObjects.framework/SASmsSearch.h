@@ -27,7 +27,6 @@
 - (id)outgoing;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
-- (void)setMessage:(id)arg1;
 - (void)setStart:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setSubject:(id)arg1;
@@ -36,6 +35,7 @@
 - (void)setRecipients:(id)arg1;
 - (id)message;
 - (id)end;
+- (void)setMessage:(id)arg1;
 - (id)groupIdentifier;
 - (id)start;
 

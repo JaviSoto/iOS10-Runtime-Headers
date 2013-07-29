@@ -15,7 +15,6 @@
 - (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (id)newCustomCardTableScrollingBackgroundView;
-- (id)newCardActionButton;
 - (Class)customCardActionCellClass;
 - (Class)customCardCellClass;
 - (BOOL)shouldUseCardContentProviderWhenAvailable;
@@ -24,9 +23,10 @@
 - (void)setHighlighted:(BOOL)arg1 onPropertyCell:(id)arg2;
 - (float)distanceBetweenSections;
 - (id)newScrollingBackgroundView;
-- (id)newActionButton;
 - (Class)actionCellClass;
 - (Class)propertyCellClass;
+- (id)newActionButton;
+- (id)newCardActionButton;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

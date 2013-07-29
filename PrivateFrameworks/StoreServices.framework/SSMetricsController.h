@@ -25,8 +25,8 @@
 - (id)_valueForField:(id)arg1 withFieldData:(id)arg2;
 - (void)_enumerateFieldValuesWithMap:(id)arg1 fieldData:(id)arg2 block:(id)arg3;
 - (void)_serialQueueInsertEvents:(id)arg1 withCompletionHandler:(id)arg2;
-- (id)serialQueue;
 - (void)insertEvents:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)serialQueue;
 - (void)_setupFlushTimer;
 - (void)_handleFlushTimer;
 - (void)flushUnreportedEventsWithCompletionHandler:(id)arg1;

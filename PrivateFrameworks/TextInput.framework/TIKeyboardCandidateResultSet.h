@@ -16,6 +16,7 @@
     NSArray *_initiallyHiddenCandidates;
     unsigned int _generatedCandidateCount;
     unsigned int _batchCandidateLocation;
+    unsigned int _selectedHiddenCandidateIndex;
 }
 
 @property(retain) NSArray * candidates;
@@ -26,6 +27,7 @@
 @property(retain) NSDictionary * indexTitles;
 @property(retain) NSDictionary * showExtensionCandidates;
 @property(retain) NSArray * initiallyHiddenCandidates;
+@property unsigned int selectedHiddenCandidateIndex;
 @property(readonly) BOOL hasCandidates;
 @property(readonly) TIKeyboardCandidate * firstCandidate;
 @property(readonly) BOOL hasMetadata;
@@ -36,7 +38,7 @@
 
 + (id)dummySet;
 + (id)setWithCandidates:(id)arg1;
-+ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 excludedExtensionCandidates:(BOOL)arg9;
++ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
 + (BOOL)supportsSecureCoding;
 
 - (void)setExcludedExtensionCandidates:(BOOL)arg1;
@@ -48,9 +50,11 @@
 - (BOOL)excludedExtensionCandidates;
 - (unsigned int)generatedCandidateCount;
 - (unsigned int)batchCandidateLocation;
-- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 excludedExtensionCandidates:(BOOL)arg9;
+- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
 - (void)setSortMethodGroups:(id)arg1;
 - (id)sortMethodGroups;
+- (void)setSelectedHiddenCandidateIndex:(unsigned int)arg1;
+- (unsigned int)selectedHiddenCandidateIndex;
 - (void)setInitiallyHiddenCandidates:(id)arg1;
 - (id)initiallyHiddenCandidates;
 - (void)setShowExtensionCandidates:(id)arg1;

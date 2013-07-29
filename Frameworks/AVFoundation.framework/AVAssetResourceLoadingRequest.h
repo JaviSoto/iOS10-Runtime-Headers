@@ -17,10 +17,10 @@
 @property(copy) NSURLRequest * redirect;
 
 
-- (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
 - (id)streamingContentKeyRequestDataForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
-- (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
 - (void)finishLoadingWithError:(id)arg1;
+- (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
+- (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
 - (id)serializableRepresentation;
 - (void)finishLoading;
 - (void)setRedirect:(id)arg1;

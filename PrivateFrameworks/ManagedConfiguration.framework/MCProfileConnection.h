@@ -21,6 +21,11 @@
 
 + (id)sharedConnection;
 
+- (id)localizedDescriptionOfCurrentPasscodeConstraints;
+- (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
+- (BOOL)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
+- (int)unlockScreenType;
+- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
 - (id)filteredMailSheetAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (BOOL)isAppManaged:(id)arg1;
 - (BOOL)mayOpenFromUnmanagedToManaged;
@@ -68,8 +73,11 @@
 - (id)publicMessageCenter;
 - (id)messageCenter;
 - (void)checkCarrierProfileForceInstallation:(BOOL)arg1;
+- (BOOL)isMUAllowed;
+- (BOOL)isMPAllowed;
+- (BOOL)isMEAllowed;
 - (BOOL)isAssistantUserGeneratedContentAllowed;
-- (BOOL)isActivationLockAllowed;
+- (BOOL)isLockScreenControlCenterAllowed;
 - (BOOL)isLockScreenTodayViewAllowed;
 - (BOOL)isLockScreenNotificationsViewAllowed;
 - (BOOL)isAirDropAllowed;
@@ -91,18 +99,14 @@
 - (void)shutDown;
 - (id)managedWiFiNetworkNames;
 - (id)managedAppIDsWithFlags:(int)arg1;
-- (id)localizedDescriptionOfCurrentPasscodeConstraints;
-- (int)unlockScreenType;
 - (void)notifyClientsToRecomputeCompliance;
 - (void)recomputeUserComplianceWarning;
 - (void)getPasscodeComplianceWarningLastLockDate:(id)arg1 completionBlock:(id)arg2;
 - (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
 - (BOOL)currentPasscodeIsCompliantWithProfileRestrictionsOutError:(id*)arg1;
 - (BOOL)currentPasscodeIsCompliantWithGlobalRestrictionsOutError:(id*)arg1;
-- (BOOL)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
 - (BOOL)isContentProtectionInEffect;
 - (BOOL)clearPasscodeWithEscrowKeybagData:(id)arg1 secret:(id)arg2 outError:(id*)arg3;
-- (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (void)lockDevice;
 - (int)newPasscodeEntryScreenType;
 - (int)_getPasscodeComplianceWarningExpiryDate:(id)arg1 lastLockDate:(id)arg2 outLocalizedTitle:(id*)arg3 outLocalizedMessage:(id*)arg4;
@@ -160,7 +164,6 @@
 - (void)submitUserInputResponses:(id)arg1;
 - (void)cancelUserInputResponses;
 - (void)preflightUserInputResponses:(id)arg1 forPayloadIndex:(unsigned int)arg2;
-- (void)setInteractionDelegate:(id)arg1;
 - (void)updateProfileWithIdentifier:(id)arg1 interactionDelegate:(id)arg2;
 - (void)installProfileData:(id)arg1 interactionDelegate:(id)arg2;
 - (BOOL)removeProvisioningProfileWithUUID:(id)arg1 outError:(id*)arg2;
@@ -202,7 +205,6 @@
 - (void)removeProfileWithIdentifier:(id)arg1;
 - (id)installProfileData:(id)arg1 options:(id)arg2 outError:(id*)arg3;
 - (id)installedProfileIdentifiersWithFilterFlags:(int)arg1;
-- (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
 - (id)objectForFeature:(id)arg1;
 - (id)valueForFeature:(id)arg1;
 - (int)restrictedBoolValueForFeature:(id)arg1;
@@ -216,7 +218,6 @@
 - (id)queueProfileDataForInstallation:(id)arg1 outError:(id*)arg2;
 - (id)queueProfileDataForAcceptance:(id)arg1 outError:(id*)arg2;
 - (id)profileFromProfileData:(id)arg1 outError:(id*)arg2;
-- (int)effectiveBoolValueForSetting:(id)arg1;
 - (id)objectRestrictionForFeature:(id)arg1;
 - (id)valueRestrictionForFeature:(id)arg1;
 - (int)boolRestrictionForFeature:(id)arg1;
@@ -227,6 +228,7 @@
 - (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 transitionToUI:(BOOL)arg3 outError:(id*)arg4;
 - (id)defaultValueForSetting:(id)arg1;
 - (BOOL)isSupervised;
+- (BOOL)isActivationLockAllowed;
 - (void)unstashUserBookmarksFromLabel:(id)arg1;
 - (void)stashUserBookmarksWithLabel:(id)arg1 newUserBookmarks:(id)arg2;
 - (id)userBookmarks;
@@ -253,6 +255,8 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
+- (int)effectiveBoolValueForSetting:(id)arg1;
+- (void)setInteractionDelegate:(id)arg1;
 - (BOOL)isAutomaticAppUpdatesAllowed;
 - (void)addObserver:(id)arg1;
 - (id)_init;

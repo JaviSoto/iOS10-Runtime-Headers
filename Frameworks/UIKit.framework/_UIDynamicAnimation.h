@@ -47,5 +47,6 @@
 - (BOOL)_usesNSTimer;
 - (void)_stopAnimation;
 - (void)stop;
+- (void)pu_setFriction:(double)arg1;
 
 @end

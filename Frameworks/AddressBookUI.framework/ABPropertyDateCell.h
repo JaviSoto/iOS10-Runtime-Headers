@@ -12,12 +12,13 @@
 
 
 - (void)dateChanged:(id)arg1;
+- (BOOL)_shouldUseYearlessPickerForDateComponents:(id)arg1;
 - (void)localeUpdated:(id)arg1;
 - (void)setDatePicker:(id)arg1;
 - (id)datePicker;
 - (void)dealloc;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (void)prepareForReuse;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

@@ -19,6 +19,7 @@
 - (void)candidateBarDidScroll:(id)arg1;
 - (void)didEndSplitTransition;
 - (void)setCandidateViewExtended:(BOOL)arg1;
+- (int)_clipCornersOfView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
 

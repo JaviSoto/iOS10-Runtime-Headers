@@ -168,6 +168,7 @@
 @property(readonly) float membersIndexMaximumHeight;
 @property(readonly) UIColor * membersIndexTextColor;
 @property(readonly) UIColor * membersIndexTrackingBackgroundColor;
+@property(readonly) UIColor * membersHeaderContentViewBackgroundColor;
 @property(readonly) UIColor * membersHeaderBackgroundColor;
 @property(readonly) UIView * memberHeaderBackgroundView;
 @property(readonly) UIColor * membersBackgroundColor;
@@ -207,8 +208,6 @@
 + (id)defaultStyleProviderForStyle:(int)arg1;
 + (id)defaultStyleProvider;
 + (id)preferredContentSizeCategoryName;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)shouldAdjustTableView:(id)arg1 forKeyboardOrdering:(BOOL)arg2;
 - (id)personValueBackgroundColor;
@@ -232,7 +231,6 @@
 - (id)cardValueShadowColor;
 - (id)cardLabelHighlightedShadowColor;
 - (id)cardLabelShadowColor;
-- (id)cardLabelSelectedBackgroundColor;
 - (id)cardHeaderBackgroundColor;
 - (BOOL)shouldApplyMaskImage;
 - (BOOL)cardPhotoShouldApplyOverlayImageWhenPersonImagePresent;
@@ -348,6 +346,7 @@
 - (float)cardMaxHeightForSwellTextViewWhenEditing:(BOOL)arg1;
 - (id)memberNamePlaceholderFont;
 - (id)memberNameBoldFont;
+- (id)memberNameRegularFont;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardValueInsetsWhenEditing:(BOOL)arg1;
 - (float)personViewRowHeightWhenEditing:(BOOL)arg1;
 - (id)cardLabelTextFont;
@@ -366,7 +365,6 @@
 - (id)memberNameBoldFontForSectionHeader;
 - (unsigned int)membersCountToShowIndex;
 - (struct CGSize { float x1; float x2; })memberNameShadowOffset;
-- (id)memberNameRegularFont;
 - (id)memberNameDisabledTextColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })memberNameInsets;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
@@ -408,7 +406,6 @@
 - (id)cardDeleteButtonImagePressed;
 - (id)cardDeleteButtonImage;
 - (id)cardCellDividerShadowColorVertical:(BOOL)arg1;
-- (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (BOOL)cardActionsAllowFaceTimeFavorites;
 - (BOOL)cardActionsAllowVoiceFavorites;
 - (id)cardActionConferenceIconPressed;
@@ -429,6 +426,7 @@
 - (id)cardLabelEmphasizedHighlightedTextColor;
 - (id)cardLabelHighlightedTextColor;
 - (id)editorViewColor;
+- (id)cardLabelSelectedBackgroundColor;
 - (BOOL)cardValueHighlightsWhenTouched;
 - (id)cardValueClearButtonImage;
 - (id)cardValueHighlightedTextColor;
@@ -446,6 +444,7 @@
 - (id)memberNameSelectedShadowColor;
 - (id)membersBackgroundColor;
 - (id)memberHeaderBackgroundView;
+- (id)membersHeaderContentViewBackgroundColor;
 - (id)newTableFooterViewForCellStyle:(int)arg1;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (int)abCellStyleForCardTableLinkingUI;
@@ -468,7 +467,6 @@
 - (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (id)newCustomCardTableScrollingBackgroundView;
-- (id)newCardActionButton;
 - (Class)customCardActionCellClass;
 - (Class)customCardCellClass;
 - (BOOL)shouldUseCardContentProviderWhenAvailable;
@@ -504,7 +502,9 @@
 - (id)groupHeaderBackgroudColor;
 - (id)groupCellTextColor;
 - (id)groupCellBackgroundColor;
+- (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (id)groupsTableBackgroundColor;
+- (id)newCardActionButton;
 - (id)letterpressStyle;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 

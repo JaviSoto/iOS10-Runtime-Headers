@@ -6,7 +6,6 @@
 }
 
 + (id)_parseItemIDArrayWithBytes:(const char *)arg1 length:(unsigned int)arg2;
-+ (void)enumerateDeletedItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (void)enumerateItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (id)_parseListingItemWithBytes:(const char *)arg1 length:(unsigned int)arg2 usingHandler:(id)arg3;
 + (id)_parseBrowseListingWithBytes:(const char *)arg1 length:(unsigned int)arg2;
@@ -29,6 +28,7 @@
 + (unsigned int)_parseItemPropertyCountWithBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)_parseResponseCode:(unsigned int)arg1 bytes:(const char *)arg2 length:(unsigned int)arg3 usingHandler:(id)arg4;
 + (id)enumerateRawItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
++ (void)enumerateDeletedItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (id)parseResponseData:(id)arg1;
 
 

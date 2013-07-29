@@ -68,6 +68,7 @@
 - (void)setSelectionColor:(id)arg1;
 - (id)selectionColor;
 - (float)sectionBorderWidth;
+- (BOOL)selected;
 - (id)bottomShadowColor;
 - (void)setSectionLocation:(int)arg1;
 - (void)setSectionBorderWidth:(float)arg1;
@@ -75,7 +76,6 @@
 - (id)topShadowColor;
 - (int)sectionLocation;
 - (int)selectionStyle;
-- (BOOL)selected;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelected:(BOOL)arg1;

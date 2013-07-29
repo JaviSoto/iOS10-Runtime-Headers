@@ -5,12 +5,7 @@
 @interface UIStatusBarIndicatorItemView : UIStatusBarItemView  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)contentsImage;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

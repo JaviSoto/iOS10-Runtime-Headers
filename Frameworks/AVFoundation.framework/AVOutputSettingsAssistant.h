@@ -13,17 +13,25 @@
 @property(readonly) NSString * outputFileType;
 
 + (id)outputSettingsAssistantWithPreset:(id)arg1;
++ (id)availableOutputSettingsPresets;
++ (id)videoEncoderCapabilities;
++ (id)videoSettingsAdjusterForPreset:(id)arg1;
++ (id)baseSettingsProviderForPreset:(id)arg1;
++ (id)_allOutputSettingsPresets;
 
+- (void)setSourceVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSourceVideoAverageFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSourceVideoFormat:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setSourceAudioFormat:(struct opaqueCMFormatDescription { }*)arg1;
-- (id)initWithHelper:(id)arg1;
+- (id)initWithPreset:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })sourceVideoMinFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })sourceVideoAverageFrameDuration;
 - (struct opaqueCMFormatDescription { }*)sourceAudioFormat;
 - (struct opaqueCMFormatDescription { }*)sourceVideoFormat;
 - (id)outputFileType;
 - (id)audioSettings;
 - (id)videoSettings;
+- (id)init;
 - (void)finalize;
 - (void)dealloc;
 

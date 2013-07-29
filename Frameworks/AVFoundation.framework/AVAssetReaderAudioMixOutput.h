@@ -15,6 +15,7 @@
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (struct opaqueMTAudioProcessingTap { }*)_audioTapProcessorForTrack:(id)arg1;
 - (id)_audioTimePitchAlgorithmForTrack:(id)arg1;
 - (id)_audioVolumeCurveForTrack:(id)arg1;
@@ -25,7 +26,6 @@
 - (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 - (id)audioTracks;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)audioTimePitchAlgorithm;
 - (void)setAudioMix:(id)arg1;
 - (id)audioMix;

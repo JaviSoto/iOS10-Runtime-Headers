@@ -25,10 +25,13 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
 
-- (unsigned int)opaqueSessionID;
-- (double)IOBufferDuration;
-- (unsigned int)categoryOptions;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
+- (unsigned int)promptStyle;
+- (BOOL)setForceSoundCheck:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)forceSoundCheck;
+- (id)audioFormats;
+- (BOOL)silenceOutput:(unsigned int)arg1 error:(id*)arg2;
+- (void)privateUpdateOutputChannelCount:(id)arg1;
+- (void)privateUpdateInputChannelCount:(id)arg1;
 - (void)privateHandleServerDied;
 - (void)privateHandleFormatChange:(id)arg1;
 - (void)privateHandleFormatsChange:(id)arg1;
@@ -47,11 +50,11 @@
 - (BOOL)inputIsAvailable;
 - (BOOL)setIAmTheAssistant:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)setDefaultChatMode:(id)arg1 error:(id*)arg2;
-- (BOOL)silenceOutput:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)setActivationContext:(id)arg1 error:(id*)arg2;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
 - (id)privateRefreshAvailableInputs;
 - (id)availableInputs;
+- (unsigned int)opaqueSessionID;
 - (id)preferredInput;
 - (BOOL)setPreferredInput:(id)arg1 error:(id*)arg2;
 - (BOOL)overrideOutputAudioPort:(unsigned int)arg1 error:(id*)arg2;
@@ -60,6 +63,7 @@
 - (int)maximumInputNumberOfChannels;
 - (int)preferredOutputNumberOfChannels;
 - (int)preferredInputNumberOfChannels;
+- (double)IOBufferDuration;
 - (double)outputLatency;
 - (double)inputLatency;
 - (BOOL)isOtherAudioPlaying;
@@ -71,12 +75,8 @@
 - (float)inputGain;
 - (void)setAllowAllBuiltInDataSources:(BOOL)arg1;
 - (BOOL)allowAllBuiltInDataSources;
-- (BOOL)setForceSoundCheck:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)forceSoundCheck;
 - (BOOL)isEarpieceActiveNoiseCancelationEnabled;
 - (int)audioFormat;
-- (id)audioFormats;
-- (unsigned int)promptStyle;
 - (float)outputVolume;
 - (BOOL)setOutputDataSource:(id)arg1 error:(id*)arg2;
 - (BOOL)setInputDataSource:(id)arg1 error:(id*)arg2;
@@ -85,6 +85,7 @@
 - (BOOL)setPreferredInputNumberOfChannels:(int)arg1 error:(id*)arg2;
 - (void)requestRecordPermission:(id)arg1;
 - (BOOL)setCategory:(id)arg1 withOptions:(unsigned int)arg2 error:(id*)arg3;
+- (unsigned int)categoryOptions;
 - (void)privateUpdateAudioFormat:(id)arg1;
 - (void)privateUpdateAudioFormats:(id)arg1;
 - (void)privateUpdatePromptStyle:(id)arg1;
@@ -93,7 +94,7 @@
 - (double)preferredSampleRate;
 - (BOOL)isInputAvailable;
 - (BOOL)setPreferredSampleRate:(double)arg1 error:(id*)arg2;
-- (struct AVAudioSessionImpl { struct GenericRunLoopThread {} *x1; id x2; id x3; struct KVOProperty<float> { int (**x_4_1_1)(); float x_4_1_2; boolx_4_1_3; id x_4_1_4; } x4; struct KVOProperty<float> { int (**x_5_1_1)(); float x_5_1_2; boolx_5_1_3; id x_5_1_4; } x5; struct KVONSArrayProperty { int (**x_6_1_1)(); id x_6_1_2; boolx_6_1_3; id x_6_1_4; } x6; struct KVONSArrayProperty { int (**x_7_1_1)(); id x_7_1_2; boolx_7_1_3; id x_7_1_4; } x7; struct KVOProperty<unsigned long> { int (**x_8_1_1)(); unsigned long x_8_1_2; boolx_8_1_3; id x_8_1_4; } x8; struct KVONSObjectProperty<NSArray *> { int (**x_9_1_1)(); id x_9_1_2; boolx_9_1_3; id x_9_1_4; } x9; struct KVOProperty<unsigned long> { int (**x_10_1_1)(); unsigned long x_10_1_2; boolx_10_1_3; id x_10_1_4; } x10; id x11; BOOL x12; }*)privateGetImplementation;
+- (struct AVAudioSessionImpl { struct GenericRunLoopThread {} *x1; id x2; id x3; struct KVOProperty<float> { int (**x_4_1_1)(); float x_4_1_2; boolx_4_1_3; id x_4_1_4; } x4; struct KVOProperty<float> { int (**x_5_1_1)(); float x_5_1_2; boolx_5_1_3; id x_5_1_4; } x5; struct KVONSArrayProperty { int (**x_6_1_1)(); id x_6_1_2; boolx_6_1_3; id x_6_1_4; } x6; struct KVONSArrayProperty { int (**x_7_1_1)(); id x_7_1_2; boolx_7_1_3; id x_7_1_4; } x7; struct KVOProperty<unsigned long> { int (**x_8_1_1)(); unsigned long x_8_1_2; boolx_8_1_3; id x_8_1_4; } x8; struct KVONSObjectProperty<NSArray *> { int (**x_9_1_1)(); id x_9_1_2; boolx_9_1_3; id x_9_1_4; } x9; struct KVOProperty<unsigned long> { int (**x_10_1_1)(); unsigned long x_10_1_2; boolx_10_1_3; id x_10_1_4; } x10; id x11; BOOL x12; struct KVOProperty<unsigned long> { int (**x_13_1_1)(); unsigned long x_13_1_2; boolx_13_1_3; id x_13_1_4; } x13; struct KVOProperty<unsigned long> { int (**x_14_1_1)(); unsigned long x_14_1_2; boolx_14_1_3; id x_14_1_4; } x14; }*)privateGetImplementation;
 - (id)privateConfigureRouteDescription:(id)arg1;
 - (id)privateGetSelectedDataSource:(BOOL)arg1;
 - (id)privateGetDataSources:(BOOL)arg1;
@@ -103,6 +104,7 @@
 - (BOOL)privateSetPropertyValue:(unsigned long)arg1 withBool:(BOOL)arg2 error:(id*)arg3;
 - (void)privateMarkKVOPropertiesDirty:(unsigned int)arg1;
 - (int)inputNumberOfChannels;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 - (double)preferredIOBufferDuration;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;

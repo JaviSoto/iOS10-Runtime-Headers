@@ -16,7 +16,6 @@
 @property unsigned int position;
 
 
-- (id)readString;
 - (id)readBigEndianShortThenString;
 - (id)readBytes:(unsigned int)arg1;
 - (void)recall:(const struct { unsigned int x1; unsigned int x2; }*)arg1;
@@ -47,6 +46,7 @@
 - (BOOL)hasError;
 - (unsigned short)readBigEndianFixed16;
 - (unsigned int)readBigEndianFixed32;
+- (id)readString;
 - (unsigned int)offset;
 - (void)setPosition:(unsigned int)arg1;
 - (unsigned int)length;

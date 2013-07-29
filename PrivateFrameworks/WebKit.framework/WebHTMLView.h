@@ -18,10 +18,7 @@
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (void)initialize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)accessibilityRootElement;
 - (BOOL)_isEditable;
 - (void)viewDidMoveToWindow;
 - (void)willRemoveSubview:(id)arg1;
@@ -49,7 +46,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionImageRect;
 - (BOOL)_findString:(id)arg1 options:(unsigned int)arg2;
 - (int)conversationIdentifier;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_destroyAllWebPlugins;
@@ -170,6 +166,7 @@
 - (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame> { struct Frame {} *x_3_1_1; } x3; })coreCommandBySelector:(SEL)arg1;
 - (BOOL)callDelegateDoCommandBySelectorIfNeeded:(SEL)arg1;
 - (void)markedTextUpdate:(id)arg1;
+- (id)accessibilityRootElement;
 - (void)_endScreenPaginationMode;
 - (BOOL)_beginScreenPaginationModeWithPageSize:(struct CGSize { float x1; float x2; })arg1 shrinkToFit:(BOOL)arg2;
 - (BOOL)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(BOOL)arg3;
@@ -255,6 +252,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScale:(float)arg1;
 - (void)layout;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (void)close;
 - (id)string;
 - (void)finalize;
@@ -280,10 +278,5 @@
 - (void)unmarkText;
 - (id)selectionView;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

@@ -18,13 +18,13 @@
 - (void)_validateToOnes;
 - (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
 - (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
-- (void)setOptLock:(long long)arg1;
 - (void)setForeignOrderKeySlot:(unsigned int)arg1 orderKey:(unsigned int)arg2;
 - (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
 - (void)setForeignEntityKeySlot:(unsigned int)arg1 entityKey:(unsigned int)arg2;
 - (id)_snapshot_;
 - (const id*)knownKeyValuesPointer;
 - (unsigned int)_versionNumber;
+- (void)setOptLock:(long long)arg1;
 - (struct __CFBitVector { }*)newCalculatedDeltaMaskFrom:(id)arg1;
 - (id)attributeValueForSlot:(unsigned int)arg1;
 - (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;

@@ -26,7 +26,6 @@
 
 + (int)styleForContentColor:(id)arg1;
 
-- (int)currentStyle;
 - (float)mostRecentBrightness;
 - (void)setMostRecentSaturation:(float)arg1;
 - (float)mostRecentSaturation;
@@ -45,5 +44,6 @@
 - (BOOL)accumulateChangesToContentColor:(id)arg1;
 - (void)clearContentColorAccumulator;
 - (id)settings;
+- (int)currentStyle;
 
 @end

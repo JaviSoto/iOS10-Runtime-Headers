@@ -12,8 +12,8 @@
 
 
 - (id)encodedClassName;
-- (id)className;
 - (id)group;
+- (id)className;
 - (id)groupIdentifier;
 
 @end

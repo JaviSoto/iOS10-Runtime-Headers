@@ -29,8 +29,8 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (id)name;
 - (id)description;
+- (id)bundleIdentifier;
 - (id)categories;
 - (void)setName:(id)arg1;
-- (id)bundleIdentifier;
 
 @end

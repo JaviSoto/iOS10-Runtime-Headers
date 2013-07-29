@@ -10,6 +10,7 @@
 @property(retain) NSString * transactionIdentifier;
 
 
+- (void)addFieldsFromPurchaseResponse:(id)arg1;
 - (id)transactionIdentifier;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)init;

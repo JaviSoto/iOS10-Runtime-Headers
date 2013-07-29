@@ -15,8 +15,10 @@
 - (id)init;
 - (void)dealloc;
 - (id)availableDefinitionDictionaries;
-- (id)_definitionValuesForTerm:(id)arg1;
 - (id)_availableDictionaryAssets;
+- (id)_definitionValuesForTerm:(id)arg1;
+- (id)_allAvailableDefinitionDictionariesUsingRemoteInfo:(BOOL)arg1;
+- (id)_availableDictionaryAssetsUsingRemoteInfo:(BOOL)arg1;
 - (id)_currentlyAvailableDefinitionDictionaries;
 - (BOOL)_hasDefinitionForTerm:(id)arg1;
 

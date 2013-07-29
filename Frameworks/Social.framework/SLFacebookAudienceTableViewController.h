@@ -19,12 +19,12 @@
 - (void)cancelButtonTapped:(id)arg1;
 - (void).cxx_destruct;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)viewWillLayoutSubviews;

@@ -48,8 +48,6 @@
 + (BOOL)buttonImagesUseBackgroundImage;
 + (unsigned long long)defaultVisibleParts;
 + (int)buttonType;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)updateVisibleButtonImages;
 - (BOOL)alwaysHidesSystemVolumeHUD;
@@ -62,6 +60,8 @@
 - (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(unsigned long long)arg3;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
 - (id)playPauseButtonImage;
+- (id)tintColorForPart:(unsigned long long)arg1;
+- (BOOL)usesTintColorForControls;
 - (id)disabledButtonImageForPart:(unsigned long long)arg1;
 - (void)buttonUp:(id)arg1;
 - (void)buttonDown:(id)arg1;
@@ -115,8 +115,5 @@
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (id)target;
-- (BOOL)accessibilityViewIsModal;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (void)_accessibilityApplyIDsToTransformButtons;
 
 @end

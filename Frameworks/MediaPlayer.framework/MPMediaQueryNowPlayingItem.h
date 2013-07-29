@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem;
+@class MPMediaItem, NSCache;
 
 @interface MPMediaQueryNowPlayingItem : MPAVItem  {
     MPMediaItem *_mediaItem;
+    NSCache *_cache;
 }
 
 @property(readonly) MPMediaItem * mediaItem;
@@ -24,7 +25,6 @@
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (id)_newTimeMarkersForChapterType:(int)arg1;
 - (id)initWithMediaItem:(id)arg1;
-- (id)mediaItem;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)reevaluateType;
 - (id)titlesForTime:(double)arg1;
@@ -32,6 +32,7 @@
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
+- (id)mediaItem;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;

@@ -29,9 +29,9 @@
 + (id)typeStrings;
 
 - (id)principalURL;
+- (BOOL)useSSL;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (id)accountPersistentUUID;
-- (BOOL)useSSL;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)subtitle1Description;

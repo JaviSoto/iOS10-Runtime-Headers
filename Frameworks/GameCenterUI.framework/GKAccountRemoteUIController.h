@@ -27,9 +27,9 @@
 - (id)initWithMode:(int)arg1;
 - (void)updatePostbackDictionary:(id)arg1 withHandler:(id)arg2;
 - (void)takeValuesFromClientInfo:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)fireCompletionHandler;
 - (id)postBodyForInitialLoad;
 - (id)fallbackURL;
+- (void)fireCompletionHandler;
 - (void)setMode:(int)arg1;
 - (void)dealloc;
 - (int)mode;

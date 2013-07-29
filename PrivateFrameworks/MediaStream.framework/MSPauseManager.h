@@ -18,11 +18,11 @@
 - (void)_removeTimerUUID:(id)arg1;
 - (void)_addPauseUUID:(id)arg1;
 - (void)_timerDidFire:(id)arg1;
-- (BOOL)isPaused;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
+- (BOOL)isPaused;
 
 @end

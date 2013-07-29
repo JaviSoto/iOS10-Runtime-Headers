@@ -44,8 +44,6 @@
 + (id)_modernBackgroundSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 + (id)_modernDividerImage;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -110,7 +108,6 @@
 - (BOOL)transparentBackground;
 - (void)setTransparentBackground:(BOOL)arg1;
 - (void)_setTranslucentOptionsBackground:(BOOL)arg1;
-- (void)_setAutosizeText:(BOOL)arg1;
 - (void)setSegmentControlStyle:(int)arg1;
 - (int)segmentControlStyle;
 - (int)segmentedControlStyle;
@@ -147,6 +144,7 @@
 - (void)setSegmentedControlStyle:(int)arg1;
 - (id)_createAndAddSegmentAtIndex:(int)arg1 position:(unsigned int)arg2 withInfo:(id)arg3;
 - (void)_commonSegmentedControlInit;
+- (void)_setAutosizeText:(BOOL)arg1;
 - (id)viewForBaselineLayout;
 - (void)setMomentary:(BOOL)arg1;
 - (BOOL)isMomentary;
@@ -188,10 +186,6 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)sendActionsForControlEvents:(unsigned int)arg1;
-- (BOOL)accessibilityElementsHidden;
-- (BOOL)shouldGroupAccessibilityChildren;
-- (BOOL)isAccessibilityElement;
 - (void)sizeToFitWithMinimumSegmentWidth:(float)arg1 maximumTotalWidth:(float)arg2;
 
 @end

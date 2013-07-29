@@ -23,17 +23,17 @@
 @property(readonly) BOOL hasActiveTileGroup;
 @property(readonly) GEOActiveTileGroup * activeTileGroup;
 
++ (void)disableServerConnection;
 + (void)setCallerWillStartServer;
 + (void)setHiDPI:(BOOL)arg1;
 + (void)useLocalProxy;
 + (void)useRemoteProxy;
-+ (void)disableServerConnection;
 + (id)modernManager;
 + (id)sharedManager;
 
+- (id)detailedDescription;
 - (void)devResourcesFolderDidChange;
 - (unsigned int)activeTileGroupIdentifier;
-- (id)detailedDescription;
 - (void)addNetworkActivityHandler:(id)arg1;
 - (id)_activeTileSetForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (unsigned int)mapMatchingZoomLevel;
@@ -45,6 +45,7 @@
 - (void)setActiveTileGroupIdentifier:(unsigned int)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
 - (BOOL)hasResourceManifest;
+- (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
 - (oneway void)serverProxyDidStopLoadingResources;
 - (oneway void)serverProxyWillStartLoadingResources;
 - (oneway void)serverProxyDidStopUpdatingResourceManifest;
@@ -70,9 +71,9 @@
 - (id)multiTileURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(BOOL*)arg2;
 - (BOOL)hasActiveTileGroup;
 - (id)activeTileGroup;
-- (void)_localeChanged:(id)arg1;
 - (void)removeTileGroupObserver:(id)arg1;
 - (void)addTileGroupObserver:(id)arg1 queue:(id)arg2;
+- (void)_localeChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

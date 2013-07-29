@@ -24,6 +24,8 @@
 
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)initWithIdentifier:(id)arg1;
+- (void)setLowPowerVideoAudioBufferSizeEnabled:(BOOL)arg1;
+- (BOOL)lowPowerVideoAudioBufferSizeEnabled;
 - (void)setHiddenPageCSSAnimationSuspensionEnabled:(BOOL)arg1;
 - (BOOL)hiddenPageCSSAnimationSuspensionEnabled;
 - (void)setHiddenPageDOMTimerThrottlingEnabled:(BOOL)arg1;

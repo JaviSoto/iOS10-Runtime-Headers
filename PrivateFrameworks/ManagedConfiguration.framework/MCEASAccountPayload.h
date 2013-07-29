@@ -19,7 +19,6 @@
     NSString *_accountPersistentUUID;
     NSData *_certificatePersistentID;
     BOOL _syncDefaultFoldersOnly;
-    NSString *_headerMagic;
 }
 
 @property(readonly) NSString * accountDescription;
@@ -34,7 +33,6 @@
 @property(copy) NSString * embeddedCertificatePassword;
 @property(readonly) NSString * certificateUUID;
 @property(readonly) BOOL hasCertificate;
-@property(retain) NSString * headerMagic;
 @property(copy) NSString * accountPersistentUUID;
 @property(retain) NSData * certificatePersistentID;
 @property BOOL syncDefaultFoldersOnly;
@@ -43,19 +41,17 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
-- (void)setHeaderMagic:(id)arg1;
-- (id)headerMagic;
+- (id)mailNumberOfPastDaysToSync;
+- (BOOL)useSSL;
 - (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
 - (BOOL)syncDefaultFoldersOnly;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (id)embeddedCertificatePassword;
 - (id)embeddedCertificateName;
 - (id)embeddedCertificate;
-- (id)mailNumberOfPastDaysToSync;
 - (BOOL)hasCertificate;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (id)accountPersistentUUID;
-- (BOOL)useSSL;
 - (id)certificateUUID;
 - (void)setCertificatePersistentID:(id)arg1;
 - (id)certificatePersistentID;

@@ -15,8 +15,8 @@
 @property(readonly) UIView * grabberView;
 @property(retain) NSArray * grabberGestureRecognizers;
 
-+ (id)videoAnswerButtonImage;
 + (id)videoDeclineButtonImage;
++ (id)videoAnswerButtonImage;
 + (id)answerButtonImage;
 + (id)declineButtonImage;
 

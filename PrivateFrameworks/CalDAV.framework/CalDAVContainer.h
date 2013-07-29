@@ -8,6 +8,7 @@
     NSString *_calendarDescription;
     NSString *_ctag;
     NSString *_calendarColor;
+    NSString *_symbolicColorName;
     NSString *_calendarOrder;
     NSSet *_supportedCalendarComponentSet;
     BOOL _subscribedStripAlarms;
@@ -47,6 +48,7 @@
 @property(retain) NSString * calendarDescription;
 @property(retain) NSString * ctag;
 @property(retain) NSString * calendarColor;
+@property(retain) NSString * symbolicColorName;
 @property(retain) NSString * calendarOrder;
 @property(retain) NSString * defaultTimedAlarms;
 @property(retain) NSString * defaultAllDayAlarms;
@@ -83,6 +85,7 @@
 - (void)setSubscribedStripTodos:(BOOL)arg1;
 - (void)setSubscribedStripAttachments:(BOOL)arg1;
 - (void)setSubscribedStripAlarms:(BOOL)arg1;
+- (id)symbolicColorName;
 - (BOOL)autoprovisioned;
 - (id)locationCode;
 - (id)supportedCalendarComponentSets;
@@ -120,6 +123,7 @@
 - (void)setSubscribedRefreshRate:(id)arg1;
 - (void)setSupportedCalendarComponentSet:(id)arg1;
 - (void)setCalendarOrder:(id)arg1;
+- (void)setSymbolicColorName:(id)arg1;
 - (void)setCalendarColor:(id)arg1;
 - (void)setCalendarDescription:(id)arg1;
 - (id)calendarDescription;

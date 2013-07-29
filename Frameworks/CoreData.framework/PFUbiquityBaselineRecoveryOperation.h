@@ -16,7 +16,7 @@
 - (BOOL)resolveConflictsForBaseline:(id)arg1 withError:(id*)arg2;
 - (BOOL)conflictsExistForBaseline:(id)arg1;
 - (BOOL)hasCurrentBaseline;
-- (BOOL)electBaselineURLFromVersionURLs:(id)arg1 withBaseline:(id)arg2 error:(id*)arg3;
+- (BOOL)electBaselineURLFromVersions:(id)arg1 withBaseline:(id)arg2 error:(id*)arg3;
 - (id)retainedDelegate;
 - (void)setDelegate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

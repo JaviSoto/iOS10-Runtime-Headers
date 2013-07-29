@@ -28,7 +28,6 @@
 + (void)setClassName:(id)arg1 forClass:(Class)arg2;
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 
-- (void)setOutputFormat:(unsigned int)arg1;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)setRequiresSecureCoding:(BOOL)arg1;
 - (id)init;
@@ -47,6 +46,7 @@
 - (id)delegate;
 - (void)encodeConditionalObject:(id)arg1;
 - (unsigned int)systemVersion;
+- (void)setOutputFormat:(unsigned int)arg1;
 - (id)_blobForCurrentObject;
 - (void)_setBlobForCurrentObject:(id)arg1;
 - (id)classNameForClass:(Class)arg1;

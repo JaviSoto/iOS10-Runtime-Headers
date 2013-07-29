@@ -50,7 +50,6 @@
 - (void)setSplitHeightDelta:(float)arg1;
 - (void)_setSplitProgress:(float)arg1;
 - (void)_beginSplitTransitionIfNeeded;
-- (void)refreshPresentation;
 - (BOOL)inSyncWithOrientation:(int)arg1 forKeyboard:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputAccessoryViewBounds;
 - (id)_splittableInputAccessoryView;
@@ -67,6 +66,7 @@
 - (id)_themableInputAccessoryView;
 - (id)keyboard;
 - (BOOL)visible;
+- (void)refreshPresentation;
 - (BOOL)supportsSplit;
 - (BOOL)isSplit;
 - (void)_setRenderConfig:(id)arg1;

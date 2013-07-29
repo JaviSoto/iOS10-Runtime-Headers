@@ -34,6 +34,8 @@
 @property(readonly) SUScriptApplication * application;
 @property(readonly) SUScriptDevice * device;
 @property(readonly) NSString * actionTypeReturnToLibrary;
+@property(readonly) NSString * actionTypeDismissWindows;
+@property(readonly) NSString * actionTypeDismissSheet;
 @property(readonly) SUScriptPurchaseManager * purchaseManager;
 @property(readonly) SUScriptAppleAccountStore * appleAccountStore;
 @property(readonly) SUScriptFairPlayContext * accountCreationSecureContext;
@@ -63,6 +65,8 @@
 - (id)accountCreationSecureContext;
 - (id)appleAccountStore;
 - (id)activeAudioPlayers;
+- (id)actionTypeDismissSheet;
+- (id)actionTypeDismissWindows;
 - (id)actionTypeReturnToLibrary;
 - (id)application;
 - (void)addPurchaseWithInfo:(id)arg1;
@@ -215,6 +219,7 @@
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
 - (id)accountDSID;
+- (id)clientIdentifier;
 - (id)threadSafeDelegate;
 - (void)setMediaLibrary:(id)arg1;
 - (id)mediaLibrary;
@@ -227,8 +232,6 @@
 - (id)accountName;
 - (void)setLoggingEnabled:(id)arg1;
 - (void)setDevice:(id)arg1;
-- (id)clientIdentifier;
-- (void)log:(id)arg1;
 - (id)accounts;
 - (void)openURL:(id)arg1;
 - (id)attributeKeys;
@@ -256,6 +259,7 @@
 - (void)setWindow:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)navigationBar;
+- (void)log:(id)arg1;
 - (id)protocol;
 
 @end

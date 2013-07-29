@@ -95,7 +95,6 @@
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (id)protocolVersion;
-- (id)accountPropertyForKey:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (id)displayName;
 - (id)lastName;
@@ -106,6 +105,7 @@
 - (BOOL)isProvisionedForDataclass:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (id)accountPropertyForKey:(id)arg1;
 - (void)setAccountDescription:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;

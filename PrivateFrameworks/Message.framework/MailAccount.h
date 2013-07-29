@@ -61,6 +61,8 @@
 + (void)setMailAccounts:(id)arg1;
 + (void)removeMailAccount:(id)arg1 saveIfChanged:(BOOL)arg2;
 + (void)addMailAccount:(id)arg1 saveIfChanged:(BOOL)arg2;
++ (id)lastMailAccountsReloadError;
++ (id)lastMailAccountsReloadDate;
 + (void)_removeAccountFromSortedPaths:(id)arg1;
 + (id)mailboxUidForFileSystemPath:(id)arg1 create:(BOOL)arg2;
 + (id)standardAccountClass:(Class)arg1 valueForKey:(id)arg2;
@@ -81,17 +83,20 @@
 + (id)accountForHeaders:(id)arg1 message:(id)arg2 includingInactive:(BOOL)arg3;
 + (id)accountContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2;
 + (id)_accountContainingEmailAddress:(id)arg1 matchingAddress:(id*)arg2 fullUserName:(id*)arg3 includingInactive:(BOOL)arg4;
++ (id)activeAccountsWithError:(id*)arg1;
 + (void)_unregisterPendingAccount:(id)arg1;
 + (void)setMailAccounts:(id)arg1 saveIfChanged:(BOOL)arg2;
 + (void)_registerPendingAccount:(id)arg1;
 + (id)mailAccounts;
++ (id)mailAccountsWithError:(id*)arg1;
 + (void)enableMailboxListingNotifications:(BOOL)arg1;
 + (void)_invalidateAccounts:(id)arg1 missingFromNewAccounts:(id)arg2;
 + (void)_setupSortedPathsForAccounts:(id)arg1;
-+ (id)_loadAllAccounts;
++ (id)_loadAllAccountsWithError:(id*)arg1;
 + (void)disableMailboxListingNotifications;
 + (void)_removeLookAsideValuesNotInAccountList:(id)arg1;
 + (id)existingDAMailAccountForDAAccount:(id)arg1;
++ (id)_loadDataAccessAccountsWithError:(id*)arg1;
 + (void)_addAccountToSortedPaths:(id)arg1;
 + (BOOL)isPredefinedAccountType;
 + (id)existingAccountForUniqueID:(id)arg1;
@@ -134,6 +139,7 @@
 - (BOOL)_canReceiveNewMailNotifications;
 - (BOOL)hasEnoughInformationForEasySetup;
 - (id)meetingStorePersistentID;
+- (id)statisticsKind;
 - (id)displayNameUsingSpecialNamesForMailboxUid:(id)arg1;
 - (BOOL)deleteInPlaceForAllMailboxes;
 - (BOOL)derivesDeliveryAccountInfoFromMailAccount;

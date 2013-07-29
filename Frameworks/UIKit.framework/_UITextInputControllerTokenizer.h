@@ -7,13 +7,16 @@
 @interface _UITextInputControllerTokenizer : UITextInputStringTokenizer  {
     UITextInputController *_textInput;
     struct __CFStringTokenizer { } *_tokenizer;
+    int _tokenizerType;
 }
 
 
 - (void)dealloc;
+- (int)_writingDirectionAtPosition:(id)arg1;
 - (id)initWithTextInputController:(id)arg1;
 - (void)invalidateTokenizer;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_getClosestTokenRangeForPosition:(id)arg1 granularity:(int)arg2 downstream:(BOOL)arg3;
+- (BOOL)_isDownstreamForDirection:(int)arg1 atPosition:(id)arg2;
 - (int)_indexForTextPosition:(id)arg1;
 
 @end

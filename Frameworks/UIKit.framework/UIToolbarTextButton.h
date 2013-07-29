@@ -10,8 +10,6 @@
     NSSet *_possibleTitles;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 pressedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(int)arg4 withStyle:(int)arg5 withTitleWidth:(float)arg6 possibleTitles:(id)arg7 withToolbarTintColor:(id)arg8;
@@ -22,6 +20,5 @@
 - (id)_scriptingInfo;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

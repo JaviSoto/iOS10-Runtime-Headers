@@ -11,11 +11,11 @@
 @property unsigned int payloadLength;
 
 
-- (void)setTimedOut:(BOOL)arg1;
-- (BOOL)hasTimedOut;
 - (void)setPayloadLength:(unsigned int)arg1;
 - (unsigned int)payloadLength;
 - (int)payloadFormat;
+- (void)setTimedOut:(BOOL)arg1;
+- (BOOL)hasTimedOut;
 - (void)setSendInterface:(int)arg1;
 - (int)sendInterface;
 - (void)setSent:(BOOL)arg1;

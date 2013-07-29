@@ -17,13 +17,13 @@
 @property(readonly) NSString * errorComment;
 
 
-- (id)_initWithAVItemErrorLogEvent:(id)arg1;
 - (id)errorComment;
-- (id)errorDomain;
 - (int)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
 - (id)URI;
+- (id)_initWithAVItemErrorLogEvent:(id)arg1;
+- (id)errorDomain;
 - (id)date;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

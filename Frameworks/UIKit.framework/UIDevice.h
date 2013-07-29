@@ -36,9 +36,9 @@
 @property(readonly) int userInterfaceIdiom;
 @property(setter=_setBacklightLevel:) float _backlightLevel;
 
-+ (id)currentDevice;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (id)currentDevice;
 + (id)platformString;
 
 - (id)model;

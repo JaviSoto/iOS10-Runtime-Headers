@@ -70,6 +70,7 @@
 + (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
 + (id)escapedStringForString:(id)arg1;
 + (id)unescapedStringForString:(id)arg1;
++ (id)SLTwitterUserInfoURL;
 + (id)SLTwitterAccessTokenURL;
 + (id)SLTwitterRequestTokenURL;
 + (id)SLTwitterCleanupPushDestinationsURL;
@@ -82,7 +83,6 @@
 + (id)SLTwitterNearbyPlacesURL;
 + (id)SLTwitterUpdateMultiPartStatusURL;
 + (id)SLTwitterUpdateStatusURL;
-+ (id)SLTwitterProfileImageURLForScreenName:(id)arg1;
 + (id)URLForFacebookPageAtPath:(id)arg1;
 + (id)URLForFacebookGraphAPIWithDomain:(id)arg1 path:(id)arg2;
 + (BOOL)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
@@ -122,6 +122,7 @@
 - (id)bookmarkDataWithOptions:(unsigned int)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
 - (id)filePathURL;
 - (BOOL)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (BOOL)_isSafeDirectoryForDownloads:(int)arg1;
 - (BOOL)_isSafeFileForBackgroundUpload:(int)arg1;
 - (id)resourceSpecifier;
 - (id)init;
@@ -153,6 +154,7 @@
 - (BOOL)_isDeallocating;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)absoluteString;
 - (const char *)fileSystemRepresentation;
 - (id)path;
 - (id)relativePath;
@@ -167,7 +169,6 @@
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)getFileSystemRepresentation:(char *)arg1 maxLength:(unsigned int)arg2;
 - (id)initFileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
-- (id)absoluteString;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)URLByAppendingPathExtension:(id)arg1;

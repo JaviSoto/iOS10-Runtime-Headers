@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class CAMeshTransform, NSString, NSArray, CALayer, NSDictionary;
+@class NSArray, CAMeshTransform, NSString, CALayer, NSDictionary;
 
 @interface CALayer : NSObject <CAPropertyInfo, NSCoding, CAMediaTiming> {
     struct _CALayerIvars { 
@@ -18,6 +18,8 @@
     } _attr;
 }
 
+@property(readonly) CALayer * currentLayer;
+@property(readonly) CALayer * _mapKit_mapLayer;
 @property(copy) NSArray * states;
 @property(copy) NSArray * stateTransitions;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
@@ -41,6 +43,7 @@
 @property BOOL allowsGroupBlending;
 @property BOOL allowsDisplayCompositing;
 @property struct CGSize { float x1; float x2; } sizeRequisition;
+@property struct CGSize { float x1; float x2; } backgroundColorPhase;
 @property(copy) NSArray * lights;
 @property BOOL acceptsLights;
 @property float ambientReflectance;
@@ -124,8 +127,6 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (id)properties;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)context;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
@@ -188,6 +189,7 @@
 - (void)setAmbientReflectance:(float)arg1;
 - (void)setAcceptsLights:(BOOL)arg1;
 - (void)setLights:(id)arg1;
+- (void)setBackgroundColorPhase:(struct CGSize { float x1; float x2; })arg1;
 - (void)setAllowsDisplayCompositing:(BOOL)arg1;
 - (void)setSwapsMaskAndLayer:(BOOL)arg1;
 - (void)setContentsOpaque:(BOOL)arg1;
@@ -224,6 +226,7 @@
 - (float)diffuseReflectance;
 - (float)ambientReflectance;
 - (BOOL)acceptsLights;
+- (struct CGSize { float x1; float x2; })backgroundColorPhase;
 - (id)behaviors;
 - (id)lights;
 - (id)meshTransform;
@@ -382,7 +385,6 @@
 - (id)actions;
 - (void)setMeshTransform:(id)arg1;
 - (void)setAllowsEdgeAntialiasing:(BOOL)arg1;
-- (void)setHitTestsAsOpaque:(BOOL)arg1;
 - (BOOL)opaque;
 - (void)setFlipped:(BOOL)arg1;
 - (id)contentsScaling;
@@ -394,7 +396,6 @@
 - (struct CADoublePoint { double x1; double x2; })convertDoublePoint:(struct CADoublePoint { double x1; double x2; })arg1 fromLayer:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })convertDoublePoint:(struct CADoublePoint { double x1; double x2; })arg1 toLayer:(id)arg2;
 - (void)setDoubleBounds:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)animationKeys;
 - (BOOL)isFrozen;
 - (void)insertSublayer:(id)arg1 below:(id)arg2;
 - (void)setContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
@@ -410,7 +411,9 @@
 - (void)setAllowsGroupBlending:(BOOL)arg1;
 - (BOOL)hasBeenCommitted;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
+- (id)animationKeys;
 - (void)setAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setHitTestsAsOpaque:(BOOL)arg1;
 - (void)setMass:(float)arg1;
 - (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
 - (double)duration;
@@ -425,10 +428,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (int)compareTextEffectsOrdering:(id)arg1;
 - (BOOL)uiHasFilterWithName:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_gkRecursiveDescription;
 - (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)_mapkit_removeAnimationImmediatelyForKey:(id)arg1;
+- (BOOL)getPresentationValue:(id*)arg1 forKey:(id)arg2 removeAnimation:(BOOL)arg3;
+- (BOOL)getPresentationValue:(id*)arg1 forValueKey:(id)arg2 animationKey:(id)arg3 removeAnimation:(BOOL)arg4;
+- (id)currentLayer;
+- (id)_mapKit_mapLayer;
+- (void)_mapkit_addAnimation:(id)arg1 forKey:(id)arg2 completion:(id)arg3;
 
 @end

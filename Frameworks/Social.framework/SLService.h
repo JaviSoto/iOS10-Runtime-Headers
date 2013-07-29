@@ -22,8 +22,8 @@
 - (BOOL)hasAccounts;
 - (BOOL)isFirstClassService;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
-- (id)serviceType;
 - (BOOL)isAvailable;
+- (id)serviceType;
 - (id)accountType;
 - (int)maximumVideoCount;
 - (int)maximumImageCount;

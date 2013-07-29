@@ -45,12 +45,12 @@
 - (id)URL;
 - (void)setRemoteViewController:(id)arg1;
 - (int)modalTransitionStyle;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (int)modalPresentationStyle;
 - (BOOL)wantsFullScreenLayout;

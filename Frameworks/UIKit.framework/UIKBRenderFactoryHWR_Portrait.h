@@ -9,7 +9,6 @@
 - (float)handwritingGradientStartLocation;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;
 - (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
-- (BOOL)deleteKeyAdjacentToCandidates;
 - (struct CGPoint { float x1; float x2; })moreKeyTextOffset;
 - (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
 - (float)spaceKeyFontSize;

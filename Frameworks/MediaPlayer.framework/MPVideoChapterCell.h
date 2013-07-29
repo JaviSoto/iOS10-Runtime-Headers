@@ -15,8 +15,6 @@
 @property(retain) MPTimeMarker * timeMarker;
 @property(retain) MPImageCache * artworkImageCache;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)artworkImageCache;
 - (id)timeMarker;
@@ -36,7 +34,5 @@
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
 
 @end

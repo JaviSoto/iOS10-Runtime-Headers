@@ -13,7 +13,6 @@
 }
 
 
-- (void)setMessage:(id)arg1;
 - (void)dealloc;
 - (double)rotationDelay;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
@@ -23,6 +22,7 @@
 - (void)setDonePrinting:(BOOL)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (BOOL)visible;
+- (void)setMessage:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

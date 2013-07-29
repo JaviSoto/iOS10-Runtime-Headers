@@ -8,14 +8,10 @@
     UIImageView *_pickedImage;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setPicked:(BOOL)arg1;
 - (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

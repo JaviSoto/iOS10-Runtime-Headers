@@ -2,10 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSData, NSString, UIImage;
 
 @interface UIKBRenderer : NSObject  {
     struct CGContext { } *_cachingContext;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _cachingContextCompletion;
+
     BOOL _opaque;
     struct CGContext { } *_ctx;
     float _scale;
@@ -53,6 +62,7 @@
 - (void)renderKeyStringContents:(id)arg1 withTraits:(id)arg2;
 - (void)renderKeyImageContents:(id)arg1 withTraits:(id)arg2;
 - (void)renderBackgroundTraits:(id)arg1 allowCaching:(BOOL)arg2;
+- (void)_completeCacheImageWithTraitsIfNecessary:(id)arg1;
 - (struct CGContext { }*)_contextForCacheImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_drawLinearGradient:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)addPathForRenderGeometry:(id)arg1;

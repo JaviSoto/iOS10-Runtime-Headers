@@ -74,6 +74,7 @@
 + (id)hostNameForEnvironment:(int)arg1;
 + (id)sharedPreferences;
 
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (BOOL)isAccountModificationRestricted;
 - (BOOL)shouldUseTestIcons;
 - (void)setNotificationCenterEnabled:(BOOL)arg1;
@@ -194,7 +195,6 @@
 - (unsigned long)logFilter;
 - (id)initWithoutUIKitNotifications;
 - (double)minimumCacheTTL;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (int)environment;
 - (id)init;
 - (void)synchronize;

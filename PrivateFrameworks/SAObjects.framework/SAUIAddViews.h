@@ -18,6 +18,7 @@
 
 - (id)views;
 - (void)setViews:(id)arg1;
+- (BOOL)scrollToTop;
 - (void)setTemporary:(BOOL)arg1;
 - (BOOL)temporary;
 - (void)setScrollToTop:(BOOL)arg1;
@@ -27,7 +28,6 @@
 - (id)dialogPhase;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
-- (BOOL)scrollToTop;
 - (id)groupIdentifier;
 
 @end

@@ -5,11 +5,8 @@
 @interface UIClassicWindow : UIWindow  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_updateTransformLayerForClassicPresentation;
 - (BOOL)_shouldZoom;
-- (BOOL)_accessibilityWindowVisible;
 
 @end

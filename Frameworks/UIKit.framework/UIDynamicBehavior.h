@@ -23,6 +23,7 @@
 
 @property(readonly) NSArray * childBehaviors;
 @property(copy) id action;
+@property(readonly) UIDynamicAnimator * dynamicAnimator;
 @property(setter=_isPrimitiveBehavior:) BOOL _isPrimitiveBehavior;
 
 + (void)initialize;
@@ -34,12 +35,14 @@
 - (id)description;
 - (void)removeChildBehavior:(id)arg1;
 - (void)addChildBehavior:(id)arg1;
+- (id)dynamicAnimator;
 - (void)_setItems:(id)arg1;
 - (BOOL)_isPrimitiveBehavior;
 - (void)_isPrimitiveBehavior:(BOOL)arg1;
 - (BOOL)allowsAnimatorToStop;
 - (void)_step;
 - (id)childBehaviors;
+- (void)willMoveToAnimator:(id)arg1;
 - (id)_itemsDescription;
 - (void)_reevaluate:(unsigned int)arg1;
 - (void)_changedParameterForBody:(id)arg1;

@@ -49,8 +49,8 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)scrollView;
 - (id)_tableViewController;
+- (id)scrollView;
 - (void)loadView;
 - (id)item;
 - (void)setOperationQueue:(id)arg1;

@@ -46,7 +46,6 @@
 - (void)setArtworkList:(id)arg1;
 - (void)setFlapBottomColor:(id)arg1;
 - (void)setFlapTopColor:(id)arg1;
-- (void)setFontColor:(id)arg1;
 - (void)setFinalValue:(long long)arg1;
 - (void)setInitialValue:(long long)arg1;
 - (void)setFlapped:(BOOL)arg1;
@@ -56,12 +55,13 @@
 - (long long)initialValue;
 - (id)flapBottomColor;
 - (id)flapTopColor;
-- (id)fontColor;
 - (BOOL)isFlapped;
 - (id)artworkList;
 - (void)setNumberFormat:(id)arg1;
 - (id)numberFormat;
 - (void)setLoaded:(BOOL)arg1;
+- (void)setFontColor:(id)arg1;
+- (id)fontColor;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;

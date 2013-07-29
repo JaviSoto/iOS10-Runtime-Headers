@@ -98,7 +98,7 @@
 - (void)unsubscribeFromAlbum:(id)arg1 completionBlock:(id)arg2;
 - (void)subscribeToAlbum:(id)arg1 completionBlock:(id)arg2;
 - (void)getSharingInfoForAlbum:(id)arg1 albumURLString:(id)arg2 completionBlock:(id)arg3;
-- (void)albumSummaryAlbum:(id)arg1 albumURLString:(id)arg2 resetSync:(BOOL)arg3 resetSyncedBlock:(id)arg4 assetCollectionChangeBlock:(id)arg5 albumSharingInfoChangeBlock:(id)arg6 completionBlock:(id)arg7;
+- (void)albumSummaryAlbum:(id)arg1 albumURLString:(id)arg2 resetSync:(BOOL)arg3 completionBlock:(id)arg4;
 - (void)getChangesRootCtag:(id)arg1 completionBlock:(id)arg2;
 - (id)stopHandlerBlock;
 - (void)getAlbumURLForAlbumWithGUID:(id)arg1 completionBlock:(id)arg2;
@@ -107,10 +107,10 @@
 - (void)setServerSideConfigVersion:(id)arg1;
 - (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
-- (BOOL)isShuttingDown;
-- (id)personID;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
+- (BOOL)isShuttingDown;
+- (id)personID;
 - (void)setBaseURL:(id)arg1;
 - (id)baseURL;
 - (void)dealloc;

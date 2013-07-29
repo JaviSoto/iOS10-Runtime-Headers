@@ -27,6 +27,7 @@
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startSpeech;
 
+- (void)setDeviceIdentifier:(id)arg1;
 - (BOOL)clearContext;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (id)noiseReductionLevel;
@@ -46,7 +47,6 @@
 - (BOOL)disableAutoEndpointing;
 - (void)setDeviceModel:(id)arg1;
 - (id)deviceModel;
-- (void)setDeviceIdentifier:(id)arg1;
 - (void)setCodec:(int)arg1;
 - (int)codec;
 - (void)setClearContext:(BOOL)arg1;

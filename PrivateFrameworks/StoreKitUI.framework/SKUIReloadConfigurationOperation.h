@@ -20,7 +20,6 @@
 @property(copy) id outputBlock;
 
 
-- (id)_configurationDictionaryWithBagDictionary:(id)arg1;
 - (void)setOutputBlock:(id)arg1;
 - (id)outputBlock;
 - (id)init;

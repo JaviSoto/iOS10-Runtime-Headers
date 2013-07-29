@@ -26,10 +26,10 @@
 - (void)setNumberOfChecks:(int)arg1;
 - (int)numberOfChecks;
 - (id)initWithBytes:(char *)arg1 length:(unsigned short)arg2 eventNum:(unsigned short)arg3;
-- (void)setData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)setState:(int)arg1;
 - (int)state;
+- (void)setData:(id)arg1;
 
 @end

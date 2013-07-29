@@ -43,7 +43,7 @@
 - (id)placeholder;
 - (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
 - (void)setPlaceholder:(id)arg1;
-- (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setFont:(id)arg1;
 
 @end

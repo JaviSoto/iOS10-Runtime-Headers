@@ -33,7 +33,6 @@
 - (id)outgoing;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setMessage:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (id)subject;
@@ -42,6 +41,7 @@
 - (id)message;
 - (id)attachment;
 - (void)setAttachment:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (id)groupIdentifier;
 - (id)sender;
 

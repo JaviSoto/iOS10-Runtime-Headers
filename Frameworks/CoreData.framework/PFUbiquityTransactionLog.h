@@ -56,6 +56,7 @@
 + (id)generateTransactionLogFilename;
 + (void)truncateLogFilesBeforeBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (id)transactionLogFilenameUUID;
++ (void)truncateLogFilesForPeerID:(id)arg1 storeName:(id)arg2 modelVersionHash:(id)arg3 beforeKnowledgeVector:(id)arg4 withLocalPeerID:(id)arg5 andUbiquityRootLocation:(id)arg6;
 + (void)updateModificationTimesForLocation:(id)arg1;
 + (id)createDataFromExtendedAttrsForLog:(id)arg1 error:(id*)arg2;
 + (id)createTransactionLogFilenameForLogType:(int)arg1;
@@ -75,9 +76,9 @@
 - (id)initWithTransactionLogURL:(id)arg1 ubiquityRootLocation:(id)arg2 andLocalPeerID:(id)arg3;
 - (BOOL)deleteLogFileWithError:(id*)arg1;
 - (void)cleanupExternalDataReferences;
+- (BOOL)writeContentsOfZipArchive:(id)arg1 intoExtendedAttributesForFile:(id)arg2 error:(id*)arg3;
 - (void)populateContents;
 - (BOOL)useTemporaryLogLocation;
-- (BOOL)writeContentsOfZipArchive:(id)arg1 intoExtendedAttributesForFile:(id)arg2 error:(id*)arg3;
 - (BOOL)loadContents:(id*)arg1;
 - (id)loadPlistAtLocation:(id)arg1 withError:(id*)arg2;
 - (void)releaseDeletedObjects;

@@ -155,9 +155,9 @@
 - (BOOL)deleteDatabaseProperty:(id)arg1;
 - (void)removeOrphanedTracks;
 - (void)removeTombstonesForDeletedItems;
-- (BOOL)insertArtworkWithImageData:(id)arg1 mediaTypeForAlbumFiltering:(unsigned long)arg2 forCacheID:(id)arg3 forFormatID:(unsigned int)arg4;
+- (BOOL)insertArtworkWithImageData:(id)arg1 forCacheID:(id)arg2 forFormatID:(unsigned int)arg3;
 - (BOOL)deleteAllArtwork;
-- (BOOL)insertArtworkWithImageData:(id)arg1 mediaTypeForAlbumFiltering:(unsigned long)arg2 forCacheID:(id)arg3;
+- (BOOL)insertArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3;
 - (BOOL)hasArtworkForCacheID:(id)arg1;
 - (void)loadArtworkForCacheID:(id)arg1 formatID:(unsigned int)arg2 completionHandler:(id)arg3;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1;
@@ -184,7 +184,6 @@
 - (BOOL)isHomeSharingLibrary;
 - (void)connectionPool:(id)arg1 createdNewConnection:(id)arg2;
 - (void)connectionWillCloseDatabase:(id)arg1;
-- (BOOL)connectionCloseDeletedDatabase:(id)arg1;
 - (void)connectionDidOpenDatabase:(id)arg1;
 - (void)connectionWillOpenDatabase:(id)arg1;
 - (void)_enqueueNotifyPostName:(id)arg1;

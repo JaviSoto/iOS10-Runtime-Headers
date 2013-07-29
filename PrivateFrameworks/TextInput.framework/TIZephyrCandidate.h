@@ -5,21 +5,25 @@
 @interface TIZephyrCandidate : TIKeyboardCandidateSingle  {
     BOOL extensionCandidate;
     BOOL _isFromPhraseDictionary;
+    BOOL _isFromTextChecker;
     unsigned int _wordOriginFeedbackID;
     unsigned int _usageTrackingMask;
 }
 
 @property(getter=isExtensionCandidate) BOOL extensionCandidate;
 @property BOOL isFromPhraseDictionary;
+@property BOOL isFromTextChecker;
 
 + (int)type;
 + (BOOL)supportsSecureCoding;
 
+- (void)setIsFromTextChecker:(BOOL)arg1;
 - (void)setIsFromPhraseDictionary:(BOOL)arg1;
+- (void)setExtensionCandidate:(BOOL)arg1;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3;
+- (BOOL)isFromTextChecker;
 - (BOOL)isFromPhraseDictionary;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4;
-- (void)setExtensionCandidate:(BOOL)arg1;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isAutocorrection;
 - (unsigned int)wordOriginFeedbackID;

@@ -21,8 +21,8 @@
 @property(copy) NSString * title;
 
 
-- (int)numberOfUserRatings;
 - (id)screenshotImage;
+- (int)numberOfUserRatings;
 - (void)layoutForItemOfferChange;
 - (void)setScreenshotImage:(id)arg1;
 - (void)resetLayout;

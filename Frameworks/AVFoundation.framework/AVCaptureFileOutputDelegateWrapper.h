@@ -24,7 +24,6 @@
 
 + (id)wrapperWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
 
-- (id)connections;
 - (void)setDidStopRecordingError:(long)arg1;
 - (long)didStopRecordingError;
 - (void)setReceivedDidStopRecording:(BOOL)arg1;
@@ -33,6 +32,7 @@
 - (BOOL)receivedDidStartRecording;
 - (id)outputFileURL;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
+- (id)connections;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)dealloc;

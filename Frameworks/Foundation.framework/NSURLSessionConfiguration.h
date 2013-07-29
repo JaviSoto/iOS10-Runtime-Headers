@@ -7,6 +7,7 @@
 @interface NSURLSessionConfiguration : NSObject <NSCopying> {
     BOOL _allowsCellularAccess;
     BOOL _discretionary;
+    BOOL _sessionSendsLaunchEvents;
     BOOL _HTTPShouldUsePipelining;
     BOOL _HTTPShouldSetCookies;
     NSString *_identifier;
@@ -33,6 +34,7 @@
 @property unsigned int networkServiceType;
 @property BOOL allowsCellularAccess;
 @property(getter=isDiscretionary) BOOL discretionary;
+@property BOOL sessionSendsLaunchEvents;
 @property(copy) NSDictionary * connectionProxyDictionary;
 @property int TLSMinimumSupportedProtocol;
 @property int TLSMaximumSupportedProtocol;
@@ -48,7 +50,6 @@
 
 + (void)initialize;
 
-- (id)URLCredentialStorage;
 - (id)URLCache;
 - (void)setURLCredentialStorage:(id)arg1;
 - (void)setURLCache:(id)arg1;
@@ -68,6 +69,8 @@
 - (int)TLSMinimumSupportedProtocol;
 - (void)setConnectionProxyDictionary:(id)arg1;
 - (id)connectionProxyDictionary;
+- (void)setSessionSendsLaunchEvents:(BOOL)arg1;
+- (BOOL)sessionSendsLaunchEvents;
 - (void)setDiscretionary:(BOOL)arg1;
 - (BOOL)isDiscretionary;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
@@ -79,6 +82,7 @@
 - (double)timeoutIntervalForRequest;
 - (void)setRequestCachePolicy:(unsigned int)arg1;
 - (unsigned int)requestCachePolicy;
+- (id)URLCredentialStorage;
 - (BOOL)HTTPShouldSetCookies;
 - (id)HTTPCookieStorage;
 - (id)identifier;

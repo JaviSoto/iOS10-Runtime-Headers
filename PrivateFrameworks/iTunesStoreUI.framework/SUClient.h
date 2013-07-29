@@ -61,8 +61,8 @@
 - (id)initWithClientInterface:(id)arg1;
 - (id)clientInterface;
 - (id)scriptExecutionContext;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (id)clientIdentifier;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (id)imageCache;
 - (id)init;

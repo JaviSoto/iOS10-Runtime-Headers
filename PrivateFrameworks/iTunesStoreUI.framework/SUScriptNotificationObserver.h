@@ -9,9 +9,8 @@
     struct __CFSet { } *_receivers;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (void)_accessibilityPerformEscape;
 - (void)_accessibilityPerformScrollRight;
 - (void)_accessibilityPerformScrollLeft;
 - (void)_accessibilityPerformScrollDown;
@@ -26,9 +25,7 @@
 - (void)removeEventReceiver:(id)arg1;
 - (void)addEventReceiver:(id)arg1;
 - (void)_networkTypeChangedNotification:(id)arg1;
-- (void)_accessibilityPerformEscape;
 - (id)init;
 - (void)dealloc;
-- (void)_axActionOccurredForWeb:(id)arg1;
 
 @end

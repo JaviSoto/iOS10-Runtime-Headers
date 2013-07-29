@@ -6,6 +6,7 @@
 }
 
 
+- (float)defaultPathWeight;
 - (float)dualStringKeyMiddleMargin;
 - (struct CGPoint { float x1; float x2; })dualStringKeyOffset;
 - (float)defaultVariantSizeThreshold;
@@ -14,12 +15,12 @@
 - (float)emailDotKeyFontSize;
 - (float)smallKanaKeyFontSize;
 - (float)fallbackFontSize;
-- (float)defaultPathWeight;
 - (float)shiftKeyFontSize;
 - (float)bottomRowDefaultFontSize;
 - (float)dualStringKeyFontSizeAdjustment;
 - (float)fontSizeAdjustmentForNonAlphanumericKeycaps;
 - (float)stringKeyFontSize;
+- (float)returnKeySymbolFrameInset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissKeySymbolFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shiftKeySymbolFrame;
 - (float)symbolFrameInset;
@@ -31,12 +32,18 @@
 - (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
+- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;
 - (BOOL)shouldClearBaseDisplayStringForVariants;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
+- (float)skinnyKeyThreshold;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
+- (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)dismissKeyFontSize;
 - (float)dictationKeyFontSize;

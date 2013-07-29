@@ -21,8 +21,8 @@
 - (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
 - (struct OpaqueCMClock { }*)clock;
 - (void)_setClock:(struct OpaqueCMClock { }*)arg1;
-- (struct opaqueCMFormatDescription { }*)formatDescription;
 - (id)mediaType;
+- (struct opaqueCMFormatDescription { }*)formatDescription;
 - (id)input;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;

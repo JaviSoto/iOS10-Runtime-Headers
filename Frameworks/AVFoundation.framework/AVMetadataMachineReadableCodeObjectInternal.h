@@ -22,9 +22,9 @@
 - (void)setBasicDescriptor:(id)arg1;
 - (id)basicDescriptor;
 - (void)setCorners:(id)arg1;
-- (id)corners;
 - (id)stringValue;
 - (void)dealloc;
 - (void)setStringValue:(id)arg1;
+- (id)corners;
 
 @end

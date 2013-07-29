@@ -71,6 +71,7 @@
 
 + (id)remoteUIController;
 
+- (void)setLoader:(id)arg1;
 - (void)setLayoutStyle:(int)arg1;
 - (BOOL)loading;
 - (void)setLoading:(BOOL)arg1;
@@ -98,7 +99,6 @@
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
 - (void)setPreviousUseCustomBackButtonActionValue:(BOOL)arg1;
-- (void)setLoader:(id)arg1;
 - (void)setObjectModels:(id)arg1;
 - (BOOL)accountChanged;
 - (void)setShouldApplyGameCenterTheme:(BOOL)arg1;
@@ -123,9 +123,9 @@
 - (void)setAccountChanged:(BOOL)arg1;
 - (void)didLoadURL:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)loader;
+- (void)finishLoadingWithError:(id)arg1;
 - (void)loadURL:(id)arg1 postData:(id)arg2;
 - (id)postbackDataForDictionary:(id)arg1;
-- (void)fireCompletionHandler;
 - (id)loadHandler;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (id)postBodyForInitialLoad;
@@ -140,9 +140,10 @@
 - (BOOL)previousUseCustomBackButtonActionValue;
 - (id)initWithObjectModel:(id)arg1;
 - (void)pushObjectModel:(id)arg1 animated:(BOOL)arg2;
+- (int)preferredLayoutStyle;
+- (void)fireCompletionHandler;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
-- (void)finishLoadingWithError:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;

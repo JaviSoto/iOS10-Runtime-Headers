@@ -6,8 +6,6 @@
 }
 
 
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

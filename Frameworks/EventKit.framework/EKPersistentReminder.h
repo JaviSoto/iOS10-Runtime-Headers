@@ -18,6 +18,7 @@
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 
+- (BOOL)isCompleted;
 - (BOOL)validate:(id*)arg1;
 - (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
@@ -35,7 +36,6 @@
 - (unsigned int)displayOrder;
 - (void)setCompleted:(BOOL)arg1;
 - (int)entityType;
-- (BOOL)isCompleted;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

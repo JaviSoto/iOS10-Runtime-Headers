@@ -26,13 +26,13 @@
 - (void)_setImage:(id)arg1;
 - (id)initWithPageSection:(id)arg1;
 - (id)newPageSection;
-- (void)setCanvas:(id)arg1;
 - (void)_reloadUserInterface;
 - (id)_segmentedControl;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)canvas;
 - (void)setImageURL:(id)arg1;
+- (id)canvas;
+- (void)setCanvas:(id)arg1;
 - (id)imageURL;
 - (void)setTitle:(id)arg1;
 - (id)title;

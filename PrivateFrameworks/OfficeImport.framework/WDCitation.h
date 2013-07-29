@@ -42,11 +42,11 @@
 - (id)urls;
 - (void)setPages:(id)arg1;
 - (id)pages;
-- (id)volume;
 - (id)sourceType;
 - (id)number;
 - (void)setNumber:(id)arg1;
 - (void)setVolume:(id)arg1;
+- (id)volume;
 - (id)document;
 - (id)year;
 - (void)setYear:(id)arg1;

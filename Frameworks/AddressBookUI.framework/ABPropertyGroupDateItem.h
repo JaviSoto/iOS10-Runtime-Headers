@@ -13,5 +13,6 @@
 - (id)displayStringForValue:(id)arg1;
 - (id)defaultActionURL;
 - (id)normalizedValue;
+- (id)displayLabel;
 
 @end

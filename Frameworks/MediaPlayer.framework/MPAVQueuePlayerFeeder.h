@@ -42,6 +42,7 @@
 - (void)_removeCurrentItem;
 - (void)_pauseOrResumeDownloads:(id)arg1 currentDownloadID:(long long)arg2;
 - (void)_effectiveNetworkTypeDidChangeNotification:(id)arg1;
+- (void)advanceToNextItem;
 - (id)acquireReusableItemsUsingBlock:(id)arg1;
 - (void)setMinQueueDepth:(unsigned int)arg1;
 - (unsigned int)minQueueDepth;
@@ -54,7 +55,6 @@
 - (void)setMaxQueueDepth:(unsigned int)arg1;
 - (void)setManagesSystemDownloads:(BOOL)arg1;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;
-- (void)advanceToNextItem;
 - (id)items;
 - (void)invalidate;
 - (void)dealloc;

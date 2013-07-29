@@ -11,9 +11,11 @@
 
 - (void)audioRoutingPicker:(id)arg1 didSelectRouteAtIndex:(int)arg2;
 - (id)initWithAudioCategory:(id)arg1;
+- (void)flip;
 - (void).cxx_destruct;
 - (void)twoSidedAlertControllerDidDismiss:(id)arg1;
 - (id)createBackAlert;
 - (id)createFrontAlert;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

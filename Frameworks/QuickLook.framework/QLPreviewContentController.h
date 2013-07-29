@@ -25,6 +25,7 @@
     BOOL _swiping;
     NSMutableSet *_loadingItems;
     NSMutableOrderedSet *_scheduledLoads;
+    float _navigationBarVerticalOffset;
     BOOL _overlayHidden;
     BOOL _blockRemoteImages;
     struct { 
@@ -93,6 +94,7 @@
 - (void)scrubToValue:(double)arg1;
 - (void)beginScrubbing;
 - (id)printPageHelper;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (int)previewMode;
 - (void)setPreviewMode:(int)arg1;
 - (void)viewDidUpdateForPreviewItem:(id)arg1;
@@ -131,10 +133,10 @@
 - (void)setBlockRemoteImages:(BOOL)arg1;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (void)copy:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (id)snapshotView;
 - (BOOL)canBecomeFirstResponder;

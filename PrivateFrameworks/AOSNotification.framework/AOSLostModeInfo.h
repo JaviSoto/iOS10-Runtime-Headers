@@ -18,11 +18,11 @@
 
 - (BOOL)lostModeEnabled;
 - (void)setLostModeEnabled:(BOOL)arg1;
-- (void)setMessage:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (id)message;
 - (void)dealloc;
 - (id)description;
+- (void)setMessage:(id)arg1;
 - (id)phoneNumber;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

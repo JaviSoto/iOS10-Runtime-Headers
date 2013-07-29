@@ -22,6 +22,7 @@
     id _typingIndicatorTimer;
     IMMessage *_invitationForPendingParticipants;
     NSMutableArray *_messagesPendingJoin;
+    NSMutableSet *_guids;
     NSMutableDictionary *_chatItemsChanged;
     NSMutableDictionary *_messageMap;
     NSMutableDictionary *_chatProperties;
@@ -84,6 +85,7 @@
 @property(readonly) BOOL _isRefreshing;
 @property void* contextInfo;
 @property(readonly) int rowIDOfMostRecentFailedMessage;
+@property(setter=_setGUIDs:,retain) NSMutableSet * _guids;
 
 
 - (id)dateCreated;
@@ -103,6 +105,8 @@
 - (id)_privateInitWithAccount:(id)arg1 style:(unsigned char)arg2 roomName:(id)arg3 chatItems:(id)arg4 participants:(id)arg5;
 - (id)_copyChat;
 - (id)dateModified;
+- (void)_setGUIDs:(id)arg1;
+- (id)_guids;
 - (id)_initWithDictionaryRepresentation:(id)arg1 initialItems:(id)arg2 participantsHint:(id)arg3 accountHint:(id)arg4;
 - (void)addPendingParticipants:(id)arg1;
 - (void)removeParticipants:(id)arg1 reason:(id)arg2;
@@ -251,6 +255,7 @@
 - (unsigned int)unreadMessageCount;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2;
 - (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 displayName:(id)arg5 chatItems:(id)arg6 participants:(id)arg7;
+- (void)_initialize;
 - (void)_updateUnreadCount;
 - (void)_buildInitialChatItems:(id)arg1;
 - (id)chatIdentifier;
@@ -268,7 +273,6 @@
 - (id)persistentID;
 - (id)participants;
 - (id)recipient;
-- (void)_initialize;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (id)account;

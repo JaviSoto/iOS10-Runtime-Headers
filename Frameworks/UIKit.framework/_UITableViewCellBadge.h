@@ -24,8 +24,8 @@
 - (void)_sizeToFit;
 - (void)setSelected:(BOOL)arg1;
 - (BOOL)isSelected;
+- (void)setText:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setText:(id)arg1;
 
 @end

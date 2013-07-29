@@ -38,8 +38,8 @@
 - (id)linkQualityString;
 - (BOOL)isInternetReachable;
 - (BOOL)isInterfaceUsable;
-- (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (void)removeDelegate:(id)arg1;
 - (void)dealloc;
 
 @end

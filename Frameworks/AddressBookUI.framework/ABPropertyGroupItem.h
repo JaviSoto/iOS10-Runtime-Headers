@@ -45,6 +45,7 @@
 - (void)saveChanges;
 - (BOOL)allowsPhone;
 - (id)placeholderString;
+- (BOOL)isValidIdentifier:(int)arg1;
 - (void)setModified:(BOOL)arg1;
 - (id)updateWithLabel:(id)arg1 value:(id)arg2;
 - (void)setLabeledValue:(id)arg1;

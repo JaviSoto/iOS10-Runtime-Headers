@@ -35,9 +35,9 @@
 - (long long)encodedLength;
 - (void)copyToFile:(id)arg1;
 - (id)inputStream;
+- (BOOL)isEncrypted;
 - (long long)dataLength;
 - (BOOL)isReadable;
-- (BOOL)isEncrypted;
 - (id)data;
 - (void)dealloc;
 

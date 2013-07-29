@@ -80,9 +80,9 @@
 - (void)setMaxPINLength:(unsigned int)arg1;
 - (void)setMinPINLength:(unsigned int)arg1;
 - (void)_cancelButtonTapped;
+- (void)_doneButtonTapped;
 - (id)passcodeView;
 - (id)statusLabel;
-- (void)_doneButtonTapped;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

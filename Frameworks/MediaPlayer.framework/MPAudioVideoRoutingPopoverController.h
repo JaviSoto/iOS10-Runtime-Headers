@@ -12,7 +12,7 @@
 - (id)audioDeviceController;
 - (id)initWithType:(unsigned int)arg1;
 - (void)dealloc;
-- (id)_tableViewController;
 - (id)initWithContentViewController:(id)arg1;
+- (id)_tableViewController;
 
 @end

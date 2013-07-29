@@ -20,8 +20,6 @@
 @property struct CGSize { float x1; float x2; } shadowOffset;
 @property UIFont * font;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)labelLeftEdgeInset;
@@ -42,13 +40,11 @@
 - (id)highlightedTextColor;
 - (void)setPlaceholder:(id)arg1;
 - (id)textColor;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)sizeToFit;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

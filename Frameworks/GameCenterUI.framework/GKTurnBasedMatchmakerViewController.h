@@ -32,17 +32,17 @@
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)_setupChildViewController;
+- (void)finishWithError:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
 - (id)matchRequest;
-- (void)finishWithError:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
 - (void)setRemoteViewController:(id)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 
 @end

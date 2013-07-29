@@ -35,5 +35,6 @@
 - (id)creationDate;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
+- (id)description;
 
 @end

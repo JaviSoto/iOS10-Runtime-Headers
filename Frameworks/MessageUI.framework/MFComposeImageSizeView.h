@@ -8,8 +8,6 @@
     UISegmentedControl *_segmentedControl;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (unsigned long)_segmentIndexForScale:(unsigned int)arg1;
 - (void)segmentedControlChanged;
@@ -18,6 +16,5 @@
 - (void)setScale:(unsigned int)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (BOOL)accessibilityElementsHidden;
 
 @end

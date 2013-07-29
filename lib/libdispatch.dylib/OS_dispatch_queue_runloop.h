@@ -7,5 +7,6 @@
 
 + (void)load;
 
+- (void)_xref_dispose;
 
 @end

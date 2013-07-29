@@ -7,12 +7,12 @@
 }
 
 
+- (void)cancelPreheatRequest;
 - (int)decrementUseCount;
 - (int)incrementUseCount;
-- (BOOL)addImageHandler:(id)arg1;
-- (id)cachedImageIfAvailable;
-- (id)cachedImage;
-- (void)cancelPreheatRequest;
 - (void)startPreheatRequest;
+- (BOOL)addImageHandler:(id)arg1;
+- (id)cachedImage;
+- (id)cachedImageIfAvailable;
 
 @end

@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (BOOL)highlighted;
 - (void)setHighlighted:(BOOL)arg1;
-- (id)tintColor;
 - (id)titleLabel;
+- (id)tintColor;
 
 @end

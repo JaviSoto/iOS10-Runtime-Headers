@@ -26,17 +26,15 @@
 + (BOOL)launchFieldTestIfNeeded:(id)arg1;
 + (BOOL)shouldStringAutoDial:(id)arg1 givenLastChar:(BOOL)arg2;
 + (void)_delayedDeactivate;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_handleKeyPressAndHold:(id)arg1;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
+- (id)_buttonForKeyAtIndex:(unsigned int)arg1;
 - (int)indexForHighlightedKey;
 - (void)highlightKeyAtIndex:(int)arg1;
 - (void)setSupportsHardPause:(BOOL)arg1;
 - (BOOL)supportsHardPause;
 - (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)_highlightedImage;
 - (id)_pressedImage;
 - (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGPoint { float x1; float x2; })_keypadOrigin;
@@ -54,7 +52,7 @@
 - (void)_stopSoundForKey:(unsigned int)arg1;
 - (void)_playSoundForKey:(unsigned int)arg1;
 - (void)setButton:(id)arg1 forKeyAtIndex:(unsigned int)arg2;
-- (id)_buttonForKeyAtIndex:(unsigned int)arg1;
+- (id)_highlightedImage;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -67,10 +65,5 @@
 - (BOOL)cancelTouchTracking;
 - (id)scriptingInfoWithChildren;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityContainerElements;
-- (id)_accessibilityScannerGroupElements;
-- (BOOL)_accessibilityIsScannerGroup;
-- (int)_accessibilityScannerGroupTraits;
 
 @end

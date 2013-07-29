@@ -25,6 +25,7 @@
 + (void)initialize;
 
 - (void)setLeftButton:(id)arg1;
+- (id)leftButton;
 - (int)barStyleDefault;
 - (int)barStyleBlack;
 - (id)translucent;
@@ -48,7 +49,6 @@
 - (id)scriptAttributeKeys;
 - (void)setRightButton:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftButton:(id)arg1 animated:(BOOL)arg2;
-- (id)leftButton;
 - (void)setRightButton:(id)arg1;
 - (id)rightButton;
 - (id)attributeKeys;

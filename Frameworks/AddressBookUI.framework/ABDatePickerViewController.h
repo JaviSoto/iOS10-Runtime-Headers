@@ -22,10 +22,10 @@
 - (void*)context;
 - (void)setContext:(void*)arg1;
 - (void)dealloc;
-- (id)dismissDelegate;
 - (void)setDismissDelegate:(id)arg1;
+- (id)dismissDelegate;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

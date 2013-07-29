@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableData, UINavigationBar, UIProgressView, UILabel, PKCaptureSession, <PKCodeAcquisitionDelegate>, NSURLConnection, PKBoxLayer;
+@class NSMutableData, UINavigationBar, UIProgressView, UILabel, PKCaptureSession, <PKCodeAcquisitionDelegate>, NSURLConnection, PKBoxLayer, NSSet;
 
 @interface PKCodeAcquisitionViewController : UIViewController <PKCaptureDelegate, NSURLConnectionDataDelegate, UIGestureRecognizerDelegate> {
     UINavigationBar *_navBar;
@@ -15,6 +15,7 @@
     UIProgressView *_downloadProgressView;
     UILabel *_errorLabel;
     UILabel *_helpLabel;
+    NSSet *_supportedBarcodeTypes;
     <PKCodeAcquisitionDelegate> *_delegate;
 }
 
@@ -24,7 +25,7 @@
 - (void)_handleDownloadFailureWithReason:(id)arg1 errorToDisplay:(id)arg2;
 - (void)_handleDownloadedPass:(id)arg1;
 - (void)_handleDownloadFailureWithReason:(id)arg1;
-- (void)_handleFoundCode:(id)arg1 withCorners:(id)arg2;
+- (void)_handleFoundCode:(id)arg1;
 - (void)_restartCaptureSession;
 - (void)_setCaptureUIState:(int)arg1 animated:(BOOL)arg2;
 - (void)_handleSingleTap:(id)arg1;
@@ -38,9 +39,9 @@
 - (id)delegate;
 - (void)cancel;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (unsigned int)supportedInterfaceOrientations;

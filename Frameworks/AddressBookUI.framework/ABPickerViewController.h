@@ -39,8 +39,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)dismissDelegate;
 - (void)setDismissDelegate:(id)arg1;
+- (id)dismissDelegate;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidLoad;

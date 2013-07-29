@@ -6,6 +6,6 @@
 }
 
 
-- (void)_setIsCenterCell:(BOOL)arg1;
+- (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;
 
 @end

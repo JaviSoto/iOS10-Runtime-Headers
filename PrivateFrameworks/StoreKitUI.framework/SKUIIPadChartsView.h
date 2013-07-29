@@ -11,12 +11,19 @@
     UIView *_borderView1;
     int _columnChangeAnimationCount;
     NSArray *_columnViews;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentInset;
     UIView *_headerBackgroundView;
     NSArray *_headerViews;
     int _numberOfVisibleColumns;
 }
 
 @property(copy) NSArray * chartTableViewControllers;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property int numberOfVisibleColumns;
 
 
@@ -31,6 +38,8 @@
 - (void)_reloadColumnViews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void).cxx_destruct;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)layoutSubviews;
 
 @end

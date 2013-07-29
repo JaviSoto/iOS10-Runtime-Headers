@@ -14,8 +14,8 @@
 + (id)teamRankWithDictionary:(id)arg1 context:(id)arg2;
 + (id)teamRank;
 
-- (void)setPrimary:(id)arg1;
 - (id)primary;
+- (void)setPrimary:(id)arg1;
 - (id)encodedClassName;
 - (id)source;
 - (void)setSource:(id)arg1;

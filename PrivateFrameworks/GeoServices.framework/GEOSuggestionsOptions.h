@@ -25,6 +25,8 @@
 @property(retain) NSData * suggestionEntryMetadata;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasEntriesType:(BOOL)arg1;
 - (void)setHasListType:(BOOL)arg1;
 - (void)setEntriesType:(int)arg1;
@@ -40,8 +42,6 @@
 - (BOOL)hasSuggestionMetadata;
 - (void)setSuggestionMetadata:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

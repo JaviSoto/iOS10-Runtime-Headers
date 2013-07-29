@@ -37,6 +37,7 @@
 - (id)dataSourceMetricsInternal;
 - (void)setDefaultSearchKey:(id)arg1;
 - (id)defaultSearchKey;
+- (void)notifyBatchUpdate:(id)arg1 complete:(id)arg2;
 - (void)notifyBatchUpdate:(id)arg1;
 - (void)notifyDidReloadData;
 - (void)notifySectionsMovedWithItems;
@@ -44,6 +45,7 @@
 - (void)notifyItemMovedFromIndexPath:(id)arg1 toIndexPaths:(id)arg2;
 - (void)notifyItemsRefreshedAtIndexPaths:(id)arg1;
 - (void)notifyItemsInsertedAtIndexPaths:(id)arg1;
+- (int)totalItemCount;
 - (id)createMetricsTreeWithGridLayout:(id)arg1;
 - (id)metricsForSection:(int)arg1;
 - (void)setDefaultSectionMetrics:(id)arg1;

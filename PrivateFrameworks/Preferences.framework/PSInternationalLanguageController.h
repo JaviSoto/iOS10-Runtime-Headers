@@ -10,8 +10,6 @@
 
 @property(retain) NSMutableDictionary * cellCache;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)generateLanguageCellCache;
 - (id)cellCache;
@@ -27,6 +25,5 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)_accessibilityLoadAccessibilityInformation;
 
 @end

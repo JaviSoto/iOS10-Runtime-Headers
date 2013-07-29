@@ -48,10 +48,10 @@
 - (id)timeoutDate;
 - (void)setCompletionDate:(id)arg1;
 - (id)completionDate;
-- (void)setData:(id)arg1;
 - (id)data;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (void)setData:(id)arg1;
 
 @end

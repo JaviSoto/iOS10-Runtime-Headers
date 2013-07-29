@@ -40,7 +40,6 @@
 - (void)setEditActionsConstraints:(id)arg1;
 - (id)editActionsConstraints;
 - (BOOL)doesAbutLeftEdge;
-- (id)leftGradientMask;
 - (id)editActionsView;
 - (void)setEditActions:(id)arg1;
 - (void)shutActionPaneAnimated:(BOOL)arg1 completion:(id)arg2;
@@ -53,17 +52,18 @@
 - (float)editActionsVisibleWidth;
 - (float)contentViewOriginXWhileEditing;
 - (void)setEditActionsVisibleWidth:(float)arg1;
-- (void)updateSharedAttributes:(id)arg1;
 - (void)setDoesAbutLeftEdge:(BOOL)arg1;
 - (id)bottomHairline;
 - (id)topHairline;
+- (void)applyGradientMaskIfNeeded;
 - (void)prepareHairlineConstraintsIfNeeded;
+- (id)leftGradientMask;
+- (void)setLeftGradientMask:(id)arg1;
 - (void)setShouldDisplaySwipeToEditAccessories:(BOOL)arg1;
 - (void)prepareEditActionsConstraintsIfNeeded;
 - (void)setBottomHairline:(id)arg1;
 - (void)setTopHairline:(id)arg1;
 - (void)setContentLeftConstraint:(id)arg1;
-- (void)setLeftGradientMask:(id)arg1;
 - (id)editActions;
 - (void)didUpdateModel;
 - (void)setRepresentedItem:(id)arg1;
@@ -76,5 +76,6 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)collectionView;
 - (void)prepareForReuse;
+- (void)layoutSubviews;
 
 @end

@@ -24,8 +24,9 @@
 - (id)fillColor;
 - (float)cornerRadius;
 - (float)lineWidth;
-- (void)setLineWith:(float)arg1;
 - (void)updateView;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3 updateView:(BOOL)arg4;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3;
 - (float)_pixelAlignment;
 - (float)_pathInset;
 - (id)_fillColor:(BOOL)arg1;

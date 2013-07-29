@@ -15,6 +15,9 @@
 - (id)title;
 - (BOOL)_hasCachedPageExpired;
 - (BOOL)_isInPageCache;
+- (void)_setSharedLinkUniqueIdentifier:(id)arg1;
+- (void)_setBookmarkID:(unsigned int)arg1;
+- (unsigned int)_bookmarkID;
 - (unsigned long)_getWeeklyVisitCounts:(const int**)arg1;
 - (unsigned long)_getDailyVisitCounts:(const int**)arg1;
 - (id)_redirectURLs;
@@ -30,6 +33,7 @@
 - (id)RSSFeedReferrer;
 - (int)visitCount;
 - (BOOL)isTargetItem;
+- (id)_sharedLinkUniqueIdentifier;
 - (id)_viewportArguments;
 - (void)setVisitCount:(int)arg1;
 - (id)initWithURL:(id)arg1 target:(id)arg2 parent:(id)arg3 title:(id)arg4;
@@ -67,7 +71,5 @@
 - (id)target;
 - (id)dictionaryRepresentation;
 - (id)children;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

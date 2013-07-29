@@ -29,6 +29,7 @@
 - (id)context;
 - (void)setContext:(id)arg1;
 - (id)name;
+- (void)dealloc;
 - (id)uniqueIdentifier;
 - (id)connection;
 - (void)setName:(id)arg1;

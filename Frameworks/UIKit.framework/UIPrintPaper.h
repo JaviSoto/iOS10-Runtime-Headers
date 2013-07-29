@@ -14,7 +14,6 @@
 + (id)_readyPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2 forContentType:(int)arg3 contentSize:(struct CGSize { float x1; float x2; })arg4;
 + (id)bestPaperForPageSize:(struct CGSize { float x1; float x2; })arg1 withPapersFromArray:(id)arg2;
 + (id)_defaultPKPaperForOuptutType:(int)arg1;
-+ (id)_readyPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2 contentSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)_paperListForPrinter:(id)arg1 withDuplexMode:(int)arg2;
 + (id)_defaultPaperForOutputType:(int)arg1;
 

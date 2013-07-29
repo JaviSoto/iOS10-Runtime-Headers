@@ -23,7 +23,7 @@
 - (id)folderName;
 - (void)dealloc;
 - (id)description;
-- (id)error;
 - (int)statusCode;
+- (id)error;
 
 @end

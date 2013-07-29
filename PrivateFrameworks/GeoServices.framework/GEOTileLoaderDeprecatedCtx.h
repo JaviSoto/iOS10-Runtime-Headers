@@ -41,12 +41,11 @@
 @property(copy) id finished;
 @property(readonly) id callback;
 
-+ (id)ctxWithList:(id)arg1;
 
-- (id)initWithList:(id)arg1;
 - (void)breakCycle;
 - (void)failure:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 error:(id)arg2 info:(id)arg3;
 - (void)success:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 tile:(id)arg2 info:(id)arg3;
+- (id)initWithList:(id)arg1;
 - (id)callback;
 - (void)dealloc;
 - (void)setFinished:(id)arg1;

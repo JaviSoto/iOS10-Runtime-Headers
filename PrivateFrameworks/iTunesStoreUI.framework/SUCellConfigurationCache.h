@@ -11,8 +11,6 @@
 
 @property(retain) id cellContext;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
 - (void)setCellContext:(id)arg1;
@@ -21,6 +19,5 @@
 - (void)resetLayoutCaches;
 - (void)reset;
 - (void)dealloc;
-- (void)setCellReuseSource:(id)arg1;
 
 @end

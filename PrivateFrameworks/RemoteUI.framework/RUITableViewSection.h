@@ -44,12 +44,12 @@
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)insertRow:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setDrawTopSeparator:(BOOL)arg1;
-- (void)setAttributes:(id)arg1;
 - (id)sourceURL;
 - (void)setImage:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setAttributes:(id)arg1;
 - (void)setFooterView:(id)arg1;
 - (id)footerView;
 - (void)setFooterHeight:(float)arg1;

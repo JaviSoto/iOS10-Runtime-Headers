@@ -11,11 +11,11 @@
 @property(readonly) NSArray * options;
 @property(readonly) BOOL allowsEmptySelection;
 
++ (id)playableMediaSelectionOptionsFromArray:(id)arg1;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withoutMediaCharacteristics:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withMediaCharacteristics:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withLocale:(id)arg2;
-+ (id)playableMediaSelectionOptionsFromArray:(id)arg1;
 + (id)mediaSelectionGroupWithAsset:(id)arg1 dictionary:(id)arg2;
 
 - (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;

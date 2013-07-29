@@ -42,14 +42,14 @@
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;
-- (id)form;
-- (id)item:(unsigned int)arg1;
-- (void)_activateItemAtIndex:(int)arg1;
-- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
 - (id)listItemAtIndex:(int)arg1;
 - (unsigned int)completeLength;
 - (BOOL)multiple;
+- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
+- (void)_activateItemAtIndex:(int)arg1;
 - (BOOL)disabled;
+- (id)form;
+- (id)item:(unsigned int)arg1;
 - (void)setSelectedIndex:(int)arg1;
 - (int)selectedIndex;
 - (id)type;

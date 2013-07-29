@@ -16,6 +16,7 @@
 
 
 - (id)cellForIndexPath:(id)arg1;
+- (void)chartsViewController:(id)arg1 willDisplayItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
 - (void)chartsViewController:(id)arg1 didSelectItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
 - (id)chartsViewController:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
 - (void)_recordClickEvent:(id)arg1 withItem:(id)arg2 itemIndex:(int)arg3 chartIndex:(int)arg4;

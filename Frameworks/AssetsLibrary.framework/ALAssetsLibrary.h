@@ -14,16 +14,18 @@
 + (id)_playerItemForVideoFilePath:(id)arg1 metadata:(id)arg2;
 + (id)_playerItemForVideoURL:(id)arg1 fallbackFilePath:(id)arg2;
 + (id)_exportSessionForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3;
-+ (id)_exportSessionForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3;
 + (long long)_estimatedOutputFileLengthForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
-+ (long long)_estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 + (id)_filePathForVideoURL:(id)arg1 outMetadata:(id*)arg2;
 + (struct CGImage { }*)_aspectRatioThumbnailForAssetURL:(id)arg1;
 + (struct CGImage { }*)_thumbnailForAssetURL:(id)arg1;
 + (void)disableSharedPhotoStreamsSupport;
++ (BOOL)_linkedBefore7;
++ (id)_exportSessionForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3;
++ (long long)_estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 + (int)authorizationStatus;
 
 - (void)_performBlockAndWait:(id)arg1;
+- (id)assetsGroupsRelatedToAssetsGroup:(id)arg1;
 - (void)deleteAssetForURL:(id)arg1 completionBlock:(id)arg2;
 - (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)groupForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
@@ -35,6 +37,7 @@
 - (void)enumerateGroupsWithTypes:(unsigned int)arg1 usingBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)_copyGroupForURL:(id)arg1;
 - (id)publicErrorFromPrivateError:(id)arg1;
+- (void)_addGroupListForContainerList:(id)arg1 ofType:(unsigned int)arg2 toArray:(id)arg3;
 - (void)_addGroupForAlbum:(struct NSObject { Class x1; }*)arg1 ofType:(unsigned int)arg2 toArray:(id)arg3;
 - (BOOL)_libraryIsAvailable;
 - (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
@@ -44,6 +47,7 @@
 - (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id)arg6;
 - (void)setInternal:(id)arg1;
 - (id)internal;
+- (BOOL)hasCompletedRestorePostProcessing;
 - (id)init;
 - (BOOL)isValid;
 - (void)dealloc;

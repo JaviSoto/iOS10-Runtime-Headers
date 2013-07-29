@@ -27,7 +27,7 @@
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } mediaImageSubRect;
 @property double mediaImageTime;
-@property BOOL isPlaceholder;
+@property(setter=mp_setIsPlaceholder:) BOOL mp_isPlaceholder;
 @property(readonly) int leftCapWidth;
 @property(readonly) int topCapHeight;
 @property(readonly) struct CGSize { float x1; float x2; } size;
@@ -42,7 +42,6 @@
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
 @property(readonly) int renderingMode;
 
-+ (id)imageAtPath:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (void)initialize;
@@ -56,6 +55,7 @@
 + (id)_iconForResourceProxy:(id)arg1 variant:(int)arg2 variantsScale:(float)arg3;
 + (int)_iconVariantForUIApplicationIconFormat:(int)arg1 scale:(float*)arg2;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(float)arg3;
++ (id)imageAtPath:(id)arg1;
 + (void)setPreferredSharedImageScale:(float)arg1;
 + (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)_deviceSpecificImageNamed:(id)arg1;
@@ -80,19 +80,18 @@
 + (void)_flushSharedImageCache;
 + (id)kitImageNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 + (id)abImageNamed:(id)arg1;
 + (id)ab_tintedImageNamed:(id)arg1 withTint:(id)arg2;
 + (id)ab_imageNamed:(id)arg1;
 + (void)_gkloadRemoteImageForURL:(id)arg1 queue:(id)arg2 withCompletionHandler:(id)arg3;
 + (id)_gkImageWithRawData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 rowBytes:(unsigned long)arg4 bitmapInfo:(unsigned int)arg5;
++ (id)_mapkit_imageNamed:(id)arg1;
 + (id)imageFromAlbumArtData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; BOOL x_1_1_7; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)socialFrameworkImageNamed:(id)arg1 leftCapWidth:(float)arg2 topCapHeight:(float)arg3;
 + (id)socialFrameworkImageNamed:(id)arg1;
 + (id)imageWithPKImage:(id)arg1;
++ (id)pu_PhotosUIImageNamed:(id)arg1;
 
 - (struct CGSize { float x1; float x2; })size;
 - (id)initWithData:(id)arg1 cache:(BOOL)arg2;
@@ -113,8 +112,11 @@
 - (id)_subimageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_applyBackdropViewStyle:(int)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3;
 - (id)_applyBackdropViewSettings:(id)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3;
-- (id)_applyBackdropViewStyle:(int)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3 graphicsQuality:(int)arg4;
 - (id)_applyBackdropViewSettings:(id)arg1;
+- (id)_applyBackdropViewStyle:(int)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3 graphicsQuality:(int)arg4 allowImageResizing:(BOOL)arg5;
+- (id)_applyBackdropViewStyle:(int)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3 graphicsQuality:(int)arg4;
+- (id)_applyBackdropViewSettings:(id)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3 allowImageResizing:(BOOL)arg4;
+- (id)_applyBackdropViewSettings:(id)arg1 allowImageResizing:(BOOL)arg2;
 - (id)_applicationIconImageForFormat:(int)arg1 precomposed:(BOOL)arg2;
 - (id)_applicationIconImageForFormat:(int)arg1 precomposed:(BOOL)arg2 scale:(float)arg3;
 - (id)_serializedData;
@@ -204,9 +206,6 @@
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)accessibilityIdentifier;
-- (void)_accessibilityApplyLabelOnMainThread:(id)arg1;
-- (id)_accessibilityPhotoDescription;
 - (id)_gkImageWithProgress:(float)arg1;
 - (id)_gkMaskImageWithProgress:(float)arg1;
 - (id)_gkQuestionMarkImage;
@@ -229,9 +228,9 @@
 - (void)setMediaImageTime:(double)arg1;
 - (double)mediaImageTime;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaImageSubRect;
+- (BOOL)mp_isPlaceholder;
 - (void)setMediaImageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIsPlaceholder:(BOOL)arg1;
-- (BOOL)isPlaceholder;
+- (void)mp_setIsPlaceholder:(BOOL)arg1;
 - (id)mp_stretchableImageWithLeftCapWidth:(int)arg1 rightCapWidth:(int)arg2;
 - (id)sbf_invertedMaskImage;
 - (id)sbf_maskImage;
@@ -246,5 +245,7 @@
 - (id)stretchableImageWithLeftCapWidth:(int)arg1 rightCapWidth:(int)arg2;
 - (id)wlImageByRecoloringWithColor:(id)arg1;
 - (id)wlResizableImageByTilingCenterPixel;
+- (void)pu_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContentMode:(int)arg2;
+- (id)pu_tintedImageWithColor:(id)arg1;
 
 @end

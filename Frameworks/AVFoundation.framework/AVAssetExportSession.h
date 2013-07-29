@@ -28,10 +28,12 @@
 @property(readonly) <AVVideoCompositing> * customVideoCompositor;
 @property BOOL shouldOptimizeForNetworkUse;
 
++ (id)exportPresetsCompatibleWithAsset:(id)arg1;
++ (id)exportSessionWithAsset:(id)arg1 presetName:(id)arg2;
++ (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (id)_videoCompressionPropertiesForVideoSetting:(id)arg1;
 + (BOOL)_disablePassthrough;
 + (id)_figRemakerNotificationNames;
-+ (id)_bitRateTableForPreset:(id)arg1;
 + (BOOL)_isNonPassthroughExportPreset:(id)arg1 compatibleWithAsset:(id)arg2 outputFileType:(id)arg3;
 + (BOOL)_isPassthroughExportPresetCompatibleWithAsset:(id)arg1 outputFileType:(id)arg2;
 + (BOOL)_disableExportCompatibilityCheck;
@@ -42,10 +44,7 @@
 + (id)_utTypesForDefaultPassthroughPreset;
 + (id)_audioOnlyPresets;
 + (id)keyPathsForValuesAffectingEstimatedOutputFileLength;
-+ (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
-+ (id)exportSessionWithAsset:(id)arg1 presetName:(id)arg2;
 + (BOOL)_canWriteMediaOfAsset:(id)arg1 toFileType:(id)arg2;
-+ (id)exportPresetsCompatibleWithAsset:(id)arg1;
 + (void)determineCompatibilityOfExportPreset:(id)arg1 withAsset:(id)arg2 outputFileType:(id)arg3 completionHandler:(id)arg4;
 + (id)_utTypesForPresets;
 + (BOOL)_isPassthroughExportSupportedForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 forFileType:(struct __CFString { }*)arg2 asChapterTrack:(BOOL)arg3;
@@ -61,6 +60,14 @@
 + (id)allExportPresets;
 + (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
+- (void)cancelExport;
+- (void)setFileLengthLimit:(long long)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
+- (void)exportAsynchronouslyWithCompletionHandler:(id)arg1;
+- (void)setMetadataItemFilter:(id)arg1;
+- (void)setOutputURL:(id)arg1;
+- (void)setOutputFileType:(id)arg1;
 - (struct CGSize { float x1; float x2; })_getSourceDimension;
 - (void)_handleFigRemakerNotificationAsync:(id)arg1 payload:(id)arg2;
 - (id)_actualSettingForPresetAppleM4VAppleTV:(id)arg1;
@@ -72,7 +79,7 @@
 - (BOOL)_totalSizeOfTracksIsWithinFileLengthLimit:(id)arg1 forSetting:(id)arg2;
 - (BOOL)_hasProtectedNonAudioVideoTracks;
 - (BOOL)_canPassThroughAudio:(id)arg1 checkEnabled:(BOOL)arg2 checkProtected:(BOOL)arg3;
-- (BOOL)_canPassThroughVideo:(id)arg1 checkEnabled:(BOOL)arg2 checkAll:(BOOL)arg3 checkProtected:(BOOL)arg4;
+- (BOOL)_canPassThroughVideo:(id)arg1 remaker:(struct OpaqueFigRemaker { }*)arg2 checkEnabled:(BOOL)arg3 checkAll:(BOOL)arg4 checkProtected:(BOOL)arg5;
 - (id)_settingForFigRemaker;
 - (void)_createRemakerOptions:(id*)arg1 forFileFormat:(id)arg2;
 - (void)_createFormatWriterOptions:(id*)arg1 forFileFormat:(id)arg2;
@@ -81,17 +88,12 @@
 - (float)_getSourceVideoFrameRate;
 - (id)_actualSettingForPreset:(id)arg1;
 - (void)_handleFigRemakerNotification:(id)arg1 payload:(id)arg2;
-- (id)_bitRateTierForVideoSetting:(id)arg1 withPreset:(id)arg2;
 - (struct CGSize { float x1; float x2; })_getUntransformedSourceDimension;
-- (void)setFileLengthLimit:(long long)arg1;
 - (long long)fileLengthLimit;
-- (void)setMetadataItemFilter:(id)arg1;
 - (long long)estimatedOutputFileLength;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
-- (void)cancelExport;
-- (void)exportAsynchronouslyWithCompletionHandler:(id)arg1;
-- (void)setOutputURL:(id)arg1;
-- (void)setOutputFileType:(id)arg1;
+- (BOOL)_canPerformFastFrameRateConversionWithPreset:(id)arg1 usingRemaker:(struct OpaqueFigRemaker { }*)arg2;
+- (void)setVideoFrameRateConversionAlgorithm:(id)arg1;
+- (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)determineCompatibleFileTypesWithCompletionHandler:(id)arg1;
 - (void)_addListeners;
 - (id)_createFigRemaker:(struct OpaqueFigRemaker {}**)arg1;
@@ -107,11 +109,12 @@
 - (id)presetName;
 - (void)_removeListeners;
 - (id)initWithAsset:(id)arg1 presetName:(id)arg2;
+- (id)videoFrameRateConversionAlgorithm;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minVideoFrameDuration;
 - (id)metadataItemFilter;
 - (id)outputFileType;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
-- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)audioTimePitchAlgorithm;
 - (void)setAudioMix:(id)arg1;
 - (id)audioMix;

@@ -14,10 +14,10 @@
 @property float level;
 @property(readonly) BOOL valid;
 
-+ (id)remoteContext;
-+ (id)allContexts;
 + (id)currentContext;
++ (id)remoteContext;
 + (id)localContext;
++ (id)allContexts;
 + (id)remoteContextWithOptions:(id)arg1;
 + (id)localContextWithOptions:(id)arg1;
 + (id)objectForSlot:(unsigned int)arg1;

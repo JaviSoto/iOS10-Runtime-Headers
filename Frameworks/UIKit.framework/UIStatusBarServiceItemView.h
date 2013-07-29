@@ -17,8 +17,6 @@
     float _letterSpacing;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -38,12 +36,8 @@
 - (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (float)standardPadding;
 - (float)updateContentsAndWidth;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
-- (id)contentsImage;
 - (int)legibilityStyle;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityCoreTelephonyServiceStringName;
+- (id)contentsImage;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

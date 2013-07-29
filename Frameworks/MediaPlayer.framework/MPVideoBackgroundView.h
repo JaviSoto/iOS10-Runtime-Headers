@@ -34,12 +34,9 @@
 @property(copy) NSString * destinationName;
 @property(copy) id layoutSubviewsPostflightHandler;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)layoutSubviewsPostflightHandler;
 - (int)destinationPlaceholderStyle;
-- (id)destinationName;
+- (id)layoutSubviewsPostflightHandler;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(int)arg3;
 - (id)qtIcon;
 - (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;
@@ -55,14 +52,12 @@
 - (id)backgroundPlaceholderImage;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (id)backgroundPlaceholderView;
+- (id)destinationName;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)layoutSubviews;
-- (BOOL)accessibilityElementsHidden;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

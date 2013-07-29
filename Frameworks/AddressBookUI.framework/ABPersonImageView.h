@@ -32,8 +32,6 @@
 @property(readonly) UIImage * attributionImage;
 
 + (id)newImageWithName:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)multiplePhotoBackdropEnabled;
 - (void)setMultiplePhotoBackdropEnabled:(BOOL)arg1;
@@ -74,8 +72,5 @@
 - (id)backgroundImage;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

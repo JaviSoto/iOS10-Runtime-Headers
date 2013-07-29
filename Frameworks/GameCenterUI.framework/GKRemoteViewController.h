@@ -67,10 +67,10 @@
 - (void)dealloc;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;

@@ -25,18 +25,22 @@
 @property(readonly) unsigned long long libraryItemIdentifier;
 @property(readonly) double percentComplete;
 @property(readonly) NSString * phaseIdentifier;
+@property(readonly) NSError * purchaseError;
 @property(getter=isRestore,readonly) BOOL restore;
 @property(readonly) long long storeItemIdentifier;
 @property(readonly) int type;
 
++ (id)storeDownloadForCompletionOffering:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForRadioTracks:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForMediaQuery:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)_storeDownloadForCompletionOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)_SSPurchaseForType:(int)arg1 attributes:(id)arg2 buyParameters:(id)arg3 purchaseValuesForDownloadProperties:(id)arg4 URLBagKeyOverride:(id)arg5;
 + (id)_storeDownloadForMediaItem:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForMediaItems:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 
 - (void)_setSSDownload:(id)arg1;
 - (void)_setCanceled:(BOOL)arg1;
+- (id)purchaseError;
 - (unsigned long long)libraryItemIdentifier;
 - (id)_valueForDownloadProperty:(id)arg1;
 - (id)_SSPurchaseResponse;

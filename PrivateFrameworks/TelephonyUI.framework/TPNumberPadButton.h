@@ -35,8 +35,6 @@
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
 + (float)horizontalPadding;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (float)alphaOutsideAndInsideRing;
@@ -57,10 +55,5 @@
 - (void)setColor:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (BOOL)_accessibilityKeyboardKeyAllowsTouchTyping;
 
 @end

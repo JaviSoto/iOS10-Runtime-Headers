@@ -17,13 +17,13 @@
 @property(retain) CalDAVCalendarServerReplyItem * reply;
 
 
+- (void)setCancel:(id)arg1;
 - (void)setReply:(id)arg1;
 - (void)setUpdate:(id)arg1;
 - (void)setCreate:(id)arg1;
 - (id)copyParseRules;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)reply;
-- (void)setCancel:(id)arg1;
 - (id)create;
 - (id)update;
 - (id)init;

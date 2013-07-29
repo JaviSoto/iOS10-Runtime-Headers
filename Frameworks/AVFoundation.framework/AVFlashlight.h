@@ -15,11 +15,11 @@
 + (BOOL)hasFlashlight;
 + (void)initialize;
 
+- (BOOL)isAvailable;
 - (BOOL)setFlashlightLevel:(float)arg1 withError:(id*)arg2;
 - (void)turnPowerOff;
 - (BOOL)turnPowerOnWithError:(id*)arg1;
 - (BOOL)isOverheated;
-- (BOOL)isAvailable;
 - (void)_refreshIsAvailable;
 - (BOOL)ensureFigRecorderWithError:(id*)arg1;
 - (void)teardownFigRecorder;

@@ -24,8 +24,6 @@
 + (BOOL)removeConfirmationsVisibleInView:(id)arg1;
 + (float)removeButtonWidth;
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)removeFromSuperview;
 - (void)setTarget:(id)arg1;

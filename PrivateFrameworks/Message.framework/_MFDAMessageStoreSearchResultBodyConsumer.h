@@ -20,9 +20,9 @@
 - (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
 - (id)streamConsumer;
 - (void)setStreamConsumer:(id)arg1;
+- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)waitUntilDone;
-- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)setError:(id)arg1;

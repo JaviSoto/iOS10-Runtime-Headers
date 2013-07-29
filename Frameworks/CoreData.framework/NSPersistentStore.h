@@ -42,6 +42,7 @@
 - (BOOL)loadMetadata:(id*)arg1;
 - (void)didAddToPersistentStoreCoordinator:(id)arg1;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;
+- (void)_resetObjectIDFactoriesForStoreUUIDChange;
 - (BOOL)_unload:(id*)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (void)setReadOnly:(BOOL)arg1;

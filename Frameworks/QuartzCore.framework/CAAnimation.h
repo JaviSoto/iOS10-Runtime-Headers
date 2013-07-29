@@ -14,8 +14,12 @@
     unsigned int _flags;
 }
 
+@property int animationID;
+@property(copy) id completionBlock;
 @property(copy) id animationDidStartBlock;
 @property(copy) id animationDidStopBlock;
+@property int _mapkit_ID;
+@property(readonly) BOOL _mapkit_isScrollingAnimation;
 @property CAStateControllerTransition * CAStateControllerTransition;
 @property(getter=isEnabled) BOOL enabled;
 @property(copy) NSString * beginTimeMode;
@@ -94,9 +98,17 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)_mapkit_isScrollingAnimation;
+- (int)_mapkit_ID;
+- (void)set_mapkit_ID:(int)arg1;
 - (void)setAnimationDidStopBlock:(id)arg1;
 - (id)animationDidStopBlock;
 - (void)setAnimationDidStartBlock:(id)arg1;
 - (id)animationDidStartBlock;
+- (void)performCompletionBlock:(BOOL)arg1;
+- (int)animationID;
+- (void)setAnimationID:(int)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (id)completionBlock;
 
 @end

@@ -42,7 +42,6 @@
 
 - (id)serverSideDebugDescription;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
-- (void)_didReceiveMemoryWarning;
 - (id)_warningSource;
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
 - (void)_forceRegistrationNow;
@@ -50,6 +49,7 @@
 - (void)_createMemoryWarningSource;
 - (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)isInitialSync;
+- (void)_didReceiveMemoryWarning;
 - (long)generationCount;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;

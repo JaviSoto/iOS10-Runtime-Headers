@@ -177,6 +177,7 @@
 - (BOOL)saveCalendar:(id)arg1 error:(id*)arg2;
 - (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
 - (int)readWriteCalendarCountForEntityType:(unsigned int)arg1;
+- (id)calendarsForEntityType:(unsigned int)arg1;
 - (BOOL)hideCalendarsFromNotificationCenter:(id)arg1 error:(id*)arg2;
 - (id)calendars;
 - (BOOL)removeSource:(id)arg1 error:(id*)arg2;
@@ -198,7 +199,6 @@
 - (void)_registerObjectImmediate:(id)arg1;
 - (void)refreshSourcesIfNecessary:(BOOL)arg1;
 - (void)_refreshDASource:(id)arg1 isUserRequested:(BOOL)arg2;
-- (id)calendarsForEntityType:(unsigned int)arg1;
 - (BOOL)removeInviteReplyNotifications:(id)arg1 error:(id*)arg2;
 - (BOOL)removeResourceChanges:(id)arg1 error:(id*)arg2;
 - (id)publicObjectWithPersistentObject:(id)arg1;

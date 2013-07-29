@@ -22,6 +22,7 @@
 
 + (id)currentDevice;
 
+- (id)udid;
 - (float)mainScreenScale;
 - (id)buildVersionHeader;
 - (id)protocolVersionHeader;
@@ -32,7 +33,6 @@
 - (id)_platformUDID;
 - (void)_initPlatform;
 - (id)osVersion;
-- (id)udid;
 - (id)userAgent;
 - (id)deviceName;
 - (id)init;

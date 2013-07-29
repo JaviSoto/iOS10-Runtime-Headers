@@ -28,9 +28,9 @@
 
 + (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
 
+- (id)diffView;
 - (BOOL)fitsInSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_textAttributesWithTextColor:(id)arg1 alignment:(int)arg2 lineBreakMode:(int)arg3;
-- (id)diffView;
 - (void)setDiffView:(id)arg1;
 - (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;

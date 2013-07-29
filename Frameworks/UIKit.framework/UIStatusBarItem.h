@@ -16,6 +16,7 @@
 @property(readonly) int rightOrder;
 @property(readonly) NSString * indicatorName;
 
++ (BOOL)isItemWithTypeExclusive:(int)arg1;
 + (BOOL)itemType:(int)arg1 idiom:(int)arg2 appearsInRegion:(int)arg3;
 + (BOOL)itemType:(int)arg1 idiom:(int)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
 + (BOOL)typeIsValid:(int)arg1;

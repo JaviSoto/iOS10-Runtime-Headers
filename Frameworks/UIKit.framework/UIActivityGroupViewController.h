@@ -16,8 +16,6 @@
 @property(copy) NSDictionary * customActivityTitles;
 @property BOOL hasActivities;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)setHasActivities:(BOOL)arg1;

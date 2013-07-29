@@ -126,6 +126,7 @@
     BOOL geometryIsChanging;
     BOOL m_hardwareKeyboardIsSeen;
     BOOL m_softwareKeyboardShownByTouch;
+    BOOL _handlingKeyCommandFromHardwareKeyboard;
     TIKeyboardTouchEvent *m_touchEventWaitingForKeyInputEvent;
     _UIActionWhenIdle *m_delayedCandidateRequest;
     _UIActionWhenIdle *m_deferredDidSetDelegateAction;
@@ -140,6 +141,7 @@
 @property BOOL shouldSetInputModeInNextRun;
 @property(retain) NSString * currentUsedInputMode;
 @property BOOL showsCandidateBar;
+@property(readonly) BOOL shouldShowCandidateBar;
 @property BOOL receivedCandidatesInCurrentInputMode;
 @property BOOL showsCandidateInline;
 @property BOOL geometryIsChanging;
@@ -172,11 +174,11 @@
 @property(retain) UIKeyboardScheduledTask * hardwareRepeatTask;
 @property(retain) NSString * nextInputModeToUse;
 @property(retain) NSString * lastUsedInputMode;
-@property(readonly) BOOL shouldShowCandidateBar;
 @property(retain) UIAlertView * keyboardAlertView;
 @property BOOL committingCandidate;
 @property BOOL hardwareKeyboardIsSeen;
 @property BOOL softwareKeyboardShownByTouch;
+@property BOOL handlingKeyCommandFromHardwareKeyboard;
 
 + (void)_clearHardwareKeyboardMinimizationPreference;
 + (void)setParentTestForProfiling:(id)arg1;
@@ -206,6 +208,7 @@
 + (void)markPerformance:(id)arg1;
 + (float)additionalInstanceHeightLoadingForInterfaceOrientation:(int)arg1;
 + (BOOL)isSplit;
++ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (float)additionalInstanceHeightForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (id)orientationKeyForOrientation:(int)arg1;
@@ -213,7 +216,6 @@
 + (Class)layoutClassForCurrentInputMode;
 + (Class)layoutClassForInputMode:(id)arg1 keyboardType:(int)arg2;
 + (struct CGSize { float x1; float x2; })_defaultSizeForInterfaceOrientation:(int)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (void)releaseSharedInstance;
 + (id)activeInstance;
@@ -223,11 +225,7 @@
 + (void)applicationWillResignActive:(id)arg1;
 + (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (id)sharedInstance;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
-- (void)enable;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -240,6 +238,7 @@
 - (BOOL)userSelectedCurrentCandidate;
 - (id)layoutState;
 - (id)inputManagerState;
+- (id)searchStringForMarkedText;
 - (void)setCandidates:(id)arg1;
 - (id)markedText;
 - (void)setInputPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -254,6 +253,7 @@
 - (id)_getAutocorrection;
 - (void)_setAutocorrects:(BOOL)arg1;
 - (id)_getLocalizedInputMode;
+- (void)acceptAutocorrectionAndEndComposition;
 - (void)setTextInputChangesIgnored:(BOOL)arg1;
 - (BOOL)_shouldMinimizeForHardwareKeyboard;
 - (BOOL)keyboardDrawsOpaque;
@@ -297,7 +297,6 @@
 - (void)updateAutocorrectPromptDisplay:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)handleDelayedActionUpdateAutocorrectPrompt;
 - (BOOL)returnKeyEnabled;
-- (id)returnKeyDisplayName;
 - (id)autocorrectPrompt;
 - (void)setShowsCandidateInline:(BOOL)arg1;
 - (void)updateCandidateDisplayAsyncWithCandidateSet:(id)arg1 documentOperation:(id)arg2;
@@ -322,6 +321,7 @@
 - (void)setShiftLockedForced:(BOOL)arg1;
 - (void)toggleShift;
 - (void)recomputeActiveInputModes;
+- (void)removeAllDynamicDictionaries;
 - (void)performHitTestForTouchEvent:(id)arg1 keyCodeHandler:(id)arg2 executionContext:(id)arg3;
 - (void)skipHitTestForTouchEvent:(id)arg1 delayed:(BOOL)arg2;
 - (void)generateAutocorrectionWithExecutionContext:(id)arg1;
@@ -331,6 +331,7 @@
 - (void)handleObserverCallback;
 - (void)setChangeNotificationDisabled:(BOOL)arg1;
 - (BOOL)changeNotificationDisabled;
+- (void)enable;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (BOOL)autocorrectSpellingEnabled;
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;
@@ -378,6 +379,8 @@
 - (void)setHardwareRepeatEvent:(id)arg1;
 - (void)hideKeyboard;
 - (void)showKeyboard;
+- (void)geometryChangeDone:(BOOL)arg1;
+- (void)prepareForGeometryChange;
 - (void)setHardwareRepeatTask:(id)arg1;
 - (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (id)hardwareRepeatEvent;
@@ -404,9 +407,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToAutocorrectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegateView:(id)arg2 container:(id)arg3;
 - (BOOL)delegateSupportsCorrectionUI;
 - (id)inputOverlayContainer;
-- (void)_handleKeyBehaviors:(id)arg1 withState:(id)arg2;
+- (id)updateKeyBehaviors:(id)arg1 withBehaviors:(id)arg2 forState:(id)arg3;
 - (void)_handleKeyBehavior:(unsigned int)arg1 forKeyType:(id)arg2;
 - (void)acceptFirstCandidate;
+- (BOOL)handlingKeyCommandFromHardwareKeyboard;
+- (id)returnKeyDisplayName;
 - (void)showNextCandidates;
 - (void)_nop;
 - (id)_canonicalKeyTypeForKeyType:(id)arg1;
@@ -424,7 +429,9 @@
 - (void)setInHardwareKeyboardMode:(BOOL)arg1;
 - (void)addInputObject:(id)arg1 executionContext:(id)arg2;
 - (void)updateKeyboardConfigurations;
+- (void)trackUsageForCandidateAcceptedAction:(id)arg1;
 - (void)generateCandidatesWithOptions:(int)arg1;
+- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)acceptCurrentCandidateWithExecutionContext:(id)arg1;
 - (void)setCommittingCandidate:(BOOL)arg1;
 - (BOOL)committingCandidate;
@@ -433,7 +440,6 @@
 - (void)acceptCandidate:(id)arg1;
 - (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2 executionContext:(id)arg3;
 - (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2;
-- (void)setUserSelectedCurrentCandidate:(BOOL)arg1;
 - (void)completeDeleteFromInput;
 - (void)deleteOnceFromInputWithExecutionContext:(id)arg1;
 - (BOOL)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
@@ -443,6 +449,7 @@
 - (void)completeDeleteOnceFromInputWithCharacterBefore:(unsigned long)arg1;
 - (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1 executionContext:(id)arg2;
 - (unsigned int)phraseBoundary;
+- (void)setUserSelectedCurrentCandidate:(BOOL)arg1;
 - (void)updateDoubleSpacePeriodStateForString:(id)arg1;
 - (BOOL)handleDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(BOOL)arg2 elapsedTime:(double)arg3;
 - (void)trackUsageForAcceptedAutocorrection:(id)arg1 promptWasShowing:(BOOL)arg2;
@@ -457,6 +464,7 @@
 - (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2 forInput:(id)arg3;
 - (BOOL)nextCharacterIsWordCharacter;
 - (id)acceptedAutocorrectionForWordTerminator:(id)arg1;
+- (void)acceptCurrentCandidate;
 - (void)updateChangeTimeAndIncrementCount;
 - (void)acceptCurrentCandidateIfSelectedWithExecutionContext:(id)arg1;
 - (void)completeAcceptCandidateBeforeAddingInput:(id)arg1 executionContext:(id)arg2;
@@ -490,7 +498,6 @@
 - (BOOL)isAllowedInputMode:(id)arg1;
 - (BOOL)isDesiredInputMode:(id)arg1;
 - (BOOL)_systemHasKbd;
-- (void)removeAllDynamicDictionaries;
 - (void)didChangePhraseBoundary;
 - (id)replyHandlerForAdjustPhraseBoundaryWithExecutionContext:(id)arg1;
 - (void)handleReplyToPerformHitTestWithTask:(id)arg1 executionContext:(id)arg2;
@@ -525,16 +532,12 @@
 - (void)flushTouchEventWaitingForKeyInputEventIfNecessary;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
 - (void)callChangedSelection;
-- (void)syncInputManagerToKeyboardStateWithExecutionContext:(id)arg1;
 - (void)completeUpdateForChangedSelection:(BOOL)arg1;
 - (void)setPreviousInputString:(id)arg1;
 - (void)prepareForSelectionChange;
 - (id)inputManager;
 - (BOOL)hasEditableMarkedText;
-- (id)searchStringForMarkedText;
 - (id)inputStringFromPhraseBoundary;
-- (BOOL)centerFilled;
-- (int)_clipCornersOfView:(id)arg1;
 - (BOOL)splitTransitionInProgress;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)finishLayoutChangeWithArguments:(id)arg1;
@@ -551,17 +554,17 @@
 - (void)updateLayoutIfNeeded;
 - (void)setGeometryIsChanging:(BOOL)arg1;
 - (id)_keyboardBehaviorState;
-- (void)acceptCandidate:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)acceptCurrentCandidate;
+- (void)performKeyBehaviorConfirmFirstCandidate;
+- (void)performKeyBehaviorConfirm;
 - (id)inputModeLastUsedForLanguage:(id)arg1;
 - (void)fadeAutocorrectPrompt;
 - (id)delegateAsResponder;
 - (void)deleteForwardAndNotify:(BOOL)arg1;
 - (void)movePhraseBoundaryToDirection:(int)arg1;
+- (void)setHandlingKeyCommandFromHardwareKeyboard:(BOOL)arg1;
 - (void)setArrowKeyHistory:(id)arg1;
 - (id)arrowKeyHistory;
 - (void)updateObserverState;
-- (void)updateTextCandidateView;
 - (void)updateAutocorrectPromptAction;
 - (id)legacyInputDelegate;
 - (void)selectionDidChange:(id)arg1;
@@ -611,6 +614,8 @@
 - (void)clearLanguageIndicator;
 - (id)inputModeLastUsedPreference;
 - (id)typologyRecorder;
+- (void)updateTextCandidateView;
+- (void)syncInputManagerToKeyboardStateWithExecutionContext:(id)arg1;
 - (void)textChanged:(id)arg1 executionContext:(id)arg2;
 - (void)finishSetInputMode:(id)arg1 didChangeDirection:(BOOL)arg2 executionContext:(id)arg3;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1;
@@ -672,8 +677,7 @@
 - (void)clearAnimations;
 - (void)clearDelegate;
 - (void)releaseInputManager;
-- (void)geometryChangeDone:(BOOL)arg1;
-- (void)prepareForGeometryChange;
+- (BOOL)centerFilled;
 - (BOOL)supportsNumberKeySelection;
 - (id)_layout;
 - (id)candidateList;
@@ -686,6 +690,7 @@
 - (void)logHandwritingData;
 - (void)setUsesCandidateSelection:(BOOL)arg1;
 - (BOOL)usesCandidateSelection;
+- (int)_clipCornersOfView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)textChanged:(id)arg1;
 - (void)setChangedDelegate:(id)arg1;
@@ -715,7 +720,5 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setShift:(BOOL)arg1;
-- (void)setInputModeToNextInPreferredList;
-- (void)updateLayoutForInterfaceOrientation:(int)arg1;
 
 @end

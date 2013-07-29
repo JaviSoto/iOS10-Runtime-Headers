@@ -44,6 +44,7 @@
 @property(copy) NSDictionary * linkTextAttributes;
 @property BOOL usesTiledViews;
 @property int layoutOrientation;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
 
 + (Class)layerClass;
 
@@ -57,6 +58,7 @@
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (id)layoutManager;
 - (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
 - (void)invalidateTextContainerOrigin;

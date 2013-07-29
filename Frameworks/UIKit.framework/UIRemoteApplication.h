@@ -12,6 +12,7 @@
 
 - (id)initWithMachServiceName:(id)arg1;
 - (void)dealloc;
+- (void)didTakeScreenshot;
 - (void)wakeTimerFired;
 - (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)localNotificationDidSnooze:(id)arg1;

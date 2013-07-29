@@ -10,6 +10,8 @@
     BOOL _didBeginBlockAnimation;
     BOOL _allowUserInteraction;
     BOOL _isZeroDuration;
+    BOOL _allowsUserInteractionToCutOffEndOfAnimation;
+    BOOL _animationDidStopSent;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -30,6 +32,7 @@
 - (void)_sendDeferredCompletion:(id)arg1;
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_willBeginBlockAnimation:(id)arg1 context:(id)arg2;
+- (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (BOOL)_allowsUserInteraction;
 
 @end

@@ -64,13 +64,13 @@
 - (void)setAllowMultipleFiles:(BOOL)arg1;
 - (void)setResultListener:(id)arg1;
 - (void)setMimeTypes:(id)arg1;
+- (void)popoverWasDismissed:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)present;
 - (id)initWithResultListener:(id)arg1 mimeTypes:(id)arg2 allowMultipleFiles:(BOOL)arg3 documentView:(id)arg4;
 - (void)dismiss;
-- (void)popoverWasDismissed:(id)arg1;
 - (void)actionSheetCancel:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)_cancel;

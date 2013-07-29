@@ -15,9 +15,9 @@
 - (void)setDisabled:(BOOL)arg1;
 - (BOOL)disabled;
 - (void)setLabel:(id)arg1;
-- (id)itemTitle;
 - (void)populateCell:(id)arg1;
 - (id)createPickerCell;
 - (id)createSelectedItem;
+- (id)itemTitle;
 
 @end

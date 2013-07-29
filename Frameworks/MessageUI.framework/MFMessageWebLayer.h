@@ -53,8 +53,6 @@
 + (void)endBlockingRemoteImages;
 + (void)beginBlockingRemoteImagesExceptForMessageWebLayer:(id)arg1;
 + (void)initialize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)_elementHasDefinedWidth:(id)arg1;
 - (id)_rangeOfFirstText;
@@ -120,6 +118,7 @@
 - (void)setBottomReplyRange:(id)arg1;
 - (void)setReformattingContext:(id)arg1;
 - (void)setOriginalHTMLString:(id)arg1;
+- (void)_preferredContentSizeDidChangeNotification:(id)arg1;
 - (int)displayStyle;
 - (void)reload;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -144,6 +143,5 @@
 - (void)copy:(id)arg1;
 - (float)defaultWidth;
 - (BOOL)isCancelled;
-- (id)accessibilityLabel;
 
 @end

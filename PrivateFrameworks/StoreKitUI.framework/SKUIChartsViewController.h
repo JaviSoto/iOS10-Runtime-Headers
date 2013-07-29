@@ -4,7 +4,7 @@
 
 @class SKUIStorePageViewController, NSURL, SKUICategoryController;
 
-@interface SKUIChartsViewController : SKUIViewController <SKUICategoryControllerDelegate> {
+@interface SKUIChartsViewController : SKUIViewController <SKUICategoryControllerDelegate, SKUIMetricsViewController> {
     SKUICategoryController *_categoryController;
     BOOL _hasCategoryButton;
     SKUIStorePageViewController *_storePageViewController;
@@ -20,6 +20,7 @@
 - (void)_loadCategoriesWithURL:(id)arg1;
 - (void)_reloadNavigationItem;
 - (void)_loadStorePage;
+- (id)activeMetricsController;
 - (void)setClientContext:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

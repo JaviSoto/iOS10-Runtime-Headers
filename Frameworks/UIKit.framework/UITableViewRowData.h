@@ -47,6 +47,7 @@
 - (int)sectionForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)hasFooterForSection:(int)arg1;
 - (float)heightForTableFooterView;
+- (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3 adjustForReorderedRow:(BOOL)arg4;
 - (void)_updateTopAndBottomPadding;
 - (void)adjustSectionOffsetsBeginningAtIndex:(int)arg1 count:(int)arg2 delta:(float)arg3 rowDelta:(int)arg4;
 - (int)_sectionRowForGlobalRow:(int)arg1 inSection:(int*)arg2;
@@ -81,10 +82,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSection:(int)arg1;
 - (void)setReorderedIndexPath:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForTable;
-- (int)globalRowForRowAtIndexPath:(id)arg1;
 - (float)minimumRowHeight;
 - (int)footerAlignmentForSection:(int)arg1;
 - (int)headerAlignmentForSection:(int)arg1;
+- (int)globalRowForRowAtIndexPath:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })globalRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 canGuess:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForGlobalRow:(int)arg1 heightCanBeGuessed:(BOOL)arg2;
 - (float)maxFooterTitleWidthForSection:(int)arg1;

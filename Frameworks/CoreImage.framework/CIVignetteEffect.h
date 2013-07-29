@@ -7,17 +7,21 @@
 @interface CIVignetteEffect : CIFilter  {
     CIImage *inputImage;
     CIVector *inputCenter;
-    NSNumber *inputIntensity;
     NSNumber *inputRadius;
+    NSNumber *inputIntensity;
+    NSNumber *inputFalloff;
 }
 
 @property(retain) CIImage * inputImage;
 @property(retain) CIVector * inputCenter;
-@property(retain) NSNumber * inputIntensity;
 @property(retain) NSNumber * inputRadius;
+@property(retain) NSNumber * inputIntensity;
+@property(retain) NSNumber * inputFalloff;
 
 + (id)customAttributes;
 
+- (id)inputFalloff;
+- (void)setInputFalloff:(id)arg1;
 - (id)inputCenter;
 - (void)setInputCenter:(id)arg1;
 - (id)inputRadius;

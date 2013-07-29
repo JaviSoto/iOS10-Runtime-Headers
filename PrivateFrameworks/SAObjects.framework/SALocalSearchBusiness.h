@@ -28,8 +28,6 @@
 - (int)totalNumberOfReviews;
 - (void)setOpeningHours:(id)arg1;
 - (id)openingHours;
-- (void)setExtSessionGuid:(id)arg1;
-- (id)extSessionGuid;
 - (void)setBusinessUrl:(id)arg1;
 - (id)businessUrl;
 - (void)setBusinessIds:(id)arg1;
@@ -38,6 +36,8 @@
 - (id)businessId;
 - (id)encodedClassName;
 - (void)setRating:(id)arg1;
+- (void)setExtSessionGuid:(id)arg1;
+- (id)extSessionGuid;
 - (void)setCategories:(id)arg1;
 - (void)setPhoneNumbers:(id)arg1;
 - (id)phoneNumbers;

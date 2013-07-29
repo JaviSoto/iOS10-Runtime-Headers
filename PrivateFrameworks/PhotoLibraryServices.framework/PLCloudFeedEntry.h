@@ -16,9 +16,10 @@
 @property(retain) NSNumber * entryTypeNumber;
 @property(retain) NSNumber * entryPriorityNumber;
 
-+ (id)entryWithURIRepresentation:(id)arg1 inLibrary:(id)arg2;
-+ (id)recentAssetsEntriesInLibrary:(id)arg1 limit:(int)arg2;
 + (id)recentEntriesInLibrary:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 limit:(int)arg4;
++ (id)entryWithURIRepresentation:(id)arg1 inLibrary:(id)arg2;
++ (id)firstEntryWithType:(int)arg1 albumGUID:(id)arg2 inLibrary:(id)arg3;
++ (id)recentAssetsEntriesInLibrary:(id)arg1 limit:(int)arg2;
 + (id)allEntriesInLibrary:(id)arg1;
 + (id)entriesSortDescriptorsAscending:(BOOL)arg1;
 + (id)allEntriesInManagedObjectContext:(id)arg1;

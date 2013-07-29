@@ -227,6 +227,7 @@
 - (id)applicationIdentifier;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)bundleIdentifier;
 - (id)dictionary;
 - (id)kind;
 - (id)subtitle;
@@ -234,7 +235,6 @@
 - (void)setKind:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)setDictionary:(id)arg1;
-- (id)bundleIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

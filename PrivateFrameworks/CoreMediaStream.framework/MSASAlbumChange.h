@@ -44,12 +44,12 @@
 - (void)setWasDeleted:(BOOL)arg1;
 - (void)setGUID:(id)arg1;
 - (BOOL)wasDeleted;
-- (void)setURLString:(id)arg1;
 - (id)URLString;
 - (id)GUID;
 - (id)name;
 - (void).cxx_destruct;
 - (id)description;
+- (void)setURLString:(id)arg1;
 - (void)setName:(id)arg1;
 
 @end

@@ -44,7 +44,6 @@
 - (void)_preventSleepFired;
 - (void)_scheduleTimer;
 - (BOOL)disableSystemWaking;
-- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)updateFireTime:(double)arg1 triggerOnGMTChange:(BOOL)arg2;
 - (BOOL)firingIsImminent;
 - (id)initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
@@ -55,6 +54,7 @@
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)setDisableSystemWaking:(BOOL)arg1;
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
+- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (id)debugDescription;
 - (BOOL)isValid;
 - (void)invalidate;

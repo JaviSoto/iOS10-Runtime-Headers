@@ -18,9 +18,6 @@
 @property(readonly) UITableViewCellDeleteConfirmationButton * deleteView;
 @property(readonly) UITableViewCellDeleteConfirmationButton * accessoryView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (float)cornerRadius;
 - (void)dealloc;
@@ -34,6 +31,5 @@
 - (int)sectionLocation;
 - (void)setCornerRadius:(float)arg1;
 - (void)didMoveToWindow;
-- (void)setUseMask:(BOOL)arg1;
 
 @end

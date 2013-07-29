@@ -19,11 +19,11 @@
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setStyle:(id)arg1;
 - (id)attributeKeys;
-- (id)stringFromNumber:(id)arg1;
 - (id)style;
 - (id)init;
 - (id)localeIdentifier;
 - (void)dealloc;
 - (id)numberFromString:(id)arg1;
+- (id)stringFromNumber:(id)arg1;
 
 @end

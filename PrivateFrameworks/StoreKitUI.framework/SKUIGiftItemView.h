@@ -44,6 +44,7 @@
 - (id)itemOfferButton;
 - (int)giftItemStyle;
 - (id)_userRatingColor;
+- (void)_itemOfferConfirmAction:(id)arg1;
 - (float)_paddingLeft;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageEdgeInsets;
 - (float)_paddingRight;
@@ -74,6 +75,7 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setBackgroundColor:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)item;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

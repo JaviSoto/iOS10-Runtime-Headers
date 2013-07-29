@@ -2,13 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData;
+@class NSData, NSArray;
 
 @interface RadioTracksArray : NSArray  {
     NSData *_tracksData;
+    NSArray *_trackIDs;
 }
 
 
+- (id)initWithTrackIDs:(id)arg1;
 - (id)initWithTracksData:(id)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)count;

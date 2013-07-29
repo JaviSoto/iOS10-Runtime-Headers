@@ -32,7 +32,6 @@
 @property(copy) NSString * URLString;
 
 
-- (void)setURLString:(id)arg1;
 - (void)reload;
 - (id)URLString;
 - (float)estimatedProgress;
@@ -45,6 +44,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)forwardBarButtonItem;
+- (void)setURLString:(id)arg1;
 - (void)_connectToService;
 - (void)_updateBarButtonItems;
 - (void)_sendEndAppearanceTransitionIfReady;
@@ -66,13 +66,13 @@
 - (BOOL)canGoBack;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)backBarButtonItem;
 - (void)stopLoading;
 

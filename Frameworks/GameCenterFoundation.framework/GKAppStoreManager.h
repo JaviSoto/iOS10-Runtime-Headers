@@ -23,5 +23,8 @@
 - (void)beginObservingKeyBagStatusFor:(id)arg1 withCallback:(int (*)())arg2;
 - (BOOL)accountIsLoggedIntoAStore;
 - (void)loadTellAFriendMessageForGameWithAdamID:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)productViewControllerDidFinish:(id)arg1;
+- (void)launchAppStoreWithGameCenterGames;
+- (void)presentStoreSheetForGame:(id)arg1 fromViewController:(id)arg2 completionHandler:(id)arg3;
 
 @end

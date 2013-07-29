@@ -8,10 +8,12 @@
 
 - (id)_longNumericEntryField;
 - (BOOL)_showsPromptLabelOnEntryField;
+- (float)_statusTitleViewHeight;
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (void)_setHasInput:(BOOL)arg1;
 - (id)_newEntryField;
 - (BOOL)_includesStatusView;
+- (void)_updateStatusText:(id)arg1;
 - (id)init;
 
 @end

@@ -53,8 +53,8 @@
 - (void)hideInNavigationController:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)loadWithCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (float)paddingRight;
 - (void)setPaddingRight:(float)arg1;
+- (float)paddingRight;
 - (void)setPaddingTop:(float)arg1;
 - (float)paddingTop;
 - (void)loadView;

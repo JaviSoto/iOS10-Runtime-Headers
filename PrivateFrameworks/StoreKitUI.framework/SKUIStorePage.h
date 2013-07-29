@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIUber, SSMetricsConfiguration, NSString, SKUIArtwork, NSArray, NSMutableDictionary;
+@class SKUIProductPage, SKUIArtwork, SKUIUber, SSMetricsConfiguration, NSString, NSURL, NSMutableDictionary, NSArray;
 
 @interface SKUIStorePage : NSObject <NSCopying> {
     SKUIArtwork *_backgroundArtwork;
@@ -10,6 +10,8 @@
     NSString *_metricsPageDescription;
     NSArray *_pageComponents;
     NSString *_pageType;
+    NSURL *_pageURL;
+    SKUIProductPage *_productPage;
     NSString *_title;
     SKUIUber *_uber;
     NSMutableDictionary *_values;
@@ -20,11 +22,13 @@
 @property(copy) NSString * metricsPageDescription;
 @property(copy) NSArray * pageComponents;
 @property(copy) NSString * pageType;
+@property(copy) NSURL * pageURL;
+@property(copy) SKUIProductPage * productPage;
 @property(copy) NSString * title;
 @property(retain) SKUIUber * uber;
 
 
-- (id)pageType;
+- (id)productPage;
 - (id)pageComponents;
 - (id)metricsPageDescription;
 - (id)metricsConfiguration;
@@ -33,14 +37,18 @@
 - (void)setValue:(id)arg1 forPageKey:(id)arg2;
 - (void)setPageComponents:(id)arg1;
 - (void)setUber:(id)arg1;
+- (void)setProductPage:(id)arg1;
 - (void)setPageType:(id)arg1;
 - (void)setMetricsPageDescription:(id)arg1;
 - (void)setMetricsConfiguration:(id)arg1;
 - (void)setBackgroundArtwork:(id)arg1;
 - (id)uber;
+- (id)pageType;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)pageURL;
+- (void)setPageURL:(id)arg1;
 
 @end

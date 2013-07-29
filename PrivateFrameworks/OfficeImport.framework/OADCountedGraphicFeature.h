@@ -12,10 +12,10 @@
 
 - (void)setUsageCount:(unsigned int)arg1;
 - (unsigned int)usageCount;
-- (id)feature;
 - (int)compareUsageCount:(id)arg1;
 - (void)incrementUsageCount;
 - (id)initWithFeature:(id)arg1;
+- (id)feature;
 - (void)dealloc;
 
 @end

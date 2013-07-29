@@ -29,6 +29,7 @@
 - (id)imagePickerController;
 - (void)setPeoplePicker:(id)arg1;
 - (id)peoplePicker;
+- (void)_willPresentAsFormSheet;
 - (id)_embeddedActivityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (id)activityViewController;

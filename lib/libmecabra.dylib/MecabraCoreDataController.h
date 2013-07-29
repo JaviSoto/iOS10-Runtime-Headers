@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libmecabra.dylib
  */
 
-@class NSEntityDescription, NSManagedObjectModel, NSString, NSManagedObjectContext, NSPersistentStoreCoordinator, NSURL;
+@class NSArray, NSManagedObjectContext, NSEntityDescription, NSString, NSPersistentStoreCoordinator, NSURL, NSManagedObjectModel;
 
 @interface MecabraCoreDataController : NSObject  {
     NSEntityDescription *_entityDescription;
@@ -15,6 +15,7 @@
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSURL *_storeURL;
     NSString *_type;
+    NSArray *_storedElementsForMerge;
 }
 
 @property(readonly) NSEntityDescription * entityDescription;
@@ -26,31 +27,43 @@
 @property(retain) NSURL * storeURL;
 @property(retain) NSString * type;
 @property(retain) NSURL * localURL;
+@property(retain) NSArray * storedElementsForMerge;
 
 
 - (void)setStoreURL:(id)arg1;
 - (void)setManagedObjectModel:(id)arg1;
 - (void)setLocalStoreURL:(id)arg1;
-- (BOOL)shouldSyncDatabase;
 - (void)tearDownDatabase;
 - (id)initWithType:(id)arg1 URL:(id)arg2;
+- (id)storedElementsForMerge;
+- (void)setStoredElementsForMerge:(id)arg1;
+- (id)copyUbiquityTokenInDefaults;
+- (BOOL)shouldSyncDatabase;
 - (void)sendRemoteNotification;
+- (void)databaseDidChangeStore:(id)arg1;
+- (void)databaseSynced:(id)arg1;
 - (id)newPersistentStoreWithURL:(id)arg1 ubiquityContainerIdentifier:(id)arg2 managedObjectModel:(id)arg3;
 - (id)localStoreURL;
 - (id)databaseName;
-- (void)databaseSynced:(id)arg1;
+- (id)ubiquityTokenLookupKey;
+- (void)setUbiquityTokenInDefaults;
 - (id)dictionaryValuesFromManagedObjects:(id)arg1;
 - (id)databasePropertyForKey:(id)arg1;
 - (void)setDatabaseProperty:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 entry:(id)arg3;
 - (void)deleteEntry:(id)arg1;
+- (id)searchResultsWithValueDictionary:(id)arg1 sortDescriptors:(id)arg2;
 - (id)searchResultsWithValueDictionary:(id)arg1;
 - (void)prepareURLForDatabaseFile:(id)arg1;
 - (id)localInfoPlistURL;
 - (BOOL)dictionaryEntryHasAllRequiredKeys:(id)arg1;
 - (id)entityDescriptionForContext:(id)arg1;
-- (id)searchResultsWithValueDictionary:(id)arg1 managedObjectContext:(id)arg2;
+- (id)searchResultsWithValueDictionary:(id)arg1 managedObjectContext:(id)arg2 sortDescriptors:(id)arg3;
+- (void)clearStoredMergeEntries;
+- (id)entriesToMerge;
 - (void)deleteAllMatchingEntries:(id)arg1;
+- (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
+- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
 - (void)setManagedObjectContext:(id)arg1;
 - (id)storeURL;
 - (void)setLocalURL:(id)arg1;

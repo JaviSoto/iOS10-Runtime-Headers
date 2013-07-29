@@ -46,6 +46,8 @@
 @property unsigned int sectionDeltaLengthBits;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)labelLanguages;
 - (void)setHasSectionDeltaLengthBits:(BOOL)arg1;
 - (void)setHasVertexBits:(BOOL)arg1;
@@ -99,8 +101,6 @@
 - (BOOL)hasVertices;
 - (void)setVertices:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)points;
 - (id)labels;
 - (BOOL)isEqual:(id)arg1;

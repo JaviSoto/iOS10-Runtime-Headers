@@ -25,10 +25,10 @@
 @property(readonly) NSString * previewItemTitle;
 
 
+- (id)proxy;
 - (void)resolveWithCompletionBlock:(id)arg1;
 - (id)initWithContentController:(id)arg1 index:(int)arg2;
 - (void)_clearCompletionBlock;
-- (id)proxy;
 - (void)invalidate;
 - (void)dealloc;
 - (id)description;

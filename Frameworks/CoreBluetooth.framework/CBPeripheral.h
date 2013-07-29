@@ -31,6 +31,8 @@
 
 
 - (id)services;
+- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)unpair;
 - (BOOL)isConnectedToSystem;
 - (BOOL)isPaired;
@@ -41,8 +43,6 @@
 - (void)acceptPairing:(BOOL)arg1 ofType:(id)arg2 withPasskey:(id)arg3;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)readValueForDescriptor:(id)arg1;
-- (void)discoverDescriptorsForCharacteristic:(id)arg1;
-- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
 - (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
@@ -86,7 +86,6 @@
 - (void)setOrphan;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
-- (BOOL)isConnected;
 - (void)setDelegate:(id)arg1;
 - (id)name;
 - (void)dealloc;
@@ -100,5 +99,6 @@
 - (struct __CFUUID { }*)UUID;
 - (void)pair;
 - (void)setName:(id)arg1;
+- (BOOL)isConnected;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScreen, NSArray, UIScreenMode, UISoftwareDimmingWindow, NSDictionary;
+@class UIWindow, UIScreenMode, NSMutableArray, UIScreen, UISoftwareDimmingWindow, NSDictionary, NSArray;
 
 @interface UIScreen : NSObject  {
     id _display;
@@ -21,6 +21,9 @@
     int _userInterfaceIdiom;
     NSDictionary *_capabilities;
     int _workspaceCapableScreenType;
+    UIWindow *_screenDisablingWindow;
+    double _startedPausingWindows;
+    NSMutableArray *_pausedWindows;
     struct { 
         unsigned int bitsPerComponent : 4; 
         unsigned int initialized : 1; 
@@ -29,6 +32,7 @@
         unsigned int hasShownWindows : 1; 
         unsigned int canAccessDisplay : 1; 
         unsigned int canAccessDisplayValid : 1; 
+        unsigned int screenUpdatesDisabled : 1; 
     } _screenFlags;
     BOOL _wantsSoftwareDimming;
     UISoftwareDimmingWindow *_softwareDimmingWindow;
@@ -58,11 +62,14 @@
 + (id)_screenWithIntegerDisplayID:(unsigned int)arg1;
 + (void)_videoOutSettingsChanged;
 + (BOOL)_shouldDisableJail;
++ (void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1;
 + (id)_screenWithDisplayID:(id)arg1;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (id)_screenWithDisplayName:(id)arg1;
 + (id)screens;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
++ (void)_endDisableScreenUpdates;
++ (void)_beginDisableScreenUpdatesForSnapshot;
 + (void)_prepareScreensForAppResume;
 + (id)_workspaceCapableScreens;
 + (id)sbs_screenTypes;
@@ -117,14 +124,18 @@
 - (void)_beginObservingBacklightLevelNotifications;
 - (void)_connectScreen;
 - (BOOL)_isExternal;
+- (void)_enableScreenUpdates;
+- (void)_disableScreenUpdates:(BOOL)arg1;
 - (void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1;
 - (id)_displayID;
 - (BOOL)_isWorkspaceCapable;
 - (id)availableModes;
 - (id)initWithDisplay:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1 usingStatusbarHeight:(float)arg2;
 - (id)_capabilityForKey:(id)arg1;
 - (id)mirroredScreen;
 - (id)snapshot;
+- (id)snapshotViewAfterScreenUpdates:(BOOL)arg1;
 - (id)snapshotView;
 - (int)_imageOrientation;
 - (void)_prepareForWindow;
@@ -146,6 +157,7 @@
 - (int)_userInterfaceIdiom;
 - (float)scale;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)_mapkit_display;
 - (id)sbs_snapshotImagePathComponent;
 - (id)sbs_launchImageInfoPlistKeyModifier;
 - (BOOL)sbs_isCloned;

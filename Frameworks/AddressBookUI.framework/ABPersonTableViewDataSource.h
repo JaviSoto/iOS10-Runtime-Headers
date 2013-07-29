@@ -146,8 +146,6 @@
 @property BOOL badgeEmailPropertiesForMailVIP;
 @property(retain) UITableViewCell * partiallySelectedCell;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (BOOL)badgeEmailPropertiesForMailVIP;
@@ -292,7 +290,6 @@
 - (void)notifyDataWasReloaded;
 - (int)indexOfLinkingUISectionWhenEditing:(BOOL)arg1;
 - (void)deleteButtonClicked:(id)arg1;
-- (BOOL)allowsDeletion;
 - (id)_contactSourcesString;
 - (BOOL)shouldShowContactSourcesStringAsMessage;
 - (void)_getPropertyGroup:(id*)arg1 index:(int*)arg2 editableFlag:(BOOL*)arg3 atIndexPath:(id)arg4;
@@ -354,7 +351,6 @@
 - (BOOL)isInFullEditingMode;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
-- (void)setAllowsDeletion:(BOOL)arg1;
 - (id)linkingDelegate;
 - (void)endEditingTransactions;
 - (id)namePropertyGroup:(id)arg1 primaryValueForProperty:(int)arg2;
@@ -364,11 +360,12 @@
 - (void)setAdditionalLabels:(id)arg1;
 - (id)imageDataDelegate;
 - (id)personImageView;
-- (id)actionsDelegate;
 - (void)setPersonHeaderView:(id)arg1;
+- (void)setAllowsDeletion:(BOOL)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
+- (BOOL)allowsDeletion;
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsSharing;
 - (int)primaryProperty;
@@ -377,15 +374,15 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
+- (id)actionsDelegate;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (id)people;
 - (BOOL)canSave;
 - (void)updateRecord;
 - (void)setPeople:(id)arg1;
 - (struct __CFArray { }*)displayedProperties;
 - (void)setDisplayedProperties:(struct __CFArray { }*)arg1;
-- (id)people;
-- (void)setMessage:(id)arg1;
 - (BOOL)isEditing;
 - (BOOL)hasChanges;
 - (id)alternateName;
@@ -396,9 +393,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)tableView;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (BOOL)allowsEditing;
-- (id)tableView;
+- (void)setMessage:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)setEditing:(BOOL)arg1;

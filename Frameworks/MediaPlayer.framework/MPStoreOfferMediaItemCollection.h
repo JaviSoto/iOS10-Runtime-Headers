@@ -28,6 +28,7 @@
 + (id)defaultPropertyValues;
 
 - (BOOL)isCollectionOfferPresentable;
+- (int)countOfItemsByRemovingLocalItems;
 - (BOOL)isCheaperToPurchaseIndividualItems;
 - (BOOL)_hasRestrictedContent;
 - (id)initWithLookupResponseCollectionDictionary:(id)arg1 preferredStoreOfferVariant:(int)arg2 offerMediaItems:(id)arg3 localItemsQuery:(id)arg4;

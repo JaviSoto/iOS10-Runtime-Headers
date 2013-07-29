@@ -18,9 +18,9 @@
 - (id)previewLayer;
 - (void)autoExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setupCameraSession;
-- (void)_changeCameraConfiguration;
 - (void)stopRunning;
 - (void)startRunning;
+- (void)_changeCameraConfiguration;
 - (void)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)dealloc;

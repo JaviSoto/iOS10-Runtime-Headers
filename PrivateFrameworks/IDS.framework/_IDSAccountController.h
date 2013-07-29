@@ -23,7 +23,6 @@
 - (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
 - (void)_loadCachedAccountsWithDictionaries:(id)arg1;
 - (void)_loadCachedAccounts;
-- (void)addAccount:(id)arg1;
 - (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id)arg3;
 - (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id)arg6;
 - (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id)arg5;
@@ -45,10 +44,11 @@
 - (void)enableAccount:(id)arg1;
 - (void)_removeAndDeregisterAccount:(id)arg1;
 - (void)_removeAccount:(id)arg1;
-- (void)removeDelegate:(id)arg1;
+- (void)addAccount:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (id)accounts;
 - (void)_connect;
+- (void)removeDelegate:(id)arg1;
 - (void)dealloc;
 - (id)serviceName;
 

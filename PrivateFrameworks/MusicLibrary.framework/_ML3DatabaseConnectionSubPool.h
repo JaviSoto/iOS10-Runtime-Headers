@@ -12,30 +12,36 @@
     NSMutableSet *_availableConnections;
     NSMutableSet *_busyConnections;
     int _connectionsProfilingLevel;
+    int _willDeleteDatabaseNotifyToken;
+    int _homeSharingCachesClearedNotifyToken;
     BOOL _useReadOnlyConnections;
     BOOL _useDistantConnections;
     NSString *_databasePath;
     unsigned int _maxConcurrentConnections;
+    unsigned int _connectionsJournalingMode;
 }
 
 @property(readonly) NSString * databasePath;
 @property(readonly) unsigned int maxConcurrentConnections;
 @property BOOL useReadOnlyConnections;
 @property BOOL useDistantConnections;
+@property unsigned int connectionsJournalingMode;
 @property int connectionsProfilingLevel;
 
 
 - (BOOL)useDistantConnections;
 - (BOOL)useReadOnlyConnections;
 - (unsigned int)maxConcurrentConnections;
+- (void)_handleDatabaseDeletion;
+- (unsigned int)connectionsJournalingMode;
 - (int)connectionsProfilingLevel;
 - (id)checkoutConnection:(BOOL*)arg1;
 - (void)closeConnections;
+- (void)setConnectionsJournalingMode:(unsigned int)arg1;
 - (void)setUseDistantConnections:(BOOL)arg1;
 - (void)setUseReadOnlyConnections:(BOOL)arg1;
 - (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned int)arg2;
 - (void)checkInConnection:(id)arg1;
-- (BOOL)closeDatabaseConnection:(id)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
 - (id)databasePath;
 - (id)init;

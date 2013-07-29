@@ -9,24 +9,24 @@
     UIColor *_fullWitdhSeparatorColor;
     UIView *_fullWidthSeparatorView;
     UIView *_topSeparatorView;
+    BOOL _isEnabled;
 }
 
 @property BOOL showFullWidthSeparator;
 @property(retain) UIColor * fullWidthSeparatorColor;
 @property(readonly) UIView * topSeparatorView;
+@property BOOL isEnabled;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (BOOL)isEnabled;
 - (void)dealloc;
 - (id)fullWidthSeparatorColor;
 - (BOOL)showFullWidthSeparator;
 - (id)topSeparatorView;
+- (void)setIsEnabled:(BOOL)arg1;
 - (void)setFullWidthSeparatorColor:(id)arg1;
 - (void)setShowFullWidthSeparator:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)isAccessibilityElement;
 
 @end

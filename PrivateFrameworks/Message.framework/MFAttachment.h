@@ -145,7 +145,7 @@
 - (void)setEventID:(id)arg1;
 - (id)contentType;
 - (id)fileAttributes;
-- (id)pass;
 - (BOOL)isPass;
+- (id)pass;
 
 @end

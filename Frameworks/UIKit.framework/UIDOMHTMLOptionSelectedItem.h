@@ -14,12 +14,12 @@
 
 - (void)dealloc;
 - (id)_node;
+- (id)initWithHTMLOptionNode:(id)arg1;
 - (void)unselect;
 - (BOOL)isGroup;
+- (id)node;
 - (void)set_node:(id)arg1;
 - (BOOL)selected;
-- (id)initWithHTMLOptionNode:(id)arg1;
-- (id)node;
 - (void)setSelected:(BOOL)arg1;
 
 @end

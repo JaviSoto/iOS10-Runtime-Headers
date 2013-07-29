@@ -10,8 +10,8 @@
 - (struct CGColor { }*)markerColor;
 - (bool)useSecondaryAxis;
 - (unsigned int)chartType;
-- (float)strokeWidth;
 - (unsigned int)markerType;
+- (float)strokeWidth;
 - (id)values;
 - (float)offset;
 - (struct CGColor { }*)strokeColor;

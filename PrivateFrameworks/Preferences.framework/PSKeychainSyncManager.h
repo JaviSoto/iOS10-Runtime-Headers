@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class PSRootController, KeychainSyncSMSVerificationController, UIAlertView, KeychainSyncAdvancedSecurityCodeController, KeychainSyncSecurityCodeController, KeychainSyncPhoneNumberController, UIViewController, NSString, KeychainSyncDevicePINController, PSSetupController;
+@class PSRootController, KeychainSyncSMSVerificationController, UIAlertView, KeychainSyncAdvancedSecurityCodeController, NSTimer, KeychainSyncSecurityCodeController, KeychainSyncPhoneNumberController, UIViewController, NSString, KeychainSyncDevicePINController, PSSetupController;
 
 @interface PSKeychainSyncManager : NSObject <KeychainSyncViewControllerDelegate> {
     BOOL _joiningCircle;
+    BOOL _joiningCircleAfterRecovery;
     int _circleNotificationToken;
     int _flow;
     UIAlertView *_passwordPrompt;
@@ -27,6 +28,9 @@
     KeychainSyncPhoneNumberController *_phoneNumberController;
     KeychainSyncSMSVerificationController *_smsValidationController;
     UIViewController *_spinningViewController;
+    unsigned int _spinnerCount;
+    NSTimer *_credentialExpirationTimer;
+    BOOL _circleWasReset;
     NSString *_appleIDUsername;
     NSString *_appleIDPassword;
 
@@ -78,6 +82,7 @@
 @property(retain) NSString * securityCodeRecoveryAttempt;
 @property(readonly) NSString * stagedSecurityCode;
 @property(readonly) int stagedSecurityCodeType;
+@property BOOL circleWasReset;
 
 + (id)sharedManager;
 
@@ -89,6 +94,7 @@
 - (id)resetCompletion;
 - (id)changeSecurityCodeCompletion;
 - (void)promptForDevicePasscodeChangeToPasscode:(id)arg1;
+- (void)promptForPasswordIfNeededWithCompletion:(id)arg1;
 - (void)disableKeychainSyncWithCompletion:(id)arg1;
 - (void)showResetAndJoinFlowOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)showEnableFlowWithNavigationController:(id)arg1 completion:(id)arg2;
@@ -104,45 +110,54 @@
 - (void)keychainSyncPhoneNumberController:(id)arg1 didCompleteWithPhoneNumber:(id)arg2 countryInfo:(id)arg3;
 - (id)stagedSecurityCode;
 - (void)joinCircleAndEnableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;
+- (void)promptForPasswordIfCredentialsNotCachedOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)_changeToNewSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4;
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
 - (void)_autoVetSMSValidationWithToken:(id)arg1;
 - (void)setSecurityCodeRecoveryAttempt:(id)arg1;
 - (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
+- (void)_showGenericEnableErrorAlert;
 - (void)_callCompletionWithStatus:(int)arg1 error:(id)arg2;
 - (void)_finishedWithStatus:(int)arg1 error:(id)arg2;
-- (void)_showGenericEnableErrorAlert;
+- (void)joinCircleAfterRecovery:(BOOL)arg1 withCompletion:(id)arg2;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id)arg1;
+- (BOOL)circleWasReset;
 - (void)setStagedSecurityCode:(id)arg1 type:(int)arg2;
-- (BOOL)changeSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4 error:(id*)arg5;
-- (id)appleIDPassword;
-- (id)appleIDUsername;
+- (BOOL)_changeSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4 username:(id)arg5 password:(id)arg6 error:(id*)arg7;
 - (void)handleCircleChangedNotification;
 - (void)setCircleJoinCompletion:(id)arg1;
+- (void)setSettingsSetupController:(id)arg1;
+- (id)appleIDPassword;
+- (id)appleIDUsername;
+- (void)promptForPasswordIfNeededOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)setPasswordPromptControllerHost:(id)arg1;
 - (void)setPasswordPromptCompletion:(id)arg1;
 - (void)setAppleIDUsername:(id)arg1;
 - (void)promptForPasswordOverController:(id)arg1 withCompletion:(id)arg2;
 - (BOOL)_errorRequiresPasswordPrompt:(id)arg1;
 - (void)_showResetFlowOverController:(id)arg1 withEnableBackupText:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)setCircleWasReset:(BOOL)arg1;
+- (void)showResetAcknowledgementIfNeeded;
 - (void)stopNavigationSpinner;
 - (void)startNavigationSpinnerInViewController:(id)arg1;
 - (void)setResetCompletion:(id)arg1;
 - (void)setResetPromptControllerHost:(id)arg1;
-- (void)promptForPasswordIfNeededWithCompletion:(id)arg1;
 - (void)setChangeSecurityCodeCompletion:(id)arg1;
 - (void)showController:(id)arg1;
 - (void)setBuddyNavigationController:(id)arg1;
-- (void)promptForPasswordIfNeededOverController:(id)arg1 withCompletion:(id)arg2;
-- (void)_preSetupCancelledWithDisabledStatus;
+- (void)promptForPasswordIfNeededForWritingOverController:(id)arg1 withCompletion:(id)arg2;
+- (void)_preSetupCancelledWithCurrentStatus;
 - (void)showPinChoiceAlert;
-- (void)setSettingsSetupController:(id)arg1;
+- (void)makeSettingsSetupController;
 - (void)joinCircleWithCompletion:(id)arg1;
+- (void)showNetworkReachabilityError;
+- (void)_cleanupAppleIDCredentials;
 - (void)showRecoveryFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
 - (void)showEnableSyncFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
 - (void)keychainSyncController:(id)arg1 didFinishWithResult:(id)arg2 error:(id)arg3;
 - (BOOL)isRunningInBuddy;
 - (void)keychainSyncControllerCancel:(id)arg1;
+- (id)init;
 - (void)dealloc;
 - (void)_cleanup;
 - (void)setCompletion:(id)arg1;

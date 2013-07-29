@@ -29,6 +29,7 @@
 - (void)_setSubject:(id)arg1;
 - (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)_willPresentAsFormSheet;
 - (id)_embeddedActivityViewController;
 - (void)_setActivityCompletionHandler:(id)arg1;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;

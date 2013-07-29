@@ -19,9 +19,9 @@
 + (struct __CFDictionary { }*)_serverPortToNotificationCenterMap;
 + (id)_serverPortToNotificationCenterMapDispatchQueue;
 
-- (void)runServerOnCurrentThread;
 - (void)postNotificationName:(id)arg1;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
+- (void)runServerOnCurrentThread;
 - (void)stopDeliveringNotifications;
 - (void)startDeliveringNotificationsToMainThread;
 - (void)_notificationServerWasRestarted;

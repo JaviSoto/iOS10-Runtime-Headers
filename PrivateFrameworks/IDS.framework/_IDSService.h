@@ -30,7 +30,7 @@
 - (void)accountController:(id)arg1 accountRemoved:(id)arg2;
 - (void)accountController:(id)arg1 accountAdded:(id)arg2;
 - (void)accountController:(id)arg1 accountsChanged:(id)arg2;
-- (void)connection:(id)arg1 incomingTopLevelMessage:(id)arg2 fromID:(id)arg3;
+- (void)connection:(id)arg1 incomingTopLevelMessage:(id)arg2 fromID:(id)arg3 messageContext:(id)arg4;
 - (void)connection:(id)arg1 incomingMessage:(id)arg2 fromID:(id)arg3;
 - (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(BOOL)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 messageIdentifier:(id)arg2 updatedWithResponseCode:(int)arg3 error:(id)arg4 lastCall:(BOOL)arg5;
@@ -38,10 +38,10 @@
 - (void)connection:(id)arg1 isActiveChanged:(BOOL)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)requestKeepAlive;
-- (id)devices;
-- (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)devices;
 - (id)accounts;
+- (void)removeDelegate:(id)arg1;
 - (void)dealloc;
 
 @end

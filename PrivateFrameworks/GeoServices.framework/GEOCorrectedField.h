@@ -23,6 +23,8 @@
 @property BOOL isMarkedIncorrect;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)objectName;
 - (BOOL)hasObjectName;
 - (void)setObjectName:(id)arg1;
@@ -34,8 +36,6 @@
 - (BOOL)hasCorrectedValue;
 - (void)setCorrectedValue:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

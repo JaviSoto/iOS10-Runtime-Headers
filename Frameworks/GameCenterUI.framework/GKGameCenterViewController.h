@@ -26,6 +26,8 @@
 - (void)setPrivateViewController:(id)arg1;
 - (void)setLeaderboardCategory:(id)arg1;
 - (id)leaderboardCategory;
+- (void)setLeaderboardTimeScope:(int)arg1;
+- (int)leaderboardTimeScope;
 - (BOOL)_remoteControllerIsPresented;
 - (void)setGameCenterDelegate:(id)arg1;
 - (void)_flushVolatileProperties;
@@ -35,8 +37,6 @@
 - (void)setVolatileProperties:(id)arg1;
 - (id)remoteViewController;
 - (void)_setupChildViewController;
-- (void)setLeaderboardTimeScope:(int)arg1;
-- (int)leaderboardTimeScope;
 - (void)notifyDelegateOnWillFinish;
 - (id)gameCenterDelegate;
 - (id)leaderboardIdentifier;
@@ -53,8 +53,8 @@
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)valueForKey:(id)arg1;
 

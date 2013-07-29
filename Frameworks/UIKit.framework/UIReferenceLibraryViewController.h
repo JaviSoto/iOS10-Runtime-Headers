@@ -37,8 +37,6 @@
 + (id)_foregroundColor;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 + (id)_backgroundColor;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)_rotationDecider;
@@ -46,7 +44,8 @@
 - (id)_pressedButtonImage;
 - (id)_defaultButtonImage;
 - (void)_installRequiredElementsOnViewController:(id)arg1;
-- (void)_doneButtonPressed:(id)arg1;
+- (void)pushDownloadManager:(id)arg1;
+- (void)_dismissModalReferenceView:(id)arg1;
 - (void)_searchWikipedia:(id)arg1;
 - (void)_searchWeb:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
@@ -65,11 +64,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)_backgroundColor;
 - (unsigned int)supportedInterfaceOrientations;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
 
 @end

@@ -84,9 +84,9 @@
 - (id)delegate;
 - (void)addChildViewController:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)_canReloadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)item;
 - (void)setView:(id)arg1;

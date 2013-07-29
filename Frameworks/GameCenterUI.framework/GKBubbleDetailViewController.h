@@ -28,7 +28,9 @@
 - (void)setContainerView:(id)arg1;
 - (id)scrollView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)loadView;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)setScrollView:(id)arg1;
 - (id)containerView;
 

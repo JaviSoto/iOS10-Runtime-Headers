@@ -31,20 +31,24 @@
     BOOL _isMixedType;
     unsigned int _recordID;
     unsigned int _replacedBulletinRecordID;
+    unsigned int _originalRecordID;
     NSString *_albumUUID;
     NSDate *_date;
+    NSDate *_originalDate;
     NSDate *_expirationDate;
 }
 
 @property(readonly) long long bulletinType;
 @property unsigned int recordID;
 @property unsigned int replacedBulletinRecordID;
+@property unsigned int originalRecordID;
 @property(readonly) NSString * albumUUID;
 @property(readonly) NSString * mainAssetUUID;
 @property(readonly) NSString * senderEmailAddress;
 @property(readonly) NSString * title;
 @property(readonly) NSString * message;
 @property(readonly) NSDate * date;
+@property(copy) NSDate * originalDate;
 @property(readonly) NSDate * expirationDate;
 @property(readonly) NSString * destinationURLString;
 @property(readonly) BOOL hasThumbnail;
@@ -67,13 +71,17 @@
 - (id)destinationURLString;
 - (id)_localizedCountFormatter;
 - (id)_initWithPhotosAddedBulletin:(id)arg1 mergedWithBulletinDictionary:(id)arg2;
+- (id)originalDate;
 - (id)_initWithLikesCount:(int)arg1 commentDate:(id)arg2 firstCommentGUID:(id)arg3 toAssetWithUUID:(id)arg4 photosBatchID:(id)arg5 mainAssetIsMine:(BOOL)arg6 mainAssetIsVideo:(BOOL)arg7 inAlbumWithTitle:(id)arg8 albumUUID:(id)arg9 assetUUIDs:(id)arg10 placeholderAssetUUIDs:(id)arg11 lowResThumbAssetUUIDs:(id)arg12 senderNames:(id)arg13 forMultipleAsset:(BOOL)arg14 allMultipleAssetIsMine:(BOOL)arg15 isMixedType:(BOOL)arg16;
 - (id)_initWithCommentsCount:(int)arg1 commentDate:(id)arg2 firstCommentGUID:(id)arg3 toAssetWithUUID:(id)arg4 photosBatchID:(id)arg5 mainAssetIsMine:(BOOL)arg6 mainAssetIsVideo:(BOOL)arg7 inAlbumWithTitle:(id)arg8 albumUUID:(id)arg9 assetUUIDs:(id)arg10 placeholderAssetUUIDs:(id)arg11 lowResThumbAssetUUIDs:(id)arg12;
 - (void)setSuppressAlert:(BOOL)arg1;
+- (void)setOriginalDate:(id)arg1;
 - (void)setReplacedBulletinRecordID:(unsigned int)arg1;
 - (id)_initWithPhotosAddedBulletin:(id)arg1 mergedWithBulletin:(id)arg2;
 - (id)bulletinByMergingWithBulletinDictionary:(id)arg1;
 - (BOOL)canMergeWithPersistedBulletins;
+- (void)setOriginalRecordID:(unsigned int)arg1;
+- (unsigned int)originalRecordID;
 - (BOOL)isCommentPiggyBackedOnPhotosAddedBulletin;
 - (id)albumUUID;
 - (long long)bulletinType;

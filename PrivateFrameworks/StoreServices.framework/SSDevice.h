@@ -43,15 +43,16 @@
 + (id)currentDevice;
 
 - (BOOL)isPluggedIn;
+- (int)deviceType;
 - (unsigned long)deviceTypeIdentifier;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)setSoftwareLibraryIdentifier:(id)arg1;
-- (int)deviceType;
 - (id)automaticDownloadKinds;
 - (id)softwareLibraryIdentifier;
 - (id)mediaLibraryIdentifier;
 - (BOOL)isStoreFrontIdentifierTransient;
 - (id)synchedStoreFrontIdentifier;
+- (id)productVersion;
 - (id)productType;
 - (void)_updateBatteryLevelFromService:(unsigned int)arg1;
 - (void)_reloadPluggedInState;
@@ -98,8 +99,8 @@
 - (BOOL)_getDeviceType:(unsigned int*)arg1 error:(id*)arg2;
 - (id)storeFrontIdentifier;
 - (id)legacyUserAgent;
+- (void)setStoreFrontIdentifier:(id)arg1 accountIdentifier:(id)arg2 isTransient:(BOOL)arg3;
 - (BOOL)supportsDeviceCapability:(int)arg1;
-- (id)productVersion;
 - (id)userAgent;
 - (id)init;
 - (void)dealloc;

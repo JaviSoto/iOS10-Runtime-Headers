@@ -57,6 +57,7 @@
 - (void)setRestrictionType:(int)arg1;
 - (BOOL)_addManagedDefaults:(id)arg1;
 - (id)_userSettingsForUser:(id)arg1;
+- (void)setUserName:(id)arg1;
 - (BOOL)_setManagedDefaults:(id)arg1;
 - (id)_managedDefaultsPath;
 - (BOOL)whiteListContainsURL:(id)arg1;
@@ -73,7 +74,6 @@
 - (BOOL)whiteListEnabled;
 - (BOOL)contentFilterOverridesEnabled;
 - (BOOL)contentFilterListsAllowURL:(id)arg1;
-- (void)setUserName:(id)arg1;
 - (void)dealloc;
 - (id)userName;
 

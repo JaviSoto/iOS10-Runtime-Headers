@@ -2,31 +2,23 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class _UIBackdropView, UIView;
+@class UILabel;
 
 @interface TPAudioRouteCell : UITableViewCell  {
     BOOL _isActiveRoute;
-    BOOL _blursBackground;
-    UIView *_effectsView;
-    _UIBackdropView *_backdropView;
+    UILabel *_audioRouteNameLabel;
 }
 
 @property BOOL isActiveRoute;
-@property BOOL blursBackground;
-@property(retain) UIView * effectsView;
-@property(retain) _UIBackdropView * backdropView;
+@property UILabel * audioRouteNameLabel;
 
 
-- (void)setEffectsView:(id)arg1;
+- (void)setAudioRouteNameLabel:(id)arg1;
 - (BOOL)isActiveRoute;
-- (id)effectsView;
+- (id)audioRouteNameLabel;
 - (void)setIsMuteButtonWithImage:(id)arg1;
 - (void)setIsActiveRoute:(BOOL)arg1;
 - (void)dealloc;
-- (void)setBlursBackground:(BOOL)arg1;
-- (BOOL)blursBackground;
-- (id)backdropView;
-- (void)setBackdropView:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 

@@ -12,13 +12,8 @@
 
 - (id)init;
 - (void)dealloc;
-- (void)cacheImage:(id)arg1 named:(id)arg2;
 - (void)cacheImage:(id)arg1 named:(id)arg2 forGroup:(id)arg3;
-- (void)cacheImage:(id)arg1 named:(id)arg2 idiom:(int)arg3 scale:(float)arg4;
 - (id)imageNamed:(id)arg1 forGroup:(id)arg2 withScale:(float)arg3;
-- (id)_groupForIdiom:(int)arg1 scale:(float)arg2;
-- (id)imageNamed:(id)arg1 idiom:(int)arg2 scale:(float)arg3;
 - (BOOL)_canCacheImages;
-- (id)imageNamed:(id)arg1;
 
 @end

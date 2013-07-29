@@ -35,8 +35,8 @@
 - (id)copyright;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)protocolVersion;
 - (id)clientIdentifier;
+- (id)protocolVersion;
 - (id)attributeKeys;
 
 @end

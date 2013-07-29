@@ -57,9 +57,9 @@
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
-- (void)setPageCount:(unsigned int)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)setPageCount:(unsigned int)arg1;
 - (unsigned int)pageCount;
 - (BOOL)isCancelled;
 

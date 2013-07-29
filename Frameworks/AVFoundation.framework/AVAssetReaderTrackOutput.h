@@ -14,12 +14,12 @@
 
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)track;
 - (id)_figAssetReaderExtractionOptions;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (BOOL)_trimsSampleDurations;
-- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)audioTimePitchAlgorithm;
 - (id)_asset;
 - (id)mediaType;

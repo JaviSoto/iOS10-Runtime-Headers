@@ -6,14 +6,8 @@
     int _iconType;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityIdentifier;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

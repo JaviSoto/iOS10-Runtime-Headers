@@ -26,8 +26,6 @@
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)originContext;
 - (id)preferredSendingAddress;
@@ -61,10 +59,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(int)arg1;
 - (int)identifier;
-- (id)displayString;
 - (BOOL)isGroup;
+- (id)displayString;
 - (id)address;
 - (id)children;
-- (id)accessibilityLabel;
 
 @end

@@ -16,7 +16,5 @@
 - (void)dealloc;
 - (void)download;
 - (void)_invalidate;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

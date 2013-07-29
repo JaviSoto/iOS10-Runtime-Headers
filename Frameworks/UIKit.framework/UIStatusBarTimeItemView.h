@@ -8,16 +8,11 @@
     NSString *_timeString;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (int)textStyle;
 - (void)dealloc;
 - (BOOL)cachesImage;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

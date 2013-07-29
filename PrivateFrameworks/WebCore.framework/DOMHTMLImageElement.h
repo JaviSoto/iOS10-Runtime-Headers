@@ -31,7 +31,6 @@
 + (id)mf_edgeToEdgeImageAttachmentStyle;
 + (float)mf_maxPhotoWidth;
 
-- (BOOL)isMap;
 - (void)setHeight:(int)arg1;
 - (void)setWidth:(int)arg1;
 - (int)height;
@@ -44,6 +43,7 @@
 - (void)setUseMap:(id)arg1;
 - (id)useMap;
 - (void)setIsMap:(BOOL)arg1;
+- (BOOL)isMap;
 - (void)setCrossOrigin:(id)arg1;
 - (id)crossOrigin;
 - (void)setLongDesc:(id)arg1;

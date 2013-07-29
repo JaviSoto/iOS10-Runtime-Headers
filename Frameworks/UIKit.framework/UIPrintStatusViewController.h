@@ -21,7 +21,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

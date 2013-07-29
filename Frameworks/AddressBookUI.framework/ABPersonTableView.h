@@ -21,8 +21,6 @@
 @property(retain) UIView * backgroundView;
 @property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTabsLayoutManager:(id)arg1;
 - (id)tabsLayoutManager;
@@ -35,7 +33,5 @@
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
-- (id)_accessibilitySupplementaryHeaderViews;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 
 @end

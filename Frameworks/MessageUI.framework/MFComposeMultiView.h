@@ -15,9 +15,6 @@
 
 @property(getter=isAccountAutoselected) BOOL accountAutoselected;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isAccountAutoselected;
 - (id)placeholderImageSizeLabel;
@@ -32,6 +29,5 @@
 - (void)setAccountDescription:(id)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (BOOL)accessibilityElementsHidden;
 
 @end

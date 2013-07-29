@@ -11,7 +11,6 @@
 
 - (void)dealloc;
 - (id)initWithDefinitionValue:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
+- (void)viewDidLoad;
 
 @end

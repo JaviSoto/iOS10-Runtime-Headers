@@ -12,7 +12,6 @@
 
 + (id)customAttributes;
 
-- (id)cubeData;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;

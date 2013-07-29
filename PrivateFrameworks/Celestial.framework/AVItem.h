@@ -27,8 +27,8 @@
 - (void)stopDownload;
 - (BOOL)setPath:(id)arg1 error:(id*)arg2;
 - (id)initWithError:(id*)arg1;
-- (float)volume;
 - (void)setVolume:(float)arg1;
+- (float)volume;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)attributeForKey:(id)arg1;
 - (id)init;

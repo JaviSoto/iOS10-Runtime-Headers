@@ -40,6 +40,7 @@
 - (id)facebookLikeStatus;
 - (void)setProductPageItem:(id)arg1;
 - (void)setFacebookLikeStatus:(id)arg1;
+- (id)_segmentedControlTitles;
 - (void)_shareButtonAction:(id)arg1;
 - (void)_itemOfferButtonAction:(id)arg1;
 - (void)_setItemState:(id)arg1 animated:(BOOL)arg2;
@@ -63,8 +64,8 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)iconImage;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)item;
 - (void)reloadData;

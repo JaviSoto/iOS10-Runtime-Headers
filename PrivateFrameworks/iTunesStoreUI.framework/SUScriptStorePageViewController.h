@@ -80,7 +80,6 @@
 - (void)setSegmentedControl:(id)arg1;
 - (int)loadingIndicatorStyle;
 - (void)setLoadingIndicatorStyle:(int)arg1;
-- (void)setTimeoutInterval:(id)arg1;
 - (id)attributeKeys;
 - (id)init;
 - (id)userInfo;
@@ -101,6 +100,7 @@
 - (void)setShowsVerticalScrollIndicator:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)rootObject;
+- (void)setTimeoutInterval:(id)arg1;
 - (id)timeoutInterval;
 
 @end

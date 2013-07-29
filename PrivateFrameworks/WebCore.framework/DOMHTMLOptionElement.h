@@ -23,16 +23,16 @@
 - (id)text;
 - (id)label;
 - (void)setDisabled:(BOOL)arg1;
-- (id)form;
-- (BOOL)selected;
 - (BOOL)disabled;
+- (BOOL)selected;
+- (id)form;
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
-- (id)itemTitle;
 - (void)populateCell:(id)arg1;
 - (id)createPickerCell;
 - (id)createSelectedItem;
+- (id)itemTitle;
 
 @end

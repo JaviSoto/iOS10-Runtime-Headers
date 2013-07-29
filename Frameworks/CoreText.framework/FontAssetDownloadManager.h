@@ -29,6 +29,7 @@
 + (id)displayNameForCurrentUser:(id)arg1;
 + (id)enabledKeyboardLanguages;
 + (BOOL)shouldTryServer;
++ (BOOL)shouldIgnoreFontAsset:(id)arg1;
 + (Class)getASAssetQueryClass;
 
 - (void)downloadFontAssets;

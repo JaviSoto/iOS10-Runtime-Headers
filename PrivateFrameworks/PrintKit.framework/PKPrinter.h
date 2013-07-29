@@ -80,6 +80,7 @@
 - (void)setAccessState:(int)arg1;
 - (BOOL)hasIdentifyPrinterOp;
 - (BOOL)isFromMCProfile;
+- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isAdobeRGBSupported;
 - (void)identifySelf;
 - (int)feedOrientation:(id)arg1;
@@ -94,6 +95,8 @@
 - (int)finalizeJob:(int)arg1;
 - (id)printInfoSupported;
 - (id)availableRollPapersPreferBorderless:(BOOL)arg1;
+- (id)rollReadyPaperListForDocumentWithContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)rollReadyPaperListForPhotoWithContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)createMediaReadyFromAttrs:(struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; }*)arg1;
 - (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; }*)getPrinterAttributes;
 - (BOOL)hasMatchingLoadedRoll:(id)arg1;
@@ -131,7 +134,7 @@
 - (int)kind;
 - (void)cancelUnlock;
 - (id)paperListForDuplexMode:(id)arg1;
-- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1 forPhoto:(BOOL)arg2;
 - (BOOL)isPaperReady:(id)arg1;
 - (BOOL)knowsReadyPaperList;
 - (BOOL)hasPrintInfoSupported;

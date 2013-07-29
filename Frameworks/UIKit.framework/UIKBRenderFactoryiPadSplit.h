@@ -12,9 +12,15 @@
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
+- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
+- (float)skinnyKeyThreshold;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
+- (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;

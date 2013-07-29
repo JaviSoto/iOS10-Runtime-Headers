@@ -23,7 +23,7 @@
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
 - (int)pid;
-- (unsigned int)forwardXPCObject:(id)arg1;
+- (unsigned int)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
 - (void)_cleanupMachBitsCanPost:(BOOL)arg1;
 - (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(BOOL)arg4;
 - (void)setPortName:(id)arg1;

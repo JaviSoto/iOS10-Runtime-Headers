@@ -12,13 +12,11 @@
 
 @property(retain) TPIncomingCallOptionsView * optionsView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (void)disableAndScrollToDefaultOffsetSuppressBarChanges:(BOOL)arg1 completion:(id)arg2;
 - (void)setupAndAddToView:(id)arg1;
 - (void)setOptionsView:(id)arg1;
 - (id)optionsView;
-- (void)disableAndScrollToDefaultOffsetSuppressBarChanges:(BOOL)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

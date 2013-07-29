@@ -41,9 +41,9 @@
 - (id)delegate;
 - (void)cancel;
 - (BOOL)hidesBottomBarWhenPushed;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (int)modalPresentationStyle;
 - (unsigned int)supportedInterfaceOrientations;

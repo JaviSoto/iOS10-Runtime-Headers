@@ -6,9 +6,6 @@
 }
 
 + (id)copyDefaultContext;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)_accessibilityVideoIconString;
 
 @end

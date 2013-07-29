@@ -28,7 +28,6 @@
     UIView *_headerView;
     UIKBCandidateCollectionView *_secondaryCandidatesView;
     float _groupBarWidth;
-    unsigned int _previousInlineTextLength;
 }
 
 @property(readonly) UIKeyboardCandidateGridCollectionView * collectionView;
@@ -51,11 +50,7 @@
 @property BOOL showsExtensionCandidates;
 @property BOOL supportsNumberKeySelection;
 @property BOOL secondaryCandidatesViewIsCurrent;
-@property unsigned int previousInlineTextLength;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)candidateSet;
 - (id)keyboardBehaviors;
@@ -74,10 +69,9 @@
 - (struct CGSize { float x1; float x2; })rowSizeForGridLayout;
 - (void)setShowsExtensionCandidates:(BOOL)arg1;
 - (BOOL)alwaysShowExtensionCandidates;
+- (unsigned int)rowIndexForCellAtIndexPath:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
-- (void)setPreviousInlineTextLength:(unsigned int)arg1;
-- (unsigned int)previousInlineTextLength;
 - (BOOL)showHiddenCandidatesOnly;
 - (id)candidateAtIndexPath:(id)arg1;
 - (void)stepOneLine:(BOOL)arg1;
@@ -129,8 +123,12 @@
 - (void)candidatesDidChange;
 - (BOOL)hasPreviousPage;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
+- (unsigned int)selectedSortIndex;
+- (id)statisticsIdentifier;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
+- (void)showPreviousRow;
+- (void)showNextRow;
 - (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
@@ -151,6 +149,5 @@
 - (float)rowHeight;
 - (void)setRowHeight:(float)arg1;
 - (void)reloadData;
-- (void)_axPostChange;
 
 @end

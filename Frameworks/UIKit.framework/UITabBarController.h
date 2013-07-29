@@ -49,8 +49,6 @@
 + (Class)_moreNavigationControllerClass;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)becomeFirstResponder;
 - (void)setDelegate:(id)arg1;
@@ -65,6 +63,7 @@
 - (BOOL)showsEditButtonOnLeft;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
 - (int)_tabBarPosition;
+- (void)hideBarWithTransition:(int)arg1;
 - (void)beginCustomizingTabBar:(id)arg1;
 - (void)setTabBar:(id)arg1;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
@@ -94,6 +93,7 @@
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
 - (void)_tabBarItemClicked:(id)arg1;
 - (id)moreNavigationController;
+- (void)_showBarWithTransition:(int)arg1 isExplicit:(BOOL)arg2;
 - (id)customizableViewControllers;
 - (void)_setTabBarPosition:(int)arg1;
 - (void)_rebuildTabBarItemsAnimated:(BOOL)arg1;
@@ -112,7 +112,7 @@
 - (void)__viewWillLayoutSubviews;
 - (void)setViewControllers:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
-- (void)hideBarWithTransition:(int)arg1;
+- (void)_hideBarWithTransition:(int)arg1 isExplicit:(BOOL)arg2;
 - (id)_selectedViewControllerInTabBar;
 - (id)_animator;
 - (void)_layoutViewController:(id)arg1;
@@ -145,6 +145,7 @@
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
@@ -153,11 +154,10 @@
 - (BOOL)_shouldPersistViewWhenCoding;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)_isPresentationContextByDefault;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)_setAccessoryView:(id)arg1;
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)_setAccessoryView:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (id)_accessoryView;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
@@ -179,5 +179,6 @@
 - (void)_gkResetContents;
 - (void)_gkForceNextContentUpdate;
 - (id)selectedNavigationController;
+- (BOOL)pu_isTabBarVisible;
 
 @end

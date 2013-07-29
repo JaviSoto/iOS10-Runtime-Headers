@@ -20,10 +20,10 @@
 @property(retain) SKUIClientContext * clientContext;
 
 
-- (int)features;
-- (void)setFeatures:(int)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (void)setFeatures:(int)arg1;
+- (int)features;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setTitle:(id)arg1;

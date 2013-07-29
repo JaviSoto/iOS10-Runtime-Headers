@@ -30,12 +30,12 @@
 + (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
 + (id)alloc;
 
+- (void)setMaxConcurrentMessages:(unsigned int)arg1;
+- (int)maxMessageSize;
 - (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (BOOL)retryInAirplaneMode;
-- (void)setMaxConcurrentMessages:(unsigned int)arg1;
 - (unsigned int)maxConcurrentMessages;
 - (void)_signMessage:(id)arg1 useDataSignatures:(BOOL)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
-- (int)maxMessageSize;
 - (void)_setRetryTimer:(double)arg1;
 - (void)cancelMessage:(id)arg1;
 - (BOOL)hasQueuedItems;
@@ -47,6 +47,7 @@
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (id)queuedMessages;
 - (void)_clearRetryTimer;
+- (void)networkStateChanged;
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;
 - (id)userAgent;

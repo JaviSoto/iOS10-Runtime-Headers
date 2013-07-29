@@ -35,6 +35,7 @@
 - (void)setIndexInCollection:(int)arg1;
 - (int)indexInCollection;
 - (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)viewDidDisappear:(BOOL)arg1;

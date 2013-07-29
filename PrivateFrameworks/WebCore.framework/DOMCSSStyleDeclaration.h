@@ -14,10 +14,6 @@
 @property(readonly) DOMCSSRule * parentRule;
 
 
-- (void)setPitch:(id)arg1;
-- (id)fontStyle;
-- (void)setContent:(id)arg1;
-- (id)volume;
 - (void)setVisibility:(id)arg1;
 - (id)visibility;
 - (void)setBackgroundColor:(id)arg1;
@@ -42,6 +38,7 @@
 - (void)setWhiteSpace:(id)arg1;
 - (id)whiteSpace;
 - (void)setVolume:(id)arg1;
+- (id)volume;
 - (void)setVoiceFamily:(id)arg1;
 - (id)voiceFamily;
 - (void)setVerticalAlign:(id)arg1;
@@ -81,6 +78,7 @@
 - (id)playDuring;
 - (void)setPitchRange:(id)arg1;
 - (id)pitchRange;
+- (void)setPitch:(id)arg1;
 - (id)pitch;
 - (void)setPauseBefore:(id)arg1;
 - (id)pauseBefore;
@@ -136,6 +134,7 @@
 - (void)setFontVariant:(id)arg1;
 - (id)fontVariant;
 - (void)setFontStyle:(id)arg1;
+- (id)fontStyle;
 - (void)setFontStretch:(id)arg1;
 - (id)fontStretch;
 - (void)_setFontSizeDelta:(id)arg1;
@@ -161,6 +160,7 @@
 - (id)counterReset;
 - (void)setCounterIncrement:(id)arg1;
 - (id)counterIncrement;
+- (void)setContent:(id)arg1;
 - (void)setClip:(id)arg1;
 - (void)setClear:(id)arg1;
 - (void)setCaptionSide:(id)arg1;
@@ -243,12 +243,13 @@
 - (void)setZIndex:(id)arg1;
 - (id)zIndex;
 - (void)setLeft:(id)arg1;
-- (id)paddingRight;
 - (id)paddingBottom;
 - (void)setCursor:(id)arg1;
 - (void)setPaddingRight:(id)arg1;
 - (void)setPaddingBottom:(id)arg1;
 - (void)setPage:(id)arg1;
+- (id)unicodeBidi;
+- (id)paddingRight;
 - (id)paddingLeft;
 - (void)setPaddingLeft:(id)arg1;
 - (void)setPaddingTop:(id)arg1;
@@ -257,7 +258,6 @@
 - (id)background;
 - (id)item:(unsigned int)arg1;
 - (id)cssText;
-- (id)unicodeBidi;
 - (void)setBorderStyle:(id)arg1;
 - (void)setFontSize:(id)arg1;
 - (void)setColor:(id)arg1;

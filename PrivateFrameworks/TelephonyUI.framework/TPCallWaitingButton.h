@@ -9,6 +9,7 @@
 + (float)yWindowOffsetForCallWaitingLayoutView;
 
 - (id)initWithCustomTitle:(id)arg1;
+- (id)initWithCustomTitle:(id)arg1 subtitle:(id)arg2;
 - (id)initWithType:(int)arg1;
 
 @end

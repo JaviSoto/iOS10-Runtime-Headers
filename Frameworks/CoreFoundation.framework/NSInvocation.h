@@ -19,16 +19,18 @@
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)_gkInvocationWithBlock:(id)arg1;
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(char *)arg3;
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)invocationWithBlock:(id)arg1;
 + (void)executeBlock:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 
-- (void)invokeUsingIMP:(int (*)())arg1;
 - (void)setReturnValue:(void*)arg1;
 - (id)init;
 - (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)())arg1;
 - (BOOL)argumentsRetained;
 - (void)invoke;
 - (void)setArgument:(void*)arg1 atIndex:(int)arg2;

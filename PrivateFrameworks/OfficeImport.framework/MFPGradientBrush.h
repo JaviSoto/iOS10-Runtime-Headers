@@ -30,9 +30,9 @@
 - (id)colorAtPosition:(float)arg1;
 - (void)fillPath:(id)arg1;
 - (void)createPhoneBrush;
-- (void)setWrapMode:(int)arg1;
 - (void)setColorBlend:(id)arg1;
 - (void)setBlend:(id)arg1;
+- (void)setWrapMode:(int)arg1;
 - (id)endColor;
 - (id)startColor;
 - (id)color;

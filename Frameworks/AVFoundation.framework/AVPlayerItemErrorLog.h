@@ -11,11 +11,11 @@
 @property(readonly) NSArray * events;
 
 
-- (id)_errorLogArray;
 - (id)events;
 - (unsigned int)extendedLogDataStringEncoding;
 - (id)extendedLogData;
 - (id)initWithLogArray:(id)arg1;
+- (id)_errorLogArray;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;

@@ -11,9 +11,9 @@
 @property BOOL suppressesPlayerRendering;
 
 
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForHostTime:(double)arg1;
 - (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForMachAbsoluteTime:(long long)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForHostTime:(double)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_itemTimeForHostTimeAsCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_detachFromPlayerItem;
 - (void)_attachToPlayerItem:(id)arg1;

@@ -16,8 +16,6 @@
     BOOL _clearCurrentPrinter;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
@@ -30,10 +28,10 @@
 - (void)stopPrinterBrowser;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;

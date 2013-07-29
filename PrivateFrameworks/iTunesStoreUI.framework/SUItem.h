@@ -83,6 +83,7 @@
 @property(readonly) NSString * itemTypeString;
 
 
+- (id)tellAFriendSubject;
 - (void)setUnmodifiedTitle:(id)arg1;
 - (id)storeOffers;
 - (void)setSecondaryTitle:(id)arg1;
@@ -148,7 +149,6 @@
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)tweetURL;
 - (id)tweetInitialText;
-- (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
 - (id)relatedItemsForRelationType:(id)arg1;
@@ -174,9 +174,9 @@
 - (BOOL)isInstalled;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)bundleIdentifier;
 - (void)_reloadProperties;
 - (id)valueForProperty:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)bundleIdentifier;
 
 @end

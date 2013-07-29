@@ -16,13 +16,13 @@
 @property struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } pixel;
 
 
-- (void)setPixel:(struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })arg1;
-- (struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })pixel;
-- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (Class)responseClass;
 - (void)writeTo:(id)arg1;
 - (unsigned int)requestTypeCode;
+- (void)setPixel:(struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })arg1;
+- (struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })pixel;
+- (void)copyTo:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -11,7 +11,7 @@
 @property(readonly) NSString * property;
 
 
-- (id)initForProperty:(id)arg1;
+- (id)initForContact:(id)arg1 property:(id)arg2;
 - (id)property;
 - (void)dealloc;
 - (void)viewWillAppear:(BOOL)arg1;

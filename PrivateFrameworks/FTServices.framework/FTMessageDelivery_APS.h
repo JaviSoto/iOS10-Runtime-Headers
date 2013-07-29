@@ -21,6 +21,7 @@
 
 + (id)sharedInstance;
 
+- (int)maxMessageSize;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
@@ -57,7 +58,6 @@
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (void)_dequeueIfNeeded;
 - (void)_serverBagLoaded:(id)arg1;
-- (int)maxMessageSize;
 - (void)cancelMessage:(id)arg1;
 - (BOOL)busy;
 - (id)allMessages;

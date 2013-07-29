@@ -42,6 +42,12 @@
     id _reserved2;
 }
 
+@property(readonly) NSString * sf_publishingKey;
+@property(readonly) NSString * sf_bundleID;
+@property(readonly) NSString * sf_sessionID;
+@property(readonly) NSString * sf_personRealName;
+@property(readonly) NSString * sf_error;
+@property int sf_transferState;
 @property unsigned int installState;
 @property unsigned int installPhase;
 @property long long totalUnitCount;
@@ -62,14 +68,14 @@
 + (void)_removeSubscriber:(id)arg1;
 + (id)_addSubscriberForCategory:(id)arg1 usingPublishingHandler:(id)arg2;
 + (id)_subscriberInterface;
++ (id)addSubscriberForFileURL:(id)arg1 usingBlock:(id)arg2;
 + (id)_addGeneralSubscriberUsingBlock:(id)arg1;
 + (id)_addSubscriberForFileURL:(id)arg1 withPublishingHandler:(id)arg2;
 + (id)keyPathsForValuesAffectingFractionCompleted;
 + (id)keyPathsForValuesAffectingLocalizedAdditionalDescription;
 + (id)keyPathsForValuesAffectingLocalizedDescription;
-+ (id)addSubscriberForFileURL:(id)arg1 withPublishingHandler:(id)arg2;
 + (void)removeSubscriber:(id)arg1;
-+ (id)addSubscriberForFileURL:(id)arg1 usingBlock:(id)arg2;
++ (id)addSubscriberForFileURL:(id)arg1 withPublishingHandler:(id)arg2;
 + (id)_publisherInterface;
 + (id)_registrarInterface;
 + (id)progressWithTotalUnitCount:(long long)arg1;
@@ -80,8 +86,9 @@
 + (id)childProgressForParent:(id)arg1 andPhase:(unsigned int)arg2;
 + (id)childProgressForBundleID:(id)arg1 andPhase:(unsigned int)arg2;
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned int)arg2;
++ (id)sf_transferStateAsString:(int)arg1;
++ (id)sf_publishingKeyForApp:(id)arg1 sessionID:(id)arg2;
 
-- (BOOL)isPaused;
 - (id)init;
 - (id)userInfo;
 - (id)localizedDescription;
@@ -116,6 +123,7 @@
 - (BOOL)isIndeterminate;
 - (id)pausingHandler;
 - (id)cancellationHandler;
+- (BOOL)isPaused;
 - (id)localizedAdditionalDescription;
 - (void)setLocalizedAdditionalDescription:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
@@ -134,8 +142,8 @@
 - (void)_unblockDisconnecting;
 - (void)_pause;
 - (void)_cancel;
-- (double)_fractionCompletedUsingValuesFinder:(id)arg1;
 - (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (double)_fractionCompletedUsingValuesFinder:(id)arg1;
 - (void)_getValueUsingBlock:(id)arg1;
 - (void)__setValueForKey:(id)arg1 usingBlock:(id)arg2;
 - (void)_notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;
@@ -159,5 +167,16 @@
 - (void)setInstallState:(unsigned int)arg1;
 - (id)description;
 - (void)resume;
+- (void)sf_failedWithError:(id)arg1;
+- (id)sf_initWithFileURL:(id)arg1;
+- (id)sf_personRealName;
+- (id)sf_publishingKey;
+- (id)sf_initWithAppBundle:(id)arg1 sessionID:(id)arg2 andPersonRealName:(id)arg3;
+- (id)sf_sessionID;
+- (id)sf_bundleID;
+- (void)setSf_transferState:(int)arg1;
+- (id)sf_error;
+- (int)sf_transferState;
+- (id)description;
 
 @end

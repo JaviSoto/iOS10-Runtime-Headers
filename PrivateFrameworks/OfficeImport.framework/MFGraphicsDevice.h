@@ -50,7 +50,6 @@
 - (int)description:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getCanvas;
 - (void)setColorMap:(id)arg1 fillMap:(id)arg2;
-- (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)selectClipRegion:(unsigned int)arg1 :(int)arg2;
@@ -111,6 +110,7 @@
 - (int)setTextCharExtra:(int)arg1;
 - (int)setTextJustification:(int)arg1 :(int)arg2;
 - (int)setTextColour:(id)arg1;
+- (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)deleteObject:(int)arg1;
 - (int)setMiterLimit:(double)arg1;
 - (void)done;

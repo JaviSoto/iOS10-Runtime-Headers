@@ -56,10 +56,10 @@
 - (void)_tearDownAnimation;
 - (void)startAnimating;
 - (void)stopAnimating;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setFont:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeToFit;
 - (id)_automationID;
-- (void)setText:(id)arg1;
 
 @end

@@ -53,7 +53,7 @@
 + (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (BOOL)usingTypeAndTalk;
 + (BOOL)isTextViewOnStarkScreen:(id)arg1;
-+ (void)logCorrectionStatistics;
++ (void)logCorrectionStatisticsForDelegate:(id)arg1;
 + (void)enableGestureHandlerIfNecessary;
 + (void)disableGestureHandler;
 + (BOOL)shouldEnableGestureHandler;
@@ -88,10 +88,7 @@
 + (id)serializedDictationPhrases:(id)arg1;
 + (id)activeInstance;
 + (id)sharedInstance;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
 - (id)language;
 - (id)init;
 - (void)dealloc;
@@ -106,9 +103,9 @@
 - (void)dictationConnectionSpeechRecordingDidBegin:(id)arg1;
 - (void)dictationConnectionSpeechRecordingWillBegin:(id)arg1;
 - (void)dictationConnection:(id)arg1 didHypothesizePhrases:(id)arg2 languageModel:(id)arg3;
+- (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
 - (void)restartDictationForTypeAndTalk;
 - (void)dismissDictationView:(id)arg1;
-- (void)releaseConnection;
 - (void)errorAnimationDidFinish;
 - (float)audioLevel;
 - (void)setHasPreheated:(BOOL)arg1;
@@ -143,6 +140,7 @@
 - (id)fieldIdentifierInputDelegate:(id)arg1;
 - (id)supportedDictationLanguages:(id)arg1;
 - (BOOL)wasDisabledDueToTelephonyActivity;
+- (void)releaseConnection;
 - (BOOL)_shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
 - (BOOL)_shouldDeleteBackwardInInputDelegate:(id)arg1;
 - (void)setDiscardNextHypothesis:(BOOL)arg1;

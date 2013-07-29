@@ -13,9 +13,6 @@
 @property(retain) NSArray * buttons;
 @property float buttonBackgroundAlpha;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (float)buttonBackgroundAlpha;
 - (void)replaceButton:(id)arg1 atIndex:(unsigned int)arg2;
@@ -25,10 +22,10 @@
 - (float)_backgroundAlphaOfButton:(id)arg1;
 - (void)_layoutGrid;
 - (void)_addButton:(id)arg1;
-- (void)buttonLongPressed:(id)arg1;
 - (BOOL)numberButtonsEnabled;
 - (id)initWithButtons:(id)arg1;
 - (void)setNumberButtonsEnabled:(BOOL)arg1;
+- (void)buttonLongPressed:(id)arg1;
 - (void)setButtonBackgroundAlpha:(float)arg1;
 - (void)setButtons:(id)arg1;
 - (void)buttonUp:(id)arg1;
@@ -37,9 +34,5 @@
 - (id)buttons;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)buttonTapped:(id)arg1;
-- (BOOL)_accessibilityProvidesScannerGroupElements;
-- (id)_accessibilityScannerGroupElements;
-- (BOOL)_accessibilityIsScannerGroup;
-- (int)_accessibilityScannerGroupTraits;
 
 @end

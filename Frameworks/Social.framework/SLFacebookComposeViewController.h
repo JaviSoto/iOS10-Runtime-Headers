@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class SLFacebookAlbumManager, SLSheetAction, SLFacebookPost, SLFacebookPlaceManager, SLFacebookSession, ACAccount, SLSheetPlaceViewController, ACAccountStore, UIViewController<SLFacebookAudienceViewController>, SLFacebookPostPrivacyManager, ALAssetsLibrary, SLFacebookAlbumChooserViewController;
+@class SLFacebookAlbumManager, SLSheetAction, SLFacebookPost, SLFacebookPlaceManager, SLFacebookSession, ACAccount, SLSheetPlaceViewController, ACAccountStore, SLFacebookVideoOptionsViewController, UIViewController<SLFacebookAudienceViewController>, SLVideoQualityOption, SLFacebookPostPrivacyManager, ALAssetsLibrary, SLFacebookAlbumChooserViewController;
 
-@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate> {
+@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate> {
     BOOL _wasPresented;
     BOOL _hasAccessToAccount;
     BOOL _hasCheckedAccess;
@@ -18,6 +18,7 @@
     SLSheetPlaceViewController *_placeViewController;
     UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
     SLFacebookAlbumChooserViewController *_albumChooserViewController;
+    SLFacebookVideoOptionsViewController *_videoOptionsViewController;
     SLFacebookPost *_post;
     SLFacebookPostPrivacyManager *_postPrivacyManager;
     SLFacebookPlaceManager *_placeManager;
@@ -26,10 +27,13 @@
     SLSheetAction *_privacySheetAction;
     SLSheetAction *_albumSheetAction;
     SLSheetAction *_placeSheetAction;
+    SLSheetAction *_videoOptionsAction;
+    SLVideoQualityOption *_selectedVideoQualityOption;
     struct { 
         unsigned int showAlbumAction : 1; 
         unsigned int showPrivacyAction : 1; 
         unsigned int showPlaceAction : 1; 
+        unsigned int showVideoDetailAction : 1; 
     } _actionFlags;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -44,44 +48,51 @@
 
 + (id)serviceBundle;
 
+- (void)sheetPresentationAnimationDidFinish;
 - (void)callCompletionHandlerWithResult:(int)arg1;
 - (void)setupCommonUI;
 - (BOOL)canPost;
-- (BOOL)validateText:(id)arg1;
 - (void)_updateAudienceButtonForPrivacySettingType:(int)arg1 name:(id)arg2;
 - (id)sheetActions;
+- (void)_presentNoAccountsAlert;
 - (BOOL)hasAccountAccess;
+- (id)_videoQualityOption;
 - (void)_setPlace:(id)arg1;
 - (BOOL)_isLocationAuthorizationDenied;
+- (void)_setVideoSizeOptionIdentifier:(id)arg1;
+- (id)_videoOptionIdentifer;
 - (void)createPreviewIfNeeded;
 - (void)handleImagePostWithURL;
 - (void)_handlePostPrivacyResultWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)_presentNoAccountsAlert;
 - (void)_presentFacebookDisabledAlert;
 - (id)_privacySheetAction;
 - (id)_placeSheetAction;
 - (id)_albumSheetAction;
+- (id)_videoOptionsAction;
+- (void)_presentVideoOptionsViewController;
 - (void)_presentAlbumViewController;
 - (void)_presentPlaceViewController;
 - (void)_presentAudienceViewController;
 - (id)privilegedAccount;
 - (void)audienceViewController:(id)arg1 didSelectPostPrivacySetting:(id)arg2;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
+- (void)videoOptionsViewController:(id)arg1 didSelectVideoQualityOption:(id)arg2;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
 - (id)albumManager;
 - (void)albumChooserViewController:(id)arg1 didSelectAlbum:(id)arg2;
+- (BOOL)validateText:(id)arg1;
 - (id)accountStore;
 - (void)setAccountStore:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (void)setCompletionHandler:(id)arg1;
 - (void)send;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)completionHandler;
 - (void)didReceiveMemoryWarning;

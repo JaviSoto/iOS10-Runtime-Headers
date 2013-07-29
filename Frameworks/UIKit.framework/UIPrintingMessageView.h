@@ -10,8 +10,8 @@
 }
 
 
-- (void)setMessage:(id)arg1;
 - (void)dealloc;
 - (id)initInView:(id)arg1 title:(id)arg2;
+- (void)setMessage:(id)arg1;
 
 @end

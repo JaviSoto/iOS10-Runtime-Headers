@@ -27,12 +27,13 @@
 - (void)setContainerState:(int)arg1;
 - (void)checkStoresAndContainer:(id)arg1;
 - (void)scheduleCheckBlock:(id)arg1;
-- (void)setContainerIdentifier:(id)arg1;
+- (void)setContainerIdentifier:(id)arg1 transitionType:(unsigned int)arg2;
 - (void)setMonitorState:(int)arg1;
 - (void)ubiquityIdentityChanged:(id)arg1;
-- (void)didChangeContainerIdentifier;
+- (void)_applicationResumed:(id)arg1;
+- (void)didChangeContainerIdentifier:(unsigned int)arg1;
 - (void)containerDeleteDetected:(id)arg1;
-- (void)willChangeContainerIdentifier;
+- (void)willChangeContainerIdentifier:(unsigned int)arg1;
 - (void)didChangeMonitorState;
 - (void)willChangeMonitorState;
 - (void)didChangeContainerState;
@@ -43,7 +44,6 @@
 - (int)containerState;
 - (id)initWithProcessingQueue:(id)arg1 localPeerID:(id)arg2 storeName:(id)arg3 andUbiquityRootLocation:(id)arg4;
 - (void)stopMonitor;
-- (void)_applicationResumed:(id)arg1;
 - (BOOL)startMonitor:(id*)arg1;
 - (id)init;
 - (void)dealloc;

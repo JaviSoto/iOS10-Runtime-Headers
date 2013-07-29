@@ -24,11 +24,11 @@
 - (void)stopUsingDevice;
 - (BOOL)startUsingDevice:(id*)arg1;
 - (id)devicePropertiesDictionary;
-- (BOOL)isConnected;
 - (id)uniqueID;
 - (id)init;
 - (id)localizedName;
 - (void)dealloc;
 - (id)initWithProperties:(id)arg1;
+- (BOOL)isConnected;
 
 @end

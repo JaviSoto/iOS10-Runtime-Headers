@@ -39,14 +39,14 @@
 - (void)setProxyPassword:(id)arg1;
 - (void)setProxyUsername:(id)arg1;
 - (void)setProxyServerPort:(id)arg1;
-- (void)setProxyServer:(id)arg1;
 - (BOOL)proxyPACFallbackAllowed;
 - (id)proxyPACURLString;
 - (id)proxyPassword;
 - (id)proxyUsername;
 - (id)proxyServerPort;
-- (id)proxyServer;
 - (void)setProxyType:(int)arg1;
+- (void)setProxyServer:(id)arg1;
+- (id)proxyServer;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)subtitle1Description;

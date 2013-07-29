@@ -17,8 +17,8 @@
 @property(readonly) unsigned long long availableFileSize;
 @property(readonly) unsigned long long downloadToken;
 
-+ (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
++ (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 
 - (void)_primeCacheOnDispatchQueue;
 - (id)_figPlaybackItemNotificationNames;

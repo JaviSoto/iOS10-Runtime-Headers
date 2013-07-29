@@ -5,10 +5,7 @@
 @interface UIInputSwitcherTableCell : UITableViewCell  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

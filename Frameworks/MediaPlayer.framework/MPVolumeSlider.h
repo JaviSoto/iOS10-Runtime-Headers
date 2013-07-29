@@ -25,9 +25,6 @@
 @property(setter=_setIsOffScreen:) BOOL _isOffScreen;
 @property(readonly) UIView * _newVolumeWarningView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)volumeWarningTrackImage;
 - (BOOL)_isOffScreen;
@@ -79,9 +76,5 @@
 - (void)setAlpha:(float)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
-- (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
-- (id)accessibilityLabel;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)updateVolumeValue;
 
 @end

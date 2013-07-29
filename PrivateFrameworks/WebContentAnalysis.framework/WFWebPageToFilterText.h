@@ -6,10 +6,10 @@
 }
 
 
+- (id)URLFuzzyForFilter;
 - (BOOL)selfRestricted;
 - (BOOL)isWorthAnalyzingWithEvidence:(int*)arg1 message:(id*)arg2;
 - (id)URLFuzzyWithWordLength:(int)arg1;
-- (id)URLFuzzyForFilter;
 - (id)rawPlainText;
 
 @end

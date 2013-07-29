@@ -64,11 +64,11 @@
 - (void)setOutputSampleRate:(float)arg1;
 - (void)setOutputBitsPerChannel:(unsigned long)arg1;
 - (void)setOutputFormatFlags:(unsigned long)arg1;
-- (void)setOutputFormat:(unsigned long)arg1;
 - (void)setInputPropertiesFromASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg1;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;
+- (void)setOutputFormat:(unsigned long)arg1;
 - (unsigned long)outputFormat;
 
 @end

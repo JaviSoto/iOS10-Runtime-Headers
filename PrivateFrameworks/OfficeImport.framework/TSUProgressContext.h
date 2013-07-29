@@ -23,11 +23,11 @@
 - (void)advanceProgress:(double)arg1;
 - (void)endStage;
 - (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
-- (void)setMessage:(id)arg1;
 - (void)reset;
 - (double)currentPosition;
 - (id)init;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (void)setProgress:(double)arg1;
 
 @end

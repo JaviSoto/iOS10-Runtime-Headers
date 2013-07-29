@@ -10,15 +10,16 @@
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
     BOOL _customBackgroundImageChangedToOrFromNil;
     UIImageView *_imageView;
+    unsigned int _abbreviatedTitleIndex;
 }
 
+@property(setter=_setAbbreviatedTitleIndex:) unsigned int _abbreviatedTitleIndex;
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)title;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)image;
@@ -64,6 +65,8 @@
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_appearanceStorage;
 - (void)setPressed:(BOOL)arg1;
+- (void)_setAbbreviatedTitleIndex:(unsigned int)arg1;
+- (unsigned int)_abbreviatedTitleIndex;
 - (id)_scriptingInfo;
 - (void)tintColorDidChange;
 - (Class)_appearanceGuideClass;
@@ -71,7 +74,5 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
 
 @end

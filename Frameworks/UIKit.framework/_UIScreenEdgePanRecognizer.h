@@ -67,6 +67,7 @@
 - (void)setRequiresFlatThumb:(BOOL)arg1;
 - (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)incorporateTouchSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
+- (BOOL)isRequiringLongPress;
 - (void)_createOrDestoryAnalysisWindowIfNeeded;
 - (void)_idleTimerElapsed:(id)arg1;
 - (void)_longPressTimerElapsed:(id)arg1;
@@ -78,6 +79,5 @@
 - (void)setTargetEdges:(unsigned int)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (int)_type;
-- (BOOL)isRequiringLongPress;
 
 @end

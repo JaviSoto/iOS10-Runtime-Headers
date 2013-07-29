@@ -17,6 +17,10 @@
 - (struct CGPoint { float x1; float x2; })more123KeyOffset;
 - (id)dictationKeyImageName;
 - (id)globalKeyImageName;
+- (float)skinnyKeyThreshold;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
+- (id)deleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
 

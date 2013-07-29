@@ -59,8 +59,8 @@
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (id)closeStream;
 - (long long)streamedBytes;
-- (void)setup;
 - (BOOL)isStream;
+- (void)setup;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

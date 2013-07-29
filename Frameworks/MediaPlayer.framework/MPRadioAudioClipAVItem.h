@@ -18,6 +18,8 @@
 - (BOOL)supportsSkip;
 - (BOOL)isStreamable;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
+- (id)radioTrack;
+- (BOOL)isExplicitTrack;
 - (id)mainTitle;
 - (id)imageCache;
 - (void).cxx_destruct;

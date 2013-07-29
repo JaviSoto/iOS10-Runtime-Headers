@@ -49,13 +49,13 @@
 @property(copy) NSString * pin;
 
 
+- (void)setUserName:(id)arg1;
 - (void)setPin:(id)arg1;
 - (id)pin;
 - (void)setSharedSecret:(id)arg1;
 - (id)sharedSecret;
 - (void)setProxyUserName:(id)arg1;
 - (id)proxyUserName;
-- (void)setUserName:(id)arg1;
 - (void)setPinKey:(id)arg1;
 - (id)pinKey;
 - (void)setSharedSecretKey:(id)arg1;

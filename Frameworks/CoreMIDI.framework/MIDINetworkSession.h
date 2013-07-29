@@ -23,6 +23,7 @@
 - (BOOL)removeContact:(id)arg1;
 - (BOOL)addContact:(id)arg1;
 - (id)contacts;
+- (BOOL)addConnection:(id)arg1;
 - (void)setConnectionPolicy:(unsigned int)arg1;
 - (unsigned int)connectionPolicy;
 - (unsigned int)networkPort;
@@ -31,7 +32,6 @@
 - (void)updateFromEntity;
 - (void)setStateToEntity;
 - (id)networkName;
-- (BOOL)addConnection:(id)arg1;
 - (BOOL)removeConnection:(id)arg1;
 - (id)connections;
 - (id)localName;

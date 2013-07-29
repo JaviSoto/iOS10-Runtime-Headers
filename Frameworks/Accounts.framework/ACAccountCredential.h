@@ -33,7 +33,6 @@
 + (id)credentialWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
-- (id)expiryDate;
 - (void)setPassword:(id)arg1;
 - (id)oauthToken;
 - (id)oauthTokenSecret;
@@ -43,6 +42,7 @@
 - (void)setMapsToken:(id)arg1;
 - (id)mapsToken;
 - (id)findMyiPhoneToken;
+- (id)expiryDate;
 - (id)oauthRefreshToken;
 - (id)keysForCredentialItems;
 - (id)initWithOAuth2Token:(id)arg1 refreshToken:(id)arg2 expiryDate:(id)arg3;

@@ -61,13 +61,10 @@
 @property(readonly) BOOL detailScrubbingHidesControls;
 
 + (unsigned int)defaultVisibleParts;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
+- (BOOL)isScrubbing;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
-- (BOOL)isScrubbing;
 - (void)reloadButtonVisibility;
 - (id)playbackSpeedTitleForPlaybackSpeed:(unsigned int)arg1;
 - (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;

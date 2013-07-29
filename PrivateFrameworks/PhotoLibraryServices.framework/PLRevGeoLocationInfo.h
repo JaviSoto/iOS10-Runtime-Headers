@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class GEOPlace, PLRevGeoCompoundNameInfo;
+@class GEOPlace, PLRevGeoCompoundNameInfo, NSString;
 
 @interface PLRevGeoLocationInfo : NSObject  {
     BOOL _isValid;
@@ -10,6 +10,9 @@
     GEOPlace *_geoPlace;
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
+    NSString *_providerId;
+    NSString *_providerVersionCountryCode;
+    NSString *_providerVersion;
 }
 
 @property(readonly) BOOL isValid;
@@ -17,21 +20,34 @@
 @property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
 @property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
 @property BOOL isHome;
+@property(readonly) NSString * countryCode;
+@property(retain) NSString * providerId;
+@property(retain) NSString * providerVersionCountryCode;
+@property(retain) NSString * providerVersion;
 
-+ (id)titleForLocationData:(id)arg1;
++ (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
++ (id)titleForNameInfo:(id)arg1;
 + (id)sortedNameInfoArray:(id)arg1;
 + (id)sortedNameInfoArray:(id)arg1 homeAtEnd:(BOOL)arg2;
++ (unsigned int)currentVersion;
 
+- (id)providerVersion;
+- (id)providerVersionCountryCode;
+- (id)providerId;
 - (id)compoundSecondaryNameInfo;
+- (id)compoundNameInfo;
 - (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
 - (id)dataForInfo;
-- (id)compoundNameInfo;
 - (BOOL)isHome;
+- (void)setProviderVersion:(id)arg1;
+- (void)setProviderVersionCountryCode:(id)arg1;
+- (void)setProviderId:(id)arg1;
 - (void)setIsHome:(BOOL)arg1;
 - (void)setCompoundSecondaryNameInfo:(id)arg1;
 - (void)setCompoundNameInfo:(id)arg1;
 - (void)setGeoPlace:(id)arg1;
 - (id)geoPlace;
+- (id)countryCode;
 - (id)init;
 - (BOOL)isValid;
 - (void)dealloc;

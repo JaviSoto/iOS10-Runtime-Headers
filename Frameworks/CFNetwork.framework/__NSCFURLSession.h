@@ -13,6 +13,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     __NSCFSessionBridge *_connectionSession;
     __NSCFURLSession *_extraRetain;
+    NSOperationQueue *_realDelegateQueue;
 }
 
 @property(readonly) NSOperationQueue * delegateQueue;
@@ -23,6 +24,7 @@
 @property(retain) __NSCFSessionBridge * connectionSession;
 @property BOOL invalid;
 @property(retain) __NSCFURLSession * extraRetain;
+@property(retain) NSOperationQueue * realDelegateQueue;
 
 + (const struct ClassicConnectionSession { }*)defaultClassicConnectionSession;
 + (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
@@ -33,6 +35,8 @@
 
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setRealDelegateQueue:(id)arg1;
+- (id)realDelegateQueue;
 - (void)setExtraRetain:(id)arg1;
 - (id)extraRetain;
 - (void)setInvalid:(BOOL)arg1;
@@ -40,8 +44,6 @@
 - (void)setConnectionSession:(id)arg1;
 - (void)setSessionDescription:(id)arg1;
 - (id)sessionDescription;
-- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
-- (BOOL)can_delegate_downloadTask_didResumeAtOffset;
 - (id)downloadTaskWithResumeData:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithURL:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithResumeData:(id)arg1;
@@ -75,6 +77,8 @@
 - (void)setWorkQueue:(id)arg1;
 - (void)delegate_didFinishEventsForBackgroundURLSession;
 - (BOOL)can_delegate_didFinishEventsForBackgroundURLSession;
+- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
+- (BOOL)can_delegate_downloadTask_didResumeAtOffset;
 - (void)delegate_downloadTask:(id)arg1 didReceiveResponse:(id)arg2;
 - (BOOL)can_delegate_downloadTask_didReceiveResponse;
 - (void)delegate_downloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2;
@@ -92,7 +96,7 @@
 - (BOOL)can_delegate_dataTask_didReceiveData;
 - (void)delegate_task:(id)arg1 didCompleteWithError:(id)arg2;
 - (BOOL)can_delegate_task_didCompleteWithError;
-- (id)delegateQueue;
+- (void)addDelegateBlock:(id)arg1;
 - (void)delegate_dataTask:(id)arg1 willCacheResponse:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)can_delegate_dataTask_willCacheResponse;
 - (void)delegate_task:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;
@@ -107,5 +111,6 @@
 - (id)workQueue;
 - (BOOL)can_delegate_dataTask_didReceiveResponse;
 - (void)setConfiguration:(id)arg1;
+- (id)delegateQueue;
 
 @end

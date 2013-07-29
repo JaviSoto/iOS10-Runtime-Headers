@@ -18,10 +18,10 @@
 - (id)listenAfterSpeaking;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
-- (void)setMessage:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (id)groupIdentifier;
 
 @end

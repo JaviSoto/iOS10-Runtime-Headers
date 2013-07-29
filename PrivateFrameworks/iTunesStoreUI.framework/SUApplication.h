@@ -13,8 +13,6 @@
 @property(copy) UIColor * interactionTintColor;
 @property(retain) UIWindow * window;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)runTestInvocation:(id)arg1;
 - (void)_runScriptTestWithOptions:(id)arg1;
@@ -37,6 +35,5 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (BOOL)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
-- (id)_accessibilityContentLanguage;
 
 @end

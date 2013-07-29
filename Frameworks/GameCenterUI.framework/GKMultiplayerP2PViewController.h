@@ -43,6 +43,7 @@
 - (void)setAlertTag:(int)arg1;
 - (void)setNearbyDelegate:(id)arg1;
 - (void)startGame;
+- (BOOL)haveInvitedPlayers;
 - (void)showAlertForTag:(int)arg1;
 - (void)processStatusUpdateMessageFromBytes:(const char *)arg1 withLength:(unsigned int)arg2;
 - (void)playerDisconnected:(id)arg1;
@@ -50,6 +51,7 @@
 - (void)sendStatusUpdate;
 - (BOOL)havePendingPlayers;
 - (void)cancelPendingInvites;
+- (void)finishWithError:(id)arg1;
 - (void)cancelAlertWithoutDelegateCallback;
 - (void)playNow;
 - (void)invitePlayers:(id)arg1;
@@ -58,7 +60,6 @@
 - (void)configureDataSource;
 - (void)setAcceptedInvite:(id)arg1;
 - (BOOL)isHosted;
-- (void)finishWithError:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

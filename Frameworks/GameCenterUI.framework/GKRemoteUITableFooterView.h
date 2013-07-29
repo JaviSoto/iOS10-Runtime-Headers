@@ -36,12 +36,12 @@
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;
 - (int)layoutStyle;
-- (void)setAttributes:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)button;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)setAttributes:(id)arg1;
 - (void)buttonTapped:(id)arg1;
 - (void)didMoveToSuperview;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

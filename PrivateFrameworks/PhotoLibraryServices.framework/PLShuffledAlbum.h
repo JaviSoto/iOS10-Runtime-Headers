@@ -26,6 +26,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -59,6 +61,7 @@
 + (struct NSObject { Class x1; }*)unshuffledAlbum:(struct NSObject { Class x1; }*)arg1;
 + (struct NSObject { Class x1; }*)shuffledAlbum:(struct NSObject { Class x1; }*)arg1 startingAsset:(id)arg2;
 
+- (BOOL)canContributeToCloudSharedAlbum;
 - (id)assets;
 - (void)replaceObjectInShuffledAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromShuffledAssetsAtIndex:(unsigned int)arg1;
@@ -77,8 +80,11 @@
 - (id)_assets;
 - (void)set_assets:(id)arg1;
 - (struct NSObject { Class x1; }*)backingAlbum;
-- (id)localizedLocationNames;
 - (BOOL)canShowComments;
+- (void)setTertiaryKeyAsset:(id)arg1;
+- (id)tertiaryKeyAsset;
+- (void)setSecondaryKeyAsset:(id)arg1;
+- (id)secondaryKeyAsset;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
 - (unsigned int)videosCount;
@@ -97,7 +103,6 @@
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (BOOL)isStandInAlbum;
@@ -116,6 +121,7 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)localizedLocationNames;
 - (id)posterImage;
 - (unsigned int)photosCount;
 - (id)title;

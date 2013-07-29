@@ -6,6 +6,8 @@
 
 @interface SKUIURL : NSObject <NSCopying> {
     NSMutableDictionary *_queryDictionary;
+    NSString *_referrerApplicationName;
+    NSString *_referrerURLString;
     NSURL *_url;
 }
 
@@ -14,13 +16,19 @@
 @property(readonly) NSDictionary * queryStringDictionary;
 @property(readonly) NSString * redeemCode;
 @property(readonly) NSString * searchTerm;
+@property(copy) NSString * referrerApplicationName;
+@property(copy) NSString * referrerURLString;
 
 
+- (id)referrerURLString;
+- (id)referrerApplicationName;
+- (void)setReferrerURLString:(id)arg1;
+- (void)setReferrerApplicationName:(id)arg1;
+- (id)underlyingURL;
 - (id)redeemCode;
 - (id)_queryDictionary;
 - (id)valueForQueryParameter:(id)arg1;
 - (id)actionString;
-- (id)underlyingURL;
 - (id)queryStringDictionary;
 - (id)searchTerm;
 - (id)initWithURL:(id)arg1;

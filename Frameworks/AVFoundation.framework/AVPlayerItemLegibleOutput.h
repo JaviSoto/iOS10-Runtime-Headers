@@ -14,8 +14,9 @@
 
 + (void)initialize;
 
-- (void)setTextStylingResolution:(id)arg1;
 - (void)setAdvanceIntervalForDelegateInvocation:(double)arg1;
+- (void)setTextStylingResolution:(id)arg1;
+- (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (id)_hostOrNil;
 - (double)advanceIntervalForDelegateInvocation;
 - (void)_dataSourceSignaledFlush;
@@ -24,7 +25,6 @@
 - (id)initWithDependencyFactory:(id)arg1 mediaSubtypesForNativeRepresentation:(id)arg2;
 - (id)initWithMediaSubtypesForNativeRepresentation:(id)arg1;
 - (id)textStylingResolution;
-- (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)_collectUncollectables;
 - (void)_detachFromPlayerItem;

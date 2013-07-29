@@ -17,7 +17,7 @@
 - (void)setStyleProvider:(id)arg1;
 - (id)init;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 
 @end

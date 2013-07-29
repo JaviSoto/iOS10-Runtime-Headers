@@ -19,9 +19,9 @@
 - (id)initWithMediaItem:(id)arg1;
 - (void)resolveError:(id)arg1;
 - (id)mediaItem;
+- (void)setRequest:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
-- (void)setRequest:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setError:(id)arg1;

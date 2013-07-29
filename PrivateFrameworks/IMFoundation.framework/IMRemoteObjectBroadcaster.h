@@ -12,8 +12,8 @@
 
 - (void)flushProxy:(id)arg1;
 - (BOOL)isSendQueueEmpty;
-- (id)broadcastProxyForTargets:(id)arg1 protocol:(id)arg2;
-- (id)broadcastProxyForTarget:(id)arg1 protocol:(id)arg2;
+- (id)broadcastProxyForTargets:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3;
+- (id)broadcastProxyForTarget:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3;
 - (id)_queue;
 - (id)init;
 - (void)dealloc;

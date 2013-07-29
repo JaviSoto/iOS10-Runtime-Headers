@@ -14,8 +14,6 @@
 @property(retain) UIImage * tableIcon;
 @property(retain) UIImage * highlightedTableIcon;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)highlightedTableIcon;
@@ -24,7 +22,5 @@
 - (void)setHighlightedTableIcon:(id)arg1;
 - (void)setTableIcon:(id)arg1;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
 
 @end

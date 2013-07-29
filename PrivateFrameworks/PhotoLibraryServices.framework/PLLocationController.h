@@ -18,8 +18,8 @@
 + (BOOL)usesEffectiveBundleIdentifier;
 + (id)sharedInstance;
 
-- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
 - (void)setHeadingEnabled:(BOOL)arg1;
+- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
 - (void)_updatePendingAssets;
 - (BOOL)_addLocationToAsset:(id)arg1;
 - (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(BOOL)arg2;

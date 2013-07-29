@@ -15,6 +15,9 @@
 
 @property BOOL needsRefresh;
 @property BOOL allowsAutoRefresh;
+@property(readonly) BOOL shouldVibrateForCurrentRingerSwitchState;
+@property(readonly) BOOL shouldVibrateOnRing;
+@property(readonly) BOOL shouldVibrateOnSilent;
 @property(setter=_setAllowsAutoRefresh:) BOOL _allowsAutoRefresh;
 @property(setter=_setSpecialBehaviors:) unsigned int _specialBehaviors;
 @property(getter=_isUnitTestingModeEnabled,readonly) BOOL _unitTestingModeEnabled;
@@ -25,6 +28,7 @@
 @property(setter=_setAccessQueue:,retain) TLAccessQueue * _accessQueue;
 
 + (id)sharedVibrationManager;
++ (void)_handleVibrateOnRingOrSilentDidChangeNotification;
 + (void)_handleSystemVibrationDidChangeNotification;
 
 - (id)currentVibrationPatternForType:(int)arg1;
@@ -34,6 +38,7 @@
 - (void)setCurrentVibrationIdentifier:(id)arg1 forType:(int)arg2;
 - (id)currentVibrationIdentifierForType:(int)arg1;
 - (BOOL)_migrateLegacySettings;
+- (BOOL)shouldVibrateForCurrentRingerSwitchState;
 - (BOOL)_removeAllUserGeneratedVibrationsWithError:(id*)arg1;
 - (unsigned int)_numberOfUserGeneratedVibrations;
 - (BOOL)deleteUserGeneratedVibrationPatternWithIdentifier:(id)arg1 error:(id*)arg2;
@@ -50,6 +55,9 @@
 - (void)_makeSystemVibrationDataMigrationVersionCurrentIfNecessary;
 - (void)setCurrentVibrationIdentifier:(id)arg1 forAlertType:(int)arg2;
 - (unsigned int)_storedSystemVibrationDataMigrationVersion;
+- (BOOL)shouldVibrateOnRing;
+- (BOOL)shouldVibrateOnSilent;
+- (BOOL)_booleanPreferenceForKey:(struct __CFString { }*)arg1;
 - (BOOL)_saveUserGeneratedVibrationPatterns:(id)arg1 error:(id*)arg2;
 - (BOOL)_sendUserGeneratedVibrationPatternsAffectingMessage:(id)arg1 error:(id*)arg2;
 - (id)_nameOfVibrationWithIdentifier:(id)arg1;

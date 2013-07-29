@@ -72,8 +72,8 @@
 - (BOOL)isFromFacebook;
 - (id)preferredPersonForPhoto;
 - (BOOL)updateNewPersonKindFromName;
-- (BOOL)addToGroup:(void*)arg1;
 - (BOOL)addToAddressBook:(void*)arg1;
+- (BOOL)addToGroup:(void*)arg1;
 - (id)nameIgnoringOrganization:(BOOL)arg1;
 - (void)removePropertyValue:(int)arg1;
 - (id)preferredPersonForName;

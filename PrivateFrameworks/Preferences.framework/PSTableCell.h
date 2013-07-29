@@ -38,9 +38,6 @@
 + (Class)cellClassForSpecifier:(id)arg1;
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (int)cellStyle;
-+ (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setLongTapRecognizer:(id)arg1;
 - (id)longTapRecognizer;
@@ -89,31 +86,17 @@
 - (void)prepareForReuse;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (id)titleLabel;
 - (BOOL)canBecomeFirstResponder;
 - (id)scriptingInfoWithChildren;
 - (id)_automationID;
 - (SEL)action;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)setChecked:(BOOL)arg1;
-- (id)titleLabel;
 - (void)layoutSubviews;
 - (int)type;
 - (void)setValue:(id)arg1;
 - (id)value;
 - (id)target;
-- (id)accessibilityHint;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (void)accessibilityIncrement;
-- (void)accessibilityDecrement;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (BOOL)_accessibilityLanguageOverriddesUser;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityUserTestingChildren;
-- (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
-- (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
-- (BOOL)_accessibilityIsScannerElement;
 
 @end

@@ -26,10 +26,10 @@
 - (void)_hideNavigationAndStatusBars;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_showChapterGuideNavigationViews;
-- (int)_interfaceOrientation;
 - (void)performTransition:(unsigned int)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (BOOL)TVOutEnabled;
+- (int)_interfaceOrientation;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setNavigationBar:(id)arg1;

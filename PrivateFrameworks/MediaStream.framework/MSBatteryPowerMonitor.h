@@ -10,7 +10,7 @@
 
 + (id)defaultMonitor;
 
-- (BOOL)isExternalPowerConnected;
 - (double)batteryPercentRemaining;
+- (BOOL)isExternalPowerConnected;
 
 @end

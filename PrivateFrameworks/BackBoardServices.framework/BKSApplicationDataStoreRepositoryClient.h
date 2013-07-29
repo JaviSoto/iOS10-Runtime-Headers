@@ -12,10 +12,10 @@
 }
 
 
+- (id)_allPrefetchedChangesInFlightForApplication:(id)arg1;
 - (void)queue_connectionWasCreated;
 - (void)removePrefetchedKeys:(id)arg1 withCompletion:(id)arg2;
 - (id)clientCallbackQueue;
-- (id)_allPrefetchedChangesInFlightForApplication:(id)arg1;
 - (BOOL)_isChangeInFlightForPrefetchedKey:(id)arg1 application:(id)arg2;
 - (void)_handleStoreInvalidated:(id)arg1;
 - (void)_handleValueChanged:(id)arg1;

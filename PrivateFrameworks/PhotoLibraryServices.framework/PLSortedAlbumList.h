@@ -33,6 +33,7 @@
 @property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 
 
+- (id)initWithAlbumList:(struct NSObject { Class x1; }*)arg1 sortComparator:(id)arg2;
 - (void)replaceObjectInSortedAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromSortedAlbumsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inSortedAlbumsAtIndex:(unsigned int)arg2;
@@ -40,7 +41,6 @@
 - (unsigned int)indexInSortedAlbumsOfObject:(id)arg1;
 - (unsigned int)countOfSortedAlbums;
 - (void)createSortedIndexesMap;
-- (id)initWithAlbumList:(struct NSObject { Class x1; }*)arg1 sortComparator:(id)arg2;
 - (id)sortComparator;
 - (void)setSortComparator:(id)arg1;
 - (void)set_albums:(id)arg1;

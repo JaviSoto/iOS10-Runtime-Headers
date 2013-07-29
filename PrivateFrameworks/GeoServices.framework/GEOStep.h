@@ -100,6 +100,9 @@
 @property(retain) NSString * notice;
 
 
+- (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)maneuverIsHighwayExit;
 - (void)shieldInfo:(id)arg1;
 - (id)intersectionNameInfo;
@@ -120,7 +123,6 @@
 - (void)setHasOverrideTransportType:(BOOL)arg1;
 - (void)setHasHintFirstAnnouncementZilchIndex:(BOOL)arg1;
 - (void)setJunctionElements:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
-- (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
 - (void)setHasJunctionType:(BOOL)arg1;
 - (void)setLaneGuidances:(struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; }*)arg1 count:(unsigned int)arg2;
 - (struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; }*)laneGuidances;
@@ -201,16 +203,14 @@
 - (unsigned int)expectedTime;
 - (BOOL)hasExpectedTime;
 - (void)setDistance:(unsigned int)arg1;
+- (unsigned int)distance;
 - (BOOL)hasDistance;
 - (id)notice;
 - (BOOL)hasNotice;
 - (void)setNotice:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setInstructions:(id)arg1;
 - (id)instructions;
-- (unsigned int)distance;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSString, CUIPSDGradient, NSMutableArray, CUIShapeEffectPreset;
+@class NSString, CUIPSDGradient, NSDate, NSMutableArray, CUIShapeEffectPreset;
 
 @interface CSIGenerator : NSObject  {
     struct CGSize { 
@@ -22,6 +22,7 @@
     CUIShapeEffectPreset *_effectPreset;
     int _blendMode;
     float _opacity;
+    NSDate *_modtime;
 }
 
 @property(copy) NSString * name;
@@ -33,10 +34,12 @@
 @property(retain) CUIShapeEffectPreset * effectPreset;
 @property int blendMode;
 @property float opacity;
+@property(copy) NSDate * modtime;
 
 
 - (void)setOpacity:(float)arg1;
 - (float)opacity;
+- (void)setModtime:(id)arg1;
 - (void)setBlendMode:(int)arg1;
 - (id)effectPreset;
 - (void)setScaleFactor:(unsigned int)arg1;
@@ -60,6 +63,7 @@
 - (void)formatCSIHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; float x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
 - (int)blendMode;
+- (id)modtime;
 - (void)setEffectPreset:(id)arg1;
 - (id)name;
 - (void)dealloc;

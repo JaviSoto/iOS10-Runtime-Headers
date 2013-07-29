@@ -37,6 +37,7 @@
 + (BOOL)isPredefinedAccountType;
 + (id)existingAccountForUniqueID:(id)arg1;
 + (id)accountWithPersistentAccount:(id)arg1;
++ (id)authSchemesForAccountClass;
 + (id)newAccountWithDictionary:(id)arg1;
 + (id)predefinedValueForKey:(id)arg1;
 + (unsigned int)defaultPortNumber;
@@ -124,13 +125,13 @@
 - (id)initWithPersistentAccount:(id)arg1;
 - (BOOL)requiresAuthentication;
 - (id)accountClass;
-- (id)accountPropertyForKey:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (id)credentialItemForKey:(id)arg1;
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (id)accountPropertyForKey:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)parentAccountIdentifier;

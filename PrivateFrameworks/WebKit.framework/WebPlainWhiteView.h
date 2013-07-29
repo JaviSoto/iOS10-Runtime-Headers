@@ -15,7 +15,5 @@
 - (void)setDataSource:(id)arg1;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)layout;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

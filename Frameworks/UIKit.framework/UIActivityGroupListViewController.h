@@ -28,8 +28,6 @@
 @property(retain) UIControl * dimView;
 @property(retain) UIActivityGroupView * groupView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)contentView;
 - (void)setContentView:(id)arg1;
@@ -64,6 +62,5 @@
 - (id)cancelButton;
 - (void)viewDidLayoutSubviews;
 - (int)preferredStatusBarStyle;
-- (void)_accessibilityLoadAccessibilityInformation;
 
 @end

@@ -16,12 +16,12 @@
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 
+- (id)bundleId;
 - (id)adamId;
 - (id)initWithGame:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (id)externalVersion;
-- (id)bundleId;
 - (id)attributeKeys;
 - (id)bundleVersion;
 - (void)dealloc;

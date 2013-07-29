@@ -37,12 +37,12 @@
 + (unsigned short)providerID;
 + (void)setUsePersistentConnection:(BOOL)arg1;
 
-- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
-- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
-- (void)cancelRequest;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
+- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)cancelRequest;
 - (id)init;
 - (void)dealloc;
 

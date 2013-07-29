@@ -11,6 +11,7 @@
     BOOL _supportsIncrementalUpdate;
     NSMutableArray *_updateToLibraryCurrentRevisionCompletionBlocks;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_fixedPriorityQueue;
 }
 
 @property(readonly) ML3Query * query;

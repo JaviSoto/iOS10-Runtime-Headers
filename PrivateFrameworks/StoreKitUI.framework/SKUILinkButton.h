@@ -12,8 +12,11 @@
 
 - (int)arrowStyle;
 - (float)_linkImagePaddingLeft;
+- (void)_reloadIcons;
 - (id)initWithArrowStyle:(int)arg1;
 - (void)setTitleColor:(id)arg1 forState:(unsigned int)arg2;
+- (void)sizeToFit;
+- (void)tintColorDidChange;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 

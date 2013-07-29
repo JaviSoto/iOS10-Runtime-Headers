@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPanGestureRecognizer, _UIPopoverView, <UIPopoverControllerDelegate>, UIView, UIBarButtonItem, UIViewController, _UIPopoverLayoutInfo, UIDimmingView, NSArray;
+@class UIPanGestureRecognizer, NSArray, _UIPopoverView, <UIPopoverControllerDelegate>, UIView, UIBarButtonItem, UIViewController, _UIPopoverLayoutInfo, UIDimmingView, UIColor;
 
 @interface UIPopoverController : NSObject <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate, UIAppearanceContainer> {
     id _delegate;
@@ -25,6 +25,7 @@
     unsigned int _requestedArrowDirections;
     unsigned int _currentArrowDirection;
     int _popoverBackgroundStyle;
+    UIColor *_backgroundColor;
     _UIPopoverLayoutInfo *_preferredLayoutInfo;
     Class _popoverBackgroundViewClass;
     struct CGSize { 
@@ -109,6 +110,7 @@
 @property(getter=isPopoverVisible,readonly) BOOL popoverVisible;
 @property unsigned int popoverArrowDirection;
 @property(copy) NSArray * passthroughViews;
+@property(copy) UIColor * backgroundColor;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } popoverLayoutMargins;
 @property(retain) Class popoverBackgroundViewClass;
 @property(retain) UIDimmingView * dimmingView;
@@ -128,9 +130,9 @@
 + (BOOL)_showTargetRectPref;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
 + (BOOL)_popoversDisabled;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (void)setBackgroundColor:(id)arg1;
+- (id)backgroundColor;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -165,7 +167,6 @@
 - (struct CGSize { float x1; float x2; })popoverContentSize;
 - (void)_modalAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGSize { float x1; float x2; })_currentPopoverContentSize;
-- (BOOL)_isPresenting;
 - (void)_stopWatchingForWindowRotations;
 - (void)_stopWatchingForScrollViewNotifications;
 - (void)_stopWatchingForKeyboardNotifications;
@@ -209,6 +210,7 @@
 - (id)_managingSplitViewController;
 - (void)_layoutDimmingViewForInterfaceOrientationOfHostingWindow:(id)arg1;
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (BOOL)_isPresenting;
 - (void)setPreferredLayoutInfo:(id)arg1;
 - (float)_presentationAnimationDuration;
 - (id)_layoutInfoForCurrentKeyboardState;
@@ -231,10 +233,10 @@
 - (void)_setManagingSplitViewController:(id)arg1;
 - (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)setContentViewController:(id)arg1;
+- (id)initWithContentViewController:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;
 - (id)passthroughViews;
 - (void)dimmingViewWasTapped:(id)arg1;
-- (id)initWithContentViewController:(id)arg1;
 - (void)_newViewControllerWasPushed:(id)arg1;
 - (void)_newViewControllerWillBePushed:(id)arg1;
 - (void)_adjustPopoverForNewContentSizeFromViewController:(id)arg1 allowShrink:(BOOL)arg2;

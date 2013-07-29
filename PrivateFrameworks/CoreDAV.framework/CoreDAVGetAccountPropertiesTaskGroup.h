@@ -43,6 +43,7 @@
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
+- (id)principalURL;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)resourceID;
@@ -51,7 +52,6 @@
 - (id)_copyAccountPropertiesPropFindElements;
 - (id)collections;
 - (id)emailAddresses;
-- (id)principalURL;
 - (id)displayName;
 - (void)dealloc;
 - (id)description;

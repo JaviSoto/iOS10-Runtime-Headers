@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSDateFormatter, GEOPlace, PLMomentAnalyzerWorkThread, NSMutableSet, PLXPCTransaction, PLPhotoLibrary, NSArray, NSObject<OS_dispatch_queue>, NSDictionary, NSString, NSMutableArray;
+@class CLLocation, NSDateFormatter, GEOPlace, PLMomentAnalyzerWorkThread, NSDate, NSMutableSet, PLPhotoLibrary, NSDictionary, NSObject<OS_dispatch_queue>, PLXPCTransaction, NSArray, NSString, NSMutableArray;
 
 @interface PLMomentAnalyzer : NSObject  {
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -32,6 +32,9 @@
     CLLocation *_homeLocation;
     GEOPlace *_homePlace;
     NSString *_languageAndLocale;
+    NSString *_lastGeoProviderId;
+    NSDate *_lastGeoVersionFileFetchDate;
+    NSString *_lastGeoVersionFileVersion;
     NSArray *_defaultDominantGeoOrdering;
     NSArray *_defaultSignificantLocationGeoOrdering;
     double _lastNetworkForcedAbortTime;
@@ -42,23 +45,31 @@
 @property(readonly) PLPhotoLibrary * _photoLibrary;
 @property(readonly) void* _addressBook;
 @property(readonly) CLLocation * _homeLocation;
+@property(readonly) NSString * _lastGeoProviderId;
+@property(readonly) NSDate * _lastGeoVersionFileFetchDate;
+@property(readonly) NSString * _lastGeoVersionFileVersion;
 
++ (BOOL)hasCompletedMomentsAndMomentListAnalysisInLibrary:(id)arg1;
 + (id)sharedInstance;
 
 - (void*)_addressBook;
-- (void)updateInfoForYearMomentListWithMomentListId:(id)arg1;
-- (void)updateInfoForMegaMomentListWithMomentListId:(id)arg1;
+- (void)updateInfoForMomentListWithMomentListId:(id)arg1;
 - (void)updateInfoForMomentWithMomentId:(id)arg1 fromOnDemandRequest:(BOOL)arg2;
 - (void)updateInfoForInvalidMomentsIfNeeded;
 - (unsigned int)_dominantOrderTypeForPlaceType:(int)arg1;
 - (BOOL)_isPlaceTypeTooBroadForDefaultNaming:(int)arg1;
 - (BOOL)_needToAugmentNameForPlaceType:(int)arg1;
 - (BOOL)_canUsePlaceNameInNamingWithPlaceType:(int)arg1;
-- (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectContainingMapPoints:(struct { double x1; double x2; }*)arg1 mapPointCount:(unsigned int)arg2;
+- (id)_lastGeoVersionFileVersion;
+- (id)_lastGeoVersionFileFetchDate;
+- (id)_lastGeoProviderId;
+- (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2 invalidOnly:(BOOL)arg3;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)updateInfoForYearMomentLists:(id)arg1;
 - (void)updateInfoForMegaMomentLists:(id)arg1;
-- (void)updateInfoForMoments:(id)arg1;
+- (void)updateInfoForMoments:(id)arg1 invalidOnly:(BOOL)arg2;
+- (BOOL)_markInvalidLowQualityAssetsInMoment:(id)arg1;
 - (id)_homeLocation;
 - (BOOL)_canProcessMoments;
 - (id)_simpleNamesForNameInfoArray:(id)arg1;
@@ -75,8 +86,7 @@
 - (unsigned int)_defaultGeoOrderAtIndex:(unsigned int)arg1;
 - (id)_nameByRemovingThoroughfareFromPlaceName:(id)arg1 structuredAddress:(id)arg2;
 - (void)_enqueueReverseGeocodeMomentWithRequestInfo:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectContainingMapPoints:(struct { double x1; double x2; }*)arg1 mapPointCount:(unsigned int)arg2;
-- (void)_addGEOLocationForCoordinate:(struct { double x1; double x2; })arg1 date:(id)arg2 toLocations:(id)arg3;
+- (id)_geoLocationForCoordinate:(struct { double x1; double x2; })arg1 date:(id)arg2;
 - (void)_setLocationDataValidForMomentId:(id)arg1;
 - (unsigned int)_processYearMomentList:(id)arg1;
 - (void)_updateSignificantLocationsInCompoundNameInfo:(id)arg1 withRevGeoLocations:(id)arg2;
@@ -89,7 +99,6 @@
 - (void)_processMegaMomentLists;
 - (void)_processPendingGEORequests;
 - (void)_startObservingReachabilityChanges;
-- (void)_updateInfoForAllMomentsInvalidOnly:(BOOL)arg1;
 - (void)_stopObservingReachabilityChanges;
 - (void)_saveDataIfNeededAfterTimeDiff:(double)arg1;
 - (void)_updateKeepAlive;
@@ -116,18 +125,21 @@
 - (void)_reAnalyzeCachedDataAndProcessOnlyHomeChanges:(BOOL)arg1;
 - (id)_addressDictionaryForABRecord:(void*)arg1 identifier:(int)arg2;
 - (void)_forwardGeocodeAddressDictionary:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)_updateInfoForAllMomentsWithReAnalyzeType:(unsigned int)arg1;
+- (id)_currentProviderId;
 - (void)_updateHomeLocation;
-- (void)_saveGlobalMetadata;
 - (id)_currentHomeAddressDictionary;
 - (id)_dictionaryFromLocation:(id)arg1;
 - (void)_runBlockOnWorkQueue:(id)arg1;
 - (void)_loadSubLocalityBlacklist;
 - (BOOL)_updateLanguageIfNeeded;
 - (BOOL)_updateHomeAddressIfNeeded;
+- (void)_saveGlobalMetadata;
 - (id)_locationFromDictionary:(id)arg1;
 - (id)_metadataPath;
 - (void)_finalizeInitOnWorkQueue;
 - (void)_updateDateFormattersForLocale:(id)arg1;
+- (void)_updateInformationForGeoProviderIfNeeded;
 - (void)updateInfoForAllMoments;
 - (id)_photoLibrary;
 - (void)_addressBookChanged;

@@ -16,9 +16,9 @@
 @property <AirPlayRemoteSlideshowDelegate> * delegate;
 
 
+- (void)getFeaturesWithCompletion:(id)arg1;
 - (void)stopWithOptions:(id)arg1 completion:(id)arg2;
 - (void)startWithOptions:(id)arg1 completion:(id)arg2;
-- (void)getFeaturesWithCompletion:(id)arg1;
 - (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
 - (void)_configureEventHandler;
 - (void)setDispatchQueue:(id)arg1;

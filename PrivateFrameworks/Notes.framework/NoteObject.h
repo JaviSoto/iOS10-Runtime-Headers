@@ -51,9 +51,9 @@
 - (void)setIsPlainText:(BOOL)arg1;
 - (BOOL)isMarkedForDeletion;
 - (void)markForDeletion;
-- (void)setContent:(id)arg1;
 - (unsigned long long)sequenceNumber;
 - (BOOL)containsAttachments;
+- (void)setContent:(id)arg1;
 - (id)content;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setFlags:(unsigned long long)arg1;

@@ -18,8 +18,8 @@
 @property(readonly) int (* callback;
 
 
-- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
 - (int (*)())callback;
+- (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2;
 - (void)dealloc;
 - (id)listener;
 

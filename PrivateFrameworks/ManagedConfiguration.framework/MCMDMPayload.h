@@ -31,13 +31,13 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (id)topic;
 - (BOOL)checkOutWhenRemoved;
 - (BOOL)signMessage;
 - (int)accessRights;
 - (id)checkInURLString;
 - (BOOL)useDevelopmentAPNS;
 - (id)serverURLString;
-- (id)topic;
 - (void)setIdentityPersistentID:(id)arg1;
 - (id)identityPersistentID;
 - (id)identityUUID;

@@ -32,9 +32,9 @@
 - (void)dealloc;
 - (void)setLeftItemsSupplementBackButton:(BOOL)arg1;
 - (id)rightBarButtonItems;
-- (id)leftBarButtonItems;
 - (void)setBackButtonTitle:(id)arg1;
 - (id)rightBarButtonItem;
+- (id)leftBarButtonItem;
 - (void)setTitleView:(id)arg1;
 - (void)setRightBarButtonItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftBarButtonItems:(id)arg1 animated:(BOOL)arg2;
@@ -43,8 +43,8 @@
 - (id)initWithNavigationItem:(id)arg1;
 - (id)titleView;
 - (id)backButtonTitle;
-- (id)leftBarButtonItem;
 - (BOOL)leftItemsSupplementBackButton;
+- (id)leftBarButtonItems;
 - (id)navigationBar;
 
 @end

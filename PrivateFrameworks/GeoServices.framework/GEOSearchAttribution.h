@@ -15,6 +15,8 @@
 @property(retain) NSMutableArray * attributionURLs;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)attributionURLs;
 - (id)attributionURLsAtIndex:(unsigned int)arg1;
 - (void)clearAttributionURLs;
@@ -26,8 +28,6 @@
 - (unsigned int)sourceVersion;
 - (id)sourceIdentifier;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

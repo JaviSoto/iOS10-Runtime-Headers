@@ -12,6 +12,9 @@
 }
 
 
+- (void)_loadClientContextWithCompletionBlock:(id)arg1;
+- (void)_showIPhoneProductPageWithPage:(id)arg1 clientContext:(id)arg2;
+- (void)_showRemoteViewControllerWithPageDictionary:(id)arg1;
 - (void)_setActiveChildViewController:(id)arg1;
 - (void)_showStorePageWithPageDictionary:(id)arg1;
 - (void)_showProductPageWithPageDictionary:(id)arg1;

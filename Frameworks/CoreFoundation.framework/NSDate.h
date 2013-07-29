@@ -29,6 +29,7 @@
 + (int)daysSince1970;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
++ (id)_mapkit_dateWithAbsoluteTime:(double)arg1;
 + (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
 + (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
 + (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
@@ -37,7 +38,6 @@
 + (id)PKDateWithDaysBeforeNow:(unsigned int)arg1;
 + (id)PKDateWithDaysFromNow:(unsigned int)arg1;
 
-- (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)initWithTimeIntervalSince1970:(double)arg1;
 - (id)initWithDate:(id)arg1;
 - (id)earlierDate:(id)arg1;
@@ -56,6 +56,7 @@
 - (unsigned int)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)laterDate:(id)arg1;
 - (id)initWithTimeIntervalSinceNow:(double)arg1;
 - (double)timeIntervalSince1970;

@@ -7,7 +7,6 @@
 @interface GEOAttributedRoute : NSObject  {
     GEORoute *_route;
     NSArray *_maneuverDisplaySteps;
-    unsigned int *_maneuverDisplayStepsToCurrentDisplayEndPoints;
     BOOL _maneuverDisplayEnabled;
     unsigned int _currentDisplayStep;
     unsigned int _maneuverDisplayCount;
@@ -21,23 +20,21 @@
 @property(readonly) unsigned int maneuverDisplayCount;
 
 
+- (unsigned int)currentDisplayStep;
+- (BOOL)maneuverDisplayEnabled;
+- (id)route;
 - (unsigned int)maneuverDisplayCount;
+- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1;
+- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtIndex:(unsigned long)arg1;
+- (id)initWithRoute:(id)arg1;
 - (id)maneuverDisplaySteps;
 - (void)setManeuverDisplayEnabled:(BOOL)arg1;
-- (BOOL)maneuverDisplayEnabled;
-- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtIndex:(unsigned long)arg1;
-- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1;
-- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtStep:(unsigned long)arg1;
 - (void)setCurrentDisplayStep:(unsigned int)arg1;
-- (unsigned int)currentDisplayStep;
 - (void)setManeuverDisplaySteps:(id)arg1;
-- (id)initWithRoute:(id)arg1;
 - (bool)_needsCornerOffsetAt:(unsigned int)arg1;
-- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
-- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtStep:(unsigned long)arg1 metersPerPoint:(double)arg2;
+- (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (void)attributedRouteHasChanged;
-- (id)route;
 - (void)dealloc;
 - (id)description;
 

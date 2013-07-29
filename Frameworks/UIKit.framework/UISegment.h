@@ -30,6 +30,7 @@
         unsigned int wasSelected : 1; 
     } _segmentFlags;
     NSArray *_infoConstraints;
+    float _requestedScaleFactor;
 }
 
 @property(setter=_setInfoConstraints:,copy) NSArray * _infoConstraints;
@@ -38,22 +39,23 @@
 @property int controlSize;
 @property(copy) NSString * badgeValue;
 @property(readonly) UIView * badgeView;
+@property float requestedScaleFactor;
 
 + (id)_backgroundImageWithStorage:(id)arg1 style:(int)arg2 mini:(BOOL)arg3 state:(unsigned int)arg4 position:(unsigned int)arg5 drawMode:(int*)arg6 defaultBlock:(id)arg7;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)label;
 - (void)setPosition:(unsigned int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (float)requestedScaleFactor;
 - (id)_infoConstraints;
 - (id)viewForBaselineLayout;
 - (float)_idealWidth;
 - (id)infoName;
 - (void)_forceInfoDisplay;
+- (void)setRequestedScaleFactor:(float)arg1;
 - (void)animateRemoveForWidth:(float)arg1;
 - (void)animateAdd:(BOOL)arg1;
 - (void)setShowDivider:(BOOL)arg1;
@@ -61,7 +63,6 @@
 - (void)setMomentary:(BOOL)arg1;
 - (BOOL)isMomentary;
 - (id)badgeView;
-- (void)setAutosizeText:(BOOL)arg1;
 - (void)setWasSelected:(BOOL)arg1;
 - (void)updateForAppearance:(id)arg1 style:(int)arg2;
 - (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 autosizeText:(BOOL)arg8;
@@ -89,6 +90,7 @@
 - (id)objectValue;
 - (void)_commonSegmentInit;
 - (void)setObjectValue:(id)arg1;
+- (void)setAutosizeText:(BOOL)arg1;
 - (void)_updateTextColors;
 - (void)insertDividerView;
 - (id)badgeValue;
@@ -113,14 +115,5 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLanguage;
-- (id)accessibilityIdentifier;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_axLabelFromInfoObject:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityRowRange;
 
 @end

@@ -21,6 +21,7 @@
 @property BOOL doAddToHistory;
 
 
+- (id)targetFrame;
 - (void)setDoAddToHistory:(BOOL)arg1;
 - (BOOL)doAddToHistory;
 - (void)setIsVisited:(BOOL)arg1;
@@ -30,7 +31,6 @@
 - (id)invalidUrl;
 - (void)setTooltip:(id)arg1;
 - (void)setTargetFrame:(id)arg1;
-- (id)targetFrame;
 - (void)setTargetMode:(int)arg1;
 - (void)setTargetLocation:(id)arg1;
 - (id)tooltip;

@@ -7,7 +7,6 @@
 @interface SAMPAlbumCollection : SAMPCollection  {
 }
 
-@property int rating;
 @property(copy) NSString * artist;
 @property(copy) NSString * sortArtist;
 
@@ -20,8 +19,6 @@
 - (void)setSortArtist:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setRating:(int)arg1;
-- (int)rating;
 - (id)groupIdentifier;
 
 @end

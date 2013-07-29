@@ -47,10 +47,10 @@
 - (id)documentToSearch;
 - (struct __CTFont { }*)_fontWithPDFFont:(struct CGPDFFont { }*)arg1 size:(float)arg2;
 - (BOOL)_hitSearchLimit;
-- (void)setSearchDelegate:(id)arg1;
 - (unsigned int)resultLimit;
 - (void)setResultLimit:(unsigned int)arg1;
 - (unsigned int)currentPageIndex;
+- (void)setSearchDelegate:(id)arg1;
 - (void)setDocumentScale:(float)arg1;
 - (void)setDocumentToSearch:(id)arg1;
 - (float)documentScale;

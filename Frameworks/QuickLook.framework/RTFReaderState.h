@@ -128,6 +128,7 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setBaseWritingDirection:(int)arg1;
 - (id)initWithDelegate:(id)arg1;
+- (struct CGSize { float x1; float x2; })paperSize;
 - (void)setBottomMargin:(float)arg1;
 - (void)setRightMargin:(float)arg1;
 - (void)setTopMargin:(float)arg1;
@@ -148,7 +149,6 @@
 - (void)setViewKind:(int)arg1;
 - (struct CGSize { float x1; float x2; })viewSize;
 - (void)setViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })paperSize;
 - (void)setPaperSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)mutableAttributes;
 - (void)_updateAttributes;

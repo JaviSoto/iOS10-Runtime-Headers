@@ -58,12 +58,12 @@
 - (void)setTiltDegreesX:(float)arg1;
 - (void)setTiltDirectionY:(int)arg1;
 - (void)setTiltDirectionX:(int)arg1;
-- (void)setTiltEnabled:(BOOL)arg1;
 - (void)setSlidePixelsY:(float)arg1;
 - (void)setSlidePixelsX:(float)arg1;
 - (void)setSlideDirectionY:(int)arg1;
 - (void)setSlideDirectionX:(int)arg1;
 - (void)setSlideEnabled:(BOOL)arg1;
+- (void)setTiltEnabled:(BOOL)arg1;
 - (void)setDefaultValues;
 
 @end

@@ -100,7 +100,6 @@
 - (BOOL)isComputed;
 - (void)setUti:(id)arg1;
 - (void)setFileName:(id)arg1;
-- (void)setData:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (id)previewResponse;
 - (id)safeRequestForRequest:(id)arg1;
@@ -115,6 +114,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (int)pageCount;
+- (void)setData:(id)arg1;
 - (id)connection;
 - (id)url;
 - (BOOL)isCancelled;

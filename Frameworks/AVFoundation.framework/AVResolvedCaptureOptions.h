@@ -15,6 +15,18 @@
     BOOL hasStillImageOutput;
     NSString *faceDetectionMode;
     BOOL faceDetectionNotificationsEnabled;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoConnectionMinFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoConnectionMaxFrameDuration;
     AVCaptureDeviceFormat *resolvedVideoDeviceFormat;
     struct { 
         long long value; 
@@ -29,30 +41,32 @@
         long long epoch; 
     } resolvedVideoMaxFrameDuration;
     NSMutableDictionary *resolvedVideoCompressionProperties;
+    NSMutableDictionary *resolvedCaptureOptions;
     BOOL resolvesFrameRatesUsingDefaultValues;
+    BOOL resetsVideoZoomFactorToDefaultValue;
 }
 
 @property BOOL hasStillImageOutput;
 @property BOOL resolvesFrameRatesUsingDefaultValues;
+@property BOOL resetsVideoZoomFactorToDefaultValue;
 @property(readonly) NSString * sessionPreset;
 
 + (id)resolvedCaptureOptionsWithSessionPreset:(id)arg1 captureOptionsDictionary:(id)arg2;
 + (void)initialize;
 
-- (BOOL)hasMaxFrameRateOverrideInResolvedOptions:(id)arg1;
-- (BOOL)hasMinFrameRateOverrideInResolvedOptions:(id)arg1;
 - (void)enableFaceDetectionNotificationsForConnection:(id)arg1;
 - (void)addFaceDetectionMode:(id)arg1 forConnection:(id)arg2;
 - (BOOL)hasStillImageOutput;
-- (BOOL)resolvesFrameRatesUsingDefaultValues;
 - (BOOL)hasHeightOverrideInResolvedOptions:(id)arg1;
 - (BOOL)hasWidthOverrideInResolvedOptions:(id)arg1;
+- (id)resolvedVideoSettingsForMovieFileOutput;
+- (id)resolvedVideoSettingsWithScalingAllowed:(BOOL)arg1;
 - (void)setBestPreviewResolutionForCaptureOptions:(id)arg1;
 - (BOOL)hasOverridesAffectingPreviewFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
 - (void)setBestCaptureResolutionForAVScalingMode:(id)arg1 captureOptions:(id)arg2;
 - (BOOL)hasOverridesAffectingCaptureFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
 - (void)resolveOutputSettingsToCaptureOptions:(id)arg1 resolvedScalingMode:(id*)arg2;
-- (void)resolveFrameRatesToCaptureOptions:(id)arg1 withCamera:(id)arg2;
+- (void)resolveFrameRatesToCaptureOptions:(id)arg1 withCamera:(id)arg2 activeFormat:(id)arg3;
 - (void)applyInputPriorityOverridesToCaptureOptions:(id)arg1 forCamera:(id)arg2;
 - (id)deviceFormatForCamera:(id)arg1 captureOptions:(id)arg2;
 - (id)cameraForCaptureOptions:(id)arg1;
@@ -61,15 +75,21 @@
 - (void)usePreviewSizedCaptureBuffersForConnection:(id)arg1;
 - (id)baseCaptureOptions;
 - (void)addOutputSettings:(id)arg1 forConnection:(id)arg2;
+- (id)resolvedVideoSettingsForAssetWriter;
 - (void)setHasStillImageOutput:(BOOL)arg1;
+- (void)setResetsVideoZoomFactorToDefaultValue:(BOOL)arg1;
 - (void)setResolvesFrameRatesUsingDefaultValues:(BOOL)arg1;
+- (id)sessionPreset;
+- (void)addMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forConnection:(id)arg2;
+- (void)addMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forConnection:(id)arg2;
 - (void)useStabilizationIfAvailableForConnection:(id)arg1;
 - (id)resolvedVideoCompressionProperties;
 - (id)resolvedCaptureOptionsDictionary;
+- (BOOL)resolvesFrameRatesUsingDefaultValues;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })resolvedVideoMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })resolvedVideoMinFrameDuration;
+- (BOOL)resetsVideoZoomFactorToDefaultValue;
 - (id)resolvedVideoDeviceFormat;
-- (id)sessionPreset;
 - (void)dealloc;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 

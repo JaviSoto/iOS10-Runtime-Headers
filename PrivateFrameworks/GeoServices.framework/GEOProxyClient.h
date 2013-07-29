@@ -30,7 +30,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)auditToken;
 - (id)bundleIdentifier;
+- (id)auditToken;
 
 @end

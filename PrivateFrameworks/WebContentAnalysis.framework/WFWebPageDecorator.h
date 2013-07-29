@@ -23,6 +23,7 @@
 - (id)linkTitlesText;
 - (id)rawPlainText;
 - (id)imageAltsText;
+- (id)tags;
 - (id)plainTextAttributeWithSelector:(SEL)arg1 title:(id)arg2;
 - (id)plainTextAttributeWithSelector:(SEL)arg1 title:(id)arg2 weight:(int)arg3;
 - (void)_cacheImgProperties;
@@ -40,13 +41,12 @@
 - (int)numberOfKnownImagePixels;
 - (id)pageContent;
 - (int)numberOfImages;
-- (int)wordCount;
 - (id)plainText;
-- (id)tags;
-- (void)setURLString:(id)arg1;
+- (int)wordCount;
 - (id)URLString;
 - (id)pageTitle;
 - (void)dealloc;
+- (void)setURLString:(id)arg1;
 - (id)links;
 - (id)images;
 

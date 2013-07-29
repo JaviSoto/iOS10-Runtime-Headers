@@ -14,6 +14,7 @@
 + (id)sharedInstance;
 
 - (int)getCurrentModelVersion;
+- (void)rebuildAllThumbnails;
 - (void)resetDupesAnalysis;
 - (void)rebuildCloudFeed;
 - (void)analyzeMomentList:(id)arg1;
@@ -41,6 +42,8 @@
 - (void)enablePhotostreamsWithStreamID:(id)arg1;
 - (void)recoverFromCrashIfNeeded;
 - (void)clearChangeStore;
+- (BOOL)hasCompletedMomentAnalysis;
+- (BOOL)hasCompletedRestorePostProcessing;
 - (void)recalculateCachedAlbumCounts;
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;

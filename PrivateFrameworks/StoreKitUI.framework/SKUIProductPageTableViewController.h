@@ -48,8 +48,8 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)setSections:(id)arg1;
-- (id)_tableView;
 - (id)tableView;
+- (id)_tableView;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;

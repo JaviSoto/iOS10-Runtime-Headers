@@ -105,8 +105,8 @@
 - (void)setProtocolFileSize:(unsigned long long)arg1;
 - (void)setFileHash:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
-- (id)initWithGUID:(id)arg1;
 - (unsigned long long)_fileSize;
+- (id)initWithGUID:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)setType:(id)arg1;

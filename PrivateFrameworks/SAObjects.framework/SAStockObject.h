@@ -86,9 +86,9 @@
 - (id)encodedClassName;
 - (id)price;
 - (id)requests;
-- (id)volume;
 - (void)setOpen:(id)arg1;
 - (void)setVolume:(id)arg1;
+- (id)volume;
 - (id)status;
 - (void)setStatus:(id)arg1;
 - (id)open;

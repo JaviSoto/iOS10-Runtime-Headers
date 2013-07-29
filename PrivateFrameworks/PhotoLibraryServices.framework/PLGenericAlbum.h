@@ -17,6 +17,7 @@
 @property(readonly) BOOL isLibrary;
 @property(readonly) BOOL isCameraAlbum;
 @property(readonly) BOOL isSmartAlbum;
+@property(readonly) BOOL isOwnPhotoStreamAlbum;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(readonly) unsigned int indexOfPosterImage;
 @property BOOL isRegisteredForChanges;
@@ -29,6 +30,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -55,13 +58,14 @@
 @property int pendingItemsCount;
 @property int pendingItemsType;
 
++ (id)insertNewAlbumWithTitle:(id)arg1 intoLibrary:(id)arg2;
++ (id)allPanoramasAlbumInLibrary:(id)arg1;
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)insertAlbumWithKind:(int)arg1 title:(id)arg2 uuid:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)insertNewFaceAlbumIntoLibrary:(id)arg1;
 + (id)insertNewCloudSharedAlbumWithTitle:(id)arg1 lastInterestingDate:(id)arg2 intoLibrary:(id)arg3;
 + (id)insertNewSyncedEventIntoLibrary:(id)arg1;
 + (id)insertNewAlbumIntoLibrary:(id)arg1;
-+ (id)insertNewAlbumWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithName:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithObjectID:(id)arg1 inLibrary:(id)arg2;
@@ -70,7 +74,6 @@
 + (id)allVideosAlbumInLibrary:(id)arg1;
 + (id)allHorizontalPanoramasAlbumInLibrary:(id)arg1;
 + (id)allVerticalPanoramasAlbumInLibrary:(id)arg1;
-+ (id)allPanoramasAlbumInLibrary:(id)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
 + (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
@@ -100,8 +103,9 @@
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)cameraRollAlbumInLibrary:(id)arg1;
 
-- (unsigned int)indexOfPosterImage;
 - (id)assetsByObjectIDAtIndexes:(id)arg1;
+- (BOOL)canContributeToCloudSharedAlbum;
+- (unsigned int)indexOfPosterImage;
 - (BOOL)isSmartAlbum;
 - (BOOL)hasDerivedIndexMappers;
 - (void)enumerateDerivedIndexMappers:(id)arg1;
@@ -120,7 +124,7 @@
 - (BOOL)isRegisteredForChanges;
 - (void)setKindValue:(int)arg1;
 - (id)photoLibrary;
-- (id)localizedLocationNames;
+- (BOOL)isOwnPhotoStreamAlbum;
 - (BOOL)canShowComments;
 - (unsigned int)videosCount;
 - (unsigned int)assetsCount;
@@ -132,7 +136,6 @@
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (BOOL)isStandInAlbum;
@@ -150,10 +153,10 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)localizedLocationNames;
 - (void)delete;
 - (id)posterImage;
 - (unsigned int)photosCount;
-- (void)setUuid:(id)arg1;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
@@ -163,6 +166,7 @@
 - (BOOL)isEmpty;
 - (id)name;
 - (unsigned int)count;
+- (void)setUuid:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)localizedTitle;

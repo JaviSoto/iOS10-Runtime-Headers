@@ -55,7 +55,6 @@
 - (void)cancelFuturePurchase:(id)arg1;
 - (BOOL)addPurchaseBatch:(id)arg1;
 - (void)addFuturePurchase:(id)arg1;
-- (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)continuationFinished:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
 - (BOOL)_issuePurchaseRequestForPurchases:(id)arg1;
@@ -74,6 +73,7 @@
 - (void)_showDialogsForErrors:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)_dialogDidFinish:(id)arg1;
+- (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;

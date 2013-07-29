@@ -40,8 +40,6 @@
 @property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
 @property BOOL showHiddenCandidatesOnly;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -82,8 +80,12 @@
 - (void)revealHiddenCandidates;
 - (void)candidatesDidChange;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (unsigned int)selectedSortIndex;
+- (id)statisticsIdentifier;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
+- (void)showPreviousRow;
+- (void)showNextRow;
 - (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
@@ -104,9 +106,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

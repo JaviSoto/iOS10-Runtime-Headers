@@ -21,12 +21,12 @@
 - (id)scriptAttributeKeys;
 - (id)URLBagKey;
 - (void)setURLBagKey:(id)arg1;
-- (void)setTimeoutInterval:(id)arg1;
 - (id)attributeKeys;
 - (id)init;
 - (void)dealloc;
 - (id)URLs;
 - (void)setURLs:(id)arg1;
+- (void)setTimeoutInterval:(id)arg1;
 - (id)timeoutInterval;
 
 @end

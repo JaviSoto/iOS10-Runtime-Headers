@@ -30,7 +30,7 @@
 - (void)_configureAVConference:(id)arg1 forChat:(id)arg2;
 - (void)_setAudioSessionPropertiesForChat:(id)arg1;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2;
-- (BOOL)_submitEndCallMetric:(id)arg1 forChat:(id)arg2;
+- (BOOL)_submitEndCallMetric:(id)arg1 forCallID:(int)arg2;
 - (BOOL)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
 - (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg2 localPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg3;
 - (id)_controller;

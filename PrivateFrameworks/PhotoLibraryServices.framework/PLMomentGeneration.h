@@ -2,36 +2,38 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSOperationQueue, NSMutableArray;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSMutableSet;
 
 @interface PLMomentGeneration : NSObject  {
-    NSOperationQueue *__queue;
-    NSMutableArray *__assets;
+    NSMutableSet *_pendingInsertsAndUpdates;
+    NSMutableDictionary *_pendingDeletes;
+    NSObject<OS_dispatch_queue> *_pendingIsolation;
 }
-
-@property(readonly) NSOperationQueue * _queue;
-@property(readonly) NSMutableArray * _assets;
 
 + (BOOL)_rebuildAllMomentListsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (BOOL)_rebuildAllMomentsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (BOOL)_deleteAllMomentDataInManagedObjectContext:(id)arg1 incremental:(BOOL)arg2 error:(id*)arg3;
-+ (id)_insertYearMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)_insertYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)_insertMegaMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)_insertMomentsForAssets:(id)arg1 inManagedObjectContext:(id)arg2;
++ (void)_setManagedObjectContextMomentarilyBlessed:(id)arg1;
++ (BOOL)isManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (BOOL)rebuildAllMomentsForOfflineStore:(id)arg1 error:(id*)arg2;
 + (id)generator;
 
 - (void)rebuildAllMomentLists:(id)arg1;
 - (void)rebuildAllMomentsIncremental:(BOOL)arg1 completionHandler:(id)arg2;
-- (id)_insertYearMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
+- (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id)arg3;
+- (id)_insertYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inManagedObjectContext:(id)arg4;
 - (id)_insertMegaMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_insertMomentsForAssets:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)affectedMomentsForAssetDateCreated:(id)arg1 inContext:(id)arg2;
+- (BOOL)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
+- (id)_newPublicGlobalUUIDsToAssetsMappingWithAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)fetchMomentsForEarliestDate:(id)arg1 latestDate:(id)arg2 sorted:(BOOL)arg3 inContext:(id)arg4;
 - (id)momentPhotoLibrary;
-- (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id)arg3;
-- (id)_assets;
-- (id)_queue;
+- (void)generateWithIncrementalDataCompletionHandler:(id)arg1;
+- (void)saveChangesForAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2;
 - (id)init;
 - (void)dealloc;
 

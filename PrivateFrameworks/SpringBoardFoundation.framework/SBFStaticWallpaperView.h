@@ -7,22 +7,32 @@
 @interface SBFStaticWallpaperView : SBFWallpaperView  {
     NSMutableSet *_mappedBackdropKeys;
     UIImage *_image;
+    struct { /* ? */ } **_colorBoxes;
+    unsigned int _colorBoxRowCount;
+    unsigned int _colorBoxColCount;
+    unsigned int _colorBoxSize;
 }
 
-@property(readonly) UIImage * image;
-
++ (BOOL)_allowsRasterization;
 + (BOOL)_allowsParallax;
 
+- (id)_untintedImageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1;
 - (id)_mappedImageKeyForParameters:(struct { int x1; int x2; int x3; })arg1 includingTint:(BOOL)arg2;
+- (void)_freeColorBoxes;
 - (void)_removeMappedBlurs;
+- (id)_treatedImageKey;
+- (id)_treatedImage;
+- (void)_buildColorBoxes;
 - (BOOL)isDisplayingWallpaper:(id)arg1;
-- (id)_displayedImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
-- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2 destinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (id)_blurredImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (id)_displayedImage;
+- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2;
+- (id)_blurredImage;
+- (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
 - (id)_computeAverageColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2;
+- (id)wallpaperImage;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)image;
 - (void)dealloc;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

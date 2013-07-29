@@ -24,8 +24,8 @@
 - (void)setLocalizableMessage:(id)arg1;
 - (id)localizableMessage;
 - (unsigned char)recipientIndex;
-- (void)setData:(id)arg1;
 - (id)data;
 - (void)dealloc;
+- (void)setData:(id)arg1;
 
 @end

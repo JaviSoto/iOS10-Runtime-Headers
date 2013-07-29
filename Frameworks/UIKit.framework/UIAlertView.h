@@ -121,12 +121,8 @@
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_alertWindow;
 + (id)_alertViewForWindow:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 + (id)alertViewWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 
-- (void)_setTextFieldsHidden:(BOOL)arg1;
-- (void)setMessage:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -165,6 +161,7 @@
 - (void)_showManualKBIfNecessary;
 - (id)_destructiveButton;
 - (void)_setDestructiveButton:(id)arg1;
+- (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
 - (void)setKeyboardShowsOnPopup:(BOOL)arg1;
 - (void)_showByReplacingAlert:(id)arg1 animated:(BOOL)arg2;
 - (id)_representedModalItem;
@@ -188,11 +185,9 @@
 - (void)_setAccessoryViewController:(id)arg1;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1 coveredBySpringBoardAlert:(BOOL)arg2;
 - (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
 - (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (id)_textFieldAtIndex:(int)arg1;
 - (void)_alertSheetTextFieldDidStartEditing:(id)arg1;
-- (void)_alertSheetTextFieldDidEndEditing:(id)arg1;
 - (id)_buttonAtIndex:(int)arg1;
 - (id)buttonAtIndex:(int)arg1;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
@@ -234,6 +229,7 @@
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)destructiveButton;
 - (void)setDestructiveButton:(id)arg1;
+- (void)_setTextFieldsHidden:(BOOL)arg1;
 - (int)bodyMaxLineCount;
 - (void)setBodyTextMaxLineCount:(int)arg1;
 - (int)titleMaxLineCount;
@@ -296,6 +292,7 @@
 - (id)keyboard;
 - (BOOL)_isAnimating;
 - (void)_keyboardDidHide:(id)arg1;
+- (id)tableView;
 - (id)textField;
 - (void)setAlertViewStyle:(int)arg1;
 - (void)setDefaultButtonIndex:(int)arg1;
@@ -306,7 +303,7 @@
 - (void)setNumberOfRows:(int)arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (void)dismiss;
-- (id)tableView;
+- (void)setMessage:(id)arg1;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
@@ -315,10 +312,11 @@
 - (id)_defaultButton;
 - (void)setDefaultButton:(id)arg1;
 - (id)defaultButton;
-- (id)textFieldAtIndex:(int)arg1;
 - (float)_maxHeight;
+- (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
 - (int)numberOfRows;
+- (id)titleLabel;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
 - (BOOL)canBecomeFirstResponder;
 - (void)_handleKeyUIEvent:(id)arg1;
@@ -328,9 +326,6 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (id)titleLabel;
-- (BOOL)accessibilityPerformEscape;
-- (void)_accessibilitySendAlert;
 - (id)complete;
 - (void)setComplete:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

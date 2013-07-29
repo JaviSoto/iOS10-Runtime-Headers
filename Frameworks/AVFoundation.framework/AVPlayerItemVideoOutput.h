@@ -12,16 +12,16 @@
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 
 
+- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 itemTimeForDisplay:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
+- (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (void)_dispatchOutputSequenceWasFlushed;
 - (void)_setTagBuffersWithConversionInformation;
-- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 itemTimeForDisplay:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
 - (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(double)arg1;
 - (void)_startObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_stopObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (BOOL)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_dispatchOutputMediaDataWillChange;
 - (id)initWithPixelBufferAttributes:(id)arg1;
-- (void)setSuppressesPlayerRendering:(BOOL)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)_detachFromPlayerItem;
 - (void)_attachToPlayerItem:(id)arg1;

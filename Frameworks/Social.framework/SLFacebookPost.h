@@ -11,6 +11,7 @@
     NSMutableArray *_videoAssetURLs;
     NSString *_maskedApplicationID;
     NSString *_text;
+    NSString *_videoExportPreset;
     NSURL *_link;
     SLFacebookPlace *_place;
     SLFacebookAlbum *_album;
@@ -23,6 +24,7 @@
 @property(retain) NSArray * imageAssetURLs;
 @property(retain) NSArray * videoData;
 @property(retain) NSArray * videoAssetURLs;
+@property(retain) NSString * videoExportPreset;
 @property(retain) NSURL * link;
 @property(retain) SLFacebookPlace * place;
 @property(retain) SLFacebookAlbum * album;
@@ -34,6 +36,7 @@
 
 - (void)setTaggedUserIDs:(id)arg1;
 - (id)taggedUserIDs;
+- (id)videoExportPreset;
 - (id)maskedApplicationID;
 - (void)setVideoAssetURLs:(id)arg1;
 - (void)setVideoData:(id)arg1;
@@ -43,6 +46,7 @@
 - (void)setMaskedApplicationID:(id)arg1;
 - (void)setImageAssetURLs:(id)arg1;
 - (id)_encodableObjectProperties;
+- (void)setVideoExportPreset:(id)arg1;
 - (void)addVideoAssetURL:(id)arg1;
 - (void)addVideoData:(id)arg1;
 - (void)addImageAssetURL:(id)arg1;

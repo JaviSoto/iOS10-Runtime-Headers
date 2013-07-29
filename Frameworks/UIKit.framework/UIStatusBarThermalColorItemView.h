@@ -7,14 +7,9 @@
     BOOL _sunlightMode;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
-- (id)contentsImage;
 - (id)_color;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (id)contentsImage;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

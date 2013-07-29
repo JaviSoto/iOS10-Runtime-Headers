@@ -19,14 +19,11 @@
 @property(retain) id maximumRelativeValue;
 
 
-- (void)setKeyPath:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)maximumRelativeValue;
 - (id)minimumRelativeValue;
-- (void)setObservedMotionType:(int)arg1;
-- (int)observedMotionType;
 - (void)_setType:(int)arg1;
 - (void)_setKeyPath:(id)arg1;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;

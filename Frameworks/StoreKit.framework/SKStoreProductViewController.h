@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class _UIAsyncInvocation, <SKStoreProductViewControllerDelegatePrivate>, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, <SKStoreProductViewControllerDelegate>, SKRemoteProductViewController, NSDictionary, NSString;
+@class _UIAsyncInvocation, <SKStoreProductViewControllerDelegatePrivate>, GKGame, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, <SKStoreProductViewControllerDelegate>, SKRemoteProductViewController, NSDictionary, NSString;
 
 @interface SKStoreProductViewController : UIViewController  {
     NSString *_affiliateIdentifier;
@@ -27,6 +27,8 @@
     BOOL _showsStoreButton;
 }
 
+@property(retain) GKGame * _gkGame;
+@property(copy) id _gkCompletionHandler;
 @property <SKStoreProductViewControllerDelegate> * delegate;
 @property(copy) NSString * affiliateIdentifier;
 @property(copy) NSString * clientIdentifier;
@@ -43,6 +45,7 @@
 - (void)loadProductWithPageDictionary:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)showsStoreButton;
 - (id)scriptContextDictionary;
+- (id)clientIdentifier;
 - (BOOL)automaticallyDismisses;
 - (void)_resetRemoteViewController;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;
@@ -58,21 +61,24 @@
 - (void)setShowsStoreButton:(BOOL)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
 - (void)setProductPageStyle:(int)arg1;
+- (void)setClientIdentifier:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
 - (id)affiliateIdentifier;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id)arg2;
-- (id)clientIdentifier;
-- (void)setClientIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)_addRemoteView;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)set_gkCompletionHandler:(id)arg1;
+- (id)_gkCompletionHandler;
+- (void)set_gkGame:(id)arg1;
+- (id)_gkGame;
 
 @end

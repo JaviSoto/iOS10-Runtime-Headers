@@ -20,8 +20,6 @@
 @property float rightMargin;
 @property int style;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)hideAccountButton;
 - (void)_termsAndConditionsAction:(id)arg1;

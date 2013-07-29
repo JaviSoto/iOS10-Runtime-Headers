@@ -47,12 +47,12 @@
 - (void)setRecipientKind:(int)arg1;
 - (id)recipient;
 - (id)originator;
-- (void)setMessage:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (id)handle;
 - (void)setRecipient:(id)arg1;
 - (id)message;
 - (void)dealloc;
 - (id)description;
+- (void)setMessage:(id)arg1;
 
 @end

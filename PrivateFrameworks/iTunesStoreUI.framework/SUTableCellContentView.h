@@ -24,8 +24,6 @@
 @property BOOL highlightsOnlyContentView;
 @property(getter=isHighlighted) BOOL highlighted;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_removeSubviewsForConfiguration;
 - (id)_clippedImageForImage:(id)arg1;
@@ -56,12 +54,5 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (id)_scriptingInfo;
 - (void)layoutSubviews;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLanguage;
-- (id)description;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

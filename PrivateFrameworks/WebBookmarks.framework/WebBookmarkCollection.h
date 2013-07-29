@@ -9,6 +9,7 @@
     struct __CFLocale { } *_locale;
     WebBookmarkTitleWordTokenizer *_wordTokenizer;
     WebBookmark *_rootBookmark;
+    unsigned int _favoritesFolderIdentifier;
     BOOL _merging;
     BOOL _dirty;
     WFUserSettings *_webFilterUserSettings;
@@ -39,15 +40,18 @@
 - (BOOL)_syncAdd:(id)arg1 toParent:(unsigned int)arg2 withOrderIndex:(unsigned int)arg3 error:(id*)arg4;
 - (id)_bookmarkDictionaryForSqliteRow:(struct sqlite3_stmt { }*)arg1 recursive:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)_addChildrenOfID:(unsigned int)arg1 toCollection:(id)arg2 recursive:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)bookmarkIsFavoritesFolder:(id)arg1;
 - (id)favoritesFolderList;
+- (void)_clearCachedFavoritesFolderIdentifier;
 - (void)setFavoritesFolderIdentifier:(unsigned int)arg1;
 - (BOOL)isWebFilterEnabled;
 - (void)_webFilterConfigurationChanged;
 - (id)_bookmarksInListWhere:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
-- (void)clearBuiltinDeviceBookmarks;
+- (void)clearCarrierBookmarks;
 - (unsigned int)rollingReadingListMaximumCount;
 - (void)rollOutReadingListItemIfNeededToMakeRoomForOneNewItem;
 - (BOOL)rollOutLastReadingListItem;
+- (id)readingListBookmarksNeedingArchiveInMode:(int)arg1;
 - (id)firstReadingListBookmarkNeedingArchiveInMode:(int)arg1;
 - (unsigned int)countReadingListBookmarksNeedingArchiveInMode:(int)arg1;
 - (unsigned int)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(BOOL)arg2;
@@ -77,6 +81,7 @@
 - (id)webFilterWhiteList;
 - (id)webFilterWhiteListFolder;
 - (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;
+- (unsigned int)_favoritesFolderIdentifier;
 - (id)bookmarksBarBookmark;
 - (id)syncStringForKey:(id)arg1;
 - (void)postBookmarksDidReloadNotification;
@@ -88,7 +93,7 @@
 - (BOOL)_reindexBookmarkID:(unsigned int)arg1 title:(id)arg2;
 - (BOOL)_markBookmarkID:(unsigned int)arg1 withSpecialID:(unsigned int)arg2;
 - (BOOL)_updateHiddenAncestorCountForBookmarksUnderFolderID:(unsigned int)arg1 addingOffset:(int)arg2;
-- (BOOL)_addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentID:(unsigned int)arg3 orderIndex:(unsigned int)arg4 isFolder:(BOOL)arg5 externalUUID:(id)arg6 associatedBookmark:(id)arg7 reorderSiblings:(BOOL)arg8 updateParentChildCount:(BOOL)arg9 updateAncestorEntries:(BOOL)arg10;
+- (BOOL)_addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentID:(unsigned int)arg3 orderIndex:(unsigned int)arg4 isFolder:(BOOL)arg5 externalUUID:(id)arg6 associatedBookmark:(id)arg7 updateParentChildCount:(BOOL)arg8 updateAncestorEntries:(BOOL)arg9;
 - (id)_databaseTitleForSpecialID:(unsigned int)arg1;
 - (unsigned int)_specialIDForBookmarkTitle:(id)arg1;
 - (BOOL)_deleteRecursively:(unsigned int)arg1;
@@ -146,11 +151,10 @@
 - (void)_clearAndCreateBookmarksTitleWordTable;
 - (void)_clearAndCreateAncestorTable;
 - (void)_clearAndCreateBookmarksTables;
-- (id)rollingListOfArchivedReadingListItems;
 - (void)_cullReadingListBookmarksList:(id)arg1 toSize:(unsigned int)arg2;
-- (id)readingListBookmarksNeedingArchiveInMode:(int)arg1;
-- (void)_cullReadingListBookmarksNeedingArchiveInModeToRollingListSize:(int)arg1;
+- (id)rollingListOfArchivedReadingListItems;
 - (id)_orderedWhereClauseForArchiveMode:(int)arg1;
+- (id)_tableExpressionForArchiveMode:(int)arg1;
 - (void)_postBookmarksDidReloadNotification;
 - (id)_firstBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2 inParent:(unsigned int)arg3;
 - (void)_addBookmarksForReadingListMatchStatement:(id)arg1 normalizedQuery:(id)arg2 toArray:(id)arg3 maxResults:(int)arg4;

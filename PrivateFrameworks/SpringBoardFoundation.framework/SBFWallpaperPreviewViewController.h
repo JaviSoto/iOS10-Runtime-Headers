@@ -11,19 +11,23 @@
     NSDictionary *_proceduralWallpaper;
     NSDictionary *_proceduralWallpaperOptions;
     BOOL _colorSamplingEnabled;
+    BOOL _allowScrolling;
     SBFLockScreenSimpleDateFormatter *_dateFormatter;
 }
 
+@property(readonly) UIImage * wallpaperImage;
 @property BOOL colorSamplingEnabled;
 @property <SBFLegibilitySettingsProviderDelegate> * delegate;
 @property(readonly) _UILegibilitySettings * legibilitySettings;
 
 
+- (id)initWithScrollableImage:(id)arg1;
 - (id)initWithMagicWallpaper:(id)arg1 options:(id)arg2;
 - (id)initWithColorSamplingEnabled:(BOOL)arg1;
 - (void)_startDateTimer;
 - (id)_previewView;
 - (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)wallpaperImage;
 - (void)setColorSamplingEnabled:(BOOL)arg1;
 - (BOOL)colorSamplingEnabled;
 - (id)_backdropWallpaperView;
@@ -33,15 +37,15 @@
 - (void)_updateDateView;
 - (id)_dateView;
 - (void)wallpaperView:(id)arg1 legibilitySettingsDidChange:(id)arg2;
-- (id)legibilitySettings;
 - (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)legibilitySettings;
 - (id)initWithImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

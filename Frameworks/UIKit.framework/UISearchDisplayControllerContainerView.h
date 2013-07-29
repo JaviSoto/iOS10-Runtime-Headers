@@ -5,15 +5,12 @@
 @class NSLayoutConstraint, UIView;
 
 @interface UISearchDisplayControllerContainerView : UIView  {
-    BOOL _statusBarIsTransparent;
-    BOOL _hostViewIsFullScreen;
     BOOL _collapsedTopView;
     UIView *_topView;
     UIView *_bottomView;
     UIView *_behindView;
     NSLayoutConstraint *_topViewHeightConstraint;
     NSLayoutConstraint *_topViewAttributeTopConstraint;
-    id _statusBarChangeObserver;
 }
 
 @property(readonly) UIView * topView;
@@ -21,16 +18,9 @@
 @property(readonly) UIView * behindView;
 @property(retain) NSLayoutConstraint * topViewHeightConstraint;
 @property(retain) NSLayoutConstraint * topViewAttributeTopConstraint;
-@property(retain) id statusBarChangeObserver;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_monitorStatusBarHeightChanges:(BOOL)arg1;
-- (id)statusBarChangeObserver;
-- (void)setStatusBarChangeObserver:(id)arg1;
 - (id)topViewAttributeTopConstraint;
 - (id)topViewHeightConstraint;
 - (void)setTopViewAttributeTopConstraint:(id)arg1;
@@ -48,7 +38,5 @@
 - (id)topView;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityObscuredScreenAllowedViews;
-- (BOOL)_accessibilityObscuredScreenAllowsView:(id)arg1;
 
 @end

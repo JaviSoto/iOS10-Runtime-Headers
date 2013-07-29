@@ -42,11 +42,8 @@
 
 
 - (void)setMoveAnimationScale:(float)arg1;
-- (float)moveAnimationScale;
 - (void)setMoveAnimationRadiansPerSecond:(float)arg1;
-- (float)moveAnimationRadiansPerSecond;
 - (void)setMoveAnimationAngle:(float)arg1;
-- (float)moveAnimationAngle;
 - (void)setTouchAnimationAngle:(float)arg1;
 - (float)touchAnimationAngle;
 - (void)setTouchAnimationElapsed:(float)arg1;
@@ -56,9 +53,7 @@
 - (void)setTouchAnimationRunning:(BOOL)arg1;
 - (BOOL)touchAnimationRunning;
 - (void)setAnimationRadiansPerSecond:(float)arg1;
-- (float)animationRadiansPerSecond;
 - (void)setAnimationAngle:(float)arg1;
-- (float)animationAngle;
 - (void)setNumFaces:(int)arg1;
 - (int)numFaces;
 - (void)setNumVertices:(int)arg1;
@@ -66,8 +61,14 @@
 - (void)setHighlightView:(id)arg1;
 - (void)touchEnded;
 - (void)touchBegan;
+- (void)setAnimationStateBasedOnBubble:(id)arg1;
 - (float)animationScaleForCurrentZ;
 - (struct CGPoint { float x1; float x2; })offsetForVertexAtIndex:(int)arg1;
+- (float)moveAnimationScale;
+- (float)moveAnimationRadiansPerSecond;
+- (float)moveAnimationAngle;
+- (float)animationRadiansPerSecond;
+- (float)animationAngle;
 - (void)applyAnimationToVertices:(struct CAMeshVertex { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CAPoint3D { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 - (void)setupVerticesAndFacesAnimated:(BOOL)arg1;
 - (void)chooseMoveAnimation;

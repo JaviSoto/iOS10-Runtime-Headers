@@ -78,8 +78,6 @@
         unsigned int delegateDidDismiss2 : 1; 
         unsigned int dontCallDismissDelegate : 1; 
         unsigned int useAutomaticKB : 1; 
-        unsigned int twoColumnsLayoutMode : 7; 
-        unsigned int threeColumnsLayoutMode : 7; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
         unsigned int useThreePartButtons : 1; 
@@ -98,6 +96,7 @@
     _UIBackdropView *_backdropView;
     UIGestureRecognizer *_dimViewGestureRecognizer;
     UIImage *_dimViewImage;
+    UIImageView *_dimViewImageView;
 }
 
 @property <UIActionSheetDelegate> * delegate;
@@ -111,14 +110,11 @@
 
 + (Class)_popoverControllerClass;
 + (id)_newCancelButtonFont;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visualAltitudeSensitiveBoundsWithActionAltitudeInfiniteEdges:(unsigned int)arg1 view:(id)arg2;
 + (id)_newFontForButtons;
 + (struct CGSize { float x1; float x2; })minimumSize;
 + (id)_popupAlertBackground;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setIndexOfSelectedButton:(int)arg1;
-- (void)setMessage:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -146,9 +142,9 @@
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)setSelectedButtonGlyphHighlightedImage:(id)arg1;
 - (void)setSelectedButtonGlyphImage:(id)arg1;
-- (int)threeColumnsLayoutMode;
+- (void)setIndexOfSelectedButton:(int)arg1;
+- (BOOL)useThreeColumnsButtonsLayout;
 - (void)setUseThreeColumnsButtonsLayout:(BOOL)arg1;
-- (void)setUseTwoColumnsButtonsLayout:(BOOL)arg1;
 - (void)setInPopover:(BOOL)arg1;
 - (void)_resizeDimViewAnimatingUp:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
@@ -169,11 +165,6 @@
 - (void)_removeBackdropViewIfNecessary;
 - (void)_transitionToLegacyAppearanceIfNecessary;
 - (void)showFromToolbar:(id)arg1;
-- (void)setThreeColumnsLayoutMode:(int)arg1;
-- (void)setTwoColumnsLayoutMode:(int)arg1;
-- (int)twoColumnsLayoutMode;
-- (BOOL)useThreeColumnsButtonsLayout;
-- (BOOL)useTwoColumnsButtonsLayout;
 - (void)_applyParallaxToContentIfNecessary;
 - (void)_transitionUIInView:(id)arg1 toSaturated:(BOOL)arg2;
 - (void)_installGestureRecognizerInDimView;
@@ -284,6 +275,7 @@
 - (BOOL)requiresPortraitOrientation;
 - (id)keyboard;
 - (BOOL)_isAnimating;
+- (id)tableView;
 - (id)textField;
 - (void)setDefaultButtonIndex:(int)arg1;
 - (void)setRunsModal:(BOOL)arg1;
@@ -295,7 +287,7 @@
 - (void)setNumberOfRows:(int)arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (void)dismiss;
-- (id)tableView;
+- (void)setMessage:(id)arg1;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)showInView:(id)arg1;
@@ -305,8 +297,8 @@
 - (id)_titleLabel;
 - (void)setDefaultButton:(id)arg1;
 - (id)defaultButton;
-- (id)textFieldAtIndex:(int)arg1;
 - (float)_maxHeight;
+- (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
 - (float)_separatorInset;
 - (int)numberOfRows;
@@ -324,9 +316,8 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (BOOL)accessibilityViewIsModal;
-- (BOOL)accessibilityPerformEscape;
 - (id)mf_tagForButtonIndex:(int)arg1;
 - (int)mf_addButtonWithTitle:(id)arg1 tag:(id)arg2;
+- (void)showFromObject:(id)arg1 animated:(BOOL)arg2;
 
 @end

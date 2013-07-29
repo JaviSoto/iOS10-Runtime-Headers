@@ -84,7 +84,6 @@
 - (void)setGame:(id)arg1;
 - (id)game;
 - (void)setBundleVersion:(id)arg1;
-- (void)setMessage:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (id)bundleVersion;
@@ -97,5 +96,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 
 @end

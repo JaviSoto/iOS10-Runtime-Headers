@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFComposeMultiView, NSInvocation, NSString, UIPickerView, MFComposeBodyField, MFComposeFromView, <MFMailPopoverManagerDelegate>, MFComposeScrollView, UITableView, <MFMailComposeViewDelegate>, MFMailComposeRecipientView, MFComposeImageSizeView, MFFromAddressViewController, MFComposeTextContentView, MFMailComposeContactsSearchController, NSArray, <MFComposeRecipientViewDelegate>, MFComposeSubjectView, UIResponder, UIView;
+@class MFFromAddressViewController, <MFComposeRecipientViewDelegate>, MFMailComposeContactsSearchController, <MFMailComposeViewDelegate>, MFComposeSubjectView, NSArray, <MFMailPopoverManagerDelegate>, UITableView, UIView, MFComposeFromView, MFComposeMultiView, MFComposeScrollView, MFComposeTextContentView, MFMailComposeRecipientView, UIPickerView, NSInvocation, MFComposeBodyField, MFComposeImageSizeView, UIResponder;
 
 @interface MFMailComposeView : UITransitionView <UITextContentViewDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate, MFDragContext> {
     <MFMailPopoverManagerDelegate> *_popoverOwner;
@@ -32,7 +32,6 @@
     MFMailComposeContactsSearchController *_searchController;
     NSArray *_searchResults;
     UITableView *_searchResultsTable;
-    NSString *_signatureMarkupString;
     float _offsetBeforeSearch;
     float _keyboardIntersection;
     unsigned int _options;
@@ -74,9 +73,8 @@
 @property(readonly) MFComposeScrollView * bodyScroller;
 @property(readonly) MFComposeTextContentView * bodyTextView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (id)bodyField;
 - (id)multiField;
 - (id)imageSizeField;
 - (id)fromField;
@@ -132,11 +130,10 @@
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (void)setChangingRecipients:(BOOL)arg1;
-- (void)_accessoryButtonTapped:(id)arg1;
 - (BOOL)presentSearchResults:(id)arg1;
 - (void)selectSearchResultsRecipientAtIndexPath:(id)arg1;
 - (void)_updateKeyboardIntersection:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)updateSignature;
+- (void)setFromAddressPickerVisible:(BOOL)arg1;
 - (void)saveFirstResponderWithKeyboardPinning:(BOOL)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)restoreFirstResponderWithKeyboardPinning:(BOOL)arg1;
@@ -144,13 +141,10 @@
 - (void)_finishUpRotationToInterfaceOrientation:(int)arg1;
 - (void)_adjustScrollerForBottomView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFromAddressPicker;
-- (BOOL)isFromAddressPickerVisible;
 - (id)bodyScroller;
 - (void)_updateOptionalHeaderVisibilityForceVisible:(BOOL)arg1;
 - (void)clearSearchForRecipientView:(id)arg1 reflow:(BOOL)arg2 clear:(BOOL)arg3;
 - (id)subjectField;
-- (id)bodyField;
-- (void)_updateSignatureMarkupString;
 - (void)_layoutSubviews:(BOOL)arg1 changingView:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)_setupBodyFieldWithHeaderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 enclosingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 changingView:(id)arg3 frameToPin:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 wasSearching:(BOOL)arg5;
 - (BOOL)isChangingRecipients;
@@ -162,11 +156,12 @@
 - (void)_cancelDelayedPopover;
 - (id)_searchResultsTable;
 - (BOOL)isSearchResultsPopoverVisible;
-- (BOOL)isKeyboardVisible;
 - (void)_adjustScrollerContentSize;
 - (float)_heightForBottomView;
 - (void)_multiFieldClicked;
-- (void)setFromAddressPickerVisible:(BOOL)arg1;
+- (void)setFromAddressPickerVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)isKeyboardVisible;
+- (BOOL)isFromAddressPickerVisible;
 - (void)_cancelAnimations;
 - (void)automaticKeyboardFinishedDisappearing:(id)arg1;
 - (void)automaticKeyboardFinishedAppearing:(id)arg1;
@@ -201,10 +196,10 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_accessibilityLoadAccessibilityInformation;
 
 @end

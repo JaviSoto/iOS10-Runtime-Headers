@@ -18,13 +18,13 @@
 
 - (void)setIppAddresses:(id)arg1;
 - (void)setAirPrintCount:(unsigned int)arg1;
-- (id)restrictions;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)ippAddresses;
 - (unsigned int)airPrintCount;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)restrictions;
 - (void).cxx_destruct;
 - (id)description;
 

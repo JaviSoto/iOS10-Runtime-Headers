@@ -42,8 +42,6 @@
 - (id)initWithRequestProperties:(id)arg1;
 - (void)setExpectedContentLength:(long long)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
-- (void)setTimeoutInterval:(double)arg1;
-- (void)setHTTPMethod:(id)arg1;
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -58,6 +56,8 @@
 - (id)URLs;
 - (void)setURLs:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
+- (void)setHTTPMethod:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (double)timeoutInterval;
 - (unsigned int)cachePolicy;

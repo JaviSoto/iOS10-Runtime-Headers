@@ -47,14 +47,15 @@
 - (BOOL)isPhotoFormat;
 - (BOOL)supportsLowLightBoost;
 - (id)videoSupportedFrameRateRanges;
+- (BOOL)isDefaultActiveFormat;
+- (BOOL)isYoMamaWearsCombatBootsSupported;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMinFrameDuration;
-- (BOOL)isDefaultActiveFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })highestSupportedVideoFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lowestSupportedVideoFrameDuration;
-- (struct opaqueCMFormatDescription { }*)formatDescription;
 - (BOOL)isVideoStabilizationSupported;
 - (id)mediaType;
+- (struct opaqueCMFormatDescription { }*)formatDescription;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;

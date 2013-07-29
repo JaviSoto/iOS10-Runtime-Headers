@@ -10,19 +10,10 @@
 
 @property(retain) NSArray * passThroughViews;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setPassThroughViews:(id)arg1;
 - (id)passThroughViews;
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)accessibilityActivate;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

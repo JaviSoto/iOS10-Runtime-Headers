@@ -2,12 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UILabel, UIButton, UIView;
+@class UIButton, UILabel, UIView, SBUIButton;
 
 @interface SBUILongNumericPasscodeEntryField : SBUINumericPasscodeEntryFieldBase  {
     UIView *_leftPaddingView;
     UIView *_rightPaddingView;
-    UIButton *_okButton;
+    SBUIButton *_okButton;
     BOOL _showsOkButton;
     UILabel *_promptLabel;
     BOOL _showsPromptLabel;
@@ -45,5 +45,7 @@
 - (BOOL)canBecomeFirstResponder;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)layoutSubviews;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

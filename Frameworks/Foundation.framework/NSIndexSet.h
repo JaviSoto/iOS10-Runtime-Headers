@@ -94,5 +94,6 @@
 - (BOOL)isSingleContiguousRange;
 - (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)mf_commaSeparatedString;
+- (unsigned int)pu_indexAtIndex:(unsigned int)arg1;
 
 @end

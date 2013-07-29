@@ -23,8 +23,7 @@
 @property BOOL active;
 @property float angle;
 @property float magnitude;
-@property float xComponent;
-@property float yComponent;
+@property struct CGSize { float x1; float x2; } pushDirection;
 
 
 - (BOOL)active;
@@ -33,17 +32,21 @@
 - (id)init;
 - (void)dealloc;
 - (id)description;
-- (void)setMagnitude:(float)arg1;
+- (void)setPushDirection:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })pushDirection;
+- (void)setTargetOffsetFromCenter:(struct UIOffset { float x1; float x2; })arg1 forItem:(id)arg2;
+- (struct UIOffset { float x1; float x2; })targetOffsetFromCenterForItem:(id)arg1;
+- (id)initWithItems:(id)arg1 mode:(int)arg2;
 - (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
 - (struct CGPoint { float x1; float x2; })targetPointForItem:(id)arg1;
-- (id)initWithItems:(id)arg1 mode:(int)arg2;
+- (void)setYComponent:(float)arg1;
+- (void)setXComponent:(float)arg1;
+- (void)setMagnitude:(float)arg1;
+- (float)xComponent;
+- (float)yComponent;
 - (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (float)magnitude;
 - (void)setXComponent:(float)arg1 yComponent:(float)arg2;
-- (void)setYComponent:(float)arg1;
-- (void)setXComponent:(float)arg1;
-- (float)xComponent;
-- (float)yComponent;
 - (void)_step;
 - (float)angle;
 - (void)setAngle:(float)arg1;

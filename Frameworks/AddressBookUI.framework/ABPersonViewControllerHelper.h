@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableViewLinkingDelegate, ABDatePickerViewController, ABPersonTableView, ABMultiCellContentView_RelatedName, <ABCardContentProvider>, NSString, ABPersonTableViewDataSource, <ABStyleProvider>, UITableView, UIPopoverController, UIViewController, UIBarButtonItem, <ABUnknownPersonViewControllerDelegate>, <ABPersonEditDelegate>, NSArray, ABUIPerson, NSIndexPath, ABPeoplePickerNavigationController, UIView, <ABPersonViewController_LegacyPrivateDelegate>;
+@class UIView, ABDatePickerViewController, ABPersonTableView, ABMultiCellContentView_RelatedName, <ABCardContentProvider>, NSString, ABPersonTableViewDataSource, <ABStyleProvider>, UITableView, UIPopoverController, UIViewController, UIBarButtonItem, <ABUnknownPersonViewControllerDelegate>, <ABPersonEditDelegate>, NSArray, ABUIPerson, NSIndexPath, <ABPersonViewControllerPrivateDelegate>, ABPeoplePickerNavigationController, ABPersonTableViewLinkingDelegate;
 
-@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate, ABPersonViewController_LegacyDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
+@interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate, ABPersonViewControllerDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
     UIViewController *_viewController;
     <ABPersonEditDelegate> *_editDelegate;
     struct __CFArray { } *_displayedProperties;
@@ -69,7 +69,7 @@
 @property ABPersonTableViewLinkingDelegate * linkingDelegate;
 @property(readonly) UITableView * controllerTableView;
 @property(readonly) BOOL hasPopoverController;
-@property(readonly) <ABPersonViewController_LegacyPrivateDelegate> * personViewDelegate;
+@property(readonly) <ABPersonViewControllerPrivateDelegate> * personViewDelegate;
 @property(readonly) <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
 @property(copy) NSString * addToPersonButtonTitle;
 @property(retain) NSIndexPath * popoverCellIndexPath;
@@ -260,13 +260,13 @@
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)viewController;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;

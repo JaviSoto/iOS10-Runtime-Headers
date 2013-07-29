@@ -13,8 +13,8 @@
 + (id)errorSnippet;
 
 - (id)encodedClassName;
-- (void)setMessage:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (id)groupIdentifier;
 
 @end

@@ -84,12 +84,12 @@
 - (void)endSeeking;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
-- (void)_playbackStateDidChangeNotification:(id)arg1;
-- (id)repeatMode;
-- (void)setRepeatMode:(id)arg1;
 - (void)play;
 - (void)prepareToPlay;
 - (id)playbackState;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
+- (id)repeatMode;
+- (void)setRepeatMode:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

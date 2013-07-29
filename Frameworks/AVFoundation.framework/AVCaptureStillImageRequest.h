@@ -27,7 +27,7 @@
     int _HDRMode;
     BOOL _chromaNoiseReductionEnabled;
     BOOL _suspendsVideoProcessing;
-    BOOL _suppressesShutterSound;
+    unsigned long _shutterSoundID;
     BOOL _jpegQualitySpecified;
     float _jpegQuality;
 }
@@ -43,12 +43,12 @@
 @property int HDRMode;
 @property BOOL chromaNoiseReductionEnabled;
 @property BOOL suspendsVideoProcessing;
-@property BOOL suppressesShutterSound;
+@property unsigned long shutterSoundID;
 
 + (id)request;
 
-- (void)setSuppressesShutterSound:(BOOL)arg1;
-- (BOOL)suppressesShutterSound;
+- (void)setShutterSoundID:(unsigned long)arg1;
+- (unsigned long)shutterSoundID;
 - (void)setSuspendsVideoProcessing:(BOOL)arg1;
 - (BOOL)suspendsVideoProcessing;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;

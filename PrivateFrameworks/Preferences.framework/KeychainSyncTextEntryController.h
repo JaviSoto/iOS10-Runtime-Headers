@@ -28,12 +28,12 @@
 - (id)textValue;
 - (BOOL)hidesNextButton;
 - (void)passcodeField:(id)arg1 didUpdateEnteredPasscode:(id)arg2;
+- (id)textEntryView;
 - (unsigned int)numberOfPasscodeFields;
+- (void)didFinishEnteringText:(id)arg1;
 - (id)placeholderText;
 - (void)textEntryViewDidChange:(id)arg1;
-- (void)didFinishEnteringPasscode:(id)arg1;
 - (id)textEntryText;
-- (id)textEntryView;
 - (void)setTextEntryText:(id)arg1;
 - (void)updateNextButton;
 - (void)nextPressed;

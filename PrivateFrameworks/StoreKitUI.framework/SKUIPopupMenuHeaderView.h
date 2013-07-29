@@ -2,10 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel, UIButton, UIView, <SKUIPopupMenuDelegate>, NSString, SKUIMenuViewController, UIPopoverController, NSArray;
+@class UILabel, UIButton, <SKUIPopupMenuDelegate>, SKUIMenuViewController, NSString, UIPopoverController, NSArray;
 
 @interface SKUIPopupMenuHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    UIView *_bottomBorderView;
     <SKUIPopupMenuDelegate> *_delegate;
     UIButton *_menuButton;
     UILabel *_menuLabel;

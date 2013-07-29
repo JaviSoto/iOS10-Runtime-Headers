@@ -30,12 +30,12 @@
 - (void)remoteControllerDidSelectLeaderboardTimeScope:(id)arg1;
 - (void)remoteControllerDidSelectLeaderboardIdentifier:(id)arg1;
 - (void)remoteControllerDidChangeViewState:(id)arg1;
+- (void)setLeaderboardTimeScope:(int)arg1;
+- (int)leaderboardTimeScope;
 - (id)observedKeyPaths;
 - (BOOL)_dismissSelfAfterGettingShouldFinish;
 - (void)remoteViewControllerIsFinishing;
 - (void)remoteViewControllerIsCanceling;
-- (void)setLeaderboardTimeScope:(int)arg1;
-- (int)leaderboardTimeScope;
 - (id)leaderboardIdentifier;
 - (void)setLeaderboardIdentifier:(id)arg1;
 - (void)setViewState:(int)arg1;

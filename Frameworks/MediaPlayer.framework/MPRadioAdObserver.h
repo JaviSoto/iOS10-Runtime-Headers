@@ -13,12 +13,13 @@
     BOOL _lockStateNotifyTokenIsValid;
     double _minDurationToCountAsPlayed;
     NSDictionary *_pickedRoute;
-    BOOL _policyEngineEnabled;
+    int _policyEngineEnabledCount;
     NSMutableArray *_queuedAds;
     NSMutableArray *_skipEvents;
     double _startTimeForCurrentItem;
     RadioStation *_station;
     int _visualEngagementCount;
+    BOOL _visuallyEngaged;
     unsigned int _numberOfSkippedTracks;
 }
 
@@ -30,6 +31,7 @@
 
 - (unsigned int)numberOfSkippedTracks;
 - (BOOL)isVisuallyEngaged;
+- (void)reportPlaybackEndedForTimeout;
 - (void)endVisualEngagement;
 - (void)beginVisualEngagement;
 - (void)bannerViewStoryboardPresentationInDidComplete:(id)arg1;
@@ -39,11 +41,13 @@
 - (void)_disablePolicyEngine;
 - (void)_enablePolicyEngine;
 - (void)_itemAssetLoadedDidChangeNotification:(id)arg1;
-- (void)_sendPlayAndSkipEventsForPlayedItem:(id)arg1;
+- (void)_sendPlayAndSkipEvents;
+- (void)_addPlayEvent:(id)arg1;
 - (id)_playEventForItem:(id)arg1;
-- (double)_itemTimeForItem:(id)arg1 wasSkipped:(BOOL*)arg2;
+- (double)_itemTimeForItem:(id)arg1 wasSkipped:(BOOL*)arg2 didAssetFailToLoad:(BOOL*)arg3;
 - (void)_clearAssetCacheForItem:(id)arg1;
 - (void)_updateVisualEngagementWithApplicationState:(int)arg1;
+- (BOOL)_isPolicyEngineEnabled;
 - (void)_deviceOrientationDidChangeNotification:(id)arg1;
 - (void)_radioConfigurationDidChangeNotification:(id)arg1;
 - (void)_stationEntryResponseNotification:(id)arg1;
@@ -51,12 +55,11 @@
 - (void)_heartbeatChangedNotification:(id)arg1;
 - (id)_adPolicyEngine;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
-- (void)reportPlaybackEndedForTimeout;
+- (void)setStation:(id)arg1;
 - (void)optimalTransmissionWindowDidOpen;
 - (void)cancelQueuedAds;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)didScheduleAd:(id)arg1;
-- (void)setStation:(id)arg1;
 - (void)_songBeganResponseNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;

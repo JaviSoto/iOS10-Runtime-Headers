@@ -2,18 +2,18 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABContactViewController, <ABPresenterDelegate>, <ABStyleProvider>, ABContactsFilter, <ABNewPersonViewControllerDelegate>;
+@class _UIAccessDeniedView, ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABContactViewController, <ABPresenterDelegate>, <ABStyleProvider>, ABContactsFilter, <ABNewPersonViewControllerDelegate>;
 
-@interface ABNewPersonViewController : UIViewController <ABContactViewControllerDelegate> {
-    void *_addressBook;
-    void *_displayedPerson;
+@interface ABNewPersonViewController : UIViewController  {
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
-    ABContactViewController *_contactViewController;
-    void *_parentGroup;
-    ABPersonViewControllerHelper *_helper;
+    id _parentGroup;
+    id _helper;
+    void *_recordForNewPerson;
+    BOOL _isRealViewLoaded;
     ABPersonTableViewDataSource *_dataSource;
-    <ABStyleProvider> *_styleProvider;
-    ABContactsFilter *_parentContactsFilter;
+    _UIAccessDeniedView *_accessDeniedView;
+    void *_parentSource;
+    ABContactViewController *_contactViewController;
     <ABPresenterDelegate> *_presentingDelegate;
 }
 
@@ -23,45 +23,75 @@
 @property void* parentGroup;
 @property(readonly) ABPersonViewControllerHelper * helper;
 @property(readonly) ABPersonTableViewDataSource * dataSource;
+@property void* parentSource;
 @property BOOL savesNewContactOnSuspend;
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(retain) ABContactsFilter * parentContactsFilter;
 @property(readonly) ABContactViewController * contactViewController;
 @property <ABPresenterDelegate> * presentingDelegate;
 @property BOOL showsCancelButton;
+@property(readonly) _UIAccessDeniedView * accessDeniedView;
+@property BOOL isRealViewLoaded;
 
 
+- (void)setDisplayedUIPerson:(id)arg1;
+- (void)attemptSaveAndTellDelegate:(BOOL)arg1;
+- (id)displayedUIPerson;
+- (void*)recordForNewPerson;
+- (void)saveAndTellDelegate:(BOOL)arg1;
+- (void)savePerson:(id)arg1;
+- (void)setParentContactsFilter:(id)arg1;
 - (id)parentContactsFilter;
 - (id)helper;
 - (BOOL)savesNewContactOnSuspend;
 - (id)newPersonViewDelegate;
-- (void)loadContactViewController;
+- (void*)parentSource;
+- (void)setIsRealViewLoaded:(BOOL)arg1;
+- (BOOL)isRealViewLoaded;
+- (void*)parentGroup;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
+- (void)accessChanged;
 - (void)setSavesNewContactOnSuspend:(BOOL)arg1;
-- (void)setParentContactsFilter:(id)arg1;
+- (void)setParentSource:(void*)arg1;
+- (void)setParentGroup:(void*)arg1;
+- (id)accessDeniedView;
 - (void*)displayedPerson;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void)setPresentingDelegate:(id)arg1;
-- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (id)presentingDelegate;
 - (void)setNewPersonViewDelegate:(id)arg1;
 - (id)contactViewController;
 - (void)setDisplayedPerson:(void*)arg1;
+- (int)abViewControllerType;
+- (BOOL)supportedInterfaceOrientation:(int)arg1;
+- (void)updateNavigationButtons;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (void)setParentGroup:(void*)arg1;
-- (void*)parentGroup;
 - (void)save:(id)arg1;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
+- (void)cancel:(id)arg1;
 - (id)dataSource;
 - (id)init;
 - (void)dealloc;
 - (BOOL)showsCancelButton;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)_allowsAutorotation;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)loadView;
+- (void)viewDidLoad;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (void)applicationDidResume;
+- (void)applicationWillSuspend;
+- (void)applicationWillTerminate:(id)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
 
 @end

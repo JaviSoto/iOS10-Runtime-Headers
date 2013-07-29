@@ -10,6 +10,7 @@
     BOOL _needsPaddingForIndexScrubber;
     BOOL _groupShowsAlternativeText;
     BOOL _secondaryCandidateAppearance;
+    BOOL _shouldShowCandidateNumber;
     NSIndexPath *_candidateIndexPath;
     struct { 
         unsigned int idiom : 6; 
@@ -40,16 +41,17 @@
 @property BOOL needsPaddingForIndexScrubber;
 @property BOOL groupShowsAlternativeText;
 @property BOOL secondaryCandidateAppearance;
+@property BOOL shouldShowCandidateNumber;
 
 
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setGroupShowsAlternativeText:(BOOL)arg1;
 - (void)setRowSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRowIndex:(unsigned int)arg1;
-- (unsigned int)rowIndex;
 - (void)setGroupHeader:(BOOL)arg1;
 - (void)setCandidateIndexPath:(id)arg1;
 - (unsigned int)representedElementCategory;
@@ -61,7 +63,10 @@
 - (unsigned int)edges;
 - (struct CGSize { float x1; float x2; })rowSize;
 - (void)setDummy:(BOOL)arg1;
+- (void)setShouldShowCandidateNumber:(BOOL)arg1;
 - (unsigned int)candidateNumber;
+- (BOOL)shouldShowCandidateNumber;
+- (unsigned int)rowIndex;
 - (void)setNeedsPaddingForIndexScrubber:(BOOL)arg1;
 - (id)candidateIndexPath;
 - (BOOL)groupHeader;

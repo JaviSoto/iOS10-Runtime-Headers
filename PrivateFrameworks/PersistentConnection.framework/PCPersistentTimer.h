@@ -31,10 +31,8 @@
 - (BOOL)disableSystemWaking;
 - (double)minimumEarlyFireProportion;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
-- (double)fireTime;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 guidancePriority:(unsigned int)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
-- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (double)_earlyFireTime;
 - (double)_nextForcedAlignmentAbsoluteTime;
 - (BOOL)firingIsImminent;
@@ -48,11 +46,13 @@
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
+- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)cutPowerMonitorBatteryConnectedStateDidChange:(id)arg1;
 - (id)debugDescription;
 - (BOOL)isValid;
 - (void)invalidate;
 - (id)userInfo;
 - (void)dealloc;
+- (double)fireTime;
 
 @end

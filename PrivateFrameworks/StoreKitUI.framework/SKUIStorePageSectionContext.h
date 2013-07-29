@@ -23,6 +23,7 @@
 @property(readonly) SKUILayoutCache * textLayoutCache;
 
 
+- (id)resourceLoader;
 - (id)itemOfferButtonAppearance;
 - (id)metricsController;
 - (void)_setTextLayoutCache:(id)arg1;
@@ -32,7 +33,6 @@
 - (id)textLayoutCache;
 - (void)_setMetricsController:(id)arg1;
 - (id)colorScheme;
-- (id)resourceLoader;
 - (void).cxx_destruct;
 - (void)_setCollectionView:(id)arg1;
 - (id)collectionView;

@@ -28,9 +28,9 @@
 - (id)_performSetupWithData:(id)arg1 error:(id*)arg2;
 - (id)_loadCertificateData:(id*)arg1;
 - (id)initWithSetupURL:(id)arg1 certificateURL:(id)arg2;
+- (id)certificateData;
 - (void)setOutputBlock:(id)arg1;
 - (id)outputBlock;
-- (id)certificateData;
 - (void).cxx_destruct;
 - (void)main;
 

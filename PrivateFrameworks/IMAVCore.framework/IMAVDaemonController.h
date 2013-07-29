@@ -47,11 +47,11 @@
 - (BOOL)localObjectExists;
 - (BOOL)isConnecting;
 - (void)_connectToDaemon;
-- (BOOL)isConnected;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 - (id)listener;
+- (BOOL)isConnected;
 
 @end

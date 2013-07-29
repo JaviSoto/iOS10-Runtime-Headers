@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUINetworkErrorViewController, UIViewController<SKUIProductPageChildViewController>, SKUIFacebookLikeStatus, <SKUIIPhoneProductPageDelegate>, ACAccountStore, SKUIIncompatibleAppViewController, SKUIMetricsController, SKUIItem, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUILoadProductPageOperation, SKUIProductPage, SKUISwooshArrayViewController, NSOperationQueue, NSURL;
+@class SKUIProductPagePlaceholderViewController, SSMetricsPageEvent, SKUINetworkErrorViewController, UIViewController<SKUIProductPageChildViewController>, SKUIProductPageReviewsViewController, SKUIFacebookLikeStatus, NSURLRequest, <SKUIIPhoneProductPageDelegate>, ACAccountStore, SKUIIncompatibleAppViewController, SKUIItem, SKUIMetricsController, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUILoadProductPageOperation, SKUIProductPage, SKUISwooshArrayViewController, NSOperationQueue, NSURL;
 
-@interface SKUIIPhoneProductPageViewController : SKUIViewController <SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, UIScrollViewDelegate, SKStoreProductViewControllerDelegate> {
+@interface SKUIIPhoneProductPageViewController : SKUIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, UIScrollViewDelegate, SKStoreProductViewControllerDelegate> {
     ACAccountStore *_accountStore;
     UIViewController<SKUIProductPageChildViewController> *_childViewController;
     <SKUIIPhoneProductPageDelegate> *_delegate;
@@ -14,6 +14,7 @@
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIIncompatibleAppViewController *_incompatibleViewController;
     SKUIItem *_item;
+    SSMetricsPageEvent *_lastPageEvent;
     SKUIProductPagePlaceholderViewController *_loadingViewController;
     SKUILoadProductPageOperation *_loadOperation;
     long long _lookupItemIdentifier;
@@ -24,7 +25,7 @@
     SKUISwooshArrayViewController *_relatedViewController;
     SKUIProductPageReviewsViewController *_reviewsViewController;
     int _sectionIndex;
-    NSURL *_url;
+    NSURLRequest *_urlRequest;
     BOOL _wantsActivityViewController;
 }
 
@@ -37,7 +38,6 @@
 - (id)initWithProductPage:(id)arg1;
 - (id)_relatedPlaceholderViewController;
 - (id)_loadingViewController;
-- (BOOL)_isIncompatibleItem;
 - (void)_animateAddToWishlist;
 - (void)_presentHTMLProductPage;
 - (void)_invalidateChildViewControllers;
@@ -45,10 +45,10 @@
 - (void)_setHeaderPositionForChildViewController:(id)arg1;
 - (void)_setContentInsetsForChildViewController:(id)arg1;
 - (id)_initSKUIIPhoneProductPageViewController;
-- (id)productPage;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)_relatedViewController;
 - (id)_detailsViewController;
+- (BOOL)_isIncompatibleItem;
 - (void)_showError:(id)arg1;
 - (id)_viewControllerForSectionIndex:(unsigned int)arg1;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
@@ -58,6 +58,7 @@
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
 - (struct CGPoint { float x1; float x2; })topContentOffset;
 - (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
+- (id)metricsControllerForProductPageHeader:(id)arg1;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)_shareButtonAction:(id)arg1;
 - (id)_headerViewController;
@@ -67,7 +68,11 @@
 - (void)productPageChildOpenItem:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)_reloadChildViewControllers;
+- (id)activeMetricsController;
 - (void)_setMetricsController:(id)arg1;
+- (void)_metricsEnterEventNotification:(id)arg1;
+- (id)productPage;
+- (void)configureMetricsWithPageEvent:(id)arg1;
 - (id)initWithItem:(id)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
@@ -84,5 +89,6 @@
 - (id)item;
 - (void)viewDidLayoutSubviews;
 - (void)reloadData;
+- (id)initWithURLRequest:(id)arg1;
 
 @end

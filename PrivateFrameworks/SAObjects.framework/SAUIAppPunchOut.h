@@ -24,6 +24,8 @@
 
 - (BOOL)appInstalled;
 - (void)setAppInstalled:(BOOL)arg1;
+- (id)providerId;
+- (void)setProviderId:(id)arg1;
 - (void)setPunchOutUri:(id)arg1;
 - (id)punchOutUri;
 - (void)setPunchOutName:(id)arg1;
@@ -41,8 +43,6 @@
 - (BOOL)appAvailableInStorefront;
 - (void)setAlternativePunchOut:(id)arg1;
 - (id)alternativePunchOut;
-- (void)setProviderId:(id)arg1;
-- (id)providerId;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
 - (id)bundleId;

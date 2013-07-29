@@ -17,6 +17,7 @@
     UIView *_separatorWrapperView;
     UIView *_separatorLineView;
     UIView *_separatorBarView;
+    UIView *_separatorBarMaskView;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -34,15 +35,15 @@
 @property(retain) UIView * separatorWrapperView;
 @property(retain) UIView * separatorLineView;
 @property(retain) UIView * separatorBarView;
+@property(retain) UIView * separatorBarMaskView;
 @property(copy) id presentationDelayHandler;
 @property(retain) NSMutableArray * controllersDelayingPresentation;
 
 
 - (id)presentationDelayHandler;
+- (void)setSeparatorBarMaskView:(id)arg1;
 - (void)setSeparatorBarView:(id)arg1;
-- (id)separatorBarView;
 - (void)setSeparatorLineView:(id)arg1;
-- (id)separatorLineView;
 - (void)setSeparatorWrapperView:(id)arg1;
 - (id)separatorWrapperView;
 - (BOOL)isCovered;
@@ -58,12 +59,15 @@
 - (id)masterDetailDelegate;
 - (id)_viewForSlidingInDetailView;
 - (id)_viewForSlidingInMasterView;
-- (void)_animateSlidingDoorTransitionFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3 appearing:(BOOL)arg4;
+- (void)_animateSlidingDoorTransitionFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 duration:(double)arg3 appearing:(BOOL)arg4;
 - (id)controllersDelayingPresentation;
 - (void)setControllersDelayingPresentation:(id)arg1;
 - (void)setPresentationDelayHandler:(id)arg1;
 - (void)_setupSeparatorViews;
 - (void)setRootDetailViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)separatorBarMaskView;
+- (id)separatorBarView;
+- (id)separatorLineView;
 - (id)blankRootDetailViewController;
 - (void)_setSeparatorBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)detailNavigationController;
@@ -74,8 +78,8 @@
 - (void)willAnimateKeyframesForDisappearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3;
 - (void)willAnimateKeyframesForAppearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3;
 - (double)bubbleFlowAnimateInDuration;
-- (id)separatorLineColor;
 - (double)bubbleFlowAnimateOutDuration;
+- (id)separatorLineColor;
 - (void)viewDidDisappearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
 - (void)setCovered:(BOOL)arg1;
 - (BOOL)statusShouldCoverSplitViewFor:(id)arg1;

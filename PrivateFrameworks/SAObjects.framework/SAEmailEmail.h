@@ -46,11 +46,11 @@
 - (id)timeZoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setMessage:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (id)subject;
 - (void)setType:(id)arg1;
 - (id)message;
+- (void)setMessage:(id)arg1;
 - (id)groupIdentifier;
 - (id)type;
 

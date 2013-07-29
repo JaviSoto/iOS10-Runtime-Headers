@@ -105,11 +105,11 @@
 - (BOOL)isValid;
 - (void)dealloc;
 - (id)description;
+- (id)bundleIdentifier;
 - (unsigned short)numberOfCategories;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (void)setName:(id)arg1;
-- (id)bundleIdentifier;
 - (unsigned int)flags;
 
 @end

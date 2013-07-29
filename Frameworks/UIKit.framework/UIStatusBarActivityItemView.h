@@ -11,8 +11,6 @@
     BOOL _newsstandActivity;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (int)_activityIndicatorStyle;
@@ -20,8 +18,5 @@
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)setVisible:(BOOL)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

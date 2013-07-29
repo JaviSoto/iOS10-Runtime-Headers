@@ -32,7 +32,6 @@
 + (id)_canonicalURLForURL:(id)arg1;
 + (id)_currentFileCoordinator;
 
-- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;
 - (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id)arg4;
 - (id)init;
 - (void)__coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 purposeID:(id)arg5 byAccessor:(id)arg6;
@@ -51,6 +50,7 @@
 - (void)_requestAccessClaim:(id)arg1 withProcedure:(id)arg2;
 - (void)itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
 - (void)prepareForReadingItemsAtURLs:(id)arg1 options:(unsigned int)arg2 writingItemsAtURLs:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;
+- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;
 - (void)_itemAtURL:(id)arg1 didMoveToURL:(id)arg2;
 - (void)_itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
 - (void)__prepareForReadingItemsAtURLs:(id)arg1 options:(unsigned int)arg2 writingItemsAtURLs:(id)arg3 options:(unsigned int)arg4 byAccessor:(id)arg5;

@@ -136,6 +136,7 @@
 - (void)setReadOnly:(int)arg1;
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (struct CGSize { float x1; float x2; })paperSize;
 - (void)setBottomMargin:(float)arg1;
 - (void)setRightMargin:(float)arg1;
 - (void)setTopMargin:(float)arg1;
@@ -179,7 +180,6 @@
 - (void)setViewKind:(int)arg1;
 - (struct CGSize { float x1; float x2; })viewSize;
 - (void)setViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })paperSize;
 - (void)setPaperSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_RTFDFileWrapper;
 - (void)_addListDefinition:(id)arg1 forKey:(int)arg2;

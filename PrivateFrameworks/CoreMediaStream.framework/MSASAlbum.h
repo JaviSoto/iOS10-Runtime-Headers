@@ -65,7 +65,6 @@
 - (id)ctag;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)publicURLString;
-- (void)setURLString:(id)arg1;
 - (id)context;
 - (void)setMetadata:(id)arg1;
 - (void)setContext:(id)arg1;
@@ -77,6 +76,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setURLString:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

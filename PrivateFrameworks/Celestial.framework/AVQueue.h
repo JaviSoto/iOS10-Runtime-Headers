@@ -25,10 +25,10 @@
 - (BOOL)insertItem:(id)arg1 atIndex:(unsigned int)arg2 error:(id*)arg3;
 - (unsigned int)itemCount;
 - (BOOL)appendItem:(id)arg1 error:(id*)arg2;
-- (id)itemAtIndex:(unsigned int)arg1;
 - (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
 - (int)_instantiateItem;
 - (id)initWithError:(id*)arg1;
+- (id)itemAtIndex:(unsigned int)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)initWithArray:(id)arg1 error:(id*)arg2;

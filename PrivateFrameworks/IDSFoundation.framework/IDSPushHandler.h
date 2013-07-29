@@ -11,10 +11,10 @@
 
 + (id)sharedInstance;
 
-- (void)requestKeepAlive;
-- (void)setCommands:(id)arg1 forListener:(id)arg2;
 - (void)setTopics:(id)arg1 forListener:(id)arg2;
 - (void)addListener:(id)arg1 topics:(id)arg2 commands:(id)arg3 queue:(id)arg4;
+- (void)requestKeepAlive;
+- (void)setCommands:(id)arg1 forListener:(id)arg2;
 - (void)_recalculateTopicsCacheOnIvarQueue;
 - (void)_updateTopicsOnIvarQueue;
 - (id)pushToken;

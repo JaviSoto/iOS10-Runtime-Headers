@@ -26,6 +26,7 @@
 - (id)webView;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 

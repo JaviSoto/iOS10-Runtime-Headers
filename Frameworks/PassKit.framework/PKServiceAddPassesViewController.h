@@ -76,8 +76,8 @@
 - (void)groupStackViewDidBeginReordering:(id)arg1;
 - (void)groupStackView:(id)arg1 deleteConfirmedForPass:(id)arg2;
 - (float)groupHeightAtIndex:(unsigned int)arg1;
-- (int)suppressedContent;
 - (unsigned int)numberOfGroups;
+- (int)suppressedContent;
 - (unsigned int)indexOfGroup:(id)arg1;
 - (void)tearDown;
 - (void)setPresentationState:(int)arg1;

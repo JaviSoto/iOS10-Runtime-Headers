@@ -26,7 +26,6 @@
 - (id)_interactiveChangeHandlers:(BOOL)arg1;
 - (id)_alongsideCompletions:(BOOL)arg1;
 - (id)_alongsideAnimations:(BOOL)arg1;
-- (id)_mainContext;
 - (void)_setAlongsideAnimationViews:(id)arg1;
 - (void)_setMainContext:(id)arg1;
 - (id)_alongsideAnimationViews;
@@ -39,17 +38,18 @@
 - (BOOL)isAnimated;
 - (int)presentationStyle;
 - (BOOL)initiallyInteractive;
+- (id)_mainContext;
 - (void)notifyWhenInteractionEndsUsingBlock:(id)arg1;
 - (double)transitionDuration;
 - (int)completionCurve;
-- (BOOL)animateAlongsideTransition:(id)arg1 completion:(id)arg2;
 - (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id)arg2 completion:(id)arg3;
+- (BOOL)animateAlongsideTransition:(id)arg1 completion:(id)arg2;
 - (id)_alongsideAnimations;
 - (void)_setAlongsideAnimations:(id)arg1;
 - (float)percentComplete;
 - (BOOL)isInteractive;
-- (id)containerView;
 - (id)viewControllerForKey:(id)arg1;
+- (id)containerView;
 - (BOOL)isCancelled;
 
 @end

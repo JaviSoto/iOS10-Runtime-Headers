@@ -63,8 +63,6 @@
 @property(readonly) UIView * textInputView;
 @property int selectionAffinity;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (BOOL)isEditable;
@@ -151,7 +149,6 @@
 - (BOOL)mightHaveLinks;
 - (void)setSelectionGranularity:(int)arg1;
 - (int)selectionGranularity;
-- (id)metadataDictionariesForDictationResults;
 - (unsigned int)_allowedLinkTypes;
 - (void)resetDataDetectorsResultsWithWebLock;
 - (void)recalculateStyle;
@@ -194,13 +191,13 @@
 - (BOOL)canResignFirstResponder;
 - (BOOL)hasMarkedText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
-- (id)attributedText;
 - (void)selectAll;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSelectionAffinity:(int)arg1;
 - (int)selectionAffinity;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (id)insertDictationResultPlaceholder;
@@ -252,7 +249,10 @@
 - (id)interactionAssistant;
 - (void)setEditing:(BOOL)arg1;
 - (void)setTextAlignment:(int)arg1;
+- (id)attributedText;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)_scrollViewDidEndDecelerating;
 - (void)setScrollingEnabled:(BOOL)arg1;
@@ -268,26 +268,9 @@
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityActivate;
-- (id)accessibilityValue;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilitySupplementaryHeaderViews;
-- (BOOL)_accessibilitySupportsActivateAction;
-- (id)_accessibilityAttributedValueForRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1;
-- (id)_accessibilityDataDetectorScheme:(struct CGPoint { float x1; float x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (BOOL)_accessibilityShouldAnnounceFontInfo;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_accessibilitySetValue:(id)arg1;
-- (id)_accessibilityTextViewTextOperationResponder;
 
 @end

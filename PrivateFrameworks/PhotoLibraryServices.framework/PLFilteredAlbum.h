@@ -34,6 +34,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -93,14 +95,15 @@
 @property(readonly) NSIndexSet * filteredIndexes;
 @property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 
-+ (struct NSObject { Class x1; }*)unfilteredAlbum:(struct NSObject { Class x1; }*)arg1;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 intersectFilter:(int)arg2;
++ (struct NSObject { Class x1; }*)unfilteredAlbum:(struct NSObject { Class x1; }*)arg1;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2;
 + (id)filteredIndexesInAlbum:(struct NSObject { Class x1; }*)arg1 predicate:(id)arg2;
 + (id)predicateForAlbumFilter:(int)arg1 parameters:(id)arg2;
 + (id)descriptionForAlbumFilter:(int)arg1 parameters:(id)arg2;
 + (struct NSObject { Class x1; }*)filteredAlbum:(struct NSObject { Class x1; }*)arg1 filter:(int)arg2 parameters:(id)arg3;
 
+- (BOOL)canContributeToCloudSharedAlbum;
 - (id)assets;
 - (BOOL)isObservingContextChanges;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
@@ -133,8 +136,11 @@
 - (id)filterParameters;
 - (id)userEditableAssets;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
-- (id)localizedLocationNames;
 - (BOOL)canShowComments;
+- (void)setTertiaryKeyAsset:(id)arg1;
+- (id)tertiaryKeyAsset;
+- (void)setSecondaryKeyAsset:(id)arg1;
+- (id)secondaryKeyAsset;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
 - (unsigned int)videosCount;
@@ -153,7 +159,6 @@
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (BOOL)isStandInAlbum;
@@ -225,6 +230,7 @@
 - (BOOL)isCloudSharedAlbum;
 - (int)kindValue;
 - (BOOL)isCameraAlbum;
+- (id)localizedLocationNames;
 - (id)posterImage;
 - (unsigned int)photosCount;
 - (void)setPredicate:(id)arg1;

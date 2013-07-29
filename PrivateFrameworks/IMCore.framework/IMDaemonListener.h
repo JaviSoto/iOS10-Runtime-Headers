@@ -41,6 +41,7 @@
 @property(setter=_setHidingDisconnect:) BOOL _hidingDisconnect;
 
 
+- (id)handlers;
 - (void)standaloneFileTransferRegistered:(id)arg1;
 - (id)valueOfPersistentProperty:(id)arg1;
 - (void)fileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3 averageTransferRate:(unsigned long long)arg4;
@@ -108,7 +109,6 @@
 - (unsigned long)myIdleTime;
 - (id)serviceWithName:(id)arg1;
 - (id)allServices;
-- (id)handlers;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

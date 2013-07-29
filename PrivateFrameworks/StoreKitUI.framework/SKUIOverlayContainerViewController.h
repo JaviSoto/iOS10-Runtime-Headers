@@ -6,6 +6,7 @@
 
 @interface SKUIOverlayContainerViewController : UIViewController <UIGestureRecognizerDelegate> {
     UIControl *_backstopView;
+    BOOL _isAdjustingViewsForDismiss;
     int _selectedViewControllerIndex;
     UITapGestureRecognizer *_tapGestureRecognizer;
     NSMutableArray *_viewControllers;
@@ -38,6 +39,7 @@
 - (void).cxx_destruct;
 - (id)viewControllers;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;

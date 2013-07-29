@@ -14,6 +14,7 @@
     } _pageControlFlags;
     UIImage *_currentPageImage;
     UIImage *_pageImage;
+    int _lastUserInterfaceIdiom;
     UIColor *_currentPageIndicatorTintColor;
     UIColor *_pageIndicatorTintColor;
     _UILegibilitySettings *_legibilitySettings;
@@ -28,8 +29,6 @@
 @property(getter=_legibilityStyle,setter=_setLegibilityStyle:) int legibilityStyle;
 @property(getter=_legibilitySettings,setter=_setLegibilitySettings:) _UILegibilitySettings * legibilitySettings;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
@@ -47,10 +46,12 @@
 - (BOOL)hidesForSinglePage;
 - (void)setHidesForSinglePage:(BOOL)arg1;
 - (int)currentPage;
-- (void)_setLegibilitySettings:(id)arg1;
-- (id)_indicatorImageEnabled:(BOOL)arg1;
+- (id)_createModernIndicatorImageFromView:(id)arg1;
 - (float)_modernCornerRadius;
 - (id)_modernColorEnabled:(BOOL)arg1;
+- (void)_setLegibilitySettings:(id)arg1;
+- (id)_modernIndicatorImageEnabled:(BOOL)arg1;
+- (void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2;
 - (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
 - (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
 - (BOOL)_shouldDrawLegibly;
@@ -89,13 +90,5 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (BOOL)isAccessibilityElement;
-- (void)_accessibilityCurrentPageDidChange;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (int)_accessibilityPageControlIndex;
-- (int)_accessibilityPageControlCount;
 
 @end

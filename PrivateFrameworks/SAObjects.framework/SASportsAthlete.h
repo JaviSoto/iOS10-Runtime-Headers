@@ -28,6 +28,7 @@
 + (id)athleteWithDictionary:(id)arg1 context:(id)arg2;
 + (id)athlete;
 
+- (id)gender;
 - (void)setStatistics:(id)arg1;
 - (void)setPreviousTeams:(id)arg1;
 - (id)previousTeams;
@@ -47,12 +48,11 @@
 - (id)athleteMetadata;
 - (void)setActiveTeam:(id)arg1;
 - (id)activeTeam;
+- (void)setGender:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (void)setNickname:(id)arg1;
 - (id)nickname;
-- (void)setGender:(id)arg1;
-- (id)gender;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;

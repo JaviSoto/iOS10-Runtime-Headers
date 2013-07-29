@@ -45,8 +45,8 @@
 - (bool)_renderLayerDefinesProperty:(unsigned int)arg1;
 - (id)init;
 - (void)didChangeValueForKey:(id)arg1;
-- (void)setInstanceAlphaOffset:(float)arg1;
 - (void)setInstanceColor:(struct CGColor { }*)arg1;
+- (void)setInstanceAlphaOffset:(float)arg1;
 - (void)setInstanceTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 - (void)setInstanceCount:(int)arg1;
 

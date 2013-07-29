@@ -10,7 +10,6 @@
 }
 
 
-- (id)connections;
 - (void)unregisterConnection:(id)arg1;
 - (void)registerConnection:(id)arg1;
 - (id)newCreateIndexStatementForColumns:(id)arg1;
@@ -32,6 +31,7 @@
 - (id)newUpdateStatementWithRow:(id)arg1;
 - (id)newInsertStatementWithRow:(id)arg1;
 - (BOOL)hasOpenConnections;
+- (id)connections;
 - (id)createConnection;
 - (id)initWithSQLCore:(id)arg1;
 - (id)newCreateIndexStatementForColumnWithName:(id)arg1 inTableWithName:(id)arg2;

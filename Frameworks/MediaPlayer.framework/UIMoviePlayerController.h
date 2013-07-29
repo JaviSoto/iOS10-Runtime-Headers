@@ -132,6 +132,8 @@
 + (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 interfaceOrientation:(int)arg3 destinationTVOut:(BOOL)arg4;
 + (void)allInstancesResignActive;
 
+- (BOOL)isPreparedForPlayback;
+- (float)playbackRate;
 - (id)playerView;
 - (BOOL)isFullScreen;
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullScreen:(BOOL)arg2;
@@ -172,9 +174,7 @@
 - (double)playableEndTime;
 - (double)playableStartTime;
 - (void)setPlaybackRate:(float)arg1;
-- (float)playbackRate;
 - (void)prepareForPlayback;
-- (BOOL)isPreparedForPlayback;
 - (void)setPlayableContentType:(unsigned int)arg1;
 - (BOOL)useHostedWindowWhenFullscreen;
 - (void)setManagesStatusBar:(BOOL)arg1;
@@ -238,6 +238,7 @@
 - (id)_portraitNavigationController:(BOOL)arg1;
 - (void)_prepareAndSetupUI;
 - (BOOL)stopAtEnd;
+- (id)currentDate;
 - (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (unsigned int)playableContentType;
 - (void)_updatePlayableContentTypeOverride;
@@ -249,6 +250,8 @@
 - (BOOL)disallowsVideoOut;
 - (id)_topViewController;
 - (id)movieView;
+- (void)setLimitReadAhead:(BOOL)arg1;
+- (BOOL)limitReadAhead;
 - (void)setDisableAlternateTextTrackRendering:(BOOL)arg1;
 - (BOOL)disableAlternateTextTrackRendering;
 - (BOOL)videoOutActive;
@@ -309,25 +312,22 @@
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)setStopAtEnd:(BOOL)arg1;
 - (double)playableDuration;
+- (void)play;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
 - (BOOL)isFullscreen;
+- (unsigned int)playbackState;
 - (id)movieSubtitle;
 - (id)movieTitle;
-- (void)_registerForNotifications;
-- (void)setLimitReadAhead:(BOOL)arg1;
-- (BOOL)limitReadAhead;
-- (id)currentDate;
-- (BOOL)seekToDate:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (BOOL)muted;
 - (double)currentTime;
 - (id)errorLog;
 - (id)accessLog;
-- (float)volume;
-- (void)play;
-- (unsigned int)playbackState;
+- (void)_registerForNotifications;
+- (BOOL)seekToDate:(id)arg1;
 - (void)_unregisterForNotifications;
+- (float)volume;
 - (int)interfaceOrientation;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

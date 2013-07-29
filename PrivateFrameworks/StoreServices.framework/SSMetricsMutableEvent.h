@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSDictionary;
 
-@interface SSMetricsMutableEvent : SSMetricsEvent  {
+@interface SSMetricsMutableEvent : SSMetricsEvent <NSMutableCopying> {
     NSMutableDictionary *_mutableBody;
 }
 
@@ -13,11 +13,13 @@
 
 - (void)setProperty:(id)arg1 forBodyKey:(id)arg2;
 - (id)propertyForBodyKey:(id)arg1;
+- (void)addPropertiesWithDictionary:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;
-- (id)initWithBodyDictionary:(id)arg1;
 - (id)bodyDictionary;
+- (id)initWithBodyDictionary:(id)arg1;
 - (id)init;
 - (id)debugDescription;
 - (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -25,10 +25,10 @@
 - (id)_restrictedFeatureStrings;
 - (id)_invalidFieldErrorWithFieldName:(id)arg1;
 - (id)installationWarnings;
-- (id)restrictions;
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)restrictions;
 - (void).cxx_destruct;
 
 @end

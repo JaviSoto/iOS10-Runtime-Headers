@@ -79,9 +79,9 @@
 - (int)presetClass;
 - (void)setPresetSubType:(int)arg1;
 - (void)setPresetId:(int)arg1;
-- (id)build;
 - (id)groupId;
 - (BOOL)hasDirection;
+- (id)build;
 - (void)setHasDuration:(BOOL)arg1;
 - (BOOL)hasDuration;
 - (BOOL)hasValue;

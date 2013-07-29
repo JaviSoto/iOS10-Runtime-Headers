@@ -18,7 +18,6 @@
 + (id)dialerNumberPadFullCharacters;
 
 - (BOOL)playsSounds;
-- (void)buttonLongPressed:(id)arg1;
 - (void)setSoundController:(id)arg1;
 - (id)soundController;
 - (int)indexForHighlightedKey;
@@ -26,6 +25,7 @@
 - (void)setSupportsHardPause:(BOOL)arg1;
 - (BOOL)supportsHardPause;
 - (void)setPlaysSounds:(BOOL)arg1;
+- (void)buttonLongPressed:(id)arg1;
 - (void)buttonUp:(id)arg1;
 - (void)buttonDown:(id)arg1;
 - (void)setDelegate:(id)arg1;

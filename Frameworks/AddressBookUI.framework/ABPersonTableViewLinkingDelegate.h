@@ -54,13 +54,13 @@
 - (BOOL)shouldIncludeLinkingUISectionWhenEditing:(BOOL)arg1;
 - (int)numberOfLinkedCardRows;
 - (BOOL)shouldAllowLinkingAnotherContact;
+- (id)initWithHelper:(id)arg1;
 - (void)setUpdateShouldAllowLinkingAnotherContact:(BOOL)arg1;
 - (BOOL)shouldShowLinkedPeople;
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
 - (void)setShouldShowLinkedPeople:(BOOL)arg1;
 - (id)helper;
-- (id)initWithHelper:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;

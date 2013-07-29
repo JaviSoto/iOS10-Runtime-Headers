@@ -10,8 +10,10 @@
     RadioRequestContext *_requestContext;
     int _status;
     NSDictionary *_unparsedResponseDictionary;
+    BOOL _asynchronousBackgroundRequest;
 }
 
+@property(getter=isAsynchronousBackgroundRequest) BOOL asynchronousBackgroundRequest;
 @property(copy) RadioRequestContext * requestContext;
 @property(readonly) int status;
 @property(readonly) int errorCode;
@@ -19,12 +21,14 @@
 
 + (void)loadServiceConfigurationWithCompletionHandler:(id)arg1;
 
+- (void)setAsynchronousBackgroundRequest:(BOOL)arg1;
 - (id)unparsedResponseDictionary;
 - (void)setUnparsedResponseDictionary:(id)arg1;
+- (void)_loadRadioURLBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)setRequestContext:(id)arg1;
 - (id)requestContext;
-- (void)_loadRadioURLBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)_loadRadioURLBagWithCompletionHandler:(id)arg1;
+- (BOOL)isAsynchronousBackgroundRequest;
 - (void)setErrorCode:(int)arg1;
 - (int)errorCode;
 - (int)status;

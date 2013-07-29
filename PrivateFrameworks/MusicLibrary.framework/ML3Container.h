@@ -17,9 +17,9 @@
 @property(readonly) NSArray * cloudDisplayOrderingTerms;
 @property(readonly) NSArray * displayOrderingTerms;
 
++ (void)populateDynamicContainersInLibrary:(id)arg1 createBuiltinSmartPlaylists:(BOOL)arg2;
 + (void)populateMediaTypesOfStaticContainersInLibrary:(id)arg1;
 + (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2;
-+ (void)populateDynamicContainersInLibrary:(id)arg1 createBuiltinSmartPlaylists:(BOOL)arg2;
 + (void)populateStaticItemsOfDynamicContainersInLibrary:(id)arg1;
 + (void)deleteAutoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;

@@ -42,6 +42,7 @@
 + (id)_figAssetPropertiesForKeys;
 + (void)_mapAssetKeys:(id)arg1 toFigAssetPropertySet:(id)arg2 figAssetTrackPropertySet:(id)arg3 callerName:(id)arg4;
 
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)validationPlist;
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
 - (struct OpaqueFigSemaphore { }*)_cameraRollValidationSemaphore;
@@ -81,7 +82,6 @@
 - (void)cancelLoading;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)finalize;
 - (void)dealloc;
 - (id)URL;

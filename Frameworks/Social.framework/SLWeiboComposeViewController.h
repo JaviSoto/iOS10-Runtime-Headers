@@ -10,6 +10,7 @@
 
 + (id)serviceBundle;
 
+- (BOOL)validateText:(id)arg1;
 - (void)presentNoAccountsAlert;
 - (void)tearDownSession;
 - (void).cxx_destruct;

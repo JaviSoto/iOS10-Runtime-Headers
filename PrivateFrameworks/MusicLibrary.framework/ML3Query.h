@@ -12,6 +12,7 @@
     NSString *_propertyToCount;
     ML3AggregateQuery *_nonDirectAggregateQuery;
     BOOL _usingSections;
+    BOOL _ignoreSystemFilterPredicates;
     BOOL _filtersOnDynamicProperties;
 }
 
@@ -27,6 +28,7 @@
 @property(readonly) ML3AggregateQuery * nonDirectAggregateQuery;
 @property(readonly) NSString * sectionProperty;
 @property(readonly) BOOL usingSections;
+@property BOOL ignoreSystemFilterPredicates;
 @property(readonly) NSString * selectPersistentIDsSQL;
 @property(readonly) NSString * selectCountSQL;
 @property(readonly) NSString * persistentIDProperty;
@@ -73,7 +75,9 @@
 - (id)propertyToCount;
 - (id)nonDirectAggregateQuery;
 - (id)orderingTerms;
+- (void)setIgnoreSystemFilterPredicates:(BOOL)arg1;
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
+- (BOOL)ignoreSystemFilterPredicates;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
 - (unsigned int)countOfEntities;
 - (BOOL)hasEntities;

@@ -16,12 +16,13 @@
 - (int)legacyStyle;
 - (id)makeTextFontForStyle:(int)arg1;
 - (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4 cachesImage:(BOOL)arg5;
+- (void)_cacheImage:(id)arg1 named:(id)arg2;
 - (id)uncachedImageNamed:(id)arg1;
+- (id)_cachedImageNamed:(id)arg1;
 - (id)expandedNameForImageName:(id)arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id)arg3;
 - (void)_drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6;
 - (float)textOffsetForStyle:(int)arg1;
-- (id)textColorForStyle:(int)arg1;
 - (id)untintedImageNamed:(id)arg1;
 - (id)homeImageName;
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -45,6 +46,7 @@
 - (id)uniqueIdentifier;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
 - (int)legibilityStyle;
+- (id)textColorForStyle:(int)arg1;
 - (id)tintColor;
 - (id)imageNamed:(id)arg1;
 - (float)scale;

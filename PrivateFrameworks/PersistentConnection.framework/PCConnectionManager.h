@@ -62,7 +62,6 @@
 + (id)_keepAliveCachePath;
 + (Class)growthAlgorithmClass;
 
-- (void)log:(id)arg1;
 - (double)keepAliveGracePeriod;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
 - (void)setEnableNonCellularConnections:(BOOL)arg1;
@@ -98,7 +97,6 @@
 - (void)_calloutWithEvent:(int)arg1;
 - (void)_adjustInterfaceAssertions;
 - (id)_stringForStyle:(int)arg1;
-- (int)currentStyle;
 - (void)_clearTimers;
 - (id)initWithConnectionClass:(int)arg1 interfaceIdentifier:(int)arg2 guidancePriority:(unsigned int)arg3 delegate:(id)arg4 serviceIdentifier:(id)arg5;
 - (id)_initWithConnectionClass:(int)arg1 interfaceIdentifier:(int)arg2 guidancePriority:(unsigned int)arg3 delegate:(id)arg4 delegateQueue:(struct dispatch_queue_s { }*)arg5 serviceIdentifier:(id)arg6;
@@ -122,5 +120,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)isRunning;
+- (int)currentStyle;
+- (void)log:(id)arg1;
 
 @end

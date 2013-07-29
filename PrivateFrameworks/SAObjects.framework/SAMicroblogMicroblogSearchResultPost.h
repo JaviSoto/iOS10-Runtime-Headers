@@ -7,7 +7,6 @@
 @interface SAMicroblogMicroblogSearchResultPost : SAMicroblogMicroblogSearchResultBase  {
 }
 
-@property(copy) NSString * content;
 @property(copy) NSDate * creationTime;
 @property(retain) SADecoratedString * decoratedContent;
 @property(copy) NSArray * embeddedHashtags;
@@ -48,10 +47,8 @@
 - (id)punchOut;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setContent:(id)arg1;
 - (id)location;
 - (void)setLocation:(id)arg1;
-- (id)content;
 - (id)groupIdentifier;
 
 @end

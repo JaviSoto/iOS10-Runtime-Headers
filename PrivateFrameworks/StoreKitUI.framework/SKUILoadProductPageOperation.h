@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SSMetricsPageEvent, NSURL, NSObject<OS_dispatch_queue>;
+@class SSMetricsPageEvent, NSURLRequest, NSObject<OS_dispatch_queue>;
 
 @interface SKUILoadProductPageOperation : NSOperation  {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -17,7 +17,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
 
-    NSURL *_url;
+    NSURLRequest *_urlRequest;
 }
 
 @property(copy) id outputBlock;
@@ -25,7 +25,7 @@
 
 
 - (id)_initSKUILoadProductPageOperation;
-- (id)initWithProductPageURL:(id)arg1;
+- (id)initWithProductPageURLRequest:(id)arg1;
 - (void)setOutputBlock:(id)arg1;
 - (id)metricsPageEvent;
 - (id)outputBlock;

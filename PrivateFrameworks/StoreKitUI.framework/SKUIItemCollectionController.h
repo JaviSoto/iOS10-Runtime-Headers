@@ -52,6 +52,7 @@
 - (id)_initSKUIItemCollectionController;
 - (void)setArtworkLoader:(id)arg1;
 - (void)cancelArtworkLoadForItemIndex:(int)arg1;
+- (id)performActionForItemAtIndex:(int)arg1;
 - (void)precacheNextPageArtworkForOffset:(struct CGPoint { float x1; float x2; })arg1 direction:(float)arg2;
 - (void)setIconDataConsumer:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(int)arg1;
@@ -62,7 +63,6 @@
 - (void)setNumberOfPagesToCacheAhead:(float)arg1;
 - (void)setNumberOfItemsPerPage:(int)arg1;
 - (void)setArtworkContext:(id)arg1;
-- (id)performActionForItemAtIndex:(int)arg1;
 - (void)configureCellLayout:(id)arg1 forIndex:(int)arg2;
 - (void)removeAllCachedResources;
 - (void)artworkLoaderDidIdle:(id)arg1;

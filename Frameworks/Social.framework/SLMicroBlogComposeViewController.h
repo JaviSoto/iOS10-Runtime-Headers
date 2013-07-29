@@ -9,6 +9,7 @@
     NSString *_serviceAccountTypeIdentifier;
     SLMicroBlogMentionsViewController *_mentionsViewController;
     unsigned int _mentionStartLocation;
+    BOOL _mentionPendingStart;
     BOOL _rotatedDuringAccountsPopover;
     BOOL _usingLocationOverride;
     NSArray *_accountUserRecords;
@@ -33,12 +34,11 @@
 
 - (void)setActiveAccountView:(id)arg1;
 - (id)activeAccountView;
-- (void)sheetPresentationAnimationDidFinish;
 - (void)appWillEnterForeground:(id)arg1;
 - (void)accountsViewController:(id)arg1 didSelectAccountUserRecord:(id)arg2;
 - (void)mentionsViewController:(id)arg1 finishedWithResult:(id)arg2;
-- (id)_mentionsSearchString;
 - (void)_presentMentionsViewControllerIfApplicableForSearchString:(id)arg1;
+- (id)_mentionsSearchString;
 - (void)_dismissMentionsViewController;
 - (void)applyMention:(id)arg1;
 - (void)_presentMentionsViewControllerWithSearchString:(id)arg1;
@@ -57,11 +57,12 @@
 - (void)noteLocationInfoChanged:(id)arg1;
 - (void)updateShortenedURLCost;
 - (id)_placeViewController;
-- (BOOL)validateText:(id)arg1;
+- (void)sheetPresentationAnimationDidFinish;
 - (id)sheetActions;
 - (void)_presentPlaceViewController;
 - (void)placeViewController:(id)arg1 willDisappear:(BOOL)arg2;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
+- (BOOL)validateText:(id)arg1;
 - (BOOL)countMediaAttachmentsTowardCharacterCount;
 - (void)presentNoAccountsAlert;
 - (void)setGeotagStatus:(int)arg1;
@@ -70,6 +71,7 @@
 - (void).cxx_destruct;
 - (void)send;
 - (void)textViewDidChangeSelection:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;

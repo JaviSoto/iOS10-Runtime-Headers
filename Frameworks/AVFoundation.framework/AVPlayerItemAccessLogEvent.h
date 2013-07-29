@@ -34,18 +34,6 @@
 @property(readonly) double switchBitrate;
 
 
-- (double)switchBitrate;
-- (int)mediaRequestsWWAN;
-- (id)playbackType;
-- (double)observedBitrateStandardDeviation;
-- (double)observedMinBitrate;
-- (double)observedMaxBitrate;
-- (int)entryReasonCode;
-- (int)downloadOverdue;
-- (double)startupTime;
-- (double)transferDuration;
-- (int)numberOfMediaRequests;
-- (id)serviceIdentifier;
 - (int)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -60,6 +48,19 @@
 - (id)URI;
 - (id)playbackStartDate;
 - (int)numberOfSegmentsDownloaded;
+- (double)switchBitrate;
+- (int)mediaRequestsWWAN;
+- (id)playbackType;
+- (double)observedBitrateStandardDeviation;
+- (double)observedMinBitrate;
+- (double)observedMaxBitrate;
+- (int)entryReasonCode;
+- (int)downloadOverdue;
+- (double)startupTime;
+- (double)currentObservedBitrate;
+- (double)transferDuration;
+- (int)numberOfMediaRequests;
+- (id)serviceIdentifier;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;

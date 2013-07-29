@@ -6,8 +6,8 @@
 }
 
 + (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
-+ (id)fontDescriptorWithFontAttributes:(id)arg1;
 + (id)fontDescriptorWithName:(id)arg1 size:(float)arg2;
++ (id)fontDescriptorWithFontAttributes:(id)arg1;
 
 - (id)matchingFontDescriptorWithMandatoryKeys:(id)arg1;
 - (id)matchingFontDescriptorsWithMandatoryKeys:(id)arg1;

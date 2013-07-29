@@ -6,10 +6,10 @@
 }
 
 
-- (void)writeData:(id)arg1;
-- (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (void)writeData:(id)arg1;
 - (void)synchronizeFile;
+- (unsigned long long)seekToEndOfFile;
 - (void)setReadabilityHandler:(id)arg1;
 - (id)readabilityHandler;
 - (void)setWriteabilityHandler:(id)arg1;

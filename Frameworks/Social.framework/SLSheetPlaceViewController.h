@@ -35,7 +35,6 @@
 - (void)cancelButtonTapped:(id)arg1;
 - (void)setSelectedPlace:(id)arg1;
 - (id)initWithPlaceDataSource:(id)arg1 effectiveBundle:(id)arg2;
-- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (id)_placeForRow:(int)arg1;
 - (void)setPlaces:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionForPlaces:(id)arg1;
@@ -54,6 +53,7 @@
 - (void)_centerMapWithSelectedPlace:(id)arg1;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
+- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (void)setAccount:(id)arg1;
 - (id)account;
 - (void)dealloc;
@@ -68,13 +68,13 @@
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -15,8 +15,8 @@
 + (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
 
-- (void)setPlaying:(BOOL)arg1;
 - (BOOL)isPlaying;
+- (void)setPlaying:(BOOL)arg1;
 - (void)setPosition:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (id)description;

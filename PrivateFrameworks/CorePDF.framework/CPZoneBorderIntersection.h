@@ -24,13 +24,13 @@
 - (void)setBackwardVector:(BOOL)arg1;
 - (void)setForwardVector:(BOOL)arg1;
 - (BOOL)backwardVector;
-- (BOOL)forwardVector;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })intersectionRect;
 - (id)intersectingBorder;
 - (int)comparePositionLengthwise:(id)arg1;
 - (void)setIntersectingBorder:(id)arg1;
 - (void)setIntersectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initSuper;
+- (BOOL)forwardVector;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

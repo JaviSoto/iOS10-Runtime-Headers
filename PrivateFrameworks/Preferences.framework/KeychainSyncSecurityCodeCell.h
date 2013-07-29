@@ -22,7 +22,7 @@
 - (void)setMode:(int)arg1;
 - (void)dealloc;
 - (int)mode;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 
 @end

@@ -23,6 +23,7 @@
 + (id)reminderWithEventStore:(id)arg1;
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 
+- (BOOL)isCompleted;
 - (BOOL)validate:(id*)arg1;
 - (void)setHadRecurrences:(BOOL)arg1;
 - (BOOL)hadRecurrences;
@@ -46,7 +47,6 @@
 - (void)setCompleted:(BOOL)arg1;
 - (BOOL)commit:(id*)arg1;
 - (id)initWithPersistentObject:(id)arg1;
-- (BOOL)isCompleted;
 - (void)setTimeZone:(id)arg1;
 - (void)dealloc;
 - (id)description;

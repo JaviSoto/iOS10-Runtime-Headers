@@ -70,9 +70,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)setCurrentMode:(int)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;

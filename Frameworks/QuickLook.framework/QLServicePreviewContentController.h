@@ -33,6 +33,7 @@
 - (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id)arg2;
 - (void)_setTransitioning:(BOOL)arg1;
+- (void)_setNavigationBarVerticalOffset:(float)arg1;
 - (void)_willAnimateRotationTo:(int)arg1;
 - (id)clientProcessAlertViewForPreviewContentController:(id)arg1;
 - (void)previewContentControllerDidExitFullScreen:(id)arg1;

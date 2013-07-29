@@ -43,6 +43,7 @@
 - (void)setIgnoresExpectedClientsProtocol:(BOOL)arg1;
 - (BOOL)openURL:(id)arg1 inClientWithIdentifier:(id)arg2;
 - (BOOL)ignoresExpectedClientsProtocol;
+- (BOOL)displayClientURL:(id)arg1;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
 - (void)clientInterface:(id)arg1 setStatusBarStyle:(int)arg2 animated:(BOOL)arg3;
 - (void)clientInterface:(id)arg1 setStatusBarHidden:(BOOL)arg2 withAnimation:(int)arg3;
@@ -51,12 +52,13 @@
 - (BOOL)performActionForDialog:(id)arg1 button:(id)arg2;
 - (void)_reloadUserDefaultsFromURLBag;
 - (void)_reloadScriptExecutionContextFromURLBag;
+- (BOOL)openClientURL:(id)arg1;
 - (BOOL)presentAccountViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)_reloadOverlayConfigurationsFromURLBag;
-- (BOOL)displayClientURL:(id)arg1;
 - (struct __CFArray { }*)offeredAssetTypes;
+- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)_dialogNotification:(id)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
 - (id)storeContentLanguage;
@@ -94,12 +96,12 @@
 - (BOOL)isStoreEnabled;
 - (void)setClientInterface:(id)arg1;
 - (id)clientInterface;
-- (BOOL)openClientURL:(id)arg1;
+- (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (id)scriptExecutionContext;
+- (id)clientIdentifier;
 - (void)becomeActive;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)resignActive;
-- (id)clientIdentifier;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
 - (void)cancelAllOperations;

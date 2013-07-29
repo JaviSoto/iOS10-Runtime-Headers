@@ -35,7 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)_cacheTime;
 - (long long)maxExpectedContentLength;
-- (id)allHeaderFields;
 - (int)statusCode;
+- (id)allHeaderFields;
 
 @end

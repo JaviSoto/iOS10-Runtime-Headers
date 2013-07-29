@@ -11,12 +11,10 @@
 
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availableProgressControlAreaFrame;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableProgressControlAreaFrame;
 - (void)_enableAnimationIfNecessary:(id)arg1;
 - (void)_disableAnimationIfNecessary:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableProgressControlAreaFrame;
 - (id)newButtonForPart:(unsigned long long)arg1;
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (id)buttonImageForPart:(unsigned long long)arg1;
@@ -26,6 +24,5 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
 
 @end

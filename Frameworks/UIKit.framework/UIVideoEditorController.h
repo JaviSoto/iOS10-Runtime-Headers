@@ -45,8 +45,8 @@
 - (id)_valueForProperty:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

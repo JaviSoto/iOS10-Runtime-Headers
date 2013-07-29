@@ -9,8 +9,8 @@
 @property int format;
 
 
-- (void)setFormat:(int)arg1;
 - (id)preheatItemForAsset:(id)arg1;
+- (void)setFormat:(int)arg1;
 - (int)format;
 - (id)initWithFormat:(int)arg1;
 

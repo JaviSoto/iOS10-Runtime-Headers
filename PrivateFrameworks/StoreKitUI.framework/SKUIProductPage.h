@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SSMetricsConfiguration, NSString, NSArray, SKUIReviewConfiguration, SKUIProductPageItem;
+@class SSMetricsConfiguration, NSString, NSArray, SKUIReviewConfiguration, SKUIProductPageItem, NSURL;
 
 @interface SKUIProductPage : NSObject <NSCopying> {
     SKUIProductPageItem *_item;
     SSMetricsConfiguration *_metricsConfiguration;
     NSString *_metricsPageDescription;
+    NSURL *_pageURL;
     NSArray *_relatedContentSwooshes;
     SKUIReviewConfiguration *_reviewConfiguration;
 }
@@ -15,6 +16,7 @@
 @property(retain) SKUIProductPageItem * item;
 @property(retain) SSMetricsConfiguration * metricsConfiguration;
 @property(copy) NSString * metricsPageDescription;
+@property(copy) NSURL * pageURL;
 @property(copy) NSArray * relatedContentSwooshes;
 @property(retain) SKUIReviewConfiguration * reviewConfiguration;
 
@@ -30,6 +32,8 @@
 - (void)setItem:(id)arg1;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)pageURL;
+- (void)setPageURL:(id)arg1;
 - (id)item;
 
 @end

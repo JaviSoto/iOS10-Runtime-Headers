@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVOutputSettingsAssistantHelper;
+@class <AVOutputSettingsAssistantVideoSettingsAdjuster>, <AVOutputSettingsAssistantBaseSettingsProvider>;
 
 @interface AVOutputSettingsAssistantInternal : NSObject  {
-    AVOutputSettingsAssistantHelper *helper;
+    <AVOutputSettingsAssistantBaseSettingsProvider> *baseSettingsProvider;
+    <AVOutputSettingsAssistantVideoSettingsAdjuster> *videoSettingsAdjuster;
     struct opaqueCMFormatDescription { } *sourceVideoFormat;
     struct opaqueCMFormatDescription { } *sourceAudioFormat;
     struct { 
@@ -14,6 +15,12 @@
         unsigned int flags; 
         long long epoch; 
     } sourceVideoAverageFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } sourceVideoMinFrameDuration;
 }
 
 

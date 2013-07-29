@@ -11,8 +11,6 @@
     } _scrollPosition;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)showQuoteLevelOptions;
 - (void)decreaseQuoteLevel;
@@ -27,13 +25,5 @@
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)_accessibilityHasTextOperations;
-- (id)_accessibilityTextOperations;
-- (void)_accessibilitySetValue:(id)arg1;
-- (BOOL)_accessibilityTextOperationAction:(id)arg1;
-- (id)_accessibilityCustomTextOperations;
 
 @end

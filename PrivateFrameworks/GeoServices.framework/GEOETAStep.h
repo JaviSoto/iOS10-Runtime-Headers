@@ -21,6 +21,8 @@
 @property int zilchPointIndex;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasZilchPointIndex:(BOOL)arg1;
 - (void)setZilchPointIndex:(int)arg1;
 - (int)zilchPointIndex;
@@ -34,8 +36,6 @@
 - (unsigned int)expectedTime;
 - (BOOL)hasExpectedTime;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

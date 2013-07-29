@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSLayoutConstraint, UILabel, UIButton, UIView, _UITextFieldRoundedRectBackgroundViewNeue, NSString, _UIBackdropView;
+@class UIButton, _UIBackdropView, NSString, UIView, UILabel, NSLayoutConstraint;
 
 @interface _UIContentUnavailableView : UIView  {
     unsigned int _style;
@@ -16,7 +16,6 @@
     UILabel *_titleLabel;
     UILabel *_messageLabel;
     UIButton *_actionButton;
-    _UITextFieldRoundedRectBackgroundViewNeue *_buttonBackground;
     NSLayoutConstraint *titleToMessageConstraint;
     NSLayoutConstraint *messageToButtonConstraint;
     UIView *_fromSnapshot;
@@ -40,24 +39,24 @@
 @property(copy) id buttonAction;
 
 
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)message;
 - (void)dealloc;
-- (void)setButtonAction:(id)arg1;
 - (id)buttonTitle;
-- (void)setButtonTitle:(id)arg1;
 - (void)windowDidRotateNotification:(id)arg1;
 - (void)windowWillAnimateRotateNotification:(id)arg1;
 - (void)windowWillRotateNotification:(id)arg1;
 - (id)buttonAction;
+- (id)_buttonBackgroundImageForStyle:(unsigned int)arg1;
 - (void)_actionButtonPressed:(id)arg1;
 - (void)_updateViewHierarchy;
+- (void)setButtonAction:(id)arg1;
+- (void)setButtonTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
+- (void)setMessage:(id)arg1;
 - (void)updateConstraints;
-- (void)tintColorDidChange;
 - (void)didMoveToWindow;
 
 @end

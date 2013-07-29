@@ -19,14 +19,14 @@
 @property(retain) NSNumber * proxyPort;
 
 
-- (id)proxyPort;
 - (id)proxy;
 - (id)apnName;
 - (id)strippedDefaultsRepresentation;
 - (id)defaultsRepresentation;
-- (void)setProxyPort:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (void)setApnName:(id)arg1;
+- (void)setProxyPort:(id)arg1;
+- (id)proxyPort;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;

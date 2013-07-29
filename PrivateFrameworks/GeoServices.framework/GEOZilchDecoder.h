@@ -21,10 +21,10 @@
 
 + (BOOL)decodingSupported;
 
+- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (void)setMapAccessRestrictions:(id)arg1;
 - (id)mapAccessRestrictions;
 - (id)decoderQueue;
-- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (void)requestComplete:(id)arg1;
 - (void)trackRequest:(id)arg1;
 - (void)setRequestQueue:(id)arg1;

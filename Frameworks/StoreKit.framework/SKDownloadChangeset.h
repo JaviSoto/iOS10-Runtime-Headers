@@ -24,6 +24,7 @@
 
 + (id)changesetWithDownloadID:(id)arg1 state:(int)arg2;
 
+- (void)setContentLength:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setTimeRemaining:(id)arg1;
 - (id)downloadID;
@@ -34,7 +35,6 @@
 - (id)contentURL;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setContentLength:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setError:(id)arg1;

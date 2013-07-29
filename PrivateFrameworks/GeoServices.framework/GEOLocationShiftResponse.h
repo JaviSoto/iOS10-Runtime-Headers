@@ -17,12 +17,12 @@
 @property struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } shiftedPixel;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (struct { double x1; double x2; })shiftedCoordinate;
 - (void)setShiftedPixel:(struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })arg1;
 - (struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })shiftedPixel;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

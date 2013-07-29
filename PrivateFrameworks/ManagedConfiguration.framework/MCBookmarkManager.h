@@ -19,8 +19,8 @@
 
 + (id)sharedManager;
 
-- (int)notificationToken;
 - (void)setNotificationToken:(int)arg1;
+- (int)notificationToken;
 - (void)setMemberQueueStashedBookmarksByLabel:(id)arg1;
 - (id)memberQueueStashedBookmarksByLabel;
 - (void)setMemberQueueCurrentUserBookmarks:(id)arg1;

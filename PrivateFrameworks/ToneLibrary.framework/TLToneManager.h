@@ -21,6 +21,7 @@
 + (id)sharedRingtoneManager;
 
 - (void)removeNewMailToneForAccount:(id)arg1;
+- (unsigned long)currentAirDropInvitationToneSoundID;
 - (unsigned long)currentPhotoStreamPostToneSoundID;
 - (unsigned long)currentFacebookPostToneSoundID;
 - (unsigned long)currentSentTweetToneSoundID;
@@ -33,6 +34,8 @@
 - (id)currentIdentifierForContext:(int)arg1;
 - (id)defaultIdentifierForContext:(int)arg1;
 - (id)newMailPreferenceKeyForAccount:(id)arg1;
+- (id)defaultAirDropInvitationToneIdentifier;
+- (id)currentAirDropInvitationToneIdentifier;
 - (id)defaultPhotoStreamPostToneIdentifier;
 - (id)currentPhotoStreamPostToneIdentifier;
 - (id)defaultFacebookPostToneIdentifier;

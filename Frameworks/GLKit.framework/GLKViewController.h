@@ -114,7 +114,6 @@
 - (void)_updateAndDraw;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_initCommon;
-- (BOOL)isPaused;
 - (int)frameInterval;
 - (id)screen;
 - (id)init;
@@ -122,18 +121,19 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)setPaused:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)displayLink;
 - (void)setDisplayLink:(id)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
+- (void)setFrameInterval:(int)arg1;
 - (void)setScreen:(id)arg1;
 - (void)setView:(id)arg1;
-- (void)setFrameInterval:(int)arg1;
+- (BOOL)isPaused;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

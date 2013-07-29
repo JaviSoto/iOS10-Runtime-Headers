@@ -22,7 +22,6 @@
 + (id)escapedTemplateForString:(id)arg1;
 + (id)escapedPatternForString:(id)arg1;
 
-- (unsigned int)numberOfMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)finalize;
@@ -31,6 +30,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementStringForResult:(id)arg1 inString:(id)arg2 offset:(int)arg3 template:(id)arg4;
 - (id)firstMatchInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (unsigned int)numberOfMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)matchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
 - (unsigned int)numberOfCaptureGroups;

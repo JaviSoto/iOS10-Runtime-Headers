@@ -6,10 +6,10 @@
 }
 
 
-- (float)strokeWidth;
 - (bool)centerLabels;
 - (bool)isLogarithmic;
 - (float)unit;
+- (float)strokeWidth;
 - (float)maxValue;
 - (id)values;
 - (id)labels;

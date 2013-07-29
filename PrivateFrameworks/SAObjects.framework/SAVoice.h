@@ -15,14 +15,14 @@
 + (id)voiceWithDictionary:(id)arg1 context:(id)arg2;
 + (id)voice;
 
+- (id)gender;
 - (void)setQuality:(id)arg1;
 - (id)quality;
 - (void)setLanguageString:(id)arg1;
 - (id)languageString;
+- (void)setGender:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setGender:(id)arg1;
-- (id)gender;
 - (id)name;
 - (id)groupIdentifier;
 - (void)setName:(id)arg1;

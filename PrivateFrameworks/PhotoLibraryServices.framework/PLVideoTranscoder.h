@@ -7,7 +7,7 @@
 
 + (id)exportPresetsCompatibleWithVideoAtURL:(id)arg1;
 + (void)transcodeVideo:(id)arg1 outputURL:(id)arg2 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 presetName:(id)arg5 outputFileType:(id)arg6 audioMix:(id)arg7 completionHandler:(id)arg8;
-+ (id)generatePosterFrameForVideoAtURL:(id)arg1 error:(id*)arg2;
++ (id)generatePosterFrameForVideoAtURL:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 error:(id*)arg3;
 
 
 @end

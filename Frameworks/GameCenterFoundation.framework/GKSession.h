@@ -35,6 +35,7 @@
 - (void)setWifiEnabled:(BOOL)arg1;
 - (BOOL)isPeerBusy:(id)arg1;
 - (void)setAvailable:(BOOL)arg1;
+- (BOOL)isAvailable;
 - (int)sessionMode;
 - (void)disconnectPeerFromAllPeers:(id)arg1;
 - (void)denyConnectionFromPeer:(id)arg1;
@@ -46,7 +47,6 @@
 - (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (double)disconnectTimeout;
 - (void)setDisconnectTimeout:(double)arg1;
-- (BOOL)isAvailable;
 - (id)sessionID;
 - (id)peerID;
 - (id)displayName;

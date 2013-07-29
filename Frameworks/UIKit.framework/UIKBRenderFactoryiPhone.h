@@ -6,6 +6,7 @@
 }
 
 
+- (id)shiftLockControlKeyTraits;
 - (id)shiftedControlKeyTraits;
 - (float)_row4ControlSegmentWidth;
 - (float)dualStringBottomAdditionalOffsetForDisplayContents:(id)arg1;
@@ -21,10 +22,16 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
 - (struct CGPoint { float x1; float x2; })moreABCKeyOffset;
 - (struct CGPoint { float x1; float x2; })more123KeyOffset;
+- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;
 - (id)dictationKeyImageName;
 - (id)globalKeyImageName;
+- (float)skinnyKeyThreshold;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
+- (id)deleteKeyImageName;
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;

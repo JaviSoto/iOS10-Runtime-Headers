@@ -20,10 +20,10 @@
 - (id)_pathForKey:(id)arg1;
 - (BOOL)removeDataForKey:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2;
-- (BOOL)setData:(id)arg1 forKey:(id)arg2;
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (BOOL)setData:(id)arg1 forKey:(id)arg2;
 - (BOOL)clear;
 
 @end

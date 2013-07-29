@@ -12,12 +12,12 @@
 - (id)expandedNameForImageName:(id)arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id)arg3;
 - (float)textOffsetForStyle:(int)arg1;
-- (id)textColorForStyle:(int)arg1;
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
 - (float)airplaneItemExtraMargin;
 - (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
 - (float)edgePadding;
+- (id)textColorForStyle:(int)arg1;
 
 @end

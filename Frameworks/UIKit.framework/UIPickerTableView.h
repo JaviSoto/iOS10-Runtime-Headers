@@ -29,6 +29,7 @@
         unsigned int scrollingForSelection : 1; 
         unsigned int pickerViewImplementsSelectionBarChanged : 2; 
         unsigned int cancellingAnimation : 1; 
+        unsigned int updatingContentInset : 1; 
     } _pickerTableFlags;
 }
 

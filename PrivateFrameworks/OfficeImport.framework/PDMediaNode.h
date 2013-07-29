@@ -18,8 +18,8 @@
 - (BOOL)isShowWhenStopped;
 - (void)setIsShowWhenStopped:(BOOL)arg1;
 - (void)setIsMuted:(BOOL)arg1;
-- (long)volume;
 - (void)setVolume:(long)arg1;
+- (long)volume;
 - (BOOL)isMuted;
 - (id)init;
 - (void)setTarget:(id)arg1;

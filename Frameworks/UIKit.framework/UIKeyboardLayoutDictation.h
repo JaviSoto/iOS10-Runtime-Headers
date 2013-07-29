@@ -18,12 +18,12 @@
 - (void)setupBackgroundViewForNewSplitTraits:(id)arg1;
 - (BOOL)visible;
 - (BOOL)usesAutoShift;
-- (int)_clipCornersOfView:(id)arg1;
 - (BOOL)shouldFadeToLayout;
 - (BOOL)shouldFadeFromLayout;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (id)currentKeyplane;
 - (void)setRenderConfig:(id)arg1;
+- (int)_clipCornersOfView:(id)arg1;
 - (void)layoutSubviews;
 
 @end

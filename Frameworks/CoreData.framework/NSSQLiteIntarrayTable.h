@@ -17,5 +17,6 @@
 - (struct sqlite3_intarray { }*)intarrayTable;
 - (void)setIntarrayTable:(struct sqlite3_intarray { }*)arg1;
 - (void)setIntarrayTableName:(id)arg1;
+- (void)dealloc;
 
 @end

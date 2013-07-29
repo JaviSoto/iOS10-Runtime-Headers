@@ -36,7 +36,6 @@
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
-- (BOOL)hasAttribute:(id)arg1;
 - (BOOL)webkitMatchesSelector:(id)arg1;
 - (void)scrollByPages:(int)arg1;
 - (void)scrollByLines:(int)arg1;
@@ -44,6 +43,7 @@
 - (void)scrollIntoView:(BOOL)arg1;
 - (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
 - (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
+- (BOOL)hasAttribute:(id)arg1;
 - (id)setAttributeNodeNS:(id)arg1;
 - (id)getAttributeNodeNS:(id)arg1 :(id)arg2;
 - (id)getAttributeNodeNS:(id)arg1 localName:(id)arg2;
@@ -63,8 +63,6 @@
 - (id)previousElementSibling;
 - (id)lastElementChild;
 - (id)classList;
-- (int)clientHeight;
-- (int)clientWidth;
 - (int)clientTop;
 - (int)clientLeft;
 - (id)offsetParent;
@@ -79,6 +77,8 @@
 - (void)setAttribute:(id)arg1 value:(id)arg2;
 - (struct __CTFont { }*)_font;
 - (id)getAttribute:(id)arg1;
+- (int)clientHeight;
+- (int)clientWidth;
 - (id)tagName;
 - (id)style;
 - (void)focus;

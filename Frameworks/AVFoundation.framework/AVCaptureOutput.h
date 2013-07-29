@@ -12,7 +12,6 @@
 
 + (void)initialize;
 
-- (id)firstEnabledConnectionForMediaType:(id)arg1;
 - (void)didStartForSessionWithoutGraphRebuild:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
@@ -20,12 +19,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
+- (id)firstEnabledConnectionForMediaType:(id)arg1;
 - (void)updateMetadataTransformForCaptureOptions:(id)arg1;
 - (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
 - (id)_inputForConnection:(id)arg1;
-- (id)connections;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)notReadyError;
 - (void)bumpChangeSeed;
@@ -36,6 +35,7 @@
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)connectionWithMediaType:(id)arg1;
 - (id)liveConnections;
+- (id)connections;
 - (id)init;
 - (void)dealloc;
 - (void)setSession:(id)arg1;

@@ -36,7 +36,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
-- (id)_crashReporterString;
 - (id)error;
 - (int)localErrno;
 

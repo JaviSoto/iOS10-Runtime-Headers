@@ -35,10 +35,10 @@
 
 - (id)footerSection;
 - (id)dialog;
+- (id)clientIdentifier;
 - (int)URLBagType;
 - (id)creditsString;
 - (id)actionType;
-- (id)clientIdentifier;
 - (id)account;
 - (void)dealloc;
 - (id)description;

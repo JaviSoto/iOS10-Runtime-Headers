@@ -25,6 +25,8 @@
 - (BOOL)shouldShowReadyForLanguageCode:(id)arg1;
 - (void)setDisableAssistantWhilePasscodeLocked:(BOOL)arg1;
 - (BOOL)disableAssistantWhilePasscodeLocked;
+- (void)setManualEndpointingEnabled:(BOOL)arg1;
+- (BOOL)manualEndpointingEnabled;
 - (void)setHandsFreeMode:(int)arg1;
 - (int)handsFreeMode;
 - (void)setDebugButtonIsEnabled:(BOOL)arg1;
@@ -34,6 +36,8 @@
 - (void)_setDictationIsEnabledLocal:(BOOL)arg1;
 - (void)_setAssistantIsEnabledLocal:(BOOL)arg1;
 - (BOOL)assistantIsEnabled;
+- (void)_ouputVoiceDidChangeExternally;
+- (void)_languageCodeDidChangeExternally;
 - (void)_internalPreferencesDidChangeExternally;
 - (void)_preferencesDidChangeExternally;
 - (id)whitelistedLanguages;

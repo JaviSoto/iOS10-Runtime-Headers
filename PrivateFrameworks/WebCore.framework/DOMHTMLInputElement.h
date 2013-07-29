@@ -125,20 +125,20 @@
 - (void)setSize:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
+- (double)valueAsNumber;
+- (void)setValueAsNumberWithChangeEvent:(double)arg1;
+- (void)setValueWithChangeEvent:(id)arg1;
 - (int)structuralComplexityContribution;
 - (BOOL)_isEdited;
 - (BOOL)readOnly;
+- (BOOL)multiple;
+- (BOOL)disabled;
 - (id)placeholder;
 - (id)absoluteImageURL;
 - (BOOL)_isTextField;
 - (BOOL)autocorrect;
 - (int)_autocapitalizeType;
 - (id)form;
-- (double)valueAsNumber;
-- (void)setValueWithChangeEvent:(id)arg1;
-- (void)setValueAsNumberWithChangeEvent:(double)arg1;
-- (BOOL)multiple;
-- (BOOL)disabled;
 - (void)setPlaceholder:(id)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (id)pattern;
@@ -163,12 +163,12 @@
 - (BOOL)nodeCanBecomeFirstResponder;
 - (BOOL)isAssistedDateType;
 - (id)_textFormElement;
+- (void)_accessoryClear;
 - (BOOL)_supportsAccessoryClear;
 - (BOOL)_supportsAutoFill;
 - (BOOL)_requiresInputView;
 - (BOOL)_requiresAccessoryView;
 - (void)_stopAssistingDocumentView:(id)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
-- (void)_accessoryClear;
 
 @end

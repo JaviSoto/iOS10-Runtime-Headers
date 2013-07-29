@@ -91,8 +91,6 @@
 - (id)x_apple_dropbox;
 - (void)setX_calendarserver_access:(int)arg1;
 - (int)x_calendarserver_access;
-- (void)setTrigger:(id)arg1;
-- (id)trigger;
 - (id)rrule;
 - (void)setRrule:(id)arg1;
 - (id)recurrence_id;
@@ -145,6 +143,8 @@
 - (void)setAttendee:(id)arg1;
 - (unsigned int)sequence;
 - (void)setUid:(id)arg1;
+- (void)setTrigger:(id)arg1;
+- (id)trigger;
 - (id)location;
 - (void)setSummary:(id)arg1;
 - (id)summary;

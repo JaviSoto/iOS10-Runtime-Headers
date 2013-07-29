@@ -58,7 +58,6 @@
 - (struct WrdCPTableHeaders { int (**x1)(); struct ChVector<int> { int *x_2_1_1; int *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; } x2; }*)tableHeaders;
 - (void)setTargetDocument:(id)arg1;
 - (id)readCharactersForTextRun:(struct WrdTextRun { int (**x1)(); int x2; unsigned int x3; unsigned int x4; }*)arg1;
-- (id)styleAtIndex:(int)arg1;
 - (struct WrdBookmarkTable { int (**x1)(); int x2; struct ChVector<WrdBookmark *> { struct WrdBookmark {} **x_3_1_1; struct WrdBookmark {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; }*)bookmarkTable;
 - (id)readCharactersFrom:(unsigned int)arg1 to:(unsigned int)arg2 textType:(int)arg3;
 - (void)setAnnotationRangeStart:(id)arg1;
@@ -73,6 +72,7 @@
 - (id)officeArtState;
 - (void)setOfficeArtState:(id)arg1;
 - (id)read;
+- (id)styleAtIndex:(int)arg1;
 - (id)fontAtIndex:(int)arg1;
 - (void)dealloc;
 - (void)initialize;

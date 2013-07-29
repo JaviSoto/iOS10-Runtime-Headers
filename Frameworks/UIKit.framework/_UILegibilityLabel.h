@@ -2,28 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAFilter, NSString, UIFont;
+@class NSString, UIFont;
 
 @interface _UILegibilityLabel : _UILegibilityView  {
+    BOOL _usesSecondaryColor;
     NSString *_string;
     UIFont *_font;
-    CAFilter *_imageColorFilter;
-    CAFilter *_shadowImageColorFilter;
-    int _options;
 }
 
 @property(copy) NSString * string;
 @property(retain) UIFont * font;
 @property(readonly) BOOL usesSecondaryColor;
-@property(readonly) BOOL usesColorFilters;
 @property(readonly) float baselineOffset;
-@property(retain) CAFilter * imageColorFilter;
-@property(retain) CAFilter * shadowImageColorFilter;
-@property int options;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)font;
 - (float)baselineOffset;
@@ -31,23 +22,10 @@
 - (id)string;
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4;
-- (void)setShadowImageColorFilter:(id)arg1;
-- (id)shadowImageColorFilter;
-- (void)setImageColorFilter:(id)arg1;
-- (id)imageColorFilter;
-- (id)colorAddMatrixValueForColor:(id)arg1;
-- (BOOL)usesColorFilters;
-- (id)drawingColor;
+- (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4 options:(int)arg5;
 - (BOOL)usesSecondaryColor;
 - (void)updateImage;
-- (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4 options:(int)arg5;
-- (void)updateForChangedSettings:(id)arg1;
-- (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;
-- (void)setOptions:(int)arg1;
 - (void)setFont:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)options;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

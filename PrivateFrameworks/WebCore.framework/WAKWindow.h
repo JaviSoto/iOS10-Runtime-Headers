@@ -47,6 +47,19 @@
     WAKView *_nextResponder;
     BOOL _visible;
     BOOL _useOrientationDependentFontAntialiasing;
+    struct TCMalloc_SpinLock { 
+        unsigned int lockword_; 
+    } _exposedScrollViewRectLock;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _exposedScrollViewRect;
 }
 
 @property BOOL useOrientationDependentFontAntialiasing;
@@ -69,6 +82,7 @@
 - (BOOL)makeFirstResponder:(id)arg1;
 - (void)sendEventSynchronously:(id)arg1;
 - (BOOL)isKeyWindow;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })exposedScrollViewRect;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)displayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)useOrientationDependentFontAntialiasing;
@@ -114,6 +128,7 @@
 - (void)setRootLayer:(id)arg1;
 - (void)sendMouseMoveEvent:(id)arg1 contentChange:(int*)arg2;
 - (void)removeForegroundTiles;
+- (void)setExposedScrollViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTilingDirection:(int)arg1;
 - (void)setUseOrientationDependentFontAntialiasing:(BOOL)arg1;
 - (void)removeAllTiles;
@@ -128,7 +143,5 @@
 - (void)setVisible:(BOOL)arg1;
 - (id)recursiveDescription;
 - (void)makeKeyWindow;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

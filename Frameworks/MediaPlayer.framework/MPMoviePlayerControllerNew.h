@@ -60,6 +60,7 @@
 - (void)_setMovieTitle:(id)arg1;
 - (void)_setMovieSubtitle:(id)arg1;
 - (id)timedMetadataForKey:(id)arg1;
+- (id)timedMetadata;
 - (void)cancelAllThumbnailImageRequests;
 - (id)thumbnailImageAtTime:(double)arg1 timeOption:(int)arg2;
 - (void)_setNowPlayingMovie:(id)arg1;
@@ -85,7 +86,6 @@
 - (id)_resolvedContentURL;
 - (double)_playableStartTime;
 - (double)_playableEndTime;
-- (id)_navigationBar;
 - (id)_movieTitle;
 - (id)_movieSubtitle;
 - (BOOL)_isTVOutEnabled;
@@ -114,6 +114,7 @@
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
 - (void)_setControlsHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)disallowsAMRAudio;
 - (void)_pausePlaybackForSuspension;
 - (BOOL)_canContinuePlayingWhenLocked;
 - (void)_setUseApplicationAudioSession:(BOOL)arg1;
@@ -179,7 +180,10 @@
 - (void)endSeeking;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)play;
 - (BOOL)isPreparedToPlay;
+- (void)prepareToPlay;
+- (BOOL)isAirPlayVideoActive;
 - (void)setAllowsAirPlay:(BOOL)arg1;
 - (BOOL)allowsAirPlay;
 - (void)setScalingMode:(int)arg1;
@@ -191,21 +195,17 @@
 - (BOOL)shouldAutoplay;
 - (void)setControlStyle:(int)arg1;
 - (int)controlStyle;
+- (int)playbackState;
 - (void)setContentURL:(id)arg1;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
+- (id)_navigationBar;
 - (int)loadState;
 - (id)contentURL;
-- (id)timedMetadata;
-- (BOOL)disallowsAMRAudio;
-- (BOOL)isAirPlayVideoActive;
 - (int)repeatMode;
 - (void)setRepeatMode:(int)arg1;
 - (id)errorLog;
 - (id)accessLog;
-- (void)play;
-- (void)prepareToPlay;
-- (int)playbackState;
 - (void)setBackgroundColor:(id)arg1;
 - (id)init;
 - (void)dealloc;

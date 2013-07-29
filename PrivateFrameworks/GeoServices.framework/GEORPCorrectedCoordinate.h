@@ -15,6 +15,8 @@
 @property(retain) GEOLatLng * correctedCoordinate;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)hasOriginalCoordinate;
 - (void)setOriginalCoordinate:(id)arg1;
 - (id)originalCoordinate;
@@ -22,8 +24,6 @@
 - (BOOL)hasCorrectedCoordinate;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

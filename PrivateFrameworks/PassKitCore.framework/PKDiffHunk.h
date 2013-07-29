@@ -23,9 +23,9 @@
 - (void)setValueOld:(id)arg1;
 - (id)valueNew;
 - (id)valueOld;
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (void)setKey:(id)arg1;
 - (id)key;
 - (id)initWithCoder:(id)arg1;

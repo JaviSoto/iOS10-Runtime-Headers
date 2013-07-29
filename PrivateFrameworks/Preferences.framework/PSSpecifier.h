@@ -53,8 +53,6 @@
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 + (id)groupSpecifierWithName:(id)arg1;
 + (id)emptyGroupSpecifier;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setShowContentString:(BOOL)arg1;
 - (void)setConfirmationCancelAction:(SEL)arg1;
@@ -96,12 +94,11 @@
 - (id)description;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
-- (void)setButtonAction:(SEL)arg1;
 - (SEL)buttonAction;
+- (void)setButtonAction:(SEL)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)properties;
 - (id)target;
 - (void)setName:(id)arg1;
-- (id)accessibilityIdentification;
 
 @end

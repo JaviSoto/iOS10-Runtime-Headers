@@ -12,6 +12,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)readFrom:(id)arg1;
+- (id)formattedText;
 - (void)writeTo:(id)arg1;
 - (id)init;
 - (id)data;

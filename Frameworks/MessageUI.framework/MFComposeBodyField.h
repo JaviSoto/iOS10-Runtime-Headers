@@ -35,8 +35,6 @@
 @property BOOL shouldShowStandardButtons;
 
 + (void)addAdditionalItemsToCalloutBar;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (id)htmlString;
@@ -60,6 +58,7 @@
 - (void)unscaleImages;
 - (void)scaleImagesToScale:(unsigned int)arg1 withAttachmentStore:(id)arg2;
 - (void)setLayoutInterval:(int)arg1;
+- (void)_removeInlineAttachment:(id)arg1;
 - (id)_addInlineAttachmentWithData:(id)arg1 text:(id)arg2 type:(id)arg3 contentID:(id)arg4;
 - (void)addSelectedAttachmentsToPasteboard:(id)arg1;
 - (id)_nodeForAttachmentData:(id)arg1 text:(id)arg2 type:(id)arg3;
@@ -122,6 +121,5 @@
 - (void)cut:(id)arg1;
 - (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)deferredBecomeFirstResponder;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

@@ -59,9 +59,6 @@
 @property unsigned long long visibleParts;
 @property unsigned long long disabledParts;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)automaticallyHandleTransportControls;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAreaInsets;
@@ -73,7 +70,7 @@
 - (void)_availableRoutesChanged:(id)arg1;
 - (void)_durationAvailable:(id)arg1;
 - (void)_alternateTracksAvailable:(id)arg1;
-- (void)_setAuxiliaryButton:(id)arg1 hidden:(BOOL)arg2 atX:(float*)arg3;
+- (void)_setAuxiliaryButton:(id)arg1 hidden:(BOOL)arg2 atX:(float*)arg3 animated:(BOOL)arg4;
 - (void)_updateLoadingIndicator;
 - (void)_registerForItemNotifications:(id)arg1;
 - (void)_startSeeking;
@@ -88,7 +85,7 @@
 - (void)_registerForPlayerNotifications:(id)arg1;
 - (void)_updateVolumeSlider;
 - (void)_itemChanged:(id)arg1;
-- (void)_configureAuxiliaryButtons;
+- (void)_configureAuxiliaryButtons:(BOOL)arg1;
 - (void)_unregisterForPlayerNotifications:(id)arg1;
 - (void)_unregisterForItemNotifications:(id)arg1;
 - (void)_activeAudioRouteDidChange:(id)arg1;
@@ -157,11 +154,5 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)didMoveToWindow;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
-- (void)_axUpdateScaleButton;
-- (void)_axUpdatePlayPauseButton;
-- (void)_axAnnotateLeftRightButtons;
-- (void)_axAnnotateAllButtons;
 
 @end

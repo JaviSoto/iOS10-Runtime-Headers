@@ -33,6 +33,7 @@
     UIView *_accessoryContainerView;
     float _aspectRatio;
     float _scaleFactor;
+    float _navigationBarVerticalOffset;
     QLDisplayBundle *_displayBundle;
     QLDisplayBundle *_newDisplayBundle;
     NSTimer *_progressTimer;
@@ -90,6 +91,7 @@
 - (void)showContentsWasTappedForPreviewItem:(id)arg1;
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)discardAirPlayView;
 - (void)setupAirPlayView;
 - (void)endTrackingViewUpdates;

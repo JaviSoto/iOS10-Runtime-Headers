@@ -9,7 +9,8 @@
     NSString *_reuseIdentifier;
     UICollectionView *_collectionView;
     struct { 
-        unsigned int updateAnimationCount : 4; 
+        unsigned int updateAnimationCount : 5; 
+        unsigned int wasDequeued : 1; 
     } _reusableViewFlags;
 }
 
@@ -28,6 +29,8 @@
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)_addUpdateAnimation;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
+- (void)_markAsDequeued;
+- (BOOL)_wasDequeued;
 - (id)_layoutAttributes;
 - (BOOL)_isInUpdateAnimation;
 - (void)_setCollectionView:(id)arg1;

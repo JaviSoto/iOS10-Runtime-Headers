@@ -19,10 +19,7 @@
 
 + (Class)textFieldClass;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setShowsOKButton:(BOOL)arg1;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
@@ -36,6 +33,7 @@
 - (int)numberOfEntryFields;
 - (void)deleteLastCharacter;
 - (void)setStringValue:(id)arg1;
+- (void)setShowsOKButton:(BOOL)arg1;
 - (BOOL)showsOKButton;
 - (void)_textDidChange;
 - (void)setTextCentersHorizontally:(BOOL)arg1;
@@ -48,12 +46,5 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)isFirstResponder;
 - (BOOL)canBecomeFirstResponder;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityChildren;
-- (id)accessibilityContainerElements;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_accessibilitySetValue:(id)arg1;
 
 @end

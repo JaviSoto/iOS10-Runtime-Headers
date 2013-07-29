@@ -66,7 +66,6 @@
 - (BOOL)clearsWeakScriptReferences;
 - (void)_exitStoreButtonAction:(id)arg1;
 - (void)invalidateForMemoryPurge;
-- (void)applicationDidEnterBackground;
 - (BOOL)_shouldUseDefaultFirstResponder;
 - (BOOL)isVisibleAndFrontmost;
 - (id)newRotationController;
@@ -83,6 +82,7 @@
 - (BOOL)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (void)resetRestoredContext;
 - (id)copyChildViewControllersForReason:(int)arg1;
+- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (void)_dismissFooterAnimationDidStop:(id)arg1;
 - (void)_dialogFinishedNotification:(id)arg1;
@@ -104,6 +104,7 @@
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)setTitle:(id)arg1;
@@ -128,13 +129,13 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (id)_existingNavigationItem;
 - (BOOL)_canReloadView;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;

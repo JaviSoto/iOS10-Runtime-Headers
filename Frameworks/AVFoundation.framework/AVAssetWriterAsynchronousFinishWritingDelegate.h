@@ -26,8 +26,8 @@
 - (void)finishWritingHelperDidFail:(id)arg1;
 - (void)finishWritingHelper:(id)arg1 didInitiateFinishWritingForFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2;
 - (BOOL)shouldHelperPrepareInputs;
-- (void)didReceiveFigAssetWriterNotificationWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (id)initWithHandler:(id)arg1;
+- (void)didReceiveFigAssetWriterNotificationWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)dealloc;
 
 @end

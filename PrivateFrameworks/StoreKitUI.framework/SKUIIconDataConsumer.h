@@ -40,6 +40,7 @@
 + (id)billboardIconConsumer;
 + (id)applePackIconConsumer;
 + (id)roomIconConsumer;
++ (id)shareSheetIconConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)brickConsumerWithBrickSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)smartBannerIconConsumer;
 

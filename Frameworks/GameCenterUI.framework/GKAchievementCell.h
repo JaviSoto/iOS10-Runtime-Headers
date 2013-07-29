@@ -41,7 +41,6 @@
 - (void)dealloc;
 - (void)setTitleLabel:(id)arg1;
 - (id)badgeView;
-- (void)prepareForReuse;
 - (id)titleLabel;
 
 @end

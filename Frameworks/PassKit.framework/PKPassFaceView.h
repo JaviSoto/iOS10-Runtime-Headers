@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassColorProfile, PKBarcodeStickerView, <PKPassFaceDelegate>, UIImageView, NSMutableArray, PKPassFaceTemplate, UIView, UIImage, NSMutableSet, PKPass, NSArray;
+@class NSMutableArray, UIImage, PKPassFaceTemplate, PKBarcodeStickerView, PKPassColorProfile, NSMutableSet, UIView, NSArray, CAFilter, PKPass, UIImageView, <PKPassFaceDelegate>;
 
 @interface PKPassFaceView : WLEasyToHitCustomView  {
     PKPass *_pass;
@@ -11,7 +11,7 @@
     UIImageView *_backgroundView;
     UIImage *_faceImage;
     UIImage *_partialFaceImage;
-    UIImageView *_dimmingView;
+    CAFilter *_dimmingFilter;
     NSMutableArray *_headerBucketViews;
     NSMutableArray *_bodyBucketViews;
     PKBarcodeStickerView *_barcodeView;
@@ -57,7 +57,6 @@
 + (id)newFrontFaceViewForStyle:(int)arg1;
 + (Class)_faceClassForStyle:(int)arg1 front:(BOOL)arg2;
 
-- (id)pass;
 - (id)headerContentViews;
 - (id)bodyInvariantViews;
 - (id)headerInvariantViews;
@@ -88,8 +87,8 @@
 - (int)_validityStateForPass:(id)arg1;
 - (id)_relevantBuckets;
 - (void)_positionBarcodeView;
-- (void)_setContentViewsAlpha:(float)arg1;
 - (BOOL)isFrontFace;
+- (void)_setContentViewsAlpha:(float)arg1;
 - (void)_setShowsBackgroundView:(BOOL)arg1;
 - (void)_setShowsBodyViews:(BOOL)arg1;
 - (void)_setShowsHeaderViews:(BOOL)arg1;
@@ -103,6 +102,7 @@
 - (id)bodyContentViews;
 - (id)colorProfile;
 - (void)createBodyContentViews;
+- (id)pass;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contentView;
 - (void)setStyle:(int)arg1;

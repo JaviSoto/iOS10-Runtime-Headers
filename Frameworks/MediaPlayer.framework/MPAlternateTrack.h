@@ -16,10 +16,10 @@
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 
+- (id)option;
 - (id)initWithOption:(id)arg1;
 - (id)canonicalLanguageIdentifier;
 - (void)_setDisplayNameFromOption:(id)arg1;
-- (id)option;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (int)compare:(id)arg1;

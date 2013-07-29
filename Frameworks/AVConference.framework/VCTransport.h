@@ -28,6 +28,7 @@
 - (long)updateInterfaceList:(BOOL)arg1 isUpdateNeeded:(int*)arg2;
 - (long)sendUDPPacketReliableEncrypted:(id)arg1 localIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg2 destinationIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg3 oftType:(int)arg4;
 - (long)processRemoteInterfaceChange:(unsigned long)arg1 remoteData:(void*)arg2 remoteLen:(int)arg3;
+- (long)setSKEState:(struct SKEStateOpaque { }*)arg1 forCallID:(unsigned long)arg2;
 - (void)registerICEBlockForCallID:(unsigned long)arg1 block:(id)arg2;
 - (BOOL)ipPortStillExists:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 requiresWifi:(BOOL)arg2;
 - (long)discardRelayBindingForCallID:(unsigned long)arg1;

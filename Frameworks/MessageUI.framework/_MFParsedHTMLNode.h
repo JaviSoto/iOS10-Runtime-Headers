@@ -24,17 +24,17 @@
 @property unsigned int endLocation;
 
 
+- (unsigned int)startLocation;
 - (id)copyMutableConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;
 - (void)addRecursiveDescriptionWithLevel:(unsigned int)arg1 toString:(id)arg2;
 - (void)setNextSibling:(id)arg1;
 - (void)setParentNode:(id)arg1;
 - (void)setEndLocation:(unsigned int)arg1;
 - (void)setHtmlString:(id)arg1;
+- (unsigned int)endLocation;
 - (id)copyConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;
 - (void)collectDescendanceIntoArray:(id)arg1;
 - (id)htmlString;
-- (unsigned int)endLocation;
-- (unsigned int)startLocation;
 - (id)lastChild;
 - (void)appendChild:(id)arg1;
 - (BOOL)hasChildNodes;

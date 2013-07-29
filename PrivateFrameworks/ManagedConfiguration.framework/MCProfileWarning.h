@@ -16,11 +16,11 @@
 
 + (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
 
+- (void)setLocalizedTitle:(id)arg1;
 - (void)setIsLongForm:(BOOL)arg1;
 - (BOOL)isLongForm;
 - (void)setLocalizedBody:(id)arg1;
 - (id)localizedBody;
-- (void)setLocalizedTitle:(id)arg1;
 - (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
 - (void).cxx_destruct;
 - (id)localizedTitle;

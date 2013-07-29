@@ -17,8 +17,8 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)run;
 - (void)dealloc;
+- (id)bundleIdentifier;
 - (id)badgeValue;
 - (void)setBadgeValue:(id)arg1;
-- (id)bundleIdentifier;
 
 @end

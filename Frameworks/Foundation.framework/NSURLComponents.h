@@ -22,13 +22,11 @@
 @property(copy) NSString * percentEncodedQuery;
 @property(copy) NSString * percentEncodedFragment;
 
-+ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)componentsWithString:(id)arg1;
++ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
 
-- (void)setPercentEncodedQuery:(id)arg1;
 - (void)setHost:(id)arg1;
-- (void)setScheme:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)setPort:(id)arg1;
@@ -46,19 +44,21 @@
 - (id)path;
 - (id)URL;
 - (void)setPercentEncodedFragment:(id)arg1;
+- (void)setPercentEncodedQuery:(id)arg1;
 - (void)setPercentEncodedPath:(id)arg1;
 - (void)setPercentEncodedHost:(id)arg1;
 - (void)setPercentEncodedPassword:(id)arg1;
 - (void)setPercentEncodedUser:(id)arg1;
 - (void)setFragment:(id)arg1;
 - (void)setQuery:(id)arg1;
+- (void)setScheme:(id)arg1;
 - (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
 - (id)URLRelativeToURL:(id)arg1;
-- (id)percentEncodedFragment;
-- (id)percentEncodedQuery;
-- (id)percentEncodedPath;
-- (id)percentEncodedHost;
 - (id)percentEncodedPassword;
 - (id)percentEncodedUser;
+- (id)percentEncodedFragment;
+- (id)percentEncodedQuery;
+- (id)percentEncodedHost;
+- (id)percentEncodedPath;
 
 @end

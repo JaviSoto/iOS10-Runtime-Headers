@@ -48,14 +48,15 @@
     id _alongsideAnimations;
 
     NSMutableArray *_addedCompletions;
+    BOOL _animationDidStopSent;
+    BOOL _allowUserInteractionToCutOffEndOfAnimation;
+    BOOL _retainedSelf;
 }
 
 @property(readonly) BOOL _allowsUserInteraction;
 
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -64,6 +65,7 @@
 - (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id)arg7 completion:(id)arg8;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2 forView:(id)arg3;
 - (id)_trackedAnimations;
+- (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (BOOL)_allowsUserInteraction;
 - (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1;
 - (void)setAnimationAttributes:(id)arg1;
@@ -78,5 +80,6 @@
 - (void)pop;
 - (void)_addAnimationStateForTracking:(id)arg1;
 - (void)_setAlongsideAnimations:(id)arg1;
+- (void)_acceptEarlyAnimationCutoff:(id)arg1;
 
 @end

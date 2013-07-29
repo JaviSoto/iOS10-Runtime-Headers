@@ -19,8 +19,8 @@
 - (id)initWithChallenge:(id)arg1 selectedPlayerIDs:(id)arg2;
 - (void)didBecomeReadyToDisplayData;
 - (void)configureDataSource;
-- (id)challenge;
 - (void)setChallenge:(id)arg1;
+- (id)challenge;
 - (void)dealloc;
 - (void)viewDidLoad;
 

@@ -31,7 +31,7 @@
     NSString *_externalDataReferencesDirectory;
     NSString *_externalDataLinksDirectory;
     int _transactionInMemorySequence;
-    int _debug;
+    int _moreOtherReserved;
     struct _sqlCoreFlags { 
         unsigned int preparingForSave : 1; 
         unsigned int beganTransaction : 1; 
@@ -51,15 +51,15 @@
 
 + (void)setSQLGenerationV1Default:(BOOL)arg1;
 + (void)setColoredLoggingDefault:(BOOL)arg1;
-+ (void)setDebugDefault:(int)arg1;
 + (BOOL)sanityCheckFileAtURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)coloredLoggingDefault;
 + (int)debugDefault;
++ (BOOL)coloredLoggingDefault;
 + (BOOL)SQLGenerationV1Default;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (Class)migrationManagerClass;
++ (void)setDebugDefault:(int)arg1;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (void)initialize;
@@ -87,6 +87,8 @@
 - (id)missingObjectGlobalIDs;
 - (void)unregisterChannel:(id)arg1;
 - (id)newAdapterForModel:(id)arg1;
+- (void)_uncacheRows:(id)arg1;
+- (void)_cacheRows:(id)arg1;
 - (void)_useModel:(id)arg1;
 - (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (void)_prefetchRelationshipKey:(id)arg1 sourceEntityDescription:(id)arg2 sourceObjectIDs:(id)arg3 prefetchRelationshipKeys:(id)arg4 inContext:(id)arg5;

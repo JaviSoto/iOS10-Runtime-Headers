@@ -30,6 +30,7 @@
 - (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2 progress:(float)arg3;
 - (void)layoutInputBackdropToSplitWithLeftViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andRightViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 innerCorners:(int)arg3;
 - (void)layoutInputBackdropToFullWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2 progress:(float)arg3 innerCorners:(unsigned int)arg4;
 - (void)transitionToStyle:(int)arg1 isSplit:(BOOL)arg2;
 - (id)inputBackdropFullView;
 - (id)inputBackdropRightView;

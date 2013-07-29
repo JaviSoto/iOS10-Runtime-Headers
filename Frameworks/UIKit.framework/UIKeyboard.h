@@ -27,16 +27,14 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(int)arg1;
 + (void)initImplementationNow;
 + (void)_clearActiveKeyboard;
-+ (BOOL)isInHardwareKeyboardMode;
 + (void)removeAllDynamicDictionaries;
-+ (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (BOOL)isInHardwareKeyboardMode;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
-+ (id)activeKeyboard;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
++ (id)activeKeyboard;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -92,7 +90,9 @@
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;
 - (BOOL)caretBlinks;
 - (BOOL)canDismiss;
+- (void)geometryChangeDone:(BOOL)arg1;
 - (void)setMinimized:(BOOL)arg1;
+- (void)prepareForGeometryChange;
 - (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(BOOL)arg2;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
@@ -103,8 +103,6 @@
 - (BOOL)shouldSaveMinimizationState;
 - (void)removeAutocorrectPrompt;
 - (void)acceptAutocorrection;
-- (void)geometryChangeDone:(BOOL)arg1;
-- (void)prepareForGeometryChange;
 - (int)textEffectsVisibilityLevel;
 - (void)_setRenderConfig:(id)arg1;
 - (void)activate;
@@ -117,10 +115,8 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_deactivateForBackgrounding;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)insertDictationResult:(id)arg1;
-- (void)dictationRecognitionFailed;
-- (BOOL)_accessibilityTriggerDictationFromPath:(id)arg1;
 
 @end

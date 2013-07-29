@@ -2,10 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+@class NSString;
+
 @interface _MFSecDataMessageStore : MFDataMessageStore  {
+    NSString *_storagePath;
 }
+
+@property(copy) NSString * storagePath;
 
 + (Class)classForMimePart;
 
+- (id)storagePath;
+- (void)setStoragePath:(id)arg1;
 
 @end

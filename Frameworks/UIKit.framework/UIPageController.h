@@ -32,7 +32,6 @@
 @property BOOL wraps;
 
 
-- (void)setPageCount:(int)arg1;
 - (id)_scrollView;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -43,6 +42,7 @@
 - (BOOL)displaysPageControl;
 - (void)setWraps:(BOOL)arg1;
 - (BOOL)wraps;
+- (void)setPageCount:(int)arg1;
 - (BOOL)_hasVisibleViewController;
 - (BOOL)_needToLoadVisible;
 - (float)pageSpacing;
@@ -101,11 +101,11 @@
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

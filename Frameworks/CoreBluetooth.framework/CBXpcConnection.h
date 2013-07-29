@@ -28,14 +28,13 @@
 - (id)allocXpcDictionaryWithNSDictionary:(id)arg1;
 - (void)sendAsyncMsg:(int)arg1 args:(id)arg2;
 - (void)checkOut;
+- (void)checkIn;
 - (void)handleConnectionEvent:(id)arg1;
-- (BOOL)bluetoothExists;
 - (void)handleMsg:(int)arg1 args:(id)arg2;
 - (BOOL)isMainQueue;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3 sessionType:(int)arg4;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
-- (void)checkIn;
 - (void)disconnect;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

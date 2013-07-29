@@ -12,8 +12,6 @@
 @property(retain) _UIActivityFunctionImageView * activityImageView;
 @property(retain) UILabel * activityLabel;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)activityLabel;
@@ -25,8 +23,5 @@
 - (void)prepareForReuse;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

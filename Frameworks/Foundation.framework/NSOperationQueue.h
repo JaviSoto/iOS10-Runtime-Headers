@@ -23,11 +23,11 @@
 - (void)dealloc;
 - (id)description;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
+- (int)maxConcurrentOperationCount;
 - (unsigned int)operationCount;
 - (void)waitUntilAllOperationsAreFinished;
 - (void)setOvercommitsOperations:(BOOL)arg1;
 - (BOOL)overcommitsOperations;
-- (int)maxConcurrentOperationCount;
 - (void)__:(id)arg1;
 - (id)__;
 - (void)setName:(id)arg1;

@@ -22,8 +22,8 @@
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
-- (id)publishedURL;
 - (void)finishWithError:(id)arg1;
+- (id)publishedURL;
 - (void)dealloc;
 - (id)description;
 - (void)setState:(int)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIView, UIActionSheet, UIPopoverController, UIPopoverBackgroundView;
+@class UIImageView, UIView, UIActionSheet, UIPopoverController, UIColor, UIPopoverBackgroundView;
 
 @interface _UIPopoverView : UIView  {
     UIView *_contentView;
@@ -22,12 +22,11 @@
 @property float arrowOffset;
 @property unsigned int arrowDirection;
 @property int backgroundStyle;
+@property(copy) UIColor * popoverBackgroundColor;
 @property(retain) UIActionSheet * presentedActionSheet;
 @property UIPopoverController * popoverController;
 
 + (id)popoverViewContainingView:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contentView;
@@ -48,6 +47,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)standardChromeView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2 embeddedInView:(BOOL)arg3;
+- (void)setPopoverBackgroundColor:(id)arg1;
+- (id)popoverBackgroundColor;
 - (int)backgroundStyle;
 - (float)arrowOffset;
 - (void)setArrowOffset:(float)arg1;
@@ -78,7 +79,5 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)shouldGroupAccessibilityChildren;
 
 @end

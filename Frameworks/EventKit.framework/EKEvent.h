@@ -50,6 +50,7 @@
 @property(readonly) NSString * uniqueId;
 @property(readonly) int pendingParticipationStatus;
 @property(readonly) NSDate * participationStatusModifiedDate;
+@property(readonly) unsigned int modifiedProperties;
 @property(readonly) BOOL canDetachSingleOccurrence;
 @property(readonly) EKEventStore * eventStore;
 @property(readonly) NSArray * attachments;

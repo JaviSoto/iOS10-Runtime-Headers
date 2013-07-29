@@ -93,6 +93,7 @@
 - (void)addGKSCallEvent:(id)arg1 sessionID:(id)arg2;
 - (void)setSetSessionID:(id)arg1 forCallID:(int)arg2;
 - (BOOL)isUsingViceroyBlobFormat;
+- (void)warmupForCall;
 - (void)processRelayUpdate:(int)arg1 updateDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (void)processRelayRequestResponse:(int)arg1 responseDict:(id)arg2 didOriginateRequest:(BOOL)arg3;
 - (unsigned int)doBlockingConnectionCheck;
@@ -145,7 +146,6 @@
 - (void)setPeerCN:(id)arg1 callID:(int)arg2;
 - (id)callMetadataForCallID:(int)arg1;
 - (id)newRandomParticipantID;
-- (void)warmupForCall;
 - (void)setUseViceroyBlobFormat:(BOOL)arg1;
 - (void)deregisterBlocksForVCNotifications;
 - (void)setRemoteVideoBackLayer:(void*)arg1;

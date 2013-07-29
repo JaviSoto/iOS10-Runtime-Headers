@@ -22,8 +22,10 @@
 
 
 - (void)dealloc;
+- (void)setDismissDelegate:(id)arg1;
 - (id)dismissDelegate;
 - (struct CGPoint { float x1; float x2; })presentationPoint;
+- (unsigned int)popoverArrowDirections;
 - (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setNode:(id)arg1;
@@ -32,10 +34,8 @@
 - (void)willRotate:(id)arg1;
 - (void)presentPopoverAnimated:(BOOL)arg1;
 - (void)setPopoverController:(id)arg1;
-- (unsigned int)popoverArrowDirections;
-- (id)node;
-- (void)setDismissDelegate:(id)arg1;
 - (id)initWithDOMNode:(id)arg1;
+- (id)node;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 
 @end

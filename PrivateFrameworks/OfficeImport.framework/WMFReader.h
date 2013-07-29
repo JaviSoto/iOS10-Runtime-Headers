@@ -14,11 +14,11 @@
 
 
 - (id)initWithWMFPlayer:(id)arg1;
+- (int)play:(id)arg1;
 - (int)moveDataCursor:(unsigned int)arg1;
 - (int)checkBytesAvailable:(unsigned int)arg1;
 - (int)playRecord;
 - (int)playHeaders;
-- (int)play:(id)arg1;
 - (void)dealloc;
 - (oneway void)release;
 

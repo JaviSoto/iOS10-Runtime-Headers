@@ -14,7 +14,8 @@
         unsigned int _forceFixAttributes : 1; 
         unsigned int _needLock : 1; 
         unsigned int _lockInitialized : 1; 
-        unsigned int _reserved : 29; 
+        unsigned int _inFixingAttributes : 1; 
+        unsigned int _reserved : 28; 
     } _pFlags;
 }
 
@@ -25,6 +26,8 @@
 - (BOOL)_forceFixAttributes;
 - (BOOL)fixesAttributesLazily;
 - (BOOL)_lockForWritingWithExceptionHandler:(BOOL)arg1;
+- (void)_setAttributeFixingInProgress:(BOOL)arg1;
+- (BOOL)_attributeFixingInProgress;
 - (void)_setForceFixAttributes:(BOOL)arg1;
 - (void)_unlock;
 - (BOOL)_lockForReading;
@@ -32,7 +35,9 @@
 - (unsigned int)length;
 - (id)initWithString:(id)arg1;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
+- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;

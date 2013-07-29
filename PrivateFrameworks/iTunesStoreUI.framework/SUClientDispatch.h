@@ -5,6 +5,7 @@
 @interface SUClientDispatch : NSObject  {
 }
 
++ (BOOL)openClientURL:(id)arg1;
 + (BOOL)wasLaunchedFromLibrary;
 + (struct __CFArray { }*)assetTypes;
 + (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
@@ -21,7 +22,6 @@
 + (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 + (id)overlayBackgroundViewController;
 + (id)clientInterface;
-+ (BOOL)openClientURL:(id)arg1;
 + (id)scriptExecutionContext;
 + (id)imageCache;
 + (id)tabBarController;

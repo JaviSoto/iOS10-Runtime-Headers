@@ -14,8 +14,6 @@
     } _scrollOrigin;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_adjustScrollers;
 - (int)verticalScrollingMode;
@@ -55,12 +53,5 @@
 - (id).cxx_construct;
 - (id)description;
 - (id)delegate;
-- (BOOL)accessibilityIsIgnored;
-- (id)accessibilityObject;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityContainer;
 
 @end

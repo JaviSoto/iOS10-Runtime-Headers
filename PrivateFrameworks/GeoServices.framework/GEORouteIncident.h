@@ -54,6 +54,8 @@
 @property BOOL endTimeReliable;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasEndTimeReliable:(BOOL)arg1;
 - (void)setHasLaneClosureCount:(BOOL)arg1;
 - (void)setHasLaneClosureType:(BOOL)arg1;
@@ -88,8 +90,6 @@
 - (void)setEndTime:(long long)arg1;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setStreet:(id)arg1;
 - (id)street;
 - (void)setPosition:(id)arg1;
@@ -105,5 +105,6 @@
 - (id)position;
 - (int)type;
 - (id)dictionaryRepresentation;
+- (struct CGImage { }*)_mapKitImage;
 
 @end

@@ -22,9 +22,9 @@
 + (id)faceDetectorWithOptions:(id)arg1;
 + (int)findProfileInParameters:(id)arg1;
 
-- (id)detectFacesInCGImage:(struct CGImage { }*)arg1 options:(id)arg2 error:(id*)arg3;
 - (float)compareFace:(id)arg1 toFace:(id)arg2 error:(id*)arg3;
 - (id)extractDetailsForFaces:(id)arg1 inCGImage:(struct CGImage { }*)arg2 options:(id)arg3 error:(id*)arg4;
+- (id)detectFacesInCGImage:(struct CGImage { }*)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)transformROIs:(id)arg1 image:(id)arg2 usingBlock:(id)arg3;
 - (id)parseNumericOrBoolValue:(id)arg1;
 - (id)parseOption:(id)arg1 value:(id)arg2;

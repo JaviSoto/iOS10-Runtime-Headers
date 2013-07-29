@@ -18,7 +18,6 @@
 + (void*)sharedAddressBook;
 + (id)sharedInstance;
 
-- (BOOL)isAmbiguous;
 - (void)endEmergencyCallBackMode;
 - (BOOL)emergencyCallBackModeIsActive;
 - (void)_invalidatePrivateSetting;
@@ -26,6 +25,7 @@
 - (void)createdOutgoingIMAVChat:(id)arg1;
 - (void)invitedToIMAVChat:(id)arg1;
 - (void)handleCallerIDChanged:(id)arg1;
+- (BOOL)isAmbiguous;
 - (void)disconnectAllCalls;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (void)resumeCall:(id)arg1;

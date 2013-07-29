@@ -18,9 +18,9 @@
 - (void)performActionForMenuItemAtIndex:(int)arg1;
 - (int)numberOfMenuItems;
 - (id)copyScriptViewController;
-- (void)setMenuItems:(id)arg1;
 - (void)dealloc;
 - (id)menuItems;
+- (void)setMenuItems:(id)arg1;
 - (void)setAction:(id)arg1;
 - (id)action;
 

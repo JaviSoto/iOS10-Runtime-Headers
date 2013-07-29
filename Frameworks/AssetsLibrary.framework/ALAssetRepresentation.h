@@ -14,7 +14,9 @@
 
 
 - (int)_fileDescriptor;
+- (struct CGImage { }*)zoomableDisplayImage;
 - (void)setIgnoreRead:(BOOL)arg1;
+- (struct CGImage { }*)_largeDisplayableImageForFormat:(int)arg1;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
 - (id)_imageData;

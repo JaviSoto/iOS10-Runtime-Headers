@@ -18,7 +18,6 @@
 @property(readonly) int length;
 
 
-- (void)setMethod:(id)arg1;
 - (void)reset;
 - (void)submit;
 - (void)setAutocapitalize:(id)arg1;
@@ -26,6 +25,7 @@
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setNoValidate:(BOOL)arg1;
 - (BOOL)noValidate;
+- (void)setMethod:(id)arg1;
 - (void)setEncoding:(id)arg1;
 - (void)setEnctype:(id)arg1;
 - (id)enctype;

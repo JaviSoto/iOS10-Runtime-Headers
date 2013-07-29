@@ -108,6 +108,8 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)_hitTestToPoint:(struct CGPoint { float x1; float x2; })arg1 pathIndex:(int)arg2 forEvent:(id)arg3 screen:(id)arg4;
 + (void)_prepareWindowsForAppResume;
++ (void)_prepareWindowsPassingTestForAppResume:(id)arg1;
++ (id)_externalKeyWindow;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
 + (void)_prepareWindowsForAppSuspend;
@@ -119,11 +121,7 @@
 + (id)keyWindow;
 + (void)_executeDeferredLaunchBlocks;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
 - (void)sendEvent:(id)arg1;
 - (BOOL)isKeyWindow;
 - (BOOL)becomeFirstResponder;
@@ -177,6 +175,7 @@
 - (BOOL)_usesLegacySupportedOrientationChecks;
 - (id)_windowInternalConstraints;
 - (id)_rootLayer;
+- (id)_directionalGestureRecognizers;
 - (void)_geometryDidChangeForView:(id)arg1;
 - (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_removeTintView:(id)arg1;
@@ -189,6 +188,7 @@
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
 - (void)setKeepContextInBackground:(BOOL)arg1;
 - (void)setResizesToFullScreen:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_isInAWindow;
 - (void*)createIOSurface;
 - (BOOL)_supportsBecomeFirstResponderWhenPossible;
@@ -201,6 +201,7 @@
 - (id)_registeredScrollToTopViews;
 - (void)_unregisterChargedView:(id)arg1;
 - (void)_registerChargedView:(id)arg1;
+- (void)_makeExternalKeyWindow;
 - (void)setScreen:(id)arg1;
 - (BOOL)_shouldDelayTouchForSystemGestures:(id)arg1;
 - (id)_appearanceContainer;
@@ -222,6 +223,7 @@
 - (void)_slideFooterFromOrientation:(int)arg1 toOrientation:(int)arg2 startSnapshot:(id)arg3 endSnapshot:(id)arg4 duration:(double)arg5;
 - (void)setBecomeKeyOnOrderFront:(BOOL)arg1;
 - (float)level;
+- (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertWindowToDevice:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_containedInAbsoluteResponderChain;
 - (float)_convertVisualAltitude:(float)arg1 toWindow:(id)arg2;
@@ -360,17 +362,6 @@
 - (id)_screen;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityContainer;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (BOOL)accessibilityIsWindow;
-- (void)_axListenForRemoteElement;
-- (id)_accessibilityRemoteElement;
-- (void)_axRemoteElementRegistered:(id)arg1;
-- (int)_accessibilityRemotePid;
-- (id)_accessibilityUserTestingParent;
-- (id)accessibilityRemoteSubstituteChildren:(id)arg1;
 - (id)copyIOSurfaceSnapshotView:(int)arg1;
 - (id)removeTouchCaptureViewWithTag:(int)arg1;
 - (id)addTouchCaptureViewWithTag:(int)arg1;

@@ -39,6 +39,8 @@
         unsigned int imageHasEffects : 1; 
     } _barButtonItemFlags;
     BOOL _flexible;
+    BOOL _viewWantsLetterpressImage;
+    BOOL _needsViewUpdateForLetterpressImage;
     float _toolbarCharge;
     float _minimumWidth;
     float _maximumWidth;
@@ -58,6 +60,7 @@
 @property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
 @property BOOL selected;
 @property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
+@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
 @property int style;
 @property float width;
 @property(copy) NSSet * possibleTitles;
@@ -76,14 +79,13 @@
 @property(setter=_setMinimumWidth:) float _minimumWidth;
 @property(setter=_setMaximumWidth:) float _maximumWidth;
 @property(setter=_setFlexible:) BOOL _flexible;
+@property(readonly) BOOL _viewWantsLetterpressImage;
+@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
 
 + (Class)classForNavigationButton;
 + (id)_appearanceBlindViewClasses;
 + (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setWidth:(float)arg1;
@@ -106,7 +108,9 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
 - (void)_setMiniImage:(id)arg1;
 - (id)_miniImage;
+- (id)_foregroundColorForLetterpressWithView:(id)arg1;
 - (id)_itemVariation;
+- (BOOL)_viewWantsLetterpressImage;
 - (void)_setFlexible:(BOOL)arg1;
 - (void)_setMaximumWidth:(float)arg1;
 - (void)_setMinimumWidth:(float)arg1;
@@ -120,6 +124,7 @@
 - (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (BOOL)selected;
 - (void)_setPossibleSystemItems:(id)arg1;
 - (void)_setSystemItem:(int)arg1;
 - (id)possibleTitles;
@@ -127,7 +132,9 @@
 - (id)_possibleItemVariations;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
 - (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)initWithBarButtonSystemItem:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (id)initWithImage:(id)arg1 landscapeImagePhone:(id)arg2 style:(int)arg3 target:(id)arg4 action:(SEL)arg5;
+- (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)_applyPositionAdjustmentToSegmentedControl:(id)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
 - (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
@@ -141,8 +148,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
-- (id)initWithBarButtonSystemItem:(int)arg1 target:(id)arg2 action:(SEL)arg3;
-- (BOOL)selected;
 - (BOOL)_flexible;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (id)customView;
@@ -168,15 +173,16 @@
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
 - (BOOL)_shouldBezelSystemButtonImage;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_updateView;
 - (void)setIsMinibarView:(BOOL)arg1;
 - (BOOL)isMinibarView;
 - (id)landscapeImagePhone;
 - (id)createViewForNavigationItem:(id)arg1;
-- (BOOL)isCustomViewItem;
 - (int)systemItem;
 - (BOOL)isSystemItem;
+- (void)_updateView;
+- (BOOL)_needsViewUpdateForLetterpressImage;
 - (id)_appearanceStorage;
+- (BOOL)isCustomViewItem;
 - (int)tag;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
@@ -187,18 +193,11 @@
 - (id)target;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setAccessibilityHint:(id)arg1;
-- (void)setAccessibilityTraits:(unsigned long long)arg1;
-- (void)setIsAccessibilityElement:(BOOL)arg1;
-- (void)setAccessibilityLabel:(id)arg1;
-- (void)setAccessibilityValue:(id)arg1;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (void)_accessibilityAddIdForView:(id)arg1;
-- (void)_axRememberTargetter:(id)arg1;
 - (void)configureFromScriptButton:(id)arg1;
 - (void)mf_setMiniImageVerticalOffset:(float)arg1;
 - (void)mf_setImageVerticalOffset:(float)arg1;
 - (void)mf_setMiniImageOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

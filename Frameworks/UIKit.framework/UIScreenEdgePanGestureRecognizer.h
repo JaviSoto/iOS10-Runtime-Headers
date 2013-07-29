@@ -17,11 +17,11 @@
 - (void)dealloc;
 - (unsigned int)edges;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)isRequiringLongPress;
 - (void)screenEdgePanRecognizerStateDidChange:(id)arg1;
 - (float)_edgeRegionSize;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setEdges:(unsigned int)arg1;
-- (BOOL)isRequiringLongPress;
 
 @end

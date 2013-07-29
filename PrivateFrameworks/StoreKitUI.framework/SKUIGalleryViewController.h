@@ -42,9 +42,9 @@
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 

@@ -79,10 +79,7 @@
 @property(readonly) BOOL isContentEditable;
 
 + (id)_nodeFromJSWrapper:(struct OpaqueJSValue { }*)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)insertBefore:(id)arg1 refChild:(id)arg2;
 - (id)localName;
 - (id)boundingBoxes;
 - (unsigned short)compareDocumentPosition:(id)arg1;
@@ -97,6 +94,7 @@
 - (id)replaceChild:(id)arg1 :(id)arg2;
 - (id)replaceChild:(id)arg1 oldChild:(id)arg2;
 - (id)insertBefore:(id)arg1 :(id)arg2;
+- (id)insertBefore:(id)arg1 refChild:(id)arg2;
 - (void)setTextContent:(id)arg1;
 - (id)textContent;
 - (id)baseURI;
@@ -168,10 +166,6 @@
 - (id)rangeOfContents;
 - (id)endPosition;
 - (id)startPosition;
-- (id)itemTitle;
-- (void)populateCell:(id)arg1;
-- (id)createPickerCell;
-- (id)createSelectedItem;
 - (id)createPeripheral;
 - (id)tagName;
 - (id)urlScheme;
@@ -179,7 +173,6 @@
 - (int)keyboardType;
 - (BOOL)isSecure;
 - (BOOL)isTextControl;
-- (void)setContentsIsSingleValue:(BOOL)arg1;
 - (BOOL)isEditing;
 - (BOOL)isEditable;
 - (void)insertText:(id)arg1;
@@ -221,6 +214,7 @@
 - (void)replaceCurrentWordWithText:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
+- (void)setContentsIsSingleValue:(BOOL)arg1;
 - (BOOL)contentsIsSingleValue;
 - (void)setTextSuggestionDelegate:(id)arg1;
 - (id)textSuggestionDelegate;
@@ -241,7 +235,6 @@
 - (BOOL)becomesEditableWithGestures;
 - (void)updateSelection;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)metadataDictionariesForDictationResults;
 - (BOOL)hasContent;
 - (struct __CFCharacterSet { }*)textTrimmingSet;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
@@ -255,6 +248,7 @@
 - (int)selectionAffinity;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (id)insertDictationResultPlaceholder;
@@ -297,6 +291,10 @@
 - (id)interactionAssistant;
 - (BOOL)editing;
 - (void)setText:(id)arg1;
+- (void)populateCell:(id)arg1;
+- (id)createPickerCell;
+- (id)createSelectedItem;
+- (id)itemTitle;
 - (id)_realNode;
 - (id)tapHighlightColor;
 - (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -397,14 +395,13 @@
 - (id)_textFormElement;
 - (id)_previousAssistedNode;
 - (id)_nextAssistedNode;
+- (void)_accessoryClear;
 - (BOOL)_supportsAccessoryClear;
 - (BOOL)_supportsAutoFill;
 - (BOOL)_requiresInputView;
 - (BOOL)_requiresAccessoryView;
 - (void)_stopAssistingDocumentView:(id)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
-- (void)_accessoryClear;
-- (void)_accessibilityCheckBorderHit:(BOOL)arg1 left:(BOOL)arg2;
 - (id)mf_topmostContainingNodeWithNameInArray:(id)arg1;
 - (id)mf_traversePreviousNode;
 - (void)mf_fixParagraphsAndQuotesFromMicrosoft;

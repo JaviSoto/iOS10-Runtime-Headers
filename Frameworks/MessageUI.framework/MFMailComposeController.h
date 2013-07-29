@@ -38,6 +38,9 @@
     MFComposeImageSizeView *_imageSizeField;
     MFComposeBodyField *_bodyField;
     MFComposeTextContentView *_bodyTextView;
+    NSString *_signatureMarkupString;
+    BOOL _hasSignature;
+    BOOL _firstSignaturePassComplete;
     MFRecentComposeRecipient *_recentRecipientPresentingCard;
     MFMailPopoverManager *_popoverManager;
     UIActionSheet *_activeSheet;
@@ -101,15 +104,14 @@
 @property(retain) <NSCoding> * autosaveIdentifier;
 
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1;
++ (id)signatureMarkupForSendingEmailAddress:(id)arg1;
++ (id)signatureForSendingEmailAddress:(id)arg1;
 + (BOOL)useAccountSignatures;
 + (id)defaultSignature;
 + (id)preferenceForKey:(id)arg1;
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
-+ (id)signatureMarkupForSendingEmailAddress:(id)arg1;
 + (void)initialize;
 + (id)signature;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
 - (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
@@ -168,6 +170,7 @@
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
 - (void)imageSizeView:(id)arg1 changedSelectedScaleTo:(unsigned int)arg2;
 - (BOOL)sendingEmailDirtied;
+- (void)addSignature:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(BOOL)arg2;
 - (void)_updateIdentityStatus:(int*)arg1 withPolicy:(int)arg2 identity:(struct __SecIdentity { }*)arg3 error:(id)arg4;
 - (id)_missingIdentityErrorWithFormat:(id)arg1 title:(id)arg2;
@@ -266,6 +269,12 @@
 - (id)addressesForField:(int)arg1;
 - (void)_setRecipients:(id)arg1 forField:(int)arg2;
 - (id)_addressFieldForField:(int)arg1;
+- (void)_addSignature:(BOOL)arg1 includeMarkup:(BOOL)arg2;
+- (void)_prependSignatureToNode:(id)arg1 includeMarkup:(BOOL)arg2;
+- (id)_stripSignatureMarkup:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_replaceSignature:(id)arg1 withSignature:(id)arg2 backwardsFromNode:(id)arg3 maxParagraphs:(unsigned int)arg4;
+- (void)_updateSignatureMarkupString;
+- (BOOL)_setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (id)_attachmentStoreCreateIfNecessary;
 - (void)_finishedLoadingAllContentAndAttachments;
 - (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
@@ -318,16 +327,18 @@
 - (void)composeSubjectViewTextFieldDidBecomeFirstResponder:(id)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(id)arg1;
 - (void)setAttachmentStore:(id)arg1;
+- (id)attachmentStoreCreateIfNecessary;
 - (id)attachmentStore;
 - (int)compositionType;
+- (id)bodyField;
 - (void)composeRecipientView:(id)arg1 showPersonCardForRecent:(id)arg2;
 - (BOOL)bccAddressesDirtied;
 - (void)setSendingEmailAddress:(id)arg1;
 - (id)sendingEmailAddress;
+- (void)updateSignature;
 - (void)scrollToSelectedEntryInFromAddressTableView:(id)arg1;
 - (void)selectCurrentEntryForFromAddressPickerView:(id)arg1;
 - (id)currentScaleImageSize;
-- (id)bodyField;
 - (id)sendingEmailAddressIfExists;
 - (BOOL)canShowImageSizeField;
 - (BOOL)canShowFromField;
@@ -372,12 +383,12 @@
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillUnload;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)keyCommands;
 - (void)alertViewCancel:(id)arg1;
@@ -393,7 +404,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (BOOL)pickerView:(id)arg1 shouldUseCheckSelectionForRow:(int)arg2 forComponent:(int)arg3;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
 - (unsigned int)pickerView:(id)arg1 numberOfRowsInComponent:(unsigned int)arg2;
 - (int)numberOfComponentsInPickerView:(id)arg1;

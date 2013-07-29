@@ -18,11 +18,11 @@
 - (unsigned int)databaseOperator;
 - (void)addAdapterOperation:(id)arg1;
 - (id)manyToManyDeltas;
+- (id)dbSnapshot;
 - (void)addDelta:(id)arg1 forManyToManyKey:(id)arg2;
 - (void)setRowForUpdate:(id)arg1;
 - (void)setDBSnapshot:(id)arg1;
 - (id)initWithObject:(id)arg1 entity:(id)arg2;
-- (id)dbSnapshot;
 - (void)setDatabaseOperator:(unsigned int)arg1;
 - (id)adapterOperations;
 - (id)rowForUpdate;

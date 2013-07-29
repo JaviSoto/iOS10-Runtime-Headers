@@ -26,6 +26,7 @@
 - (oneway void)cancelAllSearchQueries;
 - (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id)arg9 context:(void*)arg10;
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
+- (oneway void)cancelTaskWithID:(int)arg1;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
 - (int)performResolveRecipientsRequest:(id)arg1 consumer:(id)arg2;
 - (oneway void)setEncryptionIdentityPersistentReference:(id)arg1;
@@ -42,8 +43,8 @@
 - (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (int)performMoveRequests:(id)arg1 consumer:(id)arg2;
-- (oneway void)cancelTaskWithID:(int)arg1;
 - (int)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 isUserRequested:(BOOL)arg4 consumer:(id)arg5;
+- (int)mailNumberOfPastDaysToSync;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
 - (void)performFolderChange:(id)arg1 isUserRequested:(BOOL)arg2;
@@ -53,7 +54,6 @@
 - (id)inboxFolder;
 - (id)mailboxes;
 - (oneway void)shutdown;
-- (int)mailNumberOfPastDaysToSync;
 - (oneway void)setAccount:(id)arg1;
 
 @end

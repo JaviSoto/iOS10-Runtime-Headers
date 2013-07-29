@@ -63,14 +63,13 @@
 @property(readonly) BOOL isRestricted;
 @property(readonly) BOOL foundBackingBundle;
 
-+ (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2 server:(BOOL)arg3;
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
++ (id)applicationProxyForIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)_gkMetadataForBundleURL:(id)arg1;
 
-- (id)audioComponents;
 - (id)bundleVersion;
 - (id)containerURL;
 - (BOOL)isEqual:(id)arg1;
@@ -81,9 +80,9 @@
 - (BOOL)profileValidated;
 - (id)privateDocumentTypeOwner;
 - (id)installProgressSync;
+- (id)audioComponents;
 - (id)UIBackgroundModes;
 - (id)directionsModes;
-- (id)groupContainers;
 - (id)environmentVariables;
 - (id)entitlements;
 - (id)signerIdentity;
@@ -114,6 +113,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)deviceIdentifierForVendor;
+- (id)groupContainers;
 - (id)bundleURL;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

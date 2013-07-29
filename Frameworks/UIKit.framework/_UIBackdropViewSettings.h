@@ -138,7 +138,6 @@
 - (void)setAppliesTintAndBlurSettings:(BOOL)arg1;
 - (void)setStatisticsInterval:(double)arg1;
 - (void)setUsesContentView:(BOOL)arg1;
-- (void)setUsesBackdropEffectView:(BOOL)arg1;
 - (void)decrementSuppressSettingsDidChange;
 - (void)setGraphicsQuality:(int)arg1;
 - (void)setExplicitlySetGraphicsQuality:(BOOL)arg1;
@@ -147,9 +146,9 @@
 - (int)stackingLevel;
 - (int)renderingHint;
 - (void)setLegibleColor:(id)arg1;
+- (void)setUsesBackdropEffectView:(BOOL)arg1;
 - (void)setFilterMaskImage:(id)arg1;
 - (void)setFilterMaskAlpha:(float)arg1;
-- (void)setSaturationDeltaFactor:(float)arg1;
 - (void)setColorTintMaskImage:(id)arg1;
 - (void)setColorTintMaskAlpha:(float)arg1;
 - (void)setColorTintAlpha:(float)arg1;
@@ -171,6 +170,7 @@
 - (void)setBlurHardEdges:(int)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setSaturationDeltaFactor:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setUsesColorTintView:(BOOL)arg1;
 - (void)setUsesGrayscaleTintView:(BOOL)arg1;

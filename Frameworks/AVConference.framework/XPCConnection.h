@@ -19,9 +19,9 @@
 
 - (id)tokenData;
 - (void)setTokenData:(id)arg1;
-- (void)setPid:(int)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
+- (void)setPid:(int)arg1;
 - (int)pid;
 - (id)init;
 - (void)dealloc;

@@ -18,8 +18,8 @@
 + (id)timerWithName:(id)arg1;
 + (id)sharedTimer;
 
-- (unsigned long long)measure;
 - (id)rebase;
+- (unsigned long long)measure;
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;

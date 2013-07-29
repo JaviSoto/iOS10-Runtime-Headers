@@ -11,10 +11,10 @@
 @property SEL selector;
 
 
-- (id)observer;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (SEL)selector;
+- (id)observer;
 - (void)setObserver:(id)arg1;
 - (void)setSelector:(SEL)arg1;
 

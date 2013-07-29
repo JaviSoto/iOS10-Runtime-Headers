@@ -67,6 +67,8 @@
 @property(readonly) unsigned int* attributionIndexs;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setAttributionIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)attributionIndexs;
 - (void)setHasAttributionBadgeIndex:(BOOL)arg1;
@@ -120,8 +122,6 @@
 - (unsigned int)tileSetsCount;
 - (void)addTileSet:(struct { unsigned int x1; unsigned int x2; })arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -13,11 +13,11 @@
 @property(retain) NSString * resourceName;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setResourceName:(id)arg1;
 - (id)resourceName;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

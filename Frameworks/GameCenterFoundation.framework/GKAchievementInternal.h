@@ -56,7 +56,6 @@
 - (void)setLastReportedDate:(id)arg1;
 - (id)serverRepresentation;
 - (void)setPercentComplete:(double)arg1;
-- (void)setAttributes:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setHidden:(BOOL)arg1;
@@ -66,6 +65,7 @@
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setAttributes:(unsigned int)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (double)percentComplete;

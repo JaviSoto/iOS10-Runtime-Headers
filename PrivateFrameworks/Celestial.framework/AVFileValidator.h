@@ -13,8 +13,8 @@
 
 
 - (BOOL)isCompleted;
-- (BOOL)validateSyncWithError:(id*)arg1;
 - (void)validate;
+- (BOOL)validateSyncWithError:(id*)arg1;
 - (void)validateForCameraRoll;
 - (BOOL)isStreaming;
 - (id)validateBlocking:(BOOL)arg1;

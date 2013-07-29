@@ -5,10 +5,7 @@
 @interface UIKBCandidateCollectionView : UICollectionView  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)_selectAndScrollToItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
-- (BOOL)isAccessibilityOpaqueElementProvider;
 
 @end

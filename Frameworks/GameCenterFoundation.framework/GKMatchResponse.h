@@ -30,6 +30,7 @@
 
 + (id)secureCodedPropertyKeys;
 
+- (BOOL)transitionToState:(int)arg1;
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (void)setMatchRequest:(id)arg1;
@@ -42,7 +43,6 @@
 - (void)setRelayPushes:(id)arg1;
 - (void)setSessionToken:(id)arg1;
 - (void)setMatches:(id)arg1;
-- (BOOL)transitionToState:(int)arg1;
 - (int)_incrementSequence;
 - (id)relayPushes;
 - (id)cdxTicket;

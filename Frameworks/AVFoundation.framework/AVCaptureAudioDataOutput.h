@@ -13,15 +13,17 @@
 
 + (void)initialize;
 
+- (id)sampleBufferCallbackQueue;
+- (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)_AVCaptureAudioDataOutput_AudioDataBecameReady;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)connectionMediaTypes;
-- (id)sampleBufferCallbackQueue;
+- (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferDelegate;
-- (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (id)supportedAssetWriterOutputFileTypes;
 - (BOOL)isTheOnlyDataOutput;
 - (id)init;
 - (void)dealloc;

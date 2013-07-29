@@ -7,6 +7,7 @@
 @interface GKSupplementaryViewMetrics : NSObject <NSCopying> {
     BOOL _shouldPin;
     BOOL _hidden;
+    BOOL _shouldUseGlobalIndexing;
     BOOL _shouldPinGlobal;
     float _desiredWidth;
     float _desiredHeight;
@@ -23,6 +24,7 @@
 @property BOOL shouldPin;
 @property(retain) NSString * kind;
 @property(getter=isHidden) BOOL hidden;
+@property BOOL shouldUseGlobalIndexing;
 @property BOOL shouldPinGlobal;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
 @property int animateWithSection;
@@ -31,12 +33,14 @@
 
 - (int)animateWithSection;
 - (BOOL)shouldPinGlobal;
+- (BOOL)shouldUseGlobalIndexing;
 - (float)desiredWidth;
 - (struct CGSize { float x1; float x2; })sizeForCollectionView:(id)arg1;
 - (void)setAnimateWithSection:(int)arg1;
 - (void)setDesiredWidth:(float)arg1;
 - (BOOL)shouldPin;
 - (float)desiredHeight;
+- (void)setShouldUseGlobalIndexing:(BOOL)arg1;
 - (void)setShouldPinGlobal:(BOOL)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })globalSectionRange;
 - (void)setGlobalSectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

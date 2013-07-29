@@ -41,7 +41,6 @@
 
 - (id)valueLabel;
 - (void)setNeedsUpdateEditingConstraints;
-- (void)setNeedsUpdateDisplayConstraints;
 - (void)_adjustCellLayoutForSectionLocation:(int)arg1;
 - (void)setLabelWidthConstraint:(id)arg1;
 - (float)labelWidth;
@@ -50,12 +49,13 @@
 - (id)innerContentView;
 - (void)setEditingConstraintsActive:(BOOL)arg1;
 - (BOOL)editingConstraintsActive;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (BOOL)displayConstraintsActive;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (void)setLabelWidth:(float)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
 - (id)presentingDelegate;
+- (void)setNeedsUpdateDisplayConstraints;
 - (void)setValueTextAttributes:(id)arg1;
 - (id)valueTextAttributes;
 - (void)setLabelTextAttributes:(id)arg1;

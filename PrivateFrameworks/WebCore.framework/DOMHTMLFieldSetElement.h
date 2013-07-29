@@ -18,8 +18,8 @@
 - (id)elements;
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
-- (id)form;
 - (BOOL)disabled;
+- (id)form;
 - (id)type;
 - (void)setName:(id)arg1;
 

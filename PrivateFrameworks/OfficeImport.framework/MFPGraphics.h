@@ -36,9 +36,9 @@
 - (void)saveGraphicsStateWithId:(unsigned int)arg1;
 - (void)strokePath:(id)arg1 pen:(id)arg2;
 - (void)fillPath:(id)arg1 brush:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvas;
 - (id)objectTable;
 - (void)setHorizontalDpi:(int)arg1 verticalDpi:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvas;
 - (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)currentState;
 - (void)dealloc;

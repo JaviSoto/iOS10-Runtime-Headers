@@ -58,7 +58,6 @@
 - (id)serverRepresentation;
 - (void)setCompletionDate:(id)arg1;
 - (id)completionDate;
-- (void)setMessage:(id)arg1;
 - (id)bundleID;
 - (id)message;
 - (BOOL)isEqual:(id)arg1;
@@ -66,6 +65,7 @@
 - (void)dealloc;
 - (void)setState:(int)arg1;
 - (int)state;
+- (void)setMessage:(id)arg1;
 - (unsigned int)type;
 
 @end

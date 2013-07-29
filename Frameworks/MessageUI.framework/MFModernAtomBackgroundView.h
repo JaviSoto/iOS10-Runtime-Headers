@@ -7,14 +7,14 @@
 @interface MFModernAtomBackgroundView : UIView  {
     UIView *_selectedView;
     UIView *_separatorView;
+    MFModernAtomView *_hostAtomView;
     int _separatorStyle;
     BOOL _selected;
     float _scalingFactor;
-    MFModernAtomView *_hostAtomView;
 }
 
 @property(readonly) UIView * separatorView;
-@property(retain) MFModernAtomView * hostAtomView;
+@property MFModernAtomView * hostAtomView;
 @property int separatorStyle;
 @property BOOL selected;
 @property float scalingFactor;
@@ -28,8 +28,8 @@
 - (void)setHostAtomView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (id)separatorView;
 - (BOOL)selected;
+- (id)separatorView;
 - (int)separatorStyle;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

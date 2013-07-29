@@ -32,8 +32,9 @@
 - (void)_assignOrderKeysUsingCount:(unsigned int)arg1;
 - (void)_updateOrderKeysFromOrderOfObjectIDs:(id)arg1;
 - (id)_newOrderKeys;
-- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
 - (unsigned int)_orderKeyForObject:(id)arg1;
+- (void)_populateOrderKeysUsingSnapshot:(id)arg1 orderKeys:(id)arg2 newIndexes:(unsigned int**)arg3 reorderedIndexes:(char **)arg4;
+- (void)_batchFulfillOrderKeysForObjectsIntoIndexes:(unsigned int**)arg1;
 - (BOOL)_hasOrderKeys;
 - (BOOL)_isIdenticalFault:(id)arg1;
 - (BOOL)_shouldProcessKVOChange;

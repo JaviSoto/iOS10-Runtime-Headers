@@ -23,9 +23,9 @@
 @property(retain) NSURLConnection * conn;
 
 
+- (void)setCallback:(id)arg1;
 - (id)conn;
 - (void)setConn:(id)arg1;
-- (void)setCallback:(id)arg1;
 - (id)callback;
 - (void)dealloc;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

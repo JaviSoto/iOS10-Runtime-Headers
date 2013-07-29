@@ -69,6 +69,7 @@
 - (BOOL)parseItem;
 - (BOOL)importToValueSetter:(id)arg1;
 - (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
+- (BOOL)_usesRemainingLineForExternalPropKey:(id)arg1;
 - (id)parseValueArray;
 - (id)parseRemainingLine;
 - (BOOL)parseABReleatedNames;

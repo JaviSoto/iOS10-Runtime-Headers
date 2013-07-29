@@ -98,7 +98,6 @@
 - (id)cardDeleteButtonImagePressed;
 - (id)cardDeleteButtonImage;
 - (id)cardCellDividerShadowColorVertical:(BOOL)arg1;
-- (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (BOOL)cardCellLooksDifferentWhenEditing;
 - (BOOL)cardActionsAllowFaceTimeFavorites;
 - (BOOL)cardActionsAllowVoiceFavorites;
@@ -120,6 +119,7 @@
 - (id)cardLabelEmphasizedHighlightedTextColor;
 - (id)cardLabelHighlightedTextColor;
 - (id)editorViewColor;
+- (id)cardLabelSelectedBackgroundColor;
 - (BOOL)cardValueHighlightsWhenTouched;
 - (id)cardValueClearButtonImage;
 - (id)cardValueHighlightedTextColor;
@@ -138,6 +138,7 @@
 - (id)memberNameSelectedShadowColor;
 - (id)membersBackgroundColor;
 - (id)memberHeaderBackgroundView;
+- (id)membersHeaderContentViewBackgroundColor;
 - (id)newTableFooterViewForCellStyle:(int)arg1;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (int)abCellStyleForCardTableLinkingUI;
@@ -189,6 +190,7 @@
 - (id)groupHeaderBackgroudColor;
 - (id)groupCellTextColor;
 - (id)groupCellBackgroundColor;
+- (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (id)groupsTableBackgroundColor;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKAttendee, NSURL, NSTimeZone, EKStructuredLocation, EKOrganizer, NSString, EKCalendar, NSDate, NSArray;
+@class EKAttendee, NSURL, NSTimeZone, EKStructuredLocation, EKOrganizer, EKCalendarItem, NSString, EKCalendar, NSDate, NSArray;
 
 @interface EKCalendarItem : EKObject  {
     BOOL _haveCachedActionsState;
@@ -61,6 +61,7 @@
 @property(readonly) BOOL allowsAttendeeModifications;
 @property(copy) NSArray * allAlarms;
 @property(readonly) int actionsState;
+@property(readonly) EKCalendarItem * originalItem;
 @property(readonly) BOOL requiresDetach;
 @property(getter=isDefaultAlarmRemoved) BOOL defaultAlarmRemoved;
 @property(copy) NSString * externalID;

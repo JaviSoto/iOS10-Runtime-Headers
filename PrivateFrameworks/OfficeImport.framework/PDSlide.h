@@ -11,10 +11,10 @@
 }
 
 
+- (unsigned int)commentCount;
 - (BOOL)hasMappableSlideNumberShape;
 - (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
 - (id)commentAtIndex:(unsigned int)arg1;
-- (unsigned int)commentCount;
 - (void)setNotesSlide:(id)arg1;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;

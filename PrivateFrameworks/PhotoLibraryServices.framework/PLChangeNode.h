@@ -17,6 +17,7 @@
 + (id)_descriptionForEvent:(id)arg1;
 + (id)sharedNode;
 
+- (void)_processDelatedAssetsForFileSystemPersistencyFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)distributeLocalEvent:(id)arg1;
 - (void)distributeRemoteChangeHubEvent:(id)arg1 withGroup:(id)arg2 transaction:(id)arg3;
 - (BOOL)isEventOriginatingFromHere:(id)arg1;
@@ -24,8 +25,8 @@
 - (void)forceUserInterfaceReload;
 - (void)fetchNewEventsFromChangeHub;
 - (void)handleRemoteChangeHubRequest:(id)arg1;
+- (void)processDelayedAssetsForFileSystemPersistency:(id)arg1 transaction:(id)arg2;
 - (void)processDelayedDupeAnalysisNormalInserts:(id)arg1 cloudInserts:(id)arg2 transaction:(id)arg3;
-- (void)processDelayedMomentInsertsAndUpdates:(id)arg1 deletes:(id)arg2 transaction:(id)arg3;
 - (void)processDelayedCloudFeedAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 transaction:(id)arg7;
 - (id)createXPCObjectFromDidSaveNotification:(id)arg1;
 - (void)sendChangeHubEventForDidSaveNotification:(id)arg1;
@@ -33,8 +34,8 @@
 - (void)distributeRemoteContextDidSaveEvent:(id)arg1 withGroup:(id)arg2 transaction:(id)arg3;
 - (void)_processDeletionsFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedDupeAnalysisFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
-- (void)_processMomentUpdateDataFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processCloudFeedUpdateDataFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
+- (void)processDelayedMomentChangesWithTransaction:(id)arg1;
 - (void)setupHubConnection;
 - (void)disconnectManagedObjectContext:(id)arg1;
 - (void)connectManagedObjectContext:(id)arg1;

@@ -88,6 +88,10 @@
 - (void)setExportedInterface:(id)arg1;
 - (id)exportedInterface;
 - (id)exportedObject;
+- (void)_addClassToDecodeCache:(Class)arg1;
+- (BOOL)_decodeCacheContainsClass:(Class)arg1;
+- (void)_addClassToEncodeCache:(Class)arg1;
+- (BOOL)_encodeCacheContainsClass:(Class)arg1;
 - (id)replacementObjectForEncoder:(id)arg1 object:(id)arg2;
 - (id)valueForEntitlement:(id)arg1;
 - (id)_exportTable;

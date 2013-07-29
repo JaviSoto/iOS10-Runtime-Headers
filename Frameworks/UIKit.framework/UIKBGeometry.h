@@ -69,7 +69,6 @@
 - (id)initWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)explicitlySpecified;
-- (struct { float x1; int x2; })paddingRight;
 - (struct { float x1; int x2; })paddingBottom;
 - (struct { float x1; int x2; })h;
 - (struct { float x1; int x2; })w;
@@ -79,6 +78,7 @@
 - (void)setExplicitlySpecified:(BOOL)arg1;
 - (void)setPaddingRight:(struct { float x1; int x2; })arg1;
 - (void)setPaddingBottom:(struct { float x1; int x2; })arg1;
+- (struct { float x1; int x2; })paddingRight;
 - (struct { float x1; int x2; })paddingLeft;
 - (void)setPaddingLeft:(struct { float x1; int x2; })arg1;
 - (void)setPaddingTop:(struct { float x1; int x2; })arg1;

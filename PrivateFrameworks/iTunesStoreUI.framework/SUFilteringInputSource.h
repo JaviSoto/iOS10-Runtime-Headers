@@ -19,8 +19,8 @@
 - (id)initWithInputSource:(id)arg1 dataConsumer:(id)arg2;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 - (unsigned int)minimumReadLength;
-- (id)dataConsumer;
 - (BOOL)open:(id*)arg1;
+- (id)dataConsumer;
 - (BOOL)hasBytesAvailable;
 - (void)close;
 - (void)dealloc;

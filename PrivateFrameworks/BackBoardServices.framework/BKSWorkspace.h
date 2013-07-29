@@ -30,7 +30,6 @@
 @property(retain) BKSWorkspaceActivationTokenFactory * activationTokenFactory;
 
 
-- (void)setLocked:(BOOL)arg1;
 - (void)setActivationTokenFactory:(id)arg1;
 - (id)activationTokenFactory;
 - (void)_addApplicationAsPending:(id)arg1;
@@ -118,6 +117,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)delegate;
+- (void)setLocked:(BOOL)arg1;
 - (id)initWithQueue:(id)arg1;
 - (unsigned int)serverPort;
 

@@ -9,7 +9,7 @@
 - (id)monogramBackgroundColor;
 - (id)textOnDarkBackgroundColor;
 - (id)floatingHeaderViewBackgroundColor;
-- (id)viewBackgroundColor;
 - (id)windowBackgroundColor;
+- (id)viewBackgroundColor;
 
 @end

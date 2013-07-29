@@ -35,8 +35,8 @@
 - (void)setPlayer:(id)arg1 responded:(int)arg2;
 - (void)setAutomatchPlayerCount:(int)arg1;
 - (void)setExistingPlayers:(id)arg1;
-- (void)setDefaultInvitationMessage:(id)arg1;
 - (void)finishWithError:(id)arg1;
+- (void)setDefaultInvitationMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

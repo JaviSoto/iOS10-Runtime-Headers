@@ -20,10 +20,16 @@
 - (float)stringKeyFontSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissKeySymbolFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shiftKeySymbolFrame;
+- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (id)dictationKeyImageName;
 - (id)handwritingMoreKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
+- (float)skinnyKeyThreshold;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
+- (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)dismissKeyFontSize;
 - (float)dictationKeyFontSize;

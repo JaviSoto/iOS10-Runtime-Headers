@@ -26,7 +26,6 @@
 
 + (void)CAMLParserStartElement:(id)arg1;
 
-- (void)setLocked:(BOOL)arg1;
 - (void)setInitial:(BOOL)arg1;
 - (BOOL)isInitial;
 - (void)setPreviousDelay:(double)arg1;
@@ -51,6 +50,7 @@
 - (id)name;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setLocked:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

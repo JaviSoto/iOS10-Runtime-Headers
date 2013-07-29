@@ -30,13 +30,13 @@
 - (id)stateCode;
 - (void)setRegionType:(id)arg1;
 - (id)regionType;
-- (void)setAccuracy:(id)arg1;
 - (void)setRelativeDistance:(id)arg1;
 - (id)relativeDistance;
 - (void)setTimezoneId:(id)arg1;
 - (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setAccuracy:(id)arg1;
 - (void)setPostalCode:(id)arg1;
 - (id)postalCode;
 - (void)setEntryPoints:(id)arg1;

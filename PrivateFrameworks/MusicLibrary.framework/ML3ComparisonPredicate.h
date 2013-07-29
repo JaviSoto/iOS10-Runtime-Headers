@@ -29,6 +29,7 @@
 
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsString:(id)arg6;
 - (id)valueToBindForOperation:(int)arg1;
+- (id)operator;
 - (id)transformFunction;
 - (id)treatNullAsString;
 - (BOOL)caseInsensitive;
@@ -37,7 +38,6 @@
 - (void)setCaseInsensitive:(BOOL)arg1;
 - (id)databaseStatementParameters;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (id)operator;
 - (int)comparison;
 - (void)setComparison:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

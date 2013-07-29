@@ -43,8 +43,8 @@
 - (void)setEnterLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)textDidChange:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleLabel;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 
 @end

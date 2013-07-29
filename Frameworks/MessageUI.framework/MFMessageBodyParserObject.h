@@ -17,8 +17,8 @@
 - (BOOL)shouldProceedParsing;
 - (void)messageBodyParserWillBeginParsing:(id)arg1;
 - (void)copyBlocks;
-- (void)setTimeoutInterval:(double)arg1;
 - (void)abortParsing;
+- (void)setTimeoutInterval:(double)arg1;
 - (double)timeoutInterval;
 
 @end

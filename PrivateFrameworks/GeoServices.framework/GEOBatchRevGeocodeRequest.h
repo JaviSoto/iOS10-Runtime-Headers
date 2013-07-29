@@ -26,6 +26,10 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (void)setHasSplitIntoClusters:(BOOL)arg1;
 - (void)setSplitIntoClusters:(BOOL)arg1;
 - (BOOL)splitIntoClusters;
@@ -47,10 +51,6 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)locations;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

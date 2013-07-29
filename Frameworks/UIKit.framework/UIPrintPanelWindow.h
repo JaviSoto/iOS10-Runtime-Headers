@@ -5,10 +5,7 @@
 @interface UIPrintPanelWindow : UIWindow  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)_affectsTintView;
-- (BOOL)accessibilityViewIsModal;
 
 @end

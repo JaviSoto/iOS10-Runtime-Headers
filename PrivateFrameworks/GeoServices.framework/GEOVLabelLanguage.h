@@ -15,12 +15,12 @@
 @property(retain) NSString * languageLocale;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)languageLocale;
 - (void)setLanguageLocale:(id)arg1;
 - (void)setEndOffset:(unsigned int)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (unsigned int)endOffset;
 - (unsigned int)startOffset;
 - (BOOL)isEqual:(id)arg1;

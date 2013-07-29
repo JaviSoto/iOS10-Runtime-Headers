@@ -48,6 +48,8 @@
 @property int type;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasLastUpdated:(BOOL)arg1;
 - (void)setHasEndTime:(BOOL)arg1;
 - (void)setHasStartTime:(BOOL)arg1;
@@ -75,8 +77,6 @@
 - (long long)uID;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)location;
 - (void)setTitle:(id)arg1;
 - (id)title;

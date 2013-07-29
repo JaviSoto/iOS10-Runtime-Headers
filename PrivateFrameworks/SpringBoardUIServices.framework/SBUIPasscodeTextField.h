@@ -5,15 +5,10 @@
 @interface SBUIPasscodeTextField : UITextField  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
+- (void)dealloc;
 - (void)_handleKeyUIEvent:(id)arg1;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

@@ -17,12 +17,12 @@
 @property(readonly) SSItemOfferDeviceError * incompatibleSystemError;
 
 
+- (int)deviceIdentifier;
 - (id)minimumProductVersion;
 - (id)incompatibleSystemError;
 - (id)incompatibleDeviceError;
-- (id)initWithOfferDeviceDicitionary:(id)arg1;
-- (int)deviceIdentifier;
 - (id)initWithDeviceIdentifier:(int)arg1;
+- (id)initWithOfferDeviceDicitionary:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

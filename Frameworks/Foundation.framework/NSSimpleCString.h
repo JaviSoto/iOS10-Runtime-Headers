@@ -22,13 +22,13 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)stringByAppendingString:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned int)arg2;
 - (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
 - (unsigned int)smallestEncoding;
 - (unsigned int)fastestEncoding;
 - (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)stringByAppendingString:(id)arg1;
 - (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
 
 @end

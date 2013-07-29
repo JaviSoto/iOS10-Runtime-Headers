@@ -28,6 +28,8 @@
 @property(retain) NSString * preferredSearchDisplayLocation;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasCorrectedSearchResultIndex:(BOOL)arg1;
 - (void)setHasOriginalSearchResultIndex:(BOOL)arg1;
 - (id)preferredSearchDisplayLocation;
@@ -46,8 +48,6 @@
 - (id)placeSearchRequest;
 - (BOOL)hasPlaceSearchRequest;
 - (void)setPlaceSearchRequest:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

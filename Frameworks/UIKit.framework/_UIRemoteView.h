@@ -27,8 +27,6 @@
 + (id)viewWithRemoteContextID:(unsigned int)arg1;
 + (id)viewWithHostedWindowHostingHandle:(id)arg1;
 + (Class)layerClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (BOOL)_actsAsTintView;
@@ -41,15 +39,9 @@
 - (void)setHostedWindowHostingHandle:(id)arg1;
 - (id)hostedWindowHostingHandle;
 - (void)_setStatusBarTintColor:(id)arg1;
+- (int)textEffectsVisibilityLevel;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)tintColorDidChange;
 - (id)_statusBarTintColor;
-- (id)accessibilityIdentifier;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (BOOL)_accessibilityServesAsFirstResponder;
-- (id)_accessibilityResponderElement;
-- (id)accessibilityContainerElements;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -15,10 +15,10 @@
 @property float offset;
 
 
-- (BOOL)isPad;
 - (void)setIsPad:(BOOL)arg1;
-- (void)setPlaceholderView:(id)arg1;
+- (BOOL)isPad;
 - (id)placeholderView;
+- (void)setPlaceholderView:(id)arg1;
 - (void)setOffset:(float)arg1;
 - (float)offset;
 - (void).cxx_destruct;

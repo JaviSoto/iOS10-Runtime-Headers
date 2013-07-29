@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, DOMNode, NSTimer, NSObject<UIFormPeripheral>, <UIWebAutoFillDelegate>, UIWebFormDelegate, UIWebPDFView, NSMutableSet, UIWebFormAccessory, NSHashTable, NSString, UIResponder, UIWebTouchEventsGestureRecognizer;
+@class NSMutableArray, DOMNode, NSObject<UIFormPeripheral>, NSTimer, <UIWebAutoFillDelegate>, UIWebFormDelegate, NSLock, NSMutableSet, UIWebPDFView, UIWebFormAccessory, NSHashTable, NSString, UIResponder, UIWebTouchEventsGestureRecognizer;
 
 @interface UIWebBrowserView : UIWebDocumentView <UIWebTouchEventsGestureRecognizerDelegate, UIWebFormAccessoryDelegate, _UIWebRotationDelegate> {
     UIWebFormAccessory *_accessory;
@@ -47,6 +47,9 @@
     NSMutableSet *_overflowScrollViewsPendingInsertion;
     NSMutableSet *_overflowScrollViewsPendingDeletion;
     NSMutableSet *_overflowScrollViews;
+    NSLock *_pendingOverflowDataLock;
+    NSMutableArray *_pendingOverflowScrolls;
+    BOOL _pendingGeometryChangeAfterOverflowScroll;
     struct { 
         NSMutableArray *all; 
         NSMutableArray *html; 
@@ -83,10 +86,7 @@
 + (void)initialize;
 + (float)preferredScrollDecelerationFactor;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)_input;
 - (BOOL)isEditable;
 - (BOOL)resignFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -128,7 +128,7 @@
 - (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4;
 - (struct CGPoint { float x1; float x2; })_convertWindowPointToViewport:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_webViewFormEditedStatusHasChanged:(id)arg1;
-- (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
+- (void)simulateDidScroll;
 - (struct CGSize { float x1; float x2; })contentSizeForScrollView:(id)arg1;
 - (float)scaleForProposedNewScale:(float)arg1 andOldScale:(float)arg2;
 - (BOOL)considerHeightOfRectOfInterestForRotation;
@@ -139,6 +139,8 @@
 - (void)updateBoundariesOfScrollView:(id)arg1 withScales:(struct { float x1; float x2; float x3; })arg2;
 - (struct { float x1; float x2; float x3; })scalesForContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_addAdditionalSubview:(id)arg1;
+- (void)_webThreadOverflowScrollOffsetChanged;
+- (BOOL)appendOverflowScrollForNode:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 whileScrolling:(BOOL)arg3;
 - (void)_removeAdditionalSubview:(id)arg1;
 - (void)_noteOverflowScrollViewPendingDeletion:(id)arg1;
 - (void)_noteOverflowScrollViewPendingInsertion:(id)arg1;
@@ -185,7 +187,9 @@
 - (void)accessoryTab:(BOOL)arg1;
 - (BOOL)_hasSubviewContainingWebContent:(id)arg1;
 - (BOOL)_isAutoFilling;
+- (void)formDelegateTextDidChange;
 - (id)autoFillDelegate;
+- (void)accessoryDone;
 - (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)setNetworkInterfaceName:(id)arg1;
 - (void)setAudioSessionCategoryOverride:(unsigned int)arg1;
@@ -217,14 +221,15 @@
 - (void)_updateFixedPositioningObjectsLayoutAfterScroll;
 - (void)_clearAllConsoleMessages;
 - (void)_resetFormDataForFrame:(id)arg1;
+- (void)_updateFixedPositioningObjectsLayoutDuringScroll;
 - (void)_updateFixedPositioningObjectsLayoutAfterVisibleGeometryChange;
 - (void)installGestureRecognizers;
 - (id)initWithWebView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)isAutoFillMode;
 - (void)acceptedAutoFillWord:(id)arg1;
-- (void)accessoryDone;
 - (void)_promptForReplace:(id)arg1;
 - (void)copy:(id)arg1;
+- (id)_input;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (id)_keyboardResponder;
 - (id)inputAccessoryView;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, SUPurchaseManager, SKUIIPhoneProductPageViewController, SKUIClientContext, SKUIITunesStoreUIPageViewController, SUBarButtonItem, SKUIBannerViewController, SUPreviewOverlayViewController, SKUIIPadProductPageViewController, SUDialogManager, NSDictionary, NSURL;
+@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, SUPurchaseManager, SKUIIPhoneProductPageViewController, SUPreviewOverlayViewController, SKUIClientContext, SKUIITunesStoreUIPageViewController, SUBarButtonItem, SKUIBannerViewController, SKUIIPadProductPageViewController, SUDialogManager, NSDictionary, NSURL;
 
 @interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate> {
     SKUIBannerViewController *_bannerViewController;
@@ -10,15 +10,15 @@
     <SKProductPageViewControllerDelegatePrivate> *_delegate;
     SUDialogManager *_dialogManager;
     SUBarButtonItem *_gotoStoreButtonItem;
+    SKUIIPadProductPageViewController *_ipadProductPageViewController;
+    SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
+    NSURL *_nativeURL;
     SUPreviewOverlayViewController *_previewOverlay;
     NSDictionary *_productParameters;
     SUPurchaseManager *_purchaseManager;
     BOOL _showsStoreButton;
     int _style;
     SKUIITunesStoreUIPageViewController *_storePageViewController;
-    SKUIIPadProductPageViewController *_ipadProductPageViewController;
-    SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
-    NSURL *_nativeURL;
 }
 
 @property <SKProductPageViewControllerDelegate> * delegate;
@@ -30,6 +30,7 @@
 + (void)_validateURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(id)arg3;
 + (id)_defaultClientInterface;
 
+- (void)_loadClientContextWithCompletionBlock:(id)arg1;
 - (void)clientInterface:(id)arg1 willPresentViewController:(id)arg2;
 - (void)clientInterface:(id)arg1 willDismissViewController:(id)arg2;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
@@ -60,8 +61,7 @@
 - (void)_setResponse:(id)arg1 forProperties:(id)arg2 error:(id)arg3;
 - (id)_newRequestPropertiesWithRequest:(id)arg1;
 - (void)loadWithStorePageRequest:(id)arg1;
-- (void)_loadClientContextWithCompletionBlock:(id)arg1;
-- (void)_showProductPage:(id)arg1;
+- (void)_showProductPage:(id)arg1 pageEvent:(id)arg2;
 - (id)_previewOverlay;
 - (void)_sendDidFinishWithResult:(int)arg1;
 - (void)_sendDidFailLoadWithError:(id)arg1;

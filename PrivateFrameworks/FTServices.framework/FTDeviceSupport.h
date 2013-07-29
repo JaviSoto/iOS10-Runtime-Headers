@@ -80,13 +80,19 @@
 
 + (id)sharedInstance;
 
-- (BOOL)supportsSimultaneousVoiceAndDataRightNow;
 - (int)deviceType;
+- (BOOL)supportsSimultaneousVoiceAndDataRightNow;
 - (BOOL)supportsBackFacingCamera;
 - (BOOL)supportsFrontFacingCamera;
 - (BOOL)callingAvailable;
+- (BOOL)identityServicesSupported;
+- (BOOL)registrationSupported;
+- (BOOL)supportsSMSIdentification;
+- (id)deviceIDPrefix;
 - (id)telephoneNumber;
+- (id)productVersion;
 - (id)userAgentString;
+- (id)productBuildVersion;
 - (id)productName;
 - (BOOL)supportsMMS;
 - (BOOL)supportsSMS;
@@ -94,7 +100,6 @@
 - (BOOL)supportsWiFi;
 - (BOOL)nonWifiCallingAvailable;
 - (int)performanceClass;
-- (BOOL)supportsSMSIdentification;
 - (id)CTNetworkInformation;
 - (void)_handleRegistrationStateChanged:(id)arg1;
 - (void)_handlePhoneNumberRegistrationStateChanged:(id)arg1;
@@ -104,10 +109,7 @@
 - (BOOL)wantsBreakBeforeMake;
 - (id)telephonyCapabilities;
 - (id)deviceTypeIDPrefix;
-- (id)deviceIDPrefix;
 - (BOOL)accountModificationRestricted;
-- (BOOL)registrationSupported;
-- (BOOL)identityServicesSupported;
 - (BOOL)iMessageBlocked;
 - (BOOL)iMessageAvailable;
 - (BOOL)callingBlocked;
@@ -144,8 +146,6 @@
 - (void)_updateManagedConfigurationSettings;
 - (void)_watchNotifyTokens;
 - (BOOL)isC2KEquipment;
-- (id)productBuildVersion;
-- (id)productVersion;
 - (id)model;
 - (id)deviceName;
 - (BOOL)supportsNonWiFiCalling;

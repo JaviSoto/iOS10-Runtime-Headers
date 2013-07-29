@@ -18,11 +18,11 @@
 
 
 - (id)errorComment;
-- (id)errorDomain;
 - (int)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
 - (id)URI;
+- (id)errorDomain;
 - (id)init;
 - (id)date;
 - (void)finalize;

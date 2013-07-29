@@ -14,8 +14,8 @@
 @property(readonly) <AVVideoCompositionInstruction> * videoCompositionInstruction;
 
 
-- (void)finishCancelledRequest;
 - (void)finishWithError:(id)arg1;
+- (void)finishCancelledRequest;
 - (void)finishWithComposedVideoFrame:(struct __CVBuffer { }*)arg1;
 - (struct __CVBuffer { }*)sourceFrameByTrackID:(int)arg1;
 - (id)sourceTrackIDs;

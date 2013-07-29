@@ -20,9 +20,9 @@
 + (void)registerCellClassesWithCollectionView:(id)arg1;
 + (Class)cellClassForPlayer:(id)arg1;
 
-- (void)setAcceptButton:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
 - (void)setDeclineButton:(id)arg1;
+- (void)setAcceptButton:(id)arg1;
 - (id)declineButton;
 - (id)acceptButton;
 - (void)didTouchDecline:(id)arg1;

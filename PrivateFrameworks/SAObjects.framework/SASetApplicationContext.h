@@ -11,8 +11,8 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 
-+ (id)setApplicationContextWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setApplicationContext;
++ (id)setApplicationContextWithDictionary:(id)arg1 context:(id)arg2;
 
 - (void)setOrderedContext:(id)arg1;
 - (id)orderedContext;

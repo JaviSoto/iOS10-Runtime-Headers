@@ -17,6 +17,7 @@
 @property(retain) NSDictionary * metricsOverrides;
 @property BOOL didSetupLineLayoutConstraints;
 
++ (float)textOffsetForIdiom:(int)arg1;
 + (id)padMetrics;
 + (id)phoneMetrics;
 + (void)initialize;
@@ -24,6 +25,7 @@
 - (void)setIconView:(id)arg1;
 - (void)setNameLabel:(id)arg1;
 - (id)nameLabel;
+- (void)setNeedsUpdateLineLayoutConstraints;
 - (void)setDidSetupLineLayoutConstraints:(BOOL)arg1;
 - (BOOL)didSetupLineLayoutConstraints;
 - (id)metricsOverrides;

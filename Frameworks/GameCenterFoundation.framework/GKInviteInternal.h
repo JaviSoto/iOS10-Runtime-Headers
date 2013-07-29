@@ -53,6 +53,8 @@
 - (void)setParticipantID:(id)arg1;
 - (id)participantID;
 - (void)setBundleID:(id)arg1;
+- (void)setDeviceID:(id)arg1;
+- (id)deviceID;
 - (void)setRid:(id)arg1;
 - (id)rid;
 - (void)setPeerBlob:(id)arg1;
@@ -76,9 +78,6 @@
 - (int)playerGroup;
 - (unsigned int)matchType;
 - (id)inviteID;
-- (void)setDeviceID:(id)arg1;
-- (id)deviceID;
-- (void)setMessage:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
 - (void)setPlayer:(id)arg1;
@@ -89,6 +88,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (void)setVersion:(unsigned char)arg1;
 - (unsigned char)version;
 

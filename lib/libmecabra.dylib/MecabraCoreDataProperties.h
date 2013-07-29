@@ -15,23 +15,24 @@
 @property(retain) NSMutableDictionary * descriptionDictionary;
 @property(retain) NSString * identifier;
 
++ (id)ubiquityContainerURL;
 + (id)defaultDescriptionPath;
 + (void)setDefaultDescriptionPath:(id)arg1;
-+ (id)ubiquityContainerURL;
 + (id)sharedInstanceForType:(id)arg1;
 
 - (void)setDescriptionDictionary:(id)arg1;
 - (id)ubiquitousTransactionURLForIdentifier:(id)arg1;
 - (id)ubiquitousStoreDirectoryURLForIdentifier:(id)arg1;
-- (id)uniqueKeys;
 - (id)ubiquitousURLWithSuffix:(id)arg1;
 - (id)descriptionDictionary;
 - (id)ubiquityContainerIdentifier;
 - (id)entityDescriptionURL;
 - (BOOL)databaseSyncs;
 - (id)entityModelName;
+- (id)uniqueKeys;
 - (void)forceNoSync;
 - (id)requiredKeys;
+- (id)sortDescriptors;
 - (id)initWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;

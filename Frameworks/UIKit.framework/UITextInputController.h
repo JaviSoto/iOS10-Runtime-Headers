@@ -36,6 +36,8 @@
         unsigned int showingTextStyleOptions : 1; 
         unsigned int undoRedoInProgress : 1; 
         unsigned int textOrSelectionChangeOriginatesWithMarkedText : 1; 
+        unsigned int nextSelectionChangeMustUpdate : 1; 
+        unsigned int hasTextAlternatives : 1; 
     } _tiFlags;
     NSArray *_extraItemsBeforeTextStyleOptions;
     UIView<UITextInput> *_firstTextView;
@@ -92,6 +94,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
 - (id)typingAttributes;
 - (void)setLayoutManager:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (id)layoutManager;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
@@ -140,10 +143,10 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })nsRangeForTextRange:(id)arg1;
 - (id)_newAttributedStringForInsertionOfText:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_sendDelegateWillChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
-- (void)_ensureSelectionValid;
 - (void)_invalidateTypingAttributes;
 - (void)_coordinateSelectionChange:(id)arg1;
 - (void)_sendDelegateChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
+- (void)_ensureSelectionValid;
 - (void)_forceUnmarkTextDueToEditing;
 - (void)_setEmptyStringAttributes:(id)arg1;
 - (void)_teardownTextContainerView:(id)arg1;
@@ -163,7 +166,6 @@
 - (BOOL)_shouldHandleResponderAction:(SEL)arg1;
 - (BOOL)_canHandleResponderAction:(SEL)arg1;
 - (void)_addToTypingAttributes:(id)arg1 value:(id)arg2;
-- (void)didEndEditing;
 - (void)_ensureSelectionVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRect;
 - (id)_firstTextView;
@@ -176,7 +178,6 @@
 - (void)_promptForReplace:(id)arg1;
 - (void)select:(id)arg1;
 - (void)updateSelection;
-- (id)metadataDictionariesForDictationResults;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)toggleUnderline:(id)arg1;
 - (void)toggleItalics:(id)arg1;
@@ -199,6 +200,7 @@
 - (void)_selectionGeometryChanged;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
@@ -228,9 +230,9 @@
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)deleteBackward;
-- (BOOL)hasText;
 - (id)_layoutManager;
 - (void)clearText;
+- (BOOL)hasText;
 - (int)atomStyle;
 - (BOOL)drawsAsAtom;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
@@ -242,6 +244,7 @@
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2;
 - (id)endOfDocument;
 - (id)beginningOfDocument;
+- (void)didEndEditing;
 - (void)_invalidateEmptyStringAttributes;
 - (void)setTypingAttributes:(id)arg1;
 - (id)selectionView;

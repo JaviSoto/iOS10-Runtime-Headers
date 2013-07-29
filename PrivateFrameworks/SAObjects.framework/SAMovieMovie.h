@@ -29,14 +29,11 @@
 @property(copy) NSString * theaterShowtimeSearchRegionDescription;
 @property(copy) NSArray * theaterShowtimes;
 @property(copy) NSDate * theatricalReleaseDate;
-@property(copy) NSURL * trailerUri;
 
 + (id)movie;
 + (id)movieWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)reviews;
-- (void)setTrailerUri:(id)arg1;
-- (id)trailerUri;
 - (void)setTheaterShowtimes:(id)arg1;
 - (id)theaterShowtimes;
 - (void)setTheaterShowtimeSearchRegionDescription:(id)arg1;

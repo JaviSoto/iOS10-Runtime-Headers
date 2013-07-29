@@ -18,22 +18,22 @@
 
 + (void)initialize;
 
+- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (void)setMinFreeDiskSpaceLimit:(long long)arg1;
 - (void)setMaxRecordedFileSize:(long long)arg1;
 - (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
+- (BOOL)isRecording;
 - (long long)recordedFileSize;
 - (void)setPausesRecordingOnInterruption:(BOOL)arg1;
 - (void)resumeRecording;
 - (void)pauseRecording;
 - (BOOL)isRecordingPaused;
-- (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (BOOL)pausesRecordingOnInterruption;
 - (long long)minFreeDiskSpaceLimit;
 - (long long)maxRecordedFileSize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
 - (id)outputFileURL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
-- (BOOL)isRecording;
 - (id)init;
 - (void)dealloc;
 - (void)stopRecording;

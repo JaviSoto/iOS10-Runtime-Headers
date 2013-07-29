@@ -10,7 +10,6 @@
     NSValue *_searchTextOffsetValue;
     _UISearchBarSearchFieldBackgroundView *_effectBackgroundTop;
     _UISearchBarSearchFieldBackgroundView *_effectBackgroundBottom;
-    BOOL _maskLeftViewFromLayout;
     BOOL _deferringFirstResponder;
     BOOL _animatePlaceholderOnResignFirstResponder;
     BOOL __preventSelectionViewActivation;
@@ -19,8 +18,6 @@
 @property(setter=_setSearchTextOffetValue:,retain) NSValue * _searchTextOffsetValue;
 @property(setter=_setPreventSelectionViewActivation:) BOOL _preventSelectionViewActivation;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)resignFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -32,8 +29,7 @@
 - (BOOL)_preventSelectionViewActivation;
 - (void)_clearBackgroundViews;
 - (void)_updateBackgroundViewsAnimated:(BOOL)arg1;
-- (id)_createEffectsBackgroundViewWithStyle:(unsigned int)arg1;
-- (BOOL)_showsLeftView;
+- (id)_createEffectsBackgroundViewWithStyle:(unsigned int)arg1 applyFilter:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suffixFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_availableTextRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forEditing:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -43,8 +39,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustmentsForLeftViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedTextOrEditingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_clearButtonImageForState:(unsigned int)arg1;
+- (void)_setBottomEffectBackgroundVisible:(BOOL)arg1;
+- (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_activateSelectionView;
 - (void)_setPreventSelectionViewActivation:(BOOL)arg1;
+- (void)_removeEffectsBackgroundViews;
 - (void)updateForBackdropStyle:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_offsetValueForIcon:(int)arg1;
@@ -61,8 +60,5 @@
 - (BOOL)_hasActionForEventMask:(int)arg1;
 - (void)tintColorDidChange;
 - (BOOL)_becomeFirstResponderWhenPossible;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
 
 @end

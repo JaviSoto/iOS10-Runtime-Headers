@@ -6,6 +6,7 @@
 }
 
 
+- (id)displayLabel;
 - (BOOL)canRemove;
 - (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
 

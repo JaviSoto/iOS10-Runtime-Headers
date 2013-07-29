@@ -12,6 +12,7 @@
 - (id)expandedNameForImageName:(id)arg1;
 - (float)textOffsetForStyle:(int)arg1;
 - (id)homeImageName;
+- (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
 - (float)batteryAccessoryMargin;
 - (float)standardPadding;
 - (float)edgePadding;

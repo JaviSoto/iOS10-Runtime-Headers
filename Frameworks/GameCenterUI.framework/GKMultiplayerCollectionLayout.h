@@ -55,6 +55,10 @@
 @property(retain) UICollectionViewLayoutAttributes * footerAttributes;
 
 
+- (struct CGSize { float x1; float x2; })footerSize;
+- (struct CGSize { float x1; float x2; })headerSize;
+- (void)setFooterSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setHeaderSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)footerAttributes;
 - (id)headerAttributes;
 - (id)separatorLayoutInfo;
@@ -67,10 +71,6 @@
 - (float)headerGap;
 - (void)setItemMargin:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })itemMargin;
-- (void)setFooterSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })footerSize;
-- (void)setHeaderSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })headerSize;
 - (void)setSeparatorSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })separatorSize;
 - (BOOL)isPortrait;

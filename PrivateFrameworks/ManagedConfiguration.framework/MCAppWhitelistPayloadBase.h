@@ -23,9 +23,9 @@
 - (BOOL)allowAccessWithoutPasscode;
 - (id)whitelistedAppsAndOptions;
 - (void)setWhitelistedAppsAndOptions:(id)arg1;
-- (id)restrictions;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)restrictions;
 - (void).cxx_destruct;
 - (id)description;
 

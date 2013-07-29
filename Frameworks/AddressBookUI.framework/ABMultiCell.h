@@ -12,8 +12,6 @@
 @property(getter=isEditingDisabled) BOOL editingDisabled;
 @property(retain) ABMultiCellContentView * multiCellContentView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setEditingDisabled:(BOOL)arg1;
 - (BOOL)isEditingDisabled;
@@ -30,10 +28,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (BOOL)_accessibilityCanDeleteTableViewCell;
 
 @end

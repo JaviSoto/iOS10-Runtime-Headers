@@ -20,13 +20,13 @@
 @property(copy) NSArray * downloadIdentifiers;
 
 
-- (id)URLResponse;
 - (id)transactionIdentifierForItemIdentifier:(long long)arg1;
 - (id)downloadIdentifiers;
 - (void)setURLResponse:(id)arg1;
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setCancelsPurchaseBatch:(BOOL)arg1;
 - (BOOL)cancelsPurchaseBatch;
+- (id)URLResponse;
 - (id)purchase;
 - (void)setPurchase:(id)arg1;
 - (id)copyXPCEncoding;

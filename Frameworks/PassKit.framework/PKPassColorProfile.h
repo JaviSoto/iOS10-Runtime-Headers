@@ -31,7 +31,6 @@
 
 + (id)profileForDisplayProfile:(id)arg1;
 
-- (id)labelColor;
 - (float)regularLighteningAlpha;
 - (float)overlayLighteningAlpha;
 - (float)regularDarkeningAlpha;
@@ -49,6 +48,7 @@
 - (BOOL)isLight;
 - (id)labelImageForGlyph:(id)arg1;
 - (id)highlightColor;
+- (id)labelColor;
 - (id)backgroundColor;
 - (id)foregroundColor;
 - (void)dealloc;

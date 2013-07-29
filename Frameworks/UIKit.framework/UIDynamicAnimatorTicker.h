@@ -12,7 +12,7 @@
 
 
 - (void)setAnimator:(id)arg1;
-- (id)animator;
 - (void)_displayLinkTick:(id)arg1;
+- (id)animator;
 
 @end

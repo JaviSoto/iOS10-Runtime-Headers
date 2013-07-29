@@ -16,17 +16,17 @@
 + (id)textUnfilteredTypes;
 + (id)_documentTypeForFileType:(id)arg1;
 + (id)attributedStringWithAttachment:(id)arg1;
-+ (id)_scrcStringWithFormat:(id)arg1 args:(char *)arg2;
-+ (id)scrcStringWithLiteralString:(id)arg1 treePosition:(id)arg2;
-+ (id)scrcStringWithDollarCode:(id)arg1 treePosition:(id)arg2;
-+ (id)scrcStringWithString:(id)arg1 treePosition:(id)arg2;
-+ (id)scrcSpaceString;
-+ (id)scrcPauseString;
-+ (id)scrcString;
-+ (id)scrcStringWithString:(id)arg1;
-+ (id)scrcStringWithLiteralString:(id)arg1;
-+ (id)scrcStringWithFormat:(id)arg1;
-+ (id)attributedStringWithFormatAndAttributes:(id)arg1;
++ (id)pl_stringWithFormat:(id)arg1 defaultAttributes:(id)arg2 arguments:(id)arg3;
++ (id)pu_localizedAttributedStringForLikesFromUser:(BOOL)arg1 otherPeopleFullNames:(id)arg2 isVideo:(BOOL)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForUserCreatingStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)pu_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(BOOL)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForUserJoiningStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)pu_localizedAttributedStringForLikesWithLikerCount:(int)arg1 isVideo:(BOOL)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)pu_localizedAttributedStringForLikesFromUser:(BOOL)arg1 orPersonFullName:(id)arg2 photoCount:(int)arg3 videoCount:(int)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7;
++ (id)pu_localizedAttributedStringForCommentWithCommenterFullName:(id)arg1 text:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)pu_localizedAttributedStringForUserCommentWithText:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)pu_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(int)arg2 videoCount:(int)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)pu_localizedAttributedStringForUserPostWithPhotoCount:(int)arg1 videoCount:(int)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
 
 - (void)enumerateAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
@@ -112,13 +112,6 @@
 - (id)_ui_attributedStringWithOriginalFontAttributes;
 - (int)_ui_resolvedTextAlignment;
 - (id)_ui_secureStringWithPointSize:(float)arg1;
-- (id)scrcStringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2;
-- (BOOL)_scrcHasPauseCommaAtIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_scrcRangeOfFormatSpecifierWithIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_scrcRangeOfVanillaFormatSpecifier;
-- (id)scrcStringByAppendingAttributedString:(id)arg1;
-- (id)scrcStringByAddingAttribute:(id)arg1 value:(id)arg2;
-- (BOOL)scrcContainsPause;
 - (id)MP_attributedStringByAddingAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
 
 @end

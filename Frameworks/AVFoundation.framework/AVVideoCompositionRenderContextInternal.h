@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSDictionary;
+@class NSObject<OS_dispatch_queue>, AVVideoComposition, NSDictionary;
 
 @interface AVVideoCompositionRenderContextInternal : NSObject  {
     NSDictionary *_basisProperties;
@@ -40,6 +40,7 @@
     } _destinationPixelBufferDimensions;
     NSObject<OS_dispatch_queue> *_pixelBufferPoolQ;
     struct __CVPixelBufferPool { } *_pixelBufferPool;
+    AVVideoComposition *_videoComposition;
 }
 
 

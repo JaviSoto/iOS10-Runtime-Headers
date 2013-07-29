@@ -11,6 +11,7 @@
 - (float)dictationKeyFontSize;
 - (float)internationalKeyFontSize;
 - (float)moreKeyFontSize;
+- (struct CGPoint { float x1; float x2; })spaceReturnKeyTextOffset;
 - (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
 - (void)setupLayoutSegments;

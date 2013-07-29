@@ -68,9 +68,9 @@
 - (void)setLastAddressedLocalHandle:(id)arg1;
 - (id)lastMessage;
 - (id)chatIdentifier;
+- (void)setServiceName:(id)arg1;
 - (id)participants;
 - (long long)rowID;
-- (void)setServiceName:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;

@@ -32,10 +32,7 @@
 + (void)_fixPathsForSandboxDirectoryChange;
 + (void)_updatePersistentStoragePaths;
 + (id)_relativePathFromAbsolutePath:(id)arg1 removingPathComponents:(unsigned int)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)_setWebSelectionEnabled:(BOOL)arg1;
 - (void)reload;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -92,6 +89,7 @@
 - (void)_setAudioSessionCategoryOverride:(unsigned int)arg1;
 - (BOOL)_alwaysDispatchesScrollEvents;
 - (void)_setAlwaysDispatchesScrollEvents:(BOOL)arg1;
+- (void)_setWebSelectionEnabled:(BOOL)arg1;
 - (void)_setDrawsCheckeredPattern:(BOOL)arg1;
 - (void)_setOverridesOrientationChangeEventHandling:(BOOL)arg1;
 - (id)_pdfViewHandler;

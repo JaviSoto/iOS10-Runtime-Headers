@@ -2,28 +2,28 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSString, ML3DatabaseConnection;
+@class ML3MusicLibrary, NSString, ML3DatabaseConnectionPool;
 
 @interface ML3UbiquitousDatabase : NSObject  {
     BOOL _needsToPurgeOldEntries;
     ML3MusicLibrary *_musicLibrary;
     NSString *_databasePath;
-    ML3DatabaseConnection *_databaseConnection;
+    ML3DatabaseConnectionPool *_connectionPool;
 }
 
 @property(readonly) ML3MusicLibrary * musicLibrary;
 @property(retain) NSString * databasePath;
-@property(retain) ML3DatabaseConnection * databaseConnection;
+@property(retain) ML3DatabaseConnectionPool * connectionPool;
 
 + (int)currentUserVersion;
 + (id)allSchemaSQL;
 + (BOOL)supportsUbiquitousBookmarksInMusicLibrary:(id)arg1;
 
-- (void)setDatabaseConnection:(id)arg1;
 - (void)dumpUbiquitousMetadata;
 - (BOOL)hasLocalChangesToPush;
 - (BOOL)hasRemoteChangesToPull;
-- (void)updateUbiquitousBookmarkMetadataValuesForChangedTrackWithPersistentID:(long long)arg1;
+- (BOOL)hasSyncedAtleastOnce;
+- (BOOL)updateUbiquitousBookmarkMetadataValuesForChangedTrackWithPersistentID:(long long)arg1;
 - (void)removeUbiquitousBookmarkMetadataForTrack:(id)arg1;
 - (id)dateToSyncWithUbiquitousStore;
 - (void)setDateToSyncWithUbiquitousStore:(id)arg1;
@@ -52,10 +52,11 @@
 - (void)applyUbiqiutousBookmarkMetadataToImportedTrack:(id)arg1;
 - (BOOL)coerceValidDatabase;
 - (void)setDatabasePath:(id)arg1;
+- (void)setConnectionPool:(id)arg1;
 - (BOOL)requiresSchemaOnlyUpdates;
 - (id)initWithMusicLibrary:(id)arg1;
+- (id)connectionPool;
 - (id)musicLibrary;
-- (id)databaseConnection;
 - (int)userVersion;
 - (id)databasePath;
 - (id)init;

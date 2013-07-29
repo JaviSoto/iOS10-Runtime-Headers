@@ -26,15 +26,14 @@
 
 - (void)setShowsAdvancedSettings:(BOOL)arg1;
 - (BOOL)showsAdvancedSettings;
+- (void)didFinishEnteringText:(id)arg1;
 - (id)placeholderText;
 - (void)textEntryViewDidChange:(id)arg1;
-- (void)didFinishEnteringPasscode:(id)arg1;
 - (void)animatePasscodeFieldLeft:(BOOL)arg1;
 - (void)updateNextButton;
 - (void)forgotSecurityCode;
 - (void)generateRandomCode;
 - (void)showAdvancedOptions;
-- (void)nextPressed;
 - (id)textEntryCell;
 - (Class)textEntryCellClass;
 - (void)keyboardWillShow:(id)arg1;

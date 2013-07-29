@@ -83,6 +83,7 @@
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (id)delegate;
+- (id)bundleIdentifier;
 - (id)identifier;
 - (id)dashcodeFrameworkPath;
 - (id)dashcodePortName;
@@ -145,6 +146,5 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)_info;
-- (id)bundleIdentifier;
 
 @end

@@ -28,11 +28,11 @@
 - (float)menuTitleFontSize;
 - (int)menuStyle;
 - (id)titleForIndex:(int)arg1;
-- (id)allTitles;
 - (id)_componentWithContext:(id)arg1;
 - (id)childComponentsForIndex:(int)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
+- (id)allTitles;
 - (void).cxx_destruct;
 - (id)menuTitle;
 - (int)numberOfItems;

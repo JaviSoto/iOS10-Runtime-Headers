@@ -10,15 +10,11 @@
     BOOL _ellipsize;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (float)extraRightPadding;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (BOOL)cachesImage;
 - (id)contentsImage;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

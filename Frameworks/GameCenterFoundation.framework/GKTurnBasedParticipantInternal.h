@@ -42,8 +42,8 @@
 - (unsigned int)matchOutcome;
 - (id)inviteMessage;
 - (id)serverRepresentation;
-- (void)setSessionID:(id)arg1;
 - (id)sessionID;
+- (void)setSessionID:(id)arg1;
 - (unsigned char)slot;
 - (void)setPlayer:(id)arg1;
 - (id)player;

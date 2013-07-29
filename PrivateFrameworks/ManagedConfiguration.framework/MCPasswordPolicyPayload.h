@@ -45,10 +45,10 @@
 - (id)isAlphanumericPasscodeRequired;
 - (id)isSimplePasscodeAllowed;
 - (id)minLength;
-- (id)restrictions;
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)restrictions;
 - (id)title;
 - (void).cxx_destruct;
 - (id)description;

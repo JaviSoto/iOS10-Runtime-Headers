@@ -21,7 +21,6 @@
 + (id)encodeWithCandidateResultSet:(id)arg1;
 + (id)decodeWithData:(id)arg1;
 
-- (void)setData:(id)arg1;
 - (void)setMutableData:(id)arg1;
 - (BOOL)decodeBool;
 - (void)encodeBool:(BOOL)arg1;
@@ -50,5 +49,6 @@
 - (id)data;
 - (const char *)bytes;
 - (void)dealloc;
+- (void)setData:(id)arg1;
 
 @end

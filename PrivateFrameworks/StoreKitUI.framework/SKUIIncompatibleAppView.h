@@ -18,13 +18,13 @@
 
 - (void)removeButtonTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)setIconImage:(id)arg1;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setBackgroundColor:(id)arg1;
 - (id)message;
 - (void).cxx_destruct;
 - (id)iconImage;
+- (void)setMessage:(id)arg1;
 - (id)addButtonWithTitle:(id)arg1;
 - (void)layoutSubviews;
 

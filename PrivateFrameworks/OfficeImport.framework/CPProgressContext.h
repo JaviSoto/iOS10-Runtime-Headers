@@ -25,8 +25,8 @@
 + (void)removeContextForCurrentThread;
 + (void)endStage;
 + (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;
-+ (void)setMessage:(id)arg1;
 + (double)currentPosition;
++ (void)setMessage:(id)arg1;
 + (void)setProgress:(double)arg1;
 
 - (id)rootStage;

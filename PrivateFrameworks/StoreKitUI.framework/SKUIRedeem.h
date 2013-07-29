@@ -46,13 +46,13 @@
 - (id)headerImage;
 - (void)setRedirectURL:(id)arg1;
 - (id)redirectURL;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)items;
 - (id)message;
 - (void).cxx_destruct;
 - (id)links;
+- (void)setMessage:(id)arg1;
 - (void)setItems:(id)arg1;
 
 @end

@@ -37,9 +37,9 @@
 - (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
 - (void)_notifyAttachmentCachedSizesChanged;
 - (void)_enqueueScaleAttachment:(id)arg1 withFlags:(unsigned int)arg2 originalSize:(unsigned int)arg3;
-- (void)removeAttachmentForURL:(id)arg1;
 - (void)setScalingThrottled:(BOOL)arg1;
 - (void)cancelImageScalingOperations;
+- (void)removeAttachmentForURL:(id)arg1;
 - (id)attachments;
 - (void)dealloc;
 - (id)description;

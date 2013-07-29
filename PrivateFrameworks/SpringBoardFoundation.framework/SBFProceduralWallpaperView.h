@@ -8,32 +8,27 @@
     <SBFProceduralWallpaper> *_proceduralWallpaper;
     NSTimer *_colorSampleTimer;
     UIImage *_blur;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _blurDestinationRect;
+    int _thermalNotificationToken;
+    BOOL _pausedForThermalReasons;
 }
 
++ (BOOL)_allowsRasterization;
 + (BOOL)_allowsParallax;
 
 - (void)wallpaper:(id)arg1 didComputeAverageColor:(id)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)wallpaper:(id)arg1 didGenerateBlur:(void*)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_sample;
 - (BOOL)_shouldSampleContinuously;
-- (id)_newImageFromBlurSurface:(void*)arg1;
+- (id)_newImageFromBlurSurface:(void*)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_updateSampleTimer;
+- (void)_updateAnimating;
+- (void)setWallpaperAnimationEnabled:(BOOL)arg1;
 - (void)setContinuousColorSamplingEnabled:(BOOL)arg1;
 - (BOOL)isDisplayingWallpaper:(id)arg1;
 - (void)_stopGeneratingBlurredImages;
 - (void)_startGeneratingBlurredImages;
 - (void)_handleVisibilityChange;
-- (id)_blurredImageWithDestinationRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (id)_blurredImage;
 - (void)_handleVariantChange;
 - (id)_computeAverageColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 proceduralWallpaper:(id)arg2;

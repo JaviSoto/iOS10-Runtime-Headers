@@ -12,7 +12,6 @@
 + (void)_setupForReplyAllWithModel:(id)arg1 delegate:(id)arg2;
 + (void)_setupForReplyWithModel:(id)arg1 delegate:(id)arg2;
 + (void)_quoteFromModel:(id)arg1 delegate:(id)arg2;
-+ (void)_addSignature:(BOOL)arg1 withDelegate:(id)arg2;
 + (void)_prependPreamble:(id)arg1 toBodyField:(id)arg2;
 + (void)_prependQuotedMarkup:(id)arg1 shouldIndent:(BOOL)arg2 toBodyField:(id)arg3;
 + (void)_setContent:(id)arg1 includeAttachments:(BOOL)arg2 shouldQuote:(BOOL)arg3 prependBlankLine:(BOOL)arg4 delegate:(id)arg5;

@@ -139,6 +139,7 @@
 - (void)setWifiEnabled:(BOOL)arg1;
 - (BOOL)isPeerBusy:(id)arg1;
 - (void)setAvailable:(BOOL)arg1;
+- (BOOL)isAvailable;
 - (int)sessionMode;
 - (void)disconnectPeerFromAllPeers:(id)arg1;
 - (void)denyConnectionFromPeer:(id)arg1;
@@ -154,7 +155,6 @@
 - (id)initWithSessionID:(id)arg1 displayName:(id)arg2 session:(id)arg3 sessionMode:(int)arg4;
 - (void)setServiceType:(id)arg1;
 - (id)serviceType;
-- (BOOL)isAvailable;
 - (id)sessionID;
 - (id)peerID;
 - (void)reset;

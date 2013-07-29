@@ -46,8 +46,8 @@
 - (id)aceId;
 - (id)encodedClassName;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
-- (id)dict;
 - (id)plistData;
+- (id)dict;
 - (id)init;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;

@@ -10,7 +10,8 @@
 }
 
 
-- (void)_callReplyHandlerForInvocation:(id)arg1 withError:(id)arg2;
+- (void)_callReplyHandler:(id)arg1 ofInvocation:(id)arg2 withError:(id)arg3;
+- (id)_copyReplyBlockFromInvocation:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1 protocol:(id)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

@@ -17,15 +17,15 @@
 
 
 - (id)viewsToHideWhileLoading;
-- (void)setLoadingState:(id)arg1;
 - (void)setViewsToHideWhileLoading:(id)arg1;
-- (void)setLoadingMachine:(id)arg1;
-- (id)loadingMachine;
 - (void)didExitLoadedState;
 - (void)didEnterLoadedState;
+- (void)setLoadingMachine:(id)arg1;
+- (id)loadingMachine;
+- (id)loadingState;
 - (void)didExitLoadingState;
 - (void)didEnterLoadingState;
-- (id)loadingState;
+- (void)setLoadingState:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)activityIndicator;

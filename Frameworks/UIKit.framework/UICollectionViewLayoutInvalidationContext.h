@@ -18,10 +18,10 @@
 
 
 - (void)dealloc;
-- (BOOL)invalidateEverything;
 - (BOOL)invalidateDataSourceCounts;
 - (void)_invalidateSupplementaryElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
 - (void)_setInvalidatedSupplementaryViews:(id)arg1;
+- (BOOL)invalidateEverything;
 - (id)_invalidatedSupplementaryViews;
 - (void)_setUpdateItems:(id)arg1;
 - (void)_setInvalidateEverything:(BOOL)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIColor, _UIBackdropView, UILabel, UIButton, _UISearchBarScopeBarBackground, UIBarButtonItem, UIView, NSArray, UISearchBarTextField, _UISearchBarNavigationItem, NSString, <UISearchBarDelegate>, UIImageView;
+@class UIImage, UIColor, _UIBackdropView, UILabel, UIButton, _UISearchBarScopeBarBackground, UIBarButtonItem, UIView, NSArray, UISearchBarTextField, _UISearchBarNavigationItem, UITapGestureRecognizer, NSString, <UISearchBarDelegate>, UIImageView;
 
 @interface UISearchBar : UIView <UIStatusBarTinting, _UIBarPositioningInternal, UIBarPositioning> {
     UISearchBarTextField *_searchField;
@@ -32,6 +32,7 @@
     _UIBackdropView *_backdrop;
     unsigned int _backdropStyle;
     UIView *_maskView;
+    UITapGestureRecognizer *_tapToActivateGestureRecognizer;
     struct { 
         unsigned int barStyle : 3; 
         unsigned int showsBookmarkButton : 1; 
@@ -87,9 +88,6 @@
 @property BOOL _forceCenteredPlaceholderLayout;
 @property(readonly) int barPosition;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)setController:(id)arg1;
 - (BOOL)resignFirstResponder;
@@ -110,9 +108,8 @@
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (void)_updateBackgroundWithBackdropSettings:(id)arg1;
+- (void)_updateBackgroundToBackdropStyle:(int)arg1;
 - (void)_setEnabled:(BOOL)arg1;
-- (BOOL)_isEnabled;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
 - (void)_setCancelButtonText:(id)arg1;
 - (BOOL)_textFieldShouldScrollToVisibleWhenBecomingFirstResponder:(id)arg1;
@@ -133,7 +130,6 @@
 - (unsigned int)_backdropStyle;
 - (void)_setBackdropStyle:(unsigned int)arg1;
 - (void)_setBackgroundLayoutNeedsUpdate:(BOOL)arg1;
-- (BOOL)_containedInNavigationPalette;
 - (id)_animatedAppearanceBarButtonItem;
 - (struct UIOffset { float x1; float x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
 - (void)setPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forSearchBarIcon:(int)arg2;
@@ -156,8 +152,6 @@
 - (BOOL)usesEmbeddedAppearance;
 - (BOOL)combinesLandscapeBars;
 - (void)setCombinesLandscapeBars:(BOOL)arg1;
-- (BOOL)drawsBackgroundInPalette;
-- (void)setDrawsBackgroundInPalette:(BOOL)arg1;
 - (void)_setShowsCancelButton:(BOOL)arg1;
 - (BOOL)showsCancelButton;
 - (BOOL)showsBookmarkButton;
@@ -173,7 +167,8 @@
 - (BOOL)_isAtTop;
 - (void)_cancelButtonPressed;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
-- (void)_updateMagnifyingGlassView;
+- (id)_glyphAndTextColor:(BOOL)arg1;
+- (void)_updateNeedForBackdrop;
 - (void)_effectiveBarTintColorDidChange:(BOOL)arg1;
 - (void)_setShowsScopeBar:(BOOL)arg1 animateOpacity:(BOOL)arg2;
 - (void)_setUpScopeBar;
@@ -193,18 +188,22 @@
 - (BOOL)_isInBar;
 - (void)_setBarTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (float)_landscapeScopeBarWidth;
+- (BOOL)drawsBackgroundInPalette;
+- (BOOL)_containedInNavigationPalette;
 - (void)_destroyCancelButton;
 - (void)_allowCursorToAppear:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_updateRightView;
 - (void)_bookmarkButtonPressed;
 - (void)_resultsListButtonPressed;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
+- (void)_updateMagnifyingGlassView;
+- (void)_updateRightView;
+- (void)_updatePlaceholderColor;
 - (void)_updateScopeBarBackground;
 - (id)_currentSeparatorImage;
 - (void)_updateSearchFieldArt;
 - (void)_setMaskBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setMaskActive:(BOOL)arg1;
+- (void)setDrawsBackgroundInPalette:(BOOL)arg1;
 - (BOOL)_shouldDisplayShadow;
 - (void)_setShadowVisibleIfNecessary:(BOOL)arg1;
 - (BOOL)centerPlaceholder;
@@ -222,13 +221,14 @@
 - (void)_scopeChanged:(id)arg1;
 - (void)setScopeButtonTitles:(id)arg1;
 - (void)_setupSearchField;
+- (void)tappedSearchBar:(id)arg1;
+- (void)_setMaskActive:(BOOL)arg1;
 - (void)setScopeBarBackgroundImage:(id)arg1;
 - (id)scopeBarBackgroundImage;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;
 - (void)setSearchFieldBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setShortcutConversionType:(int)arg1;
 - (int)shortcutConversionType;
-- (id)_placeholderColor;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (id)inputAccessoryView;
@@ -237,16 +237,18 @@
 - (id)_navigationItem;
 - (void)setCancelButton:(id)arg1;
 - (id)cancelButton;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldEndEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)setPlaceholder:(id)arg1;
+- (BOOL)_isEnabled;
 - (void)setKeyboardType:(int)arg1;
 - (void)setSpellCheckingType:(int)arg1;
 - (int)spellCheckingType;
 - (void)setAutocorrectionType:(int)arg1;
 - (int)autocorrectionType;
 - (void)setAutocapitalizationType:(int)arg1;
+- (void)setText:(id)arg1;
 - (id)barTintColor;
 - (id)backgroundImageForBarMetrics:(int)arg1;
 - (int)barPosition;
@@ -281,15 +283,14 @@
 - (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (void)setText:(id)arg1;
+- (id)_textColor;
 - (void)sendSubviewToBack:(id)arg1;
 - (void)layoutSubviews;
 - (void)bringSubviewToFront:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (id)_accessibilityFuzzyHitTestElements;
 
 @end

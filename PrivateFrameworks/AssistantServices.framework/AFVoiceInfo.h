@@ -19,8 +19,8 @@
 - (BOOL)isCustom;
 - (void)setIsCustom:(BOOL)arg1;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(BOOL)arg3;
-- (void)setGender:(int)arg1;
 - (int)gender;
+- (void)setGender:(int)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

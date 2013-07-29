@@ -59,6 +59,7 @@
 + (void)initialize;
 + (void)flushLog;
 
+- (unsigned int)bytesRead;
 - (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
 - (BOOL)readBytesIntoData:(id)arg1 desiredLength:(unsigned long)arg2;
@@ -83,13 +84,12 @@
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (BOOL)connectUsingFallbacksForAccount:(id)arg1;
 - (BOOL)isCellularConnection;
-- (unsigned int)bytesRead;
 - (double)lastUsedTime;
 - (id)capabilities;
-- (BOOL)loginDisabled;
-- (BOOL)writeData:(id)arg1;
 - (BOOL)isFetching;
+- (BOOL)loginDisabled;
 - (void)disconnect;
+- (BOOL)writeData:(id)arg1;
 - (BOOL)hasBytesAvailable;
 - (BOOL)isValid;
 - (void)dealloc;

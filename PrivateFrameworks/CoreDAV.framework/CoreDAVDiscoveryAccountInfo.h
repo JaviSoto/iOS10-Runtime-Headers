@@ -75,11 +75,10 @@
 - (void)setServerRoot:(id)arg1;
 - (id)serverRoot;
 - (id)additionalHeaderValues;
+- (id)principalURL;
 - (void)setSuccess:(BOOL)arg1;
 - (id)userAgentHeader;
 - (void)setHost:(id)arg1;
-- (id)principalURL;
-- (void)setScheme:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
 - (BOOL)success;
@@ -96,5 +95,6 @@
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)url;
+- (void)setScheme:(id)arg1;
 
 @end

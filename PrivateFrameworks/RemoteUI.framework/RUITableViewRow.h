@@ -63,8 +63,6 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)tableCell;
 - (void)setRowInvalid:(BOOL)arg1;
-- (void)setAttributes:(id)arg1;
-- (void)setData:(id)arg1;
 - (id)sourceURL;
 - (void)setHeight:(float)arg1;
 - (float)height;
@@ -73,9 +71,11 @@
 - (id)date;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setAttributes:(id)arg1;
 - (void)setDate:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (void)setData:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;

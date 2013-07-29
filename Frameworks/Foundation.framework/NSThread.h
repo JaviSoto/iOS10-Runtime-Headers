@@ -21,6 +21,8 @@
 + (double)threadPriority;
 + (id)currentThread;
 + (void)_im_runBlock:(id)arg1;
++ (void)_mapkit_runThread:(id)arg1;
++ (id)_mapkit_networkIOThread;
 
 - (id)init;
 - (id)name;
@@ -49,8 +51,5 @@
 - (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)__im_performBlock:(id)arg1 modes:(id)arg2;
 - (void)__im_performBlock:(id)arg1;
-- (BOOL)shouldStop;
-- (void)unregisterForStopNotification;
-- (void)registerForStopNotification;
 
 @end

@@ -19,12 +19,12 @@
 @property(retain) NSMutableArray * currentSelectedPlayerIDs;
 
 
-- (id)recentPlayersDataSource;
 - (BOOL)hasPlayer:(id)arg1;
 - (void)setCurrentSelectedPlayerIDs:(id)arg1;
 - (id)currentSelectedPlayerIDs;
 - (id)indexPathsForPlayerID:(id)arg1;
 - (void)notifyPickerItemsChanged:(id)arg1;
+- (id)recentPlayersDataSource;
 - (void)setNearbyPlayersDataSource:(id)arg1;
 - (id)nearbyPlayersDataSource;
 - (void)setRecentPlayersDataSource:(id)arg1;

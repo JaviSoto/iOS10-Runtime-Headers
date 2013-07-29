@@ -74,10 +74,11 @@
 @property(copy) NSString * label;
 
 
+- (void)setTextureTarget:(unsigned int)arg1;
+- (void)setHasAlpha:(BOOL)arg1;
 - (void)setFormat:(unsigned int)arg1;
 - (void)setReOrient:(BOOL)arg1;
 - (BOOL)reOrient;
-- (void)setHasAlpha:(BOOL)arg1;
 - (void)setIsVerticalFlipped:(BOOL)arg1;
 - (void)setIsMipmapped:(BOOL)arg1;
 - (BOOL)isMipmapped;
@@ -95,7 +96,6 @@
 - (unsigned int)numMipMapLevels;
 - (void)setTexelFormat:(int)arg1;
 - (void)setInternalFormat:(unsigned int)arg1;
-- (void)setTextureTarget:(unsigned int)arg1;
 - (void)setBindTarget:(unsigned int)arg1;
 - (void)setDataCategory:(int)arg1;
 - (void)setLoadMode:(int)arg1;

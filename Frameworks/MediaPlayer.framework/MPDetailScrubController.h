@@ -7,7 +7,6 @@
 @interface MPDetailScrubController : NSObject  {
     BOOL _didBeginTracking;
     BOOL _needsCommit;
-    unsigned int _skippedCommits;
     float _accumulatedDelta;
     struct CGPoint { 
         float x; 
@@ -45,9 +44,11 @@
 - (float)scrubbingVerticalRange;
 - (void)setScrubbingControl:(id)arg1;
 - (id)scrubbingControl;
+- (void)_endScrubbing;
 - (void)_commitValue:(float)arg1;
 - (float)_scaleForIdealValueForVerticalPosition:(float)arg1;
 - (float)_minimumScale;
+- (void)_beginScrubbing;
 - (int)currentScrubSpeed;
 - (float)scaleForVerticalPosition:(float)arg1;
 - (BOOL)durationAllowsForDetailedScrubbing;

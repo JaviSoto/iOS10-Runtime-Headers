@@ -15,9 +15,9 @@
 - (id)memberNameMeCardImage;
 - (float)memberNameFontSize;
 - (id)memberNameBoldFont;
+- (id)memberNameRegularFont;
 - (unsigned int)membersCountToShowIndex;
 - (struct CGSize { float x1; float x2; })memberNameShadowOffset;
-- (id)memberNameRegularFont;
 - (id)memberNameDisabledTextColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })memberNameInsets;
 - (id)cardPlaceholderCompanyImage;

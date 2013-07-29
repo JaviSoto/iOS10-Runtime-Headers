@@ -13,6 +13,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) SKUIColorScheme * colorScheme;
 @property <SKUIAccountButtonsDelegate> * delegate;
+@property(getter=isGiftingHidden) BOOL giftingHidden;
 @property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
 
 
@@ -31,7 +32,9 @@
 - (id)_buttonsView;
 - (void)_accountStoreChangedNotification:(id)arg1;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;
+- (void)setGiftingHidden:(BOOL)arg1;
 - (BOOL)isTermsAndConditionsHidden;
+- (BOOL)isGiftingHidden;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (void)setClientContext:(id)arg1;

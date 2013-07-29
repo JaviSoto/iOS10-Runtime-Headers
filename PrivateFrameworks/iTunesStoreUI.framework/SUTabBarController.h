@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPreviewOverlayViewController, _UIBackdropView, <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUViewController, UIViewController, NSArray;
+@class SUPreviewOverlayViewController, SUNavigationBarBackgroundView, <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUViewController, UIViewController, NSArray;
 
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate, _UIBasicAnimationFactory> {
     SUClientInterface *_clientInterface;
@@ -19,7 +19,7 @@
     NSString *_preloadedViewControllerKey;
     SUPreviewOverlayViewController *_previewOverlayViewController;
     int _storeBarStyle;
-    _UIBackdropView *_tabBarBackdropView;
+    SUNavigationBarBackgroundView *_tabBarBackdropView;
 }
 
 @property(readonly) SUClientInterface * clientInterface;
@@ -109,9 +109,9 @@
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (unsigned int)supportedInterfaceOrientations;

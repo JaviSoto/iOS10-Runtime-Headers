@@ -11,7 +11,10 @@
 
 - (id)appleIDForDSID:(unsigned long long)arg1;
 - (BOOL)setAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
+- (BOOL)_openDatabaseIsRetry:(BOOL)arg1;
 - (BOOL)_closeDatabase;
+- (BOOL)_clearCacheDatabase;
+- (BOOL)_internalSetAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
 - (id)_databasePath;
 - (BOOL)_openDatabase;
 - (id)init;

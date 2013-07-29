@@ -15,12 +15,12 @@
 @property(readonly) NSArray * handlers;
 
 
+- (id)handlers;
 - (void)removeHandler:(id)arg1;
 - (void)addHandler:(id)arg1;
 - (void)_noteDisconnected;
 - (BOOL)isSetupComplete;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
-- (id)handlers;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;

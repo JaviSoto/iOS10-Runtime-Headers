@@ -9,6 +9,7 @@
 }
 
 
+- (void)deleteAccount:(id)arg1;
 - (void)setStoredIntegerPropertyWithName:(id)arg1 value:(id)arg2;
 - (id)storedIntegerPropertyWithName:(id)arg1;
 - (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
@@ -53,6 +54,7 @@
 - (unsigned int)maximumRemoteIDForMailbox:(id)arg1;
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)oldestMessageInMailbox:(id)arg1;
+- (void)setServerUnreadOnlyOnServerCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)deletedCountForMailbox:(id)arg1;
 - (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
@@ -105,10 +107,10 @@
 - (unsigned int)nonDeletedCountForMailbox:(id)arg1;
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
 - (unsigned int)unreadCountForMailbox:(id)arg1;
+- (unsigned int)serverUnreadOnlyOnServerCountForMailbox:(id)arg1;
 - (int)createLibraryIDForAccount:(id)arg1;
 - (int)libraryIDForAccount:(id)arg1;
 - (BOOL)renameMailboxes:(id)arg1 to:(id)arg2;
-- (void)deleteAccount:(id)arg1;
 - (void)deleteMailboxes:(id)arg1;
 - (id)loadMeetingMetadataForMessage:(id)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;

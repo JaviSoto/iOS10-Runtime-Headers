@@ -60,11 +60,11 @@
 - (id)interactionControllerForDismissal:(id)arg1;
 - (id)animatorForDismissedController:(id)arg1;
 - (id)animatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)reloadData;

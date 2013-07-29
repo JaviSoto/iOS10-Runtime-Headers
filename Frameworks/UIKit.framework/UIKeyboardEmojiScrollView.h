@@ -20,8 +20,6 @@
 @property(retain) UIView * pressIndicator;
 @property BOOL whiteText;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setScrollDelay:(double)arg1;
 - (void)dealloc;
@@ -52,10 +50,5 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (BOOL)accessibilityScroll:(int)arg1;
-- (BOOL)isAccessibilityElement;
-- (void)_accessibilityScrollWithDirection:(int)arg1;
-- (void)_accessibilityUpdateContainerElements;
-- (id)accessibilityContainerElements;
 
 @end

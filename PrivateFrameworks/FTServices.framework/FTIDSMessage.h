@@ -33,8 +33,8 @@
 @property(copy) NSData * IDCertificate;
 
 
-- (BOOL)wantsBinaryPush;
 - (void)addAuthUserID:(id)arg1 certificate:(id)arg2 privateKey:(struct __SecKey { }*)arg3 publicKey:(struct __SecKey { }*)arg4;
+- (BOOL)wantsBinaryPush;
 - (id)selfURI;
 - (void)setUserIDArray:(id)arg1;
 - (void)setCertDataArray:(id)arg1;

@@ -24,6 +24,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -84,15 +86,15 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
+- (BOOL)canContributeToCloudSharedAlbum;
 - (void)persistRecoveryMetadata;
 - (id)_localizedRemoteOwnerAllowsEmail:(BOOL)arg1;
 - (id)albumDirectoryPath;
 - (void)deleteFromDatabaseOnly;
-- (id)_expectedKeyAsset;
+- (id)_expectedKeyAssets;
 - (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 andTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(BOOL)arg4;
 - (id)sectioningComparator;
 - (id)sortingComparator;
-- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;

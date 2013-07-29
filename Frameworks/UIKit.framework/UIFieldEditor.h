@@ -2,14 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextPosition, UIAutoscroll, UITextInputController, NSTimer, _UICascadingTextStorage, UITextField, UITextRange, <UITextInputTokenizer>, <UITextInputDelegate>, UIView, _UIFieldEditorContentView, NSDictionary, NSLayoutManager, NSTextContainer;
+@class UITextInputController, UIAutoscroll, NSTimer, UITextField, _UICascadingTextStorage, UITextPosition, UITextRange, <UITextInputTokenizer>, <UITextInputDelegate>, UIView, _UIFieldEditorContentView, NSDictionary, _UIFieldEditorLayoutManager, NSTextContainer;
 
 @interface UIFieldEditor : UIScrollView <UITextInputControllerDelegate, NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UITextInput, UITextAutoscrolling, UIKeyboardInput> {
     UITextInputController *_inputController;
     UITextField *_proxiedView;
     UIAutoscroll *_autoscroll;
     NSTextContainer *_textContainer;
-    NSLayoutManager *_layoutManager;
+    _UIFieldEditorLayoutManager *_layoutManager;
     _UICascadingTextStorage *_textStorage;
     struct { 
         unsigned int delegateRespondsToFieldEditorDidChange : 1; 
@@ -47,6 +47,7 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
 @property int layoutOrientation;
 @property NSTextContainer * textContainer;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property int spellCheckingType;
@@ -69,8 +70,6 @@
 + (id)sharedFieldEditor;
 + (id)activeFieldEditor;
 + (void)releaseSharedInstance;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -89,10 +88,14 @@
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (unsigned int)layoutManager:(id)arg1 shouldGenerateGlyphs:(const unsigned short*)arg2 properties:(const int*)arg3 characterIndexes:(const unsigned int*)arg4 font:(id)arg5 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layoutManager:(id)arg1 boundingBoxForControlGlyphAtIndex:(unsigned int)arg2 forTextContainer:(id)arg3 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 glyphPosition:(struct CGPoint { float x1; float x2; })arg5 characterIndex:(unsigned int)arg6;
+- (int)layoutManager:(id)arg1 shouldUseAction:(int)arg2 forControlCharacterAtIndex:(unsigned int)arg3;
 - (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
 - (void)invalidateTextContainerOrigin;
+- (void)layoutManager:(id)arg1 didCompleteLayoutForTextContainer:(id)arg2 atEnd:(BOOL)arg3;
 - (id)linkTextAttributes;
 - (int)layoutOrientation;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -108,7 +111,6 @@
 - (void)revealSelection;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
-- (id)attributedText;
 - (void)updateAutoscroll:(id)arg1;
 - (id)textColorForCaretSelection;
 - (id)_textSelectingContainer;
@@ -129,6 +131,7 @@
 - (id)_textStorage;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
@@ -159,10 +162,10 @@
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)deleteBackward;
 - (BOOL)_clearOnEditIfNeeded;
-- (BOOL)hasText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_unobscuredSecureRange;
 - (id)_layoutManager;
 - (void)clearText;
+- (BOOL)hasText;
 - (int)atomStyle;
 - (BOOL)drawsAsAtom;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 animated:(BOOL)arg2;
@@ -202,7 +205,10 @@
 - (void)becomeFieldEditorForView:(id)arg1;
 - (void)setNotificationsDisabled:(BOOL)arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContentView:(id)arg2;
+- (id)attributedText;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
@@ -210,9 +216,6 @@
 - (BOOL)isFirstResponder;
 - (id)_responderForBecomeFirstResponder;
 - (id)proxiedView;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (void)layoutSubviews;
-- (BOOL)isAccessibilityElement;
 
 @end

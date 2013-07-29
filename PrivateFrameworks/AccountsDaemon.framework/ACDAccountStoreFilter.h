@@ -12,12 +12,13 @@
 
 + (id)_whiteList;
 
-- (BOOL)_callerWithPID:(id)arg1 hasPermissionToAddAccount:(id)arg2;
+- (BOOL)_clientHasPermissionToAddAccount:(id)arg1;
 - (BOOL)_isClientPermittedToRemoveAccount:(id)arg1;
 - (BOOL)_isClientPermittedToAccessAccount:(id)arg1;
 - (BOOL)_accessGrantedForBundleID:(id)arg1 onAccountType:(id)arg2;
 - (BOOL)_isClientPermittedToAccessAccountType:(id)arg1;
 - (id)_appPermissionsForAccountTypeIdentifier:(id)arg1;
+- (BOOL)_wildCardAuthorizationMatchingForAccountTypeIdentifier:(id)arg1;
 - (BOOL)_accessGrantedForClient:(id)arg1 onAccountType:(id)arg2;
 - (void)setBackingAccountStore:(id)arg1;
 - (id)backingAccountStore;
@@ -26,8 +27,7 @@
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;
 - (void)isTetheredSyncingEnabledForDataclass:(id)arg1 completion:(id)arg2;
-- (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
-- (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
+- (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
 - (void)clearAllPermissionsGrantedForAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id)arg2;
@@ -37,11 +37,10 @@
 - (void)setPermissionGranted:(id)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3 withHandler:(id)arg4;
 - (void)appPermissionsForAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 withHandler:(id)arg3;
-- (void)insertAccountDataclass:(id)arg1 withHandler:(id)arg2;
 - (void)removeAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)insertAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
-- (void)saveAccount:(id)arg1 pid:(id)arg2 verify:(BOOL)arg3 dataclassActions:(id)arg4 completion:(id)arg5;
+- (void)saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
 - (void)canSaveAccount:(id)arg1 completion:(id)arg2;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)accessKeysForAccountType:(id)arg1 handler:(id)arg2;

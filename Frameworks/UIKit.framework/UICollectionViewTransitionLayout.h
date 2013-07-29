@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UICollectionViewLayout, NSArray, NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary, UICollectionViewLayout;
 
 @interface UICollectionViewTransitionLayout : UICollectionViewLayout  {
     UICollectionViewLayout *_fromLayout;
@@ -27,12 +27,14 @@
             float height; 
         } size; 
     } _toVisibleBounds;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _contentSize;
     BOOL _haveValidInfos;
     float _transitionProgress;
     NSMutableDictionary *_transitionInformationsDict;
     NSMutableDictionary *_currentLayoutInfos;
-    NSArray *_fromLayoutAttributes;
-    NSArray *_toLayoutAttributes;
     BOOL _layoutIsValid;
     NSMutableArray *_disappearingLayoutAttributes;
     NSMutableArray *_appearingLayoutAttributes;
@@ -45,8 +47,6 @@
 
 
 - (void)dealloc;
-- (id)toLayoutAttributes;
-- (id)fromLayoutAttributes;
 - (float)valueForAnimatedKey:(id)arg1;
 - (void)updateValue:(float)arg1 forAnimatedKey:(id)arg2;
 - (id)interpolatedLayoutAttributesFromLayoutAttributes:(id)arg1 toLayoutAttributes:(id)arg2 progress:(float)arg3;
@@ -54,10 +54,12 @@
 - (id)nextLayout;
 - (id)currentLayout;
 - (id)initWithCurrentLayout:(id)arg1 nextLayout:(id)arg2;
+- (void)_finalizeLayoutTransition;
 - (BOOL)_supportsAdvancedTransitionAnimations;
 - (void)setTransitionProgress:(float)arg1;
+- (void)_prepareForTransitionFromLayout:(id)arg1;
+- (void)_prepareForTransitionToLayout:(id)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setCollectionView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_newVisibleBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_oldVisibleBounds;

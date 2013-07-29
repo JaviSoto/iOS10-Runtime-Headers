@@ -42,11 +42,11 @@
 @property(readonly) NSPersistentStoreCoordinator * privatePSC;
 
 + (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id)arg2;
++ (void)executeBlockOnRootQueue:(id)arg1;
 + (id)createPrivateCoordinatorAndStoreForStore:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 + (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
 + (id)addPrivateStore:(id)arg1 toCoordinator:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
 + (id)createPrivateCoordinatorForStore:(id)arg1 error:(id*)arg2;
-+ (void)executeBlockOnRootQueue:(id)arg1;
 + (void)initialize;
 
 - (id)privatePSC;
@@ -60,7 +60,6 @@
 - (BOOL)throttleNotifications;
 - (void)scheduleBaselineRollResponseOperationForBaselineAtLocation:(id)arg1;
 - (int)compareScoreKnowledgeVector:(id)arg1 withScoreDictionary:(id)arg2;
-- (void)_applicationResumed:(id)arg1;
 - (BOOL)startMonitor:(id*)arg1;
 - (id)initWithLocalPeerID:(id)arg1 ubiquityRootLocation:(id)arg2 storeName:(id)arg3 andPrivateStore:(id)arg4;
 - (void)rollResponseOperation:(id)arg1 encounteredAnError:(id)arg2 whileTryingToAdoptBaseline:(id)arg3;
@@ -70,17 +69,15 @@
 - (void)baselineRollOperationWasUnableToLockPersistentStore:(id)arg1;
 - (void)baselineRollOperationEncounteredAnInconsistentBaselineState:(id)arg1;
 - (void)scheduleBaselineRecoveryOperationWithActiveBaselineOperation:(id)arg1;
+- (void)executeBlockOnPrivateQueue:(id)arg1;
 - (BOOL)allowBaselineRoll;
 - (void)setLogRestartTimer:(id)arg1;
 - (id)logRestartTimer;
+- (BOOL)discoverAndImportAllAvailableLogs:(BOOL)arg1 error:(id*)arg2;
 - (void)scheduleRecoveryTimer;
 - (void)postImportNotificationForStoreName:(id)arg1 andLocalPeerID:(id)arg2 withUserInfo:(id)arg3;
 - (BOOL)shouldThrottleNotificationsWithOperation:(id)arg1;
 - (id)createNewSetOfObjectIDsForCoordinator:(id)arg1 fromObjectIDs:(id)arg2;
-- (void)recoverFailedLogs;
-- (BOOL)discoverAndImportAllAvailableLogs:(BOOL)arg1 error:(id*)arg2;
-- (void)executeBlockOnPrivateQueue:(id)arg1;
-- (void)checkStoreAndContainer;
 - (BOOL)schedulePendingLogs:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
 - (BOOL)scheduleTransactionLogOperations:(id)arg1 synchronous:(BOOL)arg2 error:(id*)arg3;

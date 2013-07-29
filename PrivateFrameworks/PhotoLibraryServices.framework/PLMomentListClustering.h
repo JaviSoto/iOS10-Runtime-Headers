@@ -40,7 +40,7 @@
 - (id)_visitedMoments;
 - (id)_clustersByYearAndMonth;
 - (double)_maximumTimeThreshold;
-- (id)generateYearMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
+- (id)generateYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inManagedObjectContext:(id)arg4;
 - (id)generateMegaMomentListsForMoments:(id)arg1 inManagedObjectContext:(id)arg2;
 - (unsigned int)_minimumNumberOfAssetsToAvoidYearAccumulation;
 - (unsigned int)_minimumNumberOfAssetsToAvoidMegamomentAccumulation;

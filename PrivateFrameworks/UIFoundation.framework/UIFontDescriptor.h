@@ -19,12 +19,12 @@
 @property(readonly) unsigned int symbolicTraits;
 
 + (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
++ (id)fontDescriptorWithName:(id)arg1 size:(float)arg2;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1;
 + (id)preferredFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)preferredFontDescriptorWithTextStyle:(id)arg1;
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
 + (id)_createMungledDictionary:(id)arg1;
-+ (id)fontDescriptorWithName:(id)arg1 size:(float)arg2;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 

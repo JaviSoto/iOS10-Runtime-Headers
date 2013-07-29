@@ -12,9 +12,9 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)setUuid:(id)arg1;
 - (id)uuid;
 - (id)init;
+- (void)setUuid:(id)arg1;
 - (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;

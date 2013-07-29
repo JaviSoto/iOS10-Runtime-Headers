@@ -27,6 +27,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _resumeCallback;
 
+    long long _initialResumeSize;
 }
 
 @property(copy) id fileCompletion;
@@ -39,10 +40,13 @@
 @property bool didIssueNeedFinish;
 @property unsigned long totalWrote;
 @property(copy) id resumeCallback;
+@property long long initialResumeSize;
 
 
 - (BOOL)isKindOfClass:(Class)arg1;
 - (void)dealloc;
+- (void)setInitialResumeSize:(long long)arg1;
+- (long long)initialResumeSize;
 - (void)setResumeCallback:(id)arg1;
 - (id)resumeCallback;
 - (void)setTotalWrote:(unsigned long)arg1;
@@ -65,8 +69,8 @@
 - (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;
 - (void)_private_fileCompletion;
 - (void)writeAndResume;
-- (id)createResumeInformation:(id)arg1;
 - (void)_private_errorCompletion;
+- (id)createResumeInformation:(id)arg1;
 - (void)reportProgress:(unsigned long)arg1;
 - (void)checkWrite;
 - (void)setWriteBuffer:(id)arg1;

@@ -39,6 +39,7 @@
 
 + (id)secureCodedPropertyKeys;
 
+- (void)setLocalizedTitle:(id)arg1;
 - (unsigned short)friendRank;
 - (unsigned int)maxRange;
 - (void)setFriendRankCount:(unsigned short)arg1;
@@ -58,7 +59,6 @@
 - (id)playerScore;
 - (void)setScores:(id)arg1;
 - (id)scores;
-- (void)setLocalizedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (BOOL)isEqual:(id)arg1;

@@ -49,8 +49,12 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)jumpToCompositions;
 - (BOOL)hasPreviousPage;
+- (unsigned int)selectedSortIndex;
+- (id)statisticsIdentifier;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
+- (void)showPreviousRow;
+- (void)showNextRow;
 - (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;

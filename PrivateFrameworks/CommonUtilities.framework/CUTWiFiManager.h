@@ -30,8 +30,6 @@
 
 + (id)sharedInstance;
 
-- (void)addDelegate:(id)arg1;
-- (void)removeDelegate:(id)arg1;
 - (void)setLastWiFiPowerInfo:(id)arg1;
 - (id)lastWiFiPowerInfo;
 - (void)setDelegateMap:(id)arg1;
@@ -54,6 +52,8 @@
 - (BOOL)willTryToSearchForWiFiNetwork;
 - (BOOL)willTryToAutoAssociateWiFiNetwork;
 - (BOOL)isHostingWiFiHotSpot;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1;
 - (void)_createWiFiManager;
 - (id)init;
 - (void)dealloc;

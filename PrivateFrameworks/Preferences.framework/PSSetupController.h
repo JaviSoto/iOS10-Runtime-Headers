@@ -10,8 +10,6 @@
     PSRootController *_parentRootController;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)popControllerOnParent;
 - (void)pushControllerOnParentWithSpecifier:(id)arg1;
@@ -30,6 +28,5 @@
 - (void)dismiss;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillBecomeVisible:(void*)arg1;
 
 @end

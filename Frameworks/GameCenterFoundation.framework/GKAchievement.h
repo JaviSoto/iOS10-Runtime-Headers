@@ -37,13 +37,13 @@
 
 - (void)reportAchievementWithCompletionHandler:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 forPlayer:(id)arg2;
+- (BOOL)isCompleted;
 - (void)setGame:(id)arg1;
 - (BOOL)showsCompletionBanner;
 - (void)setShowsCompletionBanner:(BOOL)arg1;
 - (id)game;
 - (void)setInternal:(id)arg1;
 - (id)internal;
-- (BOOL)isCompleted;
 - (id)initWithIdentifier:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;

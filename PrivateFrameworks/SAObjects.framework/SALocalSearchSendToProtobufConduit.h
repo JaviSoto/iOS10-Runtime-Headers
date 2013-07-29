@@ -21,9 +21,9 @@
 - (id)rawRequest;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
-- (void)setAttributes:(id)arg1;
 - (void)setEndpoint:(id)arg1;
 - (id)endpoint;
+- (void)setAttributes:(id)arg1;
 - (id)attributes;
 - (id)groupIdentifier;
 

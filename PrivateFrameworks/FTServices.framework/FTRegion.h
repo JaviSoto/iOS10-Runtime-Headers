@@ -29,8 +29,8 @@
 - (id)basePhoneNumber;
 - (id)isoCode;
 - (id)subRegions;
-- (void)_setParentRegion:(id)arg1;
 - (id)regionID;
+- (void)_setParentRegion:(id)arg1;
 - (id)label;
 - (void)dealloc;
 - (id)description;

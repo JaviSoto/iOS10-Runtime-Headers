@@ -41,7 +41,6 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)dealloc;
 - (unsigned int)maximumNumberOfTouches;
-- (void)_setCanPanVertically:(BOOL)arg1;
 - (void)_setCanPanHorizontally:(BOOL)arg1;
 - (BOOL)_canPanVertically;
 - (BOOL)_canPanHorizontally;
@@ -66,6 +65,8 @@
 - (void)_resetVelocitySamples;
 - (id)_previousVelocitySample;
 - (id)_velocitySample;
+- (void)_willBeginAfterSatisfyingFailureRequirements;
+- (void)_setCanPanVertically:(BOOL)arg1;
 - (void)_resetGestureRecognizer;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;
 - (unsigned int)minimumNumberOfTouches;

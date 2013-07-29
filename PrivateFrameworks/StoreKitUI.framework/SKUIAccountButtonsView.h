@@ -23,6 +23,7 @@
 @property(readonly) UIButton * redeemButton;
 @property(readonly) UIButton * termsAndConditionsButton;
 @property(copy) SKUIColorScheme * colorScheme;
+@property(getter=isGiftingHidden) BOOL giftingHidden;
 @property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
 
 
@@ -31,8 +32,10 @@
 - (id)giftingButton;
 - (id)appleIDButton;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;
+- (void)setGiftingHidden:(BOOL)arg1;
 - (void)setAccountCredits:(id)arg1;
 - (BOOL)isTermsAndConditionsHidden;
+- (BOOL)isGiftingHidden;
 - (id)accountCredits;
 - (id)_termsChevronImage;
 - (void)_layoutForIPad;

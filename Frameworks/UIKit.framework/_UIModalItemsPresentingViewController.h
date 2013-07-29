@@ -6,19 +6,15 @@
    See Warning(s) below.
  */
 
-@class _UIModalItem, NSMutableArray, UIView;
+@class _UIModalItem, UIView, UIWindow, NSMutableArray;
 
 @interface _UIModalItemsPresentingViewController : UIViewController  {
     NSMutableArray *_items;
     NSMutableArray *_itemsViews;
+    NSMutableArray *_occludedWindows;
     UIView *_backgroundView;
     _UIModalItem *_currentItem;
     UIView *_currentItemView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _itemsTransitionCompletion;
-
     UIView *_dimmingView;
     struct CGRect { 
         struct CGPoint { 
@@ -34,24 +30,31 @@
     BOOL _isInTransition;
     _UIModalItem *_itemBeingPresented;
     _UIModalItem *_itemBeingDismissed;
+    UIWindow *_rotationDelegate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _itemsTransitionCompletion;
+
 }
 
 @property BOOL isInTransition;
-@property _UIModalItem * currentItem;
+@property(retain) _UIModalItem * currentItem;
 @property(retain) _UIModalItem * itemBeingPresented;
 @property(retain) _UIModalItem * itemBeingDismissed;
+@property(retain) UIWindow * rotationDelegate;
+@property(copy) id itemsTransitionCompletion;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
-- (void)setCurrentItem:(id)arg1;
 - (void)setIsInTransition:(BOOL)arg1;
+- (void)_updateItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_showItem:(id)arg1 animated:(BOOL)arg2 undimmSpotlight:(BOOL)arg3;
 - (void)_showDimmingView:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_hide;
 - (void)_showDimmingViewAnimated:(BOOL)arg1;
 - (void)_hideDimmingViewAnimated:(BOOL)arg1;
+- (void)_enqueueAdditionalTransitionCompletion:(id)arg1;
 - (void)_dismissMe:(id)arg1 animated:(BOOL)arg2;
 - (void)hideModalItem:(id)arg1 animated:(BOOL)arg2;
 - (void)displayModalItem:(id)arg1 animated:(BOOL)arg2;
@@ -63,24 +66,35 @@
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2;
 - (void)_applyPresentingAnimationStartingStateForModalItem:(id)arg1 view:(id)arg2;
-- (id)itemBeingPresented;
-- (id)itemBeingDismissed;
+- (id)itemsTransitionCompletion;
+- (void)_resaturateUI;
+- (void)_applyPresentingViewMetricsStateForModalItem:(id)arg1;
+- (void)_desaturateUI;
 - (id)_createViewForItem:(id)arg1;
 - (void)_dismissItem:(id)arg1 andPresentItem:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)_applyDismissingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
+- (id)itemBeingDismissed;
 - (void)_applyPresentingAnimationEndingStateForModalItem:(id)arg1 view:(id)arg2 forceCenter:(BOOL)arg3;
+- (id)itemBeingPresented;
 - (BOOL)isInTransition;
 - (void)keyboardChanged:(id)arg1;
 - (void)keyfirstResponderChanged:(id)arg1;
+- (void)setCurrentItem:(id)arg1;
+- (void)setItemsTransitionCompletion:(id)arg1;
 - (void)setItemBeingDismissed:(id)arg1;
 - (void)setItemBeingPresented:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)setRotationDelegate:(id)arg1;
+- (id)rotationDelegate;
+- (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (BOOL)wantsFullScreenLayout;
 - (unsigned int)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
 - (void)didReceiveMemoryWarning;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

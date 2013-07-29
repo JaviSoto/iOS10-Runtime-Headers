@@ -50,6 +50,8 @@
 
 
 - (void)setInterfaces:(id)arg1;
+- (void)setDeviceID:(id)arg1;
+- (id)deviceID;
 - (id)resolveTimeoutHandler;
 - (void)setDiscoveryTimeStamp:(double)arg1;
 - (double)discoveryTimeStamp;
@@ -78,11 +80,9 @@
 - (BOOL)shouldSignalDiscovery;
 - (id)playerID;
 - (BOOL)parseServiceNameForInit:(id)arg1;
+- (void)setServiceName:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)syncQueue;
-- (void)setServiceName:(id)arg1;
-- (void)setDeviceID:(id)arg1;
-- (id)deviceID;
 - (void)timeout:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;

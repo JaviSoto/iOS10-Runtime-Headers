@@ -19,11 +19,11 @@
 - (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2;
 - (void)requestKeepAlive;
-- (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)isActive;
 - (id)account;
+- (void)removeDelegate:(id)arg1;
 - (void)dealloc;
 
 @end

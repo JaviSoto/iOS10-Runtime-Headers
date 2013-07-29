@@ -129,5 +129,7 @@
 - (void)setWindow:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (id)view;
+- (struct CGPoint { float x1; float x2; })previousLocationInNode:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationInNode:(id)arg1;
 
 @end

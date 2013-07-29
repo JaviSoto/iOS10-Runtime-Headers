@@ -22,11 +22,11 @@
 + (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 
-- (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
 - (void)setRemoteAccountStore:(id)arg1;
 - (id)remoteAccountStore;
 - (id)effectiveBundleID;
-- (id)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2;
+- (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
+- (void)accountWithIdentifier:(id)arg1 completion:(id)arg2;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;
 - (BOOL)isTetheredSyncingEnabledForDataclass:(id)arg1;
@@ -56,16 +56,16 @@
 - (id)credentialForAccount:(id)arg1;
 - (id)allDataclasses;
 - (id)allAccountTypes;
+- (void)promptForWebLoginForAccount:(id)arg1 atURL:(id)arg2 callbackURL:(id)arg3 force:(BOOL)arg4 reason:(id)arg5 completion:(id)arg6;
 - (void)renewCredentialsForAccount:(id)arg1 completion:(id)arg2;
+- (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
 - (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(BOOL)arg3 completion:(id)arg4;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
-- (void)saveAccount:(id)arg1 forPID:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)saveAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)canSaveAccount:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)insertAccountDataclass:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeAccountType:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)insertAccountType:(id)arg1 withCompletionHandler:(id)arg2;
@@ -73,22 +73,22 @@
 - (id)accountsWithAccountType:(id)arg1;
 - (id)accounts;
 - (void)accountTypeWithIdentifier:(id)arg1 completion:(id)arg2;
-- (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)initWithEffectiveBundleID:(id)arg1;
 - (id)initWithRemoteEndpoint:(id)arg1;
+- (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
 - (id)credentialForAccount:(id)arg1 error:(id*)arg2;
-- (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
-- (void)_saveAccount:(id)arg1 forPID:(id)arg2 verify:(BOOL)arg3 dataclassActions:(id)arg4 completion:(id)arg5;
-- (id)_remoteAccountStore;
-- (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
+- (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
+- (id)_remoteAccountStore;
+- (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
 - (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id)arg2;
 - (void)disconnectFromRemoteAccountStore;
 - (void)_connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
-- (id)_initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
+- (id)initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
 - (id)displayTypeForAccountWithIdentifier:(id)arg1;
 - (id)init;
 - (void)dealloc;
@@ -107,9 +107,13 @@
 - (id)aa_appleAccountType;
 - (id)aa_primaryAppleAccount;
 - (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
-- (id)da_accounts;
-- (id)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3;
 - (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
 - (id)da_accountsEnabledForDADataclasses:(int)arg1;
+- (id)da_accounts;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 withCompletion:(id)arg3;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 withCompletion:(id)arg2;
+- (void)da_loadDAAccountsEnabledForDADataclasses:(int)arg1 withCompletion:(id)arg2;
+- (void)da_loadDAAccountsWithCompletion:(id)arg1;
+- (void)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3 withCompletion:(id)arg4;
 
 @end

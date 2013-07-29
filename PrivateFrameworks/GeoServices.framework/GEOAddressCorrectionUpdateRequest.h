@@ -20,6 +20,10 @@
 @property(retain) NSString * addressID;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)significantLocations;
 - (void)setHasCorrectionStatus:(BOOL)arg1;
 - (id)addressID;
@@ -34,10 +38,6 @@
 - (void)setAddressID:(id)arg1;
 - (void)setSignificantLocations:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

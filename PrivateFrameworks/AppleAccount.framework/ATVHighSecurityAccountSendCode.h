@@ -2,15 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
+@class NSDictionary;
 
 @interface ATVHighSecurityAccountSendCode : AAAppleTVRequest  {
-    NSString *_deviceId;
+    NSDictionary *_device;
 }
 
 + (Class)responseClass;
 
-- (id)initWithAccount:(id)arg1 deviceId:(id)arg2;
+- (id)initWithAccount:(id)arg1 device:(id)arg2;
 - (id)urlString;
 - (id)urlRequest;
 - (void).cxx_destruct;

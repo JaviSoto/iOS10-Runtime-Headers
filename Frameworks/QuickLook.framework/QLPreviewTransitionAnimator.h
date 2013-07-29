@@ -2,17 +2,29 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
+@class QLPreviewController, <UIViewControllerContextTransitioning>;
+
 @interface QLPreviewTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning> {
     BOOL showing;
+    <UIViewControllerContextTransitioning> *_transitionContext;
 }
 
+@property <UIViewControllerContextTransitioning> * transitionContext;
 @property BOOL showing;
+@property(readonly) QLPreviewController * previewController;
 
 
 - (void)setShowing:(BOOL)arg1;
+- (void)updateStatusBarWithDuration:(double)arg1;
+- (void)didTransitionWithAnimationEnding:(BOOL)arg1;
+- (void)willTransitionWithAnimationEnding:(BOOL)arg1;
+- (int)_transitionStateForAnimationEnding:(BOOL)arg1;
 - (BOOL)showing;
+- (id)previewController;
 - (void)startInteractiveTransition:(id)arg1;
+- (id)transitionContext;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
+- (void)setTransitionContext:(id)arg1;
 
 @end

@@ -10,13 +10,13 @@
 
 
 - (oneway void)speechDidRecognizePhrases:(id)arg1 usingSpeechModel:(id)arg2 correctionContext:(id)arg3;
+- (oneway void)speechRecordingDidBegin;
 - (id)initWithDictationConnection:(id)arg1;
 - (oneway void)speechRecognitionDidFail:(id)arg1;
 - (oneway void)speechRecordingDidFail:(id)arg1;
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
-- (oneway void)speechRecordingDidBegin;
 - (oneway void)speechRecordingWillBegin;
 - (void).cxx_destruct;
 

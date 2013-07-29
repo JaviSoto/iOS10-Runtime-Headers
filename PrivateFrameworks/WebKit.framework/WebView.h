@@ -106,11 +106,7 @@
 + (id)_productivityDocumentMIMETypes;
 + (void)_addUserStyleSheetToGroup:(id)arg1 world:(id)arg2 source:(id)arg3 url:(id)arg4 whitelist:(id)arg5 blacklist:(id)arg6;
 + (void)_removeUserStyleSheetsFromGroup:(id)arg1 world:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)stopSpeaking:(id)arg1;
-- (id)typingStyle;
 - (BOOL)isEditable;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)viewDidMoveToWindow;
@@ -142,6 +138,7 @@
 - (void)_insertNewlineInQuotedContent;
 - (void)toggleBaseWritingDirection:(id)arg1;
 - (void)takeFindStringFromSelection:(id)arg1;
+- (void)stopSpeaking:(id)arg1;
 - (void)startSpeaking:(id)arg1;
 - (void)showGuessPanel:(id)arg1;
 - (void)performFindPanelAction:(id)arg1;
@@ -174,6 +171,7 @@
 - (BOOL)isAutomaticLinkDetectionEnabled;
 - (BOOL)isAutomaticQuoteSubstitutionEnabled;
 - (id)styleDeclarationWithText:(id)arg1;
+- (id)typingStyle;
 - (id)editableDOMRangeForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
 - (BOOL)_continuousCheckingAllowed;
@@ -247,6 +245,7 @@
 - (BOOL)_wantsTelephoneNumberParsing;
 - (unsigned int)countMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 highlight:(BOOL)arg3 limit:(unsigned int)arg4 markMatches:(BOOL)arg5;
 - (unsigned int)markAllMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 highlight:(BOOL)arg3 limit:(unsigned int)arg4;
+- (int)_visibilityState;
 - (unsigned int)_layoutMilestones;
 - (void)_listenForLayoutMilestones:(unsigned int)arg1;
 - (void)_setUseFixedLayout:(BOOL)arg1;
@@ -484,7 +483,7 @@
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_userAgentString;
 - (void)_restorePlugInsFromCache;
 - (void)_stopAllPlugInsForPageCache;
-- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_8_1_1; } x8; double x9; boolx10; struct IntPoint { int x_11_1_1; int x_11_1_2; } x11; float x12; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_13_1_1; unsigned int x_13_1_2; unsigned int x_13_1_3; } x13; struct Vector<WTF::RefPtr<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::HistoryItem> {} *x_14_1_1; unsigned int x_14_1_2; unsigned int x_14_1_3; } x14; boolx15; boolx16; int x17; struct Vector<int, 0, WTF::CrashOnOverflow> { int *x_18_1_1; unsigned int x_18_1_2; unsigned int x_18_1_3; } x18; struct Vector<int, 0, WTF::CrashOnOverflow> { int *x_19_1_1; unsigned int x_19_1_2; unsigned int x_19_1_3; } x19; struct OwnPtr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow> > { struct Vector<WTF::String, 0, WTF::CrashOnOverflow> {} *x_20_1_1; } x20; long long x21; long long x22; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_23_1_1; } x23; struct RefPtr<WebCore::FormData> { struct FormData {} *x_24_1_1; } x24; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_25_1_1; } x25; struct HistoryItem {} *x26; struct HistoryItem {} *x27; struct RefPtr<WebCore::CachedPage> { struct CachedPage {} *x_28_1_1; } x28; float x29; boolx30; struct ViewportArguments { int x_31_1_1; float x_31_1_2; float x_31_1_3; float x_31_1_4; float x_31_1_5; float x_31_1_6; float x_31_1_7; float x_31_1_8; float x_31_1_9; float x_31_1_10; float x_31_1_11; float x_31_1_12; } x31; struct RetainPtr<id> { id x_32_1_1; } x32; struct OwnPtr<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > > { struct HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > {} *x_33_1_1; } x33; }*)arg1;
+- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_8_1_1; } x8; double x9; boolx10; struct IntPoint { int x_11_1_1; int x_11_1_2; } x11; float x12; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_13_1_1; unsigned int x_13_1_2; unsigned int x_13_1_3; } x13; struct Vector<WTF::RefPtr<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::HistoryItem> {} *x_14_1_1; unsigned int x_14_1_2; unsigned int x_14_1_3; } x14; boolx15; boolx16; int x17; struct Vector<int, 0, WTF::CrashOnOverflow> { int *x_18_1_1; unsigned int x_18_1_2; unsigned int x_18_1_3; } x18; struct Vector<int, 0, WTF::CrashOnOverflow> { int *x_19_1_1; unsigned int x_19_1_2; unsigned int x_19_1_3; } x19; struct OwnPtr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow> > { struct Vector<WTF::String, 0, WTF::CrashOnOverflow> {} *x_20_1_1; } x20; long long x21; long long x22; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_23_1_1; } x23; struct RefPtr<WebCore::FormData> { struct FormData {} *x_24_1_1; } x24; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_25_1_1; } x25; struct HistoryItem {} *x26; struct HistoryItem {} *x27; struct RefPtr<WebCore::CachedPage> { struct CachedPage {} *x_28_1_1; } x28; float x29; boolx30; struct ViewportArguments { int x_31_1_1; float x_31_1_2; float x_31_1_3; float x_31_1_4; float x_31_1_5; float x_31_1_6; float x_31_1_7; float x_31_1_8; float x_31_1_9; float x_31_1_10; float x_31_1_11; float x_31_1_12; } x31; unsigned int x32; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_33_1_1; } x33; struct RetainPtr<id> { id x_34_1_1; } x34; struct OwnPtr<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > > { struct HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > {} *x_35_1_1; } x35; }*)arg1;
 - (id)_downloadURL:(id)arg1;
 - (void)setMainFrameDocumentReady:(BOOL)arg1;
 - (double)estimatedProgress;
@@ -624,9 +623,6 @@
 - (void)setEditable:(BOOL)arg1;
 - (int)selectionAffinity;
 - (void)setDefersCallbacks:(BOOL)arg1;
-- (id)accessibilityContainer;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 - (id)_quickLookContentFilePath;
 - (BOOL)_createSymlinkInDirectory:(id)arg1 pointingToPath:(id)arg2;
 - (BOOL)_writeDataAtPath:(id)arg1 asArchive:(BOOL)arg2;

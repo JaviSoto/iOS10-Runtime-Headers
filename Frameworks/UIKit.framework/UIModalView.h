@@ -83,11 +83,7 @@
 + (id)visibleAlert;
 + (id)_popupAlertBackground;
 + (void)noteOrientationChangingTo:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)_setTextFieldsHidden:(BOOL)arg1;
-- (void)setMessage:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -141,6 +137,7 @@
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)destructiveButton;
 - (void)setDestructiveButton:(id)arg1;
+- (void)_setTextFieldsHidden:(BOOL)arg1;
 - (int)bodyMaxLineCount;
 - (void)setBodyTextMaxLineCount:(int)arg1;
 - (int)titleMaxLineCount;
@@ -203,6 +200,7 @@
 - (id)_addButtonWithTitleText:(id)arg1;
 - (id)keyboard;
 - (BOOL)_isAnimating;
+- (id)tableView;
 - (id)textField;
 - (void)setDefaultButtonIndex:(int)arg1;
 - (void)setRunsModal:(BOOL)arg1;
@@ -212,7 +210,7 @@
 - (void)setNumberOfRows:(int)arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (void)dismiss;
-- (id)tableView;
+- (void)setMessage:(id)arg1;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)userDidCancelPopoverView:(id)arg1;
@@ -221,8 +219,8 @@
 - (id)_defaultButton;
 - (void)setDefaultButton:(id)arg1;
 - (id)defaultButton;
-- (id)textFieldAtIndex:(int)arg1;
 - (float)_maxHeight;
+- (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
 - (int)numberOfRows;
 - (BOOL)canBecomeFirstResponder;
@@ -231,9 +229,5 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)cancelButtonIndex;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

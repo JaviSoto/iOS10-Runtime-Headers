@@ -25,7 +25,6 @@
 - (id)makeTextFontForStyle:(int)arg1;
 - (id)expandedNameForImageName:(id)arg1;
 - (float)textOffsetForStyle:(int)arg1;
-- (id)textColorForStyle:(int)arg1;
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
@@ -39,6 +38,7 @@
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2 tintColor:(id)arg3 backgroundColor:(id)arg4;
 - (id)uniqueIdentifier;
 - (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
+- (id)textColorForStyle:(int)arg1;
 - (id)tintColor;
 
 @end

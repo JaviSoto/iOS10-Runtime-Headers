@@ -20,8 +20,6 @@
 @property BOOL clearsSelectionOnViewWillAppear;
 @property(retain) UIRefreshControl * refreshControl;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)init;
 - (BOOL)respondsToSelector:(SEL)arg1;
@@ -33,12 +31,12 @@
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (BOOL)clearsSelectionOnViewWillAppear;
 - (id)_existingTableView;
-- (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (id)tableView;
+- (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

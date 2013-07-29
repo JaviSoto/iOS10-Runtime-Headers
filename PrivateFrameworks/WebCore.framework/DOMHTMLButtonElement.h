@@ -42,8 +42,8 @@
 - (void)setDisabled:(BOOL)arg1;
 - (id)name;
 - (int)structuralComplexityContribution;
-- (id)form;
 - (BOOL)disabled;
+- (id)form;
 - (id)type;
 - (void)setValue:(id)arg1;
 - (id)value;

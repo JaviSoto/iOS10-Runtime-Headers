@@ -12,11 +12,15 @@
 
 - (BOOL)drawGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5 stylePresetName:(id)arg6 styleConfiguration:(id)arg7 foregroundColor:(struct CGColor { }*)arg8;
 - (void)clearCachedImageResources;
+- (BOOL)fillStyledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
+- (BOOL)strokeStyledPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
 - (int)artVariantIDOrZero;
 - (unsigned int)_themeRef;
 - (id)imageWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3;
 - (id)imageWithName:(id)arg1 scaleFactor:(float)arg2;
 - (id)newShapeEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
+- (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id)arg5;
+- (BOOL)fillStyledPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
 - (id)newTextEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
 - (BOOL)requiredDrawOfUnstyledGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5;
 - (id)newShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;

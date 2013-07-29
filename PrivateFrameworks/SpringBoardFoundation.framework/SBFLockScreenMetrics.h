@@ -5,7 +5,8 @@
 @interface SBFLockScreenMetrics : NSObject  {
 }
 
-+ (float)slideToUnlockInset;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideToUnlockInsets;
++ (float)slideToUnlockOverlayMargin;
 + (float)slideToUnlockFontSize;
 + (float)cameraGrabberInset;
 + (float)dateViewBaselineY;

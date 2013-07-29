@@ -50,6 +50,7 @@
 - (BOOL)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (void)passcodeEntryFieldDidAcceptEntry:(id)arg1;
+- (float)_statusTitleWidth;
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (void)_toggleForStatusField;
@@ -57,6 +58,7 @@
 - (float)backgroundAlpha;
 - (id)passcode;
 - (void)resetForFailedPasscode;
+- (void)_updateStatusText:(id)arg1;
 - (void)_luminanceBoostDidChange;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;

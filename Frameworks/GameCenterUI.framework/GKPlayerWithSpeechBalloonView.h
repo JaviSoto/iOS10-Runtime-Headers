@@ -24,10 +24,10 @@
 + (id)instantiatePhotoContainer;
 + (BOOL)requiresConstraintBasedLayout;
 
+- (id)photoView;
 - (void)setBalloonView:(id)arg1;
 - (id)balloonView;
 - (void)setPhotoView:(id)arg1;
-- (id)photoView;
 - (void)setSpeechTextView:(id)arg1;
 - (void)setSpeechText:(id)arg1;
 - (id)speechTextView;

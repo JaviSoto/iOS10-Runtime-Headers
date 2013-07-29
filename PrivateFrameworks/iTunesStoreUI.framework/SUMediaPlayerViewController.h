@@ -42,10 +42,10 @@
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (id)init;
 - (void)dealloc;
-- (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
 
 @end

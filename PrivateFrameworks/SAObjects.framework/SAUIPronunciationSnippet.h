@@ -7,6 +7,7 @@
 @interface SAUIPronunciationSnippet : SAUISnippet  {
 }
 
+@property(copy) NSArray * cancelCommands;
 @property(copy) NSString * interactionId;
 @property(copy) NSString * orthography;
 @property(copy) NSArray * pronunciations;
@@ -22,6 +23,8 @@
 - (id)selectNoneCommands;
 - (void)setPronunciations:(id)arg1;
 - (id)pronunciations;
+- (void)setCancelCommands:(id)arg1;
+- (id)cancelCommands;
 - (void)setInteractionId:(id)arg1;
 - (id)interactionId;
 - (void)setOrthography:(id)arg1;

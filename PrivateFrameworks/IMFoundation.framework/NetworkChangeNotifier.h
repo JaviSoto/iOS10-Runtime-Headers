@@ -37,6 +37,8 @@
 - (id)myIPs;
 - (void)setMyIP:(id)arg1;
 - (id)myIP;
+- (id)primaryInterfaceName;
+- (BOOL)isPrimaryCellular;
 - (BOOL)isNetworkUp;
 - (unsigned int)linkQualityForInterfaceType:(unsigned int)arg1;
 - (struct __SCDynamicStore { }*)getDynamicStore;

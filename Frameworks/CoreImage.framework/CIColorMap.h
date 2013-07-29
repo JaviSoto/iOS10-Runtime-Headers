@@ -25,5 +25,6 @@
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
+- (void)dealloc;
 
 @end

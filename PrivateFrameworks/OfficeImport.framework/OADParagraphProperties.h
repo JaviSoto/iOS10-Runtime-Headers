@@ -80,7 +80,6 @@
 - (BOOL)hasAfterSpacing;
 - (id)beforeSpacing;
 - (BOOL)hasBeforeSpacing;
-- (BOOL)hasLineSpacing;
 - (BOOL)hasIndent;
 - (BOOL)hasLeftMargin;
 - (BOOL)hasAlign;
@@ -96,6 +95,7 @@
 - (double)indent;
 - (void)setBulletProperties:(id)arg1;
 - (void)setIndent:(double)arg1;
+- (BOOL)hasLineSpacing;
 - (void)setRightMargin:(double)arg1;
 - (void)setLeftMargin:(double)arg1;
 - (double)rightMargin;

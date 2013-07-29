@@ -17,8 +17,8 @@
     int _numTimeoutSecs;
     BOOL _allowsTrustPrompt;
     BOOL _usesOpportunisticSockets;
-    BOOL _canRead;
-    BOOL _canWrite;
+    BOOL _socketCanRead;
+    BOOL _socketCanWrite;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_accountIdentifier;
 }

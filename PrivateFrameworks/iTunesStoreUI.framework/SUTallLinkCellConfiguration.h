@@ -7,8 +7,6 @@
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)showContentRating;
 - (id)copyImageDataProvider;
@@ -18,6 +16,5 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
-- (id)accessibilityLabel;
 
 @end

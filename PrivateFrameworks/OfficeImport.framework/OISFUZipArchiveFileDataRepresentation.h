@@ -14,9 +14,9 @@
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)inputStream;
+- (BOOL)isEncrypted;
 - (long long)dataLength;
 - (BOOL)isReadable;
-- (BOOL)isEncrypted;
 - (void)dealloc;
 - (id)path;
 - (id)initWithPath:(id)arg1;

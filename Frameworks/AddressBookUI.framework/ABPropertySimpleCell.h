@@ -33,10 +33,15 @@
 @property(retain) UIImageView * chevron;
 
 
+- (void)setChevron:(id)arg1;
 - (void)textFieldChanged:(id)arg1;
 - (id)actionsColor;
 - (void)setLabelValueSpacing:(float)arg1;
 - (float)labelValueSpacing;
+- (void)setTransportAction2:(id)arg1;
+- (id)transportAction2;
+- (void)setTransportAction1:(id)arg1;
+- (id)transportAction1;
 - (void)setStar:(id)arg1;
 - (void)setVseparator:(id)arg1;
 - (id)_constraintsToOverlapView:(id)arg1 onView:(id)arg2;
@@ -46,14 +51,10 @@
 - (void)labelButtonClicked:(id)arg1;
 - (void)updateTransportButtons;
 - (id)star;
+- (void)setTextField:(id)arg1;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
-- (void)setChevron:(id)arg1;
 - (id)chevron;
-- (void)setTransportAction2:(id)arg1;
-- (id)transportAction2;
-- (void)setTransportAction1:(id)arg1;
-- (id)transportAction1;
 - (id)transportIcon2;
 - (id)transportIcon1;
 - (void)transportButtonClicked:(id)arg1;
@@ -66,7 +67,6 @@
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;
 - (void)setAllowsActions:(BOOL)arg1;
-- (void)setTextField:(id)arg1;
 - (void)dealloc;
 - (id)textField;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

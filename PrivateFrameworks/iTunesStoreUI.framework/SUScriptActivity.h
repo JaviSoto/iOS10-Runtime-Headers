@@ -34,12 +34,12 @@
 - (id)actionFunction;
 - (void)setActivityImageWithURL:(id)arg1 scale:(id)arg2;
 - (void)setActivityImageWithName:(id)arg1;
-- (void)setActivityType:(id)arg1;
 - (void)setActivityTitle:(id)arg1;
 - (id)_nativeActivity;
 - (id)nativeActivity;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (void)setActivityType:(id)arg1;
 - (id)attributeKeys;
 - (void)dealloc;
 - (id)activityType;

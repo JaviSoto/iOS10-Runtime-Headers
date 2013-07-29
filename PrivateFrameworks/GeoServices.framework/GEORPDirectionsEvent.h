@@ -50,12 +50,15 @@
 @property long long errorCode;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasSynthesizedStepManeuverType:(BOOL)arg1;
 - (void)setHasSwitchedToResponseIndex:(BOOL)arg1;
 - (void)setHasOccurrenceStepIndex:(BOOL)arg1;
 - (void)setHasOccurrenceResponseIndex:(BOOL)arg1;
 - (BOOL)hasErrorCode;
+- (id)errorDomain;
 - (BOOL)hasErrorDomain;
 - (id)synthesizedStepInstructions;
 - (BOOL)hasSynthesizedStepInstructions;
@@ -85,9 +88,6 @@
 - (void)setHasType:(BOOL)arg1;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)errorDomain;
 - (void)setErrorCode:(long long)arg1;
 - (long long)errorCode;
 - (void)setType:(int)arg1;

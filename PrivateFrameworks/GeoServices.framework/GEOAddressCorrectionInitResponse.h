@@ -21,6 +21,8 @@
 @property(retain) NSString * addressID;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)addressLocation;
 - (BOOL)hasAddressLocation;
 - (void)setAddressLocation:(id)arg1;
@@ -31,13 +33,11 @@
 - (BOOL)hasAddressID;
 - (void)setAddressID:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)dictionaryRepresentation;
 - (int)statusCode;
+- (id)dictionaryRepresentation;
 
 @end

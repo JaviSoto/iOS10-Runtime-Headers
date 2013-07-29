@@ -29,12 +29,11 @@
 - (BOOL)_updateAVState;
 - (id)_flexibleSpaceItem;
 - (BOOL)_updateActionItem;
-- (id)_listDescriptionString;
+- (id)_listDescriptionStringWithTitle:(id)arg1;
 - (id)_indexFormatter;
 - (BOOL)_needsToolbar;
 - (BOOL)_needsAVControls;
 - (void)wirelessRoutesDidChange:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameWithoutOverlay;
 - (BOOL)canPrint;
 - (void)navigationGoBackAction:(id)arg1;
 - (void)playButtonAction:(id)arg1;
@@ -130,15 +129,17 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didReceiveMemoryWarning;
+- (BOOL)prefersStatusBarHidden;
+- (int)preferredStatusBarStyle;
 - (void)reloadData;
 
 @end

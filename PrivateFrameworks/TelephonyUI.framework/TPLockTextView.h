@@ -18,8 +18,6 @@
 
 @property(readonly) float deltaFromDefaultTrackWidth;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (float)deltaFromDefaultTrackWidth;
 - (float)fps;
@@ -33,7 +31,5 @@
 - (BOOL)isAnimating;
 - (void)stopAnimation;
 - (void)movedFromWindow:(id)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

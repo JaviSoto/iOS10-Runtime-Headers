@@ -110,7 +110,5 @@
 - (id)_web_parentWebFrameView;
 - (id)_frame;
 - (id)_webView;
-- (oneway void)_webcore_releaseWithWebThreadLock;
-- (oneway void)release;
 
 @end

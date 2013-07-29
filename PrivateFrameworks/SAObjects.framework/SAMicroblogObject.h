@@ -39,11 +39,11 @@
 - (id)encodedClassName;
 - (void)setServiceType:(id)arg1;
 - (id)serviceType;
-- (void)setContent:(id)arg1;
 - (id)location;
 - (void)setSender:(id)arg1;
 - (id)recipients;
 - (void)setRecipients:(id)arg1;
+- (void)setContent:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (id)content;
 - (id)attachment;

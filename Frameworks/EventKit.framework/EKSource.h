@@ -34,8 +34,8 @@
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
 - (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
-- (id)calendars;
 - (id)calendarsForEntityType:(unsigned int)arg1;
+- (id)calendars;
 - (BOOL)commit:(id*)arg1;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;

@@ -23,41 +23,52 @@
 @property(retain) NSString * topic;
 @property(retain) NSString * userAgent;
 @property(retain) NSString * pageContext;
+@property(retain) NSString * pageDescription;
+@property unsigned long long pageID;
+@property(retain) NSString * pageType;
+@property(retain) NSString * pageURL;
 @property(retain) NSNumber * accountIdentifier;
 @property(retain) NSString * connection;
 
 
 - (void)setPageContext:(id)arg1;
 - (void)setWindowOrientation:(id)arg1;
+- (void)setPageType:(id)arg1;
+- (id)clientVersion;
+- (void)setScreenHeight:(id)arg1;
+- (unsigned long long)pageID;
+- (void)setPageID:(unsigned long long)arg1;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (id)windowWidth;
 - (id)windowOrientation;
 - (id)windowHeight;
 - (void)setWindowWidth:(id)arg1;
 - (void)setWindowHeight:(id)arg1;
 - (void)setScreenWidth:(id)arg1;
-- (void)setScreenHeight:(id)arg1;
 - (void)setPreviousClientVersion:(id)arg1;
 - (void)setPixelRatio:(id)arg1;
+- (void)setPageDescription:(id)arg1;
 - (void)setOriginalTime:(double)arg1;
 - (void)setEventVersion:(id)arg1;
+- (void)setEventType:(id)arg1;
 - (void)setBaseVersion:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;
 - (id)previousClientVersion;
 - (id)pixelRatio;
+- (id)pageType;
+- (id)pageDescription;
 - (id)pageContext;
 - (double)originalTime;
 - (id)baseVersion;
 - (id)eventVersion;
+- (void)setOriginalTimeUsingDate:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
-- (void)setEventType:(id)arg1;
-- (void)setClientVersion:(id)arg1;
-- (id)clientVersion;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
-- (id)topic;
+- (void)setClientVersion:(id)arg1;
 - (id)eventType;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
@@ -65,6 +76,8 @@
 - (id)applicationIdentifier;
 - (id)description;
 - (void)setConnection:(id)arg1;
+- (id)pageURL;
+- (void)setPageURL:(id)arg1;
 - (id)connection;
 
 @end

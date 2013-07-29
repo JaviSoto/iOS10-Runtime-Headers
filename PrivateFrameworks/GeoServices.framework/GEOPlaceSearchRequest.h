@@ -260,6 +260,11 @@
 @property int searchSource;
 
 
+- (id)initWithPlace:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)filterByBusinessTelephones;
 - (id)filterByBusinessCategorys;
 - (void)setHasSearchSource:(BOOL)arg1;
@@ -492,22 +497,17 @@
 - (void)setClientCapabilities:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
-- (id)initWithPlace:(id)arg1;
 - (void)addBusinessID:(unsigned long long)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (int)sessionID;
 - (BOOL)hasSessionID;
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (void)setSessionID:(int)arg1;
-- (int)sessionID;
 - (id)location;
 - (double)timestamp;
 - (void)setMaxResults:(int)arg1;
@@ -525,5 +525,6 @@
 - (id)address;
 - (void)_applyDeviceLocation;
 - (void)_setCLClientLocation:(const struct { int x1; int x2; struct { double x_3_1_1; double x_3_1_2; } x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; int x14; double x15; int x16; struct { double x_17_1_1; double x_17_1_2; } x17; double x18; }*)arg1;
+- (void)_applyBasicSearchProperties:(BOOL)arg1;
 
 @end

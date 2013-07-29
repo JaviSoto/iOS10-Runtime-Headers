@@ -34,6 +34,7 @@
 
 
 - (void)setPrincipalURL:(id)arg1;
+- (id)principalURL;
 - (void)setSyncToken:(id)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushTransports:(id)arg1;
@@ -45,6 +46,7 @@
 - (void)setAccountPrsId:(id)arg1;
 - (BOOL)supportsSyncCollection;
 - (id)accountPrsId;
+- (unsigned int)clientVersion;
 - (void)setHeldAsideOrderings:(id)arg1;
 - (id)heldAsideOrderings;
 - (id)ptag;
@@ -73,8 +75,6 @@
 - (id)etag;
 - (void)setEtag:(id)arg1;
 - (void)setClientVersion:(unsigned int)arg1;
-- (unsigned int)clientVersion;
-- (id)principalURL;
 - (BOOL)hasChanges;
 - (void)dealloc;
 

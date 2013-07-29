@@ -16,7 +16,9 @@
     SBUIPasscodeEntryField *_entryField;
     <SBFLegibilitySettingsProvider> *_backgroundLegibilitySettingsProvider;
     BOOL _shouldResetForFailedPasscodeAttempt;
+    BOOL _shouldUpdateStatusText;
     float _luminanceBoost;
+    float _currentBacklightLevel;
     _UILegibilitySettings *_legibilitySettings;
 }
 
@@ -50,11 +52,18 @@
 - (BOOL)playsKeypadSounds;
 - (id)passcode;
 - (void)resetForFailedPasscode;
+- (void)_updateStatusText:(id)arg1;
+- (float)_luminanceBoostFromDisplayBrightness;
+- (float)_luminanceBoostFromLegibility;
+- (void)_screenBrightnessReallyDidChange;
 - (void)_setLuminosityBoost:(float)arg1;
 - (float)_luminosityBoost;
 - (void)_luminanceBoostDidChange;
 - (void)_evaluateLuminance;
+- (void)_resetStatusText;
 - (void)_resetForFailedPasscode:(BOOL)arg1;
+- (void)_clearBrightnessChangeTimer;
+- (void)_noteScreenBrightnessDidChange;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;

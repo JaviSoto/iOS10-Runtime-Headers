@@ -24,7 +24,8 @@
 @property(copy) NSString * externalModificationTag;
 @property(readonly) NSURL * externalURI;
 @property int displayOrder;
-@property(copy) NSString * colorString;
+@property(copy) NSString * symbolicColorName;
+@property(readonly) NSString * colorString;
 @property(readonly) BOOL allowsEvents;
 @property(readonly) BOOL allowsTasks;
 @property(readonly) BOOL isDefaultCalendarForSource;
@@ -66,10 +67,13 @@
 - (void)setIsPublished:(BOOL)arg1;
 - (int)sharingStatus;
 - (void)setSharingStatus:(int)arg1;
+- (void)setColorString:(id)arg1;
 - (BOOL)isPublished;
 - (BOOL)canBeShared;
+- (id)symbolicColorName;
 - (BOOL)canBePublished;
 - (void)setSharees:(id)arg1;
+- (void)setSymbolicColorName:(id)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushKey:(id)arg1;
 - (id)bulkRequests;
@@ -124,7 +128,6 @@
 - (void)setDisplayOrder:(int)arg1;
 - (int)displayOrder;
 - (void)setCGColor:(struct CGColor { }*)arg1;
-- (void)setColorString:(id)arg1;
 - (BOOL)isImmutable;
 - (id)ownerIdentityLastName;
 - (id)ownerIdentityFirstName;

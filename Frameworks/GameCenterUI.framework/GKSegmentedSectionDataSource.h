@@ -2,35 +2,64 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKCollectionViewDataSource, NSArray, GKSegmentedSectionHeaderView, NSMutableArray;
+@class GKCollectionViewPlaceholderView, GKSegmentedSectionHeaderView, NSMutableArray, GKSegmentInfo, GKCollectionViewDataSource, NSString, NSArray;
 
-@interface GKSegmentedSectionDataSource : GKCollectionViewDataSource  {
-    NSArray *_dataSources;
-    GKCollectionViewDataSource *_selectedDataSource;
-    NSMutableArray *_titles;
+@interface GKSegmentedSectionDataSource : GKCollectionViewDataSource <GKSegmentInfoDelegagte> {
+    BOOL _waitingForAnimation;
+    NSString *_noContentTitle;
+    NSString *_noContentMessage;
+    NSMutableArray *_segmentInfos;
     GKSegmentedSectionHeaderView *_headerView;
+    GKCollectionViewPlaceholderView *_placeholderView;
+    GKSegmentInfo *_selectedSegmentInfo;
+    GKCollectionViewDataSource *_rootDataSource;
 }
 
-@property(retain) NSArray * dataSources;
-@property(retain) GKCollectionViewDataSource * selectedDataSource;
+@property(readonly) NSArray * dataSources;
+@property(readonly) GKCollectionViewDataSource * selectedDataSource;
 @property unsigned int selectedDataSourceIndex;
-@property(retain) NSMutableArray * titles;
+@property(retain) NSString * noContentTitle;
+@property(retain) NSString * noContentMessage;
+@property(retain) NSMutableArray * segmentInfos;
 @property(retain) GKSegmentedSectionHeaderView * headerView;
+@property(retain) GKCollectionViewPlaceholderView * placeholderView;
+@property(retain) GKSegmentInfo * selectedSegmentInfo;
+@property BOOL waitingForAnimation;
+@property(retain) GKCollectionViewDataSource * rootDataSource;
 
 
-- (void)addDataSource:(id)arg1;
+- (id)rootDataSource;
+- (void)setSegmentInfos:(id)arg1;
+- (id)segmentInfos;
 - (void)setTitle:(id)arg1 forDataSource:(id)arg2;
+- (id)infoForSegment:(int)arg1;
+- (void)hoistSegmentedFactoryToRoot;
 - (id)initWithDataSources:(id)arg1;
-- (void)setSelectedDataSource:(id)arg1;
+- (id)selectedSegmentInfo;
+- (BOOL)waitingForAnimation;
+- (void)groupDidLoad:(id)arg1;
+- (void)dataSourceWillLoad;
+- (void)setWaitingForAnimation:(BOOL)arg1;
+- (void)setSelectedSegmentInfo:(id)arg1;
+- (void)updatePlaceholder;
 - (void)setSelectedDataSourceIndex:(unsigned int)arg1;
-- (void)setDataSources:(id)arg1;
+- (void)infosChanged;
+- (id)infoForDataSource:(id)arg1;
+- (id)allTitles;
+- (void)setRootDataSource:(id)arg1;
+- (void)addDataSource:(id)arg1;
+- (id)initWithDataSources:(id)arg1 rootDataSource:(id)arg2;
+- (void)segmentDidChangeLoadingState:(id)arg1;
+- (void)dataSourceDidLoad;
 - (void)removeDataSource:(id)arg1;
 - (void)selectedSegmentChanged:(id)arg1;
 - (id)createMetricsTreeWithGridLayout:(id)arg1;
 - (BOOL)containsDataSource:(id)arg1;
+- (unsigned int)sectionForDataSource:(id)arg1;
 - (id)dataSourceForSection:(unsigned int)arg1;
 - (id)collectionView:(id)arg1 evaluateFactoryForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3 isRecursive:(BOOL)arg4;
-- (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2;
+- (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2 complete:(id)arg3;
+- (void)dataSourceDidReloadData:(id)arg1;
 - (void)dataSource:(id)arg1 didMoveSection:(int)arg2 toSection:(int)arg3;
 - (void)dataSource:(id)arg1 didRefreshSections:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;
@@ -48,6 +77,12 @@
 - (void)dataSource:(id)arg1 didRefreshItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didInsertItemsAtIndexPaths:(id)arg2;
+- (id)noContentMessage;
+- (id)noContentTitle;
+- (id)placeholderView;
+- (void)setPlaceholderView:(id)arg1;
+- (void)setNoContentMessage:(id)arg1;
+- (void)setNoContentTitle:(id)arg1;
 - (void)configureCollectionView:(id)arg1;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (id)_gkDescriptionWithChildren:(int)arg1;
@@ -55,13 +90,11 @@
 - (id)dataSources;
 - (void)dealloc;
 - (id)description;
-- (id)titles;
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (void)setTitles:(id)arg1;
 
 @end

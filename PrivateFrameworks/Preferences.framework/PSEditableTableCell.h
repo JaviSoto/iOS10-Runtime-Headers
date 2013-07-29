@@ -12,25 +12,23 @@
     SEL _targetSetter;
     id _realTarget;
     BOOL _valueChanged;
-    BOOL _isEditing;
     BOOL _returnKeyTapped;
     PSListController *_controllerDelegate;
 }
 
-@property(readonly) BOOL isEditing;
 @property(readonly) BOOL returnKeyTapped;
 @property PSListController * controllerDelegate;
 
 + (int)cellStyle;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setControllerDelegate:(id)arg1;
 - (id)controllerDelegate;
 - (BOOL)returnKeyTapped;
+- (BOOL)_cellIsEditing;
 - (void)endEditingAndSave;
 - (void)_saveForExit;
 - (void)_setValueChanged;
+- (BOOL)isTextFieldEditing;
 - (void)setPlaceholderText:(id)arg1;
 - (void)controlChanged:(id)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
@@ -57,13 +55,5 @@
 - (void)layoutSubviews;
 - (void)setValue:(id)arg1;
 - (id)value;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (id)_accessibilityChildren;
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)_accessibilityTextViewTextOperationResponder;
 
 @end

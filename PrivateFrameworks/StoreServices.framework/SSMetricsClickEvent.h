@@ -9,7 +9,7 @@
 
 @property(retain) id actionDetails;
 @property(retain) NSString * actionType;
-@property(retain) NSString * impressions;
+@property(retain) id impressions;
 @property(retain) NSString * locationDescription;
 @property(retain) NSNumber * positionX;
 @property(retain) NSNumber * positionY;
@@ -20,21 +20,21 @@
 
 - (void)setPositionY:(id)arg1;
 - (void)setPositionX:(id)arg1;
+- (void)setActionDetails:(id)arg1;
+- (void)setTargetType:(id)arg1;
 - (void)setImpressions:(id)arg1;
 - (void)setLocationWithEventLocations:(id)arg1;
-- (void)setTargetType:(id)arg1;
-- (void)setActionDetails:(id)arg1;
 - (void)setTargetURL:(id)arg1;
-- (id)targetIdentifier;
 - (void)setTargetIdentifier:(id)arg1;
-- (id)targetURL;
-- (id)targetType;
-- (void)setLocationDescription:(id)arg1;
 - (id)locationDescription;
+- (id)targetURL;
+- (void)setLocationDescription:(id)arg1;
 - (id)actionDetails;
 - (id)impressions;
 - (id)positionY;
 - (id)positionX;
+- (id)targetIdentifier;
+- (id)targetType;
 - (void)setActionType:(id)arg1;
 - (id)actionType;
 - (id)init;

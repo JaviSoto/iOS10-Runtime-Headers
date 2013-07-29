@@ -45,6 +45,8 @@
 - (id)appVersion;
 - (void)setAppNameMap:(id)arg1;
 - (id)appNameMap;
+- (void)setAppName:(id)arg1;
+- (id)appName;
 - (id)starkSupport;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (void)setAppId:(id)arg1;
@@ -53,8 +55,6 @@
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (id)providerName;
-- (id)appName;
-- (void)setAppName:(id)arg1;
 - (id)groupIdentifier;
 
 @end

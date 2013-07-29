@@ -23,7 +23,7 @@
 - (id)initWithEntryLength:(unsigned int)arg1;
 - (id)initWithThumbnailPath:(id)arg1;
 - (struct PLImageTableEntryFooter_s { struct { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; unsigned char x_1_1_4; unsigned char x_1_1_5; unsigned char x_1_1_6; unsigned char x_1_1_7; unsigned char x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned char x_1_1_13; unsigned char x_1_1_14; unsigned char x_1_1_15; unsigned char x_1_1_16; } x1; unsigned int x2; unsigned int x3; int x4; }*)_footer;
-- (int)lengthIncludingFooter;
+- (unsigned int)lengthIncludingFooter;
 - (unsigned int)imageHeight;
 - (unsigned int)imageWidth;
 - (void)setImageHeight:(unsigned int)arg1;

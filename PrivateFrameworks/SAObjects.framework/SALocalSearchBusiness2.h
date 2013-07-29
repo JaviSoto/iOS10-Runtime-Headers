@@ -37,12 +37,12 @@
 - (void)setPriceRange:(id)arg1;
 - (id)priceRange;
 - (id)reviewList;
-- (void)setExtSessionGuid:(id)arg1;
-- (id)extSessionGuid;
 - (void)setBusinessUrl:(id)arg1;
 - (id)businessUrl;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
+- (void)setExtSessionGuid:(id)arg1;
+- (id)extSessionGuid;
 - (void)setCategories:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setAddress:(id)arg1;

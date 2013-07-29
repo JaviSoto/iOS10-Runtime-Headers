@@ -37,9 +37,9 @@
 - (void)setThumbnailContentMode:(int)arg1;
 - (id)mediaURLString;
 - (void)_playbackStateChanged:(id)arg1;
+- (int)playbackState;
 - (void)setMediaType:(int)arg1;
 - (int)mediaType;
-- (int)playbackState;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)setDelegate:(id)arg1;

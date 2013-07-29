@@ -20,11 +20,11 @@
 - (void)setLSMEvaluationResult:(id)arg1;
 - (void)setEvidence:(int)arg1;
 - (void)setRestricted:(BOOL)arg1;
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (void)dealloc;
 - (id)description;
 - (id)URL;
+- (void)setMessage:(id)arg1;
 - (void)setURL:(id)arg1;
 
 @end

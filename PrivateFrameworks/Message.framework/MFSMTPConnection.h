@@ -24,6 +24,7 @@
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (id)authenticationMechanisms;
 - (BOOL)supportsEnhancedStatusCodes;
+- (void)setDomainName:(id)arg1;
 - (id)lastResponse;
 - (BOOL)connectUsingAccount:(id)arg1;
 - (int)_readResponseRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 isContinuation:(BOOL*)arg2;
@@ -56,9 +57,8 @@
 - (unsigned long long)maximumMessageBytes;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (int)quit;
-- (int)sendData:(id)arg1;
-- (void)setDomainName:(id)arg1;
 - (id)domainName;
+- (int)sendData:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

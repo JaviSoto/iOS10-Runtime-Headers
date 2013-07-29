@@ -43,8 +43,8 @@
 - (void)_setupGroupsAndOptions;
 - (void)set_groupsAndOptions:(id)arg1;
 - (id)_cachedItems;
-- (void)set_cachedItems:(id)arg1;
 - (id)_selectionNode;
+- (void)set_cachedItems:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)deleteBackward;

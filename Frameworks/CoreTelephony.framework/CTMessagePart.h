@@ -18,7 +18,6 @@
 @property(copy) NSData * data;
 
 
-- (void)setData:(id)arg1;
 - (void)setContentLocation:(id)arg1;
 - (void)setContentId:(id)arg1;
 - (id)contentLocation;
@@ -31,5 +30,6 @@
 - (id)initWithData:(id)arg1 contentType:(id)arg2;
 - (id)data;
 - (void)dealloc;
+- (void)setData:(id)arg1;
 
 @end

@@ -38,8 +38,6 @@
 @property(retain) UIView * extraHeaderView;
 @property BOOL extraHeaderViewAlignsToImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setExtraHeaderViewAlignsToImage:(BOOL)arg1;
 - (BOOL)extraHeaderViewAlignsToImage;
@@ -89,7 +87,6 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (void)setMessage:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (id)alternateName;
 - (BOOL)resignFirstResponder;
@@ -100,6 +97,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)setAllowsEditing:(BOOL)arg1;
+- (void)setMessage:(id)arg1;
 - (BOOL)canResignFirstResponder;
 - (id)imageView;
 - (float)marginForTableView:(id)arg1;

@@ -9,8 +9,6 @@
 @property float previousCellHeight;
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (float)previousCellHeight;
 - (void)setPreviousCellHeight:(float)arg1;
@@ -20,6 +18,5 @@
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
-- (id)accessibilityLabel;
 
 @end

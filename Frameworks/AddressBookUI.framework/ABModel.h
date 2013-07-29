@@ -37,6 +37,8 @@
 @property(retain) ABContactsFilter * displayedContactsFilter;
 @property(readonly) ABContactsFilter * selectedContactsFilter;
 @property(readonly) ABContactsFilter * lastSelectedContactsFilter;
+@property(readonly) void* sourceForNewRecords;
+@property(readonly) void* groupForNewRecords;
 @property void* addressBook;
 
 + (unsigned int)sortOrdering;
@@ -91,6 +93,8 @@
 - (unsigned int)numberOfDisplayedMembers;
 - (void*)selectedPerson;
 - (id)displayedContactsFilter;
+- (void*)sourceForNewRecords;
+- (void*)groupForNewRecords;
 - (void)setSelectedContactsFilter:(id)arg1;
 - (id)allSources;
 - (void)addDatabaseChangeDelegate:(id)arg1;

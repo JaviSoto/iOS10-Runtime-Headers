@@ -54,6 +54,7 @@
     unsigned int _powerPointer;
     BOOL _isInitialized;
     BOOL _justStarted;
+    int _state;
     <_UISiriWaveyViewDelegate> *_delegate;
     int _mode;
 }
@@ -85,6 +86,7 @@
 - (float)_currentMicPowerLevel;
 - (float)_powerLevelForMicPower:(float)arg1;
 - (float)_updateMedianWithNewValue:(float)arg1;
+- (void)startListening;
 - (int)mode;
 - (void)didMoveToSuperview;
 - (void)layoutSubviews;

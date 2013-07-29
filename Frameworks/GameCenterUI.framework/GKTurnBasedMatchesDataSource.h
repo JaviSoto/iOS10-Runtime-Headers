@@ -20,6 +20,7 @@
 - (void)configureDataSource;
 - (void)setGame:(id)arg1;
 - (id)game;
+- (unsigned int)numberOfMatches;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 
 @end

@@ -22,6 +22,7 @@
 - (id)callerID;
 - (void)reIdentify;
 - (void)reregister;
+- (void)activeDevicesUpdated;
 - (id)callerURI;
 - (int)_validationStatusForAlias:(id)arg1;
 - (id)_aliasStrings;
@@ -29,7 +30,6 @@
 - (BOOL)_isDeviceRegistered;
 - (void)_updateAccountStatusToUnregistered:(BOOL)arg1;
 - (void)clearCallerID;
-- (void)activeDevicesUpdated;
 - (void)refreshRegistration;
 - (void)loginServiceSession;
 - (void)logoutServiceSession;

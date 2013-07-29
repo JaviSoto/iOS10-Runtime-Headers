@@ -7,7 +7,6 @@
 @interface MPMediaLibraryDataProviderSystemML3 : MPMediaLibraryDataProviderML3  {
     long long _currentRevision;
     NSObject<OS_dispatch_queue> *_queue;
-    long _queueOnce;
 }
 
 + (id)_localizedCloudGeniusErrorForError:(id)arg1;

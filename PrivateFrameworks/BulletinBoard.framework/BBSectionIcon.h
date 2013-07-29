@@ -13,10 +13,10 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)_bestVariantForUIFormat:(int)arg1;
+- (id)_bestVariantForFormat:(int)arg1;
 - (void)addVariant:(id)arg1;
 - (void)setVariants:(id)arg1;
 - (id)variants;
-- (id)_bestVariantForFormat:(int)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -27,8 +27,12 @@
 - (id)initWithType:(id)arg1 URL:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 entry:(id)arg3;
 - (void)deleteEntry:(id)arg1;
+- (void)clearStoredMergeEntries;
 - (id)allEntries;
+- (id)entriesToMerge;
 - (void)deleteAllMatchingEntries:(id)arg1;
+- (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
+- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
 - (void)save;
 - (void)addEntry:(id)arg1;
 - (void)setType:(id)arg1;

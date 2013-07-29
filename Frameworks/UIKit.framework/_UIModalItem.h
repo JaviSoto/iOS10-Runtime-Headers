@@ -65,6 +65,8 @@
     NSString *_passwordPlaceholderString;
     UITextInputTraits *_passwordTraits;
     UITextInputTraits *_loginTraits;
+    BOOL _enableFirstOtherButton;
+    BOOL _forceVerticalLayout;
     int _dismissIndex;
     int cancelButtonIndex;
     NSArray *_buttonTitles;
@@ -76,10 +78,12 @@
 @property UIView * targetView;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
 @property(readonly) BOOL isPresented;
+@property BOOL enableFirstOtherButton;
 @property <UIModalItemDelegate> * delegate;
 @property(copy) NSArray * buttonTitles;
 @property int cancelButtonIndex;
 @property int defaultButtonIndex;
+@property BOOL forceVerticalLayout;
 @property int modalItemInputStyle;
 @property(copy) NSString * loginString;
 @property(copy) NSString * passwordString;
@@ -106,7 +110,6 @@
 
 + (id)modalItemWithType:(int)arg1 title:(id)arg2 message:(id)arg3 buttonTitles:(id)arg4 completion:(id)arg5;
 
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)contentView;
@@ -120,6 +123,7 @@
 - (oneway void)release;
 - (id)retain;
 - (id)delegate;
+- (void)setForceVerticalLayout:(BOOL)arg1;
 - (void)setButtonTitles:(id)arg1;
 - (id)buttonTitles;
 - (void)setContentViewController:(id)arg1;
@@ -134,7 +138,9 @@
 - (void)setContentViewControllerSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPasswordPlaceholderString:(id)arg1;
 - (void)setLoginPlaceholderString:(id)arg1;
+- (id)loginPlaceholderString;
 - (id)passwordString;
+- (id)loginString;
 - (void)setDismissAnimationType:(int)arg1;
 - (int)dismissAnimationType;
 - (void)setPresentAnimationType:(int)arg1;
@@ -147,6 +153,7 @@
 - (void)setIsBeingDismissed:(BOOL)arg1;
 - (BOOL)isPresented;
 - (void)setModalItemInputStyle:(int)arg1;
+- (id)_loginTraits;
 - (id)_defaultButtonTitle;
 - (id)_typeKey;
 - (void)_setAnchorViewController:(id)arg1;
@@ -160,6 +167,7 @@
 - (void)setPasswordString:(id)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 otherButtonTitles:(id)arg3 completion:(id)arg4 delegate:(id)arg5;
 - (void)setDefaultButtonIndex:(int)arg1;
+- (void)setMessage:(id)arg1;
 - (void)setIsHidden:(BOOL)arg1;
 - (int)presentAnimationType;
 - (void)_setRepresentedView:(id)arg1;
@@ -171,18 +179,18 @@
 - (int)messageMaxLineNumber;
 - (int)titleMaxLineNumber;
 - (BOOL)useUndoStyle;
+- (BOOL)forceVerticalLayout;
 - (int)numberOfButtonsRows;
 - (id)titleAttributedString;
-- (id)textFieldAtIndex:(int)arg1;
+- (void)setEnableFirstOtherButton:(BOOL)arg1;
+- (BOOL)enableFirstOtherButton;
 - (void)_loginFieldTextDidChange;
 - (void)_passwordFieldTextDidChange;
 - (float)_maxHeight;
 - (float)_maxWidth;
-- (id)loginString;
-- (id)loginPlaceholderString;
-- (id)_loginTraits;
 - (id)passwordPlaceholderString;
 - (id)_passwordTraits;
+- (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
 - (id)contentViewController;
 - (id)_otherButtonsTitles;

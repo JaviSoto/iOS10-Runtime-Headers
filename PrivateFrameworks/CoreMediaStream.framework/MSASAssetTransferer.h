@@ -84,10 +84,10 @@
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
 - (void)setModel:(id)arg1;
-- (id)personID;
-- (void)setPersonID:(id)arg1;
 - (void)setEventQueue:(id)arg1;
 - (id)eventQueue;
+- (id)personID;
+- (void)setPersonID:(id)arg1;
 - (id)model;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

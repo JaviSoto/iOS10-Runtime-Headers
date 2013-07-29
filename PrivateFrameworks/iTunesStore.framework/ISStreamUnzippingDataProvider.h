@@ -54,9 +54,9 @@
 - (id)closeStream;
 - (BOOL)isStreamComplete;
 - (long long)streamedBytes;
-- (void)setup;
 - (void)streamCancelled;
 - (BOOL)isStream;
+- (void)setup;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -26,6 +26,7 @@
 + (id)defaultValueForKey:(id)arg1;
 
 - (void)setGroupName:(id)arg1;
+- (void)setGroupFilters:(id)arg1;
 - (void)setMarginWidth:(float)arg1;
 - (void)setBackdropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)statisticsInterval;
@@ -42,7 +43,6 @@
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)didChangeValueForKey:(id)arg1;
-- (void)setGroupFilters:(id)arg1;
 - (id)statisticsValues;
 - (void)setStatisticsType:(id)arg1;
 - (void)setStatisticsInterval:(double)arg1;

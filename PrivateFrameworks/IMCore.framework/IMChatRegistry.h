@@ -110,6 +110,7 @@
 - (void)_chat_declineInvitation:(id)arg1;
 - (void)_chat:(id)arg1 joinWithProperties:(id)arg2;
 - (void)_chat:(id)arg1 updateDisplayName:(id)arg2;
+- (BOOL)_firstLoad;
 - (void)_noteChatDealloc:(id)arg1;
 - (void)_noteChatInit:(id)arg1;
 - (id)allExistingChats;

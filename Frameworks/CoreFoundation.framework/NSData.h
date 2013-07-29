@@ -27,14 +27,14 @@
 + (id)dataWithContentsOfMappedFile:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
-+ (id)MCDataWithCFData:(struct __CFData { }*)arg1;
-+ (id)MCDataWithHexString:(id)arg1;
 + (id)dataWithRandomBytes:(unsigned int)arg1;
 + (id)dataWithHexString:(id)arg1;
++ (id)MCDataWithCFData:(struct __CFData { }*)arg1;
++ (id)MCDataWithHexString:(id)arg1;
 + (id)dataWithSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 + (void)_gkLoadRemoteImageDataForURL:(id)arg1 queue:(id)arg2 handler:(id)arg3;
-+ (id)dataForRadioRequestParameters:(id)arg1 protocolVersion:(int)arg2 error:(id*)arg3;
-+ (id)dataForRadioRequestParameters:(id)arg1 error:(id*)arg2;
++ (id)dataForRadioRequestParameters:(id)arg1 protocolVersion:(int)arg2 isAsynchronousBackgroundRequest:(BOOL)arg3 error:(id*)arg4;
++ (id)dataForRadioRequestParameters:(id)arg1 isAsynchronousBackgroundRequest:(BOOL)arg2 error:(id*)arg3;
 + (id)mappedDataWithContentsOfTemporaryFile:(id)arg1 error:(id*)arg2;
 + (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; boolx7; struct SsrwOOStream {} *x8; }*)arg1;
 + (id)dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
@@ -99,9 +99,6 @@
 - (id)_web_guessedMIMEType;
 - (id)_web_guessedMIMETypeForXML;
 - (id)replacementObjectForPortCoder:(id)arg1;
-- (id)MCInitWithBase64String:(id)arg1;
-- (id)MCBase64String;
-- (id)MCHexString;
 - (id)hexString;
 - (id)hexStringOfBytes:(char *)arg1 withLength:(int)arg2;
 - (id)SHA1HexString;
@@ -124,6 +121,9 @@
 - (id)md5Digest;
 - (id)_geo_newXPCData;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)MCInitWithBase64String:(id)arg1;
+- (id)MCBase64String;
+- (id)MCHexString;
 - (id)_FTCopyGzippedData;
 - (id)_FTOptionallyDecompressData;
 - (id)_FTDecompressData;
@@ -159,6 +159,8 @@
 - (void)pl_adviceDoNotNeed;
 - (void)pl_adviceWillNeed;
 - (unsigned int)pl_advisoryLength;
+- (id)gzipInflate;
+- (id)cr_md5DigestHexString;
 - (BOOL)mf_immutable;
 - (id)mf_subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)mf_encodeBase64HeaderData;
@@ -183,9 +185,8 @@
 - (id)mf_locationsOfUnixNewlinesNeedingConversion;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)mf_MD5Digest;
-- (id)cr_md5DigestHexString;
-- (id)uppercaseHexStringWithoutSpaces;
 - (id)lowercaseHexStringWithoutSpaces;
+- (id)uppercaseHexStringWithoutSpaces;
 - (id)hexString;
 - (id)hexEncoding;
 - (id)SHA256Hash;

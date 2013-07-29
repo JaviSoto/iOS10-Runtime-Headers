@@ -2,14 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIWindow, UIClassicStatusBarView, _UIClassicCornersWindow;
+@class UIClassicStatusBarView, UIWindow, UIView;
 
 @interface UIStatusBarViewController : UIViewController  {
     BOOL _iPhoneWS;
     UIWindow *_window;
     UIView *_statusBar;
     UIClassicStatusBarView *_statusBarBackgroundView;
-    _UIClassicCornersWindow *_cornersWindow;
     BOOL _keyboardVisible;
 }
 
@@ -23,10 +22,8 @@
 - (struct CGSize { float x1; float x2; })_statusBarSizeForOrientation:(int)arg1;
 - (void)_finishStatusBarOrientationChange;
 - (void)_changeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
-- (void)_setStatusBarBackgroundImageForOrientation:(int)arg1;
 - (void)_updateStatusBarGeometryForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 hidden:(BOOL)arg3 slideUp:(BOOL)arg4;
 - (void)_statusBarHideAnimationFinished:(id)arg1 finished:(BOOL)arg2 hidden:(id)arg3;
-- (void)_updateCornersForRotationFromOrientation:(int)arg1 toOrientation:(int)arg2 withStatusBarStyle:(int)arg3 statusBarShouldHide:(BOOL)arg4;
 - (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
 - (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
 - (void)_zoom:(BOOL)arg1 animated:(BOOL)arg2;

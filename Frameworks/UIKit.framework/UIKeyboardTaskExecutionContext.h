@@ -21,11 +21,11 @@
 @property(readonly) UIKeyboardTaskQueue * executionQueue;
 
 
-- (id)executionQueue;
 - (id)init;
 - (void)dealloc;
 - (id)initWithExecutionQueue:(id)arg1;
 - (id)initWithParentContext:(id)arg1 continuation:(id)arg2;
+- (id)executionQueue;
 - (void)transferExecutionToMainThreadWithTask:(id)arg1;
 - (id)childWithContinuation:(id)arg1;
 - (void)returnExecutionToParent;

@@ -22,15 +22,15 @@
 - (BOOL)runDistillWithDocumentURL:(id)arg1 outputURL:(id)arg2 attemptIncremental:(BOOL)arg3 forceDistill:(BOOL)arg4;
 - (void)_removeScratchPath;
 - (void)_moveScratchToOutputPath;
-- (void)setLogger:(id)arg1;
 - (void)setAssetStoreVersionString:(id)arg1;
 - (id)assetStoreVersionString;
 - (void)setAssetStoreVersionNumber:(int)arg1;
 - (int)assetStoreVersionNumber;
 - (BOOL)_isDistillUnnecessaryForDocument:(id)arg1;
 - (id)carScratchURL;
-- (id)logger;
 - (void)setOutputURL:(id)arg1;
+- (void)setLogger:(id)arg1;
+- (id)logger;
 - (id)outputURL;
 - (id)init;
 - (void)dealloc;

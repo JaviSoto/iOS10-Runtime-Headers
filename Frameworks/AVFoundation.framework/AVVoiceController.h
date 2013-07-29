@@ -34,6 +34,8 @@
 @property float alertVolume;
 
 
+- (BOOL)isPlaying;
+- (void)stopPlaying;
 - (void)setStopOnEndpointEnabled:(BOOL)arg1;
 - (BOOL)isStopOnEndpointEnabled;
 - (float)averagePowerForChannel:(unsigned int)arg1;
@@ -45,7 +47,6 @@
 - (void)setPlaybackVolume:(float)arg1;
 - (float)alertVolume;
 - (void)setAlertVolume:(float)arg1;
-- (BOOL)isPlaying;
 - (BOOL)setPlaybackBufferDuration:(double)arg1;
 - (double)getPlaybackBufferDuration;
 - (id)playbackSettings;
@@ -66,7 +67,6 @@
 - (id)recordSettings;
 - (void)setRecordDelegate:(id)arg1;
 - (id)recordDelegate;
-- (void)stopPlaying;
 - (BOOL)startPlaying;
 - (BOOL)preparePlaybackFromURL:(id)arg1 error:(id*)arg2;
 - (BOOL)preparePlaybackWithSettings:(id)arg1 error:(id*)arg2;

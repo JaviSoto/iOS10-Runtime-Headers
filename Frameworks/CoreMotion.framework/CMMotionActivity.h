@@ -32,10 +32,11 @@
 - (BOOL)walking;
 - (BOOL)stationary;
 - (BOOL)unknown;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1;
 - (int)confidence;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1;
 - (id)startDate;
 - (id).cxx_construct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

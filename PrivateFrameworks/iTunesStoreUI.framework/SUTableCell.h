@@ -16,6 +16,7 @@
         unsigned int globalCount; 
     } _position;
     UIColor *_topBorderColor;
+    int _editState;
 }
 
 @property(retain) UIColor * bottomBorderColor;
@@ -29,10 +30,10 @@
 @property BOOL showHighlight;
 @property(retain) UIColor * topBorderColor;
 @property BOOL usesSubviews;
+@property int editState;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (int)editState;
 - (id)topBorderColor;
 - (id)bottomBorderColor;
 - (BOOL)showHighlight;
@@ -42,6 +43,7 @@
 - (void)setBottomBorderColor:(id)arg1;
 - (id)itemOfferButton;
 - (id)clippingPath;
+- (void)setEditState:(int)arg1;
 - (id)copyPurchaseAnimationView;
 - (BOOL)usesSubviews;
 - (void)setHighlightsOnlyContentView:(BOOL)arg1;
@@ -64,11 +66,5 @@
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })position;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLanguage;
-- (id)description;
-- (id)accessibilityValue;
-- (id)accessibilityTableViewCellText;
 
 @end

@@ -21,9 +21,9 @@
 - (void)setStyle:(int)arg1;
 - (void)dealloc;
 - (void)_updateLabel;
+- (void)setText:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)sizeToFit;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
 
 @end

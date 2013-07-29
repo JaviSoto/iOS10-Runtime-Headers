@@ -13,8 +13,6 @@
 @property(copy) NSString * value;
 
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1 value:(id)arg2;
 - (void)setTitle:(id)arg1;
@@ -24,7 +22,5 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setValue:(id)arg1;
 - (id)value;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

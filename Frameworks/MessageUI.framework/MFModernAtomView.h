@@ -5,16 +5,16 @@
 @class UIActivityIndicatorView, MFModernAtomBackgroundView, UIFont, UILabel, MFModernAtomIconView, UIView, NSString, UIColor;
 
 @interface MFModernAtomView : UIDefaultKeyboardInput  {
-    UIView *_background;
-    UIView *_compositingView;
-    UILabel *_label;
-    UIActivityIndicatorView *_activityIndicator;
-    float _scalingFactor;
     MFModernAtomIconView *_badgeIconView;
     MFModernAtomIconView *_accessoryIconView;
     UIColor *_effectiveTintColor;
     unsigned int _disabledPresentationOptions;
     UIView *_baselineView;
+    MFModernAtomBackgroundView *_background;
+    UIView *_compositingView;
+    UILabel *_label;
+    UIActivityIndicatorView *_activityIndicator;
+    float _scalingFactor;
     BOOL _isPrimaryAddressAtom;
     BOOL _separatorHidden;
     BOOL _selected;
@@ -50,9 +50,6 @@
 + (float)horizontalPadding;
 + (float)defaultHeight;
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)badgeIconView;
 - (id)accessoryIconView;
@@ -99,12 +96,9 @@
 - (BOOL)isSelected;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSeparatorStyle:(int)arg1;
+- (id)titleLabel;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
-- (id)titleLabel;
 - (void)layoutSubviews;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
 
 @end

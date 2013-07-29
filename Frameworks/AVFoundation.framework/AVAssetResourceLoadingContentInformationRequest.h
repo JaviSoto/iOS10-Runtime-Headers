@@ -13,9 +13,9 @@
 @property(getter=isByteRangeAccessSupported) BOOL byteRangeAccessSupported;
 
 
+- (void)setContentLength:(long long)arg1;
 - (void)setDiskCachingPermitted:(BOOL)arg1;
 - (void)setByteRangeAccessSupported:(BOOL)arg1;
-- (void)setContentLength:(long long)arg1;
 - (BOOL)isDiskCachingPermitted;
 - (BOOL)isByteRangeAccessSupported;
 - (void)setContentType:(id)arg1;

@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUnknownPersonViewController_Legacy;
+@class ABUnknownPersonViewController;
 
 @interface ABUnknownPersonViewDelegateForwarder : NSObject <UITableViewDelegate, UITableViewDataSource> {
-    ABUnknownPersonViewController_Legacy *_viewController;
+    ABUnknownPersonViewController *_viewController;
 }
 
 

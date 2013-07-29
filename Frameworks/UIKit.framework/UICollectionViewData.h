@@ -33,16 +33,19 @@
         unsigned int contentSizeIsValid : 1; 
         unsigned int itemCountsAreValid : 1; 
         unsigned int layoutIsPrepared : 1; 
+        unsigned int layoutLocked : 1; 
     } _collectionViewDataFlags;
     NSMutableArray *_clonedLayoutAttributes;
 }
 
 @property(readonly) BOOL layoutIsPrepared;
+@property(getter=isLayoutLocked) BOOL layoutLocked;
 @property(readonly) NSArray * clonedLayoutAttributes;
 
 + (void)initialize;
 
 - (void)dealloc;
+- (BOOL)isLayoutLocked;
 - (void)_loadEverything;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItemAtIndexPath:(id)arg1;
 - (void)validateSupplementaryViews;
@@ -58,9 +61,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)existingSupplementaryLayoutAttributes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForGlobalItemIndex:(int)arg1;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 validateLayout:(BOOL)arg2;
 - (id)existingSupplementaryLayoutAttributesInSection:(int)arg1;
 - (id)indexPathForItemAtGlobalIndex:(int)arg1;
+- (void)setLayoutLocked:(BOOL)arg1;
 - (void)_prepareToLoadData;
 - (id)initWithCollectionView:(id)arg1 layout:(id)arg2;
 - (void)validateLayoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

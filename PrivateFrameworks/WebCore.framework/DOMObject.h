@@ -15,7 +15,5 @@
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

@@ -100,6 +100,7 @@
 - (void)setTotalBytesReceived:(unsigned int)arg1;
 - (unsigned int)totalBytesReceived;
 - (id)requestProgressBlock;
+- (void)handleWebLoginRequestWithCompletionBlock:(id)arg1;
 - (void)setResponseProgressBlock:(id)arg1;
 - (void)setRequestProgressBlock:(id)arg1;
 - (void)reportStatusWithError:(id)arg1;
@@ -136,8 +137,6 @@
 - (id)requestProperties;
 - (BOOL)validate:(id*)arg1;
 - (BOOL)markAsFinished;
-- (void)setTimeoutInterval:(double)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (void*)context;
 - (void)reset;
 - (void)setContext:(void*)arg1;
@@ -149,6 +148,7 @@
 - (id)delegate;
 - (void)setError:(id)arg1;
 - (id)error;
+- (void)setCompletionBlock:(id)arg1;
 - (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
@@ -161,6 +161,7 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)url;
+- (void)setTimeoutInterval:(double)arg1;
 - (double)timeoutInterval;
 - (unsigned int)cachePolicy;
 - (id)completionBlock;

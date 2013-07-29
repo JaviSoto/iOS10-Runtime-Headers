@@ -12,9 +12,9 @@
 
 + (id)sharedInstance;
 
-- (void)photoAccessPowersActive;
 - (BOOL)isPhotosTCCAccessNotAllowed;
 - (BOOL)isPhotoLibraryReadAccessAllowed;
+- (void)photoAccessPowersActive;
 - (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
 - (int)photosTCCAccessStatus;
 - (BOOL)_isPhotosAccessAllowedWithScope:(int)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(id)arg3;

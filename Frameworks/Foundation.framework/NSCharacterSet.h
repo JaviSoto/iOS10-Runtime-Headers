@@ -31,8 +31,6 @@
 + (id)letterCharacterSet;
 + (id)whitespaceCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
-+ (id)wordBreakCharacterSet;
-+ (id)whitespaceNewlineAndSpecialCharacterSet;
 
 - (id)init;
 - (BOOL)isEmpty;

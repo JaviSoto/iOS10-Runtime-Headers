@@ -4,7 +4,7 @@
 
 @class <SKUIComposeReviewDelegate>, SKUIComposeReviewFormViewController, SUPlaceholderViewController, SKUIReviewMetadata;
 
-@interface SKUIComposeReviewViewController : SUNavigationController <SKUIComposeReviewFormDelegate> {
+@interface SKUIComposeReviewViewController : SUNavigationController <SKUIComposeReviewFormDelegate, UIAlertViewDelegate> {
     SKUIComposeReviewFormViewController *_formViewController;
     SUPlaceholderViewController *_placeholderViewController;
 }
@@ -20,11 +20,13 @@
 - (void)composeReviewFormDidCancel:(id)arg1;
 - (void)_finishLoadWithOutput:(id)arg1 error:(id)arg2;
 - (void)submitReview;
+- (void)_sendDidSubmit;
 - (void)_loadReviewWithURL:(id)arg1 completionBlock:(id)arg2;
 - (id)editedReviewMetadata;
 - (void)setRating:(float)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

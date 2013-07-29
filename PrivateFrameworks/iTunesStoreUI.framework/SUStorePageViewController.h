@@ -61,8 +61,6 @@
 @property(getter=_reloadsWhenCacheExpired,setter=_setReloadsWhenCacheExpired:) BOOL _reloadsWhenCacheExpired;
 @property(getter=_isCacheExpired,readonly) BOOL _cacheExpired;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)sectionSegmentedControl;
 - (id)sectionGroup;
@@ -161,10 +159,8 @@
 - (void)_reloadPreviewOverlayVisibility;
 - (void)_reloadForNetworkTypeChange:(id)arg1;
 - (id)copyScriptViewController;
-- (void)handleApplicationURL:(id)arg1;
 - (id)navigationItemForScriptInterface;
 - (void)invalidateForMemoryPurge;
-- (void)applicationDidEnterBackground;
 - (id)newRotationController;
 - (void)storePageProtocolDidChange;
 - (id)storePageProtocol;
@@ -172,6 +168,7 @@
 - (id)copyScriptProperties;
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (id)iTunesStoreUI_searchFieldController;
+- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)copyDefaultScriptProperties;
 - (id)urlBagKey;
 - (void)restoreArchivableContext:(id)arg1;
@@ -190,6 +187,7 @@
 - (void)setLoading:(BOOL)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
+- (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)reload;
@@ -206,11 +204,11 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)isLoaded;

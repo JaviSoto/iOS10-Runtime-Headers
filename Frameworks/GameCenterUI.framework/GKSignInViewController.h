@@ -41,6 +41,12 @@
     int _failedSignInCount;
     UIView *_bubbleContainer;
     AAUICredentialRecoveryController *_credentialRecoveryController;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _scrollViewInsets;
 }
 
 @property(retain) UIScrollView * scrollView;
@@ -58,6 +64,7 @@
 @property(retain) GKFakeTableGroupView * fakeTableGroupView;
 @property(retain) GKSignInInputView * signInInputView;
 @property BOOL constraintsCreated;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollViewInsets;
 @property(retain) UIAlertView * alert;
 @property int alertTag;
 @property(copy) id alertDismissHandler;
@@ -81,6 +88,8 @@
 - (void)setFailedSignInCount:(int)arg1;
 - (int)failedSignInCount;
 - (id)lastUsername;
+- (void)setScrollViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollViewInsets;
 - (void)setConstraintsCreated:(BOOL)arg1;
 - (BOOL)constraintsCreated;
 - (void)setSignInInputView:(id)arg1;
@@ -142,10 +151,10 @@
 - (double)bubbleFlowSubviewFadeOutDelay;
 - (double)bubbleFlowSubviewFadeOutDuration;
 - (double)bubbleFlowAnimateInDuration;
+- (double)bubbleFlowAnimateOutDuration;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalScreenFrameInViewCoordinatesForBubbleOfType:(int)arg1;
 - (id)bubbleAnimatorForTransitionFromViewController:(id)arg1;
 - (BOOL)_gkUsesBubbleFlowModalPresentation;
-- (double)bubbleFlowAnimateOutDuration;
 - (void)stopLoadingIndicator;
 - (void)startLoadingIndicator;
 - (int)alertTag;
@@ -160,9 +169,9 @@
 - (void)setCompletionHandler:(id)arg1;
 - (id)scrollView;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;

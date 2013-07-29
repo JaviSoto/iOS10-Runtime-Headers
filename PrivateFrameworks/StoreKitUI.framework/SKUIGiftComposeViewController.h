@@ -46,6 +46,7 @@
 - (void)_setItemImage:(id)arg1 error:(id)arg2;
 - (id)_itemView;
 - (void)_nextAction:(id)arg1;
+- (void)_reloadSections;
 - (void)_textViewDidEndEditingNotification:(id)arg1;
 - (void)_textViewChangeNotification:(id)arg1;
 - (void)_textFieldChangeNotification:(id)arg1;
@@ -53,7 +54,6 @@
 - (void)_keyboardChangeNotification:(id)arg1;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;
 - (id)_headerView;
-- (void)_reloadSections;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)popoverControllerDidDismissPopover:(id)arg1;

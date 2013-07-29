@@ -49,6 +49,7 @@
 @property(readonly) NSString * aa_firstName;
 @property(readonly) NSString * aa_lastName;
 @property(readonly) NSString * aa_primaryEmail;
+@property(readonly) NSString * aa_appleId;
 @property(readonly) NSArray * aa_appleIDAliases;
 @property(readonly) BOOL aa_needsRegistration;
 @property(readonly) BOOL aa_needsEmailConfiguration;
@@ -78,6 +79,7 @@
 @property(retain) ACAccountType * accountType;
 @property(copy) NSString * accountDescription;
 @property(copy) NSString * username;
+@property(readonly) NSString * userFullName;
 @property(retain) ACAccountCredential * credential;
 @property(readonly) NSURL * objectID;
 @property(readonly) ACAccountStore * accountStore;
@@ -108,7 +110,6 @@
 + (id)aa_dataclassesBoundToSingleAppleAccount;
 + (id)aa_dataclassesBoundToPrimaryAppleAccount;
 
-- (id)accountPropertyForKey:(id)arg1;
 - (id)objectID;
 - (id)accountType;
 - (void)setAccountType:(id)arg1;
@@ -131,6 +132,7 @@
 - (void)setParentAccount:(id)arg1;
 - (BOOL)supportsPush;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (id)accountPropertyForKey:(id)arg1;
 - (void)setAccountProperties:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setOwningBundleID:(id)arg1;
@@ -195,6 +197,7 @@
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (void)setActive:(BOOL)arg1;
+- (id)userFullName;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)mcBackingPayload;
@@ -228,7 +231,6 @@
 - (id)aa_protocolVersion;
 - (void)aa_setPrimaryEmailVerified:(BOOL)arg1;
 - (BOOL)aa_isPrimaryEmailVerified;
-- (void)aa_setPrimaryAccount:(BOOL)arg1;
 - (id)aa_accountTypeString;
 - (id)aa_lastName;
 - (id)aa_firstName;
@@ -239,11 +241,13 @@
 - (void)aa_setNeedsToVerifyTerms:(BOOL)arg1;
 - (BOOL)aa_needsToVerifyTerms;
 - (int)mobileMeAccountStatus;
-- (void)aa_setAuthToken:(id)arg1;
-- (void)aa_updateWithProvisioningResponse:(id)arg1;
 - (id)aa_appleIDAliases;
 - (BOOL)aa_isPrimaryAccount;
+- (void)aa_setPrimaryAccount:(BOOL)arg1;
+- (void)aa_updateWithProvisioningResponse:(id)arg1;
+- (void)aa_setAuthToken:(id)arg1;
 - (void)aa_setPassword:(id)arg1;
+- (id)aa_appleId;
 - (id)aa_primaryEmail;
 - (id)aa_authToken;
 - (id)aa_password;

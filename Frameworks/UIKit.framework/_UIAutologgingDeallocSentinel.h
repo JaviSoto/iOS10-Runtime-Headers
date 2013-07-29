@@ -13,10 +13,10 @@
 @property BOOL called;
 
 
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (void)dealloc;
 - (void)setCalled:(BOOL)arg1;
 - (BOOL)called;
+- (void)setMessage:(id)arg1;
 
 @end

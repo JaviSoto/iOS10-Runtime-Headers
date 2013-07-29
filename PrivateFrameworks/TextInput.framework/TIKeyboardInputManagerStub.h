@@ -16,10 +16,10 @@
 - (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 continuation:(id)arg3;
 - (void)handleKeyboardInput:(id)arg1 keyboardState:(id)arg2 continuation:(id)arg3;
 - (void)syncToKeyboardState:(id)arg1 continuation:(id)arg2;
+- (void)removeAllDynamicDictionaries;
 - (void)candidateRejected:(id)arg1;
 - (void)setOriginalInput:(id)arg1;
 - (void)lastAcceptedCandidateCorrected;
-- (void)removeAllDynamicDictionaries;
 - (void)performHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2 continuation:(id)arg3;
 - (void)skipHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2;
 - (void)textAccepted:(id)arg1;

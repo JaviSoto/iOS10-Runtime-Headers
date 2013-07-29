@@ -34,9 +34,10 @@
 - (BOOL)editingConstraintsActive;
 - (id)nameLabel;
 - (id)sourceLabel;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (BOOL)displayConstraintsActive;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (void)setSourceTextAttributes:(id)arg1;
+- (void)setNeedsUpdateDisplayConstraints;
 - (id)nameTextAttributes;
 - (id)contentViewConstraints;
 - (id)contentViewEditingConstraints;

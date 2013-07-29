@@ -56,14 +56,14 @@
 - (BOOL)wordIsFromSystemDictionaryAtIndex:(unsigned int)arg1;
 - (unsigned short)wordReadingLengthAtIndex:(unsigned int)arg1;
 - (unsigned short)wordLengthAtIndex:(unsigned int)arg1;
-- (unsigned int)wordCount;
 - (BOOL)isFuzzyMatchCandidate;
 - (BOOL)isPredictionCandidate;
 - (BOOL)isUserWordCandidate;
 - (BOOL)isLearningDictionaryCandidate;
 - (id)convertedAnalysisString;
-- (id)analysisString;
 - (BOOL)isConversionCandidate;
+- (id)analysisString;
+- (unsigned int)wordCount;
 - (id)surface;
 - (struct MecabraCandidateBase { int (**x1)(); int x2; }*)rawCandidate;
 - (struct ConversionCandidate { int (**x1)(); int x2; }*)rawConversionCandidate;
@@ -76,6 +76,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setWeight:(unsigned int)arg1;
 - (unsigned int)weight;
 - (unsigned short)kind;
 - (int)type;

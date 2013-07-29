@@ -88,8 +88,8 @@
 - (BOOL)hasText;
 - (int)keyboardAppearance;
 - (void)transitionViewDidComplete:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
 - (void)setText:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)layoutSubviews;
 
 @end

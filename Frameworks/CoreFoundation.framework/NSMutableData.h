@@ -9,13 +9,13 @@
 + (id)dataWithCapacity:(unsigned int)arg1;
 + (id)dataWithLength:(unsigned int)arg1;
 
-- (void)setData:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
 - (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (void)increaseLengthBy:(unsigned int)arg1;
 - (void)setLength:(unsigned int)arg1;
 - (void*)mutableBytes;
+- (void)setData:(id)arg1;
 - (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)appendData:(id)arg1;
 - (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;

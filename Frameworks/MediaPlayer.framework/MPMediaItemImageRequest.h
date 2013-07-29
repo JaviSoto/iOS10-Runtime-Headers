@@ -14,6 +14,7 @@
     BOOL _crop;
     BOOL _fillToSquareAspectRatio;
     BOOL _canUseSurfaceBackedImage;
+    BOOL _prefersScreenshot;
 }
 
 @property(readonly) MPMediaItem * mediaItem;
@@ -23,6 +24,7 @@
 @property BOOL canUseSurfaceBackedImage;
 @property int artworkFormat;
 @property(copy) NSString * artworkCacheID;
+@property BOOL prefersScreenshot;
 @property BOOL usePlaceholderAsFallback;
 @property unsigned int placeHolderMediaType;
 
@@ -31,6 +33,8 @@
 - (void)setArtworkFormat:(int)arg1;
 - (int)artworkFormat;
 - (id)uniqueKey;
+- (void)setPrefersScreenshot:(BOOL)arg1;
+- (BOOL)prefersScreenshot;
 - (void)setCanUseSurfaceBackedImage:(BOOL)arg1;
 - (BOOL)canUseSurfaceBackedImage;
 - (void)setPlaceHolderMediaType:(unsigned int)arg1;
@@ -50,8 +54,8 @@
 - (id)copyRawImageReturningError:(id*)arg1;
 - (void)setRetrievalTimeForPlaybackTime:(double)arg1;
 - (id)initWithMediaItem:(id)arg1;
-- (id)mediaItem;
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;
+- (id)mediaItem;
 - (id)placeholderImage;
 - (void).cxx_destruct;
 

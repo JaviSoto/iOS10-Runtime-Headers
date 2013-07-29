@@ -26,7 +26,7 @@
 - (BOOL)isTimerInstalled;
 - (void)fadeOut;
 - (void)clearTimer;
-- (void)sizeToFit;
 - (void)setText:(id)arg1;
+- (void)sizeToFit;
 
 @end

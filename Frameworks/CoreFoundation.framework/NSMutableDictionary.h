@@ -47,10 +47,6 @@
 - (void)_web_setInt:(int)arg1 forKey:(id)arg2;
 - (void)bks_setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)sbs_setSafeObject:(id)arg1 forKey:(id)arg2;
-- (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
-- (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
-- (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
-- (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)_web_setObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
@@ -60,6 +56,10 @@
 - (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
 - (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
+- (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
+- (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
+- (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
+- (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
 - (id)MSASAddIsErrorRecovery;
 - (id)MSASAddNotInterestingKey;
@@ -70,10 +70,10 @@
 - (id)MSASAddIsGlobalResetSync;
 - (id)MSASAddDictionary:(id)arg1;
 - (void)CDVAddObjectsAndKeys:(id)arg1;
+- (void)cr_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (void)setAsString:(id)arg1 forKey:(id)arg2;
 - (void)mf_fixupRFC2231Values;
 - (id)addToCacheAndReturnCssString:(id)arg1;
-- (void)cr_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (void)mf_addObject:(id)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
 - (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;

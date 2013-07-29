@@ -7,6 +7,7 @@
 @interface AVAudioManager : NSObject  {
     int direction;
     int audioRefCount;
+    int connectionRefCount;
     int internalBlockSize;
     int hardwareSampleRate;
     struct AudioStreamBasicDescription { 

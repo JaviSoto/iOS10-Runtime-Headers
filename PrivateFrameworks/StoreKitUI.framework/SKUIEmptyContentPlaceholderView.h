@@ -27,13 +27,13 @@
 - (void)setPlaceholderImage:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })placeholderImageInsets;
 - (BOOL)showsSignInButton;
-- (void)setPlaceholderImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)placeholderMessage;
-- (id)placeholderMessageLabel;
 - (void)setShowsSignInButton:(BOOL)arg1;
 - (void)setPlaceholderMessage:(id)arg1;
+- (void)setPlaceholderImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)placeholderMessage;
 - (void)maskPlaceholdersInBackdropView:(id)arg1;
 - (id)signInButton;
+- (id)placeholderMessageLabel;
 - (id)placeholderImage;
 - (void)setBackgroundColor:(id)arg1;
 - (void).cxx_destruct;

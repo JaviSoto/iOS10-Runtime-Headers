@@ -20,12 +20,12 @@
 @property(readonly) NSDictionary * logLocationsToEncounteredErrors;
 
 
-- (id)ignoredLogLocations;
-- (void)addPendingLogLocations:(id)arg1;
-- (void)addPendingLogLocation:(id)arg1;
 - (void)unionWithSchedulingContext:(id)arg1;
 - (void)failedTransactionLogAtLocationRecovered:(id)arg1;
 - (id)initWithPendingLogLocations:(id)arg1;
+- (id)ignoredLogLocations;
+- (void)addPendingLogLocations:(id)arg1;
+- (void)addPendingLogLocation:(id)arg1;
 - (id)scheduledLogLocations;
 - (id)failedLogLocations;
 - (id)logLocationsToEncounteredErrors;

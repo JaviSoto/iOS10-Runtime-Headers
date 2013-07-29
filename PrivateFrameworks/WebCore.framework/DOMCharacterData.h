@@ -11,7 +11,6 @@
 @property(readonly) unsigned int length;
 
 
-- (void)setData:(id)arg1;
 - (void)replaceData:(unsigned int)arg1 :(unsigned int)arg2 :(id)arg3;
 - (void)replaceData:(unsigned int)arg1 length:(unsigned int)arg2 data:(id)arg3;
 - (void)deleteData:(unsigned int)arg1 :(unsigned int)arg2;
@@ -23,6 +22,7 @@
 - (unsigned int)length;
 - (id)data;
 - (void)remove;
+- (void)setData:(id)arg1;
 - (void)appendData:(id)arg1;
 
 @end

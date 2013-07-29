@@ -80,6 +80,7 @@
 - (BOOL)shouldProcessProtocol;
 - (id)URLBagURLBlock;
 - (id)URLBagKey;
+- (id)clientIdentifier;
 - (id)clientAuditTokenData;
 - (id)clientAuditBundleIdentifier;
 - (BOOL)isLargeDownload;
@@ -100,7 +101,6 @@
 - (id)copyURLRequest;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)clientIdentifier;
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

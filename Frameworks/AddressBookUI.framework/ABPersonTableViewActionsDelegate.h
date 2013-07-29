@@ -35,16 +35,11 @@
 - (int)highlightedValueProperty;
 - (void)setHighlightedValuePerson:(id)arg1;
 - (id)FMFActionButtonsDelegate;
-- (void)setActionShouldPickHighlightedValue:(BOOL)arg1;
 - (BOOL)actionShouldPickHighlightedValue;
 - (void)reloadPrimaryPropertyActionsSection;
 - (void)reloadBottomActions;
 - (int)actionGroupingCountForPropertyGroup:(id)arg1 whenEditing:(BOOL)arg2;
 - (int)actionCountForTopGroupingInSection:(int)arg1 excludingProperty:(int)arg2 excludedPropertyGroupContext:(void*)arg3 outExcludedIndexPaths:(id*)arg4;
-- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5;
-- (id)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(int)arg5 actionGrouping:(int)arg6 ordering:(int)arg7;
-- (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(int)arg5 actionGrouping:(int)arg6 ordering:(int)arg7;
-- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (void)performPersonTableAction:(id)arg1 atIndexPath:(id)arg2;
 - (void)tellDelegateAddToFavoriteWasSelectedForPropertyAtIndex:(int)arg1 inPropertyGroup:(id)arg2 entryType:(int)arg3;
 - (void)reloadBottomActionsAnimated:(BOOL)arg1;
@@ -80,6 +75,11 @@
 - (void)action:(id)arg1 willShowButton:(id)arg2 forValueAtIndex:(int)arg3 inPropertyGroup:(id)arg4;
 - (void)presentDifferentiationSheetForAction:(id)arg1;
 - (void)setFMFActionButtonsDelegate:(id)arg1;
+- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
+- (id)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(int)arg5 actionGrouping:(int)arg6 ordering:(int)arg7;
+- (void)setActionShouldPickHighlightedValue:(BOOL)arg1;
+- (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5;
+- (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(int)arg5 actionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)setDataSource:(id)arg1;

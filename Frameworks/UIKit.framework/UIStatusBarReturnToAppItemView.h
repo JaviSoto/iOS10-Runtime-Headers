@@ -6,7 +6,7 @@
 }
 
 
-- (id)contentsImage;
 - (id)_text;
+- (id)contentsImage;
 
 @end

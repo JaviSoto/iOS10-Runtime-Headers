@@ -8,6 +8,7 @@
     NSFileHandle *_lookasideFileHandle;
     NSString *_lookasideFilePath;
     BOOL _isOutgoingTraffic;
+    BOOL _didFlushLogs;
 }
 
 @property BOOL isOutgoingTraffic;
@@ -20,6 +21,7 @@
 - (void)_moveLogFileContentsAtPath:(id)arg1;
 - (void)logWBXMLData:(id)arg1;
 - (void)setIsOutgoingTraffic:(BOOL)arg1;
+- (void)flushLogs;
 - (void)dealloc;
 
 @end

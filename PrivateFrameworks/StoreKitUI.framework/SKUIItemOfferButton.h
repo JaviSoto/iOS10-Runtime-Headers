@@ -7,7 +7,7 @@
 @interface SKUIItemOfferButton : UIControl  {
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
-    UIImageView *_cloudArrowImageView;
+    BOOL _showingCloudImage;
     UIColor *_confirmationColor;
     NSString *_confirmationTitle;
     <SKUIItemOfferButtonDelegate> *_delegate;
@@ -44,6 +44,7 @@
 + (id)_imageForProgressType:(int)arg1;
 + (id)_cloudArrowImage;
 + (id)_cloudBackgroundImage;
++ (id)_cloudImageForTint:(id)arg1;
 + (id)itemOfferButtonWithAppearance:(id)arg1;
 
 - (void)_setImage:(id)arg1;
@@ -59,10 +60,11 @@
 - (void)setShowsConfirmationState:(BOOL)arg1;
 - (void)setFillStyle:(int)arg1;
 - (void)_cancelGestureAction:(id)arg1;
+- (id)_activeTintColor;
 - (void)_setProgressVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateForProgressFinished:(BOOL)arg1;
 - (void)setProgressType:(int)arg1 animated:(BOOL)arg2;
-- (id)_activeTintColor;
+- (void)_createCloudImage;
 - (void)_reloadForCurrentState;
 - (void)_sendWillAnimate;
 - (void)setShowingConfirmation:(BOOL)arg1 animated:(BOOL)arg2;

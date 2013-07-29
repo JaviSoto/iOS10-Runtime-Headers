@@ -37,7 +37,6 @@
 - (id)horizontalContraint;
 - (SEL)showMoreAction;
 - (void)updateLabel;
-- (void)updateLayoutAttributes:(id)arg1 withNearbyCellAttributes:(id)arg2;
 - (void)setTextAlignmentOffset:(float)arg1;
 - (void)setHorizontalContraint:(id)arg1;
 - (void)setShowMoreAction:(SEL)arg1;

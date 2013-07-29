@@ -17,7 +17,6 @@
 + (id)scheduledTimerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;
 + (id)timerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;
 
-- (double)fireTime;
 - (struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); })context;
 - (double)_cffireTime;
 - (void)setTolerance:(double)arg1;
@@ -28,6 +27,7 @@
 - (id)userInfo;
 - (double)interval;
 - (void)setFireTime:(double)arg1;
+- (double)fireTime;
 - (long)order;
 - (struct __CFString { }*)copyDebugDescription;
 - (void)fire;

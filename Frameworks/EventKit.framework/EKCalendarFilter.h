@@ -45,6 +45,7 @@
 - (id)calendarIDClauseForQueryWithVariableName:(id)arg1;
 - (id)filterQueryForKey:(id)arg1 prefix:(id)arg2 whereClause:(id)arg3 creator:(int (*)())arg4 userInfo:(void*)arg5;
 - (id)filterQueryForQueryString:(id)arg1 creator:(int (*)())arg2 userInfo:(void*)arg3;
+- (void)validate;
 - (void)removeCalendarWithUID:(id)arg1;
 - (BOOL)isCalendarUIDVisible:(id)arg1;
 - (int)visibleCalendarCountWithOptions:(int)arg1;
@@ -89,7 +90,6 @@
 - (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct CalScheduledTaskCache {} *x5; struct __CFDictionary {} *x6; struct __CFDictionary {} *x7; struct _opaque_pthread_mutex_t { long x_8_1_1; BOOL x_8_1_2[40]; } x8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; int x13; int x14; struct __CFString {} *x15; int x16; id x17; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x18; struct _opaque_pthread_mutex_t { long x_19_1_1; BOOL x_19_1_2[40]; } x19; }*)arg1 entityType:(int)arg2 calendarUIDs:(id)arg3;
      /* Encoded args for previous method: @20@0:4^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}ii^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}}8i12@16 */
 
-- (void)validate;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

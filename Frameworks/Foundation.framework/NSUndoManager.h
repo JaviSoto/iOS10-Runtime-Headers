@@ -17,8 +17,6 @@
 
 + (void)_endTopLevelGroupings;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)removeAllActionsWithTarget:(id)arg1;
 - (BOOL)isRedoing;

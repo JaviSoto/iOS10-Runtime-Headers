@@ -11,8 +11,6 @@
     unsigned int _align : 2;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTime:(id)arg1;
 - (id)time;
@@ -21,6 +19,5 @@
 - (void)dealloc;
 - (void)setTimeShadowColor:(id)arg1;
 - (void)setTimeColor:(id)arg1;
-- (id)accessibilityLabel;
 
 @end

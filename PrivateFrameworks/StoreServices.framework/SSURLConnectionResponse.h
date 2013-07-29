@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, NSData, NSDictionary, NSURL;
+@class SSMetricsPageEvent, NSString, NSData, NSDictionary, NSURL;
 
 @interface SSURLConnectionResponse : NSObject <SSXPCCoding> {
     NSDictionary *_allHeaderFields;
     NSData *_body;
     long long _expectedContentLength;
+    SSMetricsPageEvent *_metricsPageEvent;
     NSString *_mimeType;
     int _statusCode;
     NSString *_suggestedFilename;
@@ -23,22 +24,25 @@
 @property(readonly) NSString * textEncodingName;
 @property(readonly) NSURL * URL;
 @property(readonly) NSData * databaseEncoding;
+@property(retain) SSMetricsPageEvent * metricsPageEvent;
 
 
-- (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
 - (id)databaseEncoding;
 - (id)initWithDatabaseEncoding:(id)arg1;
+- (void)setMetricsPageEvent:(id)arg1;
+- (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
+- (id)metricsPageEvent;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)bodyData;
 - (id)textEncodingName;
 - (id)MIMEType;
 - (void)dealloc;
+- (int)statusCode;
 - (id)allHeaderFields;
 - (id)URL;
 - (long long)expectedContentLength;
 - (id)suggestedFilename;
-- (int)statusCode;
 - (id)radio_decompressedBodyData;
 
 @end

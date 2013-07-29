@@ -41,6 +41,7 @@
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
 + (void)_setDebugFlags:(int)arg1;
 + (const char *)_databaseOpenURLStringForURL:(id)arg1;
++ (int)openAtPath:(const char *)arg1 handle:(struct sqlite3 {}**)arg2 flags:(int)arg3 module:(const char *)arg4;
 + (int)readMagicWordFromPath:(const char *)arg1;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;

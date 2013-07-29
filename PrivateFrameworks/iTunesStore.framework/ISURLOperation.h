@@ -81,15 +81,14 @@
 - (id)_activeURL;
 - (id)_copyAuthenticationContext;
 - (id)requestProperties;
+- (void)setRequest:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (void)_stopIfCancelled;
-- (void)setRequest:(id)arg1;
 - (void)_updateProgress;
 - (void)run;
 - (id)init;
 - (void)dealloc;
-- (void)cancel;
 - (id)response;
 - (void)setResponse:(id)arg1;
 - (id)dataProvider;

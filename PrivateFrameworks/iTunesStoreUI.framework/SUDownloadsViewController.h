@@ -11,6 +11,7 @@
     UIView *_emptyDownloadQueueView;
     BOOL _isUsingNetwork;
     NSObject<OS_dispatch_source> *_reloadFromServerTimer;
+    BOOL _isEditing;
 }
 
 

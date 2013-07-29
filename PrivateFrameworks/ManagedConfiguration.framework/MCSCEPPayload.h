@@ -34,8 +34,8 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
-- (unsigned int)retryDelay;
 - (unsigned int)retries;
+- (unsigned int)retryDelay;
 - (id)subjectAltName;
 - (id)CACaps;
 - (id)CAFingerprint;
@@ -46,10 +46,10 @@
 - (BOOL)isIdentity;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (struct __SecCertificate { }*)copyCertificate;
-- (id)challenge;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)subject;
+- (id)challenge;
 - (id)URLString;
 - (void).cxx_destruct;
 - (id)description;

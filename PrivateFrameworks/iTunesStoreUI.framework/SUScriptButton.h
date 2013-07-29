@@ -32,7 +32,6 @@
 - (void)setShouldPerformDefaultAction:(BOOL)arg1;
 - (id)_systemItemString;
 - (id)showingConfirmation;
-- (void)setCanvas:(id)arg1;
 - (void)setNativeButton:(id)arg1;
 - (void)performActionWithArguments:(id)arg1;
 - (void)setImageWithURLString:(id)arg1 scale:(id)arg2;
@@ -47,8 +46,9 @@
 - (id)buttonItem;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)canvas;
 - (BOOL)loading;
+- (id)canvas;
+- (void)setCanvas:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (BOOL)shouldPerformDefaultAction;
 - (void)setTitle:(id)arg1;

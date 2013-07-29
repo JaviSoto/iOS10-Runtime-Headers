@@ -79,7 +79,6 @@
         unsigned int usesAttributedText : 1; 
         unsigned int backgroundViewState : 2; 
         unsigned int clearingBehavior : 2; 
-        unsigned int showDisabledTextColor : 1; 
     } _textFieldFlags;
     BOOL _deferringBecomeFirstResponder;
     BOOL _avoidBecomeFirstResponder;
@@ -162,8 +161,6 @@
 + (BOOL)_isCompatibilityTextField;
 + (void)_preheatDictationIfNecessary;
 + (BOOL)_isDisplayingShortcutViewController;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (BOOL)isEditable;
@@ -248,7 +245,6 @@
 - (void)_invalidateBaselineLayoutConstraints;
 - (void)_setAttributedText:(id)arg1 onFieldEditorAndSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)finishedSettingTextOrAttributedText;
-- (id)_disabledTextColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })borderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateForPasscodeAppearance;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_prefixFrame;
@@ -277,8 +273,8 @@
 - (void)_syncTypingAttributesWithDefaultAttribute:(id)arg1;
 - (id)customOverlayContainer;
 - (void)setSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (int)_currentTextAlignment;
 - (void)_initialScrollDidFinish:(id)arg1;
+- (void)scrollTextFieldToVisible;
 - (BOOL)_shouldEndEditing;
 - (id)clearButton;
 - (int)clearButtonMode;
@@ -299,7 +295,6 @@
 - (void)_selectionMayChange:(id)arg1;
 - (struct CGSize { float x1; float x2; })_textSize;
 - (void)setClearsOnBeginEditing:(BOOL)arg1;
-- (float)paddingRight;
 - (float)paddingBottom;
 - (id)_text;
 - (void)setPaddingRight:(float)arg1;
@@ -320,7 +315,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedCaretRectForCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_clearBackgroundViews;
 - (void)_updateBackgroundViewsAnimated:(BOOL)arg1;
-- (id)_placeholderLabel;
+- (float)paddingRight;
 - (BOOL)_showsLeftView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suffixFrame;
 - (BOOL)_hasSuffixField;
@@ -334,6 +329,7 @@
 - (id)_clearButtonImageForState:(unsigned int)arg1;
 - (void)_updateButtons;
 - (id)_clearButton;
+- (int)_currentTextAlignment;
 - (BOOL)_hasContent;
 - (void)setPaddingLeft:(float)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
@@ -341,6 +337,7 @@
 - (void)setClearButtonMode:(int)arg1;
 - (void)setLeftViewMode:(int)arg1;
 - (void)setDisabledBackground:(id)arg1;
+- (id)_placeholderLabel;
 - (void)_activateSelectionView;
 - (void)__resumeBecomeFirstResponder;
 - (id)_systemBackgroundView;
@@ -425,7 +422,6 @@
 - (BOOL)hasMarkedText;
 - (unsigned int)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
-- (id)attributedText;
 - (void)selectAll;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKeyboardAppearance:(int)arg1;
@@ -433,6 +429,7 @@
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
@@ -462,9 +459,9 @@
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)deleteBackward;
-- (BOOL)hasText;
 - (float)_passcodeStyleAlpha;
 - (void)clearText;
+- (BOOL)hasText;
 - (int)atomStyle;
 - (BOOL)drawsAsAtom;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 animated:(BOOL)arg2;
@@ -509,8 +506,11 @@
 - (BOOL)adjustsFontSizeToFitWidth;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)_updateLabel;
+- (id)attributedText;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setContentVerticalAlignment:(int)arg1;
+- (void)setAttributedText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (id)_scriptingInfo;
@@ -530,35 +530,12 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityInternalData;
-- (void)_accessibilitySwitchOrderedChildrenFrom:(id)arg1;
-- (id)_accessibilityInternalButton;
-- (void)_accessibilityUpdateButtons;
-- (id)_accessibilityTextFieldElement;
-- (BOOL)_axTextFieldIsHidden;
-- (int)_accessibilityCountAccessibleChildren:(id)arg1;
-- (id)accessibilityPlaceholderValue;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_accessibilitySetValue:(id)arg1;
 - (BOOL)isReallyFirstResponder;
 - (void)configureFromScriptTextField:(id)arg1;
 

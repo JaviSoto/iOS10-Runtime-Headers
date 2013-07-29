@@ -17,11 +17,11 @@
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 
+- (id)udid;
 - (id)dateFieldsOrder;
 - (int)osMinorVersion;
 - (int)osMajorVersion;
 - (id)platform;
-- (id)udid;
 - (id)attributeKeys;
 - (id)device;
 - (id)client;

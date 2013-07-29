@@ -23,8 +23,8 @@
 - (BOOL)isWideScreen;
 - (id)_initWithAVCamera:(id)arg1;
 - (int)cameraStyle;
-- (BOOL)isSuspended;
 - (id)uniqueID;
+- (BOOL)isSuspended;
 - (id)init;
 - (id)name;
 - (void)dealloc;

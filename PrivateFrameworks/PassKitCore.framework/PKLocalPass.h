@@ -39,7 +39,6 @@
 - (void)checkRevocationStatusForPassAtURL:(id)arg1 completion:(id)arg2;
 - (BOOL)getResourceValue:(id*)arg1 forKey:(id)arg2 forPassAtURL:(id)arg3 error:(id*)arg4;
 - (void)setRemoveOnDiskRepresentationOnDealloc:(BOOL)arg1;
-- (void)_cleanupOldPassCaches;
 - (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2;
 - (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2 error:(id*)arg3;
 - (id)_groupingIDFromPassDictionary:(id)arg1;
@@ -51,11 +50,11 @@
 - (id)validatePassURL:(id)arg1;
 - (void)setFileAccessor:(id)arg1;
 - (id)localLocationsURL;
+- (id)initWithData:(id)arg1 error:(id*)arg2;
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
 - (void)fetchContentWithCompletion:(id)arg1;
 - (id)passData;
 - (id)archivedPass;
-- (id)initWithData:(id)arg1 error:(id*)arg2;
 - (void)setFileURL:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

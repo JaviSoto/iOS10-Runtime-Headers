@@ -9,16 +9,11 @@
     BOOL _showRSSI;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)_stringForRSSI;
 - (float)extraRightPadding;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

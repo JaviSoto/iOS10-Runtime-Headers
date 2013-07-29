@@ -4,7 +4,7 @@
 
 @class <SKUISearchChildViewControllerDelegate>, SKUIMetricsController, SKUIClientContext, SKUIGiftThemeCollectionView, SKUISearchPage, SKUISearchResultGroupController, SKUISearchRelatedView, NSString, SKUIItemCollectionController, NSMutableDictionary;
 
-@interface SKUIIPhoneSearchViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, SKUISearchResultGroupControllerDelegate, SKUIItemCollectionDelegate, SKUISearchRelatedViewDelegate> {
+@interface SKUIIPhoneSearchViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, SKUISearchResultGroupControllerDelegate, SKUIItemCollectionDelegate, SKUISearchRelatedViewDelegate, SKUIMetricsViewController> {
     SKUIClientContext *_clientContext;
     SKUIGiftThemeCollectionView *_collectionView;
     <SKUISearchChildViewControllerDelegate> *_delegate;
@@ -34,15 +34,17 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })itemCollectionController:(id)arg1 itemPageRangeForOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)itemCollectionController:(id)arg1 cellLayoutForItemIndex:(int)arg2;
 - (void)_noResultsAction:(id)arg1;
+- (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
 - (void)_recordClickEvent:(id)arg1 withCell:(id)arg2;
 - (void)_recordClickEventForItemOffer:(id)arg1 atIndexPath:(id)arg2;
 - (void)_recordClickEventForEditorial:(id)arg1 atIndexPath:(id)arg2;
 - (void)_recordClickEventForItem:(id)arg1 atIndexPath:(id)arg2;
 - (int)_indexForItemIndex:(int)arg1;
-- (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
+- (void)_recordImpressionEventWithIndex:(int)arg1;
 - (int)_itemIndexForIndex:(int)arg1;
 - (id)_itemCollectionController;
 - (void)_reloadScreenshotHeight;
+- (void)_recordImpressionEventWithContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
 - (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2;
 - (id)previousRelatedSearchTerm;
@@ -51,11 +53,12 @@
 - (id)metricsController;
 - (id)_visibleMetricsImpressionsString;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
+- (id)activeMetricsController;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (void)setMetricsController:(id)arg1;
+- (void)scrollToTop;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)scrollToTop;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

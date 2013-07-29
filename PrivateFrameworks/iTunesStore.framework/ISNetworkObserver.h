@@ -35,6 +35,7 @@
 + (id)sharedInstance;
 
 - (void)reloadNetworkType;
+- (void)_reloadNetworkTypeWithReachabilityFlags:(unsigned int)arg1;
 - (void)_reloadCellularRestriction;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
@@ -43,6 +44,7 @@
 - (id)dataStatusIndicator;
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;
+- (int)_networkTypeForReachabilityFlags:(unsigned int)arg1;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
 - (int)_setNetworkType:(int)arg1;
 - (void)_reloadNetworkType;

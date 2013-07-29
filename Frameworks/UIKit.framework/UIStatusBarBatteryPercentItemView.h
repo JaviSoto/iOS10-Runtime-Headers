@@ -8,20 +8,14 @@
     NSString *_percentString;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (int)textStyle;
 - (void)dealloc;
 - (BOOL)animatesDataChange;
 - (float)extraRightPadding;
 - (BOOL)cachesImage;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (id)contentsImage;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (int)textAlignment;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityIsBatteryItemVisible;
 
 @end

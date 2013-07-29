@@ -17,13 +17,13 @@
 + (id)commandwithCommand:(id)arg1 variantParam:(id)arg2 invariantParam:(id)arg3;
 + (id)command;
 
+- (void)setCommand:(id)arg1;
 - (void)setInvariantParam:(id)arg1;
 - (void)setVariantParam:(id)arg1;
 - (id)initWithCommand:(id)arg1 variantParam:(id)arg2 invariantParam:(id)arg3;
 - (BOOL)canBeGroupedWithCommand:(id)arg1;
 - (id)variantParam;
 - (id)invariantParam;
-- (void)setCommand:(id)arg1;
 - (id)command;
 - (id)init;
 - (void).cxx_destruct;

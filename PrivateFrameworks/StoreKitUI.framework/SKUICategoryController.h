@@ -39,7 +39,10 @@
 - (id)initWithContentsController:(id)arg1;
 - (int)segmentedControlLength;
 - (void)setSegmentedControlLength:(int)arg1;
+- (void)_recordClickEventWithCategory:(id)arg1 index:(int)arg2;
+- (id)_metricsLocationsWithIndex:(int)arg1;
 - (id)_tableViewControllerWithCategory:(id)arg1;
+- (id)_rootMetricsLocations;
 - (void)_reloadSelectedSegment;
 - (void)_precacheArtworkForCategory:(id)arg1;
 - (void)_reloadSegmentedControl;
@@ -47,6 +50,7 @@
 - (void)_setCachedResponse:(id)arg1 error:(id)arg2;
 - (id)selectedURL;
 - (id)defaultURL;
+- (id)metricsPageContextForCategoryTableView:(id)arg1;
 - (void)categoryTableView:(id)arg1 didSelectCategory:(id)arg2;
 - (id)categoryButton;
 - (void)setDefaultURL:(id)arg1;

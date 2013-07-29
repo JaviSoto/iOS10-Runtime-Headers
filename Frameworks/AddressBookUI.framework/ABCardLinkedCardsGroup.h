@@ -16,5 +16,6 @@
 - (id)editingItems;
 - (id)displayItems;
 - (id)title;
+- (void)dealloc;
 
 @end

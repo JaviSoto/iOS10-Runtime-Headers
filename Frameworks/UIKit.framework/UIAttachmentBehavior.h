@@ -55,6 +55,8 @@
 - (int)attachedBehaviorType;
 - (void)_dissociate;
 - (void)_associate;
+- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg2 attachedToItem:(id)arg3 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg4;
+- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg2 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg3;
 - (id)initWithItem:(id)arg1 attachedToItem:(id)arg2;
 - (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_reevaluateJoint;

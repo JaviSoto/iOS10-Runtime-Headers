@@ -8,23 +8,10 @@
     NSConcreteNotifyingMutableAttributedString *_contents;
     NSLayoutManager *_layoutManager;
     NSTextContainer *_textContainer;
-    id _preliminaryCache;
-    id _cache;
-    NSTextContainer *_firstTextContainer;
-    NSTextContainer *_secondTextContainer;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    } _currentCharacterRange;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    } _currentGlyphRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     } _temporaryCharacterRange;
-    unsigned int _retainCount;
     float _baselineDelta;
     struct { 
         unsigned int _typesetterBehavior : 4; 
@@ -44,13 +31,11 @@
 
 + (id)stringDrawingTextStorage;
 + (void)_setHasCustomSettings:(BOOL)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
 - (void)processEditing;
 - (id)textContainerForAttributedString:(id)arg1;
 - (id)flippedView;
-- (BOOL)_informationForFont:(id)arg1 glyphTable:(unsigned short**)arg2 positionTable:(float**)arg3;
 - (void)fontSetChanged;
 - (struct CGPoint { float x1; float x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_baselineDelta;
@@ -73,7 +58,6 @@
 - (id)cuiCatalog;
 - (id)init;
 - (unsigned int)length;
-- (void)invalidate;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -82,12 +66,6 @@
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)string;
-- (void)dealloc;
-- (unsigned int)retainCount;
-- (oneway void)release;
-- (id)retain;
-- (BOOL)_tryRetain;
-- (BOOL)_isDeallocating;
 - (id)textContainer;
 
 @end

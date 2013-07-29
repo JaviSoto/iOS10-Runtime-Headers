@@ -23,17 +23,17 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isExternalPowerConnected;
-- (void)addDelegate:(id)arg1;
-- (void)removeDelegate:(id)arg1;
 - (void)setExternalPowerConnected:(BOOL)arg1;
 - (void)setCurrentLevel:(double)arg1;
 - (double)currentLevel;
 - (double)batteryPercentRemaining;
+- (BOOL)isExternalPowerConnected;
 - (void)updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
 - (void)_handlePowerChangedNotificationWithMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
 - (BOOL)_updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
 - (void)updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

@@ -19,11 +19,11 @@
 + (id)answerPropertyWithDictionary:(id)arg1 context:(id)arg2;
 + (id)answerProperty;
 
+- (void)setCommand:(id)arg1;
 - (void)setDecoratedValueAnnotation:(id)arg1;
 - (id)decoratedValueAnnotation;
 - (void)setDecoratedValue:(id)arg1;
 - (id)decoratedValue;
-- (void)setCommand:(id)arg1;
 - (void)setValueAnnotation:(id)arg1;
 - (id)valueAnnotation;
 - (void)setPunchOut:(id)arg1;

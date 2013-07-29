@@ -7,11 +7,13 @@
 @interface UIWebFormAccessory : UIInputView  {
     UIToolbar *_leftToolbar;
     UIToolbar *_rightToolbar;
+    UIBarButtonItem *_doneButton;
+    UIBarButtonItem *_flexibleSpaceItem;
+    UIBarButtonItem *_previousItem;
+    UIBarButtonItem *_nextItem;
     UISegmentedControl *_tab;
     UIBarButtonItem *_autofill;
     UIBarButtonItem *_clearButton;
-    UIBarButtonItem *_doneButton;
-    UIBarButtonItem *_flexibleSpaceItem;
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
@@ -23,13 +25,13 @@
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
 + (id)toolbarWithItems:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)_autofill;
+- (void)set_tab:(id)arg1;
 - (id)_tab;
 - (BOOL)isPreviousEnabled;
 - (void)setPreviousEnabled:(BOOL)arg1;
@@ -37,20 +39,22 @@
 - (void)setNextEnabled:(BOOL)arg1;
 - (void)setClearVisible:(BOOL)arg1;
 - (void)showAutoFillButton;
-- (void)showAutoFillButtonWithTitle:(id)arg1;
 - (void)hideAutoFillButton;
-- (id)_autofill;
-- (void)autoFill:(id)arg1;
-- (void)_refreshAutofillPresentation;
 - (void)set_clearButton:(id)arg1;
+- (void)clear:(id)arg1;
+- (void)showAutoFillButtonWithTitle:(id)arg1;
+- (void)autoFill:(id)arg1;
 - (void)set_autofill:(id)arg1;
-- (void)set_tab:(id)arg1;
+- (id)_autoFillButton;
+- (void)_applyTreatmentToAutoFillLabel;
+- (void)_refreshAutofillPresentation;
 - (void)_orientationDidChange:(id)arg1;
 - (void)_updateFrame;
 - (void)done:(id)arg1;
-- (void)tab:(id)arg1;
+- (void)_nextTapped:(id)arg1;
+- (void)_previousTapped:(id)arg1;
+- (void)_tabSegmentedControlDidChange:(id)arg1;
 - (id)_clearButton;
-- (void)clear:(id)arg1;
 - (void)layoutSubviews;
 
 @end

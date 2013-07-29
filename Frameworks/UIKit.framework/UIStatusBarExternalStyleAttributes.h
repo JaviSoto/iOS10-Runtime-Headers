@@ -6,10 +6,10 @@
 }
 
 
-- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 - (int)idiom;
 - (Class)foregroundStyleClass;
 - (float)heightForMetrics:(int)arg1;
+- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 - (id)backgroundImageName;
 
 @end

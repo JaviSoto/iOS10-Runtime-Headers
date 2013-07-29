@@ -22,16 +22,14 @@
 
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 + (double)defaultAnimationDuration;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setShowingConfirmation:(BOOL)arg1;
 - (id)itemOfferButtonStyle;
 - (struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })_configurationForStyle:(id)arg1;
 - (void)setItemOfferButtonStyle:(id)arg1;
 - (BOOL)shouldShowConfirmation;
 - (void)setAnimationHorizontalAlignment:(int)arg1;
 - (BOOL)configureForItem:(id)arg1 offer:(id)arg2;
+- (void)setShowingConfirmation:(BOOL)arg1;
 - (void)_applyConfiguration:(struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
 - (id)confirmationTitle;
 - (id)offerTitle;
@@ -46,7 +44,5 @@
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
 
 @end

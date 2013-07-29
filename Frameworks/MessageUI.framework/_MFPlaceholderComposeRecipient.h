@@ -10,7 +10,7 @@
 
 
 - (void)dealloc;
-- (id)displayString;
 - (void)setDisplayString:(id)arg1;
+- (id)displayString;
 
 @end

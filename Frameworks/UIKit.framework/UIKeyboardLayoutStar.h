@@ -103,9 +103,6 @@
 + (id)keyboardWithName:(id)arg1 screen:(id)arg2;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -154,6 +151,7 @@
 - (void)continueFromInternationalActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
 - (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(int)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(BOOL)arg5 prevActions:(int)arg6 executionContext:(id)arg7;
 - (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
+- (BOOL)shouldSendStringForFlick:(id)arg1;
 - (void)touchMultitapTimer;
 - (BOOL)shouldSendTouchUpToInputManager:(id)arg1;
 - (void)completeRetestForTouchUp:(id)arg1 timestamp:(double)arg2 interval:(double)arg3 executionContext:(id)arg4;
@@ -163,9 +161,9 @@
 - (unsigned int)upActionFlagsForKey:(id)arg1;
 - (void)completeHitTestForTouchDragged:(id)arg1 hitKey:(id)arg2;
 - (void)handleFlick:(id)arg1;
+- (BOOL)touchPassesDragThreshold:(id)arg1;
 - (void)interpretTouchesForSplit;
 - (id)infoForTouch:(id)arg1;
-- (void)deleteActionWithExecutionContext:(id)arg1;
 - (void)completeDeleteActionForTouchDownWithActions:(unsigned int)arg1 executionContext:(id)arg2;
 - (void)downActionShiftWithKey:(id)arg1;
 - (id)preTouchKeyplaneName;
@@ -290,11 +288,12 @@
 - (float)hitBuffer;
 - (BOOL)canProduceString:(id)arg1;
 - (void)longPressAction;
-- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
+- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setTarget:(id)arg1 forKey:(id)arg2;
 - (void)restoreDefaultsForKey:(id)arg1;
+- (void)updateBackgroundCorners;
 - (void)restoreDefaultsForAllKeys;
 - (void)didClearInput;
 - (BOOL)usesAutoShift;
@@ -331,29 +330,5 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setShift:(BOOL)arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityElementsHidden;
-- (BOOL)accessibilityPerformEscape;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityInternalData;
-- (id)_accessibilityCreateElementForKey:(id)arg1;
-- (void)_accessibilityResetInternalData;
-- (void)_axClearReturnKeyLabel;
-- (id)_accessibilityKeys;
-- (BOOL)_isCapitalLetterKeyplane:(id)arg1;
-- (BOOL)_isSmallLetterKeyplane:(id)arg1;
-- (id)_accessibilityKeyElementForKey:(id)arg1;
-- (BOOL)_accessibilityFingerIsDown;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityKeyboardKeyForString:(id)arg1;
-- (id)_accessibilityUserTestingChildren;
-- (id)_accessibiltyAvailableKeyplanes;
-- (void)_accessibilityChangeToKeyplane:(id)arg1;
-- (id)_accessibilityScannerGroupElements;
-- (BOOL)_accessibilityIsScannerGroup;
-- (int)_accessibilityScannerGroupTraits;
 
 @end

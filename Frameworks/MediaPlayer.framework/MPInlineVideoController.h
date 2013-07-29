@@ -123,8 +123,6 @@
 @property unsigned long long visibleParts;
 @property BOOL autoPlayWhenLikelyToKeepUp;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (int)savedStatusBarStyle;
 - (BOOL)savedIsStatusBarHidden;

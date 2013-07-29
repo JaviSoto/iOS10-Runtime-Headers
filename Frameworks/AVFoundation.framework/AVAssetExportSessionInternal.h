@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVWeakReference, AVAssetTrack, NSURL, NSError, AVAsset, AVVideoComposition, NSArray, NSObject<OS_dispatch_queue>, AVMetadataItemFilter, AVAudioMix, AVCustomVideoCompositorSession, NSString;
+@class AVWeakReference, AVAssetTrack, NSURL, NSObject<OS_dispatch_semaphore>, NSError, AVAsset, AVVideoComposition, NSArray, NSObject<OS_dispatch_queue>, AVMetadataItemFilter, AVAudioMix, AVCustomVideoCompositorSession, NSString;
 
 @interface AVAssetExportSessionInternal : NSObject  {
     AVWeakReference *weakReference;
@@ -43,6 +43,15 @@
             long long epoch; 
         } duration; 
     } timeRange;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } minVideoFrameDuration;
+    BOOL canUseFastFrameRateConversion;
+    NSString *videoFrameRateConversionAlgorithm;
+    NSObject<OS_dispatch_semaphore> *canUseFastFrameRateConversionSemaphore;
     long long maxFileSize;
 
   /* Unexpected information at end of encoded ivar type: ? */

@@ -24,7 +24,6 @@
 + (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 + (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 
-- (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)description;
@@ -36,6 +35,7 @@
 - (id)_dlInternal;
 - (id)connectionProperties;
 - (void)download;
+- (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (void)setDefersCallbacks:(BOOL)arg1;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;

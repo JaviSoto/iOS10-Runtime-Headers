@@ -34,14 +34,14 @@
 - (id)encodedClassName;
 - (void)setImportant:(BOOL)arg1;
 - (BOOL)completed;
-- (void)setTrigger:(id)arg1;
-- (id)trigger;
 - (void)setDueDate:(id)arg1;
 - (id)dueDate;
 - (void)setCompleted:(BOOL)arg1;
-- (void)setPayload:(id)arg1;
+- (void)setTrigger:(id)arg1;
+- (id)trigger;
 - (void)setSubject:(id)arg1;
 - (id)subject;
+- (void)setPayload:(id)arg1;
 - (id)payload;
 - (id)groupIdentifier;
 

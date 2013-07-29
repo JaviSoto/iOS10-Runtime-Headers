@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIAsyncInvocation, _UISizeTrackingView, _UIRemoteView, _UIViewServiceInterface, NSError, UIActionSheet, UIView, NSString, _UITextServiceSession, UIDimmingView, NSArray;
+@class UIDimmingView, _UIViewServiceInterface, _UIAsyncInvocation, NSError, UIView, _UITextServiceSession, _UIRemoteView, NSArray, NSString, _UISizeTrackingView, NSObject<OS_dispatch_semaphore>, UIActionSheet;
 
 @interface _UIRemoteViewController : UIViewController <XPCProxyTarget, _UIRemoteViewController_ViewControllerOperatorInterface, _UIRemoteViewController_TextEffectsOperatorInterface, UIActionSheetDelegate> {
     NSString *_serviceBundleIdentifier;
@@ -17,7 +17,7 @@
     id _textEffectsOperatorProxy;
     _UIAsyncInvocation *_textEffectsOperatorHalfDisconnectionInvocation;
     BOOL _fencingCurrentTransaction;
-    unsigned int _fenceReplyPort;
+    NSObject<OS_dispatch_semaphore> *_fenceBarrier;
     _UISizeTrackingView *_sizeTrackingView;
     _UIRemoteView *_serviceViewControllerRemoteView;
     _UIRemoteView *_fullScreenTextEffectsRemoteView;
@@ -47,9 +47,6 @@
 + (BOOL)shouldPropagateAppearanceCustomizations;
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)disconnect;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -81,6 +78,7 @@
 - (id)serviceBundleIdentifier;
 - (void)viewServiceSupportedInterfaceOrientationsDidChange;
 - (void)_updateTouchGrabbingView;
+- (void)_applicationWillDeactivate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;
 - (void)_restoreTextEffectsRemoteView;
@@ -105,7 +103,6 @@
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (BOOL)_requiresKeyboardWindowWhenFirstResponder;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
@@ -115,19 +112,17 @@
 - (void)_willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2 forwardToChildControllers:(BOOL)arg3 skipSelf:(BOOL)arg4;
 - (BOOL)_ignoreAppSupportedOrientations;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (BOOL)_customizesForPresentationInPopover;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (void)__willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)prefersStatusBarHidden;
 - (int)preferredStatusBarStyle;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (id)_accessibilityResponderElement;
 
 @end

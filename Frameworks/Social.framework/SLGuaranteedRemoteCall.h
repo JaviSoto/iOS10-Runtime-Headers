@@ -19,8 +19,8 @@
 @property(retain) id proxy;
 
 
-- (void)setBlock:(id)arg1;
 - (id)proxy;
+- (void)setBlock:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (void).cxx_destruct;
 - (id)block;

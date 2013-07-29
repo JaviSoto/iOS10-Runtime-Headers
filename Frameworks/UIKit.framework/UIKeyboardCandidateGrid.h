@@ -41,9 +41,6 @@
 @property(retain) UIKBBackdropView * backdropView;
 @property BOOL showHiddenCandidatesOnly;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)candidateSet;
@@ -83,8 +80,8 @@
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
 - (BOOL)showHiddenCandidatesOnly;
-- (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
 - (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
+- (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
 - (id)candidateListDelegate;
 - (BOOL)padInlineFloatingViewIsExpanded:(id)arg1;
 - (int)candidatesVisualStyle;
@@ -97,8 +94,12 @@
 - (BOOL)handleNumberKey:(unsigned int)arg1;
 - (void)setInlineText:(id)arg1;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (unsigned int)selectedSortIndex;
+- (id)statisticsIdentifier;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
+- (void)showPreviousRow;
+- (void)showNextRow;
 - (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;
@@ -115,6 +116,5 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
-- (void)setAccessibilityElementsHidden:(BOOL)arg1;
 
 @end

@@ -46,6 +46,7 @@
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setShouldProcessProtocol:(BOOL)arg1;
 - (void)setShouldAddKBSyncData:(BOOL)arg1;
+- (void)setClientIdentifier:(id)arg1;
 - (void)setURLBagURLBlock:(id)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
 - (void)setClientAuditBundleIdentifier:(id)arg1;
@@ -61,16 +62,16 @@
 - (void)setHTTPHeaders:(id)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
-- (void)setClientIdentifier:(id)arg1;
-- (void)setTimeoutInterval:(double)arg1;
-- (void)setHTTPMethod:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setURLs:(id)arg1;
+- (void)setHTTPMethod:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setURL:(id)arg1;
+- (void)radio_mescalSignWithRequestContext:(id)arg1;
 
 @end

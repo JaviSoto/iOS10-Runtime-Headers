@@ -36,7 +36,6 @@
 @property(readonly) <PKPassGroupViewDelegate> * delegate;
 
 
-- (void)_handleLongPress:(id)arg1;
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didInsertPass:(id)arg2 atIndex:(unsigned int)arg3;
@@ -90,6 +89,7 @@
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
 - (id)groupID;
+- (void)_handleLongPress:(id)arg1;
 - (void)removeFromSuperview;
 - (void)setPresentationState:(int)arg1;
 - (int)presentationState;

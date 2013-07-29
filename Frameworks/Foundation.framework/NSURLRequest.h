@@ -10,8 +10,8 @@
 
 @property(retain) GKFairPlaySAPSession * SAPSession;
 
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)requestWithURL:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (double)defaultTimeoutInterval;

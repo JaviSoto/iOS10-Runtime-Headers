@@ -51,7 +51,6 @@
 @property BOOL forBackgroundURLSession;
 
 
-- (void)setPayload:(id)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)setForBackgroundURLSession:(BOOL)arg1;
 - (void)setForBackgroundContentFetching:(BOOL)arg1;
@@ -65,6 +64,7 @@
 - (void)setEnableTests:(BOOL)arg1;
 - (void)setFirstLaunchAfterBoot:(BOOL)arg1;
 - (void)setSafe:(BOOL)arg1;
+- (void)setPayload:(id)arg1;
 - (void)setOpenURL:(id)arg1;
 - (void)setSuspendedEventsOnly:(BOOL)arg1;
 - (void)setLaunchSettings:(id)arg1;

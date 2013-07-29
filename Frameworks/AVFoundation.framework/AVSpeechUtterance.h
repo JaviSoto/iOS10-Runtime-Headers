@@ -35,11 +35,11 @@
 - (id)speechString;
 - (id)voice;
 - (float)rate;
-- (float)volume;
 - (void)setVoice:(id)arg1;
 - (void)setPitchMultiplier:(float)arg1;
 - (void)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;
+- (float)volume;
 - (id)initWithString:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -30,10 +30,10 @@
 - (void)setFmtype:(id)arg1;
 - (id)fmtype;
 - (BOOL)isBinary;
-- (void)setData:(id)arg1;
 - (int)size;
 - (void)setSize:(int)arg1;
 - (id)initWithURL:(id)arg1;
+- (void)setData:(id)arg1;
 - (id)filename;
 - (void)setURL:(id)arg1;
 - (id)initWithData:(id)arg1;

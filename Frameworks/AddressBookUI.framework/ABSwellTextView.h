@@ -31,8 +31,6 @@
 @property struct CGSize { float x1; float x2; } shadowOffset;
 
 + (float)lineHeightWithFont:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)abUITextView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
 - (float)abUITextView:(id)arg1 heightForContentSize:(struct CGSize { float x1; float x2; })arg2;
@@ -67,6 +65,7 @@
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
 - (id)textColor;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
@@ -80,8 +79,6 @@
 - (BOOL)isScrollEnabled;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
-- (id)accessibilityValue;
 
 @end

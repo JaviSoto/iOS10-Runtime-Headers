@@ -17,8 +17,6 @@
 
 + (float)defaultLabelFontSize;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_setLabel:(id)arg1;
 - (void)setKnobImage:(id)arg1;
@@ -30,7 +28,6 @@
 - (float)knobTrackInsetLeft;
 - (id)knob;
 - (void)setTextAlpha:(float)arg1;
-- (id)labelView;
 - (void)freezeKnobInUnlockedPosition;
 - (void)relock;
 - (void)slideBack:(BOOL)arg1;
@@ -55,6 +52,7 @@
 - (float)slideTouchAreaInsetRight;
 - (float)slideTouchAreaInsetLeft;
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)labelView;
 - (void)setLabels:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)labels;
@@ -71,12 +69,5 @@
 - (BOOL)_canDrawContent;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)unlock;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityIdentifier;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityContainerElements;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (void)clearDelegateClearer;
-- (void)_axClearDelegate:(id)arg1;
 
 @end

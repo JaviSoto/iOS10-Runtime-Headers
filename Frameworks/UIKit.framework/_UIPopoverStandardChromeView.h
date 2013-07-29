@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBackdropView, NSArray, UIView;
+@class _UIBackdropView, NSArray, UIView, UIColor;
 
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView  {
     UIView *_arrowView;
@@ -10,6 +10,7 @@
     UIView *_rightCapView;
     _UIBackdropView *_blurView;
     NSArray *_dimmingViews;
+    UIColor *_popoverBackgroundColor;
     float _arrowOffset;
     unsigned int _arrowDirection;
     int _backgroundStyle;
@@ -22,6 +23,7 @@
 @property(getter=isArrowVisible) BOOL arrowVisible;
 @property BOOL useShortMode;
 @property(getter=isDebugModeEnabled) BOOL debugModeEnabled;
+@property(copy) UIColor * popoverBackgroundColor;
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (float)arrowBase;
@@ -35,6 +37,8 @@
 - (void)setArrowVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setArrowVisible:(BOOL)arg1;
 - (BOOL)isArrowVisible;
+- (void)setPopoverBackgroundColor:(id)arg1;
+- (id)popoverBackgroundColor;
 - (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (int)backgroundStyle;
 - (float)arrowOffset;

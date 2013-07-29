@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, NSArray, NSOperationQueue, <SKUIChartsViewControllerDelegate>, SKUIIPadChartsView, SKUIResourceLoader;
+@class SKUIClientContext, NSArray, <SKUIChartsViewControllerDelegate>, NSOperationQueue, SKUIIPadChartsView, SKUIResourceLoader;
 
 @interface SKUIIPadChartsViewController : UIViewController <SKUIItemListTableDelegate> {
     SKUIResourceLoader *_artworkLoader;
@@ -10,15 +10,23 @@
     SKUIIPadChartsView *_chartsView;
     NSArray *_chartViewControllers;
     SKUIClientContext *_clientContext;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _contentInset;
+    <SKUIChartsViewControllerDelegate> *_delegate;
+    BOOL _delegateWantsWillDisplay;
     NSOperationQueue *_operationQueue;
     int _selectedChartIndex;
     int _selectedItemIndex;
-    <SKUIChartsViewControllerDelegate> *_delegate;
 }
 
 @property(retain) SKUIResourceLoader * artworkLoader;
 @property(copy) NSArray * charts;
 @property(retain) SKUIClientContext * clientContext;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property <SKUIChartsViewControllerDelegate> * delegate;
 
 
@@ -33,6 +41,7 @@
 - (void)enumerateVisibleItemsUsingBlock:(id)arg1;
 - (void)itemList:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)itemList:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)itemList:(id)arg1 willDisplayCellForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)setArtworkLoader:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(int)arg1;
 - (id)artworkLoader;
@@ -45,10 +54,12 @@
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)_setSuspended:(BOOL)arg1;
 

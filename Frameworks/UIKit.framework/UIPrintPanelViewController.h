@@ -30,8 +30,6 @@
 @property(readonly) BOOL showCopies;
 @property(readonly) BOOL showPaper;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)duplex;
 - (void)setPaper:(id)arg1;

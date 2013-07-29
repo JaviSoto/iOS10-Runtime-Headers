@@ -16,6 +16,7 @@
 + (void)initialize;
 
 - (id)baseStyle;
+- (void)shrinkFontToFitWidth;
 - (void)setBaseStyle:(id)arg1;
 - (void)setAppliedStyle:(id)arg1;
 - (id)appliedStyle;

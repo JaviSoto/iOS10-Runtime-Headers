@@ -34,6 +34,7 @@
 - (void)_cancelHandlerCompleted;
 - (void)_handleNewInvocations;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
+- (id)_currentMessageContext;
 - (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
 - (void)_portInterrupted;
 - (void)_portDidBecomeInvalid;

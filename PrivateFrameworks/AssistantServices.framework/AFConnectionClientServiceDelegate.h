@@ -15,7 +15,7 @@
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
-- (oneway void)speechRecordingDidBegin;
+- (oneway void)speechRecordingDidBeginOnAVRecordRoute:(id)arg1;
 - (oneway void)speechRecordingWillBegin;
 - (oneway void)requestRequestedDismissAssistant;
 - (oneway void)requestRequestedOpenURL:(id)arg1 reply:(id)arg2;

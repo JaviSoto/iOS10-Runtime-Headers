@@ -55,7 +55,6 @@
 + (void)strokeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void)setWindingRule:(unsigned int)arg1;
 + (unsigned int)windingRule;
-+ (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (void)setMiterLimit:(float)arg1;
 + (float)miterLimit;
 + (float)lineWidth;
@@ -68,6 +67,7 @@
 + (void)setLineCapStyle:(unsigned int)arg1;
 + (unsigned int)lineCapStyle;
 + (void)setLineWidth:(float)arg1;
++ (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
 + (id)bezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)bezierPathWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

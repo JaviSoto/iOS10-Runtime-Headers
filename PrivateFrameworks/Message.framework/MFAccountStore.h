@@ -18,11 +18,11 @@
 + (id)sharedAccountStore;
 
 - (id)_accountWithPersistentAccount:(id)arg1 useExisting:(BOOL)arg2;
-- (id)accountsWithTypeIdentifiers:(id)arg1;
+- (id)accountsWithTypeIdentifiers:(id)arg1 error:(id*)arg2;
 - (void)_accountsStoreChanged:(id)arg1;
 - (void)setPersistentStore:(id)arg1;
-- (id)deliveryAccounts;
-- (id)incomingAccounts;
+- (id)deliveryAccountsWithError:(id*)arg1;
+- (id)incomingAccountsWithError:(id*)arg1;
 - (void)removePersistentAccountWithAccount:(id)arg1;
 - (void)savePersistentAccountWithAccount:(id)arg1;
 - (id)supportedDataclassesWithAccountTypeIdentifier:(id)arg1;

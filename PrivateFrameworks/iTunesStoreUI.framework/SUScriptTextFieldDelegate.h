@@ -12,8 +12,8 @@
 
 
 - (int)numberOfDelegates;
-- (void)addDelegate:(id)arg1;
 - (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;

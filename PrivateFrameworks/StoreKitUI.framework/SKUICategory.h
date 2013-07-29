@@ -6,6 +6,7 @@
 
 @interface SKUICategory : NSObject  {
     SKUIArtworkList *_artworkList;
+    long long _categoryIdentifier;
     NSArray *_children;
     NSString *_name;
     NSString *_parentLabel;
@@ -13,6 +14,7 @@
 }
 
 @property(readonly) SKUIArtworkList * artworkList;
+@property(readonly) long long categoryIdentifier;
 @property(readonly) NSArray * children;
 @property(readonly) NSString * name;
 @property(readonly) NSURL * URL;
@@ -20,6 +22,7 @@
 
 
 - (id)parentLabel;
+- (long long)categoryIdentifier;
 - (id)subcategoryContainingURL:(id)arg1;
 - (id)initWithCategoryDictionary:(id)arg1;
 - (id)artworkList;

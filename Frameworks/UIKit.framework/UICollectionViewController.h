@@ -16,11 +16,10 @@
 @property(retain) UICollectionView * collectionView;
 @property BOOL clearsSelectionOnViewWillAppear;
 @property BOOL useLayoutToLayoutNavigationTransitions;
-@property(readonly) UICollectionViewLayout * layout;
+@property(readonly) UICollectionViewLayout * collectionViewLayout;
 
 
 - (id)dataSource;
-- (id)layout;
 - (void)dealloc;
 - (id)delegate;
 - (void)setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1;
@@ -35,6 +34,7 @@
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (id)collectionViewLayout;
 - (void)_setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1 withCheck:(BOOL)arg2;
 - (void)_setSharedCollectionView:(id)arg1;
 - (void)_clearSharedView;

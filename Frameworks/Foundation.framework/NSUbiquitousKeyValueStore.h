@@ -16,7 +16,6 @@
 + (id)defaultStore;
 + (void)_synchronizeStoresForced:(BOOL)arg1;
 
-- (void)setData:(id)arg1 forKey:(id)arg2;
 - (id)dataForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
@@ -30,6 +29,7 @@
 - (void)dealloc;
 - (void)setLongLong:(long long)arg1 forKey:(id)arg2;
 - (long long)longLongForKey:(id)arg1;
+- (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1 forKey:(id)arg2;
 - (void)setArray:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
@@ -50,6 +50,7 @@
 - (void)_syncConcurrently;
 - (void)_syncConcurrentlyForced:(BOOL)arg1;
 - (BOOL)_postDidChangeNotificationExternalChanges:(id)arg1 sourceChangeCount:(int)arg2;
+- (BOOL)synchronizeWithSourceForced:(BOOL)arg1;
 - (void)_rethrowException:(id)arg1;
 - (void)_setHasPendingSynchronize:(BOOL)arg1;
 - (BOOL)_hasPendingSynchronize;

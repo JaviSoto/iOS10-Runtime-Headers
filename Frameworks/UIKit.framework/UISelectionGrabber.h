@@ -33,6 +33,8 @@
 - (void)setOrientation:(int)arg1;
 - (BOOL)isVertical;
 - (void)dealloc;
+- (id)_dotView;
+- (BOOL)scroller:(id)arg1 fullyContainSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)isScaling;
 - (BOOL)clipDot:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)dotIsVisbleInDocument:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

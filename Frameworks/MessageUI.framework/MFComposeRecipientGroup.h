@@ -27,8 +27,8 @@
 - (id)label;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)displayString;
 - (BOOL)isGroup;
+- (id)displayString;
 - (id)address;
 - (id)children;
 

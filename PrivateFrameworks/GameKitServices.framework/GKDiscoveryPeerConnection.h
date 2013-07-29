@@ -50,6 +50,7 @@
 + (unsigned int)sendDataLimit;
 + (unsigned int)receiveDataLimit;
 
+- (void)setSyncQueue:(id)arg1;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
 - (void)syncAcceptedConnection;
 - (void)syncSendAccept;
@@ -64,7 +65,6 @@
 - (void)syncReceivedData:(id)arg1 error:(id)arg2;
 - (void)syncSendHello;
 - (void)setLocalServiceName:(id)arg1;
-- (void)setSyncQueue:(id)arg1;
 - (id)connectedHandler;
 - (id)targetQueue;
 - (void)attachSocketDescriptor:(int)arg1;

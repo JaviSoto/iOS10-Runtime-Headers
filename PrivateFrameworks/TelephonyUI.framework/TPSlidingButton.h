@@ -20,17 +20,15 @@
 @property(retain) TPButton * sideButtonRight;
 @property int type;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setEndButton:(id)arg1;
-- (void)setAcceptButton:(id)arg1;
 - (id)endButton;
 - (id)initWithSlidingButtonType:(int)arg1;
 - (id)sideButtonRight;
 - (id)sideButtonLeft;
 - (void)setSideButtonRight:(id)arg1;
 - (void)setSideButtonLeft:(id)arg1;
+- (void)setAcceptButton:(id)arg1;
 - (id)acceptButton;
 - (void)setType:(int)arg1;
 - (void)dealloc;
@@ -39,7 +37,5 @@
 - (void)setScrollView:(id)arg1;
 - (void)layoutSubviews;
 - (int)type;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

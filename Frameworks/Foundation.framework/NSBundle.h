@@ -17,6 +17,7 @@
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
 + (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 + (id)debugDescription;
++ (id)mainBundle;
 + (id)bundleWithIdentifier:(id)arg1;
 + (void)setSystemLanguages:(id)arg1;
 + (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 inBundleWithURL:(id)arg3;
@@ -29,7 +30,6 @@
 + (id)loadedBundles;
 + (id)allFrameworks;
 + (id)allBundles;
-+ (id)mainBundle;
 + (id)bundleForClass:(Class)arg1;
 + (id)bundleWithPath:(id)arg1;
 + (void)popNibLoadingBundle;
@@ -41,16 +41,16 @@
 + (id)_rivenFactory;
 + (id)_typologyBundle;
 + (id)_rivenBundle;
-+ (id)accessibilityBundleWithLastPathComponent:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 + (id)__geoBundle;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_gkBundleWithIdentifier:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
++ (id)__vkBundle;
++ (id)_mapkitBundle;
 + (id)pathForITunesStoreResource:(id)arg1 ofType:(id)arg2;
 + (id)mediaPlayerBundle;
 + (id)pathForITunesResource:(id)arg1 ofType:(id)arg2;
++ (id)pu_PhotosUIFrameworkBundle;
 
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
@@ -66,6 +66,7 @@
 - (oneway void)release;
 - (BOOL)load;
 - (id)description;
+- (id)bundleIdentifier;
 - (id)preferredLocalizations;
 - (id)executableArchitectures;
 - (BOOL)preflightAndReturnError:(id*)arg1;
@@ -79,7 +80,6 @@
 - (Class)principalClass;
 - (void)invalidateResourceCache;
 - (id)bundleLanguages;
-- (id)bundleIdentifier;
 - (id)builtInPlugInsURL;
 - (id)sharedSupportURL;
 - (id)sharedSupportPath;
@@ -114,9 +114,6 @@
 - (struct __CFBundle { }*)_cfBundle;
 - (id)_cachedMainBundleResourcePath;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
-- (void)_accessibilityInitializeContainerLogic;
-- (id)accessibilityBundlePath;
-- (void)_loadAXBundleForBundleOnMainThread;
 - (id)_gkPreferredLanguage;
 - (id)_gkPathForChallengeSound;
 - (id)_gkPathForInviteSound;

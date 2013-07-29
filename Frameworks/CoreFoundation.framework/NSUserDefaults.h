@@ -69,6 +69,8 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 - (id)dictionaryRepresentation;
 - (BOOL)boolForKey:(id)arg1;
+- (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
+- (double)_mapkit_trackingAnimationDuration;
 - (BOOL)delayedSynchronize;
 
 @end

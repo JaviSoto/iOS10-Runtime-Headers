@@ -18,12 +18,12 @@
 @property(retain) NSString * url;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasSize:(BOOL)arg1;
 - (BOOL)hasUrl;
 - (BOOL)hasSize;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (int)size;
 - (void)setSize:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

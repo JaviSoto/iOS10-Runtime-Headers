@@ -24,7 +24,6 @@
 @property(readonly) int numberOfDroppedVideoFrames;
 
 
-- (id)_initWithAVItemAccessLogEvent:(id)arg1;
 - (int)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -38,6 +37,7 @@
 - (id)serverAddress;
 - (id)URI;
 - (id)playbackStartDate;
+- (id)_initWithAVItemAccessLogEvent:(id)arg1;
 - (unsigned int)numberOfSegmentsDownloaded;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

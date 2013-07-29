@@ -23,8 +23,6 @@
 @property BOOL allowsUpdates;
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isVisible;
 - (int)textStyle;
@@ -33,9 +31,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)imageWithText:(id)arg1;
-- (void)endImageContext;
-- (id)imageFromImageContextClippedToWidth:(float)arg1;
-- (void)beginImageContextWithMinimumWidth:(float)arg1;
 - (void)performPendedActions;
 - (BOOL)animatesDataChange;
 - (float)maximumOverlap;
@@ -58,21 +53,21 @@
 - (float)legibilityStrength;
 - (BOOL)allowsUpdates;
 - (float)updateContentsAndWidth;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)setAllowsUpdates:(BOOL)arg1;
 - (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4;
-- (id)contentsImage;
-- (id)imageWithShadowNamed:(id)arg1;
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;
-- (id)foregroundStyle;
 - (int)legibilityStyle;
+- (id)contentsImage;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)endImageContext;
+- (id)imageFromImageContextClippedToWidth:(float)arg1;
+- (void)beginImageContextWithMinimumWidth:(float)arg1;
+- (id)foregroundStyle;
+- (id)imageWithShadowNamed:(id)arg1;
 - (id)item;
 - (int)textAlignment;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setContentMode:(int)arg1;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)_accessibilityIsNotFirstElement;
 
 @end

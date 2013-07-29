@@ -84,5 +84,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (int)_ui_resolvedTextAlignment;
 
 @end

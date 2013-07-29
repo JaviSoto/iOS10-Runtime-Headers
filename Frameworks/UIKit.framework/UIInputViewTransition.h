@@ -95,6 +95,7 @@
     } endFloatingFrameScreen;
     BOOL ignoreFrameChanges;
     UISnapshotView *snapshotView;
+    int activeClippingMode;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -136,6 +137,7 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFloatingFrameScreen;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFloatingFrameScreen;
 @property BOOL ignoreFrameChanges;
+@property int activeClippingMode;
 @property(readonly) int beginState;
 @property(readonly) int transitioningState;
 @property(readonly) int endState;
@@ -144,8 +146,6 @@
 @property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterBegin;
 @property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterEnd;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (void)dealloc;
@@ -174,13 +174,14 @@
 - (void)setSkipNotifications:(BOOL)arg1;
 - (void)setBeginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAnimationStyle:(id)arg1;
-- (void)setEndFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBeginFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNewSet:(id)arg1;
 - (void)setOldSet:(id)arg1;
 - (int)cancelState;
 - (int)transitioningState;
 - (void)setAnimationState:(int)arg1;
+- (void)setActiveClippingMode:(int)arg1;
+- (int)activeClippingMode;
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)endState;
 - (BOOL)requiresAutomaticAppearanceEnabled;
@@ -188,6 +189,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewBeginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
+- (void)setEndFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)newSet;
 - (id)oldSet;
 - (BOOL)shouldRecomputeEndFrame;

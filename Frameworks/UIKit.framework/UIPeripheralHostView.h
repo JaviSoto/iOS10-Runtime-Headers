@@ -18,8 +18,6 @@
 @property(readonly) UIKBInputBackdropView * inputBackdropView;
 @property(readonly) UIKBInputBackdropView * inputAccessoryBackdropView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeFromSuperview;
@@ -34,14 +32,13 @@
 - (id)cornerViewRight;
 - (id)cornerViewLeft;
 - (void)updateBackdropViewForInputAccessoryView:(BOOL)arg1;
-- (int)_clipCornersOfView:(id)arg1;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_inheritedRenderConfig;
+- (int)_clipCornersOfView:(id)arg1;
 - (int)textEffectsVisibilityLevel;
 - (void)_setRenderConfig:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned long long)accessibilityTraits;
 
 @end

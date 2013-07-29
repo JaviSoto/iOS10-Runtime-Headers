@@ -12,6 +12,8 @@
     NSObject<OS_dispatch_queue> *_queue;
     struct __CFReadStream { } *_readStream;
     BOOL authenticationRequired;
+    BOOL tokenCheckRequired;
+    BOOL _tokenCheckRequred;
     unsigned int basePlaylistContainerID;
     unsigned int databaseID;
     unsigned int databaseRevision;
@@ -30,6 +32,7 @@
 @property(readonly) int connectionType;
 @property int connectionState;
 @property(getter=isAuthenticationRequired) BOOL authenticationRequired;
+@property(getter=isTokenCheckRequired,readonly) BOOL tokenCheckRequred;
 @property(retain) HSFairPlayInfo * fairPlayInfo;
 @property(copy) NSString * homeSharingGroupID;
 @property(copy) NSString * username;
@@ -42,10 +45,13 @@
 @property unsigned int controlKey;
 @property unsigned int controlPort;
 @property unsigned int promptID;
+@property BOOL tokenCheckRequired;
 
 
 - (unsigned int)promptID;
 - (unsigned int)interfaceID;
+- (BOOL)isTokenCheckRequired;
+- (BOOL)tokenCheckRequired;
 - (BOOL)isAuthenticationRequired;
 - (id)newControlConnection;
 - (void)setControlKey:(unsigned int)arg1;
@@ -66,6 +72,7 @@
 - (void)_notifyServerOfActivity;
 - (id)fairPlayInfo;
 - (void)_sendRequest:(id)arg1 withInternalResponseHandler:(id)arg2;
+- (void)setTokenCheckRequired:(BOOL)arg1;
 - (void)setAuthenticationRequired:(BOOL)arg1;
 - (void)_loadDatabaseWithInternalConnectionCompletionHandler:(id)arg1;
 - (void)setConnectionState:(int)arg1;
@@ -79,8 +86,8 @@
 - (int)connectionType;
 - (unsigned int)databaseID;
 - (void)setDatabaseID:(unsigned int)arg1;
-- (void)setSessionID:(unsigned int)arg1;
 - (unsigned int)sessionID;
+- (void)setSessionID:(unsigned int)arg1;
 - (void)setPassword:(id)arg1;
 - (void)disconnect;
 - (void)setUsername:(id)arg1;

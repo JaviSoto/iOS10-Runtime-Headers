@@ -9,7 +9,6 @@
     NSDate *_earliestReceivedDate;
     MFMessageCriterion *_criterion;
     unsigned int _serverMessageCount;
-    unsigned int _serverUnreadCount;
     unsigned int _fetchWindow;
 }
 
@@ -98,6 +97,7 @@
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
 - (unsigned int)fetchWindow;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
+- (unsigned int)serverUnreadOnlyOnServerCount;
 - (unsigned int)totalCount;
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)updateUserInfoToLatestValues;

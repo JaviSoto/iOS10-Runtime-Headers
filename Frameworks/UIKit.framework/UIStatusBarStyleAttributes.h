@@ -13,13 +13,12 @@
 - (int)style;
 - (id)init;
 - (void)dealloc;
-- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
-- (id)foregroundStyle;
 - (double)glowAnimationDuration;
 - (BOOL)shouldUseVisualAltitude;
 - (BOOL)isTransparent;
 - (int)idiom;
 - (float)heightForMetrics:(int)arg1;
+- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (BOOL)areTopCornersRounded;
 - (id)backgroundImageName;
@@ -28,6 +27,7 @@
 - (float)foregroundAlpha;
 - (id)newForegroundStyleWithHeight:(float)arg1;
 - (int)legibilityStyle;
+- (id)foregroundStyle;
 - (BOOL)isDoubleHeight;
 - (float)heightForOrientation:(int)arg1;
 - (BOOL)isTranslucent;

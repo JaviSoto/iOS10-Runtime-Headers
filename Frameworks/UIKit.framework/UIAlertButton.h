@@ -6,12 +6,14 @@
 
 @interface UIAlertButton : UIButton  {
     float _imageOffset;
+    BOOL _isNewStyle;
     UIImageView *_overlayView;
 }
 
 @property float imageOffset;
 @property(readonly) UIImageView * overlayView;
 @property(retain) UIImage * highlightImage;
+@property BOOL isNewStyle;
 
 
 - (void)setTitle:(id)arg1;
@@ -20,11 +22,13 @@
 - (id)image;
 - (void)dealloc;
 - (id)overlayView;
+- (BOOL)isNewStyle;
 - (float)imageOffset;
 - (id)highlightImage;
 - (void)_transitionBackgroundViewToHighlighted:(BOOL)arg1;
 - (void)setHighlightImage:(id)arg1;
 - (void)setImageOffset:(float)arg1;
+- (void)setIsNewStyle:(BOOL)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)initWithTitle:(id)arg1;

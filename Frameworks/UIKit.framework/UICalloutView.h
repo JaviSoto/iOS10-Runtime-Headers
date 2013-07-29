@@ -89,8 +89,6 @@
 + (id)_bottomAnchorImage;
 + (id)_backgroundImage;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -152,7 +150,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)shouldGroupAccessibilityChildren;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)isExpanded;
 
 @end

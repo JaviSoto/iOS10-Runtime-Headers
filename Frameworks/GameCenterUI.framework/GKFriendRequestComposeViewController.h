@@ -33,19 +33,19 @@
 - (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
 - (void)addRecipientsWithPlayerIDs:(id)arg1;
 - (void)addRecipientsWithEmailAddresses:(id)arg1;
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (id)init;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 
 @end

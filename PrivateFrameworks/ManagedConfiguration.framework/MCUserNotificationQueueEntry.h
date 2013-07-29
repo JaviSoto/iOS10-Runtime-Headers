@@ -37,7 +37,6 @@
 
 - (void)setNotification:(id)arg1;
 - (id)notification;
-- (void)setCompletionBlock:(id)arg1;
 - (void)setDismissAfterTimeInterval:(double)arg1;
 - (double)dismissAfterTimeInterval;
 - (void)setDisplayInAppWhitelistModes:(BOOL)arg1;
@@ -48,11 +47,12 @@
 - (id)alternateButtonText;
 - (void)setDefaultButtonText:(id)arg1;
 - (id)defaultButtonText;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
 - (void).cxx_destruct;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (id)completionBlock;
 
 @end

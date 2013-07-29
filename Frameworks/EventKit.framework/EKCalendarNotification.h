@@ -28,6 +28,7 @@
 @property(readonly) BOOL needsAlert;
 
 
+- (id)URI;
 - (BOOL)hiddenFromNotificationCenter;
 - (struct CGColor { }*)dotColor;
 - (BOOL)needsAlert;
@@ -36,7 +37,6 @@
 - (void)setDotColor:(struct CGColor { }*)arg1;
 - (void)setHiddenFromNotificationCenter:(BOOL)arg1;
 - (BOOL)alerted;
-- (id)URI;
 - (void)setObjectID:(id)arg1;
 - (id)objectID;
 - (void)setTitle:(id)arg1;

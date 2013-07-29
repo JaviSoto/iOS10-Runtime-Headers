@@ -2,29 +2,34 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, SSDialogButton, NSDictionary;
+@class NSArray, NSString, SSDialogButton, NSDictionary, NSMutableDictionary;
 
 @interface SSDialog : NSObject  {
     NSArray *_buttons;
-    NSDictionary *_dialogDictionary;
+    NSMutableDictionary *_dialogDictionary;
 }
 
-@property(readonly) NSString * message;
-@property(readonly) NSString * title;
-@property(readonly) NSArray * buttons;
-@property(readonly) SSDialogButton * defaultButton;
+@property(copy) NSString * message;
+@property(copy) NSString * title;
+@property(copy) NSArray * buttons;
+@property(retain) SSDialogButton * defaultButton;
 @property(readonly) NSDictionary * dialogDictionary;
 @property(readonly) NSString * dialogKind;
 
 
 - (id)dialogKind;
 - (id)dialogDictionary;
+- (void)setButtons:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
 - (id)init;
 - (void)dealloc;
 - (id)buttons;
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setMessage:(id)arg1;
+- (void)setDefaultButton:(id)arg1;
 - (id)defaultButton;
 - (id)valueForProperty:(id)arg1;
 

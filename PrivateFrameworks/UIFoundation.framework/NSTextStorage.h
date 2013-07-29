@@ -47,6 +47,9 @@
 - (void)invalidateAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })editedRange;
 - (void)fontSetChanged;
+- (BOOL)_shouldSetOriginalFontAttribute;
+- (void)_setAttributeFixingInProgress:(BOOL)arg1;
+- (BOOL)_attributeFixingInProgress;
 - (BOOL)_lockForWriting;
 - (void)removeLayoutManager:(id)arg1;
 - (id)layoutManagers;

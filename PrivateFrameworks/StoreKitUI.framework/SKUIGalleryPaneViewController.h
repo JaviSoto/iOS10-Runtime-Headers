@@ -16,8 +16,8 @@
 
 - (id)initWithMediaComponent:(id)arg1 galleryIndex:(int)arg2;
 - (int)galleryIndex;
-- (id)mediaView;
 - (id)component;
+- (id)mediaView;
 - (void).cxx_destruct;
 
 @end

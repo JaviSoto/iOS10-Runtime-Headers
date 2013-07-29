@@ -23,6 +23,7 @@
 + (id)buttonInfoWithWebScriptObject:(id)arg1;
 + (id)buttonInfoWithLabel:(id)arg1 callbackScript:(id)arg2 default:(BOOL)arg3;
 
+- (void)setCancel:(BOOL)arg1;
 - (BOOL)isCancel;
 - (void)setDefaultItem:(BOOL)arg1;
 - (void)setCallbackScript:(id)arg1;
@@ -31,7 +32,6 @@
 - (id)initWithLabel:(id)arg1 callbackScript:(id)arg2 default:(BOOL)arg3;
 - (id)initWithWebScriptObject:(id)arg1;
 - (BOOL)isDefault;
-- (void)setCancel:(BOOL)arg1;
 - (void)setCallback:(id)arg1;
 - (id)callback;
 - (id)label;

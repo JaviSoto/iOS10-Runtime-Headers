@@ -16,7 +16,6 @@
 
 + (void)initialize;
 
-- (BOOL)isPaused;
 - (BOOL)isSpeaking;
 - (BOOL)stopSpeakingAtBoundary:(int)arg1;
 - (BOOL)continueSpeaking;
@@ -24,5 +23,6 @@
 - (void)speakUtterance:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (BOOL)isPaused;
 
 @end

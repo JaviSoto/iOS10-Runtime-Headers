@@ -8,19 +8,19 @@
     ABContactAddFavoriteActionDelegate *_addFavoriteDelegate;
     BOOL _allowPhoneFavorites;
     BOOL _allowFaceTimeFavorites;
-    BOOL _allowAppleCallFavorites;
+    BOOL _allowFaceTimeAudioFavorites;
 }
 
 @property BOOL allowPhoneFavorites;
 @property BOOL allowFaceTimeFavorites;
-@property BOOL allowAppleCallFavorites;
+@property BOOL allowFaceTimeAudioFavorites;
 
 
-- (void)setAllowAppleCallFavorites:(BOOL)arg1;
+- (void)setAllowFaceTimeAudioFavorites:(BOOL)arg1;
 - (void)setAllowFaceTimeFavorites:(BOOL)arg1;
 - (void)setAllowPhoneFavorites:(BOOL)arg1;
 - (BOOL)canPerformAction;
-- (BOOL)allowAppleCallFavorites;
+- (BOOL)allowFaceTimeAudioFavorites;
 - (BOOL)allowFaceTimeFavorites;
 - (BOOL)allowPhoneFavorites;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

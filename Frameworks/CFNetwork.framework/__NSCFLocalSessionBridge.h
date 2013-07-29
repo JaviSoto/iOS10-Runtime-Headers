@@ -38,7 +38,7 @@
 - (void)task:(id)arg1 didReceiveData:(id)arg2;
 - (void)task:(id)arg1 challenged:(struct _CFURLAuthChallenge { }*)arg2 authCallback:(id)arg3;
 - (void)task:(id)arg1 request:(struct _CFURLRequest { }*)arg2 needsNewBodyStreamCallback:(id)arg3;
-- (void)task:(id)arg1 didFinishLoadingWithError:(id)arg2;
+- (void)task:(id)arg1 didFinishLoadingWithError:(struct __CFError { }*)arg2;
 - (void)task:(id)arg1 willCacheResponse:(struct _CFCachedURLResponse { }*)arg2 responseCallback:(id)arg3;
 - (void)task:(id)arg1 didReceiveResponse:(struct _CFURLResponse { }*)arg2;
 - (void)task:(id)arg1 wasRedirected:(struct _CFURLResponse { }*)arg2 newRequest:(struct _CFURLRequest { }*)arg3 responseCallback:(id)arg4;
@@ -50,8 +50,8 @@
 - (const struct ClassicConnectionSession { int (**x1)(); int (**x2)(); struct _CFURLSessionConfiguration {} *x3; struct XCookieStorage {} *x4; int x5; id x6; id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; struct URLProtocolRegistry {} *x10; struct __CFSet {} *x11; struct ClassicConnectionSession {} *x12; struct RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *> {} *x13; }*)classicConnectionSession;
      /* Encoded args for previous method: r^{ClassicConnectionSession=^^?^^?^{_CFURLSessionConfiguration}^{XCookieStorage}i@@?@^{URLProtocolRegistry}^{__CFSet}^{ClassicConnectionSession}^{RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *>}}8@0:4 */
 
-- (void)flushStorageWithCompletionHandler:(id)arg1;
 - (void)resetStorageWithCompletionHandler:(id)arg1;
+- (void)flushStorageWithCompletionHandler:(id)arg1;
 - (id)downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)dataTaskForRequest:(id)arg1 completion:(id)arg2;

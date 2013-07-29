@@ -22,9 +22,9 @@
 - (id)destructor;
 - (void)setDestructor:(id)arg1;
 - (id)initWithData:(void*)arg1 destructor:(id)arg2;
-- (void)setData:(void*)arg1;
 - (void*)data;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)setData:(void*)arg1;
 
 @end

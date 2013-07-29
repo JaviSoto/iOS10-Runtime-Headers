@@ -14,9 +14,9 @@
 + (id)offerList;
 
 - (id)offers;
-- (void)setOffers:(id)arg1;
-- (void)setProviderId:(id)arg1;
 - (id)providerId;
+- (void)setProviderId:(id)arg1;
+- (void)setOffers:(id)arg1;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

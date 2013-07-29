@@ -54,6 +54,8 @@
 - (void)setGratisIdentifiers:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setExpectedDownloadFileSize:(long long)arg1;
+- (id)databaseEncoding;
+- (id)initWithDatabaseEncoding:(id)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (id)requestProperties;
 - (id)valueForDownloadProperty:(id)arg1;
@@ -68,9 +70,7 @@
 - (void)setBatchIdentifier:(int)arg1;
 - (id)gratisIdentifiers;
 - (long long)expectedDownloadFileSize;
-- (id)databaseEncoding;
 - (int)batchIdentifier;
-- (id)initWithDatabaseEncoding:(id)arg1;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (void)setFilteredAssetTypes:(id)arg1;
 - (BOOL)isBackgroundPurchase;

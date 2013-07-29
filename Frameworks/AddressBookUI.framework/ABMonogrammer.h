@@ -25,11 +25,11 @@
 @property BOOL textKnockout;
 
 
+- (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (BOOL)textKnockout;
 - (float)diameter;
 - (id)defaultMonogram;
 - (id)maskForMonogram;
-- (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)monogramForPerson:(void*)arg1;
 - (BOOL)hasMonogramForPerson:(void*)arg1;
 - (id)silhouetteImageName;

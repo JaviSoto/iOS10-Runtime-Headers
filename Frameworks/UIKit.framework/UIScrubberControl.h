@@ -54,8 +54,6 @@
 }
 
 + (BOOL)allowLayeredFillForKnob;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setDuration:(double)arg1;
 - (const struct { float x1; float x2; float x3; }*)metrics;
@@ -100,9 +98,5 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (double)duration;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (void)_accessibilityBumpValue:(BOOL)arg1;
-- (BOOL)_axInteractionEnabled;
 
 @end

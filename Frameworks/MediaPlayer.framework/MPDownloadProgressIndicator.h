@@ -30,8 +30,6 @@
 + (BOOL)_isStyleModernShimmer:(int)arg1;
 + (id)_stopImageForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })_sizeForStyle:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)updateFromObserver:(id)arg1;
 - (void)setCanCancel:(BOOL)arg1;
@@ -52,8 +50,5 @@
 - (void)layoutSubviews;
 - (void)setValue:(float)arg1;
 - (float)value;
-- (id)accessibilityHint;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
 
 @end

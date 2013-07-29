@@ -43,6 +43,9 @@
 @property(retain) TPSlidingButton * slidingButton;
 @property(retain) NSMutableArray * stateStack;
 
++ (float)defaultInterButtonSpacing;
++ (float)defaultSideMarginForDoubleButton;
++ (float)defaultSideMarginForSingleButton;
 + (float)defaultBottomMargin;
 + (float)defaultWidth;
 
@@ -61,6 +64,7 @@
 - (void)animateFromIncomingCallStateToInCallStateWithCompletion:(id)arg1;
 - (void)prepareButtonsForAnimationEnd;
 - (void)refreshCustomizedActionTypeTitleForButton:(id)arg1;
+- (void)buttonLongPressed:(id)arg1;
 - (id)customTitleStringForActionType:(int)arg1 givenDefaultTitle:(id)arg2;
 - (void)setHorizontalConstraintsForSupplementalButtons:(id)arg1;
 - (id)horizontalConstraintsForSupplementalButtons;

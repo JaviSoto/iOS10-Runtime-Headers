@@ -17,8 +17,6 @@
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)showMapPoints;
 
-- (void)setShowTraffic:(BOOL)arg1;
-- (BOOL)showTraffic;
 - (void)setShowDirections:(BOOL)arg1;
 - (BOOL)showDirections;
 - (void)setItemSource:(id)arg1;
@@ -31,6 +29,8 @@
 - (id)regionOfInterestRadiusInMiles;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
+- (void)setShowTraffic:(BOOL)arg1;
+- (BOOL)showTraffic;
 - (id)groupIdentifier;
 
 @end

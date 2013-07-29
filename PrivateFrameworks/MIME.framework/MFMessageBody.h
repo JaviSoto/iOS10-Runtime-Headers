@@ -18,10 +18,10 @@
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (id)attachmentURLs;
-- (void)setMessage:(id)arg1;
 - (id)attachments;
 - (id)message;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (id)rawData;
 
 @end

@@ -49,8 +49,6 @@
 + (BOOL)isCameraDeviceAvailable:(int)arg1;
 + (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(int)arg2;
 + (BOOL)isSourceTypeAvailable:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (int)sourceType;
 - (id)init;
@@ -84,6 +82,7 @@
 - (void)setAllowsImageEditing:(BOOL)arg1;
 - (BOOL)allowsImageEditing;
 - (void)_setAllowsMultipleSelection:(BOOL)arg1;
+- (BOOL)_allowsMultipleSelection;
 - (id)mediaTypes;
 - (void)setMediaTypes:(id)arg1;
 - (id)_initWithSourceImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -105,18 +104,16 @@
 - (BOOL)_allowsImageEditing;
 - (void)_setAllowsImageEditing:(BOOL)arg1;
 - (id)_valueForProperty:(id)arg1;
-- (BOOL)_allowsMultipleSelection;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillUnload;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)_axLoadBundles;
 
 @end

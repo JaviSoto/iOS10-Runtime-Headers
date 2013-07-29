@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardEmojiCategory, UIKeyboardEmojiInputController;
+@class UIKeyboardEmojiCategory, UIKeyboardEmojiInputController, UILabel;
 
 @interface UIKeyboardEmojiSplitCharacterPicker : UIKeyboardEmojiSplit <UIKeyboardEmojiInput> {
+    UILabel *_optionalDescription;
     UIKeyboardEmojiCategory *_category;
     UIKeyboardEmojiInputController *_inputController;
 }

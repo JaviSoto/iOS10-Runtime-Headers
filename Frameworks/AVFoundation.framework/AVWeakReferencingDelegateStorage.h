@@ -23,8 +23,8 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)delegate;
-- (id)delegateQueue;
 - (void)_setDelegate:(id)arg1;
 - (id)_delegate;
+- (id)delegateQueue;
 
 @end

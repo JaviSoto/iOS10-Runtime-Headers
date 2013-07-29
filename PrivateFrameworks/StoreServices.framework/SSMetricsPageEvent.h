@@ -38,12 +38,12 @@
 - (BOOL)isCachedResponse;
 - (id)serverApplicationInstance;
 - (void)setPageHistoryDescription:(id)arg1;
+- (void)setCachedResponse:(BOOL)arg1;
 - (void)setServerTiming:(id)arg1;
 - (void)setServerApplicationInstance:(id)arg1;
 - (void)setRequestStartTime:(double)arg1;
 - (void)setResponseEndTime:(double)arg1;
 - (void)setResponseStartTime:(double)arg1;
-- (void)setCachedResponse:(BOOL)arg1;
 - (void)setSearchTerm:(id)arg1;
 - (id)searchTerm;
 - (id)init;

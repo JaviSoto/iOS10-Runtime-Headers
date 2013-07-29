@@ -30,16 +30,13 @@
 @property(retain) NSDictionary * AVURLAssetOptions;
 
 + (Class)layerClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
+- (void)playFromBeginning;
 - (void)setAVURLAssetOptions:(id)arg1;
 - (id)AVURLAssetOptions;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
 - (unsigned int)effectiveScaleMode;
-- (void)playFromBeginning;
 - (void)playWhenLikelyToKeepUp;
 - (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
 - (void)prepareAVControllerQueue;
@@ -58,9 +55,9 @@
 - (void)setMovieTitle:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
 - (unsigned int)scaleMode;
+- (void)play;
 - (id)movieSubtitle;
 - (id)movieTitle;
-- (void)play;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
@@ -69,8 +66,5 @@
 - (double)startTime;
 - (void)setStartTime:(double)arg1;
 - (void)didMoveToWindow;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

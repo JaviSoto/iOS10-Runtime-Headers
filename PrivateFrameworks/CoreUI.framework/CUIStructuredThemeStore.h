@@ -20,6 +20,7 @@
 - (id)prefilteredAssetDataForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)convertRenditionKeyToKeyData:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)themeStore;
+- (id)keySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)baseGradationKeySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1;
 - (unsigned int)authoredWithSchemaVersion;
@@ -29,7 +30,7 @@
 - (BOOL)getPhysicalColor:(struct _colordef { unsigned int x1; unsigned int x2; struct _rgbquad { unsigned int x_3_1_1 : 8; unsigned int x_3_1_2 : 8; unsigned int x_3_1_3 : 8; unsigned int x_3_1_4 : 8; } x3; }*)arg1 withName:(id)arg2;
 - (BOOL)_canGetRenditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 isFPO:(BOOL*)arg2 lookForSubstitutions:(BOOL)arg3;
 - (void)_getKeyForAssetInOtherLookGroupClosestToKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 foundAsset:(BOOL*)arg2;
-- (id)keySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (id)copyKeySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 withBytesNoCopy:(char *)arg2 length:(unsigned int)arg3;
 - (id)lookupAssetForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)bundleID;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)renditionKeyFormat;

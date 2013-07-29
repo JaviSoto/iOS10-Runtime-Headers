@@ -18,9 +18,9 @@
 @property(retain) NSDate * fireDate;
 
 
-- (void)_cleanupTimer;
 - (void)_callTarget;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned long long)arg4;
+- (void)_cleanupTimer;
 - (BOOL)isValid;
 - (void)invalidate;
 - (void)dealloc;

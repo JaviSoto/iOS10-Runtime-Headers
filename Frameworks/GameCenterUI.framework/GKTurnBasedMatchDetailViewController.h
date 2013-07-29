@@ -4,10 +4,9 @@
 
 @class NSObject<GKTurnBasedMatchDetailViewControllerDelegate>, GKTurnBasedMatch, UIBarButtonItem, GKTurnBasedParticipantsDataSource, GKTurnBasedMatchDetailHeaderView;
 
-@interface GKTurnBasedMatchDetailViewController : GKBasicCollectionViewController <SKStoreProductViewControllerDelegate> {
+@interface GKTurnBasedMatchDetailViewController : GKBasicCollectionViewController  {
     BOOL _isInGame;
     BOOL _didFloatInBubbles;
-    BOOL _didTransition;
     NSObject<GKTurnBasedMatchDetailViewControllerDelegate> *_delegateWeak;
     GKTurnBasedMatch *_match;
     GKTurnBasedParticipantsDataSource *_participantsDataSource;
@@ -22,12 +21,8 @@
 @property(retain) UIBarButtonItem * rightBarButtonItem;
 @property(retain) GKTurnBasedMatchDetailHeaderView * headerView;
 @property BOOL didFloatInBubbles;
-@property BOOL didTransition;
 
 
-- (void)productViewControllerDidFinish:(id)arg1;
-- (void)setDidTransition:(BOOL)arg1;
-- (BOOL)didTransition;
 - (void)setDidFloatInBubbles:(BOOL)arg1;
 - (BOOL)didFloatInBubbles;
 - (void)setParticipantsDataSource:(id)arg1;
@@ -35,14 +30,16 @@
 - (void)setIsInGame:(BOOL)arg1;
 - (BOOL)isInGame;
 - (void)animateOutBubbleWithFocus:(int)arg1 completion:(id)arg2;
+- (void)removeMatch:(id)arg1;
 - (void)quitMatch:(id)arg1;
 - (void)declineInvitation:(id)arg1;
-- (void)acceptInvitation:(id)arg1;
-- (void)removeMatch:(id)arg1;
 - (void)chooseMatch:(id)arg1;
+- (void)acceptInvitation:(id)arg1;
 - (void)buyButtonPressed:(id)arg1;
 - (void)handleTurnBasedEvent:(id)arg1;
 - (void)configureViewFactories;
+- (void)floatInBubbles;
+- (void)didEnterNoContentState;
 - (void)configureDataSource;
 - (void)didUpdateModel;
 - (void)setMatch:(id)arg1;
@@ -54,9 +51,9 @@
 - (void)setHeaderView:(id)arg1;
 - (id)headerView;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)rightBarButtonItem;
 - (void)setRightBarButtonItem:(id)arg1;

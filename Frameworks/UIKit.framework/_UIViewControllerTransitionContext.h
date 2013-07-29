@@ -10,6 +10,7 @@
 
 @interface _UIViewControllerTransitionContext : NSObject <UIViewControllerContextTransitioningEx> {
     float _previousPercentComplete;
+    NSArray *_disabledViews;
     struct { 
         unsigned int interactorImplementsCompletionSpeed : 1; 
         unsigned int interactorImplementsCompletionCurve : 1; 
@@ -82,8 +83,10 @@
 - (void)_setCompletionVelocity:(float)arg1;
 - (BOOL)_transitionIsCompleting;
 - (BOOL)_transitionIsInFlight;
+- (void)_updateInteractiveTransitionWithoutTrackingPercentComplete:(float)arg1;
 - (void)_setPreviousPercentComplete:(float)arg1;
 - (float)_previousPercentComplete;
+- (void)_setPercentOffset:(float)arg1;
 - (void)_setContainerViews:(id)arg1;
 - (void)_runAlongsideCompletions;
 - (void)_interactivityDidChange:(BOOL)arg1;
@@ -102,6 +105,7 @@
 - (void)_setState:(int)arg1;
 - (BOOL)initiallyInteractive;
 - (id)_interactor;
+- (void)_disableInteractionForViews:(id)arg1;
 - (id)_animator;
 - (void)_setCompletionCurve:(int)arg1;
 - (void)_setContainerView:(id)arg1;
@@ -110,31 +114,30 @@
 - (void)_setTransitionIsCompleting:(BOOL)arg1;
 - (void)_setInteractiveUpdateHandler:(id)arg1;
 - (void)_setCompletionHandler:(id)arg1;
+- (void)_enableInteractionForDisabledViews;
 - (void)_setAnimator:(id)arg1;
 - (void)_setInteractor:(id)arg1;
 - (void)_setTransitionIsInFlight:(BOOL)arg1;
 - (void)_setPostInteractiveCompletionHandler:(id)arg1;
 - (id)_postInteractiveCompletionHandler;
 - (float)_completionVelocity;
+- (void)_setDuration:(double)arg1;
 - (id)_auxContext;
 - (void)_setWillCompleteHandler:(id)arg1;
 - (id)_willCompleteHandler;
 - (BOOL)_isPresentation;
 - (id)_transitionCoordinator;
 - (int)_state;
-- (void)_setDuration:(double)arg1;
-- (void)_updateInteractiveTransitionWithoutTrackingPercentComplete:(float)arg1;
+- (void)updateInteractiveTransition:(float)arg1;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;
-- (void)updateInteractiveTransition:(float)arg1;
-- (void)_setPercentOffset:(float)arg1;
 - (void)completeTransition:(BOOL)arg1;
 - (BOOL)transitionWasCancelled;
 - (BOOL)isInteractive;
 - (int)_completionCurve;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameForViewController:(id)arg1;
-- (id)containerView;
 - (id)viewControllerForKey:(id)arg1;
+- (id)containerView;
 
 @end

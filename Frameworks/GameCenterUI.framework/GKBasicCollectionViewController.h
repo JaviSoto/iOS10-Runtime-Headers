@@ -2,20 +2,26 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray;
+@class GKCollectionViewDataSource, NSArray;
 
 @interface GKBasicCollectionViewController : GKCollectionViewController  {
     id _target;
     NSArray *_metricsForSections;
+    GKCollectionViewDataSource *_initialDataSource;
 }
 
 @property(retain) id target;
 @property(retain) NSArray * metricsForSections;
+@property(retain) GKCollectionViewDataSource * initialDataSource;
 
 
+- (id)initialDataSource;
 - (void)setMetricsForSections:(id)arg1;
 - (id)metricsForSections;
 - (id)initWithDataSource:(id)arg1 title:(id)arg2;
+- (void)setInitialDataSource:(id)arg1;
+- (void)configureDataSource;
+- (void)setDataSource:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

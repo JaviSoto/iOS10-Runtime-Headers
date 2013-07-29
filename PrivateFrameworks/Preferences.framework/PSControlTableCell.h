@@ -10,8 +10,6 @@
 
 @property(retain) UIControl * control;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)controlValue;
 - (void)controlChanged:(id)arg1;
@@ -23,9 +21,5 @@
 - (BOOL)canReload;
 - (id)control;
 - (void)dealloc;
-- (unsigned long long)accessibilityTraits;
-- (void)accessibilityIncrement;
-- (void)accessibilityDecrement;
-- (id)accessibilityLabel;
 
 @end

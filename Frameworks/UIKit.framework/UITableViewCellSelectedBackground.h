@@ -23,9 +23,9 @@
 - (void)setMultiselectBackgroundColor:(id)arg1;
 - (id)multiselectBackgroundColor;
 - (int)selectionStyle;
+- (void)setSelectionStyle:(int)arg1;
 - (BOOL)isMultiselect;
 - (void)setMultiselect:(BOOL)arg1;
 - (void)setSelectionTintColor:(id)arg1;
-- (void)setSelectionStyle:(int)arg1;
 
 @end

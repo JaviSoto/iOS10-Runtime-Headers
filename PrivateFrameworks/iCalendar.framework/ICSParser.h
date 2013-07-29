@@ -10,8 +10,11 @@
     NSData *_data;
 }
 
+@property(readonly) ICSTokenizer * lexer;
+
 + (id)entitiesFromNSData:(id)arg1 options:(int)arg2;
 
+- (id)lexer;
 - (id)parseData;
 - (BOOL)parseProperty:(id)arg1;
 - (void)parseComponent:(id)arg1;

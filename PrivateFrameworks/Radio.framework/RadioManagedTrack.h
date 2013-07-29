@@ -53,13 +53,10 @@
 - (int)likeStatus;
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
-- (id)dateAdded;
 - (id)copyrightText;
-- (long long)beforePromoClipID;
 - (id)artworkURLData;
 - (id)albumURL;
 - (long long)albumID;
-- (long long)afterPromoClipID;
 - (id)actionTextForStyle:(int)arg1;
 - (id)_offerTypeStringForOfferType:(int)arg1;
 - (int)_offerTypeForOfferTypeString:(id)arg1;
@@ -84,8 +81,11 @@
 - (void)setTrackInfo:(id)arg1;
 - (void)setDateAdded:(id)arg1;
 - (void)setStoreID:(long long)arg1;
+- (id)dateAdded;
 - (void)setWishListDate:(id)arg1;
 - (void)setInWishList:(BOOL)arg1;
+- (long long)afterPromoClipID;
+- (long long)beforePromoClipID;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
 - (id)feedbackDictionaryRepresentation;

@@ -55,9 +55,9 @@
 - (void)setGyroUpdateInterval:(double)arg1;
 - (BOOL)isGyroActive;
 - (BOOL)isGyroAvailable;
+- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (double)accelerometerUpdateInterval;
 - (BOOL)isAccelerometerActive;
-- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (BOOL)isAccelerometerAvailable;
 - (id)accelerometerData;
 - (id)deviceMotion;

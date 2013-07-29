@@ -18,11 +18,11 @@
 
 + (void)userDidLeavePhotosApplication;
 + (void)userDidReadCommentOnSharedAsset:(id)arg1;
-+ (void)userDidNavigateAwayFromAllSharedAlbums;
-+ (void)userDidNavigateAwayFromSharedAlbum:(id)arg1;
-+ (void)userDidNavigateIntoImagePickerSharedAlbum:(id)arg1;
 + (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidViewCloudFeedContent:(int)arg1;
++ (void)userDidNavigateAwayFromSharedAlbum:(id)arg1;
++ (void)userDidNavigateAwayFromAllSharedAlbums;
++ (void)userDidNavigateIntoImagePickerSharedAlbum:(id)arg1;
 + (void)userDidDeleteSharedAssets:(id)arg1;
 + (void)userDidDeleteSharedAlbum:(id)arg1;
 

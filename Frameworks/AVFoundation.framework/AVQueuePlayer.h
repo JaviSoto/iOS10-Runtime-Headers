@@ -13,10 +13,10 @@
 + (id)playerWithURL:(id)arg1;
 + (void)initialize;
 
+- (void)advanceToNextItem;
 - (void)commitModifications;
 - (void)beginModifications;
 - (BOOL)canInsertItem:(id)arg1 afterItem:(id)arg2;
-- (void)advanceToNextItem;
 - (void)_enqueueModification:(id)arg1;
 - (BOOL)_shouldEnqueueModifications;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;

@@ -65,12 +65,12 @@
 - (int)structuralComplexityContribution;
 - (BOOL)_isEdited;
 - (BOOL)readOnly;
+- (BOOL)disabled;
 - (int)rows;
 - (id)placeholder;
 - (BOOL)autocorrect;
 - (int)_autocapitalizeType;
 - (id)form;
-- (BOOL)disabled;
 - (void)setPlaceholder:(id)arg1;
 - (void)setRows:(int)arg1;
 - (id)type;

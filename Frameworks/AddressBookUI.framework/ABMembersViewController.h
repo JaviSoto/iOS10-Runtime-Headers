@@ -20,8 +20,6 @@
 @property(readonly) BOOL shouldShowGroups;
 @property(readonly) _UIAccessDeniedView * accessDeniedView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)searchCurrentContactsGroupForWords:(id)arg1 animated:(BOOL)arg2;
 - (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;
@@ -84,15 +82,15 @@
 - (void)setAddressBook:(void*)arg1;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
-- (void)updateView;
 - (id)tableView;
+- (void)updateView;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (id)defaultPNGName;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;

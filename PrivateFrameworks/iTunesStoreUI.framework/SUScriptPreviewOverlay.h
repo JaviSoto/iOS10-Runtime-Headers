@@ -20,6 +20,7 @@
 
 - (void)hide:(id)arg1;
 - (void)_userInfoDidChange:(id)arg1;
+- (void)_checkOutAfterVisibilityChange;
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (void)loadURLRequest:(id)arg1;
@@ -27,6 +28,7 @@
 - (void)setWidth:(id)arg1;
 - (id)height;
 - (id)width;
+- (void)finalizeForWebScript;
 - (id)attributeKeys;
 - (void)setTop:(id)arg1;
 - (void)setRight:(id)arg1;

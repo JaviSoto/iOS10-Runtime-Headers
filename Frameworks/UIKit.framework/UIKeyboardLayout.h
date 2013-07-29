@@ -67,11 +67,12 @@
 - (float)hitBuffer;
 - (BOOL)canProduceString:(id)arg1;
 - (void)longPressAction;
-- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
+- (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setTarget:(id)arg1 forKey:(id)arg2;
 - (void)restoreDefaultsForKey:(id)arg1;
+- (void)updateBackgroundCorners;
 - (void)restoreDefaultsForAllKeys;
 - (void)didClearInput;
 - (BOOL)usesAutoShift;

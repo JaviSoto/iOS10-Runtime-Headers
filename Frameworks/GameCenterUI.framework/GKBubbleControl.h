@@ -6,7 +6,6 @@
 
 @interface GKBubbleControl : UIControl  {
     BOOL _animatingIn;
-    BOOL _useFastBlendMode;
     BOOL _animateOnTouch;
     GKBubbleView *_bubbleView;
 }
@@ -19,20 +18,12 @@
 @property(readonly) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } worldSize;
 @property int bubbleType;
 @property(retain) GKBubbleView * bubbleView;
-@property BOOL useFastBlendMode;
 @property BOOL animateOnTouch;
 
 
-- (id)floatZAnimation;
-- (id)floatYAnimation;
-- (id)floatXAnimation;
-- (void)addFloatZAnimation:(id)arg1;
-- (void)addFloatYAnimation:(id)arg1;
-- (void)addFloatXAnimation:(id)arg1;
 - (void)bounceAfterDelay:(double)arg1 fromZ:(float)arg2 toZ:(float)arg3;
 - (BOOL)bouncing;
 - (BOOL)animateOnTouch;
-- (BOOL)useFastBlendMode;
 - (id)pathForHitTesting;
 - (void)didTouchUp;
 - (void)didTouchDown;
@@ -51,7 +42,6 @@
 - (void)setScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenFrame;
 - (int)bubbleType;
-- (void)setUseFastBlendMode:(BOOL)arg1;
 - (void)setBubbleType:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })screenSize;

@@ -29,7 +29,6 @@
         unsigned int delegateRespondsToAttributedTitleForRow : 1; 
         unsigned int delegateRespondsToWidthForComponent : 1; 
         unsigned int delegateRespondsToRowHeightForComponent : 1; 
-        unsigned int delegateRespondsToCheckableForRow : 1; 
         unsigned int showsSelectionBar : 1; 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int allowSelectingCells : 1; 
@@ -41,12 +40,18 @@
     UIColor *_textColor;
     UIColor *_textShadowColor;
     BOOL _isInLayoutSubviews;
+    BOOL _magnifierEnabled;
 }
 
 @property <UIPickerViewDataSource> * dataSource;
 @property <UIPickerViewDelegate> * delegate;
 @property BOOL showsSelectionIndicator;
 @property(readonly) int numberOfComponents;
+@property(setter=_setMagnifierEnabled:) BOOL _magnifierEnabled;
+@property(getter=_usesModernStyle,setter=_setUsesModernStyle:) BOOL usesModernStyle;
+@property(getter=_highlightColor,setter=_setHighlightColor:,retain) UIColor * highlightColor;
+@property(getter=_textColor,setter=_setTextColor:,retain) UIColor * textColor;
+@property(getter=_textShadowColor,setter=_setTextShadowColor:,retain) UIColor * textShadowColor;
 @property(setter=_setInLayoutSubviews:) BOOL _isInLayoutSubviews;
 
 + (id)_modernNonCenterCellFont;
@@ -54,8 +59,6 @@
 + (struct CGSize { float x1; float x2; })sizeForCurrentOrientationThatFits:(struct CGSize { float x1; float x2; })arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forInterfaceOrientation:(int)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)reload;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -79,6 +82,7 @@
 - (void)_setHighlightColor:(id)arg1;
 - (id)_highlightColor;
 - (void)_setUsesModernStyle:(BOOL)arg1;
+- (void)_setMagnifierEnabled:(BOOL)arg1;
 - (void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_effectiveTableViewFrameForColumn:(int)arg1;
 - (int)selectedRowForColumn:(int)arg1;
@@ -104,9 +108,9 @@
 - (BOOL)_usesCheckSelection;
 - (BOOL)_soundsEnabled;
 - (void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3;
-- (id)_textColor;
 - (id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2;
 - (id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2;
+- (id)_textColor;
 - (void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3;
 - (void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
@@ -117,6 +121,7 @@
 - (int)_delegateNumberOfRowsInComponent:(int)arg1;
 - (void)_resetSelectionOfTables;
 - (void)_addMagnifierLinesForRowHeight:(float)arg1;
+- (BOOL)_magnifierEnabled;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForHeight:(float)arg1;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(int)arg2;
@@ -156,9 +161,5 @@
 - (id)pickerImageNamePrefix;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)isAccessibilityElement;
-- (void)_accessibilityResetContainerElements;
-- (id)accessibilityContainerElements;
-- (int)_accessibilityPickerType;
 
 @end

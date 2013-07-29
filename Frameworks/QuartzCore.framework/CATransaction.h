@@ -5,14 +5,14 @@
 @interface CATransaction : NSObject  {
 }
 
-+ (void)activateBackground:(BOOL)arg1;
-+ (void)setCompletionBlock:(id)arg1;
 + (double)inputTime;
 + (void)setAnimatesFromModelValues:(BOOL)arg1;
 + (BOOL)animatesFromModelValues;
++ (void)activateBackground:(BOOL)arg1;
 + (void)popAnimator;
 + (void)pushAnimator:(id)arg1;
 + (id)animationTimingFunction;
++ (double)animationDuration;
 + (void)flush;
 + (BOOL)beginWithoutBlocking;
 + (void)commit;
@@ -28,8 +28,8 @@
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (id)animator;
 + (void)setAnimationTimingFunction:(id)arg1;
++ (void)setCompletionBlock:(id)arg1;
 + (void)activate;
-+ (double)animationDuration;
 + (void)setAnimationDuration:(double)arg1;
 + (id)completionBlock;
 + (id)valueForKey:(id)arg1;

@@ -27,11 +27,11 @@
 - (id)titleAtIndex:(int)arg1 forProperty:(int)arg2;
 - (int)actionsCountForProperty:(int)arg1;
 - (id)urlForAction:(int)arg1 forProperty:(int)arg2;
+- (void)performAction:(int)arg1;
 - (void)_performAction:(int)arg1 forProperty:(int)arg2;
 - (id)titleForAction:(int)arg1;
 - (int)_actionAtIndex:(int)arg1 forProperty:(int)arg2;
 - (struct __CFArray { }*)_actionsForProperty:(int)arg1;
-- (void)performAction:(int)arg1;
 - (void*)context;
 - (id)initWithProperty:(int)arg1;
 - (void)setContext:(void*)arg1;

@@ -9,9 +9,8 @@
     UIView *_background;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (void)_setBackgroundVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)_accountLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accountLabelRect;
 - (void)setAccountLabel:(id)arg1;
@@ -19,5 +18,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)tintColorDidChange;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

@@ -24,9 +24,9 @@
 + (id)setRequestOriginWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setRequestOrigin;
 
-- (id)desiredAccuracy;
 - (void)setAge:(id)arg1;
 - (id)encodedClassName;
+- (id)desiredAccuracy;
 - (void)setVerticalAccuracy:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (void)setAltitude:(double)arg1;

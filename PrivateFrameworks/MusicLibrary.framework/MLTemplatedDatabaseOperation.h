@@ -23,11 +23,11 @@
 - (id)initWithLibrary:(id)arg1 transaction:(id)arg2;
 - (void)setTransaction:(id)arg1;
 - (id)transaction;
-- (void)setAttributes:(id)arg1;
 - (id)uuid;
 - (BOOL)isEqual:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
+- (void)setAttributes:(id)arg1;
 - (id)attributes;
 - (unsigned int)type;
 

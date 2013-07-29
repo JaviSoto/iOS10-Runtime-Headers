@@ -9,6 +9,7 @@
     BOOL _backgroundSession;
     BOOL _allowsCellularAccess;
     BOOL _discretionary;
+    BOOL _sessionSendsLaunchEvents;
     BOOL _HTTPShouldUsePipelining;
     BOOL _HTTPShouldSetCookies;
     BOOL __credStorageSet;
@@ -16,7 +17,6 @@
     BOOL __cookieStorageSet;
     BOOL _tasks_created_suspended;
     BOOL _skip_download_unlink;
-    BOOL _saveRequestsInResumeData;
     BOOL __preventsIdleSleep;
     BOOL __usePipeliningHeuristics;
     BOOL __startSynchronously;
@@ -52,6 +52,7 @@
 @property unsigned int networkServiceType;
 @property BOOL allowsCellularAccess;
 @property(getter=isDiscretionary) BOOL discretionary;
+@property BOOL sessionSendsLaunchEvents;
 @property(copy) NSDictionary * connectionProxyDictionary;
 @property int TLSMinimumSupportedProtocol;
 @property int TLSMaximumSupportedProtocol;
@@ -76,7 +77,6 @@
 @property double connectionCacheCellPurgeTimeout;
 @property BOOL tasks_created_suspended;
 @property BOOL skip_download_unlink;
-@property BOOL saveRequestsInResumeData;
 @property(copy) NSDictionary * _cfurlConnectionProperties;
 @property(copy) NSDictionary * _socketStreamProperties;
 @property BOOL _preventsIdleSleep;
@@ -91,7 +91,6 @@
 
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)URLCredentialStorage;
 - (id)URLCache;
 - (void)setURLCredentialStorage:(id)arg1;
 - (void)setURLCache:(id)arg1;
@@ -136,6 +135,8 @@
 - (int)TLSMinimumSupportedProtocol;
 - (void)setConnectionProxyDictionary:(id)arg1;
 - (id)connectionProxyDictionary;
+- (void)setSessionSendsLaunchEvents:(BOOL)arg1;
+- (BOOL)sessionSendsLaunchEvents;
 - (void)setDiscretionary:(BOOL)arg1;
 - (BOOL)isDiscretionary;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
@@ -152,7 +153,6 @@
 - (id)initWithDisposition:(id)arg1;
 - (void)set_socketStreamProperties:(id)arg1;
 - (void)set_cfurlConnectionProperties:(id)arg1;
-- (void)setSaveRequestsInResumeData:(BOOL)arg1;
 - (void)setSkip_download_unlink:(BOOL)arg1;
 - (void)setTasks_created_suspended:(BOOL)arg1;
 - (void)setConnectionCacheCellPurgeTimeout:(double)arg1;
@@ -162,12 +162,12 @@
 - (id)disposition;
 - (BOOL)tasks_created_suspended;
 - (BOOL)isBackgroundSession;
+- (id)URLCredentialStorage;
 - (BOOL)HTTPShouldSetCookies;
 - (id)HTTPCookieStorage;
 - (id)identifier;
 - (void)setHTTPAdditionalHeaders:(id)arg1;
 - (id)HTTPAdditionalHeaders;
-- (BOOL)saveRequestsInResumeData;
 - (BOOL)skip_download_unlink;
 - (double)timeoutIntervalForResource;
 - (id)initWithCoder:(id)arg1;

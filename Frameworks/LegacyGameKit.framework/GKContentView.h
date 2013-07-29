@@ -55,7 +55,6 @@
 - (void)_createCancelButtonWithTitle:(id)arg1;
 - (id)icon;
 - (id)iconView;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)layoutIfNeeded;
@@ -68,6 +67,7 @@
 - (void)setTitleLabel:(id)arg1;
 - (void)_createTitleLabelIfNeeded;
 - (id)titleFont;
+- (void)setMessage:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (id)cancelButton;

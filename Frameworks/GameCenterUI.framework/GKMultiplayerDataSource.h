@@ -6,6 +6,7 @@
 
 @interface GKMultiplayerDataSource : GKBasicCollectionViewDataSource  {
     BOOL _removingEnabled;
+    BOOL _needsBubbleFloatIn;
     BOOL _autoMatching;
     int _minPlayers;
     int _maxPlayers;
@@ -28,6 +29,7 @@
 @property struct _NSRange { unsigned int x1; unsigned int x2; } headerPlayerRange;
 @property(copy) NSString * footerStatus;
 @property(retain) GKMultiplayerFooterView * footerView;
+@property BOOL needsBubbleFloatIn;
 @property(retain) NSMutableOrderedSet * players;
 @property(retain) NSMutableDictionary * playerStatus;
 @property BOOL autoMatching;
@@ -47,12 +49,13 @@
 - (BOOL)shouldRevertStatus:(int)arg1;
 - (int)statusForPlayerWithID:(id)arg1;
 - (void)updateParticipantsAnimated:(BOOL)arg1;
+- (BOOL)needsBubbleFloatIn;
 - (void)setParticipantsWithPlayers:(id)arg1 andStatuses:(id)arg2;
-- (id)playersInvited;
 - (void)failedToInvitePlayers;
 - (int)statusForPlayer:(id)arg1;
 - (id)playerWithID:(id)arg1;
 - (BOOL)havePendingPlayers;
+- (id)playersInvited;
 - (void)setAutoMatching:(BOOL)arg1 withVisibleCells:(id)arg2;
 - (void)setFooterStatus:(id)arg1;
 - (void)setRemovingEnabled:(BOOL)arg1;
@@ -66,6 +69,7 @@
 - (int)automatchPlayers;
 - (void)setHeaderPlayerRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)participantShouldBeRemovable:(id)arg1 atIndexPath:(id)arg2;
+- (void)setNeedsBubbleFloatIn:(BOOL)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })playerRange;
 - (void)addPlayers:(id)arg1 withStatus:(int)arg2 replaceAutomatches:(BOOL)arg3;
 - (void)setAutomatchPlayers:(int)arg1;

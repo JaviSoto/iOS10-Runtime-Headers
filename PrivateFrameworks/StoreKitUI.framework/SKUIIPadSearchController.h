@@ -26,8 +26,8 @@
 - (id)newSearchFieldBarItem;
 - (id)initWithParentViewController:(id)arg1;
 - (id)_searchFieldController;
-- (void)setNumberOfSearchResults:(int)arg1;
 - (id)URLForSearchTerm:(id)arg1;
+- (void)setNumberOfSearchResults:(int)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)dealloc;

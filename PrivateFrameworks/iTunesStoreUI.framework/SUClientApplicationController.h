@@ -2,14 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, SUTabBarController, UINavigationController, ISOperation, SUPlaceholderViewController, SUSectionsResponse, SUMediaPlayerViewController, NSString, SUPreviewOverlayViewController;
+@class SKUIURL, SUTabBarController, NSURL, UINavigationController, ISOperation, SUPlaceholderViewController, SUSectionsResponse, SUMediaPlayerViewController, NSString, SUPreviewOverlayViewController;
 
 @interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
     SUMediaPlayerViewController *_activeMediaPlayer;
     NSString *_exitStoreButtonTitle;
     SUPlaceholderViewController *_fetchSectionsPlaceholder;
     int _ignoreDownloadQueueChangeCount;
-    NSURL *_launchURL;
+    SKUIURL *_launchURL;
     SUSectionsResponse *_lastBackgroundSectionsResponse;
     SUSectionsResponse *_lastSectionsResponse;
     ISOperation *_loadSectionsOperation;
@@ -48,10 +48,13 @@
 - (id)_accountViewController;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (void)_restorePreMediaPlayerSettings;
+- (BOOL)_displayClientURL:(id)arg1;
 - (void)_handleDonationURL:(id)arg1;
+- (void)_handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (BOOL)shouldPrepareUserInterfaceWhenActivated;
 - (id)_newTabBarController;
 - (id)_showPageForExternalOriginatedURLBagKey:(id)arg1;
+- (void)_openClientURL:(id)arg1;
 - (void)_setupTabBarController;
 - (id)_activeMediaPlayer;
 - (id)tabBarControllerForClientInterface:(id)arg1;
@@ -60,7 +63,7 @@
 - (void)clientInterface:(id)arg1 showPreviewOverlayAnimated:(BOOL)arg2;
 - (void)clientInterface:(id)arg1 hidePreviewOverlayAnimated:(BOOL)arg2;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
-- (BOOL)displayClientURL:(id)arg1;
+- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)bagDidLoadNotification:(id)arg1;
 - (id)defaultPNGNameForSuspend;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
@@ -69,7 +72,6 @@
 - (void)_handleSectionsLoadFailedWithError:(id)arg1;
 - (void)_defaultHandleApplicationURLRequestProperties:(id)arg1;
 - (void)_handleAccountURL:(id)arg1;
-- (void)_handleSearchURL:(id)arg1;
 - (BOOL)_showWildcatAccountViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_retrySectionsAfterNetworkTransition;
 - (BOOL)_reloadForStorefrontChange;
@@ -101,7 +103,7 @@
 - (id)initWithClientInterface:(id)arg1;
 - (void)exitStoreAfterDialogsDismiss;
 - (id)copySuspendSettings;
-- (BOOL)openClientURL:(id)arg1;
+- (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (id)launchURL;
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)becomeActive;

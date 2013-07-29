@@ -144,6 +144,10 @@
 @property unsigned int entryPointMask;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
+- (id)characteristics;
+- (void)setCharacteristics:(id)arg1;
 - (id)styleAttributes;
 - (void)setHasEntryPointMask:(BOOL)arg1;
 - (void)setHasEndRoadOffset:(BOOL)arg1;
@@ -271,10 +275,6 @@
 - (long long)uID;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)characteristics;
-- (void)setCharacteristics:(id)arg1;
 - (float)endOffset;
 - (float)startOffset;
 - (void)setType:(int)arg1;

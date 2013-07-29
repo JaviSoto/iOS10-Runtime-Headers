@@ -13,9 +13,9 @@
 @property(retain) PKPassField * field;
 @property BOOL showLinks;
 
-+ (id)_linkColor;
-+ (id)_linkTextAttributes;
 + (id)valueFont;
++ (id)_linkTextAttributes;
++ (id)_linkColor;
 + (void)initializeParsingRegex;
 + (id)titleFont;
 + (id)reuseIdentifier;

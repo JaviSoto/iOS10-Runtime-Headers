@@ -29,6 +29,7 @@
     TIKeyboardLayoutState *_layoutState;
     TIDocumentState *_documentState;
     NSString *_inputForMarkedText;
+    NSString *_searchStringForMarkedText;
     TIKeyboardCandidate *_currentCandidate;
 }
 
@@ -37,6 +38,7 @@
 @property(copy) TIKeyboardLayoutState * layoutState;
 @property(retain) TIDocumentState * documentState;
 @property(copy) NSString * inputForMarkedText;
+@property(copy) NSString * searchStringForMarkedText;
 @property(retain) TIKeyboardCandidate * currentCandidate;
 @property BOOL userSelectedCurrentCandidate;
 @property BOOL shouldSkipCandidateSelection;
@@ -71,6 +73,8 @@
 - (id)keyLayout;
 - (id)inputMode;
 - (id)inputForMarkedText;
+- (void)setSearchStringForMarkedText:(id)arg1;
+- (id)searchStringForMarkedText;
 - (id)currentCandidate;
 - (id)documentState;
 - (BOOL)hardwareKeyboardMode;

@@ -9,8 +9,8 @@
 }
 
 
-- (void)setPayload:(id)arg1;
 - (id)href;
+- (void)setPayload:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

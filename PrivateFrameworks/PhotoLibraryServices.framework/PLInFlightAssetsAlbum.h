@@ -15,11 +15,13 @@
     BOOL _sessionLimited;
     id _weak_assets;
     NSObject<PLIndexMappingCache> *_derivedAlbums[5];
+    BOOL __notificationsEnabled;
 }
 
 @property(readonly) PLManagedAlbum * backingAlbum;
 @property BOOL sessionLimited;
 @property NSMutableOrderedSet * _assets;
+@property BOOL _notificationsEnabled;
 @property(readonly) NSString * uuid;
 @property(readonly) NSString * title;
 @property(readonly) NSString * localizedTitle;
@@ -30,6 +32,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -63,22 +67,28 @@
 
 + (struct NSObject { Class x1; }*)inFlightAssetsAlbumWithBackingAlbum:(struct NSObject { Class x1; }*)arg1;
 
-- (id)assets;
 - (void)startNewSession;
+- (id)assetsByObjectIDAtIndexes:(id)arg1;
+- (void)setUINotificationsEnabled:(BOOL)arg1;
+- (BOOL)canContributeToCloudSharedAlbum;
+- (id)assets;
+- (void)set_notificationsEnabled:(BOOL)arg1;
+- (BOOL)_notificationsEnabled;
 - (void)removeObjectFromMergedAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inMergedAssetsAtIndex:(unsigned int)arg2;
 - (void)getMergedAssets:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)objectInMergedAssetsAtIndex:(unsigned int)arg1;
 - (unsigned int)indexInMergedAssetsOfObject:(id)arg1;
 - (unsigned int)countOfMergedAssets;
+- (void)clearAssetCaches;
 - (void)setSessionLimited:(BOOL)arg1;
 - (id)managedObjectAtAlbumIndex:(unsigned int)arg1;
 - (id)managedObjectsAtAlbumIndexes:(id)arg1;
 - (id)managedObjectsForOIDs:(id)arg1;
 - (id)managedObjectForOID:(id)arg1;
 - (void)_resetAlbumOIDs;
-- (BOOL)sessionLimited;
 - (id)_albumOIDs;
+- (BOOL)sessionLimited;
 - (id)initWithBackingAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)cachedIndexMapState;
 - (id)currentStateForChange;
@@ -87,7 +97,6 @@
 - (id)_assets;
 - (void)set_assets:(id)arg1;
 - (id)backingAlbum;
-- (id)assetsByObjectIDAtIndexes:(id)arg1;
 - (BOOL)hasDerivedIndexMappers;
 - (void)registerDerivedAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)enumerateDerivedAlbums:(id)arg1;
@@ -95,8 +104,11 @@
 - (unsigned int)countForAssetsOfKind:(short)arg1;
 - (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
 - (unsigned int)batchSize;
-- (id)localizedLocationNames;
 - (BOOL)canShowComments;
+- (void)setTertiaryKeyAsset:(id)arg1;
+- (id)tertiaryKeyAsset;
+- (void)setSecondaryKeyAsset:(id)arg1;
+- (id)secondaryKeyAsset;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
 - (unsigned int)videosCount;
@@ -115,7 +127,6 @@
 - (void)setSlideshowSettings:(id)arg1;
 - (id)slideshowSettings;
 - (BOOL)shouldDeleteWhenEmpty;
-- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (BOOL)isStandInAlbum;
@@ -137,6 +148,7 @@
 - (BOOL)isCameraAlbum;
 - (void)removeInflightAssets:(id)arg1;
 - (void)addInFlightAsset:(id)arg1;
+- (id)localizedLocationNames;
 - (id)posterImage;
 - (unsigned int)photosCount;
 - (id)fetchRequest;

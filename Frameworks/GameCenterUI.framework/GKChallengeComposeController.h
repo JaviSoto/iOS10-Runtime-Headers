@@ -25,8 +25,8 @@
 - (void)setChallengeField:(id)arg1;
 - (void)setPlayerIDsToLoad:(id)arg1;
 - (id)initWithChallenge:(id)arg1 defaultMessage:(id)arg2 players:(id)arg3;
-- (id)challenge;
 - (void)setChallenge:(id)arg1;
+- (id)challenge;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;

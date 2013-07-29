@@ -68,12 +68,10 @@
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (BOOL)load;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
 - (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
 - (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
 - (id)initWithPath:(id)arg1;
 - (void)unload;
-- (oneway void)_webcore_releaseOnWebThread;
-- (oneway void)release;
 
 @end

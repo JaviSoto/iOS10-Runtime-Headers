@@ -56,6 +56,7 @@
 - (void)beginScrubbing;
 - (id)printPageHelper;
 - (id)pdfPreviewData;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)discardAirPlayView;
 - (void)setupAirPlayView;
 - (void)endTrackingViewUpdates;
@@ -73,7 +74,6 @@
 - (void)viewDidUpdate;
 - (id)airplayView;
 - (void)_notifyDidLoadWithError:(id)arg1;
-- (void)cancelLoad;
 - (void)didLoad;
 - (void)setLoaded:(BOOL)arg1;
 - (void)loadIfNeededWithHints:(id)arg1;
@@ -85,6 +85,7 @@
 - (void)enterBackground;
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
+- (void)cancelLoad;
 - (void)setLoading:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setIndex:(int)arg1;

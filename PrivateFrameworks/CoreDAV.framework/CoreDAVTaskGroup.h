@@ -55,8 +55,6 @@
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
-- (void)setTimeoutInterval:(double)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -64,6 +62,8 @@
 - (id)delegate;
 - (void)setError:(id)arg1;
 - (id)error;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (double)timeoutInterval;
 - (id)completionBlock;
 

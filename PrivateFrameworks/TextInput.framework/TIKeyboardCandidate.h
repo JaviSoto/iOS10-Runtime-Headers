@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString, NSArray;
+@class NSString;
 
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding> {
     NSString *_alternativeText;
@@ -18,7 +18,8 @@
 @property(readonly) BOOL isAutocorrection;
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
 @property(getter=isEmojiCandidate,readonly) BOOL emojiCandidate;
-@property(readonly) NSArray * usageTrackingTypes;
+@property(getter=isCompletionCandidate,readonly) BOOL completionCandidate;
+@property(getter=isInlineCompletionCandidate,readonly) BOOL inlineCompletionCandidate;
 @property(readonly) unsigned int usageTrackingMask;
 
 + (int)type;
@@ -29,6 +30,7 @@
 - (BOOL)isAutocorrection;
 - (BOOL)isForShortcutConversion;
 - (unsigned int)wordOriginFeedbackID;
+- (BOOL)isInlineCompletionCandidate;
 - (id)input;
 - (id)alternativeText;
 - (void)setAlternativeText:(id)arg1;
@@ -41,8 +43,8 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)usageTrackingTypes;
 - (unsigned int)usageTrackingMask;
+- (BOOL)isCompletionCandidate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

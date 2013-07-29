@@ -39,6 +39,7 @@
     } _stat;
     bool_finished;
     BOOL _skipUnlink;
+    bool_truncateFile;
     NSObject<OS_dispatch_io> *_writeIO;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSString *_path;
@@ -50,11 +51,14 @@
 @property bool finished;
 @property(retain) NSString * path;
 @property BOOL skipUnlink;
+@property bool truncateFile;
 @property int error;
 
 
 - (void)dealloc;
 - (id).cxx_construct;
+- (void)setTruncateFile:(bool)arg1;
+- (bool)truncateFile;
 - (BOOL)skipUnlink;
 - (id)writeIO;
 - (id)ioChannel;
@@ -65,6 +69,7 @@
 - (void)setFinished:(bool)arg1;
 - (bool)finished;
 - (id)path;
+- (void)truncate;
 - (void)finishOnQueue:(id)arg1 completion:(id)arg2;
 - (id)fileURL;
 - (void)captureFile:(id*)arg1 outStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg2;

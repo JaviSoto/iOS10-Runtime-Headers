@@ -8,5 +8,6 @@
 
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
+- (BOOL)prefersStatusBarHidden;
 
 @end

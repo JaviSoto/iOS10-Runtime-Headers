@@ -38,21 +38,21 @@
 + (id)cameraPreviewWellImageFileURL;
 + (void)saveCameraPreviewWellImageForAsset:(id)arg1;
 + (void)resetThumbnails;
-+ (BOOL)hasRebuildThumbnailsRequest;
 + (void)removeRebuildThumbnailsRequest:(const char *)arg1;
 + (BOOL)useImageTableForFormat:(int)arg1;
 + (id)supportedThumbnailFormats;
 + (int)thumbnailVersion;
 + (id)_allPossibleThumbnailFormats;
 + (int)thumbnailFormat;
++ (BOOL)hasRebuildThumbnailsRequest;
 + (id)defaultThumbnailsDirectory;
 + (void)removeObsoleteMetadata;
 + (BOOL)hasObsoleteThumbnailTables;
 + (BOOL)isMissingThumbnailTables;
 
+- (id)preheatItemSourceForFormat:(int)arg1;
 - (id)thumbManagersByFormat;
 - (id)thumbnailJPEGPathForPhoto:(id)arg1;
-- (id)preheatItemSourceForFormat:(int)arg1;
 - (id)_tableDescriptions;
 - (id)compactImageTables;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;

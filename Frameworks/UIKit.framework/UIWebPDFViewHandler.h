@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebPDFLabelView, UIDocumentPasswordView, UIColor, UIAlertView, _UIHighlightView, UIWebPDFSearchController, UIWebPDFView, _UIRotatingActionSheet, UIView, NSObject<UIWebPDFViewHandlerDelegate>, NSArray, NSDictionary, WebPDFNSNumberFormatter;
+@class UIWebPDFLabelView, UIDocumentPasswordView, UIColor, UIAlertView, _UIHighlightView, UIWebPDFView, _UIRotatingActionSheet, NSMapTable, NSObject<UIWebPDFViewHandlerDelegate>, NSArray, NSDictionary, UIView, WebPDFNSNumberFormatter;
 
 @interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, UIActionSheetDelegate, _UIRotatingActionSheetDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
     UIWebPDFView *_pdfView;
@@ -15,7 +15,7 @@
     BOOL _showsShadowsForHTMLContent;
     BOOL _cachedScrollViewShadowsState;
     UIDocumentPasswordView *_passwordEntryView;
-    UIWebPDFSearchController *_searchController;
+    NSMapTable *_searchControllers;
     UIColor *_backgroundColorForUnRenderedContent;
     BOOL _hideActivityIndicatorForUnRenderedContent;
     BOOL _hidePageViewsUntilReadyToRender;
@@ -51,7 +51,6 @@
 @property BOOL scalesPageToFit;
 @property BOOL showPageLabels;
 @property NSObject<UIWebPDFViewHandlerDelegate> * pdfHandlerDelegate;
-@property(readonly) UIWebPDFSearchController * searchController;
 @property(retain) UIColor * backgroundColorForUnRenderedContent;
 @property BOOL hideActivityIndicatorForUnRenderedContent;
 @property BOOL hidePageViewsUntilReadyToRender;
@@ -67,7 +66,8 @@
 - (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1;
 - (void)removeViewFromSuperview;
 - (id)findOnPageHighlighter;
-- (id)searchController;
+- (void)clearSearchControllerForHighlighter:(id)arg1;
+- (id)searchControllerForHighlighter:(id)arg1;
 - (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
@@ -109,7 +109,7 @@
 - (void)clearLinkHighlight;
 - (void)clearActionSheet;
 - (void)clearAllViews;
-- (void)_setSearchControllerDocumentToSearch;
+- (void)_setSearchControllerDocumentToSearch:(id)arg1;
 - (void)clearPageLabel;
 - (void)setHideActivityIndicatorForUnRenderedContent:(BOOL)arg1;
 - (BOOL)hideActivityIndicatorForUnRenderedContent;

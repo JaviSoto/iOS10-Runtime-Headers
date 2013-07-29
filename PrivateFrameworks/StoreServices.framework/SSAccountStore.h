@@ -31,13 +31,13 @@
 - (id)activeLockerAccount;
 - (id)setActiveAccount:(id)arg1;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
-- (id)addAccount:(id)arg1;
 - (void)_postAccountStoreChangeNotification;
 - (void)_dispatchSync:(id)arg1;
 - (void)_dispatchAsync:(id)arg1;
 - (void)setDefaultAccountName:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)isAuthenticationActive;
 - (void)getDefaultAccountNameUsingBlock:(id)arg1;
+- (id)addAccount:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
 - (void)resetExpirationForTokenType:(int)arg1;
 - (void)resetExpiration;

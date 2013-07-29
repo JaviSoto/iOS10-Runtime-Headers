@@ -13,8 +13,8 @@
 
 - (void)setUp:(id)arg1;
 - (void)setNormal:(id)arg1;
-- (id)up;
 - (id)normal;
+- (id)up;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

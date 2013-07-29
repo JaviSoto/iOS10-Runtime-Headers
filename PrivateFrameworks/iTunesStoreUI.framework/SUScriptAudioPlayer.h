@@ -65,8 +65,8 @@
 - (id)certificateURL;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (double)currentTime;
 - (void)play;
+- (double)currentTime;
 - (id)attributeKeys;
 - (void)dealloc;
 - (id)URL;

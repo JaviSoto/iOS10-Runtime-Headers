@@ -7,15 +7,19 @@
 @interface GKLeaderboardUpdate : NSObject  {
     NSMutableIndexSet *_insertedIndexes;
     NSMutableIndexSet *_updatedIndexes;
+    NSMutableIndexSet *_removedIndexes;
 }
 
 @property(retain) NSMutableIndexSet * insertedIndexes;
 @property(retain) NSMutableIndexSet * updatedIndexes;
+@property(retain) NSMutableIndexSet * removedIndexes;
 
 
 - (void)setUpdatedIndexes:(id)arg1;
-- (id)updatedIndexes;
 - (void)setInsertedIndexes:(id)arg1;
+- (void)setRemovedIndexes:(id)arg1;
+- (id)removedIndexes;
+- (id)updatedIndexes;
 - (id)insertedIndexes;
 - (id)indexPathsForIndexes:(id)arg1 section:(int)arg2;
 - (id)init;

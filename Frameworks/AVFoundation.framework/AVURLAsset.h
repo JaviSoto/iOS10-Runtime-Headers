@@ -15,8 +15,8 @@
 @property(readonly) AVAssetResourceLoader * resourceLoader;
 @property(readonly) NSURL * URL;
 
-+ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
 + (id)audiovisualTypes;
++ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
 + (id)_avfValidationPlist;
 + (id)audiovisualMIMETypes;
 + (id)_figMIMETypes;
@@ -28,10 +28,11 @@
 + (id)_figFileMIMETypes;
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 
+- (id)resourceLoader;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)_handleURLRequest:(id)arg1;
 - (void)_finishLoadingCustomURLProviderRequestWithResponseProperties:(id)arg1 context:(id)arg2;
 - (BOOL)_hasResourceLoaderDelegate;
-- (id)resourceLoader;
 - (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)SHA1Digest;
 - (unsigned long long)downloadToken;
@@ -58,7 +59,6 @@
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
 - (void)cancelLoading;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;

@@ -21,6 +21,8 @@
 @property(readonly) unsigned int videosCount;
 @property(readonly) BOOL isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
@@ -82,12 +84,12 @@
 - (void)unregisterForChanges;
 - (void)registerForChanges;
 - (id)_keysToBeObserved;
-- (id)_expectedKeyAsset;
+- (id)_expectedKeyAssets;
+- (void)_updateKeyAssetsIfNeeded;
 - (BOOL)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
 - (void)setAlbumShouldBeAutomaticallyDeleted:(BOOL)arg1;
 - (BOOL)albumShouldBeAutomaticallyDeleted;
-- (void)_updateKeyAssetIfNeeded;
 - (void)persistMetadataToFileSystem;
 - (void)refreshAssets;
 - (void)addAssetUsingiTunesAlbumOrder:(id)arg1;

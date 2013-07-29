@@ -25,8 +25,8 @@
 - (void)restoreSelectedTurnInfo;
 - (void)setTurnsDataSource:(id)arg1;
 - (void)collectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)didEnterNoContentState;
 - (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)didEnterNoContentState;
 - (void)configureDataSource;
 - (id)init;
 - (void)dealloc;

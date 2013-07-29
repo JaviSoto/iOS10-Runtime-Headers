@@ -22,11 +22,11 @@
 + (id)declineButtonImage;
 + (float)defaultHeight;
 
+- (void)setUseStandardSizing:(BOOL)arg1;
 - (BOOL)useStandardSizing;
 - (void)_setDisabledButtonColor:(int)arg1;
 - (void)_adjustIconColor;
 - (void)_setButtonColor:(int)arg1;
-- (void)setUseStandardSizing:(BOOL)arg1;
 - (void)setDisabledButtonColor:(int)arg1;
 - (void)setTitleVerticalOffset:(float)arg1;
 - (void)setIconVerticalOffset:(float)arg1;

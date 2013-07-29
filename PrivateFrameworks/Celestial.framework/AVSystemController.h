@@ -9,17 +9,17 @@
 + (id)sharedAVSystemController;
 + (void)initialize;
 
+- (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
+- (id)volumeCategoryForAudioCategory:(id)arg1;
+- (BOOL)allowUserToExceedEUVolumeLimit;
 - (void)postEffectiveVolumeNotification:(void*)arg1;
 - (void)postFullMuteDidChangeNotification:(void*)arg1;
 - (void)handleServerDied;
-- (BOOL)allowUserToExceedEUVolumeLimit;
 - (BOOL)currentRouteHasVolumeControl;
 - (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
-- (id)volumeCategoryForAudioCategory:(id)arg1;
 - (id)routeForCategory:(id)arg1;
 - (BOOL)enablePortDiscovery:(BOOL)arg1;
 - (BOOL)getPortDiscoveryEnabled;
-- (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
 - (BOOL)changeVolumeBy:(float)arg1 forCategory:(id)arg2;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)getActiveCategoryMuted:(BOOL*)arg1;

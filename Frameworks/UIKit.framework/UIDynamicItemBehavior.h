@@ -47,6 +47,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)setUseDefaultViewPropertiesApplier:(BOOL)arg1;
+- (BOOL)useDefaultViewPropertiesApplier;
 - (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1 toItem:(id)arg2;
 - (BOOL)_rotationEnabledForItem:(id)arg1;
 - (float)_massForItem:(id)arg1;
@@ -70,7 +71,6 @@
 - (void)_setUseCircularBoundingBox:(BOOL)arg1;
 - (BOOL)_useCircularBoundingBox;
 - (void)_reevaluate:(unsigned int)arg1;
-- (BOOL)useDefaultViewPropertiesApplier;
 - (void)_configureBody:(id)arg1 forView:(id)arg2;
 - (float)angularResistance;
 - (float)resistance;

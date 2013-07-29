@@ -10,7 +10,6 @@
     BOOL _hideSearchBarOnAppear;
     BOOL _hideAboveSegmentOnAppear;
     BOOL _noMoreShowMore;
-    BOOL _lastInvalidateDueToBoundsChange;
     BOOL _movedItemsInUpdateCarrySections;
     BOOL _displayClipView;
     unsigned int _portraitInterleavedSectionsCount;
@@ -43,12 +42,18 @@
         float width; 
         float height; 
     } _laidOutContentSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _oldLaidOutContentSize;
+    unsigned long long _invalidationFlags;
 }
 
 @property unsigned int portraitInterleavedSectionsCount;
 @property unsigned int landscapeInterleavedSectionsCount;
 @property BOOL hideSearchBarOnAppear;
 @property BOOL hideAboveSegmentOnAppear;
+@property struct CGSize { float x1; float x2; } laidOutContentSize;
 @property NSSet * visibleIndexPathsFilter;
 @property(retain) GKSectionMetrics * defaultSectionMetricsInternal;
 @property(retain) GKDataSourceMetrics * dataSourceMetrics;
@@ -56,7 +61,7 @@
 @property float segmentedHeaderPinningOffset;
 @property(retain) NSMutableArray * laidOutAttributes;
 @property(retain) NSMutableOrderedSet * laidOutPinnableAttributes;
-@property struct CGSize { float x1; float x2; } laidOutContentSize;
+@property struct CGSize { float x1; float x2; } oldLaidOutContentSize;
 @property(retain) NSMutableDictionary * indexPathToSupplementary;
 @property(retain) NSMutableDictionary * indexPathToDecoration;
 @property(retain) NSMutableDictionary * indexPathToItem;
@@ -69,7 +74,6 @@
 @property BOOL noMoreShowMore;
 @property(retain) NSMutableDictionary * keyToMetricData;
 @property(retain) NSMutableDictionary * oldSectionToMetricKeys;
-@property(getter=isLastInvalidateDueToBoundsChange) BOOL lastInvalidateDueToBoundsChange;
 @property int metricsInvalidationCount;
 @property(retain) NSArray * currentUpdateItems;
 @property(retain) NSMutableSet * knownSupplementaryKinds;
@@ -78,9 +82,13 @@
 @property BOOL movedItemsInUpdateCarrySections;
 @property BOOL displayClipView;
 @property(retain) GKCollectionViewLayoutAttributes * clipViewAttributes;
+@property unsigned long long invalidationFlags;
 
++ (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
+- (void)setInvalidationFlags:(unsigned long long)arg1;
+- (unsigned long long)invalidationFlags;
 - (id)clipViewAttributes;
 - (void)setDisplayClipView:(BOOL)arg1;
 - (BOOL)displayClipView;
@@ -91,8 +99,6 @@
 - (id)currentUpdateItems;
 - (void)setMetricsInvalidationCount:(int)arg1;
 - (int)metricsInvalidationCount;
-- (void)setLastInvalidateDueToBoundsChange:(BOOL)arg1;
-- (BOOL)isLastInvalidateDueToBoundsChange;
 - (void)setOldSectionToMetricKeys:(id)arg1;
 - (id)oldSectionToMetricKeys;
 - (void)setKeyToMetricData:(id)arg1;
@@ -115,7 +121,8 @@
 - (id)indexPathToDecoration;
 - (void)setIndexPathToSupplementary:(id)arg1;
 - (id)indexPathToSupplementary;
-- (void)setLaidOutContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setOldLaidOutContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })oldLaidOutContentSize;
 - (void)setLaidOutPinnableAttributes:(id)arg1;
 - (id)laidOutPinnableAttributes;
 - (void)setLaidOutAttributes:(id)arg1;
@@ -124,12 +131,13 @@
 - (float)segmentedHeaderPinningOffset;
 - (void)setHiddenSearchBarOffset:(float)arg1;
 - (float)hiddenSearchBarOffset;
+- (void)setLaidOutContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHideAboveSegmentOnAppear:(BOOL)arg1;
 - (BOOL)hideAboveSegmentOnAppear;
 - (BOOL)hideSearchBarOnAppear;
 - (unsigned int)landscapeInterleavedSectionsCount;
 - (unsigned int)portraitInterleavedSectionsCount;
-- (int)currentMaxVisibleItemCountForSection:(int)arg1;
+- (unsigned int)currentMaxVisibleItemCountForSection:(int)arg1;
 - (unsigned int)_prepareDecorationLayoutForSection:(int)arg1 offset:(unsigned int)arg2;
 - (void)setLandscapeInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
@@ -141,26 +149,24 @@
 - (BOOL)shouldSlideInSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)finalLayoutAttributesForSlidingAwayItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForSlidingInItemAtIndexPath:(id)arg1;
+- (float)yOffsetForSlidingUpdate;
 - (void)setRevealedIndexPaths:(id)arg1;
 - (void)setIndexPathOfTouchedShowMore:(id)arg1;
-- (id)cellAttributesNearestToSupplementaryAttributes:(id)arg1;
-- (id)cellAttributesNearestToSupplementaryAttributes:(id)arg1 atLocation:(unsigned int)arg2 inSection:(int)arg3;
 - (id)sectionsOverlappingYOffset:(float)arg1;
 - (float)layoutBottomPinningAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (void)finalizePinnedAttributes:(id)arg1 forSection:(int)arg2 footer:(BOOL)arg3;
 - (float)layoutTopPinningAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (void)resetPinnableAttributes;
-- (struct CGSize { float x1; float x2; })laidOutContentSize;
 - (float)applyTopPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
 - (float)applyBottomPinningToAttributes:(id)arg1 minY:(float)arg2 maxY:(float)arg3;
-- (void)rebuildLayout;
-- (void)applyNearbyCellAttributesToSupplementaryViews;
-- (void)_filterPinnedAttributesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_filterPinnedAttributes;
 - (void)calculateCollectionViewContentSize;
 - (void)finalizeGlobalPresentationDataWithSectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)updatePresentationDataForLastInterleavedSections;
 - (unsigned int)_prepareItemLayoutForSection:(int)arg1;
-- (int)_prepareSupplementaryLayoutForSection:(int)arg1 atLocation:(unsigned int)arg2 offset:(int)arg3;
+- (int)_prepareOverlayLayoutForSection:(int)arg1 offset:(int)arg2;
+- (int)_prepareSupplementaryLayoutForSection:(int)arg1 atLocation:(unsigned int)arg2 offset:(int)arg3 globalOffset:(int*)arg4;
+- (void)fullyRebuildLayout;
 - (id)firstVisibleIndexAtOrAfterItem:(int)arg1 itemCount:(int)arg2 inSection:(int)arg3;
 - (void)setClipViewAttributes:(id)arg1;
 - (void)updatePresentationDataInSection:(int)arg1 withAttributes:(id)arg2 supplementaryInHeader:(BOOL)arg3;
@@ -177,6 +183,7 @@
 - (void)setMetricData:(id)arg1 forSection:(int)arg2;
 - (id)metricDataForKey:(id)arg1;
 - (void)setHideSearchBarOnAppear:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })laidOutContentSize;
 - (id)metricsForSection:(int)arg1;
 - (void)setDataSourceMetrics:(id)arg1;
 - (id)defaultSectionMetricsInternal;
@@ -196,6 +203,7 @@
 - (void)_resetState;
 - (id)init;
 - (void)dealloc;
+- (void)invalidateLayoutWithContext:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;

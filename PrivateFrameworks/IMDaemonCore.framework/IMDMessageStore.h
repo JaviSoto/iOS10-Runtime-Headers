@@ -35,6 +35,7 @@
 - (id)messagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3;
 - (void)markMessageAsDeduplicated:(id)arg1;
 - (id)existingMessageSimilarToMessage:(id)arg1 skipServices:(id)arg2 skipGUIDs:(id)arg3 withinTimeInterval:(double)arg4 participants:(id)arg5;
+- (id)messageWithGUID:(id)arg1;
 - (BOOL)hasStoredMessageWithGUID:(id)arg1;
 - (BOOL)canStoreMessage:(id)arg1 onService:(id)arg2;
 - (id)storeMessage:(id)arg1 forceReplace:(BOOL)arg2 modifyError:(BOOL)arg3 modifyFlags:(BOOL)arg4 flagMask:(unsigned long long)arg5;
@@ -48,6 +49,7 @@
 - (void)__postDBUpdate;
 - (id)messageWithReplaceMessageID:(int)arg1 fromHandle:(id)arg2 onService:(id)arg3;
 - (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3 completion:(id)arg4;
+- (void)_performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)_deleteMessagesWithGUIDs:(id)arg1 chatIdentifiers:(id)arg2 style:(unsigned char)arg3 onServices:(id)arg4 batchNumber:(unsigned int)arg5 completion:(id)arg6;
 - (id)deleteMessageGUIDs:(id)arg1;
 - (id)chatsForMessageGUID:(id)arg1;
@@ -62,13 +64,9 @@
 - (void)updateStamp;
 - (void)_storeAttachmentsForMessage:(id)arg1;
 - (id)_messagesWithGUIDs:(id)arg1;
-- (id)messageWithGUID:(id)arg1;
 - (void)_performInitialHousekeeping;
 - (void)setModificationStamp:(id)arg1;
-- (void)performBlock:(id)arg1 afterDelay:(double)arg2;
-- (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)updateUnformattedID:(id)arg1 forBuddyID:(id)arg2 onService:(id)arg3;
-- (void)performBlock:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

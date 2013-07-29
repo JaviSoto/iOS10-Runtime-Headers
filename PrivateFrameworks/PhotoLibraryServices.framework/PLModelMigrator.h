@@ -20,6 +20,7 @@
 + (id)archivedAssetUUIDForURL:(id)arg1;
 + (void)recalculateCachedCounts;
 + (BOOL)isPostProcessingLightweightMigration;
++ (BOOL)debug_resetThumbnailsAndInitiateRebuildRequest;
 + (BOOL)_repairSingletonObjectsInDatabaseUsingContext:(id)arg1 error:(id*)arg2;
 + (id)eventNameFromDate:(id)arg1;
 + (id)_dateWithiTunesTimeInterval:(double)arg1;
@@ -32,17 +33,18 @@
 + (void)loadFileSystemDataIntoDatabase;
 + (void)dontImportFileSystemDataIntoDatabase;
 + (void)_createDatabase;
++ (BOOL)_fixupEditorBundleIDsInStore:(id)arg1;
 + (BOOL)_forceDupeAnalysis;
 + (BOOL)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 + (BOOL)_forceAnalyzeAllMoments;
 + (BOOL)_rebuildAllMomentsInStore:(id)arg1;
 + (BOOL)_fixupSyncedAssetAttributesInStore:(id)arg1;
 + (BOOL)_resetDupesAnalysisInStore:(id)arg1 resetHashes:(BOOL)arg2;
++ (BOOL)_fixupKeyAssetsForAlbumsInStore:(id)arg1;
 + (BOOL)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
 + (BOOL)_fixupImportedAssetsInStore:(id)arg1;
 + (BOOL)_fixupImportedEventsInStore:(id)arg1;
 + (BOOL)_updateKindSubtypeForPanoramaPhotosNeedsReset:(BOOL)arg1 inStore:(id)arg2;
-+ (BOOL)_resetThumbnailsAndInitiateRebuildRequest;
 + (BOOL)_initiateLightweightReimportOfAllPhotoCloudSharingMetadataInStore:(id)arg1;
 + (BOOL)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
 + (BOOL)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
@@ -50,6 +52,7 @@
 + (void)_forceCreateIndexOnOrderedAssets:(BOOL)arg1;
 + (BOOL)postProcessMigratedStore:(id)arg1 fromVersion:(int)arg2;
 + (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id*)arg3;
++ (BOOL)_resetThumbnailsAndInitiateRebuildRequest;
 + (BOOL)_deletePhotoCloudSharingMetadataInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (BOOL)_populateLightweightReimportDirectoryWithPhotoCloudSharingAssetsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (void)_applySyncedProperties:(id)arg1 toAsset:(id)arg2;
@@ -72,8 +75,8 @@
 + (void)repairPotentialModelCorruption;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 
-- (void)resumePhotoStreams;
 - (void)pausePhotoStreams;
+- (void)resumePhotoStreams;
 - (id)_syncedPropertiesForAssetUUID:(id)arg1;
 - (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
 - (id)fileManager;

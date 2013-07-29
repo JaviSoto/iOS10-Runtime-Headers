@@ -18,9 +18,9 @@
 
 + (id)countryInfoWithDictionary:(id)arg1;
 
-- (id)dialingPrefix;
 - (void)setLocalizedCountryName:(id)arg1;
 - (id)localizedCountryName;
+- (id)dialingPrefix;
 - (void)setDialingPrefix:(id)arg1;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;

@@ -12,6 +12,7 @@
     NSSet *_itemPropertiesToFetch;
     NSSet *_collectionPropertiesToFetch;
     BOOL _useSections;
+    BOOL _ignoreSystemFilterPredicates;
 }
 
 @property(readonly) BOOL specifiesPlaylistItems;
@@ -22,8 +23,11 @@
 @property int groupingType;
 @property unsigned int entityOrder;
 @property(copy) NSArray * orderingProperties;
+@property BOOL ignoreSystemFilterPredicates;
 
 
+- (void)setIgnoreSystemFilterPredicates:(BOOL)arg1;
+- (BOOL)ignoreSystemFilterPredicates;
 - (void)setEntityOrder:(unsigned int)arg1;
 - (void)addFilterPredicates:(id)arg1;
 - (void)removePredicatesForProperty:(id)arg1;

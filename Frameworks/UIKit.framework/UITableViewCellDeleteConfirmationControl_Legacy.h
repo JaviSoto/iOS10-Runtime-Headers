@@ -12,8 +12,6 @@
 @property(getter=isVisible) BOOL visible;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isVisible;
 - (void)dealloc;
@@ -31,8 +29,5 @@
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })defaultSize;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

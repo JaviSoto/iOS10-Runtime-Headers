@@ -53,7 +53,7 @@
 - (void)_printDBStatus:(const char *)arg1;
 - (void)flushPendingWrites;
 - (void)_writeEntry:(id)arg1;
-- (void)_dropWritesOnFloor;
+- (void)_dropWritesOnFloor:(id)arg1;
 - (void)_deleteKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (BOOL)_tileSetExpires:(unsigned int)arg1;
 - (void)_shrinkToUnderSize:(unsigned long long)arg1 vacuum:(BOOL)arg2;
@@ -70,7 +70,6 @@
 - (void)_openDBForceRecreate:(BOOL)arg1;
 - (void)_editionUpdate:(id)arg1;
 - (void)_deviceLocked;
-- (void)_localeChanged:(id)arg1;
 - (void)setTileDBMRU:(id)arg1;
 - (id)tileDBMRU;
 - (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned int)arg2;
@@ -79,6 +78,7 @@
 - (void)_closeDB;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
+- (void)_localeChanged:(id)arg1;
 - (void)dealloc;
 - (id)path;
 - (void)_updateSize;

@@ -11,6 +11,7 @@
 
 - (id)initWithTextInput:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_getClosestTokenRangeForPosition:(id)arg1 granularity:(int)arg2 downstream:(BOOL)arg3;
+- (BOOL)_isDownstreamForDirection:(int)arg1 atPosition:(id)arg2;
 - (int)_indexForTextPosition:(id)arg1;
 - (BOOL)isPosition:(id)arg1 withinTextUnit:(int)arg2 inDirection:(int)arg3;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;

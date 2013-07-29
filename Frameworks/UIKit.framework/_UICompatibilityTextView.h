@@ -47,9 +47,6 @@
 + (id)_bestInterpretationForDictationResult:(id)arg1;
 + (id)excludedElementsForHTML;
 + (BOOL)_isCompatibilityTextView;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (BOOL)isEditable;
@@ -124,7 +121,6 @@
 - (BOOL)mightHaveLinks;
 - (void)setSelectionGranularity:(int)arg1;
 - (int)selectionGranularity;
-- (id)metadataDictionariesForDictationResults;
 - (unsigned int)_allowedLinkTypes;
 - (void)resetDataDetectorsResultsWithWebLock;
 - (void)recalculateStyle;
@@ -175,12 +171,12 @@
 - (id)inputAccessoryView;
 - (id)inputView;
 - (BOOL)canResignFirstResponder;
-- (id)attributedText;
 - (void)selectAll;
 - (void)setSelectionAffinity:(int)arg1;
 - (int)selectionAffinity;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (id)insertDictationResultPlaceholder;
@@ -231,7 +227,10 @@
 - (id)interactionAssistant;
 - (void)setEditing:(BOOL)arg1;
 - (void)setTextAlignment:(int)arg1;
+- (id)attributedText;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
@@ -249,13 +248,10 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_accessibilityDataDetectorScheme:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

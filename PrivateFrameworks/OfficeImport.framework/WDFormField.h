@@ -27,8 +27,8 @@
 - (BOOL)linkAbsolute;
 - (int)runType;
 - (id)initWithParagraph:(id)arg1;
-- (void)setURI:(id)arg1;
 - (id)URI;
+- (void)setURI:(id)arg1;
 - (void)setPosition:(unsigned int)arg1;
 - (void)dealloc;
 - (unsigned int)position;

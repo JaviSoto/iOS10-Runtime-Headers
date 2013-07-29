@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <NSObject>, NSArray, PKPhysicsWorld, NSMutableArray;
+@class <NSObject>, NSArray, PKPhysicsWorld, SKNode, NSMutableArray;
 
 @interface PKPhysicsBody : NSObject <NSCopying, NSCoding> {
     <NSObject> *_representedObject;
@@ -77,6 +77,7 @@
 
 }
 
+@property(readonly) SKNode * node;
 @property struct b2FixtureDef { struct b2Shape {} *x1; void *x2; float x3; float x4; float x5; boolx6; struct b2Filter { unsigned int x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; } _fixtureDef;
 @property struct b2Fixture { float x1; struct b2Fixture {} *x2; struct b2Body {} *x3; struct b2Shape {} *x4; float x5; float x6; struct b2FixtureProxy {} *x7; int x8; struct b2Filter { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; } x9; boolx10; void *x11; }* _fixture;
 @property struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; boolx12; boolx13; boolx14; boolx15; boolx16; void *x17; float x18; } _bodyDef;
@@ -140,6 +141,8 @@
 - (BOOL)_allowSleep;
 - (id)_descriptionFormat;
 - (float)mass;
+- (void)setResting:(BOOL)arg1;
+- (id)_descriptionClassName;
 - (void)setAngularVelocity:(float)arg1;
 - (void)setVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
@@ -195,10 +198,11 @@
 - (void)setLinearDamping:(float)arg1;
 - (void)setActive:(BOOL)arg1;
 - (id)_world;
-- (void)setResting:(BOOL)arg1;
 - (void)setMass:(float)arg1;
 - (struct CGPoint { float x1; float x2; })position;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_descriptionClassName;
+- (id)node;
 
 @end

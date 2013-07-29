@@ -101,6 +101,7 @@
 - (void)removeUserFocusMailbox:(id)arg1;
 - (void)addUserFocusMailbox:(id)arg1;
 - (id)meetingStorePersistentID;
+- (id)statisticsKind;
 - (BOOL)derivesDeliveryAccountInfoFromMailAccount;
 - (BOOL)supportsMessageFlagging;
 - (BOOL)supportsMailboxEditing;
@@ -146,8 +147,8 @@
 - (BOOL)secureMIMEEnabled;
 - (void)stopListeningForNotifications;
 - (void)_reachabilityChanged:(id)arg1;
-- (id)accountPropertyForKey:(id)arg1;
 - (id)displayName;
+- (id)accountPropertyForKey:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (BOOL)isActive;
 - (id)username;

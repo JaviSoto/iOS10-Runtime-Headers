@@ -58,9 +58,9 @@
 - (void)setMaxGroupedCallbackEventBatchCount:(int)arg1;
 - (int)maxGroupedCallbackEventBatchCount;
 - (void)setModel:(id)arg1;
-- (BOOL)isShuttingDown;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
+- (BOOL)isShuttingDown;
 - (id)model;
 - (id)init;
 - (void)dealloc;

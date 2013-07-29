@@ -25,5 +25,6 @@
 - (id)insertedObjects;
 - (id)init;
 - (void)dealloc;
+- (id)description;
 
 @end

@@ -37,8 +37,6 @@
 @property(readonly) BOOL pastTop;
 @property(readonly) BOOL pastBottom;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -74,17 +72,5 @@
 - (void)tintColorDidChange;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (void)accessibilityIncrement;
-- (void)accessibilityDecrement;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (void)_accessibilityBumpValue:(BOOL)arg1;
-- (void)_accessibilityMoveToIndexAtPosition:(int)arg1;
-- (id)_accessibilityIndexData;
-- (id)_accessibilityValueToPost:(id)arg1;
-- (id)accessibilityFlowToElements;
-- (void)_accessibilityJumpToTableIndex:(id)arg1;
 
 @end

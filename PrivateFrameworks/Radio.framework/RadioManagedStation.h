@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSString, NSData, NSDictionary, NSURL;
+@class NSHashTable, NSArray, NSString, NSData, NSDictionary, NSURL;
 
 @interface RadioManagedStation : NSManagedObject  {
 }
@@ -11,6 +11,7 @@
 @property(copy) NSString * stationHash;
 @property long long persistentID;
 @property long long adamID;
+@property(copy) NSHashTable * additionalReferencedTrackIDs;
 @property int sortOrder;
 @property(copy) NSString * name;
 @property(copy) NSString * stationDescription;
@@ -18,7 +19,12 @@
 @property(copy) NSURL * artworkURL;
 @property(retain) NSArray * seedTracks;
 @property int songMixType;
-@property(copy) NSArray * tracksForPlayback;
+@property(copy) NSArray * orderedTrackIDsForPlayback;
+@property(copy) NSArray * orderedTracksForPlayback;
+@property(readonly) NSArray * trackIDsForPlayback;
+@property(copy) NSDictionary * trackIDsForPlaybackByExpirationDate;
+@property(readonly) NSArray * tracksForPlayback;
+@property(copy) NSDictionary * tracksForPlaybackByExpirationDate;
 @property BOOL tracksForPlaybackNeedRefresh;
 @property BOOL editEnabled;
 @property(retain) NSArray * editableFields;
@@ -29,6 +35,7 @@
 @property(copy) NSArray * skipTimestamps;
 @property BOOL virtualPlayEnabled;
 @property(getter=isFeatured) BOOL featured;
+@property(getter=isGatewayVideoAdEnabled) BOOL gatewayVideoAdEnabled;
 @property(getter=isSponsored) BOOL sponsored;
 @property(retain) NSData * adData;
 @property unsigned int impressionThreshold;
@@ -43,9 +50,13 @@
 @property(getter=isPreview,readonly) BOOL preview;
 @property(readonly) NSDictionary * dictionaryRepresentation;
 
++ (id)unexpiredTrackIDsForPlaybackByExpirationUsingBaseDictionary:(id)arg1 removingTrackID:(id)arg2;
++ (id)unexpiredTrackIDsForPlaybackUsingOrderedTrackIDs:(id)arg1 trackIDsByExpirationDate:(id)arg2;
 
 - (BOOL)virtualPlayEnabled;
 - (BOOL)tracksForPlaybackNeedRefresh;
+- (id)tracksForPlaybackByExpirationDate;
+- (id)tracksForPlayback;
 - (int)subscriberCount;
 - (id)streamKeyURL;
 - (id)streamCertificateURL;
@@ -57,7 +68,8 @@
 - (id)shareToken;
 - (void)setVirtualPlayEnabled:(BOOL)arg1;
 - (void)setTracksForPlaybackNeedRefresh:(BOOL)arg1;
-- (void)setTracksForPlayback:(id)arg1;
+- (void)setTracksForPlaybackByExpirationDate:(id)arg1;
+- (void)setTrackIDsForPlaybackByExpirationDate:(id)arg1;
 - (void)setSubscriberCount:(int)arg1;
 - (void)setSubscribed:(BOOL)arg1;
 - (void)setStreamKeyURL:(id)arg1;
@@ -78,8 +90,11 @@
 - (void)setSeedTracks:(id)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
 - (void)setPersistentID:(long long)arg1;
+- (void)setOrderedTracksForPlayback:(id)arg1;
+- (void)setOrderedTrackIDsForPlayback:(id)arg1;
 - (void)setLikesEnabled:(BOOL)arg1;
 - (void)setImpressionThreshold:(unsigned int)arg1;
+- (void)setGatewayVideoAdEnabled:(BOOL)arg1;
 - (void)setFeatured:(BOOL)arg1;
 - (void)setEditableFields:(id)arg1;
 - (void)setEditEnabled:(BOOL)arg1;
@@ -87,28 +102,34 @@
 - (void)setCoreSeedName:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
+- (void)setAdditionalReferencedTrackIDs:(id)arg1;
 - (void)setAdamID:(long long)arg1;
 - (BOOL)likesEnabled;
 - (BOOL)isSharingEnabled;
 - (BOOL)isShared;
 - (BOOL)isPreview;
 - (BOOL)isPremiumPlacement;
+- (BOOL)isGatewayVideoAdEnabled;
 - (unsigned int)impressionThreshold;
 - (id)feedbackDictionaryRepresentation;
 - (BOOL)editEnabled;
 - (id)editableFields;
 - (id)coreSeedName;
 - (id)artworkURL;
+- (id)additionalReferencedTrackIDs;
 - (id)adData;
 - (id)seedTracks;
 - (int)songMixType;
 - (id)stationDescription;
 - (id)stationHash;
+- (id)trackIDsForPlaybackByExpirationDate;
+- (id)orderedTrackIDsForPlayback;
+- (id)trackIDsForPlayback;
 - (BOOL)isSponsored;
 - (BOOL)isFeatured;
 - (long long)stationID;
 - (id)debugDictionary;
-- (id)tracksForPlayback;
+- (id)orderedTracksForPlayback;
 - (long long)persistentID;
 - (long long)adamID;
 - (int)sortOrder;

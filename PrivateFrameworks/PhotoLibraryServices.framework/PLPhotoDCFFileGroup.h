@@ -21,6 +21,9 @@
 
 + (id)allMetadataFileExtensions;
 
+- (id)pathForTrimmedVideoFile;
+- (id)pathForPrebakedPortraitScrubberThumbnails;
+- (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (BOOL)isWritePending;
 - (BOOL)hasPrebakedWildcatThumbnails;
 - (BOOL)hasPrebakedPortraitScrubberThumbnails;
@@ -52,9 +55,6 @@
 - (void)deleteFiles;
 - (void)addExtension:(id)arg1;
 - (id)initWithName:(id)arg1 number:(int)arg2 directory:(id)arg3;
-- (id)pathForPrebakedPortraitScrubberThumbnails;
-- (id)pathForPrebakedLandscapeScrubberThumbnails;
-- (id)pathForTrimmedVideoFile;
 - (id)pathForPrebakedWildcatThumbnailsFile;
 - (id)pathForPrebakedThumbnail;
 - (BOOL)hasThumbnail;

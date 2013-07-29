@@ -16,13 +16,13 @@
 - (void)persist;
 - (void)setUInt16:(unsigned short)arg1 forKey:(id)arg2;
 - (void)setUUIDString:(id)arg1 forKey:(id)arg2;
-- (void)setAttributes:(id)arg1;
-- (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setFileURL:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;
 - (id)fileURL;
+- (void)setAttributes:(id)arg1;
+- (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)attributes;
 

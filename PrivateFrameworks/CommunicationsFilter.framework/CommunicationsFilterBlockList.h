@@ -10,6 +10,8 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_recentObjectsTested;
     CommunicationsFilterBlockListCache *_cache;
+    int _notifyEmptyListToken;
+    BOOL _listIsEmpty;
 }
 
 + (id)sharedInstance;

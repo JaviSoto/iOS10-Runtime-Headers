@@ -32,8 +32,8 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)rootViewController;
 - (void)setRootViewController:(id)arg1;
 

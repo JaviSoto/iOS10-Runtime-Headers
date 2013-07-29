@@ -77,6 +77,7 @@
 - (Class)classForCoder;
 - (void)sortUsingDescriptors:(id)arg1;
 - (void)filterUsingPredicate:(id)arg1;
+- (void)pl_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)pl_removeObjectsInArray:(id)arg1;
 - (void)pl_addObjectsFromArray:(id)arg1;
 

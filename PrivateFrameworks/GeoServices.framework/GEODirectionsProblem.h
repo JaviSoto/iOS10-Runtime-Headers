@@ -35,6 +35,9 @@
 @property unsigned long long problematicEventIndex;
 
 
+- (id)events;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)directionsResponses;
 - (id)directionsRequests;
 - (void)setHasProblematicEventIndex:(BOOL)arg1;
@@ -71,9 +74,6 @@
 - (void)setDirectionsResponses:(id)arg1;
 - (void)setDirectionsRequests:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)events;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

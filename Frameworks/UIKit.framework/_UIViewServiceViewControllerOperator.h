@@ -91,7 +91,7 @@
 - (void)__hostDidEnterBackground;
 - (void)__hostWillEnterForeground;
 - (void)__setServiceInPopover:(BOOL)arg1;
-- (void)__hostViewDidMoveToScreenWithIntegerDisplayID:(unsigned int)arg1 contextReplyPort:(id)arg2;
+- (void)__hostViewDidMoveToScreenWithIntegerDisplayID:(unsigned int)arg1 newHostingHandleReplyHandler:(id)arg2;
 - (void)__hostViewDidDisappear:(BOOL)arg1;
 - (void)__hostViewWillDisappear:(BOOL)arg1;
 - (void)__hostViewDidAppear:(BOOL)arg1;
@@ -108,13 +108,13 @@
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)_updateSupportedInterfaceOrientationsIfNecessary;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)loadView;
 - (void)viewDidLoad;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setNeedsStatusBarAppearanceUpdate;

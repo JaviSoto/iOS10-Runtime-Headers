@@ -12,9 +12,9 @@
 @property(retain) NSSet * setElements;
 
 
-- (void)setSupportForEvents:(BOOL)arg1 tasks:(BOOL)arg2;
 - (id)setElements;
 - (void)setSetElements:(id)arg1;
+- (void)setSupportForEvents:(BOOL)arg1 tasks:(BOOL)arg2;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)requestBody;

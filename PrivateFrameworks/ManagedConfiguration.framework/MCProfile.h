@@ -85,6 +85,11 @@
 + (id)badFieldTypeErrorWithField:(id)arg1;
 + (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(int)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(int)arg7 invalidDataErrorString:(id)arg8 outError:(id*)arg9;
 
+- (id)productVersion;
+- (id)productBuildVersion;
+- (id)installDate;
+- (void)setInstallDate:(id)arg1;
+- (unsigned int)countOfPayloadsOfClass:(Class)arg1;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (BOOL)writeStubToDirectory:(id)arg1;
 - (id)UUIDHashFileName;
@@ -95,18 +100,13 @@
 - (void)setInstallOptions:(id)arg1;
 - (id)installOptions;
 - (id)removalDate;
-- (id)productBuildVersion;
-- (id)productVersion;
 - (BOOL)needsReboot;
-- (void)setInstallDate:(id)arg1;
-- (id)installDate;
 - (void)setEncrypted:(BOOL)arg1;
 - (BOOL)mayInstallWithOptions:(id)arg1 hasInteractionClient:(BOOL)arg2 outError:(id*)arg3;
 - (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id)arg1;
 - (struct __SecCertificate { }*)signerCertificate;
 - (void)evaluateSignerTrust;
 - (id)signerSummary;
-- (id)expiryDate;
 - (BOOL)mustInstallNonInteractively;
 - (id)localizedConsentText;
 - (BOOL)isEncrypted;
@@ -125,7 +125,6 @@
 - (id)malformedProfileErrorWithError:(id)arg1;
 - (id)profileDescription;
 - (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
-- (void)setLocked:(BOOL)arg1;
 - (void)setRemovalPasscode:(id)arg1;
 - (id)removalPasscode;
 - (id)stubDictionary;
@@ -133,10 +132,12 @@
 - (BOOL)isStub;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
+- (id)expiryDate;
 - (BOOL)isLocked;
 - (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
+- (void)setLocked:(BOOL)arg1;
 - (id)UUID;
 - (int)version;
 

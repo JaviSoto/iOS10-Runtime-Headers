@@ -58,6 +58,7 @@
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_willEnterForegroundNotification:(id)arg1;
 - (id)init;
+- (id)debugDescription;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

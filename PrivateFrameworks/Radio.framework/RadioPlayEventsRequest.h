@@ -11,12 +11,17 @@
     NSArray *_skippedTrackStoreIDs;
     long long _stationID;
     NSString *_stationHash;
+    NSString *_deviceName;
 }
+
+@property(copy) NSString * deviceName;
 
 
 - (id)initWithPlayedTrack:(id)arg1 skippedTracks:(id)arg2 station:(id)arg3;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithStation:(id)arg1 playEvents:(id)arg2;
+- (void)setDeviceName:(id)arg1;
+- (id)deviceName;
 - (id)init;
 - (void).cxx_destruct;
 

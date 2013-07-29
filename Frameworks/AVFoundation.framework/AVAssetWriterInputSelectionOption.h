@@ -57,8 +57,8 @@
 - (unsigned int)hash;
 - (void)finalize;
 - (void)dealloc;
-- (id)languageCode;
 - (id)outputSettings;
+- (id)languageCode;
 - (id)propertyList;
 
 @end

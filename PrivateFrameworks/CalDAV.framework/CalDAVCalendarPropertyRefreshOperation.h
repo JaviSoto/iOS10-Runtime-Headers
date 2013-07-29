@@ -30,7 +30,7 @@
 - (void)_finishRefresh;
 - (void)_continueHandleContainerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)setCalendarHomeSyncToken:(id)arg1;
-- (id)_getDefaultMkCalendarForPrincipalTask:(id)arg1 isEventCalendar:(BOOL)arg2;
+- (id)_getDefaultMkCalendarForPrincipalTaskGroup:(id)arg1 isEventCalendar:(BOOL)arg2;
 - (void)_getDefaultCalendarsTasksIfNeededForPrincipal:(id)arg1;
 - (BOOL)_handleUpdateForCalendar:(id)arg1;
 - (id)_getSetPropertyStringTask:(id)arg1 forName:(id)arg2 andNamespace:(id)arg3 atURL:(id)arg4;
@@ -41,7 +41,7 @@
 - (void)_handleCalendarPublish;
 - (void)_sendAddsForCalendars;
 - (void)_sendDeletesForCalendars;
-- (id)_getMkcalendarTaskForCalendar:(id)arg1;
+- (id)_getMkcalendarTaskGroupForCalendar:(id)arg1;
 - (void)_reallyRefreshCalendarProperties;
 - (void)_initializePrincipalCalendarCache;
 - (BOOL)useCalendarHomeSyncReport;

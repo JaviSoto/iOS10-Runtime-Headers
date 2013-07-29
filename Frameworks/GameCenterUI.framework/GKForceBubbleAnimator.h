@@ -5,7 +5,7 @@
 @interface GKForceBubbleAnimator : GKBubblePathAnimator  {
 }
 
-+ (id)animationPathInfoForTappedBubble:(id)arg1 forcedBubble:(id)arg2 boundsView:(id)arg3;
++ (id)animationPathInfoForTappedBubble:(id)arg1 forcedBubble:(id)arg2;
 
 - (int)animatorType;
 - (void)animateTransition:(id)arg1;

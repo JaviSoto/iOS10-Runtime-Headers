@@ -19,15 +19,16 @@
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;
 
-- (void)_failedToGenerateCGImage:(id)arg1;
-- (void)_didGenerateCGImage:(id)arg1;
+- (void)setApertureMode:(id)arg1;
 - (void)setRequestedTimeToleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setRequestedTimeToleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setApertureMode:(id)arg1;
-- (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
 - (void)cancelAllCGImageGeneration;
 - (void)generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id)arg2;
 - (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
+- (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
+- (void)_serverDied;
+- (void)_failedToGenerateCGImage:(id)arg1;
+- (void)_didGenerateCGImage:(id)arg1;
 - (id)_requestWithRequestID:(id)arg1;
 - (id)customVideoCompositor;
 - (id)_NSErrorForError:(long)arg1;
@@ -43,7 +44,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceBefore;
 - (id)apertureMode;
 - (BOOL)appliesPreferredTrackTransform;
-- (void)_serverDied;
 - (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })maximumSize;
 - (id)init;

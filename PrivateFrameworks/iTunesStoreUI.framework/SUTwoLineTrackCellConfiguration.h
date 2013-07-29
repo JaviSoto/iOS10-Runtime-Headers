@@ -7,8 +7,6 @@
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
@@ -17,6 +15,5 @@
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfLabelForPurchaseAnimation;
 - (id)init;
-- (id)accessibilityLabel;
 
 @end

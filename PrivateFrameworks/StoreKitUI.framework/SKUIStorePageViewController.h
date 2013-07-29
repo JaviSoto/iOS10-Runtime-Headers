@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, UICollectionView, NSMutableArray, NSString, NSMapTable, SKUIProductPageOverlayController, SKUILayoutCache, NSURLRequest, SKUIResourceLoader, SKUIStorePage, <SKUIStorePageDataSource>, UIRefreshControl, SKUIArtworkRequest, SSVLoadURLOperation, SKUIClientContext, NSArray, SKUIMetricsController, UIImage, NSOperationQueue, <SKUIStorePageDelegate>, SKUIColorScheme;
+@class UIView, UICollectionView, NSMutableArray, NSString, NSMapTable, SSMetricsPageEvent, SKUIProductPageOverlayController, SKUILayoutCache, NSURLRequest, SKUIResourceLoader, SKUIStorePage, <SKUIStorePageDataSource>, UIRefreshControl, SKUIArtworkRequest, SSVLoadURLOperation, SKUIClientContext, NSArray, SKUIMetricsController, UIImage, NSOperationQueue, <SKUIStorePageDelegate>, SKUIColorScheme;
 
-@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUILayoutCacheDelegate, UICollectionViewDataSource, UIViewControllerRestoration> {
+@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUILayoutCacheDelegate, UICollectionViewDataSource, SKUIMetricsViewController, UIViewControllerRestoration> {
     SKUIProductPageOverlayController *_activeOverlayController;
     SKUIArtworkRequest *_backgroundArtworkRequest;
     UIImage *_backgroundImage;
@@ -21,6 +21,7 @@
     int _disappearOrientation;
     NSArray *_initialOverlayURLs;
     NSString *_lastDataConsumerClassName;
+    SSMetricsPageEvent *_lastPageEvent;
     NSURLRequest *_lastRequest;
     BOOL _loadOnAppear;
     SSVLoadURLOperation *_loadOperation;
@@ -51,16 +52,18 @@
 - (id)storePage;
 - (id)_visibleMetricsImpressionsString;
 - (void)_setSelectedIndex:(int)arg1 forMenuSection:(id)arg2;
+- (void)_pageSectionDidDismissOverlayController:(id)arg1;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)artworkLoaderDidIdle:(id)arg1;
 - (void)collectionView:(id)arg1 editorialView:(id)arg2 didSelectLink:(id)arg3;
 - (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id)arg3;
-- (void)cancelPageLoad;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (id)collectionView:(id)arg1 layout:(id)arg2 pageSectionForIndexPath:(id)arg3;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
+- (void)cancelPageLoad;
 - (void)_recordMetricsPageEvent:(id)arg1 forStorePage:(id)arg2;
+- (void)_showProductPage:(id)arg1 withPageEvent:(id)arg2;
 - (id)defaultSectionForComponent:(id)arg1;
 - (void)_enumerateVisibleSectionsUsingBlock:(id)arg1;
 - (id)_textLayoutCache;
@@ -77,9 +80,11 @@
 - (void)loadURLRequest:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)_defaultSectionForSwooshComponent:(id)arg1;
 - (id)_defaultSectionForGridComponent:(id)arg1;
+- (id)activeMetricsController;
 - (void)setMetricsController:(id)arg1;
 - (void)loadURL:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)_setMetricsController:(id)arg1;
+- (void)_metricsEnterEventNotification:(id)arg1;
 - (id)_sections;
 - (id)_colorScheme;
 - (void)setClientContext:(id)arg1;
@@ -106,10 +111,10 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;

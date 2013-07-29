@@ -88,12 +88,6 @@
         float x; 
         float y; 
     } _previousCenterOffset;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _previousContentInset;
     float _currentInteractiveTransitionProgress;
     float _previousInteractiveTransitionProgress;
     _UIDynamicAnimationGroup *_endInteractiveTransitionAnimationGroup;
@@ -113,6 +107,7 @@
         unsigned int delegateDidEndDisplayingSupplementaryView : 1; 
         unsigned int delegateIndexForReferenceItemDuringLayoutTransition : 1; 
         unsigned int delegateOverrideForTransitionOffsetSize : 1; 
+        unsigned int delegateTargetContentOffsetForProposedContentOffset : 1; 
         unsigned int dataSourceNumberOfSections : 1; 
         unsigned int dataSourceViewForSupplementaryElement : 1; 
         unsigned int reloadSkippedDuringSuspension : 1; 
@@ -151,15 +146,7 @@
 @property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
-- (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
-- (void)moveSection:(int)arg1 toSection:(int)arg2;
-- (void)reloadSections:(id)arg1;
-- (void)deleteSections:(id)arg1;
-- (void)insertSections:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1;
@@ -173,7 +160,11 @@
 - (void)_trackLayoutValue:(float)arg1 forKey:(id)arg2;
 - (void)_cellMenuDismissed;
 - (void)_invalidateLayoutWithContext:(id)arg1;
+- (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)reloadItemsAtIndexPaths:(id)arg1;
+- (void)reloadSections:(id)arg1;
+- (void)deleteSections:(id)arg1;
+- (void)insertSections:(id)arg1;
 - (id)_currentUpdate;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerNib:(id)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
@@ -183,6 +174,8 @@
 - (id)_visibleDecorationViewsOfKind:(id)arg1;
 - (id)_visibleSupplementaryViewsOfKind:(id)arg1;
 - (id)_pivotForTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
+- (void)_cancelInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
+- (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (id)startInteractiveTransitionToCollectionViewLayout:(id)arg1 completion:(id)arg2;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2;
@@ -217,11 +210,11 @@
 - (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (id)_visibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2;
-- (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1;
+- (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
 - (id)_dynamicAnimationsForTrackValues;
-- (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (void)_updateTrackedLayoutValuesWith:(id)arg1;
 - (void)_updateTransitionWithProgress:(float)arg1;
+- (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (void)setCollectionViewLayout:(id)arg1;
 - (void)_setNavigationCompletion:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id)arg4;
@@ -270,15 +263,16 @@
 - (void)_moveWithEvent:(id)arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (id)backgroundView;
+- (void)moveSection:(int)arg1 toSection:(int)arg2;
 - (BOOL)_indexPathIsValid:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)_reloadDataIfNeeded;
 - (BOOL)allowsSelection;
 - (void)_setupCellAnimations;
 - (void)setAllowsSelection:(BOOL)arg1;
-- (id)indexPathForCell:(id)arg1;
 - (void)_updateBackgroundView;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (id)indexPathForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
 - (void)_resumeReloads;
 - (id)_arrayForUpdateAction:(int)arg1;
@@ -286,6 +280,7 @@
 - (void)_updateVisibleCellsNow:(BOOL)arg1;
 - (int)numberOfSections;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
@@ -311,36 +306,14 @@
 - (id)visibleCells;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityCollectionCellElementForIndexPath:(id)arg1;
-- (id)_accessibilityFuzzyHitTest:(struct CGPoint { float x1; float x2; }*)arg1 withEvent:(id)arg2;
-- (id)accessibilityCellForRowAtIndexPath:(id)arg1;
-- (void)_accessibilityInitializeInternalData:(id)arg1;
-- (void)_resetAXData;
-- (BOOL)accessibilityShouldSpeakItemReorderEvents;
-- (id)accessibilityCreatePrepareCellForIndexPath:(id)arg1;
-- (id)axData;
-- (BOOL)accessibilityCollectionViewBehavesLikeUIViewAccessibility;
-- (int)_axGlobalRowForIndexPath:(id)arg1;
-- (id)_accessibilityOtherCollectionViewItems;
-- (id)_axIndexPathForGlobalRow:(int)arg1;
-- (id)_accessibilityIndexPathOfDirectSubviewForDescendantElement:(id)arg1 subviewKind:(int*)arg2;
-- (void)setAccessibilityShouldSpeakItemReorderEvents:(BOOL)arg1;
-- (void)setAccessibilityShouldBypassColletionViewAccessibility:(BOOL)arg1;
-- (BOOL)isAccessibilityOpaqueElementProvider;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityUserTestingVisibleCells;
-- (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
-- (id)_accessibilitySortedElementsWithin;
-- (id)_accessibilityScannerGroupElements;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
 - (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
 - (void)_gkRegisterCellClass:(Class)arg1;
 - (id)_gkVisibleCellForIndexPath:(id)arg1;
+- (void)pu_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)pu_scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)fixVisibleBounds;
 
 @end

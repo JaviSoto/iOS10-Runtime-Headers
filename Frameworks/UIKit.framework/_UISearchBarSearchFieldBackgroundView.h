@@ -14,9 +14,10 @@
 
 
 - (BOOL)backgroundContainer;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 updateView:(BOOL)arg3;
 - (unsigned int)searchBarStyle;
-- (void)setBackgroundContainer:(BOOL)arg1;
 - (void)setSearchBarStyle:(unsigned int)arg1;
+- (void)setBackgroundContainer:(BOOL)arg1;
 - (void)updateView;
 - (id)_fillColor:(BOOL)arg1;
 - (id)_strokeColor:(BOOL)arg1;

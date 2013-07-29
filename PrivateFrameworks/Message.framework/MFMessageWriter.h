@@ -10,18 +10,14 @@
     unsigned int _allowsBinaryMimeParts : 1;
     unsigned int _writeSizeDispositionParameter : 1;
     unsigned int _allowsQuotedPrintable : 1;
-    BOOL _writeAppleContentLength;
     id _delegate;
     NSDictionary *_compositionSpecification;
 }
 
 @property id delegate;
 @property(readonly) NSDictionary * compositionSpecification;
-@property BOOL writeAppleContentLength;
 
 
-- (void)setWriteAppleContentLength:(BOOL)arg1;
-- (BOOL)writeAppleContentLength;
 - (id)compositionSpecification;
 - (void)setMessageClassToInstantiate:(Class)arg1;
 - (void)setWriteSizeDispositionParameter:(BOOL)arg1;

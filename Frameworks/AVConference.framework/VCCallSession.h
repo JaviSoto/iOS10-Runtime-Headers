@@ -789,8 +789,8 @@
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)setRequiresWifi:(BOOL)arg1;
 - (BOOL)requiresWifi;
-- (void)setSessionID:(id)arg1;
 - (id)sessionID;
+- (void)setSessionID:(id)arg1;
 - (double)packetLossRate;
 - (unsigned long)callID;
 - (int)signalStrength;

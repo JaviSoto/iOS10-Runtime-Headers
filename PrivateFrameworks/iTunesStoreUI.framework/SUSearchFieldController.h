@@ -30,9 +30,9 @@
 - (void)_dimmerViewAction:(id)arg1;
 - (id)_newBlankStorePageViewController;
 - (id)_targetViewController;
-- (void)_fetchResultsForURLRequestProperties:(id)arg1;
 - (void)_fetchCompletions;
 - (id)_defaultSearchTerm;
+- (void)_fetchResultsForURL:(id)arg1;
 - (void)_reloadCompletionsForSearchString:(id)arg1;
 - (void)_cancelCompletionsOperation;
 - (void)_showDimmerView;
@@ -42,7 +42,7 @@
 - (void)_resizeSearchBarForOrientation:(int)arg1;
 - (void)_reloadSearchBar;
 - (id)_newSearchBar;
-- (void)_fetchResultsForURL:(id)arg1;
+- (void)_fetchResultsForURLRequestProperties:(id)arg1;
 - (void)_tearDownDimmerView;
 - (void)_savedSearchTermChangedNotification:(id)arg1;
 - (id)_newSearchDisplayControllerWithContentsController:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setSearchFieldStyle:(int)arg1;
 - (id)initWithContentsController:(id)arg1;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1;
-- (void)handleSearchURL:(id)arg1;
+- (void)handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)searchFieldConfiguration;
 - (void)setSearchFieldConfiguration:(id)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

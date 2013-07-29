@@ -6,6 +6,8 @@
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
     IMRemoteURLConnection *_remoteConnection;
+    BOOL _pendingRetryAfterAirplaneMode;
+    double _retryTimeAfterAirplaneMode;
 }
 
 
@@ -21,6 +23,8 @@
 - (BOOL)busy;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
+- (void)_clearRetryTimer;
+- (void)networkStateChanged;
 - (id)init;
 - (void)invalidate;
 - (BOOL)sendMessage:(id)arg1;

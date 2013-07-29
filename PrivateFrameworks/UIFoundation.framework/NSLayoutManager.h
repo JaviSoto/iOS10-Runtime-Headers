@@ -22,7 +22,7 @@
         unsigned int displayInvalidationInProgress : 1; 
         unsigned int insertionPointNeedsUpdate : 1; 
         unsigned int layoutManagerInDirtyList : 1; 
-        unsigned int usingGlyphCache : 1; 
+        unsigned int originalFontOverride : 1; 
         unsigned int showInvisibleCharacters : 1; 
         unsigned int showControlCharacters : 1; 
         unsigned int delegateRespondsToDidInvalidate : 1; 
@@ -36,7 +36,7 @@
         unsigned int loggedBGLayoutException : 1; 
         unsigned int isLayoutRequestedFromSubthread : 1; 
         unsigned int defaultAttachmentScaling : 2; 
-        unsigned int isInUILayoutMode : 1; 
+        unsigned int usesFontLeading : 1; 
         unsigned int seenRightToLeft : 1; 
         unsigned int ignoresViewTransformations : 1; 
         unsigned int needToFlushGlyph : 1; 
@@ -80,6 +80,7 @@
     id _extraData;
 }
 
+@property BOOL allowsOriginalFontMetricsOverride;
 @property NSTextStorage * textStorage;
 @property(readonly) NSArray * textContainers;
 @property <NSLayoutManagerDelegate> * delegate;
@@ -134,6 +135,7 @@
 - (void)invalidateGlyphsOnLayoutInvalidationForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setCharacterIndex:(unsigned int)arg1 forGlyphAtIndex:(unsigned int)arg2;
 - (void)replaceGlyphAtIndex:(unsigned int)arg1 withGlyph:(unsigned int)arg2;
+- (void)ensureLayoutForTextContainer:(id)arg1;
 - (void)ensureGlyphsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)processEditingForTextStorage:(id)arg1 edited:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4 invalidatedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (void)setHyphenationFactor:(float)arg1;
@@ -191,6 +193,7 @@
 - (void)setAttachmentSize:(struct CGSize { float x1; float x2; })arg1 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setEllipsisGlyphAttribute:(BOOL)arg1 forGlyphAtIndex:(unsigned int)arg2;
 - (void)insertGlyph:(unsigned int)arg1 atGlyphIndex:(unsigned int)arg2 characterIndex:(unsigned int)arg3;
+- (BOOL)usesFontLeading;
 - (unsigned int)getGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 glyphs:(unsigned short*)arg2 properties:(int*)arg3 characterIndexes:(unsigned int*)arg4 bidiLevels:(char *)arg5;
 - (id)textContainers;
 - (float)hyphenationFactor;
@@ -216,8 +219,8 @@
 - (void)setFlipsIfNeeded:(BOOL)arg1;
 - (BOOL)flipsIfNeeded;
 - (void)_setHasSeenRightToLeft:(BOOL)arg1;
-- (BOOL)_isInUILayoutMode;
-- (void)_setIsInUILayoutMode:(BOOL)arg1;
+- (BOOL)allowsOriginalFontMetricsOverride;
+- (void)setAllowsOriginalFontMetricsOverride:(BOOL)arg1;
 - (void)_clearTemporaryAttributesForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeInLength:(int)arg2;
 - (void)_clearTemporaryAttributes;
 - (void)_clearCurrentAttachmentSettings;
@@ -266,7 +269,6 @@
 - (void)invalidateLayoutForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 actualCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (void)_invalidateGlyphsForExtendedCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeInLength:(int)arg2;
 - (void)setBaselineOffset:(float)arg1 forGlyphAtIndex:(unsigned int)arg2;
-- (BOOL)usesFontLeading;
 - (void)strikethroughGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 strikethroughType:(int)arg2 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 lineFragmentGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 containerOrigin:(struct CGPoint { float x1; float x2; })arg5;
 - (void)showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { float x1; float x2; }*)arg2 count:(unsigned int)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
 - (void)underlineGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 underlineType:(int)arg2 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 lineFragmentGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 containerOrigin:(struct CGPoint { float x1; float x2; })arg5;
@@ -358,10 +360,10 @@
 - (unsigned int)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1 inTextContainer:(id)arg2 fractionOfDistanceBetweenInsertionPoints:(float*)arg3;
 - (void)enumerateEnclosingRectsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withinSelectedGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextContainer:(id)arg3 usingBlock:(id)arg4;
 - (void)removeTemporaryAttribute:(id)arg1 forCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfCharacterClusterAtIndex:(unsigned int)arg1 type:(long)arg2;
 - (BOOL)hasNonContiguousLayout;
 - (void)enumerateLineFragmentsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
 - (void)setAllowsNonContiguousLayout:(BOOL)arg1;
-- (void)ensureLayoutForTextContainer:(id)arg1;
 - (BOOL)allowsNonContiguousLayout;
 - (void)coordinateAccess:(id)arg1;
 - (void)ensureLayoutForBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inTextContainer:(id)arg2;

@@ -19,12 +19,12 @@
 - (id)initWithMFAttachment:(id)arg1;
 - (id)initWithAttachment:(id)arg1;
 - (void)setMimeType:(id)arg1;
-- (void)setData:(id)arg1;
 - (id)data;
 - (id)name;
 - (BOOL)isValid;
 - (void)dealloc;
 - (id)mimeType;
+- (void)setData:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -6,12 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSOperationQueue, NSCache, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>;
+@class NSCache, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>;
 
 @interface SLTwitterSession : NSObject <SLTwitterClientSessionProtocol, SLMicroBlogSheetDelegate> {
     SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol> *_remoteSession;
     NSCache *_profileImageCache;
-    NSOperationQueue *_profileImageFetchQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */

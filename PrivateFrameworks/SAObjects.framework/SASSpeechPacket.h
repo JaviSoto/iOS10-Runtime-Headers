@@ -2,12 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSData, NSArray;
+@class NSString, NSArray;
 
 @interface SASSpeechPacket : SABaseCommand <SAServerBoundCommand> {
 }
 
-@property(copy) NSData * data;
 @property int packetNumber;
 @property(copy) NSArray * packets;
 @property(copy) NSString * aceId;
@@ -21,8 +20,6 @@
 - (void)setPacketNumber:(int)arg1;
 - (int)packetNumber;
 - (id)encodedClassName;
-- (void)setData:(id)arg1;
-- (id)data;
 - (id)groupIdentifier;
 
 @end

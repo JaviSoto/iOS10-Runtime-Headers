@@ -13,8 +13,8 @@
 + (id)eventSnippet;
 
 - (id)encodedClassName;
-- (void)setEvents:(id)arg1;
 - (id)events;
+- (void)setEvents:(id)arg1;
 - (id)groupIdentifier;
 
 @end

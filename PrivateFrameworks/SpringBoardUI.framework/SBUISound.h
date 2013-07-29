@@ -51,6 +51,7 @@
 - (id)ringtoneName;
 - (unsigned int)soundBehavior;
 - (unsigned long)systemSoundID;
+- (id)vibrationPattern;
 - (void)setVibrationIdentifier:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
 - (void)setRepeats:(BOOL)arg1;
@@ -66,15 +67,14 @@
 - (id)initWithAVItem:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 controllerAttributes:(id)arg4;
 - (id)controllerAttributes;
+- (double)maxDuration;
 - (void)setMaxDuration:(double)arg1;
 - (void)setAvItem:(id)arg1;
 - (void)setControllerAttributes:(id)arg1;
 - (BOOL)playInEvironments:(int)arg1 completion:(id)arg2;
-- (double)maxDuration;
-- (id)vibrationPattern;
+- (BOOL)isPlaying;
 - (void)setVibrationPattern:(id)arg1;
 - (id)avItem;
-- (BOOL)isPlaying;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)dealloc;

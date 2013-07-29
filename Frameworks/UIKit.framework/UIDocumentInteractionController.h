@@ -173,9 +173,9 @@
 - (BOOL)presentPreviewAnimated:(BOOL)arg1;
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
+- (void)setPopoverController:(id)arg1;
 - (id)icons;
 - (id)uniqueIdentifier;
-- (void)setPopoverController:(id)arg1;
 - (id)gestureRecognizers;
 - (void)setURL:(id)arg1;
 - (void)_invalidate;

@@ -4,7 +4,7 @@
 
 @class SKUIItemCollectionController, SKUISearchRelatedView, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIMetricsController, <SKUISearchChildViewControllerDelegate>, SKUISearchPage, UICollectionView, NSDictionary, NSArray, SKUIProductPageOverlayController, SKUISearchResultGroupController, NSString, NSMutableDictionary;
 
-@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIProductPageOverlayDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
+@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, SKUIProductPageOverlayDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
     UICollectionView *_collectionView;
     NSDictionary *_facetSelections;
     SKUIIPadSearchHeaderView *_headerView;
@@ -47,9 +47,9 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })itemCollectionController:(id)arg1 itemPageRangeForOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)itemCollectionController:(id)arg1 cellLayoutForItemIndex:(int)arg2;
 - (void)_noResultsAction:(id)arg1;
+- (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
 - (void)_recordClickEvent:(id)arg1 withCell:(id)arg2;
 - (int)_indexForItemIndex:(int)arg1;
-- (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;
 - (int)_itemIndexForIndex:(int)arg1;
 - (id)_itemCollectionController;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
@@ -61,15 +61,16 @@
 - (id)_visibleMetricsImpressionsString;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
+- (id)activeMetricsController;
 - (void)setFacetSelections:(id)arg1;
 - (void)setSearchFacets:(id)arg1;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (void)setMetricsController:(id)arg1;
 - (id)facetSelections;
 - (void)_reloadOrientation:(int)arg1;
+- (void)scrollToTop;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)scrollToTop;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

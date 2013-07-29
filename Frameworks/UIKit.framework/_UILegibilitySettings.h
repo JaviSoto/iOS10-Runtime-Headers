@@ -53,5 +53,7 @@
 - (id)contentColor;
 - (void)setContentColor:(id)arg1;
 - (id)initWithStyle:(int)arg1;
+- (id)sb_description;
+- (id)sb_styleString;
 
 @end

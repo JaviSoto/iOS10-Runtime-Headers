@@ -17,9 +17,6 @@
 @property(readonly) UILabel * titleLabel;
 
 + (float)_checkmarkOffset;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)checkedColor;
@@ -28,9 +25,8 @@
 - (BOOL)_isSelectable;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setChecked:(BOOL)arg1;
 - (id)titleLabel;
+- (void)setChecked:(BOOL)arg1;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

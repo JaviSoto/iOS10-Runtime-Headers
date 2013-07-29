@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UITableView, <SUGridViewDataSource>, SUGridRowTableViewCellLayoutManager, <SUGridViewDelegate>, UIControl, NSMutableDictionary;
+@class <SUGridViewDataSource>, <SUGridViewDelegate>, UITableView, NSMutableArray, UIControl, SUGridRowTableViewCellLayoutManager, NSMutableDictionary, NSArray;
 
 @interface SUGridView : UIView <UITableViewDataSource, UITableViewDelegate> {
     int _animationCount;
@@ -20,17 +20,23 @@
         unsigned int titleForHeader : 1; 
         unsigned int viewForHeader : 1; 
         unsigned int willDisplayCell : 1; 
+        unsigned int selectionDidChange : 1; 
     } _respondFlags;
     NSMutableDictionary *_reusableCells;
     UITableView *_tableView;
     UIControl *_touchCaptureView;
+    BOOL _editing;
+    NSMutableArray *_editSelection;
 }
 
 @property <SUGridViewDataSource> * dataSource;
 @property <SUGridViewDelegate> * delegate;
 @property(readonly) UITableView * tableView;
+@property(readonly) NSArray * editSelection;
 
 
+- (id)editSelection;
+- (void)_toggleEditStateForCell:(id)arg1;
 - (void)_reuseColumnCellsForCell:(id)arg1;
 - (void)_animateDeletionOfCell:(id)arg1;
 - (void)reloadCellsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
@@ -40,6 +46,7 @@
 - (int)_minimumColumnCount;
 - (void)_endSwipeToDelete;
 - (BOOL)_canDeleteCellAtIndexPath:(id)arg1;
+- (void)_configureCellForEdit:(id)arg1 indexPath:(id)arg2;
 - (void)_reloadColumnCounts;
 - (id)indexPathForCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)globalIndexForCellAtIndexPath:(id)arg1;
@@ -48,7 +55,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableViewStyle:(int)arg2;
 - (void)_touchCaptureAction:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
@@ -56,9 +62,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)tableView;
+- (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (float)marginForTableView:(id)arg1;
-- (id)indexPathForCell:(id)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)globalRowForRowAtIndexPath:(id)arg1;
+- (id)indexPathForCell:(id)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

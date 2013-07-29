@@ -2,11 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASPronunciationData;
+@class NSNumber, NSString, SASPronunciationData;
 
 @interface SAUIListenForPronunciationCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
+@property(copy) NSNumber * errorCode;
+@property(copy) NSString * interactionId;
 @property(retain) SASPronunciationData * pronunciationData;
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
@@ -15,8 +17,12 @@
 + (id)listenForPronunciationCompleted;
 
 - (void)setPronunciationData:(id)arg1;
+- (void)setInteractionId:(id)arg1;
+- (id)interactionId;
 - (id)pronunciationData;
 - (id)encodedClassName;
+- (void)setErrorCode:(id)arg1;
+- (id)errorCode;
 - (id)groupIdentifier;
 
 @end

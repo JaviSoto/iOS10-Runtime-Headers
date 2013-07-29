@@ -19,11 +19,11 @@
 + (id)openURLRequestWithURL:(id)arg1;
 
 - (id)initWithURLBagKey:(id)arg1;
-- (id)targetIdentifier;
 - (BOOL)isITunesStoreURL;
 - (void)setITunesStoreURL:(BOOL)arg1;
 - (void)setTargetIdentifier:(id)arg1;
 - (id)URLBagKey;
+- (id)targetIdentifier;
 - (void)setURLBagKey:(id)arg1;
 - (id)init;
 - (id)initWithURL:(id)arg1;

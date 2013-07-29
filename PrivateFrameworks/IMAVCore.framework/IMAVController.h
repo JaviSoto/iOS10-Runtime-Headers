@@ -62,8 +62,8 @@
 - (BOOL)blockIncomingInvitationsDuringCall;
 - (BOOL)blockMultipleIncomingInvitations;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
-- (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (void)removeDelegate:(id)arg1;
 - (void)setupIMAVController;
 - (void)setIMAVCapabilities:(int)arg1 toCaps:(int)arg2;
 - (id)init;

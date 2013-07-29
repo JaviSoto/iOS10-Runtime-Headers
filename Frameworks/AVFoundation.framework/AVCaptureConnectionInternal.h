@@ -21,6 +21,18 @@
     BOOL videoMirrored;
     BOOL videoOrientationSupported;
     int videoOrientation;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoMinFrameDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } videoMaxFrameDuration;
     float videoMaxScaleAndCropFactor;
     float videoScaleAndCropFactor;
     int videoRetainedBufferCountHint;

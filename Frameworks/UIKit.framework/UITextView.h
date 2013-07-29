@@ -36,9 +36,9 @@
     } _scrollTargetOffset;
     unsigned int _dataDetectorTypes;
     float _preferredMaxLayoutWidth;
+    UIView *_inputAccessoryView;
     BOOL _clearsOnInsertion;
     UIView *_inputView;
-    UIView *_inputAccessoryView;
 }
 
 @property(setter=_setDrawsDebugBaselines:) BOOL _drawsDebugBaselines;
@@ -84,8 +84,6 @@
 + (id)_sharedHighlightView;
 + (id)_bestInterpretationForDictationResult:(id)arg1;
 + (BOOL)_isCompatibilityTextView;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isEditing;
 - (BOOL)isEditable;
@@ -217,7 +215,6 @@
 - (BOOL)canResignFirstResponder;
 - (id)_containerView;
 - (void)updateConstraints;
-- (id)attributedText;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (id)textStylingAtPosition:(id)arg1 inDirection:(int)arg2;
 - (id)textContainer;
@@ -226,6 +223,7 @@
 - (BOOL)textInput:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
@@ -281,7 +279,10 @@
 - (id)interactionAssistant;
 - (void)_textStorageDidProcessEditing:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
+- (id)attributedText;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setFont:(id)arg1;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
@@ -295,35 +296,12 @@
 - (void)increaseSize:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (void)webViewDidChange:(id)arg1;
-- (id)accessibilityValue;
-- (BOOL)isAccessibilityElement;
-- (id)_axLines;
-- (id)_accessibilityLinks;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityChargedLineBoundsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)_axLineElementForTextPosition:(id)arg1;
-- (id)_accessibilitySupplementaryHeaderViews;
-- (id)accessibilityCustomRotorTitles;
-- (id)accessibilityCustomRotorItemsAtIndex:(int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityBoundsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)_accessibilityDataDetectorScheme:(struct CGPoint { float x1; float x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
-- (BOOL)_allowCustomActionHintSpeakOverride;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_accessibilitySetValue:(id)arg1;
-- (id)_accessibilityTextViewTextOperationResponder;
 
 @end

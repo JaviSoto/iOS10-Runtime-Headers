@@ -35,6 +35,7 @@
     } _has;
 }
 
+@property(readonly) NSString * yelpID;
 @property(readonly) GEOBusiness * firstBusiness;
 @property(readonly) GEORating * firstRating;
 @property BOOL hasUID;
@@ -73,6 +74,9 @@
 @property long long geoId;
 
 
+- (id)firstRating;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
 - (void)setHasArea:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
@@ -120,7 +124,6 @@
 - (long long)uID;
 - (void)setAddress:(id)arg1;
 - (id)arrivalMapRegionForTransportType:(int)arg1;
-- (id)firstRating;
 - (id)arrivalMapRegion;
 - (BOOL)hasType;
 - (int)addressGeocodeAccuracy;
@@ -138,8 +141,6 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (double)area;
 - (struct { double x1; double x2; })coordinate;
 - (void)setType:(int)arg1;
@@ -156,5 +157,13 @@
 - (void)setName:(id)arg1;
 - (int)version;
 - (id)address;
+- (id)clRegion;
+- (id)clLocation;
+- (id)initWithCLLocation:(id)arg1;
+- (id)businessName;
+- (BOOL)hasSingleBusiness;
+- (id)yelpID;
+- (unsigned long long)businessID;
+- (id)initWithPlacemark:(id)arg1;
 
 @end

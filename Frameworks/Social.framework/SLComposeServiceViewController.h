@@ -125,13 +125,12 @@
 - (id)serviceIconImage;
 - (void)postButtonTapped:(id)arg1;
 - (void)setServiceIconImage:(id)arg1;
-- (void)sheetPresentationAnimationDidFinish;
 - (void)dismissAutoCompletionViewController;
 - (void)presentAutoCompletionViewController:(id)arg1;
 - (void)setMaxImageAttachmentSize:(unsigned long)arg1;
 - (BOOL)wasPresented;
 - (void)registerHostProxy;
-- (BOOL)validateText:(id)arg1;
+- (void)sheetPresentationAnimationDidFinish;
 - (id)sheetActions;
 - (id)URLAttachments;
 - (BOOL)validateSheetContent;
@@ -146,6 +145,7 @@
 - (void)removeAllURLs;
 - (BOOL)canAddContent;
 - (void)previewImageForAttachment:(id)arg1 resultBlock:(id)arg2;
+- (BOOL)validateText:(id)arg1;
 - (void)presentSettingsAlertWithTitle:(id)arg1 message:(id)arg2 targetURL:(id)arg3;
 - (void)setPlaceholderText:(id)arg1;
 - (id)placeholderText;
@@ -177,19 +177,19 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setKeyboardType:(int*)arg1;
 - (id)navigationController;
+- (void)setText:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)shouldAutorotate;
 - (void)didReceiveMemoryWarning;
-- (void)setText:(id)arg1;
 - (id)constraints;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

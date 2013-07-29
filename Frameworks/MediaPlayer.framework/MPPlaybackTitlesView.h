@@ -19,8 +19,6 @@
 @property unsigned int marqueeScrollableIndex;
 @property(readonly) UIView * contentView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setShowingLoadingUI:(BOOL)arg1;
 - (void)setMarqueeScrollableIndex:(unsigned int)arg1;
@@ -44,10 +42,5 @@
 - (id)titles;
 - (void)setTitles:(id)arg1;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

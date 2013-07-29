@@ -55,11 +55,12 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)item;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
+- (BOOL)prefersStatusBarHidden;
 
 @end

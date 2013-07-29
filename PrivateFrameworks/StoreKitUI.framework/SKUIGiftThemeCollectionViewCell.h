@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, UIImageView, UILabel, SKUIGiftItemView, SKUIGift, UIImage, SKUIGiftTheme;
+@class SKUIGiftConfiguration, UIImageView, UILabel, SKUIGiftItemView, SKUIGift, UIImage, SKUIGiftTheme;
 
 @interface SKUIGiftThemeCollectionViewCell : UICollectionViewCell  {
-    SKUIClientContext *_clientContext;
+    SKUIGiftConfiguration *_giftConfiguration;
     SKUIGift *_gift;
     UIImageView *_headerImageView;
     SKUIGiftItemView *_itemView;
@@ -16,7 +16,7 @@
     SKUIGiftTheme *_theme;
 }
 
-@property(retain) SKUIClientContext * clientContext;
+@property(retain) SKUIGiftConfiguration * giftConfiguration;
 @property(retain) SKUIGift * gift;
 @property(retain) SKUIGiftTheme * theme;
 @property(retain) UIImage * itemImage;
@@ -28,13 +28,13 @@
 - (void)_setMessage:(id)arg1;
 - (void)_setHeaderImage:(id)arg1;
 - (id)itemImage;
+- (void)setGiftConfiguration:(id)arg1;
 - (void)reloadThemeHeaderImage;
 - (void)setGift:(id)arg1;
 - (void)setItemImage:(id)arg1;
 - (id)_itemView;
+- (id)giftConfiguration;
 - (id)gift;
-- (void)setClientContext:(id)arg1;
-- (id)clientContext;
 - (void)setTheme:(id)arg1;
 - (id)theme;
 - (void)setBackgroundColor:(id)arg1;

@@ -15,6 +15,7 @@
 - (void)updatePageControlWithStatus:(BOOL)arg1 rightControlButtonEnabled:(BOOL)arg2;
 - (void)_changePage:(id)arg1;
 - (void)setUseVerticalArrows:(BOOL)arg1;
+- (void)_setRenderConfig:(id)arg1;
 - (void)layoutSubviews;
 
 @end

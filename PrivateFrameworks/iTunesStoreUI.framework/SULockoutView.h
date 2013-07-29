@@ -21,13 +21,13 @@
 @property(copy) NSString * title;
 
 
+- (void)setLayoutPreset:(int)arg1;
+- (void)setGlowImage:(id)arg1;
 - (id)glowImage;
 - (id)_newLabel;
 - (void)_layoutForSlowNetwork;
 - (int)layoutPreset;
 - (id)_bodyLabel;
-- (void)setLayoutPreset:(int)arg1;
-- (void)setGlowImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setImage:(id)arg1;

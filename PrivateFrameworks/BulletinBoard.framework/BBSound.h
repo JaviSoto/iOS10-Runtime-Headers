@@ -42,6 +42,7 @@
 - (id)ringtoneName;
 - (unsigned int)soundBehavior;
 - (unsigned long)systemSoundID;
+- (id)vibrationPattern;
 - (void)setVibrationIdentifier:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
 - (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2;
@@ -56,7 +57,6 @@
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
 - (void)setAlertType:(int)arg1;
 - (int)alertType;
-- (id)vibrationPattern;
 - (void)setVibrationPattern:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;

@@ -27,6 +27,7 @@
 - (oneway void)resetActiveTileGroup;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
+- (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
 - (id)serverQueue;
 - (void)closeConnection;
 - (void)openConnection;

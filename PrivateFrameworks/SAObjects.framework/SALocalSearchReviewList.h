@@ -16,14 +16,14 @@
 + (id)reviewListWithDictionary:(id)arg1 context:(id)arg2;
 + (id)reviewList;
 
+- (id)providerId;
+- (void)setProviderId:(id)arg1;
 - (void)setTotalReviewCount:(id)arg1;
 - (id)totalReviewCount;
 - (void)setSelectReviews:(id)arg1;
 - (id)selectReviews;
 - (void)setProviderId2:(id)arg1;
 - (id)providerId2;
-- (void)setProviderId:(id)arg1;
-- (id)providerId;
 - (id)encodedClassName;
 - (void)setRating:(id)arg1;
 - (id)rating;

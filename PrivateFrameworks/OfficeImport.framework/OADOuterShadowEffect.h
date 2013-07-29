@@ -15,13 +15,13 @@
 - (float)ySkew;
 - (void)setXSkew:(float)arg1;
 - (float)xSkew;
-- (void)setYScale:(float)arg1;
-- (float)yScale;
-- (float)xScale;
 - (BOOL)rotateWithShape;
 - (void)setRotateWithShape:(BOOL)arg1;
-- (void)setXScale:(float)arg1;
 - (void)setYSkew:(float)arg1;
+- (float)yScale;
+- (float)xScale;
+- (void)setYScale:(float)arg1;
+- (void)setXScale:(float)arg1;
 - (void)setAlignment:(int)arg1;
 - (int)alignment;
 - (id)init;

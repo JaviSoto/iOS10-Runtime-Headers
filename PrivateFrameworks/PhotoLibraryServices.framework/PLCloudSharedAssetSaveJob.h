@@ -35,7 +35,7 @@
 + (id)placeholderImageProperties;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
 + (void)deleteCloudSharedAssetsWithCloudGUIDs:(id)arg1 info:(id)arg2;
-+ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6;
++ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
 + (void)downloadPendingAssetsForPersonID:(id)arg1 info:(id)arg2;
 + (id)_dcimDirectoryForFileURL:(id)arg1;
 + (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;
@@ -47,7 +47,7 @@
 - (void)setCurrentCloudAssetCollection:(id)arg1;
 - (id)currentCloudAssetCollection;
 - (int)attemptLightweightReimportAssetData;
-- (BOOL)_createPlaceHolder;
+- (BOOL)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (BOOL)_processSaveAssetWithPlaceholderKind:(int)arg1 withAssetDataFilePath:(id)arg2;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;

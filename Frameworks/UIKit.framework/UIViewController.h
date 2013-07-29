@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSLayoutConstraint, NSBundle, NSDictionary, UINavigationController, UINavigationItem, NSMutableArray, NSString, UITransitionView, UIDropShadowView, UISplitViewController, UITabBarController, UIPopoverController, UIViewController, UIBarButtonItem, UIStoryboard, UISearchDisplayController, <_UIViewControllerContentViewEmbedding>, _UILayoutGuide, UIWindow, SUViewControllerFactory, UITabBarItem, UIScrollView, NSArray, UIResponder, SUStorePageProtocol, UIView, <UIViewControllerTransitioningDelegate>;
+@class NSLayoutConstraint, NSBundle, NSDictionary, PUModalTransition, UINavigationItem, NSMutableArray, NSString, UITransitionView, UINavigationController, UIDropShadowView, UISplitViewController, UITabBarController, UIPopoverController, UIViewController, UIBarButtonItem, UIStoryboard, UISearchDisplayController, PUNavigationTransition, <_UIViewControllerContentViewEmbedding>, _UILayoutGuide, UIWindow, SUViewControllerFactory, UITabBarItem, UIScrollView, NSArray, UIResponder, SUStorePageProtocol, UIView, <UIViewControllerTransitioningDelegate>;
 
 @interface UIViewController : UIResponder <_UIViewServiceDeputy, NSCoding, UIAppearanceContainer, GKContentRefresh, GKURLHandling> {
     UIView *_view;
@@ -97,6 +97,9 @@
         unsigned int usesSharedView : 1; 
         unsigned int extendedLayoutIncludesOpaqueBars : 1; 
         unsigned int automaticallyAdjustInsets : 1; 
+        unsigned int previousShouldUnderlapUnderStatusBar : 1; 
+        unsigned int freezeShouldUnderlapUnderStatusBar : 1; 
+        unsigned int modifiedDoubleHeightBehavior : 1; 
     } _viewControllerFlags;
     int _retainCount;
     BOOL _ignoreAppSupportedOrientations;
@@ -149,6 +152,16 @@
     } __embeddedViewFrame;
 }
 
+@property(setter=pu_setModalTransition:,retain) PUModalTransition * pu_modalTransition;
+@property(setter=pu_setNavigationTransition:,retain) PUNavigationTransition * pu_navigationTransition;
+@property(readonly) PUModalTransition * pu_currentInteractiveModalTransition;
+@property(readonly) PUNavigationTransition * pu_currentInteractiveNavigationTransition;
+@property(readonly) BOOL pu_shouldActAsTabRootViewController;
+@property(readonly) BOOL pu_wantsStatusBarVisible;
+@property(readonly) BOOL pu_wantsNavigationBarVisible;
+@property(readonly) BOOL pu_wantsToolbarVisible;
+@property(readonly) BOOL pu_wantsTabBarVisible;
+@property(readonly) BOOL pl_isInPopover;
 @property(retain) SUStorePageProtocol * storePageProtocol;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
 @property(readonly) SUViewControllerFactory * viewControllerFactory;
@@ -209,6 +222,7 @@
 @property(retain) UIDropShadowView * dropShadowView;
 @property(readonly) BOOL _isModalSheet;
 @property(readonly) BOOL _isPresentedFormSheet;
+@property(readonly) BOOL _isInSheetPresentation;
 @property(readonly) BOOL _useSheetRotation;
 @property(readonly) BOOL _isDimmingBackground;
 @property(readonly) BOOL isSettingAppearState;
@@ -256,10 +270,11 @@
 + (void)_traverseViewControllerHierarchy:(id)arg1;
 + (void)_traverseViewControllerHierarchyWithDelayedReleaseArray:(const void**)arg1 block:(id)arg2;
 + (BOOL)_shouldUseRootViewControllerAutopromotion;
-+ (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2 ignoreInWindowCheck:(BOOL)arg3;
 + (BOOL)doesOverrideViewControllerMethod:(SEL)arg1;
++ (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2 ignoreInWindowCheck:(BOOL)arg3;
 + (id)existingNibNameMatchingClassName:(id)arg1 bundle:(id)arg2;
 + (void)setViewController:(id)arg1 forView:(id)arg2;
++ (BOOL)_frameIsNotResizedForDoubleHeightStatusBarChanges:(id)arg1;
 + (BOOL)_synthesizeSupportedInterfaceOrientationsFromShouldAutorotateToInterfaceOrientation;
 + (BOOL)_isNestedViewControllerSupportDisabled;
 + (struct CGSize { float x1; float x2; })defaultFormSheetSize;
@@ -272,10 +287,6 @@
 + (void)_traverseViewControllerHierarchyWithDelayedRelease:(id)arg1;
 + (id)_currentStatusBarHiddenViewController;
 + (id)_currentStatusBarStyleViewController;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
-+ (void)_gkShowGameCenterGamesInStore;
 + (void)_endAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 + (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
 + (void)_iTunesStoreUI_enqueueTransitionSafeInvocation:(id)arg1;
@@ -317,6 +328,7 @@
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
 - (struct CGSize { float x1; float x2; })_resolvedPreferredContentSize;
 - (void)dismissModalItem:(id)arg1 withTappedButtonIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)updateModaltem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentModalItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentModalItem:(id)arg1 animated:(BOOL)arg2 dontPresentAndAddToStack:(BOOL)arg3;
 - (void)presentModalItem:(id)arg1 replacing:(id)arg2 animated:(BOOL)arg3;
@@ -430,7 +442,6 @@
 - (void)setExtendedLayoutIncludesOpaqueBars:(BOOL)arg1;
 - (BOOL)extendedLayoutIncludesOpaqueBars;
 - (void)setWantsFullScreenLayout:(BOOL)arg1;
-- (BOOL)_viewControllerUnderlapsStatusBar;
 - (id)_descriptionWithChildren:(int)arg1;
 - (void)updateViewConstraints;
 - (void)_endAppearanceTransitionToViewController:(id)arg1;
@@ -462,7 +473,7 @@
 - (void)_recordContentScrollView;
 - (void)_setSharedView:(id)arg1;
 - (void)unloadView;
-- (float)_statusBarHeightForCurrentInterfaceOrientation;
+- (float)_statusBarHeightAdjustmentForCurrentOrientation;
 - (BOOL)_isViewController;
 - (id)_vanillaInit;
 - (BOOL)_viewHostsLayoutEngine;
@@ -477,7 +488,6 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (id)_viewForModalPresentationInPopover;
 - (BOOL)modalInPopover;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_bottomLayoutGuide;
 - (id)_topLayoutGuide;
@@ -581,6 +591,7 @@
 - (BOOL)_reallyWantsFullScreenLayout;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
+- (BOOL)_isInSheetPresentation;
 - (BOOL)_isViewInWindowWithoutParentViewController;
 - (id)dropShadowView;
 - (id)modalTransitionView;
@@ -605,6 +616,7 @@
 - (void)_setAppearState:(int)arg1;
 - (unsigned int)childViewControllersCount;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)isSettingAppearState;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
@@ -639,6 +651,8 @@
 - (id)childViewControllers;
 - (id)_segueTemplateWithIdentifier:(id)arg1;
 - (BOOL)autoresizesArchivedViewToFullSize;
+- (BOOL)_viewControllerUnderlapsStatusBar;
+- (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3 windowSizedViewController:(id)arg4;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (id)_visibleView;
 - (void)_clearRecordedContentScrollView;
@@ -657,9 +671,10 @@
 - (void)viewWillUnload;
 - (BOOL)_canReloadView;
 - (void)unloadViewForced:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultInitialViewFrame;
 - (void)_loadViewFromNibNamed:(id)arg1 bundle:(id)arg2;
 - (id)nibName;
+- (float)_statusBarHeightForCurrentInterfaceOrientation;
+- (BOOL)_frameIsNotResizedForDoubleHeightStatusBarChanges;
 - (void)setNibBundle:(id)arg1;
 - (void)setNibName:(id)arg1;
 - (id)nibBundle;
@@ -696,11 +711,11 @@
 - (id)childModalViewController;
 - (BOOL)isModalInPopover;
 - (void)setModalInPopover:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (id)_popoverController;
-- (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)_hackFor11408026_endAppearanceTransition;
 - (BOOL)_hackFor11408026_beginAppearanceTransition:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)bottomLayoutGuide;
@@ -708,9 +723,9 @@
 - (id)topLayoutGuide;
 - (id)contentScrollView;
 - (void)_cancelDelayedPresentation:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (int)preferredInterfaceOrientationForPresentation;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (BOOL)transitionViewShouldUseViewControllerCallbacks;
@@ -766,6 +781,7 @@
 - (id)_existingView;
 - (int)_preferredInterfaceOrientationGivenCurrentOrientation:(int)arg1;
 - (BOOL)_isPresentingInWindow:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultInitialViewFrame;
 - (BOOL)wantsFullScreenLayout;
 - (void)awakeFromNib;
 - (id)_window;
@@ -800,7 +816,6 @@
 - (id)_completionBlock;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)setAccessibilityLabel:(id)arg1;
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
 - (BOOL)ab_shouldShowNavBarButtons;
@@ -826,6 +841,8 @@
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; })_gkBubbleFlowAdoptionInfo;
 - (id)_gkReturnBubbleViewToOverlayWithBubbleType:(int)arg1;
 - (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(int)arg1 andMoveTo:(id)arg2;
+- (BOOL)_gkIsTransitioningToTheLocalPlayerViewController;
+- (BOOL)_gkIsTransitioningFromTheLocalPlayerViewController;
 - (BOOL)_gkUsesFormSheetForBubbleFlowModalPresentationOnPad;
 - (BOOL)_gkCanBeRemovedFromParentWhenCovered;
 - (BOOL)_gkUsesBubbleFlowModalPresentation;
@@ -903,5 +920,47 @@
 - (void)mf_setDataForUICustomization:(id)arg1;
 - (id)mf_keyPathsMapForUICustomization;
 - (id)mf_dataForUICustomization;
+- (int)uiipc_filterForMediaTypes:(id)arg1;
+- (void)revertStatusBarStyle:(int)arg1 currentStatusBarStyle:(int)arg2 animated:(BOOL)arg3;
+- (int)setStatusBarStyleForFullScreenViewAnimated:(BOOL)arg1 useTelephonyUI:(BOOL)arg2 canHideStatusBar:(BOOL)arg3 newStatusBarStyle:(int*)arg4;
+- (id)uiipc_imagePickerController;
+- (id)uiipc_imagePickerOptions;
+- (BOOL)uiipc_useTelephonyUI;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)pl_visitControllerHierarchyWithBlock:(id)arg1;
+- (BOOL)pl_isInPopover;
+- (id)interactiveNavigationControllerIfTop;
+- (id)interactiveNavigationController;
+- (id)expandedControllerForExpandableView:(id)arg1;
+- (void)hidePopoverView;
+- (void)beginPoppingAnimated:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)interactionCancelledWithView:(id)arg1;
+- (void)interactiveNavigationControllerDidFinishWithOverlayView:(id)arg1;
+- (void)viewDidAppearInteractivelyWithView:(id)arg1;
+- (void)viewDidDisappearInteractivelyWithView:(id)arg1;
+- (void)viewWillAppearInteractivelyWithView:(id)arg1;
+- (id)overlayView;
+- (void)pu_performBarsVisibilityUpdatesWithAnimation:(int)arg1;
+- (void)_pu_setToolbarVisible:(BOOL)arg1 withAnimation:(int)arg2 duration:(double)arg3;
+- (void)_pu_setTabBarVisible:(BOOL)arg1 withAnimation:(int)arg2 duration:(double)arg3;
+- (void)_pu_setNavigationBarVisible:(BOOL)arg1 withAnimation:(int)arg2 duration:(double)arg3;
+- (void)_pu_setStatusBarVisible:(BOOL)arg1 withAnimation:(int)arg2 duration:(double)arg3;
+- (BOOL)pu_wantsNavigationBarVisible;
+- (BOOL)pu_wantsStatusBarVisible;
+- (BOOL)pu_wantsTabBarVisible;
+- (BOOL)pu_wantsToolbarVisible;
+- (BOOL)pu_isViewVisible;
+- (void)pu_performBarsVisibilityUpdatesWithAnimation:(int)arg1 duration:(double)arg2;
+- (void)pu_setupInitialBarsVisibilityOnViewWillAppearAnimated:(BOOL)arg1;
+- (BOOL)pu_handleSecondTabTap;
+- (BOOL)pu_shouldActAsTabRootViewController;
+- (id)pu_currentInteractiveModalTransition;
+- (void)pu_setNavigationTransition:(id)arg1;
+- (void)pu_setModalTransition:(id)arg1;
+- (void)pu_dismissViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2 completion:(id)arg3;
+- (id)pu_modalTransition;
+- (void)pu_presentViewController:(id)arg1 transition:(id)arg2 animated:(BOOL)arg3 interactive:(BOOL)arg4 completion:(id)arg5;
+- (id)pu_navigationTransition;
+- (id)pu_currentInteractiveNavigationTransition;
 
 @end

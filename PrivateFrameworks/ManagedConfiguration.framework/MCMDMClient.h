@@ -10,6 +10,7 @@
 
 + (id)sharedClient;
 
+- (BOOL)isActivationLockAllowed;
 - (BOOL)isManagedByMDM;
 - (void)removeManagedAppsAccordingToFlags;
 - (void)simulatePush;

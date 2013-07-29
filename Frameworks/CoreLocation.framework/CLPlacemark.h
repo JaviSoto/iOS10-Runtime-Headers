@@ -28,6 +28,7 @@
 + (id)placemarkWithPlace:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)ISOcountryCode;
 - (id)postalCode;
 - (id)region;
 - (id)addressDictionary;
@@ -41,7 +42,6 @@
 - (id)subAdministrativeArea;
 - (id)administrativeArea;
 - (id)formattedAddressLines;
-- (id)ISOcountryCode;
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 region:(id)arg3 areasOfInterest:(id)arg4;
 - (id)areasOfInterest;

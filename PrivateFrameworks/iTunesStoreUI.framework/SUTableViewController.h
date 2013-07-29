@@ -39,12 +39,12 @@
 - (id)dataSource;
 - (id)init;
 - (void)dealloc;
-- (int)tableViewStyle;
 - (id)tableView;
+- (int)tableViewStyle;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (void)setTableViewStyle:(int)arg1;

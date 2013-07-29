@@ -20,13 +20,12 @@
 
 @property(setter=_setFadingInFromCustomAlpha:) BOOL _isFadingInFromCustomAlpha;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)title;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)font;
 - (void)dealloc;
+- (void)_adjustLabelTrackingIfNecessary;
 - (void)_updateLabelContents;
 - (void)_updateLabel;
 - (id)_currentTextShadowColorForBarStyle:(int)arg1;
@@ -52,13 +51,5 @@
 - (id)_scriptingInfo;
 - (id)navigationItem;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLanguage;
-- (BOOL)accessibilityActivate;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (void)_accessibilityClearNavigationItemPointer;
-- (BOOL)_accessibilityServesAsFirstElement;
-- (BOOL)_accessibilityIsTitleElement;
 
 @end

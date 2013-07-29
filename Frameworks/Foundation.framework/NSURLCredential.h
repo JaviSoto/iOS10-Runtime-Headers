@@ -8,9 +8,9 @@
     NSURLCredentialInternal *_internal;
 }
 
-+ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
-+ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
 + (id)credentialForTrust:(struct __SecTrust { }*)arg1;
++ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
++ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (id)password;

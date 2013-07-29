@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSProtocolChecker, NSRecursiveLock, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSLock, NSString;
+@class NSObject<OS_dispatch_queue>, NSProtocolChecker, NSRecursiveLock, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, IMMessageContext, NSMutableArray, NSString, NSLock;
 
 @interface IMLocalObjectInternal : NSObject  {
+    IMMessageContext *_currentMessageContext;
     NSRecursiveLock *_lock;
     id _target;
     NSObject<OS_xpc_object> *_connection;

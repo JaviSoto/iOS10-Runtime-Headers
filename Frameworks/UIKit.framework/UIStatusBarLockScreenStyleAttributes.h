@@ -8,5 +8,6 @@
 
 - (Class)foregroundStyleClass;
 - (float)heightForMetrics:(int)arg1;
+- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 
 @end

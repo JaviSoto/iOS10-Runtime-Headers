@@ -22,9 +22,9 @@
     unsigned long _length;
     char *_buffer;
     NSError *_error;
-    BOOL _canRead;
-    BOOL _canWrite;
-    BOOL _sentCanRead;
+    BOOL _streamCanRead;
+    BOOL _streamCanWrite;
+    BOOL _dispatchedBytesAvailable;
     unsigned int _bytesRead;
     unsigned int _bytesWritten;
     BOOL _enableThroughputMonitoring;

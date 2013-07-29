@@ -324,7 +324,6 @@
 - (void)_handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3 handled:(BOOL)arg4;
 - (void)__responseToVCInvite:(id)arg1;
 - (BOOL)_processVCResponseDict:(id)arg1;
-- (id)participantPeerMatchingIMHandle:(id)arg1;
 - (void)endChatWithReason:(unsigned int)arg1 error:(int)arg2;
 - (void)_insertRemoteParticipant:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_vccInitDidFinish:(id)arg1;
@@ -372,7 +371,6 @@
 - (void)_clearCache;
 - (id)conferenceID;
 - (id)participants;
-- (BOOL)isPaused;
 - (unsigned int)sessionID;
 - (BOOL)isActive;
 - (void)notificationCenterDidDisappear;
@@ -408,6 +406,7 @@
 - (id)description;
 - (unsigned int)state;
 - (void)setPaused:(BOOL)arg1;
+- (BOOL)isPaused;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 
 @end

@@ -28,7 +28,6 @@
 - (id)negativePrefix;
 - (id)positiveSuffix;
 - (id)positivePrefix;
-- (id)stringFromNumber:(id)arg1;
 - (void)setMinimumIntegerDigits:(unsigned int)arg1;
 - (void)setAlwaysShowsDecimalSeparator:(BOOL)arg1;
 - (id)init;
@@ -126,6 +125,7 @@
 - (BOOL)generatesDecimalNumbers;
 - (unsigned int)numberStyle;
 - (id)numberFromString:(id)arg1;
+- (id)stringFromNumber:(id)arg1;
 - (void*)__Keynote_NOOP;
 - (id)positiveFormat;
 - (id)decimalSeparator;

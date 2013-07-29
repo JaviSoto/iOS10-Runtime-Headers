@@ -17,6 +17,8 @@
 @property(retain) NSMutableArray * routes;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (BOOL)hasStatus;
 - (id)routes;
@@ -26,8 +28,6 @@
 - (void)addRoute:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

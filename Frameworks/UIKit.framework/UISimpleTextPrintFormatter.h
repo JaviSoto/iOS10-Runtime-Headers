@@ -29,11 +29,11 @@
 - (void)removeFromPrintPageRenderer;
 - (int)_recalcPageCount;
 - (void)setColor:(id)arg1;
-- (id)attributedText;
 - (int)textAlignment;
 - (void)setTextAlignment:(int)arg1;
-- (void)setFont:(id)arg1;
+- (id)attributedText;
 - (void)setText:(id)arg1;
 - (void)setAttributedText:(id)arg1;
+- (void)setFont:(id)arg1;
 
 @end

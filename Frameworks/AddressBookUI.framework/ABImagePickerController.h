@@ -23,8 +23,6 @@
 
 @property <ABPersonImageDataDelegate> * imageDataDelegate;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)imageDataDelegate;
 - (BOOL)hasMultipleActions;

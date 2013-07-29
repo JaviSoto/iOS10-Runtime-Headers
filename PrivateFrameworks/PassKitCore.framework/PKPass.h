@@ -96,6 +96,7 @@
 - (id)localizedValueForFieldKey:(id)arg1;
 - (id)passURL;
 - (id)lowercaseLocalizedName;
+- (id)initWithData:(id)arg1 error:(id*)arg2;
 - (void)loadImageSetSync:(int)arg1 preheat:(BOOL)arg2;
 - (void)loadContentSync;
 - (void)loadImageSetAsync:(int)arg1 preheat:(BOOL)arg2 withCompletion:(id)arg3;
@@ -108,7 +109,6 @@
 - (id)modifiedDate;
 - (id)ingestedDate;
 - (id)displayProfile;
-- (id)authenticationToken;
 - (id)webServiceURL;
 - (id)embeddedBeacons;
 - (id)embeddedLocations;
@@ -123,7 +123,6 @@
 - (void)setEmbeddedLocations:(id)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setDisplayProfile:(id)arg1;
-- (void)setAuthenticationToken:(id)arg1;
 - (void)setWebServiceURL:(id)arg1;
 - (void)setRelevantDate:(id)arg1;
 - (void)setGroupingID:(id)arg1;
@@ -156,12 +155,13 @@
 - (id)frontFaceImage;
 - (id)partialFrontFaceImage;
 - (BOOL)imageSetIsLoaded:(int)arg1;
+- (void)setAuthenticationToken:(id)arg1;
+- (id)authenticationToken;
 - (id)organizationName;
 - (id)serialNumber;
 - (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
 - (void)setUniqueID:(id)arg1;
-- (id)initWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)isExpired;
 - (void)setSettings:(int)arg1;
 - (id)uniqueID;

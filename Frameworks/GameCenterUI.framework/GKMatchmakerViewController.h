@@ -54,6 +54,7 @@
 - (void)_setupChildViewController;
 - (id)acceptedInvite;
 - (void)setHosted:(BOOL)arg1;
+- (void)finishWithError:(id)arg1;
 - (void)setDefaultInvitationMessage:(id)arg1;
 - (id)defaultInvitationMessage;
 - (id)initWithMatchRequest:(id)arg1;
@@ -67,15 +68,14 @@
 - (void)match:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
 - (void)setAcceptedInvite:(id)arg1;
 - (BOOL)isHosted;
-- (void)finishWithError:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
 - (void)setRemoteViewController:(id)arg1;
-- (void)viewDidLoad;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)applicationWillEnterForeground:(id)arg1;
 

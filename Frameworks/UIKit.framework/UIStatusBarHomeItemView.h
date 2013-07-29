@@ -7,7 +7,7 @@
 
 
 - (BOOL)usesAdvancedActions;
-- (id)contentsImage;
 - (int)buttonType;
+- (id)contentsImage;
 
 @end

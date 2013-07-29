@@ -17,9 +17,9 @@
 - (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)enumerateAssetsUsingBlock:(id)arg1;
 - (id)initWithPhotoAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2 type:(unsigned int)arg3;
-- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)setAssetsFilter:(id)arg1;
 - (int)numberOfAssets;
+- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)_typeAsString;
 - (struct CGImage { }*)posterImage;
 - (void)setInternal:(id)arg1;

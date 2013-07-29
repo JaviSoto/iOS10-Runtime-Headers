@@ -24,14 +24,14 @@
 @property double timestamp;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)hasDestination;
 - (BOOL)hasSource;
 - (BOOL)hasBundleIdentifier;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (double)timestamp;
 - (id)source;
 - (void)setSource:(id)arg1;
@@ -41,9 +41,9 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)bundleIdentifier;
 - (void)setDestination:(id)arg1;
 - (id)destination;
 - (id)dictionaryRepresentation;
-- (id)bundleIdentifier;
 
 @end

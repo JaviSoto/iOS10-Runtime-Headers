@@ -35,6 +35,7 @@
     NSString *_replacementForDoubleSpace;
     NSString *_searchStringForMarkedText;
     NSString *_shadowTyping;
+    unsigned int _initialCandidateBatchCount;
     TICharacterSetDescription *_wordCharacters;
     TICharacterSetDescription *_shortcutCompletions;
     TICharacterSetDescription *_inputsPreventingAcceptSelectedCandidate;
@@ -55,6 +56,7 @@
 @property BOOL commitsAcceptedCandidate;
 @property(copy) NSString * replacementForDoubleSpace;
 @property(copy) NSString * wordSeparator;
+@property unsigned int initialCandidateBatchCount;
 @property(retain) TIKeyboardBehaviors * keyboardBehaviors;
 @property BOOL shouldAddModifierSymbolsToWordCharacters;
 @property(copy) TICharacterSetDescription * wordCharacters;
@@ -80,9 +82,11 @@
 - (void)setInputsPreventingAcceptSelectedCandidate:(id)arg1;
 - (void)setShortcutCompletions:(id)arg1;
 - (void)setWordCharacters:(id)arg1;
+- (void)setInitialCandidateBatchCount:(unsigned int)arg1;
 - (void)setShouldAddModifierSymbolsToWordCharacters:(BOOL)arg1;
 - (void)setShadowTyping:(id)arg1;
 - (void)setSearchStringForMarkedText:(id)arg1;
+- (id)searchStringForMarkedText;
 - (void)setReplacementForDoubleSpace:(id)arg1;
 - (void)setKeyEventMap:(id)arg1;
 - (void)setKeyboardBehaviors:(id)arg1;
@@ -118,6 +122,7 @@
 - (BOOL)ignoresDeadKeys;
 - (id)keyEventMap;
 - (BOOL)suppressPlaceholderCandidate;
+- (unsigned int)initialCandidateBatchCount;
 - (id)autocorrectionRecordForInputString;
 - (BOOL)commitsAcceptedCandidate;
 - (id)shadowTyping;
@@ -134,7 +139,6 @@
 - (unsigned int)inputIndex;
 - (BOOL)shouldExtendPriorWord;
 - (id)inputString;
-- (id)searchStringForMarkedText;
 - (BOOL)supportsSetPhraseBoundary;
 - (BOOL)usesAutoDeleteWord;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;

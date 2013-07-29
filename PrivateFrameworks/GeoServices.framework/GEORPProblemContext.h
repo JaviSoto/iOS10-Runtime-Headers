@@ -37,6 +37,8 @@
 
 
 - (id)visibleTileSets;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasPinType:(BOOL)arg1;
 - (id)tileStateLog;
 - (BOOL)hasTileStateLog;
@@ -60,11 +62,9 @@
 - (void)setOriginalPlace:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
-- (BOOL)hasSessionID;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (BOOL)hasSessionID;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -11,10 +11,10 @@
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
 + (id)loadPredefinedQueue;
 
+- (BOOL)shouldShuffle;
 - (void)setMediaItemType:(int)arg1;
 - (int)mediaItemType;
 - (void)setShouldShuffle:(BOOL)arg1;
-- (BOOL)shouldShuffle;
 - (BOOL)requiresResponse;
 - (id)encodedClassName;
 - (id)groupIdentifier;

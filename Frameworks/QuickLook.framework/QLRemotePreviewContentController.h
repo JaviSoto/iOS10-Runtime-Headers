@@ -29,6 +29,7 @@
 - (id)_previewItemFromProxy:(id)arg1;
 - (id)_proxyForPreviewItem:(id)arg1;
 - (void)setNumberOfPreviewItems:(int)arg1;
+- (void)_updateNavigationBarVerticalOffset;
 - (void)_didExitFullScreen;
 - (void)_willEnterFullScreenWithContext:(id)arg1;
 - (void)_setAVState:(id)arg1 forPreviewItem:(id)arg2;
@@ -79,5 +80,6 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidLayoutSubviews;
 
 @end

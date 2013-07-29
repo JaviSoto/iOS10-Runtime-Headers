@@ -18,6 +18,8 @@
 
 + (id)newSequentialTimeNodeGroupForAnimationInfo;
 
+- (int)triggerType;
+- (void)setTriggerType:(int)arg1;
 - (id)level3SetBehavior;
 - (id)level2ParallelTimeNodeGroup;
 - (id)level1ParallelTimeNodeGroup;
@@ -29,8 +31,6 @@
 - (int)presetClass;
 - (void)setPresetId:(int)arg1;
 - (id)groupId;
-- (void)setTriggerType:(int)arg1;
-- (int)triggerType;
 - (void)setTarget:(id)arg1;
 - (double)delay;
 - (double)direction;

@@ -31,7 +31,7 @@
     _UITabBarAppearanceStorage *_appearanceStorage;
     BOOL _dividerImagesChangeWithSelection;
     BOOL _dividerImagesAreInvalid;
-    BOOL _forcesOpaqueBackground;
+    BOOL _hidesShadow;
     float _nextSelectionSlideDuration;
     NSMutableArray *_dividerImageViews;
     int _itemPositioning;
@@ -58,7 +58,6 @@
 @property(getter=isTranslucent) BOOL translucent;
 @property(getter=isLocked) BOOL locked;
 @property(setter=_setBarOrientation:) int _barOrientation;
-@property(setter=_setForcesOpaqueBackground:) BOOL _forcesOpaqueBackground;
 @property(setter=_setBackgroundNeedsUpdate:) BOOL _backgroundNeedsUpdate;
 @property(setter=_setNextSelectionSlideDuration:) float _nextSelectionSlideDuration;
 @property(setter=_setTabButtonWidth:) float _tabButtonWidth;
@@ -68,14 +67,12 @@
 @property(setter=_setDividerImageViews:,retain) NSMutableArray * _dividerImageViews;
 @property(setter=_setBarMetrics:) int _barMetrics;
 @property(setter=_setImageStyle:) int _imageStyle;
+@property(setter=_setHidesShadow:) BOOL _hidesShadow;
 
 + (id)_tabBarForView:(id)arg1;
 + (float)_buttonGap;
 + (void)_initializeForIdiom:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setLocked:(BOOL)arg1;
 - (id)items;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -173,9 +170,9 @@
 - (void)setSelectedItem:(id)arg1;
 - (void)_setBarOrientation:(int)arg1;
 - (BOOL)_isTranslucent;
-- (BOOL)_forcesOpaqueBackground;
 - (id)barTintColor;
-- (void)_setForcesOpaqueBackground:(BOOL)arg1;
+- (void)_setHidesShadow:(BOOL)arg1;
+- (BOOL)_hidesShadow;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (int)barStyle;
@@ -183,10 +180,11 @@
 - (void)setBarStyle:(int)arg1;
 - (void)removeConstraint:(id)arg1;
 - (void)addConstraint:(id)arg1;
+- (void)setLocked:(BOOL)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
-- (id)_shadowView;
 - (void)_updateBackgroundImage;
+- (id)_shadowView;
 - (id)_effectiveBarTintColor;
 - (void)_setBackgroundView:(id)arg1;
 - (id)_appearanceStorage;
@@ -217,10 +215,6 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)shouldGroupAccessibilityChildren;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (id)_accessibilityFuzzyHitTestElements;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

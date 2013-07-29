@@ -18,8 +18,8 @@
 - (void)setUsesLocalNetworking:(BOOL)arg1;
 - (void)setStoreBag:(id)arg1;
 - (void)setSAPContext:(id)arg1;
-- (BOOL)usesLocalNetworking;
 - (id)storeBag;
+- (BOOL)usesLocalNetworking;
 - (id)SAPContext;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

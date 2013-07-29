@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL, SKUICategoryArtworkLoader, <SKUICategoryTableViewControllerDelegate>, SKUIClientContext, SKUICategory;
+@class NSURL, NSArray, SKUICategoryArtworkLoader, <SKUICategoryTableViewControllerDelegate>, SKUIClientContext, SKUICategory;
 
 @interface SKUICategoryTableViewController : UITableViewController <SKUICategoryArtworkLoaderObserver, SKUICategoryTableViewControllerDelegate> {
     SKUICategoryArtworkLoader *_artworkLoader;
     SKUICategory *_category;
     SKUIClientContext *_clientContext;
     <SKUICategoryTableViewControllerDelegate> *_delegate;
+    NSArray *_metricsLocations;
     int _numberOfHiddenRows;
     NSURL *_selectedURL;
     NSURL *_defaultURL;
@@ -20,6 +21,7 @@
 @property(retain) SKUICategory * category;
 @property(retain) SKUIClientContext * clientContext;
 @property <SKUICategoryTableViewControllerDelegate> * delegate;
+@property(copy) NSArray * metricsLocations;
 @property int numberOfHiddenRows;
 @property(retain) NSURL * selectedURL;
 @property(retain) NSURL * defaultURL;
@@ -29,9 +31,15 @@
 - (id)selectedURL;
 - (void)setRoot:(BOOL)arg1;
 - (int)numberOfHiddenRows;
+- (id)metricsLocations;
 - (id)defaultURL;
 - (void)setNumberOfHiddenRows:(int)arg1;
 - (void)categoryArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forCategory:(id)arg3;
+- (int)_metricsLocationPostionForIndexPath:(id)arg1;
+- (void)setMetricsLocations:(id)arg1;
+- (id)_metricsLocationsToPushIndexPath:(id)arg1;
+- (void)_recordClickEventForIndexPath:(id)arg1 category:(id)arg2 actionType:(id)arg3;
+- (id)metricsPageContextForCategoryTableView:(id)arg1;
 - (void)categoryTableView:(id)arg1 didSelectCategory:(id)arg2;
 - (id)_categoryAtIndexPath:(id)arg1;
 - (void)setDefaultURL:(id)arg1;

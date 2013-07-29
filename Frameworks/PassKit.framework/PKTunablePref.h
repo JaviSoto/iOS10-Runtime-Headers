@@ -17,6 +17,8 @@
 
 - (void)pushValueToModel:(id)arg1;
 - (id)prefName;
+- (id)handlers;
+- (void)setHandlers:(id)arg1;
 - (void)setPrefValue:(id)arg1;
 - (void)setPrefName:(id)arg1;
 - (id)codeDescription;
@@ -25,8 +27,6 @@
 - (void)addObserver:(id)arg1 handler:(id)arg2;
 - (id)prefValue;
 - (id)initWithPrefName:(id)arg1 defaultValue:(id)arg2;
-- (id)handlers;
-- (void)setHandlers:(id)arg1;
 - (void)save:(id)arg1;
 - (void)dealloc;
 

@@ -108,6 +108,7 @@
 
 - (BOOL)ignoresNetworkConnectivity;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (id)_cachedBody;
 - (BOOL)wantsJSONBody;
 - (id)messageBodyUsingCache;
@@ -189,19 +190,18 @@
 - (id)pushToken;
 - (id)bagKey;
 - (void)setUniqueID:(unsigned int)arg1;
-- (void)setCompletionBlock:(id)arg1;
-- (id)topic;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (double)timeSent;
-- (double)timeout;
 - (unsigned int)uniqueID;
+- (double)timeout;
 - (id)init;
 - (id)userInfo;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)completionBlock;

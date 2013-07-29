@@ -30,8 +30,6 @@
 + (id)valueWithUndefinedInContext:(id)arg1;
 + (id)valueWithJSValueRef:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
 
-- (BOOL)isNumber;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toRect;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })toRange;
 - (struct CGSize { float x1; float x2; })toSize;
@@ -44,6 +42,7 @@
 - (BOOL)isEqualToObject:(id)arg1;
 - (BOOL)isObject;
 - (BOOL)isString;
+- (BOOL)isNumber;
 - (BOOL)isBoolean;
 - (BOOL)isUndefined;
 - (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
@@ -66,6 +65,7 @@
 - (id)toObject;
 - (id)initWithValue:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
 - (BOOL)isNull;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (id)init;
 - (void)dealloc;

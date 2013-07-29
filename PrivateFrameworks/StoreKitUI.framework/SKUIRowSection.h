@@ -14,10 +14,6 @@
     NSMapTable *_countdownViewControllers;
     BOOL _isPad;
     float _landscapeCellContentHeight;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _lockupImageBoundsSize;
     SKUIMissingItemLoader *_missingItemLoader;
     SKUIProductPageOverlayController *_overlayController;
     SKUILockupComponent *_overlaySourceComponent;
@@ -38,6 +34,7 @@
 - (float)_heightForGalleryComponent:(id)arg1 columnIndex:(int)arg2 rowWidth:(float)arg3;
 - (float)_heightForEditorialComponent:(id)arg1 columnIndex:(int)arg2 rowWidth:(float)arg3;
 - (float)_heightForCountdownComponent:(id)arg1 columnIndex:(int)arg2 rowWidth:(float)arg3;
+- (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })_lockupStyleForComponent:(id)arg1 columnIndex:(int)arg2;
 - (float)_interColumnSpacing;
 - (id)_newViewWithMediaComponent:(id)arg1;
 - (id)_viewControllerForGalleryComponent:(id)arg1;
@@ -77,6 +74,7 @@
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
+- (void)invalidateCachedLayoutInformation;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;

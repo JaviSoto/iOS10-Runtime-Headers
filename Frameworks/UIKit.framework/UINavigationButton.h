@@ -41,8 +41,6 @@
 @property(setter=_setFontScaleInvalid:) BOOL _isFontScaleInvalid;
 
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -55,7 +53,6 @@
 - (id)image;
 - (void)dealloc;
 - (void)_setAppearanceGuideClass:(Class)arg1;
-- (float)_fontScaleAdjustment;
 - (void)_setFontScaleInvalid:(BOOL)arg1;
 - (BOOL)_isFontScaleInvalid;
 - (void)_setStylesForSizingTitles:(id)arg1;
@@ -83,10 +80,10 @@
 - (id)initWithTitle:(id)arg1 style:(int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
+- (void)_sendSetNeedsLayoutToSuperviewOnTitleAnimationCompletionIfNecessary;
 - (void)_setWantsLetterpressTitle;
 - (void)setMaximumWidth:(float)arg1;
 - (void)setMinimumWidth:(float)arg1;
-- (void)_setFontScaleAdjustment:(float)arg1;
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
@@ -101,7 +98,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 possibleSystemItems:(id)arg6 tintColor:(id)arg7 applyBezel:(BOOL)arg8 forButtonItemStyle:(int)arg9;
-- (void)_updateStyle;
 - (void)_setTitleFrozen:(BOOL)arg1;
 - (void)_updateTitleColorsForState:(unsigned int)arg1;
 - (id)_adjustedDefaultTitleFont;
@@ -123,10 +119,13 @@
 - (void)setNavigationBarTintColor:(id)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)setControlSize:(int)arg1;
+- (float)_fontScaleAdjustment;
 - (id)initWithTitle:(id)arg1;
 - (void)_prepareToAppearInNavigationItemOnLeft:(BOOL)arg1;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_appearanceStorage;
+- (void)_updateStyle;
+- (void)_setFontScaleAdjustment:(float)arg1;
 - (id)_scriptingInfo;
 - (Class)_appearanceGuideClass;
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
@@ -134,10 +133,5 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
-- (id)accessibilityLabel;
-- (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
-- (id)accessibilityValue;
 
 @end

@@ -17,8 +17,8 @@
 
 - (void)setTopic:(id)arg1;
 - (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
-- (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
 - (id)topic;
+- (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
 - (void)setGuid:(id)arg1;
 - (id)guid;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

@@ -8,7 +8,6 @@
     NSSQLAdapter *_adapter;
     BOOL _transactionIsOpen;
     BOOL _useSyntaxColoredLogging;
-    int _debug;
     NSSQLStatement *_sqlStatement;
     NSArray *_columnsToFetch;
     NSArray *_metadataColumns;

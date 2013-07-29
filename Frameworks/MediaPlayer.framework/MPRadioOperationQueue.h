@@ -37,6 +37,7 @@
 - (void)sendPlayEvents:(id)arg1 forStation:(id)arg2 completionBlock:(id)arg3;
 - (void)loadRadioConfigurationWithCompletionBlock:(id)arg1;
 - (void)getTracksWithRequest:(id)arg1 completionBlock:(id)arg2;
+- (void)addStationWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)loadAssetForItem:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)assetCache;
 - (id)init;

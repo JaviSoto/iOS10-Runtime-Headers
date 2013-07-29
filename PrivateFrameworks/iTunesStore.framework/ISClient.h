@@ -23,6 +23,7 @@
 
 - (void)setAppleClientApplication:(id)arg1;
 - (id)localStoreFrontID;
+- (id)_appleClientVersions;
 - (void)_softwareMapInvalidatedNotification:(id)arg1;
 - (void)setPartnerHeader:(id)arg1;
 - (id)appleClientVersions;

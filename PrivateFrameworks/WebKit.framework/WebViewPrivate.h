@@ -181,7 +181,7 @@
     BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
     BOOL needsOneShotDrawingSynchronization;
     BOOL postsAcceleratedCompositingNotifications;
-    struct OwnPtr<LayerFlushController> { 
+    struct RefPtr<LayerFlushController> { 
         struct LayerFlushController {} *m_ptr; 
     } layerFlushController;
     struct CGSize { 

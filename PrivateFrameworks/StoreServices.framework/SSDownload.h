@@ -29,6 +29,7 @@
 + (long long)_existsMessage;
 + (void)loadThumbnailImageDataForDownloadID:(long long)arg1 connection:(id)arg2 completionBlock:(id)arg3;
 
+- (BOOL)removeAsset:(id)arg1;
 - (double)estimatedSecondsRemaining;
 - (id)initWithDownloadMetadata:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;
@@ -45,7 +46,6 @@
 - (void)_addCachedPropertyValues:(id)arg1;
 - (void)_addCachedExternalValues:(id)arg1;
 - (void)setBackgroundNetworkingJobGroupName:(id)arg1;
-- (BOOL)removeAsset:(id)arg1;
 - (id)networkConstraints;
 - (void)loadThumbnailImageDataWithCompletionBlock:(id)arg1;
 - (BOOL)isCancelable;

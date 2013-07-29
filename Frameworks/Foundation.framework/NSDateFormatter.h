@@ -53,8 +53,8 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)_reset;
 - (id)dateFromString:(id)arg1;
+- (void)_reset;
 - (void)_setUsesCharacterDirection:(BOOL)arg1;
 - (BOOL)_usesCharacterDirection;
 - (BOOL)doesRelativeDateFormatting;

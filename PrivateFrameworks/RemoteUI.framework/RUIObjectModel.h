@@ -75,6 +75,7 @@
 - (void)configureSection:(id)arg1;
 - (void)configureRow:(id)arg1;
 - (void)configureTableView:(id)arg1;
+- (id)alertView;
 - (void)setPages:(id)arg1;
 - (id)pages;
 - (void)_displaySupplementalPage:(id)arg1;
@@ -109,7 +110,7 @@
 - (void)_cleanupRefreshTimer;
 - (void)setJSGlobalContext:(struct OpaqueJSContext { }*)arg1;
 - (id)allPages;
-- (id)alertView;
+- (id)alertViewInWindow:(id)arg1;
 - (id)alert;
 - (id)postbackDictionary;
 - (id)rowForFormField:(id)arg1;

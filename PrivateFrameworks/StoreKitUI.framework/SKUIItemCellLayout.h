@@ -40,7 +40,6 @@
 - (BOOL)displaysItemOfferButton;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)_showItemOfferConfirmationAction:(id)arg1;
-- (void)_itemOfferConfirmAction:(id)arg1;
 - (void)_cancelItemOfferConfirmationAction:(id)arg1;
 - (void)_getParentTableView:(id*)arg1 collectionView:(id*)arg2;
 - (void)layoutForItemOfferChange;
@@ -51,6 +50,7 @@
 - (void)setItemOfferButtonAppearance:(id)arg1;
 - (void)setIconImageHidden:(BOOL)arg1;
 - (id)itemOfferButtonAppearance;
+- (void)_itemOfferConfirmAction:(id)arg1;
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (id)itemState;
 - (id)itemOffer;

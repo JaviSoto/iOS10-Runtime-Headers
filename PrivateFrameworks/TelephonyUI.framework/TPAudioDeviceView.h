@@ -2,25 +2,28 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UITableView;
+@class _UIBackdropView, UITableView;
 
 @interface TPAudioDeviceView : UIView <UITableViewDelegate, UITableViewDataSource> {
     UITableView *_deviceTableView;
     id _delegate;
     BOOL _blursBackground;
+    _UIBackdropView *_backdropView;
 }
 
 @property BOOL blursBackground;
+@property(retain) _UIBackdropView * backdropView;
 
 
 - (void)setActiveRow:(int)arg1;
-- (void)recomputeContentInsets;
 - (void)selectRow:(int)arg1;
 - (void)_setupTable;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void)setBlursBackground:(BOOL)arg1;
 - (BOOL)blursBackground;
+- (id)backdropView;
+- (void)setBackdropView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

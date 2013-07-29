@@ -8,11 +8,11 @@
     NSArray *_propertyItems;
     NSArray *_displayItems;
     NSArray *_editingItems;
-    NSArray *_deletedItems;
     BOOL _showActionsWhenEmpty;
     BOOL _isAdded;
     NSString *_property;
     NSArray *_contacts;
+    NSArray *_deletedItems;
 }
 
 @property(readonly) NSString * property;
@@ -25,6 +25,7 @@
 @property(readonly) BOOL allowsAdding;
 @property BOOL isAdded;
 @property(retain) NSArray * editingItems;
+@property(retain) NSArray * deletedItems;
 
 + (id)groupForProperty:(id)arg1 contact:(id)arg2 withLinkedContacts:(id)arg3;
 
@@ -34,20 +35,25 @@
 - (BOOL)addEditingItem;
 - (BOOL)isMultiLine;
 - (BOOL)allowsAdding;
-- (id)_nextAvailableServiceInServices:(id)arg1;
+- (id)_nextAvailableLabelInLabels:(id)arg1 withValueSelector:(SEL)arg2;
 - (void)_updateNameValuesForItems:(id)arg1;
 - (id)propertyItems;
 - (id)_itemToBeMergedWith:(id)arg1 fromItems:(id)arg2 forEditing:(BOOL)arg3;
 - (BOOL)_shoulShowGroupWhenEditing:(BOOL)arg1;
 - (BOOL)isAdded;
+- (BOOL)isRequired;
 - (BOOL)showActionsWhenEmpty;
 - (id)_mergeItems:(id)arg1 forEditing:(bool)arg2;
 - (void)saveChangesForItems:(id)arg1;
+- (void)setDeletedItems:(id)arg1;
+- (id)deletedItems;
 - (void)setEditingItems:(id)arg1;
+- (BOOL)_arrayContainsMaxAllowedItems:(id)arg1;
 - (id)emptyLabeledValue;
 - (void)setIsAdded:(BOOL)arg1;
 - (BOOL)canAddEditingItem;
 - (id)nextAvailableLabel;
+- (id)_nextAvailableLabel;
 - (id)_nextAvailableInstantMessageService;
 - (id)_nextAvailableSocialService;
 - (BOOL)isFixedValue;
@@ -58,7 +64,6 @@
 - (id)editingItems;
 - (id)displayItems;
 - (id)contacts;
-- (BOOL)isRequired;
 - (id)property;
 - (void)dealloc;
 - (id)description;

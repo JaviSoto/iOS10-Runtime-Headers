@@ -30,7 +30,6 @@
 - (BOOL)isRoom;
 - (void)setArtwork:(id)arg1;
 - (id)artwork;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
@@ -38,6 +37,7 @@
 - (void).cxx_destruct;
 - (id)buttonTitle;
 - (void)setButtonTitle:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
 - (void)layoutSubviews;

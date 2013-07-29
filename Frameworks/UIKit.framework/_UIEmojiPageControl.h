@@ -5,15 +5,9 @@
 @interface _UIEmojiPageControl : UIPageControl  {
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_setCurrentPage:(int)arg1;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
 - (id)_pageIndicatorImageForPage:(int)arg1;
-- (unsigned long long)accessibilityTraits;
-- (void)accessibilityIncrement;
-- (void)accessibilityDecrement;
-- (void)_accessibilityEmojiPageChangeWithDirection:(int)arg1;
 
 @end

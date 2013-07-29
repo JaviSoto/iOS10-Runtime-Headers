@@ -11,6 +11,10 @@
 @property(retain) NSMutableArray * requestElements;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)requestElements;
 - (id)requestElementsAtIndex:(unsigned int)arg1;
 - (void)clearRequestElements;
@@ -18,10 +22,6 @@
 - (void)addRequestElements:(id)arg1;
 - (void)setRequestElements:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

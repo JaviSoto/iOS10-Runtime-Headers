@@ -63,9 +63,9 @@
 - (int)sectionLocation;
 - (id)selectionTintColor;
 - (int)selectionStyle;
+- (void)setSelectionStyle:(int)arg1;
 - (void)setSelectionTintColor:(id)arg1;
 - (id)_fillColor;
-- (void)setSelectionStyle:(int)arg1;
 - (void)_layoutSubviews:(BOOL)arg1;
 - (id)_sectionBorderColor;
 - (id)_separatorColor;

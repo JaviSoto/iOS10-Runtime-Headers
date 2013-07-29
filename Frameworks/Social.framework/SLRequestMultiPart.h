@@ -28,8 +28,8 @@
 - (id)partData;
 - (id)multiPartBoundary;
 - (void)setMultiPartBoundary:(id)arg1;
-- (void)setPayload:(id)arg1;
 - (void)setType:(id)arg1;
+- (void)setPayload:(id)arg1;
 - (id)payload;
 - (unsigned int)length;
 - (id)name;

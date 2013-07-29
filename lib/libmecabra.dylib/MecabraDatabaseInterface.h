@@ -14,6 +14,10 @@
 - (void)setDatabaseControllers:(id)arg1;
 - (id)coreDataControllerForType:(id)arg1 URL:(id)arg2;
 - (id)databaseControllers;
+- (void)clearStoredMergeEntriesForType:(id)arg1 URL:(id)arg2;
+- (id)entriesToMergeForType:(id)arg1 URL:(id)arg2;
+- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2 type:(id)arg3 URL:(id)arg4;
+- (id)removeDuplicatesForEntry:(id)arg1 type:(id)arg2 URL:(id)arg3 uniquingKeys:(id)arg4 sortDescriptors:(id)arg5 restrictToNumberOfElements:(unsigned int)arg6 identifierKey:(id)arg7;
 - (id)readPropertyForType:(id)arg1 URL:(id)arg2 propertyKey:(id)arg3;
 - (void)setDatabaseNumberProperty:(id)arg1 forKey:(id)arg2 type:(id)arg3 URL:(id)arg4;
 - (void)setDatabaseStringProperty:(id)arg1 forKey:(id)arg2 type:(id)arg3 URL:(id)arg4;

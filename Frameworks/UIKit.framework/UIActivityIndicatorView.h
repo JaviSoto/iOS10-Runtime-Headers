@@ -54,8 +54,6 @@
 + (id)_loadResourcesForStyle:(int)arg1;
 + (BOOL)_isModernStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setWidth:(float)arg1;
 - (float)width;
@@ -143,10 +141,5 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (BOOL)_accessibilityIsScannerElement;
 
 @end

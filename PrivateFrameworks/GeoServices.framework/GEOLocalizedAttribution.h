@@ -19,6 +19,8 @@
 @property(retain) NSMutableArray * snippetLogoURLs;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)bestURLForLogos:(id)arg1 hiDPI:(BOOL)arg2;
 - (id)snippetLogoURLs;
 - (id)logoURLs;
@@ -35,8 +37,6 @@
 - (void)setSnippetLogoURLs:(id)arg1;
 - (void)setLogoURLs:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (id)language;

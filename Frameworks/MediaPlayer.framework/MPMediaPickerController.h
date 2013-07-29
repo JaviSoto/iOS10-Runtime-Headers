@@ -24,13 +24,11 @@
 @property(copy) NSString * prompt;
 
 + (void)preheatMediaPicker;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)setShowsCloudItems:(BOOL)arg1;
-- (BOOL)showsCloudItems;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (BOOL)allowsPickingMultipleItems;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (BOOL)showsCloudItems;
 - (void)remoteMediaPickerDidCancel;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
 - (void)_forceDismissal;
@@ -49,11 +47,10 @@
 - (id)delegate;
 - (void)_addRemoteView;
 - (unsigned int)mediaTypes;
-- (void)_willResignContentViewControllerOfPopover:(id)arg1;
-- (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
+- (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)setPrompt:(id)arg1;
 - (id)prompt;

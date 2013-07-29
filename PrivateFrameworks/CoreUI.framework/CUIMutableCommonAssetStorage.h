@@ -6,7 +6,6 @@
 }
 
 
-- (void)setUuid:(id)arg1;
 - (void)setConstantName:(id)arg1 displayName:(id)arg2 forPartID:(int)arg3;
 - (void)setConstantName:(id)arg1 displayName:(id)arg2 forElementID:(int)arg3;
 - (void)_setConstantName:(id)arg1 displayName:(id)arg2 forID:(unsigned int)arg3 inDebugTree:(void*)arg4;
@@ -31,6 +30,7 @@
 - (void)removeAssetForKey:(const void*)arg1 withLength:(unsigned long)arg2;
 - (void)setAsset:(id)arg1 forKey:(const void*)arg2 withLength:(unsigned long)arg3;
 - (void)setColorSpaceID:(unsigned int)arg1;
+- (void)setUuid:(id)arg1;
 - (id)initWithPath:(id)arg1;
 
 @end

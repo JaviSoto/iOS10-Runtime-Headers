@@ -43,6 +43,7 @@
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
+- (void)invalidateCachedLayoutInformation;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)showPageWithLink:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;

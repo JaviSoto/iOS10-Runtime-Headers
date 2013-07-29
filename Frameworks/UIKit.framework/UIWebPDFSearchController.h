@@ -51,10 +51,10 @@
 - (void)searchLimitHit:(id)arg1;
 - (void)searchDidFinish:(id)arg1;
 - (void)search:(id)arg1 hasPartialResults:(id)arg2;
-- (void)setSearchDelegate:(id)arg1;
 - (void)searchWasCancelled:(id)arg1;
 - (unsigned int)resultLimit;
 - (void)setResultLimit:(unsigned int)arg1;
+- (void)setSearchDelegate:(id)arg1;
 - (void)setDocumentScale:(float)arg1;
 - (void)setDocumentToSearch:(id)arg1;
 - (float)documentScale;

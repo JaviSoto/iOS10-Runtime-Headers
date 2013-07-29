@@ -7,6 +7,7 @@
 @interface TIKeyboardOperationSetMarkedText : TIKeyboardOperation  {
     NSString *_markedText;
     NSString *_inputForMarkedText;
+    NSString *_searchStringForMarkedText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -16,15 +17,17 @@
 @property(readonly) NSString * markedText;
 @property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
 @property(readonly) NSString * inputForMarkedText;
+@property(readonly) NSString * searchStringForMarkedText;
 
-+ (id)operationWithMarkedTextBeforeSelection:(id)arg1 selectedText:(id)arg2 markedTextAfterSelection:(id)arg3 inputString:(id)arg4;
-+ (id)operationWithMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3;
++ (id)operationWithMarkedTextBeforeSelection:(id)arg1 selectedText:(id)arg2 markedTextAfterSelection:(id)arg3 inputString:(id)arg4 searchString:(id)arg5;
++ (id)operationWithMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3 searchString:(id)arg4;
 + (BOOL)supportsSecureCoding;
 
 - (id)inputForMarkedText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
-- (id)initWithMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3;
+- (id)initWithMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3 searchString:(id)arg4;
 - (id)propertiesForDescription;
+- (id)searchStringForMarkedText;
 - (id)markedText;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

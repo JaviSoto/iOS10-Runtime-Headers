@@ -20,8 +20,6 @@
 @property float rightContentMargin;
 @property(retain) UIColor * separatorColor;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setRightContentMargin:(float)arg1;
 - (BOOL)showSeparator;
@@ -41,6 +39,5 @@
 - (id)separatorColor;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)_accessibilityTableViewCellSubclassShouldExist;
 
 @end

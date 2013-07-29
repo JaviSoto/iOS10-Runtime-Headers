@@ -11,7 +11,6 @@
     UITableView *_editingTable;
     CNContact *_contact;
     UIView *_personHeaderView;
-    float _personHeaderViewHeight;
     BOOL _editing;
     <ABPresenterDelegate> *_delegate;
     UIColor *_backgroundColor;
@@ -63,7 +62,6 @@
 - (void)setEditingGroups:(id)arg1;
 - (id)_taglineStringForContact:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
-- (void)setMessage:(id)arg1;
 - (BOOL)isEditing;
 - (void)setBackgroundColor:(id)arg1;
 - (id)alternateName;
@@ -73,6 +71,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)setNeedsUpdateConstraints;
+- (void)setMessage:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)updateConstraints;
 - (void)setEditing:(BOOL)arg1;

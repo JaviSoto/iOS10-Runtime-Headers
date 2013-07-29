@@ -9,6 +9,7 @@
     NSManagedObjectContext *_context;
     NSManagedObjectModel *_model;
     NSPersistentStore *_store;
+    id _contextDidSaveNotificationObserver;
 }
 
 @property(readonly) NSString * path;

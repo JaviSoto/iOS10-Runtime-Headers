@@ -11,8 +11,6 @@
 
 @property(readonly) UIWindow * window;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)window;
 - (id)screen;
@@ -29,6 +27,5 @@
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (void)_applicationDidFinishLaunching:(id)arg1;
 - (void)loadView;
-- (void)_accessibilitySetZoomButtonLabel;
 
 @end

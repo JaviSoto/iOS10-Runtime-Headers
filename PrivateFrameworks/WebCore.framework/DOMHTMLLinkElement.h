@@ -36,10 +36,10 @@
 - (void)setType:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
+- (BOOL)disabled;
 - (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)rel;
 - (id)absoluteLinkURL;
-- (BOOL)disabled;
 - (id)type;
 - (id)target;
 

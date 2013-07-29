@@ -52,6 +52,10 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)serviceTags;
 - (id)waypoints;
 - (void)setHasGetRouteForZilchPoints:(BOOL)arg1;
@@ -102,10 +106,6 @@
 - (void)setWaypoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -20,12 +20,12 @@
 
 + (id)sharedInstance;
 
+- (id)productVersion;
 - (id)userAgentString;
 - (void)_generateProductInformation;
+- (id)productBuildVersion;
 - (id)productName;
 - (id)deviceInformationString;
-- (id)productBuildVersion;
-- (id)productVersion;
 - (id)model;
 - (id)init;
 - (void)dealloc;

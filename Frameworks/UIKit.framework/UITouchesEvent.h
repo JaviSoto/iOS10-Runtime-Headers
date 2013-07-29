@@ -11,8 +11,6 @@
     struct __CFDictionary { } *_gestureRecognizersByWindow;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (id)description;
@@ -46,9 +44,5 @@
 - (void)_addTouch:(id)arg1 forDelayedDelivery:(BOOL)arg2;
 - (int)type;
 - (id)_init;
-- (id)_accessibilityHitTestStartsAtElement;
-- (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
-- (BOOL)_accessibilityHitTestsAnyElement;
-- (void)_setAccessibilityHitTestStartsAtElement:(id)arg1;
 
 @end

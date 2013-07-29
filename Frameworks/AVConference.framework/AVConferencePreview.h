@@ -28,6 +28,7 @@
 
 + (id)AVConferencePreviewSingleton;
 
+- (void)pausePreview;
 - (BOOL)isPreviewRunning;
 - (void)setLocalVideoLayer:(id)arg1 front:(BOOL)arg2;
 - (id)localVideoLayer:(BOOL)arg1;
@@ -41,7 +42,6 @@
 - (void)endPreviewToPIPAnimation;
 - (void)beginPreviewToPIPAnimation;
 - (void)setLocalCamera:(unsigned int)arg1;
-- (void)pausePreview;
 - (void)connectLayer:(id)arg1 withSlot:(unsigned int)arg2;
 - (void)startPreviewUnpausing:(BOOL)arg1;
 - (void)didReceiveCommError;

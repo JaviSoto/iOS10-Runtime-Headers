@@ -255,6 +255,7 @@
 - (BOOL)_isMyIDInList:(id)arg1;
 - (void)_setExtraProperties:(id)arg1;
 - (void)setCapabilities:(unsigned long long)arg1;
+- (id)siblings;
 - (BOOL)isBetterThanIMHandle:(id)arg1;
 - (id)existingAccountSiblingsArray;
 - (id)bestIMHandleForAccount:(id)arg1 onService:(id)arg2 inGroup:(id)arg3 otherThan:(id)arg4;
@@ -309,8 +310,8 @@
 - (id)resource;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3 knownIDStatus:(int)arg4;
-- (void)_updateOriginalID:(id)arg1;
 - (void)_setOriginalID:(id)arg1;
+- (void)_updateOriginalID:(id)arg1;
 - (id)originalID;
 - (void)propertiesChanged:(id)arg1;
 - (void)_stopRetainingAccount:(id)arg1;
@@ -330,11 +331,10 @@
 - (id)statusMessage;
 - (id)emails;
 - (void)setEmail:(id)arg1;
+- (void)_postNotification:(id)arg1;
 - (BOOL)hasLocation;
 - (BOOL)hasName;
-- (void)_postNotification:(id)arg1;
 - (void)_registerForNotifications;
-- (id)siblings;
 - (id)lastName;
 - (id)firstName;
 - (void)postNotificationName:(id)arg1;

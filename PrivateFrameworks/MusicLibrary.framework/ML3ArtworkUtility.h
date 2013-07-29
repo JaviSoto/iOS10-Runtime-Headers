@@ -18,11 +18,12 @@
 + (BOOL)artworkCacheIDIsValid:(id)arg1;
 + (struct { unsigned int x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; }*)artworkStyleForFormatID:(unsigned int)arg1;
 + (id)allArtworkFormatSizes;
++ (BOOL)isValidDeviceArtworkFormatID:(unsigned int)arg1;
 + (void)initialize;
 
 - (id)artworkPath;
-- (BOOL)writeToDiskArtworkWithImageData:(id)arg1 mediaTypeForAlbumFiltering:(unsigned long)arg2 forCacheID:(id)arg3 formatIDs:(unsigned int**)arg4 resultingLengths:(unsigned int**)arg5 imageSubRects:(struct CGRect {}**)arg6 count:(unsigned int*)arg7;
-- (BOOL)writeToDiskArtworkWithImageData:(id)arg1 mediaTypeForAlbumFiltering:(unsigned long)arg2 forCacheID:(id)arg3 forFormatID:(unsigned int)arg4 resultingLength:(unsigned int*)arg5 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6;
+- (BOOL)writeToDiskArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3 formatIDs:(unsigned int**)arg4 resultingLengths:(unsigned int**)arg5 imageSubRects:(struct CGRect {}**)arg6 count:(unsigned int*)arg7;
+- (BOOL)writeToDiskArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3 forFormatID:(unsigned int)arg4 resultingLength:(unsigned int*)arg5 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6;
 - (id)initWithArtworkDirectoryPath:(id)arg1;
 - (BOOL)writeImageBytes:(const void*)arg1 length:(unsigned long)arg2 formatID:(unsigned int)arg3 cacheID:(id)arg4;
 - (BOOL)drawAndWriteImage:(struct CGImage { }*)arg1 outputWidth:(unsigned long)arg2 outputHeight:(unsigned long)arg3 colorSpace:(struct CGColorSpace { }*)arg4 cacheID:(id)arg5 formatID:(unsigned int)arg6 artworkStyle:(struct { unsigned int x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; }*)arg7 resultingImageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg8 resultingLength:(unsigned int*)arg9;

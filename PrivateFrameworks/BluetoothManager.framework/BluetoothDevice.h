@@ -35,8 +35,8 @@
 - (void)_clearName;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
+- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)disconnect;
 - (void)connect;
 - (int)compare:(id)arg1;

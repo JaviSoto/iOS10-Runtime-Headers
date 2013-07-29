@@ -20,6 +20,7 @@
 @property(readonly) UIView * view;
 
 
+- (void)showWithInitialURLRequest:(id)arg1;
 - (void)showWithInitialURL:(id)arg1;
 - (void)showWithInitialItemIdentifier:(long long)arg1;
 - (void)_backstopViewAction:(id)arg1;
@@ -28,6 +29,7 @@
 - (void)_showWithInitialViewController:(id)arg1;
 - (int)numberOfVisibleOverlays;
 - (void)showWithInitialItem:(id)arg1;
+- (void)showWithInitialProductPage:(id)arg1 metricsPageEvent:(id)arg2;
 - (void)showWithInitialURLs:(id)arg1;
 - (id)initWithParentViewController:(id)arg1;
 - (void)iPadProductPageCannotOpen:(id)arg1;

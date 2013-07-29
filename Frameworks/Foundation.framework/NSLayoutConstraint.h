@@ -60,8 +60,8 @@
 - (id)identifier;
 - (BOOL)_loweredConstantIsRounded;
 - (void)_containerGeometryDidChange;
-- (void)setContainer:(id)arg1;
 - (BOOL)_nsib_isRedundant;
+- (void)setContainer:(id)arg1;
 - (id)_loweredExpression;
 - (BOOL)_describesSameRestrictionAsConstraint:(id)arg1;
 - (id)_constraintByReplacingView:(id)arg1 withView:(id)arg2;

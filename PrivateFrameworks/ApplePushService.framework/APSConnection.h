@@ -42,10 +42,10 @@
 + (id)connectionsDebuggingState;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (void)requestCourierConnection;
++ (struct __SecIdentity { }*)copyIdentity;
 + (BOOL)isValidEnvironment:(id)arg1;
 + (void)_setTokenState;
 + (void)_blockingXPCCallWithArgumentBlock:(id)arg1 resultHandler:(id)arg2;
-+ (struct __SecIdentity { }*)copyIdentity;
 
 - (id)ivarQueue;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
@@ -70,6 +70,7 @@
 - (void)_sendOutgoingMessage:(id)arg1 fake:(BOOL)arg2;
 - (id)_listForIdentifierOnIvarQueue:(unsigned int)arg1;
 - (void)_onIvarQueue_setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3 sendToDaemon:(BOOL)arg4;
+- (void)_handleEvent:(id)arg1 withHandler:(id)arg2;
 - (void)_cancelConnectionOnIvarQueue;
 - (void)_deliverConnectionStatusChange:(BOOL)arg1;
 - (void)setMessageSize:(unsigned int)arg1;
@@ -81,6 +82,7 @@
 - (void)_addUsesAppLaunchStatsToXPCMessage:(id)arg1;
 - (void)_addEnableStatusNotificationsToXPCMessage:(id)arg1;
 - (void)_addEnableCriticalReliabilityToXPCMessage:(id)arg1;
+- (void)_connectIfNecessary;
 - (void)setEnableStatusNotifications:(BOOL)arg1;
 - (void)_shutdownFromDealloc;
 - (void)_disconnectFromDealloc;
@@ -93,15 +95,14 @@
 - (unsigned int)messageSize;
 - (void)setEnabledTopics:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
-- (void)_cancelConnection;
-- (BOOL)isConnected;
-- (void)_connectIfNecessary;
 - (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1;
+- (void)_cancelConnection;
 - (void)_disconnect;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)isConnected;
 - (id)delegateQueue;
 
 @end

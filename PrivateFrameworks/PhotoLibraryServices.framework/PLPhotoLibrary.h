@@ -59,7 +59,6 @@
 + (id)videosPath;
 + (id)photoDataDirectoryURL;
 + (id)mediaFilesDirectoryURL;
-+ (BOOL)isDupeAnalysisNeeded;
 + (void)setDupeAnalysisNeeded:(BOOL)arg1;
 + (BOOL)isMomentAnalysisNeeded;
 + (void)setMomentAnalysisNeeded:(BOOL)arg1;
@@ -74,12 +73,14 @@
 + (id)lightweightReimportPhotoCloudSharingAssetDirectoryForAlbumWithCloudGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (id)lightweightReimportPhotoCloudSharingDataDirectory;
 + (id)photoCloudSharingCacheDataDirectory;
++ (id)photoCloudSharingMetadataDirectory;
 + (void)setCloudAlbumSharingEnabled:(BOOL)arg1;
 + (void)setPhotoStreamEnabled:(BOOL)arg1;
 + (BOOL)isCrashRecoveryDisabled;
 + (void)disableCrashRecovery:(BOOL)arg1;
 + (void)handlePossibleCoreDataError:(id)arg1;
 + (id)syncInfoPath;
++ (BOOL)isDupeAnalysisNeeded;
 + (id)iTunesSyncedAssetThumbnailsDirectory;
 + (id)iTunesPhotosDirectory;
 + (id)photoStreamsDataDirectory;
@@ -87,7 +88,6 @@
 + (id)iTunesSyncedFaceAlbumThumbnailsDirectory;
 + (int)createSqliteErrorIndicatorFile;
 + (id)sqliteErrorIndicatorFilePath;
-+ (id)photoMetadataDirectoryURL;
 + (id)photoDataMiscDirectory;
 + (id)libraryAvailableIndicatorFilePath;
 + (id)dupeAnalysisNeededFilePath;
@@ -104,6 +104,7 @@
 + (id)dcimDirectoryURL;
 + (id)photoDataCachesDirectory;
 + (id)photoCloudSharingDataDirectory;
++ (id)photoMetadataDirectoryURL;
 + (struct NSObject { Class x1; }*)savedPhotosAlbum;
 + (void)_doFilesystemImportIfNeeded;
 + (void)setApplicationIsWildcat:(BOOL)arg1;
@@ -132,8 +133,6 @@
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)imageForFormat:(int)arg1 forAsset:(id)arg2;
-- (struct NSObject { Class x1; }*)filesystemImportProgressAlbum;
-- (struct NSObject { Class x1; }*)otaRestoreProgressAlbum;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbumIfExists;
 - (struct NSObject { Class x1; }*)allPhotosAlbumIfExists;
 - (unsigned int)editableAlbumCount;
@@ -190,6 +189,10 @@
 - (void)flushPhotoStreamAlbums;
 - (void)flushDCIMAlbums;
 - (void)testForRecoveryInBackground;
+- (unsigned int)_pendingAssetsCount;
+- (id)syncProgressAlbums;
+- (struct NSObject { Class x1; }*)filesystemImportProgressAlbum;
+- (struct NSObject { Class x1; }*)otaRestoreProgressAlbum;
 - (id)imagePickerAlbums;
 - (id)albumListForContentMode:(int)arg1;
 - (struct NSObject { Class x1; }*)eventAlbumContainingPhoto:(id)arg1;
@@ -201,6 +204,7 @@
 - (void)_loadFileExtensionInformation;
 - (int)priorityForFileExtension:(id)arg1;
 - (id)allImportedPhotosAlbum;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(int)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 thumbnailsData:(struct __CFDictionary { }*)arg13 withUUID:(id)arg14;
 - (id)newImageForPhoto:(id)arg1 format:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3;
 - (id)thumbnailManager;
 - (id)newImageForPhoto:(id)arg1 format:(int)arg2;
@@ -241,14 +245,16 @@
 - (id)userAlbums;
 - (id)syncedAlbums;
 - (id)assetURLForPhoto:(id)arg1 extension:(id)arg2;
-- (id)objectWithObjectID:(id)arg1;
 - (id)photoStreamAlbums;
+- (id)objectWithObjectID:(id)arg1;
 - (void)performBlock:(id)arg1;
 - (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
 - (unsigned int)concurrencyType;
 - (BOOL)isTransient;
 - (id)managedObjectContext;
 - (void)cleanupForStoreDemoMode;
+- (BOOL)hasCompletedMomentAnalysis;
+- (BOOL)hasCompletedRestorePostProcessing;
 - (id)init;
 - (void)dealloc;
 - (id)_init;

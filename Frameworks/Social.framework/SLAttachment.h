@@ -51,8 +51,8 @@
 - (int)previewType;
 - (id)previewImage;
 - (id)_uniqueIdentifier;
-- (void)setPayload:(id)arg1;
 - (void)setType:(int)arg1;
+- (void)setPayload:(id)arg1;
 - (id)payload;
 - (id)init;
 - (void).cxx_destruct;

@@ -27,6 +27,7 @@
 - (id)MIMEType;
 - (id)typeIdentifier;
 - (void)dealloc;
+- (id)description;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
 

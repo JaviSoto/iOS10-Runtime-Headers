@@ -9,9 +9,6 @@
 + (id)_gkHTTPRequestWithURL:(id)arg1 postData:(id)arg2;
 + (int)hashForPlayerID:(id)arg1;
 
-- (void)setTimeoutInterval:(double)arg1;
-- (void)addValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (void)setHTTPMethod:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setHTTPShouldUsePipelining:(BOOL)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
@@ -28,8 +25,11 @@
 - (void)setHTTPReferrer:(id)arg1;
 - (void)setHTTPExtraCookies:(id)arg1;
 - (void)setHTTPContentType:(id)arg1;
+- (void)addValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (void)setHTTPMethod:(id)arg1;
 - (void)setBoundInterfaceIdentifier:(id)arg1;
 - (void)setMainDocumentURL:(id)arg1;
+- (void)setTimeoutInterval:(double)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setURL:(id)arg1;
 - (void)_web_setHTTPUserAgent:(id)arg1;

@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (id)_originalFillMode;
 - (void)setCompletionCurve:(int)arg1;
+- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id)arg3;
 - (void)_updateInteractiveTransition:(id)arg1 percent:(float)arg2 isFinished:(BOOL)arg3 didComplete:(BOOL)arg4;
 - (void)_stopInteractiveTransition:(id)arg1;
 - (void)_setTransitionInterrupted:(BOOL)arg1;
@@ -35,16 +36,15 @@
 - (void)_setOriginalFillMode:(id)arg1;
 - (float)completionSpeed;
 - (int)completionCurve;
-- (id)_uuid;
 - (void)_setDuration:(float)arg1;
+- (id)_uuid;
 - (void)setCompletionSpeed:(float)arg1;
+- (void)updateInteractiveTransition:(float)arg1;
 - (void)startInteractiveTransition:(id)arg1;
 - (float)percentComplete;
 - (void)_stopInteractiveTransition;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;
-- (void)updateInteractiveTransition:(float)arg1;
-- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id)arg3;
 - (void)_resetInteractionController;
 - (float)duration;
 

@@ -18,6 +18,7 @@
 - (BOOL)registerFiles:(id)arg1;
 - (void)_checkWiFiAssertion;
 - (BOOL)isActive;
+- (id)init;
 - (void)dealloc;
 - (id)_options;
 

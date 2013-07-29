@@ -24,10 +24,10 @@
 - (id)localizedMessage;
 - (BOOL)userNameIsEmail;
 - (BOOL)userNameIsEditable;
+- (void)setLocalizedTitle:(id)arg1;
 - (void)setLocalizedMessage:(id)arg1;
 - (void)useCredential:(id)arg1;
 - (void)cancelAuthentication;
-- (void)setLocalizedTitle:(id)arg1;
 - (id)password;
 - (id)user;
 - (void)dealloc;

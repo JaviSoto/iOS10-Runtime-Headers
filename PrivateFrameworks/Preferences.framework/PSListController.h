@@ -42,9 +42,8 @@
 @property BOOL edgeToEdgeCells;
 
 + (BOOL)displaysButtonBar;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
+- (int)numberOfGroups;
 - (id)popupStylePopoverController;
 - (void)showPINSheet:(id)arg1;
 - (void)setEdgeToEdgeCells:(BOOL)arg1;
@@ -79,7 +78,6 @@
 - (void)insertSpecifier:(id)arg1 atIndex:(int)arg2;
 - (int)indexForRow:(int)arg1 inGroup:(int)arg2;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierID:(id)arg3;
-- (int)numberOfGroups;
 - (BOOL)containsSpecifier:(id)arg1;
 - (int)indexOfSpecifierID:(id)arg1;
 - (void)reloadSpecifierID:(id)arg1;
@@ -187,12 +185,12 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)loadView;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (int)tableView:(id)arg1 titleAlignmentForFooterInSection:(int)arg2;
 - (int)tableView:(id)arg1 titleAlignmentForHeaderInSection:(int)arg2;

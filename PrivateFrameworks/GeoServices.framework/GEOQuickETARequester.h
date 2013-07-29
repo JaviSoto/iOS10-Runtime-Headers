@@ -14,9 +14,9 @@
 @property(copy) NSString * loggingFacility;
 
 
+- (void)calculateETAWithHandler:(id)arg1;
 - (void)setLoggingFacility:(id)arg1;
 - (id)loggingFacility;
-- (void)calculateETAWithHandler:(id)arg1;
 - (void)_calculateRoutingETAWithHandler:(id)arg1;
 - (void)_calculateSimpleETAWithHandler:(id)arg1;
 - (void)dealloc;

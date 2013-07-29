@@ -10,6 +10,7 @@
 
 + (id)managedValueWithValue:(id)arg1;
 
+- (void)disconnectValue;
 - (id)initWithValue:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

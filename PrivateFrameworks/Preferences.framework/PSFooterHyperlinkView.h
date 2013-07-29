@@ -34,9 +34,9 @@
 - (id)URL;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAction:(SEL)arg1;
+- (void)setText:(id)arg1;
 - (SEL)action;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (void)setURL:(id)arg1;
 - (id)target;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKSectionMetrics, <UICollectionViewDataSource>, GKSupplementaryViewMetrics, NSMutableDictionary, UICollectionView;
+@class GKSectionMetrics, <UICollectionViewDataSource>, GKSupplementaryViewMetrics, UICollectionView;
 
 @interface GKCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes  {
     BOOL _allSectionItemsVisible;
@@ -17,7 +17,7 @@
     unsigned int _currentVisibleItemCount;
     unsigned int _currentTotalItemCount;
     unsigned int _maxTotalItemCount;
-    NSMutableDictionary *_sharedAttributes;
+    float _incrementalRevealTextOffset;
     unsigned int _gridLayoutLocation;
 }
 
@@ -31,8 +31,8 @@
 @property unsigned int currentVisibleItemCount;
 @property unsigned int currentTotalItemCount;
 @property unsigned int maxTotalItemCount;
+@property float incrementalRevealTextOffset;
 @property BOOL isPartOfGlobalPinningGroup;
-@property(retain) NSMutableDictionary * sharedAttributes;
 @property unsigned int gridLayoutLocation;
 @property BOOL doesAbutLeftOfCollectionView;
 
@@ -40,8 +40,8 @@
 - (unsigned int)gridLayoutLocation;
 - (BOOL)isPartOfGlobalPinningGroup;
 - (float)unpinnedY;
+- (void)setIncrementalRevealTextOffset:(float)arg1;
 - (void)setDoesAbutLeftOfCollectionView:(BOOL)arg1;
-- (void)setSharedAttributes:(id)arg1;
 - (void)setGridLayoutLocation:(unsigned int)arg1;
 - (void)setMaxTotalItemCount:(unsigned int)arg1;
 - (void)setCurrentTotalItemCount:(unsigned int)arg1;
@@ -54,15 +54,17 @@
 - (BOOL)allSectionItemsVisible;
 - (unsigned int)currentTotalItemCount;
 - (void)setIsPinned:(BOOL)arg1;
+- (float)incrementalRevealTextOffset;
 - (id)sectionMetrics;
 - (unsigned int)currentVisibleItemCount;
 - (unsigned int)maxTotalItemCount;
 - (id)supplementaryMetrics;
-- (id)sharedAttributes;
 - (BOOL)doesAbutLeftOfCollectionView;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

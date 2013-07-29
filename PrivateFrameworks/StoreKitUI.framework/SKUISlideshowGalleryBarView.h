@@ -18,9 +18,9 @@
 @property unsigned int selectedImageIndex;
 
 
+- (void)setImage:(id)arg1 atIndex:(int)arg2;
 - (unsigned int)numberOfImages;
 - (unsigned int)selectedImageIndex;
-- (void)setImage:(id)arg1 atIndex:(int)arg2;
 - (void)setSelectedImageIndex:(unsigned int)arg1;
 - (void)setNumberOfImages:(unsigned int)arg1;
 - (void)_handleTouch:(id)arg1 withEvent:(id)arg2;

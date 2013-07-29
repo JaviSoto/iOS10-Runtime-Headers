@@ -13,9 +13,9 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
-- (void)setData:(id)arg1;
 - (id)data;
 - (void)dealloc;
+- (void)setData:(id)arg1;
 - (void)_preheatBitmapData;
 - (id)_initWithOtherImage:(id)arg1;
 

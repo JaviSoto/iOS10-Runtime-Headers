@@ -46,8 +46,6 @@
 @property unsigned long long visibleParts;
 @property unsigned long long disabledParts;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)_newStreamingTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)videoViewController;
@@ -129,6 +127,5 @@
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
 
 @end

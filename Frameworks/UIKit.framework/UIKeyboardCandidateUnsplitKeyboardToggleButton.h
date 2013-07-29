@@ -6,7 +6,6 @@
 
 @interface UIKeyboardCandidateUnsplitKeyboardToggleButton : UIKeyboardCandidateToggleButton  {
     UIView *_pocketShadow;
-    UIView *_borderLine;
     UIImage *_backgroundNormal;
     UIImage *_backgroundHighlighted;
     BOOL _drawsBackground;

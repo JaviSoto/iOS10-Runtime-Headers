@@ -8,7 +8,6 @@
     AVAsset *_asset;
     NSObject<OS_dispatch_queue> *_assetQueue;
     AVPlayerItem *_avPlayerItem;
-    BOOL _didAttemptToLoadAsset;
     BOOL _isAssetLoaded;
     MPQueueFeeder *_feeder;
     MPAVController *_player;
@@ -35,6 +34,7 @@
     unsigned int _timeMarkersNeedLoading : 1;
     BOOL _hasPostedNaturalSizeChange;
     BOOL _limitReadAhead;
+    BOOL _didAttemptToLoadAsset;
     float _loudnessInfoVolumeNormalization;
 }
 
@@ -48,6 +48,7 @@
 @property(readonly) RadioAudioClip * audioClip;
 @property(readonly) AVAsset * asset;
 @property(readonly) AVPlayerItem * playerItem;
+@property(readonly) BOOL didAttemptToLoadAsset;
 @property BOOL isAssetLoaded;
 @property(readonly) int status;
 @property(getter=isAlwaysLive,readonly) BOOL alwaysLive;
@@ -103,6 +104,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) NSArray * timedMetadataIfAvailable;
 @property(copy) NSString * videoID;
+@property(readonly) MPMediaItem * mediaItem;
 @property float loudnessInfoVolumeNormalization;
 @property float soundCheckVolumeNormalization;
 @property(readonly) BOOL supportsAddStation;
@@ -122,24 +124,22 @@
 + (id)URLFromPath:(id)arg1;
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 + (unsigned int)defaultScaleMode;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)artist;
 - (id)album;
 - (float)userRating;
 - (void)setRating:(float)arg1;
-- (id)audioClip;
 - (id)_plistKeyForMPMediaItemProperty:(id)arg1;
 - (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (id)audioClip;
 - (BOOL)MPSPWD_prioritizeDownloadSession;
 - (id)adTrack;
 - (id)assetFlavor;
 - (BOOL)wasDownloadedThisSession;
-- (id)mediaItem;
 - (BOOL)isRadioItem;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (float)loudnessInfoVolumeNormalization;
+- (BOOL)didAttemptToLoadAsset;
 - (void)setIndexInQueueFeeder:(unsigned int)arg1;
 - (void)setFeeder:(id)arg1;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;
@@ -179,6 +179,8 @@
 - (BOOL)hasDataForItemArtwork;
 - (unsigned int)alternatesCountForTypes:(unsigned int)arg1;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
+- (id)mediaItem;
+- (id)mediaItem;
 - (BOOL)displayableTextLoaded;
 - (double)currentTimeDisplayOverride;
 - (BOOL)isAssetURLValid;
@@ -237,6 +239,8 @@
 - (void)setAlternateAudioTrackID:(int)arg1;
 - (BOOL)isAssetLoaded;
 - (void)setVideoID:(id)arg1;
+- (void)setLimitReadAhead:(BOOL)arg1;
+- (BOOL)limitReadAhead;
 - (id)alternateTracks;
 - (double)timeOfSeekableStart;
 - (double)timeOfSeekableEnd;
@@ -263,17 +267,15 @@
 - (BOOL)isStreamingQuality;
 - (unsigned long long)persistentID;
 - (id)genre;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)setPlayerItem:(id)arg1;
 - (id)playerItem;
-- (void)setLimitReadAhead:(BOOL)arg1;
-- (BOOL)limitReadAhead;
 - (id)_seekableTimeRanges;
 - (void)setSoundCheckVolumeNormalization:(float)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (float)soundCheckVolumeNormalization;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;
 - (id)lyrics;
-- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)setPlayer:(id)arg1;
 - (id)player;
 - (int)status;
@@ -292,6 +294,5 @@
 - (unsigned int)type;
 - (id)url;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)accessibilityLabelForAlbum;
 
 @end

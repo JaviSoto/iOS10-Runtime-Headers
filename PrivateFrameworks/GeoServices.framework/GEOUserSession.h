@@ -4,6 +4,7 @@
 
 @interface GEOUserSession : NSObject  {
     double _sessionCreationTime;
+    double _usageSessionIDGenerationTime;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -11,19 +12,22 @@
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    } _probeID;
+    } _usageCollectionSessionID;
 }
 
 @property(readonly) struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property(readonly) struct { unsigned long long x1; unsigned long long x2; } probeID;
+@property(readonly) struct { unsigned long long x1; unsigned long long x2; } usageCollectionSessionID;
 @property(readonly) double sessionCreationTime;
 
++ (void)disable;
 + (id)sharedInstance;
 
 - (double)sessionCreationTime;
-- (struct { unsigned long long x1; unsigned long long x2; })probeID;
+- (struct { unsigned long long x1; unsigned long long x2; })usageCollectionSessionID;
+- (void)_renewUsageCollectionSessionID;
 - (void)_updateWithNewUUIDForSessionID:(struct { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)init;
+- (void)dealloc;
 
 @end

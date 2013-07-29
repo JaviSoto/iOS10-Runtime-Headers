@@ -56,9 +56,11 @@
     BOOL _pendingSlowDown;
     int _sensorStatus;
     BOOL _allAnalyzersAreCentered;
+    BOOL _hasAppliedAtLeastOneUpdateSinceStarting;
+    BOOL _isPendingReset;
     _UIMotionEffectEngineLogger *_motionLogger;
     int _thermalNotificationToken;
-    int _screenBlankingNotificationToken;
+    int _screenDimmingNotificationToken;
     int _targetInterfaceOrientation;
 }
 
@@ -77,7 +79,6 @@
 - (void)_scheduleUpdateWithDeviceMotion:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; boolx6; boolx7; boolx8; }*)arg1 timestamp:(double)arg2;
 - (void)_startGeneratingUpdates;
 - (BOOL)_shouldGenerateUpdates;
-- (void)_startOrStopGeneratingUpdates;
 - (void)_applyEffectsFromAnalyzer:(id)arg1;
 - (BOOL)_shouldSuspendApplicationForHysteresisGivenLastAppliedViewerOffset:(struct UIOffset { float x1; float x2; })arg1 newViewerOffset:(struct UIOffset { float x1; float x2; })arg2 wasSuspendingApplicationForHysteresis:(BOOL)arg3;
 - (void)_toggleSlowUpdates;
@@ -85,7 +86,7 @@
 - (void)_updateDisplayLinkInterval;
 - (void)_unapplyAllEffects;
 - (void)_stopGeneratingUpdates;
-- (void)_reconsiderMotionEffectsEnabledSetting;
+- (void)_startOrStopGeneratingUpdates;
 - (id)suspensionReasons;
 - (int)_targetInterfaceOrientation;
 - (void)_setTargetInterfaceOrientation:(int)arg1;

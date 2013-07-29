@@ -20,10 +20,10 @@
 - (void)setDisplayText:(id)arg1;
 - (id)encodedClassName;
 - (id)displayText;
-- (void)setData:(id)arg1;
 - (id)data;
 - (void)setObject:(id)arg1;
 - (id)object;
+- (void)setData:(id)arg1;
 - (id)groupIdentifier;
 
 @end

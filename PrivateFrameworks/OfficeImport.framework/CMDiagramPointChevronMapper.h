@@ -8,8 +8,8 @@
 }
 
 
+- (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setIsHomePlate:(BOOL)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)setIsPlaceholder:(BOOL)arg1;
 
 @end

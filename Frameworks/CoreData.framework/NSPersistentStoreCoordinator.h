@@ -56,7 +56,9 @@
 - (id)_saveRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
 - (void)_doPreSaveAssignmentsForObjects:(id)arg1;
 - (id)_checkRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
+- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
+- (id)managedObjectIDForURIRepresentation:(id)arg1;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
 - (id)persistentStores;
 - (BOOL)_removePersistentStore:(id)arg1;
@@ -69,7 +71,7 @@
 - (void)_copyMetadataFromStore:(id)arg1 toStore:(id)arg2 migrationManager:(id)arg3;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
 - (id)initWithManagedObjectModel:(id)arg1;
-- (id)managedObjectIDForURIRepresentation:(id)arg1;
+- (id)managedObjectIDForURIRepresentation:(id)arg1 error:(id*)arg2;
 - (id)_persistentStoreForIdentifier:(id)arg1;
 - (id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;

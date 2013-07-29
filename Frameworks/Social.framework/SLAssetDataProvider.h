@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, ALAssetsLibrary, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class NSError, ALAssetsLibrary, AVAssetExportSession, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface SLAssetDataProvider : NSObject  {
     ALAssetsLibrary *_assetsLibrary;
@@ -14,6 +14,7 @@
     unsigned int _maxByteSize;
     NSMutableArray *_deliveryQueue;
     NSError *_lastError;
+    AVAssetExportSession *_assetExportSession;
     NSObject<OS_dispatch_queue> *_downsamplingQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -25,9 +26,10 @@
 @property(copy) id fetchCompletion;
 
 
-- (void)fetchVideoDataForAssetsURL:(id)arg1 completion:(id)arg2;
+- (void)mappedDataFromVideoAtFileURL:(id)arg1 completion:(id)arg2;
+- (void)exportDataFromVideoAssetURL:(id)arg1 toFileURL:(id)arg2 exportPreset:(id)arg3 completion:(id)arg4;
 - (void)fetchImageDataForAssetsURLs:(id)arg1 maxByteSize:(unsigned int)arg2 completion:(id)arg3;
-- (id)_createMappedDataWithTempFileFromAsset:(id)arg1;
+- (id)_generateTemporaryFilename;
 - (void)_assetFetchFailedWithError:(id)arg1;
 - (void)fetchedAsset:(id)arg1;
 - (void)_downsamplingCompletedForAsset:(id)arg1 withDownsampledData:(id)arg2;

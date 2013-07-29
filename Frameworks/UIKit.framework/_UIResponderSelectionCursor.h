@@ -74,6 +74,7 @@
 - (void)panResponderSelection:(id)arg1;
 - (id)targetWindow;
 - (void)setSelectedItem:(id)arg1;
+- (id)directionalGestureRecognizers;
 - (void)_responderGeometryDidChange;
 - (void)updateFirstResponder:(id)arg1;
 - (void)setTargetWindow:(id)arg1;

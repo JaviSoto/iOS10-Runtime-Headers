@@ -45,6 +45,7 @@
 
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
++ (id)pl_alternateLetterpressStyle;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (BOOL)isEqual:(id)arg1;

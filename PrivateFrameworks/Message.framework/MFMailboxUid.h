@@ -57,7 +57,6 @@
 - (unsigned int)indexOfChild:(id)arg1;
 - (unsigned int)numberOfChildren;
 - (id)childEnumerator;
-- (BOOL)hasChildren;
 - (unsigned int)nonDeletedCount;
 - (id)displayNameUsingSpecialNames;
 - (void)addToPostOrderTraversal:(id)arg1;
@@ -93,16 +92,17 @@
 - (id)lastViewedMessageID;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
 - (id)representedAccount;
+- (unsigned int)serverUnreadOnlyOnServerCount;
 - (id)accountRelativePath;
 - (unsigned int)unreadCount;
 - (id)childAtIndex:(unsigned int)arg1;
+- (BOOL)hasChildren;
 - (id)fullPath;
 - (void)saveUserInfo;
 - (id)userInfoObjectForKey:(id)arg1;
 - (BOOL)setChildren:(id)arg1;
 - (id)extraAttributes;
 - (void)setExtraAttributes:(id)arg1;
-- (void)setAttributes:(unsigned int)arg1;
 - (id)store;
 - (id)displayName;
 - (id)initWithAccount:(id)arg1;
@@ -123,6 +123,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)URL;
 - (BOOL)isSelectable;
+- (void)setAttributes:(unsigned int)arg1;
 - (unsigned int)attributes;
 - (id)parent;
 - (int)type;

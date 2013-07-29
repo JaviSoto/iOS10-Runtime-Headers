@@ -40,10 +40,12 @@
 @property float damping;
 @property float frequency;
 @property float length;
+@property BOOL collideConnected;
 
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { float x1; float x2; })arg3 anchorB:(struct CGPoint { float x1; float x2; })arg4;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { float x1; float x2; })arg3 localAnchorB:(struct CGPoint { float x1; float x2; })arg4;
 
+- (BOOL)collideConnected;
 - (void)setFrequency:(float)arg1;
 - (void)setDamping:(float)arg1;
 - (float)frequency;
@@ -57,6 +59,7 @@
 - (float)length;
 - (void)setLength:(float)arg1;
 - (id).cxx_construct;
+- (void)setCollideConnected:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

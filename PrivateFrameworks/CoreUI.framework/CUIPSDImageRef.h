@@ -22,7 +22,6 @@
 + (BOOL)isValidPSDResourceAtPath:(id)arg1;
 + (BOOL)isValidPSDResourceAtPath:(id)arg1 withLayerCount:(unsigned int*)arg2;
 
-- (unsigned int)numberOfChannels;
 - (struct CGSize { float x1; float x2; })size;
 - (int)_blendModeAtAbsluteIndex:(unsigned int)arg1;
 - (float)_opacityAtAbsoluteIndex:(unsigned int)arg1;
@@ -32,6 +31,7 @@
 - (id)gradientAtLayer:(unsigned int)arg1;
 - (id)metadataString;
 - (id)layerNames;
+- (unsigned int)numberOfChannels;
 - (unsigned int)numberOfSlices;
 - (unsigned int)numberOfLayers;
 - (id)layerRefAtIndex:(unsigned int)arg1;

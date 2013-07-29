@@ -28,8 +28,8 @@
 - (id)startTime;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
-- (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setStartTime:(id)arg1;
 - (id)groupIdentifier;
 
 @end

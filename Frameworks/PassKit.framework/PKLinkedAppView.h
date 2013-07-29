@@ -89,13 +89,13 @@
 - (void)setStoreIDs:(id)arg1;
 - (void)reloadWithDelay:(double)arg1;
 - (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2;
+- (void)setAppName:(id)arg1;
+- (id)appName;
 - (id)price;
 - (id)productViewController;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)setProductViewController:(id)arg1;
 - (id)iconView;
-- (id)appName;
-- (void)setAppName:(id)arg1;
 - (void)reload;
 - (void)dealloc;
 - (id)activityIndicator;

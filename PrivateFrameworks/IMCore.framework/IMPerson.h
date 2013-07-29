@@ -47,6 +47,7 @@
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
 
+- (id)allEmails;
 - (void)setNickname:(id)arg1;
 - (BOOL)_registered;
 - (int)_recordID;
@@ -54,7 +55,6 @@
 - (id)mobileNumbers;
 - (void)setValues:(id)arg1 forIMProperty:(id)arg2;
 - (BOOL)isInAddressBook;
-- (id)allEmails;
 - (id)emailHandlesForService:(id)arg1;
 - (void*)_recordRef;
 - (BOOL)containsHandle:(id)arg1 forServiceProperty:(id)arg2;

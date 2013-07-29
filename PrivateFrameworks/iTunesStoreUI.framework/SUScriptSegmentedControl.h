@@ -65,6 +65,7 @@
 - (id)_newPageSectionGroupWithSegments:(id)arg1;
 - (id)activeSegmentedControl;
 - (id)_newNativeSegmentedControl;
+- (void)setSegments:(id)arg1;
 - (id)_newSegmentsFromPageSectionGroup:(id)arg1;
 - (void)setNativeSegmentedControl:(id)arg1;
 - (id)cancelButtonTitle;
@@ -80,7 +81,6 @@
 - (id)moreListTitle;
 - (void)setMoreListTitle:(id)arg1;
 - (id)storePageViewController;
-- (void)setSegments:(id)arg1;
 - (id)segments;
 - (void)setStyle:(id)arg1;
 - (id)attributeKeys;

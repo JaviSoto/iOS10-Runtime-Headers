@@ -18,6 +18,8 @@
 @property(retain) GEOPlaceResult * placeResult;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)placeResult;
 - (BOOL)hasPlaceResult;
 - (void)setPlaceResult:(id)arg1;
@@ -25,13 +27,11 @@
 - (void)setStatusCode:(int)arg1;
 - (BOOL)hasStatusCode;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)dictionaryRepresentation;
 - (int)statusCode;
+- (id)dictionaryRepresentation;
 
 @end

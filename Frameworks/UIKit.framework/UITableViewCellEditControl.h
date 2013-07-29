@@ -27,8 +27,6 @@
 + (id)_deleteImageBackground:(float)arg1;
 + (id)_multiSelectNotSelectedImage;
 + (struct CGSize { float x1; float x2; })defaultSize;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
@@ -49,9 +47,5 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (BOOL)isRotating;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

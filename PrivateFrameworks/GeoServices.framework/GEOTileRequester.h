@@ -33,9 +33,9 @@
 - (void)setThread:(id)arg1;
 - (id)thread;
 - (BOOL)requireWiFi;
+- (void)setAuditToken:(id)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
 - (unsigned int)tileSetForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)setAuditToken:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (id)bundleVersion;
@@ -45,9 +45,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)bundleIdentifier;
 - (void)cancel;
 - (id)auditToken;
 - (void)start;
-- (id)bundleIdentifier;
 
 @end

@@ -81,8 +81,6 @@
 + (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setSubject:(id)arg1;
 - (id)subject;
@@ -155,11 +153,11 @@
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
 - (void)_performActivity:(id)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)_setPopoverController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (id)completionHandler;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
@@ -167,7 +165,6 @@
 - (int)preferredStatusBarStyle;
 - (void)_cancel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)accessibilityPerformEscape;
 - (void)_gkCallOnSuperSkippingSelf_viewDidAppear:(BOOL)arg1;
 
 @end

@@ -2,13 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSBundle, NSMutableArray, SSURLBag, SUClientInterface, NSDictionary, NSString, SKUIStoreDialogController, NSArray;
+@class NSBundle, NSMapTable, NSMutableArray, SSURLBag, SUClientInterface, SKUIStoreDialogController, NSString, NSDictionary, NSArray;
 
 @interface SKUIClientContext : NSObject <SUClientInterfaceDelegate> {
     NSBundle *_bundle;
     SUClientInterface *_clientInterface;
+    NSDictionary *_configurationDictionary;
     SKUIStoreDialogController *_dialogController;
     NSString *_metricsConfigurationIdentifier;
+    NSMapTable *_metricsPageContexts;
     NSMutableArray *_navigationHistory;
     NSString *_navigationHistoryPersistenceKey;
     NSString *_storeFrontIdentifier;
@@ -26,8 +28,10 @@
 @property(copy) NSString * navigationHistoryPersistenceKey;
 
 + (id)defaultContext;
++ (id)_configurationDictionaryWithBagDictionary:(id)arg1;
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 
+- (id)initWithConfigurationDictionary:(id)arg1;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
 - (id)clientInterface;
 - (int)userInterfaceIdiomOverride;
@@ -39,10 +43,12 @@
 - (id)localizedAlertWithError:(id)arg1;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
 - (id)navigationHistory;
+- (id)metricsPageContextForViewController:(id)arg1;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id)arg1;
 - (void)setUserInterfaceIdiomOverride:(int)arg1;
-- (id)initWithConfigurationDictionary:(id)arg1;
+- (void)setMetricsPageContext:(id)arg1 forViewController:(id)arg2;
 - (id)URLBag;
+- (id)valueForConfigurationKey:(id)arg1;
 - (id)storeFrontIdentifier;
 - (void)dealloc;
 - (void).cxx_destruct;

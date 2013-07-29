@@ -15,6 +15,7 @@
 + (double)delayForRepeatNumber:(int)arg1;
 
 - (void)dealloc;
+- (void)_finishNextStep:(id)arg1;
 - (void)_nextStep:(id)arg1;
 - (void)_scheduleNextTimer;
 - (void)_cancelPress;

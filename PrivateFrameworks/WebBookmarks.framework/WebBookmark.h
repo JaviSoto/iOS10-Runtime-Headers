@@ -99,6 +99,7 @@
 - (void)_modifyExtraReadingListAttributes:(id)arg1;
 - (id)_readingListPropertyNamed:(id)arg1;
 - (id)initReadingListBookmarkWithTitle:(id)arg1 address:(id)arg2 previewText:(id)arg3;
+- (void)_setSyncable:(BOOL)arg1;
 - (void)_setHidden:(BOOL)arg1;
 - (void)_setInserted:(BOOL)arg1;
 - (void)_setID:(unsigned int)arg1;
@@ -123,8 +124,9 @@
 - (BOOL)isBookmarksMenuFolder;
 - (BOOL)isBookmarksBarFolder;
 - (id)initWhiteListBookmarkWithTitle:(id)arg1 address:(id)arg2;
-- (id)initBuiltinDeviceBookmarkWithTitle:(id)arg1 address:(id)arg2;
+- (id)initCarrierBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (id)shortTypeDescription;
+- (id)initBuiltinDeviceBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (void)_setParentID:(unsigned int)arg1;
 - (void)setLocalAttributes:(id)arg1;
 - (id)localAttributes;
@@ -142,8 +144,8 @@
 - (id)initFolderWithParentID:(unsigned int)arg1;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
 - (BOOL)isDeletable;
-- (id)dateAdded;
 - (void)setDateAdded:(id)arg1;
+- (id)dateAdded;
 - (BOOL)isFolder;
 - (unsigned int)parentID;
 - (void)setAddress:(id)arg1;

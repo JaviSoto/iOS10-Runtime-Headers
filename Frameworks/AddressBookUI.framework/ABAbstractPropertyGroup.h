@@ -21,12 +21,12 @@
 - (id)styleProvider;
 - (void)setPreinsertedPerson:(id)arg1;
 - (id)preinsertedPerson;
+- (id)people;
 - (BOOL)canSave;
 - (void)updateRecord;
 - (void)setPeople:(id)arg1;
 - (void)setHasChanges:(BOOL)arg1;
 - (void)reloadFromModel;
-- (id)people;
 - (int)property;
 - (BOOL)hasChanges;
 - (id)init;

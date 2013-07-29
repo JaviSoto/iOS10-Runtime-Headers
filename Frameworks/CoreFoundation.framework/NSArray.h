@@ -7,12 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class AXEventPathInfoRepresentation;
-
 @interface NSArray : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
 }
-
-@property(readonly) AXEventPathInfoRepresentation * firstPath;
 
 + (id)arrayWithSet:(id)arg1;
 + (id)arrayWithSet:(id)arg1 copyItems:(BOOL)arg2;
@@ -34,14 +30,12 @@
 + (id)arrayWithContentsOfFile:(id)arg1;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 + (id)arrayWithContentsOfURL:(id)arg1;
-+ (id)axArrayByIgnoringNilElementsWithCount:(unsigned int)arg1;
 + (id)_gkArrayWithIndexSet:(id)arg1;
 + (id)cdvArrayWithIntegers:(int)arg1;
 + (id)_arrayWithIntArg:(int)arg1 additionalArgs:(char *)arg2;
 + (id)arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
 + (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)indexesOfObjectsPassingTest:(id)arg1;
 - (unsigned int)indexOfObjectPassingTest:(id)arg1;
 - (id)reverseObjectEnumerator;
@@ -51,6 +45,7 @@
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)arrayByExcludingObjectsInArray:(id)arg1;
 - (id)arrayByExcludingToObjectsInArray:(id)arg1;
 - (id)arrayByApplyingSelector:(SEL)arg1;
@@ -196,10 +191,10 @@
 - (id)_nextToLastObject;
 - (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)_filteredArrayOfObjectsPassingTest:(id)arg1;
 - (id)_ui_firstObject;
 - (id)_ui_onlyObject;
 - (id)pickableRouteWithUID:(id)arg1;
-- (id)firstPath;
 - (void)_ICSStringsForPropertyValuesWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSParametersAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
@@ -220,6 +215,10 @@
 - (id)_gkBubbleOfType:(int)arg1;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2 usingSelector:(SEL)arg3;
+- (unsigned int)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (id)_mapkit_arrayByRemovingObject:(id)arg1;
+- (id)_mapkit_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 - (id)_sa_mappedArrayWithBlock:(id)arg1;
 - (BOOL)MPIsEmpty;
 - (id)MSDeepCopy;
@@ -242,6 +241,12 @@
 - (id)objectsPassingTest:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (BOOL)containsObjectIdenticalTo:(id)arg1;
+- (id)cr_insertionSortedArrayUsingComparator:(id)arg1;
+- (id)cr_firstObjectPassingTest:(id)arg1;
+- (id)cr_firstObject;
+- (id)cr_map:(id)arg1;
+- (id)cr_copyConcurrentlyByApplyingTransform:(id)arg1;
+- (unsigned int)cr_binaryInsertionIndexOfObject:(id)arg1 usingComparator:(id)arg2 match:(BOOL*)arg3;
 - (id)componentsJoinedIntoListWithMaxItems:(int)arg1;
 - (id)mf_uncommentedAddressList;
 - (id)mf_objectsPassingTest:(id)arg1;
@@ -266,15 +271,11 @@
 - (id)firstObjectPassingTest:(id)arg1;
 - (id)firstObject;
 - (void)appendJsonStringToString:(id)arg1;
-- (id)cr_insertionSortedArrayUsingComparator:(id)arg1;
-- (id)cr_firstObjectPassingTest:(id)arg1;
-- (id)cr_firstObject;
-- (id)cr_map:(id)arg1;
-- (id)cr_copyConcurrentlyByApplyingTransform:(id)arg1;
-- (unsigned int)cr_binaryInsertionIndexOfObject:(id)arg1 usingComparator:(id)arg2 match:(BOOL*)arg3;
 - (unsigned int)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 - (unsigned int)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 - (id)mf_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2;
 - (id)mf_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
+- (id)pu_localizedComposedStringWithCount:(unsigned int)arg1 uppercase:(BOOL)arg2;
+- (id)pu_localizedComposedStringThatFitsWidth:(float)arg1 withFont:(id)arg2 uppercase:(BOOL)arg3;
 
 @end

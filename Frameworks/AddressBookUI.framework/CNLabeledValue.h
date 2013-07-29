@@ -18,10 +18,10 @@
 
 + (id)allLabels;
 + (id)defaultLabels;
++ (id)builtinLabelsForProperty:(id)arg1;
 + (id)labeledValueWithMultiValueIdentifier:(int)arg1 label:(id)arg2 value:(id)arg3;
 + (id)allCustomLabels;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
-+ (id)builtinLabelsForProperty:(id)arg1;
 
 - (BOOL)isEqualToLabelledValue:(id)arg1;
 - (id)labeledValueBySettingValue:(id)arg1;

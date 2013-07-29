@@ -33,12 +33,12 @@
 + (id)realisticMap;
 + (BOOL)supportsRealisticMap;
 
+- (id)findTilesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 tileHander:(id)arg3 completionHandler:(id)arg4;
 - (void)setTileErrorHandler:(id)arg1;
 - (id)tileErrorHandler;
 - (int)tileStyle;
 - (int)tileScale;
 - (id)buildMapEdgeFrom:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 edgeHandler:(id)arg2;
-- (id)findTilesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 tileHander:(id)arg3 completionHandler:(id)arg4;
 - (id)findEdgesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 edgeHandler:(id)arg3 completionHandler:(id)arg4;
 - (id)findClosestRoadAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id)arg2 completionHandler:(id)arg3;
 - (id)findClosestNamedFeaturesAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id)arg2 pointHandler:(id)arg3 polygonHandler:(id)arg4 completionHandler:(id)arg5;

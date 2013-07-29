@@ -22,12 +22,12 @@
 + (id)canonicalLanguageIdentifierFromIdentifier:(id)arg1;
 + (id)keyboardInputModeWithIdentifier:(id)arg1;
 
-- (id)softwareLayout;
 - (id)initWithIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (id)softwareLayout;
 - (id)normalizedIdentifierLevels;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;

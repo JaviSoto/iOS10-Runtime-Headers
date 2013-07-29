@@ -2,14 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIWishlistDelegate>, SKUIItemListTableViewController, SKUIWishlist, UIBarButtonItem, SKUIEmptyContentPlaceholderView, SKUISyncWishlistOperation, _UIBackdropView;
+@class <SKUIWishlistDelegate>, SKUIItemListTableViewController, _UIContentUnavailableView, SKUIWishlist, UIBarButtonItem, SKUISyncWishlistOperation, _UIBackdropView;
 
 @interface SKUIWishlistViewController : SKUIViewController <SKUIItemListTableDelegate> {
     _UIBackdropView *_backdropView;
     <SKUIWishlistDelegate> *_delegate;
     UIBarButtonItem *_deleteButton;
     BOOL _editing;
-    SKUIEmptyContentPlaceholderView *_emptyWishlistView;
+    _UIContentUnavailableView *_emptyWishlistView;
     SKUIItemListTableViewController *_itemListViewController;
     BOOL _reloadOnNextAppear;
     SKUISyncWishlistOperation *_syncOperation;
@@ -21,15 +21,16 @@
 
 + (id)wishlistBarButtonItemWithClientContext:(id)arg1;
 
+- (void)_deleteAction:(id)arg1;
 - (void)_reloadForAccountsChanged;
 - (void)_finishSyncWithResult:(BOOL)arg1 didChange:(BOOL)arg2 error:(id)arg3;
 - (BOOL)_isEditingEnabled;
 - (void)_toggleEditAction:(id)arg1;
-- (void)_deleteAction:(id)arg1;
 - (void)_destroyEmptyWishlistView;
-- (void)_signInAction:(id)arg1;
 - (id)_emptyWishlistView;
+- (void)_signInAction:(id)arg1;
 - (void)_finishSignInWithResponse:(id)arg1 error:(id)arg2;
+- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)_wishlist;
 - (void)_deleteItemsAtIndexPaths:(id)arg1;
 - (void)_reloadNavigationBarAnimated:(BOOL)arg1;
@@ -53,7 +54,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)contentScrollView;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 
 @end

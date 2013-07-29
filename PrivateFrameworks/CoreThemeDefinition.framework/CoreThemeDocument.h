@@ -179,7 +179,6 @@
 - (id)rootPathForProductionData;
 - (id)stateWithIdentifier:(int)arg1;
 - (unsigned int)checksum;
-- (void)setUuid:(id)arg1;
 - (void)deleteObject:(id)arg1;
 - (id)managedObjectModel;
 - (id)uuid;
@@ -187,6 +186,7 @@
 - (BOOL)usesCUISystemThemeRenditionKey;
 - (unsigned int)colorSpaceID;
 - (id)init;
+- (void)setUuid:(id)arg1;
 - (void)dealloc;
 - (BOOL)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
 - (id)persistentStoreTypeForFileType:(id)arg1;

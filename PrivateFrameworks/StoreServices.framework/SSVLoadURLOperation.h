@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableData, NSObject<OS_dispatch_queue>, NSURLRequest, SSVURLDataConsumer, NSHTTPURLResponse, NSCachedURLResponse, NSRunLoop, NSURL, SSMetricsPageEvent;
+@class NSHTTPURLResponse, NSMutableData, NSObject<OS_dispatch_queue>, SSVURLDataConsumer, NSURLRequest, NSCachedURLResponse, NSRunLoop, NSMutableSet, NSURL, SSMetricsPageEvent;
 
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
     NSMutableData *_dataBuffer;
@@ -24,7 +24,9 @@
   /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
 
+    NSMutableSet *_protocolRedirectURLs;
     BOOL _recordsMetrics;
+    NSURL *_redirectURL;
     NSHTTPURLResponse *_response;
     NSRunLoop *_runLoop;
     BOOL _stopped;
@@ -52,18 +54,22 @@
 - (void)dispatchSync:(id)arg1;
 - (void)dispatchAsync:(id)arg1;
 - (void)_keepAliveTimer:(id)arg1;
-- (id)dataConsumer;
-- (void)_releaseOutputBlocks;
-- (id)outputBlock;
 - (long)_runRunLoopUntilStopped;
 - (void)_stopIfCancelled;
 - (void)setExpiredOutputBlock:(id)arg1;
-- (id)_outputForData:(id)arg1 error:(id*)arg2;
 - (void)_finishWithData:(id)arg1;
-- (void)_applyResponseToMetrics:(id)arg1;
+- (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (id)expiredOutputBlock;
+- (id)dataConsumer;
+- (void)_releaseOutputBlocks;
+- (id)outputBlock;
+- (id)_outputForData:(id)arg1 error:(id*)arg2;
+- (id)_redirectURLForStoreResponse:(id)arg1 data:(id)arg2;
+- (void)_applyResponseToMetrics:(id)arg1;
+- (void)_finishWithOutput:(id)arg1 error:(id)arg2;
+- (void)_runOnce;
 - (void)_stopRunLoop;
-- (id)_newURLRequest;
+- (id)_newURLRequestWithRedirectURL:(id)arg1;
 - (BOOL)isITunesStoreRequest;
 - (id)_initSSVLoadURLOperation;
 - (id)initWithURLRequestProperties:(id)arg1;

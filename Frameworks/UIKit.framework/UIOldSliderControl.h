@@ -112,12 +112,5 @@
 - (BOOL)cancelTouchTracking;
 - (void)setValue:(float)arg1;
 - (float)value;
-- (BOOL)_axInteractionEnabled;
-- (void)_accessibilityBumpValue:(BOOL)arg1;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityValue;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (unsigned long long)accessibilityTraits;
 
 @end

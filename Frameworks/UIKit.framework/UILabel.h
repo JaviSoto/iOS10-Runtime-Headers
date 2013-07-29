@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIFont, NSMutableAttributedString, UIColor, NSString, NSAttributedString;
+@class UIFont, _UILabelScaledMetrics, NSAttributedString, NSString, NSMutableAttributedString, NSMutableDictionary, UIColor;
 
 @interface UILabel : UIView <NSCoding> {
     struct CGSize { 
@@ -17,10 +17,10 @@
     NSMutableAttributedString *_attributedText;
     NSAttributedString *_synthesizedAttributedText;
     NSMutableDictionary *_defaultAttributes;
-    float _actualFontSize;
     float _minimumFontSize;
     int _lineSpacing;
     id _layout;
+    _UILabelScaledMetrics *_scaledMetrics;
     struct { 
         unsigned int unused1 : 3; 
         unsigned int highlighted : 1; 
@@ -78,8 +78,6 @@
 + (struct CGSize { float x1; float x2; })_legacy_adjustSizeForWebKitConstraining:(struct CGSize { float x1; float x2; })arg1 withFont:(id)arg2;
 + (id)_defaultAttributes;
 + (id)defaultFont;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -169,8 +167,8 @@
 - (float)_preferredMaxLayoutWidth;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 baselineCalculationOnly:(BOOL)arg2;
 - (void)_setShadow:(id)arg1;
-- (id)_shadow;
 - (id)highlightedTextColor;
+- (BOOL)_updateScaledMetricsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_invalidateTextSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3;
 - (void)setLetterpressStyle:(id)arg1;
@@ -180,10 +178,13 @@
 - (void)_setText:(id)arg1;
 - (void)_invalidateAsNeededForNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)currentTextColor;
-- (id)_compatabilityAttributedString;
+- (id)_compatibilityAttributedString;
 - (id)letterpressStyle;
+- (id)_shadow;
 - (void)_setSynthesizedAttributedText:(id)arg1;
 - (id)_defaultAttributes;
+- (float)_actualScaleFactor;
+- (id)_associatedScalingLabel;
 - (id)_disabledFontColor;
 - (struct CGSize { float x1; float x2; })textSize;
 - (id)_stringDrawingContext;
@@ -192,17 +193,19 @@
 - (void)setBaselineAdjustment:(int)arg1;
 - (void)_setMinimumFontSize:(float)arg1;
 - (void)setNumberOfLines:(int)arg1;
-- (id)attributedText;
 - (int)textAlignment;
 - (id)textColor;
 - (void)setTextAlignment:(int)arg1;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (id)attributedText;
 - (float)_lastLineBaseline;
+- (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)_setFont:(id)arg1;
+- (void)setAttributedText:(id)arg1;
 - (id)_synthesizedAttributedText;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setFont:(id)arg1;
@@ -211,22 +214,14 @@
 - (float)_baselineOffsetFromBottom;
 - (float)_minimumFontSize;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
-- (void)setAttributedText:(id)arg1;
 - (void)_setTextColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 - (void)setTextAttributes:(id)arg1;
 - (id)textAttributes;
-- (void)_gkUpdateWithCharacterCount:(int)arg1 numberOfCharactersAllowed:(int)arg2;
 - (BOOL)labelTextIsTruncated;
-- (id)accessibilityValue;
-- (BOOL)_accessibilityIsScannerElement;
 
 @end

@@ -84,6 +84,9 @@
 + (id)serviceWithInternalName:(id)arg1;
 + (void)setServiceClass:(Class)arg1;
 + (Class)serviceClass;
++ (id)serviceWithName:(id)arg1;
++ (id)allServicesNonBlocking;
++ (id)allServices;
 + (id)connectedServices;
 
 - (id)shortName;

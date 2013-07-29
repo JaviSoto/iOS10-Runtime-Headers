@@ -31,6 +31,8 @@
 @property(retain) NSString * phoneticName;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasNameRank:(BOOL)arg1;
 - (void)setHasIsDefault:(BOOL)arg1;
 - (void)setNameRank:(unsigned int)arg1;
@@ -48,8 +50,6 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

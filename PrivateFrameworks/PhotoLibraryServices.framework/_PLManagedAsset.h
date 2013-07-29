@@ -39,6 +39,10 @@
 @property short heightValue;
 @property(retain) NSSet * albumsBeingKeyAssetFor;
 @property(readonly) NSMutableSet * albumsBeingKeyAssetForSet;
+@property(retain) NSSet * albumsBeingSecondaryKeyAssetFor;
+@property(readonly) NSMutableSet * albumsBeingSecondaryKeyAssetForSet;
+@property(retain) NSSet * albumsBeingTertiaryKeyAssetFor;
+@property(readonly) NSMutableSet * albumsBeingTertiaryKeyAssetForSet;
 @property(retain) NSSet * sidecarFiles;
 @property(readonly) NSMutableSet * sidecarFilesSet;
 @property(retain) NSSet * albums;
@@ -47,6 +51,9 @@
 @property BOOL completeValue;
 @property(retain) NSManagedObject * additionalAttributes;
 @property(retain) NSString * creatorBundleID;
+@property(retain) NSString * editorBundleID;
+@property(retain) NSNumber * externalUsageIntent;
+@property unsigned long externalUsageIntentValue;
 @property(retain) NSString * originalAssetsUUID;
 @property(retain) NSNumber * originalHeight;
 @property short originalHeightValue;
@@ -94,6 +101,7 @@
 - (void)setOriginalOrientationValue:(short)arg1;
 - (void)setPrimitiveEmbeddedThumbnailOffsetValue:(int)arg1;
 - (int)primitiveEmbeddedThumbnailOffsetValue;
+- (unsigned long)externalUsageIntentValue;
 - (void)setOriginalWidthValue:(short)arg1;
 - (void)setOriginalHeightValue:(short)arg1;
 - (void)setPrimitiveKindSubtypeValue:(short)arg1;
@@ -103,6 +111,8 @@
 - (void)setPrimitiveEmbeddedThumbnailWidthValue:(short)arg1;
 - (short)primitiveEmbeddedThumbnailWidthValue;
 - (id)originalOrientation;
+- (void)setExternalUsageIntent:(id)arg1;
+- (id)externalUsageIntent;
 - (id)originalWidth;
 - (id)originalHeight;
 - (void)setPrimitiveHeightValue:(short)arg1;
@@ -127,14 +137,17 @@
 - (double)durationValue;
 - (void)setOriginalAssetsUUID:(id)arg1;
 - (id)originalAssetsUUID;
+- (void)setEditorBundleID:(id)arg1;
 - (short)originalHeightValue;
 - (short)originalWidthValue;
 - (id)highDynamicRangeType;
+- (id)albumsBeingTertiaryKeyAssetForSet;
+- (id)albumsBeingSecondaryKeyAssetForSet;
 - (id)albumsBeingKeyAssetForSet;
 - (void)setKindValue:(short)arg1;
 - (short)orientationValue;
-- (void)setPublicGlobalUUID:(id)arg1;
 - (void)setOriginalHash:(id)arg1;
+- (void)setPublicGlobalUUID:(id)arg1;
 - (void)setOrientationValue:(short)arg1;
 - (id)originalFilename;
 - (void)setOriginalFilename:(id)arg1;
@@ -149,6 +162,8 @@
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (short)kindValue;
+- (void)setExternalUsageIntentValue:(unsigned long)arg1;
+- (id)editorBundleID;
 - (void)awakeFromInsert;
 - (void)setOrientation:(id)arg1;
 - (void)setDuration:(id)arg1;

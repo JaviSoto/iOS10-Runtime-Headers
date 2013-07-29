@@ -11,13 +11,15 @@
 }
 
 
+- (id)initWithQueryTerm:(id)arg1 queryID:(long long)arg2;
 - (id)initWithStationDictionary:(id)arg1;
 - (id)matchDictionary;
 - (id)changeList;
 - (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithAddStationCompletionHandler:(id)arg1;
 - (id)initWithStation:(id)arg1;
 - (id)initWithLibraryTrackDictionary:(id)arg1 useArtist:(BOOL)arg2;
-- (void)startWithAddStationCompletionHandler:(id)arg1;
+- (id)initWithRadioTrackDictionary:(id)arg1 useArtist:(BOOL)arg2;
 - (id)init;
 - (void).cxx_destruct;
 

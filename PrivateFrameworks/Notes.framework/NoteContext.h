@@ -35,8 +35,8 @@
 + (BOOL)shouldLogIndexing;
 + (BOOL)databaseIsCorrupt:(id)arg1;
 
-- (void)enableChangeLogging:(BOOL)arg1;
 - (BOOL)deleteAccount:(id)arg1;
+- (void)enableChangeLogging:(BOOL)arg1;
 - (BOOL)isIndexing;
 - (BOOL)deleteIndexFile;
 - (BOOL)noteIsSafeToAccess:(id)arg1;

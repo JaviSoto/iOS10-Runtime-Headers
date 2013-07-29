@@ -41,11 +41,11 @@
 - (id)assetUUIDs;
 - (id)albumFromDataInManagedObjectContext:(id)arg1;
 - (id)initWithPersistedDataAtPath:(id)arg1;
-- (void)setUuid:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)uuid;
 - (id)init;
+- (void)setUuid:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)kind;

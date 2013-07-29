@@ -32,13 +32,13 @@
 @property(readonly) NSArray * thumbnailImages;
 
 
+- (id)tellAFriendSubject;
 - (int)numberOfUserRatings;
 - (id)viewReviewsURL;
 - (id)sendGiftURL;
 - (id)tweetURL;
 - (id)tweetInitialText;
 - (id)thumbnailImages;
-- (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
 - (id)relatedItemsForRelationType:(id)arg1;
@@ -101,8 +101,8 @@
 - (BOOL)isRestricted;
 - (void)dealloc;
 - (id)description;
+- (id)bundleIdentifier;
 - (id)itemTitle;
 - (id)valueForProperty:(id)arg1;
-- (id)bundleIdentifier;
 
 @end

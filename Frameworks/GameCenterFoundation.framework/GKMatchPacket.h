@@ -30,7 +30,6 @@
 - (void)setTotalLength:(unsigned int)arg1;
 - (void)setPacketType:(unsigned char)arg1;
 - (unsigned short)checksum;
-- (void)setData:(id)arg1;
 - (unsigned int)sequenceNumber;
 - (void)setValid:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
@@ -39,6 +38,7 @@
 - (id)data;
 - (void)dealloc;
 - (BOOL)valid;
+- (void)setData:(id)arg1;
 - (void)setVersion:(unsigned char)arg1;
 - (unsigned char)version;
 

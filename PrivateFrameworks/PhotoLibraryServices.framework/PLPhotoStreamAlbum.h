@@ -14,10 +14,8 @@
 + (id)photoStreamAlbumWithStreamID:(id)arg1 inPhotoLibrary:(id)arg2 createIfNeeded:(BOOL)arg3;
 + (id)entityName;
 
-- (void)_updateKeyAssetIfNeeded;
 - (void)enforceImageLimitIfNecessary;
 - (void)addAssetOrderedByDataTaken:(id)arg1;
-- (BOOL)isOwnPhotoStreamAlbum;
 - (BOOL)shouldDeleteWhenEmpty;
 - (id)personID;
 - (void)setPersonID:(id)arg1;

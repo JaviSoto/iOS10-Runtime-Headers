@@ -24,11 +24,15 @@
 - (int)style;
 - (void)dealloc;
 - (float)_effectiveScrollViewHeight;
-- (void)_tick;
+- (float)_percentageShowing;
 - (float)currentPopStiffness;
 - (void)_reveal;
 - (id)_effectiveTintColorWithAlpha:(float)arg1;
+- (void)_tick;
+- (void)_setSpunAppearance;
+- (void)_cleanUpAfterRevealing;
 - (void)_goAway;
+- (void)_tickDueToProgrammaticRefresh;
 - (void)_spin;
 - (void)_resetToRevealingState;
 - (void)_updateTimeOffsetOfRelevantLayers;

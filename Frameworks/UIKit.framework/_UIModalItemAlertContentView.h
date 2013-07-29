@@ -11,21 +11,18 @@
     UIView *_2ButtonsSeparators;
     UIView *_tableViewTopSeparator;
     UIScrollView *_labelsScrollView;
-    BOOL _moveFirstButtonToBottom;
-    BOOL _use2TableViews;
+    BOOL _itemWantsVerticalButtons;
+    BOOL _itemNeedsTwoTableViews;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layout;
 - (void)_prepareViewIfNeeded;
+- (void)setEnableFirstOtherButton:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)_accessibilityPerformEscapeWithTable:(id)arg1;
 
 @end

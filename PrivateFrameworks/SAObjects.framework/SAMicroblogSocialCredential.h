@@ -18,11 +18,11 @@
 - (void)setAccessToken:(id)arg1;
 - (void)setTokenSecret:(id)arg1;
 - (id)tokenSecret;
-- (void)setSocialNetwork:(id)arg1;
-- (id)socialNetwork;
 - (void)setPersonalizationPermission:(id)arg1;
 - (id)personalizationPermission;
 - (id)accessToken;
+- (void)setSocialNetwork:(id)arg1;
+- (id)socialNetwork;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

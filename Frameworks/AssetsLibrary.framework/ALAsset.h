@@ -13,6 +13,8 @@
 @property(retain) ALAssetPrivate * internal;
 
 
+- (BOOL)isDeletable;
+- (void)setExternalUsageIntent:(unsigned int)arg1;
 - (void)setVideoAtPath:(id)arg1 completionBlock:(id)arg2;
 - (void)setImageData:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)writeModifiedVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;

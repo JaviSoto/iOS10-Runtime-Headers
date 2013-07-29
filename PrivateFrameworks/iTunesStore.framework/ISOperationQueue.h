@@ -23,8 +23,8 @@
 - (id)name;
 - (void)dealloc;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
-- (int)operationCount;
 - (int)maxConcurrentOperationCount;
+- (int)operationCount;
 - (void)setName:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

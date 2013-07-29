@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UINavigationItem, UIColor, <UISearchDisplayDelegate>, UILabel, UIScrollView, UITableView, UIButton, UISearchDisplayControllerContainerView, UIView, UIViewController, NSArray, <UITableViewDelegate>, UIPopoverController, _UINavigationControllerPalette, NSString, <UITableViewDataSource>, UISearchBar;
+@class UINavigationItem, UIColor, <UISearchDisplayDelegate>, _UISearchDisplayControllerDidScrollDelegate, UILabel, UIScrollView, UITableView, UIButton, UISearchDisplayControllerContainerView, UIView, UIViewController, NSArray, <UITableViewDelegate>, UIPopoverController, _UINavigationControllerPalette, NSString, <UITableViewDataSource>, UISearchBar;
 
 @interface UISearchDisplayController : NSObject <_UIScrollNotification> {
     UIViewController *_viewController;
@@ -46,6 +46,7 @@
     UIColor *_dimmingOverlayColor;
     UIView *_tableViewBackgroundHeaderView;
     int _unactivatedBarPosition;
+    _UISearchDisplayControllerDidScrollDelegate *_didScrollDelegate;
     struct { 
         unsigned int visible : 1; 
         unsigned int animating : 1; 
@@ -91,8 +92,6 @@
 @property float _activationGapHeight;
 @property float _additionalNonCollapsingHeightAboveSearchBar;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)isActive;
 - (void)windowDidRotate:(id)arg1;
@@ -160,6 +159,7 @@
 - (BOOL)_isSearchBarInBar;
 - (float)_additionalNonCollapsingHeightAboveSearchBar;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tableViewContentInsets;
+- (float)_statusBarHeight;
 - (BOOL)_shouldAccountForStatusBarHeight;
 - (void)_popoverClearButtonPressed:(id)arg1;
 - (id)searchResultsTitle;

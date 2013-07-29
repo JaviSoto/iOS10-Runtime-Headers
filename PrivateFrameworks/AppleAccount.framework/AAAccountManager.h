@@ -14,16 +14,16 @@
 
 - (id)accountWithUsername:(id)arg1;
 - (id)accountWithPersonID:(id)arg1;
-- (void)addAccount:(id)arg1;
 - (void)removeAccount:(id)arg1;
 - (void)saveAllAccounts;
 - (void)_removeAppleIDCertsForUsername:(id)arg1;
 - (void)updateAccount:(id)arg1;
 - (id)accountsEnabledForDataclass:(id)arg1;
-- (id)_accountStore;
 - (void)_beginObservingAccountStoreDidChangeNotification;
 - (void)_stopObservingAccountStoreDidChangeNotification;
 - (id)primaryAccount;
+- (id)_accountStore;
+- (void)addAccount:(id)arg1;
 - (id)accounts;
 - (id)accountWithIdentifier:(id)arg1;
 - (void)reloadAccounts;

@@ -15,13 +15,13 @@
 @property(copy) NSString * title;
 
 
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (id)message;
 - (void).cxx_destruct;
+- (void)setMessage:(id)arg1;
 - (void)layoutSubviews;
 
 @end

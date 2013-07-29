@@ -11,6 +11,7 @@
 @property id changeListener;
 @property(retain) AVAudioDeviceList * deviceList;
 
++ (void)initializeAudioSessionQ;
 + (id)defaultOutputDevice;
 + (id)defaultInputDevice;
 + (BOOL)setInputDevice:(id)arg1;

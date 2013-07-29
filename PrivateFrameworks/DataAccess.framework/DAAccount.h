@@ -15,6 +15,7 @@
     struct __CFDictionary { } *_consumers;
     struct __CFURLStorageSession { } *_storageSession;
     DATaskManager *_taskManager;
+    NSString *_clientToken;
     BOOL _shouldFailAllTasks;
     BOOL _isValidating;
     NSArray *_appIdsForPasswordPrompt;
@@ -43,6 +44,7 @@
 @property(readonly) NSString * scheme;
 @property(copy) NSURL * principalURL;
 @property(copy) NSString * principalPath;
+@property(readonly) NSString * clientToken;
 @property(copy) NSString * emailAddress;
 @property(copy) NSArray * emailAddresses;
 @property BOOL shouldPromptForPassword;
@@ -52,7 +54,7 @@
 @property BOOL shouldUseOpportunisticSockets;
 @property BOOL wasUserInitiated;
 @property BOOL isValidating;
-@property(readonly) DAStatusReport * statusReport;
+@property(retain) DAStatusReport * statusReport;
 @property(retain) NSMutableDictionary * dataclassPropertyURLsByDataclass;
 
 + (void)reacquireClientRestrictions:(id)arg1;
@@ -107,7 +109,6 @@
 - (void)setHaveWarnedAboutCert:(id)arg1 forHost:(id)arg2;
 - (BOOL)haveWarnedAboutCert:(id)arg1 forHost:(id)arg2;
 - (BOOL)isChildAccount;
-- (void)cleanupAccountFiles;
 - (void)setExceptions:(struct __CFData { }*)arg1 forDigest:(id)arg2;
 - (struct __CFData { }*)exceptionsForDigest:(id)arg1;
 - (id)addUsernameToURL:(id)arg1;
@@ -116,6 +117,7 @@
 - (void)stopMonitoringFolders;
 - (void)stopMonitoringFoldersWithIDs:(id)arg1;
 - (BOOL)monitorFolderWithID:(id)arg1;
+- (void)accountDidChangeFromOldAccountInfo:(id)arg1;
 - (BOOL)shouldAutodiscoverAccountProperties;
 - (void)setShouldDoInitialAutodiscovery:(BOOL)arg1;
 - (BOOL)autodiscoverAccountConfigurationWithConsumer:(id)arg1;
@@ -149,6 +151,7 @@
 - (void)dropAssertionsAndRenewCredentialsWithHandler:(id)arg1;
 - (BOOL)wasUserInitiated;
 - (BOOL)isValidating;
+- (void)setStatusReport:(id)arg1;
 - (void)saveAccountProperties;
 - (id)_exceptionsDict;
 - (void)saveAccountPropertiesWithCompletionHandler:(id)arg1;
@@ -156,18 +159,22 @@
 - (BOOL)_isIdentityManagedByProfile;
 - (BOOL)monitorFoldersWithIDs:(id)arg1;
 - (id)onBehalfOfBundleIdentifier;
+- (void)cleanupAccountFiles;
+- (void)removeDBSyncData;
+- (BOOL)accountHasSignificantPropertyChangesFromOldAccountInfo:(id)arg1;
+- (BOOL)shouldRemoveDBSyncDataOnAccountChange;
 - (BOOL)shouldDoInitialAutodiscovery;
 - (void)setIsValidating:(BOOL)arg1;
 - (void)setUseSSL:(BOOL)arg1;
 - (id)urlFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)dataclassPropertyURLsByDataclass;
-- (id)backingAccountInfo;
 - (id)passwordWithExpected:(BOOL)arg1;
 - (void)setAccountBoolProperty:(BOOL)arg1 forKey:(id)arg2;
 - (BOOL)accountBoolPropertyForKey:(id)arg1;
 - (id)stateString;
 - (id)statusReport;
 - (BOOL)enabledForDADataclass:(int)arg1;
+- (id)backingAccountInfo;
 - (void)setAccountIntProperty:(int)arg1 forKey:(id)arg2;
 - (int)accountIntPropertyForKey:(id)arg1;
 - (id)initWithBackingAccountInfo:(id)arg1;
@@ -191,6 +198,8 @@
 - (id)inboxFolder;
 - (id)oauth2Token;
 - (void)setPrincipalURL:(id)arg1;
+- (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
+- (id)clientToken;
 - (id)customConnectionProperties;
 - (BOOL)shouldFailAllTasks;
 - (id)identityPersist;
@@ -200,13 +209,12 @@
 - (id)oauthInfoProvider;
 - (id)additionalHeaderValues;
 - (id)taskManager;
+- (id)principalURL;
+- (BOOL)useSSL;
 - (void)shutdown;
 - (id)emailAddresses;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setHost:(id)arg1;
-- (id)accountPropertyForKey:(id)arg1;
-- (id)principalURL;
-- (BOOL)useSSL;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)tearDown;
@@ -220,6 +228,7 @@
 - (id)accountID;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
+- (id)accountPropertyForKey:(id)arg1;
 - (void)setAccountDescription:(id)arg1;
 - (void)reload;
 - (BOOL)isEnabledForDataclass:(id)arg1;

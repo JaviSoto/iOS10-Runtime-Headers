@@ -14,10 +14,10 @@
 
 + (id)secureCodedPropertyKeys;
 
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (id)date;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 - (void)setDate:(id)arg1;
 
 @end

@@ -17,6 +17,7 @@
     NSString *_subtitle;
     NSString *_timeZone;
     NSString *_title;
+    NSString *_displayName;
 }
 
 @property(getter=isRead) BOOL read;
@@ -31,6 +32,7 @@
 @property(readonly) NSString * subtitle;
 @property(readonly) NSString * timeZone;
 @property(readonly) NSString * title;
+@property(copy) NSString * displayName;
 
 + (BOOL)supportsSecureCoding;
 
@@ -43,6 +45,8 @@
 - (BOOL)isAllDay;
 - (id)endDate;
 - (id)title;
+- (id)displayName;
+- (void)setDisplayName:(id)arg1;
 - (BOOL)isRead;
 - (id)message;
 - (id)timeZone;

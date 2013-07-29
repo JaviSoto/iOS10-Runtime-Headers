@@ -30,18 +30,19 @@
 @property(copy) NSArray * tracksToRemove;
 
 
+- (void)setTracksToRemove:(id)arg1;
 - (id)tracksToRemove;
+- (void)setReplaceExistingTracks:(BOOL)arg1;
 - (BOOL)replaceExistingTracks;
 - (unsigned int)numberOfTracks;
 - (id)storeIdentifiersBlock;
+- (void)startWithGetTracksCompletionHandler:(id)arg1;
 - (BOOL)includeCleanTracksOnly;
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
 - (void)setNumberOfTracks:(unsigned int)arg1;
 - (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
 - (void)startWithCompletionHandler:(id)arg1;
 - (void)setStoreIdentifiersBlock:(id)arg1;
-- (void)setReplaceExistingTracks:(BOOL)arg1;
-- (void)setTracksToRemove:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (void)cancel;

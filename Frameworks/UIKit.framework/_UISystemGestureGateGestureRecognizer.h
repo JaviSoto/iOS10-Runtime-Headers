@@ -4,13 +4,19 @@
 
 @interface _UISystemGestureGateGestureRecognizer : UIGestureRecognizer  {
     unsigned int _systemGesturesRecognitionPossible : 1;
+    unsigned int _waitingForSystemGestureStateNotification : 1;
+    double _lastTouchTime;
 }
 
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (void)setEnabled:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (BOOL)_shouldReceiveTouch:(id)arg1;
+- (int)_gateGestureType;
+- (id)_gateGestureTypeString;
+- (void)_resetGestureRecognizer;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)_systemGestureStateChanged:(id)arg1;

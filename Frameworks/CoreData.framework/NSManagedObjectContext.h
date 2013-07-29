@@ -187,6 +187,7 @@
 - (id)objectRegisteredForID:(id)arg1;
 - (void)_didSaveChanges;
 - (BOOL)_handleOptimisticLockingError:(id)arg1 withError:(id*)arg2;
+- (void)_thereIsNoSadnessLikeTheDeathOfOptimism;
 - (id)mergePolicy;
 - (void)_informParentStore:(id)arg1 ofInterestInObjects:(id)arg2;
 - (id)_newSaveRequestForCurrentState;

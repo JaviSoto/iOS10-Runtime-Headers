@@ -33,7 +33,6 @@
 - (id)apsEnvironmentName;
 - (id)bagURL;
 - (void)forceBagLoad;
-- (void)_bagFinishedLoading;
 - (id)initWithBagType:(int)arg1;
 - (BOOL)isLoading;
 - (id)objectForKey:(id)arg1;

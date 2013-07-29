@@ -16,6 +16,7 @@
 @property(copy) NSDictionary * typingAttributesBeforeInsertion;
 
 
+- (void)dealloc;
 - (void)setTypingAttributesBeforeInsertion:(id)arg1;
 - (id)typingAttributesBeforeInsertion;
 - (void)setAttachmentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

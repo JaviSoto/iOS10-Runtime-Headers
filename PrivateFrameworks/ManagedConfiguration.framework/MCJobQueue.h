@@ -29,7 +29,7 @@
 @property(copy) id executionQueueAbortCompletionBlock;
 
 
-- (id)observer;
+- (void)enqueueJob:(id)arg1;
 - (void)setJobGroup:(id)arg1;
 - (void)setJobQueue:(id)arg1;
 - (void)setEventQueue:(id)arg1;
@@ -38,15 +38,15 @@
 - (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
 - (void)jobDidFinish;
 - (BOOL)hasJobsEnqueued;
-- (void)enqueueJob:(id)arg1;
 - (void)setExecutionQueueAbortCompletionBlock:(id)arg1;
 - (id)executionQueueAbortCompletionBlock;
-- (id)executionQueue;
 - (id)jobQueue;
 - (id)jobGroup;
 - (id)eventQueue;
 - (id)init;
 - (void).cxx_destruct;
+- (id)observer;
+- (id)executionQueue;
 - (void)setObserver:(id)arg1;
 
 @end

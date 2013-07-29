@@ -57,6 +57,7 @@
 - (id)initWithAccountIdentifier:(id)arg1;
 - (BOOL)shouldFollowAccountButtons;
 - (id)preferredITunesStoreClient;
+- (int)promptStyle;
 - (id)userAgentComponents;
 - (id)signupRequestParameters;
 - (BOOL)shouldSuppressDialogs;
@@ -81,7 +82,6 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (int)tokenType;
-- (int)promptStyle;
 - (id)initWithAccount:(id)arg1;
 - (id)init;
 - (void)dealloc;

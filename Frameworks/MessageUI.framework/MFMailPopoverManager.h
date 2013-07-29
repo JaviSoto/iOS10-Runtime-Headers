@@ -88,9 +88,9 @@
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 - (id)popoverController;
+- (void)setPopoverController:(id)arg1;
 - (void)didRotate;
 - (void)willRotate;
-- (void)setPopoverController:(id)arg1;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;

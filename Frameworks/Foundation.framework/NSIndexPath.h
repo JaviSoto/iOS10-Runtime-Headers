@@ -24,8 +24,8 @@
 + (id)indexPathForItem:(int)arg1 inSection:(int)arg2;
 + (id)indexPathForItem:(int)arg1 inGroup:(int)arg2;
 + (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
++ (id)pu_indexPathsForItems:(id)arg1 inSection:(int)arg2;
 
-- (id)indexPathByRemovingLastIndex;
 - (id)init;
 - (unsigned int)length;
 - (int)compare:(id)arg1;
@@ -35,6 +35,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)indexPathByAddingIndex:(unsigned int)arg1;
+- (id)indexPathByRemovingLastIndex;
 - (void)getIndexes:(unsigned int*)arg1;
 - (id)initWithIndex:(unsigned int)arg1;
 - (unsigned int)indexAtPosition:(unsigned int)arg1;
@@ -52,5 +53,10 @@
 - (unsigned int)gridColumn;
 - (unsigned int)gridRow;
 - (unsigned int)gridSection;
+- (id)pu_alteredIndexPathAfterMovingItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (id)pu_alteredIndexPathAfterDeletingItemsAtIndexPaths:(id)arg1;
+- (id)pu_alteredIndexPathAfterInsertingItemsAtIndexPaths:(id)arg1;
+- (id)pu_alteredIndexPathAfterDeletingItemAtIndexPath:(id)arg1;
+- (id)pu_alteredIndexPathAfterInsertingItemAtIndexPath:(id)arg1;
 
 @end

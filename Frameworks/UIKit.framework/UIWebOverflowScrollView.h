@@ -28,12 +28,12 @@
 - (void)prepareForRemoval;
 - (id)webBrowserView;
 - (void)fixUpViewAfterInsertion;
-- (void)setNode:(id)arg1;
 - (void)setBeingRemoved:(BOOL)arg1;
 - (void)_replaceLayer:(id)arg1;
 - (id)overflowContentView;
 - (void)setOverflowContentView:(id)arg1;
 - (id)initWithLayer:(id)arg1 node:(id)arg2 webBrowserView:(id)arg3;
+- (void)setNode:(id)arg1;
 - (id)node;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 

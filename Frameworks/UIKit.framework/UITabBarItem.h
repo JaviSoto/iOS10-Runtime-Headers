@@ -50,9 +50,6 @@
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 
 + (id)_appearanceBlindViewClasses;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -108,9 +105,9 @@
 - (id)_tintColor;
 - (void)_setTintColor:(id)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_updateView;
 - (int)systemItem;
 - (BOOL)isSystemItem;
+- (void)_updateView;
 - (int)tag;
 - (void)setTag:(int)arg1;
 - (void)setView:(id)arg1;

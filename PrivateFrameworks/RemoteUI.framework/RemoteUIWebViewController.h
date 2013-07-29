@@ -8,10 +8,12 @@
     UIWebView *_webView;
     UIToolbar *_toolbar;
     id _delegate;
+    BOOL _scalesPageToFit;
 }
 
 @property(readonly) UIToolbar * toolbar;
 @property(readonly) UIWebView * webView;
+@property BOOL scalesPageToFit;
 
 
 - (void)donePressed:(id)arg1;
@@ -19,6 +21,8 @@
 - (id)webView;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)setScalesPageToFit:(BOOL)arg1;
+- (BOOL)scalesPageToFit;
 - (id)toolbar;
 - (void)loadView;
 - (void)viewDidLayoutSubviews;

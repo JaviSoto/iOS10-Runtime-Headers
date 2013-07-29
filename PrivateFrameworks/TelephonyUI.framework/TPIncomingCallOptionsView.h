@@ -42,8 +42,6 @@
 @property BOOL optionsShown;
 @property(readonly) BOOL hasGrabberImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)usesLockBar;
 - (void)scrollViewDidEndScrollingWithShownPixels:(float)arg1;
@@ -51,25 +49,25 @@
 - (void)scrollViewDidShowPixels:(float)arg1;
 - (id)displayedGrabberBar;
 - (id)lockBar;
+- (void)setOptionsShown:(BOOL)arg1;
 - (void)setUsesLockBar:(BOOL)arg1;
 - (void)setLockBarLabel:(id)arg1;
 - (BOOL)hasGrabberImage;
+- (void)setIncomingOptionsDelegate:(id)arg1;
 - (id)initForIncomingFaceTimeWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)optionsHeight;
 - (BOOL)optionsShown;
 - (id)incomingOptionsDelegate;
+- (void)setGrabberImage:(id)arg1;
 - (id)_initForType:(int)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)recommendedBackgroundColor;
 - (void)_singleButtonClicked;
 - (void)_accept;
 - (void)_decline;
-- (void)setGrabberImage:(id)arg1;
 - (void)lockBarUnlocked:(id)arg1;
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setWellAlpha:(float)arg1;
 - (id)initForIncomingCallWaitingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIncomingOptionsDelegate:(id)arg1;
-- (void)setOptionsShown:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)scrolling;
 - (void)dealloc;
@@ -83,10 +81,5 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)start;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityContainerElements;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)_axClearDelegate:(id)arg1;
-- (void)_axClearDelegateClearer;
 
 @end

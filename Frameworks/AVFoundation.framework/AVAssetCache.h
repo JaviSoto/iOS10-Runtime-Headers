@@ -15,10 +15,10 @@
 
 + (id)assetCacheWithURL:(id)arg1;
 
-- (long long)sizeOfEntryForKey:(id)arg1;
-- (void)removeEntryForKey:(id)arg1;
-- (long long)currentSize;
 - (void)setMaxEntrySize:(long long)arg1;
+- (void)removeEntryForKey:(id)arg1;
+- (long long)sizeOfEntryForKey:(id)arg1;
+- (long long)currentSize;
 - (long long)maxEntrySize;
 - (id)allKeys;
 - (id)initWithURL:(id)arg1;

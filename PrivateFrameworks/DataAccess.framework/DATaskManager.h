@@ -75,9 +75,9 @@
 - (id)stateString;
 - (id)deviceType;
 - (id)identityPersist;
+- (BOOL)useSSL;
 - (void)shutdown;
 - (id)accountPersistentUUID;
-- (BOOL)useSSL;
 - (id)userAgent;
 - (id)accountID;
 - (id)initWithAccount:(id)arg1;

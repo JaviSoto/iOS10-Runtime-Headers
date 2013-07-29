@@ -34,8 +34,11 @@
 + (id)sharedManager;
 
 - (void)setBackgroundTaskEnd:(id)arg1;
-- (id)backgroundTaskEnd;
 - (void)setBackgroundTaskStart:(id)arg1;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
+- (id)backgroundTaskEnd;
 - (id)backgroundTaskStart;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
@@ -43,8 +46,10 @@
 - (void)_startBackgroundTaskForRequester:(id)arg1;
 - (id)_usageURL;
 - (void)_sendUsageToServer;
-- (void)_scheduleUpdateTimer;
+- (void)_prepareRequest;
 - (BOOL)shouldIgnoreCollectionForCountry;
+- (void)_scheduleUpdateTimer;
+- (void)_cleanupTimer;
 - (void)_cleanupRequester;
 - (void)_applicationActivating;
 - (void)_applicationDeactivating;
@@ -52,10 +57,6 @@
 - (void)_updateTimerFired:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
-- (void)_cleanupTimer;
 - (id)init;
 - (void)dealloc;
 

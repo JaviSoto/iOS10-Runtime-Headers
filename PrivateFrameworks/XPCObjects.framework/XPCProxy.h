@@ -11,6 +11,7 @@
 @interface XPCProxy : NSObject <NSCopying> {
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     <XPCProxyTarget> *_target;
     Class _remoteClass;
     Protocol *_remoteProtocol;

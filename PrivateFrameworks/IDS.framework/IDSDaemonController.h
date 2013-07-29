@@ -92,7 +92,7 @@
 - (BOOL)remoteObjectExists;
 - (BOOL)localObjectExists;
 - (BOOL)isConnecting;
-- (BOOL)isConnected;
+- (id)localObject;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationWillEnterForeground;
@@ -104,5 +104,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)listener;
+- (BOOL)isConnected;
 
 @end

@@ -107,7 +107,6 @@
 - (void)sendABInformationToDaemon;
 - (BOOL)isConnecting;
 - (void)blockUntilConnected;
-- (BOOL)isConnected;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationWillEnterForeground;
@@ -120,5 +119,6 @@
 - (id)delegate;
 - (unsigned int)_capabilities;
 - (id)listener;
+- (BOOL)isConnected;
 
 @end

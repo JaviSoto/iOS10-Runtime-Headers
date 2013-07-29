@@ -2,10 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBGradient;
+@class NSString, UIKBGradient;
 
 @interface UIKBEdgeEffect : NSObject <UIKBRenderEffect> {
-    struct CGColor { } *_color;
+    NSString *_colorName;
     unsigned int _edges;
     float _inset;
     float _weight;
@@ -18,13 +18,12 @@
 @property(readonly) BOOL isValid;
 @property(readonly) BOOL renderUnder;
 @property(readonly) SEL renderSelector;
-@property(readonly) struct CGColor { }* color;
 @property float weight;
 
 + (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 
-- (struct CGColor { }*)color;
 - (id)gradient;
+- (struct CGColor { }*)CGColor;
 - (BOOL)isValid;
 - (void)dealloc;
 - (id)description;

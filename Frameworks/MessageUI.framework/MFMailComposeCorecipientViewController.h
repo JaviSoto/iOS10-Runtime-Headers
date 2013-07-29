@@ -22,8 +22,8 @@
 - (id)initWithRecentComposeRecipients:(id)arg1;
 - (id)recipients;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)loadView;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;

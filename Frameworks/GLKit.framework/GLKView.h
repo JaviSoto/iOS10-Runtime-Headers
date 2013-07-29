@@ -55,10 +55,10 @@
 
 + (Class)layerClass;
 
-- (void)setDrawRectIMP:(int (*)())arg1;
-- (int (*)())drawRectIMP;
 - (int)drawableHeight;
 - (int)drawableWidth;
+- (void)setDrawRectIMP:(int (*)())arg1;
+- (int (*)())drawRectIMP;
 - (void)setDepthStencilRenderbuffer:(unsigned int)arg1;
 - (unsigned int)depthStencilRenderbuffer;
 - (void)setStencilRenderbuffer:(unsigned int)arg1;

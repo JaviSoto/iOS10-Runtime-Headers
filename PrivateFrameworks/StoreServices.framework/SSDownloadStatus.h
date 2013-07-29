@@ -32,7 +32,6 @@
 - (void)setOperationProgress:(id)arg1;
 - (void)setContentRestricted:(BOOL)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (BOOL)isPaused;
 - (BOOL)isFailed;
 - (BOOL)isPausable;
 - (void)setPausable:(BOOL)arg1;
@@ -42,5 +41,6 @@
 - (id)error;
 - (void)setPaused:(BOOL)arg1;
 - (float)percentComplete;
+- (BOOL)isPaused;
 
 @end

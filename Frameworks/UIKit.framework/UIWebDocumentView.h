@@ -180,12 +180,16 @@
     BOOL _suppressesIncrementalRendering;
     unsigned int _renderTreeSize;
     unsigned int _renderTreeSizeThresholdForReset;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _fixedPositionContentInset;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _exposedScrollViewRect;
 }
 
 @property(getter=_acceptsFirstResponder,setter=_setAcceptsFirstResponder:) BOOL _acceptsFirstResponder;
@@ -197,7 +201,7 @@
 @property BOOL sizeUpdatesSuspended;
 @property BOOL mediaPlaybackAllowsAirPlay;
 @property BOOL suppressesIncrementalRendering;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fixedPositionContentInset;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } exposedScrollViewRect;
 @property(readonly) unsigned int renderTreeSize;
 @property unsigned int renderTreeSizeThresholdForReset;
 @property(retain) DOMRange * rangeToRestoreAfterDictation;
@@ -252,15 +256,11 @@
 + (double)getTimestamp;
 + (id)standardTextViewPreferences;
 + (Class)layerClass;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
-- (void)setInteractionDelegate:(id)arg1;
 - (BOOL)isEditing;
 - (BOOL)isEditable;
 - (void)setBaseWritingDirection:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })exposedScrollViewRect;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -374,6 +374,7 @@
 - (void)setAllowsLinkSheet:(BOOL)arg1;
 - (void)setAllowsImageSheet:(BOOL)arg1;
 - (id)interactionDelegate;
+- (void)setInteractionDelegate:(id)arg1;
 - (void)highlightApproximateNodeAndDisplayInfoSheet;
 - (BOOL)gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
 - (id)_targetURL;
@@ -408,7 +409,6 @@
 - (id)_doubleTapGestureRecognizer;
 - (unsigned int)renderTreeSizeThresholdForReset;
 - (unsigned int)renderTreeSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fixedPositionContentInset;
 - (void)setSuppressesIncrementalRendering:(BOOL)arg1;
 - (void)setRenderTreeSizeThresholdForReset:(unsigned int)arg1;
 - (int)documentType;
@@ -431,6 +431,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autoscrollContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autoscrollDragFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
 - (id)webSelectionAssistant;
 - (BOOL)hasPlugInSubviews;
 - (void)setPaused:(BOOL)arg1;
@@ -460,7 +461,6 @@
 - (void)willRotateInteractionSheet;
 - (void)redrawScaledDocument;
 - (void)_renderUnbufferedInContext:(struct CGContext { }*)arg1;
-- (void)setFixedPositionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)_isSubviewOfPlugInView:(id)arg1;
 - (void)setIgnoresKeyEvents:(BOOL)arg1;
 - (void)setSmoothsFonts:(BOOL)arg1;
@@ -554,6 +554,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_layoutRectForFixedPositionObjects;
 - (float)_zoomedDocumentScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_documentViewVisibleRect;
+- (void)setExposedScrollViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateFixedPositionContent;
 - (void)_cancelLongPressGestureRecognizer;
 - (void)_resetForNewPage;
@@ -571,6 +572,7 @@
 - (void)_selectionLayoutChangedByScrolling:(BOOL)arg1;
 - (void)resetTilingAfterLoadComplete;
 - (void)setTilingArea:(int)arg1;
+- (void)_updateFixedPositioningObjectsLayoutDuringScroll;
 - (void)sendScrollEventIfNecessaryWasUserScroll:(BOOL)arg1;
 - (BOOL)isClassicViewportMode;
 - (void)_setDocumentType:(int)arg1;
@@ -658,7 +660,6 @@
 - (void)setSelectionGranularity:(int)arg1;
 - (int)selectionGranularity;
 - (void)selectionChanged;
-- (id)metadataDictionariesForDictationResults;
 - (BOOL)willInteractWithLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isInInteraction;
 - (BOOL)startActionSheet;
@@ -708,6 +709,7 @@
 - (int)selectionAffinity;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
+- (id)metadataDictionariesForDictationResults;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (id)insertDictationResultPlaceholder;
@@ -757,6 +759,7 @@
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (id)selectionView;
 - (id)interactionAssistant;
+- (void)setText:(id)arg1;
 - (void)_setFont:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
@@ -784,39 +787,8 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (void)_setTextColor:(id)arg1;
-- (struct __CFDictionary { }*)_axPluginViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)shouldGroupAccessibilityChildren;
-- (int)accessibilityElementCount;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)indexOfAccessibilityElement:(id)arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityResponderElement;
-- (BOOL)_accessibilityIsFirstElementForFocus;
-- (void)_axZoomToCenterWithScale:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2;
-- (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
-- (id)_accessibilityDocumentView;
-- (id)_accessibilityRootObject;
-- (id)_accessibilitySupplementaryHeaderViews;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityScrollStatus;
-- (BOOL)_accessibilityIsScrollAncestor;
-- (BOOL)_accessibilityScrollingEnabled;
-- (BOOL)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
-- (void)accessibilityScrollLeftPage;
-- (void)accessibilityScrollRightPage;
-- (void)accessibilityScrollUpPage;
-- (void)accessibilityScrollDownPage;
-- (id)_accessibilityAttributedValueForRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1;
-- (id)_accessibilityDataDetectorScheme:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_accessibilityHasTextOperations;
-- (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)mf_URLsForAttachmentsInRange:(id)arg1;
 
 @end

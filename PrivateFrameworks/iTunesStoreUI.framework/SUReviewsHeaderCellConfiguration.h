@@ -6,8 +6,6 @@
 }
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
@@ -16,6 +14,5 @@
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
-- (id)accessibilityLabel;
 
 @end

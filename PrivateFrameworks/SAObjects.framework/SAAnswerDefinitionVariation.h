@@ -13,11 +13,11 @@
 + (id)definitionVariationWithDictionary:(id)arg1 context:(id)arg2;
 + (id)definitionVariation;
 
-- (void)setVariation:(id)arg1;
-- (id)variation;
 - (void)setExamples:(id)arg1;
 - (id)examples;
 - (id)encodedClassName;
+- (id)variation;
+- (void)setVariation:(id)arg1;
 - (id)groupIdentifier;
 
 @end

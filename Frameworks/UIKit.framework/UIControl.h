@@ -39,18 +39,14 @@
 @property(getter=isTracking,readonly) BOOL tracking;
 @property(getter=isTouchInside,readonly) BOOL touchInside;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2;
-- (id)allTargets;
-- (void)removeTarget:(id)arg1 forEvents:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)dealloc;
 - (unsigned int)state;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
+- (void)removeTarget:(id)arg1 forEvents:(int)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(int)arg3;
 - (BOOL)hasOneOrMoreTargets;
 - (void)setRequiresDisplayOnTracking:(BOOL)arg1;
@@ -63,7 +59,9 @@
 - (BOOL)_hasActionForEventMask:(int)arg1;
 - (float)_highlightCornerRadius;
 - (void)sendActionsForControlEvents:(unsigned int)arg1;
+- (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned int)arg2;
 - (unsigned int)allControlEvents;
+- (id)allTargets;
 - (int)contentHorizontalAlignment;
 - (int)contentVerticalAlignment;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
@@ -104,10 +102,5 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityActivate;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityObscuredScreenAllowedViews;
 
 @end

@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSString * abbreviatedName;
+@property BOOL alwaysUseAthleteFullName;
 @property(copy) NSArray * athletes;
 @property(copy) NSString * awayLosses;
 @property(copy) NSString * awayWins;
@@ -90,6 +91,8 @@
 - (id)awayWins;
 - (void)setAwayLosses:(id)arg1;
 - (id)awayLosses;
+- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
+- (BOOL)alwaysUseAthleteFullName;
 - (void)setAbbreviatedName:(id)arg1;
 - (void)setAthletes:(id)arg1;
 - (id)athletes;

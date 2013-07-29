@@ -17,12 +17,15 @@
 + (BOOL)shouldDrawOnMainThread;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
++ (id)displayUncollectableOptions;
++ (id)displayDisableFadeOptions;
 
 - (void)displayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
 - (void)setLevelsOfDetailBias:(unsigned long)arg1;
 - (void)setLevelsOfDetail:(unsigned long)arg1;
 - (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFillColor:(struct CGColor { }*)arg1;
+- (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setMaximumTileScale:(float)arg1;
 - (BOOL)canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
@@ -41,7 +44,9 @@
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)dealloc;
-- (void)setDrawingEnabled:(BOOL)arg1;
 - (void)invalidateContents;
+- (void)displayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
+- (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2 options:(id)arg3;
+- (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 levelOfDetail:(int)arg2;
 
 @end

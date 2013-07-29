@@ -17,10 +17,10 @@
 
 
 - (id)downloadForDownloadIdentifier:(long long)arg1;
-- (BOOL)deleteDownload:(id)arg1;
 - (void)_finishPreflightWithCompletionBlock:(id)arg1;
 - (void)_reloadDownloadManager;
 - (void)_removeObject:(id)arg1 fromArray:(id*)arg2;
+- (BOOL)deleteDownload:(id)arg1;
 - (void)preflightWithCompletionBlock:(id)arg1;
 - (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
 - (void)reloadDownloadManager;

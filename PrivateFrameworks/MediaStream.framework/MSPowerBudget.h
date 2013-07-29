@@ -83,9 +83,9 @@
 - (id)focusAssetCollectionGUID;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
+- (void)shutDown;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
-- (void)shutDown;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;

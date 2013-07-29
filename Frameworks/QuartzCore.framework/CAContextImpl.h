@@ -12,13 +12,13 @@
 }
 
 
-- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-- (unsigned int)createSlot;
 - (struct CGColorSpace { }*)colorSpace;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (struct Context { }*)renderContext;
 - (void)setLayer:(id)arg1;
 - (unsigned int)contextId;
+- (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
+- (unsigned int)createSlot;
 - (void)orderBelow:(unsigned int)arg1;
 - (id)initRemoteWithOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1 localContext:(bool)arg2;

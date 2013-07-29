@@ -19,13 +19,13 @@
 }
 
 
+- (BOOL)locked;
 - (void)setHasSeparator:(BOOL)arg1;
 - (BOOL)hasSeparator;
 - (void)setNested:(BOOL)arg1;
 - (BOOL)nested;
 - (void)setPrivateResult:(BOOL)arg1;
 - (BOOL)privateResult;
-- (BOOL)locked;
 - (void)setResultEdited:(BOOL)arg1;
 - (BOOL)resultEdited;
 - (void)setResultDirty:(BOOL)arg1;
@@ -41,8 +41,8 @@
 - (int)fieldMarkerType;
 - (unsigned char)fieldType;
 - (id)initWithParagraph:(id)arg1;
-- (void)setLocked:(BOOL)arg1;
 - (void)dealloc;
+- (void)setLocked:(BOOL)arg1;
 - (id)properties;
 
 @end

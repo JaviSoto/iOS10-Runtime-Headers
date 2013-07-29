@@ -53,9 +53,9 @@
 + (id)localLocationSentinel;
 + (id)createUbiquityExternalDataReferenceFileLocationForUUID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (BOOL)isUbiquityLocationPath:(id)arg1 equalToPath:(id)arg2;
++ (id)createUbiquityLocationForPath:(id)arg1 withUbiquityRootPath:(id)arg2;
 + (id)createUbiquityLocationForRootPath:(id)arg1 checkIsUbiquitous:(BOOL)arg2;
 + (id)createStringByAppendingSubpath:(id)arg1 toPath:(id)arg2;
-+ (id)createUbiquityLocationForPath:(id)arg1 withUbiquityRootPath:(id)arg2;
 + (id)createUbiquityExternalDataReferenceFileLocationForUUID:(id)arg1 andLog:(id)arg2;
 + (id)createTransactionLogLocationFromTemporaryOrStagingLogLocation:(id)arg1;
 + (id)createUbiquityLocationForPath:(id)arg1 withUbiquityRootLocation:(id)arg2;

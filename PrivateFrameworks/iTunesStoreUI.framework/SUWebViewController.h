@@ -38,8 +38,6 @@
 @property(getter=_mescalSession,setter=_setMescalSession:,retain) SUMescalSession * _mescalSession;
 @property(getter=_performanceMetrics,setter=_setPerformanceMetrics:,retain) ISURLRequestPerformance * _performanceMetrics;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)_setMescalSession:(id)arg1;
 - (id)_mescalSession;
@@ -85,7 +83,6 @@
 - (id)navigationItemForScriptInterface;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)keyboardDidHideWithInfo:(id)arg1;
-- (void)applicationDidEnterBackground;
 - (id)newRotationController;
 - (void)storePageProtocolDidChange;
 - (id)storePageProtocol;
@@ -97,6 +94,7 @@
 - (int)ITunesStoreUIBarStyle;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
+- (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (void)setStyle:(int)arg1;
 - (id)webView;
@@ -106,10 +104,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (unsigned long long)accessibilityTraits;
 
 @end

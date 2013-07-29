@@ -14,8 +14,8 @@
 + (id)endpointWithDictionary:(id)arg1 context:(id)arg2;
 + (id)endpoint;
 
-- (void)setProviderId:(id)arg1;
 - (id)providerId;
+- (void)setProviderId:(id)arg1;
 - (id)encodedClassName;
 - (id)operations;
 - (void)setSupportsAuthentication:(BOOL)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString, SSURLConnectionRequest;
+@class RadioPlayEvents, NSString, SSURLConnectionRequest;
 
 @interface RadioGetHistoryRequest : RadioRequest  {
     SSURLConnectionRequest *_request;
@@ -10,6 +10,7 @@
     BOOL _aggregateSessions;
     unsigned int _maxNumberOfTracks;
     NSString *_stationHash;
+    RadioPlayEvents *_playEvents;
     long long _stationID;
 }
 
@@ -18,8 +19,11 @@
 @property long long stationID;
 @property(copy) NSString * stationHash;
 @property BOOL aggregateSessions;
+@property(retain) RadioPlayEvents * playEvents;
 
 
+- (void)setPlayEvents:(id)arg1;
+- (id)playEvents;
 - (void)setAggregateSessions:(BOOL)arg1;
 - (BOOL)aggregateSessions;
 - (void)setFetchForAccount:(BOOL)arg1;

@@ -13,7 +13,7 @@
 
 + (id)registerNotificationObserver:(id)arg1 shouldLaunchMobileMail:(BOOL)arg2 queue:(id)arg3;
 
-- (id)copyActiveAccounts;
+- (id)activeAccountsHadLoadError:(BOOL*)arg1;
 - (id)messagesForAccountIDs:(id)arg1 count:(unsigned int)arg2 cutOffDates:(id)arg3;
 - (void)_didReceiveNotificationData:(id)arg1;
 - (void)_delegateDidShutdownWithError:(id)arg1;

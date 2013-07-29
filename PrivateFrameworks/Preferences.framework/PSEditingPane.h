@@ -16,8 +16,8 @@
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
 
-- (void)doneEditing;
 - (void)editMode;
+- (void)doneEditing;
 - (void)addNewValue;
 - (BOOL)wantsNewButton;
 - (id)specifierLabel;

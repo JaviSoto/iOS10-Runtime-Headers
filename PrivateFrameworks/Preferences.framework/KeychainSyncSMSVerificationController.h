@@ -2,9 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
+@class UIAlertView, UIButton, NSString;
 
-@interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController  {
+@interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+    UIButton *_footerButton;
+    UIAlertView *_supportVerificationAlert;
     NSString *_phoneNumber;
     NSString *_dialingPrefix;
     unsigned int _verificationCodeLength;
@@ -16,6 +18,7 @@
 
 
 - (unsigned int)numberOfPasscodeFields;
+- (void)showSupportVerification;
 - (unsigned int)verificationCodeLength;
 - (void)setVerificationCodeLength:(unsigned int)arg1;
 - (id)specifiers;
@@ -24,7 +27,9 @@
 - (void)setPhoneNumber:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)loadView;
+- (void)viewDidLayoutSubviews;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)phoneNumber;
 
 @end

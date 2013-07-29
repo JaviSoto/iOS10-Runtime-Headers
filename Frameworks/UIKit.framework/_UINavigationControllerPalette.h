@@ -14,6 +14,7 @@
         unsigned int paletteShadowIsHidden : 1; 
     } _paletteFlags;
     BOOL __paletteOverridesPinningBar;
+    BOOL _paletteIsAboveBar;
     BOOL _visibleWhenPinningBarIsHidden;
     BOOL __palettePinningBarHidden;
     UIView *__backgroundView;
@@ -42,6 +43,7 @@
 @property(getter=isPinned) BOOL pinned;
 @property BOOL pinningBarShadowIsHidden;
 @property BOOL paletteShadowIsHidden;
+@property BOOL paletteIsAboveBar;
 @property(getter=isVisibleWhenPinningBarIsHidden) BOOL visibleWhenPinningBarIsHidden;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredContentInsets;
 @property UIViewController * _unpinnedController;
@@ -53,8 +55,6 @@
 @property(setter=_setBackgroundConstraints:,retain) NSArray * _backgroundConstraints;
 @property(getter=_isPalettePinningBarHidden,setter=_setPalettePinningBarHidden:) BOOL _palettePinningBarHidden;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
@@ -63,6 +63,8 @@
 - (void)set_unpinnedController:(id)arg1;
 - (id)_unpinnedController;
 - (void)setPreferredContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPaletteIsAboveBar:(BOOL)arg1;
+- (BOOL)paletteIsAboveBar;
 - (id)navController;
 - (void)_setPaletteOverridesPinningBar:(BOOL)arg1;
 - (void)setPaletteShadowIsHidden:(BOOL)arg1;
@@ -86,7 +88,6 @@
 - (void)_setPinningBar:(id)arg1;
 - (void)_setSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_initWithNavigationController:(id)arg1 forEdge:(unsigned int)arg2;
-- (unsigned int)boundaryEdge;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredContentInsets;
 - (BOOL)_restartPaletteTransitionIfNecessary;
 - (void)_resetConstraintConstants:(float)arg1;
@@ -96,6 +97,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAnimating:(BOOL)arg2;
 - (void)_setTopConstraintConstant:(float)arg1;
 - (BOOL)paletteIsHidden;
+- (unsigned int)boundaryEdge;
 - (BOOL)_isPalettePinningBarHidden;
 - (BOOL)isVisibleWhenPinningBarIsHidden;
 - (BOOL)isAttached;
@@ -108,6 +110,5 @@
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setVisualAltitude:(float)arg1;
 - (id)_backgroundView;
-- (BOOL)shouldGroupAccessibilityChildren;
 
 @end

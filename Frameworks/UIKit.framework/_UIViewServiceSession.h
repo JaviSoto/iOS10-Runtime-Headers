@@ -8,7 +8,7 @@
 
 @class NSMutableSet, NSXPCConnection, NSObject<OS_dispatch_queue>, NSLock, _UIAsyncInvocation, NSMutableDictionary;
 
-@interface _UIViewServiceSession : NSObject <_UIViewServiceDeputyDelegate, _UIViewServiceViewControllerOperatorDelegate, _UIViewServiceSession_HostInterface> {
+@interface _UIViewServiceSession : NSObject <_UIViewServiceDeputyDelegate, NSXPCConnectionDelegate, _UIViewServiceViewControllerOperatorDelegate, _UIViewServiceSession_HostInterface> {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_connection;
     NSMutableDictionary *_connectionHandlers;
@@ -51,6 +51,7 @@
 - (void)__requestConnectionToDeputyOfType:(id)arg1 withReplyHandler:(id)arg2;
 - (void)setTerminationHandler:(id)arg1;
 - (int)__automatic_invalidation_logic;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)terminationHandler;
 
 @end

@@ -10,8 +10,6 @@
 
 @property(retain) UITextView * textView;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)textViewEditingDidEnd:(id)arg1;
 - (void)textViewChanged:(id)arg1;
@@ -30,6 +28,5 @@
 - (void)tintColorDidChange;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)accessibilityLabel;
 
 @end

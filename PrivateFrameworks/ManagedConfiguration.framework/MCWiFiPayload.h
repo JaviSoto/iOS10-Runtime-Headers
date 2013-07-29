@@ -72,10 +72,11 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (void)setDomainName:(id)arg1;
+- (void)setEncryptionType:(id)arg1;
 - (void)setDisplayedOperatorName:(id)arg1;
 - (void)setServiceProviderRoamingEnabled:(BOOL)arg1;
 - (void)setHESSID:(id)arg1;
-- (void)setDomainName:(id)arg1;
 - (void)setIsHotspot:(BOOL)arg1;
 - (void)setCredentialUUID:(id)arg1;
 - (id)credentialUUID;
@@ -84,7 +85,6 @@
 - (void)setProxyPassword:(id)arg1;
 - (void)setProxyUsername:(id)arg1;
 - (void)setProxyServerPort:(id)arg1;
-- (void)setProxyServer:(id)arg1;
 - (void)setPayloadCertificateAnchorUUID:(id)arg1;
 - (id)payloadCertificateAnchorUUID;
 - (void)setCertificateUUID:(id)arg1;
@@ -99,14 +99,12 @@
 - (BOOL)isWPA;
 - (void)setIsWEP:(BOOL)arg1;
 - (BOOL)isWEP;
-- (void)setEncryptionType:(id)arg1;
 - (void)setSsid:(id)arg1;
 - (BOOL)proxyPACFallbackAllowed;
 - (id)proxyPACURLString;
 - (id)proxyPassword;
 - (id)proxyUsername;
 - (id)proxyServerPort;
-- (id)proxyServer;
 - (id)eapClientConfig;
 - (id)encryptionType;
 - (id)displayedOperatorName;
@@ -127,6 +125,8 @@
 - (id)_eapPasswordFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
 - (id)_eapUsernameFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
 - (BOOL)_eapConfigIsValid:(id)arg1 error:(id*)arg2;
+- (void)setProxyServer:(id)arg1;
+- (id)proxyServer;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)subtitle1Description;

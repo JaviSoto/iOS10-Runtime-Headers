@@ -128,6 +128,7 @@
 @property(readonly) BOOL animated;
 @property(readonly) UIViewController * realToVC;
 @property(readonly) UIViewController * realFromVC;
+@property(readonly) BOOL hasNonFallbackPathAnimator;
 
 
 - (void)setDisableInteractionDuringTransition:(BOOL)arg1;
@@ -172,6 +173,7 @@
 - (void)setToVC:(id)arg1;
 - (id)copyForPhase:(int)arg1;
 - (void)adjustDuration:(double)arg1;
+- (BOOL)hasNonFallbackPathAnimator;
 - (id)realToVC;
 - (id)realFromVC;
 - (void)recalculateDurationsAfterAdjustment;

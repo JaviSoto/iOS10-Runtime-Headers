@@ -21,8 +21,8 @@
 - (id)matchingRemoteIDs;
 - (void)resetDoneCondition;
 - (void)setLatestDateToAdd:(id)arg1;
-- (void)waitUntilDone;
 - (BOOL)waitUntilDoneBeforeDate:(id)arg1;
+- (void)waitUntilDone;
 - (BOOL)handleItems:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;

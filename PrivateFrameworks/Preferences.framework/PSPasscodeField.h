@@ -27,9 +27,10 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 
+- (id)initWithNumberOfEntryFields:(unsigned int)arg1;
 - (void)setSecurePasscodeEntry:(BOOL)arg1;
 - (BOOL)securePasscodeEntry;
-- (id)initWithNumberOfEntryFields:(unsigned int)arg1;
+- (BOOL)becomeFirstResponder;
 - (void)insertText:(id)arg1;
 - (int)keyboardType;
 - (void)setDelegate:(id)arg1;
@@ -38,6 +39,8 @@
 - (id)delegate;
 - (unsigned int)numberOfEntryFields;
 - (void)setStringValue:(id)arg1;
+- (BOOL)isSecureTextEntry;
+- (void)setSecureTextEntry:(BOOL)arg1;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (BOOL)canBecomeFirstResponder;

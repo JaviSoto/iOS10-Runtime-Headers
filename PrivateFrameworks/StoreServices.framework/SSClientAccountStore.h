@@ -17,7 +17,6 @@
 - (id)activeLockerAccount;
 - (id)setActiveAccount:(id)arg1;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
-- (id)addAccount:(id)arg1;
 - (id)_copyReloadedAccounts;
 - (void)_signOutWithAccountIDs:(id)arg1;
 - (void)updateAccountsWithMessage:(id)arg1 completionBlock:(id)arg2;
@@ -26,6 +25,7 @@
 - (id)_addAccount:(id)arg1 asActiveAccount:(BOOL)arg2 activeLockerAccount:(BOOL)arg3;
 - (void)_reloadAccountsIfNeeded;
 - (void)setAccounts:(id)arg1;
+- (id)addAccount:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;

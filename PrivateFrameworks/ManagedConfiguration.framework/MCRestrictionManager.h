@@ -46,7 +46,6 @@
 + (id)objectForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)valueForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)restrictionsAfterApplyingRestrictionsDictionary:(id)arg1 toRestrictionsDictionary:(id)arg2 outChangeDetected:(BOOL*)arg3 outError:(id*)arg4;
-+ (id)defaultSettings;
 + (id)defaultRestrictionFilePath;
 + (BOOL)mayEnterPasscodeToAccessNonWhitelistedAppsWithSettingsDictionary:(id)arg1;
 + (BOOL)isPasscodeRequiredToAccessWhitelistedAppsWithSettingsDictionary:(id)arg1;
@@ -66,6 +65,7 @@
 + (int)restrictedBoolForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)defaultValueForSetting:(id)arg1;
 + (id)sharedManager;
++ (id)defaultSettings;
 
 - (void)memberQueueCommitUserSettingsToDisk;
 - (id)clientRestrictionsForClientUUID:(id)arg1;
@@ -80,7 +80,6 @@
 - (id)memberQueueCombinedProfileRestrictions;
 - (id)memberQueueProfileRestrictions;
 - (id)memberQueueRestrictions;
-- (id)defaultSettings;
 - (void)setMemberQueueEffectiveUserSettings:(id)arg1;
 - (void)setMemberQueueUserSettings:(id)arg1;
 - (void)setMemberQueueClientRestrictions:(id)arg1;
@@ -117,5 +116,6 @@
 - (int)appWhitelistState;
 - (void).cxx_destruct;
 - (id)description;
+- (id)defaultSettings;
 
 @end

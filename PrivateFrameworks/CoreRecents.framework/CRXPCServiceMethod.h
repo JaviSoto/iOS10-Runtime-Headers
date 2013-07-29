@@ -17,8 +17,8 @@
 - (void)setMessageIndex:(long long)arg1;
 - (id)initWithMessage:(id)arg1 index:(long long)arg2;
 - (long long)messageIndex;
-- (void)setMessage:(id)arg1;
 - (id)message;
 - (void)dealloc;
+- (void)setMessage:(id)arg1;
 
 @end

@@ -19,16 +19,17 @@
 @property BOOL shouldDimIrrelevantInformation;
 
 + (id)cellForRecipient:(id)arg1;
-+ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1;
++ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1 useHighlighting:(BOOL)arg2;
 + (id)_copyAttributedStringRepresentationOfGroupRecipient:(id)arg1 withSortedRecipientList:(id)arg2;
 + (id)_tintedAttributedString:(id)arg1 toColor:(id)arg2 shouldDim:(BOOL)arg3;
 + (id)_attributedStringRepresentationOfCompleteMatchesForRecipient:(id)arg1 constrainedToWidth:(float)arg2 overflowRecipients:(out id*)arg3 useHighlighting:(BOOL)arg4;
++ (float)_constrainedWidthForDetailViewWithAccessoryWidth:(float)arg1 containerWidth:(float)arg2;
++ (float)_constrainedWidthForTitleViewWithAccessoryWidth:(float)arg1 containerWidth:(float)arg2;
++ (float)_realDetailButtonAccessoryMargin;
 + (id)_defaultTintColor;
 + (float)heightWithRecipient:(id)arg1 width:(float)arg2;
 + (float)height;
 + (id)identifier;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (BOOL)shouldDimIrrelevantInformation;
 - (void)setCellImage:(id)arg1 highlightedImage:(id)arg2;
@@ -36,7 +37,6 @@
 - (BOOL)shouldHighlightCompleteMatches;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForDetailView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTitleView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewEdgeInsets;
 - (void)setShouldDimIrrelevantInformation:(BOOL)arg1;
 - (void)setShouldHighlightCompleteMatches:(BOOL)arg1;
 - (id)recipient;
@@ -47,6 +47,5 @@
 - (id)tintColor;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

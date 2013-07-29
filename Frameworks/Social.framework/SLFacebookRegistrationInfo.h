@@ -24,13 +24,13 @@
 
 
 - (id)birthday;
+- (id)gender;
 - (id)phone;
 - (BOOL)hasAllRequiredValues;
+- (void)setGender:(id)arg1;
 - (void)setPhone:(id)arg1;
 - (void)setBirthday:(id)arg1;
 - (void)setEmail:(id)arg1;
-- (void)setGender:(id)arg1;
-- (id)gender;
 - (void)setPassword:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;

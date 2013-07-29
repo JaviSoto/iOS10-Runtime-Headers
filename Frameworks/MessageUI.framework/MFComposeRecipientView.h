@@ -55,9 +55,6 @@
 @property int hideLastAtomComma;
 @property(retain) MFComposeRecipient * placeholderRecipient;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (unsigned int)defaultAtomPresentationOptions;
 - (BOOL)focused;
@@ -101,7 +98,6 @@
 - (void)_cancelDelayTimer;
 - (void)setHideLastAtomComma:(int)arg1;
 - (void)addButtonClicked:(id)arg1;
-- (void)windowDidResignKey:(id)arg1;
 - (id)dragInitiatedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)allowsDrag;
 - (void)animatePlaceholderForDragFailure:(id)arg1;

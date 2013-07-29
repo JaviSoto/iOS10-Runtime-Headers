@@ -16,8 +16,8 @@
 + (id)ratingWithDictionary:(id)arg1 context:(id)arg2;
 + (id)rating;
 
-- (void)setProviderId:(id)arg1;
 - (id)providerId;
+- (void)setProviderId:(id)arg1;
 - (id)encodedClassName;
 - (double)maxValue;
 - (void)setDescription:(id)arg1;

@@ -101,7 +101,6 @@
 - (id)game;
 - (void)setInternal:(id)arg1;
 - (id)internal;
-- (void)setMessage:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (int)status;
 - (id)message;
@@ -116,6 +115,7 @@
 - (id)description;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;
+- (void)setMessage:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 

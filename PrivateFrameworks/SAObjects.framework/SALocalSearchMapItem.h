@@ -34,9 +34,9 @@
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
 - (void)setDistance:(id)arg1;
+- (id)distance;
 - (id)attributions;
 - (void)setAttributions:(id)arg1;
-- (id)distance;
 - (id)location;
 - (id)detail;
 - (id)label;

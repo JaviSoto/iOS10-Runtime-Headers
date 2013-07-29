@@ -25,9 +25,9 @@
 - (void)setAllSectionItemsVisible:(BOOL)arg1;
 - (int)maxItemCount;
 - (int (*)())itemCountFormatter;
+- (void)setItemCountFormatter:(int (*)())arg1;
 - (void)setMaxItemCount:(int)arg1;
 - (void)setItemCount:(int)arg1;
-- (void)setItemCountFormatter:(int (*)())arg1;
 - (BOOL)allSectionItemsVisible;
 - (void)updateLabel;
 - (void)setSectionIndex:(unsigned int)arg1;

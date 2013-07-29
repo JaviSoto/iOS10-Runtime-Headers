@@ -15,7 +15,6 @@
         unsigned int backgroundImageNeedsUpdate : 1; 
         unsigned int isContainedInPopover : 1; 
         unsigned int barWantsAdaptiveBackdrop : 1; 
-        unsigned int barForcesOpaqueBackground : 1; 
     } _navbarFlags;
 }
 
@@ -25,17 +24,13 @@
 @property(setter=_setShadowView:,retain) UIView * _shadowView;
 @property(getter=isTranslucent) BOOL translucent;
 @property BOOL barWantsAdaptiveBackdrop;
-@property BOOL barForcesOpaqueBackground;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)_customShadowImageForSearchBar;
 - (void)_setShadowView:(id)arg1;
-- (BOOL)barForcesOpaqueBackground;
 - (BOOL)barWantsAdaptiveBackdrop;
 - (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;
 - (id)barTintColor;
@@ -53,10 +48,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barStyle:(int)arg2 barTintColor:(id)arg3 appearance:(id)arg4 barTranslucence:(int)arg5;
 - (id)_shadowView;
 - (void)setAppearanceStorage:(id)arg1;
-- (void)setBarForcesOpaqueBackground:(BOOL)arg1;
 - (void)didMoveToSuperview;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (BOOL)isTranslucent;
-- (BOOL)accessibilityElementsHidden;
 
 @end

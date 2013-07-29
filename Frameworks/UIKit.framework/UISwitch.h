@@ -8,6 +8,8 @@
     UILongPressGestureRecognizer *_pressGesture;
     UIPanGestureRecognizer *_panGesture;
     UIView<_UISwitchInternalViewProtocol> *_control;
+    BOOL _onStateChangedByLongPressGestureRecognizer;
+    BOOL _onStateChangedByPanGestureRecognizer;
     BOOL _on;
     float _enabledAlpha;
 }
@@ -21,8 +23,6 @@
 @property(getter=isOn) BOOL on;
 @property float enabledAlpha;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -51,6 +51,7 @@
 - (void)_commonInitNewLook;
 - (BOOL)_useOldSize;
 - (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
+- (BOOL)_handleTranslationInPanGestureRecognizer:(id)arg1;
 - (void)_handleLongPressNL:(id)arg1;
 - (void)_handleTapNL:(id)arg1;
 - (void)_handlePanNL:(id)arg1;
@@ -81,10 +82,5 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

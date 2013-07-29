@@ -8,5 +8,9 @@
 
 - (float)controlColumnWidthFactor;
 - (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
+- (struct CGPoint { float x1; float x2; })numberPadKeySecondaryTextOffset;
+- (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
+- (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
+- (float)numberPadKeyPrimarySymbolSize;
 
 @end

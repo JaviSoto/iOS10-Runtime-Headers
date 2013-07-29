@@ -4,7 +4,7 @@
 
 @class NSOperationQueue, SKUIColorScheme, SKUIMetricsController, SKUIClientContext, NSMutableArray, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController, SSVPlatformRequestOperation, SKUIResourceLoader, UIScrollView, NSArray;
 
-@interface SKUISwooshArrayViewController : UIViewController <SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate, SKUIProductPageChildViewController> {
+@interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate, SKUIProductPageChildViewController> {
     SKUIResourceLoader *_artworkLoader;
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
@@ -48,6 +48,7 @@
 - (id)swoosh:(id)arg1 imageForCellAtIndex:(int)arg2;
 - (id)metricsController;
 - (void)artworkLoaderDidIdle:(id)arg1;
+- (id)activeMetricsController;
 - (void)setMetricsController:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;

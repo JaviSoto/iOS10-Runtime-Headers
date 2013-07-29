@@ -16,6 +16,7 @@
 
 - (void)setDisableCachedResponses:(BOOL)arg1;
 - (BOOL)disableCachedResponses;
+- (id)_stationDictionariesByApplyingResponse:(id)arg1 error:(id*)arg2;
 - (void)startWithFeaturedStationsCompletionHandler:(id)arg1;
 - (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2 loadArtworkSynchronously:(BOOL)arg3;
 - (id)initWithStationCount:(unsigned int)arg1;

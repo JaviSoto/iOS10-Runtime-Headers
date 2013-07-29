@@ -28,9 +28,6 @@
 @property BOOL isPrimaryAddressAtom;
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2 useAbbreviatedName:(BOOL)arg3;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)unmodifiedAddressString;
 - (int)ABPropertyType;
@@ -59,8 +56,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (int)identifier;
-- (id)displayString;
 - (struct CGPoint { float x1; float x2; })baselinePoint;
+- (id)displayString;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
 - (int)separatorStyle;
 - (void)setSeparatorStyle:(int)arg1;
@@ -68,9 +65,5 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (float)scale;
-- (id)accessibilityHint;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

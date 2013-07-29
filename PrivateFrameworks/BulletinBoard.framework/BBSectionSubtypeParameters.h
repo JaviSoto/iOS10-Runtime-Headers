@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString, BBSectionSubtypeParameters, NSSet, NSNumber;
+@class NSString, BBSectionSubtypeParameters, NSSet, BBSectionIcon, NSNumber;
 
 @interface BBSectionSubtypeParameters : NSObject <NSSecureCoding> {
     BBSectionSubtypeParameters *_fallbackParameters;
@@ -11,6 +11,7 @@
     NSString *_fullUnlockActionLabel;
     NSString *_unlockActionLabel;
     NSSet *_alertSuppressionAppIDs;
+    BBSectionIcon *_sectionIconOverride;
     NSNumber *_boxedCoalescesWhenLocked;
     NSNumber *_boxedSuppressesMessageForPrivacy;
     NSNumber *_boxedRealertCount;
@@ -27,6 +28,7 @@
 @property(copy) NSString * fullUnlockActionLabel;
 @property(copy) NSString * unlockActionLabel;
 @property(copy) NSSet * alertSuppressionAppIDs;
+@property(copy) BBSectionIcon * sectionIconOverride;
 @property BOOL coalescesWhenLocked;
 @property BOOL suppressesMessageForPrivacy;
 @property unsigned int realertCount;
@@ -67,6 +69,7 @@
 - (id)boxedSuppressesMessageForPrivacy;
 - (id)boxedCoalescesWhenLocked;
 - (id)fallbackParameters;
+- (void)setSectionIconOverride:(id)arg1;
 - (void)setAlertSuppressionAppIDs:(id)arg1;
 - (void)setFullUnlockActionLabel:(id)arg1;
 - (void)setMissedBannerDescriptionFormat:(id)arg1;
@@ -87,6 +90,7 @@
 - (BOOL)inertWhenLocked;
 - (BOOL)suppressesMessageForPrivacy;
 - (BOOL)coalescesWhenLocked;
+- (id)sectionIconOverride;
 - (id)alertSuppressionAppIDs;
 - (id)unlockActionLabel;
 - (id)fullUnlockActionLabel;

@@ -19,10 +19,10 @@
 - (id)allInstalledProfileIdentifiers;
 - (void)_setManifest:(id)arg1;
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
-- (id)manifest;
 - (id)_manifest;
 - (id)installedProfileWithIdentifier:(id)arg1;
 - (void)invalidateCache;
+- (id)manifest;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

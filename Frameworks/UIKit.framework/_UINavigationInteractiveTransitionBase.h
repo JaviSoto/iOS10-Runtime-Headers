@@ -78,7 +78,9 @@
 - (float)totalDistance;
 - (void)setSampleCount:(unsigned int)arg1;
 - (unsigned int)sampleCount;
+- (void)setInSpringAnimation:(BOOL)arg1;
 - (BOOL)inSpringAnimation;
+- (void)setSpringAnimationIsPending:(BOOL)arg1;
 - (void)_setUseAugmentedShouldPopDecisionProcedure:(BOOL)arg1;
 - (BOOL)_useAugmentedShouldPopDecisionProcedure;
 - (void)_setParent:(id)arg1;
@@ -92,12 +94,11 @@
 - (BOOL)shouldReverseTranslation;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_completeStoppedInteractiveTransition;
+- (id)_navigationGesture;
 - (id)initWithGestureRecognizerView:(id)arg1 animator:(id)arg2 delegate:(id)arg3;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (float)_popTransitionRevealInitialDisplacement;
-- (void)_displayLinkTick:(id)arg1;
 - (void)setNotInteractiveTransition;
 - (BOOL)_completesTransitionOnEnd;
 - (BOOL)popGesture:(id)arg1 withRemainingDuration:(float)arg2 shouldPopWithVelocity:(float*)arg3;
@@ -106,9 +107,9 @@
 - (id)animationController;
 - (void)startInteractiveTransition;
 - (void)startInteractiveTransition:(id)arg1;
-- (id)_navigationGesture;
 - (void)_stopInteractiveTransition;
 - (void)finishInteractiveTransition;
+- (void)cancelInteractiveTransition;
 - (id)gestureRecognizerView;
 - (id)gestureRecognizer;
 - (void)setGestureRecognizer:(id)arg1;
@@ -116,11 +117,6 @@
 - (void)setAnimationController:(id)arg1;
 - (void)_setCompletesTransitionOnEnd:(BOOL)arg1;
 - (void)_setInteractionState:(int)arg1;
-- (void)cancelInteractiveTransition;
-- (void)_clearDisplayLinkBarTransitionDriver;
-- (void)_installDisplayLinkBarTransitionDriver;
-- (void)setInSpringAnimation:(BOOL)arg1;
-- (void)setSpringAnimationIsPending:(BOOL)arg1;
 - (void)_resetInteractionController;
 
 @end

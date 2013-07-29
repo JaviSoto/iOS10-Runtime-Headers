@@ -14,8 +14,6 @@
 @property(readonly) UIColor * currentSubtitleShadowColor;
 @property(readonly) UILabel * subtitleLabel;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)_subtitledContentForState:(unsigned int)arg1;
 - (id)subtitleShadowColorForState:(unsigned int)arg1;
@@ -37,6 +35,5 @@
 - (id)subtitleLabel;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

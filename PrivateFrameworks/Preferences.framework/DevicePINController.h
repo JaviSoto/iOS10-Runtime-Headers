@@ -35,7 +35,7 @@
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;
 - (void)setOldPassword:(id)arg1;
-- (BOOL)_attemptValidationWithPIN:(id)arg1;
+- (BOOL)attemptValidationWithPIN:(id)arg1;
 - (void)_showPINConfirmationError;
 - (void)performActionAfterPINSet;
 - (BOOL)completedInputIsValid:(id)arg1;
@@ -51,12 +51,11 @@
 - (void)_showFailedAttempts;
 - (id)stringsTable;
 - (id)stringsBundle;
-- (BOOL)_isBlocked;
 - (void)_setUnblockTime:(double)arg1;
 - (void)_setNumberOfFailedAttempts:(int)arg1;
-- (int)_numberOfFailedAttempts;
+- (int)numberOfFailedAttempts;
 - (void)_clearBlockedState;
-- (double)_unblockTime;
+- (double)unblockTime;
 - (struct __CFString { }*)blockedStateKey;
 - (struct __CFString { }*)blockTimeIntervalKey;
 - (struct __CFString { }*)failedAttemptsKey;
@@ -74,6 +73,7 @@
 - (void)setSpecifier:(id)arg1;
 - (void)setPIN:(id)arg1;
 - (BOOL)success;
+- (BOOL)isBlocked;
 - (id)init;
 - (void)setMode:(int)arg1;
 - (void)dealloc;

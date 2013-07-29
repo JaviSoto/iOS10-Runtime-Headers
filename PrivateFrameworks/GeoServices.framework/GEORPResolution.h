@@ -22,6 +22,8 @@
 @property(retain) NSMutableArray * localizedChangeLists;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)localizedChangeLists;
 - (id)updatedPlaces;
 - (void)setHasResolutionDate:(BOOL)arg1;
@@ -42,8 +44,6 @@
 - (void)setDisplayRegion:(id)arg1;
 - (void)setUpdatedPlaces:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

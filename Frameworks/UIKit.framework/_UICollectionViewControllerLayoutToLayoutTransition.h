@@ -33,8 +33,8 @@
 - (BOOL)_shouldCrossFadeNavigationBar;
 - (void)animationEnded:(BOOL)arg1;
 - (void)animateTransition:(id)arg1;
-- (void)setInteractionController:(id)arg1;
 - (BOOL)interactionAborted;
+- (void)setInteractionController:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)setOperation:(int)arg1;
 - (int)operation;

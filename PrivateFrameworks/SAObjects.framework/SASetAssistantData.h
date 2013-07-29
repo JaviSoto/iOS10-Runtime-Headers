@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSArray * abSources;
+@property(copy) NSNumber * allowUserGeneratedContent;
 @property(copy) NSString * anchor;
 @property BOOL censorSpeech;
 @property(copy) NSString * countryCode;
@@ -34,6 +35,7 @@
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setAssistantData;
 
+- (void)setOsVersion:(id)arg1;
 - (void)setVoiceOver:(BOOL)arg1;
 - (BOOL)voiceOver;
 - (void)setUiScale:(id)arg1;
@@ -48,7 +50,6 @@
 - (id)storefront;
 - (void)setParentalRestrictions:(id)arg1;
 - (id)parentalRestrictions;
-- (void)setOsVersion:(id)arg1;
 - (void)setMeCards:(id)arg1;
 - (id)meCards;
 - (void)setDeviceVersion:(id)arg1;
@@ -57,6 +58,8 @@
 - (id)deviceCapabilities;
 - (void)setDebugFlags:(id)arg1;
 - (id)debugFlags;
+- (void)setAllowUserGeneratedContent:(id)arg1;
+- (id)allowUserGeneratedContent;
 - (void)setAbSources:(id)arg1;
 - (id)abSources;
 - (void)setHandsFree:(BOOL)arg1;

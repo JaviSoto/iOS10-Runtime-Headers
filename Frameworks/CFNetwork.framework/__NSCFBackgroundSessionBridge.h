@@ -29,6 +29,8 @@
 
 
 - (void)dealloc;
+- (void)resetStorageWithCompletionHandler:(id)arg1;
+- (void)flushStorageWithCompletionHandler:(id)arg1;
 - (id)downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)dataTaskForRequest:(id)arg1 completion:(id)arg2;
@@ -48,6 +50,13 @@
 - (void)cleanupConfig;
 - (void)setupBackgroundSession;
 - (void)setupXPCConnection;
+- (void)credStorage_setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
+- (void)credStorage_defaultCredentialForProtectionSpace:(id)arg1 reply:(id)arg2;
+- (void)credStorage_removeCredential:(id)arg1 forProtectionSpace:(id)arg2;
+- (void)credStorage_setCredential:(id)arg1 forProtectionSpace:(id)arg2;
+- (void)credStorage_allCredentialsWithReply:(id)arg1;
+- (void)credStorage_credentialsForProtectionSpace:(id)arg1 reply:(id)arg2;
+- (void)credStorage_getInitialCredentialDictionariesWithReply:(id)arg1;
 - (void)backgroundSessionDidFinishAppWake:(id)arg1 reply:(id)arg2;
 - (void)backgroundSessionDidStartAppWake:(id)arg1 reply:(id)arg2;
 - (void)backgroundDownloadTask:(unsigned int)arg1 didFinishDownloadingToURL:(id)arg2 reply:(id)arg3;

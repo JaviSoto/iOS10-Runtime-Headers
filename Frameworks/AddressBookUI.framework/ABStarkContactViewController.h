@@ -11,9 +11,9 @@
 
 - (id)contactView;
 - (id)initWithContact:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (float)heightForHeaderInTableView:(id)arg1;
 - (id)containerView;

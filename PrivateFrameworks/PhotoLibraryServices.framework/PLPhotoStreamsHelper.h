@@ -13,10 +13,14 @@
 + (BOOL)photoStreamsEnabled;
 + (id)sharedPhotoStreamsHelper;
 
-- (void)resetServerState;
-- (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id)arg2;
+- (BOOL)shouldPublishScreenShots;
 - (void)resume_mstreamd:(id)arg1;
 - (id)pause_mstreamd;
+- (void)_appDidEnterBackground:(id)arg1;
+- (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
+- (void)resetServerState;
+- (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id)arg2;
+- (void)initiateDeletionOfOriginalAssets:(id)arg1;
 - (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(BOOL)arg3;
 - (id)derivedAssetForMasterAsset:(id)arg1;
 - (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
@@ -26,8 +30,6 @@
 - (int)imageLimitForFriendStream;
 - (int)imageLimitForOwnStream;
 - (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
-- (BOOL)shouldPublishScreenShots;
-- (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
 - (BOOL)dequeueAssetsForPSPublishing:(id)arg1;
 - (BOOL)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
 - (void)writeDidPublishBreadcrumbforHash:(id)arg1 imagePath:(id)arg2;
@@ -37,7 +39,6 @@
 - (id)lastPhotoStreamUpdateDate;
 - (id)psHashAsString:(id)arg1;
 - (id)psHashForData:(id)arg1;
-- (void)_appDidEnterBackground:(id)arg1;
 - (void)_acaccountConfigChanged;
 - (id)imageLimitsByAssetType;
 - (BOOL)shouldUploadVideos;

@@ -5,7 +5,7 @@
 @class GKTurnBasedExchangeReplyInternal, GKTurnBasedMatch, GKTurnBasedParticipant, NSString, NSData;
 
 @interface GKTurnBasedExchangeReply : NSObject  {
-    GKTurnBasedParticipant *recipient;
+    GKTurnBasedParticipant *_recipient;
     GKTurnBasedExchangeReplyInternal *_internal;
     GKTurnBasedMatch *_matchWeak;
 }

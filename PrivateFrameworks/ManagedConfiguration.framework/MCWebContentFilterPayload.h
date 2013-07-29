@@ -28,11 +28,11 @@
 - (id)whitelistedBookmarks;
 - (id)permittedURLStrings;
 - (BOOL)autoFilterEnabled;
-- (id)restrictions;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)restrictions;
 - (id)title;
 - (void).cxx_destruct;
 - (id)description;

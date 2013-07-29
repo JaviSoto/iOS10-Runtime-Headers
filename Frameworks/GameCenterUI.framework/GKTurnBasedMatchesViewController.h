@@ -29,32 +29,34 @@
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
-- (id)detailPopover;
 - (id)matchIDWaitingForTurnEvent;
 - (void)setMaxMatchesSeen:(int)arg1;
 - (int)maxMatchesSeen;
 - (void)setMatchIDWaitingForTurnEvent:(id)arg1;
 - (void)notifyGameWithMatch:(id)arg1 orError:(id)arg2;
 - (void)launchGameAndShowMatchID:(id)arg1;
+- (void)dismissDetailViewControllerAnimated:(BOOL)arg1;
 - (void)showDetailForMatch:(id)arg1;
 - (void)showMatchID:(id)arg1;
 - (void)acceptInviteForMatch:(id)arg1;
+- (id)detailPopover;
 - (void)setDetailPopover:(id)arg1;
 - (void)showInviteControllerAnimated:(BOOL)arg1;
 - (void)detailPressedForMatch:(id)arg1;
 - (void)addPressed;
 - (id)matchesDataSource;
 - (void)setMatchesDataSource:(id)arg1;
+- (void)applicationDidEnterBackground;
 - (void)setMatchRequest:(id)arg1;
 - (BOOL)showExistingMatches;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)collectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)didEnterNoContentState;
 - (void)loadDataWithCompletionHandlerAndError:(id)arg1;
 - (void)turnBasedInviteViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)turnBasedInviteViewController:(id)arg1 didCreateMatchID:(id)arg2;
 - (void)turnBasedInviteViewControllerWasCancelled:(id)arg1;
 - (BOOL)isInGame;
+- (void)turnBasedMatchDetailViewControllerDidShowStore:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidRemoveMatch:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidQuitMatch:(id)arg1;
 - (void)turnBasedMatchDetailViewControllerDidChooseMatch:(id)arg1;
@@ -65,6 +67,7 @@
 - (id)initWithMatchRequest:(id)arg1;
 - (id)matchRequest;
 - (void)cancelButtonPressed;
+- (void)didEnterNoContentState;
 - (void)configureDataSource;
 - (void)setGame:(id)arg1;
 - (id)game;
@@ -72,10 +75,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)popoverController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 

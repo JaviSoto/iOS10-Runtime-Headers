@@ -19,6 +19,8 @@
 @property(retain) NSMutableArray * operands;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)operands;
 - (id)operandsAtIndex:(unsigned int)arg1;
 - (void)clearOperands;
@@ -30,8 +32,6 @@
 - (id)field;
 - (BOOL)hasField;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

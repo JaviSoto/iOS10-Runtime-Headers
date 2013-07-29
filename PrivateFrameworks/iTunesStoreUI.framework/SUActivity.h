@@ -18,8 +18,8 @@
 - (id)ITunesStoreDelegate;
 - (void)setITunesStoreDelegate:(id)arg1;
 - (void)setActivityImage:(id)arg1;
-- (void)setActivityType:(id)arg1;
 - (void)setActivityTitle:(id)arg1;
+- (void)setActivityType:(id)arg1;
 - (void)dealloc;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setActivityViewController:(id)arg1;

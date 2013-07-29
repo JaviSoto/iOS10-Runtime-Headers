@@ -10,8 +10,6 @@
 
 @property(retain) NSString * placeholder;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setBackgroundColor:(id)arg1;
 - (BOOL)resignFirstResponder;
@@ -22,6 +20,5 @@
 - (void)keyboardInputChangedSelection:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (id)accessibilityLabel;
 
 @end

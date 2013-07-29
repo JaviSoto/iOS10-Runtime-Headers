@@ -220,12 +220,12 @@
 - (void)_updateConnectionMonitorWithRemoteHost:(id)arg1;
 - (void)leaveAllChats;
 - (void)_updateRoutingTimerWithInterval:(double)arg1;
+- (void)_updateConnectionMonitorFromAccountDefaultsIgnoringProxy:(BOOL)arg1;
 - (void)_clearConnectionMonitor;
 - (void)_clearAutoReconnectTimer;
 - (void)_abandonPWFetcher;
 - (void)_abandonSystemProxySettingsFetcher;
 - (void)_processConnectionMonitorUpdate;
-- (void)_updateConnectionMonitorFromAccountDefaultsIgnoringProxy:(BOOL)arg1;
 - (void)_callMonitorStateChanged:(id)arg1;
 - (void)_networkChanged:(id)arg1;
 - (id)_newHashForChat:(id)arg1 style:(unsigned char)arg2;
@@ -273,11 +273,11 @@
 - (unsigned int)blockingMode;
 - (void)setBlockIdleStatus:(BOOL)arg1;
 - (BOOL)blockIdleStatus;
+- (BOOL)useSSL;
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (id)canonicalFormOfID:(id)arg1;
 - (void)logout;
 - (void)login;
-- (BOOL)useSSL;
 - (id)proxyPassword;
 - (unsigned short)proxyPort;
 - (id)displayName;

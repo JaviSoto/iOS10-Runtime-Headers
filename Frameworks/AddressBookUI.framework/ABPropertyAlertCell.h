@@ -15,6 +15,7 @@
 @property(retain) UIImageView * chevron;
 
 
+- (void)setChevron:(id)arg1;
 - (id)_vibrationManager;
 - (id)_toneManger;
 - (void)setLabelWidthConstraint:(id)arg1;
@@ -23,7 +24,6 @@
 - (id)alertItem;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
-- (void)setChevron:(id)arg1;
 - (id)chevron;
 - (void)setLabelWidth:(float)arg1;
 - (id)contentViewConstraints;

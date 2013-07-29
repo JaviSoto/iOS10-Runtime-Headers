@@ -56,9 +56,9 @@
 - (id)secondaryDisplayString;
 - (void)setIsCustomGlyph:(BOOL)arg1;
 - (int)highlightedVariantIndex;
-- (id)displayString;
 - (void)setHighlightedVariantIndex:(int)arg1;
 - (void)setDisplayString:(id)arg1;
+- (id)displayString;
 - (void)setVariantDisplayStrings:(id)arg1;
 
 @end

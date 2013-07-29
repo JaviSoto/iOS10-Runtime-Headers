@@ -52,10 +52,10 @@
 - (struct CGPoint { float x1; float x2; })baselinePoint;
 - (id)viewForBaselineLayout;
 - (void)_updateLabel;
+- (void)setText:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)sizeToFit;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
 - (void)clear;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

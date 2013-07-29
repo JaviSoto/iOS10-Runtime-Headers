@@ -35,6 +35,7 @@
 @property float userRating;
 
 + (float)heightForLockupComponent:(id)arg1;
++ (float)heightForLockupStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg1 itemKind:(int)arg2;
 
 - (int)numberOfUserRatings;
 - (int)lockupSize;

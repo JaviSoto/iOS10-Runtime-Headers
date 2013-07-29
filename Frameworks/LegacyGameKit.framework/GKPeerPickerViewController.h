@@ -28,6 +28,7 @@
     NSString *_searchingForServicesString;
     NSMutableArray *_peers;
     NSString *_pendingPeer;
+    BOOL _alertCancelled;
 }
 
 @property id delegate;
@@ -49,6 +50,7 @@
 @property(retain) NSMutableArray * menuQueue;
 @property(getter=isAnimating) BOOL animating;
 @property BOOL alertPresented;
+@property BOOL alertCancelled;
 @property int state;
 @property int pendingState;
 @property BOOL updating;
@@ -64,7 +66,8 @@
 - (int)_determineBluetoothStatus;
 - (void)setBluetoothStatus:(int)arg1;
 - (id)searchingForServicesString;
-- (void)_btPowerStateChanged:(id)arg1;
+- (void)contentView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)setAlertCancelled:(BOOL)arg1;
 - (void)setAlertPresented:(BOOL)arg1;
 - (void)_timedOutWaitingForInvitation:(id)arg1;
 - (id)currentView;
@@ -80,14 +83,17 @@
 - (id)btView;
 - (void)_createBTViewIfNeeded;
 - (void)_showView:(id)arg1 animated:(BOOL)arg2;
+- (id)_createAlertFromGKContentView:(id)arg1;
 - (id)connectTypeView;
 - (void)_setSessionAvailabilityForState:(int)arg1;
 - (void)_createConnectTypeViewIfNeeded;
+- (BOOL)alertCancelled;
 - (void)_showInviteViewWithName:(id)arg1 animated:(BOOL)arg2;
 - (void)_showStatusView:(int)arg1 peerName:(id)arg2 animated:(BOOL)arg3;
 - (void)_showNoPeersView:(BOOL)arg1;
 - (void)_showListView:(BOOL)arg1;
 - (void)_setupListView;
+- (void)_btPowerStateChanged:(id)arg1;
 - (void)_showBluetoothErrorView:(BOOL)arg1;
 - (void)_showRequestBluetoothView:(BOOL)arg1;
 - (void)_showConnectTypeView:(BOOL)arg1;
@@ -143,6 +149,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)didReceiveMemoryWarning;
 - (void)show;
 - (int)numberOfSectionsInTableView:(id)arg1;

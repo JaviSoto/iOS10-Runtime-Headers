@@ -19,9 +19,9 @@
 + (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionary;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
-+ (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 + (id)dictionaryWithObjectsAndKeys:(id)arg1;
 + (id)dictionaryWithContentsOfFile:(id)arg1;
@@ -123,14 +123,6 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)bks_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
-- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
-- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
-- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
-- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
-- (id)MCDeepCopy;
-- (id)MCMutableDeepCopy;
-- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)archiveData;
 - (id)dictionaryFromChanges:(id)arg1;
 - (id)plistData;
@@ -164,6 +156,14 @@
 - (BOOL)matchesUID:(id)arg1;
 - (id)mutableDeepAutoreleasedCopy;
 - (id)_geo_newXPCObject;
+- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
+- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
+- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
+- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
+- (id)MCDeepCopy;
+- (id)MCMutableDeepCopy;
+- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)_FTFilteredDictionaryForAPS;
 - (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
 - (int)abCompare:(id)arg1;
@@ -176,6 +176,7 @@
 - (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
 - (id)_gkImageUrlForSize:(int)arg1 foundSize:(out unsigned int*)arg2;
 - (id)_gkImageUrlWithFallbacksForSize:(int)arg1;
+- (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)MR_isEqualToDictionary:(id)arg1;
 - (id)_sa_mappedDictionaryWithBlock:(id)arg1;
 - (id)ML3StringForKey:(id)arg1;

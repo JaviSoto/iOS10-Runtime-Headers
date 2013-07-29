@@ -51,10 +51,10 @@
 - (BOOL)_canTransitionFromState:(int)arg1 toState:(int)arg2;
 - (void)_setRefreshControlState:(int)arg1 notify:(BOOL)arg2;
 - (float)_stiffnessForVelocity:(float)arg1;
-- (void)_updateConcealingMask;
 - (void)_setVisibleHeight:(float)arg1;
 - (float)_visibleHeightForContentOffset:(struct CGPoint { float x1; float x2; })arg1 origin:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })_originForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_updateConcealingMask;
 - (void)_updateHiddenStateIfNeeded;
 - (int)_recomputeNewState;
 - (float)revealedFraction;

@@ -12,6 +12,9 @@
 @property float overhangY;
 @property float perspectiveTransform;
 
++ (struct CGSize { float x1; float x2; })bestWallpaperSizeForInterfaceIdiom;
++ (struct CGSize { float x1; float x2; })_overhangSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })minimumWallpaperSizeForCurrentDevice;
 + (id)settingsControllerModule;
 
 - (float)overhangY;

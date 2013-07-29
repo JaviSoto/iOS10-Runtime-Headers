@@ -11,6 +11,7 @@
     AVWeakReference *_weakSelf;
     NSObject<OS_dispatch_queue> *_videoCompositionQ;
     AVVideoComposition *_videoComposition;
+    BOOL _videoCompositionDidChange;
     NSObject<OS_dispatch_queue> *_clientCustomCompositorQ;
     <AVVideoCompositing> *_clientCustomCompositor;
     NSObject<OS_dispatch_queue> *_clientErrorQ;

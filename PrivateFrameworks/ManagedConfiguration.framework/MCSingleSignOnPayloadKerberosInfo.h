@@ -21,11 +21,11 @@
 @property(retain) NSString * accountTypeGUID;
 
 
+- (void)setRealm:(id)arg1;
 - (void)setAccountTypeGUID:(id)arg1;
 - (void)setAccountGUID:(id)arg1;
 - (void)setAppIdentifierMatches:(id)arg1;
 - (void)setURLPrefixMatches:(id)arg1;
-- (void)setRealm:(id)arg1;
 - (void)setPrincipalName:(id)arg1;
 - (id)appIdentifierMatches;
 - (id)accountTypeGUID;

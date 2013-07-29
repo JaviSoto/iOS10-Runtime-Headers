@@ -81,7 +81,7 @@
 - (id)containerPath;
 - (void)dealloc;
 - (id)description;
-- (id)deviceIdentifierForVendor;
 - (id)bundleIdentifier;
+- (id)deviceIdentifierForVendor;
 
 @end

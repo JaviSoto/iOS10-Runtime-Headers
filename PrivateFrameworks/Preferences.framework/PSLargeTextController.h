@@ -15,9 +15,6 @@
 
 @property BOOL showsExtendedRangeSwitch;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (void)setShowsExtendedRangeSwitch:(BOOL)arg1;
 - (BOOL)showsExtendedRangeSwitch;
@@ -34,7 +31,5 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (void)_axAnnotateTable;
 
 @end

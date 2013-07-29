@@ -80,20 +80,19 @@
 - (int)recordID;
 - (id)textTone;
 - (id)ringtone;
-- (id)postalAddresses;
 - (id)socialProfiles;
 - (id)relatedNames;
 - (id)instantMessageAddresses;
 - (id)dates;
 - (id)urlAddresses;
 - (id)preferredContactForName;
+- (int)nameOrder;
 - (id)note;
 - (id)phoneticFamilyName;
 - (id)phoneticMiddleName;
 - (id)phoneticGivenName;
 - (id)previousFamilyName;
 - (id)middleName;
-- (void)removePhoto;
 - (BOOL)hasLinkedContacts;
 - (BOOL)isEqualToContact:(id)arg1;
 - (id)_CNLabelFromABLabel:(struct __CFString { }*)arg1;
@@ -103,6 +102,7 @@
 - (id)_stringValueForProperty:(int)arg1;
 - (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2;
+- (id)postalAddresses;
 - (id)vCardRepresentation;
 - (void)setPreferredForName:(BOOL)arg1;
 - (void)setPreferredForPhoto:(BOOL)arg1;
@@ -110,6 +110,7 @@
 - (BOOL)isPreferredForPhoto;
 - (id)localizedNameForProperty:(id)arg1;
 - (unsigned int)recordType;
+- (BOOL)supportsCustomLabelsForProperty:(id)arg1;
 - (id)primarySourceName;
 - (id)givenName;
 - (void)reloadRecord;
@@ -119,6 +120,7 @@
 - (BOOL)isUnified;
 - (void)setPhoto:(id)arg1;
 - (void)setImageData:(id)arg1 forFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)removePhoto;
 - (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)organizationName;
 - (id)departmentName;
@@ -129,6 +131,9 @@
 - (id)photoThumbnail;
 - (BOOL)deleteContact;
 - (void*)originalRecord;
+- (BOOL)supportsInstantMessageService;
+- (id)supportedLabelsForProperty:(id)arg1;
+- (int)maximumNumberOfValuesForProperty:(id)arg1;
 - (BOOL)isUnknown;
 - (BOOL)isReadonly;
 - (void)setLinkedContacts:(id)arg1;
@@ -136,7 +141,6 @@
 - (BOOL)hasValidRecordID;
 - (id)emailAddresses;
 - (BOOL)isFacebook;
-- (int)nameOrder;
 - (void*)source;
 - (id)displayName;
 - (id)fullName;

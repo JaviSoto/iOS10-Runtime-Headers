@@ -28,10 +28,10 @@
 
 
 - (int)responseType;
-- (id)URLResponse;
 - (void)setURLBagType:(int)arg1;
 - (id)responseDictionary;
 - (id)userMessage;
+- (id)URLResponse;
 - (int)_responseTypeForStatusValue:(int)arg1;
 - (int)_responseTypeForErrorNumber:(int)arg1;
 - (int)_responseTypeForFailureType:(int)arg1;

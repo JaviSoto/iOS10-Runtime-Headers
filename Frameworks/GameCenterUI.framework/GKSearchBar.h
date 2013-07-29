@@ -18,6 +18,5 @@
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
-- (void)prepareForReuse;
 
 @end

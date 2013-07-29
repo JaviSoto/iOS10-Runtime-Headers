@@ -11,8 +11,6 @@
 
 @property(readonly) UITextField * textField;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)refreshPreferredContentSize;
 - (BOOL)becomeFirstResponder;
@@ -28,6 +26,5 @@
 - (BOOL)_canBecomeFirstResponder;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (void)setText:(id)arg1;
-- (void)_accessibilityLoadAccessibilityInformation;
 
 @end

@@ -104,16 +104,16 @@
 - (BOOL)isSuccessful;
 - (void)beginDistillWithCompletionHandler:(id)arg1;
 - (BOOL)isIncremental;
-- (void)setLogger:(id)arg1;
 - (void)setAssetStoreVersionString:(id)arg1;
 - (id)assetStoreVersionString;
 - (void)setAssetStoreVersionNumber:(int)arg1;
 - (int)assetStoreVersionNumber;
 - (id)initWithDocument:(id)arg1 outputPath:(id)arg2 attemptIncremental:(BOOL)arg3;
-- (id)logger;
 - (void)_logWarning:(id)arg1;
 - (void)_logExtra:(id)arg1;
 - (void)_logError:(id)arg1;
+- (void)setLogger:(id)arg1;
+- (id)logger;
 - (void)setIncremental:(BOOL)arg1;
 - (id)keyFormatData;
 - (void)waitUntilFinished;

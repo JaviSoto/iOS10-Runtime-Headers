@@ -33,8 +33,8 @@
 - (void)setDuration:(double)arg1;
 - (void)dealloc;
 - (double)delay;
-- (void)setDelay:(double)arg1;
 - (void)setFrameInterval:(double)arg1;
+- (void)setDelay:(double)arg1;
 - (id)_timingFunctionForAnimation;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (double)duration;

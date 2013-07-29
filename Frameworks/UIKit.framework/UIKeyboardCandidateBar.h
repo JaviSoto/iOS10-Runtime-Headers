@@ -22,7 +22,6 @@
     UIKBThemedView *_secondaryCandidatesViewEdgeGradient;
     TIKeyboardCandidateResultSet *_candidateResultSet;
     NSArray *_filteredCandidates;
-    unsigned int _previousInlineTextLength;
     NSIndexPath *_dragStartNextPageIndexPath;
     NSIndexPath *_dragStartPreviousPageIndexPath;
 
@@ -49,7 +48,6 @@
 @property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
 @property(retain) NSArray * filteredCandidates;
 @property BOOL canExtend;
-@property unsigned int previousInlineTextLength;
 @property struct CGPoint { float x1; float x2; } dragStartOffset;
 @property(copy) NSIndexPath * dragStartNextPageIndexPath;
 @property(copy) NSIndexPath * dragStartPreviousPageIndexPath;
@@ -66,9 +64,6 @@
 + (void)setScreenTraits:(id)arg1;
 + (float)heightForInterfaceOrientation:(int)arg1;
 + (unsigned int)numberOfRows;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -85,19 +80,18 @@
 - (id)candidateMaskView;
 - (void)setUpArrowWidth:(float)arg1;
 - (float)_emptySpaceForItemsToIndex:(unsigned int)arg1 inSection:(int)arg2;
+- (void)candidateBarLayoutDidFinishPreparingLayout;
 - (struct CGSize { float x1; float x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
 - (void)setCanExtend:(BOOL)arg1;
 - (id)_indexPathForCurrentCandidateViewFromIndexPath:(id)arg1;
 - (unsigned int)_sectionIndexForSection:(int)arg1;
 - (id)skippedSetCandidatesBlock;
-- (void)_updateCanExtendState;
 - (void)_updateCandidateViews;
 - (void)setSecondaryCandidatesViewEdgeGradient:(id)arg1;
 - (id)secondaryCandidatesViewEdgeGradient;
 - (float)upArrowWidth;
 - (void)setCandidateViews:(id)arg1;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1 candidateView:(id)arg2 section:(int)arg3;
-- (BOOL)hasScrolled;
 - (unsigned int)currentCandidateViewIndex;
 - (id)_indexPathForCandidateFromIndexPath:(id)arg1 inCandidateView:(id)arg2;
 - (void)_showPageAtIndexPath:(id)arg1;
@@ -129,6 +123,7 @@
 - (void)setShouldSkipLayoutUntilScrollViewAnimationEnds:(BOOL)arg1;
 - (BOOL)_showingInitiallyHiddenCandidates;
 - (void)setCurrentCandidateViewIndex:(unsigned int)arg1;
+- (void)_updateCanExtendState;
 - (float)_widthOfItemAtIndex:(unsigned int)arg1 inSection:(int)arg2;
 - (Class)_barCellClassForSection:(int)arg1;
 - (id)_itemAtIndex:(unsigned int)arg1 inSection:(int)arg2;
@@ -138,8 +133,6 @@
 - (void)_clearData;
 - (void)candidateListShouldBeDismissed:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
-- (void)setPreviousInlineTextLength:(unsigned int)arg1;
-- (unsigned int)previousInlineTextLength;
 - (id)candidateListDelegate;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
@@ -152,8 +145,12 @@
 - (void)candidatesDidChange;
 - (BOOL)hasPreviousPage;
 - (void)setInlineText:(id)arg1;
+- (unsigned int)selectedSortIndex;
+- (id)statisticsIdentifier;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (unsigned int)currentIndex;
+- (void)showPreviousRow;
+- (void)showNextRow;
 - (void)showPreviousPage;
 - (void)showNextPage;
 - (void)showPreviousCandidate;

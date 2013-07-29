@@ -14,7 +14,6 @@
 + (void)_gkStopObservingApplicationInstallationFor:(id)arg1;
 + (void)_gkBeginObservingApplicationInstallationFor:(id)arg1 withCallback:(int (*)())arg2;
 
-- (id)applicationsWithAudioComponents;
 - (BOOL)openURL:(id)arg1;
 - (BOOL)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
 - (BOOL)_LSPrivateRebuildLaunchServicesDatabase;
@@ -40,6 +39,7 @@
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
 - (BOOL)openApplicationWithBundleID:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
+- (id)applicationsWithAudioComponents;
 - (id)applicationsWithUIBackgroundModes;
 - (id)directionsApplications;
 - (id)applicationForOpeningResource:(id)arg1;

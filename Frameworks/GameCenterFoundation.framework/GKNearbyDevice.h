@@ -19,10 +19,10 @@
 
 - (void)setParticipantID:(id)arg1;
 - (id)participantID;
-- (void)setPlayerID:(id)arg1;
-- (id)playerID;
 - (void)setDeviceID:(id)arg1;
 - (id)deviceID;
+- (void)setPlayerID:(id)arg1;
+- (id)playerID;
 - (void)dealloc;
 - (void)setState:(int)arg1;
 - (int)state;

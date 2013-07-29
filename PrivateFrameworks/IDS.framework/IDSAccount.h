@@ -69,15 +69,15 @@
 - (id)_initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)aliasStrings;
 - (id)_internal;
+- (id)regionID;
 - (id)pushToken;
+- (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)setAuthToken:(id)arg1;
 - (id)devices;
-- (id)regionID;
-- (void)removeDelegate:(id)arg1;
-- (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (int)accountType;
 - (BOOL)isActive;
+- (void)removeDelegate:(id)arg1;
 - (id)uniqueID;
 - (void)dealloc;
 - (id)description;

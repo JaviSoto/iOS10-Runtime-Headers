@@ -62,10 +62,10 @@
 - (id)preparedURLRequest;
 - (void)performRequestWithHandler:(id)arg1;
 - (id)parameters;
-- (void)setPayload:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (id)account;
 - (void)setContentType:(id)arg1;
+- (void)setPayload:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (id)URL;

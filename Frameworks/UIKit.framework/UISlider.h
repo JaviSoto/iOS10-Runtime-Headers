@@ -57,9 +57,6 @@
 @property(readonly) UIImage * currentMinimumTrackImage;
 @property(readonly) UIImage * currentMaximumTrackImage;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -173,19 +170,5 @@
 - (float)value;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
-- (unsigned long long)accessibilityTraits;
-- (void)accessibilityIncrement;
-- (void)accessibilityDecrement;
-- (id)accessibilityValue;
-- (BOOL)isAccessibilityElement;
-- (float)_accessibilityIncreaseAmount:(BOOL)arg1;
-- (void)_accessibilityBumpValue:(BOOL)arg1;
-- (float)_accessibilityMinValue;
-- (float)_accessibilityMaxValue;
-- (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
-- (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
-- (id)_accessibilityAbsoluteValue;
-- (void)_accessibilitySetValue:(id)arg1;
 
 @end

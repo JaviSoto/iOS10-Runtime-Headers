@@ -2,16 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class Protocol, IMRemoteObjectBroadcaster, NSArray;
+@class Protocol, NSArray, IMRemoteObjectBroadcaster, IMMessageContext;
 
 @interface Broadcaster : NSProxy  {
     NSArray *_targets;
     IMRemoteObjectBroadcaster *_parent;
     Protocol *_protocol;
+    IMMessageContext *_messageContext;
 }
 
 
-- (id)initWithNotifier:(id)arg1 protocol:(id)arg2 targets:(id)arg3;
+- (id)initWithNotifier:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3 targets:(id)arg4;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;

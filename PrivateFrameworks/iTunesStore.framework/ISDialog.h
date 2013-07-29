@@ -22,7 +22,6 @@
     BOOL _oneButtonPerLine;
     BOOL _shouldDismissAfterUnlock;
     BOOL _shouldDisplayAsTopMost;
-    BOOL _shouldHideButtonsInAwayView;
     BOOL _shouldPendInSetupIfNotAllowed;
     NSArray *_textFields;
     NSString *_title;
@@ -46,7 +45,6 @@
 @property BOOL expectsResponse;
 @property BOOL shouldDismissAfterUnlock;
 @property BOOL shouldDisplayAsTopMost;
-@property BOOL shouldHideButtonsInAwayView;
 @property BOOL shouldPendInSetupIfNotAllowed;
 @property int kind;
 @property(copy) SSAuthenticationContext * authenticationContext;
@@ -59,7 +57,6 @@
 
 - (void)setUnlockActionButtonIndex:(int)arg1;
 - (void)setShouldPendInSetupIfNotAllowed:(BOOL)arg1;
-- (void)setShouldHideButtonsInAwayView:(BOOL)arg1;
 - (void)setShouldDisplayAsTopMost:(BOOL)arg1;
 - (void)setShouldDismissAfterUnlock:(BOOL)arg1;
 - (void)setOneButtonPerLine:(BOOL)arg1;
@@ -78,7 +75,6 @@
 - (id)initWithOfferDeviceError:(id)arg1;
 - (BOOL)shouldPendInSetupIfNotAllowed;
 - (BOOL)shouldDismissAfterUnlock;
-- (BOOL)shouldHideButtonsInAwayView;
 - (BOOL)shouldDisplayAsTopMost;
 - (BOOL)oneButtonPerLine;
 - (BOOL)dismissOnLock;
@@ -101,7 +97,6 @@
 - (id)authenticationContext;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (id)initWithError:(id)arg1;
-- (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
@@ -113,6 +108,7 @@
 - (BOOL)groupsTextFields;
 - (id)buttons;
 - (void)setDefaultButtonIndex:(int)arg1;
+- (void)setMessage:(id)arg1;
 - (int)defaultButtonIndex;
 - (void)setKind:(int)arg1;
 

@@ -15,14 +15,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
-- (void)_saveCookies;
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;
 - (void)setCookieAcceptPolicy:(unsigned int)arg1;
 - (unsigned int)cookieAcceptPolicy;
-- (void)deleteCookie:(id)arg1;
 - (void)setCookie:(id)arg1;
+- (void)deleteCookie:(id)arg1;
 - (id)cookies;
+- (void)_saveCookies;
 - (id)cookiesForURL:(id)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;

@@ -15,9 +15,9 @@
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setQueue;
 
+- (BOOL)shouldShuffle;
 - (void)setSort:(id)arg1;
 - (void)setShouldShuffle:(BOOL)arg1;
-- (BOOL)shouldShuffle;
 - (void)setMediaItems:(id)arg1;
 - (id)mediaItems;
 - (BOOL)requiresResponse;

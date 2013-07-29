@@ -224,12 +224,12 @@
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
 - (BOOL)isInRetryState;
-- (id)personID;
-- (void)setPersonID:(id)arg1;
 - (void)setEventQueue:(id)arg1;
 - (id)eventQueue;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
+- (id)personID;
+- (void)setPersonID:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

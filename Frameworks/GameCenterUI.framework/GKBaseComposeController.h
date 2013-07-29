@@ -2,13 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKTextView, NSArray, UIScrollView, UIView, GKLabel, GKContiguousContainerView;
+@class GKTextView, NSArray, UIScrollView, UIView, GKContiguousContainerView;
 
 @interface GKBaseComposeController : GKLoadableContentViewController <UITextViewDelegate> {
     UIScrollView *_backgroundView;
     NSArray *_composeHeaderFields;
     GKTextView *_messageField;
-    GKLabel *_messageCharacterCountField;
     UIView *_intendedFirstResponder;
     GKContiguousContainerView *_headerFieldContainer;
 }
@@ -16,21 +15,18 @@
 @property(retain) UIScrollView * backgroundView;
 @property(retain) NSArray * composeHeaderFields;
 @property(retain) GKTextView * messageField;
-@property(retain) GKLabel * messageCharacterCountField;
 @property UIView * intendedFirstResponder;
 @property(retain) GKContiguousContainerView * headerFieldContainer;
 
 
 - (void)setHeaderFieldContainer:(id)arg1;
-- (void)setMessageCharacterCountField:(id)arg1;
 - (void)setMessageField:(id)arg1;
 - (id)composeHeaderFields;
 - (void)setMessageFieldText:(id)arg1;
 - (void)setComposeHeaderFields:(id)arg1;
 - (id)intendedFirstResponder;
-- (void)updateCharacterCountLayout;
+- (void)messageFieldTextDidChange;
 - (id)messageField;
-- (id)messageCharacterCountField;
 - (id)viewMetricsForContainerView:(id)arg1;
 - (id)headerFieldContainer;
 - (void)setIntendedFirstResponder:(id)arg1;

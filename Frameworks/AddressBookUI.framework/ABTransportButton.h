@@ -15,8 +15,6 @@
 @property(retain) UIImage * image;
 
 + (id)transportButton;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (id)glyphColor;
 - (id)_imageNameForType:(int)arg1;
@@ -32,8 +30,5 @@
 - (void)tintColorDidChange;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (int)_axTransportType;
 
 @end

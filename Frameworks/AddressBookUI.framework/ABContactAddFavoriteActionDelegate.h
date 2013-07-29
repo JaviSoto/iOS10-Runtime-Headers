@@ -10,7 +10,7 @@
 }
 
 @property(retain) ABPropertyGroupItem * propertyItem;
-@property ABContactAction * sendingAction;
+@property(retain) ABContactAction * sendingAction;
 
 
 - (id)sendingAction;

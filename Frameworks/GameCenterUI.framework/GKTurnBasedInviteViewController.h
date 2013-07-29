@@ -28,10 +28,10 @@
 - (void)cleanupStateForCancelOrError;
 - (int)alertTag;
 - (void)setAlertTag:(int)arg1;
+- (void)finishWithError:(id)arg1;
 - (void)playNow;
 - (void)invitePlayers:(id)arg1;
 - (void)setPlayerRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)finishWithError:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

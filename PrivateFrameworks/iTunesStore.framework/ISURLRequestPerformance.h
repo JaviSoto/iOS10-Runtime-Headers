@@ -23,7 +23,6 @@
 
 - (double)renderBeginInterval;
 - (void)setRenderBeginTime:(double)arg1;
-- (id)URLResponse;
 - (double)renderEndInterval;
 - (void)setRenderFinishTime:(double)arg1;
 - (double)receivedResponseInterval;
@@ -31,6 +30,7 @@
 - (void)setReceivedResponseTime:(double)arg1;
 - (double)finishInterval;
 - (void)setFinishTime:(double)arg1;
+- (id)URLResponse;
 - (void)dealloc;
 - (double)startTime;
 - (void)setStartTime:(double)arg1;

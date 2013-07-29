@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, RadioTrack;
+@class UIImage, NSString, RadioTrack;
 
 @interface MPRadioAVItem : MPAVItem  {
     RadioTrack *_radioTrack;
+    UIImage *_cachedArtworkImage;
     BOOL _isHeartbeatInvalid;
     BOOL _isBanned;
     BOOL _isLiked;
@@ -43,7 +44,6 @@
 - (void)_internalIsBannedDidChangeNotification:(id)arg1;
 - (void)_internalIsLikedDidChangeNotification:(id)arg1;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
-- (id)mediaItem;
 - (BOOL)isRadioItem;
 - (void)_applyLoudnessInfoForVolumeNormalization;
 - (id)_cachedArtworkImage;
@@ -58,6 +58,7 @@
 - (BOOL)supportsAddStation;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
+- (id)mediaItem;
 - (unsigned int)countForQueueFeeder;
 - (id)urlTimeMarkers;
 - (id)artworkTimeMarkers;

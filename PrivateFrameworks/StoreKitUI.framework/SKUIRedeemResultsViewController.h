@@ -43,8 +43,8 @@
 - (void)_setItemImage:(id)arg1;
 - (void)_setHeaderImage:(id)arg1;
 - (id)_itemView;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)_reloadSections;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)_doneAction:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

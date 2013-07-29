@@ -7,6 +7,7 @@
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell  {
     BOOL _dummy;
     BOOL _usesGroupHeaderAppearance;
+    BOOL _shouldShowCandidateNumber;
     BOOL _secondaryCandidateAppearance;
     NSString *_text;
     NSString *_alternativeText;
@@ -50,6 +51,7 @@
 @property(copy) NSString * text;
 @property(copy) NSString * alternativeText;
 @property unsigned int candidateNumber;
+@property BOOL shouldShowCandidateNumber;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 @property BOOL secondaryCandidateAppearance;
 @property unsigned int edges;
@@ -62,6 +64,7 @@
 @property struct CGSize { float x1; float x2; } candidateNumberSize;
 @property float cellPadding;
 @property float minimumWidth;
+@property(readonly) BOOL canShowCandidateNumber;
 
 + (float)widthForCandidate:(id)arg1 candidateNumber:(unsigned int)arg2 visualStyle:(int)arg3;
 + (struct CGSize { float x1; float x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
@@ -69,9 +72,6 @@
 + (struct CGColor { }*)legacy_outlineShadowColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (struct CGColor { }*)legacy_outlineColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (id)reuseIdentifier;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_accessibilityPerformValidations:(id)arg1;
-+ (void)_initializeSafeCategory;
 
 - (struct CGSize { float x1; float x2; })size;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -87,6 +87,7 @@
 - (void)drawText;
 - (void)drawTextWithCandidateNumber;
 - (void)drawBackgroundAndBorders;
+- (BOOL)canShowCandidateNumber;
 - (float)rightPadding;
 - (void)setSecondaryCandidateAppearance:(BOOL)arg1;
 - (BOOL)secondaryCandidateAppearance;
@@ -97,6 +98,7 @@
 - (void)setUsesGroupHeaderAppearance:(BOOL)arg1;
 - (void)setDummy:(BOOL)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
+- (void)setShouldShowCandidateNumber:(BOOL)arg1;
 - (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)usesGroupHeaderAppearance;
 - (unsigned int)candidateNumber;
@@ -110,18 +112,13 @@
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;
 - (void)setTextAlignment:(int)arg1;
+- (void)setText:(id)arg1;
 - (float)minimumWidth;
 - (void)setMinimumWidth:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 - (void)setEdges:(unsigned int)arg1;
-- (void)setText:(id)arg1;
 - (float)rowHeight;
 - (void)setRowHeight:(float)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLanguage;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)accessibilityHeaderElements;
 
 @end

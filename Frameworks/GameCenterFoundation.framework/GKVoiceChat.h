@@ -38,9 +38,9 @@
 - (void)setGkSession:(id)arg1;
 - (id)initChat:(id)arg1 withSession:(id)arg2;
 - (id)playerIDs;
-- (float)volume;
 - (BOOL)isActive;
 - (void)setVolume:(float)arg1;
+- (float)volume;
 - (id)name;
 - (void)dealloc;
 - (void)setActive:(BOOL)arg1;

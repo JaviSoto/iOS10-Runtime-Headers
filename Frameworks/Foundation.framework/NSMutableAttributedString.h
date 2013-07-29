@@ -45,10 +45,10 @@
 - (void)fixParagraphStyleAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)fixFontAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)fixGlyphInfoAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_setAttributeFixingInProgress:(BOOL)arg1;
+- (BOOL)_attributeFixingInProgress;
 - (void)convertBidiControlCharactersToWritingDirection;
 - (void)_ui_restoreOriginalFontAttributes;
-- (void)scrcAppendFormat:(id)arg1;
-- (void)appendString:(id)arg1 withAttributes:(id)arg2;
 - (void)MP_addAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
 - (void)mf_setString:(id)arg1;
 - (void)mf_removeAttribute:(id)arg1;

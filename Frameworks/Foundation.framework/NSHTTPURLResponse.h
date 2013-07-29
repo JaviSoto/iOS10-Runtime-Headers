@@ -14,6 +14,7 @@
 
 - (void)dealloc;
 - (id)description;
+- (int)statusCode;
 - (id)allHeaderFields;
 - (struct __SecTrust { }*)_peerTrust;
 - (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
@@ -23,7 +24,6 @@
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)_peerCertificateChain;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (int)statusCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (double)_maxAge;

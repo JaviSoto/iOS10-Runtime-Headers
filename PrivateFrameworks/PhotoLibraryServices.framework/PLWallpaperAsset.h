@@ -15,6 +15,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
+- (BOOL)allowsWallpaperEditing;
 - (void)setWallpaperOptions:(id)arg1;
 - (id)wallpaperOptions;
 - (id)thumbnailURL;
@@ -23,7 +24,6 @@
 - (void)setImageURL:(id)arg1;
 - (id)wallpaperFullScreenImage;
 - (BOOL)isIncludedInMoments;
-- (BOOL)allowsWallpaperEditing;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)indexSheetImage;
 - (id)imageWithFormat:(int)arg1;

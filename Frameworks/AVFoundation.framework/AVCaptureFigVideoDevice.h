@@ -14,12 +14,14 @@
         unsigned int flags; 
         long long epoch; 
     } _activeMinFrameDuration;
+    BOOL _activeMinFrameDurationSetByClient;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     } _activeMaxFrameDuration;
+    BOOL _activeMaxFrameDurationSetByClient;
     int _focusMode;
     struct CGPoint { 
         float x; 
@@ -92,7 +94,6 @@
     BOOL _videoZoomDrawOverlay;
     NSArray *_formats;
     struct OpaqueCMClock { } *_deviceClock;
-    BOOL _isNonUIBuild;
     AVWeakReference *_weakReference;
 }
 
@@ -100,6 +101,28 @@
 + (id)_devices;
 + (void)initialize;
 
+- (void)setFlashMode:(int)arg1;
+- (float)torchLevel;
+- (void)setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
+- (void)setFaceDetectionDrivenImageProcessingEnabled:(BOOL)arg1;
+- (BOOL)isFaceDetectionDuringVideoPreviewSupported;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
+- (BOOL)isAdjustingExposure;
+- (BOOL)isAdjustingFocus;
+- (void)setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
+- (void)setSmoothAutoFocusEnabled:(BOOL)arg1;
+- (BOOL)isFlashActive;
+- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
+- (void)setWhiteBalanceMode:(int)arg1;
+- (void)setAutoFocusRangeRestriction:(int)arg1;
+- (void)setExposureMode:(int)arg1;
+- (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFocusMode:(int)arg1;
+- (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTorchMode:(int)arg1;
+- (BOOL)setTorchModeOnWithLevel:(float)arg1 error:(id*)arg2;
+- (BOOL)isTorchAvailable;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)setVideoZoomUpscaleStageHint:(int)arg1;
 - (int)videoZoomUpscaleStageHint;
 - (void)setVideoZoomDownscaleStageHint:(int)arg1;
@@ -111,7 +134,6 @@
 - (BOOL)_setBoolValue:(BOOL)arg1 forRecorderProperty:(struct __CFString { }*)arg2;
 - (BOOL)_setFloatValue:(float)arg1 forRecorderProperty:(struct __CFString { }*)arg2;
 - (float)_floatValueForRecorderProperty:(struct __CFString { }*)arg1;
-- (BOOL)yoMamaWearsFancyGlasses;
 - (struct OpaqueCMBaseObject { }*)_createFigRecorderForTorchApps;
 - (id)_createTorchAppsKillTimer;
 - (void)_setTorchActive:(BOOL)arg1;
@@ -154,7 +176,6 @@
 - (BOOL)doesHandleNotification:(id)arg1;
 - (void)setFigCaptureStreamFactoryTestProperty:(struct __CFString { }*)arg1 withValue:(void*)arg2 error:(id*)arg3;
 - (void*)copyFigCaptureStreamFactoryTestProperty:(struct __CFString { }*)arg1 error:(id*)arg2;
-- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
 - (BOOL)automaticallyEnablesLowLightBoostWhenAvailable;
 - (BOOL)isLowLightBoostEnabled;
 - (BOOL)isLowLightBoostSupported;
@@ -171,11 +192,8 @@
 - (BOOL)isAdjustingWhiteBalance;
 - (void)setWhiteBalanceTemperature:(float)arg1;
 - (float)whiteBalanceTemperature;
-- (void)setWhiteBalanceMode:(int)arg1;
 - (int)whiteBalanceMode;
 - (BOOL)isWhiteBalanceModeSupported:(int)arg1;
-- (BOOL)isAdjustingExposure;
-- (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
 - (BOOL)isExposurePointOfInterestSupported;
 - (void)setAutoExposureBias:(float)arg1;
@@ -186,60 +204,46 @@
 - (float)exposureGain;
 - (void)setExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })exposureDuration;
-- (void)setExposureMode:(int)arg1;
 - (int)exposureMode;
 - (BOOL)isExposureModeSupported:(int)arg1;
-- (void)setSmoothAutoFocusEnabled:(BOOL)arg1;
 - (BOOL)isSmoothAutoFocusEnabled;
 - (BOOL)isSmoothAutoFocusSupported;
 - (void)setManualFocusSupportEnabled:(BOOL)arg1;
 - (BOOL)isManualFocusSupportEnabled;
 - (void)setFocusPosition:(float)arg1;
 - (float)focusPosition;
-- (void)setAutoFocusRangeRestriction:(int)arg1;
 - (int)autoFocusRangeRestriction;
 - (BOOL)isAutoFocusRangeRestrictionSupported;
-- (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)isAdjustingFocus;
 - (struct CGPoint { float x1; float x2; })focusPointOfInterest;
 - (BOOL)isFocusPointOfInterestSupported;
-- (void)setFocusMode:(int)arg1;
 - (int)focusMode;
 - (BOOL)isFocusModeSupported:(int)arg1;
-- (BOOL)setTorchModeOnWithLevel:(float)arg1 error:(id*)arg2;
-- (void)setTorchMode:(int)arg1;
 - (int)torchMode;
 - (BOOL)isTorchActive;
-- (BOOL)isTorchAvailable;
 - (BOOL)isTorchModeSupported:(int)arg1;
-- (float)torchLevel;
 - (BOOL)hasTorch;
-- (void)setFlashMode:(int)arg1;
 - (int)flashMode;
 - (BOOL)isFlashModeSupported:(int)arg1;
-- (BOOL)isFlashActive;
 - (BOOL)isFlashAvailable;
 - (BOOL)hasFlash;
 - (struct OpaqueCMClock { }*)deviceClock;
-- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2 resetZoom:(BOOL)arg3;
+- (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2;
+- (BOOL)isActiveVideoMaxFrameDurationSet;
+- (BOOL)isActiveVideoMinFrameDurationSet;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
 - (id)formats;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isMachineReadableCodeDetectionSupported;
+- (BOOL)isYoMamaWearsFancyGlasses;
 - (void)setYoMamaWearsFancyGlassesDetectionEnabled:(BOOL)arg1;
 - (BOOL)isYoMamaWearsFancyGlassesDetectionEnabled;
 - (BOOL)isYoMamaWearsFancyGlassesDetectionSupported;
-- (void)setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
 - (BOOL)isFaceDetectionDebugMetadataReportingEnabled;
 - (int)faceRectangleAngle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
-- (void)setFaceDetectionDrivenImageProcessingEnabled:(BOOL)arg1;
 - (BOOL)isFaceDetectionDrivenImageProcessingEnabled;
-- (BOOL)isFaceDetectionDuringVideoPreviewSupported;
 - (BOOL)isFaceDetectionSupported;
-- (void)setSubjectAreaChangeMonitoringEnabled:(BOOL)arg1;
 - (BOOL)isSubjectAreaChangeMonitoringEnabled;
 - (void)_sessionDidStart;
 - (void)_sessionWillStart;
@@ -256,8 +260,6 @@
 - (id)activeFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (BOOL)isConnected;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)uniqueID;
 - (id)init;
 - (id)localizedName;
@@ -265,5 +267,6 @@
 - (float)contrast;
 - (void)setContrast:(float)arg1;
 - (int)position;
+- (BOOL)isConnected;
 
 @end

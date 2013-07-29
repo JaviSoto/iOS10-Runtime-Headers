@@ -84,8 +84,6 @@
 - (void)_adjustWakeOnWiFi;
 - (void)_adjustWakeOnWiFiLocked;
 - (BOOL)_wantsWakeOnWiFiEnabled;
-- (void)_adjustWiFiAutoAssociation;
-- (void)_adjustWiFiAutoAssociationLocked;
 - (void)_populateWakeOnWiFiCapabilityLocked;
 - (BOOL)_isInternetReachableLocked;
 - (void)_performCalloutsForSelectorValue:(id)arg1;
@@ -98,9 +96,11 @@
 - (void)_updateWWANInterfaceAssertionsLocked;
 - (void)_mainThreadDelayedInvalidation;
 - (void)_ctConnectionWasInvalidated;
-- (void)removeDelegate:(id)arg1;
 - (void)_updateWWANInterfaceUpStateLocked;
 - (void)_createCTConnection;
+- (void)_adjustWiFiAutoAssociationLocked;
+- (void)_adjustWiFiAutoAssociation;
+- (void)removeDelegate:(id)arg1;
 - (void)_createWiFiManager;
 - (id)init;
 - (void)dealloc;

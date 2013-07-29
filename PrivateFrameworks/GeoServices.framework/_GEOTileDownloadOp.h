@@ -56,12 +56,15 @@
 
 
 - (BOOL)requireWiFi;
-- (BOOL)useCookies;
 - (void)setTileEdition:(unsigned int)arg1;
 - (id)conn;
 - (double)elapsed;
 - (void)setConn:(id)arg1;
+- (BOOL)useCookies;
+- (id)userAgent;
 - (void)setUseCookies:(BOOL)arg1;
+- (void)setAuditToken:(id)arg1;
+- (void)setUserAgent:(id)arg1;
 - (void)setEditionHeader:(id)arg1;
 - (id)editionHeader;
 - (void)setRequireWiFi:(BOOL)arg1;
@@ -70,10 +73,6 @@
 - (unsigned int)tileEdition;
 - (id)localizationTile;
 - (id)baseTile;
-- (void)setAuditToken:(id)arg1;
-- (id)userAgent;
-- (void)setData:(id)arg1;
-- (void)setUserAgent:(id)arg1;
 - (double)timeout;
 - (id)data;
 - (void)setDelegate:(id)arg1;
@@ -83,6 +82,7 @@
 - (BOOL)finished;
 - (void)cancel;
 - (void)setUrl:(id)arg1;
+- (void)setData:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (id)auditToken;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

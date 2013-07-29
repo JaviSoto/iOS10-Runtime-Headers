@@ -13,38 +13,39 @@
 @property(readonly) NSArray * availableImageDataCodecTypes;
 @property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
 
++ (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
++ (unsigned long)maxStillImageJPEGDataSize;
 + (id)jpegStillImageNSDataRepresentationForBGRASurface:(void*)arg1 size:(unsigned long)arg2;
 + (struct CGImage { }*)cgImageForBGRASurface:(void*)arg1 size:(unsigned long)arg2;
 + (id)jpegStillImageNSDataRepresentationForSurface:(void*)arg1 size:(unsigned long)arg2 metadata:(id)arg3;
-+ (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
-+ (unsigned long)maxStillImageJPEGDataSize;
 + (void)initialize;
 
-- (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2 imageIsEV0:(BOOL*)arg3;
-- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)setEV0CaptureEnabled:(BOOL)arg1;
+- (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
+- (BOOL)resumeVideoProcessing;
+- (void)setSquareCropEnabled:(BOOL)arg1;
+- (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2 imageIsEV0:(BOOL*)arg3;
 - (id)firstActiveConnection;
 - (BOOL)isCapturingStillImage;
-- (BOOL)resumeVideoProcessing;
-- (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
 - (BOOL)suspendsVideoProcessingDuringStillImageCapture;
+- (void)setShutterSound:(unsigned long)arg1;
+- (unsigned long)shutterSound;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
 - (BOOL)isChromaNoiseReductionEnabled;
 - (void)setYoMamaWearsCombatBootsAutomaticallyWhenAvailable:(BOOL)arg1;
 - (BOOL)yoMamaWearsCombatBootsAutomaticallyWhenAvailable;
-- (void)setEV0CaptureEnabled:(BOOL)arg1;
+- (BOOL)isYoMamaWearsCombatBootsActive;
 - (BOOL)isEV0CaptureEnabled;
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (BOOL)isHDRCaptureEnabled;
-- (void)setSquareCropEnabled:(BOOL)arg1;
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (BOOL)isRawCaptureSupported;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
 - (BOOL)isRawCaptureEnabled;
 - (BOOL)squareCropEnabled;
-- (void)setSuppressesShutterSound:(BOOL)arg1;
-- (BOOL)suppressesShutterSound;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
 - (int)HDRMode;
@@ -60,7 +61,8 @@
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)init;
 - (void)dealloc;
-- (void)setOutputSettings:(id)arg1;
 - (id)outputSettings;
+- (void)setOutputSettings:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

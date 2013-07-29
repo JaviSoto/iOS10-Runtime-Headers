@@ -94,11 +94,11 @@
 - (struct CGSize { float x1; float x2; })leftContentViewSize;
 - (void)_updateClipCorners;
 - (BOOL)_isSplit;
-- (int)_clipCornersOfView:(id)arg1;
 - (id)_inheritedRenderConfig;
 - (void)_endSplitTransitionIfNeeded:(BOOL)arg1;
 - (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
 - (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
+- (int)_clipCornersOfView:(id)arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)_updateBackgroundColor;
 - (id)tintColor;

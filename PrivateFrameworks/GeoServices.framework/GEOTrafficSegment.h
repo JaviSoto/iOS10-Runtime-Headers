@@ -21,6 +21,8 @@
 @property int width;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasWidth:(BOOL)arg1;
 - (BOOL)hasWidth;
 - (void)setVertexCount:(int)arg1;
@@ -29,8 +31,6 @@
 - (void)setHasSpeed:(BOOL)arg1;
 - (BOOL)hasSpeed;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setWidth:(int)arg1;
 - (int)width;
 - (void)setSpeed:(int)arg1;

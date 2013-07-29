@@ -28,6 +28,7 @@
 + (id)sharedConnectionIfServerIsRunning;
 + (id)sharedConnection;
 
+- (id)activeSyncDeviceIdentifier;
 - (void)fillOutCurrentEASTimeZoneInfo;
 - (BOOL)registerForInterrogationWithBlock:(id)arg1;
 - (id)statusReports;

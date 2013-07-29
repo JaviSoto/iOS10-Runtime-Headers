@@ -11,12 +11,12 @@
 }
 
 
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (id)_delegateForConnection:(struct _CFURLConnection { }*)arg1;
 - (void)_createConnectionSessionWithPurgeTimeout:(int)arg1 loadWidth:(int)arg2;
 - (void)removeDelegateForConnection:(struct _CFURLConnection { }*)arg1;
 - (struct _CFURLConnection { }*)newCFURLConnectionWithRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
 - (id)initPersistentSessionWithTimeout:(int)arg1 loadWidth:(int)arg2;
-- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (void)dealloc;
 
 @end

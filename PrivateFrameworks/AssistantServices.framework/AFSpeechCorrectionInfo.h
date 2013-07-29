@@ -2,18 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
+@class NSString;
+
 @interface AFSpeechCorrectionInfo : NSObject <NSSecureCoding> {
     int _alternativeSelectionCount;
     int _characterModificationCount;
+    NSString *_correctedText;
 }
 
 @property int alternativeSelectionCount;
 @property int characterModificationCount;
+@property(copy) NSString * correctedText;
 
 + (BOOL)supportsSecureCoding;
 
+- (id)correctedText;
+- (void).cxx_destruct;
 - (int)characterModificationCount;
 - (int)alternativeSelectionCount;
+- (void)setCorrectedText:(id)arg1;
 - (void)setCharacterModificationCount:(int)arg1;
 - (void)setAlternativeSelectionCount:(int)arg1;
 - (id)initWithCoder:(id)arg1;

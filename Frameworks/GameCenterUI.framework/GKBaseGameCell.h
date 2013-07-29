@@ -15,6 +15,7 @@
 @property(retain) GKGameRecord * gameRecord;
 
 + (float)defaultRowHeight;
++ (float)textOffsetForIdiom:(int)arg1;
 
 - (void)setIconView:(id)arg1;
 - (void)setNameLabel:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOActiveTileGroup, NSMutableData, NSError, <GEOResourceManifestServerProxyDelegate>, NSTimer, NSLock, NSURLConnection, NSString, GEOResourceLoader, NSMutableDictionary, GEOResourceManifestDownload;
+@class GEOActiveTileGroup, NSURLConnection, NSMutableData, GEOResourceManifestDownload, NSLock, <GEOResourceManifestServerProxyDelegate>, NSError, GEOResourceLoader, NSString, NSMutableDictionary, NSMutableArray, NSTimer;
 
 @interface GEOResourceManifestServerLocalProxy : NSObject <NSURLConnectionDelegate, GEOResourceManifestServerProxy> {
     <GEOResourceManifestServerProxyDelegate> *_delegate;
@@ -24,6 +24,7 @@
     NSString *_authToken;
     NSLock *_authTokenLock;
     NSError *_lastResourceManifestLoadError;
+    NSMutableArray *_manifestUpdateCompletionHandlers;
 }
 
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
@@ -31,6 +32,7 @@
 
 - (void)_writeManifestToDisk:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
+- (void)_updateManifest:(id)arg1;
 - (id)_manifestURL;
 - (void)_updateManifest;
 - (void)_scheduleTileGroupUpdateTimerWithTimeInterval:(double)arg1;
@@ -41,6 +43,7 @@
 - (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2 ignoreIdentifier:(BOOL)arg3;
 - (void)_registerReachabilityObserver:(unsigned int)arg1;
 - (id)_idealTileGroupToUse;
+- (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_writeActiveTileGroupToDisk:(id)arg1;
 - (void)_purgeOldRegionalResources;
 - (oneway void)releaseResources:(id)arg1;
@@ -54,6 +57,7 @@
 - (oneway void)resetActiveTileGroup;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
+- (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
 - (id)serverQueue;
 - (void)closeConnection;
 - (void)openConnection;

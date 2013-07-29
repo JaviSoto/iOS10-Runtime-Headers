@@ -9,7 +9,7 @@
     NSArray *_items;
     UIColor *_barTintColor;
     struct { 
-        unsigned int barStyle : 2; 
+        unsigned int barStyle : 3; 
         unsigned int mode : 2; 
         unsigned int wasEnabled : 1; 
         unsigned int downButtonSentAction : 1; 
@@ -26,7 +26,6 @@
     _UIBackdropView *_adaptiveBackdrop;
     UIImageView *_backgroundView;
     UIView *_shadowView;
-    BOOL _forcesOpaqueBackground;
     BOOL _isAdaptiveToolbarDisabled;
     BOOL _wantsLetterpressContent;
     int _barPosition;
@@ -40,7 +39,6 @@
 @property(retain) UIColor * barTintColor;
 @property <UIToolbarDelegate> * delegate;
 @property(setter=_setShadowView:,retain) UIView * _shadowView;
-@property(setter=_setForcesOpaqueBackground:) BOOL _forcesOpaqueBackground;
 @property(getter=_isAdaptiveToolbarDisabled,setter=_setAdaptiveToolbarDisabled:) BOOL _adaptiveToolbarDisabled;
 @property(setter=_setWantsLetterpressContent:) BOOL _wantsLetterpressContent;
 @property(readonly) int barPosition;
@@ -52,10 +50,7 @@
 + (Class)defaultButtonClass;
 + (float)defaultHeightForBarSize:(int)arg1;
 + (float)defaultHeight;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (id)items;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -124,9 +119,9 @@
 - (unsigned int)_subviewIndexAboveBackgroundView;
 - (BOOL)_isTopBar_legacy;
 - (void)_updateToolbarButtonsForInteractionTintColorChange;
-- (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
+- (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 resetFontScaleAdjustment:(BOOL)arg3;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 actuallyRepositionButtons:(BOOL)arg3;
+- (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 resetFontScaleAdjustment:(BOOL)arg3 actuallyRepositionButtons:(BOOL)arg4;
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_didFinishHidingRetainedOldItems:(id)arg1;
 - (void)_setBarTintColor:(id)arg1 force:(BOOL)arg2;
@@ -136,15 +131,12 @@
 - (id)backgroundImageForToolbarPosition:(int)arg1 barMetrics:(int)arg2;
 - (void)_setLocked:(BOOL)arg1;
 - (void)_setShadowView:(id)arg1;
-- (BOOL)_forcesOpaqueBackground;
 - (id)barTintColor;
 - (void)_setHidesShadow:(BOOL)arg1;
 - (BOOL)_hidesShadow;
-- (void)_setForcesOpaqueBackground:(BOOL)arg1;
 - (void)_setWantsLetterpressContent:(BOOL)arg1;
 - (int)barPosition;
 - (int)_barPosition;
-- (BOOL)_wantsLetterpressContent;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
 - (id)_currentCustomBackground;
@@ -158,14 +150,16 @@
 - (void)_setBarPosition:(int)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)_wantsLetterpressContent;
 - (void)_updateOpacity;
 - (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
+- (void)_updateBackgroundImage;
 - (id)_shadowView;
 - (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
-- (void)_updateBackgroundImage;
 - (id)_effectiveBarTintColor;
 - (void)_updateBackgroundColor;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
+- (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)_setBackgroundView:(id)arg1;
 - (BOOL)isMinibar;
 - (BOOL)_subclassImplementsDrawRect;
@@ -186,11 +180,7 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)shouldGroupAccessibilityChildren;
-- (void)_accessibilityLoadAccessibilityInformation;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (id)_accessibilityFuzzyHitTestElements;
-- (BOOL)_accessibilityOnlyComparesByXAxis;
+- (id)itemWithTag:(int)arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

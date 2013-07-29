@@ -9,17 +9,20 @@
     NSObject<OS_xpc_object> *_connection;
 }
 
++ (struct NSObject { Class x1; }*)recentEventForAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 date:(id)arg4;
++ (id)recentEventForAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 date:(id)arg4 metadata:(id)arg5;
 + (id)rankedFrecencyComparatorWithPreferredSources:(id)arg1;
 + (id)frecencyComparator;
 + (struct NSObject { Class x1; }*)explicitGroupEventForGroupMembers:(id)arg1 displayName:(id)arg2 date:(id)arg3;
-+ (struct NSObject { Class x1; }*)recentEventForAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 date:(id)arg4;
 + (id)frecencyComparatorForSearch:(id)arg1 preferredKinds:(id)arg2 sendingAddress:(id)arg3;
 + (struct NSObject { Class x1; }*)_recentEventForGroupMembers:(id)arg1 displayName:(id)arg2 date:(id)arg3 weight:(id)arg4 metadata:(id)arg5 isExplicitGroup:(BOOL)arg6;
 + (struct NSObject { Class x1; }*)groupMemberWithAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3;
 + (struct NSObject { Class x1; }*)recentEventForAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 date:(id)arg4 weight:(id)arg5 metadata:(id)arg6;
-+ (id)recentEventForAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 date:(id)arg4 metadata:(id)arg5;
 + (id)defaultInstance;
 
+- (unsigned int)maxDateEventsPerRecentContact;
+- (void)requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 comparator:(id)arg3 queue:(id)arg4 completion:(id)arg5;
+- (BOOL)removeRecentContacts:(id)arg1 error:(out id*)arg2;
 - (void)_scanRecentsTableAndCreateGroupsForDomain:(id)arg1 onCompletion:(id)arg2;
 - (int)_daemonProcessID;
 - (id)copyRecentsForDomain:(id)arg1;
@@ -28,12 +31,9 @@
 - (unsigned int)implicitGroupThresholdForDomain:(id)arg1;
 - (BOOL)_removeRecentContactsWithRecentIDs:(id)arg1 syncKeys:(id)arg2 recentsDomain:(id)arg3 error:(out id*)arg4;
 - (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 source:(id)arg4 userInitiated:(BOOL)arg5;
-- (void)_requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 synchronously:(BOOL)arg3 comparator:(id)arg4 completion:(id)arg5;
+- (void)_requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 synchronously:(BOOL)arg3 weightDecayer:(id)arg4 comparator:(id)arg5 completion:(id)arg6;
 - (void)requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 weightDecayer:(id)arg3 comparator:(id)arg4 queue:(id)arg5 completion:(id)arg6;
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 synchronously:(BOOL)arg3 callback:(id)arg4;
-- (unsigned int)maxDateEventsPerRecentContact;
-- (void)requestRecentsUsingPredicate:(id)arg1 inDomains:(id)arg2 comparator:(id)arg3 queue:(id)arg4 completion:(id)arg5;
-- (BOOL)removeRecentContacts:(id)arg1 error:(out id*)arg2;
 - (id)_createServiceOnQueue:(id)arg1;
 - (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 userInitiated:(BOOL)arg4;
 - (id)init;

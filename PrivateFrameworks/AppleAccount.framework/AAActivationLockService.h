@@ -18,9 +18,9 @@
 - (void)disableWithWipeToken:(id)arg1;
 - (BOOL)isChangingState;
 - (void)_updateStateAndNotify:(BOOL)arg1;
-- (void)enable;
 - (BOOL)isEnabled;
 - (id)init;
 - (void).cxx_destruct;
+- (void)enable;
 
 @end

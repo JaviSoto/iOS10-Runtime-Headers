@@ -26,6 +26,8 @@
 @property(retain) NSString * comments;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)correctedFields;
 - (id)comments;
 - (BOOL)hasComments;
@@ -48,8 +50,6 @@
 - (void)setCorrectedLabel:(id)arg1;
 - (void)setCorrectedFields:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

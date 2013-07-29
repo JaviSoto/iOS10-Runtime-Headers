@@ -9,8 +9,6 @@
     UIActivityIndicatorView *_searchingIndicator;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)dealloc;
 - (void)setSearching:(BOOL)arg1;

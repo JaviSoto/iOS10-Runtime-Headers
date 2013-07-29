@@ -41,7 +41,7 @@
 - (void).cxx_destruct;
 - (id)overlayView;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)loadView;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)loadView;
 
 @end

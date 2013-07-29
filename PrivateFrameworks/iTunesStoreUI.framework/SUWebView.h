@@ -23,8 +23,6 @@
 @property(retain) UIColor * topBackgroundColor;
 @property(readonly) id windowScriptObject;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setTopBackgroundColor:(id)arg1;
 - (id)topBackgroundColor;
@@ -35,6 +33,7 @@
 - (BOOL)getStatusBarStyle:(int*)arg1;
 - (void)endSynchronousLayout;
 - (void)beginSynchronousLayout;
+- (void)_reloadInsets;
 - (id)title;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)windowScriptObject;
@@ -44,10 +43,5 @@
 - (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (BOOL)accessibilityScroll:(int)arg1;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)_accessibilityIsScrollAncestor;
-- (void)accessibilityScrollRightPage;
-- (BOOL)_accessibilitySUWebViewIsScrollAncestor;
 
 @end

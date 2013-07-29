@@ -8,8 +8,8 @@
 + (id)bridgeForConfiguration:(id)arg1 session:(id)arg2 queue:(id)arg3;
 
 - (const struct ClassicConnectionSession { }*)classicConnectionSession;
-- (void)flushStorageWithCompletionHandler:(id)arg1;
 - (void)resetStorageWithCompletionHandler:(id)arg1;
+- (void)flushStorageWithCompletionHandler:(id)arg1;
 - (id)downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)dataTaskForRequest:(id)arg1 completion:(id)arg2;

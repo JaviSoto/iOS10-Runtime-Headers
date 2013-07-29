@@ -36,6 +36,7 @@
 - (void)setIgnoreIfAlreadyDisplaying:(BOOL)arg1;
 - (BOOL)ignoreIfAlreadyDisplaying;
 - (id)prepareNewAlertSheetWithLockedState:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
+- (BOOL)displayActionButtonOnLockScreen;
 - (int)alertPriority;
 - (BOOL)preventInterruption;
 - (BOOL)reappearsAfterUnlock;

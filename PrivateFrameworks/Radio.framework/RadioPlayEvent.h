@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSDictionary;
+@class NSDate, NSString, NSDictionary;
 
 @interface RadioPlayEvent : NSObject  {
     int _trackType;
     NSDictionary *_trackInfo;
+    NSString *_externalIdentifier;
     NSDate *_datePlayed;
     int _endReason;
     long long _trackStoreID;
@@ -18,6 +19,7 @@
 @property(readonly) long long trackStoreID;
 @property(readonly) int trackType;
 @property(readonly) NSDictionary * trackInfo;
+@property(copy) NSString * externalIdentifier;
 @property double startTimeInTrack;
 @property double endTimeInTrack;
 @property double timeElapsedSincePlayed;
@@ -26,6 +28,7 @@
 @property(readonly) NSDictionary * playEventDictionary;
 
 
+- (id)externalIdentifier;
 - (id)datePlayed;
 - (void)setTimeElapsedSincePlayed:(double)arg1;
 - (double)timeElapsedSincePlayed;
@@ -37,11 +40,13 @@
 - (int)endReason;
 - (id)trackInfo;
 - (long long)trackStoreID;
+- (void)setExternalIdentifier:(id)arg1;
 - (id)initWithStoreID:(long long)arg1 trackType:(int)arg2 trackInfo:(id)arg3;
 - (void)setDatePlayed:(id)arg1;
 - (void)setEndTimeInTrack:(double)arg1;
 - (void)setStartTimeInTrack:(double)arg1;
 - (void)setEndReason:(int)arg1;
 - (void).cxx_destruct;
+- (id)description;
 
 @end

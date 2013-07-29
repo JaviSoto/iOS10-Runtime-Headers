@@ -10,11 +10,11 @@
 + (id)cacheDirectoryPathWithName:(id)arg1;
 + (BOOL)ensureDirectoryExists:(id)arg1;
 
+- (id)ubiquityIdentityToken;
 - (id)URLForUbiquityContainerIdentifier:(id)arg1;
 - (id)subpathsAtPath:(id)arg1;
 - (BOOL)startDownloadingUbiquitousItemAtURL:(id)arg1 error:(id*)arg2;
 - (id)subpathsOfDirectoryAtPath:(id)arg1 error:(id*)arg2;
-- (id)ubiquityIdentityToken;
 - (BOOL)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id*)arg4;
@@ -43,6 +43,7 @@
 - (BOOL)_web_createDirectoryAtPathWithIntermediateDirectories:(id)arg1 attributes:(id)arg2;
 - (void)_performRemoveFileAtPath:(id)arg1;
 - (BOOL)_web_changeFinderAttributes:(id)arg1 forFileAtPath:(id)arg2;
+- (id)containerURLForSecurityApplicationGroupIdentifier:(id)arg1;
 - (void)_registerForUbiquityAccountChangeNotifications;
 - (id)URLForPublishingUbiquitousItemAtURL:(id)arg1 expirationDate:(id*)arg2 error:(id*)arg3;
 - (BOOL)evictUbiquitousItemAtURL:(id)arg1 error:(id*)arg2;

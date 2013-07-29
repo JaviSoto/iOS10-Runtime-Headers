@@ -23,7 +23,6 @@
 + (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(int)arg5;
 + (id)sharedWriter;
 
-- (BOOL)saveToDiskSlalomRegions:(id)arg1 forJob:(id)arg2;
 - (id)uuidFromIncomingFilename:(id)arg1;
 - (BOOL)canEnqueueJob:(id)arg1;
 - (void)_processJob:(id)arg1;
@@ -37,7 +36,6 @@
 - (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
-- (void)_processAvalancheJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1;
 - (void)_processVideoJob:(id)arg1;
@@ -51,7 +49,6 @@
 - (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
 - (BOOL)saveImageJobToDisk:(id)arg1;
 - (void)_writeJPEGFromIOSurface:(void*)arg1 toPath:(id)arg2 orientation:(int)arg3;
-- (BOOL)_writeXMPHeaderToPath:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
 - (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(BOOL)arg3;
 - (id)cameraAssetExtensionForType:(long long)arg1;
 - (void)_writerThread;
@@ -59,8 +56,8 @@
 - (BOOL)_isHighPriorityJob:(id)arg1;
 - (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
 - (id)incomingDirectoryPathForPhotoStream;
-- (id)incomingDirectoryPath;
 - (BOOL)enqueueJob:(id)arg1;
+- (id)incomingDirectoryPath;
 - (id)init;
 - (void)dealloc;
 

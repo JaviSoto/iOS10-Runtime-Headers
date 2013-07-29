@@ -39,6 +39,7 @@
 - (id)connectionInfo;
 - (void)setOkToSend:(BOOL)arg1;
 - (BOOL)okToSend;
+- (id)events;
 - (void)setDeferedPlayerState:(int)arg1;
 - (int)deferedPlayerState;
 - (void)setCounted:(BOOL)arg1;
@@ -46,7 +47,6 @@
 - (void)setPlayerState:(int)arg1;
 - (int)playerState;
 - (void)setEvents:(id)arg1;
-- (id)events;
 - (unsigned int)sequenceNumber;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (id)init;

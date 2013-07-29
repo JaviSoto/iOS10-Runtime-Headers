@@ -22,20 +22,19 @@
 + (id)centerNamed:(id)arg1;
 
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
-- (id)delayReply;
-- (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
-- (void)runServerOnCurrentThread;
-- (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
-- (void)stopServer;
-- (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
-- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
 - (id)_requiredEntitlement;
 - (BOOL)_isTaskEntitled:(struct { unsigned int x1[8]; }*)arg1;
 - (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { unsigned int x1[8]; }*)arg4;
 - (BOOL)doesServerExist;
 - (void)unregisterForMessageName:(id)arg1;
+- (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
+- (id)delayReply;
+- (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void)stopServer;
 - (void)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 toTarget:(id)arg3 selector:(SEL)arg4 context:(void*)arg5;
+- (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
 - (BOOL)sendNonBlockingMessageName:(id)arg1 userInfo:(id)arg2;
+- (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (id)_initClientWithPort:(unsigned int)arg1;
 - (void)_sendReplyMessage:(id)arg1 portPassing:(BOOL)arg2 onMachPort:(unsigned int)arg3;
 - (void)runServerOnCurrentThreadProtectedByEntitlement:(id)arg1;
@@ -47,6 +46,7 @@
 - (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7;
 - (void)_setupInvalidationSource;
 - (void)_setSendPort:(unsigned int)arg1;
+- (void)runServerOnCurrentThread;
 - (id)_initWithServerName:(id)arg1;
 - (id)name;
 - (void)dealloc;

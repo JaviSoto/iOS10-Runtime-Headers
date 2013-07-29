@@ -40,21 +40,21 @@
 - (BOOL)bookmarkOpenDB;
 - (void*)bookmarkDB;
 - (int)calConnectionCount;
-- (BOOL)calCloseDBAndSave:(BOOL)arg1;
 - (BOOL)calSaveDBAndFlushCaches;
 - (void)calOpenDBWithChangeLogging;
-- (void)calOpenDB;
-- (struct CalDatabase { }*)calDB;
 - (id)abConstraintPlistPath;
-- (BOOL)abCloseDBAndSave:(BOOL)arg1;
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
-- (void)abOpenDB;
-- (void*)abDB;
 - (BOOL)noteSaveDB;
 - (BOOL)calSaveDB;
 - (void)_registerForCalendarYieldNotifications;
-- (BOOL)abSaveDB;
 - (void)_registerForAddressBookYieldNotifications;
+- (BOOL)calCloseDBAndSave:(BOOL)arg1;
+- (struct CalDatabase { }*)calDB;
+- (void)calOpenDB;
+- (BOOL)abCloseDBAndSave:(BOOL)arg1;
+- (BOOL)abSaveDB;
+- (void*)abDB;
+- (void)abOpenDB;
 
 @end

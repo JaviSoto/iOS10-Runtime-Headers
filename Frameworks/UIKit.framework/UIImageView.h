@@ -41,13 +41,12 @@
 @property(setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid;
 @property(setter=_setMasksTemplateImages:) BOOL _masksTemplateImages;
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)animationDuration;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1;
 - (void)setImage:(id)arg1;
@@ -66,7 +65,6 @@
 - (int)drawMode;
 - (void)_setMasksTemplateImages:(BOOL)arg1;
 - (int)animationRepeatCount;
-- (double)animationDuration;
 - (void)setHighlightedAnimationImages:(id)arg1;
 - (void)setAnimationImages:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
@@ -119,10 +117,6 @@
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityIdentifier;
-- (id)description;
-- (id)accessibilityLabel;
-- (id)accessibilityIdentification;
+- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { float x1; float x2; })arg1 asynchronously:(BOOL)arg2 handler:(id)arg3;
 
 @end

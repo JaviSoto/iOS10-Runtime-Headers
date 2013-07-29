@@ -39,15 +39,15 @@
 - (id)nameSpace;
 - (id)extraChildItems;
 - (id)payloadAsString;
-- (void)setAttributes:(id)arg1;
 - (BOOL)validate;
-- (void)setPayload:(id)arg1;
 - (void)write:(id)arg1;
+- (void)setPayload:(id)arg1;
 - (id)payload;
 - (id)init;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (void)setAttributes:(id)arg1;
 - (id)hashString;
 - (id)attributes;
 - (void)setName:(id)arg1;

@@ -30,7 +30,6 @@
 - (BOOL)deleteAccount:(id)arg1;
 - (BOOL)activateAccount:(id)arg1;
 - (id)_accounts;
-- (BOOL)addAccount:(id)arg1;
 - (id)__iCloudSystemAccountForService:(id)arg1;
 - (id)_bestOperationalAccountForSendingForService:(id)arg1;
 - (void)_disableCache;
@@ -64,7 +63,7 @@
 - (BOOL)canActivateAccounts:(id)arg1;
 - (BOOL)_deactivateAccounts:(id)arg1;
 - (BOOL)deactivateAccounts:(id)arg1 withDisable:(BOOL)arg2;
-- (BOOL)_deactivateAccount:(id)arg1;
+- (BOOL)deactivateAccount:(id)arg1;
 - (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
 - (id)operationalAccounts;
 - (BOOL)accountActive:(id)arg1;
@@ -75,7 +74,7 @@
 - (BOOL)deactivateAccount:(id)arg1 withDisable:(BOOL)arg2;
 - (BOOL)deleteAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)addAccount:(id)arg1 locally:(BOOL)arg2;
-- (BOOL)deactivateAccount:(id)arg1;
+- (BOOL)_deactivateAccount:(id)arg1;
 - (BOOL)activateAccount:(id)arg1 locally:(BOOL)arg2;
 - (id)connectedAccounts;
 - (id)bestAccountForStatus;
@@ -88,6 +87,7 @@
 - (id)connectedAccountsForService:(id)arg1;
 - (id)activeAccountsForService:(id)arg1;
 - (int)numberOfAccounts;
+- (BOOL)addAccount:(id)arg1;
 - (id)activeAccounts;
 - (void)setReadOnly:(BOOL)arg1;
 - (id)accounts;

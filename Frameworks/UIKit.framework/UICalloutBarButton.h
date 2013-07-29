@@ -39,8 +39,6 @@
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)removeFromSuperview;
 - (int)page;
@@ -79,9 +77,5 @@
 - (SEL)action;
 - (void)layoutSubviews;
 - (int)type;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityTextViewTextOperationResponder;
 
 @end

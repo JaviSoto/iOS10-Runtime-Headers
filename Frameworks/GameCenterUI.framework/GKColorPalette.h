@@ -53,12 +53,12 @@
 - (id)emphasizedTextColor;
 - (id)pinnedHeaderViewBackgroundColor;
 - (id)floatingHeaderViewBackgroundColor;
+- (id)windowBackgroundColor;
 - (id)separatorLineColor;
-- (id)activityIndicatorColor;
-- (id)viewBackgroundColor;
 - (id)cellActionColor;
 - (id)cellActionDestructiveColor;
-- (id)windowBackgroundColor;
+- (id)activityIndicatorColor;
+- (id)viewBackgroundColor;
 - (id)standardTextColor;
 - (id)selectedTextColor;
 

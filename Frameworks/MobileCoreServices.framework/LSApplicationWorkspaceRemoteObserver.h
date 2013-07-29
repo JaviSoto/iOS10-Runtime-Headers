@@ -18,6 +18,7 @@
 - (void)applicationInstallsDidChange:(id)arg1;
 - (void)applicationInstallsDidUpdateIcon:(id)arg1;
 - (void)applicationInstallsDidStart:(id)arg1;
+- (id)localObservers;
 - (void)removeLocalObserver:(id)arg1;
 - (void)networkUsageChanged:(BOOL)arg1;
 - (void)applicationInstallsDidResume:(id)arg1;
@@ -25,7 +26,7 @@
 - (void)applicationInstallsDidPause:(id)arg1;
 - (void)applicationInstallsDidCancel:(id)arg1;
 - (void)addLocalObserver:(id)arg1;
-- (int)currentObserverCount;
+- (unsigned int)currentObserverCount;
 - (BOOL)isObservinglsd;
 - (void)setObservinglsd:(BOOL)arg1;
 - (void)dealloc;

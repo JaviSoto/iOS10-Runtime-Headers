@@ -76,7 +76,6 @@
 + (id)traitsByAdoptingTraits:(id)arg1;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 
-- (void)setContentsIsSingleValue:(BOOL)arg1;
 - (int)autocapitalizationType;
 - (int)keyboardType;
 - (id)init;
@@ -107,6 +106,7 @@
 - (int)emptyContentReturnKeyType;
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (BOOL)acceptsEmoji;
+- (void)setContentsIsSingleValue:(BOOL)arg1;
 - (BOOL)contentsIsSingleValue;
 - (void)setIsSingleLineDocument:(BOOL)arg1;
 - (BOOL)isSingleLineDocument;

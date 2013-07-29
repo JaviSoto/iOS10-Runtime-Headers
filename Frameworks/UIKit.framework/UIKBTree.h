@@ -29,7 +29,6 @@
 + (id)keyboard;
 + (id)key;
 
-- (void)setAttributes:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (id)keys;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -50,7 +49,6 @@
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (id)cacheDisplayString;
 - (id)variantDisplayString;
-- (BOOL)dynamicDisplayTypeHint;
 - (float)fadeOutDuration;
 - (BOOL)canFadeOutFromState:(int)arg1 toState:(int)arg2;
 - (void)setForceMultitap:(BOOL)arg1;
@@ -64,6 +62,7 @@
 - (id)keysOrderedByPosition;
 - (void)clearTransientCaches;
 - (id)keyAttributes;
+- (void)setAttributes:(id)arg1;
 - (id)keyForString:(id)arg1;
 - (BOOL)subtreesAreOrdered;
 - (void)zipAttributes;
@@ -96,18 +95,17 @@
 - (BOOL)isSameAsTree:(id)arg1;
 - (void)setCache:(id)arg1;
 - (BOOL)isLeafType;
+- (BOOL)dynamicDisplayTypeHint;
 - (void)orderVariantKeys:(BOOL)arg1;
 - (id)variantPopupBias;
 - (BOOL)boolForProperty:(id)arg1;
 - (int)variantType;
 - (BOOL)behavesAsShiftKey;
 - (int)highlightedVariantIndex;
-- (BOOL)forceMultitap;
 - (int)flickDirection;
 - (BOOL)modifiesKeyplane;
 - (id)alternateKeyplaneName;
 - (BOOL)avoidsLanguageIndicator;
-- (void)setRendering:(int)arg1;
 - (BOOL)setObject:(id)arg1 forProperty:(id)arg2;
 - (id)keysOrderedByPositionWithoutZip;
 - (BOOL)noLanguageIndicator;
@@ -115,6 +113,7 @@
 - (void)updateVariantTypeForActions:(unsigned int)arg1;
 - (id)componentName;
 - (BOOL)hasLayoutTag:(id)arg1;
+- (BOOL)forceMultitap;
 - (BOOL)shouldSkipCandidateSelectionForVariants;
 - (BOOL)usesKeyCharging;
 - (BOOL)supportsType:(int)arg1;
@@ -147,23 +146,25 @@
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setClipCorners:(int)arg1;
-- (id)displayString;
 - (int)displayTypeHint;
 - (id)overrideDisplayString;
 - (BOOL)ghost;
-- (int)interactionType;
 - (int)intForProperty:(id)arg1;
 - (int)rendering;
 - (int)displayRowHint;
 - (int)visualStyle;
+- (BOOL)disabled;
 - (void)setHighlightedVariantIndex:(int)arg1;
 - (void)setSubtrees:(id)arg1;
 - (void)setShape:(id)arg1;
 - (id)shape;
+- (void)setRendering:(int)arg1;
 - (void)setInteractionType:(int)arg1;
 - (void)setDisplayType:(int)arg1;
 - (void)setRepresentedString:(id)arg1;
 - (void)setDisplayString:(id)arg1;
+- (int)interactionType;
+- (id)displayString;
 - (int)clipCorners;
 - (void)setVisualStyle:(int)arg1;
 - (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -177,7 +178,6 @@
 - (BOOL)usesAutoShift;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (BOOL)isSplit;
-- (BOOL)disabled;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (int)textAlignment;

@@ -9,10 +9,10 @@
 
 + (id)sharedReachability;
 
-- (BOOL)networkAvailable;
-- (void)reportLoadFailure:(id)arg1;
-- (BOOL)anyFailures;
 - (void)reportTileLoadSuccess:(id)arg1;
+- (void)reportLoadFailure:(id)arg1;
+- (BOOL)networkAvailable;
+- (BOOL)anyFailures;
 - (void)_resetErrors;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;

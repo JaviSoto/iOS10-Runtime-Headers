@@ -182,6 +182,7 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
@@ -189,10 +190,9 @@
 - (void)loadView;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)gestureRecognizers;

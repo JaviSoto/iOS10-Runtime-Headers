@@ -54,7 +54,6 @@
 - (void)setInstantMessageAddresses:(id)arg1;
 - (void)setDates:(id)arg1;
 - (void)setUrlAddresses:(id)arg1;
-- (void)setPhoneNumbers:(id)arg1;
 - (void)setPreferredForPhoto;
 - (void)setPreferredForName;
 - (void)setNote:(id)arg1;
@@ -75,6 +74,8 @@
 - (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
 - (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2;
 - (BOOL)saveContact;
+- (void)setPhoneNumbers:(id)arg1;
+- (BOOL)addToGroup:(void*)arg1;
 - (BOOL)unlinkContact;
 - (BOOL)linkToContact:(id)arg1;
 - (BOOL)saveContactInAddressBook:(void*)arg1;

@@ -2,14 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPreviewController, UIDocumentInteractionController, UIPopoverController, UINavigationController, UITableViewController;
+@class QLPreviewController, UIDocumentInteractionController, UIPopoverController, UINavigationController, QLArchiveTableViewController;
 
 @interface QLArchiveViewer : NSObject <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate> {
     QLPreviewController *_previewController;
     UIDocumentInteractionController *_documentInteractionController;
     UINavigationController *_navigationController;
     UIPopoverController *_popoverController;
-    UITableViewController *_tableViewController;
+    QLArchiveTableViewController *_tableViewController;
     BOOL _visible;
 }
 

@@ -8,13 +8,12 @@
     NSDictionary *_defaultsByDomain;
 }
 
-+ (id)_allowedDefaults;
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (id)defaultsForDomain:(id)arg1;
-- (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
+- (BOOL)isAllowedToWriteDefaults;
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

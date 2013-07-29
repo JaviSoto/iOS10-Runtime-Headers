@@ -2,8 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIKBShadowEffect : NSObject <UIKBRenderEffect> {
-    struct CGColor { } *_color;
+    NSString *_colorName;
     float _weight;
     struct CGSize { 
         float width; 
@@ -29,15 +31,15 @@
 @property(readonly) BOOL isValid;
 @property(readonly) BOOL renderUnder;
 @property(readonly) SEL renderSelector;
-@property(readonly) struct CGColor { }* color;
 @property float weight;
 
 + (id)effectWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
 
 - (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })offset;
-- (struct CGColor { }*)color;
+- (struct CGColor { }*)CGColor;
 - (BOOL)isValid;
+- (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

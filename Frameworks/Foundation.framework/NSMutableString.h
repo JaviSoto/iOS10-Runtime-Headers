@@ -37,8 +37,6 @@
 - (void)_removeCharactersFromSet:(struct __CFCharacterSet { }*)arg1;
 - (void)replaceNewlinesWithSpaces;
 - (void)standardizeWhitespace;
-- (void)addMathIndicators;
-- (void)dd_appendSpaces:(unsigned int)arg1;
 - (void)_ICSStringParameterName:(id)arg1 value:(id)arg2;
 - (void)_ICSStringAppendingParameterName:(id)arg1;
 - (void)_ICSRemoveCharactersFromSet:(id)arg1;
@@ -48,6 +46,7 @@
 - (void)_ICSStripControlChracters;
 - (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
 - (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
+- (void)dd_appendSpaces:(unsigned int)arg1;
 - (void)replaceAllSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)replaceAllSubstr:(id)arg1 with:(id)arg2;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2;

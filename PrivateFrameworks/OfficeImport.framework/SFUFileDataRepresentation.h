@@ -27,9 +27,9 @@
 - (long long)encodedLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)inputStream;
+- (BOOL)isEncrypted;
 - (long long)dataLength;
 - (BOOL)isReadable;
-- (BOOL)isEncrypted;
 - (void)dealloc;
 - (id)description;
 - (id)path;

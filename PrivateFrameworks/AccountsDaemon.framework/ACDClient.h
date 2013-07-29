@@ -9,6 +9,7 @@
     ACDDatabase *_database;
     struct __CFBundle { } *_bundle;
     NSString *_bundleID;
+    BOOL _didManuallySetBundleID;
     NSNumber *_pid;
     NSString *_localizedAppName;
     NSString *_name;
@@ -26,11 +27,14 @@
 @property(readonly) ACDDatabase * database;
 @property(retain) ACDTelemetryWatchdog * telemetry;
 
++ (id)bundleForPID:(int)arg1;
 + (id)clientWithBundleID:(id)arg1;
 
 - (void)setTelemetry:(id)arg1;
 - (id)telemetry;
 - (id)localizedAppName;
+- (id)_displayNameFromBundleInfoDictionaryForPID:(int)arg1;
+- (id)_displayNameFromSpringBoardForPID:(int)arg1;
 - (id)adamOrDisplayID;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)database;

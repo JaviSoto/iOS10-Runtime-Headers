@@ -8,11 +8,9 @@
     NSString *runtimeResourceName;
 }
 
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)initWithData:(id)arg1 andRuntimeResourceName:(id)arg2;
 - (void)dealloc;
+- (id)initWithData:(id)arg1 andRuntimeResourceName:(id)arg2;
 - (id)initWithContentsOfFile:(id)arg1 andRuntimeResourceName:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

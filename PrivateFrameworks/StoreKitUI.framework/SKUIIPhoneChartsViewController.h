@@ -16,6 +16,7 @@
         float right; 
     } _contentInset;
     <SKUIChartsViewControllerDelegate> *_delegate;
+    BOOL _delegateWantsWillDisplay;
     SKUISegmentedTableHeaderView *_headerView;
     NSOperationQueue *_operationQueue;
     int _selectedChartIndex;
@@ -40,6 +41,7 @@
 - (void)enumerateVisibleItemsUsingBlock:(id)arg1;
 - (void)itemList:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)itemList:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndexPath:(id)arg3;
+- (void)itemList:(id)arg1 willDisplayCellForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)setArtworkLoader:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(int)arg1;
 - (void)_segmentedControlAction:(id)arg1;
@@ -56,5 +58,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (void)viewDidLayoutSubviews;
 
 @end

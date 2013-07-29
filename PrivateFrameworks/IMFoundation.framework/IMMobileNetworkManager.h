@@ -35,6 +35,7 @@
 @property(readonly) BOOL isDataConnectionActive;
 @property(readonly) BOOL inValidSIMState;
 @property(readonly) BOOL isSIMLocked;
+@property(readonly) BOOL isSIMRemoved;
 @property void* _suspendDormancyAssertion;
 @property(retain) NSRecursiveLock * lock;
 @property(retain) NSMutableSet * wiFiAutoAssociationTokens;
@@ -45,8 +46,6 @@
 @property BOOL dataContextActive;
 
 
-- (void)_adjustWiFiAutoAssociation;
-- (void)_adjustWiFiAutoAssociationLocked;
 - (void)set_suspendDormancyAssertion:(void*)arg1;
 - (void*)_suspendDormancyAssertion;
 - (void)setDataContextActive:(BOOL)arg1;
@@ -68,6 +67,7 @@
 - (BOOL)inValidSIMState;
 - (void)showSIMUnlock;
 - (BOOL)isSIMLocked;
+- (BOOL)isSIMRemoved;
 - (void)_makeDataConnectionAvailable:(BOOL)arg1;
 - (BOOL)_isDataConnectionAvailable;
 - (void)_releaseCTServerConnection;
@@ -91,8 +91,10 @@
 - (void)_synchronize;
 - (void)_adjustCelluarAutoAssociation;
 - (void)__adjustFastDormancyTokens;
+- (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustFastDormancyTokens;
 - (void)_adjustCellularAutoAssociation;
+- (void)_adjustWiFiAutoAssociation;
 - (BOOL)isDataConnectionActive;
 - (void)setDataConnectionActive:(BOOL)arg1;
 - (void)setLock:(id)arg1;

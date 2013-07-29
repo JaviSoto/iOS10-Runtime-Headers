@@ -11,11 +11,11 @@
 - (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (unsigned int)playableContentType;
 - (id)avPlayer;
+- (void)play;
+- (unsigned int)playbackState;
 - (void)setCurrentTime:(double)arg1;
 - (double)currentTime;
 - (void)setRepeatMode:(unsigned int)arg1;
-- (void)play;
-- (unsigned int)playbackState;
 - (void)pause;
 - (double)duration;
 - (void)stop;

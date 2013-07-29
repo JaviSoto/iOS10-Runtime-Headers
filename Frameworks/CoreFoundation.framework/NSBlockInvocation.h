@@ -11,8 +11,8 @@
 }
 
 
-- (void)invokeUsingIMP:(int (*)())arg1;
 - (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)())arg1;
 - (void)invoke;
 - (SEL)selector;
 - (void)setSelector:(SEL)arg1;

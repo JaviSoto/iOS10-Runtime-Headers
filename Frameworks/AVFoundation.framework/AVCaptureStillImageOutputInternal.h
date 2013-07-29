@@ -23,7 +23,8 @@
     BOOL rawCaptureEnabled;
     BOOL yoMamaWearsCombatBootsSupported;
     BOOL yoMamaWearsCombatBootsEnabled;
-    BOOL suppressesShutterSound;
+    BOOL yoMamaWearsCombatBootsActive;
+    unsigned long shutterSoundID;
 }
 
 

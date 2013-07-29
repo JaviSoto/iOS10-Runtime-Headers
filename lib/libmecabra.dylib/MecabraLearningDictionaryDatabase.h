@@ -23,7 +23,8 @@
 + (id)sharedDatabaseForURL:(id)arg1 type:(id)arg2;
 
 - (void)setCachedEntries:(id)arg1;
-- (BOOL)dirty;
+- (void)updateSeed:(unsigned int)arg1 forEntry:(id)arg2 uniquingKeys:(id)arg3;
+- (void)removeOldEntriesBasedOnMaxCount:(unsigned int)arg1;
 - (id)cachedEntries;
 - (void)setVersionNumber:(unsigned int)arg1;
 - (id)initWithURL:(id)arg1 type:(id)arg2;
@@ -34,12 +35,12 @@
 - (unsigned int)lastUpdateTime;
 - (void)setLastUpdateTime:(unsigned int)arg1;
 - (void)setLastSeedValue:(unsigned int)arg1;
-- (void)removeOldEntriesBasedOnMaxCount:(unsigned int)arg1;
 - (int)addEntryAndGetIdentifier:(id)arg1;
-- (void)updateSeed:(unsigned int)arg1 forEntry:(id)arg2;
+- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
 - (id)identifiersForEntry:(id)arg1;
 - (BOOL)sqliteDatabaseMigrated;
 - (unsigned int)lastSeedValue;
+- (BOOL)dirty;
 - (void)setDirty:(BOOL)arg1;
 - (unsigned int)versionNumber;
 

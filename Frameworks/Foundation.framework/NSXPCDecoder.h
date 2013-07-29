@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableSet, NSXPCConnection, NSObject<OS_xpc_object>, NSXPCInterface;
+@class NSXPCInterface, NSXPCConnection, NSObject<OS_xpc_object>;
 
 @interface NSXPCDecoder : NSXPCCoder  {
     NSObject<OS_xpc_object> *_oolObjects;
@@ -17,7 +17,6 @@
         int type; 
     } _rootObject;
     unsigned int _collectionPointer;
-    NSMutableSet *_cache;
     id _allowedClassesList[128];
     int _allowedClassesIndex;
 }
@@ -42,7 +41,6 @@
 - (SEL)replyToSelector;
 - (const char *)_decodeCStringForKey:(id)arg1;
 - (id)decodeXPCObjectForKey:(id)arg1;
-- (void)_setCache:(id)arg1;
 - (void)set_connection:(id)arg1;
 - (void)setReplyToSelector:(SEL)arg1;
 - (void)setInterface:(id)arg1;

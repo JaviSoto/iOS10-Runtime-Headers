@@ -36,7 +36,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrame;
 - (BOOL)shouldCenterText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text1Frame;
-- (BOOL)showImageViewOnLeftSide;
 - (BOOL)shouldCenterContentView;
 - (float)_labelVInset;
 - (float)_textVInset;
@@ -51,8 +50,8 @@
 - (id)label;
 - (void)dealloc;
 - (void)setLabel:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (void)setText:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (void)layoutSubviews;
 
 @end

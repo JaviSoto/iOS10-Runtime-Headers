@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBNumberPadWithDelegate, UILabel, UIControl<SBUIPasscodeNumberPadButton>, UIView, <SBUIPasscodeLockNumberPadDelegate>, UIColor, NSArray;
+@class NSArray, SBNumberPadWithDelegate, UIControl<SBUIPasscodeNumberPadButton>, <SBUIPasscodeLockNumberPadDelegate>, UIView, SBUIButton, UIColor;
 
 @interface SBUIPasscodeLockNumberPad : UIView <SBNumberPadDelegate> {
     SBNumberPadWithDelegate *_numberPad;
@@ -10,9 +10,9 @@
     UIView *_leftPaddingView;
     UIView *_rightPaddingView;
     UIView *_bottomPaddingView;
-    UILabel *_emergencyCallButton;
-    UILabel *_backspaceButton;
-    UILabel *_cancelButton;
+    SBUIButton *_emergencyCallButton;
+    SBUIButton *_backspaceButton;
+    SBUIButton *_cancelButton;
     UIControl<SBUIPasscodeNumberPadButton> *_downButton;
     BOOL _showsBackspaceButton;
     BOOL _showsEmergencyCallButton;

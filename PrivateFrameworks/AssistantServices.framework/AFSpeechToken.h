@@ -34,8 +34,8 @@
 - (double)startTime;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
-- (void)setStartTime:(double)arg1;
 - (void)setText:(id)arg1;
+- (void)setStartTime:(double)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

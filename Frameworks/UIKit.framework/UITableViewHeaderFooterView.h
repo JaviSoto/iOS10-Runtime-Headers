@@ -59,8 +59,6 @@
 @property(getter=_rightMarginWidth,setter=_setRightMarginWidth:) float rightMarginWidth;
 
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -87,11 +85,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundRect;
 - (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
+- (id)tableView;
 - (void)_setupBackgroundView;
 - (float)_rightMarginWidth;
 - (int)tableViewStyle;
 - (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 stripPaddingForAbuttingView:(BOOL)arg2 isTopHeader:(BOOL)arg3;
-- (id)tableView;
 - (void)setBackgroundImage:(id)arg1;
 - (int)textAlignment;
 - (float)_marginWidth;
@@ -104,6 +102,7 @@
 - (void)setBackgroundView:(id)arg1;
 - (id)reuseIdentifier;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)_setBackgroundViewColor:(id)arg1;
 - (void)_setupLabelAppearance;
 - (void)setTextAlignment:(int)arg1;
 - (void)_setRightMarginWidth:(float)arg1;
@@ -113,16 +112,13 @@
 - (void)setTableViewStyle:(int)arg1;
 - (void)setFloating:(BOOL)arg1;
 - (void)setMaxTitleWidth:(float)arg1;
+- (void)setText:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (void)_updateBackgroundImage;
 - (id)backgroundImage;
 - (id)_scriptingInfo;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
-- (void)setText:(id)arg1;
 - (void)layoutSubviews;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
 
 @end

@@ -92,9 +92,9 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (int)layer;
 - (void)dealloc;
+- (id)outputSettings;
 - (void)setOutputSettings:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)languageCode;
-- (id)outputSettings;
 
 @end

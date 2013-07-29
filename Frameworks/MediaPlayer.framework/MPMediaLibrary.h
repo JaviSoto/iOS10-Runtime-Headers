@@ -8,6 +8,7 @@
     <MPMediaLibraryDataProviderPrivate> *_libraryDataProvider;
     int _libraryChangeObservers;
     NSObject<OS_dispatch_queue> *_entityCacheQueue;
+    NSObject<OS_dispatch_queue> *_fixedQueue;
     QueryCriteriaResultsCache *_itemsForCriteriaCache;
     QueryCriteriaResultsCache *_hasItemsForCriteriaCache;
     QueryCriteriaResultsCache *_countOfItemsForCriteriaCache;

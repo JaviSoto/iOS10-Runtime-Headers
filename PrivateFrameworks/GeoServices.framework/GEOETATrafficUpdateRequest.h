@@ -33,6 +33,10 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)destinationWaypoints;
 - (void)setHasIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (id)destinationWaypointAtIndex:(unsigned int)arg1;
@@ -68,10 +72,6 @@
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -35,6 +35,7 @@
     NSArray *_targetGroupState;
     NSArray *_lastReceivedGroupState;
     NSDictionary *_subtypeInfo;
+    NSArray *_vettedAliases;
     unsigned int _myStatus;
     NSMutableDictionary *_currentAccountStatus;
     NSString *_myStatusMessage;
@@ -289,7 +290,6 @@
 - (void)_setLocalCachedObject:(id)arg1 forKey:(id)arg2;
 - (int)typeForAlias:(id)arg1;
 - (BOOL)hasAlias:(id)arg1;
-- (id)_aliases;
 - (int)profileValidationErrorReason;
 - (id)profileStringForKey:(id)arg1;
 - (BOOL)setProfileValue:(id)arg1 forKey:(id)arg2;
@@ -357,6 +357,7 @@
 - (int)validationErrorReasonForAlias:(id)arg1;
 - (void)_updateRegistrationStatus:(int)arg1 error:(int)arg2 info:(id)arg3;
 - (void)_updateProfileInfo:(id)arg1;
+- (id)_aliases;
 - (id)_statuses;
 - (id)authorizationID;
 - (BOOL)validPort;
@@ -366,6 +367,7 @@
 - (void)setBlockIdleStatus:(BOOL)arg1;
 - (BOOL)blockIdleStatus;
 - (id)_serverWithSSL:(BOOL)arg1;
+- (BOOL)useSSL;
 - (id)loginStatusMessage;
 - (void)_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (BOOL)isInvisible;
@@ -414,8 +416,6 @@
 - (void)updateCapabilities:(unsigned long long)arg1;
 - (id)authorizationToken;
 - (void)setUniqueID:(id)arg1;
-- (BOOL)isConnected;
-- (BOOL)useSSL;
 - (void)setPassword:(id)arg1;
 - (int)accountType;
 - (id)displayName;
@@ -429,8 +429,8 @@
 - (id)service;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
-- (id)server;
 - (id)uniqueID;
+- (id)server;
 - (id)imHandleWithID:(id)arg1;
 - (BOOL)isRegistered;
 - (id)stringForKey:(id)arg1;
@@ -449,5 +449,6 @@
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (int)integerForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
+- (BOOL)isConnected;
 
 @end

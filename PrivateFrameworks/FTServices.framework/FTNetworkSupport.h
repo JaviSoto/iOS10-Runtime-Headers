@@ -25,6 +25,7 @@
 - (BOOL)willSearchForNetwork;
 - (BOOL)validNetworkActive;
 - (BOOL)validNetworkEnabled;
+- (BOOL)wiFiActiveAndReachable;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (void)_tryToEnableReliability;
 - (void)_reallySetCriticalReliability:(BOOL)arg1;
@@ -33,7 +34,6 @@
 - (BOOL)networkReachable;
 - (BOOL)networkActive;
 - (BOOL)networkEnabled;
-- (BOOL)wiFiActiveAndReachable;
 - (void)_clearReliabilityTimeoutInterval;
 - (BOOL)validNetworkReachable;
 - (BOOL)allowAnyNetwork;

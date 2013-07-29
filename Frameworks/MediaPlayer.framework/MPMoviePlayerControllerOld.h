@@ -51,13 +51,13 @@
 - (void)_willTerminateNotification:(id)arg1;
 - (double)initialPlaybackTime;
 - (void)setInitialPlaybackTime:(double)arg1;
+- (void)play;
 - (void)setScalingMode:(int)arg1;
 - (int)scalingMode;
 - (id)initWithContentURL:(id)arg1;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (id)contentURL;
-- (void)play;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_play;
 - (id)backgroundColor;

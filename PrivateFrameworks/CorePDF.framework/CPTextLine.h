@@ -55,7 +55,6 @@
 @property BOOL lineBreakAfter;
 
 
-- (unsigned int)wordCount;
 - (void)setLineBreakAfter:(BOOL)arg1;
 - (void)setListSpacerIndex:(unsigned int)arg1;
 - (unsigned int)listSpacerIndex;
@@ -127,6 +126,7 @@
 - (void)accept:(id)arg1;
 - (void)fitBoundsToChildren;
 - (long)zOrder;
+- (unsigned int)wordCount;
 - (int)align;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)init;

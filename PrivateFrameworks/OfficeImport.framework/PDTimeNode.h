@@ -51,9 +51,9 @@
 - (id)childTimeNodeList;
 - (id)groupId;
 - (void)setChildTimeNodeList:(id)arg1;
-- (void)setAcceleration:(double)arg1;
 - (BOOL)hasDuration;
 - (BOOL)hasType;
+- (void)setAcceleration:(double)arg1;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
 - (double)acceleration;

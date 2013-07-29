@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSFetchRequest, NSOrderedSet;
+@class NSOrderedSet, NSFetchRequest, NSArray;
 
 @interface PLFetchingAlbum : _PLFetchingAlbum <PLAlbumProtocolDisplayCount> {
     unsigned int _countForDisplay;
     unsigned int _photosCount;
     unsigned int _videosCount;
     int _emptyState;
+    NSArray *_cachedKeyAssets;
 }
 
 @property(retain) NSFetchRequest * fetchRequest;
@@ -28,11 +29,16 @@
 - (BOOL)hasAssetsCache;
 - (unsigned int)countForAssetsOfKind:(short)arg1;
 - (unsigned int)countForDisplay;
+- (id)_cachedKeyAssets;
 - (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
 - (void)setupFetchRequest;
 - (unsigned int)batchSize;
 - (void)updateSnapshotAndClearCaches:(id)arg1;
 - (id)primitiveAssets;
+- (void)setTertiaryKeyAsset:(id)arg1;
+- (id)tertiaryKeyAsset;
+- (void)setSecondaryKeyAsset:(id)arg1;
+- (id)secondaryKeyAsset;
 - (void)setKeyAsset:(id)arg1;
 - (id)keyAsset;
 - (BOOL)canPerformEditOperation:(int)arg1;
@@ -45,5 +51,6 @@
 - (void)awakeFromFetch;
 - (BOOL)isEmpty;
 - (unsigned int)count;
+- (void)dealloc;
 
 @end

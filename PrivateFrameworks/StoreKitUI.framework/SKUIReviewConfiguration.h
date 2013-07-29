@@ -17,11 +17,11 @@
 @property(readonly) NSString * ratingURLString;
 
 
+- (id)initWithConfigurationDictionary:(id)arg1;
 - (id)ratingURLString;
 - (id)pageNumberQueryParameter;
 - (id)currentVersionURLString;
 - (id)allVersionsURLString;
-- (id)initWithConfigurationDictionary:(id)arg1;
 - (void).cxx_destruct;
 
 @end

@@ -15,8 +15,8 @@
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 
-+ (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)assetWithURL:(id)arg1;
++ (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 
 - (id)_exportURL;
 - (BOOL)_containsAtLeastOnePlayableVideoTrack;

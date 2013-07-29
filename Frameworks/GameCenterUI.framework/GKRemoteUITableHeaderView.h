@@ -40,7 +40,6 @@
 - (void)setReplaceableConstraints:(id)arg1;
 - (id)replaceableConstraints;
 - (int)layoutStyle;
-- (void)setAttributes:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (float)height;
@@ -52,6 +51,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)setAttributes:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)buttonTapped:(id)arg1;

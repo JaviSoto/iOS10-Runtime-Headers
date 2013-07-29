@@ -41,6 +41,8 @@
 
 + (id)parseDeviceIDFromServiceName:(id)arg1;
 
+- (void)setDeviceID:(id)arg1;
+- (id)deviceID;
 - (void)setBonjour:(id)arg1;
 - (id)bonjour;
 - (void)removeInterface:(unsigned int)arg1 forPeerWithServiceName:(id)arg2;
@@ -72,8 +74,6 @@
 - (void)setReceiveDataHandler:(id)arg1;
 - (id)peers;
 - (void)setPeers:(id)arg1;
-- (void)setDeviceID:(id)arg1;
-- (id)deviceID;
 - (id)init;
 - (void)dealloc;
 

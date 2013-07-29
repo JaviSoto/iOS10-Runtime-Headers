@@ -31,7 +31,6 @@
 - (id)doneHandler;
 - (void)setDoneHandler:(id)arg1;
 - (void)setupSendButton;
-- (void)updateCharacterCountLayout;
 - (id)defaultMessage;
 - (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id)arg2;
 - (void)setDefaultMessage:(id)arg1;

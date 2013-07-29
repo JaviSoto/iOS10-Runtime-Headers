@@ -15,6 +15,7 @@
 @property int displayOrder;
 @property(copy) NSString * colorString;
 @property(getter=isColorDisplayOnly) BOOL colorDisplayOnly;
+@property(copy) NSString * symbolicColorName;
 @property unsigned int allowedEntityTypes;
 @property BOOL allowsContentModifications;
 @property BOOL prohibitsScheduling;
@@ -57,11 +58,14 @@
 - (void)setIsPublished:(BOOL)arg1;
 - (int)sharingStatus;
 - (void)setSharingStatus:(int)arg1;
+- (void)setColorString:(id)arg1;
 - (BOOL)isPublished;
 - (void)setPublishedURL:(id)arg1;
 - (BOOL)canBeShared;
+- (id)symbolicColorName;
 - (BOOL)canBePublished;
 - (void)setSharees:(id)arg1;
+- (void)setSymbolicColorName:(id)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushKey:(id)arg1;
 - (id)bulkRequests;
@@ -115,7 +119,6 @@
 - (BOOL)isDefaultCalendarForSource;
 - (void)setDisplayOrder:(int)arg1;
 - (int)displayOrder;
-- (void)setColorString:(id)arg1;
 - (BOOL)isImmutable;
 - (id)ownerIdentityLastName;
 - (id)ownerIdentityFirstName;

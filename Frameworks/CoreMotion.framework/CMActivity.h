@@ -20,8 +20,8 @@
 - (BOOL)isDriving;
 - (BOOL)isWalking;
 - (BOOL)isMoving;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1 andTimestamp:(double)arg2;
 - (int)confidence;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1 andTimestamp:(double)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

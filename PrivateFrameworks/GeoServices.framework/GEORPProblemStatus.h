@@ -25,6 +25,8 @@
 @property(retain) GEORPResolution * problemResolution;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasProblemState:(BOOL)arg1;
 - (void)setHasCreationDate:(BOOL)arg1;
 - (id)problemResolution;
@@ -38,8 +40,6 @@
 - (void)setProblemResolution:(id)arg1;
 - (void)setProblemID:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setCreationDate:(double)arg1;
 - (double)creationDate;
 - (BOOL)isEqual:(id)arg1;

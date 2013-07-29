@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDictionary;
+@class NSNumber, NSDictionary;
 
 @interface HSJaliscoML3TrackDataSource : HSDAAPML3TrackDataSource  {
     NSDictionary *_chapterDataForAdamIDs;
     NSDictionary *_flavorDataForAdamIDs;
+    NSNumber *_accountID;
     long long _preferredVideoQuality;
 }
 

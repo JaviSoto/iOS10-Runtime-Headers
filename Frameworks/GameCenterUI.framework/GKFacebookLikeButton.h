@@ -13,6 +13,8 @@
     UIView *_containerView;
     GKOpenGraphNode *_openGraphNode;
     NSArray *_replaceableConstraints;
+    UIView *_containerSpacerLeft;
+    UIView *_containerSpacerRight;
 }
 
 @property(retain) GKStoreItemInternal * storeItem;
@@ -23,13 +25,19 @@
 @property(retain) UIView * containerView;
 @property(retain) GKOpenGraphNode * openGraphNode;
 @property(retain) NSArray * replaceableConstraints;
+@property(retain) UIView * containerSpacerLeft;
+@property(retain) UIView * containerSpacerRight;
 
 
-- (id)labelView;
+- (void)setContainerSpacerRight:(id)arg1;
+- (id)containerSpacerRight;
+- (void)setContainerSpacerLeft:(id)arg1;
+- (id)containerSpacerLeft;
 - (void)setSpinner:(id)arg1;
 - (void)setLogoView:(id)arg1;
 - (id)logoView;
 - (void)setLabelView:(id)arg1;
+- (id)labelView;
 - (void)setOpenGraphNode:(id)arg1;
 - (id)openGraphNode;
 - (void)configureButtonWithTitle:(id)arg1 state:(unsigned int)arg2 imageName:(id)arg3;

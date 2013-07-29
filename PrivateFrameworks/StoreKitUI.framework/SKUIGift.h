@@ -51,11 +51,11 @@
 - (id)senderName;
 - (void)setTheme:(id)arg1;
 - (id)theme;
-- (void)setMessage:(id)arg1;
 - (void)reset;
 - (id)message;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setMessage:(id)arg1;
 - (id)item;
 
 @end

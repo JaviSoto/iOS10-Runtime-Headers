@@ -15,6 +15,8 @@
 @property unsigned int secondLaneIndex;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setSecondLaneIndex:(unsigned int)arg1;
 - (unsigned int)secondLaneIndex;
 - (void)setSecondRoadIndex:(unsigned int)arg1;
@@ -24,8 +26,6 @@
 - (void)setFirstRoadIndex:(unsigned int)arg1;
 - (unsigned int)firstRoadIndex;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

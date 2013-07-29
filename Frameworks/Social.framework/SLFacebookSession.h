@@ -20,6 +20,7 @@
 - (void)cancelUploadWithIdentifier:(id)arg1;
 - (void)uploadsInProgress:(id)arg1;
 - (void)uploadPost:(id)arg1 suppressAlerts:(BOOL)arg2 withPostCompletion:(id)arg3;
+- (void)injectCompletedUploadWithCompletion:(id)arg1;
 - (BOOL)uploadPost:(id)arg1 forPID:(int)arg2;
 - (void)unlikeURL:(id)arg1 completion:(id)arg2;
 - (void)likeURL:(id)arg1 completion:(id)arg2;

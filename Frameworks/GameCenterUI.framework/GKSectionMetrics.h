@@ -12,6 +12,7 @@
     unsigned int _lastLineItemAlignment;
     unsigned int _maximumVisibleItemCount;
     unsigned int _incrementalRevealItemCount;
+    float _incrementalRevealTextOffset;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -33,6 +34,7 @@
 @property float showMoreHeight;
 @property BOOL sectionHeadersShouldPin;
 @property BOOL incrementalRevealConsumesPadding;
+@property float incrementalRevealTextOffset;
 
 + (id)metricsForIdiom:(int)arg1;
 
@@ -53,7 +55,9 @@
 - (void)setDesiredItemWidth:(float)arg1;
 - (void)setInteritemSpacing:(float)arg1;
 - (id)initWithIdiom:(int)arg1;
+- (void)setIncrementalRevealTextOffset:(float)arg1;
 - (void)setSectionHeadersShouldPin:(BOOL)arg1;
+- (float)incrementalRevealTextOffset;
 - (unsigned int)incrementalRevealItemCount;
 - (id)localDescription;
 - (void)setDesiredItemHeight:(float)arg1;

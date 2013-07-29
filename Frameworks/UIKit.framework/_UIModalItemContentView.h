@@ -36,6 +36,7 @@
         float width; 
         float height; 
     } _maxSize;
+    BOOL _enableFirstOtherButton;
 }
 
 @property _UIModalItem * modalItem;
@@ -56,8 +57,10 @@
 @property(readonly) int defaultButtonIndex;
 @property(readonly) UITableView * buttonTable;
 @property struct CGSize { float x1; float x2; } actualViewControllerSize;
+@property BOOL enableFirstOtherButton;
 
 
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layout;
 - (void)dealloc;
 - (id)buttonTable;
@@ -70,6 +73,8 @@
 - (id)accessoryViewController;
 - (id)messageLabel;
 - (id)subtitleLabel;
+- (void)setEnableFirstOtherButton:(BOOL)arg1;
+- (BOOL)enableFirstOtherButton;
 - (void)setActualViewControllerSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })actualViewControllerSize;
 - (void)setPresentingViewController:(id)arg1;
@@ -77,7 +82,6 @@
 - (struct CGSize { float x1; float x2; })presentingSize;
 - (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setModalItem:(id)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (id)loginTextField;
 - (id)passwordTextField;
 - (void)textFieldValueDidChange:(id)arg1;
@@ -89,12 +93,12 @@
 - (void)_createAndConfigureMessageLabel;
 - (void)_createAndConfigureSubtitleLabel;
 - (void)_createAndConfigureTitleLabel;
+- (id)titleLabel;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (id)presentingViewController;
 - (int)cancelButtonIndex;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)titleLabel;
 
 @end

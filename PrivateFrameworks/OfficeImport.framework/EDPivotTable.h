@@ -163,7 +163,6 @@
 - (void)setPivotTableRange:(id)arg1;
 - (id)pivotTableRange;
 - (void)setStyleName:(id)arg1;
-- (id)styleName;
 - (void)setPageStyleName:(id)arg1;
 - (id)pageStyleName;
 - (void)setRowHeaderCaption:(id)arg1;
@@ -173,6 +172,7 @@
 - (void)setStyleIndex:(unsigned int)arg1;
 - (unsigned int)styleIndex;
 - (id)initWithResources:(id)arg1;
+- (id)styleName;
 - (void)setStyle:(id)arg1;
 - (void)setCompact:(bool)arg1;
 - (void)setOutline:(bool)arg1;

@@ -23,6 +23,8 @@
 
 - (int)itemState;
 - (void)setItemState:(int)arg1;
+- (id)clientIdentifier;
+- (void)setClientIdentifier:(id)arg1;
 - (void)setTransferTypes:(unsigned int)arg1;
 - (unsigned int)transferTypes;
 - (void)setTotalNumberOfItems:(int)arg1;
@@ -33,8 +35,6 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)statusString;
-- (id)clientIdentifier;
-- (void)setClientIdentifier:(id)arg1;
 - (void)dealloc;
 
 @end

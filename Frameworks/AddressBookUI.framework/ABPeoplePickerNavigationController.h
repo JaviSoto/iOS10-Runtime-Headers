@@ -111,6 +111,7 @@
 - (BOOL)allowsContactBlocking;
 - (BOOL)allowsActions;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)showMembersOfContactsFilter:(id)arg1;
@@ -141,12 +142,12 @@
 - (void)removeChildViewController:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)_allowsAutorotation;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)removeChildViewController:(id)arg1 notifyDidMove:(BOOL)arg2;
 - (void)setParentViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)_setPopoverController:(id)arg1;
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;

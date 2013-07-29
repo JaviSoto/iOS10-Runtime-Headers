@@ -21,6 +21,7 @@
 - (id)initWithProblemPlayer:(id)arg1;
 - (id)postBodyForInitialLoad;
 - (id)fallbackURL;
+- (int)preferredLayoutStyle;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

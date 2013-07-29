@@ -16,9 +16,9 @@
 + (unsigned int)statusForIMPerson:(id)arg1;
 + (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
 + (unsigned int)myStatus;
-+ (id)allServicesNonBlocking;
 + (id)myIdleTime;
 + (id)serviceWithName:(id)arg1;
++ (id)allServicesNonBlocking;
 + (id)allServices;
 + (id)imageURLForStatus:(unsigned int)arg1;
 + (id)imageNameForStatus:(unsigned int)arg1;

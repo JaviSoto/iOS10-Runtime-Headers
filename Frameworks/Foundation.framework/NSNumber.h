@@ -35,9 +35,10 @@
 + (id)numberWithItemIdentifier:(unsigned long long)arg1;
 + (id)_gkServerTimeInterval:(double)arg1;
 + (id)numberWithCGFloat:(float)arg1;
-+ (id)numberWithFloatZero;
 + (id)cr_numberWithCRContactID:(long long)arg1;
 + (id)cr_numberWithCRRecentID:(long long)arg1;
++ (id)numberWithFloatZero;
++ (id)numberWithCGFloat:(float)arg1;
 
 - (unsigned long)_cfTypeID;
 - (unsigned int)unsignedIntegerValue;
@@ -103,12 +104,14 @@
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)initWithItemIdentifier:(unsigned long long)arg1;
 - (unsigned long long)itemIdentifierValue;
+- (id)initWithCGFloat:(float)arg1;
+- (float)cgFloatValue;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
-- (float)CGFloatValue;
-- (void)appendJsonStringToString:(id)arg1;
 - (long long)cr_CRRecentIDValue;
 - (long long)cr_CRContactIDValue;
+- (float)CGFloatValue;
+- (void)appendJsonStringToString:(id)arg1;
 - (BOOL)WF_isEqualToNumber:(id)arg1 withPrecision:(float)arg2;
 
 @end

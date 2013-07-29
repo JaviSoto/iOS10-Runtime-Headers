@@ -17,10 +17,12 @@
     GEOWaypoint *_origin;
     NSMutableArray *_serviceTags;
     int _transportType;
+    BOOL _allowPartialResults;
     BOOL _includeHistoricTravelTime;
     struct { 
         unsigned int timepoint : 1; 
         unsigned int transportType : 1; 
+        unsigned int allowPartialResults : 1; 
         unsigned int includeHistoricTravelTime : 1; 
     } _has;
 }
@@ -34,12 +36,22 @@
 @property(retain) NSMutableArray * destinations;
 @property BOOL hasIncludeHistoricTravelTime;
 @property BOOL includeHistoricTravelTime;
+@property BOOL hasAllowPartialResults;
+@property BOOL allowPartialResults;
 @property(retain) NSMutableArray * serviceTags;
 
 
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)destinations;
+- (void)setHasAllowPartialResults:(BOOL)arg1;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
 - (void)setHasTimepoint:(BOOL)arg1;
+- (void)setAllowPartialResults:(BOOL)arg1;
+- (BOOL)allowPartialResults;
+- (BOOL)hasAllowPartialResults;
 - (void)setIncludeHistoricTravelTime:(BOOL)arg1;
 - (BOOL)includeHistoricTravelTime;
 - (BOOL)hasIncludeHistoricTravelTime;
@@ -63,10 +75,6 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

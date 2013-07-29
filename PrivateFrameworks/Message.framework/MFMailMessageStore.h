@@ -85,7 +85,6 @@
 - (void)invalidateFetchWindow;
 - (BOOL)shouldGrowFetchWindow;
 - (unsigned int)serverUnreadCount;
-- (unsigned int)serverUnreadOnlyOnServerCount;
 - (void)deletedCount:(unsigned int*)arg1 andSize:(unsigned int*)arg2;
 - (void)messagesWillBeCompacted:(id)arg1;
 - (void)messagesWereCompacted:(id)arg1;
@@ -126,6 +125,7 @@
 - (BOOL)hasMoreFetchableMessages;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (unsigned int)serverMessageCount;
+- (unsigned int)serverUnreadOnlyOnServerCount;
 - (unsigned int)totalCount;
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)updateUserInfoToLatestValues;

@@ -20,12 +20,12 @@
 
 - (int)parentalControlsRank;
 - (id)updateDictionary;
+- (id)installDate;
+- (void)setInstallDate:(id)arg1;
 - (void)setUpdateState:(int)arg1;
 - (id)initWithUpdateDictionary:(id)arg1;
 - (long long)storeItemIdentifier;
 - (int)updateState;
-- (void)setInstallDate:(id)arg1;
-- (id)installDate;
 - (void)dealloc;
 - (id)bundleIdentifier;
 

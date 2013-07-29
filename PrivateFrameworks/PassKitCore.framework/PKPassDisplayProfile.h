@@ -37,7 +37,6 @@
 - (int)layoutMode;
 - (id)initWithPassDictionary:(id)arg1 passURL:(id)arg2;
 - (id)stripColor;
-- (id)labelColor;
 - (void)setStripHash:(id)arg1;
 - (void)setBackgroundHash:(id)arg1;
 - (void)setThumbnailHash:(id)arg1;
@@ -45,7 +44,6 @@
 - (void)setIconHash:(id)arg1;
 - (void)setTallCode:(BOOL)arg1;
 - (void)setStripColor:(id)arg1;
-- (void)setLabelColor:(id)arg1;
 - (void)setPassStyle:(int)arg1;
 - (id)iconHash;
 - (id)thumbnailHash;
@@ -56,6 +54,8 @@
 - (int)passStyle;
 - (BOOL)showsBackgroundImage;
 - (BOOL)showsStripImage;
+- (void)setLabelColor:(id)arg1;
+- (id)labelColor;
 - (void)setForegroundColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;

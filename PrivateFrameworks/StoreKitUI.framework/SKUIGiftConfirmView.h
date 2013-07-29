@@ -8,7 +8,7 @@
     SKUIGiftConfirmLabeledValue *_amountView;
     UILabel *_chargeDisclaimerLabel;
     UILabel *_confirmYourOrderLabel;
-    SKUIGiftConfirmLabeledValue *_fromView;
+    SKUIGiftConfirmLabeledValue *_senderView;
     SKUIGiftConfiguration *_giftConfiguration;
     SKUIGiftConfirmLabeledValue *_itemView;
     SKUIGiftConfirmLabeledValue *_messageView;
@@ -19,7 +19,7 @@
     UIView *_rule4;
     UIView *_rule5;
     UIView *_rule6;
-    SKUIGiftConfirmLabeledValue *_senderView;
+    SKUIGiftConfirmLabeledValue *_fromView;
     SKUIGiftConfirmLabeledValue *_sendOnView;
     UIButton *_termsButton;
     SKUIGiftConfirmLabeledValue *_themeNameView;

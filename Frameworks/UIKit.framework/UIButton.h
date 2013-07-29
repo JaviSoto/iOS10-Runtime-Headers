@@ -73,7 +73,6 @@
 @property(setter=_setContentConstraints:,copy) NSArray * _contentConstraints;
 @property(setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _internalTitlePaddingInsets;
 
-+ (void)initialize;
 + (id)_defaultImageColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultTitleColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(int)arg1 andState:(unsigned int)arg2;
@@ -93,10 +92,7 @@
 + (id)_defaultNormalTitleColor;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
 + (id)buttonWithType:(int)arg1;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (void)_initializeSafeCategory;
 
-- (id)currentAttributedTitle;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -124,6 +120,7 @@
 - (void)_setShouldHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })titleShadowOffset;
+- (id)currentAttributedTitle;
 - (id)currentBackgroundImage;
 - (id)currentTitleShadowColor;
 - (id)_currentImageColor;
@@ -164,7 +161,6 @@
 - (id)attributedTitleForState:(unsigned int)arg1;
 - (id)_imageColorForState:(unsigned int)arg1;
 - (id)_attributedTitleForState:(unsigned int)arg1;
-- (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(BOOL*)arg2;
 - (id)_shadowColorForState:(unsigned int)arg1;
 - (id)_titleColorForState:(unsigned int)arg1;
 - (id)_titleForState:(unsigned int)arg1;
@@ -180,6 +176,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
 - (id)_selectedIndicatorViewWithImage:(id)arg1;
 - (BOOL)_hasHighlightColor;
+- (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(BOOL*)arg2;
 - (BOOL)_hasDrawingStyle;
 - (void)_setupImageView;
 - (void)_setupTitleView;
@@ -224,11 +221,11 @@
 - (BOOL)_isModernButton;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
+- (void)_sendSetNeedsLayoutToSuperviewOnTitleAnimationCompletionIfNecessary;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1;
 - (id)imageForState:(unsigned int)arg1;
-- (id)titleForState:(unsigned int)arg1;
 - (void)setDisabledDimsImage:(BOOL)arg1;
 - (void)setContentVerticalAlignment:(int)arg1;
 - (void)setContentHorizontalAlignment:(int)arg1;
@@ -245,10 +242,12 @@
 - (void)setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitleColor:(id)arg1 forState:(unsigned int)arg2;
+- (id)titleLabel;
 - (void)_setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (id)_titleView;
 - (void)setFont:(id)arg1;
 - (void)_setLineBreakMode:(int)arg1;
+- (id)titleForState:(unsigned int)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (id)_scriptingInfo;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
@@ -264,18 +263,13 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (id)titleLabel;
 - (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityPerformEscape;
-- (id)accessibilityLabel;
-- (BOOL)isAccessibilityElement;
-- (id)_accessibilityImagePath;
 - (void)ab_addConferenceIcon;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

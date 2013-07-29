@@ -16,8 +16,6 @@
     double _lastUpdateTime;
     double _lastInterval;
     long long _ticks;
-    NSMutableSet *_unmappedItems;
-    NSMutableSet *_mappedItems;
     CALayer *_debugLayer;
     NSMutableDictionary *_bodies;
     NSMutableArray *_topLevelBehaviors;
@@ -25,10 +23,12 @@
     NSMutableSet *_behaviorsToRemove;
     NSMutableSet *_behaviorsToAdd;
     NSMutableArray *_postSolverActions;
+    NSMutableArray *_beginContacts;
+    NSMutableArray *_endContacts;
     BOOL _isInWorldStepMethod;
     BOOL _needsLocalBehaviorReevaluation;
     unsigned int _referenceSystemType;
-    BOOL _disableIntegralization;
+    unsigned int _integralization;
     struct { 
         unsigned int delegateImplementsDynamicAnimatorDidPause : 1; 
         unsigned int delegateImplementsDynamicAnimatorWillResume : 1; 
@@ -94,9 +94,8 @@
 - (void)updateItemFromCurrentState:(id)arg1;
 - (id)layoutAttributesForCellAtIndexPath:(id)arg1;
 - (id)itemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_isDefaultMapperEnabledForItem:(id)arg1;
-- (BOOL)_roundingEnabled;
-- (void)_setRoundingEnabled:(BOOL)arg1;
+- (unsigned int)_animatorIntegralization;
+- (void)_setAnimatorIntegralization:(unsigned int)arg1;
 - (void)_unregisterCollisionGroup;
 - (int)_registerCollisionGroup;
 - (void)removeAllBehaviors;
@@ -110,11 +109,14 @@
 - (BOOL)_animatorStep:(double)arg1;
 - (void)_postSolverStep;
 - (void)_preSolverStep;
+- (void)_reportEndContacts;
+- (void)_reportBeginContacts;
 - (void)_reevaluateImplicitBounds;
 - (void)_evaluateLocalBehaviors;
 - (void)_stop;
 - (BOOL)_isWorldActive;
 - (void)_defaultMapper:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 angle:(float)arg3 itemType:(unsigned int)arg4;
+- (void)updateItemUsingCurrentState:(id)arg1;
 - (void)_runBlockPostSolverIfNeeded:(id)arg1;
 - (id)_keyForItem:(id)arg1;
 - (void)_setupWorld;
@@ -127,13 +129,12 @@
 - (void)_clearReferenceView;
 - (id)referenceView;
 - (id)initWithReferenceSystem:(id)arg1;
+- (void)_displayLinkTick:(id)arg1;
 - (void)_setRunning:(BOOL)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (BOOL)isRunning;
-- (void)_registerViewForDefaultMapperEnabling:(id)arg1;
-- (void)_registerViewForDefaultMapperDisabling:(id)arg1;
 - (void)_shouldReevaluateLocalBehaviors;
 - (id)_registerBodyForItem:(id)arg1 shape:(unsigned int)arg2;
 - (void)_unregisterBodyForItem:(id)arg1 action:(id)arg2;
@@ -143,7 +144,6 @@
 - (id)_bodyForItem:(id)arg1;
 - (id)recursiveDescription;
 - (void)_start;
-- (void)_displayLinkTick:(id)arg1;
 - (void)_setDelegate:(id)arg1;
 - (id)_delegate;
 

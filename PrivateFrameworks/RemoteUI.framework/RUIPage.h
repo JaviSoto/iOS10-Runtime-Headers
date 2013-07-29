@@ -147,17 +147,17 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)contentScrollView;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (id)titleLabel;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
 - (void)setHidesBackButton:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)hidesBackButton;
 - (id)containerView;
-- (id)titleLabel;
 
 @end

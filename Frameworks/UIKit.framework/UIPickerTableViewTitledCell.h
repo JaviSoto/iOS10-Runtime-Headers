@@ -21,7 +21,7 @@
 - (id)title;
 - (void)dealloc;
 - (BOOL)_isAttributed;
-- (void)_setIsCenterCell:(BOOL)arg1;
+- (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;
 - (id)attributedTitle;
 - (id)_titleLabel;
 - (void)prepareForReuse;
