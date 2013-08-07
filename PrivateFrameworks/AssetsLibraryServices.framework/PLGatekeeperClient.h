@@ -2,15 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+@class NSObject<OS_xpc_object>, NSObject<OS_dispatch_queue>;
 
 @interface PLGatekeeperClient : NSObject  {
+    NSObject<OS_dispatch_queue> *_serialReplyQueue;
     NSObject<OS_xpc_object> *connection;
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * replyQueue;
 @property NSObject<OS_xpc_object> * connection;
 
++ (id)securityPolicyErrorForMissingEntitlement:(id)arg1;
 + (id)sharedInstance;
 
 - (int)getCurrentModelVersion;
@@ -53,19 +55,23 @@
 - (void)updateModelAfterOTARestore;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
+- (void)setLargePreviewImageForAssetWithURL:(id)arg1 imageData:(id)arg2 properties:(id)arg3 handler:(id)arg4;
 - (void)launchAssetsd;
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (void)createPhotoLibraryDatabase;
+- (void)setExternalUsageIntent:(unsigned int)arg1 forAssetWithURL:(id)arg2 handler:(id)arg3;
 - (void)deleteAssetWithURL:(id)arg1 handler:(id)arg2;
 - (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
 - (void)addGroupWithName:(id)arg1 handler:(id)arg2;
 - (id)imageDataForAsset:(id)arg1 format:(int)arg2;
 - (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 handler:(id)arg3;
 - (id)fileURLForNewAssetWithType:(unsigned int)arg1 extension:(id)arg2;
+- (void)batchSaveAssetsWithJobDictionaries:(id)arg1 handler:(id)arg2;
 - (void)saveAssetWithJobDictionary:(id)arg1 handler:(id)arg2 imageSurface:(void*)arg3 previewImageSurface:(void*)arg4;
 - (int)fileDescriptorForAssetURL:(id)arg1;
 - (void)requestAccessWithHandler:(id)arg1;
 - (void)waitUntilConnectionSendsAllMessages;
+- (id)deviceSpecificReplyQueue;
 - (id)sendQueue;
 - (id)replyQueue;
 - (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;

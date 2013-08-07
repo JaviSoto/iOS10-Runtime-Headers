@@ -7,26 +7,22 @@
     BOOL _bootstrap;
     unsigned int _maxZ;
     double _lodBias;
-    double _lodControl;
 }
 
 @property int tileSize;
 @property BOOL bootstrap;
 @property unsigned int maxZ;
 @property double lodBias;
-@property double lodControl;
 
 
 - (void)setBootstrap:(BOOL)arg1;
 - (BOOL)bootstrap;
 - (struct { unsigned int x1; int x2; int x3; int x4; int x5; })relevantTilesForContext:(id)arg1;
 - (id)keysForContext:(id)arg1 neighbors:(id)arg2;
-- (double)lodControl;
-- (double)lodBias;
 - (void)setMaxZ:(unsigned int)arg1;
 - (unsigned int)maxZ;
 - (void)setLodBias:(double)arg1;
-- (void)setLodControl:(double)arg1;
+- (double)lodBias;
 - (void)setTileSize:(int)arg1;
 - (int)tileSize;
 - (id)init;

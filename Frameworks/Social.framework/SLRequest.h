@@ -49,7 +49,6 @@
 - (BOOL)shouldIncludeParameterString;
 - (id)_urlEncodedString:(id)arg1;
 - (BOOL)_shouldAppendTencentWeiboParametersToRequest;
-- (void)_addAuthenticationParameters:(id)arg1;
 - (void)setParameterValue:(id)arg1 forKey:(id)arg2;
 - (id)_parameterString;
 - (id)_allParameters;
@@ -57,6 +56,7 @@
 - (void)addMultipartData:(id)arg1 withName:(id)arg2 type:(id)arg3 filename:(id)arg4;
 - (void)setMultiPartBoundary:(id)arg1;
 - (id)initWithServiceType:(id)arg1 URL:(id)arg2 parameters:(id)arg3 requestMethod:(int)arg4;
+- (void)_addAuthenticationParameters:(id)arg1;
 - (id)OAuthCredential;
 - (int)callingPID;
 - (id)preparedURLRequest;

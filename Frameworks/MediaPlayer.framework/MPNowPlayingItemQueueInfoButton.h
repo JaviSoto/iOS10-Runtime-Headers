@@ -25,8 +25,10 @@
 
 - (void)setInfoURL:(id)arg1;
 - (id)infoURL;
+- (void)setAllowedDisplayTypes:(unsigned int)arg1;
 - (void)updateForItemCrossedTimeMarkerNotification:(id)arg1 currentTime:(double)arg2;
 - (void)configureForItem:(id)arg1;
+- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
 - (BOOL)_shouldDisplaysInfoCircleImage;
 - (void)_updateFeederCountInfo:(id)arg1;
 - (unsigned int)allowedDisplayTypes;
@@ -35,8 +37,6 @@
 - (float)_minSizingTextWidth;
 - (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
 - (void)clicked:(id)arg1;
-- (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
-- (void)setAllowedDisplayTypes:(unsigned int)arg1;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;

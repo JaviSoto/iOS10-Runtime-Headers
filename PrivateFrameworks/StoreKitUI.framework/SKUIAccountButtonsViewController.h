@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIAccountButtonsView, <SKUIAccountButtonsDelegate>, SKUIColorScheme, SKUIClientContext;
+@class UIAlertView, SKUIAccountButtonsView, <SKUIAccountButtonsDelegate>, SKUIColorScheme, SKUIClientContext;
 
 @interface SKUIAccountButtonsViewController : UIViewController <UIAlertViewDelegate> {
     SKUIAccountButtonsView *_buttonsView;
     SKUIClientContext *_clientContext;
     <SKUIAccountButtonsDelegate> *_delegate;
+    UIAlertView *_alertView;
 }
 
 @property(retain) SKUIClientContext * clientContext;

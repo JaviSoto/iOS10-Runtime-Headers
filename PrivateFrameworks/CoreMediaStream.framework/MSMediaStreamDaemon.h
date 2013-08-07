@@ -12,7 +12,6 @@
 @property <MSMediaStreamDaemonDelegate> * delegate;
 
 
-- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)abortAllActivityForPersonID:(id)arg1;
 - (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
 - (BOOL)mayDownloadPersonID:(id)arg1;
@@ -38,6 +37,7 @@
 - (id)subscribedStreamsForPersonID:(id)arg1;
 - (void)computeHashForAsset:(id)arg1 personID:(id)arg2;
 - (void)resetSubscriberSyncForPersonID:(id)arg1;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (BOOL)enqueueAssetCollection:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)reenqueueQuarantinedActivitiesWithReason:(id)arg1;
 - (void)didUnidle;

@@ -27,6 +27,7 @@
 @property(readonly) SKUILockupItemCellLayout * lockupCellLayout;
 @property(readonly) SKUITextBoxView * textBoxView;
 
++ (float)_imagePaddingForArtworkSize:(int)arg1;
 + (float)editorialWidthForCellWidth:(float)arg1 lockupStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 
 - (BOOL)_showsItemOfferUnderEditorial;

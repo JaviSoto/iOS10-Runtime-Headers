@@ -53,7 +53,6 @@
     BOOL _drawContinuously;
     BOOL _layoutContinuously;
     BOOL _useOldLabels;
-    BOOL _useLabelParallax;
     BOOL _useTransactionManager;
     float _tourAnimationAltitude;
     float _tourAnimationStepDuration;
@@ -120,7 +119,6 @@
 @property BOOL drawContinuously;
 @property BOOL layoutContinuously;
 @property BOOL useOldLabels;
-@property BOOL useLabelParallax;
 @property BOOL useTransactionManager;
 @property float tourAnimationAltitude;
 @property float tourAnimationStepDuration;
@@ -148,7 +146,6 @@
 - (float)tourAnimationAltitude;
 - (void)setUseTransactionManager:(BOOL)arg1;
 - (BOOL)useTransactionManager;
-- (BOOL)useLabelParallax;
 - (BOOL)useOldLabels;
 - (void)setUseBuildingShadowTexture:(BOOL)arg1;
 - (BOOL)useBuildingShadowTexture;
@@ -207,7 +204,6 @@
 - (void)setHighlightUnmatchedRouteLine:(BOOL)arg1;
 - (void)setAltitudeProfilingEnabled:(BOOL)arg1;
 - (void)setAltitudeTelemetryURL:(id)arg1;
-- (void)setUseLabelParallax:(BOOL)arg1;
 - (void)setUseOldLabels:(BOOL)arg1;
 - (void)setIsInstalledInLockScreen:(BOOL)arg1;
 - (void)setHideDirectionalArrows:(BOOL)arg1;

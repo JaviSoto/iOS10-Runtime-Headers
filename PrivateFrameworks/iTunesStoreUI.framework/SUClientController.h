@@ -95,9 +95,9 @@
 - (id)initWithClientInterface:(id)arg1;
 - (BOOL)isStoreEnabled;
 - (void)setClientInterface:(id)arg1;
-- (id)clientInterface;
 - (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (id)scriptExecutionContext;
+- (id)clientInterface;
 - (id)clientIdentifier;
 - (void)becomeActive;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;

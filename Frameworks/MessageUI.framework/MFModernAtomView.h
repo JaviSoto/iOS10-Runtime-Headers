@@ -12,6 +12,7 @@
     UIView *_baselineView;
     MFModernAtomBackgroundView *_background;
     UIView *_compositingView;
+    UIView *_titleLabelFillView;
     UILabel *_label;
     UIActivityIndicatorView *_activityIndicator;
     float _scalingFactor;

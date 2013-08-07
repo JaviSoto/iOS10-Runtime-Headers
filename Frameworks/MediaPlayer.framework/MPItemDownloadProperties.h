@@ -33,8 +33,8 @@
 - (id)initWithDownload:(id)arg1;
 - (void)_reloadNetworkConstraints;
 - (long long)assetFileSize;
-- (id)initWithMediaItem:(id)arg1;
 - (id)downloadIdentifier;
+- (id)initWithMediaItem:(id)arg1;
 - (long long)downloadSizeLimit;
 - (unsigned long long)downloadToken;
 - (id)sourceURL;

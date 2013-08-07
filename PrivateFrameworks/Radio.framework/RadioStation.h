@@ -5,7 +5,6 @@
 @class NSSet, NSManagedObject, NSManagedObjectContext, NSDictionary, NSString, NSURL, NSData, NSArray;
 
 @interface RadioStation : NSObject <RadioManagedObjectWrapperProtocol> {
-    BOOL _canSkipTracks;
     NSManagedObjectContext *_context;
     NSManagedObject *_managedObject;
     NSSet *_additionalReferencedTrackIDs;
@@ -21,6 +20,8 @@
 @property(copy) NSString * stationDescription;
 @property(copy) NSURL * artworkURL;
 @property(copy) NSString * coreSeedName;
+@property long long currentPlayingTrackID;
+@property double currentPlayingTrackTime;
 @property id seedTracks;
 @property int songMixType;
 @property(readonly) NSArray * tracksForPlayback;
@@ -30,10 +31,10 @@
 @property BOOL likesEnabled;
 @property BOOL skipEnabled;
 @property int skipFrequency;
+@property(copy) NSString * skipIdentifier;
 @property double skipInterval;
 @property(copy) NSArray * skipTimestamps;
 @property BOOL virtualPlayEnabled;
-@property BOOL canSkipTracks;
 @property(getter=isFeatured) BOOL featured;
 @property(getter=isGatewayVideoAdEnabled) BOOL gatewayVideoAdEnabled;
 @property(getter=isSponsored) BOOL sponsored;
@@ -52,14 +53,15 @@
 @property(copy) NSDictionary * debugDictionary;
 @property(readonly) NSDictionary * feedbackDictionaryRepresentation;
 @property(copy) NSSet * additionalReferencedTrackIDs;
+@property(copy) NSData * artworkURLData;
 @property(readonly) NSDictionary * dictionaryRepresentation;
 @property(readonly) NSManagedObject * managedObject;
 @property(readonly) NSManagedObjectContext * context;
 
 
-- (void)setCanSkipTracks:(BOOL)arg1;
 - (void)removeAllTracksForPlayback;
 - (void)removeTrackForPlayback:(id)arg1;
+- (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1 expectedSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (void)addTracksForPlayback:(id)arg1 withExpirationDate:(id)arg2;
 - (id)initWithManagedObject:(id)arg1 context:(id)arg2;
 - (id)managedObject;
@@ -73,6 +75,7 @@
 - (id)streamURL;
 - (id)skipTimestamps;
 - (double)skipInterval;
+- (id)skipIdentifier;
 - (int)skipFrequency;
 - (BOOL)skipEnabled;
 - (id)shareToken;
@@ -90,6 +93,7 @@
 - (void)setSongMixType:(int)arg1;
 - (void)setSkipTimestamps:(id)arg1;
 - (void)setSkipInterval:(double)arg1;
+- (void)setSkipIdentifier:(id)arg1;
 - (void)setSkipFrequency:(int)arg1;
 - (void)setSkipEnabled:(BOOL)arg1;
 - (void)setShareToken:(id)arg1;
@@ -105,7 +109,10 @@
 - (void)setEditableFields:(id)arg1;
 - (void)setEditEnabled:(BOOL)arg1;
 - (void)setDebugDictionary:(id)arg1;
+- (void)setCurrentPlayingTrackTime:(double)arg1;
+- (void)setCurrentPlayingTrackID:(long long)arg1;
 - (void)setCoreSeedName:(id)arg1;
+- (void)setArtworkURLData:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
 - (void)setAdditionalReferencedTrackIDs:(id)arg1;
@@ -120,7 +127,10 @@
 - (id)feedbackDictionaryRepresentation;
 - (BOOL)editEnabled;
 - (id)editableFields;
+- (double)currentPlayingTrackTime;
+- (long long)currentPlayingTrackID;
 - (id)coreSeedName;
+- (id)artworkURLData;
 - (id)artworkURL;
 - (id)additionalReferencedTrackIDs;
 - (id)adData;
@@ -132,7 +142,6 @@
 - (BOOL)isFeatured;
 - (long long)stationID;
 - (id)debugDictionary;
-- (BOOL)canSkipTracks;
 - (int)stationType;
 - (long long)persistentID;
 - (long long)adamID;

@@ -90,7 +90,6 @@
 - (void)_transformCardGroupView:(id)arg1 toState:(int)arg2 startTime:(float)arg3 duration:(float)arg4;
 - (void)_transformCardGroupView:(id)arg1 toState:(int)arg2 startTime:(float)arg3 animated:(BOOL)arg4;
 - (void)_positionGroupViewForStackPresentation:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)_removeDimmingFromPileWithAnimation:(BOOL)arg1;
 - (float)_scaleForGroupView:(id)arg1 forState:(int)arg2;
 - (void)_createCardPileContainerView;
 - (void)_notifyDelegateOfStateChange;
@@ -102,6 +101,7 @@
 - (void)_fanAndPageGroupView:(id)arg1;
 - (void)_positionPileContainerForModalGroupViewWithAnimation:(BOOL)arg1 delay:(float)arg2;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 reservePlaceForModalGroup:(BOOL)arg2;
+- (void)_removeDimmingFromPileWithAnimation:(BOOL)arg1;
 - (void)_removeMotionEffectsFromModalPile;
 - (int)_edgeStylesObscuredByTopCornersOfPassStyle:(int)arg1;
 - (int)_edgeStylesObscuredByTopMiddleOfPassStyle:(int)arg1;
@@ -113,13 +113,11 @@
 - (void)_addGroupViewAsSubview:(id)arg1 forIndex:(unsigned int)arg2;
 - (id)_groupViewWithGroup:(id)arg1 contentMode:(int)arg2;
 - (float)_groupHeightMultiplier;
-- (void)_tileGroupsForState:(int)arg1 eager:(BOOL)arg2;
 - (void)_animateGroupViewToStackPresentation:(id)arg1 atIndex:(unsigned int)arg2 indexes:(id)arg3 animationIndex:(unsigned int*)arg4 fromGesture:(BOOL)arg5;
 - (id)_sortedGroupViewIndexes;
 - (id)_arrayOfStackedIndexes;
 - (void)_enumerateLoadedGroupViews:(id)arg1;
 - (void)_translateCardGroupView:(id)arg1 toState:(int)arg2 startTime:(float)arg3 animated:(BOOL)arg4;
-- (struct CGPoint { float x1; float x2; })_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
 - (void)_setModalGroupView:(id)arg1;
 - (void)_removeGroupViewAsSubviewWithGroupID:(id)arg1;
 - (unsigned int)_lastIndex;
@@ -135,6 +133,8 @@
 - (void)_presentPassIngestionWithAnimation:(BOOL)arg1;
 - (void)_presentFlippedModalGroupView:(id)arg1 animated:(BOOL)arg2;
 - (void)_presentModalGroupView:(id)arg1 animated:(BOOL)arg2;
+- (void)_tileGroupsForState:(int)arg1 eager:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
 - (id)datasource;
 - (void)_loadModalGroupView;
 - (void)_presentGroupStackViewWithAnimation:(BOOL)arg1 fromGesture:(BOOL)arg2;

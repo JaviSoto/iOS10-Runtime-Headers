@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class _MKScaleUnitsView, UIColor, UIView, NSString, NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSNumberFormatter, UIView, NSString, _MKScaleUnitsView, UIColor, NSMutableDictionary;
 
 @interface MKScaleView : UIView  {
     double _distanceInMeters;
     BOOL _useMetric;
     BOOL _useYardsForShortDistances;
+    NSNumberFormatter *_floatNumberFormatter;
     double _magicNumbers[3];
     UIColor *_lightSegmentColorRegular;
     UIColor *_darkSegmentColorRegular;
@@ -31,6 +32,7 @@
     NSString *_metersAbbreviation;
     NSString *_kilometersAbbreviation;
     int _grQuality;
+    int _layoutCounter;
 }
 
 @property BOOL useLightText;

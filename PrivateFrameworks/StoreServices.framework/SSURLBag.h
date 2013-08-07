@@ -22,8 +22,8 @@
 - (void)_loadURLBag;
 - (void)_drainPendingLookupsWithError:(id)arg1;
 - (void)_loadWithCompletionBlock:(id)arg1;
-- (id)URLBagContext;
 - (void)loadWithCompletionBlock:(id)arg1;
+- (id)URLBagContext;
 - (void)loadValueForKey:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithURLBagContext:(id)arg1;
 - (id)init;

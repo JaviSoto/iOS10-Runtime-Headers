@@ -30,6 +30,7 @@
 - (BOOL)forceSoundCheck;
 - (id)audioFormats;
 - (BOOL)silenceOutput:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (void)privateUpdateOutputChannelCount:(id)arg1;
 - (void)privateUpdateInputChannelCount:(id)arg1;
 - (void)privateHandleServerDied;
@@ -104,12 +105,12 @@
 - (BOOL)privateSetPropertyValue:(unsigned long)arg1 withBool:(BOOL)arg2 error:(id*)arg3;
 - (void)privateMarkKVOPropertiesDirty:(unsigned int)arg1;
 - (int)inputNumberOfChannels;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 - (double)preferredIOBufferDuration;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (int)outputNumberOfChannels;
 - (double)sampleRate;
+- (id)category;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
@@ -120,6 +121,5 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
 - (id)mode;
-- (id)category;
 
 @end

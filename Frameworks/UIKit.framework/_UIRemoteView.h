@@ -39,7 +39,6 @@
 - (void)setHostedWindowHostingHandle:(id)arg1;
 - (id)hostedWindowHostingHandle;
 - (void)_setStatusBarTintColor:(id)arg1;
-- (int)textEffectsVisibilityLevel;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)tintColorDidChange;
 - (id)_statusBarTintColor;

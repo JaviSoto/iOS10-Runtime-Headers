@@ -108,6 +108,7 @@
 - (BOOL)transparentBackground;
 - (void)setTransparentBackground:(BOOL)arg1;
 - (void)_setTranslucentOptionsBackground:(BOOL)arg1;
+- (void)_setAutosizeText:(BOOL)arg1;
 - (void)setSegmentControlStyle:(int)arg1;
 - (int)segmentControlStyle;
 - (int)segmentedControlStyle;
@@ -144,7 +145,6 @@
 - (void)setSegmentedControlStyle:(int)arg1;
 - (id)_createAndAddSegmentAtIndex:(int)arg1 position:(unsigned int)arg2 withInfo:(id)arg3;
 - (void)_commonSegmentedControlInit;
-- (void)_setAutosizeText:(BOOL)arg1;
 - (id)viewForBaselineLayout;
 - (void)setMomentary:(BOOL)arg1;
 - (BOOL)isMomentary;

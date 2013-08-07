@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEORouteAttributes : PBCodable  {
+@interface GEORouteAttributes : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -84,8 +84,6 @@
 @property(readonly) int* additionalTransportTypes;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setAdditionalTransportTypes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)additionalTransportTypes;
 - (void)setHasWalkingLimitMeters:(BOOL)arg1;
@@ -152,10 +150,13 @@
 - (BOOL)hasIncludePhonetics;
 - (void)setPhoneticLocaleIdentifier:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

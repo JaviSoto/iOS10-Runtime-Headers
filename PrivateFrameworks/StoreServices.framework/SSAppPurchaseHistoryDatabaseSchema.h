@@ -5,7 +5,6 @@
 @interface SSAppPurchaseHistoryDatabaseSchema : NSObject  {
 }
 
-+ (BOOL)createFunctionsInDatabase:(id)arg1;
 + (BOOL)createSchemaInDatabase:(id)arg1;
 + (id)databasePath;
 

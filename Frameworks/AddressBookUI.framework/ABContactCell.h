@@ -21,13 +21,13 @@
 @property(retain) UIColor * separatorColor;
 
 
-- (void)setRightContentMargin:(float)arg1;
 - (BOOL)showSeparator;
-- (void)setLeftContentMargin:(float)arg1;
 - (void)setShowSeparator:(BOOL)arg1;
 - (void)performAccessoryAction;
 - (BOOL)shouldPerformAccessoryAction;
+- (void)setRightContentMargin:(float)arg1;
 - (float)rightContentMargin;
+- (void)setLeftContentMargin:(float)arg1;
 - (float)leftContentMargin;
 - (BOOL)shouldPerformDefaultAction;
 - (void)setCardGroupItem:(id)arg1;

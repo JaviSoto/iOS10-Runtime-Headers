@@ -16,7 +16,6 @@
     BOOL showActionAsDefaultButton;
     NSString *loadingTextForMissingFiles;
     int mode;
-    int previousMode;
     QLPreviewItemsSource *itemsSource;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     _UIAsyncInvocation *cancelViewServiceRequest;
@@ -28,6 +27,7 @@
 
     int previousToolbarStyle;
     BOOL previousToolbarWasTranslucent;
+    BOOL previousNavBarWasTranslucent;
     int previousStatusBarStyle;
     UINavigationController *navigationController;
     int overlayState;
@@ -41,6 +41,7 @@
     UIBarButtonItem *playPauseButton;
     UIBarButtonItem *routeButton;
     MPVolumeView *volumeView;
+    MPVolumeView *volumeViewHidden;
     BOOL internalViewsLoaded;
     UIView *mainView;
     unsigned int statusBarWasHidden : 1;

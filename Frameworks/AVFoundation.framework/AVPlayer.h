@@ -56,6 +56,7 @@
 - (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (id)vibrationPattern;
 - (void)setPreparesItemsForPlaybackAsynchronously:(BOOL)arg1;
+- (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(BOOL)arg1;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
@@ -85,14 +86,12 @@
 - (id)dispatchQueue;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)setVibrationPattern:(id)arg1;
-- (float)rate;
 - (void)setAutoSwitchStreamVariants:(BOOL)arg1;
 - (void)setAudioOutputDeviceUniqueID:(id)arg1;
 - (id)audioOutputDeviceUniqueID;
 - (id)_audioOutputDeviceUniqueID;
 - (id)defaultMediaSelectionCriteriaForMediaCharacteristic:(id)arg1;
 - (id)mediaSelectionCriteriaForMediaCharacteristic:(id)arg1;
-- (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (BOOL)appliesMediaSelectionCriteriaAutomatically;
 - (BOOL)_appliesMediaSelectionCriteriaAutomatically;
 - (void)setDisallowsHardwareAcceleratedVideoDecoder:(BOOL)arg1;
@@ -206,6 +205,7 @@
 - (void)_addLayer:(id)arg1;
 - (struct OpaqueCMClock { }*)masterClock;
 - (id)_weakReference;
+- (float)rate;
 - (float)_rate;
 - (void)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;

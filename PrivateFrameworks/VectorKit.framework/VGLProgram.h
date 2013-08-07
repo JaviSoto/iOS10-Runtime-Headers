@@ -38,6 +38,7 @@
             struct UniformHandle {} *__first_; 
         } __end_cap_; 
     } _handlesVector;
+    VGLContext *_lastUsedContext;
 }
 
 @property(readonly) unsigned int token;
@@ -59,7 +60,6 @@
 - (void)setUniformVec2:(int)arg1 curr:(struct Vec2Imp<float> { float x1; float x2; }*)arg2 next:(const struct Vec2Imp<float> { float x1; float x2; }*)arg3;
 - (void)setUniformColor:(int)arg1 curr:(struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg2 next:(const struct _VGLColor { float x1; float x2; float x3; float x4; }*)arg3;
 - (void)setMatrix:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1;
-- (void)dirtyUniformCaches;
 - (id)initWithResourceFactory:(id)arg1;
 - (void)setUniformMat4:(int)arg1 curr:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; }*)arg2 next:(const union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; }*)arg3;
 - (void)printInfoLog;
@@ -67,6 +67,8 @@
 - (BOOL)_attachBindLink;
 - (int)uniformLocation:(const char *)arg1;
 - (void)bindAttributes;
+- (void)dirtyUniformCaches;
+- (void)willBeUsedWithContext:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })matrix;

@@ -33,6 +33,7 @@
 - (void)setDistance:(double)arg1;
 - (double)distance;
 - (id)title;
+- (id)category;
 - (struct { double x1; double x2; })coordinate;
 - (void)setLatitude:(double)arg1;
 - (void)setLongitude:(double)arg1;
@@ -43,9 +44,8 @@
 - (id)description;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
-- (id)subtitle;
 - (void)setCategory:(id)arg1;
-- (id)category;
+- (id)subtitle;
 - (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

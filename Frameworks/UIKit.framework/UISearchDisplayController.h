@@ -94,7 +94,6 @@
 
 
 - (BOOL)isActive;
-- (void)windowDidRotate:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -169,6 +168,7 @@
 - (BOOL)isNavigationBarHidingEnabled;
 - (id)noResultsMessage;
 - (void)_configureSearchBarForTableView;
+- (void)windowDidRotate:(id)arg1;
 - (void)windowWillAnimateRotation:(id)arg1;
 - (BOOL)_areSearchContentsSplitViewMaster;
 - (void)_watchContainingTableViewForScrolling:(BOOL)arg1;

@@ -14,6 +14,7 @@
 @property(retain) UIView * underlineView;
 @property(retain) NSLayoutConstraint * underlineYConstraint;
 
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void)setUnderlineYConstraint:(id)arg1;
 - (id)underlineYConstraint;

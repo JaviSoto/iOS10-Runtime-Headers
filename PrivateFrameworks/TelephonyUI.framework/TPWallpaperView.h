@@ -8,6 +8,7 @@
     BOOL _blursBackground;
     BOOL _hidesContactImage;
     BOOL _shouldLockContactImage;
+    BOOL _shouldBindBlurringWithPresenceOfContactImage;
     UIImage *_contactImage;
     float _blurProportion;
     UIImageView *_contactImageView;
@@ -19,17 +20,22 @@
 @property float blurProportion;
 @property BOOL hidesContactImage;
 @property BOOL shouldLockContactImage;
+@property BOOL shouldBindBlurringWithPresenceOfContactImage;
 @property(retain) UIImageView * contactImageView;
 @property(retain) _UIBackdropView * backdropEffectView;
 
 
+- (BOOL)shouldBindBlurringWithPresenceOfContactImage;
 - (void)setShouldLockContactImage:(BOOL)arg1;
-- (BOOL)hidesContactImage;
 - (float)blurProportion;
+- (void)setShouldBindBlurringWithPresenceOfContactImage:(BOOL)arg1;
 - (void)setBlurProportion:(float)arg1;
 - (void)setHidesContactImage:(BOOL)arg1;
 - (void)setContactImage:(id)arg1;
+- (BOOL)hidesContactImage;
+- (void)setContactImage:(id)arg1 animated:(BOOL)arg2;
 - (id)contactImage;
+- (void)updateBindBlurringWithPresenceOfContactImage;
 - (BOOL)shouldLockContactImage;
 - (void)setContactImageView:(id)arg1;
 - (id)contactImageView;

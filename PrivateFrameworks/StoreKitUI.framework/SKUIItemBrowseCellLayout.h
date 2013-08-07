@@ -2,11 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel, UIColor, NSString, SKUICellImageView;
+@class NSString, UIColor, _SKUIItemBrowseCellContentView;
 
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout  {
-    UILabel *_categoryLabel;
-    UILabel *_indexNumberLabel;
+    _SKUIItemBrowseCellContentView *_cellContentView;
     struct CGSize { 
         float width; 
         float height; 
@@ -15,10 +14,7 @@
     int _numberOfUserRatings;
     UIColor *_primaryTextColor;
     UIColor *_secondaryTextColor;
-    UILabel *_titleLabel;
     float _userRating;
-    SKUICellImageView *_userRatingImageView;
-    UILabel *_userRatingLabel;
 }
 
 @property(copy) NSString * category;
@@ -42,6 +38,7 @@
 - (id)initWithCollectionViewCell:(id)arg1;
 - (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
+- (id)_decimalNumberFormatter;
 - (void)_reloadUserRatingViews;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setUserRating:(float)arg1;
@@ -50,10 +47,10 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setBackgroundColor:(id)arg1;
+- (id)category;
 - (void).cxx_destruct;
 - (id)initWithTableViewCell:(id)arg1;
-- (void)layoutSubviews;
 - (void)setCategory:(id)arg1;
-- (id)category;
+- (void)layoutSubviews;
 
 @end

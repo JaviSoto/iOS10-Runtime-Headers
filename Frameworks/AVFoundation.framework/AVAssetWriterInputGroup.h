@@ -13,11 +13,11 @@
 
 + (id)assetWriterInputGroupWithInputs:(id)arg1 defaultInput:(id)arg2;
 
-- (id)inputs;
 - (void)_stopObservingInputPropertiesThatMayChangeValueOfOptions;
 - (void)_startObservingInputPropertiesThatMayChangeValueOfOptions;
 - (id)initWithInputs:(id)arg1 defaultInput:(id)arg2;
 - (id)defaultInput;
+- (id)inputs;
 - (id)init;
 - (void)finalize;
 - (void)dealloc;

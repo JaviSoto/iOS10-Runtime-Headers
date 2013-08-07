@@ -49,8 +49,6 @@
 - (id)innerContentView;
 - (void)setEditingConstraintsActive:(BOOL)arg1;
 - (BOOL)editingConstraintsActive;
-- (BOOL)displayConstraintsActive;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (void)setLabelWidth:(float)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
@@ -65,6 +63,8 @@
 - (id)contentViewEditingConstraints;
 - (id)propertyItem;
 - (void)setPropertyItem:(id)arg1;
+- (BOOL)displayConstraintsActive;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (void)setCardGroupItem:(id)arg1;
 - (void)performDefaultAction;
 - (void)setBackgroundColor:(id)arg1;

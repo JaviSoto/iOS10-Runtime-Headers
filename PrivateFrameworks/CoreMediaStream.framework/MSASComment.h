@@ -57,9 +57,9 @@
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
 - (void)setEmail:(id)arg1;
-- (void)setID:(int)arg1;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
+- (void)setID:(int)arg1;
 - (id)timestamp;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;

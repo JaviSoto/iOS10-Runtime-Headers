@@ -2,28 +2,36 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIAlertView, UIButton, NSString;
+@class UIAlertView, UIButton, NSString, PSKeychainSyncManager;
 
 @interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
     UIButton *_footerButton;
     UIAlertView *_supportVerificationAlert;
     NSString *_phoneNumber;
     NSString *_dialingPrefix;
+    NSString *_countryCode;
     unsigned int _verificationCodeLength;
+    PSKeychainSyncManager *_keychainSyncManager;
 }
 
 @property(retain) NSString * phoneNumber;
 @property(retain) NSString * dialingPrefix;
+@property(retain) NSString * countryCode;
 @property unsigned int verificationCodeLength;
+@property PSKeychainSyncManager * keychainSyncManager;
 
 
 - (unsigned int)numberOfPasscodeFields;
+- (id)keychainSyncManager;
 - (void)showSupportVerification;
 - (unsigned int)verificationCodeLength;
 - (void)setVerificationCodeLength:(unsigned int)arg1;
+- (void)setKeychainSyncManager:(id)arg1;
 - (id)specifiers;
 - (id)dialingPrefix;
 - (void)setDialingPrefix:(id)arg1;
+- (id)countryCode;
+- (void)setCountryCode:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (id)init;
 - (void)dealloc;

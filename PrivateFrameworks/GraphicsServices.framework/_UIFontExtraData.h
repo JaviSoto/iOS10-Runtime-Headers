@@ -16,6 +16,7 @@
         unsigned int _isSystemFont : 1; 
         unsigned int _hasKernPair : 1; 
         unsigned int _checkedLatin1Table : 1; 
+        unsigned int _isIBTextStyleFont : 1; 
     } _fFlags;
 }
 

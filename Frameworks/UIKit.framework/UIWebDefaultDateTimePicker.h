@@ -28,6 +28,7 @@
 - (void)_dateChangedSetAsNumber;
 - (void)_dateChangedSetAsString;
 - (int)_timeZoneOffsetFromGMT:(id)arg1;
+- (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (id)controlView;
 

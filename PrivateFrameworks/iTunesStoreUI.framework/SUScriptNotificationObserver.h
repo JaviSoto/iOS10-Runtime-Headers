@@ -15,9 +15,12 @@
 - (void)_accessibilityPerformScrollLeft;
 - (void)_accessibilityPerformScrollDown;
 - (void)_accessibilityPerformScrollUp;
+- (void)_enumerateReceiversUsingBlock:(id)arg1;
 - (void)_softwareMapChangedNotification:(id)arg1;
+- (void)_purchaseRequestDidSucceedNotification:(id)arg1;
 - (void)_audioSessionsChangedNotification:(id)arg1;
 - (void)_restrictionsChangedNotification:(id)arg1;
+- (void)_dispatchEventWithDictionary:(id)arg1 forName:(id)arg2;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)_beginObservingNotifications;
 - (void)_endObservingNotifications;

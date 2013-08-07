@@ -139,10 +139,10 @@
 - (void)setStatisticsInterval:(double)arg1;
 - (void)setUsesContentView:(BOOL)arg1;
 - (void)decrementSuppressSettingsDidChange;
-- (void)setGraphicsQuality:(int)arg1;
 - (void)setExplicitlySetGraphicsQuality:(BOOL)arg1;
 - (void)incrementSuppressSettingsDidChange;
 - (id)initWithDefaultValuesForGraphicsQuality:(int)arg1;
+- (void)setGraphicsQuality:(int)arg1;
 - (int)stackingLevel;
 - (int)renderingHint;
 - (void)setLegibleColor:(id)arg1;
@@ -158,12 +158,12 @@
 - (void)setGrayscaleTintLevel:(float)arg1;
 - (void)setBackdropVisible:(BOOL)arg1;
 - (void)setRequiresColorStatistics:(BOOL)arg1;
-- (int)graphicsQuality;
 - (void)restoreDefaultValues;
 - (id)initWithDefaultValues;
 - (void)removeKeyPathObserver:(id)arg1;
 - (void)addKeyPathObserver:(id)arg1;
 - (void)setDefaultValues;
+- (int)graphicsQuality;
 - (void)setSelected:(BOOL)arg1;
 - (BOOL)isSelected;
 - (void)setColorTint:(id)arg1;

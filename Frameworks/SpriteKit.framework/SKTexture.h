@@ -101,7 +101,9 @@
 + (id)_textureWithImageNamed:(id)arg1;
 + (void)updateTextures;
 
+- (void)_savePngFromGLCache:(id)arg1;
 - (id)imageNameOrPath;
+- (struct CGImage { }*)_newTextureFromGLCache;
 - (void)setSubTextureName:(id)arg1;
 - (id)subTextureName;
 - (void)setOriginalAtlasName:(id)arg1;
@@ -128,16 +130,17 @@
 - (id)initWithImagePath:(id)arg1;
 - (void)preloadWithCompletionHandler:(id)arg1;
 - (void)setTextureDimension:(const struct CGSize { float x1; float x2; }*)arg1 withPixelSize:(const struct CGSize { float x1; float x2; }*)arg2;
+- (struct CGImage { }*)alphaMask;
 - (BOOL)alphaTestX:(float)arg1 y:(float)arg2;
 - (void)generateAlphaMapOfSize:(struct CGSize { float x1; float x2; })arg1 fromImage:(struct CGImage { }*)arg2;
 - (struct CGPoint { float x1; float x2; })cropScale;
-- (void)_ensureImageData;
 - (id)initWithImageNamed:(id)arg1;
 - (void)initTextureCacheWithImageData;
 - (void)loadImageDataFromCGImage:(struct CGImage { }*)arg1 pointsSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)loadImageDataFromPVRGZData:(id)arg1;
 - (void)loadImageData;
 - (BOOL)loadImageDataFromPVRData:(id)arg1;
+- (void)_ensureImageData;
 - (id)imgName;
 - (struct CGSize { float x1; float x2; })alphaMapSize;
 - (unsigned int*)alphaMap;

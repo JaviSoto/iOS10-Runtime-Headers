@@ -58,7 +58,6 @@
 + (void)disableGestureHandler;
 + (BOOL)shouldEnableGestureHandler;
 + (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
-+ (void)keyboardDidHide;
 + (void)siriPreferencesChanged;
 + (void)applicationWillResignActive;
 + (void)applicationDidBecomeActive;
@@ -140,13 +139,13 @@
 - (id)fieldIdentifierInputDelegate:(id)arg1;
 - (id)supportedDictationLanguages:(id)arg1;
 - (BOOL)wasDisabledDueToTelephonyActivity;
-- (void)releaseConnection;
 - (BOOL)_shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
 - (BOOL)_shouldDeleteBackwardInInputDelegate:(id)arg1;
 - (void)setDiscardNextHypothesis:(BOOL)arg1;
 - (void)_restartDictation;
 - (BOOL)performTestOperationForEditing;
 - (void)startDictationForStark;
+- (void)releaseConnection;
 - (id)debuggingDictationOperations;
 - (void)enableProximity;
 - (void)setDictationInputmode;

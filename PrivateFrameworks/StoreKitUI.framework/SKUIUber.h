@@ -11,12 +11,12 @@
 }
 
 @property(readonly) SKUIArtworkList * artworkList;
-@property(readonly) NSString * text;
 @property(readonly) SKUIColorScheme * colorScheme;
+@property(readonly) NSString * text;
 
 
-- (id)artworkList;
 - (id)initWithUberDictionary:(id)arg1;
+- (id)artworkList;
 - (id)colorScheme;
 - (id)text;
 - (void).cxx_destruct;

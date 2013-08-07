@@ -20,6 +20,7 @@
 - (void)layout;
 - (void)_prepareViewIfNeeded;
 - (void)setEnableFirstOtherButton:(BOOL)arg1;
+- (void)_reloadButtons;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

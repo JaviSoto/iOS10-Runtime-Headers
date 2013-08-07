@@ -16,6 +16,7 @@
         unsigned int barTranslucence : 3; 
         unsigned int isLocked : 1; 
         unsigned int backgroundLayoutNeedsUpdate : 1; 
+        unsigned int hasCustomBackgroundView : 1; 
     } _toolbarFlags;
     struct __CFDictionary { } *_groups;
     NSArray *_buttonItems;

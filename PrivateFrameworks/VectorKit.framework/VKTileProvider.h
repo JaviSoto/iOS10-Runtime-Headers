@@ -87,7 +87,6 @@
 @property(retain) <VKMapLayer> * debugLayer;
 @property(readonly) GEOTileKeyList * debugLayerKeys;
 @property double lodBias;
-@property double lodControl;
 
 
 - (id)debugLayer;
@@ -132,8 +131,6 @@
 - (void)describeTilesFromList:(id)arg1 output:(id)arg2;
 - (BOOL)canRenderTile:(id)arg1;
 - (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned int)arg2;
-- (double)lodControl;
-- (double)lodBias;
 - (void)configureTileSelection;
 - (BOOL)cache:(id)arg1 willEvictObject:(id)arg2 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg3;
 - (void)didStopLoadingTilesWithError:(id)arg1;
@@ -141,7 +138,6 @@
 - (void)setDebugLayer:(id)arg1;
 - (id)sourceForLayer:(id)arg1;
 - (void)setTileExclusionAreas:(const struct vector<vk::TileExclusionArea, std::__1::allocator<vk::TileExclusionArea> > { struct TileExclusionArea {} *x1; struct TileExclusionArea {} *x2; struct __compressed_pair<vk::TileExclusionArea *, std::__1::allocator<vk::TileExclusionArea> > { struct TileExclusionArea {} *x_3_1_1; } x3; }*)arg1;
-- (void)setLodBias:(double)arg1;
 - (id)debugLayerKeys;
 - (id)neighborKeys;
 - (id)keysInView;
@@ -156,7 +152,8 @@
 - (void)requireRasterization:(id)arg1;
 - (void)setUseSmallTileCache:(BOOL)arg1;
 - (void)setFallbackEnabled:(BOOL)arg1;
-- (void)setLodControl:(double)arg1;
+- (void)setLodBias:(double)arg1;
+- (double)lodBias;
 - (void)updateWithContext:(id)arg1;
 - (void)removeTileSourceForMapLayer:(unsigned int)arg1;
 - (void)setTileSource:(id)arg1 forMapLayer:(unsigned int)arg2 optional:(BOOL)arg3;

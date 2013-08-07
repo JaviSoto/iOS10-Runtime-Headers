@@ -36,7 +36,8 @@
 - (void)logCurrentRoutes;
 - (int)indexOfRouteWithName:(id)arg1;
 - (BOOL)handsetRouteIsPicked;
-- (void)_mediaServerDied;
+- (void)_routeDiscoveryDidEndNotification:(id)arg1;
+- (void)_mediaServerDiedNotification:(id)arg1;
 - (void)_portStatusDidChangeNotification:(id)arg1;
 - (void)_pickableRoutesChangedNotification:(id)arg1;
 - (void)_scheduleSendDelegateAudioRoutesChanged;
@@ -52,8 +53,8 @@
 - (BOOL)_routeIsDisplayPort:(id)arg1;
 - (BOOL)_routeIsSpeaker:(id)arg1;
 - (id)_pickedRoute;
-- (void)_routeDiscoveryDidEndNotification:(id)arg1;
-- (void)_registerForAVControllerNotifications;
+- (void)_unregisterNotifications;
+- (void)_registerNotifications;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (int)indexOfPickedRoute;
 - (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
@@ -75,7 +76,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)setCategory:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 
 @end

@@ -14,6 +14,8 @@
 + (void)emptyInMemoryResources;
 + (void)empty;
 + (id)statistics;
++ (void)removeImageFromCacheForURL:(id)arg1 forFrame:(id)arg2;
++ (bool)addImageToCache:(struct CGImage { }*)arg1 forURL:(id)arg2 forFrame:(id)arg3;
 + (void)setDisabled:(BOOL)arg1;
 + (void)initialize;
 

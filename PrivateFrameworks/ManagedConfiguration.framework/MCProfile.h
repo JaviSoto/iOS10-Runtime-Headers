@@ -85,10 +85,10 @@
 + (id)badFieldTypeErrorWithField:(id)arg1;
 + (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(int)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(int)arg7 invalidDataErrorString:(id)arg8 outError:(id*)arg9;
 
-- (id)productVersion;
 - (id)productBuildVersion;
 - (id)installDate;
 - (void)setInstallDate:(id)arg1;
+- (id)productVersion;
 - (unsigned int)countOfPayloadsOfClass:(Class)arg1;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (BOOL)writeStubToDirectory:(id)arg1;

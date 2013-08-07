@@ -12,10 +12,10 @@
 
 + (id)sharedTimer;
 
-- (void)removeMetricsController:(id)arg1;
 - (void)_performFlush;
 - (void)reloadFlushInterval;
 - (void)flushAllMetricsControllers;
+- (void)removeMetricsController:(id)arg1;
 - (void)addMetricsController:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;

@@ -40,6 +40,7 @@
     NSNumber *_identityVersion;
     NSString *_keyPairSignature;
     NSString *_idsUserID;
+    NSString *_serviceIdentifier;
     NSArray *_uris;
 }
 
@@ -48,6 +49,7 @@
 @property int registrationStatus;
 @property int registrationType;
 @property(retain) NSString * serviceType;
+@property(retain) NSString * serviceIdentifier;
 @property int retries;
 @property int absintheRetries;
 @property BOOL needsMigration;
@@ -176,6 +178,8 @@
 - (void)setEmail:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (id)serviceType;
+- (void)setServiceIdentifier:(id)arg1;
+- (id)serviceIdentifier;
 - (BOOL)isDisabled;
 - (void)setIsDisabled:(BOOL)arg1;
 - (id)_userID;

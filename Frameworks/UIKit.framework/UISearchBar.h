@@ -33,6 +33,7 @@
     unsigned int _backdropStyle;
     UIView *_maskView;
     UITapGestureRecognizer *_tapToActivateGestureRecognizer;
+    UIBarButtonItem *_cancelBarButtonItem;
     struct { 
         unsigned int barStyle : 3; 
         unsigned int showsBookmarkButton : 1; 
@@ -163,9 +164,7 @@
 - (void)didMoveToWindow:(id)arg1;
 - (id)_scopeBar;
 - (id)searchField;
-- (void)setSearchBarStyle:(unsigned int)arg1;
 - (BOOL)_isAtTop;
-- (void)_cancelButtonPressed;
 - (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2 customImage:(BOOL*)arg3;
 - (id)_glyphAndTextColor:(BOOL)arg1;
 - (void)_updateNeedForBackdrop;
@@ -185,11 +184,14 @@
 - (BOOL)_searchFieldWidthShouldBeFlexible;
 - (float)_defaultHeight;
 - (BOOL)_shouldCombineLandscapeBars;
-- (BOOL)_isInBar;
 - (void)_setBarTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (float)_landscapeScopeBarWidth;
 - (BOOL)drawsBackgroundInPalette;
 - (BOOL)_containedInNavigationPalette;
+- (void)_cancelButtonPressed;
+- (id)_cancelBarButtonItem;
+- (void)_displayNavBarCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)_isInBar;
 - (void)_destroyCancelButton;
 - (void)_allowCursorToAppear:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
@@ -204,6 +206,7 @@
 - (void)_updateSearchFieldArt;
 - (void)_setMaskBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawsBackgroundInPalette:(BOOL)arg1;
+- (BOOL)_consideredInBarWithSuperview:(id)arg1;
 - (BOOL)_shouldDisplayShadow;
 - (void)_setShadowVisibleIfNecessary:(BOOL)arg1;
 - (BOOL)centerPlaceholder;
@@ -217,6 +220,7 @@
 - (void)_setShowsSeparator:(BOOL)arg1;
 - (void)_setupCancelButton;
 - (void)_setupPromptLabel;
+- (void)setSearchBarStyle:(unsigned int)arg1;
 - (void)setUsesEmbeddedAppearance:(BOOL)arg1;
 - (void)_scopeChanged:(id)arg1;
 - (void)setScopeButtonTitles:(id)arg1;

@@ -5,6 +5,7 @@
 @class GKCollectionViewPlaceholderView, GKSegmentedSectionHeaderView, NSMutableArray, GKSegmentInfo, GKCollectionViewDataSource, NSString, NSArray;
 
 @interface GKSegmentedSectionDataSource : GKCollectionViewDataSource <GKSegmentInfoDelegagte> {
+    BOOL _usePlaceholder;
     BOOL _waitingForAnimation;
     NSString *_noContentTitle;
     NSString *_noContentMessage;
@@ -16,7 +17,8 @@
 }
 
 @property(readonly) NSArray * dataSources;
-@property(readonly) GKCollectionViewDataSource * selectedDataSource;
+@property GKCollectionViewDataSource * selectedDataSource;
+@property BOOL usePlaceholder;
 @property unsigned int selectedDataSourceIndex;
 @property(retain) NSString * noContentTitle;
 @property(retain) NSString * noContentMessage;
@@ -29,19 +31,22 @@
 
 
 - (id)rootDataSource;
+- (id)selectedSegmentInfo;
 - (void)setSegmentInfos:(id)arg1;
 - (id)segmentInfos;
+- (void)setUsePlaceholder:(BOOL)arg1;
+- (BOOL)usePlaceholder;
+- (void)setSelectedDataSource:(id)arg1;
 - (void)setTitle:(id)arg1 forDataSource:(id)arg2;
 - (id)infoForSegment:(int)arg1;
 - (void)hoistSegmentedFactoryToRoot;
 - (id)initWithDataSources:(id)arg1;
-- (id)selectedSegmentInfo;
 - (BOOL)waitingForAnimation;
 - (void)groupDidLoad:(id)arg1;
 - (void)dataSourceWillLoad;
 - (void)setWaitingForAnimation:(BOOL)arg1;
 - (void)setSelectedSegmentInfo:(id)arg1;
-- (void)updatePlaceholder;
+- (void)updatePlaceholderNotify:(BOOL)arg1;
 - (void)setSelectedDataSourceIndex:(unsigned int)arg1;
 - (void)infosChanged;
 - (id)infoForDataSource:(id)arg1;

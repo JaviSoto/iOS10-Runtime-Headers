@@ -43,6 +43,7 @@
 - (void)dbQueueAddCommentCheckOperation:(id)arg1;
 - (void)_reconstruct;
 - (BOOL)dbQueueCheckToClearUnviewedStateOnAlbumWithGUID:(id)arg1 info:(id)arg2;
+- (void)dbQueueUpdateAlbumCtag:(id)arg1;
 - (id)_protocolErrorForUnderlyingError:(id)arg1;
 - (void)flushAllPendingCommentCheckOperations;
 - (void)setPendingChanges:(id)arg1;
@@ -136,6 +137,7 @@
 - (void)MSASStateMachine:(id)arg1 didFindNewURLString:(id)arg2 forAlbumWithGUID:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishCheckingForUpdatesInAlbums:(id)arg2 info:(id)arg3;
 - (void)MSASStateMachine:(id)arg1 didFinishCheckingForUpdatesInAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
+- (void)MSASStateMachine:(id)arg1 didFindChangesInAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFindAssetCollectionChanges:(id)arg2 forAlbum:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 willCheckForUpdatesInAlbum:(id)arg2 info:(id)arg3;
 - (void)MSASStateMachine:(id)arg1 didFinishCheckingForChangesInfo:(id)arg2 error:(id)arg3;
@@ -251,6 +253,7 @@
 - (void)retainBusy;
 - (void)setDaemon:(id)arg1;
 - (id)stateMachine;
+- (void)MSASStateMachine:(id)arg1 didFinishSendingInvitationByPhone:(id)arg2 toOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
 - (id)albums;
 - (void)setEventQueue:(id)arg1;

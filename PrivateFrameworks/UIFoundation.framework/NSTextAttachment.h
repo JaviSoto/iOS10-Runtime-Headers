@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class UIImage, NSString, NSData, UITextAttachmentView;
+@class UIImage, NSString, NSData, NSFileWrapper, UITextAttachmentView, UIView;
 
 @interface NSTextAttachment : NSObject <NSTextAttachmentContainer, NSCoding> {
     NSData *_data;
@@ -19,13 +19,16 @@
         } size; 
     } _bounds;
     UIImage *_image;
+    NSFileWrapper *_fileWrapper;
     UITextAttachmentView *_wrapperView;
 }
 
 @property(retain) NSData * contents;
 @property(retain) NSString * fileType;
+@property(retain) NSFileWrapper * fileWrapper;
 @property(retain) UIImage * image;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property(retain) UIView * contentView;
 
 + (id)imageCache;
 + (void)initialize;
@@ -41,6 +44,7 @@
 - (id)_image;
 - (id)initWithFileWrapper:(id)arg1;
 - (id)fileWrapper;
+- (void)setFileWrapper:(id)arg1;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
 - (id)_cacheKey;
 - (id)image;

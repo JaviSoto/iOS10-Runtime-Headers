@@ -16,6 +16,7 @@
     PUPhotoDecoration *_photoDecoration;
     NSNumber *_videoDuration;
     UIImageView *_photoImageView;
+    UIImageView *__crossfadeImageView;
     UIImage *_bannerImage;
     NSString *_bannerText;
     struct CGSize { 
@@ -41,6 +42,7 @@
 @property(getter=isVideoBannerVisible,readonly) BOOL videoBannerVisible;
 @property(readonly) NSNumber * videoDuration;
 @property(retain) UIImageView * photoImageView;
+@property(retain) UIImageView * _crossfadeImageView;
 @property(retain) UIImage * bannerImage;
 @property(copy) NSString * bannerText;
 
@@ -48,10 +50,13 @@
 + (BOOL)_showPhotoStreamBadges;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
 
+- (void)set_crossfadeImageView:(id)arg1;
+- (id)_crossfadeImageView;
 - (id)videoDuration;
 - (id)photoImage;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
 - (BOOL)isVideoBannerVisible;
+- (void)animateCrossfadeToImage:(id)arg1;
 - (void)setImageTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)bannerText;

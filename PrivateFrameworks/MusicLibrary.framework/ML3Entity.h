@@ -37,6 +37,7 @@
 + (void)enumeratePersistentIDsInLibrary:(id)arg1 matchingPredicate:(id)arg2 orderingTerms:(id)arg3 persistentIDs:(const long long*)arg4 count:(unsigned int)arg5 usingBlock:(id)arg6;
 + (id)predisambiguatedProperties;
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
++ (BOOL)incrementRevisionForRevisionTypeContentWithLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (id)extraTablesToDelete;
 + (BOOL)_deleteRowForPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 library:(id)arg3 table:(id)arg4 usingColumn:(id)arg5;
 + (id)collectionClassesToUpdateBeforeDelete;
@@ -56,8 +57,9 @@
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)joinClausesForProperty:(id)arg1;
 + (id)unsettableProperties;
-+ (int)revisionTrackingCode;
 + (BOOL)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deletionType:(int)arg3 revisionType:(int)arg4 usingConnection:(id)arg5;
++ (BOOL)incrementRevisionForRevisionTypeContentWithLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(id)arg3;
++ (int)revisionTrackingCode;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (BOOL)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 connection:(id)arg4;
 + (id)defaultOrderingProperties;

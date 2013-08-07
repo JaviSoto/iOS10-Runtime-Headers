@@ -76,9 +76,9 @@
 - (void)setArtworkContext:(id)arg1;
 - (id)_itemCollectionController;
 - (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)uber;
 - (void)setUber:(id)arg1;
 - (id)artworkContext;
-- (id)uber;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setSuspended:(BOOL)arg1;

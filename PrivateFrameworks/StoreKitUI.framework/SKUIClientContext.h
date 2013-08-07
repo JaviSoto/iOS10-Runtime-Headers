@@ -33,7 +33,6 @@
 
 - (id)initWithConfigurationDictionary:(id)arg1;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
-- (id)clientInterface;
 - (int)userInterfaceIdiomOverride;
 - (void)setNavigationHistoryPersistenceKey:(id)arg1;
 - (id)navigationHistoryPersistenceKey;
@@ -47,6 +46,7 @@
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id)arg1;
 - (void)setUserInterfaceIdiomOverride:(int)arg1;
 - (void)setMetricsPageContext:(id)arg1 forViewController:(id)arg2;
+- (id)clientInterface;
 - (id)URLBag;
 - (id)valueForConfigurationKey:(id)arg1;
 - (id)storeFrontIdentifier;

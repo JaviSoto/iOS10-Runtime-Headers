@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, UIInputViewPostPinningReloadState, UIKeyboardRotationState, NSMutableDictionary, UIPeripheralHostView, UITextEffectsWindow, UIScrollView, <_UIPeripheralHostCustomTransition>, UIPeripheralHostState, NSMutableSet, UIKeyboardAutomatic, UIView, UIInputViewTransition, CADisplayLink, UIKeyboard, UIInputViewSet, UIPanGestureRecognizer, UIResponder, NSMutableArray;
+@class UIInputViewPostPinningReloadState, NSMutableDictionary, UIKeyboardRotationState, UIPeripheralHostView, UITextEffectsWindow, UIScrollView, <_UIPeripheralHostCustomTransition>, UIPeripheralHostState, NSMutableSet, UIKeyboardAutomatic, UIView, UIInputViewTransition, CADisplayLink, UIKeyboard, UIInputViewSet, UIPanGestureRecognizer, UIResponder, NSMutableArray;
 
 @interface UIPeripheralHost : NSObject <UIScrollViewIntersectionDelegate, UIKeyboardSplitTransitionDelegate, UIGestureRecognizerDelegate> {
     UIPeripheralHostView *_hostView;
@@ -107,7 +107,6 @@
     NSMutableArray *_targetStateStack;
     UIInputViewSet *_inputViewSet;
     UIResponder *_responder;
-    NSString *_inputModeContextIdentifier;
     BOOL _ignoreInputModeChanges;
     NSMutableSet *_pinningResponders;
     BOOL _ignoresPinning;
@@ -157,9 +156,11 @@
         } size; 
     } _clippingKeyboardAdjustmentEnd;
     NSMutableDictionary *_preservedAccessoryViewNextResponderSets;
+    UIResponder *_responderWithoutAutomaticAppearanceEnabled;
     UITextEffectsWindow *_containerWindow;
     UIInputViewSet *_transientInputViewSet;
     <_UIPeripheralHostCustomTransition> *_customTransitionInfo;
+    float _ambiguousControlCenterActivationMargin;
 }
 
 @property(readonly) UIView * view;
@@ -187,6 +188,7 @@
 @property(readonly) UIKeyboardAutomatic * automaticKeyboard;
 @property(retain) UIInputViewSet * _inputViews;
 @property UIInputViewSet * _transientInputViews;
+@property float ambiguousControlCenterActivationMargin;
 @property(retain) UIResponder * selfHostingTrigger;
 
 + (Class)hostViewClass;
@@ -251,6 +253,7 @@
 - (BOOL)_isIgnoringReloadInputViews;
 - (BOOL)pinningPreventsInputViews:(id)arg1;
 - (void)_trackInputModeIfNecessary:(id)arg1;
+- (id)_inputViewsForResponder:(id)arg1 withAutomaticKeyboard:(BOOL)arg2;
 - (void)setTextEffectsWindowLevelForInputView:(id)arg1 responder:(id)arg2;
 - (id)_screenForFirstResponder:(id)arg1;
 - (void)syncToExistingAnimations;
@@ -260,6 +263,8 @@
 - (id)userInfoFromGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1 duration:(double)arg2 forWill:(BOOL)arg3 forShow:(BOOL)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenRectFromBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atCenter:(struct CGPoint { float x1; float x2; })arg2 applyingSourceHeightDelta:(float)arg3;
 - (float)keyboardAttachedViewHeight;
+- (void)setAmbiguousControlCenterActivationMargin:(float)arg1;
+- (float)ambiguousControlCenterActivationMargin;
 - (void)setCustomTransitionInfo:(id)arg1;
 - (id)customTransitionInfo;
 - (id)postPinningReloadState;
@@ -417,16 +422,18 @@
 - (double)getLastAutomaticDuration;
 - (void)setkeyboardAttachedViewHeight:(float)arg1;
 - (void)setNextAutomaticOrderInDirection:(int)arg1 duration:(double)arg2;
-- (void)_clearPreservedInputViewsWithId:(id)arg1;
+- (void)_clearPreservedInputViewsWithId:(id)arg1 clearKeyboard:(BOOL)arg2;
 - (float)getVerticalOverlapForView:(id)arg1 usingKeyboardInfo:(id)arg2;
 - (void)scrollView:(id)arg1 didFinishPanAtWindowPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollView:(id)arg1 didPanAtWindowPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)containerWindow;
 - (void)_clearPreservedInputViewsWithRestorableResponder:(id)arg1;
 - (void)setResponder:(id)arg1;
+- (BOOL)_isCoordinatingWithSystemGestures;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)_isTransitioning;
 - (void)customTransitionWillStartWithSettings:(id)arg1;
 - (id)view;
 

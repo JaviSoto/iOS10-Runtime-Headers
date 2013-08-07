@@ -18,10 +18,10 @@
 - (BOOL)rotateWithShape;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setYSkew:(float)arg1;
-- (float)yScale;
-- (float)xScale;
 - (void)setYScale:(float)arg1;
+- (float)yScale;
 - (void)setXScale:(float)arg1;
+- (float)xScale;
 - (void)setAlignment:(int)arg1;
 - (int)alignment;
 - (id)init;

@@ -23,8 +23,8 @@
 
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setTextLayoutCache:(id)arg1;
-- (id)initWithClientContext:(id)arg1;
 - (void)setStringIndex:(int)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (id)textLayoutCache;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (int)numberOfRowsInSection;

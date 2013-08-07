@@ -52,6 +52,26 @@
         float pattern[3]; 
         float fadingFactor[2]; 
     } perSpeedTraffic[4];
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    } collisionOrder;
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    } collisionRank;
 }
 
 @property(readonly) float incidentBrightness;

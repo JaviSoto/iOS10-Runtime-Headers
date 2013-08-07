@@ -2,51 +2,45 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class GEOPlace, PLRevGeoCompoundNameInfo, NSString;
+@class PLRevGeoCompoundNameInfo, GEOPlaceResult, NSString;
 
 @interface PLRevGeoLocationInfo : NSObject  {
     BOOL _isValid;
     BOOL _isHome;
-    GEOPlace *_geoPlace;
+    GEOPlaceResult *_geoPlaceResult;
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
     NSString *_providerId;
-    NSString *_providerVersionCountryCode;
-    NSString *_providerVersion;
+    unsigned int _providerVersion;
 }
 
 @property(readonly) BOOL isValid;
-@property(retain) GEOPlace * geoPlace;
+@property(retain) GEOPlaceResult * geoPlaceResult;
 @property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
 @property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
 @property BOOL isHome;
 @property(readonly) NSString * countryCode;
 @property(retain) NSString * providerId;
-@property(retain) NSString * providerVersionCountryCode;
-@property(retain) NSString * providerVersion;
+@property unsigned int providerVersion;
 
 + (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
-+ (id)titleForNameInfo:(id)arg1;
-+ (id)sortedNameInfoArray:(id)arg1;
-+ (id)sortedNameInfoArray:(id)arg1 homeAtEnd:(BOOL)arg2;
++ (id)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
 + (unsigned int)currentVersion;
 
-- (id)providerVersion;
-- (id)providerVersionCountryCode;
+- (unsigned int)providerVersion;
 - (id)providerId;
 - (id)compoundSecondaryNameInfo;
 - (id)compoundNameInfo;
+- (void)setGeoPlaceResult:(id)arg1;
 - (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
 - (id)dataForInfo;
 - (BOOL)isHome;
-- (void)setProviderVersion:(id)arg1;
-- (void)setProviderVersionCountryCode:(id)arg1;
+- (id)geoPlaceResult;
+- (void)setProviderVersion:(unsigned int)arg1;
 - (void)setProviderId:(id)arg1;
 - (void)setIsHome:(BOOL)arg1;
 - (void)setCompoundSecondaryNameInfo:(id)arg1;
 - (void)setCompoundNameInfo:(id)arg1;
-- (void)setGeoPlace:(id)arg1;
-- (id)geoPlace;
 - (id)countryCode;
 - (id)init;
 - (BOOL)isValid;

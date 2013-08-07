@@ -4,7 +4,7 @@
 
 @class GEOResources, GEODownloadMetadata;
 
-@interface GEOResourceManifestDownload : PBCodable  {
+@interface GEOResourceManifestDownload : PBCodable <NSCopying> {
     GEODownloadMetadata *_metadata;
     GEOResources *_resources;
 }
@@ -14,18 +14,19 @@
 @property(retain) GEODownloadMetadata * metadata;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasResources;
 - (void)setResources:(id)arg1;
 - (id)resources;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

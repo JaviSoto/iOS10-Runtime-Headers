@@ -17,6 +17,7 @@
 
 - (id)idsAccountController;
 - (id)accountFromIDSAccountWithUniqueID:(id)arg1;
+- (void)_loadIDSAccountController;
 - (id)imdAccountLoginFromIDSAccountWithType:(int)arg1 login:(id)arg2;
 - (id)newAccountWithAccountDefaults:(id)arg1 accountID:(id)arg2;
 - (id)_serviceDomain;
@@ -27,7 +28,6 @@
 - (void)accountController:(id)arg1 accountRemoved:(id)arg2;
 - (void)accountController:(id)arg1 accountUpdated:(id)arg2;
 - (void)accountController:(id)arg1 accountAdded:(id)arg2;
-- (void)clearCallerIDForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)registrationFailedForAccount:(id)arg1 needsDeletion:(id)arg2;
 - (void)account:(id)arg1 displayNameChanged:(id)arg2;

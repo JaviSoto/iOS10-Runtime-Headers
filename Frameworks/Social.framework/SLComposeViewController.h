@@ -64,7 +64,6 @@
 - (void)loadServiceViewControllerWithClassName:(id)arg1 fromServiceBundleWithIdentifier:(id)arg2;
 - (id)initWithServiceViewControllerClassName:(id)arg1 hostingBundleIdentifer:(id)arg2;
 - (id)initWithServiceType:(id)arg1;
-- (id)remoteViewController;
 - (id)serviceType;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -75,6 +74,7 @@
 - (BOOL)addImageAsset:(id)arg1;
 - (BOOL)supportsImageAsset:(id)arg1;
 - (BOOL)setInitialText:(id)arg1;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (BOOL)removeAllImages;

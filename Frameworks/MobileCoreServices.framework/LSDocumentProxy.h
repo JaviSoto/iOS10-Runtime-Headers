@@ -16,8 +16,8 @@
 @property(readonly) NSString * MIMEType;
 @property(readonly) BOOL sourceIsManaged;
 
-+ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
++ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 
 - (id)name;
 - (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;

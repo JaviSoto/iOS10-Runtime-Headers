@@ -42,6 +42,7 @@
         unsigned int disabled : 1; 
         unsigned int dirty : 1; 
         unsigned int delivered : 1; 
+        unsigned int deliveredEndedOrCancelled : 1; 
         unsigned int continuous : 1; 
         unsigned int requiresDelayedBegan : 1; 
         unsigned int willBeginAfterSatisfyingFailureRequirements : 1; 

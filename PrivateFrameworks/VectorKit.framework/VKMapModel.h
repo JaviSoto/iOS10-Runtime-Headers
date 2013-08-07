@@ -60,7 +60,7 @@
     int _loadingCount;
     float _contentScale;
     int _targetDisplay;
-    double _lodControl;
+    double _lodBias;
     BOOL _disableRoads;
     BOOL _disableLabels;
     BOOL _disablePolygons;
@@ -155,6 +155,7 @@
 - (id)labelDebugString;
 - (void)_updateTileExclusionAreas;
 - (id)_rasterOverlayTileSourceForLevel:(unsigned int)arg1;
+- (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)_tryTransitionAndPreloadIfNecessary:(id)arg1;
 - (void)_updateZoomLevel:(id)arg1;
 - (double)maxTileHeightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
@@ -208,11 +209,8 @@
 - (BOOL)disableRasters;
 - (BOOL)disableBuildingFootprints;
 - (BOOL)disablePolygons;
-- (BOOL)disableLabels;
-- (BOOL)disableRoads;
 - (BOOL)isFullyDrawn;
 - (BOOL)isRoadClassDisabled:(int)arg1;
-- (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDisableGrid:(BOOL)arg1;
 - (void)setDisableRealisticLand:(BOOL)arg1;
 - (void)setDisableRealisticRoads:(BOOL)arg1;
@@ -221,9 +219,7 @@
 - (void)setEnableBlackRoadLines:(BOOL)arg1;
 - (void)setDisableBuildingFootprints:(BOOL)arg1;
 - (void)setDisablePolygons:(BOOL)arg1;
-- (void)setDisableLabels:(BOOL)arg1;
 - (void)forceMapType:(int)arg1;
-- (void)setDisableRoads:(BOOL)arg1;
 - (void)setFocusedLabelsPolylinePainter:(id)arg1;
 - (id)focusedLabelsPolylinePainter;
 - (void)setCurrentLocationText:(id)arg1;
@@ -250,6 +246,10 @@
 - (void)resetTileContainers;
 - (int)targetDisplay;
 - (void)setMapType:(int)arg1;
+- (void)setDisableRoads:(BOOL)arg1;
+- (BOOL)disableRoads;
+- (void)setDisableLabels:(BOOL)arg1;
+- (BOOL)disableLabels;
 - (void)addExternalAnchor:(id)arg1;
 - (void)removeExternalAnchor:(id)arg1;
 - (id)externalAnchors;

@@ -35,8 +35,8 @@
 
 
 - (id)_artworkLoader;
-- (void)buttonAction:(id)arg1;
 - (id)initWithContentsController:(id)arg1;
+- (void)buttonAction:(id)arg1;
 - (int)segmentedControlLength;
 - (void)setSegmentedControlLength:(int)arg1;
 - (void)_recordClickEventWithCategory:(id)arg1 index:(int)arg2;
@@ -59,6 +59,7 @@
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (id)category;
 - (BOOL)isLoading;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -66,9 +67,8 @@
 - (id)delegate;
 - (id)segmentedControl;
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
-- (void)dismiss;
 - (void)setCategory:(id)arg1;
-- (id)category;
+- (void)dismiss;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;
 

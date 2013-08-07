@@ -6,9 +6,10 @@
    See Warning(s) below.
  */
 
-@class SSMetricsPageEvent, NSURLRequest, NSObject<OS_dispatch_queue>;
+@class SSMetricsPageEvent, NSURLRequest, NSObject<OS_dispatch_queue>, SKUIClientContext;
 
 @interface SKUILoadProductPageOperation : NSOperation  {
+    SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _itemID;
     SSMetricsPageEvent *_metricsPageEvent;
@@ -25,11 +26,11 @@
 
 
 - (id)_initSKUILoadProductPageOperation;
-- (id)initWithProductPageURLRequest:(id)arg1;
+- (id)initWithItemIdentifier:(long long)arg1 clientContext:(id)arg2;
+- (id)initWithProductPageURLRequest:(id)arg1 clientContext:(id)arg2;
 - (void)setOutputBlock:(id)arg1;
 - (id)metricsPageEvent;
 - (id)outputBlock;
-- (id)initWithItemIdentifier:(long long)arg1;
 - (void).cxx_destruct;
 - (void)main;
 

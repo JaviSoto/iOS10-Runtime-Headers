@@ -4,6 +4,7 @@
 
 @interface _UIResizableImage : UIImage  {
     BOOL _alwaysStretches;
+    BOOL _isSubimage;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -24,6 +25,7 @@
 - (id)_resizableImageWithCapMask:(int)arg1;
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isResizable;
+- (BOOL)_isSubimage;
 - (void)_setSubimageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)initWithImage:(id)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;

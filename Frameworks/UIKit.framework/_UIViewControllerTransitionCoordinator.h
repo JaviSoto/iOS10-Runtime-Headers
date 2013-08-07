@@ -28,7 +28,6 @@
 - (id)_alongsideAnimations:(BOOL)arg1;
 - (void)_setAlongsideAnimationViews:(id)arg1;
 - (void)_setMainContext:(id)arg1;
-- (id)_alongsideAnimationViews;
 - (void)_setInteractiveChangeHandlers:(id)arg1;
 - (id)_interactiveChangeHandlers;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id)arg2;
@@ -40,6 +39,7 @@
 - (BOOL)initiallyInteractive;
 - (id)_mainContext;
 - (void)notifyWhenInteractionEndsUsingBlock:(id)arg1;
+- (id)_alongsideAnimationViews;
 - (double)transitionDuration;
 - (int)completionCurve;
 - (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id)arg2 completion:(id)arg3;

@@ -26,6 +26,8 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)initialize;
 
+- (void)cancelVideoZoomRamp;
+- (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
 - (void)setFlashMode:(int)arg1;
 - (float)torchLevel;
 - (void)setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
@@ -58,9 +60,7 @@
 - (BOOL)isYoMamaWearsCombatBootsSupported;
 - (BOOL)HDRUsesPreBracketedFrameAsEV0;
 - (BOOL)isHDRSupported;
-- (void)cancelVideoZoomRamp;
 - (BOOL)isRampingVideoZoom;
-- (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
 - (void)setVideoZoomFactor:(float)arg1;
 - (float)videoZoomFactor;
 - (void)setSaturation:(float)arg1;

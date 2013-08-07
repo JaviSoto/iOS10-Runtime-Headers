@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFComposeRecipient, UITextField, UIButton, NSCountedSet, MFModernComposeRecipientAtom, MFComposeTextField, MFCorecipientsIndicatorAtom, NSArray, UIView, UITapGestureRecognizer, NSString, NSMutableDictionary, NSMutableArray, NSTimer;
+@class MFComposeRecipient, UITextField, UIFont, UIButton, NSCountedSet, MFModernComposeRecipientAtom, MFComposeTextField, MFCorecipientsIndicatorAtom, NSArray, UIView, UITapGestureRecognizer, NSString, NSMutableDictionary, NSMutableArray, NSTimer;
 
 @interface MFComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, UIGestureRecognizerDelegate, MFComposeRecipientAtomDelegate, MFDragSource, MFDragDestination, MFCorecipientsIndicatorAtomDelegate> {
     MFComposeTextField *_textField;
@@ -30,6 +30,7 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
     BOOL _needsReflow;
     BOOL _needsLayoutConstraintUpdate;
+    UIFont *_baseFont;
     BOOL _didIgnoreFirstResponderResign;
     BOOL _allowsDragAndDrop;
     BOOL _separatorHidden;
@@ -52,6 +53,7 @@
 @property unsigned int defaultAtomPresentationOptions;
 @property(readonly) MFCorecipientsIndicatorAtom * corecipientsIndicator;
 @property(getter=isSeparatorHidden) BOOL separatorHidden;
+@property(retain) UIFont * baseFont;
 @property int hideLastAtomComma;
 @property(retain) MFComposeRecipient * placeholderRecipient;
 
@@ -98,6 +100,7 @@
 - (void)_cancelDelayTimer;
 - (void)setHideLastAtomComma:(int)arg1;
 - (void)addButtonClicked:(id)arg1;
+- (id)baseFont;
 - (id)dragInitiatedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)allowsDrag;
 - (void)animatePlaceholderForDragFailure:(id)arg1;
@@ -138,6 +141,7 @@
 - (void)composeRecipientAtomShowPersonCard:(id)arg1;
 - (void)deselectComposeRecipientAtom:(id)arg1;
 - (void)selectComposeRecipientAtom:(id)arg1;
+- (void)setBaseFont:(id)arg1;
 - (void)setAddresses:(id)arg1;
 - (void)reflow;
 - (void)setProperty:(int)arg1;

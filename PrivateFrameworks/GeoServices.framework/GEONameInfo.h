@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEONameInfo : PBCodable  {
+@interface GEONameInfo : PBCodable <NSCopying> {
     NSString *_name;
     NSString *_phoneticName;
     int _phoneticType;
@@ -32,8 +32,6 @@
 @property int signType;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSignType:(BOOL)arg1;
 - (void)setHasPhoneticType:(BOOL)arg1;
 - (void)setHasShieldType:(BOOL)arg1;
@@ -54,11 +52,14 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;
 

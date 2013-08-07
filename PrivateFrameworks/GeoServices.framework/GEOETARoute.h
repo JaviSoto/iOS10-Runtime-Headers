@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSData;
 
-@interface GEOETARoute : PBCodable  {
+@interface GEOETARoute : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
         unsigned int count; 
@@ -52,8 +52,6 @@
 
 
 - (id)incidentsOnReRoutes;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)incidentsOffReRoutes;
 - (id)incidentsOnETARoutes;
 - (id)invalidSectionZilchPoints;
@@ -116,10 +114,13 @@
 - (void)setRouteID:(id)arg1;
 - (void)setSteps:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -86,8 +86,8 @@
 - (int)connectionType;
 - (unsigned int)databaseID;
 - (void)setDatabaseID:(unsigned int)arg1;
-- (unsigned int)sessionID;
 - (void)setSessionID:(unsigned int)arg1;
+- (unsigned int)sessionID;
 - (void)setPassword:(id)arg1;
 - (void)disconnect;
 - (void)setUsername:(id)arg1;

@@ -54,6 +54,7 @@
 - (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)transitionViewAnimatorDidUpdate:(id)arg1;
+- (BOOL)collectionViewLayoutShouldProvideCustomAnimations:(id)arg1;
 - (void)collectionViewLayout:(id)arg1 willSupplyLayoutAttributes:(id)arg2;
 - (id)_transitionLayout;
 - (id)_popTransitionInitialVisibleStackedAssetIndexPaths:(id)arg1;

@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SSVLoadURLOperation, NSURL;
+@class NSOperationQueue, SSVLoadURLOperation, SKUIClientContext, NSURL;
 
 @interface SKUIGiftValidator : NSObject  {
+    SKUIClientContext *_clientContext;
     NSOperationQueue *_operationQueue;
     int _validationCount;
     SSVLoadURLOperation *_validationOperation;
@@ -21,7 +22,7 @@
 - (void)_validateWithBodyDictionary:(id)arg1 completionBlock:(id)arg2;
 - (void)cancelValidation;
 - (void)validateGift:(id)arg1 withCompletionBlock:(id)arg2;
-- (id)initWithValidationURL:(id)arg1;
+- (id)initWithValidationURL:(id)arg1 clientContext:(id)arg2;
 - (void).cxx_destruct;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;

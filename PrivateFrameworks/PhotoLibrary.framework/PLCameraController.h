@@ -8,7 +8,7 @@
 
 @class AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, NSObject<OS_dispatch_source>, SBSAccelerometer, PLCameraEffectsRenderer, NSMutableArray, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureDevice, NSObject<OS_dispatch_queue>, <PLCameraControllerDelegate>, AVCaptureDeviceInput, NSArray, AVCaptureOutput, NSString, NSDictionary, NSTimer;
 
-@interface PLCameraController : NSObject <AVCaptureMetadataOutputObjectsDelegate, SBSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, PLCameraEffectsRendererDelegate> {
+@interface PLCameraController : NSObject <AVCaptureMetadataOutputObjectsDelegate, PLCameraEffectsRendererDelegate, SBSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     AVCaptureSession *_avCaptureSession;
     AVCaptureDevice *_avCaptureDeviceFront;
     AVCaptureDevice *_avCaptureDeviceBack;
@@ -124,6 +124,7 @@
         unsigned int delegateDidTakePhoto : 1; 
         unsigned int delegateCapturedPhoto : 1; 
         unsigned int delegateDidChangeCaptureAbility : 1; 
+        unsigned int delegateDidChangePanoramaConfiguration : 1; 
         unsigned int delegateDidUpdatePanoramaPreview : 1; 
         unsigned int delegateDidReceivePanoramaIssue : 1; 
         unsigned int delegateDidStartPanoramaCapture : 1; 
@@ -138,6 +139,7 @@
         unsigned int delegateFocusDidStart : 1; 
         unsigned int delegateFocusDidEnd : 1; 
         unsigned int delegateFaceMetadataDidChange : 1; 
+        unsigned int delegateVideoZoomFactorDidChange : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
     } _cameraFlags;
     NSObject<OS_dispatch_queue> *_dispatchTimerQueue;
@@ -205,7 +207,6 @@
 @property(setter=_setPreviewLayerEnabledForRenderer:) BOOL _previewLayerEnabledForRenderer;
 @property(setter=_setVideoDataOutputEnabledForRenderer:) BOOL _videoDataOutputEnabledForRenderer;
 
-+ (id)adjustmentFiltersForMode:(int)arg1 withImageSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)sharedInstance;
 
 - (id)_currentFaceMetadata;
@@ -223,7 +224,10 @@
 - (void)pausePreview;
 - (id)recentFaceMetadata;
 - (void)finishTimedCapture;
+- (void)continueTimedCapture;
 - (void)startTimedCapture;
+- (double)currentMaxFrameDuration;
+- (double)currentMinFrameDuration;
 - (id)effectFilterIndices;
 - (void)setEffectFilterIndex:(unsigned int)arg1 forMode:(int)arg2;
 - (id)activeFilters;
@@ -263,16 +267,15 @@
 - (BOOL)hasRearCamera;
 - (BOOL)hasFrontCamera;
 - (void)_setDefaultPrewarmDate:(id)arg1;
-- (void)setCameraMode:(int)arg1;
 - (void)releaseIOSurface;
 - (void)captureIOSurface;
+- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)cameraEffectsRenderer:(id)arg1 didFinishTransitionToShowGrid:(BOOL)arg2;
 - (void)cameraEffectsRenderer:(id)arg1 didStartTransitionToShowGrid:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)cameraEffectsRenderer:(id)arg1 willTransitionToShowGrid:(BOOL)arg2;
 - (void)cameraEffectsRenderer:(id)arg1 requestsVideoDataOutputEnabled:(BOOL)arg2;
 - (void)cameraEffectsRenderer:(id)arg1 requestsPreviewLayerEnabled:(BOOL)arg2;
 - (void)cameraEffectsRendererDidStartPreview:(id)arg1;
-- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (BOOL)_videoDataOutputEnabledForRenderer;
 - (BOOL)_previewLayerEnabledForRenderer;
 - (BOOL)_isPreviewPaused;
@@ -292,6 +295,9 @@
 - (void)_setSupportedCameraModes:(id)arg1;
 - (BOOL)supportsPanorama;
 - (BOOL)supportsVideoCapture;
+- (void)cancelVideoZoomRamp;
+- (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
+- (float)_limitZoomFactor:(float)arg1 forDevice:(id)arg2;
 - (float)maximumZoomFactorForDevice:(int)arg1;
 - (float)minimumZoomFactorForDevice:(int)arg1;
 - (BOOL)supportsHDR;
@@ -395,6 +401,7 @@
 - (BOOL)_isModeChangeWaitingForPreviewStarted;
 - (void)_notifyControllerModeDidChange;
 - (void)enqueueBlockInCaptureSessionQueue:(id)arg1;
+- (void)setCameraMode:(int)arg1;
 - (id)effectsRenderer;
 - (void)_updateEffectsRendererFilterIndexForceStateChange:(BOOL)arg1 renderNotifyBlock:(id)arg2;
 - (BOOL)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2;
@@ -409,12 +416,12 @@
 - (BOOL)canCapturePhotoDuringRecording;
 - (id)_videoModeSessionPreset;
 - (void)_setConfiguringCamera:(BOOL)arg1;
-- (BOOL)_isVideoMode:(int)arg1;
 - (id)currentOutput;
 - (BOOL)_safeSetCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (void)_updateEffectsRendererMirroring;
 - (void)_imageWriterQueueAvailabilityChanged;
 - (void)_setCameraMode:(int)arg1 cameraDevice:(int)arg2;
+- (BOOL)_isVideoMode:(int)arg1;
 - (void)_inCallStatusChanged:(BOOL)arg1;
 - (void)_teardownDelaySuspendTimer;
 - (void)setPostSessionSetupBlock:(id)arg1;

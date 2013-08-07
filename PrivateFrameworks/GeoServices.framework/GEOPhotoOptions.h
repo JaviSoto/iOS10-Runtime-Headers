@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPhotoOptions : PBCodable  {
+@interface GEOPhotoOptions : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -22,8 +22,6 @@
 @property(readonly) int* photoSizes;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setPhotoSizes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)photoSizes;
 - (void)addPhotoSize:(int)arg1;
@@ -37,10 +35,13 @@
 - (int)photoType;
 - (BOOL)hasPhotoType;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

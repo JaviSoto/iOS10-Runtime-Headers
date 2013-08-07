@@ -14,6 +14,8 @@
 
 - (void)dealloc;
 - (int)_activityIndicatorStyle;
+- (void)_startAnimating;
+- (void)_stopAnimating;
 - (float)shadowPadding;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;

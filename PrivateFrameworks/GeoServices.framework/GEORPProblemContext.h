@@ -4,7 +4,7 @@
 
 @class GEOPlace, NSString, GEORPMapLocation, NSMutableArray, GEORPDirectionsProblem;
 
-@interface GEORPProblemContext : PBCodable  {
+@interface GEORPProblemContext : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -37,8 +37,6 @@
 
 
 - (id)visibleTileSets;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasPinType:(BOOL)arg1;
 - (id)tileStateLog;
 - (BOOL)hasTileStateLog;
@@ -62,13 +60,16 @@
 - (void)setOriginalPlace:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

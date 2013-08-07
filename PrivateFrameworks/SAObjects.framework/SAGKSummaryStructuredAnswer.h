@@ -27,12 +27,12 @@
 - (id)encodedClassName;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)category;
 - (id)text;
 - (void)setImage:(id)arg1;
 - (id)image;
-- (void)setText:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (id)category;
+- (void)setText:(id)arg1;
 - (id)groupIdentifier;
 
 @end

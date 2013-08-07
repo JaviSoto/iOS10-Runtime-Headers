@@ -9,6 +9,7 @@
 + (BOOL)isWord:(id)arg1;
 + (BOOL)isSWF:(id)arg1;
 + (BOOL)isPNG:(id)arg1;
++ (BOOL)isPDF:(id)arg1;
 + (BOOL)isJPEG:(id)arg1;
 + (BOOL)isGIF:(id)arg1;
 + (BOOL)isHTML:(id)arg1;
@@ -18,7 +19,6 @@
 + (id)MIMETypeForData:(id)arg1;
 + (id)MIMETypeForString:(id)arg1;
 + (id)MIMETypeForData:(id)arg1 andString:(id)arg2;
-+ (BOOL)isPDF:(id)arg1;
 
 
 @end

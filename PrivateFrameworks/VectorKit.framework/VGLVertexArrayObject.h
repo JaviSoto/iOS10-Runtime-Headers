@@ -5,6 +5,16 @@
 @class VGLResource, VGLContext;
 
 @interface VGLVertexArrayObject : NSObject <NSCoding> {
+    struct SimpleBuffer<unsigned char> { 
+        unsigned int _size; 
+        unsigned int _capacity; 
+        char *_buf; 
+    } _vertices;
+    struct SimpleBuffer<unsigned short> { 
+        unsigned int _size; 
+        unsigned int _capacity; 
+        unsigned short *_buf; 
+    } _indices[2];
     VGLResource *_vao;
     VGLResource *_vbo;
     VGLResource *_ebo[2];
@@ -21,20 +31,6 @@
     unsigned int _indexUsage : 2;
     unsigned int _attributeCount : 8;
     VGLContext *_context;
-    struct vector<unsigned char, vk_allocator<unsigned char> > { 
-        char *__begin_; 
-        char *__end_; 
-        struct __compressed_pair<unsigned char *, vk_allocator<unsigned char> > { 
-            char *__first_; 
-        } __end_cap_; 
-    } _vertices;
-    struct vector<unsigned short, vk_allocator<unsigned short> > { 
-        unsigned short *__begin_; 
-        unsigned short *__end_; 
-        struct __compressed_pair<unsigned short *, vk_allocator<unsigned short> > { 
-            unsigned short *__first_; 
-        } __end_cap_; 
-    } _indices[2];
     unsigned int _VAO;
 }
 
@@ -50,17 +46,14 @@
 
 - (unsigned int)indexBufferMode;
 - (void)checkIndexList:(int)arg1 offset:(int)arg2;
-- (void)appendIndices:(const unsigned short*)arg1 count:(int)arg2;
 - (int)currentPrimitiveType;
 - (int)primitiveTypeForMode:(unsigned int)arg1;
 - (unsigned short*)indicesForMode:(unsigned int)arg1;
 - (int)indexCountForMode:(unsigned int)arg1;
 - (unsigned char)vertsPerPrimitive;
 - (void)setIndexBufferMode:(unsigned int)arg1;
-- (void)appendIndices:(const unsigned short*)arg1 count:(int)arg2 forIndexMode:(unsigned int)arg3;
 - (BOOL)canReserveVertices:(int)arg1;
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertices:(const void*)arg5 vertexCount:(int)arg6 indices:(const unsigned short*)arg7 indexCount:(int)arg8;
-- (void)appendVertices:(const void*)arg1 count:(int)arg2;
 - (void)resetIndices;
 - (void)resetVertices;
 - (unsigned int)VAO;
@@ -72,11 +65,8 @@
 - (int)indexCount;
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertexCapacity:(int)arg5;
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertexCapacity:(int)arg5 indexCapacity:(int)arg6;
-- (unsigned short*)reserveIndices:(int)arg1;
 - (BOOL)mergeMesh:(id)arg1;
 - (void)verticesMuted;
-- (unsigned short*)reserveIndices:(int)arg1 forIndexMode:(unsigned int)arg2;
-- (void*)reserveVertices:(int)arg1;
 - (void*)mutableVertices;
 - (void)freeze;
 - (unsigned short*)indices;

@@ -17,7 +17,6 @@
 @property(readonly) float lineHeight;
 @property(readonly) float leading;
 
-+ (id)defaultFontForUsage:(id)arg1;
 + (id)preferredFontForUsage:(id)arg1 contentSizeCategoryName:(id)arg2;
 + (id)preferredFontForUsage:(id)arg1;
 + (float)buttonFontSize;
@@ -31,6 +30,7 @@
 + (id)fontWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 + (void)_evictAllItemsFromFontAndFontDescriptorCaches;
 + (id)_sharedZeroPointFont;
++ (id)ib_preferredFontForTextStyle:(id)arg1;
 + (id)_systemFontsOfSize:(float)arg1 traits:(int)arg2;
 + (id)systemFontOfSize:(float)arg1 traits:(int)arg2;
 + (id)fontWithName:(id)arg1 size:(float)arg2 traits:(int)arg3;
@@ -70,6 +70,7 @@
 - (id)familyNameForCSSFontFamilyValue;
 - (float)lineHeight;
 - (id)familyName;
+- (BOOL)isIBTextStyleFont;
 - (id)initWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 - (BOOL)isSystemFont;
 - (id)initWithMarkupDescription:(id)arg1;

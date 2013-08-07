@@ -94,6 +94,7 @@
 - (struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; })audioVersionInfo:(BOOL)arg1;
 - (id)connectionData;
 - (BOOL)supportSDPCompression;
+- (void)resetLastGoodVideoQualityTime:(double)arg1;
 - (void)setCellTech:(int)arg1;
 - (BOOL)supportsDynamicMaxBitrate;
 - (BOOL)isVideoQualityDegraded;

@@ -64,6 +64,7 @@
 - (id)tableView;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (float)marginForTableView:(id)arg1;
+- (id)visibleCells;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)indexPathForCell:(id)arg1;
@@ -77,6 +78,5 @@
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
-- (id)visibleCells;
 
 @end

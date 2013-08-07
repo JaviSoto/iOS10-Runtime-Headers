@@ -15,8 +15,8 @@
 @property(copy) UIColor * foregroundColor;
 
 
-- (BOOL)_displaysBorderForWidth:(float)arg1 color:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayInsets;
+- (BOOL)_displaysBorderForWidth:(float)arg1 color:(id)arg2;
 - (id)photoDecorationVariantsWithIncreasingAlpha:(int)arg1;
 - (id)photoDecorationVariantsWithIncreasingBorderBrightness:(int)arg1;
 - (id)overlayImage;

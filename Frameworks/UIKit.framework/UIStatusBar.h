@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBarStyleAttributes, UIColor, NSNumber, UIStatusBarBackgroundView, UILabel, UIStatusBarForegroundView, <UIStatusBarStateProvider>, UIStatusBar, <UIStatusBarStyleDelegate>, UIStatusBarStyleRequest, UIStatusBarServer, UIStatusBarWindow, NSString, NSMutableArray, UIStatusBarStyleAnimationParameters;
+@class UIStatusBarStyleAttributes, UIColor, NSNumber, UIStatusBarBackgroundView, UILabel, UIStatusBarForegroundView, <UIStatusBarStateProvider>, UIStatusBar, <UIStatusBarStyleDelegate>, NSMutableSet, UIStatusBarStyleRequest, UIStatusBarServer, UIStatusBarWindow, NSString, NSMutableArray, UIStatusBarStyleAnimationParameters;
 
 @interface UIStatusBar : _UIScrollsToTopInitiatorView <UIStatusBarServerClient, UIStatusBarStateObserver> {
     UIStatusBarWindow *_statusBarWindow;
@@ -63,6 +63,7 @@
     UIColor *_lastUsedBackgroundColor;
     UIStatusBarStyleAnimationParameters *_nextTintTransition;
     NSNumber *_overrideHeight;
+    NSMutableSet *_disableRasterizationReasons;
     BOOL _persistentAnimationsEnabled;
     BOOL _simulatesLegacyAppearance;
     BOOL _serverUpdatesDisabled;
@@ -75,6 +76,7 @@
 @property <UIStatusBarStyleDelegate> * styleDelegate;
 @property UIStatusBarWindow * statusBarWindow;
 @property BOOL persistentAnimationsEnabled;
+@property(readonly) int styleOverrides;
 @property BOOL simulatesLegacyAppearance;
 @property BOOL serverUpdatesDisabled;
 @property BOOL homeItemsDisabled;
@@ -152,6 +154,8 @@
 - (void)_updateBackgroundFrame;
 - (void)_finishedSettingStyleWithOldHeight:(float)arg1 newHeight:(float)arg2 animation:(int)arg3;
 - (void)_setStyle:(id)arg1 animation:(int)arg2;
+- (void)_beginDisablingRasterizationForReason:(id)arg1;
+- (void)_endDisablingRasterizationForReason:(id)arg1;
 - (id)_prepareToSetStyle:(id)arg1 animation:(int)arg2;
 - (id)activeTintColor;
 - (void)_requestStyleAttributes:(id)arg1 animationParameters:(id)arg2;
@@ -168,8 +172,11 @@
 - (void)forceUpdateToData:(const struct { BOOL x1[25]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[2][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27; }*)arg1 animated:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2 inProcessStateProvider:(id)arg3;
+- (void)_updateShouldRasterize;
 - (void)_evaluateServerRegistration;
 - (void)_styleOverridesDidChange:(id)arg1;
+- (void)_itemViewShouldEndDisablingRasterization:(id)arg1;
+- (void)_itemViewShouldBeginDisablingRasterization:(id)arg1;
 - (void)_itemViewPerformButtonAction:(id)arg1;
 - (void)_willEnterForeground:(id)arg1;
 - (void)_didEnterBackground:(id)arg1;
@@ -179,6 +186,7 @@
 - (void)statusBarServer:(id)arg1 didReceiveGlowAnimationState:(BOOL)arg2 forStyle:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
 - (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const struct { BOOL x1[25]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[2][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27; }*)arg2 withActions:(int)arg3;
+- (int)styleOverrides;
 - (BOOL)persistentAnimationsEnabled;
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;
 - (void)setSuppressesGlow:(BOOL)arg1;

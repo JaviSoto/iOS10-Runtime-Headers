@@ -33,6 +33,7 @@
 - (id)locationInformationChangedBlock;
 - (id)cachedProfileImageDataForScreenName:(id)arg1;
 - (BOOL)countMediaAttachmentsTowardCharacterCount;
+- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
 - (id)serviceAccountTypeIdentifier;
 - (void)showSettingsIfNeeded;
 - (void)overrideLocationWithLatitude:(float)arg1 longitude:(float)arg2 name:(id)arg3;

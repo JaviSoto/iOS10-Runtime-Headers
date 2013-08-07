@@ -9,13 +9,13 @@
     unsigned int _reserved;
 }
 
-+ (id)portWithMachPort:(unsigned int)arg1;
 + (id)port;
 + (void)_fixNSMachPortLeak;
 + (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
 + (void)resetAllPorts;
 + (void)parseMachMessage:(void*)arg1 localPort:(id*)arg2 remotePort:(id*)arg3 msgid:(unsigned int*)arg4 components:(id*)arg5;
 + (BOOL)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned int)arg7;
++ (id)portWithMachPort:(unsigned int)arg1;
 
 - (id)init;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;

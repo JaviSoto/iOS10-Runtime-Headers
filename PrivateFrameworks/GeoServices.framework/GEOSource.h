@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOSource : PBCodable  {
+@interface GEOSource : PBCodable <NSCopying> {
     NSString *_sourceId;
     NSString *_sourceName;
     NSString *_sourceVersion;
@@ -16,8 +16,6 @@
 @property(retain) NSString * sourceVersion;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasSourceVersion;
 - (id)sourceId;
 - (id)sourceName;
@@ -26,10 +24,13 @@
 - (void)setSourceName:(id)arg1;
 - (id)sourceVersion;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

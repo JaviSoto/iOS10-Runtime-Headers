@@ -2,8 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+@class NSMutableArray;
+
 @interface PLAssetsSaver : NSObject  {
+    NSMutableArray *__pendingSaveAssetJobs;
 }
+
+@property(retain) NSMutableArray * _pendingSaveAssetJobs;
 
 + (id)publicAssetsLibraryErrorFromPrivateDomain:(id)arg1 withPrivateCode:(int)arg2;
 + (id)publicAssetsLibraryErrorFromPrivateError:(id)arg1;
@@ -17,6 +22,7 @@
 - (id)pathForNewAssetOfType:(long long)arg1 extension:(id)arg2;
 - (void)regenerateVideoThumbnailsForVideo:(id)arg1 withCreationDate:(id)arg2 progressStack:(id)arg3 completionBlock:(id)arg4;
 - (void)_requestAccess;
+- (void)set_pendingSaveAssetJobs:(id)arg1;
 - (void)saveSyncedAssets:(id)arg1 completionBlock:(id)arg2;
 - (void)reenqueueAssetUUIDsForPhotoStreamPublication:(id)arg1;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
@@ -36,11 +42,14 @@
 - (id)_addCameraAssetToLibraryWithPath:(id)arg1 thumbnailImage:(id)arg2 assetUUID:(id)arg3 metadata:(id)arg4 assetType:(int)arg5 kind:(short)arg6 kindSubtype:(short)arg7 avalancheUUID:(id)arg8 adjustmentFilters:(id)arg9 effectFilters:(id)arg10 completionHandler:(id)arg11;
 - (id)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 adjustmentFilters:(id)arg4 effectFilters:(id)arg5 diagnostics:(id)arg6 previouslyPendingAsset:(id)arg7 requestEnqueuedBlock:(id)arg8;
 - (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id)arg3 completionBlock:(id)arg4 imageSurface:(void*)arg5 previewImageSurface:(void*)arg6;
+- (id)_pendingSaveAssetJobs;
+- (id)_saveIsolationQueue;
 - (void)_setIsTakingPhoto:(BOOL)arg1;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
 - (void)copyAssetToCameraRoll:(id)arg1;
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
 - (void)saveImageRef:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 properties:(id)arg4 completionBlock:(id)arg5;
+- (id)init;
 - (void)dealloc;
 
 @end

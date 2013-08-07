@@ -8,6 +8,7 @@
     SKUIItemArtworkContext *_artworkContext;
     UICollectionView *_collectionView;
     BOOL _delegateWantsWillDisplay;
+    BOOL _didInitialReload;
     NSMutableIndexSet *_hiddenIconIndexSet;
     NSArray *_items;
     struct CGSize { 

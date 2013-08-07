@@ -19,10 +19,6 @@
     BOOL _debugPaintFrameRateGraph;
     float _debugFramesPerSecond;
     BOOL _rendersInBackground;
-    struct Vec2Imp<float> { 
-        float x; 
-        float y; 
-    } _deviceTilt;
     NSMutableArray *_animations[2];
     int _displayRate;
     int _requestedRate;
@@ -65,7 +61,6 @@
 @property BOOL rendersInBackground;
 @property(getter=isGesturing) BOOL gesturing;
 @property BOOL iconsShouldAlignToPixels;
-@property struct Vec2Imp<float> { float x1; float x2; } deviceTilt;
 
 + (Class)contextClass;
 
@@ -116,8 +111,6 @@
 - (void)setTargetDisplay:(int)arg1;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
-- (void)setDeviceTilt:(struct Vec2Imp<float> { float x1; float x2; })arg1;
-- (struct Vec2Imp<float> { float x1; float x2; })deviceTilt;
 - (void)setGesturing:(BOOL)arg1;
 - (BOOL)isGesturing;
 - (void)cameraDidChange:(id)arg1;

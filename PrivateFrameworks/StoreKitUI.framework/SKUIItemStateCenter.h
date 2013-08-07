@@ -21,6 +21,7 @@
 }
 
 @property(getter=isApplicationInstallRestricted,readonly) BOOL applicationInstallRestricted;
+@property(getter=isGratisEligible,readonly) BOOL gratisEligible;
 @property(readonly) int parentalControlsRank;
 @property(getter=isRunningInStoreDemoMode,readonly) BOOL runningInStoreDemoMode;
 
@@ -31,20 +32,22 @@
 - (void)reloadGratisEligibilityWithBundleIdentifiers:(id)arg1 clientContext:(id)arg2;
 - (id)performActionForItem:(id)arg1 withCompletionBlock:(id)arg2;
 - (BOOL)isItemRestrictedWithParentalControlsRank:(int)arg1;
+- (BOOL)isGratisEligible;
 - (void)finishLoadingWithCompletionBlock:(id)arg1;
 - (void)_setStateFlag:(unsigned int)arg1 forOnlyItemsWithIdentifiers:(id)arg2;
 - (void)_notifyObserversOfStateChange:(id)arg1;
 - (id)_removeState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
 - (void)_setInstalledItems:(id)arg1;
 - (void)_setPurchaseHistoryItemsWithIdentifiers:(id)arg1;
+- (id)_purchaseHistoryDatabase;
 - (void)_notifyObserversOfRestrictionsChange;
 - (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
 - (void)_removePurchasingItemsForPurchases:(id)arg1;
+- (void)_notifyObserversOfPurchasesResponses:(id)arg1;
 - (void)_replacePurchasingItem:(id)arg1 withDownloadIDs:(id)arg2;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
 - (id)_addState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
-- (id)_newPurchasesWithItems:(id)arg1 transaction:(id)arg2;
-- (id)_purchaseHistoryDatabase;
+- (id)_newPurchasesWithItems:(id)arg1;
 - (void)purchaseItems:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)cancelDownloadForItemWithIdentifier:(long long)arg1;
 - (void)purchaseItem:(id)arg1 withCompletionBlock:(id)arg2;

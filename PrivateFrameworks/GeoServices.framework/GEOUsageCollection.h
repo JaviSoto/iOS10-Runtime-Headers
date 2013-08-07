@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOUsageCollection : PBCodable  {
+@interface GEOUsageCollection : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -64,8 +64,6 @@
 @property BOOL sessionIDIsPersistent;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSessionIDIsPersistent:(BOOL)arg1;
 - (void)setTileUsages:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)tileUsages;
@@ -108,9 +106,11 @@
 - (BOOL)hasCountryCode;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)timestamp;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
@@ -119,6 +119,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

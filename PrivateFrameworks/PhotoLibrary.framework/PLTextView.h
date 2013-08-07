@@ -10,9 +10,9 @@
 }
 
 
+- (void)updatePlaceholder;
 - (id)_placeholder;
 - (void)setPlaceholderText:(id)arg1;
-- (void)updatePlaceholder;
 - (void)dealloc;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

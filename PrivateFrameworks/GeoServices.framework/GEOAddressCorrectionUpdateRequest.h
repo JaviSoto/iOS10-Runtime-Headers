@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOAddressCorrectionUpdateRequest : PBRequest  {
+@interface GEOAddressCorrectionUpdateRequest : PBRequest <NSCopying> {
     NSString *_addressID;
     int _correctionStatus;
     NSMutableArray *_significantLocations;
@@ -20,10 +20,6 @@
 @property(retain) NSString * addressID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)significantLocations;
 - (void)setHasCorrectionStatus:(BOOL)arg1;
 - (id)addressID;
@@ -38,10 +34,15 @@
 - (void)setAddressID:(id)arg1;
 - (void)setSignificantLocations:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -24,6 +24,7 @@
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
 - (id)_missingItemLoader;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (int)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;

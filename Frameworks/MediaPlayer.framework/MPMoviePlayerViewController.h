@@ -6,16 +6,16 @@
 
 @interface MPMoviePlayerViewController : UIViewController  {
     id _internal;
+    BOOL _statusBarWasHidden;
 }
 
 @property(readonly) MPMoviePlayerController * moviePlayer;
 
 
-- (void)_restoreStatusBarAnimated:(BOOL)arg1;
+- (id)initWithContentURL:(id)arg1;
 - (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
 - (id)moviePlayer;
 - (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
-- (id)initWithContentURL:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -30,8 +30,10 @@
 - (BOOL)_canReloadView;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
+- (BOOL)prefersStatusBarHidden;
 
 @end

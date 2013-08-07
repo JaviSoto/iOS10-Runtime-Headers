@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemCollectionDelegate>, UIImage, SKUIItemArtworkContext, SKUIScreenshotDataConsumer, SKUIIconDataConsumer, SKUIResourceLoader, NSMutableDictionary, NSArray;
+@class <SKUIItemCollectionDelegate>, UIImage, SKUIClientContext, SKUIItemArtworkContext, SKUIIconDataConsumer, SKUIScreenshotDataConsumer, SKUIResourceLoader, NSMutableDictionary, NSArray;
 
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
     SKUIItemArtworkContext *_artworkContext;
     SKUIResourceLoader *_artworkLoader;
+    SKUIClientContext *_clientContext;
     <SKUIItemCollectionDelegate> *_delegate;
     BOOL _delegateProvidesScreenshots;
     NSMutableDictionary *_iconArtworkRequestIDs;
@@ -41,6 +42,7 @@
 - (id)portraitScreenshotDataConsumer;
 - (id)landscapeScreenshotDataConsumer;
 - (id)_screenshotArtworkRequestWithItem:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleItemRange;
 - (void)_reloadForRestrictionsChange;
 - (void)_reloadForItemStateChange:(id)arg1;
 - (void)_enumerateVisibleCellLayoutsWithBlock:(id)arg1;
@@ -63,13 +65,14 @@
 - (void)setNumberOfPagesToCacheAhead:(float)arg1;
 - (void)setNumberOfItemsPerPage:(int)arg1;
 - (void)setArtworkContext:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)configureCellLayout:(id)arg1 forIndex:(int)arg2;
 - (void)removeAllCachedResources;
 - (void)artworkLoaderDidIdle:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)artworkContext;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (id)items;
 - (id)init;
 - (void)setDelegate:(id)arg1;

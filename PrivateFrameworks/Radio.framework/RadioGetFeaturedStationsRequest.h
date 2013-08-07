@@ -8,9 +8,11 @@
     NSObject<OS_dispatch_queue> *_artworkQueue;
     SSURLConnectionRequest *_request;
     unsigned int _stationCount;
+    BOOL _disableArtworkLoading;
     BOOL _disableCachedResponses;
 }
 
+@property BOOL disableArtworkLoading;
 @property BOOL disableCachedResponses;
 
 
@@ -20,6 +22,8 @@
 - (void)startWithFeaturedStationsCompletionHandler:(id)arg1;
 - (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2 loadArtworkSynchronously:(BOOL)arg3;
 - (id)initWithStationCount:(unsigned int)arg1;
+- (BOOL)disableArtworkLoading;
+- (void)setDisableArtworkLoading:(BOOL)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

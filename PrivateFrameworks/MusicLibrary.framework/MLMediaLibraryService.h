@@ -31,6 +31,8 @@
 - (void)_enqueueClientCompletionHandler:(id)arg1 forInterfaceMessage:(SEL)arg2 withBlockFacade:(id)arg3;
 - (void)closeServiceConnection;
 - (void)openServiceConnection;
+- (oneway void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
+- (oneway void)serviceWillTerminateTransactionWithIdentifier:(id)arg1 replyBlock:(id)arg2;
 - (oneway void)pollCurrentImportStatus:(id)arg1;
 - (oneway void)performImportFromSource:(unsigned int)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 options:(id)arg4 completionHandler:(id)arg5;
 - (oneway void)setOptions:(id)arg1 withCompletionHandler:(id)arg2;

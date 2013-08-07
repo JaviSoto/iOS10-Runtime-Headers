@@ -62,6 +62,7 @@
 
 - (id)playbackQueueCommitHandler;
 - (void)setDefaultItemEQPresetType:(int)arg1;
+- (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)commitPlaybackQueueTransaction;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -97,7 +98,6 @@
 - (BOOL)isExternalPlaybackActive;
 - (void)play;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
-- (float)rate;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (BOOL)_CALayerDestinationIsTVOut;
 - (int)_externalProtectionStatus;
@@ -110,6 +110,7 @@
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setActionAtItemEnd:(int)arg1;
 - (id)_player;
+- (float)rate;
 - (id)items;
 - (void)setRate:(float)arg1;
 - (int)status;

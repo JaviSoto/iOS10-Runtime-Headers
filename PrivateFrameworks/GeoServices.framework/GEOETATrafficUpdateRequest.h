@@ -4,7 +4,7 @@
 
 @class GEORouteAttributes, GEOLocation, NSData, NSMutableArray, GEOClientCapabilities;
 
-@interface GEOETATrafficUpdateRequest : PBRequest  {
+@interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
     NSMutableArray *_destinationWaypoints;
@@ -33,10 +33,6 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)destinationWaypoints;
 - (void)setHasIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (id)destinationWaypointAtIndex:(unsigned int)arg1;
@@ -72,10 +68,15 @@
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

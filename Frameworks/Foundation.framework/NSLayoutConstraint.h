@@ -76,6 +76,7 @@
 - (void)_setMarkerAndPositiveErrorVar:(id)arg1;
 - (float)_fudgeIncrement;
 - (BOOL)_isFudgeable;
+- (BOOL)_isIBPrototypingLayoutConstraint;
 - (void)setSymbolicConstant:(id)arg1;
 - (void)_setSecondAttribute:(int)arg1;
 - (void)_setSecondItem:(id)arg1;

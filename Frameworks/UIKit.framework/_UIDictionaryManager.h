@@ -10,7 +10,9 @@
 
 @property(readonly) NSArray * availableDefinitionDictionaries;
 
++ (void)initialize;
 + (id)assetManager;
++ (id)_filteredDictionaryIDs;
 
 - (id)init;
 - (void)dealloc;

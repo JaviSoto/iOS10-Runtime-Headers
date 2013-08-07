@@ -117,6 +117,12 @@
     PLTileContainerView *_containerView;
     BOOL _reviewing;
     BOOL _picked;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _overlayInsets;
 }
 
 @property(readonly) PLManagedAsset * photo;
@@ -124,6 +130,7 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tileFrame;
 @property(retain) UIImage * unscaledImage;
 @property BOOL centerContentVertically;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayInsets;
 @property BOOL forceNativeScreenScale;
 @property BOOL force1XCroppedImage;
 @property(readonly) PLCommentsViewController * commentsViewController;
@@ -147,7 +154,7 @@
 - (void)setLockedUnderCropOverlay:(BOOL)arg1;
 - (void)setAllowsZoomToFill:(BOOL)arg1;
 - (float)currentToDefaultZoomRatio;
-- (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOptions:(int)arg2;
+- (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 withOptions:(int)arg3;
 - (BOOL)didRequestFullSizeImage;
 - (void)setHDRBadgesHidden:(BOOL)arg1;
 - (void)setClientIsWallpaper:(BOOL)arg1;
@@ -169,7 +176,7 @@
 - (float)minZoomScale;
 - (float)zoomToFillScale;
 - (void)_setDidEndZoomingBlock:(id)arg1;
-- (id)newImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 croppedImageData:(id*)arg2 fullScreenImageData:(id*)arg3 fullScreenImage:(struct CGImage {}**)arg4 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5 intersectCropWithFullRect:(BOOL)arg6;
+- (id)newImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 croppedImageData:(id*)arg3 fullScreenImageData:(id*)arg4 fullScreenImage:(struct CGImage {}**)arg5 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6 intersectCropWithFullRect:(BOOL)arg7;
 - (BOOL)forceNativeScreenScale;
 - (BOOL)force1XCroppedImage;
 - (void)_resetZoomCommon;
@@ -178,6 +185,7 @@
 - (void)_requestFullSizeImage;
 - (void)_performDidEndZoomBlock;
 - (void)initializeCommentsTable;
+- (void)setBadgeVisible:(BOOL)arg1;
 - (BOOL)tileIsOnScreen;
 - (void)_updateAggdKeys;
 - (void)_setDefaultZoomScale;
@@ -185,13 +193,13 @@
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updateReviewCheckmark;
 - (void)_setupBadgeView;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayInsets;
 - (BOOL)_clientIsWallpaper;
 - (void)_updatePlaceholderViewAnimated:(BOOL)arg1;
 - (void)_installSubview:(id)arg1;
 - (void)_repositionBadgeView;
 - (void)_showBadgeViewIfAppropriate;
 - (void)_centerImageInScrollView;
-- (void)_updateContentInset;
 - (void)_teardownDispatchTimer;
 - (id)initWithPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
 - (void)_configureViews;
@@ -199,14 +207,16 @@
 - (void)setTileFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setPhoto:(id)arg1;
 - (void)_handleDoubleTap:(id)arg1;
+- (void)_updateContentInset;
 - (void)_viewWillMoveToSuperView:(id)arg1;
 - (id)_newOriginalImageForPickerFromCachedData;
 - (id)unscaledImage;
 - (void)noteParentViewControllerDidDisappear;
+- (void)setOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCropOverlayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setForce1XCroppedImage:(BOOL)arg1;
 - (void)setForceNativeScreenScale:(BOOL)arg1;
-- (void)setBadgeVisible:(BOOL)arg1;
+- (void)setBadgeVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)newCGImageBackedUIImage;
 - (BOOL)hasFullSizeImage;
 - (void)zoomToScale:(float)arg1 completionBlock:(id)arg2;

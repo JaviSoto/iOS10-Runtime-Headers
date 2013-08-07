@@ -23,15 +23,15 @@
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)clickEventWithMedia:(id)arg1 elementName:(id)arg2 index:(int)arg3;
-- (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)showProductViewControllerWithItem:(id)arg1;
 - (id)backgroundColorForIndexPath:(id)arg1;
+- (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (id)_clickEventWithElementName:(id)arg1 index:(int)arg2 fieldData:(id)arg3;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
-- (void)prefetchResourcesWithReason:(int)arg1;
 - (BOOL)fitsToHeight;
+- (void)prefetchResourcesWithReason:(int)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)pageComponent;
 - (void)restorePinnedHeaderView:(id)arg1;

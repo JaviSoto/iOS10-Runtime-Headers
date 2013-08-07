@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOBatchRevGeocodeRequest : PBRequest  {
+@interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -26,10 +26,7 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
+- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setHasSplitIntoClusters:(BOOL)arg1;
 - (void)setSplitIntoClusters:(BOOL)arg1;
 - (BOOL)splitIntoClusters;
@@ -38,7 +35,6 @@
 - (void)addLocation:(id)arg1;
 - (id)locationAtIndex:(unsigned int)arg1;
 - (unsigned int)locationsCount;
-- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)additionalPlaceTypes;
 - (void)addAdditionalPlaceType:(int)arg1;
 - (int)additionalPlaceTypeAtIndex:(unsigned int)arg1;
@@ -51,11 +47,16 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)locations;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setLocations:(id)arg1;
 - (id)dictionaryRepresentation;
 

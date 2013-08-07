@@ -54,10 +54,6 @@
     BOOL _hasOccluders;
     BOOL _hasMovingOccluders;
     double _styleZ;
-    struct Vec2Imp<float> { 
-        float x; 
-        float y; 
-    } _deviceTilt;
     struct VKEdgeInsets { 
         float top; 
         float left; 
@@ -86,7 +82,6 @@
 @property(getter=isGesturing) BOOL gesturing;
 @property BOOL hasOccluders;
 @property BOOL hasMovingOccluders;
-@property struct Vec2Imp<float> { float x1; float x2; } deviceTilt;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
 @property(readonly) double styleZ;
 
@@ -104,8 +99,6 @@
 - (void)debugDrawString:(id)arg1 point:(struct Vec2Imp<float> { float x1; float x2; })arg2 color:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg3 fontSize:(float)arg4;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
-- (void)setDeviceTilt:(struct Vec2Imp<float> { float x1; float x2; })arg1;
-- (struct Vec2Imp<float> { float x1; float x2; })deviceTilt;
 - (void)setHasMovingOccluders:(BOOL)arg1;
 - (BOOL)hasMovingOccluders;
 - (void)setHasOccluders:(BOOL)arg1;

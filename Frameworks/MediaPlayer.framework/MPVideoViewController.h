@@ -4,7 +4,7 @@
 
 @class UIImage, UIColor, UIAlertView, MPImageCacheRequest, MPAVItem, MPImageCache, UIActivityIndicatorView, MPAVController, MPVideoBackgroundView, UIView, MPVideoView, MPSwipableView, MPClosedCaptionDisplay, UIView<MPVideoOverlay>, _UIHostedWindow, MPTVOutWindow;
 
-@interface MPVideoViewController : MPViewController <MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoTransferViewController, UIModalViewDelegate> {
+@interface MPVideoViewController : MPViewController <MPVideoControllerProtocol, MPSwipableViewDelegate, UIModalViewDelegate> {
     MPVideoBackgroundView *_backgroundView;
     MPSwipableView *_backstopView;
     BOOL _batteryMonitoringWasEnabled;
@@ -29,7 +29,6 @@
     unsigned int _canAnimateControlsOverlay : 1;
     unsigned int _canShowControlsOverlay : 1;
     unsigned int _disableControlsAutohide : 1;
-    unsigned int _ownsStatusBar : 1;
     unsigned int _playAfterPop : 1;
     unsigned int _scheduledLoadingIndicator : 1;
     unsigned int _displayPlaybackErrorAlerts : 1;
@@ -76,7 +75,6 @@
 @property BOOL inlinePlaybackUsesTVOut;
 @property unsigned int itemTypeOverride;
 @property(getter=isFullscreen) BOOL fullscreen;
-@property BOOL ownsStatusBar;
 @property(retain) UIImage * posterImage;
 @property unsigned int scaleMode;
 @property BOOL TVOutEnabled;
@@ -85,7 +83,6 @@
 @property(readonly) MPVideoView * videoView;
 @property unsigned long long visibleParts;
 @property BOOL autoPlayWhenLikelyToKeepUp;
-@property BOOL inhibitOverlay;
 
 + (BOOL)supportsFullscreenDisplay;
 + (int)_activityIndicatorViewStyle;
@@ -95,13 +92,20 @@
 - (void)chapterList:(id)arg1 selectedChapter:(unsigned int)arg2;
 - (BOOL)allowsTVOutInBackground;
 - (void)setAllowsTVOutInBackground:(BOOL)arg1;
+- (unsigned long long)visiblePartsForProposedParts:(unsigned long long)arg1;
+- (void)showChaptersController;
 - (BOOL)displayPlaybackErrorAlerts;
+- (BOOL)disableAutoRotation;
 - (void)setControlsOverlayVisible:(BOOL)arg1;
 - (BOOL)canAnimateControlsOverlay;
 - (void)setBackstopColor:(id)arg1;
 - (id)backstopColor;
 - (BOOL)attemptAutoPlayWhenControlsHidden;
+- (BOOL)allowsDetailScrubbing;
+- (void)setOwnsStatusBar:(BOOL)arg1;
+- (void)showAlternateTracksController:(id)arg1;
 - (void)exitFullscreen;
+- (unsigned long long)disabledParts;
 - (void)_showStillFrameIfNotAlreadyPlaying;
 - (void)_delayedShowLoading;
 - (void)displayVideoViewOnScreen;
@@ -120,6 +124,8 @@
 - (void)_hideLoadingIndicator;
 - (void)_scheduleLoadingIndicatorIfNeeded;
 - (void)_updateAlwaysPlayWheneverPossible;
+- (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
+- (unsigned long long)disabledPartsForProposedParts:(unsigned long long)arg1;
 - (void)enableAirPlayVideoRoutesIfNecessary;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_itemDurationDidChange:(id)arg1;
@@ -137,17 +143,22 @@
 - (int)displayArtworkImageStyle;
 - (unsigned int)itemTypeOverride;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateFullScreenArtworkImageViewFrame;
+- (id)videoOverlayViewIfLoaded;
 - (int)artworkImageStyle;
 - (BOOL)isFullscreenForLayoutPurposes;
 - (BOOL)isTransitioningFromFullscreen;
 - (BOOL)isTransitioningToFullscreen;
 - (void)reloadArtworkImageView;
+- (void)showChaptersControllerAndFadeViews:(id)arg1;
+- (id)createChapterFlipTransition;
 - (id)newAlternateTracksTransition;
+- (BOOL)disableControlsAutohide;
 - (void)_updateClosedCaptionDisplay;
 - (void)unregisterForPlayerNotifications;
 - (void)_videoView_validityChangedNotification:(id)arg1;
 - (void)_videoView_timedImageMetadataAvailableNotification:(id)arg1;
 - (void)_videoView_sizeChangedNotification:(id)arg1;
+- (void)videoView_playbackStateChangedNotification:(id)arg1;
 - (void)_videoView_playbackErrorNotification:(id)arg1;
 - (void)_videoView_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)videoView_firstVideoFrameDisplayedNotification:(id)arg1;
@@ -163,21 +174,7 @@
 - (void)_videoView_resumeEventsOnlyNotification:(id)arg1;
 - (void)videoView_tvOutCapabilityDidChangeNotification:(id)arg1;
 - (void)_videoView_effectiveScaleModeChangedNotification:(id)arg1;
-- (id)videoOverlayViewIfLoaded;
-- (void)showChaptersController;
-- (void)showAlternateTracksController:(id)arg1;
 - (void)videoView_itemTypeAvailableNotification:(id)arg1;
-- (BOOL)disableControlsAutohide;
-- (void)videoView_playbackStateChangedNotification:(id)arg1;
-- (BOOL)ownsStatusBar;
-- (unsigned long long)disabledParts;
-- (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
-- (BOOL)allowsDetailScrubbing;
-- (void)showChaptersControllerAndFadeViews:(id)arg1;
-- (id)createChapterFlipTransition;
-- (unsigned long long)disabledPartsForProposedParts:(unsigned long long)arg1;
-- (unsigned long long)visiblePartsForProposedParts:(unsigned long long)arg1;
-- (BOOL)disableAutoRotation;
 - (BOOL)autoPlayWhenLikelyToKeepUp;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)prepareToDisplayVideo;
@@ -199,7 +196,6 @@
 - (void)setPosterImage:(id)arg1;
 - (void)setClosedCaptions:(id)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
-- (void)setOwnsStatusBar:(BOOL)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (unsigned int)hostedWindowContextID;
 - (id)hostedWindow;
@@ -235,7 +231,6 @@
 - (id)videoView;
 - (void)_endBackgroundTask;
 - (void)setPlayer:(id)arg1;
-- (int)statusBarStyle;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
@@ -245,7 +240,6 @@
 - (void)loadView;
 - (id)backgroundView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)isStatusBarHidden;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

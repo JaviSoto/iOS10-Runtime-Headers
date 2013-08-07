@@ -4,7 +4,7 @@
 
 @class NSData, GEOBusinessOptions, GEOLatLng, GEOLocation, GEOSuggestionsOptions, NSMutableArray, GEOAddress, NSString, GEOMapRegion, GEOClientCapabilities, GEOIndexQueryNode;
 
-@interface GEOPlaceSearchRequest : PBRequest  {
+@interface GEOPlaceSearchRequest : PBRequest <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -260,11 +260,8 @@
 @property int searchSource;
 
 
+- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (id)initWithPlace:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)filterByBusinessTelephones;
 - (id)filterByBusinessCategorys;
 - (void)setHasSearchSource:(BOOL)arg1;
@@ -304,7 +301,6 @@
 - (void)setHasResultOffset:(BOOL)arg1;
 - (void)setHasMaxResults:(BOOL)arg1;
 - (void)setHasIncludePhonetics:(BOOL)arg1;
-- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (int*)additionalPlaceTypes;
 - (void)setBusinessIDs:(unsigned long long*)arg1 count:(unsigned int)arg2;
 - (unsigned long long*)businessIDs;
@@ -502,12 +498,16 @@
 - (void)setDeviceLocation:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (void)setSessionID:(int)arg1;
 - (int)sessionID;
 - (BOOL)hasSessionID;
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
-- (void)setSessionID:(int)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)location;
 - (double)timestamp;
 - (void)setMaxResults:(int)arg1;
@@ -521,6 +521,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (id)address;
 - (void)_applyDeviceLocation;

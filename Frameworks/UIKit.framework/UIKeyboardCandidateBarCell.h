@@ -55,6 +55,7 @@
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (float)cachedWidth;
 - (id)cacheKey;
+- (void)_setRenderConfig:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)prepareForReuse;

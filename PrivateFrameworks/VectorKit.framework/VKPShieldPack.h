@@ -25,9 +25,9 @@
 - (void)setAtlas:(id)arg1;
 - (id)atlasAtIndex:(unsigned int)arg1;
 - (id)shields;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

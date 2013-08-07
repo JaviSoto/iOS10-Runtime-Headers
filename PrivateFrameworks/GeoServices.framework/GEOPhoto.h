@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOPhoto : PBCodable  {
+@interface GEOPhoto : PBCodable <NSCopying> {
     NSMutableArray *_photoInfos;
     int _photoType;
     NSString *_uid;
@@ -20,8 +20,6 @@
 @property(retain) NSString * uid;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)photoInfos;
 - (void)setHasPhotoType:(BOOL)arg1;
 - (id)photoInfoAtIndex:(unsigned int)arg1;
@@ -35,10 +33,13 @@
 - (BOOL)hasUid;
 - (void)setUid:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)uid;
 - (id)dictionaryRepresentation;
 

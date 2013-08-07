@@ -27,9 +27,9 @@
 - (int)selectedMenuItemIndex;
 - (id)menuLabelTitle;
 - (id)menuItemTitles;
-- (void)setSelectedMenuItemIndex:(int)arg1;
 - (void)_menuButtonAction:(id)arg1;
 - (void)_reloadMenuButton;
+- (void)setSelectedMenuItemIndex:(int)arg1;
 - (void)setMenuItemTitles:(id)arg1;
 - (void)setMenuLabelTitle:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;

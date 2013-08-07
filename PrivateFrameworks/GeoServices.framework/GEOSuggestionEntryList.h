@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOSuggestionEntryList : PBCodable  {
+@interface GEOSuggestionEntryList : PBCodable <NSCopying> {
     NSString *_localizedSectionHeader;
     NSMutableArray *_suggestionEntries;
 }
@@ -15,8 +15,6 @@
 
 
 - (id)suggestionEntries;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)localizedSectionHeader;
 - (BOOL)hasLocalizedSectionHeader;
 - (id)suggestionEntriesAtIndex:(unsigned int)arg1;
@@ -26,10 +24,13 @@
 - (void)setLocalizedSectionHeader:(id)arg1;
 - (void)setSuggestionEntries:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

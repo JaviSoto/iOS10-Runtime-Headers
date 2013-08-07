@@ -34,7 +34,7 @@
         unsigned int isGeneratingGlyphs : 1; 
         unsigned int hasNonGeneratedGlyphData : 1; 
         unsigned int loggedBGLayoutException : 1; 
-        unsigned int isLayoutRequestedFromSubthread : 1; 
+        unsigned int syncAlignmentToDirection : 1; 
         unsigned int defaultAttachmentScaling : 2; 
         unsigned int usesFontLeading : 1; 
         unsigned int seenRightToLeft : 1; 
@@ -105,6 +105,7 @@
 - (id)attributedString;
 - (void)drawBackgroundForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)drawGlyphsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)setSynchronizesAlignmentToDirection:(BOOL)arg1;
 - (id)_temporaryAttributesAtCharacterIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)_temporaryAttribute:(id)arg1 atCharacterIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)_temporaryAttribute:(id)arg1 atCharacterIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
@@ -198,6 +199,7 @@
 - (id)textContainers;
 - (float)hyphenationFactor;
 - (int)typesetterBehavior;
+- (BOOL)synchronizesAlignmentToDirection;
 - (void)getFirstUnlaidCharacterIndex:(unsigned int*)arg1 glyphIndex:(unsigned int*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
 - (void)ensureLayoutForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

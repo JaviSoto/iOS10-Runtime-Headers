@@ -2,16 +2,22 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@class NSString, NSDictionary;
 
 @interface ATVHighSecurityAccountSendCodeResponse : AAResponse  {
 }
 
 @property(readonly) BOOL success;
 @property(readonly) NSDictionary * userDisplayStrings;
+@property(readonly) NSString * errorTitle;
+@property(readonly) NSString * errorMessage;
+@property(readonly) int errorCode;
 
 
+- (id)errorMessage;
+- (id)errorTitle;
 - (id)userDisplayStrings;
 - (BOOL)success;
+- (int)errorCode;
 
 @end

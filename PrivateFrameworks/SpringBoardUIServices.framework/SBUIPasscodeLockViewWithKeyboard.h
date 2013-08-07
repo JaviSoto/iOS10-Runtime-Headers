@@ -14,8 +14,6 @@
     UIView *_emergencyCallLeftFiller;
     UIView *_emergencyCallRightFiller;
     UIView *_statusFieldToTopOrEmergencyCallBottomFiller;
-    UIView *_entryFieldLeftFiller;
-    UIView *_entryFieldRightFiller;
     UIView *_entryFieldToBottomFiller;
     BOOL _wasMinimizedWhenAnimationStarted;
     BOOL _previousKeyboardShowedInlineCandidates;

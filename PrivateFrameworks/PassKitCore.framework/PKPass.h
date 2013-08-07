@@ -104,6 +104,7 @@
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
 - (void)loadContentAsyncWithCompletion:(id)arg1;
 - (void)fetchContentWithCompletion:(id)arg1;
+- (BOOL)imageSetIsLoaded:(int)arg1;
 - (id)_imageSetLoadingIfNecessary:(int)arg1;
 - (id)_contentLoadingIfNecessary;
 - (id)modifiedDate;
@@ -154,7 +155,6 @@
 - (id)backFaceImage;
 - (id)frontFaceImage;
 - (id)partialFrontFaceImage;
-- (BOOL)imageSetIsLoaded:(int)arg1;
 - (void)setAuthenticationToken:(id)arg1;
 - (id)authenticationToken;
 - (id)organizationName;

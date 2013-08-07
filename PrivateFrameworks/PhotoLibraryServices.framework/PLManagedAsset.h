@@ -81,7 +81,7 @@
 @property(readonly) BOOL hasLocationInfo;
 @property(readonly) NSDate * date;
 @property(readonly) BOOL isPhotoStreamPhoto;
-@property(readonly) BOOL supportsDistributedPhotoStreamDeletion;
+@property(readonly) BOOL isUsedByiPhoto;
 @property(readonly) BOOL isCloudSharedAsset;
 @property(readonly) <PLCloudSharedAlbumProtocol> * cloudShareAlbum;
 @property(readonly) BOOL isVideo;
@@ -168,6 +168,8 @@
 + (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (id)extensionForLargeThumbnailFile;
++ (struct { double x1; double x2; })locationFromAVAsset:(id)arg1;
++ (struct { double x1; double x2; })locationFromImageProperties:(id)arg1;
 + (id)_pathsByAssetUUIDFromFetchResults:(id)arg1 absolute:(BOOL)arg2;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2 creationDateString:(id*)arg3;
@@ -201,6 +203,7 @@
 - (void)setUserCloudSharedLiked:(BOOL)arg1;
 - (void)userDeleteCloudSharedComment:(id)arg1;
 - (struct { double x1; double x2; })gpsCoordinate;
+- (void)writeXMPWithProperties:(id)arg1 orientation:(int)arg2;
 - (BOOL)allowsWallpaperEditing;
 - (id)newFullSizeImage;
 - (BOOL)isInRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -212,7 +215,7 @@
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (id)cachedNonPersistedVideoPlaybackURL;
 - (id)pathToOriginalVideoFile;
-- (BOOL)supportsDistributedPhotoStreamDeletion;
+- (BOOL)isUsedByiPhoto;
 - (BOOL)isHDVideo;
 - (id)fileExtensionForService:(id)arg1;
 - (id)mimeTypeForService:(id)arg1;
@@ -236,6 +239,8 @@
 - (BOOL)cloudIsDeletableBoolValue;
 - (unsigned int)totalCommentsCount;
 - (void)_computePreCropThumbnailSize:(struct CGSize { float x1; float x2; }*)arg1 andPostCropSize:(struct CGSize { float x1; float x2; }*)arg2 forOrientedOriginalSize:(struct CGSize { float x1; float x2; })arg3 andCroppedSize:(struct CGSize { float x1; float x2; })arg4 isLargeThumbnail:(BOOL)arg5;
+- (void)_writeXMPSidecarWithProperties:(id)arg1 orientation:(int)arg2;
+- (BOOL)_writeXMPHeaderWithProperties:(id)arg1 orientation:(int)arg2;
 - (BOOL)disableFileSystemPersistency;
 - (void)setDisableDupeAnalysis:(BOOL)arg1;
 - (BOOL)disableDupeAnalysis;
@@ -246,6 +251,7 @@
 - (id)shortenedFilePath;
 - (id)wallpaperFullScreenImage;
 - (id)textBadgeString;
+- (id)filteredImage:(id)arg1 withCIContext:(id)arg2;
 - (id)pathForXMPFile;
 - (id)pathForLargeDisplayableImageFile;
 - (id)pathForPrebakedWildcatThumbnailsFile;
@@ -288,12 +294,13 @@
 - (id)fileExtension;
 - (id)assetURLForSidecarFile:(id)arg1;
 - (id)allFileExtensions;
+- (BOOL)Aptiv;
 - (id)largestAvailableDataRepresentationAndType:(id*)arg1;
 - (void)getLargestAvailableDataRepresentation:(id*)arg1 type:(id*)arg2;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)inflightImage;
 - (BOOL)_isValidUTI:(id)arg1 forService:(id)arg2;
-- (void)_generateLargeThumbnailFile;
+- (void)generateLargeThumbnailFileIfNecessary;
 - (id)pathForMediumThumbnailFile;
 - (id)sortedSidecarFiles;
 - (id)fileURLForMetadataWithExtension:(id)arg1;
@@ -341,9 +348,9 @@
 - (id)_settingsDictionaryFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_settingsDictionaryFromFilter:(id)arg1;
 - (id)_serializedPropertyDataFromFilter:(id)arg1;
-- (void)_persistAvalancheToFilesystem;
 - (BOOL)_hasPanoramaDimensions;
 - (BOOL)isPanorama;
+- (int)Aptv;
 - (void)setThumbnailIndex:(int)arg1;
 - (int)thumbnailIndex;
 - (void)setHighDynamicRangeTypeValue:(int)arg1;
@@ -369,9 +376,7 @@
 - (id)pathForImageFile;
 - (BOOL)setVideoInfoFromFileAtURL:(id)arg1;
 - (id)utiType;
-- (BOOL)Aptiv;
 - (void)setNeedsMomentUpdate:(BOOL)arg1;
-- (int)Aptv;
 - (void)setVisibilityStateValue:(short)arg1;
 - (short)visibilityStateValue;
 - (id)pathForVideoFile;
@@ -379,7 +384,7 @@
 - (id)addFaceWithRelativeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 identifier:(short)arg2 albumUUID:(id)arg3;
 - (id)mainFileURL;
 - (void)persistMetadataToFilesystem;
-- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource { }*)arg3 imageData:(id)arg4 thumbnailDataByFormatID:(struct __CFDictionary { }*)arg5;
+- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource { }*)arg3 imageData:(id)arg4 thumbnailDataByFormatID:(struct __CFDictionary { }*)arg5 updateExistingLargePreview:(BOOL)arg6;
 - (void)setPublicGlobalUUID:(id)arg1;
 - (void)setDisableFileSystemPersistency:(BOOL)arg1;
 - (void)updateAdjustmentsWithAdjustmentMetadata:(id)arg1;
@@ -413,6 +418,7 @@
 - (void)delete;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)location;
+- (void)didSave;
 - (void)willSave;
 - (void)prepareForDeletion;
 - (void)awakeFromSnapshotEvents:(unsigned int)arg1;

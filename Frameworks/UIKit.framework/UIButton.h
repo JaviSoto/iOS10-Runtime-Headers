@@ -270,6 +270,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)ab_addConferenceIcon;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 
 @end

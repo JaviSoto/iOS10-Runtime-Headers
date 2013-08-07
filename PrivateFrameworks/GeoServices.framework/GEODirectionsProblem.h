@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSData;
 
-@interface GEODirectionsProblem : PBCodable  {
+@interface GEODirectionsProblem : PBCodable <NSCopying> {
     unsigned long long _problematicEventIndex;
     NSMutableArray *_directionsRequests;
     NSMutableArray *_directionsResponses;
@@ -36,8 +36,6 @@
 
 
 - (id)events;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)directionsResponses;
 - (id)directionsRequests;
 - (void)setHasProblematicEventIndex:(BOOL)arg1;
@@ -74,10 +72,13 @@
 - (void)setDirectionsResponses:(id)arg1;
 - (void)setDirectionsRequests:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

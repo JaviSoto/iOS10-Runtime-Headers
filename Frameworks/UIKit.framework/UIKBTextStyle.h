@@ -13,6 +13,7 @@
     NSString *_textColor;
     NSString *_etchColor;
     float _pathWeight;
+    int _selector;
     struct CGPoint { 
         float x; 
         float y; 
@@ -33,6 +34,7 @@
 @property struct CGPoint { float x1; float x2; } textOffset;
 @property struct CGPoint { float x1; float x2; } etchOffset;
 @property float pathWeight;
+@property int selector;
 
 + (id)styleWithTextColor:(id)arg1;
 + (id)styleWithFontName:(id)arg1 withFontSize:(float)arg2;
@@ -43,6 +45,7 @@
 - (id)init;
 - (void)dealloc;
 - (id)description;
+- (int)selector;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)overlayWithStyle:(id)arg1;
 - (void)setPathWeight:(float)arg1;
@@ -62,5 +65,6 @@
 - (void)setMinFontSize:(float)arg1;
 - (id)textColor;
 - (void)setTextColor:(id)arg1;
+- (void)setSelector:(int)arg1;
 
 @end

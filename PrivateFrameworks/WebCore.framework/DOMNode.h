@@ -358,6 +358,7 @@
 - (void)_replaceCurrentWordWithText:(id)arg1;
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
 - (id)_fullText;
+- (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (unsigned long)_characterAfterCaretSelection;
 - (id)_wordContainingCaretSelection;

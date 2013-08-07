@@ -37,15 +37,15 @@
 + (void)setUsePersistentConnection:(BOOL)arg1;
 + (void)_resetURL;
 
-- (void)requesterWillSendRequestForEstablishedConnection:(id)arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
 - (void)startSimpleETARequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)updateRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)startRequest:(id)arg1 connectionProperties:(const struct { unsigned int x1; double x2; unsigned int x3; }*)arg2 willSendRequest:(id)arg3 finished:(id)arg4 error:(id)arg5;
 - (void)cancelRequest;
 - (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)requesterWillSendRequestForEstablishedConnection:(id)arg1;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

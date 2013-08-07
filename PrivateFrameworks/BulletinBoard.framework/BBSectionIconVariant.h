@@ -9,18 +9,26 @@
     int _format;
     NSData *_imageData;
     NSString *_imagePath;
+    NSString *_imageName;
+    NSString *_bundlePath;
 }
 
 @property int format;
 @property(copy) NSData * imageData;
 @property(copy) NSString * imagePath;
+@property(copy) NSString * imageName;
+@property(copy) NSString * bundlePath;
 @property(getter=isPrecomposed) BOOL precomposed;
 
++ (id)variantWithFormat:(int)arg1 imageName:(id)arg2 inBundle:(id)arg3;
 + (id)variantWithFormat:(int)arg1 imagePath:(id)arg2;
 + (id)variantWithFormat:(int)arg1 imageData:(id)arg2;
 + (id)_variantWithFormat:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)imageName;
+- (void)setBundlePath:(id)arg1;
+- (void)setImageName:(id)arg1;
 - (void)setFormat:(int)arg1;
 - (void)setImageData:(id)arg1;
 - (id)imageData;
@@ -30,6 +38,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setPrecomposed:(BOOL)arg1;
 - (BOOL)isPrecomposed;
+- (id)bundlePath;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)setImagePath:(id)arg1;

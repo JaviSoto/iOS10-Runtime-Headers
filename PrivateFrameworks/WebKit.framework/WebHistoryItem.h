@@ -68,8 +68,8 @@
 - (BOOL)lastVisitWasFailure;
 - (BOOL)_scaleIsInitial;
 - (float)_scale;
+- (id)children;
 - (id)target;
 - (id)dictionaryRepresentation;
-- (id)children;
 
 @end

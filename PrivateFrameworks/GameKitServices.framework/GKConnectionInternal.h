@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_source>, RTCReporting, TimingCollection, NSMutableArray, NSMutableSet, NSString, CDXClient, NSData;
+@class NSMutableDictionary, NSObject<OS_dispatch_source>, TimingCollection, NSMutableArray, NSMutableSet, NSString, CDXClient, NSData;
 
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
     unsigned int _gckPID;
@@ -66,7 +66,7 @@
     NSMutableDictionary *_localGamingSocketToPIDMap;
     NSMutableDictionary *_localGamingSocketToConnectionDataMap;
     NSMutableSet *_pidsPreparedForConnection;
-    RTCReporting *_reportingAgent;
+    struct opaqueRTCReporting { } *_reportingAgent;
     TimingCollection *_perfTimers;
 }
 
@@ -106,8 +106,8 @@
 - (unsigned int)gckPID;
 - (id)eventDelegate;
 - (void)setEventDelegate:(id)arg1;
-- (void)setReportingAgent:(id)arg1;
-- (id)reportingAgent;
+- (void)setReportingAgent:(struct opaqueRTCReporting { }*)arg1;
+- (struct opaqueRTCReporting { }*)reportingAgent;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)preRelease;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;

@@ -24,8 +24,9 @@
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
-- (void)prefetchResourcesWithReason:(int)arg1;
 - (BOOL)fitsToHeight;
+- (void)prefetchResourcesWithReason:(int)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (BOOL)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
 - (int)numberOfCells;

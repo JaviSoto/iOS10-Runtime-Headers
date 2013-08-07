@@ -28,12 +28,13 @@
 
 + (id)_remoteInterface;
 
+- (void)revokeAccessTokenForAppWithOauthToken:(id)arg1 completion:(id)arg2;
 - (void)revokeAllAccessTokensForDevice;
 - (void)revokeAllAccessTokensForDeviceWithCompletion:(id)arg1;
-- (void)revokeAccessTokenForAppWithID:(id)arg1;
 - (id)connectionResetBlock;
 - (void)setGeotagAccountSetting:(BOOL)arg1;
 - (id)locationInformationChangedBlock;
+- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
 - (id)serviceAccountTypeIdentifier;
 - (void)showSettingsIfNeeded;
 - (void)overrideLocationWithLatitude:(float)arg1 longitude:(float)arg2 name:(id)arg3;

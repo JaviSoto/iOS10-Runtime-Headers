@@ -17,6 +17,7 @@
         float width; 
         float height; 
     } _annotationSize;
+    BOOL _updatedInitialAnnotations;
     BOOL _shouldShowToolbar;
     BOOL _shouldShowTabBar;
     unsigned int _maxItemsInitialZoom;

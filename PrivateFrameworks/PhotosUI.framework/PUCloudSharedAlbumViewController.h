@@ -8,30 +8,33 @@
     PUPhotosPickerViewController *_activePhotosPickerViewController;
     PUVideoTrimQueueController *_trimController;
     PUPhotoStreamComposeServiceViewController *_composeServiceController;
-    BOOL __displayingOptions;
+    BOOL _displayingOptions;
     BOOL __canContributeToCloudSharedAlbum;
     UIViewController *__optionsViewController;
     UIBarButtonItem *__optionsBarButtonItem;
     UIPopoverController *__optionsPopoverController;
     UISegmentedControl *__switcherSegmentedControl;
     UIBarButtonItem *__switcherBarButtonItem;
+    int __selectedItemIndex;
 }
 
 @property(retain) PLCloudSharedAlbum * album;
-@property(getter=_isDisplayingOptions,setter=_setDisplayingOptions:) BOOL _displayingOptions;
+@property(getter=isDisplayingOptions,setter=setDisplayingOptions:) BOOL displayingOptions;
 @property(setter=_setOptionsViewController:,retain) UIViewController * _optionsViewController;
 @property(setter=_setOptionsBarButtonItem:,retain) UIBarButtonItem * _optionsBarButtonItem;
 @property(setter=_setOptionsPopoverController:,retain) UIPopoverController * _optionsPopoverController;
 @property(setter=_setCanContributeToCloudSharedAlbum:) BOOL _canContributeToCloudSharedAlbum;
 @property(setter=_setSwitcherSegmentedControl:,retain) UISegmentedControl * _switcherSegmentedControl;
 @property(setter=_setSwitcherBarButtonItem:,retain) UIBarButtonItem * _switcherBarButtonItem;
+@property(setter=_setSelectedItemIndex:) int _selectedItemIndex;
 
 
 - (void)albumStreamingOptionsViewController:(id)arg1 didCompleteWithReason:(int)arg2;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (id)_switcherSegmentedControl;
-- (void)_setDisplayingOptions:(BOOL)arg1;
+- (void)_setSelectedItemIndex:(int)arg1;
+- (void)setDisplayingOptions:(BOOL)arg1;
 - (void)_setOptionsPopoverController:(id)arg1;
 - (id)_optionsPopoverController;
 - (void)_setOptionsBarButtonItem:(id)arg1;
@@ -40,7 +43,7 @@
 - (void)_setOptionsViewController:(id)arg1;
 - (id)_newOptionsViewController;
 - (id)_optionsViewController;
-- (BOOL)_isDisplayingOptions;
+- (BOOL)isDisplayingOptions;
 - (void)_updateOptionsView;
 - (BOOL)_canDisplayOptions;
 - (id)_switcherBarButtonItem;
@@ -58,6 +61,7 @@
 - (void)photoStreamComposeService:(id)arg1 didPostComment:(id)arg2;
 - (void)controller:(id)arg1 didCancelTrimmingAssets:(id)arg2;
 - (void)controller:(id)arg1 didFinishTrimmingAssets:(id)arg2;
+- (int)_selectedItemIndex;
 - (void)didSelectAddPlaceholderInSection:(int)arg1;
 - (id)newToolbarItems;
 - (BOOL)shouldShowTabBar;

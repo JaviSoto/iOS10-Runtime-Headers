@@ -38,12 +38,12 @@
 - (void)_updateBackgroundImageIfPossible;
 - (unsigned int)searchBarStyle;
 - (BOOL)usesEmbeddedAppearance;
-- (void)setSearchBarStyle:(unsigned int)arg1;
 - (id)_backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
 - (void)_setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)setUsesContiguousBarBackground:(BOOL)arg1;
 - (BOOL)_hasCustomBackgroundImage;
 - (void)_setBehavesAsIfSearchBarHasController:(BOOL)arg1;
+- (void)setSearchBarStyle:(unsigned int)arg1;
 - (void)setUsesEmbeddedAppearance:(BOOL)arg1;
 - (id)barTintColor;
 - (int)_barPosition;

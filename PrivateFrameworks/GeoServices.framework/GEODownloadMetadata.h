@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEODownloadMetadata : PBCodable  {
+@interface GEODownloadMetadata : PBCodable <NSCopying> {
     double _timestamp;
     NSString *_etag;
 }
@@ -14,18 +14,19 @@
 @property(retain) NSString * etag;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)etag;
 - (BOOL)hasEtag;
 - (void)setEtag:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)timestamp;
 - (void)setTimestamp:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

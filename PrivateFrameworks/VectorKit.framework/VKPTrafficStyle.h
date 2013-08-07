@@ -77,9 +77,9 @@
 - (BOOL)hasWidthFraction;
 - (void)setHasFillColor:(BOOL)arg1;
 - (BOOL)hasFillColor;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setFillColor:(unsigned int)arg1;
 - (unsigned int)fillColor;
 - (BOOL)isEqual:(id)arg1;

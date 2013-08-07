@@ -24,18 +24,18 @@
 @property(copy) id resultBlock;
 
 
-- (BOOL)cameraRecognized;
 - (id)_itemsForItemIdentifiers:(id)arg1;
 - (void)_applyThankYouDictionary:(id)arg1 toRedeem:(id)arg2;
-- (id)_getThankYouDictionaryWithURL:(id)arg1 error:(id*)arg2;
-- (id)_redeemForDictionary:(id)arg1 error:(id*)arg2;
-- (id)_redeemCodeWithAccount:(id)arg1 error:(id*)arg2;
+- (id)_performRequestWithProperties:(id)arg1 error:(id*)arg2;
+- (id)_requestPropertiesForThankYouWithURL:(id)arg1;
+- (id)_redeemForSuccessDictionary:(id)arg1;
 - (id)resultBlock;
 - (void)setResultBlock:(id)arg1;
 - (void)setCameraRecognized:(BOOL)arg1;
 - (id)initWithCode:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (BOOL)cameraRecognized;
 - (void).cxx_destruct;
 - (void)main;
 

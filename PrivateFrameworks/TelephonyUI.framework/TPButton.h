@@ -2,18 +2,22 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class _UIBackdropView, SBFGlintyStringView;
+@class _UIBackdropView, UIScrollView, SBFGlintyStringView;
 
 @interface TPButton : UIButton  {
     int _color;
     _UIBackdropView *_backdropView;
     BOOL _blursBackground;
     BOOL _roundsCorners;
+    BOOL _usesOverlayBlendingForContents;
+    UIScrollView *_shineLabelScrollView;
     SBFGlintyStringView *_shineLabelView;
 }
 
 @property BOOL blursBackground;
 @property BOOL roundsCorners;
+@property BOOL usesOverlayBlendingForContents;
+@property(retain) UIScrollView * shineLabelScrollView;
 @property(retain) SBFGlintyStringView * shineLabelView;
 
 + (id)acceptVideoButtonImage;
@@ -27,6 +31,7 @@
 + (id)defaultStandardFont;
 + (float)defaultHeight;
 
+- (BOOL)usesOverlayBlendingForContents;
 - (BOOL)roundsCorners;
 - (void)setDisabledButtonColor:(int)arg1;
 - (void)setTitleVerticalOffset:(float)arg1;
@@ -34,7 +39,10 @@
 - (void)setTitleImagePadding:(float)arg1;
 - (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
 - (void)setMinimumTitleFontSize:(float)arg1;
+- (void)setShineLabelShouldAnimate:(BOOL)arg1;
+- (void)setUsesSlidingShineLabelWithText:(id)arg1;
 - (void)setShineLabelView:(id)arg1;
+- (void)setShineLabelScrollView:(id)arg1;
 - (id)shineLabelView;
 - (void)setButtonColor:(int)arg1;
 - (void)setRoundsCorners:(BOOL)arg1;
@@ -42,8 +50,9 @@
 - (int)buttonColor;
 - (void)_animationDidEnd;
 - (void)_animationWillBegin;
-- (void)setUsesShineLabelWithText:(id)arg1;
+- (void)setUsesOverlayBlendingForContents:(BOOL)arg1;
 - (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (id)shineLabelScrollView;
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEnabled:(BOOL)arg1;

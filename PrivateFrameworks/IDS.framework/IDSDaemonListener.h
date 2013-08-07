@@ -35,7 +35,6 @@
 - (void)_removeAccountOnIvarQueue:(id)arg1;
 - (void)_callHandlersWithBlockOnIvarQueue:(id)arg1;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
-- (void)clearCallerIDForAccount:(id)arg1;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)registrationFailedForAccount:(id)arg1 needsDeletion:(id)arg2;

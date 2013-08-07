@@ -14,6 +14,7 @@
 - (id)valueForDisplayString:(id)arg1;
 - (BOOL)isEquivalentToItem:(id)arg1;
 - (id)displayStringForValue:(id)arg1;
+- (id)defaultActionURL;
 - (id)displayLabel;
 - (id)profile;
 

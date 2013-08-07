@@ -81,6 +81,7 @@
 - (void)setAlphaOutsideRing:(float)arg1;
 - (void)setAlphaInsideRing:(float)arg1;
 - (float)alphaInsideRing;
+- (void)setUsesColorDodgeBlending:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })ringSize;
 - (void)setColorOutsideRing:(id)arg1;
 - (void)setColorInsideRing:(id)arg1;

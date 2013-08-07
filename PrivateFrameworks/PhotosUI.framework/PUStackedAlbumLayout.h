@@ -8,6 +8,7 @@
     NSMutableDictionary *_visibleLayoutAttributesByIndexPath;
     NSMutableDictionary *_derivedLayoutAttributesByIndexPath;
     NSMutableDictionary *_zIndexByIndexPath;
+    BOOL _isInteractive;
     NSArray *_visibleStackedItemLayoutAttributes;
     UICollectionViewLayoutAttributes *_referenceItemLayoutAttributes;
     float _yAdjust;
@@ -28,6 +29,7 @@
 @property float yAdjust;
 @property struct CGSize { float x1; float x2; } contentSizeAdjust;
 @property(retain) PUAlbumListTransitionContext * albumListTransitionContext;
+@property(setter=setInteractive:) BOOL isInteractive;
 
 
 - (id)referenceItemLayoutAttributes;
@@ -40,6 +42,7 @@
 - (int)zIndexForItemAtIndexPath:(id)arg1;
 - (void)setContentSizeAdjust:(struct CGSize { float x1; float x2; })arg1;
 - (void)setYAdjust:(float)arg1;
+- (void)setInteractive:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })referenceCenter;
 - (id)visibleStackedItemLayoutAttributes;
 - (void)setAlbumListTransitionContext:(id)arg1;
@@ -51,5 +54,6 @@
 - (void)prepareLayout;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
+- (BOOL)isInteractive;
 
 @end

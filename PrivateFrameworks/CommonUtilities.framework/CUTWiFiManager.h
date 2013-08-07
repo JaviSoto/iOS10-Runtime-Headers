@@ -8,6 +8,8 @@
     NSRecursiveLock *_lock;
     void *_wifiManager;
     void *_wifiDevice;
+    void *_currentNetwork;
+    void *_dynamicStore;
     int _linkToken;
     NSMapTable *_delegateMap;
     NSDictionary *_lastWiFiPowerInfo;
@@ -16,6 +18,7 @@
 @property(readonly) BOOL isWiFiEnabled;
 @property(readonly) BOOL isWiFiAssociated;
 @property(readonly) BOOL isHostingWiFiHotSpot;
+@property(readonly) BOOL isWiFiCaptive;
 @property(readonly) NSNumber * wiFiSignalStrength;
 @property(readonly) NSNumber * wiFiScaledRSSI;
 @property(readonly) NSNumber * wiFiScaledRate;
@@ -24,6 +27,8 @@
 @property(retain) NSRecursiveLock * lock;
 @property void* wifiManager;
 @property void* wifiDevice;
+@property void* currentNetwork;
+@property void* dynamicStore;
 @property int linkToken;
 @property(retain) NSMapTable * delegateMap;
 @property(copy) NSDictionary * lastWiFiPowerInfo;
@@ -36,11 +41,17 @@
 - (id)delegateMap;
 - (void)setLinkToken:(int)arg1;
 - (int)linkToken;
+- (void)setDynamicStore:(void*)arg1;
+- (void*)dynamicStore;
+- (void)setCurrentNetwork:(void*)arg1;
+- (void*)currentNetwork;
 - (void)setWifiDevice:(void*)arg1;
 - (void*)wifiDevice;
 - (void)setWifiManager:(void*)arg1;
 - (void*)wifiManager;
 - (void)setLock:(id)arg1;
+- (BOOL)isWiFiCaptive;
+- (BOOL)_isPrimaryCellular;
 - (id)currentSSID;
 - (id)currentWiFiNetworkPowerUsage;
 - (double)_wifiMeasurementErrorForInterval:(double)arg1;
@@ -54,6 +65,7 @@
 - (BOOL)isHostingWiFiHotSpot;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
+- (void)_createDynamicStore;
 - (void)_createWiFiManager;
 - (id)init;
 - (void)dealloc;

@@ -30,6 +30,8 @@
     BOOL _receivedBadPasswordResponse;
     BOOL _justTriedTokenAuth;
     BOOL _everTriedTokenAuth;
+    BOOL _shouldRetryWithClientToken;
+    BOOL _didRetryWithClientToken;
     BOOL _requestIsCompressed;
     BOOL _compressedRequestFailed;
     NSError *_passwordNotificationError;

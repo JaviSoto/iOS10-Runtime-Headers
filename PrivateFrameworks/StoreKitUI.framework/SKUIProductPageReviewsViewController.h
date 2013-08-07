@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIStarRatingQueue, NSMutableIndexSet, SSVLoadURLOperation, SKUIProductPageItem, <SKUIProductPageChildViewControllerDelegate>, SKUILayoutCache, SKUIFacebookLikeStatus, SKUIClientContext, SKUIReviewsFacebookViewController, SKUIReviewConfiguration, SKUIReviewsHistogramViewController, SKUIProductPageTableView, UIScrollView, SKUIProductPageHeaderViewController, SKUIIPadCustomerReviewsHeaderView, SKComposeReviewViewController, NSOperationQueue, SKUIReviewList;
+@class SKUIStarRatingQueue, NSMutableIndexSet, SSVLoadURLOperation, SKUILayoutCache, <SKUIProductPageChildViewControllerDelegate>, SKUIFacebookLikeStatus, UIScrollView, SKUIClientContext, SKUIReviewsFacebookViewController, SKUIProductPage, SKUIReviewsHistogramViewController, SKUIProductPageTableView, SKUIProductPageHeaderViewController, SKUIIPadCustomerReviewsHeaderView, SKComposeReviewViewController, NSOperationQueue, SKUIReviewList;
 
 @interface SKUIProductPageReviewsViewController : UIViewController <SKUILayoutCacheDelegate, SKComposeReviewDelegate, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -13,12 +13,11 @@
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIReviewsHistogramViewController *_histogramViewController;
     BOOL _isPad;
-    SKUIProductPageItem *_item;
     SKUILayoutCache *_layoutCache;
     int _loadedPageCount;
     SSVLoadURLOperation *_loadOperation;
     NSOperationQueue *_operationQueue;
-    SKUIReviewConfiguration *_reviewConfiguration;
+    SKUIProductPage *_productPage;
     SKUIReviewList *_reviewList;
     SKUIIPadCustomerReviewsHeaderView *_reviewsHeaderView;
     int _sortOrder;
@@ -27,8 +26,7 @@
     SKUIProductPageTableView *_tableView;
 }
 
-@property(readonly) SKUIProductPageItem * productPageItem;
-@property(readonly) SKUIReviewConfiguration * reviewConfiguration;
+@property(readonly) SKUIProductPage * productPage;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
 @property(readonly) NSOperationQueue * operationQueue;
@@ -37,9 +35,7 @@
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 
 
-- (id)reviewConfiguration;
-- (id)productPageItem;
-- (id)initWithProductPageItem:(id)arg1 reviewConfiguration:(id)arg2;
+- (id)initWithProductPage:(id)arg1;
 - (void)reviewsFacebookViewControllerDidChange:(id)arg1;
 - (id)_bottomBorderColorForScheme:(id)arg1;
 - (void)_sortSelectionAction:(id)arg1;
@@ -64,6 +60,7 @@
 - (id)headerViewController;
 - (void)_addHeaderView;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
+- (id)productPage;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)reviewComposeViewControllerDidFinish:(id)arg1;

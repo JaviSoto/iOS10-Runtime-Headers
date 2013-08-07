@@ -31,7 +31,6 @@
 - (id)title;
 - (void)dealloc;
 - (void)setLeftItemsSupplementBackButton:(BOOL)arg1;
-- (id)rightBarButtonItems;
 - (void)setBackButtonTitle:(id)arg1;
 - (id)rightBarButtonItem;
 - (id)leftBarButtonItem;
@@ -42,6 +41,7 @@
 - (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithNavigationItem:(id)arg1;
 - (id)titleView;
+- (id)rightBarButtonItems;
 - (id)backButtonTitle;
 - (BOOL)leftItemsSupplementBackButton;
 - (id)leftBarButtonItems;

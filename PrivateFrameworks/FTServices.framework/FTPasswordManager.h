@@ -12,7 +12,7 @@
 + (id)_loginUserNotificationForService:(id)arg1 user:(id)arg2 isForBadPassword:(BOOL)arg3 showForgetPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5;
 + (id)sharedInstance;
 
-- (void)cancelRequestID:(id)arg1;
+- (void)cancelRequestID:(id)arg1 serviceIdentifier:(id)arg2;
 - (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id)arg6;
 - (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id)arg7;
 - (BOOL)supportsAuthTokenRequests;

@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, UIImage;
+@class NSOperationQueue, SKUIClientContext, UIImage;
 
 @interface SKUIRedeemConfiguration : NSObject  {
     int _category;
+    SKUIClientContext *_clientContext;
     UIImage *_inputImage;
     UIImage *_landingImage;
     NSOperationQueue *_operationQueue;
@@ -24,7 +25,7 @@
 - (void)setSuccessImage:(id)arg1;
 - (void)setLandingImage:(id)arg1;
 - (void)loadImages;
-- (id)initWithOperationQueue:(id)arg1 category:(int)arg2;
+- (id)initWithOperationQueue:(id)arg1 category:(int)arg2 clientContext:(id)arg3;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (void).cxx_destruct;

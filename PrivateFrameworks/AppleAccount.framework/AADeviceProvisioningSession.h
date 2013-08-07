@@ -10,6 +10,7 @@
 
 
 - (id)deviceProvisioningInfo;
+- (long)eraseProvisioning;
 - (long)synchronizeProvisioningWithData:(id)arg1;
 - (long)provisionDeviceWithData:(id)arg1;
 - (id)initWithDSID:(id)arg1;

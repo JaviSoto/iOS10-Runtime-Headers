@@ -8,6 +8,7 @@
 }
 
 
+- (void)_blinkAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (float)alphaForConnected:(BOOL)arg1;
 - (void)performPendedActions;
 - (id)contentsImage;

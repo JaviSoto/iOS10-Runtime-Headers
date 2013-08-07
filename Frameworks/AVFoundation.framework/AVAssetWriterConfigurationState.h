@@ -43,7 +43,6 @@
 @property(copy) NSArray * inputGroups;
 
 
-- (id)inputs;
 - (void)setInputGroups:(id)arg1;
 - (id)inputGroups;
 - (void)setInputs:(id)arg1;
@@ -63,6 +62,7 @@
 - (float)preferredRate;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (id)inputs;
 - (void)dealloc;
 - (id)URL;
 - (void)setURL:(id)arg1;

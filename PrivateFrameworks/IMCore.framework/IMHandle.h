@@ -140,6 +140,7 @@
 @property(readonly) NSString * server;
 @property(readonly) NSString * accountTypeName;
 @property(readonly) NSString * guid;
+@property(readonly) NSString * _displayNameWithAbbreviation;
 @property(readonly) BOOL supportsARDMuxing;
 @property(readonly) BOOL hasLocation;
 @property(readonly) BOOL hasResource;
@@ -225,6 +226,7 @@
 - (BOOL)canBeAdded;
 - (void)setLocalNickname:(id)arg1;
 - (id)nameAndID;
+- (id)_displayNameWithAbbreviation;
 - (id)displayNameForChat:(id)arg1;
 - (void)_clearABPersonLookup;
 - (void)clearABPerson;
@@ -331,9 +333,9 @@
 - (id)statusMessage;
 - (id)emails;
 - (void)setEmail:(id)arg1;
-- (void)_postNotification:(id)arg1;
 - (BOOL)hasLocation;
 - (BOOL)hasName;
+- (void)_postNotification:(id)arg1;
 - (void)_registerForNotifications;
 - (id)lastName;
 - (id)firstName;

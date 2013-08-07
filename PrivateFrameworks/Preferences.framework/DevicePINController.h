@@ -79,6 +79,7 @@
 - (void)dealloc;
 - (void)suspend;
 - (void)_dismiss;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;

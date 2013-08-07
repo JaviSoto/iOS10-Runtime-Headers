@@ -13,6 +13,7 @@
 - (BOOL)isMessagesAppAvailable;
 - (BOOL)isMailAppAvailable;
 - (BOOL)isPhoneAppAvailable;
+- (BOOL)isFaceTimeAudioAvailable;
 - (BOOL)isWeiboServiceAvailable;
 - (BOOL)isTwitterServiceAvailable;
 - (BOOL)hasAdditionalTextTones;

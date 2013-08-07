@@ -6,7 +6,6 @@
 
 @interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate> {
     <MFMailComposeViewControllerDelegate> *_mailComposeDelegate;
-    id _autorotationDelegate;
     MFMailComposePlaceholderViewController *_placeholderViewController;
     MFMailComposeRemoteViewController *_serviceViewController;
     _UIAsyncInvocation *_cancellationInvocation;
@@ -24,12 +23,15 @@
     unsigned int _didAppear : 1;
     unsigned int _didFinish : 1;
     unsigned int _delegateRespondsToBodyFinishedLoadingWithResult : 1;
+    id _autorotationDelegate;
 }
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 @property id autorotationDelegate;
 
 
+- (void)setAutorotationDelegate:(id)arg1;
+- (id)autorotationDelegate;
 - (void)compositionViewServiceTerminatedWithError:(id)arg1;
 - (void)_setPlaceHolderSubject:(id)arg1;
 - (void)_setCompositionValue:(id)arg1 forKey:(id)arg2;
@@ -49,8 +51,6 @@
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 - (id)mailComposeDelegate;
 - (void)finalizeCompositionValues;
-- (void)setAutorotationDelegate:(id)arg1;
-- (id)autorotationDelegate;
 - (void)setShowKeyboardImmediately:(BOOL)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
@@ -71,7 +71,7 @@
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)setURL:(id)arg1;
 
 @end

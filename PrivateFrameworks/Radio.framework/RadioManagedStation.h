@@ -17,6 +17,9 @@
 @property(copy) NSString * stationDescription;
 @property(copy) NSString * coreSeedName;
 @property(copy) NSURL * artworkURL;
+@property(copy) NSData * artworkURLData;
+@property long long currentPlayingTrackID;
+@property double currentPlayingTrackTime;
 @property(retain) NSArray * seedTracks;
 @property int songMixType;
 @property(copy) NSArray * orderedTrackIDsForPlayback;
@@ -31,6 +34,7 @@
 @property BOOL likesEnabled;
 @property BOOL skipEnabled;
 @property int skipFrequency;
+@property(copy) NSString * skipIdentifier;
 @property double skipInterval;
 @property(copy) NSArray * skipTimestamps;
 @property BOOL virtualPlayEnabled;
@@ -51,6 +55,7 @@
 @property(readonly) NSDictionary * dictionaryRepresentation;
 
 + (id)unexpiredTrackIDsForPlaybackByExpirationUsingBaseDictionary:(id)arg1 removingTrackID:(id)arg2;
++ (id)defaultPropertiesToFetch;
 + (id)unexpiredTrackIDsForPlaybackUsingOrderedTrackIDs:(id)arg1 trackIDsByExpirationDate:(id)arg2;
 
 - (BOOL)virtualPlayEnabled;
@@ -63,6 +68,7 @@
 - (id)streamURL;
 - (id)skipTimestamps;
 - (double)skipInterval;
+- (id)skipIdentifier;
 - (int)skipFrequency;
 - (BOOL)skipEnabled;
 - (id)shareToken;
@@ -82,6 +88,7 @@
 - (void)setSongMixType:(int)arg1;
 - (void)setSkipTimestamps:(id)arg1;
 - (void)setSkipInterval:(double)arg1;
+- (void)setSkipIdentifier:(id)arg1;
 - (void)setSkipFrequency:(int)arg1;
 - (void)setSkipEnabled:(BOOL)arg1;
 - (void)setShareToken:(id)arg1;
@@ -99,7 +106,10 @@
 - (void)setEditableFields:(id)arg1;
 - (void)setEditEnabled:(BOOL)arg1;
 - (void)setDebugDictionary:(id)arg1;
+- (void)setCurrentPlayingTrackTime:(double)arg1;
+- (void)setCurrentPlayingTrackID:(long long)arg1;
 - (void)setCoreSeedName:(id)arg1;
+- (void)setArtworkURLData:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
 - (void)setAdditionalReferencedTrackIDs:(id)arg1;
@@ -114,7 +124,10 @@
 - (id)feedbackDictionaryRepresentation;
 - (BOOL)editEnabled;
 - (id)editableFields;
+- (double)currentPlayingTrackTime;
+- (long long)currentPlayingTrackID;
 - (id)coreSeedName;
+- (id)artworkURLData;
 - (id)artworkURL;
 - (id)additionalReferencedTrackIDs;
 - (id)adData;

@@ -39,14 +39,14 @@
 - (id)globalEmojiKeyImageName;
 - (id)keyImageNameWithSkinnyVariation:(id)arg1;
 - (float)skinnyKeyThreshold;
-- (id)shiftOnKeyImageName;
-- (id)shiftKeyImageName;
 - (id)deleteKeyImageName;
 - (BOOL)lightweightFactory;
 - (id)segmentTraits;
 - (void)lowQualityTraits:(id)arg1;
 - (void)setLightweightFactory:(BOOL)arg1;
 - (id)initWithRenderConfig:(id)arg1 skipLayoutSegments:(BOOL)arg2;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
 - (void)scaleTraits:(id)arg1;
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;

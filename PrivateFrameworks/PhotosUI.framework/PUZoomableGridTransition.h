@@ -47,10 +47,10 @@
 - (void)setAnchorItemIndexPath:(id)arg1;
 - (id)initWithOriginLevel:(unsigned int)arg1 targetLevel:(unsigned int)arg2 zoomLevelManager:(id)arg3 interactive:(BOOL)arg4;
 - (id)zoomLevelManager;
-- (id)anchorItemIndexPath;
 - (void)cancelInteractiveTransitionAnimated;
 - (void)finishInteractiveTransitionAnimated;
 - (void)updateInteractiveTransitionForProgress:(float)arg1 centerOffset:(struct CGSize { float x1; float x2; })arg2;
+- (id)anchorItemIndexPath;
 - (unsigned int)transitionState;
 - (void).cxx_destruct;
 - (void)startInteractiveTransition:(id)arg1;

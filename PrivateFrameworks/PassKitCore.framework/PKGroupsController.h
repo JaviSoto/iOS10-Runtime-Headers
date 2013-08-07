@@ -35,12 +35,12 @@
 - (void)_fixIndex:(unsigned int)arg1;
 - (unsigned int)groupCount;
 - (void)_performOrEnqueueUpdate:(id)arg1;
+- (void)reloadGroupsAndNotify:(BOOL)arg1 completion:(id)arg2;
 - (void)_insertGroup:(id)arg1 atIndex:(unsigned int)arg2 notify:(BOOL)arg3;
 - (void)_performEnqueuedUpdates;
 - (void)_moveGroup:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3 notify:(BOOL)arg4;
 - (id)_copyRemoteCatalog;
 - (void)_removeGroup:(id)arg1 notify:(BOOL)arg2;
-- (void)reloadGroupsAndNotify:(BOOL)arg1 completion:(id)arg2;
 - (unsigned int)_indexOfGroupID:(id)arg1;
 - (void)reloadGroupsWithCompletion:(id)arg1;
 - (void)_updateStateWithCatalog:(id)arg1 passes:(id)arg2 notify:(BOOL)arg3;

@@ -21,6 +21,8 @@
     NSMutableDictionary *_decorationViewExternalObjectsTables;
     UICollectionViewLayout *_transitioningFromLayout;
     UICollectionViewLayout *_transitioningToLayout;
+    BOOL _inTransitionFromTransitionLayout;
+    BOOL _inTransitionToTransitionLayout;
     UIDynamicAnimator *_animator;
     UICollectionViewLayoutInvalidationContext *_invalidationContext;
 }

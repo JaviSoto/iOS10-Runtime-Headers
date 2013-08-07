@@ -99,7 +99,6 @@
 - (id)delegate;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
-- (id)buttonTitleAtIndex:(int)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)replaceAlert:(id)arg1;
@@ -198,8 +197,8 @@
 - (BOOL)requiresPortraitOrientation;
 - (void)_setDefaultButton:(id)arg1;
 - (id)_addButtonWithTitleText:(id)arg1;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)keyboard;
-- (BOOL)_isAnimating;
 - (id)tableView;
 - (id)textField;
 - (void)setDefaultButtonIndex:(int)arg1;
@@ -222,6 +221,7 @@
 - (float)_maxHeight;
 - (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
+- (BOOL)_isAnimating;
 - (int)numberOfRows;
 - (BOOL)canBecomeFirstResponder;
 - (void)_handleKeyUIEvent:(id)arg1;

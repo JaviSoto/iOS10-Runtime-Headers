@@ -228,6 +228,7 @@
 - (id)_mobilePhonePathParameters;
 - (id)_mobilePhoneQueryParameters;
 - (BOOL)hasTelephonyScheme;
+- (id)_phoneNumberConvertNumbersToLatin:(BOOL)arg1;
 - (id)phoneNumber;
 - (id)_webkit_suggestedFilenameWithMIMEType:(id)arg1;
 - (id)_web_hostString;
@@ -255,6 +256,7 @@
 - (id)_webkit_URLByRemovingFragment;
 - (BOOL)isHTTPOrHTTPSURL;
 - (BOOL)isJavaScriptURL;
+- (BOOL)isAccountURL;
 - (BOOL)isWebcalURL;
 - (BOOL)isSpringboardHandledURL;
 - (id)radarWebURL;
@@ -300,6 +302,7 @@
 - (id)CDVPassword;
 - (id)CDVURLWithScheme:(id)arg1 userandpass:(id)arg2 host:(id)arg3 port:(id)arg4 path:(id)arg5 parameters:(id)arg6 encodePercents:(BOOL)arg7;
 - (id)initWithCDVScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6 parameterString:(id)arg7 query:(id)arg8 fragment:(id)arg9;
+- (BOOL)CDVIsSafeRedirectForRequestURL:(id)arg1;
 - (id)CDVURLWithPassword:(id)arg1;
 - (id)CDVURLWithUser:(id)arg1;
 - (id)CDVRawLastPathComponent;

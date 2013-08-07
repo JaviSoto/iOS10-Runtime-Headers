@@ -50,6 +50,8 @@
 - (void)_postCommentValidated:(id)arg1;
 - (int)postCommentSection;
 - (void)setLastRowMasked:(BOOL)arg1;
+- (void)_stopWatchingKeyboard;
+- (void)_startWatchingKeyboard;
 - (void)_adjustInitialScrollPosition:(BOOL)arg1;
 - (void)_updateLayerMaskWithBoundsChange;
 - (BOOL)lastRowMasked;
@@ -75,6 +77,7 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

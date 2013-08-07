@@ -18,11 +18,11 @@
 - (void)applyTo:(id)arg1 zoom:(float)arg2;
 - (void)setMaxZ:(float)arg1;
 - (float)maxZ;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setMinZ:(float)arg1;
 - (float)minZ;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

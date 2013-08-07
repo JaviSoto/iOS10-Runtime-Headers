@@ -22,7 +22,6 @@
 
 
 - (void)setClientInterface:(id)arg1;
-- (id)clientInterface;
 - (void)setManagedObjectModelPath:(id)arg1;
 - (id)managedObjectModelPath;
 - (void)setPersistentStoreName:(id)arg1;
@@ -30,6 +29,7 @@
 - (void)restrictToClientsWithEntitlements:(id)arg1;
 - (id)initWithExportedSessionClass:(Class)arg1 serviceProtocol:(id)arg2;
 - (BOOL)_verifyAuthorizationForConnection:(id)arg1;
+- (id)clientInterface;
 - (void)setServiceName:(id)arg1;
 - (void).cxx_destruct;
 - (id)persistentStoreName;

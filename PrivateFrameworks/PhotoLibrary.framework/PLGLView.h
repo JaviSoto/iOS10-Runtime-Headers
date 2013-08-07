@@ -48,6 +48,7 @@
 
 - (void)forceDestroyGLResources;
 - (void)renderWithBlock:(id)arg1;
+- (void)setRetainedBacking:(BOOL)arg1;
 - (BOOL)_isDisabledLayoutForGLLayerInternal;
 - (BOOL)isDisabledLayoutForGLLayer;
 - (void)setRenderNotifyBlock:(id)arg1;
@@ -71,7 +72,6 @@
 - (BOOL)retainedBacking;
 - (void)_deleteFramebufferInContext:(id)arg1;
 - (void)_configureLayer;
-- (void)setRetainedBacking:(BOOL)arg1;
 - (void)setDisableLayoutForGLLayer:(BOOL)arg1;
 - (void)_layoutGLLayer;
 - (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;

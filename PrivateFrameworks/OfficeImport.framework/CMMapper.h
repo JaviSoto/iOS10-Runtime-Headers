@@ -19,9 +19,9 @@
 - (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)addAttribute:(id)arg1 toNode:(id)arg2 value:(id)arg3;
-- (id)initWithParent:(id)arg1;
 - (void)setParent:(id)arg1;
 - (id)root;
+- (id)initWithParent:(id)arg1;
 - (id)parent;
 
 @end

@@ -23,7 +23,6 @@
     BOOL _forceRecreateFramebufferAndKeepMultisampleFramebuffer;
     VGLFramebuffer *_targetBuffer;
     float _contentScale;
-    int _magicFramebufferToken;
     VGLLayer *_glLayer;
     BOOL _isInBackground;
 }

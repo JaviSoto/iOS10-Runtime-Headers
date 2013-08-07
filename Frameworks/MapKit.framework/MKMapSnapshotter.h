@@ -32,11 +32,11 @@
 - (void)_exitBackground:(id)arg1;
 - (void)_enterBackground:(id)arg1;
 - (void)_failWithError:(id)arg1;
+- (void)_cancel;
 - (BOOL)isLoading;
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
-- (void)_cancel;
 - (id)initWithOptions:(id)arg1;
 
 @end

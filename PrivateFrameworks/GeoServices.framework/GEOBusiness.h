@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSMutableArray, NSString;
 
-@interface GEOBusiness : PBCodable  {
+@interface GEOBusiness : PBCodable <NSCopying> {
     unsigned long long _uID;
     NSMutableArray *_attributeKeyValues;
     NSMutableArray *_attributions;
@@ -78,8 +78,6 @@
 
 
 - (id)photos;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)starRatings;
 - (id)attributions;
 - (id)localizedCategories;
@@ -171,6 +169,8 @@
 - (BOOL)hasName;
 - (id)ratings;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)sources;
 - (void)setSources:(id)arg1;
 - (id)center;
@@ -181,6 +181,7 @@
 - (id)mapsURL;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCenter:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setVersion:(int)arg1;

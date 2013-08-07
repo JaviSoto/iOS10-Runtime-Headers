@@ -4,7 +4,7 @@
 
 @class GEOMapRegion, NSMutableArray, NSData;
 
-@interface GEOPlaceSearchResponse : PBCodable  {
+@interface GEOPlaceSearchResponse : PBCodable <NSCopying> {
     double _turnaroundTime;
     int _localSearchProviderID;
     GEOMapRegion *_mapRegion;
@@ -42,8 +42,6 @@
 
 
 - (id)suggestionEntryLists;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)searchs;
 - (id)placeResults;
 - (void)setHasTurnaroundTime:(BOOL)arg1;
@@ -84,12 +82,15 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

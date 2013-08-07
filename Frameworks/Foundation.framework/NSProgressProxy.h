@@ -6,11 +6,10 @@
    See Warning(s) below.
  */
 
-@class <NSProgressPublisher>, NSString;
+@class <NSProgressPublisher>;
 
 @interface NSProgressProxy : NSProgress  {
     <NSProgressPublisher> *_forwarder;
-    NSString *_publishingAppBundleIDOrNil;
     BOOL _isOld;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -31,15 +30,14 @@
 - (void)cancel;
 - (void)_invokeUnpublishingHandler;
 - (void)_invokePublishingHandler:(id)arg1;
-- (id)_initWithForwarder:(id)arg1 publishingAppBundleID:(id)arg2 values:(id)arg3 isOld:(BOOL)arg4;
-- (id)_publishingAppBundleIdentifier;
+- (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(BOOL)arg3;
 - (BOOL)isOld;
 - (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)prioritize;
-- (void)pause;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (void)unpublish;
+- (void)pause;
 - (void)publish;
 - (void)resignCurrent;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;

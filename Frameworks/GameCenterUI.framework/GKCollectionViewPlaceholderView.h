@@ -25,12 +25,12 @@
 @property(retain) GKPlaceholderContentStateMachine * loadingMachine;
 
 
+- (id)errorMessage;
+- (id)errorTitle;
 - (void)setLoadingMachine:(id)arg1;
 - (id)loadingMachine;
 - (void)setLoadingIndicatorView:(id)arg1;
 - (id)loadingIndicatorView;
-- (id)errorMessage;
-- (id)errorTitle;
 - (id)noContentMessage;
 - (id)noContentTitle;
 - (id)loadingState;

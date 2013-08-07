@@ -92,7 +92,7 @@
 - (id)background;
 - (void)setRotation:(int)arg1;
 - (void)addImage:(id)arg1;
-- (id)parent;
 - (id)children;
+- (id)parent;
 
 @end

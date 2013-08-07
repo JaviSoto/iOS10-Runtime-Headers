@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, UIGestureRecognizer, UITableViewIndex, UITableViewRowData, NSMutableArray, _UITableViewDeleteAnimationSupport, UIGobblerGestureRecognizer, NSTimer, _UITableViewReorderingSupport, <UITableViewDelegate>, UILongPressGestureRecognizer, NSMutableDictionary, UIRefreshControl, UITouch, UITableViewCountView, NSArray, UIImage, UIColor, UITableViewCell, UIView, <UITableViewDataSource>;
+@class UIImage, UIGestureRecognizer, UITableViewIndex, UITableViewRowData, NSMutableArray, _UITableViewDeleteAnimationSupport, UIGobblerGestureRecognizer, NSTimer, _UITableViewReorderingSupport, <UITableViewDelegate>, UILongPressGestureRecognizer, NSMutableDictionary, UIRefreshControl, UITableViewWrapperView, UITouch, UITableViewCountView, NSArray, UITableViewCell, UIColor, NSIndexPath, UIView, <UITableViewDataSource>;
 
 @interface UITableView : UIScrollView <UIGestureRecognizerDelegatePrivate, NSCoding> {
     <UITableViewDataSource> *_dataSource;
@@ -52,6 +52,7 @@
     _UITableViewReorderingSupport *_reorderingSupport;
     UIView *_backgroundView;
     UIView *_clearBlendingView;
+    UITableViewWrapperView *_wrapperView;
     UITableViewIndex *_index;
     UIView *_tableHeaderBackgroundView;
     UIView *_tableHeaderView;
@@ -572,6 +573,7 @@
 - (id)_defaultBackgroundView;
 - (void)_setupTableViewCommon;
 - (void)_languageChanged;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)setSectionHeaderHeight:(float)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSectionIndexTrackingBackgroundColor:(id)arg1;
@@ -592,6 +594,7 @@
 - (void)_highlightFirstVisibleRowIfAppropriate;
 - (BOOL)_shouldDrawSeparatorAtBottomOfSection:(int)arg1;
 - (BOOL)_shouldDrawSeparatorAtTopOfSection:(int)arg1;
+- (id)visibleCells;
 - (void)_endAnimatingCells;
 - (void)_updateBackgroundView;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -616,6 +619,7 @@
 - (void)_hideSeparatorForRowAtIndexPath:(id)arg1;
 - (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)indexPathForCell:(id)arg1;
+- (id)_cellContainerView;
 - (float)_spacingForExtraSeparators;
 - (BOOL)_shouldDisplayExtraSeparatorsAtOffset:(float*)arg1;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2;
@@ -727,10 +731,8 @@
 - (void)layoutSubviews;
 - (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
 - (void)setRowHeight:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)reloadData;
 - (void)didMoveToWindow;
-- (id)visibleCells;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;

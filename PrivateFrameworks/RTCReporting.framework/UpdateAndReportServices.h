@@ -21,9 +21,9 @@
 @property(copy) id block;
 
 
-- (void)setBlock:(id)arg1;
-- (bool)report;
 - (id)initWithServices:(bool)arg1 needToReport:(bool)arg2 service:(id)arg3;
+- (bool)report;
+- (void)setBlock:(id)arg1;
 - (bool)update;
 - (void)dealloc;
 - (id)block;

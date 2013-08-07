@@ -40,8 +40,8 @@
 - (void)_warmItemStateCenter;
 - (id)resourceOperationQueue;
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (id)scriptContextDictionary;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setScriptContextDictionary:(id)arg1;

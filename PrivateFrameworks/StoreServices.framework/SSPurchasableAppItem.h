@@ -21,10 +21,10 @@
 - (id)longTitle;
 - (id)iconTitle;
 - (unsigned char)contentRatingFlags;
+- (id)category;
 - (id)iconURL;
 - (id)companyName;
 - (id)bundleID;
 - (id)description;
-- (id)category;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEORating : PBCodable  {
+@interface GEORating : PBCodable <NSCopying> {
     double _maxScore;
     double _score;
     int _numberOfRatings;
@@ -37,8 +37,6 @@
 
 
 - (id)reviews;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasNumberOfReviews:(BOOL)arg1;
 - (void)setHasNumberOfRatings:(BOOL)arg1;
 - (void)setHasMaxScore:(BOOL)arg1;
@@ -64,10 +62,13 @@
 - (id)uRL;
 - (BOOL)hasURL;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setProvider:(id)arg1;
 - (double)score;
 - (void)setURL:(id)arg1;

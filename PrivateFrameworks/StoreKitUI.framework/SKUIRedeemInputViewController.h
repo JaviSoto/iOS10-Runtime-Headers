@@ -25,10 +25,10 @@
 - (id)_newTextFieldWithClientContext:(id)arg1;
 - (void)_redeemConfigurationImagesDidLoad:(id)arg1;
 - (void)_termsButtonAction:(id)arg1;
+- (int)category;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)loadView;
 - (BOOL)textFieldShouldReturn:(id)arg1;
-- (int)category;
 
 @end

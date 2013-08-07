@@ -40,17 +40,17 @@
     UIButton *_cancelButton;
     UIView *_wildcatPickerTopView;
     UIView *_wildcatPickerBottomView;
+    PLContactPhotoOverlay *_contactPhotoOverlay;
     PLCropOverlayBottomBar *__bottomBar;
     UIButton *__cameraCancelButton;
-    PLContactPhotoOverlay *__contactPhotoOverlay;
 }
 
+@property(readonly) PLContactPhotoOverlay * contactPhotoOverlay;
 @property(retain) CAMBottomBar * cameraBottomBar;
 @property(readonly) PLCropOverlayWallpaperBottomBar * wallpaperBottomBar;
 @property BOOL previewMode;
 @property(readonly) PLCropOverlayBottomBar * _bottomBar;
 @property(readonly) UIButton * _cameraCancelButton;
-@property(readonly) PLContactPhotoOverlay * _contactPhotoOverlay;
 
 
 - (void)_savePhotoFinished:(id)arg1;
@@ -88,7 +88,6 @@
 - (void)_fadeOutCompleted:(id)arg1;
 - (id)_bottomBar;
 - (void)_createCropView;
-- (id)_contactPhotoOverlay;
 - (id)_irisView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4 buttonBarStyle:(int)arg5;
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
@@ -96,6 +95,7 @@
 - (id)wallpaperBottomBar;
 - (void)setCameraBottomBar:(id)arg1;
 - (id)cameraBottomBar;
+- (id)contactPhotoOverlay;
 - (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateTitle;
 - (void)statusBarHeightDidChange:(id)arg1;

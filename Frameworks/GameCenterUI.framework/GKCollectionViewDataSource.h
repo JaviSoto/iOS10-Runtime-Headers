@@ -39,6 +39,7 @@
 - (id)defaultSearchKey;
 - (void)notifyBatchUpdate:(id)arg1 complete:(id)arg2;
 - (void)notifyBatchUpdate:(id)arg1;
+- (void)notifyPlaceholderUpdated:(BOOL)arg1;
 - (void)notifyDidReloadData;
 - (void)notifySectionsMovedWithItems;
 - (void)notifySectionMovedFrom:(int)arg1 to:(int)arg2;

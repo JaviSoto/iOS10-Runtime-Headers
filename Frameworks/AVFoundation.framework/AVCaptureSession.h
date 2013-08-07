@@ -24,14 +24,13 @@
 + (id)avCaptureSessionPlist;
 + (void)initialize;
 
+- (BOOL)isInterrupted;
 - (BOOL)canAddOutput:(id)arg1;
 - (void)stopRunning;
 - (void)startRunning;
 - (void)commitConfiguration;
 - (void)beginConfiguration;
 - (void)addConnection:(id)arg1;
-- (id)outputs;
-- (id)inputs;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (id)_errorForFigRecorderNotification:(id)arg1;
 - (void)_stopAndTearDownGraph;
@@ -44,7 +43,6 @@
 - (void)setAutomaticallyConfiguresApplicationAudioSession:(BOOL)arg1;
 - (void)setUsesApplicationAudioSession:(BOOL)arg1;
 - (void)_setInterrupted:(BOOL)arg1;
-- (BOOL)isInterrupted;
 - (BOOL)canAddConnection:(id)arg1;
 - (void)setVideoPreviewLayer:(id)arg1;
 - (void)addOutputWithNoConnections:(id)arg1;
@@ -107,6 +105,8 @@
 - (BOOL)automaticallyConfiguresApplicationAudioSession;
 - (BOOL)usesApplicationAudioSession;
 - (long)_stopRecording;
+- (id)outputs;
+- (id)inputs;
 - (id)init;
 - (void)dealloc;
 - (id)description;

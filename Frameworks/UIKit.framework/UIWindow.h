@@ -59,6 +59,7 @@
         unsigned int settingFirstResponder : 1; 
         unsigned int legacyOrientationChecks : 1; 
         unsigned int windowResizedToFullScreen : 1; 
+        unsigned int statusBarFollowsOrientation : 1; 
     } _windowFlags;
     id _windowController;
     _UIResponderSelectionCursor *_responderSelectionCursor;
@@ -216,6 +217,7 @@
 - (void)setAutorotates:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromDeviceOrientation;
 - (void)_updateToInterfaceOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_setWindowControlsStatusBarOrientation:(BOOL)arg1;
 - (unsigned int)_supportedInterfaceOrientationsForRootViewController;
 - (void)_clearPendingKeyboardChanges;
 - (void)_removeRotationViewController:(id)arg1;
@@ -306,6 +308,8 @@
 - (id)_rootViewConstraints;
 - (void)_orderContextToFront;
 - (void)_destroyContext;
+- (BOOL)keepContextInBackground;
+- (void)_createContext;
 - (void)_destroyContextFromScreen:(id)arg1;
 - (void)setLevel:(float)arg1;
 - (BOOL)_disableGroupOpacity;
@@ -321,14 +325,13 @@
 - (void)awakeFromNib;
 - (void)_setLayerHidden:(BOOL)arg1;
 - (int)bitsPerComponent;
-- (void)_createContext;
-- (BOOL)keepContextInBackground;
+- (void)_createContextIfNecessaryForCurrentApplicationState;
 - (void)_createSystemGestureGateGestureRecognizerIfNeeded;
 - (void)_updateTransformLayer;
 - (id)_window;
 - (BOOL)isInternalWindow;
 - (BOOL)_canBecomeKeyWindow;
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 - (BOOL)_usesWindowServerHitTesting;
 - (void)endDisablingInterfaceAutorotation;
 - (void)beginDisablingInterfaceAutorotation;
@@ -351,6 +354,7 @@
 - (BOOL)_includeInDefaultImageSnapshot;
 - (BOOL)_shouldZoom;
 - (id)_currentTintView;
+- (BOOL)_windowControlsStatusBarOrientation;
 - (unsigned int)_contextId;
 - (void)_orderFrontWithoutMakingKey;
 - (void)setWindowLevel:(float)arg1;

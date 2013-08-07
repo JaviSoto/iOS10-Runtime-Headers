@@ -32,6 +32,7 @@
 - (void)_willPresentAsFormSheet;
 - (id)_embeddedActivityViewController;
 - (void)_setActivityCompletionHandler:(id)arg1;
+- (id)_beforeActivity;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (id)activityCompletionHandler;
 - (void)prepareWithActivityItems:(id)arg1;
@@ -42,7 +43,6 @@
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)activityDidFinish:(BOOL)arg1;
-- (id)_beforeActivity;
 - (id)activityType;
 - (id)activityTitle;
 - (id)_activityImage;

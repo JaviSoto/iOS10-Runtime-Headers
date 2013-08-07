@@ -60,6 +60,7 @@
 - (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
+- (id)_retainedPersistentStores;
 - (id)persistentStores;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;

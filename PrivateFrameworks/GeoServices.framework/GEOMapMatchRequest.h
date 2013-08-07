@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOMapMatchRequest : PBRequest  {
+@interface GEOMapMatchRequest : PBRequest <NSCopying> {
     NSMutableArray *_locations;
     NSMutableArray *_waypoints;
 }
@@ -13,10 +13,6 @@
 @property(retain) NSMutableArray * locations;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (void)clearLocations;
 - (void)addLocation:(id)arg1;
 - (id)locationAtIndex:(unsigned int)arg1;
@@ -28,11 +24,16 @@
 - (void)addWaypoint:(id)arg1;
 - (void)setWaypoints:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)locations;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setLocations:(id)arg1;
 - (id)dictionaryRepresentation;
 

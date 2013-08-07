@@ -79,8 +79,8 @@
 - (BOOL)unlinkContact;
 - (BOOL)linkToContact:(id)arg1;
 - (BOOL)saveContactInAddressBook:(void*)arg1;
-- (BOOL)deleteContact;
 - (void)addProperties:(id)arg1 excludingProperties:(id)arg2 fromContact:(id)arg3;
+- (BOOL)deleteContact;
 - (void)setEmailAddresses:(id)arg1;
 - (id)initWithRecord:(void*)arg1;
 - (id)init;

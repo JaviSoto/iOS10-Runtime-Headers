@@ -13,18 +13,22 @@
     NSString *_routeName;
     int _routeType;
     NSString *_routeUID;
+    int _routeSubtype;
 }
 
 @property(readonly) NSString * name;
 @property(readonly) int routeType;
+@property(readonly) int routeSubtype;
 @property(readonly) NSString * routeUID;
 @property(readonly) unsigned int routeIndex;
 @property BOOL isPicked;
 @property(readonly) BOOL requiresPassword;
 @property BOOL displayIsPicked;
 @property int displayRouteType;
+@property(readonly) BOOL isBluetoothRoute;
 
 + (id)videoRouteForRoute:(id)arg1;
++ (int)_routeSubtypeForAVOutputRouteType:(id)arg1;
 + (id)_availableRoutesFromAudioDeviceController:(id)arg1 forType:(unsigned int)arg2;
 + (id)wirelessDisplayRouteForRoute:(id)arg1;
 + (BOOL)availableRoutesExistForType:(unsigned int)arg1;
@@ -33,11 +37,13 @@
 
 - (int)displayRouteType;
 - (BOOL)displayIsPicked;
+- (BOOL)isBluetoothRoute;
 - (void)setDisplayRouteType:(int)arg1;
 - (void)setDisplayIsPicked:(BOOL)arg1;
 - (void)setIsPicked:(BOOL)arg1;
-- (id)_initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
+- (id)_initWithName:(id)arg1 routeType:(int)arg2 routeSubtype:(int)arg3 routeUID:(id)arg4 routeIndex:(unsigned int)arg5 requiresPassword:(BOOL)arg6;
 - (id)routeUID;
+- (int)routeSubtype;
 - (BOOL)requiresPassword;
 - (unsigned int)routeIndex;
 - (BOOL)isPicked;

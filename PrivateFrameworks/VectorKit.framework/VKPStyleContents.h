@@ -21,9 +21,9 @@
 - (BOOL)hasProperties;
 - (void)addZooms:(id)arg1;
 - (void)setZooms:(id)arg1;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

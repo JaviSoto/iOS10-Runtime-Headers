@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
+@class NSString, NSDictionary;
 
 @interface ISDialogButton : NSObject  {
     int _actionType;
@@ -10,8 +10,10 @@
     NSString *_title;
     int _urlType;
     NSString *_subtarget;
+    NSDictionary *_dictionary;
 }
 
+@property(retain) NSDictionary * dictionary;
 @property int actionType;
 @property(retain) id parameter;
 @property(retain) NSString * title;
@@ -39,5 +41,7 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)dealloc;
+- (id)dictionary;
+- (void)setDictionary:(id)arg1;
 
 @end

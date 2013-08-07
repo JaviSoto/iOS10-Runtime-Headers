@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSMutableArray, SFWirelessSettingsController, UIColor, ALAssetsLibrary, NSLayoutConstraint, SFCollectionViewFlowLayout, UILabel, NSMutableSet, SFAirDropIconView, SFAirDropActiveIconView, NSObject<SFAirDropActivityViewControllerDelegate>, UICollectionView, NSString, NSMutableDictionary, NSOperationQueue, SFAirDropBrowser;
+@class NSMutableArray, SFWirelessSettingsController, ALAssetsLibrary, SFCollectionViewFlowLayout, NSLayoutConstraint, UILabel, NSMutableSet, SFAirDropIconView, SFAirDropActiveIconView, NSObject<SFAirDropActivityViewControllerDelegate>, UICollectionView, NSString, NSMutableDictionary, NSOperationQueue, SFAirDropBrowser;
 
 @interface SFAirDropActivityViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, SFAirDropBrowserDelegate, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate> {
     BOOL toggle;
@@ -10,9 +10,6 @@
     int _attachmentCount;
     NSString *_sessionID;
     int _sharedItemsRequestID;
-    UIColor *_currentTitleColor;
-    UIColor *_currentCellTextColor;
-    UIColor *_currentFooterTextColor;
     UILabel *_titleLabel;
     SFAirDropIconView *_airDropIconView;
     NSLayoutConstraint *_airDropIconLeftConstraint;
@@ -37,6 +34,7 @@
     NSOperationQueue *_operationQueue;
     NSMutableArray *_objectChanges;
     ALAssetsLibrary *_assetsLibrary;
+    int _generatedPreviews;
     BOOL _sharedItemsAvailable;
     BOOL _otherActivityViewPresented;
     NSObject<SFAirDropActivityViewControllerDelegate> *_delegate;
@@ -54,6 +52,8 @@
 - (BOOL)otherActivityViewPresented;
 - (BOOL)sharedItemsAvailable;
 - (BOOL)addAttributedString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
+- (BOOL)isVideo:(id)arg1;
+- (BOOL)isImage:(id)arg1;
 - (BOOL)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id)arg6;
 - (BOOL)isAssetURL:(id)arg1;
 - (id)cellForPerson:(id)arg1;
@@ -82,8 +82,6 @@
 - (void)browser:(id)arg1 didInsertPersonAtIndex:(unsigned int)arg2;
 - (void)browser:(id)arg1 didDeletePersonAtIndex:(unsigned int)arg2;
 - (void)browserWillChangePeople:(id)arg1;
-- (BOOL)isVideo:(id)arg1;
-- (BOOL)isImage:(id)arg1;
 - (BOOL)isWifiEnabled;
 - (void)stopBrowsing;
 - (void)setDelegate:(id)arg1;

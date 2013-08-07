@@ -64,11 +64,11 @@
 - (float)paragraphSpacingAfterGlyphAtIndex:(unsigned int)arg1 withProposedLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (float)paragraphSpacingBeforeGlyphAtIndex:(unsigned int)arg1 withProposedLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (float)lineSpacingAfterGlyphAtIndex:(unsigned int)arg1 withProposedLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (int)_baseWritingDirection;
 - (void)getLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 usedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forStartingGlyphAtIndex:(unsigned int)arg4 proposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 lineSpacing:(float)arg6 paragraphSpacingBefore:(float)arg7 paragraphSpacingAfter:(float)arg8;
 - (void)beginLineWithGlyphAtIndex:(unsigned int)arg1;
 - (id)currentTextContainer;
 - (int)typesetterBehavior;
+- (int)_baseWritingDirection;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphSeparatorCharacterRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphCharacterRange;
 - (BOOL)bidiProcessingEnabled;

@@ -36,7 +36,6 @@
 - (BOOL)canCancel;
 - (void)_setInternalHidden:(BOOL)arg1;
 - (void)updateFromObserver:(id)arg1 animated:(BOOL)arg2;
-- (void)_animateValueOnDisplayLink:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerImageViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forStyle:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fillFrameForSize:(struct CGSize { float x1; float x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_baseFrameForSize:(struct CGSize { float x1; float x2; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -44,6 +43,7 @@
 - (void)setHidden:(BOOL)arg1;
 - (int)style;
 - (void).cxx_destruct;
+- (void)_animateValueOnDisplayLink:(id)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

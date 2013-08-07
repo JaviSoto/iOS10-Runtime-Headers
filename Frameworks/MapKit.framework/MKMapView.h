@@ -65,6 +65,8 @@
     MKUserLocation *_userLocation;
     VKPuckAnimator *_userLocationAnimator;
     MKMapCamera *_camera;
+    id _topLayoutGuide;
+    id _bottomLayoutGuide;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -354,7 +356,9 @@
 - (id)vk_mapLayer;
 - (double)_goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2 animationType:(int)arg3;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)updateLayoutGuides;
 - (void)_updateInsets;
+- (id)_findLayoutGuideVC;
 - (void)removeAnnotations:(id)arg1;
 - (void)removeAnnotation:(id)arg1;
 - (void)_addAnnotation:(id)arg1 allowAnimation:(BOOL)arg2;
@@ -423,7 +427,6 @@
 - (void)_updateShouldDisplayEffects;
 - (BOOL)effectsEnabled;
 - (struct { double x1; double x2; })_centerMapPoint;
-- (float)_zoomScaleForMapRegion:(id)arg1;
 - (float)_maxZoomLevelForCoordinate:(struct { double x1; double x2; })arg1;
 - (float)minZoomLevel;
 - (void)_cancelAccessories;
@@ -476,6 +479,7 @@
 - (void)_sizeDidChangeWithCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_sizeWillChange;
 - (void)_setZoomScale:(float)arg1 centerCoordinate:(struct { double x1; double x2; })arg2 duration:(double)arg3 animationType:(int)arg4 resetHeading:(BOOL)arg5;
+- (float)_zoomScaleForMapRegion:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_debugViewFrame;
 - (int)_roundedZoomLevel;
 - (float)_boundedZoomLevel:(float)arg1;
@@ -493,6 +497,7 @@
 - (int)_interfaceOrientation;
 - (void)_updateHeadingOrientation;
 - (void)_layoutAttribution;
+- (void)_clearLayoutGuides;
 - (void)set_startEffectsTimer:(id)arg1;
 - (BOOL)isRotateEnabled;
 - (BOOL)isPitchEnabled;
@@ -544,6 +549,7 @@
 - (void)setZoomEnabled:(BOOL)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
 - (BOOL)isZooming;
+- (void)didMoveToSuperview;
 - (void)willMoveToWindow:(id)arg1;
 - (BOOL)isScrollEnabled;
 - (void)_clearGestureRecognizers;
@@ -556,7 +562,9 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,6 +15,7 @@
 }
 
 @property(readonly) BOOL canShowCloudDownloadButtons;
+@property(readonly) BOOL canDefaultMediaLibraryShowCloudContent;
 @property(readonly) BOOL canShowCloudMusic;
 @property(readonly) BOOL canShowCloudVideo;
 @property(readonly) BOOL isCloudEnabled;
@@ -34,6 +35,7 @@
 - (BOOL)isUpdateInProgress;
 - (BOOL)isInitialImport;
 - (BOOL)hasCloudLockerAccount;
+- (BOOL)canDefaultMediaLibraryShowCloudContent;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;

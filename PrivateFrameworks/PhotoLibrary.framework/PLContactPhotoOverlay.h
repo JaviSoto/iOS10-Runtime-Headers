@@ -7,16 +7,26 @@
 @interface PLContactPhotoOverlay : UIView  {
     UILabel *_titleLabel;
     UIImageView *__avatarPreview;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _overlayEdgeInsets;
 }
 
 @property(readonly) UILabel * titleLabel;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayEdgeInsets;
 @property(readonly) UIImageView * _avatarPreview;
 
 
 - (id)_avatarPreview;
+- (void)setOverlayEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)endAvatarTracking;
 - (void)beginAvatarTrackingFromImageView:(id)arg1;
 - (void)_commonPLContactPhotoOverlayInitialization;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inscribingBounds;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayEdgeInsets;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;

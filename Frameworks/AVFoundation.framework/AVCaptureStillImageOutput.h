@@ -20,6 +20,7 @@
 + (id)jpegStillImageNSDataRepresentationForSurface:(void*)arg1 size:(unsigned long)arg2 metadata:(id)arg3;
 + (void)initialize;
 
+- (void)setShutterSound:(unsigned long)arg1;
 - (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)setEV0CaptureEnabled:(BOOL)arg1;
@@ -30,7 +31,6 @@
 - (id)firstActiveConnection;
 - (BOOL)isCapturingStillImage;
 - (BOOL)suspendsVideoProcessingDuringStillImageCapture;
-- (void)setShutterSound:(unsigned long)arg1;
 - (unsigned long)shutterSound;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
 - (BOOL)isChromaNoiseReductionEnabled;

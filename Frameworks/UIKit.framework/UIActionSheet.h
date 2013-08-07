@@ -186,7 +186,6 @@
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
-- (id)buttonTitleAtIndex:(int)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)presentSheetFromButtonBar:(id)arg1;
 - (int)numberOfLinesInTitle;
@@ -273,8 +272,8 @@
 - (void)_createBodyTextLabelIfNeeded;
 - (void)setAlertSheetStyle:(int)arg1;
 - (BOOL)requiresPortraitOrientation;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)keyboard;
-- (BOOL)_isAnimating;
 - (id)tableView;
 - (id)textField;
 - (void)setDefaultButtonIndex:(int)arg1;
@@ -301,6 +300,7 @@
 - (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
 - (float)_separatorInset;
+- (BOOL)_isAnimating;
 - (int)numberOfRows;
 - (BOOL)canBecomeFirstResponder;
 - (id)_normalInheritedTintColor;

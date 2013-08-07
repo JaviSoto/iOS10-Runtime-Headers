@@ -42,7 +42,7 @@
 
 - (id)imageDataAtIndex:(unsigned int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;
 - (void)preheatImageDataAtIndexes:(id)arg1;
-- (id)preheatItemForAsset:(id)arg1;
+- (id)preheatItemForAsset:(id)arg1 options:(unsigned int)arg2;
 - (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 asset:(id)arg4;
 - (void)compactWithOccupiedIndexes:(id)arg1;
 - (id)preflightCompactionWithOccupiedIndexes:(id)arg1;

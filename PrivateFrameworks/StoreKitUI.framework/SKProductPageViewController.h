@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, SUPurchaseManager, SKUIIPhoneProductPageViewController, SUPreviewOverlayViewController, SKUIClientContext, SKUIITunesStoreUIPageViewController, SUBarButtonItem, SKUIBannerViewController, SKUIIPadProductPageViewController, SUDialogManager, NSDictionary, NSURL;
+@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, SUPurchaseManager, SKUIIPhoneProductPageViewController, SUPreviewOverlayViewController, SKUIClientContext, SKUIITunesStoreUIPageViewController, SUBarButtonItem, SKUIBannerViewController, SKUIIPadProductPageViewController, SUDialogManager, NSDictionary, SKUIItemStateCenter, NSURL;
 
-@interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate> {
+@interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate, SKUIItemStateCenterObserver> {
     SKUIBannerViewController *_bannerViewController;
     SKUIClientContext *_clientContext;
     <SKProductPageViewControllerDelegatePrivate> *_delegate;
@@ -19,6 +19,7 @@
     BOOL _showsStoreButton;
     int _style;
     SKUIITunesStoreUIPageViewController *_storePageViewController;
+    SKUIItemStateCenter *_itemStateCenter;
 }
 
 @property <SKProductPageViewControllerDelegate> * delegate;
@@ -27,6 +28,7 @@
 @property(copy) NSDictionary * scriptContextDictionary;
 
 + (void)getCanLoadWithURL:(id)arg1 completionBlock:(id)arg2;
++ (id)_defaultClientIdentifier;
 + (void)_validateURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(id)arg3;
 + (id)_defaultClientInterface;
 
@@ -51,6 +53,7 @@
 - (void)loadWithProductPage:(id)arg1;
 - (id)scriptContextDictionary;
 - (id)initWithProductPageStyle:(int)arg1;
+- (void)itemStateCenter:(id)arg1 didFinishPurchases:(id)arg2;
 - (BOOL)iPhoneProductPage:(id)arg1 shouldOpenURL:(id)arg2;
 - (BOOL)iPhoneProductPage:(id)arg1 shouldOpenItem:(id)arg2;
 - (void)iPadProductPage:(id)arg1 openURL:(id)arg2 viewControllerBlock:(id)arg3;

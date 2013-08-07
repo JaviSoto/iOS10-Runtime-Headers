@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUIActionCapture : PBCodable  {
+@interface GEOUIActionCapture : PBCodable <NSCopying> {
     double _duration;
     int _actionType;
     int _sequenceNumber;
@@ -21,8 +21,6 @@
 @property int sequenceNumber;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasActionType:(BOOL)arg1;
 - (BOOL)hasDuration;
@@ -32,6 +30,8 @@
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (BOOL)hasSequenceNumber;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)sequenceNumber;
 - (void)setDuration:(double)arg1;
 - (void)setSequenceNumber:(int)arg1;
@@ -39,6 +39,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)duration;
 - (id)dictionaryRepresentation;
 

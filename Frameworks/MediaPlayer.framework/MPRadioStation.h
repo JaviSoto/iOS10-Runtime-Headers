@@ -2,9 +2,10 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, RadioStation;
+@class MPImageCache, NSString, RadioStation;
 
 @interface MPRadioStation : NSObject <NSSecureCoding, NSCopying> {
+    MPImageCache *_imageCache;
     RadioStation *_station;
 }
 
@@ -14,9 +15,9 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (id)_station;
 - (void)fetchArtworkWithCompletionBlock:(id)arg1;
 - (id)initWithStation:(id)arg1;
+- (id)_station;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;

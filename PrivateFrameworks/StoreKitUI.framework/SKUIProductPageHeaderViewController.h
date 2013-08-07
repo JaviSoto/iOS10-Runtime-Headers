@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageHeaderViewDelegate>, UIImage, SSVLoadURLOperation, SKUIProductPageItem, SKUIFacebookLikeStatus, SKUIClientContext, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SKUIItem, UIPopoverController, SKUIItemArtworkContext, NSOperationQueue;
+@class <SKUIProductPageHeaderViewDelegate>, UIImage, SSVLoadURLOperation, SKUIFacebookLikeStatus, SKUIClientContext, SKUIProductPage, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SKUIItem, UIPopoverController, SKUIItemArtworkContext, NSOperationQueue;
 
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
     UIPopoverController *_activityPopoverController;
@@ -18,7 +18,7 @@
     SSVLoadURLOperation *_loadUberOperation;
     NSOperationQueue *_operationQueue;
     UIImage *_placeholderImage;
-    SKUIProductPageItem *_productPageItem;
+    SKUIProductPage *_productPage;
     UIImage *_uberImage;
     BOOL _wantsActivityViewController;
     SKUIProductPageHeaderFloatingView *_floatingView;
@@ -38,8 +38,8 @@
 - (BOOL)_isRestricted;
 - (void)_sectionControlAction:(id)arg1;
 - (id)facebookLikeStatus;
-- (void)setProductPageItem:(id)arg1;
 - (void)setFacebookLikeStatus:(id)arg1;
+- (void)_setUberWithImage:(id)arg1 error:(id)arg2;
 - (id)_segmentedControlTitles;
 - (void)_shareButtonAction:(id)arg1;
 - (void)_itemOfferButtonAction:(id)arg1;
@@ -48,12 +48,14 @@
 - (void)_artistButtonAction:(id)arg1;
 - (void)_showActivityViewControllerFromView:(id)arg1;
 - (id)_facebookFriendsString;
-- (void)_setUberWithImage:(id)arg1 error:(id)arg2;
+- (void)_loadUberImageIfAvailable;
 - (void)_setArtworkWithImage:(id)arg1 error:(id)arg2;
+- (id)_activeItem;
 - (id)floatingView;
 - (id)_artworkContext;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
+- (void)setProductPage:(id)arg1;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;

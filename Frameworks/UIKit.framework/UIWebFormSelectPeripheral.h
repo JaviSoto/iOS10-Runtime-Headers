@@ -14,6 +14,7 @@
 
 + (id)createPeripheralWithDOMHTMLSelectElement:(id)arg1;
 
+- (void)endEditing;
 - (void)beginEditing;
 - (void)dealloc;
 - (id)_selectControl;

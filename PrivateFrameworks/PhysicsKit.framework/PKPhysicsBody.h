@@ -70,6 +70,7 @@
         float height; 
     } _size;
     float _radius;
+    struct CGImage { } *_mask;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -102,7 +103,7 @@
 @property(readonly) NSArray * joints;
 @property <NSObject> * representedObject;
 @property(copy) id postStepBlock;
-@property struct CGPoint { float x1; float x2; } velocity;
+@property struct CGVector { float x1; float x2; } velocity;
 @property float angularVelocity;
 
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
@@ -134,7 +135,7 @@
 - (id)joints;
 - (BOOL)isResting;
 - (void)applyAngularImpulse:(float)arg1;
-- (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyTorque:(float)arg1;
 - (void)applyForce:(struct CGPoint { float x1; float x2; })arg1;
 - (void)applyForce:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -144,7 +145,7 @@
 - (void)setResting:(BOOL)arg1;
 - (id)_descriptionClassName;
 - (void)setAngularVelocity:(float)arg1;
-- (void)setVelocity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setVelocity:(struct CGVector { float x1; float x2; })arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
 - (void)setCollisionBitMask:(unsigned int)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
@@ -162,7 +163,7 @@
 - (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithCircleOfRadius:(float)arg1;
 - (float)angularVelocity;
-- (struct CGPoint { float x1; float x2; })velocity;
+- (struct CGVector { float x1; float x2; })velocity;
 - (unsigned int)contactTestBitMask;
 - (unsigned int)collisionBitMask;
 - (unsigned int)categoryBitMask;
@@ -183,14 +184,14 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)set_allowSleep:(BOOL)arg1;
-- (void)applyUnscaledForce:(struct CGPoint { float x1; float x2; })arg1;
-- (void)applyUnscaledImpulse:(struct CGPoint { float x1; float x2; })arg1;
-- (void)applyUnscaledForce:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)applyUnscaledImpulse:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyUnscaledForce:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyUnscaledForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setPostStepBlock:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (id)representedObject;
-- (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1;
 - (float)angularDamping;
 - (float)linearDamping;
 - (void)setRotation:(float)arg1;

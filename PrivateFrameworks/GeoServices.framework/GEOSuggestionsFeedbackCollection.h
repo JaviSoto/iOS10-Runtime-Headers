@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface GEOSuggestionsFeedbackCollection : PBCodable  {
+@interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -32,8 +32,6 @@
 @property(retain) NSData * suggestionEntryMetadata;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSuggestionEntryIndex:(BOOL)arg1;
 - (void)setHasSuggestionsEntryListIndex:(BOOL)arg1;
 - (id)suggestionEntryMetadata;
@@ -50,13 +48,16 @@
 - (void)setSuggestionMetadata:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

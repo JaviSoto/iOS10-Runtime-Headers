@@ -23,6 +23,8 @@
 
 - (id)artworkPath;
 - (BOOL)writeToDiskArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3 formatIDs:(unsigned int**)arg4 resultingLengths:(unsigned int**)arg5 imageSubRects:(struct CGRect {}**)arg6 count:(unsigned int*)arg7;
+- (void)enumerateMissingArtworkFormatsForArtworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg1 cacheID:(id)arg2 block:(id)arg3;
+- (void)enumerateDeletableExistingArtworkFormatsForArtworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg1 cacheID:(id)arg2 block:(id)arg3;
 - (BOOL)writeToDiskArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3 forFormatID:(unsigned int)arg4 resultingLength:(unsigned int*)arg5 imageSubRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6;
 - (id)initWithArtworkDirectoryPath:(id)arg1;
 - (BOOL)writeImageBytes:(const void*)arg1 length:(unsigned long)arg2 formatID:(unsigned int)arg3 cacheID:(id)arg4;

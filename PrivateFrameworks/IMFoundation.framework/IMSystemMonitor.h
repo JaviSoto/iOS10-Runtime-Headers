@@ -105,6 +105,7 @@
 - (BOOL)watchesDataProtectionLockState;
 - (void)_registerForLoginWindowNotifications;
 - (void)_handleLoginWindowNotification:(id)arg1;
+- (void)_forceResumed;
 - (BOOL)isSetup;
 - (void)_setupStateChanged;
 - (void)_restoreDidStop;
@@ -118,7 +119,6 @@
 - (void)_overrideAndDisableIdleTimer:(BOOL)arg1;
 - (void)_setIdleState:(BOOL)arg1;
 - (void)setUsesSystemIdleState:(BOOL)arg1;
-- (void)_updateIdleState;
 - (void)_setSystemLockState:(BOOL)arg1;
 - (void)_setSystemScreenState:(BOOL)arg1;
 - (void)setUsesPowerNotifications:(BOOL)arg1;
@@ -134,7 +134,6 @@
 - (void)_screenSaverStopped:(id)arg1;
 - (void)_notificationCenterDidDisappear:(id)arg1;
 - (void)_notificationCenterWillAppear:(id)arg1;
-- (void)_resume:(id)arg1;
 - (void)_suspend:(id)arg1;
 - (void)_resumeEventsOnly:(id)arg1;
 - (void)_suspendEventsOnly:(id)arg1;
@@ -143,9 +142,11 @@
 - (void)_systemWillSleep;
 - (void)_systemDidWake;
 - (void)_receivedMemoryNotification;
+- (void)_resume:(id)arg1;
 - (BOOL)isSystemIdle;
 - (BOOL)usesPowerNotifications;
 - (void)_postScreenSaverStarted;
+- (void)_updateIdleState;
 - (void)_postScreenLocked;
 - (void)_deliverNotificationSelector:(SEL)arg1;
 - (void)_unregisterForLoginWindowNotifications;

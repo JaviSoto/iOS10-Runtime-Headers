@@ -61,8 +61,8 @@
 - (void)setUsesAppLaunchStats:(BOOL)arg1;
 - (id)publicToken;
 - (void)moveTopic:(id)arg1 fromList:(unsigned int)arg2 toList:(unsigned int)arg3;
+- (void)setEnabledTopics:(id)arg1;
 - (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2;
-- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;
 - (void)removeFromRunLoop;
 - (void)shutdown;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
@@ -91,9 +91,9 @@
 - (void)_connectIfNecessaryOnIvarQueue;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
 - (void)sendOutgoingMessage:(id)arg1;
+- (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;
 - (void)cancelOutgoingMessage:(id)arg1;
 - (unsigned int)messageSize;
-- (void)setEnabledTopics:(id)arg1;
 - (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
 - (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1;

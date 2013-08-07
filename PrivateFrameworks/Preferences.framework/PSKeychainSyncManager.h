@@ -13,8 +13,10 @@
     BOOL _joiningCircleAfterRecovery;
     int _circleNotificationToken;
     int _flow;
-    UIAlertView *_passwordPrompt;
     UIAlertView *_incorrectRecoveryCodesAlert;
+    UIAlertView *_iCSCSoftLimitAlert;
+    UIAlertView *_iCSCHardLimitAlert;
+    UIAlertView *_iCSCHardLimitWithApprovalAlert;
     UIAlertView *_devicePINChoiceAlert;
     UIAlertView *_devicePasscodeTooWeakAlert;
     UIAlertView *_devicePasscodeChangeAlert;
@@ -58,7 +60,6 @@
   /* Error parsing encoded ivar type info: @? */
     id _circleJoinCompletion;
 
-    UIViewController *_passwordPromptControllerHost;
     UIViewController *_resetPromptControllerHost;
     PSSetupController *_settingsSetupController;
     PSRootController *_buddyNavigationController;
@@ -75,7 +76,6 @@
 @property(copy) id changeSecurityCodeCompletion;
 @property(copy) id resetCompletion;
 @property(copy) id circleJoinCompletion;
-@property(retain) UIViewController * passwordPromptControllerHost;
 @property(retain) UIViewController * resetPromptControllerHost;
 @property(retain) PSSetupController * settingsSetupController;
 @property(retain) PSRootController * buddyNavigationController;
@@ -89,10 +89,11 @@
 - (id)buddyNavigationController;
 - (id)settingsSetupController;
 - (id)resetPromptControllerHost;
-- (id)passwordPromptControllerHost;
 - (id)circleJoinCompletion;
 - (id)resetCompletion;
 - (id)changeSecurityCodeCompletion;
+- (void)setPasswordPromptCompletion:(id)arg1;
+- (id)passwordPromptCompletion;
 - (void)promptForDevicePasscodeChangeToPasscode:(id)arg1;
 - (void)promptForPasswordIfNeededWithCompletion:(id)arg1;
 - (void)disableKeychainSyncWithCompletion:(id)arg1;
@@ -101,9 +102,8 @@
 - (void)showChangeSecurityCodeFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
 - (void)showRecoveryFlowWithNavigationController:(id)arg1 completion:(id)arg2;
 - (void)showEnableEscrowFlowWithSpecifier:(id)arg1 overController:(id)arg2 completion:(id)arg3;
+- (void)showContactAppleSupportPane;
 - (void)pinChoiceAlertDidChooseToUseDevicePasscode:(BOOL)arg1;
-- (void)setAppleIDPassword:(id)arg1;
-- (id)passwordPromptCompletion;
 - (int)stagedSecurityCodeType;
 - (void)_enableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;
 - (id)securityCodeRecoveryAttempt;
@@ -115,24 +115,27 @@
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
 - (void)_autoVetSMSValidationWithToken:(id)arg1;
 - (void)setSecurityCodeRecoveryAttempt:(id)arg1;
-- (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
-- (void)_showGenericEnableErrorAlert;
+- (void)_resetFromRecoveryFlow;
+- (void)_peerApprovalFromRecoveryFlow;
 - (void)_callCompletionWithStatus:(int)arg1 error:(id)arg2;
-- (void)_finishedWithStatus:(int)arg1 error:(id)arg2;
 - (void)joinCircleAfterRecovery:(BOOL)arg1 withCompletion:(id)arg2;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id)arg1;
+- (void)dismissAppleSupportPane:(id)arg1;
+- (void)_finishedWithStatus:(int)arg1 error:(id)arg2;
+- (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
 - (BOOL)circleWasReset;
 - (void)setStagedSecurityCode:(id)arg1 type:(int)arg2;
 - (BOOL)_changeSecurityCode:(id)arg1 type:(int)arg2 smsTarget:(id)arg3 smsTargetCountryInfo:(id)arg4 username:(id)arg5 password:(id)arg6 error:(id*)arg7;
 - (void)handleCircleChangedNotification;
 - (void)setCircleJoinCompletion:(id)arg1;
 - (void)setSettingsSetupController:(id)arg1;
-- (id)appleIDPassword;
 - (id)appleIDUsername;
 - (void)promptForPasswordIfNeededOverController:(id)arg1 withCompletion:(id)arg2;
-- (void)setPasswordPromptControllerHost:(id)arg1;
-- (void)setPasswordPromptCompletion:(id)arg1;
+- (void)_showGenericFlowErrorAlert;
+- (void)setAppleIDPassword:(id)arg1;
 - (void)setAppleIDUsername:(id)arg1;
+- (BOOL)registerUserCredentialsName:(id)arg1 password:(id)arg2 error:(id*)arg3;
+- (id)appleIDPassword;
 - (void)promptForPasswordOverController:(id)arg1 withCompletion:(id)arg2;
 - (BOOL)_errorRequiresPasswordPrompt:(id)arg1;
 - (void)_showResetFlowOverController:(id)arg1 withEnableBackupText:(BOOL)arg2 withCompletion:(id)arg3;

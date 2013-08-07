@@ -37,6 +37,7 @@
 
 
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;
+- (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (id)cropOverlay;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -68,7 +69,6 @@
 - (void)videoViewIsReadyToBeginPlayback:(id)arg1;
 - (BOOL)videoViewCanBeginPlayback:(id)arg1;
 - (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
-- (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2;
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;

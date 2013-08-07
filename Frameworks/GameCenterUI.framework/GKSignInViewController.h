@@ -137,12 +137,12 @@
 - (void)createSubviews;
 - (void)signIn;
 - (void)cancelSignIn;
-- (void)keyboardWillHideShow:(id)arg1;
 - (BOOL)shouldAdjustInsetsForKeyboard;
 - (void)showInputView;
 - (void)createConstraints;
 - (void)showPasswordChangeAlertWithURL:(id)arg1;
 - (void)finishAuthenticationWithError:(id)arg1;
+- (void)keyboardWillHideShow:(id)arg1;
 - (id)viewsToAnimateOutWhileDisappearingWithBubbleFlow;
 - (id)viewsToAnimateInWhileAppearingWithBubbleFlow;
 - (void)viewWillDisappearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;

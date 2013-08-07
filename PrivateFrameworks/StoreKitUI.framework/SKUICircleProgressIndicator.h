@@ -33,19 +33,19 @@
 @property(getter=isHighlighted) BOOL highlighted;
 
 + (id)_indeterminateImage;
-+ (id)_fillImage;
 + (id)_borderImage;
++ (id)_fillImage;
 
-- (void)_setHidesBorderView:(BOOL)arg1;
-- (void)_startIndeterminateAnimation;
-- (void)_animateValueOnDisplayLink:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIndeterminate:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)_setHidesBorderView:(BOOL)arg1;
+- (void)setIndeterminate:(BOOL)arg1;
+- (void)_animateValueOnDisplayLink:(id)arg1;
+- (void)_startIndeterminateAnimation;
 - (float)progress;
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;

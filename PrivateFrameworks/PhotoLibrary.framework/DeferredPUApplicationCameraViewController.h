@@ -22,6 +22,7 @@
 - (id)_initWithSessionID:(id)arg1 usesCameraLocationBundleID:(BOOL)arg2 startPreviewImmediately:(BOOL)arg3;
 - (void)setSpec:(id)arg1;
 - (id)spec;
+- (void)dealloc;
 - (BOOL)_navigationControllerShouldCrossFadeBottomBars:(id)arg1;
 - (id)navigationController:(id)arg1 interactionControllerUsingAnimator:(id)arg2;
 - (id)navigationController:(id)arg1 animatorForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

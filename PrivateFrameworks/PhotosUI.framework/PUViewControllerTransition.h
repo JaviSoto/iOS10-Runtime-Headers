@@ -22,10 +22,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFromViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialToViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFromViewFrame;
-- (void)setInteractive:(BOOL)arg1;
 - (id)_newInteractiveTransition;
 - (void)_setInteractiveProgress:(float)arg1;
 - (void)updateInteractiveTransitionProgress:(float)arg1;
+- (void)setInteractive:(BOOL)arg1;
 - (id)interactiveTransition;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalToViewFrame;
 - (id)initWithDuration:(double)arg1;

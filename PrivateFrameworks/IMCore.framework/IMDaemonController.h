@@ -95,7 +95,7 @@
 - (BOOL)addListenerID:(id)arg1 capabilities:(unsigned int)arg2;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(BOOL)arg3;
-- (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
+- (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2;
 - (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id)arg2;
 - (BOOL)_blocksConnectionAtResume;
 - (BOOL)remoteObjectExists;

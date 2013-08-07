@@ -119,6 +119,7 @@
     UITableViewCellDeleteConfirmationView *_swipeToDeleteConfirmationView;
     UITapGestureRecognizer *_swipeToDeleteCancelationGesture;
     UIScrollView *_wrapperView;
+    UIView *_clearBlendingView;
     float _swipeToDeleteDistancePulled;
     float _sectionCornerRadius;
     float _sectionBorderWidth;
@@ -383,7 +384,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundInset;
 - (int)separatorStyle;
 - (void)_animateSwipeCancelation;
-- (BOOL)_animating;
+- (BOOL)_isAnimating;
 - (void)_setShouldHaveFullLengthTopSeparator:(BOOL)arg1;
 - (void)_setShouldHaveFullLengthBottomSeparator:(BOOL)arg1;
 - (BOOL)showsReorderControl;
@@ -448,6 +449,7 @@
 - (BOOL)_needsSetup;
 - (void)_updateFullWidthSwipeDeletionView;
 - (void)_setAnimating:(BOOL)arg1;
+- (void)_setAnimating:(BOOL)arg1 clippingAdjacentCells:(BOOL)arg2;
 - (id)reuseIdentifier;
 - (void)setTextAlignment:(int)arg1;
 - (void)_setRightMarginWidth:(float)arg1;

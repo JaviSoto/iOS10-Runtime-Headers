@@ -23,9 +23,9 @@
     NSArray *_joints;
     SKNode *_node;
     float _angularVelocity;
-    struct CGPoint { 
-        float x; 
-        float y; 
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } _velocity;
 }
 
@@ -46,7 +46,7 @@
 @property unsigned int contactTestBitMask;
 @property(readonly) NSArray * joints;
 @property(readonly) SKNode * node;
-@property struct CGPoint { float x1; float x2; } velocity;
+@property struct CGVector { float x1; float x2; } velocity;
 @property float angularVelocity;
 
 + (id)bodyWithEdgeLoopFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -64,14 +64,14 @@
 - (id)joints;
 - (BOOL)isResting;
 - (void)applyAngularImpulse:(float)arg1;
-- (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)applyTorque:(float)arg1;
-- (void)applyForce:(struct CGPoint { float x1; float x2; })arg1;
-- (void)applyForce:(struct CGPoint { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)applyForce:(struct CGVector { float x1; float x2; })arg1;
+- (void)applyForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (float)mass;
 - (void)setResting:(BOOL)arg1;
 - (void)setAngularVelocity:(float)arg1;
-- (void)setVelocity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setVelocity:(struct CGVector { float x1; float x2; })arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
 - (void)setCollisionBitMask:(unsigned int)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
@@ -83,7 +83,7 @@
 - (void)setUsesPreciseCollisionDetection:(BOOL)arg1;
 - (void)setDynamic:(BOOL)arg1;
 - (float)angularVelocity;
-- (struct CGPoint { float x1; float x2; })velocity;
+- (struct CGVector { float x1; float x2; })velocity;
 - (unsigned int)contactTestBitMask;
 - (unsigned int)collisionBitMask;
 - (unsigned int)categoryBitMask;
@@ -98,7 +98,7 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)node;
-- (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1;
+- (void)applyImpulse:(struct CGVector { float x1; float x2; })arg1;
 - (float)angularDamping;
 - (float)linearDamping;
 - (void)setAngularDamping:(float)arg1;

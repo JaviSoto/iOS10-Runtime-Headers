@@ -59,6 +59,7 @@
 - (void)buttonHeld:(id)arg1;
 - (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(unsigned long long)arg3;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
+- (BOOL)allowsWirelessPlaybackForCurrentItem;
 - (id)playPauseButtonImage;
 - (id)tintColorForPart:(unsigned long long)arg1;
 - (BOOL)usesTintColorForControls;
@@ -73,8 +74,10 @@
 - (id)playButtonImage;
 - (id)pauseButtonImage;
 - (unsigned long long)_applyPossibleVisiblePartsToParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)_updateButtonImageForPart:(unsigned long long)arg1;
 - (void)_updateEnabledStates:(BOOL)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
@@ -82,14 +85,11 @@
 - (void)_isLikedDidChangeNotification:(id)arg1;
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (void)_timeMarkersAvailableNotification:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animated:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (BOOL)registeredForPlayerNotifications;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
+- (unsigned long long)disabledParts;
 - (void)unregisterForPlayerNotifications;
 - (void)registerForPlayerNotifications;
-- (BOOL)allowsWirelessPlaybackForCurrentItem;
-- (unsigned long long)disabledParts;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;

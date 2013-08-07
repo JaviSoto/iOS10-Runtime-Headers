@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_source> *_memoryWarningsSource;
     BOOL _clearsCacheOnLowMemoryWarnings;
     BOOL _clearsCacheOnApplicationBackground;
+    id _noteObserver;
 }
 
 @property BOOL clearsCacheOnLowMemoryWarnings;
@@ -18,10 +19,8 @@
 
 - (BOOL)clearsCacheOnApplicationBackground;
 - (BOOL)clearsCacheOnLowMemoryWarnings;
-- (void)_handleLowMemoryNotification:(id)arg1;
 - (void)setClearsCacheOnApplicationBackground:(BOOL)arg1;
 - (void)setClearsCacheOnLowMemoryWarnings:(BOOL)arg1;
-- (void)_handleLowMemoryEvent;
 - (id)init;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)removeObjectForKey:(id)arg1;

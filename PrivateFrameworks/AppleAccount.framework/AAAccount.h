@@ -48,6 +48,7 @@
 + (id)dataclassesBoundToPrimaryAccount;
 
 - (id)syncStoreIdentifier;
+- (void)updateAccountPropertiesWithHandler:(id)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;
 - (void)setFmipToken:(id)arg1;
 - (void)setNeedsToVerifyTerms:(BOOL)arg1;
@@ -56,7 +57,6 @@
 - (void)renewCredentialsForAppleIDWithHandler:(id)arg1;
 - (void)signInWithHandler:(id)arg1;
 - (void)setupChildMailAccountAndEnable:(BOOL)arg1 withEmail:(id)arg2;
-- (void)updateAccountPropertiesWithHandler:(id)arg1;
 - (void)flushCachedPassword;
 - (void)flushCachedTokens;
 - (void)removePasswordFromKeychain;

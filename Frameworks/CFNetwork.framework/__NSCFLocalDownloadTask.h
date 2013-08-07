@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class __NSCFLocalDownloadFile, NSObject<OS_dispatch_data>;
+@class NSDictionary, __NSCFLocalDownloadFile, NSObject<OS_dispatch_data>;
 
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask  {
     bool_canWrite;
@@ -27,6 +27,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _resumeCallback;
 
+    NSDictionary *_originalResumeInfo;
     long long _initialResumeSize;
 }
 
@@ -41,10 +42,12 @@
 @property unsigned long totalWrote;
 @property(copy) id resumeCallback;
 @property long long initialResumeSize;
+@property(retain) NSDictionary * originalResumeInfo;
 
 
 - (BOOL)isKindOfClass:(Class)arg1;
 - (void)dealloc;
+- (id)originalResumeInfo;
 - (void)setInitialResumeSize:(long long)arg1;
 - (long long)initialResumeSize;
 - (void)setResumeCallback:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)setWriteBuffer:(id)arg1;
 - (void)setDownloadFile:(id)arg1;
 - (void)setFileCompletion:(id)arg1;
+- (void)setOriginalResumeInfo:(id)arg1;
 - (bool)setupForNewDownload;
 - (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(id)arg2;
 - (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;

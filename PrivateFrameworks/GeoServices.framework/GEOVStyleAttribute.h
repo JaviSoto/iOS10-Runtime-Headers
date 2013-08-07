@@ -15,12 +15,12 @@
 @property int intValue;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
 - (void)setIntValue:(int)arg1;
 - (BOOL)hasIntValue;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)intValue;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

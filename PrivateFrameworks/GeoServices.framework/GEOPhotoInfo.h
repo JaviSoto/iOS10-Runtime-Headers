@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOPhotoInfo : PBCodable  {
+@interface GEOPhotoInfo : PBCodable <NSCopying> {
     int _size;
     NSString *_url;
     struct { 
@@ -18,18 +18,19 @@
 @property(retain) NSString * url;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSize:(BOOL)arg1;
 - (BOOL)hasUrl;
 - (BOOL)hasSize;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)size;
 - (void)setSize:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;

@@ -14,12 +14,10 @@
 
 
 - (void)_applyDefaultLayoutAttributes:(id)arg1 toView:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fillerViewInsetsForItemAtIndexPath:(id)arg1;
 - (BOOL)shouldAnimateTemporaryImageView;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_defaultAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_adjustDecorationViewAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
-- (id)_adjustRowFillerAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_adjustRenderedStripAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_adjustSectionHeaderAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_adjustCellAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;

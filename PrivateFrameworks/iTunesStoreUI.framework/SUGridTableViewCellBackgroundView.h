@@ -16,9 +16,7 @@
 @property(retain) UIImage * borderImage;
 
 
-- (id)borderImage;
 - (unsigned int)borderedEdges;
-- (void)setBorderImage:(id)arg1;
 - (void)setBorderedEdges:(unsigned int)arg1;
 - (void)_drawBorderToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawInteriorBordersWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -29,5 +27,7 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)backgroundColor;
 - (void)dealloc;
+- (id)borderImage;
+- (void)setBorderImage:(id)arg1;
 
 @end

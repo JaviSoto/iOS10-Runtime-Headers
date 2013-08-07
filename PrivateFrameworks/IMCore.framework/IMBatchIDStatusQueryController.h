@@ -14,10 +14,10 @@
 }
 
 
-- (void)setIMHandles:(id)arg1;
 - (void)_scheduleNextQuery:(double)arg1;
 - (void)_nextQuery:(id)arg1;
 - (void)_invalidateNextQueryTimer;
+- (void)setIMHandles:(id)arg1;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

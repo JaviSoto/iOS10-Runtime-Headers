@@ -26,11 +26,11 @@
 + (void)setUsePersistentConnection:(BOOL)arg1;
 + (void)_resetURL;
 
+- (void)cancelRequest;
+- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)cancelRequest;
-- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (id)init;
 - (void)dealloc;
 

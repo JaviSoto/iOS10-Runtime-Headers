@@ -98,7 +98,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (id)errorLog;
 - (id)accessLog;
-- (id)outputs;
 - (id)_mediaKind;
 - (void)_setTimebaseOnOutputs:(struct OpaqueCMTimebase { }*)arg1;
 - (void)setDisplaysExternalSubtitles:(BOOL)arg1;
@@ -326,6 +325,7 @@
 - (void)addOutput:(id)arg1;
 - (void)removeOutput:(id)arg1;
 - (id)_weakReference;
+- (id)outputs;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_duration;
 - (id)_URL;
 - (int)status;

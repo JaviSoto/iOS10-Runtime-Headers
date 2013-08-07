@@ -67,6 +67,7 @@
 @property(readonly) NSMutableDictionary * _clustersByObjectID;
 @property(readonly) NSMutableDictionary * _clustersByNodeObjectID;
 
++ (double)maximumClusterTime;
 
 - (id)_geocoder;
 - (void)_setMinimumNumberOfNodes:(unsigned int)arg1;

@@ -4,7 +4,7 @@
 
 @class GEOMapRegion, NSMutableArray;
 
-@interface GEORPResolution : PBCodable  {
+@interface GEORPResolution : PBCodable <NSCopying> {
     double _resolutionDate;
     GEOMapRegion *_displayRegion;
     NSMutableArray *_localizedChangeLists;
@@ -22,8 +22,6 @@
 @property(retain) NSMutableArray * localizedChangeLists;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)localizedChangeLists;
 - (id)updatedPlaces;
 - (void)setHasResolutionDate:(BOOL)arg1;
@@ -44,10 +42,13 @@
 - (void)setDisplayRegion:(id)arg1;
 - (void)setUpdatedPlaces:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

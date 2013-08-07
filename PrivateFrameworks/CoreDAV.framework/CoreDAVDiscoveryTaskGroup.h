@@ -33,6 +33,7 @@
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPaths:(id)arg7 requiredComplianceClass:(id)arg8;
 - (void)optionsTask:(id)arg1 error:(id)arg2;
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
+- (void)setShouldBailEarly:(BOOL)arg1;
 - (id)discoveredAccountInfo;
 - (void)setDiscoveredAccountInfo:(id)arg1;
 - (BOOL)shouldBailEarly;
@@ -43,7 +44,7 @@
 - (void)srvLookupTask:(id)arg1 error:(id)arg2;
 - (id)extractPrincipalURLFromPropFindTask:(id)arg1 error:(id*)arg2;
 - (void)propFindTaskFinished:(id)arg1;
-- (void)setShouldBailEarly:(BOOL)arg1;
+- (void)noteDefinitiveAuthFailureFromTask:(id)arg1;
 - (void)startWellKnownFallbackHeadTask:(id)arg1 withURL:(id)arg2;
 - (id)propFindProperties;
 - (void)completeDiscovery:(id)arg1 error:(id)arg2;

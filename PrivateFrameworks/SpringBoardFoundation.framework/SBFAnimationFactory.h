@@ -20,6 +20,7 @@
 + (void)animateWithSettings:(id)arg1 delay:(double)arg2 animations:(id)arg3 completion:(id)arg4;
 + (void)animateWithSettings:(id)arg1 options:(unsigned int)arg2 animations:(id)arg3 completion:(id)arg4;
 + (void)animateWithSettings:(id)arg1 animations:(id)arg2 completion:(id)arg3;
++ (id)factoryWithAnimationAttributes:(id)arg1;
 + (id)factoryWithSettings:(id)arg1;
 + (void)animateWithSettings:(id)arg1 delay:(double)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;
 

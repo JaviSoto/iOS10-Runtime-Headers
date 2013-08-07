@@ -120,6 +120,7 @@
     BOOL m_maximizing;
     unsigned int m_previousSpaceKeyBehavior;
     unsigned int m_previousReturnKeyBehavior;
+    BOOL m_usesCandidateSelection;
     BOOL m_showsCandidateBar;
     BOOL m_showsCandidateInline;
     BOOL committingCandidate;
@@ -208,7 +209,6 @@
 + (void)markPerformance:(id)arg1;
 + (float)additionalInstanceHeightLoadingForInterfaceOrientation:(int)arg1;
 + (BOOL)isSplit;
-+ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (float)additionalInstanceHeightForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (id)orientationKeyForOrientation:(int)arg1;
@@ -216,6 +216,7 @@
 + (Class)layoutClassForCurrentInputMode;
 + (Class)layoutClassForInputMode:(id)arg1 keyboardType:(int)arg2;
 + (struct CGSize { float x1; float x2; })_defaultSizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (void)releaseSharedInstance;
 + (id)activeInstance;
@@ -281,7 +282,6 @@
 - (void)setShouldSetInputModeInNextRun:(BOOL)arg1;
 - (BOOL)shouldSetInputModeInNextRun;
 - (void)setShowInputModeIndicator:(BOOL)arg1;
-- (void)setInputManagerState:(id)arg1;
 - (void)setGeometryDelegate:(id)arg1;
 - (id)geometryDelegate;
 - (BOOL)caretVisible;
@@ -312,6 +312,7 @@
 - (void)handleDelete;
 - (void)keyDeactivated;
 - (void)keyActivated;
+- (void)setInputManagerState:(id)arg1;
 - (void)forceShiftUpdateIfKeyboardStateChanged;
 - (void)forceShiftUpdate;
 - (BOOL)shiftLockedEnabled;
@@ -327,7 +328,7 @@
 - (void)generateAutocorrectionWithExecutionContext:(id)arg1;
 - (id)markedTextOverlay;
 - (void)unmarkText:(id)arg1;
-- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3;
+- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inputString:(id)arg3 searchString:(id)arg4;
 - (void)handleObserverCallback;
 - (void)setChangeNotificationDisabled:(BOOL)arg1;
 - (BOOL)changeNotificationDisabled;
@@ -537,6 +538,7 @@
 - (void)prepareForSelectionChange;
 - (id)inputManager;
 - (BOOL)hasEditableMarkedText;
+- (void)clearInputForMarkedText;
 - (id)inputStringFromPhraseBoundary;
 - (BOOL)splitTransitionInProgress;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
@@ -629,10 +631,10 @@
 - (BOOL)checkSpellingPreference;
 - (BOOL)autocorrectionPreference;
 - (void)setRivenSplitLock:(BOOL)arg1;
-- (void)syncInputManagerToKeyboardState;
 - (void)setSplitProgress:(float)arg1;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
+- (void)syncInputManagerToKeyboardState;
 - (void)recomputeActiveInputModesFromList:(id)arg1;
 - (void)updateInputManagerAutocapitalizationType;
 - (BOOL)autocapitalizationPreference;

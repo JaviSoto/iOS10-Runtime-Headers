@@ -34,10 +34,14 @@
 @property <PLDeletePhotosActionControllerDelegate> * delegate;
 @property int actionSheetStyle;
 
++ (id)allUsedElsewhereMessageCombinations;
++ (id)_usedElsewhereWarningTextForAssetCount:(int)arg1 inPhotoStreamCount:(int)arg2 iniPhotoCount:(int)arg3 inSomeAlbumCount:(int)arg4 affectedLocalAlbumsCount:(int)arg5 itemKindSuffix:(id)arg6 actualDeletionCount:(int)arg7;
 
 - (BOOL)deleteDuplicates;
 - (void)_setupActionSheet;
-- (void)_getDeleteActionSheetTitle:(id*)arg1 destructiveButtonTitle:(id*)arg2 cancelButtonTitle:(id*)arg3 forAssets:(id)arg4 additionalAssets:(id)arg5;
+- (void)_getDeleteActionSheetTitle:(id*)arg1 destructiveButtonTitle:(id*)arg2 cancelButtonTitle:(id*)arg3 forAssets:(id)arg4 additionalPhotoStreamAssets:(id)arg5;
+- (id)_usedElsewhereWarningTextForAssets:(id)arg1 additionalPhotoStreamAssets:(id)arg2 actualDeletionCount:(int)arg3;
+- (id)_cloudSharedWarningTextForAssets:(id)arg1;
 - (void)redisplayFromObject:(id)arg1 animated:(BOOL)arg2;
 - (void)showInView:(id)arg1 deleteCompletionHandler:(id)arg2 completionHandler:(id)arg3;
 - (void)showFromObject:(id)arg1 animated:(BOOL)arg2 deleteCompletionHandler:(id)arg3 completionHandler:(id)arg4;

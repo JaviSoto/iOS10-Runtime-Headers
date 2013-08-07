@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libmecabra.dylib
  */
 
-@class NSArray, NSManagedObjectContext, NSEntityDescription, NSString, NSPersistentStoreCoordinator, NSURL, NSManagedObjectModel;
+@class NSArray, NSMutableDictionary, NSManagedObjectContext, NSEntityDescription, NSString, NSPersistentStoreCoordinator, NSURL, NSManagedObjectModel;
 
 @interface MecabraCoreDataController : NSObject  {
     NSEntityDescription *_entityDescription;
@@ -16,6 +16,7 @@
     NSURL *_storeURL;
     NSString *_type;
     NSArray *_storedElementsForMerge;
+    NSMutableDictionary *_propertyDictionary;
 }
 
 @property(readonly) NSEntityDescription * entityDescription;
@@ -24,17 +25,21 @@
 @property(retain) NSManagedObjectModel * managedObjectModel;
 @property(retain) NSManagedObjectContext * managedObjectContext;
 @property(retain) NSPersistentStoreCoordinator * persistentStoreCoordinator;
+@property(retain) NSMutableDictionary * propertyDictionary;
 @property(retain) NSURL * storeURL;
 @property(retain) NSString * type;
 @property(retain) NSURL * localURL;
 @property(retain) NSArray * storedElementsForMerge;
 
++ (id)sharedDictionaryProperties;
++ (void)resetDatabaseWithType:(id)arg1 URL:(id)arg2;
 
 - (void)setStoreURL:(id)arg1;
+- (void)setPropertyDictionary:(id)arg1;
 - (void)setManagedObjectModel:(id)arg1;
 - (void)setLocalStoreURL:(id)arg1;
+- (void)refreshDatabase;
 - (void)tearDownDatabase;
-- (id)initWithType:(id)arg1 URL:(id)arg2;
 - (id)storedElementsForMerge;
 - (void)setStoredElementsForMerge:(id)arg1;
 - (id)copyUbiquityTokenInDefaults;
@@ -47,15 +52,23 @@
 - (id)databaseName;
 - (id)ubiquityTokenLookupKey;
 - (void)setUbiquityTokenInDefaults;
+- (id)initWithType:(id)arg1 URL:(id)arg2;
+- (id)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
 - (id)dictionaryValuesFromManagedObjects:(id)arg1;
 - (id)databasePropertyForKey:(id)arg1;
 - (void)setDatabaseProperty:(id)arg1 forKey:(id)arg2;
+- (void)flushDatabaseProperties;
 - (void)setValue:(id)arg1 forKey:(id)arg2 entry:(id)arg3;
+- (void)deleteAllElements;
 - (void)deleteEntry:(id)arg1;
+- (unsigned int)addEntryAndSave:(id)arg1;
 - (id)searchResultsWithValueDictionary:(id)arg1 sortDescriptors:(id)arg2;
 - (id)searchResultsWithValueDictionary:(id)arg1;
+- (id)propertyDictionary;
+- (id)propertyDictionary;
 - (void)prepareURLForDatabaseFile:(id)arg1;
 - (id)localInfoPlistURL;
+- (void)addEntryWithoutSaving:(id)arg1;
 - (BOOL)dictionaryEntryHasAllRequiredKeys:(id)arg1;
 - (id)entityDescriptionForContext:(id)arg1;
 - (id)searchResultsWithValueDictionary:(id)arg1 managedObjectContext:(id)arg2 sortDescriptors:(id)arg3;
@@ -63,7 +76,6 @@
 - (id)entriesToMerge;
 - (void)deleteAllMatchingEntries:(id)arg1;
 - (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
-- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
 - (void)setManagedObjectContext:(id)arg1;
 - (id)storeURL;
 - (void)setLocalURL:(id)arg1;

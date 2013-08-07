@@ -15,8 +15,8 @@
 @property(readonly) NSURLRequest * urlRequest;
 @property BOOL flushCache;
 
-+ (Class)responseClass;
 + (id)protocolVersion;
++ (Class)responseClass;
 
 - (BOOL)flushCache;
 - (id)urlCredential;

@@ -19,7 +19,7 @@
 
 + (BOOL)reloadOnStylesheetChange;
 
-- (id)_clutTextureForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
+- (void)setupClutTextureForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
 - (BOOL)rasterViewer;
 - (void)setRasterViewer:(BOOL)arg1;
 - (void)stylesheetDidChange;

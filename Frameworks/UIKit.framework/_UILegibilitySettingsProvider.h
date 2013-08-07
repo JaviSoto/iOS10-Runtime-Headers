@@ -5,12 +5,17 @@
 @class UIColor;
 
 @interface _UILegibilitySettingsProvider : NSObject  {
+    BOOL _hasContrast;
     BOOL _accumulatorIsPrimed;
     float _mostRecentSaturation;
     float _accumulatedSaturation;
     float _mostRecentBrightness;
     float _accumulatedBrightness;
     UIColor *_contentColor;
+    float _mostRecentContrast;
+    float _accumulatedContrast;
+    float _mostRecentLuminance;
+    float _accumulatedLuminance;
     int _currentStyle;
     double _nextChangeBarrier;
 }
@@ -20,30 +25,48 @@
 @property float mostRecentBrightness;
 @property float accumulatedBrightness;
 @property(retain) UIColor * contentColor;
+@property float mostRecentContrast;
+@property float accumulatedContrast;
+@property float mostRecentLuminance;
+@property float accumulatedLuminance;
+@property BOOL hasContrast;
 @property BOOL accumulatorIsPrimed;
 @property double nextChangeBarrier;
 @property int currentStyle;
 
 + (int)styleForContentColor:(id)arg1;
++ (int)styleForContentColor:(id)arg1 contrast:(float)arg2;
 
+- (float)mostRecentLuminance;
+- (float)mostRecentContrast;
 - (float)mostRecentBrightness;
-- (void)setMostRecentSaturation:(float)arg1;
 - (float)mostRecentSaturation;
+- (BOOL)accumulateChangesToContentColor:(id)arg1;
 - (id)contentColor;
 - (double)nextChangeBarrier;
 - (void)setNextChangeBarrier:(double)arg1;
 - (void)setCurrentStyle:(int)arg1;
+- (float)accumulatedContrast;
 - (void)setAccumulatorIsPrimed:(BOOL)arg1;
-- (void)setAccumulatedBrightness:(float)arg1;
 - (void)setAccumulatedSaturation:(float)arg1;
+- (void)setAccumulatedLuminance:(float)arg1;
+- (void)setAccumulatedBrightness:(float)arg1;
 - (BOOL)accumulatorIsPrimed;
+- (BOOL)hasContrast;
+- (void)setHasContrast:(BOOL)arg1;
+- (void)setAccumulatedContrast:(float)arg1;
+- (void)setMostRecentSaturation:(float)arg1;
+- (void)setMostRecentLuminance:(float)arg1;
+- (void)setMostRecentContrast:(float)arg1;
 - (void)setMostRecentBrightness:(float)arg1;
 - (void)setContentColor:(id)arg1;
-- (float)accumulatedBrightness;
 - (float)accumulatedSaturation;
-- (BOOL)accumulateChangesToContentColor:(id)arg1;
+- (float)accumulatedLuminance;
+- (float)accumulatedBrightness;
+- (BOOL)accumulateChangesToContentColor:(id)arg1 contrast:(float)arg2;
 - (void)clearContentColorAccumulator;
 - (id)settings;
 - (int)currentStyle;
+- (void)pl_primeForUseWithCameraOverlays;
 
 @end

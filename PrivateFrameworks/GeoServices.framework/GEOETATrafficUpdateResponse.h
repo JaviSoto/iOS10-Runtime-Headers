@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOETATrafficUpdateResponse : PBCodable  {
+@interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
     NSMutableArray *_routes;
     int _status;
     struct { 
@@ -17,8 +17,6 @@
 @property(retain) NSMutableArray * routes;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (BOOL)hasStatus;
 - (id)routes;
@@ -28,12 +26,15 @@
 - (void)addRoute:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

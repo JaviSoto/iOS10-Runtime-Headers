@@ -75,9 +75,9 @@
 @property int lineSpacing;
 @property(getter=_synthesizedAttributedText,setter=_setSynthesizedAttributedText:,retain) NSAttributedString * _synthesizedAttributedText;
 
-+ (struct CGSize { float x1; float x2; })_legacy_adjustSizeForWebKitConstraining:(struct CGSize { float x1; float x2; })arg1 withFont:(id)arg2;
 + (id)_defaultAttributes;
 + (id)defaultFont;
++ (struct CGSize { float x1; float x2; })_legacy_adjustSizeForWebKitConstraining:(struct CGSize { float x1; float x2; })arg1 withFont:(id)arg2;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -169,8 +169,10 @@
 - (void)_setShadow:(id)arg1;
 - (id)highlightedTextColor;
 - (BOOL)_updateScaledMetricsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_baselineOffsetDidChange;
 - (void)_invalidateTextSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3;
+- (id)_stringDrawingContext;
 - (void)setLetterpressStyle:(id)arg1;
 - (BOOL)adjustsLetterSpacingToFitWidth;
 - (BOOL)_attributedStringHasAttributesNotCoveredByPrimitives;
@@ -187,7 +189,6 @@
 - (id)_associatedScalingLabel;
 - (id)_disabledFontColor;
 - (struct CGSize { float x1; float x2; })textSize;
-- (id)_stringDrawingContext;
 - (void)updateConstraints;
 - (int)_measuredNumberOfLines;
 - (void)setBaselineAdjustment:(int)arg1;

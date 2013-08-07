@@ -16,6 +16,7 @@
     NSArray *defaultRawInputModes;
     NSArray *defaultInputModes;
     NSArray *defaultNormalizedInputModes;
+    NSString *_inputModeContextIdentifier;
     <UIKeyboardInputModeControllerDelegate> *_delegate;
 }
 
@@ -27,6 +28,7 @@
 @property(retain) UIKeyboardInputMode * currentInputMode;
 @property(readonly) UIKeyboardInputMode * currentPublicInputMode;
 @property(readonly) BOOL containsDictationSupportedInputMode;
+@property(copy) NSString * inputModeContextIdentifier;
 @property <UIKeyboardInputModeControllerDelegate> * delegate;
 @property(retain) NSString * currentLocale;
 @property(retain) NSString * currentLanguage;
@@ -76,7 +78,9 @@
 - (void)setNormalizedInputModes:(id)arg1;
 - (void)setKeyboardInputModes:(id)arg1;
 - (void)setCurrentInputMode:(id)arg1;
+- (void)setInputModeContextIdentifier:(id)arg1;
 - (id)activeInputModes;
+- (id)inputModeContextIdentifier;
 - (id)normalizedEnabledInputModeIdentifiers;
 - (id)currentPublicInputMode;
 - (id)currentInputMode;

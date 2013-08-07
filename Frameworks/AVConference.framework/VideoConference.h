@@ -92,6 +92,7 @@
     BOOL shouldPrioritizeParticipantIDForSIPInvite;
     BOOL shouldResumeAudio;
     BOOL shouldResumeVideo;
+    unsigned int timeStampUpdateCounter;
     NSObject<OS_dispatch_queue> *delegateNotificationQueue;
     int conferenceOperatingMode;
     BOOL isValid;

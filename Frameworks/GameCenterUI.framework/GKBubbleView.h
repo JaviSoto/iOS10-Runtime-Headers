@@ -41,6 +41,7 @@
 @property float moveAnimationScale;
 
 
+- (void)setHighlightView:(id)arg1;
 - (void)setMoveAnimationScale:(float)arg1;
 - (void)setMoveAnimationRadiansPerSecond:(float)arg1;
 - (void)setMoveAnimationAngle:(float)arg1;
@@ -58,7 +59,6 @@
 - (int)numFaces;
 - (void)setNumVertices:(int)arg1;
 - (int)numVertices;
-- (void)setHighlightView:(id)arg1;
 - (void)touchEnded;
 - (void)touchBegan;
 - (void)setAnimationStateBasedOnBubble:(id)arg1;

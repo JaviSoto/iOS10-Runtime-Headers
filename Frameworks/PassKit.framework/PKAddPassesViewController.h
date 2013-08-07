@@ -37,12 +37,12 @@
 - (void)setAllowsPassIngestion:(BOOL)arg1;
 - (id)initWithPass:(id)arg1;
 - (BOOL)succeeded;
-- (id)remoteViewController;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)URL;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (int)modalTransitionStyle;
 - (void)viewWillDisappear:(BOOL)arg1;

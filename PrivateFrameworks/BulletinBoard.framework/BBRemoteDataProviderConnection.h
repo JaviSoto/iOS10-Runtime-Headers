@@ -15,6 +15,7 @@
 }
 
 
+- (id)appBundleID;
 - (id)initWithConnection:(id)arg1 onQueue:(id)arg2 delegate:(id)arg3;
 - (void)_noteConnectionStateChanged;
 - (void)removeDataProviderWithSectionID:(id)arg1;
@@ -26,7 +27,6 @@
 - (void)invalidate;
 - (void)dealloc;
 - (void)resume;
-- (id)appBundleID;
 - (id)serviceName;
 
 @end

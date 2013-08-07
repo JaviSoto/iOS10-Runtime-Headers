@@ -32,25 +32,25 @@
 @property unsigned long long disabledParts;
 
 
+- (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;
+- (void)performSelector:(SEL)arg1 whenTickingPastTime:(double)arg2;
 - (double)_playableDuration;
 - (void)_endSliderTracking;
 - (void)_itemDurationDidChangeNotification:(id)arg1;
-- (void)performSelector:(SEL)arg1 whenTickingPastTime:(double)arg2;
-- (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;
-- (id)videoViewController;
-- (void)hideAlternateTracks;
-- (void)showAlternateTracks;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
+- (void)setVideoViewController:(id)arg1;
+- (id)videoViewController;
+- (void)hideAlternateTracks;
+- (void)showAlternateTracks;
 - (BOOL)updateTimeBasedValues;
+- (unsigned long long)disabledParts;
+- (void)startTicking;
+- (void)stopTicking;
 - (void)unregisterForPlayerNotifications;
 - (void)registerForPlayerNotifications;
-- (unsigned long long)disabledParts;
-- (void)stopTicking;
-- (void)startTicking;
-- (void)setVideoViewController:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)_tickNotification:(id)arg1;

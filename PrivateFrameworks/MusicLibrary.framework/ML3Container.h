@@ -23,6 +23,7 @@
 + (void)populateStaticItemsOfDynamicContainersInLibrary:(id)arg1;
 + (void)deleteAutoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;
++ (BOOL)updateBuiltInSmartPlaylistNamesForCurrentLanguage:(id)arg1;
 + (BOOL)smartCriteriaCanBeEvaluated:(id)arg1;
 + (id)_mediaTypesForTracksWithSwappedPersistentIDs:(const long long*)arg1 count:(int)arg2 connection:(id)arg3;
 + (id)_mediaTypesForTracksWithSwappedPersistentIDsInArray:(id)arg1 connection:(id)arg2;

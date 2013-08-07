@@ -34,20 +34,19 @@
 - (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })tileSize;
 - (void)layoutSublayers;
+- (void)renderInContext:(struct CGContext { }*)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_validateTiles;
 - (void)resumeTiling;
 - (void)suspendTiling;
+- (void)_validateTiles;
+- (void)setUsesTiledLayers:(BOOL)arg1;
+- (BOOL)usesTiledLayers;
 - (void)_hideAndShowTiles:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_cullAndAddLayers:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_buildTilesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)windowDidRotate:(id)arg1;
-- (void)windowWillRotate:(id)arg1;
 - (void)drawDirtyLayer:(id)arg1 intoContext:(struct CGContext { }*)arg2;
 - (id)init;
 - (void)dealloc;
-- (BOOL)usesTiledLayers;
-- (void)setUsesTiledLayers:(BOOL)arg1;
 
 @end

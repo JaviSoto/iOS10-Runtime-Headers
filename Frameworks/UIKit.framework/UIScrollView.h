@@ -151,6 +151,7 @@
         unsigned int wantsConstrainedContentSize : 1; 
         unsigned int updateInsetBottom : 1; 
         unsigned int beingDraggedByChildScrollView : 1; 
+        unsigned int adjustsTargetsOnContentOffsetChanges : 1; 
     } _scrollViewFlags;
     BOOL _useContentDimensionVariablesForConstraintLowering;
     id _scrollTestParameters;
@@ -164,6 +165,7 @@
     } _zoomAnchorPoint;
 }
 
+@property(getter=_adjustsTargetsOnContentOffsetChanges,setter=_setAdjustsTargetsOnContentOffsetChanges:) BOOL adjustsTargetsOnContentOffsetChanges;
 @property(getter=isProgrammaticScrollEnabled) BOOL programmaticScrollEnabled;
 @property(getter=_isScrollingToTop,readonly) BOOL scrollingToTop;
 @property(getter=_isAnimatingScroll,readonly) BOOL isAnimatingScroll;
@@ -364,6 +366,8 @@
 - (void)setZoomEnabled:(BOOL)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)_setAdjustsTargetsOnContentOffsetChanges:(BOOL)arg1;
+- (BOOL)_adjustsTargetsOnContentOffsetChanges;
 - (BOOL)_isRectFullyVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)_panGestureRecognizer;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-@class NSDictionary, AVAudioPayload, VideoAttributes, NSMutableArray, NSString, NSObject<VCCallSessionDelegate>, VCJitterBuffer, GKInterfaceListener, NSCondition, NSObject<VideoConferenceChannelQualityDelegate>, NSObject<VideoConferenceRealTimeChannel>, VCCapabilities, NSData, AVAudioTier, AVAudioTierPicker, GKRingBuffer, RTCReporting, VCTransport, TCPTunnelClient, NSObject<OS_dispatch_queue>, VCCallLinkCongestionDetector, NSObject<OS_dispatch_source>, TimingCollection, LoopbackSocketTunnel, NSArray, VCSessionMessaging, VCBitrateArbiter, VCWCMClient, VCCallInfo;
+@class NSDictionary, AVAudioPayload, VideoAttributes, NSMutableArray, NSString, NSObject<VCCallSessionDelegate>, VCJitterBuffer, GKInterfaceListener, NSCondition, NSObject<VideoConferenceChannelQualityDelegate>, NSObject<VideoConferenceRealTimeChannel>, VCCapabilities, NSData, AVAudioTier, AVAudioTierPicker, GKRingBuffer, VCTransport, TCPTunnelClient, NSObject<OS_dispatch_queue>, VCCallLinkCongestionDetector, NSObject<OS_dispatch_source>, TimingCollection, LoopbackSocketTunnel, NSArray, VCSessionMessaging, VCBitrateArbiter, VCWCMClient, VCCallInfo;
 
 @interface VCCallSession : NSObject <LoopbackSocketTunnelDelegate> {
     NSObject<VCCallSessionDelegate> *delegate;
@@ -424,7 +424,7 @@
         float width; 
         float height; 
     } expectedDecodeSize;
-    RTCReporting *reportingAgent;
+    struct opaqueRTCReporting { } *reportingAgent;
     int reportUpdateInterval;
     int reportReportFrequency;
     BOOL enableAFRCDump;
@@ -500,14 +500,15 @@
 @property unsigned int remoteFrameHeight;
 @property int operatingMode;
 @property(readonly) BOOL isSKEOptimizationEnabled;
+@property(readonly) BOOL isRemoteMediaStalled;
 
 + (id)keyPathsForValuesAffectingNetworkQuality;
 
 - (id)peerCN;
 - (void)callAlarmsWithRTPTimeStamp:(unsigned int)arg1;
 - (void)updateVideoQualityNotification:(double)arg1;
-- (BOOL)initializeVideoReceiver:(id*)arg1 reportingAgent:(id)arg2;
-- (BOOL)initializeVideoTransmitter:(id*)arg1 encodeRule:(id)arg2 unpausing:(BOOL)arg3 reportingAgent:(id)arg4;
+- (BOOL)initializeVideoReceiver:(id*)arg1 reportingAgent:(struct opaqueRTCReporting { }*)arg2;
+- (BOOL)initializeVideoTransmitter:(id*)arg1 encodeRule:(id)arg2 unpausing:(BOOL)arg3 reportingAgent:(struct opaqueRTCReporting { }*)arg4;
 - (BOOL)onCaptureFrame:(struct __CVBuffer { }*)arg1 audioTS:(unsigned int)arg2 audioHT:(double)arg3 videoHT:(double)arg4 cameraBits:(unsigned char)arg5;
 - (void)onPlayVideo:(struct __CVBuffer { }*)arg1 frameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 cameraStatusBits:(unsigned char)arg3;
 - (double)sessionReceivingBitrate;
@@ -615,6 +616,7 @@
 - (void)wcmSetCallConfig:(unsigned int)arg1 interferenceLevel:(unsigned int)arg2;
 - (void)setSrtpKeyBytes:(id)arg1;
 - (id)srtpKeyBytes;
+- (BOOL)isRemoteMediaStalled;
 - (int)operatingMode;
 - (void)setRemoteFrameHeight:(unsigned int)arg1;
 - (unsigned int)remoteFrameHeight;
@@ -723,6 +725,7 @@
 - (void)timeoutUnfinishedConnection;
 - (BOOL)handshakeComplete:(struct SSLContext { }*)arg1 withError:(struct __CFError {}**)arg2;
 - (void)updateLastReceivedPacket:(BOOL)arg1;
+- (void)updateLastReceivedAudioTime;
 - (id)qualityDelegate;
 - (void)setQualityDelegate:(id)arg1;
 - (void)remoteCellTechStateUpdate:(int)arg1 maxRemoteBitrate:(unsigned int)arg2;
@@ -789,8 +792,8 @@
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)setRequiresWifi:(BOOL)arg1;
 - (BOOL)requiresWifi;
-- (id)sessionID;
 - (void)setSessionID:(id)arg1;
+- (id)sessionID;
 - (double)packetLossRate;
 - (unsigned long)callID;
 - (int)signalStrength;

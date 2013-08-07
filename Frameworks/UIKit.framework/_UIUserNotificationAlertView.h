@@ -14,10 +14,10 @@
 
 - (BOOL)isVisible;
 - (void)dealloc;
-- (void)setRemoteViewController:(id)arg1;
 - (void)_cancelUserNotification;
 - (void)cancelAlertView;
 - (void)setHostedWindow:(id)arg1;
+- (void)setRemoteViewController:(id)arg1;
 - (BOOL)runsModal;
 - (void)setRunsModal:(BOOL)arg1;
 - (id)textFieldAtIndex:(int)arg1;

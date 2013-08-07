@@ -27,9 +27,9 @@
 - (int)_validationStatusForAlias:(id)arg1;
 - (id)_aliasStrings;
 - (id)certForURI:(id)arg1;
+- (void)clearCallerID;
 - (BOOL)_isDeviceRegistered;
 - (void)_updateAccountStatusToUnregistered:(BOOL)arg1;
-- (void)clearCallerID;
 - (void)refreshRegistration;
 - (void)loginServiceSession;
 - (void)logoutServiceSession;

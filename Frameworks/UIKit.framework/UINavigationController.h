@@ -15,6 +15,7 @@
     UIToolbar *_toolbar;
     UIView *_navigationTransitionView;
     float _bottomInsetDelta;
+    float _statusBarHeightForHideShow;
     UIViewController *_disappearingViewController;
     <UINavigationControllerDelegate> *_delegate;
     int _savedNavBarStyleBeforeSheet;
@@ -62,6 +63,8 @@
         unsigned int isCrossfadingOutTabBar : 1; 
         unsigned int isCrossfadingInTabBar : 1; 
         unsigned int skipContentInsetCalculation : 1; 
+        unsigned int neverInWindow : 1; 
+        unsigned int useCurrentStatusBarHeight : 1; 
     } _navigationControllerFlags;
     BOOL _interactiveTransition;
     BOOL __usingBuiltinAnimator;
@@ -169,7 +172,6 @@
 - (void)setAvoidMovingNavBarOffscreenBeforeUnhiding:(BOOL)arg1;
 - (BOOL)avoidMovingNavBarOffscreenBeforeUnhiding;
 - (void)setPretendNavBarHidden:(BOOL)arg1;
-- (void)_setClipUnderlapWhileTransitioning:(BOOL)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (Class)navigationBarClass;
 - (void)_setBuiltinTransitionGap:(float)arg1;
@@ -178,6 +180,7 @@
 - (void)_setClipsToBounds:(BOOL)arg1;
 - (void)_setViewControllers:(id)arg1 transition:(int)arg2;
 - (void)setViewControllers:(id)arg1;
+- (void)_setUseCurrentStatusBarHeight:(BOOL)arg1;
 - (void)_setDidExplicitlyHideTabBar:(BOOL)arg1;
 - (void)_setCrossfadingInTabBar:(BOOL)arg1;
 - (void)_setCrossfadingOutTabBar:(BOOL)arg1;
@@ -186,6 +189,7 @@
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithRootViewController:(id)arg1;
 - (void)_layoutTopViewControllerOutOfSheet;
+- (void)_setClipUnderlapWhileTransitioning:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)pretendNavBarHidden;
 - (void)_layoutTopViewControllerInSheetWithPopoverView:(id)arg1;
@@ -244,13 +248,14 @@
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_startInteractiveNavbarTransition;
 - (void)_positionPaletteHidden:(BOOL)arg1 edge:(unsigned int)arg2;
+- (BOOL)_useCurrentStatusBarHeight;
 - (void)_positionNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2;
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(int)arg2 edge:(unsigned int*)arg3 duration:(double*)arg4;
 - (int)lastOperation;
 - (BOOL)wasLastOperationAnimated;
 - (void)_repositionPaletteWithNavigationBarHidden:(BOOL)arg1 duration:(double)arg2;
-- (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
 - (void)_layoutTopViewController;
+- (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
 - (void)_setNavigationBarHidesCompletelyOffscreen:(BOOL)arg1;
 - (void)_positionPaletteHidden:(BOOL)arg1 edge:(unsigned int)arg2 initialOffset:(float)arg3;
 - (struct CGPoint { float x1; float x2; })_computeTopBarCenter:(id)arg1 hidden:(BOOL)arg2 edge:(unsigned int)arg3 center:(struct CGPoint { float x1; float x2; })arg4 offset:(float)arg5;
@@ -361,6 +366,7 @@
 - (id)_transitionController;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
+- (BOOL)_reallyWantsFullScreenLayout;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -369,6 +375,7 @@
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
+- (void)_didGainChildScrollView:(id)arg1;
 - (void)viewDidUnload;
 - (void)setSearchBarHidNavBar:(BOOL)arg1;
 - (void)loadView;

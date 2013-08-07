@@ -4,15 +4,13 @@
 
 @class NSMutableArray;
 
-@interface GEONameInfoList : PBCodable  {
+@interface GEONameInfoList : PBCodable <NSCopying> {
     NSMutableArray *_nameInfos;
 }
 
 @property(retain) NSMutableArray * nameInfos;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)nameInfoAtIndex:(unsigned int)arg1;
 - (void)clearNameInfos;
 - (unsigned int)nameInfosCount;
@@ -20,10 +18,13 @@
 - (void)setNameInfos:(id)arg1;
 - (id)nameInfos;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

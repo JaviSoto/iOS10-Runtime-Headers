@@ -12,6 +12,7 @@
     BOOL __userDidDismissPlaceholder;
     BOOL __visibleInterfaceUpdateScheduled;
     BOOL __invitationsPopoverShowPending;
+    BOOL __libraryUpdatingPreviouslyExpired;
     PUFeedViewControllerSpec *_spec;
     int _contentType;
     NSDate *__mostRecentContentDate;
@@ -96,6 +97,7 @@
 @property(setter=_setSectionInfosWithCommentChanges:,retain) NSMutableSet * _sectionInfosWithCommentChanges;
 @property(setter=_setUpdatedAssets:,retain) NSMutableSet * _updatedAssets;
 @property(getter=_isInvitationsPopoverShowPending,setter=_setInvitationsPopoverShowPending:) BOOL _invitationsPopoverShowPending;
+@property(getter=_isLibraryUpdatingPreviouslyExpired,setter=_setLibraryUpdatingPreviouslyExpired:) BOOL _libraryUpdatingPreviouslyExpired;
 
 + (void)initialize;
 
@@ -108,6 +110,7 @@
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (id)_albumStreamActivity;
+- (id)collectionViewForCurrentInterfaceOrientation;
 - (void)didTapButtonInFeedTextCell:(id)arg1;
 - (void)didTapCommentButtonInFeedImageCell:(id)arg1;
 - (void)didTapOverlayPlayButtonInFeedImageCell:(id)arg1;
@@ -175,6 +178,8 @@
 - (BOOL)_viewDidAppear;
 - (BOOL)_shouldHideHeaderForSectionWithType:(int)arg1;
 - (BOOL)_shouldJoinSectionInfo:(id)arg1 withSectionInfo:(id)arg2 collectionViewType:(int)arg3;
+- (int)_typeForSectionInfo:(id)arg1;
+- (BOOL)_shouldHideSectionInfo:(id)arg1 forCollectionView:(id)arg2;
 - (void)_getPhotoBrowserController:(out id*)arg1 transition:(out id*)arg2 withOptions:(int)arg3;
 - (BOOL)_setupBrowsingFromItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
 - (void)_configureTextCell:(id)arg1 forHeaderOfGroupID:(id)arg2 inCollectionView:(id)arg3;
@@ -224,6 +229,10 @@
 - (BOOL)_isCollectionViewEmptyForInterfaceOrientation:(int)arg1;
 - (BOOL)_shouldHideSectionWithType:(int)arg1 inCollectionViewType:(int)arg2;
 - (BOOL)_userDidDismissPlaceholder;
+- (BOOL)_shouldShowTransitionUI;
+- (BOOL)_isLibraryUpdatingTimeoutExpired;
+- (BOOL)_isLibraryUpdatingPreviouslyExpired;
+- (void)_setLibraryUpdatingPreviouslyExpired:(BOOL)arg1;
 - (id)_sharedAlbumList;
 - (void)_setLastPreheatedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setPreheatedAssetsByFormat:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class UITableView, NSString, NSObject<SLMicroBlogSheetDelegate>, NSObject<SLMicroBlogMentionsDelegate>, NSMutableArray;
+@class NSArray, NSString, NSObject<SLMicroBlogSheetDelegate>, UITableView, NSObject<SLMicroBlogMentionsDelegate>;
 
 @interface SLMicroBlogMentionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSObject<SLMicroBlogSheetDelegate> *_sheetDelegate;
-    NSMutableArray *_mentions;
+    NSArray *_mentions;
     NSString *_searchString;
     UITableView *_tableView;
     NSObject<SLMicroBlogMentionsDelegate> *_delegate;
@@ -18,8 +18,9 @@
 
 - (void)chooseRow:(int)arg1;
 - (void)completeWithSelectedMention:(id)arg1;
-- (id)currentResults;
-- (void)clearResults;
+- (id)mentions;
+- (void)setMentions:(id)arg1;
+- (void)updateMentions;
 - (id)initWithSheetDelegate:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -308,6 +308,8 @@
 - (void)_captureTimerFired;
 - (void)_finalizeAndBeginNewAvalancheSession;
 - (void)_finalizeExistingAvalancheSession;
+- (void)_extendAvalancheSession;
+- (void)_ensureValidAvalancheSession;
 - (void)setUserInteractionLoggingEnabled:(BOOL)arg1;
 - (void)_flipToBlurredPreviewWithCompletionBlock:(id)arg1;
 - (void)_snapshotAndAbsorbPreviewWithCompletionBlock:(id)arg1;
@@ -327,6 +329,8 @@
 - (BOOL)_pointIsOnPanoControls:(struct CGPoint { float x1; float x2; })arg1;
 - (int)previewViewAspectMode;
 - (void)cropOverlayWasToggled:(id)arg1;
+- (void)suspendCamera;
+- (void)resumeCamera;
 - (BOOL)_didEverMoveToWindow;
 - (void)hideZoomSlider;
 - (void)_startZoomSliderTimer;
@@ -334,7 +338,6 @@
 - (BOOL)_toggleButtonShouldBeHidden;
 - (BOOL)_optionsButtonShouldBeHidden;
 - (BOOL)_flashButtonShouldBeHidden;
-- (void)_teardownPanoUI;
 - (void)didPlayVideoRecordingSound;
 - (void)timeLapseTimerFired;
 - (id)_previewImageWell;
@@ -354,10 +357,11 @@
 - (struct __CFString { }*)_aggregateDictionaryKeyForCameraMode:(int)arg1 device:(int)arg2;
 - (id)_flashButton;
 - (void)_updateForStartTransitionToShowFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_blurredFromSuspension;
 - (void)_rotateCameraControlsAndInterface;
 - (void)_updateHardwareLockIndicatorOrientationWithDeviceOrientation:(int)arg1;
 - (int)_glyphOrientationForCameraOrientation:(int)arg1;
+- (void)_updateTopBarOrientationWithDeviceOrientation:(int)arg1;
+- (void)_updateTopBarStyleForDeviceOrientation:(int)arg1;
 - (int)_deferredModeIndex;
 - (int)_pendingModeIndex;
 - (int)selectedModeIndex;
@@ -398,9 +402,13 @@
 - (BOOL)_shouldHideHDRBadgeForMode:(int)arg1;
 - (BOOL)_shouldHideHDRButtonForMode:(int)arg1;
 - (BOOL)_shouldHideFlashButtonForMode:(int)arg1;
+- (BOOL)_shouldHideTopBarForMode:(int)arg1;
 - (int)_bottomBarBackgroundStyleForMode:(int)arg1;
 - (int)_topBarBackgroundStyleForMode:(int)arg1;
 - (BOOL)_hideGridViewForFilterSelection;
+- (BOOL)_blurredFromSuspension;
+- (void)_showControlsForReturningFromSuspensionAnimated:(BOOL)arg1;
+- (void)_hideControlsForSuspensionAnimated:(BOOL)arg1;
 - (void)_setBlurredFromSuspension:(BOOL)arg1;
 - (id)_newSnapshotView;
 - (void)_performCaptureBlink;
@@ -408,7 +416,7 @@
 - (BOOL)_shouldHideGridView;
 - (void)_setHideGridViewForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateGridVisibilityAnimated:(BOOL)arg1;
-- (void)_layoutHardwareLockIndicator;
+- (void)_layoutHardwareLockIndicatorForOrientation:(int)arg1;
 - (void)_createHardwareLockIndicatorIfNecessary;
 - (int)photoFlashModeBeforeHDR;
 - (void)setPhotoFlashModeBeforeHDR:(int)arg1;
@@ -417,6 +425,7 @@
 - (void)_updateFlashMode:(int)arg1;
 - (void)_updateIsNonDefaultFlashMode:(int)arg1;
 - (void)setHDRIsOn:(BOOL)arg1;
+- (void)_snapshotAndHideTopBarAnimated:(BOOL)arg1;
 - (void)_destroyAllControls;
 - (void)_createElapsedTimeViewIfNecessary;
 - (void)_createStillDuringVideoButtonIfNecessary;
@@ -451,7 +460,6 @@
 - (void)_handleFocusTap:(id)arg1;
 - (BOOL)_handleEffectsGridTap:(id)arg1;
 - (BOOL)_pointIsWithinOverlayView:(struct CGPoint { float x1; float x2; })arg1 hitView:(id*)arg2;
-- (void)_updateHardwareLockIndicatorVisibility;
 - (void)setPreviewViewAspectMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })aspectFaceRectFromSquareFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
 - (void)_startFaceFadeOutTimerWithTimeInterval:(double)arg1;
@@ -459,6 +467,8 @@
 - (BOOL)_hideFocusForFilterSelection;
 - (struct CGPoint { float x1; float x2; })convertToPointOfInterestFromViewCoordinates:(struct CGPoint { float x1; float x2; })arg1 pointIsInsideContent:(BOOL*)arg2;
 - (BOOL)_shouldShowFocus;
+- (void)_teardownPanoUI;
+- (void)_setupPanoUI;
 - (void)_setCameraEnabled:(BOOL)arg1;
 - (void)_pinchZoomWithScale:(float)arg1;
 - (void)showZoomSlider;
@@ -489,10 +499,11 @@
 - (void)_showControlsForChangeToMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_hideControlsForChangeToMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_removeModeSwitchingBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)_updatePanoramaImageQueue;
 - (void)_createOrDestroyPanoramaViewIfNecessary;
+- (void)_applyTopBarRotationForDeviceOrientation:(int)arg1;
 - (BOOL)_processDeferredModeChange;
 - (void)_setPendingModeIndex:(int)arg1;
-- (void)_ensureValidAvalancheSession;
 - (void)_finishTimedCapture;
 - (void)startPanorama;
 - (void)stopPanorama;
@@ -508,7 +519,6 @@
 - (BOOL)_isStillImageMode:(int)arg1;
 - (void)_shutterButtonClicked;
 - (void)_incrementInflightImageRequests;
-- (void)_extendAvalancheSession;
 - (int)_getCaptureOrientation;
 - (void)_updateModeSwitchingAvailability;
 - (void)_completeTimedCapture;
@@ -545,6 +555,7 @@
 - (void)_setFlipping:(BOOL)arg1;
 - (void)_setupTargetDeviceSnapshotView;
 - (void)_cleanupAfterZPositionAnimations;
+- (void)_updateHardwareLockIndicatorVisibility;
 - (void)_setShouldShowFocus:(BOOL)arg1;
 - (void)_unblurForSuspensionWithCompletionBlock:(id)arg1;
 - (void)_setViewingCameraRoll:(BOOL)arg1;
@@ -554,6 +565,8 @@
 - (void)_setPreviewViewAspectMode:(int)arg1;
 - (BOOL)_isPreviewViewAspectModeAllowed:(int)arg1;
 - (void)stopPreviewAnimated:(BOOL)arg1;
+- (void)_layoutTopBarForOrientation:(int)arg1;
+- (BOOL)_shouldApplyRotationDirectlyToTopBarForOrientation:(int)arg1 cameraMode:(int)arg2;
 - (id)_HDRBadge;
 - (id)_zoomSlider;
 - (id)_topBar;
@@ -571,7 +584,6 @@
 - (void)_resetZoom;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewContainerViewFrameForCameraMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridLinesFrameForCameraMode:(int)arg1;
-- (id)videoPreviewView;
 - (void)_adjustPreviewViewSizeForCameraMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewMaskingViewFrameForCameraMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bottomBarFrame;
@@ -599,6 +611,7 @@
 - (void)_resetImageTile;
 - (void)_teardownKeepAliveFailsafeTimer;
 - (void)_teardownKeepAliveTimer;
+- (id)videoPreviewView;
 - (void)setImagePickerWantsVolumeButtonEvents:(BOOL)arg1;
 - (void)_registerForSystemSound;
 - (void)_resetFaceTracking;
@@ -652,7 +665,6 @@
 - (void)_pptTestSetAutofocusDisabled:(BOOL)arg1;
 - (BOOL)isFocusAllowed;
 - (void)startPreview:(id)arg1;
-- (void)setCameraMode:(int)arg1;
 - (void)cameraController:(id)arg1 didFinishTransitionToShowEffectsGrid:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didStartTransitionToShowEffectsGrid:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)cameraController:(id)arg1 willTransitionToShowEffectsGrid:(BOOL)arg2;
@@ -661,6 +673,7 @@
 - (void)setFlashMode:(int)arg1;
 - (void)_startPreview:(id)arg1;
 - (void)cameraControllerTorchAvailabilityChanged:(id)arg1;
+- (void)cameraController:(id)arg1 videoZoomFactorDidChange:(float)arg2;
 - (void)cameraController:(id)arg1 faceMetadataDidChange:(id)arg2;
 - (void)cameraControllerFocusDidEnd:(id)arg1;
 - (void)cameraControllerFocusDidStart:(id)arg1;
@@ -674,6 +687,7 @@
 - (void)cameraControllerDidStartPanoramaCapture:(id)arg1;
 - (void)cameraController:(id)arg1 didReceivePanoramaIssue:(int)arg2;
 - (void)cameraController:(id)arg1 didUpdatePanoramaPreview:(id)arg2;
+- (void)cameraControllerDidChangePanoramaConfiguration:(id)arg1;
 - (void)cameraController:(id)arg1 capturedPhoto:(id)arg2 error:(id)arg3;
 - (void)cameraControllerDidTakePhoto:(id)arg1;
 - (void)cameraControllerWillTakePhoto:(id)arg1;
@@ -689,9 +703,10 @@
 - (int)cameraMode;
 - (void)cameraController:(id)arg1 cleanApertureDidChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)cameraControllerModeDidChange:(id)arg1;
-- (BOOL)_isVideoMode:(int)arg1;
+- (void)setCameraMode:(int)arg1;
 - (void)cameraController:(id)arg1 willChangeToMode:(int)arg2 device:(int)arg3;
 - (void)cameraController:(id)arg1 didChangeCaptureAbility:(BOOL)arg2;
+- (BOOL)_isVideoMode:(int)arg1;
 - (void)_inCallStatusChanged:(id)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (BOOL)controlsAreVisible;

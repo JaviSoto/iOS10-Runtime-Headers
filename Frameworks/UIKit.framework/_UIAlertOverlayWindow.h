@@ -12,6 +12,6 @@
 - (void)handleStatusBarChangeFromHeight:(float)arg1 toHeight:(float)arg2;
 - (void)_updateTransformLayerForClassicPresentation;
 - (BOOL)isInternalWindow;
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 
 @end

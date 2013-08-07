@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, UIImageView, NSMutableArray;
+@class UIImageView, UIView, NSString, NSMutableArray;
 
 @interface CAMImageWell : UIButton  {
     int _cameraOrientation;
+    UIView *__containerView;
     UIImageView *__thumbnailImageView;
     UIImageView *__maskImageView;
     NSMutableArray *__dimmingViewQueue;
@@ -13,6 +14,7 @@
 }
 
 @property int cameraOrientation;
+@property(readonly) UIView * _containerView;
 @property(readonly) UIImageView * _thumbnailImageView;
 @property(readonly) UIImageView * _maskImageView;
 @property(readonly) NSMutableArray * _dimmingViewQueue;
@@ -22,8 +24,8 @@
 - (id)_dimmingViewQueue;
 - (id)_maskImageView;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransformForImageOrientation:(int)arg1;
-- (void)_removeFirstDimmingView;
 - (void)_performEmitAnimationWithImage:(id)arg1 orientation:(int)arg2 withCompletionBlock:(id)arg3;
+- (void)_removeFirstDimmingView;
 - (void)_updateThumbnailTransformFromCameraOrientation;
 - (void)_commonCAMImageWellInitialization;
 - (id)_maskImage;
@@ -38,7 +40,10 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)_setUuid:(id)arg1;
+- (id)_containerView;
 - (id)_uuid;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 
 @end

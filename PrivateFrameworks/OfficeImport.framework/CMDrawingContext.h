@@ -40,7 +40,6 @@
 - (void)addPath:(struct CGPath { }*)arg1;
 - (void)addDebugPath:(struct CGPath { }*)arg1;
 - (void)setLineDash:(id)arg1;
-- (void)setFillImage:(struct CGImage { }*)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })currentTransform;
 - (float)currentScaleFactor;
 - (id)mapper;
@@ -63,6 +62,7 @@
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)dealloc;
 - (id).cxx_construct;
+- (void)setFillImage:(struct CGImage { }*)arg1;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
 - (void)setLineWidth:(float)arg1;
 

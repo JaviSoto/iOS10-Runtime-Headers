@@ -43,6 +43,7 @@
 @property(readonly) int renderingMode;
 
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
++ (id)_iconForResourceProxy:(id)arg1 format:(int)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (void)initialize;
 + (struct CGSize { float x1; float x2; })_legibilityImageSizeForSize:(struct CGSize { float x1; float x2; })arg1 style:(int)arg2;
@@ -50,7 +51,6 @@
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5;
 + (id)_cachedImageForKey:(id)arg1 fromBlock:(id)arg2;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
-+ (id)_iconForResourceProxy:(id)arg1 format:(int)arg2;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2;
 + (id)_iconForResourceProxy:(id)arg1 variant:(int)arg2 variantsScale:(float)arg3;
 + (int)_iconVariantForUIApplicationIconFormat:(int)arg1 scale:(float*)arg2;
@@ -181,6 +181,7 @@
 - (id)_resizableImageWithCapMask:(int)arg1;
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isResizable;
+- (BOOL)_isSubimage;
 - (void)_setAlwaysStretches:(BOOL)arg1;
 - (id)imageWithAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

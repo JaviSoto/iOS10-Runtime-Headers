@@ -51,6 +51,8 @@
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (void)incrementAggregateStatisticsDisplayCount;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
+- (void)unlockPlayer;
+- (void)lockPlayer;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;
 - (void)applicationResumed;
@@ -58,14 +60,12 @@
 - (void)applicationDidSuspendEventsOnly;
 - (void)setPopViewControllerHandler:(id)arg1;
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
+- (void)startTicking;
+- (void)stopTicking;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
 - (void)unregisterForPlayerNotifications;
 - (void)registerForPlayerNotifications;
-- (void)stopTicking;
-- (void)startTicking;
 - (id)popViewControllerHandler;
-- (void)unlockPlayer;
-- (void)lockPlayer;
 - (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)didChangeToInterfaceOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;

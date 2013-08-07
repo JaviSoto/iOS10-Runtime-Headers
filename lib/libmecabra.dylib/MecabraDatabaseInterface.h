@@ -14,9 +14,10 @@
 - (void)setDatabaseControllers:(id)arg1;
 - (id)coreDataControllerForType:(id)arg1 URL:(id)arg2;
 - (id)databaseControllers;
+- (void)refreshForType:(id)arg1 URL:(id)arg2;
 - (void)clearStoredMergeEntriesForType:(id)arg1 URL:(id)arg2;
 - (id)entriesToMergeForType:(id)arg1 URL:(id)arg2;
-- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2 type:(id)arg3 URL:(id)arg4;
+- (id)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2 type:(id)arg3 URL:(id)arg4;
 - (id)removeDuplicatesForEntry:(id)arg1 type:(id)arg2 URL:(id)arg3 uniquingKeys:(id)arg4 sortDescriptors:(id)arg5 restrictToNumberOfElements:(unsigned int)arg6 identifierKey:(id)arg7;
 - (id)readPropertyForType:(id)arg1 URL:(id)arg2 propertyKey:(id)arg3;
 - (void)setDatabaseNumberProperty:(id)arg1 forKey:(id)arg2 type:(id)arg3 URL:(id)arg4;
@@ -27,7 +28,7 @@
 - (void)deleteAllMatchingEntries:(id)arg1 type:(id)arg2 URL:(id)arg3;
 - (void)deleteEntry:(id)arg1 type:(id)arg2 URL:(id)arg3;
 - (void)addEntry:(id)arg1 type:(id)arg2 URL:(id)arg3;
-- (id)addEntryWithReturnedObjects:(id)arg1 type:(id)arg2 URL:(id)arg3;
+- (unsigned int)addEntryWithReturnedIdentifier:(id)arg1 type:(id)arg2 URL:(id)arg3;
 - (id)readEntriesForType:(id)arg1 URL:(id)arg2 entry:(id)arg3;
 - (void)addEntry:(id)arg1 type:(id)arg2 URL:(id)arg3 reply:(id)arg4;
 - (void)readPropertyForType:(id)arg1 URL:(id)arg2 propertyKey:(id)arg3 reply:(id)arg4;

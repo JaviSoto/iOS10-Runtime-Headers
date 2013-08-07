@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UISiriWaveyView, UIButton, UIKeyboardDicationBackground;
+@class _UISiriWaveyView, UIButton, UIKeyboardDicationBackground, UIDictationMeterView;
 
 @interface UIDictationView : UIView <_UISiriWaveyViewDelegate> {
     UIKeyboardDicationBackground *_background;
@@ -13,6 +13,7 @@
     BOOL _keyboardInTransition;
     BOOL _automaticAppearanceWasEnabled;
     _UISiriWaveyView *_waveyView;
+    UIDictationMeterView *_meterView;
 }
 
 + (struct CGSize { float x1; float x2; })viewSize;

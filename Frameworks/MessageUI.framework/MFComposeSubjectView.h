@@ -22,8 +22,8 @@
 - (id)textField;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
 - (void)textChanged:(id)arg1;
-- (BOOL)endEditing:(BOOL)arg1;
 - (BOOL)_canBecomeFirstResponder;
+- (BOOL)endEditing:(BOOL)arg1;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (void)setText:(id)arg1;
 

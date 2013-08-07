@@ -67,11 +67,11 @@
 - (void)setBluetoothStatus:(int)arg1;
 - (id)searchingForServicesString;
 - (void)contentView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)_changePanelAnimationDidEnd:(id)arg1;
 - (void)setAlertCancelled:(BOOL)arg1;
 - (void)setAlertPresented:(BOOL)arg1;
 - (void)_timedOutWaitingForInvitation:(id)arg1;
 - (id)currentView;
-- (void)_changePanelAnimationDidEnd:(id)arg1;
 - (id)noPeersView;
 - (void)_createNoPeersViewIfNeeded;
 - (id)statusView;

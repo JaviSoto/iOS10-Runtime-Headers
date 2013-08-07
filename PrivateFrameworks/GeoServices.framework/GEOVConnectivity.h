@@ -11,8 +11,6 @@
 @property(retain) NSMutableArray * junctions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)junctionAtIndex:(unsigned int)arg1;
 - (void)clearJunctions;
 - (void)addJunction:(id)arg1;
@@ -20,6 +18,8 @@
 - (unsigned int)junctionsCount;
 - (id)junctions;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

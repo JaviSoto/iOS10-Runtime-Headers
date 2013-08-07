@@ -43,9 +43,9 @@
 + (BOOL)reloadOnStylesheetChange;
 
 - (BOOL)shouldOccludeTraffic;
-- (BOOL)shouldShowTraffic;
 - (BOOL)shouldCheckForOcclusion;
 - (struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; })puckPosition;
+- (BOOL)shouldShowTraffic;
 - (BOOL)isInRealisticMode;
 - (void)_updatePainterOrdering;
 - (id)skyModel;

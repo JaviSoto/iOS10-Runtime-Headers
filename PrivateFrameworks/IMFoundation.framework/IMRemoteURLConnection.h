@@ -17,6 +17,7 @@
     id _block;
 
     NSObject<OS_xpc_object> *_connection;
+    BOOL _cancelled;
     BOOL _loading;
     BOOL _forceCellularIfPossible;
     int _retries;

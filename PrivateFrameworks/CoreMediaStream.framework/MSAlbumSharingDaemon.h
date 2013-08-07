@@ -27,12 +27,11 @@
 @property(retain) NSMutableDictionary * nextUpdateDateByPersonID;
 
 
-- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
-- (void)setMapQueue:(id)arg1;
 - (void)setBusyCount:(int)arg1;
 - (int)busyCount;
+- (void)setMapQueue:(id)arg1;
 - (void)setDaemonModel:(id)arg1;
 - (void)setPersonIDToDelegateMap:(id)arg1;
 - (id)personIDToDelegateMap;
@@ -136,7 +135,9 @@
 - (void)deleteAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)addAlbum:(id)arg1 personID:(id)arg2;
 - (void)forgetEverythingAboutPersonID:(id)arg1;
+- (void)retryOutstandingActivitiesForPersonID:(id)arg1;
 - (void)refreshResetSync:(BOOL)arg1 personID:(id)arg2;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)shutDown;
 - (id)init;
 - (void)setDelegate:(id)arg1;

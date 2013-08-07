@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, UICollectionViewLayout, UITouch, <UICollectionViewDelegate>, <UICollectionViewDataSource>, NSMutableSet, UIView, _UIDynamicAnimationGroup, NSArray, UICollectionViewUpdate, UICollectionReusableView, NSString, NSMutableDictionary, UICollectionViewData, NSIndexPath;
+@class NSMutableArray, UICollectionViewLayout, UITouch, <UICollectionViewDelegate>, UICollectionViewLayoutAttributes, <UICollectionViewDataSource>, NSMutableSet, UIView, _UIDynamicAnimationGroup, NSArray, UICollectionViewUpdate, UICollectionReusableView, NSString, NSMutableDictionary, UICollectionViewData, NSIndexPath;
 
 @interface UICollectionView : UIScrollView  {
     UICollectionViewLayout *_layout;
@@ -69,6 +69,7 @@
     NSMutableDictionary *_supplementaryViewNibDict;
     NSMutableDictionary *_cellNibExternalObjectsTables;
     NSMutableDictionary *_supplementaryViewNibExternalObjectsTables;
+    UICollectionViewLayoutAttributes *_transitionLayoutAttributes;
     BOOL _isInInteractiveTransition;
     BOOL _shouldAccumulateTrackedLayoutValues;
     NSMutableDictionary *_interactiveTransitionInfos;
@@ -172,7 +173,6 @@
 - (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;
 - (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1;
 - (id)_visibleDecorationViewsOfKind:(id)arg1;
-- (id)_visibleSupplementaryViewsOfKind:(id)arg1;
 - (id)_pivotForTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)_cancelInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
@@ -242,6 +242,7 @@
 - (void)performBatchUpdates:(id)arg1 completion:(id)arg2;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (BOOL)_visible;
+- (id)_visibleSupplementaryViewsOfKind:(id)arg1;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
@@ -270,6 +271,7 @@
 - (BOOL)allowsSelection;
 - (void)_setupCellAnimations;
 - (void)setAllowsSelection:(BOOL)arg1;
+- (id)visibleCells;
 - (void)_updateBackgroundView;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)indexPathForCell:(id)arg1;
@@ -284,6 +286,7 @@
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;
@@ -303,7 +306,6 @@
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)didMoveToWindow;
-- (id)visibleCells;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;

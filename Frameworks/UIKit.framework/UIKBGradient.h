@@ -25,10 +25,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGGradient { }*)CGGradient;
 - (id)initWith3Colors:(id)arg1 middleLocation:(float)arg2;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2;
 - (id)initWithFlatColor:(id)arg1;
+- (struct CGGradient { }*)CGGradient;
 - (BOOL)horizontal;
 - (void)setHorizontal:(BOOL)arg1;
 

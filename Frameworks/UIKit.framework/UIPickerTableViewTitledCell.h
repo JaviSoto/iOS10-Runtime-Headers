@@ -27,5 +27,6 @@
 - (void)prepareForReuse;
 - (void)setAttributedTitle:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 isModern:(BOOL)arg3 textColor:(id)arg4;
+- (BOOL)_canBeReusedInPickerView;
 
 @end

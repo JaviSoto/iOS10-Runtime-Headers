@@ -26,7 +26,6 @@
 - (id)initWithStyleString:(id)arg1;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)initWithUIColor:(id)arg1;
 - (id)attributeKeys;
 - (float)alpha;
 - (float)blue;
@@ -34,5 +33,6 @@
 - (float)red;
 - (id)stringRepresentation;
 - (void)dealloc;
+- (id)initWithUIColor:(id)arg1;
 
 @end

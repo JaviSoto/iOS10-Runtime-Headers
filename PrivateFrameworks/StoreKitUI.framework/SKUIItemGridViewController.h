@@ -52,9 +52,9 @@
 - (id)_itemCollectionController;
 - (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
+- (id)uber;
 - (void)setUber:(id)arg1;
 - (id)artworkContext;
-- (id)uber;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (id)items;

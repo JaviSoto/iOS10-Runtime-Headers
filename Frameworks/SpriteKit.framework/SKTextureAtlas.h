@@ -17,6 +17,7 @@
 + (id)findTextureNamed:(id)arg1;
 
 - (id)textureNames;
+- (id)findTextureNamedFromAtlas:(id)arg1;
 - (void)loadTextures;
 - (void)preload;
 - (void)preloadWithCompletionHandler:(id)arg1;

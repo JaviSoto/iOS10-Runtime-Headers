@@ -15,6 +15,7 @@
 - (BOOL)validateDatabaseAtPath:(id)arg1 withTimeout:(double)arg2;
 - (id)_validatableDatabaseForPath:(id)arg1;
 - (BOOL)_validateDatabaseForPath:(id)arg1 usingLibrary:(id)arg2 withTimeout:(double)arg3;
+- (BOOL)isValidatingDatabaseForPath:(id)arg1;
 - (BOOL)validateDatabaseForLibrary:(id)arg1 withTimeout:(double)arg2;
 - (id)init;
 - (void).cxx_destruct;

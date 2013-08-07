@@ -48,9 +48,9 @@
 
 - (void)dealloc;
 - (id)description;
+- (BOOL)shouldDeleteAfterAnimation;
 - (void)setShouldAnimateShadow:(BOOL)arg1;
 - (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(int)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
-- (BOOL)shouldDeleteAfterAnimation;
 - (BOOL)shouldClipToBoundsAfterAnimation;
 - (BOOL)shouldAllowGroupOpacityAfterAnimation;
 - (BOOL)shouldResetGroupOpacityAfterAnimation;

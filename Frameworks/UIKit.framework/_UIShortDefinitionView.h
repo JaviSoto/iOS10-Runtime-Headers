@@ -2,13 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UIView, UITextView, _UIDefinitionValue;
+@class UITextView, _UIDefinitionValue;
 
 @interface _UIShortDefinitionView : UIView  {
     _UIDefinitionValue *_definitionValue;
-    UILabel *_localizedDictionaryLabel;
     UITextView *_definitionTextView;
-    UIView *_lineView;
 }
 
 @property(retain) _UIDefinitionValue * definitionValue;

@@ -32,14 +32,15 @@
 - (void)setAssetBlock:(id)arg1;
 - (id)initWithStoreIdentifier:(long long)arg1 station:(id)arg2 context:(id)arg3;
 - (id)initWithRadioAVItem:(id)arg1 context:(id)arg2;
+- (id)_bodyData:(id*)arg1;
+- (id)_heartbeatTokenDataAllowingDelay:(BOOL)arg1 error:(id*)arg2;
 - (id)_sinfsForAssetDictionary:(id)arg1;
 - (void)_saveDownloadKeyCookieForAssetDictionary:(id)arg1 URL:(id)arg2;
 - (id)_errorForInvalidPurchaseResponse:(id)arg1 heartbeatToken:(id)arg2;
 - (id)_assetDictionaryForPurchaseResponse:(id)arg1;
 - (id)assetBlock;
 - (id)_assetWithPurchaseResponse:(id)arg1 heartbeatToken:(id)arg2 error:(id*)arg3;
-- (id)_bodyData:(id*)arg1;
-- (id)_heartbeatTokenData:(id*)arg1;
+- (id)_URLOperationWithURL:(id)arg1 storeBag:(id)arg2 allowingHeartbeatDelay:(BOOL)arg3 heartbeatToken:(id*)arg4 error:(id*)arg5;
 - (id)_initMPLoadRadioAssetOperation;
 - (id)assetCache;
 - (void).cxx_destruct;

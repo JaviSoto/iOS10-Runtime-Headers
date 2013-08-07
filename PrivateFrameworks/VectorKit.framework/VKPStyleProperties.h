@@ -1820,11 +1820,11 @@
 - (void)setLabelIcon:(id)arg1;
 - (void)setShieldSize:(int)arg1;
 - (int)shieldSize;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasWidth:(BOOL)arg1;
 - (BOOL)hasWidth;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (void)setMarginLeft:(float)arg1;

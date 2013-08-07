@@ -53,13 +53,13 @@
 - (void)setRecordID:(int)arg1;
 - (int)recordID;
 - (void)setPrivilegeTypes:(unsigned int)arg1;
+- (int)overrideStatus;
+- (unsigned int)overrideType;
 - (unsigned int)privilegeTypes;
 - (void)setToComponents:(id)arg1;
 - (void)setFromComponents:(id)arg1;
 - (id)overrides;
 - (void)setOverrideStatus:(int)arg1;
-- (unsigned int)overrideType;
-- (int)overrideStatus;
 - (id)bbGateway;
 - (id)toComponents;
 - (id)fromComponents;

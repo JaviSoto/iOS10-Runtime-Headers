@@ -21,6 +21,7 @@
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
 - (void)dealloc;
 - (void)selectPrinter:(id)arg1;
+- (id)printerAtIndexPath:(id)arg1;
 - (void)updateSearching;
 - (void)startPrinterBrowser;
 - (void)adjustPopoverSize;

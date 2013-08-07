@@ -10,6 +10,7 @@
     BOOL _maneuverDisplayEnabled;
     unsigned int _currentDisplayStep;
     unsigned int _maneuverDisplayCount;
+    double *_pointLengths;
     struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; } *_currentManeuverDisplayEndPoints;
 }
 

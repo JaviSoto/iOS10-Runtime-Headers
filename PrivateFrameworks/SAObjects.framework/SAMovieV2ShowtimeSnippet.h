@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SALocalSearchBusiness2, NSString, NSArray;
+@class NSArray, NSString, SAUIImageResource, SALocalSearchBusiness2;
 
 @interface SAMovieV2ShowtimeSnippet : SAUISnippet  {
 }
 
+@property(retain) SAUIImageResource * attributionLogo;
 @property(copy) NSString * movieName;
 @property(copy) NSArray * showtimes;
 @property(retain) SALocalSearchBusiness2 * theater;
@@ -15,6 +16,8 @@
 + (id)showtimeSnippetWithDictionary:(id)arg1 context:(id)arg2;
 + (id)showtimeSnippet;
 
+- (void)setAttributionLogo:(id)arg1;
+- (id)attributionLogo;
 - (void)setTheaterName:(id)arg1;
 - (id)theaterName;
 - (void)setTheater:(id)arg1;

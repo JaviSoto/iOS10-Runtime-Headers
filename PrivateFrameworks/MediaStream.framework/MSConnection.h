@@ -16,13 +16,13 @@
 
 - (void)abortActivitiesForPersonID:(id)arg1;
 - (void)handleSubscriptionPushForPersonID:(id)arg1;
-- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (BOOL)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)_waitForMessageToBeSent;
 - (id)_machErrorWithUnderlyingError:(id)arg1;
 - (void)resetServerStateForPersonID:(id)arg1;
 - (void)deleteAssetCollections:(id)arg1 personID:(id)arg2;
 - (void)isBusyCompletionBlock:(id)arg1;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)refreshServerSideConfigurationForPersonID:(id)arg1;
 - (id)serverSideConfigurationForPersonID:(id)arg1;
 - (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;

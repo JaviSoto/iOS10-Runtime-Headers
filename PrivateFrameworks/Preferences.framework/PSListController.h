@@ -170,8 +170,8 @@
 - (id)specifier;
 - (id)bundle;
 - (void)setTitle:(id)arg1;
-- (void)handleURL:(id)arg1;
 - (void)reload;
+- (void)handleURL:(id)arg1;
 - (id)table;
 - (id)init;
 - (void)dealloc;

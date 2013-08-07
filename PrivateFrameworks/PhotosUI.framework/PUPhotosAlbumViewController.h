@@ -26,7 +26,7 @@
 - (BOOL)wantsGlobalFooter;
 - (BOOL)canBeginStackCollapseTransition;
 - (id)newGridLayout;
-- (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (struct CGPoint { float x1; float x2; })contentOffsetForPreheating;
 - (id)initWithSpec:(id)arg1;
 - (struct NSObject { Class x1; }*)album;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;

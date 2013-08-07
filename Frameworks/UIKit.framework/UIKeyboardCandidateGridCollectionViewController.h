@@ -66,6 +66,7 @@
 - (id)padInlineFloatingArrowButton;
 - (void)setAlwaysShowExtensionCandidates:(BOOL)arg1;
 - (BOOL)hasGroupBar;
+- (id)lastCandidateIndexPath;
 - (struct CGSize { float x1; float x2; })rowSizeForGridLayout;
 - (void)setShowsExtensionCandidates:(BOOL)arg1;
 - (BOOL)alwaysShowExtensionCandidates;
@@ -75,7 +76,6 @@
 - (BOOL)showHiddenCandidatesOnly;
 - (id)candidateAtIndexPath:(id)arg1;
 - (void)stepOneLine:(BOOL)arg1;
-- (id)lastCandidateIndexPath;
 - (id)firstCandidateIndexPath;
 - (id)selectedItemIndexPath;
 - (id)indexPathForCandidate:(id)arg1;
@@ -99,6 +99,7 @@
 - (void)setSecondaryCandidatesViewIsCurrent:(BOOL)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)padInlineFloatingExpand;
+- (unsigned int)padInlineHighlightedRowIndex;
 - (id)candidateGroups;
 - (id)collectionViewGridLayout;
 - (void)scrollToBottomWithAnimation:(BOOL)arg1;

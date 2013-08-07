@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString, NSValue;
+@class NSNumber, NSString;
 
 @interface TIMecabraCandidate : TIKeyboardCandidate  {
     BOOL _emojiCandidate;
@@ -10,10 +10,10 @@
     BOOL _isForShortcutConversion;
     NSString *_candidate;
     NSString *_input;
-    NSValue *_mecabraCandidatePointerValue;
+    NSNumber *_mecabraCandidatePointerValue;
 }
 
-@property(retain) NSValue * mecabraCandidatePointerValue;
+@property(retain) NSNumber * mecabraCandidatePointerValue;
 
 + (int)type;
 + (BOOL)supportsSecureCoding;

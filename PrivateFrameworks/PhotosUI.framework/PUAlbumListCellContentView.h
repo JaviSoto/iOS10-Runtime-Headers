@@ -8,6 +8,7 @@
     BOOL _editing;
     BOOL _enabled;
     BOOL _showsDeleteButtonWhenEditing;
+    BOOL __showsTitleAndSubtitle;
     <PUAlbumListCellDelegate> *_delegate;
     PUStackView *_stackView;
     UIView *_customImageView;
@@ -32,6 +33,7 @@
 @property(getter=isEditing) BOOL editing;
 @property(getter=isEnabled) BOOL enabled;
 @property BOOL showsDeleteButtonWhenEditing;
+@property(setter=_setShowsTitleAndSubtitle:) BOOL _showsTitleAndSubtitle;
 @property(setter=_setTitleTextField:,retain) UITextField * _titleTextField;
 @property(setter=_setSubtitleLabel:,retain) UILabel * _subtitleLabel;
 @property(setter=_setDeleteButton:,retain) UIButton * _deleteButton;
@@ -44,15 +46,18 @@
 - (void)setShowsDeleteButtonWhenEditing:(BOOL)arg1;
 - (void)setXInset:(float)arg1;
 - (void)setCustomImageView:(id)arg1;
+- (void)setShowsTitle:(BOOL)arg1 animated:(BOOL)arg2;
 - (float)_titleTextFieldAlpha;
 - (int)_textAlignmentForLayout:(int)arg1;
 - (BOOL)showsDeleteButtonWhenEditing;
 - (void)_updateDeleteButtonAnimated:(BOOL)arg1;
-- (void)_updateSubtitleLabelAnimated:(BOOL)arg1;
-- (void)_updateTitleTextFieldAnimated:(BOOL)arg1;
 - (void)_updateStackViewAnimated:(BOOL)arg1;
 - (void)_setSubtitleLabel:(id)arg1;
 - (void)_setDeleteButton:(id)arg1;
+- (void)_updateSubtitleLabelAnimated:(BOOL)arg1;
+- (void)_updateTitleTextFieldAnimated:(BOOL)arg1;
+- (void)_setShowsTitleAndSubtitle:(BOOL)arg1;
+- (BOOL)_showsTitleAndSubtitle;
 - (id)_deleteButton;
 - (id)customImageView;
 - (id)stackView;

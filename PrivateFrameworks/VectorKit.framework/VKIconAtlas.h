@@ -2,11 +2,12 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKPIconPack, VKObjectPool;
+@class VKPIconPack, VKObjectPool, NSMapTable;
 
 @interface VKIconAtlas : NSObject  {
     VKPIconPack *_iconPack;
     VKObjectPool *_artworkPool;
+    NSMapTable *_atlasToImages;
 }
 
 

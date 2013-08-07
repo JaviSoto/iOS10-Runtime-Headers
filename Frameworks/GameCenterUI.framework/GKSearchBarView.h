@@ -18,6 +18,7 @@
 
 + (void)initialize;
 + (float)defaultHeight;
++ (BOOL)requiresConstraintBasedLayout;
 
 - (id)searchBarConstraints;
 - (id)usePadConstraints;

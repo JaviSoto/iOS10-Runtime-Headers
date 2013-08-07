@@ -41,9 +41,9 @@
 - (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
 - (void)prepareAVControllerQueue;
 - (void)_playbackStateChangedNotification:(id)arg1;
+- (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setScaleMode:(unsigned int)arg1;
 - (BOOL)canChangeScaleMode;
-- (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setStopTime:(double)arg1;
 - (id)videoID;
 - (double)stopTime;

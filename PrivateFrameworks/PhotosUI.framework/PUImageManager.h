@@ -18,10 +18,10 @@
 - (id)_preheatSourceForFormat:(int)arg1;
 - (id)_preheatItemsByAssetForFormat:(int)arg1 createIfNeeded:(BOOL)arg2;
 - (BOOL)_isSuspendingFetchesForFormat:(int)arg1;
-- (id)_preheatItemForAsset:(id)arg1 format:(int)arg2 createIfNeeded:(BOOL)arg3;
+- (id)_preheatItemForAsset:(id)arg1 format:(int)arg2 options:(unsigned int)arg3 createIfNeeded:(BOOL)arg4;
 - (void)stopFetchingImagesForAssets:(id)arg1 format:(int)arg2;
-- (void)startPrefetchingImagesForAssets:(id)arg1 format:(int)arg2;
-- (void)fetchImageForAsset:(id)arg1 fastFormat:(int)arg2 qualityFormat:(int)arg3 handler:(id)arg4;
+- (void)startPrefetchingImagesForAssets:(id)arg1 format:(int)arg2 options:(unsigned int)arg3;
+- (void)fetchImageForAsset:(id)arg1 fastFormat:(int)arg2 qualityFormat:(int)arg3 options:(unsigned int)arg4 handler:(id)arg5;
 - (id)init;
 - (void).cxx_destruct;
 

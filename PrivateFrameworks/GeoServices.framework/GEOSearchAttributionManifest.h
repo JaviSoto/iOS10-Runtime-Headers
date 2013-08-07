@@ -4,15 +4,13 @@
 
 @class NSMutableArray;
 
-@interface GEOSearchAttributionManifest : PBCodable  {
+@interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
     NSMutableArray *_searchAttributionSources;
 }
 
 @property(retain) NSMutableArray * searchAttributionSources;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)searchAttributionSources;
 - (id)searchAttributionSourcesAtIndex:(unsigned int)arg1;
 - (void)clearSearchAttributionSources;
@@ -20,10 +18,13 @@
 - (void)addSearchAttributionSources:(id)arg1;
 - (void)setSearchAttributionSources:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

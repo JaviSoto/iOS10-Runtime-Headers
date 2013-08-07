@@ -22,7 +22,6 @@
 @property int searchFieldStyle;
 
 
-- (int)searchFieldStyle;
 - (id)_cancelButtonView;
 - (void)searchBarWillRemoveFromSuperview:(id)arg1;
 - (void)scriptDidChangeTextForField:(id)arg1;
@@ -46,9 +45,12 @@
 - (void)_tearDownDimmerView;
 - (void)_savedSearchTermChangedNotification:(id)arg1;
 - (id)_newSearchDisplayControllerWithContentsController:(id)arg1;
+- (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2 style:(int)arg3;
 - (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2;
-- (void)setSearchFieldStyle:(int)arg1;
 - (id)initWithContentsController:(id)arg1;
+- (void)setSearchFieldStyle:(int)arg1;
+- (id)initWithContentsController:(id)arg1 style:(int)arg2;
+- (int)searchFieldStyle;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1;
 - (void)handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)searchFieldConfiguration;

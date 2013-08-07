@@ -31,6 +31,8 @@
 - (void)viewWillAnimateOut;
 - (void)viewWillAnimateIn;
 - (BOOL)allowSuspension;
+- (void)removeBackgroundStyleWithDuration:(double)arg1;
+- (void)setBackgroundStyle:(int)arg1 withDuration:(double)arg2;
 - (void)setWallpaperTunnelActive:(BOOL)arg1;
 - (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
 - (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;

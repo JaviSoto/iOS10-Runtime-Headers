@@ -39,9 +39,9 @@
         float x; 
         float y; 
     } _anchor;
-    struct CGPoint { 
-        float x; 
-        float y; 
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } _axis;
 }
 
@@ -49,13 +49,13 @@
 @property float lowerDistanceLimit;
 @property float upperDistanceLimit;
 
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGPoint { float x1; float x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGVector { float x1; float x2; })arg4;
 
 - (void)setUpperDistanceLimit:(float)arg1;
 - (void)setLowerDistanceLimit:(float)arg1;
 - (float)upperDistanceLimit;
 - (float)lowerDistanceLimit;
-- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGPoint { float x1; float x2; })arg4;
+- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGVector { float x1; float x2; })arg4;
 - (void)setShouldEnableLimits:(BOOL)arg1;
 - (BOOL)shouldEnableLimits;
 - (void)create;

@@ -41,6 +41,7 @@
 - (float)shadowAlpha;
 - (id)secondaryColor;
 - (id)initWithStyle:(int)arg1 primaryColor:(id)arg2 secondaryColor:(id)arg3 shadowColor:(id)arg4;
+- (id)initWithContentColor:(id)arg1 contrast:(float)arg2;
 - (id)initWithContentColor:(id)arg1;
 - (id)primaryColor;
 - (void)setShadowCompositingFilterName:(id)arg1;

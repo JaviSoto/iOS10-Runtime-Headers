@@ -4,7 +4,7 @@
 
 @class GEOLocation;
 
-@interface GEOSignificantLocation : PBCodable  {
+@interface GEOSignificantLocation : PBCodable <NSCopying> {
     GEOLocation *_location;
     unsigned int _locationIndex;
     struct { 
@@ -18,20 +18,21 @@
 @property unsigned int locationIndex;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasLocationIndex:(BOOL)arg1;
 - (void)setLocationIndex:(unsigned int)arg1;
 - (unsigned int)locationIndex;
 - (BOOL)hasLocationIndex;
 - (BOOL)hasLocation;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)location;
 - (void)setLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

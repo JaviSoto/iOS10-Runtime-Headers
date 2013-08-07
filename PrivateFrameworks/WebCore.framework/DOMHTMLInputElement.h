@@ -70,7 +70,6 @@
 - (void)setMultiple:(BOOL)arg1;
 - (void)setMin:(id)arg1;
 - (id)min;
-- (void)setIndeterminate:(BOOL)arg1;
 - (BOOL)indeterminate;
 - (void)setFiles:(id)arg1;
 - (id)files;
@@ -128,6 +127,7 @@
 - (double)valueAsNumber;
 - (void)setValueAsNumberWithChangeEvent:(double)arg1;
 - (void)setValueWithChangeEvent:(id)arg1;
+- (void)setIndeterminate:(BOOL)arg1;
 - (int)structuralComplexityContribution;
 - (BOOL)_isEdited;
 - (BOOL)readOnly;

@@ -44,9 +44,9 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setBackgroundColor:(id)arg1;
-- (void).cxx_destruct;
-- (void)layoutSubviews;
-- (void)setCategory:(id)arg1;
 - (id)category;
+- (void).cxx_destruct;
+- (void)setCategory:(id)arg1;
+- (void)layoutSubviews;
 
 @end

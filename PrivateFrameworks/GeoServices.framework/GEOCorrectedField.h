@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOCorrectedField : PBCodable  {
+@interface GEOCorrectedField : PBCodable <NSCopying> {
     NSString *_correctedValue;
     NSString *_displayName;
     NSString *_objectName;
@@ -23,8 +23,6 @@
 @property BOOL isMarkedIncorrect;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)objectName;
 - (BOOL)hasObjectName;
 - (void)setObjectName:(id)arg1;
@@ -36,12 +34,15 @@
 - (BOOL)hasCorrectedValue;
 - (void)setCorrectedValue:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)displayName;
 - (void)setDisplayName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

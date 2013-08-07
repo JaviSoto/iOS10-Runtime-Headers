@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEORegionalResourceTileData : PBCodable  {
+@interface GEORegionalResourceTileData : PBCodable <NSCopying> {
     NSMutableArray *_attributions;
     NSMutableArray *_icons;
 }
@@ -13,8 +13,6 @@
 @property(retain) NSMutableArray * attributions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)iconAtIndex:(unsigned int)arg1;
 - (void)clearIcons;
 - (unsigned int)iconsCount;
@@ -26,10 +24,13 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (id)dictionaryRepresentation;

@@ -29,7 +29,6 @@
 
 
 - (BOOL)isApplicationBeingDebugged:(id)arg1;
-- (void)applicationInfoForPID:(int)arg1 completion:(id)arg2;
 - (void)updateInterestedStates:(unsigned int)arg1;
 - (void)updateInterestedBundleIDs:(id)arg1;
 - (void)queue_handleMessage:(id)arg1;
@@ -51,6 +50,7 @@
 - (void)queue_registerWithServer;
 - (id)init;
 - (void)applicationInfoForApplication:(id)arg1 completion:(id)arg2;
+- (void)applicationInfoForPID:(int)arg1 completion:(id)arg2;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;
 - (unsigned int)applicationStateForApplication:(id)arg1;
 - (void)setHandler:(id)arg1;

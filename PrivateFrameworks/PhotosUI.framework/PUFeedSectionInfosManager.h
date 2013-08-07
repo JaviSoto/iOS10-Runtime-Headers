@@ -27,6 +27,7 @@
 - (int)indexOfSectionInfo:(id)arg1;
 - (void)loadSectionInfosAtIndexes:(id)arg1;
 - (int)numberOfInvitationsReceived;
+- (BOOL)hasEnoughCloudFeedAssetEntriesToDisplay;
 - (id)indexesOfInvitationsReceivedSectionInfos;
 - (int)indexOfSectionInfoForCloudFeedEntry:(id)arg1;
 - (id)sectionInfosAtIndexes:(id)arg1;

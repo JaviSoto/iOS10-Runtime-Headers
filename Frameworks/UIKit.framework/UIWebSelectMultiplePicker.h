@@ -29,6 +29,7 @@
 - (void)set_singleSelectionItem:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
+- (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (id)controlView;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;

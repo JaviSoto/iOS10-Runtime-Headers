@@ -14,8 +14,8 @@
 
 - (id)accountWithUsername:(id)arg1;
 - (id)accountWithPersonID:(id)arg1;
-- (void)removeAccount:(id)arg1;
 - (void)saveAllAccounts;
+- (void)removeAccount:(id)arg1;
 - (void)_removeAppleIDCertsForUsername:(id)arg1;
 - (void)updateAccount:(id)arg1;
 - (id)accountsEnabledForDataclass:(id)arg1;

@@ -43,6 +43,8 @@
 - (void)applyMention:(id)arg1;
 - (void)_presentMentionsViewControllerWithSearchString:(id)arg1;
 - (void)noteCheckedInWithDaemon;
+- (BOOL)_countMediaAttachmentsTowardCharacterCount;
+- (int)_characterCountForText:(id)arg1;
 - (id)completeText:(id)arg1 withAttachments:(id)arg2;
 - (void)_updateCharacterCountLabelWithCount:(int)arg1 overLimit:(BOOL)arg2;
 - (int)_charactersRemainingWithText:(id)arg1;
@@ -63,7 +65,6 @@
 - (void)placeViewController:(id)arg1 willDisappear:(BOOL)arg2;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
 - (BOOL)validateText:(id)arg1;
-- (BOOL)countMediaAttachmentsTowardCharacterCount;
 - (void)presentNoAccountsAlert;
 - (void)setGeotagStatus:(int)arg1;
 - (void)updateGeotagStatus;

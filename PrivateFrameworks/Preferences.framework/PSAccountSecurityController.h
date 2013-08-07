@@ -16,6 +16,7 @@
     PSKeychainSyncManager *_manager;
     UIAlertView *_invalidPhoneNumberAlert;
     UIAlertView *_changeDevicePasscodeAlert;
+    UIAlertView *_disableRecoveryConfirmationAlert;
     BOOL _usesSimpleSecurityCode;
     NSString *_securityCode;
 }
@@ -27,6 +28,7 @@
 - (void)setUsesSimpleSecurityCode:(BOOL)arg1;
 - (BOOL)usesSimpleSecurityCode;
 - (id)useSimpleSecurityCodeForSpecifier:(id)arg1;
+- (void)disableRecovery;
 - (void)navDonePressed;
 - (void)navCancelPressed;
 - (void)saveSMSTargetChanges;
@@ -45,6 +47,7 @@
 - (void)phoneSettingsFragment:(id)arg1 didChangePhoneNumber:(id)arg2 countryInfo:(id)arg3;
 - (id)init;
 - (void)dealloc;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 
 @end

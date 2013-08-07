@@ -2,9 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSManagedObjectModel, NSManagedObjectContext, NSFetchRequest, NSFetchedResultsController, NSPersistentStoreCoordinator, NSString, NSArray;
+@class NSArray, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSManagedObjectContext, NSFetchRequest, NSFetchedResultsController, BKSProcessAssertion, NSPersistentStoreCoordinator, NSString, NSManagedObjectModel;
 
 @interface RadioModel : NSObject <NSFetchedResultsControllerDelegate> {
+    BKSProcessAssertion *_backgroundProcessAssertion;
+    NSObject<OS_dispatch_queue> *_backgroundTaskAccessQueue;
+    int _backgroundTaskCount;
+    NSObject<OS_dispatch_source> *_backgroundTaskInvalidateTimerSource;
     NSManagedObjectContext *_context;
     BOOL _isBackgroundModel;
     NSManagedObjectModel *_model;
@@ -36,10 +40,11 @@
 
 + (unsigned int)maxStationArtworkSize;
 + (void)deleteAllData;
-+ (id)newBackgroundModel;
++ (id)backgroundModel;
 + (id)sharedModel;
 + (void)initialize;
 
+- (void)copySkipHistoryFromStationHash:(id)arg1 toStationID:(long long)arg2;
 - (id)trackHistorySections;
 - (id)stationWithHash:(id)arg1;
 - (void)setStationSortOrdering:(id)arg1;
@@ -57,7 +62,6 @@
 - (void)markTracksNeedRefreshForStation:(id)arg1;
 - (id)newPreviewStationWithDictionary:(id)arg1;
 - (id)newFeaturedStationWithDictionary:(id)arg1;
-- (void)importArtworkData:(id)arg1 forStation:(id)arg2;
 - (id)globalHash;
 - (id)featuredStations;
 - (void)enumerateRevisionsSinceRevisionID:(long long)arg1 usingBlock:(id)arg2;
@@ -69,15 +73,20 @@
 - (void)deleteTrackHistoryItem:(id)arg1;
 - (void)deleteAllTrackHistory;
 - (id)convertObjects:(id)arg1;
-- (void)_registerBackgroundManagedObjectContext:(id)arg1;
-- (void)_contextDidSaveNotification:(id)arg1;
 - (void)_createRadioDirectoryAndDatabaseIfNecessary;
 - (id)_setByReplacingManagedObjectsInSet:(id)arg1;
 - (id)convertObjectsInSet:(id)arg1;
+- (void)_endBackgroundTaskAssertion;
+- (void)_beginBackgroundTaskAssertion;
+- (void)_contextDidSaveNotification:(id)arg1;
 - (unsigned long long)globalVersion;
 - (void)_setDatabasePropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)stations;
 - (void)_performTransactionAndSave:(BOOL)arg1 withBlock:(id)arg2;
+- (id)_newManagedSkipHistoryWithStationHash:(id)arg1;
+- (id)_newManagedSkipHistoryWithStationID:(long long)arg1;
+- (void)_addTimestamp:(double)arg1 toManagedSkipHistory:(id)arg2 withSkipIntervalForCulling:(double)arg3;
+- (id)_newManagedSkipHistoryWithSkipIdentifier:(id)arg1;
 - (id)newAudioClipWithDictionary:(id)arg1;
 - (id)trackWithStoreID:(long long)arg1;
 - (id)stationWithPersistentID:(long long)arg1;
@@ -86,7 +95,6 @@
 - (void)insertHistoryForTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3 stationName:(id)arg4 date:(id)arg5;
 - (void)insertHistoryForTrack:(id)arg1 stationID:(long long)arg2 stationHash:(id)arg3 stationName:(id)arg4 date:(id)arg5;
 - (id)newStationWithDictionary:(id)arg1;
-- (void)importArtworkData:(id)arg1 forStation:(id)arg2 maxSize:(unsigned int)arg3;
 - (id)_arrayByReplacingManagedObjectsInArray:(id)arg1;
 - (void)_insertRevisionWithStationID:(long long)arg1 revisionType:(int)arg2;
 - (id)stationWithID:(long long)arg1;
@@ -96,14 +104,21 @@
 - (id)trackHistories;
 - (void)deleteAllData;
 - (id)convertObject:(id)arg1;
+- (id)_managedSkipHistoryWithStationHash:(id)arg1;
+- (id)_managedSkipHistoryWithStationID:(long long)arg1;
+- (unsigned int)_numberOfSkipsUsedWithSkipTimestamps:(id)arg1 currentTimestamp:(double)arg2 skipInterval:(double)arg3;
+- (id)_managedSkipHistoryWithSkipIdentifier:(id)arg1;
+- (unsigned int)numberOfTracksSkippedForStation:(id)arg1;
 - (id)_databasePropertyValueForKey:(id)arg1;
-- (void)_postContextDidChangeNotification:(id)arg1;
-- (void)_unregisterBackgroundManagedObjectContext:(id)arg1;
 - (void)_resetModel;
+- (void)_postContextDidChangeNotification:(id)arg1;
 - (void)_prepareModel;
+- (void)_defaultRadioModelInitialization;
 - (id)_initBackgroundModelWithPersistentStoreCoordinator:(id)arg1;
 - (void)noteTrackWasSkippedForStation:(id)arg1;
 - (void)removeTracksForPlaybackFromAllStations;
+- (void)setCurrentPlayingTrack:(id)arg1 withTime:(double)arg2 forStation:(id)arg3;
+- (BOOL)canSkipTracksForStation:(id)arg1;
 - (id)stationSortOrdering;
 - (unsigned long long)authenticatedAccountIdentifier;
 - (void)performTransactionWithBlock:(id)arg1;

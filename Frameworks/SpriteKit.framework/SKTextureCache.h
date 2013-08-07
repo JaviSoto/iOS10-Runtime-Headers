@@ -26,6 +26,7 @@
     } alphaMapSize;
     int state;
     int lock;
+    struct CGImage { } *collisionMask;
 }
 
 @property unsigned int texId;

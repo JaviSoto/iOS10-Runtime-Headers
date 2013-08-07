@@ -9,7 +9,7 @@
 @property int format;
 
 
-- (id)preheatItemForAsset:(id)arg1;
+- (id)preheatItemForAsset:(id)arg1 options:(unsigned int)arg2;
 - (void)setFormat:(int)arg1;
 - (int)format;
 - (id)initWithFormat:(int)arg1;

@@ -75,6 +75,7 @@
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
 - (id)_fullText;
+- (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (unsigned long)_characterAfterCaretSelection;
 - (id)_wordContainingCaretSelection;

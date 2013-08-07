@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WebBookmark, WFUserSettings, WebBookmarkTitleWordTokenizer;
+@class WFUserSettings, SafariFetcherServerProxy, WebBookmark, WebBookmarkTitleWordTokenizer;
 
 @interface WebBookmarkCollection : NSObject  {
     struct sqlite3 { } *_db;
@@ -12,6 +12,7 @@
     unsigned int _favoritesFolderIdentifier;
     BOOL _merging;
     BOOL _dirty;
+    SafariFetcherServerProxy *_safariFetcherServerProxy;
     WFUserSettings *_webFilterUserSettings;
     int _webFilterRestrictionType;
 }
@@ -25,6 +26,7 @@
 + (void)_postBookmarksChangedSyncNotification;
 + (BOOL)isLockedSync;
 + (id)readingListArchivesDirectoryPath;
++ (id)_currentProcessContainerPath;
 + (id)safariDirectoryPath;
 + (id)_uniqueExternalUUID;
 + (void)unlockSync;
@@ -190,6 +192,7 @@
 - (BOOL)markWebContentFilterAllowsAllReadingListItems;
 - (BOOL)saveBookmark:(id)arg1 startReadingListFetcher:(BOOL)arg2;
 - (id)_readingListItemsWhere:(id)arg1;
+- (id)_safariFetcherServerProxy;
 - (int)_executeSQL:(id)arg1;
 - (unsigned int)readingListFolderBookmarkID;
 - (BOOL)saveBookmark:(id)arg1;
@@ -218,6 +221,7 @@
 - (id)readingListWithUnreadOnly:(BOOL)arg1;
 - (BOOL)_deleteBookmark:(id)arg1 leaveTombstone:(BOOL)arg2;
 - (BOOL)clearAllReadingListArchives;
+- (BOOL)clearReadingListArchiveWithUUID:(id)arg1;
 - (id)_serverIDAtOrderIndex:(unsigned int)arg1 inFolderWithServerID:(id)arg2;
 - (id)_serverIDsInFolderWithServerID:(id)arg1;
 - (id)_syncKeysForServerIDs:(id)arg1;

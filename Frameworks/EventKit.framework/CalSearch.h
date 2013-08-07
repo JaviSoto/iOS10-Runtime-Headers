@@ -22,10 +22,6 @@
     struct __CFString { } *_searchString;
     int _seed;
     <CalSearchDataSink> *_dataSink;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _dataSinkLock;
     bool_dateToStartShowingResultsSentToDataSink;
     bool_moreResultsAvailable;
     struct __CFArray { } *_partialResults;

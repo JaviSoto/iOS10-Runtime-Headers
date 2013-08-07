@@ -6,7 +6,6 @@
 
 @interface VCTransport : NSObject  {
     struct tagHANDLE { int x1; } *tpHandle;
-    BOOL isListening;
     NSMutableDictionary *iceBlocks;
     NSObject<OS_dispatch_queue> *delegateQueue;
 }

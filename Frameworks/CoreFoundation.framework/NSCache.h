@@ -10,12 +10,12 @@
 
 
 - (void)setCountLimit:(unsigned int)arg1;
+- (void)setTotalCostLimit:(unsigned int)arg1;
 - (id)init;
 - (BOOL)evictsObjectsWhenApplicationEntersBackground;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
 - (unsigned int)countLimit;
 - (unsigned int)totalCostLimit;
-- (void)setTotalCostLimit:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
 - (BOOL)evictsObjectsWithDiscardedContent;
 - (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;

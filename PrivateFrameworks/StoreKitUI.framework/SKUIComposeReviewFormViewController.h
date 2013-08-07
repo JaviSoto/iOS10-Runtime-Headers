@@ -19,12 +19,12 @@
 - (id)initWithReviewMetadata:(id)arg1;
 - (id)editedReviewMetadata;
 - (void)setRating:(float)arg1;
+- (void)_cancel;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)_cancel;
 
 @end

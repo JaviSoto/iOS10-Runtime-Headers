@@ -73,9 +73,9 @@
 - (void)remove;
 - (void)setPage:(id)arg1;
 - (id)previousSibling;
+- (id)children;
 - (id)parent;
 - (unsigned int)indexOf:(id)arg1;
 - (void)remove:(id)arg1;
-- (id)children;
 
 @end

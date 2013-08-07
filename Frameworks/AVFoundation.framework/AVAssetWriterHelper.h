@@ -27,7 +27,6 @@
 @property(readonly) NSArray * inputGroups;
 
 
-- (id)inputs;
 - (BOOL)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (id)weakReferenceToAssetWriter;
 - (BOOL)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;
@@ -62,6 +61,7 @@
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)addInput:(id)arg1;
+- (id)inputs;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)outputURL;

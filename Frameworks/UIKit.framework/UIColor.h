@@ -76,6 +76,7 @@
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
 + (id)colorWithCIColor:(id)arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
++ (float)_luminanceWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)tableCellGroupedBackgroundColorLegacyWhite;
 + (id)__halfTransparentWhiteColor;
 + (id)__halfTransparentBlackColor;
@@ -184,7 +185,10 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)_colorCombinedWithColors:(id)arg1;
+- (float)_luminance;
 - (BOOL)_isSimilarToColor:(id)arg1 withinPercentage:(float)arg2;
+- (id)_colorCombinedWithColor:(id)arg1;
 - (void)_setSystemColorName:(id)arg1;
 - (id)initWithPatternImage:(id)arg1;
 - (id)CIColor;

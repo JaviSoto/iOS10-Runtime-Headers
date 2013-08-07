@@ -43,9 +43,9 @@
 - (id)purchaseError;
 - (unsigned long long)libraryItemIdentifier;
 - (id)_valueForDownloadProperty:(id)arg1;
+- (id)_SSPurchase;
 - (id)_SSPurchaseResponse;
 - (BOOL)_isCanceled;
-- (id)_SSPurchase;
 - (id)_SSDownload;
 - (id)phaseIdentifier;
 - (void)_setSSPurchase:(id)arg1 SSPurchaseResponse:(id)arg2;

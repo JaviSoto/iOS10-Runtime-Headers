@@ -56,8 +56,10 @@
 - (float)minTimeLabelWidth;
 - (int)timeLabelStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeLabelInsets;
+- (void)setDetailScrubbingVerticalRange:(float)arg1;
 - (float)detailScrubbingVerticalRange;
 - (double)availableDuration;
+- (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMinTimeLabelWidth:(float)arg1;
 - (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)detailScrubController:(id)arg1 didChangeScrubSpeed:(int)arg2;
@@ -84,16 +86,14 @@
 - (id)timeLabelFontForStyle:(int)arg1;
 - (float)timeLabelVerticalOffsetForStyle:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbHitRect;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
 - (void)_setupControlsForStyle;
 - (void)setValue:(float)arg1 duration:(double)arg2;
 - (void)cancelTracking;
-- (BOOL)detailScrubbingAvailableForCurrentDuration;
-- (void)setDetailScrubbingVerticalRange:(float)arg1;
-- (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
-- (id)localizedScrubSpeedText;
-- (void)setAvailableDuration:(double)arg1;
 - (void)setTimeLabelStyle:(int)arg1;
+- (BOOL)detailScrubbingAvailableForCurrentDuration;
+- (void)setAvailableDuration:(double)arg1;
+- (id)localizedScrubSpeedText;
 - (BOOL)allowsDetailScrubbing;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -112,10 +112,10 @@
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)tintColorDidChange;
 - (BOOL)isTracking;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (double)duration;
 

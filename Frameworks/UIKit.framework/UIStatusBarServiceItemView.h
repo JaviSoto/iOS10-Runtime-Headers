@@ -14,11 +14,13 @@
     int _contentType;
     BOOL _loopingNecessaryForString;
     BOOL _loopNowIfNecessary;
+    BOOL _loopingNow;
     float _letterSpacing;
 }
 
 
 - (void)dealloc;
+- (void)_finalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)_serviceContentsImage;
 - (id)_crossfadeContentsImage;

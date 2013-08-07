@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, MFComposeRecipientView, MFContactsSearchManager, UITableView, MFContactsSearchResultsModel, UIScrollView, UIPopoverController, NSNumber;
+@class NSArray, MFComposeRecipientView, MFContactsSearchManager, UITableView, MFContactsSearchResultsModel, IDSBatchIDQueryController, NSMutableSet, UIScrollView, UIPopoverController, NSNumber;
 
-@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UIPopoverControllerDelegate> {
+@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UIPopoverControllerDelegate, IDSBatchIDQueryControllerDelegate> {
     UITableView *_searchResultsTable;
     MFComposeRecipientView *_recipientView;
     UIScrollView *_recipientContainerView;
@@ -13,6 +13,8 @@
     MFContactsSearchResultsModel *_searchResultsModel;
     NSNumber *_currentSearchTaskID;
     NSArray *_searchResults;
+    IDSBatchIDQueryController *_idsBatchIDQueryController;
+    NSMutableSet *_validPhoneNumbers;
     BOOL _wasFirstResponder;
     BOOL _showingPeoplePicker;
     UIPopoverController *_peoplePickerPopoverController;
@@ -41,6 +43,7 @@
 - (void)makeRecipientViewResignFirstResponder;
 - (void)makeRecipientViewFirstResponder;
 - (float)bottomTableOffset;
+- (id)_selectedNormalizedPhoneForRecipient:(id)arg1;
 - (void)setBottomTableOffset:(float)arg1;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
@@ -61,8 +64,10 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)_dismissPeoplePicker:(id)arg1;
 - (void*)_addressBook;
+- (void)idStatusUpdatedForDestinations:(id)arg1;
 - (id)recipients;
 - (void)setDelegate:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;

@@ -25,9 +25,9 @@
 - (id)genericShieldStyleInfo;
 - (BOOL)hasGenericShieldStyleInfo;
 - (id)variants;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

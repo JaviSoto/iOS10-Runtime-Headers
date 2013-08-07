@@ -125,7 +125,9 @@
 - (void)zoomTransition:(id)arg1 willBeginForOperation:(int)arg2 animated:(BOOL)arg3 interactive:(BOOL)arg4;
 - (void)zoomTransition:(id)arg1 setVisibility:(BOOL)arg2 forPhotoToken:(id)arg3;
 - (id)zoomTransition:(id)arg1 photoTokenForPhoto:(id)arg2 inCollection:(id)arg3;
+- (BOOL)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
+- (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
 - (void)updateVisibleSupplementaryViewsOfKind:(id)arg1 animated:(BOOL)arg2;
 - (void)setCustomDoneButtonItem:(id)arg1;
 - (void)sender:(id)arg1 shareAssetsInContainer:(id)arg2 withCompletion:(id)arg3;
@@ -144,7 +146,6 @@
 - (id)collectionView:(id)arg1 targetIndexPathForMoveFromIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (BOOL)collectionView:(id)arg1 canReorderItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 moveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3 completionHandler:(id)arg4;
-- (id)_pl_debugItems;
 - (void)protoSettingsDidChange:(id)arg1;
 - (id)savedSlideshowSettings;
 - (void)_getFirstAsset:(id*)arg1 collection:(id*)arg2;
@@ -206,12 +207,12 @@
 - (id)_assetsAtIndexPaths:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
 - (struct CGPoint { float x1; float x2; })_previousPreheatContentOffset;
-- (id)mainGridLayout;
 - (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setPreviousPreheatContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)shouldShowTabBar;
 - (BOOL)shouldShowToolbar;
 - (void)preheatAssets;
+- (id)mainGridLayout;
 - (BOOL)initiallyScrolledToBottom;
 - (void)_updateCollectionViewMultipleSelection;
 - (void)_configureAddPlaceholderCell:(id)arg1 animated:(BOOL)arg2;
@@ -262,8 +263,6 @@
 - (void)setAllowedActions:(unsigned int)arg1;
 - (void)setMainGridLayout:(id)arg1;
 - (id)bestReferenceItemIndexPath;
-- (void)setContentViewInSyncWithModel:(BOOL)arg1;
-- (BOOL)isContentViewInSyncWithModel;
 - (BOOL)allowSlideshowButton;
 - (void)configureGlobalFooterView:(id)arg1;
 - (BOOL)wantsGlobalFooter;
@@ -272,6 +271,8 @@
 - (id)newGridLayout;
 - (void)updateVisibleSectionHeadersAtIndexes:(id)arg1;
 - (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 forPhotoToken:(id)arg4 operation:(int)arg5;
+- (void)setContentViewInSyncWithModel:(BOOL)arg1;
+- (BOOL)isContentViewInSyncWithModel;
 - (void)handleNavigateToAsset:(id)arg1 inContainer:(id)arg2;
 - (id)photoCollectionAtIndex:(unsigned int)arg1;
 - (void)handleLongPressGesture:(id)arg1;

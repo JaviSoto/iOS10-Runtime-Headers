@@ -54,6 +54,7 @@
 - (void)_invalidateDeathTimerForMessageID:(id)arg1;
 - (void)_messageCompletelyTimedOut:(id)arg1;
 - (void)_invalidateTimerForMessageID:(id)arg1;
+- (void)_setEnabledTopics:(id)arg1;
 - (void)_updateWiFiAssertions;
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (void)_dequeueIfNeeded;

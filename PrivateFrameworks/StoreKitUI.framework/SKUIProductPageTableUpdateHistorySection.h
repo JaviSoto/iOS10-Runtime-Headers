@@ -27,8 +27,8 @@
 - (void)setTextLayoutCache:(id)arg1;
 - (void)setReleaseNotes:(id)arg1;
 - (void)setFirstStringIndex:(int)arg1;
-- (id)initWithClientContext:(id)arg1;
 - (id)releaseNotes;
+- (id)initWithClientContext:(id)arg1;
 - (id)textLayoutCache;
 - (id)headerViewForTableView:(id)arg1;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;

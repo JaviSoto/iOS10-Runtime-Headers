@@ -6,7 +6,6 @@
 
 @interface VGLLayer : CAEAGLLayer  {
     VGLScreenCanvas *_canvas;
-    int _magicFramebufferToken;
 }
 
 

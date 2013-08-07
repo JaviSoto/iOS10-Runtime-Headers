@@ -19,10 +19,10 @@
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
 - (id)OSVersion;
 - (id)socketOptions;
-- (id)_accountForPersonID:(id)arg1;
 - (BOOL)_mayPerformFileTransfer;
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
 - (void)_rereadDefaults;
+- (id)_accountForPersonID:(id)arg1;
 - (id)pushTokenForPersonID:(id)arg1;
 - (id)UDID;
 - (id)OSString;

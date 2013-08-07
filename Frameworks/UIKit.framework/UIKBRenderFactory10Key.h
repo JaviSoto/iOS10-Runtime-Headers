@@ -16,8 +16,9 @@
 - (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
 - (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
 - (float)numberPadKeyPrimarySymbolSize;
-- (float)interkeyGapsCenterXOfKeyplaneFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
+- (float)interkeyGapsCenterXOfKeyplaneFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)displayContentsForKey:(id)arg1;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;

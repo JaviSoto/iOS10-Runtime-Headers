@@ -91,7 +91,6 @@
 - (id)copyScriptProperties;
 - (id)copyDefaultScriptProperties;
 - (id)copyArchivableContext;
-- (int)ITunesStoreUIBarStyle;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (void)applicationDidEnterBackground;

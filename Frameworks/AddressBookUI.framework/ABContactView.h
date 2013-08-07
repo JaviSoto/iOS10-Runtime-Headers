@@ -35,6 +35,7 @@
 
 + (id)optionalCardProperties;
 + (id)defaultCardProperties;
++ (id)allCardProperties;
 + (id)cellIdentifierForProperty:(id)arg1;
 + (id)cellIdentifierForLinkedCardsPlaceholderGroup;
 + (id)cellIdentifierForLinkedCardsGroup;
@@ -44,7 +45,6 @@
 + (id)cellIdentifierForSplitActions;
 + (id)cellIdentifierForActions;
 + (id)cellIdentifierForClass:(Class)arg1;
-+ (id)allCardProperties;
 + (id)nameProperties;
 + (id)requiredNameProperties;
 + (BOOL)isFixedValueProperty:(id)arg1;

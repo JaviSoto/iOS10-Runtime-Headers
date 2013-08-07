@@ -135,7 +135,7 @@
 + (void)__accessibilityRequestGuidedAccessSession:(BOOL)arg1 completion:(id)arg2;
 + (int)__accessibilityGuidedAccessRestrictionStateForIdentifier:(id)arg1;
 + (BOOL)__accessibilityGuidedAccessStateEnabled;
-+ (void)_installAppearanceSwizzleForSetter:(id)arg1;
++ (void)_installAppearanceSwizzlesForSetter:(id)arg1;
 + (id)_gkDefaultKeymap;
 + (BOOL)_gk_swizzleSelector:(SEL)arg1 toUseImplementationFromSelector:(SEL)arg2 originalImplementation:(int (**)())arg3;
 + (void)cancelPreviousPerformRequestsWithNonRetainedTarget:(id)arg1;
@@ -294,7 +294,6 @@
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)releaseOnMainThread;
 - (id)_webkit_invokeOnMainThread;
-- (void)_uikit_performSelectorAfterCATransactionCommits:(SEL)arg1 withObject:(id)arg2;
 - (id)_shortMethodDescription;
 - (id)_methodDescription;
 - (id)_ivarDescription;

@@ -33,8 +33,8 @@
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (int)lastColumn;
 - (int)firstColumn;
-- (id)initWithParent:(id)arg1;
 - (int)columnSpan;
 - (double)columnWidth;
+- (id)initWithParent:(id)arg1;
 
 @end

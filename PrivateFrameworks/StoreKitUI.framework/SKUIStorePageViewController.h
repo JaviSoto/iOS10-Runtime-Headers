@@ -51,6 +51,7 @@
 - (void)setStorePage:(id)arg1;
 - (id)storePage;
 - (id)_visibleMetricsImpressionsString;
+- (void)_updateSectionsForIndex:(int)arg1 menuSection:(id)arg2;
 - (void)_setSelectedIndex:(int)arg1 forMenuSection:(id)arg2;
 - (void)_pageSectionDidDismissOverlayController:(id)arg1;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
@@ -68,6 +69,7 @@
 - (void)_enumerateVisibleSectionsUsingBlock:(id)arg1;
 - (id)_textLayoutCache;
 - (id)_sectionWithPageComponent:(id)arg1;
+- (void)_updateSectionsAfterMenuChange;
 - (id)_childSectionsForMenuComponent:(id)arg1 selectedIndex:(int)arg2;
 - (id)_newStorePageSectionContext;
 - (id)_menuContextForMenuComponent:(id)arg1;

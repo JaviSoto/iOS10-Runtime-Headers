@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOTileSet : PBCodable  {
+@interface GEOTileSet : PBCodable <NSCopying> {
     NSString *_baseURL;
     NSString *_localizationURL;
     NSString *_multiTileURL;
@@ -34,8 +34,6 @@
 @property BOOL multiTileURLUsesStatusCodes;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)supportedLanguages;
 - (id)validVersions;
 - (void)setHasMultiTileURLUsesStatusCodes:(BOOL)arg1;
@@ -60,6 +58,8 @@
 - (void)setValidVersions:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)size;
 - (void)setStyle:(int)arg1;
 - (void)setBaseURL:(id)arg1;
@@ -71,6 +71,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)scale;
 - (id)dictionaryRepresentation;
 

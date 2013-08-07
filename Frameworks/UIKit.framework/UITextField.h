@@ -83,6 +83,7 @@
     BOOL _deferringBecomeFirstResponder;
     BOOL _avoidBecomeFirstResponder;
     BOOL _setSelectionRangeAfterFieldEditorIsAttached;
+    BOOL _originFromBaselineLayoutIsInvalid;
     NSLayoutConstraint *_baselineLayoutConstraint;
     _UIBaselineLayoutStrut *_baselineLayoutLabel;
     NSDictionary *_defaultTextAttributes;
@@ -232,6 +233,7 @@
 - (struct CGPoint { float x1; float x2; })_scrollOffset;
 - (id)actualFont;
 - (BOOL)_isShowingPrefix;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedCaretRectForCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isUndoEnabled;
 - (BOOL)_implementsCustomDrawing;
 - (void)drawBorder:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -261,6 +263,7 @@
 - (BOOL)_showsClearButtonWhenEmpty;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_atomBackgroundViewFrame;
 - (BOOL)_showsAtomBackground;
+- (BOOL)_hasContent;
 - (int)borderStyle;
 - (BOOL)_heightShouldBeMini;
 - (void)setFont:(id)arg1 fullFontSize:(float)arg2;
@@ -280,8 +283,8 @@
 - (int)clearButtonMode;
 - (void)_createBaselineLayoutLabelIfNecessary;
 - (struct CGSize { float x1; float x2; })_textSizeUsingFullFontSize:(BOOL)arg1;
-- (float)_baselineLayoutConstraintConstant;
 - (void)_sizeChanged:(BOOL)arg1;
+- (float)_baselineLayoutConstraintConstant;
 - (void)_setNeedsStyleRecalc;
 - (void)_stopObservingFieldEditorScroll;
 - (BOOL)clearsOnBeginEditing;
@@ -312,10 +315,10 @@
 - (Class)_systemBackgroundViewClass;
 - (Class)_placeholderLabelClass;
 - (int)_suffixLabelTextAlignment;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedCaretRectForCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_clearBackgroundViews;
 - (void)_updateBackgroundViewsAnimated:(BOOL)arg1;
 - (float)paddingRight;
+- (int)_currentTextAlignment;
 - (BOOL)_showsLeftView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suffixFrame;
 - (BOOL)_hasSuffixField;
@@ -329,8 +332,6 @@
 - (id)_clearButtonImageForState:(unsigned int)arg1;
 - (void)_updateButtons;
 - (id)_clearButton;
-- (int)_currentTextAlignment;
-- (BOOL)_hasContent;
 - (void)setPaddingLeft:(float)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)searchText;
@@ -514,11 +515,13 @@
 - (void)setFont:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (id)_scriptingInfo;
+- (BOOL)_needsOriginRecheckForConstraintsLayout;
 - (void)tintColorDidChange;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)_canDrawContent;
 - (void)_encodeBackgroundColorWithCoder:(id)arg1;
 - (void)_windowBecameKey;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;

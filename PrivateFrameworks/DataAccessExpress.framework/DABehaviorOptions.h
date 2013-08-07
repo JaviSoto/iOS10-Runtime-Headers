@@ -10,6 +10,7 @@
 + (BOOL)orphanCheckEnabled;
 + (int)numForgivable401s;
 + (BOOL)isCustomerInstall;
++ (BOOL)earlyPingEnabled;
 + (BOOL)alwaysUseCalendarHomeSync;
 + (BOOL)babysitterEnabled;
 + (BOOL)isInHoldingPattern;

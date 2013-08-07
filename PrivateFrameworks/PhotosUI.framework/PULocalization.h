@@ -5,6 +5,7 @@
 @interface PULocalization : NSObject  {
 }
 
++ (id)messageForCloudFeedUpdatingLibraryNoNetwork;
 + (id)messageForEmptyPhotoLibrary;
 + (id)messageForEmptyPhotosCollection:(id)arg1;
 + (id)titleForEmptyPhotosCollection:(id)arg1;

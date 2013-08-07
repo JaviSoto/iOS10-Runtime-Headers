@@ -25,6 +25,7 @@
 
 + (void)allInstancesResignActive;
 
+- (id)initWithContentURL:(id)arg1;
 - (BOOL)readyForDisplay;
 - (BOOL)_isReadyForDisplay;
 - (void)_resignActive;
@@ -62,7 +63,6 @@
 - (void)setControlStyle:(int)arg1;
 - (int)controlStyle;
 - (int)playbackState;
-- (id)initWithContentURL:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (int)loadState;
 - (id)contentURL;

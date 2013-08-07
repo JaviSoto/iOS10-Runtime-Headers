@@ -4,7 +4,7 @@
 
 @class GEONameInfo;
 
-@interface GEORouteName : PBCodable  {
+@interface GEORouteName : PBCodable <NSCopying> {
     int _lastZilchStitchedIndex;
     GEONameInfo *_nameInfo;
     struct { 
@@ -18,8 +18,6 @@
 @property int lastZilchStitchedIndex;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasLastZilchStitchedIndex:(BOOL)arg1;
 - (void)setLastZilchStitchedIndex:(int)arg1;
 - (int)lastZilchStitchedIndex;
@@ -28,10 +26,13 @@
 - (BOOL)hasNameInfo;
 - (void)setNameInfo:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

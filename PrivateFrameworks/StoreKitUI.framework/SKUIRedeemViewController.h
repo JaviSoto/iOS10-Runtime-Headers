@@ -27,10 +27,10 @@
 - (void)_cancelButtonAction:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (int)category;
 - (void).cxx_destruct;
 - (void)viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
-- (int)category;
 - (void)setOperationQueue:(id)arg1;
 - (id)operationQueue;
 

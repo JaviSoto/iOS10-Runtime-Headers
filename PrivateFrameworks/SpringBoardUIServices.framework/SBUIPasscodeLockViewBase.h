@@ -11,15 +11,16 @@
     BOOL _playsKeypadSounds;
     BOOL _showsEmergencyCallButton;
     BOOL _showsStatusField;
+    BOOL _becameVisible;
     float _backgroundAlpha;
     UIColor *_customBackgroundColor;
     SBUIPasscodeEntryField *_entryField;
     <SBFLegibilitySettingsProvider> *_backgroundLegibilitySettingsProvider;
     BOOL _shouldResetForFailedPasscodeAttempt;
-    BOOL _shouldUpdateStatusText;
     float _luminanceBoost;
     float _currentBacklightLevel;
     _UILegibilitySettings *_legibilitySettings;
+    BOOL _allowsStatusTextUpdatingOnResignFirstResponder;
 }
 
 @property int style;
@@ -40,8 +41,10 @@
 - (id)_entryField;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
 - (BOOL)shouldResetForFailedPasscodeAttempt;
+- (void)_resetStatusText;
 - (void)_sendDelegateKeypadKeyUp;
 - (void)_sendDelegateKeypadKeyDown;
+- (BOOL)_isBoundsPortraitOriented;
 - (void)setBackgroundLegibilitySettingsProvider:(id)arg1;
 - (id)backgroundLegibilitySettingsProvider;
 - (void)setCustomBackgroundColor:(id)arg1;
@@ -51,6 +54,7 @@
 - (BOOL)showsStatusField;
 - (BOOL)playsKeypadSounds;
 - (id)passcode;
+- (void)setAllowsStatusTextUpdatingOnResignFirstResponder:(BOOL)arg1;
 - (void)resetForFailedPasscode;
 - (void)_updateStatusText:(id)arg1;
 - (float)_luminanceBoostFromDisplayBrightness;
@@ -60,7 +64,6 @@
 - (float)_luminosityBoost;
 - (void)_luminanceBoostDidChange;
 - (void)_evaluateLuminance;
-- (void)_resetStatusText;
 - (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)_clearBrightnessChangeTimer;
 - (void)_noteScreenBrightnessDidChange;
@@ -68,6 +71,7 @@
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
+- (int)_orientation;
 - (void)reset;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
@@ -82,5 +86,6 @@
 - (BOOL)canResignFirstResponder;
 - (BOOL)isFirstResponder;
 - (BOOL)canBecomeFirstResponder;
+- (void)didMoveToWindow;
 
 @end

@@ -2,13 +2,14 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDialogButton, SSAuthenticationContext, ISDialog, NSNumber, NSURL;
+@class NSURL, SSAuthenticationContext, ISDialog, NSNumber, ISDialogButton;
 
 @interface ISServerAuthenticationOperation : ISOperation  {
     NSNumber *_authenticatedAccountDSID;
     SSAuthenticationContext *_authenticationContext;
     ISDialog *_dialog;
     BOOL _performsButtonAction;
+    ISDialogButton *_performedButton;
     NSURL *_redirectURL;
     ISDialogButton *_selectedButton;
 }
@@ -17,13 +18,16 @@
 @property(retain) ISDialog * dialog;
 @property BOOL performsButtonAction;
 @property(retain) NSNumber * authenticatedAccountDSID;
+@property(retain) ISDialogButton * performedButton;
 @property(retain) NSURL * redirectURL;
 @property(retain) ISDialogButton * selectedButton;
 
 
+- (id)performedButton;
 - (void)setPerformsButtonAction:(BOOL)arg1;
 - (BOOL)_handleSelectedButton:(id)arg1;
 - (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
+- (void)setPerformedButton:(id)arg1;
 - (BOOL)performsButtonAction;
 - (BOOL)_shouldAuthenticateForButton:(id)arg1;
 - (BOOL)_copySelectedButton:(id*)arg1 returningError:(id*)arg2;

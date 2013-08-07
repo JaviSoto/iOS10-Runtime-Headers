@@ -99,6 +99,7 @@
     UIWindow *_windowFOrSBNeueCompatibility;
     UIView *_accessoryView;
     UIViewController *_accessoryViewController;
+    BOOL _textFieldsHidden;
     _UIModalItem *_representedModalItem;
 }
 
@@ -163,6 +164,7 @@
 - (void)_setDestructiveButton:(id)arg1;
 - (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
 - (void)setKeyboardShowsOnPopup:(BOOL)arg1;
+- (void)_updateButtonTitles;
 - (void)_showByReplacingAlert:(id)arg1 animated:(BOOL)arg2;
 - (id)_representedModalItem;
 - (void)popupAlertAnimated:(BOOL)arg1 animationType:(int)arg2;
@@ -185,8 +187,8 @@
 - (void)_setAccessoryViewController:(id)arg1;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1 coveredBySpringBoardAlert:(BOOL)arg2;
 - (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (id)_textFieldAtIndex:(int)arg1;
+- (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (void)_alertSheetTextFieldDidStartEditing:(id)arg1;
 - (id)_buttonAtIndex:(int)arg1;
 - (id)buttonAtIndex:(int)arg1;
@@ -195,7 +197,6 @@
 - (id)_firstOtherButton;
 - (int)firstOtherButtonIndex;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
-- (id)buttonTitleAtIndex:(int)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (void)replaceAlert:(id)arg1;
 - (void)_prepareForDisplay;
@@ -289,8 +290,8 @@
 - (id)_addButtonWithTitleText:(id)arg1;
 - (void)_loginFieldDidChangeForItem:(id)arg1;
 - (void)_passwordFieldDidChangeForItem:(id)arg1;
+- (id)buttonTitleAtIndex:(int)arg1;
 - (id)keyboard;
-- (BOOL)_isAnimating;
 - (void)_keyboardDidHide:(id)arg1;
 - (id)tableView;
 - (id)textField;
@@ -315,6 +316,7 @@
 - (float)_maxHeight;
 - (id)textFieldAtIndex:(int)arg1;
 - (int)defaultButtonIndex;
+- (BOOL)_isAnimating;
 - (int)numberOfRows;
 - (id)titleLabel;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;

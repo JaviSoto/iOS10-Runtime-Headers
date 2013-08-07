@@ -17,7 +17,7 @@
     unsigned int _hasParentScrollView : 1;
     unsigned int _caughtDeceleratingScrollView : 1;
     unsigned int _directionalLockEnabled : 1;
-    unsigned int _waitingForParentScrollView : 1;
+    unsigned int _transfersTrackingFromParentScrollView : 1;
 }
 
 @property UIScrollView * scrollView;
@@ -27,6 +27,9 @@
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)setDelegate:(id)arg1;
+- (BOOL)_shouldContinueToWaitToTransferTrackingFromParentScrollView;
+- (BOOL)_shouldTransferTrackingFromParentScrollViewForCurrentOffset;
+- (BOOL)_canTransferTrackingFromParentPagingScrollView;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;

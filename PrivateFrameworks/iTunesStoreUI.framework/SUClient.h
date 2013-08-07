@@ -59,8 +59,8 @@
 - (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)viewControllerFactory;
 - (id)initWithClientInterface:(id)arg1;
-- (id)clientInterface;
 - (id)scriptExecutionContext;
+- (id)clientInterface;
 - (id)clientIdentifier;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;

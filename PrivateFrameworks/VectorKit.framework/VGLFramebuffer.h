@@ -36,7 +36,6 @@
 
 - (unsigned int)framebuffer;
 - (void)deleteFramebuffers;
-- (void)setMagicFramebuffer:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithContext:(id)arg1 texture:(id)arg2 depth:(BOOL)arg3 stencil:(BOOL)arg4;
 - (void)_bindFramebuffers;
 - (BOOL)_createMultisampleFramebufferWithDepth:(BOOL)arg1 stencil:(BOOL)arg2;

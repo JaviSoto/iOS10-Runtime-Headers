@@ -47,10 +47,10 @@
 - (void)addZooms:(id)arg1;
 - (void)addAttributes:(id)arg1;
 - (void)setZooms:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setContents:(id)arg1;
 - (id)contents;

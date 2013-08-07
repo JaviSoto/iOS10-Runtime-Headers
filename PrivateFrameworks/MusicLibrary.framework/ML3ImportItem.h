@@ -12,6 +12,7 @@
 
 
 - (void)setPersistentIdentifier:(long long)arg1;
+- (id)sortEpisodeId;
 - (id)sortGenre;
 - (id)sortComposer;
 - (id)effectiveSortAlbumArtist;

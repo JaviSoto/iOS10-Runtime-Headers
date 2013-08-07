@@ -80,7 +80,6 @@
 - (void)removeWiFiAutoAssociationClientToken:(id)arg1;
 - (void)addWiFiAutoAssociationClientToken:(id)arg1;
 - (BOOL)autoAssociateWiFi;
-- (BOOL)isWiFiCaptive;
 - (void)removeFastDormancyDisableToken:(id)arg1;
 - (void)addFastDormancyDisableToken:(id)arg1;
 - (BOOL)disableFastDormancy;
@@ -98,6 +97,7 @@
 - (BOOL)isDataConnectionActive;
 - (void)setDataConnectionActive:(BOOL)arg1;
 - (void)setLock:(id)arg1;
+- (BOOL)isWiFiCaptive;
 - (BOOL)isWiFiEnabled;
 - (BOOL)isWiFiAssociated;
 - (id)wiFiScaledRate;

@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray, NSData;
 
-@interface GEORoute : PBCodable  {
+@interface GEORoute : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -107,8 +107,6 @@
 - (id)routeNames;
 - (int)transportTypeForStep:(id)arg1;
 - (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(BOOL)arg2 uniquePointRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
 - (id)newETARoute;
@@ -219,6 +217,8 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (unsigned int)pointCount;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
@@ -226,6 +226,7 @@
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;
 - (id)instructionsForStep:(id)arg1;

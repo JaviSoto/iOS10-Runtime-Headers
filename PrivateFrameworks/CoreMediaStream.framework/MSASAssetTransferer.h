@@ -37,7 +37,6 @@
 @property BOOL hasShutDown;
 
 
-- (void)shutDownCompletionBlock:(id)arg1;
 - (double)maxMMCSTokenValidityTimeInterval;
 - (void)_rereadPerformanceLoggingSetting;
 - (id)_MMCSTokenTooOldError;
@@ -83,6 +82,7 @@
 - (id)initWithPersonID:(id)arg1;
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setEventQueue:(id)arg1;
 - (id)eventQueue;

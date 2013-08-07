@@ -32,6 +32,7 @@
 - (void)setIsAmPm:(BOOL)arg1;
 - (BOOL)isAmPm;
 - (id)titleLabel;
+- (BOOL)_canBeReusedInPickerView;
 - (void)layoutSubviews;
 
 @end

@@ -30,5 +30,6 @@
 - (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (int)tableView:(id)arg1 titleAlignmentForFooterInSection:(int)arg2;
 
 @end

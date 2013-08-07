@@ -99,7 +99,7 @@
         unsigned int automaticallyAdjustInsets : 1; 
         unsigned int previousShouldUnderlapUnderStatusBar : 1; 
         unsigned int freezeShouldUnderlapUnderStatusBar : 1; 
-        unsigned int modifiedDoubleHeightBehavior : 1; 
+        unsigned int neverResizeRoot : 1; 
     } _viewControllerFlags;
     int _retainCount;
     BOOL _ignoreAppSupportedOrientations;
@@ -316,9 +316,9 @@
 - (id)_remoteViewControllerProxy;
 - (struct { unsigned int x1[8]; })_hostAuditToken;
 - (void)_stateRestorationDidFinish:(BOOL)arg1;
+- (id)_hostApplicationBundleIdentifier;
 - (void)_hostApplicationWillEnterForeground;
 - (void)_hostApplicationDidEnterBackground;
-- (id)_hostApplicationBundleIdentifier;
 - (void)_willAppearInRemoteViewController;
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)_setRemoteViewControllerProxy:(id)arg1;
@@ -471,11 +471,12 @@
 - (void)_setExistingTabBarItem:(id)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)_recordContentScrollView;
+- (id)_modalPreservedFirstResponder;
 - (void)_setSharedView:(id)arg1;
 - (void)unloadView;
-- (float)_statusBarHeightAdjustmentForCurrentOrientation;
 - (BOOL)_isViewController;
 - (id)_vanillaInit;
+- (void)_setFrameIsNotResizedForDoubleHeightStatusBarChanges:(BOOL)arg1;
 - (BOOL)_viewHostsLayoutEngine;
 - (void)_setViewHostsLayoutEngine:(BOOL)arg1;
 - (void)_setUsesSharedView:(BOOL)arg1;
@@ -561,7 +562,6 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_presentingViewControllerWillChange:(id)arg1;
-- (BOOL)_ancestorViewControllerIsInPopover;
 - (void)_setModalSourceViewController:(id)arg1;
 - (id)_customInteractionControllerForPresentation:(id)arg1;
 - (int)_transitionForModalTransitionStyle:(int)arg1 appearing:(BOOL)arg2;
@@ -588,6 +588,7 @@
 - (void)setModalTransitionView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (id)currentAction;
+- (BOOL)_ancestorViewControllerIsInPopover;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
@@ -612,12 +613,12 @@
 - (void)__viewDidDisappear:(BOOL)arg1;
 - (void)__viewDidAppear:(BOOL)arg1;
 - (void)setAfterAppearanceBlock:(id)arg1;
-- (void)_setViewAppearState:(int)arg1 isAnimating:(BOOL)arg2;
 - (void)_setAppearState:(int)arg1;
 - (unsigned int)childViewControllersCount;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)_setViewAppearState:(int)arg1 isAnimating:(BOOL)arg2;
 - (BOOL)isSettingAppearState;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
@@ -653,7 +654,9 @@
 - (BOOL)autoresizesArchivedViewToFullSize;
 - (BOOL)_viewControllerUnderlapsStatusBar;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3 windowSizedViewController:(id)arg4;
+- (float)_statusBarHeightAdjustmentForCurrentOrientation;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
+- (BOOL)_shouldUpdateLayoutForStatusBarAndInterfaceOrientation;
 - (id)_visibleView;
 - (void)_clearRecordedContentScrollView;
 - (void)_setEmbeddedDelegate:(id)arg1;
@@ -751,6 +754,7 @@
 - (id)_appearanceGuideClass;
 - (id)_firstResponder;
 - (id)_appearanceContainer;
+- (BOOL)_canBecomeDeepestUnambiguousResponder;
 - (BOOL)isInWillRotateCallback;
 - (void)window:(id)arg1 willAnimateFromContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3;
@@ -854,10 +858,10 @@
 - (int)_gkDesiredUserInterfaceIdiom;
 - (void)presentMoviePlayerViewControllerAnimated:(id)arg1;
 - (void)dismissMoviePlayerViewControllerAnimated;
-- (BOOL)_hasAncestorViewController:(id)arg1;
 - (void)_addChildViewAndViewController:(id)arg1 asSubviewOfView:(id)arg2 addSubviewBlock:(id)arg3;
-- (void)_removeFromParentViewAndViewController;
+- (BOOL)_hasAncestorViewController:(id)arg1;
 - (void)_addChildViewAndViewController:(id)arg1 asSubviewOfView:(id)arg2;
+- (void)_removeFromParentViewAndViewController;
 - (void)_addChildViewAndViewController:(id)arg1;
 - (void)setAggregateStatisticsDisplayCountKey:(id)arg1;
 - (id)aggregateStatisticsDisplayCountKey;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSDate, NSMutableDictionary, LSApplicationProxy, NSNumber, NSError, NSDictionary, NSString, NSData, NSArray;
+@class NSMutableDictionary, NSData, LSApplicationProxy, NSNumber, NSError, NSDictionary, NSString, NSURL, NSDate, NSArray;
 
 @interface SFAirDropTransferData : NSObject  {
     NSMutableDictionary *_transferData;
@@ -22,6 +22,7 @@
 @property int transferState;
 @property NSDate * timeLastUserInteraction;
 @property BOOL transferCompleted;
+@property BOOL soundPlayed;
 @property(getter=isNonFileItem,readonly) BOOL nonFileItem;
 @property(getter=isUnknownScheme,readonly) BOOL unknownScheme;
 @property(getter=isUnknownFileType,readonly) BOOL unknownFileType;
@@ -31,9 +32,10 @@
 @property(getter=isValid,readonly) BOOL valid;
 @property(readonly) NSString * senderName;
 @property(readonly) NSDictionary * contentTypes;
+@property(readonly) NSString * firstFileName;
 @property(readonly) NSString * firstFileExtension;
-@property(readonly) NSString * firstURLScheme;
-@property(readonly) NSString * message;
+@property(readonly) NSString * firstFileTypeDescription;
+@property(readonly) NSURL * firstURL;
 @property(readonly) NSString * progressMessage;
 @property(readonly) NSString * transferCompleteMessage;
 @property(readonly) NSString * selectAppMessage;
@@ -81,7 +83,7 @@
 - (id)searchAppStoreMessage;
 - (id)selectAppMessage;
 - (id)progressMessage;
-- (BOOL)isPDF:(id)arg1;
+- (id)messageAndButtonTitle:(id*)arg1;
 - (id)typeForFileExtension:(id)arg1;
 - (id)senderID;
 - (id)senderEmailHash;
@@ -90,28 +92,21 @@
 - (id)filesCopied;
 - (id)fileIconData;
 - (struct CGImage { }*)fileIcon;
+- (id)firstFileTypeDescription;
+- (void)setSoundPlayed:(BOOL)arg1;
+- (BOOL)soundPlayed;
 - (void)setTransferCompleted:(BOOL)arg1;
 - (id)timeLastUserInteraction;
 - (void)setTransferState:(int)arg1;
 - (void)resetTransferState;
-- (id)firstURLScheme;
-- (BOOL)isMusicStoreLink:(id)arg1;
-- (BOOL)isAppStoreLink:(id)arg1;
 - (id)itemsDescriptionAdvanced;
-- (BOOL)isMapLink:(id)arg1;
-- (BOOL)isWebLink:(id)arg1;
+- (id)firstURL;
 - (id)messageLocalizedKeyWithTypes:(id)arg1 isTrustedPerson:(BOOL)arg2 isInProgress:(BOOL)arg3;
 - (id)itemsDescription;
 - (id)firstFileExtension;
 - (BOOL)isTrustedPerson;
-- (id)messageInProgress:(BOOL)arg1;
-- (BOOL)isAppleApp:(id)arg1;
-- (BOOL)isContact:(id)arg1 fileExtension:(id)arg2;
-- (BOOL)isPass:(id)arg1 fileExtension:(id)arg2;
-- (BOOL)isPlainText:(id)arg1;
-- (BOOL)isVoiceMemo:(id)arg1;
-- (BOOL)isVideo:(id)arg1;
-- (BOOL)isImage:(id)arg1;
+- (id)messageInProgress:(BOOL)arg1 buttonTitle:(id*)arg2;
+- (id)firstFileName;
 - (id)senderComputerName;
 - (id)senderLastName;
 - (id)senderFirstName;
@@ -120,6 +115,7 @@
 - (BOOL)transferCompleted;
 - (void)updateWithDictionary:(id)arg1;
 - (id)contentTypes;
+- (id)appBundleID;
 - (id)senderName;
 - (id)recordID;
 - (id)timeRemaining;
@@ -128,12 +124,10 @@
 - (id)items;
 - (id)files;
 - (void)archive;
-- (id)message;
 - (BOOL)isValid;
 - (void).cxx_destruct;
 - (id)description;
 - (id)error;
-- (id)appBundleID;
 - (void)removeItem:(id)arg1;
 
 @end

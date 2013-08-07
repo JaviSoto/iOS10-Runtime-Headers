@@ -41,7 +41,6 @@
 - (id)wishListDate;
 - (void)setOfferType:(int)arg1;
 - (void)setCopyrightText:(id)arg1;
-- (void)setArtworkURLData:(id)arg1;
 - (void)setAlbumURL:(id)arg1;
 - (void)setActionText:(id)arg1 forStyle:(int)arg2;
 - (id)previewURL;
@@ -54,7 +53,6 @@
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
 - (id)copyrightText;
-- (id)artworkURLData;
 - (id)albumURL;
 - (long long)albumID;
 - (id)actionTextForStyle:(int)arg1;
@@ -86,9 +84,11 @@
 - (void)setInWishList:(BOOL)arg1;
 - (long long)afterPromoClipID;
 - (long long)beforePromoClipID;
+- (void)setArtworkURLData:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
 - (id)feedbackDictionaryRepresentation;
+- (id)artworkURLData;
 - (id)artworkURL;
 - (id)adData;
 - (long long)storeID;

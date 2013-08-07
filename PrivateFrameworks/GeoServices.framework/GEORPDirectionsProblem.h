@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSData;
 
-@interface GEORPDirectionsProblem : PBCodable  {
+@interface GEORPDirectionsProblem : PBCodable <NSCopying> {
     unsigned long long _problematicEventIndex;
     NSMutableArray *_directionsRequests;
     NSData *_directionsResponseID;
@@ -39,8 +39,6 @@
 
 
 - (id)events;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)directionsResponses;
 - (id)directionsRequests;
 - (void)setHasProblematicEventIndex:(BOOL)arg1;
@@ -80,10 +78,13 @@
 - (BOOL)hasDirectionsResponseID;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

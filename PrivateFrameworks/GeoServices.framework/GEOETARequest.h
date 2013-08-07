@@ -4,7 +4,7 @@
 
 @class NSMutableArray, GEOWaypoint;
 
-@interface GEOETARequest : PBRequest  {
+@interface GEOETARequest : PBRequest <NSCopying> {
     struct { 
         double _time; 
         int _type; 
@@ -41,10 +41,6 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)destinations;
 - (void)setHasAllowPartialResults:(BOOL)arg1;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
@@ -75,10 +71,15 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setOrigin:(id)arg1;
 - (id)origin;
 - (id)dictionaryRepresentation;

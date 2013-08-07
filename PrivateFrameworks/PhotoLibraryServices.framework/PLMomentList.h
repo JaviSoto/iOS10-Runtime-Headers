@@ -50,7 +50,6 @@
 - (void)insertMomentsForMegaMoment:(id)arg1 atIndexes:(id)arg2;
 - (void)replaceObjectInMomentsForMegaMomentAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromMomentsForMegaMomentAtIndex:(unsigned int)arg1;
-- (BOOL)isMeaningful;
 - (void)_updateCachedNameInfoIfNeeded;
 - (void)removeMomentsForYear:(id)arg1;
 - (void)addMomentsForYear:(id)arg1;
@@ -62,6 +61,7 @@
 - (void)addMomentsForMegaMoment:(id)arg1;
 - (id)moments;
 - (void)insertObject:(id)arg1 inMomentsForMegaMomentAtIndex:(unsigned int)arg2;
+- (BOOL)isMeaningful;
 - (void)addMomentsForMegaMomentObject:(id)arg1;
 - (void)removeMomentsForMegaMomentObject:(id)arg1;
 - (unsigned int)containersCount;

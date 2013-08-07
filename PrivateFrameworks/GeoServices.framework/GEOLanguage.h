@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOLanguage : PBCodable  {
+@interface GEOLanguage : PBCodable <NSCopying> {
     unsigned int _identifier;
     NSMutableArray *_languages;
 }
@@ -13,8 +13,6 @@
 @property(retain) NSMutableArray * languages;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)languageAtIndex:(unsigned int)arg1;
 - (void)clearLanguages;
 - (unsigned int)languagesCount;
@@ -22,10 +20,13 @@
 - (void)setLanguages:(id)arg1;
 - (id)languages;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (unsigned int)identifier;
 - (id)dictionaryRepresentation;

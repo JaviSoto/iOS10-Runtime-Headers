@@ -10,7 +10,6 @@
     BOOL _needsPaddingForIndexScrubber;
     BOOL _groupShowsAlternativeText;
     BOOL _secondaryCandidateAppearance;
-    BOOL _shouldShowCandidateNumber;
     NSIndexPath *_candidateIndexPath;
     struct { 
         unsigned int idiom : 6; 
@@ -41,7 +40,6 @@
 @property BOOL needsPaddingForIndexScrubber;
 @property BOOL groupShowsAlternativeText;
 @property BOOL secondaryCandidateAppearance;
-@property BOOL shouldShowCandidateNumber;
 
 
 - (id)init;
@@ -63,14 +61,12 @@
 - (unsigned int)edges;
 - (struct CGSize { float x1; float x2; })rowSize;
 - (void)setDummy:(BOOL)arg1;
-- (void)setShouldShowCandidateNumber:(BOOL)arg1;
 - (unsigned int)candidateNumber;
-- (BOOL)shouldShowCandidateNumber;
-- (unsigned int)rowIndex;
 - (void)setNeedsPaddingForIndexScrubber:(BOOL)arg1;
 - (id)candidateIndexPath;
 - (BOOL)groupHeader;
 - (BOOL)dummy;
+- (unsigned int)rowIndex;
 - (int)candidatesVisualStyle;
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;

@@ -12,7 +12,7 @@
 }
 
 @property(readonly) NSArray * items;
-@property struct CGSize { float x1; float x2; } gravityDirection;
+@property struct CGVector { float x1; float x2; } gravityDirection;
 @property float angle;
 @property float magnitude;
 
@@ -27,9 +27,9 @@
 - (void)setYComponent:(float)arg1;
 - (void)setXComponent:(float)arg1;
 - (void)setMagnitude:(float)arg1;
-- (void)setGravityDirection:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })gravityDirection;
 - (struct CGPoint { float x1; float x2; })denormalizedGravity;
+- (void)setGravityDirection:(struct CGVector { float x1; float x2; })arg1;
+- (struct CGVector { float x1; float x2; })gravityDirection;
 - (float)xComponent;
 - (float)yComponent;
 - (void)setAngle:(float)arg1 magnitude:(float)arg2;

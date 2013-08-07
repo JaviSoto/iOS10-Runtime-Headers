@@ -4,7 +4,7 @@
 
 @class GEORating, GEOBusiness, GEOLatLng, NSMutableArray, GEOMapRegion, NSString, GEOAddress;
 
-@interface GEOPlace : PBCodable  {
+@interface GEOPlace : PBCodable <NSCopying> {
     double _area;
     long long _geoId;
     long long _uID;
@@ -75,8 +75,6 @@
 
 
 - (id)firstRating;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
 - (void)setHasArea:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
@@ -141,6 +139,8 @@
 - (id)mapRegion;
 - (BOOL)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)area;
 - (struct { double x1; double x2; })coordinate;
 - (void)setType:(int)arg1;
@@ -150,6 +150,7 @@
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCenter:(id)arg1;
 - (int)type;
 - (void)setVersion:(int)arg1;

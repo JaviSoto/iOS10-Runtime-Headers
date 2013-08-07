@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOBusinessOptions : PBCodable  {
+@interface GEOBusinessOptions : PBCodable <NSCopying> {
     NSMutableArray *_attributeKeys;
     int _maxBusinessResults;
     NSMutableArray *_photoOptions;
@@ -27,8 +27,6 @@
 @property BOOL includeCenter;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)photoOptions;
 - (void)setHasIncludeCenter:(BOOL)arg1;
 - (void)setHasMaxBusinessResults:(BOOL)arg1;
@@ -53,11 +51,14 @@
 - (void)setAttributeKeys:(id)arg1;
 - (void)setPhotoOptions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)attributeKeys;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

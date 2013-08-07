@@ -4,7 +4,7 @@
 
 @class GEOPlaceSearchResponse;
 
-@interface GEOETAResult : PBCodable  {
+@interface GEOETAResult : PBCodable <NSCopying> {
     unsigned int _historicTravelTime;
     unsigned int _liveTravelTime;
     GEOPlaceSearchResponse *_placeSearchResponse;
@@ -26,8 +26,6 @@
 @property(retain) GEOPlaceSearchResponse * placeSearchResponse;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasLiveTravelTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (id)placeSearchResponse;
@@ -42,12 +40,15 @@
 - (unsigned int)historicTravelTime;
 - (BOOL)hasHistoricTravelTime;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)status;
 - (void)setStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -42,6 +42,7 @@
 @property(readonly) NSArray * socialProfiles;
 @property(readonly) NSArray * postalAddresses;
 @property(getter=isUnified,readonly) BOOL unified;
+@property(readonly) NSString * personName;
 @property(readonly) NSString * displayName;
 @property(readonly) int recordID;
 @property(readonly) void* record;
@@ -74,8 +75,6 @@
 + (int)propertyIDForProperty:(id)arg1;
 + (id)contact;
 
-- (id)nameSuffix;
-- (id)namePrefix;
 - (id)birthday;
 - (int)recordID;
 - (id)textTone;
@@ -92,7 +91,9 @@
 - (id)phoneticMiddleName;
 - (id)phoneticGivenName;
 - (id)previousFamilyName;
+- (id)nameSuffix;
 - (id)middleName;
+- (id)namePrefix;
 - (BOOL)hasLinkedContacts;
 - (BOOL)isEqualToContact:(id)arg1;
 - (id)_CNLabelFromABLabel:(struct __CFString { }*)arg1;
@@ -122,12 +123,13 @@
 - (void)setImageData:(id)arg1 forFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)removePhoto;
 - (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
-- (id)organizationName;
 - (id)departmentName;
 - (id)jobTitle;
 - (id)nickname;
 - (id)phoneticFullName;
+- (id)organizationName;
 - (int)contactType;
+- (id)personName;
 - (id)photoThumbnail;
 - (BOOL)deleteContact;
 - (void*)originalRecord;

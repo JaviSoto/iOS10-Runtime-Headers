@@ -56,6 +56,7 @@
 - (void)_updateSectionRowDataArrayForNumSections:(int)arg1;
 - (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3;
 - (float)offsetForSection:(id)arg1;
+- (int)sectionForSectionRowData:(id)arg1;
 - (float)reorderedRowHeight;
 - (id)reorderGapIndexPath;
 - (id)reorderedIndexPath;

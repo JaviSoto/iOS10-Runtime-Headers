@@ -6,25 +6,29 @@
    See Warning(s) below.
  */
 
-@class SKUIResourceRequest, NSLock;
+@class SKUIResourceRequest, SKUIClientContext, NSLock;
 
 @interface SKUILoadResourceOperation : NSOperation  {
+    SKUIClientContext *_clientContext;
+    NSLock *_lock;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
 
-    NSLock *_lock;
     SKUIResourceRequest *_request;
 }
 
 @property(readonly) SKUIResourceRequest * resourceRequest;
+@property(retain) SKUIClientContext * clientContext;
 @property(copy) id outputBlock;
 
 
 - (id)_initSKUILoadResourceOperation;
 - (id)resourceRequest;
 - (id)initWithResourceRequest:(id)arg1;
+- (void)setClientContext:(id)arg1;
+- (id)clientContext;
 - (void)setOutputBlock:(id)arg1;
 - (id)outputBlock;
 - (id)init;

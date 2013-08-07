@@ -61,16 +61,16 @@
 - (id)scores;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)category;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)localizedTitle;
+- (void)setCategory:(id)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
-- (void)setCategory:(id)arg1;
-- (id)category;
 - (void)setGroupIdentifier:(id)arg1;
 - (id)groupIdentifier;
 

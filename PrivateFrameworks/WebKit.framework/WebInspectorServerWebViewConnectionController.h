@@ -23,9 +23,9 @@
 - (void)connectionClosing:(id)arg1;
 - (void)receivedMessage:(id)arg1 userInfo:(id)arg2;
 - (void)closeAllConnections;
+- (id)initWithServer:(id)arg1;
 - (void)pushListing;
 - (void)_receivedData:(id)arg1;
 - (void)dealloc;
-- (id)initWithServer:(id)arg1;
 
 @end

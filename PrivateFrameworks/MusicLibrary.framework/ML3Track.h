@@ -23,9 +23,9 @@
 + (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2 deletedFileSize:(long long*)arg3;
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id)arg3;
++ (BOOL)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
 + (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
-+ (BOOL)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
@@ -68,6 +68,10 @@
 - (id)absoluteFilePath;
 - (id)chapterTOC;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
+- (void)createVideoSnapshotAtTime:(double)arg1;
+- (BOOL)needsVideoSnapshot;
+- (id)_screenshotArtworkDataStoredAsItemArtwork;
+- (void)_createVideoSnapshotAtTime:(double)arg1 withCompletionBlock:(id)arg2;
 - (id)artworkCacheIDAtPlaybackTime:(double)arg1;
 
 @end

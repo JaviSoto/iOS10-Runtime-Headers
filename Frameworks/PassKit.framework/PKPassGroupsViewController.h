@@ -26,6 +26,7 @@
 @property <PKPassGroupsViewControllerDelegate> * delegate;
 @property BOOL passesAreOutdated;
 
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
@@ -73,6 +74,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)wantsFullScreenLayout;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

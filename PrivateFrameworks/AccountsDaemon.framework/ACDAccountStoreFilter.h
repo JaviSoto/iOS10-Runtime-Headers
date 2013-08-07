@@ -23,6 +23,10 @@
 - (void)setBackingAccountStore:(id)arg1;
 - (id)backingAccountStore;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)clientTokenForAccountIdentifier:(id)arg1 completion:(id)arg2;
+- (void)addClientToken:(id)arg1 forAccountIdentifier:(id)arg2 completion:(id)arg3;
+- (void)handleURL:(id)arg1;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;

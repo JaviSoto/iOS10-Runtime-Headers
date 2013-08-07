@@ -21,13 +21,13 @@
 - (BOOL)needsRedownload;
 - (BOOL)hasBeenDownloaded;
 - (unsigned int)approximateSize;
-- (void)setFileWrapper:(id)arg1;
 - (id)cachedValueForKey:(id)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)setMimePart:(id)arg1;
 - (id)initWithWrapper:(id)arg1;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (id)fileWrapper;
+- (void)setFileWrapper:(id)arg1;
 - (id)init;
 - (BOOL)isPlaceholder;
 - (void)dealloc;

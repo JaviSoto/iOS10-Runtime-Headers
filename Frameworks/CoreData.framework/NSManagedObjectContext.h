@@ -131,7 +131,6 @@
 - (void)_clearOriginalSnapshotAndInitializeRec:(id)arg1;
 - (BOOL)_validateObjects:(id)arg1 forOperation:(unsigned int)arg2 error:(id*)arg3 exhaustive:(BOOL)arg4 forSave:(BOOL)arg5;
 - (void)_clearOriginalSnapshotForObject:(id)arg1;
-- (void)_registerObject:(id)arg1 withID:(id)arg2;
 - (id)_globalIDForObject:(id)arg1;
 - (void)_incrementUndoTransactionID;
 - (void)_clearRefreshedObjects;
@@ -144,6 +143,7 @@
 - (void)_clearUnprocessedUpdates;
 - (void)_disposeObjects:(id*)arg1 count:(unsigned long)arg2 notifyParent:(BOOL)arg3;
 - (void)_informParentStore:(id)arg1 noLongerInterestedInObjects:(id)arg2;
+- (void)_registerObject:(id)arg1 withID:(id)arg2;
 - (id)_newUnchangedLockedObjects;
 - (id)parentContext;
 - (void)performBlock:(id)arg1;
@@ -224,6 +224,7 @@
 - (unsigned int)countForFetchRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
 - (void)deleteObject:(id)arg1;
+- (void)_forceRegisterLostFault:(id)arg1;
 - (void)_enableChangeNotifications;
 - (void)unlockObjectStore;
 - (id)_parentStore;

@@ -112,6 +112,7 @@
 - (void)reloadWithStorePage:(id)arg1 ofType:(int)arg2 forURL:(id)arg3;
 - (void)_tearDownNavigationMenu;
 - (void)_dismissNavigationMenuViewController;
+- (void)_reloadContentInsets;
 - (BOOL)_sectionIsNetworkConstrained;
 - (BOOL)_shouldFetchAutomatically;
 - (void)_moveChildViewController:(id)arg1 toOverlayForProtocol:(id)arg2;
@@ -175,7 +176,6 @@
 - (id)newPlaceholderViewController;
 - (id)copyArchivableContext;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
-- (int)ITunesStoreUIBarStyle;
 - (BOOL)reloadWithURLRequestProperties:(id)arg1;
 - (void)setLoadsWhenHidden:(BOOL)arg1;
 - (BOOL)loadsWhenHidden;

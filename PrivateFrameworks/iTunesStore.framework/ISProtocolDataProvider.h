@@ -31,6 +31,7 @@
 - (BOOL)_processFailureTypeFromDictionary:(id)arg1 error:(id*)arg2;
 - (void)_performActionsForResponse:(id)arg1;
 - (BOOL)shouldProcessProtocol;
+- (BOOL)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
 - (BOOL)shouldProcessDialogs;
 - (BOOL)shouldProcessAuthenticationDialogs;
 - (void)setShouldProcessDialogs:(BOOL)arg1;

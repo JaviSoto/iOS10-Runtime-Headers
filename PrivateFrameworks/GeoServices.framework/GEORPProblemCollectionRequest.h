@@ -4,7 +4,7 @@
 
 @class NSString, NSData, NSMutableArray, GEORPUserCredentials;
 
-@interface GEORPProblemCollectionRequest : PBRequest  {
+@interface GEORPProblemCollectionRequest : PBRequest <NSCopying> {
     NSString *_countryCode;
     NSData *_devicePushToken;
     NSString *_hwMachine;
@@ -29,10 +29,6 @@
 @property(retain) NSData * devicePushToken;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)devicePushToken;
 - (BOOL)hasDevicePushToken;
 - (id)osRelease;
@@ -56,12 +52,17 @@
 - (unsigned int)requestElementsCount;
 - (void)setRequestElements:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

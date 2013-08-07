@@ -63,6 +63,7 @@
 - (void)setMomentary:(BOOL)arg1;
 - (BOOL)isMomentary;
 - (id)badgeView;
+- (void)setAutosizeText:(BOOL)arg1;
 - (void)setWasSelected:(BOOL)arg1;
 - (void)updateForAppearance:(id)arg1 style:(int)arg2;
 - (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 autosizeText:(BOOL)arg8;
@@ -90,7 +91,6 @@
 - (id)objectValue;
 - (void)_commonSegmentInit;
 - (void)setObjectValue:(id)arg1;
-- (void)setAutosizeText:(BOOL)arg1;
 - (void)_updateTextColors;
 - (void)insertDividerView;
 - (id)badgeValue;

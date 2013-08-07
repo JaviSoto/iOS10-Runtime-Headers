@@ -15,8 +15,8 @@
 
 @interface SKAnimate : SKAction  {
 
-  /* Error parsing encoded ivar type info: ^{SKCAnimate=^^?f@cddffdcc@?iffff{vector<SKTexture *, std::__1::allocator<SKTexture *> >=^@^@{__compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> >=^@}}d@{?=ff}cc} */
-    struct SKCAnimate { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; struct vector<SKTexture *, std::__1::allocator<SKTexture *> > { id *x_19_1_1; id *x_19_1_2; struct __compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> > { id *x_3_2_1; } x_19_1_3; } x19; double x20; id x21; struct { float x_22_1_1; float x_22_1_2; } x22; BOOL x23; BOOL x24; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SKCAnimate=^^?f@BddffdBB@?iffff{vector<SKTexture *, std::__1::allocator<SKTexture *> >=^@^@{__compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> >=^@}}d@{?=ff}cc} */
+    struct SKCAnimate { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; struct vector<SKTexture *, std::__1::allocator<SKTexture *> > { id *x_19_1_1; id *x_19_1_2; struct __compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> > { id *x_3_2_1; } x_19_1_3; } x19; double x20; id x21; struct { float x_22_1_1; float x_22_1_2; } x22; BOOL x23; BOOL x24; } *_mycaction;
 
     NSArray *_textures;
 }

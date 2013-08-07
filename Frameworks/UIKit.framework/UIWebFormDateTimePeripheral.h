@@ -14,6 +14,7 @@
 
 + (id)createPeripheralWithDOMHTMLInputElement:(id)arg1;
 
+- (void)endEditing;
 - (void)beginEditing;
 - (void)dealloc;
 - (id)initWithDOMHTMLInputElement:(id)arg1;

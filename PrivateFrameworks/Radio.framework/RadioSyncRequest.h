@@ -29,12 +29,12 @@
 - (void)setIsAutomaticUpdate:(BOOL)arg1;
 - (BOOL)isAutomaticUpdate;
 - (BOOL)includeCleanTracksOnly;
-- (void)setDisableArtworkLoading:(BOOL)arg1;
 - (BOOL)disableArtworkLoading;
 - (void)setRequireTracksBeforeCompletion:(BOOL)arg1;
 - (BOOL)requireTracksBeforeCompletion;
 - (void)requireTracksBeforeCompletionForStationPeristentID:(long long)arg1;
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
+- (void)setDisableArtworkLoading:(BOOL)arg1;
 - (id)_updateModel:(id)arg1 withChangeDictionary:(id)arg2 changeType:(int*)arg3 loadArtworkSynchronously:(BOOL)arg4;
 - (id)_stationSortOrderForChanges:(id)arg1;
 - (id)_sortedChangesByType:(id)arg1;

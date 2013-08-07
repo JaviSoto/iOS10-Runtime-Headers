@@ -13,6 +13,7 @@
         float x; 
         float y; 
     } _hostedWindowOffset;
+    int _bgCount;
     unsigned int _activeRemoteViewCount;
     unsigned int _windowLevelCount;
     float _windowLevelStack[5];
@@ -80,7 +81,7 @@
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
 - (void)_updateTransformLayerForClassicPresentation;
 - (BOOL)isInternalWindow;
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 - (BOOL)_usesWindowServerHitTesting;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromWindow:(id)arg2;
 - (BOOL)_isWindowServerHostingManaged;

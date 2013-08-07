@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, NSObject<OS_dispatch_queue>, NSXPCConnection, NSMutableDictionary;
+@class NSXPCConnection, NSString, NSLock, NSMutableDictionary;
 
 @interface NSProgressSubscriber : NSObject <NSProgressSubscriber> {
 
@@ -15,17 +15,15 @@
     id _publishingHandler;
 
     NSString *_subscriberID;
-    NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_proxiesByPublisherID;
     NSXPCConnection *_connection;
+    NSLock *_lock;
 }
 
 
-- (void)finalize;
 - (void)dealloc;
-- (oneway void)addPublisher:(id)arg1 forID:(id)arg2 appBundleID:(id)arg3 withValues:(id)arg4 isOld:(BOOL)arg5;
+- (oneway void)addPublisher:(id)arg1 forID:(id)arg2 withValues:(id)arg3 isOld:(BOOL)arg4;
 - (void)startForCategory:(id)arg1;
-- (void)startForGeneral;
 - (void)startForFileURL:(id)arg1;
 - (id)initWithPublishingHandler:(id)arg1;
 - (oneway void)removePublisherForID:(id)arg1;

@@ -34,6 +34,7 @@
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
 - (id)_defaultSettingsWithPort:(unsigned int)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
 - (BOOL)supportsPipelining;
+- (id)errorForResponse:(id)arg1;
 - (void)setSupportsOutboxCopy:(BOOL)arg1;
 - (id)authenticatedConnection:(BOOL)arg1;
 - (BOOL)supportsOutboxCopy;

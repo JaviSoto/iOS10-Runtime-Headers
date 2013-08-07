@@ -6,11 +6,13 @@
    See Warning(s) below.
  */
 
-@class __NSCFURLSession, NSObject<OS_dispatch_source>, NSInputStream, __NSCFLocalSessionBridge, NSObject<OS_dispatch_data>, NSData, NSURL;
+@class __NSCFURLSession, NSObject<OS_dispatch_source>, NSInputStream, __NSCFLocalSessionBridge, NSString, NSObject<OS_dispatch_data>, NSData, NSURL;
 
 @interface __NSCFLocalSessionTask : __NSCFURLSessionTask  {
     BOOL _pendingResponseDisposition;
     BOOL _pendingResponseDisposition_didFinish;
+    BOOL _duetAccountingIsDiscretionary;
+    BOOL _didIssueDidFinish;
     struct _CFURLConnection { } *_cfConn;
     NSURL *_uploadFile;
     NSData *_uploadData;
@@ -31,6 +33,7 @@
     id _async_initialization;
 
     NSObject<OS_dispatch_source> *_resourceTimeout;
+    NSString *_duetAccountedBundleID;
 }
 
 @property(retain) struct _CFURLConnection { }* cfConn;
@@ -47,10 +50,19 @@
 @property unsigned int suspendCount;
 @property(copy) id async_initialization;
 @property(retain) NSObject<OS_dispatch_source> * resourceTimeout;
+@property(retain) NSString * duetAccountedBundleID;
+@property BOOL duetAccountingIsDiscretionary;
+@property BOOL didIssueDidFinish;
 
 
 - (void)dealloc;
 - (id)description;
+- (void)setDidIssueDidFinish:(BOOL)arg1;
+- (BOOL)didIssueDidFinish;
+- (void)setDuetAccountingIsDiscretionary:(BOOL)arg1;
+- (BOOL)duetAccountingIsDiscretionary;
+- (void)setDuetAccountedBundleID:(id)arg1;
+- (id)duetAccountedBundleID;
 - (void)setResourceTimeout:(id)arg1;
 - (id)resourceTimeout;
 - (unsigned int)suspendCount;

@@ -31,6 +31,8 @@
 - (int)handsFreeMode;
 - (void)setDebugButtonIsEnabled:(BOOL)arg1;
 - (BOOL)debugButtonIsEnabled;
+- (void)setBugReportingMode:(int)arg1;
+- (int)bugReportingMode;
 - (void)setDictationIsEnabled:(BOOL)arg1;
 - (void)setAssistantIsEnabled:(BOOL)arg1;
 - (void)_setDictationIsEnabledLocal:(BOOL)arg1;

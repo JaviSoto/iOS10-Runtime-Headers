@@ -2,22 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class CRRecentContact, NSString;
+@class CRRecentContact;
 
 @interface MFRecentComposeRecipientGroup : MFComposeRecipientGroup  {
-    NSString *_displayString;
-    CRRecentContact *_recent;
     CRRecentContact *_recentContact;
 }
 
-@property(retain) CRRecentContact * recentContact;
+@property(readonly) CRRecentContact * recentContact;
 
 
-- (void)setRecentContact:(id)arg1;
-- (id)initWithRecentContact:(id)arg1;
+- (id)initWithChildren:(id)arg1 displayString:(id)arg2 recentContact:(id)arg3;
 - (id)recentContact;
 - (id)unlocalizedLabel;
 - (id)placeholderName;
 - (id)label;
+- (void)dealloc;
 
 @end

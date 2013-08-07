@@ -68,14 +68,14 @@
 - (id)autorotateView;
 - (id)autorotatePopoverController;
 - (void)setRealDelegate:(id)arg1;
-- (void)windowDidRotate:(id)arg1;
-- (void)windowWillRotate:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)windowWillRotate:(id)arg1;
+- (void)windowDidRotate:(id)arg1;
 - (void)keyboardDidHide:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
 - (BOOL)autorotates;

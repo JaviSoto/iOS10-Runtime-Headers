@@ -76,6 +76,7 @@
 - (void)_delayedFade;
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)referenceKey;
+- (void)setKeyboardDimmed:(BOOL)arg1;
 - (void)setReferenceKey:(id)arg1;
 - (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (void)performShowAnimation;

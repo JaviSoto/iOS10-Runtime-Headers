@@ -2,12 +2,17 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPreheatManager, PUZoomableGridViewController, NSString, PUSectionedGridLayout, PUGridZoomLevelInfo, PUMomentsZoomLevelManager;
+@class PUGridZoomLevelInfo, PUGridRenderedStrip, NSOrderedSet, PUSectionedGridLayout, PUZoomableGridViewController, PUPreheatManager, NSString, PUMomentsZoomLevelManager;
 
 @interface PUGridZoomLevelInfo : NSObject <PUGridRenderedStripDataSource, PUPhotosSectionHeaderViewDelegate, PUSectionedGridLayoutDelegate> {
+    int _currentRenderedStripSection;
+    NSOrderedSet *_currentRenderedStripSectionAssets;
+    PUGridRenderedStrip *_currentRenderedStrip;
+    NSOrderedSet *_currentRenderedStripContainers;
     BOOL _summarizeSections;
     PUPreheatManager *_preheatManager;
     PUSectionedGridLayout *_collectionViewLayout;
+    unsigned int _zoomLevel;
     PUMomentsZoomLevelManager *_zoomLevelManager;
     PUGridZoomLevelInfo *_baseZoomLevelInfo;
     PUZoomableGridViewController *_zoomableGridViewController;
@@ -20,6 +25,7 @@
 @property(readonly) NSString * sectionHeaderElementKind;
 @property(readonly) int imageFormat;
 @property(readonly) struct __CFString { }* aggregateLevelKey;
+@property(readonly) unsigned int zoomLevel;
 @property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;
 @property(readonly) PUGridZoomLevelInfo * baseZoomLevelInfo;
 @property(readonly) PUZoomableGridViewController * zoomableGridViewController;
@@ -36,10 +42,14 @@
 - (id)baseZoomLevelInfo;
 - (void)setSummarizeSections:(BOOL)arg1;
 - (double)zoomOutDuration;
-- (id)initWithZoomLevelManager:(id)arg1 baseZoomLevelInfo:(id)arg2;
+- (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (BOOL)summarizeSections;
-- (void)renderStrip:(id)arg1 enumerateItemIndexPathsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (void)renderedStripDidEndRendering:(id)arg1;
+- (void)renderedStrip:(id)arg1 enumerateItemIndexPathsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
 - (id)renderedStrip:(id)arg1 imageDataForPhotoAtIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (void)renderedStrip:(id)arg1 willBeginRenderingPhotosInSection:(int)arg2;
+- (void)renderedStrip:(id)arg1 didEndRenderingPhotosInSection:(int)arg2;
+- (void)renderedStripWillBeginRendering:(id)arg1;
 - (int)maxRowsPerSection;
 - (id)assetsToDisplayInMapForVisualSection:(int)arg1;
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
@@ -48,14 +58,18 @@
 - (void)didTapHeaderView:(id)arg1;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)sectionedGridLayoutName:(id)arg1;
+- (void)sectionedGridLayout:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (int)sectionedGridLayout:(id)arg1 maximumRowsForVisualSection:(int)arg2;
-- (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
+- (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
 - (id)zoomableGridViewController;
 - (id)renderedStripsElementKind;
+- (BOOL)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
-- (void)prepareForAnimatedTransitionFromZoomLevelInfo:(id)arg1;
-- (void)prepareForAnimatedTransitionToZoomLevelInfo:(id)arg1;
+- (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
+- (void)didFinishZoomLevelTransition;
+- (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
+- (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (id)zoomLevelManager;
 - (BOOL)hasEnoughContentToDisplay;
 - (void)willHideMagnifiedViewController:(id)arg1;
@@ -74,6 +88,7 @@
 - (void)setZoomableGridViewController:(id)arg1;
 - (int)imageFormat;
 - (id)displayTitle;
+- (unsigned int)zoomLevel;
 - (void).cxx_destruct;
 - (id)collectionViewLayout;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

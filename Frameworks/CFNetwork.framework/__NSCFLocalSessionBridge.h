@@ -47,8 +47,8 @@
 - (void)operationCompleted:(id)arg1;
 - (void)bridgeInvalidated:(id)arg1;
 - (void)statusMessage:(struct __CFString { }*)arg1;
-- (const struct ClassicConnectionSession { int (**x1)(); int (**x2)(); struct _CFURLSessionConfiguration {} *x3; struct XCookieStorage {} *x4; int x5; id x6; id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; struct URLProtocolRegistry {} *x10; struct __CFSet {} *x11; struct ClassicConnectionSession {} *x12; struct RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *> {} *x13; }*)classicConnectionSession;
-     /* Encoded args for previous method: r^{ClassicConnectionSession=^^?^^?^{_CFURLSessionConfiguration}^{XCookieStorage}i@@?@^{URLProtocolRegistry}^{__CFSet}^{ClassicConnectionSession}^{RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *>}}8@0:4 */
+- (const struct ClassicConnectionSession { int (**x1)(); int (**x2)(); struct _CFURLSessionConfiguration {} *x3; struct XCookieStorage {} *x4; int x5; id x6; unsigned char x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; id x10; struct URLProtocolRegistry {} *x11; struct __CFSet {} *x12; struct ClassicConnectionSession {} *x13; struct RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *> {} *x14; }*)classicConnectionSession;
+     /* Encoded args for previous method: r^{ClassicConnectionSession=^^?^^?^{_CFURLSessionConfiguration}^{XCookieStorage}i@C@?@^{URLProtocolRegistry}^{__CFSet}^{ClassicConnectionSession}^{RetainableTypedDict<const CoreSchedulingSet *, HTTPConnectionCache *>}}8@0:4 */
 
 - (void)resetStorageWithCompletionHandler:(id)arg1;
 - (void)flushStorageWithCompletionHandler:(id)arg1;

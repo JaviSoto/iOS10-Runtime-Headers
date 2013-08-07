@@ -15,6 +15,7 @@
     } _windowOffset;
     BOOL _canRestoreInputViews;
     BOOL _isRestoringInputViews;
+    BOOL _didResignForDisappear;
     <_UIViewServiceDeputyDelegate> *_delegate;
     int __automatic_invalidation_retainCount;
     BOOL __automatic_invalidation_invalidated;
@@ -42,6 +43,7 @@
 - (void)setDeputyDelegate:(id)arg1;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
 - (int)__automatic_invalidation_logic;
+- (void)__hostViewWillAppear:(BOOL)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
 - (void)__createHostedTextEffectsWithReplyHandler:(id)arg1;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;

@@ -31,12 +31,15 @@
 - (BOOL)blockOutgoingInvitationsDuringCall;
 - (void)set_delegates:(id)arg1;
 - (id)_delegates;
+- (void)blockOnPendingVCInvitationsWithCapabilities:(int)arg1;
 - (BOOL)_ready;
 - (void)requestPendingACInvitations;
 - (void)requestPendingVCInvitations;
 - (void)setHasActiveConference:(BOOL)arg1;
 - (void)setHasRunningConference:(BOOL)arg1;
 - (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 conferenceID:(id)arg4;
+- (void)_receivedPendingVCRequests;
+- (void)_receivedPendingACRequests;
 - (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
 - (BOOL)microphoneConnected;
 - (BOOL)cameraConnected;

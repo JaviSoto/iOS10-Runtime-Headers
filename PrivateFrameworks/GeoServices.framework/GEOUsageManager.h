@@ -35,9 +35,6 @@
 
 - (void)setBackgroundTaskEnd:(id)arg1;
 - (void)setBackgroundTaskStart:(id)arg1;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
 - (id)backgroundTaskEnd;
 - (id)backgroundTaskStart;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
@@ -57,6 +54,9 @@
 - (void)_updateTimerFired:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
+- (void)requesterDidFinish:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

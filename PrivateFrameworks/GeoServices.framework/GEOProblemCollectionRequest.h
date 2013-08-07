@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOProblemCollectionRequest : PBRequest  {
+@interface GEOProblemCollectionRequest : PBRequest <NSCopying> {
     NSString *_countryCode;
     NSString *_hwMachine;
     NSString *_inputLanguage;
@@ -20,10 +20,6 @@
 @property(retain) NSString * inputLanguage;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)requestElementAtIndex:(unsigned int)arg1;
 - (void)addRequestElement:(id)arg1;
 - (id)hwMachine;
@@ -38,12 +34,17 @@
 - (unsigned int)requestElementsCount;
 - (void)setRequestElements:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (id)countryCode;
 - (void)setCountryCode:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

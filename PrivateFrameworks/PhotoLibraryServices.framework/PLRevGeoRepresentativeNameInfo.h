@@ -2,50 +2,58 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class GEOPlace, NSString;
+@class NSString, NSMutableOrderedSet;
 
 @interface PLRevGeoRepresentativeNameInfo : NSObject  {
-    BOOL _secondaryIsPrimary;
-    BOOL _secondaryNameIsUnusable;
     BOOL _allEntriesAtHome;
+    BOOL _allEntriesMatchHomeForOrderType;
+    BOOL _addCountyIfNeeded;
     NSString *_name;
     unsigned int _type;
-    NSString *_secondaryName;
-    unsigned int _secondaryType;
     unsigned int _matchingCount;
-    GEOPlace *_geoPlace;
+    NSMutableOrderedSet *_geoPlaces;
+    NSMutableOrderedSet *_remainingGeoPlaces;
+    NSString *_localizedName;
 }
 
 @property(copy) NSString * name;
 @property unsigned int type;
-@property(copy) NSString * secondaryName;
-@property unsigned int secondaryType;
 @property unsigned int matchingCount;
-@property BOOL secondaryIsPrimary;
-@property BOOL secondaryNameIsUnusable;
 @property BOOL allEntriesAtHome;
-@property(retain) GEOPlace * geoPlace;
+@property BOOL allEntriesMatchHomeForOrderType;
+@property(readonly) NSMutableOrderedSet * geoPlaces;
+@property(readonly) NSMutableOrderedSet * remainingGeoPlaces;
+@property(copy) NSString * localizedName;
+@property BOOL addCountyIfNeeded;
 
 
-- (void)setGeoPlace:(id)arg1;
-- (id)geoPlace;
-- (void)setSecondaryIsPrimary:(BOOL)arg1;
-- (void)setSecondaryType:(unsigned int)arg1;
-- (unsigned int)secondaryType;
-- (void)setSecondaryName:(id)arg1;
+- (void)setAddCountyIfNeeded:(BOOL)arg1;
+- (BOOL)addCountyIfNeeded;
+- (id)remainingGeoPlaces;
+- (void)removeGeoPlacesFromRemaining:(id)arg1;
+- (void)prepareRemainingGeoPlaces;
+- (void)clearGeoPlaces;
+- (void)addGeoPlace:(id)arg1;
 - (void)updateWithAddedNameInfo:(id)arg1;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2;
-- (void)setSecondaryNameIsUnusable:(BOOL)arg1;
-- (BOOL)secondaryIsPrimary;
-- (BOOL)secondaryNameIsUnusable;
-- (id)secondaryName;
+- (id)_resourceKeysForOrderType:(unsigned int)arg1 countryCode:(id)arg2 administrativeAreaCode:(id)arg3;
+- (BOOL)_currentLanguageSupportsModifiersForOrderType:(unsigned int)arg1;
+- (BOOL)_administrativeAreaCode:(id)arg1 supportedForOrderType:(unsigned int)arg2;
+- (void)_addResourceKeys:(id)arg1 toTypeMap:(id)arg2 forOrderType:(unsigned int)arg3 countryCode:(id)arg4;
+- (id)_typeKeyForOrderType:(unsigned int)arg1 countryCode:(id)arg2;
+- (BOOL)allEntriesMatchHomeForOrderType;
 - (BOOL)allEntriesAtHome;
 - (unsigned int)matchingCount;
+- (void)addGeoPlaces:(id)arg1;
+- (id)geoPlaces;
+- (void)setAllEntriesMatchHomeForOrderType:(BOOL)arg1;
 - (void)setAllEntriesAtHome:(BOOL)arg1;
 - (void)setMatchingCount:(unsigned int)arg1;
 - (void)setType:(unsigned int)arg1;
 - (id)init;
 - (id)name;
+- (id)localizedName;
+- (void)setLocalizedName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)type;

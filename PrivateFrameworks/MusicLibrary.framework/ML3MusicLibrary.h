@@ -105,7 +105,6 @@
 + (BOOL)userVersionMatchesSystemUsingConnection:(id)arg1;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
 + (id)fallbackGeniusDatabaseFilePath;
-+ (void)configureMediaLibraryDatabaseConnection:(id)arg1;
 + (id)geniusDatabaseFilePath;
 + (id)sharedLibraryDatabasePath;
 + (id)pathForResourceFileOrFolder:(int)arg1;
@@ -130,7 +129,7 @@
 - (BOOL)buildDatabaseTables;
 - (BOOL)deleteAndRecreateDatabaseUsingConnection:(id)arg1;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1 trackValues:(id)arg2;
-- (BOOL)updateActivePlaylistNamesForCurrentLanguage;
+- (BOOL)updateSystemPlaylistNamesForCurrentLanguage;
 - (BOOL)coerceValidDatabase;
 - (BOOL)handleSchemaUpgrade;
 - (BOOL)handlePreprocessDatabase;
@@ -155,9 +154,8 @@
 - (BOOL)deleteDatabaseProperty:(id)arg1;
 - (void)removeOrphanedTracks;
 - (void)removeTombstonesForDeletedItems;
-- (BOOL)insertArtworkWithImageData:(id)arg1 forCacheID:(id)arg2 forFormatID:(unsigned int)arg3;
 - (BOOL)deleteAllArtwork;
-- (BOOL)insertArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3;
+- (void)updateArtworkFormatsWithArtworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg1 forCacheID:(id)arg2;
 - (BOOL)hasArtworkForCacheID:(id)arg1;
 - (void)loadArtworkForCacheID:(id)arg1 formatID:(unsigned int)arg2 completionHandler:(id)arg3;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1;
@@ -175,6 +173,7 @@
 - (BOOL)populateStaticItemsOfDynamicContainers;
 - (id)accountCacheDatabase;
 - (BOOL)emptyAllTables;
+- (BOOL)automaticDatabaseValidationDisabled;
 - (BOOL)mediaRestrictionEnabled;
 - (id)currentDevicePurchasesPlaylist;
 - (void)setLibraryUID:(id)arg1;
@@ -192,6 +191,9 @@
 - (BOOL)verifyPresignedValidity;
 - (BOOL)deleteArtworkForCacheID:(id)arg1;
 - (BOOL)hasArtworkForCacheID:(id)arg1 ensureArtworkFileExists:(BOOL)arg2;
+- (id)_artworkDataForCacheID:(id)arg1 formatID:(unsigned int)arg2 canCreateIfMissing:(BOOL)arg3;
+- (BOOL)insertArtworkWithImageData:(id)arg1 forCacheID:(id)arg2 forFormatID:(unsigned int)arg3;
+- (id)_existingArtworkDataForCacheID:(id)arg1 formatID:(unsigned int)arg2;
 - (BOOL)compactArtwork;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1 urgency:(unsigned int)arg2 respectSongMattress:(BOOL)arg3;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1 urgency:(unsigned int)arg2;
@@ -210,6 +212,9 @@
 - (void)accessSortKeyBuilder:(id)arg1;
 - (id)_newGeniusDBConnectionAtPath:(id)arg1;
 - (id)checkoutReaderConnection;
+- (void)_teardownMediaLibraryDatabaseConnection:(id)arg1;
+- (void)_configureMediaLibraryDatabaseConnection:(id)arg1;
+- (BOOL)_canConfigureMediaLibraryDatabaseConnection:(id)arg1;
 - (BOOL)validateDatabaseWithTimeout:(double)arg1;
 - (id)databaseInfo;
 - (void)_delayableNotifyPost:(id)arg1 localNotificationName:(id)arg2;
@@ -226,6 +231,7 @@
 - (void)notifyContentsDidChange;
 - (BOOL)handleDatabaseValidation;
 - (id)geniusDatabase;
+- (BOOL)insertArtworkWithImageData:(id)arg1 artworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg2 forCacheID:(id)arg3;
 - (void)databaseConnectionAllowingWrites:(BOOL)arg1 withBlock:(id)arg2;
 - (BOOL)keepPresignedValidyAfterVerification;
 - (void)checkInDatabaseConnection:(id)arg1;

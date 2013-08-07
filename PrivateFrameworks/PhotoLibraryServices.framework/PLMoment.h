@@ -60,11 +60,11 @@
 - (void)replaceObjectInAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inAssetsAtIndex:(unsigned int)arg2;
-- (BOOL)isMeaningful;
 - (BOOL)_validateMomentListRelationship:(id*)arg1;
 - (void)updateMomentFromCluster:(id)arg1;
 - (void)_updateCachedNameInfoIfNeeded;
 - (id)approximateLocation;
+- (BOOL)isMeaningful;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (void)removeAssetsAtIndexes:(id)arg1;

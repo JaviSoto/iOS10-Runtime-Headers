@@ -26,13 +26,13 @@
 - (id)_newTimeMarkersForChapterType:(int)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
+- (id)mediaItem;
 - (void)reevaluateType;
 - (id)titlesForTime:(double)arg1;
 - (BOOL)supportsAddStation;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (id)mediaItem;
 - (BOOL)isAssetURLValid;
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;

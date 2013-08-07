@@ -21,7 +21,6 @@
 + (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)setMatchRequest:(id)arg1;
-- (id)remoteViewController;
 - (void)setHostedViewController:(id)arg1;
 - (id)hostedViewController;
 - (BOOL)showExistingMatches;
@@ -38,6 +37,7 @@
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)loadView;

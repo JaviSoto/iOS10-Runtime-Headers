@@ -32,6 +32,7 @@
 - (void)send;
 - (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCurrentPath:(id)arg1;
+- (void)setInkColor:(struct CGColor { }*)arg1;
 - (id)strokeFIFO;
 - (void)setStrokeFIFO:(id)arg1;
 - (id)smoothingFIFO;
@@ -41,7 +42,7 @@
 - (id)strokeView;
 - (void)setInterpolatedPaths:(id)arg1;
 - (void)setStrokeView:(id)arg1;
-- (void)setInkColor:(struct CGColor { }*)arg1;
+- (void)updateInkColor;
 - (void)setInkWidth:(float)arg1;
 - (void)setInkMask:(struct CGImage { }*)arg1;
 - (id)currentPath;

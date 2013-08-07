@@ -41,8 +41,6 @@
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
 - (float)skinnyKeyThreshold;
-- (id)shiftOnKeyImageName;
-- (id)shiftKeyImageName;
 - (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)dismissKeyFontSize;
@@ -51,6 +49,8 @@
 - (float)moreKeyFontSize;
 - (float)deleteKeyFontSize;
 - (float)spaceKeyFontSize;
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;

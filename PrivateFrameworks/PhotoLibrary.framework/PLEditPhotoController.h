@@ -162,8 +162,6 @@
 - (void)_updateAggregateInfoForCurrentAdjustmentState;
 - (void)_saveFiltersToAsset:(id)arg1;
 - (void)_saveXMPPropertiesToPhoto:(id)arg1;
-- (void)_writeXMPSidecarToPhoto:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
-- (BOOL)_writeXMPHeaderToPhoto:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
 - (void)_saveAdjustmentsToOriginal;
 - (id)_currentNonGeometryFiltersWithEffectFilters:(id)arg1;
 - (id)_newImageFromImage:(id)arg1 filters:(id)arg2 orientation:(int)arg3 ciContext:(id)arg4;

@@ -25,6 +25,7 @@
     SSURLRequestProperties *_requestProperties;
     id _requiredDeviceCapabilities;
     long long _uniqueIdentifier;
+    BOOL _usesLocalRedownloadParametersIfPossible;
 }
 
 @property(retain) NSNumber * accountIdentifier;
@@ -44,14 +45,18 @@
 @property(copy) NSArray * gratisIdentifiers;
 @property(copy) id requiredDeviceCapabilities;
 @property long long uniqueIdentifier;
+@property BOOL usesLocalRedownloadParametersIfPossible;
 @property(readonly) NSData * databaseEncoding;
 
 + (id)purchaseWithBuyParameters:(id)arg1;
++ (id)newPurchaseWithXPCEncoding:(id)arg1;
++ (id)newPurchaseWithDatabaseEncoding:(id)arg1;
 
 - (void)setDownloadProperties:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;
 - (id)itemOffer;
 - (void)setGratisIdentifiers:(id)arg1;
+- (void)setUsesLocalRedownloadParametersIfPossible:(BOOL)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setExpectedDownloadFileSize:(long long)arg1;
 - (id)databaseEncoding;
@@ -60,23 +65,27 @@
 - (id)requestProperties;
 - (id)valueForDownloadProperty:(id)arg1;
 - (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
-- (long long)placeholderDownloadIdentifier;
 - (id)downloadProperties;
 - (id)initWithItem:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
 - (id)downloadMetadata;
+- (BOOL)usesLocalRedownloadParametersIfPossible;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
+- (void)setDefaultUserAgent:(id)arg1;
 - (void)setBatchIdentifier:(int)arg1;
 - (id)gratisIdentifiers;
 - (long long)expectedDownloadFileSize;
 - (int)batchIdentifier;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (void)setFilteredAssetTypes:(id)arg1;
+- (long long)placeholderDownloadIdentifier;
 - (BOOL)isBackgroundPurchase;
 - (BOOL)ignoresForcedPasswordRestriction;
 - (id)filteredAssetTypes;
 - (id)affiliateIdentifier;
+- (void)_addEntriesToDatabaseEncoding:(id)arg1;
+- (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (id)buyParameters;
 - (id)_initSSPurchase;

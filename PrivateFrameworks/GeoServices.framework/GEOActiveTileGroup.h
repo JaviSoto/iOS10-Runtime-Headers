@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOActiveTileGroup : PBCodable  {
+@interface GEOActiveTileGroup : PBCodable <NSCopying> {
     NSString *_addressCorrectionInitURL;
     NSString *_addressCorrectionUpdateURL;
     NSMutableArray *_attributions;
@@ -86,8 +86,6 @@
 - (BOOL)hasRegionalResourcesForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)regionalResourceRegionsForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)flatRegionalResourceTilesForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)regionalResourcesURL;
 - (BOOL)hasRegionalResourcesURL;
 - (id)regionalResourceRegionAtIndex:(unsigned int)arg1;
@@ -189,11 +187,14 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (unsigned int)identifier;
 - (id)uniqueIdentifier;

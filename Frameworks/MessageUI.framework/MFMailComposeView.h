@@ -137,6 +137,7 @@
 - (void)saveFirstResponderWithKeyboardPinning:(BOOL)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)restoreFirstResponderWithKeyboardPinning:(BOOL)arg1;
+- (id)_focusedRecipientView;
 - (void)_adjustHeaderFieldsPreferredContentSize;
 - (void)_finishUpRotationToInterfaceOrientation:(int)arg1;
 - (void)_adjustScrollerForBottomView;

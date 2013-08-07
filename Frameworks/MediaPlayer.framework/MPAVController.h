@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, MPMediaQuery, MPAVItem, NSMutableSet, MPMediaItem, NSMutableArray, NSString, MPQueuePlayer, MPQueueFeeder, MPAudioDeviceController, NSNotification, MPAVPlaylistManager, CALayer, NSDateFormatter, NSDate, MPAVDestinationBrowser, MPAVErrorResolver, NSObject<OS_dispatch_source>, NSArray, AVPlayerLayer, MPVideoView, MPAVControllerToAggregateDCommunicator;
+@class NSDictionary, MPMediaQuery, MPMediaItem, MPAVItem, NSMutableSet, NSMutableArray, NSString, MPQueuePlayer, MPQueueFeeder, MPAudioDeviceController, NSNotification, MPAVPlaylistManager, CALayer, NSDate, MPAVDestinationBrowser, MPAVErrorResolver, NSObject<OS_dispatch_source>, NSArray, AVPlayerLayer, MPVideoView, MPAVControllerToAggregateDCommunicator;
 
 @interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, MPAudioDeviceControllerDelegate, MPAVErrorResolverDelegate, MPAVControllerProtocol> {
     MPAVPlaylistManager *_avPlaylistManager;
@@ -86,7 +86,6 @@
     double _lastInterruptionEnd;
     BOOL _shouldEnforceHDCP;
     NSMutableSet *_clientsWantingAirPlayVideo;
-    NSDateFormatter *_dateFormatter;
     BOOL _currentItemDidLoad;
     BOOL _didResolveError;
     BOOL _disallowsAMRAudio;
@@ -151,7 +150,6 @@
 @property BOOL managesSystemDownloads;
 @property BOOL forceSynchronousQueueFilling;
 @property(readonly) id _playerAVAudioSession;
-@property(readonly) NSDateFormatter * dateFormatter;
 @property BOOL disallowsAMRAudio;
 @property(readonly) MPMediaItem * currentMediaItem;
 @property(readonly) MPMediaQuery * currentMediaQuery;
@@ -410,11 +408,10 @@
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setEQPreset:(int)arg1;
-- (float)rate;
-- (void)beginInterruption;
 - (void)endInterruptionFromInterruptor:(id)arg1 category:(id)arg2 flags:(unsigned int)arg3;
 - (BOOL)allowsExternalPlayback;
-- (id)dateFormatter;
+- (float)rate;
+- (void)beginInterruption;
 - (BOOL)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (float)volume;

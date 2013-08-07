@@ -4,7 +4,7 @@
 
 @class ML3MusicLibrary, NSString, ML3DatabaseConnectionPool;
 
-@interface ML3UbiquitousDatabase : NSObject  {
+@interface ML3UbiquitousDatabase : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
     BOOL _needsToPurgeOldEntries;
     ML3MusicLibrary *_musicLibrary;
     NSString *_databasePath;
@@ -53,6 +53,9 @@
 - (BOOL)coerceValidDatabase;
 - (void)setDatabasePath:(id)arg1;
 - (void)setConnectionPool:(id)arg1;
+- (void)connectionPool:(id)arg1 createdNewConnection:(id)arg2;
+- (BOOL)connectionDetectedDatabaseCorruption:(id)arg1;
+- (void)connectionWillOpenDatabase:(id)arg1;
 - (BOOL)requiresSchemaOnlyUpdates;
 - (id)initWithMusicLibrary:(id)arg1;
 - (id)connectionPool;

@@ -37,10 +37,10 @@
 - (unsigned int)failureCount;
 - (id)reverseGeocodeRequest;
 - (id)assetIds;
-- (id)momentUuid;
 - (id)momentId;
 - (BOOL)hasExtraData;
 - (id)initWithRequestType:(unsigned int)arg1 momentId:(id)arg2 momentUuid:(id)arg3 assetIds:(id)arg4 reverseGeocodeRequest:(id)arg5;
+- (id)momentUuid;
 - (void)setReverseGeocodeRequest:(id)arg1;
 - (void)setAssetIds:(id)arg1;
 - (void)setMomentUuid:(id)arg1;
@@ -48,6 +48,8 @@
 - (void)setFailureCount:(unsigned int)arg1;
 - (void)setRequestType:(unsigned int)arg1;
 - (unsigned int)requestType;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
 

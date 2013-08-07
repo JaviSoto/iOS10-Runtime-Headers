@@ -7,7 +7,6 @@
 @interface MPMediaPickerController : UIViewController  {
     _UIAsyncInvocation *_cancelRequest;
     id _modalContext;
-    int _prevStatusBarStyle;
     MPRemoteMediaPickerController *_remoteViewController;
     BOOL _allowsPickingMultipleItems;
     BOOL _showsCloudItems;

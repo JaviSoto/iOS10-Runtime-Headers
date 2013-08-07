@@ -62,14 +62,15 @@
 - (id)_itemPathForLocationInGesture:(id)arg1;
 - (void)handleLongPressGesture:(id)arg1;
 - (void)_navigateToLowerZoomLevelWithReferenceItemPath:(id)arg1;
+- (id)_beginInteractiveTransitionWithReferenceItemPath:(id)arg1 zoomingOut:(BOOL)arg2;
 - (BOOL)collectionViewPointInSectionHeader:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)isTransitionAutoAdjustContentOffsetEnabled;
 - (id)bestTransitionReferenceItemIndexPathOutIsFromLastTransition:(BOOL*)arg1 outIsExplicit:(BOOL*)arg2;
 - (id)preheatManager;
 - (id)_syncProgressAlbums;
 - (struct CGSize { float x1; float x2; })contentSizeForPreheating;
 - (struct CGPoint { float x1; float x2; })contentOffsetForPreheating;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
-- (id)_beginInteractiveTransitionForZoomingOut:(BOOL)arg1;
 - (id)currentGridZoomTransitionInfo;
 - (BOOL)canBeginZoomIntoPhotoTransition;
 - (BOOL)canDisplayEditButton;

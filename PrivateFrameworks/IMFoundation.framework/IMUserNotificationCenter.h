@@ -31,12 +31,13 @@
 - (void)setIdentifierToIMUserNotificationQueueMap:(id)arg1;
 - (id)identifierToIMUserNotificationQueueMap;
 - (void)removeAllListeners;
+- (void)removeNotificationsForServiceIdentifier:(id)arg1;
 - (unsigned int)countForIdentifier:(id)arg1;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
 - (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
 - (id)_frontBlockForIdentifier:(id)arg1;
-- (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
 - (id)_frontListenerForIdentifier:(id)arg1;
+- (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
 - (void)_enqueueBlock:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueListener:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueUserNotification:(id)arg1 forIdentifier:(id)arg2;

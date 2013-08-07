@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOAttribution : PBCodable  {
+@interface GEOAttribution : PBCodable <NSCopying> {
     NSString *_badge;
     NSString *_badgeChecksum;
     NSString *_logo;
@@ -27,8 +27,6 @@
 @property(retain) NSString * logoChecksum;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasLogoChecksum;
 - (BOOL)hasBadgeChecksum;
 - (void)setLogoChecksum:(id)arg1;
@@ -44,11 +42,14 @@
 - (BOOL)hasBadge;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (id)dictionaryRepresentation;

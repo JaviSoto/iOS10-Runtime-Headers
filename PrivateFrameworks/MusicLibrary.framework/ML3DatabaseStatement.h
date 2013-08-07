@@ -35,6 +35,7 @@
 - (void)bindInt:(int)arg1 forParameterAtPosition:(int)arg2;
 - (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 connection:(id)arg2;
 - (void)bindValue:(id)arg1 forParameterAtPosition:(int)arg2;
+- (int)_finalizeStatementAndRemoveFromCache:(BOOL)arg1;
 - (int)finalizeStatement;
 - (BOOL)clearBindingsAfterRunning;
 - (void)setIsExecuting:(BOOL)arg1;

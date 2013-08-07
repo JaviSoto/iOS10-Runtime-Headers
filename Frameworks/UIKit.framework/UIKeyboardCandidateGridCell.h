@@ -98,11 +98,11 @@
 - (void)setUsesGroupHeaderAppearance:(BOOL)arg1;
 - (void)setDummy:(BOOL)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
-- (void)setShouldShowCandidateNumber:(BOOL)arg1;
 - (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)usesGroupHeaderAppearance;
 - (unsigned int)candidateNumber;
 - (BOOL)shouldShowCandidateNumber;
+- (void)setShouldShowCandidateNumber:(BOOL)arg1;
 - (BOOL)dummy;
 - (int)candidatesVisualStyle;
 - (void)setCandidatesVisualStyle:(int)arg1;

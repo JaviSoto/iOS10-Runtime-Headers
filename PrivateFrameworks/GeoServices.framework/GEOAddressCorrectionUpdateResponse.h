@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOAddressCorrectionUpdateResponse : PBCodable  {
+@interface GEOAddressCorrectionUpdateResponse : PBCodable <NSCopying> {
     unsigned int _retryScheduleInDays;
     struct { 
         unsigned int retryScheduleInDays : 1; 
@@ -13,17 +13,18 @@
 @property unsigned int retryScheduleInDays;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasRetryScheduleInDays:(BOOL)arg1;
 - (void)setRetryScheduleInDays:(unsigned int)arg1;
 - (unsigned int)retryScheduleInDays;
 - (BOOL)hasRetryScheduleInDays;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

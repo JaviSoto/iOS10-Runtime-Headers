@@ -57,9 +57,9 @@
 - (void)beginParagraph;
 - (void)_flushCachedObjects;
 - (void)endLineWithGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (int)_baseWritingDirection;
 - (void)beginLineWithGlyphAtIndex:(unsigned int)arg1;
 - (BOOL)_baselineRenderingMode;
+- (int)_baseWritingDirection;
 - (void)_doBidiProcessing;
 - (struct __CTTypesetter { }*)_ctTypesetter;
 - (const char *)_bidiLevels;

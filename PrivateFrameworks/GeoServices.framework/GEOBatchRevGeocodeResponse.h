@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSDictionary;
 
-@interface GEOBatchRevGeocodeResponse : PBCodable  {
+@interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying> {
     NSMutableArray *_batchPlaceResults;
     NSMutableArray *_clusters;
     int _statusCode;
@@ -22,8 +22,6 @@
 
 - (id)clusters;
 - (id)batchPlaceResults;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)batchPlaceResultAtIndex:(unsigned int)arg1;
 - (void)clearBatchPlaceResults;
 - (id)clusterAtIndex:(unsigned int)arg1;
@@ -39,10 +37,13 @@
 - (unsigned int)batchPlaceResultsCount;
 - (void)setHttpHeaders:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)statusCode;
 - (id)dictionaryRepresentation;
 - (id)httpHeaders;

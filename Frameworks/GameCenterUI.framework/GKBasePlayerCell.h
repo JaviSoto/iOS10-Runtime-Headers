@@ -21,6 +21,7 @@
 + (id)padMetrics;
 + (id)phoneMetrics;
 + (void)initialize;
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void)setIconView:(id)arg1;
 - (void)setNameLabel:(id)arg1;

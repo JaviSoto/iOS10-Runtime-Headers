@@ -20,5 +20,6 @@
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)dealloc;
+- (void)tintColorDidChange;
 
 @end

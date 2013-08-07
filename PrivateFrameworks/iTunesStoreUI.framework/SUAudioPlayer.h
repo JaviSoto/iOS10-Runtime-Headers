@@ -40,9 +40,9 @@
 - (id)playerStatus;
 - (void)_itemFailedToPlayToEndNotification:(id)arg1;
 - (void)play;
-- (void)_failWithError:(id)arg1;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)seekToTime:(double)arg1;
+- (void)_failWithError:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
 - (id)URL;

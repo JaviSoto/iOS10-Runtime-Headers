@@ -51,14 +51,14 @@
 - (void)setContext:(unsigned long long)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)player;
+- (id)category;
 - (id)date;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setDate:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (id)category;
+- (void)setDate:(id)arg1;
 - (void)setValue:(long long)arg1;
 - (long long)value;
 - (id)initWithCoder:(id)arg1;

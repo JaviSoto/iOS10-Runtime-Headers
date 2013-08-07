@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVAsset, PLMoviePlayerView, UIAlertView, AVPlayer, AVPlayerItem, PLTVOutWindow, AVAudioMix, <PLMoviePlayerControllerDelegate>, NSString;
+@class AVAsset, PLMoviePlayerView, UIAlertView, AVPlayer, AVPlayerItem, PLTVOutWindow, AVAudioMix, NSString, <PLMoviePlayerControllerDelegate>;
 
 @interface PLMoviePlayerController : NSObject  {
     AVAsset *_asset;
@@ -21,6 +21,8 @@
     double _lastSetCurrentTimeTime;
     BOOL _isSeeking;
     unsigned int _backgroundTaskId;
+    BOOL _audioSessionActive;
+    NSString *_originalAudioCategory;
     BOOL _TVOutEnabled;
     BOOL _forceDisableTVOut;
     BOOL _isPreparedForPlayback;
@@ -48,13 +50,15 @@
 + (BOOL)_isNetworkSupportedPath:(id)arg1;
 + (BOOL)_isStreamableAsset:(id)arg1;
 
-- (BOOL)isActiveController;
 - (BOOL)forceDisableTVOut;
+- (void)_playbackFailedWithError:(id)arg1;
 - (void)setIsActiveController:(BOOL)arg1;
+- (BOOL)isActiveController;
 - (void)_displayVideoView;
 - (void)_setForceDisableTVOut:(BOOL)arg1;
 - (void)_pausePlaybackForNotification;
 - (void)_restoreTVOutVideoIfNecessary;
+- (void)_setPlayerAudioSessionActive:(BOOL)arg1;
 - (void)_delayedUpdateFromPendingTime;
 - (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2 forceUpdate:(BOOL)arg3;
 - (void)_playerRateDidChange:(id)arg1;
@@ -72,16 +76,17 @@
 - (void)_loadAsset:(id)arg1;
 - (void)_setPlaybackState:(unsigned int)arg1;
 - (void)setAsset:(id)arg1 audioMix:(id)arg2 startTime:(double)arg3;
-- (void)_setPlayerAudioSessionActive:(BOOL)arg1;
 - (void)_tearDownPlayer;
 - (void)_setPlayerItem:(id)arg1;
 - (void)_setupPlayer;
-- (BOOL)isExternalPlayback;
 - (void)requestToBecomeActiveController;
 - (void)playFromBeginning;
+- (BOOL)isExternalPlayback;
+- (void)playDueToEnoughData;
 - (BOOL)isPreparedForPlayback;
 - (id)assetForMovieWithPath:(id)arg1 options:(id)arg2;
 - (float)playbackRate;
+- (void)pauseDueToInsufficientData;
 - (void)requestToResignAsActiveController;
 - (void)didBecomeActiveController;
 - (void)willResignAsActiveController;
@@ -90,7 +95,6 @@
 - (void)_setupTVOutWindow;
 - (void)_updateDisableAirPlayMirroringDuringPlayback;
 - (void)_updateBackgroundViewInformation;
-- (void)_playbackFailedWithError:(id)arg1;
 - (void)tearDownTVOutWindow;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
@@ -115,6 +119,7 @@
 - (double)currentTime;
 - (void)_registerForNotifications;
 - (id)audioTimePitchAlgorithm;
+- (BOOL)_allowsExternalPlayback;
 - (void)_unregisterForNotifications;
 - (id)player;
 - (id)init;

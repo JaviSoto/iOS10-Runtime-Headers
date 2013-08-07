@@ -11,7 +11,6 @@
 
 @property NSObject<OS_dispatch_queue> * replyQueue;
 
-+ (id)sharedService;
 + (id)_CreateLakituConnection;
 
 - (id)verifyCertificateWithInfo:(id)arg1 completionBlock:(id)arg2;
@@ -20,7 +19,6 @@
 - (id)updateRecordWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)recoverRecordWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)storeRecordWithInfo:(id)arg1 completionBlock:(id)arg2;
-- (id)_initFromSingletonCreationMethod;
 - (id)changeSMSTargetWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)startSMSChallengeWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)getAccountInfoWithInfo:(id)arg1 completionBlock:(id)arg2;

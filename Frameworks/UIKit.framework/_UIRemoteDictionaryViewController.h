@@ -10,7 +10,14 @@
 
 
 - (void)dealloc;
-- (void)handleButtonEvent:(id)arg1;
+- (void)_handleDeleteButton:(id)arg1;
+- (id)_downloadButton;
+- (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
+- (id)_downloadOptionsDictionary;
+- (void)_handleDownloadButton:(id)arg1;
+- (id)_downloadImageWithTintColor:(id)arg1;
+- (id)_downloadArrowImage;
+- (id)_cloudBackgroundImage;
 - (id)initWithStyle:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

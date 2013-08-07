@@ -4,7 +4,7 @@
 
 @class GEOPlace, GEOLatLng, NSMutableArray, GEOPlaceSearchResponse, GEOMapRegion, NSString, GEOPlaceSearchRequest, NSData;
 
-@interface GEOProblem : PBCodable  {
+@interface GEOProblem : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; } *_featureHandles;
     unsigned int _featureHandlesCount;
     unsigned int _featureHandlesSpace;
@@ -120,8 +120,6 @@
 
 
 - (id)visibleTileSets;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)directionsProblems;
 - (id)viewportImages;
 - (void)setHasPreferredSearchResultIndex:(BOOL)arg1;
@@ -237,14 +235,17 @@
 - (void)setHasSessionID:(BOOL)arg1;
 - (id)placeSearchRequest;
 - (BOOL)hasPlaceSearchRequest;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
 - (void)setPlaceSearchRequest:(id)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

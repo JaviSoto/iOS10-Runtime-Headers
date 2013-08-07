@@ -24,7 +24,6 @@
 
 + (id)sharedConnection;
 
-- (void)XPCNSClientConnection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)setServerSideConfigurationDictionaryByPersonID:(id)arg1;
 - (void)setFocusAlbumGUIDByPersonID:(id)arg1;
 - (void)setFocusAlbumTimerByPersonID:(id)arg1;
@@ -116,7 +115,9 @@
 - (void)serverSideConfigurationDictionaryForPersonID:(id)arg1 completionBlock:(id)arg2;
 - (void)forgetEverythingAboutPersonID:(id)arg1;
 - (void)setIsUIForeground:(BOOL)arg1 forPersonID:(id)arg2;
+- (void)retryOutstandingActivitiesForPersonID:(id)arg1;
 - (void)refreshResetSync:(BOOL)arg1 personID:(id)arg2;
+- (void)XPCNSClientConnection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
 - (id)init;

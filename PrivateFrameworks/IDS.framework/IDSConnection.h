@@ -14,10 +14,10 @@
 
 
 - (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
-- (id)_internal;
 - (id)_initWithAccount:(id)arg1 commands:(id)arg2;
 - (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2;
+- (id)_internal;
 - (void)requestKeepAlive;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithAccount:(id)arg1;

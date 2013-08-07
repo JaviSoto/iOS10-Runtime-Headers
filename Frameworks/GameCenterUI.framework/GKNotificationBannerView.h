@@ -54,6 +54,7 @@
 - (id)messageLabel;
 - (id)completionHandler;
 - (id)titleLabel;
+- (void)layoutSubviews;
 - (double)duration;
 
 @end

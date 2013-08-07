@@ -11,9 +11,12 @@
     NSMutableArray *_cellularDownloadRequestCompletionHandlers;
     SSDownloadManager *_downloadManager;
     NSMutableArray *_downloads;
+    NSMapTable *_downloadIdentifiersToDownloads;
     NSMapTable *_downloadsToObservers;
+    NSMapTable *_libraryIdentifiersToDownloads;
     NSHashTable *_observersForAllDownloads;
     SSPurchaseManager *_purchaseManager;
+    NSMapTable *_storeIdentifiersToDownloads;
 }
 
 @property(readonly) NSArray * downloads;
@@ -25,10 +28,13 @@
 - (void)_addPurchaseFinishedHandler:(id)arg1 forDownloads:(id)arg2;
 - (void)prioritizeDownloads:(id)arg1;
 - (void)_sendDownloadsDidChangeToObserversWithAddedDownloads:(id)arg1 removedDownloads:(id)arg2;
+- (void)_onQueue_removeDownloadFromMapTables:(id)arg1;
 - (id)_observersForDownload:(id)arg1;
 - (id)_observersForAllDownloads;
+- (id)_onQueue_findStoreDownloadWithSSDownload:(id)arg1 SSPurchase:(id)arg2;
 - (void)_dismissAndCleanupCellularDownloadAlertViewWithResult:(int)arg1;
 - (void)_sendDownloadsDidProgressToObserversForDownloads:(id)arg1;
+- (void)_onQueue_addDownloadToMapTables:(id)arg1;
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (void)_sendDownloadsDidFinishPurchasesToObserversForDownloads:(id)arg1;
 - (void)_registerBlockObserver:(id)arg1;

@@ -15,9 +15,10 @@
   /* Error parsing encoded ivar type info: @? */
     id _invocationBlock;
 
-    long _performToken;
+    BOOL _invocationBlockHasBeenCalled;
 }
 
++ (id)emptyInvocation;
 + (id)invocationWithBlock:(id)arg1;
 
 - (id)invoke;

@@ -2,10 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSObject<OS_xpc_object>;
 
 @interface NSFileAccessArbiterProxy : NSObject <NSFileAccessArbiter> {
     NSObject<OS_xpc_object> *_server;
+    NSObject<OS_dispatch_queue> *_serverQueue;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _serverEventHandler;
+
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_presentersByID;
     NSMutableDictionary *_providersByID;
@@ -15,7 +25,7 @@
 
 - (void)finalize;
 - (void)dealloc;
-- (void)_makeProvider:(id)arg1 observePresentationChangeOfKind:(id)arg2 withPresenterID:(id)arg3 url:(id)arg4 newURL:(id)arg5;
+- (void)_makeProvider:(id)arg1 observePresentationChangeOfKind:(id)arg2 withPresenterID:(id)arg3 url:(id)arg4 newURL:(id)arg5 completionHandler:(id)arg6;
 - (void)_makeProvider:(id)arg1 cancelProvidingItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3;
 - (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3 completionHandler:(id)arg4;
 - (void)_makePresenter:(id)arg1 setLastPresentedItemEventIdentifier:(unsigned long long)arg2;
@@ -36,9 +46,9 @@
 - (id)_readRelinquishmentForPresenter:(id)arg1;
 - (void)_makePresenter:(id)arg1 saveChangesWithCompletionHandler:(id)arg2;
 - (id)_idForReactor:(id)arg1;
+- (id)initWithServer:(id)arg1 queue:(id)arg2 eventHandler:(id)arg3;
 - (void)handleCanceledServer;
 - (void)handleMessage:(id)arg1;
-- (id)initWithServer:(id)arg1;
 - (id)fileProviders;
 - (void)removeFileProvider:(id)arg1;
 - (void)addFileProvider:(id)arg1 completionHandler:(id)arg2;

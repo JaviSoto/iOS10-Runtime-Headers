@@ -16,7 +16,7 @@
 
 
 - (void)setServerObject:(id)arg1;
-- (id)addEntryWithReturnValues:(id)arg1;
+- (unsigned int)addEntryWithReturnedIdentifier:(id)arg1;
 - (id)entriesWithValues:(id)arg1;
 - (id)synchronousDatabaseWriteWithObject:(id)arg1;
 - (id)synchronousDatabaseReadWithPropertyKey:(id)arg1;
@@ -32,9 +32,10 @@
 - (id)entriesToMerge;
 - (void)deleteAllMatchingEntries:(id)arg1;
 - (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
-- (void)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2;
+- (id)setValuesForEntry:(id)arg1 uniquingKeys:(id)arg2 originalIdentifier:(unsigned int)arg3;
 - (void)save;
 - (void)addEntry:(id)arg1;
+- (void)refresh;
 - (void)setType:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;

@@ -35,6 +35,7 @@
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setCategoryString:(id)arg1;
 - (id)categoryString;
+- (id)_decimalNumberFormatter;
 - (void)_reloadUserRatingViews;
 - (id)_newDefaultLabel;
 - (void)setColoringWithColorScheme:(id)arg1;

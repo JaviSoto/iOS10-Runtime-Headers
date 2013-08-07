@@ -13,19 +13,18 @@
 
 + (id)userAgentHeader;
 + (id)signatureWithDictionary:(id)arg1;
-+ (id)productVersion;
 + (id)serialNumber;
 + (id)clientInfoHeader;
 + (id)appleIDClientIdentifier;
 + (id)udid;
 + (id)apnsToken;
++ (id)productVersion;
 + (id)osVersion;
 + (id)infoDictionary;
 
 - (id)wifiMacAddress;
 - (id)regionCode;
 - (id)deviceClass;
-- (id)productVersion;
 - (id)osName;
 - (id)productType;
 - (id)serialNumber;
@@ -33,6 +32,7 @@
 - (id)appleIDClientIdentifier;
 - (id)udid;
 - (id)apnsToken;
+- (id)productVersion;
 - (id)osVersion;
 - (id)init;
 - (void).cxx_destruct;

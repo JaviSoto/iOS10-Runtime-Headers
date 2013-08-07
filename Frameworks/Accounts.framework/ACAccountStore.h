@@ -25,6 +25,8 @@
 - (void)setRemoteAccountStore:(id)arg1;
 - (id)remoteAccountStore;
 - (id)effectiveBundleID;
+- (BOOL)addClientToken:(id)arg1 forAccount:(id)arg2;
+- (id)clientTokenForAccount:(id)arg1;
 - (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
 - (void)accountWithIdentifier:(id)arg1 completion:(id)arg2;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
@@ -82,6 +84,8 @@
 - (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
 - (id)_remoteAccountStore;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)handleURL:(id)arg1;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;

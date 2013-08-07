@@ -34,7 +34,6 @@
 - (void)removeCompletionBlockForToken:(id)arg1;
 - (void)addCompletionBlock:(id)arg1 forToken:(id)arg2;
 - (id)activeURIsFromURI:(id)arg1 service:(id)arg2;
-- (void)forgetPeerTokensFromURI:(id)arg1 service:(id)arg2;
 - (void)notePeerToken:(id)arg1 forURI:(id)arg2 fromURI:(id)arg3 service:(id)arg4;
 - (BOOL)startQueryForURIs:(id)arg1 fromIdentity:(id)arg2 fromURI:(id)arg3 fromService:(id)arg4;
 - (BOOL)shouldShowPeerErrorsFor:(id)arg1 pushToken:(id)arg2 fromURI:(id)arg3 service:(id)arg4;
@@ -61,6 +60,7 @@
 - (id)peerTokensForURI:(id)arg1 fromURI:(id)arg2 service:(id)arg3;
 - (void)forgetPeerTokensForURI:(id)arg1 fromURI:(id)arg2 service:(id)arg3;
 - (id)sessionTokenForURI:(id)arg1 pushToken:(id)arg2 fromURI:(id)arg3 service:(id)arg4 expireEarly:(BOOL)arg5;
+- (void)clearCache;
 - (id)init;
 - (void)dealloc;
 

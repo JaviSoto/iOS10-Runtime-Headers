@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOStructuredAddress : PBCodable  {
+@interface GEOStructuredAddress : PBCodable <NSCopying> {
     struct { 
         long long *list; 
         unsigned int count; 
@@ -73,8 +73,6 @@
 @property(readonly) long long* geoIds;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)subPremises;
 - (id)dependentLocalitys;
 - (void)setGeoIds:(long long*)arg1 count:(unsigned int)arg2;
@@ -148,6 +146,8 @@
 - (void)setAdministrativeArea:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)areaOfInterests;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setCountry:(id)arg1;
 - (id)country;
 - (id)countryCode;
@@ -156,6 +156,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

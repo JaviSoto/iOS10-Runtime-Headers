@@ -20,6 +20,7 @@
 - (void)reviewComposeViewControllerDidFinish:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (void)loadView;
 
 @end

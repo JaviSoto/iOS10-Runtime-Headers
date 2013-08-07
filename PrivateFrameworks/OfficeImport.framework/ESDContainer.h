@@ -46,8 +46,8 @@
 - (id)initFromReader:(struct OcReader { }*)arg1 type:(unsigned short)arg2 version:(unsigned short)arg3;
 - (id)ebInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
 - (unsigned int)childCount;
-- (void)addChild:(id)arg1;
 - (void)removeChild:(id)arg1;
 - (void)dealloc;
+- (void)addChild:(id)arg1;
 
 @end

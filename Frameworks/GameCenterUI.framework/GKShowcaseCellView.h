@@ -14,6 +14,7 @@
 @property SEL touchedShowcaseCellAction;
 @property(retain) UIView * underlineView;
 
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void)setTouchedShowcaseCellAction:(SEL)arg1;
 - (SEL)touchedShowcaseCellAction;

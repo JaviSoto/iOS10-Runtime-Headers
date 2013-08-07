@@ -12,11 +12,11 @@
 @property(readonly) <XPCNSClientConnectionDelegate> * delegate;
 
 
+- (void)sendMessageReliably:(id)arg1 data:(id)arg2 maxRetryCount:(int)arg3 withHandler:(id)arg4;
 - (void)sendMessage:(id)arg1 data:(id)arg2 withHandler:(id)arg3;
 - (void)shutDownCompletionBlock:(id)arg1;
 - (id)initWithServiceName:(id)arg1 delegate:(id)arg2;
 - (void)XPCClientConnection:(id)arg1 didReceiveRequest:(id)arg2;
-- (void)sendMessageReliably:(id)arg1 data:(id)arg2 maxRetryCount:(int)arg3 withHandler:(id)arg4;
 - (void).cxx_destruct;
 - (id)delegate;
 

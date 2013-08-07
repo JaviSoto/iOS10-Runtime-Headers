@@ -29,11 +29,11 @@
 - (void)addStyle:(id)arg1;
 - (void)setGlobalProperties:(id)arg1;
 - (void)setStyles:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (BOOL)hasVersion;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

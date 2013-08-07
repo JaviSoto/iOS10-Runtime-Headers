@@ -28,12 +28,12 @@
 - (int)intValueAtIndex:(unsigned int)arg1;
 - (void)clearIntValues;
 - (unsigned int)intValuesCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasScore:(BOOL)arg1;
 - (void)setScore:(int)arg1;
 - (BOOL)hasScore;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

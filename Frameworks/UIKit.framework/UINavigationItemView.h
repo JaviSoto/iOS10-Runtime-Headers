@@ -28,6 +28,7 @@
 - (void)_adjustLabelTrackingIfNecessary;
 - (void)_updateLabelContents;
 - (void)_updateLabel;
+- (float)_titleYAdjustmentCustomization;
 - (id)_currentTextShadowColorForBarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })_currentTextShadowOffsetForBarStyle:(int)arg1;
 - (void)_updateLabelColor;

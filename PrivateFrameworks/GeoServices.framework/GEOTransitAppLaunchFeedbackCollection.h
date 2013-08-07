@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSString;
 
-@interface GEOTransitAppLaunchFeedbackCollection : PBCodable  {
+@interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying> {
     double _timestamp;
     NSString *_bundleIdentifier;
     GEOLatLng *_destination;
@@ -24,14 +24,14 @@
 @property double timestamp;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)hasDestination;
 - (BOOL)hasSource;
 - (BOOL)hasBundleIdentifier;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (BOOL)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)timestamp;
 - (id)source;
 - (void)setSource:(id)arg1;
@@ -41,6 +41,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)bundleIdentifier;
 - (void)setDestination:(id)arg1;
 - (id)destination;

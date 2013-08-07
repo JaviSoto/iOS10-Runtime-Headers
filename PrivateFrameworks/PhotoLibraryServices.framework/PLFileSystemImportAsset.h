@@ -29,5 +29,6 @@
 - (int)assetKind;
 - (int)compare:(id)arg1;
 - (void)dealloc;
+- (id)description;
 
 @end

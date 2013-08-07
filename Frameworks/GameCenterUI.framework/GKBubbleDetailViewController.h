@@ -9,21 +9,23 @@
     UIView *_containerView;
     NSArray *_bubbleViews;
     NSLayoutConstraint *_containerConstraint;
+    id _scrollInsetsToken;
 }
 
 @property(retain) UIScrollView * scrollView;
 @property(retain) UIView * containerView;
 @property(retain) NSArray * bubbleViews;
 @property(retain) NSLayoutConstraint * containerConstraint;
+@property(retain) id scrollInsetsToken;
 
 
+- (id)scrollInsetsToken;
 - (void)setContainerConstraint:(id)arg1;
-- (id)containerConstraint;
 - (void)setBubbleViews:(id)arg1;
 - (id)bubbleViews;
+- (void)setScrollInsetsToken:(id)arg1;
 - (float)heightConstant;
-- (float)tabBarHeight;
-- (float)navHeight;
+- (id)containerConstraint;
 - (void)dealloc;
 - (void)setContainerView:(id)arg1;
 - (id)scrollView;

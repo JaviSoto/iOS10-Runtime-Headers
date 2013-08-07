@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDAuthenticationPluginManager, ACDAccountStoreFilter, ACDDataclassOwnersManager, ACDDatabase, NSMutableArray, ACDClient, <ACDAccountStoreDelegate>, ACDClientAuthorizationManager, ACDAccessPluginManager;
+@class ACDAuthenticationPluginManager, ACDAccountStoreFilter, ACDDataclassOwnersManager, ACDDatabase, ACDAuthenticationDialogManager, NSMutableArray, ACDClient, <ACDAccountStoreDelegate>, ACDClientAuthorizationManager, ACDAccessPluginManager;
 
 @interface ACDAccountStore : ACAccountStore <ACDAccountStoreProtocol> {
     NSMutableArray *_accountChanges;
@@ -16,6 +16,7 @@
     ACDAuthenticationPluginManager *_authenticationPluginManager;
     ACDAccessPluginManager *_accessPluginManager;
     ACDDataclassOwnersManager *_dataclassOwnersManager;
+    ACDAuthenticationDialogManager *_authenticationDialogManager;
 }
 
 @property <ACDAccountStoreDelegate> * delegate;
@@ -25,11 +26,13 @@
 @property(retain) ACDAuthenticationPluginManager * authenticationPluginManager;
 @property(retain) ACDAccessPluginManager * accessPluginManager;
 @property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
+@property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
 @property BOOL notificationsEnabled;
 @property(getter=isMigrationInProgress) BOOL migrationInProgress;
 
 
 - (void)setMigrationInProgress:(BOOL)arg1;
+- (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setAccessPluginManager:(id)arg1;
 - (id)accessPluginManager;
@@ -43,6 +46,8 @@
 - (BOOL)accountsExistWithAccountTypeIdentifier:(id)arg1;
 - (id)accountsWithAccountTypeIdentifier:(id)arg1;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
+- (id)authenticationDialogManager;
+- (id)_clientTokenForAccountIdentifier:(id)arg1 error:(id)arg2;
 - (id)authorizationManager;
 - (void)_requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 allowUserInteraction:(BOOL)arg3 withHandler:(id)arg4;
 - (id)accountTypeWithIdentifier:(id)arg1;
@@ -54,6 +59,7 @@
 - (BOOL)_isManagedAccount:(id)arg1 enabledForManagedDataclass:(id)arg2;
 - (BOOL)_canManagedAccountType:(id)arg1 syncManagedDataclass:(id)arg2;
 - (id)_legacyCredentialForAccount:(id)arg1 client:(id)arg2 error:(id*)arg3;
+- (id)_allAccounts_sync;
 - (id)_save;
 - (void)_updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
 - (id)_dataclassWithName:(id)arg1 createIfNecessary:(BOOL)arg2;
@@ -64,12 +70,18 @@
 - (void)_setAccountManagedObjectRelationships:(id)arg1 withAccount:(id)arg2 isNew:(BOOL)arg3 error:(id*)arg4;
 - (id)_addAccountNoSave:(id)arg1 withDataclassActions:(id)arg2 error:(id*)arg3;
 - (void)_noteAccountStoreDidSaveAccountsWithAccountTypeIdentifiers:(id)arg1;
+- (void)_removeClientTokenForAccountIdentifer:(id)arg1;
+- (id)_clientTokenQueue;
 - (id)dataclassOwnersManager;
 - (id)_childAccountsForAccountWithID:(id)arg1;
 - (BOOL)isMigrationInProgress;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (id)_remoteAccountStore;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)clientTokenForAccountIdentifier:(id)arg1 completion:(id)arg2;
+- (void)addClientToken:(id)arg1 forAccountIdentifier:(id)arg2 completion:(id)arg3;
+- (void)handleURL:(id)arg1;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
 - (void)isPushSupportedForAccount:(id)arg1 completion:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;

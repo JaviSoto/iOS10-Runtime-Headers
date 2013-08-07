@@ -13,14 +13,16 @@
 
 + (void)purgeCacheOfPassSnapshotsWithUinqueID:(id)arg1;
 
+- (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 completion:(id)arg2;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
 - (void)snapshotWithPass:(id)arg1 completion:(id)arg2;
 - (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
 - (void)_cacheImage:(struct CGImage { }*)arg1 withKey:(id)arg2;
-- (void)_performSnapshot:(id)arg1;
+- (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
 - (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
-- (struct CGImage { }*)_cachedImageWithKey:(id)arg1;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
+- (BOOL)_cachedImageWithKey:(id)arg1 completion:(id)arg2;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 withCache:(BOOL)arg3 completion:(id)arg4;
 - (id)init;
 - (void)dealloc;
 

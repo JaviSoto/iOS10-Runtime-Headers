@@ -48,12 +48,12 @@
 - (id)hostSideViewControllerClassName;
 - (id)serviceSideViewControllerClassName;
 - (void)presentRemoteViewControllerIfNeeded;
-- (id)remoteViewController;
 - (void)setRemoteViewReadyHandler:(id)arg1;
 - (void)setGame:(id)arg1;
 - (id)game;
 - (id)init;
 - (void)dealloc;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

@@ -25,6 +25,8 @@
     int _numItems;
     int _numSections;
     int *_sectionItemCounts;
+    int _lastSectionTestedForNumberOfItemsBeforeSection;
+    int _lastResultForNumberOfItemsBeforeSection;
     struct CGSize { 
         float width; 
         float height; 
@@ -46,6 +48,7 @@
 
 - (void)dealloc;
 - (BOOL)isLayoutLocked;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForGlobalItemIndex:(int)arg1;
 - (void)_loadEverything;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItemAtIndexPath:(id)arg1;
 - (void)validateSupplementaryViews;
@@ -60,7 +63,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)existingSupplementaryLayoutAttributes;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForGlobalItemIndex:(int)arg1;
 - (id)existingSupplementaryLayoutAttributesInSection:(int)arg1;
 - (id)indexPathForItemAtGlobalIndex:(int)arg1;
 - (void)setLayoutLocked:(BOOL)arg1;

@@ -10,6 +10,7 @@
 + (BOOL)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
 + (id)publishBreadcrumbsPath;
 + (id)iCloudServiceAccount;
++ (id)_acaccountStore;
 + (BOOL)photoStreamsEnabled;
 + (id)sharedPhotoStreamsHelper;
 
@@ -39,7 +40,6 @@
 - (id)lastPhotoStreamUpdateDate;
 - (id)psHashAsString:(id)arg1;
 - (id)psHashForData:(id)arg1;
-- (void)_acaccountConfigChanged;
 - (id)imageLimitsByAssetType;
 - (BOOL)shouldUploadVideos;
 - (void)pollForNewSubscriptionContent;

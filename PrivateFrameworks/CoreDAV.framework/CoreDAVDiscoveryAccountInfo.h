@@ -67,6 +67,7 @@
 - (BOOL)handleTrustChallenge:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (id)oauthInfoProvider;
+- (void)clientTokenRequestedByServer;
 - (void)setShouldFailAllTasks:(BOOL)arg1;
 - (id)serverComplianceClasses;
 - (id)serverHeaders;
@@ -83,6 +84,7 @@
 - (void)setUser:(id)arg1;
 - (BOOL)success;
 - (id)accountID;
+- (id)clientToken;
 - (void)setAccountID:(id)arg1;
 - (void)setPort:(int)arg1;
 - (id)password;

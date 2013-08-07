@@ -39,6 +39,7 @@
 - (void)_setVolumeWarningState:(int)arg1;
 - (float)_volumeFromAVController;
 - (void)_setupNotifications;
+- (void)_mediaServerDiedNotification:(id)arg1;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (float)EUVolumeLimit;
 - (void)setVolumeAudioCategory:(id)arg1;

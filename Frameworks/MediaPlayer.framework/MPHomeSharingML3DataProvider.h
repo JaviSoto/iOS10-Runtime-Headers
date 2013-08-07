@@ -27,6 +27,7 @@
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
 - (id)_tokenDataForMediaItem:(id)arg1;
+- (id)_cachedImagePathHomeSharingID:(unsigned int)arg1 pixelSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
 - (void)_fetchTokensForAuthorizedDSIDs;
 - (void)_scheduleUpdateCheck;
@@ -37,6 +38,8 @@
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
 - (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
 - (void)loadArtworkImageForFormat:(int)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (id)protectedContentSupportStorageURL;

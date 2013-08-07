@@ -4,7 +4,7 @@
 
 @class NSMutableSet, <SUPurchaseManagerDelegate>, NSString, SUQueueSessionManager, NSMutableArray, NSSet;
 
-@interface SUPurchaseManager : NSObject <SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
+@interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
@@ -73,6 +73,7 @@
 - (void)_showDialogsForErrors:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)_dialogDidFinish:(id)arg1;
+- (void)purchaseRequest:(id)arg1 purchaseDidSucceedWithResponse:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

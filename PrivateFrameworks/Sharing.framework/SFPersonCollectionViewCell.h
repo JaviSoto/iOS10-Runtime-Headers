@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class UIColor, _SFPersonImageView, NSProgress, SFAirDropNode, NSObject<SFPersonCollectionViewCellDelegate>, UILabel, NSString, CALayer, SFCircleProgressView, NSArray;
+@class NSProgress, NSArray, UIColor, SFAirDropNode, NSObject<SFPersonCollectionViewCellDelegate>, UILabel, NSString, CALayer, SFCircleProgressView, _SFPersonImageView;
 
 @interface SFPersonCollectionViewCell : UICollectionViewCell  {
     struct CGRect { 
@@ -16,8 +16,6 @@
         } size; 
     } _personViewFrame;
     _SFPersonImageView *_personImageView;
-    UIColor *_averagedColor;
-    UIColor *_textColor;
     SFCircleProgressView *_circleProgressView;
     UILabel *_nameLabel;
     struct CGRect { 
@@ -55,6 +53,7 @@
     SFAirDropNode *_person;
     int _cellState;
     NSString *_sessionID;
+    UIColor *_textColor;
     NSObject<SFPersonCollectionViewCellDelegate> *_delegate;
 }
 
@@ -88,8 +87,8 @@
 - (void)setCellState:(int)arg1;
 - (id)createLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)userDidCancel;
-- (id)sessionID;
 - (void)setSessionID:(id)arg1;
+- (id)sessionID;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

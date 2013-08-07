@@ -35,11 +35,11 @@
     BOOL _hasPostedNaturalSizeChange;
     BOOL _limitReadAhead;
     BOOL _didAttemptToLoadAsset;
+    MPMediaItem *_mediaItem;
     float _loudnessInfoVolumeNormalization;
 }
 
 @property(readonly) NSString * assetFlavor;
-@property(readonly) MPMediaItem * mediaItem;
 @property(readonly) BOOL isRadioItem;
 @property(readonly) RadioTrack * radioTrack;
 @property(readonly) MPRadioAdTrack * adTrack;
@@ -139,6 +139,7 @@
 - (BOOL)isRadioItem;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (float)loudnessInfoVolumeNormalization;
+- (id)mediaItem;
 - (BOOL)didAttemptToLoadAsset;
 - (void)setIndexInQueueFeeder:(unsigned int)arg1;
 - (void)setFeeder:(id)arg1;
@@ -179,8 +180,6 @@
 - (BOOL)hasDataForItemArtwork;
 - (unsigned int)alternatesCountForTypes:(unsigned int)arg1;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (id)mediaItem;
-- (id)mediaItem;
 - (BOOL)displayableTextLoaded;
 - (double)currentTimeDisplayOverride;
 - (BOOL)isAssetURLValid;

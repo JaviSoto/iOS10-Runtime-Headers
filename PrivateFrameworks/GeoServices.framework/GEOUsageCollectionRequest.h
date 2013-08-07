@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOUsageCollectionRequest : PBRequest  {
+@interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_directionsFeedbackCollections;
     NSMutableArray *_mapsUsageFeedbackCollections;
     NSMutableArray *_placeSearchFeedbackCollections;
@@ -21,10 +21,6 @@
 @property(retain) NSMutableArray * suggestionsFeedbackCollections;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)suggestionsFeedbackCollections;
 - (id)mapsUsageFeedbackCollections;
 - (id)transitAppLaunchFeedbackCollections;
@@ -62,10 +58,15 @@
 - (void)addDirectionsFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

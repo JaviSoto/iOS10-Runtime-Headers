@@ -102,8 +102,8 @@
 - (void)setEQPreset:(int)arg1;
 - (int)eqPreset;
 - (id)initWithError:(id*)arg1;
-- (float)rate;
 - (void)seekToDate:(id)arg1;
+- (float)rate;
 - (void)setVolume:(float)arg1;
 - (float)volume;
 - (void)setLayer:(id)arg1;

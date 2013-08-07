@@ -33,7 +33,6 @@
     NSString *_inputString;
     TIKeyEventMap *_keyEventMap;
     NSString *_replacementForDoubleSpace;
-    NSString *_searchStringForMarkedText;
     NSString *_shadowTyping;
     unsigned int _initialCandidateBatchCount;
     TICharacterSetDescription *_wordCharacters;
@@ -41,6 +40,7 @@
     TICharacterSetDescription *_inputsPreventingAcceptSelectedCandidate;
     TICharacterSetDescription *_inputsToReject;
     TICharacterSetDescription *_terminatorsPreventingAutocorrection;
+    NSString *_searchStringForMarkedText;
 }
 
 @property BOOL canHandleKeyHitTest;
@@ -77,6 +77,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)searchStringForMarkedText;
 - (void)setTerminatorsPreventingAutocorrection:(id)arg1;
 - (void)setInputsToReject:(id)arg1;
 - (void)setInputsPreventingAcceptSelectedCandidate:(id)arg1;
@@ -85,8 +86,6 @@
 - (void)setInitialCandidateBatchCount:(unsigned int)arg1;
 - (void)setShouldAddModifierSymbolsToWordCharacters:(BOOL)arg1;
 - (void)setShadowTyping:(id)arg1;
-- (void)setSearchStringForMarkedText:(id)arg1;
-- (id)searchStringForMarkedText;
 - (void)setReplacementForDoubleSpace:(id)arg1;
 - (void)setKeyEventMap:(id)arg1;
 - (void)setKeyboardBehaviors:(id)arg1;
@@ -140,6 +139,7 @@
 - (BOOL)shouldExtendPriorWord;
 - (id)inputString;
 - (BOOL)supportsSetPhraseBoundary;
+- (void)setSearchStringForMarkedText:(id)arg1;
 - (BOOL)usesAutoDeleteWord;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (BOOL)supportsNumberKeySelection;

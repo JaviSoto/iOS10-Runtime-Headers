@@ -18,6 +18,7 @@
     NSMutableArray *_textSprites;
     UIColor *_labelColor;
     float _labelColorBlend;
+    int _labelBlendMode;
     SKSpriteNode *_textSprite;
     int _horizontalAlignmentMode;
     int _verticalAlignmentMode;
@@ -31,7 +32,6 @@
             float height; 
         } size; 
     } _textRect;
-    int _blendMode;
 }
 
 @property int verticalAlignmentMode;

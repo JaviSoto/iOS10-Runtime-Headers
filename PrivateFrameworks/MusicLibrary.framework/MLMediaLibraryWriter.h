@@ -2,28 +2,32 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSOperationQueue, NSTimer, NSObject<OS_dispatch_queue>, NSMutableDictionary;
+@class <MLMediaLibraryWriterDelegate>, NSOperationQueue, NSTimer, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface MLMediaLibraryWriter : NSObject  {
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableDictionary *_mediaLibraries;
     NSMutableDictionary *_transactionMap;
     NSOperationQueue *_templatedOperationsQueue;
-    NSTimer *_timeoutTimer;
+    NSTimer *_watchdogTimer;
+    <MLMediaLibraryWriterDelegate> *_delegate;
     double _transactionTimeout;
 }
 
+@property <MLMediaLibraryWriterDelegate> * delegate;
 @property double transactionTimeout;
 @property BOOL operationQueueEnabled;
 
 + (id)writerErrorWithCode:(int)arg1 description:(id)arg2;
 
-- (void)setTransactionTimeout:(double)arg1;
 - (double)transactionTimeout;
 - (id)_transactionForProcessIdentifier:(int)arg1;
+- (void)cancelActiveTransactionForProcess:(int)arg1;
 - (BOOL)operationQueueEnabled;
 - (void)setOperationQueueEnabled:(BOOL)arg1;
-- (void)cancelActiveTransactionForProcess:(int)arg1;
+- (void)setTransactionTimeout:(double)arg1;
+- (BOOL)_shouldWatchdogTransaction:(id)arg1;
+- (void)_watchdogTimerFired:(id)arg1;
 - (void)_destroyTransaction:(id)arg1 forceRelinquishConnection:(BOOL)arg2;
 - (void)cancelAllActiveDatabaseOperationsAndWaitUntilFinished:(BOOL)arg1;
 - (id)_transactionWithExistingLocalWriterConnection:(id)arg1;
@@ -32,7 +36,8 @@
 - (void)_destroyTransactionForIdentifier:(id)arg1 forceRelinquishConnection:(BOOL)arg2;
 - (id)_newTransactionForDatabaseAtPath:(id)arg1 fromXPCConnection:(id)arg2;
 - (void)cancelAllActiveTransactions;
-- (void)_timeoutTimerFired:(id)arg1;
+- (void)_tearDownWatchdogTimer;
+- (void)_setupWatchdogTimer;
 - (void)setConnectionsProfilingLevel:(int)arg1;
 - (void)executeTemplatedDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 fromXPCConnection:(id)arg4 completionHandler:(id)arg5;
 - (BOOL)endTransaction:(id)arg1 shouldCommit:(BOOL)arg2 error:(id*)arg3;
@@ -41,8 +46,10 @@
 - (id)beginTransactionForDatabaseAtPath:(id)arg1 fromXPCConnection:(id)arg2 error:(id*)arg3;
 - (void)reset;
 - (id)init;
+- (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
+- (id)delegate;
 
 @end

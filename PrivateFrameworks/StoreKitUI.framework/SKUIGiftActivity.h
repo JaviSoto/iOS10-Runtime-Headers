@@ -13,10 +13,10 @@
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
 - (void)giftViewController:(id)arg1 didFinishWithResult:(BOOL)arg2;
 - (void).cxx_destruct;
+- (id)_beforeActivity;
 - (id)activityViewController;
 - (id)activityImage;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (id)_beforeActivity;
 - (id)activityType;
 - (id)activityTitle;
 

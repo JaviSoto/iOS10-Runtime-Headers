@@ -31,6 +31,7 @@
 @property(retain) NSString * connection;
 
 
+- (void)setClientVersion:(id)arg1;
 - (void)setPageContext:(id)arg1;
 - (void)setWindowOrientation:(id)arg1;
 - (void)setPageType:(id)arg1;
@@ -68,7 +69,6 @@
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
-- (void)setClientVersion:(id)arg1;
 - (id)eventType;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;

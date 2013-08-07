@@ -2,17 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIPillsControl, UIPickerView, SKUIMenuViewController, SKUIPopupMenuHeaderView, SKUIFocusedTouchGestureRecognizer, UIPopoverController, SKUIMenuPageComponent;
+@class SKUIPillsControl, SKUIMenuViewController, NSMutableIndexSet, UIView, SKUIPickerWrapperView, SKUIFocusedTouchGestureRecognizer, UIPopoverController, SKUIPopupMenuHeaderView, SKUIMenuPageComponent;
 
-@interface SKUIMenuPageSection : SKUIStorePageSection <SKUIMenuViewControllerDelegate, SKUIPopupMenuDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate> {
+@interface SKUIMenuPageSection : SKUIStorePageSection <SKUIMenuViewControllerDelegate, SKUIPopupMenuDelegate, SKUISortDataRequestDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIPopoverControllerDelegate> {
     SKUIPillsControl *_pillsControl;
     SKUIMenuViewController *_moreListMenuViewController;
     UIPopoverController *_moreListPopoverController;
     SKUIFocusedTouchGestureRecognizer *_pickerDismissGestureRecognizer;
-    UIPickerView *_pickerView;
+    SKUIPickerWrapperView *_pickerWrapper;
+    UIView *_pickerBackgroundView;
     BOOL _pinned;
     SKUIPopupMenuHeaderView *_popupHeaderView;
     int _selectedIndex;
+    NSMutableIndexSet *_sortRequestIndexSet;
 }
 
 @property(readonly) SKUIMenuPageComponent * pageComponent;
@@ -24,13 +26,16 @@
 - (void)_dismissPickerViewAction:(id)arg1;
 - (void)_showPopoverController;
 - (void)_showPickerView;
+- (void)_loadSortDataIfNecessaryForMenuIndex:(int)arg1 reason:(int)arg2;
 - (void)_pillAction:(id)arg1;
 - (id)_popupHeaderView;
 - (id)_pillsControl;
 - (void)_showMoreList;
 - (void)_setSelectedIndex:(int)arg1;
+- (void)sortDataRequest:(id)arg1 didFinishWithLockups:(id)arg2;
 - (id)_contentChildView;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (void)restorePinnedHeaderView:(id)arg1;
 - (id)popPinnedHeaderView;
 - (int)numberOfCells;

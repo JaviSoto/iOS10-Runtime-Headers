@@ -74,7 +74,6 @@
 - (void)resume;
 - (void)suspend;
 - (id)endpoint;
-- (void)_setQueue:(id)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (id)remoteObjectInterface;
 - (void)_setUUID:(id)arg1;
@@ -92,6 +91,7 @@
 - (BOOL)_decodeCacheContainsClass:(Class)arg1;
 - (void)_addClassToEncodeCache:(Class)arg1;
 - (BOOL)_encodeCacheContainsClass:(Class)arg1;
+- (void)_setQueue:(id)arg1;
 - (id)replacementObjectForEncoder:(id)arg1 object:(id)arg2;
 - (id)valueForEntitlement:(id)arg1;
 - (id)_exportTable;

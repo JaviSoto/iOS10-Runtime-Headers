@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOActiveTileSet : PBCodable  {
+@interface GEOActiveTileSet : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
     unsigned int _availableTilesCount;
     unsigned int _availableTilesSpace;
@@ -48,8 +48,6 @@
 - (unsigned int)largestZoomLevelLEQ:(unsigned int)arg1 inRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (unsigned int)minimumZoomLevelInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)dataForGenericTileType:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)sentinelTileAtIndex:(unsigned int)arg1;
 - (void)clearSentinelTiles;
 - (unsigned int)sentinelTilesCount;
@@ -88,6 +86,8 @@
 - (void)setLocalizationURL:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)size;
 - (void)setStyle:(int)arg1;
 - (void)setBaseURL:(id)arg1;
@@ -99,6 +99,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)scale;
 - (void)setVersion:(unsigned int)arg1;
 - (id)dictionaryRepresentation;

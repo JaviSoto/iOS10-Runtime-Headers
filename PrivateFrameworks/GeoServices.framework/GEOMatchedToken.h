@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOMatchedToken : PBCodable  {
+@interface GEOMatchedToken : PBCodable <NSCopying> {
     struct { 
         unsigned long long *list; 
         unsigned int count; 
@@ -24,8 +24,6 @@
 @property(readonly) unsigned long long* geoIds;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasGeoType:(BOOL)arg1;
 - (void)setGeoType:(int)arg1;
 - (int)geoType;
@@ -39,10 +37,13 @@
 - (void)clearGeoIds;
 - (unsigned int)geoIdsCount;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

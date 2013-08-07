@@ -14,6 +14,7 @@
 @property BOOL canCreateNewAccount;
 @property BOOL canSetActiveAccount;
 @property(copy) NSString * initialPassword;
+@property BOOL persistsPasswordFallback;
 @property(copy) NSString * preferredITunesStoreClient;
 @property int promptStyle;
 @property(copy) NSDictionary * requestParameters;
@@ -35,6 +36,7 @@
 - (void)setShouldCreateNewSession:(BOOL)arg1;
 - (void)setShouldIgnoreProtocol:(BOOL)arg1;
 - (void)setPromptStyle:(int)arg1;
+- (void)setPersistsPasswordFallback:(BOOL)arg1;
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setValuesWithAccount:(id)arg1;

@@ -48,6 +48,7 @@
 + (void)setStatusBarIconEnabled:(BOOL)arg1 forLocationEntityClass:(unsigned int)arg2;
 + (unsigned int)activeLocationServiceTypesForLocationDictionary:(id)arg1;
 + (unsigned int)primaryEntityClassForLocationDictionary:(id)arg1;
++ (BOOL)advertiseAsBeacon:(id)arg1 withPower:(id)arg2;
 + (BOOL)bundleSupported:(id)arg1;
 + (BOOL)shutdownDaemon;
 + (BOOL)dumpLogsWithMessage:(id)arg1;

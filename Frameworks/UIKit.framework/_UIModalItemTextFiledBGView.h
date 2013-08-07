@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
+@class UIColor, UIView;
 
-@interface _UIModalItemTextFiledBGView : UIView  {
+@interface _UIModalItemTextFiledBGView : _UITextFieldRoundedRectBackgroundViewNeue  {
     int _textFieldsCount;
     UIColor *_backgroundColor;
     UIColor *_separatorsColor;
+    UIView *_separatorView;
 }
 
 @property int textFieldsCount;
@@ -16,13 +17,13 @@
 
 
 - (void)setBackgroundColor:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)backgroundColor;
 - (void)dealloc;
-- (id)separatorsColor;
 - (int)textFieldsCount;
+- (id)separatorsColor;
 - (void)setTextFieldsCount:(int)arg1;
 - (void)setSeparatorsColor:(id)arg1;
+- (void)layoutSubviews;
 
 @end

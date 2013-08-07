@@ -28,6 +28,7 @@
 + (id)availableFontAttributesArray;
 + (id)displayNameForCurrentUser:(id)arg1;
 + (id)enabledKeyboardLanguages;
++ (BOOL)shouldRetryWithServer;
 + (BOOL)shouldTryServer;
 + (BOOL)shouldIgnoreFontAsset:(id)arg1;
 + (Class)getASAssetQueryClass;

@@ -13,8 +13,8 @@
 
 @interface SKColorize : SKAction  {
 
-  /* Error parsing encoded ivar type info: ^{SKCColorize=^^?f@cddffdcc@?iffff{?=ffff}f{?=ffff}f{?=ffff}fc} */
-    struct SKCColorize { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; float x20; struct { float x_21_1_1; float x_21_1_2; float x_21_1_3; float x_21_1_4; } x21; float x22; struct { float x_23_1_1; float x_23_1_2; float x_23_1_3; float x_23_1_4; } x23; float x24; BOOL x25; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SKCColorize=^^?f@BddffdBB@?iffff{?=ffff}f{?=ffff}f{?=ffff}fc} */
+    struct SKCColorize { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; float x20; struct { float x_21_1_1; float x_21_1_2; float x_21_1_3; float x_21_1_4; } x21; float x22; struct { float x_23_1_1; float x_23_1_2; float x_23_1_3; float x_23_1_4; } x23; float x24; BOOL x25; } *_mycaction;
 
 }
 

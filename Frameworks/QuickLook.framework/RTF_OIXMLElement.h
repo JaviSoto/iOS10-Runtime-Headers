@@ -19,7 +19,6 @@
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
 - (int)childrenCount;
 - (int)attributeCount;
-- (void)addChild:(id)arg1;
 - (id)contentString;
 - (void)_appendXMLStringToString:(struct __CFString { }*)arg1;
 - (id)stringValue;
@@ -27,5 +26,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectValue;
 - (void)setObjectValue:(id)arg1;
+- (void)addChild:(id)arg1;
 
 @end

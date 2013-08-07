@@ -82,6 +82,7 @@
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
+- (void)_cancel;
 - (void)setSubject:(id)arg1;
 - (id)subject;
 - (BOOL)sourceIsManaged;
@@ -152,6 +153,7 @@
 - (void)_prepareActivity:(id)arg1;
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
 - (void)_performActivity:(id)arg1;
+- (void)_setDarkStyleOnLegacyApp;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -163,7 +165,6 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)preferredStatusBarStyle;
-- (void)_cancel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)_gkCallOnSuperSkippingSelf_viewDidAppear:(BOOL)arg1;
 

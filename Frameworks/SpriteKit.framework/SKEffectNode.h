@@ -17,15 +17,16 @@
 - (void)setShouldCenterFilter:(BOOL)arg1;
 - (BOOL)shouldCenterFilter;
 - (BOOL)shouldEnableEffects;
-- (void)setShouldEnableEffects:(BOOL)arg1;
 - (void)_flippedChangedFrom:(BOOL)arg1 to:(BOOL)arg2;
 - (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;
+- (void)setShouldEnableEffects:(BOOL)arg1;
 - (BOOL)shouldRasterize;
 - (id)filter;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
 - (id)init;
 - (void)dealloc;
+- (id)description;
 - (void)setShouldRasterize:(BOOL)arg1;
 - (void)setFilter:(id)arg1;
 - (id)initWithCoder:(id)arg1;

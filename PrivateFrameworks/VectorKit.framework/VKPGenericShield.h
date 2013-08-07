@@ -19,9 +19,9 @@
 - (unsigned int)variantsCount;
 - (void)setVariants:(id)arg1;
 - (id)variants;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
 - (BOOL)isEqual:(id)arg1;

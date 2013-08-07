@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface GEODirectionsFeedback : PBCodable  {
+@interface GEODirectionsFeedback : PBCodable <NSCopying> {
     struct { double x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_stepFeedbacks;
     unsigned int _stepFeedbacksCount;
     unsigned int _stepFeedbacksSpace;
@@ -19,8 +19,6 @@
 @property(readonly) struct { double x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* stepFeedbacks;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)traversedRouteIDs;
 - (void)setStepFeedbacks:(struct { double x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (struct { double x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)stepFeedbacks;
@@ -37,10 +35,13 @@
 - (void)addTraversedRouteIDs:(id)arg1;
 - (void)setDirectionResponseID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

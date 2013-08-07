@@ -2,13 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDataclassOwnersManager, NSXPCListener, NSObject<OS_dispatch_queue>, ACDAuthenticationPluginManager, NSObject<OS_dispatch_semaphore>, NSMutableArray, ACDAccessPluginManager;
+@class ACDDataclassOwnersManager, NSXPCListener, NSObject<OS_dispatch_queue>, ACDAuthenticationPluginManager, ACDAuthenticationDialogManager, NSObject<OS_dispatch_semaphore>, NSMutableArray, ACDAccessPluginManager;
 
 @interface ACDServer : NSObject <NSXPCListenerDelegate, ACDAccountStoreDelegate> {
     NSXPCListener *_accountStoreListener;
     NSXPCListener *_oauthSignerListener;
+    NSXPCListener *_authenticationDialogListener;
     NSMutableArray *_accountStoreClients;
     NSMutableArray *_oauthSignerClients;
+    NSMutableArray *_authenticationDialogManagerClients;
     NSObject<OS_dispatch_queue> *_deferredConnectionResumeQueue;
     NSObject<OS_dispatch_semaphore> *_deferredConnectionResumeQueueSemaphore;
     NSObject<OS_dispatch_queue> *_performMigrationQueue;
@@ -16,11 +18,13 @@
     ACDAuthenticationPluginManager *_authenticationPluginManager;
     ACDAccessPluginManager *_accessPluginManager;
     ACDDataclassOwnersManager *_dataclassOwnersManager;
+    ACDAuthenticationDialogManager *_authenticationDialogManager;
 }
 
 @property(retain) ACDAuthenticationPluginManager * authenticationPluginManager;
 @property(retain) ACDAccessPluginManager * accessPluginManager;
 @property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
+@property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
 @property BOOL shouldExit;
 
 + (id)sharedServer;
@@ -33,12 +37,14 @@
 - (void)_stopObservingLanguageChangeNotification;
 - (void)_beginObservingLanguageChangeNotfication;
 - (void)_signalDeferredConnectionResumeQueueSemaphore;
-- (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2;
+- (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2 authenticationDialogConnectionListener:(id)arg3;
+- (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setAccessPluginManager:(id)arg1;
 - (id)accessPluginManager;
 - (void)setAuthenticationPluginManager:(id)arg1;
 - (id)authenticationPluginManager;
+- (id)authenticationDialogManager;
 - (void)accountStoreDidSaveAccounts;
 - (id)dataclassOwnersManager;
 - (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;

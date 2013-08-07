@@ -19,6 +19,7 @@
 
 @property <PUCollectionViewReorderDelegate> * reorderDelegate;
 
++ (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
 - (id)reorderDelegate;
 - (id)_reorderableLayout;

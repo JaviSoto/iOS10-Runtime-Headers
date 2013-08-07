@@ -7,6 +7,7 @@
 @interface ACDTestManager : NSObject  {
     NSXPCListener *_accountStoreConnectionListener;
     NSXPCListener *_oauthSignerConnectionListener;
+    NSXPCListener *_authenticationDialogConnectionListener;
     NSString *_storePath;
 }
 

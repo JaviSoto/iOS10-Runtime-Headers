@@ -38,6 +38,7 @@
 - (id)pageConfiguration;
 - (id)globalConfiguration;
 - (void)_waitUntilRecordingComplete;
+- (void)pingURLs:(id)arg1;
 - (double)flushInterval;
 - (void)closeImpressionsSession;
 - (void)flushImmediately;
@@ -49,7 +50,7 @@
 - (id)locationWithPosition:(int)arg1 type:(id)arg2 fieldData:(id)arg3;
 - (id)itemOfferClickEventWithItem:(id)arg1 locationPosition:(int)arg2;
 - (id)activeImpressionsSession;
-- (void)pingURLs:(id)arg1;
+- (void)pingURLs:(id)arg1 withClientContext:(id)arg2;
 - (void)setPageContext:(id)arg1;
 - (void)setPageConfiguration:(id)arg1;
 - (void)recordEvent:(id)arg1;

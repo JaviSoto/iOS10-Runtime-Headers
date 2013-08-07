@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOSubPremise : PBCodable  {
+@interface GEOSubPremise : PBCodable <NSCopying> {
     NSString *_name;
     int _type;
 }
@@ -13,15 +13,16 @@
 @property(retain) NSString * name;
 
 
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)type;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;

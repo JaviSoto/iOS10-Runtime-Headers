@@ -25,9 +25,9 @@
 - (void)setEntries:(id)arg1;
 - (id)textEntries;
 - (id)artworkIdentifierForShieldType:(int)arg1 textSpecificIdentifiers:(id*)arg2;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (id)entries;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;

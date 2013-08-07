@@ -85,8 +85,10 @@
 - (void)synchronizeEventsFolder:(id)arg1 previousTag:(id)arg2 actions:(id)arg3 highestIdContext:(struct { int x1; int x2; int x3; int x4; }*)arg4 isInitialUberSync:(BOOL)arg5 isResyncAfterConnectionFailed:(BOOL)arg6 consumer:(id)arg7;
 - (id)eventsFolders;
 - (id)defaultEventsFolder;
+- (void)handleValidationError:(id)arg1 completion:(id)arg2;
 - (id)localizedInvalidPasswordMessage;
 - (id)localizedIdenticalAccountFailureMessage;
+- (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
 - (void)handleTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 withCompletionBlock:(id)arg3;
 - (id)_serverSuffixesToAlwaysFail;
 - (int)_actionForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
@@ -199,7 +201,6 @@
 - (id)oauth2Token;
 - (void)setPrincipalURL:(id)arg1;
 - (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
-- (id)clientToken;
 - (id)customConnectionProperties;
 - (BOOL)shouldFailAllTasks;
 - (id)identityPersist;
@@ -207,6 +208,7 @@
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (id)oauthInfoProvider;
+- (void)clientTokenRequestedByServer;
 - (id)additionalHeaderValues;
 - (id)taskManager;
 - (id)principalURL;
@@ -230,6 +232,7 @@
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (id)accountPropertyForKey:(id)arg1;
 - (void)setAccountDescription:(id)arg1;
+- (id)clientToken;
 - (void)reload;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;

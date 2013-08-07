@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOPlaceSearchFeedbackCollection : PBCodable  {
+@interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -32,8 +32,6 @@
 @property int localSearchProviderID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)actionCaptures;
 - (void)setHasPlaceID:(BOOL)arg1;
 - (id)actionCaptureAtIndex:(unsigned int)arg1;
@@ -54,13 +52,16 @@
 - (BOOL)hasLocalSearchProviderID;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -113,7 +113,6 @@
 - (id)overlayCharacterImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 flickString:(id)arg4 popupInfo:(id)arg5;
 - (id)getPopupBackgroundImageForKey:(id)arg1 direction:(int)arg2 popupInfo:(id)arg3 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)getFlickCompositeImageForKey:(id)arg1 direction:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
 - (void)handleDismissFlickView;
 - (void)handlePopupView;
 - (void)setCompositeImage:(id)arg1 forKey:(id)arg2;
@@ -166,6 +165,7 @@
 - (id)infoForTouch:(id)arg1;
 - (void)completeDeleteActionForTouchDownWithActions:(unsigned int)arg1 executionContext:(id)arg2;
 - (void)downActionShiftWithKey:(id)arg1;
+- (id)keyplaneNameForRevertAfterTouch;
 - (id)preTouchKeyplaneName;
 - (void)completeSendStringActionForTouchDownWithKey:(id)arg1 withActions:(unsigned int)arg2 executionContext:(id)arg3;
 - (void)incrementPunctuationIfNeeded:(id)arg1;
@@ -189,6 +189,7 @@
 - (float)interpretPinchSeparationValues;
 - (void)setPlayKeyClickSoundOn:(int)arg1;
 - (void)prepareForSplitTransition;
+- (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (id)touchForKey:(id)arg1;
 - (void)showMenu:(id)arg1 forKey:(id)arg2;

@@ -7,7 +7,7 @@
 @interface SKUIItemOfferButton : UIControl  {
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
-    BOOL _showingCloudImage;
+    UIImage *_cloudImage;
     UIColor *_confirmationColor;
     NSString *_confirmationTitle;
     <SKUIItemOfferButtonDelegate> *_delegate;
@@ -27,6 +27,7 @@
     } _titleFitSize;
     UILabel *_titleLabel;
     BOOL _universal;
+    UIImageView *_universalImageView;
 }
 
 @property <SKUIItemOfferButtonDelegate> * delegate;
@@ -43,13 +44,13 @@
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageInsetsForProgressType:(int)arg1;
 + (id)_imageForProgressType:(int)arg1;
 + (id)_cloudArrowImage;
-+ (id)_cloudBackgroundImage;
++ (id)_universalPlusImageWithTintColor:(id)arg1;
 + (id)_cloudImageForTint:(id)arg1;
 + (id)itemOfferButtonWithAppearance:(id)arg1;
++ (id)_cloudBackgroundImage;
 
 - (void)_setImage:(id)arg1;
 - (int)fillStyle;
-- (void)setUniversal:(BOOL)arg1;
 - (BOOL)isUniversal;
 - (void)setProgressType:(int)arg1;
 - (BOOL)showsConfirmationState;
@@ -60,13 +61,15 @@
 - (void)setShowsConfirmationState:(BOOL)arg1;
 - (void)setFillStyle:(int)arg1;
 - (void)_cancelGestureAction:(id)arg1;
+- (BOOL)_shouldHideUniversalIndicator;
 - (id)_activeTintColor;
 - (void)_setProgressVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateForProgressFinished:(BOOL)arg1;
 - (void)setProgressType:(int)arg1 animated:(BOOL)arg2;
-- (void)_createCloudImage;
 - (void)_reloadForCurrentState;
 - (void)_sendWillAnimate;
+- (void)setUniversal:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })layoutSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShowingConfirmation:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)removeButtonStateAnimations;
 - (void)setColoringWithAppearance:(id)arg1;
@@ -91,9 +94,11 @@
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)setProgress:(float)arg1;
+- (void)_removeAllAnimations:(BOOL)arg1;
 - (void)tintColorDidChange;
 - (id)_basicAnimationWithKeyPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPInlineVideoController, <MPMoviePlayerControllerDelegate>, NSError, MPAVController, MPMoviePlayerController, MPSystemNowPlayingController, NSMutableSet, MPMovieErrorLog, NSDictionary, NSArray, MPMovieAccessLog, MPMovieView, NSMutableDictionary, NSMutableArray;
+@class MPInlineVideoController, <MPMoviePlayerControllerDelegate>, NSError, MPAVController, MPMoviePlayerController, MPSystemNowPlayingController, NSMutableSet, MPMovieErrorLog, NSDictionary, NSArray, UIWindow, MPMovieView, MPMovieAccessLog, NSMutableDictionary, NSMutableArray;
 
 @interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
     int _additionalButtons;
@@ -39,6 +39,7 @@
     BOOL _shouldRestartPlaybackFromBeginning;
     BOOL _useHostedWindowWhenFullscreen;
     BOOL _willSoonEndUsingVideoLayer;
+    UIWindow *_preApexSupportWindow;
     double _initialPlaybackTime;
     double _endPlaybackTime;
     NSMutableDictionary *_timedMetadataForUniqueKey;

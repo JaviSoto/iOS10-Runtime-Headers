@@ -6,9 +6,12 @@
 }
 
 
+- (id)shiftOnKeyImageName;
+- (id)shiftKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (float)controlColumnWidthFactor;
+- (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
 - (float)keyCornerRadius;
 - (id)thinKeycapsFontName;

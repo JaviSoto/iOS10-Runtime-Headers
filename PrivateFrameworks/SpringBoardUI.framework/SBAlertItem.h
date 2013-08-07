@@ -13,6 +13,7 @@
     BOOL _didPlayPresentationSound;
     BOOL _allowInSetup;
     BOOL _pendInSetupIfNotAllowed;
+    BOOL _pendWhileKeyBagLocked;
     NSArray *_allowedBundleIDs;
     BOOL _allowInStark;
 }
@@ -20,6 +21,7 @@
 @property BOOL ignoreIfAlreadyDisplaying;
 @property BOOL allowInSetup;
 @property BOOL pendInSetupIfNotAllowed;
+@property BOOL pendWhileKeyBagLocked;
 @property(retain) NSArray * allowedBundleIDs;
 @property BOOL allowInStark;
 
@@ -31,6 +33,8 @@
 - (BOOL)allowInStark;
 - (void)setAllowedBundleIDs:(id)arg1;
 - (id)allowedBundleIDs;
+- (void)setPendWhileKeyBagLocked:(BOOL)arg1;
+- (BOOL)pendWhileKeyBagLocked;
 - (BOOL)pendInSetupIfNotAllowed;
 - (BOOL)allowInSetup;
 - (void)setIgnoreIfAlreadyDisplaying:(BOOL)arg1;

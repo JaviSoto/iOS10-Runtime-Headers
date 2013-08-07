@@ -13,6 +13,7 @@
 - (int)style;
 - (id)init;
 - (void)dealloc;
+- (BOOL)supportsRasterization;
 - (double)glowAnimationDuration;
 - (BOOL)shouldUseVisualAltitude;
 - (BOOL)isTransparent;

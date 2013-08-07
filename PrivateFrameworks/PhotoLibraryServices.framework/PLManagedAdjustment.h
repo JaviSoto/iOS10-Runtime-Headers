@@ -19,6 +19,7 @@
 + (id)ciFiltersForAdjustmentsOnManagedAsset:(id)arg1 forDestinationImageSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)insertInPhotoLibrary:(id)arg1;
 + (id)ciFiltersForAdjustmentsOnManagedAsset:(id)arg1 forDestinationImageSize:(struct CGSize { float x1; float x2; })arg2 withOriginalImageSize:(struct CGSize { float x1; float x2; })arg3 effectFilterCount:(unsigned int*)arg4;
++ (void)fixupAssetSizeFromAdjustments:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
 - (id)metadataProperties;

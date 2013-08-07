@@ -2,25 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotosSharingTransitionDelegate>, PUPhotosSharingTransitionContext, UICollectionViewLayout, PUPhotosSharingViewController;
+@class <PUPhotosSharingTransitionDelegate>, UIViewController<PUPhotosSharingTransitionViewController>, PUPhotosSharingTransitionContext, UICollectionViewLayout;
 
 @interface PUPhotosSharingTransition : PUModalTransition  {
-    PUPhotosSharingViewController *_sharingViewController;
+    UIViewController<PUPhotosSharingTransitionViewController> *_sharingTransitionViewController;
     PUPhotosSharingTransitionContext *_photosSharingTransitionContext;
     <PUPhotosSharingTransitionDelegate> *_delegate;
     UICollectionViewLayout *__transitionLayout;
 }
 
-@property(retain) PUPhotosSharingViewController * sharingViewController;
+@property(retain) UIViewController<PUPhotosSharingTransitionViewController> * sharingTransitionViewController;
 @property(retain) PUPhotosSharingTransitionContext * photosSharingTransitionContext;
 @property <PUPhotosSharingTransitionDelegate> * delegate;
 @property(setter=_setTransitionLayout:,retain) UICollectionViewLayout * _transitionLayout;
 
 
-- (void)setSharingViewController:(id)arg1;
+- (void)setSharingTransitionViewController:(id)arg1;
 - (void)animateDismissTransition;
 - (void)animatePresentTransition;
-- (id)sharingViewController;
+- (id)sharingTransitionViewController;
 - (void)setPhotosSharingTransitionContext:(id)arg1;
 - (id)photosSharingTransitionContext;
 - (id)_transitionLayout;

@@ -15,6 +15,7 @@
 
 - (id)uniqueKey;
 - (BOOL)usePlaceholderAsFallback;
+- (BOOL)canRequestSynchronously;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;
 - (id)initWithRadioStation:(id)arg1;

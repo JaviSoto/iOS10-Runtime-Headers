@@ -8,6 +8,7 @@
     NSManagedObjectID *_assetOID;
     NSString *_utiType;
     int _format;
+    BOOL _forceBGRA;
     BOOL _requestIsValid;
     NSObject<OS_dispatch_queue> *_queue;
     UIImage *_cachedImage;
@@ -27,7 +28,7 @@
 - (void)setCachedImageIsAvailable:(BOOL)arg1;
 - (BOOL)cachedImageIsAvailable;
 - (void)_cacheImage;
-- (id)initWithAsset:(id)arg1 format:(int)arg2;
+- (id)initWithAsset:(id)arg1 format:(int)arg2 options:(unsigned int)arg3;
 - (void)dealloc;
 
 @end

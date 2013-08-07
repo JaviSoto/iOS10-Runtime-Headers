@@ -21,8 +21,8 @@
 - (void)setOriginalCommandId:(id)arg1;
 - (id)originalCommandId;
 - (id)encodedClassName;
-- (void)setCategory:(id)arg1;
 - (id)category;
+- (void)setCategory:(id)arg1;
 - (id)groupIdentifier;
 
 @end

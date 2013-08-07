@@ -75,6 +75,12 @@
 - (void)setVisibleRectSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointToView:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromView:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setZRotation:(float)arg1;
+- (float)zRotation;
+- (void)setYScale:(float)arg1;
+- (float)yScale;
+- (void)setXScale:(float)arg1;
+- (float)xScale;
 - (void)didSimulatePhysics;
 - (void)didEvaluateActions;
 - (void)didMoveToView:(id)arg1;
@@ -88,10 +94,14 @@
 - (int)scaleMode;
 - (void)setBackgroundColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (void)didContinueContact:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setZPosition:(float)arg1;
 - (id)backgroundColor;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (float)zPosition;
+- (void)setScale:(float)arg1;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

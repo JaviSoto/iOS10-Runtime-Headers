@@ -5,12 +5,16 @@
 @interface GKGridLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext  {
     BOOL _invalidateIncrementalReveal;
     BOOL _invalidateBoundsChange;
+    BOOL _invalidatePlaceholderVisibility;
 }
 
 @property BOOL invalidateIncrementalReveal;
 @property BOOL invalidateBoundsChange;
+@property BOOL invalidatePlaceholderVisibility;
 
 
+- (void)setInvalidatePlaceholderVisibility:(BOOL)arg1;
+- (BOOL)invalidatePlaceholderVisibility;
 - (void)setInvalidateBoundsChange:(BOOL)arg1;
 - (BOOL)invalidateBoundsChange;
 - (void)setInvalidateIncrementalReveal:(BOOL)arg1;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UITextInputTraits, NSArray, NSMutableArray, NSAttributedString, <UIModalItemDelegate>, UIView, NSString, _UIModalItemContentView, UIViewController, _UIModalItemBackgroundView;
+@class UITextInputTraits, NSArray, _UIModalItemRepresentationView, NSMutableArray, NSAttributedString, <UIModalItemDelegate>, UIView, NSString, _UIModalItemContentView, UIViewController, _UIModalItemBackgroundView;
 
 @interface _UIModalItem : NSObject  {
     NSString *_title;
@@ -20,6 +20,9 @@
     int _messageMaxLineNumber;
     int _numberOfButtonsRows;
     BOOL _useUndoStyle;
+    BOOL _useWifiPickerLayout;
+    BOOL _textFieldsHidden;
+    BOOL _dontUpdateFrameForKBChanges;
     NSMutableArray *_otherButtonsTitles;
     int _itemType;
     <UIModalItemDelegate> *_delegate;
@@ -58,7 +61,7 @@
     int _cancelButtonIndex;
     _UIModalItemContentView *_contentView;
     _UIModalItemBackgroundView *_backgroundView;
-    UIView *_representedView;
+    _UIModalItemRepresentationView *_representedView;
     NSString *_loginString;
     NSString *_passwordString;
     NSString *_loginPlaceholderString;
@@ -102,11 +105,14 @@
 @property int messageMaxLineNumber;
 @property int numberOfButtonsRows;
 @property BOOL useUndoStyle;
+@property BOOL useWifiPickerLayout;
+@property BOOL textFieldsHidden;
 @property(retain) _UIModalItemContentView * contentView;
 @property(retain) _UIModalItemBackgroundView * backgroundView;
 @property BOOL isBeingDismissed;
 @property int dismissIndex;
 @property BOOL isHidden;
+@property BOOL dontUpdateFrameForKBChanges;
 
 + (id)modalItemWithType:(int)arg1 title:(id)arg2 message:(id)arg3 buttonTitles:(id)arg4 completion:(id)arg5;
 
@@ -120,18 +126,16 @@
 - (id)message;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (oneway void)release;
-- (id)retain;
 - (id)delegate;
 - (void)setForceVerticalLayout:(BOOL)arg1;
 - (void)setButtonTitles:(id)arg1;
 - (id)buttonTitles;
 - (void)setContentViewController:(id)arg1;
+- (void)setUseWifiPickerLayout:(BOOL)arg1;
 - (void)setUseUndoStyle:(BOOL)arg1;
 - (void)setNumberOfButtonsRows:(int)arg1;
 - (void)setMessageMaxLineNumber:(int)arg1;
 - (void)setTitleMaxLineNumber:(int)arg1;
-- (void)setSubtitleString:(id)arg1;
 - (void)setMessageAttributedString:(id)arg1;
 - (id)messageAttributedString;
 - (void)setTitleAttributedString:(id)arg1;
@@ -154,6 +158,9 @@
 - (BOOL)isPresented;
 - (void)setModalItemInputStyle:(int)arg1;
 - (id)_loginTraits;
+- (void)setTextFieldsHidden:(BOOL)arg1;
+- (void)refreshButtonTitle;
+- (void)setSubtitleString:(id)arg1;
 - (id)_defaultButtonTitle;
 - (id)_typeKey;
 - (void)_setAnchorViewController:(id)arg1;
@@ -165,6 +172,7 @@
 - (id)buttonTitleAtIndex;
 - (void)setLoginString:(id)arg1;
 - (void)setPasswordString:(id)arg1;
+- (void)_updateContentView;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 otherButtonTitles:(id)arg3 completion:(id)arg4 delegate:(id)arg5;
 - (void)setDefaultButtonIndex:(int)arg1;
 - (void)setMessage:(id)arg1;
@@ -172,15 +180,19 @@
 - (int)presentAnimationType;
 - (void)_setRepresentedView:(id)arg1;
 - (id)_representedView;
+- (BOOL)dontUpdateFrameForKBChanges;
 - (BOOL)isBeingDismissed;
 - (id)viewController;
 - (id)_viewController;
+- (void)setDontUpdateFrameForKBChanges:(BOOL)arg1;
+- (BOOL)textFieldsHidden;
 - (struct CGSize { float x1; float x2; })contentViewControllerSize;
 - (int)messageMaxLineNumber;
 - (int)titleMaxLineNumber;
 - (BOOL)useUndoStyle;
 - (BOOL)forceVerticalLayout;
 - (int)numberOfButtonsRows;
+- (BOOL)useWifiPickerLayout;
 - (id)titleAttributedString;
 - (void)setEnableFirstOtherButton:(BOOL)arg1;
 - (BOOL)enableFirstOtherButton;

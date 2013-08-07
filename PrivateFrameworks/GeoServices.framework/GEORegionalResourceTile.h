@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEORegionalResourceTile : PBCodable  {
+@interface GEORegionalResourceTile : PBCodable <NSCopying> {
     NSMutableArray *_attributions;
     NSMutableArray *_childrens;
     NSMutableArray *_iconChecksums;
@@ -23,8 +23,6 @@
 @property(retain) NSMutableArray * iconChecksums;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)childrenAtIndex:(unsigned int)arg1;
 - (void)clearChildrens;
 - (void)setChildrens:(id)arg1;
@@ -49,10 +47,13 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (void)setZ:(unsigned int)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOLocalizedName : PBCodable  {
+@interface GEOLocalizedName : PBCodable <NSCopying> {
     NSString *_languageCode;
     NSString *_name;
     unsigned int _nameRank;
@@ -31,8 +31,6 @@
 @property(retain) NSString * phoneticName;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasNameRank:(BOOL)arg1;
 - (void)setHasIsDefault:(BOOL)arg1;
 - (void)setNameRank:(unsigned int)arg1;
@@ -51,11 +49,14 @@
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)languageCode;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;

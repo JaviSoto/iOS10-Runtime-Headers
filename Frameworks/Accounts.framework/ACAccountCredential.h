@@ -11,7 +11,6 @@
     ACAccount *_owningAccount;
     BOOL _dirty;
     BOOL _empty;
-    NSString *_findMyiPhoneToken;
 }
 
 @property(copy) NSString * oauthToken;
@@ -36,11 +35,11 @@
 - (void)setPassword:(id)arg1;
 - (id)oauthToken;
 - (id)oauthTokenSecret;
-- (void)setFindMyiPhoneToken:(id)arg1;
 - (void)setEmpty:(BOOL)arg1;
 - (void)setDirty:(BOOL)arg1;
 - (void)setMapsToken:(id)arg1;
 - (id)mapsToken;
+- (void)setFindMyiPhoneToken:(id)arg1;
 - (id)findMyiPhoneToken;
 - (id)expiryDate;
 - (id)oauthRefreshToken;

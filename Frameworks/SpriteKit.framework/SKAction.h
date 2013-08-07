@@ -13,8 +13,8 @@
 
 @interface SKAction : NSObject <NSCopying, NSCoding> {
 
-  /* Error parsing encoded ivar type info: ^{SKCAction=^^?f@cddffdcc@?iffff} */
-    struct SKCAction { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
+  /* Error parsing encoded ivar type info: ^{SKCAction=^^?f@BddffdBB@?iffff} */
+    struct SKCAction { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
 
     void *caction;
 }
@@ -32,6 +32,7 @@
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2;
 + (id)group:(id)arg1;
 + (id)sequence:(id)arg1;
++ (id)moveBY:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id)arg2;
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
 + (id)runBlock:(id)arg1 queue:(id)arg2;
@@ -82,8 +83,8 @@
 - (void)setTimingMode:(int)arg1;
 - (int)timingMode;
 - (void)setCppAction:(void*)arg1;
-- (struct SKCAction { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; }*)caction;
-     /* Encoded args for previous method: ^{SKCAction=^^?f@cddffdcc@?iffff}8@0:4 */
+- (struct SKCAction { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; }*)caction;
+     /* Encoded args for previous method: ^{SKCAction=^^?f@BddffdBB@?iffff}8@0:4 */
 
 - (void)setSpeed:(float)arg1;
 - (float)speed;

@@ -7,6 +7,7 @@
 @interface IMAVHandler : NSObject  {
     NSMutableArray *_pendingChats;
     NSMutableArray *_pendingLookups;
+    NSMutableArray *_processingInvites;
 }
 
 + (void)ensureHandlerSetup;
@@ -24,10 +25,10 @@
 - (void)account:(id)arg1 conference:(id)arg2 changedToNewConferenceID:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 peerIDChangedFromID:(id)arg3 toID:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 receivedAVMessage:(unsigned int)arg3 from:(id)arg4 sessionID:(unsigned int)arg5 userInfo:(id)arg6;
-- (void)account:(id)arg1 conference:(id)arg2 receivedCancelInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 receivedResponseToInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 receivedInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)_notifyOfIncomingInvitationFor:(id)arg1 notifyInvitationListeners:(BOOL)arg2;
+- (void)account:(id)arg1 conference:(id)arg2 receivedCancelInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)_handleIncomingWithAccount:(id)arg1 fromHandle:(id)arg2 conference:(id)arg3 properites:(id)arg4 allowCall:(BOOL)arg5;
 - (void)_handleIncomingAVChatForNotification:(id)arg1;
 - (void)account:(id)arg1 postedError:(id)arg2;

@@ -29,13 +29,13 @@
 - (void)setArtworkIdentifier:(id)arg1;
 - (id)shieldTexts;
 - (id)artworkIdentifier;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasShieldType:(BOOL)arg1;
 - (void)setShieldType:(int)arg1;
 - (int)shieldType;
 - (BOOL)hasShieldType;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

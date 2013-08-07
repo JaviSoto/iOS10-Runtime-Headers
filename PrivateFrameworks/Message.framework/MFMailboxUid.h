@@ -124,10 +124,10 @@
 - (id)URL;
 - (BOOL)isSelectable;
 - (void)setAttributes:(unsigned int)arg1;
+- (id)children;
 - (unsigned int)attributes;
 - (id)parent;
 - (int)type;
 - (void)setName:(id)arg1;
-- (id)children;
 
 @end

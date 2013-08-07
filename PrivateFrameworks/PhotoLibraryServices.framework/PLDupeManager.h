@@ -14,6 +14,8 @@
     NSMutableSet *_cloudInserts;
     PLPhotoLibrary *_photoLibrary;
     long _once;
+    int _pauseCount;
+    double _rebuildStartTime;
 }
 
 @property(readonly) PLPhotoLibrary * photoLibrary;
@@ -37,8 +39,9 @@
 - (short)_adjustCloudAssetVisibilityStateForManagedObjectContext:(id)arg1;
 - (short)_computeAssetHashesForManagedObjectContext:(id)arg1;
 - (short)_analyzeNormalAssetsForManagedObjectContext:(id)arg1;
-- (void)_continueAnalysisForRebuild;
+- (void)_continueAnalysisForRebuildOrPause;
 - (short)_computeCloudAssetHashesForManagedObjectContext:(id)arg1;
+- (void)_continueAnalysisForRebuild;
 - (void)_analyzeDupesForRebuild;
 - (void)_analyzeDupeForNormalAsset:(id)arg1;
 - (BOOL)_prepareCloudAssetsToAnalyzeForManagedObjectContext:(id)arg1;
@@ -50,6 +53,8 @@
 - (void)persistPublicGlobalUUIDsForAssets:(id)arg1 completionHandler:(id)arg2;
 - (void)analyzeDupesWithNormalInserts:(id)arg1 cloudInserts:(id)arg2 completionHandler:(id)arg3;
 - (id)photoLibrary;
+- (void)resumeAnalysis;
+- (void)pauseAnalysis;
 - (void)dealloc;
 
 @end

@@ -16,8 +16,8 @@
 @interface SKPlaySound : SKAction  {
     NSString *_filePath;
 
-  /* Error parsing encoded ivar type info: ^{SKCPlaySound=^^?f@cddffdcc@?iffff@cc} */
-    struct SKCPlaySound { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; id x19; BOOL x20; BOOL x21; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SKCPlaySound=^^?f@BddffdBB@?iffff@cc} */
+    struct SKCPlaySound { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; id x19; BOOL x20; BOOL x21; } *_mycaction;
 
     struct CGPoint { 
         float x; 

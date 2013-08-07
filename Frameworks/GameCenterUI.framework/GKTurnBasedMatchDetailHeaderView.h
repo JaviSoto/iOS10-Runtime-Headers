@@ -27,6 +27,7 @@
 @property(readonly) NSString * playingWithString;
 @property(retain) NSArray * replaceableConstraints;
 
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void)setInfoLabel:(id)arg1;
 - (void)setLastTurnLabel:(id)arg1;

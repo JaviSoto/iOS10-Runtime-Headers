@@ -12,7 +12,7 @@
 @property float lowerDistanceLimit;
 @property float upperDistanceLimit;
 
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGPoint { float x1; float x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGVector { float x1; float x2; })arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)setUpperDistanceLimit:(float)arg1;

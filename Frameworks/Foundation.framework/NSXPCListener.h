@@ -32,9 +32,9 @@
 - (void)resume;
 - (void)suspend;
 - (id)endpoint;
-- (void)_setQueue:(id)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (id)_initShared;
+- (void)_setQueue:(id)arg1;
 - (id)serviceName;
 - (id)initWithServiceName:(id)arg1;
 - (void)stop;

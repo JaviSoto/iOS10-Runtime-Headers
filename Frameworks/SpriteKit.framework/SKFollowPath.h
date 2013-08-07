@@ -13,8 +13,8 @@
 
 @interface SKFollowPath : SKAction  {
 
-  /* Error parsing encoded ivar type info: ^{SKCFollowPath=^^?f@cddffdcc@?ifffffI^{?}{?=ff}cc} */
-    struct SKCFollowPath { int (**x1)(); float x2; id x3; BOOL x4; double x5; double x6; float x7; float x8; double x9; BOOL x10; BOOL x11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; float x19; unsigned int x20; struct { /* ? */ } *x21; struct { float x_22_1_1; float x_22_1_2; } x22; BOOL x23; BOOL x24; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SKCFollowPath=^^?f@BddffdBB@?ifffffI^{?}{?=ff}cc} */
+    struct SKCFollowPath { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; float x19; unsigned int x20; struct { /* ? */ } *x21; struct { float x_22_1_1; float x_22_1_2; } x22; BOOL x23; BOOL x24; } *_mycaction;
 
     struct CGPath { } *_cgPath;
 }

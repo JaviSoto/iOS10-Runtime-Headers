@@ -4,7 +4,7 @@
 
 @class GEONameInfo, NSMutableArray;
 
-@interface GEOSubstep : PBCodable  {
+@interface GEOSubstep : PBCodable <NSCopying> {
     int _maneuverType;
     GEONameInfo *_name;
     NSMutableArray *_signposts;
@@ -24,8 +24,6 @@
 @property(retain) NSMutableArray * signposts;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasZilchIndex:(BOOL)arg1;
 - (void)setZilchIndex:(int)arg1;
 - (int)zilchIndex;
@@ -42,11 +40,14 @@
 - (void)setSignposts:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)setName:(id)arg1;
 

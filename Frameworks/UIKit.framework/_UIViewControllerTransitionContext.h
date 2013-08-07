@@ -114,7 +114,6 @@
 - (void)_setTransitionIsCompleting:(BOOL)arg1;
 - (void)_setInteractiveUpdateHandler:(id)arg1;
 - (void)_setCompletionHandler:(id)arg1;
-- (void)_enableInteractionForDisabledViews;
 - (void)_setAnimator:(id)arg1;
 - (void)_setInteractor:(id)arg1;
 - (void)_setTransitionIsInFlight:(BOOL)arg1;
@@ -128,6 +127,7 @@
 - (BOOL)_isPresentation;
 - (id)_transitionCoordinator;
 - (int)_state;
+- (void)_enableInteractionForDisabledViews;
 - (void)updateInteractiveTransition:(float)arg1;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;

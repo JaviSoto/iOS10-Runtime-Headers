@@ -24,12 +24,14 @@
     id _progressHandler;
 
     int _numberOfDownloadsInProgress;
+    int _numberOfCopiesInProgress;
     NSMutableArray *_loadedResources;
     BOOL _canceled;
     NSString *_baseURLString;
     unsigned int _maxConcurrentLoads;
     BOOL _ignoreCachedResources;
     NSArray *_resourceInfos;
+    BOOL _firstLoadEver;
 }
 
 @property(readonly) unsigned int tileGroupIdentifier;
@@ -39,9 +41,9 @@
 
 - (unsigned int)tileGroupIdentifier;
 - (id)_urlForResource:(id)arg1;
-- (BOOL)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3;
+- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 completionHandler:(id)arg4;
 - (void)_loadNextResource;
-- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2;
+- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 firstLoadEver:(BOOL)arg3;
 - (id)loadedResources;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 resources:(id)arg5 isFirstLoad:(BOOL)arg6 ignoreCachedResources:(BOOL)arg7;
 - (id)uniqueTileGroupIdentifier;

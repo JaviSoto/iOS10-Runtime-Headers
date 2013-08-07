@@ -27,6 +27,7 @@
 + (id)padMetrics;
 + (id)phoneMetrics;
 + (void)initialize;
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void)setDidSetupConstraints:(BOOL)arg1;
 - (BOOL)didSetupConstraints;

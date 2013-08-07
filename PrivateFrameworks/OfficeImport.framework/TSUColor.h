@@ -52,7 +52,6 @@
 - (id)UIColor;
 - (id)newBlendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (float)p_rgbComponentWithIndex:(unsigned char)arg1;
-- (id)initWithUIColor:(id)arg1;
 - (void)getRGBBytes:(char *)arg1 :(char *)arg2 :(char *)arg3;
 - (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })eshColor;
 - (struct CsColour { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; })csColour;
@@ -82,6 +81,7 @@
 - (id)copy;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithUIColor:(id)arg1;
 - (id)initWithPatternImage:(id)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;

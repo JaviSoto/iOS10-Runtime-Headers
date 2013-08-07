@@ -9,11 +9,14 @@
     NSArray *_optionItems;
     <UIWebSelectedItemPrivate> *_selectedOptionItem;
     int _selectedIndex;
+    <UIWebSelectedItemPrivate> *_optionToSelectWhenDone;
+    int _indexToSelectWhenDone;
 }
 
 
 - (void)dealloc;
 - (id)initWithDOMHTMLSelectElement:(id)arg1 allItems:(id)arg2;
+- (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (id)controlView;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;

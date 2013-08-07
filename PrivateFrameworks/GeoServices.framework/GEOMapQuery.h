@@ -4,7 +4,7 @@
 
 @class GEOMapRegion, GEOPlaceSearchRequest, NSString, GEOLocation;
 
-@interface GEOMapQuery : PBCodable  {
+@interface GEOMapQuery : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -74,8 +74,6 @@
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasClientImgMaxHeight:(BOOL)arg1;
@@ -91,6 +89,7 @@
 - (void)setHasRequestType:(BOOL)arg1;
 - (id)placeSearchRequest;
 - (BOOL)hasPlaceSearchRequest;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (BOOL)hasSessionID;
 - (id)userLocation;
@@ -133,13 +132,15 @@
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setUserLocation:(id)arg1;
 - (void)setMapRegion:(id)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)requestType;
 - (id)query;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setQuery:(id)arg1;
 - (id)dictionaryRepresentation;
 

@@ -35,7 +35,6 @@
 @property <GEOVoltaireMultiTileDownloaderDelegate> * delegate;
 
 
-- (void)_failWithError:(id)arg1;
 - (void)_tryParseTiles;
 - (void)logDownloadDetails;
 - (id)_mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
@@ -54,6 +53,7 @@
 - (void)setAuditToken:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
+- (void)_failWithError:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

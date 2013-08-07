@@ -34,6 +34,8 @@
 - (void)loadBestArtworkImageForSize:(struct CGSize { float x1; float x2; })arg1 forArtworkCacheID:(id)arg2 completionBlock:(id)arg3;
 - (void)loadArtworkImageForFormat:(int)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)loadArtworkImageForFormat:(int)arg1 ofItemWithArtworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3 completionBlock:(id)arg4;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (BOOL)isGeniusEnabled;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDimmingView, _UIViewServiceInterface, _UIAsyncInvocation, NSError, UIView, _UITextServiceSession, _UIRemoteView, NSArray, NSString, _UISizeTrackingView, NSObject<OS_dispatch_semaphore>, UIActionSheet;
+@class UIDimmingView, _UIViewServiceInterface, _UIAsyncInvocation, NSError, UIView, _UITextServiceSession, _UIRemoteView, _UITextEffectsRemoteView, NSArray, NSString, _UISizeTrackingView, NSObject<OS_dispatch_semaphore>, UIActionSheet;
 
 @interface _UIRemoteViewController : UIViewController <XPCProxyTarget, _UIRemoteViewController_ViewControllerOperatorInterface, _UIRemoteViewController_TextEffectsOperatorInterface, UIActionSheetDelegate> {
     NSString *_serviceBundleIdentifier;
@@ -20,8 +20,8 @@
     NSObject<OS_dispatch_semaphore> *_fenceBarrier;
     _UISizeTrackingView *_sizeTrackingView;
     _UIRemoteView *_serviceViewControllerRemoteView;
-    _UIRemoteView *_fullScreenTextEffectsRemoteView;
-    _UIRemoteView *_textEffectsAboveStatusBarRemoteView;
+    _UITextEffectsRemoteView *_fullScreenTextEffectsRemoteView;
+    _UITextEffectsRemoteView *_textEffectsAboveStatusBarRemoteView;
     UIView *_fullScreenTextEffectsSnapshotView;
     BOOL _snapshotTextEffectsAfterRotation;
     unsigned int _serviceScreenDisplayID;

@@ -18,8 +18,8 @@
 - (void)notifyDelegateOnWillFinish;
 - (void)setTimeScope:(int)arg1;
 - (int)timeScope;
+- (id)category;
 - (id)init;
 - (void)setCategory:(id)arg1;
-- (id)category;
 
 @end

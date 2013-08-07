@@ -2,11 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class UIImageView, <PUPhotoBrowserZoomTransitionDelegate>, PUPhotoPinchGestureRecognizer, PUTransitionViewAnimator;
 
 @interface PUPhotoBrowserZoomTransition : PUNavigationTransition <PUTransitionViewAnimatorDelegate> {
     UIImageView *_impostorImageView;
     id _userInteractionDisabledToken;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _individualAnimationCompletion;
+
     BOOL _useFallbackAnimation;
     BOOL _shouldEnd;
     BOOL _didFinish;
@@ -28,7 +37,7 @@
 - (void)_transitionDidFinishAnimationForOperation:(int)arg1;
 - (void)_transitionWillBeginAnimationForOperation:(int)arg1;
 - (void)_animationTransitionForOperation:(int)arg1 betweenViewController:(id)arg2 andPhotoBrowserController:(id)arg3;
-- (void)_endTransitionViewAnimator;
+- (void)_endTransitionViewAnimatorForceCancel:(BOOL)arg1;
 - (id)_thumbnailImageForPhoto:(id)arg1;
 - (void)transitionDidStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)transitionWillStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;

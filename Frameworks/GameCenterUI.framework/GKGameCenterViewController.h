@@ -35,7 +35,6 @@
 - (id)volatileProperties;
 - (id)privateViewController;
 - (void)setVolatileProperties:(id)arg1;
-- (id)remoteViewController;
 - (void)_setupChildViewController;
 - (void)notifyDelegateOnWillFinish;
 - (id)gameCenterDelegate;
@@ -46,6 +45,7 @@
 - (id)init;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

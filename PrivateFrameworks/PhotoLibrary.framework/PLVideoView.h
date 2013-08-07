@@ -90,6 +90,7 @@
     NSArray *_portraitSummaryThumbnailTimestamps;
     UIActivityIndicatorView *_spinner;
     UIActivityIndicatorView *_shadowSpinner;
+    BOOL _prepareMoviePlayerForScrubberAutomatically;
     BOOL _shouldPlayVideoWhenViewAppears;
 }
 
@@ -110,6 +111,7 @@
 @property(readonly) UIImageView * previewImageView;
 @property BOOL showsPlayOverlay;
 @property BOOL showsScrubber;
+@property BOOL prepareMoviePlayerForScrubberAutomatically;
 @property BOOL loadMediaImmediately;
 @property BOOL shouldPlayVideoWhenViewAppears;
 @property BOOL canEdit;
@@ -126,6 +128,7 @@
 
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
+- (BOOL)prepareMoviePlayerForScrubberAutomatically;
 - (void)setScrubberWidth:(float)arg1;
 - (id)_moviePlayer;
 - (BOOL)_scrubberTimeNeedsMapping;
@@ -141,8 +144,9 @@
 - (id)movieScrubber:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
 - (id)videoOverlayPlayButton;
 - (id)moviePlayerRequestsPickedAirplayRoute:(id)arg1;
+- (BOOL)moviePlayerControllerShouldAllowExternalPlayback:(id)arg1;
 - (void)moviePlayerWasSuspendedDuringPlayback:(id)arg1;
-- (void)moviePlayer:(id)arg1 didChangeExternalPlayback:(BOOL)arg2;
+- (void)moviePlayerUpdatedDestinationPlaceholder:(id)arg1;
 - (void)moviePlayerControllerWillResignAsActiveController:(id)arg1;
 - (void)moviePlayerControllerDidBecomeActiveController:(id)arg1;
 - (void)_handleScreenConnectionChange:(BOOL)arg1;
@@ -196,7 +200,6 @@
 - (id)_pathForOriginalFile;
 - (BOOL)_didSetPhotoData;
 - (BOOL)_canPlayStreamedVideoWithLocalVideo;
-- (BOOL)_mediaIsStreamedVideo;
 - (void)_updatePosterFrameVisibility;
 - (void)_updateScrubberVisibilityWithDuration:(double)arg1;
 - (void)_setNeedsReloadScrubberThumbnails:(BOOL)arg1;
@@ -210,6 +213,7 @@
 - (void)_didBeginPlayback;
 - (void)_updateSnapshotImage;
 - (void)_verifyOrRestartPlayback;
+- (BOOL)_mediaIsStreamedVideo;
 - (void)_playbackFinished;
 - (void)_updateScrubberFrame;
 - (void)_videoOverlayFadeOutDidFinish;
@@ -231,16 +235,14 @@
 - (void)setScrubberIsSubview:(BOOL)arg1;
 - (void)setImageTile:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
-- (BOOL)playingToVideoOut;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)playingToAirTunes;
 - (id)trimmedVideoClip;
 - (id)videoPathAfterTrim;
 - (void)trimUsingMode:(int)arg1 saveACopy:(BOOL)arg2;
 - (id)newPreviewImageData:(id*)arg1;
-- (id)imageTile;
 - (id)videoCameraImage;
 - (id)videoScrubber;
+- (id)imageTile;
 - (void)setShouldPlayVideoWhenViewAppears:(BOOL)arg1;
 - (BOOL)shouldPlayVideoWhenViewAppears;
 - (void)setShowsScrubber:(BOOL)arg1;
@@ -248,9 +250,13 @@
 - (void)removeVideoOverlay;
 - (BOOL)isTrimming;
 - (void)forceStop;
+- (BOOL)playingToVideoOut;
+- (BOOL)playingToAirTunes;
 - (void)setLoadMediaImmediately:(BOOL)arg1;
 - (void)setShowsPlayOverlay:(BOOL)arg1;
+- (void)setPrepareMoviePlayerForScrubberAutomatically:(BOOL)arg1;
 - (void)setCanEdit:(BOOL)arg1;
+- (void)prepareMoviePlayer;
 - (id)posterFrameView;
 - (void)_tearDownMoviePlayer;
 - (id)pathForVideoFile;

@@ -4,7 +4,7 @@
 
 @class GEOPlace, NSString, GEOPlaceSearchRequest, NSMutableArray, GEOAddress;
 
-@interface GEOPlaceResult : PBCodable  {
+@interface GEOPlaceResult : PBCodable <NSCopying> {
     double _confidence;
     NSMutableArray *_additionalPlaces;
     NSMutableArray *_matchedTokens;
@@ -41,12 +41,10 @@
 @property(retain) NSMutableArray * matchedTokens;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
+- (id)additionalPlaces;
 - (id)matchedTokens;
 - (id)namedFeatures;
 - (id)unmatchedStrings;
-- (id)additionalPlaces;
 - (void)setHasTravelTime:(BOOL)arg1;
 - (void)setHasConfidence:(BOOL)arg1;
 - (id)matchedTokenAtIndex:(unsigned int)arg1;
@@ -88,12 +86,15 @@
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (double)confidence;
 - (id)quad;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

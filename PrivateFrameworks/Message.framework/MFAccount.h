@@ -73,6 +73,7 @@
 - (void)releaseAllForcedConnections;
 - (BOOL)fetchTokensIfNecessary:(id*)arg1;
 - (id)managedTag;
+- (BOOL)promptUserForWebLoginWithURL:(id)arg1 shouldConfirm:(BOOL)arg2 completionHandler:(id)arg3;
 - (BOOL)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (id)_credential;
 - (BOOL)canGoOffline;

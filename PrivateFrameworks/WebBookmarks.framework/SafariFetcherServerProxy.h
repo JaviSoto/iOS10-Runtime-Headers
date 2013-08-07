@@ -18,6 +18,8 @@
 - (void)didFinishFetching;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)startReadingListFetcher;
+- (void)clearAllReadingListArchives;
+- (void)clearReadingListArchiveWithUUID:(id)arg1;
 - (void)_clearConnection;
 - (id)init;
 - (void)setDelegate:(id)arg1;

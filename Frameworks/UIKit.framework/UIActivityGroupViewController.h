@@ -5,6 +5,7 @@
 @class NSDictionary, NSArray;
 
 @interface UIActivityGroupViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout> {
+    BOOL _darkStyleOnLegacyApp;
     BOOL _hasActivities;
     int _activityCategory;
     NSArray *_activities;
@@ -14,6 +15,7 @@
 @property int activityCategory;
 @property(copy) NSArray * activities;
 @property(copy) NSDictionary * customActivityTitles;
+@property BOOL darkStyleOnLegacyApp;
 @property BOOL hasActivities;
 
 
@@ -27,6 +29,8 @@
 - (void)setActivities:(id)arg1;
 - (id)initWithActivityCategory:(int)arg1 title:(id)arg2;
 - (void)setActivityCategory:(int)arg1;
+- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
+- (BOOL)darkStyleOnLegacyApp;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;

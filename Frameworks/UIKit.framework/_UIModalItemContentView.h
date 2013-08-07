@@ -80,6 +80,7 @@
 - (void)setPresentingViewController:(id)arg1;
 - (void)setPresentingSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })presentingSize;
+- (void)_reloadButtons;
 - (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setModalItem:(id)arg1;
 - (id)loginTextField;
@@ -93,6 +94,7 @@
 - (void)_createAndConfigureMessageLabel;
 - (void)_createAndConfigureSubtitleLabel;
 - (void)_createAndConfigureTitleLabel;
+- (void)setModalItem:(id)arg1 skipLayout:(BOOL)arg2;
 - (id)titleLabel;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (id)presentingViewController;

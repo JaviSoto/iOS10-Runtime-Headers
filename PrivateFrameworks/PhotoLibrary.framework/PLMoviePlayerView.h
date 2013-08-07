@@ -8,6 +8,7 @@
     PLAVPlayerView *_avPlayerView;
     PLVideoOutBackgroundView *_videoOutView;
     PLAirPlayBackgroundView *_airPlayView;
+    BOOL _destinationPlaceholderHidden;
     unsigned int _scaleMode;
 }
 
@@ -15,13 +16,16 @@
 @property(retain) AVPlayer * player;
 @property unsigned int scaleMode;
 @property(readonly) int destinationPlaceholderStyle;
+@property(getter=isDestinationPlaceholderHidden) BOOL destinationPlaceholderHidden;
 
 
+- (BOOL)isDestinationPlaceholderHidden;
 - (void)setDestinationPlaceholderStyle:(int)arg1 airPlayDeviceName:(id)arg2;
 - (void)_installBackgroundView:(id)arg1;
 - (void)_clearAirPlayView;
 - (void)_clearVideoView;
 - (void)reattachVideoView;
+- (void)setDestinationPlaceholderHidden:(BOOL)arg1;
 - (int)destinationPlaceholderStyle;
 - (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
 - (void)setScaleMode:(unsigned int)arg1;

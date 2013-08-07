@@ -25,7 +25,7 @@
 - (id)uncachePassphraseWithInfo:(id)arg1;
 - (void)cachePassphraseWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)cachePassphraseWithInfo:(id)arg1;
-- (void)recoverWithInfo:(id)arg1 completionBlockWithResults:(id)arg2;
+- (void)recoverWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)recoverWithInfo:(id)arg1 results:(id*)arg2;
 - (void)getAccountInfoWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (void)getAccountInfoWithInfo:(id)arg1 completionBlockWithResults:(id)arg2;
@@ -43,7 +43,7 @@
 - (void)enableWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (void)disableWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (void)startSMSChallengeWithInfo:(id)arg1 completionBlockWithResults:(id)arg2;
-- (void)recoverWithInfo:(id)arg1 completionBlock:(id)arg2;
+- (void)recoverWithInfo:(id)arg1 completionBlockWithResults:(id)arg2;
 - (id)enableWithInfo:(id)arg1;
 - (id)disableWithInfo:(id)arg1;
 - (id)getAccountInfoWithInfo:(id)arg1 results:(id*)arg2;

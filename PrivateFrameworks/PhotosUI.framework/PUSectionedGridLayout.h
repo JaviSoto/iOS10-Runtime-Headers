@@ -48,6 +48,8 @@
     NSDictionary *_transitionSectionInfosByVisualSection;
     BOOL _delegateSupportsGroupedSections;
     BOOL _delegateSupportsAnchorItemForContentOffset;
+    BOOL _delegateSupportsTransitionAutoContentOffsetEnabled;
+    BOOL _delegateSupportsDidInvalidateWithContext;
     BOOL _usesRenderedStrips;
     NSIndexPath *_reorderingSourceIndexPath;
     NSIndexPath *_reorderingTargetIndexPath;
@@ -85,7 +87,6 @@
     int _columnsPerRow;
     PULayoutSampledSectioning *_layoutSectioning;
     float _sectionBottomPadding;
-    NSString *_rowFillerElementKind;
     float _globalFooterHeight;
     NSString *_renderedStripsElementKind;
     int _cropType;
@@ -123,7 +124,6 @@
 @property float sectionBottomPadding;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
 @property BOOL floatingSectionHeadersEnabled;
-@property(copy) NSString * rowFillerElementKind;
 @property float globalFooterHeight;
 @property(copy) NSString * renderedStripsElementKind;
 @property int cropType;
@@ -158,7 +158,6 @@
 - (BOOL)floatingSectionHeadersEnabled;
 - (id)layoutSectioning;
 - (void)_setColumnsPerRow:(int)arg1;
-- (int)columnsPerRow;
 - (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id)arg3;
 - (void)getVisualSectionIndex:(int*)arg1 visualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 forRenderStripAtIndexPath:(id)arg3;
 - (void)enumerateItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
@@ -181,8 +180,7 @@
 - (struct CGSize { float x1; float x2; })layoutItemSizeForColumn:(int)arg1;
 - (float)_startYOfContentAtVisualSectionIndex:(int)arg1;
 - (void)_invalidateSupplementaryViewKinds;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rowRangeForRowFillerForVisualSection:(int)arg1 fillerIndex:(int)arg2 outIsLastFillerInSection:(BOOL*)arg3;
-- (void)_adjustRowFillerLayoutAttributes:(id)arg1 toOrFromGridLayout:(id)arg2 isAppearing:(BOOL)arg3;
+- (void)invalidateLayoutForMetricsChange;
 - (void)_adjustRenderedStripLayoutAttributes:(id)arg1 toOrFromGridLayout:(id)arg2 isAppearing:(BOOL)arg3;
 - (void)_adjustSectionHeaderLayoutAttributes:(id)arg1 toOrFromGridLayout:(id)arg2 isAppearing:(BOOL)arg3;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_transformToConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 referenceCenter:(struct CGPoint { float x1; float x2; })arg3;
@@ -201,7 +199,6 @@
 - (float)_startYOfVisualSectionAtIndex:(int)arg1;
 - (int)_visualSectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_gridTransitionLayout;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForRowFillerForVisualSection:(int)arg1 fillerIndex:(int)arg2;
 - (int)_firstVisualItemIndexForRenderedStripIndex:(int)arg1;
 - (id)_supplementaryViewKinds;
 - (void)_adjustItemLayoutAttributesForReordering:(id)arg1;
@@ -209,8 +206,6 @@
 - (int)visualSectionForSupplementaryViewIndexPath:(id)arg1;
 - (BOOL)_isTransitionForeignSupplementaryViewKind:(id)arg1;
 - (BOOL)_isSupportedSupplementaryViewKind:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rowFillersForRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inVisualSection:(int)arg2;
-- (id)rowFillerElementKind;
 - (id)_layoutAttributesForItemAtVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1 realIndexPath:(id)arg2 isMainRealItem:(BOOL)arg3;
 - (int)_renderedStripIndexForSectionRowIndex:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visualRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inVisualSection:(int)arg2 totalVisualSectionRows:(int*)arg3;
@@ -220,13 +215,16 @@
 - (struct CGPoint { float x1; float x2; })_visibleRectOriginForScrollOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)supplementaryViewIndexPathForVisualSection:(int)arg1 supplementaryViewItemIndex:(int)arg2;
 - (void)_invalidateFloatingHeadersLayout;
+- (BOOL)shouldHideVisualSection:(int)arg1;
 - (float)sectionBottomPadding;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (void)_prepareSamplingDataIfNeeded;
 - (void)_prepareFloatingHeadersLayoutIfNeeded;
 - (int)numberOfColumnsForWidth:(float)arg1;
 - (float)_sectionWidth;
 - (void)_prepareSectioningDataIfNeeded;
+- (void)_clearSectioningCaches;
+- (void)_clearSamplingCaches;
+- (void)_clearLayoutCaches;
 - (void)_prepareLayoutIfNeeded;
 - (void)_clearRetainedCaches;
 - (void)setUsesRenderedStripTopExtendersForTransitions:(BOOL)arg1;
@@ -239,7 +237,8 @@
 - (void)setCropAmount:(float)arg1;
 - (void)setCropType:(int)arg1;
 - (void)setSectionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setRowFillerElementKind:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (int)columnsPerRow;
 - (void)setRenderedStripsElementKind:(id)arg1;
 - (id)renderedStripsElementKind;
 - (void)setSectionTopPadding:(float)arg1;
@@ -255,6 +254,7 @@
 - (void)setGlobalFooterHeight:(float)arg1;
 - (float)globalFooterHeight;
 - (id)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)invalidateLayoutForVerticalScroll;
 - (BOOL)transitionIsAppearing;
 - (BOOL)transitionZoomingOut;
 - (struct CGPoint { float x1; float x2; })transitionStartContentOffset;

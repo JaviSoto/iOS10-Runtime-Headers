@@ -6,6 +6,7 @@
 
 @interface ABFaceTimeCell : ABContactCell  {
     BOOL _displayConstraintsActive;
+    BOOL _isFaceTimeAudioAvailable;
     UILabel *_faceTimeLabel;
     ABTransportButton *_transportIcon1;
     ABTransportButton *_transportIcon2;
@@ -19,6 +20,7 @@
 @property <ABPropertyCellDelegate> * delegate;
 @property(copy) NSDictionary * labelTextAttributes;
 @property BOOL displayConstraintsActive;
+@property BOOL isFaceTimeAudioAvailable;
 
 + (BOOL)requiresConstraintBasedLayout;
 
@@ -26,12 +28,14 @@
 - (id)transportIcon2;
 - (id)transportIcon1;
 - (id)faceTimeLabel;
-- (BOOL)displayConstraintsActive;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
 - (void)transportButtonClicked:(id)arg1;
+- (void)setIsFaceTimeAudioAvailable:(BOOL)arg1;
 - (void)setNeedsUpdateDisplayConstraints;
 - (void)setLabelTextAttributes:(id)arg1;
 - (id)labelTextAttributes;
+- (BOOL)displayConstraintsActive;
+- (void)setDisplayConstraintsActive:(BOOL)arg1;
+- (BOOL)isFaceTimeAudioAvailable;
 - (void)performDefaultAction;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

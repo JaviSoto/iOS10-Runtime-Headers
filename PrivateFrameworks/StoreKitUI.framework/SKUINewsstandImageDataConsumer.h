@@ -43,7 +43,6 @@
 - (int)bindingType;
 - (void)setBindingEdge:(int)arg1;
 - (int)bindingEdge;
-- (id)_borderImage;
 - (id)imageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })iconSize;
 - (id)imageForColor:(id)arg1;
@@ -54,5 +53,6 @@
 - (id)backgroundColor;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)_borderImage;
 
 @end

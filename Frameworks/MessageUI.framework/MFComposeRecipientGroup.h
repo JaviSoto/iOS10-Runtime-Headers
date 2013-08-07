@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (BOOL)isGroup;
 - (id)displayString;
-- (id)address;
 - (id)children;
+- (id)address;
 
 @end

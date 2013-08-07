@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImageView, NSMutableArray, UINavigationItem, UIView, UIImage, NSString, NSDictionary, UISwipeGestureRecognizer, NSArray;
+@class UIColor, NSDictionary, UIImageView, NSMutableArray, _UIViewControllerTransitionContext, UIView, UINavigationItem, NSString, UIImage, UISwipeGestureRecognizer, NSArray;
 
 @interface UINavigationBar : UIView <_UIShadowedView, _UIBasicAnimationFactory, UIStatusBarTinting, _UIBarPositioningInternal, NSCoding, UIBarPositioning> {
     NSMutableArray *_itemStack;
@@ -51,6 +51,7 @@
     UISwipeGestureRecognizer *_popSwipeGestureRecognizer;
     UIImageView *_backIndicatorView;
     NSMutableArray *_slideTransitionClippingViews;
+    _UIViewControllerTransitionContext *_navControllerAnimatingContext;
     BOOL _needsUpdateBackIndicatorImage;
     BOOL _wantsLetterpressContent;
     int _barPosition;
@@ -140,6 +141,7 @@
 - (id)buttonItemShadowColor;
 - (void)setForceFullHeightInLandscape:(BOOL)arg1;
 - (int)_statusBarStyle;
+- (void)_reenableUserInteractionWhenReadyWithContext:(id)arg1;
 - (void)_cancelInProgressPushOrPop;
 - (void)setNavigationItems:(id)arg1;
 - (void)_cancelInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
@@ -254,6 +256,7 @@
 - (void)_fadeViewOut:(id)arg1;
 - (id)_defaultTitleFontFittingHeight:(float)arg1 withScaleAdjustment:(float)arg2;
 - (id)_defaultTitleFontWithScaleAdjustment:(float)arg1;
+- (void)_reenableUserInteraction;
 - (void)_setupTopNavItem:(id)arg1 oldTopNavItem:(id)arg2;
 - (void)_commonNavBarInit;
 - (void)_updateOpacity;

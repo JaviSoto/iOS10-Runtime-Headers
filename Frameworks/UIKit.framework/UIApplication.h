@@ -111,6 +111,7 @@
         unsigned int legibilityAccessibilitySettingEnabled : 1; 
         unsigned int viewControllerBasedStatusBarAppearance : 1; 
         unsigned int fakingRequiresHighResolution : 1; 
+        unsigned int isStatusBarFading : 1; 
     } _applicationFlags;
     UIColor *_defaultTopNavBarTintColor;
     int _undoButtonIndex;
@@ -123,6 +124,7 @@
     UIWindow *_backgroundHitTestWindow;
     NSMutableArray *_eventQueue;
     struct __CFDictionary { } *_childEventMap;
+    int _disableTouchCoalescingCount;
     double _currentTimestampWhenFirstTouchCameDown;
     struct CGPoint { 
         float x; 
@@ -340,6 +342,10 @@
 - (void)_cancelViewProcessingOfTouches:(id)arg1 withEvent:(id)arg2 sendingTouchesCancelledToViewsOfTouches:(id)arg3;
 - (void)_cancelGestureRecognizersForView:(id)arg1;
 - (void)_cancelPhysicalButtonsWithType:(int)arg1;
+- (void)_enableTouchCoalescingWithCount:(int)arg1;
+- (void)_disableTouchCoalescingWithCount:(int)arg1;
+- (BOOL)_shouldDisableTouchCoalescing;
+- (BOOL)_shouldDelayTouchesForControlCenter;
 - (BOOL)_didEatCurrentTouch;
 - (void)_eatCurrentTouch;
 - (void)_playbackEvents:(id)arg1 atPlaybackRate:(float)arg2 messageWhenDone:(id)arg3 withSelector:(SEL)arg4;
@@ -453,12 +459,14 @@
 - (double)statusBarOrientationAnimationDuration;
 - (unsigned int)_supportedInterfaceOrientationsForWindow:(id)arg1;
 - (void)_setSupportedInterfaceOrientationsIsEnabled:(BOOL)arg1;
+- (BOOL)_statusBarOrientationFollowsWindow:(id)arg1;
 - (int)_statusBarOrientationForWindow:(id)arg1;
 - (void)setStatusBarOrientation:(int)arg1;
 - (void)setStatusBarOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_setStatusBarOrientation:(int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1 duration:(double)arg2;
+- (BOOL)_isInStatusBarFadeAnimation;
 - (void)setStatusBarStyle:(int)arg1;
 - (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setStatusBarStyle:(int)arg1 animation:(int)arg2;
@@ -615,11 +623,11 @@
 - (BOOL)isRunningQuitTest;
 - (void)_destroyContextsAndNotifySpringBoard;
 - (void)_purgeSharedInstances;
-- (BOOL)_saveSnapshotWithName:(id)arg1;
-- (id)nameOfDefaultImageToUpdateAtSuspension;
-- (BOOL)_updateDefaultImage;
 - (void)applicationSuspend:(struct __GSEvent { }*)arg1;
 - (void)_cancelAllInputs;
+- (id)nameOfDefaultImageToUpdateAtSuspension;
+- (BOOL)_saveSnapshotWithName:(id)arg1;
+- (BOOL)_updateDefaultImage;
 - (void)_saveApplicationPreservationStateIfSupported;
 - (void)_setSuspendedEventsOnly:(BOOL)arg1;
 - (void)_setSuspended:(BOOL)arg1;

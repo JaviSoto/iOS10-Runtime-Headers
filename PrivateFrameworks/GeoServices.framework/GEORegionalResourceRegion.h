@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEORegionalResourceRegion : PBCodable  {
+@interface GEORegionalResourceRegion : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
     unsigned int _tileRangesCount;
     unsigned int _tileRangesSpace;
@@ -20,8 +20,6 @@
 @property(retain) NSMutableArray * iconChecksums;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)addTileRange:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)clearTileRanges;
 - (void)setTileRanges:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
@@ -45,10 +43,13 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (id)dictionaryRepresentation;

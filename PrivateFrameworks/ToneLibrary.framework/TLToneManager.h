@@ -33,6 +33,7 @@
 - (unsigned long)currentNewMailToneSoundID;
 - (id)currentIdentifierForContext:(int)arg1;
 - (id)defaultIdentifierForContext:(int)arg1;
+- (id)defaultAlarmToneIdentifier;
 - (id)newMailPreferenceKeyForAccount:(id)arg1;
 - (id)defaultAirDropInvitationToneIdentifier;
 - (id)currentAirDropInvitationToneIdentifier;

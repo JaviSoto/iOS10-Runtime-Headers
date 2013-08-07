@@ -26,6 +26,7 @@
 @property(retain) UICollectionView * collectionView;
 @property float textAlignmentOffset;
 
++ (BOOL)requiresConstraintBasedLayout;
 
 - (float)textAlignmentOffset;
 - (void)setNumberToShow:(int)arg1;

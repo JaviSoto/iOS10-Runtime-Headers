@@ -4,18 +4,18 @@
 
 @class GEOLatLng;
 
-@interface GEOPolyLocationShiftRequest : PBRequest  {
+@interface GEOPolyLocationShiftRequest : PBRequest <NSCopying> {
     GEOLatLng *_location;
 }
 
 @property(retain) GEOLatLng * location;
 
 
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (Class)responseClass;
 - (void)writeTo:(id)arg1;
 - (unsigned int)requestTypeCode;
-- (void)copyTo:(id)arg1;
 - (id)location;
 - (struct { double x1; double x2; })coordinate;
 - (void)setLocation:(id)arg1;
@@ -23,6 +23,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -33,6 +33,7 @@
 - (void)downloadURLConfiguration:(id)arg1;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
 - (id)emailChoice;
+- (void)_doHSADeviceReprovisioningWithDSID:(id)arg1;
 - (void)_doHSADeviceProvisioningSynchronizationWithDSID:(id)arg1 data:(id)arg2;
 - (void)_doHSADeviceProvisioningWithDSID:(id)arg1 data:(id)arg2;
 - (id)_signingSession;

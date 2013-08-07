@@ -8,14 +8,18 @@
     NSNumber *_accountID;
     NSData *_actionData;
     NSString *_actionName;
+    BOOL _waitsForPurchaseOperations;
 }
 
 @property(copy) NSNumber * accountIdentifier;
 @property(copy) NSData * actionData;
 @property(copy) NSString * actionName;
+@property BOOL waitsForPurchaseOperations;
 
 
+- (void)setWaitsForPurchaseOperations:(BOOL)arg1;
 - (id)actionName;
+- (BOOL)waitsForPurchaseOperations;
 - (void)setActionData:(id)arg1;
 - (id)actionData;
 - (void)startWithCompletionBlock:(id)arg1;

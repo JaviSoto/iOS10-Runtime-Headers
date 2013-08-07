@@ -16,6 +16,8 @@
     NSString *_username;
     NSString *_authenticationType;
     NSString *_credentialType;
+    NSString *_clientToken;
+    BOOL _haveCheckedForClientToken;
     ACAccountType *_accountType;
     ACAccountCredential *_credential;
     NSMutableDictionary *_properties;
@@ -103,6 +105,7 @@
 @property(retain) NSDate * creationDate;
 @property(retain) NSDate * lastCredentialRenewalRejectionDate;
 @property(readonly) NSString * shortDebugName;
+@property(readonly) NSString * clientToken;
 @property(copy) id accountPropertiesTransformer;
 
 + (id)_createNewAccountUID;
@@ -144,6 +147,8 @@
 - (id)initWithManagedAccount:(id)arg1 accountStore:(id)arg2;
 - (id)initWithAccountType:(id)arg1;
 - (id)shortDebugName;
+- (BOOL)addClientToken:(id)arg1;
+- (id)clientToken;
 - (void)_loadAllCachedProperties;
 - (void)reload;
 - (id)credential;

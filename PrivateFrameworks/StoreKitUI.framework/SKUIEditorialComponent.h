@@ -18,6 +18,7 @@
         float titleSpacing; 
     } _style;
     NSString *_titleText;
+    BOOL _usesLockupTitle;
 }
 
 @property(readonly) NSString * bodyText;
@@ -25,12 +26,16 @@
 @property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
 @property(readonly) NSArray * links;
 @property(readonly) int maximumBodyLines;
+@property(getter=_usesLockupTitle,readonly) BOOL _usesLockupTitle;
 
 
+- (BOOL)_usesLockupTitle;
 - (id)titleText;
 - (int)maximumBodyLines;
+- (void)_setTitleText:(id)arg1;
 - (id)initWithBrickRoomText:(id)arg1;
 - (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
+- (id)initWithUberText:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
 - (int)componentType;
 - (void).cxx_destruct;

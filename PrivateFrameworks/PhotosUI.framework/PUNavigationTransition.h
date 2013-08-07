@@ -17,7 +17,7 @@
 @property(setter=_setOperation:) int _operation;
 
 + (id)animationControllerForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 inNavigationController:(id)arg4;
-+ (BOOL)shouldCrossFadeBottomBars;
++ (BOOL)shouldCrossFadeBottomBarsForNavigationController:(id)arg1;
 
 - (void)transitionDidStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)transitionWillStartOperation:(int)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
@@ -29,6 +29,7 @@
 - (double)pushDuration;
 - (id)initWithPushDuration:(double)arg1 popDuration:(double)arg2;
 - (void)setNavigationController:(id)arg1;
+- (id)initWithDuration:(double)arg1;
 - (void).cxx_destruct;
 - (id)navigationController;
 - (void)finishInteractiveTransition;

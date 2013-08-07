@@ -2,17 +2,19 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UILabel;
+@class UILabel, UIImageView, UIView;
 
 @interface PLPhotoTileBadgeView : UIView  {
     int _style;
     int _numberOfPhotos;
+    UIView *__backgroundView;
     UIImageView *__badgeImageView;
     UILabel *__textLabel;
 }
 
 @property int style;
 @property int numberOfPhotos;
+@property(readonly) UIView * _backgroundView;
 @property(readonly) UIImageView * _badgeImageView;
 @property(readonly) UILabel * _textLabel;
 
@@ -27,6 +29,7 @@
 - (int)style;
 - (void)dealloc;
 - (id)_textLabel;
+- (id)_backgroundView;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;

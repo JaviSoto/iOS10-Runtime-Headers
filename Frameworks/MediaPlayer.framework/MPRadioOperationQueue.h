@@ -32,9 +32,9 @@
 - (void)_warmAssetForStation:(id)arg1 trackStoreID:(long long)arg2;
 - (void)_finishBagLoadWithBag:(id)arg1 error:(id)arg2;
 - (id)_storeBag;
-- (void)_addOperationWhenWarm:(id)arg1;
 - (void)_finishAssetLoadWithKey:(id)arg1 asset:(id)arg2 error:(id)arg3;
-- (void)sendPlayEvents:(id)arg1 forStation:(id)arg2 completionBlock:(id)arg3;
+- (void)_addOperationWhenWarm:(id)arg1;
+- (void)sendPlayEvents:(id)arg1 forStationHash:(id)arg2 stationID:(long long)arg3 completionBlock:(id)arg4;
 - (void)loadRadioConfigurationWithCompletionBlock:(id)arg1;
 - (void)getTracksWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)addStationWithRequest:(id)arg1 completionBlock:(id)arg2;

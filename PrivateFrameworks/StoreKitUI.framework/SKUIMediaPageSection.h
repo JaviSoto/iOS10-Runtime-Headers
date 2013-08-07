@@ -23,6 +23,7 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (void)restorePinnedHeaderView:(id)arg1;
 - (id)popPinnedHeaderView;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;

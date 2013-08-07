@@ -27,7 +27,6 @@
     BOOL _displayPlaybackErrorAlerts;
     BOOL _inlinePlaybackUsesTVOut;
     unsigned int _itemTypeOverride;
-    BOOL _ownsStatusBar;
     UIImage *_posterImage;
     unsigned int _scaleMode;
     BOOL _TVOutEnabled;
@@ -61,7 +60,6 @@
     UIActivityIndicatorView *_loadingIndicator;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     MPAudioVideoRoutingPopoverController *_routePopoverController;
-    BOOL _savedIsStatusBarHidden;
     unsigned int _scaleModeOverride;
     BOOL _scheduledLoadingIndicator;
     UIView *_subtitlesView;
@@ -74,7 +72,7 @@
     BOOL _wasPlaying;
     UIWindow *_windowForDisablingAutorotation;
     UIWindow *_windowForFullscreenTransition;
-    int _savedStatusBarStyle;
+    BOOL _shouldDestroyVideoSnapshot;
 }
 
 @property(readonly) UIView * advertisementView;
@@ -83,8 +81,6 @@
 @property(readonly) UIView * fullscreenView;
 @property(copy) NSString * playbackErrorDescription;
 @property BOOL navigationBarHidden;
-@property(readonly) BOOL savedIsStatusBarHidden;
-@property(readonly) int savedStatusBarStyle;
 @property(readonly) UIView * subtitlesView;
 @property int videoOverlayStyle;
 @property id delegate;
@@ -113,7 +109,6 @@
 @property BOOL inlinePlaybackUsesTVOut;
 @property unsigned int itemTypeOverride;
 @property(getter=isFullscreen) BOOL fullscreen;
-@property BOOL ownsStatusBar;
 @property(retain) UIImage * posterImage;
 @property unsigned int scaleMode;
 @property BOOL TVOutEnabled;
@@ -124,8 +119,6 @@
 @property BOOL autoPlayWhenLikelyToKeepUp;
 
 
-- (int)savedStatusBarStyle;
-- (BOOL)savedIsStatusBarHidden;
 - (void)fullscreenOverlayDidShow;
 - (void)fullscreenOverlayDidHide;
 - (void)fullscreenOverlayWillShowAnimated:(BOOL)arg1;
@@ -133,7 +126,6 @@
 - (int)videoOverlayStyle;
 - (BOOL)_shouldShowDestinationPlaceholder;
 - (void)_transitionToFullscreenDidEnd;
-- (void)saveStatusBarState;
 - (void)_transitionFromFullscreenDidEnd;
 - (void)_showOverlayDidEnd;
 - (void)_flipToChaptersDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -180,23 +172,35 @@
 - (void)_destroyAudioOverlayView;
 - (void)_unregisterForPlayerNotifications;
 - (void)_batteryStateDidChange:(id)arg1;
+- (void)_applicationDidFinishSuspensionSnapshot:(id)arg1;
 - (void)_applicationResumedEventsOnly:(id)arg1;
+- (void)_itemTypeAvailable:(id)arg1;
 - (BOOL)automaticallyHandleTransportControls;
+- (void)overlay:(id)arg1 didEndUserEvent:(int)arg2;
+- (void)overlay:(id)arg1 didCancelUserEvent:(int)arg2;
+- (void)overlay:(id)arg1 didBeginUserEvent:(int)arg2;
 - (void)_effectiveScaleModeDidChange:(id)arg1;
 - (void)_availableRoutesChanged:(id)arg1;
 - (void)_durationAvailable:(id)arg1;
-- (void)_itemTypeAvailable:(id)arg1;
+- (void)overlayTappedFullscreenButton:(id)arg1;
+- (void)overlayTappedBackButton:(id)arg1;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)chapterList:(id)arg1 selectedChapter:(unsigned int)arg2;
 - (void)swipableViewHadActivity:(id)arg1;
 - (void)swipableView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)swipableView:(id)arg1 didMoveToSuperview:(id)arg2;
 - (BOOL)displayPlaybackErrorAlerts;
+- (BOOL)disableAutoRotation;
 - (void)setControlsOverlayVisible:(BOOL)arg1;
 - (BOOL)canAnimateControlsOverlay;
 - (void)setBackstopColor:(id)arg1;
 - (id)backstopColor;
 - (BOOL)attemptAutoPlayWhenControlsHidden;
+- (BOOL)allowsDetailScrubbing;
+- (void)setOwnsStatusBar:(BOOL)arg1;
+- (void)showAlternateTracksController:(id)arg1;
 - (void)exitFullscreen;
+- (unsigned long long)disabledParts;
 - (void)_showStillFrameIfNotAlreadyPlaying;
 - (BOOL)canShowQTAudioOnlyUI;
 - (void)_delayedUpdateBackgroundView;
@@ -211,20 +215,9 @@
 - (unsigned int)_itemTypeWithActualTypePreference;
 - (unsigned int)itemTypeOverride;
 - (int)artworkImageStyle;
+- (BOOL)disableControlsAutohide;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
-- (void)overlay:(id)arg1 didEndUserEvent:(int)arg2;
-- (void)overlay:(id)arg1 didCancelUserEvent:(int)arg2;
-- (void)overlay:(id)arg1 didBeginUserEvent:(int)arg2;
-- (void)overlayTappedFullscreenButton:(id)arg1;
-- (void)overlayTappedBackButton:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
-- (void)showAlternateTracksController:(id)arg1;
-- (BOOL)disableControlsAutohide;
-- (BOOL)ownsStatusBar;
-- (unsigned long long)disabledParts;
-- (BOOL)allowsDetailScrubbing;
-- (BOOL)disableAutoRotation;
 - (BOOL)autoPlayWhenLikelyToKeepUp;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
 - (void)_sizeDidChange:(id)arg1;
@@ -252,7 +245,6 @@
 - (void)setPosterImage:(id)arg1;
 - (void)setClosedCaptions:(id)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
-- (void)setOwnsStatusBar:(BOOL)arg1;
 - (id)subtitlesView;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
@@ -304,6 +296,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (id)item;
 - (id)backgroundView;

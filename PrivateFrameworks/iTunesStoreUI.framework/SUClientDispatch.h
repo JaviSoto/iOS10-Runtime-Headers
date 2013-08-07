@@ -21,8 +21,8 @@
 + (void)dismissOverlayBackgroundViewController;
 + (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 + (id)overlayBackgroundViewController;
-+ (id)clientInterface;
 + (id)scriptExecutionContext;
++ (id)clientInterface;
 + (id)imageCache;
 + (id)tabBarController;
 

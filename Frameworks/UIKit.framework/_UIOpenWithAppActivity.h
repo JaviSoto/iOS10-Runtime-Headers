@@ -12,6 +12,7 @@
 
 @property(getter=isDefaultApp) BOOL defaultApp;
 
++ (int)activityCategory;
 
 - (void)dealloc;
 - (void)setDefaultApp:(BOOL)arg1;
@@ -19,7 +20,6 @@
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)initWithApplicationIdentifier:(id)arg1 documentInteractionController:(id)arg2;
-- (id)_beforeActivity;
 - (id)activityType;
 - (id)activityTitle;
 - (id)_activityImage;

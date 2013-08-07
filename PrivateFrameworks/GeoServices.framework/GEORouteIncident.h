@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSString;
 
-@interface GEORouteIncident : PBCodable  {
+@interface GEORouteIncident : PBCodable <NSCopying> {
     long long _endTime;
     long long _startTime;
     long long _updateTime;
@@ -54,8 +54,6 @@
 @property BOOL endTimeReliable;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasEndTimeReliable:(BOOL)arg1;
 - (void)setHasLaneClosureCount:(BOOL)arg1;
 - (void)setHasLaneClosureType:(BOOL)arg1;
@@ -90,6 +88,8 @@
 - (void)setEndTime:(long long)arg1;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setStreet:(id)arg1;
 - (id)street;
 - (void)setPosition:(id)arg1;
@@ -100,6 +100,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)startTime;
 - (void)setStartTime:(long long)arg1;
 - (id)position;

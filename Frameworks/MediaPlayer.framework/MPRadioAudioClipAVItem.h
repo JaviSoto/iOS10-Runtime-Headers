@@ -2,25 +2,43 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class RadioAudioClip;
+@class RadioAudioClip, UIImage, NSString, RadioStation;
 
 @interface MPRadioAudioClipAVItem : MPAVItem  {
     RadioAudioClip *_audioClip;
+    UIImage *_cachedArtworkImage;
+    RadioStation *_station;
+    NSString *_stationHash;
+    NSString *_stationName;
+    long long _stationID;
 }
 
+@property(retain) RadioStation * station;
+@property(readonly) NSString * stationHash;
+@property(readonly) long long stationID;
+@property(readonly) NSString * stationName;
 
+
+- (id)stationName;
+- (id)stationHash;
+- (long long)stationID;
+- (void)setStation:(id)arg1;
 - (id)audioClip;
 - (id)initWithAudioClip:(id)arg1;
 - (BOOL)isRadioItem;
 - (void)_applyLoudnessInfoForVolumeNormalization;
+- (id)_cachedArtworkImage;
 - (void)reevaluateType;
 - (id)titlesForTime:(double)arg1;
 - (BOOL)supportsSkip;
 - (BOOL)isStreamable;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
+- (id)artworkMIMEType;
+- (id)artworkImageData;
 - (id)radioTrack;
 - (BOOL)isExplicitTrack;
 - (id)mainTitle;
+- (id)station;
 - (id)imageCache;
 - (void).cxx_destruct;
 - (unsigned int)type;

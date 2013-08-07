@@ -105,6 +105,7 @@
 - (void)dataSourceDidMoveSectionsWithItems:(id)arg1;
 - (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2 complete:(id)arg3;
 - (void)dataSourceDidReloadData:(id)arg1;
+- (void)dataSource:(id)arg1 didUpdatePlaceholderVisibility:(BOOL)arg2;
 - (void)dataSource:(id)arg1 didMoveSection:(int)arg2 toSection:(int)arg3;
 - (void)dataSource:(id)arg1 didRefreshSections:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;

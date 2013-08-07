@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIArtworkList, SKUIUber, SKUIItemOffer, NSString, NSURL, NSMutableDictionary, NSArray;
+@class SKUIItemOffer, SKUIArtworkList, NSString, NSArray, NSMutableDictionary, NSURL;
 
 @interface SKUIItem : NSObject <SKUICacheCoding, SSMetricsEventFieldProvider> {
     struct _NSRange { 
@@ -28,7 +28,6 @@
     NSString *_productPageURLString;
     NSArray *_requiredCapabilities;
     NSString *_title;
-    SKUIUber *_uber;
     float _userRating;
     long long _versionIdentifier;
     NSString *_versionString;
@@ -52,7 +51,6 @@
 @property(readonly) NSArray * requiredCapabilities;
 @property(readonly) float userRating;
 @property(readonly) NSString * title;
-@property(readonly) SKUIUber * uber;
 @property(readonly) long long versionIdentifier;
 @property(readonly) NSString * versionString;
 @property(getter=isNewsstandApp,readonly) BOOL newsstandApp;
@@ -64,7 +62,6 @@
 
 - (id)productPageURLString;
 - (int)numberOfUserRatings;
-- (id)uber;
 - (int)newsstandBindingType;
 - (int)newsstandBindingEdge;
 - (id)newsstandArtworks;

@@ -52,9 +52,9 @@
 - (id)_offers;
 - (void)_setExpirationDate:(id)arg1;
 - (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)rawItemDictionary;
 - (id)itemOfferForIdentifier:(id)arg1;
 - (id)initWithItemDictionary:(id)arg1;
+- (id)rawItemDictionary;
 - (id)buyParameters;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;

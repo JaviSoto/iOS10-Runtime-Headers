@@ -29,9 +29,9 @@
 - (id)dictationKeyImageName;
 - (id)globalKeyImageName;
 - (float)skinnyKeyThreshold;
+- (id)deleteKeyImageName;
 - (id)shiftOnKeyImageName;
 - (id)shiftKeyImageName;
-- (id)deleteKeyImageName;
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;

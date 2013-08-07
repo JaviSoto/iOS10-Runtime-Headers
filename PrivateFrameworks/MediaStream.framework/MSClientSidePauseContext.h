@@ -23,9 +23,9 @@
 - (void)setGate:(id)arg1;
 - (id)gate;
 - (id)timerQueue;
+- (id)initWithServer:(id)arg1;
 - (id)server;
 - (void).cxx_destruct;
 - (void)resume;
-- (id)initWithServer:(id)arg1;
 
 @end

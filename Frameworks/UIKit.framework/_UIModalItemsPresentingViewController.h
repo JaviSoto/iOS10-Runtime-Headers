@@ -83,6 +83,7 @@
 - (void)setItemsTransitionCompletion:(id)arg1;
 - (void)setItemBeingDismissed:(id)arg1;
 - (void)setItemBeingPresented:(id)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

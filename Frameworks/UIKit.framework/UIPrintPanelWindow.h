@@ -6,6 +6,6 @@
 }
 
 
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 
 @end

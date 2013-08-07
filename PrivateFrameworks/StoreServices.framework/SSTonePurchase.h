@@ -29,6 +29,8 @@
 - (void)setAssigneeIdentifier:(id)arg1;
 - (void)setAllowedToneStyles:(id)arg1;
 - (id)allowedToneStyles;
+- (void)_addEntriesToDatabaseEncoding:(id)arg1;
+- (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;

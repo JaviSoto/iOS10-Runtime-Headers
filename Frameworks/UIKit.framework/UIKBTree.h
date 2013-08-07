@@ -103,6 +103,7 @@
 - (BOOL)behavesAsShiftKey;
 - (int)highlightedVariantIndex;
 - (int)flickDirection;
+- (int)dragThreshold;
 - (BOOL)modifiesKeyplane;
 - (id)alternateKeyplaneName;
 - (BOOL)avoidsLanguageIndicator;

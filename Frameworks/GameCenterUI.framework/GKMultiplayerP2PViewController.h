@@ -42,13 +42,13 @@
 - (id)initWithAcceptedInvite:(id)arg1;
 - (void)setAlertTag:(int)arg1;
 - (void)setNearbyDelegate:(id)arg1;
-- (void)startGame;
 - (BOOL)haveInvitedPlayers;
 - (void)showAlertForTag:(int)arg1;
 - (void)processStatusUpdateMessageFromBytes:(const char *)arg1 withLength:(unsigned int)arg2;
 - (void)playerDisconnected:(id)arg1;
 - (void)playerConnected:(id)arg1;
 - (void)sendStatusUpdate;
+- (void)startGame;
 - (BOOL)havePendingPlayers;
 - (void)cancelPendingInvites;
 - (void)finishWithError:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <CAMZoomSliderDelegate>, UIImageView, NSTimer, UIView, CADisplayLink;
+@class UIImageView, <CAMZoomSliderDelegate>, NSTimer, UIView;
 
 @interface CAMZoomSlider : UISlider  {
     BOOL _minimumAutozooming;
@@ -10,7 +10,6 @@
     BOOL __autozooming;
     <CAMZoomSliderDelegate> *_delegate;
     NSTimer *__visibilityTimer;
-    CADisplayLink *__autozoomingDisplayLink;
     UIImageView *__thumbImageView;
     UIView *__minTrackMaskView;
     UIView *__maxTrackMaskView;
@@ -20,7 +19,6 @@
 @property(getter=isMinimumAutozooming) BOOL minimumAutozooming;
 @property(getter=isMaximumAutozooming) BOOL maximumAutozooming;
 @property(readonly) NSTimer * _visibilityTimer;
-@property(readonly) CADisplayLink * _autozoomingDisplayLink;
 @property(getter=_isAutozooming,setter=_setAutozooming:) BOOL _autozooming;
 @property(readonly) UIImageView * _thumbImageView;
 @property(readonly) UIView * _minTrackMaskView;
@@ -32,24 +30,20 @@
 - (id)_thumbImageView;
 - (void)_setAutozooming:(BOOL)arg1;
 - (BOOL)_isAutozooming;
-- (id)_autozoomingDisplayLink;
 - (id)_visibilityTimer;
 - (void)_postHideZoomSliderAnimation;
 - (void)_hideZoomSlider:(id)arg1;
 - (void)_endAutozooming;
 - (void)_beginAutozooming;
-- (void)_setupAutozoomingDisplayLink;
-- (void)_performAutozoom;
-- (void)_invalidateAutozoomingDisplayLink;
 - (void)_updateAutozooming;
 - (BOOL)isMaximumAutozooming;
-- (BOOL)isMinimumAutozooming;
 - (BOOL)_isMinimumOrMaximumAutozooming;
 - (void)_setMaximumAutozooming:(BOOL)arg1;
 - (void)_setMinimumAutozooming:(BOOL)arg1;
 - (int)locationOfTouch:(id)arg1;
 - (void)_commonCAMZoomSliderInitialization;
 - (BOOL)visibilityTimerIsValid;
+- (BOOL)isMinimumAutozooming;
 - (void)makeInvisible;
 - (void)makeVisible;
 - (void)stopVisibilityTimer;

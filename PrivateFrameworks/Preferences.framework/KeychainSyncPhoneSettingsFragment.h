@@ -12,6 +12,7 @@
     NSString *_phoneNumber;
     KeychainSyncCountryInfo *_countryInfo;
     <KeychainSyncPhoneSettingsFragmentDelegate> *_delegate;
+    NSString *_title;
 }
 
 @property(readonly) NSArray * specifiers;
@@ -19,6 +20,7 @@
 @property(retain) KeychainSyncCountryInfo * countryInfo;
 @property(readonly) PSEditableTableCell * phoneNumberCell;
 @property <KeychainSyncPhoneSettingsFragmentDelegate> * delegate;
+@property(retain) NSString * title;
 
 
 - (void)setCountryInfo:(id)arg1;
@@ -33,6 +35,8 @@
 - (id)dialingCountryInfoForSpecifier:(id)arg1;
 - (void)setDialingCountryInfo:(id)arg1 forSpecifier:(id)arg2;
 - (void)textFieldChanged:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)title;
 - (void)setPhoneNumber:(id)arg1;
 - (void)resignFirstResponder;
 - (void)setDelegate:(id)arg1;

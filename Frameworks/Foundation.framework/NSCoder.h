@@ -70,8 +70,10 @@
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
+- (struct CGVector { float x1; float x2; })decodeCGVectorForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (void)encodeCGVector:(struct CGVector { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;

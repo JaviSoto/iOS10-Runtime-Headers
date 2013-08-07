@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSArray, TPSlidingButton, <TPSuperBottomBarDelegateProtocol>, TPButton;
 
-@interface TPSuperBottomBar : UIView <UIScrollViewDelegate> {
+@interface TPSuperBottomBar : UIView <TPSlidingButtonDelegateProtocol> {
     BOOL _declineAndRemindIsAvailable;
     BOOL _declineAndMessageIsAvailable;
     BOOL _enabled;
@@ -56,6 +56,7 @@
 - (BOOL)popStateAnimated:(BOOL)arg1 animationCompletionBlock:(id)arg2;
 - (void)pushState:(int)arg1 animated:(BOOL)arg2 animationCompletionBlock:(id)arg3;
 - (struct CGSize { float x1; float x2; })effectiveSize;
+- (void)slidingButton:(id)arg1 didSlideToProportion:(float)arg2;
 - (void)prepareButtonsForAnimationBegin;
 - (void)animateOutRightMainButtonWithCompletion:(id)arg1;
 - (void)animateFromIncomingCallStateToFaceTimeInCallStateWithCompletion:(id)arg1;
@@ -116,7 +117,6 @@
 - (BOOL)blursBackground;
 - (void)buttonPressed:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

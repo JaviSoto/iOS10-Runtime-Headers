@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEORPProblemCollectionResponse : PBCodable  {
+@interface GEORPProblemCollectionResponse : PBCodable <NSCopying> {
     NSString *_problemID;
     int _statusCode;
     struct { 
@@ -18,8 +18,6 @@
 @property(retain) NSString * problemID;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setStatusCode:(int)arg1;
 - (BOOL)hasStatusCode;
@@ -27,10 +25,13 @@
 - (BOOL)hasProblemID;
 - (void)setProblemID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)statusCode;
 - (id)dictionaryRepresentation;
 

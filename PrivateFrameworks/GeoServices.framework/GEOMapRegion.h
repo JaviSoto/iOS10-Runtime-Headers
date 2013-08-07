@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOMapRegion : PBCodable  {
+@interface GEOMapRegion : PBCodable <NSCopying> {
     double _eastLng;
     double _northLat;
     double _southLat;
@@ -35,8 +35,6 @@
 + (id)_mapkit_mapRegionEnclosingAnnotations:(id)arg1;
 
 - (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)vertexs;
 - (void)setHasEastLng:(BOOL)arg1;
 - (void)setHasNorthLat:(BOOL)arg1;
@@ -69,12 +67,15 @@
 - (void)setSouthLat:(double)arg1;
 - (void)copyTo:(id)arg1;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)addVertex:(id)arg1;
 - (id)vertexAtIndex:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

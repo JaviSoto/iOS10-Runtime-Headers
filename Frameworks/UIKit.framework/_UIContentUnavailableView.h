@@ -45,6 +45,7 @@
 - (id)message;
 - (void)dealloc;
 - (id)buttonTitle;
+- (void)setButtonTitle:(id)arg1;
 - (void)windowDidRotateNotification:(id)arg1;
 - (void)windowWillAnimateRotateNotification:(id)arg1;
 - (void)windowWillRotateNotification:(id)arg1;
@@ -53,7 +54,6 @@
 - (void)_actionButtonPressed:(id)arg1;
 - (void)_updateViewHierarchy;
 - (void)setButtonAction:(id)arg1;
-- (void)setButtonTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
 - (void)setMessage:(id)arg1;
 - (void)updateConstraints;

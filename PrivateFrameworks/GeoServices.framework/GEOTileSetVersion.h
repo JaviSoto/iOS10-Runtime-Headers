@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTileSetVersion : PBCodable  {
+@interface GEOTileSetVersion : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
     unsigned int _availableTilesCount;
     unsigned int _availableTilesSpace;
@@ -29,8 +29,6 @@
 @property unsigned int supportedLanguagesVersion;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasSupportedLanguagesVersion:(BOOL)arg1;
 - (void)setGenericTiles:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)genericTiles;
@@ -52,10 +50,13 @@
 - (void)clearGenericTiles;
 - (void)clearAvailableTiles;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (unsigned int)identifier;
 - (id)dictionaryRepresentation;

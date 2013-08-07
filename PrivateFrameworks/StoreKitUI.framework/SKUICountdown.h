@@ -5,12 +5,12 @@
 @class SKUIArtworkList, NSString, UIColor, NSDate, NSURL;
 
 @interface SKUICountdown : NSObject  {
-    BOOL _loaded;
+    BOOL _isLoaded;
     BOOL _flapped;
     int _type;
     NSURL *_URL;
     NSDate *_endDate;
-    NSString *_dateFormat;
+    unsigned int _dateFormat;
     NSDate *_startDate;
     int _rate;
     NSString *_numberFormat;
@@ -25,9 +25,8 @@
 
 @property int type;
 @property(copy) NSURL * URL;
-@property BOOL loaded;
 @property(copy) NSDate * endDate;
-@property(copy) NSString * dateFormat;
+@property unsigned int dateFormat;
 @property(copy) NSDate * startDate;
 @property long long initialValue;
 @property long long finalValue;
@@ -42,12 +41,12 @@
 
 
 - (id)endArtworkList;
+- (void)setInitialValue:(long long)arg1;
 - (void)setEndArtworkList:(id)arg1;
 - (void)setArtworkList:(id)arg1;
 - (void)setFlapBottomColor:(id)arg1;
 - (void)setFlapTopColor:(id)arg1;
 - (void)setFinalValue:(long long)arg1;
-- (void)setInitialValue:(long long)arg1;
 - (void)setFlapped:(BOOL)arg1;
 - (id)initWithCountdownDictionary:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
@@ -59,22 +58,21 @@
 - (id)artworkList;
 - (void)setNumberFormat:(id)arg1;
 - (id)numberFormat;
-- (void)setLoaded:(BOOL)arg1;
 - (void)setFontColor:(id)arg1;
 - (id)fontColor;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (int)rate;
-- (void)setDateFormat:(id)arg1;
+- (void)setDateFormat:(unsigned int)arg1;
 - (id)startDate;
 - (void)setRate:(int)arg1;
-- (BOOL)loaded;
 - (void)setType:(int)arg1;
 - (void).cxx_destruct;
 - (id)URL;
 - (int)type;
 - (void)setURL:(id)arg1;
-- (id)dateFormat;
+- (unsigned int)dateFormat;
+- (BOOL)isLoaded;
 
 @end

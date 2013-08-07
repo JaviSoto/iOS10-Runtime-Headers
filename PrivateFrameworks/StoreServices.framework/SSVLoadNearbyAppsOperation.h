@@ -18,6 +18,8 @@
   /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
 
+    NSString *_storeFrontSuffix;
+    NSString *_userAgent;
 }
 
 @property(readonly) CLLocation * location;
@@ -25,6 +27,8 @@
 @property(copy) NSString * pointOfInterestProviderIdentifier;
 @property(copy) NSString * pointOfInterestProviderURL;
 @property(copy) id responseBlock;
+@property(copy) NSString * storeFrontSuffix;
+@property(copy) NSString * userAgent;
 
 
 - (void)setResponseBlock:(id)arg1;
@@ -37,6 +41,11 @@
 - (id)initWithBaseURL:(id)arg1 location:(id)arg2;
 - (id)responseBlock;
 - (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
+- (id)_storeFrontSuffix;
+- (void)setStoreFrontSuffix:(id)arg1;
+- (id)storeFrontSuffix;
+- (id)userAgent;
+- (void)setUserAgent:(id)arg1;
 - (id)location;
 - (void).cxx_destruct;
 - (void)main;

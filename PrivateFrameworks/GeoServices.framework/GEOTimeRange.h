@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTimeRange : PBCodable  {
+@interface GEOTimeRange : PBCodable <NSCopying> {
     unsigned int _from;
     unsigned int _to;
     BOOL _allDay;
@@ -21,8 +21,6 @@
 @property BOOL allDay;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasAllDay:(BOOL)arg1;
 - (void)setHasTo:(BOOL)arg1;
 - (void)setHasFrom:(BOOL)arg1;
@@ -36,10 +34,13 @@
 - (unsigned int)from;
 - (BOOL)hasFrom;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

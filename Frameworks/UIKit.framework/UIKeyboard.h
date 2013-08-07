@@ -29,8 +29,8 @@
 + (void)_clearActiveKeyboard;
 + (void)removeAllDynamicDictionaries;
 + (BOOL)isInHardwareKeyboardMode;
-+ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (id)activeKeyboard;

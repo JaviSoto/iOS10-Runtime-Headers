@@ -18,9 +18,9 @@
 - (id)initialCode;
 - (void)setInitialCode:(id)arg1;
 - (id)initWithRedeemCategory:(int)arg1;
+- (int)category;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;
 - (id)delegate;
-- (int)category;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTileGroup : PBCodable  {
+@interface GEOTileGroup : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; } *_regionalResourceIndexs;
     unsigned int _regionalResourceIndexsCount;
     unsigned int _regionalResourceIndexsSpace;
@@ -67,8 +67,6 @@
 @property(readonly) unsigned int* attributionIndexs;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setAttributionIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)attributionIndexs;
 - (void)setHasAttributionBadgeIndex:(BOOL)arg1;
@@ -122,10 +120,13 @@
 - (unsigned int)tileSetsCount;
 - (void)addTileSet:(struct { unsigned int x1; unsigned int x2; })arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (unsigned int)identifier;
 - (id)dictionaryRepresentation;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, NSDictionary, NSNumber;
+@class NSArray, NSString, NSDictionary, NSNumber, SSURLBagContext;
 
 @interface SSAuthenticationContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
     NSString *_accountName;
@@ -16,6 +16,7 @@
     NSDictionary *_httpHeaders;
     NSString *_initialPassword;
     BOOL _persistsAcrossDeviceLock;
+    BOOL _persistsPasswordFallback;
     NSString *_preferredITunesStoreClient;
     int _promptStyle;
     NSDictionary *_requestParameters;
@@ -37,6 +38,7 @@
 @property(readonly) BOOL canSetActiveAccount;
 @property(readonly) NSDictionary * HTTPHeaders;
 @property(readonly) NSString * initialPassword;
+@property(readonly) BOOL persistsPasswordFallback;
 @property(readonly) NSString * preferredITunesStoreClient;
 @property(readonly) int promptStyle;
 @property(readonly) NSDictionary * requestParameters;
@@ -51,6 +53,7 @@
 @property(readonly) BOOL persistsAcrossDeviceLock;
 @property(readonly) BOOL shouldIgnoreProtocol;
 @property(readonly) int tokenType;
+@property(readonly) SSURLBagContext * URLBagContext;
 
 + (id)contextForSignIn;
 
@@ -64,6 +67,7 @@
 - (BOOL)shouldIgnoreProtocol;
 - (BOOL)shouldCreateNewSession;
 - (id)requestParameters;
+- (BOOL)persistsPasswordFallback;
 - (BOOL)persistsAcrossDeviceLock;
 - (id)initialPassword;
 - (id)clientIdentifierHeader;
@@ -71,6 +75,7 @@
 - (BOOL)canCreateNewAccount;
 - (BOOL)allowsRetry;
 - (BOOL)isAccountNameEditable;
+- (id)URLBagContext;
 - (id)requiredUniqueIdentifier;
 - (void)_copyIvarsToCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 - (id)_initSSAuthenticationContext;

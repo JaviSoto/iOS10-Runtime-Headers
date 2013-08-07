@@ -21,9 +21,9 @@
 
 - (BOOL)shouldShowLoadingView;
 - (void)setShouldShowLoadingView:(BOOL)arg1;
+- (id)_copyActiveGradient;
 - (id)_newURLBagBackgroundGradient;
 - (void)_reloadLoadingView;
-- (id)_copyActiveGradient;
 - (void)_reloadBackgroundGradient;
 - (void)_bagDidLoadNotification:(id)arg1;
 - (id)defaultBackgroundGradient;
@@ -32,7 +32,6 @@
 - (id)copyDefaultScriptProperties;
 - (id)loadingView;
 - (id)copyArchivableContext;
-- (int)ITunesStoreUIBarStyle;
 - (void)setDefaultBackgroundGradient:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (id)init;

@@ -142,9 +142,9 @@
 - (struct CGPoint { float x1; float x2; })_contentOffsetForScrollToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleRangeWithLayout:(BOOL)arg1;
 - (unsigned int)_totalNumberOfTextViewsInLayoutManager;
-- (BOOL)isSelectable;
 - (void)_startDataDetectors;
 - (BOOL)_shouldStartDataDetectors;
+- (BOOL)isSelectable;
 - (void)setUsesTiledViews:(BOOL)arg1;
 - (void)_commonInitWithTextContainer:(id)arg1 isDecoding:(BOOL)arg2 isEditable:(BOOL)arg3 isSelectable:(BOOL)arg4;
 - (void)setSelectable:(BOOL)arg1;

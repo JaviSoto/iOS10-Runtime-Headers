@@ -68,11 +68,11 @@
 - (void)setEditionHeader:(id)arg1;
 - (id)editionHeader;
 - (void)setRequireWiFi:(BOOL)arg1;
-- (void)setBaseTile:(id)arg1;
-- (void)setLocalizationTile:(id)arg1;
 - (unsigned int)tileEdition;
 - (id)localizationTile;
 - (id)baseTile;
+- (void)setLocalizationTile:(id)arg1;
+- (void)setBaseTile:(id)arg1;
 - (double)timeout;
 - (id)data;
 - (void)setDelegate:(id)arg1;

@@ -366,9 +366,9 @@
 - (void)setAllowsSharing:(BOOL)arg1;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsDeletion;
+- (int)primaryProperty;
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsSharing;
-- (int)primaryProperty;
 - (BOOL)allowsActions;
 - (id)personHeaderView;
 - (void)setAlternateName:(id)arg1;

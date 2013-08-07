@@ -56,7 +56,7 @@
 - (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned int)arg1;
 - (id)lastAddressedLocalHandle;
-- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 chatIdentifier:(id)arg4 participants:(id)arg5 roomName:(id)arg6 displayName:(id)arg7 lastAddressedLocalHandle:(id)arg8 state:(int)arg9 style:(unsigned char)arg10;
+- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 chatIdentifier:(id)arg4 participants:(id)arg5 roomName:(id)arg6 displayName:(id)arg7 lastAddressedLocalHandle:(id)arg8 properties:(id)arg9 state:(int)arg10 style:(unsigned char)arg11;
 - (void)setLastMessage:(id)arg1;
 - (id)copyDictionaryRepresentation:(BOOL)arg1;
 - (unsigned int)unreadCount;

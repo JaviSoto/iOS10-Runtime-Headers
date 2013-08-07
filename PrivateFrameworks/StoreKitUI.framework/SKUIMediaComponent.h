@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtworkList;
+@class SKUIArtworkList, NSString, SKUILink;
 
 @interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSString *_accessibilityLabel;
     int _alignment;
     double _duration;
+    SKUILink *_link;
     long long _mediaIdentifier;
     int _mediaType;
     NSString *_mediaURLString;
@@ -20,6 +21,7 @@
 @property(readonly) NSString * accessibilityLabel;
 @property(readonly) int alignment;
 @property(readonly) double duration;
+@property(readonly) SKUILink * link;
 @property(readonly) long long mediaIdentifier;
 @property(readonly) int mediaType;
 @property(readonly) NSString * mediaURLString;
@@ -45,6 +47,7 @@
 - (id)accessibilityLabel;
 - (int)alignment;
 - (void).cxx_destruct;
+- (id)link;
 - (double)duration;
 
 @end

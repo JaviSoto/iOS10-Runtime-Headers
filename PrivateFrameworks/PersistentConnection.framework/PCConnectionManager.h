@@ -45,6 +45,7 @@
     BOOL _forceManualWhenRoaming;
     BOOL _enableNonCellularConnections;
     BOOL _isReachable;
+    BOOL _disableEarlyFire;
 }
 
 @property <PCConnectionManagerDelegate> * delegate;
@@ -53,6 +54,7 @@
 @property double minimumKeepAliveInterval;
 @property double maximumKeepAliveInterval;
 @property(readonly) unsigned int countOfGrowthActions;
+@property BOOL disableEarlyFire;
 @property double keepAliveGracePeriod;
 @property(readonly) double pollingInterval;
 @property(readonly) NSString * loggingIdentifier;
@@ -64,6 +66,8 @@
 
 - (double)keepAliveGracePeriod;
 - (void)logAtLevel:(int)arg1 format:(id)arg2;
+- (void)setDisableEarlyFire:(BOOL)arg1;
+- (BOOL)disableEarlyFire;
 - (void)setEnableNonCellularConnections:(BOOL)arg1;
 - (BOOL)shouldClientScheduleReconnectDueToFailure;
 - (void)cancelPollingIntervalOverride;

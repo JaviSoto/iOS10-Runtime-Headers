@@ -7,8 +7,10 @@
 @interface MLActiveTransaction : NSObject  {
     ML3DatabaseConnection *_connection;
     NSObject<OS_dispatch_semaphore> *_connectionSemaphore;
+    unsigned int _transactionTerminationRule;
     BOOL _inUseByOperation;
     BOOL _startedByOperation;
+    BOOL _connectionInUse;
     NSUUID *_identifier;
     NSXPCConnection *_xpcConnection;
     double _lastUsedTime;
@@ -19,19 +21,23 @@
 @property double lastUsedTime;
 @property BOOL inUseByOperation;
 @property BOOL startedByOperation;
+@property(readonly) BOOL connectionInUse;
 
 
 - (BOOL)startedByOperation;
 - (void)setLastUsedTime:(double)arg1;
 - (void)checkInTransactionConnection:(id)arg1;
 - (id)checkoutTransactionConnection;
-- (double)lastUsedTime;
+- (void)_setTransactionTerminationRule:(unsigned int)arg1;
+- (unsigned int)_transactionTerminationRule;
 - (BOOL)inUseByOperation;
+- (BOOL)connectionInUse;
+- (double)lastUsedTime;
 - (id)relinquishConnection:(BOOL)arg1;
 - (id)initWithConnection:(id)arg1 identifier:(id)arg2 xpcConnection:(id)arg3;
 - (void)setInUseByOperation:(BOOL)arg1;
-- (void)setStartedByOperation:(BOOL)arg1;
 - (void)updateLastUsed;
+- (void)setStartedByOperation:(BOOL)arg1;
 - (void)useConnectionWithBlock:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;

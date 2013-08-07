@@ -26,8 +26,8 @@
 - (id)appPunchOut;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)encodedClassName;
-- (void)setCategory:(id)arg1;
 - (id)category;
+- (void)setCategory:(id)arg1;
 - (id)groupIdentifier;
 
 @end

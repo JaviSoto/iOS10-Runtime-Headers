@@ -32,6 +32,7 @@
     BOOL _sharedPhotoStreamIsBusy;
     int _photoStreamActivityToken;
     int _sharedPhotoStreamActivityToken;
+    int _sharedPhotoStreamInvitationFailureToken;
     PLDebugViewController *_debugViewController;
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
@@ -117,8 +118,8 @@
 - (void)mailComposeController:(id)arg1 bodyFinishedLoadingWithResult:(BOOL)arg2 error:(id)arg3;
 - (BOOL)isComposingEmail;
 - (void)_networkReachabilityDidChange:(id)arg1;
-- (void)_startObservingReachabilityChanges;
 - (void)_stopObservingReachabilityChanges;
+- (void)_startObservingReachabilityChanges;
 - (void)dealloc;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)autosaveIdentifier;

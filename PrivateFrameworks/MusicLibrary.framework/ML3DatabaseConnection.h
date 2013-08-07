@@ -7,15 +7,14 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <ML3DatabaseConnectionDelegate>, NSHashTable, NSObject<OS_dispatch_queue>, ML3DatabaseConnectionPool, CPLRUDictionary, NSMutableArray, NSUUID, NSFileHandle, NSString;
+@class <ML3DatabaseConnectionDelegate>, NSHashTable, NSObject<OS_dispatch_queue>, ML3DatabaseConnectionPool, NSMutableArray, NSUUID, NSFileHandle, NSString;
 
 @interface ML3DatabaseConnection : NSObject  {
     struct sqlite3 { } *_sqlitedb;
     BOOL _isOpen;
-    CPLRUDictionary *_statementCache;
-    NSHashTable *_statements;
+    NSHashTable *_statementsCache;
+    NSObject<OS_dispatch_queue> *_statementsCacheSerialQueue;
     unsigned int _statementsSinceLastCheckpoint;
-    NSObject<OS_dispatch_queue> *_serialQueue;
     unsigned int _transactionLevel;
     BOOL _nestedTransactionWantsToRollback;
     NSMutableArray *_enqueuedTransactionCommitBlocks;
@@ -26,7 +25,6 @@
     NSFileHandle *_profilingLogHandle;
     int _willDeleteDatabaseNotifyToken;
     BOOL _isReadOnly;
-    BOOL _shouldCacheStatements;
     BOOL _automaticCheckpointingEnabled;
     <ML3DatabaseConnectionDelegate> *_connectionDelegate;
     NSString *_databasePath;
@@ -42,7 +40,6 @@
 @property(setter=setReadOnly:) BOOL isReadOnly;
 @property unsigned int journalingMode;
 @property(readonly) BOOL isInTransaction;
-@property BOOL shouldCacheStatements;
 @property int profilingLevel;
 @property(readonly) NSUUID * uniqueIdentifier;
 @property const void* iTunesExtensions;
@@ -54,31 +51,27 @@
 - (unsigned int)checkpointStatementThreshold;
 - (void)setAutomaticCheckpointingEnabled:(BOOL)arg1;
 - (BOOL)automaticCheckpointingEnabled;
-- (void)setShouldCacheStatements:(BOOL)arg1;
-- (BOOL)shouldCacheStatements;
-- (unsigned int)journalingMode;
 - (id)connectionDelegate;
 - (void)_writeToProfilingLog:(id)arg1;
 - (void)_logCurrentErrorWhilePerformingStatementOperation:(id)arg1 statement:(id)arg2;
 - (void)_logCurrentErrorWhilePerformingStatementOperation:(id)arg1 statementSQL:(id)arg2;
 - (void)_createDatabaseFileIfNonexistent;
 - (id)_shortDescription;
+- (void)_setTransactionLevel:(unsigned int)arg1;
+- (unsigned int)_transactionLevel;
 - (id)_owningPool;
 - (long long)lastInsertionRowID;
 - (void*)moduleContextForModuleName:(id)arg1;
 - (void)setModuleContext:(void*)arg1 forModuleName:(id)arg2 contextReleaseBlock:(id)arg3;
 - (BOOL)registerModuleName:(id)arg1 moduleMethods:(const struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
 - (int)profilingLevel;
-- (void)_resetUnfinalizedStatements;
 - (BOOL)_databaseFileExists;
 - (BOOL)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
-- (BOOL)_handleBusyLockWithNumberOfRetries:(int)arg1;
 - (int)checkpointDatabase;
+- (int)_finalizeStatement:(id)arg1;
 - (BOOL)_executeStatement:(id)arg1;
-- (void)_cacheStatement:(id)arg1 forSQL:(id)arg2;
 - (id)_prepareStatement:(id)arg1 error:(id*)arg2;
-- (id)_cachedStatementForSQL:(id)arg1;
-- (int)_onQueueFinalizeStatement:(id)arg1;
+- (void)_resetUnfinalizedStatements;
 - (id)_registeredModuleNamed:(id)arg1;
 - (void)_executeTransactionCommitBlocks:(BOOL)arg1;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;
@@ -87,6 +80,7 @@
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (void)_finalizeAllStatements;
 - (void)_logCurrentError;
+- (void)_clearStatementCache;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (BOOL)_openWithFlags:(int)arg1 isRetry:(BOOL)arg2;
 - (void)_updateProfilingLevel;
@@ -94,20 +88,22 @@
 - (void)setJournalingMode:(unsigned int)arg1;
 - (void)setProfilingLevel:(int)arg1;
 - (void)_setOwningPool:(id)arg1;
-- (int)_finalizeStatement:(id)arg1;
+- (int)_finalizeStatement:(id)arg1 removeFromCache:(BOOL)arg2;
+- (unsigned int)journalingMode;
 - (BOOL)_handleDatabaseCorruption;
+- (BOOL)_handleBusyLockWithNumberOfRetries:(int)arg1;
 - (void)_ensureConnectionIsOpen;
 - (BOOL)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned int)arg2;
 - (BOOL)deleteDatabase;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id)arg3;
-- (id)initWithDatabasePath:(id)arg1;
-- (BOOL)databasePathExists;
-- (BOOL)pushTransactionUsingBehaviorType:(unsigned int)arg1;
-- (void)setConnectionDelegate:(id)arg1;
 - (const void*)iTunesExtensions;
 - (void)setITunesExtensions:(const void*)arg1;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3;
+- (id)initWithDatabasePath:(id)arg1;
+- (BOOL)databasePathExists;
+- (BOOL)pushTransactionUsingBehaviorType:(unsigned int)arg1;
+- (void)setConnectionDelegate:(id)arg1;
 - (BOOL)popToRootTransactionAndCommit:(BOOL)arg1;
 - (id)executeQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (BOOL)popTransactionAndCommit:(BOOL)arg1;

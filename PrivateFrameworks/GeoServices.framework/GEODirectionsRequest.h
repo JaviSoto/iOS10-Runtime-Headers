@@ -4,7 +4,7 @@
 
 @class GEORouteAttributes, GEOMapRegion, GEOLocation, NSData, NSMutableArray, GEOClientCapabilities;
 
-@interface GEODirectionsRequest : PBRequest  {
+@interface GEODirectionsRequest : PBRequest <NSCopying> {
     GEOClientCapabilities *_clientCapabilities;
     GEOMapRegion *_currentMapRegion;
     GEOLocation *_currentUserLocation;
@@ -52,10 +52,6 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (Class)responseClass;
-- (void)writeTo:(id)arg1;
-- (unsigned int)requestTypeCode;
 - (id)serviceTags;
 - (id)waypoints;
 - (void)setHasGetRouteForZilchPoints:(BOOL)arg1;
@@ -106,10 +102,15 @@
 - (void)setWaypoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (Class)responseClass;
+- (void)writeTo:(id)arg1;
+- (unsigned int)requestTypeCode;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

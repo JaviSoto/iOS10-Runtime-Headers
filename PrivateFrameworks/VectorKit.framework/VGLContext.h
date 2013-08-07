@@ -261,9 +261,9 @@
 - (void)setProgram:(id)arg1;
 - (void)setDepthTest:(BOOL)arg1;
 - (void)setStencilTest:(BOOL)arg1;
+- (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setClearDepth:(float)arg1;
 - (void)setClearStencil:(unsigned char)arg1;
-- (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)drawLineLoopDim:(int)arg1 nv:(int)arg2 pv:(float*)arg3;
 - (void)clearBufferColor:(BOOL)arg1 stencil:(BOOL)arg2 depth:(BOOL)arg3;
 - (void)bindSimpleRenderState;

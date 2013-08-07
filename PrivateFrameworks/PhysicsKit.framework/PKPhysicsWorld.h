@@ -32,7 +32,7 @@
 @property(retain) NSMutableArray * _bodies;
 @property struct b2World { struct b2BlockAllocator { struct b2Chunk {} *x_1_1_1; int x_1_1_2; int x_1_1_3; struct b2Block {} *x_1_1_4[14]; } x1; struct b2StackAllocator { BOOL x_2_1_1[102400]; int x_2_1_2; int x_2_1_3; int x_2_1_4; struct b2StackEntry { char *x_5_2_1; int x_5_2_2; boolx_5_2_3; } x_2_1_5[32]; int x_2_1_6; } x2; int x3; struct b2ContactManager { struct b2BroadPhase { struct b2DynamicTree { int x_1_3_1; struct b2TreeNode {} *x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; unsigned int x_1_3_6; int x_1_3_7; } x_1_2_1; int x_1_2_2; int *x_1_2_3; int x_1_2_4; int x_1_2_5; struct b2Pair {} *x_1_2_6; int x_1_2_7; int x_1_2_8; int x_1_2_9; } x_4_1_1; struct b2Contact {} *x_4_1_2; int x_4_1_3; struct b2ContactFilter {} *x_4_1_4; struct b2ContactListener {} *x_4_1_5; struct b2BlockAllocator {} *x_4_1_6; } x4; struct b2Body {} *x5; struct b2Joint {} *x6; int x7; int x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; boolx10; struct b2DestructionListener {} *x11; struct b2Draw {} *x12; float x13; boolx14; boolx15; boolx16; boolx17; float x18; }* _world;
 @property struct b2Vec2 { float x1; float x2; } _gravity;
-@property struct CGPoint { float x1; float x2; } gravity;
+@property struct CGVector { float x1; float x2; } gravity;
 @property float speed;
 @property float velocityThreshold;
 @property <PKPhysicsContactDelegate> * contactDelegate;
@@ -57,12 +57,12 @@
 - (void)removeAllJoints;
 - (void)setContactDelegate:(id)arg1;
 - (void)setSpeed:(float)arg1;
-- (void)setGravity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setGravity:(struct CGVector { float x1; float x2; })arg1;
 - (void)addJoint:(id)arg1;
 - (void)addBody:(id)arg1;
 - (id)contactDelegate;
 - (float)speed;
-- (struct CGPoint { float x1; float x2; })gravity;
+- (struct CGVector { float x1; float x2; })gravity;
 - (void)enumerateBodiesAlongRayStart:(struct CGPoint { float x1; float x2; })arg1 end:(struct CGPoint { float x1; float x2; })arg2 usingBlock:(id)arg3;
 - (void)enumerateBodiesAtPoint:(struct CGPoint { float x1; float x2; })arg1 usingBlock:(id)arg2;
 - (void)enumerateBodiesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;

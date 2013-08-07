@@ -5,9 +5,9 @@
 @interface NSPort : NSObject <NSCopying, NSCoding> {
 }
 
-+ (id)portWithMachPort:(unsigned int)arg1;
 + (id)port;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)portWithMachPort:(unsigned int)arg1;
 
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;

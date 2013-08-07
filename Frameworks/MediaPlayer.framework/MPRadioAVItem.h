@@ -2,15 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage, NSString, RadioTrack;
+@class RadioTrack, UIImage, NSString, RadioStation;
 
 @interface MPRadioAVItem : MPAVItem  {
-    RadioTrack *_radioTrack;
     UIImage *_cachedArtworkImage;
+    RadioTrack *_radioTrack;
     BOOL _isHeartbeatInvalid;
     BOOL _isBanned;
     BOOL _isLiked;
     BOOL _isInWishList;
+    RadioStation *_station;
     NSString *_stationHash;
     NSString *_stationName;
     long long _stationID;
@@ -20,20 +21,19 @@
 @property BOOL isBanned;
 @property BOOL isLiked;
 @property BOOL isInWishList;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property(copy) NSString * stationName;
+@property(retain) RadioStation * station;
+@property(readonly) NSString * stationHash;
+@property(readonly) long long stationID;
+@property(readonly) NSString * stationName;
 
 
 - (id)artist;
 - (id)album;
 - (id)stationName;
-- (void)setStationName:(id)arg1;
-- (void)setStationHash:(id)arg1;
-- (void)setStationID:(long long)arg1;
 - (id)stationHash;
 - (long long)stationID;
 - (BOOL)isHeartbeatInvalid;
+- (void)setStation:(id)arg1;
 - (void)setIsInWishList:(BOOL)arg1;
 - (void)setIsLiked:(BOOL)arg1;
 - (void)setIsBanned:(BOOL)arg1;
@@ -47,6 +47,7 @@
 - (BOOL)isRadioItem;
 - (void)_applyLoudnessInfoForVolumeNormalization;
 - (id)_cachedArtworkImage;
+- (id)mediaItem;
 - (void)reevaluateType;
 - (id)localizedPositionInPlaylistString;
 - (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
@@ -58,7 +59,6 @@
 - (BOOL)supportsAddStation;
 - (BOOL)isStreamable;
 - (BOOL)hasDataForItemArtwork;
-- (id)mediaItem;
 - (unsigned int)countForQueueFeeder;
 - (id)urlTimeMarkers;
 - (id)artworkTimeMarkers;
@@ -73,6 +73,7 @@
 - (BOOL)isLiked;
 - (BOOL)isExplicitTrack;
 - (id)mainTitle;
+- (id)station;
 - (unsigned long long)persistentID;
 - (id)title;
 - (id)imageCache;

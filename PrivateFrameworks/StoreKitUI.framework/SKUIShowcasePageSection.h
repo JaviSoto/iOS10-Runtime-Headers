@@ -24,6 +24,7 @@
 - (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (void)restorePinnedHeaderView:(id)arg1;
 - (id)popPinnedHeaderView;
 - (int)numberOfCells;

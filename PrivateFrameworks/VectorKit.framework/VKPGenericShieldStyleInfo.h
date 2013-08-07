@@ -76,11 +76,11 @@
 - (unsigned int)textDropShadowOffsetsCount;
 - (unsigned int)textStrokeColor;
 - (float)textStrokeSize;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasStyle:(BOOL)arg1;
 - (BOOL)hasStyle;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setBackgroundColor:(unsigned int)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setBorderColor:(unsigned int)arg1;

@@ -4,7 +4,7 @@
 
 @class GEONameInfo, NSString, NSMutableArray;
 
-@interface GEOStep : PBCodable  {
+@interface GEOStep : PBCodable <NSCopying> {
     struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; } *_laneGuidances;
     unsigned int _laneGuidancesCount;
     unsigned int _laneGuidancesSpace;
@@ -101,8 +101,6 @@
 
 
 - (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (BOOL)maneuverIsHighwayExit;
 - (void)shieldInfo:(id)arg1;
 - (id)intersectionNameInfo;
@@ -211,10 +209,13 @@
 - (void)copyTo:(id)arg1;
 - (void)setInstructions:(id)arg1;
 - (id)instructions;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

@@ -107,6 +107,7 @@
 - (BOOL)locallyAdded;
 - (BOOL)fullArchiveAvailable;
 - (void)_setOrderIndex:(unsigned int)arg1;
+- (void)clearArchive;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
 - (void)clearArchiveSynchronously;
 - (void)setDateLastArchived:(id)arg1;
@@ -132,7 +133,6 @@
 - (id)localAttributes;
 - (unsigned int)_orderIndex;
 - (BOOL)isReadingListFolder;
-- (void)clearArchive;
 - (BOOL)isReadingListItem;
 - (unsigned int)specialID;
 - (void)cleanupRedundantPreviewText;

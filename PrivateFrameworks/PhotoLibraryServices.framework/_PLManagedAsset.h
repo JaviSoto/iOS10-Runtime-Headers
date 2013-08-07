@@ -101,7 +101,7 @@
 - (void)setOriginalOrientationValue:(short)arg1;
 - (void)setPrimitiveEmbeddedThumbnailOffsetValue:(int)arg1;
 - (int)primitiveEmbeddedThumbnailOffsetValue;
-- (unsigned long)externalUsageIntentValue;
+- (void)setExternalUsageIntentValue:(unsigned long)arg1;
 - (void)setOriginalWidthValue:(short)arg1;
 - (void)setOriginalHeightValue:(short)arg1;
 - (void)setPrimitiveKindSubtypeValue:(short)arg1;
@@ -115,6 +115,7 @@
 - (id)externalUsageIntent;
 - (id)originalWidth;
 - (id)originalHeight;
+- (unsigned long)externalUsageIntentValue;
 - (void)setPrimitiveHeightValue:(short)arg1;
 - (void)setPrimitiveWidthValue:(short)arg1;
 - (short)primitiveHeightValue;
@@ -162,7 +163,6 @@
 - (void)setImportSessionID:(id)arg1;
 - (id)importSessionID;
 - (short)kindValue;
-- (void)setExternalUsageIntentValue:(unsigned long)arg1;
 - (id)editorBundleID;
 - (void)awakeFromInsert;
 - (void)setOrientation:(id)arg1;

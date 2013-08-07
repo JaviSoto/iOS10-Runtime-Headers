@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSString, NSData;
 
-@interface GEORPDirectionsEvent : PBCodable  {
+@interface GEORPDirectionsEvent : PBCodable <NSCopying> {
     long long _errorCode;
     NSString *_errorDomain;
     GEOLatLng *_occurrenceLatLng;
@@ -50,8 +50,6 @@
 @property long long errorCode;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasSynthesizedStepManeuverType:(BOOL)arg1;
 - (void)setHasSwitchedToResponseIndex:(BOOL)arg1;
@@ -88,6 +86,8 @@
 - (void)setHasType:(BOOL)arg1;
 - (BOOL)hasType;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setErrorCode:(long long)arg1;
 - (long long)errorCode;
 - (void)setType:(int)arg1;
@@ -95,6 +95,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)type;
 - (id)dictionaryRepresentation;
 

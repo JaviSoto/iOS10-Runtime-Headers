@@ -7,6 +7,7 @@
 @interface SKUIRedeem : NSObject  {
     BOOL _hideItemView;
     NSArray *_items;
+    NSString *_inAppPurchase;
     NSString *_credit;
     NSString *_balance;
     NSDictionary *_thankYouDictionary;
@@ -19,6 +20,7 @@
 }
 
 @property(retain) NSArray * items;
+@property(retain) NSString * inAppPurchase;
 @property(copy) NSString * credit;
 @property(copy) NSString * balance;
 @property(retain) NSDictionary * thankYouDictionary;
@@ -37,9 +39,11 @@
 - (void)setThankYouDictionary:(id)arg1;
 - (void)setBalance:(id)arg1;
 - (void)setCredit:(id)arg1;
+- (void)setInAppPurchase:(id)arg1;
 - (id)thankYouDictionary;
 - (id)balance;
 - (id)credit;
+- (id)inAppPurchase;
 - (id)headerArtworkList;
 - (void)setLinks:(id)arg1;
 - (void)setHeaderImage:(id)arg1;

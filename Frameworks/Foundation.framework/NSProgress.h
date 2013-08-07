@@ -6,13 +6,13 @@
    See Warning(s) below.
  */
 
-@class NSString, NSXPCConnection, NSProgress, NSMutableDictionary;
+@class NSMutableSet, NSString, NSXPCConnection, NSLock, NSMutableDictionary;
 
 @interface NSProgress : NSObject <NSProgressPublisher> {
-    NSProgress *_parent;
-    long long _portionOfParentUnitCount;
+    id _group;
+    long long _reserved4;
     id _values;
-    id _valuesSeenFromMainThread;
+    id _reserved5;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -28,7 +28,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _prioritizationHandler;
 
-    long long _pendingUnitCount;
+    long long _reserved3;
     id _userInfoProxy;
     NSString *_publisherID;
     NSXPCConnection *_connection;
@@ -38,8 +38,8 @@
     NSMutableDictionary *_acknowledgementHandlersByBundleID;
     NSMutableDictionary *_lastNotificationTimesByKey;
     NSMutableDictionary *_userInfoLastNotificationTimesByKey;
-    id _reserved1;
-    id _reserved2;
+    NSLock *_lock;
+    NSMutableSet *_childrenGroups;
 }
 
 @property(readonly) NSString * sf_publishingKey;
@@ -69,9 +69,7 @@
 + (id)_addSubscriberForCategory:(id)arg1 usingPublishingHandler:(id)arg2;
 + (id)_subscriberInterface;
 + (id)addSubscriberForFileURL:(id)arg1 usingBlock:(id)arg2;
-+ (id)_addGeneralSubscriberUsingBlock:(id)arg1;
 + (id)_addSubscriberForFileURL:(id)arg1 withPublishingHandler:(id)arg2;
-+ (id)keyPathsForValuesAffectingFractionCompleted;
 + (id)keyPathsForValuesAffectingLocalizedAdditionalDescription;
 + (id)keyPathsForValuesAffectingLocalizedDescription;
 + (void)removeSubscriber:(id)arg1;
@@ -83,7 +81,6 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)keyPathsForValuesAffectingInstallPhase;
 + (id)keyPathsForValuesAffectingInstallState;
-+ (id)childProgressForParent:(id)arg1 andPhase:(unsigned int)arg2;
 + (id)childProgressForBundleID:(id)arg1 andPhase:(unsigned int)arg2;
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned int)arg2;
 + (id)sf_transferStateAsString:(int)arg1;
@@ -98,7 +95,6 @@
 - (BOOL)isPrioritizable;
 - (BOOL)isCancellable;
 - (BOOL)isPausable;
-- (double)fractionCompleted;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)setPrioritizable:(BOOL)arg1;
 - (void)setCancellable:(BOOL)arg1;
@@ -106,11 +102,12 @@
 - (void)_unpublish;
 - (void)_publish;
 - (void)dealloc;
+- (id)description;
 - (void)cancel;
 - (id)kind;
 - (void)acknowledge;
 - (void)handleAcknowledgementByAppWithBundleIdentifer:(id)arg1 usingBlock:(id)arg2;
-- (void)_setValue:(id)arg1 forKey:(id)arg2 inUserInfo:(BOOL)arg3;
+- (void)_setRemoteValue:(id)arg1 forKey:(id)arg2 inUserInfo:(BOOL)arg3;
 - (id)_initWithValues:(id)arg1;
 - (void)handleAcknowledgementByAppWithBundleIdentifier:(id)arg1 usingBlock:(id)arg2;
 - (id)prioritizationHandler;
@@ -120,7 +117,6 @@
 - (void)_setAcknowledgementHandler:(id)arg1 forAppBundleIdentifier:(id)arg2;
 - (BOOL)isOld;
 - (void)setKind:(id)arg1;
-- (BOOL)isIndeterminate;
 - (id)pausingHandler;
 - (id)cancellationHandler;
 - (BOOL)isPaused;
@@ -130,35 +126,36 @@
 - (long long)completedUnitCount;
 - (long long)totalUnitCount;
 - (oneway void)appWithBundleID:(id)arg1 didAcknowledgeWithSuccess:(BOOL)arg2;
-- (oneway void)prioritize;
-- (void)pause;
 - (oneway void)stopProvidingValues;
 - (oneway void)startProvidingValuesWithInitialAcceptor:(id)arg1;
-- (void)_prioritize;
+- (oneway void)prioritize;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (id)acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
 - (void)setAcknowledgementHandler:(id)arg1 forAppBundleIdentifier:(id)arg2;
 - (void)unpublish;
 - (void)_unblockDisconnecting;
-- (void)_pause;
-- (void)_cancel;
+- (void)pause;
 - (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
-- (double)_fractionCompletedUsingValuesFinder:(id)arg1;
-- (void)_getValueUsingBlock:(id)arg1;
-- (void)__setValueForKey:(id)arg1 usingBlock:(id)arg2;
+- (void)_setValueForKeys:(id)arg1 settingBlock:(id)arg2;
 - (void)_notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;
 - (void)_unblockUnpublishing;
 - (void)__notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;
-- (void)_setValueForKey:(id)arg1 usingBlock:(id)arg2;
+- (void)_addChild:(id)arg1 toGroup:(id)arg2 isPaused:(BOOL*)arg3 isCancelled:(BOOL*)arg4;
 - (id)initWithParent:(id)arg1 userInfo:(id)arg2;
+- (BOOL)isIndeterminate;
 - (id)ownedDictionaryObjectForKey:(id)arg1;
 - (id)ownedDictionaryKeyEnumerator;
 - (unsigned int)ownedDictionaryCount;
+- (double)fractionCompleted;
+- (void)_removeGroup:(id)arg1;
+- (void)_updateGroupFractionCompletedFrom:(double)arg1 to:(double)arg2 forPortion:(long long)arg3;
+- (void)_setGroup:(id)arg1;
 - (void)publish;
 - (void)resignCurrent;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
 - (void)setTotalUnitCount:(long long)arg1;
 - (void)setCompletedUnitCount:(long long)arg1;
+- (BOOL)isFinished;
 - (BOOL)isCancelled;
 - (void)setInstallPhase:(unsigned int)arg1;
 - (unsigned int)installPhase;

@@ -61,7 +61,7 @@
 - (int)identifier;
 - (BOOL)isGroup;
 - (id)displayString;
-- (id)address;
 - (id)children;
+- (id)address;
 
 @end

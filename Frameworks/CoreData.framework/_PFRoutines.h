@@ -23,6 +23,7 @@
 + (id)encodeObjectValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (id)decodeValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (id)_createNicksBase64EncodedStringFromData:(id)arg1;
++ (void)setOrRemoveValue:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
 + (void)attemptToUpdatePermissionsForFileAtPath:(const char *)arg1 toLevel:(int)arg2;
 + (void)cleanupExternalReferenceLink:(const char *)arg1;
 + (BOOL)createExternalReferenceLinkFromPath:(const char *)arg1 toPath:(const char *)arg2 protectionLevel:(int)arg3;

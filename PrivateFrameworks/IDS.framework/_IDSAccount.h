@@ -86,7 +86,6 @@
 - (id)aliasStrings;
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
-- (void)clearCallerIDForAccount:(id)arg1;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)account:(id)arg1 displayNameChanged:(id)arg2;

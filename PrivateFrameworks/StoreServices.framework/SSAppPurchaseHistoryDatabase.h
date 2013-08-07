@@ -11,7 +11,8 @@
 + (id)newDefaultInstance;
 + (id)localRevisionKey;
 + (id)accountUniqueIdentifierKey;
-+ (void)createDatabaseDirectory;
++ (BOOL)_setupDatabase:(id)arg1;
++ (void)_createDatabaseDirectory;
 
 - (void)readAsyncUsingTransactionBlock:(id)arg1;
 - (BOOL)resetCacheForNewAccountID:(id)arg1;

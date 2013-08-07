@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSHTTPURLResponse, NSMutableData, NSObject<OS_dispatch_queue>, SSVURLDataConsumer, NSURLRequest, NSCachedURLResponse, NSRunLoop, NSMutableSet, NSURL, SSMetricsPageEvent;
+@class NSHTTPURLResponse, NSMutableData, NSObject<OS_dispatch_queue>, SSVURLDataConsumer, NSURLRequest, NSCachedURLResponse, NSRunLoop, NSMutableSet, NSURL, NSString, SSMetricsPageEvent;
 
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
     NSMutableData *_dataBuffer;
@@ -29,6 +29,7 @@
     NSURL *_redirectURL;
     NSHTTPURLResponse *_response;
     NSRunLoop *_runLoop;
+    NSString *_storeFrontSuffix;
     BOOL _stopped;
     NSURLRequest *_urlRequest;
 }
@@ -40,12 +41,14 @@
 @property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
 @property(readonly) SSMetricsPageEvent * metricsPageEvent;
 @property BOOL recordsMetrics;
+@property(copy) NSString * storeFrontSuffix;
 @property(copy) id expiredOutputBlock;
 @property(copy) id outputBlock;
 
 
 - (id)cachedURLResponse;
 - (id)URLRequest;
+- (void)setStoreFrontSuffix:(id)arg1;
 - (void)setRecordsMetrics:(BOOL)arg1;
 - (void)setOutputBlock:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
@@ -61,6 +64,7 @@
 - (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (id)expiredOutputBlock;
 - (id)dataConsumer;
+- (id)storeFrontSuffix;
 - (void)_releaseOutputBlocks;
 - (id)outputBlock;
 - (id)_outputForData:(id)arg1 error:(id*)arg2;

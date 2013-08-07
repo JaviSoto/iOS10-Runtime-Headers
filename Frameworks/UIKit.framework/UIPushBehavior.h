@@ -9,9 +9,9 @@
     float _magnitude;
     BOOL _active;
     int _mode;
-    struct CGPoint { 
-        float x; 
-        float y; 
+    struct CGVector { 
+        float dx; 
+        float dy; 
     } _forceVector;
     double _timeInterval;
     NSMutableDictionary *_targetPoints;
@@ -23,7 +23,7 @@
 @property BOOL active;
 @property float angle;
 @property float magnitude;
-@property struct CGSize { float x1; float x2; } pushDirection;
+@property struct CGVector { float x1; float x2; } pushDirection;
 
 
 - (BOOL)active;
@@ -32,8 +32,8 @@
 - (id)init;
 - (void)dealloc;
 - (id)description;
-- (void)setPushDirection:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })pushDirection;
+- (void)setPushDirection:(struct CGVector { float x1; float x2; })arg1;
+- (struct CGVector { float x1; float x2; })pushDirection;
 - (void)setTargetOffsetFromCenter:(struct UIOffset { float x1; float x2; })arg1 forItem:(id)arg2;
 - (struct UIOffset { float x1; float x2; })targetOffsetFromCenterForItem:(id)arg1;
 - (id)initWithItems:(id)arg1 mode:(int)arg2;

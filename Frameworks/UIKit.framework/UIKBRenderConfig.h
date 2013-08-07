@@ -16,6 +16,7 @@
 @property float keycapOpacity;
 @property float keyborderOpacity;
 @property(readonly) BOOL whiteText;
+@property(readonly) int backdropStyle;
 
 + (id)passcodeConfig;
 + (id)darkConfig;
@@ -24,6 +25,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (float)blurSaturation;
+- (int)backdropStyle;
 - (float)keyborderOpacity;
 - (BOOL)lightKeyboard;
 - (BOOL)whiteText;

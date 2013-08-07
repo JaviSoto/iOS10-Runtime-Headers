@@ -41,6 +41,7 @@
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (void)setNetworkType:(int)arg1;
 - (id)modemRegistrationStatus;
+- (BOOL)isCellularDataEnabledForBundleIdentifier:(id)arg1;
 - (id)dataStatusIndicator;
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;

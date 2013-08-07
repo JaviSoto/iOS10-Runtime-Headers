@@ -28,13 +28,13 @@
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
 
 - (void)addSetupAnimationBlock:(id)arg1;
+- (void)setAutorotationDelegate:(id)arg1;
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 - (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)_validEmailAddressesFromArray:(id)arg1;
 - (id)mailComposeDelegate;
 - (id)_internalViewController;
 - (void)finalizeCompositionValues;
-- (void)setAutorotationDelegate:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
@@ -55,6 +55,6 @@
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

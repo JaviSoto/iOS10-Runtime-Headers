@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSString, NSData, NSMutableArray;
 
-@interface GEOSuggestionEntry : PBCodable  {
+@interface GEOSuggestionEntry : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_textHighlights;
     unsigned int _textHighlightsCount;
     unsigned int _textHighlightsSpace;
@@ -33,8 +33,6 @@
 
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)textHighlights;
 - (id)displayLines;
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setTextHighlights:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
 - (id)calloutTitle;
 - (BOOL)hasCalloutTitle;
@@ -61,10 +59,13 @@
 - (BOOL)hasSuggestionEntryMetadata;
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

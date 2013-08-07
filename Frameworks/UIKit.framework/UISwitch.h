@@ -15,6 +15,7 @@
 }
 
 @property(getter=_onColor,setter=_setOnColor:,retain) UIColor * onColor;
+@property(getter=_alwaysShowOnOffLabel,setter=_setAlwaysShowsOnOffLabel:) BOOL alwaysShowOnOffLabel;
 @property(retain) UIColor * onTintColor;
 @property(retain) UIColor * tintColor;
 @property(retain) UIColor * thumbTintColor;
@@ -43,6 +44,8 @@
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 completion:(id)arg4;
 - (void)setAlternateColors:(BOOL)arg1;
 - (float)enabledAlpha;
+- (BOOL)_alwaysShowOnOffLabel;
+- (void)_setAlwaysShowsOnOffLabel:(BOOL)arg1;
 - (id)_onColor;
 - (void)_setOnColor:(id)arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;

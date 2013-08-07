@@ -22,6 +22,8 @@
 - (id)cacheID;
 - (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1 artworkCacheID:(id)arg2;
 - (id)imageWithFormat:(int)arg1 artworkCacheID:(id)arg2 canUseSurfaceBackedImage:(BOOL)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
 - (id)albumImageDataWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)albumImageWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1;

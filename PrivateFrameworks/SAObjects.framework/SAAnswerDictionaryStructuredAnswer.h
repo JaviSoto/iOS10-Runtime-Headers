@@ -28,8 +28,8 @@
 - (void)setDefinitionGroups:(id)arg1;
 - (id)definitionGroups;
 - (id)encodedClassName;
-- (void)setCategory:(id)arg1;
 - (id)category;
+- (void)setCategory:(id)arg1;
 - (id)groupIdentifier;
 
 @end

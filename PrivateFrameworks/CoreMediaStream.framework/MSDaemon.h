@@ -19,11 +19,13 @@
 @property(retain) NSObject<OS_dispatch_queue> * idleCountQueue;
 
 
-- (void)setIdleCountQueue:(id)arg1;
 - (void)setUIBusyCount:(int)arg1;
-- (int)UIBusyCount;
+- (void)setBusyCount:(int)arg1;
 - (void)releaseUIBusy;
 - (void)retainUIBusy;
+- (int)UIBusyCount;
+- (int)busyCount;
+- (void)setIdleCountQueue:(id)arg1;
 - (void)stabilizedDidIdle;
 - (void)_didChangeIdleBusyState:(BOOL)arg1;
 - (void)_hysteresisTimerDidFire:(id)arg1;
@@ -35,8 +37,6 @@
 - (void)releasePowerAssertion;
 - (void)retainPowerAssertion;
 - (id)idleCountQueue;
-- (void)setBusyCount:(int)arg1;
-- (int)busyCount;
 - (void)didUnidle;
 - (void)didIdle;
 - (void)releaseBusy;

@@ -78,8 +78,8 @@
 
 - (BOOL)canBeResolved;
 - (BOOL)shouldProcessProtocol;
-- (id)URLBagURLBlock;
 - (id)URLBagKey;
+- (id)URLBagURLBlock;
 - (id)clientIdentifier;
 - (id)clientAuditTokenData;
 - (id)clientAuditBundleIdentifier;

@@ -16,6 +16,7 @@
 - (void)set_webDateTimeViewController:(id)arg1;
 - (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
 - (void)clear:(id)arg1;
+- (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (id)controlView;
 

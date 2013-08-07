@@ -12,9 +12,9 @@
 - (int)compareByScore:(id)arg1;
 - (int)compareByCategory:(id)arg1;
 - (void)setScore:(float)arg1;
+- (long)category;
 - (id)description;
 - (void)setCategory:(long)arg1;
-- (long)category;
 - (float)score;
 
 @end

@@ -588,6 +588,7 @@
 - (void)_updateFixedPositioningObjectsLayoutAfterVisibleGeometryChange;
 - (void)_notifyPlugInViewsOfScaleChange;
 - (void)_notifyContentHostingLayersOfScaleChange;
+- (void)_updateWebKitExposedScrollViewRect;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)_cleanUpFrameStateAndLoad:(id)arg1;
 - (void)_runLoadBlock:(id)arg1;

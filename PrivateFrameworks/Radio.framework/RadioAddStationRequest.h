@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSMutableDictionary, NSDictionary;
+@class NSString, NSMutableDictionary, NSDictionary;
 
 @interface RadioAddStationRequest : RadioSyncRequest  {
     NSDictionary *_matchDictionary;
     long long _persistentID;
     NSMutableDictionary *_stationDictionary;
+    NSString *_stationHashForSkipHistoryCopying;
 }
 
 

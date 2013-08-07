@@ -2,21 +2,25 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString;
 
 @interface NSProgressValues : NSObject <NSSecureCoding> {
     NSMutableDictionary *_userInfo;
     long long _totalUnitCount;
     long long _completedUnitCount;
+    long long _childCompletedUnitCount;
+    double _fractionCompleted;
+    double _selfFractionCompleted;
+    double _childFractionCompleted;
     NSString *_localizedDescription;
     NSString *_localizedAdditionalDescription;
     BOOL _isCancellable;
     BOOL _isPausable;
     BOOL _isCancelled;
     BOOL _isPaused;
-    NSMutableArray *_children;
     NSString *_kind;
     BOOL _isPrioritizable;
+    BOOL _isFinished;
 }
 
 + (id)decodableClasses;
@@ -24,7 +28,10 @@
 
 - (id)init;
 - (void)dealloc;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setIndeterminate:(BOOL)arg1;
+- (BOOL)isIndeterminate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

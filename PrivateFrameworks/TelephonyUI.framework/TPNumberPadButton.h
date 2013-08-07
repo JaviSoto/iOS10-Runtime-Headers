@@ -38,6 +38,7 @@
 
 - (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (float)alphaOutsideAndInsideRing;
+- (void)setUsesColorDodgeBlending;
 - (id)highlightedGlyphLayer;
 - (id)glyphLayer;
 - (unsigned int)character;

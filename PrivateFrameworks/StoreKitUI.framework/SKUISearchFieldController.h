@@ -27,6 +27,7 @@
 - (void)_loadResultsForURL:(id)arg1;
 - (void)_loadResultsForSearchTerm:(id)arg1;
 - (void)_recordMetricsEvent:(id)arg1;
+- (id)_escapedTermWithTerm:(id)arg1;
 - (id)URLForSearchTerm:(id)arg1;
 - (void)setNumberOfSearchResults:(int)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;

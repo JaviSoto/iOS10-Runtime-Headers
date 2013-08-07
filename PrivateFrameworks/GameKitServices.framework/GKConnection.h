@@ -2,13 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class RTCReporting;
-
 @interface GKConnection : NSObject  {
 }
 
 @property id eventDelegate;
-@property RTCReporting * reportingAgent;
+@property struct opaqueRTCReporting { }* reportingAgent;
 
 + (BOOL)isRelayEnabled;
 + (id)externalAddressForCDXSelfConnectionData:(id)arg1;
@@ -24,8 +22,8 @@
 - (unsigned int)gckPID;
 - (id)eventDelegate;
 - (void)setEventDelegate:(id)arg1;
-- (void)setReportingAgent:(id)arg1;
-- (id)reportingAgent;
+- (void)setReportingAgent:(struct opaqueRTCReporting { }*)arg1;
+- (struct opaqueRTCReporting { }*)reportingAgent;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)preRelease;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;

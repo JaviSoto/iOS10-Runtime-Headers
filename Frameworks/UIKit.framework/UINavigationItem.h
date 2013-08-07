@@ -102,7 +102,6 @@
 - (void)setLeftItemsSupplementBackButton:(BOOL)arg1;
 - (id)_leftBarButtonItems;
 - (id)_rightBarButtonItems;
-- (id)rightBarButtonItems;
 - (void)setRightBarButtonItems:(id)arg1;
 - (void)setLeftBarButtonItems:(id)arg1;
 - (void)setCustomRightView:(id)arg1;
@@ -122,6 +121,7 @@
 - (void)setPrompt:(id)arg1;
 - (id)prompt;
 - (void)_replaceCustomLeftRightViewAtIndex:(unsigned int)arg1 withView:(id)arg2 left:(BOOL)arg3;
+- (void)_removeBarButtonItemViews;
 - (id)backBarButtonItem;
 - (id)currentBackButtonTitle;
 - (void)setBackBarButtonItem:(id)arg1;
@@ -168,6 +168,7 @@
 - (id)_customLeftViews;
 - (void)_setIdealCustomTitleWidth:(float)arg1;
 - (id)titleView;
+- (id)rightBarButtonItems;
 - (void)setFont:(id)arg1;
 - (id)backButtonTitle;
 - (void)_removeBackButtonView;

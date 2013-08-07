@@ -44,6 +44,6 @@ for file in $(curl -s "$HEADERS_WEBSITE_URL" | grep -oi -E 'href="([^"#]+)"' | c
 
 	header_complete_path="${framework_folder_name}/${file}"
 
-	echo "Saving ${header_complete_path}"
+	# echo "Saving ${header_complete_path}"
 	mv $header_file_tmp_path $header_complete_path
 done

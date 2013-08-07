@@ -13,7 +13,7 @@
 - (void)addChild:(id)arg1 order:(unsigned int)arg2;
 - (void)setType:(int)arg1;
 - (void)dealloc;
-- (id)parent;
 - (id)children;
+- (id)parent;
 
 @end

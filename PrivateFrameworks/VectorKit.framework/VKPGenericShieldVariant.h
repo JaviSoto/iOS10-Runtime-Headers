@@ -82,9 +82,9 @@
 - (BOOL)hasTextBaseLine;
 - (float)textBaseLine;
 - (BOOL)hasFontName;
+- (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)copyTo:(id)arg1;
 - (void)setLineSpacing:(float)arg1;
 - (float)lineSpacing;
 - (float)fontSize;

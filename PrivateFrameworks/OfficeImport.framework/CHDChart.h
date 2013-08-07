@@ -89,7 +89,6 @@
 - (id)styleMatrix;
 - (id)workbook;
 - (id)childAtIndex:(unsigned int)arg1;
-- (void)addChild:(id)arg1;
 - (bool)isBinary;
 - (void)setExternalData:(id)arg1;
 - (id)externalData;
@@ -102,6 +101,7 @@
 - (id).cxx_construct;
 - (int)direction;
 - (void)setDirection:(int)arg1;
+- (void)addChild:(id)arg1;
 - (id)children;
 
 @end

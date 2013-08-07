@@ -21,7 +21,6 @@
     unsigned int _droppedFramesSinceLastReportedFrameDrop;
     BOOL __atomicPreviewStartedNotificationNeeded;
     BOOL _atomicMirrorFilterRendering;
-    BOOL _atomicBlackAndWhite;
     BOOL __previewLayerEnabled;
     BOOL __inBackground;
     PLEffectsFullsizeView *__renderEffectsFullsizeView;
@@ -33,13 +32,14 @@
   /* Error parsing encoded ivar type info: @? */
     id __atomicPreviewStartedBlock;
 
+    int _atomicCameraMode;
 }
 
 @property(retain) PLVideoPreviewView * videoPreviewView;
 @property unsigned int filterIndex;
 @property(getter=isShowingGrid) BOOL showGrid;
 @property BOOL mirrorFilterRendering;
-@property(getter=isBlackAndWhite) BOOL blackAndWhite;
+@property int cameraMode;
 @property <PLCameraEffectsRendererDelegate> * delegate;
 @property(retain) PLVideoPreviewView * atomicVideoPreviewView;
 @property unsigned int atomicFilterIndex;
@@ -71,7 +71,7 @@
 - (id)_previewStartedBlock;
 - (void)_handlePreviewStartedFiltered:(BOOL)arg1;
 - (BOOL)_previewStartedNotificationNeeded;
-- (void)_setPreviewStartedNotificationNeeded:(BOOL)arg1;
+- (void)_resumeRendering;
 - (void)_reportStatsForFrameDrops;
 - (void)_updateStatsForFrameWasDropped:(BOOL)arg1;
 - (void)_renderWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -84,9 +84,9 @@
 - (void)_destroyEffectsFullsizeView;
 - (id)atomicVideoPreviewView;
 - (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id)arg1;
-- (void)_setPreviewStartedBlock:(id)arg1;
 - (void)_forceResetToFilteredRendering:(BOOL)arg1;
-- (void)_updateFilterIndexOnEffectsFullsizeView;
+- (void)_setPreviewStartedBlock:(id)arg1;
+- (void)_updateEffectsFullsizeView;
 - (void)setAtomicFilterIndex:(unsigned int)arg1;
 - (unsigned int)atomicFilterIndex;
 - (void)_setupEffectsView:(id)arg1;
@@ -95,22 +95,23 @@
 - (BOOL)_isInBackground;
 - (void)_tearDownEffectsView:(id)arg1;
 - (void)_previewStarted:(id)arg1;
+- (void)_setPreviewStartedNotificationNeeded:(BOOL)arg1;
 - (void)_setVideoDataOutputEnabled:(BOOL)arg1;
 - (void)_setPreviewLayerEnabled:(BOOL)arg1;
 - (void)_createContextIfNecessary;
 - (void)_setInBackground:(BOOL)arg1;
 - (void)setFilterIndex:(unsigned int)arg1;
 - (unsigned int)filterIndex;
-- (BOOL)isBlackAndWhite;
 - (void)setShowGrid:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isShowingGrid;
-- (id)videoPreviewView;
 - (void)setVideoPreviewView:(id)arg1;
+- (id)videoPreviewView;
 - (void)setFilterIndex:(unsigned int)arg1 forceStateChange:(BOOL)arg2 renderNotifyBlock:(id)arg3;
 - (void)setMirrorFilterRendering:(BOOL)arg1;
 - (void)_deviceStarted:(id)arg1;
 - (id)initWithDispatchQueue:(id)arg1;
-- (void)setBlackAndWhite:(BOOL)arg1;
+- (int)cameraMode;
+- (void)setCameraMode:(int)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -118,5 +119,6 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
 
 @end

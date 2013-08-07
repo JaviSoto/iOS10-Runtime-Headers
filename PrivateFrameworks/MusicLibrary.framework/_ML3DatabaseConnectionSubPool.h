@@ -37,11 +37,11 @@
 - (int)connectionsProfilingLevel;
 - (id)checkoutConnection:(BOOL*)arg1;
 - (void)closeConnections;
-- (void)setConnectionsJournalingMode:(unsigned int)arg1;
 - (void)setUseDistantConnections:(BOOL)arg1;
 - (void)setUseReadOnlyConnections:(BOOL)arg1;
 - (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned int)arg2;
 - (void)checkInConnection:(id)arg1;
+- (void)setConnectionsJournalingMode:(unsigned int)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
 - (id)databasePath;
 - (id)init;

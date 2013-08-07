@@ -30,11 +30,11 @@
 - (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
 - (void)setUseAirPlayMusicMode:(BOOL)arg1;
 - (unsigned int)indexOfMediaItem:(id)arg1;
+- (void)_applyAirPlayMusicMode;
 - (void)_handleMediaLibraryDidChange;
 - (void)_performWhileIgnoringShuffleChanges:(id)arg1;
 - (void)setPrefixMediaItems:(id)arg1;
 - (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2;
-- (void)_applyAirPlayMusicMode;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;

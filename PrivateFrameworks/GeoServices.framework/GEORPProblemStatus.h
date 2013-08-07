@@ -4,7 +4,7 @@
 
 @class GEORPResolution, NSString;
 
-@interface GEORPProblemStatus : PBCodable  {
+@interface GEORPProblemStatus : PBCodable <NSCopying> {
     double _creationDate;
     NSString *_problemID;
     GEORPResolution *_problemResolution;
@@ -25,8 +25,6 @@
 @property(retain) GEORPResolution * problemResolution;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setHasProblemState:(BOOL)arg1;
 - (void)setHasCreationDate:(BOOL)arg1;
 - (id)problemResolution;
@@ -40,12 +38,15 @@
 - (void)setProblemResolution:(id)arg1;
 - (void)setProblemID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setCreationDate:(double)arg1;
 - (double)creationDate;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

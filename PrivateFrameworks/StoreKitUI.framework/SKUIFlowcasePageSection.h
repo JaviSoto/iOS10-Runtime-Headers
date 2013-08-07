@@ -26,6 +26,7 @@
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
 - (id)_missingItemLoader;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (void)willAppearInContext:(id)arg1;
 - (void)restorePinnedHeaderView:(id)arg1;
 - (id)popPinnedHeaderView;
 - (int)numberOfCells;

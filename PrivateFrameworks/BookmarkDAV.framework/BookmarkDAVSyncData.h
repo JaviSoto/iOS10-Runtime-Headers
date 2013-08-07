@@ -33,6 +33,7 @@
 @property(retain) NSURL * principalURL;
 
 
+- (void)setClientVersion:(unsigned int)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (id)principalURL;
 - (void)setSyncToken:(id)arg1;
@@ -74,7 +75,6 @@
 - (id)ctag;
 - (id)etag;
 - (void)setEtag:(id)arg1;
-- (void)setClientVersion:(unsigned int)arg1;
 - (BOOL)hasChanges;
 - (void)dealloc;
 

@@ -41,6 +41,7 @@
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)_showItemOfferConfirmationAction:(id)arg1;
 - (void)_cancelItemOfferConfirmationAction:(id)arg1;
+- (id)_parentCollectionViewCell;
 - (void)_getParentTableView:(id*)arg1 collectionView:(id*)arg2;
 - (void)layoutForItemOfferChange;
 - (void)_reloadItemOfferVisibility;

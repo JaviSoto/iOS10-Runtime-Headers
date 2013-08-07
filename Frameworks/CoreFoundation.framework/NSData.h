@@ -185,8 +185,8 @@
 - (id)mf_locationsOfUnixNewlinesNeedingConversion;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)mf_MD5Digest;
-- (id)lowercaseHexStringWithoutSpaces;
 - (id)uppercaseHexStringWithoutSpaces;
+- (id)lowercaseHexStringWithoutSpaces;
 - (id)hexString;
 - (id)hexEncoding;
 - (id)SHA256Hash;

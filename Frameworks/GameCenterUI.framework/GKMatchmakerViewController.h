@@ -47,7 +47,6 @@
 - (void)setupNotifications;
 - (void)setBrowsingForNearbyPlayers:(BOOL)arg1;
 - (void)setMatchRequest:(id)arg1;
-- (id)remoteViewController;
 - (void)setHostedViewController:(id)arg1;
 - (id)hostedViewController;
 - (void)authenticationChanged:(id)arg1;
@@ -71,6 +70,7 @@
 - (id)init;
 - (void)dealloc;
 - (void)cancel;
+- (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

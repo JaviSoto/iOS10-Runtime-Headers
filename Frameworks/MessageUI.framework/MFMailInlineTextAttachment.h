@@ -40,8 +40,8 @@
 - (BOOL)needsRedownload;
 - (BOOL)hasBeenDownloaded;
 - (unsigned int)approximateSize;
-- (void)setFileWrapper:(id)arg1;
 - (id)initWithWrapper:(id)arg1;
+- (void)setFileWrapper:(id)arg1;
 - (void)dealloc;
 - (void)download;
 

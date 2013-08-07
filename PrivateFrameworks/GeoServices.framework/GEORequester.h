@@ -22,11 +22,6 @@
 + (void)setLogRequestResponseDirectory:(id)arg1;
 + (id)_logRequestResponseDirectory;
 
-- (id)logResponseToFile;
-- (id)logRequestToFile;
-- (id)requestPreamble;
-- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
-- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
 - (id)debugRequestName;
 - (id)persistentConnectionSession;
@@ -39,6 +34,11 @@
 - (void)setDebugRequestName:(id)arg1;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2 usePersistentConnection:(BOOL)arg3 useBackgroundConnection:(BOOL)arg4;
+- (id)logResponseToFile;
+- (id)logRequestToFile;
+- (id)requestPreamble;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
+- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
 - (void)dealloc;
 - (void)start;
 

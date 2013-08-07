@@ -50,10 +50,12 @@
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (BOOL)isRoot;
+- (id)category;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)setCategory:(id)arg1;
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -61,7 +63,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)setCategory:(id)arg1;
-- (id)category;
 
 @end

@@ -44,7 +44,6 @@
 - (void)setExcludedExtensionCandidates:(BOOL)arg1;
 - (void)setDefaultCandidate:(id)arg1;
 - (BOOL)isSubsetOf:(id)arg1;
-- (BOOL)isDummySet;
 - (void)setBatchCandidateLocation:(unsigned int)arg1;
 - (void)setGeneratedCandidateCount:(unsigned int)arg1;
 - (BOOL)excludedExtensionCandidates;
@@ -76,7 +75,10 @@
 - (id)setByAppendingSet:(id)arg1;
 - (BOOL)hasMetadata;
 - (id)firstCandidate;
+- (BOOL)isDummySet;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)candidateGroupsForSortIndex:(int)arg1;
+- (BOOL)candidatesForSortIndexShowAlternativeText:(int)arg1;
 
 @end

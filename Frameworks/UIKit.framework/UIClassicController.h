@@ -19,11 +19,11 @@
 - (void)setDrawsStatusBarFiller:(BOOL)arg1;
 - (BOOL)drawsStatusBarFiller;
 - (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(id)arg3;
+- (void)_classicChangeStatusBarOrientation:(id)arg1;
 - (void)setZoomed:(BOOL)arg1;
 - (BOOL)isZoomed;
 - (BOOL)_shouldHideStatusBar;
 - (BOOL)_supportsZoom;
-- (void)_classicChangeStatusBarOrientation:(id)arg1;
 - (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (void)_setupWindow;

@@ -55,10 +55,10 @@
 - (void)setBoundingBox;
 - (id)initWithOadDrawable:(id)arg1 parent:(id)arg2;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (id)initWithParent:(id)arg1;
 - (float)rotation;
 - (void)dealloc;
 - (id).cxx_construct;
 - (void)setRotation:(float)arg1;
+- (id)initWithParent:(id)arg1;
 
 @end

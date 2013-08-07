@@ -26,6 +26,7 @@
 + (int)maxAssetsPerStream;
 + (int)maxSubscribersPerStream;
 + (int)maxVideoLengthForPublishing;
++ (void)retryOutstandingActivities;
 + (BOOL)debugDownloadMetadataOnly;
 + (BOOL)debugDownloadThumbnailsOnly;
 + (void)deleteDebugBreadcrumbsForAlbumGUID:(id)arg1;
@@ -44,6 +45,8 @@
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
 + (void)deleteCommentWithGUIDFromServer:(id)arg1;
 + (void)publishCloudSharedCommentToServer:(id)arg1;
++ (void)handlePhoneInvitationFailuresWithCompletionBlock:(id)arg1;
++ (void)savePhoneInvitationFailuresForPhoneNumber:(id)arg1 inAlbum:(id)arg2;
 + (BOOL)hasPhoneInvitationForAlbum:(id)arg1;
 + (void)acceptPendingInvitationForAlbum:(id)arg1 completion:(id)arg2;
 + (void)removeSubscribers:(id)arg1 fromOwnedAlbum:(id)arg2;
@@ -71,6 +74,8 @@
 + (struct CGSize { float x1; float x2; })videoPosterFrameDimension;
 + (id)temporaryVideoPosterFramePathForCollectionGUID:(id)arg1;
 + (id)temporaryVideoPathForCollectionGUID:(id)arg1;
++ (id)_processPhoneFailuresQueue;
++ (id)_phoneInvitationFailureFile;
 + (void)unsubscribeFromAlbum:(id)arg1;
 + (BOOL)isCellularConnection;
 + (void)writeUploadDebugBreadcrumbForAssetCollections:(id)arg1 state:(int)arg2 error:(id)arg3;

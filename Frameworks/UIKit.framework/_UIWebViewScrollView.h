@@ -20,5 +20,6 @@
 - (void)setBouncesVertically:(BOOL)arg1;
 - (void)setBouncesHorizontally:(BOOL)arg1;
 - (void)setBounces:(BOOL)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

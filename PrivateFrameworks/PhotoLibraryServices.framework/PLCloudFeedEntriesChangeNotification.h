@@ -32,5 +32,6 @@
 - (id)object;
 - (id)name;
 - (id)userInfo;
+- (void)dealloc;
 
 @end

@@ -64,7 +64,6 @@
 @property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
 @property(readonly) NSArray * visibleTileSets;
 @property(getter=isFullyDrawn,readonly) BOOL fullyDrawn;
-@property struct Vec2Imp<float> { float x1; float x2; } deviceTilt;
 @property(readonly) VKAnchorWrapper * externalAnchors;
 
 + (BOOL)supportsMapType:(int)arg1;

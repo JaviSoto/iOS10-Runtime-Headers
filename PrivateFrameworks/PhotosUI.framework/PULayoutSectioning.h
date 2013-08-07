@@ -26,12 +26,12 @@
 - (int)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
 - (void)_baseSectioningDidInvalidateSections:(id)arg1;
 - (void)_baseSectioningDidInvalidateSampling:(id)arg1;
-- (void)invalidateSampling;
 - (int)numberOfRealItemsInVisualSection:(int)arg1;
 - (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
 - (struct PUSimpleIndexPath { int x1; int x2; })visualIndexPathForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1 isMainItem:(BOOL*)arg2;
 - (struct PUSimpleIndexPath { int x1; int x2; })mainRealItemIndexPathForVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
 - (void)invalidateSections;
+- (void)invalidateSampling;
 - (int)numberOfVisualItemsInVisualSection:(int)arg1;
 - (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
 - (int)mainRealSectionForVisualSection:(int)arg1;

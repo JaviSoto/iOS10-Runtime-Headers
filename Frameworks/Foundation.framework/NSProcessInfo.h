@@ -14,10 +14,10 @@
 
 + (id)processInfo;
 
+- (unsigned int)processorCount;
 - (id)environment;
 - (id)init;
 - (void)dealloc;
-- (unsigned int)processorCount;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id)arg3;
 - (void)endActivity:(id)arg1;
 - (id)beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
@@ -49,6 +49,7 @@
 - (id)hostName;
 - (void)setArguments:(id)arg1;
 - (id)arguments;
+- (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
 - (unsigned int)operatingSystem;
 - (id)processName;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;

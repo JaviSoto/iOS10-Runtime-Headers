@@ -73,7 +73,6 @@
 - (id)keyLayout;
 - (id)inputMode;
 - (id)inputForMarkedText;
-- (void)setSearchStringForMarkedText:(id)arg1;
 - (id)searchStringForMarkedText;
 - (id)currentCandidate;
 - (id)documentState;
@@ -86,6 +85,7 @@
 - (void)setUserSelectedCurrentCandidate:(BOOL)arg1;
 - (void)setSuppressingCandidateSelection:(BOOL)arg1;
 - (void)setAutocapitalizationEnabled:(BOOL)arg1;
+- (void)setSearchStringForMarkedText:(id)arg1;
 - (void)setInputForMarkedText:(id)arg1;
 - (void)setShouldSkipCandidateSelection:(BOOL)arg1;
 - (void)setDocumentState:(id)arg1;

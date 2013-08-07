@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class _UIAccessDeniedView, ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABContactViewController, <ABPresenterDelegate>, <ABStyleProvider>, ABContactsFilter, <ABNewPersonViewControllerDelegate>;
+@class ABContactsFilter, _UIAccessDeniedView, ABPersonTableViewDataSource, ABContactViewController, ABPersonViewControllerHelper, <ABPresenterDelegate>, <ABStyleProvider>, CNContact, <ABNewPersonViewControllerDelegate>;
 
 @interface ABNewPersonViewController : UIViewController  {
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
@@ -15,6 +15,7 @@
     void *_parentSource;
     ABContactViewController *_contactViewController;
     <ABPresenterDelegate> *_presentingDelegate;
+    CNContact *_mergeContact;
 }
 
 @property <ABNewPersonViewControllerDelegate> * newPersonViewDelegate;
@@ -29,6 +30,7 @@
 @property(retain) ABContactsFilter * parentContactsFilter;
 @property(readonly) ABContactViewController * contactViewController;
 @property <ABPresenterDelegate> * presentingDelegate;
+@property(retain) CNContact * mergeContact;
 @property BOOL showsCancelButton;
 @property(readonly) _UIAccessDeniedView * accessDeniedView;
 @property BOOL isRealViewLoaded;
@@ -45,6 +47,7 @@
 - (id)helper;
 - (BOOL)savesNewContactOnSuspend;
 - (id)newPersonViewDelegate;
+- (id)mergeContact;
 - (void*)parentSource;
 - (void)setIsRealViewLoaded:(BOOL)arg1;
 - (BOOL)isRealViewLoaded;
@@ -59,6 +62,7 @@
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)setPresentingDelegate:(id)arg1;
 - (id)presentingDelegate;
+- (void)setMergeContact:(id)arg1;
 - (void)setNewPersonViewDelegate:(id)arg1;
 - (id)contactViewController;
 - (void)setDisplayedPerson:(void*)arg1;

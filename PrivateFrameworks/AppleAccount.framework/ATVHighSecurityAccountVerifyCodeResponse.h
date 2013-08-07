@@ -2,12 +2,20 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
+@class NSString;
+
 @interface ATVHighSecurityAccountVerifyCodeResponse : AAResponse  {
 }
 
 @property(readonly) BOOL success;
+@property(readonly) NSString * errorTitle;
+@property(readonly) NSString * errorMessage;
+@property(readonly) int errorCode;
 
 
+- (id)errorMessage;
+- (id)errorTitle;
 - (BOOL)success;
+- (int)errorCode;
 
 @end

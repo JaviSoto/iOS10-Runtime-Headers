@@ -27,9 +27,9 @@
 - (void)reloadView;
 - (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
-- (id)videoViewController;
 - (void)setVideoViewController:(id)arg1;
+- (id)videoViewController;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (id)playbackErrorDescription;
 - (void)setPlaybackErrorDescription:(id)arg1;
 - (void)setItem:(id)arg1;

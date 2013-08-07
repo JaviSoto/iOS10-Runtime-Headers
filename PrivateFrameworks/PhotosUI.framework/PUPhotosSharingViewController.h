@@ -4,7 +4,7 @@
 
 @class PUPhotosSharingTransitionContext, UICollectionViewLayout, PLManagedAsset, PUPhotosSharingViewControllerSpec, <PLAssetContainerList>, NSMutableSet, UIBarButtonItem, PUPhotoSelectionManager, UIView, <PUPhotosSharingViewControllerDelegate>, UICollectionView, PUPhotosSharingCollectionViewLayout, UITapGestureRecognizer, PUImageManager, PUActivityViewController, NSMutableArray, NSIndexPath;
 
-@interface PUPhotosSharingViewController : UIViewController <PLDismissableViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUActivityViewControllerDelegate, PUPhotosSharingGridCellDelegate, PUPhotosSharingCollectionViewLayoutDelegate, UIActivityViewControllerDelegate> {
+@interface PUPhotosSharingViewController : UIViewController <PLDismissableViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUActivityViewControllerDelegate, PUPhotosSharingGridCellDelegate, PUPhotosSharingCollectionViewLayoutDelegate, UIActivityViewControllerDelegate, PUPhotosSharingTransitionViewController> {
     NSMutableArray *_pendingCollectionListChangeNotifications;
     NSMutableArray *_pendingSingleCollectionChangeNotifications;
     UITapGestureRecognizer *_tapGestureRecognizer;
@@ -57,9 +57,10 @@
 - (id)currentIndexPath;
 - (void)_didFinishPostingNotifications:(id)arg1;
 - (void)setPhotoSelectionManager:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
 - (void)setPhotosSharingTransitionLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setPhotosSharingTransitionContext:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
+- (id)transitionCollectionView;
 - (struct CGSize { float x1; float x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)layout:(id)arg1 collectionView:(id)arg2 referenceIndexPathWithOffsetX:(float*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layout:(id)arg1 collectionView:(id)arg2 selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 atIndexPath:(id)arg4;

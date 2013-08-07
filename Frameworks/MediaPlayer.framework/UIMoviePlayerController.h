@@ -54,7 +54,6 @@
         unsigned int alwaysFullscreen : 1; 
         unsigned int canAnimateControlsOverlay : 1; 
         unsigned int autoplayWhenLikelyToKeepUp : 1; 
-        unsigned int externalSourceManagesStatusBar : 1; 
         unsigned int disallowsVideoOut : 1; 
         unsigned int exited : 1; 
         unsigned int generatingOrientationNotifications : 1; 
@@ -69,7 +68,7 @@
         unsigned int alwaysAllowHidingControlsOverlay : 1; 
         unsigned int schedulePortraitLoadingIndicator : 1; 
         unsigned int clientClearedMoviePath : 1; 
-        unsigned int canCommitStatusBarAndOverlayChanges : 1; 
+        unsigned int canCommitOverlayChanges : 1; 
         unsigned int usingDebugTestPath : 1; 
         unsigned int allowsWirelessPlayback : 1; 
         unsigned int useHostedWindowWhenFullscreen : 1; 
@@ -130,6 +129,7 @@
 
 + (Class)preferredWindowClass;
 + (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 interfaceOrientation:(int)arg3 destinationTVOut:(BOOL)arg4;
++ (void)allInstancesResignActiveForced:(BOOL)arg1;
 + (void)allInstancesResignActive;
 
 - (BOOL)isPreparedForPlayback;

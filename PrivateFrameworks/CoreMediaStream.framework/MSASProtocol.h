@@ -29,7 +29,6 @@
 @property(readonly) NSString * headerVersion;
 
 
-- (void)shutDownCompletionBlock:(id)arg1;
 - (id)headerVersion;
 - (void)setPendingConnectionsGroup:(id)arg1;
 - (id)pendingConnectionsGroup;
@@ -107,6 +106,7 @@
 - (void)setServerSideConfigVersion:(id)arg1;
 - (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
 - (BOOL)isShuttingDown;

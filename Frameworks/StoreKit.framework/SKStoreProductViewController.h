@@ -9,6 +9,7 @@
 @class _UIAsyncInvocation, <SKStoreProductViewControllerDelegatePrivate>, GKGame, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, <SKStoreProductViewControllerDelegate>, SKRemoteProductViewController, NSDictionary, NSString;
 
 @interface SKStoreProductViewController : UIViewController  {
+    NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
     BOOL _automaticallyDismisses;
     _UIAsyncInvocation *_cancelRequest;
@@ -35,6 +36,7 @@
 @property(copy) NSDictionary * scriptContextDictionary;
 @property int productPageStyle;
 @property BOOL showsStoreButton;
+@property(copy) NSString * additionalBuyParameters;
 @property BOOL automaticallyDismisses;
 
 + (void)getCanLoadURL:(id)arg1 completionBlock:(id)arg2;
@@ -47,6 +49,7 @@
 - (id)scriptContextDictionary;
 - (id)clientIdentifier;
 - (BOOL)automaticallyDismisses;
+- (id)additionalBuyParameters;
 - (void)_resetRemoteViewController;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;
 - (void)_didFinishWithResult:(int)arg1;
@@ -63,6 +66,7 @@
 - (void)setProductPageStyle:(int)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
+- (void)setAdditionalBuyParameters:(id)arg1;
 - (id)affiliateIdentifier;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id)arg2;
 - (void)setDelegate:(id)arg1;

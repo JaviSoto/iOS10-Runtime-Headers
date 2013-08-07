@@ -13,7 +13,6 @@
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
 
 - (void)propagateTextTypeToDrawables;
-- (id)imageName;
 - (void)setImageBlipRef:(id)arg1;
 - (id)imageBlipRef;
 - (void)clearDrawable;
@@ -26,6 +25,7 @@
 - (id)drawable;
 - (BOOL)isDrawableOverridden;
 - (id)initWithParagraph:(id)arg1;
+- (id)imageName;
 - (bool)isFloating;
 - (void)setProperties:(id)arg1;
 - (id)imageData;

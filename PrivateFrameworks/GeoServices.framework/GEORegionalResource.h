@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEORegionalResource : PBCodable  {
+@interface GEORegionalResource : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
     unsigned int _tileRangesCount;
     unsigned int _tileRangesSpace;
@@ -41,8 +41,6 @@
 @property(readonly) unsigned int* validSubManifestVersions;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setValidSubManifestVersions:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int*)validSubManifestVersions;
 - (void)setHasZ:(BOOL)arg1;
@@ -78,10 +76,13 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (void)setZ:(unsigned int)arg1;

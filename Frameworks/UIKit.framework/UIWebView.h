@@ -135,13 +135,14 @@
 - (void)_webViewCommonInitWithWebView:(id)arg1 scalesPageToFit:(BOOL)arg2 shouldEnableReachability:(BOOL)arg3;
 - (void)setScalesPageToFit:(BOOL)arg1;
 - (void)_didRotate:(id)arg1;
-- (void)_updateViewSettings;
 - (void)_updateOpaqueAndBackgroundColor;
 - (void)_setDrawInWebThread:(BOOL)arg1;
 - (void)_updateCheckeredPattern;
+- (void)_updateBrowserViewExposedScrollViewRect;
 - (void)_setRichTextReaderViewportSettings;
 - (void)_setScalesPageToFitViewportSettings;
 - (id)_browserView;
+- (void)_updateViewSettings;
 - (BOOL)scalesPageToFit;
 - (void)scrollViewWasRemoved:(id)arg1;
 - (id)_documentView;
@@ -181,6 +182,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)stopLoading;
 - (id)request;

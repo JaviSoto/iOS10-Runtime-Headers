@@ -83,7 +83,6 @@
 }
 
 @property id delegate;
-@property id autorotationDelegate;
 @property(retain) id remoteViewControllerProxy;
 @property(retain) MFGenericAttachmentStore * attachmentStore;
 @property(readonly) MFOutgoingMessageDelivery * delivery;
@@ -121,8 +120,6 @@
 - (id)lastDraftMessageID;
 - (id)atomPresentingCard;
 - (void)setRemoteViewControllerProxy:(id)arg1;
-- (void)setAutorotationDelegate:(id)arg1;
-- (id)autorotationDelegate;
 - (void)hostApplicationWillEnterForeground;
 - (void)hostApplicationDidEnterBackground;
 - (void)composeShortcutInvoked:(id)arg1;
@@ -201,7 +198,7 @@
 - (void)_setLastFocusedRecipientView:(id)arg1;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (BOOL)_anyRecipientViewContainsAddress:(id)arg1;
-- (void)_updateAutoBccWithSendingAddress:(id)arg1;
+- (void)_updateAutoBccSendingAddress:(id)arg1 withNewSendingAddress:(id)arg2;
 - (void)_dismissPersonCard;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
@@ -397,7 +394,6 @@
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheetCancel:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)shouldAutorotate;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

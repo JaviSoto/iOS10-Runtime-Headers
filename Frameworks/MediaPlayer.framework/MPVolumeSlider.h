@@ -12,6 +12,7 @@
     UIImageView *_thumbImageView;
     UIImageView *_thumbMaskImageView;
     BOOL _isOffScreen;
+    BOOL _thumbIsDefault;
     UIView *_volumeWarningView;
     BOOL _volumeWarningBlinking;
     UIImage *_volumeWarningTrackImage;
@@ -36,6 +37,7 @@
 - (void)_blinkWarningView;
 - (id)_newVolumeWarningView;
 - (void)_routeNameLabelAnimationDidEnd;
+- (id)_thumbImageForStyle:(int)arg1;
 - (void)_beginBlinkingWarningView;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (id)volumeAudioCategory;
@@ -48,7 +50,7 @@
 - (void)_endBlinkingWarningView;
 - (id)_maxTrackImageForStyle:(int)arg1;
 - (id)_minTrackImageForStyle:(int)arg1;
-- (id)_thumbImageForStyle:(int)arg1;
+- (void)_resetThumbImageForState:(unsigned int)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -60,6 +62,7 @@
 - (int)style;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)setThumbImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (float)maximumValue;
 - (float)minimumValue;
@@ -68,10 +71,10 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)didMoveToSuperview;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)didMoveToWindow;
 - (void)setAlpha:(float)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

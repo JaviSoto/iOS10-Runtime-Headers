@@ -33,8 +33,8 @@
 - (void)setSecureText:(BOOL)arg1;
 - (unsigned int)promptID;
 - (void)setPromptID:(unsigned int)arg1;
-- (unsigned long long)sessionID;
 - (void)setSessionID:(unsigned long long)arg1;
+- (unsigned long long)sessionID;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setMessageType:(unsigned int)arg1;

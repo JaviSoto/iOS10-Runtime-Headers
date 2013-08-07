@@ -25,11 +25,9 @@
 - (void)_updateCachedCount:(unsigned int)arg1 forContainerAtContainerIndex:(unsigned int)arg2;
 - (id)assetContainerForAssetGlobalIndex:(unsigned int)arg1;
 - (id)assetContainerForAsset:(id)arg1;
-- (unsigned int)globalIndexOfAsset:(id)arg1;
 - (id)fetchAllAssets;
 - (BOOL)hasAssetAtIndexPath:(id)arg1;
 - (unsigned int)assetCountForContainerAtIndex:(unsigned int)arg1;
-- (id)indexPathForGlobalIndex:(unsigned int)arg1;
 - (id)decrementAssetIndexPath:(id)arg1 insideCurrentAssetContainer:(BOOL)arg2 andWrap:(BOOL)arg3;
 - (id)incrementAssetIndexPath:(id)arg1 insideCurrentAssetContainer:(BOOL)arg2 andWrap:(BOOL)arg3;
 - (id)assetAtGlobalIndex:(unsigned int)arg1;
@@ -37,6 +35,8 @@
 - (id)assetContainerAtIndex:(unsigned int)arg1;
 - (unsigned int)decrementGlobalIndex:(unsigned int)arg1 insideCurrentAssetContainer:(BOOL)arg2 andWrap:(BOOL)arg3;
 - (unsigned int)incrementGlobalIndex:(unsigned int)arg1 insideCurrentAssetContainer:(BOOL)arg2 andWrap:(BOOL)arg3;
+- (id)indexPathForGlobalIndex:(unsigned int)arg1;
+- (unsigned int)globalIndexOfAsset:(id)arg1;
 - (unsigned int)globalIndexForIndexPath:(id)arg1;
 - (id)firstAssetIndexPath;
 - (id)assetAtIndexPath:(id)arg1;

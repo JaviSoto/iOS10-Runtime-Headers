@@ -32,6 +32,8 @@
     double _testPictureRepeatDelay;
     BOOL __shouldShowCameraRoll;
     BOOL __dismissingCameraRoll;
+    BOOL __dismissingCameraRollForSuspension;
+    BOOL __shouldRetryDismissal;
     BOOL __handlesVolumeButtons;
     BOOL __ignoringVolumeButtons;
     struct NSObject { Class x1; } *_cameraAlbum;
@@ -47,6 +49,8 @@
 @property double testPictureRepeatDelay;
 @property(setter=_setShouldShowCameraRoll:) BOOL _shouldShowCameraRoll;
 @property(getter=_isDismissingCameraRoll,setter=_setDismissingCameraRoll:) BOOL _dismissingCameraRoll;
+@property(getter=_isDismissingCameraRollForSuspension,setter=_setDismissingCameraRollForSuspension:) BOOL _dismissingCameraRollForSuspension;
+@property(readonly) BOOL _shouldRetryDismissal;
 @property(readonly) UIViewController * _cameraRollViewController;
 @property(setter=_setHandlesVolumeButtons:) BOOL _handlesVolumeButtons;
 @property(setter=_setIgnoringVolumeButtons:) BOOL _ignoringVolumeButtons;
@@ -61,6 +65,9 @@
 - (BOOL)_ignoringVolumeButtons;
 - (void)_setHandlesVolumeButtons:(BOOL)arg1;
 - (BOOL)_handlesVolumeButtons;
+- (BOOL)_shouldRetryDismissal;
+- (void)_setDismissingCameraRollForSuspension:(BOOL)arg1;
+- (BOOL)_isDismissingCameraRollForSuspension;
 - (void)_setDismissingCameraRoll:(BOOL)arg1;
 - (BOOL)_isDismissingCameraRoll;
 - (id)previewButtonAction;
@@ -85,7 +92,6 @@
 - (void)cleanupForCameraEnd;
 - (id)_packedArrayFromDictionary:(id)arg1;
 - (BOOL)_shouldResumeTorch;
-- (void)dismissCameraRollAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (BOOL)showingCameraPreview;
 - (void)pausePhotoStreams;
 - (id)_dictionaryFromPackedArray:(id)arg1;
@@ -95,6 +101,7 @@
 - (double)testPictureRepeatDelay;
 - (void)startPictureTest;
 - (void)stopCameraPreviewAnimated:(BOOL)arg1;
+- (void)dismissCameraRollAnimated:(BOOL)arg1 forSuspension:(BOOL)arg2;
 - (void)_updateVolumeButtonEventsAbility;
 - (BOOL)_shouldShowCameraRoll;
 - (struct NSObject { Class x1; }*)_cameraAlbum;

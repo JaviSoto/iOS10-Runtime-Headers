@@ -8,11 +8,13 @@
     BOOL _settingUpActivationState;
     BOOL _isInternalInstall;
     BOOL _isCarrierInstall;
+    BOOL _isVendorInstall;
     BOOL _hasShownMismatchedSIM;
     BOOL _hasShownWaitingAlertThisSession;
     unsigned int _state;
 }
 
+@property(readonly) BOOL isVendorInstall;
 @property(readonly) BOOL isInternalInstall;
 @property(readonly) BOOL isCarrierInstall;
 @property(readonly) BOOL isActivated;
@@ -20,6 +22,7 @@
 @property(readonly) NSString * uniqueDeviceIdentifier;
 @property(setter=_setState:) unsigned int _state;
 @property BOOL _settingUpActivationState;
+@property BOOL _isVendorInstall;
 @property BOOL _isInternalInstall;
 @property BOOL _isCarrierInstall;
 @property BOOL _hasShownWaitingAlertThisSession;
@@ -31,6 +34,8 @@
 - (BOOL)_hasShownWaitingAlertThisSession;
 - (void)set_hasShownMismatchedSIM:(BOOL)arg1;
 - (BOOL)_hasShownMismatchedSIM;
+- (void)set_isVendorInstall:(BOOL)arg1;
+- (BOOL)_isVendorInstall;
 - (void)set_isCarrierInstall:(BOOL)arg1;
 - (BOOL)_isCarrierInstall;
 - (void)set_isInternalInstall:(BOOL)arg1;
@@ -40,10 +45,12 @@
 - (BOOL)isExpired;
 - (BOOL)isActivated;
 - (BOOL)isCarrierInstall;
+- (BOOL)isVendorInstall;
 - (void)_resetActivationState;
 - (void)_activationFailed;
 - (int)lockdownState;
 - (void)_setupActivationState;
+- (void)_calculateInstallType;
 - (BOOL)isInternalInstall;
 - (id)init;
 - (void)dealloc;

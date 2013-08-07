@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOResources : PBCodable  {
+@interface GEOResources : PBCodable <NSCopying> {
     NSString *_addressCorrectionInitURL;
     NSString *_addressCorrectionUpdateURL;
     NSMutableArray *_attributionBadges;
@@ -96,8 +96,6 @@
 @property(retain) NSString * problemStatusURL;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)xmlChecksums;
 - (id)iconChecksums;
 - (id)fontChecksums;
@@ -243,11 +241,14 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)styleSheets;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)icons;
 - (void)setIcons:(id)arg1;
 - (id)dictionaryRepresentation;

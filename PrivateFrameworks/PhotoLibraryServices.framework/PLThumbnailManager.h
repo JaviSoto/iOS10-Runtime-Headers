@@ -46,6 +46,7 @@
 + (int)thumbnailFormat;
 + (BOOL)hasRebuildThumbnailsRequest;
 + (id)defaultThumbnailsDirectory;
++ (id)defaultThumbnailsDirectoryV2;
 + (void)removeObsoleteMetadata;
 + (BOOL)hasObsoleteThumbnailTables;
 + (BOOL)isMissingThumbnailTables;

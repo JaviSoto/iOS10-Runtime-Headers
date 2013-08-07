@@ -35,6 +35,7 @@
 - (BOOL)isModern;
 - (id)weekdayLabel;
 - (id)dateLabel;
+- (BOOL)_canBeReusedInPickerView;
 - (void)layoutSubviews;
 
 @end

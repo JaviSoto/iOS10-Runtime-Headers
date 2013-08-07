@@ -15,8 +15,9 @@
     float _showMoreMaxY;
     unsigned int _numHeaders;
     unsigned int _numFooters;
+    unsigned int _numOverlays;
     unsigned int _numItems;
-    unsigned int _numDividers;
+    unsigned int _overlayOffset;
 }
 
 @property int section;
@@ -31,14 +32,17 @@
 @property float showMoreMaxY;
 @property unsigned int numHeaders;
 @property unsigned int numFooters;
+@property unsigned int numOverlays;
 @property unsigned int numItems;
-@property unsigned int numDividers;
+@property unsigned int overlayOffset;
 
 
-- (void)setNumDividers:(unsigned int)arg1;
-- (unsigned int)numDividers;
+- (void)setOverlayOffset:(unsigned int)arg1;
+- (unsigned int)overlayOffset;
 - (void)setNumItems:(unsigned int)arg1;
 - (unsigned int)numItems;
+- (void)setNumOverlays:(unsigned int)arg1;
+- (unsigned int)numOverlays;
 - (void)setNumFooters:(unsigned int)arg1;
 - (unsigned int)numFooters;
 - (void)setNumHeaders:(unsigned int)arg1;
@@ -58,7 +62,7 @@
 - (float)headerMaxY;
 - (void)setHeaderMinY:(float)arg1;
 - (float)headerMinY;
-- (void)updateWithLayoutAttributes:(id)arg1 supplementaryInHeader:(BOOL)arg2;
+- (void)updateWithLayoutAttributes:(id)arg1 supplementaryLocation:(unsigned int)arg2;
 - (float)itemsMinY;
 - (float)showMoreMaxY;
 - (id)initWithSection:(int)arg1 presentationData:(id)arg2;

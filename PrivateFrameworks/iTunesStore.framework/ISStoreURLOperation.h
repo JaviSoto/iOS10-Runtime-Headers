@@ -7,7 +7,6 @@
 @interface ISStoreURLOperation : ISURLOperation  {
     NSNumber *_authenticatedDSID;
     BOOL _canSendGUIDParameter;
-    BOOL _didAuthenticate;
     BOOL _ignorePreexistingSecureToken;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
@@ -36,16 +35,14 @@
 + (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3;
 + (id)pingOperationWithUrl:(id)arg1;
 
-- (BOOL)ignorePreexistingSecureToken;
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (void)setShouldSendXTokenHeader:(BOOL)arg1;
 - (void)setPerformsMachineDataActions:(BOOL)arg1;
 - (void)setIgnorePreexistingSecureToken:(BOOL)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (BOOL)performsMachineDataActions;
-- (BOOL)ignorePreexsitingSecureToken;
+- (BOOL)ignorePreexistingSecureToken;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
-- (id)_resolvedURL;
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (BOOL)needsURLBag;
 - (BOOL)useUserSpecificURLBag;

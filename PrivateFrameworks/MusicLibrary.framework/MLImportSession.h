@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSDictionary, NSCache, MLMediaLibraryServiceStatementAccumulator, ML3DatabaseConnection, ML3SortMap;
+@class ML3DatabaseConnection, ML3SortMap, NSCache, ML3PersistentIDGenerator, NSDictionary, ML3MusicLibrary, MLMediaLibraryServiceStatementAccumulator;
 
 @interface MLImportSession : NSObject  {
     ML3DatabaseConnection *_readerConnection;
@@ -41,6 +41,7 @@
     } _stats;
     int _sourceType;
     BOOL _rebuildIndexes;
+    ML3PersistentIDGenerator *_persistentIDGenerator;
     NSCache *_artistPIDsForGroupingKeys;
     NSCache *_albumArtistPIDsForGroupingKeys;
     NSCache *_composerPIDsForGroupingKeys;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, NSString, NSDictionary, NSMutableArray, NSMapTable;
+@class NSMutableDictionary, NSNumberFormatter, NSString, NSDictionary, NSMutableArray, NSMapTable;
 
 @interface _MKScaleUnitsView : UIView  {
     BOOL _useLightText;
@@ -16,6 +16,7 @@
     NSString *_unpaddedUnitsString;
     NSMapTable *_legendStringWidthCache;
     NSMutableDictionary *_legendStringForDistanceStringCache;
+    NSNumberFormatter *_floatNumberFormatter;
 }
 
 @property BOOL useLightText;
@@ -24,8 +25,11 @@
 @property(retain) NSString * legendBaseString;
 @property(retain) NSString * unitsString;
 @property(copy) NSString * unpaddedUnitsString;
+@property(retain) NSNumberFormatter * floatNumberFormatter;
 
 
+- (void)setFloatNumberFormatter:(id)arg1;
+- (id)floatNumberFormatter;
 - (id)unitsString;
 - (float)unitsWidth;
 - (BOOL)useLightText;

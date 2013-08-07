@@ -62,6 +62,15 @@
 
 - (BOOL)automaticallyHandleTransportControls;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAreaInsets;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
+- (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
+- (void)detailSliderTrackingDidCancel:(id)arg1;
+- (void)detailSliderTrackingDidEnd:(id)arg1;
+- (void)detailSliderTrackingDidBegin:(id)arg1;
+- (void)setVideoViewController:(id)arg1;
+- (id)videoViewController;
+- (void)hideAlternateTracks;
+- (void)showAlternateTracks;
 - (void)audioAndSubtitleControllerRequestsDismissal:(id)arg1;
 - (void)_videoViewDidMoveToWindow:(id)arg1;
 - (void)_effectiveScaleModeDidChange:(id)arg1;
@@ -79,12 +88,15 @@
 - (void)_buttonInteractionEnded:(id)arg1;
 - (void)_buttonInteractionCanceled:(id)arg1;
 - (void)_buttonInteractionBegan:(id)arg1;
+- (void)_hideScrubInstructions;
 - (void)_notifyDelegateOfUserEventBegin:(int)arg1;
+- (void)_showScrubInstructions;
 - (void)_notifyDelegateOfUserEventEnd:(int)arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)_registerForPlayerNotifications:(id)arg1;
 - (void)_updateVolumeSlider;
 - (void)_itemChanged:(id)arg1;
+- (BOOL)updateTimeBasedValues;
 - (void)_configureAuxiliaryButtons:(BOOL)arg1;
 - (void)_unregisterForPlayerNotifications:(id)arg1;
 - (void)_unregisterForItemNotifications:(id)arg1;
@@ -105,22 +117,10 @@
 - (void)observeControl:(id)arg1;
 - (void)_doneButtonTapped:(id)arg1;
 - (id)_newFrostedGlassBackdropView;
-- (id)videoViewController;
-- (void)hideAlternateTracks;
-- (void)showAlternateTracks;
-- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
-- (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
-- (void)detailSliderTrackingDidCancel:(id)arg1;
-- (void)detailSliderTrackingDidEnd:(id)arg1;
-- (void)detailSliderTrackingDidBegin:(id)arg1;
-- (void)_hideScrubInstructions;
-- (void)_showScrubInstructions;
-- (BOOL)updateTimeBasedValues;
-- (unsigned long long)disabledParts;
 - (BOOL)allowsDetailScrubbing;
-- (void)stopTicking;
+- (unsigned long long)disabledParts;
 - (void)startTicking;
-- (void)setVideoViewController:(id)arg1;
+- (void)stopTicking;
 - (void)_itemReadyToPlay:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
@@ -149,9 +149,9 @@
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (id)item;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)navigationBar;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)didMoveToWindow;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 

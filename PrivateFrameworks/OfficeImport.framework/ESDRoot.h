@@ -22,8 +22,8 @@
 - (id)initWithEshObject:(struct EshObject { int (**x1)(); unsigned short x2; }*)arg1;
 - (id)childAt:(unsigned int)arg1;
 - (unsigned int)childCount;
-- (void)addChild:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)addChild:(id)arg1;
 
 @end

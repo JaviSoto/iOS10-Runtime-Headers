@@ -32,6 +32,7 @@
 @property BOOL isUsingCamera;
 
 
+- (void)_cancel;
 - (id)documentView;
 - (void)setDocumentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -73,6 +74,5 @@
 - (void)dismiss;
 - (void)actionSheetCancel:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)_cancel;
 
 @end

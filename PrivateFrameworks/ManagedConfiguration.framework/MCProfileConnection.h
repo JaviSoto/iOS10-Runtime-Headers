@@ -30,6 +30,7 @@
 - (BOOL)isAppManaged:(id)arg1;
 - (BOOL)mayOpenFromUnmanagedToManaged;
 - (BOOL)mayOpenFromManagedToUnmanaged;
+- (void)setupAssistantDidFinish;
 - (BOOL)shouldInstallStoredProfileForPurpose:(int)arg1;
 - (void)storeProfileData:(id)arg1 configurationSource:(int)arg2 purpose:(int)arg3;
 - (void)installProfileDataStoredForPurpose:(int)arg1 completionBlock:(id)arg2;
@@ -77,6 +78,7 @@
 - (BOOL)isMPAllowed;
 - (BOOL)isMEAllowed;
 - (BOOL)isAssistantUserGeneratedContentAllowed;
+- (BOOL)isControlCenterAllowedInApps;
 - (BOOL)isLockScreenControlCenterAllowed;
 - (BOOL)isLockScreenTodayViewAllowed;
 - (BOOL)isLockScreenNotificationsViewAllowed;
@@ -86,6 +88,7 @@
 - (BOOL)isLockScreenWiFiModificationAllowed;
 - (BOOL)isAdTrackingLimited;
 - (BOOL)isWebTextDefineAllowed;
+- (BOOL)isAutomaticAppUpdatesModificationAllowed;
 - (void)setAutomaticAppUpdatesAllowed:(BOOL)arg1;
 - (BOOL)isOTAPKIUpdatesAllowed;
 - (BOOL)isVehicleUIAllowed;

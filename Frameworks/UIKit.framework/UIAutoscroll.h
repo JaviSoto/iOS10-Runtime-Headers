@@ -34,8 +34,8 @@
 - (void)dealloc;
 - (void)setActive:(BOOL)arg1;
 - (void)setDirections:(int)arg1;
-- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScrollContainer:(id)arg1;
+- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (double)repeatInterval;
 - (id)scrollContainer;
 - (void)timerFired:(id)arg1;

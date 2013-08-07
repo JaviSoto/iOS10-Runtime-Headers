@@ -81,7 +81,6 @@
 @property double userZoomFocusStyleGroundspanMeters;
 @property double userZoomFocusStyleMinGroundspanMeters;
 @property double userZoomFocusStyleMaxGroundspanMeters;
-@property struct Vec2Imp<float> { float x1; float x2; } deviceTilt;
 
 + (id)installedStylesheetNames;
 
@@ -138,15 +137,12 @@
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; }*)arg2;
 - (void)goToTileX:(int)arg1 Y:(int)arg2 Z:(int)arg3 tileSize:(int)arg4;
 - (BOOL)isFullyDrawn;
-- (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDisableGrid:(BOOL)arg1;
 - (void)setDisableRealisticLand:(BOOL)arg1;
 - (void)setDisableRealisticRoads:(BOOL)arg1;
 - (void)setDisableRasters:(BOOL)arg1;
 - (void)setDisableBuildingFootprints:(BOOL)arg1;
 - (void)setDisablePolygons:(BOOL)arg1;
-- (void)setDisableLabels:(BOOL)arg1;
-- (void)setDisableRoads:(BOOL)arg1;
 - (void)stopSnappingAnimations;
 - (BOOL)isPointValidForGesturing:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -238,6 +234,8 @@
 - (void)setMapDisplayStyle:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)canEnter3DMode;
 - (void)setMapType:(int)arg1;
+- (void)setDisableRoads:(BOOL)arg1;
+- (void)setDisableLabels:(BOOL)arg1;
 - (void)addExternalAnchor:(id)arg1;
 - (void)removeExternalAnchor:(id)arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
@@ -327,8 +325,6 @@
 - (id)currentCanvas;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
-- (void)setDeviceTilt:(struct Vec2Imp<float> { float x1; float x2; })arg1;
-- (struct Vec2Imp<float> { float x1; float x2; })deviceTilt;
 - (void)setGesturing:(BOOL)arg1;
 - (BOOL)isGesturing;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
@@ -354,7 +350,6 @@
 - (void)setNeedsLayout;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
 - (void)dealloc;
 - (void)willEnterForeground;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

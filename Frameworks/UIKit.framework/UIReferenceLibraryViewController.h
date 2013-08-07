@@ -8,7 +8,7 @@
 
 @class NSArray, NSString, UIWindow, UIViewController, UINavigationController, UITableViewController;
 
-@interface UIReferenceLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface UIReferenceLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate> {
     NSString *_term;
     NSArray *_definitionValues;
     UINavigationController *_baseNavController;
@@ -29,11 +29,11 @@
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_dictionaryDefinitionAttributes;
++ (id)_localizedDictionaryTitleAttributes;
 + (id)_pressedButtonImage;
 + (id)_defaultButtonImage;
-+ (id)_colorAttributes;
-+ (id)_localizedDictionaryTitleAttributes;
 + (id)_diddlyDoViewLineColor;
++ (id)_colorAttributes;
 + (id)_foregroundColor;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 + (id)_backgroundColor;
@@ -41,21 +41,21 @@
 - (void)dealloc;
 - (id)_rotationDecider;
 - (id)_dictionaryDefinitionAttributes;
+- (id)_localizedDictionaryTitleAttributes;
 - (id)_pressedButtonImage;
 - (id)_defaultButtonImage;
+- (id)_diddlyDoViewLineColor;
 - (void)_installRequiredElementsOnViewController:(id)arg1;
-- (void)pushDownloadManager:(id)arg1;
 - (void)_dismissModalReferenceView:(id)arg1;
-- (void)_searchWikipedia:(id)arg1;
 - (void)_searchWeb:(id)arg1;
+- (void)pushDownloadManager:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
 - (id)initWithTerm:(id)arg1;
 - (id)_colorAttributes;
-- (id)_localizedDictionaryTitleAttributes;
-- (id)_diddlyDoViewLineColor;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (id)dismissCompletionHandler;
 - (id)_foregroundColor;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)viewDidLoad;
@@ -64,6 +64,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)_backgroundColor;
 - (unsigned int)supportedInterfaceOrientations;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

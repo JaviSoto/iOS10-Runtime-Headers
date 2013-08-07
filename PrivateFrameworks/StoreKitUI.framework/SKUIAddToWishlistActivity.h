@@ -12,10 +12,10 @@
 
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
 - (void).cxx_destruct;
+- (id)_beforeActivity;
 - (id)activityImage;
 - (void)performActivity;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (id)_beforeActivity;
 - (id)activityType;
 - (id)activityTitle;
 

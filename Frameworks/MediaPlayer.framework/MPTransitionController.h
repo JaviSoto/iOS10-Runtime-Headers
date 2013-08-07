@@ -37,9 +37,9 @@
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)willBeginTransition:(unsigned int)arg1;
 - (void)messageObserversWithSuccess:(BOOL)arg1;
+- (id)toContainerViewController;
 - (void)setFromInterfaceOrientation:(int)arg1;
 - (void)setToInterfaceOrientation:(int)arg1;
-- (id)toContainerViewController;
 - (void)didFinishTransition:(BOOL)arg1;
 - (void)fadeViewsForRestore:(BOOL)arg1;
 - (void)setToContainerViewController:(id)arg1;

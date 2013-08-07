@@ -12,6 +12,7 @@
     BOOL _noMoreShowMore;
     BOOL _movedItemsInUpdateCarrySections;
     BOOL _displayClipView;
+    BOOL _displayingOverlay;
     unsigned int _portraitInterleavedSectionsCount;
     unsigned int _landscapeInterleavedSectionsCount;
     NSSet *_visibleIndexPathsFilter;
@@ -83,10 +84,13 @@
 @property BOOL displayClipView;
 @property(retain) GKCollectionViewLayoutAttributes * clipViewAttributes;
 @property unsigned long long invalidationFlags;
+@property BOOL displayingOverlay;
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
+- (void)setDisplayingOverlay:(BOOL)arg1;
+- (BOOL)displayingOverlay;
 - (void)setInvalidationFlags:(unsigned long long)arg1;
 - (unsigned long long)invalidationFlags;
 - (id)clipViewAttributes;
@@ -138,7 +142,6 @@
 - (unsigned int)landscapeInterleavedSectionsCount;
 - (unsigned int)portraitInterleavedSectionsCount;
 - (unsigned int)currentMaxVisibleItemCountForSection:(int)arg1;
-- (unsigned int)_prepareDecorationLayoutForSection:(int)arg1 offset:(unsigned int)arg2;
 - (void)setLandscapeInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setMovedItemsInUpdateCarrySections:(BOOL)arg1;
@@ -169,7 +172,7 @@
 - (void)fullyRebuildLayout;
 - (id)firstVisibleIndexAtOrAfterItem:(int)arg1 itemCount:(int)arg2 inSection:(int)arg3;
 - (void)setClipViewAttributes:(id)arg1;
-- (void)updatePresentationDataInSection:(int)arg1 withAttributes:(id)arg2 supplementaryInHeader:(BOOL)arg3;
+- (void)updatePresentationDataInSection:(int)arg1 withAttributes:(id)arg2 supplementaryLocation:(unsigned int)arg3;
 - (float)yOffsetForSection:(int)arg1;
 - (BOOL)_areWePortrait;
 - (float)calculatedBottomPaddingForSection:(int)arg1;
@@ -195,6 +198,7 @@
 - (id)revealMoreForSectionIndex:(int)arg1;
 - (void)prepareForUpdate:(unsigned int)arg1 inDataSource:(id)arg2;
 - (void)prepareForMovingItemsCarryingSections;
+- (void)updatePlaceholderVisibility:(BOOL)arg1;
 - (void)setVisibleIndexPathsFilter:(id)arg1;
 - (void)forceFullInvalidate;
 - (id)dataSourceMetrics;

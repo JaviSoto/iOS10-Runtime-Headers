@@ -7,13 +7,13 @@
 
 @property unsigned int timeout;
 @property(getter=isCritical) BOOL critical;
-@property int payloadFormat;
+@property unsigned int payloadFormat;
 @property unsigned int payloadLength;
 
 
 - (void)setPayloadLength:(unsigned int)arg1;
 - (unsigned int)payloadLength;
-- (int)payloadFormat;
+- (unsigned int)payloadFormat;
 - (void)setTimedOut:(BOOL)arg1;
 - (BOOL)hasTimedOut;
 - (void)setSendInterface:(int)arg1;
@@ -25,7 +25,7 @@
 - (id)sendTimeoutTime;
 - (unsigned int)_effectiveSendTimeout;
 - (void)setCritical:(BOOL)arg1;
-- (void)setPayloadFormat:(int)arg1;
+- (void)setPayloadFormat:(unsigned int)arg1;
 - (id)timestamp;
 - (void)setMessageID:(unsigned int)arg1;
 - (unsigned int)messageID;

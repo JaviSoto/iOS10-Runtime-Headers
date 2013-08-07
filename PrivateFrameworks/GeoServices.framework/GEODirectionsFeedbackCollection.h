@@ -4,7 +4,7 @@
 
 @class NSMutableArray, GEOLocation;
 
-@interface GEODirectionsFeedbackCollection : PBCodable  {
+@interface GEODirectionsFeedbackCollection : PBCodable <NSCopying> {
     double _endTimeStamp;
     double _startTimeStamp;
     NSMutableArray *_directionsFeedbacks;
@@ -24,8 +24,6 @@
 @property double endTimeStamp;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)directionsFeedbacks;
 - (void)setHasEndTimeStamp:(BOOL)arg1;
 - (void)setHasStartTimeStamp:(BOOL)arg1;
@@ -44,10 +42,13 @@
 - (void)addDirectionsFeedback:(id)arg1;
 - (void)setStartTimeStamp:(double)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 
 @end

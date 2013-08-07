@@ -11,6 +11,7 @@
 @property(retain) UITextView * textView;
 
 
+- (void)_updateDisplayAndEditingControls;
 - (void)textViewEditingDidEnd:(id)arg1;
 - (void)textViewChanged:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;

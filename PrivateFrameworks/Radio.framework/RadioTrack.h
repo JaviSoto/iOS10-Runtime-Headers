@@ -48,7 +48,6 @@
 - (id)wishListDate;
 - (void)setOfferType:(int)arg1;
 - (void)setCopyrightText:(id)arg1;
-- (void)setArtworkURLData:(id)arg1;
 - (void)setAlbumURL:(id)arg1;
 - (void)setActionText:(id)arg1 forStyle:(int)arg2;
 - (id)previewURL;
@@ -61,7 +60,6 @@
 - (BOOL)isExplicit;
 - (BOOL)inWishList;
 - (id)copyrightText;
-- (id)artworkURLData;
 - (id)albumURL;
 - (long long)albumID;
 - (id)actionTextForStyle:(int)arg1;
@@ -95,9 +93,11 @@
 - (long long)beforePromoClipID;
 - (id)managedObject;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
+- (void)setArtworkURLData:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setAdData:(id)arg1;
 - (id)feedbackDictionaryRepresentation;
+- (id)artworkURLData;
 - (id)artworkURL;
 - (id)adData;
 - (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1;

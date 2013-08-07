@@ -4,7 +4,7 @@
 
 @class NSString, NSMutableArray;
 
-@interface GEOCategory : PBCodable  {
+@interface GEOCategory : PBCodable <NSCopying> {
     long long _geoOntologyId;
     NSString *_alias;
     int _level;
@@ -21,8 +21,6 @@
 @property(retain) NSMutableArray * localizedNames;
 
 
-- (BOOL)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)localizedNames;
 - (void)setHasGeoOntologyId:(BOOL)arg1;
 - (id)localizedNamesAtIndex:(unsigned int)arg1;
@@ -34,12 +32,15 @@
 - (void)addLocalizedNames:(id)arg1;
 - (void)setLocalizedNames:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (id)alias;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)level;
 - (void)setLevel:(int)arg1;
 - (id)dictionaryRepresentation;

@@ -78,7 +78,7 @@
 - (void)pausePhotoStreams;
 - (void)resumePhotoStreams;
 - (id)_syncedPropertiesForAssetUUID:(id)arg1;
-- (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
+- (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4 testCreationDates:(BOOL)arg5;
 - (id)fileManager;
 - (id)importFileSystemImportAssets:(id)arg1 forceUpdate:(BOOL)arg2;
 - (id)_orderedAssetsToImportCameraRollOnly:(BOOL)arg1;

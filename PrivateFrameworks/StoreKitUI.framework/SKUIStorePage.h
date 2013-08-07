@@ -28,6 +28,7 @@
 @property(retain) SKUIUber * uber;
 
 
+- (id)uber;
 - (id)productPage;
 - (id)pageComponents;
 - (id)metricsPageDescription;
@@ -42,7 +43,6 @@
 - (void)setMetricsPageDescription:(id)arg1;
 - (void)setMetricsConfiguration:(id)arg1;
 - (void)setBackgroundArtwork:(id)arg1;
-- (id)uber;
 - (id)pageType;
 - (void)setTitle:(id)arg1;
 - (id)title;

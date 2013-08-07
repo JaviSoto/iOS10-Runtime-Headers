@@ -20,11 +20,13 @@
   /* Error parsing encoded ivar type info: @? */
     id _responseBlock;
 
+    NSString *_storeFrontSuffix;
 }
 
 @property(copy) NSArray * itemIdentifiers;
 @property(copy) NSString * imageProfile;
 @property(copy) NSString * keyProfile;
+@property(copy) NSString * storeFrontSuffix;
 @property(copy) id responseBlock;
 
 
@@ -45,6 +47,8 @@
 - (void)setResponseBlock:(id)arg1;
 - (id)responseBlock;
 - (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
+- (void)setStoreFrontSuffix:(id)arg1;
+- (id)storeFrontSuffix;
 - (id)init;
 - (void).cxx_destruct;
 - (void)main;

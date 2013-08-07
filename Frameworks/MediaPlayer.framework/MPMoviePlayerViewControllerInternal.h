@@ -7,8 +7,6 @@
 @interface MPMoviePlayerViewControllerInternal : NSObject  {
     MPMoviePlayerController *_moviePlayer;
     BOOL _wasDisplayedAnimated;
-    int _previousStatusBarStyle;
-    BOOL _statusBarWasHidden;
 }
 
 

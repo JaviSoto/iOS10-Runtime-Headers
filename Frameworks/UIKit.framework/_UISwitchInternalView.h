@@ -55,7 +55,6 @@
 - (id)onTintColor;
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(id)arg5;
 - (void)setSendAction:(BOOL)arg1;
-- (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (void)_prepareForInteraction;
 - (void)_setProgress:(float)arg1;
 - (void)_sendActions;
@@ -69,6 +68,7 @@
 - (void)_cleanUpAfterAnimating;
 - (id)_colorImage;
 - (id)_labelImage;
+- (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
 - (id)thumbTintColor;
 - (void)setThumbTintColor:(id)arg1;
 - (void)_setPressed:(BOOL)arg1;

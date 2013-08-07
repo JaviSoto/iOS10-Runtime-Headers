@@ -61,6 +61,7 @@
 - (void)updateFontSizes;
 - (void)setEditingGroups:(id)arg1;
 - (id)_taglineStringForContact:(id)arg1;
+- (id)_headerStringForContact:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
 - (BOOL)isEditing;
 - (void)setBackgroundColor:(id)arg1;

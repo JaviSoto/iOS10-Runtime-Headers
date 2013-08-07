@@ -2,11 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLMomentLibrary, PUSessionInfo, PUCollectionViewIntermediateDataSource, <PLAssetContainerList>, NSMutableArray, PUZoomableGridViewControllerSpec;
+@class NSOrderedSet, <PLAssetContainerList>, NSMutableArray, PUZoomableGridViewControllerSpec, PUSessionInfo, PUCollectionViewIntermediateDataSource, PLMomentLibrary;
 
 @interface PUMomentsZoomLevelManager : NSObject  {
     NSMutableArray *_allLevelInfos;
     PLMomentLibrary *_momentLibrary;
+    NSOrderedSet *_momentLibraryContainers;
+    BOOL _isInvalidatingLayoutOfZoomLevels;
     PUZoomableGridViewControllerSpec *_zoomableGridSpec;
     PUSessionInfo *_sessionInfo;
     PUCollectionViewIntermediateDataSource *_sharedIntermediateDataSource;
@@ -18,12 +20,15 @@
 @property(readonly) unsigned int highestZoomLevel;
 @property(readonly) unsigned int preferredDefaultZoomLevel;
 @property(readonly) <PLAssetContainerList> * photoCollections;
+@property(readonly) NSOrderedSet * photoCollectionContainers;
 @property(readonly) PUCollectionViewIntermediateDataSource * sharedIntermediateDataSource;
 
 
 - (void)_updateSummarizeSectionsOnZoomLevelInfos;
 - (void)_defaultsDidChange:(id)arg1;
 - (BOOL)zoomLevel:(unsigned int)arg1 isHigherThanZoomLevel:(unsigned int)arg2;
+- (void)zoomLevelInfo:(id)arg1 didInvalidateLayoutWithContext:(id)arg2;
+- (id)photoCollectionContainers;
 - (unsigned int)preferredDefaultZoomLevel;
 - (void)setSessionInfo:(id)arg1;
 - (unsigned int)highestZoomLevel;
@@ -32,8 +37,8 @@
 - (id)existingViewControllerForZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
 - (unsigned int)zoomLevelAboveZoomLevel:(unsigned int)arg1;
 - (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
-- (id)sessionInfo;
 - (unsigned int)lowestZoomLevel;
+- (id)sessionInfo;
 - (unsigned int)zoomLevelBelowZoomLevel:(unsigned int)arg1;
 - (void)modelDidChange;
 - (id)photoCollections;

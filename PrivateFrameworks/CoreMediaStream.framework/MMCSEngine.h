@@ -51,7 +51,6 @@
 + (id)logStringForGetItemState:(int)arg1;
 + (id)logStringForPutItemState:(int)arg1;
 
-- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setWorkThread:(id)arg1;
 - (id)workThread;
 - (void)setAutoGenerateItemID:(BOOL)arg1;
@@ -91,6 +90,7 @@
 - (void)unregisterAssets:(id)arg1;
 - (void)_registerAsset:(id)arg1;
 - (BOOL)hasOutstandingActivity;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)cancelAllOperations;
 - (void)performBlock:(id)arg1;
 - (BOOL)isActive;

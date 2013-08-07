@@ -20,5 +20,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)removeObjectsInArray:(id)arg1;
 
 @end
