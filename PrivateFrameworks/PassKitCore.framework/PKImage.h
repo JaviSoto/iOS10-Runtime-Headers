@@ -49,6 +49,7 @@
 - (BOOL)tiles;
 - (id)imageData;
 - (struct CGSize { float x1; float x2; })size;
+- (int)orientation;
 - (id)init;
 - (void)dealloc;
 - (struct CGImage { }*)imageRef;
@@ -56,7 +57,6 @@
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 - (struct PKEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
-- (int)orientation;
 - (float)scale;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

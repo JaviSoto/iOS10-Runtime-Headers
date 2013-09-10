@@ -111,6 +111,7 @@
 - (unsigned int)hash;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (id)description;
 - (double)duration;
 - (id)dictionaryRepresentation;
 

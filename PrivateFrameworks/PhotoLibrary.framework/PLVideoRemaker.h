@@ -37,8 +37,8 @@
 - (void)setTrimStartTime:(double)arg1;
 - (id)initWithAVAsset:(id)arg1;
 - (void)remake;
+- (id)initWithManagedAsset:(id)arg1 applySlalomRegions:(BOOL)arg2;
 - (id)progressView;
-- (id)initWithManagedAsset:(id)arg1;
 - (void)_updateProgress;
 - (void)setDuration:(double)arg1;
 - (void)setMode:(int)arg1;

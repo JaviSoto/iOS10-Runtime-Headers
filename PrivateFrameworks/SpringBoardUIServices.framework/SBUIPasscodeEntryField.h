@@ -33,6 +33,7 @@
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)customBackgroundColor;
 - (void)resetForFailedPasscode;
+- (void)_autofillForMesaWithCompletion:(id)arg1;
 - (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
 - (void)_setLuminosityBoost:(float)arg1;
 - (void)reset;

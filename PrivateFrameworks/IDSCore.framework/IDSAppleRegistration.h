@@ -129,7 +129,6 @@
 - (id)IDSVersion;
 - (void)setAuthenticationCert:(id)arg1;
 - (BOOL)canSendRegistration;
-- (BOOL)canRegister;
 - (id)signaturePrefix;
 - (BOOL)removeFromKeychain;
 - (id)emailsToRegister;
@@ -186,6 +185,7 @@
 - (id)guid;
 - (void)setPhoneNumber:(id)arg1;
 - (id)deviceName;
+- (BOOL)canRegister;
 - (id)email;
 - (id)environment;
 - (id)init;

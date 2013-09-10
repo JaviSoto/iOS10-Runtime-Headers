@@ -108,9 +108,9 @@
 - (id)title;
 - (void)setOrientation:(int)arg1;
 - (id)font;
+- (int)orientation;
 - (void)dealloc;
 - (void)setFont:(id)arg1;
-- (int)orientation;
 - (int)key;
 
 @end

@@ -86,6 +86,7 @@
 - (id)dispatchQueue;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)setVibrationPattern:(id)arg1;
+- (float)rate;
 - (void)setAutoSwitchStreamVariants:(BOOL)arg1;
 - (void)setAudioOutputDeviceUniqueID:(id)arg1;
 - (id)audioOutputDeviceUniqueID;
@@ -205,7 +206,6 @@
 - (void)_addLayer:(id)arg1;
 - (struct OpaqueCMClock { }*)masterClock;
 - (id)_weakReference;
-- (float)rate;
 - (float)_rate;
 - (void)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;

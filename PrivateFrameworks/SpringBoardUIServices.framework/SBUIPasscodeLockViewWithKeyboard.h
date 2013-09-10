@@ -22,6 +22,8 @@
     BOOL _isAnimating;
 }
 
+@property(retain) UILabel * statusField;
+
 
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
 - (BOOL)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
@@ -33,6 +35,7 @@
 - (float)_statusTitleWidth;
 - (float)_statusFieldHeight;
 - (float)_keyboardToEntryFieldOffset;
+- (id)statusField;
 - (void)_notifyDelegateThatEmergencyCallButtonWasPressed;
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
@@ -48,10 +51,12 @@
 - (void)_geometryChanged:(id)arg1;
 - (void)_hardwareReturnKeyPressed:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(int)arg1;
+- (void)setStatusField:(id)arg1;
+- (id)_newStatusField;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (float)backgroundAlpha;
 - (id)passcode;
-- (void)_updateStatusText:(id)arg1;
+- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (BOOL)resignFirstResponder;

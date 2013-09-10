@@ -17,8 +17,6 @@
 
 + (id)sharedCameraImportManager;
 
-- (void)deviceBrowser:(id)arg1 didAddDevice:(id)arg2 moreComing:(BOOL)arg3;
-- (void)deviceBrowser:(id)arg1 didRemoveDevice:(id)arg2 moreGoing:(BOOL)arg3;
 - (void)setImporters:(id)arg1;
 - (void)ejectCameras;
 - (void)stopListeningWithCallbackTarget:(id)arg1 selector:(SEL)arg2;
@@ -30,6 +28,8 @@
 - (id)importers;
 - (void)_stopListening;
 - (void)addImporter:(id)arg1;
+- (void)deviceBrowser:(id)arg1 didAddDevice:(id)arg2 moreComing:(BOOL)arg3;
+- (void)deviceBrowser:(id)arg1 didRemoveDevice:(id)arg2 moreGoing:(BOOL)arg3;
 - (id)init;
 - (void)dealloc;
 - (unsigned int)startListening;

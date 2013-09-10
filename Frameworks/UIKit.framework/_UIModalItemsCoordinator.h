@@ -65,7 +65,7 @@
 - (void)_notifyDelegateDidDismissItem:(id)arg1 withIndex:(int)arg2;
 - (void)_notifyDelegateWillDismissItem:(id)arg1 withIndex:(int)arg2;
 - (void)_dismissItem:(id)arg1 withTappedButtonIndex:(int)arg2 animated:(BOOL)arg3 notifyDelegate:(BOOL)arg4;
-- (void)_notifyDelegateModalItem:(id)arg1 tappedButtonAtIndex:(int)arg2;
+- (BOOL)_notifyDelegateModalItem:(id)arg1 tappedButtonAtIndex:(int)arg2;
 - (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
 
 @end

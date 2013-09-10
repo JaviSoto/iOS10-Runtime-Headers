@@ -27,6 +27,7 @@
 @property(readonly) BOOL shouldPlaceDeleteInCenterToolbarPosition;
 @property(readonly) BOOL canDisplayEditActionsInNavigationBar;
 @property(readonly) BOOL usesStackPopTransition;
+@property(readonly) BOOL displaysAvalancheStacks;
 @property(readonly) PUPhotosPickerViewControllerSpec * photosPickerViewControllerSpec;
 @property(readonly) PUAlbumPickerViewControllerSpec * albumPickerViewControllerSpec;
 
@@ -36,6 +37,7 @@
 - (void)protoSettingsDidChange;
 - (id)photoBrowserSpec;
 - (BOOL)usesStackPopTransition;
+- (BOOL)displaysAvalancheStacks;
 - (float)globalFooterHeight;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
 - (id)albumPickerViewControllerSpec;

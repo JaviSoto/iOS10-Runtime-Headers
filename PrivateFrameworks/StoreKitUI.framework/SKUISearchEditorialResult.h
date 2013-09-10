@@ -30,13 +30,15 @@
 
 
 - (id)messageTitle;
+- (void)_setValuesWithEditorialDictionary:(id)arg1;
+- (id)initWithEditorialDictionary:(id)arg1 identifier:(long long)arg2;
 - (void)setArtworkURLs:(id)arg1;
 - (BOOL)isRoom;
+- (id)initWithLookupItem:(id)arg1;
 - (id)artworkURLs;
 - (long long)editorialIdentifier;
 - (id)artworkIdentifiers;
 - (id)buttonLink;
-- (id)initWithEditorialDictionary:(id)arg1 identifier:(long long)arg2;
 - (id)artwork;
 - (id)title;
 - (id)message;

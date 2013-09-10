@@ -288,6 +288,7 @@
 - (void)setPlayer:(id)arg1;
 - (id)player;
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -301,7 +302,6 @@
 - (id)item;
 - (id)backgroundView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)orientation;
 - (id)view;
 
 @end

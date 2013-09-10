@@ -6,6 +6,7 @@
 }
 
 
+- (BOOL)displaysAvalancheStacks;
 - (int)thumbnailImageFormat;
 
 @end

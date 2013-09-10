@@ -64,10 +64,10 @@
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (id)ageBandString;
-- (void)setRestricted:(BOOL)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)_reloadItemOfferButton:(BOOL)arg1;
 - (id)initWithClientContext:(id)arg1;
+- (void)setRestricted:(BOOL)arg1;
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setHeaderImage:(id)arg1;
 - (id)headerImage;

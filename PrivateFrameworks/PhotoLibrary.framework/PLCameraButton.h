@@ -53,10 +53,10 @@
 - (void)_setIcon:(id)arg1;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (int)orientation;
 - (void)dealloc;
 - (id)initWithDefaultSize;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
-- (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

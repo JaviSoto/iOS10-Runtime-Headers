@@ -335,8 +335,8 @@
 - (void)setEmail:(id)arg1;
 - (BOOL)hasLocation;
 - (BOOL)hasName;
-- (void)_postNotification:(id)arg1;
 - (void)_registerForNotifications;
+- (void)_postNotification:(id)arg1;
 - (id)lastName;
 - (id)firstName;
 - (void)postNotificationName:(id)arg1;

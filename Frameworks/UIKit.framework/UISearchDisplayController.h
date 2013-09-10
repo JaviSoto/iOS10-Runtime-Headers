@@ -133,7 +133,6 @@
 - (void)_saveSelectedRowsInCaseViewDoesNotReallyAppear;
 - (void)_clearSavedSelectedCellsWeUsedWhenHedgingOurBets;
 - (float)_updateNavigationPalette;
-- (BOOL)_searchBarInNavigationControllerComponent;
 - (void)_updatePinnedSearchBar;
 - (void)showHideAnimationDidFinish;
 - (void)set_additionalNonCollapsingHeightAboveSearchBar:(float)arg1;
@@ -160,6 +159,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tableViewContentInsets;
 - (float)_statusBarHeight;
 - (BOOL)_shouldAccountForStatusBarHeight;
+- (BOOL)_searchBarInNavigationControllerComponent;
 - (void)_popoverClearButtonPressed:(id)arg1;
 - (id)searchResultsTitle;
 - (id)searchResultsTableView;

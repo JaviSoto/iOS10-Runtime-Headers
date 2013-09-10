@@ -13,6 +13,8 @@
 @property(readonly) NSArray * contents;
 
 
+- (void)requestThumbnail;
+- (void)requestMetadata;
 - (void)deleteFolder:(id)arg1;
 - (void)deleteFile:(id)arg1;
 - (void)unlockFolders;
@@ -23,8 +25,6 @@
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (void)addFolder:(id)arg1;
 - (void)deleteItem:(id)arg1;
-- (void)requestThumbnail;
-- (void)requestMetadata;
 - (BOOL)hasThumbnail;
 - (id)metadata;
 - (id)files;

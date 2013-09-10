@@ -25,6 +25,7 @@
     NSMutableArray *_delayedDupeAnalysisNormalInserts;
     NSMutableArray *_delayedDupeAnalysisCloudInserts;
     NSMutableSet *_delayedAssetsForFileSystemPersistency;
+    NSMutableSet *_avalancheUUIDsForUpdate;
     PLPhotoLibrary *_photoLibrary;
     <PLManagedObjectContextPTPNotificationDelegate> *_ptpNotificationDelegate;
     BOOL _regenerateVideoThumbnails;
@@ -73,14 +74,15 @@
 + (id)databasePath;
 + (id)managedObjectModel;
 
+- (void)setSuspendClientServerTransactions:(BOOL)arg1;
 - (void)setIsInitializingSingletons:(BOOL)arg1;
 - (BOOL)isInitializingSingletons;
 - (void)setRegenerateVideoThumbnails:(BOOL)arg1;
 - (BOOL)regenerateVideoThumbnails;
-- (void)setSuspendClientServerTransactions:(BOOL)arg1;
 - (BOOL)savingDuringMerge;
 - (void)setChangeHubConnection:(id)arg1;
 - (id)changeHubConnection;
+- (id)getAndClearRecordedAvalancheUUIDsForUpdate;
 - (void)getDelayedAssetsForFilesystemPersistencyUpdates:(id*)arg1;
 - (void)appendDelayedAssetsForFileSystemPersistencyUpdate:(id)arg1;
 - (void)appendDelayedDupeAnalysisToXPCMessage:(id)arg1;
@@ -113,15 +115,16 @@
 - (id)initWithConcurrencyType:(unsigned int)arg1 useSharedPersistentStoreCoordinator:(BOOL)arg2;
 - (void)recordAssetForFileSystemPersistencyUpdate:(id)arg1;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
+- (void)recordAvalancheUUIDForUpdate:(id)arg1;
 - (void)recordAssetForDupeAnalysis:(id)arg1;
 - (void)recordAssetForCloudFeedUpdate:(id)arg1;
 - (void)recordAssetForMomentUpdate:(id)arg1;
 - (BOOL)mergingChanges;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
-- (id)photoLibrary;
 - (void)setGlobalValue:(id)arg1 forKey:(id)arg2;
 - (id)globalValueForKey:(id)arg1;
+- (id)photoLibrary;
 - (BOOL)isUserInterfaceContext;
 - (void)setHasMetadataChanges:(BOOL)arg1;
 - (BOOL)hasMetadataChanges;

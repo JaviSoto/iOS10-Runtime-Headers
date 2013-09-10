@@ -49,9 +49,9 @@
 - (id)defaultButtonText;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)setCompletionBlock:(id)arg1;
 - (id)message;
 - (void).cxx_destruct;
-- (void)setCompletionBlock:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (id)completionBlock;
 

@@ -113,6 +113,7 @@
 - (BOOL)_toneWithIdentifierIsValid:(id)arg1;
 - (id)localizedRingtoneNameWithIdentifier:(id)arg1;
 - (id)copyNameOfTextToneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
+- (id)systemModernSoundDirectory;
 - (id)systemNewSoundDirectory;
 - (id)systemSoundDirectory;
 - (id)systemRingtoneDirectory;

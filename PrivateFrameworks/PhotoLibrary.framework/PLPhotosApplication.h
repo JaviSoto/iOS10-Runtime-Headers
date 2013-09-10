@@ -4,7 +4,7 @@
 
 @class PLDebugViewController, NSDictionary, UIWindow, <NSCoding>, PLLibraryImageDataProvider, PLUIController, NSMutableSet, NSString, UIViewController, NSMutableDictionary;
 
-@interface PLPhotosApplication : UIApplication <UIApplicationDelegate, PLPublishingAgentDelegate, MFMailComposeViewControllerDelegate> {
+@interface PLPhotosApplication : UIApplication <PLDebugViewControllerDelegate, UIApplicationDelegate, PLPublishingAgentDelegate, MFMailComposeViewControllerDelegate> {
     PLUIController *_uiController;
     int _delaySuspendCount;
     int _sendingEmailCount;
@@ -76,6 +76,7 @@
 - (id)currentUIConfiguration;
 - (void)_updateSharedPhotoStreamProgressDisplay;
 - (void)_updatePhotoStreamProgressDisplay;
+- (void)_statusBarDoubleTap:(id)arg1;
 - (void)sharedFinishedLaunching:(BOOL)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
 - (void)_showAlertForInterruptionDuringRemaking;
@@ -86,6 +87,7 @@
 - (void)_discardMediaFilesForPublishingAgentsIfNeeded;
 - (void)_stopObservingForiMessageAvailability;
 - (void*)getSharedAddressBook;
+- (void)debugViewControllerDidDismiss:(id)arg1;
 - (BOOL)isComposeSheetReady;
 - (void)_dismissMailComposeController;
 - (void)_showMailComposeSheetForAutosavedMessageWithIdentifier:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UITextField, UIColor, NSTimer, UILabel, UIScrollView, UIControl, UITableView, UILongPressGestureRecognizer, UIView, UITapGestureRecognizer, UITableViewCellDeleteConfirmationView, NSString, SUGridView, UIImageView, NSIndexPath;
+@class UIImage, UITextField, UIColor, NSIndexPath, UILabel, UIScrollView, UIControl, UITableView, UILongPressGestureRecognizer, _UITableViewCellSeparatorView, UIView, UITapGestureRecognizer, UITableViewCellDeleteConfirmationView, NSString, SUGridView, UIImageView, NSTimer;
 
 @interface UITableViewCell : UIView <UIScrollViewDelegate, NSCoding, UIGestureRecognizerDelegate> {
     UITableView *_tableView;
@@ -89,8 +89,8 @@
     UIControl *_editingAccessoryView;
     UIView *_customAccessoryView;
     UIView *_customEditingAccessoryView;
-    UIView *_separatorView;
-    UIView *_topSeparatorView;
+    _UITableViewCellSeparatorView *_separatorView;
+    _UITableViewCellSeparatorView *_topSeparatorView;
     UIView *_topShadowView;
     UITextField *_editableTextField;
     double _lastSelectionTime;
@@ -150,6 +150,7 @@
 @property(getter=isEditing) BOOL editing;
 @property(readonly) BOOL showingDeleteConfirmation;
 
++ (void)initialize;
 + (id)_defaultTopShadowColor;
 
 - (BOOL)isEditing;
@@ -173,6 +174,7 @@
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)_usesRoundedGroups;
 - (BOOL)_separatorHidden;
 - (float)_indexBarWidth;
 - (SEL)returnAction;
@@ -375,11 +377,11 @@
 - (id)selectedImage;
 - (int)textAlignment;
 - (id)textColor;
-- (int)_separatorBackdropOverlayBlendMode;
 - (id)_titleForDeleteConfirmationButton;
 - (float)_marginWidth;
 - (void)setEditing:(BOOL)arg1;
 - (id)backgroundView;
+- (BOOL)_isInModalViewController;
 - (void)_tableViewDidUpdateMarginWidth;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundInset;
 - (int)separatorStyle;
@@ -409,6 +411,7 @@
 - (void)_setSectionBorderWidth:(float)arg1;
 - (float)_sectionBorderWidth;
 - (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
+- (int)_separatorBackdropOverlayBlendMode;
 - (id)sectionBorderColor;
 - (BOOL)_isPigglyWigglyCell;
 - (BOOL)_backgroundColorSet;
@@ -438,6 +441,7 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)editingStyle;
 - (BOOL)drawingEnabled;
+- (int)_popoverControllerStyle;
 - (id)tableBackgroundColor;
 - (void)setSeparatorColor:(id)arg1;
 - (id)accessoryActionSegueTemplate;

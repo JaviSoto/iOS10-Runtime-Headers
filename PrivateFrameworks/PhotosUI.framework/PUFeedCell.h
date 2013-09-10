@@ -30,8 +30,8 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)setIndexPath:(id)arg1;
 - (id)representedElementKind;
+- (void)setIndexPath:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)_handleTap:(id)arg1;
 - (id)indexPath;

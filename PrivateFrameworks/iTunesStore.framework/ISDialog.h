@@ -5,6 +5,7 @@
 @class SSAuthenticationContext, NSString, NSArray, NSLock, NSMutableDictionary;
 
 @interface ISDialog : NSObject  {
+    BOOL _allowsBioAuthorization;
     BOOL _allowDuplicates;
     SSAuthenticationContext *_authenticationContext;
     BOOL _authorizationIsForced;
@@ -51,6 +52,7 @@
 @property(copy) NSString * displayCountKey;
 @property int maximumDisplayCount;
 @property(getter=isDisplayable,readonly) BOOL displayable;
+@property(readonly) BOOL allowsBioAuthorization;
 
 + (int)displayCountForKey:(id)arg1;
 + (id)ITunesStoreNotAvailableDialog;
@@ -91,12 +93,14 @@
 - (void)setExpectsResponse:(BOOL)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setAllowDuplicates:(BOOL)arg1;
+- (BOOL)allowsBioAuthorization;
 - (id)textFields;
 - (id)initWithDialogDictionary:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (id)initWithError:(id)arg1;
+- (void)setKind:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)message;
@@ -110,6 +114,5 @@
 - (void)setDefaultButtonIndex:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (int)defaultButtonIndex;
-- (void)setKind:(int)arg1;
 
 @end

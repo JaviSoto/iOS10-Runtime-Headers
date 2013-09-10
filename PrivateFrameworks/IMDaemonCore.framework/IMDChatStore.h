@@ -14,7 +14,6 @@
 
 - (id)chatsWithRoomname:(id)arg1 onService:(id)arg2;
 - (id)chatsWithHandle:(id)arg1 onService:(id)arg2;
-- (id)updateChat:(id)arg1;
 - (void)unarchiveChat:(id)arg1;
 - (void)archiveChat:(id)arg1;
 - (id)loadAllChats;

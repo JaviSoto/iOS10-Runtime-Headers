@@ -22,6 +22,11 @@
 + (int)lastInitError;
 + (id)sharedInstance;
 
+- (void)scanForConnectableDevices:(unsigned int)arg1;
+- (BOOL)isServiceSupported:(unsigned int)arg1;
+- (id)pairedDevices;
+- (void)showPowerPrompt;
+- (void)resetDeviceScanning;
 - (void)enableTestMode;
 - (BOOL)audioConnected;
 - (id)connectedDevices;
@@ -70,11 +75,6 @@
 - (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
 - (void)connectDevice:(id)arg1;
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
-- (void)scanForConnectableDevices:(unsigned int)arg1;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
-- (id)pairedDevices;
-- (void)showPowerPrompt;
-- (void)resetDeviceScanning;
 - (BOOL)available;
 - (BOOL)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;

@@ -16,8 +16,6 @@
 
 
 - (id)baseSectioning;
-- (id)sectioningHash;
-- (id)sectioningDescription;
 - (id)visibleUnsampledIndexesForCombinedRealSections:(id)arg1;
 - (void)setBaseSectioning:(id)arg1;
 - (BOOL)hasSomeSampling;
@@ -26,6 +24,9 @@
 - (int)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
 - (void)_baseSectioningDidInvalidateSections:(id)arg1;
 - (void)_baseSectioningDidInvalidateSampling:(id)arg1;
+- (BOOL)writeToURL:(id)arg1 error:(id*)arg2;
+- (id)sectioningHash;
+- (id)sectioningDescription;
 - (int)numberOfRealItemsInVisualSection:(int)arg1;
 - (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
 - (struct PUSimpleIndexPath { int x1; int x2; })visualIndexPathForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1 isMainItem:(BOOL*)arg2;
@@ -36,7 +37,6 @@
 - (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
 - (int)mainRealSectionForVisualSection:(int)arg1;
 - (int)visualSectionForRealSection:(int)arg1;
-- (BOOL)writeToURL:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

@@ -32,8 +32,8 @@
 - (id)postalCode;
 - (id)formattedAddressSinleLine;
 - (id)formattedAddress;
-- (id)keyboardSettingsForAddressPart:(id)arg1;
 - (id)ISOCountryCode;
+- (id)keyboardSettingsForAddressPart:(id)arg1;
 - (id)addressDictionary;
 - (id)subLocality;
 - (id)subAdministrativeArea;

@@ -197,11 +197,11 @@
 - (double)timeSent;
 - (unsigned int)uniqueID;
 - (double)timeout;
+- (void)setCompletionBlock:(id)arg1;
 - (id)init;
 - (id)userInfo;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)completionBlock;

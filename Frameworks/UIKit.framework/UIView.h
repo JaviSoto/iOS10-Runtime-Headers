@@ -488,12 +488,12 @@
 - (void)updateConstraints;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_nsis_bounds;
 - (void)_nsis_origin:(struct CGPoint { float x1; float x2; }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (void)_setHostsLayoutEngine:(BOOL)arg1;
 - (BOOL)endEditing:(BOOL)arg1;
 - (void)removeConstraints:(id)arg1;
 - (id)textInputView;
 - (void)animator:(id)arg1 startAnimation:(id)arg2;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
-- (void)_setHostsLayoutEngine:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)removeConstraint:(id)arg1;

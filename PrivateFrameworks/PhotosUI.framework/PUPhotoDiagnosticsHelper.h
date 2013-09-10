@@ -16,11 +16,11 @@
 
 
 - (id)_keepSelf;
-- (id)referenceViewController;
 - (void)collectDiagnosticsWithInformation:(id)arg1;
 - (id)initWithReferenceViewController:(id)arg1;
-- (void)_finishedWithDataSent:(BOOL)arg1;
 - (void)_composeMessageForDiagnosticInformation:(id)arg1 withProblemType:(int)arg2;
+- (id)referenceViewController;
+- (void)_finishedWithDataSent:(BOOL)arg1;
 - (void)_setKeepSelf:(id)arg1;
 - (void)setReferenceViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;

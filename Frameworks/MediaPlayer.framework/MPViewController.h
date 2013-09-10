@@ -77,6 +77,7 @@
 - (void)setPlayer:(id)arg1;
 - (id)player;
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
@@ -91,7 +92,6 @@
 - (id)item;
 - (void)setView:(id)arg1;
 - (void)setIdleTimerDisabled:(BOOL)arg1;
-- (int)orientation;
 - (id)popViewControllerAnimated:(BOOL)arg1;
 
 @end

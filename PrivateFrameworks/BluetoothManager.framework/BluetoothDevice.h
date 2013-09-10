@@ -11,6 +11,7 @@
 }
 
 
+- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (id)syncGroups;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
@@ -36,7 +37,6 @@
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (void)disconnect;
 - (void)connect;
 - (int)compare:(id)arg1;

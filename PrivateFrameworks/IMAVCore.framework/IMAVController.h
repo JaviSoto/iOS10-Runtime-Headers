@@ -31,7 +31,6 @@
 - (BOOL)blockOutgoingInvitationsDuringCall;
 - (void)set_delegates:(id)arg1;
 - (id)_delegates;
-- (void)blockOnPendingVCInvitationsWithCapabilities:(int)arg1;
 - (BOOL)_ready;
 - (void)requestPendingACInvitations;
 - (void)requestPendingVCInvitations;
@@ -67,6 +66,7 @@
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)removeDelegate:(id)arg1;
+- (void)blockOnPendingVCInvitationsWithCapabilities:(int)arg1;
 - (void)setupIMAVController;
 - (void)setIMAVCapabilities:(int)arg1 toCaps:(int)arg2;
 - (id)init;

@@ -18,6 +18,7 @@
 
 - (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
+- (BOOL)isRecording;
 - (id)_avErrorUserInfoDictionaryForError:(long)arg1 wrapper:(id)arg2;
 - (id)outputSettingsForConnection:(id)arg1;
 - (BOOL)sendsLastVideoPreviewFrame;
@@ -36,7 +37,6 @@
 - (id)connectionMediaTypes;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (long)_stopRecording;
-- (BOOL)isRecording;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)init;

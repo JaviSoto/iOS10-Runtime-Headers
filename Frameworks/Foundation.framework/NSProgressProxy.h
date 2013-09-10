@@ -19,6 +19,7 @@
 }
 
 
+- (void)setKind:(id)arg1;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setPausingHandler:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)_invokePublishingHandler:(id)arg1;
 - (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(BOOL)arg3;
 - (BOOL)isOld;
-- (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)prioritize;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;

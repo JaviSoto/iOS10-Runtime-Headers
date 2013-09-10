@@ -49,10 +49,10 @@
 - (id)additionalMessageHeaders;
 - (id)bagKey;
 - (void)setDeviceName:(id)arg1;
+- (void)setServices:(id)arg1;
 - (id)osVersion;
 - (void)setProtocolVersion:(id)arg1;
 - (id)protocolVersion;
-- (void)setServices:(id)arg1;
 - (id)language;
 - (id)deviceName;
 - (void)dealloc;

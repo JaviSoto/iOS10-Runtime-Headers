@@ -18,9 +18,9 @@
 - (int)size;
 - (void)setOrientation:(int)arg1;
 - (void)setType:(int)arg1;
+- (int)orientation;
 - (void)setSize:(int)arg1;
 - (id)init;
-- (int)orientation;
 - (int)type;
 
 @end

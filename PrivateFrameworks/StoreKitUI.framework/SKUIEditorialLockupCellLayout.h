@@ -41,6 +41,7 @@
 - (id)lockupCellLayout;
 - (id)textBoxView;
 - (void)setIconImageHidden:(BOOL)arg1;
+- (void)setRestricted:(BOOL)arg1;
 - (void)applyEditorialLayout:(id)arg1 withOrientation:(int)arg2;
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setLayoutStyle:(int)arg1;

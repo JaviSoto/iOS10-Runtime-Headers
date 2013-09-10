@@ -17,6 +17,7 @@
     SLSheetPreviewImageSource *_previewImageSource;
     int _currentBarMetrics;
     UIView *_maskView;
+    BOOL _didCallPresentSheet;
     BOOL _triggerPresentationAnimationOnKeyboard;
     BOOL _hasPresentedSheet;
     BOOL _isPerformationRotation;

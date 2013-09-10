@@ -133,7 +133,7 @@
 - (float)_desiredScale;
 - (float)_desiredRotation;
 - (struct CGPoint { float x1; float x2; })_desiredTranslation;
-- (void)_endWithTranslationVelocity:(struct CGPoint { float x1; float x2; })arg1 rotationVelocity:(float)arg2 scaleVelocity:(float)arg3 shouldBounce:(BOOL)arg4 finish:(BOOL)arg5;
+- (void)_endWithTranslationVelocity:(struct CGPoint { float x1; float x2; })arg1 rotationVelocity:(float)arg2 scaleVelocity:(float)arg3 shouldBounce:(BOOL)arg4 finish:(BOOL)arg5 animated:(BOOL)arg6;
 - (BOOL)_isAutoUpdating;
 - (void)_setDesiredScale:(float)arg1;
 - (void)_setDesiredRotation:(float)arg1;
@@ -159,6 +159,7 @@
 - (void)cancelWithTranslationVelocity:(struct CGPoint { float x1; float x2; })arg1 rotationVelocity:(float)arg2 scaleVelocity:(float)arg3 shouldBounce:(BOOL)arg4;
 - (void)finishWithTranslationVelocity:(struct CGPoint { float x1; float x2; })arg1 rotationVelocity:(float)arg2 scaleVelocity:(float)arg3 shouldBounce:(BOOL)arg4;
 - (BOOL)shouldFinish;
+- (void)cancelWithoutAnimation;
 - (void)updateWithTranslation:(struct CGPoint { float x1; float x2; })arg1 rotation:(float)arg2 scale:(float)arg3;
 - (void)setAutoUpdates:(BOOL)arg1;
 - (id)initWithView:(id)arg1 sourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 targetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 anchorPoint:(struct CGPoint { float x1; float x2; })arg4 shouldUseTargetAspectRatio:(BOOL)arg5 rampUpDuration:(double)arg6 direction:(unsigned int)arg7;

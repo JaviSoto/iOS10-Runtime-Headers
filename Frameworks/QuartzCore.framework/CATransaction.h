@@ -24,11 +24,11 @@
 + (BOOL)disableActions;
 + (unsigned int)currentState;
 + (void)setInputTime:(double)arg1;
++ (void)setCompletionBlock:(id)arg1;
 + (void)synchronize;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (id)animator;
 + (void)setAnimationTimingFunction:(id)arg1;
-+ (void)setCompletionBlock:(id)arg1;
 + (void)activate;
 + (void)setAnimationDuration:(double)arg1;
 + (id)completionBlock;

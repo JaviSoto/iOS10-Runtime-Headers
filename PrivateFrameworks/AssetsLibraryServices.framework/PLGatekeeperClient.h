@@ -50,7 +50,6 @@
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 - (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
-- (void)cleanupAfteriTunesSync;
 - (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
 - (void)updateModelAfterOTARestore;
 - (void)updateCameraPreviewWellImage:(id)arg1;

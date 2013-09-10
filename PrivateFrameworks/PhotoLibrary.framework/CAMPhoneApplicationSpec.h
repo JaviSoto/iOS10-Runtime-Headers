@@ -6,6 +6,8 @@
 }
 
 
+- (BOOL)shouldCreateSlalomIndicator;
+- (BOOL)shouldCreateAvalancheIndicator;
 - (int)bottomBarOrientation;
 - (BOOL)shouldCreateZoomSlider;
 - (BOOL)shouldCreatePanoramaView;

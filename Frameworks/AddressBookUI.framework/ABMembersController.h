@@ -59,6 +59,7 @@
 - (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
 - (void)_updateNoContactsViewAnimated:(BOOL)arg1;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
+- (void)_updateCountString;
 - (BOOL)selectAndScrollMemberVisible:(void*)arg1;
 - (void*)_selectedPerson;
 - (id)currentSearchText;
@@ -76,7 +77,6 @@
 - (id)tableViewPathToMember:(void*)arg1;
 - (int)globalIndexOfMember:(void*)arg1;
 - (BOOL)isSearching;
-- (void)_updateCountString;
 - (id)searchDataSource;
 - (id)membersDataSource;
 - (void)_updateRowsHeights;

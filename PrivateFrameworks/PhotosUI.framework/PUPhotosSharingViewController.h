@@ -63,7 +63,6 @@
 - (id)transitionCollectionView;
 - (struct CGSize { float x1; float x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)layout:(id)arg1 collectionView:(id)arg2 referenceIndexPathWithOffsetX:(float*)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layout:(id)arg1 collectionView:(id)arg2 selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 atIndexPath:(id)arg4;
 - (id)photosSharingGridCellViewForZooming:(id)arg1;
 - (id)photosSharingGridCellBadgeForZooming:(id)arg1 layoutAnchor:(unsigned int*)arg2;
 - (void)photosSharingGridCellDidEndZooming:(id)arg1;
@@ -96,7 +95,6 @@
 - (void)_setLastKnownReferenceAsset:(id)arg1 indexPath:(id)arg2;
 - (id)_indexPathOfCenterVisibleItemInCollectionView:(id)arg1;
 - (id)mainCollectionViewLayout;
-- (void)_handleTapAtIndexPath:(id)arg1;
 - (void)_pageToIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_setSelected:(BOOL)arg1 atIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)_isAnyAssetSelected;
@@ -107,7 +105,6 @@
 - (void)_prepareActivityViewControllerForUse;
 - (BOOL)_embedsActivityView;
 - (id)_assetAtIndexPath:(id)arg1;
-- (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { float x1; float x2; })arg2 excludingIndexPath:(id)arg3;
 - (float)_horizontalOffsetInCollectionView:(id)arg1 forCenteringOnItemAtIndexPath:(id)arg2;
 - (id)_imageManager;
 - (id)photosSharingTransitionContext;
@@ -123,6 +120,9 @@
 - (id)initWithSpec:(id)arg1 photoCollections:(id)arg2 selection:(id)arg3;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_statusBarFrameWillChange:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layout:(id)arg1 collectionView:(id)arg2 selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 atIndexPath:(id)arg4;
+- (void)_handleTapAtIndexPath:(id)arg1;
+- (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { float x1; float x2; })arg2 excludingIndexPath:(id)arg3;
 - (id)_transitionLayout;
 - (void)_setTransitionLayout:(id)arg1;
 - (void)activityViewController:(id)arg1 displayVideoRemakerProgressView:(id)arg2;

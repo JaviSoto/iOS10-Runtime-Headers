@@ -2,11 +2,16 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSNumber, NSSet, CLLocation, NSString, NSURL, NSDate, NSArray;
 
 @interface PLSyncSaveJob : NSObject  {
     BOOL isVideo;
     BOOL isSyncComplete;
+    BOOL _cleanupSyncState;
     NSArray *facesInfo;
     NSURL *originalAssetURL;
     NSString *uuid;
@@ -16,6 +21,12 @@
     CLLocation *location;
     NSNumber *sortToken;
     NSString *originalFileName;
+    NSDate *_cleanupBeforeDate;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _finishedBlock;
+
 }
 
 @property(retain) NSURL * originalAssetURL;
@@ -29,8 +40,15 @@
 @property(retain) NSNumber * sortToken;
 @property(retain) NSString * originalFileName;
 @property BOOL isSyncComplete;
+@property BOOL cleanupSyncState;
+@property(copy) NSDate * cleanupBeforeDate;
+@property(copy) id finishedBlock;
 
 
+- (void)setFinishedBlock:(id)arg1;
+- (id)finishedBlock;
+- (void)setCleanupBeforeDate:(id)arg1;
+- (void)setCleanupSyncState:(BOOL)arg1;
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setOriginalFileName:(id)arg1;
@@ -46,6 +64,8 @@
 - (id)sortToken;
 - (id)originalAssetURL;
 - (BOOL)isSyncComplete;
+- (id)cleanupBeforeDate;
+- (BOOL)cleanupSyncState;
 - (void)setSortToken:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (id)location;

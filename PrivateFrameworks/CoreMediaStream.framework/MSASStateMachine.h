@@ -78,6 +78,7 @@
 @property(copy) id postCommandCompletionBlock;
 
 
+- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setServerSideConfigQueue:(id)arg1;
 - (id)thumbnailImageScalingSpecification;
 - (id)derivativeImageScalingSpecification;
@@ -223,7 +224,6 @@
 - (void)retryOutstandingActivities;
 - (void)setDaemon:(id)arg1;
 - (BOOL)isInRetryState;
-- (void)shutDownCompletionBlock:(id)arg1;
 - (void)setEventQueue:(id)arg1;
 - (id)eventQueue;
 - (void)setMemberQueue:(id)arg1;

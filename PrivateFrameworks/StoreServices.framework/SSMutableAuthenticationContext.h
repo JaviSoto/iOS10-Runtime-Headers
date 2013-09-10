@@ -25,6 +25,7 @@
 @property(retain) NSNumber * requiredUniqueIdentifier;
 @property(copy) NSArray * userAgentComponents;
 @property(copy) NSDictionary * HTTPHeaders;
+@property BOOL allowsBioAuthentication;
 @property(copy) NSString * clientIdentifierHeader;
 @property(getter=isDemoAccount) BOOL demoAccount;
 @property BOOL persistsAcrossDeviceLock;
@@ -39,6 +40,7 @@
 - (void)setPersistsPasswordFallback:(BOOL)arg1;
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
+- (void)setAllowsBioAuthentication:(BOOL)arg1;
 - (void)setValuesWithAccount:(id)arg1;
 - (void)setTokenType:(int)arg1;
 - (void)setPersistsAcrossDeviceLock:(BOOL)arg1;

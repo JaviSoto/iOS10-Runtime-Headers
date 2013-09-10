@@ -68,13 +68,13 @@
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (id)initWithLayer:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)orientation;
 - (id)init;
 - (void)dealloc;
 - (void)setSession:(id)arg1;
 - (id)session;
 - (void)setPaused:(BOOL)arg1;
 - (id)_input;
-- (int)orientation;
 - (BOOL)isPaused;
 - (id)connection;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

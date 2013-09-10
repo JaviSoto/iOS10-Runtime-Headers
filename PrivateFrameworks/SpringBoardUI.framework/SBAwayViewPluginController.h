@@ -40,6 +40,7 @@
 - (BOOL)viewCanBeDisplayed;
 - (unsigned int)overlayStyle;
 - (void)lockScreenMediaControlsShown:(BOOL)arg1;
+- (BOOL)wantsMesaAutoUnlock;
 - (BOOL)wantsSwipeGestureRecognizer;
 - (BOOL)wantsAutomaticFullscreenTimer;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
@@ -101,6 +102,7 @@
 - (id)customHeaderView;
 - (void)disable;
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)init;
 - (void)dealloc;
 - (unsigned int)presentationStyle;
@@ -115,7 +117,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)backgroundView;
 - (void)setView:(id)arg1;
-- (int)orientation;
 - (id)view;
 
 @end

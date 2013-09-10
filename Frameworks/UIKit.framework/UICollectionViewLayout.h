@@ -14,6 +14,8 @@
     NSMutableDictionary *_finalAnimationLayoutAttributesDict;
     NSMutableDictionary *_deletedSupplementaryIndexPathsDict;
     NSMutableDictionary *_insertedSupplementaryIndexPathsDict;
+    NSMutableDictionary *_deletedDecorationIndexPathsDict;
+    NSMutableDictionary *_insertedDecorationIndexPathsDict;
     NSMutableIndexSet *_deletedSectionsSet;
     NSMutableIndexSet *_insertedSectionsSet;
     NSMutableDictionary *_decorationViewClassDict;

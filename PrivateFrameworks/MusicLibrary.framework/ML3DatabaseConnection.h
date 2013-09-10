@@ -65,6 +65,7 @@
 - (void)setModuleContext:(void*)arg1 forModuleName:(id)arg2 contextReleaseBlock:(id)arg3;
 - (BOOL)registerModuleName:(id)arg1 moduleMethods:(const struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
 - (int)profilingLevel;
+- (void)_clearStatementCache;
 - (BOOL)_databaseFileExists;
 - (BOOL)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
 - (int)checkpointDatabase;
@@ -80,7 +81,6 @@
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (void)_finalizeAllStatements;
 - (void)_logCurrentError;
-- (void)_clearStatementCache;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (BOOL)_openWithFlags:(int)arg1 isRetry:(BOOL)arg2;
 - (void)_updateProfilingLevel;

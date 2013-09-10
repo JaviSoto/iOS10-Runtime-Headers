@@ -51,8 +51,6 @@
 - (void)setNumberOfRatings:(int)arg1;
 - (int)numberOfRatings;
 - (BOOL)hasNumberOfRatings;
-- (void)setMaxScore:(double)arg1;
-- (double)maxScore;
 - (BOOL)hasMaxScore;
 - (void)setScore:(double)arg1;
 - (BOOL)hasScore;
@@ -64,6 +62,8 @@
 - (void)copyTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setMaxScore:(double)arg1;
+- (double)maxScore;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

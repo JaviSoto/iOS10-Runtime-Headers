@@ -154,6 +154,7 @@
 
 + (Class)invalidationContextClass;
 
+- (id)_pl_debugItems;
 - (BOOL)usesRenderedStripTopExtendersForTransitions;
 - (BOOL)floatingSectionHeadersEnabled;
 - (id)layoutSectioning;

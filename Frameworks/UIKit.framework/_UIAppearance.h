@@ -26,7 +26,7 @@
 + (id)_appearanceNodeForClassInfo:(id)arg1 containerList:(id)arg2;
 + (id)_appearanceWithClassInfo:(id)arg1 containerList:(id)arg2;
 + (id)_rootAppearancesNode;
-+ (id)appearanceAtNode:(id)arg1 withObject:(id)arg2;
++ (id)appearancesAtNode:(id)arg1 withObject:(id)arg2;
 + (id)_recorderForSource:(id)arg1;
 + (id)_windowsForSource:(id)arg1;
 + (void)_applyInvocationsTo:(id)arg1 window:(id)arg2 matchingSelector:(SEL)arg3;

@@ -26,6 +26,7 @@
 - (id)internal;
 - (id)metadata;
 - (long long)size;
+- (int)orientation;
 - (BOOL)isValid;
 - (void)dealloc;
 - (id)description;
@@ -34,7 +35,6 @@
 - (struct CGImage { }*)fullResolutionImage;
 - (struct CGSize { float x1; float x2; })dimensions;
 - (id)UTI;
-- (int)orientation;
 - (id)filename;
 - (id)url;
 - (float)scale;

@@ -32,11 +32,11 @@
 - (id)dataSourceID;
 - (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; }*)privateGetImplementation;
 - (id)location;
+- (id)orientation;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)description;
-- (id)orientation;
 
 @end

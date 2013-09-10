@@ -468,8 +468,8 @@
 - (void)setScrollEnabled:(BOOL)arg1;
 - (BOOL)isZooming;
 - (BOOL)isUserInteractionEnabled;
-- (BOOL)isRotating;
 - (BOOL)isScrollEnabled;
+- (BOOL)isRotating;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

@@ -12,10 +12,10 @@
 @property(readonly) NSArray * arrayRepresentation;
 
 
+- (id)initWithNSMutableArray:(id)arg1;
 - (id)arrayRepresentation;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;

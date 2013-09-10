@@ -54,12 +54,12 @@
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)setOrientation:(unsigned int)arg1;
+- (unsigned int)orientation;
 - (struct CGImage { }*)thumbnail;
 - (void)finalize;
 - (void)dealloc;
 - (long long)fileSize;
 - (void)setThumbnail:(struct CGImage { }*)arg1;
 - (BOOL)hasMetadata;
-- (unsigned int)orientation;
 
 @end

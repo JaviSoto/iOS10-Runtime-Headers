@@ -20,7 +20,7 @@
 - (unsigned int)minimumOS;
 - (id)longTitle;
 - (id)iconTitle;
-- (unsigned char)contentRatingFlags;
+- (int)contentRatingFlags;
 - (id)category;
 - (id)iconURL;
 - (id)companyName;

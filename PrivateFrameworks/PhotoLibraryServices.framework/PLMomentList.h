@@ -50,6 +50,7 @@
 - (void)insertMomentsForMegaMoment:(id)arg1 atIndexes:(id)arg2;
 - (void)replaceObjectInMomentsForMegaMomentAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromMomentsForMegaMomentAtIndex:(unsigned int)arg1;
+- (BOOL)_validateForInsertOrUpdate:(id*)arg1;
 - (void)_updateCachedNameInfoIfNeeded;
 - (void)removeMomentsForYear:(id)arg1;
 - (void)addMomentsForYear:(id)arg1;
@@ -71,6 +72,8 @@
 - (id)localizedLocationNames;
 - (id)containers;
 - (void)delete;
+- (BOOL)validateForUpdate:(id*)arg1;
+- (BOOL)validateForInsert:(id*)arg1;
 - (void)willSave;
 - (void)awakeFromInsert;
 - (void)didTurnIntoFault;

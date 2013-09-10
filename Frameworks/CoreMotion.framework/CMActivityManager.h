@@ -12,6 +12,7 @@
 
 - (id)activityHandler;
 - (void)setActivityHandler:(id)arg1;
+- (int)overrideOscarSideband:(BOOL)arg1 withState:(int)arg2;
 - (BOOL)isActivityAvailable;
 - (id)init;
 - (void)dealloc;

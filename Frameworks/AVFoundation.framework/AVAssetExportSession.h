@@ -60,7 +60,6 @@
 + (id)allExportPresets;
 + (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
-- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (void)cancelExport;
 - (void)setFileLengthLimit:(long long)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
@@ -68,6 +67,9 @@
 - (void)setMetadataItemFilter:(id)arg1;
 - (void)setOutputURL:(id)arg1;
 - (void)setOutputFileType:(id)arg1;
+- (void)setVideoFrameRateConversionAlgorithm:(id)arg1;
+- (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (struct CGSize { float x1; float x2; })_getSourceDimension;
 - (void)_handleFigRemakerNotificationAsync:(id)arg1 payload:(id)arg2;
 - (id)_actualSettingForPresetAppleM4VAppleTV:(id)arg1;
@@ -92,8 +94,6 @@
 - (long long)fileLengthLimit;
 - (long long)estimatedOutputFileLength;
 - (BOOL)_canPerformFastFrameRateConversionWithPreset:(id)arg1 usingRemaker:(struct OpaqueFigRemaker { }*)arg2;
-- (void)setVideoFrameRateConversionAlgorithm:(id)arg1;
-- (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)determineCompatibleFileTypesWithCompletionHandler:(id)arg1;
 - (void)_addListeners;
 - (id)_createFigRemaker:(struct OpaqueFigRemaker {}**)arg1;

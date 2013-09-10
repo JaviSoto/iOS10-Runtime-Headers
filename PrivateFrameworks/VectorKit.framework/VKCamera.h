@@ -183,13 +183,13 @@
 - (void)setMaxHeight:(double)arg1;
 - (void)setOrientation:(const struct { double x1[4][4]; }*)arg1;
 - (void)setPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
+- (const struct { double x1[4][4]; }*)orientation;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)description;
 - (id)delegate;
-- (const struct { double x1[4][4]; }*)orientation;
 - (struct VKPoint { double x1; double x2; double x3; })position;
 
 @end

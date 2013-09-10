@@ -124,11 +124,13 @@
 - (id)_fixupOriginalFontAttributeForAttributes:(id)arg1;
 - (id)_emptyStringAttributes;
 - (id)_attributesForReplacementInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)_characterPositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_characterPositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_rectsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)_validCaretPositionFromCharacterIndex:(unsigned int)arg1 downstream:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRectForOffset:(int)arg1;
+- (id)_validCaretPositionFromCharacterIndex:(unsigned int)arg1 downstream:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRectForOffset:(int)arg1 caretAfterOffset:(BOOL)arg2;
 - (BOOL)_shouldConsiderTextViewForGeometry:(id)arg1;
+- (id)_rectsForUITextRange:(id)arg1;
 - (void)checkSpellingForWordInRange:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })previousSelectedRange;
 - (BOOL)continuousSpellCheckingEnabled;

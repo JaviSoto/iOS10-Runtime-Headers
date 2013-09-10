@@ -25,6 +25,9 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)requestDeleteFiles:(id)arg1;
+- (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
+- (void)requestEject;
 - (void)addToMetadataFetchQ:(id)arg1;
 - (void)addToThumbnailFetchQ:(id)arg1;
 - (void)removeFolder:(id)arg1;
@@ -63,9 +66,6 @@
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)requestCloseSession;
 - (void)requestOpenSession;
-- (void)requestDeleteFiles:(id)arg1;
-- (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
-- (void)requestEject;
 - (void)cancelDownload;
 - (id)contents;
 - (double)timeOffset;

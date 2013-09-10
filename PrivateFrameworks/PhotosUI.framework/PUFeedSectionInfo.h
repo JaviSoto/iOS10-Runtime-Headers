@@ -43,6 +43,7 @@
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSDate * endDate;
@@ -78,6 +79,7 @@
 - (id)assets;
 - (id)cloudFeedEntry;
 - (void)getPhotoCount:(out unsigned int*)arg1 videoCount:(out unsigned int*)arg2;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)tertiaryKeyAsset;

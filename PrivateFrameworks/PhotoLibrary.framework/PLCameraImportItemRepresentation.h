@@ -21,7 +21,6 @@
 @property BOOL inDatabase;
 
 
-- (BOOL)isRaw;
 - (BOOL)inDatabase;
 - (void)setCameraFile:(id)arg1;
 - (void)setInDatabase:(BOOL)arg1;
@@ -33,6 +32,7 @@
 - (void)setCanRequestThumbnail:(BOOL)arg1;
 - (BOOL)canRequestThumbnail;
 - (void)setCanRequestMetadata:(BOOL)arg1;
+- (BOOL)isRaw;
 - (id)fileExtension;
 - (BOOL)isAudio;
 - (BOOL)isJPEG;

@@ -16,6 +16,7 @@
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)playerLayerWithPlayer:(id)arg1;
 
+- (BOOL)isReadyForDisplay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minRectToFitVideoAndSubtitlesInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -39,7 +40,6 @@
 - (void)_calculateSubtitleLayerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationSize:(struct CGSize { float x1; float x2; })arg2 playLayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3 shouldUpdateCachedSubtitleSample:(BOOL)arg4 outBound:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (void)_updateSubtitleLayerForPlayerLayerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationSize:(struct CGSize { float x1; float x2; })arg2 playLayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3 forceRender:(BOOL)arg4;
 - (void)_setSubtitleGravity:(id)arg1;
-- (BOOL)isReadyForDisplay;
 - (BOOL)isOverscanSubtitleSupportEnabled;
 - (id)videoGravity;
 - (void)setVideoGravity:(id)arg1;

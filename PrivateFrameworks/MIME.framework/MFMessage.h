@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSArray, NSString, MFMessageStore, MFMimePart;
+@class NSURL, NSArray, NSString, MFMessageStore, MFMimePart;
 
 @interface MFMessage : NSObject <NSCopying> {
     MFMessageStore *_store;
@@ -22,6 +22,7 @@
     NSString *_summary;
     NSString *_externalID;
     MFMimePart *_parentPart;
+    NSURL *_messageURL;
     unsigned int _calculatedAttachmentInfo : 1;
     unsigned short _numberOfAttachments;
 }
@@ -35,6 +36,7 @@
 
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (id)dataForMimePart:(id)arg1;
+- (void)setMessageURL:(id)arg1;
 - (id)messageIDHeaderInFortyBytesOrLess;
 - (void)setMessageIDHash:(long long)arg1;
 - (void)setConversationID:(long long)arg1;

@@ -11,10 +11,10 @@
 
 - (id)initWithOrientation:(int)arg1 andTimestamp:(double)arg2;
 - (id)orientationString;
+- (int)orientation;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)orientation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

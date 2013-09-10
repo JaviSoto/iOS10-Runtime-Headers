@@ -29,6 +29,7 @@
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSDate * endDate;
@@ -80,6 +81,7 @@
 - (id)_assets;
 - (void)set_assets:(id)arg1;
 - (struct NSObject { Class x1; }*)backingAlbum;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)tertiaryKeyAsset;

@@ -25,7 +25,6 @@
     UILabel *_label;
     UILabel *_detailLabel;
     UIView *_contentView;
-    UIView *_topSeparatorView;
     UIColor *_tintColor;
     struct UIEdgeInsets { 
         float top; 

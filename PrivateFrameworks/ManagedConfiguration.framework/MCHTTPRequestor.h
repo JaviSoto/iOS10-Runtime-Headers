@@ -50,11 +50,11 @@
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
+- (void)setCompletionBlock:(id)arg1;
 - (id)init;
 - (id)password;
 - (void).cxx_destruct;
 - (void)setConnection:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

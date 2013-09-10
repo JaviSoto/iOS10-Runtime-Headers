@@ -14,13 +14,13 @@
 - (id)dependencies;
 - (void)addDependency:(id)arg1;
 - (void)setQueuePriority:(int)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (id)init;
 - (void)setObservationInfo:(void*)arg1;
 - (void)waitUntilFinished;
 - (void)finalize;
 - (void)dealloc;
 - (void)cancel;
-- (void)setCompletionBlock:(id)arg1;
 - (void)removeDependency:(id)arg1;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;
 - (int)queuePriority;

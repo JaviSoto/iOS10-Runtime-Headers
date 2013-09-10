@@ -17,15 +17,15 @@
 @property float yawAngle;
 
 
-- (void)setYawAngle:(float)arg1;
-- (float)yawAngle;
-- (void)setHasYawAngle:(BOOL)arg1;
-- (BOOL)hasYawAngle;
-- (void)setRollAngle:(float)arg1;
-- (float)rollAngle;
-- (void)setHasRollAngle:(BOOL)arg1;
-- (BOOL)hasRollAngle;
 - (void)setFaceID:(int)arg1;
 - (int)faceID;
+- (float)yawAngle;
+- (float)rollAngle;
+- (BOOL)hasYawAngle;
+- (BOOL)hasRollAngle;
+- (void)setYawAngle:(float)arg1;
+- (void)setHasYawAngle:(BOOL)arg1;
+- (void)setRollAngle:(float)arg1;
+- (void)setHasRollAngle:(BOOL)arg1;
 
 @end

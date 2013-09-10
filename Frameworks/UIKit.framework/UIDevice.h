@@ -43,6 +43,7 @@
 
 - (id)model;
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)name;
 - (void)_clearGraphicsQualityOverride;
 - (BOOL)_hasGraphicsQualityOverride;
@@ -78,7 +79,6 @@
 - (float)_backlightLevel;
 - (void)_setBacklightLevel:(float)arg1;
 - (void)_setActiveUserInterfaceIdiom:(int)arg1;
-- (int)orientation;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
 - (void)_registerForSystemSounds:(id)arg1;

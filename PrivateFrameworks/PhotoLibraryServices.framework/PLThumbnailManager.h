@@ -51,9 +51,9 @@
 + (BOOL)hasObsoleteThumbnailTables;
 + (BOOL)isMissingThumbnailTables;
 
+- (id)thumbnailJPEGPathForPhoto:(id)arg1;
 - (id)preheatItemSourceForFormat:(int)arg1;
 - (id)thumbManagersByFormat;
-- (id)thumbnailJPEGPathForPhoto:(id)arg1;
 - (id)_tableDescriptions;
 - (id)compactImageTables;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;

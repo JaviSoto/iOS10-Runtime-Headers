@@ -242,8 +242,6 @@
 - (void)_timedMetadataAvailable:(id)arg1;
 - (void)_sizeDidChange:(id)arg1;
 - (void)_streamUnlikelyToKeepUp:(id)arg1;
-- (void)_streamLikelyToKeepUp:(id)arg1;
-- (void)_streamBufferFull:(id)arg1;
 - (void)_streamRanDry:(id)arg1;
 - (BOOL)_isCloudItem:(id)arg1;
 - (BOOL)_isDownloadingCloudOrOtherItem:(id)arg1;
@@ -266,6 +264,8 @@
 - (void)_verifyDisplayProtection;
 - (void)_delayedUpdateScanningRate;
 - (void)airPlayVideoEnded;
+- (void)_streamBufferFull:(id)arg1;
+- (void)_streamLikelyToKeepUp:(id)arg1;
 - (void)_itemFailedToPlayToEnd:(id)arg1;
 - (void)_itemReadyToPlay:(id)arg1;
 - (BOOL)_isChangingQueueContents;
@@ -408,10 +408,10 @@
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setEQPreset:(int)arg1;
-- (void)endInterruptionFromInterruptor:(id)arg1 category:(id)arg2 flags:(unsigned int)arg3;
-- (BOOL)allowsExternalPlayback;
 - (float)rate;
 - (void)beginInterruption;
+- (void)endInterruptionFromInterruptor:(id)arg1 category:(id)arg2 flags:(unsigned int)arg3;
+- (BOOL)allowsExternalPlayback;
 - (BOOL)setRate:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (float)volume;

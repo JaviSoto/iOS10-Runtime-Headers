@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAMImageWell, PLVideoView, CAMFlipButton, NSObject<OS_dispatch_source>, CAMCameraSpec, PLCameraIrisAnimationView, PLCameraElapsedTimeView, CAMModeDial, PLCameraVideoStillCaptureButton, CAMFilterButton, CAMElapsedTimeView, PLCameraGuideView, NSString, PLCropOverlay, UIAlertView, UILongPressGestureRecognizer, CALayer, PLCameraController, NSObject<OS_dispatch_queue>, PLCameraProgressView, PLCameraToggleButton, PLCameraOptionsButton, NSMutableSet, UIView, CAMHDRBadge, CAMHardwareLockIndicatorView, PLPreviewOverlayView, PLCameraOverlayTextLabelView, UIImage, PLLowDiskSpaceAlertView, CAMHDRButton, CAMZoomSlider, CAMTopBar, UISwipeGestureRecognizer, UIImageView, NSMutableArray, CAMShutterButton, CAMBlurredSnapshotView, NSTimer, PLCameraPreviewView, PLPhotoLibrary, NSData, UIToolbar, PLCameraSettingsView, PLPhotoTileViewController, CAMFlashButton, PLCameraPanoramaView, CAMBottomBar, UITapGestureRecognizer, NSDictionary;
+@class CAMHDRBadge, PLCropOverlay, NSObject<OS_dispatch_queue>, CAMHDRButton, PLCameraSettingsView, PLCameraController, PLCameraPreviewView, PLCameraVideoStillCaptureButton, PLPhotoLibrary, NSMutableSet, CAMAvalancheSession, CAMFlashButton, PLCameraPanoramaView, CAMSlalomIndicatorView, NSMutableArray, CAMFilterButton, PLCameraIrisAnimationView, CAMZoomSlider, PLCameraToggleButton, UIImageView, CAMShutterButton, PLCameraElapsedTimeView, UISwipeGestureRecognizer, CAMAvalancheIndicatorView, CAMElapsedTimeView, PLCameraGuideView, PLPhotoTileViewController, CAMModeDial, CAMFlipButton, PLVideoView, PLLowDiskSpaceAlertView, CALayer, PLCameraOverlayTextLabelView, UILongPressGestureRecognizer, UITapGestureRecognizer, NSDictionary, PLCameraProgressView, UIImage, NSObject<OS_dispatch_source>, CAMTopBar, PLCameraOptionsButton, UIAlertView, UIToolbar, CAMBottomBar, PLPreviewOverlayView, NSTimer, CAMHardwareLockIndicatorView, CAMCameraSpec, CAMBlurredSnapshotView, UIView, NSString, NSData, CAMImageWell;
 
 @interface PLCameraView : UIView <CAMModeDialDataSource, CAMZoomSliderDelegate, CAMFlashButtonDelegate, CAMAvalancheSessionDelegate, PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraPanoramaViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
     BOOL _isTallScreen;
@@ -154,7 +154,9 @@
     BOOL __switchingBetweenCameras;
     BOOL __processingModeChange;
     BOOL __capturingUsingTimer;
+    BOOL __avalancheIndicatorVisible;
     BOOL __ignoringSubsequentTimedCaptureRequests;
+    BOOL __needToStartAvalancheSound;
     BOOL __hideFocusForFilterSelection;
     BOOL __hideGridViewForFilterSelection;
     BOOL __numFilterSelectionsBeforeCapture;
@@ -175,6 +177,8 @@
     CAMShutterButton *__shutterButton;
     CAMFilterButton *__filterButton;
     CAMZoomSlider *__zoomSlider;
+    CAMAvalancheIndicatorView *__avalancheIndicator;
+    CAMSlalomIndicatorView *__slalomIndicator;
     CAMHardwareLockIndicatorView *__hardwareLockIndicator;
     CAMBlurredSnapshotView *__suspensionSnapshotView;
     CAMBlurredSnapshotView *__captureSnapshotView;
@@ -189,6 +193,7 @@
     int __deferredModeIndex;
     NSObject<OS_dispatch_source> *__captureTimer;
     NSObject<OS_dispatch_queue> *__timedCaptureQueue;
+    CAMAvalancheSession *__avalancheSession;
     NSMutableSet *__filterNamesSelectedBeforeCapture;
     double __timeIntervalOfTouchDown;
 }
@@ -231,6 +236,8 @@
 @property(readonly) CAMShutterButton * _shutterButton;
 @property(readonly) CAMFilterButton * _filterButton;
 @property(readonly) CAMZoomSlider * _zoomSlider;
+@property(readonly) CAMAvalancheIndicatorView * _avalancheIndicator;
+@property(readonly) CAMSlalomIndicatorView * _slalomIndicator;
 @property(readonly) CAMHardwareLockIndicatorView * _hardwareLockIndicator;
 @property(getter=_isCameraEnabled,setter=_setCameraEnabled:) BOOL _cameraEnabled;
 @property(getter=_isCapturing,setter=_setCapturing:) BOOL _capturing;
@@ -263,7 +270,10 @@
 @property(readonly) BOOL _capturingUsingTimer;
 @property(readonly) NSObject<OS_dispatch_source> * _captureTimer;
 @property(readonly) NSObject<OS_dispatch_queue> * _timedCaptureQueue;
+@property(getter=_isAvalancheIndicatorVisible,setter=_setAvalancheIndicatorVisible:) BOOL _avalancheIndicatorVisible;
 @property(readonly) BOOL _ignoringSubsequentTimedCaptureRequests;
+@property(readonly) CAMAvalancheSession * _avalancheSession;
+@property(readonly) BOOL _needToStartAvalancheSound;
 @property(setter=_setHideFocusForFilterSelection:) BOOL _hideFocusForFilterSelection;
 @property(setter=_setHideGridViewForFilterSelection:) BOOL _hideGridViewForFilterSelection;
 @property(setter=_setNumFilterSelectionsBeforeCapture:) BOOL _numFilterSelectionsBeforeCapture;
@@ -271,7 +281,9 @@
 
 + (BOOL)_shouldExtractDiagnostics;
 
+- (BOOL)_needToStartAvalancheSound;
 - (BOOL)_ignoringSubsequentTimedCaptureRequests;
+- (BOOL)_isAvalancheIndicatorVisible;
 - (id)_timedCaptureQueue;
 - (id)_captureTimer;
 - (BOOL)_capturingUsingTimer;
@@ -287,6 +299,7 @@
 - (id)_suspensionSnapshotView;
 - (BOOL)_isHidingHDRBadgeForFilterUI;
 - (id)_hardwareLockIndicator;
+- (id)_slalomIndicator;
 - (id)_previewCounterRotatingView;
 - (id)_previewMaskingView;
 - (BOOL)_receivedInitialPreviewDidStartNotification;
@@ -304,11 +317,6 @@
 - (float)_statusBarOffset;
 - (BOOL)isCameraReady;
 - (BOOL)_isSwipeToModeSwitchEnabled;
-- (void)_setupCaptureTimer;
-- (void)_captureTimerFired;
-- (void)_finalizeAndBeginNewAvalancheSession;
-- (void)_finalizeExistingAvalancheSession;
-- (void)_extendAvalancheSession;
 - (void)_ensureValidAvalancheSession;
 - (void)setUserInteractionLoggingEnabled:(BOOL)arg1;
 - (void)_flipToBlurredPreviewWithCompletionBlock:(id)arg1;
@@ -322,7 +330,6 @@
 - (void)setVideoFlashMode:(int)arg1;
 - (void)setPhotoFlashMode:(int)arg1;
 - (int)photoFlashMode;
-- (int)_currentFlashMode;
 - (BOOL)_cameraButtonOrientationIsLandscape;
 - (void)_createHDRBadgeIfNecessary;
 - (void)animateBlurForSuspension;
@@ -371,7 +378,14 @@
 - (BOOL)_isProcessingModeChange;
 - (void)_switchFromCameraModeAtIndex:(int)arg1 toCameraModeAtIndex:(int)arg2;
 - (BOOL)_isSwipeToModeSwitchAllowed;
+- (void)_setAvalancheIndicatorVisible:(BOOL)arg1;
+- (int)_currentFlashMode;
+- (void)_setupCaptureTimer;
+- (void)_captureTimerFired;
+- (double)_avalancheInterval;
 - (void)_teardownCaptureTimer;
+- (void)_finalizeExistingAvalancheSession;
+- (void)_finalizeAndBeginNewAvalancheSession;
 - (id)_debugEnabledDescriptionForControl:(id)arg1 withReason:(id)arg2;
 - (BOOL)_shouldEnableZoomSlider;
 - (BOOL)_shouldEnableModeDial;
@@ -391,6 +405,7 @@
 - (BOOL)_isCameraEnabled;
 - (void)_setHideFocusForFilterSelection:(BOOL)arg1;
 - (void)_setHidingHDRBadgeForFilterUI:(BOOL)arg1;
+- (BOOL)_shouldHideSlalomIndicatorForMode:(int)arg1;
 - (BOOL)_shouldHidePanoramaViewForMode:(int)arg1;
 - (BOOL)_shouldHideFilterButtonForMode:(int)arg1;
 - (BOOL)_shouldHideShutterButtonForMode:(int)arg1;
@@ -399,7 +414,6 @@
 - (BOOL)_shouldHideModeDialForMode:(int)arg1;
 - (BOOL)_shouldHideFlipButtonForMode:(int)arg1;
 - (BOOL)_shouldHideElapsedTimeViewForMode:(int)arg1;
-- (BOOL)_shouldHideHDRBadgeForMode:(int)arg1;
 - (BOOL)_shouldHideHDRButtonForMode:(int)arg1;
 - (BOOL)_shouldHideFlashButtonForMode:(int)arg1;
 - (BOOL)_shouldHideTopBarForMode:(int)arg1;
@@ -418,6 +432,7 @@
 - (void)_updateGridVisibilityAnimated:(BOOL)arg1;
 - (void)_layoutHardwareLockIndicatorForOrientation:(int)arg1;
 - (void)_createHardwareLockIndicatorIfNecessary;
+- (BOOL)_shouldHideHDRBadgeForMode:(int)arg1;
 - (int)photoFlashModeBeforeHDR;
 - (void)setPhotoFlashModeBeforeHDR:(int)arg1;
 - (void)toggleHDR:(BOOL)arg1;
@@ -427,12 +442,15 @@
 - (void)setHDRIsOn:(BOOL)arg1;
 - (void)_snapshotAndHideTopBarAnimated:(BOOL)arg1;
 - (void)_destroyAllControls;
+- (void)_createSlalomIndicatorIfNecessary;
 - (void)_createElapsedTimeViewIfNecessary;
 - (void)_createStillDuringVideoButtonIfNecessary;
+- (void)_createAvalancheIndicatorIfNecessary;
 - (void)_createFilterButtonIfNecessary;
 - (void)_createHDRButtonIfNecessary;
 - (void)_createPanoControlsIfNecessary;
 - (void)_createVideoControlsIfNecessary;
+- (void)_createSlalomControlsIfNecessary;
 - (void)_createStillImageControlsIfNecessary;
 - (void)_createFlipButtonIfNecessary;
 - (void)_createFlashButtonIfNecessary;
@@ -496,6 +514,7 @@
 - (void)_showVideoCaptureControls;
 - (void)_updateFilterButtonOnState;
 - (void)_clearAEAFLock;
+- (void)_resetInflightImageRequests;
 - (void)_showControlsForChangeToMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_hideControlsForChangeToMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_removeModeSwitchingBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
@@ -519,6 +538,7 @@
 - (BOOL)_isStillImageMode:(int)arg1;
 - (void)_shutterButtonClicked;
 - (void)_incrementInflightImageRequests;
+- (void)_extendAvalancheSession;
 - (int)_getCaptureOrientation;
 - (void)_updateModeSwitchingAvailability;
 - (void)_completeTimedCapture;
@@ -526,8 +546,8 @@
 - (void)_updateImageEditability;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unzoomedPreviewFrame;
 - (void)_decrementInflightImageRequests;
+- (id)_avalancheSession;
 - (void)_setKeepAlive:(BOOL)arg1 forVideoCapture:(BOOL)arg2;
-- (void)_performCaptureAnimation;
 - (void)_handleVolumeUpEvents:(unsigned int)arg1;
 - (BOOL)_shouldEnableShutterButton;
 - (BOOL)cameraShutterReleased:(id)arg1;
@@ -567,6 +587,7 @@
 - (void)stopPreviewAnimated:(BOOL)arg1;
 - (void)_layoutTopBarForOrientation:(int)arg1;
 - (BOOL)_shouldApplyRotationDirectlyToTopBarForOrientation:(int)arg1 cameraMode:(int)arg2;
+- (id)_avalancheIndicator;
 - (id)_HDRBadge;
 - (id)_zoomSlider;
 - (id)_topBar;
@@ -625,6 +646,7 @@
 - (void)_applicationDidResignActive:(id)arg1;
 - (void)_checkDiskSpaceAfterCapture;
 - (void)_assetContainerDidChange:(id)arg1;
+- (void)_performCaptureAnimation;
 - (id)spec;
 - (void)pressShutterButton;
 - (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
@@ -672,6 +694,7 @@
 - (void)cameraControllerDidChangeEffectFilterIndex:(id)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)_startPreview:(id)arg1;
+- (void)cameraControllerDidChangeHDRSuggestion:(id)arg1;
 - (void)cameraControllerTorchAvailabilityChanged:(id)arg1;
 - (void)cameraController:(id)arg1 videoZoomFactorDidChange:(float)arg2;
 - (void)cameraController:(id)arg1 faceMetadataDidChange:(id)arg2;
@@ -716,6 +739,7 @@
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (id)_bottomBar;
 - (void)setShowsCropRegion:(BOOL)arg1;
+- (void)avalancheSession:(id)arg1 didChangeToState:(int)arg2;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewDidPausePlayback:(id)arg1;

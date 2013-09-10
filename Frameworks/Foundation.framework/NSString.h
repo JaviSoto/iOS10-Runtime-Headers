@@ -83,6 +83,7 @@
 + (void)_web_setWordRoundingAllowed:(BOOL)arg1;
 + (BOOL)_web_wordRoundingEnabled;
 + (void)_web_setWordRoundingEnabled:(BOOL)arg1;
++ (id)gs_stringWithFileSystemRepresentation:(const char *)arg1;
 + (id)apsStringGUID;
 + (id)MCMakeUUID;
 + (id)stringForScoreAndPercentileWithRank:(float)arg1 totalScores:(float)arg2 formattedScore:(id)arg3;
@@ -110,7 +111,6 @@
 + (id)ellipsisString;
 + (id)stringWithContentsOfFile:(id)arg1 usingEncoding:(unsigned int)arg2;
 + (id)stringWithFileSystemRepresentation:(const char *)arg1;
-+ (id)gs_stringWithFileSystemRepresentation:(const char *)arg1;
 + (id)mf_formattedAddressWithName:(id)arg1 email:(id)arg2 useQuotes:(BOOL)arg3;
 + (id)mf_partialSurnames;
 + (id)mf_nameExtensions;
@@ -602,6 +602,7 @@
 - (id)queryKeysAndValues;
 - (id)_uikit_stringWithWritingDirection:(int)arg1 asOverride:(BOOL)arg2;
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
+- (BOOL)validateGSName:(out id*)arg1;
 - (BOOL)hasSuffixInsensitive:(id)arg1;
 - (id)_ICSStringForParameterQuotedValue;
 - (id)_ICSStringForParameterValue;
@@ -715,7 +716,6 @@
 - (id)cr_copyStringByEncodingIDNAInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)cr_copyStringByDecodingIDNAInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })cr_rangeOfAddressDomain;
-- (BOOL)validateGSName:(out id*)arg1;
 - (id)stringValue;
 - (BOOL)mf_hasSameNamesAs:(id)arg1;
 - (void)mf_addressCommentFirstName:(id*)arg1 middleName:(id*)arg2 lastName:(id*)arg3 extension:(id*)arg4;

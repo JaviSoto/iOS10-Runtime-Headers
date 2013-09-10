@@ -27,6 +27,7 @@
 - (void)textFieldChanged:(id)arg1;
 - (void)setAddressFormats:(id)arg1;
 - (id)addressFormats;
+- (id)_normalizeCountryCodeToISO:(id)arg1;
 - (void)_setupCoutryPickerOnTextField:(id)arg1;
 - (void)_setupCountryPickerOnLine:(id)arg1;
 - (id)_addressPlaceholderForKey:(id)arg1;
@@ -34,11 +35,11 @@
 - (void)_setAddressValue:(id)arg1 forKey:(id)arg2;
 - (id)_cellsLayoutForCountryCode:(id)arg1;
 - (void)setCellsLayout:(id)arg1;
-- (id)_normalizeCountryCodeToISO:(id)arg1;
 - (id)textFields;
 - (id)cellsLayout;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (void)countryPickerDidCancel:(id)arg1;
+- (id)_countryCode;
 - (void)setValueTextAttributes:(id)arg1;
 - (id)valueTextAttributes;
 - (void)setAddress:(id)arg1;

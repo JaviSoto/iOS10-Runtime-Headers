@@ -73,6 +73,11 @@
   /* Error parsing encoded ivar type info: @? */
     id _deferredLaunchBlock;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __rotationCompleteBlock;
+
 }
 
 @property(retain) UIScreen * screen;
@@ -82,6 +87,7 @@
 @property(setter=_setWindowInternalConstraints:,copy) NSArray * _windowInternalConstraints;
 @property(readonly) BOOL _usesLegacySupportedOrientationChecks;
 @property(setter=_setDeferredLaunchBlock:,copy) id _deferredLaunchBlock;
+@property(setter=_setRotationCompleteBlock:,copy) id _rotationCompleteBlock;
 @property(setter=_setLegacyOrientationChecks:) BOOL _legacyOrientationChecks;
 @property(setter=_setRootViewConstraints:,copy) NSArray * _rootViewConstraints;
 
@@ -259,6 +265,7 @@
 - (void)becomeKeyWindow;
 - (void)resignKeyWindow;
 - (id)_effectiveScreen;
+- (id)_rotationCompleteBlock;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateStatusBarToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -280,7 +287,6 @@
 - (void)_setDeferredLaunchBlock:(id)arg1;
 - (id)_deferredLaunchBlock;
 - (BOOL)_isAnyWindowRotating;
-- (BOOL)isRotating;
 - (BOOL)_legacyShouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)_clientsForRotation;
 - (id)_rotationViewControllers;
@@ -353,6 +359,8 @@
 - (BOOL)_needsShakesWhenInactive;
 - (BOOL)_includeInDefaultImageSnapshot;
 - (BOOL)_shouldZoom;
+- (void)_setRotationCompleteBlock:(id)arg1;
+- (BOOL)isRotating;
 - (id)_currentTintView;
 - (BOOL)_windowControlsStatusBarOrientation;
 - (unsigned int)_contextId;

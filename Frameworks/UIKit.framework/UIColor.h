@@ -89,8 +89,8 @@
 + (id)tableGroupedSeparatorLightColor;
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;
-+ (id)groupTableViewBackgroundColor;
 + (id)tableBackgroundColor;
++ (id)groupTableViewBackgroundColor;
 + (id)_grayColorForFontSize:(float)arg1;
 + (id)_systemColorWithName:(id)arg1;
 + (id)systemBlueColor;
@@ -155,6 +155,7 @@
 + (id)cardLabelReadonlyTextColor;
 + (id)cardValueReadonlyTextColor;
 + (id)cardValueTextColor;
++ (id)cardBackgroundInPopoverColor;
 + (id)cardCellSeparatorColor;
 + (id)cardCellBackgroundColor;
 + (id)_remoteUI_colorWithString:(id)arg1;

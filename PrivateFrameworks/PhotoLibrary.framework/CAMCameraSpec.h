@@ -20,6 +20,8 @@
 @property(readonly) BOOL shouldCreateHDRButton;
 @property(readonly) BOOL shouldCreatePanoramaView;
 @property(readonly) BOOL shouldCreateZoomSlider;
+@property(readonly) BOOL shouldCreateAvalancheIndicator;
+@property(readonly) BOOL shouldCreateSlalomIndicator;
 
 + (id)specForPad;
 + (id)specForCurrentPlatform;
@@ -28,6 +30,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameForOrientation:(int)arg1;
 - (int)rotationStyle;
 - (int)modeDialOrientation;
+- (BOOL)shouldCreateSlalomIndicator;
+- (BOOL)shouldCreateAvalancheIndicator;
 - (int)bottomBarOrientation;
 - (BOOL)isCameraApp;
 - (BOOL)shouldCreateZoomSlider;

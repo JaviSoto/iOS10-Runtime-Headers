@@ -14,6 +14,7 @@
 
 - (void)dealloc;
 - (id)initInternalWithCFStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
+- (void)registerForPostingNotifications;
 - (void)_syncCookies;
 
 @end

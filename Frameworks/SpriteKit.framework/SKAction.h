@@ -33,6 +33,7 @@
 + (id)group:(id)arg1;
 + (id)sequence:(id)arg1;
 + (id)moveBY:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
++ (id)moveBy:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id)arg2;
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
 + (id)runBlock:(id)arg1 queue:(id)arg2;

@@ -40,6 +40,8 @@
 - (void)setSmoothAutoFocusEnabled:(BOOL)arg1;
 - (BOOL)isFlashActive;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
+- (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (BOOL)open:(id*)arg1;
 - (void)setWhiteBalanceMode:(int)arg1;
 - (void)setAutoFocusRangeRestriction:(int)arg1;
@@ -57,7 +59,7 @@
 - (BOOL)automaticallyEnablesLowLightBoostWhenAvailable;
 - (BOOL)isLowLightBoostEnabled;
 - (BOOL)isLowLightBoostSupported;
-- (BOOL)isYoMamaWearsCombatBootsSupported;
+- (BOOL)isSISSupported;
 - (BOOL)HDRUsesPreBracketedFrameAsEV0;
 - (BOOL)isHDRSupported;
 - (BOOL)isRampingVideoZoom;
@@ -114,16 +116,14 @@
 - (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2;
 - (BOOL)isActiveVideoMaxFrameDurationSet;
 - (BOOL)isActiveVideoMinFrameDurationSet;
-- (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
 - (id)formats;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isMachineReadableCodeDetectionSupported;
-- (BOOL)isYoMamaWearsFancyGlasses;
-- (void)setYoMamaWearsFancyGlassesDetectionEnabled:(BOOL)arg1;
-- (BOOL)isYoMamaWearsFancyGlassesDetectionEnabled;
-- (BOOL)isYoMamaWearsFancyGlassesDetectionSupported;
+- (BOOL)isHighDynamicRangeScene;
+- (void)setHighDynamicRangeSceneDetectionEnabled:(BOOL)arg1;
+- (BOOL)isHighDynamicRangeSceneDetectionEnabled;
+- (BOOL)isHighDynamicRangeSceneDetectionSupported;
 - (BOOL)isFaceDetectionDebugMetadataReportingEnabled;
 - (int)faceRectangleAngle;
 - (BOOL)isFaceDetectionDrivenImageProcessingEnabled;

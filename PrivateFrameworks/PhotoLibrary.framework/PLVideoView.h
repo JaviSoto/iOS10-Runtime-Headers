@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, UIImageView, PLVideoOverlayButton, PLMoviePlayerController, PLPhotoBakedThumbnails, PLVideoEditingOverlayView, NSMutableArray, NSString, PLVideoPosterFrameView, NSTimer, PLManagedAsset, PLPhotoTileViewController, UIMovieScrubber, NSLock, NSMutableDictionary, UIActivityIndicatorView, AVAssetExportSession, <PLVideoViewDelegate>, NSObject<OS_dispatch_queue>, PLProgressStack, NSArray, UIImage, UIView, NSURL;
+@class NSDictionary, PLSlalomRegionEditor, PLVideoOverlayButton, PLMoviePlayerController, PLPhotoBakedThumbnails, PLVideoEditingOverlayView, NSMutableArray, NSString, PLVideoPosterFrameView, NSTimer, UIImageView, PLManagedAsset, PLSlalomRangeMapper, PLPhotoTileViewController, UIMovieScrubber, NSLock, NSMutableDictionary, UIActivityIndicatorView, AVAssetExportSession, <PLVideoViewDelegate>, NSObject<OS_dispatch_queue>, PLProgressStack, NSArray, AVAsset, UIImage, UIView, NSURL;
 
-@interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate> {
+@interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate, PLSlalomRegionEditorDelegate> {
     PLManagedAsset *_videoCameraImage;
     NSString *_pathToOriginalVideo;
     NSURL *_videoURL;
@@ -69,6 +69,7 @@
     unsigned int _preparedMoviePlayer : 1;
     unsigned int _isMoviePlayerActive : 1;
     unsigned int _moviePlayerIsReady : 1;
+    unsigned int _moviePlayerIsReadyForDisplay : 1;
     unsigned int _moviePlayerDidBuffer : 1;
     unsigned int _showingOverlay : 1;
     unsigned int _showingScrubber : 1;
@@ -85,13 +86,19 @@
     NSMutableArray *_summaryThumbnailRequestTimestamps;
     NSMutableArray *_detailThumbnailRequestTimestamps;
     UIMovieScrubber *_scrubber;
+    PLSlalomRegionEditor *_slalomRegionEditor;
     NSMutableDictionary *_cachedThumbnails;
     NSArray *_landscapeSummaryThumbnailTimestamps;
     NSArray *_portraitSummaryThumbnailTimestamps;
     UIActivityIndicatorView *_spinner;
     UIActivityIndicatorView *_shadowSpinner;
+    BOOL _allowSlalomEditor;
     BOOL _prepareMoviePlayerForScrubberAutomatically;
     BOOL _shouldPlayVideoWhenViewAppears;
+    BOOL __didEditSlalom;
+    AVAsset *__slalomOriginalAsset;
+    NSArray *__slalomRegions;
+    PLSlalomRangeMapper *__slalomTimeRangeMapper;
 }
 
 @property(readonly) NSString * pathForVideoFile;
@@ -100,6 +107,7 @@
 @property(readonly) PLManagedAsset * videoCameraImage;
 @property(readonly) int interfaceOrientation;
 @property(retain) PLManagedAsset * trimmedVideoClip;
+@property BOOL allowSlalomEditor;
 @property(readonly) UIView * scrubberBackgroundView;
 @property(readonly) UIImage * posterFrameImage;
 @property(readonly) PLVideoPosterFrameView * posterFrameView;
@@ -125,13 +133,17 @@
 @property(readonly) NSString * _pathForPrebakedPortraitScrubberThumbnails;
 @property(readonly) BOOL _mediaIsPlayable;
 @property(readonly) BOOL _didSetPhotoData;
+@property(setter=_setSlalomOriginalAsset:,retain) AVAsset * _slalomOriginalAsset;
+@property(setter=_setSlalomRegions:,retain) NSArray * _slalomRegions;
+@property(setter=_setSlalomTimeRangeMapper:,retain) PLSlalomRangeMapper * _slalomTimeRangeMapper;
+@property(setter=_setDidEditSlalom:) BOOL _didEditSlalom;
 
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
 - (BOOL)prepareMoviePlayerForScrubberAutomatically;
+- (void)setAllowSlalomEditor:(BOOL)arg1;
 - (void)setScrubberWidth:(float)arg1;
 - (id)_moviePlayer;
-- (BOOL)_scrubberTimeNeedsMapping;
 - (BOOL)scrubberIsSubview;
 - (BOOL)showsScrubber;
 - (BOOL)showsPlayOverlay;
@@ -143,13 +155,26 @@
 - (void)importerFinishedProcessingTrimmedVideo:(id)arg1;
 - (id)movieScrubber:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
 - (id)videoOverlayPlayButton;
+- (void)slalomRegionEditorRequestForceUnzoom:(id)arg1;
+- (BOOL)slalomRegionEditorRequestForceZoom:(id)arg1;
+- (void)slalomRegionEditorEndValueChanged:(id)arg1;
+- (void)slalomRegionEditorStartValueChanged:(id)arg1;
+- (void)slalomRegionEditorDidEndEditing:(id)arg1;
+- (void)slalomRegionEditorDidBeginEditing:(id)arg1 withStartHandle:(BOOL)arg2;
 - (id)moviePlayerRequestsPickedAirplayRoute:(id)arg1;
 - (BOOL)moviePlayerControllerShouldAllowExternalPlayback:(id)arg1;
 - (void)moviePlayerWasSuspendedDuringPlayback:(id)arg1;
 - (void)moviePlayerUpdatedDestinationPlaceholder:(id)arg1;
+- (void)moviePlayerReadyToDisplay:(id)arg1;
 - (void)moviePlayerControllerWillResignAsActiveController:(id)arg1;
 - (void)moviePlayerControllerDidBecomeActiveController:(id)arg1;
+- (void)_setDidEditSlalom:(BOOL)arg1;
+- (BOOL)_didEditSlalom;
+- (void)_scrubToSlalomRegionEditorStartHandle:(BOOL)arg1;
+- (id)_slalomRegions;
 - (void)_handleScreenConnectionChange:(BOOL)arg1;
+- (id)_slalomTimeRangeMapper;
+- (BOOL)_scrubberTimeNeedsMapping;
 - (double)_scrubberTimeFromMovieTime:(double)arg1;
 - (BOOL)_mediaIsVideo;
 - (id)_videoSnapshot;
@@ -175,13 +200,13 @@
 - (void)setTrimmedVideoClip:(id)arg1;
 - (void)_prepareMoviePlayerIfNeeded;
 - (void)_scrubberAnimationFinished;
+- (void)_resetSlalomData;
 - (void)_setPlaying:(BOOL)arg1;
 - (void)_saveCachedThumbnailsIfNecessary;
 - (double)_thumbnailTimeFromScrubberTime:(double)arg1;
 - (void)_serviceImageGenerationRequests;
 - (void)_didScrubToValue:(double)arg1 withHandle:(int)arg2;
 - (void)_invalidateSnapshotImage;
-- (double)_movieTimeFromScrubberTime:(double)arg1;
 - (void)_hideVideoOverlay:(BOOL)arg1;
 - (void)_removeScrubberUpdateTimer;
 - (void)_updateScrubberValue;
@@ -191,11 +216,17 @@
 - (id)_pathForPrebakedLandscapeScrubberThumbnails;
 - (double)_scrubberStartTime;
 - (double)_movieScrubberDuration;
-- (void)_scrubToMovieTime:(double)arg1;
 - (void)_showVideoOverlay;
 - (void)setShowsScrubber:(BOOL)arg1 duration:(double)arg2;
 - (void)_setPlaybackDidBegin:(BOOL)arg1;
 - (void)_setMoviePlayerActive:(BOOL)arg1;
+- (void)_scrubToMovieTime:(double)arg1;
+- (double)_movieTimeFromScrubberTime:(double)arg1;
+- (id)_slalomOriginalAsset;
+- (void)_setSlalomTimeRangeMapper:(id)arg1;
+- (void)_setSlalomRegions:(id)arg1;
+- (void)_updateSlalomRegions:(id)arg1 forceSetAsset:(BOOL)arg2;
+- (void)_setSlalomOriginalAsset:(id)arg1;
 - (BOOL)_canCreateMetadata;
 - (id)_pathForOriginalFile;
 - (BOOL)_didSetPhotoData;
@@ -219,9 +250,12 @@
 - (void)_videoOverlayFadeOutDidFinish;
 - (void)playButtonClicked:(id)arg1;
 - (BOOL)_mediaIsPlayable;
+- (BOOL)allowSlalomEditor;
 - (void)_updateForEditing;
+- (void)_updateSlalomRegionEditor;
 - (float)scrubberWidth;
 - (float)_scrubberBackgroundHeight;
+- (BOOL)_shouldShowSlalomEditor;
 - (void)_hideTrimMessageView:(BOOL)arg1;
 - (void)_clearImageGenerators;
 - (void)setTrimProgressStack:(id)arg1;
@@ -256,6 +290,7 @@
 - (void)setShowsPlayOverlay:(BOOL)arg1;
 - (void)setPrepareMoviePlayerForScrubberAutomatically:(BOOL)arg1;
 - (void)setCanEdit:(BOOL)arg1;
+- (id)slalomRegionEditor;
 - (void)prepareMoviePlayer;
 - (id)posterFrameView;
 - (void)_tearDownMoviePlayer;

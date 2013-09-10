@@ -6,6 +6,7 @@
 
 @interface PUActivityItemSource : NSObject <UIActivityItemDeferredSource, UIActivityItemSource> {
     PLManagedAsset *_asset;
+    BOOL _isMogul;
     NSData *_data;
     NSString *_utiType;
     PUActivityItemSourceOperation *_operation;

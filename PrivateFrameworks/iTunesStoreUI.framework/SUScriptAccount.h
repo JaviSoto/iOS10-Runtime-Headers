@@ -40,6 +40,7 @@
 - (id)scriptAttributeKeys;
 - (void)setSocialEnabled:(id)arg1;
 - (void)setSecureToken:(id)arg1;
+- (void)setKind:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (id)account;
 - (id)attributeKeys;
@@ -48,6 +49,5 @@
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)kind;
-- (void)setKind:(id)arg1;
 
 @end

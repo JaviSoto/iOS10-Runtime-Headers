@@ -41,6 +41,7 @@
     } _stats;
     int _sourceType;
     BOOL _rebuildIndexes;
+    BOOL _rebuildCollections;
     ML3PersistentIDGenerator *_persistentIDGenerator;
     NSCache *_artistPIDsForGroupingKeys;
     NSCache *_albumArtistPIDsForGroupingKeys;

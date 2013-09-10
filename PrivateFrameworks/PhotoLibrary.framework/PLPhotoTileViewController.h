@@ -111,6 +111,8 @@
     unsigned int _useZoomScaleForCropRect : 1;
     unsigned int _photoShouldBeHDRBadged : 1;
     unsigned int _HDRBadgeShouldBeHidden : 1;
+    unsigned int _avalancheBadgeShouldBeHidden : 1;
+    unsigned int _photoShouldBeAvalancheBadged : 1;
     unsigned int _badgeShouldBeVisible : 1;
     unsigned int _didSetHDRForModelPhoto : 1;
     unsigned int _commentsTableVisible : 1;
@@ -197,6 +199,7 @@
 - (BOOL)_clientIsWallpaper;
 - (void)_updatePlaceholderViewAnimated:(BOOL)arg1;
 - (void)_installSubview:(id)arg1;
+- (BOOL)photoShouldHaveAvalancheBadge;
 - (void)_repositionBadgeView;
 - (void)_showBadgeViewIfAppropriate;
 - (void)_centerImageInScrollView;
@@ -239,6 +242,7 @@
 - (BOOL)photoShouldHaveHDRBadge;
 - (void)showContentView;
 - (void)hideContentView;
+- (void)setAvalancheBadgesHidden:(BOOL)arg1;
 - (void)setOrientationDelegate:(id)arg1;
 - (void)setTileDelegate:(id)arg1;
 - (void)setTVOut:(BOOL)arg1;

@@ -445,7 +445,6 @@
 - (BOOL)barsAreVisible;
 - (void)_didLoadImage:(id)arg1 forObjectID:(id)arg2;
 - (id)commentsView;
-- (id)currentAssetContainer;
 - (void)updateOverlaysAnimated:(BOOL)arg1;
 - (void)animateToIndex;
 - (id)currentAssetForZoomTransition;
@@ -502,6 +501,7 @@
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)_willDisplayTileController:(id)arg1;
 - (void)_configureVideoViewInTile:(id)arg1;
+- (id)currentAssetContainer;
 - (id)_lowResolutionPreviewImageForPhoto:(id)arg1;
 - (BOOL)delayImageLoading;
 - (void)_setCurrentIndexPath:(id)arg1;

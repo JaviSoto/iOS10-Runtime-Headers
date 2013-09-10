@@ -38,6 +38,7 @@
 @property(readonly) int promptType;
 @property(readonly) BOOL shouldUseFullscreenLayout;
 
++ (BOOL)shouldAvoidJPEGDecodeWorkDuringScrolling;
 
 - (struct CGSize { float x1; float x2; })thumbnailSizeForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)configureImageCell:(id)arg1 forSectionHeaderBackgroundInCollectionViewType:(int)arg2;

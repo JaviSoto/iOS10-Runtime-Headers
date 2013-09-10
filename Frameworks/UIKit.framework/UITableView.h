@@ -240,6 +240,7 @@
         unsigned int drawsSeparatorAtTopOfSections : 1; 
         unsigned int separatorBackdropOverlayBlendMode : 3; 
         unsigned int doneFirstLayout : 1; 
+        unsigned int wrapCells : 1; 
     } _tableFlags;
 }
 
@@ -269,6 +270,7 @@
 @property(retain) UIView * tableFooterView;
 @property(retain) UITouch * currentTouch;
 
++ (void)initialize;
 + (void)_initializeForIdiom:(int)arg1;
 
 - (BOOL)isEditing;
@@ -294,7 +296,6 @@
 - (float)estimatedRowHeight;
 - (void)_applyContentSizeDeltaForEstimatedHeightAdjustments:(float)arg1;
 - (BOOL)_isEditingForSwipeDeletion;
-- (int)_separatorBackdropOverlayBlendMode;
 - (BOOL)_separatorsDrawAsOverlay;
 - (BOOL)ignorePinnedTableHeaderUpdates;
 - (void)_setIgnorePinnedTableHeaderUpdates:(BOOL)arg1;
@@ -424,6 +425,7 @@
 - (float)sectionHeaderHeight;
 - (void)setSectionIndexBackgroundColor:(id)arg1;
 - (id)sectionIndexBackgroundColor;
+- (BOOL)_isInModalViewController;
 - (void)_setHeaderAndFooterViewsFloat:(BOOL)arg1;
 - (void)_setSectionIndexTrackingBackgroundColor:(id)arg1;
 - (id)_sectionIndexTrackingBackgroundColor;
@@ -499,6 +501,7 @@
 - (void)_setSectionBorderWidth:(float)arg1;
 - (float)_sectionBorderWidth;
 - (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
+- (int)_separatorBackdropOverlayBlendMode;
 - (id)sectionBorderColor;
 - (BOOL)_drawsTopShadowInGroupedSections;
 - (void)_accessoryButtonAction:(id)arg1;
@@ -564,6 +567,7 @@
 - (void)setTableHeaderViewShouldAutoHide:(BOOL)arg1;
 - (BOOL)_pinsTableHeaderView;
 - (void)_setRowCount:(unsigned int)arg1;
+- (int)_popoverControllerStyle;
 - (void)_stopLongPressAutoscrollTimer;
 - (void)_setRefreshControl:(id)arg1;
 - (void)_configureBackgroundView;
@@ -573,7 +577,9 @@
 - (id)_defaultBackgroundView;
 - (void)_setupTableViewCommon;
 - (void)_languageChanged;
+- (BOOL)_shouldWrapCells;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)_setSeparatorBackdropOverlayBlendModeForUIAppearance:(int)arg1;
 - (void)setSectionHeaderHeight:(float)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSectionIndexTrackingBackgroundColor:(id)arg1;
@@ -703,6 +709,7 @@
 - (id)_scriptingInfo;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (void)willMoveToSuperview:(id)arg1;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)_shouldResignFirstResponderWithInteractionDisabled;

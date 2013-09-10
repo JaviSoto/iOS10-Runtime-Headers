@@ -6,6 +6,7 @@
 }
 
 
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)definesPresentationContext;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 

@@ -25,8 +25,8 @@
 
 - (id)progressUpdateBlock;
 - (void)setProgressUpdateBlock:(id)arg1;
-- (void)dealloc;
 - (void)setCompletionBlock:(id)arg1;
+- (void)dealloc;
 - (void)setProgress:(double)arg1;
 - (id)completionBlock;
 

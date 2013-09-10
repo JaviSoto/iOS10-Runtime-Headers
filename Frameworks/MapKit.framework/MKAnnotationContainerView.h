@@ -65,6 +65,7 @@
 - (void)_dropPinsIfNeeded:(BOOL)arg1;
 - (void)_willRemoveInternalAnnotationView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleCenteringRect;
+- (void)updateUserLocationView;
 - (id)bubblePin;
 - (BOOL)hasDroppingPins;
 - (struct CGPoint { float x1; float x2; })draggingAnnotationViewDropPoint;
@@ -76,7 +77,6 @@
 - (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; id x5; BOOL x6; })currentComparisonContext;
 - (void)_setSelectedAnnotationView:(id)arg1 bounce:(BOOL)arg2 pressed:(BOOL)arg3 scrollToFit:(BOOL)arg4 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (void)_showBubbleForAnnotationView:(id)arg1 bounce:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (void)updateUserLocationView;
 - (void)annotationViewDidChangeZIndex:(id)arg1;
 - (void)annotationViewDidChangeCenterOffset:(id)arg1;
 - (struct CGPoint { float x1; float x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;

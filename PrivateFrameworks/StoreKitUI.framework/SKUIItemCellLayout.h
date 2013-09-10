@@ -35,7 +35,6 @@
 - (id)itemOfferButton;
 - (id)removeControlView;
 - (BOOL)_useCloudButtonForItemState:(id)arg1;
-- (void)setRestricted:(BOOL)arg1;
 - (void)setDisplaysItemOfferButton:(BOOL)arg1;
 - (BOOL)displaysItemOfferButton;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
@@ -50,6 +49,7 @@
 - (void)resetLayout;
 - (void)setItemOfferButtonAppearance:(id)arg1;
 - (void)setIconImageHidden:(BOOL)arg1;
+- (void)setRestricted:(BOOL)arg1;
 - (id)itemOfferButtonAppearance;
 - (void)_itemOfferConfirmAction:(id)arg1;
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;

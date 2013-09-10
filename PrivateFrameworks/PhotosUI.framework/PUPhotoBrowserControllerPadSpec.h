@@ -9,6 +9,7 @@
 
 - (BOOL)shouldShowToolbarItemsInNavigationBar;
 - (BOOL)shouldShowPhotoScrubber;
+- (id)avalancheReviewControllerSpec;
 - (BOOL)shouldUsePopovers;
 - (id)photosSharingViewControllerSpec;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 inAssetContainerList:(id)arg2;

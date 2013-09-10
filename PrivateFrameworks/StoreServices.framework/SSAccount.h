@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString, NSLock;
+@class NSString, NSData, NSLock, NSNumber;
 
 @interface SSAccount : NSObject <SSXPCCoding, NSCopying> {
     int _accountKind;
@@ -12,6 +12,8 @@
     BOOL _active;
     BOOL _activeLockerAccount;
     int _availableServiceTypes;
+    NSData *_bioToken;
+    BOOL _didFallbackToPassword;
     NSString *_creditsString;
     BOOL _demo;
     int _enabledServiceTypes;
@@ -43,6 +45,8 @@
 - (void)removeEnabledServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
 - (void)resetTransientData;
+- (void)setBiometricToken:(id)arg1;
+- (id)popBiometricToken;
 - (BOOL)mergeValuesFromAccount:(id)arg1;
 - (id)copyLockdownRepresentation;
 - (void)setActiveLockerAccount:(BOOL)arg1;
@@ -58,6 +62,7 @@
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;
 - (void)setNewCustomer:(BOOL)arg1;
+- (void)setDidFallbackToPassword:(BOOL)arg1;
 - (void)setAccountSource:(int)arg1;
 - (void)setAccountScope:(int)arg1;
 - (void)setAccountKind:(int)arg1;
@@ -65,6 +70,7 @@
 - (void)setCreditsString:(id)arg1;
 - (int)accountSource;
 - (BOOL)isSocialEnabled;
+- (BOOL)didFallbackToPassword;
 - (int)availableServiceTypes;
 - (int)accountKind;
 - (id)creditsString;

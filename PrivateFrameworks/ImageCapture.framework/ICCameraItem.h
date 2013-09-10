@@ -23,14 +23,14 @@
 @property(readonly) NSString * fileSystemPath;
 
 
-- (id)fileSystemPath;
-- (void)appendToPath:(id)arg1;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
-- (id)parentFolder;
 - (void)flushThumbnailCache;
 - (void)flushMetadataCache;
 - (void)requestThumbnail;
 - (void)requestMetadata;
+- (id)fileSystemPath;
+- (void)appendToPath:(id)arg1;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
+- (id)parentFolder;
 - (BOOL)hasThumbnail;
 - (void)setModificationDate:(id)arg1;
 - (id)metadata;

@@ -240,6 +240,7 @@
 - (void)setWebFrame:(id)arg1;
 - (void)setOrientation:(id)arg1;
 - (void)goBack;
+- (id)orientation;
 - (id)loggingEnabled;
 - (id)webFrame;
 - (id)init;
@@ -255,7 +256,6 @@
 - (id)systemVersion;
 - (void)startedTest:(id)arg1;
 - (id)parentViewController;
-- (id)orientation;
 - (void)setWindow:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)navigationBar;

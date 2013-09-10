@@ -5,7 +5,7 @@
 @class MPItemDownloadProperties, NSError, SSDownloadHandlerSession, AVAsset;
 
 @interface MPItemDownloadSession : NSObject  {
-    AVAsset *_asset;
+    AVAsset *_AVAsset;
     MPItemDownloadProperties *_downloadProperties;
     SSDownloadHandlerSession *_downloadSession;
     float _percentComplete;
@@ -13,7 +13,7 @@
     int _sessionState;
 }
 
-@property(readonly) MPItemDownloadProperties * downloadProperties;
+@property(retain) MPItemDownloadProperties * downloadProperties;
 @property AVAsset * AVAsset;
 @property(retain) SSDownloadHandlerSession * downloadSession;
 @property float percentComplete;
@@ -21,6 +21,7 @@
 @property int sessionState;
 
 
+- (void)setDownloadProperties:(id)arg1;
 - (void)setSessionState:(int)arg1;
 - (int)sessionState;
 - (void)setSessionError:(id)arg1;

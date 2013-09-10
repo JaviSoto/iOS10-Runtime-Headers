@@ -18,12 +18,12 @@
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
 
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)screen;
 - (void)dealloc;
 - (id)orientationKey;
 - (int)idiom;
 - (id)initWithScreen:(id)arg1 orientation:(int)arg2;
 - (void)setOrientationKey:(id)arg1;
-- (int)orientation;
 
 @end

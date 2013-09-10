@@ -11,7 +11,7 @@
 @property(setter=_setPropertiesToMatch:,retain) NSDictionary * _propertiesToMatch;
 
 + (id)_appearanceObjectKeyForProperties:(id)arg1;
-+ (id)appearanceAtNode:(id)arg1 withObject:(id)arg2;
++ (id)appearancesAtNode:(id)arg1 withObject:(id)arg2;
 + (id)_appearanceMatchingProperties:(id)arg1 forClass:(Class)arg2 withContainerList:(id)arg3;
 
 - (void)_setPropertiesToMatch:(id)arg1;

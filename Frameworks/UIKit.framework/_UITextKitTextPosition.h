@@ -4,10 +4,15 @@
 
 @interface _UITextKitTextPosition : UITextPosition  {
     int _offset;
+    BOOL _caretAfterOffset;
+    int _nextOffset;
 }
 
 @property int offset;
+@property BOOL caretPositionAfterOffset;
+@property int nextOffset;
 
++ (id)positionWithOffset:(int)arg1 caretPositionedAfterOffset:(BOOL)arg2 nextOffset:(unsigned int)arg3;
 + (id)positionWithOffset:(int)arg1;
 
 - (void)setOffset:(int)arg1;
@@ -15,5 +20,9 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
+- (void)setNextOffset:(int)arg1;
+- (int)nextOffset;
+- (void)setCaretPositionAfterOffset:(BOOL)arg1;
+- (BOOL)caretPositionAfterOffset;
 
 @end

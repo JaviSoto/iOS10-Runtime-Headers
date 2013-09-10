@@ -50,11 +50,9 @@
 + (BOOL)isAlbumSynced:(id)arg1;
 + (id)syncedAlbumSubtitleStringFormat;
 + (id)calculatedDisplayableIndexesForAlbum:(struct NSObject { Class x1; }*)arg1 count:(unsigned int)arg2;
-+ (void)resetSyncedAssetsDCIMDirectory;
 + (void)initializeGraphicsServices;
 + (BOOL)processCanWriteSandboxForPath:(id)arg1;
 + (BOOL)processCanReadSandboxForPath:(id)arg1;
-+ (id)iTunesSyncedAssetSmallThumbnailsDirectory;
 + (id)simpleDCIMDirectory;
 + (id)dcimDirectory;
 + (id)videosPath;
@@ -84,9 +82,11 @@
 + (void)handlePossibleCoreDataError:(id)arg1;
 + (id)syncInfoPath;
 + (BOOL)isDupeAnalysisNeeded;
++ (id)photoStreamsDataDirectory;
++ (void)resetSyncedAssetsDCIMDirectory;
++ (id)iTunesSyncedAssetSmallThumbnailsDirectory;
 + (id)iTunesSyncedAssetMetadataThumbnailsDirectory;
 + (id)iTunesPhotosDirectory;
-+ (id)photoStreamsDataDirectory;
 + (id)iTunesSyncedFaceDataDirectory;
 + (id)iTunesSyncedFaceAlbumThumbnailsDirectory;
 + (int)createSqliteErrorIndicatorFile;
@@ -148,8 +148,6 @@
 - (BOOL)needsMigration;
 - (id)managedObjectWithObjectID:(id)arg1;
 - (void)cleanupModelAfterRestoreFromiTunesBackup;
-- (int)_orientationOfFileAtPath:(id)arg1;
-- (int)_orientationAfterRotatingOrientation:(int)arg1 clockwiseByDegrees:(int)arg2 transposeCoordinatesOut:(BOOL*)arg3;
 - (void)_migrationDidFinish;
 - (id)handleAssetsLibraryGetGlobalMessage:(id)arg1 userInfo:(id)arg2;
 - (id)handleAssetsLibrarySetGlobalMessage:(id)arg1 userInfo:(id)arg2;
@@ -201,6 +199,7 @@
 - (id)albumListForContentMode:(int)arg1;
 - (struct NSObject { Class x1; }*)eventAlbumContainingPhoto:(id)arg1;
 - (struct NSObject { Class x1; }*)syncProgressAlbum;
+- (void)cleanupFilesAfteriTunesSyncBeforeDate:(id)arg1;
 - (BOOL)isAudioFileExtension:(id)arg1;
 - (BOOL)isRawImageFileExtension:(id)arg1;
 - (BOOL)isNonRawImageFileExtension:(id)arg1;

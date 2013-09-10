@@ -8,7 +8,7 @@
 
 @class NSDictionary, ABCardLinkedCardsGroup, ABCardFaceTimeGroup, ABPropertyLinkedCardsAction, NSMutableArray, NSString, ABContactView, CNContact, ABPropertyAction, ABContactAction, ABContactToggleBlockCallerAction, ABSiriContactContextProvider, <ABPresenterDelegate>, NSMutableDictionary, ABCardGroup, ABContactCreateNewContactAction, ABContactAddToExistingContactAction, ABPropertyFaceTimeAction, ABContactHeaderView, NSArray, ABWeakReference, ABContactAddLinkedCardAction, <ABContactViewControllerDelegate>, ABContactAddFavoriteAction, UIView, ABContactAddNewFieldAction;
 
-@interface ABContactViewController : UITableViewController <ABContactActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, IDSIDQueryControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
+@interface ABContactViewController : UITableViewController <ABContactActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, IDSIDQueryControllerDelegate, UIPopoverControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
     NSArray *_displayedProperties;
     BOOL _needsReload;
     BOOL _isMailVIP;
@@ -367,6 +367,7 @@
 - (id)message;
 - (void)dealloc;
 - (id)presentedActionSheet;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setPresentedActionSheet:(id)arg1;
 - (id)tableView;
 - (void)setAllowsEditing:(BOOL)arg1;

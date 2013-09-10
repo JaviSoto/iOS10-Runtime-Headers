@@ -18,10 +18,12 @@
 - (void)saveImage:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
 - (void)saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionTarget:(id)arg4 completionSelector:(SEL)arg5 contextInfo:(void*)arg6;
 - (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(BOOL)arg5;
-- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(BOOL)arg4 progressStack:(id)arg5 eventUUID:(id)arg6 videoHandler:(id)arg7 requestEnqueuedBlock:(id)arg8 completionBlock:(id)arg9;
+- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(BOOL)arg4 progressStack:(id)arg5 eventUUID:(id)arg6 isSlalom:(BOOL)arg7 slalomRegions:(id)arg8 videoHandler:(id)arg9 requestEnqueuedBlock:(id)arg10 completionBlock:(id)arg11;
 - (id)pathForNewAssetOfType:(long long)arg1 extension:(id)arg2;
 - (void)regenerateVideoThumbnailsForVideo:(id)arg1 withCreationDate:(id)arg2 progressStack:(id)arg3 completionBlock:(id)arg4;
 - (void)_requestAccess;
+- (void)saveCameraAvalancheWithUUID:(id)arg1 allAssetUUIDs:(id)arg2 allAssets:(id)arg3 stackAsset:(id)arg4 completionBlock:(id)arg5;
+- (void)batchSavePendingAssetJobs;
 - (void)set_pendingSaveAssetJobs:(id)arg1;
 - (void)saveSyncedAssets:(id)arg1 completionBlock:(id)arg2;
 - (void)reenqueueAssetUUIDsForPhotoStreamPublication:(id)arg1;
@@ -41,10 +43,11 @@
 - (void)queueJobDictionary:(id)arg1 completionBlock:(id)arg2;
 - (id)_addCameraAssetToLibraryWithPath:(id)arg1 thumbnailImage:(id)arg2 assetUUID:(id)arg3 metadata:(id)arg4 assetType:(int)arg5 kind:(short)arg6 kindSubtype:(short)arg7 avalancheUUID:(id)arg8 adjustmentFilters:(id)arg9 effectFilters:(id)arg10 completionHandler:(id)arg11;
 - (id)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 adjustmentFilters:(id)arg4 effectFilters:(id)arg5 diagnostics:(id)arg6 previouslyPendingAsset:(id)arg7 requestEnqueuedBlock:(id)arg8;
-- (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id)arg3 completionBlock:(id)arg4 imageSurface:(void*)arg5 previewImageSurface:(void*)arg6;
+- (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id)arg3 completionBlock:(id)arg4 imageSurface:(void*)arg5 previewImageSurface:(void*)arg6 slalomRegions:(id)arg7;
+- (void)_setIsTakingPhoto:(BOOL)arg1;
 - (id)_pendingSaveAssetJobs;
 - (id)_saveIsolationQueue;
-- (void)_setIsTakingPhoto:(BOOL)arg1;
+- (void)setAvalancheInProgress:(BOOL)arg1 uuid:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
 - (void)copyAssetToCameraRoll:(id)arg1;
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;

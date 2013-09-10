@@ -7,6 +7,7 @@
 
 
 - (float)commentsButtonLandscapeVerticalOffset;
+- (id)avalancheReviewControllerSpec;
 - (id)photosSharingViewControllerSpec;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 inAssetContainerList:(id)arg2;
 

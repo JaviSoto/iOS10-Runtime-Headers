@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, NSObject<OS_dispatch_source>, SBSAccelerometer, PLCameraEffectsRenderer, NSMutableArray, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureDevice, NSObject<OS_dispatch_queue>, <PLCameraControllerDelegate>, AVCaptureDeviceInput, NSArray, AVCaptureOutput, NSString, NSDictionary, NSTimer;
+@class AVCaptureDevice, NSDictionary, AVCaptureDeviceFormat, NSMutableArray, AVCaptureSession, AVCaptureVideoDataOutput, NSString, NSTimer, AVCaptureStillImageOutput, PLCameraEffectsRenderer, AVCaptureMetadataOutput, AVCaptureOutput, <PLCameraControllerDelegate>, NSObject<OS_dispatch_queue>, AVCaptureDeviceInput, NSObject<OS_dispatch_source>, SBSAccelerometer, NSArray, AVCaptureVideoPreviewLayer, AVCaptureMovieFileOutput;
 
 @interface PLCameraController : NSObject <AVCaptureMetadataOutputObjectsDelegate, PLCameraEffectsRendererDelegate, SBSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     AVCaptureSession *_avCaptureSession;
@@ -21,6 +21,8 @@
     AVCaptureVideoDataOutput *_avCaptureOutputPanorama;
     AVCaptureVideoDataOutput *_avCaptureOutputEffectPreview;
     AVCaptureMetadataOutput *_avCaptureOutputMetadata;
+    AVCaptureDeviceFormat *_mogulFormatBack;
+    AVCaptureDeviceFormat *_mogulFormatFront;
     id _panoramaProcessor;
     id _panoramaImageQueue;
     struct CGSize { 
@@ -75,6 +77,10 @@
         unsigned int supportsExposure : 1; 
         unsigned int supportsHDRRear : 1; 
         unsigned int supportsHDRFront : 1; 
+        unsigned int supportsAvalancheRear : 1; 
+        unsigned int supportsAvalancheFront : 1; 
+        unsigned int supportsMogulRear : 1; 
+        unsigned int supportsMogulFront : 1; 
         unsigned int supportsLiveEffects : 1; 
         unsigned int supportsPanorama : 1; 
         unsigned int supportsVideoStillCapture : 1; 
@@ -141,6 +147,7 @@
         unsigned int delegateFaceMetadataDidChange : 1; 
         unsigned int delegateVideoZoomFactorDidChange : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
+        unsigned int delegateHDRSuggestionChanged : 1; 
     } _cameraFlags;
     NSObject<OS_dispatch_queue> *_dispatchTimerQueue;
     NSObject<OS_dispatch_source> *_dispatchTimer;
@@ -153,6 +160,7 @@
     BOOL __configuringCamera;
     BOOL __atomicModeChangeWaitingForPreviewStarted;
     BOOL __atomicModeChangeWaitingForConfigureSession;
+    BOOL __wasStillImageStabilzationOnBeforeTimedCapture;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -202,6 +210,7 @@
 @property(getter=_isAtomicModeChangeWaitingForPreviewStarted,setter=_setAtomicModeChangeWaitingForPreviewStarted:) BOOL _atomicModeChangeWaitingForPreviewStarted;
 @property(getter=_isModeChangeWaitingForConfigureSession,setter=_setModeChangeWaitingForConfigureSession:) BOOL _modeChangeWaitingForConfigureSession;
 @property(getter=_isAtomicModeChangeWaitingForConfigureSession,setter=_setAtomicModeChangeWaitingForConfigureSession:) BOOL _atomicModeChangeWaitingForConfigureSession;
+@property(readonly) BOOL _wasStillImageStabilzationOnBeforeTimedCapture;
 @property(readonly) NSMutableArray * _currentFaceMetadata;
 @property(getter=_isPreviewPaused,setter=_setPreviewPaused:) BOOL _previewPaused;
 @property(setter=_setPreviewLayerEnabledForRenderer:) BOOL _previewLayerEnabledForRenderer;
@@ -210,6 +219,7 @@
 + (id)sharedInstance;
 
 - (id)_currentFaceMetadata;
+- (BOOL)_wasStillImageStabilzationOnBeforeTimedCapture;
 - (BOOL)_isConfiguringCamera;
 - (void)setDisableAllPreviewSuspensionDuringCapture:(BOOL)arg1;
 - (BOOL)disableAllPreviewSuspensionDuringCapture;
@@ -324,11 +334,12 @@
 - (void)userInitiatedLockFocus;
 - (void)_lockFocus:(BOOL)arg1 lockExposure:(BOOL)arg2 lockWhiteBalance:(BOOL)arg3;
 - (BOOL)flashWillFire;
+- (void)_autofocusAfterCapture;
 - (BOOL)performingTimedCapture;
 - (void)_autofocus:(BOOL)arg1 autoExpose:(BOOL)arg2;
-- (void)_autofocusAfterCapture;
 - (void)_unlockCurrentDeviceForConfiguration;
 - (BOOL)_lockCurrentDeviceForConfiguration;
+- (void)_cancelDelayedFocusRequests;
 - (void)_panoramaDidStop;
 - (void)lockFocusAndExposureForPano;
 - (BOOL)canCapturePanorama;
@@ -386,6 +397,7 @@
 - (void)_deviceStarted:(id)arg1;
 - (void)_setEffectsRenderer:(id)arg1;
 - (BOOL)supportsLiveEffects;
+- (id)_mogulFormatFromDevice:(id)arg1;
 - (void)_debug_waitForIrisToOpen;
 - (void)_debug_checkIris;
 - (id)_debug_dispatchTimerQueue;
@@ -413,6 +425,7 @@
 - (void)setCurrentOutput:(id)arg1;
 - (void)_setFaceDetectionEnabled:(BOOL)arg1 forCaptureDevice:(id)arg2 captureOutput:(id)arg3;
 - (void)_setEffectsAvailable:(BOOL)arg1;
+- (BOOL)supportsAvalancheForDevice:(int)arg1;
 - (BOOL)canCapturePhotoDuringRecording;
 - (id)_videoModeSessionPreset;
 - (void)_setConfiguringCamera:(BOOL)arg1;
@@ -435,6 +448,7 @@
 - (void)_updateCallStatus;
 - (void)_callStateDidChange:(id)arg1;
 - (void)_synchronizeHDRSettings;
+- (double)mogulFrameRate;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (BOOL)isCameraApp;
 - (id)previewLayer;

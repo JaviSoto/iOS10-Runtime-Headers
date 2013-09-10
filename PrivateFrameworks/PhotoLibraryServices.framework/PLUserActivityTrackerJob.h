@@ -22,6 +22,7 @@
 + (void)trackPhotoWasEditedWithRotation:(id)arg1;
 + (void)trackPhotoWasViewed:(id)arg1;
 + (void)trackPhotoWasZoomed:(id)arg1;
++ (void)trackSlalomWasEdited:(id)arg1;
 + (void)trackVideoWasPlayed:(id)arg1;
 + (void)trackVideoWasTrimmed:(id)arg1;
 + (void)trackAssetWasPickedViaAPI:(id)arg1;

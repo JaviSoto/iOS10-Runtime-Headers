@@ -16,7 +16,6 @@
 @property unsigned int bytesPerRow;
 
 
-- (unsigned int)bytesPerRow;
 - (void)setBytesPerRow:(unsigned int)arg1;
 - (void)setHeight:(unsigned int)arg1;
 - (void)setWidth:(unsigned int)arg1;
@@ -24,6 +23,7 @@
 - (unsigned int)height;
 - (unsigned int)width;
 - (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3 buffer:(char *)arg4 freeBufferWhenDone:(BOOL)arg5;
+- (unsigned int)bytesPerRow;
 - (void)dealloc;
 
 @end

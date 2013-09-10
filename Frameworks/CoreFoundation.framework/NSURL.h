@@ -64,6 +64,7 @@
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
 + (id)mapsURLWithAddress:(id)arg1;
 + (id)mapsURLWithQuery:(id)arg1;
++ (id)gs_fileURLWithFileSystemRepresentation:(const char *)arg1;
 + (id)ab_faceTimeURLWithDestinationID:(id)arg1;
 + (id)ab_URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
 + (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
@@ -96,7 +97,6 @@
 + (int)classicPortForScheme:(id)arg1;
 + (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
 + (id)URLWithDirtyString:(id)arg1;
-+ (id)gs_fileURLWithFileSystemRepresentation:(const char *)arg1;
 + (id)URLWithPackagePart:(id)arg1;
 + (id)filePathURLWithEscapes:(id)arg1;
 + (id)relativeURLWithEscapes:(id)arg1;
@@ -269,6 +269,8 @@
 - (id)searchResultDomain;
 - (id)searchResultIdentifier;
 - (BOOL)isInternalUIKitURL;
+- (void)attachSandboxExtension:(id)arg1;
+- (const char *)gs_fileSystemRepresentation;
 - (id)_geo_portionAfterHostname;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (BOOL)isStoreServicesURL;
@@ -327,8 +329,6 @@
 - (id)URLWithUsername:(id)arg1;
 - (id)URLWithoutUsername;
 - (id)uri;
-- (void)attachSandboxExtension:(id)arg1;
-- (const char *)gs_fileSystemRepresentation;
 - (BOOL)isInternalToPackage;
 - (id)initWithPackagePart:(id)arg1;
 - (BOOL)isRelative;

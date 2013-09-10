@@ -37,8 +37,6 @@
 
 - (void)setIconView:(id)arg1;
 - (id)messageFont;
-- (id)icon;
-- (id)iconView;
 - (void)setMessageLabel:(id)arg1;
 - (id)connectionButtons;
 - (void)showActivityIndicator:(BOOL)arg1;
@@ -55,6 +53,8 @@
 - (id)_createConnectionButtonWithType:(unsigned int)arg1;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
+- (id)icon;
+- (id)iconView;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)layoutIfNeeded;

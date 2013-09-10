@@ -9,14 +9,18 @@
     void *_addressBook;
     <ABMembersDataSourceDelegate> *_delegate;
     <ABStyleProvider> *_styleProvider;
+    BOOL _isInPopover;
 }
 
 @property <ABMembersDataSourceDelegate> * delegate;
 @property void* addressBook;
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(readonly) NSArray * records;
+@property BOOL isInPopover;
 
 
+- (void)setIsInPopover:(BOOL)arg1;
+- (BOOL)isInPopover;
 - (void)addRecords:(id)arg1;
 - (void)removeAllRecords;
 - (id)records;

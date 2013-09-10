@@ -108,6 +108,7 @@
 - (void)_undoDeletionsMovedToUpdates:(id)arg1;
 - (void)_registerUndoForOperation:(SEL)arg1 withObjects:(id)arg2 withExtraArguments:(id)arg3;
 - (void)_undoInsertions:(id)arg1;
+- (void)_setStalenessInterval:(double)arg1;
 - (BOOL)_postSaveNotifications;
 - (void)_setPostSaveNotifications:(BOOL)arg1;
 - (BOOL)_disableDiscardEditing;

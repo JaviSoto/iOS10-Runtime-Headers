@@ -8,7 +8,7 @@
 
 @class NSString, NSObject<OS_dispatch_queue>, NSLock, AVAssetCache, RadioRequestContext;
 
-@interface MPLoadRadioAssetOperation : NSOperation  {
+@interface MPLoadRadioAssetOperation : NSOperation <_MPRadioOperationProtocol> {
     BOOL _applyPreloadDuration;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -26,12 +26,15 @@
 
 @property(retain) AVAssetCache * assetCache;
 @property(copy) id assetBlock;
+@property(copy) RadioRequestContext * requestContext;
 
 
+- (void)setRequestContext:(id)arg1;
+- (id)requestContext;
 - (void)setAssetCache:(id)arg1;
 - (void)setAssetBlock:(id)arg1;
-- (id)initWithStoreIdentifier:(long long)arg1 station:(id)arg2 context:(id)arg3;
-- (id)initWithRadioAVItem:(id)arg1 context:(id)arg2;
+- (id)initWithStoreIdentifier:(long long)arg1 station:(id)arg2;
+- (id)initWithRadioAVItem:(id)arg1;
 - (id)_bodyData:(id*)arg1;
 - (id)_heartbeatTokenDataAllowingDelay:(BOOL)arg1 error:(id*)arg2;
 - (id)_sinfsForAssetDictionary:(id)arg1;

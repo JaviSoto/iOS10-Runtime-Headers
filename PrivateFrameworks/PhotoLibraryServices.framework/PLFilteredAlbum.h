@@ -37,6 +37,7 @@
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSDate * endDate;
@@ -136,6 +137,7 @@
 - (id)filterParameters;
 - (id)userEditableAssets;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)tertiaryKeyAsset;

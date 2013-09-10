@@ -35,10 +35,10 @@
 - (id)owner;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)setCompletionBlock:(id)arg1;
 - (id)completionBlock;
 
 @end

@@ -31,8 +31,6 @@
 @property(retain) NSError * importError;
 
 
-- (BOOL)isRaw;
-- (id)parentFolder;
 - (void)setImportedAsset:(id)arg1;
 - (id)importedAsset;
 - (void)setThumbnailData:(id)arg1;
@@ -78,6 +76,8 @@
 - (void)removeRepresentationForCameraFile:(id)arg1;
 - (void)addRepresentationForCameraFile:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
+- (BOOL)isRaw;
+- (id)parentFolder;
 - (BOOL)isAudio;
 - (BOOL)isJPEG;
 - (id)creationDate;

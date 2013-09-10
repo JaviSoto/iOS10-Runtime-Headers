@@ -33,6 +33,7 @@
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSDate * endDate;
@@ -125,6 +126,7 @@
 - (void)setKindValue:(int)arg1;
 - (id)photoLibrary;
 - (BOOL)isOwnPhotoStreamAlbum;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (unsigned int)videosCount;
 - (unsigned int)assetsCount;
@@ -157,6 +159,7 @@
 - (void)delete;
 - (id)posterImage;
 - (unsigned int)photosCount;
+- (void)setKind:(id)arg1;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
@@ -171,6 +174,5 @@
 - (id)description;
 - (id)localizedTitle;
 - (id)kind;
-- (void)setKind:(id)arg1;
 
 @end

@@ -179,6 +179,7 @@
 - (void)_gkResetContents;
 - (void)_gkForceNextContentUpdate;
 - (id)selectedNavigationController;
+- (id)_pl_innerViewController;
 - (BOOL)pu_isTabBarVisible;
 
 @end

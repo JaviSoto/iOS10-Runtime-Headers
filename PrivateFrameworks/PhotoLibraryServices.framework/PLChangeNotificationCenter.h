@@ -82,10 +82,8 @@
 - (void)addInvitationRecordsObserver:(id)arg1;
 - (void)addCameraPreviewWellImageChangeObserver:(id)arg1;
 - (void)addAssetContainerChangeObserver:(id)arg1 container:(id)arg2;
-- (void)addAssetChangeObserver:(id)arg1;
 - (void)removeCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
 - (void)removeShouldReloadObserver:(id)arg1;
-- (void)removeAssetChangeObserver:(id)arg1;
 - (void)removeCloudFeedEntriesObserver:(id)arg1;
 - (void)addShouldReloadObserver:(id)arg1;
 - (void)addCloudFeedEntriesObserver:(id)arg1;
@@ -97,6 +95,8 @@
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)inflightAssetsAlbumWillChange:(id)arg1;
+- (void)removeAssetChangeObserver:(id)arg1;
+- (void)addAssetChangeObserver:(id)arg1;
 - (void)removeInvitationRecordsObserver:(id)arg1;
 - (void)removeAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
 - (void)addAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;

@@ -6,6 +6,9 @@
 }
 
 
+- (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
 
 @end

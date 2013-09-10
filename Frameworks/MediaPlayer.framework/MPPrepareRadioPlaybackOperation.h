@@ -8,8 +8,8 @@
 
 @class RadioRequestContext, RadioGetTracksRequest, NSLock, RadioStation;
 
-@interface MPPrepareRadioPlaybackOperation : NSOperation  {
-    RadioRequestContext *_context;
+@interface MPPrepareRadioPlaybackOperation : NSOperation <_MPRadioOperationProtocol> {
+    RadioRequestContext *_requestContext;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -27,15 +27,18 @@
 
 @property(copy) id firstTrackBlock;
 @property(copy) id preparedBlock;
+@property(copy) RadioRequestContext * requestContext;
 
 + (BOOL)stationNeedsPreparation:(id)arg1;
 
+- (void)setRequestContext:(id)arg1;
+- (id)requestContext;
 - (id)firstTrackBlock;
 - (id)preparedBlock;
 - (id)_loadStationTracks:(id*)arg1;
 - (void)setPreparedBlock:(id)arg1;
 - (void)setFirstTrackBlock:(id)arg1;
-- (id)initWithStation:(id)arg1 context:(id)arg2;
+- (id)initWithStation:(id)arg1;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)main;

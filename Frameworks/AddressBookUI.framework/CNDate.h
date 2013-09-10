@@ -5,7 +5,8 @@
 @interface CNDate : NSObject  {
 }
 
-+ (id)gregorianCalendar;
++ (id)gregorianCalendarGMT;
++ (id)currentCalendarGMT;
 + (id)yearlessComponentsFromDate:(id)arg1;
 + (id)componentsFromDate:(id)arg1;
 + (id)dateFromComponents:(id)arg1;

@@ -25,6 +25,7 @@
 + (void)initialize;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (id)inputs;
 - (void)_transitionToFailedStatusWithError:(id)arg1;
 - (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2;
 - (void)finishWritingWithCompletionHandler:(id)arg1;
@@ -56,7 +57,6 @@
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)addInput:(id)arg1;
-- (id)inputs;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (id)outputURL;

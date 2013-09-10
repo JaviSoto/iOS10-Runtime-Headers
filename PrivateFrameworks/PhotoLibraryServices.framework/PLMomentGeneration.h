@@ -29,7 +29,7 @@
 - (id)_insertMomentsForAssets:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)affectedMomentsForAssetDateCreated:(id)arg1 inContext:(id)arg2;
 - (BOOL)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
-- (id)_newPublicGlobalUUIDsToAssetsMappingWithAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
+- (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (id)fetchMomentsForEarliestDate:(id)arg1 latestDate:(id)arg2 sorted:(BOOL)arg3 inContext:(id)arg4;
 - (id)momentPhotoLibrary;
 - (void)generateWithIncrementalDataCompletionHandler:(id)arg1;

@@ -29,6 +29,7 @@
 - (id)_banner;
 - (void)pu_willShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (void).cxx_destruct;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotate;
 

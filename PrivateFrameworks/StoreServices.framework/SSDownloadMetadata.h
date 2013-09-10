@@ -218,6 +218,7 @@
 - (id)primaryAssetURL;
 - (id)newDownloadProperties;
 - (id)networkName;
+- (void)setKind:(id)arg1;
 - (id)longDescription;
 - (void)setTitle:(id)arg1;
 - (id)title;
@@ -232,7 +233,6 @@
 - (id)kind;
 - (id)subtitle;
 - (void)setSubtitle:(id)arg1;
-- (void)setKind:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)setDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

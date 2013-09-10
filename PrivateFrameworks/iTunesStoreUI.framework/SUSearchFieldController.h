@@ -23,6 +23,7 @@
 
 
 - (id)_cancelButtonView;
+- (void)setSearchFieldStyle:(int)arg1;
 - (void)searchBarWillRemoveFromSuperview:(id)arg1;
 - (void)scriptDidChangeTextForField:(id)arg1;
 - (id)_newTransientViewController;
@@ -48,7 +49,6 @@
 - (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2 style:(int)arg3;
 - (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2;
 - (id)initWithContentsController:(id)arg1;
-- (void)setSearchFieldStyle:(int)arg1;
 - (id)initWithContentsController:(id)arg1 style:(int)arg2;
 - (int)searchFieldStyle;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1;

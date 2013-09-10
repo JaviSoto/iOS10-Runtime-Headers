@@ -146,7 +146,6 @@
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setMovedItemsInUpdateCarrySections:(BOOL)arg1;
 - (void)setDataSourceForUpdate:(id)arg1;
-- (void)setUpdateType:(unsigned int)arg1;
 - (void)setCurrentUpdateItems:(id)arg1;
 - (BOOL)shouldSlideOutSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)shouldSlideInSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
@@ -203,6 +202,7 @@
 - (void)forceFullInvalidate;
 - (id)dataSourceMetrics;
 - (id)_gkDescriptionWithChildren:(int)arg1;
+- (void)setUpdateType:(unsigned int)arg1;
 - (unsigned int)updateType;
 - (void)_resetState;
 - (id)init;

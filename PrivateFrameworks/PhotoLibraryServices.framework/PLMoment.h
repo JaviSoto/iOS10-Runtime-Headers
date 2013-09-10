@@ -40,6 +40,7 @@
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) BOOL canShowComments;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) NSArray * localizedLocationNames;
 
 + (id)insertNewMomentInManagedObjectContext:(id)arg1 error:(id*)arg2;
@@ -60,7 +61,7 @@
 - (void)replaceObjectInAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectFromAssetsAtIndex:(unsigned int)arg1;
 - (void)insertObject:(id)arg1 inAssetsAtIndex:(unsigned int)arg2;
-- (BOOL)_validateMomentListRelationship:(id*)arg1;
+- (BOOL)_validateForInsertOrUpdate:(id*)arg1;
 - (void)updateMomentFromCluster:(id)arg1;
 - (void)_updateCachedNameInfoIfNeeded;
 - (id)approximateLocation;
@@ -75,6 +76,7 @@
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (BOOL)isRegisteredForChanges;
 - (id)diagnosticInformation;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)tertiaryKeyAsset;

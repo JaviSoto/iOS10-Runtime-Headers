@@ -13,6 +13,7 @@
 @property UIScrollView * scrollView;
 
 
+- (void)dealloc;
 - (id)scrollView;
 - (void)setSearchDisplayController:(id)arg1;
 - (void)setScrollView:(id)arg1;

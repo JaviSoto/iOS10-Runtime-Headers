@@ -207,10 +207,10 @@
 - (BOOL)hasNotice;
 - (void)setNotice:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (void)setInstructions:(id)arg1;
-- (id)instructions;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setInstructions:(id)arg1;
+- (id)instructions;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)dealloc;

@@ -11,6 +11,7 @@
     UIImageView *_bannerImageView;
     UILabel *_bannerLabel;
     BOOL _isVideoBannerVisible;
+    BOOL _slalom;
     int _fillMode;
     UIImage *_photoImage;
     PUPhotoDecoration *_photoDecoration;
@@ -41,6 +42,7 @@
 @property(copy) PUPhotoDecoration * photoDecoration;
 @property(getter=isVideoBannerVisible,readonly) BOOL videoBannerVisible;
 @property(readonly) NSNumber * videoDuration;
+@property(getter=isSlalom,readonly) BOOL slalom;
 @property(retain) UIImageView * photoImageView;
 @property(retain) UIImageView * _crossfadeImageView;
 @property(retain) UIImage * bannerImage;
@@ -52,8 +54,8 @@
 
 - (void)set_crossfadeImageView:(id)arg1;
 - (id)_crossfadeImageView;
+- (BOOL)isSlalom;
 - (id)videoDuration;
-- (id)photoImage;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
 - (BOOL)isVideoBannerVisible;
 - (void)animateCrossfadeToImage:(id)arg1;
@@ -64,6 +66,7 @@
 - (void)_updateBannerView;
 - (void)_updatePhotoDecoration;
 - (id)photoImageView;
+- (id)photoImage;
 - (void)setBannerText:(id)arg1;
 - (void)setBannerImage:(id)arg1;
 - (void)setPhotoImageView:(id)arg1;
@@ -71,9 +74,11 @@
 - (void)_updateSubviewOrdering;
 - (struct CGSize { float x1; float x2; })photoSize;
 - (id)photoDecoration;
+- (void)setTransitionAvalancheBannerVisible:(BOOL)arg1;
 - (void)setPhotoDecoration:(id)arg1;
+- (void)setAvalancheBannerVisible:(BOOL)arg1;
 - (void)setPhotoStreamBannerVisible:(BOOL)arg1;
-- (void)setVideoBannerVisible:(BOOL)arg1 videoDuration:(id)arg2;
+- (void)setVideoBannerVisible:(BOOL)arg1 videoDuration:(id)arg2 isSlalom:(BOOL)arg3;
 - (void)setPhotoImage:(id)arg1;
 - (void)setPhotoSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

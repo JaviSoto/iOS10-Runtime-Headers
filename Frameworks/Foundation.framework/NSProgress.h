@@ -86,6 +86,7 @@
 + (id)sf_transferStateAsString:(int)arg1;
 + (id)sf_publishingKeyForApp:(id)arg1 sessionID:(id)arg2;
 
+- (void)setKind:(id)arg1;
 - (id)init;
 - (id)userInfo;
 - (id)localizedDescription;
@@ -116,7 +117,6 @@
 - (id)_acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
 - (void)_setAcknowledgementHandler:(id)arg1 forAppBundleIdentifier:(id)arg2;
 - (BOOL)isOld;
-- (void)setKind:(id)arg1;
 - (id)pausingHandler;
 - (id)cancellationHandler;
 - (BOOL)isPaused;

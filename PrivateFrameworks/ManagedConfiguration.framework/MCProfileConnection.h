@@ -74,9 +74,11 @@
 - (id)publicMessageCenter;
 - (id)messageCenter;
 - (void)checkCarrierProfileForceInstallation:(BOOL)arg1;
+- (void)setFingerprintUnlockAllowed:(BOOL)arg1 passcode:(id)arg2 completionBlock:(id)arg3;
+- (unsigned int)gracePeriod;
+- (void)setGracePeriod:(unsigned int)arg1 passcode:(id)arg2 completionBlock:(id)arg3;
 - (BOOL)isMUAllowed;
-- (BOOL)isMPAllowed;
-- (BOOL)isMEAllowed;
+- (BOOL)isFingerprintModificationAllowed;
 - (BOOL)isAssistantUserGeneratedContentAllowed;
 - (BOOL)isControlCenterAllowedInApps;
 - (BOOL)isLockScreenControlCenterAllowed;
@@ -101,6 +103,7 @@
 - (id)managedSystemConfigurationServiceIDs;
 - (void)shutDown;
 - (id)managedWiFiNetworkNames;
+- (BOOL)isFingerprintUnlockAllowed;
 - (id)managedAppIDsWithFlags:(int)arg1;
 - (void)notifyClientsToRecomputeCompliance;
 - (void)recomputeUserComplianceWarning;
@@ -151,6 +154,7 @@
 - (int)defaultBoolValueForSetting:(id)arg1;
 - (id)userSettings;
 - (void)setValue:(id)arg1 forSetting:(id)arg2 passcode:(id)arg3;
+- (void)setBoolValue:(BOOL)arg1 forSetting:(id)arg2 passcode:(id)arg3;
 - (void)setParametersForSettingsByType:(id)arg1;
 - (void)setParametersForSettingsByType:(id)arg1 passcode:(id)arg2;
 - (id)effectiveWhitelistedAppsAndOptions;

@@ -2,13 +2,15 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact;
+@class CNContact, UIViewController;
 
 @interface ABContactCreateNewContactAction : ABContactAction <ABNewPersonViewControllerDelegate> {
     CNContact *_createdContact;
+    UIViewController *_presentingViewController;
 }
 
 @property(retain) CNContact * createdContact;
+@property UIViewController * presentingViewController;
 
 
 - (id)createdContact;
@@ -16,5 +18,7 @@
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)performActionWithSender:(id)arg1;
 - (void)dealloc;
+- (void)setPresentingViewController:(id)arg1;
+- (id)presentingViewController;
 
 @end

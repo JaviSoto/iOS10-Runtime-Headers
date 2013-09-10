@@ -183,7 +183,6 @@
 - (id)_collectionViewData;
 - (id)_layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dataSourceImplementsNumberOfSections;
-- (void)_setVisibleCell:(id)arg1 forIndexPath:(id)arg2;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
@@ -201,7 +200,6 @@
 - (void)_beginUpdates;
 - (id)_viewAnimationsForCurrentUpdate;
 - (void)_prepareLayoutForUpdates;
-- (void)_setVisibleSupplementaryView:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3 isDecorationView:(BOOL)arg4;
 - (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2 isDecorationView:(BOOL)arg3;
 - (void)_updateWithItems:(id)arg1;
 - (void)_updateRowsAtIndexPaths:(id)arg1 updateAction:(int)arg2;

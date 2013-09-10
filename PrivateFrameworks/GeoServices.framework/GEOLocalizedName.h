@@ -48,9 +48,9 @@
 - (void)setPhoneticName:(id)arg1;
 - (BOOL)hasName;
 - (void)copyTo:(id)arg1;
-- (void)setLanguageCode:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setLanguageCode:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)name;

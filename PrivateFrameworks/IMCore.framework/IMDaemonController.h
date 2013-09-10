@@ -82,7 +82,6 @@
 - (void)_localObjectCleanup;
 - (void)_setAutoReconnect:(BOOL)arg1;
 - (void)_setServicesToDeny:(id)arg1;
-- (void)_setServicesToAllow:(id)arg1;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
 - (void)setDaemonTerminatesWithoutListeners:(BOOL)arg1;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;
@@ -111,6 +110,7 @@
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;
+- (void)_setServicesToAllow:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setDelegate:(id)arg1;

@@ -83,6 +83,7 @@
 - (void)navigateToRevealAssetContainer:(id)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)navigateToAssetContainer:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)navigateToPhotoStreamMode:(int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)_handleDoneButton:(id)arg1;
 - (id)spec;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (void)_didFinishPostingNotifications:(id)arg1;
@@ -151,7 +152,6 @@
 - (void)updateAddNewAlbumPlaceholderAnimated:(BOOL)arg1;
 - (id)_preheatedAssetsByAlbum;
 - (void)_handleAlbumCreation:(id)arg1;
-- (void)_handleDoneButton:(id)arg1;
 - (void)setKeyboardAware:(BOOL)arg1;
 - (void)_updateAlbumSubtitleFormat;
 - (void)albumStreamActivity:(id)arg1 didFinishSuccessfully:(BOOL)arg2;

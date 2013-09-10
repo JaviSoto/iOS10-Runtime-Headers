@@ -81,6 +81,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)dealloc;
 - (id)description;
+- (void)_setSpeed:(float)arg1 forWindow:(id)arg2;
 - (void)setWantsSoftwareDimming:(BOOL)arg1;
 - (BOOL)wantsSoftwareDimming;
 - (void)_setWorkspaceCapableScreenType:(int)arg1;

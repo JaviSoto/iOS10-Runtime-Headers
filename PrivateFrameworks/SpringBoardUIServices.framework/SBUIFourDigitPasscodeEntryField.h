@@ -24,6 +24,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_entryFieldPaddingOutsideRing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
+- (void)_autofillForMesaWithCompletion:(id)arg1;
 - (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
 - (void)_setLuminosityBoost:(float)arg1;
 - (void)reset;

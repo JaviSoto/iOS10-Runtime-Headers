@@ -91,6 +91,7 @@
 - (void)startModal;
 - (void)setDepth:(int)arg1;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
+- (void)handleWebLoginRequestWithCompletionBlock:(id)arg1;
 - (int)numDownloadedElements;
 - (void)_handleBadPasswordResponse;
 - (void)setResponseStatusCode:(int)arg1;
@@ -102,7 +103,6 @@
 - (void)setTotalBytesReceived:(unsigned int)arg1;
 - (unsigned int)totalBytesReceived;
 - (id)requestProgressBlock;
-- (void)handleWebLoginRequestWithCompletionBlock:(id)arg1;
 - (void)setResponseProgressBlock:(id)arg1;
 - (void)setRequestProgressBlock:(id)arg1;
 - (void)reportStatusWithError:(id)arg1;
@@ -143,6 +143,7 @@
 - (void)reset;
 - (void)setContext:(void*)arg1;
 - (void)loadRequest:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;
@@ -150,7 +151,6 @@
 - (id)delegate;
 - (void)setError:(id)arg1;
 - (id)error;
-- (void)setCompletionBlock:(id)arg1;
 - (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;

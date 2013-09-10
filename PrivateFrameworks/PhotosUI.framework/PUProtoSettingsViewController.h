@@ -15,6 +15,7 @@
 @property BOOL showsDoneButton;
 
 
+- (void)_handleDoneButton:(id)arg1;
 - (BOOL)showsDoneButton;
 - (id)sectionNames;
 - (id)settingsBySection;
@@ -25,7 +26,6 @@
 - (void)_configureCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)_handleResetButton:(id)arg1;
 - (void)_settingsDidChange:(id)arg1;
-- (void)_handleDoneButton:(id)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;
 - (id)initWithSettingsBySection:(id)arg1 sectionNames:(id)arg2;
 - (void)dealloc;

@@ -18,6 +18,7 @@
 @property <SLFacebookAlbumChooserViewControllerDelegate> * delegate;
 
 
+- (void)setAlbums:(id)arg1;
 - (id)albums;
 - (void)setFlipBackButton:(id)arg1;
 - (id)flipBackButton;
@@ -28,7 +29,6 @@
 - (void)albumManager:(id)arg1 didFailAlbumRefreshWithError:(id)arg2;
 - (void)albumManager:(id)arg1 didRefreshAlbums:(id)arg2;
 - (id)albumManager;
-- (void)setAlbums:(id)arg1;
 - (void)setAlbumManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void).cxx_destruct;

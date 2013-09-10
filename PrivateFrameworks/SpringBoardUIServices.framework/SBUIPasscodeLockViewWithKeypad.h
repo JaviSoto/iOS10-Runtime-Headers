@@ -19,6 +19,7 @@
 
 @property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) BOOL undoInputOnTouchCancellation;
 @property(retain) NSString * lastCharacterBeforeBackspace;
+@property(retain) UILabel * statusTitleView;
 
 
 - (id)lastCharacterBeforeBackspace;
@@ -31,13 +32,17 @@
 - (void)_noteBackspaceHit;
 - (id)_numericEntryFieldIfExists;
 - (float)_statusTitleViewHeight;
+- (id)_statusTitleViewTitleFont;
+- (void)_layoutStatusView:(id)arg1;
 - (void)setLastCharacterBeforeBackspace:(id)arg1;
 - (void)_layoutStatusView;
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (float)_numberPadOffsetFromTopOfScreen;
 - (void)_setHasInput:(BOOL)arg1;
 - (id)_newEntryField;
-- (id)_statusTitleViewTitleFont;
+- (id)statusTitleView;
+- (void)setStatusTitleView:(id)arg1;
+- (id)_newStatusTitleView;
 - (BOOL)_includesStatusView;
 - (id)_numberPad;
 - (void)passcodeLockNumberPadEmergencyCallButtonHit:(id)arg1;
@@ -58,7 +63,7 @@
 - (float)backgroundAlpha;
 - (id)passcode;
 - (void)resetForFailedPasscode;
-- (void)_updateStatusText:(id)arg1;
+- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
 - (void)_luminanceBoostDidChange;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;

@@ -419,11 +419,11 @@
 - (void)setInteractiveTransition:(BOOL)arg1;
 - (id)previousViewController;
 - (id)topViewController;
+- (id)_existingToolbar;
 - (BOOL)isNavigationBarHidden;
+- (id)navigationBar;
 - (BOOL)_shouldPopFromLandscapeToPortraitOrientation;
 - (BOOL)_shouldUseBuiltinInteractionController;
-- (id)_existingToolbar;
-- (id)navigationBar;
 - (BOOL)_isTransitioning;
 - (id)_interactionController;
 - (BOOL)_clipUnderlapWhileTransitioning;
@@ -445,6 +445,7 @@
 - (void)invalidate;
 - (unsigned int)indexOfViewController:(id)arg1;
 - (id)mf_keyPathsMapForUICustomization;
+- (id)_pl_innerViewController;
 - (id)pu_currentNavigationTransition;
 - (void)pu_pushViewController:(id)arg1 withTransition:(id)arg2 animated:(BOOL)arg3 isInteractive:(BOOL)arg4;
 - (void)pu_popViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2;

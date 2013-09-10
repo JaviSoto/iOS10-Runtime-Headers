@@ -38,6 +38,7 @@
 + (BOOL)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 + (BOOL)_forceAnalyzeAllMoments;
 + (BOOL)_rebuildAllMomentsInStore:(id)arg1;
++ (BOOL)_fixupOldBursts;
 + (BOOL)_fixupSyncedAssetAttributesInStore:(id)arg1;
 + (BOOL)_resetDupesAnalysisInStore:(id)arg1 resetHashes:(BOOL)arg2;
 + (BOOL)_fixupKeyAssetsForAlbumsInStore:(id)arg1;

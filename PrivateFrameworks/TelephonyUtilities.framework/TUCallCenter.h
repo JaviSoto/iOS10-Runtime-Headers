@@ -14,8 +14,11 @@
 @property(retain) NSMutableArray * displayedCalls;
 @property(retain) NSMutableArray * conferenceParticipantCalls;
 
++ (BOOL)isMobilePhoneProcess;
++ (BOOL)isFaceTimeProcess;
 + (void)revertSharedAddressBook;
 + (void*)sharedAddressBook;
++ (void)initialize;
 + (id)sharedInstance;
 
 - (void)endEmergencyCallBackMode;
@@ -55,6 +58,7 @@
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
 - (id)sourceAccount;
 - (id)callForChat:(id)arg1;
+- (void)daemonConnected:(id)arg1;
 - (void)handleChatInvitationSent:(id)arg1;
 - (void)handleChatStateChanged:(id)arg1;
 - (void)handleModelStateChanged:(id)arg1;

@@ -153,6 +153,7 @@
 - (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)modalItem:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)modalItem:(id)arg1 tappedButtonAtIndex:(int)arg2;
+- (BOOL)modalItem:(id)arg1 shouldDismissForButtonAtIndex:(int)arg2;
 - (void)didPresentModalItem:(id)arg1;
 - (void)willPresentModalItem:(id)arg1;
 - (int)_alertOrientation;

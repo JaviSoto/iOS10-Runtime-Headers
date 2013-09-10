@@ -27,6 +27,7 @@
 
 - (int)duplex;
 - (void)setOrientation:(int)arg1;
+- (int)orientation;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -44,7 +45,6 @@
 - (id)_initWithDictionary:(id)arg1;
 - (void)setOutputType:(int)arg1;
 - (void)setJobName:(id)arg1;
-- (int)orientation;
 - (id)dictionaryRepresentation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -48,7 +48,7 @@
 - (BOOL)supportsLowLightBoost;
 - (id)videoSupportedFrameRateRanges;
 - (BOOL)isDefaultActiveFormat;
-- (BOOL)isYoMamaWearsCombatBootsSupported;
+- (BOOL)isSISSupported;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMinFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })highestSupportedVideoFrameDuration;

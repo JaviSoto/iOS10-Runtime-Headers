@@ -13,7 +13,6 @@
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 
-- (void)setDevice:(id)arg1;
 - (struct OpaqueCMClock { }*)clock;
 - (id)ports;
 - (int)_requestCameraRecordPermission;
@@ -27,6 +26,7 @@
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)setDevice:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

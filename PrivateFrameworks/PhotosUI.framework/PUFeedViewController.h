@@ -101,6 +101,7 @@
 
 + (void)initialize;
 
+- (id)_pl_debugItems;
 - (id)spec;
 - (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id)arg2;
 - (void)navigateToCloudFeedComment:(id)arg1 completion:(id)arg2;
@@ -108,9 +109,9 @@
 - (void)navigateToCloudFeedAsset:(id)arg1 completion:(id)arg2;
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id)arg2;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
+- (BOOL)_isScrolling;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (id)_albumStreamActivity;
-- (id)collectionViewForCurrentInterfaceOrientation;
 - (void)didTapButtonInFeedTextCell:(id)arg1;
 - (void)didTapCommentButtonInFeedImageCell:(id)arg1;
 - (void)didTapOverlayPlayButtonInFeedImageCell:(id)arg1;
@@ -238,6 +239,7 @@
 - (void)_setPreheatedAssetsByFormat:(id)arg1;
 - (id)_preheatedAssetsByFormat;
 - (id)_assetForItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
+- (id)collectionViewForCurrentInterfaceOrientation;
 - (void)_setMostRecentContentViewed:(int)arg1;
 - (void)_setMostRecentContentDateViewed:(id)arg1;
 - (int)_mostRecentContentViewed;

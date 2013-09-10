@@ -21,6 +21,7 @@
     TPButton *_sideButtonLeft;
     TPButton *_sideButtonRight;
     TPSlidingButton *_slidingButton;
+    NSMutableArray *_hijackedGestureRecognizers;
     NSMutableArray *_stateStack;
 }
 
@@ -41,6 +42,7 @@
 @property(retain) TPButton * sideButtonLeft;
 @property(retain) TPButton * sideButtonRight;
 @property(retain) TPSlidingButton * slidingButton;
+@property(retain) NSMutableArray * hijackedGestureRecognizers;
 @property(retain) NSMutableArray * stateStack;
 
 + (float)defaultInterButtonSpacing;
@@ -49,6 +51,7 @@
 + (float)defaultBottomMargin;
 + (float)defaultWidth;
 
+- (void)setHijackedGestureRecognizers:(id)arg1;
 - (void)refreshCustomizedActionTypeTitles;
 - (void)setAction:(int)arg1 enabled:(BOOL)arg2;
 - (void)setAction:(int)arg1 selected:(BOOL)arg2;
@@ -99,6 +102,8 @@
 - (void)setCurrentState:(int)arg1 animated:(BOOL)arg2 animationCompletionBlock:(id)arg3;
 - (id)stateStack;
 - (void)setStateStack:(id)arg1;
+- (id)hijackedGestureRecognizers;
+- (void)_clearHijackedGestureRecognizers;
 - (void)setDeclineAndRemindIsAvailable:(BOOL)arg1;
 - (void)setDeclineAndMessageIsAvailable:(BOOL)arg1;
 - (void)setBottomMargin:(float)arg1;

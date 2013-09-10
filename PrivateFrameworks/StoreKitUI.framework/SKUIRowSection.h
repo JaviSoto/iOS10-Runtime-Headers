@@ -4,7 +4,7 @@
 
 @class SKUIProductPageOverlayController, SKUILockupComponent, SKUIClientContext, NSMapTable, NSMutableIndexSet, SKUIRowComponent, SKUIMissingItemLoader;
 
-@interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
+@interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     SKUIClientContext *_clientContext;
     NSMapTable *_columnViews;
     NSMapTable *_componentArtworkRequestIDs;
@@ -41,6 +41,7 @@
 - (id)_viewControllerForCountdownComponent:(id)arg1;
 - (id)_overlaySourceCell;
 - (id)_popSourceViewForOverlayController:(id)arg1;
+- (void)_enumerateLockupsWithBlock:(id)arg1;
 - (id)_editorialLayoutForLockup:(id)arg1 columnIndex:(int)arg2;
 - (id)_editorialLayoutForEditorial:(id)arg1 columnIndex:(int)arg2;
 - (id)_missingItemLoader;
@@ -77,6 +78,8 @@
 - (void)invalidateCachedLayoutInformation;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
+- (void)itemStateCenterRestrictionsChanged:(id)arg1;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;

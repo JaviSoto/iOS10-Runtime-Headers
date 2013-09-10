@@ -33,7 +33,6 @@
 - (id)services;
 - (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
-- (void)unpair;
 - (BOOL)isConnectedToSystem;
 - (BOOL)isPaired;
 - (id)RSSI;
@@ -86,6 +85,7 @@
 - (void)setOrphan;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
+- (void)unpair;
 - (void)setDelegate:(id)arg1;
 - (id)name;
 - (void)dealloc;

@@ -173,6 +173,7 @@
 @property int gkFocusBubbleType;
 @property UIPopoverController * gkPopoverController;
 @property(readonly) BOOL ab_shouldShowNavBarButtons;
+@property(readonly) BOOL ab_shouldUseTransparentBackgroundInPopovers;
 @property(retain) UITabBarItem * tabBarItem;
 @property(readonly) UITabBarController * tabBarController;
 @property(readonly) UISplitViewController * splitViewController;
@@ -457,7 +458,6 @@
 - (BOOL)_hasAppeared;
 - (void)_setPreviousRootViewController:(id)arg1;
 - (id)_previousRootViewController;
-- (BOOL)isViewControllerModallyPresented;
 - (void)setMutableChildViewControllers:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
 - (void)_addChildViewController:(id)arg1 notifyWillMove:(BOOL)arg2;
@@ -583,7 +583,6 @@
 - (int)_supportedInterfaceOrientationForInterfaceOrientation:(int)arg1 givenMask:(unsigned int*)arg2;
 - (int)_preferredInterfaceOrientationGivenStatusBarAndDeviceOrientationAndMask:(unsigned int*)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (unsigned int)__supportedInterfaceOrientations;
 - (BOOL)_ignoreAppSupportedOrientations;
 - (void)setModalTransitionView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
@@ -718,7 +717,6 @@
 - (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (id)_popoverController;
 - (BOOL)_hackFor11408026_endAppearanceTransition;
 - (BOOL)_hackFor11408026_beginAppearanceTransition:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)bottomLayoutGuide;
@@ -727,6 +725,7 @@
 - (id)contentScrollView;
 - (void)_cancelDelayedPresentation:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (unsigned int)__supportedInterfaceOrientations;
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
@@ -735,6 +734,8 @@
 - (double)durationForTransition:(int)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (id)navigationController;
+- (BOOL)isViewControllerModallyPresented;
+- (id)_popoverController;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isInAnimatedVCTransition;
 - (void)viewDidLayoutSubviews;
@@ -823,6 +824,7 @@
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
 - (BOOL)ab_shouldShowNavBarButtons;
+- (BOOL)ab_shouldUseTransparentBackgroundInPopovers;
 - (void)_gkPresentActivityViewControllerForActivityItems:(id)arg1 fromView:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_gkRestoreStatusBarStyle:(BOOL)arg1;
 - (void)_gkSaveStatusBarStyle:(BOOL)arg1;
@@ -930,6 +932,7 @@
 - (id)uiipc_imagePickerController;
 - (id)uiipc_imagePickerOptions;
 - (BOOL)uiipc_useTelephonyUI;
+- (id)_pl_innerViewController;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)pl_visitControllerHierarchyWithBlock:(id)arg1;
 - (BOOL)pl_isInPopover;

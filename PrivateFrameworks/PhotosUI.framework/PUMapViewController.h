@@ -36,7 +36,6 @@
 - (void)setShouldShowToolbar:(BOOL)arg1;
 - (void)setMaxItemsInitialZoom:(unsigned int)arg1;
 - (unsigned int)maxItemsInitialZoom;
-- (void)_handleReportButton:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithDefaultZoomCenteredAtCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithSpec:(id)arg1 assets:(id)arg2;
 - (id)mapAnnotationManager:(id)arg1 aggregateAnnotationForAnnotations:(id)arg2 averageCoordinate:(struct { double x1; double x2; })arg3;
@@ -44,6 +43,7 @@
 - (id)_annotationViewForPhotoToken:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomTransition:(id)arg1 frameForPhotoToken:(id)arg2 operation:(int)arg3;
 - (void)_displayDetailsForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)_handleReportButton:(id)arg1;
 - (void)_updateNavItem;
 - (void)_showLocations:(id)arg1 animated:(BOOL)arg2;
 - (void)_addLocationsToArray:(id)arg1 forInitialZoomWithMapItems:(id)arg2;

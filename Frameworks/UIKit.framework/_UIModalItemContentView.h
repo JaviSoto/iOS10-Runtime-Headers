@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIModalItemsPresentingViewController, _UIModalItem, UITableView, UILabel, UIButton, UIView, UITextField, NSMutableArray, UIViewController;
+@class _UIModalItemsPresentingViewController, _UIModalItem, UITableView, UILabel, UIButton, UIView, UITextField, UIViewController;
 
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     _UIModalItem *_modalItem;
@@ -11,7 +11,6 @@
     UILabel *_messageLabel;
     UITextField *_loginTextField;
     UITextField *_passwordTextField;
-    NSMutableArray *_otherButtons;
     UIViewController *_accessoryViewController;
     struct CGSize { 
         float width; 

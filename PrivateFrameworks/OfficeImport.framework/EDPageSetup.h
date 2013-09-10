@@ -43,8 +43,8 @@
 - (float)topMargin;
 - (void)setOrientation:(int)arg1;
 - (void)setScale:(unsigned long)arg1;
-- (id)init;
 - (int)orientation;
+- (id)init;
 - (unsigned long)scale;
 - (int)order;
 

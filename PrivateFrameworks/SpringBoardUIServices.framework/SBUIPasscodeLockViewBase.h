@@ -4,7 +4,7 @@
 
 @class <SBFLegibilitySettingsProvider>, _UILegibilitySettings, SBUIPasscodeEntryField, NSString, <SBUIPasscodeLockViewDelegate>, <SBUIPasscodeLockViewDelegate_Internal>, UIColor;
 
-@interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView> {
+@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricEventObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView> {
     <SBUIPasscodeLockViewDelegate_Internal> *_delegate;
     int _style;
     NSString *_passcode;
@@ -16,11 +16,13 @@
     UIColor *_customBackgroundColor;
     SBUIPasscodeEntryField *_entryField;
     <SBFLegibilitySettingsProvider> *_backgroundLegibilitySettingsProvider;
-    BOOL _shouldResetForFailedPasscodeAttempt;
     float _luminanceBoost;
     float _currentBacklightLevel;
     _UILegibilitySettings *_legibilitySettings;
     BOOL _allowsStatusTextUpdatingOnResignFirstResponder;
+    BOOL _mesaLockedOut;
+    unsigned int _biometricMatchMode;
+    BOOL _shouldResetForFailedPasscodeAttempt;
 }
 
 @property int style;
@@ -35,16 +37,16 @@
 @property float backgroundAlpha;
 @property(retain) UIColor * customBackgroundColor;
 @property(retain) <SBFLegibilitySettingsProvider> * backgroundLegibilitySettingsProvider;
+@property unsigned int biometricMatchMode;
 
 
-- (void)_setEntryField:(id)arg1;
-- (id)_entryField;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
 - (BOOL)shouldResetForFailedPasscodeAttempt;
-- (void)_resetStatusText;
+- (void)_setEntryField:(id)arg1;
 - (void)_sendDelegateKeypadKeyUp;
 - (void)_sendDelegateKeypadKeyDown;
 - (BOOL)_isBoundsPortraitOriented;
+- (void)setBiometricMatchMode:(unsigned int)arg1;
 - (void)setBackgroundLegibilitySettingsProvider:(id)arg1;
 - (id)backgroundLegibilitySettingsProvider;
 - (void)setCustomBackgroundColor:(id)arg1;
@@ -56,17 +58,26 @@
 - (id)passcode;
 - (void)setAllowsStatusTextUpdatingOnResignFirstResponder:(BOOL)arg1;
 - (void)resetForFailedPasscode;
-- (void)_updateStatusText:(id)arg1;
+- (void)biometricEventMonitor:(id)arg1 handleBiometricEvent:(unsigned int)arg2;
+- (void)_handleBiometricEvent:(unsigned int)arg1;
+- (void)_resetForFailedMesaAttemptWithEvent:(unsigned int)arg1;
+- (void)_notifyDelegatePasscodeEnteredViaMesa;
+- (void)_updateStatusTextForBioEvent:(unsigned int)arg1 animated:(BOOL)arg2;
+- (id)_entryField;
+- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
 - (float)_luminanceBoostFromDisplayBrightness;
 - (float)_luminanceBoostFromLegibility;
 - (void)_screenBrightnessReallyDidChange;
+- (unsigned int)biometricMatchMode;
 - (void)_setLuminosityBoost:(float)arg1;
 - (float)_luminosityBoost;
 - (void)_luminanceBoostDidChange;
 - (void)_evaluateLuminance;
+- (void)_resetStatusText;
 - (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)_clearBrightnessChangeTimer;
 - (void)_noteScreenBrightnessDidChange;
+- (BOOL)_wantsBiometricAuthentication;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;

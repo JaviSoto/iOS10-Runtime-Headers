@@ -32,14 +32,6 @@
 @property(copy) NSString * importSessionIdentifier;
 
 
-- (void)didRemoveDevice:(id)arg1;
-- (void)cameraDevice:(id)arg1 didReceiveMetadata:(id)arg2 forItem:(id)arg3 error:(id)arg4;
-- (void)cameraDevice:(id)arg1 didReceiveThumbnail:(struct CGImage { }*)arg2 forItem:(id)arg3 error:(id)arg4;
-- (void)cameraDevice:(id)arg1 didRemoveItems:(id)arg2;
-- (void)deviceDidBecomeReady:(id)arg1;
-- (void)device:(id)arg1 didCloseSessionWithError:(id)arg2;
-- (void)device:(id)arg1 didOpenSessionWithError:(id)arg2;
-- (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;
 - (void)importItems:(id)arg1;
@@ -86,6 +78,14 @@
 - (id)importItemForCameraFile:(id)arg1;
 - (void)setImportSessionIdentifier:(id)arg1;
 - (void)didReceiveImportNotification:(id)arg1;
+- (void)didRemoveDevice:(id)arg1;
+- (void)cameraDevice:(id)arg1 didReceiveMetadata:(id)arg2 forItem:(id)arg3 error:(id)arg4;
+- (void)cameraDevice:(id)arg1 didReceiveThumbnail:(struct CGImage { }*)arg2 forItem:(id)arg3 error:(id)arg4;
+- (void)cameraDevice:(id)arg1 didRemoveItems:(id)arg2;
+- (void)deviceDidBecomeReady:(id)arg1;
+- (void)device:(id)arg1 didCloseSessionWithError:(id)arg2;
+- (void)device:(id)arg1 didOpenSessionWithError:(id)arg2;
+- (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;
 - (BOOL)deviceIsLocked;
 - (void)setCamera:(id)arg1;
 - (id)camera;

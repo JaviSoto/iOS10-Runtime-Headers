@@ -2,12 +2,13 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView;
+@class UIScrollView, UIView;
 
 @interface SUStorePageView : UIView  {
     UIView *_backdropView;
     UIView *_contentView;
     UIView *_headerView;
+    UIScrollView *_headerScrollView;
     UIView *_previewOverlayView;
     struct UIEdgeInsets { 
         float top; 

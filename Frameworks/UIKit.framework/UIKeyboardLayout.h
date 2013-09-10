@@ -23,6 +23,7 @@
 - (BOOL)isAlphabeticPlane;
 - (BOOL)canMultitap;
 - (BOOL)hasAccentKey;
+- (int)orientation;
 - (void)dealloc;
 - (id)shiftKeyTouch;
 - (BOOL)acceptsDirectionInput;
@@ -99,7 +100,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (int)orientation;
 - (void)setShift:(BOOL)arg1;
 
 @end

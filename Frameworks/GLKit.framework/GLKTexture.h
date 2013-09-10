@@ -145,10 +145,10 @@
 - (id)label;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)format;
+- (unsigned int)orientation;
 - (id)init;
 - (void)dealloc;
 - (void)setLabel:(id)arg1;
-- (unsigned int)orientation;
 - (unsigned int)type;
 
 @end

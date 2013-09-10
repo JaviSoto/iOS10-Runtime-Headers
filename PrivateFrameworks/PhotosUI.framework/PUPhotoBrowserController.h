@@ -2,9 +2,9 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImage, PLLibraryImageDataProvider, UIColor, UIMovieScrubber, PLCloudSharedComment, <PUPhotoBrowserControllerDelegate>, PUPhotosSharingViewController, <PLAssetContainerList>, PUPhotoBrowserControllerSpec, UIView, NSDictionary, _UINavigationControllerPalette, PLPhotoBrowserController, <PLAssetContainer>, PLManagedAsset, PUPhotoPinchGestureRecognizer;
+@class PUAvalancheReviewController, UIImage, PLLibraryImageDataProvider, <PUPhotoBrowserControllerDelegate>, UIMovieScrubber, PLCloudSharedComment, PUPhotosSharingViewController, UIColor, <PLAssetContainerList>, PUPhotoBrowserControllerSpec, PLSlalomRegionEditor, UIView, NSDictionary, _UINavigationControllerPalette, PLPhotoBrowserController, <PLAssetContainer>, PLManagedAsset, PUPhotoPinchGestureRecognizer;
 
-@interface PUPhotoBrowserController : UIViewController <PLPhotoBrowserControllerDelegate, PUPhotosSharingViewControllerDelegate, PUPhotosSharingTransitionDelegate, UIGestureRecognizerDelegate, PUCollectionViewLayoutProvider, PLDismissableViewController> {
+@interface PUPhotoBrowserController : UIViewController <PLPhotoBrowserControllerDelegate, PUPhotosSharingViewControllerDelegate, PUPhotosSharingTransitionDelegate, UIGestureRecognizerDelegate, PUCollectionViewLayoutProvider, PUAvalancheReviewControllerDelegate, PLDismissableViewController> {
     PUPhotoBrowserControllerSpec *_spec;
     PLPhotoBrowserController *_legacyPhotoBrowserController;
     PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
@@ -12,6 +12,7 @@
     NSDictionary *_navbarButtons;
     _UINavigationControllerPalette *_videoScrubberPalette;
     UIMovieScrubber *_videoScrubber;
+    PLSlalomRegionEditor *_slalomRegionEditor;
     UIView *_videoScrubberClipView;
     BOOL _editingVideo;
     BOOL _editingComments;
@@ -19,6 +20,7 @@
     BOOL _browserIsScrubbing;
     BOOL _isDeletingCurrentAsset;
     PUPhotosSharingViewController *_sharingViewController;
+    PUAvalancheReviewController *_avalancheReviewController;
     BOOL _shouldShowOverlaysWhenViewAppears;
     BOOL _photoBackgroundHidden;
     BOOL _overlaysVisible;
@@ -47,6 +49,7 @@
 @property(readonly) UIView * commentsView;
 
 
+- (id)_pl_debugItems;
 - (void)libraryDidChange:(id)arg1;
 - (BOOL)shouldShowOverlaysWhenViewAppears;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
@@ -73,8 +76,8 @@
 - (void)photoBrowserControllerWillBeginPaging:(id)arg1;
 - (void)photoBrowserController:(id)arg1 willDisplayTileController:(id)arg2;
 - (id)commentsView;
-- (id)currentAssetContainer;
 - (id)currentAssetForZoomTransition;
+- (id)currentAssetContainer;
 - (id)currentAsset;
 - (void)photoBrowserController:(id)arg1 setUsesPhotoBrowserStyleStatusBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (id)photoBrowserControllerMakeToolbar:(id)arg1;
@@ -89,6 +92,7 @@
 - (id)photoImageForZoomTransition;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoFrameForZoomTransition;
 - (id)_legacyPhotoBrowserControllerForSubclassesOnly;
+- (void)avalancheReviewControllerDidComplete:(id)arg1;
 - (int)_tileCountForCurrentModalViewController;
 - (id)_collectionsForCurrentModalViewController;
 - (void)willBeginNavigationOperation:(int)arg1 inNavigationController:(id)arg2;
@@ -123,6 +127,7 @@
 - (void)_removeCurrentItem:(id)arg1;
 - (void)_deleteCurrentItem:(id)arg1;
 - (void)_displayShareSheet:(id)arg1;
+- (void)_enterReviewMode:(id)arg1;
 - (void)_setOverlaysVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_startSlideshow:(id)arg1;
 - (void)_setOverlaysVisibleForModalTransition:(BOOL)arg1 animated:(BOOL)arg2;

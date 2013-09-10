@@ -17,12 +17,12 @@
 + (id)faceObjectWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
 
 - (id)initWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
-- (float)yawAngle;
-- (BOOL)hasYawAngle;
-- (float)rollAngle;
-- (BOOL)hasRollAngle;
 - (int)faceID;
 - (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isVideoMirrored:(BOOL)arg3 rollAdjustment:(float)arg4;
+- (float)yawAngle;
+- (float)rollAngle;
+- (BOOL)hasYawAngle;
+- (BOOL)hasRollAngle;
 - (void)dealloc;
 - (id)description;
 

@@ -2,22 +2,31 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPrintFormatter, NSArray;
+@class NSArray;
 
 @interface UITextViewPrintFormatter : UIViewPrintFormatter  {
     struct { 
         unsigned int initializedUsedRects : 1; 
     } _textViewPrintFormatterFlags;
     NSArray *_pageData;
-    UIPrintFormatter *_parentPrintFormatter;
 }
 
 
+- (id)text;
+- (id)font;
+- (id)color;
 - (void)dealloc;
 - (id)_pageData;
-- (void)setParentPrintFormatter:(id)arg1;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forPageAtIndex:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageAtIndex:(int)arg1;
 - (int)_recalcPageCount;
+- (id)_textView;
+- (void)setColor:(id)arg1;
+- (int)textAlignment;
+- (void)setTextAlignment:(int)arg1;
+- (id)attributedText;
+- (void)setText:(id)arg1;
+- (void)setAttributedText:(id)arg1;
+- (void)setFont:(id)arg1;
 
 @end

@@ -2,10 +2,11 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotosSharingViewControllerSpec;
+@class PUPhotosSharingViewControllerSpec, PUAvalancheReviewControllerSpec;
 
 @interface PUPhotoBrowserControllerSpec : NSObject  {
     PUPhotosSharingViewControllerSpec *_photosSharingViewControllerSpec;
+    PUAvalancheReviewControllerSpec *_avalancheReviewControllerSpec;
 }
 
 @property(readonly) BOOL shouldShowSlideshowItem;
@@ -18,15 +19,17 @@
 @property(readonly) BOOL shouldUsePopovers;
 @property(readonly) unsigned int supportedInterfaceOrientations;
 @property(readonly) PUPhotosSharingViewControllerSpec * photosSharingViewControllerSpec;
+@property(readonly) PUAvalancheReviewControllerSpec * avalancheReviewControllerSpec;
 
 
 - (BOOL)shouldShowEditItem;
 - (BOOL)shouldShowAirplayItem;
 - (BOOL)shouldShowSlideshowItem;
 - (BOOL)shouldShowDeleteItem;
-- (BOOL)isInCamera;
 - (BOOL)shouldShowShareItem;
 - (BOOL)shouldShowPhotoScrubber;
+- (BOOL)isInCamera;
+- (id)avalancheReviewControllerSpec;
 - (BOOL)shouldUsePopovers;
 - (id)photosSharingViewControllerSpec;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 inAssetContainerList:(id)arg2;

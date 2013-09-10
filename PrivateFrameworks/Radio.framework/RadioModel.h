@@ -78,6 +78,7 @@
 - (id)convertObjectsInSet:(id)arg1;
 - (void)_endBackgroundTaskAssertion;
 - (void)_beginBackgroundTaskAssertion;
+- (void)_internalAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (void)_contextDidSaveNotification:(id)arg1;
 - (unsigned long long)globalVersion;
 - (void)_setDatabasePropertyValue:(id)arg1 forKey:(id)arg2;

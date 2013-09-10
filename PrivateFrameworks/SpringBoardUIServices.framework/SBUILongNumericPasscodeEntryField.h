@@ -32,6 +32,7 @@
 - (struct CGSize { float x1; float x2; })_passcodeFieldSize;
 - (struct CGSize { float x1; float x2; })_viewSize;
 - (void)setCustomBackgroundColor:(id)arg1;
+- (void)_autofillForMesaWithCompletion:(id)arg1;
 - (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
 - (id)okButton;
 - (BOOL)resignFirstResponder;

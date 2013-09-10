@@ -106,6 +106,7 @@
 
 - (void)navigateToRevealPhoto:(id)arg1 inAssetContainer:(id)arg2 animated:(BOOL)arg3;
 - (void)navigateToPhoto:(id)arg1 inAssetContainer:(id)arg2 animated:(BOOL)arg3;
+- (id)_pl_debugItems;
 - (id)slideshowSettingsViewController:(id)arg1 slideshowSettingsForAirPlayRoute:(id)arg2;
 - (id)slideshowSettingsViewController:(id)arg1 alternateTransitionLocalizationsForAirPlayRoute:(id)arg2;
 - (void)slideshowSettingsViewController:(id)arg1 didSelectAirPlayRoute:(id)arg2;

@@ -23,6 +23,7 @@
 - (void)setMaxRecordedFileSize:(long long)arg1;
 - (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
+- (BOOL)isRecording;
 - (long long)recordedFileSize;
 - (void)setPausesRecordingOnInterruption:(BOOL)arg1;
 - (void)resumeRecording;
@@ -33,7 +34,6 @@
 - (long long)maxRecordedFileSize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
 - (id)outputFileURL;
-- (BOOL)isRecording;
 - (id)init;
 - (void)dealloc;
 - (void)stopRecording;

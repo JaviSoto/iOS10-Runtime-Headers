@@ -30,6 +30,7 @@
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
 - (void)registerDefaults:(id)arg1;
+- (id)persistentDomainForName:(id)arg1;
 - (float)floatForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)init;
@@ -39,7 +40,6 @@
 - (id)objectForKey:(id)arg1;
 - (void)dealloc;
 - (oneway void)release;
-- (id)persistentDomainForName:(id)arg1;
 - (BOOL)objectIsForcedForKey:(id)arg1 inDomain:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1;
 - (void)removePersistentDomainForName:(id)arg1;

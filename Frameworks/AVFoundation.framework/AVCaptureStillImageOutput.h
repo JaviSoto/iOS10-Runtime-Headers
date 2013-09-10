@@ -11,6 +11,9 @@
 @property(copy) NSDictionary * outputSettings;
 @property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
 @property(readonly) NSArray * availableImageDataCodecTypes;
+@property(getter=isStillImageStabilizationSupported,readonly) BOOL stillImageStabilizationSupported;
+@property BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
+@property(getter=isStillImageStabilizationActive,readonly) BOOL stillImageStabilizationActive;
 @property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
 
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -21,12 +24,14 @@
 + (void)initialize;
 
 - (void)setShutterSound:(unsigned long)arg1;
+- (BOOL)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)setEV0CaptureEnabled:(BOOL)arg1;
 - (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
 - (BOOL)resumeVideoProcessing;
 - (void)setSquareCropEnabled:(BOOL)arg1;
+- (void)setAutomaticallyEnablesStillImageStabilizationWhenAvailable:(BOOL)arg1;
 - (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2 imageIsEV0:(BOOL*)arg3;
 - (id)firstActiveConnection;
 - (BOOL)isCapturingStillImage;
@@ -34,17 +39,17 @@
 - (unsigned long)shutterSound;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
 - (BOOL)isChromaNoiseReductionEnabled;
-- (void)setYoMamaWearsCombatBootsAutomaticallyWhenAvailable:(BOOL)arg1;
-- (BOOL)yoMamaWearsCombatBootsAutomaticallyWhenAvailable;
-- (BOOL)isYoMamaWearsCombatBootsActive;
+- (BOOL)isStillImageStabilizationActive;
 - (BOOL)isEV0CaptureEnabled;
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (BOOL)isHDRCaptureEnabled;
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (BOOL)isRawCaptureSupported;
+- (BOOL)isStillImageStabilizationSupported;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
 - (BOOL)isRawCaptureEnabled;
+- (void)updateSISSupportedForSourceDevice:(id)arg1;
 - (BOOL)squareCropEnabled;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
@@ -55,7 +60,6 @@
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
-- (BOOL)isYoMamaWearsCombatBootsSupported;
 - (BOOL)isHDRSupported;
 - (id)connectionMediaTypes;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;

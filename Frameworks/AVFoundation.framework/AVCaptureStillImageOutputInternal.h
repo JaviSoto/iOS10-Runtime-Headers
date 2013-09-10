@@ -21,9 +21,9 @@
     NSDictionary *outputSettings;
     BOOL isCapturingPhoto;
     BOOL rawCaptureEnabled;
-    BOOL yoMamaWearsCombatBootsSupported;
-    BOOL yoMamaWearsCombatBootsEnabled;
-    BOOL yoMamaWearsCombatBootsActive;
+    BOOL SISSupported;
+    BOOL SISEnabled;
+    BOOL SISActive;
     unsigned long shutterSoundID;
 }
 

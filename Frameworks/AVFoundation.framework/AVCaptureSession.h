@@ -31,6 +31,8 @@
 - (void)commitConfiguration;
 - (void)beginConfiguration;
 - (void)addConnection:(id)arg1;
+- (id)outputs;
+- (id)inputs;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (id)_errorForFigRecorderNotification:(id)arg1;
 - (void)_stopAndTearDownGraph;
@@ -105,8 +107,6 @@
 - (BOOL)automaticallyConfiguresApplicationAudioSession;
 - (BOOL)usesApplicationAudioSession;
 - (long)_stopRecording;
-- (id)outputs;
-- (id)inputs;
 - (id)init;
 - (void)dealloc;
 - (id)description;

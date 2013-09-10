@@ -20,8 +20,8 @@
 
 + (id)moveByY:(float)arg1 duration:(double)arg2;
 + (id)moveByX:(float)arg1 duration:(double)arg2;
-+ (id)moveBy:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;
 + (id)moveToX:(float)arg1 y:(float)arg2 duration:(double)arg3;
++ (id)moveBy:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;
 + (id)moveToY:(float)arg1 duration:(double)arg2;
 + (id)moveToX:(float)arg1 duration:(double)arg2;
 + (id)moveTo:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;

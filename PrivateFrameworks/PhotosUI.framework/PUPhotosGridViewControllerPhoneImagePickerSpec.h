@@ -6,5 +6,6 @@
 }
 
 
+- (BOOL)displaysAvalancheStacks;
 
 @end

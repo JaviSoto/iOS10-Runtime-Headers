@@ -8,6 +8,7 @@
     NSString *_accountName;
     BOOL _accountNameEditable;
     int _accountScope;
+    BOOL _allowsBioAuthentication;
     BOOL _allowsRetry;
     BOOL _canCreateNewAccount;
     BOOL _canSetActiveAccount;
@@ -48,6 +49,7 @@
 @property(readonly) BOOL shouldSuppressDialogs;
 @property(readonly) NSDictionary * signupRequestParameters;
 @property(readonly) NSArray * userAgentComponents;
+@property(readonly) BOOL allowsBioAuthentication;
 @property(readonly) NSString * clientIdentifierHeader;
 @property(getter=isDemoAccount,readonly) BOOL demoAccount;
 @property(readonly) BOOL persistsAcrossDeviceLock;
@@ -61,6 +63,7 @@
 - (BOOL)shouldFollowAccountButtons;
 - (id)preferredITunesStoreClient;
 - (int)promptStyle;
+- (BOOL)allowsBioAuthentication;
 - (id)userAgentComponents;
 - (id)signupRequestParameters;
 - (BOOL)shouldSuppressDialogs;

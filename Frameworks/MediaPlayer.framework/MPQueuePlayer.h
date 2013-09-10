@@ -98,6 +98,7 @@
 - (BOOL)isExternalPlaybackActive;
 - (void)play;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
+- (float)rate;
 - (void)insertItem:(id)arg1 afterItem:(id)arg2;
 - (BOOL)_CALayerDestinationIsTVOut;
 - (int)_externalProtectionStatus;
@@ -110,7 +111,6 @@
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setActionAtItemEnd:(int)arg1;
 - (id)_player;
-- (float)rate;
 - (id)items;
 - (void)setRate:(float)arg1;
 - (int)status;

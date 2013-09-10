@@ -58,8 +58,8 @@
 - (BOOL)setUserVersion:(int)arg1;
 - (void)dispatchBlockAsync:(id)arg1;
 - (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
-- (void)performTransactionWithBlock:(id)arg1;
 - (BOOL)executeSQL:(id)arg1;
+- (void)performTransactionWithBlock:(id)arg1;
 - (void)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)setSetupBlock:(id)arg1;
 - (id)initWithDatabaseURL:(id)arg1;

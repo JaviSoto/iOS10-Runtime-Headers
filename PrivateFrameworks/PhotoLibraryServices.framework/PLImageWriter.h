@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLXPCTransaction, NSRecursiveLock, NSMutableArray, NSCountedSet;
+@class NSMutableDictionary, PLXPCTransaction, NSRecursiveLock, NSMutableArray, NSCountedSet;
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate> {
     NSMutableArray *_highPriorityJobs;
@@ -16,6 +16,7 @@
     BOOL _writerThreadRunning;
     BOOL _databaseIsCorrupt;
     PLXPCTransaction *_transaction;
+    NSMutableDictionary *_inProgressAvalancheFds;
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -23,6 +24,8 @@
 + (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(int)arg5;
 + (id)sharedWriter;
 
+- (void)setAvalancheInProgress:(BOOL)arg1 uuid:(id)arg2;
+- (BOOL)saveToDiskSlalomRegions:(id)arg1 forJob:(id)arg2;
 - (id)uuidFromIncomingFilename:(id)arg1;
 - (BOOL)canEnqueueJob:(id)arg1;
 - (void)_processJob:(id)arg1;
@@ -36,12 +39,14 @@
 - (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
+- (void)_processAvalancheJob:(id)arg1;
 - (void)_processBatchImageJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1;
 - (void)_processVideoJob:(id)arg1;
 - (BOOL)_sufficientDiskSpaceToCopyVideoAtPath:(id)arg1;
 - (void)_decorateThumbnail:(id)arg1;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)_handleAvalancheCrashRecovery:(id)arg1;
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
 - (void)_processDeletePhotoStreamDataJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;

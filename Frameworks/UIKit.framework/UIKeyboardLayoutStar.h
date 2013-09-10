@@ -325,9 +325,9 @@
 - (void)setKeyboardAppearance:(int)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)willMoveToWindow:(id)arg1;
-- (BOOL)isRotating;
 - (id)scriptingInfoWithChildren;
 - (double)lastTouchUpTimestamp;
+- (BOOL)isRotating;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setShift:(BOOL)arg1;

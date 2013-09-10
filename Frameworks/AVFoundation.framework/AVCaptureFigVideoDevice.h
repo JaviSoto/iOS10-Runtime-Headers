@@ -81,8 +81,8 @@
     BOOL _faceDetectionMetadataEnabled;
     BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
     BOOL _lowLightBoostEnabled;
-    BOOL _yoMamaWearsFancyGlassesDetectionEnabled;
-    BOOL _yoMamaWearsFancyGlasses;
+    BOOL _highDynamicRangeSceneDetectionEnabled;
+    BOOL _sceneIsHighDynamicRange;
     float _saturation;
     float _contrast;
     int _videoZoomDownscaleStageHint;
@@ -113,6 +113,8 @@
 - (void)setSmoothAutoFocusEnabled:(BOOL)arg1;
 - (BOOL)isFlashActive;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
+- (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setWhiteBalanceMode:(int)arg1;
 - (void)setAutoFocusRangeRestriction:(int)arg1;
 - (void)setExposureMode:(int)arg1;
@@ -152,7 +154,7 @@
 - (void)_updateFlashAndTorchAvailability;
 - (void)_updateImageControlMode;
 - (BOOL)_setImageControlMode:(int)arg1;
-- (BOOL)_setYoMamaWearsFancyGlassesDetectionEnabled:(BOOL)arg1;
+- (BOOL)_setHighDynamicRangeSceneDetectionEnabled:(BOOL)arg1;
 - (BOOL)_faceDetectionDebugMetadataReportingEnabled;
 - (BOOL)_setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
 - (BOOL)_faceDetectionDrivenImageProcessingEnabled;
@@ -179,7 +181,7 @@
 - (BOOL)automaticallyEnablesLowLightBoostWhenAvailable;
 - (BOOL)isLowLightBoostEnabled;
 - (BOOL)isLowLightBoostSupported;
-- (BOOL)isYoMamaWearsCombatBootsSupported;
+- (BOOL)isSISSupported;
 - (BOOL)HDRUsesPreBracketedFrameAsEV0;
 - (BOOL)isHDRSupported;
 - (void)setSaturation:(float)arg1;
@@ -230,16 +232,14 @@
 - (void)_setActiveFormatAndFrameRatesForResolvedOptions:(id)arg1 sendingFrameRatesToFig:(BOOL)arg2;
 - (BOOL)isActiveVideoMaxFrameDurationSet;
 - (BOOL)isActiveVideoMinFrameDurationSet;
-- (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
 - (id)formats;
 - (BOOL)isInUseByAnotherApplication;
 - (BOOL)isMachineReadableCodeDetectionSupported;
-- (BOOL)isYoMamaWearsFancyGlasses;
-- (void)setYoMamaWearsFancyGlassesDetectionEnabled:(BOOL)arg1;
-- (BOOL)isYoMamaWearsFancyGlassesDetectionEnabled;
-- (BOOL)isYoMamaWearsFancyGlassesDetectionSupported;
+- (BOOL)isHighDynamicRangeScene;
+- (void)setHighDynamicRangeSceneDetectionEnabled:(BOOL)arg1;
+- (BOOL)isHighDynamicRangeSceneDetectionEnabled;
+- (BOOL)isHighDynamicRangeSceneDetectionSupported;
 - (BOOL)isFaceDetectionDebugMetadataReportingEnabled;
 - (int)faceRectangleAngle;
 - (BOOL)isFaceDetectionDrivenImageProcessingEnabled;

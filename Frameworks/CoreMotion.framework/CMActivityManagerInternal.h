@@ -30,9 +30,11 @@
     NSObject<OS_dispatch_semaphore> *fSidebandOverrideSemaphore;
     NSObject<OS_dispatch_queue> *fSidebandOverrideQueue;
     BOOL fSidebandOverrideWaiting;
+    int fSidebandOverrideResult;
 }
 
 
+- (void)overrideOscarSideband:(BOOL)arg1 withState:(int)arg2;
 - (void)stopActivityUpdatesPrivate;
 - (void)startActivityUpdatesWithHandlerPrivate:(id)arg1;
 - (void)stopWatchdogCheckinsPrivate;

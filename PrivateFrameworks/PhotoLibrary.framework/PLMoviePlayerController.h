@@ -72,10 +72,9 @@
 - (void)_updateFromPendingTime;
 - (void)_playerItemFailedToPlayToEndNotification:(id)arg1;
 - (void)_playerItemDidReachEndNotification:(id)arg1;
-- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (void)_loadAsset:(id)arg1;
 - (void)_setPlaybackState:(unsigned int)arg1;
-- (void)setAsset:(id)arg1 audioMix:(id)arg2 startTime:(double)arg3;
+- (void)_updateAudioSession;
 - (void)_tearDownPlayer;
 - (void)_setPlayerItem:(id)arg1;
 - (void)_setupPlayer;
@@ -83,6 +82,7 @@
 - (void)playFromBeginning;
 - (BOOL)isExternalPlayback;
 - (void)playDueToEnoughData;
+- (void)setAsset:(id)arg1 audioMix:(id)arg2 startTime:(double)arg3;
 - (BOOL)isPreparedForPlayback;
 - (id)assetForMovieWithPath:(id)arg1 options:(id)arg2;
 - (float)playbackRate;
@@ -90,6 +90,7 @@
 - (void)requestToResignAsActiveController;
 - (void)didBecomeActiveController;
 - (void)willResignAsActiveController;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (void)_tearDownTVOutWindow;
 - (void)_updateTVOutEnabled;
 - (void)_setupTVOutWindow;

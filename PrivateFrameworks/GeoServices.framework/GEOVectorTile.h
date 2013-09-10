@@ -2,7 +2,7 @@
    Image: /Applications/Xcode5.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSMutableData, NSData;
+@class NSMutableOrderedSet, NSMutableData, NSData;
 
 @interface GEOVectorTile : NSObject  {
     struct _GEOTileKey { 
@@ -67,7 +67,7 @@
     unsigned int _shieldIndexCount;
     struct { unsigned int x1; unsigned int x2; unsigned char x3; } *_localizationTable;
     unsigned int _localizationTableCount;
-    NSMutableArray *_uniqueAttributes;
+    NSMutableOrderedSet *_uniqueAttributes;
     struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; } *_lineCharacteristicPoints;
     unsigned int _lineCharacteristicPointCount;
     struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; } *_polygonCharacteristicPoints;
@@ -179,7 +179,6 @@
 - (void)_findOverpasses;
 - (void)_findJunctions;
 - (void)_attachRoadPoints;
-- (void)_sortStyleAttributes;
 - (id)_initWithVMP4:(id)arg1 localizationData:(id)arg2 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3;
 - (id)_initWithVMP3:(id)arg1 localizationData:(id)arg2 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3;
 - (void)dealloc;

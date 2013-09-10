@@ -249,12 +249,12 @@
 - (BOOL)_popoverBackgroundViewWantsDefaultContentAppearance;
 - (id)popoverView;
 - (int)_popoverBackgroundStyle;
-- (int)_popoverControllerStyle;
 - (void)_containedViewControllerModalStateChanged;
 - (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (BOOL)_embedsInView;
 - (id)contentViewController;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
+- (int)_popoverControllerStyle;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (id)copyScriptPopOver;

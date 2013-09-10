@@ -13,7 +13,7 @@
 - (void)_setHasInput:(BOOL)arg1;
 - (id)_newEntryField;
 - (BOOL)_includesStatusView;
-- (void)_updateStatusText:(id)arg1;
+- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
 - (id)init;
 
 @end
