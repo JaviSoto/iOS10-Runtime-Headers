@@ -14,10 +14,10 @@
 
 + (id)subscribedStreamWithStreamID:(id)arg1;
 
-- (void)setStreamID:(id)arg1;
 - (id)initWithStreamID:(id)arg1;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
+- (void)setStreamID:(id)arg1;
 - (id)streamID;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

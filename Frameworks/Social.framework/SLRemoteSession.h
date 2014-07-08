@@ -14,8 +14,8 @@
 
 
 - (bool)clientHasEntitlement:(id)arg1;
-- (void)setDatabase:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
+- (void)setDatabase:(id)arg1;
 - (id)database;
 - (id)connection;
 - (void)setConnection:(id)arg1;

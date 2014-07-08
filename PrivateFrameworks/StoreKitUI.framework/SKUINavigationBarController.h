@@ -24,11 +24,12 @@
 - (id)navigationBarViewElement;
 - (void)updateNavigationItem:(id)arg1;
 - (id)navigationPaletteView;
-- (id)initWithNavigationBarViewElement:(id)arg1;
 - (id)_barButtonItemWithSearchBarViewElement:(id)arg1;
 - (id)_barButtonItemWithButtonViewElement:(id)arg1;
+- (double)_availableWidth;
 - (id)_addSearchBarControllerWithViewElement:(id)arg1;
-- (void)_fullyReloadSections:(id)arg1;
+- (id)initWithNavigationBarViewElement:(id)arg1;
+- (void)_fullyReloadSections:(id)arg1 withNavigationItem:(id)arg2;
 - (void)attachToNavigationItem:(id)arg1;
 - (void)detachFromNavigationItem:(id)arg1;
 - (id)barButtonItemForElementIdentifier:(id)arg1;

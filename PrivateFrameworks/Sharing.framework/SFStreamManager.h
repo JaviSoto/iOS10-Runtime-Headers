@@ -33,8 +33,6 @@
 - (id)requestHandlers;
 - (void)setStreamHandlers:(id)arg1;
 - (id)streamHandlers;
-- (void)setBrowser:(id)arg1;
-- (id)browser;
 - (void)getStreamsForData:(id)arg1 withStreamHandler:(id)arg2;
 - (void)disableStreamSupportForIdentifier:(id)arg1;
 - (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(id)arg2;
@@ -46,6 +44,8 @@
 - (void)startBrowser;
 - (void)invalidateTimers;
 - (void)publisher:(id)arg1 didReceiveInputStream:(id)arg2 outputStream:(id)arg3;
+- (void)setBrowser:(id)arg1;
+- (id)browser;
 - (void)setHandlers:(id)arg1;
 - (id)handlers;
 - (void)setPublisher:(id)arg1;

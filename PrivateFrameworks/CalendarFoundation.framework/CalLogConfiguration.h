@@ -21,9 +21,9 @@
 - (id)nodes;
 - (id)parseNodeDefinition:(id)arg1;
 - (void)parseConfigurationDefinition:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 

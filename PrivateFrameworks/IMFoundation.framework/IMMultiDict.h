@@ -23,8 +23,8 @@
 - (id)popObjectForKey:(id)arg1;
 - (id)peekObjectForKey:(id)arg1;
 - (void)pushObject:(id)arg1 forKey:(id)arg2;
-- (id)dictionary;
 - (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
+- (id)dictionary;
 - (id)init;
 - (id)allKeys;
 - (unsigned long long)countForKey:(id)arg1;

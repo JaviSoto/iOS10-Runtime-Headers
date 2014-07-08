@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSDate : NSObject <NSCopying, NSSecureCoding, CKRecordValue> {
+@interface NSDate : NSObject <NSCopying, NSSecureCoding, CKRecordValue, PQLBindable, PQLResultSetInitializer> {
 }
 
 @property(readonly) double timeIntervalSinceReferenceDate;
@@ -172,14 +172,17 @@
 - (id)mf_descriptionForMimeHeaders;
 - (id)mf_replyPrefixForSender:(id)arg1;
 - (bool)isWholeHour;
+- (bool)isBeforeDate:(id)arg1;
+- (bool)isAfterDate:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (bool)isSameDayAsDate:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 - (bool)isYesterday;
 - (bool)isTomorrow;
 - (bool)isToday;
 - (bool)isDateEqualToDateIgnoringTime:(id)arg1;
-- (bool)isBeforeDate:(id)arg1;
-- (bool)isAfterDate:(id)arg1;
 
 @end

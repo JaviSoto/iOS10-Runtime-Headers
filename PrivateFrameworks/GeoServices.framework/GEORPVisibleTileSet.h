@@ -22,9 +22,9 @@
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* tileKeys;
 
 
+- (bool)hasIdentifier;
 - (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned long long)arg2;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)tileKeys;
-- (bool)hasIdentifier;
 - (void)setHasIdentifier:(bool)arg1;
 - (bool)hasStyle;
 - (void)setHasStyle:(bool)arg1;
@@ -33,6 +33,7 @@
 - (unsigned long long)tileKeysCount;
 - (void)clearTileKeys;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setIdentifier:(unsigned int)arg1;

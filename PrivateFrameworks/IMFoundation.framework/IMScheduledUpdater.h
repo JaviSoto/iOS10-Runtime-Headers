@@ -11,11 +11,12 @@
 @property(retain) NSCountedSet * holdingUpdatesKeys;
 
 
+- (void)endHoldingUpdatesForAllKeys;
 - (void)endHoldingUpdatesForKey:(id)arg1;
 - (void)beginHoldingUpdatesForKey:(id)arg1;
+- (bool)isHoldingUpdates;
 - (void)setHoldingUpdatesKeys:(id)arg1;
 - (id)holdingUpdatesKeys;
-- (bool)isHoldingUpdates;
 - (void)updateIfNeeded;
 - (void)setNeedsUpdate;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

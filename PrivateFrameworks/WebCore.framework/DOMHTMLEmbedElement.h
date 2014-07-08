@@ -19,13 +19,13 @@
 - (void)setWidth:(int)arg1;
 - (int)height;
 - (int)width;
+- (void)setName:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (id)src;
 - (void)setAlign:(id)arg1;
 - (id)align;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (bool)showsTapHighlight;
 

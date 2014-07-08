@@ -26,8 +26,8 @@
 - (id)persistentResourceID;
 - (bool)isSigned;
 - (bool)isIdentity;
-- (struct __SecCertificate { }*)copyCertificate;
 - (id)installationWarnings;
+- (struct __SecCertificate { }*)copyCertificate;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
 - (void).cxx_destruct;

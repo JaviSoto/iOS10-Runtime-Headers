@@ -161,6 +161,7 @@
     NSString *_labelLayoutIcon;
     int _labelLayoutStyle;
     unsigned int _labelLineWrap;
+    unsigned int _labelLineWrapLogograms;
     float _labelMultiShieldGap;
     float _labelOffsetLarge;
     float _labelOffsetMedium;
@@ -218,6 +219,7 @@
     float _puckArrowShadowBrightness;
     float _puckCircleBrightness;
     float _puckDomeBrightness;
+    float _puckOffset;
     float _puckRimBrightness;
     float _puckSize;
     int _railroadPattern;
@@ -415,6 +417,7 @@
         unsigned int labelLayer : 1; 
         unsigned int labelLayoutStyle : 1; 
         unsigned int labelLineWrap : 1; 
+        unsigned int labelLineWrapLogograms : 1; 
         unsigned int labelMultiShieldGap : 1; 
         unsigned int labelOffsetLarge : 1; 
         unsigned int labelOffsetMedium : 1; 
@@ -470,6 +473,7 @@
         unsigned int puckArrowShadowBrightness : 1; 
         unsigned int puckCircleBrightness : 1; 
         unsigned int puckDomeBrightness : 1; 
+        unsigned int puckOffset : 1; 
         unsigned int puckRimBrightness : 1; 
         unsigned int puckSize : 1; 
         unsigned int railroadPattern : 1; 
@@ -1000,6 +1004,8 @@
 @property float labelDiagonalPositionHorizontalMargin;
 @property bool hasLabelDiagonalPositionVerticalMargin;
 @property float labelDiagonalPositionVerticalMargin;
+@property bool hasLabelLineWrapLogograms;
+@property unsigned int labelLineWrapLogograms;
 @property bool hasHorizonColor;
 @property unsigned int horizonColor;
 @property bool hasLineColor;
@@ -1040,6 +1046,8 @@
 @property unsigned int puckArrowColorStale;
 @property bool hasPuckSize;
 @property float puckSize;
+@property bool hasPuckOffset;
+@property float puckOffset;
 @property bool hasRenderEndCaps;
 @property bool renderEndCaps;
 @property bool hasCurbColor;
@@ -1272,6 +1280,10 @@
 - (void)setHasRenderEndCaps:(bool)arg1;
 - (void)setRenderEndCaps:(bool)arg1;
 - (bool)renderEndCaps;
+- (bool)hasPuckOffset;
+- (void)setHasPuckOffset:(bool)arg1;
+- (void)setPuckOffset:(float)arg1;
+- (float)puckOffset;
 - (bool)hasPuckSize;
 - (void)setHasPuckSize:(bool)arg1;
 - (bool)hasPuckArrowColorStale;
@@ -1323,6 +1335,10 @@
 - (bool)hasHorizonColor;
 - (void)setHasHorizonColor:(bool)arg1;
 - (void)setHorizonColor:(unsigned int)arg1;
+- (bool)hasLabelLineWrapLogograms;
+- (void)setHasLabelLineWrapLogograms:(bool)arg1;
+- (void)setLabelLineWrapLogograms:(unsigned int)arg1;
+- (unsigned int)labelLineWrapLogograms;
 - (bool)hasLabelDiagonalPositionVerticalMargin;
 - (void)setHasLabelDiagonalPositionVerticalMargin:(bool)arg1;
 - (void)setLabelDiagonalPositionVerticalMargin:(float)arg1;
@@ -2088,9 +2104,9 @@
 - (bool)hasWidth;
 - (void)setHasWidth:(bool)arg1;
 - (void)copyTo:(id)arg1;
-- (unsigned int)labelClass;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (unsigned int)labelClass;
 - (bool)visible;
 - (void)setWidth:(float)arg1;
 - (float)width;

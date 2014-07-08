@@ -38,8 +38,8 @@
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (bool)isAccessory;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
-- (void)connect;
 - (struct BTDeviceImpl { }*)device;
+- (void)connect;
 - (long long)compare:(id)arg1;
 - (id)name;
 - (int)type;

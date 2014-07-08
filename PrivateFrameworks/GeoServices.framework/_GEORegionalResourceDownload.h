@@ -24,10 +24,10 @@
 - (void)setExpectedChecksum:(id)arg1;
 - (void)setDestinationPath:(id)arg1;
 - (id)url;
+- (void)setName:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)name;
 - (void)setType:(long long)arg1;
-- (void)setName:(id)arg1;
 - (long long)type;
 - (void)dealloc;
 

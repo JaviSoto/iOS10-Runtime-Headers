@@ -286,9 +286,9 @@
 - (void)_willMoveToWindow:(id)arg1;
 - (bool)_isFocusableElement;
 - (void)tintColorDidChange;
-- (void)invalidateIntrinsicContentSize;
 - (void)_focusStateDidChange;
 - (void)setTintColor:(id)arg1;
+- (void)invalidateIntrinsicContentSize;
 - (long long)_lineBreakMode;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (void)setFont:(id)arg1;
@@ -309,5 +309,7 @@
 - (void)setAb_textAttributes:(id)arg1;
 - (id)_mapkit_accessoryControlToExtendWithCallout;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)showActionSheet:(id)arg1 animated:(bool)arg2;
 
 @end

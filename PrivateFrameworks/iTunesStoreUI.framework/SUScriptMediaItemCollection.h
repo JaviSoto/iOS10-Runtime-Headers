@@ -25,8 +25,8 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)representativeItem;
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (id)attributeKeys;
 - (long long)count;
 - (void)dealloc;

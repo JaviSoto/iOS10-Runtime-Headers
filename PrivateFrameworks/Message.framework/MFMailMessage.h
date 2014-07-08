@@ -29,8 +29,6 @@
 - (unsigned long long)modSequenceNumber;
 - (id)remoteMailboxURL;
 - (id)externalConversationID;
-- (unsigned long long)conversationFlags;
-- (void)setConversationFlags:(unsigned long long)arg1;
 - (void)markAsForwarded;
 - (void)markAsReplied;
 - (void)markAsNotFlagged;
@@ -42,6 +40,8 @@
 - (id)copyMessageInfo;
 - (id)mailbox;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (unsigned long long)conversationFlags;
 - (unsigned short)numberOfAttachments;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (unsigned long long)messageFlags;

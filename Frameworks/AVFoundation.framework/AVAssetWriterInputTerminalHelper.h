@@ -8,7 +8,6 @@
 }
 
 
-- (long long)status;
 - (bool)mediaDataRequesterShouldRequestMediaData:(id)arg1;
 - (void)requestMediaDataOnceIfNecessaryWithMediaDataRequester:(id)arg1;
 - (void)markCurrentPassAsFinished;
@@ -21,5 +20,6 @@
 - (id)initWithConfigurationState:(id)arg1 terminalStatus:(long long)arg2;
 - (id)initWithConfigurationState:(id)arg1;
 - (bool)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (long long)status;
 
 @end

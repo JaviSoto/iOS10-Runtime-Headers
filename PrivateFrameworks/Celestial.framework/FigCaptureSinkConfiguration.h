@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface FigCaptureSinkConfiguration : NSObject <NSCoding, NSCopying> {
+@interface FigCaptureSinkConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_sinkID;
     int _sinkType;
     bool_videoDataDiscardsLateVideoFrames;
@@ -18,16 +18,16 @@
 + (id)stringForSinkType:(int)arg1;
 + (void)initialize;
 
+- (void)setVideoDataDiscardsLateVideoFrames:(bool)arg1;
+- (void)setSinkID:(id)arg1;
+- (void)setSinkType:(int)arg1;
 - (bool)videoDataDiscardsLateVideoFrames;
 - (int)sinkType;
 - (id)sinkID;
-- (void)setVideoDataDiscardsLateVideoFrames:(bool)arg1;
-- (void)setSinkType:(int)arg1;
-- (void)setSinkID:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

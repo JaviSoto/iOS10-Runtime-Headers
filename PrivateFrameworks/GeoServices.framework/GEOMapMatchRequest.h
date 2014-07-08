@@ -13,17 +13,18 @@
 @property(retain) NSMutableArray * locations;
 
 
+- (id)waypointAtIndex:(unsigned long long)arg1;
+- (void)addWaypoint:(id)arg1;
 - (void)clearLocations;
 - (void)addLocation:(id)arg1;
-- (id)locationAtIndex:(unsigned long long)arg1;
-- (unsigned long long)locationsCount;
 - (id)waypoints;
-- (id)waypointAtIndex:(unsigned long long)arg1;
 - (void)clearWaypoints;
 - (unsigned long long)waypointsCount;
-- (void)addWaypoint:(id)arg1;
 - (void)setWaypoints:(id)arg1;
+- (id)locationAtIndex:(unsigned long long)arg1;
+- (unsigned long long)locationsCount;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

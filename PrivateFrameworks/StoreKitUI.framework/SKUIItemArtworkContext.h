@@ -2,23 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, SKUIColorScheme, SKUIProductImageDataConsumer, SKUINewsstandImageDataConsumer, NSMutableDictionary, SKUIIconDataConsumer;
+@class UIColor, SKUIColorScheme, SKUIProductImageDataConsumer, SKUIStyledImageDataConsumer, NSMutableDictionary;
 
 @interface SKUIItemArtworkContext : NSObject  {
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
     SKUIProductImageDataConsumer *_generalImageConsumer;
-    SKUIIconDataConsumer *_iconConsumer;
+    SKUIStyledImageDataConsumer *_iconConsumer;
     SKUIProductImageDataConsumer *_letterboxConsumer;
-    SKUINewsstandImageDataConsumer *_newsstandConsumer;
+    SKUIStyledImageDataConsumer *_newsstandConsumer;
     NSMutableDictionary *_placeholders;
     SKUIProductImageDataConsumer *_posterConsumer;
 }
 
 @property(retain) SKUIProductImageDataConsumer * generalConsumer;
-@property(retain) SKUIIconDataConsumer * iconConsumer;
+@property(retain) SKUIStyledImageDataConsumer * iconConsumer;
 @property(retain) SKUIProductImageDataConsumer * letterboxConsumer;
-@property(retain) SKUINewsstandImageDataConsumer * newsstandConsumer;
+@property(retain) SKUIStyledImageDataConsumer * newsstandConsumer;
 @property(retain) SKUIProductImageDataConsumer * posterConsumer;
 @property(retain) SKUIColorScheme * colorScheme;
 @property(retain) UIColor * backgroundColor;

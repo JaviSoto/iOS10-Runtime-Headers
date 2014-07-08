@@ -23,12 +23,15 @@
     bool_mesaLockedOut;
     unsigned long long _biometricMatchMode;
     bool_shouldResetForFailedPasscodeAttempt;
+    unsigned long long _statusState;
 }
 
 @property int style;
 @property(getter=_luminosityBoost,setter=_setLuminosityBoost:) double luminosityBoost;
 @property(getter=_entryField,setter=_setEntryField:,retain) SBUIPasscodeEntryField * _entryField;
+@property(getter=_defaultStatusText,readonly) NSString * defaultStatusText;
 @property bool shouldResetForFailedPasscodeAttempt;
+@property(getter=_statusState,setter=_setStatusState:) unsigned long long statusState;
 @property <SBUIPasscodeLockViewDelegate> * delegate;
 @property(readonly) NSString * passcode;
 @property bool playsKeypadSounds;
@@ -60,6 +63,7 @@
 - (void)setAllowsStatusTextUpdatingOnResignFirstResponder:(bool)arg1;
 - (void)autofillForSuccessfulMesaAttemptWithCompletion:(id)arg1;
 - (void)resetForFailedMesaAttemptWithStatusText:(id)arg1 andSubtitle:(id)arg2;
+- (void)resetForScreenOff;
 - (void)resetForFailedPasscode;
 - (void)biometricEventMonitor:(id)arg1 handleBiometricEvent:(unsigned long long)arg2;
 - (void)_handleBiometricEvent:(unsigned long long)arg1;
@@ -69,6 +73,8 @@
 - (double)_luminanceBoostFromLegibility;
 - (void)_screenBrightnessReallyDidChange;
 - (unsigned long long)biometricMatchMode;
+- (void)updateStatusTextAnimated:(bool)arg1;
+- (id)_defaultStatusText;
 - (void)_setLuminosityBoost:(double)arg1;
 - (double)_luminosityBoost;
 - (void)_evaluateLuminance;
@@ -77,8 +83,11 @@
 - (id)_entryField;
 - (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
 - (void)_resetForFailedMesaAttempt;
+- (void)_setStatusState:(unsigned long long)arg1;
+- (unsigned long long)_statusState;
 - (void)_resetForFailedPasscode:(bool)arg1;
 - (void)_clearBrightnessChangeTimer;
+- (void)_noteBioMatchingEnabledDidChange;
 - (void)_noteScreenBrightnessDidChange;
 - (bool)_wantsBiometricAuthentication;
 - (void)setShowsStatusField:(bool)arg1;

@@ -27,6 +27,7 @@
 @property(readonly) float EUVolumeLimit;
 
 
+- (void)_setupNotifications;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_forcefullySetVolumeValue:(float)arg1;
 - (void)_volumeDidChange:(id)arg1;
@@ -39,7 +40,6 @@
 - (void)_setVolumeWarningState:(long long)arg1;
 - (float)_volumeFromAVController;
 - (void)_tearDownNotifications;
-- (void)_setupNotifications;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (void)_mediaServerDiedNotification:(id)arg1;
 - (float)EUVolumeLimit;

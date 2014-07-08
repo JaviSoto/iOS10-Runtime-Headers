@@ -9,7 +9,7 @@
 
 @class IMMessage, IMMessageItem;
 
-@interface NSArray : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, CKRecordValue> {
+@interface NSArray : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, CKRecordValue, PQLBindable> {
 }
 
 @property(retain,readonly) IMMessage * lastMessage;
@@ -220,6 +220,7 @@
 - (id)_ui_onlyObject;
 - (id)subarraysOfSize:(unsigned long long)arg1;
 - (bool)MPIsEmpty;
+- (void)CKAssignToContainerWithID:(id)arg1;
 - (void)_ICSStringsForPropertyValuesWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (void)_ICSParametersAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
@@ -241,10 +242,15 @@
 - (unsigned long long)mf_indexOfObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (unsigned long long)mf_indexWhereObjectWouldBeInserted:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (id)mf_dictionaryWithMessagesSortedByStore;
+- (id)mf_map:(id)arg1;
+- (bool)mf_any:(id)arg1;
+- (id)mf_firstObjectPassingTest:(id)arg1;
+- (id)mf_filter:(id)arg1;
+- (id)mf_reduce:(id)arg1;
+- (id)mf_flatten;
 - (id)_IDsFromURIs;
 - (id)_URIsFromIDs;
 - (id)_FTFilteredArrayForAPS;
-- (void)CKAssignToContainerWithID:(id)arg1;
 - (id)indexesOfPartsOfMessageItem:(id)arg1;
 - (id)indexesOfPartsOfMessage:(id)arg1;
 - (void)enumerateMessagesWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
@@ -252,17 +258,21 @@
 - (id)__imItems;
 - (id)__itemForChatItemAtIndex:(unsigned long long)arg1;
 - (void)__enumerateItemsWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
-- (id)lastMessage;
 - (id)lastIncomingFinishedMessage;
 - (id)lastIncomingMessage;
 - (id)lastFinishedMessage;
 - (id)__imLastMessageItem;
+- (id)lastMessage;
 - (id)messages;
+- (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id)arg1;
+- (unsigned long long)indexOfSpecifierWithID:(id)arg1;
+- (id)specifierForID:(id)arg1;
 - (id)_gkFoldWithInitialValue:(id)arg1 block:(id)arg2;
 - (id)_gkFirstObject;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
+- (id)_gkSubarraysByKeyWithBlock:(id)arg1;
 - (id)_gkFilterWithBlock:(id)arg1;
 - (id)_gkMapWithBlock:(id)arg1;
 - (id)_gkMapConcurrentlyWithBlock:(id)arg1;
@@ -273,9 +283,6 @@
 - (id)_gkPlayersFromInternals;
 - (id)_gkIncompletePlayersFromPlayerIDs;
 - (id)_gkInternalsFromPlayers;
-- (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id)arg1;
-- (unsigned long long)indexOfSpecifierWithID:(id)arg1;
-- (id)specifierForID:(id)arg1;
 - (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 - (unsigned long long)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2;
@@ -283,29 +290,13 @@
 - (unsigned long long)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (id)_mapkit_arrayByRemovingObject:(id)arg1;
 - (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
+- (id)copyDeep_MC;
 - (id)SCNMutableDeepCopy;
 - (id)MSDeepCopy;
 - (id)MSMutableDeepCopy;
 - (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSDSPAssetCollectionWithMasterFileHash:(id)arg1;
-- (id)firstObjectWithStringValue:(id)arg1 forKey:(id)arg2;
-- (id)nextToLastObject;
-- (id)secondObject;
-- (id)objectAtIndexNoThrow:(long long)arg1;
-- (id)objectOrNullAtIndex:(unsigned long long)arg1;
-- (id)objectAtIndex:(unsigned long long)arg1 defaultValue:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectAtIndex:(unsigned long long)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (double)doubleAtIndex:(unsigned long long)arg1 defaultValue:(double)arg2;
-- (float)floatAtIndex:(unsigned long long)arg1 defaultValue:(float)arg2;
-- (float)floatAtIndex:(unsigned long long)arg1;
-- (long long)intAtIndex:(unsigned long long)arg1 defaultValue:(long long)arg2;
-- (long long)intAtIndex:(unsigned long long)arg1;
-- (bool)boolAtIndex:(unsigned long long)arg1 defaultValue:(bool)arg2;
-- (bool)boolAtIndex:(unsigned long long)arg1;
-- (double)doubleAtIndex:(unsigned long long)arg1;
-- (bool)containsObjectIdenticalTo:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectAtIndex:(unsigned long long)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)cplDeepCopy;
@@ -324,6 +315,7 @@
 - (id)objectsPassingTest:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (bool)containsObjectIdenticalTo:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)componentsJoinedIntoListWithMaxItems:(int)arg1;
 - (id)arrayByTransformingWithBlock:(id)arg1;
 - (id)arrayByFlattening;
@@ -342,6 +334,12 @@
 - (id)initWithCGFloats:(double*)arg1 count:(unsigned long long)arg2;
 - (id)firstObjectPassingTest:(id)arg1;
 - (void)appendJsonStringToString:(id)arg1;
-- (id)arrayByMappingObjectsUsingBlock:(id)arg1;
+- (id)prs_filterObjectsUsingBlock:(id)arg1;
+- (id)prs_mapObjectsUsingBlock:(id)arg1;
+- (id)prs_arrayAtIndex:(unsigned long long)arg1;
+- (id)prs_dictionaryAtIndex:(unsigned long long)arg1;
+- (id)prs_stringAtIndex:(unsigned long long)arg1;
+- (id)prs_numberAtIndex:(unsigned long long)arg1;
+- (id)prs_mapAndFilterObjectsUsingBlock:(id)arg1;
 
 @end

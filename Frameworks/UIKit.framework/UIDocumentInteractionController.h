@@ -92,12 +92,12 @@
 
 - (id)UTI;
 - (void)setUTI:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)name;
 - (void)_invalidate;
-- (void)setName:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setURL:(id)arg1;

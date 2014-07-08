@@ -47,6 +47,10 @@
             void *m_ptr; 
         } m_value; 
     } _contentProviderRegistry;
+    bool_suppressesIncrementalRendering;
+    bool_allowsInlineMediaPlayback;
+    bool_mediaPlaybackRequiresUserAction;
+    bool_mediaPlaybackAllowsAirPlay;
 }
 
 @property(setter=_setRelatedWebView:) WKWebView * _relatedWebView;
@@ -56,6 +60,10 @@
 @property(retain) WKProcessPool * processPool;
 @property(retain) WKPreferences * preferences;
 @property(retain) WKUserContentController * userContentController;
+@property bool suppressesIncrementalRendering;
+@property bool allowsInlineMediaPlayback;
+@property bool mediaPlaybackRequiresUserAction;
+@property bool mediaPlaybackAllowsAirPlay;
 @property(setter=_setContentProviderRegistry:) WKWebViewContentProviderRegistry * _contentProviderRegistry;
 
 
@@ -73,12 +81,21 @@
 - (id)processPool;
 - (id)_relatedWebView;
 - (void)_setRelatedWebView:(id)arg1;
+- (bool)mediaPlaybackAllowsAirPlay;
+- (bool)suppressesIncrementalRendering;
 - (id)preferences;
 - (void)setPreferences:(id)arg1;
+- (id)init;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)_setGroupIdentifier:(id)arg1;
+- (bool)mediaPlaybackRequiresUserAction;
+- (void)setMediaPlaybackRequiresUserAction:(bool)arg1;
+- (bool)allowsInlineMediaPlayback;
+- (void)setAllowsInlineMediaPlayback:(bool)arg1;
+- (void)setSuppressesIncrementalRendering:(bool)arg1;
+- (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
 
 @end

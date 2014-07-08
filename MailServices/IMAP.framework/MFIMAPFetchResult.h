@@ -45,9 +45,9 @@
 - (unsigned long long)uniqueRemoteId;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (unsigned long long)messageFlags;
+- (void)setUid:(unsigned int)arg1;
 - (unsigned long long)messageSize;
 - (void)setMessageSize:(unsigned long long)arg1;
-- (void)setUid:(unsigned int)arg1;
 - (unsigned int)encoding;
 - (id)initWithType:(int)arg1;
 - (unsigned long long)startOffset;

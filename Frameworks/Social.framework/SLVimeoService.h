@@ -8,13 +8,13 @@
 
 - (long long)maximumVideoTimeLimit;
 - (long long)maximumVideoDataSize;
+- (long long)maximumVideoCount;
+- (long long)maximumImageCount;
+- (long long)maximumURLCount;
 - (bool)isFirstClassService;
 - (long long)authenticationStyle;
 - (id)serviceType;
 - (id)accountTypeIdentifier;
-- (long long)maximumVideoCount;
-- (long long)maximumImageCount;
-- (long long)maximumURLCount;
 - (id)activityImage;
 - (id)activityTitle;
 

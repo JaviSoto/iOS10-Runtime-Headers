@@ -378,6 +378,7 @@
     unsigned int dwRTT_ice;
     NSObject<OS_dispatch_queue> *timestampQueue;
     boolshouldSendBlackFrame;
+    NSObject<OS_dispatch_source> *relaySetupTimer;
 }
 
 @property(copy) NSString * peerCN;
@@ -457,8 +458,6 @@
 + (id)keyPathsForValuesAffectingNetworkQuality;
 
 - (id)peerCN;
-- (id)capabilities;
-- (void)setCapabilities:(id)arg1;
 - (void)callAlarmsWithRTPTimeStamp:(unsigned int)arg1;
 - (void)processResolutionChangeToVideoRule:(id)arg1 featuresListString:(id)arg2;
 - (void)updateVideoQualityNotification:(double)arg1;
@@ -478,6 +477,7 @@
 - (void)setupCellTechChangeMessages;
 - (void)setupAudioPauseMessages;
 - (void)setupVideoPauseMessages;
+- (void)createSecondaryRelayDispatchTimer:(float)arg1 callID:(unsigned int)arg2 callerRequired:(bool)arg3;
 - (void)handleDuplication:(bool)arg1;
 - (void)shouldSendBlackFrame:(bool)arg1;
 - (void)adjustBitrateForConnectionType;
@@ -554,6 +554,7 @@
 - (int)sipCallback:(int)arg1 callID:(unsigned int)arg2 msgIn:(const char *)arg3 msgOut:(char *)arg4 optional:(void*)arg5 confIndex:(int*)arg6;
 - (unsigned int)connectionResultCallback:(struct tagCONNRESULT { unsigned int x1; int x2; int x3; unsigned int x4; int x5; int x6; unsigned short x7; unsigned short x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; struct tagIPPORT { int x_13_1_1; BOOL x_13_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_13_1_3; unsigned short x_13_1_4; } x13; struct tagIPPORT { int x_14_1_1; BOOL x_14_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_14_1_3; unsigned short x_14_1_4; } x14; unsigned int x15; int x16; int x17; int x18; int x19; unsigned int x20; unsigned short x21; int x22; int x23; int x24; struct tagCONNRESULT {} *x25; }*)arg1 didReceiveICEPacket:(bool)arg2 didUseRelay:(bool)arg3 secretKey:(struct __CFData { }*)arg4 skeResult:(int)arg5;
 - (void)setupInitialSecondaryRelayWithCallbackRelayFlag:(bool)arg1 callID:(unsigned int)arg2;
+- (void)destroySecondaryRelayDispatchTimer;
 - (void)shutdownVoiceChatFromRemoteSIPSignal:(int)arg1;
 - (void)enableSessionHealthMonitor;
 - (void)startAudioWithCompletionHandler:(id)arg1;
@@ -789,12 +790,14 @@
 - (void)setDeviceRole:(int)arg1;
 - (void)setRequiresWifi:(bool)arg1;
 - (bool)requiresWifi;
+- (id)capabilities;
+- (void)setCapabilities:(id)arg1;
 - (unsigned int)connectionType;
 - (void)setSampleRate:(long long)arg1;
+- (long long)sampleRate;
 - (double)packetLossRate;
 - (unsigned int)callID;
 - (int)signalStrength;
-- (long long)sampleRate;
 - (bool)isCaller;
 - (id)init;
 - (void)setDelegate:(id)arg1;

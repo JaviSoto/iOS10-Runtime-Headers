@@ -16,10 +16,10 @@
 - (id)encodedDialog;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)startWithAuthenticateResponse:(id)arg1;
 - (id)initWithEncodedDialog:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void).cxx_destruct;
 
 @end

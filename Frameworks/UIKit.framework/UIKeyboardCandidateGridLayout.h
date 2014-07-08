@@ -65,6 +65,7 @@
 - (void)getGroupBarWidth:(double*)arg1 headerAttributes:(id*)arg2;
 - (id)supplementaryAttributes;
 - (id)cellAttributes;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)needsPaddingForIndexScrubber;
 - (struct CGSize { double x1; double x2; })rowSize;
 - (void)prepareLayout;
@@ -74,6 +75,7 @@
 - (id)nextCandidateIndexPathFromIndexPath:(id)arg1;
 - (bool)expanded;
 - (double)groupBarWidth;
+- (void)invalidateLayout;
 - (void)setHasSecondaryCandidates:(bool)arg1;
 - (void)setNeedsPaddingForIndexScrubber:(bool)arg1;
 - (void)setHeaderViewHeight:(double)arg1;

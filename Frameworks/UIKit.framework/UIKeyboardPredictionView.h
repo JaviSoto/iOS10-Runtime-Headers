@@ -2,10 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, UIKBKeyView, UIKBBackgroundView, NSMutableArray, UITouch, UILabel;
+@class UIView, NSString, UIKBKeyView, UIKBBackgroundView, NSMutableArray, UIKeyboardPredictionBarGrabber, UITouch, UILabel;
 
 @interface UIKeyboardPredictionView : UIView  {
     UIKBBackgroundView *m_backgroundView;
+    UIKBKeyView *m_collapsedKeyView;
+    UIKeyboardPredictionBarGrabber *m_grabber;
     NSMutableArray *m_predictionCells;
     unsigned long long m_activeIndex;
     double m_width;
@@ -34,7 +36,8 @@
 @property int state;
 
 + (id)sharedInstance;
-+ (double)predictionViewHeight;
++ (double)overlapHeight;
++ (double)predictionViewHeightForState:(int)arg1;
 + (unsigned long long)numberOfCandidates;
 + (id)activeInstance;
 
@@ -47,12 +50,14 @@
 - (int)state;
 - (void)dealloc;
 - (id)description;
+- (void)setPredictions:(id)arg1 autocorrection:(id)arg2;
 - (void)activateCandidateAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)acceptCandidate;
 - (unsigned long long)predictionCount;
 - (void)showMessageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)removeMessage;
 - (int)maxMessageCount;
+- (id)labelTextForPrediction:(id)arg1 typedString:(id)arg2;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)deactivateCandidate;
 - (void)setActiveCellWithPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -64,7 +69,6 @@
 - (id)activeTouch;
 - (void)setActiveTouch:(id)arg1;
 - (void)setShow:(bool)arg1;
-- (void)setPredictions:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
 - (void)setPredictionViewState:(int)arg1 animate:(bool)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

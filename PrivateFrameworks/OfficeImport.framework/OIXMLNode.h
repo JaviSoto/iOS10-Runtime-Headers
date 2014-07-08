@@ -26,9 +26,9 @@
 - (id)contentString;
 - (void)setStringValue:(id)arg1;
 - (unsigned int)kind;
+- (void)setName:(id)arg1;
 - (id)stringValue;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

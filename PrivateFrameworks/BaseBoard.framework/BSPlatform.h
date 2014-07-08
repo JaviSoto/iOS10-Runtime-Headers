@@ -32,14 +32,14 @@
 
 - (id)uniqueDeviceIdentifier;
 - (bool)isInternalInstall;
+- (id)productBuildVersion;
+- (id)productVersion;
 - (bool)isMultiCore;
 - (bool)hasGasGauge;
 - (id)localizedProductName;
 - (id)productClass;
 - (id)productType;
 - (id)productHardwareModel;
-- (id)productBuildVersion;
-- (id)productVersion;
 - (id)init;
 - (void)dealloc;
 

@@ -31,8 +31,8 @@
 - (id)initWithChart:(id)arg1;
 - (id)lastCachedName;
 - (id)graphicProperties;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 
 @end

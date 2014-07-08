@@ -27,6 +27,7 @@
 - (double)videoZoomFactorUpscaleThreshold;
 - (struct { int x1; int x2; })sensorDimensions;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
+- (long long)video999;
 - (int)supportedFormatsArrayIndex;
 - (bool)needsPhotoPreviewDPCC;
 - (bool)isHighResPhotoFormat;
@@ -49,14 +50,15 @@
 - (float)maxISO;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxExposureDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minExposureDuration;
-- (id)videoSupportedFrameRateRanges;
 - (id)AVCaptureSessionPresets;
 - (bool)isDefaultActiveFormat;
+- (id)videoSupportedFrameRateRanges;
 - (bool)isPhotoFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMinFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })highestSupportedVideoFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lowestSupportedVideoFrameDuration;
+- (bool)isFeature0ModeSupported:(long long)arg1;
 - (bool)isVideoStabilizationSupported;
 - (double)videoMaxZoomFactor;
 - (id)mediaType;

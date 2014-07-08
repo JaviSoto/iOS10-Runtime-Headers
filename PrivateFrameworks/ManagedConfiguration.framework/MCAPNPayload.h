@@ -25,7 +25,7 @@
 - (id)_validationErrorType:(long long)arg1 forInvalidKey:(id)arg2;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

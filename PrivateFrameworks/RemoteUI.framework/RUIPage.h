@@ -152,7 +152,6 @@
 - (void)setLoadingIndicatorStyle:(long long)arg1;
 - (id)passcodeViewOM;
 - (bool)hasPasscodeView;
-- (id)tableViewOM;
 - (bool)hasTableView;
 - (void)setTitleLabelPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setShowsTitlesAsHeaderViews:(bool)arg1;
@@ -161,6 +160,7 @@
 - (bool)hasWebView;
 - (void)setLoading:(bool)arg1;
 - (bool)needsToShowToolbarInPrefsAppRoot;
+- (id)tableViewOM;
 - (double)_getKeyboardIntersectionHeight;
 - (bool)isLoading;
 - (id)init;

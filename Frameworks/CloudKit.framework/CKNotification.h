@@ -34,6 +34,8 @@
 + (id)_realNotificationFromRemoteNotificationDictionary:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (void)setBadge:(id)arg1;
+- (id)badge;
 - (id)alertActionLocalizationKey;
 - (id)alertLocalizationArgs;
 - (id)alertLocalizationKey;
@@ -49,8 +51,6 @@
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
 - (id)_initBare;
 - (id)CKPropertiesDescription;
-- (void)setBadge:(id)arg1;
-- (id)badge;
 - (id)containerIdentifier;
 - (id)notificationID;
 - (id)init;

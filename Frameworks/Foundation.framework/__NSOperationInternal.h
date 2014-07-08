@@ -9,7 +9,7 @@
 @class NSOperation, NSOperationQueue;
 
 @interface __NSOperationInternal : NSObject  {
-    unsigned char __pad1[16];
+    unsigned char __pad1[8];
     NSOperation *__outerOp;
     NSOperation *__prevOp;
     NSOperation *__nextOp;
@@ -44,10 +44,10 @@
         BOOL __opaque[40]; 
     } __wait_cond;
     struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } *__pthread;
-    BOOL __nameBuffer[160];
+    char *__nameBuffer;
     id __activity;
     struct pthread_override_s { } *__ov;
-    unsigned char __pad3[8];
+    unsigned char __pad3[0];
 }
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;

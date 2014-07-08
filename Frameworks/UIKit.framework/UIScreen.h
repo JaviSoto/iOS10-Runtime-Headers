@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UITraitCollection, UIScreenMode, UIWindow, NSDictionary, NSMutableArray, UIScreen, _UIScreenTransparentHitTestWindow, FBSDisplay, UISoftwareDimmingWindow;
+@class <UICoordinateSpace>, _UIScreenTransparentHitTestWindow, FBSDisplay, NSDictionary, UIScreen, UIScreenMode, NSMutableArray, _UIScreenFixedCoordinateSpace, UITraitCollection, UISoftwareDimmingWindow, NSArray, UIWindow;
 
-@interface UIScreen : NSObject <_UITraitEnvironmentInternal, UITraitEnvironment> {
+@interface UIScreen : NSObject <UICoordinateSpace, _UITraitEnvironmentInternal, UITraitEnvironment> {
     id _display;
     struct CGRect { 
         struct CGPoint { 
@@ -68,6 +68,7 @@
     _UIScreenTransparentHitTestWindow *_extendedJailHitTestWindow;
     NSArray *_availableDisplayModes;
     double _pointsPerInch;
+    _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
     struct { 
         unsigned int bitsPerComponent : 4; 
         unsigned int initialized : 1; 
@@ -116,6 +117,8 @@
 @property(retain,readonly) UIScreen * mirroredScreen;
 @property double brightness;
 @property bool wantsSoftwareDimming;
+@property(readonly) <UICoordinateSpace> * coordinateSpace;
+@property(readonly) <UICoordinateSpace> * fixedCoordinateSpace;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nativeBounds;
 @property(readonly) double nativeScale;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _referenceBounds;
@@ -197,6 +200,7 @@
 - (long long)_workspaceCapableScreenType;
 - (void)_setCapability:(id)arg1 forKey:(id)arg2;
 - (void)_setOverrideTraitCollection:(id)arg1;
+- (id)fixedCoordinateSpace;
 - (bool)_isCarScreen;
 - (unsigned int)_seed;
 - (void)setOverscanCompensation:(long long)arg1;
@@ -255,21 +259,25 @@
 - (id)_overrideTraitCollection;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(long long)arg1 usingStatusbarHeight:(double)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(long long)arg1;
-- (bool)_wantsWideContentMargins;
 - (id)_capabilityForKey:(id)arg1;
 - (id)mirroredScreen;
 - (id)_lastNotifiedTraitCollection;
 - (void)_setUserInterfaceIdiom:(long long)arg1;
 - (id)snapshot;
 - (id)snapshotViewAfterScreenUpdates:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromCoordinateSpace:(id)arg2;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toCoordinateSpace:(id)arg2;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (id)snapshotView;
+- (id)coordinateSpace;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromCoordinateSpace:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toCoordinateSpace:(id)arg2;
 - (long long)_imageOrientation;
+- (void)traitCollectionDidChange:(id)arg1;
 - (bool)_canFocusViews;
 - (bool)_isDisplayPointWithinExtendedJailBounds:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_unjailedReferenceBounds;
 - (id)_displayID;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)_prepareForWindow;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_mainSceneReferenceBounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_realDisplayBounds;
@@ -282,6 +290,7 @@
 - (int)bitsPerComponent;
 - (double)_pointsPerInch;
 - (double)_scale;
+- (bool)_wantsWideContentMargins;
 - (double)_touchScaleFactor;
 - (bool)_areBoundsJailed;
 - (id)traitCollection;

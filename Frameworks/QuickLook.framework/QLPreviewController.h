@@ -22,6 +22,7 @@
 + (id)contentTypeForPreviewItem:(id)arg1;
 + (bool)canPreviewItem:(id)arg1;
 + (void)presentPreviewItem:(id)arg1 onViewController:(id)arg2 withDelegate:(id)arg3 animated:(bool)arg4;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (id)_fixedSpaceItemWithWidth:(double)arg1;

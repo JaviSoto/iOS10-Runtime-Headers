@@ -27,8 +27,8 @@
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)title;
 - (id)destinationURL;
-- (id)response;
 - (id)originalRequest;
+- (id)response;
 - (void)dealloc;
 - (id).cxx_construct;
 

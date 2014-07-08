@@ -2,11 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIExploreTemplateElement, UINavigationController;
+@class SKUIExploreTemplateElement, UINavigationController, CLLocationManager;
 
-@interface SKUIExploreDocumentViewController : SKUIViewController <UINavigationControllerDelegate, SKUIStackedBarDelegate, SKUIDocumentViewController> {
+@interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIStackedBarDelegate, UINavigationControllerDelegate, SKUIDocumentViewController> {
     SKUIExploreTemplateElement *_exploreTemplate;
+    CLLocationManager *_locationManager;
     UINavigationController *_navigationController;
+    bool_nearMeEnabled;
 }
 
 
@@ -18,6 +20,8 @@
 - (void)_getPageComponents:(id*)arg1 title:(id*)arg2 forViewControllerAtIndex:(long long)arg3;
 - (id)_rootNavigationTitle;
 - (id)initWithTemplateElement:(id)arg1;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)_reloadData;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

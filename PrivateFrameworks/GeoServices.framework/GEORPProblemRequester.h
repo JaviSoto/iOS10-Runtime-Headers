@@ -9,7 +9,7 @@
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;
-- (void)startWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;
 - (void)cancelRequest:(id)arg1;
 
 @end

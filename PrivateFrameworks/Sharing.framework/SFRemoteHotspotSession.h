@@ -17,12 +17,13 @@
 
 - (void)setConnectionProxy:(id)arg1;
 - (id)connectionProxy;
-- (void)setBrowsing:(bool)arg1;
 - (bool)browsing;
+- (void)enableRemoteHotspotForDevice:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)enableHotspotForDevice:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)updatedFoundDeviceList:(id)arg1;
 - (void)startBrowsing;
 - (void)xpcManagerConnectionInterrupted;
+- (void)setBrowsing:(bool)arg1;
 - (void)stopBrowsing;
 - (id)init;
 - (void)setDelegate:(id)arg1;

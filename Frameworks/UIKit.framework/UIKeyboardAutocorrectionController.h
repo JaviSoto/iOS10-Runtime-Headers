@@ -19,6 +19,7 @@
 
 
 - (bool)hasAutocorrection;
+- (id)autocorrection;
 - (void)dealloc;
 - (void)setRequestedAutocorrection:(bool)arg1;
 - (void)setDeferredAutocorrection:(bool)arg1;
@@ -30,7 +31,7 @@
 - (id)autocorrectionList;
 - (void)setNeedsAutocorrection;
 - (void)setAutocorrectionList:(id)arg1;
+- (void)updateSuggestionViews;
 - (void)clearAutocorrection;
-- (id)autocorrection;
 
 @end

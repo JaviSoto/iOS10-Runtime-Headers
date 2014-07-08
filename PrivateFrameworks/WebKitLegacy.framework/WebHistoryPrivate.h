@@ -32,7 +32,7 @@
 - (void)addItems:(id)arg1;
 - (bool)removeItems:(id)arg1;
 - (void)rebuildHistoryByDayIfNeeded:(id)arg1;
-- (id)visitedURL:(id)arg1 withTitle:(id)arg2 increaseVisitCount:(bool)arg3;
+- (id)visitedURL:(id)arg1 withTitle:(id)arg2;
 - (bool)loadHistoryGutsFromURL:(id)arg1 savedItemsCount:(int*)arg2 collectDiscardedItemsInto:(id)arg3 error:(id*)arg4;
 - (id)ageLimitDate;
 - (int)historyItemLimit;

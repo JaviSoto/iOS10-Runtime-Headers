@@ -25,6 +25,7 @@
 
 
 - (id)bestLocalizedAttribution;
+- (id)attributionApps;
 - (id)localizedAttributions;
 - (void)setAttributionRequirements:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)attributionRequirements;
@@ -43,9 +44,9 @@
 - (void)setAttributionApps:(id)arg1;
 - (void)setLocalizedAttributions:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;
-- (id)attributionApps;
 - (unsigned int)sourceVersion;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)sourceIdentifier;

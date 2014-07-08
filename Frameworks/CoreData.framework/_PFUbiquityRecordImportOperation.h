@@ -46,7 +46,6 @@
 
 
 - (bool)wroteKV;
-- (id)operationError;
 - (bool)success;
 - (bool)transactionDidRollBack;
 - (void)setUpdatedStoreKnowledgeVector:(id)arg1;
@@ -72,6 +71,7 @@
 - (id)initWithTransactionLog:(id)arg1 persistentStore:(id)arg2 andLocalPeerID:(id)arg3;
 - (void)setLogScore:(id)arg1;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (id)operationError;
 - (id)transactionLog;
 - (void)main;
 - (id)init;

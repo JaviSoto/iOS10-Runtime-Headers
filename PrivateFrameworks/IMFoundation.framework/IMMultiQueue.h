@@ -6,13 +6,18 @@
 
 @interface IMMultiQueue : NSObject  {
     NSMutableDictionary *_queueMap;
+    bool_isPaused;
 }
+
+@property bool isPaused;
 
 
 - (void)addBlock:(id)arg1 forKey:(id)arg2;
 - (void)addBlock:(id)arg1 withTimeout:(double)arg2 forKey:(id)arg3;
+- (void)setIsPaused:(bool)arg1;
 - (void)_addBlock:(id)arg1 withGUID:(id)arg2 forKey:(id)arg3;
 - (void)_popEnqueuedBlockWithGUID:(id)arg1 key:(id)arg2;
+- (bool)isPaused;
 - (void)dealloc;
 
 @end

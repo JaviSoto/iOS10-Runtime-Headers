@@ -270,6 +270,8 @@
 - (id)deletedObjects;
 - (id)updatedObjects;
 - (id)insertedObjects;
+- (void)setName:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)undoManager;
 - (id)init;
 - (id)name;
@@ -278,8 +280,6 @@
 - (void)unlock;
 - (void)lock;
 - (void)_setDelegate:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)_delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

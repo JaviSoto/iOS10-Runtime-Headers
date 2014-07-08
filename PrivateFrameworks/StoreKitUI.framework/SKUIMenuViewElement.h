@@ -16,8 +16,8 @@
 
 - (long long)selectedItemIndex;
 - (id)menuLabel;
-- (id)menuItemTitles;
 - (void)_enumerateItemElementsUsingBlock:(id)arg1;
+- (id)menuItemTitles;
 - (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
 - (id)titleItem;
 - (void).cxx_destruct;

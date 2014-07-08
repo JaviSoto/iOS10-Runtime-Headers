@@ -45,7 +45,7 @@
 - (id)isAlphanumericPasscodeRequired;
 - (id)isSimplePasscodeAllowed;
 - (id)minLength;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

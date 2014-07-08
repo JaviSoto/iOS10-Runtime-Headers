@@ -65,9 +65,12 @@
 - (id)emailAccountName;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (id)incomingMailServerHostname;
+- (id)_authenticationTypeLocalizedString:(id)arg1;
 - (id)emailAccountType;
+- (id)incomingMailServerHostname;
+- (id)_emailAccountTypeLocalizedString;
 - (id)emailAccountDescription;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIComposeReviewHeaderView, UIScrollView, SUTextContentView, SULoadingView, UIControl, SKUIReviewMetadata, <SKUIComposeReviewViewDelegate>, UILabel;
+@class SKUIReviewMetadata, <SKUIComposeReviewViewDelegate>, SULoadingView, SKUIComposeReviewHeaderView, UIScrollView, SUTextContentView;
 
 @interface SKUIComposeReviewView : UIView <SKUIComposeReviewHeaderDelegate, UITextContentViewDelegate> {
     long long _currentBodyLength;
@@ -11,8 +11,6 @@
     unsigned int _loading : 1;
     SULoadingView *_loadingView;
     SKUIReviewMetadata *_review;
-    UIControl *_reviewCountControl;
-    UILabel *_reviewCountLabel;
     UIScrollView *_scrollView;
     long long _style;
     SUTextContentView *_textContentView;
@@ -25,12 +23,10 @@
 @property(getter=isValid,readonly) bool valid;
 
 
-- (void)_reviewCountAction:(id)arg1;
 - (bool)_isReviewTextOptional;
 - (void)_delayedUpdateReviewLength;
 - (id)_reviewPlaceholder;
 - (void)_showLoadingView;
-- (id)_reviewCountString;
 - (void)_layoutComposeView;
 - (void)_layoutLoadingView;
 - (void)_keyboardVisibilityDidChangeNotification:(id)arg1;

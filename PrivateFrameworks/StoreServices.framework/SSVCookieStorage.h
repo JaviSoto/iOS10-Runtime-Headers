@@ -17,7 +17,6 @@
 + (id)sharedInstance;
 
 - (void)removeAllCookies;
-- (id)allCookiesForUserIdentifier:(id)arg1;
 - (void)synchronizeCookies;
 - (id)storageLocation;
 - (void)setCookiesFromCookieStorage:(id)arg1;
@@ -32,6 +31,7 @@
 - (id)_copyCookieDictionaryForURL:(id)arg1 userIdentifier:(id)arg2;
 - (id)_copyCookiesWithUserIdentifier:(id)arg1;
 - (id)initWithStorageLocation:(id)arg1;
+- (id)allCookiesForUserIdentifier:(id)arg1;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)setCookiesForHTTPResponse:(id)arg1 userIdentifier:(id)arg2;
 - (void)removeCookiesWithProperties:(id)arg1;

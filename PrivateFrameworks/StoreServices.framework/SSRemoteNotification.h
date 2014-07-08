@@ -24,8 +24,8 @@
 - (id)alertOKString;
 - (id)alertCancelString;
 - (id)alertBodyString;
-- (id)initWithNotificationUserInfo:(id)arg1;
 - (id)_valueForAlertKey:(id)arg1;
+- (id)initWithNotificationUserInfo:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (long long)actionType;

@@ -26,8 +26,10 @@
 @property(readonly) bool isTemplate;
 @property(readonly) long long templateRenderingMode;
 @property(readonly) bool isStructured;
+@property(readonly) int exifOrientation;
 
 
+- (void)setName:(id)arg1;
 - (double)opacity;
 - (unsigned long long)subtype;
 - (bool)isStructured;
@@ -48,12 +50,12 @@
 - (id)_renditionForSpecificKey:(id)arg1;
 - (id)_themeStore;
 - (id)_rendition;
+- (int)exifOrientation;
 - (bool)isVectorBased;
 - (int)blendMode;
 - (long long)templateRenderingMode;
 - (struct CGImage { }*)image;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (struct CGSize { double x1; double x2; })size;

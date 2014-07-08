@@ -16,8 +16,6 @@
 + (id)recorderCommonMetadataForAVMetadataItemArray:(id)arg1;
 + (void)initialize;
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)isRecording;
@@ -40,6 +38,8 @@
 - (id)connectionMediaTypes;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (int)_stopRecording;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (id)init;
 - (bool)isKindOfClass:(Class)arg1;
 - (void)dealloc;

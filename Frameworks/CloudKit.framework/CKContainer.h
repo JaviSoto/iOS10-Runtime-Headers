@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainerID, NSXPCConnection, CKRecordID, CKOperationCallbackManager, CKDatabase, NSOperationQueue, NSString, CKAccountInfo, CKOperationFlowControlManager, ACAccountStore;
+@class CKContainerID, NSXPCConnection, CKRecordID, CKOperationCallbackManager, CKDatabase, NSOperationQueue, NSString, CKAccountInfo, NSMutableArray, CKOperationFlowControlManager, ACAccountStore;
 
 @interface CKContainer : NSObject  {
     bool_connectionIsInvalid;
@@ -21,6 +21,7 @@
     NSString *_fakeBundleID;
     CKAccountInfo *_accountInfoOverride;
     ACAccountStore *_accountStore;
+    NSMutableArray *_sandboxExtensionHandles;
 }
 
 @property(readonly) NSString * containerIdentifier;
@@ -40,11 +41,13 @@
 @property(retain) ACAccountStore * accountStore;
 @property int statusReportToken;
 @property int killSwitchToken;
+@property(retain) NSMutableArray * sandboxExtensionHandles;
 
 + (id)containerWithIdentifier:(id)arg1;
 + (id)defaultContainer;
-+ (void)getAccountOverrides:(id)arg1;
++ (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(bool)arg2 completionHandler:(id)arg3;
 
+- (id)initWithContainerID:(id)arg1;
 - (void)removePresenceObserver:(id)arg1 inShareWithID:(id)arg2;
 - (void)addPresenceObserver:(id)arg1 inShareWithID:(id)arg2;
 - (void)updateCurrentUserStatus:(long long)arg1 inShareWithID:(id)arg2 completionHandler:(id)arg3;
@@ -63,6 +66,7 @@
 - (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(id)arg2;
 - (void)discoverAllContactUserInfosWithCompletionHandler:(id)arg1;
 - (void)fetchUserRecordIDWithCompletionHandler:(id)arg1;
+- (void)setSandboxExtensionHandles:(id)arg1;
 - (void)setKillSwitchToken:(int)arg1;
 - (int)killSwitchToken;
 - (void)setStatusReportToken:(int)arg1;
@@ -79,7 +83,6 @@
 - (void)setContainerScopedUserID:(id)arg1;
 - (id)containerScopedUserID;
 - (void)setEffectiveClientBundleIdentifier:(id)arg1;
-- (id)initWithContainerID:(id)arg1;
 - (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(long long)arg2;
 - (id)throttlingOperationQueue;
@@ -88,7 +91,6 @@
 - (id)convenienceOperationQueue;
 - (void)_synchronouslySendContextInformation;
 - (bool)shouldSendClientIDs;
-- (void)releaseFlowControlLimitationForOperationWithID:(id)arg1;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
 - (id)flowControlManager;
@@ -109,12 +111,15 @@
 - (void)statusForApplicationPermission:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)accountStatusWithCompletionHandler:(id)arg1;
 - (bool)connectionIsInvalid;
+- (void)_consumeSandboxExtensions:(id)arg1;
 - (void)setShouldSendClientIDs:(bool)arg1;
 - (void)setConnectionIsInvalid:(bool)arg1;
 - (id)accountInfoOverride;
 - (id)fakeBundleID;
 - (id)_untrustedEntitlementForKey:(id)arg1;
 - (id)containerID;
+- (void)_cleanupSandboxExtensionHandles:(id)arg1;
+- (id)sandboxExtensionHandles;
 - (long long)_untrustedDatabaseEnvironment;
 - (void)_setupWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (id)_checkSelfContainerIdentifier;

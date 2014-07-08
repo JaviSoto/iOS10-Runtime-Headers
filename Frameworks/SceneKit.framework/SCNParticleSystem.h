@@ -2,13 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSString, NSArray, NSMutableDictionary, SCNParticleSystem, SCNGeometry, NSDictionary, UIColor;
+@class NSString, NSArray, SCNParticleSystem, SCNGeometry, NSDictionary, SCNOrderedDictionary, UIColor;
 
 @interface SCNParticleSystem : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     id _reserved;
     struct __C3DParticleSystem { } *_particleSystem;
     unsigned int _isPresentationInstance : 1;
-    NSMutableDictionary *_animations;
+    SCNOrderedDictionary *_animations;
     NSString *_name;
     double _emissionDuration;
     double _emissionDurationVariation;
@@ -52,6 +52,8 @@
     double _particleBounceVariation;
     double _particleFriction;
     double _particleFrictionVariation;
+    double _particleCharge;
+    double _particleChargeVariation;
     id _particleImage;
     UIColor *_particleColor;
     struct SCNVector4 { 
@@ -142,6 +144,8 @@
 @property double particleBounceVariation;
 @property double particleFriction;
 @property double particleFrictionVariation;
+@property double particleCharge;
+@property double particleChargeVariation;
 @property double dampingFactor;
 @property double speedFactor;
 @property double stretchFactor;
@@ -159,8 +163,6 @@
 - (void)setConstraintRef:(struct __C3DParticleSystem { }*)arg1;
 - (void)_customDecodingOfSCNParticleSystem:(id)arg1;
 - (void)_customEncodingOfSCNParticleSystem:(id)arg1;
-- (void)setParticleImage:(id)arg1;
-- (id)particleImage;
 - (void)removeAllModifiers;
 - (void)removeModifiersOfStage:(long long)arg1;
 - (void)addModifierForProperties:(id)arg1 atStage:(long long)arg2 withBlock:(id)arg3;
@@ -220,6 +222,10 @@
 - (void)setParticleColorVariation:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1;
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })particleColorVariation;
 - (id)particleColor;
+- (void)setParticleChargeVariation:(double)arg1;
+- (double)particleChargeVariation;
+- (void)setParticleCharge:(double)arg1;
+- (double)particleCharge;
 - (void)setParticleFrictionVariation:(double)arg1;
 - (double)particleFrictionVariation;
 - (void)setParticleFriction:(double)arg1;
@@ -278,6 +284,8 @@
 - (double)emissionDurationVariation;
 - (void)setEmissionDuration:(double)arg1;
 - (double)emissionDuration;
+- (void)setParticleImage:(id)arg1;
+- (id)particleImage;
 - (void)setParticleColor:(id)arg1;
 - (struct __C3DParticleSystem { }*)particleSystemRef;
 - (void)setFresnelExponent:(double)arg1;
@@ -292,7 +300,7 @@
 - (void)resumeAnimationForKey:(id)arg1;
 - (void)pauseAnimationForKey:(id)arg1;
 - (void)_pauseAnimation:(bool)arg1 forKey:(id)arg2;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; struct _C3DAnimationPendingEvent {} *x9; struct __C3DAllocator {} *x10; struct __CFDictionary {} *x11; double x12; double x13; struct _opaque_pthread_mutex_t { long long x_14_1_1; BOOL x_14_1_2[56]; } x14; int x15; int x16; int x17; int x18; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; boolx9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long long x_16_1_1; BOOL x_16_1_2[56]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
 - (void)_syncObjCAnimations;
 - (void*)__CFObject;
 - (struct __C3DScene { }*)sceneRef;
@@ -301,6 +309,7 @@
 - (void)removeAllAnimations;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setName:(id)arg1;
 - (void)setAffectedByGravity:(bool)arg1;
 - (bool)affectedByGravity;
 - (void)setIsLocal:(bool)arg1;
@@ -322,7 +331,6 @@
 - (long long)renderingMode;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copy;

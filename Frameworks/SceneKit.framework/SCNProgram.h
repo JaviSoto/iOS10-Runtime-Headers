@@ -35,12 +35,12 @@
 - (id)vertexShader;
 - (void)setFragmentShader:(id)arg1;
 - (void)setVertexShader:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setOpaque:(bool)arg1;
 - (bool)isOpaque;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

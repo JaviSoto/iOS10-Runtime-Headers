@@ -59,9 +59,9 @@
 - (bool)hasArtist;
 - (void)setSeries:(id)arg1;
 - (void)setArtist:(id)arg1;
-- (id)artist;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)artist;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void).cxx_destruct;

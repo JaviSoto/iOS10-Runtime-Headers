@@ -19,7 +19,6 @@
 @property double rightContentMargin;
 @property bool hasBeenDisplayed;
 
-+ (bool)requiresConstraintBasedLayout;
 
 - (void)setHasBeenDisplayed:(bool)arg1;
 - (bool)hasBeenDisplayed;
@@ -41,7 +40,6 @@
 - (void)dealloc;
 - (void)prepareForReuse;
 - (void)updateConstraints;
-- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

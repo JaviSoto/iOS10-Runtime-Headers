@@ -94,5 +94,7 @@
 - (void)setSearchScopes:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)stopQuery;
+- (bool)br_setupForMonitoringChildrenOfItemAtURL:(id)arg1;
+- (void)br_setupForMonitoringChildrenOfFolderAtURL:(id)arg1;
 
 @end

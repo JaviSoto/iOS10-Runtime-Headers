@@ -14,14 +14,14 @@
 @property(copy) NSDate * renewalDate;
 
 
-- (void)setContentType:(id)arg1;
-- (id)contentType;
 - (void)setDiskCachingPermitted:(bool)arg1;
 - (void)setRenewalDate:(id)arg1;
 - (bool)isDiskCachingPermitted;
 - (bool)isByteRangeAccessSupported;
 - (id)renewalDate;
 - (long long)contentLength;
+- (void)setContentType:(id)arg1;
+- (id)contentType;
 - (void)setByteRangeAccessSupported:(bool)arg1;
 - (void)setContentLength:(long long)arg1;
 - (id)init;

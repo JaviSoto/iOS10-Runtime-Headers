@@ -26,6 +26,7 @@
 - (void)setWidth:(id)arg1;
 - (id)height;
 - (id)width;
+- (void)setName:(id)arg1;
 - (void)setSrcdoc:(id)arg1;
 - (id)srcdoc;
 - (void)setSandbox:(id)arg1;
@@ -47,7 +48,6 @@
 - (id)marginWidth;
 - (id)contentDocument;
 - (id)name;
-- (void)setName:(id)arg1;
 - (int)structuralComplexityContribution;
 - (id)contentFrame;
 

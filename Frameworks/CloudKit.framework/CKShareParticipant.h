@@ -35,6 +35,7 @@
 + (bool)supportsSecureCoding;
 
 - (void)setIsCurrentUser:(bool)arg1;
+- (bool)isCurrentUser;
 - (long long)originalListPermission;
 - (long long)originalItemPermission;
 - (long long)originalAcceptanceStatus;
@@ -54,7 +55,6 @@
 - (id)userRecordID;
 - (bool)isEquivalentToParticipant:(id)arg1;
 - (id)CKPropertiesDescription;
-- (bool)isCurrentUser;
 - (void)setEmailAddress:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;

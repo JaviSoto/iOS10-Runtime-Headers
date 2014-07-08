@@ -15,10 +15,10 @@
 @property unsigned long long identifier;
 
 
-- (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
 - (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
-- (id)topic;
+- (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (void)setGuid:(id)arg1;
 - (id)guid;
 - (void)setIdentifier:(unsigned long long)arg1;

@@ -20,10 +20,8 @@
 
 
 - (id)traversedRouteIDs;
-- (id)directionResponseID;
 - (void)setStepFeedbacks:(struct { double x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned long long)arg2;
 - (struct { double x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)stepFeedbacks;
-- (bool)hasDirectionResponseID;
 - (struct { double x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })stepFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)stepFeedbacksCount;
 - (id)traversedRouteIDsAtIndex:(unsigned long long)arg1;
@@ -33,8 +31,11 @@
 - (void)setTraversedRouteIDs:(id)arg1;
 - (void)addStepFeedback:(struct { double x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)addTraversedRouteIDs:(id)arg1;
+- (id)directionResponseID;
+- (bool)hasDirectionResponseID;
 - (void)setDirectionResponseID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

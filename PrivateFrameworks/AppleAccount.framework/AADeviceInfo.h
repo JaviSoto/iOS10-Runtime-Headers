@@ -18,8 +18,8 @@
 + (id)apnsToken;
 + (id)userAgentHeader;
 + (id)osVersion;
-+ (id)infoDictionary;
 + (id)productVersion;
++ (id)infoDictionary;
 
 - (id)deviceColor;
 - (id)storageCapacity;
@@ -39,10 +39,10 @@
 - (id)apnsToken;
 - (id)userAgentHeader;
 - (id)osVersion;
+- (id)productVersion;
 - (id)buildVersion;
 - (id)deviceName;
 - (id)productType;
-- (id)productVersion;
 - (void).cxx_destruct;
 
 @end

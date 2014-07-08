@@ -54,7 +54,6 @@
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_updateManifest;
 - (void)_startServer;
-- (void)_cancelConnection;
 - (oneway void)resetActiveTileGroup;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
@@ -69,6 +68,7 @@
 - (void)_cleanupConnection;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_countryProvidersDidChange:(id)arg1;
+- (void)_cancelConnection;
 - (void)setDelegate:(id)arg1;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

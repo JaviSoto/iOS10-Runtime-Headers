@@ -50,13 +50,12 @@
 
 - (void)updateDisplayName:(id)arg1;
 - (void)updateLastAddressedHandle:(id)arg1;
-- (void)_updateGroupID:(id)arg1;
+- (void)updateGroupID:(id)arg1;
 - (void)updateProperties:(id)arg1;
 - (void)_updateLastMessage:(id)arg1;
 - (id)chatProperties;
 - (id)serviceSession;
 - (void)removeParticipant:(id)arg1;
-- (void)addParticipant:(id)arg1;
 - (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned long long)arg1;
 - (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(long long)arg11 style:(unsigned char)arg12;
@@ -67,12 +66,13 @@
 - (void)removeParticipants:(id)arg1;
 - (void)addParticipants:(id)arg1;
 - (void)_updateCachedParticipants;
-- (void)setParticipants:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
 - (void)setLastAddressedLocalHandle:(id)arg1;
-- (id)participants;
-- (id)lastMessage;
+- (void)setParticipants:(id)arg1;
+- (void)addParticipant:(id)arg1;
 - (id)chatIdentifier;
+- (id)lastMessage;
+- (id)participants;
 - (unsigned long long)unreadCount;
 - (void)setServiceName:(id)arg1;
 - (long long)rowID;

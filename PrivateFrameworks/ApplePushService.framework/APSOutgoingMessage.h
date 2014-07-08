@@ -11,6 +11,8 @@
 @property unsigned long long payloadLength;
 
 
+- (void)setCritical:(bool)arg1;
+- (void)setPayloadFormat:(unsigned long long)arg1;
 - (void)setSenderTokenName:(id)arg1;
 - (id)senderTokenName;
 - (void)setPayloadLength:(unsigned long long)arg1;
@@ -25,16 +27,14 @@
 - (bool)isCritical;
 - (id)sendTimeoutTime;
 - (unsigned long long)_effectiveSendTimeout;
-- (void)setCritical:(bool)arg1;
-- (void)setPayloadFormat:(unsigned long long)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setMessageID:(unsigned long long)arg1;
 - (unsigned long long)timeout;
 - (unsigned long long)messageID;
 - (bool)wasCancelled;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (void)setTimeout:(unsigned long long)arg1;
 - (void)setCancelled:(bool)arg1;
 

@@ -27,6 +27,7 @@
 - (id)referrerURLString;
 - (id)referrerApplicationName;
 - (id)underlyingURL;
+- (id)_searchURLBagKey;
 - (id)_queryDictionary;
 - (id)redeemCode;
 - (id)newURLRequestWithBaseURL:(id)arg1;

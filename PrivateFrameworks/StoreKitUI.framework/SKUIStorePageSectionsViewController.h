@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIMetricsController, NSMapTable, SKUILayoutCache, UICollectionView, SKUIResourceLoader, SKUIProductPageOverlayController, SKUIStorePageSplitsDescription, NSMutableArray, SKUIStackedBar, SKUICollectionView, NSArray, <SKUIStorePageSectionsDelegate>, SKUIColorScheme, SKUIIndexBarControl, NSValue;
+@class NSValue, SKUIMetricsController, NSMapTable, SKUILayoutCache, SKUIResourceLoader, SKUIProductPageOverlayController, UITapGestureRecognizer, SKUIStorePageSplitsDescription, NSMutableArray, SKUIStackedBar, UICollectionView, SKUICollectionView, NSArray, <SKUIStorePageSectionsDelegate>, SKUIColorScheme, SKUIIndexBarControl, NSIndexPath;
 
-@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource> {
+@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
     SKUIProductPageOverlayController *_activeOverlayController;
     SKUICollectionView *_collectionView;
+    UITapGestureRecognizer *_collectionViewTapGestureRecognizer;
     SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
         double top; 
@@ -20,13 +21,14 @@
     bool_didInitialReload;
     long long _ignoreSectionsChangeCount;
     SKUIIndexBarControl *_indexBarControl;
+    NSIndexPath *_indexPathOfEditedCell;
     NSArray *_initialOverlayURLs;
     NSValue *_lastKnownSize;
     long long _layoutStyle;
     NSMapTable *_menuSectionContexts;
     SKUIMetricsController *_metricsController;
     SKUIProductPageOverlayController *_overlayController;
-    long long _pinningStyle;
+    long long _pinningTransitionStyle;
     bool_rendersWithPerspective;
     SKUIResourceLoader *_resourceLoader;
     bool_scrollOffsetHasChanged;
@@ -41,7 +43,7 @@
 @property <SKUIStorePageSectionsDelegate> * delegate;
 @property(retain) SKUIIndexBarControl * indexBarControl;
 @property(retain) SKUIMetricsController * metricsController;
-@property long long pinningStyle;
+@property long long pinningTransitionStyle;
 @property(readonly) NSArray * sections;
 @property(getter=isDisplayingOverlays,readonly) bool displayingOverlays;
 
@@ -49,7 +51,7 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (id)indexBarControl;
-- (long long)pinningStyle;
+- (long long)pinningTransitionStyle;
 - (id)_newSectionsWithPageComponents:(id)arg1;
 - (id)_visibleMetricsImpressionsString;
 - (void)_updateSectionsForIndex:(long long)arg1 menuSection:(id)arg2;
@@ -61,6 +63,7 @@
 - (void)_beginIgnoringSectionChanges;
 - (void)itemCollectionView:(id)arg1 didTapVideoForCollectionViewCell:(id)arg2;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
+- (void)collectionView:(id)arg1 performDefaultActionForViewElement:(id)arg2 indexPath:(id)arg3;
 - (void)artworkLoaderDidIdle:(id)arg1;
 - (void)collectionView:(id)arg1 editorialView:(id)arg2 didSelectLink:(id)arg3;
 - (id)SKUIStackedBar;
@@ -68,11 +71,18 @@
 - (void)setSKUIStackedBar:(id)arg1;
 - (void)setSectionsWithPageComponents:(id)arg1;
 - (void)setMetricsController:(id)arg1;
+- (void)setPinningTransitionStyle:(long long)arg1;
 - (bool)isDisplayingOverlays;
 - (id)initWithLayoutStyle:(long long)arg1;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
-- (id)pageSectionsForCollectionView:(id)arg1 layout:(id)arg2;
-- (id)collectionView:(id)arg1 layout:(id)arg2 pageSectionForIndexPath:(id)arg3;
+- (id)indexPathsForPinningItemsInCollectionView:(id)arg1 layout:(id)arg2;
+- (void)collectionView:(id)arg1 willBeginEditingItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 layout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
+- (long long)collectionView:(id)arg1 layout:(id)arg2 pinningTransitionStyleForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 layout:(id)arg2 pinningStyleForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 pinningContentInsetForItemAtIndexPath:(id)arg3;
+- (bool)collectionView:(id)arg1 canScrollCellAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didEndEditingItemAtIndexPath:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (id)_prepareLayoutForSections;
@@ -91,25 +101,26 @@
 - (void)_scrollFirstAppearanceSectionToView;
 - (void)_reloadCollectionView;
 - (void)_setPageSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_currentBackdropGroupName;
 - (void)_invalidateIfLastKnownSizeChanged;
 - (void)_setActiveProductPageOverlayController:(id)arg1;
 - (void)dismissOverlays;
-- (void)_updateCollectionViewWithStyle:(long long)arg1 updates:(id)arg2;
+- (void)_updateCollectionViewWithUpdates:(id)arg1;
 - (id)_newSectionsWithPageComponent:(id)arg1;
 - (id)_newSectionContext;
 - (void)setSectionsWithSplitsDescription:(id)arg1;
-- (void)setPinningStyle:(long long)arg1;
 - (id)_defaultSectionForSwooshComponent:(id)arg1;
 - (id)_defaultSectionForGridComponent:(id)arg1;
 - (void)_enumerateSectionContextsUsingBlock:(id)arg1;
+- (void)tapCollectionViewDidRecognize:(id)arg1;
 - (void)setIndexBarControl:(id)arg1;
 - (id)_newStorePageCollectionViewLayout;
 - (void)_initSKUIStorePageSectionsViewController;
 - (void)collectionView:(id)arg1 didConfirmButtonElement:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
-- (id)sections;
 - (id)_resourceLoader;
+- (id)sections;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

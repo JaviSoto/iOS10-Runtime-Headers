@@ -16,21 +16,21 @@
 
 + (id)sharedInstance;
 
-- (void)friendshipWasRemoved:(id)arg1;
-- (void)friendshipRequestReceived:(id)arg1;
-- (id)timedOfferExpirationForChat:(id)arg1;
-- (void)refreshLocationForChat:(id)arg1;
-- (void)refreshLocationForHandle:(id)arg1 inChat:(id)arg2;
-- (id)locationForHandle:(id)arg1;
-- (void)stopTrackingLocationForHandle:(id)arg1;
-- (void)startTrackingLocationForHandle:(id)arg1;
-- (void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (void)didUpdateHidingStatus:(bool)arg1;
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStartAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStopSharingMyLocationWithHandle:(id)arg1;
 - (void)didStartSharingMyLocationWithHandle:(id)arg1;
 - (void)didReceiveLocation:(id)arg1;
+- (void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
+- (id)locationForHandle:(id)arg1;
+- (void)friendshipWasRemoved:(id)arg1;
+- (void)friendshipRequestReceived:(id)arg1;
+- (id)timedOfferExpirationForChat:(id)arg1;
+- (void)refreshLocationForChat:(id)arg1;
+- (void)refreshLocationForHandle:(id)arg1 inChat:(id)arg2;
+- (void)stopTrackingLocationForHandle:(id)arg1;
+- (void)startTrackingLocationForHandle:(id)arg1;
 - (void)_postRelationshipStatusDidChangeNotificationWithHandle:(id)arg1;
 - (void)_postNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (id)locationForFMFHandle:(id)arg1;
@@ -45,6 +45,7 @@
 - (void)stopSharingWithChat:(id)arg1;
 - (void)startSharingWithChat:(id)arg1 untilDate:(id)arg2;
 - (bool)allChatParticipantsSharingLocationWithMe:(id)arg1;
+- (bool)chatHasSiblingParticipantsSharingLocationWithMe:(id)arg1;
 - (bool)chatHasParticipantsSharingLocationWithMe:(id)arg1;
 - (bool)allChatParticipantsFollowingMyLocation:(id)arg1;
 - (bool)chatHasParticipantsFollowingMyLocation:(id)arg1;

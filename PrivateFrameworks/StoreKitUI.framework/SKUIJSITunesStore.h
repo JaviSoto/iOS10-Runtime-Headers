@@ -14,11 +14,16 @@
 - (id)initWithAppContext:(id)arg1 clientContext:(id)arg2;
 - (void)setPreviewOverlay:(id)arg1 :(id)arg2;
 - (bool)resourceExists:(id)arg1;
+- (void)loadGratisContent:(id)arg1;
+- (void)getBookSample:(id)arg1;
+- (void)findLibraryItems:(id)arg1 :(id)arg2 :(id)arg3;
+- (void)findApps:(id)arg1 :(id)arg2 :(id)arg3;
 - (void)exit:(id)arg1;
 - (void)download:(id)arg1;
 - (void)attemptLocalAskToBuyApproval:(id)arg1;
 - (void)approveInPerson:(id)arg1 :(id)arg2;
 - (void)buy:(id)arg1;
+- (void)_finishPurchaseForOptions:(id)arg1 purchaseResponse:(id)arg2;
 - (void)log:(id)arg1;
 - (void).cxx_destruct;
 

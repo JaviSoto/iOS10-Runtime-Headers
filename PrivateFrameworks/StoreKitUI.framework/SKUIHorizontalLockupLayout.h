@@ -19,7 +19,8 @@
 - (double)columnSpacingForColumnIdentifier:(long long)arg1;
 - (void)sizeColumnsToFitWidth:(double)arg1 context:(id)arg2;
 - (id)initWithLockup:(id)arg1 context:(id)arg2;
-- (double)lineSpacingForViewElement:(id)arg1;
+- (double)bottomPaddingForViewElement:(id)arg1;
+- (double)topPaddingForViewElement:(id)arg1;
 - (struct CGSize { double x1; double x2; })_sizeForViewElement:(id)arg1 width:(long long)arg2 context:(id)arg3;
 - (id)columns;
 - (void).cxx_destruct;

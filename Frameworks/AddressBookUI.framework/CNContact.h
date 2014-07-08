@@ -84,17 +84,11 @@
 + (id)contact;
 + (bool)supportsSecureCoding;
 
-- (unsigned int)recordType;
-- (id)note;
-- (id)textTone;
-- (id)ringtone;
 - (id)socialProfiles;
 - (id)relatedNames;
 - (id)instantMessageAddresses;
 - (id)dates;
-- (id)urlAddresses;
-- (id)preferredContactForName;
-- (id)birthdays;
+- (id)note;
 - (id)phoneticFamilyName;
 - (id)phoneticMiddleName;
 - (id)phoneticGivenName;
@@ -102,6 +96,11 @@
 - (id)nameSuffix;
 - (id)middleName;
 - (id)namePrefix;
+- (id)textTone;
+- (id)ringtone;
+- (id)urlAddresses;
+- (id)preferredContactForName;
+- (id)birthdays;
 - (bool)hasLinkedContacts;
 - (bool)isEqualToContact:(id)arg1;
 - (id)_CNLabelFromABLabel:(struct __CFString { }*)arg1;
@@ -113,8 +112,8 @@
 - (id)_stringValueForProperty:(int)arg1;
 - (bool)isEqualToContact:(id)arg1 includeIdentifiers:(bool)arg2;
 - (id)initWithRecord:(void*)arg1 unify:(bool)arg2 originalRecord:(void*)arg3;
-- (id)initWithRecord:(void*)arg1 unify:(bool)arg2;
 - (id)vCardRepresentation;
+- (id)initWithRecord:(void*)arg1 unify:(bool)arg2;
 - (void)setPreferredForName:(bool)arg1;
 - (void)setPreferredForPhoto:(bool)arg1;
 - (bool)isPreferredForName;
@@ -152,14 +151,15 @@
 - (void)setLinkedContacts:(id)arg1;
 - (id)linkedContacts;
 - (bool)hasValidRecordID;
-- (id)emailAddresses;
 - (bool)isFacebook;
 - (void)setPhoto:(id)arg1;
+- (id)emailAddresses;
+- (unsigned int)recordType;
 - (id)nickname;
+- (void*)record;
 - (bool)hasChanges;
 - (void*)source;
 - (id)fullName;
-- (void*)record;
 - (id)initWithRecord:(void*)arg1;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;

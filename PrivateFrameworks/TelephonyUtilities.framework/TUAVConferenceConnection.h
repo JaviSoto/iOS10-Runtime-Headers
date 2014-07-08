@@ -10,7 +10,6 @@
 
 @interface TUAVConferenceConnection : NSObject  {
     bool_receivedDidStart;
-    int _socketDescriptor;
     TUCall *_call;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -24,7 +23,6 @@
 
 }
 
-@property(readonly) int socketDescriptor;
 @property(getter=isMuted) bool muted;
 @property(retain) TUCall * call;
 @property(copy) id didStartHandler;
@@ -33,9 +31,8 @@
 
 + (id)conferenceConnectionWithCall:(id)arg1;
 
-- (id)call;
 - (void)setMuted:(bool)arg1;
-- (int)socketDescriptor;
+- (id)call;
 - (void)setReceivedDidStart:(bool)arg1;
 - (void)setCall:(id)arg1;
 - (id)didStopHandler;

@@ -34,10 +34,10 @@
 - (int)getType;
 - (id)getName;
 - (void)setCLSID:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (void)setName:(id)arg1;
 - (void)setSize:(unsigned int)arg1;
 - (id)init;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (void)setCreationTime:(long long)arg1;
 - (void)dealloc;
 

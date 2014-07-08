@@ -80,6 +80,7 @@
 + (bool)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
 + (id)indexSchemaSQL;
 + (id)sharedLibraryDatabasePath;
++ (bool)deviceSupportsMultipleLibraries;
 + (bool)inTransactionUpdateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(bool)arg2;
 + (bool)updateTrackIntegrityOnConnection:(id)arg1;
 + (void)autogenerateSupportedSizesForAllOriginalArtworkPostMigrationWithConnection:(id)arg1;
@@ -128,9 +129,7 @@
 - (bool)deleteDatabaseProperty:(id)arg1;
 - (void)removeOrphanedTracks;
 - (void)removeTombstonesForDeletedItems;
-- (bool)deleteArtworkWithToken:(id)arg1;
-- (bool)deleteAllOriginalArtworkWithSourceType:(long long)arg1;
-- (bool)deleteOrphanedOriginalArtwork;
+- (bool)deleteArtworkWithSourceType:(long long)arg1;
 - (bool)importOriginalArtworkFromFileURL:(id)arg1 withArtworkToken:(id)arg2 artworkType:(long long)arg3 sourceType:(long long)arg4 mediaType:(unsigned int)arg5;
 - (bool)importExistingOriginalArtworkWithArtworkToken:(id)arg1 artworkType:(long long)arg2 sourceType:(long long)arg3 mediaType:(unsigned int)arg4;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1;
@@ -161,6 +160,7 @@
 - (id)libraryEntityFilterPredicatesForEntityClass:(Class)arg1;
 - (bool)mediaRestrictionEnabled;
 - (id)currentDevicePurchasesPlaylist;
+- (void)setLibraryUID:(id)arg1;
 - (void)setSyncGenerationID:(long long)arg1;
 - (long long)currentContentRevision;
 - (long long)currentRevision;
@@ -188,6 +188,7 @@
 - (void)savePlaylistsSinceRevision:(long long)arg1 withGrappaID:(unsigned int)arg2;
 - (void)saveTrackMetadataSinceRevision:(long long)arg1 withGrappaID:(unsigned int)arg2;
 - (void)_postClientNotificationWithDistributedName:(id)arg1 localName:(id)arg2;
+- (bool)deleteOrphanedArtworkWithSearchOptions:(long long)arg1;
 - (bool)_clearAllRowsFromTables:(id)arg1;
 - (id)checkoutReaderConnection;
 - (void)_teardownMediaLibraryDatabaseConnection:(id)arg1;
@@ -214,6 +215,7 @@
 - (bool)importOriginalArtworkFromImageData:(id)arg1 withArtworkToken:(id)arg2 artworkType:(long long)arg3 sourceType:(long long)arg4 mediaType:(unsigned int)arg5;
 - (void)accessSortKeyBuilder:(id)arg1;
 - (long long)persistentID;
+- (bool)deleteArtworkWithToken:(id)arg1;
 - (id)fetchArtistHeroArtworkForPersistentID:(long long)arg1 artistType:(long long)arg2;
 - (id)fetchScreenshotArtworkForPersistentID:(long long)arg1;
 - (id)fetchChapterArtworkForPersistentID:(long long)arg1 retrievalTime:(double)arg2;

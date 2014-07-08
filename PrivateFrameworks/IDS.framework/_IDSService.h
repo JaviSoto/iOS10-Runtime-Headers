@@ -23,17 +23,17 @@
 
 
 - (void)_processAccountSet:(id)arg1;
-- (id)_sendingAccount;
+- (id)_sendingAccountForAccount:(id)arg1;
 - (void)_tearDownConnectionForUniqueID:(id)arg1;
 - (void)_callIsActiveChanged;
 - (void)_setupNewConnectionForAccount:(id)arg1;
 - (void)_logConnectionMap;
+- (id)uriForFromID:(id)arg1;
 - (id)deviceForFromID:(id)arg1;
 - (id)serviceDomain;
-- (void)acceptAttachmentInvite:(id)arg1 fromAccount:(id)arg2;
 - (bool)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
+- (bool)cancelIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)sendData:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
-- (bool)sendFile:(id)arg1 userInfo:(id)arg2 fromAccount:(id)arg3 toDestinations:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendData:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (bool)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (bool)sendProtobuf:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
@@ -45,14 +45,13 @@
 - (void)accountController:(id)arg1 accountEnabled:(id)arg2;
 - (void)accountController:(id)arg1 accountAdded:(id)arg2;
 - (void)accountController:(id)arg1 accountRemoved:(id)arg2;
-- (void)connection:(id)arg1 account:(id)arg2 sessionInviteReceived:(id)arg3 fromID:(id)arg4 transportType:(id)arg5 withContext:(id)arg6;
-- (void)connection:(id)arg1 attachmentReceived:(id)arg2 fileURL:(id)arg3 fromID:(id)arg4;
-- (void)connection:(id)arg1 attachmentInviteReceived:(id)arg2 userInfo:(id)arg3 fromID:(id)arg4;
+- (void)connection:(id)arg1 account:(id)arg2 sessionInviteReceived:(id)arg3 fromID:(id)arg4 transportType:(id)arg5 options:(id)arg6 context:(id)arg7;
 - (void)connection:(id)arg1 incomingProtobuf:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 incomingData:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 incomingTopLevelMessage:(id)arg2 fromID:(id)arg3 messageContext:(id)arg4;
 - (void)connection:(id)arg1 incomingMessage:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 identifier:(id)arg2 hasBeenDeliveredWithContext:(id)arg3;
+- (void)connection:(id)arg1 identifier:(id)arg2 willSendToDestinations:(id)arg3 skippedDestinations:(id)arg4 registrationPropertyToDestinations:(id)arg5;
 - (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(bool)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 messageIdentifier:(id)arg2 updatedWithResponseCode:(long long)arg3 error:(id)arg4 lastCall:(bool)arg5;
 - (void)connection:(id)arg1 nearbyDevicesChanged:(id)arg2;
@@ -61,9 +60,9 @@
 - (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)devices;
 - (id)accounts;
 - (void)removeDelegate:(id)arg1;
-- (id)devices;
 - (void)dealloc;
 
 @end

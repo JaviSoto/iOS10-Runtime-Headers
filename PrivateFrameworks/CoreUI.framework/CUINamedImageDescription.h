@@ -24,6 +24,7 @@
         double right; 
     } _alignmentEdgeInsets;
     long long _resizingMode;
+    int _exifOrientation;
 }
 
 @property double scale;
@@ -38,6 +39,7 @@
 @property struct { double x1; double x2; double x3; double x4; } edgeInsets;
 @property struct { double x1; double x2; double x3; double x4; } alignmentEdgeInsets;
 @property long long resizingMode;
+@property int exifOrientation;
 
 
 - (void)setScale:(double)arg1;
@@ -54,11 +56,13 @@
 - (long long)idiom;
 - (void)setSubtype:(long long)arg1;
 - (void)setIdiom:(long long)arg1;
+- (int)exifOrientation;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
 - (long long)templateRenderingMode;
 - (id)description;
 - (double)scale;
+- (void)setExifOrientation:(int)arg1;
 - (void)setImageType:(long long)arg1;
 - (void)setResizingMode:(long long)arg1;
 - (void)setAlignmentEdgeInsets:(struct { double x1; double x2; double x3; double x4; })arg1;

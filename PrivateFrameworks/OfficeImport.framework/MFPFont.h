@@ -15,10 +15,10 @@
 - (struct __CTFont { }*)createCTFontWithGraphics:(id)arg1;
 - (void)setUnit:(int)arg1;
 - (int)unit;
+- (void)setName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setSize:(float)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (float)size;
 - (unsigned int)flags;

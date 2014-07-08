@@ -52,7 +52,6 @@
 
 
 - (bool)hasLineSpacing;
-- (struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (bool)hasRightPadding;
 - (void)setHasRightPadding:(bool)arg1;
 - (bool)hasLeftPadding;
@@ -72,6 +71,7 @@
 - (struct CGImage { }*)newImageWithBackgroundColor:(struct CGColor { }*)arg1 borderColor:(struct CGColor { }*)arg2 textureAtlases:(id)arg3 contentScale:(double)arg4;
 - (struct CGSize { double x1; double x2; })_imageSizeWithTextureAtlases:(id)arg1;
 - (void)setLayers:(struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned long long)arg2;
+- (struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (bool)hasFontSize;
 - (void)setHasFontSize:(bool)arg1;
 - (bool)hasTextBaseline;

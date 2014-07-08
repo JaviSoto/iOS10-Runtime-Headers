@@ -122,12 +122,12 @@
 - (id)_alarmsRelation;
 - (bool)isSelfOrganized;
 - (bool)isOrganizedBySharedCalendarOwner;
-- (id)endTimeZone;
-- (id)startTimeZone;
 - (void)setCalendarScale:(id)arg1;
 - (id)_startLocationRelation;
 - (bool)hasNotes;
 - (id)notes;
+- (id)endTimeZone;
+- (id)startTimeZone;
 - (id)_persistentItem;
 - (void)setStructuredLocation:(id)arg1;
 - (id)_locationRelation;
@@ -192,8 +192,8 @@
 - (id)calendar;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (id)description;

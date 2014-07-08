@@ -29,6 +29,7 @@
 - (unsigned long long)_numberOfColumns:(bool)arg1;
 - (void)setCandidateViewExtended:(bool)arg1;
 - (id)activeCandidateList;
+- (id)_inheritedRenderConfig;
 - (void)candidatesDidChange;
 - (void)layoutSubviews;
 

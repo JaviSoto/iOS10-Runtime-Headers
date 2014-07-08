@@ -20,17 +20,17 @@
 
 + (void)runDaemonSideWithXPCEvent:(id)arg1 connection:(id)arg2;
 
+- (void)sendToAssetsdWithReply;
 - (id)replyError;
 - (bool)replyIsError;
 - (bool)clientWantsReply;
-- (void)sendToAssetsdWithReply;
-- (void)sendToAssetsd;
-- (long long)daemonOperation;
-- (void)runDaemonSide;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)handleReply;
 - (void)setXpcReply:(id)arg1;
 - (id)xpcReply;
+- (long long)daemonOperation;
+- (void)sendToAssetsd;
+- (void)runDaemonSide;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)archiveXPCToDisk:(id)arg1;
 - (bool)shouldArchiveXPCToDisk;
 - (void)encodeToXPCObject:(id)arg1;

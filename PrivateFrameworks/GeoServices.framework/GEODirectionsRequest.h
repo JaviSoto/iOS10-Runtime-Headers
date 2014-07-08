@@ -27,7 +27,6 @@
     NSMutableArray *_serviceTags;
     unsigned int _timeSinceLastRerouteRequest;
     NSMutableArray *_waypointTypeds;
-    NSMutableArray *_waypoints;
     bool_getRouteForZilchPoints;
     struct { 
         unsigned int sessionID : 1; 
@@ -44,7 +43,6 @@
 
 @property(readonly) bool hasRouteAttributes;
 @property(retain) GEORouteAttributes * routeAttributes;
-@property(retain) NSMutableArray * waypoints;
 @property bool hasMainTransportTypeMaxRouteCount;
 @property unsigned int mainTransportTypeMaxRouteCount;
 @property(readonly) bool hasCurrentUserLocation;
@@ -95,7 +93,6 @@
 - (id)originalRouteID;
 - (id)currentMapRegion;
 - (id)currentUserLocation;
-- (id)waypoints;
 - (id)routeAttributes;
 - (bool)hasSharedLibraryVersion;
 - (void)setHasSharedLibraryVersion:(bool)arg1;
@@ -138,12 +135,8 @@
 - (id)waypointTypedAtIndex:(unsigned long long)arg1;
 - (void)clearWaypointTypeds;
 - (unsigned long long)waypointTypedsCount;
-- (id)waypointAtIndex:(unsigned long long)arg1;
-- (void)clearWaypoints;
-- (unsigned long long)waypointsCount;
 - (void)addServiceTag:(id)arg1;
 - (void)addWaypointTyped:(id)arg1;
-- (void)addWaypoint:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)setOriginalRoute:(id)arg1;
 - (void)setWaypointTypeds:(id)arg1;
@@ -152,7 +145,6 @@
 - (void)setOriginalRouteID:(id)arg1;
 - (void)setCurrentMapRegion:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
-- (void)setWaypoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (id)originalDirectionsResponseID;
 - (bool)hasOriginalDirectionsResponseID;
@@ -160,13 +152,14 @@
 - (bool)hasSessionID;
 - (void)setHasSessionID:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
-- (unsigned int)sequenceNumber;
 - (id)feedback;
 - (void)setFeedback:(id)arg1;
+- (unsigned int)sequenceNumber;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;

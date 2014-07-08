@@ -2,55 +2,40 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString, NSDictionary, NSUUID, NSDate, NSData;
+@class NSData, NSDictionary, NSString;
 
 @interface SFActivityAdvertisement : NSObject <NSSecureCoding> {
-    NSDate *_timestamp;
-    NSString *_activityType;
-    NSString *_domainName;
-    NSString *_continuationIdentifier;
+    NSData *_advertisementPayload;
     NSDictionary *_options;
     NSString *_deviceIdentifier;
     NSString *_deviceName;
-    NSUUID *_uniqueIdentifier;
-    NSData *_payload;
-    NSString *_companionIdentifier;
+    NSString *_deviceModelIdentifier;
+    NSData *_activityPayload;
     NSData *_advertisementData;
-    NSData *_advertisementStringHash;
 }
 
-@property(retain,readonly) NSDate * timestamp;
-@property(retain,readonly) NSString * activityType;
-@property(retain,readonly) NSString * domainName;
-@property(retain,readonly) NSString * continuationIdentifier;
+@property(retain,readonly) NSData * advertisementPayload;
 @property(retain,readonly) NSDictionary * options;
 @property(retain,readonly) NSString * deviceIdentifier;
 @property(retain,readonly) NSString * deviceName;
-@property(retain,readonly) NSUUID * uniqueIdentifier;
-@property(retain) NSData * payload;
-@property(copy,readonly) NSString * companionIdentifier;
+@property(retain,readonly) NSString * deviceModelIdentifier;
+@property(retain) NSData * activityPayload;
 @property(retain,readonly) NSData * advertisementData;
-@property(retain,readonly) NSData * advertisementStringHash;
 
 + (bool)supportsSecureCoding;
 
-- (id)advertisementStringHash;
 - (id)advertisementData;
-- (id)companionIdentifier;
-- (id)continuationIdentifier;
-- (id)initWithAdvertisementData:(id)arg1 timestamp:(id)arg2 advertisementString:(id)arg3 advertisementStringHash:(id)arg4 isDomain:(bool)arg5 options:(id)arg6 deviceName:(id)arg7 fromDeviceID:(id)arg8;
+- (id)deviceModelIdentifier;
+- (id)initWithAdvertisementData:(id)arg1 advertisementPayload:(id)arg2 options:(id)arg3 deviceName:(id)arg4 fromDeviceID:(id)arg5;
+- (id)advertisementPayload;
 - (id)deviceIdentifier;
-- (id)domainName;
-- (id)timestamp;
+- (void)setActivityPayload:(id)arg1;
+- (id)activityPayload;
 - (id)deviceName;
 - (id)debugDescription;
 - (id)options;
-- (id)uniqueIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)activityType;
-- (void)setPayload:(id)arg1;
-- (id)payload;
 
 @end

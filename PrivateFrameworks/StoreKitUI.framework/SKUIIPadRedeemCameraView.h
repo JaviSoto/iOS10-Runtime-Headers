@@ -20,11 +20,11 @@
 @property(copy) NSString * text;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (void)_hideKeyboard;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
 - (void)_landingButtonAction:(id)arg1;
 - (void)_termsButtonAction:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)keyboardDidChange:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 - (bool)enabled;

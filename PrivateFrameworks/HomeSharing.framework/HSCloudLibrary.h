@@ -2,20 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSString, HSConnection;
+@class NSString, SSAccount, HSConnection;
 
 @interface HSCloudLibrary : NSObject  {
     NSString *_name;
     NSString *_uniqueIdentifier;
+    SSAccount *_account;
     HSConnection *_connection;
 }
 
 @property(copy,readonly) NSString * name;
 @property(copy,readonly) NSString * uniqueIdentifier;
+@property(readonly) SSAccount * account;
 @property(readonly) HSConnection * connection;
 
 
 - (id)initWithConnectionConfiguration:(id)arg1;
+- (id)account;
 - (id)connection;
 - (id)name;
 - (id)uniqueIdentifier;

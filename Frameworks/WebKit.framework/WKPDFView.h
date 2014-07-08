@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class UIScrollView, NSString, UIView;
+@class NSString, WKWebView, UIScrollView, UIView;
 
 @interface WKPDFView : UIView <WKWebViewContentProvider> {
     struct RetainPtr<UIPDFDocument> { 
@@ -19,16 +19,6 @@
         unsigned int m_capacity; 
         unsigned int m_size; 
     } _pages;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    } _documentFrame;
     unsigned int _centerPageNumber;
     struct CGSize { 
         double width; 
@@ -38,12 +28,7 @@
         double width; 
         double height; 
     } _overlaidAccessoryViewsInset;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    } _obscuredInsets;
+    WKWebView *_webView;
     UIScrollView *_scrollView;
     UIView *_fixedOverlayView;
 }
@@ -53,17 +38,16 @@
 
 
 - (void)web_setFixedOverlayView:(id)arg1;
+- (void)web_computedContentInsetDidChange;
 - (void)web_setOverlaidAccessoryViewsInset:(struct CGSize { double x1; double x2; })arg1;
-- (void)web_setObscuredInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)web_setScrollView:(id)arg1;
 - (void)web_setMinimumSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)web_setContentProviderData:(id)arg1 suggestedFilename:(id)arg2;
+- (id)web_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (struct CGPoint { double x1; double x2; })_offsetForPageNumberIndicator;
 - (void)_updatePageNumberIndicator;
 - (void)_revalidateViews;
 - (void)_computePageAndDocumentFrames;
 - (struct CGPDFDocument { }*)pdfDocument;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)suggestedFilename;
 - (void)dealloc;
 - (void).cxx_destruct;

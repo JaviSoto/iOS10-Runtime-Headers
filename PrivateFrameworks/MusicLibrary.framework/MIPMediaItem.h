@@ -194,13 +194,13 @@
 - (void)setHasStoreId:(bool)arg1;
 - (void)setStoreId:(long long)arg1;
 - (id)sortTitle;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (long long)storeId;
 - (bool)hasStoreId;
 - (id)libraryIdentifiers;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)longDescription;
 - (void)setMediaType:(int)arg1;
+- (id)longDescription;
 - (int)mediaType;
 - (void)setTitle:(id)arg1;
 - (id)title;

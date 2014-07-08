@@ -34,9 +34,9 @@
 - (void)operation:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
+- (id)callback;
 - (bool)success;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (id)callback;
 - (void)setSuccess:(bool)arg1;
 - (void)setCallback:(id)arg1;
 - (id)scripts;

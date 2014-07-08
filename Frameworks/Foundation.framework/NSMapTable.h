@@ -57,7 +57,7 @@
 - (void)removeAllItems;
 - (id)bs_takeObjectForKey:(id)arg1;
 - (id)CKAllKeys;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 
 @end

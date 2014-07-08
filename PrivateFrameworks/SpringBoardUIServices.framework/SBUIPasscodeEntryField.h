@@ -19,7 +19,6 @@
 @property(getter=_textField,readonly) UITextField * textField;
 
 
-- (id)_textField;
 - (void)_handleKeyUIEvent:(id)arg1 source:(int)arg2;
 - (void)notePasscodeFieldTextDidChange;
 - (bool)shouldInsertPasscodeText:(id)arg1;
@@ -30,6 +29,7 @@
 - (bool)_hasAnyCharacters;
 - (void)_deleteLastCharacter;
 - (void)_appendString:(id)arg1;
+- (id)_textField;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)customBackgroundColor;

@@ -9,6 +9,7 @@
 }
 
 @property(copy) NSString * effectFilterName;
+@property long long effectFilterVersion;
 @property(getter=isSmartToneEnabled) bool smartToneEnabled;
 @property double smartToneLevel;
 @property double brightnessLevelOffset;
@@ -24,6 +25,14 @@
 @property double colorVibrancyLevelOffset;
 @property double colorCastLevelOffset;
 @property(copy) NSDictionary * smartColorStatistics;
+@property(getter=isSmartBWEnabled) bool smartBWEnabled;
+@property double smartBWLevel;
+@property double bwStrengthLevelOffset;
+@property double bwNeutralGammaLevelOffset;
+@property double bwToneLevelOffset;
+@property double bwHueLevelOffset;
+@property double bwGrainLevelOffset;
+@property(copy) NSDictionary * smartBWStatistics;
 @property unsigned long long rotation;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedCropRect;
 @property double straightenAngle;
@@ -36,11 +45,19 @@
 - (void)removeRedEyeCorrections:(id)arg1;
 - (void)addRedEyeCorrections:(id)arg1;
 - (void)setCropConstraintWidth:(long long)arg1 height:(long long)arg2;
+- (void)setBwGrainLevelOffset:(double)arg1;
+- (void)setBwHueLevelOffset:(double)arg1;
+- (void)setBwToneLevelOffset:(double)arg1;
+- (void)setBwNeutralGammaLevelOffset:(double)arg1;
+- (void)setBwStrengthLevelOffset:(double)arg1;
+- (void)setSmartBWLevel:(double)arg1;
+- (void)setSmartBWEnabled:(bool)arg1;
+- (void)setSmartBWStatistics:(id)arg1;
 - (void)setColorCastLevelOffset:(double)arg1;
 - (void)setBlackPointLevelOffset:(double)arg1;
-- (void)computeSmartColorStatisticsFromImage:(id)arg1;
-- (void)computeSmartToneStatisticsFromImage:(id)arg1;
+- (void)setEffectFilterVersion:(long long)arg1;
 - (void)loadDataFromModel:(id)arg1;
+- (void)setOffsetInstanceVariable:(double*)arg1 toValue:(double)arg2;
 - (void)performChangesWithBlock:(id)arg1;
 - (void)setSmartColorEnabled:(bool)arg1;
 - (void)setColorVibrancyLevelOffset:(double)arg1;

@@ -27,6 +27,7 @@
 + (id)currentOperation;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)setName:(id)arg1;
 - (bool)isCancelled;
 - (void)main;
 - (void)setQueuePriority:(long long)arg1;
@@ -34,7 +35,6 @@
 - (void)setObservationInfo:(void*)arg1;
 - (void)waitUntilFinished;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)start;
 - (void)cancel;
 - (void)finalize;

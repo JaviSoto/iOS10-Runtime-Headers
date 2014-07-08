@@ -2,20 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSMutableDictionary, CPLPlatformObject, NSData, NSMutableArray;
+@class NSMutableArray, CPLPlatformObject;
 
 @interface CPLEngineTransientRepository : CPLEngineStorage <CPLAbstractObject> {
     unsigned long long _state;
     unsigned long long _popState;
-    bool*_usesInMemoryBatch;
-    NSMutableDictionary *_inMemoryChangesPerIdentifier;
-    NSData *_inMemoryTransientSyncAnchor;
     NSMutableArray *_remainingClassesToBePopped;
-    unsigned long long _maximumCountOfRecordsInMemory;
     unsigned long long _maximumCountOfRecordsInBatches;
 }
 
-@property unsigned long long maximumCountOfRecordsInMemory;
 @property unsigned long long maximumCountOfRecordsInBatches;
 @property(readonly) CPLPlatformObject * platformObject;
 
@@ -24,14 +19,15 @@
 
 - (void)setMaximumCountOfRecordsInBatches:(unsigned long long)arg1;
 - (unsigned long long)maximumCountOfRecordsInBatches;
-- (void)setMaximumCountOfRecordsInMemory:(unsigned long long)arg1;
-- (unsigned long long)maximumCountOfRecordsInMemory;
 - (bool)beginTransientRepositoryWithError:(id*)arg1;
+- (bool)deleteMingledRecordsWithError:(id*)arg1;
+- (bool)resetMingledRecordsWithError:(id*)arg1;
 - (bool)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
-- (bool)_appendBatchToStorage:(id)arg1 error:(id*)arg2;
-- (bool)appendBatch:(id)arg1 error:(id*)arg2;
+- (bool)_appendBatchToStorage:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
+- (bool)appendBatch:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
 - (id)_changeWithIdentifier:(id)arg1;
+- (bool)hasRecordWithIdentifier:(id)arg1;
 - (bool)storeTransientSyncAnchor:(id)arg1 error:(id*)arg2;
 - (id)transientSyncAnchor;
 - (bool)popChangeBatch:(id*)arg1 error:(id*)arg2;

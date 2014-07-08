@@ -76,9 +76,9 @@
 - (long long)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
-- (id)imageURL;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 - (void)showBanner;
+- (id)imageURL;
 - (void)selectChallengeablePlayerIDs:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)selectChallengeablePlayers:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;

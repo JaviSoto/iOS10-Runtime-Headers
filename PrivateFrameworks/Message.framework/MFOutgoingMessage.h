@@ -14,9 +14,9 @@
 - (void)setMutableHeaders:(id)arg1;
 - (id)mutableHeaders;
 - (id)messageBodyIfAvailable;
-- (unsigned long long)messageSize;
 - (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (id)messageStore;
+- (unsigned long long)messageSize;
 - (void)setMessageBody:(id)arg1;
 - (id)messageBody;
 - (id)headers;

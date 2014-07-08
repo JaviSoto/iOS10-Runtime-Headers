@@ -16,9 +16,8 @@
 - (float)globalTuning;
 - (float)masterGain;
 - (float)stereoPan;
-- (void)sendProgramChange:(unsigned char)arg1 bankMSB:(unsigned char)arg2 bankLSB:(unsigned char)arg3 onChannel:(unsigned char)arg4;
 - (bool)loadAudioFilesAtURLs:(id)arg1 error:(id*)arg2;
-- (bool)loadSoundBankAtURL:(id)arg1 error:(id*)arg2;
+- (bool)loadSoundBankInstrumentAtURL:(id)arg1 program:(unsigned char)arg2 bankMSB:(unsigned char)arg3 bankLSB:(unsigned char)arg4 error:(id*)arg5;
 - (bool)loadInstrumentAtURL:(id)arg1 error:(id*)arg2;
 - (id)initWithAudioComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
 - (id)init;

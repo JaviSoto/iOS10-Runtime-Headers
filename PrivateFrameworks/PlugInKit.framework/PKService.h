@@ -20,9 +20,9 @@
 @property(retain) NSObject<OS_dispatch_queue> * _sync;
 @property(retain) NSArray * subsystems;
 
++ (int)_defaultRun:(int)arg1 arguments:(const char **)arg2;
 + (id)defaultService;
 + (void)main;
-+ (int)_defaultRun:(int)arg1 arguments:(const char **)arg2;
 
 - (id)connectionForPlugInNamed:(id)arg1;
 - (id)embeddedPrincipalForPlugInNamed:(id)arg1;
@@ -44,9 +44,9 @@
 - (void)set_sync:(id)arg1;
 - (void)setPersonalities:(id)arg1;
 - (bool)unregisterPersonality:(id)arg1;
-- (id)subsystems;
 - (id)personalities;
 - (void)registerPersonality:(id)arg1;
+- (id)subsystems;
 - (void)run;
 - (id)init;
 - (void)setDelegate:(id)arg1;

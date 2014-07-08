@@ -42,8 +42,8 @@
 - (id)mediaURLString;
 - (void)_playbackStateChanged:(id)arg1;
 - (long long)playbackState;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setMediaType:(long long)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (long long)mediaType;
 - (void)setDelegate:(id)arg1;

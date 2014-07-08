@@ -7,7 +7,7 @@
 }
 
 
-- (void)setOrientation:(int)arg1;
 - (int)orientation;
+- (void)setOrientation:(int)arg1;
 
 @end

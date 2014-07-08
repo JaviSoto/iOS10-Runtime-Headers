@@ -15,6 +15,11 @@
     bool_suspended;
     double _tracePlaybackSpeedMultiplier;
     unsigned long long _behavior;
+    struct VKPoint { 
+        double x; 
+        double y; 
+        double z; 
+    } _lastProjectedPosition;
     GEORouteMatch *_lastProjectedLocation;
 }
 
@@ -40,6 +45,7 @@
 - (void)start;
 - (id)delegate;
 - (void)dealloc;
+- (id).cxx_construct;
 - (void)stop;
 - (id)target;
 - (void)_step;

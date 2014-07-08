@@ -30,6 +30,7 @@
 
 - (void)setAssetIds:(struct __CFArray { }*)arg1;
 - (struct __CFArray { }*)assetIds;
+- (id)contentString;
 - (void)setOwningGroupId:(unsigned long long)arg1;
 - (unsigned long long)owningGroupId;
 - (void)setGroupId:(unsigned long long)arg1;
@@ -38,7 +39,6 @@
 - (unsigned long long)tokenRangesCount;
 - (long long)compareToGroup:(id)arg1;
 - (void)prepareFromStatement:(struct sqlite3_stmt { }*)arg1;
-- (id)contentString;
 - (short)category;
 - (id)init;
 - (bool)isEqual:(id)arg1;

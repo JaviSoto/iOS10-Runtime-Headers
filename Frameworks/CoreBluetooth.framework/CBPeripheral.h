@@ -93,10 +93,10 @@
 - (id)initWithCentralManager:(id)arg1 dictionary:(id)arg2;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
+- (void)setName:(id)arg1;
 - (bool)isConnected;
 - (void)setDelegate:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (void)setState:(long long)arg1;
 - (long long)state;

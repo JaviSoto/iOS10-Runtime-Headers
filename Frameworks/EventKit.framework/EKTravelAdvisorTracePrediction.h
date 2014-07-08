@@ -16,12 +16,12 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)prediction;
 - (id)initWithDate:(id)arg1 prediction:(id)arg2 delay:(double)arg3;
 - (double)delay;
 - (id)date;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (id)prediction;
 
 @end

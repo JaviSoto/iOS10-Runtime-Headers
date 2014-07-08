@@ -42,6 +42,7 @@
 + (id)profileInstallationErrorWithUnderlyingError:(id)arg1;
 + (id)sharedConnection;
 
+- (bool)isCloudSyncAllowed:(id)arg1;
 - (void)lockDevice;
 - (void)recomputeUserComplianceWarning;
 - (bool)isAutomaticAppUpdatesModificationAllowed;
@@ -71,6 +72,7 @@
 - (void)installProfileDataStoredForPurpose:(int)arg1 completionBlock:(id)arg2;
 - (bool)shouldShowCloudConfigurationUI;
 - (bool)shouldSkipSetupPanes;
+- (void)storeCloudConfigurationDetails:(id)arg1;
 - (void)cloudConfigurationUIDidCompleteWasApplied:(bool)arg1;
 - (bool)wasTeslaCloudConfigurationApplied;
 - (bool)wasCloudConfigurationApplied;
@@ -80,7 +82,7 @@
 - (void)markStoredProfileForPurposeAsInstalled:(int)arg1;
 - (bool)activationRecordIndicatesCloudConfigurationIsAvailable;
 - (void)retrieveCloudConfigurationDetailsCompletionBlock:(id)arg1;
-- (void)storeCloudConfigurationDetails:(id)arg1;
+- (void)storeCloudConfigurationDetails:(id)arg1 completion:(id)arg2;
 - (id)autonomousSingleAppModePermittedBundleIDs;
 - (void)parentalControlsSetAllowPasscodeAccessToNonWhitelistedApps:(bool)arg1;
 - (bool)parentalControlsAllowPasscodeAccessToNonWhitelistedApps;
@@ -125,7 +127,6 @@
 - (id)activationLockBypassKey;
 - (bool)isSpotlightInternetResultsAllowed;
 - (id)appsRestrictedFromCloudSync;
-- (bool)isCloudSyncAllowed:(id)arg1;
 - (bool)isFeatureO1Allowed;
 - (bool)isFeatureS1Allowed;
 - (bool)hasAppAnalyticsAllowedBeenSet;
@@ -254,6 +255,7 @@
 - (void)removeProfileAsyncWithIdentifier:(id)arg1;
 - (void)removeProfileWithIdentifier:(id)arg1;
 - (id)installProfileData:(id)arg1 outError:(id*)arg2;
+- (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 forBundleID:(id)arg3 outError:(id*)arg4;
 - (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 outError:(id*)arg3;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
 - (id)popProfileDataFromHeadOfInstallationQueue;
@@ -287,7 +289,7 @@
 - (bool)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
 - (id)passcodeExpiryDateOutError:(id*)arg1;
 - (bool)isPasscodeRequiredByProfiles;
-- (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 transitionToUI:(bool)arg3 outError:(id*)arg4;
+- (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 originatingBundleID:(id)arg3 transitionToUI:(bool)arg4 outError:(id*)arg5;
 - (void)checkInIfNeeded;
 - (id)defaultValueForSetting:(id)arg1;
 - (bool)isSupervised;
@@ -332,9 +334,9 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)_init;
+- (id)allowedOpenInAppBundleIDsAfterApplyingFilterToAppBundleIDs:(id)arg1 originatingAppBundleID:(id)arg2 originatingAccountIsManaged:(bool)arg3;
 - (bool)mayShareToMessagesOriginatingAccountIsManaged:(bool)arg1;
 - (int)effectiveBoolValueForSetting:(id)arg1;
-- (id)allowedOpenInAppBundleIDsAfterApplyingFilterToAppBundleIDs:(id)arg1 originatingAppBundleID:(id)arg2 originatingAccountIsManaged:(bool)arg3;
 - (void)allowedKeyboardBundleIDsAfterApplyingFilterToBundleIDs:(id)arg1 hostAppBundleID:(id)arg2 accountIsManaged:(bool)arg3 completion:(id)arg4;
 - (void)setInteractionDelegate:(id)arg1;
 - (bool)isAutomaticAppUpdatesAllowed;

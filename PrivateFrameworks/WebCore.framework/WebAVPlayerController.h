@@ -86,12 +86,12 @@
 + (id)keyPathsForValuesAffectingHasLiveStreamingContent;
 + (id)keyPathsForValuesAffectingPlaying;
 
-- (void)setStatus:(long long)arg1;
-- (long long)status;
 - (void)play:(id)arg1;
 - (bool)isPlaying;
 - (void)setRate:(double)arg1;
 - (double)rate;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 - (void)setExternalPlaybackAirPlayDeviceLocalizedName:(id)arg1;
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (void)setExternalPlaybackType:(long long)arg1;
@@ -128,9 +128,9 @@
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
 - (id)currentAudioMediaSelectionOption;
 - (bool)hasMediaSelectionOptions;
-- (void)seekToEnd:(id)arg1;
+- (void)seekChapterForward:(id)arg1;
 - (bool)canSeekToEnd;
-- (void)seekToBeginning:(id)arg1;
+- (void)seekChapterBackward:(id)arg1;
 - (bool)canSeekToBeginning;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
@@ -151,6 +151,8 @@
 - (id)audioMediaSelectionOptions;
 - (bool)hasLegibleMediaSelectionOptions;
 - (bool)hasAudioMediaSelectionOptions;
+- (void)seekToEnd:(id)arg1;
+- (void)seekToBeginning:(id)arg1;
 - (bool)canPlay;
 - (void)seekToTime:(double)arg1;
 - (id)timing;

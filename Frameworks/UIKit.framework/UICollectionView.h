@@ -99,7 +99,9 @@
     UICollectionViewLayout *_nextLayoutForInteractiveTranstion;
     NSMutableDictionary *_interactiveTransitionValueTrackingDict;
     NSMutableArray *_trackedValuesKeys;
-    NSMutableDictionary *_invalidatedAttributes;
+    NSMutableSet *_invalidatedItemIndexPaths;
+    NSMutableDictionary *_invalidatedSupplementaryIndexPaths;
+    NSMutableDictionary *_invalidatedDecorationIndexPaths;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -182,7 +184,6 @@
 - (void)reloadSections:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (void)insertSections:(id)arg1;
-- (id)_currentUpdate;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerNib:(id)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerNib:(id)arg1 forCellWithReuseIdentifier:(id)arg2;
@@ -195,7 +196,6 @@
 - (id)startInteractiveTransitionToCollectionViewLayout:(id)arg1 completion:(id)arg2;
 - (void)setCollectionViewLayout:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)setCollectionViewLayout:(id)arg1 animated:(bool)arg2;
-- (id)_visibleCellForIndexPath:(id)arg1;
 - (bool)_highlightItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
 - (id)_collectionViewData;
 - (bool)_dataSourceImplementsNumberOfSections;
@@ -234,6 +234,7 @@
 - (void)_setCollectionViewLayout:(id)arg1 animated:(bool)arg2 isInteractive:(bool)arg3 completion:(id)arg4;
 - (void)_highlightFirstVisibleItemIfAppropriate;
 - (void)_updateVisibleCellsNow:(bool)arg1;
+- (id)_visibleCellForIndexPath:(id)arg1;
 - (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(bool)arg8 customAnimationsType:(unsigned long long)arg9;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(bool)arg4;
@@ -263,8 +264,8 @@
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
-- (void)reloadItemsAtIndexPaths:(id)arg1;
 - (id)indexPathForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)reloadItemsAtIndexPaths:(id)arg1;
 - (void)performBatchUpdates:(id)arg1 completion:(id)arg2;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (bool)_visible;
@@ -283,6 +284,7 @@
 - (void)selectItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
 - (id)indexPathsForSelectedItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (id)_currentUpdate;
 - (id)_currentTouch;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (bool)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;

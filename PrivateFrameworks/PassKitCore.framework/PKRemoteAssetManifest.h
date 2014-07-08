@@ -15,8 +15,8 @@
 @property(readonly) NSDictionary * remoteAssets;
 
 
-- (id)deviceSpecificAssetForScreenScale:(double)arg1 suffix:(id)arg2;
 - (id)remoteAssets;
+- (id)deviceSpecificAssetForScreenScale:(double)arg1 suffix:(id)arg2;
 - (id)initWithFileURL:(id)arg1 passURL:(id)arg2 error:(id*)arg3;
 - (id)deviceSpecificAsset;
 - (id)name;

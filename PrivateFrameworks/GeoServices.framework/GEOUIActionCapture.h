@@ -28,6 +28,7 @@
 - (void)setHasSequenceNumber:(bool)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

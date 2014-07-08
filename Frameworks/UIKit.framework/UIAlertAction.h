@@ -11,6 +11,7 @@
 @interface UIAlertAction : NSObject <NSCopying> {
     bool_enabled;
     bool_checked;
+    bool__isDefault;
     NSString *_title;
     long long _style;
 
@@ -29,6 +30,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _shouldDismissHandler;
 
+    NSString *__descriptiveText;
     <_UIAlertActionRepresenting> *__representer;
 }
 
@@ -39,8 +41,11 @@
 @property(copy) id simpleHandler;
 @property(retain) UIImage * image;
 @property(copy) id shouldDismissHandler;
+@property(setter=_setDescriptiveText:,copy) NSString * _descriptiveText;
 @property(setter=_setRepresenter:) <_UIAlertActionRepresenting> * _representer;
+@property(setter=_setIsDefault:) bool _isDefault;
 
++ (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(long long)arg4 handler:(id)arg5 shouldDismissHandler:(id)arg6;
 + (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 handler:(id)arg4 shouldDismissHandler:(id)arg5;
 + (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3;
 
@@ -57,9 +62,13 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)_setRepresenter:(id)arg1;
+- (id)_descriptiveText;
 - (id)_representer;
 - (bool)_isChecked;
+- (bool)_isDefault;
+- (void)_setIsDefault:(bool)arg1;
 - (void)_setChecked:(bool)arg1;
+- (void)_setDescriptiveText:(id)arg1;
 - (id)simpleHandler;
 - (id)shouldDismissHandler;
 - (void)setShouldDismissHandler:(id)arg1;

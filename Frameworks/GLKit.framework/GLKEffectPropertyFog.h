@@ -65,9 +65,9 @@
 - (bool)includeFshShaderTextForRootNode:(id)arg1;
 - (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (void)dirtyAllUniforms;
+- (unsigned char)enabled;
 - (void)setStart:(float)arg1;
 - (void)setEnd:(float)arg1;
-- (unsigned char)enabled;
 - (void)setEnabled:(unsigned char)arg1;
 - (void)setDensity:(float)arg1;
 - (float)density;

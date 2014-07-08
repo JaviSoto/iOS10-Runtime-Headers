@@ -30,10 +30,10 @@
 - (void)setDownloadID:(id)arg1;
 - (id)timeRemaining;
 - (id)downloadState;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)contentURL;
 - (void)setContentURL:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)contentLength;
 - (void)setContentLength:(id)arg1;
 - (void)setError:(id)arg1;

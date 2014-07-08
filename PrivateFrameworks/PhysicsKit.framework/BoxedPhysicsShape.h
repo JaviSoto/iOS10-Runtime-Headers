@@ -9,9 +9,9 @@
     NSArray *points;
 }
 
-+ (id)boxPhysicsShape:(struct PKPhysicsShape { struct b2FixtureDef { struct b2Shape {} *x_1_1_1; void *x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; struct b2Filter { unsigned int x_8_2_1; unsigned int x_8_2_2; unsigned int x_8_2_3; } x_1_1_8; } x1; struct b2Fixture {} *x2; }*)arg1;
++ (id)boxPhysicsShape:(struct PKPhysicsShape { struct b2FixtureDef { struct b2Shape {} *x_1_1_1; void *x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; } x1; struct b2Fixture {} *x2; }*)arg1;
 
-- (struct PKPhysicsShape { struct b2FixtureDef { struct b2Shape {} *x_1_1_1; void *x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; struct b2Filter { unsigned int x_8_2_1; unsigned int x_8_2_2; unsigned int x_8_2_3; } x_1_1_8; } x1; struct b2Fixture {} *x2; }*)unboxShape;
+- (struct PKPhysicsShape { struct b2FixtureDef { struct b2Shape {} *x_1_1_1; void *x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; } x1; struct b2Fixture {} *x2; }*)unboxShape;
 - (void).cxx_destruct;
 
 @end

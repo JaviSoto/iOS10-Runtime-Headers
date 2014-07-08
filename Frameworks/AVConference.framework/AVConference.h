@@ -17,6 +17,8 @@
     CALayer *remoteSubLayerFront;
     CALayer *remoteSubLayerBack;
     boolshouldDisplayVideoInfoLayer;
+    bool_isUsingFrontCamera;
+    int _localCellTech;
     boolshouldDisplayVideoInfoLayer_;
     boolshouldDisplayNetworkQualityGraph_;
     NSTimer *networkQualityUpdateTimer_;
@@ -173,9 +175,9 @@
 - (void)setShouldDisplayNetworkQualityGraph:(bool)arg1;
 - (void)updateGKSConnectivitySettings;
 - (void)handleGKSConnectivitySettingsUpdate:(id)arg1;
+- (void)stopCallID:(long long)arg1;
 - (bool)startConnectionWithCallID:(long long)arg1 usingInviteData:(id)arg2 isCaller:(bool)arg3 relayResponseDict:(id)arg4 didOriginateRelayRequest:(bool)arg5 capabilities:(id)arg6 idsSocket:(int)arg7 error:(id*)arg8;
 - (long long)initializeNewCallWithDeviceRole:(int)arg1;
-- (void)stopCallID:(long long)arg1;
 - (void)setMicrophoneMuted:(bool)arg1;
 - (bool)isMicrophoneMuted;
 - (id)init;

@@ -235,12 +235,12 @@
 - (float)puckSize;
 - (double)tracePlaybackSpeedMultiplier;
 - (void)stopPanning:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startPanning:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)canZoomOut;
 - (bool)canZoomIn;
 - (bool)isAtDefaultZoomScale;
 - (void)setZoomStyle:(int)arg1;
 - (void)startWithPounce:(bool)arg1 pounceCompletionHandler:(id)arg2;
+- (void)startPanning:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPanStyle:(int)arg1;
 - (void)setShouldLimitTopDownHeight:(bool)arg1;
 - (void)zoom:(double)arg1 relativeToPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id)arg3;

@@ -57,10 +57,10 @@
 - (int)airPlayMode;
 - (bool)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)setPreviewMode:(int)arg1;
-- (void)cancelLoad;
 - (void)loadWithHints:(id)arg1;
 - (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
+- (void)cancelLoad;
 - (void)dealloc;
 - (struct CGPoint { double x1; double x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { double x1; double x2; })arg2;
 - (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;

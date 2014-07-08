@@ -25,8 +25,8 @@
 - (double)doubleForColumnIndex:(unsigned long long)arg1;
 - (id)numberForColumnIndex:(unsigned long long)arg1;
 - (int)intForColumnIndex:(unsigned long long)arg1;
-- (id)stringForColumnIndex:(unsigned long long)arg1;
 - (id)stringForColumnName:(id)arg1;
+- (id)stringForColumnIndex:(unsigned long long)arg1;
 - (id)parentResult;
 - (long long)int64ForColumnIndex:(unsigned long long)arg1;
 - (id)valueForColumnIndex:(unsigned long long)arg1;

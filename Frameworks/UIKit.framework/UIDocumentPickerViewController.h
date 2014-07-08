@@ -4,7 +4,7 @@
 
 @class <UIDocumentPickerDelegate>, _UIDocumentPickerRemoteViewController, _UIRemoteViewService;
 
-@interface UIDocumentPickerViewController : UIViewController <_UIDocumentPickerViewControllerHost> {
+@interface UIDocumentPickerViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining> {
     <UIDocumentPickerDelegate> *_weak_delegate;
     unsigned long long _documentPickerMode;
     _UIDocumentPickerRemoteViewController *_remoteViewController;
@@ -37,7 +37,7 @@
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
 - (void)_dismissViewController;
-- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (void)_didSelectURL:(id)arg1;
 - (id)initWithURL:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned long long)arg2;
 - (void)_commonInitWithCompletion:(id)arg1;

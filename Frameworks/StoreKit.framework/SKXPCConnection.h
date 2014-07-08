@@ -38,8 +38,8 @@
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
-- (void)sendMessage:(id)arg1;
 - (id)init;
+- (void)sendMessage:(id)arg1;
 - (void)dealloc;
 
 @end

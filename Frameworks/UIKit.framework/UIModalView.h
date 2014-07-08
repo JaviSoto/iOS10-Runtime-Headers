@@ -169,6 +169,7 @@
 - (long long)bodyMaxLineCount;
 - (void)setBodyTextMaxLineCount:(long long)arg1;
 - (long long)titleMaxLineCount;
+- (void)setTitleMaxLineCount:(long long)arg1;
 - (long long)suspendTag;
 - (void)setSuspendTag:(long long)arg1;
 - (void)layoutAnimated:(bool)arg1;
@@ -200,13 +201,12 @@
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(long long)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)textField;
 - (long long)textFieldCount;
+- (long long)numberOfButtons;
 - (bool)runsModal;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;
-- (long long)numberOfButtons;
-- (void)setTitleMaxLineCount:(long long)arg1;
 - (void)dismissAnimated:(bool)arg1;
 - (void)dismiss;
 - (id)keyboard;

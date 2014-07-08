@@ -74,6 +74,7 @@
 - (void)setRenditionType:(long long)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setScaleFactor:(unsigned long long)arg1;
+- (void)setName:(id)arg1;
 - (long long)subtype;
 - (unsigned long long)graphicsClass;
 - (unsigned long long)memoryClass;
@@ -90,7 +91,6 @@
 - (long long)templateRenderingMode;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (id)fileURL;
 - (void)dealloc;

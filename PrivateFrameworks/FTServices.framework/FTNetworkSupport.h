@@ -25,7 +25,6 @@
 - (bool)willSearchForNetwork;
 - (bool)validNetworkActive;
 - (bool)validNetworkEnabled;
-- (void)setEnableCriticalReliability:(bool)arg1;
 - (void)_tryToEnableReliability;
 - (void)_reallySetCriticalReliability:(bool)arg1;
 - (void)_setReliabilityTimeoutInterval;
@@ -36,6 +35,7 @@
 - (bool)wiFiActiveAndReachable;
 - (void)_clearReliabilityTimeoutInterval;
 - (bool)validNetworkReachable;
+- (void)setEnableCriticalReliability:(bool)arg1;
 - (bool)allowAnyNetwork;
 
 @end

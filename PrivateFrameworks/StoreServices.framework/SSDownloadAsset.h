@@ -33,11 +33,11 @@
 - (long long)bytesUploadTotal;
 - (long long)bytesUploaded;
 - (id)_copyURLRequestProperties;
-- (id)copyXPCEncoding;
 - (id)initWithURLRequestProperties:(id)arg1;
 - (void)_resetLocalIVars;
 - (long long)_legacyAssetType;
 - (id)sinfs;
+- (id)copyXPCEncoding;
 - (long long)assetType;
 - (bool)isExternal;
 - (long long)bytesDownloaded;

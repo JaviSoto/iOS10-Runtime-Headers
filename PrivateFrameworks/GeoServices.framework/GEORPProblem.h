@@ -51,6 +51,7 @@
 - (void)setProblemContext:(id)arg1;
 - (void)setProblemCorrections:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned int)protocolVersion;

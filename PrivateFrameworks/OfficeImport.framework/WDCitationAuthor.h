@@ -13,9 +13,9 @@
 @property(retain) NSString * last;
 
 
-- (void)setLast:(id)arg1;
-- (id)last;
 - (id)initWithFirst:(id)arg1 last:(id)arg2;
+- (id)last;
+- (void)setLast:(id)arg1;
 - (id)first;
 - (void)setFirst:(id)arg1;
 - (void)dealloc;

@@ -71,7 +71,6 @@
 - (void)setUpAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setFrameRate:(double)arg1;
 - (double)frameRate;
-- (id)_physicsWorldCreateIfNeeded:(bool)arg1;
 - (id)initWithSceneRef:(struct __C3DScene { }*)arg1;
 - (void)_setRootNode:(id)arg1;
 - (void)removeParticleSystem:(id)arg1;
@@ -79,6 +78,7 @@
 - (id)particleSystems;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 property:(id)arg2;
 - (void)_syncObjCModel;
+- (id)_physicsWorldCreateIfNeeded:(bool)arg1;
 - (bool)isPausedOrPausedByInheritance;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
 - (void*)__CFObject;
@@ -89,11 +89,11 @@
 - (void)setLibrary:(struct __C3DLibrary { }*)arg1;
 - (void)setPlaybackSpeed:(float)arg1;
 - (float)playbackSpeed;
-- (void)setEndTime:(double)arg1;
-- (double)endTime;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (id)attributeForKey:(id)arg1;
 - (void)setPaused:(bool)arg1;
+- (void)setEndTime:(double)arg1;
+- (double)endTime;
 - (bool)isPaused;
 - (id)root;
 - (id)init;

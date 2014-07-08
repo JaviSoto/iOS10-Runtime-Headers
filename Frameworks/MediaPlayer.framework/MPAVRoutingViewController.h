@@ -2,17 +2,19 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, MPAVRoutingController, <MPAVRoutingViewControllerDelegate>, UITableView;
+@class NSArray, MPAVRoutingController, <MPAVRoutingViewControllerDelegate>, MPWeakTimer, UITableView;
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
     NSArray *_cachedRoutes;
+    MPWeakTimer *_updateTimer;
     MPAVRoutingController *_routingController;
     int _airPlayPasswordAlertDidAppearToken;
     int _airPlayPasswordAlertDidCancelToken;
     bool_airPlayPasswordAlertDidAppearTokenIsValid;
     bool_cachedShowAirPlayDebugButton;
     bool_hasCachedAirPlayDebugButtonStatus;
+    bool_needsDisplayedRoutesUpdate;
     bool_allowMirroring;
     unsigned long long _style;
     <MPAVRoutingViewControllerDelegate> *_delegate;
@@ -30,6 +32,8 @@
 - (unsigned long long)avItemType;
 - (double)_tableViewHeightAccordingToDataSource;
 - (void)setAVItemType:(unsigned long long)arg1;
+- (void)_setupUpdateTimerIfNecessary;
+- (void)_updateDisplayedRoutes;
 - (double)_expandedCellHeight;
 - (double)_normalCellHeight;
 - (unsigned long long)_tableViewIndexForRouteIndex:(unsigned long long)arg1;
@@ -40,7 +44,7 @@
 - (unsigned long long)_routeIndexForTableViewIndex:(unsigned long long)arg1;
 - (bool)_shouldShowAirPlayDebugButton;
 - (id)_displayedRoutes;
-- (void)_updateDisplayedRoutes;
+- (void)_setNeedsDisplayedRoutesUpdate;
 - (id)_routesWhereMirroringIsPreferred;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(bool)arg2;

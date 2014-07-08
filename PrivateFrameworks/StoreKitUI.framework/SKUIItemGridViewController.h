@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemCollectionController, UICollectionView, SKUIUber, NSMutableIndexSet, NSMutableArray, <SKUIItemGridDelegate>, SKUIIconDataConsumer, NSOperationQueue, NSArray, SKUIClientContext, SKUIItemArtworkContext, UIImage;
+@class SKUIItemCollectionController, UICollectionView, SKUIUber, NSMutableIndexSet, NSMutableArray, SKUIStyledImageDataConsumer, <SKUIItemGridDelegate>, NSOperationQueue, NSArray, SKUIClientContext, SKUIItemArtworkContext, UIImage;
 
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
@@ -27,7 +27,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property struct CGPoint { double x1; double x2; } contentOffset;
 @property <SKUIItemGridDelegate> * delegate;
-@property(retain) SKUIIconDataConsumer * iconDataConsumer;
+@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
 @property(retain) SKUIItemArtworkContext * artworkContext;
 @property struct CGSize { double x1; double x2; } imageBoundingSize;
 @property(copy) NSArray * items;
@@ -36,6 +36,7 @@
 
 
 - (long long)_numberOfColumnsForOrientation:(long long)arg1;
+- (void)itemCollectionView:(id)arg1 didPerformEditActionForCell:(id)arg2;
 - (void)unhideIcons;
 - (void)setItemCellClass:(Class)arg1;
 - (id)popIconImageViewForItemAtIndex:(long long)arg1;
@@ -43,6 +44,7 @@
 - (void)setIconDataConsumer:(id)arg1;
 - (void)loadNextPageOfArtworkWithReason:(long long)arg1;
 - (id)iconDataConsumer;
+- (void)removeItemsAtIndexes:(id)arg1;
 - (void)_reloadLayout;
 - (struct CGSize { double x1; double x2; })imageBoundingSize;
 - (bool)shouldCacheAheadWhenIdleForItemCollectionController:(id)arg1;

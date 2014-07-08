@@ -54,6 +54,7 @@
 + (bool)_allowsRasterization;
 + (bool)_allowsParallax;
 
+- (void)setZoomFactor:(double)arg1;
 - (void)setParallaxAxisAdjustmentAngle:(double)arg1;
 - (double)parallaxAxisAdjustmentAngle;
 - (bool)suppressesGradients;
@@ -65,6 +66,7 @@
 - (void)setContinuousColorSamplingEnabled:(bool)arg1;
 - (bool)continuousColorSamplingEnabled;
 - (bool)filtersAverageColor;
+- (double)zoomFactor;
 - (id)legibilityObserver;
 - (bool)luminanceInRectRequiresTreatments:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)wantsRasterization;
@@ -126,8 +128,6 @@
 - (bool)supportsCropping;
 - (double)cropZoomScale;
 - (void)setLegibilityObserver:(id)arg1;
-- (double)zoomFactor;
-- (void)setZoomFactor:(double)arg1;
 - (bool)_isVisible;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)setHidden:(bool)arg1;

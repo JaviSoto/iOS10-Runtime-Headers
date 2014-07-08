@@ -55,7 +55,6 @@
 + (void)initialize;
 + (void)flushLog;
 
-- (id)capabilities;
 - (void)logReadChars:(const char *)arg1 length:(unsigned long long)arg2;
 - (double)lastUsedTime;
 - (void)setIsFetching:(bool)arg1;
@@ -81,6 +80,7 @@
 - (void)enableThroughputMonitoring:(bool)arg1;
 - (bool)authenticateUsingAccount:(id)arg1;
 - (bool)connectUsingFallbacksForAccount:(id)arg1;
+- (id)capabilities;
 - (bool)isFetching;
 - (bool)writeData:(id)arg1;
 - (bool)hasBytesAvailable;

@@ -106,7 +106,6 @@
      /* Encoded args for previous method: v40@0:816q32 */
 
 - (void)translateByX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
-- (double)zoomFactor;
 - (void)zoomBy:(float)arg1;
 - (void)rotateOf:(double)arg1;
 - (bool)isViewingAnObject;
@@ -157,6 +156,7 @@
 - (void)cameraWillChange;
 - (void)sceneDidChange;
 - (void)sceneWillChange;
+- (double)zoomFactor;
 - (void)setFriction:(double)arg1;
 - (double)friction;
 - (void)viewWillDraw;

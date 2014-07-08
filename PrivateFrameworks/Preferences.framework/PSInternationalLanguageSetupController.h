@@ -16,7 +16,7 @@
 
 - (id)language:(id)arg1;
 - (id)initWithOfficialLanguages;
-- (void)showBlackViewWithLabel:(id)arg1 moveLanguageToTop:(bool)arg2;
+- (void)showBlackViewWithLabel:(id)arg1 moveLanguageToTop:(bool)arg2 withLanguageIdentifier:(id)arg3;
 - (void)changeLanguageWithIndex:(unsigned long long)arg1 tag:(unsigned long long)arg2;
 - (void)saveLanguage:(bool)arg1;
 - (void)didFinishCommit;

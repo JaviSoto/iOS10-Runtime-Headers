@@ -33,6 +33,7 @@
 @property(readonly) struct __CLClient { }* internalClient;
 @property(getter=isPersistentMonitoringEnabled) bool persistentMonitoringEnabled;
 @property(getter=isLocationServicesPreferencesDialogEnabled) bool locationServicesPreferencesDialogEnabled;
+@property(getter=isDynamicAccuracyReductionEnabled) bool dynamicAccuracyReductionEnabled;
 
 + (bool)isRangingAvailable;
 + (bool)mapCorrectionAvailable;
@@ -87,7 +88,6 @@
 - (int)headingOrientation;
 - (void)setMatchInfoEnabled:(bool)arg1;
 - (bool)isMatchInfoEnabled;
-- (void)setActivityType:(long long)arg1;
 - (bool)isLocationServicesPreferencesDialogEnabled;
 - (double)desiredAccuracy;
 - (void)stopUpdatingVehicleHeading;
@@ -109,6 +109,8 @@
 - (void)stopMonitoringVisits;
 - (void)startMonitoringVisits;
 - (void)registerAsLocationClient;
+- (void)setDynamicAccuracyReductionEnabled:(bool)arg1;
+- (bool)isDynamicAccuracyReductionEnabled;
 - (void)setPersistentMonitoringEnabled:(bool)arg1;
 - (bool)isPersistentMonitoringEnabled;
 - (id)technologiesInUse;
@@ -173,11 +175,12 @@
 - (void)stopUpdatingLocation;
 - (void)requestWhenInUseAuthorization;
 - (bool)locationServicesEnabled;
+- (void)setActivityType:(long long)arg1;
+- (long long)activityType;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (long long)activityType;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 
 @end

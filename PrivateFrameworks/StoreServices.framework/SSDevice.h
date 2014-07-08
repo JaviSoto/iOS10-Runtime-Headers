@@ -45,6 +45,7 @@
 + (id)copyCachedAvailableItemKinds;
 + (id)currentDevice;
 
+- (void)getAvailableItemKindsWithBlock:(id)arg1;
 - (bool)isStoreFrontIdentifierTransient;
 - (unsigned int)deviceTypeIdentifier;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
@@ -71,7 +72,6 @@
 - (void)setCellularNetworkingAllowed:(bool)arg1;
 - (void)loadStoreFrontWithCompletionHandler:(id)arg1;
 - (void)getCellularNetworkingAllowedWithBlock:(id)arg1;
-- (void)getAvailableItemKindsWithBlock:(id)arg1;
 - (id)copyStoreFrontRequestHeaders;
 - (id)_userAgentClientNameForAppleTVBundleID:(id)arg1;
 - (id)_appleTVProductVersion;
@@ -111,8 +111,8 @@
 - (id)cloudMediaLibraryIdentifier;
 - (id)synchedStoreFrontIdentifier;
 - (long long)deviceType;
-- (id)productType;
 - (id)productVersion;
+- (id)productType;
 - (id)init;
 - (void)dealloc;
 - (double)batteryLevel;

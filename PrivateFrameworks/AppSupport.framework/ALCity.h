@@ -39,6 +39,7 @@
 
 - (void)setIdentifier:(int)arg1;
 - (int)identifier;
+- (void)setName:(id)arg1;
 - (void)setUnlocalizedCountryOverride:(id)arg1;
 - (void)setYahooCode:(id)arg1;
 - (id)yahooCode;
@@ -68,7 +69,6 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)properties;
 - (id)initWithProperties:(id)arg1;
 - (void)dealloc;

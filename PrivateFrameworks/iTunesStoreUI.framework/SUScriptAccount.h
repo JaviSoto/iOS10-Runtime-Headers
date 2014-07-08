@@ -42,10 +42,10 @@
 - (void)setSocialEnabled:(id)arg1;
 - (id)ITunesPassSerialNumber;
 - (void)setSecureToken:(id)arg1;
+- (id)kind;
 - (void)setKind:(id)arg1;
 - (id)account;
 - (void)setAccount:(id)arg1;
-- (id)kind;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)attributeKeys;

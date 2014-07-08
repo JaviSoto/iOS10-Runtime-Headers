@@ -145,6 +145,7 @@
 - (id)versionHash;
 - (id)renamingIdentifier;
 - (id)propertiesByName;
+- (void)setName:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)attributeKeys;
 - (id)init;
@@ -153,7 +154,6 @@
 - (unsigned long long)hash;
 - (id)name;
 - (id)userInfo;
-- (void)setName:(id)arg1;
 - (id)properties;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

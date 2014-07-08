@@ -19,11 +19,10 @@
 - (void)setSearchFieldText:(id)arg1;
 - (void)setSearchFieldPlaceholderText:(id)arg1;
 - (bool)searchFieldControllerShouldBeginEditing:(id)arg1;
-- (void)searchFieldController:(id)arg1 requestSearchWithSearchTerm:(id)arg2 metricsEvent:(id)arg3;
-- (void)searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2 metricsEvent:(id)arg3;
+- (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (id)_sharedResultsViewController;
 - (id)_existingSharedResultsViewController;
-- (void)_searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2 orSearchTerm:(id)arg3 andMetricsEvent:(id)arg4;
+- (void)_requestSearch:(id)arg1;
 - (void)_termDidChangeNotification:(id)arg1;
 - (void)reloadSearchField;
 - (id)newSearchFieldBarItem;

@@ -48,6 +48,8 @@
     bool_creatingFromManagedObject;
 }
 
+@property(readonly) ACAccount * ck_cloudKitAccount;
+@property(readonly) NSString * aa_altDSID;
 @property(readonly) NSString * aa_personID;
 @property(setter=aa_setFirstName:,copy) NSString * aa_firstName;
 @property(setter=aa_setLastName:,copy) NSString * aa_lastName;
@@ -76,6 +78,7 @@
 @property(setter=aa_setPrimaryEmailVerified:) bool aa_isPrimaryEmailVerified;
 @property(setter=aa_setSyncedAccount:) bool aa_isSyncedAccount;
 @property(setter=aa_setNeedsToVerifyTerms:) bool aa_needsToVerifyTerms;
+@property(setter=aa_setMigratedToCloudKit:) bool aa_isMigratedToCloudKit;
 @property(setter=aa_setPassword:,copy) NSString * aa_password;
 @property(setter=aa_setAuthToken:,copy) NSString * aa_authToken;
 @property(retain) NSString * mcProfileUUID;
@@ -201,8 +204,8 @@
 - (void)_setAccountStore:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (bool)isActive;
 - (void)refresh;
 - (void)setVisible:(bool)arg1;
@@ -261,10 +264,13 @@
 - (void)aa_setMapsToken:(id)arg1;
 - (id)aa_cloudKitAccount;
 - (id)aa_fmfAccount;
+- (void)_aa_setAltDSID:(id)arg1;
 - (id)aa_fmipAccount;
 - (void)aa_setNeedsToVerifyTerms:(bool)arg1;
 - (bool)aa_needsToVerifyTerms;
 - (int)mobileMeAccountStatus;
+- (void)aa_setMigratedToCloudKit:(bool)arg1;
+- (bool)aa_isMigratedToCloudKit;
 - (id)aa_appleIDAliases;
 - (bool)aa_isPrimaryAccount;
 - (void)aa_setPrimaryAccount:(bool)arg1;
@@ -272,6 +278,7 @@
 - (void)aa_setAuthToken:(id)arg1;
 - (void)aa_setPassword:(id)arg1;
 - (id)aa_primaryEmail;
+- (id)aa_altDSID;
 - (id)aa_appleId;
 - (id)aa_password;
 - (id)aa_authToken;
@@ -279,6 +286,7 @@
 - (void)aa_removeCerts;
 - (void)aa_configureCerts;
 - (id)displayUsername;
+- (bool)aaui_isRestrictedForDataclass:(id)arg1;
 - (id)aaui_compositeName;
 - (id)aida_deviceProvisioningInfo;
 - (id)aida_dsid;
@@ -286,5 +294,6 @@
 - (id)aida_tokenWithExpirationCheck;
 - (id)aida_tokenWithExpiryCheckForService:(id)arg1;
 - (id)aida_tokenForService:(id)arg1;
+- (id)ck_cloudKitAccount;
 
 @end

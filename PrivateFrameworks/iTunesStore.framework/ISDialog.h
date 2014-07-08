@@ -61,8 +61,6 @@
 - (id)initWithDialogDictionary:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setUnlockActionButtonIndex:(long long)arg1;
 - (void)setShouldPendInSetupIfNotAllowed:(bool)arg1;
 - (void)setShouldDisplayAsTopMost:(bool)arg1;
@@ -100,11 +98,13 @@
 - (id)copyUserNotification;
 - (bool)isDisplayable;
 - (bool)allowsBioAuthorization;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)initWithError:(id)arg1;
+- (long long)kind;
 - (void)setKind:(long long)arg1;
 - (void)setMessage:(id)arg1;
 - (id)message;
-- (id)initWithError:(id)arg1;
-- (long long)kind;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)init;

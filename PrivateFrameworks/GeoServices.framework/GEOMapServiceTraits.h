@@ -16,6 +16,7 @@
     } _transportTypes;
     double _carHeadunitPixelHeight;
     double _carHeadunitPixelWidth;
+    double _mapZoomLevel;
     int _action;
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
@@ -42,6 +43,7 @@
         unsigned int sessionId : 1; 
         unsigned int carHeadunitPixelHeight : 1; 
         unsigned int carHeadunitPixelWidth : 1; 
+        unsigned int mapZoomLevel : 1; 
         unsigned int action : 1; 
         unsigned int carHeadunitInteractionModel : 1; 
         unsigned int photosCount : 1; 
@@ -103,13 +105,17 @@
 @property double carHeadunitPixelWidth;
 @property bool hasCarHeadunitPixelHeight;
 @property double carHeadunitPixelHeight;
+@property bool hasMapZoomLevel;
+@property double mapZoomLevel;
 
 
+- (void)setMapZoomLevel:(double)arg1;
 - (bool)hasDeviceLocation;
 - (void)setReviewUserPhotosCount:(unsigned int)arg1;
 - (bool)hasReviewUserPhotosCount;
 - (void)setPhotosCount:(unsigned int)arg1;
 - (bool)hasPhotosCount;
+- (void)setHasMapZoomLevel:(bool)arg1;
 - (void)setHasCarHeadunitPixelHeight:(bool)arg1;
 - (void)setCarHeadunitPixelHeight:(double)arg1;
 - (void)setHasCarHeadunitPixelWidth:(bool)arg1;
@@ -135,6 +141,9 @@
 - (int*)transportTypes;
 - (void)addTransportType:(int)arg1;
 - (void)clearTransportTypes;
+- (id)appIdentifier;
+- (double)mapZoomLevel;
+- (bool)hasMapZoomLevel;
 - (double)carHeadunitPixelWidth;
 - (double)carHeadunitPixelHeight;
 - (bool)hasCarHeadunitPixelWidth;
@@ -157,7 +166,6 @@
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setHasSessionId:(bool)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)appIdentifier;
 - (id)reviewUserPhotoSizes;
 - (unsigned int)reviewUserPhotosCount;
 - (id)photoSizes;
@@ -202,6 +210,7 @@
 - (bool)hasMapRegion;
 - (void)setMapRegion:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (int)source;

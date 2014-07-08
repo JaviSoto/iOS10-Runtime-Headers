@@ -8,8 +8,9 @@
 
 @property(readonly) unsigned int hidEventType;
 
-+ (id)resuableVendorDefinedDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
-+ (id)resuableDescriptorWithEventType:(unsigned int)arg1;
++ (id)reusableKeyboardDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
++ (id)reusableVendorDefinedDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
++ (id)reusableDescriptorWithEventType:(unsigned int)arg1;
 + (id)descriptorWithEventType:(unsigned int)arg1;
 + (bool)supportsSecureCoding;
 

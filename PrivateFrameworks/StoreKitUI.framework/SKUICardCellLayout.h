@@ -41,8 +41,8 @@
 - (void)setScreenshotImage:(id)arg1;
 - (void)resetLayout;
 - (void)setNumberOfUserRatings:(long long)arg1;
-- (bool)hasInAppPurchases;
 - (id)editorialBadge;
+- (bool)hasInAppPurchases;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (double)userRating;

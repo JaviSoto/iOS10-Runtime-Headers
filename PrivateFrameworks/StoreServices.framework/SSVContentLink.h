@@ -26,11 +26,11 @@
 
 - (void)setCategoryName:(id)arg1;
 - (id)categoryName;
+- (id)providerName;
 - (void)setSearchTerm:(id)arg1;
 - (id)searchTerm;
 - (void)setTargetApplication:(long long)arg1;
 - (void)setProviderName:(id)arg1;
-- (id)providerName;
 - (void)setItemTitle:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (id)itemIdentifier;

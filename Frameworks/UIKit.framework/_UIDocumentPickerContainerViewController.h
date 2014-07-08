@@ -42,9 +42,9 @@
 - (bool)isRootContainer;
 - (id)initWithModel:(id)arg1;
 - (void)setRootContainer:(bool)arg1;
+- (void)setModel:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (id)serviceViewController;
-- (void)setModel:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
 

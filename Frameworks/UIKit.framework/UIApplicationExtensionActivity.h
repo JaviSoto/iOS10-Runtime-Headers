@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class UIViewController, NSString, UIImage, _UIActivityBundleHelper, NSExtension;
+@class NSExtensionItem, _UIActivityBundleHelper, NSString, UIImage, NSExtension, UIViewController;
 
 @interface UIApplicationExtensionActivity : UIActivity  {
     NSExtension *_applicationExtension;
+    NSExtensionItem *__injectedExtensionItem;
     UIViewController *_extensionViewController;
     id _extensionContextIdentifier;
     UIViewController *_presenterViewController;
@@ -30,6 +31,7 @@
 }
 
 @property(retain) NSExtension * applicationExtension;
+@property(retain) NSExtensionItem * _injectedExtensionItem;
 @property(retain) UIViewController * extensionViewController;
 @property(copy) id extensionContextIdentifier;
 @property UIViewController * presenterViewController;
@@ -40,21 +42,20 @@
 @property(retain) UIImage * renderedActivitySettingsImage;
 @property(copy) id extensionRequestCleanupCompletion;
 
-+ (id)applicationExtensionActivitiesForItems:(id)arg1;
-+ (id)activityForApplicationExtension:(id)arg1 category:(long long)arg2;
-+ (id)activityForApplicationExtension:(id)arg1;
++ (id)_applicationExtensionActivitiesForItems:(id)arg1;
 + (long long)activityCategory;
 
 - (id)extensionContextIdentifier;
 - (void)setExtensionContextIdentifier:(id)arg1;
+- (id)activityType;
 - (id)debugDescription;
 - (void)dealloc;
-- (id)activityType;
 - (void)setActivityBundleHelper:(id)arg1;
 - (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)prepareWithActivityItems:(id)arg1;
-- (id)_itemProviderForImageRep:(id)arg1;
+- (void)_injectedJavaScriptResult:(id)arg1;
+- (id)initWithApplicationExtension:(id)arg1;
 - (id)presenterCompletion;
 - (id)presenterViewController;
 - (void)setExtensionViewController:(id)arg1;
@@ -65,8 +66,8 @@
 - (void)setPresenterCompletion:(id)arg1;
 - (void)setPresenterViewController:(id)arg1;
 - (void)_instantiateExtensionViewControllerWithInputItems:(id)arg1;
-- (bool)_isNonUIExtension;
-- (id)_inputItemsFromActivityItems:(id)arg1;
+- (bool)_isServiceExtension;
+- (id)_injectedExtensionItem;
 - (void)setRenderedActivitySettingsImage:(id)arg1;
 - (id)renderedActivitySettingsImage;
 - (void)setRenderedActivityImage:(id)arg1;
@@ -74,11 +75,11 @@
 - (void)setLocalizedExtensionBundleName:(id)arg1;
 - (id)activityBundleHelper;
 - (id)localizedExtensionBundleName;
-- (id)applicationExtension;
+- (void)set_injectedExtensionItem:(id)arg1;
 - (void)setApplicationExtension:(id)arg1;
-- (id)initWithApplicationExtension:(id)arg1;
 - (bool)canPerformWithActivityItems:(id)arg1;
 - (id)_activitySettingsImage;
+- (id)applicationExtension;
 - (id)_activityImage;
 - (id)activityTitle;
 

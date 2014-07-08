@@ -18,12 +18,12 @@
 
 
 - (id)_initWithAVItemErrorLogEvent:(id)arg1;
-- (id)URI;
 - (id)errorComment;
 - (id)errorDomain;
 - (long long)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
+- (id)URI;
 - (id)date;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

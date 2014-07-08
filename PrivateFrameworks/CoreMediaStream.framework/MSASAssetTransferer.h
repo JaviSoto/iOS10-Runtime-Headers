@@ -84,8 +84,8 @@
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (id)daemon;
-- (id)model;
 - (id)engine;
+- (id)model;
 - (void)setEventQueue:(id)arg1;
 - (id)eventQueue;
 - (void)setDelegate:(id)arg1;

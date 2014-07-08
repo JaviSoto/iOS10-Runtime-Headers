@@ -85,8 +85,8 @@
 - (void)setBaseTile:(id)arg1;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
-- (double)timeout;
 - (unsigned long long)contentLength;
+- (double)timeout;
 - (id)url;
 - (void)setUrl:(id)arg1;
 - (void)setDelegate:(id)arg1;

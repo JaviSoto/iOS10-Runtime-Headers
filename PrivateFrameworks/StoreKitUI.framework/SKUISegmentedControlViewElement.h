@@ -20,11 +20,11 @@
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)_enumerateItemElementsUsingBlock:(id)arg1;
-- (id)bottomDivider;
 - (long long)maximumNumberOfVisibleItems;
 - (long long)initialSelectedItemIndex;
 - (id)segmentItemTitles;
 - (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
+- (id)bottomDivider;
 - (long long)pageComponentType;
 - (void).cxx_destruct;
 

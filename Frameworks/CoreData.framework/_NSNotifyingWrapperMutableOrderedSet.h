@@ -24,8 +24,8 @@
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(id)arg3;
 - (id)valueForKeyPath:(id)arg1;
 - (id)firstObject;
-- (id)valueForKey:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id)arg1;
+- (id)valueForKey:(id)arg1;
 - (bool)isEqualToOrderedSet:(id)arg1;
 - (void)intersectOrderedSet:(id)arg1;
 - (id)set;

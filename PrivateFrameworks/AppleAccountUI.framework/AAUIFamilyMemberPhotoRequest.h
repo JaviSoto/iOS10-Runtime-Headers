@@ -2,21 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSNumber, SSAccount;
+@class NSNumber, SSAccount, NSString;
 
 @interface AAUIFamilyMemberPhotoRequest : AAFamilyRequest  {
     NSNumber *_familyMemberDSID;
     SSAccount *_iTunesAccount;
+    NSString *_serverCacheTag;
 }
 
 @property(copy) NSNumber * familyMemberDSID;
 @property(setter=setiTunesAccount:,retain) SSAccount * iTunesAccount;
+@property(copy) NSString * serverCacheTag;
 
 + (Class)responseClass;
 
 - (id)familyMemberDSID;
 - (void)setFamilyMemberDSID:(id)arg1;
 - (void)setiTunesAccount:(id)arg1;
+- (void)setServerCacheTag:(id)arg1;
+- (id)serverCacheTag;
 - (id)iTunesAccount;
 - (id)urlString;
 - (id)urlRequest;

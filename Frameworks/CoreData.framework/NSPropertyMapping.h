@@ -35,12 +35,12 @@
 - (void)setValueExpression:(id)arg1;
 - (id)valueExpression;
 - (id)_propertyTransforms;
+- (void)setName:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)userInfo;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

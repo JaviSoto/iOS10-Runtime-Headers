@@ -13,6 +13,7 @@
 
 @property <PKPassLibraryDelegate> * delegate;
 
++ (void)_tearDownPassLibraryConnection:(id)arg1 exportedProxy:(id)arg2;
 + (bool)isPassLibraryAvailable;
 
 - (id)passes;

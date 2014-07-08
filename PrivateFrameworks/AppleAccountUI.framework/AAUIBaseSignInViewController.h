@@ -41,16 +41,17 @@
 @property(readonly) ACAccount * account;
 
 
+- (bool)isPresentedModally;
 - (void)confirmationView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)cancelButtonTapped:(id)arg1;
 - (void)returnPressedAtEnd;
 - (id)specifiers;
 - (void)setPresentedModally:(bool)arg1;
-- (bool)isPresentedModally;
 - (void)_presentWrongAccountStatusAlert;
 - (id)descriptionPlaceholder;
 - (double)_heightForCreateNewAccountFooterWithWidth:(double)arg1;
 - (void)_accountRepairDidFail;
+- (void)_loadAccountRepairRemoteUIWithAccount:(id)arg1;
 - (void)_showGenericTermsUIforAccount:(id)arg1;
 - (id)_learnMoreURLForErrorCode:(id)arg1;
 - (void)_handleAccountPromotionCompletionForAccount:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
@@ -89,21 +90,20 @@
 - (id)_displayedAccountType;
 - (void)_updateDoneButton;
 - (bool)_shouldShowCancelDone;
-- (void)_loadAccountRepairRemoteUIWithAccount:(id)arg1;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (id)navigationControllerForPresentationWithCredentialRecoveryController:(id)arg1;
 - (void)credentialRecoveryController:(id)arg1 needsPresentationOfViewController:(id)arg2;
+- (id)navigationItemToShowInitialLoadingForCredentialRecoveryController:(id)arg1;
 - (void)credentialRecoveryController:(id)arg1 finishedWithSuccess:(bool)arg2;
 - (void)credentialRecoveryController:(id)arg1 didFailWithError:(id)arg2;
-- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(bool)arg3;
 - (void)accountCreationWasCanceled;
 - (void)accountCreationDidSucceedWithAppleID:(id)arg1 password:(id)arg2 emailChoice:(id)arg3;
 - (void)accountCreationDidFailWithError:(id)arg1;
 - (void)accountCreationWillBeginWithAppleID:(id)arg1 password:(id)arg2;
+- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(bool)arg3;
 - (id)_titleForError:(id)arg1 account:(id)arg2;
 - (id)_monogrammer;
 - (void)doneButtonTapped:(id)arg1;
-- (void)handleURL:(id)arg1;
 - (id)account;
 - (id)init;
 - (void)dealloc;

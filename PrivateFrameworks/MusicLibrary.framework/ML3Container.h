@@ -39,7 +39,7 @@
 + (bool)createMissingBuiltInSmartPlaylists:(id)arg1;
 + (void)populateDynamicContainersWithTrackPersistentID:(id)arg1 inLibrary:(id)arg2 createBuiltinSmartPlaylists:(bool)arg3;
 + (void)_insertNewSmartPlaylist:(id)arg1 criteriaBlob:(id)arg2 evaluationOrder:(unsigned int)arg3 limited:(bool)arg4 trackOrder:(unsigned int)arg5 distinguishedKind:(int)arg6 inLibrary:(id)arg7 cachedNameOrders:(id)arg8;
-+ (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 dynamicCriteria:(bool)arg2;
++ (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 dynamicCriteria:(bool)arg2 parentMatchedAny:(bool)arg3;
 + (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
 + (bool)hasCriterionInCriteriaList:(struct SearchCriteriaList { }*)arg1 forITDBTrackField:(int)arg2;
 + (void)populateMediaTypesOfStaticContainersInLibrary:(id)arg1;

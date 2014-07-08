@@ -46,7 +46,7 @@
 - (id)_invalidTopicError;
 - (id)_invalidRightsError;
 - (id)installationWarnings;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

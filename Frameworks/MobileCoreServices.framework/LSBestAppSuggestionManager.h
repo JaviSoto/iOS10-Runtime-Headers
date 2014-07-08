@@ -19,7 +19,9 @@
 - (id)connection;
 - (void)launchAppWithBestAppSuggestion:(id)arg1;
 - (void)launchAppWithBundleIdentifier:(id)arg1 taskContinuationIdentifier:(id)arg2;
-- (void)notifyBestAppChanged:(id)arg1 type:(unsigned long long)arg2 options:(id)arg3 bundleIdentifier:(id)arg4 activityType:(id)arg5 when:(id)arg6 confidence:(double)arg7 deviceName:(id)arg8 deviceIdentifier:(id)arg9;
+- (void)notifyBestAppChanged:(id)arg1 type:(unsigned long long)arg2 options:(id)arg3 bundleIdentifier:(id)arg4 activityType:(id)arg5 when:(id)arg6 confidence:(double)arg7 deviceName:(id)arg8 deviceIdentifier:(id)arg9 deviceType:(id)arg10;
+- (void)bestAppSuggestionLaunchWasCancelled:(id)arg1;
+- (void)bestAppSuggestionWasLaunched:(id)arg1 withInteractionType:(int)arg2;
 - (void)queueFetchOfPayloadForBestAppSuggestion:(id)arg1;
 - (id)bestAppSuggestions:(long long)arg1;
 - (bool)determineBestAppWithDelay:(double)arg1 withBlock:(id)arg2;

@@ -30,9 +30,9 @@
 - (void)restore:(id)arg1;
 - (void)didChangeOrientation:(id)arg1;
 - (bool)canShowUI;
-- (id)prefs;
 - (void)setPrefsContainerView:(id)arg1;
 - (void)setPrefs:(id)arg1;
+- (id)prefs;
 - (void)save:(id)arg1;
 - (id)window;
 - (id)init;

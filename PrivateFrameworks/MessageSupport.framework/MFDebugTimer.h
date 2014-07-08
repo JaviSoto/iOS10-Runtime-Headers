@@ -21,8 +21,8 @@
 - (unsigned long long)measure;
 - (unsigned long long)measureWithLogText:(id)arg1;
 - (id)rebase;
+- (void)setName:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 
 @end

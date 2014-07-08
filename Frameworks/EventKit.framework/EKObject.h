@@ -62,8 +62,8 @@
 - (id)eventStore;
 - (id)initWithPersistentObject:(id)arg1;
 - (bool)isNew;
-- (id)owner;
 - (id)relations;
+- (id)owner;
 - (id)propertyName;
 - (void)setPropertyName:(id)arg1;
 - (void)rollback;

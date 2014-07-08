@@ -68,13 +68,13 @@
 + (id)baseSearchIndexPredicate;
 + (void)clearAssetOrderByAbumUUIDs;
 
+- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
+- (void)removeAssetsAtIndexes:(id)arg1;
+- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (void)setResolvingConflicts:(bool)arg1;
 - (bool)resolvingConflicts;
 - (void)sortAssetsUsingiTunesAlbumOrder;
 - (void)_recalculateCachedCounts;
-- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
-- (void)removeAssetsAtIndexes:(id)arg1;
-- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (unsigned long long)_cachedCountForMigration;
 - (void)_updateKeyAssetsAndCountsIfNeeded;
 - (void)removeInternalUserEditableAssetsAtIndexes:(id)arg1;

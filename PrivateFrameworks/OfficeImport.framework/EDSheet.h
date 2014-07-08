@@ -62,9 +62,9 @@
 - (id)workbook;
 - (void)setup;
 - (void)setHidden:(bool)arg1;
+- (void)setName:(id)arg1;
 - (bool)isHidden;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)teardown;
 - (void)dealloc;
 

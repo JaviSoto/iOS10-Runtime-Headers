@@ -4,7 +4,7 @@
 
 @class UIView<PINEntryView>, UITransitionView, UIKeyboard;
 
-@interface DevicePINPane : PSEditingPane <UIKeyInput> {
+@interface DevicePINPane : PSEditingPane <UIKeyInput, UITextInputTraits, PSPINEntryViewDelegate> {
     UITransitionView *_transitionView;
     bool_transitioning;
     UIView<PINEntryView> *_pinView;
@@ -19,6 +19,7 @@
     bool_simplePIN;
 }
 
+@property(retain) UIView<PINEntryView> * pinView;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -30,11 +31,15 @@
 
 
 - (void)clearPassword;
+- (void)delayForTextEntryAnimationsWithCompletion:(id)arg1;
+- (void)setKeyboardUserInteractionEnabled:(bool)arg1;
 - (void)activateKeypadView;
 - (void)_setKeypadState:(bool)arg1 animated:(bool)arg2;
+- (void)setPinView:(id)arg1;
+- (id)pinView;
 - (void)_setPlaysKeyboardClicks:(bool)arg1;
 - (void)pinView:(id)arg1 pinEntered:(id)arg2;
-- (void)adjustButtonsNow;
+- (void)pinView:(id)arg1 pinValueChanged:(id)arg2;
 - (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2;
 - (void)slideToNewPasscodeField:(bool)arg1 withKeyboard:(bool)arg2;
 - (void)okButtonPressed;

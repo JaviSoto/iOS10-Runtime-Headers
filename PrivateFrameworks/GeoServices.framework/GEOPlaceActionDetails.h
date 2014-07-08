@@ -9,7 +9,6 @@
     double _searchResponseRelativeTimestamp;
     int _localSearchProviderID;
     int _resultIndex;
-    int _sequenceNumber;
     struct { 
         unsigned int animationID : 1; 
         unsigned int businessID : 1; 
@@ -17,7 +16,6 @@
         unsigned int searchResponseRelativeTimestamp : 1; 
         unsigned int localSearchProviderID : 1; 
         unsigned int resultIndex : 1; 
-        unsigned int sequenceNumber : 1; 
     } _has;
 }
 
@@ -27,8 +25,6 @@
 @property long long placeID;
 @property bool hasLocalSearchProviderID;
 @property int localSearchProviderID;
-@property bool hasSequenceNumber;
-@property int sequenceNumber;
 @property bool hasSearchResponseRelativeTimestamp;
 @property double searchResponseRelativeTimestamp;
 @property bool hasResultIndex;
@@ -39,6 +35,7 @@
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
 
 - (unsigned long long)animationID;
+- (unsigned long long)businessID;
 - (int)resultIndex;
 - (double)searchResponseRelativeTimestamp;
 - (bool)hasAnimationID;
@@ -55,7 +52,6 @@
 - (bool)hasPlaceID;
 - (void)setHasPlaceID:(bool)arg1;
 - (void)setPlaceID:(long long)arg1;
-- (unsigned long long)businessID;
 - (bool)hasBusinessID;
 - (void)setHasBusinessID:(bool)arg1;
 - (void)setBusinessID:(unsigned long long)arg1;
@@ -63,13 +59,10 @@
 - (bool)hasLocalSearchProviderID;
 - (void)setHasLocalSearchProviderID:(bool)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
-- (bool)hasSequenceNumber;
-- (void)setHasSequenceNumber:(bool)arg1;
-- (void)setSequenceNumber:(int)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (int)sequenceNumber;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

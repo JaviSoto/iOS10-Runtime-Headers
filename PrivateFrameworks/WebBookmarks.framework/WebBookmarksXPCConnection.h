@@ -24,8 +24,8 @@
 - (id)messageWithName:(const char *)arg1;
 - (id)initClientForMachService:(const char *)arg1 delegate:(id)arg2;
 - (void)_handleMessage:(id)arg1;
-- (void)sendMessage:(id)arg1;
 - (id)connection;
+- (void)sendMessage:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 

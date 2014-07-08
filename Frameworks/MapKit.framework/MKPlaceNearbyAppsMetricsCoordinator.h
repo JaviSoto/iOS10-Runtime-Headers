@@ -30,8 +30,8 @@
 - (id)initWithConfigurationIdentifier:(id)arg1;
 - (void)setPageConfiguration:(id)arg1;
 - (id)urlBag;
-- (id)topic;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (void)sendEvent:(id)arg1;
 - (void).cxx_destruct;
 

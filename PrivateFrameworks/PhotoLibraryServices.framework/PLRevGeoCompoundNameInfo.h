@@ -22,19 +22,19 @@
 
 + (id)_localizedNameForName:(id)arg1;
 
+- (id)nameSuffix;
+- (id)namePrefix;
 - (bool)suffixWhenPrefixOnly;
 - (bool)isContinuation;
-- (id)localizedTitleForNameInfo;
 - (id)localizedSortedNames;
 - (void)setSuffixWhenPrefixOnly:(bool)arg1;
 - (void)setNameSuffix:(id)arg1;
 - (void)setIsContinuation:(bool)arg1;
+- (id)localizedTitleForNameInfo;
 - (void)setNamePrefix:(id)arg1;
 - (void)setSortedNames:(id)arg1;
 - (id)dictionaryForInfo;
 - (id)sortedNames;
-- (id)nameSuffix;
-- (id)namePrefix;
 - (id)initWithDictionary:(id)arg1;
 - (void)dealloc;
 - (id)description;

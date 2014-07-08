@@ -82,9 +82,11 @@
 - (void)applyForce:(struct CGVector { double x1; double x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (double)mass;
 - (void)setResting:(bool)arg1;
-- (void)setFieldBitMask:(unsigned int)arg1;
+- (void)setAngularDamping:(double)arg1;
+- (void)setLinearDamping:(double)arg1;
 - (void)setAngularVelocity:(double)arg1;
 - (void)setVelocity:(struct CGVector { double x1; double x2; })arg1;
+- (void)setFieldBitMask:(unsigned int)arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
 - (void)setCollisionBitMask:(unsigned int)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
@@ -96,9 +98,11 @@
 - (void)setPinned:(bool)arg1;
 - (void)setAllowsRotation:(bool)arg1;
 - (void)setUsesPreciseCollisionDetection:(bool)arg1;
-- (unsigned int)fieldBitMask;
+- (double)angularDamping;
+- (double)linearDamping;
 - (double)angularVelocity;
 - (struct CGVector { double x1; double x2; })velocity;
+- (unsigned int)fieldBitMask;
 - (unsigned int)contactTestBitMask;
 - (unsigned int)collisionBitMask;
 - (unsigned int)categoryBitMask;
@@ -119,9 +123,5 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)applyImpulse:(struct CGVector { double x1; double x2; })arg1;
-- (double)angularDamping;
-- (double)linearDamping;
-- (void)setAngularDamping:(double)arg1;
-- (void)setLinearDamping:(double)arg1;
 
 @end

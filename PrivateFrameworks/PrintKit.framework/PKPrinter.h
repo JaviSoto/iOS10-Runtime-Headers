@@ -74,8 +74,8 @@
 + (id)printerWithName:(id)arg1;
 + (id)printerWithName:(id)arg1 discoveryTimeout:(double)arg2;
 
-- (id)location;
 - (long long)kind;
+- (id)location;
 - (id)uuid;
 - (void)setPort:(id)arg1;
 - (void)setHostname:(id)arg1;

@@ -187,7 +187,6 @@
 + (id)sharedApplication;
 + (id)_defaultContentSizeCategory;
 + (void)registerObjectForStateRestoration:(id)arg1 restorationIdentifier:(id)arg2;
-+ (bool)_shouldUseAlertControllerForLegacyAlerts;
 + (id)stringForInterfaceOrientation:(long long)arg1;
 + (id)stringForStatusBarStyle:(long long)arg1;
 + (bool)isRunningEventPump;
@@ -208,10 +207,10 @@
 + (bool)registerAsSystemApp;
 + (void)shouldShowNetworkActivityIndicatorInRemoteApplication:(bool)arg1;
 
+- (bool)isSuspendedUnderLock;
 - (void)endBackgroundTask:(unsigned long long)arg1;
 - (unsigned long long)beginBackgroundTaskWithExpirationHandler:(id)arg1;
 - (void)_receivedMemoryNotification;
-- (bool)isSuspendedUnderLock;
 - (bool)isSuspended;
 - (bool)openURL:(id)arg1;
 - (void)sendEvent:(id)arg1;
@@ -240,6 +239,7 @@
 - (void)suspend;
 - (void)dealloc;
 - (void)userActivityWillSave:(id)arg1;
+- (id)userHomeDirectory;
 - (void)runTestForKeyboardSplitAndMergeWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withExtraResultsBlock:(id)arg3 withCleanupBlock:(id)arg4;
 - (void)runTestForKeyboardRotationWithName:(id)arg1 fromOrientation:(long long)arg2 withShowKeyboardBlock:(id)arg3 withExtraResultsBlock:(id)arg4 withCleanupBlock:(id)arg5;
 - (void)runTestForKeyboardBringupAndDismissalWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withHideKeyboardBlock:(id)arg3 withExtraResultsBlock:(id)arg4 withCleanupBlock:(id)arg5;
@@ -338,6 +338,7 @@
 - (void)_setPreferredContentSizeCategoryName:(id)arg1;
 - (id)_showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (bool)_canShowTextServices;
+- (bool)_areSystemWindowsSecure;
 - (void)_setSystemWindowsSecure:(bool)arg1;
 - (id)_fallbackPresentationViewController;
 - (bool)_usesPreMTAlertBehavior;
@@ -392,6 +393,8 @@
 - (void)_addResponder:(id)arg1 forUserActivity:(id)arg2;
 - (void)_findBestActivityToMakeCurrent:(id)arg1;
 - (bool)_activityContinuationsAreBeingTracked;
+- (void)_deactivateReachability;
+- (void)_setReachabilitySupported:(bool)arg1;
 - (void)_updateSnapshotForBackgroundApplication:(bool)arg1;
 - (void)_cancelUnfinishedTouchesForEvent:(id)arg1;
 - (bool)_isSendingEventForProgrammaticTouchCancellation;
@@ -476,7 +479,6 @@
 - (struct CGImage { }*)_createDefaultImageSnapshotForScreen:(id)arg1;
 - (id)_localCachesDirectory;
 - (id)userLibraryDirectory;
-- (id)userHomeDirectory;
 - (bool)usesBackgroundNetwork;
 - (void)setUsesBackgroundNetwork:(bool)arg1;
 - (void)showNetworkPromptsIfNecessary:(bool)arg1;
@@ -606,8 +608,10 @@
 - (void)_sendWillEnterForegroundCallbacks;
 - (bool)_isLaunchedSuspended;
 - (bool)_callContinueUserActivity:(id)arg1;
+- (bool)_callDelegateWillContinueActivityWithType:(id)arg1;
 - (void)_removeResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
 - (void)_addResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
+- (void)_cleanupUserActivity:(id)arg1 activityIdentifier:(id)arg2;
 - (void)_userActivityWillSave:(id)arg1;
 - (void)terminateWithSuccess;
 - (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { double x1; double x2; })arg1 virtualHorizontalSizeClass:(long long)arg2 virtualVerticalSizeClass:(long long)arg3;
@@ -741,7 +745,6 @@
 - (void)_setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
 - (id)_implicitStatusBarStyleAnimationParametersWithViewController:(id)arg1;
 - (id)_implicitStatusBarAnimationParametersWithClass:(Class)arg1;
-- (bool)_areSystemWindowsSecure;
 - (bool)_alwaysHitTestsForMainScreen;
 - (bool)_isSpringBoard;
 - (bool)_isStatusBarHiddenForOrientation:(long long)arg1;
@@ -802,7 +805,7 @@
 - (void)_registerForSignificantTimeChangeNotification;
 - (void)_registerForUserDefaultsChanges;
 - (void)_checkActivityContinuationAndBecomeCurrentIfNeeded;
-- (void)_handleNonLaunchSpecificActions:(id)arg1 forScene:(id)arg2;
+- (void)_handleNonLaunchSpecificActions:(id)arg1 forScene:(id)arg2 withTransitionContext:(id)arg3;
 - (void)_handleActivityContinuation:(id)arg1;
 - (void)_applicationHandleSiriTask:(id)arg1;
 - (void)_applicationOpenURL:(id)arg1 payload:(id)arg2;
@@ -832,5 +835,7 @@
 - (id)_gkTargetForAction:(SEL)arg1 viaResponder:(id)arg2;
 - (void)endCurrentPPT;
 - (void)beginPPTWithName:(id)arg1;
+- (void)_setDelaySuspend:(id)arg1;
+- (void)setDelaySuspend:(bool)arg1;
 
 @end

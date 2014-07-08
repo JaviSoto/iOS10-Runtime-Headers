@@ -34,7 +34,6 @@
 @property(readonly) double switchBitrate;
 
 
-- (id)URI;
 - (long long)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -61,6 +60,7 @@
 - (double)transferDuration;
 - (long long)numberOfMediaRequests;
 - (id)serviceIdentifier;
+- (id)URI;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (void)finalize;

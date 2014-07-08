@@ -29,9 +29,11 @@
 - (id)allApplications;
 - (id)unrestrictedApplications;
 - (id)placeholderApplications;
+- (id)installedPlugins;
 - (id)installedVPNPlugins;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
 - (bool)openApplicationWithBundleID:(id)arg1;
+- (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3;
 - (id)applicationsOfType:(unsigned long long)arg1;
@@ -60,12 +62,10 @@
 - (id)remoteObserver;
 - (bool)establishConnection;
 - (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
-- (id)installedPlugins;
 - (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)allInstalledApplications;
 - (id)deviceIdentifierForVendor;
 - (id)URLOverrideForURL:(id)arg1;
-- (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 
 @end

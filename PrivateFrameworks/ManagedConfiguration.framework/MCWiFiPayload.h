@@ -72,6 +72,9 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (void)setProxyPassword:(id)arg1;
+- (void)setPasswordRequired:(bool)arg1;
+- (bool)passwordRequired;
 - (void)setDomainName:(id)arg1;
 - (void)setDisplayedOperatorName:(id)arg1;
 - (void)setServiceProviderRoamingEnabled:(bool)arg1;
@@ -81,7 +84,6 @@
 - (id)credentialUUID;
 - (void)setProxyPACFallbackAllowed:(bool)arg1;
 - (void)setProxyPACURLString:(id)arg1;
-- (void)setProxyPassword:(id)arg1;
 - (void)setProxyUsername:(id)arg1;
 - (void)setProxyServerPort:(id)arg1;
 - (void)setPayloadCertificateAnchorUUID:(id)arg1;
@@ -92,8 +94,6 @@
 - (bool)autoJoin;
 - (void)setUsernameRequired:(bool)arg1;
 - (bool)usernameRequired;
-- (void)setPasswordRequired:(bool)arg1;
-- (bool)passwordRequired;
 - (void)setIsWPA:(bool)arg1;
 - (bool)isWPA;
 - (void)setIsWEP:(bool)arg1;
@@ -106,6 +106,7 @@
 - (id)proxyUsername;
 - (id)proxyServerPort;
 - (id)eapClientConfig;
+- (id)_localizedEncryptionTypeString;
 - (id)encryptionType;
 - (id)displayedOperatorName;
 - (bool)isServiceProviderRoamingEnabled;
@@ -130,7 +131,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)installationWarnings;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;
@@ -140,8 +141,8 @@
 - (id)username;
 - (bool)isHidden;
 - (id)password;
-- (id)priority;
 - (void)setPriority:(id)arg1;
+- (id)priority;
 - (int)proxyType;
 - (void).cxx_destruct;
 - (id)description;

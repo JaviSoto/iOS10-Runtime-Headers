@@ -32,6 +32,7 @@
 - (id)deleteView;
 - (double)visibleHeightRatio;
 - (double)visibleWidth;
+- (void)updateBounds;
 - (void)updateMaskView:(bool)arg1;
 - (id)accessoryView;
 - (void)setVisibleWidth:(double)arg1;

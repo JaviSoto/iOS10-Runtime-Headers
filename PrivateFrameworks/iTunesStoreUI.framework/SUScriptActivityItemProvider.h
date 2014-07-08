@@ -48,11 +48,11 @@
 - (void)setStatus:(id)arg1;
 - (id)status;
 - (id)attributeKeys;
+- (id)activityType;
 - (id)MIMEType;
 - (void)dealloc;
 - (void)setProgress:(double)arg1;
 - (double)progress;
 - (void)setItem:(id)arg1;
-- (id)activityType;
 
 @end

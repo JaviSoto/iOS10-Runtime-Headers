@@ -15,13 +15,13 @@
 
 - (bool)tryLock;
 - (void)lockWhenCondition:(long long)arg1;
+- (void)setName:(id)arg1;
 - (void)unlockWithCondition:(long long)arg1;
 - (long long)condition;
 - (id)init;
 - (id)name;
 - (void)unlock;
 - (void)lock;
-- (void)setName:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

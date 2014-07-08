@@ -14,8 +14,8 @@
 + (id)relations;
 
 - (id)initWithExceptionDate:(id)arg1;
-- (id)owner;
 - (int)entityType;
+- (id)owner;
 - (void)setOwner:(id)arg1;
 - (id)date;
 - (unsigned long long)hash;

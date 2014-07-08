@@ -47,6 +47,8 @@
 - (id)selectedTextMarker;
 - (id)selectionRangeString;
 - (id)elementsForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_accessibilitySelectedTextRange;
 - (id)attributedStringForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)accessibilityObjectForTextMarker:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })elementTextRange;
@@ -141,6 +143,7 @@
 - (id)accessibilityPlatformMathSubscriptKey;
 - (bool)fileUploadButtonReturnsValueInTitle;
 - (void)accessibilityPostedNotification:(id)arg1;
+- (void)postValueChangedNotification;
 - (void)postInvalidStatusChangedNotification;
 - (void)postLoadCompleteNotification;
 - (void)postChildrenChangedNotification;

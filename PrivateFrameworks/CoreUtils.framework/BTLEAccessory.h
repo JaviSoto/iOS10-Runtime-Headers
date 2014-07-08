@@ -24,8 +24,8 @@
 - (id)initWithPeripheral:(id)arg1;
 - (void)setRSSI:(int)arg1;
 - (id)peripheral;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 
 @end

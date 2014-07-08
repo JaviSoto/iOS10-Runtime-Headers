@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocalizationRegionsInfo, GEOActiveTileGroup, NSHashTable, NSLock, GEOResourceManifestConfiguration, <GEOResourceManifestServerProxy>, NSDictionary, NSMutableArray;
+@class NSHashTable, GEOActiveTileGroup, NSLock, GEOLocalizationRegionsInfo, NSSet, GEOResourceManifestConfiguration, <GEOResourceManifestServerProxy>, NSDictionary, NSMutableArray;
 
 @interface GEOResourceManifestManager : NSObject <GEOResourceManifestServerProxyDelegate> {
     <GEOResourceManifestServerProxy> *_serverProxy;
@@ -10,6 +10,7 @@
     GEOActiveTileGroup *_activeTileGroup;
     NSLock *_activeTileGroupLock;
     NSDictionary *_resourceNamesToPaths;
+    NSSet *_allResourceNames;
     bool_needsToLoadTileGroupFromDisk;
     NSMutableArray *_tileGroupObservers;
     NSLock *_tileGroupObserversLock;
@@ -37,9 +38,9 @@
 + (void)setServerProxyClass:(Class)arg1;
 + (id)sharedManager;
 
+- (id)serverProxy;
 - (void)updateManifestIfNecessary:(id)arg1;
 - (id)detailedDescription;
-- (id)serverProxy;
 - (void)devResourcesFolderDidChange;
 - (void)forceUpdate;
 - (unsigned int)activeTileGroupIdentifier;

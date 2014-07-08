@@ -9,7 +9,7 @@
 
 @class NSString, NSArray, NSNumber;
 
-@interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
+@interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
 }
 
 @property(readonly) NSString * title;
@@ -28,9 +28,9 @@
 @property(readonly) unsigned long long fileHFSResourceForkSize;
 @property(readonly) unsigned long long count;
 
-+ (id)dictionary;
 + (id)dictionaryWithDictionary:(id)arg1;
 + (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
++ (id)dictionary;
 + (id)dictionaryWithDictionary:(id)arg1 copyItems:(bool)arg2;
 + (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
@@ -56,8 +56,8 @@
 + (id)dictionaryWithParametersInURLString:(id)arg1;
 + (id)dictionaryByInvertingDictionary:(id)arg1;
 
-- (void)getKeys:(id*)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
+- (void)getKeys:(id*)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
@@ -161,10 +161,10 @@
 - (id)sbs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (bool)matchesUID:(id)arg1;
+- (int)_webkit_intForKey:(id)arg1;
 - (id)_webkit_numberForKey:(id)arg1;
 - (id)_webkit_arrayForKey:(id)arg1;
 - (bool)_webkit_boolForKey:(id)arg1;
-- (int)_webkit_intForKey:(id)arg1;
 - (id)_webkit_stringForKey:(id)arg1;
 - (id)_webkit_objectForMIMEType:(id)arg1;
 - (id)asQueryParameterString;
@@ -187,7 +187,9 @@
 - (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)ML3StringForKey:(id)arg1;
 - (id)_placeOrCurrentLocation:(bool*)arg1;
+- (id)_mapItemForCurrentLocation:(bool*)arg1;
 - (id)_geo_newXPCObject;
+- (void)CKAssignToContainerWithID:(id)arg1;
 - (id)CDVMergeOverrideDictionary:(id)arg1;
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
@@ -196,9 +198,9 @@
 - (id)mutableCopyWithElementsCopy;
 - (id)CalMutableRecursiveCopy;
 - (id)_FTFilteredDictionaryForAPS;
-- (void)CKAssignToContainerWithID:(id)arg1;
 - (id)gksDeepMutableCopy;
 - (id)deepCopy;
+- (bool)writeToProtectedFile:(id)arg1 atomically:(bool)arg2;
 - (id)_gkValuesForKeys:(id)arg1;
 - (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
 - (id)_gkSubDictionaryWithKeys:(id)arg1;
@@ -206,7 +208,6 @@
 - (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
 - (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2;
 - (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2 foundSize:(out unsigned long long*)arg3;
-- (bool)writeToProtectedFile:(id)arg1 atomically:(bool)arg2;
 - (id)DAObjectForKeyCaseInsensitive:(id)arg1;
 - (id)DAMergeOverrideDictionary:(id)arg1;
 - (int)mf_integerForKey:(id)arg1;
@@ -241,35 +242,26 @@
 - (bool)MSASIsLocalChange;
 - (id)MSASAlbumResetSyncAlbumGUID;
 - (bool)MSASIsGlobalResetSync;
-- (id)dictionaryByRemovingValuesForKey:(id)arg1;
-- (id)dictionaryBySwappingValuesWithDictionary:(id)arg1;
-- (id)objectForIndex:(int)arg1;
-- (id)nonRetainedObjectForKey:(id)arg1;
-- (id)objectOrNullForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 defaultValue:(id)arg2;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })affineTransformForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectFromStringForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForKey:(id)arg1;
-- (double)doubleForKey:(id)arg1 defaultValue:(double)arg2;
-- (float)floatForKey:(id)arg1 defaultValue:(float)arg2;
-- (long long)integerForKey:(id)arg1 defaultValue:(long long)arg2;
-- (int)intForKey:(id)arg1 defaultValue:(int)arg2;
-- (int)intForKey:(id)arg1;
-- (bool)boolForKey:(id)arg1 defaultValue:(bool)arg2;
-- (struct CGPoint { double x1; double x2; })pointFromStringForKey:(id)arg1;
-- (bool)boolForKey:(id)arg1;
-- (float)floatForKey:(id)arg1;
-- (double)doubleForKey:(id)arg1;
-- (long long)integerForKey:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)mutableCopyWithElementsCopy;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)CKObjectForKeyCaseInsensitive:(id)arg1;
+- (id)CKPercentEscapedQueryString;
 - (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (bool)boolValueForKey:(id)arg1;
 - (void)appendJsonStringToString:(id)arg1;
+- (float)prs_floatForKey:(id)arg1;
+- (int)prs_intForKey:(id)arg1;
+- (long long)prs_integerForKey:(id)arg1;
+- (id)prs_URLForKey:(id)arg1;
+- (id)prs_dictionaryForKey:(id)arg1;
+- (id)prs_arrayForKey:(id)arg1;
+- (id)prs_dateForKey:(id)arg1;
+- (id)prs_dataForKey:(id)arg1;
+- (id)prs_stringForKey:(id)arg1;
+- (bool)prs_boolForKey:(id)arg1;
+- (id)prs_numberForKey:(id)arg1;
 - (id)PKSetContaining:(Class)arg1 forKey:(id)arg2;
 - (id)PKArrayContaining:(Class)arg1 forKey:(id)arg2;
 - (id)PKDictionaryForKey:(id)arg1;
@@ -285,13 +277,13 @@
 - (id)PKArrayForKey:(id)arg1;
 - (id)PKNumberForKey:(id)arg1;
 - (id)PKStringForKey:(id)arg1;
-- (id)_lookupFeedValueForKey:(id)arg1 expectedClass:(Class)arg2;
-- (id)numberForKey:(id)arg1;
 - (id)scriptEntry;
 - (id)scriptPath;
 - (SEL)testSelector;
 - (SEL)setupSelector;
 - (float)offset;
 - (int)iterations;
+- (id)blj_dictionaryByRemovingValuesForKey:(id)arg1;
+- (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
 
 @end

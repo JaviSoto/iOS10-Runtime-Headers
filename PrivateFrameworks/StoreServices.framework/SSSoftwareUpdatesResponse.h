@@ -19,8 +19,8 @@
 - (id)copyUpdateItemDictionaries;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isFailed;
 - (id)initWithError:(id)arg1;
+- (bool)isFailed;
 - (id)error;
 - (void)dealloc;
 - (id)description;

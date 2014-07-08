@@ -13,17 +13,14 @@
 @property(retain,readonly) _IDSConnection * _internal;
 
 
-- (void)rejectAttachmentInvite:(id)arg1;
 - (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
 - (id)_initWithAccount:(id)arg1 commands:(id)arg2 indirectDelegateCallouts:(bool)arg3;
-- (void)acceptAttachmentInvite:(id)arg1;
 - (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
-- (bool)sendFile:(id)arg1 userInfo:(id)arg2 toDestinations:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
 - (bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2;
-- (id)_internal;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)_internal;
 - (id)initWithAccount:(id)arg1;
 - (id)account;
 - (void)removeDelegate:(id)arg1;

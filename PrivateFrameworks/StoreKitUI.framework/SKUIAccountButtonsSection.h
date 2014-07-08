@@ -8,7 +8,7 @@
     SKUIAccountButtonsViewController *_accountButtonsViewController;
 }
 
-@property(retain) SKUIAccountButtonsComponent * pageComponent;
+@property(readonly) SKUIAccountButtonsComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

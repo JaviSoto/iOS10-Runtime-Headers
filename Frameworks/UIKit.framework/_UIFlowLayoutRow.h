@@ -40,10 +40,10 @@
 @property double availableSpace;
 
 
+- (void)removeItemAtIndex:(long long)arg1;
 - (void)setIndex:(long long)arg1;
 - (long long)index;
 - (id)items;
-- (void)removeItemAtIndex:(long long)arg1;
 - (id)init;
 - (void)invalidate;
 - (void)dealloc;

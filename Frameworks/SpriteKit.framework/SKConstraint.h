@@ -12,10 +12,10 @@
 @property bool enabled;
 @property(retain) SKNode * referenceNode;
 
++ (id)scale:(id)arg1;
 + (id)scaleX:(id)arg1 scaleY:(id)arg2;
 + (id)scaleY:(id)arg1;
 + (id)scaleX:(id)arg1;
-+ (id)scale:(id)arg1;
 + (id)width:(id)arg1 height:(id)arg2;
 + (id)height:(id)arg1;
 + (id)width:(id)arg1;

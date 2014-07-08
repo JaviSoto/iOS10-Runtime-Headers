@@ -32,9 +32,9 @@
 - (void)setValid:(bool)arg1;
 - (unsigned short)checksum;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (bool)valid;
 - (id)message;
 - (unsigned int)sequenceNumber;
-- (bool)valid;
 - (unsigned char)version;
 - (id)init;
 - (id)data;

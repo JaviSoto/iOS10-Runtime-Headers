@@ -11,8 +11,8 @@
 @property(copy) NSArray * validDownloads;
 
 
-- (void)setValidDownloads:(id)arg1;
 - (id)validDownloads;
+- (void)setValidDownloads:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithCoder:(id)arg1;

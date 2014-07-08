@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
+@interface NSSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
 }
 
 @property(readonly) unsigned long long count;
@@ -113,20 +113,21 @@
 - (void)__imForEach:(id)arg1;
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
+- (void)CKAssignToContainerWithID:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (id)CalMutableRecursiveCopy;
-- (void)CKAssignToContainerWithID:(id)arg1;
+- (id)setByIntersectingWithSet:(id)arg1;
 - (id)_gkSetByRemovingObject:(id)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapWithBlock:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
-- (id)setByIntersectingWithSet:(id)arg1;
 - (id)DACompactDescription;
 - (id)mf_getAllObjectsAsArray;
 - (unsigned long long)pl_countOfObjectsPassingTest:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (bool)containsObjectIdenticalTo:(id)arg1;
 
 @end

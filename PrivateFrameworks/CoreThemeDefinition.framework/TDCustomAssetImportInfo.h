@@ -63,9 +63,10 @@
 - (struct { double x1; double x2; double x3; double x4; })sliceInsets;
 - (long long)renditionSubtype;
 - (void)setRenditionType:(long long)arg1;
-- (void)setModificationDate:(id)arg1;
 - (void)setPartName:(id)arg1;
 - (id)partName;
+- (void)setModificationDate:(id)arg1;
+- (void)setName:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
 - (long long)resizingMode;
 - (bool)isTemplate;
@@ -74,7 +75,6 @@
 - (id)renditionKey;
 - (long long)templateRenderingMode;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)modificationDate;
 - (void)setResizingMode:(long long)arg1;

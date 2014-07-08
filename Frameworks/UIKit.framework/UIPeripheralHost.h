@@ -348,9 +348,9 @@
 - (id)containerTextEffectsWindow;
 - (id)containerTextEffectsWindowAboveStatusBar;
 - (void)resetCurrentOrderOutAnimationDuration:(double)arg1;
-- (void)finishSplitTransition:(id)arg1;
+- (void)finishTransitionWithCompletion:(id)arg1;
 - (void)showDropShadows:(bool)arg1;
-- (void)prepareForSplitTransition;
+- (void)prepareForTransition;
 - (void)_setHosted:(bool)arg1;
 - (bool)_shouldDelayRotationForWindow:(id)arg1;
 - (bool)keyClicksEnabled;
@@ -423,6 +423,7 @@
 - (void)setkeyboardAttachedViewHeight:(double)arg1;
 - (void)setNextAutomaticOrderInDirection:(int)arg1 duration:(double)arg2;
 - (void)_clearPreservedInputViewsWithId:(id)arg1 clearKeyboard:(bool)arg2;
+- (void)_clearPreservedInputViewsWithRestorableResponder:(id)arg1;
 - (void)_stopPinningInputViewsOnBehalfOfResponder:(id)arg1;
 - (void)_beginPinningInputViewsOnBehalfOfResponder:(id)arg1;
 - (id)containerWindow;
@@ -434,7 +435,6 @@
 - (double)getVerticalOverlapForView:(id)arg1 usingKeyboardInfo:(id)arg2;
 - (void)scrollView:(id)arg1 didFinishPanGesture:(id)arg2;
 - (void)scrollView:(id)arg1 didPanWithGesture:(id)arg2;
-- (void)_clearPreservedInputViewsWithRestorableResponder:(id)arg1;
 - (id)responder;
 - (void)setResponder:(id)arg1;
 - (bool)_isCoordinatingWithSystemGestures;

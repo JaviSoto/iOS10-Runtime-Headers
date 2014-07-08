@@ -2,34 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class UIImageView, UILabel;
-
-@interface CertificateSummaryTableViewCell : UITableViewCell  {
-    UIImageView *_certificateImageView;
-    UILabel *_certificateNameLabel;
-    UILabel *_issuerLabel;
+@interface CertificateSummaryTableViewCell : CertUIItemSummaryCell  {
 }
 
-@property(retain) UIImageView * certificateImageView;
-@property(retain) UILabel * certificateNameLabel;
-@property(retain) UILabel * issuerLabel;
 
-+ (double)estimatedCellHeight;
-
-- (void)setIssuerLabel:(id)arg1;
-- (id)issuerLabel;
-- (void)setCertificateNameLabel:(id)arg1;
-- (id)certificateNameLabel;
-- (void)setCertificateImageView:(id)arg1;
-- (id)certificateImageView;
-- (id)_expirationLabelColor:(bool)arg1;
-- (id)_certificateImage:(bool)arg1;
-- (void)_setupCell;
-- (void)_setupConstraints;
 - (void)setCertificateName:(id)arg1 issuer:(id)arg2 isRoot:(bool)arg3;
 - (void)updateWithCertificateTrust:(struct __SecTrust { }*)arg1;
-- (void).cxx_destruct;
-- (void)setSelected:(bool)arg1 animated:(bool)arg2;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

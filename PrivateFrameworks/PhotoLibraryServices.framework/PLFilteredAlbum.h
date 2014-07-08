@@ -236,8 +236,8 @@
 - (int)kindValue;
 - (bool)isRecentlyAddedAlbum;
 - (bool)isFolder;
-- (id)assets;
 - (unsigned long long)photosCount;
+- (id)assets;
 - (id)posterImage;
 - (id)filterParameters;
 - (id)kind;

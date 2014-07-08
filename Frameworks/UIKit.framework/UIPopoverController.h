@@ -232,7 +232,6 @@
 - (id)_initWithContentViewController:(id)arg1 popoverControllerStyle:(long long)arg2;
 - (void)_setGesturesEnabled:(bool)arg1;
 - (id)_gestureRecognizerForPresentationFromEdge:(unsigned long long)arg1;
-- (bool)_isDismissing;
 - (void)_setManagingSplitViewController:(id)arg1;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)setContentViewController:(id)arg1;
@@ -264,6 +263,7 @@
 - (void)setPopoverContentSize:(struct CGSize { double x1; double x2; })arg1 animated:(bool)arg2;
 - (bool)_embedsInView;
 - (id)contentViewController;
+- (bool)_isDismissing;
 - (id)_presentationController;
 - (bool)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (long long)_popoverControllerStyle;

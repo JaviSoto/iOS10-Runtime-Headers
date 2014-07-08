@@ -23,16 +23,14 @@
 @property(copy) NSURL * webpageURL;
 @property bool supportsContinuationStreams;
 @property <NSUserActivityDelegate> * delegate;
-@property(copy,readonly) NSString * typeIdentifier;
-@property(copy) NSURL * webPageURL;
 @property(retain,readonly) LSUserActivity * _internalUserActivity;
 
 + (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
 
 - (void)setUserInfo:(id)arg1;
 - (void)didReceiveInputStream:(id)arg1 outputStream:(id)arg2;
-- (void)didSynchronizeActivity;
 - (void)willSynchronizeActivity;
+- (void)didSynchronizeActivity;
 - (void)setWebPageURL:(id)arg1;
 - (id)webPageURL;
 - (void)becomeCurrent;
@@ -43,6 +41,7 @@
 - (id)title;
 - (id)webpageURL;
 - (void)setNeedsSave:(bool)arg1;
+- (id)activityType;
 - (id)typeIdentifier;
 - (id)init;
 - (void)setDelegate:(id)arg1;
@@ -65,7 +64,6 @@
 - (void)_updateUserInfoValue:(id)arg1 forKey:(id)arg2;
 - (id)_initWithTypeIdentifier:(id)arg1 suggestedActionType:(unsigned long long)arg2 options:(id)arg3;
 - (id)initWithInternalUserActivity:(id)arg1;
-- (id)activityType;
 - (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
 - (void)setSupportsContinuationStreams:(bool)arg1;
 - (bool)supportsContinuationStreams;

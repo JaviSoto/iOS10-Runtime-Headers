@@ -9,11 +9,14 @@
 }
 
 @property double travelLookaheadInterval;
+@property double availabilityFreshnessWindow;
 
 + (id)shared;
 
+- (void)setAvailabilityFreshnessWindow:(double)arg1;
 - (void)setTravelLookaheadInterval:(double)arg1;
 - (double)travelLookaheadInterval;
+- (double)availabilityFreshnessWindow;
 - (id)init;
 
 @end

@@ -25,6 +25,7 @@
 - (void)setProxyServer:(id)arg1;
 - (id)proxyPort;
 - (id)proxyServer;
+- (id)localizedAuthenticationType;
 - (id)initWithDictionary:(id)arg1 outError:(id*)arg2;
 - (id)stubDictionary;
 - (void)setPassword:(id)arg1;
@@ -32,9 +33,9 @@
 - (void)setUsername:(id)arg1;
 - (id)authenticationType;
 - (id)username;
+- (void)setName:(id)arg1;
 - (id)password;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 

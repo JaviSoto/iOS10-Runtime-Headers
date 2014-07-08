@@ -8,8 +8,10 @@
         unsigned long long length; 
     } _range;
     long long _textStyle;
+    id _value;
 }
 
 
+- (void).cxx_destruct;
 
 @end

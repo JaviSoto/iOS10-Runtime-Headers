@@ -42,8 +42,8 @@
 - (id)initStandardFormatWithSampleRate:(double)arg1 channels:(unsigned int)arg2;
 - (id)initWithStreamDescription:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;
 - (id)channelLayout;
-- (id)initWithStreamDescription:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 channelLayout:(id)arg2;
 - (unsigned int)channelCount;
+- (id)initWithStreamDescription:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 channelLayout:(id)arg2;
 - (double)sampleRate;
 - (id)settings;
 - (id)initWithSettings:(id)arg1;

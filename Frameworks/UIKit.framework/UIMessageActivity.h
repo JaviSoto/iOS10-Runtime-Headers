@@ -14,9 +14,9 @@
 
 + (long long)activityCategory;
 
+- (id)activityType;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)activityType;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (id)messageComposeViewController;
 - (void)setMessageComposeViewController:(id)arg1;

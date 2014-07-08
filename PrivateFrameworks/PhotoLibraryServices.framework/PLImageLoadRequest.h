@@ -32,9 +32,9 @@
 - (id)source;
 - (id)debugDescription;
 - (bool)isEqual:(id)arg1;
-- (int)priority;
 - (void)setPriority:(int)arg1;
 - (id)key;
+- (int)priority;
 - (void)dealloc;
 
 @end

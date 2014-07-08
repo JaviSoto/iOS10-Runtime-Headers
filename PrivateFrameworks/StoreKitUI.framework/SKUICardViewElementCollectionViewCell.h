@@ -2,11 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISizeValue, NSMapTable, SKUICardViewElement, SKUIViewElement;
+@class SKUISizeValue, NSMapTable, SKUICardViewElement, SKUICardLayout, UIView, SKUIViewElement;
 
 @interface SKUICardViewElementCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
     SKUISizeValue *_artworkBoundingSize;
     SKUICardViewElement *_cardElement;
+    SKUICardLayout *_layout;
+    UIView *_programmedCardBackgroundView;
     SKUIViewElement *_productImageElement;
     NSMapTable *_viewElements;
 }
@@ -14,18 +16,17 @@
 @property(copy) SKUISizeValue * artworkBoundingSize;
 
 + (struct CGSize { double x1; double x2; })artworkBoundingSizeWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
-+ (double)_lineSpacingForViewElement:(id)arg1;
-+ (id)_attributedStringForViewElement:(id)arg1;
 + (double)_defaultWidthForLockupWithContext:(id)arg1;
-+ (struct CGSize { double x1; double x2; })_sizeForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 
+- (void)_buttonAction:(id)arg1;
 - (id)artworkBoundingSize;
-- (void)_imageTapAction:(id)arg1;
+- (void)_performDefaultActionForViewElement:(id)arg1;
 - (void)setArtworkBoundingSize:(id)arg1;
+- (void)_imageTapAction:(id)arg1;
 - (id)viewForElementIdentifier:(id)arg1;
 - (bool)updateWithItemState:(id)arg1 context:(id)arg2 animated:(bool)arg3;
 - (bool)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;

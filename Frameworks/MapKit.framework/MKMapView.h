@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MKOverlayContainerView, MKCompassView, <MKMapViewDelegate>, MKAnnotationView, MKMapViewInternal, UILabel, MKMapGestureController, UILongPressGestureRecognizer, NSString, <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKBasicMapView, MKScaleView, NSTimer, MKMapAnnotationManager, MKAnnotationContainerView, MKMapCamera, UITextView, NSArray, UIView, VKPuckAnimator, UIGestureRecognizer, UIPanGestureRecognizer, _MKEnvironmentLabel, CLLocation, UIImageView, VKMapView, MKUserLocation, UITapGestureRecognizer, MKAttributionLabel;
+@class MKOverlayContainerView, MKCompassView, <MKMapViewDelegate>, MKAnnotationView, MKMapViewInternal, UILabel, MKMapGestureController, UILongPressGestureRecognizer, NSString, <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKBasicMapView, MKScaleView, NSTimer, MKMapAnnotationManager, MKAnnotationContainerView, MKMapCamera, UITextView, NSArray, UIView, VKPuckAnimator, UIGestureRecognizer, VKLabelMarker, _MKEnvironmentLabel, UIPanGestureRecognizer, CLLocation, UIImageView, VKMapView, MKUserLocation, UITapGestureRecognizer, MKAttributionLabel;
 
 @interface MKMapView : UIView <VKPuckAnimatorDelegate, MKOverlayContainerViewDelegate, UIGestureRecognizerDelegate, MKVariableDelayTapRecognizerDelegate, MKAnnotationContainerViewDelegate, VKMapViewDelegate, MKMapGestureControllerDelegate, MKAnnotationMarkerContainer, MKAnnotationManagerDelegate, GEOResourceManifestTileGroupObserver, NSCoding> {
     MKMapViewInternal *_internal;
@@ -46,7 +46,7 @@
     long long _userTrackingMode;
     MKBasicMapView *_basicMapView;
     VKMapView *_mapView;
-    unsigned long long _currentFlyoverAnimationID;
+    VKLabelMarker *_pressedLabelMarker;
     MKScaleView *_scaleView;
     MKCompassView *_compassView;
     bool_scaleVisible;
@@ -142,6 +142,7 @@
         unsigned int goingToDefaultLocation : 1; 
         unsigned int delayLocationUpdatesUntilInitialRendering : 1; 
         unsigned int isDraggingAnnotationView : 1; 
+        unsigned int showsPressedLabelMarkerEffect : 1; 
         unsigned int delegateShouldReceiveTouch : 1; 
         unsigned int delegateShouldDelayTapResponse : 1; 
         unsigned int delegateDidUpdateUserLocation : 1; 
@@ -154,6 +155,8 @@
         unsigned int delegateDidChangeUserTrackingModeButton : 1; 
         unsigned int delegateDidChangeMapType : 1; 
     } _flags;
+    bool_hasSetLayoutMargins;
+    unsigned long long _currentFlyoverAnimationID;
 }
 
 @property(retain) CLLocation * predictedUserLocation;
@@ -181,6 +184,7 @@
 @property(readonly) NSArray * annotations;
 @property(copy) NSArray * selectedAnnotations;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } annotationVisibleRect;
+@property(getter=_currentFlyoverAnimationID,setter=_setCurrentFlyoverAnimationID:) unsigned long long currentFlyoverAnimationID;
 
 + (void)setRendersInBackgroundByDefault:(bool)arg1;
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -189,6 +193,8 @@
 + (unsigned long long)minZoomLevelForMapType:(unsigned long long)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2 viewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 edgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg5 minZoomLevel:(double)arg6 maxZoomLevel:(double)arg7 snapToZoomLevel:(bool)arg8;
 
+- (id)selectedAnnotations;
+- (void)_setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { double x1; double x2; double x3; })arg2 course:(double)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
@@ -285,6 +291,8 @@
 - (void)_updateLocationConsole;
 - (void)_toggleLocationConsole:(id)arg1;
 - (void)removeUserLocation;
+- (void)_setCurrentFlyoverAnimationID:(unsigned long long)arg1;
+- (unsigned long long)_currentFlyoverAnimationID;
 - (void)_stopPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updatePanWithTranslation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -312,8 +320,6 @@
 - (void)_addViewsForAnnotations:(id)arg1;
 - (void)_replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
 - (void)_addAnnotations:(id)arg1 allowAnimation:(bool)arg2;
-- (void)_setCurrentFlyoverAnimationID:(unsigned long long)arg1;
-- (unsigned long long)_currentFlyoverAnimationID;
 - (void)_selectLabelMarker:(id)arg1 animated:(bool)arg2;
 - (void)_setCanSelectAllLabels:(bool)arg1;
 - (bool)_canSelectAllLabels;
@@ -322,13 +328,11 @@
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRegionFromView:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
 - (void)setSelectedAnnotations:(id)arg1;
-- (id)selectedAnnotations;
 - (id)_annotationViews;
 - (bool)compassVisible;
 - (void)setCallsDelegateForAllRegionChanges:(bool)arg1;
 - (bool)callsDelegateForAllRegionChanges;
 - (void)showAnnotations:(id)arg1 animated:(bool)arg2;
-- (void)_setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setLabelEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_labelEdgeInsets;
 - (void)_setShouldAnimatePositionWithRouteMatch:(bool)arg1;
@@ -374,6 +378,8 @@
 - (id)_longPressGestureRecognizer;
 - (id)_selectingTapGestureRecognizer;
 - (id)_panningGestureRecognizer;
+- (void)_setShowsPressedLabelMarkerEffect:(bool)arg1;
+- (bool)_showsPressedLabelMarkerEffect;
 - (void)setShowsAttributionBadge:(bool)arg1;
 - (bool)showsAttributionBadge;
 - (void)setShowsAttribution:(bool)arg1;
@@ -626,8 +632,8 @@
 - (id)mapRegion;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
-- (void)setSuspended:(bool)arg1;
 - (void)setHidden:(bool)arg1;
+- (void)setSuspended:(bool)arg1;
 - (bool)isSuspended;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
@@ -655,6 +661,8 @@
 - (void)setScrollEnabled:(bool)arg1;
 - (void)didMoveToSuperview;
 - (void)willMoveToWindow:(id)arg1;
+- (void)layoutMarginsDidChange;
+- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)isScrollEnabled;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;

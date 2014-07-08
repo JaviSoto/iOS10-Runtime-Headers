@@ -19,11 +19,11 @@
 
 - (void)setUnified:(bool)arg1;
 - (bool)isUnified;
+- (void)setName:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (void)dealloc;
 - (id)description;

@@ -4,7 +4,7 @@
 
 @class NSString, PLAdditionalAssetAttributes, NSDate, NSNumber;
 
-@interface PLUnmanagedAdjustment : NSManagedObject  {
+@interface PLUnmanagedAdjustment : PLManagedObject  {
 }
 
 @property(retain) NSNumber * adjustmentBaseImageFormat;
@@ -17,7 +17,8 @@
 @property(retain) NSString * uuid;
 @property(retain) PLAdditionalAssetAttributes * assetAttributes;
 
-+ (id)addUnmanagedAdjustmentFromXMPDataForAsset:(id)arg1;
++ (id)addUnmanagedAdjustmentFromXMPDataIfNeededForAsset:(id)arg1;
++ (id)addUnmanagedAdjustmentFromAdjustmentFileAtPath:(id)arg1 withAsset:(id)arg2;
 
 
 @end

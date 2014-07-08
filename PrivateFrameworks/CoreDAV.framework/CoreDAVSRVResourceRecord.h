@@ -24,8 +24,8 @@
 - (void)setPort:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)port;
-- (id)priority;
 - (void)setPriority:(id)arg1;
+- (id)priority;
 - (void)dealloc;
 - (id)description;
 - (id)target;

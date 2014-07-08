@@ -14,6 +14,7 @@
 + (bool)photoStreamsEnabled;
 + (id)sharedPhotoStreamsHelper;
 
+- (bool)shouldPublishScreenShots;
 - (void)resetServerState;
 - (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id)arg2;
 - (void)initiateDeletionOfOriginalAssets:(id)arg1;
@@ -23,12 +24,11 @@
 - (id)derivedAssetForMasterAsset:(id)arg1;
 - (struct CGSize { double x1; double x2; })derivedAssetSizeForMasterSizeWidth:(double)arg1 height:(double)arg2;
 - (id)temporaryPathForRecentlyUploadedAsset:(id)arg1;
-- (double)derivedAssetDimensionLimit;
 - (long long)friendsLimit;
 - (long long)imageLimitForFriendStream;
 - (long long)imageLimitForOwnStream;
+- (long long)maxPixelSizeForDerivative;
 - (long long)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
-- (bool)shouldPublishScreenShots;
 - (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
 - (bool)dequeueAssetsForPSPublishing:(id)arg1;
 - (bool)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;

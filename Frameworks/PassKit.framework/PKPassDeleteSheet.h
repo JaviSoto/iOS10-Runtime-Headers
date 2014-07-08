@@ -17,16 +17,17 @@
 
 + (void)performPassbookDeleteWithView:(id)arg1 completion:(id)arg2;
 
+- (id)groupView;
 - (void)_startAnimation;
 - (void)_registerForEnterBackgroundNotification;
 - (void)_unregisterForEnterBackgroundNotification;
+- (void)forceDeleteAnimation;
 - (id)passView;
 - (id)initWithPassView:(id)arg1 groupView:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void)finished:(bool)arg1;
-- (id)groupView;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)showInView:(id)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;

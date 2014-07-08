@@ -38,6 +38,7 @@
 - (void)fetchNextAssetUUIDs:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (id)owningContentString;
 - (id)_prepareForFetchWithCount:(unsigned long long)arg1 outRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 outFetchOwningContentString:(bool*)arg3;
+- (unsigned long long)matchCount;
 - (void)setMatchRanges:(id)arg1;
 - (void)setOwningGroupIds:(struct __CFArray { }*)arg1;
 - (void)setGroupIds:(struct __CFArray { }*)arg1;
@@ -47,10 +48,9 @@
 - (id)assetUUIDs;
 - (void)setAssetIds:(struct __CFArray { }*)arg1;
 - (struct __CFArray { }*)assetIds;
-- (id)contentStrings;
 - (id)unitTestDescription;
 - (void)setContentStrings:(id)arg1;
-- (unsigned long long)matchCount;
+- (id)contentStrings;
 - (void)setCategories:(struct __CFArray { }*)arg1;
 - (void)setScore:(float)arg1;
 - (id)init;

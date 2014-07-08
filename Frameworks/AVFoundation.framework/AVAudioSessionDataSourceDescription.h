@@ -16,15 +16,13 @@
 @property(readonly) NSString * selectedPolarPattern;
 @property(readonly) NSString * preferredPolarPattern;
 
-+ (id)privateCreateOrConfigure:(id)arg1 withRawSourceDescription:(id)arg2 portID:(id)arg3;
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawSourceArray:(id)arg2 portID:(id)arg3;
 
-- (id)location;
 - (bool)setPreferredPolarPattern:(id)arg1 error:(id*)arg2;
 - (id)supportedPolarPatterns;
 - (id)preferredPolarPattern;
-- (void)configurePolarPatterns:(id)arg1;
 - (id)initWithRawSourceDescription:(id)arg1 andOwningPortID:(id)arg2;
+- (void)configurePolarPatterns:(id)arg1;
 - (id)selectedPolarPattern;
 - (id)orientation;
 - (id)privateGetOwningPortID;
@@ -33,6 +31,7 @@
 - (id)dataSourceName;
 - (id)dataSourceID;
 - (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; }*)privateGetImplementation;
+- (id)location;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

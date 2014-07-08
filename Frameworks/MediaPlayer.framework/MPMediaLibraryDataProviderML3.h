@@ -99,9 +99,7 @@
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
 - (bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
-- (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
 - (bool)playlistExistsWithPersistentID:(unsigned long long)arg1;
-- (bool)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (id)entityCache;
 - (id)syncValidity;
 - (void)performReadTransactionWithBlock:(id)arg1;
@@ -128,6 +126,8 @@
 - (void)enumerateItemIdentifiersForQueryCriteria:(id)arg1 ordered:(bool)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
 - (void)loadValueForAggregateFunction:(id)arg1 onItemsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
 - (void)loadValueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2 queryCriteria:(id)arg3 completionBlock:(id)arg4;
+- (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
+- (bool)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (bool)collectionExistsWithName:(id)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
 - (bool)collectionExistsContainedWithinPersistentIDs:(const unsigned long long*)arg1 count:(unsigned long long)arg2 groupingType:(long long)arg3 existentPID:(unsigned long long*)arg4;
 - (id)artworkDataSource;

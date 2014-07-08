@@ -16,6 +16,7 @@
 @property(readonly) bool usingAttributedText;
 @property bool shouldInhibitReplay;
 @property double actualFontShrinkageFactor;
+@property double minimumScaleFactor;
 @property(retain) GKTextStyle * appliedStyle;
 
 + (void)initialize;

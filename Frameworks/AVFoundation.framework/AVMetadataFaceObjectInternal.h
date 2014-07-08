@@ -8,6 +8,34 @@
     double _rollAngle;
     bool_hasYawAngle;
     double _yawAngle;
+    bool_hasVers0Struct;
+    int _vers0Struct;
+    bool_hasVers1Struct;
+    int _vers1Struct;
+    bool_hasConstructionAlignment;
+    int _constructionAlignment;
+    bool_hasBytePackageA;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    } _bytePackedBagA;
+    bool_hasBytePackageB;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    } _bytePackedBagB;
 }
 
 @property long long faceID;
@@ -15,17 +43,47 @@
 @property double rollAngle;
 @property bool hasYawAngle;
 @property double yawAngle;
+@property bool hasVers0Struct;
+@property int vers0Struct;
+@property bool hasVers1Struct;
+@property int vers1Struct;
+@property bool hasConstructionAlignment;
+@property int constructionAlignment;
+@property bool hasBytePackageA;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bytePackedBagA;
+@property bool hasBytePackageB;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bytePackedBagB;
 
 
+- (void)setBytePackedBagB:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bytePackedBagB;
+- (void)setHasBytePackageB:(bool)arg1;
+- (bool)hasBytePackageB;
+- (void)setBytePackedBagA:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bytePackedBagA;
+- (void)setHasBytePackageA:(bool)arg1;
+- (bool)hasBytePackageA;
+- (void)setConstructionAlignment:(int)arg1;
+- (int)constructionAlignment;
+- (void)setHasConstructionAlignment:(bool)arg1;
+- (bool)hasConstructionAlignment;
+- (void)setVers1Struct:(int)arg1;
+- (int)vers1Struct;
+- (void)setHasVers1Struct:(bool)arg1;
+- (bool)hasVers1Struct;
+- (void)setVers0Struct:(int)arg1;
+- (int)vers0Struct;
+- (void)setHasVers0Struct:(bool)arg1;
+- (bool)hasVers0Struct;
+- (void)setFaceID:(long long)arg1;
+- (long long)faceID;
 - (void)setYawAngle:(double)arg1;
 - (void)setHasYawAngle:(bool)arg1;
 - (void)setRollAngle:(double)arg1;
 - (void)setHasRollAngle:(bool)arg1;
-- (void)setFaceID:(long long)arg1;
 - (double)yawAngle;
 - (bool)hasYawAngle;
 - (double)rollAngle;
 - (bool)hasRollAngle;
-- (long long)faceID;
 
 @end

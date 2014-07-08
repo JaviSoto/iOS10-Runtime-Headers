@@ -28,14 +28,14 @@
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (id)parentViewControllerForObjectModel:(id)arg1;
-- (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
-- (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)_cleanupRUILoader;
 - (void)_cleanUpAndDismissWithSuccess:(bool)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
 - (void)_popObjectModelAnimated:(bool)arg1;
 - (void)_displayConnectionErrorAndDismiss;
 - (void)_addHeadersToRequest:(id)arg1;
+- (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
+- (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;

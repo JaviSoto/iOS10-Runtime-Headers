@@ -14,12 +14,12 @@
 - (void)copyTo:(id)arg1;
 - (id)predicates;
 - (void)setPredicates:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)predicatesAtIndex:(unsigned long long)arg1;
 - (void)clearPredicates;
 - (unsigned long long)predicatesCount;
 - (void)addPredicates:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

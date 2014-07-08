@@ -18,7 +18,7 @@
 
 - (void)setIppAddresses:(id)arg1;
 - (void)setAirPrintCount:(unsigned long long)arg1;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)ippAddresses;

@@ -14,36 +14,38 @@
 }
 
 @property(readonly) struct CGSize { double x1; double x2; } iconSize;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(retain) UIColor * backgroundColor;
 @property(retain) SKUIColorScheme * colorScheme;
 
-+ (id)purchasedConsumer;
-+ (id)updatesConsumer;
 + (id)swooshConsumer;
 + (id)productPageConsumer;
++ (id)purchasedConsumer;
++ (id)updatesConsumer;
 + (id)wishlistConsumer;
 + (id)gridConsumer;
 + (id)chartsConsumer;
++ (id)cardConsumer;
++ (id)consumerWithSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)lockupConsumerWithSize:(long long)arg1 itemKind:(long long)arg2;
++ (id)giftThemeConsumer;
 + (id)giftThemeLetterboxConsumer;
 + (id)giftThemePosterConsumer;
-+ (id)giftThemeConsumer;
 + (id)giftResultConsumer;
++ (id)giftComposeConsumer;
 + (id)giftComposeLetterboxConsumer;
 + (id)giftComposePosterConsumer;
-+ (id)giftComposeConsumer;
-+ (id)consumerWithSize:(struct CGSize { double x1; double x2; })arg1;
-+ (id)cardConsumer;
 + (id)smartBannerConsumer;
 
-- (id)imageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })iconSize;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)imageForColor:(id)arg1;
 - (id)imageForImage:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (void)setBackgroundColor:(id)arg1;
 - (id)backgroundColor;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

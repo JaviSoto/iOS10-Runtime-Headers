@@ -23,11 +23,11 @@
 - (bool)hasSameAddressAs:(id)arg1;
 - (id)netServiceDomain;
 - (id)netServiceName;
+- (void)setName:(id)arg1;
 - (id)init;
 - (unsigned long long)port;
 - (id)host;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;

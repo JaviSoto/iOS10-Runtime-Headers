@@ -16,10 +16,11 @@
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (void)dealloc;
-- (id)identifierForActivity:(id)arg1;
-- (void)postActivityUserDefaultsNotification;
 - (void)setDefaultsValue:(id)arg1 forKey:(id)arg2 activity:(id)arg3;
 - (id)defaultsValueForKey:(id)arg1 activity:(id)arg2;
+- (id)identifierForActivity:(id)arg1;
+- (void)postActivityUserDefaultsNotification;
+- (id)applicationExtensionForActivity:(id)arg1;
 - (void)setActivity:(id)arg1 asHidden:(bool)arg2;
 - (void)updateUserOrderForActivitiesInArray:(id)arg1;
 - (bool)canHideActivity:(id)arg1;

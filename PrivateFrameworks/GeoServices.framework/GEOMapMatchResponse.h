@@ -22,16 +22,17 @@
 @property(retain) NSData * zilchPoints;
 
 
+- (bool)hasStatus;
 - (int)matchingStatus;
 - (bool)hasMatchingStatus;
 - (void)setHasMatchingStatus:(bool)arg1;
 - (void)setMatchingStatus:(int)arg1;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (id)zilchPoints;
 - (bool)hasZilchPoints;
 - (void)setZilchPoints:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setStatus:(int)arg1;

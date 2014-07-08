@@ -26,8 +26,6 @@
 @property float animationSpeed;
 @property(retain) SKTexture * texture;
 
-+ (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
-+ (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)velocityFieldWithTexture:(id)arg1;
 + (id)velocityFieldWithVector:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
      /* Encoded args for previous method: @32@0:816 */
@@ -38,6 +36,8 @@
 + (id)customFieldWithEvaluationBlock:(id)arg1;
 + (id)electricField;
 + (id)springField;
++ (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
++ (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)radialGravityField;
 + (id)vortexField;
 + (id)dragField;

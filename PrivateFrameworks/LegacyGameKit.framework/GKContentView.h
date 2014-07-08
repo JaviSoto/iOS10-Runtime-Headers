@@ -52,9 +52,9 @@
 - (id)_createConnectionButtonWithType:(unsigned long long)arg1;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
+- (id)icon;
 - (void)setMessage:(id)arg1;
 - (id)message;
-- (id)icon;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)layoutIfNeeded;
@@ -64,8 +64,8 @@
 - (id)activityIndicator;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setIconView:(id)arg1;
-- (id)iconView;
 - (void)_createTitleLabelIfNeeded;
+- (id)iconView;
 - (id)titleFont;
 - (void)setTitleLabel:(id)arg1;
 - (void)setIcon:(id)arg1;

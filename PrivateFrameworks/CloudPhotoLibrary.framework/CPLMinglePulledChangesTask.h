@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> *_lock;
     NSString *_clientCacheIdentifier;
     bool_hasPreparedForMingling;
-    bool_didPutBatchesInPullQueue;
+    unsigned long long _countOfNotifiedBatchesInPullQueue;
 }
 
 @property(retain) <CPLMinglePulledChangesTaskDelegate> * delegate;

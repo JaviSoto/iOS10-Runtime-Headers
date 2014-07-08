@@ -29,6 +29,7 @@
     double _opacity;
     NSDate *_modtime;
     unsigned int _pixelFormat;
+    int _exifOrientation;
 }
 
 @property(copy) NSString * name;
@@ -41,6 +42,7 @@
 @property unsigned int scaleFactor;
 @property unsigned int pixelFormat;
 @property bool allowsMultiPassEncoding;
+@property int exifOrientation;
 @property(retain) CUIPSDGradient * gradient;
 @property(retain) CUIShapeEffectPreset * effectPreset;
 @property int blendMode;
@@ -50,10 +52,11 @@
 + (void)initialize;
 
 - (void)setScaleFactor:(unsigned int)arg1;
+- (void)setName:(id)arg1;
 - (void)setOpacity:(double)arg1;
 - (double)opacity;
 - (void)setAllowsMultiPassEncoding:(bool)arg1;
-- (bool)allowsMultiPassEncoding;
+- (int)exifOrientation;
 - (void)setModtime:(id)arg1;
 - (void)setBlendMode:(int)arg1;
 - (id)effectPreset;
@@ -85,13 +88,14 @@
 - (void)writeHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1 toData:(id)arg2;
 - (void)formatCSIHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; float x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
+- (bool)allowsMultiPassEncoding;
 - (int)blendMode;
 - (id)modtime;
 - (long long)templateRenderingMode;
 - (void)setEffectPreset:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
+- (void)setExifOrientation:(int)arg1;
 - (void)setTemplateRenderingMode:(long long)arg1;
 - (unsigned int)scaleFactor;
 

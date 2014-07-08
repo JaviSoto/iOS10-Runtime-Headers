@@ -30,8 +30,8 @@
 - (id)minor;
 - (id)major;
 - (id)proximityUUID;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

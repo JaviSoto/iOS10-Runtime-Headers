@@ -31,7 +31,6 @@
 @property(readonly) UIView * itemImageView;
 
 
-- (id)itemImageView;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })itemImageInsets;
 - (void)setItemImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setItemImageHidden:(bool)arg1;
@@ -43,6 +42,7 @@
 - (void)setItemImage:(id)arg1;
 - (id)countdown;
 - (void)setColoringWithColorScheme:(id)arg1;
+- (id)itemImageView;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setBackgroundColor:(id)arg1;

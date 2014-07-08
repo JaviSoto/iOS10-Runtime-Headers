@@ -9,23 +9,26 @@
     NSError *_requestError;
     NSManagedObjectContext *_requestContext;
     id _requestCompletionBlock;
+    int _flags;
 }
 
-@property(retain) NSError * requestError;
-@property(readonly) NSManagedObjectContext * requestContext;
-@property(retain) NSProgress * requestProgress;
+@property(readonly) NSManagedObjectContext * managedObjectContext;
+@property(retain) NSError * operationError;
+@property(retain) NSProgress * progress;
 @property(copy) id requestCompletionBlock;
 
 
-- (id)requestContext;
-- (void)setRequestError:(id)arg1;
-- (id)requestError;
-- (void)setRequestProgress:(id)arg1;
+- (void)setOperationError:(id)arg1;
+- (id)operationError;
+- (void)_cancelProgress;
 - (id)initWithContext:(id)arg1 andProgress:(id)arg2 completetionBlock:(id)arg3;
-- (id)requestProgress;
+- (id)managedObjectContext;
 - (id)requestCompletionBlock;
 - (void)cancel;
 - (void)dealloc;
+- (void)setProgress:(id)arg1;
+- (id)progress;
+- (bool)_isCancelled;
 - (void)setRequestCompletionBlock:(id)arg1;
 
 @end

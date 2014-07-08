@@ -56,10 +56,10 @@
 - (void)setParentOperation:(id)arg1;
 - (void)setRedirectURL:(id)arg1;
 - (id)redirectURL;
-- (void)setContentType:(id)arg1;
-- (id)contentType;
 - (long long)contentLength;
 - (id)output;
+- (void)setContentType:(id)arg1;
+- (id)contentType;
 - (void)setContentLength:(long long)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

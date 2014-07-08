@@ -12,9 +12,9 @@
 - (void)removeAllInts;
 - (void)removeIntForKey:(long long)arg1;
 - (bool)intIsPresentForKey:(long long)arg1 outValue:(long long*)arg2;
-- (struct __CFDictionary { }*)p_cfDictionary;
 - (void)setInt:(long long)arg1 forKey:(long long)arg2;
 - (long long)intForKey:(long long)arg1;
+- (struct __CFDictionary { }*)p_cfDictionary;
 - (id)init;
 - (id)allValues;
 - (id)allKeys;

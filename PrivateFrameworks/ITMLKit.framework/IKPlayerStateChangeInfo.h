@@ -20,8 +20,8 @@
 - (id)jsonValue;
 - (id)_stateNameForState:(long long)arg1;
 - (id)initWithState:(long long)arg1;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (long long)state;
 - (void).cxx_destruct;

@@ -37,9 +37,9 @@
 - (id)initWithPayment:(id)arg1;
 - (id)payment;
 - (id)transactionIdentifier;
+- (id)downloads;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)downloads;
 - (id)transactionDate;
 - (id)init;
 - (id)error;

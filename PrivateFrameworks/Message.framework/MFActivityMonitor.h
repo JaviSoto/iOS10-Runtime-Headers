@@ -39,6 +39,7 @@
 + (void)destroyMonitor;
 + (id)currentMonitor;
 
+- (unsigned long long)bytesRead;
 - (id)statusMessage;
 - (void)setCurrentCount:(unsigned long long)arg1;
 - (unsigned long long)gotNewMessagesState;
@@ -78,7 +79,6 @@
 - (void)postActivityFinished:(id)arg1;
 - (void)postActivityStarting;
 - (void)setShouldCancel:(bool)arg1;
-- (unsigned long long)bytesRead;
 - (void)recordBytesRead:(unsigned long long)arg1;
 - (void)recordBytesWritten:(unsigned long long)arg1;
 - (void)setGotNewMessagesState:(unsigned long long)arg1;

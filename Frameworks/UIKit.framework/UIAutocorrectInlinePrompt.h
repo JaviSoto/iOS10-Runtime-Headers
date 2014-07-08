@@ -41,8 +41,8 @@
 @property bool showHiddenCandidatesOnly;
 
 
-- (unsigned long long)index;
 - (unsigned long long)currentIndex;
+- (unsigned long long)index;
 - (id)candidateResultSet;
 - (bool)hasCandidates;
 - (id)currentCandidate;

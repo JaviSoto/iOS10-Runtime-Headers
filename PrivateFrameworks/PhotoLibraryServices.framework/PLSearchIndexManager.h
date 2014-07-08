@@ -6,17 +6,21 @@
    See Warning(s) below.
  */
 
-@class NSString, PLThrottleTimer, NSDictionary, PSIDatabase, NSObject<OS_dispatch_queue>, PLPhotoLibrary, PLKeywordManager;
+@class NSString, PLSearchIndexDateFormatter, PLThrottleTimer, PLXPCTransaction, PSIDatabase, NSDictionary, NSObject<OS_dispatch_queue>, PLPhotoLibrary, PLKeywordManager;
 
 @interface PLSearchIndexManager : NSObject  {
+    PLSearchIndexDateFormatter *_dateFormatter;
     PLKeywordManager *_keywordManager;
     PLPhotoLibrary *_photoLibrary;
     PSIDatabase *_db;
     PLThrottleTimer *_throttleTimer;
+    PLXPCTransaction *_xpcTransaction;
     NSString *_searchIndexDirectory;
+    NSDictionary *_searchMetadata;
     NSObject<OS_dispatch_queue> *_queue;
     NSDictionary *_uuidsToProcess;
     bool_receivedUpdatesWhileIndexing;
+    bool_hasValidSearchIndex;
     bool_indexingPaused;
     bool__indexing;
 
@@ -36,10 +40,9 @@
 + (id)_defaultDatabaseDirectory;
 + (id)sharedInstance;
 
-- (void)applyUpdates:(id)arg1;
+- (void)applyUpdates:(id)arg1 completion:(id)arg2;
 - (void)dropSearchIndexDatabase;
 - (void)closeSearchIndexWithCompletion:(id)arg1;
-- (void)setIndexingPaused:(bool)arg1;
 - (bool)isIndexingPaused;
 - (unsigned long long)enqueuedUUIDsCount;
 - (id)_inqAfterIndexingDidIterate;
@@ -48,10 +51,14 @@
 - (void)_inqEnsureSearchIndexExists;
 - (void)_setIndexing:(bool)arg1;
 - (void)_scheduleCloseIndex;
+- (bool)_inqHasValidSearchIndex;
 - (id)_inqPhotoLibrary;
+- (void)_takeXPCTransactionIfNeeded;
+- (void)_dropXPCTransactionIfNeeded;
 - (id)_dbPath;
 - (bool)_removeFileAtPath:(id)arg1 description:(id)arg2;
 - (id)_oldDbPath;
+- (id)_dbMetadataPath;
 - (id)_cxindexProgressPath;
 - (void)_inqAddUpdatesWithUUIDsArray:(id)arg1 forKey:(id)arg2;
 - (void)_inqCloseSearchIndexAndDelete:(bool)arg1 withCompletion:(id)arg2;
@@ -63,9 +70,13 @@
 - (void)_inqAddUpdatesWithUUIDs:(id)arg1 forKey:(id)arg2;
 - (unsigned long long)_inqEnqueuedUUIDsCountForceLoad:(bool)arg1;
 - (void)_inqEnsureSearchProgressExists;
+- (void)setIndexingPaused:(bool)arg1;
+- (bool)_inqUpdateLocale;
+- (void)_inqEnsureSearchMetadataExists;
 - (void)_inqCloseIndexIfAbleOrForce:(bool)arg1 isDelete:(bool)arg2;
 - (void)_throttleTimerFire:(id)arg1;
 - (id)initWithSearchIndexDirectory:(id)arg1;
+- (void)_localeDidChange:(id)arg1;
 - (void)dropSearchIndexWithCompletion:(id)arg1;
 - (void)dealloc;
 

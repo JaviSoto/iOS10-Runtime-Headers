@@ -47,7 +47,6 @@
 - (id)title;
 - (id)webpageURL;
 - (void)setActivityDate:(id)arg1;
-- (bool)shouldAdvertiseAsDomainContinuation;
 - (id)statusString;
 - (unsigned long long)changeCount;
 - (id)typeIdentifier;

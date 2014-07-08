@@ -46,6 +46,7 @@
 @property unsigned int sectionDeltaLengthBits;
 
 
+- (id)coastlines;
 - (int)minZ;
 - (id)labelLanguages;
 - (int)zBits;
@@ -90,7 +91,6 @@
 - (void)setPolygons:(id)arg1;
 - (void)setLines:(id)arg1;
 - (unsigned long long)coastlinesCount;
-- (id)coastlines;
 - (unsigned long long)polygonsCount;
 - (id)polygons;
 - (unsigned long long)linesCount;

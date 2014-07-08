@@ -33,6 +33,7 @@
 - (void)readyPlugIns:(id)arg1 ready:(id)arg2;
 - (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(id)arg3;
 - (void)activatePlugIn:(id)arg1;
+- (void)setExtensionState:(id)arg1 forPlugIn:(id)arg2;
 - (void)setElection:(long long)arg1 forPlugIn:(id)arg2;
 - (id)init;
 - (id)client;

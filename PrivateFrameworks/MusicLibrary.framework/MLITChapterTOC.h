@@ -10,8 +10,8 @@
     unsigned int *_nameCookieIndexMap;
 }
 
-+ (void)enumerateChapterTimesInFlattenedChapterData:(id)arg1 usingBlock:(id)arg2;
 + (unsigned int**)_chapterDataCookieIndexMapForProperty:(int)arg1 ofChapterTOC:(id)arg2;
++ (void)enumerateChapterTimesInFlattenedChapterData:(id)arg1 usingBlock:(id)arg2;
 + (void)enumerateArtworkCacheIDsInFlattenedChapterData:(id)arg1 usingBlock:(id)arg2;
 
 - (unsigned int)timeLocationInMSOfGroupAtIndex:(unsigned int)arg1 groupingProperty:(int)arg2;

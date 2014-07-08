@@ -41,7 +41,6 @@
 - (id)_localExternalValues;
 - (void)_addCachedPropertyValues:(id)arg1;
 - (void)_addCachedExternalValues:(id)arg1;
-- (id)copyXPCEncoding;
 - (void)_resetLocalIVars;
 - (bool)setValuesWithDictionary:(id)arg1;
 - (bool)setExternalValuesWithDictionary:(id)arg1;
@@ -51,6 +50,7 @@
 - (void)_becomeManagedOnConnection:(id)arg1;
 - (id)_initWithPersistentIdentifier:(long long)arg1;
 - (bool)exists;
+- (id)copyXPCEncoding;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

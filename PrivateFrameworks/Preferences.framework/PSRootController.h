@@ -8,13 +8,11 @@
     PSSpecifier *_specifier;
     NSMutableSet *_tasks;
     bool_deallocating;
-    unsigned char _hasTelephony;
     PSStackPushAnimationController *_stackAnimationController;
 }
 
 + (bool)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
 + (void)writePreference:(id)arg1;
-+ (id)domainForSpecifier:(id)arg1;
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 

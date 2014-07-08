@@ -46,8 +46,8 @@
 - (unsigned long long)assetsCount;
 - (unsigned long long)approximateCount;
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
-- (id)assets;
 - (unsigned long long)photosCount;
+- (id)assets;
 - (id)uuid;
 - (id)title;
 - (bool)isEmpty;

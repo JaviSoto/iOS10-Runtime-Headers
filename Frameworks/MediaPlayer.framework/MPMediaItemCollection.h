@@ -19,9 +19,9 @@
 @property(readonly) unsigned long long mediaTypes;
 @property(readonly) long long groupingType;
 
++ (id)collectionWithItems:(id)arg1;
 + (id)representativePersistentIDPropertyForGroupingType:(long long)arg1;
 + (id)sortTitlePropertyForGroupingType:(long long)arg1;
-+ (id)collectionWithItems:(id)arg1;
 + (id)titlePropertyForGroupingType:(long long)arg1;
 + (bool)supportsSecureCoding;
 
@@ -36,8 +36,8 @@
 - (id)representativeItem;
 - (id)initWithMultiverseIdentifier:(id)arg1;
 - (id)artworkCatalog;
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (id)init;
 - (unsigned long long)count;
 - (id)initWithCoder:(id)arg1;

@@ -29,12 +29,12 @@
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2;
 + (id)tokenForKeyplane:(id)arg1;
 
+- (void)setName:(id)arg1;
 - (id)stringForState:(int)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (id)string;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGSize { double x1; double x2; })size;

@@ -57,7 +57,6 @@
 - (void)setRestrictionType:(long long)arg1;
 - (bool)_addManagedDefaults:(id)arg1;
 - (id)_userSettingsForUser:(id)arg1;
-- (void)setUserName:(id)arg1;
 - (bool)_setManagedDefaults:(id)arg1;
 - (id)_managedDefaultsPath;
 - (bool)whiteListContainsURL:(id)arg1;
@@ -68,6 +67,7 @@
 - (bool)overridesAllowed;
 - (void)setAlwaysAllowHTTPS:(bool)arg1;
 - (bool)alwaysAllowHTTPS;
+- (void)setUserName:(id)arg1;
 - (long long)restrictionType;
 - (id)initWithUserName:(id)arg1;
 - (id)whiteListAllowedSites;

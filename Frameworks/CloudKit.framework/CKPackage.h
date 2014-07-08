@@ -18,6 +18,7 @@
     long long _packageID;
     CKSQLite *_sqlite;
     unsigned long long _nextItemIndex;
+    NSString *_UUID;
 }
 
 @property(copy) NSData * signature;
@@ -34,23 +35,31 @@
 @property(getter=isOpen) bool open;
 @property(getter=inTransaction) bool transaction;
 @property unsigned long long nextItemIndex;
+@property(retain) NSString * UUID;
 
++ (id)_packagesPathForBundleID:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (void)updateItemAtIndex:(long long)arg1 withFileURL:(id)arg2;
+- (void)updateItemAtIndex:(long long)arg1 withSignature:(id)arg2 size:(unsigned long long)arg3 itemID:(unsigned long long)arg4 sectionIndex:(unsigned long long)arg5;
+- (struct _OpaquePCSShareProtection { }*)recordPCS;
+- (id)itemEnumeratorForSectionAtIndex:(unsigned long long)arg1;
+- (void)setRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (id)itemEnumerator;
+- (id)sectionAtIndex:(unsigned long long)arg1;
+- (unsigned long long)sectionCount;
+- (void)addSection:(id)arg1;
+- (void)setRecordKey:(id)arg1;
+- (void)setApplicationBundleID:(id)arg1;
+- (void)setWasCached:(bool)arg1;
+- (void)setRecord:(id)arg1;
+- (void)setUUID:(id)arg1;
+- (void)_openIfNecessary;
 - (void)setNextItemIndex:(unsigned long long)arg1;
 - (unsigned long long)nextItemIndex;
 - (void)setPackageID:(long long)arg1;
 - (void)setOpenFileURL:(id)arg1;
 - (id)openFileURL;
-- (void)setApplicationBundleID:(id)arg1;
-- (struct _OpaquePCSShareProtection { }*)recordPCS;
-- (void)addSection:(id)arg1;
-- (id)sectionAtIndex:(unsigned long long)arg1;
-- (void)updateItemAtIndex:(long long)arg1 withFileURL:(id)arg2;
-- (void)updateItemAtIndex:(long long)arg1 withSignature:(id)arg2 size:(unsigned long long)arg3 itemID:(unsigned long long)arg4 sectionIndex:(unsigned long long)arg5;
-- (id)itemEnumeratorForSectionAtIndex:(unsigned long long)arg1;
-- (id)itemEnumerator;
-- (void)setRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setTransaction:(bool)arg1;
 - (id)_itemOrNilAtIndex:(unsigned long long)arg1;
 - (id)_itemWithColumnsByName:(id)arg1;
@@ -62,26 +71,20 @@
 - (long long)packageID;
 - (id)sqlite;
 - (id)assets;
-- (id)_packageDatabasePath;
-- (id)_initWithPath:(id)arg1;
-- (id)_uniquePackageDatabasePathForBundleIdentifier:(id)arg1;
+- (id)_packageDatabasePathWithUUID:(id)arg1;
+- (id)_initWithPath:(id)arg1 UUID:(id)arg2;
 - (id)applicationBundleID;
-- (id)_packageDatabasePathForBundleIdentifier:(id)arg1;
 - (void)setAssets:(id)arg1;
-- (void)setRecordKey:(id)arg1;
-- (void)setRecord:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (id)recordKey;
-- (void)setWasCached:(bool)arg1;
 - (bool)wasCached;
 - (id)CKPropertiesDescription;
-- (unsigned long long)sectionCount;
-- (void)_openIfNecessary;
-- (void)beginTransaction;
-- (bool)isOpen;
-- (id)record;
 - (unsigned long long)itemCount;
 - (id)itemAtIndex:(unsigned long long)arg1;
+- (id)record;
+- (void)beginTransaction;
+- (bool)isOpen;
+- (id)UUID;
 - (void)setOpen:(bool)arg1;
 - (void)addItem:(id)arg1;
 - (void)endTransaction;
@@ -97,5 +100,6 @@
 - (id)description;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)signature;
+- (id)_prettyDictionaryRepresentation;
 
 @end

@@ -8,14 +8,14 @@
     SKUIViewElementLayoutContext *_cellLayoutContext;
 }
 
-@property(retain) SKUIReviewListPageComponent * pageComponent;
+@property(readonly) SKUIReviewListPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
-- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void).cxx_destruct;

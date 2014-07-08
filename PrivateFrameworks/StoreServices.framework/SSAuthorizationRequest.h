@@ -21,9 +21,9 @@
 - (void)startWithAuthorizationResponseBlock:(id)arg1;
 - (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
 - (void)startWithCompletionBlock:(id)arg1;
+- (void)setKeybagPath:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setKeybagPath:(id)arg1;
 - (id)accountIdentifier;
 - (id)init;
 - (bool)start;

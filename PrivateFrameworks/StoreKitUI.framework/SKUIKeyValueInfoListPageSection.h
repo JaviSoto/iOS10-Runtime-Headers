@@ -17,14 +17,14 @@
 - (void)_enumerateVisibleViewElementsUsingBlock:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
+- (long long)applyUpdateType:(long long)arg1;
 - (void)_reloadViewElementProperties;
-- (void)reloadVisibleCells;
+- (void)reloadVisibleCellsWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)willAppearInContext:(id)arg1;
-- (void)setPageComponent:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void).cxx_destruct;
 

@@ -17,8 +17,8 @@
 @property(readonly) NSArray * versionDomains;
 
 
-- (id)versionDomains;
 - (id)initWithTimestamp:(double)arg1 ttl:(double)arg2 version:(unsigned int)arg3 domains:(id)arg4;
+- (id)versionDomains;
 - (double)ttl;
 - (double)timestamp;
 - (unsigned int)version;

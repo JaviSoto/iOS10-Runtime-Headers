@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, _UIBackdropView, UIView, _UINavigationBarAppearanceStorage;
+@class UIColor, _UIBackdropView, NSString, UIView, _UINavigationBarAppearanceStorage;
 
 @interface SKUITabBarBackgroundView : UIView  {
     _UIBackdropView *_backdropView;
@@ -16,6 +16,7 @@
     long long _backdropStyle;
 }
 
+@property(copy) NSString * backdropGroupName;
 @property long long backdropStyle;
 @property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
 @property long long barStyle;
@@ -26,6 +27,8 @@
 
 
 - (void)setBackdropStyle:(long long)arg1;
+- (id)backdropGroupName;
+- (void)setBackdropGroupName:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void).cxx_destruct;
 - (long long)backdropStyle;

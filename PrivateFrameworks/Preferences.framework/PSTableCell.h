@@ -22,6 +22,7 @@
     NSString *_lazyIconAppID;
     bool_reusedCell;
     PSTableCellHighlightContext *_customHighlightContext;
+    bool_forceHideDisclosureIndicator;
     bool_isCopyable;
     UILongPressGestureRecognizer *_longTapRecognizer;
 }
@@ -29,6 +30,7 @@
 @property long long type;
 @property(retain) PSSpecifier * specifier;
 @property bool reusedCell;
+@property bool forceHideDisclosureIndicator;
 @property bool isCopyable;
 @property(retain) UILongPressGestureRecognizer * longTapRecognizer;
 
@@ -46,10 +48,12 @@
 - (id)longTapRecognizer;
 - (void)setIsCopyable:(bool)arg1;
 - (bool)isCopyable;
+- (bool)forceHideDisclosureIndicator;
 - (bool)reusedCell;
 - (bool)cellEnabled;
 - (id)getIcon;
 - (id)titleTextLabel;
+- (void)setForceHideDisclosureIndicator:(bool)arg1;
 - (SEL)cellAction;
 - (id)cellTarget;
 - (void)setCellAction:(SEL)arg1;
@@ -62,6 +66,7 @@
 - (id)blankIcon;
 - (void)setShouldHideTitle:(bool)arg1;
 - (void)longPressed:(id)arg1;
+- (void)_updateAccessoryTypeForSpecifier:(id)arg1;
 - (id)_copyableText;
 - (void)_invalidateHighlightContext;
 - (void)highlightCellForDuration:(double)arg1 animateUnighlight:(bool)arg2;

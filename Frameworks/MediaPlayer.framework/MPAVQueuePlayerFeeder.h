@@ -53,9 +53,9 @@
 - (void)setMaxQueueDepth:(unsigned long long)arg1;
 - (void)setManagesSystemDownloads:(bool)arg1;
 - (void)setForceSynchronousQueueFilling:(bool)arg1;
-- (id)items;
 - (id)currentItem;
 - (void)advanceToNextItem;
+- (id)items;
 - (void)invalidate;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)dealloc;

@@ -49,8 +49,8 @@
 - (id)author;
 - (id)initWithManifestDictionary:(id)arg1;
 - (id)friendlyName;
-- (void)setKind:(id)arg1;
 - (id)kind;
+- (void)setKind:(id)arg1;
 - (id)version;
 - (void)setTitle:(id)arg1;
 - (id)title;

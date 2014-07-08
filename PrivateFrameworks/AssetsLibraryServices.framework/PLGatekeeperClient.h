@@ -6,11 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSArray;
 
 @interface PLGatekeeperClient : NSObject  {
     NSObject<OS_dispatch_queue> *_serialReplyQueue;
     NSObject<OS_xpc_object> *connection;
+    NSArray *_assetLocalIdentifiersForDeleteConfirmation;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -19,6 +20,7 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * replyQueue;
+@property NSArray * assetLocalIdentifiersForDeleteConfirmation;
 @property NSObject<OS_xpc_object> * connection;
 @property(copy) id CPLDownloadTransactionsLostHandler;
 
@@ -26,10 +28,13 @@
 + (id)sharedInstance;
 
 - (void)setCPLDownloadTransactionsLostHandler:(id)arg1;
+- (void)setAssetLocalIdentifiersForDeleteConfirmation:(id)arg1;
+- (id)assetLocalIdentifiersForDeleteConfirmation;
 - (id)cacheDeleteDebug:(id)arg1;
 - (void)downloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(bool)arg3;
 - (void)addLogMark:(id)arg1;
 - (bool)setKeywords:(id)arg1 forAssetWithUUID:(id)arg2;
+- (id)getKeywordsForAssetWithUUID:(id)arg1;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
 - (void)removeLocalDuplicates;
 - (void)dumpCloudPhotosStatusIncludingDaemon:(bool)arg1;
@@ -102,8 +107,6 @@
 - (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(bool)arg3 streamingAllowed:(bool)arg4 trackCPLDownload:(bool)arg5 handler:(id)arg6;
 - (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 trackCPLDownload:(bool)arg6 handler:(id)arg7;
 - (id)imageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 trackCPLDownload:(bool)arg6 outImageDataInfo:(id*)arg7 outCPLDownloadContext:(id*)arg8;
-- (void)endCPLDownloadTransaction;
-- (void)beginCPLDownloadTransaction;
 - (id)fileURLForNewAssetWithType:(unsigned int)arg1 extension:(id)arg2;
 - (void)updateLocationDataForAssetUUID:(id)arg1;
 - (void)batchSaveAssetsWithJobDictionaries:(id)arg1 handler:(id)arg2;

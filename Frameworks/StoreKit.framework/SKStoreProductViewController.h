@@ -73,6 +73,7 @@
 - (void)_didFinish;
 - (long long)productPageStyle;
 - (void)_setLoadBlock:(id)arg1;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (void)_throwUnsupportedPresentationException;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;

@@ -65,6 +65,7 @@
 - (struct CGPoint { double x1; double x2; })loupeGestureEndPoint;
 - (void)setLoupeGestureEndPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)doubleTapGesture;
+- (bool)requiresImmediateUpdate;
 - (void)deactivateSelection;
 - (void)activateSelection;
 - (void)setAutoscrollUntransformedExtentPoint:(struct CGPoint { double x1; double x2; })arg1;

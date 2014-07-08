@@ -33,6 +33,7 @@
 - (void)setWidth:(id)arg1;
 - (id)height;
 - (id)width;
+- (void)setName:(id)arg1;
 - (void)setStandby:(id)arg1;
 - (id)standby;
 - (void)setDeclare:(bool)arg1;
@@ -64,7 +65,6 @@
 - (id)code;
 - (id)data;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)absoluteImageURL;
 - (id)form;

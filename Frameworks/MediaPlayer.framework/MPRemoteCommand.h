@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray;
+@class NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface MPRemoteCommand : NSObject  {
+    NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_targetInvocations;
     unsigned int _mediaRemoteCommandType;
     bool_enabled;
@@ -17,7 +18,7 @@
 - (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(bool)arg3;
 - (bool)hasTargets;
 - (id)keyPathsForValuesTriggeringCommandsChanged;
-- (id)invokeCommandWithEvent:(id)arg1;
+- (void)invokeCommandWithEvent:(id)arg1 completion:(id)arg2;
 - (unsigned int)mediaRemoteCommandType;
 - (struct _MRMediaRemoteCommandInfo { }*)createCommandInfoRepresentation;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;

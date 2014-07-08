@@ -13,13 +13,15 @@
 @property(readonly) NSError * error;
 @property(retain,readonly) struct OpaqueCMTimebase { }* timebase;
 @property(getter=isReadyForMoreMediaData,readonly) bool readyForMoreMediaData;
+@property(readonly) bool outputObscuredDueToInsufficientExternalProtection;
 @property(retain) struct OpaqueCMTimebase { }* controlTimebase;
 @property(copy) NSString * videoGravity;
+@property(readonly) long long status;
+@property(readonly) NSError * error;
 
 + (bool)automaticallyNotifiesObserversOfError;
 + (bool)automaticallyNotifiesObserversOfStatus;
 
-- (long long)status;
 - (id)videoPerformanceMetrics;
 - (void)flushAndRemoveImage;
 - (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -29,6 +31,9 @@
 - (bool)setRenderSynchronizer:(id)arg1;
 - (void)copyFigSampleBufferAudioRenderer:(struct OpaqueFigSampleBufferAudioRenderer {}**)arg1;
 - (void)_addAnimationsForContentLayer:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 gravity:(id)arg3;
+- (void)_removeFigVideoQueueListeners;
+- (void)_addFigVideoQueueListeners;
+- (void)_setOutputObscuredDueToInsufficientExternalProtection:(bool)arg1;
 - (void)_setStatus:(long long)arg1 error:(id)arg2;
 - (void)_updatePresentationSize:(struct CGSize { double x1; double x2; })arg1;
 - (int)_createVideoQueue;
@@ -39,8 +44,11 @@
 - (void)_refreshAboveHighWaterLevel;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (bool)isReadyForMoreMediaData;
+- (bool)outputObscuredDueToInsufficientExternalProtection;
 - (struct OpaqueCMTimebase { }*)timebase;
 - (id)videoGravity;
+- (id)_weakReference;
+- (long long)status;
 - (void)setVideoGravity:(id)arg1;
 - (void)flush;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;

@@ -7,16 +7,21 @@
 @interface _NSXPCConnectionExportInfo : NSObject  {
     id _exportedObject;
     NSXPCInterface *_exportedInterface;
+    long long _exportCount;
 }
 
 @property(retain) id exportedObject;
 @property(retain) NSXPCInterface * exportedInterface;
+@property long long exportCount;
 
 
 - (void)setExportedObject:(id)arg1;
 - (void)setExportedInterface:(id)arg1;
+- (id)init;
 - (void)dealloc;
 - (id)description;
+- (void)setExportCount:(long long)arg1;
+- (long long)exportCount;
 - (id)exportedInterface;
 - (id)exportedObject;
 

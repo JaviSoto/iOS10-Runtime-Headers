@@ -46,10 +46,10 @@
 - (bool)isInterestingForAlbumsSorting;
 - (bool)isLikeBoolValue;
 - (id)cloudFeedEntry;
+- (id)asset;
 - (void)willSave;
 - (void)prepareForDeletion;
 - (void)awakeFromInsert;
-- (id)asset;
 - (id)init;
 - (void)dealloc;
 

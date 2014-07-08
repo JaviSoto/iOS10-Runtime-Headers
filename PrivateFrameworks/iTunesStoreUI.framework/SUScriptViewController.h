@@ -74,7 +74,6 @@
 - (void)setToolbarItems:(id)arg1;
 - (id)toolbarItems;
 - (void)setToolbarItems:(id)arg1 animated:(bool)arg2;
-- (id)splitViewController;
 - (void)dismissModalViewControllerAnimated:(bool)arg1;
 - (void)dismissModalViewControllerWithTransition:(id)arg1;
 - (void)presentModalViewController:(id)arg1 withTransition:(id)arg2;
@@ -82,6 +81,7 @@
 - (void)setWantsFullScreenLayout:(id)arg1;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (void)setModalPresentationStyle:(id)arg1;
+- (id)splitViewController;
 - (id)navigationController;
 - (id)section;
 - (id)modalPresentationStyle;

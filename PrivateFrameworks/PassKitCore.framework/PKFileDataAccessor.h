@@ -14,6 +14,7 @@
 @property(retain,readonly) NSURL * fileURL;
 
 
+- (id)displayProfileOfType:(long long)arg1;
 - (id)remoteAssetManager;
 - (bool)remoteAssetsDownloaded;
 - (id)serializedFileWrapper;

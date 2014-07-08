@@ -26,12 +26,12 @@
 - (void)_transitionFromWillBegin;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionWillBegin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)_transitionFromDidEnd;
 - (void)_transitionToDidEnd;
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (id)presentedView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (id)_presentationView;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;
@@ -39,7 +39,9 @@
 - (void)containerViewDidLayoutSubviews;
 - (bool)_presentationPotentiallyUnderlapsStatusBar;
 - (bool)shouldSubscribeToKeyboardNotifications;
+- (bool)_shouldHideBottomCorner;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (unsigned long long)dropShadowAutoresizingMask;
+- (double)_dropShadowCornerRadius;
 
 @end

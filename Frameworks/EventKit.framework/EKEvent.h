@@ -133,6 +133,7 @@
 - (bool)requiresDetachDueToSnoozedAlarm;
 - (bool)allowsRecurrenceModifications;
 - (bool)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
+- (bool)validateRecurrenceRule:(id)arg1 error:(id*)arg2;
 - (void)setRequiresDetachDueToSnoozedAlarm:(bool)arg1;
 - (void)_sendModifiedNote;
 - (id)_travelTimeInternalDescription;

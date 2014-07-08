@@ -2,35 +2,33 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class IDSDevice, IDSDeviceConnection, AVConference, <TUAVConferenceInterfaceDelegate>, NSMutableArray;
+@class AVConference, NSError, <TUAVConferenceInterfaceDelegate>, NSMutableArray;
 
 @interface TUAVConferenceInterface : NSObject <AVConferenceDelegate> {
     bool_hasActiveConference;
     <TUAVConferenceInterfaceDelegate> *_delegate;
     NSMutableArray *_activeConferenceConnections;
-    IDSDevice *_currentRelayingIDSDevice;
-    IDSDeviceConnection *_deviceConnection;
     AVConference *_conference;
+    NSError *_conferenceDidStopError;
     long long _callID;
 }
 
 @property <TUAVConferenceInterfaceDelegate> * delegate;
 @property(getter=isMuted) bool muted;
 @property(retain) NSMutableArray * activeConferenceConnections;
-@property(retain) IDSDevice * currentRelayingIDSDevice;
-@property(retain) IDSDeviceConnection * deviceConnection;
 @property(retain) AVConference * conference;
+@property(retain) NSError * conferenceDidStopError;
 @property long long callID;
 @property bool hasActiveConference;
 
 + (id)sharedInstance;
 
+- (void)setMuted:(bool)arg1;
 - (long long)callID;
 - (void)setCallID:(long long)arg1;
-- (void)setMuted:(bool)arg1;
 - (void)stopConferenceForAllCalls;
 - (void)stopConferenceForCall:(id)arg1;
-- (void)startConferenceForCall:(id)arg1 didStartHandler:(id)arg2 didStopHandler:(id)arg3;
+- (void)startConferenceForCall:(id)arg1 withSocket:(int)arg2 didStartHandler:(id)arg3 didStopHandler:(id)arg4;
 - (void)conference:(id)arg1 closeConnectionForCallID:(long long)arg2;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 networkHint:(bool)arg3;
 - (void)conference:(id)arg1 videoQualityNotificationForCallID:(long long)arg2 isDegraded:(bool)arg3 isRemote:(bool)arg4;
@@ -50,22 +48,19 @@
 - (void)conference:(id)arg1 didStopWithCallID:(long long)arg2 error:(id)arg3;
 - (void)conference:(id)arg1 didStartSession:(bool)arg2 withUserInfo:(id)arg3;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(bool)arg3;
+- (id)conferenceDidStopError;
 - (void)setHasActiveConference:(bool)arg1;
+- (void)setConferenceDidStopError:(id)arg1;
 - (void)_stopAudioSession;
+- (void)_cleanUpConference;
 - (void)_setUpDidStartTimeoutForConference:(id)arg1 conferenceConnection:(id)arg2;
-- (id)deviceConnection;
 - (void)_startAudioSession;
 - (void)setConference:(id)arg1;
-- (void)setDeviceConnection:(id)arg1;
-- (id)_conferenceConnectionForCall:(id)arg1;
-- (void)_cleanUpConferenceConnection:(id)arg1 error:(id)arg2;
-- (bool)hasActiveConference;
-- (void)_openSocketWithCompletionHandler:(id)arg1;
-- (void)_cleanUpConference;
 - (void)_cleanUpAllConferenceConnectionsWithError:(id)arg1;
-- (void)_startConferenceForConferenceConnection:(id)arg1;
-- (void)setCurrentRelayingIDSDevice:(id)arg1;
-- (id)currentRelayingIDSDevice;
+- (void)_cleanUpConferenceConnection:(id)arg1 error:(id)arg2;
+- (id)_conferenceConnectionForCall:(id)arg1;
+- (void)_startConferenceForConferenceConnection:(id)arg1 withSocket:(int)arg2;
+- (bool)hasActiveConference;
 - (id)activeConferenceConnections;
 - (id)conference;
 - (void)setActiveConferenceConnections:(id)arg1;

@@ -56,10 +56,10 @@
 - (void)setItemOfferButtonAppearance:(id)arg1;
 - (void)setIconImageHidden:(bool)arg1;
 - (void)setRestricted:(bool)arg1;
-- (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (id)itemOfferButtonAppearance;
 - (void)setItemState:(id)arg1 animated:(bool)arg2;
 - (void)_itemOfferConfirmAction:(id)arg1;
+- (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (id)itemState;
 - (id)itemOffer;
 - (void)setItemOffer:(id)arg1;

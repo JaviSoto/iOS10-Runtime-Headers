@@ -15,10 +15,10 @@
 @property SEL selector;
 
 
+- (void)setName:(id)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (SEL)selector;
 - (id)target;

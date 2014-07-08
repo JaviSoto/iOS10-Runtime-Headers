@@ -30,8 +30,8 @@
 - (void)enumerateColumnsUsingBlock:(id)arg1;
 - (id)initWithNumberOfRows:(long long)arg1 columnSpacing:(double)arg2;
 - (struct CGSize { double x1; double x2; })sizeForItemAtIndex:(long long)arg1;
-- (struct CGSize { double x1; double x2; })totalContentSize;
 - (void)reloadWithItemCount:(long long)arg1 sizeBlock:(id)arg2;
+- (struct CGSize { double x1; double x2; })totalContentSize;
 - (double)columnSpacing;
 - (long long)numberOfColumns;
 - (void)dealloc;

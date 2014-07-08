@@ -21,5 +21,6 @@
 - (void)dealloc;
 - (void)_tableViewCellContentViewCommonSetup;
 - (id)_cell;
+- (void)updateConstraintsIfNeeded;
 
 @end

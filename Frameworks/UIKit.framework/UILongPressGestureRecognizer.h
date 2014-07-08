@@ -60,8 +60,8 @@
 - (void)clearTimer;
 - (id)touches;
 - (struct CGPoint { double x1; double x2; })centroid;
-- (void)setAllowableMovement:(double)arg1;
 - (void)_resetGestureRecognizer;
+- (void)setAllowableMovement:(double)arg1;
 - (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (void)setNumberOfTapsRequired:(unsigned long long)arg1;
 - (unsigned long long)numberOfTapsRequired;

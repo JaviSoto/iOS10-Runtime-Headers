@@ -17,12 +17,10 @@
 @property bool wasUpdatedWithProxyCall;
 
 
-- (void)startClientChatWithConferenceInviteDictionary:(id)arg1;
 - (bool)shouldIgnoreStatusChange;
 - (void)updateWithProxyCall:(id)arg1;
-- (bool)unhold;
-- (bool)hold;
-- (void)startManagedAudioRelay;
+- (void)unhold;
+- (void)hold;
 - (bool)wasUpdatedWithProxyCall;
 - (bool)wasUpdatedWithChat;
 - (void)setShouldIgnoreChatChanges:(bool)arg1;
@@ -35,10 +33,7 @@
 - (bool)shouldIgnoreChatChanges;
 - (void)setWasUpdatedWithProxyCall:(bool)arg1;
 - (void)updateWithChat:(id)arg1;
-- (bool)managesAudioRelay;
-- (void)inviteWithCallIdentifier:(int)arg1;
 - (id)initWithChat:(id)arg1;
-- (void)setRelayingIDSDevice:(id)arg1;
 - (void)answerWithSourceIdentifier:(id)arg1;
 - (void)dealloc;
 - (void)disconnect;

@@ -30,14 +30,14 @@
 - (void)_dimmerViewAction:(id)arg1;
 - (id)_newBlankStorePageViewController;
 - (id)_targetViewController;
+- (void)_sendOnXEventWithTerm:(id)arg1 URL:(id)arg2 completionBlock:(id)arg3;
 - (void)_fetchCompletions;
 - (id)_defaultSearchTerm;
-- (void)_fetchResultsForURL:(id)arg1;
 - (void)_reloadCompletionsForSearchString:(id)arg1;
 - (void)_cancelCompletionsOperation;
 - (void)_showDimmerView;
 - (bool)_focusTransientViewController;
-- (void)_fetchResultsForTerm:(id)arg1;
+- (void)_fetchResultsForTerm:(id)arg1 URL:(id)arg2;
 - (void)_saveSearchTermToDefaults:(id)arg1;
 - (void)_resizeSearchBarForOrientation:(long long)arg1;
 - (void)_reloadSearchBar;

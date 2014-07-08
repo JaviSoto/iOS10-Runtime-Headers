@@ -34,6 +34,9 @@
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(bool)arg2 isFloating:(bool)arg3;
 + (id)iCalendarValueFromRecurrenceType:(int)arg1;
 
+- (bool)isAnyDayRule;
+- (bool)isWeekendRule;
+- (bool)isWeekdayRule;
 - (void)pinToEndsOfMonthsWithCalendarItem:(id)arg1;
 - (bool)mayOccurAfterDate:(id)arg1;
 - (long long)firstDayOfTheWeek;
@@ -45,9 +48,7 @@
 - (void)setFirstDayOfTheWeek:(unsigned long long)arg1;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
-- (id)monthsOfTheYear;
 - (id)setPositions;
-- (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (id)stringValueAsDateOnly:(bool)arg1 isFloating:(bool)arg2;
 - (id)initRecurrenceWithFrequency:(int)arg1 interval:(long long)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
@@ -62,6 +63,8 @@
 - (void)setRecurrenceEnd:(id)arg1;
 - (id)recurrenceEnd;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
+- (id)daysOfTheMonth;
+- (id)monthsOfTheYear;
 - (bool)dirtyStateMayAffectExceptionDates;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;

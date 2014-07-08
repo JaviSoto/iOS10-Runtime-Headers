@@ -27,6 +27,7 @@
 
 - (void)resolveWithCompletionBlock:(id)arg1;
 - (id)initWithContentController:(id)arg1 index:(long long)arg2;
+- (double)autoPlaybackPosition;
 - (void)_clearCompletionBlock;
 - (bool)isPromisedItem;
 - (void)invalidate;

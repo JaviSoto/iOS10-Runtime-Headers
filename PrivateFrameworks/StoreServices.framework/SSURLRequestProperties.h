@@ -96,8 +96,6 @@
 - (id)HTTPHeaders;
 - (id)copyURLRequest;
 - (bool)isITunesStoreRequest;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (bool)shouldProcessProtocol;
 - (id)URLBagKey;
 - (id)URLBagURLBlock;
@@ -108,6 +106,8 @@
 - (bool)shouldDisableCellularFallback;
 - (bool)shouldDisableCellular;
 - (bool)requiresExtendedValidationCertificates;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)clientIdentifier;
 - (id)init;
 - (id)initWithURL:(id)arg1;

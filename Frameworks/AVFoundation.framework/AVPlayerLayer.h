@@ -22,8 +22,6 @@
 - (id)_closedCaptionLayer;
 - (id)_videoLayer;
 - (id)_subtitleGravity;
-- (void)_setSubtitleDisplayEnabled:(bool)arg1;
-- (bool)_subtitleDisplayEnabled;
 - (void)_setItem:(id)arg1 readyForDisplay:(bool)arg2;
 - (void)setOverscanSubtitleSupportEnabled:(bool)arg1;
 - (bool)isOverscanSubtitleSupportEnabled;

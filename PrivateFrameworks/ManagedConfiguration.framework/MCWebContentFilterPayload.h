@@ -33,13 +33,13 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (id)pluginConfiguration;
 - (void)setFilterSockets:(bool)arg1;
-- (bool)filterSockets;
 - (void)setFilterBrowsers:(bool)arg1;
+- (bool)filterSockets;
 - (bool)filterBrowsers;
 - (void)setPluginBundleID:(id)arg1;
 - (void)setPluginConfiguration:(id)arg1;
-- (id)pluginConfiguration;
 - (void)setBlacklistedURLStrings:(id)arg1;
 - (void)setWhitelistedBookmarks:(id)arg1;
 - (void)setPermittedURLStrings:(id)arg1;
@@ -50,14 +50,15 @@
 - (bool)autoFilterEnabled;
 - (id)pluginBundleID;
 - (id)installationWarnings;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)restrictions;
+- (void)setName:(id)arg1;
 - (id)title;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setFilterType:(id)arg1;

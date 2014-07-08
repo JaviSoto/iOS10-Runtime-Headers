@@ -7,9 +7,10 @@
 @interface SKUITracklistPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     SKUITracklistColumnData *_columnData;
+    long long _lastNeedsMoreCount;
 }
 
-@property(retain) SKUITracklistPageComponent * pageComponent;
+@property(readonly) SKUITracklistPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -23,11 +24,13 @@
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (id)firstAppearanceIndexPath;
-- (void)reloadVisibleCells;
+- (void)reloadVisibleCellsWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)collectionViewWillScrollToOffset:(struct CGPoint { double x1; double x2; })arg1 visibleRange:(struct SKUIIndexPathRange { long long x1; long long x2; long long x3; long long x4; })arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;

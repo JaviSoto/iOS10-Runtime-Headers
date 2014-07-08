@@ -14,6 +14,7 @@
 
 - (id)roadAccessPoints;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)roadAccessPointAtIndex:(unsigned long long)arg1;
 - (void)clearRoadAccessPoints;
 - (unsigned long long)roadAccessPointsCount;

@@ -59,8 +59,8 @@
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
 - (id)initWithPreviewController:(id)arg1;
-- (void)purgeCache;
 - (void)prepare;
+- (void)purgeCache;
 - (long long)UUID;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;

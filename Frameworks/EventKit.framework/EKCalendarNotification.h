@@ -41,12 +41,12 @@
 - (id)objectID;
 - (void)setEmailAddress:(id)arg1;
 - (id)emailAddress;
+- (void)setName:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)initWithType:(long long)arg1;
 - (id)name;
 - (void)setType:(long long)arg1;
-- (void)setName:(id)arg1;
 - (long long)type;
 - (void)dealloc;
 

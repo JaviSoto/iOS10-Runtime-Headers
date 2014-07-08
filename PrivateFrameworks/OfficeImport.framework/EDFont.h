@@ -49,6 +49,7 @@
 - (bool)isStrike;
 - (bool)isStrikeOverridden;
 - (bool)isItalic;
+- (bool)isBold;
 - (bool)isHeightOverridden;
 - (int)underline;
 - (bool)isUnderlineOverridden;
@@ -56,12 +57,12 @@
 - (bool)isBoldOverridden;
 - (void)setHeight:(double)arg1;
 - (double)height;
+- (void)setName:(id)arg1;
 - (void)setOutline:(bool)arg1;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setWeight:(unsigned int)arg1;
@@ -69,6 +70,5 @@
 - (void)setShadow:(bool)arg1;
 - (void)setScript:(int)arg1;
 - (int)script;
-- (bool)isBold;
 
 @end

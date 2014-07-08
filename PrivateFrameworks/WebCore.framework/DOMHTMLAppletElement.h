@@ -24,6 +24,7 @@
 - (void)setWidth:(id)arg1;
 - (id)height;
 - (id)width;
+- (void)setName:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (int)vspace;
 - (void)setHspace:(int)arg1;
@@ -41,7 +42,6 @@
 - (id)object;
 - (id)name;
 - (id)code;
-- (void)setName:(id)arg1;
 - (bool)showsTapHighlight;
 
 @end

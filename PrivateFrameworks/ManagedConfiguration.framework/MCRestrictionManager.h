@@ -44,8 +44,6 @@
 + (id)filterRestrictionDictionaryForPublicUse:(id)arg1;
 + (id)restrictionsWithCurrentRestrictions:(id)arg1 defaultRestrictions:(id)arg2 profileRestrictions:(id)arg3 clientRestrictions:(id)arg4 outRestrictionsChanged:(bool*)arg5 outError:(id*)arg6;
 + (id)intersectedValuesSettingForFeature:(id)arg1 withUserSettingDectionary:(id)arg2;
-+ (id)unionValuesForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
-+ (id)intersectedValuesForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)objectForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)filterRestrictionDictionary:(id)arg1 acceptedKeysDict:(id)arg2;
 + (id)restrictionsAfterApplyingRestrictionsDictionary:(id)arg1 toRestrictionsDictionary:(id)arg2 outChangeDetected:(bool*)arg3 outError:(id*)arg4;
@@ -68,6 +66,8 @@
 + (int)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 + (int)restrictedBoolForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)defaultValueForSetting:(id)arg1;
++ (id)intersectedValuesForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
++ (id)unionValuesForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)sharedManager;
 + (id)defaultSettings;
 

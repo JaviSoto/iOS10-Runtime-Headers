@@ -17,6 +17,7 @@
 - (void)setLng:(double)arg1;
 - (void)setLat:(double)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (struct { double x1; double x2; })coordinate;

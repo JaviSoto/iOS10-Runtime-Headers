@@ -18,7 +18,6 @@
     unsigned long long _contentOffset;
     unsigned int _loadIncrement;
     unsigned int _loadedFullData : 1;
-    unsigned int _loadBestAlternative : 1;
     unsigned int _hasNoContent : 1;
     unsigned int _failedToLoad : 1;
     unsigned int _isOutgoingMessage : 1;
@@ -30,6 +29,7 @@
     SGSuggestionsService *_suggestionsService;
     NSConditionLock *_suggestionsLock;
     NSArray *_suggestions;
+    long long _loadAlternative;
     NSError *_messageAnalysisError;
 }
 
@@ -61,11 +61,11 @@
 + (bool)isAttachmentTooLarge:(id)arg1;
 + (unsigned long long)nextOffsetForOffset:(unsigned long long)arg1 totalLength:(unsigned long long)arg2 requestedAmount:(unsigned long long)arg3;
 
-- (void)cancelLoad;
 - (void)_setSigners:(id)arg1;
 - (id)signers;
 - (bool)isPartial;
 - (id)attachmentManager;
+- (void)cancelLoad;
 - (id)messageAnalysisError;
 - (id)loadedPart;
 - (id)loadTask;

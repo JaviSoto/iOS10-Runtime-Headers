@@ -46,7 +46,7 @@
 + (bool)_fixupAssetPersistence:(id)arg1;
 + (bool)_migrateLegacySLMFilesInStore:(id)arg1;
 + (bool)_forceAlbumMetadataToDiskInStore:(id)arg1;
-+ (bool)_fixupUnmanagedAdjustmentInStore:(id)arg1;
++ (bool)_resetAndReimportUnmanagedAdjustmentInStore:(id)arg1;
 + (bool)_setupRootFolderInStore:(id)arg1;
 + (bool)_addLocationHashesToAssets:(id)arg1;
 + (bool)_addAlbumOrderKeys:(id)arg1;

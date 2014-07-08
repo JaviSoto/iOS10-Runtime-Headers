@@ -2,16 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, <_UIDocumentPickerViewControllerHost>, <NSCopying><NSObject>, NSExtension;
+@class NSString, <NSCopying><NSObject>, NSExtension, <_UIDocumentPickerRemoteViewControllerContaining>;
 
 @interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerViewControllerHost, _UIDocumentPickerServiceInvalidating> {
-    <_UIDocumentPickerViewControllerHost> *_publicController;
+    <_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
     NSString *_identifier;
     NSExtension *_extension;
     <NSCopying><NSObject> *_extensionRequestIdentifier;
 }
 
-@property <_UIDocumentPickerViewControllerHost> * publicController;
+@property <_UIDocumentPickerRemoteViewControllerContaining> * publicController;
 @property(retain) NSString * identifier;
 @property(retain) NSExtension * extension;
 @property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
@@ -26,11 +26,11 @@
 - (id)extension;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)publicController;
+- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2 placeholder:(id)arg3 placeholderExtension:(id)arg4;
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
 - (void)_dismissViewController;
-- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2;
 - (void)setPublicController:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setExtensionRequestIdentifier:(id)arg1;

@@ -20,8 +20,8 @@
 - (void)dealloc;
 - (void)setStatisticsDelegate:(id)arg1;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 settings:(id)arg2;
-- (void)_updateInputBounds;
 - (id)statisticsDelegate;
+- (void)_updateInputBounds;
 - (unsigned long long)blurHardEdges;
 - (id)backdropLayer;
 - (void)_setGroupName:(id)arg1;

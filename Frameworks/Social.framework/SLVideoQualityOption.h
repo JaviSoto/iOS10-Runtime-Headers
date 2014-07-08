@@ -24,9 +24,9 @@
 - (id)exportPreset;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setName:(id)arg1;
 - (void)setSize:(long long)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (long long)size;
 

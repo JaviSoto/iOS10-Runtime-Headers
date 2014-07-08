@@ -17,13 +17,13 @@
 
 - (void)setValueLabel:(id)arg1;
 - (void)setKeyLabel:(id)arg1;
+- (id)initWithDataConstraints:(bool)arg1 reuseIdentifier:(id)arg2;
 - (void)setUseDataConstraints:(bool)arg1;
 - (bool)useDataConstraints;
 - (id)valueLabel;
 - (id)keyLabel;
 - (void)_setupConstraints;
 - (void)updatePreferredMaxLayoutWidth;
-- (id)initWithDataConstraints:(bool)arg1 reuseIdentifier:(id)arg2;
 - (void)_setup:(bool)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void).cxx_destruct;

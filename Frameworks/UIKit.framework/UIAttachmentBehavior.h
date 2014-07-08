@@ -40,8 +40,8 @@
 @property double frequency;
 
 
-- (id)items;
 - (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)items;
 - (void)setFrequency:(double)arg1;
 - (void)setDamping:(double)arg1;
 - (double)frequency;

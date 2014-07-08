@@ -28,7 +28,6 @@
 + (id)orderingTermsForITTGTrackOrder:(unsigned int)arg1 descending:(bool)arg2;
 + (void)updateAllBookmarkableStoreBookmarkMetadataIdentifiersOnConnection:(id)arg1;
 + (bool)trackValueAreInTheCloud:(id)arg1;
-+ (bool)trackWithPersistentID:(long long)arg1 visibleInLibrary:(id)arg2;
 + (bool)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (id)composersDefaultOrderingTerms;
 + (id)albumAndArtistDefaultOrderingTerms;
@@ -67,12 +66,14 @@
 + (id)genresDefaultOrderingTerms;
 + (id)artistsDefaultOrderingTerms;
 + (id)albumsDefaultOrderingTerms;
++ (bool)trackWithPersistentID:(long long)arg1 visibleInLibrary:(id)arg2;
 + (void)initialize;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 - (id)protocolItem;
 - (id)multiverseIdentifier;
 - (bool)populateArtworkCacheWithArtworkData:(id)arg1;
+- (void)populateLocationPropertiesWithPath:(id)arg1 isProtected:(bool)arg2;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
 - (void)populateChapterDataWithImportChapters:(id)arg1;
 - (void)updateStoreBookmarkMetadataIdentifier;

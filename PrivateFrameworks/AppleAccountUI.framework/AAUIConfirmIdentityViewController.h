@@ -11,7 +11,6 @@
     UILabel *_titleLabel;
     UILabel *_descriptionLabel;
     UIView *_profilePhotoView;
-    UIButton *_editButton;
     UILabel *_nameLabel;
     UILabel *_emailLabel;
     UIButton *_continueButton;
@@ -35,8 +34,8 @@
 - (void)_useDifferentIDButtonWasTapped:(id)arg1;
 - (void)continueButtonWasTapped:(id)arg1;
 - (id)titleForContinuebutton;
-- (void)_editPhotoButtonWasTapped:(id)arg1;
 - (void)_addPhotoButtonWasTapped:(id)arg1;
+- (void)_photoWasTapped:(id)arg1;
 - (id)initWithGrandSlamSigner:(id)arg1;
 - (id)instructions;
 - (id)pageTitle;

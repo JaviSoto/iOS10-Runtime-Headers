@@ -25,7 +25,6 @@
 
 
 - (id)_initWithAVItemAccessLogEvent:(id)arg1;
-- (id)URI;
 - (long long)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -39,6 +38,7 @@
 - (id)serverAddress;
 - (id)playbackStartDate;
 - (unsigned long long)numberOfSegmentsDownloaded;
+- (id)URI;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

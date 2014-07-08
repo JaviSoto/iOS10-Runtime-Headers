@@ -4,7 +4,7 @@
 
 @class PLManagedAlbum, PLManagedAsset;
 
-@interface PLAssetToAlbumOrder : NSManagedObject <PLOrderKeyObject> {
+@interface PLAssetToAlbumOrder : PLManagedObject <PLOrderKeyObject> {
     bool_isSpecial;
 }
 

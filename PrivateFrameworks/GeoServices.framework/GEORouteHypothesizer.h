@@ -73,9 +73,9 @@
 - (bool)supportsDirections;
 - (bool)supportsLiveTraffic;
 - (id)route;
-- (id)source;
 - (id)feedback;
 - (void)setFeedback:(id)arg1;
+- (id)source;
 - (id)destination;
 - (void)_commonInit;
 - (void)setDelegate:(id)arg1;

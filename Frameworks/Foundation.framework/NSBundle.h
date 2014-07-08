@@ -75,6 +75,7 @@
 + (id)__vkBundle;
 + (id)_mapkitBundle;
 + (id)pathForITunesResource:(id)arg1 ofType:(id)arg2;
++ (id)blj_localizedString:(id)arg1;
 
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)builtInPlugInsPath;
@@ -82,7 +83,6 @@
 - (id)infoDictionary;
 - (id)bundleIdentifier;
 - (unsigned long long)versionNumber;
-- (id)appStoreReceiptURL;
 - (id)bundleURL;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;
@@ -127,6 +127,7 @@
 - (bool)isLoaded;
 - (id)localizedInfoDictionary;
 - (id)localizations;
+- (id)appStoreReceiptURL;
 - (id)initWithPath:(id)arg1;
 - (bool)unload;
 - (bool)loadAndReturnError:(id*)arg1;
@@ -139,6 +140,7 @@
 - (id)dataForResourceName:(id)arg1;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
 - (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)URLForMovieResource:(id)arg1;
 - (id)_gkFrameworkVersionDescription;
 - (id)_gkPreferredLanguage;
 - (id)_gkPathForChallengeSound;

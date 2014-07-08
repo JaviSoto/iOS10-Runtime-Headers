@@ -75,6 +75,7 @@
 - (id)accountWithIdentifier:(id)arg1;
 - (id)initWithEffectiveBundleID:(id)arg1;
 - (id)initWithRemoteEndpoint:(id)arg1;
+- (void)notifyRemoteDevicesOfNewAccount:(id)arg1 withCompletion:(id)arg2;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(bool)arg3 completion:(id)arg4;
@@ -102,10 +103,10 @@
 - (void).cxx_destruct;
 - (id)accountWithAppleID:(id)arg1;
 - (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
-- (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
 - (id)aa_appleAccountWithPersonID:(id)arg1;
 - (id)aa_appleAccountWithUsername:(id)arg1;
 - (id)aa_accountsEnabledForDataclass:(id)arg1;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id)arg3;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id)arg2;
 - (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
@@ -125,6 +126,7 @@
 - (void)da_loadDAAccountsEnabledForDADataclasses:(long long)arg1 withCompletion:(id)arg2;
 - (void)da_loadDAAccountsWithCompletion:(id)arg1;
 - (void)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(long long)arg2 filterOnDataclasses:(bool)arg3 withCompletion:(id)arg4;
+- (id)aaui_accountDescriptionFromEmailAddress:(id)arg1;
 - (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id)arg3;
 - (id)aida_accountForPrimaryiCloudAccount;
 - (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 force:(bool)arg3 completion:(id)arg4;

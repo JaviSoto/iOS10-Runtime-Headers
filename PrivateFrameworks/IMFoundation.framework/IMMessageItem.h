@@ -44,11 +44,13 @@
 @property(readonly) bool isTypingMessage;
 @property(readonly) bool isAudioMessage;
 @property(readonly) bool isExpirable;
+@property(readonly) bool isFromExternalSource;
 @property(retain) NSString * plainBody;
 
 
 - (void)setWasDataDetected:(bool)arg1;
 - (void)setHasDataDetectorResults:(bool)arg1;
+- (bool)isFromExternalSource;
 - (bool)isTypingMessage;
 - (bool)isPrepared;
 - (bool)isAlert;

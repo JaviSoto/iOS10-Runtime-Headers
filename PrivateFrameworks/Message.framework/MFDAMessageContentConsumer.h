@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, <MFCollectingDataConsumer>, <MFMessageDataConsumerFactory>;
+@class <MFMessageDataConsumerFactory>, NSMutableData, <MFCollectingDataConsumer>, DAMailMessage;
 
 @interface MFDAMessageContentConsumer : NSObject <MFDAStreamingContentConsumer> {
     int _requestedFormat;
@@ -14,12 +14,14 @@
     bool_succeeded;
     NSMutableData *_bodyData;
     double _timeOfLastActivity;
+    DAMailMessage *_message;
 }
 
 @property int requestedFormat;
 @property(retain) <MFCollectingDataConsumer> * dataConsumer;
 @property(retain) <MFCollectingDataConsumer> * alternatePartConsumer;
 @property(retain) <MFMessageDataConsumerFactory> * consumerFactory;
+@property(retain,readonly) DAMailMessage * message;
 @property(retain,readonly) NSMutableData * bodyData;
 @property(readonly) double timeOfLastActivity;
 
@@ -38,8 +40,9 @@
 - (bool)didBeginStreaming;
 - (id)dataConsumer;
 - (void)setDataConsumer:(id)arg1;
-- (id)bodyData;
 - (bool)succeeded;
+- (id)message;
+- (id)bodyData;
 - (id)data;
 - (void)dealloc;
 

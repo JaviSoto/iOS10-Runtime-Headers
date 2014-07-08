@@ -27,9 +27,9 @@
 - (void)_inqScheduleTimeout:(bool)arg1 maxTimeout:(bool)arg2;
 - (void)_inqFireWithTimeout:(bool)arg1 timeoutId:(unsigned long long)arg2 maxTimeout:(bool)arg3 maxTimeoutId:(unsigned long long)arg4;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 timeout:(double)arg3 maxTimeout:(double)arg4;
+- (void)setPaused:(bool)arg1;
 - (SEL)action;
 - (double)timeout;
-- (void)setPaused:(bool)arg1;
 - (void)ping;
 - (void)invalidate;
 - (id)target;

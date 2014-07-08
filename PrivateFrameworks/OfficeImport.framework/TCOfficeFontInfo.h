@@ -22,9 +22,9 @@
 - (void)setAlphaFontName:(id)arg1;
 - (id)alphaFontName;
 - (bool)isItalic;
+- (bool)isBold;
 - (void)setFontName:(id)arg1;
 - (id)fontName;
 - (id)description;
-- (bool)isBold;
 
 @end

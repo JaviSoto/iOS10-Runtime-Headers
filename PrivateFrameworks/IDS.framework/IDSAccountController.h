@@ -26,9 +26,9 @@
 - (void)enableAccount:(id)arg1;
 - (void)_removeAccount:(id)arg1;
 - (void)removeAccount:(id)arg1;
-- (id)_internal;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)addAccount:(id)arg1;
+- (id)_internal;
 - (id)accounts;
 - (void)removeDelegate:(id)arg1;
 - (void)dealloc;

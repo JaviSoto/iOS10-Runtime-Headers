@@ -6,8 +6,8 @@
 
 @interface _GEOMUIDsTicket : NSObject <GEOMapServiceTicket> {
     NSArray *_muids;
-    int _localSearchProviderID;
     GEOMapServiceTraits *_traits;
+    bool_includeETA;
     bool_canceled;
 }
 
@@ -19,7 +19,7 @@
 - (id)resultBoundingRegion;
 - (bool)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
-- (id)initWithMUIDs:(id)arg1 localSearchProviderID:(int)arg2 traits:(id)arg3;
+- (id)initWithMUIDs:(id)arg1 includeETA:(bool)arg2 traits:(id)arg3;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
 - (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;

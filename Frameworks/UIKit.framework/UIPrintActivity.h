@@ -11,8 +11,8 @@
 @property(retain) UIViewController * wrapperViewController;
 
 
-- (void)dealloc;
 - (id)activityType;
+- (void)dealloc;
 - (id)wrapperViewController;
 - (id)printInteractionController;
 - (void)cancelPrintOptions;
@@ -22,8 +22,8 @@
 - (id)printInteractionControllerParentViewController:(id)arg1;
 - (void)performActivity;
 - (bool)canPerformWithActivityItems:(id)arg1;
+- (void)activityDidFinish:(bool)arg1;
 - (id)_activityImage;
 - (id)activityTitle;
-- (void)activityDidFinish:(bool)arg1;
 
 @end

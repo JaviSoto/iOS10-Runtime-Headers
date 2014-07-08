@@ -96,10 +96,11 @@
 - (bool)hasTelephone;
 - (void)setTelephone:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
 - (id)url;
 - (void)setUrl:(id)arg1;
 - (bool)isEqual:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString, NSMutableArray;
+@class NSString, NSMutableArray, GEOVersionManifest;
 
 @interface GEOActiveTileGroup : PBCodable <NSCopying> {
     NSString *_addressCorrectionInitURL;
@@ -39,6 +39,7 @@
     NSMutableArray *_tileSets;
     NSString *_uniqueIdentifier;
     NSString *_usageURL;
+    GEOVersionManifest *_versionManifest;
 }
 
 @property unsigned int identifier;
@@ -102,6 +103,8 @@
 @property(retain) NSString * dispatcherURL;
 @property(readonly) bool hasProblemOptInURL;
 @property(retain) NSString * problemOptInURL;
+@property(readonly) bool hasVersionManifest;
+@property(retain) GEOVersionManifest * versionManifest;
 
 
 - (id)regionalResourceKeysForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -159,6 +162,7 @@
 - (id)autocompleteURL;
 - (id)searchAttributionManifestURL;
 - (id)resourcesURL;
+- (bool)hasVersionManifest;
 - (bool)hasProblemOptInURL;
 - (bool)hasDispatcherURL;
 - (bool)hasAnnouncementsURL;
@@ -188,6 +192,7 @@
 - (void)clearAnnouncementsSupportedLanguages;
 - (unsigned long long)announcementsSupportedLanguagesCount;
 - (void)addAnnouncementsSupportedLanguages:(id)arg1;
+- (void)setVersionManifest:(id)arg1;
 - (void)setProblemOptInURL:(id)arg1;
 - (void)setDispatcherURL:(id)arg1;
 - (void)setAnnouncementsSupportedLanguages:(id)arg1;
@@ -230,6 +235,7 @@
 - (void)setTileSets:(id)arg1;
 - (id)searchURL;
 - (id)directionsURL;
+- (id)versionManifest;
 - (id)attributions;
 - (id)attributionAtIndex:(unsigned long long)arg1;
 - (void)clearAttributions;
@@ -238,6 +244,7 @@
 - (void)setAttributions:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setIdentifier:(unsigned int)arg1;

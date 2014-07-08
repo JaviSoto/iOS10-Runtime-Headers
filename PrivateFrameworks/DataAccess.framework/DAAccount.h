@@ -71,7 +71,6 @@
 + (id)_leafAccountTypes;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
 
-- (id)statusReport;
 - (oneway void)setEncryptionIdentityPersistentReference:(id)arg1;
 - (id)encryptionIdentityPersistentReference;
 - (oneway void)setSigningIdentityPersistentReference:(id)arg1;
@@ -225,7 +224,6 @@
 - (void)checkValidityOnAccountStore:(id)arg1 withConsumer:(id)arg2;
 - (void)setEmailAddresses:(id)arg1;
 - (id)oauth2Token;
-- (id)emailAddresses;
 - (void)setPrincipalURL:(id)arg1;
 - (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
 - (id)customConnectionProperties;
@@ -243,6 +241,8 @@
 - (id)additionalHeaderValues;
 - (id)taskManager;
 - (id)principalURL;
+- (id)emailAddresses;
+- (id)statusReport;
 - (bool)useSSL;
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
@@ -267,8 +267,8 @@
 - (id)username;
 - (id)accountDescription;
 - (id)accountID;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setPort:(long long)arg1;
 - (id)protocolVersion;

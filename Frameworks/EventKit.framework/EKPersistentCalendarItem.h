@@ -108,11 +108,11 @@
 - (id)sharedItemCreatedByFirstName;
 - (int)selfParticipantStatus;
 - (id)externalData;
-- (id)endTimeZone;
-- (id)startTimeZone;
 - (void)setCalendarScale:(id)arg1;
 - (bool)hasNotes;
 - (id)notes;
+- (id)endTimeZone;
+- (id)startTimeZone;
 - (void)addDetachedItem:(id)arg1;
 - (void)removeAlarm:(id)arg1;
 - (void)setUniqueID:(id)arg1;
@@ -165,8 +165,8 @@
 - (id)calendar;
 - (id)timeZone;
 - (void)setTimeZone:(id)arg1;
-- (int)priority;
 - (void)setPriority:(int)arg1;
+- (int)priority;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (void)setSequence:(int)arg1;

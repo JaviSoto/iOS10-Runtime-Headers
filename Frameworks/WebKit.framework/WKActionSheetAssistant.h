@@ -4,16 +4,13 @@
 
 @class WKContentView;
 
-@interface WKActionSheetAssistant : NSObject <WKActionSheetDelegate> {
+@interface WKActionSheetAssistant : NSObject <WKActionSheetDelegate, DDDetectionControllerInteractionDelegate> {
     struct RetainPtr<WKActionSheet> { 
         void *m_ptr; 
     } _interactionSheet;
     struct RetainPtr<_WKActivatedElementInfo> { 
         void *m_ptr; 
     } _elementInfo;
-    struct RetainPtr<NSArray> { 
-        void *m_ptr; 
-    } _elementActions;
     WKContentView *_view;
 }
 
@@ -21,9 +18,9 @@
 - (void)showDataDetectorsSheet;
 - (void)showLinkSheet;
 - (void)showImageSheet;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationRectInHostViewForSheet;
 - (void)cleanupSheet;
 - (void)updateSheetPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationRectInHostViewForSheet;
 - (id)hostViewForSheet;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialPresentationRectInHostViewForSheet;
 - (void)dealloc;
@@ -34,6 +31,5 @@
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(bool)arg2;
 - (id)superviewForSheet;
 - (id)initWithView:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 
 @end

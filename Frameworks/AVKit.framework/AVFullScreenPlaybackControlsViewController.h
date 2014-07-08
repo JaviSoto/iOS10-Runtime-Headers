@@ -19,7 +19,7 @@
     unsigned int _skipBackwardThirtySecondsButtonEnabled : 1;
     unsigned int _gotoEndOfSeekableRangesButtonEnabled : 1;
     unsigned int _showsMediaSelectionButton : 1;
-    unsigned int _showsFullScreenButton : 1;
+    unsigned int _showsExitFullScreenButton : 1;
     unsigned int _showsVolumeSlider : 1;
     NSString *_elapsedTimeLabelText;
     float _scrubberMinimumValue;
@@ -85,7 +85,6 @@
 - (void)_scrubberBeginTracking:(id)arg1;
 - (void)_manageControlsVisibility;
 - (bool)showsVolumeSlider;
-- (bool)showsFullScreenButton;
 - (bool)showsMediaSelectionButton;
 - (void)setShowsLoadingIndicator:(bool)arg1;
 - (bool)showsLoadingIndicator;
@@ -118,7 +117,8 @@
 - (void)updateScrubberMaximumValue:(float)arg1;
 - (void)updateScrubberMinimumValue:(float)arg1;
 - (void)setScrubberEnabled:(bool)arg1;
-- (void)setShowsFullScreenButton:(bool)arg1;
+- (void)setShowsExitFullScreenButton:(bool)arg1;
+- (bool)showsExitFullScreenButton;
 - (void)setShowsDoneButton:(bool)arg1;
 - (bool)isPlaying;
 - (void)setPlaying:(bool)arg1;

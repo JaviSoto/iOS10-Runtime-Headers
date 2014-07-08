@@ -44,11 +44,11 @@
 - (void)setApplicationStates:(id)arg1;
 - (void)addApplicationState:(id)arg1;
 - (id)applicationStates;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (long long)downloadSizeLimit;
 - (id)networkTypes;
 - (void)setCellularDataStates:(long long)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

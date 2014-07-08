@@ -61,8 +61,6 @@
 @property(readonly) bool supportsDynamicContentsRectWithAspectPreservation;
 
 
-- (void)setParticipantID:(id)arg1;
-- (id)participantID;
 - (void)setVisibleRectCropping:(unsigned int)arg1;
 - (unsigned int)visibleRectCropping;
 - (void)setIsVideoQualityDegraded:(bool)arg1;
@@ -105,6 +103,8 @@
 - (void)setSupportsSKEOptimization:(bool)arg1;
 - (void)setMaxBandwidth:(unsigned int)arg1;
 - (unsigned int)maxBandwidth;
+- (void)setParticipantID:(id)arg1;
+- (id)participantID;
 - (void)setUserAgent:(id)arg1;
 - (unsigned int)callID;
 - (void)setCallID:(unsigned int)arg1;

@@ -15,7 +15,6 @@
 
 + (id)restrictedCountryCodes;
 + (id)supportedCalendars;
-+ (id)parentLocaleIdentifierForIdentifier:(id)arg1;
 + (id)preferredLanguagesForRegion:(id)arg1;
 + (bool)isLunarCalendarDefaultOn;
 + (id)preferredLunarCalendarForLocaleID:(id)arg1;
@@ -27,6 +26,7 @@
 + (id)importAppleLanguagesLegacy;
 + (id)importUsedLanguages;
 + (id)languageCharSetList;
++ (id)parentLocaleIdentifierForIdentifier:(id)arg1;
 + (int)UDisplayContextForIUDisplayNameContext:(unsigned long long)arg1;
 + (id)nativeNameForLanguage:(id)arg1 context:(unsigned long long)arg2;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;

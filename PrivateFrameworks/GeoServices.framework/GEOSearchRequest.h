@@ -7,8 +7,8 @@
 
 
 - (id)initWithFragment:(id)arg1 entriesType:(int)arg2 listType:(int)arg3 traits:(id)arg4;
-- (id)initWithSearchQuery:(id)arg1 hint:(id)arg2 localSearchProviderID:(int)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(bool)arg5 traits:(id)arg6;
-- (id)initWithBusinessIDs:(id)arg1 localSearchProviderID:(int)arg2 traits:(id)arg3;
+- (id)initWithSearchQuery:(id)arg1 hint:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(bool)arg4 traits:(id)arg5;
+- (id)initWithBusinessIDs:(id)arg1 traits:(id)arg2;
 - (Class)responseClass;
 
 @end

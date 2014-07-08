@@ -215,10 +215,9 @@
 - (struct VKCameraState { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; })cameraState;
 - (double)widthOfViewAtDepth:(double)arg1;
 - (struct Matrix<double, 3, 1> { double x1[3]; })forwardVector;
+- (const struct { double x1[4][4]; }*)orientation;
 - (void)updateIfNeeded;
 - (void)setNeedsUpdate;
-- (void)setOrientation:(const struct { double x1[4][4]; }*)arg1;
-- (const struct { double x1[4][4]; }*)orientation;
 - (double)maxHeight;
 - (double)minHeight;
 - (double)yaw;
@@ -226,6 +225,7 @@
 - (void)setMinHeight:(double)arg1;
 - (void)setMaxHeight:(double)arg1;
 - (void)setPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
+- (void)setOrientation:(const struct { double x1[4][4]; }*)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

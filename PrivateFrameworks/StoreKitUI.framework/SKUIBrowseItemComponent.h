@@ -2,28 +2,32 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
+@class NSString, SKUIImageViewElement;
 
 @interface SKUIBrowseItemComponent : SKUIPageComponent  {
     NSString *_title;
     NSString *_subtitle;
-    bool_arrow;
     long long _index;
+    SKUIImageViewElement *_decorationImage;
+    bool_showTopBorder;
 }
 
+@property(readonly) SKUIImageViewElement * decorationImage;
 @property(readonly) NSString * title;
 @property(readonly) NSString * subtitle;
-@property(readonly) bool arrow;
 @property long long index;
+@property bool showTopBorder;
 
 
 - (id)initWithViewElement:(id)arg1;
+- (bool)showTopBorder;
+- (id)decorationImage;
+- (void)setShowTopBorder:(bool)arg1;
 - (long long)componentType;
 - (void)setIndex:(long long)arg1;
 - (long long)index;
 - (id)title;
 - (void).cxx_destruct;
-- (bool)arrow;
 - (id)subtitle;
 
 @end

@@ -90,11 +90,11 @@
 - (id)originalSource;
 - (id)decayedWeight;
 - (void)setAddress:(id)arg1;
+- (id)kind;
 - (void)setKind:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)setDisplayName:(id)arg1;
-- (id)kind;
 - (void)setGroupName:(id)arg1;
 - (id)groupName;
 - (bool)isEqual:(id)arg1;

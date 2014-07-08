@@ -76,9 +76,11 @@
 - (void)setServiceViewShouldShareTouchesWithHost:(bool)arg1;
 - (void)restoreStateForSession:(id)arg1 anchor:(id)arg2;
 - (void)saveStateForSession:(id)arg1 anchor:(id)arg2;
+- (void)_initializeAccessibilityPortInformation;
 - (void)setInheritsSecurity:(bool)arg1;
 - (void)__sendNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(bool)arg2;
+- (void)__viewServicePreferredContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fenceSendRight:(id)arg2;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(bool)arg1;
 - (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { double x1; double x2; })arg1 animated:(bool)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
 - (void)__setViewServiceIsDisplayingPopover:(bool)arg1;
@@ -147,6 +149,7 @@
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)serviceViewControllerProxy;
 - (void)loadView;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (bool)canBecomeFirstResponder;
 - (void)__willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;

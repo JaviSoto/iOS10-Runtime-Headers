@@ -145,7 +145,7 @@
 - (void)session:(id)arg1 changeVideoRulesToCaptureRule:(id)arg2 encodeRule:(id)arg3 featuresListString:(id)arg4;
 - (bool)stopVideoIO:(bool)arg1 error:(id*)arg2;
 - (bool)session:(id)arg1 startVideoIO:(id*)arg2 captureRule:(id)arg3 isUnpausing:(bool)arg4;
-- (bool)session:(id)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 withScreenAttributes:(id)arg4 videoAttributes:(id)arg5 isFirstFrame:(bool)arg6;
+- (bool)session:(id)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 withScreenAttributes:(id)arg4 videoAttributes:(id)arg5 isFirstFrame:(bool)arg6 isVideoPaused:(bool)arg7;
 - (void)session:(id)arg1 didChangeVideoRule:(id)arg2;
 - (bool)setPauseVideo:(bool)arg1;
 - (bool)setPauseAudio:(bool)arg1;
@@ -330,8 +330,8 @@
 - (int)stateForCallID:(unsigned int)arg1;
 - (bool)matchesOpenSessionForParticipantID:(id)arg1;
 - (bool)isFocus;
-- (unsigned int)initializeNewCallWithDeviceRole:(int)arg1;
 - (void)stopCallID:(unsigned int)arg1;
+- (unsigned int)initializeNewCallWithDeviceRole:(int)arg1;
 - (void)setMicrophoneMuted:(bool)arg1;
 - (bool)isMicrophoneMuted;
 - (id)init;

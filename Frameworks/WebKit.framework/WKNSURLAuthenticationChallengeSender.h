@@ -6,6 +6,8 @@
 }
 
 
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;

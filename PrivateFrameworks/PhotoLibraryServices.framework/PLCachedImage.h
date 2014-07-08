@@ -16,9 +16,9 @@
 
 
 - (void)setFormat:(int)arg1;
+- (int)format;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (int)format;
 - (void)dealloc;
 - (id)description;
 - (void)setCacheKey:(id)arg1;

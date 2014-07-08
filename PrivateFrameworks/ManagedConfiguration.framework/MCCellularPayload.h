@@ -27,6 +27,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)installationWarnings;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

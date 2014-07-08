@@ -64,7 +64,6 @@
 
 
 - (bool)suppressAlert;
-- (id)albumCloudGUID;
 - (bool)assetWithUUID:(id)arg1 didChangePlaceholderKindTo:(short)arg2 fromOldKind:(short)arg3;
 - (double)completionPercentage;
 - (bool)thumbnailAssetIsPlaceholder;
@@ -97,6 +96,7 @@
 - (id)initWithInvitationRecordStatusChanged:(id)arg1;
 - (id)senderEmailAddress;
 - (id)initWithInvitationAlbum:(id)arg1;
+- (id)albumCloudGUID;
 - (void)setRecordID:(unsigned long long)arg1;
 - (id)expirationDate;
 - (id)_initWithType:(long long)arg1;

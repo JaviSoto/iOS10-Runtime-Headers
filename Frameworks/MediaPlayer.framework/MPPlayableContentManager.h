@@ -19,6 +19,7 @@
 
 + (id)sharedContentManager;
 
+- (void)_setupNotifications;
 - (void)_markContentItemsAsSentToMediaRemote:(id)arg1;
 - (bool)_contentItemWasSentToMediaRemote:(id)arg1;
 - (void)_handlePlaybackInitializationCompletedWithContext:(id)arg1 error:(id)arg2;
@@ -29,7 +30,6 @@
 - (void)_pushContentItemsUpdate;
 - (void)_tearDownNotifications;
 - (void)_tearDownMediaRemoteEndpoint;
-- (void)_setupNotifications;
 - (void)_setupMediaRemoteEndpoint;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;

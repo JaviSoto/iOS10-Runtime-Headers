@@ -15,18 +15,18 @@
 }
 
 @property(retain,readonly) NSXPCConnection * connection;
-@property(retain,readonly) NSUUID * activeUserActivityUUID;
+@property(copy) NSUUID * activeUserActivityUUID;
 @property(readonly) bool supportsActivityContinuation;
 @property(readonly) bool activityContinuationIsEnabled;
 
 + (bool)shouldSupportActivityContinuation;
 + (id)defaultManager;
 
-- (id)connection;
 - (id)activeUserActivityUUID;
 - (void)removeUserActivity:(id)arg1;
 - (void)makeActive:(id)arg1;
 - (bool)userActivityIsActive:(id)arg1;
+- (id)connection;
 - (void)addUserActivity:(id)arg1;
 - (void)fetchUUID:(id)arg1 withCompletionHandler:(id)arg2;
 - (bool)supportsActivityContinuation;
@@ -38,6 +38,7 @@
 - (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id)arg2;
 - (void)askClientUserActivityToSave:(id)arg1;
 - (id)_findUserActivityForUUID:(id)arg1;
+- (void)setActiveUserActivityUUID:(id)arg1;
 - (void)sendInitialMessage;
 - (void)createConnectionIfNeeded;
 - (id)initWithConnection:(id)arg1;

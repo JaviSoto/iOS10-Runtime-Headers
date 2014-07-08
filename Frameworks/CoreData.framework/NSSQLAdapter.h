@@ -10,6 +10,7 @@
 }
 
 
+- (id)connections;
 - (void)unregisterConnection:(id)arg1;
 - (void)registerConnection:(id)arg1;
 - (id)newCreateIndexStatementForColumns:(id)arg1;
@@ -49,7 +50,6 @@
 - (bool)supportsCorrelatedSubqueries;
 - (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
 - (id)sqlCore;
-- (id)connections;
 - (id)url;
 - (id)type;
 - (void)dealloc;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, NSArray, <UIActivityViewControllerDelegate>, UIActivityGroupListViewController, NSOperationQueue, SFAirDropActivityViewController, UIActivity, UIAlertController, UIViewController, _UIAlertControllerShimPresenter;
+@class _UIActivityApplicationExtensionDiscovery, NSString, NSArray, <UIActivityViewControllerDelegate>, NSOperationQueue, _UIActivityGroupListViewController, SFAirDropActivityViewController, UIActivity, UIAlertController, UIViewController, _UIAlertControllerShimPresenter;
 
 @interface UIActivityViewController : UIViewController <UIViewControllerRestoration, UIAlertControllerContaining, UIActivityGroupViewControllerDelegate, SFAirDropActivityViewControllerDelegate> {
     bool_useBlackPopoverStyle;
@@ -14,6 +14,7 @@
     bool_allowsEmbedding;
     bool_airdropped;
     bool_willDismissActivityViewController;
+    bool_performActivityForStateRestoration;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -41,7 +42,7 @@
     NSArray *_applicationActivities;
     UIAlertController *_activityAlertController;
     _UIAlertControllerShimPresenter *_activityAlertControllerShimPresenter;
-    UIActivityGroupListViewController *_activityGroupListViewController;
+    _UIActivityGroupListViewController *_activityGroupListViewController;
     NSOperationQueue *_activityItemProviderOperationQueue;
     long long _totalProviderCount;
     long long _completedProviderCount;
@@ -55,6 +56,7 @@
   /* Error parsing encoded ivar type info: @? */
     id __popoverDismissalAction;
 
+    _UIActivityApplicationExtensionDiscovery *_applicationExtensionDiscovery;
 }
 
 @property(copy) id completionHandler;
@@ -76,7 +78,7 @@
 @property(copy) NSArray * applicationActivities;
 @property(retain) UIAlertController * activityAlertController;
 @property(retain) _UIAlertControllerShimPresenter * activityAlertControllerShimPresenter;
-@property(retain) UIActivityGroupListViewController * activityGroupListViewController;
+@property(retain) _UIActivityGroupListViewController * activityGroupListViewController;
 @property(retain) NSOperationQueue * activityItemProviderOperationQueue;
 @property long long totalProviderCount;
 @property long long completedProviderCount;
@@ -88,16 +90,17 @@
 @property bool airdropped;
 @property(copy) id _popoverDismissalAction;
 @property bool willDismissActivityViewController;
+@property(retain) _UIActivityApplicationExtensionDiscovery * applicationExtensionDiscovery;
+@property bool performActivityForStateRestoration;
 
-+ (bool)_hasSystemActivityForActivityItems:(id)arg1;
 + (void)_clearActivityItems:(id)arg1;
 + (void)_addActivityItem:(id)arg1 activityViewController:(id)arg2 originalActivityItem:(id)arg3;
 + (void)_reloadImageForActivity:(id)arg1;
-+ (id)_builtinActivities;
 + (id)_attachmentNameForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_thumbnailImageForActivityItem:(id)arg1 activity:(id)arg2;
-+ (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
++ (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
++ (id)_itemProviderForActivityItem:(id)arg1 typeIdentifier:(id)arg2 activity:(id)arg3;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void)_cancel;
@@ -115,7 +118,6 @@
 - (void)setTotalProviderCount:(long long)arg1;
 - (long long)totalProviderCount;
 - (void)setActivityGroupListViewController:(id)arg1;
-- (id)activityGroupListViewController;
 - (id)applicationActivities;
 - (void)setAirDropDelegate:(id)arg1;
 - (id)airDropDelegate;
@@ -142,10 +144,12 @@
 - (void)_executeActivity;
 - (void)_resetAfterActivity:(bool)arg1;
 - (void)set_popoverDismissalAction:(id)arg1;
+- (void)setPerformActivityForStateRestoration:(bool)arg1;
 - (void)_prepareActivity:(id)arg1 completion:(id)arg2;
 - (id)mailAutosaveIdentifier;
 - (bool)showKeyboardAutomatically;
 - (void)_cleanupActivityWithSuccess:(bool)arg1;
+- (bool)performActivityForStateRestoration;
 - (void)_cleanupActivityWithSuccess:(bool)arg1 items:(id)arg2 error:(id)arg3;
 - (void)setActivityItemProviderOperationQueue:(id)arg1;
 - (void)setActivity:(id)arg1;
@@ -160,12 +164,16 @@
 - (id)_newActivityGroupViewControllerForItems:(id)arg1 category:(long long)arg2;
 - (void)_updateActivityItems:(id)arg1 animated:(bool)arg2;
 - (id)_availableActivitiesForItems:(id)arg1;
-- (id)_activityItemValues;
 - (id)activityTypeOrder;
 - (id)activityItems;
 - (id)includedActivityTypes;
 - (long long)excludedActivityCategories;
 - (id)excludedActivityTypes;
+- (void)_updateActivities:(id)arg1 animated:(bool)arg2;
+- (id)_activityItemValues;
+- (void)setApplicationExtensionDiscovery:(id)arg1;
+- (id)applicationExtensionDiscovery;
+- (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (void)setActivityAlertControllerShimPresenter:(id)arg1;
 - (id)activityAlertController;
 - (void)setActivityAlertController:(id)arg1;
@@ -174,6 +182,7 @@
 - (void)setBackgroundTaskIdentifier:(unsigned long long)arg1;
 - (void)setApplicationActivities:(id)arg1;
 - (void)setActivityItems:(id)arg1;
+- (id)activityGroupListViewController;
 - (void)_reloadImageForActivity:(id)arg1;
 - (void)setAirDropViewController:(id)arg1;
 - (id)airDropViewController;
@@ -200,7 +209,6 @@
 - (void)_setPopoverController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)completionHandler;
 - (void)viewDidLayoutSubviews;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

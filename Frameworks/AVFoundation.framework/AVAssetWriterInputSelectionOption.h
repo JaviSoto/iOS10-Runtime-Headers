@@ -30,7 +30,6 @@
 + (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1;
 + (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(bool)arg2;
 
-- (id)metadata;
 - (bool)displaysNonForcedSubtitles;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (bool)_isDesignatedDefault;
@@ -48,6 +47,7 @@
 - (id)availableMetadataFormats;
 - (id)trackReferences;
 - (id)outputSettings;
+- (id)metadata;
 - (id)mediaType;
 - (id)languageCode;
 - (id)extendedLanguageTag;

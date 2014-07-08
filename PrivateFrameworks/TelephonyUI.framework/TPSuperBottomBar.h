@@ -66,10 +66,8 @@
 + (double)defaultWidth;
 
 - (void)setHijackedGestureRecognizers:(id)arg1;
+- (void)setTopLayoutGuide:(id)arg1;
 - (id)nameForActionType:(int)arg1;
-- (void)animateOutLeftAndRightMainButtonsAndAddNewMainButton:(id)arg1 completion:(id)arg2;
-- (void)animateOutMainButtonAndAddNewLeftButton:(id)arg1 newSupplementalBottomRightButton:(id)arg2 completion:(id)arg3;
-- (void)animateOutMainButtonAndAddNewLeftButton:(id)arg1 newRightButton:(id)arg2 completion:(id)arg3;
 - (void)refreshCustomizedActionTypeTitles;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForControlWithActionType:(int)arg1;
 - (void)setAction:(int)arg1 enabled:(bool)arg2;
@@ -84,13 +82,13 @@
 - (void)_startShopDemoMode;
 - (void)setUsesLowerButtons:(bool)arg1;
 - (void)prepareButtonsForAnimationBegin;
-- (void)animateFromOutgoingStateToCallbackAndMessageUIWithCompletion:(id)arg1;
+- (void)animateFromOutgoingStateToCallbackAndMessageUIToState:(int)arg1 withCompletion:(id)arg2;
 - (void)animateFromOutgoingStateToInCallStateWithCompletion:(id)arg1;
-- (void)animateOutSupplementalBottomLeftButtonWithCompletion:(id)arg1;
+- (void)animateOutSupplementalBottomLeftButtonToState:(int)arg1 withCompletion:(id)arg2;
 - (void)animateFromIncomingCallStateToFaceTimeInCallState:(int)arg1 withCompletion:(id)arg2;
-- (void)animateOutSupplementalBottomRightButtonWithCompletion:(id)arg1;
+- (void)animateOutSupplementalBottomRightButtonToState:(int)arg1 withCompletion:(id)arg2;
 - (void)animateInSupplementalBottomRightButton:(id)arg1 WithCompletion:(id)arg2;
-- (void)animateFromIncomingCallStateToInCallStateWithCompletion:(id)arg1;
+- (void)animateFromIncomingCallStateToInCallState:(int)arg1 withCompletion:(id)arg2;
 - (void)prepareButtonsForAnimationEnd;
 - (int)updatedActionTypeForActionType:(int)arg1;
 - (id)updatedSelectedImageForActionType:(int)arg1 givenDefaultSelectedImage:(id)arg2;
@@ -139,7 +137,6 @@
 - (id)stateStack;
 - (void)setStateStack:(id)arg1;
 - (void)updateTopLayoutGuide;
-- (void)setTopLayoutGuide:(id)arg1;
 - (double)yOffsetForLoweredButtons;
 - (bool)usesLowerButtons;
 - (id)hijackedGestureRecognizers;
@@ -147,7 +144,6 @@
 - (void)setYOffsetForLoweredButtons:(double)arg1;
 - (void)setDeclineAndRemindIsAvailable:(bool)arg1;
 - (void)setDeclineAndMessageIsAvailable:(bool)arg1;
-- (void)setOrientation:(long long)arg1;
 - (bool)enabled;
 - (long long)orientation;
 - (void)setEnabled:(bool)arg1;
@@ -155,6 +151,7 @@
 - (void)addSubview:(id)arg1;
 - (void)setCurrentState:(int)arg1;
 - (int)currentState;
+- (void)setOrientation:(long long)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBottomMargin:(double)arg1;
 - (id)init;

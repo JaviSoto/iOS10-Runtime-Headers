@@ -34,10 +34,10 @@
 - (id)baseStyle;
 - (void)setBaseStyle:(id)arg1;
 - (void)setHidden:(bool)arg1;
+- (void)setName:(id)arg1;
 - (id)styleSheet;
 - (bool)hidden;
 - (id)name;
-- (void)setName:(id)arg1;
 - (int)type;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

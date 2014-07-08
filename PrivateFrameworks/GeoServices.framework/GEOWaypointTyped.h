@@ -29,10 +29,7 @@
 
 
 - (bool)isCurrentLocation;
-- (id)waypointLocation;
-- (id)waypointPlace;
 - (id)waypointId;
-- (int)waypointType;
 - (bool)hasIsCurrentLocation;
 - (void)setHasIsCurrentLocation:(bool)arg1;
 - (void)setIsCurrentLocation:(bool)arg1;
@@ -45,7 +42,12 @@
 - (void)setWaypointLocation:(id)arg1;
 - (void)setWaypointPlace:(id)arg1;
 - (void)setWaypointId:(id)arg1;
+- (id)locationForWaypoint;
+- (id)waypointLocation;
+- (id)waypointPlace;
+- (int)waypointType;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

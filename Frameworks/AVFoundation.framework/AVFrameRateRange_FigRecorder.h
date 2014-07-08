@@ -20,8 +20,8 @@
 - (id)initWithMinFrameRate:(int)arg1 maxFrameRate:(int)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxFrameDuration;
-- (double)maxFrameRate;
 - (double)minFrameRate;
+- (double)maxFrameRate;
 - (bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;

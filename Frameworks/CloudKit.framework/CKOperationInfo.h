@@ -12,6 +12,7 @@
     long long _qualityOfService;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
+    NSString *_deviceIdentifier;
     id _parentOperation;
 }
 
@@ -22,10 +23,12 @@
 @property long long qualityOfService;
 @property(retain) NSString * sourceApplicationBundleIdentifier;
 @property(retain) NSString * sourceApplicationSecondaryIdentifier;
+@property(retain) NSString * deviceIdentifier;
 @property id parentOperation;
 
 + (bool)supportsSecureCoding;
 
+- (void)setDeviceIdentifier:(id)arg1;
 - (void)setParentSectionID:(id)arg1;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)setUsesBackgroundSessionOverride:(long long)arg1;
@@ -36,6 +39,7 @@
 - (id)operationID;
 - (id)parentOperation;
 - (void)setParentOperation:(id)arg1;
+- (id)deviceIdentifier;
 - (id)init;
 - (id)sourceApplicationBundleIdentifier;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;

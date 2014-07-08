@@ -22,17 +22,16 @@
 - (void)clearEntryPoints;
 - (void)addEntryPoint:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
-- (id)locationForWaypoint;
 - (id)entryPoints;
 - (unsigned long long)entryPointsCount;
 - (id)placeSearchRequest;
 - (bool)hasPlaceSearchRequest;
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)location;
-- (id)initWithLocation:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

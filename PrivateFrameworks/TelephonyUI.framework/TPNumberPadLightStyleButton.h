@@ -19,7 +19,7 @@
 + (id)imageForCharacter:(unsigned int)arg1;
 + (double)horizontalPadding;
 
-- (id)initForCharacter:(unsigned int)arg1;
 - (id)defaultColor;
+- (id)initForCharacter:(unsigned int)arg1;
 
 @end

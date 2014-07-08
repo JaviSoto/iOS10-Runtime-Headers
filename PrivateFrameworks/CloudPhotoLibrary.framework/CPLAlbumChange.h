@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface CPLAlbumChange : CPLContainerChange <NSSecureCoding, NSCopying> {
+    NSString *_keyAssetIdentifier;
     bool_albumSortAscending;
     unsigned long long _albumType;
     NSString *_name;
@@ -35,9 +36,9 @@
 - (void)setAlbumSortType:(unsigned long long)arg1;
 - (void)setAlbumType:(unsigned long long)arg1;
 - (unsigned long long)albumType;
+- (void)setName:(id)arg1;
 - (void)setPosition:(long long)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (long long)position;
 

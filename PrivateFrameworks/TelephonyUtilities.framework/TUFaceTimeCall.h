@@ -37,16 +37,15 @@
 - (bool)isConferenced;
 - (bool)shouldPlayDTMFTone;
 - (bool)isBlocked;
+- (bool)isStatusFinal;
 - (void)inviteWithCallIdentifier:(int)arg1;
 - (id)initWithChat:(id)arg1;
-- (void)setRelayingIDSDevice:(id)arg1;
 - (bool)setDownlinkMuted:(bool)arg1;
 - (bool)isDownlinkMuted;
 - (bool)setUplinkMuted:(bool)arg1;
 - (bool)isUplinkMuted;
 - (bool)isOutgoing;
 - (int)disconnectedReason;
-- (void)inviteWithCallIdentifier:(int)arg1 conferenceInviteDictionary:(id)arg2;
 - (void)answerWithSourceIdentifier:(id)arg1;
 - (id)chat;
 - (bool)isEqual:(id)arg1;

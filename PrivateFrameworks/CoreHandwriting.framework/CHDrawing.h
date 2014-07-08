@@ -38,6 +38,7 @@
 - (struct vector<unsigned long, std::__1::allocator<unsigned long> > { unsigned long long *x1; unsigned long long *x2; struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { unsigned long long *x_3_1_1; } x3; })strokeIndicesSortedByMinXCoordinate;
 - (id)sortedDrawing;
 - (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })orientationRepresentationForSampling:(unsigned long long)arg1 convolutionWidth:(unsigned long long)arg2;
+- (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { double x1; double x2; })arg1 drawingAlgorithm:(int)arg2;
 - (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)xyRepresentation;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })matchingStrokePrefixRangeForDrawing:(id)arg1;

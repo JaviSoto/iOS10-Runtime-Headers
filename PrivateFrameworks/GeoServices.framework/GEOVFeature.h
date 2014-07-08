@@ -144,6 +144,9 @@
 @property unsigned int entryPointMask;
 
 
+- (int)sectionCount;
+- (int)roadClass;
+- (unsigned long long)businessID;
 - (id)characteristics;
 - (void)setCharacteristics:(id)arg1;
 - (unsigned int)entryPointMask;
@@ -151,7 +154,6 @@
 - (float)startRoadOffset;
 - (float)endLaneWidth;
 - (float)startLaneWidth;
-- (id)styleAttributes;
 - (unsigned int)centerlineStart;
 - (unsigned int)centerlineCount;
 - (id)oBSOLETECenterlines;
@@ -161,11 +163,9 @@
 - (id)oBSOLETEShieldLabelPositions;
 - (id)oBSOLETEVertexLabelPositions;
 - (id)pointLabelPosition;
-- (int)sectionCount;
 - (int)sectionStart;
 - (int)travelDirection;
 - (int)formOfWay;
-- (int)roadClass;
 - (bool)polyIsConvex;
 - (int)placeType;
 - (bool)hasEntryPointMask;
@@ -262,19 +262,19 @@
 - (void)setOBSOLETEShieldLabelPositions:(id)arg1;
 - (void)setOBSOLETEVertexLabelPositions:(id)arg1;
 - (void)setPointLabelPosition:(id)arg1;
-- (unsigned long long)businessID;
 - (bool)hasBusinessID;
 - (void)setHasBusinessID:(bool)arg1;
 - (void)setBusinessID:(unsigned long long)arg1;
+- (id)styleAttributes;
+- (long long)uID;
 - (bool)hasUID;
 - (void)setHasUID:(bool)arg1;
 - (void)setUID:(long long)arg1;
-- (long long)uID;
 - (void)copyTo:(id)arg1;
 - (void)setHasType:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
 - (float)endOffset;
 - (float)startOffset;
 - (bool)isEqual:(id)arg1;

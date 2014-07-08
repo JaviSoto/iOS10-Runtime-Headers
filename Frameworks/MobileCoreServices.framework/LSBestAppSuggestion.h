@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSUUID, NSDictionary, NSString, NSDate, LSBestAppSuggestionManager;
+@class NSUUID, NSDictionary, NSString, NSDate;
 
-@interface LSBestAppSuggestion : NSObject <NSSecureCoding> {
+@interface LSBestAppSuggestion : NSObject  {
     unsigned long long _type;
     NSUUID *_uniqueIdentifier;
     NSDictionary *_options;
@@ -14,44 +14,43 @@
     double _confidence;
     NSString *_originatingDeviceIdentifier;
     NSString *_originatingDeviceName;
-    LSBestAppSuggestionManager *_manager;
+    NSString *_originatingDeviceType;
 }
 
 @property(copy,readonly) NSString * userActivityTypeIdentifier;
 @property(readonly) unsigned long long type;
-@property(copy,readonly) NSUUID * uniqueIdentifier;
+@property(copy) NSUUID * uniqueIdentifier;
 @property(copy,readonly) NSString * bundleIdentifier;
-@property(copy,readonly) NSString * activityType;
+@property(copy) NSString * activityType;
 @property(copy,readonly) NSDate * lastUpdateTime;
 @property(copy,readonly) NSDate * when;
 @property(copy,readonly) NSDictionary * options;
 @property(readonly) double confidence;
 @property(copy,readonly) NSString * originatingDeviceIdentifier;
 @property(copy,readonly) NSString * originatingDeviceName;
-@property(readonly) LSBestAppSuggestionManager * manager;
+@property(copy,readonly) NSString * originatingDeviceType;
 
 + (bool)supportsSecureCoding;
 
 - (id)bundleIdentifier;
-- (id)manager;
 - (id)userActivityTypeIdentifier;
+- (id)originatingDeviceType;
 - (id)originatingDeviceName;
 - (id)originatingDeviceIdentifier;
+- (void)setActivityType:(id)arg1;
+- (id)activityType;
 - (id)when;
-- (void)updateActivityType:(id)arg1;
-- (void)updateUUID:(id)arg1;
-- (id)initWithManager:(id)arg1 bundleIdentifier:(id)arg2 uuid:(id)arg3 activityType:(id)arg4 lastUpdateTime:(id)arg5 type:(unsigned long long)arg6 deviceName:(id)arg7 deviceIdentifier:(id)arg8 options:(id)arg9;
-- (id)initWithManager:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 uuid:(id)arg2 activityType:(id)arg3 lastUpdateTime:(id)arg4 type:(unsigned long long)arg5 deviceName:(id)arg6 deviceIdentifier:(id)arg7 deviceType:(id)arg8 options:(id)arg9;
 - (id)lastUpdateTime;
 - (id)debugDescription;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)options;
 - (id)uniqueIdentifier;
+- (void)setUniqueIdentifier:(id)arg1;
 - (unsigned long long)type;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (double)confidence;
-- (id)activityType;
 
 @end

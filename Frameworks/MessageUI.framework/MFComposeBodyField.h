@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class DOMHTMLDocument, <MFMailComposeViewDelegate>, DOMHTMLElement;
+@class DOMHTMLDocument, NSArray, <MFMailComposeViewDelegate>, DOMHTMLElement;
 
 @interface MFComposeBodyField : UIWebDocumentView  {
     DOMHTMLElement *_body;
@@ -19,7 +19,6 @@
     bool_shouldShowStandardButtons;
     unsigned int _isDirty : 1;
     unsigned int _forwardingNotification : 1;
-    unsigned int _replaceAttachments : 1;
     unsigned int _isLoading : 1;
     unsigned int _needsReplaceImages : 1;
     struct _NSRange { 
@@ -30,6 +29,7 @@
     int _preventLayout;
     bool_prefersFirstLineSelection;
     unsigned long long _imageCount;
+    NSArray *_attachmentURLsToReplaceWithFilenames;
 }
 
 @property bool shouldShowStandardButtons;
@@ -54,7 +54,7 @@
 - (bool)isForwardingNotification;
 - (void)endPreventingLayout;
 - (void)beginPreventingLayout;
-- (void)setReplaceAttachmentsWithFilename:(bool)arg1;
+- (void)setAttachmentURLsToBeReplacedWithFilename:(id)arg1;
 - (void)unscaleImages;
 - (void)scaleImagesToScale:(unsigned long long)arg1;
 - (void)setLayoutInterval:(int)arg1;
@@ -85,7 +85,6 @@
 - (void)setMarkupString:(id)arg1;
 - (void)webViewDidDraw:(id)arg1;
 - (void)replaceImagesIfNecessary;
-- (void)updateImageScaleWithIdentifier:(id)arg1;
 - (void)_finishedLoadingURLRequest:(id)arg1 success:(bool)arg2;
 - (void)replaceImages;
 - (void)didUndoOrRedo:(id)arg1;

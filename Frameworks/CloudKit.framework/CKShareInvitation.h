@@ -29,10 +29,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setImageURL:(id)arg1;
-- (void)setApplicationContainer:(id)arg1;
-- (id)applicationContainer;
 - (void)setParticipant:(id)arg1;
+- (id)applicationContainer;
+- (void)setApplicationContainer:(id)arg1;
+- (void)setImageURL:(id)arg1;
 - (void)setInvitationDate:(id)arg1;
 - (id)invitationDate;
 - (void)setSenderRecordID:(id)arg1;

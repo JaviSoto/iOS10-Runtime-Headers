@@ -22,13 +22,13 @@
 + (int)lastInitError;
 + (id)sharedInstance;
 
+- (void)setDiscoverable:(bool)arg1;
 - (void)enableTestMode;
 - (bool)audioConnected;
 - (id)connectedDevices;
 - (id)connectingDevices;
 - (void)setConnectable:(bool)arg1;
 - (bool)connectable;
-- (void)setDiscoverable:(bool)arg1;
 - (bool)isDiscoverable;
 - (bool)deviceScanningInProgress;
 - (bool)deviceScanningEnabled;

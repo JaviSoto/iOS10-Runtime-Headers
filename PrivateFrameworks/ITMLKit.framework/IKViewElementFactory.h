@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppContext, IKViewElementStyleFactory;
+@class IKAppContext, IKViewElementStyleFactory, IKTemplateStyleSheet;
 
 @interface IKViewElementFactory : NSObject  {
     struct { 
@@ -11,11 +11,13 @@
         unsigned int parsingReorderedSiblings : 1; 
     } _parsingFlags;
     IKViewElementStyleFactory *_styleFactory;
+    IKTemplateStyleSheet *_styleSheet;
     unsigned long long _itmlIDSequence;
     IKAppContext *_appContext;
 }
 
 @property(retain) IKViewElementStyleFactory * styleFactory;
+@property(retain) IKTemplateStyleSheet * styleSheet;
 @property unsigned long long itmlIDSequence;
 @property IKAppContext * appContext;
 @property(getter=isSparse) bool sparse;
@@ -31,10 +33,12 @@
 - (unsigned long long)itmlIDSequence;
 - (void)setSparse:(bool)arg1;
 - (void)setStyleFactory:(id)arg1;
+- (void)setStyleSheet:(id)arg1;
 - (void)setItmlIDSequence:(unsigned long long)arg1;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
 - (void)setAppContext:(id)arg1;
 - (id)appContext;
+- (id)styleSheet;
 - (void).cxx_destruct;
 
 @end

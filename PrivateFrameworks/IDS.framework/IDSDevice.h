@@ -15,13 +15,15 @@
 @property(retain,readonly) NSString * deviceColor;
 @property(retain,readonly) NSString * enclosureColor;
 @property(readonly) bool isDefaultPairedDevice;
-@property(readonly) bool locallyPresent;
 @property(getter=isNearby,readonly) bool nearby;
+@property(readonly) bool locallyPresent;
 @property(setter=setNSUUID:,retain) NSUUID * nsuuid;
 @property(readonly) bool supportsTethering;
 @property(readonly) bool supportsHandoff;
+@property(readonly) bool supportsiCloudPairing;
 @property(readonly) bool supportsSMSRelay;
 @property(readonly) bool supportsMMSRelay;
+@property(readonly) bool supportsPhoneCalls;
 @property(retain,readonly) NSData * pushToken;
 
 
@@ -32,21 +34,23 @@
 - (void)closeSocketForDomain:(id)arg1;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
 - (int)socketForDomain:(id)arg1;
-- (bool)supportsHandoff;
-- (bool)supportsTethering;
 - (void)setNSUUID:(id)arg1;
 - (void)closeSocket:(int)arg1;
+- (bool)supportsHandoff;
+- (bool)supportsTethering;
 - (bool)locallyPresent;
 - (id)enclosureColor;
 - (id)deviceColor;
+- (bool)supportsPhoneCalls;
 - (bool)supportsMMSRelay;
 - (bool)supportsSMSRelay;
 - (id)modelIdentifier;
 - (void)_addIdentity:(id)arg1;
 - (void)_updateNSUUID:(id)arg1;
-- (bool)isDefaultLocalDevice;
 - (bool)isNearby;
 - (void)_setAccount:(id)arg1;
+- (bool)supportsiCloudPairing;
+- (bool)isDefaultLocalDevice;
 - (id)_identities;
 - (id)pushToken;
 - (bool)isDefaultPairedDevice;

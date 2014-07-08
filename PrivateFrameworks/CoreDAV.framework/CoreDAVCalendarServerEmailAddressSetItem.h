@@ -17,8 +17,8 @@
 - (void)setEmailAddresses:(id)arg1;
 - (void)addEmailAddress:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
-- (id)emailAddresses;
 - (id)unauthenticated;
+- (id)emailAddresses;
 - (id)init;
 - (void)dealloc;
 - (id)description;

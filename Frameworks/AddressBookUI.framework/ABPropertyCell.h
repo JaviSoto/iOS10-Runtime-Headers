@@ -29,7 +29,6 @@
 - (void)setPresentingDelegate:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
 - (id)presentingDelegate;
-- (void)setValueTextAttributes:(id)arg1;
 - (id)propertyItem;
 - (id)firstResponderItem;
 - (void)performAccessoryAction;
@@ -40,5 +39,6 @@
 - (void)setAllowsEditing:(bool)arg1;
 - (bool)allowsEditing;
 - (void)copy:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

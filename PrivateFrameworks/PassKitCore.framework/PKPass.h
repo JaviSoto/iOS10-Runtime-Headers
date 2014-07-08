@@ -134,6 +134,7 @@
 - (void)setSerialNumber:(id)arg1;
 - (void)setPassTypeIdentifier:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
 - (id)storeIdentifiers;
 - (id)passTypeIdentifier;
 - (id)pluralLocalizedName;
@@ -148,8 +149,8 @@
 - (id)serialNumber;
 - (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
-- (bool)isExpired;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
+- (bool)isExpired;
 - (void)setUserInfo:(id)arg1;
 - (id)teamID;
 - (id)localizedName;

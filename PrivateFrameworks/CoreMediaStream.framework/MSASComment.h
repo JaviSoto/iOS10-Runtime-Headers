@@ -54,12 +54,13 @@
 - (bool)isDeletable;
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (bool)isLike;
-- (void)setIsLike:(bool)arg1;
 - (id)personID;
 - (void)setEmail:(id)arg1;
 - (void)setID:(int)arg1;
 - (void)setPersonID:(id)arg1;
+- (bool)isLike;
+- (void)setIsLike:(bool)arg1;
+- (void)setContent:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setLastName:(id)arg1;
@@ -67,7 +68,6 @@
 - (id)lastName;
 - (id)firstName;
 - (id)fullName;
-- (void)setContent:(id)arg1;
 - (id)email;
 - (id)GUID;
 - (int)ID;

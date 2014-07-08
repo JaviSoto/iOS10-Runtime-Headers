@@ -19,7 +19,7 @@
 - (id)initWithServiceName:(const char *)arg1;
 - (id)pkd;
 - (void)releaseHold:(id)arg1 reply:(id)arg2;
-- (void)holdPlugins:(id)arg1 reply:(id)arg2;
+- (void)holdPlugins:(id)arg1 flags:(unsigned long long)arg2 reply:(id)arg3;
 - (void)bulkPlugins:(unsigned long long)arg1 reply:(id)arg2;
 - (void)removePlugIns:(id)arg1 reply:(id)arg2;
 - (void)addPlugIns:(id)arg1 reply:(id)arg2;

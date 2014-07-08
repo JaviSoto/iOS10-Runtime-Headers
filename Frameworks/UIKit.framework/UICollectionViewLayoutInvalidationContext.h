@@ -36,24 +36,22 @@
 - (void)dealloc;
 - (void)setContentSizeAdjustment:(struct CGSize { double x1; double x2; })arg1;
 - (void)setContentOffsetAdjustment:(struct CGPoint { double x1; double x2; })arg1;
-- (bool)invalidateDataSourceCounts;
-- (void)invalidateDecorationViewsOfKind:(id)arg1 atIndexPaths:(id)arg2;
-- (void)invalidateSupplmementaryViewsOfKind:(id)arg1 atIndexPaths:(id)arg2;
-- (id)invalidatedDecorationIndexPaths;
 - (void)invalidateDecorationElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
-- (id)invalidatedSupplementaryIndexPaths;
 - (void)invalidateSupplementaryElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
 - (void)_setInvalidatedSupplementaryViews:(id)arg1;
 - (void)_invalidateSupplementaryElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
 - (struct CGSize { double x1; double x2; })contentSizeAdjustment;
 - (struct CGPoint { double x1; double x2; })contentOffsetAdjustment;
-- (bool)invalidateEverything;
+- (id)invalidatedDecorationIndexPaths;
+- (id)invalidatedSupplementaryIndexPaths;
 - (void)_setUpdateItems:(id)arg1;
 - (id)_invalidatedSupplementaryViews;
-- (void)_setInvalidateEverything:(bool)arg1;
-- (void)_setInvalidateDataSourceCounts:(bool)arg1;
 - (id)_updateItems;
 - (void)invalidateItemsAtIndexPaths:(id)arg1;
 - (id)invalidatedItemIndexPaths;
+- (void)_setInvalidateDataSourceCounts:(bool)arg1;
+- (bool)invalidateDataSourceCounts;
+- (void)_setInvalidateEverything:(bool)arg1;
+- (bool)invalidateEverything;
 
 @end

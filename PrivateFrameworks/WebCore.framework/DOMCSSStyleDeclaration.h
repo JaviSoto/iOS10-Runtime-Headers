@@ -14,14 +14,14 @@
 @property(readonly) DOMCSSRule * parentRule;
 
 
-- (void)setDirection:(id)arg1;
-- (id)direction;
-- (void)setBackgroundColor:(id)arg1;
-- (id)cursor;
 - (void)setContent:(id)arg1;
 - (void)setPitch:(id)arg1;
 - (void)setVolume:(id)arg1;
 - (id)volume;
+- (void)setDirection:(id)arg1;
+- (id)direction;
+- (void)setBackgroundColor:(id)arg1;
+- (id)cursor;
 - (void)setHeight:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)height;

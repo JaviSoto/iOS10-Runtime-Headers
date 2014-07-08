@@ -26,6 +26,7 @@
 - (id)location;
 - (int)height;
 - (int)width;
+- (void)setName:(id)arg1;
 - (id)contentWindow;
 - (void)setScrolling:(id)arg1;
 - (id)scrolling;
@@ -44,7 +45,6 @@
 - (void)setLocation:(id)arg1;
 - (id)contentDocument;
 - (id)name;
-- (void)setName:(id)arg1;
 - (int)structuralComplexityContribution;
 - (id)contentFrame;
 

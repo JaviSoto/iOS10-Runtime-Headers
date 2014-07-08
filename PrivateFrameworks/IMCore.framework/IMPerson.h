@@ -70,8 +70,8 @@
 - (id)valuesForIMProperty:(id)arg1;
 - (id)idsAddresses;
 - (id)mobileNumbers;
-- (void)setEmails:(id)arg1;
 - (void)setPhoneNumbers:(id)arg1;
+- (void)setEmails:(id)arg1;
 - (id)nickname;
 - (void)setNickname:(id)arg1;
 - (void)save;

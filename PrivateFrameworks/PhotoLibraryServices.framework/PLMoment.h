@@ -57,6 +57,9 @@
 + (id)entityName;
 
 - (void)removeAssets:(id)arg1;
+- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
+- (void)removeAssetsAtIndexes:(id)arg1;
+- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (void)addAssets:(id)arg1;
 - (void)addAssetsObject:(id)arg1;
 - (void)removeObjectFromAssetsAtIndex:(unsigned long long)arg1;
@@ -74,9 +77,6 @@
 - (id)approximateLocation;
 - (void)setIsRegisteredForChanges:(bool)arg1;
 - (id)uniqueObjectID;
-- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
-- (void)removeAssetsAtIndexes:(id)arg1;
-- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (void)unregisterForChanges;
 - (bool)didRegisteredWithUserInterfaceContext;
 - (void)registerForChanges;

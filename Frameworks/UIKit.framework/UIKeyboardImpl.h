@@ -200,6 +200,7 @@
 + (void)hardwareKeyboardAvailabilityChanged;
 + (void)sendPerformanceNotification:(id)arg1;
 + (double)additionalInstanceHeight;
++ (struct CGPoint { double x1; double x2; })normalizedPersistentOffset;
 + (struct CGPoint { double x1; double x2; })persistentOffset;
 + (bool)rivenPreference;
 + (void)refreshRivenStateWithTraits:(id)arg1 isKeyboard:(bool)arg2;
@@ -302,7 +303,7 @@
 - (void)addInputObject:(id)arg1;
 - (void)acceptCurrentCandidateIfSelected;
 - (void)acceptCurrentCandidateWithExecutionContext:(id)arg1;
-- (void)acceptPredictiveInputAtIndex:(unsigned long long)arg1;
+- (void)acceptPredictiveInput:(id)arg1;
 - (void)removeAutocorrection;
 - (void)updateLayoutAndSetShift;
 - (void)addInputString:(id)arg1;
@@ -339,7 +340,6 @@
 - (void)saveInputModesPreference:(id)arg1;
 - (bool)keyboardsExpandedPreference;
 - (bool)swipeToTabPreference;
-- (bool)predictionPreferenceForTraits;
 - (void)cancelSplitTransition;
 - (bool)hideAccessoryViewsDuringSplit;
 - (unsigned long long)minimumTouchesForTranslation;
@@ -372,6 +372,7 @@
 - (void)setHardwareRepeatEvent:(id)arg1;
 - (void)hideKeyboard;
 - (void)showKeyboard;
+- (bool)predictionPreferenceForTraits;
 - (void)setHardwareRepeatTask:(id)arg1;
 - (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (id)hardwareRepeatEvent;
@@ -470,6 +471,7 @@
 - (void)completeAddInputString:(id)arg1;
 - (void)addWordTerminator:(id)arg1 afterSpace:(bool)arg2 elapsedTime:(double)arg3 executionContext:(id)arg4;
 - (void)acceptCurrentCandidateForInput:(id)arg1;
+- (void)collapseSelection;
 - (void)updateChangeTimeAndIncrementCount;
 - (void)acceptCurrentCandidateIfSelectedWithExecutionContext:(id)arg1;
 - (void)addInputEvent:(id)arg1 executionContext:(id)arg2;
@@ -564,6 +566,7 @@
 - (void)performKeyBehaviorConfirm;
 - (id)inputModeLastUsedForLanguage:(id)arg1;
 - (void)fadeAutocorrectPrompt;
+- (id)delegateAsResponder;
 - (void)deleteForwardAndNotify:(bool)arg1;
 - (void)movePhraseBoundaryToDirection:(long long)arg1;
 - (void)setHandlingKeyCommandFromHardwareKeyboard:(bool)arg1;
@@ -578,6 +581,7 @@
 - (void)dismissKeyboard;
 - (void)setInputModeToNextInPreferredListWithExecutionContext:(id)arg1;
 - (void)performKeyboardOutput:(id)arg1;
+- (void)collapseSelectionAndAdjustByOffset:(long long)arg1;
 - (bool)_shouldRequestInputManagerSyncForKeyboardOutputCallbacks:(id)arg1;
 - (bool)callShouldInsertText:(id)arg1;
 - (bool)callShouldReplaceExtendedRange:(unsigned long long)arg1 withText:(id)arg2 includeMarkedText:(bool)arg3;
@@ -633,7 +637,6 @@
 - (void)finishSetExtensionInputMode:(id)arg1 didChangeDirection:(bool)arg2;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(bool)arg1;
 - (void)callLayoutUpdateLocalizedKeys;
-- (bool)isMinimized;
 - (void)syncInputManagerToKeyboardStateWithExecutionContext:(id)arg1;
 - (void)textChanged:(id)arg1 executionContext:(id)arg2;
 - (void)finishSetKeyboardInputMode:(id)arg1 didChangeDirection:(bool)arg2;
@@ -646,6 +649,8 @@
 - (void)setInputMode:(id)arg1 userInitiated:(bool)arg2;
 - (bool)automaticMinimizationEnabled;
 - (bool)checkSpellingPreference;
+- (bool)predictionForTraits;
+- (bool)isMinimized;
 - (bool)keyboardIsKeyPad;
 - (bool)autocorrectionPreference;
 - (void)setRivenSplitLock:(bool)arg1;
@@ -685,7 +690,6 @@
 - (bool)hardwareKeyboardIsSeen;
 - (bool)shouldShowCandidateBar;
 - (bool)showsCandidateBar;
-- (id)delegateAsResponder;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)clearLayouts;

@@ -22,9 +22,9 @@
 - (id)contentSourceURL;
 - (id)message;
 - (id)title;
+- (id)activityType;
 - (id)image;
 - (id)URL;
 - (void).cxx_destruct;
-- (id)activityType;
 
 @end

@@ -6,11 +6,6 @@
    See Warning(s) below.
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSArray, <NSObject>, PKPhysicsWorld, NSMutableArray, SKNode;
 
 @interface PKPhysicsBody : NSObject <NSCopying, NSCoding> {
@@ -43,10 +38,7 @@
         void *userData; 
     } _bodyDef;
     struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_11_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_11_1_3; float x_11_1_4; float x_11_1_5; float x_11_1_6; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; } *_body;
-
-  /* Error parsing encoded ivar type info: ^{PKCField=^^?^{RegionHolder}{mat4=(?=[4]{?=[16f]})}{mat4=(?=[4]{?=[16f]})}fBffIBB} */
-    struct PKCField { int (**x1)(); struct RegionHolder {} *x2; struct mat4 { union { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_2_1[4]; void*x_1_2_2; } x_3_1_1; } x3; struct mat4 { union { void*x_1_2_1[4]; void*x_1_2_2; } x_4_1_1; } x4; float x5; boolx6; float x7; float x8; unsigned int x9; boolx10; boolx11; } *_field;
-
+    struct PKCField { } *_field;
     int _dynamicType;
     struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { 
         struct PKPhysicsShape {} **__begin_; 
@@ -172,15 +164,16 @@
 - (id)_descriptionFormat;
 - (id)_descriptionClassName;
 - (double)mass;
-- (id)_world;
 - (void)setResting:(bool)arg1;
 - (id)initWithBodies:(id)arg1;
 - (void)set_allowSleep:(bool)arg1;
 - (id)initWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 center:(struct CGPoint { double x1; double x2; })arg2 edgeRadius:(float)arg3;
 - (struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { struct PKPhysicsShape {} **x1; struct PKPhysicsShape {} **x2; struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { struct PKPhysicsShape {} **x_3_1_1; } x3; }*)_shapes;
-- (void)setFieldBitMask:(unsigned int)arg1;
+- (void)setAngularDamping:(double)arg1;
+- (void)setLinearDamping:(double)arg1;
 - (void)setAngularVelocity:(double)arg1;
 - (void)setVelocity:(struct CGVector { double x1; double x2; })arg1;
+- (void)setFieldBitMask:(unsigned int)arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
 - (void)setCollisionBitMask:(unsigned int)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
@@ -197,9 +190,11 @@
 - (id)initWithEdgeFromPoint:(struct CGPoint { double x1; double x2; })arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (id)initWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 center:(struct CGPoint { double x1; double x2; })arg2;
 - (id)initWithCircleOfRadius:(double)arg1 center:(struct CGPoint { double x1; double x2; })arg2;
-- (unsigned int)fieldBitMask;
+- (double)angularDamping;
+- (double)linearDamping;
 - (double)angularVelocity;
 - (struct CGVector { double x1; double x2; })velocity;
+- (unsigned int)fieldBitMask;
 - (unsigned int)contactTestBitMask;
 - (unsigned int)collisionBitMask;
 - (unsigned int)categoryBitMask;
@@ -238,11 +233,8 @@
 - (void)setPostStepBlock:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)applyImpulse:(struct CGVector { double x1; double x2; })arg1;
-- (double)angularDamping;
-- (double)linearDamping;
 - (void)setRotation:(double)arg1;
-- (void)setAngularDamping:(double)arg1;
-- (void)setLinearDamping:(double)arg1;
+- (id)_world;
 - (id)node;
 - (id)_descriptionClassName;
 

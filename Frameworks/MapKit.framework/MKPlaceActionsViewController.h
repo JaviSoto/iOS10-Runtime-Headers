@@ -4,7 +4,7 @@
 
 @class NSArray, <MKPlaceActionsViewControllerDelegate>, MKMapItem;
 
-@interface MKPlaceActionsViewController : UITableViewController  {
+@interface MKPlaceActionsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
     bool_showContactActions;
     bool_showRemovePin;
     bool_showReportAProblem;
@@ -27,10 +27,12 @@
 @property bool showSimulateLocation;
 @property bool showOpenInSkyline;
 @property(retain) NSArray * actions;
+@property(readonly) bool requiresPreferredContentSizeInStackingView;
 
 
 - (id)actionDelegate;
 - (bool)showSharing;
+- (bool)requiresPreferredContentSizeInStackingView;
 - (void)updateActions;
 - (void)setActionDelegate:(id)arg1;
 - (void)setShowOpenInSkyline:(bool)arg1;
@@ -46,8 +48,8 @@
 - (bool)showRemovePin;
 - (bool)showContactActions;
 - (void)setShowContactActions:(bool)arg1;
-- (id)mapItem;
 - (void)setMapItem:(id)arg1;
+- (id)mapItem;
 - (id)actions;
 - (void)setActions:(id)arg1;
 - (id)init;

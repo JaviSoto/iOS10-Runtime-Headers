@@ -13,6 +13,7 @@
 - (int)supportedModelType;
 - (int)endedError;
 - (unsigned int)endedReason;
+- (bool)hasReceivedFirstFrame;
 - (void)setIsSendingVideo:(bool)arg1;
 - (bool)isSendingVideo;
 - (int)service;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSArray;
 
 @interface AAURLConfiguration : NSObject  {
     NSDictionary *_urlDictionary;
@@ -60,17 +60,24 @@
 @property(readonly) NSString * acceptChildTransferURL;
 @property(readonly) NSString * rejectChildTransferURL;
 @property(readonly) NSString * familyLearnMoreURL;
-@property(readonly) NSString * appleIDSignoutURL;
+@property(readonly) NSString * cloudKitMigrationStateURL;
+@property(readonly) NSString * cloudKitStartMigrationURL;
+@property(readonly) NSString * familyPaymentInfoURL;
+@property(readonly) NSString * familyPaymentCardUIURL;
 @property(readonly) NSString * registerDeviceURL;
 @property(readonly) NSString * unregisterDeviceURL;
 @property(readonly) NSString * getFamilyPushDetailsURL;
 @property(readonly) NSString * acceptFamilyInviteURL;
 @property(readonly) NSString * declineFamilyInviteURL;
 @property(readonly) NSString * apsEnvironment;
+@property(readonly) NSArray * urlsStoringCookies;
 
++ (id)itemForKey:(id)arg1 error:(id*)arg2;
++ (id)_urlConfigurationWithError:(id*)arg1;
 + (id)urlConfiguration;
 + (void)reset;
 
+- (id)familyPaymentInfoURL;
 - (id)declineFamilyInviteURL;
 - (id)getFamilyMemberPhotoURL;
 - (id)familySetupUIURL;
@@ -78,26 +85,32 @@
 - (id)iForgotUIURL;
 - (id)getMyPhotoURL;
 - (id)existingAppleIDTermsUIURL;
+- (id)familyPaymentCardUIURL;
 - (id)rejectChildTransferURL;
 - (id)acceptFamilyInviteURL;
 - (id)updateMyPhotoURL;
 - (id)familyLearnMoreURL;
-- (id)appleIDSignoutURL;
+- (id)urlsStoringCookies;
 - (id)apsEnvironment;
 - (id)grandslamURL;
 - (id)pendingFamilyInvitesUIURL;
 - (id)checkiCloudMembershipURL;
 - (id)getFamilyPushDetailsURL;
+- (id)devicesUIURL;
 - (id)familyUIURL;
+- (id)accountManagementUIURL;
 - (id)verifyCodeURL;
 - (id)sendCodeURL;
 - (id)deviceListURL;
 - (id)syncMachineURL;
 - (id)finishProvisioningURL;
+- (id)updateAccountUIURL;
 - (id)validateURL;
 - (id)registerURL;
 - (id)updateAccountURL;
 - (id)accountCreationURL;
+- (id)cloudKitStartMigrationURL;
+- (id)cloudKitMigrationStateURL;
 - (id)unregisterDeviceURL;
 - (id)registerDeviceURL;
 - (id)childAccountCreationUIURL;
@@ -111,10 +124,8 @@
 - (id)passwordSecurityUIURL;
 - (id)personalInfoUIURL;
 - (id)paymentSummaryURL;
-- (id)devicesUIURL;
 - (id)createDelegatesURL;
 - (id)loginOrCreateDelegatesURL;
-- (id)accountManagementUIURL;
 - (id)fmipAuthenticate;
 - (id)emailLookupURL;
 - (id)mobileMeOfferAlertURL;
@@ -123,7 +134,6 @@
 - (id)fetchAccountSettingsURL;
 - (id)signInURL;
 - (id)addEmailURL;
-- (id)updateAccountUIURL;
 - (id)accountCreationUIURL;
 - (id)genericTermsURL;
 - (id)loginDelegatesURL;

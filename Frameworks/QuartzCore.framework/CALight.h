@@ -40,6 +40,7 @@
 
 - (void)setDirection:(struct CAPoint3D { double x1; double x2; double x3; })arg1;
 - (struct CAPoint3D { double x1; double x2; double x3; })direction;
+- (void)setName:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)setFalloff:(double)arg1;
@@ -81,7 +82,6 @@
 - (id)name;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

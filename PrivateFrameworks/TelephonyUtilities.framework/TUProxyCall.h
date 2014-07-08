@@ -7,12 +7,14 @@
 @interface TUProxyCall : TUCall <NSSecureCoding> {
     bool_conferenced;
     bool_outgoing;
+    bool_voicemail;
     int _status;
     int _callIdentifier;
     int _service;
     double _startTime;
     NSString *_destinationID;
     NSString *_conferenceIdentifier;
+    NSString *_callerNameFromNetwork;
 }
 
 @property(copy) NSString * destinationID;
@@ -24,21 +26,26 @@
 @property int service;
 @property(getter=isOutgoing) bool outgoing;
 @property(retain) NSString * conferenceIdentifier;
+@property(getter=isVoicemail) bool voicemail;
+@property(copy) NSString * callerNameFromNetwork;
 
 + (bool)supportsSecureCoding;
 
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (void)setVoicemail:(bool)arg1;
 - (void)setOutgoing:(bool)arg1;
 - (void)setConferenced:(bool)arg1;
 - (bool)isHostedOnCurrentDevice;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
 - (id)initWithCall:(id)arg1;
-- (id)initWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(bool)arg5 conferenceIdentifier:(id)arg6;
-- (void)setDestinationID:(id)arg1;
+- (id)initWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(bool)arg5 conferenceIdentifier:(id)arg6 voicemail:(bool)arg7 callerNameFromNetwork:(id)arg8;
+- (void)setCallerNameFromNetwork:(id)arg1;
 - (void)setCallIdentifier:(int)arg1;
-- (bool)unhold;
-- (bool)hold;
+- (void)setDestinationID:(id)arg1;
+- (bool)isVoicemail;
+- (void)unhold;
+- (void)hold;
 - (void)updateWithCall:(id)arg1;
 - (void)setConferenceIdentifier:(id)arg1;
 - (id)remoteFrequency;
@@ -48,6 +55,7 @@
 - (double)callDuration;
 - (id)callUUID;
 - (int)callIdentifier;
+- (id)callerNameFromNetwork;
 - (id)destinationID;
 - (void)leaveConference;
 - (void)joinConference;

@@ -16,16 +16,16 @@
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
 
-- (void)doneEditing;
 - (void)editMode;
+- (void)doneEditing;
 - (void)addNewValue;
 - (bool)wantsNewButton;
 - (id)specifierLabel;
 - (id)scrollViewToBeInsetted;
 - (bool)handlesDoneButton;
 - (id)preferenceValue;
-- (void)viewDidBecomeVisible;
 - (id)preferenceSpecifier;
+- (void)viewDidBecomeVisible;
 - (void)setPreferenceValue:(id)arg1;
 - (void)setPreferenceSpecifier:(id)arg1;
 - (void)layoutInsetContent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

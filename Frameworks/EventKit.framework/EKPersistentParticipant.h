@@ -17,8 +17,8 @@
 
 + (id)defaultPropertiesToLoad;
 
-- (id)owner;
 - (void)setAddress:(id)arg1;
+- (id)owner;
 - (void)setComment:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setLastName:(id)arg1;

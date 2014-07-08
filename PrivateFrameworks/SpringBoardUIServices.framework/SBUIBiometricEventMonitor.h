@@ -21,6 +21,7 @@
 }
 
 @property <SBUIBiometricEventMonitorDelegate> * delegate;
+@property(getter=isMatchingEnabled,readonly) bool matchingEnabled;
 
 + (id)sharedInstance;
 
@@ -32,9 +33,7 @@
 - (void)setLockScreenTopmost:(bool)arg1;
 - (void)setFingerDetectEnabled:(bool)arg1 requester:(id)arg2;
 - (void)setMatchingDisabled:(bool)arg1 requester:(id)arg2;
-- (bool)isMatchingEnabled;
 - (id)stringForEvent:(unsigned long long)arg1;
-- (bool)hasEnrolledIdentities;
 - (void)_setMatchingEnabled:(bool)arg1;
 - (void)_stopMatching;
 - (void)_startMatching;
@@ -42,6 +41,8 @@
 - (void)_startFingerDetection;
 - (void)_reevaluateMatching;
 - (void)_profileSettingsChanged:(id)arg1;
+- (bool)hasEnrolledIdentities;
+- (bool)isMatchingEnabled;
 - (void)disableMatchingForPasscodeView:(id)arg1;
 - (void)enableMatchingForPasscodeView:(id)arg1;
 - (id)init;

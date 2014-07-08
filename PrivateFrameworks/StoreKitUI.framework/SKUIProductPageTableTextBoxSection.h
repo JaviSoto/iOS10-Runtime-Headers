@@ -21,7 +21,6 @@
 @property(retain) SKUIColorScheme * colorScheme;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setStringIndex:(long long)arg1;
 - (void)setTextLayoutCache:(id)arg1;
@@ -32,6 +31,7 @@
 - (long long)stringIndex;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;

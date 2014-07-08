@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray;
 
-@interface FigCaptureSessionConfiguration : NSObject <NSCoding, NSCopying> {
+@interface FigCaptureSessionConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSMutableArray *_connections;
     long long _configurationID;
     bool_usesAppAudioSession;
@@ -24,17 +24,17 @@
 - (id)sourceConfigurations;
 - (void)removeConnectionConfiguration:(id)arg1;
 - (void)addConnectionConfiguration:(id)arg1;
-- (bool)configuresAppAudioSession;
-- (bool)usesAppAudioSession;
-- (id)connectionConfigurations;
 - (void)setConfiguresAppAudioSession:(bool)arg1;
 - (void)setUsesAppAudioSession:(bool)arg1;
 - (void)setConfigurationID:(long long)arg1;
+- (bool)configuresAppAudioSession;
+- (bool)usesAppAudioSession;
+- (id)copyXPCEncoding;
+- (id)connectionConfigurations;
+- (id)initWithXPCEncoding:(id)arg1;
 - (long long)configurationID;
 - (id)init;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

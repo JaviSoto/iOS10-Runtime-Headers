@@ -37,6 +37,7 @@
 - (bool)isSmallFace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateFaceCoreROI:(id)arg1 imageStat:(id)arg2 needFaceCore:(bool*)arg3;
 - (void)setupFaceDetector;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })padRoiRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 paddingX:(float)arg2 paddingY:(float)arg3;
 - (bool)forceFaceDetectionEnable;
 - (void)calcFaceScores:(id)arg1;
 - (void)extractFacesFromMetadata:(id)arg1;

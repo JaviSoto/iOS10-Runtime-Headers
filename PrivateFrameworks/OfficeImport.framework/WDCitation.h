@@ -51,9 +51,9 @@
 - (id)pages;
 - (void)setUrls:(id)arg1;
 - (id)urls;
-- (id)sourceType;
 - (void)setVolume:(id)arg1;
 - (id)volume;
+- (id)sourceType;
 - (id)number;
 - (void)setNumber:(id)arg1;
 - (id)document;

@@ -17,7 +17,8 @@
         unsigned int isHeaderFlaggedFPO : 1; 
         unsigned int isExcludedFromContrastFilter : 1; 
         unsigned int isVectorBased : 1; 
-        unsigned int reserved : 29; 
+        unsigned int isOpaque : 1; 
+        unsigned int reserved : 28; 
     } _renditionFlags;
     long long _templateRenderingMode;
     long long _artworkStatus;
@@ -28,16 +29,19 @@
     double _opacity;
     int _blendMode;
     NSString *_utiType;
+    int _exifOrientation;
 }
 
 @property double opacity;
 @property int blendMode;
+@property int exifOrientation;
 
 + (Class)renditionClassForRenditionType:(long long)arg1 andPixelFormat:(unsigned int)arg2;
 + (id)filteredCSIDataFromBaseCSIData:(id)arg1;
 + (id)displayNameForRenditionType:(long long)arg1;
 
 - (void)setOpacity:(double)arg1;
+- (bool)isOpaque;
 - (double)opacity;
 - (unsigned int)subtype;
 - (bool)isValidForLookGradation:(long long)arg1;
@@ -61,6 +65,7 @@
 - (bool)isTiled;
 - (unsigned short)valueForTokenIdentifier:(unsigned short)arg1;
 - (void)_initializeRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (int)exifOrientation;
 - (void)setBlendMode:(int)arg1;
 - (id)effectPreset;
 - (id)gradient;
@@ -77,5 +82,6 @@
 - (void)dealloc;
 - (id)description;
 - (double)scale;
+- (void)setExifOrientation:(int)arg1;
 
 @end

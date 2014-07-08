@@ -12,7 +12,7 @@
     long long _selectedItemIndex;
 }
 
-@property(retain) SKUIChartsComponent * pageComponent;
+@property(readonly) SKUIChartsComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -25,13 +25,13 @@
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
 - (bool)fitsToHeight;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (bool)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (bool)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;

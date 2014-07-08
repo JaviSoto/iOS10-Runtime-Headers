@@ -24,10 +24,10 @@
 + (struct __CFAttributedString { }*)newAttributedStringWithText:(id)arg1;
 + (struct __CFAttributedString { }*)_newAttributedStringWithRequest:(id)arg1;
 
-- (struct __CTFrame { }*)textFrame;
 - (struct CGSize { double x1; double x2; })truncatedSize;
 - (bool)requiresTruncation;
 - (id)initWithLayoutRequest:(id)arg1;
+- (struct __CTFrame { }*)textFrame;
 - (void)dealloc;
 - (struct CGSize { double x1; double x2; })textSize;
 

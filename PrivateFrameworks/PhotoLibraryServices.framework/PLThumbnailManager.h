@@ -54,9 +54,10 @@
 + (bool)isMissingThumbnailTables;
 + (int)thumbnailFormat;
 
+- (id)newImageDataForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 networkAccessForced:(bool)arg6 trackCPLDownload:(bool)arg7 outImageDataInfo:(id*)arg8 outCPLDownloadContext:(id*)arg9;
+- (id)preheatItemSourceForFormat:(int)arg1;
 - (id)thumbManagersByFormat;
 - (id)thumbnailJPEGPathForPhoto:(id)arg1;
-- (id)preheatItemSourceForFormat:(int)arg1;
 - (id)_tableDescriptions;
 - (id)compactImageTables;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;
@@ -65,7 +66,6 @@
 - (bool)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (struct __CFDictionary { }*)placeholderThumbnailDataByFormatID;
 - (void)setThumbnails:(struct __CFDictionary { }*)arg1 forPhoto:(id)arg2;
-- (id)newImageDataForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 networkAccessForced:(bool)arg6 trackCPLDownload:(bool)arg7 outImageDataInfo:(id*)arg8 outCPLDownloadContext:(id*)arg9;
 - (id)_dataForInFlightAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_anyImageTable;
 - (void)_horse_setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;

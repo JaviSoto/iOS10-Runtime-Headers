@@ -54,6 +54,10 @@
     NSMutableDictionary *_grayscaleTintMaskViewMap;
     UIView *_colorTintMaskViewContainer;
     NSMutableDictionary *_colorTintMaskViewMap;
+    UIView *_colorBurnTintMaskViewContainer;
+    NSMutableDictionary *_colorBurnTintMaskViewMap;
+    UIView *_darkeningTintMaskViewContainer;
+    NSMutableDictionary *_darkeningTintMaskViewMap;
     UIView *_filterMaskViewContainer;
     NSMutableDictionary *_filterMaskViewMap;
     id _computeAndApplySettingsNotificationObserver;
@@ -115,6 +119,10 @@
 @property(retain) NSMutableDictionary * grayscaleTintMaskViewMap;
 @property(retain) UIView * colorTintMaskViewContainer;
 @property(retain) NSMutableDictionary * colorTintMaskViewMap;
+@property(retain) UIView * colorBurnTintMaskViewContainer;
+@property(retain) NSMutableDictionary * colorBurnTintMaskViewMap;
+@property(retain) UIView * darkeningTintMaskViewContainer;
+@property(retain) NSMutableDictionary * darkeningTintMaskViewMap;
 @property(retain) UIView * filterMaskViewContainer;
 @property(retain) NSMutableDictionary * filterMaskViewMap;
 @property bool applySettingsAfterLayout;
@@ -153,11 +161,11 @@
 + (id)allBackdropViews;
 + (Class)layerClass;
 
-- (id)observers;
-- (void)setObservers:(id)arg1;
 - (id)observer;
 - (void)setOutputSettings:(id)arg1;
 - (id)outputSettings;
+- (id)observers;
+- (void)setObservers:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)backdropLayerStatisticsDidChange:(id)arg1;
@@ -264,12 +272,18 @@
 - (bool)simulatesMasks;
 - (void)setFilterMaskViewContainer:(id)arg1;
 - (void)setFilterMaskViewMap:(id)arg1;
+- (void)setDarkeningTintMaskViewContainer:(id)arg1;
+- (void)setDarkeningTintMaskViewMap:(id)arg1;
+- (void)setColorBurnTintMaskViewContainer:(id)arg1;
+- (void)setColorBurnTintMaskViewMap:(id)arg1;
 - (void)setColorTintMaskViewContainer:(id)arg1;
 - (void)setColorTintMaskViewMap:(id)arg1;
 - (void)setGrayscaleTintMaskViewContainer:(id)arg1;
 - (void)setGrayscaleTintMaskViewMap:(id)arg1;
 - (long long)maskMode;
 - (id)filterMaskViewMap;
+- (id)darkeningTintMaskViewMap;
+- (id)colorBurnTintMaskViewMap;
 - (id)colorTintMaskViewMap;
 - (id)grayscaleTintMaskViewMap;
 - (id)darkeningTintView;
@@ -336,6 +350,8 @@
 - (bool)computesColorSettings;
 - (void)transitionToStyle:(long long)arg1;
 - (id)filterMaskViewContainer;
+- (id)darkeningTintMaskViewContainer;
+- (id)colorBurnTintMaskViewContainer;
 - (id)colorTintMaskViewContainer;
 - (id)grayscaleTintMaskViewContainer;
 - (void)setConfiguration:(long long)arg1;

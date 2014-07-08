@@ -10,7 +10,7 @@
 
 
 - (void)willAppearInNavigationBar;
-- (void)reloadAfterDocumentUpdate;
+- (void)reloadAfterDocumentUpdateWithNavigationItem:(id)arg1;
 - (id)initWithViewElement:(id)arg1;
 - (id)view;
 - (void).cxx_destruct;

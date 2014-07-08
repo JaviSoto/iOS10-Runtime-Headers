@@ -14,9 +14,9 @@
 - (void)setColumn:(bool)arg1;
 - (void)setGapWidth:(int)arg1;
 - (id)initWithChart:(id)arg1;
-- (bool)isColumn;
 - (int)overlap;
 - (void)setOverlap:(int)arg1;
+- (bool)isColumn;
 - (bool)isHorizontal;
 
 @end

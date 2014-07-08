@@ -22,6 +22,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)reversedAction;
+- (bool)isCustom;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

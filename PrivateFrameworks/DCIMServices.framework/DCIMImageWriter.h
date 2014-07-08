@@ -5,12 +5,12 @@
 @interface DCIMImageWriter : NSObject  {
 }
 
++ (id)defaultFileExtensionForAssetType:(short)arg1;
 + (id)diagnosticPathExtension;
 + (id)largeThumbnailInflightPathExtension;
 + (id)sharedDCIMWriter;
 + (id)avalanchePathExtension;
 + (id)incomingAssetFilenameDelimiter;
-+ (id)defaultFileExtensionForAssetType:(short)arg1;
 + (id)incomingDirectoryPath;
 + (id)incomingDirectoryPathForPhotoStream;
 + (id)preferredFileExtensionForType:(id)arg1;

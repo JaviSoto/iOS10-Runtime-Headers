@@ -21,6 +21,8 @@
 
 
 - (void)copyTo:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setPersistentIDs:(long long*)arg1 count:(unsigned long long)arg2;
 - (void)setHasShouldContain:(bool)arg1;
 - (long long)persistentIDsAtIndex:(unsigned long long)arg1;
@@ -31,8 +33,6 @@
 - (long long*)persistentIDs;
 - (unsigned long long)persistentIDsCount;
 - (bool)shouldContain;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

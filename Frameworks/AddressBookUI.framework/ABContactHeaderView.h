@@ -26,7 +26,6 @@
 @property(readonly) ABContactPhotoView * photoView;
 @property(readonly) CNContact * contact;
 
-+ (bool)requiresConstraintBasedLayout;
 
 - (void)saveContactPhoto;
 - (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

@@ -85,9 +85,9 @@
 @property(retain,readonly) NSOrderedSet * cloudAlbumSubscriberRecords;
 @property(retain,readonly) NSDate * cloudFirstRecentBatchDate;
 
-+ (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudOwnerDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 includingEmail:(bool)arg5 allowsEmail:(bool)arg6;
 + (id)localizedSharedByLabelWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 isOwned:(bool)arg5 allowsEmail:(bool)arg6;
++ (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)allCloudSharedAlbumsInLibrary:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

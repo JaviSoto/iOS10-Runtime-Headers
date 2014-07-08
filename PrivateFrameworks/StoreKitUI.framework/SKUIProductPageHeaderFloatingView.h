@@ -19,13 +19,13 @@
 @property long long selectedSectionIndex;
 
 
-- (void)_reloadBackdropView;
 - (double)backdropAlpha;
+- (void)_reloadBackdropView;
+- (void)setBackdropAlpha:(double)arg1;
 - (void)setSelectedSectionIndex:(long long)arg1;
 - (long long)selectedSectionIndex;
 - (id)initWithSectionTitles:(id)arg1 isPad:(bool)arg2;
 - (id)sectionControl;
-- (void)setBackdropAlpha:(double)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (void).cxx_destruct;

@@ -83,13 +83,14 @@
 - (void)setOccurrenceLatLng:(id)arg1;
 - (void)setOccurrenceRouteId:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
+- (id)errorDomain;
 - (void)setErrorCode:(long long)arg1;
 - (long long)errorCode;
-- (id)errorDomain;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(int)arg1;

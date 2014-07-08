@@ -30,7 +30,7 @@
 - (void)_setAcceleration:(struct CGPoint { double x1; double x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { double x1; double x2; })arg2;
 - (id)_acceleratedOutputRange;
 - (void)setViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (struct UIOffset { double x1; double x2; })viewerOffset;
 - (void)_reset;
+- (struct UIOffset { double x1; double x2; })viewerOffset;
 
 @end

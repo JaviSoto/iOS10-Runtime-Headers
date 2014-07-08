@@ -38,11 +38,11 @@
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
 
+- (void)performCompletionBlock:(id)arg1;
 - (struct __SecIdentity { }*)copyIdentity;
 - (id)userAgent;
 - (void)setCMSSignatureHeaderName:(id)arg1;
 - (id)CMSSignatureHeaderName;
-- (void)performCompletionBlock:(id)arg1;
 - (bool)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
 - (void)_beginTransaction;
 - (id)permanentlyRedirectedURL;

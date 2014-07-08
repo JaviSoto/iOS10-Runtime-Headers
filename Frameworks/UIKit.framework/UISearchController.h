@@ -31,7 +31,7 @@
 @property bool hidesNavigationBarDuringPresentation;
 @property(retain,readonly) UIViewController * searchResultsController;
 @property(retain,readonly) UISearchBar * searchBar;
-@property bool _showResultsForEmptySearch;
+@property(setter=_setShowResultsForEmptySearch:) bool _showResultsForEmptySearch;
 @property(readonly) int _barPresentationStyle;
 @property long long _previousSearchBarPosition;
 @property(retain) UIView * _resultsControllerViewContainer;
@@ -47,7 +47,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (void)setActive:(bool)arg1;
-- (void)set_showResultsForEmptySearch:(bool)arg1;
+- (void)_setShowResultsForEmptySearch:(bool)arg1;
 - (void)setHidesNavigationBarDuringPresentation:(bool)arg1;
 - (void)setDimsBackgroundDuringPresentation:(bool)arg1;
 - (void)setSearchResultsUpdater:(id)arg1;

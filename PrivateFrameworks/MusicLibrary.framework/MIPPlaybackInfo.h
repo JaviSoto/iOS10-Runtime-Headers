@@ -137,9 +137,9 @@
 - (void)setPlaybackFormat:(id)arg1;
 - (void)setEqPreset:(id)arg1;
 - (void)setDataUrl:(id)arg1;
-- (long long)stopTime;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (long long)stopTime;
 - (id)eqPreset;
 - (int)sampleRate;
 - (bool)isEqual:(id)arg1;

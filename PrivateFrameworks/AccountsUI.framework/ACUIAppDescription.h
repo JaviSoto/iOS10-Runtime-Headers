@@ -24,8 +24,8 @@
 - (void)setPersistentID:(id)arg1;
 - (id)persistentID;
 - (id)icon;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)bundleID;
 - (void)setBundleID:(id)arg1;
 - (void).cxx_destruct;

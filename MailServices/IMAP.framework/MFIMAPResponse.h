@@ -56,8 +56,6 @@
 @property(retain) MFIMAPResponseConsumer * responseConsumer;
 
 
-- (id)capabilities;
-- (void)setCapabilities:(id)arg1;
 - (id)responseConsumer;
 - (void)setResponseName:(id)arg1 parameters:(id)arg2;
 - (id)keyValuePairs;
@@ -96,6 +94,8 @@
 - (id)fetchResultWithType:(int)arg1;
 - (id)permanentTag;
 - (void)setServerInfo:(id)arg1;
+- (id)capabilities;
+- (void)setCapabilities:(id)arg1;
 - (int)responseCode;
 - (id)parameters;
 - (unsigned long long)number;

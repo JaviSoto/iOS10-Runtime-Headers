@@ -2,36 +2,36 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSMutableString;
+@class NSString;
 
 @interface EMNumberFormatter : NSObject  {
-    struct __CFNumberFormatter { } *mGenericFormatter;
-    struct __CFNumberFormatter { } *mBigNumberFormatter;
-    struct __CFNumberFormatter { } *mSmallNumberFormatter;
-    struct __CFDateFormatter { } *mDateFormatter;
-    struct __CFNumberFormatter { } *mCurrencyFormatter;
-    NSString *excelFormatString;
-    NSMutableString *icuFormatString;
-    boolmIsNegativeRed;
-    unsigned short mCurrencySymbol;
-    int formatType;
+    struct __CFNumberFormatter { } *_genericFormatter;
+    struct __CFNumberFormatter { } *_doubleFormatter;
+    struct __CFNumberFormatter { } *_percentFormatter;
+    struct __CFNumberFormatter { } *_bigNumberFormatter;
+    struct __CFNumberFormatter { } *_smallNumberFormatter;
+    struct __CFNumberFormatter { } *_currencyFormatter;
+    struct __CFDateFormatter { } *_dateFormatter;
+    NSString *_excelFormatString;
+    NSString *_baseICUFormatString;
+    bool_isNegativeRed;
+    unsigned short _currencySymbol;
+    int _formatType;
 }
 
-+ (void)releaseFormatterCache;
-+ (void)initFormatterCache;
 + (id)formatterForFormat:(id)arg1;
 
-- (id)icuFormatString;
 - (struct __CFNumberFormatter { }*)_currencyFormatter;
 - (struct __CFNumberFormatter { }*)_genericFormatter;
 - (struct __CFNumberFormatter { }*)_smallNumberFormatter;
 - (struct __CFNumberFormatter { }*)_bigNumberFormatter;
-- (struct __CFNumberFormatter { }*)_genericFormatterForPercent;
-- (struct __CFNumberFormatter { }*)_genericFormatterForDouble;
-- (void)convertCurrencyFormat;
-- (void)convertDateFormat;
-- (void)convertGenericNumberFormat;
-- (void)preprocessIcuString;
+- (struct __CFNumberFormatter { }*)_percentFormatter;
+- (struct __CFNumberFormatter { }*)_doubleFormatter;
+- (void)convertGenericNumberFormat:(id)arg1;
+- (id)_icuFormatStringForCurrencyFormat;
+- (id)_icuFormatStringForDateFormat;
+- (id)convertedGenericNumberFormatWithFormat:(id)arg1;
+- (void)_parseExcelFormatString:(id)arg1;
 - (id)initWithDefaultFormatString;
 - (id)initWithExcelFormatString:(id)arg1;
 - (id)formatDoubleValue:(double)arg1;

@@ -18,8 +18,6 @@
 + (id)alloc;
 + (void)initialize;
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)isRecording;
@@ -41,6 +39,8 @@
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)connectionMediaTypes;
 - (int)_stopRecording;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (id)init;
 - (void)dealloc;
 

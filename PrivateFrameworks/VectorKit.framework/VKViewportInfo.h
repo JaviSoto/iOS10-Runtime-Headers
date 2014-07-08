@@ -25,11 +25,11 @@
 
 - (float)zoomLevel;
 - (void)setYaw:(double)arg1;
-- (void)setZoomLevel:(float)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setZoomLevel:(float)arg1;
 - (struct { double x1; double x2; })centerCoordinate;
-- (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)setPitch:(double)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (double)yaw;
 - (void)setTileSize:(long long)arg1;
 - (double)pitch;

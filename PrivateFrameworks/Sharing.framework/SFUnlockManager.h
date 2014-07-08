@@ -9,6 +9,8 @@
 
 - (void)disableUnlockWithDevice:(id)arg1;
 - (void)xpcManagerConnectionInterrupted;
+- (void)establishStashBagWithCompletionHandler:(id)arg1;
+- (void)unlockEnabledWithDevice:(id)arg1 completionHandler:(id)arg2;
 - (void)enableUnlockWithDevice:(id)arg1 fromKey:(bool)arg2 withPasscode:(id)arg3 completionHandler:(id)arg4;
 
 @end

@@ -21,13 +21,14 @@
 
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;
 + (id)allCloudMastersInManagedObjectContext:(id)arg1;
-+ (id)cloudMasterWithGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)cloudMastersWithGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)cloudMasterWithGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
-- (id)cloudResourceForResourceType:(unsigned long long)arg1;
 - (id)cplResourceForResourceType:(unsigned long long)arg1;
+- (id)cloudResourceForResourceType:(unsigned long long)arg1;
+- (void)awakeFromInsert;
 - (id)description;
 
 @end

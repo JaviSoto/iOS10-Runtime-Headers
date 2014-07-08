@@ -55,6 +55,7 @@
 - (void)mf_setString:(id)arg1;
 - (void)mf_removeAttribute:(id)arg1;
 - (void)mf_addAttribute:(id)arg1 value:(id)arg2;
+- (void)dd_appendAttributedString:(id)arg1;
 - (void)dd_chopResults;
 - (void)dd_offsetResultsBy:(long long)arg1;
 

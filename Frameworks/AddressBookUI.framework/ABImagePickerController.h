@@ -56,8 +56,8 @@
 - (void)back:(bool)arg1 save:(bool)arg2;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (id)_createImagePicker;
-- (void)reload;
 - (void)takePhoto;
+- (void)reload;
 - (void)resume;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)contentView;

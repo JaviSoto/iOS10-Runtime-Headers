@@ -2,23 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray;
+@class NSString, NSMutableArray, NSMapTable;
 
 @interface SKUIStorePageSplitCollectionViewLayout : _UICollectionViewCompositionLayout <SKUIStorePageCollectionViewLayout> {
+    NSString *_backdropGroupName;
     NSMutableArray *_orderedSublayouts;
-    long long _pinningStyle;
+    NSMapTable *_sublayoutToSectionsToIndexRanges;
     bool_rendersWithPerspective;
 }
 
-@property long long pinningStyle;
+@property(copy) NSString * backdropGroupName;
 @property bool rendersWithPerspective;
 
 
-- (long long)pinningStyle;
+- (void)_createSectionsToIndexRangesMapTableIfNeededForSublayout:(id)arg1;
+- (id)backdropGroupName;
+- (id)layoutAttributesForUnpinnedItemAtIndexPath:(id)arg1;
 - (void)setRendersWithPerspective:(bool)arg1;
-- (void)invalidateStorePageSections;
-- (void)setPinningStyle:(long long)arg1;
 - (bool)rendersWithPerspective;
+- (void)setBackdropGroupName:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -27,7 +29,6 @@
 - (void)addSublayout:(id)arg1 forItems:(id)arg2 inSection:(long long)arg3 offset:(struct CGPoint { double x1; double x2; })arg4 relativeToEdges:(unsigned long long)arg5 fromSiblingLayout:(id)arg6;
 - (void)addSublayout:(id)arg1 forSections:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 relativeToEdges:(unsigned long long)arg4 fromSiblingLayout:(id)arg5;
 - (void)prepareLayout;
-- (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)sublayouts;
 
 @end

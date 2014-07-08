@@ -26,6 +26,7 @@
 - (void)setReadOnly:(bool)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (id)defaultValue;
+- (void)setName:(id)arg1;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setMaxLength:(int)arg1;
@@ -64,7 +65,6 @@
 - (void)setDisabled:(bool)arg1;
 - (void)select;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)type;
 - (void)setRows:(int)arg1;
 - (int)structuralComplexityContribution;

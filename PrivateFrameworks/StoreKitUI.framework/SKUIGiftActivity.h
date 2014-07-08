@@ -12,8 +12,8 @@
 
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
 - (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
-- (void).cxx_destruct;
 - (id)activityType;
+- (void).cxx_destruct;
 - (id)_beforeActivity;
 - (id)activityViewController;
 - (id)activityImage;

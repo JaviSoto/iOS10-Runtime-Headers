@@ -139,9 +139,9 @@
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (id)requestProperties;
+- (bool)markAsFinished;
 - (id)context;
 - (void)setContext:(id)arg1;
-- (bool)markAsFinished;
 - (id)url;
 - (void)loadRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;

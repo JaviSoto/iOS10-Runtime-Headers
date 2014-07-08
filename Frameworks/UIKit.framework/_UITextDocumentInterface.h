@@ -41,8 +41,10 @@
 - (void)dealloc;
 - (void)_setShouldAdvanceInputMode;
 - (void)_setShouldDismiss;
+- (void)_setPrimaryLanguage:(id)arg1;
 - (id)documentContextAfterInput;
 - (id)documentContextBeforeInput;
+- (void)adjustTextPositionByCharacterOffset:(long long)arg1;
 - (void)setControllerOutput:(id)arg1;
 - (void)setControllerState:(id)arg1;
 - (void)_didPerformOutputOperation;

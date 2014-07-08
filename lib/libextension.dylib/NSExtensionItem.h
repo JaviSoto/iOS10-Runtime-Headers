@@ -15,7 +15,6 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)_matchingDictionaryRepresentation;
 - (id)attributedContentText;
 - (void)setAttributedContentText:(id)arg1;
 - (id)attachments;
@@ -27,6 +26,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)_matchingDictionaryRepresentation;
 - (void)setAttachments:(id)arg1;
 - (id)attributedTitle;
 - (void)setAttributedTitle:(id)arg1;

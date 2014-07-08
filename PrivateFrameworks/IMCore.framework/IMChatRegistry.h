@@ -65,7 +65,7 @@
 - (void)_clearMarkAsReadTimerIfNecessary;
 - (void)_startMarkAsReadTimerIfNecessary;
 - (id)_chatsWithMessage:(id)arg1;
-- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 allowCreate:(bool)arg3 createdChat:(bool*)arg4 outGUID:(id*)arg5;
+- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 message:(id)arg3 allowCreate:(bool)arg4 createdChat:(bool*)arg5 outGUID:(id*)arg6;
 - (id)existingChatWithGroupID:(id)arg1;
 - (id)_lookupExistingChatWithIMHandle:(id)arg1;
 - (unsigned long long)numberOfExistingChats;
@@ -105,6 +105,7 @@
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(bool)arg3 newGUID:(id)arg4;
 - (void)_daemonReallyDied:(id)arg1;
 - (void)handleIMChatParticipantsDidChange:(id)arg1;
+- (void)_chat:(id)arg1 sendPlayedReceiptForMessage:(id)arg2;
 - (void)_chat:(id)arg1 sendSavedReceiptForMessage:(id)arg2;
 - (void)_chat_loadAttachments:(id)arg1 queryID:(id)arg2;
 - (void)_chat_loadFrequentReplies:(id)arg1 limit:(unsigned long long)arg2 queryID:(id)arg3;
@@ -116,7 +117,6 @@
 - (bool)_hasChat:(id)arg1 forService:(id)arg2;
 - (void)_chat:(id)arg1 setProperties:(id)arg2 ofParticipant:(id)arg3;
 - (void)_chat:(id)arg1 setValue:(id)arg2 forChatProperty:(id)arg3;
-- (void)_chat:(id)arg1 sendPlayedReceiptForMessage:(id)arg2;
 - (void)_chat_sendReadReceiptForAllMessages:(id)arg1;
 - (void)_chat:(id)arg1 sendReadReceiptForMessages:(id)arg2;
 - (void)_updateUnreadCountForChat:(id)arg1;

@@ -46,6 +46,9 @@
 - (void)_ICSStripControlChracters;
 - (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
 - (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
+- (void)appendPrettyBOOL:(bool)arg1 withName:(id)arg2 andIndent:(int)arg3;
+- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 andIndent:(int)arg3;
+- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 andIndent:(int)arg3;
 - (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
 - (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (void)dd_appendSpaces:(unsigned int)arg1;

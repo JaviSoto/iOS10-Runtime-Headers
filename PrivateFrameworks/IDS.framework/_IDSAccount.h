@@ -53,6 +53,7 @@
 - (void)_callDevicesChanged;
 - (void)_loadCachedDevices;
 - (void)_updateDependentDevicesWithDevicesInfo:(id)arg1;
+- (bool)_isiCloudPairingService;
 - (id)registrationInfo;
 - (id)_objectForKey:(id)arg1;
 - (void)_callNearbyDevicesChanged;
@@ -112,11 +113,11 @@
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)devices;
 - (void)setPassword:(id)arg1;
 - (int)accountType;
 - (void)_connect;
 - (void)removeDelegate:(id)arg1;
-- (id)devices;
 - (bool)isActive;
 - (id)uniqueID;
 - (id)init;

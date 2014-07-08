@@ -31,9 +31,11 @@
 - (id)_detailsForMoment:(id)arg1;
 - (id)_nameForMomentGenerationType:(short)arg1;
 - (bool)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;
-- (id)_detailsForAsset:(id)arg1;
+- (id)_detailsForAsset:(id)arg1 simpleOnly:(bool)arg2;
+- (id)_logEntryForAssets:(id)arg1 isBatchUpdate:(bool)arg2;
 - (bool)_rebuildAllMomentsInManager:(id)arg1 shouldAnalyze:(bool)arg2 error:(id*)arg3;
 - (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id)arg3;
+- (id)_rangesForAssetsCount:(unsigned long long)arg1;
 - (bool)_deleteAllMomentDataInManager:(id)arg1 incremental:(bool)arg2 error:(id*)arg3;
 - (id)_insertYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inMomentDataManager:(id)arg4;
 - (id)_insertMegaMomentListsForMoments:(id)arg1 inMomentDataManager:(id)arg2;
@@ -41,6 +43,7 @@
 - (id)affectedMomentsForAssetDateCreated:(id)arg1 inManager:(id)arg2;
 - (bool)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
+- (void)_appendAssetsToReplayLog:(id)arg1 forBatchUpdate:(bool)arg2;
 - (id)momentGenerationDataManager;
 - (void)setAnalyzer:(id)arg1;
 - (void)setMomentGenerationDataManager:(id)arg1;

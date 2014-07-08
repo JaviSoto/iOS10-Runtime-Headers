@@ -16,11 +16,11 @@
 + (id)currentContext;
 
 - (void)makeCurrentContext;
-- (void)setSuspended:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })listenerPosition;
 - (void)setListenerPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (double)gain;
 - (void)setGain:(double)arg1;
+- (void)setSuspended:(bool)arg1;
 - (id)init;
 - (void)dealloc;
 - (bool)suspended;

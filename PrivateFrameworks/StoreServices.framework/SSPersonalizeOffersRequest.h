@@ -16,8 +16,8 @@
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (bool)start;
 - (void)dealloc;
 

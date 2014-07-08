@@ -23,7 +23,6 @@
 
 
 - (double)zoomLevel;
-- (void)setZoomLevel:(double)arg1;
 - (void)beginOrbit;
 - (void)setShowsPin:(bool)arg1;
 - (bool)showsPin;
@@ -43,8 +42,11 @@
 - (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(bool)arg2;
 - (void)mapViewDidFinishLoadingMap:(id)arg1;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(bool)arg2;
+- (void)setZoomLevel:(double)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)location;
+- (void)resume;
+- (void)pause;
 - (void)setLocation:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;

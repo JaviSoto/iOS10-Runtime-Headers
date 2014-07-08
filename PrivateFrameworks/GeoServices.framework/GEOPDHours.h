@@ -18,7 +18,8 @@
 @property(readonly) unsigned long long timeRangesCount;
 @property(readonly) struct { unsigned int x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* timeRanges;
 
-+ (id)operatingHoursForPlaceData:(id)arg1;
++ (id)currentOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;
++ (bool)currentOperatingHoursAvailableForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (bool)operatingHoursAvailableForPlaceData:(id)arg1;
 
 - (void)setTimeRanges:(struct { unsigned int x1; unsigned int x2; boolx3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned long long)arg2;
@@ -34,6 +35,7 @@
 - (unsigned long long)daysCount;
 - (int*)days;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

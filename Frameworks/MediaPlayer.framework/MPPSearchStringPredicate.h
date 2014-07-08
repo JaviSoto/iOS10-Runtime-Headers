@@ -15,13 +15,13 @@
 
 
 - (void)copyTo:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (id)propertiesAtIndex:(unsigned long long)arg1;
 - (void)clearProperties;
 - (unsigned long long)propertiesCount;
 - (bool)hasSearchString;
 - (void)addProperties:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (id)searchString;

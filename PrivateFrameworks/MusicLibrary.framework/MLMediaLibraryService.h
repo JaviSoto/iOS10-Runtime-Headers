@@ -29,6 +29,8 @@
 - (oneway void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned long long)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
 - (oneway void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (oneway void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
+- (oneway void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(id)arg2;
+- (oneway void)getDeviceSharedLibraryPath:(id)arg1;
 - (oneway void)performDatabaseOperation:(unsigned long long)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
 - (id)init;
 - (void)dealloc;

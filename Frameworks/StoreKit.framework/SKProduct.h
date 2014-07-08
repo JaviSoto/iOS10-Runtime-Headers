@@ -33,10 +33,10 @@
 - (id)downloadContentVersion;
 - (id)downloadContentLengths;
 - (id)productIdentifier;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (bool)isDownloadable;
 - (id)price;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (id)localizedDescription;
 - (void)dealloc;

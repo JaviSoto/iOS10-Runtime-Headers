@@ -30,13 +30,13 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (void)setProxyPassword:(id)arg1;
 - (void)setProxyCaptiveLoginAllowed:(bool)arg1;
 - (bool)proxyCaptiveLoginAllowed;
 - (void)setCredentialUUID:(id)arg1;
 - (id)credentialUUID;
 - (void)setProxyPACFallbackAllowed:(bool)arg1;
 - (void)setProxyPACURLString:(id)arg1;
-- (void)setProxyPassword:(id)arg1;
 - (void)setProxyUsername:(id)arg1;
 - (void)setProxyServerPort:(id)arg1;
 - (bool)proxyPACFallbackAllowed;
@@ -50,7 +50,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)installationWarnings;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

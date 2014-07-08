@@ -7,11 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSData, NSString;
+@class NSString, NSData;
 
-@interface NSData : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue> {
+@interface NSData : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue, PQLBindable, PQLResultSetInitializer> {
 }
 
+@property(readonly) unsigned int br_qtnFlags;
+@property(readonly) bool brc_signatureIsPackage;
+@property(readonly) bool brc_signatureIsValid;
+@property(readonly) bool brc_signatureIsPendingPlaceHolder;
+@property(readonly) NSString * brc_hexadecimalString;
+@property(readonly) NSData * brc_signature;
 @property(readonly) NSData * SHA1Data;
 @property(readonly) NSString * SHA1HexString;
 @property(readonly) unsigned long long length;
@@ -23,11 +29,11 @@
 + (id)dataWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
 + (id)data;
 + (id)dataWithContentsOfFile:(id)arg1;
++ (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dataWithData:(id)arg1;
 + (id)dataWithContentsOfMappedFile:(id)arg1;
 + (id)dataWithContentsOfURL:(id)arg1;
-+ (id)dataWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2;
 + (bool)supportsSecureCoding;
 + (id)__imDataWithRandomBytes:(unsigned long long)arg1;
 + (id)__imDataWithHexString:(id)arg1;
@@ -43,6 +49,7 @@
 + (id)pl_dataWithMappedContentsOfFileHandle:(id)arg1;
 + (id)pl_dataWithMappedContentsOfFileDescriptor:(int)arg1;
 + (id)makeArchive:(const void*)arg1 length:(unsigned long long)arg2 level:(float)arg3;
++ (id)brc_pendingPlaceholderForPackage:(bool)arg1;
 + (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; boolx7; struct SsrwOOStream {} *x8; }*)arg1;
 
 - (bool)_isSafeResumeDataForBackgroundDownload:(int)arg1;
@@ -139,6 +146,10 @@
 - (id)decompressedGzipDataUsingTemporaryFile;
 - (id)decompressedGzipData;
 - (id)_geo_newXPCData;
+- (id)CKBase64URLSafeString;
+- (id)CKUppercaseHexStringWithoutSpaces;
+- (id)CKHexString;
+- (id)CKLowercaseHexStringWithoutSpaces;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)cr_md5DigestHexString;
 - (bool)mf_immutable;
@@ -169,10 +180,7 @@
 - (id)_FTOptionallyDecompressData;
 - (id)_FTDecompressData;
 - (id)_FTStringFromBaseData;
-- (id)CKBase64URLSafeString;
-- (id)CKUppercaseHexStringWithoutSpaces;
-- (id)CKLowercaseHexStringWithoutSpaces;
-- (id)CKHexString;
+- (id)hexString;
 - (bool)CDXTicketIsRelatedToTicket:(id)arg1;
 - (bool)CDXTicketWellFormed;
 - (id)CDXTicketTrimmed;
@@ -194,7 +202,6 @@
 - (id)initWithBase64EncodedString_gk:(id)arg1;
 - (id)_gkBase64EncodedString;
 - (id)hexString;
-- (id)hexString;
 - (id)uppercaseHexStringWithoutSpaces;
 - (id)lowercaseHexStringWithoutSpaces;
 - (id)mf_attachmentWithFilename:(id)arg1 UTIType:(id)arg2 fromManager:(id)arg3 contextID:(id)arg4;
@@ -210,9 +217,18 @@
 - (unsigned long long)pl_advisoryLength;
 - (id)gzipDeflate:(float)arg1;
 - (id)gzipInflate;
-- (id)hexEncoding;
+- (id)brc_signature;
+- (bool)brc_signatureIsValid;
+- (bool)brc_signatureIsPackage;
+- (bool)brc_signatureIsPendingPlaceHolder;
+- (id)brc_hexadecimalString;
+- (unsigned int)br_qtnFlags;
+- (id)brc_SHA256WithSalt:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)SHA256Hash;
 - (id)fileSafeBase64Encoding;
+- (id)hexEncoding;
 - (id)SHA1Hash;
 
 @end

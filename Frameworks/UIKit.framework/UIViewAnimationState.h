@@ -36,6 +36,7 @@
     unsigned int _cacheTransition : 1;
     unsigned int _autoreverses : 1;
     unsigned int _roundsToInteger : 1;
+    unsigned int _preventsAdditive : 1;
     unsigned int _layoutSubviews : 1;
     NSMutableArray *_trackedAnimations;
     NSUUID *_uuid;

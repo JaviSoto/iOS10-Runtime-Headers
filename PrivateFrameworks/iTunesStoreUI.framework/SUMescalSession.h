@@ -15,9 +15,9 @@
 - (void)_teardownSession;
 - (id)_newDataWithBytes:(char *)arg1 length:(unsigned int)arg2;
 - (id)signData:(id)arg1 error:(id*)arg2;
-- (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)primeForAccountCreationWithData:(id)arg1 error:(id*)arg2;
 - (bool)verifyPrimeSignature:(id)arg1 error:(id*)arg2;
+- (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (bool)isComplete;
 - (id)init;
 - (void)dealloc;

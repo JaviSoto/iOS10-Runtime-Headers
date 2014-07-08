@@ -30,8 +30,8 @@
 - (id)popover;
 - (void)setPopover:(id)arg1;
 - (id)initWithView:(id)arg1 hasGroups:(bool)arg2;
-- (void)populateCell:(id)arg1 withItem:(const struct WKOptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)arg2;
-- (struct WKOptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)findItemAt:(id)arg1;
+- (void)populateCell:(id)arg1 withItem:(const struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)arg2;
+- (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; boolx2; boolx3; boolx4; int x5; }*)findItemAt:(id)arg1;
 - (long long)findItemIndexAt:(id)arg1;
 - (void)insertText:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;

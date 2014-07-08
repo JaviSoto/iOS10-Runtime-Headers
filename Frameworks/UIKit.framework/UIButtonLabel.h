@@ -20,8 +20,8 @@
 - (id)_defaultAttributes;
 - (void)_setMinimumFontSize:(double)arg1;
 - (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)_setWantsAutolayout;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setFont:(id)arg1;

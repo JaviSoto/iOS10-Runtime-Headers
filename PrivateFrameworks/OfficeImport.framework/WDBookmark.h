@@ -14,8 +14,8 @@
 - (id)initWithParagraph:(id)arg1 name:(id)arg2 type:(int)arg3;
 - (int)runType;
 - (int)bookmarkType;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 
 @end

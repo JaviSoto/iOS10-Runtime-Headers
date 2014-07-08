@@ -7,6 +7,8 @@
 @interface GEONavigation : NSObject  {
     GEONavigationDetails *_details;
     NSObject<OS_xpc_object> *_connection;
+    int _navigationStartedToken;
+    bool_hasNavigationStartedToken;
 }
 
 @property(readonly) GEOComposedRoute * route;

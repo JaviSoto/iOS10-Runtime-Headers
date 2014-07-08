@@ -15,8 +15,8 @@
 @property bool shouldBeMinimized;
 
 
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (oneway void)dealloc;
 - (void)setShouldBeMinimized:(bool)arg1;
 - (void)setValueRestriction:(int)arg1;

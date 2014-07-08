@@ -13,29 +13,31 @@
 @property(retain,readonly) _IDSService * _internal;
 
 
-- (void)rejectAttachmentInvite:(id)arg1 fromAccount:(id)arg2;
 - (bool)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (SEL)protobufActionForIncomingResponsesOfType:(unsigned short)arg1;
 - (SEL)protobufActionForIncomingRequestsOfType:(unsigned short)arg1;
 - (void)setProtobufAction:(SEL)arg1 forIncomingResponsesOfType:(unsigned short)arg2;
 - (void)setProtobufAction:(SEL)arg1 forIncomingRequestsOfType:(unsigned short)arg2;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
+- (id)uriForFromID:(id)arg1;
 - (id)deviceForFromID:(id)arg1;
 - (id)serviceDomain;
-- (void)acceptAttachmentInvite:(id)arg1 fromAccount:(id)arg2;
 - (bool)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
+- (bool)cancelIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)sendData:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
-- (bool)sendFile:(id)arg1 userInfo:(id)arg2 fromAccount:(id)arg3 toDestinations:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendData:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (bool)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (bool)sendProtobuf:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (id)initWithService:(id)arg1 commands:(id)arg2;
+- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithService:(id)arg1;
-- (id)_internal;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)_internal;
+- (id)devices;
 - (id)accounts;
 - (void)removeDelegate:(id)arg1;
-- (id)devices;
 - (void)dealloc;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class ACAccountStore, NSOperationQueue, AAGrandSlamSigner, ACAccount, RemoteUIController, <AAUIAddFamilyMemberDelegate><UINavigationControllerDelegate>, NSMutableURLRequest;
+@class ACAccountStore, UIBarButtonItem, UINavigationItem, <AAUIAddFamilyMemberDelegate><UINavigationControllerDelegate>, NSOperationQueue, AAGrandSlamSigner, ACAccount, RemoteUIController, UIActivityIndicatorView, NSMutableURLRequest;
 
 @interface AAUIAddFamilyMemberViewController : UINavigationController <RemoteUIControllerDelegate, AAUIPickInviteeDelegate> {
     ACAccount *_appleAccount;
@@ -11,6 +11,10 @@
     NSOperationQueue *_networkingQueue;
     RemoteUIController *_remoteUIController;
     NSMutableURLRequest *_startRemoteUIRequest;
+    bool_isShowingSpinner;
+    UIActivityIndicatorView *_spinnerView;
+    UIBarButtonItem *_originalRightBarButtonItem;
+    UINavigationItem *_navigationItemShowingSpinner;
 }
 
 @property <AAUIAddFamilyMemberDelegate><UINavigationControllerDelegate> * delegate;
@@ -20,6 +24,8 @@
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
 - (void)pickInviteeViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
+- (void)hideActivitySpinnerInNavigationBar;
+- (void)showActivitySpinnerInNavigationBar;
 - (id)initWithGrandSlamSigner:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

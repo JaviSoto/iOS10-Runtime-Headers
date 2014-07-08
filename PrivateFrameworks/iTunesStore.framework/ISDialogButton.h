@@ -22,8 +22,6 @@
 
 + (id)buttonWithTitle:(id)arg1;
 
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)subtarget;
 - (void)_openURLWithRequest:(id)arg1;
 - (void)setUrlType:(long long)arg1;
@@ -37,6 +35,8 @@
 - (void)setActionTypeWithString:(id)arg1;
 - (void)loadFromDictionary:(id)arg1;
 - (void)performDefaultActionForDialog:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setActionType:(int)arg1;
 - (int)actionType;
 - (id)dictionary;

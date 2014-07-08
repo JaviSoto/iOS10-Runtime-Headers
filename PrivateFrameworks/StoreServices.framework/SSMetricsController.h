@@ -29,6 +29,7 @@
 - (void)_setupFlushTimer;
 - (void)_handleFlushTimer;
 - (void)flushUnreportedEventsWithCompletionHandler:(id)arg1;
+- (id)_cookieValuesForConfiguration:(id)arg1;
 - (id)pingURLs;
 - (bool)isDisabled;
 - (id)serialQueue;

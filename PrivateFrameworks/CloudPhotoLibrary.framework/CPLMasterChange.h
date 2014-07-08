@@ -30,10 +30,6 @@
 
 
 - (bool)isImage;
-- (void)setMediaMetaData:(id)arg1;
-- (id)mediaMetaData;
-- (void)setMediaMetaDataType:(id)arg1;
-- (id)mediaMetaDataType;
 - (void)setImportGroupIdentifier:(id)arg1;
 - (id)importGroupIdentifier;
 - (bool)supportsResources;
@@ -41,20 +37,25 @@
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
+- (long long)dequeueOrder;
+- (id)mediaMetaDataType;
+- (id)mediaMetaData;
+- (void)setMediaMetaDataType:(id)arg1;
+- (void)setMediaMetaData:(id)arg1;
 - (void)setItemType:(id)arg1;
 - (void)setImportDate:(id)arg1;
 - (void)setOriginalOrientation:(long long)arg1;
 - (long long)originalOrientation;
 - (id)importDate;
-- (id)itemType;
 - (id)resources;
 - (void)setResources:(id)arg1;
+- (id)itemType;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
+- (void)setName:(id)arg1;
 - (bool)isVideo;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (void)setFilename:(id)arg1;
 - (id)filename;

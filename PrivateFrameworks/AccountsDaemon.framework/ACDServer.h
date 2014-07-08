@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDataclassOwnersManager, ACDAccessPluginManager, ACDAuthenticationDialogManager, NSMutableDictionary, ACIDSProxy, NSMutableArray, ACDAuthenticationPluginManager, NSXPCListener, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class ACDDataclassOwnersManager, ACDAccessPluginManager, ACDAuthenticationDialogManager, ACRemoteDeviceProxy, NSMutableDictionary, NSMutableArray, ACDAuthenticationPluginManager, NSXPCListener, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
 
 @interface ACDServer : NSObject <NSXPCListenerDelegate, ACDAccountStoreDelegate> {
     NSXPCListener *_accountStoreListener;
@@ -16,25 +16,21 @@
     NSObject<OS_dispatch_queue> *_deferredConnectionResumeQueue;
     NSObject<OS_dispatch_semaphore> *_deferredConnectionResumeQueueSemaphore;
     NSObject<OS_dispatch_queue> *_performMigrationQueue;
-    bool_shouldExit;
     ACDAuthenticationPluginManager *_authenticationPluginManager;
     ACDAccessPluginManager *_accessPluginManager;
     ACDDataclassOwnersManager *_dataclassOwnersManager;
     ACDAuthenticationDialogManager *_authenticationDialogManager;
-    ACIDSProxy *_acIDSProxy;
+    ACRemoteDeviceProxy *_remoteDeviceProxy;
 }
 
 @property(retain) ACDAuthenticationPluginManager * authenticationPluginManager;
 @property(retain) ACDAccessPluginManager * accessPluginManager;
 @property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
 @property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
-@property(retain) ACIDSProxy * acIDSProxy;
-@property bool shouldExit;
+@property(retain) ACRemoteDeviceProxy * remoteDeviceProxy;
 
 + (id)sharedServer;
 
-- (void)setShouldExit:(bool)arg1;
-- (bool)shouldExit;
 - (id)_newOAuthSignerForClient:(id)arg1;
 - (id)_newDaemonAccountStoreFilterForClient:(id)arg1;
 - (id)createClientForConnection:(id)arg1;
@@ -48,8 +44,8 @@
 - (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2 authenticationDialogConnectionListener:(id)arg3;
 - (id)entitlementsForConnection:(id)arg1;
 - (id)clientForConnection:(id)arg1;
-- (void)setAcIDSProxy:(id)arg1;
-- (id)acIDSProxy;
+- (void)setRemoteDeviceProxy:(id)arg1;
+- (id)remoteDeviceProxy;
 - (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setAccessPluginManager:(id)arg1;

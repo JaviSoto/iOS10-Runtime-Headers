@@ -23,6 +23,7 @@
             unsigned int puckArrowColor : 1; 
             unsigned int puckArrowColorStale : 1; 
             unsigned int puckSize : 1; 
+            unsigned int puckOffset : 1; 
             unsigned int shieldFillColor : 1; 
         } hasValueInStylesheet; 
         struct map<gss::PropertyID, bool, std::__1::less<gss::PropertyID>, std::__1::allocator<std::__1::pair<const gss::PropertyID, bool> > > { 

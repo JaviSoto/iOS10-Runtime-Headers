@@ -40,6 +40,7 @@
 
 
 - (id)initWithMapRasterizer:(id)arg1;
+- (void)stylesheetDidChange;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)setBackgroundColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (struct Matrix<float, 4, 1> { float x1[4]; })backgroundColor;

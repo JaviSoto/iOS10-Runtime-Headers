@@ -22,6 +22,17 @@
     double _finalYaw;
     double _finalPitch;
     float _navigationPuckSize;
+    bool_pinching;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    } _pinchStartFocusPoint;
+    bool_pitching;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    } _pitchStartFocusPoint;
+    bool_panning;
 }
 
 @property(retain) VKMapModel * mapModel;
@@ -161,6 +172,7 @@
 - (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)init;
 - (void)dealloc;
+- (id).cxx_construct;
 - (bool)isTracking;
 
 @end

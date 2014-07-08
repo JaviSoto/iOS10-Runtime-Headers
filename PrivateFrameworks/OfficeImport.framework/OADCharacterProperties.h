@@ -103,6 +103,7 @@
 - (bool)hasLatinFont;
 - (id)latinFont;
 - (bool)isItalic;
+- (bool)isBold;
 - (int)formatType;
 - (void)setStroke:(id)arg1;
 - (void)setFill:(id)arg1;
@@ -124,7 +125,6 @@
 - (double)size;
 - (id)symbolFont;
 - (void)setHighlight:(id)arg1;
-- (bool)isBold;
 - (id)stroke;
 - (id)fill;
 

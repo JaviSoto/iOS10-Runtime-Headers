@@ -42,8 +42,8 @@
 - (void)startAdvertising:(id)arg1;
 - (void)addService:(id)arg1;
 - (void)removeAllServices;
-- (void)stopAdvertising;
 - (bool)isAdvertising;
+- (void)stopAdvertising;
 - (void)removeService:(id)arg1;
 - (void)setDesiredConnectionLatency:(long long)arg1 forCentral:(id)arg2;
 - (void)handleCentralMsg:(int)arg1 args:(id)arg2;

@@ -16,6 +16,8 @@
     bool_saveScheduled;
     bool_createsNewUUIDIfSaved;
     bool_needsSave;
+    bool_sendToServerPending;
+    bool_inWillSaveCallback;
     bool_supportsContinuationStreams;
     bool_canCreateStreams;
     NSString *_typeIdentifier;
@@ -50,19 +52,23 @@
 
 + (void)unregisterForSuggestedActionNudgeOfType:(id)arg1;
 + (id)registerForSuggestedActionNudgeOfType:(unsigned long long)arg1 withOptions:(id)arg2 block:(id)arg3;
++ (id)allowedWebpageURLSchemes;
 + (id)suggestedActionOfType:(unsigned long long)arg1;
 + (id)userActivityFromUUID:(id)arg1 withError:(id*)arg2;
++ (bool)checkWebpageURL:(id)arg1 actionType:(unsigned long long)arg2 throwIfFailed:(bool)arg3;
 + (void)fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
 + (id)userActivity;
 
-- (void)save;
 - (id)initWithUUID:(id)arg1;
+- (void)save;
 - (void)setUserInfo:(id)arg1;
 - (void)advertiser:(id)arg1 didReceiveInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)didSynchronizeUserActivity;
 - (void)willSynchronizeUserActivityWithHandler:(id)arg1;
 - (id)initWithManager:(id)arg1 userActivityInfo:(id)arg2;
 - (void)didReceiveInputStream:(id)arg1 outputStream:(id)arg2;
+- (id)callWillSaveDelegateIfDirtyAndPackageUpData:(bool)arg1;
+- (id)userActivityInfoForSelf;
 - (id)resourceURLForKey:(id)arg1;
 - (void)removeResourceURL:(id)arg1;
 - (id)addResourceURL:(id)arg1;
@@ -87,7 +93,6 @@
 - (bool)canCreateStreams;
 - (void)setStreamsData:(id)arg1;
 - (id)streamsData;
-- (unsigned long long)suggestedActionType;
 - (void)setTypeIdentifier:(id)arg1;
 - (id)decodeUserInfo:(id)arg1;
 - (id)encodeUserInfo:(id)arg1;
@@ -99,9 +104,10 @@
 - (bool)isActive;
 - (id)title;
 - (id)webpageURL;
-- (void)sendUserActivityInfoToServer:(bool)arg1 completionHandler:(id)arg2;
+- (void)sendUserActivityInfoToLSUserActivityd:(bool)arg1 onAsyncQueue:(bool)arg2;
+- (void)scheduleSendUserActivityInfoToLSUserActivityd;
 - (id)manager;
-- (void)scheduleSendUserActivityInfoToServer;
+- (unsigned long long)suggestedActionType;
 - (void)setNeedsSave:(bool)arg1;
 - (void)tellServerAboutNewLSUserActivity;
 - (id)initWithTypeIdentifier:(id)arg1 suggestedActionType:(unsigned long long)arg2 options:(id)arg3;

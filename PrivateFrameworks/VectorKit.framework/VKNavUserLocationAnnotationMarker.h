@@ -18,6 +18,7 @@
     bool_puckFlipped;
     double _presentationCourse;
     double _sizePoints;
+    double _puckOffset;
     bool_stale;
     VKAnimation *_puckStyleAnimation;
     int _puckStyle;

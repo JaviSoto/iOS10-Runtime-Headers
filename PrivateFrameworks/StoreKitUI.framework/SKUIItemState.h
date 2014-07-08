@@ -5,24 +5,40 @@
 @class NSString, NSNumber;
 
 @interface SKUIItemState : NSObject <NSCopying> {
+    unsigned long long _downloadContentFlags;
     NSString *_downloadPhase;
     float _downloadProgress;
     NSNumber *_itemIdentifier;
+    unsigned long long _libraryContentFlags;
     long long _mediaCategory;
     unsigned long long _state;
+    NSString *_variantIdentifier;
 }
 
+@property(readonly) bool activeStateIsPreview;
+@property(readonly) unsigned long long allContentFlags;
+@property unsigned long long downloadContentFlags;
 @property(copy) NSString * downloadPhase;
 @property float downloadProgress;
 @property(copy) NSNumber * itemIdentifier;
+@property unsigned long long libraryContentFlags;
 @property long long mediaCategory;
 @property unsigned long long state;
+@property(copy) NSString * variantIdentifier;
 
 
+- (void)setVariantIdentifier:(id)arg1;
+- (id)variantIdentifier;
 - (void)setMediaCategory:(long long)arg1;
 - (long long)mediaCategory;
+- (void)setLibraryContentFlags:(unsigned long long)arg1;
+- (unsigned long long)libraryContentFlags;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setDownloadPhase:(id)arg1;
+- (void)setDownloadContentFlags:(unsigned long long)arg1;
+- (unsigned long long)downloadContentFlags;
+- (unsigned long long)allContentFlags;
+- (bool)activeStateIsPreview;
 - (void)setItemIdentifier:(id)arg1;
 - (id)itemIdentifier;
 - (id)downloadPhase;

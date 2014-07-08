@@ -15,10 +15,10 @@
 
 - (void)setTextFieldValues:(id)arg1;
 - (void)setSelectedButtonIndex:(long long)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (long long)selectedButtonIndex;
 - (id)textFieldValues;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

@@ -8,7 +8,7 @@
     SKUIQuicklinksViewController *_quicklinksViewController;
 }
 
-@property(retain) SKUIQuicklinksPageComponent * pageComponent;
+@property(readonly) SKUIQuicklinksPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

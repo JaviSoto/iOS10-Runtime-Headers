@@ -8,8 +8,8 @@
 
 - (id)remoteID;
 - (id)messageClass;
-- (id)conversationId;
 - (id)rfc822Data;
+- (id)conversationId;
 - (bool)meetingRequestIsActionable;
 - (id)meetingRequestMetaData;
 - (int)smimeType;

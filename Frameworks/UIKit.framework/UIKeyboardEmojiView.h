@@ -28,11 +28,11 @@
 - (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)setPopup:(id)arg1;
 - (id)popup;
+- (void)setImageView:(id)arg1;
 - (id)createAndInstallKeyPopupView;
 - (void)uninstallPopup;
 - (void)setEmoji:(id)arg1;
 - (id)emoji;
-- (void)setImageView:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (id)renderConfig;
 - (id)imageView;

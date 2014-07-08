@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImage, <ABPresenterDelegate>, UIImageView, CNContact, NSDictionary, UILabel, <ABContactPhotoViewDelegate>;
+@class UIGestureRecognizer, UIImage, <ABPresenterDelegate>, UIImageView, CNContact, NSDictionary, UILabel, <ABContactPhotoViewDelegate>;
 
 @interface ABContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource> {
     bool_editing;
@@ -18,6 +18,7 @@
     UILabel *_addPhotoLabel;
     UILabel *_editPhotoLabel;
     UIImageView *_attributionImageView;
+    UIGestureRecognizer *_tapGesture;
 }
 
 @property(retain) CNContact * contact;
@@ -33,9 +34,11 @@
 @property(retain) UILabel * editPhotoLabel;
 @property(retain) UIImageView * attributionImageView;
 @property bool isAnimatingBounce;
+@property(retain) UIGestureRecognizer * tapGesture;
 
 + (id)supportedPasteboardTypes;
 
+- (void)setTapGesture:(id)arg1;
 - (void)setEditPhotoLabel:(id)arg1;
 - (void)setAddPhotoLabel:(id)arg1;
 - (void)setContactImageView:(id)arg1;
@@ -67,9 +70,10 @@
 - (id)addPhotoLabel;
 - (id)editPhotoLabel;
 - (void)longPressGesture:(id)arg1;
+- (id)tapGesture;
 - (void)tapGesture:(id)arg1;
-- (bool)hasPhoto;
 - (void)setPhotoViewDelegate:(id)arg1;
+- (void)disablePhotoTapGesture;
 - (void)menuWillHide:(id)arg1;
 - (void)updateFontSizes;
 - (void)saveEdits;
@@ -78,6 +82,7 @@
 - (bool)modified;
 - (void)setContact:(id)arg1;
 - (id)contact;
+- (bool)hasPhoto;
 - (bool)isEditing;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

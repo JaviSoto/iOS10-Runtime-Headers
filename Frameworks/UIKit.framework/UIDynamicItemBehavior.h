@@ -35,8 +35,8 @@
 @property bool allowsRotation;
 
 
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (void)setDensity:(double)arg1;
 - (void)setFriction:(double)arg1;
 - (void)setAllowsRotation:(bool)arg1;

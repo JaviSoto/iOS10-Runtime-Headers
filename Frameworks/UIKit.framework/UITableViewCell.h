@@ -241,7 +241,6 @@
 - (void)setAccessoryView:(id)arg1;
 - (void)setShouldIndentWhileEditing:(bool)arg1;
 - (void)setShowsReorderControl:(bool)arg1;
-- (void)setEditingStyle:(long long)arg1;
 - (id)selectedOverlayView;
 - (float)selectionPercent;
 - (bool)isAtLeastHalfSelected;
@@ -275,6 +274,7 @@
 - (id)_disclosureImage:(bool)arg1;
 - (void)_setGrabberHidden:(bool)arg1;
 - (void)_willBeDeleted;
+- (void)setEditingStyle:(long long)arg1;
 - (id)_editableTextField;
 - (void)_updateSeparatorContent:(bool)arg1;
 - (void)setSectionLocation:(int)arg1;
@@ -294,7 +294,6 @@
 - (void)_showReorderControl;
 - (id)_createRemoveControlForStyle:(long long)arg1;
 - (void)_editingTransitionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)willTransitionToState:(unsigned long long)arg1;
 - (bool)wasSwiped;
 - (void)_updateContentClip;
 - (id)_editingAccessoryView:(bool)arg1;
@@ -303,14 +302,14 @@
 - (void)_createReorderControlIfNeeded;
 - (void)_didTransitionToState:(unsigned long long)arg1;
 - (void)_willTransitionToState:(unsigned long long)arg1;
+- (void)removeEditingData;
+- (void)_removeRemoveControl;
 - (void)_delayedDeselect;
 - (void)showSelectedBackgroundView:(bool)arg1 animated:(bool)arg2;
 - (void)_cancelInternalPerformRequests;
 - (void)_updateHighlightColorsForAnimationHalfwayPoint;
 - (void)_deselectAnimationFinished;
 - (void)_setSelectionStyle:(long long)arg1 selectionTintColor:(id)arg2;
-- (void)removeEditingData;
-- (void)_removeRemoveControl;
 - (void)_resetSelectionTimer;
 - (void)setSelectedBackgroundView:(id)arg1 animated:(bool)arg2;
 - (void)selectedBackgroundViewChange:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -345,7 +344,6 @@
 - (bool)_insetsBackground;
 - (long long)tableViewStyle;
 - (void)_menuDismissed:(id)arg1;
-- (void)didTransitionToState:(unsigned long long)arg1;
 - (id)_currentAccessoryView:(bool)arg1;
 - (id)_reorderingControl;
 - (bool)_isCurrentlyConsideredHighlighted;
@@ -405,8 +403,10 @@
 - (void)_setSeparatorDrawsInVibrantLightMode:(bool)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_backgroundInset;
 - (long long)separatorStyle;
+- (void)didTransitionToState:(unsigned long long)arg1;
 - (id)backgroundView;
 - (void)_setDeleteCancelationAnimationInProgress:(bool)arg1;
+- (void)willTransitionToState:(unsigned long long)arg1;
 - (bool)_isAnimating;
 - (bool)showsReorderControl;
 - (bool)showingDeleteConfirmation;
@@ -500,8 +500,8 @@
 - (void)_multiselectColorChanged;
 - (void)_setIndexPath:(id)arg1;
 - (void)_updateSwipeWithDistancePulled:(double)arg1;
-- (id)_swipeToDeleteConfirmationView;
 - (void)_beginSwiping;
+- (id)_swipeToDeleteConfirmationView;
 - (bool)isHighlighted;
 - (void)setHighlighted:(bool)arg1;
 - (id)_imageView;

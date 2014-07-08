@@ -31,6 +31,7 @@
 @property(readonly) WKGeolocationProviderIOS * _geolocationProvider;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
++ (id)_websiteDataURLForContainerWithURL:(id)arg1;
 
 - (void)_setDownloadDelegate:(id)arg1;
 - (void)_setObject:(id)arg1 forBundleParameter:(id)arg2;

@@ -19,8 +19,8 @@
 - (id)mapView;
 - (void)setFlyover:(id)arg1;
 - (id)flyover;
+- (void)resume;
 - (void)pause;
-- (void)restart;
 - (void).cxx_destruct;
 - (void)reset;
 - (void)present;

@@ -35,9 +35,9 @@
 - (bool)forceWhitelistForService:(id)arg1;
 - (id)whitelistForService:(id)arg1;
 - (bool)disableService:(id)arg1;
+- (id)_serviceWithName:(id)arg1;
 - (bool)forceChatLogging;
 - (bool)disableAV;
-- (id)_serviceWithName:(id)arg1;
 - (void)_managedPrefsNotification:(id)arg1;
 - (void)_updateParentalSettings;
 - (void)setShouldPostNotifications:(bool)arg1;

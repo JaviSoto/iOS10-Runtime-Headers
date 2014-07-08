@@ -46,9 +46,9 @@
 - (id)serverRepresentation;
 - (void)setRank:(unsigned int)arg1;
 - (unsigned int)rank;
+- (id)category;
 - (unsigned long long)context;
 - (void)setContext:(unsigned long long)arg1;
-- (id)category;
 - (long long)value;
 - (void)setValue:(long long)arg1;
 - (id)player;

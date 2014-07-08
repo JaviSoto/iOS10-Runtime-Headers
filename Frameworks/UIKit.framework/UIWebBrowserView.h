@@ -87,8 +87,8 @@
 + (double)preferredScrollDecelerationFactor;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
 
-- (bool)isEditable;
 - (id)_input;
+- (bool)isEditable;
 - (bool)resignFirstResponder;
 - (id)networkInterfaceName;
 - (unsigned int)audioSessionCategoryOverride;

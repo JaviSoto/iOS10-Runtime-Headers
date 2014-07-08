@@ -36,8 +36,6 @@
 - (id)requestorID;
 - (void)setEncryptionBehavior:(long long)arg1;
 - (long long)encryptionBehavior;
-- (void)setFd:(int)arg1;
-- (int)fd;
 - (void)setRequestURL:(id)arg1;
 - (void)setRequestorID:(id)arg1;
 - (void)setLocalPath:(id)arg1;
@@ -45,11 +43,13 @@
 - (id)fileHash;
 - (void)setProtocolFileSize:(unsigned long long)arg1;
 - (void)setFileHash:(id)arg1;
-- (void)setItemID:(unsigned long long)arg1;
-- (void)setSignature:(id)arg1;
+- (void)setFd:(int)arg1;
+- (int)fd;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (id)requestURL;
+- (void)setItemID:(unsigned long long)arg1;
+- (void)setSignature:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (id)localPath;
 - (id)guid;

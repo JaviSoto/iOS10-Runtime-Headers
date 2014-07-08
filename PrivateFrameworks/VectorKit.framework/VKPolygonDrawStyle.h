@@ -20,20 +20,18 @@
 - (bool)fancyCasingsVisibleAtZoom:(float)arg1;
 - (struct Matrix<float, 4, 1> { float x1[4]; })outerStrokeColorAtZoom:(float)arg1;
 - (float)outerStrokeWidthAtZoom:(float)arg1;
-- (struct Matrix<float, 4, 1> { float x1[4]; })sourceFillColorAtZoom:(float)arg1;
-- (bool)hasFillTextureVariant;
-- (id)descriptionVariantAtZoom:(float)arg1;
-- (id)descriptionAtZoom:(float)arg1;
-- (id)thirdTextureVariantAtZoom:(float)arg1;
-- (id)secondTextureVariantAtZoom:(float)arg1;
 - (int)thirdTextureBlendModeAtZoom:(float)arg1;
+- (id)thirdTextureVariantAtZoom:(float)arg1;
 - (float)thirdTextureOpacityAtZoom:(float)arg1;
 - (id)thirdTextureAtZoom:(float)arg1;
 - (int)secondTextureBlendModeAtZoom:(float)arg1;
+- (id)secondTextureVariantAtZoom:(float)arg1;
 - (float)secondTextureOpacityAtZoom:(float)arg1;
 - (id)secondTextureAtZoom:(float)arg1;
 - (int)textureBlendModeAtZoom:(float)arg1;
 - (float)textureOpacityAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })sourceFillColorAtZoom:(float)arg1;
+- (bool)hasFillTextureVariant;
 - (bool)isTargetNotDrawn;
 - (bool)isSourceNotDrawn;
 - (struct Matrix<float, 4, 1> { float x1[4]; })casingColor;
@@ -54,8 +52,8 @@
 - (id)targetTextureAtZoom:(float)arg1;
 - (bool)hasFillColor;
 - (bool)hasFillTexture;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 
 @end

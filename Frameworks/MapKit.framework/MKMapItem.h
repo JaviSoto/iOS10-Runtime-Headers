@@ -2,13 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItemMetadata, NSString, NSURL, GEOPlace, GEOAddress, GEOPDFlyover, <GEOMapItemPrivate>, NSArray, MKPlacemark, NSData, GEOMapRegion;
+@class NSURL, _MKMapItemPlaceAttribution, <GEOMapItemPrivate>, GEOPDFlyover, _MKMapItemReviewsAttribution, GEOMapRegion, _MKMapItemPhotosAttribution, MKPlacemark, NSString, GEOFeatureStyleAttributes, GEOPlace, NSArray, NSData, GEOAddress, MKMapItemMetadata;
 
 @interface MKMapItem : NSObject <GEOURLSerializable> {
     bool_isCurrentLocation;
     NSString *_extSessionGuid;
     bool_isPlaceHolder;
     <GEOMapItemPrivate> *_geoMapItem;
+    _MKMapItemPlaceAttribution *_attribution;
+    _MKMapItemPhotosAttribution *_photosAttribution;
+    _MKMapItemReviewsAttribution *_reviewsAttribution;
     MKMapItemMetadata *_metadata;
     GEOPlace *_place;
 }
@@ -38,6 +41,7 @@
 @property(getter=_hasMUID,readonly) bool hasMUID;
 @property(getter=_muid,readonly) unsigned long long muid;
 @property(getter=_categoryKeys,readonly) NSArray * categoryKeys;
+@property(getter=_firstLocalizedCategoryName,readonly) NSString * firstLocalizedCategoryName;
 @property(getter=_hasUserRatingScore,readonly) bool hasUserRatingScore;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
 @property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
@@ -56,6 +60,7 @@
 @property(getter=_hasResolvablePartialInformation,readonly) bool hasResolvablePartialInformation;
 @property(getter=_hasLocalizedOperatingHours,readonly) bool hasLocalizedOperatingHours;
 @property(getter=_localizedOperatingHours,readonly) NSString * localizedOperatingHours;
+@property(getter=_openState,readonly) unsigned int openState;
 @property(getter=_placeDataAsData,readonly) NSData * placeDataAsData;
 @property(getter=_placeAsData,readonly) NSData * placeAsData;
 @property(getter=_poiSurveyURLString,readonly) NSString * poiSurveyURLString;
@@ -63,14 +68,12 @@
 @property(getter=_webURL,copy,readonly) NSURL * webURL;
 @property(getter=_providerURL,copy,readonly) NSURL * providerURL;
 @property(getter=_vendorID,copy,readonly) NSString * vendorID;
-@property(getter=_showInfoAttribution,readonly) bool showInfoAttribution;
-@property(getter=_showPhotoAttribution,readonly) bool showPhotoAttribution;
-@property(getter=_showAddPhoto,readonly) bool showAddPhoto;
-@property(getter=_showReviewAttribution,readonly) bool showReviewAttribution;
-@property(getter=_showMoreReviews,readonly) bool showMoreReviews;
-@property(getter=_showAddReview,readonly) bool showAddReview;
 @property(getter=_reviewsDisplayName,readonly) NSString * reviewsDisplayName;
-@property(getter=_isYelpForSiri,readonly) bool isYelpForSiri;
+@property(getter=_attribution,readonly) _MKMapItemPlaceAttribution * attribution;
+@property(getter=_photosAttribution,readonly) _MKMapItemPhotosAttribution * photosAttribution;
+@property(getter=_reviewsAttribution,readonly) _MKMapItemReviewsAttribution * reviewsAttribution;
+@property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
+@property(getter=_customIconID,readonly) unsigned long long customIconID;
 
 + (unsigned long long)_placeCardIDForMapsDataString:(id)arg1;
 + (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
@@ -87,7 +90,6 @@
 + (id)_itemWithGeoMapItem:(id)arg1;
 + (id)mapItemForCurrentLocation;
 
-- (id)initForSpotlightOnlyWithObsoleteProtoData:(id)arg1;
 - (id)formattedNumberOfReviewsIncludingProvider;
 - (id)formattedNumberOfReviews;
 - (bool)isPlaceHolder;
@@ -95,13 +97,12 @@
 - (id)_reviewsAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_photoAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_reviewsDisplayName;
-- (bool)_showMoreReviews;
 - (id)_shortAddress;
 - (id)_formattedTelephone;
 - (bool)_hasFormattedTelephone;
 - (id)_geoFenceMapRegion;
 - (id)_displayMapRegion;
-- (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logoPaths:(id)arg3;
+- (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3;
 - (id)initWithPlace:(id)arg1 sessionGuid:(id)arg2;
 - (void)setExtSessionGuid:(id)arg1;
 - (id)_getBusiness;
@@ -110,6 +111,7 @@
 - (id)initWithPlace:(id)arg1 isPlaceHolderPlace:(bool)arg2;
 - (bool)openInMapsWithLaunchOptions:(id)arg1;
 - (id)_priceRangeString;
+- (id)_firstLocalizedCategoryName;
 - (id)_localizedOperatingHours;
 - (bool)_hasDisplayableAmenities;
 - (bool)_hasLocalizedOperatingHours;
@@ -127,36 +129,26 @@
 - (bool)isCurrentLocation;
 - (void)setIsCurrentLocation:(bool)arg1;
 - (id)_geoMapItem;
-- (bool)_isYelpForSiri;
+- (unsigned long long)_customIconID;
+- (id)_styleAttributes;
 - (id)_poiSurveyURLString;
-- (id)_calloutDisplayName;
-- (bool)_showAddReview;
-- (bool)_showReviewAttribution;
-- (bool)_showAddPhoto;
-- (bool)_showPhotoAttribution;
-- (bool)_showInfoAttribution;
+- (id)_reviewsAttribution;
+- (id)_photosAttribution;
+- (id)_attribution;
 - (id)_vendorID;
 - (id)_providerURL;
 - (bool)_needsAttribution;
+- (unsigned int)_openState;
 - (id)_flyover;
 - (bool)_hasFlyover;
 - (bool)_hasResolvablePartialInformation;
 - (id)_placeDataAsData;
 - (id)_placeAsData;
-- (id)_checkInURLs:(id*)arg1;
-- (id)_viewDealURLs:(id)arg1 attributionApps:(id*)arg2;
-- (id)_viewReviewURLs:(id)arg1 attributionApps:(id*)arg2;
-- (id)_addReviewURLs:(id*)arg1;
-- (id)_viewPhotoURLs:(id)arg1 attributionApps:(id*)arg2;
-- (id)_addPhotoURLs:(id*)arg1;
 - (id)_urlForWritingAReview;
 - (id)_urlForReviewWithUID:(id)arg1;
 - (unsigned int)_travelDistanceForTransportType:(int)arg1;
 - (unsigned int)_travelTimeForTransportType:(int)arg1;
 - (int)_recommendedTransportType;
-- (id)_reviewAttributionURLs:(id*)arg1;
-- (id)_photoAttributionURLs:(id*)arg1;
-- (id)_infoAttributionURLs:(id*)arg1;
 - (id)_webURL;
 - (id)_urlForPhotoWithUID:(id)arg1;
 - (bool)_takesReservations;
@@ -186,11 +178,11 @@
 - (id)metadata;
 - (void)setPhoneNumber:(id)arg1;
 - (id)url;
+- (void)setName:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (id)phoneNumber;

@@ -6,6 +6,7 @@
 
 @interface MMCSHTTPSession : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate> {
     NSString *_sessionName;
+    NSString *_sessionConfigurationId;
     NSURLSession *_urlSession;
     NSURLSessionConfiguration *_urlSessionConfiguration;
     NSOperationQueue *_operationQueue;
@@ -13,6 +14,7 @@
 }
 
 @property(retain) NSString * sessionName;
+@property(retain) NSString * sessionConfigurationId;
 @property(retain) NSURLSession * urlSession;
 @property(retain) NSURLSessionConfiguration * urlSessionConfiguration;
 @property(retain) NSOperationQueue * operationQueue;
@@ -24,14 +26,16 @@
 - (id)contextsForTasks;
 - (void)setContextsForTasks:(id)arg1;
 - (void)setUrlSessionConfiguration:(id)arg1;
+- (void)setSessionConfigurationId:(id)arg1;
 - (void)setSessionName:(id)arg1;
-- (id)initWithName:(id)arg1 configuration:(id)arg2;
-- (void)setUrlSession:(id)arg1;
+- (id)initWithName:(id)arg1 sessionConfigurationId:(id)arg2 configuration:(id)arg3;
 - (id)urlSession;
-- (id)dataTaskWithRequest:(id)arg1 forHTTPContext:(id)arg2;
+- (id)dataTaskWithRequest:(id)arg1 uuid:(id)arg2 forHTTPContext:(id)arg3;
+- (id)sessionConfigurationId;
+- (void)setUrlSession:(id)arg1;
 - (id)sessionName;
 - (void)invalidateAndCancel;
-- (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2;
+- (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

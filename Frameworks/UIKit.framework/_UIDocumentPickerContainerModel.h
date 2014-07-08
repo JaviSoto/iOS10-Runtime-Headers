@@ -13,7 +13,7 @@
 }
 
 @property(readonly) NSArray * modelObjects;
-@property(retain) NSArray * pickableTypes;
+@property(copy) NSArray * pickableTypes;
 @property unsigned long long pickerMode;
 @property int sortOrder;
 @property(retain) NSMutableArray * updateHandlers;

@@ -42,10 +42,10 @@
 @property(getter=_ignoresExpectedClientsProtocol,setter=_setIgnoresExpectedClientsProtocol:) bool _ignoresExpectedClientsProtocol;
 
 
+- (void)setAppearance:(id)arg1;
 - (void)setLightKeyColor:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;
 - (void)setWasLaunchedFromLibrary:(bool)arg1;
-- (void)setAppearance:(id)arg1;
 - (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(bool)arg2;
 - (void)_showPreviewOverlayAnimated:(bool)arg1;
 - (void)_setIgnoresExpectedClientsProtocol:(bool)arg1;
@@ -73,7 +73,7 @@
 - (id)previewOverlay;
 - (id)askToBuyApprovalPrompt;
 - (bool)inAskToBuyApprovalFlow;
-- (void)_dispatchXEvent:(id)arg1;
+- (void)_dispatchXEvent:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)_hidePreviewOverlayAnimated:(bool)arg1;
 - (id)viewControllerFactory;
 - (id)lightKeyColor;

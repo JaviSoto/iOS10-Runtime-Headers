@@ -11,7 +11,7 @@
 
 
 - (bool)isUIApplicationWorkspace;
-- (id)_newClient;
+- (Class)_clientClass;
 - (void)clientHandleAssertionExpirationImminent:(id)arg1;
 - (void)clientHandleExit:(id)arg1;
 - (void)client:(id)arg1 handleLaunch:(id)arg2 withCompletion:(id)arg3;

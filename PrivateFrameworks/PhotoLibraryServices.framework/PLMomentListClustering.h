@@ -6,6 +6,8 @@
 
 @interface PLMomentListClustering : NSObject  {
     bool_allowsCollectionInfluencing;
+    bool_allowsCollectionAccumulation;
+    bool_allowsYearAccumulation;
     double __maximumTimeThreshold;
     double __maximumTimeThresholdBetweenMomentsWithLocation;
     double __maximumTimeThresholdFromPeakMatch;
@@ -27,6 +29,8 @@
 }
 
 @property bool allowsCollectionInfluencing;
+@property bool allowsCollectionAccumulation;
+@property bool allowsYearAccumulation;
 @property(readonly) double _maximumTimeThreshold;
 @property(readonly) double _maximumTimeThresholdBetweenMomentsWithLocation;
 @property(readonly) double _maximumTimeThresholdFromPeakMatch;
@@ -56,8 +60,10 @@
 - (id)generateYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inManager:(id)arg4;
 - (id)generateMegaMomentListsForMoments:(id)arg1 inManager:(id)arg2;
 - (unsigned long long)_minimumNumberOfAssetsToAvoidYearAccumulation;
+- (bool)allowsYearAccumulation;
 - (double)_maximumDistanceBetweenAccumulatedMoments;
 - (unsigned long long)_minimumNumberOfAssetsToAvoidMegamomentAccumulation;
+- (bool)allowsCollectionAccumulation;
 - (double)_megamomentAccumulationMaximumTimeThreshold;
 - (bool)_updateMegaMomentList:(id)arg1 withRejectedMoments:(id)arg2;
 - (unsigned long long)_expandMegaMomentList:(id)arg1 fromPeakMoment:(id)arg2 towardMoments:(id)arg3 forwards:(bool)arg4 outRejectedMoments:(id)arg5;
@@ -80,6 +86,8 @@
 - (bool)_isDateInMoment:(id)arg1 inDateRangeOfLastMoment:(id)arg2 withDelta:(double)arg3 forwards:(bool)arg4;
 - (double)_maximumTimeThresholdBetweenMomentsWithLocation;
 - (id)_cachedLocationForMoment:(id)arg1;
+- (void)setAllowsYearAccumulation:(bool)arg1;
+- (void)setAllowsCollectionAccumulation:(bool)arg1;
 - (void)setAllowsCollectionInfluencing:(bool)arg1;
 - (id)init;
 - (void)dealloc;

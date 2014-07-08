@@ -13,11 +13,11 @@
 @property unsigned int flags;
 
 
+- (void)setName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)flags;

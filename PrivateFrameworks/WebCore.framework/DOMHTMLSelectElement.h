@@ -21,6 +21,7 @@
 @property(readonly) bool willValidate;
 
 
+- (void)setName:(id)arg1;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)add:(id)arg1 :(id)arg2;
@@ -42,7 +43,6 @@
 - (void)setSize:(int)arg1;
 - (int)length;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)options;
 - (id)type;
 - (int)size;

@@ -12,6 +12,7 @@
     NSString *_fileSizeText;
     long long _offerType;
     float _price;
+    NSString *_variantIdentifier;
 }
 
 @property(readonly) NSString * actionParameters;
@@ -22,6 +23,7 @@
 @property(readonly) NSDictionary * lookupDictionary;
 @property(readonly) long long offerType;
 @property(readonly) float price;
+@property(readonly) NSString * variantIdentifier;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 
@@ -37,6 +39,7 @@
 - (void)_setFileSizeWithAssets:(id)arg1;
 - (id)cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
+- (id)variantIdentifier;
 - (id)lookupDictionary;
 - (id)initWithLookupDictionary:(id)arg1;
 - (float)price;

@@ -2,12 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURLResponse, WKFrameInfo;
+@class NSURLRequest, NSURLResponse, WKFrameInfo;
 
 @interface WKNavigationResponse : NSObject  {
     struct RetainPtr<WKFrameInfo> { 
         void *m_ptr; 
     } _frame;
+    struct RetainPtr<NSURLRequest> { 
+        void *m_ptr; 
+    } _request;
     struct RetainPtr<NSURLResponse> { 
         void *m_ptr; 
     } _response;
@@ -15,6 +18,7 @@
 }
 
 @property(readonly) WKFrameInfo * _frame;
+@property(readonly) NSURLRequest * _request;
 @property(getter=isForMainFrame,readonly) bool forMainFrame;
 @property(copy) NSURLResponse * response;
 @property bool canShowMIMEType;
@@ -23,6 +27,7 @@
 - (void)setCanShowMIMEType:(bool)arg1;
 - (bool)canShowMIMEType;
 - (bool)isForMainFrame;
+- (id)_request;
 - (id)_frame;
 - (void)setResponse:(id)arg1;
 - (id)response;

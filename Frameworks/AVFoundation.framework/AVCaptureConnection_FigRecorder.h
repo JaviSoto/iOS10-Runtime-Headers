@@ -33,13 +33,14 @@
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
 
-- (bool)isLive;
 - (long long)videoOrientation;
 - (void)setVideoOrientation:(long long)arg1;
 - (void)setVideoMirrored:(bool)arg1;
 - (void)initCommonStorage;
 - (void)setVideoRetainedBufferCountHint:(int)arg1;
+- (void)setFeature0Mode:(long long)arg1;
 - (void)setEnablesVideoStabilizationWhenAvailable:(bool)arg1;
+- (bool)enablesVideoStabilizationWhenAvailable;
 - (bool)isVideoStabilizationEnabled;
 - (void)setVideoScaleAndCropFactor:(double)arg1;
 - (void)setVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -65,7 +66,8 @@
 - (id)output;
 - (id)initWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 - (id)initWithInputPorts:(id)arg1 output:(id)arg2;
-- (bool)enablesVideoStabilizationWhenAvailable;
+- (long long)activeFeature0Mode;
+- (long long)feature0Mode;
 - (int)videoRetainedBufferCountHint;
 - (double)videoScaleAndCropFactor;
 - (double)videoMaxScaleAndCropFactor;
@@ -77,6 +79,7 @@
 - (float)getPeakAudioLevelForChannel:(id)arg1;
 - (float)getAvgAudioLevelForChannel:(id)arg1;
 - (id)inputPorts;
+- (bool)isLive;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
 - (id)mediaType;

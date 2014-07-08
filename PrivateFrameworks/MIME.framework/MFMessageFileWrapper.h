@@ -17,16 +17,17 @@
 
 + (id)supportedArchivedClassNames;
 
+- (void)setCreator:(unsigned int)arg1;
 - (unsigned int)creator;
 - (id)meetingStorePersistentID;
 - (id)symbolicLinkDestination;
+- (bool)isImageFile;
 - (id)icsRepresentation;
 - (bool)isPDFFile;
 - (id)inferredMimeType;
 - (void)setMeetingStorePersistentID:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
 - (bool)isUnzippableFile;
-- (bool)isImageFile;
 - (id)fileProtection;
 - (void)setFileProtection:(id)arg1;
 - (void)setICSRepresentation:(id)arg1;
@@ -36,7 +37,6 @@
 - (void)setContentID:(id)arg1;
 - (unsigned short)finderFlags;
 - (void)setFinderFlags:(unsigned short)arg1;
-- (void)setCreator:(unsigned int)arg1;
 - (void)setMimeType:(id)arg1;
 - (void)_isImage:(bool*)arg1 orPDFFile:(bool*)arg2;
 - (void)setMessageID:(id)arg1;

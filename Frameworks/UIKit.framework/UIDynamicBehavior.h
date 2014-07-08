@@ -28,10 +28,10 @@
 
 + (void)initialize;
 
+- (id)_items;
 - (id)action;
 - (void)setAction:(id)arg1;
 - (id)items;
-- (id)_items;
 - (id)init;
 - (void)_setContext:(id)arg1;
 - (void)dealloc;

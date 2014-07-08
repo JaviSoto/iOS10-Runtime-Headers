@@ -10,8 +10,10 @@
 - (id)infoDictionary;
 - (id)bundleIdentifier;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;
+- (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)executablePath;
 - (struct __CFBundle { }*)cfBundle;
+- (id)_pathsForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)initWithCFBundle:(struct __CFBundle { }*)arg1;
 - (void)dealloc;
 - (id)description;

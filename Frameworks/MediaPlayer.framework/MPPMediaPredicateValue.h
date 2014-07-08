@@ -36,6 +36,8 @@
 
 
 - (void)copyTo:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasBoolPredicateValue:(bool)arg1;
 - (void)setHasFloatPredicateValue:(bool)arg1;
 - (void)setHasDoublePredicateValue:(bool)arg1;
@@ -58,8 +60,6 @@
 - (float)floatPredicateValue;
 - (double)doublePredicateValue;
 - (long long)integerPredicateValue;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(int)arg1;

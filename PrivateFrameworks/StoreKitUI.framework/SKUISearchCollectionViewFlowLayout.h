@@ -22,10 +22,10 @@
 @property bool backfills;
 
 
-- (double)verticalPadding;
 - (void)setBackfills:(bool)arg1;
 - (bool)backfills;
 - (void)setVerticalPadding:(double)arg1;
+- (double)verticalPadding;
 - (id)init;
 - (void).cxx_destruct;
 - (void)prepareLayout;

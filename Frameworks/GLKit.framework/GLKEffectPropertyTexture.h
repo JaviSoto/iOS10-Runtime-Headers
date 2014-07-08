@@ -80,12 +80,12 @@
 - (void)dirtyAllUniforms;
 - (id)filePath;
 - (unsigned char)enabled;
+- (void)setName:(unsigned int)arg1;
 - (void)setEnabled:(unsigned char)arg1;
 - (void)bind;
 - (id)init;
 - (void)setTarget:(unsigned int)arg1;
 - (unsigned int)name;
-- (void)setName:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)target;

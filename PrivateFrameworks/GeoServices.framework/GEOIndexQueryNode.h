@@ -28,9 +28,10 @@
 - (bool)hasField;
 - (void)setField:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (bool)hasValue;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasValue;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)field;

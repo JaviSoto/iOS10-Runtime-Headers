@@ -24,13 +24,13 @@
 
 + (double)_additionalHeightForLabelWithText:(id)arg1 font:(id)arg2 boundingWidth:(double)arg3;
 
+- (void)viewWillAppear;
 - (id)listController;
 - (void)removeRootSpecifiers:(id)arg1;
 - (void)reloadRootSpecifiers:(id)arg1;
 - (void)addRootSpecifiers:(id)arg1;
 - (bool)activateWithInitialText:(id)arg1 animated:(bool)arg2;
 - (void)setSearchBarVisible:(bool)arg1 animated:(bool)arg2;
-- (void)viewWillAppear;
 - (id)_buildURLForEntry:(id)arg1 isRoot:(bool*)arg2;
 - (void)_setPreferenceValueUsingAction:(id)arg1 specifier:(id)arg2;
 - (id)_readPreferenceValueUsingAction:(id)arg1;
@@ -40,6 +40,7 @@
 - (void)_updateIconViews:(bool)arg1;
 - (void)_removeIconViewForSection:(id)arg1;
 - (void)_updateSearchResultsWithText:(id)arg1;
+- (void)_buildSearchUIIfNecessary;
 - (void)_updateListControllerHeaderView:(bool)arg1;
 - (bool)_setBoolValue:(bool)arg1 forIvar:(bool*)arg2;
 - (void)_reloadSettings:(bool)arg1;

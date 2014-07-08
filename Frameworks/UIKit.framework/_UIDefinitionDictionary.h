@@ -12,10 +12,12 @@
 }
 
 @property(readonly) ASAsset * rawAsset;
+@property(readonly) NSString * localizedLanguageName;
 @property(readonly) NSString * localizedDictionaryName;
 @property(readonly) NSString * definitionLanguage;
 @property bool activated;
 
++ (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
 
 - (id)initWithAsset:(id)arg1;
 - (void)dealloc;
@@ -24,6 +26,7 @@
 - (id)definitionLanguage;
 - (id)_definitionValueForTerm:(id)arg1;
 - (bool)_hasDefinitionForTerm:(id)arg1;
+- (id)localizedLanguageName;
 - (bool)activated;
 - (id)_fullHTMLDefinitionForTerm:(id)arg1;
 - (id)_attributedDefinitionForTerm:(id)arg1;

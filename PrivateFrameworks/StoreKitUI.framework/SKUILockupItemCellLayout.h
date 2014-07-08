@@ -87,9 +87,9 @@
 - (void)setCategoryString:(id)arg1;
 - (void)setEditorialBadgeString:(id)arg1;
 - (id)itemCountString;
+- (id)categoryString;
 - (id)editorialBadgeString;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (id)categoryString;
 - (void)setClientContext:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (id)releaseDateString;

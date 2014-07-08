@@ -66,7 +66,7 @@
 - (void)_handleDaemonException:(id)arg1;
 - (bool)_autoReconnect;
 - (bool)connectToDaemon;
-- (void)disconnectFromDaemonWithForce:(bool)arg1;
+- (void)_disconnectFromDaemonWithForce:(bool)arg1;
 - (bool)__isRemoteObjectValidOnQueue:(id)arg1;
 - (bool)__isLocalObjectValidOnQueue:(id)arg1;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
@@ -75,7 +75,6 @@
 - (void)disconnectFromDaemon;
 - (void)_setCapabilities:(unsigned int)arg1;
 - (bool)connectToDaemonWithLaunch:(bool)arg1;
-- (unsigned int)capabilities;
 - (void)_blockUntilSendQueueIsEmpty;
 - (void)_remoteObjectCleanup;
 - (void)_localObjectCleanup;
@@ -92,6 +91,7 @@
 - (void)setMyProfile:(id)arg1;
 - (void)setMyPicture:(id)arg1 smallPictureData:(id)arg2;
 - (bool)addListenerID:(id)arg1 capabilities:(unsigned int)arg2;
+- (void)disconnectFromDaemonWithForce:(bool)arg1;
 - (void)setMyStatus:(unsigned long long)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (bool)connectToDaemonWithLaunch:(bool)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(bool)arg3;
 - (void)_connectToDaemonWithLaunch:(bool)arg1 capabilities:(unsigned int)arg2;
@@ -107,6 +107,7 @@
 - (void)sendABInformationToDaemon;
 - (bool)isConnecting;
 - (void)blockUntilConnected;
+- (unsigned int)capabilities;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationWillEnterForeground;

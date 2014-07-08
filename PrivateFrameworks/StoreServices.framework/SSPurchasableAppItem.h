@@ -22,8 +22,8 @@
 - (bool)isFamilyShareable;
 - (id)iconTitle;
 - (long long)contentRatingFlags;
-- (id)accountIdentifier;
 - (id)category;
+- (id)accountIdentifier;
 - (id)iconURL;
 - (id)companyName;
 - (id)bundleID;

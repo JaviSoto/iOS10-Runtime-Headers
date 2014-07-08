@@ -15,6 +15,7 @@
     NSURL *_urlForDisplay;
     NSString *_contentType;
     NSString *_password;
+    double _autoPlaybackPosition;
 }
 
 @property(readonly) NSUUID * uuid;
@@ -25,6 +26,7 @@
 @property(retain) NSString * password;
 @property long long index;
 @property bool isPromisedItem;
+@property double autoPlaybackPosition;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 
@@ -32,10 +34,12 @@
 + (id)encodedClasses;
 + (bool)supportsSecureCoding;
 
+- (void)setAutoPlaybackPosition:(double)arg1;
 - (void)setIsPromisedItem:(bool)arg1;
 - (void)setUrlForDisplay:(id)arg1;
 - (id)urlForDisplay;
 - (id)initWithPreviewItem:(id)arg1;
+- (double)autoPlaybackPosition;
 - (void)consumeFileExtension;
 - (void)issueFileExtension;
 - (bool)isPromisedItem;

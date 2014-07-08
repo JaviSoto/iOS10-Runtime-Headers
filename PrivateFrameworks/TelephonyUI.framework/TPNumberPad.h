@@ -32,7 +32,7 @@
 - (void)buttonDown:(id)arg1;
 - (void)dealloc;
 - (id)buttons;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)buttonTapped:(id)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

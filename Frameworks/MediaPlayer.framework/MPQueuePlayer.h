@@ -71,8 +71,6 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (bool)isPlaybackQueueTransactionActive;
 - (void)_setPreparesItemsForPlaybackAsynchronously:(bool)arg1;
-- (long long)status;
-- (id)items;
 - (id)currentItem;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)play;
@@ -108,12 +106,14 @@
 - (void)setActionAtItemEnd:(long long)arg1;
 - (id)externalPlaybackVideoGravity;
 - (id)_player;
+- (long long)status;
+- (id)items;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(bool)arg1;
 - (bool)allowsExternalPlayback;
 - (bool)isExternalPlaybackActive;
 - (void)setClosedCaptionDisplayEnabled:(bool)arg1;
 - (void)setAllowsExternalPlayback:(bool)arg1;
-- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(bool)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (long long)externalPlaybackType;
 - (void)pause;

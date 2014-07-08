@@ -10,6 +10,7 @@
     int _animating;
     bool_isMailVIP;
     bool_allowsEditing;
+    bool_alwaysEditing;
     bool_allowsActions;
     bool_allowsPropertyActions;
     bool_allowsCardActions;
@@ -79,6 +80,7 @@
 @property(readonly) ABContactHeaderView * contactHeaderView;
 @property(copy) NSArray * displayedProperties;
 @property bool allowsEditing;
+@property bool alwaysEditing;
 @property bool allowsActions;
 @property bool allowsPropertyActions;
 @property bool allowsCardActions;
@@ -168,6 +170,7 @@
 - (void)setAllowsSharing:(bool)arg1;
 - (void)setAllowsCardActions:(bool)arg1;
 - (void)setAllowsPropertyActions:(bool)arg1;
+- (void)setAlwaysEditing:(bool)arg1;
 - (struct { id x1; id x2; id x3; id x4; })transitionToEditing:(bool)arg1;
 - (id)indexPathOfDisplayedPropertyItem:(id)arg1;
 - (void)removeActionWithTarget:(id)arg1 selector:(SEL)arg2 inGroup:(id)arg3;
@@ -303,6 +306,7 @@
 - (void)setLinkedContactsEdits:(id)arg1;
 - (void)setMutableContacts:(id)arg1;
 - (id)linkedContactsEdits;
+- (bool)alwaysEditing;
 - (struct { id x1; id x2; id x3; id x4; })editingTransition;
 - (id)displayGroups;
 - (bool)_modelHasChanges;
@@ -340,13 +344,14 @@
 - (id)nameEditingGroups;
 - (id)presentingDelegate;
 - (id)displayHeaderView;
+- (id)editingHeaderView;
 - (id)displayContactView;
 - (id)editingContactView;
 - (id)faceTimeIDSRequest;
 - (id)iMessageIDSRequest;
-- (id)editingHeaderView;
 - (void)updateEditNavigationItemsAnimated:(bool)arg1;
 - (bool)allowsAddingToAddressBook;
+- (void)localeDidChange:(id)arg1;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)setNeedsReloadLazy;
 - (void)setSiriContextProvider:(id)arg1;
@@ -407,7 +412,6 @@
 - (id)viewForHeaderInTableView:(id)arg1;
 - (double)heightForHeaderInTableView:(id)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
-- (void)viewWillLayoutSubviews;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)updateUserActivityState:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;

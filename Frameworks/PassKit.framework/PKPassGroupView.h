@@ -105,6 +105,7 @@
 - (void)_handlePanGesture:(id)arg1;
 - (id)pageControl;
 - (struct CGSize { double x1; double x2; })_contentSize;
+- (void)sizeToFit;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;

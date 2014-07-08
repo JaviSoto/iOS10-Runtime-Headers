@@ -13,8 +13,8 @@
 
 @interface SCNActionRotate : SCNAction  {
 
-  /* Error parsing encoded ivar type info: ^{SCNCActionRotate=^^?f@BdddddBB@?^{__CFString}qdddd{__C3DQuaternion=ffff}{__C3DQuaternion=ffff}BBBB} */
-    struct SCNCActionRotate { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; double x7; double x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; struct __CFString {} *x14; long long x15; double x16; double x17; double x18; double x19; struct __C3DQuaternion { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; struct __C3DQuaternion { float x_21_1_1; float x_21_1_2; float x_21_1_3; float x_21_1_4; } x21; boolx22; boolx23; boolx24; boolx25; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SCNCActionRotate=^^?f@BdddddBB@?^{__CFString}qddddf{__C3DQuaternion=ffff}{__C3DQuaternion=ffff}BBBB} */
+    struct SCNCActionRotate { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; double x7; double x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; struct __CFString {} *x14; long long x15; double x16; double x17; double x18; double x19; float x20; struct __C3DQuaternion { float x_21_1_1; float x_21_1_2; float x_21_1_3; float x_21_1_4; } x21; struct __C3DQuaternion { float x_22_1_1; float x_22_1_2; float x_22_1_3; float x_22_1_4; } x22; boolx23; boolx24; boolx25; boolx26; } *_mycaction;
 
 }
 

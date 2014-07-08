@@ -47,7 +47,6 @@
 - (id)mapLocation;
 - (id)originalPlace;
 - (int)pinType;
-- (bool)hasPlace;
 - (bool)hasTileStateLog;
 - (bool)hasMapLocation;
 - (bool)hasOriginalPlace;
@@ -76,9 +75,11 @@
 - (void)setOriginalPlace:(id)arg1;
 - (bool)hasSessionId;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (bool)hasPlace;
 - (id)place;
 - (void)setPlace:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

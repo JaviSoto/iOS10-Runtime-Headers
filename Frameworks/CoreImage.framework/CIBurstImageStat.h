@@ -118,10 +118,9 @@
 @property int version;
 
 
+- (int)orientation;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
-- (void)setOrientation:(int)arg1;
-- (int)orientation;
 - (int)version;
 - (void)setFullsizeJpegSize:(int)arg1;
 - (int)fullsizeJpegSize;
@@ -138,6 +137,7 @@
 - (void)setExclude:(bool)arg1;
 - (bool)exclude;
 - (void)setFaceStatArray:(id)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setImageId:(id)arg1;
 - (float*)colorHistogram;
 - (long long)compareImageStats:(id)arg1;

@@ -40,7 +40,6 @@
 
 
 - (long long)numberOfUserRatings;
-- (id)initWithClientContext:(id)arg1;
 - (id)histogramValues;
 - (void)setHistogramValues:(id)arg1;
 - (id)segmentedControlTitles;
@@ -55,6 +54,7 @@
 - (void)setNumberOfUserRatings:(long long)arg1;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (double)userRating;
 - (void)setUserRating:(double)arg1;
 - (void)setBackgroundColor:(id)arg1;

@@ -17,10 +17,12 @@
 @property(retain) NSArray * principalAttachments;
 @property long long verticalSizeClass;
 
-+ (id)blankWebpageImage;
++ (id)fallbackPreviewImage;
 
 - (void)setPrincipalAttachments:(id)arg1;
 - (id)principalAttachments;
+- (bool)generatePreviewImageFromAttachments;
+- (void)ensurePlaceholderPreviewImage;
 - (void)setPreviewImage:(id)arg1 forAttachment:(id)arg2;
 - (void)setVerticalSizeClass:(long long)arg1;
 - (void)verticalSizeClassDidChange;

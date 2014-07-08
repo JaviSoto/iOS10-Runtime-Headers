@@ -17,6 +17,7 @@
 }
 
 
+- (void)updateRangedSelectionData;
 - (double)handleOffsetForPoint:(struct CGPoint { double x1; double x2; })arg1 handlePosition:(int)arg2;
 - (void)switchToBlockModeForHandle:(id)arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)blockSelectionChangedWithTouch:(long long)arg1 withFlags:(long long)arg2 growThreshold:(double)arg3 shrinkThreshold:(double)arg4;
@@ -34,6 +35,8 @@
 - (void)stopAnyAutoscrolling;
 - (void)updateAutoscrollForHandle:(id)arg1;
 - (void)switchToTextModeForHandle:(id)arg1;
+- (bool)shouldContractForActiveHandle;
+- (bool)shouldExpandForActiveHandle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fetchSelectionBoundingRect;
 - (void)setHandleCenters;
 - (void)showCopyCalloutWithAnimation:(bool)arg1;

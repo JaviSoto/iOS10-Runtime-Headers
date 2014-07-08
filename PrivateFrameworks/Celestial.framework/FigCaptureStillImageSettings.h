@@ -71,7 +71,6 @@
 @property long long stillImageStartTime;
 
 
-- (void)setOutputFormat:(unsigned int)arg1;
 - (void)setStillImageStartTime:(long long)arg1;
 - (long long)stillImageStartTime;
 - (int)bracketType;
@@ -96,10 +95,10 @@
 - (unsigned int)thumbnailWidth;
 - (unsigned int)thumbnailFormat;
 - (void)_teardownBracketStorage;
-- (unsigned int)outputHeight;
-- (unsigned int)outputWidth;
 - (void)setOutputHeight:(unsigned int)arg1;
 - (void)setOutputWidth:(unsigned int)arg1;
+- (unsigned int)outputHeight;
+- (unsigned int)outputWidth;
 - (long long)settingsID;
 - (int)HDRMode;
 - (float*)exposureTargetBiases;
@@ -128,6 +127,7 @@
 - (bool)noiseReductionEnabled;
 - (void)setFlashMode:(int)arg1;
 - (int)flashMode;
+- (void)setOutputFormat:(unsigned int)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

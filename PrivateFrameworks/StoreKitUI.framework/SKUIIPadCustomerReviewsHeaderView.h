@@ -25,7 +25,6 @@
 @property(copy) NSArray * sortTitles;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (id)sortTitles;
 - (void)_sortButtonAction:(id)arg1;
@@ -36,6 +35,7 @@
 - (id)appSupportButton;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

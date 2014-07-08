@@ -19,10 +19,10 @@
 - (bool)shouldUseCapture;
 - (void)setShouldUseCapture:(bool)arg1;
 - (id)callback;
+- (void)setName:(id)arg1;
 - (void)setCallback:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

@@ -21,6 +21,8 @@
 - (void)copyTo:(id)arg1;
 - (id)elsePredicate;
 - (id)thenPredicate;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setElsePredicate:(id)arg1;
 - (void)setThenPredicate:(id)arg1;
 - (void)setConditionalPredicate:(id)arg1;
@@ -28,8 +30,6 @@
 - (bool)hasThenPredicate;
 - (bool)hasConditionalPredicate;
 - (id)conditionalPredicate;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

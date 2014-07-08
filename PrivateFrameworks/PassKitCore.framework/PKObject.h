@@ -43,18 +43,19 @@
 - (void)setMissingImageSetsFromObject:(id)arg1;
 - (bool)isImageSetType:(long long)arg1 equalToImageSetTypeFromObject:(id)arg2;
 - (id)contentLoadedIfNeeded;
+- (void)reloadDisplayProfileOfType:(long long)arg1;
 - (id)localizedString:(id)arg1;
 - (id)allImageSetsLoadedIfNecessary;
 - (void)flushLoadedImageSets;
 - (void)flushLoadedContent;
 - (id)authenticationToken;
 - (id)webServiceURL;
-- (void)setDisplayProfile:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
 - (void)setWebServiceURL:(id)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)loadImageSetSync:(long long)arg1 preheat:(bool)arg2;
 - (void)loadContentSync;
+- (void)setDisplayProfile:(id)arg1;
 - (void)setShareCount:(long long)arg1;
 - (long long)shareCount;
 - (id)imageSetLoadedIfNeeded:(long long)arg1;
@@ -62,7 +63,6 @@
 - (id)preferredImageSuffix;
 - (bool)isImageSetLoaded:(long long)arg1;
 - (void)flushFormattedFieldValues;
-- (id)dataAccessor;
 - (bool)isContentLoaded;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)initWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
@@ -72,6 +72,7 @@
 - (void)requestUpdateWithCompletion:(id)arg1;
 - (void)noteShared;
 - (void)setDataAccessor:(id)arg1;
+- (id)dataAccessor;
 - (bool)remoteAssetsDownloaded;
 - (id)serializedFileWrapper;
 - (id)manifestHash;
@@ -80,10 +81,10 @@
 - (void)loadContentAsyncWithCompletion:(id)arg1;
 - (void)loadImageSetAsync:(long long)arg1 preheat:(bool)arg2 withCompletion:(id)arg3;
 - (void)setUniqueID:(id)arg1;
-- (id)archiveData;
 - (void)setContent:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (long long)settings;
+- (id)archiveData;
 - (void)setSettings:(long long)arg1;
 - (id)uniqueID;
 - (id)content;

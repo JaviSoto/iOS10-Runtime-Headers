@@ -23,14 +23,15 @@
 - (void)setObservedURL:(id)arg1;
 - (id)observedURL;
 - (void)setMonitoringToken:(id)arg1;
-- (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)monitoringToken;
 - (void)setMonitoring:(bool)arg1;
+- (void)_dynamicTypeSizeChanged:(id)arg1;
 - (void)_sortViewChanged:(id)arg1;
 - (id)initWithModel:(id)arg1;
+- (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
+- (void)setModel:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (id)serviceViewController;
-- (void)setModel:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;

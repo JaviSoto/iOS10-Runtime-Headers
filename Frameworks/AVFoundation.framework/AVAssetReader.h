@@ -19,7 +19,6 @@
 + (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 
-- (long long)status;
 - (id)outputs;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_transitionToStatus:(long long)arg1 failureError:(id)arg2;
@@ -32,6 +31,7 @@
 - (id)asset;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (bool)canAddOutput:(id)arg1;
+- (long long)status;
 - (void)addOutput:(id)arg1;
 - (id)init;
 - (id)error;

@@ -13,7 +13,7 @@
 @property(retain,readonly) PLPhotoLibrary * photoLibrary;
 
 
-- (bool)createSnapshot;
+- (void)createSnapshot;
 - (void)logDescription:(id)arg1;
 - (void)logAssetCounts;
 - (void)logAllAlbums;

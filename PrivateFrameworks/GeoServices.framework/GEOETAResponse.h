@@ -25,6 +25,7 @@
 @property(readonly) struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* problemDetails;
 
 
+- (bool)hasStatus;
 - (id)originPlaceSearchResponse;
 - (id)etaResults;
 - (bool)hasOriginPlaceSearchResponse;
@@ -34,7 +35,6 @@
 - (void)addEtaResult:(id)arg1;
 - (void)setOriginPlaceSearchResponse:(id)arg1;
 - (void)setEtaResults:(id)arg1;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (void)setProblemDetails:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned long long)arg2;
 - (struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)problemDetails;
@@ -43,6 +43,7 @@
 - (unsigned long long)problemDetailsCount;
 - (void)clearProblemDetails;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setStatus:(int)arg1;

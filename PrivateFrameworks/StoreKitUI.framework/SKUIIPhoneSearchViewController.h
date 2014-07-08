@@ -26,6 +26,7 @@
 
 
 - (void)_reloadView;
+- (void)scrollToTop;
 - (id)searchPage;
 - (bool)shouldCacheAheadWhenIdleForItemCollectionController:(id)arg1;
 - (id)itemCollectionController:(id)arg1 screenshotForItem:(id)arg2;
@@ -52,7 +53,6 @@
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(long long)arg2;
 - (id)activeMetricsController;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
-- (void)scrollToTop;
 - (id)_visibleMetricsImpressionsString;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)setMetricsController:(id)arg1;

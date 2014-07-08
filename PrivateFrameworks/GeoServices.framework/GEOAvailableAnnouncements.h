@@ -22,6 +22,7 @@
 - (void)addAnnouncement:(id)arg1;
 - (void)setAnnouncements:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setLanguageCode:(id)arg1;

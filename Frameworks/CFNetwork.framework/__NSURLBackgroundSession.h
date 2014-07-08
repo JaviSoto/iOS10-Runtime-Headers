@@ -23,11 +23,13 @@
     NSString *_appWakeUUID;
     NSURL *_downloadDirectory;
     bool_isPrivileged;
+    bool_isInvalid;
 }
 
 @property(copy) NSString * appWakeUUID;
 
 
+- (void)_onqueue_disavowTask:(id)arg1;
 - (id)clientResumeDataFromBackgroundResumeData:(id)arg1;
 - (void)credStorage_setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)credStorage_defaultCredentialForProtectionSpace:(id)arg1 reply:(id)arg2;

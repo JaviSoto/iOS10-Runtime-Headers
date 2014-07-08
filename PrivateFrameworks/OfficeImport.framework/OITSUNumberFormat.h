@@ -88,7 +88,6 @@
 - (id)numberFormatByIncrementingDecimalPlaces:(short)arg1;
 - (id)numberFormatBySettingDecimalPlaces:(unsigned short)arg1;
 - (id)numberFormatBySettingValueType:(int)arg1;
-- (bool)isCustom;
 - (bool)hasValidDecimalPlaces;
 - (id)stringFromDouble:(double)arg1 forceSuppressMinusSign:(bool)arg2;
 - (id)stringFromDouble:(double)arg1 decimalPlaces:(unsigned short)arg2 minimumDecimalPlaces:(unsigned short)arg3 forceSuppressMinusSign:(bool)arg4;
@@ -101,6 +100,7 @@
 - (id)initWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(bool)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(bool)arg7 fractionAccuracy:(int)arg8 base:(unsigned char)arg9 basePlaces:(unsigned short)arg10 baseUseMinusSign:(bool)arg11;
 - (id)initWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(bool)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(bool)arg7 fractionAccuracy:(int)arg8 suffixString:(id)arg9;
 - (id)initWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(bool)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(bool)arg7 fractionAccuracy:(int)arg8;
+- (bool)isCustom;
 - (id)stringFromString:(id)arg1;
 - (int)valueType;
 - (id)init;

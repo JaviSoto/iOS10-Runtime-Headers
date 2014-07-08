@@ -9,6 +9,7 @@
 @class CKServerChangeToken;
 
 @interface CKFetchNotificationChangesOperation : CKOperation  {
+    bool_moreComing;
     CKServerChangeToken *_previousServerChangeToken;
     unsigned long long _resultsLimit;
 
@@ -26,11 +27,13 @@
 
 @property(copy) CKServerChangeToken * previousServerChangeToken;
 @property unsigned long long resultsLimit;
+@property(readonly) bool moreComing;
 @property(copy) id notificationChangedBlock;
 @property(copy) id fetchNotificationChangesCompletionBlock;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
 
 
+- (bool)moreComing;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
 - (void)setNotificationChangedBlock:(id)arg1;
 - (void)setFetchNotificationChangesCompletionBlock:(id)arg1;

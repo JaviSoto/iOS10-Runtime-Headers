@@ -34,7 +34,7 @@
 - (void)_configureIndexBarControl:(id)arg1;
 - (void)_updateIndexBarVisibility;
 - (id)_pageSplitsDescription;
-- (long long)_pinningStyle;
+- (long long)_pinningTransitionStyle;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (id)_colorScheme;
 - (id)_resourceLoader;

@@ -22,14 +22,13 @@
 - (void)setFontData:(id)arg1;
 - (id)fontData;
 - (id)persistentURL;
-- (id)payloadDescriptionKeyValuePairs;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (void)setName:(id)arg1;
 - (id)title;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 

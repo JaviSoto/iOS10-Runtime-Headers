@@ -14,13 +14,16 @@
 
 - (void)setClient:(id)arg1;
 - (void)releaseHold:(id)arg1;
+- (void)forceHoldPlugIn:(id)arg1 result:(id)arg2;
 - (void)holdPlugInsInApplication:(id)arg1 result:(id)arg2;
 - (id)containingAppForPlugInWithPid:(int)arg1;
 - (id)containingAppForPlugInConnectedTo:(id)arg1;
+- (id)informationForPlugInWithPid:(int)arg1;
 - (void)unregisterPlugInsInBundle:(id)arg1 result:(id)arg2;
 - (void)registerPlugInsInBundle:(id)arg1 result:(id)arg2;
 - (void)unregisterPlugInAtURL:(id)arg1 result:(id)arg2;
 - (void)registerPlugInAtURL:(id)arg1 result:(id)arg2;
+- (void)holdRequest:(id)arg1 flags:(unsigned long long)arg2 result:(id)arg3;
 - (id)containingAppForExtensionProperties:(id)arg1;
 - (id)initForService:(const char *)arg1;
 - (id)client;

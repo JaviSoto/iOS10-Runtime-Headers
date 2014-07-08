@@ -82,6 +82,7 @@
 @property(readonly) UITraitCollection * traitCollection;
 @property(readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultBaseContentInsetsForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
 + (bool)_preventsAppearanceProxyCustomization;
 
 - (void)setDelegate:(id)arg1;
@@ -95,10 +96,12 @@
 - (void)setOverrideTraitCollection:(id)arg1;
 - (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
+- (bool)_shouldAdaptFromSizeClassPair:(struct { long long x1; long long x2; })arg1 toSizeClassPair:(struct { long long x1; long long x2; })arg2;
 - (id)_preferredAnimationControllerForDismissal;
 - (id)_preferredAnimationControllerForPresentation;
 - (bool)_forcesPreferredAnimationControllers;
 - (id)_descriptionForPrintingViewControllerHierarchy;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_baseContentInsets;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fullscreenFrameForViewController:(id)arg1 inWindow:(id)arg2 transitionView:(id)arg3;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_dismissWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
@@ -126,12 +129,12 @@
 - (void)_transitionFromWillBegin;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionWillBegin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)_transitionFromDidEnd;
 - (void)_transitionToDidEnd;
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (id)presentedView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (bool)_shouldGrabPresentersView;
 - (void)_transplantView:(id)arg1 toSuperview:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)_transplantView:(id)arg1 toSuperview:(id)arg2;
@@ -147,6 +150,7 @@
 - (id)_currentInteractionController;
 - (id)_presentationView;
 - (id)_parentPresentationController;
+- (id)_parentPresentationControllerImmediate:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_flipSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_computeToEndFrameForCurrentTransition;
 - (id)_toViewForCurrentTransition;
@@ -188,10 +192,10 @@
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (Class)_appearanceGuideClass;
 - (struct { long long x1; long long x2; })__sizeClassPair;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)_appearanceContainer;
 - (void)_window:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_parent:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
-- (void)traitCollectionDidChange:(id)arg1;
 - (id)presentedViewController;
 - (void)_setContainerView:(id)arg1;
 - (bool)_presentationPotentiallyUnderlapsStatusBar;

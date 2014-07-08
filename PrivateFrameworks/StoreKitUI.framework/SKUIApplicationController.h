@@ -53,6 +53,7 @@
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (bool)shouldIgnoreJSValidation;
 - (id)appJSURL;
+- (id)activeDocument;
 - (bool)appIsTrusted;
 - (void)appContext:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (id)vendorStorage;
@@ -71,6 +72,7 @@
 - (bool)appJSURLTrusted;
 - (void)updateTabBarWithItems:(id)arg1 animated:(bool)arg2;
 - (void)setTabBarItems:(id)arg1;
+- (void)suspendApplicationWithOptions:(id)arg1;
 - (void)resumeApplicationWithOptions:(id)arg1;
 - (void)evaluateBlockWhenLoaded:(id)arg1;
 - (id)initWithClientContextClass:(Class)arg1;
@@ -108,16 +110,17 @@
 - (void)loadApplicationWithOptions:(id)arg1;
 - (void)_storeFrontChangeNotification:(id)arg1;
 - (void)_pageDidDisplayNotification:(id)arg1;
-- (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;
 - (void)showExternalURL:(id)arg1;
+- (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;
+- (void)URLResolver:(id)arg1 showTransientViewController:(id)arg2;
 - (void)URLResolver:(id)arg1 didFinishWithResult:(bool)arg2;
 - (void)URLResolver:(id)arg1 showURL:(id)arg2 withTabIdentifier:(id)arg3;
 - (bool)URLResolver:(id)arg1 shouldPerformDefaultActionForURL:(id)arg2;
-- (void)URLResolver:(id)arg1 showTransientViewController:(id)arg2;
 - (id)presentationViewControllerForURLResolver:(id)arg1;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
 - (void)appContext:(id)arg1 setPreviewOverlayDocument:(id)arg2 withOptions:(id)arg3;
 - (void)appContext:(id)arg1 didExitWithOptions:(id)arg2;
+- (id)presentationViewControllerForAppContext:(id)arg1;
 - (id)_operationQueue;
 - (id)clientContext;
 - (id)vendorIdentifier;

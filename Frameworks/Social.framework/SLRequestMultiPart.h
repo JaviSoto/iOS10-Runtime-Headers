@@ -28,10 +28,10 @@
 - (id)partData;
 - (id)multiPartBoundary;
 - (void)setMultiPartBoundary:(id)arg1;
+- (void)setName:(id)arg1;
 - (unsigned long long)length;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)uniqueIdentifier;
 - (id)type;
 - (void).cxx_destruct;

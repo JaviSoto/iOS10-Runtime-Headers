@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel, FailureBarView;
+@class UILabel, <PSPINEntryViewDelegate>, FailureBarView;
 
 @interface PINView : UIView <PINEntryView> {
     UILabel *_titleLabel;
@@ -10,10 +10,12 @@
     FailureBarView *_failureView;
     UILabel *_pinPolicyLabel;
     bool_error;
-    id _delegate;
+    <PSPINEntryViewDelegate> *_delegate;
 }
 
 
+- (void)notifyDelegatePINEntered;
+- (void)notifyDelegatePINChanged;
 - (void)setBlocked:(bool)arg1;
 - (void)hidePasscodeField:(bool)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;

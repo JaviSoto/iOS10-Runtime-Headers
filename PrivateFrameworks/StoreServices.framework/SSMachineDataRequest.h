@@ -25,10 +25,10 @@
 - (void)setAllowsBootstrapCellularData:(bool)arg1;
 - (bool)allowsBootstrapCellularData;
 - (void)startWithCompletionBlock:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setWaitsForPurchaseOperations:(bool)arg1;
 - (id)actionName;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)setActionName:(id)arg1;

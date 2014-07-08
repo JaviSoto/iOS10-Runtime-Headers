@@ -6,11 +6,11 @@
 }
 
 
-- (id)_textField;
 - (void)_setNativeObjectDelegate:(id)arg1;
 - (id)_nativeObjectDelegate;
 - (void)setupNativeObject;
 - (void)destroyNativeObject;
+- (id)_textField;
 - (void)setWidth:(double)arg1;
 - (double)width;
 - (id)value;

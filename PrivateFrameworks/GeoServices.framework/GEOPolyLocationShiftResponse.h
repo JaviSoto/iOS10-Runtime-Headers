@@ -24,6 +24,7 @@
 - (void)clearParameters;
 - (unsigned long long)parametersCount;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (double*)parameters;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

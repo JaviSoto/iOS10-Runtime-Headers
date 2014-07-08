@@ -38,10 +38,10 @@
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
 - (void)_startServer;
-- (int)socket;
 - (bool)isConnected;
 - (bool)isEmpty;
 - (void)dealloc;
+- (int)socket;
 - (void)_endSession;
 - (void)endSession;
 

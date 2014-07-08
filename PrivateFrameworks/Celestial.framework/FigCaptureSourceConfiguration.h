@@ -4,7 +4,7 @@
 
 @class NSString, NSDictionary, FigCaptureSourceFormat;
 
-@interface FigCaptureSourceConfiguration : NSObject <NSCoding, NSCopying> {
+@interface FigCaptureSourceConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_sourceID;
     struct OpaqueFigCaptureSource { } *_source;
     int _sourceType;
@@ -16,6 +16,8 @@
     float _videoZoomRampAcceleration;
     int _imageControlMode;
     bool_automaticallyEnablesLowLightBoostWhenAvailable;
+    bool_applyMaxIntegrationTimeOverrideWhenAvailable;
+    NSDictionary *_faceDetectionConfiguration;
 }
 
 @property(copy) NSString * sourceID;
@@ -25,20 +27,32 @@
 @property float requiredMinFrameRate;
 @property float videoZoomFactor;
 @property float videoZoomRampAcceleration;
+@property(copy) NSDictionary * faceDetectionConfiguration;
 @property(readonly) int sourcePosition;
 @property(readonly) int sourceType;
 @property int imageControlMode;
 @property bool automaticallyEnablesLowLightBoostWhenAvailable;
+@property bool applyMaxIntegrationTimeOverrideWhenAvailable;
 
 + (int)sourceTypeForString:(id)arg1;
 + (id)stringForSourceType:(int)arg1;
 + (void)initialize;
 
-- (int)sourceType;
-- (struct OpaqueFigCaptureSource { }*)source;
 - (id)_sourceAttributes;
 - (id)_sourceUID;
+- (void)setFaceDetectionConfiguration:(id)arg1;
+- (id)faceDetectionConfiguration;
+- (void)setApplyMaxIntegrationTimeOverrideWhenAvailable:(bool)arg1;
+- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
+- (void)setImageControlMode:(int)arg1;
+- (void)setVideoZoomRampAcceleration:(float)arg1;
+- (void)setVideoZoomFactor:(float)arg1;
+- (void)setRequiredMinFrameRate:(float)arg1;
+- (void)setRequiredMaxFrameRate:(float)arg1;
+- (void)setRequiredFormat:(id)arg1;
+- (void)setSourceID:(id)arg1;
 - (int)sourcePosition;
+- (bool)applyMaxIntegrationTimeOverrideWhenAvailable;
 - (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (int)imageControlMode;
 - (float)videoZoomRampAcceleration;
@@ -48,20 +62,14 @@
 - (id)requiredFormat;
 - (int)_sourceToken;
 - (id)sourceID;
-- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
-- (void)setImageControlMode:(int)arg1;
-- (void)setVideoZoomRampAcceleration:(float)arg1;
-- (void)setVideoZoomFactor:(float)arg1;
-- (void)setRequiredMinFrameRate:(float)arg1;
-- (void)setRequiredMaxFrameRate:(float)arg1;
-- (void)setRequiredFormat:(id)arg1;
 - (bool)_isCameraSource;
-- (void)setSourceID:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithSourceType:(int)arg1;
 - (id)initWithSource:(struct OpaqueFigCaptureSource { }*)arg1;
+- (int)sourceType;
+- (struct OpaqueFigCaptureSource { }*)source;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

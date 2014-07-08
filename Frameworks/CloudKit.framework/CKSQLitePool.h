@@ -25,14 +25,14 @@
 @property bool drainScheduled;
 
 
+- (id)factory;
+- (void)closeAll;
+- (id)initWithFactory:(id)arg1;
+- (id)acquireDatabase;
 - (void)setDrainScheduled:(bool)arg1;
 - (bool)drainScheduled;
 - (void)setDbs:(id)arg1;
-- (id)factory;
 - (void)performWithDatabase:(id)arg1;
-- (void)closeAll;
-- (id)acquireDatabase;
-- (id)initWithFactory:(id)arg1;
 - (void)_drain;
 - (bool)performWithDatabase:(id)arg1 error:(id*)arg2;
 - (void)releaseDatabase:(id)arg1;

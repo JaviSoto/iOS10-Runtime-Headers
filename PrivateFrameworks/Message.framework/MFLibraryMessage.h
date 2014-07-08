@@ -42,8 +42,6 @@
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (bool)isLibraryMessage;
 - (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
-- (unsigned long long)conversationFlags;
-- (void)setConversationFlags:(unsigned long long)arg1;
 - (void)markAsForwarded;
 - (void)markAsReplied;
 - (void)markAsNotFlagged;
@@ -69,6 +67,8 @@
 - (void)setRemoteID:(id)arg1;
 - (void)_updateUID;
 - (id)initWithLibraryID:(unsigned int)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (unsigned long long)conversationFlags;
 - (unsigned int)mailboxID;
 - (void)setPreferredEncoding:(unsigned int)arg1;
 - (void)setMessageFlags:(unsigned long long)arg1;
@@ -76,13 +76,13 @@
 - (id)_attachmentStorageLocation;
 - (bool)canBeDeleted;
 - (id)dataPathForMimePart:(id)arg1;
-- (unsigned long long)messageSize;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (bool)isMessageContentsLocallyAvailable;
 - (id)messageStore;
 - (id)attachmentStorageLocation;
-- (void)setMessageSize:(unsigned long long)arg1;
 - (void)setUid:(unsigned int)arg1;
+- (unsigned long long)messageSize;
+- (void)setMessageSize:(unsigned long long)arg1;
 - (id)library;
 - (id)persistentID;
 - (unsigned int)libraryID;

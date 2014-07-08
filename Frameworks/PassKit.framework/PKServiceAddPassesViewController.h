@@ -102,11 +102,12 @@
 - (id)groupAtIndex:(unsigned long long)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setNavigationBar:(id)arg1;
+- (void)viewWillLayoutSubviews;
 - (unsigned long long)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
 - (id)navigationBar;
 
 @end

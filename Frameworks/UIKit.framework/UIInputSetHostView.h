@@ -8,6 +8,7 @@
 + (bool)_retroactivelyRequiresConstraintBasedLayout;
 
 - (void)_resizeForKeyplaneSize:(struct CGSize { double x1; double x2; })arg1 splitWidthsChanged:(bool)arg2;
+- (int)_clipCornersOfView:(id)arg1;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 

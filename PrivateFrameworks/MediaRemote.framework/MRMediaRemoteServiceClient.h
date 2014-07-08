@@ -10,6 +10,7 @@
     bool_receivesSupportedCommandsNotifications;
     bool_receivesRoutesChangedNotifications;
     bool_receivesOriginChangedNotifications;
+    bool_receivesPlaybackErrorNotifications;
     NSArray *_nowPlayingNotificationObservers;
     NSArray *_routingNotificationObservers;
     NSArray *_originNotificationObservers;
@@ -21,12 +22,15 @@
 @property bool receivesSupportedCommandsNotifications;
 @property bool receivesRoutesChangedNotifications;
 @property bool receivesOriginChangedNotifications;
+@property bool receivesPlaybackErrorNotifications;
 @property(retain) NSArray * nowPlayingNotificationObservers;
 @property(retain) NSArray * routingNotificationObservers;
 @property(retain) NSArray * originNotificationObservers;
 
 + (id)sharedServiceClient;
 
+- (void)setReceivesPlaybackErrorNotifications:(bool)arg1;
+- (bool)receivesPlaybackErrorNotifications;
 - (bool)receivesOriginChangedNotifications;
 - (bool)receivesRoutesChangedNotifications;
 - (bool)receivesSupportedCommandsNotifications;

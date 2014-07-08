@@ -80,10 +80,10 @@
 - (unsigned long long)styleIndex;
 - (id)styleName;
 - (void)setDisplayName:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setStyle:(id)arg1;
 - (id)style;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)displayName;
 

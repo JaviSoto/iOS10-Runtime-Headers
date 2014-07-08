@@ -26,6 +26,7 @@
 @property SEL appObserverSelector;
 
 
+- (void)setName:(id)arg1;
 - (id)plugins;
 - (void)setAppObserverSelector:(SEL)arg1;
 - (void)setPlugins:(id)arg1;
@@ -36,7 +37,6 @@
 - (void)clear;
 - (SEL)appObserverSelector;
 - (void)setLastFiredDate:(id)arg1;
-- (void)sendMessage:(id)arg1;
 - (double)latency;
 - (double)minInterval;
 - (id)lastFiredDate;
@@ -45,8 +45,8 @@
 - (id)applications;
 - (void)setTimer:(id)arg1;
 - (id)timer;
+- (void)sendMessage:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

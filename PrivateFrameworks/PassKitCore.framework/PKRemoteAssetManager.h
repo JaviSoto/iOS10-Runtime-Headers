@@ -12,11 +12,13 @@
 }
 
 
-- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
 - (void)cancelDownloads;
-- (void)_flushBundleCaches;
+- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
+- (id)deviceSpecificItems;
 - (bool)addRemoteAssetData:(id)arg1 forManifestItem:(id)arg2 error:(id*)arg3;
+- (void)_flushBundleCaches;
 - (id)itemWithRelativePath:(id)arg1;
+- (id)deviceSpecificItemsForScreenScale:(double)arg1 suffix:(id)arg2;
 - (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 completion:(id)arg3;
 - (bool)assetExistsLocally:(id)arg1;
 - (id)remoteAssetManifests;

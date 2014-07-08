@@ -2,16 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, NSString, IKAppDocument, SSVLoadURLOperation, NSSet, NSValue, NSDictionary, SKUINavigationBarController, UIViewController, NSObject<OS_dispatch_source>, NSNumber;
+@class UIView, NSString, IKAppDocument, SSVLoadURLOperation, NSSet, NSValue, NSDictionary, SKUINavigationBarController, UIViewController, NSNumber;
 
 @interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationPaletteProvider> {
     UIViewController *_childViewController;
-    bool_dirty;
     IKAppDocument *_document;
-    NSObject<OS_dispatch_source> *_documentUpdateThrottleTimer;
     SSVLoadURLOperation *_loadURLOperation;
     SKUINavigationBarController *_navigationBarController;
     NSNumber *_orientationAtDisappear;
+    NSNumber *_pageResponseAbsoluteTime;
     NSSet *_personalizationItems;
     NSDictionary *_presentationOptions;
     NSValue *_sizeAtDisappear;
@@ -25,11 +24,11 @@
 
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
+- (void)documentScrollToTop:(id)arg1;
 - (void)document:(id)arg1 runTestWithName:(id)arg2 options:(id)arg3;
 - (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2;
 - (void)_finishLoadOperationWithResponse:(id)arg1 error:(id)arg2;
 - (void)_reloadNavigationPalette;
-- (void)_cancelDocumentUpdateThrottle;
 - (void)_setChildViewController:(id)arg1;
 - (void)_sendOnViewAttributesChangeWithAttributes:(id)arg1;
 - (id)_navigationBarViewElement;
@@ -40,11 +39,13 @@
 - (id)navigationPaletteView;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 clientContext:(id)arg3;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (id)contentScrollView;
 - (void)viewWillAppear:(bool)arg1;
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;

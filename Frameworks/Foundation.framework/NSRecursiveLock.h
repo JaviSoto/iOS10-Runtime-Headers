@@ -13,11 +13,11 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (bool)tryLock;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
 - (void)unlock;
 - (void)lock;
-- (void)setName:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

@@ -25,6 +25,7 @@
 @property(readonly) bool isActive;
 @property(readonly) bool isStateFinal;
 @property(readonly) bool isSendingAudio;
+@property(setter=setMute:) bool isMute;
 @property(retain,readonly) NSNumber * dataUploaded;
 @property(retain,readonly) NSNumber * dataDownloaded;
 @property double invitationTimeoutTime;
@@ -34,9 +35,11 @@
 - (void)finalUpdate;
 - (double)connectionTimeoutTime;
 - (double)invitationTimeoutTime;
+- (bool)isMute;
 - (bool)_isProxy;
 - (id)dateEnded;
 - (void)updateWithInfo:(id)arg1;
+- (void)setMute:(bool)arg1;
 - (void)inviteAll;
 - (id)initiatorIMHandle;
 - (void)cancelInvitation;
@@ -45,7 +48,6 @@
 - (bool)isActive;
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setConnectionTimeoutTime:(double)arg1;
-- (bool)isStateFinal;
 - (bool)isSendingAudio;
 - (id)dataDownloaded;
 - (id)dataUploaded;
@@ -54,6 +56,7 @@
 - (id)remoteParticipants;
 - (id)dateConnected;
 - (bool)isCaller;
+- (bool)isStateFinal;
 - (void)invite:(id)arg1 additionalPeers:(id)arg2;
 - (id)otherIMHandle;
 - (void)endChat;

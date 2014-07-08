@@ -55,10 +55,10 @@
 @property(retain,readonly) NSDate * startDate;
 @property(retain,readonly) NSDate * endDate;
 
++ (unsigned long long)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfTopImageInStackForStackFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)partialAvalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (id)avalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
-+ (unsigned long long)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
 + (unsigned long long)_calculateStackAssetForAssetCount:(unsigned long long)arg1 autoPicks:(id)arg2 userFavorites:(id)arg3;
 + (void)_handleUpdatesForContextWillSave:(id)arg1;
 + (void)_updateMembershipForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(bool)arg5;
@@ -112,9 +112,9 @@
 - (unsigned long long)assetsCount;
 - (unsigned long long)approximateCount;
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
+- (unsigned long long)photosCount;
 - (id)assets;
 - (void)setAssets:(id)arg1;
-- (unsigned long long)photosCount;
 - (id)uuid;
 - (void)setUuid:(id)arg1;
 - (id)title;

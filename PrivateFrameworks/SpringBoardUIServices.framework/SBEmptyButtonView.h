@@ -9,9 +9,9 @@
 @property unsigned int character;
 
 
-- (id)initForCharacter:(unsigned int)arg1;
-- (void)setCharacter:(unsigned int)arg1;
 - (unsigned int)character;
+- (void)setCharacter:(unsigned int)arg1;
+- (id)initForCharacter:(unsigned int)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

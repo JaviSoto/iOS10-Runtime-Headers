@@ -15,10 +15,16 @@
   /* Error parsing encoded ivar type info: @? */
     id _actionHandler;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _dismissalHandler;
+
     int _type;
 }
 
 @property(readonly) int type;
+@property(copy) id dismissalHandler;
 
 + (id)standardElementActionWithType:(int)arg1;
 + (id)customElementActionWithTitle:(id)arg1 actionHandler:(id)arg2;
@@ -27,7 +33,9 @@
 - (id)_title;
 - (int)type;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 actionHandler:(id)arg2 type:(int)arg3;
+- (void)setDismissalHandler:(id)arg1;
+- (id)dismissalHandler;
 - (void)_runActionWithElement:(id)arg1 targetURL:(id)arg2 documentView:(id)arg3 interactionLocation:(struct CGPoint { double x1; double x2; })arg4;
+- (id)initWithTitle:(id)arg1 actionHandler:(id)arg2 type:(int)arg3;
 
 @end

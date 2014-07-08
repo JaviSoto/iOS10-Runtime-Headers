@@ -20,9 +20,9 @@
 - (id)formPartData;
 - (id)imagePartData;
 - (id)partData;
+- (void)setName:(id)arg1;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (void).cxx_destruct;
 - (void)setPayload:(id)arg1;

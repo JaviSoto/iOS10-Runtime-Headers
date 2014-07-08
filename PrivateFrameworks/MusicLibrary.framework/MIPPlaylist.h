@@ -51,13 +51,14 @@
 - (void)addChildPlaylists:(id)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setStoreId:(long long)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (long long)storeId;
 - (bool)hasStoreId;
 - (bool)hasType;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
-- (id)items;
 - (void)setHidden:(bool)arg1;
+- (id)items;
+- (void)setName:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)addItems:(id)arg1;
 - (bool)hidden;
@@ -65,7 +66,6 @@
 - (unsigned long long)hash;
 - (id)name;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (void).cxx_destruct;
 - (id)description;

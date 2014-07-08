@@ -110,7 +110,6 @@
 - (bool)borderSurroundFooter;
 - (bool)borderSurroundHeader;
 - (bool)mirrorMargins;
-- (id)lastSection;
 - (id)newAnnotationBlockIterator;
 - (id)newEndnoteBlockIterator;
 - (id)newFootnoteBlockIterator;
@@ -152,7 +151,6 @@
 - (void)setShowFormatting:(bool)arg1;
 - (void)setShowInsertionsAndDeletions:(bool)arg1;
 - (void)setShowRevisionMarksOnScreen:(bool)arg1;
-- (id)applicationName;
 - (id)endnoteContinuationNotice;
 - (id)endnoteContinuationSeparator;
 - (id)endnoteSeparator;
@@ -172,10 +170,12 @@
 - (id)oleFilename;
 - (id)sectionAt:(unsigned long long)arg1;
 - (unsigned short)defaultTabWidth;
+- (unsigned long long)sectionCount;
+- (id)lastSection;
+- (id)applicationName;
+- (id)theme;
 - (void)setTrackChanges:(bool)arg1;
 - (bool)trackChanges;
-- (id)theme;
-- (unsigned long long)sectionCount;
 - (void)setLastModDate:(id)arg1;
 - (id)lastModDate;
 - (id)sections;

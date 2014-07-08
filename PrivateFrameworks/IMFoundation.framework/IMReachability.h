@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString, <IMReachabilityDelegate>;
+@class NSString, NSObject<OS_dispatch_queue>, <IMReachabilityDelegate>;
 
 @interface IMReachability : NSObject  {
     bool_gettingFlags;
@@ -10,11 +10,13 @@
     unsigned long long _flags;
     NSString *_description;
     void *_reachabilityRef;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property unsigned long long flags;
 @property <IMReachabilityDelegate> * delegate;
 @property(readonly) bool connectionRequired;
+@property NSObject<OS_dispatch_queue> * _queue;
 @property void* reachabilityRef;
 @property(retain) NSString * reachabilityDescription;
 @property bool gettingFlags;
@@ -33,7 +35,9 @@
 - (id)_initWithReachabilityRef:(struct __SCNetworkReachability { }*)arg1 description:(id)arg2 delegate:(id)arg3;
 - (void)_handleCallbackForSCNetworkReachability:(struct __SCNetworkReachability { }*)arg1;
 - (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
+- (void)set_queue:(id)arg1;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
+- (id)_queue;
 - (bool)connectionRequired;
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;

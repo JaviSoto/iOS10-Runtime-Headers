@@ -23,15 +23,15 @@
 + (id)_topmostAlertWindow;
 
 - (id)window;
-- (id)init;
 - (void)dealloc;
 - (id)popoverDelegate;
+- (void)_createWindowIfNecessary;
 - (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3 completion:(id)arg4;
 - (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)setPopoverDelegate:(id)arg1;
 - (id)alertController;
-- (void)_presentAlertControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (void)_dismissAlertControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (void)_presentAlertControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (void)setAlertController:(id)arg1;
 - (id)_popoverController;
 

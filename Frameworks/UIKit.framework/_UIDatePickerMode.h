@@ -28,6 +28,7 @@
     NSDateComponents *_todayDateComponents;
     NSNumberFormatter *_formatter;
     _UIDatePickerView *_datePickerView;
+    bool_isUsingJapaneseCalendar;
     unsigned long long _numberOfComponents;
     long long _minuteInterval;
     double _todaySinceReferenceDate;
@@ -119,6 +120,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeForCalendarUnit:(unsigned long long)arg1;
 - (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
 - (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
+- (long long)_yearlessYearForMonth:(long long)arg1;
 - (void)setLocalizedFormatString:(id)arg1;
 - (void)clearBaseDate;
 - (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
@@ -137,6 +139,7 @@
 - (id)todayDateComponents;
 - (void)setTodaySinceReferenceDate:(double)arg1;
 - (id)dateFormatForCalendarUnit:(unsigned long long)arg1;
+- (id)calendarForFormatters;
 - (id)dateFormatterForCalendarUnit:(unsigned long long)arg1;
 - (id)datePickerView;
 - (void)_shouldReset:(id)arg1;

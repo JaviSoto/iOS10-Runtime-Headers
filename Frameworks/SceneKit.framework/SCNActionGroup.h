@@ -25,6 +25,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)reversedAction;
+- (bool)isCustom;
 - (id)init;
 - (bool)finished;
 - (id)initWithCoder:(id)arg1;

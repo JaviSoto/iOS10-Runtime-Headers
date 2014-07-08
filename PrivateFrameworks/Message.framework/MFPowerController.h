@@ -6,6 +6,7 @@
 
 @interface MFPowerController : NSObject  {
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_powerQueue;
     int _pluggedIn;
     int _powerToken;
     unsigned int _appState;

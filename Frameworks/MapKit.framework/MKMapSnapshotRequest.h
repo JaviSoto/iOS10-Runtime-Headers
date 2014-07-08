@@ -33,9 +33,9 @@
 
 
 - (unsigned long long)zoomLevel;
-- (void)setZoomLevel:(unsigned long long)arg1;
 - (void)setAttributionString:(id)arg1;
 - (id)attributionString;
+- (void)setZoomLevel:(unsigned long long)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setRequester:(id)arg1;
 - (id)requester;

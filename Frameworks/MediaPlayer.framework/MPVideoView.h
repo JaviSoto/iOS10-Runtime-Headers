@@ -31,13 +31,13 @@
 
 + (Class)layerClass;
 
+- (void)playFromBeginning;
 - (void)setStopTime:(double)arg1;
 - (void)setAVURLAssetOptions:(id)arg1;
 - (id)AVURLAssetOptions;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })movieContentFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })movieFrame;
 - (unsigned long long)effectiveScaleMode;
-- (void)playFromBeginning;
 - (void)playWhenLikelyToKeepUp;
 - (void)setScaleMode:(unsigned long long)arg1 duration:(float)arg2;
 - (void)prepareAVControllerQueue;

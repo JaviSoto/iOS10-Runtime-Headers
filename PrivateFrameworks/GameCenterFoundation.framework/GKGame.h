@@ -91,10 +91,11 @@
 - (long long)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
-- (void)uninstallGameWithCompletionHandler:(id)arg1;
+- (void)removeGameWithCompletionHandler:(id)arg1;
 - (id)URLStringForImageWithShineIfNeeded;
 - (id)cachedIconForStyle:(long long)arg1;
 - (id)iconForStyle:(long long)arg1;
+- (void)uninstallApplicationWithBundleIdentifier:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)imageSourceForIconStyle:(long long)arg1;
 - (id)_imageURLForIconStyle:(long long)arg1;
 - (id)macBrushForIconStyle:(long long)arg1;

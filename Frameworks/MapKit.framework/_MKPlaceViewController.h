@@ -8,7 +8,6 @@
     MKPlaceInfoViewController *_infoViewController;
     MKPlaceActionsViewController *_actionsViewController;
     UITapGestureRecognizer *_flyoverTourTapRecognizer;
-    bool_compressedHeaderView;
     bool_isSearchingForNearbyApps;
     SKProductPageViewController *_storePageViewController;
     NSArray *_storeItems;
@@ -58,6 +57,7 @@
 @property bool disableReportAProblem;
 @property bool showRerouting;
 @property bool showFlyoverTour;
+@property bool showContactActions;
 @property double headerHeight;
 @property bool showCreateReminder;
 @property bool showSimulateLocation;
@@ -67,7 +67,6 @@
 @property ABPeoplePickerNavigationController * contactsNavigationController;
 @property(retain) MKPlaceHeaderView * placeHeaderView;
 @property(retain) MKSegmentedControlTabBarView * tabBar;
-@property bool showContactActions;
 @property(retain) MKDistanceDetailProvider * distanceMonitor;
 @property bool hasCheckedDistanceAvailability;
 @property(readonly) MKPlaceNearbyAppsMetricsCoordinator * metricsCoordinator;
@@ -119,6 +118,8 @@
 - (void)headerView:(id)arg1 didFinishLoadingBackgroundViewOfType:(long long)arg2;
 - (void)nearbyAppsController:(id)arg1 showStorePageWithURL:(id)arg2 storeID:(id)arg3;
 - (void)nearbyAppsController:(id)arg1 openAppWithBundleID:(id)arg2 storeID:(id)arg3;
+- (void)stackingViewControllerDidEndScroll:(id)arg1;
+- (void)stackingViewControllerWillBeginScroll:(id)arg1;
 - (void)stackingViewController:(id)arg1 willSelectViewController:(id)arg2;
 - (bool)stackingViewController:(id)arg1 showsTitleForViewController:(id)arg2;
 - (void)stackingViewController:(id)arg1 calculatedTransformForHeaderView:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2;
@@ -159,8 +160,8 @@
 - (void)_setHeaderSubtitleWithDistanceInfo:(id)arg1 numberOfReviews:(unsigned long long)arg2;
 - (void)presentHeaderView;
 - (bool)showInlineMapInHeader;
-- (void)suspendHeaderViewAnimations;
-- (void)resumeHeaderViewAnimations;
+- (void)resetHeaderViewAnimations;
+- (void)restartHeaderViewAnimations;
 - (void)_showShareSheet:(id)arg1;
 - (bool)showShareActionsButton;
 - (void)_showEditSheet:(id)arg1;
@@ -169,8 +170,6 @@
 - (void)_setupHeaderView;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
-- (id)mapItem;
-- (void)setMapItem:(id)arg1;
 - (void)setShowShareActionsButton:(bool)arg1;
 - (void)setShowEditButton:(bool)arg1;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
@@ -180,6 +179,8 @@
 - (void)setContact:(id)arg1;
 - (id)contact;
 - (id)initWithMapItem:(id)arg1;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)_commonInit;

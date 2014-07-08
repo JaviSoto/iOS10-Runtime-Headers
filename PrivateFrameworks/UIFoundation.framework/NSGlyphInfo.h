@@ -12,6 +12,7 @@
 + (id)glyphInfoWithCharacterIdentifier:(unsigned long long)arg1 collection:(unsigned long long)arg2 baseString:(id)arg3;
 + (id)glyphInfoWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (id)glyphName;
 - (unsigned long long)characterCollection;

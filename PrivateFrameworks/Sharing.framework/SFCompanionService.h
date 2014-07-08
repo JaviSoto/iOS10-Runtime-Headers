@@ -29,12 +29,12 @@
 - (id)nsxpcVersion;
 - (bool)isEqualToService:(id)arg1;
 - (id)ipAddress;
-- (id)managerID;
 - (void)setManagerID:(id)arg1;
 - (id)captureWriteHandle:(id)arg1;
 - (id)captureReadHandle:(id)arg1;
 - (void)setIpAddress:(id)arg1;
 - (void)serviceStreamsWithCompletionHandler:(id)arg1;
+- (id)managerID;
 - (id)serviceType;
 - (void)setServiceType:(id)arg1;
 - (void)setDeviceName:(id)arg1;

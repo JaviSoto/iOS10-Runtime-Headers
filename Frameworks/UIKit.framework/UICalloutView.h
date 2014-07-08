@@ -102,7 +102,6 @@
 - (void)dealloc;
 - (id)rightView;
 - (id)leftView;
-- (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (void)fadeOutWithDuration:(double)arg1;
 - (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animate:(bool)arg3;
 - (bool)canAnchorFromBottom;
@@ -144,6 +143,7 @@
 - (void)_layoutSubviews:(bool)arg1;
 - (void)_setLeftView:(id)arg1;
 - (id)subtitle;
+- (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (double)maximumWidth;
 - (void)setMaximumWidth:(double)arg1;
 - (void)_fadeViewsIn:(bool)arg1;

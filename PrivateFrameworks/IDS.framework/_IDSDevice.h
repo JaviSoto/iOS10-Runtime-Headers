@@ -34,6 +34,7 @@
 @property(readonly) bool locallyPresent;
 @property(readonly) bool isDefaultPairedDevice;
 @property(readonly) bool isDefaultLocalDevice;
+@property(readonly) bool supportsiCloudPairing;
 @property(readonly) bool supportsTethering;
 @property(readonly) bool supportsHandoff;
 @property(retain,readonly) NSData * pushToken;
@@ -50,10 +51,10 @@
 - (void)closeStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
 - (int)socketForDomain:(id)arg1;
-- (bool)supportsHandoff;
-- (bool)supportsTethering;
 - (void)setNSUUID:(id)arg1;
 - (void)closeSocket:(int)arg1;
+- (bool)supportsHandoff;
+- (bool)supportsTethering;
 - (bool)locallyPresent;
 - (id)enclosureColor;
 - (id)deviceColor;
@@ -64,9 +65,10 @@
 - (void)_nearbyStateChanged;
 - (void)_addIdentity:(id)arg1;
 - (void)_updateNSUUID:(id)arg1;
-- (bool)isDefaultLocalDevice;
 - (bool)isNearby;
 - (void)_setAccount:(id)arg1;
+- (bool)supportsiCloudPairing;
+- (bool)isDefaultLocalDevice;
 - (id)_identities;
 - (id)pushToken;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;

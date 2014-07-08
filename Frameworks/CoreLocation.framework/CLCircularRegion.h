@@ -9,6 +9,7 @@
 @property(readonly) double radius;
 
 + (bool)supportsSecureCoding;
++ (id)circularRegionFromMapRegion:(id)arg1;
 
 - (bool)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;

@@ -44,7 +44,6 @@
 - (double)farPlaneDistance;
 - (double)nearPlaneDistance;
 - (struct VKPoint { double x1; double x2; double x3; })translationInMercator;
-- (int)coordinateSpace;
 - (struct CGSize { double x1; double x2; })screenSizeInPixels;
 - (struct CGSize { double x1; double x2; })screenSizeInPoints;
 - (const struct { double x1[4][4]; }*)scaledViewProjectionMatrix;
@@ -68,5 +67,6 @@
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (float)contentScale;
+- (int)coordinateSpace;
 
 @end

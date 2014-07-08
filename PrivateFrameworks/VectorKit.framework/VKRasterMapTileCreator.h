@@ -40,6 +40,7 @@
 - (id)mapModel:(id)arg1 markerForAnnotation:(id)arg2;
 - (id)initWithSoftwareRendering:(bool)arg1 homeQueue:(id)arg2;
 - (void)renderRequest:(id)arg1 completion:(id)arg2;
+- (void)mapModelDidUpdateMinMaxZoomLevel:(id)arg1;
 - (void)mapModel:(id)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
 - (void)mapModel:(id)arg1 selectedLabelMarkerWillDisappear:(id)arg2;
 - (double)mapModelZoomScale:(id)arg1;

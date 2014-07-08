@@ -66,8 +66,8 @@
 + (Class)classForEntityName:(id)arg1;
 + (long long)authorizationStatusForEntityType:(unsigned long long)arg1;
 
+- (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3;
 - (id)defaultCalendarForNewReminders;
-- (void)setDatabase:(id)arg1;
 - (id)calendarItemsWithExternalIdentifier:(id)arg1;
 - (void)set_cachedValidatedEmails:(id)arg1;
 - (id)_cachedValidatedEmails;
@@ -114,7 +114,6 @@
 - (id)predicateForNotifiableEvents;
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 eventUUID:(id)arg3 calendars:(id)arg4;
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3 loadDefaultProperties:(bool)arg4;
-- (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3;
 - (void)locationBasedAlarmOccurrencesWithCompletion:(id)arg1;
 - (void)alarmOccurrencesBetweenStartDate:(id)arg1 endDate:(id)arg2 inCalendars:(id)arg3 completion:(id)arg4;
 - (id)alarmWithUUID:(id)arg1;
@@ -253,6 +252,7 @@
 - (void)_accessStatusChanged;
 - (void)_requestAccessForEntityType:(unsigned long long)arg1;
 - (id)initWithOptions:(unsigned int)arg1 path:(id)arg2;
+- (void)setDatabase:(id)arg1;
 - (id)database;
 - (void)rollback;
 - (id)registeredObjects;

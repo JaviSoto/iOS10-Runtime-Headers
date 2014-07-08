@@ -23,13 +23,13 @@
 
 - (void)copyTo:(id)arg1;
 - (int)comparisonType;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasComparisonType:(bool)arg1;
 - (bool)hasComparisonType;
 - (bool)hasValue;
 - (bool)hasProperty;
 - (void)setComparisonType:(int)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (void)setProperty:(id)arg1;
 - (id)property;
 - (id)value;

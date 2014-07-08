@@ -15,6 +15,8 @@
     NSString *_aosAPSEnvironment;
     NSString *_internalAuthToken;
     long long _appAuthTokenStatus;
+    NSString *_legacyDsid;
+    NSString *_legacyUsername;
 }
 
 @property(retain) NSString * dsid;
@@ -27,9 +29,13 @@
 @property(retain) NSString * aosAPSEnvironment;
 @property(retain) NSString * internalAuthToken;
 @property long long appAuthTokenStatus;
+@property(retain) NSString * legacyDsid;
+@property(retain) NSString * legacyUsername;
 
 + (bool)supportsSecureCoding;
 
+- (id)legacyUsername;
+- (id)legacyDsid;
 - (id)aosAPSEnvironment;
 - (id)aosServerProtocolScheme;
 - (id)aosServerHost;
@@ -40,6 +46,8 @@
 - (id)dsid;
 - (void)setAppAuthTokenStatus:(long long)arg1;
 - (void)setAppServerHost:(id)arg1;
+- (void)setLegacyUsername:(id)arg1;
+- (void)setLegacyDsid:(id)arg1;
 - (void)setInternalAuthToken:(id)arg1;
 - (void)setAosAPSEnvironment:(id)arg1;
 - (void)setAosServerProtocolScheme:(id)arg1;

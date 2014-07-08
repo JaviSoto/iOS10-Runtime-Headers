@@ -52,7 +52,6 @@
 - (void)setCenterOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)insertSublayer:(id)arg1 aboveSublayer:(id)arg2;
 - (void)insertSublayer:(id)arg1 belowSublayer:(id)arg2;
-- (id)_styleAttributes;
 - (id)annotationMarker;
 - (long long)styleType;
 - (bool)hasScreenRect;
@@ -75,16 +74,17 @@
 - (void)layoutWithContext:(id)arg1;
 - (void)runAnimation:(id)arg1;
 - (struct CGPoint { double x1; double x2; })centerOffset;
-- (id)model;
+- (id)_styleAttributes;
 - (void)addSublayer:(id)arg1;
+- (id)model;
 - (id)sublayers;
 - (id)superlayer;
 - (void)removeFromSuperlayer;
 - (id)init;
 - (void)dealloc;
 - (id).cxx_construct;
-- (double)contentScale;
 - (void)setModel:(id)arg1;
+- (double)contentScale;
 - (void)_updateStyle;
 
 @end

@@ -55,7 +55,6 @@
 + (void)preloadImagesForPlayers:(id)arg1 size:(long long)arg2;
 + (long long)sizeForPhotoSize:(long long)arg1;
 
-- (bool)hasPhoto;
 - (id)playerID;
 - (void)loadProfileWithCompletionHandler:(id)arg1;
 - (id)minimalPlayer;
@@ -80,6 +79,7 @@
 - (id)internal;
 - (void)setInternal:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
+- (bool)hasPhoto;
 - (id)sortName;
 - (void)_postChangeNotification;
 - (id)email;

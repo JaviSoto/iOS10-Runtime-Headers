@@ -25,6 +25,7 @@
 @property(readonly) NSArray * queuedMessages;
 @property(readonly) NSArray * allMessages;
 @property(readonly) long long maxMessageSize;
+@property(readonly) long long maxLargeMessageSize;
 @property unsigned long long maxConcurrentMessages;
 
 + (Class)APNSMessageDeliveryClass;
@@ -38,7 +39,7 @@
 - (unsigned long long)maxConcurrentMessages;
 - (void)setLogToRegistration:(bool)arg1;
 - (void)_signMessage:(id)arg1 useDataSignatures:(bool)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
-- (long long)maxMessageSize;
+- (long long)maxLargeMessageSize;
 - (void)_setRetryTimer:(double)arg1;
 - (void)cancelMessage:(id)arg1;
 - (bool)hasQueuedItems;
@@ -47,6 +48,7 @@
 - (id)currentMessage;
 - (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(long long)arg4;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
+- (long long)maxMessageSize;
 - (void)_retryTimerHit:(id)arg1;
 - (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (bool)logToRegistration;
@@ -56,10 +58,10 @@
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
 - (id)_queue;
-- (bool)sendMessage:(id)arg1;
 - (id)protocolVersion;
 - (void)setProtocolVersion:(id)arg1;
 - (id)init;
+- (bool)sendMessage:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 

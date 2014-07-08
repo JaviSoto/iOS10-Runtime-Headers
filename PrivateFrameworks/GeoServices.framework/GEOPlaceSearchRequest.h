@@ -59,6 +59,7 @@
     GEOAddress *_preserveFields;
     NSString *_search;
     NSString *_searchContext;
+    GEOLatLng *_searchLocation;
     int _searchSource;
     int _sequenceNumber;
     NSMutableArray *_serviceTags;
@@ -248,16 +249,17 @@
 @property int searchSource;
 @property(readonly) unsigned long long optionalSuppressionReasonsCount;
 @property(readonly) int* optionalSuppressionReasons;
+@property(readonly) bool hasSearchLocation;
+@property(retain) GEOLatLng * searchLocation;
 
 
 - (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (bool)hasSessionGUID;
-- (id)initWithPlace:(id)arg1;
 - (bool)hasDeviceLocation;
 - (bool)isEqualForHistoryToRequest:(id)arg1;
-- (id)initWithTraits:(id)arg1 localSearchProviderID:(int)arg2 maxResults:(int)arg3;
-- (id)initWithTraits:(id)arg1 localSearchProviderID:(int)arg2;
-- (id)initWithTraits:(id)arg1 includeEntryPoints:(bool)arg2 localSearchProviderID:(int)arg3;
+- (id)initWithTraits:(id)arg1 maxResults:(int)arg2;
+- (id)initWithTraits:(id)arg1 includeEntryPoints:(bool)arg2;
+- (id)searchLocation;
 - (int)searchSource;
 - (bool)includeMatchedToken;
 - (bool)includeRevgeoRequestTemplate;
@@ -299,6 +301,7 @@
 - (int)businessSortOrder;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionGUID;
 - (bool)includePhonetics;
+- (bool)hasSearchLocation;
 - (void)setOptionalSuppressionReasons:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)optionalSuppressionReasons;
 - (bool)hasSearchSource;
@@ -422,10 +425,12 @@
 - (int)additionalPlaceTypeAtIndex:(unsigned long long)arg1;
 - (void)clearAdditionalPlaceTypes;
 - (unsigned long long)additionalPlaceTypesCount;
+- (void)addBusinessID:(unsigned long long)arg1;
 - (unsigned long long)businessIDAtIndex:(unsigned long long)arg1;
 - (void)clearBusinessIDs;
 - (unsigned long long)businessIDsCount;
 - (void)addFilterByBusinessCategory:(id)arg1;
+- (void)setSearchLocation:(id)arg1;
 - (void)setKnownLocation:(id)arg1;
 - (void)setIndexFilter:(id)arg1;
 - (void)setPreserveFields:(id)arg1;
@@ -472,7 +477,6 @@
 - (bool)hasAddress;
 - (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
-- (void)addBusinessID:(unsigned long long)arg1;
 - (void)setAddress:(id)arg1;
 - (int)knownAccuracy;
 - (bool)hasKnownAccuracy;
@@ -485,6 +489,7 @@
 - (bool)hasZilchPoints;
 - (void)setZilchPoints:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
@@ -504,10 +509,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)address;
 - (id)dictionaryRepresentation;
+- (id)initWithTraits:(id)arg1;
 - (void)_applyDisplayableSearchProperties;
-- (void)_applyBasicSearchProperties:(bool)arg1;
-- (id)initWithGEOAddress:(id)arg1;
-- (id)initWithBusinessID:(unsigned long long)arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (void)_applyBasicSearchProperties;
 
 @end

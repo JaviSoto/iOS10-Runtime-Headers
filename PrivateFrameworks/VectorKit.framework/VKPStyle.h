@@ -53,13 +53,13 @@
 - (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (id)attributes;
+- (void)setName:(id)arg1;
 - (void)setContents:(id)arg1;
 - (id)contents;
 - (void)setAttributes:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)properties;
 - (void)dealloc;
 - (id)description;

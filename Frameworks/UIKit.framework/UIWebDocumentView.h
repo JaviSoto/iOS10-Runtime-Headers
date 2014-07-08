@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextChecker, WebThreadSafeUndoManager, UITextInputTraits, DOMNode, UIWebRotatingSheet, NSDictionary, DOMHTMLElement, WebHistoryItem, _UIWebHighlightLongPressGestureRecognizer, UILongPressGestureRecognizer, UITextRange, UITextPosition, UIImage, NSTimer, NSArray, NSString, DOMRange, UITextInteractionAssistant, _UITextServiceSession, UIWebSelectionAssistant, UIAutoscroll, <UITextInputTokenizer>, UIView, UIWebFileUploadPanel, _UIWebViewportHandler, UIPanGestureRecognizer, UIWebPlaybackTargetPicker, CALayer, <UITextInputDelegate>, UIColor, UITapGestureRecognizer, WebView;
+@class UITextChecker, WebThreadSafeUndoManager, UITextInputTraits, DOMNode, NSDictionary, UIWebRotatingAlertController, DOMHTMLElement, WebHistoryItem, _UIWebHighlightLongPressGestureRecognizer, UILongPressGestureRecognizer, UITextRange, UITextPosition, UIImage, NSTimer, NSArray, NSString, DOMRange, UITextInteractionAssistant, _UITextServiceSession, UIWebSelectionAssistant, UIAutoscroll, <UITextInputTokenizer>, UIView, UIWebFileUploadPanel, _UIWebViewportHandler, UIPanGestureRecognizer, UIWebPlaybackTargetPicker, CALayer, <UITextInputDelegate>, UIColor, UITapGestureRecognizer, WebView;
 
-@interface UIWebDocumentView : UIWebTiledView <UIActionSheetDelegate, _UIRotatingActionSheetDelegate, UITextAutoscrolling, UIAutoscrollContainer, UIGestureRecognizerDelegate, UIKeyboardInput, UITextInputPrivate, UIKeyInput, UIModalViewDelegate, UITextInputTokenizer, _UIWebDoubleTapDelegate, UIWebFileUploadPanelDelegate> {
+@interface UIWebDocumentView : UIWebTiledView <DDDetectionControllerInteractionDelegate, _UIRotatingAlertControllerDelegate, UITextAutoscrolling, UIAutoscrollContainer, UIGestureRecognizerDelegate, UIKeyboardInput, UITextInputPrivate, UIKeyInput, UIModalViewDelegate, UITextInputTokenizer, _UIWebDoubleTapDelegate, UIWebFileUploadPanelDelegate> {
     WebView *_webView;
     id m_parentTextView;
     id _delegate;
@@ -80,8 +80,7 @@
         } lastPanTranslation; 
         DOMNode *element; 
         id delegate; 
-        UIWebRotatingSheet *interactionSheet; 
-        NSArray *elementActions; 
+        UIWebRotatingAlertController *interactionSheet; 
         boolallowsImageSheet; 
         boolallowsDataDetectorsSheet; 
         boolallowsLinkSheet; 
@@ -260,10 +259,10 @@
 + (id)standardTextViewPreferences;
 + (Class)layerClass;
 
+- (void)setPaused:(bool)arg1;
 - (bool)isEditing;
 - (bool)isEditable;
 - (void)setBaseWritingDirection:(long long)arg1;
-- (void)setPaused:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })exposedScrollViewRect;
 - (bool)resignFirstResponder;
 - (bool)becomeFirstResponder;
@@ -377,6 +376,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_presentationRectForSheetGivenPoint:(struct CGPoint { double x1; double x2; })arg1 inHostView:(id)arg2;
 - (void)actionDidFinish;
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(bool)arg2;
+- (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)_setAcceptsFirstResponder:(bool)arg1;
 - (id)superviewForSheet;
 - (id)interactionElement;
@@ -384,9 +384,10 @@
 - (void)setAllowsImageSheet:(bool)arg1;
 - (id)interactionDelegate;
 - (void)setInteractionDelegate:(id)arg1;
+- (void)_didDismissElementSheet;
+- (id)_targetURL;
 - (void)highlightApproximateNodeAndDisplayInfoSheet;
 - (bool)gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
-- (id)_targetURL;
 - (void)hideTapHighlight;
 - (void)resetInteraction;
 - (void)performInteractionSelector:(SEL)arg1 afterDelay:(double)arg2;
@@ -782,8 +783,6 @@
 - (id)scriptingInfoWithChildren;
 - (void)setText:(id)arg1;
 - (bool)_isDisplayingShortcutViewController;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;

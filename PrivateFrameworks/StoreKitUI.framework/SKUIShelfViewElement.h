@@ -16,8 +16,8 @@
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)slideshowTitle;
-- (long long)pageComponentType;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
+- (long long)pageComponentType;
 - (void).cxx_destruct;
 - (long long)numberOfRows;
 

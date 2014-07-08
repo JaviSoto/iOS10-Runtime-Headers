@@ -18,11 +18,10 @@
     NSArray *_viewElements;
 }
 
-@property(retain) SKUIShelfPageComponent * pageComponent;
+@property(readonly) SKUIShelfPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
-- (void)collectionView:(id)arg1 layout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (double)_columnSpacingForViewElements:(id)arg1;
 - (Class)_cellClassForLockup:(id)arg1;
@@ -31,22 +30,24 @@
 - (id)_dequeueCellForLockup:(id)arg1 collectionView:(id)arg2 indexPath:(id)arg3;
 - (void)_reloadShelfLayoutData;
 - (Class)_cellClassForViewElement:(id)arg1;
+- (double)_perspectiveHeightForContentSize:(double)arg1;
 - (id)_shelfCollectionView;
 - (id)backgroundColorForIndexPath:(id)arg1;
+- (long long)applyUpdateType:(long long)arg1;
 - (void)_reloadViewElementProperties;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
-- (void)prefetchResourcesWithReason:(long long)arg1;
+- (void)collectionView:(id)arg1 layout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)invalidateCachedLayoutInformation;
 - (void)deselectItemsAnimated:(bool)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
-- (void)setPageComponent:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
-- (void)viewElementSlideshowWillDismiss:(id)arg1;
 - (void)collectionView:(id)arg1 didConfirmButtonElement:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)viewElementSlideshowWillDismiss:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)dealloc;
 - (void).cxx_destruct;

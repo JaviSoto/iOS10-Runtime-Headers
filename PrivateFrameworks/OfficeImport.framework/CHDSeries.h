@@ -59,11 +59,11 @@
 - (id)categoryData;
 - (id)lastCachedName;
 - (id)graphicProperties;
+- (void)setName:(id)arg1;
 - (bool)isHidden;
 - (id)name;
 - (bool)isEmpty;
 - (long long)key;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)order;
 - (void)setOrder:(unsigned long long)arg1;

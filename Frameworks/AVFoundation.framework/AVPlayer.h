@@ -40,7 +40,6 @@
 + (id)playerWithURL:(id)arg1;
 + (void)initialize;
 
-- (long long)status;
 - (void)setMuted:(bool)arg1;
 - (id)currentItem;
 - (id)vibrationPattern;
@@ -116,6 +115,7 @@
 - (bool)allowsAirPlayVideo;
 - (void)setUsesAudioOnlyModeForExternalPlayback:(bool)arg1;
 - (bool)usesAudioOnlyModeForExternalPlayback;
+- (bool)isDisplayingClosedCaptions;
 - (bool)isClosedCaptionDisplayEnabled;
 - (long long)actionAtItemEnd;
 - (void)_setUserVolume:(float)arg1;
@@ -147,6 +147,7 @@
 - (bool)_externalPlaybackActive;
 - (bool)_usesExternalPlaybackWhileExternalScreenIsActive;
 - (bool)_allowsExternalPlayback;
+- (bool)_isDisplayingClosedCaptions;
 - (bool)_isClosedCaptionDisplayEnabled;
 - (void)_setActionAtItemEnd:(long long)arg1 allowingAdvance:(bool)arg2;
 - (long long)_actionAtItemEnd;
@@ -209,7 +210,9 @@
 - (void)_updateClosedCaptionLayerBounds:(id)arg1;
 - (struct OpaqueCMClock { }*)masterClock;
 - (id)_weakReference;
+- (long long)status;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(bool)arg1;
 - (bool)allowsExternalPlayback;
 - (bool)isExternalPlaybackActive;
 - (void)setClosedCaptionDisplayEnabled:(bool)arg1;
@@ -217,7 +220,6 @@
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)setAllowsExternalPlayback:(bool)arg1;
 - (void)setAppliesMediaSelectionCriteriaAutomatically:(bool)arg1;
-- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(bool)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (long long)externalPlaybackType;
 - (void)_removeAllLayers;

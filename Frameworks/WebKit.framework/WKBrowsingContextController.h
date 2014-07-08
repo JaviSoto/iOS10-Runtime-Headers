@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKBrowsingContextHandle, NSString, _WKRemoteObjectRegistry, <WKBrowsingContextLoadDelegate>, WKBackForwardList, <WKBrowsingContextHistoryDelegate>, NSData, NSURL, NSArray, <WKBrowsingContextPolicyDelegate>;
+@class WKBrowsingContextHandle, NSString, _WKRemoteObjectRegistry, <WKBrowsingContextLoadDelegate>, WKBackForwardList, <WKBrowsingContextHistoryDelegate>, NSURL, NSArray, <WKBrowsingContextPolicyDelegate>;
 
 @interface WKBrowsingContextController : NSObject  {
     struct WeakObjCPtr<id<WKBrowsingContextHistoryDelegate> > { 
@@ -46,7 +46,6 @@
 @property(readonly) bool canGoForward;
 @property(readonly) bool canGoBack;
 @property(readonly) WKBackForwardList * backForwardList;
-@property(readonly) NSData * sessionState;
 @property(getter=isLoading,readonly) bool loading;
 @property(readonly) NSURL * activeURL;
 @property(readonly) NSURL * provisionalURL;
@@ -65,10 +64,10 @@
 + (id)_browsingContextControllerForPageRef:(struct OpaqueWKPage { }*)arg1;
 
 - (void)setLoadDelegate:(id)arg1;
+- (id)loadDelegate;
 - (bool)paginationBehavesLikeColumns;
 - (void)setPaginationBehavesLikeColumns:(bool)arg1;
 - (unsigned long long)observedRenderingProgressEvents;
-- (id)loadDelegate;
 - (void)setPageZoom:(double)arg1;
 - (double)pageZoom;
 - (void)setTextZoom:(double)arg1;
@@ -78,7 +77,6 @@
 - (id)committedURL;
 - (id)provisionalURL;
 - (id)activeURL;
-- (void)restoreFromSessionState:(id)arg1;
 - (void)loadFileURL:(id)arg1 restrictToFilesWithin:(id)arg2;
 - (void)loadData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2 userData:(id)arg3;
@@ -89,7 +87,6 @@
 - (void)goToBackForwardListItem:(id)arg1;
 - (struct OpaqueWKPage { }*)_pageRef;
 - (id)_remoteObjectRegistry;
-- (id)sessionState;
 - (void)reload;
 - (int)processIdentifier;
 - (void)setHistoryDelegate:(id)arg1;

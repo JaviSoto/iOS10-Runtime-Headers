@@ -24,8 +24,8 @@
 @property(retain) NSURL * documentURL;
 @property(readonly) <NSCopying><NSSecureCoding> * persistentIdentifier;
 
-+ (id)storageIDForItemAtURL:(id)arg1 error:(id*)arg2;
 + (id)storagePrefixForFileDescriptor:(int)arg1 error:(id*)arg2;
++ (id)storageIDForItemAtURL:(id)arg1 error:(id*)arg2;
 
 - (unsigned long long)storageID;
 - (void)setStagingPrefix:(id)arg1;

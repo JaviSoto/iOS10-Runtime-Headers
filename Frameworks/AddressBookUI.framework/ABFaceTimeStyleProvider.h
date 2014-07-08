@@ -39,23 +39,23 @@
 @property(readonly) bool vibrationPickerHeaderTextShouldBeUppercase;
 
 
-- (id)vibrationPickerCellSelectedTextColor;
-- (id)tonePickerCellSelectedTextColor;
-- (bool)vibrationPickerHeaderTextShouldBeUppercase;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationPickerHeaderTextPaddingInsets;
 - (struct UIOffset { double x1; double x2; })vibrationPickerHeaderTextShadowOffset;
 - (id)vibrationPickerHeaderTextShadowColor;
 - (id)vibrationPickerHeaderTextColor;
 - (id)vibrationPickerHeaderTextFont;
+- (bool)vibrationPickerHeaderTextShouldBeUppercase;
 - (bool)wantsCustomVibrationPickerHeaderView;
+- (id)newAccessoryDisclosureIndicatorViewForVibrationPickerCell;
+- (id)newBackgroundViewForSelectedVibrationPickerCell:(bool)arg1;
 - (id)vibrationPickerCellBackgroundColor;
 - (id)vibrationPickerCellHighlightedTextColor;
 - (id)vibrationPickerCellTextColor;
 - (id)vibrationPickerCellTextFont;
 - (long long)vibrationPickerTableViewSeparatorStyle;
 - (bool)vibrationPickerUsesOpaqueBackground;
-- (id)newAccessoryDisclosureIndicatorViewForVibrationPickerCell;
-- (id)newBackgroundViewForSelectedVibrationPickerCell:(bool)arg1;
+- (id)vibrationPickerCellSelectedTextColor;
+- (id)tonePickerCellSelectedTextColor;
 - (bool)tonePickerHeaderTextShouldBeUppercase;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tonePickerHeaderTextPaddingInsets;
 - (struct UIOffset { double x1; double x2; })tonePickerHeaderTextShadowOffset;

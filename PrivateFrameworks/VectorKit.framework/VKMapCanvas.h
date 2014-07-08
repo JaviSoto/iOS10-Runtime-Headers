@@ -85,6 +85,7 @@
 - (void)overlayContainer:(id)arg1 updatedMatchedSection:(struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; })arg2 index:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3;
 - (void)mapModel:(id)arg1 didUpdateContainsOverlay:(bool)arg2;
 - (void)mapModel:(id)arg1 didUpdateNavigationPuckSize:(float)arg2;
+- (void)mapModelDidUpdateMinMaxZoomLevel:(id)arg1;
 - (void)mapModel:(id)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
 - (void)mapModel:(id)arg1 selectedLabelMarkerWillDisappear:(id)arg2;
 - (double)mapModelZoomScale:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPImageCache, NSMutableDictionary, UIImage, NSObject<OS_dispatch_queue>, NSData, MPAVController;
+@class NSData, UIImage, MPImageCache, MPAVController, NSMutableDictionary, MPStoreDownload, NSObject<OS_dispatch_queue>;
 
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -12,6 +12,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_statusBarQueue;
     NSMutableDictionary *_mediaItemCoalescedUpdateDateAccessedTimers;
+    MPStoreDownload *_activeDownload;
     bool_enabled;
     MPImageCache *_imageCache;
     MPAVController *_player;
@@ -31,12 +32,14 @@
 - (void)_setNowPlayingInfo:(id)arg1 forItem:(id)arg2;
 - (void)_postNowPlayingInfoForItem:(id)arg1;
 - (long long)_MPNowPlayingDownloadStateForDownload:(id)arg1;
+- (id)_activeDownloadForItemWithStoreID:(long long)arg1;
 - (long long)_MPNowPlayingShuffleModeForMPShuffleType:(unsigned long long)arg1;
 - (long long)_MPNowPlayingRepeatModeForMPRepeatType:(unsigned long long)arg1;
 - (void)_prefetchArtworkForNextItem;
 - (void)_coalescedUpdateLastUsedDateForCurrentItem;
 - (bool)_hasProperConditionsToLoadArtwork;
-- (bool)_storeDownloadsContainNowPlayingItem:(id)arg1;
+- (void)_updateProgressForDownload:(id)arg1;
+- (id)_storeDownloadForNowPlayingItemInArray:(id)arg1;
 - (void)_postNowPlayingInfo;
 - (bool)_reloadArtworkIfPossible;
 - (void)_unregisterForNotificationsForPlayer:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)_avItemDurationDidChangeNotification:(id)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;

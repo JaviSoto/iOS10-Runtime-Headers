@@ -25,6 +25,7 @@
 
 + (unsigned long long)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
 + (id)sortedNameInfoComparatorWithHomeAtEnd:(bool)arg1;
++ (id)_namingOrderForAssetReverseGeoDescription;
 + (unsigned long long)currentVersion;
 
 - (unsigned long long)providerVersion;
@@ -44,6 +45,7 @@
 - (id)countryCode;
 - (id)init;
 - (bool)isValid;
+- (id)localizedDescription;
 - (id)initWithData:(id)arg1;
 - (void)dealloc;
 - (id)description;

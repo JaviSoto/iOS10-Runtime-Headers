@@ -9,6 +9,7 @@
     _UIAlertControllerShimPresenter *_presenter;
     NSMutableArray *_actions;
     long long _cancelIndex;
+    long long _defaultButtonIndex;
     long long _firstOtherButtonIndex;
     long long _alertViewStyle;
     bool_runsModal;
@@ -16,6 +17,7 @@
     id _context;
     bool_hasPreparedAlertActions;
     bool_isPresented;
+    bool_alertControllerShouldDismiss;
     bool__currentlyRunningModal;
     UIViewController *externalViewControllerForPresentation;
 }
@@ -69,7 +71,6 @@
 - (void)_showByReplacingAlert:(id)arg1 animated:(bool)arg2;
 - (id)_representedModalItem;
 - (id)_representedModalItemView;
-- (void)_setAccessoryViewController:(id)arg1;
 - (void)replaceAlert:(id)arg1;
 - (void)_prepareForDisplay;
 - (int)numberOfLinesInTitle;
@@ -97,6 +98,7 @@
 - (int)bodyMaxLineCount;
 - (void)setBodyTextMaxLineCount:(int)arg1;
 - (int)titleMaxLineCount;
+- (void)setTitleMaxLineCount:(int)arg1;
 - (int)suspendTag;
 - (void)setSuspendTag:(int)arg1;
 - (void)layoutAnimated:(bool)arg1;
@@ -137,28 +139,31 @@
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
+- (void)_setAccessoryViewController:(id)arg1;
 - (id)bodyTextLabel;
+- (void)_endRunningModallyIfNecessary;
 - (void)_beginRunningModallyIfNecessary;
 - (id)textField;
+- (void)_setIsPresented:(bool)arg1;
 - (void)_showAnimated:(bool)arg1;
+- (void)_updateFirstOtherButtonEnabledState;
 - (id)_addTextFieldWithValue:(id)arg1 label:(id)arg2;
+- (void)_textDidChangeInTextField:(id)arg1;
 - (long long)_maximumNumberOfTextFieldsForCurrentStyle;
 - (int)textFieldCount;
 - (long long)alertViewStyle;
+- (long long)numberOfButtons;
+- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
 - (bool)_currentlyRunningModal;
 - (void)_setCurrentlyRunningModal:(bool)arg1;
 - (bool)runsModal;
 - (void)_prepareAlertActions;
-- (void)_setIsPresented:(bool)arg1;
-- (void)_endRunningModallyIfNecessary;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (id)_alertController;
-- (void)_indexTapped:(long long)arg1;
+- (bool)_dismissForTappedIndex:(long long)arg1;
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;
-- (long long)numberOfButtons;
-- (void)setTitleMaxLineCount:(int)arg1;
 - (void)dismissAnimated:(bool)arg1;
 - (void)dismiss;
 - (id)keyboard;

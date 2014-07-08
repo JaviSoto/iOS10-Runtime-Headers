@@ -145,8 +145,8 @@
 - (void)setCanBeShared:(bool)arg1;
 - (id)sharees;
 - (bool)isSubscribed;
-- (id)source;
 - (void)setLanguageCode:(id)arg1;
+- (id)source;
 - (id)languageCode;
 - (void)setSource:(id)arg1;
 - (id)timeZone;

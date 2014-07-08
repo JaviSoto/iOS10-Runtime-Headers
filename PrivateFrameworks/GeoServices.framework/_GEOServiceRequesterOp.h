@@ -19,10 +19,11 @@
 
     bool_cancelled;
     GEORequester *_requester;
+    NSString *_appIdentifier;
 }
 
 
-- (id)initWithRequest:(id)arg1 urlType:(unsigned long long)arg2 debugRequestName:(id)arg3;
+- (id)initWithRequest:(id)arg1 appIdentifier:(id)arg2 urlType:(unsigned long long)arg3 debugRequestName:(id)arg4;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;

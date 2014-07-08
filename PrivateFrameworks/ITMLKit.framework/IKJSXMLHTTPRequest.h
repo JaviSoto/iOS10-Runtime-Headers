@@ -4,7 +4,7 @@
 
 @class NSHTTPURLResponse, NSString, IKDOMDocument, JSManagedValue, ISURLOperation, NSDictionary, NSMutableArray, NSMutableData, NSMutableURLRequest, NSURLConnection;
 
-@interface IKJSXMLHTTPRequest : IKJSObject <ISURLOperationDelegate, IKJSXMLHTTPRequest> {
+@interface IKJSXMLHTTPRequest : IKJSObject <ISStoreURLOperationDelegate, IKJSXMLHTTPRequest> {
     bool_shouldSquashOnReadyStateEvents;
     int _onReadyStateChangeMessageQueueLock;
     bool_async;
@@ -79,7 +79,6 @@
 - (void)setReceivedData:(id)arg1;
 - (bool)jingleRequest;
 - (void)setRequestReadyState:(long long)arg1;
-- (void)setUrlRequest:(id)arg1;
 - (void)setUrlConnection:(id)arg1;
 - (id)urlConnection;
 - (void)_enqueueReadyStateChangeMessageRespectingSquash;
@@ -96,6 +95,7 @@
 - (void)setManagedSelf:(id)arg1;
 - (id)managedSelf;
 - (id)initWithAppContext:(id)arg1 jingleRequest:(bool)arg2;
+- (void)setUrlRequest:(id)arg1;
 - (void)_abort;
 - (void)setStatusText:(id)arg1;
 - (id)statusText;

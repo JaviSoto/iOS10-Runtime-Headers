@@ -14,8 +14,8 @@
 - (bool)hasSubstituteData;
 - (id)initWithURLString:(id)arg1 title:(id)arg2 originalRequest:(id)arg3 response:(id)arg4 hasSubstituteData:(bool)arg5 clientRedirectSource:(id)arg6;
 - (id)title;
-- (id)response;
 - (id)originalRequest;
+- (id)response;
 - (void)dealloc;
 
 @end

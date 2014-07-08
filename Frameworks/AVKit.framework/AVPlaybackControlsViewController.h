@@ -21,7 +21,7 @@
     bool_showsScaleButton;
     bool_showsLoadingIndicator;
     bool_showsMediaSelectionButton;
-    bool_showsFullScreenButton;
+    bool_showsExitFullScreenButton;
     bool_showsVolumeSlider;
     AVPlayerViewController *_playerViewController;
     double _scrubberWidth;
@@ -46,12 +46,11 @@
 @property long long scaleButtonType;
 @property bool showsLoadingIndicator;
 @property bool showsMediaSelectionButton;
-@property bool showsFullScreenButton;
+@property bool showsExitFullScreenButton;
 @property bool showsVolumeSlider;
 
 
 - (bool)showsVolumeSlider;
-- (bool)showsFullScreenButton;
 - (bool)showsMediaSelectionButton;
 - (void)setShowsLoadingIndicator:(bool)arg1;
 - (bool)showsLoadingIndicator;
@@ -74,13 +73,10 @@
 - (void)addControlForUserInteractionObservation:(id)arg1;
 - (void)fullScreenButtonTapped:(id)arg1;
 - (void)mediaSelectionButtonTapped:(id)arg1;
-- (void)seekChapterForward:(id)arg1;
-- (void)seekChapterBackward:(id)arg1;
 - (void)scaleButtonTapped:(id)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (void)_userInteractionObservationControlTouchUp:(id)arg1;
 - (void)_userInteractionObservationControlTouchDown:(id)arg1;
-- (id)playerViewController;
 - (void)setShowsVolumeSlider:(bool)arg1;
 - (void)updateScrubberValue:(float)arg1;
 - (void)setGotoEndOfSeekableRangesButtonEnabled:(bool)arg1;
@@ -98,7 +94,9 @@
 - (void)updateScrubberMaximumValue:(float)arg1;
 - (void)updateScrubberMinimumValue:(float)arg1;
 - (void)setScrubberEnabled:(bool)arg1;
-- (void)setShowsFullScreenButton:(bool)arg1;
+- (void)setShowsExitFullScreenButton:(bool)arg1;
+- (bool)showsExitFullScreenButton;
+- (id)playerViewController;
 - (void)setShowsDoneButton:(bool)arg1;
 - (void)_updateVolumeSliderVisibility;
 - (id)playerController;
@@ -106,6 +104,8 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)setPlayerViewController:(id)arg1;
 - (void)setPlayerController:(id)arg1;
+- (void)seekChapterForward:(id)arg1;
+- (void)seekChapterBackward:(id)arg1;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;

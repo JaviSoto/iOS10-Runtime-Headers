@@ -17,8 +17,8 @@
 @property(retain) CalDAVUpdateOwnerItem * updatedBy;
 
 
-- (id)updatedBy;
 - (id)createdBy;
+- (id)updatedBy;
 - (id)scheduleChanges;
 - (void)setUpdatedBy:(id)arg1;
 - (void)setCreatedBy:(id)arg1;

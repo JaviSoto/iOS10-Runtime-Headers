@@ -26,11 +26,11 @@
 
 + (bool)supportsSecureCoding;
 
+- (void)setCommentedItemID:(id)arg1;
 - (id)initWithMessage:(id)arg1 item:(id)arg2;
 - (void)setLocalID:(id)arg1;
 - (id)localID;
 - (id)_initWithMessage:(id)arg1 itemID:(id)arg2;
-- (void)setCommentedItemID:(id)arg1;
 - (id)commenterID;
 - (id)commentedItemID;
 - (void)setCommenterID:(id)arg1;

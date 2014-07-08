@@ -122,6 +122,7 @@
 - (id)composeMessage;
 - (id)composeFields;
 - (id)centered;
+- (id)medium;
 - (id)regular;
 - (id)thin;
 - (id)strong;

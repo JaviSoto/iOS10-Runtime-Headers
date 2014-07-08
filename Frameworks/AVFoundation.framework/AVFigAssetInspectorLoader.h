@@ -50,10 +50,10 @@
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
 - (struct OpaqueFigAsset { }*)_figAsset;
+- (id)resolvedURL;
 - (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelLoading;
-- (id)resolvedURL;
 - (id)URL;
 - (void)finalize;
 - (void)dealloc;

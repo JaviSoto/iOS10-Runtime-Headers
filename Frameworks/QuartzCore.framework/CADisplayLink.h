@@ -18,8 +18,8 @@
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 + (id)displayLinkWithDisplay:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 
-- (double)timestamp;
 - (void)setPaused:(bool)arg1;
+- (double)timestamp;
 - (bool)isPaused;
 - (void)setUserInfo:(id)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;

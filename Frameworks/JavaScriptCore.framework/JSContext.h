@@ -58,11 +58,11 @@
 - (void)setExceptionHandler:(id)arg1;
 - (void)setException:(id)arg1;
 - (id)initWithVirtualMachine:(id)arg1;
-- (id)objectForKeyedSubscript:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;

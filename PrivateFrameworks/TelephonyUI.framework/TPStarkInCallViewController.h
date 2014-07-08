@@ -47,6 +47,7 @@
 - (id)conferenceParticipantCallsForPhoneCall:(id)arg1;
 - (void)highlightHardPauseButton;
 - (void)selectNextHighlightableControlAscending:(bool)arg1;
+- (void)setIsMuted:(bool)arg1;
 - (bool)isSpringBoardPasscodeLocked;
 - (bool)areIncomingCallOptionsAllowed;
 - (void)setFailedCall:(id)arg1;
@@ -82,7 +83,6 @@
 - (id)representativePhoneCallForConferenceForGalleryView:(id)arg1;
 - (id)primaryPhoneCallsForGalleryView:(id)arg1;
 - (id)allConferenceParticipantCalls;
-- (void)setIsMuted:(bool)arg1;
 - (unsigned short)currentMode;
 - (bool)isMuted;
 - (bool)isAddCallAllowed;

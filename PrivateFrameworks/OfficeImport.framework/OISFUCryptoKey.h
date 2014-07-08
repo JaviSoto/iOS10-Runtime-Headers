@@ -16,7 +16,6 @@
 
 
 - (unsigned long long)keyLength;
-- (const char *)keyData;
 - (int)keyType;
 - (id)initAes128Key:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
 - (id)initAes128KeyFromPassphrase:(id)arg1 iterationCount:(unsigned int)arg2 saltData:(id)arg3;
@@ -27,6 +26,7 @@
 - (unsigned int)iterationCount;
 - (id)initAes128KeyFromPassphrase:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3 saltData:(id)arg4;
 - (id)passphrase;
+- (const char *)keyData;
 - (void)dealloc;
 
 @end

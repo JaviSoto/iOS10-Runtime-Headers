@@ -13,7 +13,6 @@
 }
 
 
-- (long long)status;
 - (struct OpaqueFigAssetWriter { }*)_retainedFigAssetWriter;
 - (id)figTrackReferences;
 - (void)didReceiveFigAssetWriterNotificationWithSuccess:(bool)arg1 error:(id)arg2;
@@ -24,6 +23,7 @@
 - (void)cancelWriting;
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (long long)status;
 - (void)finalize;
 - (void)dealloc;
 

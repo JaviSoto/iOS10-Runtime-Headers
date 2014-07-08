@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, NSArray;
+@class UIColor, NSArray, SKUIRowViewElement;
 
 @interface SKUIRowComponent : SKUIPageComponent  {
     UIColor *_backgroundColor;
@@ -13,6 +13,7 @@
     bool_shouldAutoFlow;
 }
 
+@property(readonly) SKUIRowViewElement * viewElement;
 @property(readonly) UIColor * backgroundColor;
 @property(readonly) NSArray * childComponents;
 @property(readonly) NSArray * columnWidths;
@@ -29,6 +30,7 @@
 - (id)metricsElementName;
 - (bool)isMissingItemData;
 - (void)enumerateMissingItemIdentifiersFromIndex:(long long)arg1 usingBlock:(id)arg2;
+- (id)initWithViewElement:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
 - (long long)componentType;
 - (id)backgroundColor;

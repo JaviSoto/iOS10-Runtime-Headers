@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, NSString, NSURL;
+@class NSString, UIImage, NSURL, NSAttributedString;
 
 @interface SKUIBadgeViewElement : SKUIViewElement  {
     UIImage *_fallbackImage;
@@ -11,19 +11,25 @@
         double width; 
         double height; 
     } _size;
+    NSString *_text;
     NSURL *_url;
 }
 
+@property(readonly) NSAttributedString * attributedString;
+@property(readonly) long long badgeType;
 @property(readonly) UIImage * fallbackImage;
 @property(readonly) NSString * resourceName;
 @property(readonly) struct CGSize { double x1; double x2; } size;
 @property(readonly) NSURL * URL;
 
 
+- (id)accessibilityText;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
+- (long long)badgeType;
 - (id)fallbackImage;
 - (id)resourceName;
+- (id)attributedString;
 - (id)URL;
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })size;

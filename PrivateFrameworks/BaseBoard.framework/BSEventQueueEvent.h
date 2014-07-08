@@ -23,13 +23,13 @@
 + (id)eventWithName:(id)arg1 handler:(id)arg2;
 
 - (void)execute;
+- (void)setName:(id)arg1;
 - (bool)isEqualToEvent:(id)arg1;
 - (void)_execute;
 - (void)setHandler:(id)arg1;
 - (void)executeFromEventQueue;
 - (id)handler;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

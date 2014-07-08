@@ -103,12 +103,12 @@
 - (id)contentFormat;
 - (unsigned long long)contentFormatId;
 - (void)setDeleted:(bool)arg1;
-- (bool)isDeleted;
-- (void)setOrientation:(int)arg1;
 - (int)orientation;
+- (bool)isDeleted;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)font;
+- (void)setOrientation:(int)arg1;
 - (long long)key;
 - (void)dealloc;
 - (id)description;

@@ -23,9 +23,9 @@
 - (void)stopIfNeeded;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
-- (id)initWithDelegate:(id)arg1;
 - (void)update;
 - (void)restart;
+- (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
 
 @end

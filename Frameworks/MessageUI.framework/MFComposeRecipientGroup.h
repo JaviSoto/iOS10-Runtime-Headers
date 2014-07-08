@@ -21,8 +21,8 @@
 - (id)placeholderName;
 - (id)commentedAddress;
 - (id)compositeName;
-- (int)property;
 - (void*)record;
+- (int)property;
 - (id)displayString;
 - (id)label;
 - (int)recordID;

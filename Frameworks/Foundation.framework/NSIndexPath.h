@@ -8,6 +8,8 @@
     void *_reserved;
 }
 
+@property(readonly) long long tk_section;
+@property(readonly) long long tk_row;
 @property(readonly) long long ab_group;
 @property(readonly) long long ab_item;
 @property(readonly) long long item;
@@ -23,6 +25,7 @@
 + (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
 + (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
 + (id)indexPathForItem:(long long)arg1 inGroup:(long long)arg2;
++ (id)tk_indexPathForRow:(long long)arg1 inSection:(long long)arg2;
 
 - (id)init;
 - (unsigned long long)length;
@@ -46,5 +49,7 @@
 - (long long)item;
 - (long long)ab_item;
 - (long long)ab_group;
+- (long long)tk_row;
+- (long long)tk_section;
 
 @end

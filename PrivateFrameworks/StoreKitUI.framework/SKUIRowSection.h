@@ -20,7 +20,7 @@
     double _portraitCellContentHeight;
 }
 
-@property(retain) SKUIRowComponent * pageComponent;
+@property(readonly) SKUIRowComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -61,7 +61,6 @@
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (id)_missingItemLoader;
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(long long)arg3;
-- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(long long)arg3;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
@@ -69,14 +68,15 @@
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionViewDidConfirmItemOfferAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)invalidateCachedLayoutInformation;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;

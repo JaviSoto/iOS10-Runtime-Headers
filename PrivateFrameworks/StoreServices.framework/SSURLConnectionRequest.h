@@ -38,9 +38,9 @@
 - (void)startWithCompletionBlock:(id)arg1;
 - (id)URLRequest;
 - (void)setDataConsumer:(id)arg1;
+- (id)requestProperties;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)requestProperties;
 - (id)init;
 - (id)initWithURLRequest:(id)arg1;
 - (bool)start;

@@ -31,7 +31,6 @@
     bool__proxySession;
     bool__preventsIdleSleep;
     bool__usePipeliningHeuristics;
-    bool__startSynchronously;
     int _TLSMinimumSupportedProtocol;
     int _TLSMaximumSupportedProtocol;
     NSString *_identifier;
@@ -132,7 +131,6 @@
 @property(getter=_isProxySession) bool _proxySession;
 @property bool _preventsIdleSleep;
 @property bool _usePipeliningHeuristics;
-@property bool _startSynchronously;
 @property(copy) NSArray * _contentDispHeadEncFallback;
 
 + (id)backgroundSessionConfiguration:(id)arg1;
@@ -151,8 +149,6 @@
 - (unsigned long long)hash;
 - (id)sourceApplicationBundleIdentifier;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
-- (void*)_copyAttribute:(struct __CFString { }*)arg1;
-- (struct OpaqueCFHTTPCookieStorage { }*)_copyCFCookieStorage;
 - (id)initWithDisposition:(id)arg1;
 - (void)setHSTSPolicy:(struct _CFHSTSPolicy { }*)arg1;
 - (void)setHTTPCookieStorage:(id)arg1;
@@ -172,7 +168,6 @@
 - (id)_connectionPoolName;
 - (double)_connectionCacheCellPurgeTimeout;
 - (double)_connectionCachePurgeTimeout;
-- (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (void)set_TCPAdaptiveWriteTimeout:(unsigned long long)arg1;
 - (void)set_TCPAdaptiveReadTimeout:(unsigned long long)arg1;
 - (void)set_sourceApplicationSecondaryIdentifier:(id)arg1;
@@ -182,8 +177,6 @@
 - (id)connectionProxyDictionary;
 - (int)TLSMaximumSupportedProtocol;
 - (int)TLSMinimumSupportedProtocol;
-- (void)set_startSynchronously:(bool)arg1;
-- (bool)_startSynchronously;
 - (void)set_usePipeliningHeuristics:(bool)arg1;
 - (bool)_usePipeliningHeuristics;
 - (void)set_preventsIdleSleep:(bool)arg1;
@@ -249,7 +242,6 @@
 - (bool)_allowsPowerNapScheduling;
 - (unsigned long long)_TCPAdaptiveWriteTimeout;
 - (unsigned long long)_TCPAdaptiveReadTimeout;
-- (id)_ledBellyServiceIdentifier;
 - (bool)_allowsExpensiveAccess;
 - (id)_socketStreamProperties;
 - (bool)_requiresPowerPluggedIn;
@@ -264,6 +256,10 @@
 - (void)setNetworkServiceType:(unsigned long long)arg1;
 - (bool)allowsCellularAccess;
 - (unsigned long long)networkServiceType;
+- (void)set_ledBellyServiceIdentifier:(id)arg1;
+- (id)_ledBellyServiceIdentifier;
+- (struct OpaqueCFHTTPCookieStorage { }*)_copyCFCookieStorage;
+- (void*)_copyAttribute:(struct __CFString { }*)arg1;
 - (bool)isBackgroundSession;
 - (id)disposition;
 - (void)setDiscretionary:(bool)arg1;

@@ -6,6 +6,7 @@
 }
 
 @property(readonly) bool showsInputViews;
+@property(readonly) bool showsKeyboard;
 @property(readonly) bool isUndocked;
 @property(readonly) bool isInteractive;
 
@@ -16,6 +17,7 @@
 - (unsigned long long)notificationsForTransitionToPlacement:(id)arg1;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
+- (bool)showsKeyboard;
 - (bool)inputViewWillAppear;
 - (bool)isUndocked;
 - (bool)showsInputViews;

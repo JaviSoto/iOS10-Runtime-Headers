@@ -49,7 +49,6 @@
 - (unsigned long long)sequenceNumber;
 - (id)bundleIdentifier;
 - (id)bundleExecutable;
-- (id)appStoreReceiptURL;
 - (id)machOUUIDs;
 - (id)localizedShortName;
 - (id)cacheGUID;
@@ -70,5 +69,6 @@
 - (unsigned long long)hash;
 - (void)dealloc;
 - (id)groupContainerURLs;
+- (id)appStoreReceiptURL;
 
 @end

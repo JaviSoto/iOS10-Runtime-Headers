@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSArray;
 
-@interface FigCaptureSourceFormat : NSObject <NSSecureCoding> {
+@interface FigCaptureSourceFormat : NSObject <FigXPCCoding> {
     NSDictionary *_formatDictionary;
     bool_isMultiStreamFormat;
     struct opaqueCMFormatDescription { } *_formatDescription;
@@ -39,6 +39,8 @@
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minExposureDuration;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxExposureDuration;
 @property(readonly) float aeMaxGain;
+@property(readonly) int maxIntegrationTimeOverride;
+@property(readonly) int video999;
 @property(getter=isMultiStreamFormat,readonly) bool multiStreamFormat;
 @property(readonly) bool hasFrontEndScalerCompanionIndex;
 @property(readonly) int frontEndScalerCompanionIndex;
@@ -54,12 +56,11 @@
 @property(readonly) float videoScaleFactor;
 
 + (void)initialize;
-+ (bool)supportsSecureCoding;
 
 - (struct { int x1; int x2; })sourceCropAspectRatio;
 - (struct { int x1; int x2; })sensorCropDimensions;
 - (int)frontEndScalerCompanionIndex;
-- (bool)isMultiStreamFormat;
+- (int)maxIntegrationTimeOverride;
 - (bool)ispChromaNoiseReduction;
 - (int)temporalNoiseReductionMode;
 - (float)videoScaleFactor;
@@ -80,12 +81,16 @@
 - (struct { int x1; int x2; })videoDimensions;
 - (unsigned int)videoFormat;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (int)video999;
 - (float)videoDefaultMinFrameRate;
 - (bool)needsPreviewDPCC;
 - (bool)isHighProfileH264Supported;
 - (int)videoRawBitDepth;
 - (bool)isVideoZoomDynamicSensorCropSupported;
 - (bool)isVideoLowLightBinningSwitchSupported;
+- (bool)isMultiStreamFormat;
 - (float)videoMaxSupportedFrameRate;
 - (bool)isHighResPhotoFormat;
 - (bool)isExperimental;
@@ -103,8 +108,6 @@
 - (float)videoMaxZoomFactor;
 - (unsigned int)mediaType;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

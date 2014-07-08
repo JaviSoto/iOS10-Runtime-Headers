@@ -10,6 +10,7 @@
 
 - (id)allCommentedAddresses;
 - (id)_generateAllObjectsFromSelector:(SEL)arg1;
+- (void)_setupSetWithCapacity:(unsigned long long)arg1;
 - (id)init;
 - (bool)isEqualToSet:(id)arg1;
 - (id)objectEnumerator;

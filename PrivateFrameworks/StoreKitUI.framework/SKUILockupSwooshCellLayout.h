@@ -63,8 +63,8 @@
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (id)price;
-- (void)setBackgroundColor:(id)arg1;
 - (id)category;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void).cxx_destruct;

@@ -52,7 +52,6 @@
 
 - (void)writeOutput:(id)arg1 append:(bool)arg2;
 - (id)createOutput;
-- (void)forceStop;
 - (void)sampleForDuration:(unsigned int)arg1 interval:(unsigned int)arg2;
 - (void)preloadSymbols;
 - (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1;
@@ -84,6 +83,7 @@
 - (void)_makeHighPriority;
 - (void)_checkDispatchThreadLimits;
 - (id)initWithPID:(int)arg1 orTask:(unsigned int)arg2 options:(unsigned long long)arg3;
+- (void)forceStop;
 - (bool)waitUntilDone;
 - (id)outputString;
 - (double)timeLimit;

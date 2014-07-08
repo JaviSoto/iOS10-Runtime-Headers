@@ -14,11 +14,13 @@
     bool_showsContentViewHighlight;
     UIActionSheet *_presentedActionSheet;
     UIPopoverController *_popoverController;
+    double __dimmingViewTopEdgeInset;
 }
 
 @property bool showsBackgroundComponentHighlights;
 @property bool showsBackgroundViewHighlight;
 @property bool showsContentViewHighlight;
+@property(setter=_setDimmingViewTopEdgeInset:) double _dimmingViewTopEdgeInset;
 @property double arrowOffset;
 @property unsigned long long arrowDirection;
 @property long long backgroundStyle;
@@ -50,11 +52,13 @@
 - (void)_showArrow;
 - (void)_setCornerRadius:(double)arg1;
 - (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 arrowOffset:(double)arg2;
+- (void)_setDimmingViewTopEdgeInset:(double)arg1;
 - (void)setPresentedActionSheet:(id)arg1;
 - (void)_layoutToolbarShine;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)standardChromeView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2 embeddedInView:(bool)arg3;
+- (double)_dimmingViewTopEdgeInset;
 - (void)setPopoverBackgroundColor:(id)arg1;
 - (id)popoverBackgroundColor;
 - (long long)backgroundStyle;

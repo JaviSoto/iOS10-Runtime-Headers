@@ -26,6 +26,7 @@
 - (id)relevantText;
 - (void)setRelevantText:(id)arg1;
 - (bool)hasAltitude;
+- (void)setName:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (double)altitude;
 - (void)setLatitude:(id)arg1;
@@ -35,7 +36,6 @@
 - (void)setAltitude:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

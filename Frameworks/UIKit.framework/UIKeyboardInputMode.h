@@ -5,6 +5,7 @@
 @class NSString, NSArray, NSBundle, NSExtension;
 
 @interface UIKeyboardInputMode : UITextInputMode <NSCopying> {
+    boolisDisplayed;
     NSString *primaryLanguage;
     NSString *languageWithRegion;
     NSString *identifier;
@@ -25,6 +26,7 @@
 @property(readonly) bool isExtensionInputMode;
 @property(readonly) NSExtension * extension;
 @property(readonly) NSBundle * containingBundle;
+@property bool isDisplayed;
 
 + (id)hardwareLayoutFromIdentifier:(id)arg1;
 + (id)softwareLayoutFromIdentifier:(id)arg1;
@@ -43,19 +45,21 @@
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayName;
+- (void)setIsDisplayed:(bool)arg1;
 - (id)softwareLayout;
 - (id)normalizedIdentifierLevels;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;
-- (void)setPrimaryLanguage:(id)arg1;
 - (void)setLanguageWithRegion:(id)arg1;
 - (id)languageWithRegion;
-- (id)primaryLanguage;
 - (bool)isDesiredForTraits:(id)arg1 forceASCIICapable:(bool)arg2;
+- (void)setPrimaryLanguage:(id)arg1;
+- (id)primaryLanguage;
 - (bool)defaultLayoutIsASCIICapable;
 - (bool)isAllowedForTraits:(id)arg1;
 - (bool)isDefaultRightToLeft;
 - (bool)isExtensionInputMode;
+- (bool)isDisplayed;
 - (id)identifierWithLayouts;
 - (id)extension;
 - (id)hardwareLayout;

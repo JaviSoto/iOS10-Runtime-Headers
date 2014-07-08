@@ -11,6 +11,7 @@
 @property(readonly) double duration;
 @property(readonly) double delay;
 
++ (id)factoryWithDuration:(double)arg1;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned long long)arg3 actions:(id)arg4;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3 completion:(id)arg4;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3;
@@ -25,7 +26,6 @@
 + (id)factoryWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
 + (id)factoryWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)factoryWithDuration:(double)arg1 delay:(double)arg2;
-+ (id)factoryWithDuration:(double)arg1;
 + (id)factoryWithAnimationAttributes:(id)arg1;
 + (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned long long)arg3 actions:(id)arg4 completion:(id)arg5;

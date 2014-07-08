@@ -18,10 +18,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setPcsError:(id)arg1;
+- (void)setWasRepaired:(bool)arg1;
 - (void)setPcsDiagnosticString:(id)arg1;
 - (void)setPcsStatus:(int)arg1;
-- (void)setWasRepaired:(bool)arg1;
+- (void)setPcsError:(id)arg1;
 - (id)pcsError;
 - (id)pcsDiagnosticString;
 - (bool)wasRepaired;

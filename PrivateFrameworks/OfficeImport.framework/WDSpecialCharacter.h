@@ -10,9 +10,9 @@
 }
 
 
-- (int)characterType;
 - (void)setCharacterType:(int)arg1;
 - (int)runType;
+- (int)characterType;
 - (id)initWithParagraph:(id)arg1;
 - (void)clearProperties;
 - (id)properties;

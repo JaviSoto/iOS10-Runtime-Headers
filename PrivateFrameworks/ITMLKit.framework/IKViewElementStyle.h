@@ -9,11 +9,12 @@
     NSMutableDictionary *_styleDict;
 }
 
-@property(retain) NSString * classSelector;
 @property(readonly) UIColor * color;
 @property(readonly) UIColor * backgroundColor;
+@property(readonly) NSString * badgeTreatment;
 @property(readonly) UIColor * borderColor;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } borderWidths;
+@property(readonly) NSString * dividerType;
 @property(readonly) double fontSize;
 @property(readonly) NSString * fontWeight;
 @property(readonly) long long maxTextLines;
@@ -21,6 +22,7 @@
 @property(readonly) unsigned long long elementAlignment;
 @property(readonly) unsigned long long elementPosition;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } elementPadding;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } elementMargin;
 @property(readonly) long long columnCount;
 @property(readonly) NSString * columnType;
 @property(readonly) NSString * columnItemType;
@@ -39,14 +41,17 @@
 @property(readonly) unsigned long long ordinalMaxLength;
 @property(readonly) NSString * lockupType;
 @property(readonly) NSString * visibility;
+@property(readonly) NSString * cardType;
+@property(retain) NSString * classSelector;
 @property(retain) NSMutableDictionary * styleDict;
 
-+ (id)elementStyleWithSelector:(id)arg1 inlineStyle:(id)arg2 aggregatingStyles:(id)arg3;
++ (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 inlineStyle:(id)arg3;
++ (id)elementStyleWithSelector:(id)arg1 aggregatingStyles:(id)arg2;
 + (id)elementStylesFromString:(id)arg1;
 + (unsigned long long)transitionFromString:(id)arg1;
 + (unsigned long long)positionFromString:(id)arg1;
 + (unsigned long long)alignmentFromString:(id)arg1;
-+ (void)registerStyle:(id)arg1 withType:(unsigned long long)arg2;
++ (void)registerStyle:(id)arg1 withType:(unsigned long long)arg2 inherited:(bool)arg3;
 + (void)initialize;
 
 - (void)setStyleDict:(id)arg1;
@@ -59,6 +64,7 @@
 - (id)columnItemType;
 - (id)columnType;
 - (long long)maxTextLines;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementMargin;
 - (id)valueForStyle:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsFromString:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromString:(id)arg1;
@@ -69,17 +75,22 @@
 - (id)_numberFromString:(id)arg1;
 - (id)styleDict;
 - (void)_parse:(id)arg1;
+- (void)_addParentStyle:(id)arg1;
 - (void)_addElementStyle:(id)arg1;
 - (id)initWithClassSelector:(id)arg1;
+- (id)initWithStyle:(id)arg1 classSelector:(id)arg2;
 - (id)initWithString:(id)arg1 classSelector:(id)arg2;
 - (long long)reflectImage;
 - (unsigned long long)imagePosition;
 - (id)imagePlaceholderURL;
 - (unsigned long long)elementAlignment;
+- (id)dividerType;
+- (unsigned long long)elementPosition;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementPadding;
 - (id)lockupType;
+- (id)cardType;
+- (id)badgeTreatment;
 - (id)imageTreatment;
-- (unsigned long long)elementPosition;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })borderWidths;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (id)visibility;

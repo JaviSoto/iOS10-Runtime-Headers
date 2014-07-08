@@ -36,6 +36,5 @@
 - (id)pointerFunctions;
 - (id)initWithPointerFunctions:(id)arg1;
 - (id)initWithOptions:(unsigned long long)arg1;
-- (id)firstObject;
 
 @end

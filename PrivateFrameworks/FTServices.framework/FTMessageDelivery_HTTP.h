@@ -25,8 +25,8 @@
 - (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_clearRetryTimer;
 - (void)networkStateChanged;
-- (bool)sendMessage:(id)arg1;
 - (id)init;
+- (bool)sendMessage:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 

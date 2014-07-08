@@ -20,7 +20,6 @@
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 
-- (long long)status;
 - (void)_primeCacheOnDispatchQueue;
 - (id)_figPlaybackItemNotificationNames;
 - (id)_figAssetNotificationNames;
@@ -40,6 +39,7 @@
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_weakReference;
+- (long long)status;
 - (void)pause;
 - (id)init;
 - (long long)priority;

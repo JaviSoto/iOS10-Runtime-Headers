@@ -28,9 +28,9 @@
 - (id)parameters;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setName:(id)arg1;
 - (id)name;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

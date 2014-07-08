@@ -12,6 +12,8 @@
     NSNumber *inputShadows;
     NSNumber *inputHighlights;
     NSNumber *inputBlack;
+    NSNumber *inputUseCube;
+    CIImage *_cubeImage;
 }
 
 @property(retain) CIImage * inputImage;
@@ -21,9 +23,11 @@
 @property(retain) NSNumber * inputShadows;
 @property(retain) NSNumber * inputHighlights;
 @property(retain) NSNumber * inputBlack;
+@property(retain) NSNumber * inputUseCube;
 
 + (id)customAttributes;
 
+- (void)setInputUseCube:(id)arg1;
 - (void)setInputBlack:(id)arg1;
 - (id)inputBlack;
 - (void)setInputHighlights:(id)arg1;
@@ -36,6 +40,7 @@
 - (id)_kernelH;
 - (id)_kernelBpos;
 - (id)_kernelBneg;
+- (id)inputUseCube;
 - (id)inputContrast;
 - (id)inputBrightness;
 - (void)setInputBrightness:(id)arg1;
@@ -44,5 +49,7 @@
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)dealloc;
 
 @end

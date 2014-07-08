@@ -98,12 +98,12 @@
 - (void)setAlbum:(id)arg1;
 - (bool)hasArtist;
 - (void)setArtist:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (int)discNumber;
 - (id)composer;
 - (id)artist;
 - (id)album;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (int)audioFormat;
 - (id)lyrics;
 - (bool)isEqual:(id)arg1;

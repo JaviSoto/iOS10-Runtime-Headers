@@ -97,11 +97,11 @@
 - (id)managedObjectModel;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (bool)setURL:(id)arg1 forPersistentStore:(id)arg2;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
 - (void)unlock;
 - (void)lock;
-- (void)setName:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
 

@@ -18,11 +18,11 @@
 + (id)archiveDirectory;
 
 - (id)transientPhotoLibrary;
-- (id)serialOperationQueue;
 - (void)setShouldPrioritize:(bool)arg1;
 - (void)runAndWaitForMessageToBeSent;
 - (bool)shouldPrioritize;
 - (void)runDaemonSide;
+- (id)serialOperationQueue;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)archiveXPCToDisk:(id)arg1;
 - (bool)shouldArchiveXPCToDisk;

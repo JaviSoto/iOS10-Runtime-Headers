@@ -37,10 +37,10 @@
 - (long long)ratingSystem;
 - (id)contentRatingDictionary;
 - (bool)isExplicitContent;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)ratingDescription;
 - (id)ratingLabel;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isRestricted;
 - (id)init;

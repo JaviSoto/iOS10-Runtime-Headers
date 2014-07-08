@@ -323,6 +323,7 @@
 - (double)maximumZoomScale;
 - (void)setMaximumZoomScale:(double)arg1;
 - (void)setMinimumZoomScale:(double)arg1;
+- (struct UIOffset { double x1; double x2; })_offsetForCenterOfPossibleZoomView:(id)arg1 withIncomingBoundsSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_setAutomaticContentConstraints:(id)arg1;
 - (bool)_wantsConstrainedContentSize;
 - (double)_defaultPagingFriction;
@@ -570,5 +571,8 @@
 - (void)runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(int)arg3;
 - (void)scrollBy:(float)arg1 forIterations:(int)arg2;
 - (void)_testingScrollStep;
+- (bool)restoreScrollPositionForKey:(id)arg1;
+- (void)saveScrollPositionForKey:(id)arg1;
+- (id)keyForContentMode:(int)arg1;
 
 @end

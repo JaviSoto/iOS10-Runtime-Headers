@@ -9,7 +9,7 @@
 
 @class NSString, NSData;
 
-@interface NSString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue, CKShortDescription> {
+@interface NSString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue, CKShortDescription, PQLBindable, PQLResultSetInitializer> {
 }
 
 @property(readonly) NSString * tsu_UTIFilenameExtension;
@@ -89,6 +89,7 @@
 + (id)_webkit_localCacheDirectoryWithBundleIdentifier:(id)arg1;
 + (id)MCMakeUUID;
 + (double)widthFittingMaximumInteger:(long long)arg1 withFont:(id)arg2;
++ (id)apsStringGUID;
 + (id)CDVPreconditionHeaderValueWithCTag:(id)arg1;
 + (id)CDVStringWithNumberOfSpaces:(unsigned long long)arg1;
 + (id)CDVPreconditionHeaderValueWithCTag:(id)arg1 pathTag:(id)arg2;
@@ -98,7 +99,6 @@
 + (id)ellipsisString;
 + (id)_phoneURLScheme;
 + (id)gs_stringWithFileSystemRepresentation:(const char *)arg1;
-+ (id)apsStringGUID;
 + (id)mf_formattedAddressWithName:(id)arg1 email:(id)arg2 useQuotes:(bool)arg3;
 + (id)mf_partialSurnames;
 + (id)mf_nameExtensions;
@@ -132,6 +132,10 @@
 + (id)ellipsisString;
 + (id)stringWithContentsOfFile:(id)arg1 usingEncoding:(unsigned long long)arg2;
 + (id)stringWithFileSystemRepresentation:(const char *)arg1;
++ (id)brc_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
++ (id)brc_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(bool)arg4;
++ (id)brc_pathWithFileSystemRepresentation:(const char *)arg1;
++ (id)brc_hexadecimalStringWithBytes:(const char *)arg1 length:(unsigned long long)arg2;
 + (id)numberSymbols;
 + (id)stringWithFormat:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;
 + (id)stringByHexEncodingData:(id)arg1;
@@ -164,7 +168,6 @@
 - (long long)localizedCaseInsensitiveCompare:(id)arg1;
 - (long long)localizedCompare:(id)arg1;
 - (unsigned long long)maximumLengthOfBytesUsingEncoding:(unsigned long long)arg1;
-- (id)stringByAppendingString:(id)arg1;
 - (long long)caseInsensitiveCompare:(id)arg1;
 - (id)substringFromIndex:(unsigned long long)arg1;
 - (id)substringToIndex:(unsigned long long)arg1;
@@ -230,6 +233,7 @@
 - (bool)_web_isCaseInsensitiveEqualToString:(id)arg1;
 - (id)stringByTrimmingCharactersInSet:(id)arg1;
 - (id)componentsSeparatedByString:(id)arg1;
+- (id)stringByAppendingString:(id)arg1;
 - (id)stringByAppendingPathComponent:(id)arg1;
 - (id)lastPathComponent;
 - (id)lowercaseString;
@@ -598,6 +602,7 @@
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
 - (void)tryToColorizeWithTokens:(char **)arg1 nbTokens:(unsigned long long)arg2 ptr:(char *)arg3 text:(const char *)arg4 firstCharSet:(id)arg5 secondCharSet:(id)arg6 color:(id)arg7 font:(id)arg8 attributedString:(id)arg9;
 - (id)colorizeWithKeywords:(id)arg1 classes:(id)arg2;
+- (bool)hasSuffixInsensitive:(id)arg1;
 - (id)MCSHA256DigestWithPasscodeSalt;
 - (id)MCOldStyleSafeFilenameHash;
 - (id)MCHashedFilenameWithExtension:(id)arg1;
@@ -621,7 +626,9 @@
 - (id)displayableStringByStrippingOffCommonPrefixWithString:(id)arg1;
 - (id)displayableStringByTrimmingPrefixString:(id)arg1;
 - (id)MP_attributedStringWithEmphasizedTextSeparator:(id)arg1 regularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
-- (bool)hasSuffixInsensitive:(id)arg1;
+- (id)CKSafeHashStringForPathComponent;
+- (id)CKSafeStringForPathComponent;
+- (id)ckShortDescription;
 - (id)CDVStringByXMLQuoting;
 - (id)CDVStringByAddingPercentEscapesForUserOrPassword;
 - (id)CDVStringByRemovingTerminatingSlashIfNeeded;
@@ -735,8 +742,6 @@
 - (id)mf_copyStringByDecodingIDNAInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_FTDataFromBase64String;
 - (id)_FTDataFromHexString;
-- (id)CKSafeStringForPathComponent;
-- (id)ckShortDescription;
 - (id)idsFormat;
 - (bool)_webBookmarks_hasCaseInsensitivePrefix:(id)arg1;
 - (id)cacheKeyRepresentation;
@@ -767,6 +772,8 @@
 - (unsigned long long)mf_lineBreakBeforeIndex:(unsigned long long)arg1 withinRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)mf_convertFromFlowedText:(unsigned int)arg1;
 - (id)mf_fileSystemString;
+- (bool)mf_containsSubstring:(id)arg1 options:(unsigned long long)arg2;
+- (bool)mf_caseInsensitiveIsEqualToString:(id)arg1;
 - (id)mf_stringByEscapingForXML;
 - (id)mf_uniqueFilenameWithRespectToFilenames:(id)arg1;
 - (unsigned int)mf_subjectPrefixLength;
@@ -813,9 +820,13 @@
 - (struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })rasterTileKeyValue;
 - (bool)_mapkit_isCJK;
 - (double)_mapkit_cgFloatValue;
+- (id)_mapkit_sanitizedStringForDisplayInHTML;
+- (id)_mapkit_stringByReplacingNewLinesWithString:(id)arg1;
+- (id)_mapkit_stringByEscapingHTML;
+- (bool)isNewline;
+- (bool)isSingleCharacterAndMemberOfSet:(id)arg1;
 - (unsigned long long)MSUniqueID;
 - (id)MSHexData;
-- (id)setterName;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (bool)isWeiboDuplicatePostError;
@@ -844,6 +855,42 @@
 - (id)stringByURLQuotingPaths;
 - (id)stringByURLQuoting;
 - (id)stringByURLUnquoting;
+- (id)brc_stringByDeletingPathBounceNo:(unsigned long long*)arg1;
+- (bool)brc_isSideFaultName;
+- (bool)brc_isEqualToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
+- (long long)brc_compareToStringForHFS:(id)arg1 isCaseSensitive:(bool)arg2;
+- (id)brc_representableDirectoryExtension;
+- (id)brc_sideFaultName;
+- (id)brc_representableHFSFileNameWithNumber:(id)arg1 addedExtension:(id)arg2 makeDotFile:(bool)arg3;
+- (bool)brc_nameIsRepresentableOnHFS;
+- (id)brc_realpath;
+- (const char *)brc_fileSystemRepresentation;
+- (bool)brc_isAbsolutePath;
+- (bool)brc_isSubpathOfPath:(id)arg1;
+- (id)brc_pathRelativeToPackageRoot;
+- (id)brc_pathOfPackageRoot;
+- (bool)brc_isPackageRoot;
+- (bool)brc_isInPackage;
+- (bool)brc_isExcludedWithMaximumDepth:(unsigned int)arg1;
+- (id)brc_stringByDeletingPathBounceNo:(unsigned long long*)arg1 andPathExtension:(id*)arg2;
+- (id)brc_representableHFSFileNameWithSuffix:(id)arg1 addedExtension:(id)arg2 makeDotFile:(bool)arg3;
+- (id)brc_stringByDeletingPathExtension;
+- (id)brc_pathExtension;
+- (id)brc_pathRelativeToPath:(id)arg1;
+- (id)brc_stringByBackslashEscapingCharactersInString:(id)arg1;
+- (id)brc_SHA1WithSalt:(id)arg1;
+- (id)brc_SHA256;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
+- (id)CKDPIdentifier_Raw;
+- (id)_CKDPIdentifierWithType:(int)arg1;
+- (id)CKDPIdentifier_ShareId;
+- (id)CKDPIdentifier_Zone;
+- (id)CKDPIdentifier_User;
+- (id)CKDPIdentifier_CommentId;
+- (id)CKDPIdentifier_Record;
+- (id)CKDPIdentifier_Subscription;
+- (id)CKDPIdentifier_Device;
 - (long long)traditionalChineseZhuyinCompare:(id)arg1;
 - (long long)traditionalChinesePinyinCompare:(id)arg1;
 - (long long)simplifiedChineseCompare:(id)arg1;
@@ -964,9 +1011,8 @@
 - (id)getDataUsingOfficeCryptographicEncoding;
 - (int)fontTypeAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 forXML:(bool)arg3;
 - (int)fontTypeForCharacter:(unsigned short)arg1 isControl:(bool*)arg2;
+- (id)prs_stringEncodedAsURLQueryParameter;
 - (bool)attributeBoolValue;
-- (bool)isNewline;
-- (bool)isSingleCharacterAndMemberOfSet:(id)arg1;
 - (id)WF_stringWithMostSignificatDomainPart;
 - (id)WF_stringByProperlyFixingPercentEscapesUsingEncoding:(unsigned long long)arg1;
 - (long long)WF_numericCompare:(id)arg1;

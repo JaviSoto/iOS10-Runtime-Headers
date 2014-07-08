@@ -35,11 +35,12 @@
 - (void)setSnippetLogoURLs:(id)arg1;
 - (void)setLogoURLs:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setDisplayName:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (void)setDisplayName:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

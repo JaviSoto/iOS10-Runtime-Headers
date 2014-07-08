@@ -17,5 +17,6 @@
 - (id)pl_shortDescription;
 - (bool)isRegisteredWithUserInterfaceContext;
 - (id)photoLibrary;
+- (void)willSave;
 
 @end

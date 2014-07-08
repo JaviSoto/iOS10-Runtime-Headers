@@ -88,12 +88,12 @@
 - (bool)hasInlineAttachments;
 - (id)senderName;
 - (void)_updateMessageID:(long long)arg1;
+- (void)_updateTimePlayed:(id)arg1;
 - (void)_updateTimeDelivered:(id)arg1;
 - (void)_updateTimeRead:(id)arg1;
 - (void)_updateTime:(id)arg1;
 - (id)_initWithSender:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 plainText:(id)arg6 text:(id)arg7 messageSubject:(id)arg8 fileTransferGUIDs:(id)arg9 flags:(unsigned long long)arg10 error:(id)arg11 guid:(id)arg12 messageID:(long long)arg13 subject:(id)arg14;
 - (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 fileTransferGUIDs:(id)arg4 flags:(unsigned long long)arg5 error:(id)arg6 guid:(id)arg7 subject:(id)arg8;
-- (void)_updateTimePlayed:(id)arg1;
 - (void)_updateGUID:(id)arg1;
 - (void)_updateSender:(id)arg1;
 - (bool)isSystemMessage;

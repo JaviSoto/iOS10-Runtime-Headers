@@ -59,7 +59,7 @@
 - (void)createSpritesForText;
 - (id)_getTextSprites;
 - (id)childrenInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)nodeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)nodesAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_flippedChangedFrom:(bool)arg1 to:(bool)arg2;
 - (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;
 - (void)setColorBlendFactor:(double)arg1;

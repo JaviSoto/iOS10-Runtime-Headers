@@ -17,11 +17,12 @@
 - (bool)hasOptions;
 - (id)initWithDirectionsOptions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)clearItems;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (id)items;
 - (id)itemAtIndex:(unsigned long long)arg1;
+- (id)items;
 - (void)setItems:(id)arg1;
 - (void)addItem:(id)arg1;
 - (bool)isEqual:(id)arg1;

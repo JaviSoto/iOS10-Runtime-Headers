@@ -2,26 +2,29 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable;
+@class NSMapTable, SKUINavigationBarViewElement;
 
 @interface SKUINavigationBarButtonsController : SKUINavigationBarSectionController <SKUIItemOfferButtonDelegate> {
     NSMapTable *_buttonItemElements;
+    SKUINavigationBarViewElement *_navigationBarElement;
 }
 
 
 - (void)_buttonAction:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageInsetsForImageViewElement:(id)arg1;
 - (id)_imageForImageViewElement:(id)arg1;
+- (void)_reloadButtonItem:(id)arg1 withButtonViewElement:(id)arg2;
 - (void)_updateItemOfferButton:(id)arg1 withButtonViewElement:(id)arg2;
 - (void)_itemOfferAction:(id)arg1;
 - (void)_updateButtonItem:(id)arg1 withButtonViewElement:(id)arg2;
 - (id)addButtonItemWithButtonViewElement:(id)arg1;
+- (id)initWithNavigationBarViewElement:(id)arg1;
 - (id)barButtonItemForElementIdentifier:(id)arg1;
 - (void)disconnectAllButtons;
+- (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
-- (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
-- (void)reloadAfterDocumentUpdate;
+- (void)reloadAfterDocumentUpdateWithNavigationItem:(id)arg1;
 - (void).cxx_destruct;
 
 @end

@@ -17,10 +17,10 @@
 - (id)initWithShareName:(id)arg1 ownerName:(id)arg2;
 - (void)setShareName:(id)arg1;
 - (id)shareName;
-- (id)CKPropertiesDescription;
 - (void)setOwnerName:(id)arg1;
 - (id)ckShortDescription;
 - (id)ownerName;
+- (id)CKPropertiesDescription;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

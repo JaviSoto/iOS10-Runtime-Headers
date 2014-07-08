@@ -35,8 +35,6 @@
 + (id)keyPathsForValuesAffectingStatus;
 + (void)initialize;
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
 - (bool)_appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)respondToEachPassDescriptionOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (void)_setAttachedToPixelBufferAdaptor:(bool)arg1;
@@ -99,6 +97,8 @@
 - (void)_attachToMetadataAdaptor:(id)arg1;
 - (long long)_status;
 - (bool)_isAttachedToMetadataAdaptor;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)mediaType;
 - (id)languageCode;

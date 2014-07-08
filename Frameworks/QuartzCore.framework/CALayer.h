@@ -127,8 +127,6 @@
 + (bool)resolveInstanceMethod:(SEL)arg1;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)context;
-- (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setAllowsDisplayCompositing:(bool)arg1;
 - (void)setContentsGravity:(id)arg1;
 - (void)setSublayerTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
@@ -144,12 +142,16 @@
 - (void)setMasksToBounds:(bool)arg1;
 - (bool)needsLayout;
 - (void)removeAllAnimations;
+- (id)context;
+- (void)setBackgroundColor:(struct CGColor { }*)arg1;
+- (void)setName:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSpeed:(float)arg1;
 - (float)speed;
 - (double)mass;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toLayer:(id)arg2;
 - (void)setNeedsLayoutOnGeometryChange:(bool)arg1;
 - (void*)regionBeingDrawn;
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
@@ -377,7 +379,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)name;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -415,7 +416,6 @@
 - (void)setCornerRadius:(double)arg1;
 - (void)setAllowsGroupBlending:(bool)arg1;
 - (bool)hasBeenCommitted;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toLayer:(id)arg2;
 - (void)setHitTestsAsOpaque:(bool)arg1;
 - (void)web_disableAllActions;
 - (long long)compareTextEffectsOrdering:(id)arg1;

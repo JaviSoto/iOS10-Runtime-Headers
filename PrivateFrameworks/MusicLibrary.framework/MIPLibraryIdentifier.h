@@ -24,10 +24,10 @@
 - (void)setLibraryId:(long long)arg1;
 - (bool)hasLibraryName;
 - (void)setLibraryName:(id)arg1;
-- (id)libraryName;
-- (long long)libraryId;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)libraryName;
+- (long long)libraryId;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void).cxx_destruct;

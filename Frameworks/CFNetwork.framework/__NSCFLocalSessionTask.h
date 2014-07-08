@@ -88,6 +88,7 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id)arg3;
 - (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id)arg3;
 - (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id)arg4;
+- (void)_onqueue_disavow;
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_conditionalRequirementsChanged:(bool)arg1;
 - (void)_onqueue_connectionWaiting;

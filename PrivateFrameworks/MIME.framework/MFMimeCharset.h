@@ -22,12 +22,12 @@
 - (bool)useBase64InHeaders;
 - (bool)coversLargeUnicodeSubset;
 - (bool)canBeUsedForOutgoingMessages;
-- (void)_setPrimaryLanguage:(id)arg1;
 - (id)charsetName;
 - (unsigned int)encoding;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (void)_setPrimaryLanguage:(id)arg1;
 - (id)primaryLanguage;
 
 @end

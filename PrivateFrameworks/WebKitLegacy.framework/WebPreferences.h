@@ -56,6 +56,8 @@
 - (id)identifier;
 - (void)setShouldConvertPositionStyleOnCopy:(bool)arg1;
 - (bool)shouldConvertPositionStyleOnCopy;
+- (void)setGamepadsEnabled:(bool)arg1;
+- (bool)gamepadsEnabled;
 - (void)setImageControlsEnabled:(bool)arg1;
 - (bool)imageControlsEnabled;
 - (void)setMediaSourceEnabled:(bool)arg1;

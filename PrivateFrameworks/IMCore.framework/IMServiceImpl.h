@@ -18,6 +18,7 @@
     NSData *_imageData;
     NSArray *_abProperties;
     NSArray *_emailDomains;
+    NSArray *_siblingServiceNames;
     unsigned int _screenNameSensitivity;
     bool_hasLoadedServiceProperties;
     bool_handlesChatInvites;
@@ -65,6 +66,7 @@
 @property(readonly) bool isPlugInService;
 @property(retain,readonly) NSArray * addressBookProperties;
 @property(retain,readonly) NSString * addressBookProperty;
+@property(retain,readonly) NSArray * siblingServices;
 @property(retain,readonly) NSArray * emailDomains;
 @property(readonly) bool allowsMultipleConnections;
 @property(readonly) long long buddyNotesMaxByteLength;
@@ -84,14 +86,15 @@
 + (id)connectedServicesWithCapability:(unsigned long long)arg1;
 + (id)servicesWithCapability:(unsigned long long)arg1;
 + (id)activeServices;
-+ (id)serviceWithInternalName:(id)arg1;
 + (void)setServiceClass:(Class)arg1;
++ (id)serviceWithInternalName:(id)arg1;
 + (Class)serviceClass;
 + (id)serviceWithName:(id)arg1;
 + (id)allServicesNonBlocking;
 + (id)allServices;
 + (id)connectedServices;
 
+- (id)serviceDefaults;
 - (id)shortName;
 - (id)emailDomains;
 - (id)addressBookProperties;
@@ -113,7 +116,6 @@
 - (void)setDefaultAccountSettings:(id)arg1;
 - (id)defaultAccountSettings;
 - (void)setServiceDefaults:(id)arg1;
-- (id)serviceDefaults;
 - (void)defaultsChanged:(id)arg1;
 - (id)screenNamesForIMPerson:(id)arg1;
 - (id)_personToIDMap;
@@ -125,11 +127,11 @@
 - (void)_addAddressBookCards:(id)arg1 toMap:(id)arg2;
 - (id)accountIDs;
 - (long long)buddyNotesMaxByteLength;
+- (id)siblingServices;
 - (id)addressBookProperty;
 - (bool)_wantsInternationizedNumbers;
 - (bool)_supportsDatabaseStorage;
 - (long long)maxAttachmentSize;
-- (long long)maxChatParticipants;
 - (id)serviceImageData;
 - (id)subtypeInformationForAccount:(id)arg1;
 - (void)setServiceProperties:(id)arg1;
@@ -160,6 +162,7 @@
 - (id)infoForAllScreenNames;
 - (id)infoForScreenName:(id)arg1;
 - (bool)initialSyncPerformed;
+- (long long)maxChatParticipants;
 - (Class)accountClass;
 - (void)setCountryCode:(id)arg1;
 - (unsigned long long)status;

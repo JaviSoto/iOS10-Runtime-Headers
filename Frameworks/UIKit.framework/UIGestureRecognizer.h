@@ -130,13 +130,13 @@
 - (bool)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (id)_briefDescription;
 - (bool)delaysTouchesBegan;
+- (void)_resetGestureRecognizer;
 - (void)_setAcceptsFailureRequiments:(bool)arg1;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
-- (void)_resetGestureRecognizer;
 - (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (void)requireOtherGestureToFail:(id)arg1;
-- (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (bool)_delegateShouldReceiveTouch:(id)arg1;
+- (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (bool)canPreventGestureRecognizer:(id)arg1;
 - (bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (void)setCancelsTouchesInView:(bool)arg1;

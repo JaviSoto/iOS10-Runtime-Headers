@@ -17,10 +17,12 @@
     bool_arrowVisible;
     booluseShortMode;
     bool_debugMode;
+    double _dimmingViewTopEdgeInset;
 }
 
 @property long long backgroundStyle;
 @property(getter=isArrowVisible) bool arrowVisible;
+@property double dimmingViewTopEdgeInset;
 @property bool useShortMode;
 @property(getter=isDebugModeEnabled) bool debugModeEnabled;
 @property(copy) UIColor * popoverBackgroundColor;
@@ -31,6 +33,7 @@
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (double)dimmingViewTopEdgeInset;
 - (void)setDebugModeEnabled:(bool)arg1;
 - (bool)isDebugModeEnabled;
 - (void)setUseShortMode:(bool)arg1;
@@ -41,6 +44,7 @@
 - (id)popoverBackgroundColor;
 - (void)setBackgroundStyle:(long long)arg1 animated:(bool)arg2;
 - (long long)backgroundStyle;
+- (void)setDimmingViewTopEdgeInset:(double)arg1;
 - (double)arrowOffset;
 - (void)setArrowOffset:(double)arg1;
 - (void)setBackgroundStyle:(long long)arg1;

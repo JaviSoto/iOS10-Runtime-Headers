@@ -26,8 +26,8 @@
 - (void)setCurrentRetryCount:(long long)arg1;
 - (long long)currentRetryCount;
 - (struct __CFUserNotification { }*)copyUserNotification;
-- (id)dictionary;
 - (void)setUserInfo:(id)arg1;
+- (id)dictionary;
 - (id)init;
 - (id)userInfo;
 - (void)dealloc;

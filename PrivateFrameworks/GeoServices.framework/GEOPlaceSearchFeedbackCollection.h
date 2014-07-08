@@ -32,6 +32,7 @@
 @property int localSearchProviderID;
 
 
+- (unsigned long long)businessID;
 - (id)actionCaptures;
 - (long long)placeID;
 - (bool)hasPlaceID;
@@ -42,7 +43,6 @@
 - (unsigned long long)actionCapturesCount;
 - (void)addActionCapture:(id)arg1;
 - (void)setActionCaptures:(id)arg1;
-- (unsigned long long)businessID;
 - (bool)hasBusinessID;
 - (void)setHasBusinessID:(bool)arg1;
 - (void)setBusinessID:(unsigned long long)arg1;
@@ -53,6 +53,7 @@
 - (bool)hasSessionID;
 - (void)setHasSessionID:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

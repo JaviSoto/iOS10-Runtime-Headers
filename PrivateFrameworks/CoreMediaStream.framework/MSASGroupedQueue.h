@@ -64,8 +64,8 @@
 - (id)workQueue;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (void)setModel:(id)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (id)memberQueue;
-- (void)setModel:(id)arg1;
 
 @end

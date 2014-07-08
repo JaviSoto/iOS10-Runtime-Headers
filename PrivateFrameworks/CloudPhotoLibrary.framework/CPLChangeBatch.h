@@ -14,15 +14,15 @@
 + (bool)supportsSecureCoding;
 
 - (id)_initWithRecords:(id)arg1;
+- (id)initWithRecords:(id)arg1;
 - (id)summaryDescription;
 - (void)appendLocalResources:(id)arg1 forItemWithCloudIdentifier:(id)arg2;
 - (id)localResourceOfType:(unsigned long long)arg1 forItemWithCloudIdentifier:(id)arg2;
-- (void)extractInitialDownloadBatch:(id*)arg1;
+- (void)extractInitialDownloadBatch:(id*)arg1 shouldConsiderRecordFilter:(id)arg2;
+- (void)sortBatch;
 - (void)_setRecords:(id)arg1;
 - (void)_addChange:(id)arg1 resultBatch:(id)arg2 changesPerIdentifier:(id)arg3 changesPerClass:(id)arg4;
 - (void)addRecordsFromBatch:(id)arg1;
-- (void)sortBatch;
-- (id)initWithRecords:(id)arg1;
 - (id)cplFullDescription;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)init;

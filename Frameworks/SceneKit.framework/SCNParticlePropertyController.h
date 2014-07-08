@@ -12,6 +12,7 @@
     double _inputBias;
     SCNNode *_inputOrigin;
     NSString *_inputProperty;
+    id _c3dAnimation;
 }
 
 @property(retain) CAAnimation * animation;
@@ -26,10 +27,14 @@
 + (id)SCNJSExportProtocol;
 + (bool)supportsSecureCoding;
 
+- (void)_customDecodingOfSCNParticlePropertyController:(id)arg1;
+- (void)_customEncodingOfSCNParticlePropertyController:(id)arg1;
 - (void)setInputProperty:(id)arg1;
 - (void)setInputOrigin:(id)arg1;
+- (id)c3dAnimation;
 - (id)inputProperty;
 - (id)inputOrigin;
+- (void)setC3dAnimation:(id)arg1;
 - (long long)inputMode;
 - (void)setAnimation:(id)arg1;
 - (void)setInputBias:(double)arg1;

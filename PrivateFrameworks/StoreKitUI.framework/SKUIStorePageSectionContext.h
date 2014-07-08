@@ -8,6 +8,7 @@
     double _activePageWidth;
     UICollectionView *_collectionView;
     SKUIColorScheme *_colorScheme;
+    long long _defaultPinningTransitionStyle;
     SKUIItemOfferButtonAppearance *_itemOfferButtonAppearance;
     double _landscapePageWidth;
     SKUIMetricsController *_metricsController;
@@ -23,6 +24,7 @@
 @property(readonly) UICollectionView * collectionView;
 @property(readonly) SKUIColorScheme * colorScheme;
 @property(readonly) UIColor * placeholderColor;
+@property(readonly) long long defaultPinningTransitionStyle;
 @property(readonly) SKUIItemOfferButtonAppearance * itemOfferButtonAppearance;
 @property(readonly) double activePageWidth;
 @property(readonly) double landscapePageWidth;
@@ -37,6 +39,7 @@
 - (id)textLayoutCache;
 - (id)placeholderColor;
 - (id)itemOfferButtonAppearance;
+- (long long)defaultPinningTransitionStyle;
 - (double)activePageWidth;
 - (double)landscapePageWidth;
 - (double)portraitPageWidth;
@@ -48,6 +51,7 @@
 - (void)_setLayoutStyle:(long long)arg1;
 - (id)metricsController;
 - (void)_setMetricsController:(id)arg1;
+- (void)_setDefaultPinningTransitionStyle:(long long)arg1;
 - (void)_setColorScheme:(id)arg1;
 - (void)_setParentViewController:(id)arg1;
 - (long long)layoutStyle;

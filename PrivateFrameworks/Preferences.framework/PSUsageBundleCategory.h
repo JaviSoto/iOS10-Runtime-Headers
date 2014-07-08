@@ -20,8 +20,8 @@
 - (id)usageBundleApp;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (id)description;
 

@@ -232,6 +232,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

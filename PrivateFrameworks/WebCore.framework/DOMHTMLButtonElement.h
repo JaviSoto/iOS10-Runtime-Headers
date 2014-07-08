@@ -17,6 +17,7 @@
 @property(copy) NSString * accessKey;
 
 
+- (void)setName:(id)arg1;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)click;
@@ -43,7 +44,6 @@
 - (void)setDisabled:(bool)arg1;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (int)structuralComplexityContribution;
 - (bool)disabled;

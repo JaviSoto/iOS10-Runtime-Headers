@@ -2,14 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSString, NSSet, CUTWeakReference, IDSSocketPairConnection, IDSBaseSocketPairConnection, NSObject<OS_dispatch_queue>;
+@class NSString, NSSet, CUTWeakReference, NSObject<OS_dispatch_queue>, IDSBaseSocketPairConnection;
 
-@interface _IDSSession : NSObject <IDSDaemonListenerProtocol, IDSSocketPairConnectionDelegate, IDSBaseSocketPairConnectionDelegate> {
+@interface _IDSSession : NSObject <IDSDaemonListenerProtocol, IDSBaseSocketPairConnectionDelegate> {
     id _delegateContext;
     NSString *_uniqueID;
     NSString *_accountID;
     NSSet *_destinations;
-    IDSSocketPairConnection *_reliableSocketPairConnection;
     IDSBaseSocketPairConnection *_unreliableSocketPairConnection;
     CUTWeakReference *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -22,12 +21,12 @@
 }
 
 @property(readonly) int socket;
+@property(readonly) unsigned int state;
 @property long long inviteTimeout;
 @property(readonly) unsigned int sessionEndedReason;
 
 
 - (void)_setupUnreliableSocketPairConnection;
-- (void)_setupReliableSocketPairConnection;
 - (void)_setupSocketPairToDaemon;
 - (void)_cleanupSocketPairConnections;
 - (void)_broadcastNewSessionToDaemon;
@@ -40,28 +39,30 @@
 - (bool)getAudioEnabled;
 - (void)setAudioEnabled:(bool)arg1;
 - (void)sendSessionMessage:(id)arg1;
+- (void)endSessionWithData:(id)arg1;
 - (void)cancelInvitation;
-- (void)declineInvitationWithContext:(id)arg1;
-- (void)acceptInvitationWithContext:(id)arg1;
-- (void)cancelInvitationWithContext:(id)arg1;
-- (void)sendInvitationWithContext:(id)arg1;
+- (void)declineInvitationWithData:(id)arg1;
+- (void)acceptInvitationWithData:(id)arg1;
+- (void)cancelInvitationWithData:(id)arg1;
+- (void)sendInvitationWithData:(id)arg1;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4 delegateContext:(id)arg5;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 delegateContext:(id)arg4;
 - (void)session:(id)arg1 audioEnabled:(bool)arg2;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;
-- (void)sessionMessageReceived:(id)arg1 withInfo:(id)arg2;
-- (void)sessionCancelReceived:(id)arg1 withContext:(id)arg2;
-- (void)sessionDeclineReceived:(id)arg1 withContext:(id)arg2;
-- (void)sessionAcceptReceived:(id)arg1 withContext:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2 withIdentifier:(unsigned int)arg3;
+- (void)sessionEndReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
+- (void)sessionMessageReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
+- (void)sessionCancelReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
+- (void)sessionDeclineReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
+- (void)sessionAcceptReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (int)socket;
 - (void)declineInvitation;
 - (void)acceptInvitation;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (unsigned int)state;
 - (void)dealloc;
+- (int)socket;
 - (void)endSession;
 
 @end

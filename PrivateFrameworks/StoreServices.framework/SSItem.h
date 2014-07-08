@@ -32,6 +32,7 @@
 @property(readonly) NSArray * thumbnailImages;
 
 
+- (id)tellAFriendSubject;
 - (long long)numberOfUserRatings;
 - (float)averageUserRating;
 - (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
@@ -42,7 +43,6 @@
 - (id)tweetURL;
 - (id)tweetInitialText;
 - (id)thumbnailImages;
-- (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
 - (id)relatedItemsForRelationType:(id)arg1;
@@ -94,8 +94,8 @@
 - (id)ITunesStoreIdentifier;
 - (id)defaultItemOffer;
 - (id)podcastFeedURL;
-- (id)longDescription;
 - (id)mediaKind;
+- (id)longDescription;
 - (id)bundleIdentifier;
 - (bool)isRestricted;
 - (id)bundleVersion;

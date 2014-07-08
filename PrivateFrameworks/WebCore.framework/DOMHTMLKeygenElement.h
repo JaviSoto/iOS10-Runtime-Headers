@@ -20,6 +20,7 @@
 @property(readonly) DOMNodeList * labels;
 
 
+- (void)setName:(id)arg1;
 - (void)setKeytype:(id)arg1;
 - (id)keytype;
 - (void)setChallenge:(id)arg1;
@@ -34,7 +35,6 @@
 - (bool)autofocus;
 - (void)setDisabled:(bool)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)type;
 - (bool)disabled;
 - (id)form;

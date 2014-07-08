@@ -2,10 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIIndexBarEntryViewElement, SKUIIndexBarEntryDescriptor;
+@class SKUIViewElement, SKUIIndexBarEntryViewElement, SKUIIndexBarEntryDescriptor;
 
 @interface SKUIIndexBarSingleEntryListController : SKUIIndexBarEntryListController  {
     SKUIIndexBarEntryDescriptor *_entryDescriptor;
+    SKUIViewElement *_descriptiveViewElement;
     SKUIIndexBarEntryViewElement *_entryViewElement;
 }
 

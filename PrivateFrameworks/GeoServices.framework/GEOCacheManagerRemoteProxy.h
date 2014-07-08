@@ -9,6 +9,7 @@
 }
 
 
+- (long long)invalidationStateForPlace:(id)arg1;
 - (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id)arg2;
 - (void)versionsForDomains:(id)arg1 handler:(id)arg2;
 - (id)init;

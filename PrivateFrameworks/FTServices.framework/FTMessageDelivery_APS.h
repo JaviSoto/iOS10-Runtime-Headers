@@ -9,8 +9,10 @@
     Class _APSOutgoingMessageClass;
     APSConnection *_connection;
     long long _messageSize;
+    long long _largeMessageSize;
     NSMutableArray *_enabledTopics;
     NSMutableDictionary *_ftMessageMap;
+    NSMutableDictionary *_uuidFtMessageMap;
     NSMutableDictionary *_startDateMap;
     NSMutableDictionary *_bodyMap;
     NSMutableDictionary *_apsMessageMap;
@@ -21,11 +23,6 @@
 
 + (id)sharedInstance;
 
-- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
-- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
-- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
-- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
 - (id)_currentTimers;
 - (id)_currentAPSMessages;
 - (void)_noteMessageACKd:(id)arg1 ftMessage:(id)arg2;
@@ -58,15 +55,21 @@
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (void)_dequeueIfNeeded;
 - (void)_serverBagLoaded:(id)arg1;
-- (long long)maxMessageSize;
+- (long long)maxLargeMessageSize;
 - (void)cancelMessage:(id)arg1;
 - (bool)busy;
 - (id)allMessages;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
+- (long long)maxMessageSize;
 - (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (bool)sendMessage:(id)arg1;
+- (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
+- (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
+- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
 - (id)connection;
 - (id)init;
+- (bool)sendMessage:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
 

@@ -58,6 +58,7 @@
 - (struct CGSize { double x1; double x2; })minimumLayoutSizeOverride;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contextRef:(struct OpaqueWKContext { }*)arg2 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contextRef:(struct OpaqueWKContext { }*)arg2 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg3 relatedToPage:(struct OpaqueWKPage { }*)arg4;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_obscuredInsets;
 - (void)setDrawsTransparentBackground:(bool)arg1;
 - (bool)drawsTransparentBackground;
 - (bool)allowsBackForwardNavigationGestures;
@@ -70,7 +71,6 @@
 - (void)_commonInitializationWithContextRef:(struct OpaqueWKContext { }*)arg1 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg2 relatedToPage:(struct OpaqueWKPage { }*)arg3;
 - (struct OpaqueWKPage { }*)pageRef;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 processGroup:(id)arg2 browsingContextGroup:(id)arg3 relatedToView:(id)arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_obscuredInsets;
 - (void)setDrawsBackground:(bool)arg1;
 - (bool)drawsBackground;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

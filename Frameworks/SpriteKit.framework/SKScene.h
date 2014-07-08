@@ -78,7 +78,7 @@
 - (void)_registerConstraintsForNode:(id)arg1;
 - (bool)_hasConstraints;
 - (void)didFinishUpdate;
-- (void)didApplyConstriants;
+- (void)didApplyConstraints;
 - (void)setYScale:(double)arg1;
 - (void)setXScale:(double)arg1;
 - (double)yScale;
@@ -100,9 +100,9 @@
 - (id)physicsWorld;
 - (void)setScaleMode:(long long)arg1;
 - (long long)scaleMode;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPaused:(bool)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)didContinueContact:(id)arg1;
 - (void)setZPosition:(double)arg1;
 - (id)view;

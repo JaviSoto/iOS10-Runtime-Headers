@@ -11,7 +11,7 @@
 
 @interface __NSCFURLSessionConnection : NSObject <NSURLAuthenticationChallengeSender, NSCopying> {
     struct SessionConnectionLoadable { int (**x1)(); long long x2; long long x3; long long x4; long long x5; int (**x6)(); int (**x7)(); id x8; } *_loaderClient;
-    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; struct CoreSchedulingSet {} *x7; int (**x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; long long x12; struct RedirectionRecorder {} *x13; unsigned char x14; unsigned char x15; unsigned char x16; id x17; unsigned char x18; double x19; struct URLProtocol {} *x20; id x21; unsigned char x22; struct CoreSchedulingSet {} *x23; double x24; double x25; unsigned long long x26; struct ConfigFlags { unsigned int x_27_1_1 : 1; unsigned int x_27_1_2 : 1; unsigned int x_27_1_3 : 1; unsigned int x_27_1_4 : 1; unsigned int x_27_1_5 : 1; unsigned int x_27_1_6 : 1; unsigned int x_27_1_7 : 1; } x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; } *_loader;
+    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; id x7; int (**x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; long long x12; struct RedirectionRecorder {} *x13; unsigned char x14; unsigned char x15; unsigned char x16; id x17; unsigned char x18; double x19; struct URLProtocol {} *x20; id x21; unsigned char x22; struct CoreSchedulingSet {} *x23; double x24; double x25; unsigned long long x26; struct ConfigFlags { unsigned int x_27_1_1 : 1; unsigned int x_27_1_2 : 1; unsigned int x_27_1_3 : 1; unsigned int x_27_1_4 : 1; unsigned int x_27_1_5 : 1; unsigned int x_27_1_6 : 1; unsigned int x_27_1_7 : 1; } x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; } *_loader;
     NSObject<OS_dispatch_queue> *_workQueue;
     bool_canceled;
     long long _suspended;
@@ -41,7 +41,6 @@
 
 - (void)resume;
 - (void)setDelegate:(id)arg1;
-- (void)_updateRequest:(id)arg1;
 - (void)_needNewBodyStream;
 - (void)_didReceiveChallenge:(id)arg1;
 - (void)_redirectRequest:(id)arg1 redirectResponse:(id)arg2 completion:(id)arg3;
@@ -50,8 +49,6 @@
 - (void)_willSendRequestForEstablishedConnection:(id)arg1 completion:(id)arg2;
 - (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;
 - (void)_didSendBodyData:(struct UploadProgressInfo { long long x1; long long x2; long long x3; })arg1;
-- (void)stopAccounting;
-- (void)startAccountingFor:(id)arg1 discretionary:(bool)arg2;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;

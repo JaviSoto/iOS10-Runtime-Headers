@@ -43,6 +43,8 @@
 - (id)uploadQueue;
 - (id)downloadQueue;
 - (id)resourceStorage;
+- (id)transientPullRepository;
+- (id)cloudCache;
 - (id)clientCache;
 - (id)idMapping;
 - (id)pullQueue;
@@ -70,8 +72,6 @@
 - (void)_removeTransactionOnCurrentThread:(id)arg1;
 - (void)_setTransactionOnCurrentThread:(id)arg1;
 - (bool)storeUserIdentifier:(id)arg1 error:(id*)arg2;
-- (id)transientPullRepository;
-- (id)cloudCache;
 - (bool)_resetLocalSyncStateWithError:(id*)arg1;
 - (bool)isClientInSyncWithClientCache;
 - (bool)storeLibraryVersion:(id)arg1 withError:(id*)arg2;

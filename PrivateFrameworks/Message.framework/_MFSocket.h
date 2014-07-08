@@ -61,10 +61,10 @@
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setClientCertificates:(id)arg1;
 - (id)clientCertificates;
+- (bool)isReadable;
 - (int)timeout;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
-- (bool)isReadable;
 - (void)setEventHandler:(id)arg1;
 - (id)init;
 - (bool)isValid;

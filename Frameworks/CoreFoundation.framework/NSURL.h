@@ -4,7 +4,7 @@
 
 @class NSString, NSArray, NSURL, NSNumber;
 
-@interface NSURL : NSObject <NSSecureCoding, NSCopying, QLPreviewItem> {
+@interface NSURL : NSObject <NSSecureCoding, NSCopying, QLPreviewItem, PQLBindable> {
     NSString *_urlString;
     NSURL *_baseURL;
     void *_clients;
@@ -12,6 +12,7 @@
 }
 
 @property(readonly) NSString * tsu_UTI;
+@property(readonly) NSString * br_lastEditorDeviceName;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSString * phoneNumber;
@@ -155,6 +156,9 @@
 + (int)classicPortForScheme:(id)arg1;
 + (id)URLWithDirtyString:(id)arg1;
 + (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
++ (id)brc_fileReferenceURLWithVolumeID:(id)arg1 fileID:(id)arg2 andName:(id)arg3 isDirectory:(bool)arg4;
++ (id)brc_fileURLWithFileDescriptor:(int)arg1;
++ (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(id)arg2;
 + (id)filePathURLWithEscapes:(id)arg1;
 + (id)relativeURLWithEscapes:(id)arg1;
 + (id)improperlyEscapedString:(id)arg1;
@@ -397,13 +401,13 @@
 - (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
 - (void)chmod:(unsigned short)arg1;
 - (bool)_webBookmarks_isHTTPFamilyURL;
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
 - (id)cacheKeyRepresentation;
 - (id)_gkURLByAddingQueryParameters:(id)arg1;
 - (id)_gkQueryDictionary;
 - (id)_gkURLByReplacingSchemeWithScheme:(id)arg1;
 - (bool)_gkIsSecure;
 - (bool)_gkIsValidServerURL;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
 - (id)previewItemURL;
 - (id)URLByRemovingLastPathComponent;
 - (id)URLWithUsername:(id)arg1;
@@ -451,6 +455,32 @@
 - (id)URLWithUsername:(id)arg1;
 - (id)URLWithoutUsername;
 - (id)uri;
+- (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
+- (bool)brc_fileReferenceParseIntoVolumeID:(id*)arg1 fileID:(id*)arg2 andRelativePath:(id*)arg3;
+- (id)brc_fileReferenceRelativePath;
+- (id)brc_fileReferenceFileID;
+- (id)brc_fileReferenceVolumeID;
+- (bool)br_setTagNames:(id)arg1 error:(id*)arg2;
+- (bool)br_getTagNames:(id*)arg1 error:(id*)arg2;
+- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 lastEditorUserName:(id)arg3 error:(id*)arg4;
+- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id*)arg3;
+- (id)br_lastEditorDeviceName;
+- (void)br_isConflictedWithHandler:(id)arg1;
+- (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
+- (id)_br_pathRelativeToMobileDocuments;
+- (id)br_URLByResolvingExternalDocumentReferenceWithError:(id*)arg1;
+- (bool)br_isExternalDocumentReference;
+- (bool)br_isDocumentsContainer;
+- (void)br_bookmarkableStringWithEtag:(bool)arg1 completion:(id)arg2;
+- (id)br_cloudDocsContainer;
+- (id)br_containerID;
+- (bool)br_isInMobileDocuments;
+- (bool)br_isInCloudDocsPrivateStorages;
+- (id)brc_notificationInfoWithAccountSession:(id)arg1 error:(id*)arg2;
+- (id)brc_attributesValues:(id)arg1 accountSession:(id)arg2 error:(id*)arg3;
+- (bool)_brc_resolveUrlWithAccountSession:(id)arg1 andDo:(id)arg2 error:(id*)arg3;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (bool)FPIsParentOfURL:(id)arg1;
 - (bool)isRelative;
 - (bool)tsu_conformsToUTI:(id)arg1;
 - (id)tsu_UTI;

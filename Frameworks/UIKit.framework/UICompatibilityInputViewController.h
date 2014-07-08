@@ -7,7 +7,7 @@
 @interface UICompatibilityInputViewController : UIInputViewController  {
     UIKeyboardInputMode *_inputMode;
     UIKeyboard *_deferredSystemView;
-    bool_isReceivingRemoteView;
+    UIKeyboardInputMode *_incomingExtensionInputMode;
     UIViewController *_inputController;
 }
 
@@ -21,6 +21,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (void)didFinishTranslation;
+- (void)finishSplitTransition:(bool)arg1;
 - (void)willBeginTranslation;
 - (id)childCompatibilityController;
 - (void)tearDownInputController;

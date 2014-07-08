@@ -39,13 +39,13 @@
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 constant:(double)arg6;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 symbolicConstant:(id)arg7 theme:(id)arg8;
-+ (void)deactivateConstraints:(id)arg1;
-+ (void)activateConstraints:(id)arg1;
 + (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 views:(id)arg4;
 + (void)_addOrRemoveConstraints:(id)arg1 activate:(bool)arg2;
 + (id)_findCommonAncestorOfItem:(id)arg1 andItem:(id)arg2;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 constant:(double)arg7;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 symbolicConstant:(id)arg7;
++ (void)deactivateConstraints:(id)arg1;
++ (void)activateConstraints:(id)arg1;
 + (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(bool)arg2 overlap:(double)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
 + (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(long long)arg2;
 + (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
@@ -69,8 +69,8 @@
 - (id)init;
 - (void)setContainer:(id)arg1;
 - (id)container;
-- (float)priority;
 - (void)setPriority:(float)arg1;
+- (float)priority;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
@@ -154,5 +154,6 @@
 - (bool)defaultResolvedValue:(double*)arg1 forSymbolicConstant:(id)arg2 error:(id*)arg3;
 - (void)_setEncodedConstant:(id)arg1;
 - (id)_encodedConstant;
+- (void)tk_removeFromContainer;
 
 @end

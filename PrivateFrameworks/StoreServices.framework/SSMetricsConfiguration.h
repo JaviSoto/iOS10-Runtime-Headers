@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSSet, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSMetricsConfiguration;
+@class NSSet, NSDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, SSMetricsConfiguration, NSMutableDictionary;
 
 @interface SSMetricsConfiguration : NSObject  {
     NSSet *_blacklistedEvents;
@@ -10,6 +10,7 @@
     NSDictionary *_config;
     bool_disabled;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSMutableSet *_cookieFieldsUnion;
     NSMutableDictionary *_eventFieldsUnion;
     NSDictionary *_fields;
     int _internalSettingsToken;
@@ -34,9 +35,10 @@
 - (id)pingURLs;
 - (bool)isSendDisabled;
 - (bool)isEventTypeBlacklisted:(id)arg1;
-- (id)fieldsMap;
 - (id)compoundStringWithElements:(id)arg1;
 - (id)eventFields;
+- (id)cookieFields;
+- (id)fieldsMap;
 - (id)blacklistedEventFields;
 - (id)childConfiguration;
 - (bool)_configBooleanForKey:(id)arg1 defaultValue:(bool)arg2;

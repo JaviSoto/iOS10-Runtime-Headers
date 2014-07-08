@@ -12,7 +12,6 @@
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
     NSMutableArray *_destinationWaypointTypeds;
-    NSMutableArray *_destinationWaypoints;
     NSData *_directionsResponseID;
     GEORouteAttributes *_routeAttributes;
     NSMutableArray *_routes;
@@ -30,7 +29,6 @@
 @property(retain) GEORouteAttributes * routeAttributes;
 @property bool hasIncludeBetterRouteSuggestion;
 @property bool includeBetterRouteSuggestion;
-@property(retain) NSMutableArray * destinationWaypoints;
 @property(retain) NSMutableArray * routes;
 @property(readonly) bool hasClientCapabilities;
 @property(retain) GEOClientCapabilities * clientCapabilities;
@@ -42,16 +40,10 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (id)destinationWaypoints;
 - (bool)hasIncludeBetterRouteSuggestion;
 - (void)setHasIncludeBetterRouteSuggestion:(bool)arg1;
 - (void)setIncludeBetterRouteSuggestion:(bool)arg1;
 - (bool)includeBetterRouteSuggestion;
-- (id)destinationWaypointAtIndex:(unsigned long long)arg1;
-- (void)clearDestinationWaypoints;
-- (unsigned long long)destinationWaypointsCount;
-- (void)addDestinationWaypoint:(id)arg1;
-- (void)setDestinationWaypoints:(id)arg1;
 - (id)destinationWaypointTypeds;
 - (id)destinationWaypointTypedAtIndex:(unsigned long long)arg1;
 - (void)clearDestinationWaypointTypeds;
@@ -85,6 +77,7 @@
 - (bool)hasDirectionsResponseID;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

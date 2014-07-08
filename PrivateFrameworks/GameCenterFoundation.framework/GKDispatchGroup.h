@@ -36,11 +36,11 @@
 - (void)_waitWithDispatchTimeout:(unsigned long long)arg1;
 - (void)notifyOnQueue:(id)arg1 block:(id)arg2;
 - (void)notifyOnMainQueueWithBlock:(id)arg1;
+- (id)group;
 - (id)result;
 - (id)_values;
-- (id)group;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (id)init;
 - (void)setGroup:(id)arg1;
 - (id)initWithName:(id)arg1;

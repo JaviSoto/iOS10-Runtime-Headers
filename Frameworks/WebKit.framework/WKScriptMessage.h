@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKWebView;
+@class NSString, WKWebView, WKFrameInfo;
 
 @interface WKScriptMessage : NSObject  {
     struct RetainPtr<id> { 
@@ -11,17 +11,22 @@
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     } _webView;
+    struct RetainPtr<WKFrameInfo> { 
+        void *m_ptr; 
+    } _frameInfo;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     } _name;
 }
 
-@property(readonly) id body;
+@property(copy,readonly) id body;
 @property(readonly) WKWebView * webView;
-@property(readonly) NSString * name;
+@property(copy,readonly) WKFrameInfo * frameInfo;
+@property(copy,readonly) NSString * name;
 
 
-- (id)_initWithBody:(id)arg1 webView:(id)arg2 name:(id)arg3;
+- (id)frameInfo;
+- (id)_initWithBody:(id)arg1 webView:(id)arg2 frameInfo:(id)arg3 name:(id)arg4;
 - (id)body;
 - (id)webView;
 - (id)name;

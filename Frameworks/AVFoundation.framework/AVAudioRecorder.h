@@ -18,12 +18,12 @@
 @property(copy) NSArray * channelAssignments;
 
 
-- (bool)record;
 - (void)endInterruptionWithFlags;
 - (bool)deleteRecording;
 - (bool)recordAtTime:(double)arg1 forDuration:(double)arg2;
 - (bool)recordForDuration:(double)arg1;
 - (bool)recordAtTime:(double)arg1;
+- (bool)record;
 - (bool)prepareToRecord;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (id)baseInit;

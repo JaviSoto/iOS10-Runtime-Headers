@@ -37,14 +37,14 @@
 - (double)estimatedTimeRemaining;
 - (long long)normalizedMaxValue;
 - (long long)normalizedCurrentValue;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setOperationType:(long long)arg1;
 - (void)setNormalizedMaxValue:(long long)arg1;
 - (void)setNormalizedCurrentValue:(long long)arg1;
 - (void)resetSnapshots;
 - (void)setEstimatedTimeRemaining:(double)arg1;
 - (void)setCurrentValue:(long long)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (long long)units;
 - (void)setUnits:(long long)arg1;
 - (void)setCanPause:(bool)arg1;

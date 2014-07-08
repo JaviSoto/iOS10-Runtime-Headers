@@ -2,25 +2,39 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKViewElementStyle, NSArray, NSMutableDictionary;
+@class IKViewElementStyle, NSArray, NSMutableDictionary, NSMutableIndexSet, NSMutableArray;
 
 @interface IKStyleFactory : NSObject  {
     IKViewElementStyle *_globalStyle;
-    NSArray *_baseStyles;
+    NSArray *_orderedStyles;
+    NSMutableDictionary *_stylesOrderMap;
     NSMutableDictionary *_stylesMap;
+    NSMutableIndexSet *_reusableIndexSet;
+    NSMutableArray *_reusableArray;
 }
 
-@property(retain,readonly) IKViewElementStyle * globalStyle;
-@property(retain,readonly) NSArray * baseStyles;
-@property(retain,readonly) NSMutableDictionary * stylesMap;
+@property(retain) IKViewElementStyle * globalStyle;
+@property(retain) NSArray * orderedStyles;
+@property(retain) NSMutableDictionary * stylesOrderMap;
+@property(retain) NSMutableDictionary * stylesMap;
+@property(retain) NSMutableIndexSet * reusableIndexSet;
+@property(retain) NSMutableArray * reusableArray;
 
 
+- (void)setReusableArray:(id)arg1;
+- (id)reusableArray;
+- (void)setReusableIndexSet:(id)arg1;
+- (id)reusableIndexSet;
+- (void)setStylesMap:(id)arg1;
+- (void)setStylesOrderMap:(id)arg1;
+- (void)setOrderedStyles:(id)arg1;
+- (void)setGlobalStyle:(id)arg1;
+- (id)orderedStyles;
+- (id)stylesOrderMap;
 - (id)stylesMap;
-- (id)_normalizeClassSelector:(id)arg1;
-- (id)styleForClassSelector:(id)arg1;
 - (id)globalStyle;
+- (id)styleForClassSelector:(id)arg1;
 - (id)initWithStyles:(id)arg1;
-- (id)baseStyles;
 - (void).cxx_destruct;
 
 @end

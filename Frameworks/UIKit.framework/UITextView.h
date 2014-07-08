@@ -340,15 +340,15 @@
 - (void)_updateContentSize;
 - (id)attributedText;
 - (void)setAttributedText:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(bool)arg2;
 - (void)setScrollEnabled:(bool)arg1;
 - (void)updateConstraints;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
 - (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
-- (void)invalidateIntrinsicContentSize;
 - (bool)canBecomeFirstResponder;
+- (void)invalidateIntrinsicContentSize;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setFont:(id)arg1;

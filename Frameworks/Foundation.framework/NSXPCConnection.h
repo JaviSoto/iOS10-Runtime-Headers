@@ -129,8 +129,8 @@
 - (id)_errorDescription;
 - (void)stop;
 - (id)_xpcConnection;
-- (id)sl_localizedClientName;
-- (bool)sl_clientHasEntitlement:(id)arg1;
 - (id)_clientBundleID;
+- (bool)sl_clientHasEntitlement:(id)arg1;
+- (id)sl_localizedClientName;
 
 @end

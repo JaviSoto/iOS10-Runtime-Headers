@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSObject<OS_dispatch_source>, SKUIViewElementLayoutContext, UICollectionView, SKUIMissingItemLoader, NSArray, SKUICarouselPageComponent;
+@class SKUIViewElementLayoutContext, NSArray, SKUIMissingItemLoader, SKUICarouselPageComponent, NSObject<OS_dispatch_source>, UICollectionView, NSIndexPath;
 
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_carouselCollectionView;
@@ -17,9 +17,10 @@
     SKUIMissingItemLoader *_missingItemLoader;
     NSArray *_modelObjects;
     bool_needsReload;
+    NSIndexPath *_reloadIndexPath;
 }
 
-@property(retain) SKUICarouselPageComponent * pageComponent;
+@property(readonly) SKUICarouselPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -38,20 +39,20 @@
 - (void)_startCycleTimerIfNecessary;
 - (id)_carouselCollectionView;
 - (void)collectionView:(id)arg1 carouselLayout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
-- (long long)defaultPinStyle;
+- (long long)defaultItemPinningStyle;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (Class)_cellClassForLockup:(id)arg1;
 - (id)_dequeueCellForLockup:(id)arg1 collectionView:(id)arg2 indexPath:(id)arg3;
 - (Class)_cellClassForViewElement:(id)arg1;
 - (id)backgroundColorForIndexPath:(id)arg1;
+- (long long)applyUpdateType:(long long)arg1;
 - (void)_reloadViewElementProperties;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willAppearInContext:(id)arg1;
-- (void)setPageComponent:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

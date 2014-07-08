@@ -24,7 +24,7 @@
 @property(retain) NSURL * URL;
 @property long long previousStatusBarStyle;
 
-+ (bool)isAvailable;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (id)passes;
 - (id)initWithPass:(id)arg1;
@@ -48,12 +48,12 @@
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (long long)modalPresentationStyle;
-- (bool)wantsFullScreenLayout;
 - (unsigned long long)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
 
 @end

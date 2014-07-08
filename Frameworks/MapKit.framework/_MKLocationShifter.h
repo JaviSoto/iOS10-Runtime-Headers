@@ -8,7 +8,10 @@
     GEOLocationShifter *_locationShifter;
 }
 
+@property(getter=isLocationShiftEnabled,readonly) bool locationShiftEnabled;
 
+
+- (bool)isLocationShiftEnabled;
 - (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
 - (void).cxx_destruct;

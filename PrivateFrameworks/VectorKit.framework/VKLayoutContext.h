@@ -109,9 +109,9 @@
 - (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })labelEdgeInsets;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct Loader { struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { struct LoaderImpl {} *x_1_2_1; } x_1_1_1; } x1; }*)loader;
+- (struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; })device;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
-- (struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; })device;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;

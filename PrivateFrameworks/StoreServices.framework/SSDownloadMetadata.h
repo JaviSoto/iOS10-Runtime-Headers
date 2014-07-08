@@ -205,8 +205,6 @@
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (unsigned long long)itemIdentifier;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setValuesFromDownload:(id)arg1;
 - (id)podcastFeedURL;
 - (id)fullSizeImageURL;
@@ -217,12 +215,14 @@
 - (id)sortTitle;
 - (id)numberOfBytesToHash;
 - (id)sinfs;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)kind;
 - (id)longDescription;
 - (void)setKind:(id)arg1;
-- (id)kind;
-- (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 - (id)bundleIdentifier;
+- (id)dictionary;
 - (id)requiredDeviceCapabilities;
 - (void)setTitle:(id)arg1;
 - (id)title;

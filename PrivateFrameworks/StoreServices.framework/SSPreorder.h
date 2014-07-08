@@ -29,6 +29,7 @@
 @property(readonly) NSString * title;
 
 
+- (void)_setItemKind:(id)arg1;
 - (unsigned long long)storePreorderIdentifier;
 - (unsigned long long)storeItemIdentifier;
 - (id)storeAccountIdentifier;
@@ -37,7 +38,6 @@
 - (void)_setStoreAccountIdentifier:(id)arg1;
 - (void)_setReleaseDateString:(id)arg1;
 - (void)_setReleaseDate:(id)arg1;
-- (void)_setItemKind:(id)arg1;
 - (void)_setImageCollection:(id)arg1;
 - (void)_setArtistName:(id)arg1;
 - (id)copyReleaseDateStringWithStyle:(long long)arg1;
@@ -46,9 +46,9 @@
 - (id)imageCollection;
 - (id)itemKind;
 - (id)artistName;
+- (id)_initWithPersistentIdentifier:(long long)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)_initWithPersistentIdentifier:(long long)arg1;
 - (id)title;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

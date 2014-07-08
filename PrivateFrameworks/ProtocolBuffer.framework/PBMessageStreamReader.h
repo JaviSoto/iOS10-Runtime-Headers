@@ -14,8 +14,8 @@
 @property(readonly) unsigned long long position;
 
 
-- (void)setClassOfNextMessage:(Class)arg1;
 - (id)nextMessage;
+- (void)setClassOfNextMessage:(Class)arg1;
 - (Class)classOfNextMessage;
 - (void)dealloc;
 - (unsigned long long)position;

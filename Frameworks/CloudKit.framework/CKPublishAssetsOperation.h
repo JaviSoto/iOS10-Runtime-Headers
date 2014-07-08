@@ -33,8 +33,8 @@
 @property(retain) NSArray * recordIDs;
 
 
-- (void)setPublishAssetCompletionBlock:(id)arg1;
 - (void)setAssetPublishedBlock:(id)arg1;
+- (void)setPublishAssetCompletionBlock:(id)arg1;
 - (id)publishAssetCompletionBlock;
 - (id)assetPublishedBlock;
 - (void)setURLOptions:(unsigned long long)arg1;

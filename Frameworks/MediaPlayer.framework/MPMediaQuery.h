@@ -113,6 +113,7 @@
 - (void)setItemPropertiesToFetch:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)removeFilterPredicate:(id)arg1;
+- (id)copyBySanitizingStaticEntities;
 - (id)copyByRemovingStaticEntities;
 - (id)initWithEntities:(id)arg1 entityType:(unsigned long long)arg2;
 - (void)_enumerateCollectionsInOrder:(bool)arg1 usingBlock:(id)arg2;
@@ -126,8 +127,8 @@
 - (void)setSortItems:(bool)arg1;
 - (void)setGroupingType:(long long)arg1;
 - (id)protobufferEncodableObject;
-- (long long)groupingType;
 - (id)filterPredicates;
+- (long long)groupingType;
 - (void)setStaticEntities:(id)arg1 entityType:(unsigned long long)arg2;
 - (id)initWithCriteria:(id)arg1 library:(id)arg2;
 - (bool)_isFilteringDisabled;
@@ -137,8 +138,8 @@
 - (void)addFilterPredicate:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
 - (id)mediaLibrary;
-- (id)items;
 - (void)_enumerateItemsUsingBlock:(id)arg1;
+- (id)items;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

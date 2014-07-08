@@ -7,10 +7,11 @@
 @interface SKUIBrowseItemPageSection : SKUIStorePageSection  {
 }
 
-@property(retain) SKUIBrowseItemComponent * pageComponent;
+@property(readonly) SKUIBrowseItemComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
+- (id)_imageForImageViewElement:(id)arg1 styleColor:(id)arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;

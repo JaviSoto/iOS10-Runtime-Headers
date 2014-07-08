@@ -64,7 +64,7 @@
 - (void)_handleDaemonException:(id)arg1;
 - (bool)_autoReconnect;
 - (bool)connectToDaemon;
-- (void)disconnectFromDaemonWithForce:(bool)arg1;
+- (void)_disconnectFromDaemonWithForce:(bool)arg1;
 - (bool)__isRemoteObjectValidOnQueue:(id)arg1;
 - (bool)__isLocalObjectValidOnQueue:(id)arg1;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
@@ -82,7 +82,6 @@
 - (bool)_setServices:(id)arg1;
 - (bool)connectToDaemonWithLaunch:(bool)arg1;
 - (void)_connectToDaemonWithLaunch:(bool)arg1 services:(id)arg2 commands:(id)arg3 capabilities:(unsigned int)arg4;
-- (unsigned int)capabilities;
 - (id)commands;
 - (id)services;
 - (void)_blockUntilSendQueueIsEmpty;
@@ -94,6 +93,7 @@
 - (bool)remoteObjectExists;
 - (bool)localObjectExists;
 - (bool)isConnecting;
+- (unsigned int)capabilities;
 - (id)localObject;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;

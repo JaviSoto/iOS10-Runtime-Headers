@@ -122,6 +122,7 @@
 - (id)iconString;
 - (bool)shouldExpungeMessagesOnDelete;
 - (bool)_shouldLogDeleteActivity;
+- (bool)supportsThreadNotifications;
 - (void)setCustomSignature:(id)arg1;
 - (id)customSignature;
 - (id)fetchLimits;
@@ -305,7 +306,6 @@
 - (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
 - (int)secureCompositionSigningPolicyForAddress:(id)arg1;
-- (bool)supportsThreadNotifications;
 - (bool)secureMIMEEnabled;
 - (void)stopListeningForNotifications;
 - (void)setEmailAddresses:(id)arg1;

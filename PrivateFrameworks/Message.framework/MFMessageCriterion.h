@@ -33,6 +33,7 @@
 @property bool expressionIsSanitized;
 
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
++ (id)notCriterionWithCriterion:(id)arg1;
 + (id)todayMessageCriterion;
 + (id)hasAttachmentsCriterion;
 + (id)includesMeCriterion;
@@ -120,12 +121,12 @@
 - (id)libraryIdentifiers;
 - (void)setExpression:(id)arg1;
 - (id)expression;
+- (void)setName:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -25,9 +25,9 @@
 @property(copy) id errorHandler;
 
 
+- (void)startRequest:(id)arg1 appIdentifier:(id)arg2 finished:(id)arg3 error:(id)arg4;
 - (void)providerReceivedErrorCode:(long long)arg1 userInfo:(id)arg2;
 - (void)startProviderWithRequest:(id)arg1 appIdentifier:(id)arg2;
-- (void)startRequest:(id)arg1 appIdentifier:(id)arg2 finished:(id)arg3 error:(id)arg4;
 - (void)providerDidCancel;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)requestCompleted;

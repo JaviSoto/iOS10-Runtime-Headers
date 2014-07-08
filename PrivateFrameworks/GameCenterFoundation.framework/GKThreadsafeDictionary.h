@@ -15,9 +15,9 @@
 - (id)objectForKey:(id)arg1 objectProducerBlock:(id)arg2;
 - (void)readFromDictionary:(id)arg1;
 - (void)writeToDictionary:(id)arg1;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)dictionary;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)initWithName:(id)arg1;
 - (id)allKeys;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

@@ -90,8 +90,8 @@
 - (void)setContact:(id)arg1;
 - (id)contact;
 - (id)contacts;
-- (id)property;
 - (id)group;
+- (id)property;
 - (id)init;
 - (void)setGroup:(id)arg1;
 - (void)setDelegate:(id)arg1;

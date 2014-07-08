@@ -9,7 +9,7 @@
     NSArray *_managedArray;
 }
 
-@property id ownerObject;
+@property(retain) id ownerObject;
 @property(retain) NSArray * managedArray;
 
 

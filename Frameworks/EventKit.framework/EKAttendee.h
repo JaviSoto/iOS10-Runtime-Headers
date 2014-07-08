@@ -28,12 +28,12 @@
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 - (int)participantRole;
 - (int)participantType;
-- (bool)isCurrentUser;
 - (void)setParticipantStatus:(int)arg1;
 - (int)participantStatus;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (id)owner;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
+- (bool)isCurrentUser;
+- (id)owner;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

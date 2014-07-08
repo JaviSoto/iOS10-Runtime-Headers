@@ -41,6 +41,7 @@
 - (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (bool)_shouldKeepCurrentFirstResponder;
 - (long long)adaptivePresentationStyle;
 - (void)_transitionToWillBegin;
 - (void)_transitionFromWillBegin;

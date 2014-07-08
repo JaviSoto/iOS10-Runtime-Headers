@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSHTTPURLResponse, NSDictionary, NSData, NSError, NSString;
+@class NSHTTPURLResponse, NSDictionary, NSData, NSError, NSNumber, NSString;
 
 @interface AAResponse : NSObject  {
     NSDictionary *_responseDictionary;
@@ -10,6 +10,7 @@
     NSError *_error;
     long long _statusCode;
     NSData *_data;
+    NSNumber *_maxAge;
 }
 
 @property(readonly) NSDictionary * responseDictionary;
@@ -17,6 +18,7 @@
 @property(readonly) NSString * protocolVersion;
 @property(readonly) long long statusCode;
 @property(readonly) NSData * data;
+@property(readonly) NSNumber * maxAge;
 
 
 - (id)_deviceSpecificLocalizedString:(id)arg1;
@@ -31,5 +33,6 @@
 - (id)error;
 - (long long)statusCode;
 - (void).cxx_destruct;
+- (id)maxAge;
 
 @end

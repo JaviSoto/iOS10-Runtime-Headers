@@ -12,8 +12,8 @@
 
 + (bool)isKeyExcludedFromWebScript:(const char *)arg1;
 
-- (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
+- (id)dictionary;
 - (id)valueForKey:(id)arg1;
 - (id)attributeKeys;
 - (id)init;

@@ -41,10 +41,10 @@
 - (id)initWithEncodedDictionary:(id)arg1;
 - (int)camera;
 - (void)setCamera:(int)arg1;
-- (void)setOrientation:(int)arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)orientation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsRect;
+- (void)setOrientation:(int)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

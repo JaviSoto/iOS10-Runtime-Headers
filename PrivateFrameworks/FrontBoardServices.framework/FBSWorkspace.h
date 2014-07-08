@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSMutableDictionary, FBSSerialQueue, NSArray, FBSWorkspaceClient, <FBSWorkspaceDelegate>;
+@class NSMutableDictionary, FBSSerialQueue, NSArray, NSObject<OS_dispatch_queue>, FBSWorkspaceClient, <FBSWorkspaceDelegate>;
 
 @interface FBSWorkspace : NSObject <FBSWorkspaceClientDelegate> {
+    NSObject<OS_dispatch_queue> *_queue;
     <FBSWorkspaceDelegate> *_delegate;
     struct { 
         unsigned int didBeginTransaction : 1; 
@@ -15,7 +16,7 @@
     } _delegateFlags;
     FBSWorkspaceClient *_client;
     NSMutableDictionary *_scenesByIdentifier;
-    FBSSerialQueue *_queue;
+    FBSSerialQueue *_callOutQueue;
 }
 
 @property <FBSWorkspaceDelegate> * delegate;
@@ -31,14 +32,16 @@
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)_queue_sceneWithIdentifier:(id)arg1;
 - (id)initWithSerialQueue:(id)arg1;
+- (id)_internalQueue;
 - (bool)isUIApplicationWorkspace;
-- (id)_newClient;
+- (Class)_clientClass;
 - (void)client:(id)arg1 handleActions:(id)arg2;
 - (void)client:(id)arg1 handleDestroyScene:(id)arg2 withCompletion:(id)arg3;
 - (void)client:(id)arg1 handleCreateScene:(id)arg2 withCompletion:(id)arg3;
 - (void)clientEndTransaction:(id)arg1;
 - (void)clientBeginTransaction:(id)arg1;
 - (void)clientSystemApplicationTerminated:(id)arg1;
+- (void)_performDelegateCallOut:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

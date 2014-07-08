@@ -18,8 +18,8 @@
 
 - (long long)compareFileNames:(id)arg1;
 - (bool)isBinary;
-- (id)localURL;
 - (id)fileFormat;
+- (id)localURL;
 - (id)UUID;
 - (id)init;
 - (bool)isEqual:(id)arg1;

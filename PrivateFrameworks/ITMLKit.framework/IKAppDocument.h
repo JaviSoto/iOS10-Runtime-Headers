@@ -44,6 +44,7 @@
 - (void)onUpdate;
 - (void)onNeedsUpdateWithCompletion:(id)arg1;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
+- (void)scrollToTop;
 - (void)setNeedsUpdateForDocument:(id)arg1;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)updateForDocument:(id)arg1;
@@ -56,9 +57,9 @@
 - (bool)_clearUpdatesForElement:(id)arg1;
 - (id)templateElement;
 - (id)navigationDocument;
-- (id)jsDocument;
 - (id)jsManagedDocument;
 - (void)_updateWithXML:(id)arg1;
+- (id)jsDocument;
 - (id)appContext;
 - (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id)arg2;
 - (void)onDisappear;

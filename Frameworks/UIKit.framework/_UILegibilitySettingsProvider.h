@@ -68,5 +68,7 @@
 - (bool)accumulateChangesToContentColor:(id)arg1 contrast:(double)arg2;
 - (void)clearContentColorAccumulator;
 - (long long)currentStyle;
+- (void)pl_primeForUseWithCameraOverlays;
+- (void)pl_primeForUseWithCameraOverlays;
 
 @end

@@ -5,6 +5,7 @@
 @class AVNowPlayingInfoController, AVAudioOnlyIndicatorView, AVTouchIgnoringView, AVPlayerController, <AVPlayerViewControllerDelegate>, AVPlayer, UIView, AVPlaybackControlsViewController, NSString, UIPopoverController, AVVideoLayerView, NSTimer, AVFullScreenViewController, CALayer<AVVideoLayer>, AVLoadingIndicatorView, AVExternalPlaybackIndicatorView, AVUnsupportedContentIndicatorView, AVRemoteCommandController, UIWindow;
 
 @interface AVPlayerViewController : UIViewController <UIPopoverControllerDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate> {
+    unsigned int _playerShouldAutoplay : 1;
     unsigned int _showsPlaybackControls : 1;
     long long _videoLayerGravity;
     AVNowPlayingInfoController *_nowPlayingInfoController;
@@ -45,15 +46,16 @@
     unsigned int _isTransitioningToOrFromFullScreen : 1;
     AVPlayerController *_playerController;
     CALayer<AVVideoLayer> *_videoLayer;
+    unsigned int _showsExitFullScreenButton : 1;
     <AVPlayerViewControllerDelegate> *_delegate;
     struct { 
         unsigned int playerViewController_shouldExitFullScreenWithReason : 1; 
-        unsigned int playerViewController_shouldDismissWithReason : 1; 
     } _delegateRespondsTo;
 }
 
 @property(retain) AVPlayerController * playerController;
 @property(readonly) UIView * iAdPrerollView;
+@property bool showsExitFullScreenButton;
 @property <AVPlayerViewControllerDelegate> * delegate;
 @property(retain) AVPlayer * player;
 @property bool showsPlaybackControls;
@@ -73,7 +75,6 @@
 - (void)_showPlaybackControlsViewIfNeeded;
 - (id)contentOverlayView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoBounds;
-- (void)setShowsPlaybackControls:(bool)arg1;
 - (void)_hidePlaybackControlsViewIfPossibleAfterDelayIfPlaying;
 - (void)_transitionFromFullScreenViewControllerWithCompletionHandler:(id)arg1;
 - (void)_showOrHidePlaybackControlsView;
@@ -110,10 +111,13 @@
 - (void)doneButtonTapped:(id)arg1;
 - (void)hidePlaybackControlsViewForTouchUp;
 - (void)showPlaybackControlsViewForTouchDown;
+- (void)setShowsExitFullScreenButton:(bool)arg1;
+- (bool)showsExitFullScreenButton;
 - (id)playerController;
 - (id)videoGravity;
 - (void)exitFullScreenWithCompletionHandler:(id)arg1;
 - (void)enterFullScreenWithCompletionHandler:(id)arg1;
+- (void)setShowsPlaybackControls:(bool)arg1;
 - (id)initWithVideoLayer:(id)arg1;
 - (bool)isReadyForDisplay;
 - (void)setPlayerController:(id)arg1;
@@ -131,6 +135,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

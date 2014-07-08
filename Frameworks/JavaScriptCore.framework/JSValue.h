@@ -69,8 +69,8 @@
 - (id)context;
 - (bool)isNull;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (id)init;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;

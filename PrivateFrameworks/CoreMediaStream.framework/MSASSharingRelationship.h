@@ -46,10 +46,10 @@
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
 - (id)phones;
-- (void)setEmails:(id)arg1;
 - (id)personID;
 - (void)setEmail:(id)arg1;
 - (void)setPersonID:(id)arg1;
+- (void)setEmails:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;

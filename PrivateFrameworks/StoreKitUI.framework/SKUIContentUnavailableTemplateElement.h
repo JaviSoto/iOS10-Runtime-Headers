@@ -2,18 +2,19 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIButtonViewElement, SKUILabelViewElement;
+@class SKUIButtonViewElement, SKUIImageViewElement, SKUILabelViewElement;
 
 @interface SKUIContentUnavailableTemplateElement : SKUIViewElement  {
 }
 
-@property(readonly) unsigned long long contentUnavailableStyle;
 @property(readonly) SKUIButtonViewElement * button;
+@property(readonly) SKUIImageViewElement * image;
 @property(readonly) SKUILabelViewElement * messageLabel;
 @property(readonly) SKUILabelViewElement * titleLabel;
 
 
-- (unsigned long long)contentUnavailableStyle;
+- (long long)pageComponentType;
+- (id)image;
 - (id)messageLabel;
 - (id)titleLabel;
 - (id)button;

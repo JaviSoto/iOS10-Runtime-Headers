@@ -19,11 +19,11 @@
 - (id)actionDisplayNameForItemType:(id)arg1;
 - (id)priceDisplayForItemType:(id)arg1;
 - (id)actionParametersForItemIdentifier:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setPriceDisplayString:(id)arg1 forItemType:(id)arg2;
 - (void)setActionDisplayNameString:(id)arg1 forItemType:(id)arg2;
 - (void)setActionParameters:(id)arg1 forItemIdentifier:(id)arg2;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)dealloc;
 
 @end

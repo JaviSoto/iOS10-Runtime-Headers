@@ -22,6 +22,7 @@
 - (void)setEtag:(id)arg1;
 - (id)etag;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setTimestamp:(double)arg1;

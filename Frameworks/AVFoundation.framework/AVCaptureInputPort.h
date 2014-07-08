@@ -24,7 +24,7 @@
 - (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(bool)arg4;
 - (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)_setClock:(struct OpaqueCMClock { }*)arg1;
-- (id)figCaptureSourceConfiguration;
+- (id)figCaptureSourceConfigurationForSessionPreset:(id)arg1;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
 - (void)setEnabled:(bool)arg1;

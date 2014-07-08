@@ -16,11 +16,11 @@
 
 
 - (void)loadPassWithURL:(id)arg1;
-- (id)initWithClientContext:(id)arg1;
 - (void)_didLoadWithPass:(id)arg1 error:(id)arg2;
 - (void)_sendDidFinishIfFinished;
 - (void)_loadPassWithURL:(id)arg1;
 - (void)addPassesViewControllerDidFinish:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;

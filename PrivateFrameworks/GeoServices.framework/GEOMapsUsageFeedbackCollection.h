@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceActionDetails, GEOCarInfo;
+@class GEOMapRegion, GEOPlaceActionDetails, GEOCarInfo;
 
 @interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
     struct { 
@@ -10,13 +10,18 @@
         unsigned long long _low; 
     } _sessionID;
     double _sessionRelativeTimestamp;
+    double _zoomLevel;
     int _actionType;
     GEOCarInfo *_carInfo;
+    GEOMapRegion *_mapRegion;
     GEOPlaceActionDetails *_placeActionDetails;
+    int _sequenceNumber;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int sessionRelativeTimestamp : 1; 
+        unsigned int zoomLevel : 1; 
         unsigned int actionType : 1; 
+        unsigned int sequenceNumber : 1; 
     } _has;
 }
 
@@ -30,10 +35,17 @@
 @property(retain) GEOPlaceActionDetails * placeActionDetails;
 @property(readonly) bool hasCarInfo;
 @property(retain) GEOCarInfo * carInfo;
+@property(readonly) bool hasMapRegion;
+@property(retain) GEOMapRegion * mapRegion;
+@property bool hasZoomLevel;
+@property double zoomLevel;
+@property bool hasSequenceNumber;
+@property int sequenceNumber;
 
 + (id)feedbackCollectionWithTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 + (id)feedbackCollectionWithTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 
+- (double)zoomLevel;
 - (id)carInfo;
 - (id)placeActionDetails;
 - (double)sessionRelativeTimestamp;
@@ -41,18 +53,29 @@
 - (bool)hasPlaceActionDetails;
 - (bool)hasSessionRelativeTimestamp;
 - (void)setHasSessionRelativeTimestamp:(bool)arg1;
+- (bool)hasZoomLevel;
+- (void)setHasZoomLevel:(bool)arg1;
 - (id)initWithTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (void)setZoomLevel:(double)arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setCarInfo:(id)arg1;
 - (void)setPlaceActionDetails:(id)arg1;
 - (id)initWithTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (bool)hasActionType;
 - (void)setHasActionType:(bool)arg1;
+- (bool)hasSequenceNumber;
+- (void)setHasSequenceNumber:(bool)arg1;
+- (void)setSequenceNumber:(int)arg1;
+- (id)mapRegion;
 - (bool)hasSessionID;
 - (void)setHasSessionID:(bool)arg1;
+- (bool)hasMapRegion;
+- (void)setMapRegion:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (int)sequenceNumber;
 - (void)setActionType:(int)arg1;
 - (int)actionType;
 - (bool)isEqual:(id)arg1;

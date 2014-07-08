@@ -40,10 +40,10 @@
 @property(retain) AVMetadataObject * originalMetadataObject;
 
 
-- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (void)setOriginalMetadataObject:(id)arg1;
 - (id)originalMetadataObject;
+- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (void)setInput:(id)arg1;
 - (id)input;
 - (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

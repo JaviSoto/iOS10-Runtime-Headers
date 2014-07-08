@@ -52,8 +52,8 @@
 - (bool)hasDuration;
 - (void)setGroupId:(id)arg1;
 - (id)groupId;
-- (void)setAcceleration:(double)arg1;
 - (bool)hasType;
+- (void)setAcceleration:(double)arg1;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
 - (double)acceleration;

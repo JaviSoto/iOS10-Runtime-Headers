@@ -20,6 +20,7 @@
     NSArray *_requestUUIDs;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
+    NSString *_deviceIdentifier;
     NSObject<OS_dispatch_source> *_timeoutSource;
     long long _usesBackgroundSessionOverride;
 }
@@ -41,28 +42,30 @@
 @property(readonly) CKOperationInfo * operationInfo;
 @property(retain) NSString * sourceApplicationBundleIdentifier;
 @property(retain) NSString * sourceApplicationSecondaryIdentifier;
+@property(retain) NSString * deviceIdentifier;
 @property(retain) NSObject<OS_dispatch_source> * timeoutSource;
 @property long long usesBackgroundSessionOverride;
 
 
-- (void)setIsDiscretionary:(bool)arg1;
 - (void)setSectionID:(id)arg1;
-- (void)setUsesBackgroundSession:(bool)arg1;
 - (bool)usesBackgroundSession;
+- (void)setIsDiscretionary:(bool)arg1;
+- (void)setUsesBackgroundSession:(bool)arg1;
+- (void)setCallbackQueue:(id)arg1;
 - (void)processOperationResult:(id)arg1;
-- (id)_requestUUIDsString;
 - (void)setRequestUUIDs:(id)arg1;
 - (id)requestUUIDs;
 - (void)_installTimeoutSource;
 - (void)_uninstallTimeoutSource;
 - (void)setTimeoutSource:(id)arg1;
 - (id)timeoutSource;
+- (void)setDeviceIdentifier:(id)arg1;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (long long)usesBackgroundSessionOverride;
 - (void)setOperationID:(id)arg1;
-- (id)placeholderOperation;
 - (void)setPlaceholderOperation:(id)arg1;
+- (id)placeholderOperation;
 - (id)parentSectionID;
 - (id)sectionID;
 - (void)_handleCompletionCallback:(id)arg1;
@@ -76,11 +79,11 @@
 - (id)operationInfo;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)CKPropertiesDescription;
-- (void)setCallbackQueue:(id)arg1;
 - (void)setIsExecuting:(bool)arg1;
 - (id)daemon;
-- (id)context;
+- (id)deviceIdentifier;
 - (void)setIsFinished:(bool)arg1;
+- (id)context;
 - (void)main;
 - (void)finishWithError:(id)arg1;
 - (id)init;

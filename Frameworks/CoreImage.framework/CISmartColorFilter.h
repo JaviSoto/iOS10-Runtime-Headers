@@ -9,12 +9,15 @@
     NSNumber *inputVibrancy;
     NSNumber *inputContrast;
     NSNumber *inputCast;
+    NSNumber *inputUseCube;
+    CIImage *_cubeImage;
 }
 
 @property(retain) CIImage * inputImage;
 @property(retain) NSNumber * inputVibrancy;
 @property(retain) NSNumber * inputContrast;
 @property(retain) NSNumber * inputCast;
+@property(retain) NSNumber * inputUseCube;
 
 + (id)customAttributes;
 
@@ -27,11 +30,14 @@
 - (id)_kernelCPos;
 - (id)_kernelV_gt1;
 - (id)_kernelV_lt1;
+- (void)setInputUseCube:(id)arg1;
+- (id)inputUseCube;
 - (id)inputContrast;
 - (void)setInputContrast:(id)arg1;
 - (bool)_isIdentity;
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
+- (void)dealloc;
 
 @end

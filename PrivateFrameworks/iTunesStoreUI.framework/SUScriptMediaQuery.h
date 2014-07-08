@@ -50,8 +50,8 @@
 - (void)removeFilterPredicate:(id)arg1;
 - (id)collections;
 - (void)setGroupingType:(id)arg1;
-- (id)groupingType;
 - (id)filterPredicates;
+- (id)groupingType;
 - (void)setFilterPredicates:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 - (id)canFilterByProperty:(id)arg1;

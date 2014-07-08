@@ -29,8 +29,8 @@
 - (void)setAssets:(id)arg1;
 - (void)setAlbum:(id)arg1;
 - (id)album;
-- (id)managedObjectContext;
 - (void)encodeToXPCObject:(id)arg1;
+- (id)managedObjectContext;
 - (void)run;
 - (void)dealloc;
 

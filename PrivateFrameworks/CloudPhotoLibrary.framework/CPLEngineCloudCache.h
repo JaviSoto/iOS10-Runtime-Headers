@@ -13,13 +13,14 @@
 
 - (void)getCommittedRecord:(id*)arg1 stagedRecord:(id*)arg2 forIdentifier:(id)arg3;
 - (id)recordsOfClass:(Class)arg1 isFinal:(bool)arg2;
-- (bool)hasDoneAFirstSynchronization;
 - (id)syncAnchor;
 - (id)recordsWithRelatedIdentifier:(id)arg1 isFinal:(bool)arg2;
 - (bool)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id*)arg3;
+- (bool)hasDoneAFirstSynchronization;
 - (bool)remapAllRecordsWithPreviousIdentifier:(id)arg1 newIdentifier:(id)arg2 error:(id*)arg3;
 - (bool)deleteRecordWithIdentifier:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
 - (bool)addRecord:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
+- (bool)hasRecordWithIdentifier:(id)arg1;
 - (id)resourceOfType:(unsigned long long)arg1 forRecordWithIdentifier:(id)arg2 error:(id*)arg3;
 - (bool)updateRecord:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
 - (id)recordWithIdentifier:(id)arg1 isFinal:(bool)arg2;

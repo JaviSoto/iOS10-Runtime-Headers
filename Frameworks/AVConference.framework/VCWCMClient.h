@@ -15,11 +15,11 @@
 @property(retain) <WCMClientDelegate> * wcmClientDelegate;
 
 
+- (id)connectionQueue;
 - (void)setWcmClientDelegate:(id)arg1;
 - (id)wcmClientDelegate;
 - (void)startWCMClient;
 - (void)stopWCMClient;
-- (id)connectionQueue;
 - (id)connection;
 - (id)init;
 - (void)dealloc;

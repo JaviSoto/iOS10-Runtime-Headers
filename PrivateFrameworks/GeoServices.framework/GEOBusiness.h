@@ -45,7 +45,6 @@
 @property(getter=_hasTakesReservationsAmenity,readonly) bool hasTakesReservationsAmenity;
 @property(getter=_takesReservations,readonly) bool takesReservations;
 @property(getter=_hasOperatingHours,readonly) bool hasOperatingHours;
-@property(getter=_operatingHours,readonly) NSArray * operatingHours;
 @property bool hasUID;
 @property unsigned long long uID;
 @property(readonly) bool hasName;
@@ -82,7 +81,7 @@
 - (id)_allCategoriesForType:(unsigned int)arg1;
 - (id)initWithPlaceDataEntity:(id)arg1 rating:(id)arg2 hours:(id)arg3 reviews:(id)arg4 photos:(id)arg5;
 - (bool)_isYelp;
-- (id)_operatingHours;
+- (id)_currentOperatingHoursForTimeZone:(id)arg1;
 - (bool)_hasOperatingHours;
 - (bool)_takesReservations;
 - (bool)_hasTakesReservationsAmenity;
@@ -113,6 +112,7 @@
 - (id)uRL;
 - (id)telephone;
 - (id)phoneticName;
+- (unsigned long long)uID;
 - (bool)hasMapsURL;
 - (bool)hasIsClosed;
 - (void)setHasIsClosed:(bool)arg1;
@@ -168,21 +168,21 @@
 - (void)setMapsURL:(id)arg1;
 - (void)setTelephone:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
-- (unsigned long long)uID;
 - (bool)hasName;
 - (void)copyTo:(id)arg1;
 - (bool)hasCenter;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)sources;
 - (void)setSources:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)mapsURL;
 - (id)center;
 - (void)addSource:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)dealloc;
 - (id)description;

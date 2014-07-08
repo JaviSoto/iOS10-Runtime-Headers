@@ -15,6 +15,7 @@
     NSDictionary *_userInfo;
 }
 
+@property(readonly) NSString * br_lastEditorDeviceName;
 @property(readonly) unsigned long long options;
 @property(readonly) NSObject<GSAdditionStoring> * storage;
 @property(readonly) NSString * nameSpace;
@@ -29,6 +30,8 @@
 @property(readonly) NSData * sandboxExtension;
 
 + (id)makeNameForUser:(unsigned int)arg1 name:(id)arg2;
++ (id)additionURLForName:(id)arg1 storagePrefix:(id)arg2 inConflictNamespace:(bool)arg3;
++ (bool)brc_parseAdditionFilename:(id)arg1 mangledContainerID:(id*)arg2 itemID:(id*)arg3 etag:(id*)arg4;
 
 - (bool)copyAdditionContentToURL:(id)arg1 error:(id*)arg2;
 - (bool)internalStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg1;
@@ -60,5 +63,9 @@
 - (id)nameSpace;
 - (id)size;
 - (id)originalPOSIXName;
+- (bool)br_markResolvedWithError:(id*)arg1;
+- (id)br_lastEditorDeviceName;
+- (bool)brc_removeConflictLoserWithError:(id*)arg1;
+- (bool)brc_parseMangledContainerID:(id*)arg1 itemID:(id*)arg2 etag:(id*)arg3;
 
 @end

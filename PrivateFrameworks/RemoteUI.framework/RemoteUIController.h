@@ -32,8 +32,8 @@
 @property(copy) id loadCompletion;
 
 
-- (void)setUserAgentString:(id)arg1;
 - (void)setLoader:(id)arg1;
+- (void)setUserAgentString:(id)arg1;
 - (void)setHandlerForButtonName:(id)arg1 handler:(id)arg2;
 - (void)setHandlerForButtonsMatching:(id)arg1 handler:(id)arg2;
 - (void)removeHandlerForKey:(id)arg1;
@@ -51,6 +51,7 @@
 - (void)_willPresentObjectModel:(id)arg1 modally:(bool)arg2;
 - (id)loader;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
+- (void)setLoadCompletion:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id)arg4;
@@ -61,7 +62,6 @@
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)viewControllerForAlertPresentation;
-- (void)setLoadCompletion:(id)arg1;
 - (void)loadRequest:(id)arg1 completion:(id)arg2;
 - (id)userAgentString;
 - (void)loadRequest:(id)arg1;

@@ -90,6 +90,7 @@
 - (bool)changeCurrentDirectoryPath:(id)arg1;
 - (bool)directoryCanBeCreatedAtPath:(id)arg1;
 - (id)_displayPathForPath:(id)arg1;
+- (long long)relationshipOfDirectory:(unsigned long long)arg1 inDomain:(unsigned long long)arg2 toURL:(id)arg3 error:(id*)arg4;
 - (id)_URLForTrashingItemAtURL:(id)arg1 create:(bool)arg2 error:(id*)arg3;
 - (id)contentsOfDirectoryAtURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
 - (id)mountedVolumeURLsIncludingResourceValuesForKeys:(id)arg1 options:(unsigned long long)arg2;
@@ -107,6 +108,7 @@
 - (bool)removeItemAtPath:(id)arg1 error:(id*)arg2;
 - (bool)isWritableFileAtPath:(id)arg1;
 - (id)currentDirectoryPath;
+- (long long)relationshipOfURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (bool)createDirectoryAtPath:(id)arg1 withIntermediateDirectories:(bool)arg2 attributes:(id)arg3 error:(id*)arg4;
 - (id)_URLForReplacingItemAtURL:(id)arg1 error:(id*)arg2;
 - (id)contentsOfDirectoryAtPath:(id)arg1 error:(id*)arg2;
@@ -166,6 +168,9 @@
 - (id)tmpFileForVideoTranscodeWithExtension:(id)arg1;
 - (bool)directoryExistsAtPath:(id)arg1;
 - (bool)removeDirectoryAtPathIfEmpty:(id)arg1 ancestors:(int)arg2;
+- (id)brc_createTemporaryFileInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
+- (int)brc_createTemporaryFdInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
+- (id)brc_createTemporarySubdirectoryOfItem:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (bool)grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
 - (void)logFileProtectionAtURL:(id)arg1 recursively:(bool)arg2;
 - (bool)hasAtMostFileProtection:(id)arg1 atURL:(id)arg2 recursively:(bool)arg3;

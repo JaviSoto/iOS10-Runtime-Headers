@@ -20,6 +20,7 @@
 - (id)pairingCertificateData;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

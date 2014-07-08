@@ -33,9 +33,9 @@
 - (id)syncQueue;
 - (void)setMaxCount:(unsigned long long)arg1;
 - (unsigned long long)maxCount;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)dictionary;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)removeObjectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;

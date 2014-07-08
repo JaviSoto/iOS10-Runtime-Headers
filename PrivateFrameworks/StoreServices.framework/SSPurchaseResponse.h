@@ -40,9 +40,9 @@
 - (void)setResponseStartTime:(double)arg1;
 - (id)purchase;
 - (void)setPurchase:(id)arg1;
+- (void)setURLResponse:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setURLResponse:(id)arg1;
 - (void)setError:(id)arg1;
 - (id)error;
 - (void)dealloc;

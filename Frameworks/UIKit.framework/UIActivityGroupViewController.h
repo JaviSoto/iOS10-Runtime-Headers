@@ -10,6 +10,7 @@
     bool_picker;
     bool_hasActivities;
     bool_activityIndexDidChangeWhileDragging;
+    bool_allowsUserCustomization;
     <UIActivityGroupViewControllerDelegate> *_delegate;
     long long _activityCategory;
     NSDictionary *_customActivityTitles;
@@ -42,6 +43,7 @@
 @property(retain) UIView * draggingView;
 @property bool activityIndexDidChangeWhileDragging;
 @property(copy) NSIndexPath * indexPathForMenuActivity;
+@property bool allowsUserCustomization;
 
 
 - (void)setDelegate:(id)arg1;
@@ -52,13 +54,14 @@
 - (void)setInitialDraggingLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })initialDraggingLocation;
 - (void)setVisibleActivities:(id)arg1;
-- (id)visibleActivities;
 - (void)setHasActivities:(bool)arg1;
 - (bool)hasActivities;
 - (void)setEmbedded:(bool)arg1;
+- (void)setDarkStyleOnLegacyApp:(bool)arg1;
 - (void)setCustomActivityTitles:(id)arg1;
 - (id)customActivityTitles;
 - (long long)activityCategory;
+- (void)reloadItemForActivityOfTypeIfNeeded:(id)arg1;
 - (void)renameActivity:(id)arg1;
 - (void)setActivities:(id)arg1;
 - (id)initWithActivityCategory:(long long)arg1;
@@ -66,15 +69,16 @@
 - (void)activityUserDefaultsDidChange:(id)arg1;
 - (void)ignoreUserDefaultsChangesWhileUsingBlock:(id)arg1;
 - (bool)canMoveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (void)hideActivity:(id)arg1;
 - (bool)activityIndexDidChangeWhileDragging;
 - (void)setActivityIndexDidChangeWhileDragging:(bool)arg1;
 - (void)setIndexPathForMenuActivity:(id)arg1;
 - (id)editingGestureRecognizer;
 - (bool)isPicker;
 - (bool)isEmbedded;
-- (void)setDarkStyleOnLegacyApp:(bool)arg1;
 - (bool)darkStyleOnLegacyApp;
 - (id)activityForItemAtIndexPath:(id)arg1;
+- (id)visibleActivities;
 - (void)hideItemAtIndexPath:(id)arg1;
 - (id)indexPathForMenuActivity;
 - (void)_setVisibleActivities:(id)arg1 animated:(bool)arg2;
@@ -83,7 +87,6 @@
 - (void)_setActivities:(id)arg1 animated:(bool)arg2;
 - (id)userDefaultsActivity;
 - (void)setActivities:(id)arg1 animated:(bool)arg2;
-- (void)hideActivity:(id)arg1;
 - (void)registerForActivityUserDefaultsChanges;
 - (void)setEditingGestureRecognizer:(id)arg1;
 - (id)activityGroupViewLayout;
@@ -93,16 +96,21 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_preferredSectionInset;
 - (void)setUserDefaultsActivity:(id)arg1;
 - (id)userDefaults;
+- (bool)allowsUserCustomization;
 - (void)setUserDefaults:(id)arg1;
 - (void)setActivityCategory:(long long)arg1;
 - (void)setPicker:(bool)arg1;
+- (void)setAllowsUserCustomization:(bool)arg1;
 - (id)initWithActivityCategory:(long long)arg1 userDefaults:(id)arg2 userDefaultsIdentifier:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidLoad;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;

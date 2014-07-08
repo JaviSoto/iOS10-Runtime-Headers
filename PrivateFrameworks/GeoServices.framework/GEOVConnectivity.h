@@ -11,12 +11,12 @@
 @property(retain) NSMutableArray * junctions;
 
 
+- (id)junctions;
 - (id)junctionAtIndex:(unsigned long long)arg1;
 - (void)clearJunctions;
 - (void)addJunction:(id)arg1;
 - (void)setJunctions:(id)arg1;
 - (unsigned long long)junctionsCount;
-- (id)junctions;
 - (void)copyTo:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

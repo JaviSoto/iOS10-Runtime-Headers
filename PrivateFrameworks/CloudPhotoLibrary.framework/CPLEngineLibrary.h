@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSURL, CPLEngineSyncManager, CPLEngineScheduler, CPLEngineTransport, NSString, NSHashTable, CPLEngineSystemMonitor, NSObject<OS_dispatch_queue>, NSArray, CPLStatistics, CPLEngineStore, NSError, CPLPlatformObject;
+@class NSURL, CPLConfiguration, CPLEngineSyncManager, CPLEngineScheduler, CPLEngineTransport, NSString, NSHashTable, CPLEngineSystemMonitor, NSObject<OS_dispatch_queue>, NSArray, CPLStatistics, CPLEngineStore, NSError, CPLPlatformObject;
 
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
     NSArray *_components;
@@ -21,6 +21,7 @@
     CPLEngineTransport *_transport;
     CPLStatistics *_statistics;
     CPLEngineSystemMonitor *_systemMonitor;
+    CPLConfiguration *_configuration;
 }
 
 @property(copy,readonly) NSURL * clientLibraryBaseURL;
@@ -33,6 +34,7 @@
 @property(readonly) CPLEngineTransport * transport;
 @property(readonly) CPLStatistics * statistics;
 @property(readonly) CPLEngineSystemMonitor * systemMonitor;
+@property(readonly) CPLConfiguration * configuration;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)platformImplementationProtocol;
@@ -65,6 +67,7 @@
 - (id)cloudLibraryResourceStorageURL;
 - (id)store;
 - (id)statistics;
+- (id)configuration;
 - (void).cxx_destruct;
 - (id)description;
 - (void)openWithCompletionHandler:(id)arg1;

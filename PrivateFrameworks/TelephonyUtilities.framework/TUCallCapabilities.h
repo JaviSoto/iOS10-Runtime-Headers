@@ -13,6 +13,8 @@
 + (id)wiFiCallingCapabilityInformation;
 + (void)setWiFiCallingEnabled:(bool)arg1;
 + (bool)canEnableWiFiCalling;
++ (bool)supportsDisplayingTelephonyCalls;
++ (bool)supportsRelayingTelephonyCalls;
 + (bool)supportsFaceTimeVideoCalls;
 + (bool)supportsFaceTimeAudioCalls;
 + (void)setWiFiCallingCapabilityInformation:(id)arg1;

@@ -9,8 +9,8 @@
 @property int format;
 
 
-- (void)setFormat:(int)arg1;
 - (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
+- (void)setFormat:(int)arg1;
 - (int)format;
 - (id)initWithFormat:(int)arg1;
 

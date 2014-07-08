@@ -53,9 +53,10 @@
 + (void)setDefaultFormatterBehavior:(unsigned long long)arg1;
 + (id)CalSharedDateFormatter;
 + (id)mf_formatDate:(id)arg1 shortStyle:(bool)arg2;
++ (id)monthYearStringFromDate:(id)arg1;
 
-- (void)setDateFormat:(id)arg1;
 - (void)setDoesRelativeDateFormatting:(bool)arg1;
+- (void)setDateFormat:(id)arg1;
 - (id)PMSymbol;
 - (id)AMSymbol;
 - (id)shortStandaloneMonthSymbols;

@@ -23,6 +23,7 @@
 - (id)navigationControllerDelegate;
 - (id)initWithAppContext:(id)arg1 navigationController:(id)arg2;
 - (void)removeDocument:(id)arg1;
+- (void)clear;
 - (void).cxx_destruct;
 
 @end

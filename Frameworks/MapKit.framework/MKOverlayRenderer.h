@@ -29,6 +29,7 @@
 - (void)overlay:(id)arg1 drawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg2 inContext:(struct CGContext { }*)arg3;
 - (bool)overlay:(id)arg1 canDrawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg2;
 - (id)initWithOverlay:(id)arg1;
+- (id)overlay;
 - (id)_renderer;
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
 - (struct { double x1; double x2; })mapPointForPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -49,7 +50,6 @@
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (id)overlay;
 - (double)contentScaleFactor;
 - (void)setContentScaleFactor:(double)arg1;
 - (void)setAlpha:(double)arg1;

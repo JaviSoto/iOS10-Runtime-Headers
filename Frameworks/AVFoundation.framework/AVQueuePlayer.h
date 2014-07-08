@@ -13,7 +13,6 @@
 + (id)playerWithURL:(id)arg1;
 + (void)initialize;
 
-- (id)items;
 - (void)commitModifications;
 - (void)beginModifications;
 - (bool)canInsertItem:(id)arg1 afterItem:(id)arg2;
@@ -24,6 +23,7 @@
 - (id)initWithItems:(id)arg1;
 - (long long)_defaultActionAtItemEnd;
 - (void)setActionAtItemEnd:(long long)arg1;
+- (id)items;
 - (id)init;
 - (void)dealloc;
 - (void)removeAllItems;

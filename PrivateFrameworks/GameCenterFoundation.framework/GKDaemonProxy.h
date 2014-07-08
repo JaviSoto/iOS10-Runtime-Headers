@@ -32,13 +32,13 @@
 + (id)challengeServiceProxy;
 + (id)gameStatServicePrivateProxy;
 + (id)gameServiceProxy;
++ (id)daemonProxy;
 + (id)turnBasedServicePrivateProxy;
 + (id)turnBasedServiceProxy;
 + (id)profileServiceProxy;
 + (id)utilityServiceProxy;
 + (id)analyticsServiceProxy;
 + (id)accountServiceProxy;
-+ (id)daemonProxy;
 + (id)multiplayerServiceProxy;
 + (id)friendServicePrivateProxy;
 + (id)friendServiceProxy;
@@ -55,11 +55,12 @@
 - (id)networkActivityIndicatorDelegate;
 - (id)authenticatedPlayerInfo;
 - (void)getAccountURLsWithHandler:(id)arg1;
-- (oneway void)setLogBits:(unsigned int)arg1;
+- (oneway void)setLogBits:(int)arg1;
 - (oneway void)achievementSelected:(id)arg1;
 - (oneway void)scoreSelected:(id)arg1;
 - (oneway void)respondedToNearbyInvite:(id)arg1;
 - (oneway void)completedOptimisticAuthenticationWithResponse:(id)arg1 error:(id)arg2;
+- (oneway void)setLocalPlayer:(id)arg1 authenticated:(bool)arg2 reply:(id)arg3;
 - (oneway void)setCurrentGame:(id)arg1 serverEnvironment:(long long)arg2 reply:(id)arg3;
 - (oneway void)setPreferencesValues:(id)arg1;
 - (void)_replyToDuplicatesForRequest:(id)arg1 withInvocation:(id)arg2 queue:(id)arg3;
@@ -84,7 +85,6 @@
 - (void)_resetServiceLookup;
 - (void)addInterface:(id)arg1 toLookup:(id)arg2;
 - (oneway void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
-- (oneway void)setLocalPlayer:(id)arg1 authenticated:(bool)arg2 reply:(id)arg3;
 - (id)accountName;
 - (id)connection;
 - (id)init;

@@ -4,7 +4,7 @@
 
 @class TUCall, TUCallModelState, NSMutableArray, TUCallCenterCallsCache;
 
-@interface TUCallCenter : NSObject  {
+@interface TUCallCenter : NSObject <IDSIDQueryControllerDelegate> {
     TUCall *_incomingCall;
     NSMutableArray *_displayedCalls;
     NSMutableArray *_conferenceParticipantCalls;
@@ -28,25 +28,21 @@
 
 - (void)setCallModelState:(id)arg1;
 - (void)endEmergencyCallBackMode;
-- (void)filteredInvitationToIMAVChat:(id)arg1;
+- (void)filteredIncomingIMAVChat:(id)arg1;
 - (void)createdOutgoingIMAVChat:(id)arg1;
 - (void)invitedToIMAVChat:(id)arg1;
-- (void)handleChatGeneratedConferenceInviteDictionary:(id)arg1;
 - (void)handleCallerIDChanged:(id)arg1;
 - (void)handleCallSubTypeChanged:(id)arg1;
 - (void)handleCallAudioUpdatedForCall:(id)arg1 userInfo:(id)arg2;
 - (bool)canTakeCallsPrivate;
-- (void)disconnectAllCalls;
-- (void)disconnectCurrentCallAndActivateHeld;
-- (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (void)resumeCall:(id)arg1;
-- (void)endHeldAndAnswerCall:(id)arg1;
-- (void)endActiveAndAnswerCall:(id)arg1;
 - (void)holdActiveAndAnswerCall:(id)arg1;
 - (void)answerAndEnableHoldMusicForCall:(id)arg1;
+- (void)sendFieldModeDigits:(id)arg1;
 - (id)dialVoicemail;
 - (id)dialEmergency:(id)arg1;
 - (id)dial:(id)arg1 service:(int)arg2;
+- (bool)anyCallIsEndpointOnCurrentDevice;
 - (unsigned long long)callCountOnDefaultPairedDevice;
 - (id)callGroupsOnDefaultPairedDevice;
 - (id)callWithUniqueProxyIdentifier:(id)arg1;
@@ -60,6 +56,7 @@
 - (void)handleFilteredCall:(id)arg1 userInfo:(id)arg2;
 - (id)_callStatusUserInfoForUserInfo:(id)arg1;
 - (void)handleCallStatusChanged:(id)arg1 userInfo:(id)arg2;
+- (bool)anyCallIsHostedOnCurrentDevice;
 - (void)answerCallWithHoldMusic:(id)arg1;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2 wantsHoldMusic:(bool)arg3;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2;
@@ -69,7 +66,6 @@
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
 - (id)sourceAccount:(bool)arg1;
 - (id)callsOnDefaultPairedDevice;
-- (id)_allCalls;
 - (id)_callGroupsFromCalls:(id)arg1;
 - (id)callWithStatus:(int)arg1;
 - (void)_callStatusChangedInternal:(id)arg1;
@@ -82,24 +78,31 @@
 - (void)handleChatFirstPreviewFrameArrived:(id)arg1;
 - (void)daemonConnected:(id)arg1;
 - (void)handleChatInvitationSent:(id)arg1;
+- (void)handleChatSendingAudioChangedNotification:(id)arg1;
 - (void)handleChatConferenceMetadataUpdated:(id)arg1;
 - (void)handleChatStateChanged:(id)arg1;
 - (id)initWithDaemonDelegate:(id)arg1;
 - (id)videoCallWithStatus:(int)arg1;
 - (id)currentVideoCall;
 - (id)allNonFinalVideoCalls;
-- (id)currentVideoCalls;
 - (id)activeVideoCall;
 - (id)incomingVideoCall;
+- (id)currentVideoCalls;
 - (void)setCallsCache:(id)arg1;
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3 sourceIdentifier:(id)arg4;
 - (id)callModelState;
 - (void)handleCallStatusOnDefaultPairedDeviceChanged:(id)arg1;
 - (void)handleCallConnected:(id)arg1;
 - (id)callWithCallUUID:(id)arg1;
+- (void)disconnectAllCalls;
+- (void)disconnectCurrentCallAndActivateHeld;
+- (void)endHeldAndAnswerCall:(id)arg1;
+- (void)endActiveAndAnswerCall:(id)arg1;
 - (void)swapCalls;
-- (id)proxyCallWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(bool)arg5 conferenceIdentifier:(id)arg6;
+- (id)proxyCallWithDestinationID:(id)arg1 service:(int)arg2 status:(int)arg3 sourceIdentifier:(id)arg4 outgoing:(bool)arg5 conferenceIdentifier:(id)arg6 voicemail:(bool)arg7 callerNameFromNetwork:(id)arg8;
 - (void)requestHandoffForAllCalls;
+- (void)disconnectCall:(id)arg1 withReason:(int)arg2;
+- (id)_allCalls;
 - (void)handleCallStatusChanged:(id)arg1;
 - (void)_handleCallControlFailure:(id)arg1;
 - (void)forceUpdateOfCallList;

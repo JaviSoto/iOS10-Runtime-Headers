@@ -47,8 +47,8 @@
 - (bool)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (double)disconnectTimeout;
 - (void)setDisconnectTimeout:(double)arg1;
-- (id)peerID;
 - (bool)isAvailable;
+- (id)peerID;
 - (id)connection;
 - (void)setDelegate:(id)arg1;
 - (id)sessionID;

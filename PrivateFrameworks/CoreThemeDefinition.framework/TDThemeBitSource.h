@@ -12,7 +12,7 @@
 
 
 - (id)fileURLWithDocument:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 
 @end

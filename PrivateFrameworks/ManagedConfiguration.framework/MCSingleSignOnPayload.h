@@ -20,7 +20,7 @@
 - (void)setHumanReadableName:(id)arg1;
 - (id)kerberosInfo;
 - (id)humanReadableName;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)title;

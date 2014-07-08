@@ -24,11 +24,11 @@
 @property(readonly) UIButton * actionButton;
 
 
-- (id)_subtitleFont;
 - (id)underlayPropertiesFactory;
 - (unsigned long long)_numberOfLinesForText:(id)arg1 font:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
 - (void)_sizeView:(id)arg1 forFixedWith:(bool)arg2;
 - (void)_buttonPressed;
+- (id)_subtitleFont;
 - (id)_legibilitySettingsForStyle:(unsigned long long)arg1;
 - (id)_actionFont;
 - (double)_maxLabelWidth;

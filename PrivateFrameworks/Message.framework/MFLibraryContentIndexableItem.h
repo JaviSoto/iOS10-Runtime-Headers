@@ -34,9 +34,9 @@
 - (void)setCc:(id)arg1;
 - (id)to;
 - (void)setTo:(id)arg1;
+- (void)setContent:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (id)subject;
-- (void)setContent:(id)arg1;
 - (id)content;
 - (long long)compare:(id)arg1;
 - (void)dealloc;

@@ -24,8 +24,8 @@
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (void)setStyleIndex:(unsigned long long)arg1;
 - (unsigned long long)styleIndex;
-- (void)setRange:(id)arg1;
 - (void)setHidden:(bool)arg1;
+- (void)setRange:(id)arg1;
 - (void)setWidth:(double)arg1;
 - (double)width;
 - (id)range;

@@ -2,31 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIViewElementText;
-
 @interface SKUIInputViewElement : SKUIViewElement  {
-    NSString *_accessoryText;
-    SKUIViewElementText *_defaultText;
-    NSString *_placeholderString;
-    NSString *_searchHintsURLString;
-    NSString *_trendingSearchURLString;
 }
-
-@property(readonly) NSString * accessoryText;
-@property(readonly) SKUIViewElementText * defaultText;
-@property(readonly) NSString * placeholderString;
-@property(readonly) NSString * searchHintsURLString;
-@property(readonly) NSString * trendingSearchURLString;
 
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (id)applyUpdatesWithElement:(id)arg1;
-- (id)trendingSearchURLString;
-- (id)searchHintsURLString;
-- (id)defaultText;
-- (id)accessoryText;
-- (long long)pageComponentType;
-- (id)placeholderString;
-- (void).cxx_destruct;
 
 @end

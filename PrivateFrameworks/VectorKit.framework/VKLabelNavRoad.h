@@ -105,6 +105,7 @@
 - (bool)matchesRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (void)getRoadEdge:(struct { struct { /* ? */ } *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (bool)isOnewayToJunction;
+- (int)roadClass;
 - (void)prepareStyleVarsWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (const char *)cstrName;
 - (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(id)arg4;
@@ -126,7 +127,6 @@
 - (bool)hasShield;
 - (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
-- (int)roadClass;
 - (bool)isRamp;
 - (void)setDirection:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
 - (struct Matrix<float, 2, 1> { float x1[2]; })direction;

@@ -19,7 +19,7 @@
 - (void)reloadSectionViews;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)willAppearInNavigationBar;
-- (void)reloadAfterDocumentUpdate;
+- (void)reloadAfterDocumentUpdateWithNavigationItem:(id)arg1;
 - (id)viewForElementIdentifier:(id)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;

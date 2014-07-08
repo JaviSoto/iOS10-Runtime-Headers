@@ -90,6 +90,7 @@
 - (bool)isRunningInDisallowedBundle;
 - (void)_loadChildrenForParent:(id)arg1 fromMap:(id)arg2 intoArray:(id)arg3 replacingInbox:(id)arg4 withID:(id)arg5;
 - (id)mailboxForFolderID:(id)arg1;
+- (bool)supportsThreadNotifications;
 - (id)fetchLimits;
 - (bool)restrictedFromSyncingRecents;
 - (id)copyDataForRemoteEncryptionCertificatesForAddress:(id)arg1 error:(id*)arg2;
@@ -146,7 +147,6 @@
 - (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
 - (int)secureCompositionSigningPolicyForAddress:(id)arg1;
-- (bool)supportsThreadNotifications;
 - (bool)secureMIMEEnabled;
 - (void)stopListeningForNotifications;
 - (void)_reachabilityChanged:(id)arg1;

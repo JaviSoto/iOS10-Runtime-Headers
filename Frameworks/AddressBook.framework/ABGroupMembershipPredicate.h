@@ -15,13 +15,13 @@
 @property(copy) NSString * accountIdentifier;
 
 
+- (void*)group;
 - (void)setStore:(void*)arg1;
 - (void*)store;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)queryWhereString;
-- (void*)group;
 - (void)setGroup:(void*)arg1;
 - (bool)isValid;
 - (void)dealloc;

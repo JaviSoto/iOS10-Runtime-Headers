@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)setTransientViewController:(id)arg1 animated:(bool)arg2;
 - (id)moreNavigationController;
+- (id)_backdropGroupName;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 

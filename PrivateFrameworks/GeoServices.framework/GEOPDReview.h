@@ -45,6 +45,7 @@
 - (void)setReviewTime:(double)arg1;
 - (void)setReviewer:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)rating;
 - (void)setRating:(id)arg1;
 - (bool)readFrom:(id)arg1;

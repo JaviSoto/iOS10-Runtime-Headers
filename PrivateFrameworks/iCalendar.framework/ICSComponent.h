@@ -147,9 +147,9 @@
 - (void)addComponent:(id)arg1;
 - (void)setComponents:(id)arg1;
 - (void)setUid:(id)arg1;
+- (id)allProperties;
 - (void)setTrigger:(id)arg1;
 - (id)trigger;
-- (id)allProperties;
 - (id)location;
 - (void)setStatus:(int)arg1;
 - (int)status;
@@ -163,8 +163,8 @@
 - (void)setUrl:(id)arg1;
 - (id)init;
 - (id)debugDescription;
-- (unsigned long long)priority;
 - (void)setPriority:(unsigned long long)arg1;
+- (unsigned long long)priority;
 - (id)properties;
 - (void)dealloc;
 - (id)description;

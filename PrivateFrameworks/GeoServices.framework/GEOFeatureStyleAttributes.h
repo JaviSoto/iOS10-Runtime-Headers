@@ -14,19 +14,20 @@
 }
 
 
-- (bool)isRailway;
 - (void)replaceAttributes:(struct { unsigned int x1; int x2; }*)arg1 count:(unsigned int)arg2;
 - (bool)isFreeway;
 - (bool)isWalkable;
 - (bool)isDrivable;
 - (bool)shouldSuppress3DBuildingStrokes;
 - (BOOL)featureType;
+- (bool)isRailway;
 - (int)rampDirection;
 - (int)rampType;
 - (bool)isRamp;
 - (id)initWithStyleAttributes:(id)arg1;
 - (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
 - (void)setExtAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg1 count:(unsigned int)arg2;
+- (id)initWithPlaceDataStyleAttributes:(id)arg1;
 - (void)sort;
 - (bool)isTunnel;
 - (bool)hasDrivingSide;

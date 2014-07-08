@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, NSMutableDictionary, NSMutableArray, CPLLibraryManager, NSObject<OS_dispatch_queue>, PLPhotoLibrary, NSObject<OS_xpc_object>;
+@class NSString, PLCloudTaskManager, NSMutableArray, CPLLibraryManager, NSObject<OS_dispatch_queue>, PLPhotoLibrary, NSObject<OS_xpc_object>;
 
 @interface PLCloudPhotoLibraryManager : NSObject <CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundObserver> {
     NSMutableArray *_uploadBatchArray;
@@ -24,7 +24,6 @@
     unsigned long long _uploadCounterCheck;
     unsigned long long _downloadCounterCheck;
     NSMutableArray *_downloadedDeleteUuid;
-    NSMutableDictionary *_taskIdentifierToPendingResourceTask;
     PLPhotoLibrary *_photoLibrary;
     CPLLibraryManager *_cplLibrary;
     bool_stopping;
@@ -33,6 +32,7 @@
     bool_needSoftReset;
     bool_pausing;
     unsigned long long _defaultResourceDownloadType;
+    PLCloudTaskManager *_taskManager;
 }
 
 + (id)descriptionForResourceType:(unsigned long long)arg1;
@@ -84,6 +84,7 @@
 - (void)sendAlbums:(id)arg1 toBatchManager:(id)arg2;
 - (void)uploadToCloudForEvents:(id)arg1;
 - (void)saveCPLPlistVersion:(id)arg1 forVersionKey:(id)arg2;
+- (void)downloadResource:(id)arg1 highPriority:(bool)arg2 clientBundleID:(id)arg3 taskDidBeginHandler:(id)arg4 progressBlock:(id)arg5 completionHandler:(id)arg6;
 - (void)_recoverFromPauseUnderDiskPressureIfNeeded;
 - (void)saveStoreUUID:(id)arg1;
 - (void)updateLastKnownIndexFromChangeHub;

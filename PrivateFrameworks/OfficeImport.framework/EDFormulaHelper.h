@@ -24,8 +24,8 @@
 - (unsigned long long)resolveTableColumn:(id)arg1 columnName:(id)arg2;
 - (unsigned long long)resolveFile:(id)arg1;
 - (unsigned long long)createIndexWithType:(int)arg1 firstSheetIndex:(unsigned long long)arg2 lastSheetIndex:(unsigned long long)arg3;
-- (int)rowNumber;
 - (id)workbook;
+- (int)rowNumber;
 - (void)dealloc;
 - (int)columnNumber;
 

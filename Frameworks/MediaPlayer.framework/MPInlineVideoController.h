@@ -285,12 +285,12 @@
 - (void)setFullscreen:(bool)arg1 animated:(bool)arg2;
 - (void)setFullscreen:(bool)arg1;
 - (bool)isFullscreen;
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
 - (id)player;
 - (void)setPlayer:(id)arg1;
 - (id)view;
 - (void)exitFullscreen;
+- (void)setOrientation:(long long)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

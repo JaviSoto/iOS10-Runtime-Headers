@@ -11,8 +11,8 @@
 
 - (void)setCurrentUser:(bool)arg1;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
-- (bool)isCurrentUser;
 - (id)lazyLoadRelationForKey:(id)arg1;
+- (bool)isCurrentUser;
 - (id)owner;
 - (id)init;
 - (id)description;

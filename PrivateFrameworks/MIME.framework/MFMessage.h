@@ -40,15 +40,14 @@
 - (void)setMessageData:(id)arg1 isPartial:(bool)arg2;
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (id)dataForMimePart:(id)arg1;
-- (void)setMessageURL:(id)arg1;
 - (id)messageIDHeaderInFortyBytesOrLess;
 - (void)setMessageIDHash:(long long)arg1;
-- (void)setConversationID:(long long)arg1;
 - (id)bccIfCached;
 - (id)ccIfCached;
 - (id)toIfCached;
 - (id)sendersIfCached;
 - (void)setGenerationNumber:(unsigned long long)arg1;
+- (void)setConversationID:(long long)arg1;
 - (id)dateReceived;
 - (id)dateSent;
 - (id)messageBodyIfAvailableUpdatingFlags:(bool)arg1;
@@ -75,7 +74,6 @@
 - (bool)needsDateReceived;
 - (id)subjectIfCached;
 - (id)messageURL;
-- (unsigned long long)messageSize;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (unsigned long long)generationNumber;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3;
@@ -114,6 +112,7 @@
 - (id)messageDataIsComplete:(bool*)arg1 downloadIfNecessary:(bool)arg2;
 - (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (id)messageStore;
+- (void)setMessageURL:(id)arg1;
 - (id)attachmentStorageLocation;
 - (void)setParentPart:(id)arg1;
 - (unsigned int)preferredEncoding;
@@ -122,6 +121,7 @@
 - (void)setExternalID:(id)arg1;
 - (id)to;
 - (void)setTo:(id)arg1;
+- (unsigned long long)messageSize;
 - (id)persistentID;
 - (id)messageBody;
 - (id)messageID;

@@ -27,9 +27,9 @@
 - (id)adamID;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
-- (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 - (id)bundleIdentifier;
+- (id)dictionary;
 - (id)bundleVersion;
 - (void)dealloc;
 - (id)description;

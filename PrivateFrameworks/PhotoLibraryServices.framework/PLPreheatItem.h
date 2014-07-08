@@ -21,18 +21,18 @@
 @property(readonly) long long imageType;
 
 
-- (void)setHeated:(bool)arg1;
-- (bool)heated;
+- (struct CGSize { double x1; double x2; })optimalSourcePixelSize;
+- (bool)addImageHandler:(id)arg1;
+- (id)cachedImage:(bool*)arg1;
+- (void)startPreheatRequestWithCompletionHandler:(id)arg1;
+- (long long)incrementPrefetchCount;
+- (id)cachedImageIfAvailable:(bool*)arg1;
+- (void)cancelPreheatRequest;
+- (long long)decrementPrefetchCount;
 - (void)setBestFormat:(int)arg1;
 - (int)bestFormat;
-- (struct CGSize { double x1; double x2; })optimalSourcePixelSize;
-- (long long)decrementPrefetchCount;
-- (long long)incrementPrefetchCount;
-- (void)cancelPreheatRequest;
-- (bool)addImageHandler:(id)arg1;
-- (id)cachedImageIfAvailable;
-- (id)cachedImage;
-- (void)startPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)setHeated:(bool)arg1;
+- (bool)heated;
 - (int)format;
 - (bool)isCancelled;
 - (long long)imageType;

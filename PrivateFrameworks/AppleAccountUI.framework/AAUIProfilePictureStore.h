@@ -19,13 +19,15 @@
 @property long long pictureStyle;
 
 
+- (id)profilePictureForFamilyMember:(id)arg1;
 - (void)setProfilePictureForAccountOwner:(id)arg1;
 - (id)profilePictureForFamilyMemberWithFirstName:(id)arg1 lastName:(id)arg2 email:(id)arg3;
 - (id)initWithAppleAccount:(id)arg1 store:(id)arg2;
 - (long long)pictureStyle;
 - (double)pictureDiameter;
 - (void)setProfilePictureForAccountOwner:(id)arg1 cropRect:(id)arg2;
-- (id)profilePictureForFamilyMember:(id)arg1;
+- (void)fetchProfilePictureForFamilyMember:(id)arg1 completion:(id)arg2;
+- (void)fetchProfilePictureForAccountOwner:(id)arg1;
 - (id)profilePictureForAccountOwner;
 - (void)setPictureStyle:(long long)arg1;
 - (void)setPictureDiameter:(double)arg1;
@@ -38,16 +40,17 @@
 - (void*)_onAddressBookQueue_copyPersonWithImageDataMatchingFamilyMemberEmailAddress:(id)arg1;
 - (void*)_onAddressBookQueue_copyPersonWithImageDataMatchingFamilyMember:(id)arg1;
 - (id)_monogramPersonImage:(void*)arg1;
-- (id)_fetchProfilePictureForFamilyMemberFromServer:(id)arg1;
+- (void)_fetchProfilePictureForFamilyMemberFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id)arg3;
 - (id)_familyMemberPersonPicture:(id)arg1;
 - (id)_profilePictureForFamilyMemberWithoutMonogramFallback:(id)arg1;
 - (id)profilePictureForPicture:(id)arg1;
 - (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)_fetchProfilePictureWithRequest:(id)arg1;
-- (id)_fetchProfilePictureForAccountOwnerFromServer;
+- (void)_fetchProfilePictureWithRequest:(id)arg1 personID:(id)arg2 completion:(id)arg3;
+- (void)_fetchProfilePictureForAccountOwnerFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id)arg3;
 - (id)_meCardPicture;
-- (id)_monogrammer;
+- (id)_fallbackProfilePictureForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)profilePictureForAccountOwnerWithoutMonogramFallback;
+- (id)_monogrammer;
 - (void)_invalidateMonogrammer;
 - (id)initWithGrandSlamSigner:(id)arg1;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3;

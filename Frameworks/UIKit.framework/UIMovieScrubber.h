@@ -193,9 +193,9 @@
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)setEditing:(bool)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)_scriptingInfo;
 - (bool)_alwaysHandleScrollerMouseEvent;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)didMoveToSuperview;
 - (bool)cancelTouchTracking;
 - (id)scriptingInfoWithChildren;

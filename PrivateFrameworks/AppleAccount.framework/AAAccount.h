@@ -46,6 +46,7 @@
 + (id)dataclassesBoundToSyncAccount;
 + (id)dataclassesBoundToPrimaryAccount;
 
+- (bool)useCellularForDataclass:(id)arg1;
 - (void)updateAccountPropertiesWithHandler:(id)arg1;
 - (id)syncStoreIdentifier;
 - (void)setFmipToken:(id)arg1;
@@ -69,7 +70,6 @@
 - (int)mobileMeAccountStatus;
 - (bool)needsEmailConfiguration;
 - (void)setUseCellular:(bool)arg1 forDataclass:(id)arg2;
-- (bool)useCellularForDataclass:(id)arg1;
 - (bool)needsRegistration;
 - (id)serviceUnavailableInfo;
 - (bool)serviceUnavailable;

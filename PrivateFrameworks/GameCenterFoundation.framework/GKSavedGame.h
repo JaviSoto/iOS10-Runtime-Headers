@@ -17,12 +17,12 @@
 @property(retain) NSURL * fileURL;
 
 
-- (void)setModificationDate:(id)arg1;
 - (void)loadDataWithCompletionHandler:(id)arg1;
+- (void)setModificationDate:(id)arg1;
 - (void)setDeviceName:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)deviceName;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (id)fileURL;
 - (void)dealloc;

@@ -33,8 +33,9 @@
 @property(retain) NSString * referenceIdentifier;
 
 
-- (void)setReferenceIdentifier:(id)arg1;
 - (id)referenceIdentifier;
+- (void)setReferenceIdentifier:(id)arg1;
+- (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
 - (void)setGenerationID:(id)arg1;
 - (void)setFileID:(id)arg1;
 - (void)setSectionIndex:(int)arg1;
@@ -42,13 +43,12 @@
 - (void)setPackageIndex:(long long)arg1;
 - (long long)packageIndex;
 - (id)generationID;
+- (int)sectionIndex;
 - (void)setWrappedAssetKey:(id)arg1;
 - (void)setSignature:(id)arg1;
-- (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
 - (id)wrappedAssetKey;
 - (id)fileID;
 - (id)CKPropertiesDescription;
-- (int)sectionIndex;
 - (void)setDeviceID:(id)arg1;
 - (id)deviceID;
 - (unsigned long long)itemID;

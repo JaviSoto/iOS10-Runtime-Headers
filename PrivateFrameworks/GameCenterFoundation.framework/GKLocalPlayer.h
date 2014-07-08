@@ -165,7 +165,6 @@
 - (void)daemonFetchGameInvite:(id)arg1;
 - (void)setupForCloudSavedGames;
 - (void)setEventEmitter:(id)arg1;
-- (void)reset:(id)arg1;
 - (void)setDefaultLeaderboardIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)loadDefaultLeaderboardIdentifierWithCompletionHandler:(id)arg1;
 - (void)resolveConflictingSavedGames:(id)arg1 withData:(id)arg2 completionHandler:(id)arg3;

@@ -32,6 +32,7 @@
 + (bool)isSpecialMailboxUidType:(int)arg1;
 + (id)specialNameForType:(int)arg1;
 
+- (unsigned long long)numberOfChildren;
 - (bool)setChildren:(id)arg1;
 - (id)childAtIndex:(unsigned long long)arg1;
 - (void)setPermanentTag:(id)arg1;
@@ -56,7 +57,6 @@
 - (bool)isSpecialMailboxUid;
 - (void)sortChildren;
 - (unsigned long long)indexOfChild:(id)arg1;
-- (unsigned long long)numberOfChildren;
 - (id)childEnumerator;
 - (bool)hasChildren;
 - (unsigned long long)nonDeletedCount;
@@ -100,14 +100,14 @@
 - (unsigned long long)unreadCount;
 - (id)accountRelativePath;
 - (id)fullPath;
-- (bool)isContainer;
+- (void)setExtraAttributes:(id)arg1;
 - (id)store;
 - (id)initWithAccount:(id)arg1;
 - (bool)isVisible;
 - (id)account;
-- (void)setExtraAttributes:(id)arg1;
 - (id)uniqueId;
 - (unsigned int)attributes;
+- (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
 - (id)extraAttributes;
 - (id)URLString;
@@ -119,7 +119,6 @@
 - (bool)isValid;
 - (void)invalidate;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (id)URL;
 - (void)dealloc;
@@ -128,6 +127,7 @@
 - (id)displayName;
 - (id)parent;
 - (bool)isSelectable;
+- (bool)isContainer;
 - (id)children;
 
 @end

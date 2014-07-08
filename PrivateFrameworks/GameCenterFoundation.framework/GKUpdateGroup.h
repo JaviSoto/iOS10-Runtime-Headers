@@ -14,6 +14,7 @@
 }
 
 @property(retain) NSError * error;
+@property(readonly) long long updateCount;
 @property(retain) NSLock * lock;
 @property NSObject<OS_dispatch_queue> * targetQueue;
 @property(retain) NSMutableArray * notifiers;
@@ -36,10 +37,11 @@
 - (void)join:(id)arg1;
 - (void)applyUpdates;
 - (id)dispatchGroup;
+- (long long)updateCount;
 - (void)setLock:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)name;
 - (id)lock;
-- (void)setName:(id)arg1;
 - (void)wait;
 - (void)setError:(id)arg1;
 - (id)error;

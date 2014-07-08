@@ -31,7 +31,6 @@
 - (void)_serverUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
 - (void)loadBooksForStoreIDs:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)uploadItemProperties;
 - (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
 - (void)resetConfiguration:(id)arg1;
@@ -40,7 +39,7 @@
 - (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)disableJaliscoGeniusWithCompletionHandler:(id)arg1;
-- (void)loadIsUpdateJaliscoGeniusDataInProgressWithCompletionHandler:(id)arg1;
+- (void)loadJaliscoGeniusOperationStatusWithCompletionHandler:(id)arg1;
 - (void)cancelUpdateJaliscoGeniusDataInProgressWithCompletionHandler:(id)arg1;
 - (void)updateJaliscoGeniusDataWithCompletionHandler:(id)arg1;
 - (void)enableJaliscoGeniusWithCompletionHandler:(id)arg1;
@@ -62,7 +61,7 @@
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id)arg2;
 - (void)_sendConfigurationToDaemon;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
-- (void)updateArtistImagesWithCompletionHandler:(id)arg1;
+- (void)updateArtistHeroImagesWithCompletionHandler:(id)arg1;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)updateSagaLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
@@ -72,6 +71,7 @@
 - (id)initWithConfiguration:(id)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)setJaliscoGeniusCUID:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadJaliscoGeniusCUIDWithCompletionHandler:(id)arg1;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -92,7 +92,7 @@
 - (bool)canShowCloudVideo;
 - (bool)canShowCloudMusic;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
-- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (void)uploadItemProperties;
 - (void)resignActive;
 - (id)connection;
 - (id)init;

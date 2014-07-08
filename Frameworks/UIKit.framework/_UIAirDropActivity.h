@@ -21,8 +21,8 @@
 @property(copy) id airdropCompletion;
 
 
-- (void)dealloc;
 - (id)activityType;
+- (void)dealloc;
 - (void)setAirDropViewController:(id)arg1;
 - (void)setAirdropCompletion:(id)arg1;
 - (id)airdropCompletion;

@@ -22,9 +22,8 @@
 + (id)alloc;
 + (void)initialize;
 
-- (id)sinkID;
 - (void)setSinkID:(id)arg1;
-- (void)setOrientation:(long long)arg1;
+- (id)sinkID;
 - (long long)orientation;
 - (id)transformedMetadataObjectForMetadataObject:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForMetadataObject:(id)arg1;
@@ -62,19 +61,20 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)canAddConnectionForMediaType:(id)arg1;
 - (void)setPaused:(bool)arg1;
-- (bool)isPaused;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
 - (id)connections;
 - (id)connectionMediaTypes;
 - (id)liveConnections;
+- (bool)isPaused;
 - (void)setVideoGravity:(id)arg1;
 - (id)connection;
 - (void)layoutSublayers;
 - (void)layerDidBecomeVisible:(bool)arg1;
 - (id)initWithLayer:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOrientation:(long long)arg1;
 - (id)init;
 - (void)setSession:(id)arg1;
 - (id)session;

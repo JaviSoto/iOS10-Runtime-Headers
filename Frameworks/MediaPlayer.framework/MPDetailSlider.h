@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSTimer, MPDetailScrubController, UIView, NSString, UIImageView, NSLayoutConstraint, <MPDetailSliderDelegate>, UILabel;
+@class NSTimer, NSString, MPDetailScrubController, UIView, UIImageView, UILabel, <MPDetailSliderDelegate>;
 
 @interface MPDetailSlider : UISlider <MPDetailedScrubbing, MPDetailScrubControllerDelegate> {
     UILabel *_currentTimeInverseLabel;
@@ -24,9 +24,6 @@
     long long _style;
     UIImageView *_thumbImageView;
     double _trackInset;
-    UIView *_trackLayoutGuide;
-    NSLayoutConstraint *_trackLeftConstraint;
-    NSLayoutConstraint *_trackRightConstraint;
     <MPDetailSliderDelegate> *_delegate;
     double _detailScrubbingVerticalRange;
     double _duration;
@@ -105,7 +102,6 @@
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
-- (void)updateConstraints;
 - (void)tintColorDidChange;
 - (bool)isTracking;
 - (void)layoutSubviews;

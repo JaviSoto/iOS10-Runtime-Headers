@@ -47,15 +47,15 @@
 - (id)purchaseError;
 - (unsigned long long)libraryItemIdentifier;
 - (bool)isRestore;
-- (bool)isPurchasing;
 - (id)_valueForDownloadProperty:(id)arg1;
 - (id)_SSPurchase;
 - (id)_SSPurchaseResponse;
 - (bool)_isCanceled;
 - (id)_SSDownload;
-- (bool)isCanceled;
 - (void)_setSSPurchase:(id)arg1 SSPurchaseResponse:(id)arg2;
 - (id)initWithType:(long long)arg1 attributes:(id)arg2;
+- (bool)isPurchasing;
+- (bool)isCanceled;
 - (id)phaseIdentifier;
 - (bool)isPaused;
 - (id)attributes;

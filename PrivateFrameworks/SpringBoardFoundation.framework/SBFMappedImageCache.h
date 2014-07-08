@@ -12,13 +12,13 @@
 
 + (id)wallpaperCache;
 
+- (void)removeImageForKey:(id)arg1;
 - (void)warmupImageForKey:(id)arg1;
 - (id)imageForKey:(id)arg1 generateImageWithBlockIfNecessary:(id)arg2;
-- (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id)arg3;
-- (id)imageForKey:(id)arg1 options:(int)arg2;
-- (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)imageForKey:(id)arg1;
-- (void)removeImageForKey:(id)arg1;
+- (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id)arg3;
+- (void)setImage:(id)arg1 forKey:(id)arg2;
+- (id)imageForKey:(id)arg1 options:(int)arg2;
 - (id)initWithDescription:(id)arg1;
 - (void)removeAllObjects;
 - (void)dealloc;

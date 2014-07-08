@@ -22,14 +22,14 @@
 - (void)copyTo:(id)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setStoreId:(long long)arg1;
-- (long long)storeId;
-- (bool)hasStoreId;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (long long)storeId;
+- (bool)hasStoreId;
+- (void)setName:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

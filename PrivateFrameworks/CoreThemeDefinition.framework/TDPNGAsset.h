@@ -5,6 +5,7 @@
 @class NSSet;
 
 @interface TDPNGAsset : TDAsset  {
+    int _exifOrientation;
 }
 
 @property(retain) NSSet * renditions;
@@ -15,5 +16,6 @@
 - (id)sourceImageWithDocument:(id)arg1;
 - (struct CGSize { double x1; double x2; })sourceImageSizeWithDocument:(id)arg1;
 - (void)_logError:(id)arg1;
+- (int)exifOrientation;
 
 @end

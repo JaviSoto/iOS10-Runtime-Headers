@@ -62,6 +62,7 @@
 - (bool)reorderList:(id)arg1 moveBookmarkAtIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (bool)reorderBookmark:(id)arg1 toIndex:(unsigned int)arg2;
 - (bool)deleteBookmark:(id)arg1;
+- (bool)saveBookmarks:(id)arg1 postNotification:(bool)arg2;
 - (id)bookmarksNeedingIcons;
 - (bool)shouldFetchIconForBookmark:(id)arg1;
 - (id)bookmarksBarList;
@@ -167,8 +168,8 @@
 - (bool)deleteBookmark:(id)arg1 postChangeNotification:(bool)arg2;
 - (bool)_incrementGeneration;
 - (void)_startReadingListFetcher;
-- (void)_postBookmarksSpecialFoldersDidChangeNotification;
 - (void)_postBookmarksFolderContentsDidChangeNotification:(unsigned int)arg1;
+- (void)_postBookmarksSpecialFoldersDidChangeNotification;
 - (unsigned int)_specialIDForBookmarkBeingSaved:(id)arg1;
 - (void)_simulateCrashWithDescription:(id)arg1;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1 countOnly:(bool)arg2;

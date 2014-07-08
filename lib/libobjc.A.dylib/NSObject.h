@@ -9,7 +9,7 @@
 
 @class NSArray, NSString, UIBezierPath, _UITraitStorageList;
 
-@interface NSObject <NSObject> {
+@interface NSObject <NSObject, PQLResultSetInitializer> {
     Class isa;
 }
 
@@ -120,9 +120,9 @@
 + (struct objc_method_description { SEL x1; char *x2; }*)methodDescriptionForSelector:(SEL)arg1;
 + (struct objc_method_description { SEL x1; char *x2; }*)instanceMethodDescriptionForSelector:(SEL)arg1;
 + (id)replacementObjectForPortCoder:(id)arg1;
-+ (id)bs_dataFromObject:(id)arg1;
 + (id)bs_objectFromData:(id)arg1;
 + (bool)bs_synchronousWrapper:(id)arg1 timeout:(double)arg2;
++ (id)bs_dataFromObject:(id)arg1;
 + (void)bs_waitAsynchronouslyForNotification:(id)arg1 object:(id)arg2 forDuration:(double)arg3 andPerformBlock:(id)arg4 onQueue:(id)arg5;
 + (id)CA_CAMLPropertyForKey:(id)arg1;
 + (int (*)())CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
@@ -156,6 +156,8 @@
 + (void)_addPropertyAttributeMapToPropertyMapLocked:(id)arg1;
 + (bool)cplShouldIgnorePropertyForCoding:(id)arg1;
 + (id)cplAdditionalSecureClassesForProperty:(id)arg1;
++ (bool)brc_swizzleClassMethod:(SEL)arg1 with:(SEL)arg2;
++ (bool)brc_swizzleInstanceMethod:(SEL)arg1 with:(SEL)arg2;
 + (bool)object:(id)arg1 isEqualToObject:(id)arg2;
 + (bool)overridesClassSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
 + (bool)overridesSelector:(SEL)arg1 ofBaseClass:(Class)arg2;
@@ -403,6 +405,9 @@
 - (void)registerForTimeMarkerNotificationsIfNecessaryForPlayer:(id)arg1;
 - (void)__crossedTimeMarkerNotification:(id)arg1;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
+- (id)CKPropertiesDescription;
+- (id)CKDescription;
+- (void)CKAssignToContainerWithID:(id)arg1;
 - (id)_ICSStringWithOptions:(unsigned long long)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (void)performBlockOnMainThreadSynchronously:(id)arg1;
@@ -423,9 +428,6 @@
 - (id)mf_lockOrdering;
 - (void)mf_unlock;
 - (void)mf_lock;
-- (id)CKPropertiesDescription;
-- (id)CKDescription;
-- (void)CKAssignToContainerWithID:(id)arg1;
 - (void)_gkPopulateWithObject:(id)arg1 keymap:(id)arg2;
 - (id)_gkViewDebuggingChildren;
 - (id)_gkRecursiveDescription;
@@ -445,7 +447,6 @@
 - (bool)_mapkit_isInternalAnnotation;
 - (bool)_mapkit_internalAnnotationAllowsCustomView;
 - (bool)_mapkit_isInternalAnnotationView;
-- (void)setValuesForKeysToNil:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)storedClassNameForCPLArchiver:(id)arg1;
@@ -463,6 +464,7 @@
 - (unsigned long long)cplHash;
 - (bool)cplIsEqual:(id)arg1;
 - (bool)isNull;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (void)performSelector:(SEL)arg1 withValue:(id)arg2;
 - (void)tsu_runBlock;
 - (void)appendJsonStringToString:(id)arg1;

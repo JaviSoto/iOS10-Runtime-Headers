@@ -5,6 +5,7 @@
 @class NSArray, MPMediaQuery;
 
 @interface MPQueryPlaybackContext : MPPlaybackContext  {
+    bool_shouldRestartPlaybackIfQueueChanges;
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
     unsigned long long _startIndex;
@@ -12,12 +13,15 @@
 
 @property(copy) NSArray * prefixMediaItems;
 @property(readonly) MPMediaQuery * query;
+@property bool shouldRestartPlaybackIfQueueChanges;
 @property unsigned long long startIndex;
 
 
 - (id)initWithQuery:(id)arg1;
 - (void)setStartIndex:(unsigned long long)arg1;
 - (unsigned long long)startIndex;
+- (void)setShouldRestartPlaybackIfQueueChanges:(bool)arg1;
+- (bool)shouldRestartPlaybackIfQueueChanges;
 - (void)setPrefixMediaItems:(id)arg1;
 - (id)prefixMediaItems;
 - (id)query;

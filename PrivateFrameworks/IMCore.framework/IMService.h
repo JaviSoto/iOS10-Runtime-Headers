@@ -21,8 +21,8 @@
 + (id)imageURLForStatus:(unsigned long long)arg1;
 + (id)imageNameForStatus:(unsigned long long)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)iMessageService;
 + (id)smsService;
++ (id)iMessageService;
 + (id)facetimeService;
 + (id)callService;
 

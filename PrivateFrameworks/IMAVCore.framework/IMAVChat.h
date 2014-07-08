@@ -76,6 +76,7 @@
     bool_connectionStarted;
     bool_isProxied;
     bool_wantsHoldMusic;
+    bool_metadataFinalized;
 }
 
 @property void* localVideoLayer;
@@ -167,6 +168,7 @@
 + (id)connectedChats;
 + (id)connectingChats;
 + (id)chatsWithIMAVChatState:(unsigned int)arg1;
++ (id)activeChat;
 + (void)setDefaultConnectionTimeoutTime:(double)arg1;
 + (void)setDefaultInvitationTimeoutTime:(double)arg1;
 + (id)_chatListLock;
@@ -187,13 +189,13 @@
 + (id)_avChatConnectingFromIMHandle:(id)arg1;
 + (id)_avChatWithConferenceID:(id)arg1;
 + (id)_avChatWaitingForReplyFromIMHandle:(id)arg1 orConferenceID:(id)arg2;
-+ (id)activeChat;
 + (id)incomingInvitations;
 + (id)chatList;
 
 - (void)__sendEndCallMetricToViceroyWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (void)__sendEndCallMetricToAWDWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (id)_proxyRepresentationForIMAVChatParticipant:(id)arg1;
+- (void)setMetadataFinalized;
 - (void)_submitCallInterruptionEndedLogging;
 - (void)_submitCallInterruptionBeganLogging;
 - (bool)_allParticipantsUsingICE;
@@ -211,7 +213,6 @@
 - (bool)isRemoteMute;
 - (void)setRemoteMute:(bool)arg1;
 - (void)toggleMute;
-- (bool)isMute;
 - (void)conferencePersonWithID:(id)arg1 localIPDidChange:(id)arg2;
 - (void)conferencePersonWithID:(id)arg1 sendRelayCancel:(id)arg2;
 - (void)conferencePersonWithID:(id)arg1 sendRelayUpdate:(id)arg2;
@@ -238,6 +239,7 @@
 - (id)_proxyRepresentation;
 - (double)connectionTimeoutTime;
 - (double)invitationTimeoutTime;
+- (bool)isMute;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void*)localVideoBackLayer;
 - (void)setLocalVideoLayer:(void*)arg1;
@@ -333,7 +335,6 @@
 - (void)_insertRemoteParticipant:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_vccInitDidFinish:(id)arg1;
 - (void)_breakCallsIfNecessary:(bool)arg1;
-- (void)setMute:(bool)arg1;
 - (void)_setActiveConference;
 - (void)endChatWithReason:(unsigned int)arg1;
 - (bool)_isCallUpgradeTo:(id)arg1;
@@ -355,6 +356,7 @@
 - (void)_handleRelayUpdate:(id)arg1 fromParticipant:(id)arg2;
 - (void)_handleRelayInitate:(id)arg1 fromParticipant:(id)arg2;
 - (void)_handleAVError:(id)arg1;
+- (void)setMute:(bool)arg1;
 - (void)inviteAll;
 - (id)_initOutgoingTo:(id)arg1 isVideo:(bool)arg2 GUID:(id)arg3;
 - (void)declineInvitationWithResponse:(unsigned int)arg1;
@@ -373,9 +375,11 @@
 - (id)participantMatchingIMHandle:(id)arg1;
 - (id)dateCreated;
 - (void)cancelInvitation;
-- (id)participants;
 - (void)_setGUID:(id)arg1;
+- (id)participants;
 - (void)_clearCache;
+- (void)setPaused:(bool)arg1;
+- (bool)isPaused;
 - (id)account;
 - (void)notificationCenterDidDisappear;
 - (void)notificationCenterWillAppear;
@@ -386,15 +390,11 @@
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemWillShutdown;
-- (void)setPaused:(bool)arg1;
-- (bool)isPaused;
 - (bool)isActive;
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setConnectionTimeoutTime:(double)arg1;
 - (id)initOutgoingTo:(id)arg1 isVideo:(bool)arg2;
 - (void)resetWantsHoldMusic;
-- (bool)hasReceivedFirstFrame;
-- (bool)isStateFinal;
 - (bool)isSendingAudio;
 - (void)setIsSendingAudio:(bool)arg1;
 - (bool)wantsHoldMusic;
@@ -406,6 +406,7 @@
 - (id)remoteParticipants;
 - (id)dateConnected;
 - (bool)isCaller;
+- (bool)isStateFinal;
 - (void)invite:(id)arg1 additionalPeers:(id)arg2;
 - (id)otherIMHandle;
 - (void)endChat;
@@ -414,6 +415,7 @@
 - (bool)isVideo;
 - (int)endedError;
 - (unsigned int)endedReason;
+- (bool)hasReceivedFirstFrame;
 - (void)setIsSendingVideo:(bool)arg1;
 - (bool)isSendingVideo;
 - (unsigned int)sessionID;

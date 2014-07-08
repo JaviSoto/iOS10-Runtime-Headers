@@ -16,6 +16,7 @@
     NSString *_deviceIdentifierForVendor;
     NSNumber *_itemIdentifier;
     NSString *_itemName;
+    bool_placeholder;
     bool_profileValidated;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
@@ -37,6 +38,7 @@
 @property(copy) NSString * deviceIdentifierForVendor;
 @property(retain) NSNumber * itemIdentifier;
 @property(copy) NSString * itemName;
+@property(getter=isPlaceholder) bool placeholder;
 @property(getter=isProfileValidated) bool profileValidated;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
@@ -57,8 +59,6 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (id)itemIdentifier;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)receiptExpirationDate;
 - (void)setVendorName:(id)arg1;
 - (void)setDeviceIdentifierForVendor:(id)arg1;
@@ -83,14 +83,18 @@
 - (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)bundleShortVersionString;
 - (id)versionIdentifier;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (id)bundleIdentifier;
 - (id)itemName;
 - (id)vendorName;
 - (id)bundleVersion;
+- (bool)isPlaceholder;
 - (void)dealloc;
 - (id)description;
 - (id)deviceIdentifierForVendor;
+- (void)setPlaceholder:(bool)arg1;
 
 @end

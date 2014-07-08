@@ -58,7 +58,6 @@
 - (short)widthBefore;
 - (bool)isWidthBeforeOverridden;
 - (void)setHeightType:(int)arg1;
-- (void)setHeader:(bool)arg1;
 - (void)setWidthAfterType:(int)arg1;
 - (void)setWidthAfter:(short)arg1;
 - (void)setWidthBeforeType:(int)arg1;
@@ -68,6 +67,7 @@
 - (id)tableProperties;
 - (bool)isHeightOverridden;
 - (id)characterProperties;
+- (void)setHeader:(bool)arg1;
 - (void)addProperties:(id)arg1;
 - (void)setHeight:(long long)arg1;
 - (long long)height;

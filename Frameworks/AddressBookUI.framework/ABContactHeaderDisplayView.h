@@ -29,6 +29,7 @@
 - (void)_updatePhotoView;
 - (id)_taglineStringForContact:(id)arg1;
 - (id)_headerStringForContact:(id)arg1;
+- (void)disablePhotoTapGesture;
 - (void)menuWillHide:(id)arg1;
 - (void)setTaglineTextAttributes:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;

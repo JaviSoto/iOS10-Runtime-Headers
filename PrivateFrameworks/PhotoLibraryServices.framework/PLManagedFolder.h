@@ -26,11 +26,11 @@
 
 - (void)refreshCollections;
 - (void)removeChildCollections:(id)arg1;
-- (void)removeChildCollectionsObject:(id)arg1;
-- (void)addChildCollectionsObject:(id)arg1;
 - (void)replaceChildCollectionsAtIndexes:(id)arg1 withChildCollections:(id)arg2;
 - (void)removeChildCollectionsAtIndexes:(id)arg1;
 - (void)insertChildCollections:(id)arg1 atIndexes:(id)arg2;
+- (void)removeChildCollectionsObject:(id)arg1;
+- (void)addChildCollectionsObject:(id)arg1;
 - (void)replaceObjectInChildCollectionsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectFromChildCollectionsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inChildCollectionsAtIndex:(unsigned long long)arg2;
@@ -68,8 +68,8 @@
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
 - (id)mutableAssets;
 - (id)albums;
-- (id)assets;
 - (unsigned long long)photosCount;
+- (id)assets;
 - (id)containers;
 - (void)didSave;
 - (void)willSave;

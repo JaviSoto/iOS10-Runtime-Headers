@@ -22,7 +22,6 @@
 - (void)setPlayable:(bool)arg1;
 - (id)_initWithMediaRemoteContentItem:(struct _MRContentItem { }*)arg1;
 - (float)playbackProgress;
-- (bool)isContainer;
 - (void)_postItemChangedNotification;
 - (void)setArtwork:(id)arg1;
 - (struct _MRContentItem { }*)_mediaRemoteContentItem;
@@ -36,6 +35,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
+- (bool)isContainer;
 - (void)setSubtitle:(id)arg1;
 - (id)subtitle;
 

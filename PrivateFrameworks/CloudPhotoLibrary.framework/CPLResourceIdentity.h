@@ -10,7 +10,6 @@
     NSString *_fingerPrint;
     unsigned long long _fileSize;
     NSString *_fileUTI;
-    NSString *_fileName;
     struct CGSize { 
         double width; 
         double height; 
@@ -23,7 +22,6 @@
 @property struct CGSize { double x1; double x2; } imageDimensions;
 @property(getter=isAvailable) bool available;
 @property(copy) NSString * fileUTI;
-@property(copy) NSString * fileName;
 
 + (Class)resourceIdentityImplementation;
 + (void)setResourceIdentityImplementation:(Class)arg1;
@@ -48,7 +46,6 @@
 - (void)setImageDimensions:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })imageDimensions;
 - (void)setAvailable:(bool)arg1;
-- (void)setFileName:(id)arg1;
 - (void)setFileSize:(unsigned long long)arg1;
 - (bool)isAvailable;
 - (bool)isEqual:(id)arg1;
@@ -62,6 +59,5 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithFileURL:(id)arg1;
-- (id)fileName;
 
 @end

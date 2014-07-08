@@ -14,11 +14,11 @@
 
 
 - (id)category;
+- (void)setName:(id)arg1;
 - (id)initWithLoggerName:(id)arg1 category:(id)arg2;
 - (void)logWithFormat:(id)arg1;
 - (void)logWithFormat:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (void)setCategory:(id)arg1;
 

@@ -8,6 +8,7 @@
     int m_currentInputModeIndex;
     boolm_keyboardSettingsFromSwitcher;
     NSMutableArray *m_inputModes;
+    boolm_predictionEnabled;
 }
 
 @property(retain) NSArray * inputModes;
@@ -22,6 +23,7 @@
 - (void)selectPreviousInputMode;
 - (void)selectNextInputMode;
 - (void)selectRowForInputMode:(id)arg1;
+- (void)toggleKeyboardPredictionPreference;
 - (bool)selectedRowIsPredictionCell;
 - (bool)keyboardSettingsFromSwitcher;
 - (void)setInputModes:(id)arg1;

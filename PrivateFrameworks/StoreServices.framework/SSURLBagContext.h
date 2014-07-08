@@ -37,12 +37,12 @@
 - (bool)allowsBootstrapCellularData;
 - (void)setBagType:(long long)arg1;
 - (void)setAllowedRetryCount:(long long)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (bool)allowsExpiredBags;
 - (id)allHTTPHeaders;
 - (bool)ignoresCaches;
 - (bool)usesCachedBagsOnly;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (void)setUserIdentifier:(id)arg1;
 - (bool)isEqual:(id)arg1;

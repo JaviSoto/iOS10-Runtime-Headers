@@ -39,17 +39,18 @@
 @property(retain) UIViewController * remoteViewController;
 
 + (id)composeViewControllerForExtension:(id)arg1;
-+ (bool)isAvailableForExtension:(id)arg1;
++ (bool)isAvailableForExtensionIdentifier:(id)arg1;
++ (id)_shareExtensionWithIdentifier:(id)arg1;
 + (id)_extensionIdentifierForServiceType:(id)arg1;
 + (bool)_isServiceType:(id)arg1;
 + (bool)_isAvailableForService:(id)arg1;
 + (id)_serviceTypeForExtensionIdentifier:(id)arg1;
-+ (id)_extensionIdentifierToServiceTypeMap;
++ (id)_serviceTypeToExtensionIdentifierMap;
 + (id)composeViewControllerForServiceType:(id)arg1;
 + (bool)isAvailableForServiceType:(id)arg1;
-+ (id)extensionIdentifierForActivityType:(id)arg1;
 + (id)composeViewControllerForExtensionIdentifier:(id)arg1;
-+ (bool)isAvailableForExtensionIdentifier:(id)arg1;
++ (bool)isAvailableForExtension:(id)arg1;
++ (id)extensionIdentifierForActivityType:(id)arg1;
 
 - (bool)removeAllURLs;
 - (bool)canSendTweet;

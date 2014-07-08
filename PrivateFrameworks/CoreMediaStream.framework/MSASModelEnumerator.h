@@ -27,8 +27,8 @@
 - (id)stepBlock;
 - (struct sqlite3_stmt { }*)stmt;
 - (id)initWithDatabase:(struct sqlite3 { }*)arg1 query:(id)arg2 stepBlock:(id)arg3;
-- (void)setDb:(struct sqlite3 { }*)arg1;
 - (struct sqlite3 { }*)db;
+- (void)setDb:(struct sqlite3 { }*)arg1;
 - (id)init;
 - (id)nextObject;
 - (void)dealloc;

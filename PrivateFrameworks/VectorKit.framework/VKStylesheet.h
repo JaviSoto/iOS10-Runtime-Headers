@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKPGlobalProperties, NSString, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSMutableArray, VKStylesheetVendor;
+@class NSString, VKPGlobalProperties, NSMutableDictionary, VKStylesheetVendor, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface VKStylesheet : NSObject  {
     NSString *_sheetName;
@@ -28,9 +28,14 @@
             struct StyleMatchingTree {} **__first_; 
         } __end_cap_; 
     } _matchingTreeSpareMemory;
+    unsigned long long _matchingTreeSpareBufferSize;
+    unsigned long long _matchingTreeCount;
     NSObject<OS_dispatch_queue> *_resultCacheQueue;
     NSMutableDictionary *_resultCache;
-    int _loaded;
+    int _loadedGlobalResources;
+    int _loadedEverything;
+    NSObject<OS_dispatch_semaphore> *_globalResourcesLoadingSemaphore;
+    NSObject<OS_dispatch_semaphore> *_everythingLoadingSemaphore;
     NSObject<OS_dispatch_queue> *_loadingQueue;
     bool_isDevResource;
 }

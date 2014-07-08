@@ -30,7 +30,6 @@
 @property bool canPerformMultiplePassesOverSourceMediaData;
 @property(copy) NSURL * directoryForTemporaryFiles;
 
-+ (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 + (id)_videoCompressionPropertiesForVideoSetting:(id)arg1;
 + (id)_utTypesForTemporalMetadataPresets;
 + (bool)_disablePassthrough;
@@ -62,11 +61,8 @@
 + (long long)_getPassthroughExportPolicyForAssetTrack:(id)arg1 fileType:(id)arg2 asChapterTrack:(bool)arg3;
 + (id)_audioVideoPresets;
 + (id)allExportPresets;
++ (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (long long)status;
-- (id)outputURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
 - (id)outputFileType;
 - (void)setOutputFileType:(id)arg1;
@@ -137,6 +133,10 @@
 - (id)videoComposition;
 - (id)asset;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (long long)status;
+- (id)outputURL;
 - (id)init;
 - (id)error;
 - (void)finalize;

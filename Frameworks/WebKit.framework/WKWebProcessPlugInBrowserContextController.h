@@ -12,7 +12,7 @@
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[2048]; 
+            unsigned char __lx[2000]; 
         } data; 
     } _page;
     struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
@@ -42,11 +42,11 @@
 + (id)lookUpBrowsingContextFromHandle:(id)arg1;
 
 - (void)setLoadDelegate:(id)arg1;
+- (id)loadDelegate;
 - (bool)_usesNonPersistentWebsiteDataStore;
 - (void)_setDefersLoading:(bool)arg1;
 - (bool)_defersLoading;
 - (id)pageGroup;
-- (id)loadDelegate;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
 - (id)_remoteObjectRegistry;
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;

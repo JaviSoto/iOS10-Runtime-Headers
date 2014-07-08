@@ -32,6 +32,7 @@
 - (void)setProperties:(id)arg1;
 - (id)keys;
 - (bool)visible;
+- (void)setName:(id)arg1;
 - (void)setDisabled:(bool)arg1;
 - (bool)shouldSkipCandidateSelection;
 - (bool)isAlphabeticPlane;
@@ -45,7 +46,6 @@
 - (id)cache;
 - (id)name;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (id)properties;
 - (void)setState:(int)arg1;
@@ -65,6 +65,7 @@
 - (void)setGhost:(bool)arg1;
 - (void)setActiveGeometriesList:(id)arg1;
 - (void)setGeometriesList:(id)arg1;
+- (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
 - (bool)looksLike:(id)arg1;
 - (double)primaryKeylayoutOffset;
 - (bool)isLetters;
@@ -136,7 +137,6 @@
 - (bool)shouldSkipCandidateSelectionForVariants;
 - (bool)usesKeyCharging;
 - (bool)supportsType:(long long)arg1;
-- (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
 - (void)mergeKeyNames:(id)arg1;
 - (id)keysForMergeConditions;
 - (bool)notUseCandidateSelection;

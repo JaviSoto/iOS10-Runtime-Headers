@@ -75,11 +75,11 @@
 - (void)_avChatDealloc:(id)arg1;
 - (void)_notifyAboutPotentialCallForChat:(id)arg1;
 - (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
-- (unsigned long long)capabilities;
 - (void)conference:(id)arg1 reinitializeCallForCallID:(unsigned int)arg2;
 - (void)conference:(id)arg1 didChangeLocalVariablesForCallID:(long long)arg2;
 - (void)conference:(id)arg1 localIPChange:(id)arg2 withCallID:(long long)arg3;
 - (void)conference:(id)arg1 didStopWithCallID:(long long)arg2 error:(id)arg3 callMetadata:(id)arg4;
+- (unsigned long long)capabilities;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 networkHint:(bool)arg3;
 - (void)conference:(id)arg1 videoQualityNotificationForCallID:(long long)arg2 isDegraded:(bool)arg3 isRemote:(bool)arg4;
 - (void)conference:(id)arg1 cancelRelayRequest:(long long)arg2 requestDict:(id)arg3;

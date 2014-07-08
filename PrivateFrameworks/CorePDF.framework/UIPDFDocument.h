@@ -29,6 +29,7 @@
 
 + (id)documentNamed:(id)arg1;
 
+- (id)documentID;
 - (void)setThumbnailCache:(id)arg1;
 - (id)thumbnailCache;
 - (void)setPageImageCache:(id)arg1;
@@ -38,7 +39,6 @@
 - (struct CGPDFDocument { }*)CGDocument;
 - (bool)copyDocumentTo:(id)arg1;
 - (bool)allowsCopying;
-- (id)documentID;
 - (void)purgePagesBefore:(unsigned long long)arg1;
 - (id)copyPageAtIndex:(unsigned long long)arg1;
 - (struct CGPDFDocument { }*)copyCGPDFDocument;

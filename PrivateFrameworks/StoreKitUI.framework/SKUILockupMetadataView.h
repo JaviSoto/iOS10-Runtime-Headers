@@ -48,12 +48,12 @@
 - (void)setEditorialBadgeString:(id)arg1;
 - (id)itemOfferString;
 - (id)itemCountString;
+- (id)categoryString;
 - (id)editorialBadgeString;
 - (id)_decimalNumberFormatter;
 - (void)_reloadUserRatingViews;
 - (id)_newDefaultLabel;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (id)categoryString;
 - (id)primaryTextColor;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;

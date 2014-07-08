@@ -28,8 +28,8 @@
 @property(setter=_setCurlUpRevealedHeight:) double _curlUpRevealedHeight;
 
 
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (id)viewController;
 - (void)_setCurlUpRevealedHeight:(double)arg1;

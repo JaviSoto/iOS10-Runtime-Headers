@@ -31,8 +31,8 @@
 - (id)scriptAttributeKeys;
 - (id)copyReview;
 - (void)setItemType:(id)arg1;
-- (id)itemType;
 - (id)adamID;
+- (id)itemType;
 - (id)hasSavedDraft;
 - (id)rating;
 - (id)nickname;

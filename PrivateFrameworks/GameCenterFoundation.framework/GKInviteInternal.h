@@ -51,8 +51,6 @@
 + (id)secureCodedPropertyKeys;
 
 - (bool)isNearby;
-- (void)setParticipantID:(id)arg1;
-- (id)participantID;
 - (id)peerNATIP;
 - (id)peerBlob;
 - (int)peerNATType;
@@ -75,6 +73,8 @@
 - (int)playerGroup;
 - (unsigned long long)matchType;
 - (id)inviteID;
+- (void)setParticipantID:(id)arg1;
+- (id)participantID;
 - (void)setDeviceID:(id)arg1;
 - (id)deviceID;
 - (void)setPeerID:(id)arg1;

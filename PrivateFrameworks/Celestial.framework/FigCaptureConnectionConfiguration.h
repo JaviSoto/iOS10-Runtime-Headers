@@ -4,7 +4,7 @@
 
 @class NSString, FigCaptureSourceConfiguration, FigCaptureSinkConfiguration;
 
-@interface FigCaptureConnectionConfiguration : NSObject <NSCoding, NSCopying> {
+@interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_connectionID;
     unsigned int _mediaType;
     FigCaptureSourceConfiguration *_sourceConfiguration;
@@ -20,20 +20,20 @@
 
 + (void)initialize;
 
-- (id)sourceConfiguration;
-- (bool)enabled;
-- (id)connectionID;
 - (void)setSinkConfiguration:(id)arg1;
 - (void)setSourceConfiguration:(id)arg1;
 - (void)setMediaType:(unsigned int)arg1;
 - (void)setConnectionID:(id)arg1;
+- (bool)enabled;
+- (id)connectionID;
 - (id)sinkConfiguration;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (id)sourceConfiguration;
 - (void)setEnabled:(bool)arg1;
 - (unsigned int)mediaType;
 - (id)init;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

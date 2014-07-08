@@ -68,18 +68,18 @@
 @property int pendingItemsCount;
 @property int pendingItemsType;
 
++ (id)insertNewAlbumIntoLibrary:(id)arg1;
++ (id)albumWithObjectID:(id)arg1 inLibrary:(id)arg2;
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)insertAlbumWithKind:(int)arg1 title:(id)arg2 uuid:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)insertNewSyncedFolderWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewFaceAlbumIntoLibrary:(id)arg1;
 + (id)insertNewCloudSharedAlbumWithTitle:(id)arg1 lastInterestingDate:(id)arg2 intoLibrary:(id)arg3;
 + (id)insertNewSyncedEventIntoLibrary:(id)arg1;
-+ (id)insertNewAlbumIntoLibrary:(id)arg1;
 + (id)albumsMatchingPredicate:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudAlbumsInLibrary:(id)arg1;
 + (id)albumsToResetInLibrary:(id)arg1;
 + (id)albumWithName:(id)arg1 inLibrary:(id)arg2;
-+ (id)albumWithObjectID:(id)arg1 inLibrary:(id)arg2;
 + (id)allAlbumsInLibrary:(id)arg1;
 + (id)trashBinAlbumInLibrary:(id)arg1;
 + (id)iTunesLibraryAlbumInLibrary:(id)arg1;
@@ -201,12 +201,12 @@
 - (unsigned long long)photosCount;
 - (void)delete;
 - (id)posterImage;
+- (id)kind;
 - (void)setKind:(id)arg1;
 - (void)didSave;
 - (void)awakeFromInsert;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
-- (id)kind;
 - (id)uuid;
 - (void)setPinned:(bool)arg1;
 - (void)setUuid:(id)arg1;

@@ -19,6 +19,7 @@
     RUIWebContainerView *_webContainerView;
     float _cachedHeight;
     bool_configured;
+    bool_selected;
     <RUITableViewRowDelegate> *_delegate;
     long long _datePickerMode;
     UIView *_pickerView;
@@ -38,6 +39,7 @@
 @property(retain) UIView * pickerView;
 @property double height;
 @property bool configured;
+@property(getter=isSelected) bool selected;
 @property(readonly) UIControl * control;
 @property <RUITextFieldChangeObserver> * textFieldChangeObserver;
 
@@ -71,6 +73,7 @@
 - (Class)tableCellClass;
 - (void)accessoryImageLoaded;
 - (id)pickerView;
+- (id)textColorForAttributeName:(id)arg1;
 - (void)_updateContentForDisabledState;
 - (void)setDeleteAction:(id)arg1;
 - (id)selectOptions;
@@ -95,6 +98,8 @@
 - (void)setDate:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (void)setSelected:(bool)arg1;
+- (bool)isSelected;
 - (void)setData:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;

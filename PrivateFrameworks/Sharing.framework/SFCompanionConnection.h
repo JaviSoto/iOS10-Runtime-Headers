@@ -59,10 +59,10 @@
 - (id)connectionProxy;
 - (void)xpcManagerConnectionInterrupted;
 - (id)initWithService:(id)arg1;
+- (id)connectionID;
 - (void)connect;
 - (void)setStatus:(unsigned long long)arg1;
 - (unsigned long long)status;
-- (id)connectionID;
 - (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (void)setExportedObject:(id)arg1;
 - (void)setExportedInterface:(id)arg1;

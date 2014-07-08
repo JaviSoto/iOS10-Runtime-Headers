@@ -17,6 +17,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paneFrame;
 - (void)statusBarWillAnimateByHeight:(double)arg1;
 - (void)saveChanges;
+- (id)title;
 - (void)suspend;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;

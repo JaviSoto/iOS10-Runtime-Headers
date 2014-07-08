@@ -24,10 +24,10 @@
 - (id)externalFolderID;
 - (void)setExternalData:(id)arg1;
 - (id)externalData;
-- (id)owner;
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
+- (id)owner;
 - (void)setOwner:(id)arg1;
 
 @end

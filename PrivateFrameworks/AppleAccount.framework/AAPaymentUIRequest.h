@@ -7,6 +7,5 @@
 
 
 - (id)urlString;
-- (id)urlRequest;
 
 @end

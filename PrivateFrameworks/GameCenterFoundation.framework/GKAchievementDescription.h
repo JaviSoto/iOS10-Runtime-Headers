@@ -46,7 +46,7 @@
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)loadImageWithCompletionHandler:(id)arg1;
-- (id)imageURL;
 - (void)showBanner;
+- (id)imageURL;
 
 @end

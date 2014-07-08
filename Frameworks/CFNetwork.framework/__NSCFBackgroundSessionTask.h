@@ -4,7 +4,7 @@
 
 @class <NDBackgroundSessionProtocol>, NSError;
 
-@interface __NSCFBackgroundSessionTask : NSURLSessionTask  {
+@interface __NSCFBackgroundSessionTask : NSURLSessionTask <NSURLSessionTaskSubclass> {
     bool_sentCancel;
     <NDBackgroundSessionProtocol> *_remoteSession;
     unsigned long long _ident;
@@ -29,6 +29,7 @@
 - (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
 - (id)_timingData;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
+- (void)_onqueue_disavow;
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_connectionWaiting;
 - (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id)arg2;

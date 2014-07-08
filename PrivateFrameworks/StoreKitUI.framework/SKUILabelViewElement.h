@@ -16,12 +16,13 @@
 @property(readonly) long long numberOfLines;
 @property(readonly) SKUIViewElementText * text;
 
++ (bool)shouldParseChildDOMElements;
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)moreButtonTitle;
-- (long long)pageComponentType;
 - (long long)labelViewStyle;
+- (long long)pageComponentType;
 - (id)text;
 - (void).cxx_destruct;
 - (long long)numberOfLines;

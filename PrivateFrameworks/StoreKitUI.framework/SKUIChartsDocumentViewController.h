@@ -14,6 +14,7 @@
 
 - (void)documentDidUpdate:(id)arg1;
 - (id)_columnViewControllers;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_chartInsets;
 - (long long)_visibleColumnCountForWidth:(double)arg1;
 - (id)_newColumnViewControllersWithReusableViewControllers:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;

@@ -20,9 +20,10 @@
 - (void)setHasValue:(bool)arg1;
 - (void)setHasKey:(bool)arg1;
 - (void)copyTo:(id)arg1;
-- (bool)hasValue;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasValue;
 - (unsigned int)value;
 - (void)setValue:(unsigned int)arg1;
 - (bool)isEqual:(id)arg1;

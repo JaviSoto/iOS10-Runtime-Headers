@@ -2,10 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIMetricsImpressionSession, NSObject<OS_dispatch_source>, SSMetricsController, NSNumber, SSMetricsConfiguration;
+@class NSString, SKUIMetricsImpressionSession, NSObject<OS_dispatch_source>, SSMetricsController, SSMetricsConfiguration, NSNumber;
 
 @interface SKUIMetricsController : NSObject  {
-    NSNumber *_accountID;
     SKUIMetricsImpressionSession *_activeImpressionsSession;
     NSString *_applicationIdentifier;
     SSMetricsController *_controller;
@@ -27,7 +26,7 @@
 @property(readonly) double flushInterval;
 @property(readonly) SSMetricsConfiguration * globalConfiguration;
 @property(retain) SSMetricsConfiguration * pageConfiguration;
-@property(copy) NSNumber * accountIdentifier;
+@property(readonly) NSNumber * accountIdentifier;
 @property(copy) NSString * applicationIdentifier;
 @property(copy) NSString * hostApplicationIdentifier;
 @property(copy) NSString * pageContext;
@@ -39,7 +38,6 @@
 + (void)flushImmediately;
 
 - (id)pageConfiguration;
-- (id)globalConfiguration;
 - (void)_waitUntilRecordingComplete;
 - (void)recordBuyConfirmedEventsForItems:(id)arg1 purchaseResponses:(id)arg2;
 - (void)pingURLs:(id)arg1;
@@ -62,6 +60,7 @@
 - (void)recordEvent:(id)arg1;
 - (id)activeImpressionsSession;
 - (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
+- (id)globalConfiguration;
 - (id)pageContext;
 - (void)setPageContext:(id)arg1;
 - (void)setPageConfiguration:(id)arg1;
@@ -72,10 +71,9 @@
 - (id)tokenStringWithElements:(id)arg1;
 - (id)compoundStringWithElements:(id)arg1;
 - (id)userAgent;
-- (id)topic;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (void)setUserAgent:(id)arg1;
-- (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (id)applicationIdentifier;
 - (void)dealloc;

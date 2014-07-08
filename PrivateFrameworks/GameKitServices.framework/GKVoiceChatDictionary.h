@@ -22,7 +22,6 @@
 + (bool)validateInvite:(id)arg1;
 + (bool)validateDictionary:(id)arg1;
 
-- (id)participantID;
 - (id)connectionData;
 - (id)setRemoteVCPartyID:(id)arg1;
 - (id)setLocalVCPartyID:(id)arg1;
@@ -44,6 +43,7 @@
 - (id)localVCPartyID;
 - (id)remoteVCPartyID;
 - (id)fromParticipantID;
+- (id)participantID;
 - (unsigned int)callID;
 - (void)setCallID:(unsigned int)arg1;
 - (id)version;

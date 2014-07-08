@@ -46,9 +46,9 @@
 - (void)setAllowsBootstrapCellularData:(bool)arg1;
 - (bool)allowsBootstrapCellularData;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setBundleVersion:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setBundleVersion:(id)arg1;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (void)dealloc;

@@ -199,7 +199,6 @@
 - (void)setContentURL:(id)arg1;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
 - (long long)repeatMode;
 - (void)setRepeatMode:(long long)arg1;
 - (void)play;
@@ -208,6 +207,7 @@
 - (bool)disallowsAMRAudio;
 - (bool)isAirPlayVideoActive;
 - (id)asset;
+- (void)setBackgroundColor:(id)arg1;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)errorLog;
 - (id)accessLog;

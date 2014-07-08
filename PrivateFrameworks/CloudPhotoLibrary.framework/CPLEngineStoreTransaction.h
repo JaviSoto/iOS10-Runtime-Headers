@@ -21,8 +21,8 @@
 - (bool)do:(id)arg1;
 - (id)initForWrite:(bool)arg1;
 - (bool)_forWrite;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (bool)canWrite;
 - (void)setError:(id)arg1;
 - (id)error;

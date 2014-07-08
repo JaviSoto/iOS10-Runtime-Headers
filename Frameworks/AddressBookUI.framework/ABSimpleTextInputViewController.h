@@ -23,8 +23,8 @@
 - (double)ab_heightToFitForViewInPopoverView;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (void)save:(id)arg1;
 - (void)setStringValue:(id)arg1;
+- (void)save:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;

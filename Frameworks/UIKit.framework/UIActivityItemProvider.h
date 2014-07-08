@@ -21,12 +21,12 @@
 
 - (void)setStatus:(id)arg1;
 - (id)status;
+- (id)activityType;
 - (void)main;
 - (void)dealloc;
 - (void)setProgress:(float)arg1;
 - (float)progress;
 - (id)item;
-- (id)activityType;
 - (void)_setActivityType:(id)arg1;
 - (id)providedItem;
 - (void)setProvidedItem:(id)arg1;

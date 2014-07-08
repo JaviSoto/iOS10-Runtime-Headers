@@ -38,6 +38,7 @@
 @property bool notificationAlertsEnabled;
 @property bool verboseLogging;
 @property unsigned int logFilter;
+@property(getter=isComprehensiveLoggingEnabled) bool comprehensiveLoggingEnabled;
 @property bool forceRelay;
 @property bool preemptiveRelay;
 @property long long pushEnvironment;
@@ -74,8 +75,6 @@
 + (id)hostNameForEnvironment:(long long)arg1;
 + (id)sharedPreferences;
 
-- (void)setOperationTimeout:(double)arg1;
-- (double)operationTimeout;
 - (bool)isInternalBuild;
 - (bool)isAccountModificationRestricted;
 - (bool)shouldUseTestIcons;
@@ -96,6 +95,8 @@
 - (id)overrideValues;
 - (void)setWebKitInspectElementEnabled:(bool)arg1;
 - (bool)isWebKitInspectElementEnabled;
+- (void)setComprehensiveLoggingEnabled:(bool)arg1;
+- (bool)isComprehensiveLoggingEnabled;
 - (void)setShouldAddPlayerInfoToAddressBook:(bool)arg1;
 - (bool)shouldAddPlayerInfoToAddressBook;
 - (void)setShouldAllowNearbyMultiplayer:(bool)arg1;
@@ -143,7 +144,6 @@
 - (bool)preemptiveRelay;
 - (void)setForceRelay:(bool)arg1;
 - (bool)forceRelay;
-- (void)setLogFilter:(unsigned int)arg1;
 - (void)setVerboseLogging:(bool)arg1;
 - (bool)verboseLogging;
 - (void)setDebugRequestTimeout:(double)arg1;
@@ -163,6 +163,7 @@
 - (id)storeBagURL;
 - (void)setStringValue:(id)arg1 forKey:(struct __CFString { }*)arg2;
 - (id)stringValueForKey:(struct __CFString { }*)arg1 defaultValue:(id)arg2;
+- (void)setLogFilter:(unsigned int)arg1;
 - (unsigned long long)exchangeDefaultMaxInitiatedExchangesPerPlayer;
 - (unsigned long long)exchangeDataDefaultMaximumSize;
 - (unsigned long long)maxDefaultGameStateSizeTurnBased;
@@ -194,8 +195,10 @@
 - (unsigned int)logFilter;
 - (id)initWithoutUIKitNotifications;
 - (double)minimumCacheTTL;
-- (long long)environment;
+- (void)setOperationTimeout:(double)arg1;
+- (double)operationTimeout;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (long long)environment;
 - (id)init;
 - (void)invalidate;
 - (void)synchronize;

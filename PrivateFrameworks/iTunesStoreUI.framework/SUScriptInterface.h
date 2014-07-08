@@ -74,7 +74,6 @@
 - (id)actionTypeDismissSheet;
 - (id)actionTypeDismissWindows;
 - (id)actionTypeReturnToLibrary;
-- (id)application;
 - (id)passbookLibrary;
 - (void)addPurchaseWithInfo:(id)arg1;
 - (void)addExternalDownloads:(id)arg1;
@@ -233,6 +232,7 @@
 - (void)_globalEventNotification:(id)arg1;
 - (void)initAuthentication;
 - (void)setClientInterface:(id)arg1;
+- (id)application;
 - (void)dismissSheet;
 - (void)setPrimaryAccount:(id)arg1;
 - (id)primaryAccount;
@@ -248,10 +248,9 @@
 - (id)threadSafeDelegate;
 - (void)setMediaLibrary:(id)arg1;
 - (id)mediaLibrary;
-- (id)accounts;
-- (void)setOrientation:(id)arg1;
 - (id)orientation;
 - (id)device;
+- (id)accounts;
 - (id)protocol;
 - (void)openURL:(id)arg1;
 - (void)log:(id)arg1;
@@ -261,6 +260,7 @@
 - (void)setWebFrame:(id)arg1;
 - (void)goBack;
 - (id)clientIdentifier;
+- (void)setOrientation:(id)arg1;
 - (id)webFrame;
 - (id)window;
 - (id)init;

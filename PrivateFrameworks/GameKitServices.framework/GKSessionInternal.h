@@ -155,8 +155,8 @@
 - (id)initWithConnection:(id)arg1 session:(id)arg2 delegate:(id)arg3;
 - (id)initWithSessionID:(id)arg1 displayName:(id)arg2 session:(id)arg3 sessionMode:(int)arg4;
 - (void)setServiceType:(id)arg1;
-- (id)peerID;
 - (bool)isAvailable;
+- (id)peerID;
 - (void)setPort:(unsigned long long)arg1;
 - (id)connection;
 - (unsigned long long)port;

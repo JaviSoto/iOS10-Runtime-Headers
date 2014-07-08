@@ -19,8 +19,8 @@
 
 - (void)setItemKind:(long long)arg1;
 - (void)setArtworks:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })ageBandRange;
 - (id)largestArtworkURL;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })ageBandRange;
 - (id)artworks;
 - (id)artworkURLForSize:(long long)arg1;
 - (long long)itemKind;

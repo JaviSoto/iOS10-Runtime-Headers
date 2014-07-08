@@ -37,10 +37,10 @@
 - (void)_showPopoverMoreListWithTitles:(id)arg1;
 - (void)_reloadPropertiesForSegmentedControl:(id)arg1;
 - (void)_connectToSegmentedControl:(id)arg1;
-- (id)initWithViewElement:(id)arg1 segmentedControl:(id)arg2;
 - (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
-- (void)menuPopoverDidCancel:(id)arg1;
 - (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(long long)arg2;
+- (void)menuPopoverDidCancel:(id)arg1;
+- (id)initWithViewElement:(id)arg1 segmentedControl:(id)arg2;
 - (void)setDefaultMaximumNumberOfVisibleItems:(long long)arg1;
 - (id)segmentedControlView;
 - (void)reloadAfterDocumentUpdate;

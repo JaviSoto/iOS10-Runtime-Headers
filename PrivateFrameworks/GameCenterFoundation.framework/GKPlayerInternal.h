@@ -120,8 +120,8 @@
 - (unsigned int)numberOfAchievements;
 - (id)serverRepresentation;
 - (void)setEmailAddresses:(id)arg1;
-- (id)emailAddresses;
 - (void)setPhotos:(id)arg1;
+- (id)emailAddresses;
 - (void)setAccountName:(id)arg1;
 - (id)accountName;
 - (void)setLastPlayedDate:(id)arg1;

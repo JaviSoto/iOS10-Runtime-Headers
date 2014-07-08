@@ -34,9 +34,9 @@
 - (id)JPEGRepresentationWithCompressionQuality:(double)arg1;
 - (id)imagePartsWithLeftCapWidth:(double)arg1 rightCapWidth:(double)arg2 topCapHeight:(double)arg3 bottomCapHeight:(double)arg4;
 - (struct CGImage { }*)CGImageForContentsScale:(double)arg1;
+- (id)initWithUIImage:(id)arg1;
 - (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithImageSourceRef:(struct CGImageSource { }*)arg1;
-- (id)initWithUIImage:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)init;

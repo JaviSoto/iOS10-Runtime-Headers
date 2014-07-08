@@ -16,9 +16,9 @@
 
 + (id)newImageCacheList;
 
-- (void)setImage:(id)arg1 forKey:(id)arg2;
-- (id)imageForKey:(id)arg1;
 - (void)removeImageForKey:(id)arg1;
+- (id)imageForKey:(id)arg1;
+- (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;
 - (id)_init;

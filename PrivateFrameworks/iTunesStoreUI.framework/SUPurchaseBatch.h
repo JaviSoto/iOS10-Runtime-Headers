@@ -48,8 +48,8 @@
 - (id)errors;
 - (id)offers;
 - (void)setDocumentTargetIdentifier:(id)arg1;
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (void)dealloc;
 
 @end

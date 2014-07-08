@@ -6,6 +6,7 @@
 
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
     bool_isUnitTestingAccount;
+    bool_accountWantsPushRegistration;
     NSString *_email;
     NSString *_password;
 }
@@ -13,11 +14,14 @@
 @property(readonly) NSString * email;
 @property(readonly) NSString * password;
 @property bool isUnitTestingAccount;
+@property bool accountWantsPushRegistration;
 
 + (bool)supportsSecureCoding;
 
+- (void)setAccountWantsPushRegistration:(bool)arg1;
 - (void)setIsUnitTestingAccount:(bool)arg1;
 - (id)initWithEmail:(id)arg1 password:(id)arg2;
+- (bool)accountWantsPushRegistration;
 - (bool)isUnitTestingAccount;
 - (id)email;
 - (id)password;

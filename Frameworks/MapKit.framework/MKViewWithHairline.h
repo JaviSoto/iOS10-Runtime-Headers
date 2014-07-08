@@ -5,19 +5,23 @@
 @class UIColor, UIView;
 
 @interface MKViewWithHairline : UIView  {
-    UIView *_hairline;
+    UIView *_bottomHairline;
+    UIView *_topHairline;
     UIColor *_hairlineColor;
     double _leftHairlineInset;
 }
 
 @property(retain) UIColor * hairlineColor;
 @property double leftHairlineInset;
-@property(getter=isHairlineHidden) bool hairlineHidden;
+@property(getter=isTopHairlineHidden) bool topHairlineHidden;
+@property(getter=isBottomHairlineHidden) bool bottomHairlineHidden;
 
 
 - (id)hairlineColor;
-- (bool)isHairlineHidden;
-- (void)setHairlineHidden:(bool)arg1;
+- (bool)isBottomHairlineHidden;
+- (bool)isTopHairlineHidden;
+- (void)setBottomHairlineHidden:(bool)arg1;
+- (void)setTopHairlineHidden:(bool)arg1;
 - (void)setLeftHairlineInset:(double)arg1;
 - (void)setHairlineColor:(id)arg1;
 - (double)leftHairlineInset;

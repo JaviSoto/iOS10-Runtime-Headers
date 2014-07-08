@@ -49,6 +49,7 @@
 - (void)rangeSelectionEnded:(struct CGPoint { double x1; double x2; })arg1;
 - (void)rangeSelectionStarted:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)containerAllowsSelection;
+- (bool)requiresImmediateUpdate;
 - (bool)containerAllowsSelectionTintOnly;
 - (void)updateWithMagnifierTerminalPoint:(bool)arg1;
 - (void)scrollSelectionToVisible;

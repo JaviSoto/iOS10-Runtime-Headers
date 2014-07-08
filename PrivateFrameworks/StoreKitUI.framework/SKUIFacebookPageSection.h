@@ -12,7 +12,7 @@
     SKUIFacebookLikeStatus *_likeStatus;
 }
 
-@property(retain) SKUIFacebookPageComponent * pageComponent;
+@property(readonly) SKUIFacebookPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

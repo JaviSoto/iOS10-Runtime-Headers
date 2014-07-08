@@ -166,6 +166,7 @@
     } __embeddedViewFrame;
 }
 
+@property(readonly) bool pl_isInPopover;
 @property(readonly) _UIBackdropView * SKUIPinnedHeaderView;
 @property(readonly) SKUIStackedBar * SKUIStackedBar;
 @property double SKUIStackedBarSplit;
@@ -277,6 +278,7 @@
 + (id)XPCInterface;
 + (bool)_initializedByViewServices;
 + (void)initialize;
++ (bool)_isSecureForRemoteViewService;
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
 + (void)attemptRotationToDeviceOrientation;
@@ -306,20 +308,20 @@
 + (bool)_doesOverrideLegacyFullScreenLayout;
 + (id)existingNibNameMatchingClassName:(id)arg1 bundle:(id)arg2;
 + (void)setViewController:(id)arg1 forView:(id)arg2;
-+ (double)_standardHorizontalContentMargin;
 + (bool)_frameIsNotResizedForDoubleHeightStatusBarChanges:(id)arg1;
 + (bool)_synthesizeSupportedInterfaceOrientationsFromShouldAutorotateToInterfaceOrientation;
 + (bool)_isNestedViewControllerSupportDisabled;
 + (bool)doesOverrideSupportedInterfaceOrientations;
-+ (double)_slimHorizontalContentMargin;
 + (struct CGSize { double x1; double x2; })defaultFormSheetSize;
 + (bool)doesOverrideViewControllerMethod:(SEL)arg1 inBaseClass:(Class)arg2;
 + (bool)_directlySetsContentOverlayInsetsForChildren;
 + (void)_performWithoutDeferringTransitions:(id)arg1;
 + (id)_traitCollectionWithParentTraitCollection:(id)arg1 overrideTraitCollection:(id)arg2;
 + (void)_scheduleTransition:(id)arg1;
++ (double)_standardHorizontalContentMargin;
 + (double)durationForTransition:(int)arg1;
 + (bool)_preventsAppearanceProxyCustomization;
++ (double)_slimHorizontalContentMargin;
 + (id)_viewControllerForFullScreenPresentationFromView:(id)arg1;
 + (id)viewControllerForView:(id)arg1;
 + (void)_traverseViewControllerHierarchyWithDelayedRelease:(id)arg1;
@@ -358,7 +360,6 @@
 - (oneway void)release;
 - (id)retain;
 - (id)_completionBlock;
-- (int)_hostProcessIdentifier;
 - (id)_remoteViewControllerProxyWithErrorHandler:(id)arg1;
 - (void)_supportedInterfaceOrientationsDidChange;
 - (struct { unsigned int x1[8]; })_hostAuditToken;
@@ -366,7 +367,6 @@
 - (void)_hostApplicationWillEnterForeground;
 - (void)_hostApplicationDidEnterBackground;
 - (bool)_shouldRemoveViewFromHierarchyOnDisappear;
-- (void)_willAppearInRemoteViewController;
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)_setRemoteViewControllerProxy:(id)arg1;
 - (void)_setHostAuditToken:(struct { unsigned int x1[8]; })arg1;
@@ -376,6 +376,8 @@
 - (struct CGSize { double x1; double x2; })_resolvedPreferredContentSize;
 - (struct CGSize { double x1; double x2; })_resolvedPreferredContentSize;
 - (id)extensionContext;
+- (void)_willAppearInRemoteViewController;
+- (int)_hostProcessIdentifier;
 - (id)_hostApplicationBundleIdentifier;
 - (void)dismissModalItem:(id)arg1 withTappedButtonIndex:(long long)arg2 animated:(bool)arg3;
 - (void)updateModaltem:(id)arg1 animated:(bool)arg2;
@@ -389,7 +391,6 @@
 - (long long)_imagePickerStatusBarStyle;
 - (id)_remoteViewControllerProxy;
 - (void)attentionClassDumpUser:(id)arg1 yesItsUsAgain:(id)arg2 althoughSwizzlingAndOverridingPrivateMethodsIsFun:(id)arg3 itWasntMuchFunWhenYourAppStoppedWorking:(id)arg4 pleaseRefrainFromDoingSoInTheFutureOkayThanksBye:(id)arg5;
-- (id)_targetViewControllerForAction:(SEL)arg1 sender:(id)arg2;
 - (void)window:(id)arg1 didTransitionToWindowSize:(struct CGSize { double x1; double x2; })arg2;
 - (long long)_rotatingToInterfaceOrientation;
 - (long long)_rotatingFromInterfaceOrientation;
@@ -427,7 +428,6 @@
 - (void)_toggleEditing:(id)arg1;
 - (id)separateSecondaryViewControllerForSplitViewController:(id)arg1;
 - (void)collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2;
-- (id)splitViewController;
 - (id)moreListTableCell;
 - (id)moreListSelectedImage;
 - (id)moreListImage;
@@ -456,7 +456,6 @@
 - (double)customNavigationInteractiveTransitionPercentComplete;
 - (void)setCustomNavigationInteractiveTransitionDuration:(double)arg1;
 - (double)customNavigationInteractiveTransitionDuration;
-- (id)afterAppearanceBlock;
 - (long long)_verticalSizeClassForChildViewController:(id)arg1;
 - (long long)_horizontalSizeClassForChildViewController:(id)arg1;
 - (void)_setAllowNestedNavigationControllers:(bool)arg1;
@@ -522,6 +521,7 @@
 - (void)_beginAppearanceTransitionToViewController:(id)arg1 animated:(bool)arg2;
 - (void)setNeedsDidMoveCleanup:(bool)arg1;
 - (bool)needsDidMoveCleanup;
+- (id)afterAppearanceBlock;
 - (bool)appearanceTransitionsAreDisabled;
 - (bool)_endAppearanceTransition:(id)arg1;
 - (bool)isUsingLegacyContainment;
@@ -582,9 +582,9 @@
 - (void)_didRotateFromInterfaceOrientation;
 - (void)_didRotateFromInterfaceOrientation:(long long)arg1 forwardToChildControllers:(bool)arg2 skipSelf:(bool)arg3;
 - (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(long long)arg1;
-- (void)getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1 forWindow:(id)arg2;
 - (void)window:(id)arg1 resizeFromOrientation:(long long)arg2;
 - (bool)_useSheetRotation;
+- (void)getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1 forWindow:(id)arg2;
 - (void)_willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2 forwardToChildControllers:(bool)arg3 skipSelf:(bool)arg4;
 - (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(long long)arg1 duration:(double)arg2;
@@ -706,7 +706,6 @@
 - (bool)_didSelfOrAncestorBeginAppearanceTransition;
 - (bool)disableRootPromotion;
 - (void)setAppearanceTransitionsAreDisabledForAllVisibleDescendents:(bool)arg1;
-- (void)setAppearanceTransitionsAreDisabled:(bool)arg1;
 - (void)__viewDidDisappear:(bool)arg1;
 - (void)__viewDidAppear:(bool)arg1;
 - (void)setAfterAppearanceBlock:(id)arg1;
@@ -776,7 +775,6 @@
 - (id)nibBundle;
 - (id)storyboard;
 - (void)_setLastNotifiedTraitCollection:(id)arg1;
-- (void)_traitCollectionDidChange:(id)arg1;
 - (id)_originalPresentationController;
 - (id)overrideTraitCollectionForChildViewController:(id)arg1;
 - (id)childViewControllers;
@@ -802,7 +800,7 @@
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)_setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setAllowsAutorotation:(bool)arg1;
-- (void)_setContentMargin:(double)arg1;
+- (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (bool)_customizesForPresentationInPopover;
 - (void)_setCustomizesForPresentationInPopover:(bool)arg1;
 - (void)_setPopoverController:(id)arg1;
@@ -822,8 +820,12 @@
 - (id)bottomLayoutGuide;
 - (void)_setUpLayoutGuideConstraintIfNecessaryAtTop:(bool)arg1;
 - (id)topLayoutGuide;
+- (void)_updateChildContentMargins;
+- (void)_setContentMargin:(double)arg1;
+- (id)_existingPresentationControllerImmediate:(bool)arg1 effective:(bool)arg2;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentOverlayInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (id)_parentViewController;
 - (id)contentScrollView;
 - (void)_cancelDelayedPresentation:(bool)arg1;
@@ -849,6 +851,7 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)_previousRootViewController;
 - (void)_setPreviousRootViewController:(id)arg1;
+- (id)splitViewController;
 - (id)_rootAncestorViewController;
 - (bool)_frameIsNotResizedForDoubleHeightStatusBarChanges;
 - (bool)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
@@ -859,6 +862,7 @@
 - (void)_presentingViewControllerDidChange:(id)arg1;
 - (void)setPerformingModalTransition:(bool)arg1;
 - (void)cancelBeginAppearanceTransition;
+- (void)setAppearanceTransitionsAreDisabled:(bool)arg1;
 - (void)setFinishingModalTransition:(bool)arg1;
 - (void)_didCancelDismissTransition:(id)arg1;
 - (void)_didCancelPresentTransition:(id)arg1;
@@ -902,11 +906,12 @@
 - (id)_appearanceGuideClass;
 - (id)_firstResponder;
 - (struct { long long x1; long long x2; })__sizeClassPair;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)_appearanceContainer;
 - (bool)_canBecomeDeepestUnambiguousResponder;
 - (void)_window:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_parent:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)_traitCollectionDidChange:(id)arg1;
 - (bool)isInWillRotateCallback;
 - (void)window:(id)arg1 willAnimateFromContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(double)arg2 toHeight:(double)arg3;
@@ -983,6 +988,7 @@
 - (void)_addChildViewAndViewController:(id)arg1;
 - (void)setAggregateStatisticsDisplayCountKey:(id)arg1;
 - (id)aggregateStatisticsDisplayCountKey;
+- (void)popRecursivelyToRootController;
 - (bool)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
 - (bool)ab_shouldShowNavBarButtons;
@@ -1074,5 +1080,25 @@
 - (double)SKUIStackedBarSplit;
 - (id)SKUIStackedBar;
 - (id)SKUIPinnedHeaderView;
+- (int)uiipc_filterForMediaTypes:(id)arg1;
+- (void)revertStatusBarStyle:(long long)arg1 currentStatusBarStyle:(long long)arg2 animated:(bool)arg3;
+- (long long)setStatusBarStyleForFullScreenViewAnimated:(bool)arg1 useTelephonyUI:(bool)arg2 canHideStatusBar:(bool)arg3 newStatusBarStyle:(long long*)arg4;
+- (id)uiipc_imagePickerOptions;
+- (id)uiipc_imagePickerController;
+- (bool)uiipc_useTelephonyUI;
+- (void)showActionSheet:(id)arg1 animated:(bool)arg2;
+- (bool)pl_visitControllerHierarchyWithBlock:(id)arg1;
+- (bool)pl_isInPopover;
+- (id)interactiveNavigationControllerIfTop;
+- (id)interactiveNavigationController;
+- (id)expandedControllerForExpandableView:(id)arg1;
+- (void)hidePopoverView;
+- (void)beginPoppingAnimated:(bool)arg1 completionHandler:(id)arg2;
+- (void)interactionCancelledWithView:(id)arg1;
+- (void)interactiveNavigationControllerDidFinishWithOverlayView:(id)arg1;
+- (void)viewDidAppearInteractivelyWithView:(id)arg1;
+- (void)viewDidDisappearInteractivelyWithView:(id)arg1;
+- (void)viewWillAppearInteractivelyWithView:(id)arg1;
+- (id)overlayView;
 
 @end

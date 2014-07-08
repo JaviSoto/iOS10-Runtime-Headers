@@ -18,6 +18,7 @@
 + (id)iconRenderQueue;
 + (id)tileDecodeStylingQueue;
 + (id)defaultDispatch;
++ (id)preemptiveLoadQueue;
 + (id)tileDecodeQueue;
 
 - (id)_newRenderQueue:(const char *)arg1;

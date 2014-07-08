@@ -8,8 +8,8 @@
 @property(getter=isSimpleOffer,readonly) bool simpleOffer;
 
 
-- (long long)pageComponentType;
 - (bool)isSimpleOffer;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
+- (long long)pageComponentType;
 
 @end

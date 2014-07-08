@@ -9,8 +9,8 @@
 }
 
 
-- (void)_cleanup;
 - (id)activityType;
+- (void)_cleanup;
 - (id)activityImage;
 - (id)initWithDocumentInteractionController:(id)arg1;
 - (void)performActivity;

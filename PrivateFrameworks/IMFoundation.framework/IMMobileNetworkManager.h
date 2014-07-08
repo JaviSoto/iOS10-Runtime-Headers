@@ -35,6 +35,7 @@
 @property(readonly) bool isDataSwitchEnabled;
 @property(readonly) bool isDataConnectionActive;
 @property(readonly) bool inValidSIMState;
+@property(readonly) bool requiresSIMInserted;
 @property(readonly) bool isSIMLocked;
 @property(readonly) bool isSIMRemoved;
 @property void* _suspendDormancyAssertion;
@@ -67,6 +68,7 @@
 - (void)showSIMUnlock;
 - (bool)isSIMLocked;
 - (bool)isSIMRemoved;
+- (bool)requiresSIMInserted;
 - (void)_makeDataConnectionAvailable:(bool)arg1;
 - (bool)_isDataConnectionAvailable;
 - (void)_releaseCTServerConnection;

@@ -67,6 +67,7 @@
 - (void)setCppAction:(void*)arg1;
 - (id)reversedAction;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
+- (bool)isCustom;
 - (struct SCNCAction { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; double x7; double x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; struct __CFString {} *x14; long long x15; double x16; double x17; double x18; double x19; }*)caction;
      /* Encoded args for previous method: ^{SCNCAction=^^?f@BdddddBB@?^{__CFString}qdddd}16@0:8 */
 

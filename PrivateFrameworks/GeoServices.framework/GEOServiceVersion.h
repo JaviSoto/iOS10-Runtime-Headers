@@ -17,7 +17,6 @@
 @property unsigned int minimumVersion;
 
 
-- (unsigned int)minimumVersion;
 - (bool)hasMinimumVersion;
 - (void)setHasMinimumVersion:(bool)arg1;
 - (void)setMinimumVersion:(unsigned int)arg1;
@@ -26,8 +25,10 @@
 - (unsigned long long)versionDomainsCount;
 - (void)addVersionDomain:(id)arg1;
 - (void)setVersionDomains:(id)arg1;
+- (unsigned int)minimumVersion;
 - (id)versionDomains;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

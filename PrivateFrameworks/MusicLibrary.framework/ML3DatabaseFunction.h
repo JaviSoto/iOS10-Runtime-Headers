@@ -17,8 +17,8 @@
 - (int)argumentCount;
 - (bool)registerWithConnection:(id)arg1;
 - (id)initWithName:(id)arg1 argumentCount:(int)arg2;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void).cxx_destruct;
 
 @end

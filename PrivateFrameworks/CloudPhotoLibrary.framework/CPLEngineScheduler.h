@@ -47,7 +47,6 @@
 - (void)noteSyncSessionSucceeded;
 - (void)_backOff;
 - (void)_noteServerIsUnavailableWithErrorLocked:(id)arg1;
-- (void)_disableRetryAfterLocked;
 - (void)_enableSynchronizationWithReasonLocked:(id)arg1;
 - (void)_disableSynchronizationWithReasonLocked:(id)arg1;
 - (void)noteServerHasChanges;
@@ -59,6 +58,8 @@
 - (void)_reallyStartSyncSession;
 - (void)_scheduleNextSyncSession;
 - (void)_reallyUnscheduleSession;
+- (bool)_syncSessionIsPossible;
+- (void)_disableRetryAfterLocked;
 - (void)notePullQueueIsFull;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)getStatusDictionaryWithCompletionHandler:(id)arg1;

@@ -38,6 +38,7 @@
 - (void)setProblemId:(id)arg1;
 - (id)problemId;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setCreationDate:(double)arg1;

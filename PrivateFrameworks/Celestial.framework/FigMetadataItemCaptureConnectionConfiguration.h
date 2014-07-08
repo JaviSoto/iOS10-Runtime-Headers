@@ -15,9 +15,9 @@
 - (struct OpaqueCMClock { }*)clock;
 - (void)setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (bool)isEqual:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, UINavigationController, <UINavigationControllerDelegate>, SKUIClientContext, SKUIOverlayContainerViewController, NSMutableArray, <SKUIModalDocumentDelegate>, UIViewController, <SKUIModalSourceViewProvider>;
+@class NSArray, UINavigationController, <UINavigationControllerDelegate>, SKUIClientContext, SKUIOverlayContainerViewController, NSMutableArray, <SKUIModalDocumentDelegate>, UIPopoverController, <SKUIModalSourceViewProvider>, UIViewController;
 
 @interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, UIPopoverControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -12,7 +12,7 @@
     UINavigationController *_overlayNavigationController;
     SKUIOverlayContainerViewController *_overlayViewController;
     <UINavigationControllerDelegate> *_navigationControllerDelegate;
-    NSMutableArray *_popoverControllers;
+    UIPopoverController *_popoverController;
     UIViewController *_rootViewController;
     NSMutableArray *_stackItems;
 }
@@ -39,6 +39,7 @@
 - (id)_overlayStackItems;
 - (void)_popPopoverStackItem:(id)arg1 animated:(bool)arg2;
 - (void)_popOverlayStackItem:(id)arg1 animated:(bool)arg2;
+- (void)_unloadDocumentForPopoverController:(id)arg1;
 - (void)_unloadDocumentForViewController:(id)arg1;
 - (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(bool)arg2;
 - (void)_pushOverlayStackItem:(id)arg1;

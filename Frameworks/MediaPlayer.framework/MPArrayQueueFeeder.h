@@ -12,11 +12,11 @@
 
 
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
-- (id)items;
 - (id)playbackInfoAtIndex:(unsigned long long)arg1;
 - (id)pathAtIndex:(unsigned long long)arg1;
 - (unsigned long long)itemCount;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (void)dealloc;
 - (void).cxx_destruct;
 

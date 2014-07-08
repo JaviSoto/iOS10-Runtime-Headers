@@ -86,10 +86,10 @@
 - (void)_beginConfiguration;
 - (int)_createFigCaptureSession;
 - (struct OpaqueCMClock { }*)masterClock;
+- (id)sessionPreset;
 - (void)removeConnection:(id)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (bool)notifiesOnMainThread;
-- (id)sessionPreset;
 - (bool)automaticallyConfiguresApplicationAudioSession;
 - (bool)usesApplicationAudioSession;
 - (void)addOutput:(id)arg1;

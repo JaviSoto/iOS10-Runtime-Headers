@@ -24,7 +24,6 @@
 @property(readonly) long long numberOfDroppedVideoFrames;
 
 
-- (id)URI;
 - (long long)numberOfDroppedVideoFrames;
 - (double)indicatedBitrate;
 - (double)observedBitrate;
@@ -38,6 +37,7 @@
 - (id)serverAddress;
 - (id)playbackStartDate;
 - (long long)numberOfSegmentsDownloaded;
+- (id)URI;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (void)finalize;

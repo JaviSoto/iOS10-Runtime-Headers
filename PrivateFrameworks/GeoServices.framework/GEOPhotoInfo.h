@@ -23,6 +23,7 @@
 - (id)initWithPlaceDataPhotoContent:(id)arg1;
 - (bool)hasUrl;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)url;

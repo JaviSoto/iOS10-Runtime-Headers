@@ -31,8 +31,6 @@
 - (void)setCreatorCode:(id)arg1;
 - (id)creatorCode;
 - (void)setAdjustmentData:(id)arg1;
-- (void)setOtherAdjustmentsFingerprint:(id)arg1;
-- (id)otherAdjustmentsFingerprint;
 - (void)setSimilarToOriginalAdjustmentsFingerprint:(id)arg1;
 - (id)similarToOriginalAdjustmentsFingerprint;
 - (id)simpleAdjustmentData;
@@ -41,6 +39,8 @@
 - (id)adjustmentCompoundVersion;
 - (id)adjustmentType;
 - (id)adjustmentData;
+- (void)setOtherAdjustmentsFingerprint:(id)arg1;
+- (id)otherAdjustmentsFingerprint;
 - (void)setSimpleAdjustmentData:(id)arg1;
 - (void)setAdjustmentCreatorCode:(id)arg1;
 - (void)setAdjustmentSourceType:(unsigned long long)arg1;

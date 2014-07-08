@@ -24,7 +24,6 @@
 @property(copy) NSString * text;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (void)setITunesPassConfiguration:(id)arg1;
 - (void)_resumeRedeemer;
 - (void)_hideKeyboard;
@@ -37,6 +36,7 @@
 - (void)_landingButtonAction:(id)arg1;
 - (id)ITunesPassConfiguration;
 - (void)_termsButtonAction:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;

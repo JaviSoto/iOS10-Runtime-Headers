@@ -27,11 +27,12 @@
 - (bool)hasTime;
 - (bool)hasDistance;
 - (void)setHasDistance:(bool)arg1;
-- (bool)hasTransportType;
 - (void)setHasTransportType:(bool)arg1;
+- (bool)hasTransportType;
 - (void)setTransportType:(int)arg1;
 - (int)transportType;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setTime:(unsigned int)arg1;

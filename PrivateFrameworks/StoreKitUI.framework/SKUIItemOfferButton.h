@@ -103,10 +103,10 @@
 - (struct CGSize { double x1; double x2; })layoutSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)removeButtonStateAnimations;
 - (void)setColoringWithAppearance:(id)arg1;
-- (void)setShowingConfirmation:(bool)arg1 animated:(bool)arg2;
 - (bool)setValuesUsingViewElement:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(bool)arg4;
 - (bool)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(bool)arg4;
 - (void)_removeCancelGestureRecognizer;
+- (void)setShowingConfirmation:(bool)arg1 animated:(bool)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

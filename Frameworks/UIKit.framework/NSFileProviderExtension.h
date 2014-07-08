@@ -33,7 +33,7 @@
 - (id)URLForItemWithPersistentIdentifier:(id)arg1;
 - (id)memberQueueDocumentStorageURL;
 - (id)memberQueue;
-- (id)documentStorageURL;
 - (id)providerIdentifier;
+- (id)documentStorageURL;
 
 @end

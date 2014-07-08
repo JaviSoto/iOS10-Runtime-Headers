@@ -52,7 +52,6 @@
 + (id)playerItemWithURL:(id)arg1;
 + (void)initialize;
 
-- (long long)status;
 - (void)stepByCount:(long long)arg1;
 - (id)outputs;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
@@ -182,7 +181,6 @@
 - (id)_tracksFromAssetTrackIDs;
 - (id)_tracksWithFPTrackIDArray:(id)arg1;
 - (void)_setTrackIDsForAssetWithFigPlaybackItem:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_duration;
 - (bool)_isCurrentPlayerItem;
 - (struct CGSize { double x1; double x2; })_presentationSize;
 - (bool)_hasEnabledAudio;
@@ -322,11 +320,13 @@
 - (id)videoComposition;
 - (id)asset;
 - (id)_tracks;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_duration;
 - (struct OpaqueCMTimebase { }*)timebase;
 - (id)_stateDispatchQueue;
 - (id)_cachedValueForKey:(id)arg1;
 - (id)_player;
 - (id)_weakReference;
+- (long long)status;
 - (id)loadedTimeRanges;
 - (bool)hasEnabledVideo;
 - (bool)hasEnabledAudio;

@@ -48,7 +48,6 @@
 + (void)setReadSizeParameters;
 + (void)initialize;
 
-- (id)capabilities;
 - (id)uidsReferencedBy:(id)arg1;
 - (id)_getFirstLevelMessageIDsForReference:(id)arg1;
 - (id)_getReferencesForMessageSet:(id)arg1;
@@ -162,6 +161,7 @@
 - (bool)connectUsingAccount:(id)arg1;
 - (bool)deleteMailbox:(id)arg1;
 - (bool)authenticateUsingAccount:(id)arg1;
+- (id)capabilities;
 - (int)connectionState;
 - (int)tag;
 - (id)init;

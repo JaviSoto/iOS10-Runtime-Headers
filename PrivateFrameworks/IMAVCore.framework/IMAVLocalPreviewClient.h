@@ -21,6 +21,7 @@
 
 + (id)sharedInstance;
 
+- (void)pausePreview;
 - (bool)supportsPreview;
 - (void)endAnimationToPreview;
 - (void)beginAnimationToPreview;
@@ -43,7 +44,6 @@
 - (unsigned int)cameraOrientation;
 - (unsigned int)cameraType;
 - (void)setLocalCamera:(id)arg1;
-- (void)pausePreview;
 - (void)didReceiveCommError;
 - (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
 - (void)didChangeLocalScreenAttributes:(id)arg1;

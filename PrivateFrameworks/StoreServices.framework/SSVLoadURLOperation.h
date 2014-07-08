@@ -56,14 +56,14 @@
 - (id)referrerURLString;
 - (id)referrerApplicationName;
 - (id)cachedURLResponse;
+- (void)dispatchSync:(id)arg1;
+- (void)dispatchAsync:(id)arg1;
 - (id)initWithData:(id)arg1 fromOperation:(id)arg2;
 - (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setRecordsMetrics:(bool)arg1;
 - (void)setExpiredOutputBlock:(id)arg1;
 - (id)expiredOutputBlock;
-- (void)dispatchSync:(id)arg1;
-- (void)dispatchAsync:(id)arg1;
 - (void)_keepAliveTimer:(id)arg1;
 - (int)_runRunLoopUntilStopped;
 - (void)_stopIfCancelled;

@@ -4,7 +4,7 @@
 
 @class NSURL;
 
-@interface _UITextViewInteractableLink : _UITextViewInteractableItem  {
+@interface _UITextViewInteractableLink : _UITextViewInteractableItem <DDDetectionControllerInteractionDelegate> {
     NSURL *_link;
 }
 
@@ -25,5 +25,6 @@
 - (id)localizedTitle;
 - (id)defaultAction;
 - (bool)allowInteraction;
+- (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 
 @end

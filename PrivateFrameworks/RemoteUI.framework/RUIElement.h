@@ -22,8 +22,8 @@
 - (void)setImageAlignment:(int)arg1;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)loadImage;
-- (id)sourceURL;
 - (bool)enabled;
+- (id)sourceURL;
 - (id)attributes;
 - (void)setEnabled:(bool)arg1;
 - (void)setAttributes:(id)arg1;

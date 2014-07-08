@@ -10,11 +10,11 @@
 }
 
 
-- (bool)tryLock;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
-- (id)objectForKeyedSubscript:(id)arg1;
+- (bool)tryLock;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)addEntriesFromDictionary:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)unlockWithCondition:(unsigned long long)arg1;
 - (unsigned long long)condition;
 - (id)init;

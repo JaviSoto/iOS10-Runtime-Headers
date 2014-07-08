@@ -25,11 +25,11 @@
 - (void)setMovieStartPoint:(float)arg1;
 - (float)movieStartPoint;
 - (bool)isAudioOnly;
+- (void)setName:(id)arg1;
 - (void)setLoop:(bool)arg1;
 - (bool)loop;
 - (id)name;
 - (id)data;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (void)setData:(id)arg1;
 

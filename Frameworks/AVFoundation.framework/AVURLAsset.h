@@ -54,10 +54,10 @@
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
 - (id)tracks;
+- (id)resolvedURL;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (void)cancelLoading;
 - (id)resourceLoader;
-- (id)resolvedURL;
 - (id)init;
 - (id)URL;
 - (void)finalize;

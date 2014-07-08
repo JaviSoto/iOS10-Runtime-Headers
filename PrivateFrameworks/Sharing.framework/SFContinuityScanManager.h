@@ -18,11 +18,12 @@
 
 - (void)setQueuedIdentifers:(id)arg1;
 - (id)queuedIdentifers;
+- (void)lostDeviceWithDeviceIdentifier:(id)arg1;
+- (void)foundDeviceWithDeviceIdentifier:(id)arg1;
 - (void)receivedAdvertisement:(id)arg1;
-- (void)payloadForIdentifier:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)activityPayloadFromDeviceIdentifier:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setConnectionProxy:(id)arg1;
 - (id)connectionProxy;
-- (void)updatedFoundDeviceList:(id)arg1;
 - (void)xpcManagerConnectionInterrupted;
 - (id)observers;
 - (void)setObservers:(id)arg1;

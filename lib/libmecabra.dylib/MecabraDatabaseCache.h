@@ -22,7 +22,6 @@
 
 - (void)setUniqueKeys:(id)arg1;
 - (void)updateSeedNumber:(unsigned long long)arg1;
-- (unsigned long long)nextSeed;
 - (void)deleteEntry:(id)arg1;
 - (void)updateEntry:(id)arg1;
 - (id)entryForIdentifier:(unsigned long long)arg1;
@@ -39,6 +38,7 @@
 - (void)setIdentifierController:(id)arg1;
 - (void)setEntryToIdentifierMapping:(id)arg1;
 - (id)init;
+- (unsigned long long)nextSeed;
 - (void)dealloc;
 - (void)reset;
 

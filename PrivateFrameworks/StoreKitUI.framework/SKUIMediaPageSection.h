@@ -14,21 +14,21 @@
     SKUIEmbeddedMediaView *_mediaView;
 }
 
-@property(retain) SKUIMediaComponent * pageComponent;
+@property(readonly) SKUIMediaComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
 - (void)mediaView:(id)arg1 playbackStateDidChange:(long long)arg2;
 - (void)_loadImageWithReason:(long long)arg1;
-- (long long)defaultPinStyle;
+- (long long)defaultItemPinningStyle;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (double)contentInsetAdjustmentForCollectionView:(id)arg1;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)setSectionIndex:(long long)arg1;

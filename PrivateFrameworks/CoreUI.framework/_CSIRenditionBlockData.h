@@ -15,7 +15,7 @@
 
 + (id)sharedCache;
 
-- (void)expandCSIBitmapData:(struct _csibitmap { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[0]; }*)arg1 fromSlice:(struct _slice { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 makeReadOnly:(bool)arg3;
+- (void)expandCSIBitmapData:(struct _csibitmap { unsigned int x1; union { unsigned int x_2_1_1; struct _csibitmapflags { unsigned int x_2_2_1 : 1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 30; } x_2_1_2; } x2; unsigned int x3; unsigned int x4; unsigned char x5[0]; }*)arg1 fromSlice:(struct _slice { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 makeReadOnly:(bool)arg3;
 - (void)tallyImageBlockRelease;
 - (bool)wasUsedTransiently;
 - (unsigned int)nrows;

@@ -68,8 +68,8 @@
 - (id)elementID;
 - (bool)isDisabled;
 - (id)attributes;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (unsigned long long)updateType;
 - (void)setParent:(id)arg1;
 - (void)setDisabled:(bool)arg1;

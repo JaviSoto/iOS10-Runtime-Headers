@@ -32,8 +32,8 @@
 - (id)_cachedKeyAssets;
 - (unsigned long long)_fetchedCountForAssetsOfKind:(short)arg1;
 - (void)setupFetchRequest;
-- (unsigned long long)batchSize;
 - (void)updateSnapshotAndClearCaches:(id)arg1;
+- (unsigned long long)batchSize;
 - (id)primitiveAssets;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)tertiaryKeyAsset;

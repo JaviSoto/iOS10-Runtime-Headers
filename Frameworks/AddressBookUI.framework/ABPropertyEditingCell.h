@@ -28,6 +28,7 @@
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
+- (void)setValueTextAttributes:(id)arg1;
 - (id)constantConstraints;
 - (double)minCellHeight;
 - (id)labelView;

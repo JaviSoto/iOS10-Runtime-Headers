@@ -28,8 +28,8 @@
 @property bool isMarkedIncorrect;
 
 
-- (bool)isMarkedIncorrect;
 - (id)fieldName;
+- (bool)isMarkedIncorrect;
 - (bool)hasIsMarkedIncorrect;
 - (void)setHasIsMarkedIncorrect:(bool)arg1;
 - (void)setIsMarkedIncorrect:(bool)arg1;
@@ -45,6 +45,7 @@
 - (void)setCorrectedValue:(id)arg1;
 - (void)setOriginalValue:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (int)field;

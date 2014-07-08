@@ -46,6 +46,7 @@
 + (void)CAMLParserStartElement:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
+- (void)setName:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)function;
 - (id)valueForKey:(id)arg1;
@@ -69,7 +70,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)name;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

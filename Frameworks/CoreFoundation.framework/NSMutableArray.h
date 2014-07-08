@@ -105,16 +105,17 @@
 - (void)cr_removeObjectsStartingAtIndex:(unsigned long long)arg1;
 - (bool)mf_addObjectIfAbsent:(id)arg1;
 - (void)mf_moveObjectAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (void)mf_addObject:(id)arg1 orPlaceholder:(id)arg2;
 - (bool)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
 - (unsigned long long)mf_insertObject:(id)arg1 usingComparator:(id)arg2 allowDuplicates:(bool)arg3;
 - (unsigned long long)mf_removeObject:(id)arg1 usingComparator:(id)arg2;
 - (unsigned long long)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (unsigned long long)mf_insertObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3 allowDuplicates:(bool)arg4;
-- (id)_gkMutableOrderedSet;
 - (void)performSpecifierUpdatesUsingBlock:(id)arg1;
 - (void)ps_insertObjectsFromArray:(id)arg1 afterObject:(id)arg2;
 - (void)ps_insertObject:(id)arg1 afterObject:(id)arg2;
 - (void)ps_addPossibleObject:(id)arg1;
+- (id)_gkMutableOrderedSet;
 - (void)_mapkit_makeObjectsPerformSelector:(SEL)arg1;
 - (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_mapkit_sortUsingLongitude;
@@ -127,13 +128,6 @@
 - (unsigned long long)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(bool)arg2;
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
-- (void)moveIdenticalObjectToFirst:(id)arg1;
-- (void)insertObject:(id)arg1 usingFunction:(int (*)())arg2 context:(void*)arg3;
-- (void)addObjectsFromArrayIfIdenticalNotPresent:(id)arg1;
-- (void)addObjectsFromArrayIfNotPresent:(id)arg1;
-- (void)addObjectIfNotNil:(id)arg1;
-- (void)addObjectIfIdenticalNotPresent:(id)arg1;
-- (void)addObjectIfNotPresent:(id)arg1;
 - (void)removeAllObjectsWithClass:(Class)arg1;
 - (void)trimObjectsFromIndex:(unsigned long long)arg1;
 - (void)removeObjectsIdenticalToObjectsInArray:(id)arg1;
@@ -145,6 +139,13 @@
 - (void)enqueue:(id)arg1;
 - (id)pop_tsu;
 - (void)safelyAddObject:(id)arg1;
+- (void)addItemsMatchingType:(id)arg1 fromFolder:(id)arg2;
+- (void)addItemsMatchingExtensions:(id)arg1 orTypes:(id)arg2 fromFolder:(id)arg3;
+- (void)tk_ensureHasItemsOrNullUpToIndex:(unsigned long long)arg1;
+- (id)tk_dequeueObject;
+- (id)tk_nextDequeuedObject;
+- (void)tk_enqueueObject:(id)arg1;
+- (id)tk_lastEnqueuedObject;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)WF_pop;
 - (void)WF_push:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 

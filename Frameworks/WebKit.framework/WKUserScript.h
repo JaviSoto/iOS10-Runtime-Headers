@@ -12,7 +12,7 @@
     bool_forMainFrameOnly;
 }
 
-@property(readonly) NSString * source;
+@property(copy,readonly) NSString * source;
 @property(readonly) long long injectionTime;
 @property(getter=isForMainFrameOnly,readonly) bool forMainFrameOnly;
 

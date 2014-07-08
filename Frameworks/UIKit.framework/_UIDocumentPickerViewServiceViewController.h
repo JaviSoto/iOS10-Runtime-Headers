@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, NSURL, <_UIDocumentPickerViewControllerHost>;
 
-@interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerViewControllerHost, _UIDocumentPickerOverviewDelegate, _UIDocumentPickerViewController> {
+@interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerRemoteViewControllerContaining, _UIDocumentPickerOverviewDelegate, _UIDocumentPickerViewController> {
     bool_displayedAsMenu;
     long long _displayMode;
     NSArray *_pickableTypes;
@@ -14,11 +14,11 @@
     NSString *_currentPickerIdentifier;
 }
 
-@property(retain,readonly) <_UIDocumentPickerViewControllerHost> * hostingViewController;
+@property(readonly) <_UIDocumentPickerViewControllerHost> * hostingViewController;
 @property long long displayMode;
-@property(retain) NSArray * pickableTypes;
+@property(copy) NSArray * pickableTypes;
 @property unsigned long long pickerMode;
-@property(retain) NSURL * uploadURL;
+@property(copy) NSURL * uploadURL;
 @property int sortOrder;
 @property(setter=_setAuxiliaryOptions:,retain) NSArray * auxiliaryOptions;
 @property(retain) NSString * currentPickerIdentifier;
@@ -28,22 +28,23 @@
 + (id)_exportedInterface;
 
 - (void)dealloc;
+- (void)_willAppearInRemoteViewController;
 - (void)setDisplayMode:(long long)arg1;
 - (void)overviewController:(id)arg1 selectedAuxiliaryOptionWithIdentifier:(id)arg2;
 - (void)overviewController:(id)arg1 selectedDocumentPickerWithIdentifier:(id)arg2;
 - (void)dismissWithURL:(id)arg1 forBundleIdentifier:(id)arg2;
 - (bool)displayedAsMenu;
-- (id)uploadURL;
 - (void)_showLocationPopup:(id)arg1;
 - (void)_doneButton:(id)arg1;
 - (void)_showPicker:(id)arg1;
 - (void)setupNavigationItemForPicker:(id)arg1 isRoot:(bool)arg2;
 - (void)setDisplayedAsMenu:(bool)arg1;
+- (void)_showTopLevelViewController;
 - (id)currentPickerIdentifier;
-- (void)_showPicker;
 - (void)setCurrentPickerIdentifier:(id)arg1;
-- (void)beginDownloadingURL:(id)arg1 completion:(id)arg2;
+- (id)uploadURL;
 - (id)hostingViewController;
+- (void)beginDownloadingURL:(id)arg1 completion:(id)arg2;
 - (long long)displayMode;
 - (id)auxiliaryOptions;
 - (void)_setUploadURL:(id)arg1;
@@ -53,12 +54,11 @@
 - (unsigned long long)pickerMode;
 - (id)pickableTypes;
 - (void)setSortOrder:(int)arg1;
-- (void)viewWillAppear:(bool)arg1;
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
 - (void)_dismissViewController;
-- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (void)_didSelectURL:(id)arg1;
 - (void)_setUploadURL:(id)arg1 withSandboxExtension:(id)arg2;
 - (void)_setPickerMode:(unsigned long long)arg1;
 - (void)_setPickableTypes:(id)arg1;

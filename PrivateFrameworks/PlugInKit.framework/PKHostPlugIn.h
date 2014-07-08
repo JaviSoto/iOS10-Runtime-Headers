@@ -6,11 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSURL, <PKPlugIn>, Protocol, NSDate, NSDictionary, NSBundle, NSString, NSUserDefaults, NSObject<OS_dispatch_queue>, NSArray, NSXPCConnection, <PKCorePlugInProtocol>, NSUUID;
+@class <PKPlugIn>, Protocol, NSURL, NSDate, NSDictionary, NSBundle, NSString, NSUserDefaults, NSObject<OS_dispatch_queue>, NSArray, NSXPCConnection, <PKCorePlugInProtocol>, NSUUID;
 
 @interface PKHostPlugIn : PKPlugInCore <PKPlugInPrivate, NSXPCConnectionDelegate> {
     unsigned int _useCount;
     long long _userElection;
+    NSDictionary *_extensionState;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -32,6 +33,7 @@
     id _embeddedPrincipal;
     NSBundle *_embeddedBundle;
     NSUserDefaults *_defaults;
+    NSDate *_beganUsingAt;
 }
 
 @property(retain) NSXPCConnection * pluginConnection;
@@ -51,6 +53,7 @@
 @property(retain) id embeddedPrincipal;
 @property(retain) NSBundle * embeddedBundle;
 @property(retain) NSUserDefaults * defaults;
+@property(retain) NSDate * beganUsingAt;
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * version;
 @property(readonly) NSURL * url;
@@ -67,6 +70,7 @@
 @property(copy) id notificationBlock;
 @property(readonly) NSUUID * uuid;
 @property(readonly) NSDate * timestamp;
+@property(retain) NSDictionary * extensionState;
 
 
 - (bool)active;
@@ -75,8 +79,11 @@
 - (id)pluginConnection;
 - (bool)useBundle:(id)arg1 error:(id*)arg2;
 - (void)setUserElection:(long long)arg1;
-- (long long)userElection;
 - (void)resume;
+- (long long)userElection;
+- (void)setExtensionState:(id)arg1;
+- (id)extensionState;
+- (id)beganUsingAt;
 - (void)setEmbeddedBundle:(id)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (id)supersedingUUID;
@@ -88,6 +95,7 @@
 - (id)defaults;
 - (void)setHostPrincipal:(id)arg1 withProtocol:(id)arg2;
 - (id)notificationBlock;
+- (void)messageTraceUsage;
 - (id)discoveryExtensions;
 - (void)setSandboxExtensions:(id)arg1;
 - (id)sandboxExtensions;
@@ -100,6 +108,7 @@
 - (void)unwind:(unsigned long long)arg1;
 - (void)setService:(id)arg1;
 - (void)setPluginConnection:(id)arg1;
+- (void)setBeganUsingAt:(id)arg1;
 - (void)changeState:(unsigned long long)arg1;
 - (bool)loadExtensions:(id)arg1 error:(id*)arg2;
 - (void)setUseCount:(unsigned int)arg1;

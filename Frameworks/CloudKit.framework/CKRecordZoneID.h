@@ -14,7 +14,6 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)CKPropertiesDescription;
 - (id)initWithSqliteRepresentation:(id)arg1;
 - (void)setOwnerName:(id)arg1;
 - (void)setZoneName:(id)arg1;
@@ -23,6 +22,7 @@
 - (id)initWithZoneName:(id)arg1 ownerName:(id)arg2;
 - (id)ownerName;
 - (id)zoneName;
+- (id)CKPropertiesDescription;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

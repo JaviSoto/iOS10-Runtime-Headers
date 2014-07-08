@@ -25,9 +25,9 @@
 - (void)handleResponseDictionary:(id)arg1;
 - (id)bagKey;
 - (long long)command;
-- (id)messageBody;
 - (void)setLanguage:(id)arg1;
 - (id)language;
+- (id)messageBody;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

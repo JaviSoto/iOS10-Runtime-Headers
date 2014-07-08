@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSNull : NSObject <NSCopying, NSSecureCoding> {
+@interface NSNull : NSObject <NSCopying, NSSecureCoding, PQLBindable> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -25,6 +25,7 @@
 - (id)CAMLType;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)ml_stringValueForSQL;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)appendJsonStringToString:(id)arg1;
 
 @end

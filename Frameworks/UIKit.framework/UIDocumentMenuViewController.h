@@ -4,7 +4,7 @@
 
 @class UIAlertController, <UIDocumentMenuDelegate>, NSMutableArray, _UIDocumentPickerRemoteViewController;
 
-@interface UIDocumentMenuViewController : UIViewController <_UIDocumentPickerViewControllerHost, UIAlertControllerContaining> {
+@interface UIDocumentMenuViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining, UIAlertControllerContaining> {
     <UIDocumentMenuDelegate> *_weak_delegate;
     bool_dismissDelegateCalled;
     NSMutableArray *_auxiliaryOptions;
@@ -37,12 +37,12 @@
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
 - (void)_dismissViewController;
-- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (void)_didSelectURL:(id)arg1;
 - (id)initWithURL:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned long long)arg2;
 - (void)_commonInitWithCompletion:(id)arg1;
-- (void)setModalPresentationStyle:(long long)arg1;
 - (id)_remoteViewController;
+- (void)setModalPresentationStyle:(long long)arg1;
 - (void)_setRemoteViewController:(id)arg1;
 - (long long)modalPresentationStyle;
 

@@ -28,9 +28,9 @@
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 start:(bool)arg4;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
-- (int)socket;
 - (void)start;
 - (void)dealloc;
+- (int)socket;
 - (void)endSession;
 - (void)setDestination:(id)arg1;
 - (bool)sendData:(id)arg1;

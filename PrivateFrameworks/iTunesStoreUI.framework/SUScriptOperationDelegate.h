@@ -10,8 +10,8 @@
 }
 
 
-- (void)_removeOperation:(id)arg1;
 - (void)enqueueOperation:(id)arg1;
+- (void)_removeOperation:(id)arg1;
 - (void)operationFinished:(id)arg1;
 - (void)cancelAllOperations;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIResourceLoader, NSArray, SKUIIconDataConsumer, NSMutableDictionary, SKUIItemArtworkContext, SKUIClientContext, UIImage, <SKUIItemCollectionDelegate>, SKUIScreenshotDataConsumer;
+@class SKUIStyledImageDataConsumer, SKUIResourceLoader, NSArray, UIImage, NSMutableDictionary, SKUIItemArtworkContext, SKUIClientContext, <SKUIItemCollectionDelegate>, SKUIScreenshotDataConsumer;
 
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
     SKUIItemArtworkContext *_artworkContext;
@@ -11,7 +11,7 @@
     <SKUIItemCollectionDelegate> *_delegate;
     bool_delegateProvidesScreenshots;
     NSMutableDictionary *_iconArtworkRequestIDs;
-    SKUIIconDataConsumer *_iconDataConsumer;
+    SKUIStyledImageDataConsumer *_iconDataConsumer;
     NSArray *_items;
     SKUIScreenshotDataConsumer *_landscapeScreenshotDataConsumer;
     UIImage *_landscapeScreenshotPlaceholderImage;
@@ -26,7 +26,7 @@
 @property <SKUIItemCollectionDelegate> * delegate;
 @property(retain) SKUIResourceLoader * artworkLoader;
 @property(retain) SKUIItemArtworkContext * artworkContext;
-@property(retain) SKUIIconDataConsumer * iconDataConsumer;
+@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
 @property(retain) SKUIScreenshotDataConsumer * landscapeScreenshotDataConsumer;
 @property(retain) SKUIScreenshotDataConsumer * portraitScreenshotDataConsumer;
 @property(copy) NSArray * items;
@@ -34,7 +34,6 @@
 @property double numberOfPagesToCacheAhead;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (void)_memoryWarningNotification:(id)arg1;
 - (long long)numberOfItemsPerPage;
 - (id)_placeholderImageForScreenshot:(id)arg1;
@@ -73,6 +72,7 @@
 - (id)artworkContext;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
+- (id)initWithClientContext:(id)arg1;
 - (id)items;
 - (void)setItems:(id)arg1;
 - (id)init;

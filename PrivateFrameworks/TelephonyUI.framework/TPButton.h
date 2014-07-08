@@ -47,8 +47,8 @@
 - (bool)blursBackground;
 - (void)setSelected:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 
 @end

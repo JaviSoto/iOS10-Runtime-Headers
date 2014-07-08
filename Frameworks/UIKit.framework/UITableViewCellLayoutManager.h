@@ -43,9 +43,11 @@
 - (id)defaultTextLabelFontForCell:(id)arg1;
 - (double)defaultTextLabelFontSizeForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForCell:(id)arg1 forEditingState:(bool)arg2 showingDeleteConfirmation:(bool)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundRectForCell:(id)arg1 forIndentedState:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })deleteConfirmationRectForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_editControlRectForCell:(id)arg1 offscreen:(bool)arg2;
 - (bool)editControlShouldAppearForCell:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForCell:(id)arg1 forEditingState:(bool)arg2 showingDeleteConfirmation:(bool)arg3 rowWidth:(double)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessoryRectForCell:(id)arg1 offscreen:(bool)arg2;
 - (bool)reorderControlShouldAppearForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_editingAccessoryRectForCell:(id)arg1 offscreen:(bool)arg2;
@@ -56,7 +58,9 @@
 - (bool)accessoryShouldAppearForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedBackgroundContentRectForCell:(id)arg1 forIndentedState:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedBackgroundRectForCell:(id)arg1 forIndentedState:(bool)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundRectForCell:(id)arg1 forIndentedState:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedBackgroundContentRectForCell:(id)arg1 forIndentedState:(bool)arg2 rowWidth:(double)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedBackgroundRectForCell:(id)arg1 forIndentedState:(bool)arg2 rowWidth:(double)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundRectForCell:(id)arg1 forIndentedState:(bool)arg2 rowWidth:(double)arg3;
 - (struct CGSize { double x1; double x2; })intrinsicContentSizeForCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundStartingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })selectedBackgroundEndingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
@@ -68,6 +72,7 @@
 - (id)editableTextFieldForCell:(id)arg1;
 - (id)detailTextLabelForCell:(id)arg1;
 - (id)textLabelForCell:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForCell:(id)arg1 forState:(unsigned long long)arg2 rowWidth:(double)arg3;
 - (void)layoutSubviewsOfCell:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundEndingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForCell:(id)arg1 forState:(unsigned long long)arg2;

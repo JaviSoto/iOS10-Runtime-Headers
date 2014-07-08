@@ -30,8 +30,8 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (id)assetFieldNamesToPublishURLs;
+- (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (void)setDesiredPackageFileIndices:(id)arg1;

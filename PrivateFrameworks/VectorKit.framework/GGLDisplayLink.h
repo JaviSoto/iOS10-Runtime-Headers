@@ -20,8 +20,8 @@
 @property(retain) CADisplay * display;
 
 
-- (double)timestamp;
 - (void)setPaused:(bool)arg1;
+- (double)timestamp;
 - (bool)isPaused;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;

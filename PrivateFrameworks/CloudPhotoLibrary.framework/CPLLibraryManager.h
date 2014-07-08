@@ -2,13 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSError, NSString, NSURL, CPLChangeSession, <CPLLibraryManagerDelegate>, CPLPlatformObject, NSObject<OS_dispatch_queue>, <CPLResourceProgressDelegate>, NSProgress;
+@class NSError, <CPLLibraryManagerDelegate>, NSString, CPLChangeSession, NSURL, CPLConfiguration, NSObject<OS_dispatch_queue>, CPLPlatformObject, <CPLResourceProgressDelegate>;
 
 @interface CPLLibraryManager : NSObject <CPLAbstractObject> {
     CPLChangeSession *_currentSession;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_sessionLock;
     bool_sizeOfResourcesToUploadIsSet;
+    long long _configurationOnce;
+    CPLConfiguration *_configuration;
     CPLPlatformObject *_platformObject;
     NSURL *_clientLibraryBaseURL;
     NSURL *_cloudLibraryStateStorageURL;
@@ -33,10 +35,10 @@
 @property unsigned long long sizeOfResourcesToUpload;
 @property <CPLLibraryManagerDelegate> * delegate;
 @property <CPLResourceProgressDelegate> * resourceProgressDelegate;
+@property(readonly) CPLConfiguration * configuration;
 @property(readonly) unsigned long long status;
 @property(readonly) NSError * statusError;
 @property bool diagnosticsEnabled;
-@property(readonly) NSProgress * cloudSyncProgress;
 @property unsigned long long state;
 @property(copy) NSString * userOverride;
 @property(copy) NSString * effectiveClientBundleIdentifier;
@@ -58,10 +60,11 @@
 - (id)resourceProgressDelegate;
 - (id)cloudLibraryStateStorageURL;
 - (id)clientLibraryBaseURL;
-- (id)cloudSyncProgress;
 - (id)addSubscriberUsingPublishingHandler:(id)arg1;
 - (void)_setSizeOfResourcesToUpload:(unsigned long long)arg1;
 - (bool)_setStatus:(unsigned long long)arg1 andError:(id)arg2;
+- (void)getLocalIdentifiersForCloudIdentifiers:(id)arg1 completionHandler:(id)arg2;
+- (void)getCloudIdentifiersForLocalIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (id)initForManagement;
 - (void)addInfoToLog:(id)arg1;
 - (void)resetCacheWithOption:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -74,6 +77,7 @@
 - (void)noteClientReceivedNotificationOfServerChanges;
 - (void)startSyncSession;
 - (void)resetStatus;
+- (void)_getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(bool)arg2 completionHandler:(id)arg3;
 - (void)publishResource:(id)arg1 completionHandler:(id)arg2;
 - (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 completionHandler:(id)arg4;
 - (void)discardCurrentSession;
@@ -97,17 +101,19 @@
 - (void)beginPullChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
 - (void)beginPushChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
 - (void)setResourceProgressDelegate:(id)arg1;
-- (void)setEffectiveClientBundleIdentifier:(id)arg1;
 - (id)currentSession;
-- (unsigned long long)status;
+- (void)setEffectiveClientBundleIdentifier:(id)arg1;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
+- (unsigned long long)status;
 - (void)setDelegate:(id)arg1;
+- (id)configuration;
 - (id)delegate;
 - (void)setState:(unsigned long long)arg1;
 - (unsigned long long)state;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
+- (void)_configurationDidChange;
 - (void)closeWithCompletionHandler:(id)arg1;
 - (void)openWithCompletionHandler:(id)arg1;
 

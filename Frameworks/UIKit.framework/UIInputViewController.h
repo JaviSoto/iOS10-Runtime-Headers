@@ -2,20 +2,26 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject<UITextDocumentProxy>, UIKeyboard, UIInputView;
+@class NSObject<UITextDocumentProxy>, NSString, UIKeyboard, UIInputView;
 
 @interface UIInputViewController : UIViewController <_UITextDocumentInterfaceDelegate, UITextInputDelegate> {
+    bool_alignsToContentViewController;
     NSObject<UITextDocumentProxy> *_textDocumentProxy;
+    NSString *_primaryLanguage;
 }
 
 @property(retain) UIInputView * inputView;
 @property(readonly) NSObject<UITextDocumentProxy> * textDocumentProxy;
+@property(copy) NSString * primaryLanguage;
 @property(readonly) UIKeyboard * _keyboard;
+@property bool _alignsToContentViewController;
 
 + (bool)_requiresProxyInterface;
 
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (void)set_alignsToContentViewController:(bool)arg1;
+- (bool)_alignsToContentViewController;
 - (void)requestSupplementaryLexiconWithCompletion:(id)arg1;
 - (void)returnToPreviousInputMode;
 - (void)advanceToNextInputMode;
@@ -29,6 +35,8 @@
 - (void)_willResetDocumentState;
 - (id)_keyboard;
 - (void)dismissKeyboard;
+- (void)setPrimaryLanguage:(id)arg1;
+- (id)primaryLanguage;
 - (void)selectionDidChange:(id)arg1;
 - (void)selectionWillChange:(id)arg1;
 - (id)_compatibilityController;

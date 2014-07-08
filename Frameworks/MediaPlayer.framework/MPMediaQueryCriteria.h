@@ -53,8 +53,8 @@
 - (void)setGroupingType:(long long)arg1;
 - (void)addFilterPredicates:(id)arg1;
 - (unsigned long long)entityOrder;
-- (long long)groupingType;
 - (id)filterPredicates;
+- (long long)groupingType;
 - (void)setFilterPredicates:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 - (id)init;

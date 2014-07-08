@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SSVPlatformContext, NSMapTable, NSDictionary, NSBundle, NSMutableArray, SKUIURL, SKUIStoreDialogController, SUClientInterface, NSString, IKAppContext, NSArray, SSURLBag, SKUIApplicationController, SKUILocalizedStringDictionary;
+@class SSVPlatformContext, NSMapTable, NSDictionary, NSBundle, SKUIURLBag, NSMutableArray, SKUIStoreDialogController, SKUIURL, SUClientInterface, NSString, IKAppContext, NSArray, SKUILocalizedStringDictionary, SKUIApplicationController, SSURLBag;
 
 @interface SKUIClientContext : NSObject <SUClientInterfaceDelegatePrivate> {
     NSString *_additionalPurchaseParameters;
@@ -21,7 +21,7 @@
     long long _purchaseURLBagType;
     IKAppContext *_scriptAppContext;
     NSString *_storeFrontIdentifier;
-    SSURLBag *_urlBag;
+    SKUIURLBag *_urlBag;
     long long _userInterfaceIdiomOverride;
 }
 
@@ -42,7 +42,7 @@
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 
 - (id)initWithConfigurationDictionary:(id)arg1;
-- (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2;
+- (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;

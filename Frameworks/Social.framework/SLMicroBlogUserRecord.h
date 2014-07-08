@@ -26,8 +26,8 @@
 - (id)screen_name;
 - (id)profileImageCache;
 - (void)setValuesWithUserDictionary:(id)arg1;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

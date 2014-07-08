@@ -81,8 +81,8 @@
 - (id)storeNotes;
 - (id)screenshots;
 - (id)developerInfo;
-- (long long)numberOfChildItems;
 - (id)childItemForIdentifier:(id)arg1;
+- (long long)numberOfChildItems;
 - (id)loadedChildItems;
 - (id)childItemIdentifiers;
 - (id)initWithLookupDictionary:(id)arg1;

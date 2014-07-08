@@ -11,18 +11,12 @@
 + (id)sharedInstance;
 
 - (void)_dumpOutAllIMHandles;
-- (void)imHandleInfoChanged:(id)arg1;
-- (void)reassessIMHandleForUniqueName:(id)arg1;
 - (void)setNameStyle:(long long)arg1;
+- (long long)nameStyle;
 - (void)_addressBookChanged;
-- (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(bool)arg2;
-- (id)candidateUniqueNamesForIMHandle:(id)arg1;
-- (void)rebuildUniqueNameMap;
-- (void)clearNameReservationsForObject:(id)arg1;
 - (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(bool)arg2;
 - (void)_buildSiblingsForIMHandle:(id)arg1;
 - (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
-- (void)_rebuildUniqueNameMapWithStyleChange:(bool)arg1;
 - (void)_accountsChanged:(id)arg1;
 - (id)allIMHandles;
 - (id)siblingsForIMHandle:(id)arg1;
@@ -30,7 +24,6 @@
 - (id)_existingChatSiblingsForHandle:(id)arg1;
 - (id)_accountSiblingsForHandle:(id)arg1;
 - (id)_existingAccountSiblingsForHandle:(id)arg1;
-- (long long)nameStyle;
 - (bool)_buildingChatSiblings;
 - (void)_clearChatSiblingsForGUID:(id)arg1 handle:(id)arg2;
 - (void)_clearAccountSiblingsForGUID:(id)arg1 handle:(id)arg2;

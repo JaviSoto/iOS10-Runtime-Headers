@@ -25,7 +25,6 @@
 
 + (id)currentDeviceName;
 
-- (void)setModificationDate:(id)arg1;
 - (void)updateMetadata;
 - (void)loadWrapperDataWithFilename:(id)arg1 completionHandler:(id)arg2;
 - (void)deleteConflictVersion:(id)arg1 completionHandler:(id)arg2;
@@ -38,12 +37,13 @@
 - (void)saveData:(id)arg1 completionHandler:(id)arg2;
 - (void)loadDataWithCompletionHandler:(id)arg1;
 - (bool)isConflictVersion;
+- (void)setModificationDate:(id)arg1;
 - (void)setDeviceName:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
+- (void)setName:(id)arg1;
 - (id)deviceName;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (id)fileURL;
 - (void)dealloc;

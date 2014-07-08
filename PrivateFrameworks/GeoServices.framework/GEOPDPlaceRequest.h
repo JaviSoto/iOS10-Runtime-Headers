@@ -35,14 +35,17 @@
 
 
 - (id)initWithTraits:(id)arg1 count:(unsigned int)arg2;
-- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeEntryPoints:(bool)arg3;
+- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(bool)arg3;
+- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(bool)arg3 includeEntryPoints:(bool)arg4;
 - (id)initWithCoordinateHint:(struct { double x1; double x2; })arg1 addressHint:(id)arg2 placeNameHint:(id)arg3 traits:(id)arg4;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(bool)arg2 traits:(id)arg3;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(bool)arg5 traits:(id)arg6;
+- (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(bool)arg2 includeETA:(bool)arg3 traits:(id)arg4;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
-- (id)initWithMUIDs:(id)arg1 traits:(id)arg2;
+- (bool)isForwardGeocoderRequest;
+- (id)initWithMUIDs:(id)arg1 includeETA:(bool)arg2 traits:(id)arg3;
 - (id)placeRequestParameters;
 - (bool)suppressResultsRequiringAttribution;
 - (id)requestedComponents;
@@ -77,6 +80,7 @@
 - (bool)hasRequestType;
 - (void)setHasRequestType:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;

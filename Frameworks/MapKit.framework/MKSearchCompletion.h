@@ -19,7 +19,6 @@
 
 - (void)applyToLegacySearch:(id)arg1;
 - (id)geoCompletionItem;
-- (id)mapItem;
 - (id)iconWithScale:(double)arg1;
 - (id)initWithGeoCompletionItem:(id)arg1;
 - (void)sendFeedback;
@@ -30,8 +29,9 @@
 - (id)calloutTitle;
 - (id)displayLines;
 - (id)localizedSectionHeader;
-- (id)sourceID;
+- (id)mapItem;
 - (void)setSourceID:(id)arg1;
+- (id)sourceID;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void).cxx_destruct;

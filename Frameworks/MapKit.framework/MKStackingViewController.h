@@ -2,24 +2,29 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIView, _MKStackingView, NSArray, <MKStackingViewControllerDelegate>, NSDictionary, UITableView, UIViewController, NSMapTable;
+@class UIView, NSArray, _MKStackingContentView, <MKStackingViewControllerDelegate>, _MKStackView, _MKStackingPlaceholderView, NSMutableSet, NSLayoutConstraint, UIViewController, NSMapTable, UIScrollView;
 
-@interface MKStackingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    _MKStackingView *_stackingView;
-    UIView *_contentView;
+@interface MKStackingViewController : UIViewController <UIScrollViewDelegate> {
+    _MKStackView *_stackView;
+    _MKStackingPlaceholderView *_headerPlaceholderView;
+    _MKStackingPlaceholderView *_selectorPlaceholderView;
+    _MKStackingContentView *_contentView;
+    NSLayoutConstraint *_heightCompressionResistanceConstraint;
+    NSLayoutConstraint *_heightHuggingConstraint;
     bool_isScrollingProgrammaticallyToViewController;
-    unsigned long long _inTableViewCallbacks;
-    UITableView *_table;
-    bool_hasScrolledToTop;
-    NSDictionary *_previousNavigationBarBackgroundsByStyle;
-    NSMapTable *_knownHeightsForRowsByViewControllers;
-    NSArray *_viewControllerHostingCells;
-    <MKStackingViewControllerDelegate> *_stackingDelegate;
+    UIScrollView *_scrollView;
+    NSMapTable *_viewControllersToPreferredHeightConstraints;
+    NSArray *_titleViewConstraints;
+    NSMutableSet *_viewControllersWithObservedTitles;
+    NSMapTable *_titleHeaderViewsByViewController;
+    bool_willRelayoutForPreferredContentSizeChange;
+    bool_isComputingInitialViewControllerPreferredHeight;
     UIView *_titleView;
     UIView *_headerView;
     UIView *_selectorView;
     NSArray *_viewControllers;
     UIViewController *_selectedViewController;
+    <MKStackingViewControllerDelegate> *_stackingDelegate;
 }
 
 @property(retain) UIView * titleView;
@@ -30,33 +35,25 @@
 @property <MKStackingViewControllerDelegate> * stackingDelegate;
 
 
-- (void)_setNeedsLayout;
 - (void)setSelectedViewController:(id)arg1 animated:(bool)arg2;
 - (void)setSelectorView:(id)arg1;
-- (double)_heightForViewOfViewController:(id)arg1 atIndex:(unsigned long long)arg2;
-- (long long)_rowIndexForIndexPath:(id)arg1;
-- (bool)_showsTitleForViewController:(id)arg1;
-- (bool)_showsTitleForSectionAtIndex:(long long)arg1;
-- (bool)_isInTableViewCallbacks;
-- (void)_updateSelectedViewControllerAfterPositionChange;
-- (void)_enumerateVisibleCellsUsingBlock:(id)arg1;
-- (void)_preferredSizeDidChangeForViewControllerAtIndex:(unsigned long long)arg1;
 - (void)_scrollToViewControllerAtIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_setSelectedViewController:(id)arg1 animated:(bool)arg2;
 - (void)_updateSelectorView;
-- (void)_performAsTableViewCallback:(id)arg1;
-- (void)_startObservingPropertiesOfViewController:(id)arg1;
+- (void)_updateSelectedViewControllerAfterPositionChange;
+- (void)_repositionNonstackedSubviews;
+- (void)_setPreferredHeight:(double)arg1 forViewController:(id)arg2;
+- (void)_removePreferredHeightConstraintFromViewController:(id)arg1;
+- (void)_addPreferredHeightConstraintForViewControllerIfNeeded:(id)arg1;
+- (void)_tearDownExitingViewController:(id)arg1;
+- (void)_setUpEnteringViewController:(id)arg1;
+- (double)_selectorHeight;
+- (id)selectorView;
 - (double)_fittingHeightForView:(id)arg1;
 - (id)stackingDelegate;
-- (void)_getSelectorViewFrame:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 headerViewFrame:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 headerViewBackgroundTransfrom:(out struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; }*)arg3 forContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
-- (void)_setTopInset:(double)arg1;
-- (double)_selectorHeight;
-- (double)_topLayoutGuideLength;
-- (void)_repositionTopViews;
 - (double)_titleHeight;
-- (id)selectorView;
-- (void)_addFloatingSubviewIfPossibleAndNeeded:(id)arg1;
-- (void)_stopObservingPropertiesOfViewController:(id)arg1;
+- (void)_addTitleViewToHierarchyIfPossible;
+- (void)_updateStackViewSubviewsAndChildVCsEntering:(id)arg1 exiting:(id)arg2;
 - (double)_headerHeight;
 - (void)performUserSelectionForViewControllerAtIndex:(unsigned long long)arg1;
 - (void)setSelectorViewNeedsUpdate;
@@ -70,19 +67,19 @@
 - (id)selectedViewController;
 - (void)setViewControllers:(id)arg1;
 - (id)viewControllers;
+- (void)updateViewConstraints;
+- (double)_topLayoutGuide;
 - (void)viewDidAppear:(bool)arg1;
-- (void)viewDidLoad;
 - (void)loadView;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setTitleView:(id)arg1;
 - (id)titleView;
-- (struct CGSize { double x1; double x2; })_contentSize;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)_didScroll;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 
 @end

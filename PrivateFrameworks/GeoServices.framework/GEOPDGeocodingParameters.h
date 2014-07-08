@@ -27,16 +27,17 @@
 - (id)viewportInfo;
 - (id)initWithForwardGeocodeAddress:(id)arg1 addressString:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (bool)hasViewportInfo;
-- (bool)hasQueryString;
 - (void)setViewportInfo:(id)arg1;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (bool)hasQueryString;
 - (bool)hasMaxResults;
 - (void)setHasMaxResults:(bool)arg1;
 - (id)structuredAddress;
 - (bool)hasStructuredAddress;
 - (void)setStructuredAddress:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setMaxResults:(unsigned int)arg1;

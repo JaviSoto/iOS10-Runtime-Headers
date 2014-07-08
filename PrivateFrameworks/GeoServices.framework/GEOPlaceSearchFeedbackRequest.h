@@ -46,9 +46,9 @@
 
 - (int)numberOfResults;
 - (bool)hasSessionGUID;
+- (long long)businessID;
 - (int)positionInResults;
 - (int)feedbackType;
-- (long long)businessID;
 - (bool)hasPositionInResults;
 - (void)setHasPositionInResults:(bool)arg1;
 - (void)setPositionInResults:(int)arg1;
@@ -74,6 +74,7 @@
 - (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

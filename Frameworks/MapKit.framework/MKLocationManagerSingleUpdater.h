@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MKLocationManagerSingleUpdater;
+@class MKLocationManagerSingleUpdater, MKLocationManager;
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
 
@@ -17,12 +17,14 @@
     bool_active;
     double _desiredAccuracy;
     MKLocationManagerSingleUpdater *_selfReference;
+    MKLocationManager *_locationManager;
 }
 
 @property(copy) id handler;
 
 
-- (id)initWithDesiredAccuracy:(double)arg1 handler:(id)arg2;
+- (id)initWithLocationManager:(id)arg1 desiredAccuracy:(double)arg2 handler:(id)arg3;
+- (id)initWithLocationManager:(id)arg1 handler:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
@@ -31,7 +33,6 @@
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
-- (id)initWithHandler:(id)arg1;
 - (void)setHandler:(id)arg1;
 - (id)handler;
 - (void)start;

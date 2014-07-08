@@ -2,57 +2,32 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class SLComposeViewController, NSString, UIImage, NSExtension, _UIActivityBundleHelper;
+@class NSString, SLComposeViewController;
 
-@interface UISocialActivity : UIActivity  {
+@interface UISocialActivity : UIApplicationExtensionActivity  {
     NSString *_builtinActivityType;
-    NSExtension *_applicationExtension;
-    _UIActivityBundleHelper *_activityBundleHelper;
     SLComposeViewController *_socialComposeViewController;
-    NSString *_localizedExtensionBundleName;
-    UIImage *_renderedActivityImage;
-    UIImage *_renderedActivitySettingsImage;
 }
 
 @property(copy) NSString * builtinActivityType;
-@property(retain) NSExtension * applicationExtension;
-@property(retain) _UIActivityBundleHelper * activityBundleHelper;
 @property(retain) SLComposeViewController * socialComposeViewController;
-@property(copy) NSString * localizedExtensionBundleName;
-@property(retain) UIImage * renderedActivityImage;
-@property(retain) UIImage * renderedActivitySettingsImage;
 
-+ (id)availableCustomSocialActivities;
 + (long long)activityCategory;
 
+- (id)activityType;
 - (id)debugDescription;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)activityType;
 - (id)initWithActivityType:(id)arg1;
-- (void)setSocialComposeViewController:(id)arg1;
 - (id)socialComposeViewController;
-- (long long)_blockingActivityItemTypes;
-- (long long)_activityItemTypes;
+- (void)setSocialComposeViewController:(id)arg1;
 - (id)builtinActivityType;
 - (void)setBuiltinActivityType:(id)arg1;
-- (void)setActivityBundleHelper:(id)arg1;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)prepareWithActivityItems:(id)arg1;
-- (void)setRenderedActivitySettingsImage:(id)arg1;
-- (id)renderedActivitySettingsImage;
-- (void)setRenderedActivityImage:(id)arg1;
-- (id)renderedActivityImage;
-- (void)setLocalizedExtensionBundleName:(id)arg1;
-- (id)activityBundleHelper;
-- (id)localizedExtensionBundleName;
-- (id)applicationExtension;
-- (void)setApplicationExtension:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1;
 - (id)activityViewController;
 - (bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activitySettingsImage;
-- (id)_activityImage;
-- (id)activityTitle;
-- (struct CGSize { double x1; double x2; })_thumbnailSize;
 
 @end

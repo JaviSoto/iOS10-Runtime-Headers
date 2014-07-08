@@ -5,13 +5,18 @@
 @class SKUIHeaderViewElement;
 
 @interface SKUIColumnViewElement : SKUIViewElement  {
+    long long _columnSpan;
 }
 
+@property(readonly) long long columnSpan;
 @property(readonly) SKUIHeaderViewElement * headerElement;
 
 
+- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (id)applyUpdatesWithElement:(id)arg1;
 - (id)headerElement;
-- (long long)pageComponentType;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
+- (long long)pageComponentType;
+- (long long)columnSpan;
 
 @end

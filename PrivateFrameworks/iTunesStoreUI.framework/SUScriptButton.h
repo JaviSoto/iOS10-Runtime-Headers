@@ -51,9 +51,9 @@
 - (bool)loading;
 - (void)setLoading:(bool)arg1;
 - (bool)shouldPerformDefaultAction;
+- (bool)enabled;
 - (id)action;
 - (void)setAction:(id)arg1;
-- (bool)enabled;
 - (void)setEnabled:(bool)arg1;
 - (id)attributeKeys;
 - (void)setStyle:(id)arg1;

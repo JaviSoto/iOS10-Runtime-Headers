@@ -15,19 +15,19 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
-- (void)setWallpaperOptions:(id)arg1;
+- (bool)allowsWallpaperEditing;
 - (id)wallpaperOptions;
 - (id)thumbnailURL;
 - (id)_thumbnailImage;
 - (void)setThumbnailURL:(id)arg1;
-- (void)setImageURL:(id)arg1;
 - (id)wallpaperFullScreenImage;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (bool)isIncludedInMoments;
-- (bool)allowsWallpaperEditing;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)indexSheetImage;
 - (id)imageWithFormat:(int)arg1;
+- (void)setWallpaperOptions:(id)arg1;
+- (void)setImageURL:(id)arg1;
 - (id)imageURL;
 - (id)urlForKey:(id)arg1;
 - (void)prepareForDeletion;

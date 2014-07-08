@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIColor, NSString, NSArray, CLLocationManager, MKMapItem, UIImageView, NSMutableArray, CLLocation, UILabel, <_MKResultViewDelegate>;
+@class NSTimer, NSString, NSArray, UIColor, MKMapItem, UIImageView, MKLocationManager, NSMutableArray, CLLocation, UILabel, <_MKResultViewDelegate>;
 
-@interface _MKResultView : UIView <CLLocationManagerDelegate> {
+@interface _MKResultView : UIView <MKLocationManagerObserver> {
     NSArray *_mapItems;
     CLLocation *_referenceLocation;
     bool_alwaysUsesBusinessLayout;
@@ -13,10 +13,11 @@
     bool_selected;
     bool_showsDistance;
     NSMutableArray *_resultConstraints;
-    double _expectedLabelsHeight;
-    CLLocationManager *_locManager;
+    MKLocationManager *_locManager;
     NSString *_primaryLabelText;
     NSString *_secondaryLabelText;
+    NSTimer *_refLocationTimer;
+    bool_significantTime;
     bool_useSpotlightVibrancy;
     UILabel *_nameLabel;
     UILabel *_secondaryLabel;
@@ -56,9 +57,9 @@
 - (void)setSecondaryLabelText:(id)arg1;
 - (id)secondaryLabelText;
 - (id)primaryLabelText;
-- (void)setShowsDistance:(bool)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
 - (void)setReferenceLocation:(id)arg1;
+- (void)_invalidateReferenceLocationTimer;
 - (void)_updateLayoutForBusinessOrCategory;
 - (void)_updateLayoutForAddress;
 - (double)fallbackDistance;
@@ -69,6 +70,7 @@
 - (unsigned long long)_maxSecondaryStringLengthForEndingString:(id)arg1;
 - (void)addLabelIfNecessary:(id)arg1;
 - (bool)useSpotlightVibrancy;
+- (double)_expectedHeightForLabels;
 - (void)updateSubviews;
 - (id)secondaryTextColor;
 - (id)primaryTextColor;
@@ -76,24 +78,30 @@
 - (void)_updatePrimaryColors;
 - (void)_updateColors;
 - (id)_labelWithFontSize:(double)arg1;
-- (void)setUseSpotlightVibrancy:(bool)arg1;
 - (id)tertiaryLabel;
+- (void)setShowsDistance:(bool)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
+- (void)setUseSpotlightVibrancy:(bool)arg1;
 - (void)_updateFontSizing;
 - (void)_contentSizeCategoryDidChange;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightsOnTouch:(bool)arg2;
 - (void)setPrimaryLabelText:(id)arg1;
 - (void)setMapItems:(id)arg1;
 - (void)handleTap:(id)arg1;
-- (id)mapItem;
+- (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (void)locationManagerDidReset:(id)arg1;
+- (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
+- (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setNameLabel:(id)arg1;
-- (void)setMapItem:(id)arg1;
 - (id)nameLabel;
 - (id)initWithMapItem:(id)arg1;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
+- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
+- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (double)preferredHeight;
 - (id)mapItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -104,13 +112,13 @@
 - (id)referenceLocation;
 - (void)setSecondaryLabel:(id)arg1;
 - (id)secondaryLabel;
+- (void)setImageView:(id)arg1;
 - (void)commonInit;
 - (bool)selected;
-- (void)setImageView:(id)arg1;
 - (id)imageView;
 - (void)setSelected:(bool)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)updateConstraints;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 

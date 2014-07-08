@@ -137,7 +137,7 @@
 - (void)didReceiveErrorMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didReceiveReplaceMessageID:(int)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didJoinChat:(id)arg1 style:(unsigned char)arg2;
-- (bool)sendLocationSharingInfo:(id)arg1 toID:(id)arg2;
+- (void)sendLocationSharingInfo:(id)arg1 toID:(id)arg2 completionBlock:(id)arg3;
 - (void)processMessageForSending:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3 completionBlock:(id)arg4;
 - (bool)isChatRegistered:(id)arg1 style:(unsigned char)arg2;
 - (void)registerChat:(id)arg1 style:(unsigned char)arg2;
@@ -271,6 +271,7 @@
 - (unsigned int)serviceLoginStatus;
 - (void)accountDefaultsChanged:(id)arg1;
 - (id)accountDefaults;
+- (id)serverHost;
 - (void)unregisterAccount;
 - (void)registerAccount;
 - (void)unvalidateAliases:(id)arg1;
@@ -283,7 +284,6 @@
 - (void)authenticateAccount;
 - (id)loginID;
 - (int)registrationStatus;
-- (unsigned long long)capabilities;
 - (void)_managedPrefsNotification:(id)arg1;
 - (struct _FZChatRoomValidity { int x1; unsigned short x2; })validityOfChatRoomName:(id)arg1;
 - (void)resumeBuddyUpdates;
@@ -305,7 +305,7 @@
 - (id)canonicalFormOfID:(id)arg1;
 - (void)login;
 - (void)logout;
-- (id)serverHost;
+- (unsigned long long)capabilities;
 - (bool)useSSL;
 - (id)proxyPassword;
 - (unsigned short)proxyPort;

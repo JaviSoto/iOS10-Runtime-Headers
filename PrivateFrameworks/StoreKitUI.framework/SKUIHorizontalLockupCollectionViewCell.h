@@ -2,20 +2,26 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIHorizontalLockupView, UIView;
+@class UIView, UIImageView, UIButton, SKUIButtonViewElement, SKUIHorizontalLockupView, SKUICheckboxInputViewElement, SKUICellScrollView;
 
-@interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
+@interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <UIScrollViewAccessibilityDelegate, SKUIPerspectiveView, SKUIViewElementView> {
+    UIButton *_actionButton;
+    SKUIButtonViewElement *_actionButtonViewElement;
+    SKUICellScrollView *_actionsScrollView;
     struct UIEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
         double right; 
     } _contentInset;
+    SKUICheckboxInputViewElement *_editModeCheckboxElement;
+    UIImageView *_editModeControl;
     UIView *_highlightBackgroundView;
     SKUIHorizontalLockupView *_lockupView;
 }
 
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property(getter=isScrollingCellToHideActionButton,readonly) bool scrollingCellToHideActionButton;
 
 + (double)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
 + (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;
@@ -24,8 +30,18 @@
 + (bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 
 - (id)_highlightBackgroundColor;
+- (id)_attributedStringForActionButton:(id)arg1 context:(id)arg2;
+- (void)_actionButtonAction:(id)arg1;
 - (void)_reloadLockupViewBackgroundColor;
 - (void)_reloadHighlightBackgroundView;
+- (id)_editControlImage;
+- (void)_reloadActionsScrollViewWithViewElement:(id)arg1 context:(id)arg2;
+- (bool)_isActionsScrollViewEnabled;
+- (void)_addEditControlAnimated:(bool)arg1;
+- (void)_removeEditControlAnimated:(bool)arg1;
+- (bool)isDeleteButtonHidden;
+- (void)hideDeleteButton;
+- (bool)isScrollingCellToHideActionButton;
 - (void)updateForChangedDistanceFromVanishingPoint;
 - (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
@@ -35,12 +51,17 @@
 - (void)reloadWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)setSelected:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setHighlighted:(bool)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutSubviews;
 
 @end

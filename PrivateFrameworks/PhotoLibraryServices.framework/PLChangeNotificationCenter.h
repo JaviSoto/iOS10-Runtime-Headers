@@ -2,16 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSNumber, NSNotificationCenter, NSDictionary, PLManagedObjectContext, NSMutableSet, NSObject<OS_dispatch_queue>, NSMutableArray, NSMapTable, NSMutableIndexSet;
+@class NSNumber, NSDictionary, PLManagedObjectContext, NSMutableSet, NSMutableArray, NSMapTable, NSNotificationCenter;
 
 @interface PLChangeNotificationCenter : NSObject  {
     bool_isProcessingRemoteDidSave;
-    NSObject<OS_dispatch_queue> *_thumbnailIndexIsolation;
-    NSMutableIndexSet *_changedThumbnailIndexes;
-    unsigned int _thumbnailIndexesChangeCounter;
     int _cameraPreviewChangeListenerCount;
     NSNumber *_cameraPreviewChangedToken;
-    int _stackViewImageChangeListenerCount;
     NSMutableArray *_snapshots;
     struct changeList_s { 
         NSMutableSet *inserted; 
@@ -73,15 +69,13 @@
 
 + (void)forceFetchingAlbumReload;
 + (id)allManagedObjectKeysStrategy;
-+ (void)processChangeHubEvent:(id)arg1 withGroup:(id)arg2;
 + (void)getInsertedAssetCount:(unsigned long long*)arg1 deletedAssetCount:(unsigned long long*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
-+ (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
 + (id)defaultCenter;
 
-- (void)_unregisterForStackViewImageChanges;
-- (void)_registerForStackViewImageChanges;
 - (void)removeCameraPreviewWellImageChangeObserver:(id)arg1;
 - (void)addCameraPreviewWellImageChangeObserver:(id)arg1;
+- (void)addCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
+- (void)addInvitationRecordsObserver:(id)arg1;
 - (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
 - (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
 - (id)_attributesOfInterestForObject:(id)arg1;
@@ -94,9 +88,7 @@
 - (void)removeCloudFeedEntriesObserver:(id)arg1;
 - (void)addCloudFeedEntriesObserver:(id)arg1;
 - (void)removeInvitationRecordsObserver:(id)arg1;
-- (void)addInvitationRecordsObserver:(id)arg1;
 - (void)removeCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
-- (void)addCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
 - (void)removeAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
 - (void)addAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
 - (void)removeAssetContainerChangeObserver:(id)arg1 container:(id)arg2;
@@ -130,14 +122,12 @@
 - (void)_enqueueAlbumNotifications;
 - (void)_enqueuePhotoLibraryNotifications;
 - (id)descriptionOfSplitChanges;
-- (void)_processThumbnailsUpdatedEvent:(id)arg1;
 - (void)_sendNotificationsForSplitChanges;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (void)_saveCurrentStateForAlbum:(id)arg1;
 - (id)_takeSnapshotOfObject:(id)arg1;
 - (id)backingCenter;
 - (void)processContextDidSaveNotification:(id)arg1;
-- (void)processChangeHubEvent:(id)arg1 withGroup:(id)arg2;
 - (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3;
 - (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3 isCoalescedEvent:(bool)arg4;
 - (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;

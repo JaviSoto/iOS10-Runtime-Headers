@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIDocumentPickerContainerItem, NSString, UIImageView, NSLayoutConstraint, BRContainer, _UIDocumentPickerURLContainerModel;
+@class _UIDocumentPickerContainerItem, NSString, UIImageView, NSLayoutConstraint, _UIDocumentPickerURLContainerModel;
 
 @interface _UIDocumentPickerContainerCell : _UIDocumentPickerCell  {
     _UIDocumentPickerContainerItem *_item;
@@ -10,7 +10,6 @@
     _UIDocumentPickerURLContainerModel *_model;
     UIImageView *_containerIconView;
     id _observerToken;
-    BRContainer *_container;
     NSLayoutConstraint *_containerIconWidthConstraint;
     NSLayoutConstraint *_containerIconHeightConstraint;
     NSLayoutConstraint *_containerIconBottomConstraint;
@@ -21,7 +20,6 @@
 @property(retain) _UIDocumentPickerURLContainerModel * model;
 @property(retain) UIImageView * containerIconView;
 @property(retain) id observerToken;
-@property(retain) BRContainer * container;
 @property(retain) NSLayoutConstraint * containerIconWidthConstraint;
 @property(retain) NSLayoutConstraint * containerIconHeightConstraint;
 @property(retain) NSLayoutConstraint * containerIconBottomConstraint;
@@ -29,15 +27,11 @@
 
 - (id)model;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setContainer:(id)arg1;
-- (id)container;
 - (void)dealloc;
 - (id)item;
 - (void)setItem:(id)arg1;
 - (id)containerDisplayName;
 - (void)setContainerDisplayName:(id)arg1;
-- (void)setObserverToken:(id)arg1;
-- (id)observerToken;
 - (void)updateSubtitle;
 - (id)containerIconHeightConstraint;
 - (id)containerIconWidthConstraint;
@@ -45,11 +39,13 @@
 - (void)setContainerIconWidthConstraint:(id)arg1;
 - (id)containerIconBottomConstraint;
 - (void)setContainerIconBottomConstraint:(id)arg1;
-- (id)containerIconView;
 - (void)setContainerIconView:(id)arg1;
+- (id)containerIconView;
+- (void)setObserverToken:(id)arg1;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
-- (id)viewControllerForDisplay;
+- (id)observerToken;
 - (void)setModel:(id)arg1;
+- (id)viewControllerForDisplay;
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;
 

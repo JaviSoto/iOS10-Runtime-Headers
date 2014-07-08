@@ -155,8 +155,8 @@
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
-- (id)source;
 - (void)setHidden:(bool)arg1;
+- (id)source;
 - (id)UUID;
 - (void)setTitle:(id)arg1;
 - (id)title;

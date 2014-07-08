@@ -20,6 +20,7 @@
 
 - (id)_activityIndicatorView;
 - (id)_expandAnimation;
+- (void)_updateLoading;
 - (void)_reloadState;
 - (id)_contentAnimation;
 - (id)_shrinkAnimation;

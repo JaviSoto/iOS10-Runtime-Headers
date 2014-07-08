@@ -27,8 +27,8 @@
 - (bool)isBinary;
 - (int)entityType;
 - (void)setFileSize:(id)arg1;
-- (id)localURL;
 - (id)fileFormat;
+- (id)localURL;
 - (id)UUID;
 - (void)setURL:(id)arg1;
 - (id)fileSize;

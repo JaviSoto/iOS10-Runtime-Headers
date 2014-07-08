@@ -34,8 +34,8 @@
 @property <UICollisionBehaviorDelegate> * collisionDelegate;
 
 
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (void)addItem:(id)arg1;
 - (id)init;
 - (void)dealloc;

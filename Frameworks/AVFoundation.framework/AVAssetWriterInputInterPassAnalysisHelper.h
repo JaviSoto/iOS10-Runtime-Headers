@@ -10,7 +10,6 @@
 }
 
 
-- (long long)status;
 - (void)startPassAnalysis;
 - (id)initWithWritingHelper:(id)arg1;
 - (void)markCurrentPassAsFinished;
@@ -24,6 +23,7 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (id)initWithConfigurationState:(id)arg1;
 - (bool)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (long long)status;
 - (void)dealloc;
 
 @end

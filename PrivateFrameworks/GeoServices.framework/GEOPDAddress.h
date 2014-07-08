@@ -22,7 +22,7 @@
 
 + (id)addressForPlaceData:(id)arg1;
 
-- (id)spokenAddressForLanguage:(id)arg1;
+- (id)spokenAddressForLocale:(id)arg1;
 - (id)bestLocalizedAddress;
 - (int)knownAccuracy;
 - (id)spokenStructuredAddress;
@@ -47,6 +47,7 @@
 - (void)setSpokenNavigationAddress:(id)arg1;
 - (void)setLocalizedAddress:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

@@ -75,6 +75,7 @@
 - (void)setPIN:(id)arg1;
 - (bool)success;
 - (void)setSuccess:(bool)arg1;
+- (id)title;
 - (bool)isBlocked;
 - (id)init;
 - (void)setMode:(int)arg1;

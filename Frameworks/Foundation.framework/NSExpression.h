@@ -47,6 +47,7 @@
 + (id)expressionWithFormat:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;
 + (id)_newKeyPathExpressionForString:(id)arg1;
 + (bool)supportsSecureCoding;
++ (id)expressionWithCKDPRecordFieldValue:(id)arg1 translator:(id)arg2;
 
 - (id)predicate;
 - (id)variable;

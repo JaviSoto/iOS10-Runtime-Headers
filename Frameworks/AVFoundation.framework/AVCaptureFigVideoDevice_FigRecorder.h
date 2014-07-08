@@ -101,12 +101,12 @@
 + (id)_devices;
 + (void)initialize;
 
-- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
-- (long long)imageControlMode;
-- (float)videoZoomRampAcceleration;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
 - (void)setVideoZoomRampAcceleration:(float)arg1;
+- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
+- (long long)imageControlMode;
+- (float)videoZoomRampAcceleration;
 - (bool)_setBoolValue:(bool)arg1 forRecorderProperty:(struct __CFString { }*)arg2;
 - (bool)_setFloatValue:(float)arg1 forRecorderProperty:(struct __CFString { }*)arg2;
 - (float)_floatValueForRecorderProperty:(struct __CFString { }*)arg1;
@@ -231,7 +231,6 @@
 - (bool)hasFlash;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (bool)isActiveVideoMaxFrameDurationSet;
-- (bool)isActiveVideoMinFrameDurationSet;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
@@ -255,6 +254,7 @@
 - (id)modelID;
 - (void)stopUsingDevice;
 - (bool)startUsingDevice:(id*)arg1;
+- (bool)isActiveVideoMinFrameDurationSet;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (void)_setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

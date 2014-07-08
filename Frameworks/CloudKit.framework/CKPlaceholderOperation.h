@@ -6,12 +6,15 @@
    See Warning(s) below.
  */
 
-@class NSString, NSObject<OS_dispatch_group>;
+@class NSString, NSObject<OS_dispatch_group>, NSDate;
 
 @interface CKPlaceholderOperation : NSOperation  {
     NSObject<OS_dispatch_group> *_group;
     bool_isFinished;
     bool_isExecuting;
+    NSString *_sectionID;
+    id _context;
+    NSDate *_startDate;
     NSString *_operationID;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -20,18 +23,27 @@
 
 }
 
+@property(retain) NSString * sectionID;
+@property(retain) id context;
+@property(retain) NSDate * startDate;
 @property(readonly) NSString * operationID;
 @property(readonly) id daemonInvokeBlock;
 @property bool isExecuting;
 @property bool isFinished;
 
 
+- (void)setSectionID:(id)arg1;
 - (id)daemonInvokeBlock;
 - (id)initWithOperation:(id)arg1 daemonInvocationBlock:(id)arg2;
+- (id)sectionID;
 - (id)operationID;
 - (id)CKPropertiesDescription;
 - (void)setIsExecuting:(bool)arg1;
+- (void)setStartDate:(id)arg1;
 - (void)setIsFinished:(bool)arg1;
+- (id)context;
+- (void)setContext:(id)arg1;
+- (id)startDate;
 - (void)main;
 - (void)start;
 - (void)cancel;

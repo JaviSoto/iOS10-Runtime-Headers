@@ -18,14 +18,11 @@
 
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawPortArray:(id)arg2;
 + (bool)privateMatchesInputs:(id)arg1 toRawInputs:(id)arg2;
-+ (id)privateCreateOrConfigure:(id)arg1 withRawPortDescription:(id)arg2;
 
-- (id)channels;
-- (id)portName;
 - (id)preferredDataSource;
 - (bool)isHeadphones;
-- (void)configureChannelsAndDataSources:(id)arg1;
 - (id)initWithRawPortDescription:(id)arg1;
+- (void)configureChannelsAndDataSources:(id)arg1;
 - (id)privateGetID;
 - (bool)privateMatchesRawDescription:(id)arg1;
 - (bool)isEqualToPort:(id)arg1 compareStrict:(bool)arg2;
@@ -35,6 +32,8 @@
 - (id)selectedDataSource;
 - (id)dataSources;
 - (bool)setPreferredDataSource:(id)arg1 error:(id*)arg2;
+- (id)channels;
+- (id)portName;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

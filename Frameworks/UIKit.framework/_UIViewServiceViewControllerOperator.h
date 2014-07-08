@@ -73,6 +73,7 @@
 - (void)__restoreStateForSession:(id)arg1 restorationAnchor:(id)arg2;
 - (void)__saveStateForSession:(id)arg1 restorationAnchor:(id)arg2 completionHandler:(id)arg3;
 - (void)__textServiceDidDismiss;
+- (void)__exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(id)arg2;
 - (void)__setHostTintColor:(id)arg1 tintAdjustmentMode:(long long)arg2;
 - (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2 legacyAppearance:(bool)arg3;
 - (id)_appearanceSource;
@@ -122,6 +123,7 @@
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (bool)_disableAutomaticKeyboardBehavior;
 - (id)_viewControllersForRotationCallbacks;
 - (void)setNeedsStatusBarAppearanceUpdate;

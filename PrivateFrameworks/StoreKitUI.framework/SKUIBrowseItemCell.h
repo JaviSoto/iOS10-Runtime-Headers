@@ -8,23 +8,27 @@
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIView *_borderView;
-    UIImageView *_arrowImageView;
-    UIImage *_arrowImage;
-    UIImage *_highlightedArrowImage;
+    UIView *_topBorderView;
+    UIImageView *_decorationImageView;
+    UIImage *_decorationImage;
+    bool_showTopBorder;
 }
 
 @property(retain) NSString * title;
 @property(retain) NSString * subtitle;
-@property bool arrow;
+@property(retain) UIImage * decorationImage;
+@property bool showTopBorder;
 
 
-- (void)setArrow:(bool)arg1;
+- (bool)showTopBorder;
+- (id)decorationImage;
+- (void)setShowTopBorder:(bool)arg1;
+- (void)setDecorationImage:(id)arg1;
 - (void)_reloadHighlightState;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void).cxx_destruct;
-- (bool)arrow;
 - (void)setSubtitle:(id)arg1;
 - (id)subtitle;
 - (void)setSelected:(bool)arg1;

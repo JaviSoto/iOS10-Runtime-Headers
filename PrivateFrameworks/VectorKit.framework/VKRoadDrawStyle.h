@@ -173,6 +173,7 @@
 
 + (int)renderStyleID;
 
+- (bool)visibleAtZoom:(float)arg1;
 - (unsigned char)railroadPattern;
 - (void).cxx_destruct;
 - (id).cxx_construct;

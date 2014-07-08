@@ -5,7 +5,6 @@
 @class _UIActivityUserDefaults, NSArray, UINavigationController, UIViewController;
 
 @interface _UIUserDefaultsActivity : UIActivity  {
-    bool_preparedWithActivityItems;
     NSArray *_availableActivities;
     _UIActivityUserDefaults *_userDefaults;
     UINavigationController *_navigationController;
@@ -16,21 +15,17 @@
 @property(retain) _UIActivityUserDefaults * userDefaults;
 @property(retain) UINavigationController * navigationController;
 @property(retain) UIViewController * userDefaultsViewController;
-@property bool preparedWithActivityItems;
 
 
+- (id)activityType;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)activityType;
 - (id)userDefaultsViewController;
 - (void)_settingsViewControllerDidDismiss:(id)arg1;
 - (id)availableActivities;
-- (bool)preparedWithActivityItems;
 - (void)_prepareActivityViewControllerIfNeeded;
 - (void)setUserDefaultsViewController:(id)arg1;
 - (void)setNavigationController:(id)arg1;
-- (void)setPreparedWithActivityItems:(bool)arg1;
-- (void)prepareWithActivityItems:(id)arg1;
 - (void)activityDidFinish:(bool)arg1 items:(id)arg2 error:(id)arg3;
 - (id)activityViewController;
 - (bool)canPerformWithActivityItems:(id)arg1;

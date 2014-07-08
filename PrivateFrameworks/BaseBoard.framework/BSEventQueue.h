@@ -17,6 +17,7 @@
 @property(retain) BSEventQueueEvent * executingEvent;
 
 
+- (void)setName:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (bool)hasEventWithName:(id)arg1;
 - (bool)hasEventWithPrefix:(id)arg1;
@@ -41,7 +42,6 @@
 - (id)queue;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (bool)isLocked;

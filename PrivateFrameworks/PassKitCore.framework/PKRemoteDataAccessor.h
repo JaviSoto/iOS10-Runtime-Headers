@@ -18,6 +18,7 @@
 - (void)noteShared;
 - (id)objectUniqueID;
 - (id)initWithLibrary:(id)arg1 objectUniqueID:(id)arg2;
+- (id)displayProfileOfType:(long long)arg1;
 - (void)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(bool)arg5 withCompletion:(id)arg6;
 - (void)contentWithCompletion:(id)arg1;
 - (void)revocationStatusWithCompletion:(id)arg1;

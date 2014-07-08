@@ -21,10 +21,10 @@
 + (id)_rowsRelativeToKeyPath:(id)arg1;
 + (id)settingsControllerModule;
 
-- (void)setControlPoint2:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setControlPoint1:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })controlPoint2;
 - (struct CGPoint { double x1; double x2; })controlPoint1;
+- (void)setControlPoint2:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setControlPoint1:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_invalidate;
 - (void)setDefaultValues;
 - (unsigned long long)curve;

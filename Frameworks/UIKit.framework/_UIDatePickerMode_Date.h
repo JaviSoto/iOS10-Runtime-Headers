@@ -11,7 +11,6 @@
     NSString *_yearFormat;
     NSString *_monthFormat;
     NSString *_dayFormat;
-    bool_isUsingJapaneseCalendar;
 }
 
 + (unsigned long long)extractableCalendarUnits;

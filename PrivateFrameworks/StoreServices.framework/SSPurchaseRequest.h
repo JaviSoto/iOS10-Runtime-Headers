@@ -56,10 +56,10 @@
 - (void)_addPurchasesToManager;
 - (id)initWithPurchases:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (bool)needsAuthentication;
 - (void)setNeedsAuthentication:(bool)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (bool)start;
 - (void)cancel;

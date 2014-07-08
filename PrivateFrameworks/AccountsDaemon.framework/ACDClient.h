@@ -25,7 +25,9 @@
 @property(readonly) NSXPCConnection * connection;
 @property(readonly) ACDDatabase * database;
 
-+ (id)bundleForPID:(int)arg1;
++ (id)_bundleForPID:(int)arg1;
++ (id)_bundleIDForPID:(int)arg1;
++ (id)_bundleForNonPlugInPID:(int)arg1;
 + (id)clientWithBundleID:(id)arg1;
 
 - (id)longDebugDescription;

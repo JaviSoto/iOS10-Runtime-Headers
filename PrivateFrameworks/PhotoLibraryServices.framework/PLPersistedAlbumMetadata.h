@@ -63,8 +63,8 @@
 - (id)insertAlbumFromDataInManagedObjectContext:(id)arg1;
 - (id)initWithPersistedDataAtPath:(id)arg1;
 - (bool)isFolder;
-- (void)setKind:(id)arg1;
 - (id)kind;
+- (void)setKind:(id)arg1;
 - (id)uuid;
 - (void)setPinned:(bool)arg1;
 - (void)setUuid:(id)arg1;

@@ -2,21 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKTemplateStyleSheet, IKStyleFactory;
+@class NSMutableDictionary, IKStyleFactory;
 
 @interface IKViewElementStyleFactory : NSObject  {
     IKStyleFactory *_styleFactory;
-    IKTemplateStyleSheet *_styleSheet;
+    NSMutableDictionary *_styleByITMLID;
 }
 
 @property(retain,readonly) IKStyleFactory * styleFactory;
-@property(retain,readonly) IKTemplateStyleSheet * styleSheet;
+@property(retain,readonly) NSMutableDictionary * styleByITMLID;
 
 
+- (id)styleByITMLID;
 - (id)styleForElement:(id)arg1 classSelector:(id)arg2 inlineStyle:(id)arg3;
 - (id)styleFactory;
-- (id)initWithStyleSheet:(id)arg1 documentStyles:(id)arg2;
-- (id)styleSheet;
+- (id)initWithDocumentStyles:(id)arg1;
 - (void).cxx_destruct;
 
 @end

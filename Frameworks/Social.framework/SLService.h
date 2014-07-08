@@ -5,23 +5,23 @@
 @interface SLService : NSObject  {
 }
 
-+ (id)allServices;
 + (id)serviceForServiceType:(id)arg1;
++ (id)allServices;
 
 - (id)composeViewController;
 - (bool)supportsVideoURL:(id)arg1;
 - (bool)supportsImageURL:(id)arg1;
 - (long long)maximumVideoTimeLimit;
 - (long long)maximumVideoDataSize;
+- (long long)maximumVideoCount;
 - (long long)maximumImageDataSize;
+- (long long)maximumImageCount;
+- (long long)maximumURLCount;
 - (bool)isFirstClassService;
 - (bool)hasAccounts;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
 - (id)serviceType;
 - (id)accountType;
-- (long long)maximumVideoCount;
-- (long long)maximumImageCount;
-- (long long)maximumURLCount;
 - (id)activityImage;
 - (id)activityTitle;
 

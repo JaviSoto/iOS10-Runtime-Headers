@@ -44,6 +44,7 @@
 - (void)reloadDynamicSpecifiersWithAnimation:(bool)arg1;
 - (bool)isMailSetupForced;
 - (long long)deleteButtonIndex;
+- (id)messageForAccountDeletionProgressUI;
 - (bool)_promptUserToConfirmAccountDeletion;
 - (bool)_isShowingDeleteAccountButton;
 - (void)_notifyRootControllerOfAccountSetupCompletion;

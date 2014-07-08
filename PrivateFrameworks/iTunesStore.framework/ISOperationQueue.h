@@ -19,10 +19,10 @@
 - (void)setSuspended:(bool)arg1;
 - (void)cancelAllOperations;
 - (long long)maxConcurrentOperationCount;
+- (void)setName:(id)arg1;
 - (id)init;
 - (void)addOperation:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setMaxConcurrentOperationCount:(long long)arg1;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

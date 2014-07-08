@@ -61,9 +61,9 @@
 + (struct CGSize { double x1; double x2; })defaultSizeForCurrentOrientation;
 + (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forInterfaceOrientation:(long long)arg2;
 
+- (void)setHidden:(bool)arg1;
 - (void)reload;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setHidden:(bool)arg1;
 - (id)_contentView;
 - (void)setDataSource:(id)arg1;
 - (void)setNeedsLayout;

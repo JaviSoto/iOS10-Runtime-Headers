@@ -32,8 +32,6 @@
 - (long long)backgroundStyleClear;
 - (long long)backgroundStyleBlack;
 - (void)setContentWidth:(double)arg1;
-- (void)setContentHeight:(double)arg1;
-- (double)contentHeight;
 - (bool)showFromNavigationItem:(id)arg1;
 - (bool)showFromElement:(id)arg1;
 - (void)setContentWidth:(double)arg1 height:(double)arg2 animated:(bool)arg3;
@@ -51,6 +49,8 @@
 - (void)tearDownUserInterface;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (double)contentHeight;
+- (void)setContentHeight:(double)arg1;
 - (id)activeViewController;
 - (bool)isVisible;
 - (id)attributeKeys;

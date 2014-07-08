@@ -19,8 +19,8 @@
 @property(readonly) NSArray * allExistingViews;
 
 
-- (id)existingViewForIndex:(long long)arg1;
 - (id)existingViewsForReuseIdentifier:(id)arg1;
+- (id)existingViewForIndex:(long long)arg1;
 - (void)enumerateExistingViewsForReuseIdentifier:(id)arg1 usingBlock:(id)arg2;
 - (void)registerClass:(Class)arg1 forViewWithReuseIdentifier:(id)arg2;
 - (id)allExistingViews;

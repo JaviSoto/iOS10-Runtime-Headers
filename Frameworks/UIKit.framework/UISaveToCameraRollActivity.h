@@ -11,8 +11,8 @@
 @property long long videoCount;
 
 
-- (long long)imageCount;
 - (id)activityType;
+- (long long)imageCount;
 - (void)setVideoCount:(long long)arg1;
 - (long long)videoCount;
 - (void)setImageCount:(long long)arg1;

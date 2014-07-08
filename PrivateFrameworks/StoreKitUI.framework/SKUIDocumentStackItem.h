@@ -24,11 +24,11 @@
 
 - (void)setUsesNavigationControllerForModalPresentation:(bool)arg1;
 - (bool)usesNavigationControllerForModalPresentation;
-- (void)setNavigationDocumentController:(id)arg1;
 - (id)navigationDocumentController;
 - (id)sourceElementIdentifier;
 - (id)presentationType;
 - (id)initWithDocument:(id)arg1 presentationOptions:(id)arg2;
+- (void)setNavigationDocumentController:(id)arg1;
 - (id)presentationOptions;
 - (id)document;
 - (void).cxx_destruct;

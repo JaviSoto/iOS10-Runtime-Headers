@@ -28,10 +28,13 @@
 - (id)newViewControllerForPage:(id)arg1 ofType:(long long)arg2 returningError:(id*)arg3;
 - (id)newFetchOperation;
 - (id)copyArchivableContext;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (void)setStyle:(long long)arg1;
 - (long long)style;
 - (id)init;
 - (void)dealloc;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

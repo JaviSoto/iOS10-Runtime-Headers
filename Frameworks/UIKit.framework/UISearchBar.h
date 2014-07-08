@@ -92,7 +92,7 @@
 @property(retain,readonly) UIButton * _leftButton;
 @property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
 @property bool _forceCenteredPlaceholderLayout;
-@property(setter=_setSearchController:,retain) UISearchController * _searchController;
+@property(setter=_setSearchController:) UISearchController * _searchController;
 @property(setter=_setTransplanting:) bool _transplanting;
 @property(getter=_searchBarTextField,readonly) UISearchBarTextField * searchBarTextField;
 @property long long autocapitalizationType;
@@ -315,7 +315,6 @@
 - (long long)barPosition;
 - (long long)_barPosition;
 - (bool)_shouldUseNavigationBarHeight;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setBarTintColor:(id)arg1;
 - (void)setTranslucent:(bool)arg1;
 - (long long)barStyle;
@@ -331,6 +330,7 @@
 - (id)backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)movedToSuperview:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;

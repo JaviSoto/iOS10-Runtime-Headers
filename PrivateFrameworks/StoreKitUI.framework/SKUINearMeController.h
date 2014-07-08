@@ -20,8 +20,8 @@
 
 @property(retain) SKUIClientContext * clientContext;
 @property(readonly) NSArray * items;
-@property(readonly) long long status;
 @property(readonly) NSDictionary * responseDictionary;
+@property(readonly) long long status;
 
 + (id)sharedController;
 

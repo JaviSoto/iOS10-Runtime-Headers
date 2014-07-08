@@ -7,11 +7,16 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString;
+@class NSNumber, NSString;
 
-@interface NSNumber : NSValue <CKRecordValue> {
+@interface NSNumber : NSValue <CKRecordValue, PQLBindable, PQLResultSetInitializer> {
 }
 
+@property(readonly) bool brc_isFolderID;
+@property(readonly) bool brc_isDocumentID;
+@property(readonly) NSNumber * brc_folderID;
+@property(readonly) NSNumber * brc_documentID;
+@property(readonly) unsigned long long brc_rawID;
 @property(readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
 @property(readonly) BOOL charValue;
 @property(readonly) unsigned char unsignedCharValue;
@@ -54,10 +59,14 @@
 + (bool)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
 + (id)numberWithItemIdentifier:(unsigned long long)arg1;
 + (id)boolFromICSString:(id)arg1;
++ (id)cr_numberWithCRContactGroupKind:(unsigned long long)arg1;
 + (id)cr_numberWithCRContactID:(long long)arg1;
 + (id)cr_numberWithCRRecentID:(long long)arg1;
 + (id)_gkServerTimeInterval:(double)arg1;
 + (id)numberWithCGFloat:(double)arg1;
++ (id)brc_fileObjectIDWithFolderID:(unsigned long long)arg1;
++ (id)brc_fileObjectIDWithDocumentID:(unsigned int)arg1;
++ (id)brc_fileObjectIDForURL:(id)arg1 allocateDocID:(bool)arg2;
 + (id)numberWithCGFloat:(double)arg1;
 
 - (id)initWithUnsignedLongLong:(unsigned long long)arg1;
@@ -127,12 +136,20 @@
 - (void)_ICSUTCOffsetAppendingToString:(id)arg1;
 - (void)_ICSBoolAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (unsigned long long)cr_CRContactGroupKindValue;
 - (long long)cr_CRContactIDValue;
 - (long long)cr_CRRecentIDValue;
 - (id)initWithCGFloat:(double)arg1;
 - (double)cgFloatValue;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (id)brc_documentID;
+- (id)brc_folderID;
+- (bool)brc_isDocumentID;
+- (bool)brc_isFolderID;
+- (unsigned long long)brc_rawID;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (bool)isFloatingPointType;
 - (double)CGFloatValue;
 - (void)appendJsonStringToString:(id)arg1;

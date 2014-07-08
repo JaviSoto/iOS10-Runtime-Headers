@@ -58,6 +58,7 @@
 - (void)noteClientReceivedNotificationOfServerChanges;
 - (void)startSyncSession;
 - (void)resetStatus;
+- (void)getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(bool)arg2 completionHandler:(id)arg3;
 - (void)publishResource:(id)arg1 completionHandler:(id)arg2;
 - (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 completionHandler:(id)arg4;
 - (void)removeCloudLibraryWithCompletionHandler:(id)arg1;

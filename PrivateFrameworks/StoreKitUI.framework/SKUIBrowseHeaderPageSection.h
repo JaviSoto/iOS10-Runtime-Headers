@@ -7,7 +7,7 @@
 @interface SKUIBrowseHeaderPageSection : SKUIStorePageSection  {
 }
 
-@property(retain) SKUIBrowseHeaderPageComponent * pageComponent;
+@property(readonly) SKUIBrowseHeaderPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

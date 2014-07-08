@@ -38,6 +38,7 @@
 - (void)setLongitudeDelta:(double)arg1;
 - (void)setLatitudeDelta:(double)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setLatitude:(double)arg1;

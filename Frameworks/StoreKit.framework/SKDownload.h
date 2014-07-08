@@ -44,9 +44,9 @@
 - (long long)downloadState;
 - (void)_setContentURL:(id)arg1;
 - (void)_setContentLength:(long long)arg1;
+- (id)contentURL;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)contentURL;
 - (long long)contentLength;
 - (id)init;
 - (id)error;

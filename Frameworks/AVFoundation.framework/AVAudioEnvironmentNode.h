@@ -7,6 +7,7 @@
 @interface AVAudioEnvironmentNode : AVAudioNode <AVAudioMixing> {
 }
 
+@property float outputVolume;
 @property(readonly) unsigned long long nextAvailableInputBus;
 @property struct AVAudio3DPoint { float x1; float x2; float x3; } listenerPosition;
 @property struct AVAudio3DVectorOrientation { struct AVAudio3DPoint { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct AVAudio3DPoint { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } listenerVectorOrientation;
@@ -26,6 +27,8 @@
 - (void)setListenerPosition:(struct AVAudio3DPoint { float x1; float x2; float x3; })arg1;
 - (id)applicableRenderingAlgorithms;
 - (unsigned long long)nextAvailableInputBus;
+- (float)outputVolume;
+- (void)setOutputVolume:(float)arg1;
 - (id)init;
 
 @end

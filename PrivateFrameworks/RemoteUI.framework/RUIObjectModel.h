@@ -63,10 +63,11 @@
 
 + (id)objectModelForXMLNamed:(id)arg1;
 
+- (void)setAlert:(id)arg1;
+- (id)alert;
 - (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
 - (bool)prepareScriptContext;
 - (void)runScript;
-- (void)setAlert:(id)arg1;
 - (long long)nextButtonStyle;
 - (void)setRefreshURL:(id)arg1;
 - (id)refreshURL;
@@ -85,7 +86,6 @@
 - (void)configureRow:(id)arg1;
 - (void)configureTableView:(id)arg1;
 - (void)setAlertElement:(id)arg1;
-- (id)alert;
 - (void)setPages:(id)arg1;
 - (id)pages;
 - (id)postbackData;
@@ -95,7 +95,7 @@
 - (void)presentWithBlock:(id)arg1;
 - (void)alertView:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
 - (void)alertView:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
-- (void)passcodeViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
+- (void)passcodeViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3 completion:(id)arg4;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOM:(id)arg1 elementDidChange:(id)arg2;
 - (void)tableViewOMSubmitForm:(id)arg1;
@@ -153,13 +153,13 @@
 - (void)setServerInfo:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;
+- (void)setName:(id)arg1;
 - (void)setStyle:(id)arg1;
 - (bool)goBack;
 - (id)style;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;

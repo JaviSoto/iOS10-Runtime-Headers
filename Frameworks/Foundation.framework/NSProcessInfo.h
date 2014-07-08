@@ -54,6 +54,7 @@
 - (bool)isOperatingSystemAtLeastVersion:(struct { long long x1; long long x2; long long x3; })arg1;
 - (id)operatingSystemVersionString;
 - (id)operatingSystemName;
+- (id)userHomeDirectory;
 - (id)userFullName;
 - (id)userName;
 - (id)globallyUniqueString;
@@ -67,7 +68,6 @@
 - (void)_reactivateActivity:(id)arg1;
 - (id)beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
 - (id)processName;
-- (id)userHomeDirectory;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 

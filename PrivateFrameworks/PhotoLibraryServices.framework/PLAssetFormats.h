@@ -5,8 +5,8 @@
 @interface PLAssetFormats : NSObject  {
 }
 
-+ (bool)isAlbumVideoPath:(id)arg1;
 + (id)descriptionForFormat:(int)arg1;
++ (bool)isAlbumVideoPath:(id)arg1;
 + (bool)transformForImage:(struct CGImage { }*)arg1 captureOrientation:(int)arg2 format:(int)arg3 sizeInOut:(struct CGSize { double x1; double x2; }*)arg4 contextSizeOut:(struct CGSize { double x1; double x2; }*)arg5 transformOut:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg6;
 + (struct CGSize { double x1; double x2; })scaledSizeForSize:(struct CGSize { double x1; double x2; })arg1 format:(int)arg2 capLength:(bool)arg3;
 + (unsigned long long)maxLongSideForFullSizeFormat:(int)arg1;

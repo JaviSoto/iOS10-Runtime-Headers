@@ -86,13 +86,16 @@
 + (id)childProgressForBundleID:(id)arg1 andPhase:(unsigned long long)arg2;
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned long long)arg2;
 + (void)initialize;
++ (id)uploadProgressWithBRCLocalItem:(id)arg1;
++ (id)downloadProgressWithBRCLocalItem:(id)arg1;
++ (id)progressWithBRCLocalItem:(id)arg1 totalSize:(long long)arg2;
 + (id)sf_transferStateAsString:(long long)arg1;
 + (id)sf_publishingKeyForApp:(id)arg1 sessionID:(id)arg2;
 
+- (id)kind;
 - (long long)completedUnitCount;
 - (void)setKind:(id)arg1;
 - (bool)isPaused;
-- (id)kind;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setPausingHandler:(id)arg1;
 - (bool)isPrioritizable;
@@ -170,6 +173,8 @@
 - (unsigned long long)installState;
 - (void)setInstallState:(unsigned long long)arg1;
 - (void)_tsts_becomeCurrentWithPendingUnitCount:(long long)arg1;
+- (void)brc_unpublish;
+- (void)brc_publish;
 - (void)sf_failedWithError:(id)arg1;
 - (id)sf_initWithFileURL:(id)arg1;
 - (id)sf_personRealName;

@@ -27,8 +27,8 @@
 - (id)initWithSource:(id)arg1 localizedAttribution:(id)arg2 logoPaths:(id)arg3 snippetLogoPaths:(id)arg4;
 - (unsigned int)requirementsMask;
 - (void)setRequirementsMask:(unsigned int)arg1;
-- (void)setAttributionApps:(id)arg1;
 - (id)attributionApps;
+- (void)setAttributionApps:(id)arg1;
 - (id)logoPathForScale:(double)arg1;
 - (bool)hasAttributionRequirement:(int)arg1;
 - (void)setDisplayName:(id)arg1;

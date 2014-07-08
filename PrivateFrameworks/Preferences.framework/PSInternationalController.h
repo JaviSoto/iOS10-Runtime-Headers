@@ -38,7 +38,7 @@
 + (id)formattedMoneyAndNumbers:(id)arg1 country:(id)arg2;
 + (id)formattedTime:(id)arg1;
 + (id)formattedDate:(id)arg1;
-+ (void)postNotificationForLanguageChange:(id)arg1;
++ (void)postNotificationForLanguageChange;
 + (void)setLocaleAfterLanguageChange:(id)arg1;
 + (id)validateLocale:(id)arg1;
 + (id)reloadLocale:(id)arg1;
@@ -56,7 +56,7 @@
 - (void)setLocale:(id)arg1 specifier:(id)arg2;
 - (id)localizedLanguage:(id)arg1;
 - (void)showLanguageSheet:(id)arg1;
-- (void)showBlackViewWithLabel:(id)arg1;
+- (void)showBlackViewWithLabel:(id)arg1 withLanguageIdentifier:(id)arg2;
 - (void)updateSelectionStyleForVisibleCells;
 - (void)cancelEdits;
 - (void)setAddLanguageSpecifier:(id)arg1;

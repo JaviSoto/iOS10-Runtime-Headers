@@ -56,8 +56,8 @@
 - (id)text;
 - (bool)bottom;
 - (void)setType:(int)arg1;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (int)type;
 - (void)dealloc;
 - (void)setText:(id)arg1;

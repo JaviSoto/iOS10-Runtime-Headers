@@ -5,16 +5,16 @@
 @interface CKPrettyError : NSError  {
 }
 
++ (id)errorWithCode:(long long)arg1 error:(id)arg2 path:(id)arg3 format:(id)arg4;
 + (id)errorWithCode:(long long)arg1 error:(id)arg2 format:(id)arg3;
-+ (id)errorWithCode:(long long)arg1 URL:(id)arg2 format:(id)arg3;
++ (bool)isError:(id)arg1 withCodes:(id)arg2;
++ (id)errorWithCode:(long long)arg1 path:(id)arg2 format:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 path:(id)arg3 format:(id)arg4;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 format:(id)arg3;
 + (id)errorWithCode:(long long)arg1 error:(id)arg2 URL:(id)arg3 format:(id)arg4;
-+ (id)errorWithCode:(long long)arg1 error:(id)arg2 path:(id)arg3 format:(id)arg4;
-+ (id)errorWithCode:(long long)arg1 path:(id)arg2 format:(id)arg3;
++ (id)errorWithCode:(long long)arg1 URL:(id)arg2 format:(id)arg3;
 + (id)errorWithCode:(long long)arg1 userInfo:(id)arg2 error:(id)arg3 format:(id)arg4;
 + (id)sanitizedError:(id)arg1;
-+ (bool)isError:(id)arg1 withCodes:(id)arg2;
 + (bool)isError:(id)arg1 withCode:(long long)arg2;
 + (id)descriptionForError:(id)arg1 paths:(bool)arg2;
 + (id)secureCodableError:(id)arg1;

@@ -82,7 +82,6 @@
 @property(readonly) bool iconIsPrerendered;
 @property(readonly) bool isPurchasedReDownload;
 
-+ (id)activityTypesClaimedInInfoPlist:(id)arg1 bundleIdentifier:(id)arg2 teamIdentifier:(id)arg3;
 + (id)applicationProxyForItemID:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
 + (id)applicationProxyForBundleURL:(id)arg1;
@@ -96,6 +95,7 @@
 - (id)groupIdentifiers;
 - (unsigned long long)installType;
 - (id)itemID;
+- (id)userActivityStringForAdvertisementData:(id)arg1;
 - (bool)isPurchasedReDownload;
 - (bool)isInstalled;
 - (bool)hasSettingsBundle;
@@ -130,7 +130,6 @@
 - (bool)profileValidated;
 - (bool)isContainerized;
 - (id)_initWithBundleUnit:(unsigned int)arg1 applicationIdentifier:(id)arg2;
-- (id)appStoreReceiptURL;
 - (id)machOUUIDs;
 - (id)localizedShortName;
 - (id)iconDataForVariant:(int)arg1;
@@ -155,6 +154,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)appStoreReceiptURL;
 - (id)deviceIdentifierForVendor;
 - (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;

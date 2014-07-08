@@ -20,6 +20,7 @@
 + (void)initialize;
 
 - (id)instructionForFigInstruction:(void*)arg1;
+- (id)_postProcessingVideoLayer;
 - (void)_bumpChangeSeed;
 - (void)setAnimationTool:(id)arg1;
 - (void)setInstructions:(id)arg1;

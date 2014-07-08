@@ -4,11 +4,12 @@
 
 @class UINavigationController, UIPrinterPickerController, UIWindow, UIPopoverController, PKPrinter, UIViewController, UIPrinterBrowserViewController;
 
-@interface UIPrinterPickerViewController : UIViewController <UIPrinterBrowserOwner> {
+@interface UIPrinterPickerViewController : UIViewController <UIPrinterBrowserOwner, UINavigationControllerDelegate> {
     UIPrinterPickerController *_printerPickerController;
     UINavigationController *_navigationController;
     UIPrinterBrowserViewController *_printerBrowserViewController;
     UIViewController *_parentController;
+    UIViewController *_originalViewControllerInNav;
     UIPopoverController *_poverController;
     UIWindow *_window;
     bool_dismissed;
@@ -42,6 +43,8 @@
 - (void)_presentInParentAnimated:(bool)arg1;
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentWindow;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 

@@ -6,9 +6,10 @@
     double _score;
 }
 
-@property(readonly) double score;
+@property double score;
 
 
+- (void)setScore:(double)arg1;
 - (id)initWithScore:(double)arg1;
 - (id)description;
 - (double)score;

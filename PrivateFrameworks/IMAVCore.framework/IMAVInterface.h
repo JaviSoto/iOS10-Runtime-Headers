@@ -94,8 +94,8 @@
 - (void)startInterruptionForChat:(id)arg1;
 - (void)_notifyAboutPotentialCallForChat:(id)arg1;
 - (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
-- (unsigned long long)capabilities;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
+- (unsigned long long)capabilities;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

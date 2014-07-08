@@ -254,7 +254,6 @@
 - (unsigned long long)indexInQueueFeeder;
 - (void)setDefaultPlaybackRate:(float)arg1;
 - (double)playableDuration;
-- (long long)status;
 - (void)setPlayerItem:(id)arg1;
 - (id)playerItem;
 - (void)setLimitReadAhead:(bool)arg1;
@@ -266,6 +265,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;
 - (id)asset;
 - (id)lyrics;
+- (long long)status;
 - (id)url;
 - (id)player;
 - (struct CGSize { double x1; double x2; })naturalSize;

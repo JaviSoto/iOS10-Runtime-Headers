@@ -19,13 +19,13 @@
 }
 
 
+- (bool)locked;
 - (void)setHasSeparator:(bool)arg1;
 - (bool)hasSeparator;
 - (void)setNested:(bool)arg1;
 - (bool)nested;
 - (void)setPrivateResult:(bool)arg1;
 - (bool)privateResult;
-- (bool)locked;
 - (void)setResultEdited:(bool)arg1;
 - (bool)resultEdited;
 - (void)setResultDirty:(bool)arg1;

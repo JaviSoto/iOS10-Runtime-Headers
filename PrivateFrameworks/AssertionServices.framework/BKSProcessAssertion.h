@@ -51,6 +51,7 @@
 - (void)_clientQueue_updateAssertion;
 - (void)_clientQueue_acquireAssertion;
 - (void)_clientQueue_setAcquisitionHandler:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setInvalidationHandler:(id)arg1;
 - (id)initWithPID:(int)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 withHandler:(id)arg5;
 - (void)setFlags:(unsigned int)arg1;
@@ -58,7 +59,6 @@
 - (unsigned int)reason;
 - (id)name;
 - (void)invalidate;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)invalidationHandler;
 - (unsigned int)flags;

@@ -15,8 +15,8 @@
 @property(getter=isFinal,readonly) bool final;
 
 
-- (id)localIdentifier;
 - (bool)isFinal;
+- (id)localIdentifier;
 - (id)cloudIdentifier;
 - (void).cxx_destruct;
 

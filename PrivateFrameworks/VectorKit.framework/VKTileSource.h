@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSError, VKTileKeyMap, VKTilePool, VKSharedResources, VKTileKeyList, NSLocale, <VKTileSourceClient>, VKStyleManager;
+@class NSError, VKTileKeyMap, NSString, VKTilePool, VKSharedResources, VKTileKeyList, NSLocale, <VKTileSourceClient>, VKStyleManager;
 
 @interface VKTileSource : NSObject  {
     <VKTileSourceClient> *_client;
@@ -17,6 +17,7 @@
     NSError *_recentError;
     unsigned int _tileGroupIdentifier;
     NSLocale *_locale;
+    NSString *_tileLoaderClientIdentifier;
 }
 
 @property <VKTileSourceClient> * client;
@@ -80,8 +81,8 @@
 - (void)setStyleManager:(id)arg1;
 - (id)styleManager;
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (void)clearCaches;
 - (struct Device { }*)device;
+- (void)clearCaches;
 - (void)setClient:(id)arg1;
 - (long long)tileSize;
 - (void)cancelDownload:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;

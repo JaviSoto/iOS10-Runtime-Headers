@@ -32,6 +32,9 @@
 @property(retain) NSString * connection;
 
 
+- (void)setClientVersion:(id)arg1;
+- (id)baseVersion;
+- (void)setBaseVersion:(id)arg1;
 - (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setOriginalTime:(double)arg1;
 - (double)originalTime;
@@ -55,22 +58,20 @@
 - (void)setPixelRatio:(id)arg1;
 - (void)setPageDescription:(id)arg1;
 - (void)setEventType:(id)arg1;
-- (void)setClientVersion:(id)arg1;
-- (void)setBaseVersion:(id)arg1;
 - (id)screenWidth;
 - (id)screenHeight;
 - (id)previousClientVersion;
 - (id)pixelRatio;
 - (id)pageDescription;
 - (id)hostApplicationIdentifier;
-- (id)baseVersion;
 - (id)eventVersion;
 - (void)setOriginalTimeUsingDate:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (bool)isBlacklistedByConfiguration:(id)arg1;
 - (id)userAgent;
-- (id)topic;
+- (id)decorateReportingURL:(id)arg1;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (void)setUserAgent:(id)arg1;
 - (id)eventType;
 - (void)setAccountIdentifier:(id)arg1;

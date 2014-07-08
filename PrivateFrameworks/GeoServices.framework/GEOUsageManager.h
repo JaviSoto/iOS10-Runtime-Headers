@@ -39,6 +39,8 @@
 - (void)setBackgroundTaskStart:(id)arg1;
 - (id)backgroundTaskEnd;
 - (id)backgroundTaskStart;
+- (void)captureLeaveNowFeedbackCollection:(id)arg1;
+- (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)_endBackgroundTaskForRequester:(id)arg1;

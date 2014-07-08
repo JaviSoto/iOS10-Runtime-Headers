@@ -62,8 +62,8 @@
 + (id)customFieldWithEvaluationBlock:(id)arg1;
 + (id)electricField;
 + (id)springField;
-+ (id)turbulenceField;
-+ (id)noiseFieldWithSmoothness:(double)arg1 scale:(double)arg2 animationSpeed:(double)arg3;
++ (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
++ (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)linearGravityField;
 + (id)radialGravityField;
 + (id)vortexField;

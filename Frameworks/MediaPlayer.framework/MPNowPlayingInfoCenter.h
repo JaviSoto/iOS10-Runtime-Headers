@@ -14,8 +14,8 @@
 
 + (id)defaultCenter;
 
-- (void)_pushNowPlayingInfoAndRetry:(bool)arg1;
 - (id)nowPlayingInfo;
+- (void)_pushNowPlayingInfoAndRetry:(bool)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

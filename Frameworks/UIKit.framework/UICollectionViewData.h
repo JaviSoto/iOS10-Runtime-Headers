@@ -12,7 +12,8 @@
     id *_globalItems;
     NSMutableDictionary *_supplementaryLayoutAttributes;
     NSMutableDictionary *_decorationLayoutAttributes;
-    NSMutableDictionary *_invalidatedSupplementaryViews;
+    NSMutableDictionary *_invalidatedSupplementaryIndexPaths;
+    NSMutableDictionary *_invalidatedDecorationIndexPaths;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -57,6 +58,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForGlobalItemIndex:(long long)arg1;
 - (void)_loadEverything;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForItemAtIndexPath:(id)arg1;
+- (void)validateDecorationViews;
 - (void)validateSupplementaryViews;
 - (void)_setLayoutAttributes:(id)arg1 atGlobalItemIndex:(int)arg2;
 - (void)_setupMutableIndexPath:(id*)arg1 forGlobalItemIndex:(int)arg2;
@@ -64,7 +66,8 @@
 - (void)_validateContentSize;
 - (void)_validateItemCounts;
 - (void)_updateItemCounts;
-- (void)invalidateSupplementaryViews:(id)arg1;
+- (void)invalidateDecorationIndexPaths:(id)arg1;
+- (void)invalidateSupplementaryIndexPaths:(id)arg1;
 - (id)knownDecorationElementKinds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;

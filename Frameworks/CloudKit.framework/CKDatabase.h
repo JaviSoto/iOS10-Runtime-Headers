@@ -11,7 +11,7 @@
     NSOperationQueue *_operationQueue;
 }
 
-@property(retain) CKContainer * container;
+@property CKContainer * container;
 @property long long scope;
 @property(readonly) NSOperationQueue * operationQueue;
 @property int statusReportToken;

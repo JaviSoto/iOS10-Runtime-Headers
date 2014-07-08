@@ -51,6 +51,7 @@
 + (void)loadLeaderboardsForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (bool)instancesRespondToSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
++ (id)localizedStringForTimeScope:(long long)arg1;
 
 - (void)setPlayers:(id)arg1;
 - (void)setLoadingCount:(int)arg1;
@@ -92,8 +93,8 @@
 - (id)description;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)imageURL;
 - (id)miniImageURL;
 - (void)loadImageWithCompletionHandler:(id)arg1;
+- (id)imageURL;
 
 @end

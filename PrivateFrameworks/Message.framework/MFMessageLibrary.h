@@ -60,6 +60,7 @@
 - (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
 - (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
+- (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (id)duplicateMessages:(id)arg1 newRemoteIDs:(id)arg2 forMailbox:(id)arg3 setFlags:(unsigned long long)arg4 clearFlags:(unsigned long long)arg5 messageFlagsForMessages:(id)arg6 createNewCacheFiles:(bool)arg7;
@@ -117,9 +118,9 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (bool)shouldCancel;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (void)deleteAccount:(id)arg1;
 - (bool)hasCompleteDataForMimePart:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
-- (void)deleteAccount:(id)arg1;
 - (bool)isBusy;
 - (void)commit;
 - (void)dealloc;

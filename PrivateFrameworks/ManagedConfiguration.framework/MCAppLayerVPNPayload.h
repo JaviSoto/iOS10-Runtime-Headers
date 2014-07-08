@@ -20,6 +20,7 @@
 - (void)setVPNUUID:(id)arg1;
 - (id)SafariDomains;
 - (id)VPNUUID;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void).cxx_destruct;

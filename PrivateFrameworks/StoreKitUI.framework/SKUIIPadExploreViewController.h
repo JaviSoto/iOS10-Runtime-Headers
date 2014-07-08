@@ -2,13 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIExploreTemplateElement, NSArray, UINavigationController, SKUIStorePageSectionsViewController, UISplitViewController, SKUIContentInsetScrollView;
+@class SKUIExploreTemplateElement, CLLocationManager, NSArray, UINavigationController, UISplitViewController, SKUIContentInsetScrollView, SKUIStorePageSectionsViewController;
 
-@interface SKUIIPadExploreViewController : SKUIViewController <UINavigationControllerDelegate, UISplitViewControllerDelegate, SKUIStackedBarDelegate, SKUIDocumentViewController> {
+@interface SKUIIPadExploreViewController : SKUIViewController <CLLocationManagerDelegate, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate, SKUIDocumentViewController> {
     NSArray *_contentOffsets;
     SKUIContentInsetScrollView *_contentScrollView;
     SKUIExploreTemplateElement *_exploreTemplate;
     UINavigationController *_leftVC;
+    CLLocationManager *_locationManager;
+    bool_nearMeEnabled;
     SKUIStorePageSectionsViewController *_rightVC;
     UISplitViewController *_splitVC;
 }
@@ -16,6 +18,7 @@
 + (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void)documentDidUpdate:(id)arg1;
+- (id)_rightVCColorScheme;
 - (id)_rightPageComponents;
 - (id)_leftPageComponentsAtIndex:(long long)arg1;
 - (void)_reloadSelectionForViewController:(id)arg1;
@@ -28,6 +31,8 @@
 - (void)_getPageComponents:(id*)arg1 title:(id*)arg2 forViewControllerAtIndex:(long long)arg3;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)setClientContext:(id)arg1;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (bool)splitViewController:(id)arg1 shouldHideViewController:(id)arg2 inOrientation:(long long)arg3;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

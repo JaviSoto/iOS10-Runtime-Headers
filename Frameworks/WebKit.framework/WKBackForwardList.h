@@ -20,8 +20,8 @@
 @property(readonly) WKBackForwardListItem * currentItem;
 @property(readonly) WKBackForwardListItem * backItem;
 @property(readonly) WKBackForwardListItem * forwardItem;
-@property(readonly) NSArray * backList;
-@property(readonly) NSArray * forwardList;
+@property(copy,readonly) NSArray * backList;
+@property(copy,readonly) NSArray * forwardList;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 
@@ -30,6 +30,8 @@
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)currentItem;
 - (id)itemAtIndex:(long long)arg1;
+- (void)_removeAllItems;
+- (void)_clear;
 - (id)forwardItem;
 - (void)dealloc;
 - (id).cxx_construct;

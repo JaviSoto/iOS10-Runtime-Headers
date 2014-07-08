@@ -91,11 +91,12 @@
 - (void)setHasEndTime:(bool)arg1;
 - (bool)hasInfo;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
 - (void)setHasStartTime:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
 - (void)setStreet:(id)arg1;
 - (id)street;
 - (void)setEndTime:(long long)arg1;

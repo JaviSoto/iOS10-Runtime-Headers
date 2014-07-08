@@ -2,15 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIView, UIAlertAction;
+@class UIAlertAction, UIImageView, UILabel, UIView, NSLayoutConstraint;
 
 @interface _UIAlertControllerActionView : UIView <UIGestureRecognizerDelegate, _UIAlertActionRepresenting> {
     UILabel *label;
+    UILabel *descriptiveLabel;
     UIImageView *imageView;
     UIImageView *checkView;
     UIView *highlightedBackgroundContainerView;
     UIView *highlightedBackgroundView;
     unsigned long long _roundedCorners;
+    double _alignedDescriptiveLabelTextWidth;
+    NSLayoutConstraint *_descriptiveLabelWidthConstraint;
     UIAlertAction *_action;
     id selectedTarget;
     SEL selectedAction;
@@ -25,6 +28,8 @@
 @property long long alertControllerStyle;
 @property unsigned long long roundedCorners;
 @property double cornerRadius;
+@property double alignedDescriptiveLabelTextWidth;
+@property(readonly) double currentDescriptiveLabelTextWidth;
 @property bool discrete;
 @property(readonly) bool isHighlighted;
 
@@ -40,12 +45,16 @@
 - (void)setAlertControllerStyle:(long long)arg1;
 - (void)setHighlightTarget:(id)arg1 action:(SEL)arg2;
 - (void)setSelectedTarget:(id)arg1 action:(SEL)arg2;
+- (double)currentDescriptiveLabelTextWidth;
+- (double)alignedDescriptiveLabelTextWidth;
+- (void)setAlignedDescriptiveLabelTextWidth:(double)arg1;
 - (unsigned long long)roundedCorners;
 - (void)setRoundedCorners:(unsigned long long)arg1;
 - (id)_regularFont;
-- (id)_cancelFont;
 - (double)_actionSheetSystemFontSize;
 - (long long)alertControllerStyle;
+- (void)_updateTextAlignmentForDescriptiveText:(bool)arg1;
+- (void)_prepareConstraintsForDescriptiveText:(bool)arg1;
 - (void)_recomputeBackgroundColor;
 - (void)_recomputeTextColor;
 - (id)_titleFont;
@@ -60,6 +69,7 @@
 - (void)_action:(id)arg1 changedToEnabled:(bool)arg2;
 - (bool)isHighlighted;
 - (void)setHighlighted:(bool)arg1;
+- (id)_defaultFont;
 - (void)tintColorDidChange;
 - (void)setCornerRadius:(double)arg1;
 - (id)tintColor;
@@ -67,7 +77,5 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

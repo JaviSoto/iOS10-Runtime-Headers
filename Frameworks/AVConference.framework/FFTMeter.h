@@ -15,7 +15,7 @@
     float windowHistory[3840];
     float octaveDbOld[54];
     float octaveDb[54];
-    float octaveDbFilt[54];
+    float octaveDbFilt[55];
     float lerpIdxs[66];
     float fftNormFactor;
     float adjust0DB;

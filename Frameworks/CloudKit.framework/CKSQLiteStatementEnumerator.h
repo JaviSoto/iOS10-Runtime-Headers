@@ -23,11 +23,11 @@
 @property bool closed;
 
 
+- (void)setClosed:(bool)arg1;
+- (bool)closed;
 - (id)initWithStatement:(id)arg1 block:(id)arg2;
 - (void)setStatement:(id)arg1;
 - (id)statement;
-- (void)setClosed:(bool)arg1;
-- (bool)closed;
 - (void)setBlock:(id)arg1;
 - (id)nextObject;
 - (void)close;

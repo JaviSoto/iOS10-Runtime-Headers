@@ -23,11 +23,12 @@
 - (struct CGSize { double x1; double x2; })estimatedSizeForOrdinal:(id)arg1 width:(double)arg2;
 - (struct CGSize { double x1; double x2; })sizeForButton:(id)arg1 width:(double)arg2;
 - (struct CGSize { double x1; double x2; })estimatedSizeForLabel:(id)arg1 width:(double)arg2;
-- (id)layoutForWidth:(long long)arg1 viewElement:(id)arg2;
 - (void)requestLayoutForOrdinal:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
-- (void)requestLayoutForViewElement:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
+- (id)layoutForWidth:(long long)arg1 viewElement:(id)arg2;
 - (id)initWithLayoutCache:(id)arg1;
 - (id)layoutCache;
+- (void)requestLayoutForViewElement:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
+- (void)requestLayoutForBadge:(id)arg1 width:(long long)arg2;
 - (void)requestLayoutForLabel:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
 - (void)requestLayoutForButton:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
 - (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(double)arg2;

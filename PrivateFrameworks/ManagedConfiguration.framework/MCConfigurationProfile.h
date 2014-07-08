@@ -30,17 +30,22 @@
 - (id)localizedManagedPayloadSummaryByType;
 - (id)localizedPayloadSummaryByType;
 - (bool)isManagedByProfileService;
-- (id)payloadWithUUID:(id)arg1;
+- (id)subjectSummaryFromCertificateWithPersistentID:(id)arg1;
+- (id)subjectSummaryFromCertificatePayloadWithUUID:(id)arg1;
 - (id)managedPayloads;
 - (id)_localizedPayloadSummaryByType:(id)arg1;
 - (id)installationWarningsIncludeUnsignedProfileWarning:(bool)arg1;
 - (void)_sortPayloads;
 - (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (id)_subjectSummaryFromCertificate:(struct __SecCertificate { }*)arg1;
+- (struct __SecCertificate { }*)copyCertificateFromPayloadWithUUID:(id)arg1;
+- (id)payloadWithUUID:(id)arg1;
 - (bool)isMDMProfile;
 - (id)payloads;
 - (id)_sortPayloads:(id)arg1;
 - (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
 - (id)stubDictionary;
+- (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 

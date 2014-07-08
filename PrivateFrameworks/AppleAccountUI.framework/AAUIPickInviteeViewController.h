@@ -35,13 +35,13 @@
 - (void)_hideSearchResults;
 - (void)_updateNextButtonEnabledState;
 - (void)_nextButtonWasTapped:(id)arg1;
-- (void)_cancelButtonWasTapped:(id)arg1;
 - (void)contactsSearchController:(id)arg1 didFindSortedResult:(id)arg2;
 - (void)contactsSearchController:(id)arg1 didFinishSearchWithSuccess:(bool)arg2;
 - (id)inviteeShortName;
 - (id)inviteeCompositeName;
 - (id)inviteeEmail;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
+- (void)_cancelButtonWasTapped:(id)arg1;
 - (double)_heightForText:(id)arg1 width:(double)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

@@ -31,6 +31,7 @@
 - (id)_store;
 - (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
 - (void)_setupManagedObjectContext;
+- (bool)saveWithError:(id*)arg1 rollbackOnFailure:(bool)arg2;
 - (id)objectForObjectURI:(id)arg1;
 - (id)managedObjectIDForURI:(id)arg1;
 - (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
@@ -39,6 +40,7 @@
 - (id)existingObjectWithURI:(id)arg1;
 - (unsigned long long)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;
 - (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2;
+- (bool)saveWithError:(id*)arg1;
 - (id)fetchObjectsForEntityNamed:(id)arg1;
 - (bool)_databaseFileExists;
 - (id)managedObjectContext;

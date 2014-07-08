@@ -32,10 +32,10 @@
 - (id)titleForAction:(int)arg1;
 - (int)_actionAtIndex:(long long)arg1 forProperty:(int)arg2;
 - (struct __CFArray { }*)_actionsForProperty:(int)arg1;
+- (void)setStringValue:(id)arg1;
 - (void*)context;
 - (id)initWithProperty:(int)arg1;
 - (void)setContext:(void*)arg1;
-- (void)setStringValue:(id)arg1;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (id)init;

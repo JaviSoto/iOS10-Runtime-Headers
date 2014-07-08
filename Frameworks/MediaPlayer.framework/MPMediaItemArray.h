@@ -13,8 +13,8 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

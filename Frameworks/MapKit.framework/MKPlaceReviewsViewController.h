@@ -4,7 +4,7 @@
 
 @class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, _MKPlaceViewController, MKMapItem;
 
-@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceReviewsViewCheckInWriteCellDelegate> {
+@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
     bool_showAttributionButtons;
     bool_showCheckInAndWriteReviewButtons;
     bool_showMoreReviewsButton;
@@ -23,6 +23,7 @@
 @property bool showCheckInAndWriteReviewButtons;
 @property bool showMoreReviewsButton;
 @property(retain) ABMonogrammer * monogrammer;
+@property(readonly) bool requiresPreferredContentSizeInStackingView;
 
 
 - (void)_showReviewWithID:(id)arg1;
@@ -36,11 +37,12 @@
 - (void)setMonogrammer:(id)arg1;
 - (bool)showAttributionButtons;
 - (void)setShowAttributionButtons:(bool)arg1;
+- (bool)requiresPreferredContentSizeInStackingView;
 - (void)setReviewsControllerDelegate:(id)arg1;
-- (id)mapItem;
 - (void)checkInWriteReviewCellDidSelectWriteReview:(id)arg1;
 - (void)checkInWriteReviewCellDidSelectCheckIn:(id)arg1;
 - (void)setMapItem:(id)arg1;
+- (id)mapItem;
 - (id)owner;
 - (id)rating;
 - (void)setRating:(id)arg1;

@@ -159,9 +159,7 @@
 - (id)additionalLibraryFilterPredicates;
 - (id)_getCachedValueForQueryCritiera:(id)arg1 valueCriteriaCache:(id)arg2 entitiesForCriteriaCache:(id)arg3 didLoadBlocksByQueryCriteria:(id)arg4 valueLoadedFromEntitiesArrayBlock:(id)arg5 loadValueFromDataProviderBlock:(id)arg6;
 - (bool)collectionExistsWithStoreID:(long long)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
-- (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
 - (bool)playlistExistsWithPersistentID:(unsigned long long)arg1;
-- (bool)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (id)entityCache;
 - (id)syncValidity;
@@ -213,6 +211,8 @@
 - (id)_collectionsForQueryCriteria:(id)arg1;
 - (id)_itemsForQueryCriteria:(id)arg1;
 - (id)entityWithMultiverseIdentifier:(id)arg1;
+- (bool)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(long long)arg2;
+- (bool)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (bool)collectionExistsWithName:(id)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long*)arg3;
 - (bool)collectionExistsContainedWithinPersistentIDs:(const unsigned long long*)arg1 count:(unsigned long long)arg2 groupingType:(long long)arg3 existentPID:(unsigned long long*)arg4;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;

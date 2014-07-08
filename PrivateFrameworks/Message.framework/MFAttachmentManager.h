@@ -19,9 +19,11 @@
 
 - (void)clearMetadataForAttachment:(id)arg1;
 - (id)attachmentsForTextAttachments:(id)arg1 error:(id*)arg2;
+- (bool)_setupAttachment:(id)arg1 error:(id*)arg2;
 - (void)removeProvider:(id)arg1;
 - (id)attachmentForTextAttachment:(id)arg1 error:(id*)arg2;
-- (bool)_setupAttachment:(id)arg1 error:(id*)arg2;
+- (id)attachmentForURL:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
+- (bool)_setupAttachment:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
 - (id)_contentIDForAttachment:(id)arg1;
 - (void)updatePathWithCurrentFileNameForAttachment:(id)arg1;
 - (void)cancelFetchForAttachment:(id)arg1;

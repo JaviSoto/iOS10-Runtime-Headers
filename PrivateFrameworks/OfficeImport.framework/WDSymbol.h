@@ -11,9 +11,9 @@
 }
 
 
-- (void)setCharacter:(unsigned short)arg1;
-- (unsigned short)character;
 - (int)runType;
+- (unsigned short)character;
+- (void)setCharacter:(unsigned short)arg1;
 - (id)initWithParagraph:(id)arg1;
 - (void)clearProperties;
 - (id)font;

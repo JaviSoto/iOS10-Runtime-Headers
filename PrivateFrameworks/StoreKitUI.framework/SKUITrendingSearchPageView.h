@@ -2,26 +2,29 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUITrendingSearchPage, UILabel, <SKUITrendingSearchPageViewDelegate>;
+@class SKUITrendingSearchPage, SKUITrendingSearchView, <SKUITrendingSearchPageViewDelegate>;
 
 @interface SKUITrendingSearchPageView : UIView  {
-    UILabel *_titleLabel;
-    NSArray *_queryButtons;
-    SKUITrendingSearchPage *_page;
     <SKUITrendingSearchPageViewDelegate> *_delegate;
+    SKUITrendingSearchPage *_page;
+    SKUITrendingSearchView *_trendingSearchView;
 }
 
-@property(retain) SKUITrendingSearchPage * page;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property <SKUITrendingSearchPageViewDelegate> * delegate;
+@property(retain) SKUITrendingSearchPage * page;
 
 
 - (void)_buttonAction:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (id)page;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)setPage:(id)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (void)layoutSubviews;
 
 @end

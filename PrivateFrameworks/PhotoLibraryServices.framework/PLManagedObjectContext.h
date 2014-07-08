@@ -31,6 +31,8 @@
     NSMutableArray *_albumUuidForCloudDeletion;
     NSMutableSet *_delayedAlbumOrderUpdates;
     NSMutableSet *_delayedAlbumCountUpdates;
+    NSMutableDictionary *_updatedObjectsAttributes;
+    NSMutableDictionary *_updatedObjectsRelationships;
     PLPhotoLibrary *_photoLibrary;
     <PLManagedObjectContextPTPNotificationDelegate> *_ptpNotificationDelegate;
     bool_regenerateVideoThumbnails;
@@ -56,10 +58,13 @@
 + (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id)arg2;
 + (void)delayedAlbumCountUpdatesFromChangeHubEvent:(id)arg1 countUpdates:(id*)arg2;
 + (void)delayedAlbumOrderingUpdatesFromChangeHubEvent:(id)arg1 orderingUpdates:(id*)arg2;
++ (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
 + (void)delayedAssetsForFileSystemPersistencyUpdatesFromChangeHubEvent:(id)arg1 assetUpdates:(id*)arg2;
 + (void)delayedDupeAnalysisDataFromChangeHubEvent:(id)arg1 normalInserts:(id*)arg2 cloudInserts:(id*)arg3;
 + (void)delayedCloudFeedDataFromChangeHubEvent:(id)arg1 albumUpdates:(id*)arg2 assetInserts:(id*)arg3 assetUpdates:(id*)arg4 commentInserts:(id*)arg5 invitationRecordUpdates:(id*)arg6 deletionEntries:(id*)arg7;
 + (void)delayedMomentDataFromChangeHubEvent:(id)arg1 insertsAndUpdates:(id*)arg2 deletes:(id*)arg3;
++ (id)relationshipNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
++ (id)attributeNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
 + (bool)hasConfiguredPhotoLibrary;
 + (bool)hasAtLeastOneAsset;
 + (void)moveOldStoreAside;
@@ -67,6 +72,15 @@
 + (bool)assetsLibraryLoggingEnabled;
 + (id)allContextsNotIdenticalTo:(void*)arg1;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id)arg3;
++ (unsigned long long)indexValueForRelationshipNames:(id)arg1 entity:(id)arg2;
++ (unsigned long long)indexValueForAttributeNames:(id)arg1 entity:(id)arg2;
++ (id)_relationshipNamesByIndexByEntityNames;
++ (id)_indexesByRelationshipNamesByEntityNames;
++ (id)_propertyNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2 propertyNamesByIndexByEntityNames:(id)arg3;
++ (id)_attributeNamesByIndexByEntityNames;
++ (unsigned long long)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;
++ (id)_indexesByAttributeNamesByEntityNames;
++ (void)__prepareEntityPropertyLookups;
 + (bool)canMergeRemoteChanges;
 + (bool)_rebuildAndRetryPersistentStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forced:(bool)arg4;
 + (bool)_openAndMigrateStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forceSourceModelVersion:(id)arg4;
@@ -93,6 +107,7 @@
 - (bool)savingDuringMerge;
 - (void)setChangeHubConnection:(id)arg1;
 - (id)changeHubConnection;
+- (id)pl_fetchObjectsWithIDs:(id)arg1 rootEntity:(id)arg2;
 - (void)appendDelayedAlbumCountUpdatesToXPCMessage:(id)arg1;
 - (void)getDelayedAlbumCountUpdates:(id*)arg1;
 - (void)appendDelayedAlbumOrderingUpdatesToXPCMessage:(id)arg1;
@@ -115,8 +130,10 @@
 - (void)recordAlbumForCloudFeedUpdate:(id)arg1;
 - (void)appendDelayedMomentDataToXPCMessage:(id)arg1;
 - (void)getDelayedMomentInsertsAndUpdates:(id*)arg1 deletes:(id*)arg2;
-- (void)_informPTPDelegateAboutChangesFromNotification:(id)arg1;
+- (void)getAndClearUpdatedObjectsAttributes:(id*)arg1 relationships:(id*)arg2;
+- (void)recordManagedObjectWillSave:(id)arg1;
 - (void)_contextObjectsDidChange:(id)arg1;
+- (void)_getInsertedIDs:(id)arg1 deletedIDs:(id)arg2 changedIDs:(id)arg3 ofEntityKind:(id)arg4 fromRemoteContextDidSaveNotification:(id)arg5;
 - (void)_notifyALAssetsLibraryWithChanges:(id)arg1 usingObjectIDs:(bool)arg2;
 - (id)ptpNotificationDelegate;
 - (id)pl_fetchObjectsWithIDs:(id)arg1;
@@ -130,6 +147,7 @@
 - (bool)_isValidDelete:(id)arg1;
 - (id)delayedDeletions;
 - (bool)suspendClientServerTransactions;
+- (void)_informPTPDelegateAboutChangesFromRemoteContextSaveNotification:(id)arg1;
 - (void)disconnectFromChangeHub;
 - (void)setDelayedDeletions:(id)arg1;
 - (void)setPtpNotificationDelegate:(id)arg1;

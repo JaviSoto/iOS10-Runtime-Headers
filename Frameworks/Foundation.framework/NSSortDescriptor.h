@@ -47,5 +47,6 @@
 - (id)initWithKey:(id)arg1 ascending:(bool)arg2 comparator:(id)arg3;
 - (id)initWithKey:(id)arg1 ascending:(bool)arg2 selector:(SEL)arg3;
 - (long long)compareObject:(id)arg1 toObject:(id)arg2;
+- (id)CKDPQuerySort;
 
 @end

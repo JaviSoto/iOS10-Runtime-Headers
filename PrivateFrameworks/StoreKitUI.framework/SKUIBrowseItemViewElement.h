@@ -2,14 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
+@class SKUIImageViewElement, NSArray;
 
 @interface SKUIBrowseItemViewElement : SKUIItemViewElement  {
-    bool_chevron;
     bool_expands;
 }
 
-@property(readonly) bool chevron;
+@property(readonly) SKUIImageViewElement * decorationImage;
 @property(readonly) bool expands;
 @property(readonly) NSArray * metadata;
 
@@ -18,7 +17,7 @@
 - (id)applyUpdatesWithElement:(id)arg1;
 - (bool)expands;
 - (long long)pageComponentType;
+- (id)decorationImage;
 - (id)metadata;
-- (bool)chevron;
 
 @end

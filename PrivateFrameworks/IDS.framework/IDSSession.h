@@ -22,20 +22,22 @@
 - (unsigned int)sessionEndedReason;
 - (bool)sendData:(id)arg1 error:(id*)arg2;
 - (void)sendSessionMessage:(id)arg1;
+- (void)endSessionWithData:(id)arg1;
 - (void)cancelInvitation;
-- (void)declineInvitationWithContext:(id)arg1;
-- (void)acceptInvitationWithContext:(id)arg1;
-- (void)cancelInvitationWithContext:(id)arg1;
-- (void)sendInvitationWithContext:(id)arg1;
+- (void)declineInvitationWithData:(id)arg1;
+- (void)acceptInvitationWithData:(id)arg1;
+- (void)cancelInvitationWithData:(id)arg1;
+- (void)sendInvitationWithData:(id)arg1;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (bool)isAudioEnabled;
 - (id)_internal;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (int)socket;
 - (void)setIsAudioEnabled:(bool)arg1;
 - (void)declineInvitation;
 - (void)acceptInvitation;
+- (unsigned int)state;
 - (void)dealloc;
+- (int)socket;
 - (void)endSession;
 
 @end

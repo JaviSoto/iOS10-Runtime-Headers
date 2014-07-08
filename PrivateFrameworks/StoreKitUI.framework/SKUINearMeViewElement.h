@@ -8,6 +8,7 @@
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (void)_itemsDidChange:(id)arg1;
+- (void)enumerateChildrenUsingBlock:(id)arg1;
 - (void)dealloc;
 
 @end

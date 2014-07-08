@@ -8,7 +8,6 @@
     bool_preventMove;
     bool_preventAppSheet;
     bool_SMIMEEnabled;
-    bool_SMIMEEncryptionEnabled;
     bool_isRecentsSyncingDisabled;
     bool_SMIMEPerMessageSwitchEnabled;
     NSString *_SMIMESigningIdentityUUID;
@@ -20,7 +19,6 @@
 @property bool preventMove;
 @property bool preventAppSheet;
 @property bool SMIMEEnabled;
-@property bool SMIMEEncryptionEnabled;
 @property bool isRecentsSyncingDisabled;
 @property(retain) NSString * SMIMESigningIdentityUUID;
 @property(retain) NSString * SMIMEEncryptionIdentityUUID;
@@ -41,15 +39,13 @@
 - (id)SMIMESigningIdentityUUID;
 - (void)setIsRecentsSyncingDisabled:(bool)arg1;
 - (bool)isRecentsSyncingDisabled;
-- (void)setSMIMEEncryptionEnabled:(bool)arg1;
-- (bool)SMIMEEncryptionEnabled;
 - (void)setSMIMEEnabled:(bool)arg1;
 - (bool)SMIMEEnabled;
 - (void)setPreventAppSheet:(bool)arg1;
 - (bool)preventAppSheet;
 - (void)setPreventMove:(bool)arg1;
 - (bool)preventMove;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void).cxx_destruct;

@@ -27,11 +27,11 @@
 - (void)cancelAllOperations;
 - (long long)maxConcurrentOperationCount;
 - (bool)isSuspended;
+- (void)setName:(id)arg1;
 - (id)init;
 - (void)addOperationWithBlock:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)setMaxConcurrentOperationCount:(long long)arg1;
 - (void)dealloc;
 - (id)description;

@@ -10,6 +10,7 @@
 @property(readonly) DOMHTMLFormElement * form;
 
 
+- (void)setName:(id)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (bool)checkValidity;
 - (id)validationMessage;
@@ -18,7 +19,6 @@
 - (void)setDisabled:(bool)arg1;
 - (id)elements;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)type;
 - (bool)disabled;
 - (id)form;

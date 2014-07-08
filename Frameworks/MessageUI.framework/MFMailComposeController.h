@@ -124,7 +124,6 @@
 + (void)initialize;
 
 - (void)_accountsChanged:(id)arg1;
-- (void)_textChanged:(id)arg1;
 - (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
 - (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
 - (id)popoverAlert;
@@ -151,7 +150,6 @@
 - (void)_tryAddSenderToBccRecipients;
 - (bool)_shouldPrependBlankLineForAttachments;
 - (void)setInitialTitle:(id)arg1;
-- (bool)hosted;
 - (id)initWithCompositionContext:(id)arg1 options:(unsigned long long)arg2;
 - (void)groupDetailViewControllerDidCancel:(id)arg1;
 - (void)groupDetailViewController:(id)arg1 didAskToRemoveGroup:(id)arg2;
@@ -227,10 +225,13 @@
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)_popoverWillBePresented:(id)arg1;
-- (void)_applicationDidResume;
+- (void)didBecomeActiveComposeController;
 - (void)_updateRecipientAtomStyles;
+- (bool)_isActiveComposeController;
+- (bool)hosted;
 - (void)_finishEnteringRecipients;
 - (void)_dismissPeoplePicker:(id)arg1;
+- (void)_clearMessageValues;
 - (void)dismissSheet;
 - (id)popoverManagerCreateIfNeeded:(bool)arg1;
 - (void)clearInitialTitle;
@@ -247,6 +248,8 @@
 - (void)_composeViewDidDraw:(id)arg1;
 - (void)attachmentFinishedLoading:(id)arg1;
 - (void)attachmentsRemoved:(id)arg1;
+- (void)_recipientTextChanged:(id)arg1;
+- (void)_subjectTextChanged:(id)arg1;
 - (void)_bodyTextChanged:(id)arg1;
 - (int)deliverMessageRemotely;
 - (bool)needsDelivery;

@@ -11,8 +11,8 @@
 
 - (void)_removeDiskRepresentation;
 - (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 completion:(id)arg3;
-- (id)archiveData;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
+- (id)archiveData;
 - (void)dealloc;
 
 @end

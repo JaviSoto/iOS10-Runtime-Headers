@@ -2,19 +2,24 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSRootController;
+@class PSRootController, <PSSplitViewControllerNavigationDelegate>;
 
 @interface PSSplitViewController : UISplitViewController  {
     PSRootController *_containerNavigationController;
+    <PSSplitViewControllerNavigationDelegate> *_navigationDelegate;
 }
 
 @property(retain) PSRootController * containerNavigationController;
+@property <PSSplitViewControllerNavigationDelegate> * navigationDelegate;
 
 
+- (void)setNavigationDelegate:(id)arg1;
+- (id)navigationDelegate;
 - (void)setContainerNavigationController:(id)arg1;
 - (void)showInitialViewController:(id)arg1;
 - (void)setupControllerForToolbar:(id)arg1;
 - (id)containerNavigationController;
+- (void)popRecursivelyToRootController;
 - (void)dealloc;
 - (unsigned long long)supportedInterfaceOrientations;
 

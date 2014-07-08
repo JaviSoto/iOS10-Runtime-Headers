@@ -11,6 +11,7 @@
 - (bool)popupStyleIsModal;
 - (bool)usePopupStyle;
 - (bool)success;
+- (id)init;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 
 @end

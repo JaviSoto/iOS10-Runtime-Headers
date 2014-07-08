@@ -16,6 +16,7 @@
     id _context;
     bool_hasPreparedAlertActions;
     bool_isPresented;
+    bool_alertControllerShouldDismiss;
 }
 
 @property <UIActionSheetDelegate> * delegate;
@@ -56,12 +57,14 @@
 - (void)setUseThreeColumnsButtonsLayout:(bool)arg1;
 - (void)setInPopover:(bool)arg1;
 - (void)presentSheetInContentView:(id)arg1;
+- (id)_relinquishPopoverController;
 - (void)presentFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned long long)arg3 allowInteractionWithViews:(id)arg4 backgroundStyle:(long long)arg5 animated:(bool)arg6;
 - (void)presentFromBarButtonItem:(id)arg1 direction:(unsigned long long)arg2 allowInteractionWithViews:(id)arg3 backgroundStyle:(long long)arg4 animated:(bool)arg5;
 - (void)showFromTabBar:(id)arg1;
 - (void)showFromToolbar:(id)arg1;
 - (long long)destructiveButtonIndex;
 - (long long)actionSheetStyle;
+- (void)setActionSheetStyle:(long long)arg1;
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)setIndexOfSelectedButton:(long long)arg1;
 - (void)showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3;
@@ -72,6 +75,7 @@
 - (int)numberOfLinesInTitle;
 - (void)setDimsBackground:(bool)arg1;
 - (void)setDimView:(id)arg1;
+- (void)setTitleMaxLineCount:(int)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (id)buttonTitleAtIndex:(long long)arg1;
 - (id)_buttonAtIndex:(long long)arg1;
@@ -80,16 +84,15 @@
 - (void)setTaglineText:(id)arg1;
 - (id)bodyText;
 - (void)setBodyText:(id)arg1;
-- (void)_prepareAlertActions;
 - (void)_setIsPresented:(bool)arg1;
-- (void)_indexTapped:(long long)arg1;
+- (long long)numberOfButtons;
+- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
+- (void)_prepareAlertActions;
+- (id)_alertController;
+- (bool)_dismissForTappedIndex:(long long)arg1;
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;
-- (long long)numberOfButtons;
-- (id)_relinquishPopoverController;
-- (void)setTitleMaxLineCount:(int)arg1;
-- (void)setActionSheetStyle:(long long)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)showInView:(id)arg1;
@@ -99,5 +102,6 @@
 - (long long)addButtonWithTitle:(id)arg1;
 - (void)dismissWithClickedButtonIndex:(long long)arg1 animated:(bool)arg2;
 - (long long)cancelButtonIndex;
+- (void)showFromObject:(id)arg1 animated:(bool)arg2;
 
 @end

@@ -22,6 +22,7 @@
     bool_invalidated;
     bool_asynchronous;
     long long _frameInterval;
+    double _lastVideoOutput;
     int _queuedFrameCount;
 }
 
@@ -32,7 +33,7 @@
 - (int)queuedFrameCount;
 - (void)setPaused:(bool)arg1 nextFrameTimeHint:(double)arg2;
 - (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id)arg3;
-- (void)_callbackWithTime:(double)arg1;
+- (void)_callbackWithTime:(double)arg1 andDeltaTime:(double)arg2;
 - (bool)_isInvalidated;
 - (void)_caDisplayLinkCallback;
 - (void)_pause;

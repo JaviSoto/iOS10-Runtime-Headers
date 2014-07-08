@@ -43,6 +43,7 @@
 - (bool)isInitialImport;
 - (bool)hasCloudLockerAccount;
 - (bool)canDefaultMediaLibraryShowCloudContent;
+- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)loadJaliscoGeniusTermsAndConditionsWithCompletionHandler:(id)arg1;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
@@ -62,7 +63,7 @@
 - (bool)canShowCloudMusic;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (bool)hasPurchaseHistoryAccount;
-- (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (void)uploadItemProperties;
 - (bool)isCloudEnabled;
 - (bool)isGeniusEnabled;
 - (void)resignActive;

@@ -17,7 +17,7 @@
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
 @property(retain) id monitoringToken;
 @property bool shouldHideSortBar;
-@property _UIDocumentPickerSortOrderView * sortView;
+@property(retain) _UIDocumentPickerSortOrderView * sortView;
 @property(copy) NSArray * modelObjects;
 
 
@@ -25,7 +25,6 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (void)setMonitoringToken:(id)arg1;
-- (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)monitoringToken;
 - (id)sortView;
 - (bool)shouldHideSortBar;
@@ -35,10 +34,11 @@
 - (void)_sortViewChanged:(id)arg1;
 - (void)setShouldHideSortBar:(bool)arg1;
 - (id)initWithModel:(id)arg1;
+- (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
+- (void)setModel:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (id)serviceViewController;
 - (void)setModelObjects:(id)arg1;
-- (void)setModel:(id)arg1;
 - (id)modelObjects;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;

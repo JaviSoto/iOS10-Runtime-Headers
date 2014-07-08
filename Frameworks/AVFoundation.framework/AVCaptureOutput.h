@@ -12,8 +12,8 @@
 
 + (void)initialize;
 
-- (id)sinkID;
 - (void)setSinkID:(id)arg1;
+- (id)sinkID;
 - (int)requiredOutputFormatForConnection:(id)arg1;
 - (id)_recommendedAudioOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 fileType:(id)arg3;
 - (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2;

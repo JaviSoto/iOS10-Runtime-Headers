@@ -17,7 +17,7 @@
 - (id)errorMessage;
 - (id)errorTitle;
 - (id)userDisplayStrings;
-- (long long)errorCode;
 - (id)devices;
+- (long long)errorCode;
 
 @end

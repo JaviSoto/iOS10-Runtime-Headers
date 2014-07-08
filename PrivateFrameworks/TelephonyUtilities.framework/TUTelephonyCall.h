@@ -11,15 +11,18 @@
 + (void)playDTMFToneForKey:(unsigned char)arg1;
 
 - (struct __CTCall { }*)call;
+- (bool)isWiFiCall;
 - (void)emergencyCallStatusChangedNotification:(id)arg1;
 - (void)_refreshFaceTimeIDSStatus;
+- (bool)canBeRelayed;
+- (bool)allowsTTYSettingChanges;
 - (int)causeCode;
 - (bool)isEmergencyCall;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
 - (id)initWithCall:(struct __CTCall { }*)arg1;
 - (bool)isVoicemail;
-- (bool)unhold;
-- (bool)hold;
+- (void)unhold;
+- (void)hold;
 - (bool)isTTY;
 - (bool)managesAudioInterruptions;
 - (double)callDuration;
@@ -38,6 +41,7 @@
 - (bool)isUplinkMuted;
 - (bool)isOutgoing;
 - (void)answerWithSourceIdentifier:(id)arg1;
+- (id)audioMode;
 - (id)audioCategory;
 - (int)callStatus;
 - (int)supportedModelType;

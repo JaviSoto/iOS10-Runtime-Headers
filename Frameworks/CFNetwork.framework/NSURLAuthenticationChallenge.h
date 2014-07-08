@@ -19,8 +19,8 @@
 + (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 + (bool)supportsSecureCoding;
 
-- (void)setSender:(id)arg1;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
+- (void)setSender:(id)arg1;
 - (id)init;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 - (id)sender;

@@ -20,13 +20,13 @@
 - (void)setSelectedButtonIndex:(long long)arg1;
 - (void)setPerformedButtonIndex:(long long)arg1;
 - (void)setAuthenticatedAccountIdentifier:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (long long)selectedButtonIndex;
 - (long long)performedButtonIndex;
 - (id)authenticatedAccountIdentifier;
 - (void)setRedirectURL:(id)arg1;
 - (id)redirectURL;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void).cxx_destruct;
 
 @end

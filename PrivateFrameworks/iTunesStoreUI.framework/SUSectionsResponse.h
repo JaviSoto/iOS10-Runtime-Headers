@@ -51,13 +51,13 @@
 - (void)dropEmbeddedImages;
 - (id)initWithClientInterface:(id)arg1 sectionsDictionary:(id)arg2 responseType:(long long)arg3;
 - (bool)writeToCacheDirectory:(id)arg1 error:(id*)arg2;
-- (bool)isCacheable;
 - (id)allSections;
 - (bool)shouldResetUserOrdering;
 - (void)setShouldResetUserOrdering:(bool)arg1;
 - (id)initWithClientInterface:(id)arg1 cacheDirectory:(id)arg2;
 - (void)setMoreListImage:(id)arg1;
 - (id)moreListTitle;
+- (bool)isCacheable;
 - (long long)responseType;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;

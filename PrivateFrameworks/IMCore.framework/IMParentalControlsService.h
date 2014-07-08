@@ -22,8 +22,8 @@
 - (void)setDisableService:(bool)arg1;
 - (bool)disableService;
 - (id)whitelist;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (void)setWhitelist:(id)arg1;
 

@@ -62,7 +62,7 @@
 - (void)setException:(id)arg1 withErrorMessage:(id)arg2;
 - (void)setJsFoundation:(id)arg1;
 - (id)jsFoundation;
-- (void)_evaluateFoundationWithDeviceConfig:(id)arg1 ownerObject:(id)arg2;
+- (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
 - (id)app;
 - (void)evaluateDelegateBlockSync:(id)arg1;
 - (id)jsContext;
@@ -71,6 +71,7 @@
 - (void)handleReloadWithUrgencyType:(unsigned long long)arg1 data:(id)arg2;
 - (void)setRemoteInspectionEnabled:(bool)arg1;
 - (id)initWithApplication:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3;
+- (void)suspendWithOptions:(id)arg1;
 - (void)resumeWithOptions:(id)arg1;
 - (void)setIsValid:(bool)arg1;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

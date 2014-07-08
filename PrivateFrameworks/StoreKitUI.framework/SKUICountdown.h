@@ -62,11 +62,11 @@
 - (id)fontColor;
 - (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setRate:(long long)arg1;
+- (long long)rate;
 - (id)endDate;
 - (void)setDateFormat:(unsigned long long)arg1;
 - (id)startDate;
-- (void)setRate:(long long)arg1;
-- (long long)rate;
 - (void)setType:(long long)arg1;
 - (long long)type;
 - (void)setURL:(id)arg1;

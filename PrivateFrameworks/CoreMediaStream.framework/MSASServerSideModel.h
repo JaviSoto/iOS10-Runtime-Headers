@@ -28,6 +28,7 @@
 @property MSASStateMachine * MSASCounterpartInstance;
 
 
+- (id)invitations;
 - (void)performBlockOnObservers:(id)arg1;
 - (void)removeCommandsUpToCommandIndex:(long long)arg1;
 - (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(long long*)arg3;
@@ -233,7 +234,6 @@
 - (id)invitationWithGUID:(id)arg1;
 - (id)invitationForAlbumWithGUID:(id)arg1;
 - (id)invitationGUIDs;
-- (id)invitations;
 - (id)accessControlWithGUID:(id)arg1;
 - (id)accessControlGUIDsForAlbumWithGUID:(id)arg1;
 - (id)accessControlsForAlbumWithGUID:(id)arg1;

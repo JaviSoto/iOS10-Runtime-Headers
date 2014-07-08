@@ -94,6 +94,7 @@
 - (bool)_allowSelectionWithinMoreList;
 - (void)setCustomizableViewControllers:(id)arg1;
 - (void)setSelectedIndex:(unsigned long long)arg1;
+- (id)_viewControllerForSelectAtIndex:(unsigned long long)arg1;
 - (id)_existingMoreNavigationController;
 - (id)_viewControllersInTabBar;
 - (unsigned long long)selectedIndex;
@@ -108,6 +109,7 @@
 - (id)customizableViewControllers;
 - (void)_setTabBarPosition:(long long)arg1;
 - (void)_rebuildTabBarItemsAnimated:(bool)arg1;
+- (void)_updateLayoutForTraitCollection:(id)arg1;
 - (bool)_isBarHidden;
 - (void)_setTabBarVisualAltitude;
 - (void)_prepareTabBar;
@@ -165,12 +167,14 @@
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (bool)_shouldPersistViewWhenCoding;
 - (bool)_isPresentationContextByDefault;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)_setAccessoryView:(id)arg1;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_setInteractor:(id)arg1;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;

@@ -41,9 +41,6 @@
 @property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
 
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (long long)status;
 - (void)transitionAssetWriterAndAllInputsToFailedStatusWithError:(id)arg1;
 - (id)weakReferenceToAssetWriterInput;
 - (id)associatedInputsWithTrackAssociationType:(id)arg1;
@@ -96,6 +93,9 @@
 - (float)preferredVolume;
 - (void)setExtendedLanguageTag:(id)arg1;
 - (id)outputSettings;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (long long)status;
 - (int)trackID;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)mediaType;

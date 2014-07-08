@@ -22,9 +22,10 @@
 - (bool)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
 - (void)setBackingAccountStore:(id)arg1;
 - (id)backingAccountStore;
+- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
 - (void)setClientBundleID:(id)arg1 withHandler:(id)arg2;
-- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
+- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(bool)arg3 completion:(id)arg4;

@@ -5,9 +5,11 @@
 @interface OS_voucher : OS_object <OS_voucher> {
 }
 
++ (void)load;
 
 - (id)init;
 - (id)debugDescription;
 - (void)_dispose;
+- (void)_xref_dispose;
 
 @end

@@ -31,11 +31,11 @@
 - (bool)scheduleCallback;
 - (void)_performCallback;
 - (id)_callbackThread;
-- (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
-     /* Encoded args for previous method: v24@0:8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}16 */
-
 - (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
      /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}16@0:8 */
+
+- (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
+     /* Encoded args for previous method: v24@0:8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}16 */
 
 - (struct AOSAccount { }*)account;
 - (void)setAccount:(struct AOSAccount { }*)arg1;

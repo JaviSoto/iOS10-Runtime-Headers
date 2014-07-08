@@ -7,6 +7,7 @@
 @interface AVSampleBufferDisplayLayerInternal : NSObject  {
     CALayer *contentLayer;
     struct OpaqueFigVideoQueue { } *videoQueue;
+    booloutputObscured;
     long long status;
     NSError *error;
     NSString *videoGravity;
@@ -28,6 +29,7 @@
     AVMediaDataRequester *mediaDataRequester;
     boolaboveHighWaterLevel;
     NSObject<OS_dispatch_queue> *serialQueue;
+    AVWeakReference *weakReferenceToSelf;
     AVWeakReference *weakReferenceToSynchronizer;
     booladdedToSynchronizer;
     boolcontrolTimebaseSetByUserIsInUse;

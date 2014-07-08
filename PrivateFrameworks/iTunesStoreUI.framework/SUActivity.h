@@ -20,8 +20,8 @@
 - (void)setActivityImage:(id)arg1;
 - (void)setActivityTitle:(id)arg1;
 - (void)setActivityType:(id)arg1;
-- (void)dealloc;
 - (id)activityType;
+- (void)dealloc;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setActivityViewController:(id)arg1;
 - (id)activityViewController;

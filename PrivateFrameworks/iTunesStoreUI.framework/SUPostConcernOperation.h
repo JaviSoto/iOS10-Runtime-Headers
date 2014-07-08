@@ -18,8 +18,8 @@
 - (id)concern;
 - (void)setConcern:(id)arg1;
 - (id)initWithConcern:(id)arg1;
-- (void)setCommentText:(id)arg1;
 - (id)commentText;
+- (void)setCommentText:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (unsigned long long)itemIdentifier;
 - (id)_httpBody;

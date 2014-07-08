@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView, CADisplayLink, <UIDynamicAnimatorDelegate>, CALayer, NSMutableDictionary, NSArray, <_UIDynamicReferenceSystem>, NSMutableSet, PKExtendedPhysicsWorld, NSMutableArray;
+@class UIView, CADisplayLink, <UIDynamicAnimatorDelegate>, CALayer, NSMutableDictionary, UIDynamicAnimatorTicker, <_UIDynamicReferenceSystem>, NSMutableSet, PKExtendedPhysicsWorld, NSMutableArray, NSArray;
 
 @interface UIDynamicAnimator : NSObject  {
     PKExtendedPhysicsWorld *_world;
@@ -57,12 +57,14 @@
     <UIDynamicAnimatorDelegate> *_delegate;
     bool_disableDisplayLink;
     double _speed;
+    UIDynamicAnimatorTicker *_ticker;
 }
 
 @property(readonly) UIView * referenceView;
 @property(copy,readonly) NSArray * behaviors;
 @property(getter=isRunning,readonly) bool running;
 @property <UIDynamicAnimatorDelegate> * delegate;
+@property(retain) UIDynamicAnimatorTicker * ticker;
 
 + (void)initialize;
 + (id)_allDynamicAnimators;
@@ -74,7 +76,6 @@
 - (void)_setRunning:(bool)arg1;
 - (void)didEndContact:(id)arg1;
 - (void)didBeginContact:(id)arg1;
-- (id)_world;
 - (id)behaviors;
 - (void)_start;
 - (bool)isRunning;
@@ -116,6 +117,8 @@
 - (void)_reportBeginContacts;
 - (void)_reevaluateImplicitBounds;
 - (void)_evaluateLocalBehaviors;
+- (id)ticker;
+- (void)setTicker:(id)arg1;
 - (void)_stop;
 - (bool)_isWorldActive;
 - (void)_defaultMapper:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 angle:(double)arg3 itemType:(unsigned long long)arg4;
@@ -144,6 +147,7 @@
 - (void)removeAllBehaviors;
 - (void)_unregisterBodyForItem:(id)arg1 action:(id)arg2;
 - (id)_registerBodyForItem:(id)arg1;
+- (id)_world;
 - (void)_tickle;
 - (id)_bodyForItem:(id)arg1;
 - (id)recursiveDescription;

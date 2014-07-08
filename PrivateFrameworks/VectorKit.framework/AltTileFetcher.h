@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOTileLoader;
+@class NSString, GEOTileLoader;
 
 @interface AltTileFetcher : NSObject  {
     GEOTileLoader *_geoTileLoader;
@@ -23,6 +23,7 @@
         void *mMutex; 
     } _mutex;
     unsigned int _numDownloads;
+    NSString *_tileLoaderClientIdentifier;
 }
 
 

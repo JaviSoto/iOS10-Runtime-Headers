@@ -33,8 +33,8 @@
 @property(readonly) UITextRangeView * rangeView;
 
 
-- (bool)visible;
 - (void)deactivate;
+- (bool)visible;
 - (void)detach;
 - (void)activate;
 - (void)setVisible:(bool)arg1;
@@ -56,7 +56,6 @@
 - (void)touchCaretBlinkTimer;
 - (void)showCaret:(int)arg1;
 - (id)caretView;
-- (void)installIfNecessary;
 - (void)clearRange;
 - (void)clearCaretBlinkTimer;
 - (void)clearCaret;
@@ -94,6 +93,7 @@
 - (void)showSelectionCommands;
 - (void)hideSelectionCommands;
 - (void)configureForHighlightMode;
+- (void)installIfNecessary;
 - (id)initWithInteractionAssistant:(id)arg1;
 - (void)layoutChangedByScrolling:(bool)arg1;
 - (void)startCaretBlinkIfNeeded;

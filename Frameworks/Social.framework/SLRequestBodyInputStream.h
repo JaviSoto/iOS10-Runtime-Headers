@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, <NSStreamDelegate>, SLRequestMultiPartInputStream;
+@class NSArray, SLRequestBodyInputStream, SLRequestMultiPartInputStream, <NSStreamDelegate>;
 
 @interface SLRequestBodyInputStream : NSInputStream  {
     NSArray *_inputStreams;
@@ -28,6 +28,7 @@
         int (*release)(); 
         int (*copyDescription)(); 
     } _clientContext;
+    SLRequestBodyInputStream *_selfReferenceDuringStreamEventTrigger;
     <NSStreamDelegate> *_delegate;
 }
 
@@ -35,9 +36,9 @@
 @property(readonly) unsigned long long totalBytes;
 
 
+- (unsigned long long)bytesRead;
 - (id)nextStream;
 - (id)initWithMultiParts:(id)arg1 multiPartBoundary:(id)arg2;
-- (unsigned long long)bytesRead;
 - (void)_streamEventTrigger;
 - (void)_scheduleCallback;
 - (unsigned long long)totalBytes;

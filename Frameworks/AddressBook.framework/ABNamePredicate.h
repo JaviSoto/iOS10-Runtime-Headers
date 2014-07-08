@@ -28,6 +28,7 @@
 @property bool matchPreferredName;
 
 
+- (void*)group;
 - (void*)source;
 - (id)sources;
 - (id)groups;
@@ -48,13 +49,12 @@
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)queryWhereString;
 - (void)setAddressBook:(void*)arg1;
-- (void*)group;
+- (void)setName:(id)arg1;
 - (void)setSource:(void*)arg1;
 - (id)init;
 - (void)setGroup:(void*)arg1;
 - (id)name;
 - (bool)isValid;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)predicateFormat;
 

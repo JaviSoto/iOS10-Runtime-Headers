@@ -31,8 +31,8 @@
 - (id)indexString;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
-- (id)productName;
 - (void)setBackgroundColor:(id)arg1;
+- (id)productName;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void).cxx_destruct;
 - (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

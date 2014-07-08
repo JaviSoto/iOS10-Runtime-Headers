@@ -20,6 +20,7 @@
 }
 
 
+- (void)stopWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)setVolume:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getVolumeWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)setRate:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
@@ -27,7 +28,6 @@
 - (void)setPosition:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPositionWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getPlaybackInfoWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)stopWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)playWithParams:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)authorizeWithPICRequest:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getSlideshowInfoWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;

@@ -10,8 +10,8 @@
 
 + (id)imageNamed:(id)arg1;
 
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithUIImage:(id)arg1;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (void)dealloc;

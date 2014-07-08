@@ -6,9 +6,12 @@
 }
 
 
-- (unsigned long long)_AVTypesForMediaItem:(id)arg1;
 - (void)_restrictQueryToLocalContent:(id)arg1;
+- (id)_storePlatformKindForMediaItem:(id)arg1;
+- (unsigned long long)_AVTypesForMediaItem:(id)arg1;
+- (id)_newDefaultQuery;
 - (void)enumerateStatesForLibraryItems:(id)arg1 usingBlock:(id)arg2;
+- (id)exposedPlatformItemKinds;
 - (bool)performActionForLibraryItem:(id)arg1;
 - (id)stateForLibraryItem:(id)arg1;
 

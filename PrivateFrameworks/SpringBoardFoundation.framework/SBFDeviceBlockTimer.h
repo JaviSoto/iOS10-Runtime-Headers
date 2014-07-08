@@ -31,6 +31,7 @@
 @property bool enabled;
 
 
+- (id)titleText;
 - (id)cachedLocalizedPlatformName;
 - (id)deviceLockController;
 - (id)subtitleText;
@@ -40,7 +41,6 @@
 - (void)setCachedLocalizedPlatformName:(id)arg1;
 - (void)_scheduleTimerIfNecessaryAndUpdateState;
 - (void)setDeviceLockController:(id)arg1;
-- (id)titleText;
 - (void)_clearTimer;
 - (bool)enabled;
 - (void)setEnabled:(bool)arg1;

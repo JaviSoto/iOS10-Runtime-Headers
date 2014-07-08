@@ -20,7 +20,8 @@
 - (id)identifier;
 - (id)display;
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
-- (void)detachContext:(id)arg1;
+- (void)detachSceneContext:(id)arg1;
+- (void)attachSceneContext:(id)arg1;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (id)contexts;
 - (id)clientSettings;
@@ -32,6 +33,7 @@
 - (id)_init;
 - (void)updateClientSettingsWithBlock:(id)arg1;
 - (void)sendActions:(id)arg1;
+- (void)detachContext:(id)arg1;
 - (void)attachContext:(id)arg1;
 - (id)fbsDisplay;
 - (void)updateUIClientSettingsWithBlock:(id)arg1;

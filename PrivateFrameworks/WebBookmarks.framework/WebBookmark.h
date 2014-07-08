@@ -150,9 +150,9 @@
 - (id)serverID;
 - (unsigned int)parentID;
 - (void)setAddress:(id)arg1;
+- (void)setExtraAttributes:(id)arg1;
 - (bool)isInserted;
 - (bool)isEditable;
-- (void)setExtraAttributes:(id)arg1;
 - (unsigned int)identifier;
 - (id)UUID;
 - (id)extraAttributes;

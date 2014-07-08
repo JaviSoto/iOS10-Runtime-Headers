@@ -16,12 +16,12 @@
 - (id)initWithData:(id)arg1 encoding:(unsigned long long)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
 - (id)initWithICSString:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (id)ICSChecksumStringForVersion:(int)arg1;
-- (id)initWithCalendar:(id)arg1;
 - (id)ICSStringWithOptions:(unsigned long long)arg1;
 - (id)ICSDataWithOptions:(unsigned long long)arg1;
 - (id)initWithData:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (id)calendar;
 - (void)dealloc;
 - (id)initWithContentsOfURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)initWithCalendar:(id)arg1;
 
 @end

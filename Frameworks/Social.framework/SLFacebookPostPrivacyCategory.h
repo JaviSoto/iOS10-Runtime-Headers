@@ -15,8 +15,8 @@
 
 - (void)setAudiencePrivacySettings:(id)arg1;
 - (id)audiencePrivacySettings;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void).cxx_destruct;
 
 @end

@@ -32,6 +32,7 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void)_reloadView;
+- (void)scrollToTop;
 - (void)_recordClickEventForEditorialAtIndex:(long long)arg1;
 - (void)_recordClickEventForItemAtIndex:(long long)arg1;
 - (void)_spellCorrectionAction:(id)arg1;
@@ -62,7 +63,6 @@
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (id)facetSelections;
 - (void)_reloadOrientation:(long long)arg1;
-- (void)scrollToTop;
 - (id)_visibleMetricsImpressionsString;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)setMetricsController:(id)arg1;

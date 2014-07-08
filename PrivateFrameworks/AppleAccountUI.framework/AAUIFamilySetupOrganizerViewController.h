@@ -12,6 +12,8 @@
 
 
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
+- (void)_cancelButtonWasTapped:(id)arg1;
+- (id)_createCancelButton;
 - (bool)shouldShowInviteeInstructions;
 - (void)continueButtonWasTapped:(id)arg1;
 - (id)titleForContinuebutton;
@@ -20,5 +22,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 
 @end

@@ -17,11 +17,11 @@
 @property(retain) UIImagePickerController * imagePickerController;
 
 
+- (id)activityType;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)activityType;
 - (void)setPerson:(void*)arg1;
 - (void*)person;
 - (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;

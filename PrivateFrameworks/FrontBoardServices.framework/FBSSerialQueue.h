@@ -13,9 +13,9 @@
 + (id)queueWithDispatchQueue:(id)arg1;
 + (id)queueWithMainRunLoopModes:(id)arg1;
 
+- (void)assertOnQueue;
 - (id)_initWithDispatchQueue:(id)arg1 mainRunLoopModes:(id)arg2;
 - (void)performAsync:(id)arg1;
-- (void)assertOnQueue;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

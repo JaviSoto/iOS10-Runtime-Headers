@@ -12,29 +12,27 @@
  */
 
 @interface SCNPhysicsNoiseField : SCNPhysicsField  {
-    double _scale;
-    long long _octaves;
-    double _speed;
+    double _smoothness;
+    double _animationSpeed;
 }
 
-@property long long octaves;
-@property double scale;
-@property double speed;
+@property double smoothness;
+@property double animationSpeed;
 
 + (id)SCNJSExportProtocol;
 + (bool)supportsSecureCoding;
 
-- (long long)octaves;
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_createField;
      /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
 
-- (void)setOctaves:(long long)arg1;
-- (void)setSpeed:(double)arg1;
-- (double)speed;
-- (void)setScale:(double)arg1;
+- (void)setAnimationSpeed:(double)arg1;
+- (double)animationSpeed;
+- (void)setSmoothness:(double)arg1;
+- (double)smoothness;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (double)scale;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

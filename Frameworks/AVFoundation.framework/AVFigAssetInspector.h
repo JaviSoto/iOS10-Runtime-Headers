@@ -23,7 +23,6 @@
 @property(readonly) unsigned long long downloadToken;
 
 
-- (id)creationDate;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (bool)_hasQTSaveRestriction;
@@ -54,10 +53,11 @@
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)propertyListForProxy;
 - (struct OpaqueFigAsset { }*)_figAsset;
+- (id)creationDate;
+- (id)resolvedURL;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)commonMetadata;
-- (id)resolvedURL;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)URL;

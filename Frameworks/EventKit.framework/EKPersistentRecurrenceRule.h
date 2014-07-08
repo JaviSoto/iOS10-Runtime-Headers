@@ -37,9 +37,7 @@
 - (void)setFirstDayOfTheWeek:(long long)arg1;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
-- (id)monthsOfTheYear;
 - (id)setPositions;
-- (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
@@ -48,11 +46,13 @@
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
-- (id)owner;
+- (id)daysOfTheMonth;
+- (id)monthsOfTheYear;
 - (int)entityType;
+- (id)owner;
+- (id)_helper;
 - (id)endDate;
 - (bool)isDirty;
-- (id)_helper;
 - (id)UUID;
 - (void)setFrequency:(int)arg1;
 - (int)frequency;

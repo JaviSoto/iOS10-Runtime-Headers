@@ -53,7 +53,7 @@
 @property int cacheControl;
 
 
-- (void)setTtl:(unsigned int)arg1;
+- (bool)hasStatus;
 - (int)valuesAvailable;
 - (void)setHasVersion:(bool)arg1;
 - (bool)hasValuesAvailable;
@@ -74,10 +74,9 @@
 - (id)attribution;
 - (bool)hasAttribution;
 - (bool)hasSource;
-- (id)versionDomains;
 - (bool)hasVersion;
+- (id)versionDomains;
 - (unsigned int)ttl;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (int)cacheControl;
 - (bool)hasCacheControl;
@@ -86,12 +85,14 @@
 - (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (void)setTtl:(unsigned int)arg1;
 - (void)setHasType:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (bool)hasType;
 - (void)setStartIndex:(int)arg1;
 - (int)startIndex;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)valueAtIndex:(unsigned long long)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

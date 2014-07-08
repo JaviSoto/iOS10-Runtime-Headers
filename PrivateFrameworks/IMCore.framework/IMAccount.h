@@ -174,7 +174,6 @@
 - (id)profileInfo;
 - (long long)registrationStatus;
 - (id)initWithService:(id)arg1;
-- (unsigned long long)capabilities;
 - (bool)justLoggedIn;
 - (id)loginIMHandle;
 - (id)accountSubtypeInfo;
@@ -417,6 +416,7 @@
 - (bool)_isUsableForSending;
 - (bool)isOperational;
 - (void)setUniqueID:(id)arg1;
+- (unsigned long long)capabilities;
 - (id)authorizationToken;
 - (void)loadFromDictionary:(id)arg1;
 - (bool)useSSL;

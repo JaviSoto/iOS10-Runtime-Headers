@@ -2,31 +2,31 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, _UIActivityFunctionImageView;
+@class UILabel, UIImageView;
 
 @interface _UIActivityGroupActivityCell : UICollectionViewCell  {
-    bool_darkStyleOnLegacyApp;
-    _UIActivityFunctionImageView *_activityImageView;
-    UILabel *_activityLabel;
+    UILabel *_titleLabel;
+    UIImageView *_imageView;
+    UIImageView *_highlightedImageView;
 }
 
-@property bool darkStyleOnLegacyApp;
-@property(retain) _UIActivityFunctionImageView * activityImageView;
-@property(retain) UILabel * activityLabel;
+@property(retain) UILabel * titleLabel;
+@property(retain) UIImageView * imageView;
+@property(retain) UIImageView * highlightedImageView;
 
 
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (id)activityLabel;
-- (id)activityImageView;
-- (void)reloadImage:(id)arg1;
-- (void)setActivityLabel:(id)arg1;
-- (void)setActivityImageView:(id)arg1;
+- (void)initHighlightedImageViewIfNeeded;
+- (void)updateHighlightedImageViewIfNeeded;
+- (id)highlightedImageView;
+- (void)setHighlightedImageView:(id)arg1;
 - (id)draggingView;
-- (void)setActivity:(id)arg1 withCustomTitle:(id)arg2;
-- (void)setDarkStyleOnLegacyApp:(bool)arg1;
-- (bool)darkStyleOnLegacyApp;
+- (void)setImageView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (id)imageView;
 - (void)prepareForReuse;
 - (void)setHighlighted:(bool)arg1;
-- (void)layoutSubviews;
+- (id)titleLabel;
 
 @end

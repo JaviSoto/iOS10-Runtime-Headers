@@ -22,7 +22,6 @@
 + (id)_exportedInterface;
 
 - (void)dealloc;
-- (id)documentStorageURL;
 - (id)providerIdentifier;
 - (id)validTypes;
 - (id)originalURL;
@@ -32,6 +31,7 @@
 - (void)_setProviderIdentifier:(id)arg1;
 - (void)_setDocumentStorageURL:(id)arg1;
 - (void)_setUploadURL:(id)arg1;
+- (id)documentStorageURL;
 - (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id)arg2;
 - (unsigned long long)documentPickerMode;
 - (void)_setUploadURL:(id)arg1 withSandboxExtension:(id)arg2;

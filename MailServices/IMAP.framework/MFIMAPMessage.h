@@ -26,9 +26,9 @@
 - (id)originalMailboxURL;
 - (bool)hasTemporaryUid;
 - (void)setPreferredEncoding:(unsigned int)arg1;
-- (unsigned long long)messageSize;
 - (bool)isMessageContentsLocallyAvailable;
 - (void)setUid:(unsigned int)arg1;
+- (unsigned long long)messageSize;
 - (id)messageID;
 - (void)dealloc;
 - (id)description;

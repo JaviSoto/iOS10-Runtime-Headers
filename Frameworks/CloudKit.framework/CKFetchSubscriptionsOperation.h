@@ -30,9 +30,9 @@
 
 + (id)fetchAllSubscriptionsOperation;
 
+- (id)subscriptions;
 - (void)setSubscriptionsBySubscriptionID:(id)arg1;
 - (void)setSubscriptions:(id)arg1;
-- (id)subscriptions;
 - (id)subscriptionsBySubscriptionID;
 - (id)fetchSubscriptionCompletionBlock;
 - (bool)isFetchAllSubscriptionsOperation;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURL, <WKHistoryDelegatePrivate>, <_WKFormDelegate>, WKBrowsingContextHandle, <WKNavigationDelegate>, UIScrollView, NSString, WKWebViewConfiguration, <_WKFindDelegate>, WKBackForwardList, NSArray, NSData, <WKUIDelegate>;
+@class NSURL, <WKHistoryDelegatePrivate>, <_WKFormDelegate>, WKBrowsingContextHandle, <WKNavigationDelegate>, UIScrollView, NSString, WKWebViewConfiguration, <_WKFindDelegate>, WKBackForwardList, NSArray, _WKWebViewPrintFormatter, NSData, <WKUIDelegate>;
 
 @interface WKWebView : UIView <UIScrollViewDelegate> {
     struct RetainPtr<WKWebViewConfiguration> { 
@@ -72,6 +72,7 @@
     long long _interfaceOrientationOverride;
     bool_overridesInterfaceOrientation;
     bool_needsResetViewStateAfterCommitLoadForMainFrame;
+    unsigned long long _firstPaintAfterCommitLoadTransactionID;
     bool_isAnimatingResize;
     struct CATransform3D { 
         double m11; 
@@ -95,6 +96,24 @@
         void *m_ptr; 
     } _resizeAnimationView;
     double _lastAdjustmentForScroller;
+    bool_needsToRestoreExposedRect;
+    struct FloatRect { 
+        struct FloatPoint { 
+            float m_x; 
+            float m_y; 
+        } m_location; 
+        struct FloatSize { 
+            float m_width; 
+            float m_height; 
+        } m_size; 
+    } _exposedRectToRestore;
+    bool_needsToRestoreUnobscuredCenter;
+    struct FloatPoint { 
+        float m_x; 
+        float m_y; 
+    } _unobscuredCenterToRestore;
+    unsigned long long _firstTransactionIDAfterPageRestore;
+    double _scaleToRestore;
     struct unique_ptr<WebKit::ViewGestureController, std::__1::default_delete<WebKit::ViewGestureController> > { 
         struct __compressed_pair<WebKit::ViewGestureController *, std::__1::default_delete<WebKit::ViewGestureController> > { 
             struct ViewGestureController {} *__first_; 
@@ -126,11 +145,11 @@
 @property(readonly) NSURL * _unreachableURL;
 @property(readonly) NSArray * _certificateChain;
 @property(readonly) NSURL * _committedURL;
+@property(readonly) NSString * _MIMEType;
 @property(setter=_setApplicationNameForUserAgent:,copy) NSString * _applicationNameForUserAgent;
 @property(setter=_setCustomUserAgent:,copy) NSString * _customUserAgent;
 @property(readonly) int _webProcessIdentifier;
 @property(readonly) NSData * _sessionState;
-@property(setter=_setPrivateBrowsingEnabled:) bool _privateBrowsingEnabled;
 @property(setter=_setAllowsRemoteInspection:) bool _allowsRemoteInspection;
 @property(setter=_setAddsVisitedLinks:) bool _addsVisitedLinks;
 @property(setter=_setMinimumLayoutSizeOverride:) struct CGSize { double x1; double x2; } _minimumLayoutSizeOverride;
@@ -144,6 +163,7 @@
 @property(readonly) NSData * _dataForDisplayedPDF;
 @property(readonly) NSString * _suggestedFilenameForDisplayedPDF;
 @property(readonly) double _viewportMetaTagWidth;
+@property(readonly) _WKWebViewPrintFormatter * _webViewPrintFormatter;
 @property(setter=_setPaginationMode:) long long _paginationMode;
 @property(setter=_setPaginationBehavesLikeColumns:) bool _paginationBehavesLikeColumns;
 @property(setter=_setPageLength:) double _pageLength;
@@ -154,13 +174,14 @@
 @property(setter=_setPageZoomFactor:) double _pageZoomFactor;
 @property(setter=_setFindDelegate:) <_WKFindDelegate> * _findDelegate;
 @property(setter=_setFormDelegate:) <_WKFormDelegate> * _formDelegate;
+@property(getter=_isDisplayingStandaloneImageDocument,readonly) bool _displayingStandaloneImageDocument;
 @property(setter=_setPrintedDocument:) struct CGPDFDocument { }* _printedDocument;
-@property(readonly) WKWebViewConfiguration * configuration;
+@property(copy,readonly) WKWebViewConfiguration * configuration;
 @property <WKNavigationDelegate> * navigationDelegate;
 @property <WKUIDelegate> * UIDelegate;
 @property(readonly) WKBackForwardList * backForwardList;
-@property(readonly) NSString * title;
-@property(readonly) NSURL * URL;
+@property(copy,readonly) NSString * title;
+@property(copy,readonly) NSURL * URL;
 @property(getter=isLoading,readonly) bool loading;
 @property(readonly) double estimatedProgress;
 @property(readonly) bool hasOnlySecureContent;
@@ -169,24 +190,27 @@
 @property bool allowsBackForwardNavigationGestures;
 @property(readonly) UIScrollView * scrollView;
 @property(setter=_setUsesMinimalUI:) bool _usesMinimalUI;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _computedContentInset;
 
 
 - (id)_reload;
 - (id)_handle;
+- (void)setNavigationDelegate:(id)arg1;
+- (id)navigationDelegate;
 - (void)_setPrintedDocument:(struct CGPDFDocument { }*)arg1;
 - (void)_endPrinting;
-- (long long)_computePageCountAndStartDrawingToPDFWithPrintInfo:(const struct PrintInfo { float x1; float x2; float x3; }*)arg1 firstPage:(unsigned int)arg2 computedTotalScaleFactor:(double*)arg3;
+- (long long)_computePageCountAndStartDrawingToPDFForFrame:(id)arg1 printInfo:(const struct PrintInfo { float x1; float x2; float x3; }*)arg2 firstPage:(unsigned int)arg3 computedTotalScaleFactor:(double*)arg4;
+- (id)_webViewPrintFormatter;
 - (id)_suggestedFilenameForDisplayedPDF;
 - (id)_dataForDisplayedPDF;
 - (id)_viewForFindUI;
 - (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize { double x1; double x2; })arg1 minimumLayoutSizeForMinimalUI:(struct CGSize { double x1; double x2; })arg2 maximumUnobscuredSizeOverride:(struct CGSize { double x1; double x2; })arg3;
 - (void)_snapshotRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 intoImageOfWidth:(double)arg2 completionHandler:(id)arg3;
 - (void)_setOverlaidAccessoryViewsInset:(struct CGSize { double x1; double x2; })arg1;
-- (void)_hideInspectorIndication;
-- (void)_showInspectorIndication;
 - (void)_endAnimatedResize;
 - (void)_beginAnimatedResizeWithUpdates:(id)arg1;
 - (void)_setInterfaceOrientationOverride:(long long)arg1;
+- (bool)_isDisplayingStandaloneImageDocument;
 - (void)_hideFindUI;
 - (void)_findString:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
 - (void)_countStringMatches:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
@@ -198,21 +222,22 @@
 - (double)_textZoomFactor;
 - (bool)_supportsTextZoom;
 - (void)_getWebArchiveDataWithCompletionHandler:(id)arg1;
-- (void)_runJavaScriptInMainFrame:(id)arg1;
+- (void)_getMainResourceDataWithCompletionHandler:(id)arg1;
 - (void)_setObservedRenderingProgressEvents:(unsigned long long)arg1;
 - (void)_setAddsVisitedLinks:(bool)arg1;
 - (bool)_addsVisitedLinks;
 - (void)_setAllowsRemoteInspection:(bool)arg1;
 - (bool)_allowsRemoteInspection;
-- (bool)_privateBrowsingEnabled;
 - (void)_restoreFromSessionState:(id)arg1;
 - (id)_sessionState;
+- (void)_didRelaunchProcess;
 - (void)_killWebContentProcess;
 - (int)_webProcessIdentifier;
 - (void)_setCustomUserAgent:(id)arg1;
 - (id)_customUserAgent;
 - (void)_setApplicationNameForUserAgent:(id)arg1;
 - (id)_applicationNameForUserAgent;
+- (id)_MIMEType;
 - (id)_committedURL;
 - (id)_certificateChain;
 - (void)_loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
@@ -230,7 +255,9 @@
 - (unsigned long long)_observedRenderingProgressEvents;
 - (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(bool)arg6 forceScroll:(bool)arg7;
 - (void)_scrollToContentOffset:(struct FloatPoint { float x1; float x2; })arg1;
-- (struct ViewSnapshot { unsigned int x1; struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_2_1; } x_2_1_1; } x2; unsigned long long x3; float x4; struct IntSize { int x_5_1_1; int x_5_1_2; } x5; unsigned long long x6; })_takeViewSnapshot;
+- (struct ViewSnapshot { unsigned int x1; struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_2_1; } x_2_1_1; } x2; unsigned long long x3; float x4; struct IntSize { int x_5_1_1; int x_5_1_2; } x5; unsigned long long x6; struct Color { unsigned int x_7_1_1; boolx_7_1_2; } x7; })_takeViewSnapshot;
+- (void)_restorePageStateToUnobscuredCenter:(struct FloatPoint { float x1; float x2; })arg1 scale:(double)arg2;
+- (void)_restorePageStateToExposedRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scale:(double)arg2;
 - (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; struct Vector<WebKit::RemoteLayerTreeTransaction::LayerCreationProperties, 0, WTF::CrashOnOverflow> { struct LayerCreationProperties {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow> { unsigned long long *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow> { unsigned long long *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow> { unsigned long long *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; struct IntSize { int x_8_1_1; int x_8_1_2; } x8; struct Color { unsigned int x_9_1_1; boolx_9_1_2; } x9; double x10; double x11; double x12; unsigned long long x13; unsigned long long x14; boolx15; boolx16; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
@@ -242,16 +269,16 @@
 - (void)_setViewportMetaTagWidth:(float)arg1;
 - (void)_didFinishLoadingDataForCustomContentProviderWithSuggestedFilename:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 data:(id)arg2;
 - (void)_setHasCustomContentView:(bool)arg1 loadedMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg2;
+- (void)evaluateJavaScript:(id)arg1 completionHandler:(id)arg2;
 - (bool)hasOnlySecureContent;
 - (id)goToBackForwardListItem:(id)arg1;
-- (void)setNavigationDelegate:(id)arg1;
-- (id)navigationDelegate;
 - (bool)usesStandardContentView;
 - (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3;
 - (bool)_scrollToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 origin:(struct FloatPoint { float x1; float x2; })arg2 minimumScrollDistance:(float)arg3;
 - (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForUserInteraction;
 - (void)_updateScrollViewBackground;
+- (struct CGPoint { double x1; double x2; })_adjustedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_contentSizeCategory;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 configuration:(id)arg2;
@@ -260,6 +287,7 @@
 - (void)_endInteractiveObscuredInsetsChange;
 - (void)_beginInteractiveObscuredInsetsChange;
 - (void)_setObscuredInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_obscuredInsets;
 - (struct CGSize { double x1; double x2; })_minimumLayoutSizeOverride;
 - (bool)allowsBackForwardNavigationGestures;
 - (void)setAllowsBackForwardNavigationGestures:(bool)arg1;
@@ -267,7 +295,7 @@
 - (void)_didFinishScrolling;
 - (void)_updateVisibleContentRects;
 - (id)browsingContextController;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_obscuredInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_computedContentInset;
 - (id)_remoteObjectRegistry;
 - (bool)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct FloatPoint { float x1; float x2; })arg2 fitEntireRect:(bool)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1;
@@ -289,7 +317,6 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setPrivateBrowsingEnabled:(bool)arg1;
 - (id)configuration;
 - (id)initWithCoder:(id)arg1;
 - (void)stopLoading;
@@ -312,6 +339,7 @@
 - (void)_frameOrBoundsChanged;
 - (bool)canGoForward;
 - (bool)canGoBack;
+- (id)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (Class)_printFormatterClass;
 - (id)scrollView;
 - (void)_keyboardWillHide:(id)arg1;

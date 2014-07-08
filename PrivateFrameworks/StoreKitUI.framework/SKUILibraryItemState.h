@@ -2,24 +2,56 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
+@class NSString, NSNumber;
+
 @interface SKUILibraryItemState : NSObject <NSCopying> {
     long long _availability;
     unsigned long long _avTypes;
-    bool_isPreview;
+    NSString *_bundleIdentifier;
+    NSString *_bundleVersion;
     bool_preview;
+    bool_rental;
+    NSNumber *_storeAccountIdentifier;
+    NSString *_storeFlavorIdentifier;
+    NSString *_storePlatformKind;
+    NSNumber *_storeVersionIdentifier;
 }
 
 @property long long availability;
 @property unsigned long long AVTypes;
+@property(copy) NSString * bundleIdentifier;
+@property(copy) NSString * bundleVersion;
 @property(getter=isPreview) bool preview;
+@property(getter=isRental) bool rental;
+@property(copy) NSNumber * storeAccountIdentifier;
+@property(copy) NSString * storeFlavorIdentifier;
+@property(copy) NSString * storePlatformKind;
+@property(copy) NSNumber * storeVersionIdentifier;
 
 
+- (id)initWithApplication:(id)arg1;
+- (void)setStoreVersionIdentifier:(id)arg1;
+- (id)storeVersionIdentifier;
+- (void)setStoreFlavorIdentifier:(id)arg1;
+- (id)storeFlavorIdentifier;
 - (void)setPreview:(bool)arg1;
+- (void)setStorePlatformKind:(id)arg1;
+- (void)setStoreAccountIdentifier:(id)arg1;
 - (void)setAVTypes:(unsigned long long)arg1;
 - (unsigned long long)AVTypes;
 - (bool)isPreview;
+- (id)newJavaScriptRepresentation;
+- (id)storePlatformKind;
 - (long long)availability;
 - (void)setAvailability:(long long)arg1;
+- (id)storeAccountIdentifier;
+- (bool)isRental;
+- (void)setRental:(bool)arg1;
+- (void)setBundleIdentifier:(id)arg1;
+- (void)setBundleVersion:(id)arg1;
+- (id)bundleIdentifier;
+- (id)bundleVersion;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 
 @end

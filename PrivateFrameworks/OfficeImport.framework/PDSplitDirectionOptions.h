@@ -10,7 +10,7 @@
 
 - (void)setInOut:(int)arg1;
 - (int)inOut;
-- (void)setOrientation:(int)arg1;
 - (int)orientation;
+- (void)setOrientation:(int)arg1;
 
 @end

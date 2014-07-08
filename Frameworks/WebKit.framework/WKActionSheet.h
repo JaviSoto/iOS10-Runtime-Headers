@@ -2,14 +2,20 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <UIActionSheetDelegate>, WKContentView, <WKActionSheetDelegate>;
+@class WKContentView, <WKActionSheetDelegate>;
 
-@interface WKActionSheet : UIActionSheet  {
+@interface WKActionSheet : UIAlertController  {
     <WKActionSheetDelegate> *_sheetDelegate;
-    <UIActionSheetDelegate> *_delegateWhileRotating;
     WKContentView *_view;
     unsigned long long _arrowDirections;
     bool_isRotating;
+    bool_readyToPresentAfterRotation;
+    struct RetainPtr<UIViewController> { 
+        void *m_ptr; 
+    } _presentedViewControllerWhileRotating;
+    struct RetainPtr<id<UIPopoverPresentationControllerDelegate> > { 
+        void *m_ptr; 
+    } _popoverPresentationControllerDelegateWhileRotating;
 }
 
 @property <WKActionSheetDelegate> * sheetDelegate;
@@ -20,7 +26,10 @@
 - (id)sheetDelegate;
 - (void)updateSheetPosition;
 - (void)dealloc;
+- (void).cxx_destruct;
+- (id).cxx_construct;
 - (unsigned long long)arrowDirections;
+- (void)_didRotateAndLayout;
 - (bool)presentSheetFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setArrowDirections:(unsigned long long)arg1;
 - (bool)presentSheet;

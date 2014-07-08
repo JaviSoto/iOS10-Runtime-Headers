@@ -22,10 +22,10 @@
 - (id)origRequest;
 - (id)destID;
 - (void)setDestID:(id)arg1;
+- (void)setSourceID:(id)arg1;
+- (id)sourceID;
 - (void)setStatus:(int)arg1;
 - (int)status;
-- (id)sourceID;
-- (void)setSourceID:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 

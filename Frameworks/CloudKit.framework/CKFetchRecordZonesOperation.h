@@ -34,9 +34,9 @@
 
 + (id)fetchAllRecordZonesOperation;
 
+- (id)recordZones;
 - (void)setRecordZonesByZoneID:(id)arg1;
 - (void)setRecordZones:(id)arg1;
-- (id)recordZones;
 - (id)initWithRecordZoneIDs:(id)arg1;
 - (void)setFetchRecordZonesCompletionBlock:(id)arg1;
 - (id)fetchAllRecordZonesError;

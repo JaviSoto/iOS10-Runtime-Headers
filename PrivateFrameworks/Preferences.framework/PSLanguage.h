@@ -17,12 +17,12 @@
 + (id)languageWithCode:(id)arg1 name:(id)arg2 localizedName:(id)arg3;
 
 - (bool)displayNamesAreEqual;
-- (id)localizedLanguageName;
 - (id)languageName;
 - (void)setLocalizedLanguageName:(id)arg1;
 - (void)setLanguageName:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (id)languageCode;
 - (void)dealloc;
+- (id)localizedLanguageName;
 
 @end

@@ -94,7 +94,10 @@
 - (bool)supportsImageURL:(id)arg1;
 - (long long)maximumVideoTimeLimit;
 - (long long)maximumVideoDataSize;
+- (long long)maximumVideoCount;
 - (long long)maximumImageDataSize;
+- (long long)maximumImageCount;
+- (long long)maximumURLCount;
 - (bool)isFirstClassService;
 - (long long)authenticationStyle;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
@@ -104,9 +107,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
-- (long long)maximumVideoCount;
-- (long long)maximumImageCount;
-- (long long)maximumURLCount;
 - (id)activityImage;
 - (id)activityTitle;
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSDate, GEODirectionsRouteRequest, GEORouteAttributes, GEOComposedRoute, GEOComposedWaypoint, <GEORouteHypothesizerUpdaterDelegate>, NSMutableArray, GEOLocation, GEORouteMatch, GEODirectionsRequestFeedback;
+@class GEODirectionsRouteRequest, <GEORouteHypothesizerUpdaterDelegate>, GEOMapRegion, NSDate, GEODirectionsRequestFeedback, GEOLocation, GEOComposedRoute, NSMutableArray, GEOComposedWaypoint, GEORouteMatch, GEORouteAttributes, NSLock;
 
 @interface GEORouteHypothesizerUpdater : NSObject  {
     <GEORouteHypothesizerUpdaterDelegate> *_delegate;
@@ -22,6 +22,7 @@
     bool_shouldThrottleReroutes;
     NSDate *_lastRerouteDate;
     unsigned long long _numThrottledReroutes;
+    NSLock *_requestLock;
 }
 
 @property <GEORouteHypothesizerUpdaterDelegate> * delegate;
@@ -40,6 +41,7 @@
 - (void)startUpdatingFromLocation:(id)arg1 existingRoute:(id)arg2 usualRouteData:(id)arg3;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 routeAttributes:(id)arg3;
 - (void)updateForLocation:(id)arg1;
+- (void)cancelCurrentRequest;
 - (bool)isTraveling;
 - (bool)hasArrived;
 - (id)routeMatch;

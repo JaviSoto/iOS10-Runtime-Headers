@@ -74,6 +74,7 @@
 - (id)_initWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
 - (id)_initNaiveWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
+- (id)_imageByMatchingColorSpaceToWorkingSpace:(struct CGColorSpace { }*)arg1;
 - (id)imageByApplyingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (void*)_internalRepresentation;
@@ -91,9 +92,5 @@
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 options:(id)arg2;
-- (id)imageToAlphaChannel;
-- (id)imageFromAlphaChannel;
-- (id)moveBlueToAlpha;
-- (id)moveAlphaToBlue;
 
 @end

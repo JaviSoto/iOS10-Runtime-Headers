@@ -45,6 +45,7 @@
 @property(retain) NSDate * firstDateAlertedForTravelAdvice;
 
 
+- (id)dismissalID;
 - (void)setFirstDateAlertedForTravelAdvice:(id)arg1;
 - (id)firstDateAlertedForTravelAdvice;
 - (void)setLastFireTimeOfAlertOffsetFromTravelTime:(id)arg1;
@@ -52,7 +53,6 @@
 - (void)setLatestTravelAdvice:(id)arg1;
 - (id)latestTravelAdvice;
 - (bool)isOffsetFromTravelTimeStart;
-- (id)dismissalID;
 - (bool)tentative;
 - (id)eventDate;
 - (id)eventTimeZone;

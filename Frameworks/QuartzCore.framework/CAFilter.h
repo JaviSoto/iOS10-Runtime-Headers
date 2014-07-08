@@ -29,6 +29,7 @@
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (bool)enabled;
+- (void)setName:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
@@ -43,7 +44,6 @@
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

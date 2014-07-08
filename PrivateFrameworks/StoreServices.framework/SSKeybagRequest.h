@@ -6,19 +6,23 @@
 
 @interface SSKeybagRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountID;
+    id _contentIdentifier;
     long long _options;
 }
 
 @property(readonly) NSNumber * accountID;
+@property(copy) id contentIdentifier;
 @property long long keybagOptions;
 
 
+- (id)contentIdentifier;
 - (void)setKeybagOptions:(long long)arg1;
 - (long long)keybagOptions;
+- (void)setContentIdentifier:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
+- (id)initWithAccountIdentifier:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)initWithAccountIdentifier:(id)arg1;
 - (id)accountID;
 - (id)accountIdentifier;
 - (void)dealloc;

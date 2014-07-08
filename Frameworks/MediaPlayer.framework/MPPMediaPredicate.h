@@ -32,6 +32,8 @@
 
 - (void)copyTo:(id)arg1;
 - (void)setHasType:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (bool)hasSearchStringPredicate;
 - (bool)hasPersistentIDsPredicate;
 - (bool)hasCompoundPredicate;
@@ -48,8 +50,6 @@
 - (void)setPropertyPredicate:(id)arg1;
 - (id)propertyPredicate;
 - (bool)hasType;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(int)arg1;

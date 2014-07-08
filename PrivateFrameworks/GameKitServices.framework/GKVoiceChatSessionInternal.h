@@ -46,7 +46,6 @@
 
 + (void)brokenHash:(id)arg1 response:(char *)arg2;
 
-- (id)participantID;
 - (void)cleanupProc:(id)arg1;
 - (bool)isUsingSuppression;
 - (void)didStopSpeaking:(id)arg1;
@@ -106,6 +105,7 @@
 - (void)updatedConnectedPeers:(id)arg1;
 - (void)voiceChatService:(id)arg1 sendData:(id)arg2 toParticipantID:(id)arg3;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
+- (id)participantID;
 - (unsigned int)conferenceID;
 - (void)setDelegate:(id)arg1;
 - (bool)isEqual:(id)arg1;

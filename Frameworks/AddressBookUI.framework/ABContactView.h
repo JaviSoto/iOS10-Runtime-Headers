@@ -59,8 +59,9 @@
 
 - (void)setCellsLayoutCachingEnabled:(bool)arg1;
 - (bool)isCellsLayoutCachingEnabled;
-- (void)applyCellAppearance:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contact:(id)arg2;
+- (void)applyCellAppearance:(id)arg1;
+- (void)updateVisibleCells;
 - (id)defaultHeaderView;
 - (id)actionTextAttributes;
 - (id)valueTextAttributes;
@@ -88,5 +89,6 @@
 - (void)dealloc;
 - (void)setTableHeaderView:(id)arg1;
 - (void)tintColorDidChange;
+- (void)layoutMarginsDidChange;
 
 @end

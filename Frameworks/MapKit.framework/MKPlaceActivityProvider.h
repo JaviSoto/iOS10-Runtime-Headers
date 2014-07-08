@@ -15,9 +15,9 @@
 
 - (id)activityAnnotationView;
 - (id)activityURL;
-- (id)mapItem;
-- (void)setMapItem:(id)arg1;
 - (id)initWithMapItem:(id)arg1;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;

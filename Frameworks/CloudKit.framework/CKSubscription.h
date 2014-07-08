@@ -24,9 +24,9 @@
 
 + (bool)supportsSecureCoding;
 
+- (void)setSubscriptionOptions:(unsigned long long)arg1;
 - (void)setSubscriptionType:(long long)arg1;
 - (void)setSubscriptionID:(id)arg1;
-- (void)setSubscriptionOptions:(unsigned long long)arg1;
 - (id)initWithZoneID:(id)arg1 options:(unsigned long long)arg2;
 - (long long)subscriptionType;
 - (id)initWithRecordType:(id)arg1 predicate:(id)arg2 options:(unsigned long long)arg3;

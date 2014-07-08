@@ -100,13 +100,14 @@
 - (void)setLatLng:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setCourse:(double)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (void)setHasType:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
 - (id)initWithLocation:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

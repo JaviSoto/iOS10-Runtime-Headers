@@ -53,8 +53,6 @@
 - (void)setHasMaxResultCount:(bool)arg1;
 - (void)setMaxResultCount:(unsigned int)arg1;
 - (unsigned int)maxResultCount;
-- (bool)hasSortOrder;
-- (void)setHasSortOrder:(bool)arg1;
 - (id)searchSubstringDescriptorAtIndex:(unsigned long long)arg1;
 - (void)clearSearchSubstringDescriptors;
 - (unsigned long long)searchSubstringDescriptorsCount;
@@ -65,6 +63,8 @@
 - (void)addBusinessCategoryFilter:(id)arg1;
 - (void)setSearchSubstringDescriptors:(id)arg1;
 - (void)setBusinessCategoryFilters:(id)arg1;
+- (bool)hasSortOrder;
+- (void)setHasSortOrder:(bool)arg1;
 - (bool)hasViewportInfo;
 - (void)setViewportInfo:(id)arg1;
 - (id)indexFilter;
@@ -84,9 +84,10 @@
 - (bool)hasZilchPoints;
 - (void)setZilchPoints:(id)arg1;
 - (void)copyTo:(id)arg1;
-- (bool)hasSearchString;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasSearchString;
 - (void)setSearchString:(id)arg1;
 - (id)searchString;
 - (bool)isEqual:(id)arg1;

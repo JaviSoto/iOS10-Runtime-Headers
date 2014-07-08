@@ -31,8 +31,8 @@
 + (bool)shouldSendGUIDForURL:(id)arg1 inBagContext:(id)arg2;
 + (id)networkConstraintsForDownloadKind:(id)arg1 inBagContext:(id)arg2;
 + (id)copyExtraHeadersForURL:(id)arg1 inBagContext:(id)arg2;
-+ (void)_loadItemKindURLBagKeyMap;
 + (bool)_allowUnsignedBags;
++ (void)_loadItemKindURLBagKeyMap;
 
 - (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(long long)arg2;
 - (id)URLForURL:(id)arg1 clientIdentifier:(id)arg2;
@@ -56,7 +56,6 @@
 - (void)_writeURLResolutionCacheFile;
 - (void)_writeNetworkConstraintsCacheFile;
 - (long long)versionIdentifier;
-- (bool)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (id)_networkConstraintsCachePath;
 - (id)_copyHeaderPatternsFromDictionary:(id)arg1;
 - (id)_copyGUIDSchemesFromDictionary:(id)arg1;

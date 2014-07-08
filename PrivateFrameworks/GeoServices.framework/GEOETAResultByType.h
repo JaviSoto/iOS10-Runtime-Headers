@@ -29,11 +29,11 @@
 @property unsigned int distance;
 
 
+- (bool)hasStatus;
 - (unsigned int)travelTimeBestEstimate;
 - (bool)hasTravelTimeBestEstimate;
 - (void)setHasTravelTimeBestEstimate:(bool)arg1;
 - (void)setTravelTimeBestEstimate:(unsigned int)arg1;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (unsigned int)historicTravelTime;
 - (bool)hasHistoricTravelTime;
@@ -41,11 +41,12 @@
 - (void)setHistoricTravelTime:(unsigned int)arg1;
 - (bool)hasDistance;
 - (void)setHasDistance:(bool)arg1;
-- (bool)hasTransportType;
 - (void)setHasTransportType:(bool)arg1;
+- (bool)hasTransportType;
 - (void)setTransportType:(int)arg1;
 - (int)transportType;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setStatus:(int)arg1;

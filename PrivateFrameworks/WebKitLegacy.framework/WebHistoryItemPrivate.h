@@ -7,18 +7,6 @@
         struct HistoryItem {} *m_ptr; 
     } _historyItem;
     double _lastVisitedTime;
-    int _visitCount;
-    struct Vector<int, 0, WTF::CrashOnOverflow> { 
-        int *m_buffer; 
-        unsigned int m_capacity; 
-        unsigned int m_size; 
-    } _dailyVisitCounts;
-    struct Vector<int, 0, WTF::CrashOnOverflow> { 
-        int *m_buffer; 
-        unsigned int m_capacity; 
-        unsigned int m_size; 
-    } _weeklyVisitCounts;
-    bool_lastVisitWasHTTPNonGet;
 }
 
 

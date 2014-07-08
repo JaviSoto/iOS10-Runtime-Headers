@@ -30,8 +30,8 @@
 + (bool)supportsSecureCoding;
 
 - (void)removeParticipant:(id)arg1;
-- (void)setProtectionVersion:(id)arg1;
 - (id)protectionVersion;
+- (void)setProtectionVersion:(id)arg1;
 - (id)addParticipantWithEmailAddress:(id)arg1 invitationMessage:(id)arg2 invitationImageURL:(id)arg3;
 - (id)addParticipantWithUserRecordID:(id)arg1 invitationMessage:(id)arg2 invitationImageURL:(id)arg3;
 - (long long)acceptanceStatusForParticipant:(id)arg1;

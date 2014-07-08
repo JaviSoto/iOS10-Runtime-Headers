@@ -51,8 +51,8 @@
 - (id)imageHash;
 - (bool)stretches;
 - (bool)tiles;
-- (id)imageData;
 - (long long)orientation;
+- (id)imageData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

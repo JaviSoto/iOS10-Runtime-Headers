@@ -28,11 +28,12 @@
 - (bool)strictErrorChecking;
 - (void)runTest:(id)arg1 :(id)arg2;
 - (id)appBridge;
+- (void)scrollToTop;
 - (id)navigationDocument;
 - (void)setAppBridge:(id)arg1;
 - (id)initWithAppContext:(id)arg1;
-- (void)setNeedsUpdate;
 - (id)implementation;
+- (void)setNeedsUpdate;
 - (id)evaluate:(id)arg1 :(id)arg2 :(id)arg3 :(long long)arg4 :(id)arg5;
 - (id)createExpression:(id)arg1 :(id)arg2;
 - (id)adoptNode:(id)arg1;

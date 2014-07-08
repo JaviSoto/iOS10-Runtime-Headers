@@ -86,6 +86,7 @@
         unsigned int delegateWantsWillChangeToDisplayMode : 1; 
         unsigned int delegateWantsTargetDisplayModeForAction : 1; 
         unsigned int pendingPresentMasterViewController : 1; 
+        unsigned int pendingUpdateTargetDisplayMode : 1; 
     } _splitViewControllerFlags;
     bool_resizeForKeyboard;
     NSString *_displayModeButtonItemTitle;
@@ -130,7 +131,6 @@
 + (bool)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (bool)doesOverrideSupportedInterfaceOrientations;
 
-- (long long)interfaceOrientation;
 - (void)_commonInit;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
@@ -181,13 +181,14 @@
 - (void)_cacheEffectiveTargetDisplayMode;
 - (void)_displayModeDidChange;
 - (void)_presentMasterViewController:(bool)arg1;
-- (void)_dismissMasterViewController;
+- (void)_dismissMasterViewController:(bool)arg1;
 - (void)_setPrimaryHidingState:(long long)arg1;
 - (void)_setPrimaryHidingStateForCurrentOrientation:(long long)arg1;
 - (void)_displayModeWillChangeTo:(long long)arg1;
 - (long long)_defaultDisplayMode;
 - (void)_changeToDisplayMode:(long long)arg1 forCurrentOrientation:(bool)arg2;
 - (bool)presentsWithGesture;
+- (void)_showMasterViewAnimated:(bool)arg1;
 - (bool)_isLandscape;
 - (void)_didTransitionTraitCollection;
 - (void)_transitionFromTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
@@ -222,12 +223,12 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_isMasterViewShown;
 - (double)primaryColumnWidth;
-- (void)_updateTargetDisplayMode;
 - (void)_addOrRemovePopoverPresentationGestureRecognizer;
 - (void)_calculateDelegateHiddenMasterOrientations;
 - (long long)_effectiveTargetDisplayMode;
 - (long long)preferredDisplayMode;
 - (void)_setupHiddenPopoverControllerWithViewController:(id)arg1;
+- (bool)_hasMasterViewController;
 - (bool)_effectivePresentsWithGesture;
 - (bool)_isHidesMasterInLandscapeValid;
 - (bool)_isHidesMasterInPortraitValid;
@@ -239,12 +240,15 @@
 - (bool)hidesMasterViewInLandscape;
 - (long long)_primaryHidingState;
 - (long long)_primaryHidingStateForCurrentOrientation;
+- (void)_updateTargetDisplayMode;
 - (void)_loadNewSubviews:(id)arg1;
 - (void)loadSubviews;
 - (long long)displayMode;
+- (void)_setMasterOverrideTraitCollectionActive:(bool)arg1;
 - (void)_setPresentsInFadingPopover:(bool)arg1;
 - (id)masterViewController;
 - (bool)isCollapsed;
+- (id)_primaryContentResponder;
 - (id)detailViewController;
 - (void)__viewWillLayoutSubviews;
 - (void)setViewControllers:(id)arg1;
@@ -266,6 +270,8 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)unloadViewForced:(bool)arg1;
 - (bool)_shouldPersistViewWhenCoding;
+- (void)_updateChildContentMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

@@ -83,12 +83,12 @@
 - (id)serverRepresentation;
 - (void)setPlatform:(unsigned char)arg1;
 - (bool)isPrerendered;
+- (void)setName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
 - (bool)isValid;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)flags;

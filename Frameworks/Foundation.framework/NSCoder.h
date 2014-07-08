@@ -80,16 +80,16 @@
 - (void)CA_encodeCGFloatArray:(const double*)arg1 count:(unsigned long long)arg2 forKey:(id)arg3;
 - (id)CA_decodeObjectForKey:(id)arg1;
 - (void)CA_encodeObject:(id)arg1 forKey:(id)arg2 conditional:(bool)arg3;
+- (unsigned long long)decodeThemeForKey:(id)arg1;
+- (unsigned long long)decodeTheme;
+- (void)encodeTheme:(unsigned long long)arg1 forKey:(id)arg2;
+- (void)encodeTheme:(unsigned long long)arg1;
 - (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })decodeCMTimeMappingForKey:(id)arg1;
 - (void)encodeCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })decodeCMTimeRangeForKey:(id)arg1;
 - (void)encodeCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 forKey:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })decodeCMTimeForKey:(id)arg1;
 - (void)encodeCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
-- (unsigned long long)decodeThemeForKey:(id)arg1;
-- (unsigned long long)decodeTheme;
-- (void)encodeTheme:(unsigned long long)arg1 forKey:(id)arg2;
-- (void)encodeTheme:(unsigned long long)arg1;
 - (struct CGVector { double x1; double x2; })decodeCGVectorForKey:(id)arg1;
 - (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
 - (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
@@ -113,9 +113,6 @@
 - (id)safeDecodeStringForKey:(id)arg1;
 - (id)_safeDecodeContainerForKey:(id)arg1 containerClass:(Class)arg2 valueClass:(Class)arg3;
 - (id)safeDecodeObjectForKey:(id)arg1 expectedClass:(Class)arg2;
-- (void)decodeObjectsForKeys:(id)arg1 forObject:(id)arg2;
-- (void)encodeObjectsForKeys:(id)arg1 forObject:(id)arg2;
-- (void)encodeObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)safeEncodeUIColor:(id)arg1 forKey:(id)arg2;
 
 @end

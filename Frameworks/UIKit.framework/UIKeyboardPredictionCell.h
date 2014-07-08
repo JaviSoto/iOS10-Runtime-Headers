@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKeyView, UIMorphingLabel, UIView;
+@class UIMorphingLabel, TIKeyboardCandidate, UIView, UIKBKeyView;
 
 @interface UIKeyboardPredictionCell : UIView  {
     UIMorphingLabel *m_label;
@@ -15,7 +15,7 @@
     bool_isCenter;
     bool_isLongCandidate;
     int _state;
-    unsigned long long _index;
+    TIKeyboardCandidate *_prediction;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -38,8 +38,8 @@
     } _activeFrame;
 }
 
+@property(retain,readonly) TIKeyboardCandidate * prediction;
 @property int state;
-@property unsigned long long index;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } baseFrame;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } activeFrame;
 @property bool isAutocorrection;
@@ -49,8 +49,6 @@
 
 + (id)initKeyViewWithSize:(struct CGSize { double x1; double x2; })arg1 state:(int)arg2 needsBackground:(bool)arg3;
 
-- (void)setIndex:(unsigned long long)arg1;
-- (unsigned long long)index;
 - (id)label;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
@@ -62,11 +60,12 @@
 - (void)setIsTypedString:(bool)arg1;
 - (void)setIsAutocorrection:(bool)arg1;
 - (void)setActiveFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setText:(id)arg1 index:(unsigned long long)arg2 active:(bool)arg3;
+- (id)prediction;
+- (void)setText:(id)arg1 prediction:(id)arg2 active:(bool)arg3;
 - (void)setBaseFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)scrollLabelWithText:(id)arg1 force:(bool)arg2;
 - (void)setState:(int)arg1 withText:(id)arg2;
 - (void)setCellAttributes;
-- (void)scrollLabelWithText:(id)arg1 force:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrame;
 - (bool)isTypedString;
 - (bool)isAutocorrection;

@@ -28,9 +28,9 @@
 - (bool)hasOriginType;
 - (bool)hasPointType;
 - (bool)hasAngle;
-- (bool)hasPath;
 - (void)setPointType:(int)arg1;
 - (int)pointType;
+- (bool)hasPath;
 - (double)angle;
 - (void)setAngle:(double)arg1;
 - (bool)isEqual:(id)arg1;

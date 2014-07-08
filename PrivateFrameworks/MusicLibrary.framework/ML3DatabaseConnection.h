@@ -68,7 +68,6 @@
 - (id)_shortDescription;
 - (void)_setTransactionLevel:(unsigned long long)arg1;
 - (unsigned long long)_transactionLevel;
-- (id)_databaseFilePaths;
 - (id)_owningPool;
 - (long long)lastInsertionRowID;
 - (bool)registerModuleName:(id)arg1 moduleMethods:(struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
@@ -76,6 +75,7 @@
 - (void)setCurrentTransactionID:(id)arg1;
 - (int)profilingLevel;
 - (bool)_databaseFileExists;
+- (id)_databaseFilePaths;
 - (bool)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
 - (int)checkpointDatabase;
 - (bool)_executeStatement:(id)arg1 withError:(id*)arg2;
@@ -94,6 +94,7 @@
 - (bool)_handleZombieSQLiteConnection:(struct sqlite3 { }*)arg1;
 - (void)_finalizeAllStatements;
 - (void)_createDatabaseDirectoryIfNonexistent;
+- (bool)_databaseFilesAreWritable;
 - (bool)_openWithFlags:(int)arg1;
 - (void)_updateProfilingLevel;
 - (bool)_isSharedMediaLibraryDatabase;

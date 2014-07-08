@@ -109,7 +109,6 @@
 + (id)keyboardWithName:(id)arg1 screenTraits:(id)arg2;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (void)accessibilitySensitivityChanged;
-+ (double)defaultKeyHeightWithScreenTriats:(id)arg1;
 + (struct CGSize { double x1; double x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
 + (Class)_subclassForScreenTraits:(id)arg1;
 

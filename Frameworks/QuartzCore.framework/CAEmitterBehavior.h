@@ -26,6 +26,7 @@
 + (void)CAMLParserStartElement:(id)arg1;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)setName:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)setEnabled:(bool)arg1;
@@ -38,7 +39,6 @@
 - (void)didChangeValueForKey:(id)arg1;
 - (id)name;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

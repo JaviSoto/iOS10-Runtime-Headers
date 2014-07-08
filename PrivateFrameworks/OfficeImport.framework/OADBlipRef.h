@@ -30,12 +30,12 @@
 - (void)setIndex:(int)arg1;
 - (int)index;
 - (bool)isNull;
+- (void)setName:(id)arg1;
 - (unsigned long long)effectCount;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

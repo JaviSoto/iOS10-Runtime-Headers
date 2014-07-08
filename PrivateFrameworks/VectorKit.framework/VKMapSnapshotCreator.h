@@ -44,10 +44,12 @@
 - (void)mapModel:(id)arg1 annotationMarker:(id)arg2 didChangeDragState:(long long)arg3 fromOldState:(long long)arg4;
 - (id)mapModel:(id)arg1 markerForAnnotation:(id)arg2;
 - (void)lookAtX:(unsigned long long)arg1 y:(unsigned long long)arg2 z:(unsigned long long)arg3;
+- (void)cancelFlushingTileDecodes:(bool)arg1;
 - (void)renderSnapshot:(id)arg1;
 - (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 homeQueue:(id)arg3 softwareRendering:(bool)arg4 tileGroupIdentifier:(unsigned int)arg5 locale:(id)arg6;
 - (void)renderRequest:(id)arg1 completion:(id)arg2;
+- (void)mapModelDidUpdateMinMaxZoomLevel:(id)arg1;
 - (void)mapModel:(id)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
 - (void)mapModel:(id)arg1 selectedLabelMarkerWillDisappear:(id)arg2;
 - (double)mapModelZoomScale:(id)arg1;

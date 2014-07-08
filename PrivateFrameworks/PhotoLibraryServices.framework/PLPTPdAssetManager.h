@@ -2,14 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, NSArray, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>, NSMutableArray, NSFileManager, PLPhotoLibrary;
+@class NSString, NSArray, NSSet, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>, NSFileManager, PLPhotoLibrary;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSObject<PhotoLibraryPTPDelegate> *_delegate;
     NSArray *_albumObjectIDs;
     NSString *_firstDCIMFolderServiced;
-    NSMutableArray *_inflightAssets;
+    NSSet *_availableAssetIDs;
     PLPhotoLibrary *_photoLibrary;
+    int _libraryStatus;
     NSFileManager *fileManager;
 }
 
@@ -39,11 +40,12 @@
 - (id)associationsInAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)infoForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)albumHandles;
-- (void)photoLibraryAvailabilityChangedNotification;
+- (void)handlePhotoLibraryAvailableNotification;
+- (id)_fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
 - (id)albumObjectIDs;
 - (id)fileManager;
 - (void)setFileManager:(id)arg1;
-- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssets:(id)arg2 deletedAssets:(id)arg3 changedAssets:(id)arg4;
+- (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4;
 - (id)photoLibrary;
 - (id)managedObjectContext;
 - (id)init;

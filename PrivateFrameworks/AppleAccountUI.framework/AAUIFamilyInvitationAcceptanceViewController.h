@@ -23,9 +23,9 @@
 - (id)initWithInvite:(id)arg1 grandSlamSigner:(id)arg2;
 - (void)_showErrorAlert;
 - (void)_loadiTunesLinkingRemoteUI;
+- (void)_sendUserToiTunesSettings;
 - (void)_cancelButtonWasTapped:(id)arg1;
 - (id)_createCancelButton;
-- (void)_sendUserToiTunesSettings;
 - (void)confirmIdentityViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
 - (void).cxx_destruct;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;

@@ -20,9 +20,9 @@
 - (id)initWithSinfs:(id)arg1;
 - (void)startWithConnectionResponseBlock:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
+- (id)sinfs;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)sinfs;
 - (id)accountIdentifier;
 - (id)init;
 - (void)dealloc;

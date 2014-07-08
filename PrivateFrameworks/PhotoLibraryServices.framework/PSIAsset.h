@@ -18,10 +18,11 @@
 
 
 - (struct __CFArray { }*)owningCategories;
-- (id)contentStrings;
+- (id)_initForCopy:(bool)arg1;
+- (void)reverse;
 - (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3;
+- (id)contentStrings;
 - (void)setUUID:(id)arg1;
-- (void)sort;
 - (id)uuid;
 - (void)clear;
 - (id)init;

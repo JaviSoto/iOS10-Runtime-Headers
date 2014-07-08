@@ -35,6 +35,7 @@
 - (void)setWidth:(int)arg1;
 - (int)height;
 - (int)width;
+- (void)setName:(id)arg1;
 - (id)altDisplayString;
 - (int)naturalWidth;
 - (int)naturalHeight;
@@ -63,7 +64,6 @@
 - (void)setBorder:(id)arg1;
 - (id)border;
 - (id)name;
-- (void)setName:(id)arg1;
 - (bool)complete;
 - (int)y;
 - (int)x;

@@ -19,8 +19,8 @@
 
 + (id)traitsWithScreen:(id)arg1 orientation:(long long)arg2;
 
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
+- (void)setOrientation:(long long)arg1;
 - (long long)idiom;
 - (id)screen;
 - (double)keyboardWidth;

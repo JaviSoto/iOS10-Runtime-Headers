@@ -17,9 +17,9 @@
 - (long long)daemonOperation;
 - (void)runDaemonSide;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (void)encodeToXPCObject:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (void)encodeToXPCObject:(id)arg1;
 - (void)run;
 - (void)dealloc;
 - (id)description;

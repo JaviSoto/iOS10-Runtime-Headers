@@ -13,14 +13,15 @@
 
 @interface SKAction : NSObject <NSCopying, NSCoding> {
 
-  /* Error parsing encoded ivar type info: ^{SKCAction=^^?If@BddffdBB@?qffff} */
-    struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; boolx5; double x6; double x7; float x8; float x9; double x10; boolx11; boolx12; id x13; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x14; long long x15; float x16; float x17; float x18; float x19; } *_caction;
+  /* Error parsing encoded ivar type info: ^{SKCAction=^^?If@?@BddffdBB@?qffff} */
+    struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; } *_caction;
 
 }
 
 @property bool finished;
 @property double duration;
 @property long long timingMode;
+@property id timingFunction;
 @property double speed;
 
 + (id)runAction:(id)arg1 onChildWithName:(id)arg2;
@@ -51,6 +52,8 @@
 + (id)colorizeWithColor:(id)arg1 colorBlendFactor:(double)arg2 duration:(double)arg3;
 + (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 waitForCompletion:(bool)arg3;
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2 resize:(bool)arg3 restore:(bool)arg4;
++ (id)falloffBy:(float)arg1 duration:(double)arg2;
++ (id)falloffTo:(float)arg1 duration:(double)arg2;
 + (id)fadeAlphaTo:(double)arg1 duration:(double)arg2;
 + (id)fadeAlphaBy:(double)arg1 duration:(double)arg2;
 + (id)resizeToHeight:(double)arg1 duration:(double)arg2;
@@ -94,12 +97,14 @@
 - (void)setCppAction:(void*)arg1;
 - (id)reversedAction;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
-- (struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; boolx5; double x6; double x7; float x8; float x9; double x10; boolx11; boolx12; id x13; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x14; long long x15; float x16; float x17; float x18; float x19; }*)caction;
-     /* Encoded args for previous method: ^{SKCAction=^^?If@BddffdBB@?qffff}16@0:8 */
+- (struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; }*)caction;
+     /* Encoded args for previous method: ^{SKCAction=^^?If@?@BddffdBB@?qffff}16@0:8 */
 
 - (void)setSpeed:(double)arg1;
 - (double)speed;
+- (void)setTimingFunction:(id)arg1;
 - (void)setDuration:(double)arg1;
+- (id)timingFunction;
 - (id)init;
 - (void)setFinished:(bool)arg1;
 - (bool)finished;

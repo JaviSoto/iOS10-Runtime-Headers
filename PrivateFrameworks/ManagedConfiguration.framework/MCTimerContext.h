@@ -9,8 +9,8 @@
 @property bool enabled;
 
 
-- (void)disable;
 - (bool)enabled;
+- (void)disable;
 - (void)setEnabled:(bool)arg1;
 - (id)init;
 

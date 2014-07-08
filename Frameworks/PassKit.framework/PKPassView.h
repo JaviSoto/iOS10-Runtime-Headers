@@ -15,6 +15,8 @@
     PKPassFaceView *_otherFace;
     PKPassColorProfile *_colorProfile;
     long long _priorContentMode;
+    double _flipOvershoot;
+    double _flipLayoutOvershoot;
     <WLCardViewDelegate> *_delegate;
 
   /* Unexpected information at end of encoded ivar type: ? */

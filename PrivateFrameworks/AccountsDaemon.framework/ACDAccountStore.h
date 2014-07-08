@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDFakeRemoteAccountStoreSession, ACDAccountStoreFilter, ACDAccessPluginManager, <ACDAccountStoreDelegate>, NSMutableArray, ACDDataclassOwnersManager, ACDDatabase, ACIDSProxy, ACDAuthenticationDialogManager, ACDClient, ACDAuthenticationPluginManager, ACDClientAuthorizationManager;
+@class ACDFakeRemoteAccountStoreSession, ACRemoteDeviceProxy, ACDAccountStoreFilter, ACDAccessPluginManager, <ACDAccountStoreDelegate>, NSMutableArray, ACDDataclassOwnersManager, ACDDatabase, ACDAuthenticationDialogManager, ACDClient, ACDAuthenticationPluginManager, ACDClientAuthorizationManager;
 
 @interface ACDAccountStore : ACAccountStore <ACDAccountStoreProtocol> {
     NSMutableArray *_accountChanges;
@@ -18,7 +18,7 @@
     ACDAccessPluginManager *_accessPluginManager;
     ACDDataclassOwnersManager *_dataclassOwnersManager;
     ACDAuthenticationDialogManager *_authenticationDialogManager;
-    ACIDSProxy *_acIDSProxy;
+    ACRemoteDeviceProxy *_remoteDeviceProxy;
 }
 
 @property <ACDAccountStoreDelegate> * delegate;
@@ -29,14 +29,14 @@
 @property(retain) ACDAccessPluginManager * accessPluginManager;
 @property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
 @property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
-@property(retain) ACIDSProxy * acIDSProxy;
+@property(retain) ACRemoteDeviceProxy * remoteDeviceProxy;
 @property bool notificationsEnabled;
 @property(getter=isMigrationInProgress) bool migrationInProgress;
 
 
 - (void)setMigrationInProgress:(bool)arg1;
-- (void)setAcIDSProxy:(id)arg1;
-- (id)acIDSProxy;
+- (void)setRemoteDeviceProxy:(id)arg1;
+- (id)remoteDeviceProxy;
 - (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setAccessPluginManager:(id)arg1;
@@ -51,6 +51,7 @@
 - (void)updateAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)addAccountNoSave:(id)arg1 error:(id*)arg2;
 - (id)accountsWithAccountTypeIdentifier:(id)arg1;
+- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
 - (id)authenticationDialogManager;
 - (id)_clientTokenForAccountIdentifier:(id)arg1 error:(id)arg2;
@@ -86,7 +87,7 @@
 - (id)initWithClient:(id)arg1;
 - (bool)notificationsEnabled;
 - (void)setClientBundleID:(id)arg1 withHandler:(id)arg2;
-- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
+- (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(bool)arg3 completion:(id)arg4;

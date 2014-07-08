@@ -7,6 +7,7 @@
 @interface GKMatchRequestInternal : GKInternalRepresentation  {
     unsigned long long _matchType;
     NSArray *_recipients;
+    NSArray *_recipientPlayerIDs;
     NSString *_inviteMessage;
     NSDictionary *_localizableInviteMessage;
     NSData *_sessionToken;
@@ -25,6 +26,7 @@
 @property int playerGroup;
 @property unsigned int playerAttributes;
 @property(retain) NSArray * recipients;
+@property(retain) NSArray * recipientPlayerIDs;
 @property(copy) NSString * inviteMessage;
 @property(retain) NSDictionary * localizableInviteMessage;
 @property unsigned long long matchType;
@@ -44,6 +46,8 @@
 - (void)setPlayerGroup:(int)arg1;
 - (void)setRid:(id)arg1;
 - (void)setMatchType:(unsigned long long)arg1;
+- (void)setRecipientPlayerIDs:(id)arg1;
+- (id)recipientPlayerIDs;
 - (void)setDefaultNumberOfPlayers:(unsigned char)arg1;
 - (void)setMinPlayers:(unsigned char)arg1;
 - (void)setMaxPlayers:(unsigned char)arg1;

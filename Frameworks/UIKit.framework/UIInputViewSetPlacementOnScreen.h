@@ -6,6 +6,7 @@
 }
 
 
+- (bool)showsKeyboard;
 - (bool)inputViewWillAppear;
 - (bool)showsInputViews;
 

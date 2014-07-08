@@ -10,7 +10,6 @@
     NSNumber *inputSize;
     NSNumber *inputRotation;
     NSNumber *inputDecay;
-    CIImage *_decayImage;
 }
 
 @property(retain) CIImage * inputImage;
@@ -35,6 +34,5 @@
 - (id)inputImage;
 - (id)outputImage;
 - (void)setDefaults;
-- (void)dealloc;
 
 @end

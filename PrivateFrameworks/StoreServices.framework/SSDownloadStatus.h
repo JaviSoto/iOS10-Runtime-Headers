@@ -25,15 +25,15 @@
 - (bool)isContentRestricted;
 - (id)activePhase;
 - (bool)isFailedTransient;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setOperationType:(long long)arg1;
 - (void)setFailed:(bool)arg1;
 - (void)setOperationProgress:(id)arg1;
 - (void)setContentRestricted:(bool)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (bool)isFailed;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setPaused:(bool)arg1;
+- (bool)isFailed;
 - (bool)isPaused;
 - (bool)isPausable;
 - (void)setPausable:(bool)arg1;

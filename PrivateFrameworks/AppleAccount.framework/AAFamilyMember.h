@@ -8,6 +8,7 @@
     bool_isMe;
     bool_isChild;
     bool_isSharingPurchases;
+    bool_isOrganizer;
     bool_areParentalControlsEnabled;
     bool_isAskToBuyEnabled;
     NSString *_firstName;
@@ -32,6 +33,7 @@
 @property bool isMe;
 @property bool isChild;
 @property bool isSharingPurchases;
+@property bool isOrganizer;
 @property(copy) NSString * iTunesNotLinkedMessage;
 @property(copy) NSString * linkediTunesAppleID;
 @property(copy) NSNumber * linkediTunesDSID;
@@ -49,6 +51,8 @@
 - (id)linkediTunesAppleID;
 - (void)setITunesNotLinkedMessage:(id)arg1;
 - (id)iTunesNotLinkedMessage;
+- (void)setIsOrganizer:(bool)arg1;
+- (bool)isOrganizer;
 - (void)setIsSharingPurchases:(bool)arg1;
 - (bool)isSharingPurchases;
 - (void)setIsChild:(bool)arg1;

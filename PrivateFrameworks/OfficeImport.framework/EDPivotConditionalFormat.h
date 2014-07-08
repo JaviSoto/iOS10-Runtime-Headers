@@ -18,8 +18,8 @@
 - (void)setScope:(int)arg1;
 - (id)init;
 - (void)setType:(int)arg1;
-- (unsigned long long)priority;
 - (void)setPriority:(unsigned long long)arg1;
+- (unsigned long long)priority;
 - (int)type;
 - (void)dealloc;
 

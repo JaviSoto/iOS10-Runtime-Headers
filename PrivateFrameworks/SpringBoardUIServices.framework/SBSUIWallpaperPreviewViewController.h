@@ -24,13 +24,13 @@
 @property(retain,readonly) _UILegibilitySettings * legibilitySettings;
 
 
-- (id)wallpaperImage;
-- (void)wallpaperView:(id)arg1 legibilitySettingsDidChange:(id)arg2;
-- (bool)motionEnabled;
-- (void)setWallpaperForLocations:(long long)arg1;
 - (id)initWithScrollableImage:(id)arg1;
 - (id)initWithProceduralWallpaper:(id)arg1 options:(id)arg2;
+- (bool)motionEnabled;
 - (id)initWithWallpaperVariant:(long long)arg1;
+- (void)setWallpaperForLocations:(long long)arg1;
+- (id)wallpaperImage;
+- (void)wallpaperView:(id)arg1 legibilitySettingsDidChange:(id)arg2;
 - (id)initWithColorSamplingEnabled:(bool)arg1;
 - (void)_startDateTimer;
 - (id)_previewView;

@@ -10,12 +10,12 @@
 }
 
 
-- (id)initWithInputStream:(id)arg1;
 - (id)closeLocalStream;
 - (void)enableSystemCaching;
 - (void)disableSystemCaching;
 - (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
 - (id)initWithInputStream:(id)arg1 initialOffset:(long long)arg2;
+- (id)initWithInputStream:(id)arg1;
 - (void)seekToOffset:(long long)arg1;
 - (bool)canSeek;
 - (long long)offset;

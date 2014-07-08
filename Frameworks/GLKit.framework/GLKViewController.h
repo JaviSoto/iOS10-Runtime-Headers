@@ -67,6 +67,7 @@
 @property long long frameInterval;
 
 
+- (long long)preferredFramesPerSecond;
 - (double)timeSinceLastDraw;
 - (double)timeSinceLastUpdate;
 - (long long)framesDisplayed;
@@ -102,7 +103,6 @@
 - (void)setPauseOnWillResignActive:(bool)arg1;
 - (double)timeSinceLastResume;
 - (double)timeSinceFirstResume;
-- (long long)preferredFramesPerSecond;
 - (void)_createDisplayLinkForScreen:(id)arg1;
 - (void)_resumeByNotification;
 - (void)_pauseByNotification;

@@ -20,6 +20,7 @@
 @property id delegate;
 @property bool routeDiscoveryEnabled;
 
++ (void)setRouteDiscoveryMode:(long long)arg1;
 + (void)restoreRouteDiscoveryMode;
 + (void)pushRouteDiscoveryMode:(long long)arg1;
 + (void)setRouteDiscoveryEnabled:(bool)arg1;
@@ -28,7 +29,6 @@
 + (long long)routeDiscoveryMode;
 + (void)_internalPushRouteDiscoveryMode:(long long)arg1;
 + (id)_routeDiscoveryModeStack;
-+ (void)setRouteDiscoveryMode:(long long)arg1;
 
 - (void)_sendFakeRouteChange;
 - (bool)isPickedRouteDistinctFromRoute:(id)arg1;

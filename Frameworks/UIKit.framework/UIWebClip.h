@@ -70,7 +70,7 @@
 + (bool)bundleIdentifierContainsWebClipIdentifier:(id)arg1;
 + (id)webClips;
 + (id)webClipWithURL:(id)arg1;
-+ (id)_webClipIconsForWebClipLinkTags:(id)arg1 pageURL:(id)arg2;
++ (id)webClipIconsForWebClipLinkTags:(id)arg1 pageURL:(id)arg2;
 + (id)_webClipLinkTagsFromWebDocumentView:(id)arg1;
 + (id)_contentForMetaName:(id)arg1 inWebDocumentView:(id)arg2;
 + (id)webClipsDirectoryPath;

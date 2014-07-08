@@ -28,7 +28,7 @@
 @property(retain) <NSURLSessionDelegate> * delegate;
 @property(copy,readonly) NSURLSessionConfiguration * configuration;
 @property(copy) NSString * sessionDescription;
-@property(copy) NSURLSessionConfiguration * _local_immutable_configuration;
+@property(retain) NSURLSessionConfiguration * _local_immutable_configuration;
 @property NSObject<OS_dispatch_queue> * workQueue;
 @property bool invalid;
 @property(retain) NSOperationQueue * realDelegateQueue;
@@ -77,6 +77,7 @@
 - (void)invalidateAndCancel;
 - (bool)isBackgroundSession;
 - (id)_copyConfiguration;
+- (bool)can_delegate_task_actually_didCompleteWithError;
 - (id)downloadTaskWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)downloadTaskWithRequest:(id)arg1;
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(id)arg2;

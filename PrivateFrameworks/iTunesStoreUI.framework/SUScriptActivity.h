@@ -39,10 +39,10 @@
 - (id)nativeActivity;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)setActivityType:(id)arg1;
 - (id)attributeKeys;
-- (void)dealloc;
+- (void)setActivityType:(id)arg1;
 - (id)activityType;
+- (void)dealloc;
 - (id)activityTitle;
 
 @end

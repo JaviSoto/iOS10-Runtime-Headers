@@ -10,10 +10,10 @@
     } _request;
 }
 
-@property(readonly) NSURLRequest * initialRequest;
-@property(readonly) NSURLRequest * request;
-@property(readonly) NSURLResponse * response;
-@property(readonly) NSError * error;
+@property(copy,readonly) NSURLRequest * initialRequest;
+@property(copy,readonly) NSURLRequest * request;
+@property(copy,readonly) NSURLResponse * response;
+@property(copy,readonly) NSError * error;
 
 
 - (void)setRequest:(id)arg1;

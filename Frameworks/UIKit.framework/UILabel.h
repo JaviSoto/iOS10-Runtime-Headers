@@ -238,11 +238,11 @@
 - (void)setAttributedText:(id)arg1;
 - (id)_synthesizedAttributedText;
 - (void)_accessibilityButtonShapesParametersDidChange;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)_setLineBreakMode:(long long)arg1;
 - (void)updateConstraints;
 - (id)_scriptingInfo;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
 - (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;

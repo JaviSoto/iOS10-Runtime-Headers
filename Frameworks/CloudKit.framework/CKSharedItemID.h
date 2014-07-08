@@ -18,10 +18,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setItemType:(long long)arg1;
-- (id)commentIdentifier;
-- (id)UIDocumentIdentifier;
 - (id)_itemTypeDescription;
+- (id)commentIdentifier;
+- (void)setItemType:(long long)arg1;
+- (id)UIDocumentIdentifier;
 - (id)initWithItemType:(long long)arg1 itemIdentifier:(id)arg2;
 - (long long)itemType;
 - (id)initWithItemType:(long long)arg1 itemIdentifier:(id)arg2 containerID:(id)arg3;
@@ -29,8 +29,8 @@
 - (id)containerID;
 - (id)shareID;
 - (id)zoneID;
-- (id)CKPropertiesDescription;
 - (id)ckShortDescription;
+- (id)CKPropertiesDescription;
 - (void)setContainerID:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (id)itemIdentifier;

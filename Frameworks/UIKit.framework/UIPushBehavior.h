@@ -26,9 +26,9 @@
 @property struct CGVector { double x1; double x2; } pushDirection;
 
 
+- (id)initWithItems:(id)arg1;
 - (bool)active;
 - (id)items;
-- (id)initWithItems:(id)arg1;
 - (void)addItem:(id)arg1;
 - (double)angle;
 - (void)setAngle:(double)arg1;

@@ -24,6 +24,7 @@
 @property double durationInOldState;
 
 
+- (void)setStateTransitions:(id)arg1;
 - (double)durationInOldState;
 - (bool)hasDurationInOldState;
 - (void)setHasDurationInOldState:(bool)arg1;
@@ -35,9 +36,9 @@
 - (bool)hasSessionID;
 - (void)setHasSessionID:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setStateTransitions:(id)arg1;
 - (id)stateTransitions;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

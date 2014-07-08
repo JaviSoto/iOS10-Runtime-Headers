@@ -32,6 +32,7 @@
 @property(retain) NSMutableArray * sortedETAs;
 
 
+- (bool)hasStatus;
 - (id)sortedETAs;
 - (id)placeSearchResponse;
 - (unsigned int)liveTravelTime;
@@ -39,7 +40,6 @@
 - (bool)hasLiveTravelTime;
 - (void)setHasLiveTravelTime:(bool)arg1;
 - (void)setLiveTravelTime:(unsigned int)arg1;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (id)sortedETAAtIndex:(unsigned long long)arg1;
 - (void)clearSortedETAs;
@@ -54,6 +54,7 @@
 - (bool)hasDistance;
 - (void)setHasDistance:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setStatus:(int)arg1;

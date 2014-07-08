@@ -40,9 +40,9 @@
     double videoMaxScaleAndCropFactor;
     double videoScaleAndCropFactor;
     int videoRetainedBufferCountHint;
-    boolenablesVideoStabilizationWhenAvailable;
+    long long feature0Mode;
     boolvideoStabilizationEnabled;
-    boolfeature0Enabled;
+    long long activeFeature0Mode;
 }
 
 

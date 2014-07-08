@@ -10,7 +10,7 @@
 @property(readonly) unsigned int identifier;
 @property(readonly) double level;
 
-+ (id)contextWithCAContext:(id)arg1;
++ (id)contextWithSceneContext:(id)arg1;
 
 - (unsigned int)identifier;
 - (id)initWithXPCDictionary:(id)arg1;

@@ -28,24 +28,26 @@
 @property(retain) NSDateFormatter * dateFormatter;
 
 
+- (id)selectAllObjectsOfClass:(Class)arg1;
+- (void)setDateProperty:(id)arg1 forKey:(id)arg2;
+- (id)datePropertyForKey:(id)arg1;
+- (id)select:(id)arg1 from:(id)arg2;
+- (void)setObjectClassPrefix:(id)arg1;
+- (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
+- (long long)insertOrReplaceObject:(id)arg1;
+- (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)vacuum;
+- (struct sqlite3 { }*)db;
+- (void)setDateFormatter:(id)arg1;
 - (id)statementsBySQL;
 - (void)setCorrupt:(bool)arg1;
 - (bool)corrupt;
 - (void)setOpenCount:(unsigned long long)arg1;
 - (unsigned long long)openCount;
 - (void)setDb:(struct sqlite3 { }*)arg1;
-- (void)setObjectClassPrefix:(id)arg1;
 - (id)objectClassPrefix;
 - (id)schemaPath;
-- (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
-- (id)selectAllObjectsOfClass:(Class)arg1;
-- (long long)insertOrReplaceObject:(id)arg1;
-- (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (unsigned long long)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
-- (id)select:(id)arg1 from:(id)arg2;
-- (void)setDateProperty:(id)arg1 forKey:(id)arg2;
-- (id)datePropertyForKey:(id)arg1;
 - (void)analyze;
 - (id)initWithPath:(id)arg1 schemaFilename:(id)arg2 schemaVersion:(unsigned long long)arg3;
 - (id)_boxedValue:(id)arg1 forObjcCProperty:(id)arg2;
@@ -68,8 +70,6 @@
 - (id)initWithPath:(id)arg1 bundle:(id)arg2 schemaFilename:(id)arg3 schemaVersion:(unsigned long long)arg4;
 - (id)initWithPath:(id)arg1 schemaPath:(id)arg2 schemaVersion:(unsigned long long)arg3;
 - (bool)openWithError:(id*)arg1;
-- (struct sqlite3 { }*)db;
-- (void)setDateFormatter:(id)arg1;
 - (void)executeSQL:(id)arg1;
 - (bool)isOpen;
 - (void)rollback;

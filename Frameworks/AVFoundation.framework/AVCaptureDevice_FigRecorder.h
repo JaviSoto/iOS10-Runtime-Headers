@@ -26,13 +26,12 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)initialize;
 
-- (bool)isOpen;
-- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
-- (long long)imageControlMode;
-- (double)videoZoomFactor;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
 - (void)setVideoZoomFactor:(double)arg1;
+- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
+- (long long)imageControlMode;
+- (double)videoZoomFactor;
 - (bool)doesHandleNotification:(id)arg1;
 - (bool)HDRUsesPreBracketedFrameAsEV0;
 - (void)setWhiteBalanceTemperature:(float)arg1;
@@ -114,7 +113,6 @@
 - (bool)isLockedForConfiguration;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (bool)isActiveVideoMaxFrameDurationSet;
-- (bool)isActiveVideoMinFrameDurationSet;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
@@ -141,12 +139,14 @@
 - (void)_stopUsingDevice;
 - (bool)_startUsingDevice:(id*)arg1;
 - (id)activeInput;
+- (bool)isActiveVideoMinFrameDurationSet;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (void)_setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
 - (id)activeFormat;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (bool)isOpen;
 - (id)localizedName;
 - (id)uniqueID;
 - (bool)isConnected;

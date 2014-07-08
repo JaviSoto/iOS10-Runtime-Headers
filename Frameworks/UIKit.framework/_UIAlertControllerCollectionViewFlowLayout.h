@@ -4,6 +4,7 @@
 
 @interface _UIAlertControllerCollectionViewFlowLayout : UICollectionViewFlowLayout  {
     bool_hideSeparators;
+    double _alignedDescriptiveLabelTextWidth;
     bool_shouldRoundFirstCell;
     double _cornerRadius;
 }
@@ -11,6 +12,7 @@
 @property bool hideSeparators;
 @property bool shouldRoundFirstCell;
 @property double cornerRadius;
+@property double alignedDescriptiveLabelTextWidth;
 
 + (Class)layoutAttributesClass;
 
@@ -22,6 +24,8 @@
 - (bool)hideSeparators;
 - (bool)shouldRoundFirstCell;
 - (bool)_collectionViewIsLayingOutHorizontallyWithCellHeight:(double)arg1;
+- (double)alignedDescriptiveLabelTextWidth;
+- (void)setAlignedDescriptiveLabelTextWidth:(double)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHideSeparators:(bool)arg1;

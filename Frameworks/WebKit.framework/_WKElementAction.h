@@ -17,11 +17,17 @@
   /* Error parsing encoded ivar type info: @? */
     id _actionHandler;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _dismissalHandler;
+
     long long _type;
 }
 
 @property(readonly) long long type;
 @property(readonly) NSString * title;
+@property(copy) id dismissalHandler;
 
 + (id)elementActionWithType:(long long)arg1 customTitle:(id)arg2;
 + (id)elementActionWithTitle:(id)arg1 actionHandler:(id)arg2;
@@ -34,5 +40,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
+- (void)setDismissalHandler:(id)arg1;
+- (id)dismissalHandler;
 
 @end

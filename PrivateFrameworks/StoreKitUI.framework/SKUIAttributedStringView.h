@@ -8,18 +8,28 @@
     double _calculatedTopInset;
     long long _firstLineTopInset;
     SKUIAttributedStringLayout *_layout;
+    long long _stringTreatment;
     UIColor *_textColor;
+    UIColor *_treatmentColor;
 }
 
 @property(readonly) double baselineOffset;
+@property(readonly) double firstBaselineOffset;
 @property long long firstLineTopInset;
 @property(retain) SKUIAttributedStringLayout * layout;
+@property long long stringTreatment;
+@property(retain) UIColor * treatmentColor;
 @property(retain) UIColor * textColor;
 
++ (struct CGSize { double x1; double x2; })sizeWithLayout:(id)arg1 treatment:(long long)arg2;
 
 - (long long)firstLineTopInset;
+- (id)treatmentColor;
+- (long long)stringTreatment;
 - (void)setFirstLineTopInset:(long long)arg1;
 - (void)_reloadTopInset;
+- (void)setTreatmentColor:(id)arg1;
+- (void)setStringTreatment:(long long)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)baselineOffset;
@@ -27,6 +37,7 @@
 - (id)layout;
 - (void).cxx_destruct;
 - (id)description;
+- (double)firstBaselineOffset;
 - (id)textColor;
 - (void)setTextColor:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

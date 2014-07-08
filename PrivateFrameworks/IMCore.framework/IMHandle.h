@@ -162,11 +162,11 @@
 + (bool)notificationsEnabled;
 + (void)setNotificationsEnabled:(bool)arg1;
 
+- (void)setUniqueName:(id)arg1;
 - (void)requestValueOfProperty:(id)arg1;
 - (void)setPersonStatus:(unsigned long long)arg1;
 - (bool)hasConferencing;
 - (bool)_setCapabilities:(unsigned long long)arg1;
-- (unsigned long long)capabilities;
 - (id)fmfSiblingHandles;
 - (id)fmfHandle;
 - (id)imHandleRegistrarGUID;
@@ -228,13 +228,13 @@
 - (bool)isSystemUser;
 - (bool)canBeAdded;
 - (void)setLocalNickname:(id)arg1;
+- (void)resetUniqueName;
 - (id)nameAndID;
 - (id)_displayNameWithAbbreviation;
 - (id)displayNameForChat:(id)arg1;
 - (void)_clearABPersonLookup;
 - (void)clearABPerson;
 - (id)nameAndEmail;
-- (void)setUniqueName:(id)arg1;
 - (void)_setOriginalID:(id)arg1 countryCode:(id)arg2 updateSiblings:(bool)arg3;
 - (id)_handleInfo;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2;
@@ -285,7 +285,6 @@
 - (bool)_hasABName;
 - (id)displayID;
 - (void)sendNotificationABPersonChanged;
-- (void)resetUniqueName;
 - (void)_clearABProperties;
 - (void)resetABProperties;
 - (bool)areABPropertiesRecent;
@@ -328,14 +327,15 @@
 - (void)_removeAccountReference:(id)arg1;
 - (id)publicAPIPropertiesDictionary;
 - (id)bestAccountSibling;
-- (void)setEmails:(id)arg1;
-- (void)setCapabilities:(unsigned long long)arg1;
 - (void)setBlocked:(bool)arg1;
 - (bool)canBeDeleted;
 - (void)setEmail:(id)arg1;
 - (void)_postNotification:(id)arg1;
 - (bool)hasLocation;
 - (bool)hasName;
+- (void)setEmails:(id)arg1;
+- (unsigned long long)capabilities;
+- (void)setCapabilities:(unsigned long long)arg1;
 - (id)nickname;
 - (void)_registerForNotifications;
 - (id)lastName;
@@ -359,8 +359,8 @@
 - (id)init;
 - (unsigned long long)hash;
 - (id)name;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;

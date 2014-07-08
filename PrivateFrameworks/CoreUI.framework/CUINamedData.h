@@ -15,6 +15,7 @@
 @property(readonly) NSData * data;
 
 
+- (void)setName:(id)arg1;
 - (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 - (id)_renditionName;
 - (id)_renditionForSpecificKey:(id)arg1;
@@ -23,7 +24,6 @@
 - (id)utiType;
 - (id)name;
 - (id)data;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

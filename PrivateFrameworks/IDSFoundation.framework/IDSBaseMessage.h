@@ -190,8 +190,8 @@
 - (id)pushCertificate;
 - (id)bagKey;
 - (void)setUniqueID:(unsigned long long)arg1;
-- (id)topic;
 - (void)setTopic:(id)arg1;
+- (id)topic;
 - (long long)command;
 - (id)context;
 - (void)setContext:(id)arg1;

@@ -88,6 +88,7 @@
     UIView *_sourceView;
     UIBarButtonItem *_barButtonItem;
     unsigned long long _popoverArrowDirection;
+    double __dimmingViewTopEdgeInset;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -130,6 +131,7 @@
 @property bool showsPresentationArea;
 @property(getter=_retainsSelfWhilePresented,setter=_setRetainsSelfWhilePresented:) bool retainsSelfWhilePresented;
 @property(getter=_shouldHideArrow,setter=_setShouldHideArrow:) bool _shouldHideArrow;
+@property(setter=_setDimmingViewTopEdgeInset:) double _dimmingViewTopEdgeInset;
 
 + (bool)_alwaysAllowPopoverPresentations;
 + (bool)_forceAttemptsToAvoidKeyboard;
@@ -217,12 +219,13 @@
 - (void)setContentViewController:(id)arg1 animated:(bool)arg2;
 - (void)_transitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(bool)arg3;
 - (void)_performHierarchyCheckOnViewController:(id)arg1;
+- (void)_setDimmingViewTopEdgeInset:(double)arg1;
+- (double)_dimmingViewTopEdgeInset;
 - (void)_setRetainsSelfWhilePresented:(bool)arg1;
 - (void)_setPopoverBackgroundStyle:(long long)arg1;
 - (unsigned long long)_slideTransitionCount;
 - (void)setPopoverBackgroundViewClass:(Class)arg1;
 - (void)_setGesturesEnabled:(bool)arg1;
-- (bool)_isDismissing;
 - (void)_setManagingSplitViewController:(id)arg1;
 - (unsigned long long)arrowDirection;
 - (void)dimmingViewWasTapped:(id)arg1;
@@ -255,6 +258,7 @@
 - (id)_preferredAnimationControllerForDismissal;
 - (id)_preferredAnimationControllerForPresentation;
 - (bool)_forcesPreferredAnimationControllers;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_baseContentInsets;
 - (bool)_shouldKeepCurrentFirstResponder;
 - (id)initWithPresenting:(id)arg1 presented:(id)arg2;
 - (long long)adaptivePresentationStyle;
@@ -268,6 +272,7 @@
 - (void)_transitionToDidEnd;
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (id)presentedView;
+- (bool)_isDismissing;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (bool)_shouldDisableInteractionDuringTransitions;
 - (id)_presentationView;

@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class _UIBackdropView, UIView;
+@class _UIBackdropView, _UIBackdropViewSettings, UIView;
 
 @interface SKUIStorePagePinnedBackdropDecorationView : UICollectionReusableView  {
-    UIView *_backdropAlphaView;
     _UIBackdropView *_backdropView;
+    UIView *_backgroundView;
+    _UIBackdropViewSettings *_backdropStyleDefaultSettings;
 }
 
 

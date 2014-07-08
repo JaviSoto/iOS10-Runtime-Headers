@@ -14,7 +14,6 @@
 + (id)sharedInstance;
 
 - (id)languagesWithAvailableLocaleIdentifiers;
-- (id)renderableLanguageList;
 - (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (id)renderableLanguagesFromList:(id)arg1;
 - (bool)languageIsSupportedLanguage:(id)arg1;

@@ -11,8 +11,8 @@
 
 
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
-- (void).cxx_destruct;
 - (id)activityType;
+- (void).cxx_destruct;
 - (id)_beforeActivity;
 - (id)activityImage;
 - (void)performActivity;

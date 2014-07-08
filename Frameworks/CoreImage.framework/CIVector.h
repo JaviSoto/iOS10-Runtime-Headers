@@ -23,7 +23,6 @@
 - (double)valueAtIndex:(unsigned long long)arg1;
 - (double*)_values;
 - (struct CGPoint { double x1; double x2; })CGPointValue;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CGRectValue;
 - (id)initWithCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (id)initWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -37,6 +36,7 @@
 - (double)Y;
 - (double)X;
 - (id)stringRepresentation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CGRectValue;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })CGAffineTransformValue;
 - (id)init;
 - (id)initWithString:(id)arg1;

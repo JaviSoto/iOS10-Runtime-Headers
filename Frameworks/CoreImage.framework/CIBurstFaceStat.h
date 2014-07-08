@@ -140,14 +140,6 @@
 
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
-- (void)setYawAngle:(float)arg1;
-- (void)setHasYawAngle:(bool)arg1;
-- (void)setRollAngle:(float)arg1;
-- (void)setHasRollAngle:(bool)arg1;
-- (float)yawAngle;
-- (bool)hasYawAngle;
-- (float)rollAngle;
-- (bool)hasRollAngle;
 - (void)setMouthPleasant:(bool)arg1;
 - (void)setRightEyePleasant:(bool)arg1;
 - (void)setLeftEyePleasant:(bool)arg1;
@@ -176,6 +168,10 @@
 - (float)faceScore;
 - (float)normalizedSigma;
 - (void)setIsSyncedWithImage:(bool)arg1;
+- (void)setYawAngle:(float)arg1;
+- (void)setHasYawAngle:(bool)arg1;
+- (void)setRollAngle:(float)arg1;
+- (void)setHasRollAngle:(bool)arg1;
 - (void)setNormalizedSigma:(float)arg1;
 - (void)setNormalizedFocusScore:(float)arg1;
 - (void)setFocusScore:(float)arg1;
@@ -221,6 +217,10 @@
 - (float)leftEyeBlinkScore;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })leftEyeRect;
 - (bool)hasLeftEye;
+- (float)yawAngle;
+- (bool)hasYawAngle;
+- (float)rollAngle;
+- (bool)hasRollAngle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedFaceRect;
 - (int)faceId;
 - (void)dealloc;

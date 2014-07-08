@@ -41,11 +41,11 @@
 + (long long)currentDeviceOrientationAllowingAmbiguous:(bool)arg1;
 + (id)platformString;
 
-- (id)model;
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
+- (id)model;
 - (id)buildVersion;
 - (id)localizedModel;
+- (void)setOrientation:(long long)arg1;
 - (id)name;
 - (long long)_keyboardGraphicsQuality;
 - (void)_clearGraphicsQualityOverride;

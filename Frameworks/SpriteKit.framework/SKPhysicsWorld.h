@@ -24,7 +24,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id)fields;
 - (/* Warning: Unrecognized filer type: '3' using 'void*' */ void*)sampleFields:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
      /* Encoded args for previous method: 32@0:816 */
 
@@ -56,5 +55,6 @@
 - (id)bodies;
 - (bool)stepWithTime:(double)arg1 velocityIterations:(unsigned long long)arg2 positionIterations:(unsigned long long)arg3;
 - (void)removeBody:(id)arg1;
+- (id)fields;
 
 @end

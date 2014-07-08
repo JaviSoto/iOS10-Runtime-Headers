@@ -22,11 +22,11 @@
 - (void)unionPolicyRule:(id)arg1;
 - (id)downloadKind;
 - (long long)URLBagType;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithNetworkConstraints:(id)arg1;
 - (id)policyRules;
 - (id)initWithDownloadKind:(id)arg1 URLBagType:(long long)arg2;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

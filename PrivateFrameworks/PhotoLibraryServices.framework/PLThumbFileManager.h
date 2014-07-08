@@ -29,11 +29,11 @@
 
 + (void)deleteAllEntriesWithIdentifier:(id)arg1 basePath:(id)arg2;
 
+- (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
 - (void)_writeData:(id)arg1 forThumbIdentifier:(id)arg2;
 - (void)_writeImage:(id)arg1 forThumbIdentifier:(id)arg2;
 - (id)thumbnailForImage:(id)arg1 videoDuration:(id)arg2;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
-- (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
 - (id)thumbnailPathForThumbIdentifier:(id)arg1;
 - (id)imageWithIdentifier:(id)arg1;
 - (id)_debugDescription;

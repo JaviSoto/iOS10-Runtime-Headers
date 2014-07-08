@@ -12,12 +12,12 @@
 }
 
 
+- (void)setName:(id)arg1;
 - (id)sliceInformation;
 - (id)metrics;
 - (struct CGImage { }*)unslicedImage;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 withDescription:(id)arg2 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg3;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)key;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

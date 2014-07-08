@@ -25,16 +25,17 @@
 
 
 - (float)zoomLevel;
-- (void)setZoomLevel:(float)arg1;
 - (id)viewportInfo;
 - (bool)hasZoomLevel;
 - (void)setHasZoomLevel:(bool)arg1;
 - (bool)hasCoordinate;
+- (void)setZoomLevel:(float)arg1;
 - (bool)hasViewportInfo;
 - (void)setViewportInfo:(id)arg1;
 - (bool)hasImage;
 - (void)setCoordinate:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)coordinate;

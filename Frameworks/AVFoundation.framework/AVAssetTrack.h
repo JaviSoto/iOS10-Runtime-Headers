@@ -14,7 +14,6 @@
 + (id)keyPathsForValuesAffectingTimeRange;
 + (id)mediaTypesForMediaCharacteristics;
 
-- (id)metadata;
 - (bool)_firstFormatDescriptionIsLPCM;
 - (bool)_hasMultipleEdits;
 - (bool)_hasEmptyEdits;
@@ -61,6 +60,7 @@
 - (float)preferredVolume;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long long)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
+- (id)metadata;
 - (int)trackID;
 - (bool)isEnabled;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;

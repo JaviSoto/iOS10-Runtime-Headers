@@ -54,7 +54,6 @@
 - (void)setViewButton:(id)arg1;
 - (id)viewButton;
 - (void)setAppName:(id)arg1;
-- (id)appName;
 - (void)setTapToOpen:(id)arg1;
 - (id)tapToOpen;
 - (bool)_itemArtNeedsShine:(id)arg1;
@@ -91,6 +90,7 @@
 - (void)setStoreIDs:(id)arg1;
 - (void)reloadWithDelay:(double)arg1;
 - (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2;
+- (id)appName;
 - (id)productViewController;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)setProductViewController:(id)arg1;

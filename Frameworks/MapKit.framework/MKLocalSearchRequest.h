@@ -40,11 +40,11 @@
 - (void)_setCanonicalSearchString:(id)arg1;
 - (id)_contactsDataString;
 - (void)_setDeviceLocation:(id)arg1;
-- (bool)_hasRegion;
 - (void)_setMuids:(id)arg1;
 - (void)setNaturalLanguageQuery:(id)arg1;
 - (id)naturalLanguageQuery;
 - (id)_canonicalSearchString;
+- (bool)_hasRegion;
 - (id)_muids;
 - (id)_phoneNumbers;
 - (id)_deviceLocation;

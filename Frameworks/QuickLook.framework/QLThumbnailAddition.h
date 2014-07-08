@@ -16,10 +16,10 @@
 @property(retain) NSDictionary * metadata;
 @property(retain) NSDictionary * thumbnailDataDictionary;
 
++ (bool)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withDocumentAtURL:(id)arg3 error:(id*)arg4;
 + (bool)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id*)arg3;
 + (id)thumbnailsDictionaryForURL:(id)arg1 error:(id*)arg2;
 + (bool)hasThumbnailOnImmutableDocumentAtURL:(id)arg1;
-+ (bool)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withDocumentAtURL:(id)arg3 error:(id*)arg4;
 + (bool)removeAdditionsOnURL:(id)arg1 error:(id*)arg2;
 + (Class)imageClassWithError:(id*)arg1;
 + (bool)_removedAdditionsOnURL:(id)arg1;

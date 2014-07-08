@@ -15,8 +15,8 @@
 + (bool)supportsSecureCoding;
 
 - (void)setEncryptedData:(id)arg1;
-- (id)encryptedData;
 - (id)initWithEncryptedData:(id)arg1;
+- (id)encryptedData;
 - (id)CKPropertiesDescription;
 - (id)init;
 - (bool)isEqual:(id)arg1;
@@ -29,5 +29,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setData:(id)arg1;
+- (id)_prettyDictionaryRepresentation;
 
 @end

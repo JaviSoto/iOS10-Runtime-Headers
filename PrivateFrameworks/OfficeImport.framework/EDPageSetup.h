@@ -32,13 +32,13 @@
 - (void)setCustomFirstPageNumber:(bool)arg1;
 - (void)setFirstPageNumber:(unsigned long long)arg1;
 - (float)headerMargin;
-- (void)setOrientation:(int)arg1;
 - (int)orientation;
 - (float)rightMargin;
 - (float)leftMargin;
 - (float)bottomMargin;
 - (float)topMargin;
 - (void)setScale:(unsigned long long)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setBottomMargin:(float)arg1;
 - (void)setTopMargin:(float)arg1;
 - (void)setRightMargin:(float)arg1;

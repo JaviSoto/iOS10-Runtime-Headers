@@ -11,12 +11,12 @@
 @property(copy,readonly) NSURLRequest * originalRequest;
 @property(copy,readonly) NSURLRequest * currentRequest;
 
++ (void)_setCollectsTimingData:(bool)arg1;
 + (bool)canHandleRequest:(id)arg1;
 + (void)_setSweeperInterval:(unsigned long long)arg1;
 + (unsigned long long)_sweeperInterval;
 + (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 + (bool)_collectsTimingData;
-+ (void)_setCollectsTimingData:(bool)arg1;
 + (void)_setLoaderThreadPriority:(int)arg1;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
 + (void)_resourceLoadLoop:(id)arg1;
@@ -49,8 +49,8 @@
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
-- (id)currentRequest;
 - (id)originalRequest;
+- (id)currentRequest;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;

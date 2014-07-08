@@ -20,9 +20,9 @@
 - (id)_errorForStatusCode:(long long)arg1;
 - (id)_convertedValueForValue:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
+- (id)parameters;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)parameters;
 - (id)init;
 - (bool)start;
 - (void)dealloc;

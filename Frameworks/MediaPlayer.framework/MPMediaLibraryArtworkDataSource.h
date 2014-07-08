@@ -2,22 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache, NSMapTable, MPArtworkResizeUtility;
+@class NSCache, MPArtworkResizeUtility;
 
 @interface MPMediaLibraryArtworkDataSource : NSObject <MPArtworkDataSource> {
     NSCache *_fallbackCache;
-    NSMapTable *_catalogRequestMapTable;
     MPArtworkResizeUtility *_artworkResizeUtility;
 }
 
 @property(retain) NSCache * fallbackCache;
-@property(retain) NSMapTable * catalogRequestMapTable;
 @property(retain) MPArtworkResizeUtility * artworkResizeUtility;
 
 
 - (void)setArtworkResizeUtility:(id)arg1;
-- (void)setCatalogRequestMapTable:(id)arg1;
-- (id)catalogRequestMapTable;
 - (void)setFallbackCache:(id)arg1;
 - (id)artworkResizeUtility;
 - (id)fallbackCache;

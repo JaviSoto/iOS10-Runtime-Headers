@@ -14,8 +14,8 @@
 
 - (void)setSoftwareTypes:(id)arg1;
 - (void)setForced:(bool)arg1;
+- (void)setClientIdentifierHeader:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setClientIdentifierHeader:(id)arg1;
 
 @end

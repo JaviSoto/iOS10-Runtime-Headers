@@ -32,6 +32,8 @@
 
 
 - (void)copyTo:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (void)setHasStaticEntityType:(bool)arg1;
 - (void)setHasEntityOrder:(bool)arg1;
 - (void)setHasFilteringDisabled:(bool)arg1;
@@ -56,12 +58,10 @@
 - (unsigned long long)staticEntityIdentifiersCount;
 - (bool)filteringDisabled;
 - (int)entityOrder;
-- (int)groupingType;
 - (id)filterPredicates;
 - (unsigned long long)filterPredicatesCount;
+- (int)groupingType;
 - (void)setFilterPredicates:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

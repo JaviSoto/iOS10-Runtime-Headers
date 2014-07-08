@@ -155,9 +155,9 @@
 - (bool)canSave;
 - (void)updateRecord;
 - (void)reloadFromModel;
+- (long long)itemCount;
 - (void*)context;
 - (int)property;
-- (long long)itemCount;
 - (void)dealloc;
 - (id)description;
 

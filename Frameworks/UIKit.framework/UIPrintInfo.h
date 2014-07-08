@@ -25,9 +25,9 @@
 + (id)printInfoWithDictionary:(id)arg1;
 + (id)printInfo;
 
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
 - (long long)duplex;
+- (void)setOrientation:(long long)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

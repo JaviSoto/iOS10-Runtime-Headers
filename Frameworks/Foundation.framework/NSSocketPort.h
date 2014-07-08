@@ -28,7 +28,6 @@
 + (bool)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned long long)arg7;
 
 - (int)protocol;
-- (int)socket;
 - (id)init;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
@@ -47,6 +46,7 @@
 - (void)_handleMessage:(struct __CFData { }*)arg1 from:(struct __CFData { }*)arg2 socket:(struct __CFSocket { }*)arg3;
 - (id)initWithProtocolFamily:(int)arg1 socketType:(int)arg2 protocol:(int)arg3 socket:(int)arg4;
 - (id)initRemoteWithTCPPort:(unsigned short)arg1 host:(id)arg2;
+- (int)socket;
 - (int)socketType;
 - (int)protocolFamily;
 - (struct __CFSocket { }*)_sendingSocketForPort:(id)arg1 beforeTime:(double)arg2;

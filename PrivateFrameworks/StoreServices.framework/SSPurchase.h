@@ -95,8 +95,6 @@
 - (void)setBackgroundPurchase:(bool)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)networkConstraints;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setDownloadPolicy:(id)arg1;
 - (id)downloadPolicy;
 - (void)setRequestProperties:(id)arg1;
@@ -105,6 +103,8 @@
 - (void)setDisplaysOnLockScreen:(bool)arg1;
 - (void)setIgnoresForcedPasswordRestriction:(bool)arg1;
 - (id)downloadProperties;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (id)requiredDeviceCapabilities;

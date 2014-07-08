@@ -63,7 +63,6 @@
 @property bool wordLearningEnabled;
 @property bool autocorrectionEnabled;
 @property bool shortcutConversionEnabled;
-@property bool typologyLoggingEnabled;
 @property bool autocapitalizationEnabled;
 @property(retain) TITextInputTraits * textInputTraits;
 @property(copy) NSString * responseContext;
@@ -76,7 +75,6 @@
 + (bool)supportsSecureCoding;
 
 - (void)setAutocorrectionListUIAutoDisplayMode:(bool)arg1;
-- (void)setTypologyLoggingEnabled:(bool)arg1;
 - (bool)autocorrectionListUIAutoDisplayMode;
 - (bool)autocorrectionListUIDisplayed;
 - (id)responseContext;
@@ -84,7 +82,6 @@
 - (bool)shortcutConversionEnabled;
 - (bool)autocorrectionEnabled;
 - (bool)wordLearningEnabled;
-- (bool)typologyLoggingEnabled;
 - (bool)splitKeyboardMode;
 - (bool)keyboardEventsLagging;
 - (bool)needsCandidateMetadata;

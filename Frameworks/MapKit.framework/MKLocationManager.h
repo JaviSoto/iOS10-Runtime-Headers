@@ -198,7 +198,6 @@
 - (void)dismissHeadingCalibrationDisplay;
 - (long long)headingOrientation;
 - (void)setMatchInfoEnabled:(bool)arg1;
-- (void)setActivityType:(long long)arg1;
 - (bool)isLocationServicesPreferencesDialogEnabled;
 - (double)desiredAccuracy;
 - (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
@@ -229,12 +228,13 @@
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
+- (void)setActivityType:(long long)arg1;
+- (long long)activityType;
 - (id)init;
 - (void)_suspend;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)reset;
-- (long long)activityType;
 - (id)effectiveBundle;
 
 @end

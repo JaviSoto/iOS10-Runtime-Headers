@@ -14,6 +14,7 @@
 - (float)animationSpeed;
 - (void)setSmoothness:(float)arg1;
 - (float)smoothness;
+- (id)initWithField:(struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (id)init;
 
 @end

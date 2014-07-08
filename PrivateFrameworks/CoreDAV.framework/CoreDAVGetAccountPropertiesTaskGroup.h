@@ -40,7 +40,6 @@
 - (void)processPrincipalHeaders:(id)arg1;
 - (bool)forceOptionsRequest;
 - (bool)shouldIgnoreHomeSetOnDifferentHost;
-- (id)emailAddresses;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
@@ -51,6 +50,7 @@
 - (id)homeSet;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)_copyAccountPropertiesPropFindElements;
+- (id)emailAddresses;
 - (id)collections;
 - (void)dealloc;
 - (id)description;

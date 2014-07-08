@@ -10,6 +10,7 @@
 }
 
 
+- (bool)sendMessage:(id)arg1;
 - (void*)copyReplyForDirectMessage:(id)arg1 error:(bool*)arg2;
 - (void)setManaged:(bool)arg1;
 - (void)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;

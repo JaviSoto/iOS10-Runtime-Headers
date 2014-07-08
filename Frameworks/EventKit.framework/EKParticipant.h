@@ -29,10 +29,10 @@
 - (int)participantRole;
 - (int)participantType;
 - (id)_persistentItem;
-- (bool)isCurrentUser;
 - (int)participantStatus;
-- (id)owner;
 - (void)setAddress:(id)arg1;
+- (bool)isCurrentUser;
+- (id)owner;
 - (void)setComment:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setLastName:(id)arg1;

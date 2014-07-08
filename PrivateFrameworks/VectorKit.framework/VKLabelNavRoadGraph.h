@@ -109,8 +109,8 @@
 - (id)junctionForRoad:(id)arg1 nearJunction:(bool)arg2 crossTileEdge:(bool)arg3;
 - (id)nextRoadSegmentForRoad:(id)arg1;
 - (unsigned char)computeRoutePositionForPOIAtPixel:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 currentPosition:(unsigned char)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
-- (void)setJunctions:(id)arg1;
 - (id)junctions;
+- (void)setJunctions:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;

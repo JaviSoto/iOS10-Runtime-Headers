@@ -20,8 +20,8 @@
 + (void)_appWillActivate;
 + (void)_appWillDeactivate;
 
-- (id)dataForKey:(id)arg1;
 - (void)setData:(id)arg1 forKey:(id)arg2;
+- (id)dataForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (void)setBool:(bool)arg1 forKey:(id)arg2;
 - (bool)boolForKey:(id)arg1;

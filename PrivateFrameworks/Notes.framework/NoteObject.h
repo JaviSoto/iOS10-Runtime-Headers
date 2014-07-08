@@ -56,8 +56,8 @@
 - (bool)isMarkedForDeletion;
 - (void)markForDeletion;
 - (void)setSequenceNumber:(unsigned long long)arg1;
-- (unsigned long long)sequenceNumber;
 - (void)setContent:(id)arg1;
+- (unsigned long long)sequenceNumber;
 - (bool)containsAttachments;
 - (void)setFlags:(unsigned long long)arg1;
 - (id)content;

@@ -16,7 +16,6 @@
 
 + (id)keyPathsForValuesAffectingReadyForMoreMediaData;
 
-- (long long)status;
 - (void)setCurrentPassDescription:(id)arg1;
 - (bool)mediaDataRequesterShouldRequestMediaData:(id)arg1;
 - (void)markAsFinishedAndTransitionCurrentHelper:(id)arg1;
@@ -40,6 +39,7 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (id)initWithConfigurationState:(id)arg1;
 - (bool)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (long long)status;
 - (int)trackID;
 - (void)finalize;
 - (void)dealloc;

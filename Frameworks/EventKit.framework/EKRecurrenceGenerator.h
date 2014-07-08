@@ -68,9 +68,7 @@
 - (bool)allDay;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
-- (id)monthsOfTheYear;
 - (id)setPositions;
-- (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
@@ -82,6 +80,8 @@
 - (bool)occurrenceDate:(id)arg1 matchesRecurrenceRule:(id)arg2 forEvent:(id)arg3 includeDetachedEventsInSeries:(bool)arg4;
 - (id)copyOccurrenceDatesWithEKEvent:(id)arg1 recurrenceRule:(id)arg2 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg4 timeZone:(id)arg5 exceptionDates:(id)arg6 limit:(long long)arg7;
 - (id)nextOccurrenceDateWithEKRecurrences:(id)arg1 exceptionDates:(id)arg2 initialDate:(id)arg3 afterDate:(id)arg4;
+- (id)daysOfTheMonth;
+- (id)monthsOfTheYear;
 - (id)nextOccurrenceDateWithEKRecurrences:(id)arg1 initialDate:(id)arg2 afterDate:(id)arg3;
 - (bool)isOccurrenceDate:(id)arg1 validForEvent:(id)arg2;
 - (id)copyOccurrenceDatesWithInitialDate:(id)arg1 calRecurrences:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 timeZone:(id)arg5;

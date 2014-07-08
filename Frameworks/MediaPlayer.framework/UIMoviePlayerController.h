@@ -132,6 +132,7 @@
 + (void)allInstancesResignActiveForced:(bool)arg1;
 + (void)allInstancesResignActive;
 
+- (bool)isPreparedForPlayback;
 - (id)playerView;
 - (bool)isFullScreen;
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fullScreen:(bool)arg2;
@@ -173,7 +174,6 @@
 - (double)playableStartTime;
 - (void)setPlaybackRate:(float)arg1;
 - (void)prepareForPlayback;
-- (bool)isPreparedForPlayback;
 - (void)setPlayableContentType:(unsigned long long)arg1;
 - (bool)useHostedWindowWhenFullscreen;
 - (void)setManagesStatusBar:(bool)arg1;
@@ -315,7 +315,6 @@
 - (bool)isFullscreen;
 - (unsigned long long)playbackState;
 - (float)playbackRate;
-- (void)_unregisterForNotifications;
 - (void)setCurrentTime:(double)arg1;
 - (bool)muted;
 - (double)currentTime;
@@ -325,6 +324,7 @@
 - (bool)limitReadAhead;
 - (id)currentDate;
 - (bool)seekToDate:(id)arg1;
+- (void)_unregisterForNotifications;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)errorLog;
 - (id)accessLog;

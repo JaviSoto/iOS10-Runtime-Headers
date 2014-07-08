@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableSet, NSMutableDictionary, NSMutableArray;
+@class NSMutableDictionary, NSMutableArray;
 
 @interface IMHandleRegistrarInternal : NSObject  {
     NSMutableDictionary *_siblingsMap;
@@ -11,10 +11,6 @@
     NSMutableDictionary *_chatSiblingsMap;
     NSMutableDictionary *_existingChatSiblingsMap;
     NSMutableArray *_allIMHandles;
-    NSMutableDictionary *_candidateNamesMap;
-    NSMutableDictionary *_usedUniqueNames;
-    NSMutableSet *_knownConflictingNames;
-    long long _nameStyle;
     bool_buildingChatSiblings;
 }
 

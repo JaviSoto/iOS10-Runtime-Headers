@@ -27,7 +27,7 @@
     NSMutableDictionary *_videoPlaceholderImages;
 }
 
-@property(retain) SKUIGridComponent * pageComponent;
+@property(readonly) SKUIGridComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -70,13 +70,11 @@
 - (id)_missingItemLoader;
 - (void)_loadMissingItemsFromIndex:(long long)arg1 withReason:(long long)arg2;
 - (id)itemOfferClickEventWithItem:(id)arg1 elementName:(id)arg2 index:(long long)arg3;
-- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(long long)arg3;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionViewDidTapVideoAtIndexPath:(id)arg1;
 - (void)collectionViewDidConfirmItemOfferAtIndexPath:(id)arg1;
@@ -85,6 +83,8 @@
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;

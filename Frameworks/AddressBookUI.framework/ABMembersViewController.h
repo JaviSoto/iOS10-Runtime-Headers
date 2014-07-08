@@ -33,7 +33,6 @@
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
 - (void)linksUpdatedForPerson:(void*)arg1;
 - (void)nameUpdatedForPerson:(void*)arg1;
-- (void)membersControllerDidEndSearching:(id)arg1;
 - (void)personWasDeleted;
 - (void)handleExternalChangeOnPersonViewControllers;
 - (void)reallyHandleExternalChangeOnPersonViewControllers;
@@ -69,6 +68,7 @@
 - (bool)showCardForPerson:(void*)arg1 animate:(bool)arg2;
 - (bool)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(bool)arg3;
 - (bool)selectAndScrollMemberVisible:(void*)arg1;
+- (void)membersControllerDidEndSearching:(id)arg1;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerDidEndServerSearch:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;

@@ -12,7 +12,6 @@
 - (void)dealloc;
 - (void)_handleDeleteButton:(id)arg1;
 - (id)_downloadButton;
-- (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
 - (id)_downloadOptionsDictionary;
 - (void)_handleDownloadButton:(id)arg1;
 - (id)_downloadImageWithTintColor:(id)arg1;

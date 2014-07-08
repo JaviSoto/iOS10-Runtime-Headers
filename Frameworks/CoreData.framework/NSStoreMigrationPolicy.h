@@ -29,6 +29,7 @@
 + (void)setMigrationDebugLevel:(int)arg1;
 + (int)migrationDebugLevel;
 
+- (void)setSourceConfiguration:(id)arg1;
 - (void)setResourceBundles:(id)arg1;
 - (id)destinationConfigurationForMigration:(id)arg1 sourceMetadata:(id)arg2 error:(id*)arg3;
 - (void)setDestinationConfiguration:(id)arg1;
@@ -69,7 +70,6 @@
 - (id)persistentStoreCoordinator;
 - (id)destinationModel;
 - (id)sourceModel;
-- (void)setSourceConfiguration:(id)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (id)destinationURL;
 - (void)dealloc;

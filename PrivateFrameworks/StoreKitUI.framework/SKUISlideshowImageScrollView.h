@@ -20,7 +20,6 @@
 
 - (void)zoomIntoPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)resetZoomScale;
-- (double)_computeMinimumZoomScale;
 - (void)_resetMinMaxZoomScales;
 - (void)_recoverFromResize;
 - (void)_prepareToResize;

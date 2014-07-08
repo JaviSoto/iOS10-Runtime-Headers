@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, NSMutableData, NSURLRequest;
+@class NSString, NSHTTPURLResponse, NSMutableData, NSURLRequest;
 
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
     NSString *_initialURLString;
@@ -20,6 +20,7 @@
     id _handler;
 
     NSMutableData *_responseData;
+    NSHTTPURLResponse *_response;
 }
 
 @property(readonly) NSURLRequest * urlRequest;
@@ -43,6 +44,7 @@
 - (id)bodyDictionary;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)dealloc;
 - (void).cxx_destruct;
 

@@ -7,8 +7,7 @@
 
 
 - (bool)hasStylePresetWithName:(id)arg1;
-- (id)newShapeEffectPresetWithStylePresetName:(id)arg1 state:(long long)arg2 presentationState:(long long)arg3 value:(long long)arg4 resolution:(unsigned long long)arg5;
-- (id)newShapeEffectPresetWithStyleID:(unsigned long long)arg1 state:(long long)arg2 presentationState:(long long)arg3 value:(long long)arg4 resolution:(unsigned long long)arg5;
 - (bool)hasStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
+- (id)newShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;
 
 @end

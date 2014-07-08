@@ -25,7 +25,7 @@
     NSError *_error;
 }
 
-@property NSError * error;
+@property(retain) NSError * error;
 
 
 - (void)_finishWithError:(id)arg1;
@@ -37,6 +37,7 @@
 - (id)error;
 - (void)cancel;
 - (void)dealloc;
+- (id)description;
 - (bool)isConcurrent;
 - (bool)isExecuting;
 - (bool)isFinished;

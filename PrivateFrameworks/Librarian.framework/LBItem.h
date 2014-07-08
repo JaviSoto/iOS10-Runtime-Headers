@@ -15,8 +15,8 @@
 
 
 - (void)updateInfo:(id)arg1;
-- (void)setReplacement:(id)arg1;
 - (id)initWithURL:(id)arg1 itemUpdateInfo:(id)arg2;
+- (void)setReplacement:(id)arg1;
 - (id)replacement;
 - (id)url;
 - (id)valueForKey:(id)arg1;

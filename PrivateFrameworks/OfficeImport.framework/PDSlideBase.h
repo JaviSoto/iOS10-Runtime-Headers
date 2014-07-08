@@ -53,12 +53,12 @@
 - (id)defaultTheme;
 - (id)styleMatrix;
 - (id)colorScheme;
+- (void)setName:(id)arg1;
 - (bool)isHidden;
 - (id)colorMap;
 - (id)animation;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)setBackground:(id)arg1;

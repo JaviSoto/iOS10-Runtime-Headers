@@ -22,8 +22,8 @@
 - (void)addUpdatesFromGroup:(id)arg1;
 - (void)addUpdate:(id)arg1 error:(id)arg2;
 - (void)updateError:(id)arg1;
-- (void)setLock:(id)arg1;
 - (id)group;
+- (void)setLock:(id)arg1;
 - (id)init;
 - (void)setGroup:(id)arg1;
 - (id)lock;

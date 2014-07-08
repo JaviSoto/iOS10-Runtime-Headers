@@ -19,8 +19,8 @@
 - (void)setParseClass:(Class)arg1;
 - (void)setNameSpace:(id)arg1;
 - (id)initWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (id)description;
 - (id)nameSpace;

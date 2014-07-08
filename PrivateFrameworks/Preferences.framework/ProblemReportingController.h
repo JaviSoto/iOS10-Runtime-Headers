@@ -8,11 +8,13 @@
     PrefsUILinkLabel *_aboutDiagnosticsLinkLabel;
     PSSpecifier *_diagnosticDataGroupSpecifier;
     PSSpecifier *_filesystemMetadataSnapshotSpecifier;
+    PSSpecifier *_appActivitySpecifier;
     PSSpecifier *_spinnerSpecifier;
 }
 
 @property(readonly) PSSpecifier * spinnerSpecifier;
 @property(readonly) PSSpecifier * filesystemMetadataSnapshotSpecifier;
+@property(readonly) PSSpecifier * appActivitySpecifier;
 
 + (bool)isProblemReportingEnabled;
 
@@ -21,7 +23,10 @@
 - (void)setProblemReportingEnabled:(bool)arg1;
 - (bool)shouldEnableProblemReportingForCheckedSpecifier;
 - (id)filesystemMetadataSnapshotSpecifier;
+- (id)shouldShareAppActivityWithAppDevelopers;
+- (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
 - (void)snapshot:(id)arg1;
+- (id)appActivitySpecifier;
 - (void)diagnosticsDonePressed:(id)arg1;
 - (id)specifiers;
 - (void)dealloc;

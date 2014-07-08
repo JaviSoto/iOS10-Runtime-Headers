@@ -14,12 +14,12 @@
 
 
 - (void)setContent:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setHttpEquiv:(id)arg1;
 - (id)httpEquiv;
 - (void)setScheme:(id)arg1;
 - (id)content;
 - (id)scheme;
 - (id)name;
-- (void)setName:(id)arg1;
 
 @end

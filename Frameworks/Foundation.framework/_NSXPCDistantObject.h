@@ -30,15 +30,16 @@
 - (void)forwardInvocation:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
+- (void)set_exported:(bool)arg1;
 - (bool)_exported;
 - (id)_remoteInterface;
+- (void)set_proxyNumber:(unsigned long long)arg1;
 - (unsigned long long)_proxyNumber;
 - (void)set_remoteInterface:(id)arg1;
 - (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
 - (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
 - (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 interface:(id)arg3;
-- (void)set_exported:(bool)arg1;
-- (void)set_proxyNumber:(unsigned long long)arg1;
+- (id)_initWithConnection:(id)arg1 exportedObject:(id)arg2 interface:(id)arg3;
 - (void)set_connection:(id)arg1;
 - (id)_connection;
 

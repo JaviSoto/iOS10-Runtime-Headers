@@ -19,6 +19,7 @@
 - (void)setPixel:(struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })arg1;
 - (struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })pixel;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

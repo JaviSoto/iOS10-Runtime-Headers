@@ -8,6 +8,7 @@
     UIKeyboardInputMode *_currentInputMode;
     NSArray *_inputModesWithoutHardwareSupport;
     NSArray *_allowedExtensions;
+    bool_skipExtensionInputModes;
     NSArray *keyboardInputModes;
     NSArray *enabledInputModes;
     NSArray *normalizedInputModes;
@@ -63,6 +64,7 @@
 - (id)enabledInputModeIdentifiers:(bool)arg1;
 - (id)defaultKeyboardInputModes;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
+- (void)switchToCurrentSystemInputMode;
 - (id)extensionInputModes;
 - (id)suggestedInputModesForCurrentLocale;
 - (id)defaultEnabledInputModesForCurrentLocale:(bool)arg1;
@@ -75,10 +77,12 @@
 - (void)setNextInputModeToUse:(id)arg1;
 - (id)nextInputModeToUse;
 - (id)_MCFilteredExtensionIdentifiers;
+- (bool)verifyKeyboardExtensionsWithApp;
 - (id)defaultNormalizedInputModes;
 - (id)defaultRawInputModes;
 - (id)suggestedInputModesForCurrentLocale:(bool)arg1 fallbackToDefaultInputModes:(bool)arg2;
 - (id)normalizedInputModes;
+- (void)_setCurrentInputMode:(id)arg1 force:(bool)arg2;
 - (id)_systemInputModePassingTest:(id)arg1;
 - (id)lastUsedInputMode;
 - (void)updateCurrentInputMode:(id)arg1;
@@ -95,6 +99,7 @@
 - (void)setInputModeContextIdentifier:(id)arg1;
 - (bool)identifierIsValidSystemInputMode:(id)arg1;
 - (void)updateLastUsedInputMode:(id)arg1;
+- (void)performWithoutExtensionInputModes:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
 - (void)updateCurrentAndNextInputModes;
 - (void)setCurrentInputModeInPreference:(id)arg1;

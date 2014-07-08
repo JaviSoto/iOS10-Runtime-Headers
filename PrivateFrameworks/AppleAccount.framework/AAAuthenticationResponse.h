@@ -18,10 +18,12 @@
 @property(readonly) NSString * cloudKitToken;
 @property(readonly) NSString * fmipLostModeToken;
 @property(readonly) NSString * personID;
+@property(readonly) NSString * altDSID;
 @property(readonly) NSString * HSAAction;
 @property(readonly) NSString * HSAData;
 
 
+- (id)altDSID;
 - (id)fmipLostModeToken;
 - (id)cloudKitToken;
 - (id)fmipToken;

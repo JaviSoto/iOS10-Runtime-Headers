@@ -37,8 +37,6 @@
 - (id)initWithURL:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (double)_timeWindowDuration;
-- (double)_timeWindowDelay;
 - (unsigned long long)expectedWorkload;
 - (id)contentDispositionEncodingFallbackArray;
 - (bool)HTTPShouldUsePipelining;
@@ -51,6 +49,8 @@
 - (unsigned long long)networkServiceType;
 - (id)_copyReplacingURLWithURL:(id)arg1;
 - (double)timeoutInterval;
+- (double)_timeWindowDuration;
+- (double)_timeWindowDelay;
 - (id)allHTTPHeaderFields;
 - (bool)HTTPShouldHandleCookies;
 - (unsigned long long)cachePolicy;

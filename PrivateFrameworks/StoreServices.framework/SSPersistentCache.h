@@ -20,8 +20,8 @@
 - (id)_pathForKey:(id)arg1;
 - (bool)removeDataForKey:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2;
-- (id)dataForKey:(id)arg1;
 - (bool)setData:(id)arg1 forKey:(id)arg2;
+- (id)dataForKey:(id)arg1;
 - (bool)clear;
 - (void)dealloc;
 - (id)description;

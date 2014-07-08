@@ -13,6 +13,7 @@
 @property(copy,readonly) NSString * filterIdentifier;
 @property(copy,readonly) NSString * displayName;
 @property(copy,readonly) NSString * CIFilterName;
+@property(readonly) long long latestVersion;
 
 + (unsigned long long)indexOfEffectWithIdentifier:(id)arg1;
 + (id)allEffects;
@@ -20,6 +21,7 @@
 + (id)effectWithCIFilterName:(id)arg1;
 + (id)effectWithIdentifier:(id)arg1;
 
+- (long long)latestVersion;
 - (id)CIFilterName;
 - (id)filterIdentifier;
 - (id)newEffectFilter;

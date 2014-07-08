@@ -57,8 +57,8 @@
 - (double)maximumDuration;
 - (bool)_checkForSwipeWithDelta:(struct CGPoint { double x1; double x2; })arg1 time:(double)arg2;
 - (void)_appendSubclassDescription:(id)arg1;
-- (void)setMinimumPrimaryMovement:(double)arg1;
 - (void)_resetGestureRecognizer;
+- (void)setMinimumPrimaryMovement:(double)arg1;
 - (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (unsigned long long)numberOfTouchesRequired;
 - (void)setMaximumDuration:(double)arg1;

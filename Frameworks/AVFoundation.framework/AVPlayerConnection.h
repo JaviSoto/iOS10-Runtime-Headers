@@ -20,12 +20,12 @@
 @property(readonly) NSObject<OS_dispatch_queue> * serializationQueue;
 
 
-- (long long)status;
 - (id)serializationQueue;
 - (id)playerItem;
 - (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(bool)arg3;
 - (void)removeItemFromPlayQueue;
 - (bool)addItemToPlayQueue;
+- (long long)status;
 - (id)player;
 - (id)error;
 - (void)dealloc;

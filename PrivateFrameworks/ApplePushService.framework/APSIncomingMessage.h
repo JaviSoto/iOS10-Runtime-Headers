@@ -22,7 +22,7 @@
 - (id)timestamp;
 - (void)setToken:(id)arg1;
 - (id)token;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 
 @end

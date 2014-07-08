@@ -19,11 +19,11 @@
 + (id)cardFromPath:(id)arg1;
 + (bool)supportsSecureCoding;
 
-- (id)emailAddresses;
 - (bool)writeToPath:(id)arg1;
 - (id)preferredEmailAddress;
 - (id)initWithDisplayName:(id)arg1 emailAddresses:(id)arg2 uniqueID:(id)arg3;
 - (bool)isEqualToMeCard:(id)arg1;
+- (id)emailAddresses;
 - (long long)version;
 - (id)uniqueID;
 - (bool)isEqual:(id)arg1;

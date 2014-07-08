@@ -32,8 +32,8 @@
 - (void)setDocumentCapabilities:(long long)arg1;
 - (void)setLogger:(id)arg1;
 - (id)logger;
-- (id)outputURL;
 - (void)setOutputURL:(id)arg1;
+- (id)outputURL;
 - (id)init;
 - (void)dealloc;
 

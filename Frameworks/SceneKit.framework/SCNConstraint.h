@@ -7,12 +7,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableDictionary;
+@class SCNOrderedDictionary;
 
 @interface SCNConstraint : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     id _constraintReserved;
-    struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; boolx5; } *_constraintRef;
-    NSMutableDictionary *_animations;
+    struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; boolx5; } *_constraintRef;
+    SCNOrderedDictionary *_animations;
     bool_enabled;
     double _influenceFactor;
 }
@@ -25,21 +25,22 @@
 - (void)finalizeDecodeConstraint:(id)arg1;
 - (void)setInfluenceFactor:(double)arg1;
 - (double)influenceFactor;
-- (struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; boolx5; }*)constraintRef;
-- (void)setConstraintRef:(struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; boolx5; }*)arg1;
+- (struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; boolx5; }*)constraintRef;
+- (void)setConstraintRef:(struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; boolx5; }*)arg1;
 - (void)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;
 - (bool)isAnimationForKeyPaused:(id)arg1;
 - (void)resumeAnimationForKey:(id)arg1;
 - (void)pauseAnimationForKey:(id)arg1;
 - (void)_pauseAnimation:(bool)arg1 forKey:(id)arg2;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; struct _C3DAnimationPendingEvent {} *x9; struct __C3DAllocator {} *x10; struct __CFDictionary {} *x11; double x12; double x13; struct _opaque_pthread_mutex_t { long long x_14_1_1; BOOL x_14_1_2[56]; } x14; int x15; int x16; int x17; int x18; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; boolx9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long long x_16_1_1; BOOL x_16_1_2[56]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
 - (void)_syncObjCAnimations;
 - (void*)__CFObject;
 - (struct __C3DScene { }*)sceneRef;
 - (id)scene;
 - (void)copyTo:(id)arg1;
 - (void)removeAllAnimations;
+- (void)setName:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
 - (id)animationKeys;
@@ -49,7 +50,6 @@
 - (id)animationForKey:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copy;

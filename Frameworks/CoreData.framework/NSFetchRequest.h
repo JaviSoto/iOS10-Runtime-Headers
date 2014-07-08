@@ -67,8 +67,8 @@
 - (id)groupByProperties;
 - (void)setFetchOffset:(unsigned long long)arg1;
 - (void)setPropertiesToFetch:(id)arg1;
-- (id)_progressObject;
-- (void)_setProgressObject:(id)arg1;
+- (id)_asyncResultHandle;
+- (void)_setAsyncResultHandle:(id)arg1;
 - (void)setRelationshipKeyPathsForPrefetching:(id)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (void)setPropertiesToGroupBy:(id)arg1;

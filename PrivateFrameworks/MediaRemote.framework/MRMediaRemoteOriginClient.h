@@ -42,9 +42,8 @@
 @property(copy) id playbackStateRequestHandler;
 
 
-- (unsigned int)routeDiscoveryMode;
-- (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (bool)keepAlive;
+- (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (bool)canBeNowPlayingApp;
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (id)commandHandlerBlocks;
@@ -59,6 +58,7 @@
 - (void)setIsOverrideApp:(bool)arg1;
 - (bool)isOverrideApp;
 - (void)setCanBeNowPlayingApp:(bool)arg1;
+- (unsigned int)routeDiscoveryMode;
 - (struct _MROrigin { }*)origin;
 - (void)setNowPlayingInfo:(id)arg1;
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;

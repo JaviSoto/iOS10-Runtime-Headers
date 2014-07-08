@@ -54,12 +54,16 @@
 - (void)_web_setHTTPContentType:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (bool)aa_addDeviceProvisioningInfoHeadersWithDSIDFromReponse:(id)arg1;
 - (void)aa_addiTunesHeadersWithAccount:(id)arg1;
-- (void)aa_addBasicAuthorizationHeaderWithAccount:(id)arg1 preferUsingPassword:(bool)arg2;
-- (void)aa_setBodyWithParameters:(id)arg1;
+- (void)aa_addLoggedInAppleIDHeaderWithAccount:(id)arg1;
+- (void)aa_addDeviceIDHeader;
+- (void)aa_addDeviceInternalDevHeaderIfEnabled;
 - (void)aa_addDeviceProvisioningInfoHeadersWithDSID:(id)arg1;
 - (bool)aa_addGrandSlamAuthorizationHeaderWithAccount:(id)arg1 grandslamToken:(id)arg2;
 - (void)aa_addDeviceProvisioningInfoHeadersWithAccount:(id)arg1;
+- (void)aa_setBodyWithParameters:(id)arg1;
+- (void)aa_addBasicAuthorizationHeaderWithAccount:(id)arg1 preferUsingPassword:(bool)arg2;
 - (void)setPushToken:(id)arg1;
 - (void)setSAPversion:(id)arg1;
 - (void)setSAPSignature:(id)arg1;

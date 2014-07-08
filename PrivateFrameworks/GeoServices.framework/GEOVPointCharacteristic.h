@@ -50,7 +50,6 @@
 @property bool brunnelEntry;
 
 
-- (void)setSectionIndex:(int)arg1;
 - (bool)brunnelEntry;
 - (bool)castShadow;
 - (bool)shouldDrawLanes;
@@ -59,7 +58,6 @@
 - (int)zLevel;
 - (int)roadOffset;
 - (int)vertexIndex;
-- (int)sectionIndex;
 - (bool)hasBrunnelEntry;
 - (void)setHasBrunnelEntry:(bool)arg1;
 - (void)setBrunnelEntry:(bool)arg1;
@@ -90,6 +88,8 @@
 - (void)setHasRoadLaneCount:(bool)arg1;
 - (void)setRoadLaneCount:(int)arg1;
 - (void)copyTo:(id)arg1;
+- (void)setSectionIndex:(int)arg1;
+- (int)sectionIndex;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

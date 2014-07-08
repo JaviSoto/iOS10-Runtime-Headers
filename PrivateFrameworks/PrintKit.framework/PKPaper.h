@@ -64,6 +64,7 @@
 - (void)setWidth:(int)arg1;
 - (int)height;
 - (int)width;
+- (void)setName:(id)arg1;
 - (bool)isTransverse;
 - (id)paperWithMarginsAdjustedForDuplexMode:(id)arg1;
 - (long long)sizeMediaTypeAndImageableCompare:(id)arg1;
@@ -101,7 +102,6 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)minCutLength;
 - (id)mediaTypeName;

@@ -47,9 +47,9 @@
 - (void)setPrintersByUUID:(id)arg1;
 - (void)setPrinters:(id)arg1;
 - (void)setPendingList:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (id)handle;
+- (id)initWithDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

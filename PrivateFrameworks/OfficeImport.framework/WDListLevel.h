@@ -26,7 +26,6 @@
 - (bool)justificationOverridden;
 - (long long)legacyIndent;
 - (long long)legacySpace;
-- (bool)legacy;
 - (bool)textOverridden;
 - (bool)suffixOverridden;
 - (bool)legalOverridden;
@@ -54,6 +53,7 @@
 - (int)justification;
 - (id)paragraphProperties;
 - (id)characterProperties;
+- (bool)legacy;
 - (id)text;
 - (void)setImage:(id)arg1;
 - (id)image;

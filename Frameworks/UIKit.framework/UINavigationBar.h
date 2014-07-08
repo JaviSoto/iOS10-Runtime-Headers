@@ -4,7 +4,7 @@
 
 @class UIImage, NSDictionary, UISwipeGestureRecognizer, NSMutableArray, UIView, UIColor, NSString, _UIViewControllerTransitionContext, UINavigationItem, NSArray, <UINavigationBarDelegate>, UIImageView;
 
-@interface UINavigationBar : UIView <_UIShadowedView, _UIBasicAnimationFactory, UIStatusBarTinting, _UIBarPositioningInternal, NSCoding, UIBarPositioning> {
+@interface UINavigationBar : UIView <UIGestureRecognizerDelegate, _UIShadowedView, _UIBasicAnimationFactory, UIStatusBarTinting, _UIBarPositioningInternal, NSCoding, UIBarPositioning> {
     NSMutableArray *_itemStack;
     double _rightMargin;
     unsigned int _state;
@@ -79,8 +79,8 @@
 @property(retain) UIImage * backIndicatorTransitionMaskImage;
 @property(setter=_setBackdropViewLayerGroupName:,retain) NSString * _backdropViewLayerGroupName;
 @property(setter=_setRequestedMaxBackButtonWidth:) double _requestedMaxBackButtonWidth;
-@property(getter=_isCondensed,setter=_setCondensed:) bool _condensed;
 @property(readonly) double _heightIncludingBackground;
+@property(getter=_isCondensed,setter=_setCondensed:) bool _condensed;
 @property(setter=_setBackIndicatorImage:,retain) UIImage * _backIndicatorImage;
 @property(setter=_setBackIndicatorLeftMargin:) double _backIndicatorLeftMargin;
 @property(setter=_setAnimationIds:,retain) NSMutableArray * _animationIds;
@@ -102,8 +102,8 @@
 + (void)_initializeForIdiom:(long long)arg1;
 + (struct CGSize { double x1; double x2; })defaultSize;
 
-- (id)items;
 - (void)setHidden:(bool)arg1;
+- (id)items;
 - (void)willRemoveSubview:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1;
@@ -172,6 +172,7 @@
 - (bool)_hidesShadow;
 - (double)titleVerticalPositionAdjustmentForBarMetrics:(long long)arg1;
 - (id)backgroundImageForBarMetrics:(long long)arg1;
+- (long long)_itemStackCount;
 - (double)_backIndicatorLeftMargin;
 - (id)_backIndicatorImage;
 - (void)_setBackIndicatorImage:(id)arg1;
@@ -213,7 +214,6 @@
 - (void)showButtonsWithLeft:(id)arg1 right:(id)arg2 leftBack:(bool)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })promptBounds;
 - (void)_fadeViewsIn:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)_shouldShowBackButtonForNavigationItem:(id)arg1;
 - (void)_setIsContainedInPopover:(bool)arg1;
 - (void)setBarTintColor:(id)arg1;
@@ -232,6 +232,7 @@
 - (void)removeConstraint:(id)arg1;
 - (void)addConstraint:(id)arg1;
 - (bool)_needsUpdateBackIndicatorImage;
+- (void)_configurePaletteConstraintsIfNecessary;
 - (void)_setBarPosition:(long long)arg1;
 - (void)_handleMouseUpAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_handleMouseDownAtPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -356,6 +357,7 @@
 - (id)backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
 - (bool)_subclassImplementsDrawRect;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)enableAnimation;
 - (void)disableAnimation;
@@ -363,8 +365,8 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)tintColorDidChange;
-- (void)invalidateIntrinsicContentSize;
 - (void)setTintColor:(id)arg1;
+- (void)invalidateIntrinsicContentSize;
 - (bool)_canDrawContent;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(bool)arg1;
 - (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;

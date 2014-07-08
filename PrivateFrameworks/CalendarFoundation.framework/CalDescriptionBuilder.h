@@ -18,7 +18,6 @@
 
 + (id)autobuildDescriptionForObject:(id)arg1;
 
-- (void)setKeyDelimiter:(id)arg1;
 - (void)setSortedByKey:(bool)arg1;
 - (void)setSuperclassDescription:(id)arg1;
 - (void)setDescriptionUnderConstruction:(id)arg1;
@@ -40,7 +39,6 @@
 - (void)setKey:(id)arg1 withBoolean:(bool)arg2;
 - (void)setKey:(id)arg1 withSet:(id)arg2;
 - (void)setKey:(id)arg1 withEnumNumericalValue:(long long)arg2 andStringValue:(id)arg3;
-- (void)setKey:(id)arg1 withDictionary:(id)arg2;
 - (void)setKey:(id)arg1 withArray:(id)arg2;
 - (void)setKey:(id)arg1 withString:(id)arg2;
 - (void)setKey:(id)arg1 withPointerAddress:(const void*)arg2;
@@ -56,7 +54,9 @@
 - (id)descriptionUnderConstruction;
 - (id)initWithSuperclassDescription:(id)arg1;
 - (void)setKey:(id)arg1 withUnsignedInteger:(unsigned long long)arg2;
+- (void)setKeyDelimiter:(id)arg1;
 - (void)setKey:(id)arg1 withDate:(id)arg2;
+- (void)setKey:(id)arg1 withDictionary:(id)arg2;
 - (id)build;
 - (id)init;
 - (void).cxx_destruct;

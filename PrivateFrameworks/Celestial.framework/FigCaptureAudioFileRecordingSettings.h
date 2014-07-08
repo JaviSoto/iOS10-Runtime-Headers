@@ -13,10 +13,10 @@
 @property(copy) NSDictionary * metadata;
 
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
 - (id)audioSettings;
 - (void)setAudioSettings:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

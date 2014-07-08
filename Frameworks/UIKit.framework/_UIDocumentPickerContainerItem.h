@@ -5,7 +5,7 @@
 @class NSString, _UIDocumentPickerContainerModel, NSMapTable, NSURL, NSDate;
 
 @interface _UIDocumentPickerContainerItem : NSObject  {
-    _UIDocumentPickerContainerModel *_weak_model;
+    _UIDocumentPickerContainerModel *_weak_parentModel;
     bool_pickable;
     id _item;
     long long _type;
@@ -20,10 +20,12 @@
 @property bool pickable;
 @property(readonly) NSDate * sortDate;
 @property(retain) NSMapTable * thumbnailsBySize;
-@property _UIDocumentPickerContainerModel * model;
+@property _UIDocumentPickerContainerModel * parentModel;
 
++ (void)clearLRUThumbnailCache;
++ (void)markThumbnailAsRecentlyUsed:(id)arg1;
++ (id)_lruThumbnailArray;
 
-- (id)model;
 - (id)url;
 - (id)title;
 - (id)tags;
@@ -44,8 +46,9 @@
 - (id)_blipWithTags:(id)arg1 height:(double)arg2 scale:(double)arg3;
 - (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
 - (id)_createThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (id)parentModel;
 - (id)_defaultThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
-- (void)setModel:(id)arg1;
+- (void)setParentModel:(id)arg1;
 - (void)setPickable:(bool)arg1;
 - (id)initWithItem:(id)arg1;
 

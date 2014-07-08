@@ -35,9 +35,9 @@
 @property(copy) id layoutSubviewsPostflightHandler;
 
 
+- (long long)destinationPlaceholderStyle;
 - (id)destinationName;
 - (id)layoutSubviewsPostflightHandler;
-- (long long)destinationPlaceholderStyle;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(long long)arg3;
 - (id)qtIcon;
 - (void)_updateDestinationBackgroundViewAnimated:(bool)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemCollectionController, SKUIResourceLoader, SKUIUber, NSMutableIndexSet, SSVLoadURLOperation, SKUIIconDataConsumer, NSString, SKUIItemList, NSOperationQueue, SKUIClientContext, SKUIItemArtworkContext, <SKUIItemListTableDelegate>;
+@class SKUIItemCollectionController, SKUIResourceLoader, SKUIUber, NSMutableIndexSet, SKUIStyledImageDataConsumer, SSVLoadURLOperation, NSString, SKUIItemList, NSOperationQueue, SKUIClientContext, SKUIItemArtworkContext, <SKUIItemListTableDelegate>;
 
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
     SKUIClientContext *_clientContext;
@@ -33,7 +33,7 @@
 @property(retain) SKUIItemArtworkContext * artworkContext;
 @property(retain) SKUIResourceLoader * artworkLoader;
 @property(retain) SKUIClientContext * clientContext;
-@property(retain) SKUIIconDataConsumer * iconDataConsumer;
+@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
 @property struct CGSize { double x1; double x2; } imageBoundingSize;
 @property(retain) SKUIItemList * itemList;
 @property bool loadsMoreItems;
@@ -105,6 +105,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;

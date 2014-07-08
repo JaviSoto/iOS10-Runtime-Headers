@@ -17,6 +17,7 @@
     MPPurchaseCommand *_buyTrackCommand;
     MPPurchaseCommand *_buyAlbumCommand;
     MPPurchaseCommand *_preOrderAlbumCommand;
+    MPPurchaseCommand *_cancelDownloadCommand;
     MPRemoteCommand *_advanceShuffleModeCommand;
     MPRemoteCommand *_advanceRepeatModeCommand;
     MPRemoteCommand *_createRadioStationCommand;
@@ -56,6 +57,8 @@
 
 + (id)sharedCommandCenter;
 
+- (void)_teardownNotifications;
+- (void)_setupNotifications;
 - (id)bookmarkCommand;
 - (id)dislikeCommand;
 - (id)likeCommand;
@@ -64,6 +67,7 @@
 - (id)createRadioStationCommand;
 - (id)advanceRepeatModeCommand;
 - (id)advanceShuffleModeCommand;
+- (id)cancelDownloadCommand;
 - (id)preOrderAlbumCommand;
 - (id)buyAlbumCommand;
 - (id)buyTrackCommand;
@@ -73,15 +77,14 @@
 - (id)changeRepeatModeCommand;
 - (struct __CFArray { }*)_copySupportedCommands;
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
+- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
 - (void)_scheduleSupportedCommandsChangedNotify;
-- (void)_teardownNotifications;
 - (void)_teardownMediaRemoteControlClient;
 - (void)_teardownCommandConfigurationObservers;
 - (void)_teardownMediaRemoteCommandHandler;
 - (void)_setupMediaRemoteControlClient;
 - (void)_setupCommandConfigurationObservers;
 - (void)_setupMediaRemoteCommandHandler;
-- (void)_setupNotifications;
 - (id)changePlaybackPositionCommand;
 - (id)changePlaybackRateCommand;
 - (id)skipBackwardCommand;

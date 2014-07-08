@@ -154,6 +154,7 @@
 - (void)setBusiness:(id)arg1;
 - (void)setPhoneticAddress:(id)arg1;
 - (id)phoneticName;
+- (long long)uID;
 - (bool)hasPhoneticName;
 - (bool)hasUID;
 - (void)setHasUID:(bool)arg1;
@@ -166,7 +167,6 @@
 - (void)setHasArea:(bool)arg1;
 - (void)setArea:(double)arg1;
 - (void)setTimezone:(id)arg1;
-- (long long)uID;
 - (id)arrivalMapRegionForTransportType:(int)arg1;
 - (id)firstBusiness;
 - (id)arrivalMapRegion;
@@ -190,10 +190,12 @@
 - (void)setMapRegion:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (bool)hasCenter;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
-- (bool)hasType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasType;
+- (void)setName:(id)arg1;
 - (double)area;
 - (struct { double x1; double x2; })coordinate;
 - (id)center;
@@ -201,7 +203,6 @@
 - (unsigned long long)hash;
 - (id)name;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (void)dealloc;
 - (id)description;
@@ -212,8 +213,8 @@
 - (id)clRegion;
 - (id)clLocation;
 - (id)initWithCLLocation:(id)arg1;
-- (id)yelpID;
 - (unsigned long long)businessID;
+- (id)yelpID;
 - (id)initWithPlacemark:(id)arg1;
 
 @end

@@ -13,7 +13,7 @@
     } _userScripts;
 }
 
-@property(readonly) NSArray * userScripts;
+@property(copy,readonly) NSArray * userScripts;
 
 
 - (void)removeScriptMessageHandlerForName:(id)arg1;

@@ -20,6 +20,7 @@
 
 - (id)action;
 - (void)setAction:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)submit;
 - (void)setAutocapitalize:(id)arg1;
 - (id)autocapitalize;
@@ -40,7 +41,6 @@
 - (int)length;
 - (void)setTarget:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)reset;
 - (id)target;
 - (id)method;

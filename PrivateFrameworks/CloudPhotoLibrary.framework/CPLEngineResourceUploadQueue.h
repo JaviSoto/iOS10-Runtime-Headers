@@ -5,7 +5,7 @@
 @class CPLPlatformObject;
 
 @interface CPLEngineResourceUploadQueue : CPLEngineStorage <CPLAbstractObject> {
-    bool_immediateUploads[17];
+    bool_immediateUploads[18];
 }
 
 @property(readonly) CPLPlatformObject * platformObject;

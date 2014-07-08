@@ -47,6 +47,7 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

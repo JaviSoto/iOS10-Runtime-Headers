@@ -19,6 +19,7 @@
 - (void)setCharacterSet:(int)arg1;
 - (void)addAlternateName:(id)arg1;
 - (void)setPitch:(int)arg1;
+- (void)setName:(id)arg1;
 - (int)pitch;
 - (void)setFontFamily:(int)arg1;
 - (int)fontFamily;
@@ -28,7 +29,6 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

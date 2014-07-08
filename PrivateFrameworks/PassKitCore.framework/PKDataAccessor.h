@@ -23,6 +23,7 @@
 - (void)requestUpdateWithCompletion:(id)arg1;
 - (void)updateSettings:(long long)arg1;
 - (void)noteShared;
+- (id)displayProfileOfType:(long long)arg1;
 - (id)remoteAssetManager;
 - (bool)remoteAssetsDownloaded;
 - (id)serializedFileWrapper;

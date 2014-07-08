@@ -10,6 +10,7 @@
 + (void)_fixNSMessagePortLeak;
 + (bool)sendBeforeTime:(double)arg1 streamData:(id)arg2 components:(id)arg3 to:(id)arg4 from:(id)arg5 msgid:(unsigned int)arg6 reserved:(unsigned long long)arg7;
 
+- (bool)setName:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
@@ -18,7 +19,6 @@
 - (id)name;
 - (bool)isValid;
 - (void)invalidate;
-- (bool)setName:(id)arg1;
 - (id)delegate;
 - (bool)_isDeallocating;
 - (bool)_tryRetain;

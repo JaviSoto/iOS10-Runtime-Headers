@@ -2,12 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILongPressGestureRecognizer, NSIndexPath, UIView;
+@class UILongPressGestureRecognizer, NSIndexPath, UICollectionViewCell;
 
 @interface _UIActivityGroupViewFlowLayout : UICollectionViewFlowLayout  {
     UILongPressGestureRecognizer *_editingGestureRecognizer;
     NSIndexPath *_indexPathForDraggedItem;
-    UIView *_draggingView;
+    UICollectionViewCell *_draggingView;
     struct UIOffset { 
         double horizontal; 
         double vertical; 
@@ -17,7 +17,7 @@
 @property(retain) UILongPressGestureRecognizer * editingGestureRecognizer;
 @property(copy) NSIndexPath * indexPathForDraggedItem;
 @property struct UIOffset { double x1; double x2; } draggingOffset;
-@property(retain) UIView * draggingView;
+@property(retain) UICollectionViewCell * draggingView;
 
 
 - (void)dealloc;
@@ -32,7 +32,11 @@
 - (void)setDraggingOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (id)indexPathForDraggedItem;
 - (void)adjustLayoutAttributesForDraggingIfNeeded:(id)arg1;
+- (void)adjustLayoutAttributesIfNeeded:(id)arg1;
 - (void)setIndexPathForDraggedItem:(id)arg1;
+- (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
+- (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDraggingView:(id)arg1;
 - (id)draggingView;
 - (id)indexPathForItemRecognizedByGesture:(id)arg1;

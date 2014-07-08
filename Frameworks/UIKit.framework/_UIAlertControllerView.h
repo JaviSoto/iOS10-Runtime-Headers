@@ -83,7 +83,7 @@
 - (void)_applyKeyboardAlignmentViewsConstraints;
 - (void)_reevaluateSuperviewSizingConstraints;
 - (void)_updateVisualAltitude;
-- (id)_orderedActionsForCollectionView;
+- (bool)_shouldTreatEmptyStringsAsNil;
 - (double)_bottomLabelPixelOffset;
 - (double)_messageLabelPixelOffset;
 - (double)_singleLabelTopScaledValue;
@@ -91,10 +91,12 @@
 - (double)_singleLabelTopPixelOffset;
 - (double)_singleLabelPixelOffset;
 - (id)_singleLabelFont;
-- (bool)_shouldHaveCancelActionInCollectionView;
+- (id)_orderedActionsForCollectionView;
 - (id)_actionsForCollectionView;
+- (bool)_shouldHaveCancelActionInCollectionView;
 - (void)_actionLayoutDirectionChanged;
 - (bool)hasDimmingView;
+- (void)updateDefaultAction;
 - (double)_messageTopScaledValue;
 - (double)_messageScaledValue;
 - (double)_bottomLabelScaledValue;
@@ -104,6 +106,8 @@
 - (id)_messageColor;
 - (id)_titleColor;
 - (id)_messageFont;
+- (bool)_hasAttributedMessage;
+- (bool)_hasAttributedTitle;
 - (bool)hasBackdropView;
 - (void)_removeDiscreteCancelActionView;
 - (id)_bottomMostViewToAlignDiscreteCancelActionViewTo;
@@ -125,6 +129,8 @@
 - (double)_contrainedWidth;
 - (bool)_horizontalLayoutCanUseFullWidth;
 - (struct CGSize { double x1; double x2; })_sizeForLayoutWidthDetermination;
+- (bool)_hasMessage;
+- (bool)_hasTitle;
 - (double)_labelHorizontalInsets;
 - (double)_contentCornerRadius;
 - (bool)_buttonsAreTopMost;
@@ -153,6 +159,8 @@
 - (void)_contentSizeChanged;
 - (id)alertController;
 - (struct CGSize { double x1; double x2; })_contentViewControllerSize;
+- (id)_attributedMessage;
+- (id)_attributedTitle;
 - (void)_sizeOfContentViewControllerChanged;
 - (void)_removeContentViewController;
 - (double)_contentHorizontalInsets;
@@ -161,6 +169,7 @@
 - (void)_updateLabelTextColor;
 - (void)_updateLabelFontSizes;
 - (void)setCancelActionIsDiscrete:(bool)arg1;
+- (void)_recomputeAlignedDescriptiveLabelTextWidth;
 - (void)_propertiesChanged;
 - (void)setAlignsToKeyboard:(bool)arg1;
 - (void)setHasBackdropView:(bool)arg1;

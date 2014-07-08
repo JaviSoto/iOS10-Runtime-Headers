@@ -95,9 +95,9 @@
 - (bool)isNewCustomer;
 - (id)accountName;
 - (void)setLockdownDictionary:(id)arg1;
+- (void)resetTransientData;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)resetTransientData;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;

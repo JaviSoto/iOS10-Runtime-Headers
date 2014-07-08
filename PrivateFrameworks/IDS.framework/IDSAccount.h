@@ -77,12 +77,12 @@
 - (int)registrationStatus;
 - (id)aliasStrings;
 - (void)setAuthToken:(id)arg1;
-- (id)_internal;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (id)_internal;
+- (id)devices;
 - (void)setPassword:(id)arg1;
 - (int)accountType;
 - (void)removeDelegate:(id)arg1;
-- (id)devices;
 - (bool)isActive;
 - (id)uniqueID;
 - (void)dealloc;

@@ -16,14 +16,16 @@
 
 + (bool)supportsSecureCoding;
 
+- (void)setServerChangeToken:(id)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (id)clientChangeTokenData;
-- (void)setServerChangeToken:(id)arg1;
 - (id)serverChangeToken;
+- (id)CKPropertiesDescription;
 - (void)setStatus:(id)arg1;
 - (id)status;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
+- (id)description;
 
 @end

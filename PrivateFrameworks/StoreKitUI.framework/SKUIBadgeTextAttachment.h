@@ -11,6 +11,7 @@
 @property(readonly) NSURL * imageURL;
 
 
+- (void)_loadImageWithResourceName:(id)arg1 fallbackImage:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 styleColor:(id)arg4;
 - (id)initWithViewElement:(id)arg1;
 - (id)imageURL;
 - (void).cxx_destruct;

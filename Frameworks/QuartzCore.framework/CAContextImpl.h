@@ -33,10 +33,10 @@
 - (void)dealloc;
 - (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2;
 - (unsigned int)createFencePort;
+- (void)setSecure:(bool)arg1;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)setFencePort:(unsigned int)arg1;
 - (void)setFencePort:(unsigned int)arg1 commitHandler:(id)arg2;
-- (void)setSecure:(bool)arg1;
 - (void)orderAbove:(unsigned int)arg1;
 
 @end

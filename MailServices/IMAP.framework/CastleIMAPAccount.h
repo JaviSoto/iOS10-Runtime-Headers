@@ -89,8 +89,8 @@
 - (id)displayUsername;
 - (id)appleAccount;
 - (id)personID;
-- (id)emailAddresses;
 - (id)authToken;
+- (id)emailAddresses;
 - (void)setDisplayName:(id)arg1;
 - (bool)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;

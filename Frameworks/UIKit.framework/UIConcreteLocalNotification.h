@@ -35,8 +35,8 @@
 }
 
 
-- (bool)isTransient;
 - (id)category;
+- (bool)isTransient;
 - (void)setUserInfo:(id)arg1;
 - (id)init;
 - (id)timeZone;

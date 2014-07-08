@@ -66,13 +66,13 @@
 - (id)mediaAssetType;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
-- (id)assets;
-- (void)setAssets:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)personID;
 - (void)setEmail:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setPersonID:(id)arg1;
+- (id)assets;
+- (void)setAssets:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setMetadata:(id)arg1;

@@ -77,8 +77,6 @@
 @property(copy) NSString * participantID;
 
 
-- (void)setParticipantID:(id)arg1;
-- (id)participantID;
 - (bool)isTunnelSocketClosed;
 - (void)closeTunnelSocket;
 - (void)unbindChannel;
@@ -106,6 +104,8 @@
 - (void)setBindingResponseHandler:(id)arg1;
 - (void)setAllocationResponseHandler:(id)arg1;
 - (void)setReceiveHandler:(id)arg1;
+- (void)setParticipantID:(id)arg1;
+- (id)participantID;
 - (unsigned int)connectionType;
 - (void)finalize;
 - (void)dealloc;

@@ -10,8 +10,11 @@
 
 
 - (void)calculateFreeableSpaceWithHandler:(id)arg1;
+- (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 requesterHandler:(id)arg3;
+- (void)trackPlaceData:(id)arg1;
+- (void)fetchAllCacheEntriesWithRequesterHandler:(id)arg1;
 - (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 requesterHandler:(id)arg3;
-- (void)requestMUIDs:(id)arg1 traits:(id)arg2 requesterHandler:(id)arg3;
+- (void)requestMUIDs:(id)arg1 includeETA:(bool)arg2 traits:(id)arg3 requesterHandler:(id)arg4;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2;
 - (id)init;
 - (void)dealloc;

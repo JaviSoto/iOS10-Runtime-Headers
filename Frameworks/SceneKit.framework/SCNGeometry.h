@@ -7,14 +7,14 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class SCNGeometryElement, NSString, NSArray, SCNShadableHelper, SCNMaterial, NSMutableDictionary, NSDictionary, SCNGeometrySource, NSMutableArray, SCNProgram;
+@class SCNGeometryElement, NSString, SCNShadableHelper, NSArray, SCNMaterial, NSMutableDictionary, SCNOrderedDictionary, NSDictionary, SCNGeometrySource, NSMutableArray, SCNProgram;
 
 @interface SCNGeometry : NSObject <SCNAnimatable, SCNBoundingVolume, SCNShadable, NSCopying, NSSecureCoding> {
     id _geometryReserved;
     struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFArray {} *x5; struct __CFSet {} *x6; struct __CFArray {} *x7; struct __C3DAABB {} *x8; int (*x9)(); struct { boolx_10_1_1; boolx_10_1_2; unsigned short x_10_1_3; unsigned short x_10_1_4; float x_10_1_5; float x_10_1_6; unsigned char x_10_1_7; unsigned char x_10_1_8; unsigned char x_10_1_9; unsigned char x_10_1_10; struct __C3DMeshElement {} *x_10_1_11; struct __C3DMeshSource {} *x_10_1_12; struct __C3DMesh {} *x_10_1_13; boolx_10_1_14; boolx_10_1_15; void *x_10_1_16; void *x_10_1_17; } x10; } *_geometry;
     unsigned int _isPresentationInstance : 1;
     NSMutableArray *_materials;
-    NSMutableDictionary *_animations;
+    SCNOrderedDictionary *_animations;
     NSArray *_levelsOfDetail;
     unsigned long long _subdivisionLevel;
     SCNGeometrySource *_edgeCreasesSource;
@@ -127,7 +127,7 @@
 - (void)pauseAnimationForKey:(id)arg1;
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
 - (void)_pauseAnimation:(bool)arg1 forKey:(id)arg2;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; struct _C3DAnimationPendingEvent {} *x9; struct __C3DAllocator {} *x10; struct __CFDictionary {} *x11; double x12; double x13; struct _opaque_pthread_mutex_t { long long x_14_1_1; BOOL x_14_1_2[56]; } x14; int x15; int x16; int x17; int x18; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; boolx7; boolx8; boolx9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long long x_16_1_1; BOOL x_16_1_2[56]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
 - (void)_syncObjCAnimations;
 - (void*)__CFObject;
 - (struct __C3DScene { }*)sceneRef;
@@ -136,6 +136,7 @@
 - (void)removeAllAnimations;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setName:(id)arg1;
 - (id)animationKeys;
 - (void)setLevelsOfDetail:(id)arg1;
 - (id)levelsOfDetail;
@@ -146,7 +147,6 @@
 - (long long)primitiveType;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copy;

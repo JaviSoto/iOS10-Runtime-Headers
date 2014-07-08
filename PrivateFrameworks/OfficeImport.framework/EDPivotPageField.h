@@ -16,9 +16,9 @@
 - (unsigned long long)fieldId;
 - (id)cap;
 - (void)setCap:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

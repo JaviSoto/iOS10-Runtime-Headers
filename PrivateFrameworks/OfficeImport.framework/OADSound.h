@@ -15,9 +15,9 @@
 - (int)sizeInBytes;
 - (void)setSoundData:(id)arg1;
 - (void)setSizeInBytes:(int)arg1;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (bool)isLoaded;

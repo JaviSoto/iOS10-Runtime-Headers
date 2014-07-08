@@ -34,7 +34,6 @@
 @property(readonly) id propertyListForProxy;
 
 
-- (id)creationDate;
 - (id)SHA1Digest;
 - (bool)canContainMovieFragments;
 - (bool)isCompatibleWithSavedPhotosAlbum;
@@ -57,6 +56,7 @@
 - (float)preferredRate;
 - (long long)trackCount;
 - (id)propertyListForProxy;
+- (id)creationDate;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)commonMetadata;

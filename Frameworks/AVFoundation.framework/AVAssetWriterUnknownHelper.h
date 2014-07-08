@@ -7,8 +7,6 @@
 }
 
 
-- (void)setMetadata:(id)arg1;
-- (long long)status;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
 - (bool)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
@@ -26,5 +24,7 @@
 - (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)addInput:(id)arg1;
 - (bool)canAddInput:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (long long)status;
 
 @end

@@ -17,10 +17,10 @@
 
 - (void)setReceiving:(bool)arg1;
 - (bool)receiving;
-- (void)cancelPayloadRequestForIdentifier:(id)arg1;
-- (void)payloadForIdentifier:(id)arg1;
+- (void)scanManager:(id)arg1 lostDeviceWithDeviceIdentifier:(id)arg2;
+- (void)scanManager:(id)arg1 foundDeviceWithDeviceIdentifier:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
-- (void)payloadForIdentifier:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)activityPayloadFromDeviceIdentifier:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)init;

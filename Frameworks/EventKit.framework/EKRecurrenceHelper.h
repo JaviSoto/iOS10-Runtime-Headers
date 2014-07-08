@@ -38,9 +38,7 @@
 - (id)specifier;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
-- (id)monthsOfTheYear;
 - (id)setPositions;
-- (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
@@ -49,6 +47,8 @@
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)revert;
+- (id)daysOfTheMonth;
+- (id)monthsOfTheYear;
 - (bool)isDirty;
 - (bool)isEqual:(id)arg1;
 - (void)dealloc;

@@ -36,7 +36,6 @@
 - (id)addressLines;
 - (void)setTradeRepresentativeName:(id)arg1;
 - (void)setPostalCode:(id)arg1;
-- (void)setISOCountryCode:(id)arg1;
 - (void)setECommerceRegistrationIdentifier:(id)arg1;
 - (void)setBusinessRegistrationIdentifier:(id)arg1;
 - (void)setAddressLines:(id)arg1;
@@ -47,6 +46,7 @@
 - (id)formattedAddressString;
 - (id)tradeRepresentativeName;
 - (id)tradeName;
+- (void)setISOCountryCode:(id)arg1;
 - (id)postalCode;
 - (id)ISOCountryCode;
 - (id)locality;

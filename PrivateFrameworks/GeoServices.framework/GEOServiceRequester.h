@@ -9,12 +9,14 @@
     NSLock *_pendingRequestsLock;
 }
 
++ (void)setAttributeData;
++ (bool)shouldAttributeData;
 + (unsigned long long)_urlType;
 + (id)_debugRequestName;
 
 - (id)_validateResponse:(id)arg1;
 - (void)_cancelRequest:(id)arg1;
-- (void)_startWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (void)_startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;
 - (id)init;
 - (void)dealloc;
 

@@ -31,11 +31,11 @@
 }
 
 
-- (id)initWithOutputStream:(id)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long long)arg2;
 - (id)closeLocalStream;
 - (bool)canCreateInputStream;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
+- (id)initWithOutputStream:(id)arg1;
 - (id)inputStream;
 - (bool)canSeek;
 - (long long)offset;

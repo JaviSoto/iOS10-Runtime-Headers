@@ -30,7 +30,6 @@
 
 - (id)defaultURL;
 - (id)selectedURL;
-- (void)setRoot:(bool)arg1;
 - (long long)numberOfHiddenRows;
 - (id)metricsLocations;
 - (void)setNumberOfHiddenRows:(long long)arg1;
@@ -46,6 +45,7 @@
 - (void)setSelectedURL:(id)arg1;
 - (void)setArtworkLoader:(id)arg1;
 - (id)artworkLoader;
+- (void)setRoot:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (bool)isRoot;

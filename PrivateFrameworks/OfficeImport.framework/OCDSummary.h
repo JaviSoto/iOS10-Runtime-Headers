@@ -14,8 +14,8 @@
 
 
 - (id)hyperlinkBase;
-- (id)comments;
 - (void)setHyperlinkBase:(id)arg1;
+- (id)comments;
 - (void)setKeywords:(id)arg1;
 - (id)keywords;
 - (void)setComments:(id)arg1;

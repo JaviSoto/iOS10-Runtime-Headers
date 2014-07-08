@@ -60,8 +60,8 @@
 - (void)setMaximumDeviation:(double)arg1;
 - (void)setMinimumDistance:(double)arg1;
 - (void)setCanBeginDrag:(bool)arg1;
-- (void)setTouch:(id)arg1;
 - (void)_resetGestureRecognizer;
+- (void)setTouch:(id)arg1;
 - (id)touch;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

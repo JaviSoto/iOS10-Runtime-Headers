@@ -21,7 +21,6 @@
 @property(retain) SKUIColorScheme * colorScheme;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (void)_reloadHeaderView;
 - (long long)firstStringIndex;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
@@ -36,6 +35,7 @@
 - (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (void).cxx_destruct;
 - (void)setExpanded:(bool)arg1;
 

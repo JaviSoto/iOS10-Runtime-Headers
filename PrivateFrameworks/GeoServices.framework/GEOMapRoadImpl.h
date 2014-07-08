@@ -26,12 +26,12 @@
 @property(readonly) int formOfWay;
 
 
+- (int)roadClass;
 - (struct { double x1; double x2; }*)coordinates;
 - (unsigned long long)coordinateCount;
 - (id)findRoadsFrom:(id)arg1 completionHandler:(id)arg2;
 - (id)initWithMap:(id)arg1 edge:(struct shared_ptr<geo::MapEdgeRoad> { struct MapEdgeRoad {} *x1; struct __shared_weak_count {} *x2; })arg2;
 - (int)formOfWay;
-- (int)roadClass;
 - (double)length;
 - (void)dealloc;
 - (void).cxx_destruct;

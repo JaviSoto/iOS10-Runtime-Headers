@@ -15,9 +15,9 @@
 @property(getter=isSecure) bool secure;
 @property(readonly) bool valid;
 
-+ (id)currentContext;
 + (id)remoteContext;
 + (id)objectForSlot:(unsigned int)arg1;
++ (id)currentContext;
 + (id)localContext;
 + (id)allContexts;
 + (id)remoteContextWithOptions:(id)arg1;

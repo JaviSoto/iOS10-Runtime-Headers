@@ -71,6 +71,7 @@
 - (void)setIsInternalTool:(bool)arg1;
 - (bool)hasOsVersion;
 - (bool)hasAppIdentifier;
+- (id)appIdentifier;
 - (id)hardwareModel;
 - (id)appMinorVersion;
 - (id)appMajorVersion;
@@ -84,7 +85,6 @@
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setHasSessionId:(bool)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)appIdentifier;
 - (bool)hasSessionId;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setAppIdentifier:(id)arg1;
@@ -98,6 +98,7 @@
 - (void)addServiceTag:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned int)sequenceNumber;

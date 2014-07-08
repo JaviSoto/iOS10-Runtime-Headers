@@ -47,6 +47,7 @@
     int fHeadingOrientation;
     boolfPersistentMonitoringEnabled;
     boolfAllowsLocationPrompts;
+    boolfDynamicAccuracyReductionEnabled;
     boolfPreviousAuthorizationStatusValid;
     int fPreviousAuthorizationStatus;
     long long fActivityType;

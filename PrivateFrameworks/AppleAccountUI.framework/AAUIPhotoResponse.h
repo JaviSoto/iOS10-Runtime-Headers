@@ -2,19 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSData, NSValue;
+@class NSData, NSValue, NSString;
 
 @interface AAUIPhotoResponse : AAResponse  {
     NSData *_photoData;
     NSValue *_cropRect;
+    NSString *_serverCacheTag;
 }
 
 @property(readonly) NSData * photoData;
 @property(readonly) NSValue * cropRect;
+@property(readonly) NSString * serverCacheTag;
 
 
 - (id)cropRect;
 - (id)photoData;
+- (id)serverCacheTag;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (void).cxx_destruct;
 

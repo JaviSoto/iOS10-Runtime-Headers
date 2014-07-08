@@ -25,9 +25,9 @@
 - (long long)baseField;
 - (void)setNumFmtId:(unsigned long long)arg1;
 - (unsigned long long)numFmtId;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

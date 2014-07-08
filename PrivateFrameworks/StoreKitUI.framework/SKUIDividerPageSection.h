@@ -7,7 +7,7 @@
 @interface SKUIDividerPageSection : SKUIStorePageSection  {
 }
 
-@property(retain) SKUIDividerPageComponent * pageComponent;
+@property(readonly) SKUIDividerPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

@@ -20,7 +20,6 @@
 - (int)leftColumn;
 - (void)setTopRow:(int)arg1;
 - (int)topRow;
-- (bool)merge:(int)arg1;
 - (int)spanAlongDir:(int)arg1;
 - (void)setTextBody:(id)arg1;
 - (void)setVertMerge:(bool)arg1;
@@ -30,6 +29,7 @@
 - (int)gridSpan;
 - (bool)vertMerge;
 - (bool)horzMerge;
+- (bool)merge:(int)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setRowSpan:(int)arg1;
 - (int)rowSpan;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSURL, UINavigationController, RUIPage, RUILoader, NSMutableArray, UIViewController, NSObject<AAUICredentialRecoveryPresentationDelegate>;
+@class UINavigationItem, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSURL, UINavigationController, RUIPage, RUILoader, NSMutableArray, UIViewController, UIActivityIndicatorView, UIBarButtonItem;
 
 @interface AAUICredentialRecoveryController : NSObject <RUIObjectModelDelegate, RUILoaderDelegate> {
     NSURL *_remoteUIURL;
@@ -13,6 +13,10 @@
     UIViewController *_presentationViewController;
     UIViewController *_navigationBaseViewController;
     bool_isModal;
+    UIActivityIndicatorView *_spinnerView;
+    UIBarButtonItem *_originalRightBarButtonItem;
+    UINavigationItem *_navigationItemShowingSpinner;
+    bool_isShowingSpinner;
     NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
 }
 
@@ -28,7 +32,9 @@
 - (void)cancelPresentation;
 - (void)startPresentation;
 - (void)_displayConnectionError;
+- (void)_hideActivitySpinnerInNavigationBar;
 - (void)_finishPresentationWithSuccess:(bool)arg1;
+- (void)_showActivitySpinnerInNavigationBar;
 - (void)_createRemoteUIViewControllerFromURL:(id)arg1;
 - (id)remoteUIURL;
 - (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(bool)arg2;

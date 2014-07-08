@@ -16,6 +16,8 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (id)payloadDescriptionKeyValueSections;
+- (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setRestrictions:(id)arg1;
 - (id)restrictions;

@@ -25,11 +25,11 @@
 - (void)_setProfilePicture:(id)arg1 forMember:(id)arg2;
 - (void)_setITunesFamily:(id)arg1 error:(id)arg2 iCloudFamily:(id)arg3 error:(id)arg4;
 - (id)familyCircle;
+- (id)profilePictureForFamilyMember:(id)arg1;
 - (void)_accountStoreDidChange:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (bool)hasLoaded;
-- (id)profilePictureForFamilyMember:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

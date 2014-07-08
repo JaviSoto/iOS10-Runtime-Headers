@@ -136,9 +136,9 @@
 - (id)newlyAddedStore;
 - (id)accountUtilities;
 - (id)newlyAddedAccount;
+- (bool)deleteAccount:(id)arg1;
 - (void)enableChangeLogging:(bool)arg1;
 - (bool)isIndexing;
-- (bool)deleteAccount:(id)arg1;
 - (id)propertyValueForKey:(id)arg1;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)storeOptions;

@@ -12,8 +12,8 @@
     NSTimer *_timer;
 }
 
+@property double currentTimeWithinEndTimes;
 @property(readonly) double remainingTime;
-@property(readonly) double currentTimeWithinEndTimes;
 @property(readonly) double remainingTimeWithinEndTimes;
 @property(getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges,readonly) bool thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 @property(getter=isCurrentTimeAtEndOfSeekableTimeRanges,readonly) bool currentTimeAtEndOfSeekableTimeRanges;
@@ -25,12 +25,13 @@
 + (id)keyPathsForValuesAffectingCurrentTimeAtEndOfSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingRemainingTimeWithinEndTimes;
-+ (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingRemainingTime;
++ (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
 + (bool)automaticallyNotifiesObserversOfCurrentTime;
 
 - (double)resolution;
 - (double)remainingTime;
+- (void)setCurrentTimeWithinEndTimes:(double)arg1;
 - (bool)isCurrentTimeAtEndOfSeekableTimeRanges;
 - (bool)isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 - (double)remainingTimeWithinEndTimes;

@@ -106,9 +106,9 @@
 - (void)setFileHash:(id)arg1;
 - (id)metadataValueForKey:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (unsigned long long)_fileSize;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (unsigned long long)_fileSize;
 - (void)setUserInfo:(id)arg1;
 - (id)GUID;
 - (bool)isVideo;

@@ -128,7 +128,6 @@
 @property(retain) GEOVersionManifest * versionManifest;
 
 
-- (id)versionManifest;
 - (id)problemOptInURL;
 - (id)dispatcherURL;
 - (id)businessNameResolutionURL;
@@ -302,6 +301,7 @@
 - (void)setTileSets:(id)arg1;
 - (id)searchURL;
 - (id)directionsURL;
+- (id)versionManifest;
 - (id)attributions;
 - (id)attributionAtIndex:(unsigned long long)arg1;
 - (void)clearAttributions;
@@ -309,6 +309,7 @@
 - (void)addAttribution:(id)arg1;
 - (void)setAttributions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)styleSheets;

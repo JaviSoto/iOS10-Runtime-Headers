@@ -10,21 +10,13 @@
 
 - (id)bubbleTextSmall;
 - (id)bubbleText;
-- (id)tableCellSubtitle;
-- (id)tableCellTitle;
 - (id)cellActionItem;
 - (id)sectionCaptionSmall;
-- (id)sectionCaption;
-- (id)signInLink;
-- (id)signInFieldLabel;
-- (id)signInField;
-- (id)signInSubtitle;
 - (id)signInTitle;
 - (id)bubbleHeadline;
 - (id)smallInfo;
 - (id)header2;
 - (id)header1;
 - (id)header4;
-- (id)sectionHeader;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISearchFieldController, SKUIInputViewElement, SKUIClientContext, SKUIFocusedTouchGestureRecognizer, UISearchBar, UIViewController;
+@class SKUISearchFieldController, SKUIClientContext, SKUISearchBarViewElement, SKUIFocusedTouchGestureRecognizer, UISearchBar, UIViewController;
 
 @interface SKUISearchBarController : NSObject <SKUISearchFieldDelegate, UISearchBarDelegate> {
     SKUIFocusedTouchGestureRecognizer *_cancelTouchGestureRecognizer;
@@ -13,11 +13,11 @@
     SKUISearchFieldController *_searchFieldController;
     bool_showsResultsForEmptyField;
     bool_usesSearchFieldController;
-    SKUIInputViewElement *_viewElement;
-    SKUIInputViewElement *_searchBarViewElement;
+    SKUISearchBarViewElement *_viewElement;
+    SKUISearchBarViewElement *_searchBarViewElement;
 }
 
-@property(retain) SKUIInputViewElement * searchBarViewElement;
+@property(retain) SKUISearchBarViewElement * searchBarViewElement;
 @property(retain) SKUIClientContext * clientContext;
 @property bool displaysSearchBarInNavigationBar;
 @property bool showsResultsForEmptyField;
@@ -28,15 +28,15 @@
 - (id)searchBarViewElement;
 - (void)_removeCancelTouchGestureRecognizer;
 - (void)_dispatchChangeEventWithText:(id)arg1;
-- (void)_dispatchSubmitEventWithText:(id)arg1 URL:(id)arg2;
+- (void)_dispatchSubmitEventWithText:(id)arg1 URL:(id)arg2 searchHintOriginalTerm:(id)arg3 searchHintIndex:(id)arg4;
 - (id)_newSearchFieldController;
 - (void)_customizeSearchBar:(id)arg1;
 - (void)_customizeSearchFieldController:(id)arg1;
 - (void)_cancelGestureAction:(id)arg1;
 - (bool)showsResultsForEmptyField;
+- (bool)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)searchFieldController:(id)arg1 searchBarDidChangeText:(id)arg2;
-- (void)searchFieldController:(id)arg1 requestSearchWithSearchTerm:(id)arg2 metricsEvent:(id)arg3;
-- (void)searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2 metricsEvent:(id)arg3;
+- (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (void)setShowsResultsForEmptyField:(bool)arg1;
 - (void)setSearchBarViewElement:(id)arg1;
 - (id)initWithSearchBarViewElement:(id)arg1;

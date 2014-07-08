@@ -18,10 +18,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setNotFoundZoneIDs:(id)arg1;
-- (void)setPcsInfoByZoneID:(id)arg1;
 - (void)setServiceIdentityInfo:(id)arg1;
 - (void)setIdentityInfo:(id)arg1;
+- (void)setNotFoundZoneIDs:(id)arg1;
+- (void)setPcsInfoByZoneID:(id)arg1;
 - (id)notFoundZoneIDs;
 - (id)pcsInfoByZoneID;
 - (id)serviceIdentityInfo;

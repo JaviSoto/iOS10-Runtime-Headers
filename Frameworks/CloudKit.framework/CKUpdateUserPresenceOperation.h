@@ -35,9 +35,12 @@
 @property(retain) NSError * savedError;
 
 
+- (id)nextETag;
+- (double)ttl;
 - (id)updateUserPresenceCompletionBlock;
 - (id)savedError;
 - (void)setSavedError:(id)arg1;
+- (void)setNextETag:(id)arg1;
 - (void)setTtl:(double)arg1;
 - (void)setLastETag:(id)arg1;
 - (id)lastETag;
@@ -53,9 +56,6 @@
 - (void)performCKOperation;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (void)setNextETag:(id)arg1;
-- (id)nextETag;
-- (double)ttl;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (void).cxx_destruct;

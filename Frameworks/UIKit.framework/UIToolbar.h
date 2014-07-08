@@ -153,7 +153,6 @@
 - (void)_setBackdropViewLayerGroupName:(id)arg1;
 - (long long)barPosition;
 - (long long)_barPosition;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(bool*)arg1;
 - (id)_currentCustomBackground;
 - (void)setBarTintColor:(id)arg1;
@@ -178,9 +177,10 @@
 - (id)_shadowView;
 - (bool)isMinibar;
 - (bool)_subclassImplementsDrawRect;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)invalidateIntrinsicContentSize;
 - (void)setTintColor:(id)arg1;
+- (void)invalidateIntrinsicContentSize;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(bool)arg1;
 - (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (id)scriptingInfoWithChildren;
@@ -192,5 +192,7 @@
 - (bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)layoutSubviews;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (id)itemWithTag:(long long)arg1;
+- (void)showActionSheet:(id)arg1 animated:(bool)arg2;
 
 @end

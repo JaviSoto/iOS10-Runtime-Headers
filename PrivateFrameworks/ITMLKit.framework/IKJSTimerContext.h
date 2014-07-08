@@ -13,7 +13,7 @@
 }
 
 @property(retain) NSTimer * timer;
-@property(readonly) id ownerObject;
+@property(retain,readonly) id ownerObject;
 @property(retain,readonly) JSManagedValue * managedCallback;
 @property(retain,readonly) IKJSManagedArray * managedArgs;
 @property(readonly) bool isRepeating;

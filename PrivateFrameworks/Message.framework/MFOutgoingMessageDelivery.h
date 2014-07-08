@@ -34,8 +34,8 @@
 - (id)_deliveryAccountForInitializers;
 - (id)_deliverSynchronouslyWithCurrentSettings:(bool)arg1;
 - (id)_currentDeliveryObject;
-- (unsigned long long)conversationFlags;
 - (void)setConversationFlags:(unsigned long long)arg1;
+- (unsigned long long)conversationFlags;
 - (void)setCompositionSpecification:(id)arg1;
 - (int)deliveryStatus;
 - (void)setArchiveAccount:(id)arg1;

@@ -14,7 +14,7 @@
     NSMutableIndexSet *_sortRequestIndexSet;
 }
 
-@property(retain) SKUIMenuPageComponent * pageComponent;
+@property(readonly) SKUIMenuPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -34,12 +34,12 @@
 - (void)_cancelMenuAction:(id)arg1;
 - (void)sortDataRequest:(id)arg1 didFinishWithLockups:(id)arg2;
 - (id)_contentChildView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinnedSectionContentInset;
-- (long long)defaultPinStyle;
+- (long long)defaultItemPinningStyle;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;

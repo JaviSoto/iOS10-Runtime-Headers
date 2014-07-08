@@ -41,16 +41,15 @@
 + (struct CGSize { double x1; double x2; })defaultSize;
 
 - (void)deactivate;
-- (void)setOrientation:(long long)arg1;
 - (bool)isActive;
 - (void)displayLayer:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOrientation:(long long)arg1;
 - (void)activate;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)interfaceOrientation;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)removeFromSuperview;
 - (id)delegate;
 - (void)dealloc;
 - (bool)_isAutomaticKeyboard;
@@ -122,8 +121,8 @@
 - (void)setCaretVisible:(bool)arg1;
 - (void)geometryChangeDone:(bool)arg1;
 - (void)prepareForGeometryChange;
-- (bool)isMinimized;
 - (bool)shouldSaveMinimizationState;
+- (bool)isMinimized;
 - (void)acceptAutocorrection;
 - (int)textEffectsVisibilityLevel;
 - (void)_setRenderConfig:(id)arg1;
@@ -132,7 +131,6 @@
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)movedFromSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (void)_moveWithEvent:(id)arg1;
 - (bool)canHandleEvent:(id)arg1;

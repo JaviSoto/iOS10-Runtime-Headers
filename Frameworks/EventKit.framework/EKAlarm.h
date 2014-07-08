@@ -62,9 +62,9 @@
 - (void)setAcknowledgedDate:(id)arg1;
 - (id)structuredLocation;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (id)owner;
 - (id)externalID;
 - (long long)proximity;
+- (id)owner;
 - (id)UUID;
 - (id)init;
 - (void)dealloc;

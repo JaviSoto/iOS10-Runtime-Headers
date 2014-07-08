@@ -6,22 +6,26 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, SSURLBag;
 
 @interface SKUIReloadConfigurationOperation : NSOperation  {
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _outputBlock;
 
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSURLBag *_urlBag;
 }
 
+@property(retain) SSURLBag * URLBag;
 @property(copy) id outputBlock;
 
 
+- (void)setURLBag:(id)arg1;
 - (id)outputBlock;
 - (void)setOutputBlock:(id)arg1;
+- (id)URLBag;
 - (void)main;
 - (id)init;
 - (void).cxx_destruct;

@@ -21,12 +21,12 @@
 @property(copy) id resultBlock;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (bool)_mergeItems:(id)arg1 wishlist:(id)arg2 didChange:(bool*)arg3 error:(id*)arg4;
 - (id)resultBlock;
 - (bool)_loadRemoteItemsForWishlist:(id)arg1 didChange:(bool*)arg2 error:(id*)arg3;
 - (void)_sendLocalChangesForWishlist:(id)arg1;
 - (void)setResultBlock:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)main;
 - (id)init;
 - (void).cxx_destruct;

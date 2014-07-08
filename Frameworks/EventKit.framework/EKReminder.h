@@ -48,8 +48,8 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (bool)isCompleted;
 - (void)setTimeZone:(id)arg1;
-- (long long)priority;
 - (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (void)dealloc;
 - (id)description;
 - (void)setCompleted:(bool)arg1;

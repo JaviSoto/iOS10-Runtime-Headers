@@ -14,6 +14,7 @@
 + (bool)_locationSettingsNeededForBundleID:(id)arg1;
 + (bool)_privacySettingsNeededForProxy:(id)arg1;
 + (bool)_systemSettingsNeededForProxy:(id)arg1;
++ (bool)_shouldIncludeProxy:(id)arg1;
 + (void)_populateBBSectionIDs;
 
 

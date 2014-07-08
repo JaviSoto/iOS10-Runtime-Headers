@@ -41,9 +41,8 @@
 - (id)deviceLanguages;
 - (id)filteredOtherLanguages;
 - (id)filteredDeviceLanguages;
-- (id)localeSelector;
 - (void)sortByLocalizedLanguage:(id)arg1;
-- (id)preferredLanguagesForCurrentRegion;
+- (id)localeSelector;
 - (id)languageSelector;
 - (id)_mainContentView;
 - (void)loadData;

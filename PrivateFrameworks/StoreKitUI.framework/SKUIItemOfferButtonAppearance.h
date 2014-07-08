@@ -13,9 +13,9 @@
 @property(readonly) UIColor * confirmationColor;
 
 
-- (id)buttonColor;
 - (id)confirmationColor;
 - (id)initWithColorScheme:(id)arg1;
+- (id)buttonColor;
 - (void).cxx_destruct;
 
 @end

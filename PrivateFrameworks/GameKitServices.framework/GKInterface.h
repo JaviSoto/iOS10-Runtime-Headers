@@ -24,8 +24,8 @@
 - (void)setIndex:(id)arg1;
 - (id)index;
 - (void)setType:(id)arg1;
-- (unsigned int)priority;
 - (void)setPriority:(unsigned int)arg1;
+- (unsigned int)priority;
 - (id)type;
 - (void)dealloc;
 - (id)description;

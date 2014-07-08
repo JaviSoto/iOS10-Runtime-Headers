@@ -37,11 +37,11 @@
 - (bool)isDisplayEquation;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
+- (void)setName:(id)arg1;
 - (id)label;
 - (id)init;
 - (id)name;
 - (void)setType:(int)arg1;
-- (void)setName:(id)arg1;
 - (int)type;
 - (void)dealloc;
 - (void)setLabel:(id)arg1;

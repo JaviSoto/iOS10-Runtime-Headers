@@ -83,6 +83,7 @@
 - (id)subElementsWithName:(id)arg1;
 - (id)objectModel;
 - (bool)isShowingPicker;
+- (void)setSelectedRadioGroupRow:(id)arg1;
 - (id)sections;
 - (id)sourceURL;
 - (void)setAttributes:(id)arg1;

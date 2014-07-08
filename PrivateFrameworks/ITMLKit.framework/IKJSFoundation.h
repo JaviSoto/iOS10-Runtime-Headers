@@ -6,14 +6,12 @@
 
 @interface IKJSFoundation : NSObject  {
     IKAppContext *_appContext;
-    id _ownerObject;
     NSMutableDictionary *_jsTimers;
     NSMutableDictionary *_dateFormatterCache;
     <IKAppDeviceConfig> *_deviceConfig;
 }
 
 @property IKAppContext * appContext;
-@property id ownerObject;
 @property(retain) NSMutableDictionary * jsTimers;
 @property(retain) NSMutableDictionary * dateFormatterCache;
 @property <IKAppDeviceConfig> * deviceConfig;
@@ -33,14 +31,12 @@
 - (void)setCookie:(id)arg1 useSSCookieStorage:(bool)arg2;
 - (id)getCookieForURL:(id)arg1 useSSCookieStorage:(bool)arg2;
 - (void)setAppContext:(id)arg1;
-- (void)setOwnerObject:(id)arg1;
-- (id)ownerObject;
 - (void)clearTimeout:(id)arg1;
 - (id)setTimeout:(id)arg1 time:(long long)arg2;
 - (void)clearInterval:(id)arg1;
 - (id)setInterval:(id)arg1 time:(long long)arg2;
-- (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2 ownerObject:(id)arg3;
 - (void)stopTimers;
+- (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2;
 - (id)appContext;
 - (void).cxx_destruct;
 

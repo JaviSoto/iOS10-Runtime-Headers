@@ -23,6 +23,12 @@
 + (struct __CFLocale { }*)retainedLocale;
 + (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(unsigned long long)arg2;
 + (bool)supportsSecureCoding;
++ (id)predicateWithSortedCKDPQueryFilters:(id)arg1 translator:(id)arg2;
++ (id)predicateWithCKDPQueryFilters:(id)arg1 translator:(id)arg2;
++ (id)predicateForLikesInAsset:(id)arg1;
++ (id)predicateForCommentsInAsset:(id)arg1;
++ (id)predicateForCloudInvitationsInAssetCollection:(id)arg1;
++ (id)predicateForAssetsInAssetCollectionWithID:(id)arg1;
 
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (bool)evaluateWithObject:(id)arg1;
@@ -44,5 +50,7 @@
 - (bool)ab_hasCallback;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (void)validate;
+- (id)br_watchedURL;
+- (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
 
 @end

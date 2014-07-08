@@ -41,14 +41,14 @@
 - (void)_calSyncClientBeginningMultiSaveNotificationReceived;
 - (void)_calDatabaseChangedNotificationReceived;
 - (void)ceaseMonitoringAgendaItemForEventWithExternalURL:(id)arg1;
-- (void)_installPeriodicRefreshTimer;
-- (void)_uninstallPeriodicRefreshTimer;
 - (void)_trimAgendaEntriesBeforeDate:(id)arg1 andAfterDate:(id)arg2;
 - (void)_locationAuthorizationChanged:(int)arg1;
 - (void)_periodicRefreshTimerFired:(id)arg1;
 - (id)adviceBlock;
 - (void)_installSyncYieldTimer;
+- (void)_uninstallPeriodicRefreshTimer;
 - (void)_refreshIfNeeded;
+- (void)_installPeriodicRefreshTimer;
 - (void)_registerForNotificationObservation;
 - (void)_uninstallSyncYieldTimer;
 - (void)_unregisterForNotificationObservation;

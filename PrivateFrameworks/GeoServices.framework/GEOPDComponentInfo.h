@@ -49,12 +49,13 @@
 - (bool)hasStartIndex;
 - (void)setHasStartIndex:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)writeTo:(id)arg1;
 - (bool)hasType;
 - (void)setStartIndex:(unsigned int)arg1;
 - (unsigned int)startIndex;
-- (bool)readFrom:(id)arg1;
-- (void)writeTo:(id)arg1;
 - (id)filter;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

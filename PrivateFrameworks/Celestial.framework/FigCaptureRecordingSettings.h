@@ -26,7 +26,6 @@
 @property long long minFreeDiskSpaceLimit;
 
 
-- (id)outputURL;
 - (long long)minFreeDiskSpaceLimit;
 - (long long)maxFileSize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
@@ -38,6 +37,7 @@
 - (void)setOutputURL:(id)arg1;
 - (void)setSettingsID:(long long)arg1;
 - (long long)settingsID;
+- (id)outputURL;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -9,7 +9,6 @@
 }
 
 
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (long long)_chapterIndex;
 - (long long)_chapterGroupIndex;
 - (bool)_valueForKeyDependsOnMetadataValue:(id)arg1;
@@ -22,6 +21,7 @@
 - (id)_initWithAsset:(id)arg1 chapterGroupIndex:(long long)arg2 chapterIndex:(long long)arg3 chapterType:(id)arg4 locale:(id)arg5 chapterDataType:(id)arg6 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg7 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg8;
 - (id)dataType;
 - (id)commonKey;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;
 - (id)keySpace;
 - (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;

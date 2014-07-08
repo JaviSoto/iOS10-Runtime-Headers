@@ -33,6 +33,8 @@
 + (void)setManagerMomentarilyBlessed:(id)arg1;
 + (id)sharedMomentGenerationDataManager;
 
+- (id)replayLogPath;
+- (bool)wantsMomentReplayLogging;
 - (void)pendingChangesUpdated:(unsigned long long)arg1;
 - (id)homeAddressDictionary;
 - (void)beginObservingNetworkReachabilityChangesWithBlock:(id)arg1;

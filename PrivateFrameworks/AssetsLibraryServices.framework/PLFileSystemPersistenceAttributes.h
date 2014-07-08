@@ -9,10 +9,10 @@
 }
 
 
-- (id)dataForKey:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (bool)getUInt16:(unsigned short*)arg1 forKey:(id)arg2;
 - (id)UUIDStringForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (void)dealloc;
 - (id)description;

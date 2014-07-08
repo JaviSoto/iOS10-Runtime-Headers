@@ -35,6 +35,7 @@
 - (void)requestRouteSummary;
 - (void)_request:(id)arg1;
 - (void)_createConnection;
+- (void)_closeConnection;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 

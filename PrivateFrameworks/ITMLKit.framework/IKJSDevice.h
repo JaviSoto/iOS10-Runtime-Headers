@@ -28,9 +28,11 @@
 - (id)deviceConfig;
 - (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2;
 - (id)appIdentifier;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)pixelRatio;
 - (id)model;
 - (id)productType;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)systemVersion;
 

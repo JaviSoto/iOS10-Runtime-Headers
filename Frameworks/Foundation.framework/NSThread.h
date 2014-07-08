@@ -36,11 +36,11 @@
 + (void)_mapkit_runThread:(id)arg1;
 + (id)_mapkit_networkIOThread;
 
+- (void)setName:(id)arg1;
 - (bool)isCancelled;
 - (void)main;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)start;
 - (void)cancel;
 - (void)dealloc;

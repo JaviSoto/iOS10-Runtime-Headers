@@ -16,8 +16,8 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setAllowDefaultZoneSave:(bool)arg1;
 - (bool)allowDefaultZoneSave;
+- (void)setAllowDefaultZoneSave:(bool)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (id)recordZoneIDsToDelete;
 - (void)setRecordZonesToSave:(id)arg1;

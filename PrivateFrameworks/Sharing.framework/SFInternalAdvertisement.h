@@ -2,34 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString, NSDictionary, NSData, NSDate;
+@class NSData, NSDictionary;
 
 @interface SFInternalAdvertisement : NSObject  {
-    bool_domain;
-    NSString *_advertisementString;
-    NSDate *_timestamp;
+    NSData *_advertisementPayload;
     NSDictionary *_options;
-    NSData *_payload;
 }
 
-@property(copy) NSString * advertisementString;
-@property(getter=isDomain) bool domain;
-@property(retain) NSDate * timestamp;
+@property(copy) NSData * advertisementPayload;
 @property(copy) NSDictionary * options;
-@property(retain) NSData * payload;
 
 
-- (bool)isDomain;
-- (void)setAdvertisementString:(id)arg1;
-- (id)advertisementString;
-- (id)initWithAdvertisementString:(id)arg1 isDomain:(bool)arg2 timestamp:(id)arg3 options:(id)arg4 payload:(id)arg5;
-- (void)setTimestamp:(id)arg1;
-- (id)timestamp;
+- (void)setAdvertisementPayload:(id)arg1;
+- (id)advertisementPayload;
+- (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2;
 - (id)options;
 - (void)setOptions:(id)arg1;
 - (void)dealloc;
-- (void)setPayload:(id)arg1;
-- (id)payload;
-- (void)setDomain:(bool)arg1;
 
 @end

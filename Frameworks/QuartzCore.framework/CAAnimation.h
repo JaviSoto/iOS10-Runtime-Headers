@@ -14,6 +14,8 @@
     unsigned int _flags;
 }
 
+@property int animationID;
+@property(copy) id completionBlock;
 @property bool usesSceneTimeBase;
 @property double fadeInDuration;
 @property double fadeOutDuration;
@@ -114,5 +116,10 @@
 - (void)pkui_setDidStartHandler:(id)arg1;
 - (id)pkui_didStartHandler;
 - (void)pkui_setCompletionHandler:(id)arg1;
+- (void)performCompletionBlock:(bool)arg1;
+- (int)animationID;
+- (void)setAnimationID:(int)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (id)completionBlock;
 
 @end

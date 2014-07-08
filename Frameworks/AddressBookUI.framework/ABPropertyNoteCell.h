@@ -16,6 +16,7 @@
 - (id)labelLabel;
 - (void)textViewEditingDidEnd:(id)arg1;
 - (void)textViewChanged:(id)arg1;
+- (double)bottomBaselineConstant;
 - (id)valueView;
 - (void)setValueTextAttributes:(id)arg1;
 - (bool)shouldPerformDefaultAction;

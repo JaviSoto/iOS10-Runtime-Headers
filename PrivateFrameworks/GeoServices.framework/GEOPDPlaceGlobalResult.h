@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDPlaceLookupResult, GEOPDSiriSearchResult, GEOPDPlaceRefinementResult;
+@class GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDPlaceLookupResult, GEOPDSiriSearchResult, GEOPDPlaceRefinementResult, GEOPDLocationDirectedSearchResult;
 
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying> {
     GEOPDCanonicalLocationSearchResult *_canonicalSearchResult;
     GEOPDGeocodingResult *_geocodingResult;
+    GEOPDLocationDirectedSearchResult *_locationDirectedSearchResult;
     GEOPDPlaceLookupResult *_placeLookupResult;
     GEOPDPlaceRefinementResult *_placeRefinementResult;
     GEOPDReverseGeocodingResult *_reverseGeocodingResult;
@@ -28,8 +29,11 @@
 @property(retain) GEOPDPlaceRefinementResult * placeRefinementResult;
 @property(readonly) bool hasSiriSearchResult;
 @property(retain) GEOPDSiriSearchResult * siriSearchResult;
+@property(readonly) bool hasLocationDirectedSearchResult;
+@property(retain) GEOPDLocationDirectedSearchResult * locationDirectedSearchResult;
 
 
+- (id)locationDirectedSearchResult;
 - (id)siriSearchResult;
 - (id)placeRefinementResult;
 - (id)placeLookupResult;
@@ -37,6 +41,7 @@
 - (id)canonicalSearchResult;
 - (id)geocodingResult;
 - (id)searchResult;
+- (bool)hasLocationDirectedSearchResult;
 - (bool)hasSiriSearchResult;
 - (bool)hasPlaceRefinementResult;
 - (bool)hasPlaceLookupResult;
@@ -44,6 +49,7 @@
 - (bool)hasCanonicalSearchResult;
 - (bool)hasGeocodingResult;
 - (bool)hasSearchResult;
+- (void)setLocationDirectedSearchResult:(id)arg1;
 - (void)setSiriSearchResult:(id)arg1;
 - (void)setPlaceRefinementResult:(id)arg1;
 - (void)setPlaceLookupResult:(id)arg1;
@@ -52,6 +58,7 @@
 - (void)setGeocodingResult:(id)arg1;
 - (void)setSearchResult:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

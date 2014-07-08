@@ -2,31 +2,31 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray;
+@class NSArray, TIKeyboardCandidate;
 
 @interface TIAutocorrectionList : NSObject <NSSecureCoding> {
-    bool_shouldAcceptTopCandidate;
-    NSArray *_candidates;
+    TIKeyboardCandidate *_autocorrection;
+    NSArray *_predictions;
 }
 
+@property(readonly) TIKeyboardCandidate * autocorrection;
+@property(readonly) NSArray * predictions;
 @property(readonly) NSArray * candidates;
-@property bool shouldAcceptTopCandidate;
+@property(readonly) bool shouldAcceptTopCandidate;
 
-+ (id)autocorrectionListWithCandidates:(id)arg1;
-+ (bool)supportsSecureCoding;
-+ (id)autocorrectionList;
 + (id)autocorrectionListWithCandidates:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
++ (bool)supportsSecureCoding;
++ (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2;
 
-- (void)setShouldAcceptTopCandidate:(bool)arg1;
-- (bool)shouldAcceptTopCandidate;
 - (id)candidates;
 - (id)initWithCandidates:(id)arg1;
+- (id)predictions;
+- (id)autocorrection;
 - (id)initWithCandidates:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
-- (id)init;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithAutocorrection:(id)arg1 predictions:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (bool)shouldAcceptTopCandidate;
 
 @end

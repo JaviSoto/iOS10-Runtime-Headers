@@ -2,6 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSString, NSArray, UITableViewController, NSIndexPath, <ABPickerControllerDelegate>;
 
 @interface ABPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
@@ -10,6 +14,11 @@
     NSArray *_builtinItems;
     NSArray *_customItems;
     NSString *_itemLocalizationKey;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _itemLocalizationBlock;
+
     UITableViewController *_tableViewController;
     NSIndexPath *_selectedIndexPath;
 }
@@ -20,19 +29,23 @@
 @property(copy) NSArray * customItems;
 @property bool allowsCustomItems;
 @property(copy) NSString * itemLocalizationKey;
+@property(copy) id itemLocalizationBlock;
 @property(retain) UITableViewController * tableViewController;
 @property(retain) NSIndexPath * selectedIndexPath;
 
 
 - (id)selectedIndexPath;
+- (void)setItemLocalizationBlock:(id)arg1;
 - (void)setItemLocalizationKey:(id)arg1;
 - (void)customLabelUpdated:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
-- (id)builtinItems;
-- (id)customItems;
 - (void)donePicker:(id)arg1;
+- (void)_updateRightButtonItem;
+- (id)customItems;
+- (id)builtinItems;
 - (bool)allowsCustomItems;
 - (id)itemLocalizationKey;
+- (id)itemLocalizationBlock;
 - (void)removeCustomItem:(id)arg1;
 - (void)setAllowsCustomItems:(bool)arg1;
 - (void)setCustomItems:(id)arg1;
@@ -43,6 +56,7 @@
 - (void)cancelPicker:(id)arg1;
 - (id)tableViewController;
 - (id)_itemAtIndexPath:(id)arg1;
+- (bool)isEditing;
 - (void)dealloc;
 - (id)selectedItem;
 - (void)setSelectedItem:(id)arg1;
@@ -55,6 +69,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

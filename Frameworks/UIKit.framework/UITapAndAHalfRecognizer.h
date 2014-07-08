@@ -37,9 +37,9 @@
 - (void)tooSlow:(id)arg1;
 - (void)clearTapTimer;
 - (double)allowableMovement;
+- (void)_resetGestureRecognizer;
 - (void)setTouch:(id)arg1;
 - (void)setAllowableMovement:(double)arg1;
-- (void)_resetGestureRecognizer;
 - (id)touch;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

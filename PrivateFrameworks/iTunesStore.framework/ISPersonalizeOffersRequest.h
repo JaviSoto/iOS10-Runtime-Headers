@@ -16,9 +16,9 @@
 - (void)addItemIdentifier:(id)arg1 forItemType:(id)arg2;
 - (id)itemIdentifiersForItemType:(id)arg1;
 - (id)allItemTypes;
+- (id)initWithItems:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
-- (id)initWithItems:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

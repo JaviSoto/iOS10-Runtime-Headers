@@ -65,6 +65,7 @@
 - (void)setWestLng:(double)arg1;
 - (void)setSouthLat:(double)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)hasWestLng;
 - (bool)hasEastLng;
 - (bool)hasSouthLat;

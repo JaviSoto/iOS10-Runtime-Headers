@@ -129,7 +129,6 @@
 
 
 - (void)setFontColor:(struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
-- (struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (void)setHasTextMaskColor:(bool)arg1;
 - (void)setTextMaskColor:(int)arg1;
 - (void)setHasCapWidthRight:(bool)arg1;
@@ -141,6 +140,7 @@
 - (bool)hasBackgroundColor;
 - (void)setHasBackgroundColor:(bool)arg1;
 - (void)setLayers:(struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned long long)arg2;
+- (struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (void)setCenterPoints:(float*)arg1 count:(unsigned long long)arg2;
 - (float*)centerPoints;
 - (void)setHasNonDigitFontSize:(bool)arg1;

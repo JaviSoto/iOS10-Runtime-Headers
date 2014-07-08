@@ -17,8 +17,8 @@
 - (bool)popNextBatchWithError:(id*)arg1;
 - (id)nextBatch;
 - (bool)popChangeBatch:(id*)arg1 error:(id*)arg2;
-- (unsigned long long)countOfQueuedBatches;
 - (bool)appendChangeBatch:(id)arg1 error:(id*)arg2;
+- (unsigned long long)countOfQueuedBatches;
 - (bool)deleteAllChangeBatchesWithError:(id*)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (void)setLocked:(bool)arg1;

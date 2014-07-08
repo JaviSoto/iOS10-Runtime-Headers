@@ -9,7 +9,7 @@
     SKUIGallerySwooshViewController *_swooshViewController;
 }
 
-@property(retain) SKUISwooshPageComponent * pageComponent;
+@property(readonly) SKUISwooshPageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -21,10 +21,10 @@
 - (id)_swooshViewController;
 - (void)_addImpressionForIndex:(long long)arg1 toSession:(id)arg2;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
-- (void)prefetchResourcesWithReason:(long long)arg1;
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)dealloc;

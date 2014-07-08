@@ -185,7 +185,9 @@
 - (id)_stylesForSizingTitles;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (id)scriptingID;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_leftRightImagePaddingForEdgeMarginInNavBarIsMini:(bool)arg1;
+- (double)_rightImagePaddingForEdgeMarginInNavBar;
+- (double)_leftImagePaddingForEdgeMarginInNavBar;
+- (bool)_isImageBarButtonItem;
 - (id)backgroundImageForState:(unsigned long long)arg1 style:(long long)arg2 barMetrics:(long long)arg3;
 - (bool)_shouldBezelSystemButtonImage;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
@@ -211,5 +213,6 @@
 - (void)mf_setMiniImageOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)mf_setImageOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)configureFromScriptButton:(id)arg1;
+- (void)showActionSheet:(id)arg1 animated:(bool)arg2;
 
 @end

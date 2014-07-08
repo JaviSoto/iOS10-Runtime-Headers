@@ -6,9 +6,11 @@
 
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_directionsFeedbackCollections;
+    NSMutableArray *_leaveNowFeedbackCollections;
     NSMutableArray *_mapsUsageFeedbackCollections;
     NSMutableArray *_stateTimingFeedbackCollections;
     NSMutableArray *_suggestionsFeedbackCollections;
+    NSMutableArray *_trafficRerouteFeedbackCollections;
     NSMutableArray *_transitAppLaunchFeedbackCollections;
     NSMutableArray *_usageCollections;
 }
@@ -19,14 +21,24 @@
 @property(retain) NSMutableArray * mapsUsageFeedbackCollections;
 @property(retain) NSMutableArray * suggestionsFeedbackCollections;
 @property(retain) NSMutableArray * stateTimingFeedbackCollections;
+@property(retain) NSMutableArray * trafficRerouteFeedbackCollections;
+@property(retain) NSMutableArray * leaveNowFeedbackCollections;
 
 
+- (id)leaveNowFeedbackCollections;
+- (id)trafficRerouteFeedbackCollections;
 - (id)stateTimingFeedbackCollections;
 - (id)suggestionsFeedbackCollections;
 - (id)mapsUsageFeedbackCollections;
 - (id)transitAppLaunchFeedbackCollections;
 - (id)directionsFeedbackCollections;
 - (id)usageCollections;
+- (id)leaveNowFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (void)clearLeaveNowFeedbackCollections;
+- (unsigned long long)leaveNowFeedbackCollectionsCount;
+- (id)trafficRerouteFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (void)clearTrafficRerouteFeedbackCollections;
+- (unsigned long long)trafficRerouteFeedbackCollectionsCount;
 - (id)stateTimingFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (void)clearStateTimingFeedbackCollections;
 - (unsigned long long)stateTimingFeedbackCollectionsCount;
@@ -45,12 +57,16 @@
 - (id)usageCollectionAtIndex:(unsigned long long)arg1;
 - (void)clearUsageCollections;
 - (unsigned long long)usageCollectionsCount;
+- (void)setLeaveNowFeedbackCollections:(id)arg1;
+- (void)setTrafficRerouteFeedbackCollections:(id)arg1;
 - (void)setStateTimingFeedbackCollections:(id)arg1;
 - (void)setSuggestionsFeedbackCollections:(id)arg1;
 - (void)setMapsUsageFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setDirectionsFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;
+- (void)addLeaveNowFeedbackCollection:(id)arg1;
+- (void)addTrafficRerouteFeedbackCollection:(id)arg1;
 - (void)addStateTimingFeedbackCollection:(id)arg1;
 - (void)addMapsUsageFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
@@ -58,6 +74,7 @@
 - (void)addDirectionsFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

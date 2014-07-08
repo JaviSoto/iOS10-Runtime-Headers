@@ -25,10 +25,10 @@
 - (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
 - (id)internal;
 - (void)setInternal:(id)arg1;
-- (id)metadata;
 - (long long)orientation;
 - (id)UTI;
 - (struct CGSize { double x1; double x2; })dimensions;
+- (id)metadata;
 - (id)url;
 - (bool)isValid;
 - (void)dealloc;

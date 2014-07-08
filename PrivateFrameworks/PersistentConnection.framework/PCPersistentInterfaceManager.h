@@ -13,7 +13,6 @@
     PCSimpleTimer *_wakeOnWiFiDisableTimer;
     void *_ctServerConnection;
     void *_interfaceAssertion;
-    void *_wifiManager;
     int _WWANContextIdentifier;
     NSString *_WWANInterfaceName;
     bool_isWWANInterfaceUp;
@@ -54,8 +53,8 @@
 - (bool)_allowBindingToWWAN;
 - (void)enableWakeOnWiFi:(bool)arg1 forDelegate:(id)arg2;
 - (void)enableWiFiAutoAssociation:(bool)arg1 forDelegate:(id)arg2;
-- (void)_populateWakeOnWiFiCapability;
 - (void)_updateWWANInterfaceAssertions;
+- (void)cutWiFiManagerDeviceAttached:(id)arg1;
 - (bool)areAllNetworkInterfacesDisabled;
 - (bool)isWakeOnWiFiSupported;
 - (bool)isInternetReachableViaWiFi;
@@ -78,10 +77,9 @@
 - (bool)isInCall;
 - (bool)isWWANInterfaceActivationPermitted;
 - (bool)doesWWANInterfaceExist;
-- (void)_adjustWakeOnWiFi;
 - (void)_adjustWakeOnWiFiLocked;
 - (bool)_wantsWakeOnWiFiEnabled;
-- (void)_populateWakeOnWiFiCapabilityLocked;
+- (void)_adjustWakeOnWiFi;
 - (bool)_isInternetReachableLocked;
 - (bool)_isWWANInHomeCountryLocked;
 - (bool)isInternetReachable;
@@ -90,15 +88,14 @@
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
 - (void)_updateWWANInterfaceUpState;
 - (void)_updateWWANInterfaceAssertionsLocked;
-- (void)_mainThreadDelayedInvalidation;
-- (void)_ctConnectionWasInvalidated;
+- (void)_mainThreadCTConnectionAttempt;
+- (void)_ctConnectionAttempt;
 - (void)_updateWWANInterfaceUpStateLocked;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)_createCTConnection;
 - (void)removeDelegate:(id)arg1;
 - (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustWiFiAutoAssociation;
-- (void)_createWiFiManager;
 - (id)init;
 - (void)dealloc;
 - (void)handleMachMessage:(void*)arg1;

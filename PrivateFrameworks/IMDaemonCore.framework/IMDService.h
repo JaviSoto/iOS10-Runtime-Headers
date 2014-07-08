@@ -73,6 +73,7 @@
 - (bool)disallowDeactivation;
 - (bool)shouldCreateActiveAccounts;
 - (bool)serviceRequiresSingleAccount;
+- (id)serviceDefaults;
 - (bool)isIDSBased;
 - (bool)shouldForceAccountsConnected;
 - (Class)sessionClass;
@@ -83,7 +84,6 @@
 - (void)disableAccount:(id)arg1;
 - (void)enableAccount:(id)arg1;
 - (id)defaultAccountSettings;
-- (id)serviceDefaults;
 - (id)serviceProperties;
 - (id)internalName;
 - (Class)accountClass;

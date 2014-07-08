@@ -2,20 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSExtension, NSString;
+@class NSString, NSExtension, NSArray;
 
 @interface _UIDocumentPickerDescriptor : NSObject  {
-    NSArray *_supportedContentTypes;
     NSExtension *_extension;
 }
 
 @property(copy,readonly) NSString * identifier;
 @property(copy,readonly) NSString * localizedName;
-@property(copy) NSArray * supportedContentTypes;
+@property(copy,readonly) NSArray * supportedContentTypes;
 @property bool enabled;
 @property(retain) NSExtension * extension;
 @property(copy,readonly) NSString * nonUIIdentifier;
+@property(retain,readonly) NSString * fileProviderDocumentGroup;
 
++ (BOOL)cloudEnabledStatus;
++ (void)setCloudEnabledStatus:(BOOL)arg1;
 + (id)descriptorWithIdentifier:(id)arg1;
 + (id)defaultPickerIdentifierForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
 + (id)allPickersForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
@@ -28,9 +30,9 @@
 - (long long)compare:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)setSupportedContentTypes:(id)arg1;
 - (id)imageWithScale:(double)arg1;
 - (id)nonUIIdentifier;
+- (id)fileProviderDocumentGroup;
 - (id)nonUIBundle;
 - (id)_parentApp;
 - (id)_ownBundle;

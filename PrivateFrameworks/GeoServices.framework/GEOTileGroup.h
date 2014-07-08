@@ -120,6 +120,7 @@
 - (unsigned long long)tileSetsCount;
 - (void)addTileSet:(struct { unsigned int x1; unsigned int x2; })arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setIdentifier:(unsigned int)arg1;

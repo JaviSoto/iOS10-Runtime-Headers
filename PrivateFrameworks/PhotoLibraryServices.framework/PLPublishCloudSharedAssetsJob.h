@@ -20,7 +20,6 @@
 
 + (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(bool)arg4 batchCommentText:(id)arg5;
 
-- (void)executeDaemonOperation;
 - (id)trimmedVideoPathInfo;
 - (id)batchCommentText;
 - (bool)isNewAlbum;
@@ -33,6 +32,7 @@
 - (void)setOriginalAssetUUIDs:(id)arg1;
 - (long long)daemonOperation;
 - (void)runDaemonSide;
+- (void)executeDaemonOperation;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (bool)shouldArchiveXPCToDisk;
 - (void)encodeToXPCObject:(id)arg1;

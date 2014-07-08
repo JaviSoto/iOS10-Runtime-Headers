@@ -18,6 +18,7 @@
 - (void)setHasIncludeSpokenNames:(bool)arg1;
 - (void)setIncludeSpokenNames:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

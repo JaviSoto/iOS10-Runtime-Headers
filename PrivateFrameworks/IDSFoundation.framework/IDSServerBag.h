@@ -76,6 +76,7 @@
 - (bool)isServerAvailable;
 - (bool)isInDebilitatedMode;
 - (id)_cachedURLString;
+- (bool)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (bool)_loadFromDictionary:(id)arg1 returningError:(id*)arg2;
 - (int)_trustStatus;
 - (bool)_allowInvalid;
@@ -100,7 +101,6 @@
 - (id)apsEnvironmentName;
 - (id)bagURL;
 - (void)forceBagLoad;
-- (bool)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
 - (void)_clearCache;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (bool)isLoading;

@@ -29,7 +29,6 @@
 @property(getter=isUserLiked) bool userLiked;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (bool)isUserLiked;
 - (id)likeToggleButton;
 - (void)setUserLiked:(bool)arg1;
@@ -40,6 +39,7 @@
 - (id)friendNames;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void).cxx_destruct;

@@ -29,6 +29,7 @@
 @property(copy,readonly) NSURL * absoluteLinkURL;
 
 
+- (void)setName:(id)arg1;
 - (id)protocol;
 - (id)search;
 - (id)pathname;
@@ -52,7 +53,6 @@
 - (id)host;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)target;
 - (void)setShape:(id)arg1;

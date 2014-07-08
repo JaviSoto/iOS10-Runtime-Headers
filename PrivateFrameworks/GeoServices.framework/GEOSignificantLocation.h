@@ -30,6 +30,7 @@
 
 
 - (void)setLocationIndex:(unsigned int)arg1;
+- (bool)hasIdentifier;
 - (unsigned int)numberOfVisitsBucket;
 - (unsigned int)locationIndex;
 - (bool)hasConfidence;
@@ -40,9 +41,9 @@
 - (void)setNumberOfVisitsBucket:(unsigned int)arg1;
 - (bool)hasLocationIndex;
 - (void)setHasLocationIndex:(bool)arg1;
-- (bool)hasIdentifier;
 - (bool)hasLocation;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)location;

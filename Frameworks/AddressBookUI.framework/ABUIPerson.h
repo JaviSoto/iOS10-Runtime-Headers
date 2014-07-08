@@ -47,7 +47,6 @@
 + (void)setAccountStore:(id)arg1;
 + (id)person;
 
-- (unsigned int)recordType;
 - (bool)hasPreferredPhoto;
 - (void)setAsPreferredPersonForPhoto;
 - (void)mergeProperties:(id)arg1 fromRecord:(void*)arg2;
@@ -83,15 +82,16 @@
 - (id)secondarySourceName;
 - (id)primarySourceName;
 - (id)preferredPhotoThumbnail;
-- (bool)hasPhoto;
 - (id)photoThumbnail;
 - (bool)isReadonly;
 - (bool)hasValidRecordID;
+- (bool)hasPhoto;
 - (id)phoneticName;
-- (void*)source;
+- (unsigned int)recordType;
 - (void*)record;
-- (void*)addressBook;
 - (int)kind;
+- (void*)source;
+- (void*)addressBook;
 - (int)recordID;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

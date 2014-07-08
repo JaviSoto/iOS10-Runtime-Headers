@@ -24,20 +24,22 @@
 @property(retain) NSMutableArray * placeResults;
 
 
+- (bool)hasStatus;
 - (void)setGlobalResult:(id)arg1;
 - (id)globalResult;
 - (bool)hasGlobalResult;
+- (id)initWithGeocoderPlace:(id)arg1;
 - (id)placeResults;
 - (id)placeResultAtIndex:(unsigned long long)arg1;
 - (void)clearPlaceResults;
 - (unsigned long long)placeResultsCount;
 - (void)addPlaceResult:(id)arg1;
 - (void)setPlaceResults:(id)arg1;
-- (bool)hasStatus;
 - (void)setHasStatus:(bool)arg1;
 - (bool)hasRequestType;
 - (void)setHasRequestType:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

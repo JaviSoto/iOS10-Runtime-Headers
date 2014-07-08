@@ -2,14 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject<WebOpenPanelResultListener>, NSArray, UIWebRotatingNodePopover, <UIWebFileUploadPanelDelegate>, UIFallbackCompatibleViewController, UIActionSheet, UIImagePickerController, UIViewController, UIWebDocumentView, DOMNode;
+@class UIWebDocumentView, NSObject<WebOpenPanelResultListener>, NSArray, <UIWebFileUploadPanelDelegate>, UIFallbackCompatibleViewController, UIPopoverController, UIViewController, UIAlertController, UIImagePickerController, DOMNode;
 
-@interface UIWebFileUploadPanel : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UIWebRotatingNodePopoverDelegate> {
-    UIActionSheet *_selectPickerTypeSheet;
+@interface UIWebFileUploadPanel : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate> {
+    UIAlertController *_selectPickerTypeSheet;
     UIImagePickerController *_imagePicker;
     UIFallbackCompatibleViewController *_rootViewController;
-    UIViewController *_fallbackViewController;
-    UIWebRotatingNodePopover *_fileUploadPopover;
+    UIViewController *_presentationViewController;
+    UIPopoverController *_presentationPopover;
     bool_documentViewPresentedViewController;
     struct CGPoint { 
         double x; 
@@ -41,6 +41,7 @@
 - (bool)isUsingCamera;
 - (bool)allowMultipleFiles;
 - (id)resultListener;
+- (void)_ensureInteractionElement;
 - (void)_chooseFilenames:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)_chooseFilename:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
@@ -52,10 +53,11 @@
 - (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned long long)arg2 processedResults:(id)arg3 processedImageCount:(unsigned long long)arg4 processedVideoCount:(unsigned long long)arg5 successBlock:(id)arg6 failureBlock:(id)arg7;
 - (double)_compressionQuality;
 - (id)_filePathForMediaURL:(id)arg1;
-- (void)_dismissDisplayAnimated:(bool)arg1;
 - (void)_showMediaSourceSelectionSheet;
+- (void)_dismissDisplayAnimated:(bool)arg1;
 - (void)_showPhotoPickerWithSourceType:(long long)arg1;
-- (void)_ensureInteractionElement;
+- (void)_presentFullscreenViewController:(id)arg1 animated:(bool)arg2;
+- (void)_presentPopoverWithContentViewController:(id)arg1 animated:(bool)arg2;
 - (id)_photoPickerWithSourceType:(long long)arg1;
 - (id)_mediaTypesForPickerSourceType:(long long)arg1;
 - (bool)_string:(id)arg1 hasPrefixCaseInsensitive:(id)arg2;
@@ -65,14 +67,12 @@
 - (void)setAllowMultipleFiles:(bool)arg1;
 - (void)setResultListener:(id)arg1;
 - (void)setMimeTypes:(id)arg1;
-- (void)popoverWasDismissed:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)present;
 - (id)initWithResultListener:(id)arg1 mimeTypes:(id)arg2 allowMultipleFiles:(bool)arg3 documentView:(id)arg4;
 - (void)dismiss;
-- (void)actionSheetCancel:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 
 @end

@@ -5,6 +5,7 @@
 @class UIActivityIndicatorView;
 
 @interface SKUIActivityIndicatorView : SKUIViewReuseView <SKUIViewElementView> {
+    unsigned long long _alignment;
     struct UIEdgeInsets { 
         double top; 
         double left; 

@@ -15,13 +15,13 @@
 @property(retain) NSString * name;
 
 
+- (void)setName:(id)arg1;
 - (void)setOpacity:(double)arg1;
 - (double)opacity;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

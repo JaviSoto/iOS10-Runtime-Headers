@@ -7,13 +7,13 @@
 }
 
 
-- (unsigned char)isDirty;
 - (void)setRenderer:(struct OpaqueFigSubtitleRenderer { }*)arg1;
 - (void)setContent:(struct __CFAttributedString { }*)arg1;
 - (struct __CFString { }*)getContentID;
 - (void)setCuePosition:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getSuggestedBounds:(unsigned char)arg1;
 - (void)setViewport:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned char)isDirty;
 - (void)layoutSublayers;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)setDefaultFontSize:(double)arg1;

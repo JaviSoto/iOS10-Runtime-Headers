@@ -123,19 +123,23 @@
 - (void)_becomeFirstResponderAndMakeVisible;
 - (bool)_requiresKeyboardResetOnReload;
 - (bool)_requiresKeyboardWindowWhenFirstResponder;
+- (id)_primaryContentResponder;
 - (void)_completeForwardingTouches:(id)arg1 phase:(long long)arg2 event:(id)arg3 index:(unsigned long long)arg4;
 - (id)_keyboardResponder;
 - (void)reloadInputViewsWithoutReset;
-- (id)textInputContextIdentifier;
 - (id)inputAccessoryViewController;
+- (id)textInputContextIdentifier;
 - (id)inputViewController;
 - (id)inputAccessoryView;
 - (id)inputView;
+- (void)_tagAsRestorableResponder;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)motionCancelled:(long long)arg1 withEvent:(id)arg2;
 - (void)motionBegan:(long long)arg1 withEvent:(id)arg2;
+- (void)_overrideInputAccessoryViewNextResponderWithResponder:(id)arg1;
+- (void)_overrideInputViewNextResponderWithResponder:(id)arg1;
 - (id)_targetForAction:(SEL)arg1 withSender:(id)arg2 canPerformActionBlock:(id)arg3;
 - (bool)canResignFirstResponder;
 - (void)_resignFirstResponder;
@@ -167,6 +171,8 @@
 - (bool)_isRootForKeyResponderCycle;
 - (id)_responderWindow;
 - (bool)_resignIfContainsFirstResponder;
+- (void)_clearRestorableResponderStatus;
+- (void)_clearOverrideNextResponder;
 - (id)nextFirstResponder;
 - (bool)_canBecomeFirstResponderWhenPossible;
 - (void)_clearBecomeFirstResponderWhenCapable;
@@ -174,6 +180,7 @@
 - (id)_nextKeyResponder;
 - (bool)canBecomeFirstResponder;
 - (bool)_containsResponder:(id)arg1;
+- (id)_nextResponderOverride;
 - (id)_responderForBecomeFirstResponder;
 - (void)setRestorationIdentifier:(id)arg1;
 - (bool)_supportsBecomeFirstResponderWhenPossible;
@@ -220,5 +227,6 @@
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_responderForEditing;
+- (id)tk_firstViewControllerInResponderChain;
 
 @end

@@ -20,6 +20,7 @@
 + (id)preferredFontForUsage:(id)arg1 contentSizeCategoryName:(id)arg2;
 + (id)preferredFontForUsage:(id)arg1;
 + (double)buttonFontSize;
++ (id)systemFontOfSize:(double)arg1 weight:(double)arg2;
 + (id)_thinSystemFontOfSize:(double)arg1;
 + (id)italicSystemFontOfSize:(double)arg1;
 + (id)fontNamesForFamilyName:(id)arg1;
@@ -30,6 +31,7 @@
 + (id)_sharedZeroPointFont;
 + (id)ib_preferredFontForTextStyle:(id)arg1;
 + (id)_systemFontsOfSize:(double)arg1 traits:(int)arg2;
++ (id)systemFontOfSize:(double)arg1 weight:(double)arg2 design:(id)arg3;
 + (id)systemFontOfSize:(double)arg1 traits:(int)arg2;
 + (id)fontWithName:(id)arg1 size:(double)arg2 traits:(int)arg3;
 + (id)_sharedFontCache;
@@ -63,7 +65,17 @@
 + (id)ab_preferredFontForTextStyle:(id)arg1;
 + (id)aa_fontForLargeButton;
 + (id)aa_fontForPrimaryInformationLabel;
++ (id)aa_fontForLargerInformationLabel;
 + (id)aa_fontForPageTitle;
++ (id)cam_cameraModeDialKerningForContentSize:(id)arg1;
++ (id)cam_cameraKerningForContentSize:(id)arg1;
++ (id)cam_cameraTimerFontForContentSize:(id)arg1;
++ (id)cam_cameraFontForContentSize:(id)arg1;
++ (double)_interpolatedAdditionalFontSizeForMainScreen;
++ (id)cam_cameraPadModeDialFontForContentSize:(id)arg1;
++ (id)cam_cameraModeDialFontForContentSize:(id)arg1;
++ (id)cam_cameraModeDialApproximateFontForContentSize:(id)arg1;
++ (id)cam_cameraFontOfSize:(double)arg1;
 
 - (unsigned long long)mostCompatibleStringEncoding;
 - (unsigned int)_defaultGlyphForChar:(unsigned short)arg1;

@@ -37,14 +37,13 @@
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (void)initialize;
 
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
-- (id)_serializationDataType;
 - (void*)_copyValueAsCFTypeWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 failureReason:(id*)arg2;
 - (id)_figMetadataSpecificationReturningError:(id*)arg1;
 - (id)_initWithFigMetadataDictionary:(id)arg1;
 - (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long long)arg2;
 - (id)_figMetadataDictionary;
 - (id)_figMetadataFormat;
+- (id)_serializationDataType;
 - (id)_figMetadataProperties;
 - (bool)_areExtraAttributesOf:(id)arg1 comparableToExtraAttributesOf:(id)arg2;
 - (id)intrinsicAttributesOfExtraAttributes:(id)arg1;
@@ -61,6 +60,7 @@
 - (void)_extractPropertiesFromDictionary:(id)arg1;
 - (id)dataType;
 - (id)commonKey;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)identifier;
 - (id)value;
 - (id)keySpace;

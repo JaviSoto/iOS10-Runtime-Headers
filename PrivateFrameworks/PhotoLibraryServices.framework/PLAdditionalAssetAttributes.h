@@ -4,7 +4,7 @@
 
 @class NSData, NSString, PLManagedAsset, PLAssetDescription, NSSet, NSManagedObject, NSNumber;
 
-@interface PLAdditionalAssetAttributes : NSManagedObject  {
+@interface PLAdditionalAssetAttributes : PLManagedObject  {
 }
 
 @property(retain) NSString * longDescription;

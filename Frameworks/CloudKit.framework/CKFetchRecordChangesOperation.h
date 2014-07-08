@@ -50,7 +50,6 @@
 @property(retain) NSMutableDictionary * recordErrors;
 
 
-- (bool)moreComing;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
 - (void)setRecordWithIDWasDeletedBlock:(id)arg1;
 - (void)setRecordChangedBlock:(id)arg1;
@@ -65,6 +64,7 @@
 - (id)recordZoneID;
 - (void)setRecordErrors:(id)arg1;
 - (id)recordErrors;
+- (bool)moreComing;
 - (id)resultServerChangeToken;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;

@@ -25,7 +25,6 @@
 - (void)setHasFooter:(bool)arg1;
 - (bool)hasFooter;
 - (void)setHasHeader:(bool)arg1;
-- (bool)hasHeader;
 - (void)setHasSlideNumber:(bool)arg1;
 - (bool)hasSlideNumber;
 - (void)setHasUserDateTime:(bool)arg1;
@@ -34,6 +33,7 @@
 - (bool)hasNowDateTime;
 - (void)setHasDateTime:(bool)arg1;
 - (bool)hasDateTime;
+- (bool)hasHeader;
 - (void)setHeader:(id)arg1;
 - (void)dealloc;
 - (id)header;

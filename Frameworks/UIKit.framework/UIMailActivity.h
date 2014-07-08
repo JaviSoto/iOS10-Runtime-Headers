@@ -25,10 +25,10 @@
 + (long long)activityCategory;
 
 - (void)setSubject:(id)arg1;
+- (id)activityType;
 - (id)init;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)activityType;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)_saveDraft:(id)arg1;
 - (void)setMailComposeViewController:(id)arg1;
@@ -52,9 +52,9 @@
 - (bool)sourceIsManaged;
 - (bool)canPerformWithActivityItems:(id)arg1;
 - (id)_activitySettingsImage;
+- (bool)keyboardVisible;
 - (id)_activityImage;
 - (id)activityTitle;
-- (bool)keyboardVisible;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 

@@ -24,11 +24,11 @@
 - (long long)resultsOrdering;
 - (id)creatorID;
 - (void)setCreatorID:(id)arg1;
+- (id)owner;
 - (id)initWithShareID:(id)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 - (id)CKPropertiesDescription;
-- (id)owner;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setOwner:(id)arg1;

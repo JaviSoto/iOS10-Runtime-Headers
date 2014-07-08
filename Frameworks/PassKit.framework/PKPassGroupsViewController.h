@@ -104,6 +104,7 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
 - (bool)prefersStatusBarHidden;
 - (long long)preferredStatusBarStyle;
 - (void)scrollViewDidScrollToTop:(id)arg1;

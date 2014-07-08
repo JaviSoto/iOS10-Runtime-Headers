@@ -24,6 +24,7 @@
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)setContentView:(id)arg1;
 - (id)contentView;
+- (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

@@ -12,9 +12,9 @@
 
 + (int)textBoxTextTypeForRegularTextType:(int)arg1;
 
+- (id)imageName;
 - (void)checkForFloating:(id)arg1;
 - (void)propagateTextTypeToDrawables;
-- (id)imageName;
 - (void)setImageBlipRef:(id)arg1;
 - (id)imageBlipRef;
 - (void)clearDrawable;

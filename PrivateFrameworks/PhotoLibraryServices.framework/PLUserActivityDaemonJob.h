@@ -18,10 +18,10 @@
 
 + (void)userDidLeavePhotosApplication;
 + (void)userDidReadCommentOnSharedAsset:(id)arg1;
++ (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidNavigateAwayFromAllSharedAlbums;
 + (void)userDidNavigateAwayFromSharedAlbum:(id)arg1;
 + (void)userDidNavigateIntoImagePickerSharedAlbum:(id)arg1;
-+ (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidViewCloudFeedContent:(long long)arg1;
 + (void)userDidDeleteSharedAssets:(id)arg1;
 + (void)userDidDeleteSharedAlbum:(id)arg1;
@@ -35,9 +35,9 @@
 - (id)assetUUIDs;
 - (void)setAssetUUIDs:(id)arg1;
 - (void)setAlbumUUID:(id)arg1;
+- (void)encodeToXPCObject:(id)arg1;
 - (void)setActionType:(long long)arg1;
 - (long long)actionType;
-- (void)encodeToXPCObject:(id)arg1;
 - (void)run;
 - (void)dealloc;
 

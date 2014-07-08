@@ -83,6 +83,7 @@
 @property(readonly) NSString * itemTypeString;
 
 
+- (id)tellAFriendSubject;
 - (void)setUnmodifiedTitle:(id)arg1;
 - (id)storeOffers;
 - (void)setSecondaryTitle:(id)arg1;
@@ -142,7 +143,6 @@
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)tweetURL;
 - (id)tweetInitialText;
-- (id)tellAFriendSubject;
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendBodyMIMEType;
 - (id)relatedItemsForRelationType:(id)arg1;

@@ -97,10 +97,10 @@
 - (void)removeInput:(id)arg1;
 - (void)_beginConfiguration;
 - (struct OpaqueCMClock { }*)masterClock;
+- (id)sessionPreset;
 - (void)removeConnection:(id)arg1;
 - (struct OpaqueCMBaseObject { }*)recorder;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
-- (id)sessionPreset;
 - (id)videoPreviewLayer;
 - (int)_startRecording;
 - (bool)automaticallyConfiguresApplicationAudioSession;

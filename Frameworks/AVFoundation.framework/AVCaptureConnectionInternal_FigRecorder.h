@@ -38,6 +38,7 @@
     int videoRetainedBufferCountHint;
     boolenablesVideoStabilizationWhenAvailable;
     boolvideoStabilizationEnabled;
+    boolfeature0Mode;
 }
 
 

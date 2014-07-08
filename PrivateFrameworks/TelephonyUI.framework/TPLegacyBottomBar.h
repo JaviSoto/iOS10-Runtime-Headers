@@ -14,8 +14,8 @@
 @property bool suppressDrawingBackground;
 @property(readonly) UIImageView * shadowView;
 
-+ (id)upsideDownShadowImage;
 + (long long)overlayStyle;
++ (id)upsideDownShadowImage;
 + (long long)fullscreenStyle;
 + (double)defaultHeightForStyle:(long long)arg1 orientation:(long long)arg2;
 + (double)defaultHeightForOrientation:(long long)arg1;
@@ -28,9 +28,9 @@
 - (void)setSuppressDrawingBackground:(bool)arg1;
 - (void)setOrientation:(long long)arg1 updateFrame:(bool)arg2;
 - (id)initWithDefaultSizeForOrientation:(long long)arg1;
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOrientation:(long long)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)init;
 - (void)dealloc;

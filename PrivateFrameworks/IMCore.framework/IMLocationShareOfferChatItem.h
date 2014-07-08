@@ -16,11 +16,11 @@
 @property(retain,readonly) IMHandle * sender;
 
 
+- (bool)failed;
 - (bool)_isActionableEclipsed;
 - (long long)offerState;
 - (void)_setActionableEclipsed:(bool)arg1;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2;
-- (bool)failed;
 - (id)time;
 - (bool)isFromMe;
 - (id)sender;

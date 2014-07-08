@@ -10,8 +10,8 @@
 @property(readonly) MKCircle * circle;
 
 
+- (id)initWithCircle:(id)arg1;
 - (void)createPath;
 - (id)circle;
-- (id)initWithCircle:(id)arg1;
 
 @end

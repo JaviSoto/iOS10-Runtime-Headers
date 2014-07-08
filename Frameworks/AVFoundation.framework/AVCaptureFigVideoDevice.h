@@ -71,6 +71,7 @@
     double _wbLastTargetMix;
     double _wbSeedMix;
     double _wbSeedScale;
+    bool_providesStortorgetMetadata;
     bool_automaticallyAdjustsImageControlMode;
     struct opaqueCMSimpleQueue { } *_manualFocusControlRequests;
     struct opaqueCMSimpleQueue { } *_manualExposureControlRequests;
@@ -113,6 +114,10 @@
     bool_videoZoomDrawOverlay;
     AVWeakReference *_weakReference;
     NSMutableArray *_captureSourceSupportedMetadata;
+    NSDictionary *_fdSopF;
+    bool_edSopF;
+    bool_ecSopF;
+    bool_smSopF;
     NSArray *_availableBoxedMetadataFormatDescriptions;
     NSDictionary *_sessionPresetCompressionSettings;
     NSDictionary *_h264EncoderLimitations;
@@ -127,14 +132,14 @@
 + (void)initialize;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
-- (long long)imageControlMode;
-- (float)videoZoomRampAcceleration;
-- (double)videoZoomFactor;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
 - (void)setVideoZoomRampAcceleration:(float)arg1;
 - (void)setVideoZoomFactor:(double)arg1;
+- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
+- (long long)imageControlMode;
+- (float)videoZoomRampAcceleration;
+- (double)videoZoomFactor;
 - (id)deviceFormatForSessionPreset:(id)arg1 videoFormat:(int)arg2;
 - (bool)isSISSupported;
 - (void)setVideoZoomUpscaleStageHint:(long long)arg1;
@@ -154,6 +159,9 @@
 - (void)_setAdjustingWhiteBalance:(bool)arg1;
 - (void)_setAdjustingExposure:(bool)arg1;
 - (void)_setAdjustingFocus:(bool)arg1;
+- (id)_faceDetectionConfigurationDictionary;
+- (int)_setFaceDetectionFeatureEnabled:(bool)arg1 enabledState:(bool*)arg2;
+- (id)_supportedOptionalFaceDetectionFeaturesDictionary;
 - (int)_setTorchMode:(long long)arg1 withLevel:(float)arg2;
 - (void)_setFlashActive:(bool)arg1;
 - (struct { float x1; float x2; float x3; })_deviceWhiteBalanceGainsForChromaticityValues:(struct { float x1; float x2; })arg1 temperature:(float)arg2;
@@ -182,6 +190,12 @@
 - (struct { int x1; int x2; })maxH264PhotoDimensions;
 - (id)AVVideoSettingsForSessionPreset:(id)arg1;
 - (id)availableBoxedMetadataFormatDescriptions;
+- (bool)bitSortFields;
+- (bool)attributedIntegerList;
+- (bool)testViewProvider;
+- (void)setBitSortFields:(bool)arg1;
+- (void)setAttributedIntegerList:(bool)arg1;
+- (void)setTestViewProvider:(bool)arg1;
 - (id)supportedMetadataObjectIdentifiers;
 - (bool)isLowLightBoostEnabled;
 - (bool)isLowLightBoostSupported;
@@ -258,7 +272,6 @@
 - (bool)isLockedForConfiguration;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (bool)isActiveVideoMaxFrameDurationSet;
-- (bool)isActiveVideoMinFrameDurationSet;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
@@ -271,6 +284,8 @@
 - (void)setHighDynamicRangeSceneDetectionEnabled:(bool)arg1;
 - (bool)isHighDynamicRangeSceneDetectionEnabled;
 - (bool)isHighDynamicRangeSceneDetectionSupported;
+- (void)setProvidesStortorgetMetadata:(bool)arg1;
+- (bool)providesStortorgetMetadata;
 - (int)faceRectangleAngle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRectangle;
 - (void)setFaceDetectionDrivenImageProcessingEnabled:(bool)arg1;
@@ -282,6 +297,10 @@
 - (bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (bool)hasMediaType:(id)arg1;
 - (id)modelID;
+- (bool)isCircularTestSupported;
+- (bool)isECNotificationSupported;
+- (bool)isEndianQualificationSupported;
+- (bool)isActiveVideoMinFrameDurationSet;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (void)_setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

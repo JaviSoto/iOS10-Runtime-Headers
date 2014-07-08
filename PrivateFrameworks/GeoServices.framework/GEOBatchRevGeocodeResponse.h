@@ -36,7 +36,6 @@
 
 - (id)clusters;
 - (id)batchPlaceResults;
-- (void)setTtl:(unsigned int)arg1;
 - (id)batchPlaceResultAtIndex:(unsigned long long)arg1;
 - (void)clearBatchPlaceResults;
 - (id)clusterAtIndex:(unsigned long long)arg1;
@@ -58,13 +57,15 @@
 - (void)setHasStatusCode:(bool)arg1;
 - (void)setStatusCode:(int)arg1;
 - (unsigned long long)batchPlaceResultsCount;
-- (id)versionDomains;
 - (bool)hasVersion;
+- (id)versionDomains;
 - (unsigned int)ttl;
 - (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHttpHeaders:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (void)setTtl:(unsigned int)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setTimestamp:(double)arg1;

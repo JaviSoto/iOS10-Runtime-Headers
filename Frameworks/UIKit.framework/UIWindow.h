@@ -146,6 +146,7 @@
 + (unsigned int)_synchronizeDrawingAcrossProcessesWithPreCommitHandler:(id)arg1;
 + (bool)_transformLayerRotationsAreEnabled;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (bool)_isSecure;
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
 + (void)_prepareWindowsForAppResume;
 + (void)_prepareWindowsPassingTestForAppResume:(id)arg1;
@@ -161,6 +162,7 @@
 + (id)keyWindow;
 + (void)_executeDeferredLaunchBlocks;
 + (id)allWindowsIncludingInternalWindows:(bool)arg1 onlyVisibleWindows:(bool)arg2;
++ (bool)_isSystemWindow;
 
 - (void)setHidden:(bool)arg1;
 - (void)makeKeyAndVisible;
@@ -207,6 +209,7 @@
 - (bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)matchDeviceOrientation:(id)arg1;
 - (void)setupForOrientation:(long long)arg1;
+- (bool)inhibitTextEffectsRotation;
 - (void)keyboardDidHide;
 - (void)_matchDeviceOrientation;
 - (double)_classicOffset;
@@ -227,7 +230,6 @@
 - (id)_windowInternalConstraints;
 - (id)_traitCollectionChangeTransitionCoordinator;
 - (bool)_appearsInLoupe;
-- (bool)_isSecure;
 - (id)_normalInheritedTintColor;
 - (id)_rootLayer;
 - (id)_directionalGestureRecognizers;
@@ -261,6 +263,7 @@
 - (void)_makeExternalKeyWindow;
 - (void)_screenWillTransitionToTraitCollection:(id)arg1;
 - (struct { long long x1; long long x2; })__sizeClassPair;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_allContainedGestureRecognizersWereReset;
 - (void)_updateContainedGestureRecognizerState;
 - (bool)_shouldDelayTouchForSystemGestures:(id)arg1;
@@ -338,7 +341,6 @@
 - (void)_updateIsSceneSizedFlag;
 - (void)_propagateTraitCollectionChangedForStateRestoration;
 - (void)_willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
 - (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screen:(id)arg2;
 - (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(long long)arg3 virtualVerticalSizeClass:(long long)arg4;
 - (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2;
@@ -409,6 +411,7 @@
 - (void)_destroyContextFromScreen:(id)arg1;
 - (void)_updateSceneIfNecessary;
 - (void)_configureContextOptions:(id)arg1;
+- (bool)_shouldCreateContextAsSecure;
 - (bool)_disableGroupOpacity;
 - (bool)_ignoresHitTest;
 - (int)windowOutput;
@@ -438,6 +441,7 @@
 - (void)_createSystemGestureGateGestureRecognizerIfNeeded;
 - (void)_sceneBoundsDidChange;
 - (void)_updateTransformLayer;
+- (bool)_isSecure;
 - (void)_setScene:(id)arg1;
 - (id)_window;
 - (id)_window;
@@ -465,6 +469,7 @@
 - (double)windowLevel;
 - (id)traitCollection;
 - (bool)_isWindowServerHostingManaged;
+- (void)_setSecure:(bool)arg1;
 - (void)_endModalSession;
 - (void)_beginModalSession;
 - (id)_scene;
@@ -490,7 +495,6 @@
 - (unsigned int)_contextId;
 - (void)_orderFrontWithoutMakingKey;
 - (void)setWindowLevel:(double)arg1;
-- (void)_setSecure:(bool)arg1;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (bool)_isTextEffectsWindow;
 - (bool)_clearMouseView;

@@ -13,6 +13,7 @@
 }
 
 @property(readonly) double baselineOffset;
+@property(readonly) double firstBaselineOffset;
 @property long long buttonType;
 @property(retain) SKUIAttributedStringLayout * titleLayout;
 @property bool usesTintColor;
@@ -23,12 +24,14 @@
 - (void)setUsesTintColor:(bool)arg1;
 - (void)setTitleLayout:(id)arg1;
 - (void)setButtonType:(long long)arg1;
+- (bool)_usesTintColor;
 - (id)titleLayout;
 - (void)_reloadDisclosureImage;
 - (void)setBackgroundColor:(id)arg1;
 - (double)baselineOffset;
 - (void).cxx_destruct;
 - (long long)buttonType;
+- (double)firstBaselineOffset;
 - (void)setHighlighted:(bool)arg1;
 - (void)tintColorDidChange;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

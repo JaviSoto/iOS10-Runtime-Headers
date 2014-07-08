@@ -6,20 +6,14 @@
    See Warning(s) below.
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class PKRegion, <NSObject>;
 
 @interface PKPhysicsField : NSObject  {
-
-  /* Error parsing encoded ivar type info: ^{PKCField=^^?^{RegionHolder}{mat4=(?=[4]{?=[16f]})}{mat4=(?=[4]{?=[16f]})}fBffIBB} */
-    struct PKCField { int (**x1)(); struct RegionHolder {} *x2; struct mat4 { union { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_2_1[4]; void*x_1_2_2; } x_3_1_1; } x3; struct mat4 { union { void*x_1_2_1[4]; void*x_1_2_2; } x_4_1_1; } x4; float x5; boolx6; float x7; float x8; unsigned int x9; boolx10; boolx11; } *_field;
-
+    struct shared_ptr<PKCField> { 
+        struct PKCField {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _field;
     PKRegion *_region;
-    bool_inUse;
 
   /* Unexpected information at end of encoded ivar type: f */
   /* Error parsing encoded ivar type info:  */
@@ -31,11 +25,9 @@
   /* Error parsing encoded ivar type info:  */
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_scale;
 
-    <NSObject> *_representedObject;
     bool_override;
 }
 
-@property bool _inUse;
 @property float strength;
 @property float falloff;
 @property(getter=isEnabled) bool enabled;
@@ -63,17 +55,11 @@
 - (bool)override;
 - (void)setFalloff:(float)arg1;
 - (float)falloff;
-- (void)set_field:(struct PKCField { int (**x1)(); struct RegionHolder {} *x2; struct mat4 { union { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_2_1[4]; void*x_1_2_2; } x_3_1_1; } x3; struct mat4 { union { void*x_1_2_1[4]; void*x_1_2_2; } x_4_1_1; } x4; float x5; boolx6; float x7; float x8; unsigned int x9; boolx10; boolx11; }*)arg1;
-     /* Encoded args for previous method: v24@0:8^{PKCField=^^?^{RegionHolder}{mat4=(?=[4]{?=[16f]})}{mat4=(?=[4]{?=[16f]})}fBffIBB}16 */
-
+- (void)set_field:(struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
 - (void)setMinimumRadius:(float)arg1;
-- (void)set_inUse:(bool)arg1;
-- (bool)_inUse;
-- (struct PKCField { int (**x1)(); struct RegionHolder {} *x2; struct mat4 { union { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_2_1[4]; void*x_1_2_2; } x_3_1_1; } x3; struct mat4 { union { void*x_1_2_1[4]; void*x_1_2_2; } x_4_1_1; } x4; float x5; boolx6; float x7; float x8; unsigned int x9; boolx10; boolx11; }*)_field;
-     /* Encoded args for previous method: ^{PKCField=^^?^{RegionHolder}{mat4=(?=[4]{?=[16f]})}{mat4=(?=[4]{?=[16f]})}fBffIBB}16@0:8 */
-
+- (struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })_field;
 - (id)representedObject;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (unsigned int)categoryBitMask;
@@ -88,6 +74,7 @@
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (id).cxx_construct;
 - (void)setActive:(bool)arg1;
 - (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)position;
      /* Encoded args for previous method: 16@0:8 */

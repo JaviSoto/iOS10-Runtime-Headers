@@ -9,8 +9,8 @@
 }
 
 
-- (id)initWithOutputStream:(id)arg1;
 - (bool)writeMessage:(id)arg1;
+- (id)initWithOutputStream:(id)arg1;
 - (void)dealloc;
 
 @end

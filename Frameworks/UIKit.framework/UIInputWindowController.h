@@ -2,14 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetPlacement, NSMutableArray, UIView, UIInputViewSetNotificationInfo, NSLayoutConstraint, UIScrollView, <_UIRemoteKeyboardControllerDelegate>, UIKBInputBackdropView, NSArray, UIInputViewController, UIPanGestureRecognizer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface UIInputWindowController : UIViewController <UIScrollViewIntersectionDelegate, UIGestureRecognizerDelegate, UIInputViewAnimationHost, _UIRemoteKeyboardViewSource> {
+@class NSMutableDictionary, UIPanGestureRecognizer, UIInputViewSet, UIInputViewPlacementTransition, UIInputViewSetPlacement, NSMutableArray, UIView, UIInputViewSetNotificationInfo, NSString, UIScrollView, NSLayoutConstraint, <_UIRemoteKeyboardControllerDelegate>, UIKBInputBackdropView, NSArray, CADisplayLink, UIInputViewController;
+
+@interface UIInputWindowController : UIViewController <UIScrollViewIntersectionDelegate, UIKeyboardKeyplaneTransitionDelegate, UIGestureRecognizerDelegate, UIInputViewAnimationHost, _UIRemoteKeyboardViewSource> {
     NSMutableArray *_animationStyleStack;
     bool_suppressedCallbacks;
     bool_suppressedNotifications;
     bool_isChangingPlacement;
+    bool_isChangingInputViews;
+    bool_requiresConstraintUpdate;
     int _hiddenCount;
+    unsigned long long _rotationState;
+    NSMutableDictionary *_inputViewEdgeConstraints;
+    NSMutableDictionary *_accessoryViewEdgeConstraints;
+    NSMutableDictionary *_inputBackdropViewEdgeConstraints;
+    NSMutableDictionary *_accessoryBackdropViewEdgeConstraints;
     UIView *_preRotationSnapshot;
     struct CGSize { 
         double width; 
@@ -36,7 +47,20 @@
         double ty; 
     } _preRotationInputAccessoryViewTransform;
     bool_isTranslating;
+    bool_isSplitting;
+    bool_splitLockState;
+    CADisplayLink *_displayLink;
+    double _lastBounceTime;
+    double _lastTranslationNotificationTime;
+    double _targetTranslation;
+    double _initialTranslation;
+    double _translationVelocity;
     UIPanGestureRecognizer *_translateRecognizer;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _bounceCompletionBlock;
+
     SEL _interactiveTransitionCleanupSelector;
     UIScrollView *_scrollViewForTransition;
     bool_scrollViewTransitionFinishing;
@@ -47,6 +71,8 @@
     } _scrollViewTransitionPreviousPoint;
     UIInputViewSetNotificationInfo *_scrollViewNotificationInfo;
     UIInputViewSetNotificationInfo *_keyboardHeightChangeNotificationInfo;
+    bool_wasOnScreen;
+    NSString *_lastKeyboardID;
     bool_shouldNotifyRemoteKeyboards;
     UIView *_hostView;
     UIInputViewSet *_inputViewSet;
@@ -91,37 +117,40 @@
 - (void)completeKeyboardDismiss:(unsigned long long)arg1;
 - (void)fillInNotificationInfo:(id)arg1 forDismissMode:(unsigned long long)arg2;
 - (unsigned long long)keyboardDismissModeForPublicMode:(long long)arg1;
+- (id)verticalVisibilityConstraint;
 - (void)setInterfaceAutorotationDisabled:(bool)arg1;
 - (void)setInputView:(id)arg1 accessoryView:(id)arg2;
 - (void)moveFromPlacement:(id)arg1 toPlacement:(id)arg2 starting:(id)arg3 completion:(id)arg4;
 - (void)performOperations:(id)arg1 withTemplateNotificationInfo:(id)arg2;
+- (void)_updateBackdropViews;
 - (unsigned long long)changeToInputViewSet:(id)arg1;
 - (void)setInputAccessoryBackdropView:(id)arg1;
 - (void)set_inputAccessoryViewController:(id)arg1;
 - (void)setInputBackdropView:(id)arg1;
 - (void)set_inputViewController:(id)arg1;
-- (id)verticalVisibilityConstraint;
 - (void)setPlacement:(id)arg1 starting:(id)arg2 completion:(id)arg3;
 - (id)postRotationPlacement;
 - (void)setPostRotationPlacement:(id)arg1;
 - (id)_viewControllerForAutorotation;
 - (void)performWithoutCallbacksOrNotifications:(id)arg1;
-- (void)postStartNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
 - (void)performWithSafeTransitionFrames:(id)arg1;
 - (void)updateAppearStatesForPlacement:(id)arg1 start:(bool)arg2 animated:(bool)arg3;
 - (id)initialNotificationInfo;
 - (bool)mergeTransitionIfNecessaryWithTransition:(id)arg1;
 - (void)clearInteractiveTransitionStateIfNecessary;
 - (void)postEndNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
+- (void)postStartNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
 - (void)changeChild:(unsigned long long)arg1 toAppearState:(int)arg2 animated:(bool)arg3;
 - (int)appearStateForChild:(unsigned long long)arg1 placement:(id)arg2 start:(bool)arg3;
-- (id)_inputAccessoryViewController;
 - (id)templateNotificationInfo;
 - (void)setVisibilityConstraints:(id)arg1;
 - (void)setVerticalVisibilityConstraint:(id)arg1;
 - (id)visibilityConstraints;
 - (void)updateVisibilityConstraintsForPlacement:(id)arg1;
-- (id)constraintsForView:(id)arg1 toMatchView:(id)arg2;
+- (void)rebuildConstraints:(id)arg1 forView:(id)arg2 toMatchView:(id)arg3;
+- (void)updateConstraintInsets;
+- (id)_inputAccessoryViewController;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_aligningInsetsForChildInputViewController:(id)arg1;
 - (bool)_subviewUsesClassicLayout:(id)arg1;
 - (void)clearViewSizingConstraints:(unsigned long long)arg1;
 - (void)setAccessoryViewHeightConstraint:(id)arg1;
@@ -131,12 +160,15 @@
 - (id)viewMatchingConstraintForAttribute:(long long)arg1 primaryView:(id)arg2 secondaryView:(id)arg3;
 - (void)setTemplateNotificationInfo:(id)arg1;
 - (void)performWithoutAppearanceCallbacks:(id)arg1;
+- (void)registerPowerLogEvent:(bool)arg1;
 - (void)updateViewSizingConstraints;
 - (void)setControllerDelegate:(id)arg1;
 - (id)controllerDelegate;
 - (void)checkPlaceholdersForRemoteKeyboards;
 - (void)setShouldNotifyRemoteKeyboards:(bool)arg1;
 - (bool)shouldNotifyRemoteKeyboards;
+- (void)didSuspend:(id)arg1;
+- (void)willResume:(id)arg1;
 - (id)_inputAccessoryBackdropView;
 - (id)_inputBackdropView;
 - (id)_inputViewController;
@@ -152,16 +184,24 @@
 - (void)performOperations:(id)arg1 withAnimationStyle:(id)arg2;
 - (void)translateToPlacement:(id)arg1;
 - (void)syncToExistingAnimations;
+- (void)_updateBounceAnimation:(id)arg1;
+- (void)setAccessoryViewVisible:(bool)arg1 delay:(double)arg2;
 - (id)nextAnimationStyle;
 - (void)_finishRotationFromInterfaceOrientation:(long long)arg1;
 - (void)_rotateToOrientation:(long long)arg1 duration:(double)arg2;
 - (void)_prepareForRotationToOrientation:(long long)arg1 duration:(double)arg2;
+- (void)bounceAnimationDidFinish;
+- (void)invalidateDisplayLink;
+- (void)dock;
+- (void)undock;
 - (bool)isChangingPlacement;
 - (void)initializeTranslateGestureRecognizer;
 - (void)translateDetected:(id)arg1;
 - (id)currentTransition;
 - (void)setCurrentTransition:(id)arg1;
 - (id)hostView;
+- (void)finishTransitionWithCompletion:(id)arg1;
+- (void)prepareForTransition;
 - (id)_inputAccessoryView;
 - (id)_inputView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrame;
@@ -171,6 +211,8 @@
 - (bool)isTranslating;
 - (id)placement;
 - (bool)isUndocked;
+- (void)updateProgress:(double)arg1 startHeight:(double)arg2 endHeight:(double)arg3;
+- (int)_clipCornersOfView:(id)arg1;
 - (void)setInputViewsHidden:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningFrame;
 - (void)updateToPlacement:(id)arg1 withNormalAnimationsAndNotifications:(bool)arg2;
@@ -181,8 +223,10 @@
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidLoad;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)transitionDidFinish:(bool)arg1;
 - (void)popAnimationStyle;
 - (void)pushAnimationStyle:(id)arg1;
 - (void)scrollView:(id)arg1 didFinishPanGesture:(id)arg2;

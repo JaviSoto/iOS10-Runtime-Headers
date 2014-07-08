@@ -19,10 +19,10 @@
 @property int changeId;
 
 
-- (id)serverId;
 - (struct ASNote { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)note;
      /* Encoded args for previous method: ^{ASNote=#@@ii@i@?i@}16@0:8 */
 
+- (id)serverId;
 - (id)deletedNoteID;
 - (struct ASToDo { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)toDo;
      /* Encoded args for previous method: ^{ASToDo=#@@ii@i@?i@}16@0:8 */

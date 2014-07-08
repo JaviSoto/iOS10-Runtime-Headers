@@ -42,6 +42,7 @@
 - (void)setWidth:(unsigned int)arg1;
 - (unsigned int)height;
 - (unsigned int)width;
+- (void)setName:(id)arg1;
 - (id)value;
 - (void)setValue:(id)arg1;
 - (void)setMaxLength:(int)arg1;
@@ -125,7 +126,6 @@
 - (void)select;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (id)size;
 - (id)pattern;

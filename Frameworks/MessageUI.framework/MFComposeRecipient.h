@@ -49,10 +49,10 @@
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
 - (id)commentedAddress;
 - (id)compositeName;
+- (void*)record;
 - (int)property;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
-- (void*)record;
 - (void)setIdentifier:(int)arg1;
 - (int)identifier;
 - (id)displayString;

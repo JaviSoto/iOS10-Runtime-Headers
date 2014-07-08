@@ -45,6 +45,7 @@
 - (id)issuingPlayerID;
 - (void)decline;
 - (id)issuingPlayer;
+- (void)declineWithCompletionHandler:(id)arg1;
 - (id)receivingPlayer;
 - (id)game;
 - (id)internal;

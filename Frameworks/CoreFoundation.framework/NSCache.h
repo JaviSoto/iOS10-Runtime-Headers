@@ -17,6 +17,7 @@
 @property bool evictsObjectsWithDiscardedContent;
 
 
+- (void)setName:(id)arg1;
 - (unsigned long long)countLimit;
 - (void)setCountLimit:(unsigned long long)arg1;
 - (void)setTotalCostLimit:(unsigned long long)arg1;
@@ -34,7 +35,6 @@
 - (void)removeObjectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (void)finalize;
 - (void)dealloc;

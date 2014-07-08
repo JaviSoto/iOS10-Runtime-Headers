@@ -22,6 +22,7 @@
 + (id)glesContextOptions:(id)arg1;
 + (id)clContextOptions:(id)arg1;
 
+- (id)createColorCubeDataForFilters:(id)arg1 dimension:(int)arg2;
 - (struct CGSize { double x1; double x2; })outputImageMaximumSize;
 - (struct CGSize { double x1; double x2; })inputImageMaximumSize;
 - (unsigned long long)maximumOutputImageSize;

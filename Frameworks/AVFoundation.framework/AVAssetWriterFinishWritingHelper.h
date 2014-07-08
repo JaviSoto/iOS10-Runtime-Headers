@@ -12,12 +12,12 @@
 }
 
 
-- (long long)status;
 - (void)finishOperationCompletedSuccessfully:(bool)arg1 withError:(id)arg2;
 - (void)performFinishOperation;
 - (id)initWithConfigurationState:(id)arg1 figAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2 delegate:(id)arg3;
 - (struct OpaqueFigAssetWriter { }*)_retainedFigAssetWriter;
 - (void)cancelWriting;
+- (long long)status;
 - (void)finalize;
 - (void)dealloc;
 

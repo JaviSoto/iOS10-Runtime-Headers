@@ -38,8 +38,8 @@
 - (id)description;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
-- (id)imageURL;
 - (id)miniImageURL;
 - (void)loadImageWithCompletionHandler:(id)arg1;
+- (id)imageURL;
 
 @end

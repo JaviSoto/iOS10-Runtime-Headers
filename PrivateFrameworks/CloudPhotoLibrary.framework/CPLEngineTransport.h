@@ -14,6 +14,7 @@
 
 + (id)platformImplementationProtocol;
 
+- (id)simpleDataForSyncAnchor:(id)arg1;
 - (id)bestErrorForUnderlyingError:(id)arg1;
 - (id)resourceUploadTaskForResource:(id)arg1 ofRecord:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
 - (bool)supportsDelayedUploads;

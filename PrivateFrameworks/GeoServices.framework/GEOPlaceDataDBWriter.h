@@ -4,6 +4,8 @@
 
 @interface GEOPlaceDataDBWriter : GEODBWriter  {
     struct sqlite3_stmt { } *_insertPhoneNumber;
+    struct sqlite3_stmt { } *_insertKeyString;
+    bool_canCreateDebugTable;
 }
 
 
@@ -11,9 +13,13 @@
 - (void)performStatementPreparationTasks;
 - (void)deletePlaceDataForMUID:(unsigned long long)arg1;
 - (void)setPlaceData:(id)arg1 forMUID:(unsigned long long)arg2;
+- (void)_createKeyStringTable;
 - (void)_createPhoneNumberTable;
-- (void)_setMUID:(unsigned long long)arg1 forPhoneNumber:(long long)arg2;
+- (void)deletePlaceDataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
+- (void)setPlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2;
 - (void)_populateDBKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 forMUID:(unsigned long long)arg2;
+- (void)_setMUID:(unsigned long long)arg1 forPhoneNumber:(long long)arg2;
+- (void)_setMUID:(unsigned long long)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2;
 - (void)_openIfNecessary;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;

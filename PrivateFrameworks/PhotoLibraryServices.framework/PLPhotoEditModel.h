@@ -6,6 +6,7 @@
 
 @interface PLPhotoEditModel : NSObject <NSCopying> {
     NSString *_effectFilterName;
+    long long _effectFilterVersion;
     bool_smartToneEnabled;
     double _smartToneLevel;
     double _brightnessLevelOffset;
@@ -19,6 +20,13 @@
     double _colorContrastLevelOffset;
     double _colorVibrancyLevelOffset;
     double _colorCastLevelOffset;
+    bool_smartBWEnabled;
+    double _smartBWLevel;
+    double _bwStrengthLevelOffset;
+    double _bwNeutralGammaLevelOffset;
+    double _bwToneLevelOffset;
+    double _bwHueLevelOffset;
+    double _bwGrainLevelOffset;
     double _straightenAngle;
     struct CGRect { 
         struct CGPoint { 
@@ -35,6 +43,7 @@
     unsigned long long _rotation;
     NSDictionary *_smartToneStatistics;
     NSDictionary *_smartColorStatistics;
+    NSDictionary *_smartBWStatistics;
     NSArray *_redEyeCorrections;
     NSArray *_autoRedEyeCorrections;
     NSArray *_autoEnhanceFilters;
@@ -42,6 +51,7 @@
 }
 
 @property(copy,readonly) NSString * effectFilterName;
+@property(readonly) long long effectFilterVersion;
 @property(getter=isSmartToneEnabled,readonly) bool smartToneEnabled;
 @property(copy,readonly) NSDictionary * smartToneStatistics;
 @property(readonly) double smartToneLevel;
@@ -57,21 +67,37 @@
 @property(readonly) double colorContrastLevelOffset;
 @property(readonly) double colorVibrancyLevelOffset;
 @property(readonly) double colorCastLevelOffset;
+@property(getter=isSmartBWEnabled,readonly) bool smartBWEnabled;
+@property(copy,readonly) NSDictionary * smartBWStatistics;
+@property(readonly) double smartBWLevel;
+@property(readonly) double bwStrengthLevelOffset;
+@property(readonly) double bwNeutralGammaLevelOffset;
+@property(readonly) double bwToneLevelOffset;
+@property(readonly) double bwHueLevelOffset;
+@property(readonly) double bwGrainLevelOffset;
 @property(readonly) unsigned long long rotation;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedCropRect;
 @property(readonly) long long cropConstraintWidth;
 @property(readonly) long long cropConstraintHeight;
 @property(readonly) double straightenAngle;
+@property(readonly) bool hasIdentityCrop;
 @property(copy,readonly) NSArray * redEyeCorrections;
 @property(copy,readonly) NSArray * autoRedEyeCorrections;
 @property(copy,readonly) NSArray * autoEnhanceFilters;
 @property(readonly) bool autoEnhanceIsOn;
 
 + (int)identityOrientation;
++ (double)_referenceValueOfType:(long long)arg1 fromLevels:(struct { double x1; double x2; double x3; })arg2;
 + (void)_loadSubfilterReferenceLevelsIfNeeded;
 + (long long)identityCropConstraint;
++ (double)referenceSmartBWLevelOfType:(long long)arg1;
 + (double)referenceSmartColorLevelOfType:(long long)arg1;
 + (double)referenceSmartToneLevelOfType:(long long)arg1;
++ (double)referenceBWGrainLevelOfType:(long long)arg1;
++ (double)referenceBWHueLevelOfType:(long long)arg1;
++ (double)referenceBWToneLevelOfType:(long long)arg1;
++ (double)referenceBWNeutralGammaLevelOfType:(long long)arg1;
++ (double)referenceBWStrengthLevelOfType:(long long)arg1;
 + (double)referenceColorCastLevelOfType:(long long)arg1;
 + (double)referenceColorVibrancyLevelOfType:(long long)arg1;
 + (double)referenceColorContrastLevelOfType:(long long)arg1;
@@ -86,16 +112,26 @@
 + (unsigned long long)identityRotation;
 + (double)referenceStraightenAngleOfType:(long long)arg1;
 
+- (bool)hasIdentityCrop;
 - (bool)isIdentityModel;
 - (bool)isVisuallyEqualToPhotoEditModel:(id)arg1;
 - (long long)cropConstraintHeight;
 - (long long)cropConstraintWidth;
 - (void)_copyDataFromModel:(id)arg1;
+- (id)smartBWStatistics;
+- (double)smartBWLevel;
 - (double)smartColorLevel;
 - (double)smartToneLevel;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedCropRect;
 - (double)straightenAngle;
+- (long long)effectFilterVersion;
 - (id)effectFilterName;
+- (double)bwGrainLevelOffset;
+- (double)bwHueLevelOffset;
+- (double)bwToneLevelOffset;
+- (double)bwNeutralGammaLevelOffset;
+- (double)bwStrengthLevelOffset;
+- (bool)isSmartBWEnabled;
 - (double)colorCastLevelOffset;
 - (double)colorVibrancyLevelOffset;
 - (double)colorContrastLevelOffset;

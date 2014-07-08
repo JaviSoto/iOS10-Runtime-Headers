@@ -55,6 +55,7 @@
 - (void)setParentGroupWrapper:(id)arg1;
 - (id)parentGroupWrapper;
 - (bool)isDirectoryWrapper;
+- (void*)group;
 - (int)sourceType;
 - (void*)source;
 - (id)accountStore;
@@ -62,7 +63,6 @@
 - (id)copyDictionaryRepresentation;
 - (void*)addressBook;
 - (id)accountIdentifier;
-- (void*)group;
 - (void)setDelegate:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)name;

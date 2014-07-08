@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class HKHealthStore, _HKMedicalIDData;
+@class CNContact, HKHealthStore, _HKMedicalIDData;
 
 @interface ABMedicalIDAction : ABPropertyAction <HKMedicalIDViewControllerDelegate> {
     long long _medicalIDActionType;
@@ -13,6 +13,7 @@
 @property long long medicalIDActionType;
 @property(retain) HKHealthStore * healthStore;
 @property(retain) _HKMedicalIDData * healthData;
+@property(retain) CNContact * contact;
 
 
 - (void)setMedicalIDActionType:(long long)arg1;

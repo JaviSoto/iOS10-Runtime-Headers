@@ -27,9 +27,6 @@
 
 - (void)setSecondaryAdjustmentData:(id)arg1;
 - (void)setLargeAdjustmentData:(id)arg1;
-- (void)setBaseImage:(id)arg1;
-- (void)setOtherAdjustments:(id)arg1;
-- (void)setHasOtherAdjustments:(bool)arg1;
 - (void)setHasSimpleLightenDarken:(bool)arg1;
 - (void)setHasAutoEnhance:(bool)arg1;
 - (void)setHasRedEye:(bool)arg1;
@@ -41,8 +38,11 @@
 - (bool)hasSimpleLightenDarken;
 - (bool)hasAutoEnhance;
 - (bool)hasRedEye;
-- (id)otherAdjustmentsFingerprint;
 - (id)similarToOriginalAdjustmentsFingerprint;
+- (id)otherAdjustmentsFingerprint;
+- (void)setBaseImage:(id)arg1;
+- (void)setHasOtherAdjustments:(bool)arg1;
+- (void)setOtherAdjustments:(id)arg1;
 - (void).cxx_destruct;
 
 @end

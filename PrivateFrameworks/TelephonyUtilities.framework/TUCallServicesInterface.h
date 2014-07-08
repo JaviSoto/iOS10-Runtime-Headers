@@ -27,6 +27,7 @@
 + (bool)launchesCallServicesDaemonOnDemand;
 + (id)sharedInstance;
 
+- (void)_tearDownXPCConnection;
 - (void)setXpcConnectionCreationSemaphore:(id)arg1;
 - (id)xpcConnectionCreationSemaphore;
 - (void)setXpcConnection:(id)arg1;
@@ -49,6 +50,10 @@
 - (void)handleWantsHoldMusicChangedTo:(bool)arg1 forCallWithUUID:(id)arg2;
 - (void)setRemoteFrequency:(id)arg1;
 - (void)setLocalFrequency:(id)arg1;
+- (void)disconnectAllCalls;
+- (void)disconnectCurrentCallAndActivateHeld;
+- (void)endHeldAndAnswerCall:(id)arg1;
+- (void)endActiveAndAnswerCall:(id)arg1;
 - (void)swapCalls;
 - (id)currentProxyCalls;
 - (void)setCurrentProxyCalls:(id)arg1;

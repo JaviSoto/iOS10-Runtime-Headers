@@ -82,8 +82,8 @@
 - (void)setNumberOfPages:(long long)arg1;
 - (void)_commonPageControlInit;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_contentHuggingDefault_isUsuallyFixedWidth;

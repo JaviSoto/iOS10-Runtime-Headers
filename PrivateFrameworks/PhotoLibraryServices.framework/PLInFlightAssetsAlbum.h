@@ -153,11 +153,11 @@
 - (void)removeInflightAssets:(id)arg1;
 - (void)addInFlightAsset:(id)arg1;
 - (bool)isFolder;
-- (id)assets;
 - (unsigned long long)photosCount;
+- (id)assets;
 - (id)posterImage;
-- (id)fetchRequest;
 - (id)kind;
+- (id)fetchRequest;
 - (id)uuid;
 - (id)title;
 - (bool)isEmpty;

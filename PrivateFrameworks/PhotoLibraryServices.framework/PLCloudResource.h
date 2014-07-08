@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLAdditionalAssetAttributes, NSManagedObject;
+@class NSString, PLAdditionalAssetAttributes, PLCloudMaster;
 
-@interface PLCloudResource : NSManagedObject  {
+@interface PLCloudResource : PLManagedObject  {
 }
 
 @property(retain) NSString * filePath;
@@ -18,15 +18,15 @@
 @property(retain) NSString * uniformTypeIdentifier;
 @property int width;
 @property(retain) PLAdditionalAssetAttributes * assetAttributes;
-@property(retain) NSManagedObject * cloudMaster;
+@property(retain) PLCloudMaster * cloudMaster;
 
 + (id)allCloudResourcesInManagedObjectContext:(id)arg1;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3;
-+ (id)localPathForCPLResourceType:(unsigned long long)arg1 forAsset:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
-- (id)cplResourceWithItemIdentifier:(id)arg1;
+- (id)cplResourceWithItemIdentifier:(id)arg1 includeFile:(bool)arg2;
+- (id)localPathForAsset:(id)arg1;
 - (void)applyPropertiesFromCloudResource:(id)arg1 forAsset:(id)arg2;
 - (id)description;
 

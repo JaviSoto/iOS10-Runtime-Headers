@@ -103,6 +103,7 @@
 - (void)setSyncSessionShouldBeForeground:(bool)arg1;
 - (void)startSyncSessionWithMinimalPhase:(unsigned long long)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
+- (void)getStatusDictionaryWithCompletionHandler:(id)arg1;
 - (void)getStatusWithCompletionHandler:(id)arg1;
 - (void)closeAndDeactivate:(bool)arg1 completionHandler:(id)arg2;
 - (id)platformObject;

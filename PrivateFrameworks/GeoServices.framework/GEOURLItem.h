@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlace;
+@class GEOMapItemStorage, GEOPlace;
 
 @interface GEOURLItem : PBCodable <NSCopying> {
+    GEOMapItemStorage *_mapItemStorage;
     GEOPlace *_place;
     bool_currentLocation;
     struct { 
@@ -16,14 +17,22 @@
 @property(retain) GEOPlace * place;
 @property bool hasCurrentLocation;
 @property bool currentLocation;
+@property(readonly) bool hasMapItemStorage;
+@property(retain) GEOMapItemStorage * mapItemStorage;
 
 
 - (bool)hasCurrentLocation;
 - (void)setHasCurrentLocation:(bool)arg1;
+- (bool)hasMapItemStorage;
 - (bool)hasPlace;
 - (id)place;
 - (void)setPlace:(id)arg1;
+- (void)setMapItem:(id)arg1;
+- (id)mapItem;
+- (void)setMapItemStorage:(id)arg1;
+- (id)mapItemStorage;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setCurrentLocation:(bool)arg1;

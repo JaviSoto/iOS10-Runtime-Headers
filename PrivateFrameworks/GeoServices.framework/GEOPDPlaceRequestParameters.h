@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDReverseGeocodingParameters, GEOPDCanonicalLocationSearchParameters, GEOPDPlaceRefinementParameters, GEOPDGeocodingParameters, GEOPDSiriSearchParameters, GEOPDPlaceLookupParameters, GEOPDSearchParameters;
+@class GEOPDReverseGeocodingParameters, GEOPDCanonicalLocationSearchParameters, GEOPDPlaceRefinementParameters, GEOPDGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters, GEOPDPlaceLookupParameters, GEOPDLocationDirectedSearchParameters;
 
 @interface GEOPDPlaceRequestParameters : PBCodable <NSCopying> {
     GEOPDCanonicalLocationSearchParameters *_canonicalLocationSearchParameters;
     GEOPDGeocodingParameters *_geocodingParameters;
+    GEOPDLocationDirectedSearchParameters *_locationDirectedSearchParameters;
     GEOPDPlaceLookupParameters *_placeLookupParameters;
     GEOPDPlaceRefinementParameters *_placeRefinementParameters;
     GEOPDReverseGeocodingParameters *_reverseGeocodingParameters;
@@ -28,18 +29,21 @@
 @property(retain) GEOPDPlaceRefinementParameters * placeRefinementParameters;
 @property(readonly) bool hasSiriSearchParameters;
 @property(retain) GEOPDSiriSearchParameters * siriSearchParameters;
+@property(readonly) bool hasLocationDirectedSearchParameters;
+@property(retain) GEOPDLocationDirectedSearchParameters * locationDirectedSearchParameters;
 
 
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithMUIDs:(id)arg1;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
+- (id)locationDirectedSearchParameters;
 - (id)siriSearchParameters;
 - (id)placeRefinementParameters;
 - (id)placeLookupParameters;
 - (id)reverseGeocodingParameters;
 - (id)canonicalLocationSearchParameters;
-- (id)geocodingParameters;
-- (id)searchParameters;
+- (bool)hasLocationDirectedSearchParameters;
 - (bool)hasSiriSearchParameters;
 - (bool)hasPlaceRefinementParameters;
 - (bool)hasPlaceLookupParameters;
@@ -47,6 +51,7 @@
 - (bool)hasCanonicalLocationSearchParameters;
 - (bool)hasGeocodingParameters;
 - (bool)hasSearchParameters;
+- (void)setLocationDirectedSearchParameters:(id)arg1;
 - (void)setSiriSearchParameters:(id)arg1;
 - (void)setPlaceRefinementParameters:(id)arg1;
 - (void)setPlaceLookupParameters:(id)arg1;
@@ -58,7 +63,10 @@
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (id)searchParameters;
+- (id)geocodingParameters;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

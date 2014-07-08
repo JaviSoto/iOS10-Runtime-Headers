@@ -72,7 +72,6 @@
 - (void)viewDidUpdate;
 - (id)airplayView;
 - (void)_notifyDidLoadWithError:(id)arg1;
-- (void)cancelLoad;
 - (void)didLoad;
 - (void)setLoaded:(bool)arg1;
 - (void)loadIfNeededWithHints:(id)arg1;
@@ -85,6 +84,7 @@
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
 - (void)setLoading:(bool)arg1;
+- (void)cancelLoad;
 - (void)endScrubbing;
 - (void)beginScrubbing;
 - (void)setPassword:(id)arg1;

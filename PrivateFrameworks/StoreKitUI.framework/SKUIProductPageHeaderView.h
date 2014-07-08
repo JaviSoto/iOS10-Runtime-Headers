@@ -60,7 +60,6 @@
 
 
 - (long long)numberOfUserRatings;
-- (id)initWithClientContext:(id)arg1;
 - (id)itemOfferButton;
 - (id)shareButton;
 - (id)secondaryContentRating;
@@ -87,14 +86,14 @@
 - (id)contentRatingName;
 - (void)_reloadItemOfferButton:(bool)arg1;
 - (void)setRestricted:(bool)arg1;
-- (void)itemOfferButtonWillAnimateTransition:(id)arg1;
-- (void)itemOfferButtonDidAnimateTransition:(id)arg1;
-- (void)_showConfirmationAction:(id)arg1;
-- (void)_cancelConfirmationAction:(id)arg1;
 - (void)contentRatingArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forContentRating:(id)arg3;
 - (void)setItemState:(id)arg1 animated:(bool)arg2;
 - (void)setHeaderImage:(id)arg1;
 - (id)headerImage;
+- (void)itemOfferButtonWillAnimateTransition:(id)arg1;
+- (void)itemOfferButtonDidAnimateTransition:(id)arg1;
+- (void)_showConfirmationAction:(id)arg1;
+- (void)_cancelConfirmationAction:(id)arg1;
 - (id)itemState;
 - (id)itemOffer;
 - (void)setItemOffer:(id)arg1;
@@ -103,6 +102,7 @@
 - (id)editorialBadge;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
+- (id)initWithClientContext:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setContentRating:(id)arg1;

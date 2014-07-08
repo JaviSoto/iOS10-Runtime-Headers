@@ -29,11 +29,11 @@
 - (void)setURLPrefixMatches:(id)arg1;
 - (void)setRealm:(id)arg1;
 - (void)setPrincipalName:(id)arg1;
+- (id)accountTypeGUID;
+- (id)accountGUID;
 - (bool)validateURLPrefixMatch:(id)arg1 outNormalizedString:(id*)arg2 outError:(id*)arg3;
 - (bool)validateAppIdentifierMatch:(id)arg1 outError:(id*)arg2;
 - (id)appIdentifierMatches;
-- (id)accountGUID;
-- (id)accountTypeGUID;
 - (id)URLPrefixMatches;
 - (id)principalName;
 - (void)setCertificateUUID:(id)arg1;

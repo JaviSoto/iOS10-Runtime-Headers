@@ -11,10 +11,10 @@
     bool_cancelled;
 }
 
++ (id)providerName;
 + (id)batchReverseGeocoderURL;
 + (id)reverseGeocoderURL;
 + (id)forwardGeocoderURL;
-+ (id)providerName;
 
 - (void)_singleRequesterDidFinish:(id)arg1;
 - (void)_batchRequesterDidFinish:(id)arg1;

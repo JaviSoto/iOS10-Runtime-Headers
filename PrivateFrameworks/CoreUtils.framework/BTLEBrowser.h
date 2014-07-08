@@ -57,13 +57,13 @@
 - (id)serviceUUIDs;
 - (void)setLogCategory:(struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)arg1;
 - (struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)logCategory;
-- (void)setDispatchQueue:(id)arg1;
 - (void)_lostTimer;
 - (void)_stop:(int)arg1;
 - (id)updateHandler;
 - (void)setUpdateHandler:(id)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
+- (void)setDispatchQueue:(id)arg1;
 - (id)dispatchQueue;
 - (void)_start;
 - (id)init;

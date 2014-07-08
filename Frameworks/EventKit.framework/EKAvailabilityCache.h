@@ -5,21 +5,26 @@
 @class NSString, NSObject<OS_dispatch_queue>, NSMutableDictionary;
 
 @interface EKAvailabilityCache : NSObject  {
+    bool_sourceIsInvalid;
     NSString *_accountID;
+    bool_sourceSupportsAvailabilityRequests;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    NSMutableDictionary *_addressesToItems;
-    NSMutableDictionary *_ignoredEventIDsToAddresses;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSMutableDictionary *_addressesToCachedSpanRanges;
+    NSMutableDictionary *_ignoredEventIDsToAddressBasedCaches;
 }
 
-+ (id)_wrapSpansInItems:(id)arg1;
 + (long long)_convertType:(long long)arg1;
++ (id)_generateEventKitSpansFromDataAccessExpressSpans:(id)arg1;
++ (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned long long)arg2;
++ (bool)_isValidStartDate:(id)arg1 endDate:(id)arg2;
 
 - (void)cancelAvailabilityRequestWithID:(id)arg1;
 - (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(id)arg5 completionBlock:(id)arg6;
 - (void)_handleResults:(id)arg1 resultsBlock:(id)arg2 ignoredEventID:(id)arg3;
 - (id)_dictionaryForIgnoredEventID:(id)arg1;
 - (id)initWithSource:(id)arg1;
-- (id)init;
 - (void)dealloc;
+- (id)description;
 
 @end

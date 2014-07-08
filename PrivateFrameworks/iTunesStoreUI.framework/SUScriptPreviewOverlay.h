@@ -18,11 +18,8 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (void)initialize;
 
-- (void)_userInfoDidChange:(id)arg1;
-- (void)_checkOutAfterVisibilityChange;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)_previewOverlayViewController;
 - (void)hide:(id)arg1;
 - (void)loadURLRequest:(id)arg1;
 - (id)isVisible;
@@ -31,15 +28,12 @@
 - (id)height;
 - (id)width;
 - (void)setUserInfo:(id)arg1;
-- (void)finalizeForWebScript;
 - (id)attributeKeys;
 - (void)setTop:(id)arg1;
 - (void)setRight:(id)arg1;
 - (id)right;
 - (id)top;
-- (id)init;
 - (id)userInfo;
-- (void)dealloc;
 - (void)show:(id)arg1;
 
 @end

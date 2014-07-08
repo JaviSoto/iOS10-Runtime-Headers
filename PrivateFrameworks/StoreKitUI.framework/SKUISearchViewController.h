@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, SKUIProductPageOverlayController, SKUIIPhoneSearchViewController, SKUILoadTrendingSearchPageOperation, NSMutableArray, SSVLoadURLOperation, NSString, SSMetricsPageEvent, NSURLRequest, SKUIIPadSearchViewController, SSMetricsSearchEvent, SKUITrendingSearchPage, SKUISearchFieldController, SKUISearchPage, NSArray, SKUIIPhoneTrendingSearchPageView, SKUIMetricsController;
+@class NSDictionary, SKUIProductPageOverlayController, SKUIIPhoneSearchViewController, NSMutableArray, SSVLoadURLOperation, NSString, SSMetricsPageEvent, NSURLRequest, SKUIIPadSearchViewController, SSMetricsSearchEvent, SKUISearchFieldController, SKUISearchPage, NSArray, SKUIMetricsController;
 
-@interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate, SKUIProductPageOverlayDelegate, SKUITrendingSearchPageViewDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
+@interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate, SKUIProductPageOverlayDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
     SKUIIPhoneSearchViewController *_iPhoneViewController;
     SKUIIPadSearchViewController *_iPadViewController;
     SSMetricsPageEvent *_lastPageEvent;
@@ -13,7 +13,6 @@
     SKUIProductPageOverlayController *_overlayController;
     SKUISearchPage *_page;
     SKUISearchFieldController *_searchFieldController;
-    SKUILoadTrendingSearchPageOperation *_trendingSearchOperation;
     NSURLRequest *_urlRequest;
     NSString *_searchTerm;
     NSDictionary *_facetSelections;
@@ -21,9 +20,6 @@
     NSArray *_searchFacets;
     NSMutableArray *_previousRelatedQueries;
     SSMetricsSearchEvent *_searchEvent;
-    SKUILoadTrendingSearchPageOperation *_trendingOperation;
-    SKUITrendingSearchPage *_trendingPage;
-    SKUIIPhoneTrendingSearchPageView *_trendingPageView;
 }
 
 @property(retain) SKUISearchFieldController * searchFieldController;
@@ -32,21 +28,19 @@
 
 - (void)_reloadView;
 - (id)searchFieldController;
+- (void)scrollToTop;
 - (void)setSearchFieldController:(id)arg1;
 - (void)searchWithExternalURL:(id)arg1;
+- (void)searchWithURL:(id)arg1;
 - (id)activeMetricsController;
-- (void)trendingSearchPageView:(id)arg1 didSelectSearch:(id)arg2;
 - (void)searchChildViewControllerDidChangeFacetSelections:(id)arg1 withMetricsEvent:(id)arg2;
 - (void)searchChildViewController:(id)arg1 didSelectSearchTerm:(id)arg2;
 - (void)searchChildViewControllerDidSelectRelatedBackButton:(id)arg1 withMetricsEvent:(id)arg2;
 - (void)searchChildViewController:(id)arg1 didSelectRelatedQuery:(id)arg2 withMetricsEvent:(id)arg3;
 - (void)searchChildViewController:(id)arg1 didSelectEditorial:(id)arg2;
 - (void)searchChildViewController:(id)arg1 didSelectItem:(id)arg2;
-- (void)_setTrendingResponse:(id)arg1 error:(id)arg2;
-- (void)searchWithURL:(id)arg1;
 - (void)searchWithSearchTerm:(id)arg1;
 - (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
-- (void)_reloadTrending;
 - (void)_reloadOrientation:(long long)arg1;
 - (void)showError:(id)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
@@ -55,7 +49,6 @@
 - (void)_searchWithSearchTerm:(id)arg1 persistRelated:(bool)arg2 metricsEvent:(id)arg3 baseRequest:(id)arg4;
 - (void)_searchWithURLRequest:(id)arg1 persistRelated:(bool)arg2 metricsEvent:(id)arg3;
 - (void)searchWithURL:(id)arg1 metricsEvent:(id)arg2;
-- (void)scrollToTop;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;

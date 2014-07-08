@@ -53,9 +53,9 @@
 - (void)clearTapTimer;
 - (double)allowableMovement;
 - (double)maximumIntervalBetweenSuccessiveTaps;
+- (void)_reset;
 - (id)touches;
 - (void)setAllowableMovement:(double)arg1;
-- (void)_reset;
 - (void)setNumberOfTapsRequired:(unsigned long long)arg1;
 - (struct CGPoint { double x1; double x2; })_locationInSceneReferenceSpace;
 - (unsigned long long)numberOfTapsRequired;

@@ -15,8 +15,8 @@
 + (id)reuseIdentifier;
 
 - (void)_updateTextColor;
-- (id)mapItem;
 - (void)setMapItem:(id)arg1;
+- (id)mapItem;
 - (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

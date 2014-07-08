@@ -20,15 +20,19 @@
     NSArray *_charsets;
     unsigned int _threaded : 1;
     unsigned int _useCellDataOnly : 1;
+    unsigned long long _conversationFlags;
 }
 
 @property(retain) NSDictionary * compositionSpecification;
+@property unsigned long long conversationFlags;
 
 + (bool)deliverMessage:(id)arg1;
 + (id)newWithMessage:(id)arg1;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (unsigned long long)conversationFlags;
 - (void)setCompositionSpecification:(id)arg1;
 - (void)setCellDataOnly:(bool)arg1;
 - (void)deliverAsynchronously;

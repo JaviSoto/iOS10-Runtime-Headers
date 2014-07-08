@@ -2,24 +2,27 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSMutableDictionary, FBSSerialQueue, <FBSWorkspaceClientDelegate>, NSMutableArray, BSBasicServerClient;
+@class <FBSWorkspaceClientDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSMutableArray, BSBasicServerClient;
 
 @interface FBSWorkspaceClient : BSBaseXPCClient <FBSSceneUpdater> {
-    FBSSerialQueue *_callOutQueue;
     BSBasicServerClient *_client;
     NSMutableArray *_queuedMessages;
     NSMutableDictionary *_sceneIDToSceneHandlerMap;
+    NSObject<OS_dispatch_queue> *_callOutQueue;
     bool_inTransaction;
     <FBSWorkspaceClientDelegate> *_delegate;
 }
 
-@property <FBSWorkspaceClientDelegate> * delegate;
-@property(retain,readonly) FBSSerialQueue * callOutQueue;
+@property(readonly) <FBSWorkspaceClientDelegate> * delegate;
+@property(readonly) NSObject<OS_dispatch_queue> * callOutQueue;
 
 
 - (void)queue_connectionWasInterrupted;
+- (void)queue_invalidate;
+- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (id)_loggingProem;
 - (void)queue_handleMessage:(id)arg1;
+- (id)callOutQueue;
 - (bool)queue_handleMessageWithType:(long long)arg1 message:(id)arg2 client:(id)arg3;
 - (void)_queue_handleSceneActions:(id)arg1;
 - (void)_queue_handleActions:(id)arg1;
@@ -37,17 +40,16 @@
 - (void)_sendMessage:(long long)arg1 withEvent:(id)arg2;
 - (void)sendDestroySceneRequestEvent:(id)arg1 withCompletion:(id)arg2;
 - (void)sendCreateSceneRequestEvent:(id)arg1 withCompletion:(id)arg2;
-- (void)scene:(id)arg1 didDetachContext:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
 - (void)scene:(id)arg1 didReceiveUpdateToContext:(id)arg2;
+- (void)scene:(id)arg1 didDetachContext:(id)arg2;
 - (void)scene:(id)arg1 didAttachContext:(id)arg2;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
 - (void)unregisterDelegateForSceneID:(id)arg1;
 - (bool)willObserveContextsManually;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
-- (id)callOutQueue;
-- (id)initWithCallOutQueue:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)init;
 - (id)delegate;
 - (void)dealloc;
 - (id)description;

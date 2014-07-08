@@ -20,11 +20,11 @@
 - (void)setResponseDictionary:(id)arg1;
 - (void)setAuthenticateResponseType:(long long)arg1;
 - (void)setAuthenticatedAccount:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (long long)authenticateResponseType;
 - (id)authenticatedAccount;
 - (id)responseDictionary;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)error;
 - (void)dealloc;
 - (void)_setError:(id)arg1;

@@ -30,8 +30,10 @@
 @property UIResponder * restorableResponder;
 @property(readonly) bool isInputViewPlaceholder;
 @property(readonly) bool isInputAccessoryViewPlaceholder;
-@property(readonly) UIView * layeringView;
+@property(readonly) bool _inputViewIsSplit;
 @property double splitHeightDelta;
+@property(readonly) UIView * splitExemptSubview;
+@property(readonly) UIView * layeringView;
 
 + (id)inputSetWithPlaceholderAndAccessoryView:(id)arg1;
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2;
@@ -45,6 +47,7 @@
 - (id)description;
 - (bool)isInputAccessoryViewPlaceholder;
 - (bool)inSyncWithOrientation:(long long)arg1 forKeyboard:(id)arg2;
+- (id)splitExemptSubview;
 - (id)inputSetWithInputAccessoryViewOnly;
 - (bool)_inputAccessoryViewSupportsSplit;
 - (bool)_inputViewSupportsSplit;
@@ -64,6 +67,7 @@
 - (void)_endSplitTransitionIfNeeded;
 - (void)_setSplitProgress:(double)arg1;
 - (void)_beginSplitTransitionIfNeeded;
+- (bool)setAccessoryViewVisible:(bool)arg1 delay:(double)arg2;
 - (void)setSplitHeightDelta:(double)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputAccessoryViewBounds;
 - (id)_splittableInputAccessoryView;

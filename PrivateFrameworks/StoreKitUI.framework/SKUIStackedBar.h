@@ -2,19 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class _UIBackdropView, NSArray, <SKUIStackedBarDelegate>, UIView, UINavigationBar;
+@class _UIBackdropView, NSArray, <SKUIStackedBarDelegate>, UIView;
 
-@interface SKUIStackedBar : UIView <UINavigationBarDelegate> {
+@interface SKUIStackedBar : UIView  {
     <SKUIStackedBarDelegate> *_delegate;
     _UIBackdropView *_backdropView;
     NSArray *_items;
-    NSArray *_separators;
-    NSArray *_labels;
+    NSArray *_cells;
     bool_lastItemExpanded;
     bool_hidesStatusBar;
     bool_iPadStyle;
-    UINavigationBar *_navigationBar;
     bool_alwaysShowsBackButton;
+    bool_zeroHeightWhenFirstChildExpanded;
     double _offset;
     UIView *_wrapperView;
     UIView *_maskView;
@@ -27,17 +26,20 @@
 @property bool hidesStatusBar;
 @property bool lastItemExpanded;
 @property bool iPadStyle;
+@property bool zeroHeightWhenFirstChildExpanded;
 @property double offset;
 
 
 - (void)_buttonAction:(id)arg1;
 - (void)_reload;
+- (bool)zeroHeightWhenFirstChildExpanded;
 - (bool)hidesStatusBar;
 - (bool)lastItemExpanded;
 - (bool)alwaysShowsBackButton;
 - (void)_selectItemAtIndex:(long long)arg1;
 - (void)_backAction:(id)arg1;
 - (void)animateToFullSizeIfNecessary;
+- (void)setZeroHeightWhenFirstChildExpanded:(bool)arg1;
 - (void)setLastItemExpanded:(bool)arg1;
 - (void)setLastItemExpanded:(bool)arg1 animated:(bool)arg2;
 - (void)setIPadStyle:(bool)arg1;
@@ -52,9 +54,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
-- (bool)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
 - (void)sizeToFit;
-- (void)tintColorDidChange;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 

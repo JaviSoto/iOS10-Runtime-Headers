@@ -70,13 +70,13 @@
 - (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(double)arg2;
 - (bool)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(bool)arg6 curve:(bool)arg7 selected:(bool)arg8;
 - (void)forEachSection:(id)arg1;
+- (void)setOverlay:(id)arg1;
 - (void)setSimplificationEpsilonPoints:(double)arg1;
+- (id)overlay;
 - (bool)needsUpdate;
 - (struct { double x1; double x2; double x3; double x4; })bounds;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
-- (void)setOverlay:(id)arg1;
-- (id)overlay;
 
 @end

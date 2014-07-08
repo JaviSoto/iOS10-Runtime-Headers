@@ -44,11 +44,11 @@
 - (void)setOriginalAlarm:(id)arg1;
 - (void)setRelativeOffset:(double)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
-- (id)owner;
 - (int)entityType;
 - (id)externalID;
 - (void)setExternalID:(id)arg1;
 - (long long)proximity;
+- (id)owner;
 - (id)location;
 - (id)UUID;
 - (void)setLocation:(id)arg1;

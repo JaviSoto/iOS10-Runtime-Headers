@@ -54,7 +54,6 @@
 - (id)newScriptInterfaceForWebViewManager:(id)arg1;
 - (void)_reloadObjectPool;
 - (void)_addPlaceholderBackgroundView;
-- (id)_newURLRequestWithOperation:(id)arg1 bagContext:(id)arg2;
 - (void)_reloadBackgroundViewPropertiesWithScriptProperties:(id)arg1;
 - (void)_getURLRequestForOperation:(id)arg1 block:(id)arg2;
 - (void)_loadURLRequest:(id)arg1;

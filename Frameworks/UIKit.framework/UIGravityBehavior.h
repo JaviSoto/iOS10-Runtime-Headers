@@ -17,8 +17,8 @@
 @property double magnitude;
 
 
-- (id)items;
 - (id)initWithItems:(id)arg1;
+- (id)items;
 - (void)setGravity:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })gravity;
 - (void)addItem:(id)arg1;

@@ -24,10 +24,10 @@
 - (void)logExtraWithFormat:(id)arg1;
 - (void)setVerbosity:(int)arg1;
 - (void)logWarning:(id)arg1;
-- (void)logInfo:(id)arg1;
 - (void)logExtra:(id)arg1;
 - (void)logMessage:(id)arg1 whenVerbosity:(int)arg2;
 - (int)verbosity;
+- (void)logInfo:(id)arg1;
 - (void)logError:(id)arg1;
 - (id)init;
 - (void)dealloc;

@@ -47,6 +47,7 @@
     NSObject<OS_dispatch_queue> *__safePluginQueue;
 }
 
+@property(getter=_isMarkedNew,readonly) bool _markedNew;
 @property(copy) NSString * identifier;
 @property(copy) NSString * version;
 @property(copy) NSDictionary * attributes;
@@ -64,20 +65,23 @@
 @property(setter=_setExtensionExpirationsIdentifiers:,retain) NSMutableDictionary * _extensionExpirationIdentifiers;
 @property(setter=_setExtensionServiceConnections:,retain) NSMutableDictionary * _extensionServiceConnections;
 @property(setter=_setExtensionContexts:,retain) NSMutableDictionary * _extensionContexts;
+@property(getter=_extensionState,setter=_setExtensionState:,copy) NSDictionary * _extensionState;
 @property NSObject<OS_dispatch_queue> * _safePluginQueue;
 
++ (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
 + (id)predicateForActivationRule:(id)arg1;
 + (bool)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
++ (void)initializeFiltering;
++ (void)initialize;
 + (void)endMatchingExtensions:(id)arg1;
 + (id)beginMatchingExtensionsWithAttributes:(id)arg1 completion:(id)arg2;
-+ (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
-+ (void)initialize;
 + (id)extensionWithIdentifier:(id)arg1 error:(id*)arg2;
 
 - (void)set_safePluginQueue:(id)arg1;
 - (id)_safePluginQueue;
 - (void)_setExtensionExpirationsIdentifiers:(id)arg1;
 - (id)_extensionExpirationIdentifiers;
+- (void)set_requestPostCompletionBlockWithItems:(id)arg1;
 - (void)set_requestPostCompletionBlock:(id)arg1;
 - (void)_setExtensionBundle:(id)arg1;
 - (void)setRequestInterruptionBlock:(id)arg1;
@@ -85,9 +89,6 @@
 - (void)setInfoDictionary:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)_safelyEndUsing:(id)arg1;
-- (bool)attemptOptOut:(id*)arg1;
-- (bool)attemptOptIn:(id*)arg1;
-- (bool)optedIn;
 - (void)_kill:(int)arg1;
 - (int)_plugInProcessIdentifier;
 - (id)_itemProviderForPayload:(id)arg1 extensionContext:(id)arg2;
@@ -99,7 +100,6 @@
 - (void)_safelyBeginUsing:(id)arg1;
 - (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id)arg3;
 - (id)requestInterruptionBlock;
-- (id)_plugIn;
 - (id)attributes;
 - (id)version;
 - (id)identifier;
@@ -115,6 +115,13 @@
 - (id)_extensionServiceConnections;
 - (id)_extensionContextForUUID:(id)arg1;
 - (id)infoDictionary;
+- (void)_resetExtensionState;
+- (void)_didShowNewExtensionIndicator;
+- (void)_didShowExtensionManagementInterface;
+- (bool)_isMarkedNew;
+- (void)_setExtensionState:(id)arg1;
+- (id)_extensionState;
+- (id)_plugIn;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (id)init;
@@ -124,13 +131,15 @@
 - (id)description;
 - (void)setVersion:(id)arg1;
 - (int)pidForRequestIdentifier:(id)arg1;
-- (bool)_isPhotoServiceAccessGranted;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(id)arg2;
 - (id)extensionPointIdentifier;
-- (void)set_requestPostCompletionBlockWithItems:(id)arg1;
 - (void)setRequestCancellationBlock:(id)arg1;
 - (void)setRequestCompletionBlock:(id)arg1;
+- (bool)attemptOptOut:(id*)arg1;
+- (bool)attemptOptIn:(id*)arg1;
+- (bool)optedIn;
 - (id)_extensionBundle;
+- (bool)_isPhotoServiceAccessGranted;
 - (void)_setPlugIn:(id)arg1;
 - (void)cancelExtensionRequestWithIdentifier:(id)arg1;
 - (id)icons;

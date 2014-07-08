@@ -142,6 +142,7 @@
 + (id)darkGrayColor;
 + (id)lightGrayColor;
 + (id)grayColor;
++ (id)verifiedColor;
 + (id)_remoteUI_colorWithString:(id)arg1;
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
@@ -222,6 +223,7 @@
 + (id)color:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
 + (id)SCNJSExportProtocol;
 + (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
++ (id)fmfOrangeColor;
 + (id)tableViewCellDarkBlueTextColor;
 + (id)transparentGrayCheckerboardColor;
 + (id)grayCheckerboardColor;
@@ -270,6 +272,9 @@
 - (id)_mapkit_blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
 - (bool)_mapkit_isWhite;
 - (bool)_mapkit_getRed:(double*)arg1 green:(double*)arg2 blue:(double*)arg3 alpha:(double*)arg4;
+- (id)tpImageFromColor;
+- (id)colorByAlteringOpacityToPercentage:(float)arg1;
+- (id)darkerColorByPercentage:(float)arg1;
 - (bool)colorToC3DColor4:(struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 - (bool)SCNColorGetRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (double)r;
@@ -281,9 +286,6 @@
 - (double)blue;
 - (double)green;
 - (double)red;
-- (id)tpImageFromColor;
-- (id)colorByAlteringOpacityToPercentage:(float)arg1;
-- (id)darkerColorByPercentage:(float)arg1;
 - (id)initWithStyleString:(id)arg1;
 
 @end

@@ -20,6 +20,17 @@
         } ; 
         float v[2]; 
     } _position;
+    union _GLKVector2 { 
+        struct { 
+            float x; 
+            float y; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+        } ; 
+        float v[2]; 
+    } _size;
 }
 
 @property(retain) SKNode * node;
@@ -27,6 +38,7 @@
 @property float angleInitial;
 @property(readonly) float angle;
 @property float length;
+@property union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } size;
 
 
 - (void)setAngleInitial:(float)arg1;
@@ -37,10 +49,12 @@
 - (id)initWithNode:(id)arg1;
 - (void)setPosition:(union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })arg1;
 - (float)angle;
+- (void)setSize:(union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })arg1;
 - (float)length;
 - (void)setLength:(float)arg1;
 - (void).cxx_destruct;
 - (id).cxx_construct;
+- (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })size;
 - (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })position;
 - (void)setNode:(id)arg1;
 

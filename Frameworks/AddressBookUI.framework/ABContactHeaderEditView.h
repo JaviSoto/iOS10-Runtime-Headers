@@ -28,10 +28,10 @@
 - (id)headerDelegate;
 - (id)_phoneticNameForValue:(id)arg1 isFamilyName:(bool)arg2;
 - (id)namePropertyDelegate;
-- (bool)hasPhoto;
 - (void)setEditingGroups:(id)arg1;
 - (id)initWithContact:(id)arg1 editingGroups:(id)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)updateFontSizes;
+- (bool)hasPhoto;
 - (void)setBackgroundColor:(id)arg1;
 - (void)dealloc;
 - (void)updateConstraints;

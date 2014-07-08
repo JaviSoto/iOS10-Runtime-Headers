@@ -7,7 +7,7 @@
 @interface SKUISpacePageSection : SKUIStorePageSection  {
 }
 
-@property(retain) SKUISpacePageComponent * pageComponent;
+@property(readonly) SKUISpacePageComponent * pageComponent;
 
 
 - (id)cellForIndexPath:(id)arg1;

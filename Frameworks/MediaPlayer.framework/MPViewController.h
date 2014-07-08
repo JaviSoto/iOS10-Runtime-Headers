@@ -72,11 +72,11 @@
 - (void)beginIgnoringChangeTypes:(unsigned long long)arg1;
 - (void)endIgnoringChangeTypes:(unsigned long long)arg1;
 - (void)clearWeakReferencesToObject:(id)arg1;
-- (void)setOrientation:(long long)arg1;
 - (long long)orientation;
 - (void)addChildViewController:(id)arg1;
 - (id)player;
 - (void)setPlayer:(id)arg1;
+- (void)setOrientation:(long long)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

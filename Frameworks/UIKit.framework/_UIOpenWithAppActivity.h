@@ -15,15 +15,15 @@
 
 + (long long)activityCategory;
 
-- (void)dealloc;
 - (id)activityType;
+- (void)dealloc;
 - (void)setDefaultApp:(bool)arg1;
 - (bool)isDefaultApp;
 - (void)performActivity;
 - (bool)canPerformWithActivityItems:(id)arg1;
 - (id)_activitySettingsImage;
+- (id)initWithApplicationIdentifier:(id)arg1 documentInteractionController:(id)arg2;
 - (id)_activityImage;
 - (id)activityTitle;
-- (id)initWithApplicationIdentifier:(id)arg1 documentInteractionController:(id)arg2;
 
 @end

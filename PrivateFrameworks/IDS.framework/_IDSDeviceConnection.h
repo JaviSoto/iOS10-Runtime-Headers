@@ -40,8 +40,8 @@
 - (void)_connect;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 - (void)_close;
-- (int)socket;
 - (void)close;
 - (void)dealloc;
+- (int)socket;
 
 @end

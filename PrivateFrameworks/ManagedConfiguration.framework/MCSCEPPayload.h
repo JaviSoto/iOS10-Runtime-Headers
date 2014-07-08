@@ -46,7 +46,7 @@
 - (bool)isIdentity;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (struct __SecCertificate { }*)copyCertificate;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)subject;

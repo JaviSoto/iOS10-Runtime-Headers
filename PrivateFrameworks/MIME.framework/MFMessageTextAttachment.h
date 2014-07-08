@@ -12,7 +12,6 @@
 
 + (unsigned long long)precedenceLevel;
 
-- (id)attachmentDataExcludingPrivateMetadata;
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
 - (id)persistentUniqueIdentifier;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
@@ -22,7 +21,6 @@
 - (bool)needsRedownload;
 - (bool)hasBeenDownloaded;
 - (unsigned int)approximateSize;
-- (id)_privateMetadataDescriptors;
 - (id)cachedValueForKey:(id)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)setMimePart:(id)arg1;

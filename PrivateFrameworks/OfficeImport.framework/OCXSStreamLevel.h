@@ -13,7 +13,7 @@
 
 - (void)setDepth:(int)arg1;
 - (int)depth;
-- (const char *)name;
 - (void)setName:(const char *)arg1;
+- (const char *)name;
 
 @end

@@ -26,9 +26,9 @@
 - (void)setContentIdentifier:(id)arg1;
 - (id)SICData;
 - (void)setSinfs:(id)arg1;
+- (id)sinfs;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)sinfs;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)dealloc;

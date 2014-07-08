@@ -26,7 +26,6 @@
 @property(getter=isTermsAndConditionsHidden) bool termsAndConditionsHidden;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (id)termsAndConditionsButton;
 - (id)redeemButton;
 - (id)giftingButton;
@@ -40,10 +39,10 @@
 - (void)setECommerceLinkTitle:(id)arg1;
 - (id)ECommerceLinkTitle;
 - (id)accountCredits;
-- (id)_termsChevronImage;
 - (void)_layoutOneRow;
 - (void)_layoutTwoRows;
 - (id)_newLinkButtonWithTitle:(id)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

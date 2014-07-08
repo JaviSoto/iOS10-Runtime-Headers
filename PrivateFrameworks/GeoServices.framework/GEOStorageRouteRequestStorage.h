@@ -22,21 +22,22 @@
 @property(readonly) PBUnknownFields * unknownFields;
 
 
-- (id)waypointsAtIndex:(unsigned long long)arg1;
-- (void)addWaypoints:(id)arg1;
 - (id)unknownFields;
-- (bool)hasTransportType;
-- (void)setHasTransportType:(bool)arg1;
-- (void)setTransportType:(int)arg1;
 - (id)waypoints;
+- (id)waypointsAtIndex:(unsigned long long)arg1;
 - (void)clearWaypoints;
 - (unsigned long long)waypointsCount;
+- (void)addWaypoints:(id)arg1;
 - (void)setWaypoints:(id)arg1;
+- (void)setHasTransportType:(bool)arg1;
+- (bool)hasTransportType;
+- (void)setTransportType:(int)arg1;
 - (id)routeHandle;
 - (bool)hasRouteHandle;
 - (void)setRouteHandle:(id)arg1;
 - (int)transportType;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

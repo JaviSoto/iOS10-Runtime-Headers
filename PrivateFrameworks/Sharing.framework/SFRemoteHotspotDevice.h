@@ -22,8 +22,8 @@
 
 - (void)setBatteryLife:(id)arg1;
 - (id)batteryLife;
-- (void)setDeviceIdentifier:(id)arg1;
 - (void)setSignalStrength:(id)arg1;
+- (void)setDeviceIdentifier:(id)arg1;
 - (void)setNetworkType:(unsigned char)arg1;
 - (unsigned char)networkType;
 - (id)deviceIdentifier;

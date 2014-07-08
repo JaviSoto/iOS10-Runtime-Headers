@@ -7,6 +7,8 @@
 @interface CKFlowControl : NSObject  {
     unsigned long long _budgetCap;
     double _regenerationPerSecond;
+    unsigned long long _totalSamples;
+    double _totalCost;
     double _budget;
     NSDate *_lastExpenditure;
 }
@@ -18,20 +20,23 @@
 
 + (id)flowControlWithBudgetCap:(unsigned long long)arg1 andRegenerationPerSecond:(double)arg2;
 
-- (bool)attemptBudgetedExpenditureWithCost:(unsigned long long)arg1;
+- (bool)attemptBudgetedExpenditureWithCost:(double)arg1;
 - (bool)isLimited;
 - (double)secondsUntilBudgetLimitationRemoved;
-- (void)expendWithCost:(unsigned long long)arg1;
-- (void)regenerate;
+- (id)CKPropertiesDescription;
+- (void)expendWithCost:(double)arg1;
 - (id)lastExpenditure;
 - (double)regenerationPerSecond;
 - (unsigned long long)budgetCap;
+- (double)_secondsUntilBudgetLimitationRemovedNoRegen;
 - (double)budget;
+- (void)regenerate;
 - (id)initWithBudgetCap:(unsigned long long)arg1 andRegenerationPerSecond:(double)arg2;
 - (void)setLastExpenditure:(id)arg1;
 - (void)setRegenerationPerSecond:(double)arg1;
 - (void)setBudget:(double)arg1;
 - (void)setBudgetCap:(unsigned long long)arg1;
 - (void).cxx_destruct;
+- (id)description;
 
 @end

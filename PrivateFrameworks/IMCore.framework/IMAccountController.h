@@ -28,8 +28,6 @@
 + (id)sharedInstance;
 
 - (bool)activateAccount:(id)arg1;
-- (id)_bestAccountForAddresses:(id)arg1;
-- (id)_operationalPhoneAccountForService:(id)arg1;
 - (id)__iCloudSystemAccountForService:(id)arg1;
 - (void)_disableCache;
 - (void)_enableCache;
@@ -49,7 +47,6 @@
 - (bool)canDeleteAccount:(id)arg1;
 - (int)numberOfAccounts;
 - (id)accountAtIndex:(int)arg1;
-- (id)bestAccountForService:(id)arg1;
 - (id)bestActiveAccountForService:(id)arg1;
 - (id)bestAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)operationalAccountsForService:(id)arg1;
@@ -79,7 +76,6 @@
 - (id)connectedAccounts;
 - (id)bestAccountForStatus;
 - (void)autoLogin;
-- (id)accountForUniqueID:(id)arg1;
 - (id)accountsForService:(id)arg1;
 - (id)operationalAccountsWithCapability:(unsigned long long)arg1;
 - (id)connectedAccountsWithCapability:(unsigned long long)arg1;
@@ -87,6 +83,10 @@
 - (id)connectedAccountsForService:(id)arg1;
 - (id)activeAccountsForService:(id)arg1;
 - (id)_bestOperationalAccountForSendingForService:(id)arg1;
+- (id)bestAccountForService:(id)arg1;
+- (id)_bestAccountForAddresses:(id)arg1;
+- (id)_operationalPhoneAccountForService:(id)arg1;
+- (id)accountForUniqueID:(id)arg1;
 - (bool)deleteAccount:(id)arg1;
 - (id)_accounts;
 - (bool)addAccount:(id)arg1;

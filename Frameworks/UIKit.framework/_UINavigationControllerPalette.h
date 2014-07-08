@@ -60,7 +60,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)_backgroundConstraints;
-- (id)_constraints;
 - (void)set_unpinnedController:(id)arg1;
 - (id)_unpinnedController;
 - (void)setPreferredContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
@@ -69,7 +68,6 @@
 - (void)_setPaletteOverridesPinningBar:(bool)arg1;
 - (void)setPaletteShadowIsHidden:(bool)arg1;
 - (void)_setAttachmentIsChanging:(bool)arg1;
-- (void)_configurePaletteConstraintsForBoundary;
 - (void)_setupBackgroundViewIfNecessary;
 - (void)_configureConstraintsForBackground:(id)arg1;
 - (void)_resetHeightConstraintConstant;
@@ -89,6 +87,8 @@
 - (void)_setSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_initWithNavigationController:(id)arg1 forEdge:(unsigned long long)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredContentInsets;
+- (void)_configurePaletteConstraintsForBoundary;
+- (id)_constraints;
 - (bool)_restartPaletteTransitionIfNecessary;
 - (void)_resetConstraintConstants:(double)arg1;
 - (bool)isPinned;

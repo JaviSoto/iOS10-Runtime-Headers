@@ -8,7 +8,7 @@
 
 @class NSTimer, PKPass, PKReusablePassViewQueue, NSArray, NSMutableDictionary, PKPassGroupView, PKGroup, NSMutableArray, <PKPassGroupStackViewDelegate><UIScrollViewDelegate>, <PKPassGroupStackViewDatasource>;
 
-@interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPassGroupViewDelegate> {
+@interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPassGroupViewDelegate, PKPassDeleteHandler> {
     PKPassGroupView *_modallyPresentedGroupView;
     PKGroup *_modallyPresentedGroup;
     NSMutableArray *_passPileViews;
@@ -74,6 +74,7 @@
 @property(readonly) unsigned long long separatorGroupIndex;
 @property(readonly) PKPass * modalGroupFrontmostPass;
 @property(readonly) bool isReordering;
+@property(readonly) bool isPresentingPassViewFront;
 @property(readonly) bool isShowingHeader;
 @property double headerHeight;
 @property(readonly) double pileHeight;
@@ -95,6 +96,7 @@
 - (unsigned long long)separatorGroupIndex;
 - (void)_reverseEnumerateLoadedGroupViews:(id)arg1;
 - (void)reloadGroupViewAtIndex:(unsigned long long)arg1;
+- (bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (long long)groupViewContentModeForFrontmostPassWhenStacked:(id)arg1;
 - (id)groupViewReusablePassViewQueue:(id)arg1;
 - (unsigned long long)groupViewPassesSuppressedContent:(id)arg1;
@@ -102,6 +104,7 @@
 - (bool)groupViewPassesGrowWhenFlipped:(id)arg1;
 - (bool)groupView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
+- (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
 - (void)groupViewFrontPassDidFlip:(id)arg1 animated:(bool)arg2;
 - (bool)groupViewShouldAllowPassFlip:(id)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(id)arg1;
@@ -129,13 +132,14 @@
 - (void)_updateGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned long long)arg4;
 - (void)_updateGroupStateForGroupViewInStackPresentation:(id)arg1 animated:(bool)arg2;
 - (double)_xPositionForGroupView:(id)arg1 forState:(long long)arg2;
-- (double)_yPositionForGroupAtIndex:(unsigned long long)arg1 forState:(long long)arg2;
 - (double)_pileAscenderHeightForGroupViewInPile:(id)arg1;
 - (double)_pileSeparationHeight;
 - (unsigned long long)_maximumNumberOfVisiblePilePasses;
 - (double)_yForSingleGroupView:(id)arg1;
+- (double)pileHeight;
 - (double)_nativeYForGroupInTableAtIndex:(unsigned long long)arg1;
 - (double)_effectiveHeaderHeight;
+- (double)_yPositionForGroupAtIndex:(unsigned long long)arg1 forState:(long long)arg2;
 - (double)_yForGroupInOffscreenPileAtIndex:(unsigned long long)arg1;
 - (double)_yForGroupInPileAtIndex:(unsigned long long)arg1;
 - (double)_yForGroupInModalPileAtIndex:(unsigned long long)arg1;
@@ -229,8 +233,8 @@
 - (void)markContentOffsetForHeader;
 - (bool)isReordering;
 - (void)layoutContentForCurrentPresentationState:(bool)arg1;
+- (bool)isPresentingPassViewFront;
 - (id)modalGroupFrontmostPass;
-- (double)pileHeight;
 - (void)setModalGroupIndex:(unsigned long long)arg1;
 - (void)tilePassesEagerly:(bool)arg1;
 - (void)setDatasource:(id)arg1;

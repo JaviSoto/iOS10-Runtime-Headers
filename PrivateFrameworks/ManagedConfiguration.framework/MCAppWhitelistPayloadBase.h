@@ -23,7 +23,7 @@
 - (bool)allowAccessWithoutPasscode;
 - (id)whitelistedAppsAndOptions;
 - (void)setWhitelistedAppsAndOptions:(id)arg1;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)restrictions;

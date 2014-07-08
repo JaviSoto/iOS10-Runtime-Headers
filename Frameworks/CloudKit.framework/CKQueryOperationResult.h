@@ -12,10 +12,12 @@
 
 + (bool)supportsSecureCoding;
 
+- (id)CKPropertiesDescription;
 - (id)cursor;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
+- (id)description;
 - (void)setCursor:(id)arg1;
 
 @end

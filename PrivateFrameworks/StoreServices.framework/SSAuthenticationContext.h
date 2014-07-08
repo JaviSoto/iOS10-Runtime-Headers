@@ -94,12 +94,12 @@
 - (bool)displaysOnLockScreen;
 - (id)HTTPHeaders;
 - (id)accountName;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;
 - (id)preferredITunesStoreClient;
-- (id)initWithAccount:(id)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (long long)promptStyle;
+- (id)initWithAccount:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

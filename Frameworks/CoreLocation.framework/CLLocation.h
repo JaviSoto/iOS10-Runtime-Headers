@@ -82,5 +82,6 @@
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)pl_newSurroundingLocationsHashes;
 - (int)pl_locationHash;
+- (id)cam_videoMetadataRepresentation;
 
 @end

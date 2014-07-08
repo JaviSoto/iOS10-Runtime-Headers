@@ -24,6 +24,7 @@
     bool_shouldUseSIMState;
     bool_commCenterDead;
     bool_simBecameNotReady;
+    bool_simInserted;
     int _carrierBundleSupported;
     int _iMessageAllowedToken;
     bool_faceTimeBlocked;
@@ -55,6 +56,7 @@
 @property(readonly) bool commCenterDead;
 @property(readonly) bool accountModificationRestricted;
 @property(readonly) bool wantsBreakBeforeMake;
+@property(readonly) bool SIMInserted;
 @property(readonly) bool isC2KEquipment;
 @property(readonly) bool supportsSimultaneousVoiceAndDataRightNow;
 @property(readonly) bool supportsSMSIdentification;
@@ -103,8 +105,6 @@
 - (bool)supportsMMS;
 - (bool)supportsSMS;
 - (id)telephoneNumber;
-- (id)userAgentString;
-- (id)productName;
 - (bool)supportsCellularData;
 - (bool)supportsWiFi;
 - (bool)nonWifiCallingAvailable;
@@ -115,6 +115,7 @@
 - (void)_handleTechnologyChange:(id)arg1;
 - (void)_simStatusChanged:(id)arg1;
 - (bool)wantsBreakBeforeMake;
+- (bool)SIMInserted;
 - (id)telephonyCapabilities;
 - (id)deviceTypeIDPrefix;
 - (id)deviceIDPrefix;
@@ -131,7 +132,6 @@
 - (void)carrierSettingsChanged:(id)arg1;
 - (bool)nonWifiFaceTimeAvailable;
 - (void)_lockdownStateChanged:(id)arg1;
-- (id)deviceInformationString;
 - (bool)supportsAppleIDIdentification;
 - (bool)iMessageSupported;
 - (bool)conferencingAllowed;
@@ -156,6 +156,11 @@
 - (bool)isC2KEquipment;
 - (id)model;
 - (long long)deviceType;
+- (id)deviceInformationString;
+- (id)userAgentString;
+- (id)productBuildVersion;
+- (id)productVersion;
+- (id)productName;
 - (id)deviceName;
 - (bool)supportsNonWiFiFaceTime;
 - (bool)supportsNonWiFiCalling;
@@ -163,8 +168,6 @@
 - (bool)faceTimeSupported;
 - (bool)callingSupported;
 - (bool)isTelephonyDevice;
-- (id)productBuildVersion;
-- (id)productVersion;
 - (id)init;
 - (void)dealloc;
 - (void)_updateCapabilities;

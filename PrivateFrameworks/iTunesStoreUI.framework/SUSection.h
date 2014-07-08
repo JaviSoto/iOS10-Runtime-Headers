@@ -57,6 +57,7 @@
 - (bool)isUsingLocalArtwork;
 - (id)imageForSectionButtonWithTag:(long long)arg1;
 - (long long)defaultPNGStyle;
+- (id)initWithClientInterface:(id)arg1 sectionType:(long long)arg2 defaultPNGStyle:(long long)arg3;
 - (long long)_typeForString:(id)arg1;
 - (long long)_minimumNetworkTypeFromDictionary:(id)arg1;
 - (id)_colorForKey:(id)arg1;
@@ -66,7 +67,6 @@
 - (id)urlBagKey;
 - (bool)isDefaultSection;
 - (id)initWithClientInterface:(id)arg1;
-- (id)initWithClientInterface:(id)arg1 sectionType:(long long)arg2 defaultPNGStyle:(long long)arg3;
 - (id)itemImages;
 - (id)partnerHeader;
 - (bool)isTransient;

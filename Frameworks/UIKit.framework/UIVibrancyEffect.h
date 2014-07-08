@@ -8,6 +8,7 @@
 
 + (bool)supportsSecureCoding;
 + (id)effectForBlurEffect:(id)arg1;
++ (id)notificationCenterVibrancyEffect;
 
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

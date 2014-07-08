@@ -104,12 +104,13 @@
 - (id)metadataValueForKey:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)attachmentManager;
-- (id)fetchDataSynchronously:(id*)arg1;
+- (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(bool)arg2;
+- (bool)isImageFile;
 - (id)inferredMimeType;
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
 - (void)setAttachmentManager:(id)arg1;
 - (unsigned long long)decodedFileSize;
-- (bool)isImageFile;
+- (id)fetchDataSynchronously:(id*)arg1;
 - (id)contentID;
 - (void)setContentID:(id)arg1;
 - (void)setMimeType:(id)arg1;

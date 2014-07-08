@@ -21,7 +21,6 @@
 
 + (id)wishlistBarButtonItemWithClientContext:(id)arg1;
 
-- (void)_updateDeleteButton;
 - (void)_reloadForAccountsChanged;
 - (void)_finishSyncWithResult:(bool)arg1 didChange:(bool)arg2 error:(id)arg3;
 - (bool)_isEditingEnabled;
@@ -44,6 +43,7 @@
 - (void)itemList:(id)arg1 didDeselectItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemList:(id)arg1 didRemoveItemAtIndexPath:(id)arg2;
 - (void)_deleteAction:(id)arg1;
+- (void)_updateDeleteButton;
 - (void)setClientContext:(id)arg1;
 - (void)_doneAction:(id)arg1;
 - (void)setDelegate:(id)arg1;

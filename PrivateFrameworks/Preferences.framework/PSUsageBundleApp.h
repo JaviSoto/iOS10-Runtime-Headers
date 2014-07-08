@@ -27,9 +27,9 @@
 - (void)setTotalSize:(float)arg1;
 - (void)setUsageBundleStorageReporter:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setName:(id)arg1;
 - (id)bundleIdentifier;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)categories;

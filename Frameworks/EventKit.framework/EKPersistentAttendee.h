@@ -36,9 +36,9 @@
 - (int)participantType;
 - (void)setParticipantStatus:(int)arg1;
 - (int)participantStatus;
-- (id)owner;
 - (int)entityType;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
+- (id)owner;
 - (id)lastModified;
 - (void)setLastModified:(id)arg1;
 - (void)setOwner:(id)arg1;

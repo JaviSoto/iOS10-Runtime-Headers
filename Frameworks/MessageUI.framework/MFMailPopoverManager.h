@@ -58,6 +58,7 @@
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(bool)arg4;
 - (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(bool)arg3;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(bool)arg3;
+- (void)actionSheetCancel:(id)arg1;
 - (void)setPopoverBeingHiddenDuringRotation:(bool)arg1;
 - (bool)_delegateSupportsRotation;
 - (id)_currentPassthroughProviders;
@@ -99,7 +100,6 @@
 - (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (void)didPresentActionSheet:(id)arg1;
 - (void)willPresentActionSheet:(id)arg1;
-- (void)actionSheetCancel:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 
 @end

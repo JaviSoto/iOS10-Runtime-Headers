@@ -6,10 +6,12 @@
 
 @interface SSSoftwareLibraryItem : NSObject <SSXPCCoding> {
     NSMutableDictionary *_etags;
+    bool_placeholder;
     bool_profileValidated;
     NSMutableDictionary *_propertyValues;
 }
 
+@property(getter=isPlaceholder) bool placeholder;
 @property(getter=isProfileValidated) bool profileValidated;
 
 
@@ -17,11 +19,13 @@
 - (id)_initWithITunesMetadata:(id)arg1;
 - (bool)setETag:(id)arg1 forAssetType:(id)arg2 error:(id*)arg3;
 - (id)ETagForAssetType:(id)arg1;
+- (void)setProfileValidated:(bool)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setProfileValidated:(bool)arg1;
+- (bool)isPlaceholder;
 - (id)valueForProperty:(id)arg1;
 - (void)dealloc;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setPlaceholder:(bool)arg1;
 
 @end

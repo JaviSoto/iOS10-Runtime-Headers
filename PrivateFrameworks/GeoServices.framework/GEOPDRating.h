@@ -40,6 +40,7 @@
 - (void)setHasScore:(bool)arg1;
 - (void)setScore:(double)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setMaxScore:(double)arg1;

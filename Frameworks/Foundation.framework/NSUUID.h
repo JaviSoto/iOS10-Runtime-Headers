@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSUUID : NSObject <NSCopying, NSSecureCoding> {
+@interface NSUUID : NSObject <NSCopying, NSSecureCoding, PQLBindable, PQLResultSetInitializer> {
 }
 
 @property(copy,readonly) NSString * UUIDString;
@@ -27,5 +27,7 @@
 - (id)initWithUUIDBytes:(unsigned char[16])arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 
 @end

@@ -26,7 +26,7 @@
 - (void)setWhitelistDestinations:(id)arg1;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (id)payloadDescriptionKeyValuePairs;
+- (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

@@ -46,7 +46,6 @@
 - (bool)isCancelable;
 - (id)backgroundNetworkingJobGroupName;
 - (id)_initWithLocalPropertyValues:(id)arg1;
-- (id)copyXPCEncoding;
 - (id)_newAssetWithURL:(id)arg1 assetType:(id)arg2;
 - (void)setValuesWithStoreDownloadMetadata:(id)arg1;
 - (void)_resetLocalIVars;
@@ -59,6 +58,7 @@
 - (id)_errorWithData:(id)arg1;
 - (id)downloadIdentifier;
 - (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id)arg2;
+- (id)copyXPCEncoding;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
 - (void)setStatus:(id)arg1;

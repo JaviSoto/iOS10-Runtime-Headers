@@ -6,13 +6,17 @@
 }
 
 
+- (void)removeCallConnectedObserver;
+- (void)addCallConnectedObserver;
+- (void)handleCallConnected:(id)arg1;
 - (bool)shouldIgnoreStatusChange;
-- (bool)unhold;
-- (bool)hold;
+- (void)unhold;
+- (void)hold;
 - (id)audioMode;
 - (id)audioCategory;
 - (int)callStatus;
 - (int)supportedModelType;
 - (int)service;
+- (void)dealloc;
 
 @end

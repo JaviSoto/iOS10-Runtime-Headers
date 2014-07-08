@@ -20,13 +20,13 @@
 + (id)keyPathsForValuesAffectingIdentifier;
 + (id)metadataItem;
 
-- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (void)setExtraAttributes:(id)arg1;
 - (void)setDataType:(id)arg1;
 - (void)setExtendedLanguageTag:(id)arg1;
 - (void)setKeySpace:(id)arg1;
 - (id)dataType;
+- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)value;

@@ -21,6 +21,7 @@
 - (int)transportTypeAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transportTypesCount;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

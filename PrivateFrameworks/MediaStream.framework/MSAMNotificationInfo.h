@@ -31,8 +31,8 @@
 - (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
 - (struct __CFRunLoopSource { }*)runLoopSource;
 - (id)personID;
-- (id)owner;
 - (void)setPersonID:(id)arg1;
+- (id)owner;
 - (void)setUserNotification:(struct __CFUserNotification { }*)arg1;
 - (struct __CFUserNotification { }*)userNotification;
 - (void)setOwner:(id)arg1;

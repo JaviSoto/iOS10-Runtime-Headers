@@ -5,16 +5,20 @@
 @class NSString;
 
 @interface CPLContainerRelation : NSObject <NSSecureCoding, NSCopying> {
+    bool_keyAsset;
     NSString *_containerIdentifier;
     long long _position;
 }
 
 @property(copy) NSString * containerIdentifier;
 @property long long position;
+@property(getter=isKeyAsset) bool keyAsset;
 
 + (bool)supportsSecureCoding;
 
+- (bool)isKeyAsset;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
+- (void)setKeyAsset:(bool)arg1;
 - (void)setContainerIdentifier:(id)arg1;
 - (id)containerIdentifier;
 - (void)setPosition:(long long)arg1;

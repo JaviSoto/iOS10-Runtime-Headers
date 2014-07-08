@@ -13,6 +13,7 @@
 + (Class)invalidationContextClass;
 
 - (id)init;
+- (void)dealloc;
 - (void)removeSublayout:(id)arg1;
 - (void)addSublayout:(id)arg1 forElementKinds:(id)arg2;
 - (void)addSublayout:(id)arg1 forItems:(id)arg2 inSection:(long long)arg3 offset:(struct CGPoint { double x1; double x2; })arg4 relativeToEdges:(unsigned long long)arg5 fromSiblingLayout:(id)arg6;

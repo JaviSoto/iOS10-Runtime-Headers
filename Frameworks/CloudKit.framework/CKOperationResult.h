@@ -20,10 +20,12 @@
 - (id)requestUUIDs;
 - (void)setOperationID:(id)arg1;
 - (id)operationID;
+- (id)CKPropertiesDescription;
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
+- (id)description;
 
 @end

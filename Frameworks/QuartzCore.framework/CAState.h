@@ -26,6 +26,7 @@
 
 + (void)CAMLParserStartElement:(id)arg1;
 
+- (void)setName:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
 - (void)setInitial:(bool)arg1;
@@ -47,7 +48,6 @@
 - (id)init;
 - (id)debugDescription;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

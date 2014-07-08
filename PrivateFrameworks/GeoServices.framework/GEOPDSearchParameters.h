@@ -32,6 +32,7 @@
 
 
 - (id)viewportInfo;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
 - (bool)hasSortOrder;
 - (void)setHasSortOrder:(bool)arg1;
 - (bool)hasViewportInfo;
@@ -45,9 +46,10 @@
 - (bool)hasMaxResults;
 - (void)setHasMaxResults:(bool)arg1;
 - (void)copyTo:(id)arg1;
-- (bool)hasSearchString;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (bool)hasSearchString;
 - (void)setMaxResults:(unsigned int)arg1;
 - (unsigned int)maxResults;
 - (void)setSearchString:(id)arg1;

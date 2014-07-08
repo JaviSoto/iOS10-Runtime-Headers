@@ -17,12 +17,12 @@
 @property(readonly) NSString * errorComment;
 
 
-- (id)URI;
 - (id)errorComment;
 - (id)errorDomain;
 - (long long)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
+- (id)URI;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (id)date;

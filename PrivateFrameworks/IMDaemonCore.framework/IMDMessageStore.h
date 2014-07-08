@@ -72,7 +72,7 @@
 - (void)_storeAttachmentsForMessage:(id)arg1;
 - (void)updateStamp;
 - (id)_itemsWithGUIDs:(id)arg1;
-- (void)_performInitialHousekeeping;
+- (void)performInitialHousekeeping;
 - (void)setModificationStamp:(id)arg1;
 - (void)updateUnformattedID:(id)arg1 forBuddyID:(id)arg2 onService:(id)arg3;
 - (id)init;

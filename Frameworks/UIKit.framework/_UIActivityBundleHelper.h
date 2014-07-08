@@ -10,8 +10,6 @@
 
 @property(retain) LSBundleProxy * bundleProxy;
 
-+ (id)activityBundleHelperForApplicationIdentifier:(id)arg1;
-+ (id)activityBundleHelperForApplicationContainingExtension:(id)arg1;
 + (id)activityBundleHelperForExtension:(id)arg1;
 
 - (id)localizedName;

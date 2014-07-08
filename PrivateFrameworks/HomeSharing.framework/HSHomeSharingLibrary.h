@@ -53,9 +53,9 @@
 - (id)deviceGUID;
 - (id)urlForRequest:(id)arg1;
 - (bool)requiresPassword;
+- (bool)isAvailable;
 - (id)context;
 - (void)setContext:(id)arg1;
-- (bool)isAvailable;
 - (unsigned int)version;
 - (id)connection;
 - (id)baseURL;

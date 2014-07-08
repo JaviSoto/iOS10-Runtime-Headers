@@ -23,8 +23,8 @@
 - (void)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)stopRunning;
 - (void)startRunning;
-- (id)initWithDelegate:(id)arg1;
 - (bool)isRunning;
+- (id)initWithDelegate:(id)arg1;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

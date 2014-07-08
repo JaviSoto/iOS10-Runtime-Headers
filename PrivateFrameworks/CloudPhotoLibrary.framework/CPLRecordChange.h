@@ -5,6 +5,8 @@
 @class NSString, NSDate;
 
 @interface CPLRecordChange : NSObject <NSSecureCoding, NSCopying> {
+    bool_shouldFilterDefaultValuesForNewProperties;
+    NSDate *_dateDeleted;
     bool_inTrash;
     bool_inExpunged;
     NSString *_identifier;
@@ -37,16 +39,22 @@
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 usingClientCache:(id)arg3;
 - (void)setRecordChangeTag:(id)arg1;
 - (void)setRealIdentifier:(id)arg1;
+- (void)setDateDeleted:(id)arg1;
+- (id)dateDeleted;
+- (bool)shouldFilterDefaultValuesForNewProperties;
+- (void)setShouldFilterDefaultValuesForNewProperties:(bool)arg1;
+- (bool)shouldApplyPropertiesWithSelector:(SEL)arg1;
+- (id)mergeRecordChangeWithNewRecordChange:(id)arg1;
 - (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2;
 - (bool)decodePropertiesFromObject:(id)arg1;
 - (bool)encodePropertiesInObject:(id)arg1;
+- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2 updatedProperties:(id*)arg3;
 - (bool)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned long long)arg3 updatedProperty:(id*)arg4;
 - (void)setSecondaryIdentifier:(id)arg1;
 - (id)secondaryIdentifier;
 - (bool)isFullRecord;
 - (id)realIdentifier;
-- (id)mergeRecordChangeWithNewRecordChange:(id)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
 - (void)setRecordModificationDate:(id)arg1;
@@ -66,13 +74,14 @@
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)resourcesDescription;
+- (long long)dequeueOrder;
 - (bool)inTrash;
 - (void)setInExpunged:(bool)arg1;
 - (void)setInTrash:(bool)arg1;
 - (bool)inExpunged;
-- (id)recordChangeTag;
 - (id)resources;
 - (void)setResources:(id)arg1;
+- (id)recordChangeTag;
 - (void)setChangeType:(unsigned long long)arg1;
 - (unsigned long long)changeType;
 - (void)setIdentifier:(id)arg1;

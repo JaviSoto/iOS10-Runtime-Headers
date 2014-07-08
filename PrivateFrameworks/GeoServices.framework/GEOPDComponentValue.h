@@ -52,15 +52,12 @@
 
 
 - (bool)hasBounds;
-- (bool)hasPhoto;
 - (id)rawAttribute;
 - (bool)hasStyleAttributes;
 - (bool)hasAmenities;
 - (bool)hasRawAttribute;
 - (bool)hasFlyover;
 - (bool)hasEta;
-- (bool)hasHours;
-- (bool)hasReview;
 - (bool)hasAccessInfo;
 - (bool)hasPlaceInfo;
 - (bool)hasEntity;
@@ -72,18 +69,22 @@
 - (void)setPhoto:(id)arg1;
 - (void)setAccessInfo:(id)arg1;
 - (void)setPlaceInfo:(id)arg1;
-- (id)styleAttributes;
 - (void)setStyleAttributes:(id)arg1;
+- (id)styleAttributes;
 - (id)amenities;
 - (id)flyover;
 - (id)eta;
 - (id)accessInfo;
+- (bool)hasPhoto;
+- (bool)hasReview;
 - (id)hours;
+- (bool)hasHours;
 - (id)placeInfo;
 - (bool)hasRating;
 - (bool)hasAddress;
 - (void)setAddress:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setReview:(id)arg1;
 - (id)review;
 - (id)rating;

@@ -66,10 +66,10 @@
 - (void)_resizeToFitContents;
 - (void)setRefreshControlState:(int)arg1;
 - (void)_updateSnappingHeight;
-- (id)_attributedTitle;
-- (void)_setAttributedTitle:(id)arg1;
 - (double)_visibleHeight;
 - (id)attributedTitle;
+- (void)_setAttributedTitle:(id)arg1;
+- (id)_attributedTitle;
 - (id)initWithStyle:(long long)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_appliedInsets;
 - (void)endRefreshing;

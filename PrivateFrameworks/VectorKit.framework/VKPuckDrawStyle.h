@@ -14,14 +14,17 @@
 @property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) float size;
+@property(readonly) float offset;
 @property(readonly) bool hasCircleBrightness;
 @property(readonly) bool hasArrowBrightness;
 @property(readonly) bool hasArrowColor;
 @property(readonly) bool hasArrowColorStale;
 @property(readonly) bool hasSize;
+@property(readonly) bool hasOffset;
 
 + (int)renderStyleID;
 
+- (bool)hasOffset;
 - (bool)hasSize;
 - (float)arrowBrightness;
 - (bool)hasArrowBrightness;
@@ -31,6 +34,7 @@
 - (bool)hasCircleBrightness;
 - (bool)hasArrowColor;
 - (struct Matrix<float, 4, 1> { float x1[4]; })arrowColor;
+- (float)offset;
 - (float)size;
 
 @end

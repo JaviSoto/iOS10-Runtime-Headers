@@ -22,8 +22,8 @@
 - (id)mailbox;
 - (id)headersIfAvailable;
 - (unsigned long long)messageFlags;
-- (unsigned long long)messageSize;
 - (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
+- (unsigned long long)messageSize;
 - (id)messageBody;
 - (id)headers;
 - (void)dealloc;

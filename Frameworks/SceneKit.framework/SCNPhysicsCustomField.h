@@ -27,6 +27,7 @@
      /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
 
 - (void)setBlock:(id)arg1;
+- (void)dealloc;
 - (id)block;
 
 @end

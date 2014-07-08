@@ -388,7 +388,7 @@
 - (id)initWithGlobe:(bool)arg1 shouldRasterize:(bool)arg2 inBackground:(bool)arg3;
 - (void)flushTileLoads;
 - (void)startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startFlyoverAnimation:(id)arg1;
+- (void)startFlyoverAnimation:(id)arg1 animateToStart:(bool)arg2 completion:(id)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mapRegionBounds;
 - (bool)stylesheetIsDevResource;
 - (bool)enableDebugLabelHighlighting;

@@ -43,6 +43,7 @@
 - (void)setLeftView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(bool)arg2;
 - (void)setLeftView:(id)arg1 animated:(bool)arg2;
+- (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (struct CGSize { double x1; double x2; })preferredContentSize;

@@ -149,6 +149,7 @@
 - (void)setSubAdministrativeArea:(id)arg1;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setCountry:(id)arg1;

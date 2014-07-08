@@ -50,10 +50,10 @@
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_weakReference;
+- (id)resolvedURL;
 - (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelLoading;
-- (id)resolvedURL;
 - (id)init;
 - (id)URL;
 - (void)dealloc;

@@ -22,8 +22,6 @@
 + (id)assetWithURL:(id)arg1;
 + (id)assetProxyWithPropertyList:(id)arg1;
 
-- (id)metadata;
-- (id)creationDate;
 - (id)_exportURL;
 - (bool)_containsAtLeastOnePlayableVideoTrack;
 - (bool)_containsAtLeastOnePlayableAudioTrack;
@@ -81,6 +79,8 @@
 - (id)_assetInspector;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_weakReference;
+- (id)metadata;
+- (id)creationDate;
 - (id)tracks;
 - (id)tracksWithMediaType:(id)arg1;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;

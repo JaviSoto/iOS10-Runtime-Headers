@@ -35,7 +35,6 @@
 - (bool)_showsItemOfferUnderEditorial;
 - (id)_editorialCellLayout;
 - (id)_editorialContainerView;
-- (id)_lockupView;
 - (void)setItemOfferNoticeString:(id)arg1;
 - (id)itemOfferNoticeString;
 - (bool)isIconImageHidden;
@@ -49,6 +48,7 @@
 - (void)setItemState:(id)arg1 animated:(bool)arg2;
 - (void)setLayoutStyle:(long long)arg1;
 - (long long)layoutStyle;
+- (id)_lockupView;
 - (id)itemState;
 - (id)itemOffer;
 - (void)setItemOffer:(id)arg1;

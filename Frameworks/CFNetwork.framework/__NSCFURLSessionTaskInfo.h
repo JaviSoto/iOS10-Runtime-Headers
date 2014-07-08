@@ -111,6 +111,7 @@
 - (void)setHasStarted:(bool)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setBundleID:(id)arg1;
+- (void)setCurrentRequest:(id)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)_backgroundTaskTimingData;
@@ -124,6 +125,7 @@
 - (id)destinationURL;
 - (unsigned long long)AVAssetDownloadToken;
 - (id)fileURL;
+- (id)originalRequest;
 - (long long)countOfBytesExpectedToReceive;
 - (void)setOriginalRequest:(id)arg1;
 - (unsigned long long)suspendCount;
@@ -142,9 +144,7 @@
 - (id)response;
 - (id)URL;
 - (id)currentRequest;
-- (id)originalRequest;
 - (long long)state;
-- (void)setCurrentRequest:(id)arg1;
 - (void)dealloc;
 
 @end

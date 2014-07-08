@@ -11,6 +11,7 @@
 
 
 - (void)observePreferredInterfaceOrientationWithBlock:(id)arg1;
+- (void)observePreferredLevelWithBlock:(id)arg1;
 - (void)observeOcclusionsWithBlock:(id)arg1;
 - (void)observeClassWithBlock:(id)arg1;
 - (void)removeAllObservers;

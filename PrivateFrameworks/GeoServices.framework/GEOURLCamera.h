@@ -41,6 +41,7 @@
 - (bool)hasAltitude;
 - (void)setHasAltitude:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setPitch:(double)arg1;

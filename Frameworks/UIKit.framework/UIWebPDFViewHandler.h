@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIRotatingActionSheet, WebPDFNSNumberFormatter, NSMapTable, NSDictionary, UIAlertView, NSObject<UIWebPDFViewHandlerDelegate>, UIDocumentPasswordView, UIColor, _UIHighlightView, UIView, UIWebPDFView, NSArray, UIWebPDFLabelView;
+@class WebPDFNSNumberFormatter, NSMapTable, NSDictionary, UIDocumentPasswordView, NSObject<UIWebPDFViewHandlerDelegate>, UIAlertView, UIColor, _UIHighlightView, UIView, UIWebPDFView, _UIRotatingAlertController, NSArray, UIWebPDFLabelView;
 
-@interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, UIActionSheetDelegate, _UIRotatingActionSheetDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
+@interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, _UIRotatingAlertControllerDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
     UIWebPDFView *_pdfView;
     bool_scalesPageToFit;
     double _initialZoomScale;
@@ -29,7 +29,7 @@
             double y; 
         } contentOffset; 
     } _pendingHistoryItemRestore;
-    _UIRotatingActionSheet *_linkActionSheet;
+    _UIRotatingAlertController *_linkActionSheet;
     NSDictionary *_linkActionInfo;
     NSArray *_linkActions;
     struct CGRect { 
@@ -86,6 +86,7 @@
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
 - (void)_showPasswordErrorAlert;
 - (void)_showLinkSheet:(id)arg1;
+- (void)performAction:(id)arg1 fromAlertController:(id)arg2;
 - (id)_actionsForInteractionInfo:(id)arg1;
 - (id)_actionForType:(int)arg1;
 - (void)highlightRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -160,7 +161,5 @@
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 
 @end

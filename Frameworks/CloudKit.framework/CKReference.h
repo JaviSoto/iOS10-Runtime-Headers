@@ -13,14 +13,16 @@
 @property(copy) CKRecordID * recordID;
 
 + (bool)supportsSecureCoding;
++ (id)weakStructureRefForItemID:(id)arg1 zoneName:(id)arg2 forType:(BOOL)arg3;
++ (id)parentStructureRefForItemID:(id)arg1 zoneName:(id)arg2;
 
 - (id)initWithRecord:(id)arg1 action:(unsigned long long)arg2;
 - (unsigned long long)referenceAction;
 - (id)initWithRecordID:(id)arg1 action:(unsigned long long)arg2;
 - (id)_initBare;
 - (void)setRecordID:(id)arg1;
-- (id)CKPropertiesDescription;
 - (id)ckShortDescription;
+- (id)CKPropertiesDescription;
 - (id)recordID;
 - (id)init;
 - (id)debugDescription;

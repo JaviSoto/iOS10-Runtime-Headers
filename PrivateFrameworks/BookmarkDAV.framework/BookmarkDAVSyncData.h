@@ -33,6 +33,7 @@
 @property(retain) NSURL * principalURL;
 
 
+- (void)setClientVersion:(unsigned long long)arg1;
 - (void)setAccountPrsId:(id)arg1;
 - (bool)supportsSyncCollection;
 - (id)accountPrsId;
@@ -74,7 +75,6 @@
 - (id)pushKey;
 - (void)setEtag:(id)arg1;
 - (id)etag;
-- (void)setClientVersion:(unsigned long long)arg1;
 - (bool)hasChanges;
 - (void)dealloc;
 

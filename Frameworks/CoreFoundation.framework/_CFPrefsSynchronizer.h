@@ -20,9 +20,9 @@
 - (id)init;
 - (void)synchronizeAndWait;
 - (void)noteDirtySource:(id)arg1;
+- (void)enableTimer_alreadyLocked;
 - (void)disableTimer_alreadyLocked;
 - (void)clear_alreadyLocked;
-- (void)enableTimer_alreadyLocked;
 - (void)synchronize;
 
 @end

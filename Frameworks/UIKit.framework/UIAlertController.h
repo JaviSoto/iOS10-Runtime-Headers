@@ -2,18 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, NSArray, NSSet, UIAlertAction, UIPopoverController, NSMutableArray, UIViewController;
+@class UIView, NSString, NSAttributedString, NSArray, NSSet, UIAlertAction, UIPopoverController, UIViewController, NSMutableArray;
 
 @interface UIAlertController : UIViewController <UIAlertControllerContaining, _UIAlertControllerTextFieldViewControllerContaining> {
     NSString *_message;
+    NSAttributedString *_attributedTitle;
+    NSAttributedString *_attributedMessage;
     NSMutableArray *_actions;
     NSSet *_linkedAlertControllers;
     UIAlertAction *_cancelAction;
     long long _resolvedStyle;
     long long _preferredStyle;
     UIViewController *_contentViewController;
+    id _ownedTransitioningDelegate;
     bool__shouldAllowNilParameters;
     UIPopoverController *__compatibilityPopoverController;
+    UIAlertAction *__defaultAlertAction;
 }
 
 @property(readonly) NSArray * actions;
@@ -21,6 +25,8 @@
 @property(copy) NSString * title;
 @property(copy) NSString * message;
 @property long long preferredStyle;
+@property(getter=_attributedTitle,setter=_setAttributedTitle:,copy) NSAttributedString * attributedTitle;
+@property(getter=_attributedMessage,setter=_setAttributedMessage:,copy) NSAttributedString * attributedMessage;
 @property(retain) UIViewController * contentViewController;
 @property(readonly) NSMutableArray * _actions;
 @property(readonly) UIAlertAction * _cancelAction;
@@ -30,6 +36,7 @@
 @property(readonly) bool _shouldProvideDimmingView;
 @property(setter=_setShouldAllowNilParameters:) bool _shouldAllowNilParameters;
 @property(setter=_setCompatibilityPopoverController:) UIPopoverController * _compatibilityPopoverController;
+@property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
 
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
@@ -41,9 +48,15 @@
 - (void)setTitle:(id)arg1;
 - (id)actions;
 - (void)dealloc;
+- (void)_setDefaultAlertAction:(id)arg1;
 - (void)_setCompatibilityPopoverController:(id)arg1;
 - (void)_setShouldAllowNilParameters:(bool)arg1;
 - (void)_removeAllTextFields;
+- (void)_setAttributedMessage:(id)arg1;
+- (id)_attributedMessage;
+- (void)_setAttributedTitle:(id)arg1;
+- (id)_attributedTitle;
+- (void)_updateViewFrameForLandscapePresentationInShimIfNecessary;
 - (id)linkedAlertControllers;
 - (void)unlinkAlertController:(id)arg1;
 - (void)linkAlertController:(id)arg1;
@@ -53,7 +66,6 @@
 - (void)_actionViewHighlightChanged:(id)arg1;
 - (void)addTextFieldWithConfigurationHandler:(id)arg1;
 - (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 handler:(id)arg4;
-- (void)_addActionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
 - (void)_addActionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3;
 - (void)_returnKeyPressedInLastTextField;
 - (bool)_hasContentToDisplay;
@@ -62,26 +74,28 @@
 - (bool)_shouldProvideDimmingView;
 - (long long)_modalPresentationStyleForResolvedStyle;
 - (id)_compatibilityPopoverController;
+- (void)_fireOffActionOnTargetIfValidForAction:(id)arg1;
 - (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2 triggeredByPopoverDimmingView:(bool)arg3;
 - (id)cancelAction;
 - (void)_attemptAnimatedDismissWithGestureRecognizer:(id)arg1;
-- (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2;
 - (void)_reevaluateResolvedStyle;
 - (id)_cancelAction;
 - (long long)_resolvedStyle;
-- (void)_updateModalPresentationStyle;
 - (void)_recomputePreferredContentSize;
 - (void)_resolvedStyleChanged;
 - (void)_clearActionHandlers;
 - (id)_alertControllerView;
-- (void)_fireOffActionOnTargetIfValidForAction:(id)arg1;
+- (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2;
+- (id)_defaultAlertAction;
 - (id)textFields;
 - (void)setContentViewController:(id)arg1;
 - (long long)preferredStyle;
 - (id)_textFieldViewController;
 - (id)_actions;
-- (void)addAction:(id)arg1;
 - (void)setCancelAction:(id)arg1;
+- (void)_updateModalPresentationStyle;
+- (void)addAction:(id)arg1;
+- (void)_addActionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
 - (void)setPreferredStyle:(long long)arg1;
 - (id)_containedAlertController;
 - (double)_contentVerticalInsets;

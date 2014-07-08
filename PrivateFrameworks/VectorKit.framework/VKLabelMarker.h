@@ -38,6 +38,7 @@
 
 
 - (bool)shouldActivateFeatureSelectionMode;
+- (void)setLabelPressed:(bool)arg1;
 - (void)setLabelSelected:(bool)arg1;
 - (id)incident;
 - (id)featureTile;
@@ -53,9 +54,9 @@
 - (id)debugAnchorPointString;
 - (struct CGPoint { double x1; double x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 canvasScale:(double)arg2;
 - (struct CGPoint { double x1; double x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 canvasScale:(double)arg2 snapToPixels:(bool)arg3;
+- (unsigned long long)businessID;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calloutAnchorRect;
 - (int)selectionType;
-- (unsigned long long)businessID;
 - (bool)hasBusinessID;
 - (id)featureHandles;
 - (id)mapRegion;

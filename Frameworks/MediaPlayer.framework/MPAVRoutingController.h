@@ -57,13 +57,13 @@
 - (bool)pickBestDeviceRoute;
 - (id)category;
 - (long long)discoveryMode;
+- (void)setName:(id)arg1;
 - (void)setDiscoveryMode:(long long)arg1;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)name;
-- (void)setName:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;

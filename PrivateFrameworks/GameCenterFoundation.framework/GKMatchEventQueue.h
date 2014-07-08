@@ -49,8 +49,8 @@
 - (void)setPlayerState:(long long)arg1;
 - (long long)playerState;
 - (void)setSequenceNumber:(unsigned int)arg1;
-- (unsigned int)sequenceNumber;
 - (id)events;
+- (unsigned int)sequenceNumber;
 - (id)player;
 - (void)setPlayer:(id)arg1;
 - (id)init;

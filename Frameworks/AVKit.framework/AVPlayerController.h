@@ -47,11 +47,7 @@
 - (bool)isLooping;
 - (void)autoplay:(id)arg1;
 - (void)setRateWithThrottling:(double)arg1;
-- (void)seekChapterForward:(id)arg1;
-- (void)seekChapterBackward:(id)arg1;
 - (void)setPlayingOnSecondScreen:(bool)arg1;
-- (id)metadata;
-- (long long)status;
 - (void)play:(id)arg1;
 - (bool)isPlaying;
 - (void)setRate:(double)arg1;
@@ -59,6 +55,8 @@
 - (void)setVolume:(double)arg1;
 - (double)volume;
 - (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
+- (id)metadata;
+- (long long)status;
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (id)loadedTimeRanges;
 - (double)contentDurationWithinEndTimes;
@@ -80,9 +78,9 @@
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
 - (id)currentAudioMediaSelectionOption;
 - (bool)hasMediaSelectionOptions;
-- (void)seekToEnd:(id)arg1;
+- (void)seekChapterForward:(id)arg1;
 - (bool)canSeekToEnd;
-- (void)seekToBeginning:(id)arg1;
+- (void)seekChapterBackward:(id)arg1;
 - (bool)canSeekToBeginning;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
@@ -102,6 +100,8 @@
 - (id)audioMediaSelectionOptions;
 - (bool)hasLegibleMediaSelectionOptions;
 - (bool)hasAudioMediaSelectionOptions;
+- (void)seekToEnd:(id)arg1;
+- (void)seekToBeginning:(id)arg1;
 - (bool)canPlay;
 - (void)seekToTime:(double)arg1;
 - (id)timing;

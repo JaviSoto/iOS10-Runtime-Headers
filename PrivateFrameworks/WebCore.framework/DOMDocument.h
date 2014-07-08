@@ -39,10 +39,10 @@
 @property(readonly) DOMElement * activeElement;
 
 
+- (id)implementation;
 - (id)origin;
 - (void)setBody:(id)arg1;
 - (id)body;
-- (id)implementation;
 - (id)createTouchList;
 - (id)createTouch:(id)arg1 target:(id)arg2 identifier:(int)arg3 pageX:(int)arg4 pageY:(int)arg5 screenX:(int)arg6 screenY:(int)arg7;
 - (id)webkitGetNamedFlows;

@@ -24,11 +24,11 @@
 - (long long)_sizeLimitForNetworkType:(long long)arg1;
 - (void)_setSizeLimit:(long long)arg1 forNetworkType:(long long)arg2;
 - (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
 - (void)setSizeLimit:(long long)arg1 forNetworkType:(long long)arg2;
 - (bool)isAnyNetworkTypeEnabled;
 - (void)disableCellularNetworkTypes;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

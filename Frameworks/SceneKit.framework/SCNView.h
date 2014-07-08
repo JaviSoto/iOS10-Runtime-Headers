@@ -28,7 +28,6 @@
 }
 
 @property(retain) SCNScene * scene;
-@property(copy) UIColor * backgroundColor;
 @property bool allowsCameraControl;
 @property(retain) EAGLContext * eaglContext;
 @property long long preferredFramesPerSecond;
@@ -58,12 +57,14 @@
 - (void)switchToNextCamera;
 - (void)switchToCameraNamed:(id)arg1;
 - (void)_systemTimeAnimationStarted:(id)arg1;
+- (long long)preferredFramesPerSecond;
 - (void)eventHandlerWantsRedraw;
 - (bool)_supportsJiterringSyncRedraw;
 - (void)pauseDisplayLink;
 - (void)resumeDisplayLink;
 - (void)setPointOfView:(id)arg1 animate:(bool)arg2;
 - (void)_drawAtTime:(double)arg1;
+- (void)_updateGestureRecognizers;
 - (double)_flipY:(double)arg1;
 - (id)_displayLink;
 - (void)_checkAndUpdateDisplayLinkStateIfNeeded;
@@ -113,12 +114,11 @@
 - (void)_enterBackground:(id)arg1;
 - (void)_enterForeground:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(id)arg2;
-- (long long)preferredFramesPerSecond;
 - (void)setPreferredFramesPerSecond:(long long)arg1;
-- (void*)context;
-- (void)setBackgroundColor:(id)arg1;
 - (void)play:(id)arg1;
 - (bool)isPlaying;
+- (void*)context;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setPlaying:(bool)arg1;
 - (void)pause:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

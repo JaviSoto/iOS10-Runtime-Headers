@@ -32,6 +32,7 @@
 - (id)videoZoomSupportedUpscaleStages;
 - (id)videoZoomSupportedDownscaleStages;
 - (int)rawBitDepth;
+- (bool)isVideoStabilizationModeSupported:(long long)arg1;
 - (bool)supportsDynamicCrop;
 - (struct CGSize { double x1; double x2; })_maxVideoDimensions;
 - (bool)supportsVideoZoom;
@@ -46,8 +47,8 @@
 - (bool)supportsHighProfileH264;
 - (id)vtScalingMode;
 - (bool)isSISSupported;
-- (id)videoSupportedFrameRateRanges;
 - (bool)isDefaultActiveFormat;
+- (id)videoSupportedFrameRateRanges;
 - (bool)isPhotoFormat;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })defaultActiveMinFrameDuration;

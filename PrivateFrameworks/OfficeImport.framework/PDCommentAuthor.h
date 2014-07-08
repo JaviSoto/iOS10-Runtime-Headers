@@ -21,9 +21,9 @@
 - (unsigned int)colorIndex;
 - (void)setId:(unsigned int)arg1;
 - (unsigned int)id;
+- (void)setName:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setName:(id)arg1;
 - (void)dealloc;
 
 @end

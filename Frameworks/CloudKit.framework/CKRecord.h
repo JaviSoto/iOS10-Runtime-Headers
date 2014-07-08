@@ -4,13 +4,14 @@
 
 @class NSData, NSString, CKRecordID, NSDate, NSArray, NSMutableDictionary, NSDictionary, CKContainerID, NSMutableSet, NSSet;
 
-@interface CKRecord : NSObject <NSSecureCoding, NSCopying> {
+@interface CKRecord : NSObject <NSSecureCoding, NSCopying, PQLBindable> {
     NSMutableDictionary *_values;
     NSMutableDictionary *_originalValues;
     NSMutableSet *_changedKeysSet;
     bool_trackChanges;
     bool_knownToServer;
     bool_wasCached;
+    bool_serializeProtectionData;
     NSString *_recordType;
     CKRecordID *_recordID;
     CKRecordID *_creatorUserRecordID;
@@ -28,6 +29,7 @@
     CKContainerID *_containerID;
 }
 
+@property(readonly) NSData * brc_containerMetadataPropertiesData;
 @property(copy) NSString * recordType;
 @property(copy) CKRecordID * recordID;
 @property(copy,readonly) NSString * recordChangeTag;
@@ -49,6 +51,7 @@
 @property(readonly) bool hasEncryptedData;
 @property(readonly) bool hasModifiedEncryptedData;
 @property bool wasCached;
+@property bool serializeProtectionData;
 @property(retain) NSData * protectionData;
 @property(retain) NSString * previousProtectionEtag;
 @property(retain) NSString * protectionEtag;
@@ -58,27 +61,43 @@
 
 + (bool)accessInstanceVariablesDirectly;
 + (bool)supportsSecureCoding;
++ (id)desiredKeysWithMask:(unsigned short)arg1;
++ (id)assetsOnlyDocumentContentsRecordForLocalItem:(id)arg1 thumbnail1024URL:(id)arg2 thumbnailMetadata:(id)arg3 packageManifest:(id*)arg4 error:(id*)arg5;
++ (id)documentStructureRecordForLocalItem:(id)arg1;
++ (id)directoryRecordForLocalItem:(id)arg1;
++ (id)aliasRecordForLocalItem:(id)arg1;
++ (id)rootDirectoryRecordForZoneName:(id)arg1;
++ (id)documentContentsRecordForItemID:(id)arg1 zoneName:(id)arg2;
++ (id)documentStructureRecordForItemID:(id)arg1 zoneName:(id)arg2;
++ (id)directoryRecordForItemID:(id)arg1 zoneName:(id)arg2;
++ (id)aliasRecordForItemID:(id)arg1 zoneName:(id)arg2;
++ (id)brc_containerMetadataRecordWithContainer:(id)arg1;
++ (id)brc_containerMetadataZoneID;
 
+- (bool)hasModifiedPropertiesRequiringEncryption;
+- (bool)hasModifiedEncryptedData;
+- (id)copyWithOriginalValues;
 - (void)setZoneProtectionEtag:(id)arg1;
-- (id)zoneProtectionEtag;
-- (void)setProtectionEtag:(id)arg1;
-- (id)protectionEtag;
+- (bool)hasPropertiesRequiringEncryption;
 - (void)setPreviousProtectionEtag:(id)arg1;
+- (void)setProtectionEtag:(id)arg1;
+- (bool)hasEncryptedData;
+- (bool)containsAssetValues;
+- (void)setSerializeProtectionData:(bool)arg1;
+- (id)zoneProtectionEtag;
 - (id)previousProtectionEtag;
+- (id)protectionEtag;
 - (void)setWasCached:(bool)arg1;
+- (void)setEtag:(id)arg1;
+- (id)etag;
 - (bool)wasCached;
 - (void)setKnownToServer:(bool)arg1;
 - (void)setRecordID:(id)arg1;
-- (bool)hasModifiedEncryptedData;
-- (bool)hasEncryptedData;
-- (bool)hasModifiedPropertiesRequiringEncryption;
-- (bool)hasPropertiesRequiringEncryption;
-- (bool)containsAssetValues;
 - (id)allTokens;
-- (id)copyWithOriginalValues;
 - (id)initWithRecordType:(id)arg1 zoneID:(id)arg2;
 - (id)initWithRecordType:(id)arg1;
 - (void)encodeSystemFieldsWithCoder:(id)arg1;
+- (bool)serializeProtectionData;
 - (bool)_checkProperties:(bool)arg1 withValueCheckBlock:(id)arg2;
 - (id)changedKeys;
 - (id)_allStrings;
@@ -115,16 +134,14 @@
 - (id)containerID;
 - (id)sharedItemID;
 - (id)CKPropertiesDescription;
-- (void)setEtag:(id)arg1;
-- (id)etag;
 - (void)setContainerID:(id)arg1;
 - (void)setValues:(id)arg1;
 - (id)values;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
-- (id)valueForKey:(id)arg1;
-- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
+- (id)valueForKey:(id)arg1;
 - (id)recordID;
 - (id)init;
 - (id)debugDescription;
@@ -139,5 +156,26 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)modificationDate;
 - (void)setNilValueForKey:(id)arg1;
+- (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2;
+- (void)serializeStatInfo:(id)arg1 container:(id)arg2 diffs:(unsigned long long)arg3;
+- (void)serializeStructuralPluginHints:(id)arg1;
+- (bool)deserializeVersion:(id*)arg1 container:(id)arg2 error:(id*)arg3;
+- (bool)deserializeStatInfo:(id*)arg1 itemID:(id)arg2 container:(id)arg3 error:(id*)arg4;
+- (bool)deserializeAliasInfo:(id*)arg1 container:(id)arg2 error:(id*)arg3;
+- (void)serializeSystemFields:(id)arg1;
+- (void)serializeFilename:(id)arg1 forCreation:(bool)arg2;
+- (bool)_deserializeFilename:(id*)arg1 userInfo:(id)arg2 error:(id*)arg3;
+- (bool)_deserializeValue:(id*)arg1 forKey:(id)arg2 expectClass:(Class)arg3 allowNil:(bool)arg4 errorDescription:(id*)arg5;
+- (bool)brc_isInterestingRecordForSyncDown;
+- (bool)saveDocumentContentsRecordInContainer:(id)arg1;
+- (bool)saveStructureRecordInContainer:(id)arg1;
+- (bool)saveInconsistentRecordInContainer:(id)arg1;
+- (bool)saveAliasRecordInContainer:(id)arg1;
+- (bool)saveDirOrDocStructureRecordInContainer:(id)arg1;
+- (bool)saveInContainer:(id)arg1 stateIsInconsistent:(bool)arg2;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)brc_containerMetadataIconNames;
+- (id)brc_containerMetadataIconPaths;
+- (id)brc_containerMetadataPropertiesData;
 
 @end

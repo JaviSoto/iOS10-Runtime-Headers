@@ -15,6 +15,7 @@
 
 @property(readonly) NSAttributedString * attributedString;
 @property(readonly) double baselineOffset;
+@property(readonly) double firstBaselineOffset;
 @property(readonly) struct CGSize { double x1; double x2; } boundingSize;
 @property(readonly) long long numberOfLines;
 @property(readonly) NSStringDrawingContext * stringDrawingContext;
@@ -27,5 +28,6 @@
 - (id)attributedString;
 - (void).cxx_destruct;
 - (long long)numberOfLines;
+- (double)firstBaselineOffset;
 
 @end

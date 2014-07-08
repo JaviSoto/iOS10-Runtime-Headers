@@ -22,5 +22,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)compareObject:(id)arg1 toObject:(id)arg2;
+- (id)CKDPQuerySort;
 
 @end

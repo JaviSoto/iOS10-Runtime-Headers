@@ -20,9 +20,9 @@
 - (id)initWithFriendListDictionary:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setName:(id)arg1;
 - (id)name;
 - (void)setType:(id)arg1;
-- (void)setName:(id)arg1;
 - (id)type;
 - (void).cxx_destruct;
 

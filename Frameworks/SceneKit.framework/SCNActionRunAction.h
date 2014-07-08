@@ -19,6 +19,7 @@
 - (void)willStartWithTarget:(id)arg1 atTime:(double)arg2;
 - (id)reversedAction;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
+- (bool)isCustom;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

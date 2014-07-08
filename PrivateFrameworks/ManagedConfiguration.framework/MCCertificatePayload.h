@@ -21,14 +21,14 @@
 - (void)setCertificatePersistentID:(id)arg1;
 - (bool)isSigned;
 - (bool)isRoot;
-- (id)certificatePersistentID;
 - (id)installedOnDeviceID;
 - (bool)isIdentity;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (struct __SecCertificate { }*)copyCertificate;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)expiry;
+- (id)certificatePersistentID;
+- (struct __SecCertificate { }*)copyCertificate;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)stubDictionary;

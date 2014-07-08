@@ -18,6 +18,6 @@
 - (bool)_shouldReloadChatItem:(id)arg1 oldChatItem:(id)arg2;
 - (void)_didProcessChatItems:(id)arg1;
 - (id)_initWithChat:(id)arg1;
-- (void)dealloc;
+- (void)_invalidate;
 
 @end

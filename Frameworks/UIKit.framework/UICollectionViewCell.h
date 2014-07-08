@@ -65,6 +65,7 @@
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)layoutSubviews;
 

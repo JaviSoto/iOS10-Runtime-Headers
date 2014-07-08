@@ -46,9 +46,9 @@
 - (void)_caDisplayLinkCallback;
 - (id)initWithBlock:(id)arg1 queue:(id)arg2;
 - (void)_teardown;
-- (void)_setup;
 - (void)setPaused:(bool)arg1;
 - (bool)isPaused;
+- (void)_setup;
 - (void)setAsynchronous:(bool)arg1;
 - (void)_start;
 - (long long)frameInterval;

@@ -33,9 +33,9 @@
 - (void)_setMetricsPageEvent:(id)arg1;
 - (id)expirationDate;
 - (id)metricsPageEvent;
+- (id)responseDictionary;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)responseDictionary;
 - (id)allItems;
 - (id)valueForProperty:(id)arg1;
 - (void)dealloc;

@@ -16,9 +16,12 @@
 
 @property(readonly) SSURLBagContext * URLBagContext;
 
++ (void)setURLBag:(id)arg1 forContext:(id)arg2;
 + (id)URLBagForContext:(id)arg1;
 
 - (id)existingBagDictionary;
+- (void)dispatchSync:(id)arg1;
+- (void)dispatchAsync:(id)arg1;
 - (id)valueForKey:(id)arg1 error:(id*)arg2;
 - (void)getTrustForURL:(id)arg1 completionBlock:(id)arg2;
 - (void)_loadURLBag;

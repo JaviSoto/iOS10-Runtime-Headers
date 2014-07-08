@@ -30,9 +30,9 @@
 - (id)_segmentedControl;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)setImageURL:(id)arg1;
 - (id)canvas;
 - (void)setCanvas:(id)arg1;
+- (void)setImageURL:(id)arg1;
 - (id)imageURL;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;

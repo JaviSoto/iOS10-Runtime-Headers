@@ -53,8 +53,8 @@
 - (id)wholeTableStyle;
 - (id)firstRowStyle;
 - (id)id;
-- (id)name;
 - (void)setName:(id)arg1;
+- (id)name;
 - (void)dealloc;
 - (void)setBackground:(id)arg1;
 - (id)background;

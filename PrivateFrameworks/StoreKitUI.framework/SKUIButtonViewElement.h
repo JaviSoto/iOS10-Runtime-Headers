@@ -11,6 +11,7 @@
     NSString *_confirmationText;
     BOOL _enabled;
     long long _itemIdentifier;
+    NSString *_variantIdentifier;
 }
 
 @property(readonly) long long buttonViewType;
@@ -19,6 +20,7 @@
 @property(readonly) NSString * badgeResourceName;
 @property(readonly) SKUIImageViewElement * buttonImage;
 @property(readonly) long long itemIdentifier;
+@property(readonly) NSString * variantIdentifier;
 
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
@@ -26,13 +28,17 @@
 - (unsigned long long)elementType;
 - (id)badgeResourceName;
 - (long long)buttonViewType;
+- (bool)canPersonalizeUsingItemState:(id)arg1;
 - (id)personalizationLibraryItems;
-- (long long)pageComponentType;
+- (bool)canPerformLocalActionWithItemState:(id)arg1;
 - (id)confirmationText;
 - (id)buttonText;
+- (long long)pageComponentType;
+- (id)variantIdentifier;
 - (long long)itemIdentifier;
 - (bool)isEnabled;
 - (void).cxx_destruct;
+- (id)description;
 - (id)buttonImage;
 
 @end

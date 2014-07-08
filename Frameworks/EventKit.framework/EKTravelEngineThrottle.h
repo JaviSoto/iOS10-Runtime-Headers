@@ -41,7 +41,6 @@
 - (void)_emitAdviceObjects:(id)arg1;
 - (void)setNumberOfThrottleAdviceObjectsToEmitLater:(unsigned long long)arg1;
 - (void)_analyzeQueueAndPrepareForEmission;
-- (void)setRunning:(bool)arg1;
 - (unsigned long long)numberOfThrottleAdviceObjectsToEmitLater;
 - (id)throttleQueue;
 - (id)emissionTimer;
@@ -56,6 +55,7 @@
 - (void)_registerForNotificationObservation;
 - (void)_unregisterForNotificationObservation;
 - (void)setAdviceBlock:(id)arg1;
+- (void)setRunning:(bool)arg1;
 - (bool)running;
 - (id)init;
 - (void)start;

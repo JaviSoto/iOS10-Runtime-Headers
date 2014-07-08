@@ -3,9 +3,6 @@
  */
 
 @interface UIKBTextEditingTraits : NSObject  {
-    bool_isBold;
-    bool_isItalicized;
-    bool_isUnderlined;
     bool_canToggleBoldface;
     bool_canToggleItalics;
     bool_canToggleUnderline;
@@ -17,9 +14,6 @@
     bool_canMoveCursorRight;
 }
 
-@property(readonly) bool isBold;
-@property(readonly) bool isItalicized;
-@property(readonly) bool isUnderlined;
 @property(readonly) bool canToggleBoldface;
 @property(readonly) bool canToggleItalics;
 @property(readonly) bool canToggleUnderline;
@@ -42,9 +36,6 @@
 - (bool)canToggleUnderline;
 - (bool)canToggleItalics;
 - (bool)canToggleBoldface;
-- (bool)isUnderlined;
-- (bool)isItalicized;
-- (bool)isBold;
 - (id)initWithResponder:(id)arg1 editable:(bool)arg2;
 
 @end

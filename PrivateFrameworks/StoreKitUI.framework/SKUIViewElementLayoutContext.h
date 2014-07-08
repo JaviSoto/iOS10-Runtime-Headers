@@ -5,6 +5,7 @@
 @class NSMutableDictionary, NSMapTable, <SKUIArtworkRequestDelegate>, SKUIItemOfferButton, SKUIResourceLoader, UIViewController, UIColor, NSHashTable, NSMutableSet, SKUIClientContext, SKUIViewElementTextLayoutCache, SKUIBadgeTextAttachmentLoader;
 
 @interface SKUIViewElementLayoutContext : NSObject  {
+    double _activePageWidth;
     NSMutableDictionary *_aggregateValues;
     <SKUIArtworkRequestDelegate> *_artworkRequestDelegate;
     SKUIBadgeTextAttachmentLoader *_badgeImageLoader;
@@ -23,6 +24,7 @@
     UIColor *_tintColor;
 }
 
+@property double activePageWidth;
 @property <SKUIArtworkRequestDelegate> * artworkRequestDelegate;
 @property(readonly) SKUIBadgeTextAttachmentLoader * badgeImageLoader;
 @property(retain) SKUIClientContext * clientContext;
@@ -41,6 +43,7 @@
 - (struct CGSize { double x1; double x2; })_sizeForImageElement:(id)arg1 applyTransform:(bool)arg2;
 - (bool)_loadImageForURL:(id)arg1 cacheKey:(id)arg2 dataConsumer:(id)arg3 reason:(long long)arg4;
 - (void)setPlaceholderColor:(id)arg1;
+- (void)setActivePageWidth:(double)arg1;
 - (id)_initSKUIViewElementLayoutContext;
 - (id)placeholderImageForImageElement:(id)arg1;
 - (id)transientRequestIdentifierForViewElement:(id)arg1;
@@ -49,20 +52,21 @@
 - (bool)isEditorialLayoutExpanded:(id)arg1;
 - (id)editorialLayoutForLabelElement:(id)arg1 width:(double)arg2;
 - (unsigned long long)containerViewElementType;
+- (struct CGSize { double x1; double x2; })sizeForImageElement:(id)arg1;
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;
 - (void)setLabelLayoutCache:(id)arg1;
 - (id)initWithStorePageSectionContext:(id)arg1;
+- (void)setAggregateValue:(id)arg1 forKey:(id)arg2;
 - (bool)loadImageForArtwork:(id)arg1 reason:(long long)arg2;
 - (id)placeholderColor;
 - (void)setContainerViewElementType:(unsigned long long)arg1;
 - (id)initWithStorePageSectionContext:(id)arg1 previousLayoutContext:(id)arg2;
 - (void)setArtworkRequestDelegate:(id)arg1;
 - (void)setResourceLoader:(id)arg1;
-- (double)defaultItemWidthForViewElement:(id)arg1;
-- (void)setAggregateValue:(id)arg1 forKey:(id)arg2;
-- (id)labelLayoutCache;
-- (struct CGSize { double x1; double x2; })sizeForImageElement:(id)arg1;
 - (bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2;
+- (double)activePageWidth;
+- (id)labelLayoutCache;
+- (double)defaultItemWidthForViewElement:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(double)arg2;
 - (bool)loadImageForImageElement:(id)arg1 reason:(long long)arg2;
 - (id)requestIdentifierForViewElement:(id)arg1;

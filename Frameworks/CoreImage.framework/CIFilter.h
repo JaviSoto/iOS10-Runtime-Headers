@@ -28,6 +28,8 @@
 + (id)_pl_propertyArrayFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 - (id)attributes;
+- (id)apply:(id)arg1;
+- (id)apply:(id)arg1 arguments:(id)arg2 options:(id)arg3;
 - (id)_serializedXMPString;
 - (bool)_filterClassInCategory:(id)arg1;
 - (id)_copyFilterWithZone:(struct _NSZone { }*)arg1;

@@ -4,7 +4,7 @@
 
 @class NSMapTable, SKUILockupViewElement, SKUIHorizontalLockupLayout, SKUIGradientView, SKUIPreviewProgressIndicator, SUPlayerStatus;
 
-@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
+@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -35,7 +35,8 @@
 - (void)_previewIndicatorAction:(id)arg1;
 - (id)_columnForView:(id)arg1;
 - (void)togglePreviewPlaybackAnimated:(bool)arg1;
-- (void)_layoutConfirmationGradientRelativeToItemOfferButton:(id)arg1;
+- (void)_addConfirmationGradientForView:(id)arg1;
+- (void)_layoutConfirmationGradientRelativeToItemOfferView:(id)arg1 alpha:(double)arg2;
 - (void)hidePreviewProgressAnimated:(bool)arg1;
 - (id)_previewMediaURL;
 - (id)_previewProgressIndicator;
@@ -43,10 +44,13 @@
 - (id)_addFlipContainerViewWithFrontView:(id)arg1 backView:(id)arg2;
 - (id)_previewFrontView;
 - (void)showPreviewProgressWithStatus:(id)arg1 animated:(bool)arg2;
+- (void)offerViewWillAnimateTransition:(id)arg1;
+- (void)offerViewDidAnimateTransition:(id)arg1;
+- (bool)offerViewAnimateTransition:(id)arg1;
 - (id)_viewElementForView:(id)arg1;
-- (void)_imageTapAction:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)itemOfferButtonDidAnimateTransition:(id)arg1;
+- (void)_imageTapAction:(id)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;

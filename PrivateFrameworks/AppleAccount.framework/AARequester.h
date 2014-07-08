@@ -33,8 +33,8 @@
 @property(retain) NSObject<OS_dispatch_queue> * handlerQueue;
 
 
-- (void)setHandlerQueue:(id)arg1;
 - (id)handlerQueue;
+- (void)setHandlerQueue:(id)arg1;
 - (void)setCanceled:(bool)arg1;
 - (void)_callHandler;
 - (id)initWithRequest:(id)arg1 handler:(id)arg2;

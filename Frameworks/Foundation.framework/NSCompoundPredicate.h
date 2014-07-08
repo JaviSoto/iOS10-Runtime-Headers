@@ -44,5 +44,6 @@
 - (bool)ab_hasCallback;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (void)validate;
+- (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
 
 @end

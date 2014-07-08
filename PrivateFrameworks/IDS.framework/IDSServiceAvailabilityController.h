@@ -10,6 +10,8 @@
 
 + (id)sharedInstance;
 
+- (bool)removeListenerID:(id)arg1 forService:(id)arg2;
+- (bool)addListenerID:(id)arg1 forService:(id)arg2;
 - (void)_stopListeningToMonitor:(id)arg1;
 - (id)containerForService:(id)arg1 create:(bool)arg2;
 - (void)_startListeningToMonitor:(id)arg1;
@@ -18,8 +20,6 @@
 - (void)_postNotificationForService:(id)arg1 availability:(long long)arg2;
 - (bool)hasListenerID:(id)arg1 forService:(id)arg2;
 - (long long)availabilityForListenerID:(id)arg1 forService:(id)arg2;
-- (bool)removeListenerID:(id)arg1 forService:(id)arg2;
-- (bool)addListenerID:(id)arg1 forService:(id)arg2;
 - (id)init;
 - (void)dealloc;
 

@@ -13,9 +13,9 @@
 
 - (void)setCurrentUser:(bool)arg1;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
+- (int)entityType;
 - (bool)isCurrentUser;
 - (id)owner;
-- (int)entityType;
 - (void)setOwner:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -28,10 +28,6 @@
 @property(readonly) NSArray * inputGroups;
 
 
-- (void)setMetadata:(id)arg1;
-- (id)metadata;
-- (long long)status;
-- (id)outputURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)inputs;
@@ -68,6 +64,10 @@
 - (float)preferredRate;
 - (void)addInput:(id)arg1;
 - (bool)canAddInput:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (id)metadata;
+- (long long)status;
+- (id)outputURL;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (id)init;
 - (id)error;

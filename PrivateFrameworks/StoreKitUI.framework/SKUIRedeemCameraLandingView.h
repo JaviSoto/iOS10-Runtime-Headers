@@ -17,9 +17,9 @@
 @property long long spacingStyle;
 
 
-- (id)initWithClientContext:(id)arg1;
 - (long long)spacingStyle;
 - (void)setSpacingStyle:(long long)arg1;
+- (id)initWithClientContext:(id)arg1;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (void).cxx_destruct;

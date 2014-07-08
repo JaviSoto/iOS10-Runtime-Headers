@@ -48,11 +48,11 @@
 - (void)setAllEntriesMatchHomeForOrderType:(bool)arg1;
 - (void)setAllEntriesAtHome:(bool)arg1;
 - (void)setMatchingCount:(unsigned long long)arg1;
+- (void)setName:(id)arg1;
 - (id)localizedName;
 - (id)init;
 - (id)name;
 - (void)setType:(unsigned long long)arg1;
-- (void)setName:(id)arg1;
 - (unsigned long long)type;
 - (void)dealloc;
 - (id)description;

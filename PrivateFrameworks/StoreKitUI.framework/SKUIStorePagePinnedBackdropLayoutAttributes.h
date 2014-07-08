@@ -2,26 +2,30 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
+@class UIColor, NSString;
 
 @interface SKUIStorePagePinnedBackdropLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    double _backdropAlpha;
     UIColor *_backdropColor;
     long long _backdropStyle;
+    double _transitionProgress;
+    NSString *_backdropGroupName;
 }
 
-@property double backdropAlpha;
 @property(retain) UIColor * backdropColor;
+@property(copy) NSString * backdropGroupName;
 @property long long backdropStyle;
+@property double transitionProgress;
 
 
 - (void)setBackdropStyle:(long long)arg1;
 - (id)backdropColor;
-- (double)backdropAlpha;
-- (void)setBackdropAlpha:(double)arg1;
+- (id)backdropGroupName;
 - (void)setBackdropColor:(id)arg1;
+- (void)setBackdropGroupName:(id)arg1;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)transitionProgress;
+- (void)setTransitionProgress:(double)arg1;
 - (long long)backdropStyle;
 
 @end
