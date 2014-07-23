@@ -5,10 +5,14 @@
 @class NSString;
 
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying> {
+    double _eventDate;
     NSString *_eventName;
     int _loiType;
+    bool_isEventAllDay;
     struct { 
+        unsigned int eventDate : 1; 
         unsigned int loiType : 1; 
+        unsigned int isEventAllDay : 1; 
     } _has;
 }
 
@@ -16,14 +20,26 @@
 @property int loiType;
 @property(readonly) bool hasEventName;
 @property(retain) NSString * eventName;
+@property bool hasEventDate;
+@property double eventDate;
+@property bool hasIsEventAllDay;
+@property bool isEventAllDay;
 
 
+- (void)setHasEventDate:(bool)arg1;
+- (bool)hasEventDate;
+- (bool)hasIsEventAllDay;
+- (void)setHasIsEventAllDay:(bool)arg1;
+- (void)setIsEventAllDay:(bool)arg1;
+- (void)setEventDate:(double)arg1;
 - (bool)hasEventName;
 - (bool)hasLoiType;
 - (void)setHasLoiType:(bool)arg1;
 - (void)setLoiType:(int)arg1;
 - (void)setEventName:(id)arg1;
 - (int)loiType;
+- (bool)isEventAllDay;
+- (double)eventDate;
 - (id)eventName;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;

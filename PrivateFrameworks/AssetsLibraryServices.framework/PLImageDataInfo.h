@@ -27,14 +27,14 @@
 - (void)setEXIFOrientation:(long long)arg1;
 - (long long)EXIFOrientation;
 - (void)setUTI:(id)arg1;
-- (void)setSandboxExtensionToken:(id)arg1;
-- (id)sandboxExtensionToken;
 - (void)setCanDownloadFromCloud:(bool)arg1;
 - (bool)canDownloadFromCloud;
 - (void)setDeliveredPlaceholder:(bool)arg1;
 - (bool)deliveredPlaceholder;
 - (void)setDeliveredFormat:(long long)arg1;
 - (long long)deliveredFormat;
+- (id)sandboxExtensionToken;
+- (void)setSandboxExtensionToken:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (void)dealloc;

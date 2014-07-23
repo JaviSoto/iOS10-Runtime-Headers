@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WKBackForwardListItem, NSArray;
+@class WKBackForwardListItem, NSArray, NSString;
 
 @interface WKBackForwardList : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebBackForwardList> { 
@@ -22,6 +22,10 @@
 @property(readonly) WKBackForwardListItem * forwardItem;
 @property(copy,readonly) NSArray * backList;
 @property(copy,readonly) NSArray * forwardList;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

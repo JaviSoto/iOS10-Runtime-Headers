@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <VKOverlayContainerRouteDelegate>, <VKOverlayContainerDelegate>, VKSkyModel, <VKRouteMatchedAnnotationPresentation>, NSSet, NSMutableSet, NSMutableArray, NSMapTable, VKStyleManager;
+@class <VKOverlayContainerRouteDelegate>, <VKOverlayContainerDelegate>, NSString, VKSkyModel, <VKRouteMatchedAnnotationPresentation>, NSSet, NSMutableSet, NSMutableArray, NSMapTable, VKStyleManager;
 
 @interface VKOverlayContainerModel : VKMapTileModel <VKRouteMatchedAnnotationPresentationObserver, VKMapLayer, VKStyleManagerObserver> {
     NSMutableSet *_visibleOverlays;
@@ -49,6 +49,10 @@
 @property(readonly) NSSet * persistentOverlays;
 @property(retain) VKSkyModel * skyModel;
 @property <VKOverlayContainerRouteDelegate> * routeDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 + (bool)reloadOnStylesheetChange;

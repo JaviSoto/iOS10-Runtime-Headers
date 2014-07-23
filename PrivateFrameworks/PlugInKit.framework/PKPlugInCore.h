@@ -54,6 +54,7 @@
 + (id)readSDKDictionary:(id)arg1;
 
 - (id)timestamp;
+- (id)path;
 - (void)setIdentifier:(id)arg1;
 - (id)url;
 - (id)uuid;
@@ -118,7 +119,6 @@
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)path;
 - (void).cxx_destruct;
 
 @end

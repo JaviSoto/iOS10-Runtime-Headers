@@ -17,6 +17,10 @@
 @property <SKUIViewElementSlideshowDelegate> * delegate;
 @property(retain) SKUIViewElementLayoutContext * layoutContext;
 @property(readonly) long long numberOfSlideshowItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setLayoutContext:(id)arg1;

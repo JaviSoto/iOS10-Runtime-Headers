@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSUUID, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, CBPeripheralManager;
+@class NSUUID, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, CBPeripheralManager;
 
 @interface BTLEServer : NSObject <CBPeripheralManagerDelegate> {
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
@@ -35,6 +35,10 @@
 @property(copy) NSDictionary * configuration;
 @property(copy) id readHandler;
 @property(copy) id writeHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAdvertiseUUID:(id)arg1;

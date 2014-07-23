@@ -37,6 +37,10 @@
 @property(retain) NSString * currentTestName;
 @property(retain) NSDictionary * currentTestOptions;
 @property(retain) BLActivityAlert * iPhotoMigrationActivityAlert;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIWindow * window;
 
 + (void)initialize;
@@ -44,6 +48,8 @@
 - (void)_applicationDidResignActive:(id)arg1;
 - (bool)isCameraApp;
 - (void)setDelaySuspend:(bool)arg1;
+- (void)setIPhotoMigrationActivityAlert:(id)arg1;
+- (id)iPhotoMigrationActivityAlert;
 - (void)setCurrentTestOptions:(id)arg1;
 - (id)currentTestOptions;
 - (void)setCurrentTestName:(id)arg1;
@@ -66,8 +72,6 @@
 - (id)currentUIConfiguration;
 - (void)_updateSharedPhotoStreamProgressDisplay;
 - (void)_updatePhotoStreamProgressDisplay;
-- (void)setIPhotoMigrationActivityAlert:(id)arg1;
-- (id)iPhotoMigrationActivityAlert;
 - (void)_statusBarDoubleTap:(id)arg1;
 - (void)sharedFinishedLaunching:(bool)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;

@@ -16,7 +16,6 @@
 + (id)max:(id)arg1;
 + (id)count:(id)arg1;
 + (id)inverseOrderKey:(id)arg1;
-+ (id)log:(id)arg1;
 + (id)_constantValueClassesForSecureCoding;
 + (id)_operatorClassesForSecureCoding;
 + (id)_extendedExpressionClassesForSecureCoding;
@@ -43,6 +42,7 @@
 + (id)exp:(id)arg1;
 + (id)raise:(id)arg1 toPower:(id)arg2;
 + (id)ln:(id)arg1;
++ (id)log:(id)arg1;
 + (id)sqrt:(id)arg1;
 + (id)divide:(id)arg1 by:(id)arg2;
 + (id)multiply:(id)arg1 by:(id)arg2;

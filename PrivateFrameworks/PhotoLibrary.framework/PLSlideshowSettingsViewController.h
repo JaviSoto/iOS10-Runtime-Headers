@@ -26,6 +26,10 @@
 @property(copy) NSString * selectedTransition;
 @property bool slideshowShouldPlayMusic;
 @property(retain) MPMediaItemCollection * slideshowMusicCollection;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (int)_uiTransitionForTransitionKey:(id)arg1;
 + (id)iPadTransitions;

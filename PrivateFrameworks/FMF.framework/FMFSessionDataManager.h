@@ -17,13 +17,13 @@
 + (id)sharedInstance;
 
 - (id)offerExpirationForHandle:(id)arg1 groupId:(id)arg2;
-- (id)locationForHandle:(id)arg1;
 - (id)followingForHandle:(id)arg1;
 - (id)followerForHandle:(id)arg1;
 - (void)setFollowing:(id)arg1;
 - (void)setFollowers:(id)arg1;
 - (id)following;
 - (id)followers;
+- (id)locationForHandle:(id)arg1;
 - (id)locations;
 - (void).cxx_destruct;
 - (void)setLocations:(id)arg1;

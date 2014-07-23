@@ -27,6 +27,10 @@
 }
 
 @property(copy) NSString * appWakeUUID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_onqueue_disavowTask:(id)arg1;
@@ -67,12 +71,12 @@
 - (id)_downloadTaskForRequest:(id)arg1;
 - (id)_downloadTaskForResumeData:(id)arg1;
 - (id)backgroundResumeDataFromClientResumeData:(id)arg1;
-- (id)_onqueue_dummyTaskForClass:(Class)arg1 withError:(id)arg2;
 - (id)_onqueue_downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id)arg3;
 - (void)validateUploadFile:(id)arg1;
 - (id)_onqueue_uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id)arg4;
 - (id)placeholderErrorWithURL:(id)arg1;
 - (id)requestWithCookiesApplied:(id)arg1;
+- (id)_onqueue_dummyTaskForClass:(Class)arg1 withError:(id)arg2;
 - (void)validateSerializabilityForRequest:(id)arg1 completion:(id)arg2;
 - (void)performBlockOnQueueAndRethrowExceptions:(id)arg1;
 - (id)_onqueue_dataTaskForRequest:(id)arg1 completion:(id)arg2;

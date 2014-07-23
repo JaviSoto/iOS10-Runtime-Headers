@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UITapGestureRecognizer, CAMHDRBadge, CAMPreviewView, CAMModeDial, NSMutableArray, CAMZoomSlider, UIPanGestureRecognizer, CALayer, CAMTimerButton, NSMutableSet, CAMBlurredSnapshotView, UIAlertView, CAMTimerIndicatorView, CAMTopBar, UILongPressGestureRecognizer, CAMSlalomIndicatorView, CAMHardwareLockIndicatorView, CAMFlipButton, CAMFlashButton, CAMCameraSpec, NSObject<OS_dispatch_source>, PLCameraIrisAnimationView, CAMImageWell, PLPreviewOverlayView, CAMBottomBar, PLCameraOverlayTextLabelView, CAMAnimationDelegate, UIView, CAMCaptureController, CAMPanoramaView, CAMGridView, CAMTorchPatternController, CAMExposureBiasTextView, UIImageView, CAMElapsedTimeView, CAMFilterButton, CAMHDRButton, NSTimer, CAMShutterButton, CAMFlashBadge, CAMAvalancheIndicatorView, CAMLowDiskSpaceAlertView, UISwipeGestureRecognizer, NSDate;
+@class UITapGestureRecognizer, CAMHDRBadge, CAMPreviewView, CAMModeDial, NSMutableArray, CAMZoomSlider, UIPanGestureRecognizer, CALayer, CAMTimerButton, NSMutableSet, CAMBlurredSnapshotView, UIAlertView, CAMTimerIndicatorView, CAMTopBar, UILongPressGestureRecognizer, CAMSlalomIndicatorView, CAMHardwareLockIndicatorView, CAMFlipButton, CAMFlashButton, CAMCameraSpec, NSObject<OS_dispatch_source>, PLCameraIrisAnimationView, CAMImageWell, PLPreviewOverlayView, CAMBottomBar, PLCameraOverlayTextLabelView, CAMAnimationDelegate, UIView, CAMCaptureController, CAMPanoramaView, CAMGridView, CAMTorchPatternController, CAMExposureBiasTextView, NSString, UIImageView, CAMElapsedTimeView, CAMFilterButton, CAMHDRButton, NSTimer, CAMShutterButton, CAMFlashBadge, CAMAvalancheIndicatorView, CAMLowDiskSpaceAlertView, UISwipeGestureRecognizer, NSDate;
 
 @interface CAMCameraView : UIView <CAMModeDialDataSource, CAMTopBarDelegate, CAMBottomBarDelegate, CAMZoomSliderDelegate, CAMTimerButtonDelegate, CAMStillImageCaptureRequestDelegate, PLCameraControllerDelegate, PLCameraPanoramaViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
     int _captureOrientation;
@@ -315,6 +315,10 @@
 @property(readonly) bool _panningExposureBias;
 @property(setter=_setExposureBiasVirtualSliderExponent:) double _exposureBiasVirtualSliderExponent;
 @property(setter=_setExposureBiasVirtualSliderPointsForFirstStop:) double _exposureBiasVirtualSliderPointsForFirstStop;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)requiresConstraintBasedLayout;
 
@@ -368,6 +372,7 @@
 - (bool)_isSwipeToModeSwitchEnabled;
 - (void)_flipToBlurredPreviewWithCompletionBlock:(id)arg1;
 - (void)_setHideGridViewForFilterSelection:(bool)arg1;
+- (void)_slalomIndicatorTapped:(id)arg1;
 - (bool)_pointIsOnPanoControls:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setHideFocusForFilterSelection:(bool)arg1;
 - (void)_updateForFocusCapabilities;
@@ -484,7 +489,6 @@
 - (bool)_isCameraEnabled;
 - (void)_setHidingBadgesForFilterUI:(bool)arg1;
 - (bool)_shouldHideTimerButtonForMode:(long long)arg1;
-- (bool)_shouldHideSlalomIndicatorForMode:(long long)arg1;
 - (bool)_shouldHidePanoramaViewForMode:(long long)arg1;
 - (bool)_shouldHideFilterButtonForMode:(long long)arg1;
 - (bool)_shouldHideShutterButtonForMode:(long long)arg1;
@@ -577,6 +581,8 @@
 - (bool)_allowExposureBiasTextView;
 - (void)timerButtonDidChangeDuration:(id)arg1;
 - (void)_updateHardwareLockIndicatorStateAnimated:(bool)arg1;
+- (bool)_shouldHideSlalomIndicatorForMode:(long long)arg1;
+- (void)_updateSlalomIndicatorText;
 - (void)hdrButtonDidChangeHDRMode:(id)arg1;
 - (void)flashButtonDidChangeAvailability:(id)arg1;
 - (void)flashButtonDidChangeFlashMode:(id)arg1;
@@ -624,6 +630,7 @@
 - (void)_setExposureBiasVirtualSliderPointsForFirstStop:(double)arg1;
 - (void)_setExposureBiasVirtualSliderExponent:(double)arg1;
 - (int)_exposureBiasSide;
+- (void)_updateExposureBiasViewsWithExposureBias:(float)arg1;
 - (double)_exposureBiasForVirtualSliderPosition:(double)arg1;
 - (double)_virtualSliderPositionForExposureBias:(double)arg1;
 - (double)_effectiveExposureBiasMovementForTranslation:(struct CGPoint { double x1; double x2; })arg1;
@@ -765,7 +772,6 @@
 - (void)_setHasMaximumNumberOfInflightImageRequests:(bool)arg1;
 - (bool)_hasMaximumNumberOfInflightImageRequests;
 - (bool)_shouldStartPreviewWhenApplicationBecomesActive;
-- (void)_showDiskSpaceWarning;
 - (void)_enableNextCapture;
 - (void)_setIgnoringAutomaticBadgeUpdatesDuringCapture:(bool)arg1;
 - (void)_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:(bool)arg1;
@@ -829,8 +835,10 @@
 - (void)_setupPreviewView;
 - (void)_ensureLivePreviewHierarchyIsValid;
 - (void)_setSwipeToModeSwitchEnabled:(bool)arg1;
+- (void)_showDiskSpaceWarning;
 - (void)_setupSuspensionSnapshotViewWithBlur:(bool)arg1;
 - (void)_resetDiskSpaceWarning;
+- (void)_updateSlalomIndicator;
 - (void)_clearFaceFadeOutTimer;
 - (void)_cancelZoomSliderTimer;
 - (void)enableCamera;

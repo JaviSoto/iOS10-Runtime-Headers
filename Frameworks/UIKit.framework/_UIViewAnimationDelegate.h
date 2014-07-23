@@ -15,8 +15,8 @@
 }
 
 
-- (id)initWithCompletionBlock:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)dealloc;
+- (id)initWithCompletionBlock:(id)arg1;
 
 @end

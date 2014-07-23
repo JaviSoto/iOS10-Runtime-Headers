@@ -4,20 +4,15 @@
 
 @class TUTelephonyCallModel, TUProxyCallModel, TUFaceTimeAudioCallModel;
 
-@interface TUCallCenterCallModelState : TUCallModelState <TUCallModelDelegate> {
-    TUTelephonyCallModel *_telephonyCallModel;
-    TUFaceTimeAudioCallModel *_faceTimeAudioCallModel;
+@interface TUCallCenterCallModelState : TUCallModelState  {
 }
 
-@property(retain) TUTelephonyCallModel * telephonyCallModel;
-@property(retain) TUFaceTimeAudioCallModel * faceTimeAudioCallModel;
+@property(retain,readonly) TUTelephonyCallModel * telephonyCallModel;
+@property(retain,readonly) TUFaceTimeAudioCallModel * faceTimeAudioCallModel;
 @property(retain,readonly) TUProxyCallModel * proxyCallModel;
 
 
-- (void)setFaceTimeAudioCallModel:(id)arg1;
-- (void)setTelephonyCallModel:(id)arg1;
 - (bool)isAmbiguous;
-- (void)callModelDidChange:(id)arg1;
 - (bool)_anyCallsSupportCallModelType:(int)arg1;
 - (bool)_displayedCallSupportsCallModelType:(int)arg1;
 - (bool)_allCallsSupportCallModelType:(int)arg1;
@@ -38,6 +33,8 @@
 - (bool)_supportsCallModelType:(int)arg1;
 - (id)proxyCallModel;
 - (void)handlePossibleStateChange;
+- (void)faceTimeAudioCallModelDidChange:(id)arg1;
+- (void)telephonyCallModelDidChange:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

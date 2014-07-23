@@ -119,6 +119,7 @@
 - (void)set_customRightView:(id)arg1;
 - (void)set_rightBarButtonItem:(id)arg1;
 - (void)set_leftBarButtonItem:(id)arg1;
+- (id)_buttonForBackButtonIndicator;
 - (bool)_wantsBackButtonIndicator;
 - (bool)_leftItemsWantBackButton;
 - (void)setHidesBackButton:(bool)arg1;

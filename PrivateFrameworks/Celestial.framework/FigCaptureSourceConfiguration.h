@@ -18,6 +18,7 @@
     bool_automaticallyEnablesLowLightBoostWhenAvailable;
     bool_applyMaxIntegrationTimeOverrideWhenAvailable;
     NSDictionary *_faceDetectionConfiguration;
+    bool_videoFeature1Enabled;
 }
 
 @property(copy) NSString * sourceID;
@@ -33,6 +34,11 @@
 @property int imageControlMode;
 @property bool automaticallyEnablesLowLightBoostWhenAvailable;
 @property bool applyMaxIntegrationTimeOverrideWhenAvailable;
+@property bool videoFeature1Enabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (int)sourceTypeForString:(id)arg1;
 + (id)stringForSourceType:(int)arg1;
@@ -40,6 +46,7 @@
 
 - (id)_sourceAttributes;
 - (id)_sourceUID;
+- (void)setVideoFeature1Enabled:(bool)arg1;
 - (void)setFaceDetectionConfiguration:(id)arg1;
 - (id)faceDetectionConfiguration;
 - (void)setApplyMaxIntegrationTimeOverrideWhenAvailable:(bool)arg1;
@@ -52,6 +59,7 @@
 - (void)setRequiredFormat:(id)arg1;
 - (void)setSourceID:(id)arg1;
 - (int)sourcePosition;
+- (bool)videoFeature1Enabled;
 - (bool)applyMaxIntegrationTimeOverrideWhenAvailable;
 - (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (int)imageControlMode;

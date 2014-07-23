@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIGestureRecognizer, UIView, CADisplayLink, UIPanGestureRecognizer, UIViewController, _UINavigationParallaxTransition, <_UINavigationInteractiveTransitionBaseDelegate>;
+@class UIGestureRecognizer, UIView, CADisplayLink, NSString, UIPanGestureRecognizer, UIViewController, _UINavigationParallaxTransition, <_UINavigationInteractiveTransitionBaseDelegate>;
 
 @interface _UINavigationInteractiveTransitionBase : UIPercentDrivenInteractiveTransition <UIGestureRecognizerDelegate> {
     UIView *_gestureRecognizerView;
@@ -55,6 +55,10 @@
 @property double previousAcceleration;
 @property double averageVelocity;
 @property double averageAcceleration;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;

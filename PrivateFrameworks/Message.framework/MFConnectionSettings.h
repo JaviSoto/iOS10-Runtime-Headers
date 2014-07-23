@@ -38,6 +38,7 @@
 - (bool)allowsTrustPrompt;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (struct __CFString { }*)connectionServiceType;
+- (void)setServiceName:(id)arg1;
 - (bool)tryDirectSSL;
 - (void)setTryDirectSSL:(bool)arg1;
 - (void)setClientCertificates:(id)arg1;
@@ -48,7 +49,6 @@
 - (void)setUsesSSL:(bool)arg1;
 - (unsigned int)portNumber;
 - (bool)usesSSL;
-- (void)setServiceName:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
 - (void)setHostname:(id)arg1;

@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
+@class NSString;
+
 @interface CalLogXMLFormatter : NSObject <CalLogFormatter> {
     bool_shouldPrettyPrint;
     bool_useTinyElementNames;
@@ -9,6 +11,10 @@
 
 @property bool shouldPrettyPrint;
 @property bool useTinyElementNames;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setUseTinyElementNames:(bool)arg1;

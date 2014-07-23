@@ -11,6 +11,10 @@
 
 @property(retain) NSString * name;
 @property(retain) NSString * category;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)category;

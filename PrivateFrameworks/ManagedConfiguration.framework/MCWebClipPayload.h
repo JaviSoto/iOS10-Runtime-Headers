@@ -28,8 +28,8 @@
 
 - (void)setSavedIdentifier:(id)arg1;
 - (bool)precomposed;
-- (bool)isRemovable;
 - (id)savedIdentifier;
+- (bool)isRemovable;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)payloadDescriptionKeyValueSections;

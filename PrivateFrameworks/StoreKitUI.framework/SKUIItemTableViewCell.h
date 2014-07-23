@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemCellLayout;
+@class NSString, SKUIItemCellLayout;
 
 @interface SKUIItemTableViewCell : SKUITableViewCell <SKUICellLayoutParentView> {
     bool_layoutNeedsLayout;
 }
 
 @property(readonly) SKUIItemCellLayout * layout;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)configureForItem:(id)arg1 rowIndex:(long long)arg2;

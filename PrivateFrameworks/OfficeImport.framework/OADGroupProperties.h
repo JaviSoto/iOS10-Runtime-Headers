@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OADFill, OADScene3D, OADShape3D;
+@class NSArray, NSString, OADFill, OADScene3D, OADShape3D;
 
 @interface OADGroupProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
     OADFill *mFill;
@@ -10,6 +10,11 @@
     OADScene3D *mScene3D;
     OADShape3D *mShape3D;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultProperties;
 

@@ -25,6 +25,7 @@
 - (void)setLimit:(unsigned int)arg1;
 - (bool)hasIdentifier;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

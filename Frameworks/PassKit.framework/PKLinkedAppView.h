@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSURL, PKLinkedAppUserRatingView, UIImageView, NSDictionary, UIButton, SSSoftwareLibraryItem, SKStoreProductViewController, UILabel, UIActivityIndicatorView;
+@class NSString, NSArray, NSURL, PKLinkedAppUserRatingView, UIImageView, NSDictionary, UIButton, SSSoftwareLibraryItem, SKStoreProductViewController, UILabel, UIActivityIndicatorView;
 
 @interface PKLinkedAppView : UITableViewCell <SKStoreProductViewControllerDelegate> {
     bool_lookupInitiated;
@@ -41,6 +41,10 @@
 @property(retain) UILabel * loadingLabel;
 @property bool appNotAvailable;
 @property(retain) SKStoreProductViewController * productViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPrice:(id)arg1;
@@ -62,7 +66,6 @@
 - (id)_imageForSize:(struct CGSize { double x1; double x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(bool)arg3;
 - (void)setFoundLibraryItem:(id)arg1;
 - (id)_priceForItem:(id)arg1;
-- (void)_buttonPressed:(id)arg1;
 - (id)foundLibraryItem;
 - (id)loadingLabel;
 - (void)setLoadingLabel:(id)arg1;
@@ -99,6 +102,7 @@
 - (void)dealloc;
 - (id)activityIndicator;
 - (void)setActivityIndicator:(id)arg1;
+- (void)_buttonPressed:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (id)iconView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

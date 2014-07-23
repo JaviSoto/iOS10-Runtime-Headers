@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_data>;
+@class NSObject<OS_dispatch_data>, NSString;
 
 @interface __NSCFLocalStreamTask : __NSCFLocalSessionTask <NSURLSessionStreamTaskSubclass> {
     struct __CFWriteStream { } *_sinkForResponseBytes;
@@ -19,6 +19,10 @@
 }
 
 @property(copy) id streamCompletion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)rawRequestForHost:(id)arg1 port:(long long)arg2 tls:(bool)arg3;
 

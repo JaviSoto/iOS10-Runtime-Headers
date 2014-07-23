@@ -3,7 +3,8 @@
  */
 
 @interface SKUIStorePageItemPinningLayoutInformation : NSObject  {
-    double _pinningLocationYAdditions;
+    double _afterPinningLocationYAdditions;
+    double _beforePinningLocationYAdditions;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -28,12 +29,15 @@
 
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } availablePinningFrame;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } layoutAttributesFrame;
-@property double pinningLocationYAdditions;
+@property double afterPinningLocationYAdditions;
+@property double beforePinningLocationYAdditions;
 
 
-- (double)pinningLocationYAdditions;
+- (double)beforePinningLocationYAdditions;
+- (double)afterPinningLocationYAdditions;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layoutAttributesFrame;
-- (void)setPinningLocationYAdditions:(double)arg1;
+- (void)setBeforePinningLocationYAdditions:(double)arg1;
+- (void)setAfterPinningLocationYAdditions:(double)arg1;
 - (void)setLayoutAttributesFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAvailablePinningFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availablePinningFrame;

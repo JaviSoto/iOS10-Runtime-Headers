@@ -17,6 +17,7 @@
 }
 
 
+- (void)updateFrameAndHandlesWithAnimation:(bool)arg1 showHandles:(bool)arg2;
 - (void)updateRangedSelectionData;
 - (double)handleOffsetForPoint:(struct CGPoint { double x1; double x2; })arg1 handlePosition:(int)arg2;
 - (void)switchToBlockModeForHandle:(id)arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2;
@@ -27,7 +28,6 @@
 - (void)selectionCreationStartedWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSelectionMode:(bool)arg1;
 - (void)touchChanged:(id)arg1 forHandleInText:(id)arg2;
-- (void)updateFrameAndHandlesWithAnimation:(bool)arg1;
 - (void)touchChanged:(id)arg1 forHandle:(id)arg2;
 - (void)autoscrollTimerFired:(id)arg1;
 - (bool)isHorizontalWritingMode;

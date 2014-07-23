@@ -34,8 +34,8 @@
 @property double timestamp;
 
 
+- (void)setHasTimestamp:(bool)arg1;
 - (id)clusters;
-- (id)batchPlaceResults;
 - (id)batchPlaceResultAtIndex:(unsigned long long)arg1;
 - (void)clearBatchPlaceResults;
 - (id)clusterAtIndex:(unsigned long long)arg1;
@@ -56,12 +56,12 @@
 - (bool)hasStatusCode;
 - (void)setHasStatusCode:(bool)arg1;
 - (void)setStatusCode:(int)arg1;
+- (id)batchPlaceResults;
 - (unsigned long long)batchPlaceResultsCount;
 - (bool)hasVersion;
 - (id)versionDomains;
 - (unsigned int)ttl;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)setHttpHeaders:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;

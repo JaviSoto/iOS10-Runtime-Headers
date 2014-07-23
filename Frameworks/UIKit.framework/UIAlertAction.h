@@ -59,11 +59,12 @@
 - (long long)style;
 - (void)setImage:(id)arg1;
 - (id)image;
+- (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)_setRepresenter:(id)arg1;
-- (id)_descriptiveText;
 - (id)_representer;
+- (id)_descriptiveText;
 - (bool)_isChecked;
 - (bool)_isDefault;
 - (void)_setIsDefault:(bool)arg1;

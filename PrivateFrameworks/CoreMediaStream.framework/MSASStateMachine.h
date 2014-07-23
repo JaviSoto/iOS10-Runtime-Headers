@@ -76,6 +76,10 @@
 @property(retain) NSDictionary * metadataBackoffManagerParameters;
 @property(retain) NSDictionary * MMCSBackoffManagerParameters;
 @property(copy) id postCommandCompletionBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)shutDownCompletionBlock:(id)arg1;

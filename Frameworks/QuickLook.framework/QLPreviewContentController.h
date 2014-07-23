@@ -48,6 +48,10 @@
 
 @property struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; } clientContext;
 @property(copy) UIColor * backgroundColor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <QLPreviewContentDataSource> * dataSource;
 @property <QLPreviewContentDelegate> * delegate;
 @property int previewMode;
@@ -105,6 +109,7 @@
 - (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)becomeForeground;
 - (void)enterBackground;
+- (void)stopLoadingCurrentPreviewItem;
 - (void)refreshCurrentPreviewItem;
 - (void)checkCurrentPreviewItem;
 - (void)setCurrentPreviewItemIndex:(long long)arg1;

@@ -15,6 +15,7 @@
     NSSet *_assetFieldNamesToPublishURLs;
     unsigned long long _requestedTTL;
     unsigned long long _URLOptions;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 @property(retain) NSArray * recordIDs;
@@ -27,11 +28,14 @@
 @property(retain) NSSet * assetFieldNamesToPublishURLs;
 @property unsigned long long requestedTTL;
 @property unsigned long long URLOptions;
+@property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 + (bool)supportsSecureCoding;
 
 - (id)assetFieldNamesToPublishURLs;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
+- (void)setWebSharingIdentityDataByRecordID:(id)arg1;
+- (id)webSharingIdentityDataByRecordID;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (void)setDesiredPackageFileIndices:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSURL, <CoreDAVTaskGroupDelegate>, CalDAVCalendarServerInviteNotificationItem;
+@class CalDAVCalendarServerInviteNotificationItem, <CoreDAVTaskGroupDelegate>, NSURL, NSString;
 
 @interface CalDAVReplyToSharedCalendarInvitationTaskGroup : CoreDAVTaskGroup <CoreDAVPostTaskDelegate> {
     CalDAVCalendarServerInviteNotificationItem *_invitation;
@@ -16,6 +16,10 @@
 @property(retain) CalDAVCalendarServerInviteNotificationItem * invitation;
 @property bool acceptInvitation;
 @property(retain) NSURL * calendarHomeURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)sharedAs;

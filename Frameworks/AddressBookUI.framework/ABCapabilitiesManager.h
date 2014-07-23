@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableDictionary;
+@class NSString, NSMutableDictionary;
 
 @interface ABCapabilitiesManager : NSObject <IDSIDQueryControllerDelegate> {
     bool_isListeningToIDSServiceAvailability;
     bool_isListeningToIDSQueryController;
     NSMutableDictionary *_destinationStatus;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;

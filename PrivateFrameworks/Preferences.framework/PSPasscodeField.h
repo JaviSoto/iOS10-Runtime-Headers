@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSPasscodeFieldDelegate>, NSMutableArray, NSMutableString;
+@class NSString, NSMutableString, <PSPasscodeFieldDelegate>, NSMutableArray;
 
 @interface PSPasscodeField : UIView <UIKeyInput> {
     NSMutableArray *_dashViews;
@@ -17,6 +17,10 @@
 @property <PSPasscodeFieldDelegate> * delegate;
 @property(readonly) unsigned long long numberOfEntryFields;
 @property bool securePasscodeEntry;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

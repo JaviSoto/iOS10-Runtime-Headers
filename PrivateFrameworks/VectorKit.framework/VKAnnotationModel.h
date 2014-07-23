@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKMapModel, NSArray, NSMutableSet, VKStyleManager, NSMutableArray, VKAnnotationMarker;
+@class VKAnnotationMarker, NSString, NSArray, VKMapModel, NSMutableSet, NSMutableArray, VKStyleManager;
 
 @interface VKAnnotationModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     NSMutableArray *_annotationMarkers;
@@ -42,6 +42,10 @@
 @property(readonly) bool needsLayout;
 @property(copy) id annotationMarkerDeselectionCallback;
 @property VKMapModel * mapModel;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 + (bool)reloadOnStylesheetChange;

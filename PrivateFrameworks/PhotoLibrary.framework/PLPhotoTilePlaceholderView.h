@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, UIView, UIActivityIndicatorView;
+@class NSString, UIActivityIndicatorView, UILabel, UIView;
 
 @interface PLPhotoTilePlaceholderView : UIView <PLTilePlaceholderView> {
     UIActivityIndicatorView *_loadingIndicatorView;
@@ -11,6 +11,11 @@
     double _lastViewPhaseChangeDate;
     bool_indicatorIsVisible;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setToolbarVisible:(bool)arg1;

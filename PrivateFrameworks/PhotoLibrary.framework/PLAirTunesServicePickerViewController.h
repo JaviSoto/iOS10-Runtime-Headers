@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSDictionary, <PLAirTunesServicePickerViewControllerDelegate>, UITableView;
+@class NSArray, NSDictionary, <PLAirTunesServicePickerViewControllerDelegate>, NSString, UITableView;
 
 @interface PLAirTunesServicePickerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     id _delegate;
@@ -13,6 +13,10 @@
 
 @property <PLAirTunesServicePickerViewControllerDelegate> * delegate;
 @property(retain) NSArray * availableRoutes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAvailableRoutes:(id)arg1;

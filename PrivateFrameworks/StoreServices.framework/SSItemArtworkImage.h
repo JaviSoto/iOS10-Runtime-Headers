@@ -18,6 +18,10 @@
 @property(retain) NSURL * URL;
 @property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(readonly) NSString * URLString;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;

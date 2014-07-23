@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppContext, IKJSPlayer, <IKAppPlayerDelegate>;
+@class NSString, <IKAppPlayerDelegate>, IKAppContext, IKJSPlayer;
 
-@interface IKAppPlayer : NSObject <IKJSPlayerAppBridge, IKJSDOMFeature> {
+@interface IKAppPlayer : NSObject <IKJSPlayerAppBridge, IKDOMFeature> {
+    NSString *_featureName;
     IKAppContext *_appContext;
     <IKAppPlayerDelegate> *_delegate;
     IKJSPlayer *_jsPlayer;
@@ -12,17 +13,22 @@
 
 @property <IKAppPlayerDelegate> * delegate;
 @property IKJSPlayer * jsPlayer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(retain,readonly) NSString * featureName;
 @property IKAppContext * appContext;
 
 
-- (id)retrieveJSFeature;
-- (void)migrateFromFeature:(id)arg1;
-- (id)featureName;
-- (id)jsPlayer;
-- (void)setJsPlayer:(id)arg1;
+- (id)featureJSObject;
+- (id)initWithFeatureName:(id)arg1;
 - (id)currentAVMediaElementForPlayer:(id)arg1;
+- (void)setJsPlayer:(id)arg1;
+- (id)jsPlayer;
 - (void)setAppContext:(id)arg1;
 - (id)appContext;
+- (id)featureName;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;

@@ -41,9 +41,11 @@
 - (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id)availableData;
+- (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithURL:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3;
 - (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
 - (Class)classForCoder;
 - (unsigned long long)seekToEndOfFile;
 - (unsigned long long)offsetInFile;

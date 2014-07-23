@@ -16,9 +16,9 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)setChannel:(id)arg1;
-- (id)channel;
 - (id)initWithName:(id)arg1 password:(id)arg2 channel:(id)arg3;
+- (id)channel;
+- (void)setChannel:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)password;

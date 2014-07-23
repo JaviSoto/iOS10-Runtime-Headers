@@ -134,13 +134,13 @@
 - (id)autocorrectionRecordForInputString;
 - (bool)commitsAcceptedCandidate;
 - (id)shadowTyping;
+- (id)wordSeparator;
 - (bool)inputStringIsExemptFromChecker;
+- (bool)stringEndsWord:(id)arg1;
 - (bool)inputStringAcceptsCurrentCandidateIfSelected:(id)arg1;
 - (bool)shouldSuppressAutocorrectionWithTerminator:(id)arg1;
 - (bool)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (id)replacementForDoubleSpace;
-- (id)wordSeparator;
-- (bool)stringEndsWord:(id)arg1;
 - (bool)acceptInputString:(id)arg1;
 - (bool)suppliesCompletions;
 - (bool)suppressCompletionsForFieldEditor;

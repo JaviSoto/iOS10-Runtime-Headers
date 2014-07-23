@@ -21,12 +21,12 @@
 - (void)setSubdomainsMatch:(bool)arg1;
 - (bool)subdomainsMatch;
 - (id)initWithPattern:(id)arg1;
+- (id)path;
 - (void)setPort:(id)arg1;
 - (bool)matchesURL:(id)arg1;
 - (id)port;
 - (id)domain;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setDomain:(id)arg1;

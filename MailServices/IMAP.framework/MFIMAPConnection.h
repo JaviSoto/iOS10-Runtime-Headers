@@ -81,7 +81,6 @@
 - (bool)storeFlags:(id)arg1 state:(bool)arg2 forRange:(struct { unsigned int x1; unsigned int x2; })arg3;
 - (id)searchUidSet:(id)arg1 forNewMessageIDs:(id)arg2;
 - (unsigned int)getMailboxIDForUID:(unsigned int)arg1;
-- (unsigned long long)countForSearchOfIDSet:(id)arg1 forTerms:(id)arg2 success:(bool*)arg3;
 - (id)quotaPercentagesForMailbox:(id)arg1;
 - (bool)getQuotaForRootName:(id)arg1;
 - (void)fetchQuotaRootNamesForMailboxes:(id)arg1;
@@ -120,9 +119,11 @@
 - (id)messageSetForRange:(struct { unsigned int x1; unsigned int x2; })arg1;
 - (bool)storeFlags:(id)arg1 state:(bool)arg2 forMessageSet:(id)arg3;
 - (id)copyArgumentForSearchTerm:(id)arg1;
+- (unsigned long long)countForSearchOfIDSet:(id)arg1 forTerms:(id)arg2 success:(bool*)arg3;
 - (id)searchIDSet:(id)arg1 forTerms:(id)arg2 success:(bool*)arg3;
 - (id)eSearchIDSet:(id)arg1 areMessageSequenceNumbers:(bool)arg2 forTerms:(id)arg3 success:(bool*)arg4 returning:(int)arg5;
 - (bool)_sendMailboxCommand:(int)arg1 withArguments:(id)arg2;
+- (void)updateSearchCapability;
 - (id)messageSetForNumbers:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)_errorForResponse:(id)arg1 commandParams:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg2;
 - (void)handleBytesAvailable;

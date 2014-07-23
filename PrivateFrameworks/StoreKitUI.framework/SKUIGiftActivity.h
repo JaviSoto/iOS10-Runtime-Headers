@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIProductPageItem;
+@class NSString, SKUIClientContext, SKUIProductPageItem;
 
 @interface SKUIGiftActivity : UIActivity <SKUIGiftViewControllerDelegate> {
     SKUIClientContext *_clientContext;
     SKUIProductPageItem *_item;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;

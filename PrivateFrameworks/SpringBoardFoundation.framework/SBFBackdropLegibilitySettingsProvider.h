@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class _UIBackdropView, _UILegibilitySettings, <SBFLegibilitySettingsProviderDelegate>;
+@class _UIBackdropView, <SBFLegibilitySettingsProviderDelegate>, NSString, _UILegibilitySettings;
 
 @interface SBFBackdropLegibilitySettingsProvider : NSObject <_UIBackdropViewObserver, SBFLegibilitySettingsProvider> {
     _UIBackdropView *_backdropView;
@@ -10,6 +10,10 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <SBFLegibilitySettingsProviderDelegate> * delegate;
 @property(retain,readonly) _UILegibilitySettings * legibilitySettings;
 

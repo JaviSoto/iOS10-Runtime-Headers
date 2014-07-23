@@ -2,10 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, NSString, IKAppDocument, SSVLoadURLOperation, NSSet, NSValue, NSDictionary, SKUINavigationBarController, UIViewController, NSNumber;
+@class UIView, NSString, NSArray, IKAppDocument, NSSet, SSVLoadURLOperation, NSDictionary, SKUINavigationBarController, NSValue, UIViewController, NSNumber;
 
 @interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationPaletteProvider> {
+    UIViewController *_beforeErrorChildViewController;
     UIViewController *_childViewController;
+    NSArray *_defaultLeftBarButtonItems;
     IKAppDocument *_document;
     SSVLoadURLOperation *_loadURLOperation;
     SKUINavigationBarController *_navigationBarController;
@@ -18,6 +20,10 @@
     NSString *_urlString;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIView * navigationPaletteView;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
@@ -26,18 +32,25 @@
 - (void)documentNeedsUpdate:(id)arg1;
 - (void)documentScrollToTop:(id)arg1;
 - (void)document:(id)arg1 runTestWithName:(id)arg2 options:(id)arg3;
-- (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2;
+- (void)_performActionForDialogButton:(id)arg1;
+- (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2 dictionary:(id)arg3;
+- (void)_networkTypeChangeNotification:(id)arg1;
+- (void)_showDialogForLegacyProtocolDictionary:(id)arg1;
+- (void)_redirectToURL:(id)arg1;
 - (void)_finishLoadOperationWithResponse:(id)arg1 error:(id)arg2;
+- (void)_reloadForNetworkTypeChange;
 - (void)_reloadNavigationPalette;
 - (void)_setChildViewController:(id)arg1;
 - (void)_sendOnViewAttributesChangeWithAttributes:(id)arg1;
 - (id)_navigationBarViewElement;
 - (void)_enqueueLoadURLOperation;
+- (void)_reloadDefaultBarButtonItems;
 - (void)_reloadNavigationBarController;
 - (id)_newViewControllerWithTemplateElement:(id)arg1 options:(id)arg2 clientContext:(id)arg3;
 - (id)_sidepackViewControllerWithOptions:(id)arg1 clientContext:(id)arg2;
 - (id)navigationPaletteView;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 clientContext:(id)arg3;
+- (void)_showAccountViewControllerWithURL:(id)arg1;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)dealloc;

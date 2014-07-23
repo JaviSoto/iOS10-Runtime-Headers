@@ -25,8 +25,8 @@
 - (bool)isBluetoothEnabled;
 - (void)setBluetoothEnabled:(bool)arg1;
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
-- (bool)isWifiEnabled;
 - (void)setWifiEnabled:(bool)arg1;
+- (bool)isWifiEnabled;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

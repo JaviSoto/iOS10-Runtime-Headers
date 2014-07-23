@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSArray;
+@class NSNumber, NSArray, NSString;
 
 @interface SSRentalCheckoutRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountIdentifier;
@@ -17,6 +17,10 @@
 @property(readonly) NSNumber * rentalKeyIdentifier;
 @property(readonly) long long downloadIdentifier;
 @property bool shouldValidateRentalInfo;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShouldValidateRentalInfo:(bool)arg1;

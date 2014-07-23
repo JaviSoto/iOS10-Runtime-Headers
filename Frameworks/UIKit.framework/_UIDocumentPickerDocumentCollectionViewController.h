@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIDocumentPickerSortOrderView, NSArray, _UIDocumentPickerContainerModel, _UIDocumentPickerViewServiceViewController;
+@class _UIDocumentPickerSortOrderView, NSArray, _UIDocumentPickerContainerModel, NSString, _UIDocumentPickerViewServiceViewController;
 
 @interface _UIDocumentPickerDocumentCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     bool_shouldHideSortBar;
@@ -19,6 +19,10 @@
 @property bool shouldHideSortBar;
 @property(retain) _UIDocumentPickerSortOrderView * sortView;
 @property(copy) NSArray * modelObjects;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)model;
@@ -40,14 +44,15 @@
 - (id)serviceViewController;
 - (void)setModelObjects:(id)arg1;
 - (id)modelObjects;
+- (void)viewDidAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
-- (void)viewWillAppear:(bool)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

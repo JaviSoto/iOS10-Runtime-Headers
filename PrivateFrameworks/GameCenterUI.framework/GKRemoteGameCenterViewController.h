@@ -17,6 +17,10 @@
 @property long long leaderboardTimeScope;
 @property(retain) NSString * leaderboardIdentifier;
 @property bool shouldDisplayChallengePlayButton;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) GKGame * game;
 
 + (id)exportedInterface;

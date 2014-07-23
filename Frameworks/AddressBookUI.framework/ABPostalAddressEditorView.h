@@ -22,6 +22,10 @@
 @property(copy) NSDictionary * addressFormats;
 @property(copy) NSArray * cellsLayout;
 @property(copy) NSMutableDictionary * textFields;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIMediaComponent, SKUIResourceLoader, UIPageViewController, SKUIGalleryPageComponent, UITapGestureRecognizer, <SKUIEmbeddedMediaViewDelegate>, NSObject<OS_dispatch_source>, UIPageControl, NSMapTable;
+@class SKUIMediaComponent, SKUIResourceLoader, UIPageViewController, SKUIGalleryPageComponent, UITapGestureRecognizer, <SKUIEmbeddedMediaViewDelegate>, NSString, NSObject<OS_dispatch_source>, UIPageControl, NSMapTable;
 
 @interface SKUIGalleryViewController : UIViewController <SKUIArtworkRequestDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate> {
     SKUIResourceLoader *_artworkLoader;
@@ -18,6 +18,10 @@
 @property(readonly) SKUIGalleryPageComponent * galleryComponent;
 @property <SKUIEmbeddedMediaViewDelegate> * embeddedMediaDelegate;
 @property(readonly) SKUIMediaComponent * selectedMediaComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_selectedViewController;

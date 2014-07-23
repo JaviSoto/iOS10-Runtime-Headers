@@ -18,12 +18,12 @@
 @property(retain) NSString * url;
 
 
-- (bool)hasSize;
 - (void)setHasSize:(bool)arg1;
 - (id)initWithPlaceDataPhotoContent:(id)arg1;
 - (bool)hasUrl;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)url;

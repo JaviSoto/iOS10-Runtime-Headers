@@ -20,6 +20,10 @@
 @property(readonly) NSString * targetString;
 @property(readonly) NSString * title;
 @property(readonly) NSURL * URL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithLinkDictionary:(id)arg1;

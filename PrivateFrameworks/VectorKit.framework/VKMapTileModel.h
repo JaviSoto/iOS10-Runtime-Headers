@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSSet, VKMapModel, NSMutableSet, VKStyleManager;
+@class NSSet, VKMapModel, NSMutableSet, NSString, VKStyleManager;
 
 @interface VKMapTileModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     NSMutableSet *_tilesWillEnterScene;
@@ -21,6 +21,10 @@
 @property(readonly) NSSet * tilesInScenePlusExitingTiles;
 @property(readonly) unsigned char minimumZ;
 @property(readonly) unsigned char maximumZ;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 + (bool)reloadOnActiveTileGroupChange;

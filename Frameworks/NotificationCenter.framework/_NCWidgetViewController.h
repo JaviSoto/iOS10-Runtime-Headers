@@ -28,6 +28,10 @@
 }
 
 @property(getter=_contentProvidingViewController,retain) UIViewController<NCWidgetProviding> * contentProvidingViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_reduceTransparencyDidChange:(id)arg1;
 + (void)initialize;

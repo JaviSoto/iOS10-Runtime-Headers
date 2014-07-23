@@ -52,10 +52,10 @@
 - (void)setFontColor:(id)arg1;
 - (void)createBitmapSpritesForText;
 - (void)setVerticalAlignmentMode:(long long)arg1;
-- (long long)verticalAlignmentMode;
 - (void)setHorizontalAlignmentMode:(long long)arg1;
-- (long long)horizontalAlignmentMode;
 - (id)initWithFontNamed:(id)arg1;
+- (long long)horizontalAlignmentMode;
+- (long long)verticalAlignmentMode;
 - (void)createSpritesForText;
 - (id)_getTextSprites;
 - (id)childrenInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -65,8 +65,8 @@
 - (void)setColorBlendFactor:(double)arg1;
 - (double)colorBlendFactor;
 - (id)nodeAtPoint:(struct CGPoint { double x1; double x2; })arg1 recursive:(bool)arg2;
-- (id)fontColor;
 - (void)_initialize;
+- (id)fontColor;
 - (id)text;
 - (double)fontSize;
 - (id)color;
@@ -77,6 +77,8 @@
 - (void)setFontName:(id)arg1;
 - (id)fontName;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copy;

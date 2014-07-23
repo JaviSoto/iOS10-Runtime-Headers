@@ -52,12 +52,18 @@
 @property(readonly) struct { unsigned int x1[8]; } serviceAuditToken;
 @property bool serviceViewShouldShareTouchesWithHost;
 @property(setter=_setTouchDeliveryPolicyAssertion:,retain) BKSTouchDeliveryPolicyAssertion * _touchDeliveryPolicyAssertion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)exportedInterface;
++ (id)requestViewControllerWithService:(id)arg1 traitCollection:(id)arg2 connectionHandler:(id)arg3;
++ (id)requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 connectionHandler:(id)arg4;
 + (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id)arg3;
 + (bool)__shouldAllowHostProcessToTakeFocus;
 + (bool)shouldPropagateAppearanceCustomizations;
-+ (id)_requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 service:(id)arg3 connectionHandler:(id)arg4;
++ (id)_requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 service:(id)arg4 connectionHandler:(id)arg5;
 + (bool)__shouldHostRemoteTextEffectsWindow;
 + (id)requestViewControllerWithService:(id)arg1 connectionHandler:(id)arg2;
 + (id)serviceViewControllerInterface;
@@ -73,6 +79,7 @@
 - (id)disconnect;
 - (id)serviceViewControllerProxyWithErrorHandler:(id)arg1;
 - (id)_touchDeliveryPolicyAssertion;
+- (id)_cancelTouchesForCurrentEventInHostedContent;
 - (void)setServiceViewShouldShareTouchesWithHost:(bool)arg1;
 - (void)restoreStateForSession:(id)arg1 anchor:(id)arg2;
 - (void)saveStateForSession:(id)arg1 anchor:(id)arg2;
@@ -80,6 +87,7 @@
 - (void)setInheritsSecurity:(bool)arg1;
 - (void)__sendNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 hidden:(bool)arg2;
+- (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fenceSendRight:(id)arg2;
 - (void)__viewServicePreferredContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fenceSendRight:(id)arg2;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(bool)arg1;
 - (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { double x1; double x2; })arg1 animated:(bool)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
@@ -127,6 +135,8 @@
 - (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { double x1; double x2; })arg1 resultHandler:(id)arg2;
 - (void)synchronizeAnimationsInActions:(id)arg1;
 - (bool)__shouldRemoteViewControllerFenceOperations;
+- (void)viewDidInvalidateIntrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSizeForServiceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (int)__automatic_invalidation_logic;
 - (void)dimmingViewWasTapped:(id)arg1;

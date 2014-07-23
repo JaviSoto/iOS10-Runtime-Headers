@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class ACAccountCredential, NSMapTable, ACAccountStore, OAURLRequestSigner;
+@class ACAccountCredential, NSMapTable, NSString, ACAccountStore, OAURLRequestSigner;
 
 @interface MKMapItemMetadataRequester : NSObject <NSURLConnectionDelegate> {
     NSMapTable *_requestsForURLs;
@@ -16,6 +16,10 @@
 
 @property(readonly) OAURLRequestSigner * signer;
 @property(readonly) ACAccountCredential * yelpAccountCredentials;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 

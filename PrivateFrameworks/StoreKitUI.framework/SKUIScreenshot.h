@@ -14,6 +14,10 @@
 @property(readonly) long long numberOfVariants;
 @property(readonly) NSString * orientationString;
 @property(readonly) long long uniqueIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString, NSData, NEKeychainItem, NEDNSSettings;
+@class NSString, NSArray, NSData, NEKeychainItem, NEDNSSettings;
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol  {
     bool_useExtendedAuthentication;
@@ -11,6 +11,8 @@
     NSString *_remoteIdentifier;
     NEDNSSettings *_DNSSettings;
     NEKeychainItem *_sharedSecretKeychainItem;
+    NSArray *_legacyProposals;
+    NSArray *_legacyExchangeMode;
 }
 
 @property long long authenticationMethod;
@@ -20,14 +22,20 @@
 @property(copy) NSString * remoteIdentifier;
 @property(copy) NEDNSSettings * DNSSettings;
 @property(copy) NEKeychainItem * sharedSecretKeychainItem;
+@property(copy) NSArray * legacyProposals;
+@property(copy) NSArray * legacyExchangeMode;
 
 + (bool)supportsSecureCoding;
 
+- (id)legacyExchangeMode;
+- (id)legacyProposals;
 - (id)remoteIdentifier;
 - (id)DNSSettings;
 - (bool)useExtendedAuthentication;
 - (void)setRemoteIdentifier:(id)arg1;
 - (void)setUseExtendedAuthentication:(bool)arg1;
+- (void)setLegacyProposals:(id)arg1;
+- (void)setLegacyExchangeMode:(id)arg1;
 - (void)setDNSSettings:(id)arg1;
 - (void)setAuthenticationMethod:(long long)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;

@@ -35,10 +35,10 @@
 + (long long)routingModeEnumForCalRouteType:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (id)placemark;
 - (id)fullTitleAndAddressString;
 - (id)geoURLString;
 - (id)typeString;
-- (id)placemark;
 - (void)setAbURLString:(id)arg1;
 - (id)abURLString;
 - (void)setPlacemark:(id)arg1;

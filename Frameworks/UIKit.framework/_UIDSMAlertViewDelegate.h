@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface _UIDSMAlertViewDelegate : NSObject <UIAlertViewDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -15,6 +17,10 @@
 }
 
 @property(copy) id completionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setCompletionHandler:(id)arg1;

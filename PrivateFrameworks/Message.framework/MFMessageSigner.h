@@ -28,8 +28,8 @@
 - (id)emailAddress;
 - (int)action;
 - (id)certificates;
-- (id)sender;
 - (id)error;
+- (id)sender;
 - (void)dealloc;
 
 @end

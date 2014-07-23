@@ -56,6 +56,7 @@
 - (void)setUsingDefaultAccount:(bool)arg1;
 - (id)initOutboxRestoreOfMessage:(id)arg1;
 - (id)initSendAgainDraftOfMessage:(id)arg1;
+- (id)initDraftRestoreOfMessage:(id)arg1;
 - (id)initForwardOfMessage:(id)arg1;
 - (id)initReplyAllToMessage:(id)arg1;
 - (id)initReplyToMessage:(id)arg1;
@@ -64,7 +65,7 @@
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
 - (id)initWithComposeType:(int)arg1;
 - (void)setOriginatingBundleID:(id)arg1;
-- (id)initDraftRestoreOfMessage:(id)arg1;
+- (id)initWithComposeType:(int)arg1 RFC822Data:(id)arg2;
 - (void)setSendingAddress:(id)arg1;
 - (id)sendingAddress;
 - (bool)usingDefaultAccount;

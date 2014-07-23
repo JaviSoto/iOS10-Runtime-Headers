@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIRedeemITunesPassLearnMoreView, SKUIPassbookLoader, NSURL;
+@class NSString, SKUIPassbookLoader, NSURL, SKUIRedeemITunesPassLearnMoreView;
 
 @interface SKUIRedeemITunesPassLearnMoreViewController : SKUIRedeemStepViewController <SKUIPassbookLoaderDelegate> {
     bool_didTapAddPassbookButton;
@@ -10,6 +10,11 @@
     SKUIPassbookLoader *_passbookLoader;
     NSURL *_passbookURL;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_didLoadPassbookURLString:(id)arg1;

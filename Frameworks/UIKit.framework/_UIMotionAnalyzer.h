@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, _UIViewerRelativeDevicePose, UILabel, _UIMotionAnalyzerSettings, UIView;
+@class UIWindow, _UIViewerRelativeDevicePose, NSString, UILabel, _UIMotionAnalyzerSettings, UIView;
 
 @interface _UIMotionAnalyzer : NSObject <_UISettingsKeyObserver> {
     _UIMotionAnalyzerSettings *_settings;
@@ -89,6 +89,10 @@
 }
 
 @property(readonly) _UIViewerRelativeDevicePose * viewerRelativeDevicePose;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithSettings:(id)arg1;

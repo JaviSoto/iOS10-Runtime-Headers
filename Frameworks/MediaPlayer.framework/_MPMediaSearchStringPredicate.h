@@ -11,6 +11,10 @@
 
 @property(copy) NSString * searchString;
 @property(copy) NSSet * properties;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 

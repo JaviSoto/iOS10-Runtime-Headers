@@ -32,6 +32,8 @@
 - (struct CGPoint { double x1; double x2; })anchorPoint;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

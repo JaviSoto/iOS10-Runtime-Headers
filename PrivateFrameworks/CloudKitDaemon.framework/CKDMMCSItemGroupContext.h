@@ -51,8 +51,8 @@
 - (bool)_setupItemsWithError:(id*)arg1;
 - (id)initWithMMCS:(id)arg1 itemGroup:(id)arg2 progress:(id)arg3 start:(id)arg4 completionHandler:(id)arg5;
 - (void)didCompleteRequestWithError:(id)arg1;
-- (id)MMCS;
 - (void)setMMCS:(id)arg1;
+- (id)MMCS;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
 - (void)start;

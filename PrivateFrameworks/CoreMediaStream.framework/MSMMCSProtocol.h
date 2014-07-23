@@ -13,6 +13,10 @@
 
 @property(readonly) NSString * personID;
 @property(readonly) struct __MMCSEngine { }* engine;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)computeItemIDForAsset:(id)arg1;
 

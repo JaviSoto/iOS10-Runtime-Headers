@@ -22,10 +22,14 @@
 
 @property(retain) NSProgress * progress;
 @property(copy) id downloadCompletionBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)downloadCompletionBlock;
-- (void)_putRecordInGenstore:(id)arg1 stagedFileID:(id)arg2 statInfo:(id)arg3 version:(id)arg4 completionHandler:(id)arg5;
+- (void)_putRecordInGenstore:(id)arg1 stageURL:(id)arg2 statInfo:(id)arg3 version:(id)arg4 completionHandler:(id)arg5;
 - (id)_stageRecord:(id)arg1 error:(id*)arg2;
 - (id)_stageFileWithRecord:(id)arg1 error:(id*)arg2;
 - (id)_stagePackageWithRecord:(id)arg1 error:(id*)arg2;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSFileAccessNode, NSObject<OS_xpc_object>;
+@class NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>, NSFileAccessNode, NSObject<OS_xpc_object>;
 
 @interface NSFileAccessArbiter : NSObject <NSFileAccessArbiter> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -13,6 +13,11 @@
     NSFileAccessNode *_rootNode;
     NSObject<OS_xpc_object> *_superarbitrationServer;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)finalize;

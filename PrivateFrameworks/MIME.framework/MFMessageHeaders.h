@@ -9,20 +9,15 @@
     unsigned int _preferredEncoding;
 }
 
-+ (id)basicHeaders;
-+ (id)uniqueHeaderKeyStringForString:(id)arg1;
-+ (id)addressListFromEncodedString:(id)arg1;
 + (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned long long)arg2 firstLineBuffer:(unsigned long long)arg3;
 + (bool)shouldDecodeHeaderForKey:(id)arg1;
 + (id)copyAddressListFromEncodedData:(id)arg1 encoding:(unsigned int)arg2;
 + (bool)isStructuredHeaderKey:(id)arg1;
++ (id)basicHeaders;
++ (id)uniqueHeaderKeyStringForString:(id)arg1;
++ (id)addressListFromEncodedString:(id)arg1;
 
 - (id)headerData;
-- (id)references;
-- (id)firstSenderAddress;
-- (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
-- (id)copyAddressListForResentFrom;
-- (void)setPreferredEncoding:(unsigned int)arg1;
 - (id)copyAddressListForReplyTo;
 - (id)encodedHeaders;
 - (bool)messageIsFromEntourage;
@@ -51,6 +46,11 @@
 - (void)_setCapitalizedKey:(id)arg1 forKey:(id)arg2;
 - (id)_decodeHeaderKeysFromData:(id)arg1;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned int)arg2;
+- (id)references;
+- (id)firstSenderAddress;
+- (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
+- (id)copyAddressListForResentFrom;
+- (void)setPreferredEncoding:(unsigned int)arg1;
 - (id)init;
 - (id)mutableCopy;
 - (void)dealloc;

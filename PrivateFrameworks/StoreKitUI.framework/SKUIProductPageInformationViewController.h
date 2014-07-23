@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageProductInfo, SKUIClientContext, SKUIProductInformationView, SKUIProductPageItem, SKUIContentRatingArtworkResourceLoader, NSOperationQueue;
+@class SKUIContentRatingArtworkResourceLoader, NSString, SKUIProductPageProductInfo, SKUIProductInformationView, SKUIProductPageItem, SKUIClientContext, NSOperationQueue;
 
 @interface SKUIProductPageInformationViewController : UIViewController <SKUIContentRatingArtworkLoaderObserver> {
     SKUIClientContext *_clientContext;
@@ -16,6 +16,10 @@
 @property(readonly) SKUIClientContext * clientContext;
 @property(readonly) SKUIProductPageItem * item;
 @property(retain) NSOperationQueue * operationQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_informationLinesWithItem:(id)arg1 ratingImage:(id)arg2;

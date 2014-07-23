@@ -53,8 +53,8 @@
 - (void)setRecordFetchedBlock:(id)arg1;
 - (id)recordFetchedBlock;
 - (void)setDesiredKeys:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

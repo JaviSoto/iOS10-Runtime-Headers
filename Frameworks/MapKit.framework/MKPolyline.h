@@ -7,6 +7,10 @@
 @interface MKPolyline : MKMultiPoint <MKOverlay> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(copy,readonly) NSString * title;
 @property(copy,readonly) NSString * subtitle;

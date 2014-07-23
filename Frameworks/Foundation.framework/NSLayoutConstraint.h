@@ -33,6 +33,10 @@
 @property id container;
 @property(copy) NSString * symbolicConstant;
 @property(getter=_loweredConstantNeedsUpdate,setter=_setLoweredConstantNeedsUpdate:) bool loweredConstantNeedsUpdate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 constant:(double)arg4;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5;
@@ -44,8 +48,9 @@
 + (id)_findCommonAncestorOfItem:(id)arg1 andItem:(id)arg2;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 constant:(double)arg7;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 symbolicConstant:(id)arg7;
-+ (void)deactivateConstraints:(id)arg1;
 + (void)activateConstraints:(id)arg1;
++ (void)deactivateConstraints:(id)arg1;
++ (bool)_UIWantsMarginAttributeSupport;
 + (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(bool)arg2 overlap:(double)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
 + (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(long long)arg2;
 + (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
@@ -78,6 +83,7 @@
 - (id)_loweredExpression;
 - (bool)_describesSameRestrictionAsConstraint:(id)arg1;
 - (id)_constraintByReplacingView:(id)arg1 withView:(id)arg2;
+- (id)symbolicConstant;
 - (void)_clearWeakContainerReference;
 - (void)_setPrimitiveConstraintType:(int)arg1;
 - (int)_primitiveConstraintType;
@@ -145,7 +151,6 @@
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (double)multiplier;
-- (id)symbolicConstant;
 - (bool)_loweredConstantNeedsUpdate;
 - (bool)_loweredConstantIsRounded;
 - (bool)_nsib_isRedundant;

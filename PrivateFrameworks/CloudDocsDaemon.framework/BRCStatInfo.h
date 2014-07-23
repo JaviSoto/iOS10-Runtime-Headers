@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRFieldCKInfo, BRCItemID, NSString, NSData;
+@class BRFieldCKInfo, BRCItemID, NSString, NSData, BRiWorkSharingInfo;
 
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding> {
     BRFieldCKInfo *_ckInfo;
@@ -21,6 +21,8 @@
     bool_hiddenExt;
     NSData *_xattrSignature;
     NSData *_finderTags;
+    NSData *_lazyXattr;
+    BRiWorkSharingInfo *_iWorkSharingInfo;
 }
 
 @property(retain) BRFieldCKInfo * ckInfo;
@@ -38,11 +40,18 @@
 @property(getter=isHiddenExt) bool hiddenExt;
 @property(retain) NSData * finderTags;
 @property(retain) NSData * xattrSignature;
+@property(retain) NSData * lazyXattr;
+@property(retain) BRiWorkSharingInfo * iWorkSharingInfo;
 
 + (bool)supportsSecureCoding;
 
+- (bool)isiWorkShareable;
+- (void)setIWorkSharingInfo:(id)arg1;
+- (id)iWorkSharingInfo;
 - (void)setFinderTags:(id)arg1;
 - (id)finderTags;
+- (void)setLazyXattr:(id)arg1;
+- (id)lazyXattr;
 - (void)setXattrSignature:(id)arg1;
 - (id)xattrSignature;
 - (void)setHiddenExt:(bool)arg1;
@@ -62,10 +71,10 @@
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;
 - (id)aliasTargetContainerID;
 - (id)aliasTargetItemID;
-- (int)creator;
-- (bool)isWritable;
-- (void)setParentID:(id)arg1;
 - (id)parentID;
+- (bool)isWritable;
+- (int)creator;
+- (void)setParentID:(id)arg1;
 - (void)setMode:(BOOL)arg1;
 - (void)setType:(BOOL)arg1;
 - (BOOL)type;

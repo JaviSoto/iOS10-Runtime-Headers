@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, NSMutableData;
+@class NSString, NSError, NSObject<OS_dispatch_queue>, NSMutableData;
 
 @interface CKDJSONResponseBodyParser : NSObject <CKDResponseBodyParser> {
 
@@ -23,6 +23,10 @@
 @property(retain) NSError * parserError;
 @property(retain) NSObject<OS_dispatch_queue> * parseQueue;
 @property(retain) NSMutableData * parserData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setParseQueue:(id)arg1;

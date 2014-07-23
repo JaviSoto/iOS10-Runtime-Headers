@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSArray, UIActionSheet, PLPhotoLibrary, <PLDeletePhotosActionControllerDelegate>;
+@class NSArray, UIActionSheet, PLPhotoLibrary, NSString, <PLDeletePhotosActionControllerDelegate>;
 
 @interface PLDeletePhotosActionController : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
@@ -35,6 +35,10 @@
 @property(readonly) bool handlesDuplicates;
 @property <PLDeletePhotosActionControllerDelegate> * delegate;
 @property long long actionSheetStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)handlesDuplicates;

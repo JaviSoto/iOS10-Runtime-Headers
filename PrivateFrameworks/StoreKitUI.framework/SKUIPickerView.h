@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class _UIBackdropView, <SKUIPickerViewDelegate>, NSArray, UIView, UIPickerView;
+@class _UIBackdropView, <SKUIPickerViewDelegate>, NSArray, UIView, UIPickerView, NSString;
 
 @interface SKUIPickerView : UIView <UIPickerViewDataSource, UIPickerViewDelegate> {
     _UIBackdropView *_backdropView;
@@ -14,6 +14,10 @@
 
 @property <SKUIPickerViewDelegate> * delegate;
 @property long long selectedItemIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithTitles:(id)arg1;

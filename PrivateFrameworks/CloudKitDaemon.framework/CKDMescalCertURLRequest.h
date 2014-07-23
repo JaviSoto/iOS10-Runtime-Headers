@@ -12,15 +12,14 @@
 
 
 - (void)setMescalCert:(id)arg1;
-- (void)_handleParsedObject:(id)arg1;
 - (bool)hasRequestBody;
 - (bool)requiresDeviceID;
-- (bool)requiresSignature;
 - (long long)partitionType;
 - (long long)serverType;
+- (void)requestDidParsePlaintextObject:(id)arg1;
+- (bool)requiresSignature;
 - (id)mescalCert;
 - (id)httpMethod;
-- (id)responseBodyParser;
 - (id)url;
 - (void).cxx_destruct;
 

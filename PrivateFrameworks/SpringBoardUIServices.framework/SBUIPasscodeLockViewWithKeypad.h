@@ -23,6 +23,10 @@
 @property(retain) NSString * lastCharacterBeforeBackspace;
 @property(retain) UILabel * statusTitleView;
 @property(retain) UILabel * statusSubtitleView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)lastCharacterBeforeBackspace;
@@ -59,13 +63,13 @@
 - (bool)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (void)passcodeEntryFieldDidAcceptEntry:(id)arg1;
-- (void)setStatusSubtitleView:(id)arg1;
-- (id)_newStatusSubtitleView;
 - (double)_statusTitleWidth;
 - (id)statusSubtitleView;
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (void)_toggleForStatusField;
+- (void)setStatusSubtitleView:(id)arg1;
+- (id)_newStatusSubtitleView;
 - (id)initWithLightStyle:(bool)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (double)backgroundAlpha;

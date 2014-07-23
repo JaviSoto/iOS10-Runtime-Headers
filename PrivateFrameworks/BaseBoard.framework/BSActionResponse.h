@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSError, BSSettings;
+@class NSError, BSSettings, NSString;
 
 @interface BSActionResponse : NSObject <NSCopying, BSXPCCoding, BSSettingDescriptionProvider> {
     BSSettings *_info;
@@ -11,6 +11,10 @@
 
 @property(copy,readonly) BSSettings * info;
 @property(retain,readonly) NSError * error;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)responseWithInfo:(id)arg1;
 + (id)responseForError:(id)arg1;

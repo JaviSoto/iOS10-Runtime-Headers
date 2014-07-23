@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class <CalLogFormatter>;
+@class NSString, <CalLogFormatter>;
 
 @interface CalLogWriter : NSObject <CalLogWriter> {
     <CalLogFormatter> *_formatter;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) <CalLogFormatter> * formatter;
 
 

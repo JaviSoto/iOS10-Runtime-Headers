@@ -16,7 +16,6 @@
 @property(retain) NSFileManager * fileManager;
 @property(readonly) PLPhotoLibrary * photoLibrary;
 
-+ (bool)isPostProcessingLightweightMigration;
 + (void)forceImportFileSystemDataIntoDatabase;
 + (id)archivedAssetUUIDForURL:(id)arg1;
 + (void)recalculateCachedCounts;
@@ -32,14 +31,18 @@
 + (bool)_fixupSyncedAssetAttributesInStore:(id)arg1;
 + (bool)_resetDupesAnalysisInStore:(id)arg1 resetHashes:(bool)arg2;
 + (bool)_fixupKeyAssetsForAlbumsInStore:(id)arg1;
-+ (bool)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
 + (bool)_fixupImportedAssetsInStore:(id)arg1;
 + (bool)_fixupImportedEventsInStore:(id)arg1;
 + (bool)_updateKindSubtypeForPanoramaPhotosNeedsReset:(bool)arg1 inStore:(id)arg2;
 + (bool)_initiateLightweightReimportOfAllPhotoCloudSharingMetadataInStore:(id)arg1;
 + (bool)_migrateTransformableUUIDsToStringsInStore:(id)arg1;
 + (bool)_populateDurationAndHDRTypeFromAdditionalAssetAttributesInStore:(id)arg1;
++ (bool)_removeEvents:(id)arg1;
++ (bool)_disableICloudPhoto;
 + (bool)_verifyCloudAssetsLocalAvailability:(id)arg1;
++ (bool)_fixupBrokenBurstPicksInStore:(id)arg1;
++ (bool)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
++ (bool)_convertManagedAdjustmentsInStore:(id)arg1;
 + (bool)_fixVideoDimensionsInStore:(id)arg1;
 + (bool)_populateHasAdjustmentsForAssetsInStore:(id)arg1;
 + (bool)_generateAddedDateForAssetsInStore:(id)arg1;
@@ -83,6 +86,7 @@
 + (bool)postProcessThumbnailsOnly;
 + (bool)attemptLightweightMigrationFromVersion:(id)arg1 onStore:(id)arg2 withMetadata:(id)arg3 orStoreURL:(id)arg4 options:(id)arg5 coordinator:(id)arg6;
 + (int)currentModelVersion;
++ (bool)isPostProcessingLightweightMigration;
 + (void)waitForDataMigratorToExit;
 + (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
 + (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;

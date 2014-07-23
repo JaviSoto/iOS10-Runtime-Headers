@@ -92,7 +92,6 @@
 
 + (id)sharedInstance;
 
-- (bool)supportsSimultaneousVoiceAndDataRightNow;
 - (bool)supportsBackFacingCamera;
 - (bool)supportsFrontFacingCamera;
 - (bool)callingAvailable;
@@ -165,6 +164,7 @@
 - (bool)supportsNonWiFiFaceTime;
 - (bool)supportsNonWiFiCalling;
 - (bool)supportsWLAN;
+- (bool)supportsSimultaneousVoiceAndDataRightNow;
 - (bool)faceTimeSupported;
 - (bool)callingSupported;
 - (bool)isTelephonyDevice;

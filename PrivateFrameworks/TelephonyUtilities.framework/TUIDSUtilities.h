@@ -2,8 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
+@class NSString;
+
 @interface TUIDSUtilities : NSObject <IDSIDQueryControllerDelegate> {
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)isService:(unsigned long long)arg1 availableForABRecordID:(int)arg2;
 + (bool)isService:(unsigned long long)arg1 availableForDestinations:(id)arg2;

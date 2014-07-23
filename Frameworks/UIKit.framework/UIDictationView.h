@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardDicationBackground, _UISiriWaveyView, UIDictationMeterView, UIButton;
+@class UIKeyboardDicationBackground, _UISiriWaveyView, UIDictationMeterView, NSString, UIButton;
 
 @interface UIDictationView : UIView <_UISiriWaveyViewDelegate> {
     UIKeyboardDicationBackground *_background;
@@ -15,6 +15,11 @@
     _UISiriWaveyView *_waveyView;
     UIDictationMeterView *_meterView;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (struct CGSize { double x1; double x2; })viewSize;
 + (id)sharedInstance;

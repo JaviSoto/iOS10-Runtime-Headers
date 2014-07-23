@@ -28,6 +28,10 @@
 }
 
 @property(readonly) NSDictionary * photoUUIDToIndexMap;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * path;
 @property(readonly) int imageFormat;
 @property(readonly) int imageWidth;
@@ -41,6 +45,7 @@
 + (void)writeImage:(id)arg1 toData:(id*)arg2 thumbnailFormat:(int)arg3 videoDuration:(id)arg4 width:(int*)arg5 height:(int*)arg6 bytesPerRow:(int*)arg7 dataWidth:(int*)arg8 dataHeight:(int*)arg9 dataOffset:(int*)arg10;
 
 - (void)preheatImageDataAtIndexes:(id)arg1 completionHandler:(id)arg2;
+- (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3;
 - (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
 - (void)finishUnicornEntryAtIndex:(unsigned long long)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 asset:(id)arg4;
 - (void)compactWithOccupiedIndexes:(id)arg1;
@@ -83,8 +88,8 @@
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(bool)arg3;
 - (int)_fileDescriptor;
 - (bool)isReadOnly;
-- (struct CGSize { double x1; double x2; })imageSize;
 - (id)path;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (void)dealloc;
 
 @end

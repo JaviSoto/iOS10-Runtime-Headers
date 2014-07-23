@@ -2,15 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, NSArray, UILabel, UIButton;
+@class NSString, _MKRightImageButton, NSArray, UILabel, NSMutableArray;
 
 @interface MKPlaceSectionHeaderView : UIView  {
     bool_showSeeMoreButton;
     NSString *_sectionHeaderText;
     UILabel *_sectionHeaderLabel;
-    UIButton *_seeMoreButton;
+    _MKRightImageButton *_seeMoreButton;
     NSArray *_seeMoreButtonConstraints;
     NSArray *_noSeeMoreButtonConstraints;
+    NSMutableArray *_scaledConstraints;
     SEL _action;
     id _target;
 }
@@ -18,12 +19,14 @@
 @property bool showSeeMoreButton;
 @property(copy) NSString * sectionHeaderText;
 @property(retain) UILabel * sectionHeaderLabel;
-@property(retain) UIButton * seeMoreButton;
+@property(retain) _MKRightImageButton * seeMoreButton;
 @property(retain) NSArray * seeMoreButtonConstraints;
 @property(retain) NSArray * noSeeMoreButtonConstraints;
+@property(retain) NSMutableArray * scaledConstraints;
 @property SEL action;
 @property id target;
 
++ (double)intrinsicContentHeight;
 
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSectionHeaderLabel:(id)arg1;
@@ -37,12 +40,18 @@
 - (void)setSeeMoreButtonConstraints:(id)arg1;
 - (id)noSeeMoreButtonConstraints;
 - (void)setNoSeeMoreButtonConstraints:(id)arg1;
+- (id)chevronImage;
+- (void)setScaledConstraints:(id)arg1;
+- (id)scaledConstraints;
+- (void)contentSizeDidChange;
 - (SEL)action;
 - (void)setAction:(SEL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setTarget:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)target;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
+- (void)updateConstraints;
 
 @end

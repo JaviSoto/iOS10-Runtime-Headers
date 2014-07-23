@@ -29,6 +29,7 @@
 + (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
+- (struct CGPath { }*)path;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setLineDashPhase:(double)arg1;
 - (void)setStrokeEnd:(double)arg1;
@@ -51,7 +52,6 @@
 - (bool)_renderLayerDefinesProperty:(unsigned int)arg1;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
 - (void)setLineDashPattern:(id)arg1;
 - (void)setLineJoin:(id)arg1;
 - (void)setLineCap:(id)arg1;

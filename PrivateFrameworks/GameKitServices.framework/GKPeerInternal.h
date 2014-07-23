@@ -36,6 +36,10 @@
 @property(retain) GKSessionInternal * session;
 @property double connectTimeout;
 @property bool needsToTimeout;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
 
@@ -56,7 +60,6 @@
 - (void)setServiceCount:(int)arg1;
 - (int)serviceCount;
 - (void)setBusy:(bool)arg1;
-- (bool)isBusy;
 - (void)setResolveService:(struct _DNSServiceRef_t { }*)arg1;
 - (void)setConnectTimeout:(double)arg1;
 - (bool)needsToTimeout;
@@ -67,6 +70,7 @@
 - (void)clearResolving;
 - (bool)tryDetruncateDisplayName:(id)arg1;
 - (void)cleanupForGKTable:(id)arg1;
+- (bool)isBusy;
 - (unsigned int)pid;
 - (void)setSession:(id)arg1;
 - (id)session;

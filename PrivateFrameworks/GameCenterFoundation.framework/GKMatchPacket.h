@@ -25,11 +25,11 @@
 
 - (void)setChecksum:(unsigned short)arg1;
 - (unsigned char)packetType;
-- (id)initWithMessage:(id)arg1;
 - (unsigned int)totalLength;
 - (void)setTotalLength:(unsigned int)arg1;
 - (void)setPacketType:(unsigned char)arg1;
 - (void)setValid:(bool)arg1;
+- (id)initWithMessage:(id)arg1;
 - (unsigned short)checksum;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (bool)valid;

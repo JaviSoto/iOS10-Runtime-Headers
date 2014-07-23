@@ -27,7 +27,6 @@
 + (id)copyParseRules;
 
 - (void)setCollection:(id)arg1;
-- (void)setShared:(id)arg1;
 - (void)setSearchAddressBook:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (void)setPrincipal:(id)arg1;
@@ -41,6 +40,7 @@
 - (id)collection;
 - (void)write:(id)arg1;
 - (id)shared;
+- (void)setShared:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

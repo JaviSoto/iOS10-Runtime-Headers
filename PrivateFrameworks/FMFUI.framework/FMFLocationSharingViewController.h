@@ -2,64 +2,104 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class NSArray, FMFHandle;
+@class NSArray, NSMutableDictionary, FMFHandle, UIAlertView, NSString;
 
-@interface FMFLocationSharingViewController : PSListController <FMFSessionDelegate> {
+@interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal> {
     bool_isMyLocationEnabled;
+    NSArray *_allFollowersHandles;
     NSArray *_followersHandles;
     NSArray *_followersSpecifiers;
+    NSArray *_familySpecifiers;
+    NSMutableDictionary *_dsidToFamilyPhoto;
+    NSArray *_hashedFamilyDsids;
     void *_addressBook;
     FMFHandle *_lastSelectedHandle;
+    NSArray *_familyMembers;
+    UIAlertView *_genericErrorAlert;
 }
 
+@property(retain) NSArray * allFollowersHandles;
 @property(retain) NSArray * followersHandles;
 @property(retain) NSArray * followersSpecifiers;
+@property(retain) NSArray * familySpecifiers;
+@property(retain) NSMutableDictionary * dsidToFamilyPhoto;
+@property(retain) NSArray * hashedFamilyDsids;
 @property void* addressBook;
 @property(retain) FMFHandle * lastSelectedHandle;
 @property bool isMyLocationEnabled;
+@property(retain) NSArray * familyMembers;
+@property(retain) UIAlertView * genericErrorAlert;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIsMyLocationEnabled:(bool)arg1;
-- (int)identifierOfProperty:(int)arg1 withHandleId:(id)arg2 forRecord:(void*)arg3;
+- (void)setHashedFamilyDsids:(id)arg1;
+- (id)dsidToFamilyPhoto;
+- (void)setFamilySpecifiers:(id)arg1;
+- (id)familySpecifiers;
+- (void)_showFamilyMemberDetails:(id)arg1;
 - (bool)noMeDeviceSelected:(id)arg1;
-- (id)allHandlesMatchingABCardForSelectedHandle:(id)arg1;
+- (void)_loadFamilyMemberPhotos;
+- (id)_followerHandleWithHashedDSID:(id)arg1;
 - (id)lastSelectedHandle;
+- (void)shareMyLocation:(id)arg1;
 - (void)removeFollower:(id)arg1;
 - (id)reverseString:(id)arg1;
 - (id)stringByKeepingCharacterSet:(id)arg1 inString:(id)arg2;
 - (bool)phoneNumberMatches:(id)arg1 phone2:(id)arg2;
+- (bool)_isFamilyMemberAFollower:(id)arg1;
 - (void*)unknownRecordForData:(id)arg1 property:(int)arg2;
+- (void)addShareActionToPersonViewController:(id)arg1;
 - (void)addRemoveActionToPersonViewController:(id)arg1;
+- (int)identifierOfProperty:(int)arg1 withHandleId:(id)arg2 forRecord:(void*)arg3;
+- (id)allHandlesMatchingABCardForSelectedHandle:(id)arg1;
+- (bool)_isHandleAFollower:(id)arg1;
+- (void)_pushAddressBookUIForHandle:(id)arg1;
 - (void)setLastSelectedHandle:(id)arg1;
-- (id)followersSpecifiers;
+- (id)followersHandles;
+- (void)setGenericErrorAlert:(id)arg1;
+- (id)genericErrorAlert;
 - (void)displayGenericErrorAlert;
 - (id)formatStringForHours:(long long)arg1 minutes:(long long)arg2;
 - (id)offerTimeRemaining:(double)arg1;
 - (void)_showHandleDetails:(id)arg1;
 - (id)monogramForHandle:(id)arg1;
 - (void*)recordForHandle:(id)arg1;
-- (id)followersHandles;
+- (id)familyMembers;
+- (id)followersSpecifiers;
+- (void)setFollowersHandles:(id)arg1;
 - (void)setFollowersSpecifiers:(id)arg1;
 - (id)_specifierForHandle:(id)arg1;
-- (void)setFollowersHandles:(id)arg1;
+- (id)hashedFamilyDsids;
+- (id)allFollowersHandles;
+- (void)setAllFollowersHandles:(id)arg1;
 - (id)sortedFollowersWithCombinedRecords:(id)arg1;
 - (void)_meDeviceSpecifierWasTapped:(id)arg1;
 - (id)_shareSwitchEnabled:(id)arg1;
 - (void)_setShareSwitchEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)abChanged:(id)arg1;
+- (void)_loadFamilyMembers:(bool)arg1;
 - (void)reloadSpecifiersOnMainQueue;
 - (bool)isMyLocationEnabled;
+- (void)setDsidToFamilyPhoto:(id)arg1;
 - (void)didUpdateHidingStatus:(bool)arg1;
 - (void)didStopSharingMyLocationWithHandle:(id)arg1;
 - (void)didStartSharingMyLocationWithHandle:(id)arg1;
+- (void)didReceiveServerError:(id)arg1;
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
+- (void)networkReachabilityUpdated:(bool)arg1;
 - (id)specifiers;
+- (void)setFamilyMembers:(id)arg1;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

@@ -44,6 +44,7 @@
 - (bool)setProfileInfo:(id)arg1;
 - (bool)setPayloadInfoCommon:(id)arg1 payloadOrganization:(id)arg2;
 - (bool)setPayloadInfoIdentity:(id)arg1;
+- (bool)setConfigurationHTTPPassword:(id)arg1;
 - (id)getConfigurationIdentifier;
 - (id)getPendingCertificateUUIDs:(id)arg1;
 - (bool)setCertificates:(id)arg1;
@@ -56,7 +57,6 @@
 - (bool)setPayloadInfoIdentityProxy:(id)arg1;
 - (bool)setPayloadInfoIdentityUserNameAndPassword:(id)arg1;
 - (bool)setConfigurationSharedSecret:(id)arg1;
-- (bool)setConfigurationHTTPPassword:(id)arg1;
 - (id)getPendingCertificateUUIDsContentFilter:(id)arg1;
 - (id)getPendingCertificateUUIDsAOVpn:(id)arg1;
 - (id)getPendingCertificateUUIDsAppVPN:(id)arg1;

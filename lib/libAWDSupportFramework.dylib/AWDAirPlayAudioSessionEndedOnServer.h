@@ -142,6 +142,7 @@
 @property unsigned int dacpPrevious;
 
 
+- (bool)hasDuration;
 - (unsigned int)dacpPrevious;
 - (unsigned int)dacpNext;
 - (unsigned int)dacpPauses;
@@ -263,9 +264,8 @@
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

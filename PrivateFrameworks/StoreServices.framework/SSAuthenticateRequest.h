@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAuthenticationContext, <SSAuthenticateRequestDelegate>;
+@class SSAuthenticationContext, <SSAuthenticateRequestDelegate>, NSString;
 
 @interface SSAuthenticateRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
@@ -10,6 +10,10 @@
 
 @property(readonly) SSAuthenticationContext * authenticationContext;
 @property <SSAuthenticateRequestDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startWithAuthenticateResponseBlock:(id)arg1;

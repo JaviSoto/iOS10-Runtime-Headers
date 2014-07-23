@@ -54,7 +54,10 @@
 - (void)_setVideoMirrored:(bool)arg1;
 - (bool)isVideoMirrored;
 - (void)_setActive:(bool)arg1;
+- (void)setupObservers;
+- (void)_updateMaxScaleAndCropFactorForFormat:(id)arg1;
 - (bool)isVideoRetainedBufferCountHintSupported;
+- (void)_updateFeature0Mode:(long long)arg1 bumpChangeSeed:(bool)arg2;
 - (long long)_resolveFeature0Mode:(long long)arg1 format:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMaxFrameDuration;
 - (void)_setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -63,10 +66,12 @@
 - (bool)isVideoMirroringSupported;
 - (void)updateAudioLevelsArray;
 - (void)bumpChangeSeed;
+- (void)_updatePropertiesForFormat:(id)arg1;
+- (void)inputPortFormatDescriptionChanged:(id)arg1;
+- (void)teardownObservers;
 - (void)setupInternalStorage;
 - (bool)isVideoStabilizationSupported;
 - (void)updateAudioChannelsArray;
-- (void)inputPortFormatDescriptionChanged:(id)arg1;
 - (bool)sourcesFromFrontFacingCamera;
 - (id)videoPreviewLayer;
 - (id)output;
@@ -91,7 +96,6 @@
 - (bool)isEnabled;
 - (id)mediaType;
 - (bool)isActive;
-- (void)invalidate;
 - (id)session;
 - (void)dealloc;
 - (id)description;

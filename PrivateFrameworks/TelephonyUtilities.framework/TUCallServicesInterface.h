@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSXPCConnection, NSData, NSArray, TUProxyCallModel, <TUCallServicesDaemonDelegate>, NSObject<OS_dispatch_semaphore>, TUCallCenterCallsCache;
+@class NSXPCConnection, NSData, NSArray, TUProxyCallModel, NSString, <TUCallServicesDaemonDelegate>, NSObject<OS_dispatch_semaphore>, TUCallCenterCallsCache;
 
 @interface TUCallServicesInterface : NSObject <TUCallServicesDaemonObserver, TUCallServicesProxyCallActions> {
+    bool_muted;
     <TUCallServicesDaemonDelegate> *_daemonDelegate;
     TUCallCenterCallsCache *_callsCache;
     NSArray *_currentProxyCalls;
@@ -21,12 +22,18 @@
 @property(retain) TUProxyCallModel * proxyCallModel;
 @property(retain) NSData * localFrequency;
 @property(retain) NSData * remoteFrequency;
+@property(getter=isMuted) bool muted;
 @property(retain) NSXPCConnection * xpcConnection;
 @property(retain) NSObject<OS_dispatch_semaphore> * xpcConnectionCreationSemaphore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)launchesCallServicesDaemonOnDemand;
 + (id)sharedInstance;
 
+- (void)setMuted:(bool)arg1;
 - (void)_tearDownXPCConnection;
 - (void)setXpcConnectionCreationSemaphore:(id)arg1;
 - (id)xpcConnectionCreationSemaphore;
@@ -43,6 +50,8 @@
 - (void)handleCurrentProxyCallsChanged:(id)arg1;
 - (void)handleCallContinuityStateChangedForProxyCall:(id)arg1;
 - (void)handleCallStatusChangedForProxyCall:(id)arg1;
+- (void)handleHardPauseDigitsAvailibilityChangedTo:(unsigned short)arg1 digits:(id)arg2;
+- (void)handleMutedChangedTo:(bool)arg1;
 - (void)handleRemoteFrequencyChangedTo:(id)arg1;
 - (void)handleLocalFrequencyChangedTo:(id)arg1;
 - (void)handleDisconnectedReasonChangedTo:(int)arg1 forCallWithUUID:(id)arg2;
@@ -56,6 +65,7 @@
 - (void)endActiveAndAnswerCall:(id)arg1;
 - (void)swapCalls;
 - (id)currentProxyCalls;
+- (void)dialCall:(id)arg1;
 - (void)setCurrentProxyCalls:(id)arg1;
 - (void)requestHandoffForAllCalls;
 - (id)daemonDelegateWithErrorHandler:(id)arg1;
@@ -64,7 +74,11 @@
 - (id)xpcConnection;
 - (void)requestPendingCallNotifications;
 - (void)handleCallStatusChanged:(id)arg1;
+- (void)handleRelayCallingCapabilitiesChanged:(id)arg1;
 - (id)callStateForCall:(id)arg1;
+- (void)unmuteCall:(id)arg1;
+- (void)muteCall:(id)arg1;
+- (bool)isMuted;
 - (void)answerCall:(id)arg1;
 - (void)playDTMFToneForCall:(id)arg1 key:(unsigned char)arg2;
 - (void)disconnectCall:(id)arg1;
@@ -73,8 +87,8 @@
 - (void)unconferenceCall:(id)arg1;
 - (void)conferenceCall:(id)arg1;
 - (id)callsCache;
+- (void)sendHardPauseDigits;
 - (void)setRelayCallingEnabled:(bool)arg1;
-- (void)dialCall:(id)arg1;
 - (id)remoteFrequency;
 - (id)localFrequency;
 - (void)handleCallModelStateChanged:(id)arg1;

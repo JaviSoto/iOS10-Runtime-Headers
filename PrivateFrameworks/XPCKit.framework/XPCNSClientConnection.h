@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/XPCKit.framework/XPCKit
  */
 
-@class XPCClientConnection, <XPCNSClientConnectionDelegate>;
+@class NSString, XPCClientConnection, <XPCNSClientConnectionDelegate>;
 
 @interface XPCNSClientConnection : NSObject <XPCClientConnectionDelegate> {
     XPCClientConnection *_clientConnection;
@@ -10,6 +10,10 @@
 }
 
 @property(readonly) <XPCNSClientConnectionDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)sendMessage:(id)arg1 data:(id)arg2 withHandler:(id)arg3;

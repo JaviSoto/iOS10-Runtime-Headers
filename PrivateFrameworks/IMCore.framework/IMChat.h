@@ -56,6 +56,7 @@
     BOOL _downgradeState;
     bool_ignoreDowngradeStatusUpdates;
     bool_forceMMS;
+    IMScheduledUpdater *_downgradeStateUpdater;
 }
 
 @property(readonly) bool suppressAccountRetargetingForGroupConversation;
@@ -111,6 +112,10 @@
 + (void)setChatItemRulesClass:(Class)arg1;
 + (void)_initializeFMF;
 + (Class)chatItemRulesClass;
++ (void)_postRefreshActiveChatNotification;
++ (void)_handleOperationalAccountsChanged:(id)arg1;
++ (void)_handleLoginStatusChange:(id)arg1;
++ (void)initialize;
 
 - (id)dateCreated;
 - (void)_setAccount:(id)arg1;
@@ -287,8 +292,6 @@
 - (void)updateMessage:(id)arg1;
 - (void)_updateDisplayName:(id)arg1;
 - (void)setForceMMS:(bool)arg1;
-- (void)_cleanupIDSListeners;
-- (void)_setupIDSListeners;
 - (void)_delayedInvalidateDowngradeState;
 - (void)_handleIncomingCommand:(id)arg1;
 - (void)_handleDeliveredCommand:(id)arg1;
@@ -302,24 +305,21 @@
 - (void)_calculateDowngradeStateTimerFired;
 - (void)setLocalUserIsTyping:(bool)arg1;
 - (void)_calculateDowngradeState;
-- (void)_setupPreferredServiceChangeHandlers;
 - (void)_setPreviousAccount:(id)arg1 forService:(id)arg2;
 - (id)_previousAccountForService:(id)arg1;
 - (bool)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
 - (void)setValue:(id)arg1 forChatProperty:(id)arg2;
 - (id)valueForChatProperty:(id)arg1;
 - (bool)_accountIsOperational:(id)arg1 forService:(id)arg2;
-- (void)_handleOperationalAccountsChanged:(id)arg1;
-- (void)_handleLoginStatusChange:(id)arg1;
-- (void)_invalidateDowngradeState;
 - (bool)sendDowngradeNotificationTo:(id)arg1;
 - (void)_setAndIncrementDowngradeMarkersForManual:(bool)arg1;
 - (id)lastMessage;
 - (void)_targetToService:(id)arg1 newComposition:(bool)arg2;
 - (bool)forceMMS;
 - (bool)isDowngraded;
-- (bool)suppressAccountRetargetingForGroupConversation;
 - (id)participants;
+- (void)_invalidateDowngradeState;
+- (bool)suppressAccountRetargetingForGroupConversation;
 - (void)cancelMessage:(id)arg1;
 - (id)groupID;
 - (id)persistentID;

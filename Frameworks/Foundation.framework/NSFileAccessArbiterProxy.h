@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_xpc_object>, NSObject<OS_dispatch_queue>, NSMutableDictionary;
+@class NSMutableDictionary, NSString, NSObject<OS_xpc_object>, NSObject<OS_dispatch_queue>;
 
 @interface NSFileAccessArbiterProxy : NSObject <NSFileAccessArbiter> {
     NSObject<OS_xpc_object> *_server;
@@ -20,6 +20,11 @@
     NSMutableDictionary *_presentersByID;
     NSMutableDictionary *_providersByID;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_willBeginOperationForReactor:(id)arg1 withDescription:(id)arg2;
 + (void)_accessPresenterOperationRecordsUsingBlock:(id)arg1;

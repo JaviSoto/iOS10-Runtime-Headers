@@ -37,9 +37,9 @@
 - (void)setNextCursor:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (unsigned long long)resultsLimit;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (id)cursor;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (id)query;
 - (void).cxx_destruct;
 - (void)setCursor:(id)arg1;

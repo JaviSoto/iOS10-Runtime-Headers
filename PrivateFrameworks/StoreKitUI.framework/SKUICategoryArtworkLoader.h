@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, SKUIResourceLoader, NSHashTable, SKUIImageDataConsumer, UIImage;
+@class NSMapTable, NSString, SKUIResourceLoader, NSHashTable, SKUIImageDataConsumer, UIImage;
 
 @interface SKUICategoryArtworkLoader : NSObject <SKUIArtworkRequestDelegate> {
     NSMapTable *_artworkRequestIDs;
@@ -16,6 +16,10 @@
 @property(retain) SKUIImageDataConsumer * imageDataConsumer;
 @property(readonly) UIImage * placeholderImage;
 @property(readonly) struct CGSize { double x1; double x2; } imageSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)loadImageForCategory:(id)arg1 reason:(long long)arg2;

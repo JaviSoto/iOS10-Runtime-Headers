@@ -21,13 +21,13 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (int)entityType;
 - (void)setShareeAccessLevel:(int)arg1;
 - (int)shareeAccessLevel;
 - (void)setShareeStatus:(int)arg1;
 - (int)shareeStatus;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 - (id)owner;

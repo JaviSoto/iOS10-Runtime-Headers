@@ -7,16 +7,24 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class IMMessage, IMMessageItem;
+@class NSString, IMMessage, IMMessageItem;
 
 @interface NSArray : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, CKRecordValue, PQLBindable> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) IMMessage * lastMessage;
 @property(retain,readonly) IMMessage * lastFinishedMessage;
 @property(retain,readonly) IMMessage * lastIncomingMessage;
 @property(retain,readonly) IMMessage * lastIncomingFinishedMessage;
 @property(retain,readonly) IMMessageItem * __imLastMessageItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long count;
 
 + (id)arrayWithSet:(id)arg1;
@@ -132,13 +140,13 @@
 - (id)initWithSet:(id)arg1;
 - (id)sortedArrayUsingSelector:(SEL)arg1;
 - (id)objectsPassingTest:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)sortedArrayUsingSelector:(SEL)arg1 hint:(id)arg2;
 - (id)sortedArrayHint;
-- (id)initWithContentsOfURL:(id)arg1;
 - (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
 - (id)_stringToWrite;
 - (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2 hint:(id)arg3;
@@ -195,6 +203,7 @@
 - (id)bs_reverse;
 - (id)bs_mapNoNulls:(id)arg1;
 - (id)bs_firstObjectOfClassNamed:(id)arg1;
+- (bool)bs_containsObjectPassingTest:(id)arg1;
 - (id)bs_flatten;
 - (id)bs_filter:(id)arg1;
 - (id)bs_map:(id)arg1;
@@ -225,13 +234,6 @@
 - (void)_ICSParametersAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (bool)ICSContainsArray:(id)arg1;
-- (bool)CalContainsObjectIdenticalTo:(id)arg1;
-- (id)allObjectsWithClass:(Class)arg1;
-- (id)CalMutableRecursiveCopy;
-- (id)cr_insertionSortedArrayUsingComparator:(id)arg1;
-- (id)cr_firstObjectPassingTest:(id)arg1;
-- (id)cr_map:(id)arg1;
-- (unsigned long long)cr_binaryInsertionIndexOfObject:(id)arg1 usingComparator:(id)arg2 match:(bool*)arg3;
 - (id)mf_uncommentedAddressList;
 - (id)mf_objectsPassingTest:(id)arg1;
 - (id)mf_indicesOfStringsWithPrefix:(id)arg1;
@@ -242,12 +244,28 @@
 - (unsigned long long)mf_indexOfObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (unsigned long long)mf_indexWhereObjectWouldBeInserted:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (id)mf_dictionaryWithMessagesSortedByStore;
-- (id)mf_map:(id)arg1;
+- (id)mf_reduce:(id)arg1;
+- (id)mf_uniquifyWithComparator:(id)arg1;
+- (bool)mf_all:(id)arg1;
+- (id)mf_flatten;
 - (bool)mf_any:(id)arg1;
+- (id)mf_map:(id)arg1;
 - (id)mf_firstObjectPassingTest:(id)arg1;
 - (id)mf_filter:(id)arg1;
-- (id)mf_reduce:(id)arg1;
-- (id)mf_flatten;
+- (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id)arg1;
+- (unsigned long long)indexOfSpecifierWithID:(id)arg1;
+- (id)specifierForID:(id)arg1;
+- (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
+- (unsigned long long)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (id)_mapkit_arrayByRemovingObject:(id)arg1;
+- (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
+- (bool)CalContainsObjectIdenticalTo:(id)arg1;
+- (id)allObjectsWithClass:(Class)arg1;
+- (id)CalMutableRecursiveCopy;
+- (id)cr_insertionSortedArrayUsingComparator:(id)arg1;
+- (id)cr_firstObjectPassingTest:(id)arg1;
+- (id)cr_map:(id)arg1;
+- (unsigned long long)cr_binaryInsertionIndexOfObject:(id)arg1 usingComparator:(id)arg2 match:(bool*)arg3;
 - (id)_IDsFromURIs;
 - (id)_URIsFromIDs;
 - (id)_FTFilteredArrayForAPS;
@@ -264,9 +282,6 @@
 - (id)__imLastMessageItem;
 - (id)lastMessage;
 - (id)messages;
-- (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id)arg1;
-- (unsigned long long)indexOfSpecifierWithID:(id)arg1;
-- (id)specifierForID:(id)arg1;
 - (id)_gkFoldWithInitialValue:(id)arg1 block:(id)arg2;
 - (id)_gkFirstObject;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
@@ -283,13 +298,9 @@
 - (id)_gkPlayersFromInternals;
 - (id)_gkIncompletePlayersFromPlayerIDs;
 - (id)_gkInternalsFromPlayers;
-- (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 - (unsigned long long)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2;
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
-- (unsigned long long)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
-- (id)_mapkit_arrayByRemovingObject:(id)arg1;
-- (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 - (id)copyDeep_MC;
 - (id)SCNMutableDeepCopy;
 - (id)MSDeepCopy;

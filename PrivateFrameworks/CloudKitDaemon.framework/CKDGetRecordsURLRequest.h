@@ -40,7 +40,6 @@
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDsToETags:(id)arg1;
 - (id)initWithRecordIDs:(id)arg1 recordIDsToEtags:(id)arg2 recordIDsToVersionETags:(id)arg3 desiredKeys:(id)arg4;
-- (void)setRecordCount:(unsigned long long)arg1;
 - (unsigned long long)recordCount;
 - (id)recordIDByRequestID;
 - (id)assetFieldNamesToPublishURLs;
@@ -51,6 +50,7 @@
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperations;
+- (void)setRecordCount:(unsigned long long)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (id)recordIDsToVersionETags;
 - (void)setURLOptions:(unsigned long long)arg1;

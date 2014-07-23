@@ -49,8 +49,8 @@
 @property int cacheControl;
 
 
-- (id)additionalPlaces;
 - (void)setTravelTime:(unsigned int)arg1;
+- (id)geoMapItem;
 - (int)cacheControl;
 - (unsigned long long)flyoverTourMuid;
 - (id)matchedTokens;
@@ -61,6 +61,7 @@
 - (unsigned int)travelDistance;
 - (unsigned int)travelTime;
 - (id)suggestedQuery;
+- (id)additionalPlaces;
 - (id)place;
 - (bool)hasCacheControl;
 - (void)setHasCacheControl:(bool)arg1;

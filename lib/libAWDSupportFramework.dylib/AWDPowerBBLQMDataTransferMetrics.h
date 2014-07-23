@@ -36,8 +36,8 @@
 - (unsigned long long)lQMBytesCount;
 - (void)addLQMBytes:(id)arg1;
 - (void)setLQMBytes:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

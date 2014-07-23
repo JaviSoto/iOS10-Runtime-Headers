@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSOperationQueue, SSDownloadManager, NSMutableDictionary;
+@class NSMutableDictionary, NSString, NSOperationQueue, SSDownloadManager;
 
 @interface NSAsyncSSDownloadManager : NSObject <SSDownloadManagerObserver> {
     SSDownloadManager *_manager;
@@ -10,6 +10,11 @@
     NSMutableDictionary *_downloads;
     bool_reconnectInProgress;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)addOperationWithBlock:(id)arg1;

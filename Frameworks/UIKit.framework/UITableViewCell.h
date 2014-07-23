@@ -155,6 +155,10 @@
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
 @property(getter=isEditing) bool editing;
 @property(readonly) bool showingDeleteConfirmation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (id)_defaultTopShadowColor;
@@ -503,10 +507,10 @@
 - (void)_beginSwiping;
 - (id)_swipeToDeleteConfirmationView;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (id)_imageView;
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
 - (id)_defaultFont;
+- (void)setHighlighted:(bool)arg1;
 - (id)_scriptingInfo;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;

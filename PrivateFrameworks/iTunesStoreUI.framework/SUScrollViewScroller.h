@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIScrollView, NSMutableArray, NSObject<UIScrollViewDelegate>;
+@class NSObject<UIScrollViewDelegate>, NSString, UIScrollView, NSMutableArray;
 
 @interface SUScrollViewScroller : NSObject <UIScrollViewDelegate> {
     NSObject<UIScrollViewDelegate> *_originalDelegate;
@@ -11,6 +11,10 @@
 }
 
 @property(readonly) UIScrollView * scrollView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2 completionBlock:(id)arg3;

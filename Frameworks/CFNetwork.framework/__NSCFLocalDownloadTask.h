@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_data>, __NSCFLocalDownloadFile, NSDictionary;
+@class NSString, NSDictionary, __NSCFLocalDownloadFile, NSObject<OS_dispatch_data>;
 
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener> {
     bool_canWrite;
@@ -30,6 +30,12 @@
 
     long long _initialResumeSize;
     NSDictionary *_originalResumeInfo;
+    unsigned long long __transientWriteProgress;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __afterDidReportProgressOnQueue;
+
 }
 
 @property(copy) id fileCompletion;
@@ -45,6 +51,12 @@
 @property(copy) id resumeCallback;
 @property long long initialResumeSize;
 @property(retain) NSDictionary * originalResumeInfo;
+@property unsigned long long _transientWriteProgress;
+@property(copy) id _afterDidReportProgressOnQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isKindOfClass:(Class)arg1;
@@ -60,13 +72,17 @@
 - (void)writeAndResume;
 - (void)_private_errorCompletion;
 - (id)createResumeInformation:(id)arg1;
-- (void)reportProgress:(unsigned long long)arg1;
 - (void)setSeqNo:(int)arg1;
 - (int)seqNo;
 - (id)writeBuffer;
+- (void)set_afterDidReportProgressOnQueue:(id)arg1;
+- (void)reportProgress:(unsigned long long)arg1;
+- (id)_afterDidReportProgressOnQueue;
 - (id)fileCompletion;
 - (void)setSuppressProgress:(bool)arg1;
 - (bool)suppressProgress;
+- (void)set_transientWriteProgress:(unsigned long long)arg1;
+- (unsigned long long)_transientWriteProgress;
 - (unsigned long long)totalWrote;
 - (void)_onqueue_cancelByProducingResumeData:(id)arg1;
 - (id)resumeCallback;

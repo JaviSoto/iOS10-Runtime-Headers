@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UINavigationController, UIPrinterPickerController, UIWindow, UIPopoverController, PKPrinter, UIViewController, UIPrinterBrowserViewController;
+@class NSString, UINavigationController, UIPrinterPickerController, UIWindow, UIPopoverController, PKPrinter, UIViewController, UIPrinterBrowserViewController;
 
 @interface UIPrinterPickerViewController : UIViewController <UIPrinterBrowserOwner, UINavigationControllerDelegate> {
     UIPrinterPickerController *_printerPickerController;
@@ -22,6 +22,10 @@
 
 @property(retain) PKPrinter * printer;
 @property bool userSelectedPrinter;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)dealloc;

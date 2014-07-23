@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, <NSObject>, MPAVController;
+@class NSString, NSDictionary, <NSObject>, MPAVController;
 
 @interface MPQueueFeeder : NSObject <MPAVPlaylistFeeder> {
     MPAVController *_avController;
@@ -32,6 +32,10 @@
 @property unsigned long long repeatType;
 @property unsigned long long shuffleType;
 @property unsigned long long activeShuffleType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long initialPlaybackQueueDepth;
 @property(readonly) unsigned long long itemCount;
 

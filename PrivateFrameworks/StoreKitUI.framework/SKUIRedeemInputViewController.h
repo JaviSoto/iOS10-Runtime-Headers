@@ -15,6 +15,10 @@
 
 @property(readonly) long long category;
 @property(copy) NSString * initialCode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setInitialCode:(id)arg1;

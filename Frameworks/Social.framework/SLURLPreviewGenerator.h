@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIWebView;
+@class NSString, UIWebView;
 
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate> {
     UIWebView *_webView;
@@ -18,6 +18,10 @@
 }
 
 @property(readonly) UIWebView * webView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_callCompletionWithPreview:(id)arg1;

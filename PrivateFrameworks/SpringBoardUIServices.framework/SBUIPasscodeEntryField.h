@@ -17,6 +17,10 @@
 @property(copy) NSString * stringValue;
 @property(retain) UIColor * customBackgroundColor;
 @property(getter=_textField,readonly) UITextField * textField;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_handleKeyUIEvent:(id)arg1 source:(int)arg2;

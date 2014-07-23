@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIBarButtonItem, NSArray, UIMoreListCellLayoutManager, UITableView;
+@class UIBarButtonItem, NSArray, NSString, UIMoreListCellLayoutManager, UITableView;
 
 @interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *_table;
@@ -18,6 +18,10 @@
 @property(retain) NSArray * moreViewControllers;
 @property bool allowsCustomizing;
 @property bool moreViewControllersChanged;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)table;

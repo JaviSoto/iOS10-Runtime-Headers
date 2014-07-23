@@ -62,15 +62,15 @@
 - (void)setStopMMCSThread:(bool)arg1;
 - (long long)refCount;
 - (void)setApplicationBundleID:(id)arg1;
-- (id)MMCS;
 - (void)setMMCS:(id)arg1;
+- (id)MMCS;
 - (id)applicationBundleID;
 - (id)CKPropertiesDescription;
 - (void)setRunLoop:(id)arg1;
+- (id)path;
 - (id)protocolVersion;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)setState:(long long)arg1;
 - (long long)state;
 - (void)dealloc;

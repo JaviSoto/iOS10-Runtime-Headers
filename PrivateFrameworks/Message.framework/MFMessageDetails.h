@@ -21,14 +21,14 @@
 
 
 - (id)remoteID;
-- (id)copyMessageInfo;
-- (id)mailbox;
-- (unsigned int)mailboxID;
-- (unsigned long long)messageFlags;
 - (double)dateSentAsTimeIntervalSince1970;
 - (double)dateReceivedAsTimeIntervalSince1970;
 - (long long)messageIDHash;
 - (id)externalID;
+- (id)copyMessageInfo;
+- (id)mailbox;
+- (unsigned int)mailboxID;
+- (unsigned long long)messageFlags;
 - (unsigned int)libraryID;
 - (id)messageID;
 - (id)init;

@@ -16,6 +16,10 @@
 @property(retain) NSMutableDictionary * _userManifest;
 @property(readonly) NSString * personID;
 @property bool hasDeactivated;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)set_userManifest:(id)arg1;

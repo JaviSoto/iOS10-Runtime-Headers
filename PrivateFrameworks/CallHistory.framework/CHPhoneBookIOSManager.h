@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
+@class NSString;
+
 @interface CHPhoneBookIOSManager : CHLogger <CHPhoneBookManagerProtocol> {
     bool_callerIdIsEmail;
     int _recordId;
@@ -15,6 +17,10 @@
 @property int multiValueId;
 @property void* record;
 @property unsigned int recordIsSuggested;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setRecordIsSuggested:(unsigned int)arg1;

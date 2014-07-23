@@ -8,7 +8,7 @@
 
 
 - (id)initWithURL:(id)arg1 previewImage:(id)arg2;
-- (long long)urlType;
 - (id)initWithURL:(id)arg1 ofType:(long long)arg2 preview:(id)arg3;
+- (long long)urlType;
 
 @end

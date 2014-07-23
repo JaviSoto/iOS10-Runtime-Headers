@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class CommerceRemoteUIDelegate, <PSCloudStorageOffersManagerDelegate>;
+@class NSString, CommerceRemoteUIDelegate, <PSCloudStorageOffersManagerDelegate>;
 
 @interface PSCloudStorageOffersManager : NSObject <CommerceRemoteUIDelegateDelegate> {
     CommerceRemoteUIDelegate *_commerceDelegate;
@@ -12,6 +12,10 @@
 
 @property <PSCloudStorageOffersManagerDelegate> * delegate;
 @property unsigned long long requiredStorageThreshold;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setRequiredStorageThreshold:(unsigned long long)arg1;

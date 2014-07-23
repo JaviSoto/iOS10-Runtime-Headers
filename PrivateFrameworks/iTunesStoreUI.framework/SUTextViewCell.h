@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTextViewCellDelegate>, UIScrollView, SUTextContentView;
+@class NSString, <SUTextViewCellDelegate>, UIScrollView, SUTextContentView;
 
 @interface SUTextViewCell : SUTableCell <UITextContentViewDelegate> {
     <SUTextViewCellDelegate> *_delegate;
@@ -12,6 +12,10 @@
 
 @property <SUTextViewCellDelegate> * delegate;
 @property(readonly) SUTextContentView * textContentView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)textContentView;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, AVWeakReference, AVAssetWriterFigAssetWriterNotificationHandler;
+@class AVAssetWriterFigAssetWriterNotificationHandler, NSString, AVWeakReference, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterWritingHelper : AVAssetWriterHelper <AVAssetWriterFigAssetWriterNotificationHandlerDelegate> {
     AVWeakReference *_weakReference;
@@ -11,6 +11,11 @@
     bool_startSessionCalled;
     AVAssetWriterFigAssetWriterNotificationHandler *_notificationHandler;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct OpaqueFigAssetWriter { }*)_retainedFigAssetWriter;

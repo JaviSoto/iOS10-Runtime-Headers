@@ -39,6 +39,7 @@
 @property long long tag;
 @property(copy) NSString * TVMode;
 @property(copy) NSString * TVSignalType;
+@property(getter=isSecure) bool secure;
 
 
 - (double)overscanAmount;
@@ -95,11 +96,13 @@
 - (unsigned int)displayId;
 - (id)name;
 - (void)invalidate;
+- (bool)isSecure;
 - (void)dealloc;
 - (id)description;
 - (double)scale;
 - (float)contrast;
 - (void)setTag:(long long)arg1;
+- (void)setSecure:(bool)arg1;
 - (void)setContrast:(float)arg1;
 
 @end

@@ -28,8 +28,12 @@
 - (bool)keyboardSettingsFromSwitcher;
 - (void)setInputModes:(id)arg1;
 - (void)setKeyboardSettingsFromSwitcher:(bool)arg1;
-- (id)subtitleForItemAtIndex:(int)arg1;
+- (bool)useItemAtIndexForPredictionToggle:(int)arg1;
 - (id)titleForItemAtIndex:(int)arg1;
+- (id)subtitleFontForItemAtIndex:(int)arg1;
+- (id)subtitleForItemAtIndex:(int)arg1;
+- (id)fontForItemAtIndex:(int)arg1;
+- (id)localizedTitleForItemAtIndex:(int)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
 - (long long)defaultSelectedIndex;
 - (struct CGSize { double x1; double x2; })preferredSize;

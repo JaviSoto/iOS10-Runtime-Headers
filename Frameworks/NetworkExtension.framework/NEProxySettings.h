@@ -2,13 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSURL, NSArray, NEProxyServer;
+@class NSString, NSArray, NSURL, NEProxyServer;
 
 @interface NEProxySettings : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
     bool_autoProxyDiscovery;
+    bool_autoProxyConfigurationEnabled;
+    bool_HTTPEnabled;
+    bool_HTTPSEnabled;
+    bool_FTPEnabled;
+    bool_SOCKSEnabled;
+    bool_RTSPEnabled;
+    bool_gopherEnabled;
     bool_excludeSimpleHostnames;
     bool_usePassiveFTP;
     NSURL *_proxyAutoConfigURL;
+    NSString *_proxyAutoConfigJavaScript;
     NEProxyServer *_HTTPServer;
     NEProxyServer *_HTTPSServer;
     NEProxyServer *_FTPServer;
@@ -16,44 +24,78 @@
     NEProxyServer *_RTSPServer;
     NEProxyServer *_gopherServer;
     NSArray *_exceptionList;
+    NSArray *_supplementalMatchDomains;
+    NSArray *_supplementalMatchOrders;
 }
 
 @property bool autoProxyDiscovery;
+@property bool autoProxyConfigurationEnabled;
 @property(copy) NSURL * proxyAutoConfigURL;
+@property(copy) NSString * proxyAutoConfigJavaScript;
+@property bool HTTPEnabled;
 @property(copy) NEProxyServer * HTTPServer;
+@property bool HTTPSEnabled;
 @property(copy) NEProxyServer * HTTPSServer;
+@property bool FTPEnabled;
 @property(copy) NEProxyServer * FTPServer;
+@property bool SOCKSEnabled;
 @property(copy) NEProxyServer * SOCKSServer;
+@property bool RTSPEnabled;
 @property(copy) NEProxyServer * RTSPServer;
+@property bool gopherEnabled;
 @property(copy) NEProxyServer * gopherServer;
 @property bool excludeSimpleHostnames;
 @property(copy) NSArray * exceptionList;
 @property bool usePassiveFTP;
+@property(copy) NSArray * supplementalMatchDomains;
+@property(copy) NSArray * supplementalMatchOrders;
 
 + (bool)supportsSecureCoding;
 
+- (void)setSupplementalMatchOrders:(id)arg1;
+- (void)setSupplementalMatchDomains:(id)arg1;
 - (void)setUsePassiveFTP:(bool)arg1;
 - (void)setExceptionList:(id)arg1;
 - (void)setExcludeSimpleHostnames:(bool)arg1;
 - (void)setGopherServer:(id)arg1;
+- (void)setGopherEnabled:(bool)arg1;
 - (void)setRTSPServer:(id)arg1;
+- (void)setRTSPEnabled:(bool)arg1;
 - (void)setSOCKSServer:(id)arg1;
+- (void)setSOCKSEnabled:(bool)arg1;
 - (void)setFTPServer:(id)arg1;
+- (void)setFTPEnabled:(bool)arg1;
 - (void)setHTTPSServer:(id)arg1;
+- (void)setHTTPSEnabled:(bool)arg1;
+- (void)setHTTPServer:(id)arg1;
+- (void)setHTTPEnabled:(bool)arg1;
+- (void)setProxyAutoConfigJavaScript:(id)arg1;
 - (void)setProxyAutoConfigURL:(id)arg1;
+- (void)setAutoProxyConfigurationEnabled:(bool)arg1;
 - (void)setAutoProxyDiscovery:(bool)arg1;
+- (id)supplementalMatchOrders;
+- (id)supplementalMatchDomains;
 - (bool)usePassiveFTP;
 - (id)exceptionList;
 - (bool)excludeSimpleHostnames;
 - (id)gopherServer;
+- (bool)gopherEnabled;
 - (id)RTSPServer;
+- (bool)RTSPEnabled;
 - (id)SOCKSServer;
+- (bool)SOCKSEnabled;
 - (id)FTPServer;
-- (id)HTTPSServer;
+- (bool)FTPEnabled;
+- (bool)HTTPSEnabled;
+- (bool)HTTPEnabled;
+- (id)proxyAutoConfigJavaScript;
 - (id)proxyAutoConfigURL;
+- (bool)autoProxyConfigurationEnabled;
 - (bool)autoProxyDiscovery;
-- (void)setHTTPServer:(id)arg1;
+- (id)HTTPSServer;
 - (id)HTTPServer;
+- (void)removeKeychainItems;
+- (void)syncWithKeychain;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)descriptionWithIndent:(int)arg1;

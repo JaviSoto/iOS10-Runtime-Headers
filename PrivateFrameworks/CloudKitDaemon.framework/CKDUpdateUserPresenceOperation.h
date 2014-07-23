@@ -45,10 +45,10 @@
 - (void)setIsLurk:(bool)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

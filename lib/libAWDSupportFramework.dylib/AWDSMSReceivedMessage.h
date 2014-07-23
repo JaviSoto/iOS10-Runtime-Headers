@@ -65,10 +65,10 @@
 - (bool)hasFzError;
 - (void)setHasFzError:(bool)arg1;
 - (void)setFzError:(int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (unsigned int)hasAttachments;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

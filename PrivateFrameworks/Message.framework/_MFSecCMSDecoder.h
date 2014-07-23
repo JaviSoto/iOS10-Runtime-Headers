@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface _MFSecCMSDecoder : NSObject <MFCollectingDataConsumer> {
     int _SecCMSError;
@@ -16,6 +16,10 @@
 
 @property(readonly) int lastSecCMSError;
 @property(readonly) NSArray * signers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isContentSigned;

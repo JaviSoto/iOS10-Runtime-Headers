@@ -29,6 +29,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

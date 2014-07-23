@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSMutableIndexSet, SKUIResourceLoader, UIImage, SKUIImageDataConsumer, SKUISwooshViewController;
+@class SKUISwooshViewController, NSString, SKUIResourceLoader, UIImage, SKUIImageDataConsumer, NSMapTable, NSMutableIndexSet;
 
 @interface SKUISwooshArtworkLoader : NSObject <SKUIArtworkRequestDelegate> {
     SKUIResourceLoader *_artworkLoader;
@@ -17,6 +17,10 @@
 @property(readonly) SKUISwooshViewController * swooshViewController;
 @property(retain) SKUIImageDataConsumer * imageDataConsumer;
 @property(readonly) UIImage * placeholderImage;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)loadImageForObject:(id)arg1 artworkRequest:(id)arg2 reason:(long long)arg3;

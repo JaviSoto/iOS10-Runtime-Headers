@@ -80,6 +80,7 @@
 - (id)_rentalStartDate;
 - (bool)_isRental;
 - (void)_setExternalProtectionRequiredForPlayback:(bool)arg1;
+- (id)_isExternalProtectionRequiredForPlaybackInternal;
 - (bool)isContentAuthorizedForPlayback;
 - (bool)isApplicationAuthorizedForPlayback;
 - (bool)isAuthorizationRequiredForPlayback;

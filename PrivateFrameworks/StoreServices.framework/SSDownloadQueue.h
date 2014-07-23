@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSSet, SSDownloadManager, NSArray;
+@class NSSet, NSArray, NSString, SSDownloadManager;
 
 @interface SSDownloadQueue : NSObject <SSDownloadManagerObserverPrivate> {
     bool_autoFinishDownloads;
@@ -22,6 +22,10 @@
 @property(getter=isUsingNetwork,readonly) bool usingNetwork;
 @property(readonly) NSArray * placeholderDownloads;
 @property(readonly) NSArray * preorders;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)softwareApplicationDownloadKinds;
 + (id)mediaDownloadKinds;

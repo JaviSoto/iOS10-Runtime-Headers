@@ -35,8 +35,8 @@
 - (bool)queryAllContainers;
 - (void)setFetchType:(long long)arg1;
 - (long long)fetchType;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

@@ -180,6 +180,7 @@
     double lastReceivedAudio;
     boollaunchedShutdownThread;
     boolisAudioRunning;
+    boolisVideoRunning;
     boolisWaitingForICEResult;
     booldidSend200OK;
     float remoteParticipantVolume;
@@ -381,6 +382,14 @@
     NSObject<OS_dispatch_source> *relaySetupTimer;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * peerCN;
 @property(readonly) VCJitterBuffer * vcJitterBuffer;
 @property(readonly) bool isCaller;
@@ -415,6 +424,7 @@
 @property long long videoPayload;
 @property long long sampleRate;
 @property(readonly) bool isAudioRunning;
+@property(readonly) bool isVideoRunning;
 @property(readonly) bool videoIsPaused;
 @property(readonly) bool audioIsPaused;
 @property bool isGKVoiceChat;
@@ -652,6 +662,8 @@
 - (void)setIsWaitingForICEResult:(bool)arg1;
 - (bool)isWaitingForICEResult;
 - (bool)isAudioRunning;
+- (bool)isVideoRunning;
+- (bool)isVideoRunning;
 - (void)setVideoPayload:(long long)arg1;
 - (long long)videoPayload;
 - (void)setDidUseICE:(bool)arg1;

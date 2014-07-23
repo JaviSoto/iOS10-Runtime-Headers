@@ -84,6 +84,10 @@
 @property(retain) UIColor * foregroundColor;
 @property long long legibilityStyle;
 @property(copy) UIStatusBarStyleRequest * styleRequest;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setSuppressUpdateAnimations:(bool)arg1;
 + (void)setTintOverrideEnabled:(bool)arg1 withColor:(id)arg2;
@@ -124,6 +128,7 @@
 - (id)currentDoubleHeightLabelText;
 - (void)requestStyle:(long long)arg1 animation:(int)arg2 startTime:(double)arg3 duration:(double)arg4 curve:(long long)arg5;
 - (void)requestStyle:(long long)arg1;
+- (long long)_requestedStyle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentFrame;
 - (void)setLocalDataOverrides:(struct { boolx1[25]; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 2; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; struct { boolx_23_1_1[25]; BOOL x_23_1_2[64]; int x_23_1_3; int x_23_1_4; BOOL x_23_1_5[100]; BOOL x_23_1_6[100]; BOOL x_23_1_7[2][100]; BOOL x_23_1_8[1024]; unsigned int x_23_1_9; int x_23_1_10; int x_23_1_11; unsigned int x_23_1_12; int x_23_1_13; unsigned int x_23_1_14; BOOL x_23_1_15[150]; int x_23_1_16; int x_23_1_17; unsigned int x_23_1_18 : 1; unsigned int x_23_1_19 : 1; unsigned int x_23_1_20 : 1; BOOL x_23_1_21[256]; unsigned int x_23_1_22 : 1; unsigned int x_23_1_23 : 1; unsigned int x_23_1_24 : 1; unsigned int x_23_1_25 : 1; unsigned int x_23_1_26 : 1; unsigned int x_23_1_27; } x23; }*)arg1;
 - (void)setShowsOnlyCenterItems:(bool)arg1;
@@ -198,13 +203,11 @@
 - (long long)legibilityStyle;
 - (bool)isDoubleHeight;
 - (bool)_isTransparent;
-- (double)defaultDoubleHeight;
 - (double)_standardHeight;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (void)didMoveToSuperview;
 - (void)setTintColor:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (double)defaultHeight;
 - (id)statusBarWindow;
 - (double)currentHeight;
 - (double)heightForOrientation:(long long)arg1;
@@ -220,6 +223,8 @@
 - (void)setStyleDelegate:(id)arg1;
 - (void)forceUpdateDoubleHeightStatus;
 - (void)forceUpdateStyleOverrides:(bool)arg1;
+- (double)defaultDoubleHeight;
+- (double)defaultHeight;
 - (id)_backgroundView;
 - (void)layoutSubviews;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDataclassOwnersManager, ACDAccessPluginManager, ACDAuthenticationDialogManager, ACRemoteDeviceProxy, NSMutableDictionary, NSMutableArray, ACDAuthenticationPluginManager, NSXPCListener, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class ACDDataclassOwnersManager, ACDAccessPluginManager, ACDAuthenticationDialogManager, NSString, ACRemoteDeviceProxy, NSMutableDictionary, NSMutableArray, ACDAuthenticationPluginManager, NSXPCListener, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
 
 @interface ACDServer : NSObject <NSXPCListenerDelegate, ACDAccountStoreDelegate> {
     NSXPCListener *_accountStoreListener;
@@ -28,6 +28,10 @@
 @property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
 @property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
 @property(retain) ACRemoteDeviceProxy * remoteDeviceProxy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedServer;
 

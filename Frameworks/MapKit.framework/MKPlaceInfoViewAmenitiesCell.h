@@ -2,29 +2,38 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, UIView;
 
 @interface MKPlaceInfoViewAmenitiesCell : ABContactCell  {
     NSMutableArray *_labels;
     NSMutableArray *_values;
-    double _totalLabelWidth;
-    double _totalValueWidth;
-    double _height;
     NSArray *_keyValues;
+    NSMutableArray *_labelConstraints;
+    UIView *_dummyContentView;
 }
 
 @property(retain) NSArray * keyValues;
+@property(retain) NSMutableArray * labelConstraints;
+@property(retain) UIView * dummyContentView;
 
++ (double)intrinsicContentHeight;
 + (id)reuseIdentifier;
 
 - (void)setKeyValues:(id)arg1;
+- (void)addWidthAndSideSpacingConstraintsForLabels:(id)arg1;
+- (void)addConstraintsForKeyLabel:(id)arg1 andMatchingValueLabel:(id)arg2;
 - (id)attributeValueWithString:(id)arg1;
 - (id)attributeLabelWithString:(id)arg1;
 - (id)keyValues;
+- (void)setLabelConstraints:(id)arg1;
+- (id)dummyContentView;
+- (id)labelConstraints;
 - (void)refreshContent;
+- (void)setDummyContentView:(id)arg1;
+- (void)contentSizeDidChange;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 
 @end

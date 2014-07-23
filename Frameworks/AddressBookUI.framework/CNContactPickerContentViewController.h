@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSPredicate, <CNContactPickerContentDelegate>;
+@class <CNContactPickerContentDelegate>, NSArray, NSString, NSPredicate;
 
 @interface CNContactPickerContentViewController : UIViewController <CNContactPickerContentViewController> {
     bool_clientWantsPersons;
@@ -20,6 +20,10 @@
 @property(copy) NSPredicate * predicateForEnablingContact;
 @property(copy) NSPredicate * predicateForSelectionOfContact;
 @property(copy) NSPredicate * predicateForSelectionOfProperty;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <CNContactPickerContentDelegate> * delegate;
 @property void* addressBook;
 

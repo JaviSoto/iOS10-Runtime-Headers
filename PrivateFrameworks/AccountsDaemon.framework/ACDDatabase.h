@@ -22,10 +22,10 @@
 + (bool)_isUnrecoverableDatabaseError:(id)arg1;
 + (bool)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id*)arg4;
 + (id)_optionsForOpeningPersistentStore;
++ (id)_managedObjectModel;
 + (id)_sharedPersistentCoordinatorForStoreAtPath:(id)arg1;
 + (id)defaultPath;
 + (struct __CFString { }*)_copyRootPath;
-+ (id)_managedObjectModel;
 
 - (id)_accountPropertyWithKey:(id)arg1 owner:(id)arg2;
 - (id)_store;
@@ -45,8 +45,8 @@
 - (bool)_databaseFileExists;
 - (id)managedObjectContext;
 - (id)initWithDefaultPath;
-- (long long)version;
 - (id)path;
+- (long long)version;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setVersion:(long long)arg1;

@@ -15,6 +15,10 @@
 @property(setter=_setArchivedIdentifier:,copy) NSString * _archivedIdentifier;
 @property(setter=_setAllowsArchivingAsSubview:) bool _allowsArchivingAsSubview;
 @property(setter=_setConstraintsToRemoveAtRuntime:,copy) NSArray * _constraintsToRemoveAtRuntime;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) double length;
 
 + (id)classFallbacksForKeyedArchiver;

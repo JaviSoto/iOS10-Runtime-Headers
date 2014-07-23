@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertAction, UIImageView, UILabel, UIView, NSLayoutConstraint;
+@class UIView, NSString, UIAlertAction, UIImageView, NSMutableArray, NSLayoutConstraint, UILabel;
 
 @interface _UIAlertControllerActionView : UIView <UIGestureRecognizerDelegate, _UIAlertActionRepresenting> {
+    UIView *labelContainerView;
     UILabel *label;
     UILabel *descriptiveLabel;
     UIImageView *imageView;
@@ -12,13 +13,16 @@
     UIView *highlightedBackgroundContainerView;
     UIView *highlightedBackgroundView;
     unsigned long long _roundedCorners;
-    double _alignedDescriptiveLabelTextWidth;
+    NSMutableArray *havingDescriptiveLabelConstraints;
+    NSMutableArray *notHavingDescriptiveLabelConstraints;
     NSLayoutConstraint *_descriptiveLabelWidthConstraint;
     UIAlertAction *_action;
     id selectedTarget;
     SEL selectedAction;
     id highlightTarget;
     SEL highlightAction;
+    bool_useFourPartBlendingHighlightView;
+    bool_hasDescriptiveText;
     bool_discrete;
     long long _alertControllerStyle;
     double _cornerRadius;
@@ -32,6 +36,10 @@
 @property(readonly) double currentDescriptiveLabelTextWidth;
 @property bool discrete;
 @property(readonly) bool isHighlighted;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)action;
@@ -57,6 +65,7 @@
 - (void)_prepareConstraintsForDescriptiveText:(bool)arg1;
 - (void)_recomputeBackgroundColor;
 - (void)_recomputeTextColor;
+- (double)_minimumLabelScaleFactor;
 - (id)_titleFont;
 - (bool)discrete;
 - (id)highlightViewForRectCorner:(unsigned long long)arg1;
@@ -68,8 +77,8 @@
 - (void)_action:(id)arg1 changedToChecked:(bool)arg2;
 - (void)_action:(id)arg1 changedToEnabled:(bool)arg2;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (id)_defaultFont;
+- (void)setHighlighted:(bool)arg1;
 - (void)tintColorDidChange;
 - (void)setCornerRadius:(double)arg1;
 - (id)tintColor;

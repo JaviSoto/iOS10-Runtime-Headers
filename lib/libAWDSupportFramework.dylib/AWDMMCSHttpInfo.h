@@ -78,6 +78,7 @@
 @property(retain) NSString * locatorPeerAddress;
 
 
+- (bool)hasDuration;
 - (id)locatorPeerAddress;
 - (id)httpErrors;
 - (id)tcpInfos;
@@ -132,7 +133,6 @@
 - (void)setTcpInfos:(id)arg1;
 - (void)setLocatorHostname:(id)arg1;
 - (void)setLocatorScheme:(id)arg1;
-- (bool)hasDuration;
 - (bool)hasStartTime;
 - (bool)hasErrorCode;
 - (void)setHasErrorCode:(bool)arg1;

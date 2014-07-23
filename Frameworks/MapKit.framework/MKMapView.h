@@ -162,6 +162,10 @@
 @property(retain) CLLocation * predictedUserLocation;
 @property bool ignoreLocationUpdates;
 @property(retain,readonly) MKAnnotationView * userLocationView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSArray * overlays;
 @property(getter=_visibleTileSets,readonly) NSArray * visibleTileSets;
 @property(getter=_detailedDescription,readonly) NSString * detailedDescription;
@@ -185,6 +189,10 @@
 @property(copy) NSArray * selectedAnnotations;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } annotationVisibleRect;
 @property(getter=_currentFlyoverAnimationID,setter=_setCurrentFlyoverAnimationID:) unsigned long long currentFlyoverAnimationID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setRendersInBackgroundByDefault:(bool)arg1;
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })regionThatFitsMapType:(unsigned long long)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -195,6 +203,8 @@
 
 - (id)selectedAnnotations;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { double x1; double x2; double x3; })arg2 course:(double)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
@@ -242,6 +252,8 @@
 - (void)_setMaximumZoomLevel:(double)arg1;
 - (id)annotationCoordinateTest;
 - (id)annotationRectTest;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attributionFrame;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_convertMapPoint:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (struct { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toMapPointFromView:(id)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toMapRectFromView:(id)arg2;
@@ -300,6 +312,7 @@
 - (void)_zoomIn;
 - (void)_showAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withMapRegion:(id)arg2;
 - (bool)_canShowAnimationForSearchResultWithMapRegion:(id)arg1;
+- (void)_performFlyoverAnimation:(id)arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 duration:(double)arg2 completionHandler:(id)arg3;
@@ -432,6 +445,7 @@
 - (void)annotationContainerWillAnimateBubble:(id)arg1;
 - (double)annotationContainer:(id)arg1 pinDropDistanceForCoordinate:(struct { double x1; double x2; })arg2 maxDistance:(double*)arg3 startPoint:(struct CGPoint { double x1; double x2; }*)arg4 shadowStartPoint:(struct CGPoint { double x1; double x2; }*)arg5;
 - (void)annotationContainer:(id)arg1 scrollToRevealCalloutWithOffset:(struct CGPoint { double x1; double x2; })arg2 annotationCoordinate:(struct { double x1; double x2; })arg3 completionHandler:(id)arg4;
+- (void)calloutDidAppearForAnnotationView:(id)arg1 inContainer:(id)arg2;
 - (void)annotationContainer:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (bool)annotationContainerIsRotated:(id)arg1;
 - (bool)annotationContainerShouldAlignToPixels:(id)arg1;
@@ -446,7 +460,7 @@
 - (void)_pauseFlyoverAnimation;
 - (void)_stopFlyoverAnimation;
 - (void)setCompassEnabled:(bool)arg1;
-- (void)_performFlyoverAnimation:(id)arg1;
+- (void)_performFlyoverAnimation:(id)arg1 animateToStart:(bool)arg2;
 - (void)_prepareFlyoverAnimation:(id)arg1 inBackground:(bool)arg2 completion:(id)arg3;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectThatFits:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
@@ -618,10 +632,6 @@
 - (double)_maximumZoomLevel;
 - (double)_minimumZoomLevel;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsets;
-- (void)removeAnnotation:(id)arg1;
-- (void)addAnnotation:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attributionFrame;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)camera;
 - (unsigned long long)mapType;

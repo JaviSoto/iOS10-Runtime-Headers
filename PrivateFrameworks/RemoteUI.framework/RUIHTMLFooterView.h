@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSURL, RUIWebContainerView, <RUITableFooterDelegate>;
+@class NSString, NSURL, RUIWebContainerView, <RUITableFooterDelegate>;
 
 @interface RUIHTMLFooterView : UIView <RUIWebContainerViewDelegate, RemoteUITableFooter> {
     RUIWebContainerView *_webContainerView;
@@ -12,6 +12,10 @@
 
 @property <RUITableFooterDelegate> * delegate;
 @property(retain) NSURL * baseURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;

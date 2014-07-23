@@ -7,7 +7,6 @@
 @interface PKBundle : NSObject  {
     NSString *_supportPath;
     NSObject<OS_xpc_object> *__bundle;
-    NSURL *_url;
 }
 
 @property(retain) NSObject<OS_xpc_object> * _bundle;
@@ -20,10 +19,12 @@
 @property(readonly) NSString * plugInsPath;
 
 
+- (id)path;
 - (id)url;
 - (id)infoDictionary;
 - (id)bundleIdentifier;
 - (id)plugInsPath;
+- (id)initWithExecutableURL:(id)arg1;
 - (id)initForMainBundle;
 - (id)bundleDirectory:(id)arg1;
 - (id)supportPath;
@@ -31,9 +32,9 @@
 - (id)stringProperty:(int)arg1;
 - (id)_bundle;
 - (void)set_bundle:(id)arg1;
+- (id)initWithExecutablePath:(id)arg1;
 - (id)initWithXPCBundle:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)path;
 - (void).cxx_destruct;
 - (id)initWithPath:(id)arg1;
 

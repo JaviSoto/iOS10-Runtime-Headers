@@ -9,6 +9,10 @@
 }
 
 @property(readonly) NSString * lastPlugin;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)testMigrationUIWithProgress:(bool)arg1 forceInvert:(bool)arg2 completion:(id)arg3;

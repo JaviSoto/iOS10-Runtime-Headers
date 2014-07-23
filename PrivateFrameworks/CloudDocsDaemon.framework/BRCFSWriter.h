@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BRCAccountSession, NSObject<OS_dispatch_queue>;
+@class BRCAccountSession, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BRCFSWriter : NSObject <BRCModule, BRCFileCoordinationWriting> {
     BRCAccountSession *_session;
@@ -19,6 +19,10 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_stageCreationOfDirectory:(id)arg1;

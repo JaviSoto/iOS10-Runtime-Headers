@@ -8,6 +8,7 @@
     bool_webSearch;
     bool_started;
     bool_canceled;
+    long long _queryId;
     NSString *_fbq;
     PRSSearchFeedback *_feedback;
     <PRSSearchQueryHandler> *_handler;
@@ -15,6 +16,7 @@
     PRSSearchSession *_session;
 }
 
+@property long long queryId;
 @property(retain) NSString * fbq;
 @property bool webSearch;
 @property bool started;
@@ -29,10 +31,12 @@
 - (void)setWebSearch:(bool)arg1;
 - (bool)webSearch;
 - (void)setFbq:(id)arg1;
+- (void)setQueryId:(long long)arg1;
 - (id)feedbackQueryIdentifier;
 - (void)invalidateHandler;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4;
 - (id)fbq;
+- (long long)queryId;
 - (void)setCanceled:(bool)arg1;
 - (void)setStarted:(bool)arg1;
 - (bool)started;

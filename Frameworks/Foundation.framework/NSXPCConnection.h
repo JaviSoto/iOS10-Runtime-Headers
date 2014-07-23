@@ -117,7 +117,6 @@
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3;
 - (void)addBarrierBlock:(id)arg1;
 - (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3;
-- (void)_insertMessageData:(id)arg1;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
 - (void)_sendDesistForProxyNumber:(unsigned long long)arg1;
 - (struct { unsigned int x1[8]; })auditToken;

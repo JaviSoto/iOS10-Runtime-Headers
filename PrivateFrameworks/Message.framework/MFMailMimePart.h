@@ -8,6 +8,14 @@
 + (bool)isRecognizedClassForContent:(id)arg1;
 + (Class)attachmentClass;
 
+- (id)htmlContent;
+- (bool)_shouldContinueDecodingProcess;
+- (id)contentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2 downloadIfNecessary:(bool)arg3 asHTML:(bool)arg4 isComplete:(bool*)arg5;
+- (id)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(bool)arg3;
+- (id)fileWrapperForcingDownload:(bool)arg1;
+- (void)configureFileWrapper:(id)arg1;
+- (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
+- (id)htmlContentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2;
 - (id)decodeMessageExternal_body;
 - (id)decodeMessagePartial;
 - (id)decodeMessageRfc822;
@@ -19,13 +27,5 @@
 - (id)decodeTextEnriched;
 - (id)decodeTextRichtext;
 - (id)htmlContentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2 downloadIfNecessary:(bool)arg3;
-- (id)htmlContent;
-- (bool)_shouldContinueDecodingProcess;
-- (id)contentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2 downloadIfNecessary:(bool)arg3 asHTML:(bool)arg4 isComplete:(bool*)arg5;
-- (id)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(bool)arg3;
-- (id)fileWrapperForcingDownload:(bool)arg1;
-- (void)configureFileWrapper:(id)arg1;
-- (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
-- (id)htmlContentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2;
 
 @end

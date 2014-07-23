@@ -20,6 +20,10 @@
 }
 
 @property(copy) NSString * passphrase;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)resourceTypeToMIME:(int)arg1;
 + (int)blipTypeToResourceType:(int)arg1;

@@ -97,9 +97,18 @@
     long long _toWindowOrientation;
     long long _fromWindowOrientation;
     _UIWindowAnimationController *__animationController;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __shouldPreventRotationHook;
+
     _UISimulatedApplicationResizeGestureRecognizerDelegate *__simulatedApplicationResizeGestureRecognizerDelegate;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIScreen * screen;
 @property double windowLevel;
 @property(getter=isKeyWindow,readonly) bool keyWindow;
@@ -114,6 +123,7 @@
 @property(getter=_fromWindowOrientation,readonly) long long fromWindowOrientation;
 @property(getter=_animationController,setter=_setAnimationController:,retain) _UIWindowAnimationController * _animationController;
 @property(readonly) struct { long long x1; long long x2; } __sizeClassPair;
+@property(setter=_setShouldPreventRotationHook:,copy) id _shouldPreventRotationHook;
 @property(setter=_setRootViewConstraints:,copy) NSArray * _rootViewConstraints;
 @property(setter=_setSimulatedApplicationResizeGestureRecognizerDelegate:,retain) _UISimulatedApplicationResizeGestureRecognizerDelegate * _simulatedApplicationResizeGestureRecognizerDelegate;
 @property(setter=_setShouldHitTestEntireScreen:) bool _shouldHitTestEntireScreen;
@@ -130,7 +140,6 @@
 + (void)_pushKeyWindow:(id)arg1;
 + (void)_setKeyWindowStackEnabled:(bool)arg1;
 + (void)_clearKeyWindowStack;
-+ (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1;
 + (void)_setTransformLayerRotationsAreEnabled:(bool)arg1;
 + (void)setAllWindowsKeepContextInBackground:(bool)arg1;
 + (Class)layerClass;
@@ -149,6 +158,7 @@
 + (bool)_isSecure;
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
 + (void)_prepareWindowsForAppResume;
++ (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1;
 + (void)_prepareWindowsPassingTestForAppResume:(id)arg1;
 + (id)_externalKeyWindow;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned long long)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -222,6 +232,7 @@
 - (void)updateConstraintsIfNeeded;
 - (void)_switchToLayoutEngine:(id)arg1;
 - (id)_layoutEngineCreateIfNecessary;
+- (void)_setShouldPreventRotationHook:(id)arg1;
 - (void)_setAnimationController:(id)arg1;
 - (long long)_fromWindowOrientation;
 - (bool)_usesLegacySupportedOrientationChecks;
@@ -243,7 +254,6 @@
 - (void)_unregisterViewForSubtreeMonitoring:(id)arg1;
 - (void)_registerViewForSubtreeMonitoring:(id)arg1;
 - (void)setKeepContextInBackground:(bool)arg1;
-- (void)setResizesToFullScreen:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)_isInAWindow;
 - (struct CGPoint { double x1; double x2; })_convertDoublePointFromSceneReferenceSpace:(struct CGPoint { double x1; double x2; })arg1;
@@ -354,6 +364,7 @@
 - (id)__clientsForRotationCallbacks;
 - (void)_rotateWindowToOrientation:(long long)arg1 updateStatusBar:(bool)arg2 duration:(double)arg3 skipCallbacks:(bool)arg4;
 - (void)_rotateToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
+- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sendTraitNotifications:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertRectToSceneReferenceSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(long long)arg2 applyTransformToWindow:(bool)arg3 updateStatusBar:(bool)arg4 duration:(double)arg5 force:(bool)arg6 isRotating:(bool)arg7;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(long long)arg2 updateStatusBar:(bool)arg3 duration:(double)arg4 force:(bool)arg5 isRotating:(bool)arg6;
@@ -377,6 +388,7 @@
 - (id)_deferredLaunchBlock;
 - (void)_updateSimulatedApplicationResizeGestureForInterfaceOrientationChange;
 - (bool)_isAnyWindowRotating;
+- (id)_shouldPreventRotationHook;
 - (bool)_legacyShouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)_clientsForRotation;
 - (id)_rotationViewControllers;
@@ -427,7 +439,6 @@
 - (void)_setMouseEnteredView:(id)arg1;
 - (void)_setMouseDownView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)_setWindowInternalConstraints:(id)arg1;
-- (void)_resizeWindowToFullScreenIfNecessary;
 - (void)awakeFromNib;
 - (void)setScreen:(id)arg1;
 - (void)_updateContextOrderingAndSetLayerHidden:(bool)arg1;
@@ -496,6 +507,9 @@
 - (void)_orderFrontWithoutMakingKey;
 - (void)setWindowLevel:(double)arg1;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)_resizeWindowToFullScreenIfNecessary;
+- (void)setResizesToFullScreen:(bool)arg1;
+- (id)_initWithOrientation:(long long)arg1;
 - (bool)_isTextEffectsWindow;
 - (bool)_clearMouseView;
 - (id)_animationController;

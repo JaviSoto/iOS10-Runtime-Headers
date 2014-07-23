@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSTimeZone;
+@class NSString, NSTimeZone;
 
 @interface SBFLockScreenSimpleDateFormatter : NSObject <SBFLockScreenDateFormatter> {
     NSTimeZone *_timeZone;
 }
 
 @property(retain) NSTimeZone * timeZone;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)formatDateAsTimeNoAMPM:(id)arg1;

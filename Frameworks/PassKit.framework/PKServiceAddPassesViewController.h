@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UINavigationBar, PKGroupsController, NSArray, PKPassGroupStackView, NSMutableArray, NSMutableData, UIProgressView, NSURLConnection;
+@class UINavigationBar, PKGroupsController, NSArray, NSString, PKPassGroupStackView, NSMutableArray, NSMutableData, UIProgressView, NSURLConnection;
 
 @interface PKServiceAddPassesViewController : UIViewController <PKPassGroupStackViewDelegate, PKPassGroupStackViewDatasource, PKGroupsControllerDelegate, UIScrollViewDelegate, PKServiceAddPassesViewControllerProtocol> {
     NSURLConnection *_downloadPassURLConnection;
@@ -42,6 +42,10 @@
 @property bool haveStartedCardAnimation;
 @property long long presentationState;
 @property(retain) UIProgressView * progressView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
@@ -78,6 +82,7 @@
 - (void)tearDownDownloadConnection;
 - (void)ingestCardAtURL:(id)arg1;
 - (void)ingestPasses:(id)arg1;
+- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
 - (void)setAllowsPassIngestion:(bool)arg1;
 - (void)groupStackView:(id)arg1 didTransitionToState:(long long)arg2 animated:(bool)arg3;
 - (bool)passesGrowWhenFlipped;

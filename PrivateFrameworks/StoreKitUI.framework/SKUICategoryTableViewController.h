@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIClientContext, NSURL, <SKUICategoryTableViewControllerDelegate>, SKUICategoryArtworkLoader, SKUICategory;
+@class NSString, NSArray, NSURL, SKUICategoryArtworkLoader, SKUIClientContext, SKUICategory, <SKUICategoryTableViewControllerDelegate>;
 
 @interface SKUICategoryTableViewController : UITableViewController <SKUICategoryArtworkLoaderObserver, SKUICategoryTableViewControllerDelegate> {
     SKUICategoryArtworkLoader *_artworkLoader;
@@ -26,6 +26,10 @@
 @property(retain) NSURL * selectedURL;
 @property(retain) NSURL * defaultURL;
 @property(getter=isRoot) bool root;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)defaultURL;

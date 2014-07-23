@@ -58,9 +58,9 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMinFrameDuration;
 - (bool)isVideoOrientationSupported;
 - (bool)isVideoMirroringSupported;
+- (void)inputPortFormatDescriptionChanged:(id)arg1;
 - (bool)isVideoStabilizationSupported;
 - (void)updateAudioChannelsArray;
-- (void)inputPortFormatDescriptionChanged:(id)arg1;
 - (bool)sourcesFromFrontFacingCamera;
 - (id)videoPreviewLayer;
 - (id)output;

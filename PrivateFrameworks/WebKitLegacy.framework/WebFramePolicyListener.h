@@ -11,6 +11,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebFramePolicyListener : NSObject <WebPolicyDecisionListener, WebFormSubmissionListener> {
     struct RefPtr<WebCore::Frame> { 
         struct Frame {} *m_ptr; 
@@ -21,6 +23,11 @@
     struct function<void (WebCore::PolicyAction)>="__buf_"{type="__lx"[24C] {} _policyFunction;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 

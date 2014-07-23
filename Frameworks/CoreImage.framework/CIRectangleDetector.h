@@ -9,7 +9,6 @@
     double _width;
     double _height;
     NSMutableDictionary *featureOptions;
-    bool_useCCRect;
     struct OpaqueVTPixelTransferSession { } *pixelTransferSession;
     struct __CVBuffer { } *interimScaleBuffer;
     struct __CVBuffer { } *scaleBuffer;

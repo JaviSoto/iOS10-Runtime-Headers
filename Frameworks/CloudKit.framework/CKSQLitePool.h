@@ -28,7 +28,7 @@
 - (id)factory;
 - (void)closeAll;
 - (id)initWithFactory:(id)arg1;
-- (id)acquireDatabase;
+- (id)acquireDatabase:(bool)arg1;
 - (void)setDrainScheduled:(bool)arg1;
 - (bool)drainScheduled;
 - (void)setDbs:(id)arg1;

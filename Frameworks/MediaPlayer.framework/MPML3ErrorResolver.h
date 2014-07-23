@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, MPMediaItem, SSKeybagRequest;
+@class NSString, MPMediaItem, NSError, SSKeybagRequest;
 
 @interface MPML3ErrorResolver : MPAVErrorResolver <SSRequestDelegate> {
     MPMediaItem *_mediaItem;
@@ -13,6 +13,10 @@
 @property(retain) MPMediaItem * mediaItem;
 @property(retain) SSKeybagRequest * request;
 @property(retain) NSError * error;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

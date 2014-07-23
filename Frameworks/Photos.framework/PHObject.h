@@ -20,14 +20,16 @@
 @property(getter=isDeleted,readonly) bool deleted;
 @property unsigned long long propertyHint;
 
-+ (id)entityKeyForPropertyKey:(id)arg1;
 + (bool)managedObjectSupportsBursts;
-+ (id)localIdentifierWithUUID:(id)arg1;
++ (bool)managedObjectSupportsHiddenState;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 + (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id)arg2;
++ (id)localIdentifierWithUUID:(id)arg1;
 + (id)identifierCode;
 + (bool)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 
 - (id)_shortObjectIDURI;

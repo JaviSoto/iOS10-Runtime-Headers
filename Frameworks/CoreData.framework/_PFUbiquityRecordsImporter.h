@@ -40,6 +40,10 @@
 @property(retain) PFUbiquitySwitchboardCacheWrapper * sideLoadCacheWrapper;
 @property(readonly) NSPersistentStore * privateStore;
 @property(readonly) NSPersistentStoreCoordinator * privatePSC;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id)arg2;
 + (void)executeBlockOnRootQueue:(id)arg1;

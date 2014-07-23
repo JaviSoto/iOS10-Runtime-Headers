@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <GEORoutePreloadSession>, GEOMapAccess;
+@class <GEORoutePreloadSession>, NSString, GEOMapAccess;
 
 @interface VKMapMatcher : NSObject <GEOMapAccessRestrictions> {
     GEOMapAccess *_map;
@@ -10,6 +10,10 @@
 }
 
 @property(retain) <GEORoutePreloadSession> * routePreloader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool allowsNetworkTileLoad;
 
 + (id)mapMatcherOfType:(id)arg1;

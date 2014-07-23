@@ -19,10 +19,13 @@
 @property double timeout;
 @property bool highPriority;
 @property bool localDelivery;
+@property bool requireBluetooth;
 @property(retain) NSString * identifier;
 @property bool bypassDuet;
 @property bool activityContinuation;
+@property bool nonWaking;
 @property(retain) NSString * queueOneIdentifier;
+@property bool fireAndForget;
 @property bool expectsPeerResponse;
 @property(retain) NSString * peerResponseIdentifier;
 @property bool compressed;
@@ -37,6 +40,7 @@
 @property(retain) NSArray * interestingRegistrationProperties;
 @property(retain) NSArray * requireAllRegistrationProperties;
 @property(retain) NSArray * bulkedPayload;
+@property bool bypassSizeCheck;
 @property(retain,readonly) NSDate * expirationDate;
 @property(retain,readonly) NSDictionary * dictionaryRepresentation;
 
@@ -49,10 +53,13 @@
 - (void)setInterestingRegistrationProperties:(id)arg1;
 - (void)setQueueOneIdentifier:(id)arg1;
 - (void)setActivityContinuation:(bool)arg1;
+- (void)setFireAndForget:(bool)arg1;
+- (void)setNonWaking:(bool)arg1;
 - (void)setBypassDuet:(bool)arg1;
 - (void)setPeerResponseIdentifier:(id)arg1;
 - (void)setExpectsPeerResponse:(bool)arg1;
 - (void)setUseDictAsTopLevel:(bool)arg1;
+- (void)setRequireBluetooth:(bool)arg1;
 - (void)setLocalDelivery:(bool)arg1;
 - (void)setCompressPayload:(bool)arg1;
 - (void)setEncryptPayload:(bool)arg1;
@@ -61,8 +68,13 @@
 - (void)setCommand:(id)arg1;
 - (void)setFromID:(id)arg1;
 - (void)setDataToEncrypt:(id)arg1;
+- (bool)fireAndForget;
+- (bool)bypassSizeCheck;
+- (void)setBypassSizeCheck:(bool)arg1;
+- (bool)nonWaking;
 - (bool)activityContinuation;
 - (bool)bypassDuet;
+- (bool)requireBluetooth;
 - (bool)localDelivery;
 - (bool)highPriority;
 - (void)setHighPriority:(bool)arg1;

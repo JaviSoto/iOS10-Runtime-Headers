@@ -5,6 +5,8 @@
 @class NSManagedObjectModel, NSArray, NSString;
 
 @interface NSPersistentStoreCoordinator : NSObject <NSLocking> {
+    id _queueOwner;
+    void *_dispatchQueue;
     struct _persistentStoreCoordinatorFlags { 
         unsigned int _isRegistered : 1; 
         unsigned int _reservedFlags : 31; 
@@ -12,9 +14,7 @@
     unsigned int _reserved32;
     long long _miniLock;
     id *_additionalPrivateIvars;
-    id _coordinatorLabel;
     NSManagedObjectModel *_managedObjectModel;
-    void *_dispatchQueue;
     NSArray *_persistentStores;
 }
 
@@ -35,7 +35,9 @@
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
 + (Class)_storeClassForStoreType:(id)arg1;
 + (void)_registerDefaultStoreClassesAndTypes;
++ (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
 + (id)registeredStoreTypes;
++ (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (void)initialize;
 + (bool)accessInstanceVariablesDirectly;

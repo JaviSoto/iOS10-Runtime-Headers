@@ -38,7 +38,7 @@
 @property(copy) id completionHandler;
 @property(retain) UIViewController * remoteViewController;
 
-+ (id)composeViewControllerForExtension:(id)arg1;
++ (id)composeViewControllerForExtensionIdentifier:(id)arg1;
 + (bool)isAvailableForExtensionIdentifier:(id)arg1;
 + (id)_shareExtensionWithIdentifier:(id)arg1;
 + (id)_extensionIdentifierForServiceType:(id)arg1;
@@ -48,7 +48,7 @@
 + (id)_serviceTypeToExtensionIdentifierMap;
 + (id)composeViewControllerForServiceType:(id)arg1;
 + (bool)isAvailableForServiceType:(id)arg1;
-+ (id)composeViewControllerForExtensionIdentifier:(id)arg1;
++ (id)composeViewControllerForExtension:(id)arg1;
 + (bool)isAvailableForExtension:(id)arg1;
 + (id)extensionIdentifierForActivityType:(id)arg1;
 
@@ -59,6 +59,7 @@
 - (void)userDidCancel;
 - (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
+- (bool)addImageAsset:(id)arg1;
 - (id)initWithExtensionIdentifier:(id)arg1;
 - (void)remoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (void)remoteController:(id)arg1 didLoadWithError:(id)arg2;
@@ -69,21 +70,20 @@
 - (bool)_addURL:(id)arg1 type:(long long)arg2 preview:(id)arg3;
 - (bool)supportsVideoAsset:(id)arg1;
 - (bool)_addImageJPEGData:(id)arg1 preview:(id)arg2;
+- (bool)supportsImageAsset:(id)arg1;
 - (bool)_addImageAsset:(id)arg1 preview:(id)arg2;
 - (id)_urlForUntypedAsset:(id)arg1;
 - (bool)canAddContent;
 - (id)initWithExtension:(id)arg1 requestedServiceType:(id)arg2;
 - (void)completeWithResult:(long long)arg1;
 - (id)serviceType;
+- (bool)addURL:(id)arg1 withPreviewImage:(id)arg2;
+- (bool)setInitialText:(id)arg1;
+- (bool)addAttachment:(id)arg1;
 - (id)initWithServiceType:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (bool)addURL:(id)arg1;
-- (bool)addURL:(id)arg1 withPreviewImage:(id)arg2;
-- (bool)addAttachment:(id)arg1;
-- (bool)addImageAsset:(id)arg1;
-- (bool)supportsImageAsset:(id)arg1;
-- (bool)setInitialText:(id)arg1;
 - (bool)addExtensionItem:(id)arg1;
 - (bool)addItemProvider:(id)arg1;
 - (id)remoteViewController;

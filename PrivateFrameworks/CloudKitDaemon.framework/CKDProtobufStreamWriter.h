@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSData, NSFileHandle, NSOutputStream, <CKDProtobufMessageSigningDelegate>, NSMutableArray, NSObject<OS_dispatch_queue>, NSInputStream;
+@class NSData, NSFileHandle, NSString, NSOutputStream, <CKDProtobufMessageSigningDelegate>, NSMutableArray, NSObject<OS_dispatch_queue>, NSInputStream;
 
 @interface CKDProtobufStreamWriter : NSObject <NSStreamDelegate> {
     NSMutableArray *_allObjects;
@@ -34,46 +34,52 @@
     bool_haveFlushedZlib;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     bool_shouldCompress;
-    bool_haveStreamedFirstObject;
     bool_haveFinishedCompression;
     bool_haveFinishedStreaming;
     unsigned long long _bufferSize;
     <CKDProtobufMessageSigningDelegate> *_signingDelegate;
-    NSFileHandle *_logFileHandle;
+    NSFileHandle *_humanLogFileHandle;
+    NSFileHandle *_binaryLogFileHandle;
 }
 
 @property(readonly) NSInputStream * inputStream;
 @property bool shouldCompress;
 @property unsigned long long bufferSize;
 @property <CKDProtobufMessageSigningDelegate> * signingDelegate;
-@property(retain) NSFileHandle * logFileHandle;
-@property bool haveStreamedFirstObject;
+@property(retain) NSFileHandle * humanLogFileHandle;
+@property(retain) NSFileHandle * binaryLogFileHandle;
 @property bool haveFinishedCompression;
 @property bool haveFinishedStreaming;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (id)logFileHandle;
 - (void)setShouldCompress:(bool)arg1;
+- (bool)_finishStreaming:(id)arg1;
+- (long long)_writeDataToStream:(id)arg1;
+- (void)_prepareObjectForStreaming:(id)arg1 shouldSign:(bool)arg2;
+- (id)_prepareMescalSignature:(id)arg1;
+- (id)binaryLogFileHandle;
+- (id)humanLogFileHandle;
+- (id)_dataForMessage:(id)arg1;
+- (id)signingDelegate;
 - (long long)_streamNextObject:(id)arg1;
 - (id)_compressBodyData:(id)arg1 shouldFlush:(bool)arg2;
 - (void)setHaveFinishedCompression:(bool)arg1;
 - (bool)haveFinishedCompression;
-- (void)setHaveStreamedFirstObject:(bool)arg1;
-- (id)_signatureDataForMessageData:(id)arg1;
-- (bool)haveStreamedFirstObject;
-- (id)signingDelegate;
-- (id)_nextObjectData;
 - (unsigned long long)bufferSize;
 - (void)_tearDownOutputStream;
 - (bool)shouldCompress;
 - (void)setHaveFinishedStreaming:(bool)arg1;
 - (bool)haveFinishedStreaming;
-- (void)setLogFileHandle:(id)arg1;
+- (void)setBinaryLogFileHandle:(id)arg1;
+- (void)setHumanLogFileHandle:(id)arg1;
 - (void)setSigningDelegate:(id)arg1;
 - (void)setBufferSize:(unsigned long long)arg1;
 - (id)initWithCompression:(bool)arg1;
 - (void)setStreamedObjects:(id)arg1;
-- (id)allData;
 - (id)inputStream;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)open;

@@ -41,8 +41,8 @@
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
-- (id)mailNumberOfPastDaysToSync;
 - (void)setUseSSL:(id)arg1;
+- (id)mailNumberOfPastDaysToSync;
 - (void)setSyncDefaultFoldersOnly:(bool)arg1;
 - (bool)syncDefaultFoldersOnly;
 - (void)setEmbeddedCertificatePassword:(id)arg1;

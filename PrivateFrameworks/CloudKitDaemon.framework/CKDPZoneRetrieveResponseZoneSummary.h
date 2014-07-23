@@ -45,7 +45,6 @@
 - (void)setHasAssetQuotaUsage:(bool)arg1;
 - (void)setAssetQuotaUsage:(long long)arg1;
 - (bool)hasDeviceCount;
-- (void)setHasDeviceCount:(bool)arg1;
 - (void)setDeviceCount:(int)arg1;
 - (bool)hasClientChangeToken;
 - (bool)hasCurrentServerContinuationToken;
@@ -53,7 +52,9 @@
 - (void)setClientChangeToken:(id)arg1;
 - (void)setCurrentServerContinuationToken:(id)arg1;
 - (void)setTargetZone:(id)arg1;
+- (void)setHasDeviceCount:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

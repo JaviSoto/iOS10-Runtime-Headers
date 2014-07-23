@@ -50,7 +50,7 @@
 + (id)fetchCollectionListsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
 + (id)fetchCollectionListsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchCollectionListsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
-+ (id)fetchCollectionListContainingCollection:(id)arg1 options:(id)arg2;
++ (id)fetchCollectionListsContainingCollection:(id)arg1 options:(id)arg2;
 + (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2;
@@ -58,6 +58,8 @@
 + (id)identifierCode;
 + (bool)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 
 - (id)pl_assetContainerList;

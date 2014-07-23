@@ -49,10 +49,11 @@
 - (void)setHasPosition:(bool)arg1;
 - (id)unknownFields;
 - (bool)hasIdentifier;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasPosition;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

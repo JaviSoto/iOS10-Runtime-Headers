@@ -86,6 +86,7 @@
 @property unsigned int wifiChannel;
 
 
+- (bool)hasDuration;
 - (unsigned int)wifiChannel;
 - (int)wifiRSSI;
 - (unsigned int)cpuAvg;
@@ -151,9 +152,8 @@
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

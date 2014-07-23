@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UITraitCollection, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, UIView, <UIAdaptivePresentationControllerDelegate>, UIViewController;
+@class UIView, NSString, UITraitCollection, <UIViewControllerInteractiveTransitioning>, <UIAdaptivePresentationControllerDelegate>, <UIViewControllerAnimatedTransitioning>, UIViewController;
 
 @interface UIPresentationController : NSObject <_UIAppearanceContainer, _UITraitEnvironmentInternal, _UIContentContainerInternal, UIAppearanceContainer, UITraitEnvironment, UIContentContainer> {
     bool_isDisconnectedRoot;
@@ -79,6 +79,10 @@
 @property(copy) id _computeToEndFrameForCurrentTransition;
 @property(copy) id _currentTransitionDidComplete;
 @property(getter=_containerIgnoresDirectTouchEvents,setter=_setContainerIgnoresDirectTouchEvents:) bool containerIgnoresDirectTouchEvents;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UITraitCollection * traitCollection;
 @property(readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 
@@ -108,6 +112,7 @@
 - (void)_presentWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
 - (void)_setContainerIgnoresDirectTouchEvents:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1 inWindow:(id)arg2 transitionView:(id)arg3 fromViewController:(id)arg4;
+- (bool)_preserveResponderAcrossWindows;
 - (bool)_shouldKeepCurrentFirstResponder;
 - (bool)_shouldChangeStatusBarViewController;
 - (bool)_isAdapted;
@@ -118,7 +123,7 @@
 - (id)overrideTraitCollection;
 - (id)_parentTraitCollection;
 - (id)_parentTraitEnvironment;
-- (id)initWithPresenting:(id)arg1 presented:(id)arg2;
+- (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (long long)adaptivePresentationStyle;
 - (void)_setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
@@ -161,6 +166,7 @@
 - (bool)_changedPresentingViewControllerDuringAdaptation;
 - (void)runTransitionForCurrentState;
 - (void)_initViewHierarchyForPresentationSuperview:(id)arg1;
+- (void)_adjustOrientationIfNecessaryInWindow:(id)arg1 forViewController:(id)arg2 preservingViewController:(id)arg3;
 - (bool)_shouldRespectDefinesPresentationContext;
 - (id)_currentContextPresentationSuperview;
 - (id)_fullscreenPresentationSuperview;
@@ -180,7 +186,6 @@
 - (id)_currentTransitionDidComplete;
 - (bool)shouldRemovePresentersView;
 - (void)_performBlockWithoutTriggeringResponderEvents:(id)arg1;
-- (id)initWithPresentingViewController:(id)arg1 presentedViewController:(id)arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)_setPresentedViewController:(id)arg1;
 - (void)_setPresentingViewController:(id)arg1;

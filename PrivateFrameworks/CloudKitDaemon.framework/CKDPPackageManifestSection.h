@@ -27,10 +27,11 @@
 - (void)setHasLastSection:(bool)arg1;
 - (void)setLastSection:(bool)arg1;
 - (bool)hasSignature;
-- (bool)hasSize;
 - (void)setHasSize:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setSignature:(id)arg1;
+- (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setSize:(long long)arg1;

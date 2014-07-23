@@ -37,6 +37,7 @@
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (void)initialize;
 
+- (id)_conformingDataTypes;
 - (void*)_copyValueAsCFTypeWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 failureReason:(id*)arg2;
 - (id)_figMetadataSpecificationReturningError:(id*)arg1;
 - (id)_initWithFigMetadataDictionary:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSMapTable, MKPlaceInfoViewController, MKMapItem, MKPlaceNearbyAppsMetricsCoordinator, UITapGestureRecognizer, <_MKPlaceViewControllerDelegate>, NSString, CNContact, MKPlaceActionsViewController, MKPlaceHeaderView, ABPeoplePickerNavigationController, NSArray, MKSegmentedControlTabBarView, SKProductPageViewController, MKDistanceDetailProvider;
 
-@interface _MKPlaceViewController : MKStackingViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, SKProductPageViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceActionsViewControllerDelegate> {
+@interface _MKPlaceViewController : MKStackingViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, SKProductPageViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKPlaceHeaderViewDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceActionsViewControllerDelegate> {
     MKPlaceInfoViewController *_infoViewController;
     MKPlaceActionsViewController *_actionsViewController;
     UITapGestureRecognizer *_flyoverTourTapRecognizer;
@@ -12,6 +12,7 @@
     SKProductPageViewController *_storePageViewController;
     NSArray *_storeItems;
     void *_addressBook;
+    void *_originalContactRecordCopy;
     NSMapTable *_additionalViewControllers;
     bool_overrideDefaultShowRAP;
     bool_hasCheckedDistanceAvailability;
@@ -70,9 +71,21 @@
 @property(retain) MKDistanceDetailProvider * distanceMonitor;
 @property bool hasCheckedDistanceAvailability;
 @property(readonly) MKPlaceNearbyAppsMetricsCoordinator * metricsCoordinator;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setContactsNavigationController:(id)arg1;
+- (void)setShowShareActionsButton:(bool)arg1;
+- (void)setShowEditButton:(bool)arg1;
+- (id)initWithContact:(id)arg1 mapItem:(id)arg2;
+- (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)setContact:(id)arg1;
+- (id)contact;
 - (void)setShowFlyoverTour:(bool)arg1;
 - (void)setShowNearbyApps:(bool)arg1;
 - (void)setShowRerouting:(bool)arg1;
@@ -88,7 +101,6 @@
 - (bool)hasCheckedDistanceAvailability;
 - (void)setDistanceMonitor:(id)arg1;
 - (id)distanceMonitor;
-- (void)_openInfoAttribution;
 - (id)stackingViewController:(id)arg1 scrollViewForViewController:(id)arg2;
 - (void)_switchToTabAtIndex:(long long)arg1;
 - (void)removeAdditionalViewController:(id)arg1;
@@ -116,6 +128,7 @@
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (bool)headerViewshouldShowTitleSubtitleAndStarRatings:(id)arg1;
 - (void)headerView:(id)arg1 didFinishLoadingBackgroundViewOfType:(long long)arg2;
+- (void)openInfoAttribution;
 - (void)nearbyAppsController:(id)arg1 showStorePageWithURL:(id)arg2 storeID:(id)arg3;
 - (void)nearbyAppsController:(id)arg1 openAppWithBundleID:(id)arg2 storeID:(id)arg3;
 - (void)stackingViewControllerDidEndScroll:(id)arg1;
@@ -129,6 +142,7 @@
 - (id)metricsCoordinator;
 - (void)_findNearbyAppsAtCoordinate:(struct { double x1; double x2; })arg1;
 - (id)contactsNavigationController;
+- (bool)_removeMapsDataFromContactWithRecordID:(int)arg1;
 - (void)setShowOpenInSkyline:(bool)arg1;
 - (bool)showOpenInSkyline;
 - (void)setShowSimulateLocation:(bool)arg1;
@@ -143,9 +157,11 @@
 - (bool)showRerouting;
 - (bool)showFlyoverTour;
 - (bool)hideDirectionsButtons;
+- (void)_openInfoAttribution;
 - (void)_tappedForFlyoverTour;
 - (void)setPlaceHeaderView:(id)arg1;
 - (id)_mapTableKeyForSectionPosition:(long long)arg1;
+- (void)_updateViewControllers;
 - (void)_searchForNearbyApps;
 - (bool)showNearbyApps;
 - (void)_setViewControllersWithInformationViewControllers:(id)arg1;
@@ -166,18 +182,9 @@
 - (bool)showShareActionsButton;
 - (void)_showEditSheet:(id)arg1;
 - (bool)showEditButton;
-- (void)_updateViewControllers;
 - (void)_setupHeaderView;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
-- (void)setShowShareActionsButton:(bool)arg1;
-- (void)setShowEditButton:(bool)arg1;
-- (id)initWithContact:(id)arg1 mapItem:(id)arg2;
-- (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
-- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (void)setContact:(id)arg1;
-- (id)contact;
 - (id)initWithMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;

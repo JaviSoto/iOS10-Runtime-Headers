@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageOverlayController, SKUIChartsComponent, SKUIIPhoneChartsViewController, SKUIIPadChartsViewController;
+@class SKUIProductPageOverlayController, NSString, SKUIChartsComponent, SKUIIPhoneChartsViewController, SKUIIPadChartsViewController;
 
 @interface SKUIChartsPageSection : SKUIStorePageSection <SKUIChartsViewControllerDelegate, SKUIProductPageOverlayDelegate> {
     SKUIIPadChartsViewController *_ipadViewController;
@@ -13,6 +13,10 @@
 }
 
 @property(readonly) SKUIChartsComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

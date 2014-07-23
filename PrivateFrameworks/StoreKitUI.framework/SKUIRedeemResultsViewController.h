@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, SKUIItemStateCenter, SKUITextLayout, UIImageView, UIButton, SKUIRedeemResultMessageView, NSOperationQueue, SKUIGiftItemView, SKUIRedeemITunesPassLockup, SKUITextBoxView, SKUIRedeem;
+@class UIImageView, SKUITextBoxView, SKUIItemStateCenter, SKUIRedeem, SKUITextLayout, UIButton, NSString, SKUIRedeemResultMessageView, SKUIGiftItemView, NSOperationQueue, SKUIRedeemITunesPassLockup, UIImage;
 
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
     UIButton *_anotherButton;
@@ -22,6 +22,10 @@
 
 @property(readonly) SKUIRedeem * redeem;
 @property long long redeemCategory;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)redeem;

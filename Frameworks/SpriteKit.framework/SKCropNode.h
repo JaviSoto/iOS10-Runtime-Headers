@@ -20,6 +20,8 @@
 - (id)maskNode;
 - (void)setMaskNode:(id)arg1;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

@@ -38,6 +38,7 @@
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2 changeRequest:(id)arg3;
 - (id)initForNewObjectWithUUID:(id)arg1 changeRequest:(id)arg2;
 - (void)encodeToXPCDict:(id)arg1;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (bool)isNew;
 - (void)setObjectID:(id)arg1;
 - (id)objectID;

@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EBReaderSheetState;
+@class NSString, EBReaderSheetState;
 
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext> {
     EBReaderSheetState *mSheetState;
     unsigned int mSheetIndex;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;

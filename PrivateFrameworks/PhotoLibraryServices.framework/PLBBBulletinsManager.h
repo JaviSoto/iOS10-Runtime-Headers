@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, PLXPCTransaction, NSMutableDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSMutableIndexSet;
+@class NSString, NSArray, PLXPCTransaction, NSMutableDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSMutableIndexSet;
 
 @interface PLBBBulletinsManager : NSObject <PLBBPendingBulletinsBatchDelegate> {
     NSObject<OS_dispatch_queue> *_isolationQueue;
@@ -21,6 +21,10 @@
 }
 
 @property(readonly) NSArray * currentBulletinDictionaries;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedManager;
 

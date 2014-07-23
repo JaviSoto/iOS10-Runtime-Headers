@@ -9,6 +9,7 @@
     SSMetricsConfiguration *_childConfiguration;
     NSDictionary *_config;
     bool_disabled;
+    bool_disableEventDecoration;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableSet *_cookieFieldsUnion;
     NSMutableDictionary *_eventFieldsUnion;
@@ -20,12 +21,16 @@
 
 @property(readonly) NSDictionary * fieldsMap;
 @property(retain) SSMetricsConfiguration * childConfiguration;
+@property bool disableEventDecoration;
 
 + (void)setReportingFrequencyOverride:(id)arg1;
 + (id)_reportingFrequencyOverride;
 + (void)getReportingFrequencyOverrideWithCompletionBlock:(id)arg1;
 
+- (void)setDisableEventDecoration:(bool)arg1;
+- (bool)_decorateITMLEvents;
 - (id)initWithStorePlatformData:(id)arg1;
+- (bool)disableEventDecoration;
 - (void)setChildConfiguration:(id)arg1;
 - (double)reportingFrequency;
 - (id)initWithGlobalConfiguration:(id)arg1;

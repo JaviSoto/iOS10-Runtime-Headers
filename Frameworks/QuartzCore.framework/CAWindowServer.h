@@ -5,7 +5,7 @@
 @class NSArray;
 
 @interface CAWindowServer : NSObject  {
-    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; boolx3; } *_impl;
+    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; } *_impl;
 }
 
 @property(readonly) NSArray * displays;

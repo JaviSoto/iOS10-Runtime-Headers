@@ -33,6 +33,10 @@
 @property bool needsToUpdateTitleLabel;
 @property(retain) NSLayoutConstraint * titleLabelBaselineConstraint;
 @property(retain) NSArray * labelWidthConstraints;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)headerViewBackground:(id)arg1 willShowBackground:(id)arg2;

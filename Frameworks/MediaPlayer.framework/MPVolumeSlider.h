@@ -4,7 +4,7 @@
 
 @class NSTimer, UIView, UIImage, NSString, MPAVController, UIImageView, MPVolumeController, UILabel, MPAVRoutingController;
 
-@interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate> {
+@interface MPVolumeSlider : UISlider <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
     MPVolumeController *_volumeController;
     NSTimer *_commitTimer;
     UILabel *_routeNameLabel;
@@ -32,6 +32,10 @@
 @property(retain) UIImage * volumeWarningTrackImage;
 @property(setter=_setIsOffScreen:) bool _isOffScreen;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -60,6 +64,7 @@
 - (void)_setIsOffScreen:(bool)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitRectInsets;
 - (void)setHitRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)setHidden:(bool)arg1;

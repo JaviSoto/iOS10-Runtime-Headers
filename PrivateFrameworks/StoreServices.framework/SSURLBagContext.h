@@ -24,6 +24,10 @@
 @property bool allowsBootstrapCellularData;
 @property bool allowsExpiredBags;
 @property bool usesCachedBagsOnly;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)contextWithBagType:(long long)arg1;
 

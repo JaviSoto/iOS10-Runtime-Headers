@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateLogButton, UIKBCandidateCollectionView, NSArray, TIKeyboardCandidateResultSet, <UIKeyboardCandidateList>, UIKeyboardCandidatePocketShadow, <UIKeyboardCandidateListDelegate>;
+@class UIKeyboardCandidateLogButton, UIKBCandidateCollectionView, NSArray, TIKeyboardCandidateResultSet, <UIKeyboardCandidateList>, UIKeyboardCandidatePocketShadow, <UIKeyboardCandidateListDelegate>, NSString;
 
 @interface UIKBHandwritingCandidateView : UIKBKeyView <UIKeyboardCandidateList, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     bool_usesCandidateSelection;
@@ -33,6 +33,10 @@
 @property(retain) UIKeyboardCandidateLogButton * logButton;
 @property unsigned long long dummyCellCount;
 @property double dummyCellWidth;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)currentIndex;

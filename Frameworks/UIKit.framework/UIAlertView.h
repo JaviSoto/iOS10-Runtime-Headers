@@ -18,6 +18,7 @@
     bool_hasPreparedAlertActions;
     bool_isPresented;
     bool_alertControllerShouldDismiss;
+    bool_dismissingAlertController;
     bool__currentlyRunningModal;
     UIViewController *externalViewControllerForPresentation;
 }

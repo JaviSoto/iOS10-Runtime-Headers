@@ -47,10 +47,10 @@
 - (void)setResultsCursor:(id)arg1;
 - (id)recordFetchedBlock;
 - (unsigned long long)resultsLimit;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (id)zoneID;
 - (id)cursor;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (id)query;
 - (void).cxx_destruct;
 

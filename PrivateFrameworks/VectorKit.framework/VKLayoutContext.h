@@ -24,6 +24,7 @@
     int _styleZ;
     float _z;
     bool_hasOccluders;
+    bool_hasMovingOccluders;
     VKViewTransform *_viewTransform;
     VKAnchorContext *_anchorContext;
     struct shared_ptr<ggl::PolygonBase::MeshMesh> { 
@@ -90,6 +91,7 @@
 - (void)markStencilAsDirty;
 - (unsigned char)reserveStencilValues:(unsigned char)arg1 clearItem:(struct ClearItem {}**)arg2 fromTop:(bool)arg3;
 - (struct shared_ptr<ggl::TextureMesh::MeshMesh> { struct MeshMesh {} *x1; struct __shared_weak_count {} *x2; })unitTextureMesh;
+- (struct Loader { struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { struct LoaderImpl {} *x_1_2_1; } x_1_1_1; } x1; }*)loader;
 - (struct DebugConsole { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; struct Matrix<float, 2, 1> { float x_3_1_1[2]; } x3; struct Matrix<float, 2, 1> { float x_4_1_1[2]; } x4; unsigned long long x5; struct RenderItem {} *x6; struct unique_ptr<ggl::DataWrite<ggl::ColoredText::MyVertexElement>, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::MyVertexElement> > > { struct __compressed_pair<ggl::DataWrite<ggl::ColoredText::MyVertexElement> *, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::MyVertexElement> > > { struct DataWrite<ggl::ColoredText::MyVertexElement> {} *x_1_2_1; } x_7_1_1; } x7; unsigned long long x8; struct Matrix<float, 2, 1> {} *x9; struct Matrix<unsigned char, 4, 1> { unsigned char x_10_1_1[4]; } x10; struct Matrix<unsigned char, 4, 1> { unsigned char x_11_1_1[4]; } x11; float x12; }*)debugConsoleForId:(int)arg1;
 - (void)startFrameWithTimeStamp:(double)arg1;
 - (void)clearCanvas;
@@ -108,7 +110,6 @@
 - (id)anchorContext;
 - (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })labelEdgeInsets;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (struct Loader { struct unique_ptr<ggl::LoaderImpl, std::__1::default_delete<ggl::LoaderImpl> > { struct __compressed_pair<ggl::LoaderImpl *, std::__1::default_delete<ggl::LoaderImpl> > { struct LoaderImpl {} *x_1_2_1; } x_1_1_1; } x1; }*)loader;
 - (struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; })device;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

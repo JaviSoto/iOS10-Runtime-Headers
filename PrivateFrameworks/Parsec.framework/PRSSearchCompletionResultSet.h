@@ -21,6 +21,10 @@
 @property(readonly) NSString * feedbackQueryIdentifier;
 @property(getter=isCacheable,readonly) bool cacheable;
 @property(readonly) NSArray * results;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (Class)classForObjectsAtPropertyPath:(id)arg1 ofObject:(id)arg2 withValue:(id)arg3 protocol:(id*)arg4;
@@ -29,8 +33,8 @@
 - (id)serverKeysForKey:(id)arg1 ofObject:(id)arg2;
 - (id)resultForFactory:(id)arg1 resourceProvider:(id)arg2 dictionary:(id)arg3;
 - (id)initWithFactory:(id)arg1 resourceProvider:(id)arg2 prefix:(id)arg3 completionString:(id)arg4 score:(float)arg5 resultStatusString:(id)arg6 feedbackQueryIdentifier:(id)arg7 resultDictionaries:(id)arg8;
-- (bool)isCacheable;
 - (float)completionScore;
+- (bool)isCacheable;
 - (id)completionString;
 - (id)feedbackQueryIdentifier;
 - (id)prefix;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, EKAvailabilityCache, NSArray, NSDate, NSError;
+@class NSString, EKAvailabilityCache, NSArray, NSDate, NSObject<OS_dispatch_queue>, NSError;
 
 @interface EKRequestAvailabilityOperation : NSOperation  {
     bool_isFinished;
@@ -22,6 +22,7 @@
     id _resultsBlock;
 
     id _requestID;
+    NSObject<OS_dispatch_queue> *_queue;
     NSError *_error;
 }
 

@@ -2,10 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
+@class NSString;
+
 @interface SBEmptyButtonView : UIView <TPNumberPadButtonProtocol> {
     unsigned int _char;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property unsigned int character;
 
 

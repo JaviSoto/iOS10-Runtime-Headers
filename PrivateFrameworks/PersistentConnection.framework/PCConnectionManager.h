@@ -59,6 +59,10 @@
 @property bool disableEarlyFire;
 @property double keepAliveGracePeriod;
 @property(readonly) double pollingInterval;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * loggingIdentifier;
 
 + (bool)_isCachedKeepAliveIntervalStillValid:(double)arg1 date:(id)arg2;
@@ -125,11 +129,11 @@
 - (void)interfaceManagerInHomeCountryStatusChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
-- (void)log:(id)arg1;
 - (bool)isRunning;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)log:(id)arg1;
 - (int)currentStyle;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUINavigationBarViewElement, SKUINavigationBarContext, UIView, SKUINavigationPaletteController, SKUIClientContext, NSMutableArray, SKUINavigationBarButtonsController, UIViewController, NSMapTable;
+@class SKUINavigationBarViewElement, SKUINavigationBarContext, UIView, SKUINavigationPaletteController, NSArray, SKUIClientContext, NSString, NSMutableArray, SKUINavigationBarButtonsController, UIViewController, NSMapTable;
 
 @interface SKUINavigationBarController : NSObject <SKUILayoutCacheDelegate> {
     SKUINavigationBarButtonsController *_buttonsController;
@@ -10,20 +10,29 @@
     SKUINavigationBarContext *_navigationBarContext;
     SKUINavigationPaletteController *_paletteController;
     UIViewController *_parentViewController;
+    NSMutableArray *_reusableSearchBarControllers;
     NSMapTable *_searchBarControllers;
     NSMutableArray *_sections;
     SKUINavigationBarViewElement *_viewElement;
 }
 
-@property(readonly) SKUINavigationBarViewElement * navigationBarViewElement;
+@property(retain) SKUINavigationBarViewElement * navigationBarViewElement;
 @property(retain) SKUIClientContext * clientContext;
 @property UIViewController * parentViewController;
 @property(readonly) UIView * navigationPaletteView;
+@property(readonly) NSArray * existingSearchBarControllers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (void)setNavigationBarViewElement:(id)arg1;
 - (id)navigationBarViewElement;
 - (void)updateNavigationItem:(id)arg1;
+- (void)setReusableSearchBarControllers:(id)arg1;
 - (id)navigationPaletteView;
+- (id)existingSearchBarControllers;
 - (id)_barButtonItemWithSearchBarViewElement:(id)arg1;
 - (id)_barButtonItemWithButtonViewElement:(id)arg1;
 - (double)_availableWidth;

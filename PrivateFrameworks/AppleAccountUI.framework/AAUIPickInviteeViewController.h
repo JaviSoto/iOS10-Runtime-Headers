@@ -28,6 +28,10 @@
 @property(readonly) NSString * inviteeEmail;
 @property(readonly) NSString * inviteeShortName;
 @property(readonly) NSString * inviteeCompositeName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_imageForPersonWithRecordID:(int)arg1;
@@ -37,12 +41,12 @@
 - (void)_nextButtonWasTapped:(id)arg1;
 - (void)contactsSearchController:(id)arg1 didFindSortedResult:(id)arg2;
 - (void)contactsSearchController:(id)arg1 didFinishSearchWithSuccess:(bool)arg2;
-- (id)inviteeShortName;
-- (id)inviteeCompositeName;
-- (id)inviteeEmail;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
 - (void)_cancelButtonWasTapped:(id)arg1;
 - (double)_heightForText:(id)arg1 width:(double)arg2;
+- (id)inviteeShortName;
+- (id)inviteeCompositeName;
+- (id)inviteeEmail;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

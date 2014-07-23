@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray, JSManagedValue, IKAppContext, NSMutableArray;
+@class NSArray, JSManagedValue, NSString, IKAppContext, NSMutableArray;
 
 @interface IKScriptsEvaluator : NSObject <ISURLOperationDelegate> {
     bool_isJingleRequest;
@@ -19,6 +19,10 @@
 @property(retain) JSManagedValue * callback;
 @property(retain) NSMutableArray * records;
 @property bool success;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAppContext:(id)arg1;

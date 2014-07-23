@@ -12,17 +12,16 @@
     } _parsingFlags;
     IKViewElementStyleFactory *_styleFactory;
     IKTemplateStyleSheet *_styleSheet;
-    unsigned long long _itmlIDSequence;
     IKAppContext *_appContext;
 }
 
 @property(retain) IKViewElementStyleFactory * styleFactory;
 @property(retain) IKTemplateStyleSheet * styleSheet;
-@property unsigned long long itmlIDSequence;
 @property IKAppContext * appContext;
 @property(getter=isSparse) bool sparse;
 
 + (unsigned long long)elementTypeByTagName:(id)arg1;
++ (Class)elementClassByTagName:(id)arg1;
 + (id)_elementStylesFromDOMElement:(id)arg1;
 + (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
 + (id)elementsForDocumentElement:(id)arg1 sparse:(bool)arg2 appContext:(id)arg3;
@@ -30,11 +29,9 @@
 
 - (id)styleFactory;
 - (bool)isSparse;
-- (unsigned long long)itmlIDSequence;
 - (void)setSparse:(bool)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (void)setStyleSheet:(id)arg1;
-- (void)setItmlIDSequence:(unsigned long long)arg1;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
 - (void)setAppContext:(id)arg1;
 - (id)appContext;

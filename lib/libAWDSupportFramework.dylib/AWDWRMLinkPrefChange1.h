@@ -225,10 +225,10 @@
 - (bool)hasNCallIdle;
 - (void)setHasNCallIdle:(bool)arg1;
 - (void)setNCallIdle:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasCount;
 - (void)setHasCount:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, SKUINavigationBarContext, SKUIViewElementLayoutContext;
+@class NSString, SKUIViewElementLayoutContext, SKUINavigationBarContext, UIView;
 
 @interface SKUINavigationBarSectionController : NSObject <SKUIArtworkRequestDelegate> {
     SKUINavigationBarContext *_navigationBarContext;
@@ -12,6 +12,10 @@
 @property(retain) SKUINavigationBarContext * context;
 @property(readonly) SKUIViewElementLayoutContext * viewLayoutContext;
 @property(readonly) UIView * view;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)viewLayoutContext;

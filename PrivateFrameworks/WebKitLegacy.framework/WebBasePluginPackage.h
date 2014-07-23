@@ -49,6 +49,7 @@
 + (id)preferredLocalizationName;
 + (void)initialize;
 
+- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;
 - (void)wasAddedToPluginDatabase:(id)arg1;
@@ -64,7 +65,6 @@
 - (id)_objectForInfoDictionaryKey:(id)arg1;
 - (void)createPropertyListFile;
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
-- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
 - (void)finalize;
 - (void)dealloc;
 - (void).cxx_destruct;

@@ -11,6 +11,10 @@
 
 @property(retain,readonly) NSString * serviceName;
 @property(readonly) <XPCNSServiceListenerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;

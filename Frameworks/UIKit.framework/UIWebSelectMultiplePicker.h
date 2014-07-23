@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, DOMHTMLSelectElement, <UIWebSelectedItemPrivate>;
+@class <UIWebSelectedItemPrivate>, NSArray, NSString, DOMHTMLSelectElement;
 
 @interface UIWebSelectMultiplePicker : UIPickerView <UIWebFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
     DOMHTMLSelectElement *_selectionNode;
@@ -18,6 +18,10 @@
 @property(retain) DOMHTMLSelectElement * _selectionNode;
 @property(retain) NSArray * _cachedItems;
 @property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)dealloc;

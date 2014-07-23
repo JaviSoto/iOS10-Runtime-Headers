@@ -11,7 +11,6 @@
 @property bool loading;
 
 
-- (bool)loading;
 - (void)setLoading:(bool)arg1;
 - (id)controlValue;
 - (id)newControl;
@@ -20,6 +19,7 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)reloadWithSpecifier:(id)arg1 animated:(bool)arg2;
 - (bool)canReload;
+- (bool)loading;
 - (void)setValue:(id)arg1;
 - (void)dealloc;
 - (void)prepareForReuse;

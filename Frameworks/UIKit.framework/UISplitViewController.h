@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView, NSString, NSArray, <UISplitViewControllerDelegate>, UIPopoverController, UIViewController, UIBarButtonItem, UIGestureRecognizer;
+@class UISnapshotView, NSString, UIView, NSArray, <UISplitViewControllerDelegate>, UIPopoverController, UIViewController, UIBarButtonItem, UIGestureRecognizer;
 
 @interface UISplitViewController : UIViewController <UIGestureRecognizerDelegate, GKContentRefresh, GKURLHandling> {
     id _delegate;
@@ -15,6 +15,8 @@
     NSString *_buttonTitle;
     UIPopoverController *_hiddenPopoverController;
     UIView *_rotationSnapshotView;
+    UISnapshotView *_collapsingMasterSnapshotView;
+    UISnapshotView *_collapsingDetailSnapshotView;
     double _masterColumnWidth;
     float _gutterWidth;
     float _cornerRadius;
@@ -87,6 +89,7 @@
         unsigned int delegateWantsTargetDisplayModeForAction : 1; 
         unsigned int pendingPresentMasterViewController : 1; 
         unsigned int pendingUpdateTargetDisplayMode : 1; 
+        unsigned int collapsingClockwise : 1; 
     } _splitViewControllerFlags;
     bool_resizeForKeyboard;
     NSString *_displayModeButtonItemTitle;
@@ -99,8 +102,17 @@
   /* Error parsing encoded ivar type info: @? */
     id __didChangeBoundsBlock;
 
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id __clearPreventRotationHook;
+
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * viewControllers;
 @property <UISplitViewControllerDelegate> * delegate;
 @property bool presentsWithGesture;
@@ -121,6 +133,11 @@
 @property(setter=_setPresentsInFadingPopover:) bool _presentsInFadingPopover;
 @property(getter=_preservedDetailController,setter=_setPreservedDetailController:,retain) UIViewController * _preservedDetailController;
 @property(getter=_didChangeBoundsBlock,setter=_setDidChangeBoundsBlock:,copy) id _didChangeBoundsBlock;
+@property(setter=_setClearPreventRotationHook:,copy) id _clearPreventRotationHook;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_forcePresentsWithGesture;
 + (bool)_forcePresentsInSlidingPopover;
@@ -161,6 +178,7 @@
 - (void)setHidesMasterViewInPortrait:(bool)arg1;
 - (bool)_isCollapsed;
 - (float)leftColumnWidth;
+- (id)_primaryDimmingView;
 - (void)_updateMasterViewControllerFrame;
 - (void)_removeRoundedCorners;
 - (void)_setupUnderBarSeparatorViewForOrientation:(long long)arg1;
@@ -174,6 +192,9 @@
 - (void)_invalidateHidesMasterViewInOrientation:(long long)arg1;
 - (bool)_shouldModifyDisplayModeWhenRotating;
 - (void)_slideIn:(bool)arg1 viewController:(id)arg2 animated:(bool)arg3 totalDuration:(double)arg4 completion:(id)arg5;
+- (bool)_shouldPreventAutorotation;
+- (void)_setClearPreventRotationHook:(id)arg1;
+- (id)_clearPreventRotationHook;
 - (void)_prepareForInitialCompactLayout;
 - (void)_triggerDisplayModeAction:(id)arg1;
 - (id)_displayModeButtonItemTitle;
@@ -187,6 +208,7 @@
 - (void)_displayModeWillChangeTo:(long long)arg1;
 - (long long)_defaultDisplayMode;
 - (void)_changeToDisplayMode:(long long)arg1 forCurrentOrientation:(bool)arg2;
+- (long long)preferredDisplayMode;
 - (bool)presentsWithGesture;
 - (void)_showMasterViewAnimated:(bool)arg1;
 - (bool)_isLandscape;
@@ -212,6 +234,7 @@
 - (double)maximumPrimaryColumnWidth;
 - (double)minimumPrimaryColumnWidth;
 - (double)preferredPrimaryColumnWidthFraction;
+- (double)primaryColumnWidth;
 - (void)toggleMasterVisible:(id)arg1;
 - (bool)_resizesDetailOnSlide;
 - (void)popoverWillAppear:(id)arg1;
@@ -222,11 +245,10 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_isMasterViewShown;
-- (double)primaryColumnWidth;
+- (double)_primaryColumnWidthForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_addOrRemovePopoverPresentationGestureRecognizer;
 - (void)_calculateDelegateHiddenMasterOrientations;
 - (long long)_effectiveTargetDisplayMode;
-- (long long)preferredDisplayMode;
 - (void)_setupHiddenPopoverControllerWithViewController:(id)arg1;
 - (bool)_hasMasterViewController;
 - (bool)_effectivePresentsWithGesture;
@@ -244,6 +266,7 @@
 - (void)_loadNewSubviews:(id)arg1;
 - (void)loadSubviews;
 - (long long)displayMode;
+- (void)_removeCollapsingSnapshotViews;
 - (void)_setMasterOverrideTraitCollectionActive:(bool)arg1;
 - (void)_setPresentsInFadingPopover:(bool)arg1;
 - (id)masterViewController;
@@ -272,12 +295,14 @@
 - (bool)_shouldPersistViewWhenCoding;
 - (void)_updateChildContentMargins;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
+- (double)_contentMarginForChildViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;

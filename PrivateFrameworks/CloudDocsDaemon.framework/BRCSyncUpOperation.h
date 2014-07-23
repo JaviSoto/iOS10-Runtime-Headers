@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CKModifyRecordsOperation;
+@class NSArray, NSString, CKModifyRecordsOperation;
 
 @interface BRCSyncUpOperation : BRCOperation <BRCOperationSubclass> {
     float _cost;
@@ -16,19 +16,26 @@
   /* Error parsing encoded ivar type info: @? */
     id _syncUpCompletionBlock;
 
+    NSArray *_recordsNeedingSharingInfo;
 }
 
 @property(readonly) float cost;
 @property(readonly) CKModifyRecordsOperation * modifyOperation;
 @property(copy) id syncUpCompletionBlock;
+@property(readonly) NSArray * recordsNeedingSharingInfo;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)syncUpOperationForContainer:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
-+ (id)modifyRecordsOperationForContainer:(id)arg1 maxCost:(float)arg2 cost:(float*)arg3 retryAfter:(unsigned long long*)arg4;
++ (id)modifyRecordsOperationForContainer:(id)arg1 maxCost:(float)arg2 cost:(float*)arg3 retryAfter:(unsigned long long*)arg4 recordsNeedingSharingInfo:(id*)arg5;
 
+- (id)recordsNeedingSharingInfo;
 - (void)setSyncUpCompletionBlock:(id)arg1;
 - (id)syncUpCompletionBlock;
 - (id)modifyOperation;
-- (id)initWithContainer:(id)arg1 cost:(float)arg2 modifyOperation:(id)arg3;
+- (id)initWithContainer:(id)arg1 cost:(float)arg2 modifyOperation:(id)arg3 recordsNeedingSharingInfo:(id)arg4;
 - (bool)shouldRetryForError:(id)arg1;
 - (float)cost;
 - (void)main;

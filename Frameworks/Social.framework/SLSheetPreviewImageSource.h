@@ -13,11 +13,11 @@
 
 
 - (void)cancelVideoPreviewGeneration;
-- (void)previewImageForAttachment:(id)arg1 resultBlock:(id)arg2;
+- (void)previewImageForAttachment:(id)arg1 queueToBlockWhileDownsampling:(id)arg2 resultBlock:(id)arg3;
 - (id)assetsLibrary;
 - (void)_generatePreviewImageForVideoFileURL:(id)arg1 resultBlock:(id)arg2;
 - (void)_fetchPreviewImageForAssetURL:(id)arg1 resultBlock:(id)arg2;
-- (void)_generatePreviewImageForAttachment:(id)arg1 resultBlock:(id)arg2;
+- (void)_generatePreviewImageForAttachment:(id)arg1 queueToBlockWhileDownsampling:(id)arg2 resultBlock:(id)arg3;
 - (void).cxx_destruct;
 
 @end

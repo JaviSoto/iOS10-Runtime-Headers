@@ -17,6 +17,10 @@
 @property bool shouldHideWhenRestricted;
 @property(readonly) NSDictionary * contentRatingDictionary;
 @property(readonly) SSItemArtworkImage * ratingSystemLogo;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)stringForRatingSystem:(long long)arg1;
 + (long long)ratingSystemFromString:(id)arg1;

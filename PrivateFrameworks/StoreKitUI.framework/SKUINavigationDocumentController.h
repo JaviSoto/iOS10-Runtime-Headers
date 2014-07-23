@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UINavigationController, NSArray, SKUIClientContext, <SKUINavigationDocumentDelegate>, NSMutableArray;
+@class UINavigationController, NSArray, SKUIClientContext, <SKUINavigationDocumentDelegate>, NSString, NSMutableArray;
 
 @interface SKUINavigationDocumentController : NSObject <IKAppNavigationController> {
     SKUIClientContext *_clientContext;
@@ -17,6 +17,10 @@
 @property <SKUINavigationDocumentDelegate> * delegate;
 @property(retain) UINavigationController * overrideNavigationController;
 @property(copy,readonly) NSArray * documentStackItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)popToRootDocument;
@@ -35,10 +39,10 @@
 - (void)_sendStackDidChange;
 - (id)_activeNavigationController;
 - (id)documentStackItems;
+- (void)removeDocument:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (id)initWithNavigationController:(id)arg1;
-- (void)removeDocument:(id)arg1;
 - (void)clear;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

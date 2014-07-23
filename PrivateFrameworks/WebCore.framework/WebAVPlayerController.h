@@ -74,6 +74,10 @@
 @property(getter=isExternalPlaybackActive) bool externalPlaybackActive;
 @property long long externalPlaybackType;
 @property(retain) NSString * externalPlaybackAirPlayDeviceLocalizedName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;

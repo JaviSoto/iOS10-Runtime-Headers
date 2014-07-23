@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSMutableDictionary;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSString;
 
 @interface SSNetworkConstraints : NSObject <NSCoding, SSXPCCoding, NSCopying> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -10,6 +10,10 @@
 }
 
 @property(getter=isAnyNetworkTypeEnabled,readonly) bool anyNetworkTypeEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_addNetworkConstraintsToDictionary:(id)arg1 forNetworkType:(long long)arg2 legacyDictionary:(id)arg3;
 + (id)_newLegacyNetworkConstraintsWithDictionary:(id)arg1;

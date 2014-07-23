@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSHashTable, BRNotificationQueue, NSMutableDictionary, BRCAccountSession, BRCClientRanksPersistedState, NSObject<OS_dispatch_queue>, BRCXPCClient, PQLConnection;
+@class NSHashTable, BRNotificationQueue, NSString, NSMutableDictionary, BRCAccountSession, BRCClientRanksPersistedState, NSObject<OS_dispatch_queue>, BRCXPCClient, PQLConnection;
 
 @interface BRCNotificationManager : NSObject <BRCModule> {
     BRCAccountSession *_session;
@@ -27,6 +27,10 @@
 @property(readonly) bool hasActiveAliasWatchers;
 @property(readonly) PQLConnection * clientTruthConnection;
 @property(readonly) BRCAccountSession * accountSession;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)queueUpdate:(id)arg1;

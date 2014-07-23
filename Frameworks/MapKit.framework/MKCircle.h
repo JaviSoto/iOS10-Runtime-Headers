@@ -25,6 +25,10 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) double radius;
 @property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * title;
 @property(copy,readonly) NSString * subtitle;
 

@@ -29,6 +29,7 @@
 + (id)requestHeaderFieldsWithCookies:(id)arg1;
 + (id)cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 
+- (id)path;
 - (unsigned long long)version;
 - (id)value;
 - (id)init;
@@ -64,7 +65,6 @@
 - (bool)isSessionOnly;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)initWithProperties:(id)arg1;
-- (id)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;

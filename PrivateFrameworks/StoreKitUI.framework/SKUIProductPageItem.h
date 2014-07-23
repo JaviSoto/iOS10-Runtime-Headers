@@ -57,6 +57,7 @@
 @property(readonly) NSString * updateDescription;
 
 
+- (long long)supportedFeatures;
 - (id)supportURLString;
 - (id)shortenedProductPageURLString;
 - (id)reviewsURLString;
@@ -72,7 +73,6 @@
 - (id)lastUpdateDateString;
 - (id)parentBundleItemIdentifiers;
 - (unsigned long long)supportedGameCenterFeatures;
-- (long long)supportedFeatures;
 - (id)copyrightString;
 - (id)releaseNotes;
 - (id)inAppPurchases;

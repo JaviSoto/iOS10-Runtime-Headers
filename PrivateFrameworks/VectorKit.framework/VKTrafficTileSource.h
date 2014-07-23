@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKTileSource, VKTrafficDynamicTileSource, VKTileKeyMap, VKTileKeyList, VKTileCache;
+@class VKTileSource, VKTrafficDynamicTileSource, NSString, VKTileKeyMap, VKTileKeyList, VKTileCache;
 
 @interface VKTrafficTileSource : VKTileSetBackedTileSource <VKTileSourceClient> {
     VKTileKeyList *_building;
@@ -13,6 +13,10 @@
 }
 
 @property(retain) VKTileSource * roadTileSource;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)sawTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

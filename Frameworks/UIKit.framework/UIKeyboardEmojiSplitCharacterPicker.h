@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UIKeyboardEmojiCategory, UIKeyboardEmojiInputController;
+@class NSString, UILabel, UIKeyboardEmojiCategory, UIKeyboardEmojiInputController;
 
 @interface UIKeyboardEmojiSplitCharacterPicker : UIKeyboardEmojiSplit <UIKeyboardEmojiInput> {
     UILabel *_optionalDescription;
@@ -11,6 +11,10 @@
 }
 
 @property(retain) UIKeyboardEmojiCategory * category;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)category;

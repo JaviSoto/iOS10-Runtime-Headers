@@ -46,6 +46,7 @@
 @property unsigned int maxBPS;
 
 
+- (bool)hasDuration;
 - (unsigned int)maxBPS;
 - (unsigned int)minBPS;
 - (unsigned int)maxPhotoBytes;
@@ -71,9 +72,8 @@
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

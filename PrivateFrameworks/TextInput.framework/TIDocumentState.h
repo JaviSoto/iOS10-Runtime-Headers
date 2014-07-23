@@ -31,6 +31,7 @@
 + (id)documentStateOfSecureTextDocument:(id)arg1;
 
 - (id)initWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)documentStateAfterTrimmingContextToWords:(unsigned long long)arg1 terminatorPredicate:(id)arg2;
 - (id)documentStateAfterTrimmingContextToLength:(unsigned long long)arg1;
 - (unsigned long long)inputIndexWithTerminatorPredicate:(id)arg1;
 - (id)inputStemWithTerminatorPredicate:(id)arg1;
@@ -39,7 +40,6 @@
 - (id)documentStateAfterDeletingForward;
 - (id)documentStateAfterDeletingBackward;
 - (id)documentStateAfterUnmarkingText;
-- (bool)matchesDocumentText:(id)arg1 withSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (bool)matchesContextOfDocumentState:(id)arg1;
 - (unsigned long long)hashString:(id)arg1 intoHashValue:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })selectedRangeInMarkedText;
@@ -59,17 +59,15 @@
 - (id)documentStateAfterReplacingText:(id)arg1 withText:(id)arg2;
 - (id)inputStringWithTerminatorPredicate:(id)arg1;
 - (id)documentStateAfterInsertingTextAfterSelection:(id)arg1;
-- (id)documentStateAfterTrimmingContextToWords:(unsigned long long)arg1 terminatorPredicate:(id)arg2;
 - (id)documentStateAfterInsertingText:(id)arg1;
 - (id)documentStateAfterSettingMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id)arg3;
 - (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2 inDocument:(id)arg3;
 - (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2;
 - (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2;
-- (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id)arg3;
 - (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id)arg3;
 - (id)initWithSecureTextDocument:(id)arg1;
 - (id)initWithDocument:(id)arg1;
-- (bool)hasSufficientContextBeforeInputWithTerminatorPredicate:(id)arg1;
 
 @end

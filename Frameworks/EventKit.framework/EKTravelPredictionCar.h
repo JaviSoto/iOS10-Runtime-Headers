@@ -26,11 +26,11 @@
 
 
 - (int)routeIncidentSignificance;
+- (id)advice;
 - (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 hypothesizer:(id)arg5;
 - (void)setTravelState:(unsigned long long)arg1 withConfidence:(double)arg2;
 - (void)addTrafficIncidentOfType:(int)arg1 withSignificance:(int)arg2 onStreet:(id)arg3;
 - (void)setTrafficConditionsCurrent:(unsigned long long)arg1 historic:(unsigned long long)arg2;
-- (id)advice;
 - (double)travelStateScore;
 - (id)routeIncidentStreetName;
 - (int)routeIncidentType;

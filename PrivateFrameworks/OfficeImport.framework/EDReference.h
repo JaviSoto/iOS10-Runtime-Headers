@@ -13,8 +13,8 @@
 
 + (id)referenceWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
 + (id)referenceWithReference:(id)arg1;
-+ (id)reference;
 + (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
++ (id)reference;
 
 - (void)unionWithReference:(id)arg1;
 - (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;

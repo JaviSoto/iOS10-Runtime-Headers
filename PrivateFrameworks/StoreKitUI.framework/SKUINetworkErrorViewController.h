@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, <SKUINetworkErrorDelegate>, NSError, UIScrollView, SKUIProductPageHeaderViewController;
+@class NSString, SKUIClientContext, <SKUINetworkErrorDelegate>, NSError, UIScrollView, SKUIProductPageHeaderViewController;
 
 @interface SKUINetworkErrorViewController : UIViewController <SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -13,6 +13,10 @@
 @property(readonly) NSError * error;
 @property(retain) SKUIClientContext * clientContext;
 @property id delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScrollView * scrollView;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 

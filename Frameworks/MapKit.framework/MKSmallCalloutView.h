@@ -34,6 +34,10 @@
 @property(retain) MKCalloutBackgroundView * calloutBackgroundView;
 @property unsigned long long mapDisplayStyle;
 @property double maximumWidth;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * calloutTitle;
 @property(copy) NSString * calloutSubtitle;
 @property(retain) UIView * leftView;
@@ -41,6 +45,8 @@
 @property(retain) UIView * detailView;
 
 
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (id)_subtitleLabel;
 - (void)setMapDisplayStyle:(unsigned long long)arg1;
 - (unsigned long long)mapDisplayStyle;
 - (void)_updateAccessoryViewStyles;
@@ -54,8 +60,6 @@
 - (void)setDetailView:(id)arg1 animated:(bool)arg2;
 - (void)setCalloutSubtitle:(id)arg1 animated:(bool)arg2;
 - (id)calloutSubtitle;
-- (id)_subtitleLabel;
-- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setCalloutTitle:(id)arg1;
 - (id)calloutTitle;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

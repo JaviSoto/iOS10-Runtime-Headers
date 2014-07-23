@@ -13,6 +13,10 @@
 @property(readonly) NSString * downloadKind;
 @property(readonly) long long URLBagType;
 @property(copy) NSArray * policyRules;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPolicyRules:(id)arg1;

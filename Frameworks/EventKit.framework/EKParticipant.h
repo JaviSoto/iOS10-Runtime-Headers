@@ -21,6 +21,10 @@
 @property(copy) NSString * lastName;
 @property(copy) NSString * comment;
 @property(readonly) EKCalendarItem * owner;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void*)findABPersonByURL:(id)arg1 inAddressBook:(void*)arg2;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIImagePickerController, UIImage;
+@class UIImagePickerController, UIImage, NSString;
 
 @interface RUIPhotoPicker : NSObject <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UIImagePickerController *_imagePickerController;
@@ -20,6 +20,10 @@
 
 @property(retain) UIImage * pickedImage;
 @property(copy) id pickerCompletion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)pickerCompletion;

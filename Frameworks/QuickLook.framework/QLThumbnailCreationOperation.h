@@ -5,6 +5,8 @@
 @class UIImage, NSError, NSURL;
 
 @interface QLThumbnailCreationOperation : NSOperation  {
+    bool_finished;
+    bool_executing;
     UIImage *_image;
     NSError *_error;
     NSURL *_documentURL;
@@ -36,13 +38,23 @@
 - (void)setMaximumDimension:(double)arg1;
 - (unsigned long long)useMode;
 - (double)maximumDimension;
+- (void)retrieveThumbnailForPhysicalURL:(id)arg1 hasThumbnailInIndex:(bool)arg2;
+- (void)checkIfThumbnailExistsAtPhysicalURL:(id)arg1;
+- (bool)_finishIfCancelled;
+- (void)_finish;
+- (void)setExecuting:(bool)arg1;
 - (void)setScaleFactor:(double)arg1;
 - (void)main;
 - (void)setImage:(id)arg1;
 - (id)image;
+- (void)setFinished:(bool)arg1;
+- (void)start;
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)documentURL;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)setDocumentURL:(id)arg1;
 - (double)scaleFactor;
 - (void)setContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

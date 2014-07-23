@@ -2,13 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSHTTPURLResponse, NSString, NSData, IKJSXMLDocument;
+@class NSHTTPURLResponse, NSDictionary, NSData, NSString, IKJSXMLDocument;
 
 @interface SKUIJSFakeXMLHTTPRequest : IKJSObject <SKUIJSFakeXMLHTTPRequest> {
     NSData *_data;
+    NSDictionary *_performanceMetrics;
     NSHTTPURLResponse *_response;
 }
 
+@property(readonly) NSDictionary * metrics;
 @property(readonly) unsigned int readyState;
 @property(readonly) id response;
 @property(readonly) NSString * responseText;
@@ -20,13 +22,14 @@
 
 - (id)responseText;
 - (id)getAllResponseHeaders;
-- (id)getResponseHeader;
 - (id)responseXML;
-- (id)initWithAppContext:(id)arg1 data:(id)arg2 URLResponse:(id)arg3;
+- (id)getResponseHeader;
+- (id)initWithAppContext:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (id)statusText;
 - (unsigned int)responseType;
 - (unsigned int)status;
 - (unsigned int)readyState;
+- (id)metrics;
 - (id)response;
 - (void).cxx_destruct;
 

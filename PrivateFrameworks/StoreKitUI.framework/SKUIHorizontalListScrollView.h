@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIScrollView, NSMapTable;
+@class UIScrollView, NSMapTable, NSString;
 
 @interface SKUIHorizontalListScrollView : SKUIViewReuseView <SKUIViewElementView> {
     UIScrollView *_scrollView;
     NSMapTable *_viewElementViews;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForText:(id)arg1 style:(id)arg2 context:(id)arg3;
 + (struct CGSize { double x1; double x2; })_sizeForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;

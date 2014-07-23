@@ -73,10 +73,10 @@
 - (bool)hasSendDuration;
 - (void)setHasSendDuration:(bool)arg1;
 - (void)setSendDuration:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (unsigned int)hasAttachments;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

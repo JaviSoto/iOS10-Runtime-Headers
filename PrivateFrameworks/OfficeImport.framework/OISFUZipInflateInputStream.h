@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <OISFUBufferedInputStream>;
+@class NSString, <OISFUBufferedInputStream>;
 
 @interface OISFUZipInflateInputStream : NSObject <SFUInputStream> {
     struct z_stream_s { 
@@ -35,6 +35,11 @@
     unsigned long long mCalculatedCrc;
     unsigned long long mCheckCrc;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)totalCompressedBytesConsumed;

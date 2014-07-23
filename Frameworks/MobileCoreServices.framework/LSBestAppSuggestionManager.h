@@ -26,6 +26,7 @@
 - (id)bestAppSuggestions:(long long)arg1;
 - (bool)determineBestAppWithDelay:(double)arg1 withBlock:(id)arg2;
 - (void)removeBestApp:(id)arg1 options:(id)arg2;
+- (void)launchAppWithBundleIdentifier:(id)arg1 userActivityUniqueIdentifier:(id)arg2 userActivityTypeIdentifier:(id)arg3 deviceName:(id)arg4 deviceType:(id)arg5;
 - (void)launchAppWithBundleIdentifier:(id)arg1 userActivityUniqueIdentifier:(id)arg2 userActivityTypeIdentifier:(id)arg3;
 - (id)bestAppSuggestion;
 - (void)stopListeningForBestAppSuggestions;

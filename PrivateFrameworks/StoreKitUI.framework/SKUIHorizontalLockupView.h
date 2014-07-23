@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, SKUILockupViewElement, SKUIHorizontalLockupLayout, SKUIGradientView, SKUIPreviewProgressIndicator, SUPlayerStatus;
+@class NSString, SUPlayerStatus, SKUIHorizontalLockupLayout, SKUIGradientView, SKUIPreviewProgressIndicator, NSMapTable, SKUILockupViewElement;
 
 @interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
     struct UIEdgeInsets { 
@@ -19,6 +19,11 @@
     long long _previewState;
     NSMapTable *_viewElementViews;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForOrdinal:(id)arg1 context:(id)arg2;
 + (void)_requestLayoutForViewElements:(id)arg1 width:(double)arg2 context:(id)arg3;

@@ -28,15 +28,11 @@
     boolfEnableOrientationNotification;
     struct Sample { 
         double timestamp; 
-        struct { 
-            int type; 
-        } orientation; 
+        int orientation; 
     } fLatestDeviceOrientationSample;
     struct Sample { 
         double timestamp; 
-        struct { 
-            int type; 
-        } orientation; 
+        int orientation; 
     } fLastSignificantOrientationSample;
 }
 

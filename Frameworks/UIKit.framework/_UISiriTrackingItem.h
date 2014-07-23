@@ -10,7 +10,8 @@
 
 @interface _UISiriTrackingItem : NSObject  {
     bool_deleted;
-    bool_isAReplacement;
+    bool_isABigReplacement;
+    bool_isASmallReplacement;
     bool_isAnIntroduction;
     UIImageView *_animatedView;
     UIColor *_textColor;
@@ -48,7 +49,8 @@
 @property double offscreenXLocation;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetFrame;
 @property(copy) id animationCompletionHandler;
-@property bool isAReplacement;
+@property bool isABigReplacement;
+@property bool isASmallReplacement;
 @property bool isAnIntroduction;
 @property(retain) UIImage * capturedGlyphImage;
 
@@ -61,8 +63,10 @@
 - (id)capturedGlyphImage;
 - (void)setIsAnIntroduction:(bool)arg1;
 - (bool)isAnIntroduction;
-- (void)setIsAReplacement:(bool)arg1;
-- (bool)isAReplacement;
+- (void)setIsASmallReplacement:(bool)arg1;
+- (bool)isASmallReplacement;
+- (void)setIsABigReplacement:(bool)arg1;
+- (bool)isABigReplacement;
 - (void)setAnimationCompletionHandler:(id)arg1;
 - (id)animationCompletionHandler;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetFrame;

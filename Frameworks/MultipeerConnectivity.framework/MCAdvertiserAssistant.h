@@ -41,6 +41,10 @@
 @property bool wasAdvertising;
 @property(retain) NSBundle * frameworkBundle;
 @property(retain) UIAlertView * alertView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setInvitationsBuffer:(id)arg1;

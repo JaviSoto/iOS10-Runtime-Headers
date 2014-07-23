@@ -32,11 +32,13 @@
 - (void)handleCallRecordMergeConflicts:(id)arg1;
 - (void)updateCallDBProperties;
 - (id)getArrayForCallTypeMask:(unsigned int)arg1;
+- (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(bool)arg3;
 - (void)postTimersChangedNotification;
 - (void)handleCallDBPropContextDidSaveNotification:(id)arg1;
 - (void)handleCallRecordContextDidSaveNotification:(id)arg1;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2;
 - (void)setCallDBProperties;
+- (id)fetchAllNoLimit;
 - (id)fetchObjectsWithUniqueIds:(id)arg1;
 - (void)deleteObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithPredicate:(id)arg1;

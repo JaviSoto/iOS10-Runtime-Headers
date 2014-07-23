@@ -26,7 +26,6 @@
 + (id)dispatchGroupWithName:(id)arg1;
 + (id)mainQueue;
 
-- (void)setResult:(id)arg1;
 - (void)leave;
 - (void)join:(id)arg1 queue:(id)arg2 block:(id)arg3;
 - (void)setLoggingEnabled:(bool)arg1;
@@ -36,6 +35,7 @@
 - (void)_waitWithDispatchTimeout:(unsigned long long)arg1;
 - (void)notifyOnQueue:(id)arg1 block:(id)arg2;
 - (void)notifyOnMainQueueWithBlock:(id)arg1;
+- (void)setResult:(id)arg1;
 - (id)group;
 - (id)result;
 - (id)_values;

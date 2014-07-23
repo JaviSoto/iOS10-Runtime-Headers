@@ -35,6 +35,7 @@
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)applyFillPropertiesToContext:(struct CGContext { }*)arg1 atZoomScale:(double)arg2;
 - (void)createPath;
+- (struct CGPath { }*)path;
 - (void)setFillColor:(id)arg1;
 - (void)setLineDashPhase:(double)arg1;
 - (double)lineDashPhase;
@@ -46,7 +47,6 @@
 - (id)fillColor;
 - (double)lineWidth;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setLineDashPattern:(id)arg1;

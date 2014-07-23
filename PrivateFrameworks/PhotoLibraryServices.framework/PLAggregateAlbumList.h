@@ -11,6 +11,10 @@
 }
 
 @property int filter;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long containersCount;
 @property(readonly) unsigned long long albumsCount;
 @property(readonly) bool isFolder;

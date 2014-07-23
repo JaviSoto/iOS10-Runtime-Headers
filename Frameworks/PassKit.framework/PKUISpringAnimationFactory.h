@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CAMediaTimingFunction;
+@class NSString, CAMediaTimingFunction;
 
 @interface PKUISpringAnimationFactory : NSObject <_UIBasicAnimationFactory> {
     double _duration;
@@ -29,6 +29,10 @@
 @property double damping;
 @property double velocity;
 @property(retain) CAMediaTimingFunction * timing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultTimingFunction;
 + (id)springAnimationWithKeyPath:(id)arg1;

@@ -17,10 +17,10 @@
 @property(readonly) bool isUserRequested;
 
 
+- (unsigned long long)generationNumber;
 - (bool)shouldSend;
 - (id)deferredOperation;
 - (bool)isUserRequested;
-- (unsigned long long)generationNumber;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

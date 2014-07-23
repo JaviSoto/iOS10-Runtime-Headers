@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSFileHandle, NSURLRequest, <CKDAccountInfoProvider>, NSMutableArray, NSString, NSError, NSArray, NSMutableDictionary, NSInputStream, CKDProtobufStreamWriter, NSData, NSOperationQueue, NSRunLoop, NSURLSessionDataTask, NSHTTPURLResponse, <CKDResponseBodyParser>, NSURLSessionConfiguration, NSDate, CKDProtocolTranslator, NSURL, CKDClientContext;
+@class NSDictionary, NSFileHandle, NSURLRequest, NSMutableData, <CKDAccountInfoProvider>, NSMutableArray, NSString, NSError, NSArray, NSMutableDictionary, NSInputStream, CKDProtobufStreamWriter, NSData, NSOperationQueue, NSRunLoop, NSURLSessionDataTask, NSHTTPURLResponse, <CKDResponseBodyParser>, NSURLSessionConfiguration, NSDate, CKDProtocolTranslator, NSURL, CKDClientContext;
 
 @interface CKDURLRequest : NSObject <CKDURLSessionTaskDelegate, CKDProtobufMessageSigningDelegate, CKDFlowControllable> {
     <CKDAccountInfoProvider> *_accountInfoProvider;
@@ -43,6 +43,17 @@
     NSData *_fakeResponseData;
     bool_haveParsedFakeResponseData;
     CKDProtobufStreamWriter *_streamWriter;
+    struct CC_SHA256state_st { 
+        unsigned int count[2]; 
+        unsigned int hash[8]; 
+        unsigned int wbuf[16]; 
+    } _mescalTxSignature;
+    struct CC_SHA256state_st { 
+        unsigned int count[2]; 
+        unsigned int hash[8]; 
+        unsigned int wbuf[16]; 
+    } _mescalRxSignature;
+    NSMutableData *_receivedMescalData;
     bool_usesBackgroundSession;
     bool_allowsCellularAccess;
     bool_haveCachedServerType;
@@ -65,8 +76,12 @@
     NSOperationQueue *_delegateQueue;
     NSFileHandle *_responseFileHandle;
     NSFileHandle *_requestFileHandle;
+    NSFileHandle *_binaryResponseFileHandle;
+    NSFileHandle *_binaryRequestFileHandle;
     NSString *_responseLogFilePath;
     NSString *_requestLogFilePath;
+    NSString *_binaryResponseLogFilePath;
+    NSString *_binaryRequestLogFilePath;
     NSString *_deviceID;
     long long _cachedServerType;
     long long _cachedPartitionType;
@@ -122,13 +137,21 @@
 @property unsigned long long numDownloadedElements;
 @property(retain) NSFileHandle * responseFileHandle;
 @property(retain) NSFileHandle * requestFileHandle;
+@property(retain) NSFileHandle * binaryResponseFileHandle;
+@property(retain) NSFileHandle * binaryRequestFileHandle;
 @property(retain) NSString * responseLogFilePath;
 @property(retain) NSString * requestLogFilePath;
+@property(retain) NSString * binaryResponseLogFilePath;
+@property(retain) NSString * binaryRequestLogFilePath;
 @property(copy) NSString * deviceID;
 @property bool haveCachedServerType;
 @property long long cachedServerType;
 @property bool haveCachedPartitionType;
 @property long long cachedPartitionType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_sharedCookieStorage;
 + (id)_logQueue;
@@ -141,6 +164,8 @@
 - (long long)cachedServerType;
 - (void)setHaveCachedServerType:(bool)arg1;
 - (bool)haveCachedServerType;
+- (id)binaryRequestFileHandle;
+- (id)binaryResponseFileHandle;
 - (id)requestFileHandle;
 - (id)responseFileHandle;
 - (void)setNumDownloadedElements:(unsigned long long)arg1;
@@ -148,7 +173,7 @@
 - (id)_testUnderscoreProperty;
 - (id)translator;
 - (bool)expectsSingleObject;
-- (id)signatureMessageForMessageData:(id)arg1 error:(id*)arg2;
+- (void)generateSignature:(id)arg1;
 - (void)URLSessionTask:(id)arg1 conditionalRequirementsChanged:(bool)arg2;
 - (void)URLSessionTaskIsWaitingForConnection:(id)arg1;
 - (id)URLSessionTask:(id)arg1 requestForEstablishedConnection:(id)arg2;
@@ -158,10 +183,12 @@
 - (void)URLSessionTask:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (void)URLSessionTask:(id)arg1 needNewBodyStream:(id)arg2;
 - (void)URLSessionTask:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id)arg4;
-- (id)operationRequestWithType:(int)arg1;
+- (void)updateSignatureWithTransmittedBytes:(id)arg1;
 - (id)_errorFromHTTPResponse:(id)arg1;
+- (id)_binaryResponseFileHandle;
 - (id)defaultParserForContentType:(id)arg1;
 - (void)_logHTTPResponse:(id)arg1;
+- (void)_addResponseHeadersToReceivedSignature:(id)arg1;
 - (void)_flushRequestResponseLogs;
 - (void)setSessionConfiguration:(id)arg1;
 - (void)setUrlSessionTask:(id)arg1;
@@ -185,32 +212,44 @@
 - (bool)requiresAppPartitionURL;
 - (void)_setupPublicDatabaseURL;
 - (bool)allowsAnonymousAccount;
-- (bool)requiresSignature;
+- (id)_binaryRequestFileHandle;
 - (bool)shouldCompressBody;
 - (id)protobufOperationName;
 - (long long)partitionType;
 - (long long)serverType;
 - (id)requestOperationClasses;
+- (void)requestDidParsePlaintextObject:(id)arg1;
 - (void)requestDidParsePlistObject:(id)arg1;
 - (long long)_handlePlistResult:(id)arg1;
 - (void)requestDidParseJSONObject:(id)arg1;
 - (long long)_handleServerJSONResult:(id)arg1;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
-- (long long)_handleServerProtobufResult:(id)arg1;
+- (void)updateSignatureWithReceivedBytes:(id)arg1;
+- (long long)_handleServerProtobufResult:(id)arg1 rawData:(id)arg2;
 - (void)_logParsedObject:(id)arg1;
 - (Class)expectedResponseClass;
+- (void)_handleMescalSignatureResponse:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)streamWriter;
+- (id)operationRequestWithType:(int)arg1;
+- (void)_addRequestHeadersToTransmittedSignature:(id)arg1;
+- (bool)requiresSignature;
 - (int)isolationLevel;
 - (id)hardwareIDOverride;
 - (bool)includeContainerInfo;
 - (id)requestOperations;
+- (void)setBinaryResponseFileHandle:(id)arg1;
+- (void)setBinaryRequestFileHandle:(id)arg1;
 - (void)setResponseFileHandle:(id)arg1;
 - (void)setRequestFileHandle:(id)arg1;
+- (id)binaryResponseLogFilePath;
 - (id)responseLogFilePath;
+- (id)binaryRequestLogFilePath;
 - (id)requestLogFilePath;
 - (id)_responseFileHandle;
 - (id)_requestFileHandle;
+- (void)setBinaryRequestLogFilePath:(id)arg1;
+- (void)setBinaryResponseLogFilePath:(id)arg1;
 - (void)setRequestLogFilePath:(id)arg1;
 - (void)setResponseLogFilePath:(id)arg1;
 - (void)_makeTrafficFileHandleWithPrefix:(id)arg1 outPath:(id*)arg2 outHandle:(id*)arg3;
@@ -250,9 +289,9 @@
 - (void)setAccountInfoProvider:(id)arg1;
 - (long long)databaseScope;
 - (void)setDatabaseScope:(long long)arg1;
-- (id)sourceApplicationSecondaryIdentifier;
 - (id)sectionID;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)ckShortDescription;
 - (id)CKPropertiesDescription;
 - (void)setRequestProperties:(id)arg1;
@@ -264,6 +303,7 @@
 - (bool)markAsFinished;
 - (id)context;
 - (void)setContext:(id)arg1;
+- (id)path;
 - (id)url;
 - (int)operationType;
 - (id)init;
@@ -277,7 +317,6 @@
 - (void)setDelegateQueue:(id)arg1;
 - (id)delegateQueue;
 - (id)request;
-- (id)path;
 - (void)setResponse:(id)arg1;
 - (void)setError:(id)arg1;
 - (id)error;

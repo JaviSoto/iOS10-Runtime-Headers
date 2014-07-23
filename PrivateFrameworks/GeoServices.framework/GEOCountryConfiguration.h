@@ -23,6 +23,10 @@
 @property(readonly) bool currentCountrySupportsRouteGenius;
 @property(readonly) bool currentCountrySupportsCarIntegration;
 @property(readonly) double urlAuthenticationTimeToLive;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedConfiguration;
 
@@ -46,9 +50,9 @@
 - (void)_notifyUpdateCompletionHandlers:(bool)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)updateCountryConfiguration:(id)arg1;
-- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
 - (id)init;

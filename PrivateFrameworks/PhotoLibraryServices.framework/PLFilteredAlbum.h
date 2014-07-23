@@ -24,6 +24,10 @@
 @property(retain) NSPredicate * predicate;
 @property bool isObservingContextChanges;
 @property NSMutableOrderedSet * _assets;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSString * uuid;
 @property(retain,readonly) NSString * title;
 @property(copy,readonly) NSString * localizedTitle;

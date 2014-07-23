@@ -14,18 +14,16 @@
 
 
 - (void)setSessionData:(id)arg1;
-- (void)setMescalData:(id)arg1;
 - (id)sessionData;
-- (void)_handleParsedObject:(id)arg1;
 - (bool)requiresDeviceID;
+- (id)requestOperationClasses;
+- (id)requestDidParseProtobufObject:(id)arg1;
+- (void)setMescalData:(id)arg1;
 - (bool)requiresSignature;
-- (long long)partitionType;
-- (long long)serverType;
+- (id)requestOperations;
 - (id)mescalData;
 - (id)initWithSessionData:(id)arg1;
-- (id)requestBodyStream;
-- (id)responseBodyParser;
-- (id)url;
+- (int)operationType;
 - (void).cxx_destruct;
 
 @end

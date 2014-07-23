@@ -75,10 +75,8 @@
 - (void)_setupVacuumIfNecessary;
 - (void)_ensureNoTransactionOpen;
 - (void)_finalizeStatement;
-- (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
 - (void)_clearCachedStatements;
 - (void)_clearTransactionCaches;
-- (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 - (void)_configureUbiquityMetadataTable;
 - (void)_configurePragmaOptions:(int)arg1 createdSchema:(bool)arg2;
 - (void)_configureIntegrityCheck;
@@ -142,6 +140,8 @@
 - (bool)isFetchInProgress;
 - (void)endFetch;
 - (bool)isOpen;
+- (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
+- (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 - (id)_adapter;
 - (void)finalize;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UICollectionView;
+@class NSString, UICollectionView;
 
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView> {
     UICollectionView *_collectionView;
@@ -18,6 +18,10 @@
 @property(retain) UICollectionView * collectionView;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property bool rendersWithPerspective;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
 

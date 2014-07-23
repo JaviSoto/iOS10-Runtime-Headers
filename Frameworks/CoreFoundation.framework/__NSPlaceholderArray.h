@@ -10,6 +10,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)init;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
@@ -23,6 +24,5 @@
 - (unsigned long long)retainCount;
 - (oneway void)release;
 - (id)retain;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

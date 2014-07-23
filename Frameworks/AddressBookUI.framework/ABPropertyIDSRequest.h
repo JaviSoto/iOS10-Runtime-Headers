@@ -31,6 +31,10 @@
 @property(copy) id requestResultBlock;
 @property(copy) id idQueryResultHandler;
 @property bool cancelled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;

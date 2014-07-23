@@ -6,6 +6,7 @@
 
 @interface CKNotificationInfo : NSObject <NSSecureCoding, NSCopying> {
     bool_shouldBadge;
+    bool_shouldSendContentAvailable;
     NSString *_alertBody;
     NSString *_alertLocalizationKey;
     NSArray *_alertLocalizationArgs;
@@ -23,10 +24,13 @@
 @property(copy) NSString * soundName;
 @property(copy) NSArray * desiredKeys;
 @property bool shouldBadge;
+@property bool shouldSendContentAvailable;
 
 + (bool)supportsSecureCoding;
 + (id)notificationInfo;
 
+- (void)setShouldSendContentAvailable:(bool)arg1;
+- (bool)shouldSendContentAvailable;
 - (void)setShouldBadge:(bool)arg1;
 - (bool)shouldBadge;
 - (id)alertActionLocalizationKey;

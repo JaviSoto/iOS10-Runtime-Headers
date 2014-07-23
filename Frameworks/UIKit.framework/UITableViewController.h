@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIFilteredDataSource, UIRefreshControl, UITableViewDataSource, UITableView;
+@class _UIFilteredDataSource, UIRefreshControl, NSString, UITableViewDataSource, UITableView;
 
 @interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     long long _tableViewStyle;
@@ -21,6 +21,10 @@
 @property(retain) UITableView * tableView;
 @property bool clearsSelectionOnViewWillAppear;
 @property(retain) UIRefreshControl * refreshControl;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)init;

@@ -34,6 +34,11 @@
     bool_pad;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)MIMEType;
 + (bool)canDecodeDownloadHeaderData:(id)arg1;
 + (bool)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned long long*)arg3 filename:(id*)arg4;

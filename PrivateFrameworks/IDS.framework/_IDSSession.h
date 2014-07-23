@@ -16,6 +16,7 @@
     long long _transportType;
     int _socket;
     bool_isAudioEnabled;
+    bool_isLegacy;
     long long _inviteTimeout;
     unsigned int _sessionEndedReason;
 }
@@ -24,6 +25,10 @@
 @property(readonly) unsigned int state;
 @property long long inviteTimeout;
 @property(readonly) unsigned int sessionEndedReason;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setupUnreliableSocketPairConnection;
@@ -56,6 +61,7 @@
 - (void)sessionCancelReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionDeclineReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
 - (void)sessionAcceptReceived:(id)arg1 fromID:(id)arg2 withData:(id)arg3;
+- (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)declineInvitation;
 - (void)acceptInvitation;

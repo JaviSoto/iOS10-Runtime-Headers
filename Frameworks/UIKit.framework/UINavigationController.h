@@ -104,6 +104,10 @@
     NSString *__backdropGroupName;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIViewController * detailViewController;
 @property bool isExpanded;
 @property(retain,readonly) UIViewController * topViewController;
@@ -152,6 +156,10 @@
 @property(getter=_isNestedNavigationController,setter=_setIsNestedNavigationController:) bool isNestedNavigationController;
 @property(getter=isInteractiveTransition) bool interactiveTransition;
 @property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (bool)_shouldForwardViewWillTransitionToSize;
@@ -359,7 +367,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (id)_transitionAnimationContext;
 - (void)_startInteractiveToolbarTransition;
-- (bool)isInteractiveTransition;
 - (bool)_shouldCrossFadeBottomBars;
 - (bool)_isUsingBuiltinAnimator;
 - (bool)isCustomTransition;
@@ -377,6 +384,7 @@
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(int)arg1;
 - (void)_propagateContentAdjustmentsForControllersWithSharedViews;
 - (void)_startDeferredTransitionIfNeeded;
+- (bool)isInteractiveTransition;
 - (double)customNavigationTransitionDuration;
 - (id)_customInteractionController:(id)arg1;
 - (bool)allowUserInteractionDuringTransition;
@@ -384,12 +392,12 @@
 - (id)_customTransitionController:(bool)arg1;
 - (bool)_usesTransitionController;
 - (void)setNeedsDeferredTransition;
-- (id)_navigationItems;
 - (bool)needsDeferredTransition;
 - (void)_setViewControllers_7_0:(id)arg1 transition:(int)arg2 animated:(bool)arg3;
 - (id)_existingNavigationBar;
-- (id)_outermostNavigationController;
 - (id)interactivePopGestureRecognizer;
+- (id)_navigationItems;
+- (id)_outermostNavigationController;
 - (void)_setViewControllers:(id)arg1 transition:(int)arg2 animated:(bool)arg3;
 - (void)_prepareCollectionViewControllers:(id)arg1 forSharingInRange:(id)arg2;
 - (int)_transitionForOldViewControllers:(id)arg1 newViewControllers:(id)arg2;

@@ -5,6 +5,7 @@
 @class NSURLSession, NSString, NSMutableDictionary, NSOperationQueue, NSURLSessionConfiguration;
 
 @interface MMCSHTTPSession : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate> {
+    bool_isBackground;
     NSString *_sessionName;
     NSString *_sessionConfigurationId;
     NSURLSession *_urlSession;
@@ -19,9 +20,15 @@
 @property(retain) NSURLSessionConfiguration * urlSessionConfiguration;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) NSMutableDictionary * contextsForTasks;
+@property bool isBackground;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)urlSessionConfiguration;
+- (void)setIsBackground:(bool)arg1;
 - (id)mmcsHTTPContextForTask:(id)arg1 reason:(id)arg2;
 - (id)contextsForTasks;
 - (void)setContextsForTasks:(id)arg1;
@@ -31,6 +38,7 @@
 - (id)initWithName:(id)arg1 sessionConfigurationId:(id)arg2 configuration:(id)arg3;
 - (id)urlSession;
 - (id)dataTaskWithRequest:(id)arg1 uuid:(id)arg2 forHTTPContext:(id)arg3;
+- (bool)isBackground;
 - (id)sessionConfigurationId;
 - (void)setUrlSession:(id)arg1;
 - (id)sessionName;

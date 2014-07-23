@@ -15,6 +15,10 @@
 @property(retain) NSString * identifier;
 @property(retain) NSExtension * extension;
 @property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
@@ -26,7 +30,7 @@
 - (id)extension;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)publicController;
-- (void)_didSelectURL:(id)arg1 withSandboxExtension:(id)arg2 placeholder:(id)arg3 placeholderExtension:(id)arg4;
+- (void)_didSelectURLWrapper:(id)arg1;
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;

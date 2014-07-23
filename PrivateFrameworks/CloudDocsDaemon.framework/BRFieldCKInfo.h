@@ -2,14 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString, NSData;
+@class NSString;
 
 @interface BRFieldCKInfo : PBCodable <PQLBindable, PQLResultSetInitializer, NSCopying> {
     NSString *_etag;
-    NSString *_previousProtectionDataEtag;
-    NSData *_protectionData;
-    NSString *_protectionDataEtag;
-    NSString *_zoneProtectionDataEtag;
     bool_knownToServer;
     bool_wasCached;
     struct { 
@@ -18,20 +14,16 @@
     } _has;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool hasKnownToServer;
 @property bool knownToServer;
 @property bool hasWasCached;
 @property bool wasCached;
 @property(readonly) bool hasEtag;
 @property(retain) NSString * etag;
-@property(readonly) bool hasProtectionData;
-@property(retain) NSData * protectionData;
-@property(readonly) bool hasProtectionDataEtag;
-@property(retain) NSString * protectionDataEtag;
-@property(readonly) bool hasPreviousProtectionDataEtag;
-@property(retain) NSString * previousProtectionDataEtag;
-@property(readonly) bool hasZoneProtectionDataEtag;
-@property(retain) NSString * zoneProtectionDataEtag;
 
 
 - (void)setCKInfoFieldsInRecord:(id)arg1;
@@ -40,28 +32,16 @@
 - (id)initWithSqlite3Value:(struct Mem { }*)arg1;
 - (void)setHasWasCached:(bool)arg1;
 - (void)setHasKnownToServer:(bool)arg1;
-- (id)zoneProtectionDataEtag;
-- (bool)hasZoneProtectionDataEtag;
-- (id)previousProtectionDataEtag;
-- (bool)hasPreviousProtectionDataEtag;
-- (id)protectionDataEtag;
-- (bool)hasProtectionDataEtag;
-- (bool)hasProtectionData;
 - (void)setWasCached:(bool)arg1;
 - (bool)hasWasCached;
 - (bool)knownToServer;
 - (bool)hasKnownToServer;
-- (void)setZoneProtectionDataEtag:(id)arg1;
-- (void)setPreviousProtectionDataEtag:(id)arg1;
-- (void)setProtectionDataEtag:(id)arg1;
 - (bool)hasEtag;
 - (void)setEtag:(id)arg1;
 - (id)etag;
 - (void)copyTo:(id)arg1;
 - (bool)wasCached;
 - (void)setKnownToServer:(bool)arg1;
-- (void)setProtectionData:(id)arg1;
-- (id)protectionData;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)initWithRecord:(id)arg1;

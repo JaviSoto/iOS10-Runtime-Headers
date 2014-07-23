@@ -47,6 +47,10 @@
 @property(retain) NSString * statusText;
 @property(retain) NSDictionary * performanceMetrics;
 @property(retain) JSManagedValue * managedSelf;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * responseText;
 @property(readonly) IKDOMDocument * responseXML;
 @property unsigned int responseType;
@@ -61,10 +65,11 @@
 - (void)setJingleRequest:(bool)arg1;
 - (id)responseText;
 - (id)getAllResponseHeaders;
-- (id)getResponseHeader;
+- (id)getResponseHeader:(id)arg1;
 - (void)setRequestHeader:(id)arg1 :(id)arg2;
 - (void)open:(id)arg1 :(id)arg2 :(id)arg3 :(id)arg4 :(id)arg5;
 - (void)setPerformanceMetrics:(id)arg1;
+- (id)_timeIntervalSince1970;
 - (void)_immediateOnReadyStateChangeCall;
 - (id)_dequeueReadyStateChangeMessage;
 - (void)_scheduleOnReadyStateChangeCall;

@@ -137,6 +137,7 @@
 - (bool)shouldShowLinkedPeople;
 - (id)customMessageView;
 - (id)messageDetailFont;
+- (id)messageFont;
 - (id)messageDetail;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -197,7 +198,6 @@
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)updateRecord;
-- (id)messageFont;
 - (void)setAttribution:(id)arg1;
 - (id)attribution;
 - (void)saveChanges;

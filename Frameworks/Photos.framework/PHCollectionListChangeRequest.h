@@ -16,6 +16,10 @@
 @property(retain) NSString * title;
 @property(readonly) PHChangeRequestHelper * helper;
 @property(readonly) PHCollectionChangeRequestHelper * collectionsHelper;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * managedEntityName;
 @property(readonly) NSString * uuid;
 @property(readonly) NSManagedObjectID * objectID;
@@ -55,6 +59,8 @@
 - (void)encodeToXPCDict:(id)arg1;
 - (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (bool)isEntitled;
 - (id)managedEntityName;
 - (void)addChildCollections:(id)arg1;

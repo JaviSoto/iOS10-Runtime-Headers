@@ -22,6 +22,7 @@
 + (bool)supportsSecureCoding;
 
 - (struct CGColor { }*)_newCGColor;
+- (double)luminance;
 - (struct CGColor { }*)CGColor;
 - (unsigned long long)hash;
 - (id)string;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSSet, NSDictionary, NSString, UIImage;
+@class UINavigationItem, NSString, UIImage, NSSet, NSDictionary, UIBarButtonItem, UIColor;
 
 @interface UINavigationButton : UIButton  {
     NSSet *_possibleTitles;
@@ -17,6 +17,8 @@
     NSSet *_possibleSystemItems;
     unsigned int _size : 2;
     unsigned int _wantsLetterpressContent : 1;
+    UIBarButtonItem *_originatingButtonItem;
+    UINavigationItem *_originatingNavigationItem;
     bool_createdByBarButtonItem;
     bool_isFontScaleInvalid;
     bool_wantsBlendModeForAccessibilityBackgrounds;
@@ -44,6 +46,8 @@
 @property(retain) UIColor * tintColor;
 @property double minimumWidth;
 @property double maximumWidth;
+@property UINavigationItem * originatingNavigationItem;
+@property UIBarButtonItem * originatingButtonItem;
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setButtonItemStyle:) long long _buttonItemStyle;
 @property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
@@ -92,6 +96,8 @@
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_setBoundsAdjustment:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_isModernButton;
+- (void)setOriginatingNavigationItem:(id)arg1;
+- (void)setOriginatingButtonItem:(id)arg1;
 - (id)initWithImage:(id)arg1 style:(int)arg2;
 - (id)initWithImage:(id)arg1 width:(double)arg2 style:(int)arg3;
 - (id)initWithImage:(id)arg1 width:(double)arg2 style:(int)arg3 applyBezel:(bool)arg4 forBarStyle:(long long)arg5 buttonItemStyle:(long long)arg6;
@@ -114,7 +120,8 @@
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 style:(long long)arg3 barMetrics:(long long)arg4;
 - (int)controlSize;
 - (void)_adjustBounds;
-- (void)setHighlighted:(bool)arg1;
+- (id)originatingButtonItem;
+- (id)originatingNavigationItem;
 - (id)initWithValue:(id)arg1 width:(double)arg2 style:(int)arg3 barStyle:(long long)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (id)initWithValue:(id)arg1 width:(double)arg2 style:(int)arg3 barStyle:(long long)arg4 possibleTitles:(id)arg5 possibleSystemItems:(id)arg6 tintColor:(id)arg7 applyBezel:(bool)arg8 forButtonItemStyle:(long long)arg9;
 - (void)_setTitleFrozen:(bool)arg1;
@@ -145,10 +152,11 @@
 - (void)setNavigationBarTintColor:(id)arg1;
 - (void)setBarStyle:(long long)arg1;
 - (void)setControlSize:(int)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
 - (bool)_wantsAccessibilityButtonShapes;
 - (double)_fontScaleAdjustment;
-- (void)_prepareToAppearInNavigationItemOnLeft:(bool)arg1;
+- (void)_prepareToAppearInNavigationItem:(id)arg1 onLeft:(bool)arg2;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_appearanceStorage;
 - (id)initWithTitle:(id)arg1;

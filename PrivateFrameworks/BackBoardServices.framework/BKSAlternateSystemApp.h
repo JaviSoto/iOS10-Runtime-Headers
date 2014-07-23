@@ -21,6 +21,10 @@
 @property long long state;
 @property bool stateChangeWaiter;
 @property(retain) NSObject<OS_dispatch_semaphore> * stateChangeSemaphore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)connection;

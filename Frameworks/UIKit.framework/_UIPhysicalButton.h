@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, NSArray, UIResponder, NSMutableArray;
+@class UIWindow, NSArray, NSString, UIResponder, NSMutableArray;
 
 @interface _UIPhysicalButton : NSObject <_UIResponderForwardable> {
     NSMutableArray *_gestureRecognizers;
@@ -21,6 +21,10 @@
 @property(retain) UIWindow * window;
 @property(retain) UIResponder * responder;
 @property(copy) NSArray * gestureRecognizers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(setter=_setForwardablePhase:) long long _forwardablePhase;
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 

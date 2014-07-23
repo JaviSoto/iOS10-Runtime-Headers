@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, NSXPCConnection, _UIKeyboardChangedInformation, NSHashTable, <_UIKeyboardArbitration>;
+@class UIWindow, NSString, NSXPCConnection, _UIKeyboardChangedInformation, NSHashTable, <_UIKeyboardArbitration>;
 
 @interface _UIRemoteKeyboards : NSObject <_UIKeyboardArbitrationClient, _UIRemoteKeyboardControllerDelegate> {
     NSHashTable *_windowControllers;
@@ -19,6 +19,10 @@
 @property(readonly) <_UIKeyboardArbitration> * proxy;
 @property(retain) _UIKeyboardChangedInformation * currentState;
 @property bool currentKeyboard;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)enabled;
 + (id)sharedRemoteKeyboards;

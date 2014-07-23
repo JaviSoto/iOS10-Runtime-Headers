@@ -2,16 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKStyleManager, VKMapModel;
+@class NSString, VKStyleManager, VKMapModel;
 
 @interface VKSkyModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     VKMapModel *_mapModel;
@@ -43,15 +39,19 @@
         struct __shared_weak_count {} *__cntrl_; 
     } _gglRenderState;
     struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_renderItem;
+    bool_needsNewStyle;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) struct  horizonColor; /* unknown property attribute:  1>=[4f]} */
 @property VKMapModel * mapModel;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 + (bool)reloadOnStylesheetChange;
 
+- (void)updateStyle;
 - (struct Matrix<float, 4, 1> { float x1[4]; })horizonColor;
 - (void)setHorizonColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (id)mapModel;

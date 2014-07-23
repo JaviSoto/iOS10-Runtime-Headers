@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, UIView, QLScrubView, NSMutableArray, UIWebView, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter;
+@class NSData, UIView, QLScrubView, NSString, NSMutableArray, UIWebView, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter;
 
 @interface QLWebViewDisplayBundle : QLDisplayBundle <UIWebViewDelegate, UIScrollViewDelegate, QLScrubViewDataSource, UIWebPDFViewHandlerDelegate> {
     UIWebView *_webView;
@@ -28,6 +28,11 @@
     NSData *_pdfPreviewData;
     QLPDFHanderDelegateForwarder *_forwarder;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)userInteractedWithScrubView:(id)arg1;
@@ -73,9 +78,10 @@
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (long long)pageCount;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)didReceiveMemoryWarning;
 - (void)scrollViewDidScroll:(id)arg1;

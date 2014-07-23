@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <ACUIViewControllerAccountChangeObserver>, NSTimer, ACUIAccountOperationsHelper, UIProgressHUD, ACAccountStore, UIBarButtonItem;
+@class NSTimer, NSString, <ACUIViewControllerAccountChangeObserver>, ACUIAccountOperationsHelper, UIProgressHUD, UIBarButtonItem, ACAccountStore;
 
 @interface ACUIViewController : PSListController <ACUIAccountOperationsDelegate> {
     NSTimer *_idleJiggleTimer;
@@ -33,10 +33,17 @@
 @property(retain) ACUIAccountOperationsHelper * accountOperationsHelper;
 @property <ACUIViewControllerAccountChangeObserver> * accountChangeObserver;
 @property bool validationInProgress;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)acuiAccountStore;
 + (bool)shouldPresentAsModalSheet;
 
+- (void)setCellsChecked:(bool)arg1;
+- (bool)shouldReloadSpecifiersOnResume;
+- (id)specifiers;
 - (void)setAccountChangeObserver:(id)arg1;
 - (void)setAccountOperationsHelper:(id)arg1;
 - (bool)isShowingActivityInProgressUI;
@@ -77,9 +84,6 @@
 - (void)cancelButtonTapped:(id)arg1;
 - (void)hideActivityInProgressUI;
 - (void)_preventSleepAndDimming:(bool)arg1;
-- (bool)shouldReloadSpecifiersOnResume;
-- (id)specifiers;
-- (void)setCellsChecked:(bool)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (id)accountStore;
 - (void)setAccountStore:(id)arg1;

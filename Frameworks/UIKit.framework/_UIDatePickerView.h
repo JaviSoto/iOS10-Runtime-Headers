@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIDatePickerMode, NSCalendar, NSDate, UIDatePicker, UIFont, NSLocale, NSDateComponents, NSTimeZone, UILabel, _UIDatePickerChineseCalendar;
+@class _UIDatePickerMode, NSCalendar, NSDate, UIDatePicker, UIFont, NSString, NSLocale, NSDateComponents, NSTimeZone, UILabel, _UIDatePickerChineseCalendar;
 
 @interface _UIDatePickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource> {
     long long _loadingDate;
@@ -58,6 +58,10 @@
 @property(getter=_hasCustomLocale,readonly) bool hasCustomLocale;
 @property(readonly) double contentWidth;
 @property(getter=_isTimeIntervalMode,readonly) bool isTimeIntervalMode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)shadowColor;

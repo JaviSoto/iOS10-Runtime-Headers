@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
+@class NSString;
+
 @interface BSAuditToken : NSObject <NSCopying, BSXPCCoding> {
     struct { 
         unsigned int val[8]; 
@@ -9,6 +11,10 @@
 }
 
 @property(readonly) struct { unsigned int x1[8]; } realToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)tokenFromXPCMessage:(id)arg1;
 + (id)tokenFromAuditToken:(struct { unsigned int x1[8]; })arg1;

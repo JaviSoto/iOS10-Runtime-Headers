@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKWorld, VKLayoutContext, VKDispatch, VKTimer, VKCamera;
+@class VKWorld, NSString, VKLayoutContext, VKDispatch, VKTimer, VKCamera;
 
 @interface VKImageCanvas : GGLImageCanvas <VKWorldDelegate, VKAnimationRunner> {
     VKWorld *_world;
@@ -39,12 +39,17 @@
 @property(readonly) VKWorld * world;
 @property(readonly) VKCamera * camera;
 @property(readonly) VKDispatch * dispatch;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;
 - (void)_spinScene:(id)arg1;
 - (void)_spinSceneWillRender:(bool)arg1;
 - (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; boolx5; float x6; }*)arg1 completion:(id)arg2;
+- (void)cancelLoad;
 - (void)loadScene;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
 - (void)worldDisplayDidChange:(id)arg1;
@@ -52,7 +57,6 @@
 - (void)animationDidResume:(id)arg1;
 - (void)_updateViewTransform;
 - (void)runAnimation:(id)arg1;
-- (void)cancelLoad;
 - (id)camera;
 - (id)world;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;

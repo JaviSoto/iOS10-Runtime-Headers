@@ -37,6 +37,7 @@
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id)arg3;
 + (bool)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
++ (bool)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2 deletionType:(int)arg3 deletedFileSize:(long long*)arg4;
 + (bool)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;

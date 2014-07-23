@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSArray, UIImageView, UITapGestureRecognizer, UIBarButtonItem;
+@class UIColor, NSArray, UIImageView, UITapGestureRecognizer, NSString, UIBarButtonItem;
 
 @interface UIDimmingView : UIView <UIGestureRecognizerDelegate> {
     id _delegate;
@@ -25,6 +25,10 @@
 @property bool displayed;
 @property(retain) UIColor * dimmingColor;
 @property bool suppressesBackdrops;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultDimmingColor;
 

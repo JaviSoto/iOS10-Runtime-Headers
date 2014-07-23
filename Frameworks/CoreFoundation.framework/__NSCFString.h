@@ -8,6 +8,7 @@
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id)substringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)hasPrefix:(id)arg1;
 - (unsigned long long)length;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned long long)arg2;
 - (void)setString:(id)arg1;
@@ -17,7 +18,6 @@
 - (void)insertString:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)getLineStart:(unsigned long long*)arg1 end:(unsigned long long*)arg2 contentsEnd:(unsigned long long*)arg3 forRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (bool)hasSuffix:(id)arg1;
-- (bool)hasPrefix:(id)arg1;
 - (bool)isEqualToString:(id)arg1;
 - (bool)getCString:(char *)arg1 maxLength:(unsigned long long)arg2 encoding:(unsigned long long)arg3;
 - (const char *)_fastCStringContents:(bool)arg1;

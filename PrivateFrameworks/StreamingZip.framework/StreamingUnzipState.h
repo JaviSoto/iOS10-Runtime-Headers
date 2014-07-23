@@ -187,6 +187,7 @@
 - (unsigned long long)hashedChunkSize;
 - (unsigned long long)thisStageBytesComplete;
 - (struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; }*)currentLFRecord;
+- (unsigned char)streamState;
 - (id)serializeState;
 - (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long long)arg3;
 - (void)setCurrentOffset:(unsigned long long)arg1;
@@ -195,7 +196,6 @@
 - (void)setCurrentOutputFD:(int)arg1;
 - (id)unzipPath;
 - (void)setStreamState:(unsigned char)arg1;
-- (unsigned char)streamState;
 - (id)initWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (unsigned long long)currentOffset;
 - (id)init;

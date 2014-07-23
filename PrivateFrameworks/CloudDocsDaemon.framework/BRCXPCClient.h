@@ -27,6 +27,10 @@
 @property bool isUsingUbiquity;
 @property(readonly) NSXPCConnection * connection;
 @property(readonly) bool dieOnInvalidate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)reclaimAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id)arg3;
@@ -40,6 +44,7 @@
 - (void)performSelfCheck:(id)arg1 reply:(id)arg2;
 - (void)resetBudgets:(id)arg1 reply:(id)arg2;
 - (void)setIsUsingUbiquity:(bool)arg1;
+- (id)_enabledBundleIDs;
 - (void)_setupContainerID:(id)arg1 andSendReply:(id)arg2;
 - (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(bool)arg3 reply:(id)arg4;
 - (id)copyContainerIDsForPid:(int)arg1 error:(id*)arg2;
@@ -49,16 +54,16 @@
 - (BOOL)cloudEnabledStatusForPID:(int)arg1;
 - (id)issueContainerExtensionForURL:(id)arg1 error:(id*)arg2;
 - (bool)canAccessPhysicalURL:(id)arg1;
-- (bool)isUsingUbiquity;
 - (id)setupContainer:(id)arg1 root:(id)arg2 error:(id*)arg3;
 - (void)_startDownloadItemsAtURLs:(id)arg1 pos:(unsigned long long)arg2 options:(unsigned long long)arg3 error:(id)arg4 reply:(id)arg5;
+- (bool)isUsingUbiquity;
 - (bool)canAccessPath:(const char *)arg1 needsWrite:(bool)arg2;
 - (id)_entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (bool)isSandboxed;
 - (bool)_isContainerProxyEntitled;
 - (BOOL)_cloudEnabledStatusForContainerIDs:(id)arg1 bundleID:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3;
 - (bool)_entitlementBooleanValueForKey:(id)arg1;
-- (bool)accessLogicalOrPhysicalURL:(id)arg1 needsWrite:(bool)arg2 needsLookup:(bool)arg3 handler:(id)arg4;
+- (void)accessLogicalOrPhysicalURL:(id)arg1 needsWrite:(bool)arg2 asynchronously:(bool)arg3 handler:(id)arg4;
 - (bool)_isContainerProxyWithError:(id*)arg1;
 - (bool)_canCreateContainerWithID:(id)arg1 error:(id*)arg2;
 - (bool)_hasAccessToContainerID:(id)arg1 error:(id*)arg2;
@@ -72,8 +77,11 @@
 - (bool)dieOnInvalidate;
 - (id)initWithConnection:(id)arg1 accountSession:(id)arg2;
 - (id)entitledContainerIDs;
-- (void)addContainer:(id)arg1;
 - (void)removeContainer:(id)arg1;
+- (void)addContainer:(id)arg1;
+- (void)getIsContainerWithIDOverQuota:(id)arg1 reply:(id)arg2;
+- (void)getContainerLastServerUpdateWithID:(id)arg1 reply:(id)arg2;
+- (void)getContainerStatusWithID:(id)arg1 reply:(id)arg2;
 - (void)resolveBookmarkDataToURL:(id)arg1 reply:(id)arg2;
 - (void)getBookmarkDataForURL:(id)arg1 reply:(id)arg2;
 - (void)resolveConflictWithName:(id)arg1 atURL:(id)arg2 reply:(id)arg3;
@@ -86,8 +94,10 @@
 - (void)getNonLocalVersionSenderWithReceiver:(id)arg1 documentURL:(id)arg2 reply:(id)arg3;
 - (void)getApplicationStatus:(id)arg1;
 - (void)getApplicationStatusWithPID:(int)arg1 reply:(id)arg2;
+- (void)getMigrationStatusForPrimaryiCloudAccount:(id)arg1;
 - (oneway void)forceAccountUpdateAfterMigration;
 - (void)currentAccountIsUsingUbiquityWithReply:(id)arg1;
+- (void)performiWorkPublishingOperationAtURL:(id)arg1 forPublish:(bool)arg2 readonly:(bool)arg3 reply:(id)arg4;
 - (void)forceConflictForURL:(id)arg1 bookmarkData:(id)arg2 forcedEtag:(id)arg3 reply:(id)arg4;
 - (oneway void)bundleDidAccessExternalDocument:(id)arg1;
 - (void)addExternalDocumentReferenceTo:(id)arg1 forPid:(int)arg2 inContainer:(id)arg3 underParent:(id)arg4 reply:(id)arg5;

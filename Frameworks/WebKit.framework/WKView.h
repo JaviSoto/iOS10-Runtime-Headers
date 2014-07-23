@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class UIColor, WKBrowsingContextController, UIScrollView, WKViewData;
+@class UIColor, NSString, WKBrowsingContextController, UIScrollView, WKViewData;
 
 @interface WKView : UIView <UIScrollViewDelegate> {
     WKViewData *_data;
@@ -46,6 +46,10 @@
 @property bool drawsBackground;
 @property bool drawsTransparentBackground;
 @property(readonly) UIScrollView * scrollView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_backgroundExtendsBeyondPage;

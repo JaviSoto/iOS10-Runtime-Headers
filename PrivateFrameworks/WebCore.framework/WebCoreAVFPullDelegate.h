@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSObject<OS_dispatch_semaphore>;
+@class NSString, NSObject<OS_dispatch_semaphore>;
 
 @interface WebCoreAVFPullDelegate : NSObject <AVPlayerItemOutputPullDelegate> {
 
@@ -21,6 +21,11 @@
 
     NSObject<OS_dispatch_semaphore> *m_semaphore;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)outputMediaDataWillChange:(id)arg1;

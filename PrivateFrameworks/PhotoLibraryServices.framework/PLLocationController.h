@@ -14,6 +14,11 @@
     bool_isHeadingEnabled;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (void)setUsesEffectiveBundleIdentifier:(bool)arg1;
 + (bool)usesEffectiveBundleIdentifier;
 + (id)sharedInstance;
@@ -26,9 +31,9 @@
 - (id)locationString;
 - (void)_updateLocationRunState;
 - (void)_assetContainerChanged:(id)arg1;
-- (void)_applicationStateChanged:(id)arg1;
 - (void)_stopUpdating;
 - (void)_startUpdating;
+- (void)_applicationStateChanged:(id)arg1;
 - (id)location;
 - (void)setEnabled:(bool)arg1;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

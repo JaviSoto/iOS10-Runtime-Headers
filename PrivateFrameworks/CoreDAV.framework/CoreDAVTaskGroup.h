@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CoreDAVTaskManager>, <CoreDAVTaskGroupDelegate>, NSMutableSet, <CoreDAVAccountInfoProvider>, NSError;
+@class <CoreDAVTaskManager>, <CoreDAVTaskGroupDelegate>, NSMutableSet, <CoreDAVAccountInfoProvider>, NSError, NSString;
 
 @interface CoreDAVTaskGroup : NSObject <CoreDAVSubmittable> {
     <CoreDAVTaskManager> *_taskManager;
@@ -40,6 +40,10 @@
 @property <CoreDAVTaskManager> * taskManager;
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(readonly) NSMutableSet * outstandingTasks;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)outstandingTasks;

@@ -17,6 +17,10 @@
     unsigned long long _highlightedMatchIndex;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * searchText;
 @property <UIWebFindOnPageHighlighterDelegate> * delegate;
 @property(readonly) unsigned long long numberOfMatches;

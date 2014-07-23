@@ -18,8 +18,8 @@
 - (id)initWithContentType:(id)arg1 path:(id)arg2;
 - (void)writeToStreamWriter:(id)arg1;
 - (id)contentType;
-- (bool)isOverride;
 - (id)path;
+- (bool)isOverride;
 - (void)dealloc;
 
 @end

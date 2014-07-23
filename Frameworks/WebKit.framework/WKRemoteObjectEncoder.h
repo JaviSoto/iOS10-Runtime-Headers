@@ -22,6 +22,7 @@
 - (void)encodeBool:(bool)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInteger:(long long)arg1 forKey:(id)arg2;
 - (bool)allowsKeyedCoding;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;

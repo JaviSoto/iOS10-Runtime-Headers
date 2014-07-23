@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPrintInfo, UIPrintPaper, NSArray, UINavigationController, UIWindow, UIPopoverController, UIViewController, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter;
+@class UIPrintInfo, UIPrintPaper, NSArray, UINavigationController, NSString, UIWindow, UIPopoverController, UIViewController, UIPrintPanelTableViewController, UIPrintInteractionController, PKPrinter;
 
 @interface UIPrintPanelViewController : NSObject <UIPrinterBrowserOwner> {
     UIPrintInteractionController *_printInteractionController;
@@ -32,6 +32,10 @@
 @property(readonly) bool showPaper;
 @property(readonly) bool showPaperSelection;
 @property(readonly) bool showPrinterWarning;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)duplex;

@@ -2,22 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
-@interface BRCAccountMigrator : NSObject <BRCReachabilityDelegate> {
-    NSString *_accountID;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
+@interface BRCAccountMigrator : BRCAccountOnlinePerformer  {
 }
 
-+ (void)removeMigrator:(id)arg1;
-+ (bool)addMigrator:(id)arg1 forAccountID:(id)arg2;
 
-- (void)resumeAndAutoClose;
-- (id)initWithAccountID:(id)arg1;
-- (void)networkReachabilityChanged:(bool)arg1;
-- (void)_performMigration;
-- (void)_close;
-- (void).cxx_destruct;
+- (void)perform;
 
 @end

@@ -7,6 +7,10 @@
 @interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long statusBarStyle;
 @property(readonly) bool statusBarHidden;
 @property(readonly) long long defaultStatusBarStyle;

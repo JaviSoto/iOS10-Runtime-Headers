@@ -51,18 +51,18 @@
 - (id)addAssetHandleForFetchedFileURL:(id)arg1 itemID:(unsigned long long)arg2 signature:(id)arg3 error:(id*)arg4;
 - (void)evictFetchedFilesIfNecessary;
 - (void)cancelExpiryTimer;
-- (id)MMCS;
 - (void)setMMCS:(id)arg1;
+- (id)MMCS;
 - (void)setExpiryTimer:(id)arg1;
 - (id)expiryTimer;
 - (id)applicationBundleID;
 - (void)setIsUnitTestingAccount:(bool)arg1;
 - (bool)isUnitTestingAccount;
+- (id)path;
 - (void)clear;
 - (void)setQueue:(id)arg1;
 - (id)queue;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 

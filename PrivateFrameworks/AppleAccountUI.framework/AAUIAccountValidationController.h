@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class AAUIRemoteUIRepairFlow, <AAUIAccountValidationControllerDelegate>, ACUIViewController, ACAccount, AAUIAccountRepairRemoteUI;
+@class AAUIRemoteUIRepairFlow, <AAUIAccountValidationControllerDelegate>, NSString, ACUIViewController, ACAccount, AAUIAccountRepairRemoteUI;
 
 @interface AAUIAccountValidationController : NSObject <AAUIRemoteUIRepairFlowDelegate> {
     ACAccount *_account;
@@ -15,6 +15,10 @@
 }
 
 @property <AAUIAccountValidationControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startHSAVerificationFlow;

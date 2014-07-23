@@ -2,8 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
+@class NSString;
+
 @interface SBUIControlCenterLabel : UILabel <SBUIControlCenterControl> {
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)controlConfigurationDidChangeForState:(long long)arg1;
@@ -13,14 +20,11 @@
 - (void)setEnabled:(bool)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(long long)arg2;
 - (void)setNumberOfLines:(long long)arg1;
-- (void)setHighlighted:(bool)arg1;
 - (void)setAttributedText:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setFont:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

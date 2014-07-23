@@ -21,17 +21,17 @@
 @property bool hasRemoteChanges;
 
 
-- (void)setParentFolderID:(id)arg1;
-- (void)setFolderName:(id)arg1;
-- (void)setFolderID:(id)arg1;
-- (id)mailboxID;
+- (id)folderID;
 - (void)setHasRemoteChanges:(bool)arg1;
 - (bool)hasRemoteChanges;
 - (bool)isDefault;
 - (id)folderName;
 - (id)parentMailboxID;
 - (id)parentFolderID;
-- (id)folderID;
+- (void)setParentFolderID:(id)arg1;
+- (void)setFolderName:(id)arg1;
+- (void)setFolderID:(id)arg1;
+- (id)mailboxID;
 - (void)setIsDefault:(bool)arg1;
 - (void)setDataclass:(long long)arg1;
 - (long long)dataclass;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIPickerTableView, UIPickerView, UIView;
+@class UIColor, NSString, UIPickerTableView, UIPickerView, UIView;
 
 @interface UIPickerColumnView : UIView <UIPickerTableViewContainerDelegate, UITableViewDataSource> {
     UIPickerTableView *_topTable;
@@ -54,6 +54,10 @@
 @property struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } perspectiveTransform;
 @property double leftHitTestExtension;
 @property double rightHitTestExtension;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)dealloc;

@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSArray;
+@class NSMutableDictionary, NSArray, NSString, NSObject<OS_dispatch_queue>;
 
 @interface __NSURLSessionLocal : NSURLSession <NSURLSessionSubclass> {
     unsigned long long _identSeed;
@@ -30,7 +30,13 @@
     const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; } *_xCreds;
     long long _xCredsOnce;
     NSArray *_localProtocolClassesForDefaultSession;
+    bool_isInvalid;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_removeProtocolClassForDefaultSession:(Class)arg1;

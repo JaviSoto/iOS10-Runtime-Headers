@@ -76,6 +76,8 @@
 @property unsigned int postAuthMs;
 
 
+- (bool)hasDuration;
+- (bool)hasStatus;
 - (unsigned int)postAuthMs;
 - (unsigned int)secureConnectionMs;
 - (unsigned int)infoMs;
@@ -117,8 +119,7 @@
 - (id)sessionUUID;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasStatus;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setServerVersion:(id)arg1;
 - (id)serverVersion;
 - (void)setBitrate:(unsigned int)arg1;
@@ -126,7 +127,6 @@
 - (void)setHasStatus:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasTransportType;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)transportType;

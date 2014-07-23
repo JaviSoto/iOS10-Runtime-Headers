@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSTimer, PKGroupsController, <PKPassGroupsViewControllerDelegate>, UIImageView, PKLegacyWelcomeView, PKPassGroupStackView, UIButton, NSMutableArray, PKUsageNotificationServer, UIScrollView;
+@class NSTimer, PKGroupsController, <PKPassGroupsViewControllerDelegate>, NSString, UIImageView, PKLegacyWelcomeView, PKPassGroupStackView, UIButton, NSMutableArray, PKUsageNotificationServer, UIScrollView;
 
 @interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKCodeAcquisitionDelegate> {
     UIButton *_addButton;
@@ -31,6 +31,10 @@
 @property <PKPassGroupsViewControllerDelegate> * delegate;
 @property bool passesAreOutdated;
 @property(getter=isWelcomeStateEnabled) bool welcomeStateEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
@@ -41,10 +45,9 @@
 - (bool)passesAreOutdated;
 - (void)_appStorePressed;
 - (id)groupStackView;
-- (void)setWelcomeStateEnabled:(bool)arg1;
 - (void)presentGroupTable;
 - (void)presentOffscreenAnimated:(bool)arg1 withCompletionHandler:(id)arg2;
-- (void)presentOnscreen:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)presentInitialState;
 - (void)reloadPassesWithCompletion:(id)arg1;
 - (void)presentPassWithBulletinRecordID:(id)arg1;
 - (void)_presentGroupWithIndex:(unsigned long long)arg1 animated:(bool)arg2;
@@ -67,6 +70,8 @@
 - (void)_loadWelcomeContainer;
 - (void)_loadWelcomeContainerIfNecessary;
 - (void)presentOffscreenAnimated:(bool)arg1 split:(bool)arg2 withCompletionHandler:(id)arg3;
+- (void)setWelcomeStateEnabled:(bool)arg1;
+- (void)presentOnscreen:(bool)arg1 withCompletionHandler:(id)arg2;
 - (void)_presentWithUpdatedPasses:(id)arg1;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(bool)arg2 completionHandler:(id)arg3;
 - (void)_presentGroupWithIndex:(unsigned long long)arg1 animated:(bool)arg2 completionHandler:(id)arg3;

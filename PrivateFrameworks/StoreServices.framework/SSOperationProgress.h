@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSMutableArray;
+@class NSObject<OS_dispatch_queue>, NSMutableArray, NSString;
 
 @interface SSOperationProgress : NSObject <SSXPCCoding, NSCopying> {
     bool_canPause;
@@ -28,6 +28,10 @@
 @property long long units;
 @property long long normalizedCurrentValue;
 @property long long normalizedMaxValue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setChangeRate:(double)arg1;

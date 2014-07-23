@@ -27,6 +27,10 @@
 @property(readonly) UINavigationController * topNavigationController;
 @property(retain) NSURL * launchURL;
 @property(getter=isStoreEnabled,readonly) bool storeEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIWindow * window;
 
 + (void)setSharedInstance:(id)arg1;

@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
+@class NSString;
+
 @interface WKReloadFrameErrorRecoveryAttempter : NSObject <_WKErrorRecoveryAttempting> {
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
@@ -15,6 +17,11 @@
         } m_impl; 
     } _urlString;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithWebView:(id)arg1 frameHandle:(id)arg2 urlString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg3;

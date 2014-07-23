@@ -38,8 +38,8 @@
 - (void)preflightAutoCompletionModeWithApparentHeight:(double)arg1;
 - (void)endAutoCompletionMode;
 - (void)setIntrinsicSize:(struct CGSize { double x1; double x2; })arg1 forVerticalSizeClass:(long long)arg2;
-- (id)previewView;
 - (void)setPreviewView:(id)arg1;
+- (id)previewView;
 - (void)setCurrentVerticalSizeClass:(long long)arg1;
 - (void)_setupConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

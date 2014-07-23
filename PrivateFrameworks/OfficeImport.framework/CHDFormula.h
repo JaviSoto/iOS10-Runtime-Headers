@@ -20,8 +20,8 @@
 - (id)initWithReference:(id)arg1;
 - (unsigned long long)countOfCellsBeingReferenced;
 - (void)setWorkbook:(id)arg1;
-- (id)references;
 - (void)setReferences:(id)arg1;
+- (id)references;
 - (void)dealloc;
 
 @end

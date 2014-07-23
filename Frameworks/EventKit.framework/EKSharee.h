@@ -16,10 +16,16 @@
 @property int shareeStatus;
 @property int shareeAccessLevel;
 @property(readonly) EKCalendar * owner;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (id)_persistentSharee;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (id)lazyLoadRelationForKey:(id)arg1;
@@ -27,8 +33,6 @@
 - (int)shareeAccessLevel;
 - (void)setShareeStatus:(int)arg1;
 - (int)shareeStatus;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 - (id)owner;

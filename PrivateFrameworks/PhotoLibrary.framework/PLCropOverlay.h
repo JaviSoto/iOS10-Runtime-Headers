@@ -125,11 +125,11 @@
 - (bool)isTelephonyUIMode:(int)arg1;
 - (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(bool)arg2;
 - (void)_updateToolbarItems:(bool)arg1;
+- (void)setCancelButtonTitle:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (bool)previewMode;
 - (void)setPreviewMode:(bool)arg1;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)setCancelButtonTitle:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)setEnabled:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

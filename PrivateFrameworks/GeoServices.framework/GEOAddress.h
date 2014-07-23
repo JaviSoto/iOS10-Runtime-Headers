@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, GEOStructuredAddress;
+@class NSString, NSMutableArray, GEOStructuredAddress;
 
 @interface GEOAddress : PBCodable <GEOURLSerializable, NSCopying> {
     NSMutableArray *_formattedAddressLines;
@@ -13,6 +13,10 @@
     } _has;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) NSMutableArray * formattedAddressLines;
 @property(readonly) bool hasStructuredAddress;
 @property(retain) GEOStructuredAddress * structuredAddress;

@@ -10,6 +10,9 @@
 @interface NSValue : NSObject <NSCopying, NSSecureCoding> {
 }
 
+@property(readonly) struct { double x1; double x2; } MKCoordinateValue;
+@property(readonly) struct { double x1; double x2; } MKCoordinateSpanValue;
+@property(readonly) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } CATransform3DValue;
 @property(readonly) const char * objCType;
 
 + (id)valueWithNonretainedObject:(id)arg1;

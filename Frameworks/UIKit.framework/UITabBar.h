@@ -76,6 +76,10 @@
 @property(setter=_setImageStyle:) long long _imageStyle;
 @property(setter=_setHidesShadow:) bool _hidesShadow;
 @property(setter=_setTabBarSizing:) long long _tabBarSizing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_tabBarForView:(id)arg1;
 + (float)_buttonGap;

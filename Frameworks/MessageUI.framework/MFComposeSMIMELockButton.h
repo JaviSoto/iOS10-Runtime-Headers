@@ -5,8 +5,8 @@
 @class UIImageView;
 
 @interface MFComposeSMIMELockButton : UIButton  {
-    UIImageView *_lockBody;
-    UIImageView *_lockTop;
+    UIImageView *_lockedImageView;
+    UIImageView *_unlockedImageView;
     bool_wantsEncryption;
     bool_canEncrypt;
     struct UIEdgeInsets { 

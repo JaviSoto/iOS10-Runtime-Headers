@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDate, NSMetadataQuery, NSArray, NSPredicate, NSOrderedSet, NSOperationQueue, NSObject<OS_dispatch_queue>;
+@class NSDate, NSMetadataQuery, NSArray, NSPredicate, NSOrderedSet, NSOperationQueue, NSString, NSObject<OS_dispatch_queue>;
 
 @interface _UIDocumentPickerDirectoryObserver : NSObject <NSMetadataQueryDelegate> {
     NSArray *_sortDescriptors;
@@ -38,6 +38,10 @@
 @property(retain) NSOperationQueue * queryWorkerQueue;
 @property Class itemClass;
 @property id updateHandlerWeakSelf;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSortDescriptors:(id)arg1;

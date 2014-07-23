@@ -75,7 +75,6 @@
 + (id)hostNameForEnvironment:(long long)arg1;
 + (id)sharedPreferences;
 
-- (bool)isInternalBuild;
 - (bool)isAccountModificationRestricted;
 - (bool)shouldUseTestIcons;
 - (void)setNotificationCenterEnabled:(bool)arg1;
@@ -195,6 +194,7 @@
 - (unsigned int)logFilter;
 - (id)initWithoutUIKitNotifications;
 - (double)minimumCacheTTL;
+- (bool)isInternalBuild;
 - (void)setOperationTimeout:(double)arg1;
 - (double)operationTimeout;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;

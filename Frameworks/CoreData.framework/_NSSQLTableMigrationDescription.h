@@ -37,12 +37,14 @@
 - (id)initWithRootEntity:(id)arg1 migrationType:(int)arg2;
 - (void)appendStatementsToCompleteMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (void)appendStatementsToPerformMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
-- (void)appendStatementsToPrepareForMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (void)appendStatementsToCreateOrDropTables:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
+- (void)appendStatementsToRenameTables:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)_transformedManyToManys;
 - (id)_removedManyToManys;
 - (id)_addedManyToManys;
 - (int)migrationType;
 - (id)rootEntity;
 - (void)dealloc;
+- (id)description;
 
 @end

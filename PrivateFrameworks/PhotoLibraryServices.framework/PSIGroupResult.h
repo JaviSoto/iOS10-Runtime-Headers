@@ -15,7 +15,6 @@
     NSArray *_contentStrings;
     NSArray *_matchRanges;
     struct __CFArray { } *_categories;
-    struct __CFArray { } *_groupIds;
     struct __CFArray { } *_owningGroupIds;
     struct __CFArray { } *_assetIds;
 }
@@ -27,7 +26,6 @@
 @property float score;
 @property(readonly) NSString * owningContentString;
 @property(readonly) NSArray * assetUUIDs;
-@property(retain) struct __CFArray { }* groupIds;
 @property(retain) struct __CFArray { }* owningGroupIds;
 @property(retain) struct __CFArray { }* assetIds;
 @property PSIDatabase * idx;
@@ -41,8 +39,6 @@
 - (unsigned long long)matchCount;
 - (void)setMatchRanges:(id)arg1;
 - (void)setOwningGroupIds:(struct __CFArray { }*)arg1;
-- (void)setGroupIds:(struct __CFArray { }*)arg1;
-- (struct __CFArray { }*)groupIds;
 - (void)setIdx:(id)arg1;
 - (struct __CFArray { }*)owningGroupIds;
 - (id)assetUUIDs;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, _UIAsyncInvocation, NSMutableSet, NSObject<OS_dispatch_queue>, NSLock;
+@class NSMutableDictionary, _UIAsyncInvocation, NSMutableSet, NSObject<OS_dispatch_queue>, NSLock, NSString;
 
 @interface _UIViewServiceDeputyManager : NSObject <_UIViewServiceViewControllerOperatorDelegate> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -25,6 +25,10 @@
 }
 
 @property id delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)exportedInterfaceSupportingDeputyInterfaces:(id)arg1;
 

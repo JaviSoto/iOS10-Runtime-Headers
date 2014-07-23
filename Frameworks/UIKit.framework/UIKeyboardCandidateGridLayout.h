@@ -57,8 +57,7 @@
 - (void)setSupplementaryAttributes:(id)arg1;
 - (void)setCellAttributes:(id)arg1;
 - (unsigned long long)numberOfCandidateSections;
-- (void)finishLayoutForRowWithAttributes:(id)arg1 cellsTotalWidth:(double)arg2 rowOrigin:(struct CGPoint { double x1; double x2; })arg3 isLastCandidateInGroup:(bool)arg4 isFirstRow:(bool)arg5 isLastRow:(bool)arg6 zIndex:(long long)arg7;
-- (id)emphasizedCandidates;
+- (void)finishLayoutForRowWithAttributes:(id)arg1 minimumCellWidth:(double)arg2 remainingWidth:(double)arg3 rowOrigin:(struct CGPoint { double x1; double x2; })arg4 isFirstRow:(bool)arg5 isLastRow:(bool)arg6 zIndex:(long long)arg7;
 - (double)headerViewHeight;
 - (unsigned long long)columnsCount;
 - (id)attributesWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -73,6 +72,7 @@
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)previousCandidateIndexPathFromIndexPath:(id)arg1;
 - (id)nextCandidateIndexPathFromIndexPath:(id)arg1;
+- (id)emphasizedCandidates;
 - (bool)expanded;
 - (double)groupBarWidth;
 - (void)invalidateLayout;

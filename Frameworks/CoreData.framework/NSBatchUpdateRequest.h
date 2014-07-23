@@ -23,6 +23,10 @@
 @property bool includesSubentities;
 @property unsigned long long resultType;
 @property(copy) NSDictionary * propertiesToUpdate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)batchUpdateRequestWithEntityName:(id)arg1;
 

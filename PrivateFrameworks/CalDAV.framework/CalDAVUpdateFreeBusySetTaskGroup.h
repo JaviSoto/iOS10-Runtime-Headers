@@ -18,6 +18,10 @@
 @property(retain) NSURL * urlToAdd;
 @property(retain) NSString * suffixToFilterOut;
 @property(retain) CoreDAVPropFindTask * fetchTask;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 urlToAdd:(id)arg3 suffixToFilterOut:(id)arg4 taskManager:(id)arg5;

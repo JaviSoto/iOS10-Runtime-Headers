@@ -174,7 +174,7 @@
 - (void)invitePlayersWithRequest:(id)arg1 serverHosted:(bool)arg2 onlineConnectionData:(id)arg3 completionHandler:(id)arg4;
 - (void)inviteAnyNearbyPlayersWithRequest:(id)arg1;
 - (void)doneMatchmaking;
-- (void)reportResponse:(long long)arg1 forInvitees:(id)arg2;
+- (void)reportResponse:(long long)arg1 forInvitees:(id)arg2 withCompletionHandler:(id)arg3;
 - (bool)removeInvitee:(id)arg1;
 - (void)matchForRemoteInvite:(id)arg1 completionHandler:(id)arg2;
 - (void)matchForNearbyInvite:(id)arg1 handler:(id)arg2;

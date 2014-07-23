@@ -18,11 +18,11 @@
 - (id)initWithURL:(id)arg1 itemUpdateInfo:(id)arg2;
 - (void)setReplacement:(id)arg1;
 - (id)replacement;
+- (id)path;
 - (id)url;
 - (id)valueForKey:(id)arg1;
 - (id)_attributes;
 - (id)initWithURL:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (id)attributeForName:(id)arg1;
 - (id)attributesForNames:(id)arg1;

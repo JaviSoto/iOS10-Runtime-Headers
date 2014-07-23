@@ -64,6 +64,7 @@
 @property unsigned int clientPostAuthMs;
 
 
+- (bool)hasStatus;
 - (unsigned int)clientPostAuthMs;
 - (unsigned int)clientSecureConnectionMs;
 - (unsigned int)clientInfoMs;
@@ -100,12 +101,11 @@
 - (id)sessionUUID;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasStatus;
+- (void)setHasTimestamp:(bool)arg1;
 - (id)clientVersion;
 - (void)setHasStatus:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasTransportType;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)transportType;

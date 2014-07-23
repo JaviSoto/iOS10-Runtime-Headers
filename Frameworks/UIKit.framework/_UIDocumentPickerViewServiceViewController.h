@@ -23,6 +23,10 @@
 @property(setter=_setAuxiliaryOptions:,retain) NSArray * auxiliaryOptions;
 @property(retain) NSString * currentPickerIdentifier;
 @property bool displayedAsMenu;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
@@ -31,8 +35,8 @@
 - (void)_willAppearInRemoteViewController;
 - (void)setDisplayMode:(long long)arg1;
 - (void)overviewController:(id)arg1 selectedAuxiliaryOptionWithIdentifier:(id)arg2;
-- (void)overviewController:(id)arg1 selectedDocumentPickerWithIdentifier:(id)arg2;
 - (void)dismissWithURL:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)overviewController:(id)arg1 selectedDocumentPickerWithIdentifier:(id)arg2;
 - (bool)displayedAsMenu;
 - (void)_showLocationPopup:(id)arg1;
 - (void)_doneButton:(id)arg1;
@@ -48,6 +52,7 @@
 - (long long)displayMode;
 - (id)auxiliaryOptions;
 - (void)_setUploadURL:(id)arg1;
+- (void)_documentPickerDidDismiss;
 - (void)_setAuxiliaryOptions:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(bool)arg2;
 - (int)sortOrder;
@@ -59,7 +64,7 @@
 - (void)_didSelectPicker;
 - (void)_dismissViewController;
 - (void)_didSelectURL:(id)arg1;
-- (void)_setUploadURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (void)_setUploadURLWrapper:(id)arg1;
 - (void)_setPickerMode:(unsigned long long)arg1;
 - (void)_setPickableTypes:(id)arg1;
 - (void)_prepareForDisplayWithCompletion:(id)arg1;

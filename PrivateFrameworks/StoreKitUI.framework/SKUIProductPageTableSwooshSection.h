@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SKUIResourceLoader, SKUILockupSwooshArtworkLoader, SKUIMissingItemLoader, SKUIColorScheme, SKUILockupSwooshViewController, UIViewController, SKUISwooshPageComponent;
+@class NSString, SKUIResourceLoader, SKUILockupSwooshArtworkLoader, SKUIMissingItemLoader, SKUIColorScheme, SKUILockupSwooshViewController, UIViewController, SKUISwooshPageComponent;
 
 @interface SKUIProductPageTableSwooshSection : SKUIProductPageTableSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
 
@@ -25,6 +25,10 @@
 @property(retain) SKUIColorScheme * colorScheme;
 @property(retain) SKUIResourceLoader * resourceLoader;
 @property(readonly) UIViewController * swooshViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithItems:(id)arg1 title:(id)arg2;

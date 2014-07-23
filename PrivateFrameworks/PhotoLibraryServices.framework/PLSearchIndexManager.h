@@ -53,9 +53,9 @@
 - (void)_scheduleCloseIndex;
 - (bool)_inqHasValidSearchIndex;
 - (id)_inqPhotoLibrary;
+- (id)_dbPath;
 - (void)_takeXPCTransactionIfNeeded;
 - (void)_dropXPCTransactionIfNeeded;
-- (id)_dbPath;
 - (bool)_removeFileAtPath:(id)arg1 description:(id)arg2;
 - (id)_oldDbPath;
 - (id)_dbMetadataPath;

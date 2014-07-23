@@ -33,6 +33,10 @@
 @property(retain) NSMutableDictionary * invites;
 @property bool isAdvertising;
 @property bool wasAdvertising;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSyncQueue:(id)arg1;
@@ -66,13 +70,13 @@
 - (id)txtRecordDataWithDiscoveryInfo:(id)arg1;
 - (id)myPeerID;
 - (id)serviceType;
-- (id)invites;
 - (void)setPeers:(id)arg1;
 - (id)peers;
 - (id)syncQueue;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
+- (id)invites;
 - (void)setIsAdvertising:(bool)arg1;
 - (void)setServiceType:(id)arg1;
 - (id)init;

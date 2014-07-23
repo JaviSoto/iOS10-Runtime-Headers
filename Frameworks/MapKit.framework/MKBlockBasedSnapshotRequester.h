@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -15,6 +17,10 @@
 }
 
 @property(copy) id handler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)snapshotRequesterWitHandler:(id)arg1;
 

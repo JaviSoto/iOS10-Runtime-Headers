@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <NSCopying>, NSExtension, <CNContactPickerContentDelegate>;
+@class <CNContactPickerContentDelegate>, NSString, <NSCopying>, NSExtension;
 
 @interface CNContactPickerHostViewController : _UIRemoteViewController <CNContactPickerContentViewController, CNContactPickerHostProtocol> {
     void *_addressBook;
@@ -13,6 +13,10 @@
 
 @property(retain) <NSCopying> * currentRequestIdentifier;
 @property(retain) NSExtension * extension;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <CNContactPickerContentDelegate> * delegate;
 @property void* addressBook;
 

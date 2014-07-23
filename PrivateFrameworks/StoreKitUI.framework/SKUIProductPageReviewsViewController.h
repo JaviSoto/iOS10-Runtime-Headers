@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUILayoutCache, SKUIReviewsHistogramViewController, SKUIReviewsFacebookViewController, SKUIStarRatingQueue, SKUIReviewList, NSMutableIndexSet, SSVLoadURLOperation, SKUIProductPageTableView, SKComposeReviewViewController, UIScrollView, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIIPadCustomerReviewsHeaderView, SKUIFacebookLikeStatus, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController;
+@class SKUILayoutCache, SKUIReviewsHistogramViewController, SKUIReviewsFacebookViewController, SKUIStarRatingQueue, SKUIReviewList, NSMutableIndexSet, SSVLoadURLOperation, SKUIProductPageTableView, SKComposeReviewViewController, NSString, SKUIProductPage, UIScrollView, NSOperationQueue, SKUIClientContext, SKUIIPadCustomerReviewsHeaderView, SKUIFacebookLikeStatus, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController;
 
 @interface SKUIProductPageReviewsViewController : UIViewController <SKUILayoutCacheDelegate, SKComposeReviewDelegate, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -32,6 +32,10 @@
 @property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
 @property(readonly) NSOperationQueue * operationQueue;
 @property bool askPermission;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScrollView * scrollView;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
@@ -66,9 +70,9 @@
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (id)productPage;
 - (void)setAskPermission:(bool)arg1;
+- (void)reviewComposeViewControllerDidFinish:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)reviewComposeViewControllerDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

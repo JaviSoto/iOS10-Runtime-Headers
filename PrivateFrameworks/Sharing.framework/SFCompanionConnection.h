@@ -33,6 +33,10 @@
 @property bool invalid;
 @property(retain) NSXPCConnection * userConnection;
 @property(retain) <SFCompanionConnectionManagerProtocol> * connectionProxy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setUserConnection:(id)arg1;

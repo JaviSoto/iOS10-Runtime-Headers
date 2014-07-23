@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError;
+@class NSError, NSString;
 
 @interface GKHostedAuthenticateViewController : GKHostedViewController <GKAuthenticateViewController> {
     bool_disablesSignIn;
@@ -29,6 +29,10 @@
 @property(retain) NSError * error;
 @property long long mode;
 @property(copy) id dismissCompletionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) id completionHandler;
 @property bool disablesSignIn;
 

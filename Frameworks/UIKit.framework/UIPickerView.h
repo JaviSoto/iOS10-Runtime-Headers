@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, <UIPickerViewDelegate>, CALayer, UIImageView, NSMutableArray, <UIPickerViewDataSource>, _UIPickerViewTestParameters, UIColor;
+@class UIView, NSString, <UIPickerViewDelegate>, CALayer, UIImageView, NSMutableArray, <UIPickerViewDataSource>, _UIPickerViewTestParameters, UIColor;
 
 @interface UIPickerView : UIView <UIPickerTableViewContainerDelegate, UITableViewDelegate, UIPickerViewScrollTesting, NSCoding, UITableViewDataSource> {
     NSMutableArray *_tables;
@@ -54,6 +54,10 @@
 @property(getter=_textColor,setter=_setTextColor:,retain) UIColor * textColor;
 @property(getter=_textShadowColor,setter=_setTextShadowColor:,retain) UIColor * textShadowColor;
 @property(setter=_setInLayoutSubviews:) bool _isInLayoutSubviews;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_modernNonCenterCellFont;
 + (id)_modernCenterCellFont;

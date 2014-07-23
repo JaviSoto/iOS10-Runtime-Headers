@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSArray;
+@class NSDictionary, NSArray, NSString;
 
 @interface SSRedeemCodesResponse : NSObject <SSXPCCoding> {
     NSDictionary *_errors;
@@ -11,6 +11,10 @@
 
 @property(readonly) NSArray * failedCodes;
 @property(copy,readonly) NSArray * redeemedCodes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)errorForCode:(id)arg1;

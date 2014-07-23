@@ -38,6 +38,8 @@
 - (bool)_syncAdd:(id)arg1 toParent:(unsigned int)arg2 withOrderIndex:(unsigned int)arg3 error:(id*)arg4;
 - (id)_bookmarkDictionaryForSqliteRow:(struct sqlite3_stmt { }*)arg1 recursive:(bool)arg2 error:(id*)arg3;
 - (bool)_addChildrenOfID:(unsigned int)arg1 toCollection:(id)arg2 recursive:(bool)arg3 error:(id*)arg4;
+- (id)fastFetchBookmarksInBookmarkList:(id)arg1;
+- (id)iconDataForBookmark:(id)arg1;
 - (id)frequentlyVisitedSitesList;
 - (id)frequentlyVisitedSitesFolder;
 - (bool)bookmarkIsFavoritesFolder:(id)arg1;

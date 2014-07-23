@@ -16,7 +16,6 @@
 
 + (id)hyperlink;
 
-- (id)reference;
 - (id)toolTip;
 - (id)textMark;
 - (id)descriptionText;
@@ -26,10 +25,11 @@
 - (void)setTextMark:(id)arg1;
 - (void)setDosPath:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
+- (id)reference;
+- (id)path;
 - (void)setType:(int)arg1;
 - (int)type;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 
 @end

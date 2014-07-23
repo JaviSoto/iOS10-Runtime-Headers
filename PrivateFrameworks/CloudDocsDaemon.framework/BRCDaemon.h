@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRCCloudFileProvider, BRCVersionsFileProvider, NSString, NSDate, NSXPCListenerEndpoint, BRCAccountHandler, BRCAccountSession, NSXPCListener, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_group>;
+@class BRCCloudFileProvider, BRCVersionsFileProvider, NSString, NSError, NSDate, BRCAccountHandler, BRCAccountSession, NSXPCListenerEndpoint, NSXPCListener, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_group>;
 
 @interface BRCDaemon : NSObject <NSXPCListenerDelegate, BRCAccountHandlerDelegate> {
     NSObject<OS_dispatch_source> *_sigIntSrc;
@@ -28,6 +28,7 @@
     NSString *_cacheDirPath;
     NSString *_rootDirPath;
     Class _containerClass;
+    NSError *_loggedOutError;
     NSString *_ubiquityTokenSalt;
     unsigned long long _forceIsGreedyState;
     NSDate *_startupDate;
@@ -42,16 +43,20 @@
 @property(retain) NSString * rootDirPath;
 @property(readonly) BRCAccountHandler * accountHandler;
 @property(retain) BRCAccountSession * accountSession;
+@property(retain) NSError * loggedOutError;
 @property(readonly) NSXPCListenerEndpoint * endpoint;
 @property(readonly) NSString * ubiquityTokenSalt;
 @property(readonly) NSDate * startupDate;
 @property(retain) Class containerClass;
 @property(readonly) BRCCloudFileProvider * fileProvider;
 @property(readonly) BRCVersionsFileProvider * versionsProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)daemon;
 
-- (id)accountHandler;
 - (void)setForceIsGreedyState:(unsigned long long)arg1;
 - (unsigned long long)forceIsGreedyState;
 - (void)setDisableAppsChangesHandling:(bool)arg1;
@@ -71,6 +76,7 @@
 - (void)setUp;
 - (void)setUpAnonymousListener;
 - (void)waitForConfiguration;
+- (id)loggedOutError;
 - (void)exitWithCode:(int)arg1;
 - (bool)_haveRequiredKernelFeatures;
 - (void)setUpSandbox;
@@ -78,9 +84,11 @@
 - (void)handleExitSignal:(int)arg1;
 - (void)accountHandler:(id)arg1 didChangeSessionTo:(id)arg2;
 - (void)accountHandler:(id)arg1 willChangeSessionFrom:(id)arg2;
+- (void)setLoggedOutError:(id)arg1;
 - (id)ubiquityTokenSalt;
 - (id)rootDirPath;
 - (id)appSupportDirPath;
+- (id)accountHandler;
 - (id)versionsProvider;
 - (id)startupDate;
 - (void)setAccountSession:(id)arg1;

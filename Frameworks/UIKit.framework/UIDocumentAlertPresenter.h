@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, UIAlertView;
+@class NSError, UIAlertView, NSString;
 
 @interface UIDocumentAlertPresenter : NSObject <UIAlertViewDelegate> {
 
@@ -17,6 +17,11 @@
     NSError *_error;
     UIAlertView *_alert;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_presentAlertWithError:(id)arg1 completionHandler:(id)arg2;
 

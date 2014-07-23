@@ -6,6 +6,8 @@
 
 @interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher, CKXPCDaemon> {
     bool_sandboxed;
+    bool_canUsePackages;
+    bool_canOpenByID;
     int _pid;
     CKDClientContext *_context;
     NSOperationQueue *_operationQueue;
@@ -26,13 +28,24 @@
 @property NSXPCConnection * connection;
 @property(retain) NSString * bundleIdentifier;
 @property(retain) CKWatchdog * watchdog;
+@property bool canUsePackages;
+@property bool canOpenByID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedClientThrottlingOperationQueue;
 
+- (void)setCanOpenByID:(bool)arg1;
+- (void)setCanUsePackages:(bool)arg1;
 - (void)setWatchdog:(id)arg1;
 - (void)setSandboxed:(bool)arg1;
 - (void)setBackgroundOperationThrottleQueue:(id)arg1;
+- (bool)canUsePackagesWithError:(id*)arg1;
 - (bool)canReadMMCSItem:(id)arg1 error:(id*)arg2;
+- (bool)canUsePackages;
+- (bool)canOpenByID;
 - (bool)_clientHasDeviceIdentifierEntitlement;
 - (bool)_clientHasProtectionDataEntitlement;
 - (bool)_clientHasEnvironmentEntitlement;
@@ -73,6 +86,7 @@
 - (void)clearAssetCacheWithDatabaseScope:(long long)arg1;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(id)arg1;
+- (void)performFetchUserQuotaOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performUpdateUserPresenceOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performLikeItemsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performModifyShareCommentsOperation:(id)arg1 withBlock:(id)arg2;
@@ -88,6 +102,8 @@
 - (void)performFetchSubscriptionsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performModifySubscriptionsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performQueryOperation:(id)arg1 withBlock:(id)arg2;
+- (void)getNewWebSharingIdentity:(id)arg1;
+- (void)performModifyWebSharingOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performPublishAssetsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performFetchRecordVersionsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performFetchRecordChangesOperation:(id)arg1 withBlock:(id)arg2;
@@ -95,7 +111,6 @@
 - (void)performFetchRecordsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performDiscoverAllContactsOperation:(id)arg1 withBlock:(id)arg2;
 - (void)performDiscoverUserInfosOperation:(id)arg1 withBlock:(id)arg2;
-- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)requestApplicationPermission:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)accountStatusWithCompletionHandler:(id)arg1;

@@ -13,13 +13,13 @@
     bool_allowPlaceholder;
     long long _version;
     long long _deliveryMode;
-    long long _loadingMode;
     long long _resizeMode;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
     id _progressHandler;
 
+    long long _loadingMode;
     long long _rank;
     double _demoteFactor;
     struct CGRect { 
@@ -36,12 +36,12 @@
 
 @property long long version;
 @property long long deliveryMode;
-@property long long loadingMode;
 @property long long resizeMode;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedCropRect;
 @property(getter=isNetworkAccessAllowed) bool networkAccessAllowed;
 @property(getter=isSynchronous) bool synchronous;
 @property(copy) id progressHandler;
+@property long long loadingMode;
 @property bool deliveryFirstResultAsynchronously;
 @property bool allowPlaceholder;
 @property long long rank;

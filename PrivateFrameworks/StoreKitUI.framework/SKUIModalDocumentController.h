@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, UINavigationController, <UINavigationControllerDelegate>, SKUIClientContext, SKUIOverlayContainerViewController, NSMutableArray, <SKUIModalDocumentDelegate>, UIPopoverController, <SKUIModalSourceViewProvider>, UIViewController;
+@class NSString, NSArray, UINavigationController, <UINavigationControllerDelegate>, SKUIClientContext, SKUIOverlayContainerViewController, NSMutableArray, <SKUIModalDocumentDelegate>, UIPopoverController, <SKUIModalSourceViewProvider>, UIViewController;
 
 @interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, UIPopoverControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -23,6 +23,10 @@
 @property <UINavigationControllerDelegate> * navigationControllerDelegate;
 @property(retain) UIViewController * rootViewController;
 @property(readonly) NSArray * documents;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)popToDocument:(id)arg1;
@@ -60,10 +64,10 @@
 - (void)setModalSourceViewProvider:(id)arg1;
 - (void)popAllDocuments;
 - (void)setNavigationControllerDelegate:(id)arg1;
-- (void)setClientContext:(id)arg1;
-- (id)clientContext;
 - (void)reviewComposeViewControllerDidFinish:(id)arg1;
 - (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
+- (void)setClientContext:(id)arg1;
+- (id)clientContext;
 - (void)setRootViewController:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;

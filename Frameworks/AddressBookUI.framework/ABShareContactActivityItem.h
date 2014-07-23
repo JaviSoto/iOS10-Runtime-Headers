@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact;
+@class NSString, CNContact;
 
 @interface ABShareContactActivityItem : NSObject <UIActivityItemSource, UIActivityItemSourceAttachment> {
     CNContact *_contact;
 }
 
 @property(retain) CNContact * contact;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setContact:(id)arg1;

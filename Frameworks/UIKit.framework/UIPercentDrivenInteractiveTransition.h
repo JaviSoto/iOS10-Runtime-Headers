@@ -21,6 +21,10 @@
 @property(setter=_setOriginalFillMode:,retain) NSString * _originalFillMode;
 @property(setter=_setUuid:,retain) NSUUID * _uuid;
 @property(getter=_isTransitionInterrupted,setter=_setTransitionInterrupted:) bool _transitionInterrupted;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setDuration:(double)arg1;

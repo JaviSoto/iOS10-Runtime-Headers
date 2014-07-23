@@ -25,20 +25,20 @@
 @property unsigned int deviceIdentifierMap;
 
 
+- (unsigned int)deviceCount;
+- (bool)hasDeviceCount;
+- (void)setDeviceCount:(unsigned int)arg1;
 - (double)timeSinceBoot;
 - (bool)hasTimeSinceBoot;
 - (void)setHasTimeSinceBoot:(bool)arg1;
 - (void)setTimeSinceBoot:(double)arg1;
+- (void)setHasDeviceCount:(bool)arg1;
 - (unsigned int)deviceIdentifierMap;
 - (bool)hasDeviceIdentifierMap;
 - (void)setHasDeviceIdentifierMap:(bool)arg1;
 - (void)setDeviceIdentifierMap:(unsigned int)arg1;
-- (unsigned int)deviceCount;
-- (bool)hasDeviceCount;
-- (void)setHasDeviceCount:(bool)arg1;
-- (void)setDeviceCount:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

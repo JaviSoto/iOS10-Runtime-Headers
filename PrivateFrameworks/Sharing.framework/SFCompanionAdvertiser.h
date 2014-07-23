@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString, NSData, <SFCompanionAdvertiserDelegate>, SFCompanionService;
+@class <SFCompanionAdvertiserDelegate>, NSString, NSData;
 
 @interface SFCompanionAdvertiser : NSObject  {
     bool_supportsStreams;
@@ -13,12 +13,10 @@
 @property <SFCompanionAdvertiserDelegate> * delegate;
 @property bool supportsStreams;
 @property(copy,readonly) NSString * serviceType;
-@property(readonly) SFCompanionService * serviceEndpoint;
 @property(readonly) NSData * serviceEndpointData;
 
 
 - (bool)supportsStreams;
-- (id)serviceEndpoint;
 - (id)serviceType;
 - (void)getContinuationStreamsWithEndpointData:(id)arg1 completionHandler:(id)arg2;
 - (id)serviceEndpointData;

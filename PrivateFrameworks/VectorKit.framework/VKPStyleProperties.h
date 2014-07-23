@@ -163,8 +163,10 @@
     unsigned int _labelLineWrap;
     unsigned int _labelLineWrapLogograms;
     float _labelMultiShieldGap;
+    float _labelOffset;
     float _labelOffsetLarge;
     float _labelOffsetMedium;
+    int _labelOffsetPosition;
     float _labelOffsetSmall;
     float _labelOffsetXLarge;
     float _labelOffsetXXLarge;
@@ -419,8 +421,10 @@
         unsigned int labelLineWrap : 1; 
         unsigned int labelLineWrapLogograms : 1; 
         unsigned int labelMultiShieldGap : 1; 
+        unsigned int labelOffset : 1; 
         unsigned int labelOffsetLarge : 1; 
         unsigned int labelOffsetMedium : 1; 
+        unsigned int labelOffsetPosition : 1; 
         unsigned int labelOffsetSmall : 1; 
         unsigned int labelOffsetXLarge : 1; 
         unsigned int labelOffsetXXLarge : 1; 
@@ -1006,6 +1010,10 @@
 @property float labelDiagonalPositionVerticalMargin;
 @property bool hasLabelLineWrapLogograms;
 @property unsigned int labelLineWrapLogograms;
+@property bool hasLabelOffsetPosition;
+@property int labelOffsetPosition;
+@property bool hasLabelOffset;
+@property float labelOffset;
 @property bool hasHorizonColor;
 @property unsigned int horizonColor;
 @property bool hasLineColor;
@@ -1103,6 +1111,8 @@
 - (float)trafficAnitialiasingSlope;
 - (float)trafficAnitialiasingOffset;
 - (unsigned int)horizonColor;
+- (float)labelOffset;
+- (int)labelOffsetPosition;
 - (float)labelDiagonalPositionHorizontalMargin;
 - (int)labelAlternateTextPositions;
 - (int)labelDefaultTextPosition;
@@ -1335,6 +1345,11 @@
 - (bool)hasHorizonColor;
 - (void)setHasHorizonColor:(bool)arg1;
 - (void)setHorizonColor:(unsigned int)arg1;
+- (bool)hasLabelOffset;
+- (void)setHasLabelOffset:(bool)arg1;
+- (bool)hasLabelOffsetPosition;
+- (void)setHasLabelOffsetPosition:(bool)arg1;
+- (void)setLabelOffsetPosition:(int)arg1;
 - (bool)hasLabelLineWrapLogograms;
 - (void)setHasLabelLineWrapLogograms:(bool)arg1;
 - (void)setLabelLineWrapLogograms:(unsigned int)arg1;
@@ -1975,6 +1990,7 @@
 - (unsigned int)labelHaloColor;
 - (bool)hasLabelColor;
 - (void)setHasLabelColor:(bool)arg1;
+- (unsigned int)labelColor;
 - (bool)hasLabelFontFamily;
 - (bool)hasLabelIcon;
 - (bool)hasLabelLineWrap;
@@ -2100,10 +2116,10 @@
 - (unsigned int)lineColor;
 - (id)fillTexture;
 - (bool)hasFillTexture;
-- (unsigned int)labelColor;
 - (bool)hasWidth;
 - (void)setHasWidth:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned int)labelClass;
@@ -2128,6 +2144,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
+- (void)setLabelOffset:(float)arg1;
 - (void)setZIndex:(unsigned int)arg1;
 - (unsigned int)zIndex;
 - (void)setArrowVisible:(bool)arg1;

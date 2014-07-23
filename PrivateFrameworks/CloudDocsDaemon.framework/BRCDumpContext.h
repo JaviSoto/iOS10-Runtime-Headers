@@ -24,6 +24,7 @@
 + (id)stringFromBackoff:(double)arg1 context:(id)arg2;
 + (id)stringFromError:(id)arg1 context:(id)arg2;
 + (id)stringFromItemAsString:(id)arg1 context:(id)arg2;
++ (id)stringFromByteCount:(long long)arg1 context:(id)arg2;
 + (id)stringFromItemID:(id)arg1 context:(id)arg2;
 
 - (void)setIndentationBaseString:(id)arg1;

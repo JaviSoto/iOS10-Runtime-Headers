@@ -2,41 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
  */
 
-@class NSMutableArray, DKDAAPElement;
+@class DKDAAPElement;
 
 @interface DKDAAPElement : NSObject  {
-    NSMutableArray *_children;
-    struct unordered_map<unsigned int, DKDAAPElement *, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, DKDAAPElement *> > > { 
-        struct __hash_table<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, DKDAAPElement *> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *> > { 
-                            unsigned long long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, std::__1::hash<unsigned int>, true> > { 
-                unsigned long long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, DKDAAPElement *>, std::__1::equal_to<unsigned int>, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
-    } _childMap;
-    char *_dataBuffer;
-    long long _intValue;
-    bool_isContainer;
-    unsigned int _code;
-    unsigned int _length;
-    DKDAAPElement *_parent;
+    struct shared_ptr<DKDAAPElementCore> { 
+        struct DKDAAPElementCore {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _core;
+    DKDAAPElement *_cachedParent;
 }
 
 @property DKDAAPElement * parent;
@@ -45,6 +18,7 @@
 @property(readonly) unsigned int length;
 @property bool isContainer;
 
++ (id)elementWithCoreElement:(struct shared_ptr<DKDAAPElementCore> { struct DKDAAPElementCore {} *x1; struct __shared_weak_count {} *x2; })arg1;
 
 - (unsigned int)numChildren;
 - (id)childAtIndex:(unsigned int)arg1;
@@ -52,6 +26,9 @@
 - (id)getDataValue;
 - (long long)getIntValue;
 - (void)setBytes:(char *)arg1 ofLength:(unsigned int)arg2;
+- (struct shared_ptr<DKDAAPElementCore> { struct DKDAAPElementCore {} *x1; struct __shared_weak_count {} *x2; })core;
+- (id)initWithCoreElement:(struct shared_ptr<DKDAAPElementCore> { struct DKDAAPElementCore {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setBytes:(char *)arg1 ofLength:(unsigned int)arg2 copy:(bool)arg3;
 - (id)initWithCode:(unsigned int)arg1;
 - (void)setParent:(id)arg1;
 - (void)setCode:(unsigned int)arg1;
@@ -59,7 +36,6 @@
 - (unsigned int)length;
 - (unsigned int)code;
 - (char *)bytes;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (void)addChild:(id)arg1;

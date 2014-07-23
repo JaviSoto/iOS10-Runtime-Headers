@@ -16,6 +16,10 @@
 @property(getter=_documentState,readonly) TIDocumentState * documentState;
 @property(getter=_textInputTraits,readonly) TITextInputTraits * textInputTraits;
 @property(getter=_keyboardOutput,readonly) TIKeyboardOutput * keyboardOutput;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

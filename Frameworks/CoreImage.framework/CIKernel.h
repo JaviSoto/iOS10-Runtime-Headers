@@ -10,7 +10,7 @@
 + (id)_getDictForSourceString:(id)arg1 dimensionality:(int*)arg2;
 + (id)kernelsWithString:(id)arg1;
 
-- (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 cpuCallback:(id)arg3 andArguments:(id)arg4;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 cpuCallback:(id)arg3 colorManagement:(bool)arg4 andArguments:(id)arg5;
 - (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 andArguments:(id)arg3;
 - (int)_argumentTypeAtIndex:(int)arg1;
 - (id)initWithDict:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSMapTable, CBPairingAgent, <CBCentralManagerDelegate>, CBXpcConnection;
+@class NSMapTable, CBPairingAgent, <CBCentralManagerDelegate>, NSString, CBXpcConnection;
 
 @interface CBCentralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
     <CBCentralManagerDelegate> *_delegate;
@@ -29,6 +29,10 @@
 @property <CBCentralManagerDelegate> * delegate;
 @property long long state;
 @property(readonly) CBPairingAgent * sharedPairingAgent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDesiredConnectionLatency:(long long)arg1 forPeripheral:(id)arg2;

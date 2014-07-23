@@ -2,12 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, _MKPlaceViewController, MKMapItem;
+@class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, NSString, GEORating, _MKPlaceViewController, MKMapItem;
 
-@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
-    bool_showAttributionButtons;
+@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
+    bool_hasAttribution;
     bool_showCheckInAndWriteReviewButtons;
     bool_showMoreReviewsButton;
+    bool_showAttribution;
     MKMapItem *_mapItem;
     GEORating *_rating;
     <MKPlaceCardReviewsControllerDelegate> *_reviewsControllerDelegate;
@@ -19,11 +20,17 @@
 @property <MKPlaceCardReviewsControllerDelegate> * reviewsControllerDelegate;
 @property _MKPlaceViewController * owner;
 @property(retain) GEORating * rating;
-@property bool showAttributionButtons;
+@property bool hasAttribution;
+@property(readonly) bool showAttributionButtons;
 @property bool showCheckInAndWriteReviewButtons;
 @property bool showMoreReviewsButton;
 @property(retain) ABMonogrammer * monogrammer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool requiresPreferredContentSizeInStackingView;
+@property bool showAttribution;
 
 
 - (void)_showReviewWithID:(id)arg1;
@@ -36,11 +43,14 @@
 - (void)setShowCheckInAndWriteReviewButtons:(bool)arg1;
 - (void)setMonogrammer:(id)arg1;
 - (bool)showAttributionButtons;
-- (void)setShowAttributionButtons:(bool)arg1;
+- (void)setHasAttribution:(bool)arg1;
+- (bool)showAttribution;
 - (bool)requiresPreferredContentSizeInStackingView;
+- (void)setShowAttribution:(bool)arg1;
 - (void)setReviewsControllerDelegate:(id)arg1;
 - (void)checkInWriteReviewCellDidSelectWriteReview:(id)arg1;
 - (void)checkInWriteReviewCellDidSelectCheckIn:(id)arg1;
+- (bool)hasAttribution;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
 - (id)owner;

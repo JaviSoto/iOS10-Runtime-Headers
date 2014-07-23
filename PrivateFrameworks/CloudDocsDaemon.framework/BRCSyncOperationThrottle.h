@@ -18,8 +18,8 @@
 
 - (double)nextTry;
 - (void)updateForError:(id)arg1;
-- (void)updateAfterSchedulingTaskWithMinimumDelay:(double)arg1;
 - (void)updateAfterSchedulingTask;
+- (void)updateAfterSchedulingTaskWithMinimumDelay:(double)arg1;
 - (id)initWithContainerID:(id)arg1;
 - (id)containerID;
 - (void)setContainerID:(id)arg1;
@@ -27,5 +27,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
+- (id)description;
 
 @end

@@ -27,6 +27,10 @@
 @property long long index;
 @property bool isPromisedItem;
 @property double autoPlaybackPosition;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 

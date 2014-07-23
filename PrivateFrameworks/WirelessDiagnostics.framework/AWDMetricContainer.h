@@ -14,9 +14,9 @@
 
 
 - (unsigned int)metricId;
-- (void)setMetric:(id)arg1;
 - (id)metric;
 - (id)initWithMetricId:(unsigned int)arg1;
+- (void)setMetric:(id)arg1;
 - (void)dealloc;
 
 @end

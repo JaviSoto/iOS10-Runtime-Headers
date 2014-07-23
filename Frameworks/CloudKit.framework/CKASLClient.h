@@ -17,10 +17,10 @@
 + (id)ASLClient;
 
 - (void)setLogQueue:(id)arg1;
-- (void)slurpAndRemoveLookasideFile:(id)arg1 prefixString:(id)arg2 suffixString:(id)arg3 containerIdentifier:(id)arg4 sectionID:(id)arg5;
+- (void)slurpAndRemoveLookasideHumanFile:(id)arg1 binaryFile:(id)arg2 prefixString:(id)arg3 suffixString:(id)arg4 containerIdentifier:(id)arg5 sectionID:(id)arg6;
 - (void)_ensureLogDirectoryExists;
-- (void)_slurpTrafficDataFromFile:(id)arg1 prefixString:(id)arg2 suffixString:(id)arg3 containerIdentifier:(id)arg4 sectionID:(id)arg5;
-- (void)_logTrafficData:(id)arg1 withContainerIdentifier:(id)arg2 sectionID:(id)arg3;
+- (void)_slurpTrafficDataFromHumanReadableFile:(id)arg1 binaryFile:(id)arg2 prefixString:(id)arg3 suffixString:(id)arg4 containerIdentifier:(id)arg5 sectionID:(id)arg6;
+- (void)_logTrafficData:(id)arg1 andBinaryData:(id)arg2 withContainerIdentifier:(id)arg3 sectionID:(id)arg4;
 - (void)performLoggingBlock:(id)arg1;
 - (id)_nilTerminatedCopyOfData:(id)arg1;
 - (void)setAslClient:(struct __asl_object_s { }*)arg1;

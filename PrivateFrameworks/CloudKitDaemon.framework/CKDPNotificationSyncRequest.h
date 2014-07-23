@@ -26,6 +26,7 @@
 - (bool)hasServerChangeToken;
 - (void)setServerChangeToken:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)serverChangeToken;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

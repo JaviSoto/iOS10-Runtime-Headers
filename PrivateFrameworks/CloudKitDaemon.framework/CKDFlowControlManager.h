@@ -16,6 +16,7 @@
 
 
 - (id)_flowControlForOperation:(id)arg1;
+- (id)_flowControlForOperation:(id)arg1 createIfNecessary:(bool)arg2;
 - (id)operationFlowControls;
 - (void)setOperationFlowControls:(id)arg1;
 - (void)updateFlowControl:(id)arg1 withRetryAfter:(unsigned long long)arg2;

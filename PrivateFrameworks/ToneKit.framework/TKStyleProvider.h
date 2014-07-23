@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class UIScreen, NSBundle, NSMutableDictionary, UIColor, UIFont, UIImage;
+@class UIFont, NSString, UIImage, NSMutableDictionary, NSBundle, UIScreen, UIColor;
 
 @interface TKStyleProvider : NSObject <TKVibrationRecorderStyleProvider> {
     UIScreen *_screen;
@@ -13,6 +13,10 @@
 @property(readonly) double defaultAnimationDuration;
 @property(setter=_setBundle:,retain) NSBundle * _bundle;
 @property(setter=_setCachedStyleProperties:,retain) NSMutableDictionary * _cachedStyleProperties;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIColor * vibrationRecorderBarsBackgroundColor;
 @property(retain) UIScreen * screen;
 @property(readonly) UIFont * vibrationRecorderInstructionsLabelFont;

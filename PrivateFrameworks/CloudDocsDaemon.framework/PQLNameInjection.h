@@ -4,21 +4,22 @@
 
 @class NSString, NSData;
 
-@interface PQLNameInjection : NSObject <PQLInjecting> {
-    NSString *_name;
-    NSData *_sql;
+@interface PQLNameInjection : PQLNameInjectionBase <PQLInjecting> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSData * sql;
 
-+ (id)nameWithString:(id)arg1;
++ (id)_appendString:(id)arg1 toInjection:(id)arg2;
 + (id)nameWithPrefix:(id)arg1 suffix:(id)arg2;
++ (id)nameWithString:(id)arg1;
 
 - (int)bindWithStatement:(struct sqlite3_stmt { }*)arg1 startingAtIndex:(int)arg2;
 - (id)nameByAddingSuffix:(id)arg1;
-- (id)sql;
 - (id)initWithString:(id)arg1;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

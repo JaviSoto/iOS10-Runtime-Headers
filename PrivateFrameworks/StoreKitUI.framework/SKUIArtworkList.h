@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableDictionary, SKUIArtwork, NSMutableArray;
+@class NSArray, NSString, SKUIArtwork, NSMutableDictionary, NSMutableArray;
 
 @interface SKUIArtworkList : NSObject <NSCopying, SKUICacheCoding> {
     NSMutableArray *_artworks;
@@ -12,6 +12,10 @@
 @property(readonly) SKUIArtwork * largestArtwork;
 @property(readonly) SKUIArtwork * smallestArtwork;
 @property(getter=_lookupArray,readonly) NSArray * _lookupArray;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

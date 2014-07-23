@@ -17,12 +17,12 @@
 @property(retain) UIView * view;
 
 
+- (struct CGPath { }*)path;
 - (id)view;
 - (void)clear;
 - (void)flush;
 - (double)lineWidth;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
 - (void)dealloc;
 - (id)prevPoints;
 - (void)setPrevPoints:(id)arg1;

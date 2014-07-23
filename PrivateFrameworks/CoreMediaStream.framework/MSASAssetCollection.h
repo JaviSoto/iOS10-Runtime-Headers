@@ -66,10 +66,10 @@
 - (id)mediaAssetType;
 - (void)setCtag:(id)arg1;
 - (id)ctag;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)personID;
-- (void)setEmail:(id)arg1;
 - (void)setFileName:(id)arg1;
+- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setEmail:(id)arg1;
 - (void)setPersonID:(id)arg1;
 - (id)assets;
 - (void)setAssets:(id)arg1;
@@ -82,6 +82,7 @@
 - (id)lastName;
 - (id)firstName;
 - (id)fullName;
+- (id)path;
 - (void)setUserInfo:(id)arg1;
 - (id)email;
 - (id)GUID;
@@ -89,7 +90,6 @@
 - (unsigned long long)hash;
 - (id)userInfo;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

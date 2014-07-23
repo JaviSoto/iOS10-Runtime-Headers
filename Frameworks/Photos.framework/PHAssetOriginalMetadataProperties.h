@@ -29,8 +29,8 @@
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
 - (id)originalPath;
 - (id)originalAssetsUUID;
-- (short)originalWidth;
 - (short)originalHeight;
+- (short)originalWidth;
 - (id)originalFilename;
 - (int)originalFilesize;
 - (id)asset;

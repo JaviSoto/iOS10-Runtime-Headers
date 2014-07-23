@@ -2,23 +2,24 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, PrefsUILinkLabel;
+@class PSSpecifier, NSArray, PrefsUILinkLabel;
 
 @interface ProblemReportingController : PSListController  {
     PrefsUILinkLabel *_aboutDiagnosticsLinkLabel;
     PSSpecifier *_diagnosticDataGroupSpecifier;
     PSSpecifier *_filesystemMetadataSnapshotSpecifier;
-    PSSpecifier *_appActivitySpecifier;
+    NSArray *_appActivitySpecifiers;
     PSSpecifier *_spinnerSpecifier;
 }
 
 @property(readonly) PSSpecifier * spinnerSpecifier;
 @property(readonly) PSSpecifier * filesystemMetadataSnapshotSpecifier;
-@property(readonly) PSSpecifier * appActivitySpecifier;
+@property(readonly) NSArray * appActivitySpecifiers;
 
 + (bool)isProblemReportingEnabled;
 
 - (id)spinnerSpecifier;
+- (void)showAboutAppAnalyticsSheet;
 - (void)showAboutDiagnosticsSheet;
 - (void)setProblemReportingEnabled:(bool)arg1;
 - (bool)shouldEnableProblemReportingForCheckedSpecifier;
@@ -26,8 +27,8 @@
 - (id)shouldShareAppActivityWithAppDevelopers;
 - (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
 - (void)snapshot:(id)arg1;
-- (id)appActivitySpecifier;
-- (void)diagnosticsDonePressed:(id)arg1;
+- (id)appActivitySpecifiers;
+- (void)dismissAboutSheet:(id)arg1;
 - (id)specifiers;
 - (void)dealloc;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

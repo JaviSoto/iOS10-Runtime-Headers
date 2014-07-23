@@ -58,8 +58,13 @@
 @property(retain) NSString * refreshURL;
 @property long long nextButtonStyle;
 @property(retain) RUIStyle * style;
+@property(readonly) RUIAlertView * alertElement;
 @property(readonly) NSArray * pages;
 @property(retain) NSDictionary * alert;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)objectModelForXMLNamed:(id)arg1;
 

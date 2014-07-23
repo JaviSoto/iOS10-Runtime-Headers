@@ -16,6 +16,10 @@
 @property(readonly) NSString * sessionIdentifier;
 @property(readonly) CPLLibraryManager * libraryManager;
 @property unsigned long long state;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)stateDescriptionForState:(unsigned long long)arg1;

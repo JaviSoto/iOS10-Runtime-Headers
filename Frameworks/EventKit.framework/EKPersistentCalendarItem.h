@@ -62,6 +62,9 @@
 + (id)defaultPropertiesToLoad;
 
 - (bool)hasAttachments;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (void)addAlarm:(id)arg1;
 - (bool)validate:(id*)arg1;
 - (id)organizer;
 - (bool)isAllDay;
@@ -118,6 +121,7 @@
 - (void)setUniqueID:(id)arg1;
 - (void)setOriginalItem:(id)arg1;
 - (void)addRecurrenceRule:(id)arg1;
+- (void)addAttachment:(id)arg1;
 - (void)setSelfAttendee:(id)arg1;
 - (void)addAttendee:(id)arg1;
 - (void)setOrganizer:(id)arg1;
@@ -129,7 +133,6 @@
 - (id)alarms;
 - (void)setDetachedItems:(id)arg1;
 - (void)setExceptionDates:(id)arg1;
-- (void)addAlarm:(id)arg1;
 - (id)attendees;
 - (id)participationStatusModifiedDate;
 - (bool)isDetached;
@@ -143,8 +146,6 @@
 - (id)calendarScale;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (void)setAllDay:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)location;
@@ -171,7 +172,6 @@
 - (id)URL;
 - (void)setSequence:(int)arg1;
 - (int)sequence;
-- (void)addAttachment:(id)arg1;
 - (void)setAttachments:(id)arg1;
 - (void)setStartLocation:(id)arg1;
 

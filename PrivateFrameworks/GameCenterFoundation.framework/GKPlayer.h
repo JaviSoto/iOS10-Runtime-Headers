@@ -61,6 +61,7 @@
 - (bool)isFriendRecommendation;
 - (void)setWhenString:(id)arg1;
 - (id)whenString;
+- (bool)isFriendablePlayer;
 - (void)loadGamesPlayedDetailsWithCompletionHandler:(id)arg1;
 - (void)loadGamesPlayed:(id)arg1;
 - (void)loadRecentMatchesForGame:(id)arg1 block:(id)arg2;

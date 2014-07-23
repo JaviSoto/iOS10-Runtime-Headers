@@ -2,28 +2,27 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSObject<OS_dispatch_queue>, CallHistoryDBClientHandle, TransactionManager;
+@class NSString, DBHandleManager, TransactionManager;
 
 @interface SyncManager : CHLogger <SyncManagerProtocol> {
     TransactionManager *_transactionManager;
-    id _syncHelperReadyNotificationRef;
-    NSObject<OS_dispatch_queue> *_queue;
-    CallHistoryDBClientHandle *_dbHandle;
+    DBHandleManager *_handleManager;
 }
 
-@property(retain) CallHistoryDBClientHandle * dbHandle;
+@property(readonly) DBHandleManager * handleManager;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (void)setDbHandle:(id)arg1;
-- (void)deleteAllObjects;
 - (id)fetchAllObjects;
 - (void)addUpdateTransactions:(id)arg1;
+- (void)deleteAllObjects;
 - (void)deleteObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectWithUniqueId:(id)arg1;
-- (id)dbHandle;
+- (id)handleManager;
 - (id)archiveCallObject:(id)arg1;
-- (void)createDBHandle;
-- (void)createDBHandleIfNeeded;
 - (void)resetTimers;
 - (double)timerLifetime;
 - (double)timerOutgoing;
@@ -34,11 +33,8 @@
 - (void)updateAllObjects:(id)arg1;
 - (void)insertWithoutTransaction:(id)arg1;
 - (id)fetchObjectsWithLimits:(id)arg1;
-- (void)unRegisterForNotifications;
-- (void)registerForNotifications;
 - (void)insert:(id)arg1;
-- (void)dealloc;
+- (id)init;
 - (void).cxx_destruct;
-- (id)initWithQueue:(id)arg1;
 
 @end

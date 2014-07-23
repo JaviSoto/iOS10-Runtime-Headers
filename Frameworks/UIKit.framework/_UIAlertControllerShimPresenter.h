@@ -2,10 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIAlertControllerShimPresenterWindow, UIPopoverController, UIAlertController, <UIPopoverControllerDelegate>, UIViewController;
+@class NSString, <UIPopoverControllerDelegate>, UIPopoverController, _UIAlertControllerShimPresenterWindow, UIAlertController, UIViewController;
 
 @interface _UIAlertControllerShimPresenter : NSObject <UIPopoverControllerDelegate> {
     UIPopoverController *_popoverController;
+    <UIPopoverControllerDelegate> *_popoverDelegate;
     UIViewController *_presentedViewController;
     _UIAlertControllerShimPresenterWindow *_window;
     UIAlertController *_alertController;
@@ -14,6 +15,10 @@
 @property UIAlertController * alertController;
 @property(readonly) _UIAlertControllerShimPresenterWindow * window;
 @property <UIPopoverControllerDelegate> * popoverDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_currentFullScreenAlertPresenters;
 + (void)_removePresenter:(id)arg1;

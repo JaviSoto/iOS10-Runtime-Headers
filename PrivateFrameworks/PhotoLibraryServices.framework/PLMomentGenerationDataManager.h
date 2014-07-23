@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class PLMomentAnalyzer, PLXPCTransaction, PLMomentGeneration, NSDictionary, PLPhotoLibrary, NSManagedObjectContext;
+@class NSString, NSManagedObjectContext, PLXPCTransaction, NSDictionary, PLMomentAnalyzer, PLMomentGeneration, PLPhotoLibrary;
 
 @interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement_Private> {
     PLXPCTransaction *_keepAliveTransaction;
@@ -27,6 +27,10 @@
 @property(retain) NSManagedObjectContext * managedObjectContext;
 @property(readonly) void* _addressBook;
 @property(retain) PLPhotoLibrary * momentGenerationLibrary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)isManagerMomentarilyBlessed:(id)arg1;
 + (bool)isManagedObjectContextMomentarilyBlessed:(id)arg1;

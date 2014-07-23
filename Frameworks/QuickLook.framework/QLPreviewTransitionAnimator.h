@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPreviewController, <UIViewControllerContextTransitioning>;
+@class QLPreviewController, NSString, <UIViewControllerContextTransitioning>;
 
 @interface QLPreviewTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning> {
     boolshowing;
@@ -12,6 +12,10 @@
 @property <UIViewControllerContextTransitioning> * transitionContext;
 @property bool showing;
 @property(readonly) QLPreviewController * previewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)updateStatusBarWithDuration:(double)arg1;

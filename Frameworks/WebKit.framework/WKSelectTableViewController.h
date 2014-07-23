@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKContentView, WKSelectPopover;
+@class WKContentView, NSString, WKSelectPopover;
 
 @interface WKSelectTableViewController : UITableViewController <UIKeyInput> {
     unsigned long long _singleSelectionIndex;
@@ -17,6 +17,10 @@
 }
 
 @property WKSelectPopover * popover;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

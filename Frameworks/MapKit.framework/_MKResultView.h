@@ -19,6 +19,7 @@
     NSTimer *_refLocationTimer;
     bool_significantTime;
     bool_useSpotlightVibrancy;
+    int _iconFormat;
     UILabel *_nameLabel;
     UILabel *_secondaryLabel;
     UILabel *_tertiaryLabel;
@@ -43,13 +44,20 @@
 @property double fallbackDistance;
 @property bool alwaysUsesBusinessLayout;
 @property(retain) UIImageView * imageView;
+@property int iconFormat;
 @property(retain) UILabel * nameLabel;
 @property(retain) UILabel * secondaryLabel;
 @property(retain) UILabel * tertiaryLabel;
 @property bool useSpotlightVibrancy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)requiresConstraintBasedLayout;
 
+- (void)setNameLabel:(id)arg1;
+- (id)nameLabel;
 - (void)setFallbackDistance:(double)arg1;
 - (void)setAlwaysUsesBusinessLayout:(bool)arg1;
 - (bool)alwaysUsesBusinessLayout;
@@ -60,6 +68,7 @@
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
 - (void)setReferenceLocation:(id)arg1;
 - (void)_invalidateReferenceLocationTimer;
+- (void)updateImageView;
 - (void)_updateLayoutForBusinessOrCategory;
 - (void)_updateLayoutForAddress;
 - (double)fallbackDistance;
@@ -72,6 +81,7 @@
 - (bool)useSpotlightVibrancy;
 - (double)_expectedHeightForLabels;
 - (void)updateSubviews;
+- (int)iconFormat;
 - (id)secondaryTextColor;
 - (id)primaryTextColor;
 - (void)_updateSecondaryColors;
@@ -84,6 +94,7 @@
 - (void)setPrimaryTextColor:(id)arg1;
 - (void)setUseSpotlightVibrancy:(bool)arg1;
 - (void)_updateFontSizing;
+- (void)setIconFormat:(int)arg1;
 - (void)_contentSizeCategoryDidChange;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightsOnTouch:(bool)arg2;
 - (void)setPrimaryLabelText:(id)arg1;
@@ -95,8 +106,6 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
-- (void)setNameLabel:(id)arg1;
-- (id)nameLabel;
 - (id)initWithMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
@@ -105,6 +114,7 @@
 - (double)preferredHeight;
 - (id)mapItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
@@ -115,6 +125,8 @@
 - (void)setImageView:(id)arg1;
 - (void)commonInit;
 - (bool)selected;
+- (void)setNeedsUpdateConstraints;
+- (void)updateLayout;
 - (id)imageView;
 - (void)setSelected:(bool)arg1;
 - (void)updateConstraints;

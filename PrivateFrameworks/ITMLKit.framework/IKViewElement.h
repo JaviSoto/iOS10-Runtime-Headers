@@ -16,6 +16,7 @@
     NSString *_accessibilityText;
     NSString *_autoHighlightIdentifier;
     unsigned long long _updateType;
+    NSArray *_features;
     IKAppDocument *_appDocument;
     NSString *_itmlID;
     NSMutableDictionary *_metadataDict;
@@ -33,12 +34,13 @@
 @property(copy,readonly) NSString * autoHighlightIdentifier;
 @property(getter=isDisabled) bool disabled;
 @property unsigned long long updateType;
-@property(readonly) NSArray * features;
+@property(copy,readonly) NSArray * features;
 @property IKAppDocument * appDocument;
 @property(retain,readonly) NSString * itmlID;
 @property(retain) NSMutableDictionary * metadataDict;
 @property(retain) NSMutableSet * activeSingularEvents;
 
++ (id)supportedFeatures;
 + (unsigned long long)evaluateElementUpdateTypeAndReset:(id)arg1;
 + (bool)shouldParseChildDOMElements;
 

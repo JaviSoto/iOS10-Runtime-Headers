@@ -2,36 +2,45 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSTimer, MKMapView, CLLocation;
+@class NSString, MKMapView, CLLocation, MKMapCamera;
 
 @interface MKPlaceHeaderBackgroundView_Snapshot : MKPlaceHeaderBackgroundView <MKMapViewDelegate> {
     MKMapView *_mapView;
-    NSTimer *_timer;
-    double _orbitStartTime;
+    bool_orbiting;
     bool_showsPin;
     bool_useSatellite;
+    MKMapCamera *_orbitCamera;
     double _zoomLevel;
     unsigned long long _pinColor;
     CLLocation *_location;
 }
 
 @property unsigned long long pinColor;
+@property(retain) MKMapCamera * orbitCamera;
+@property bool orbiting;
 @property(retain) CLLocation * location;
 @property double zoomLevel;
 @property bool showsPin;
 @property bool useSatellite;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)zoomLevel;
 - (void)beginOrbit;
 - (void)setShowsPin:(bool)arg1;
 - (bool)showsPin;
-- (void)orbit:(id)arg1;
+- (id)orbitCamera;
+- (void)setOrbiting:(bool)arg1;
+- (void)_orbitNextThird;
+- (bool)orbiting;
 - (void)mapFinishedLoading:(bool)arg1;
 - (void)requestSnapshot;
 - (void)pauseOrbit;
+- (void)setOrbitCamera:(id)arg1;
 - (bool)useSatellite;
-- (void)resizeMapIfNeeded;
 - (void)setUseSatellite:(bool)arg1;
 - (void)prepareForPresentation;
 - (void)setBackgroundType:(long long)arg1;
@@ -48,7 +57,6 @@
 - (void)resume;
 - (void)pause;
 - (void)setLocation:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)reset;

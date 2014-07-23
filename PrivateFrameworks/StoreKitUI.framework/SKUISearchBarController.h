@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISearchFieldController, SKUIClientContext, SKUISearchBarViewElement, SKUIFocusedTouchGestureRecognizer, UISearchBar, UIViewController;
+@class SKUIFocusedTouchGestureRecognizer, NSString, SKUISearchFieldController, SKUIClientContext, UISearchBar, UIViewController, SKUISearchBarViewElement;
 
 @interface SKUISearchBarController : NSObject <SKUISearchFieldDelegate, UISearchBarDelegate> {
     SKUIFocusedTouchGestureRecognizer *_cancelTouchGestureRecognizer;
@@ -23,6 +23,10 @@
 @property bool showsResultsForEmptyField;
 @property UIViewController * parentViewController;
 @property(readonly) UISearchBar * searchBar;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)searchBarViewElement;

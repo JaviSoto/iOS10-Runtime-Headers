@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailPopoverManagerDelegate>;
+@class <MFMailPopoverManagerDelegate>, NSString;
 
 @interface MFPopoverController : UIPopoverController <UIPopoverControllerDelegate> {
     id _mailDelegate;
@@ -13,6 +13,10 @@
 @property <MFMailPopoverManagerDelegate> * mailDelegate;
 @property id mailPopoverManager;
 @property bool isRotating;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)mailPopoverManager;

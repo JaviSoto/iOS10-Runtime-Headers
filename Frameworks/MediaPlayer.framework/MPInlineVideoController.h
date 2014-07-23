@@ -84,6 +84,10 @@
 @property bool navigationBarHidden;
 @property(readonly) UIView * subtitlesView;
 @property long long videoOverlayStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(retain) MPAVItem * item;
 @property long long orientation;

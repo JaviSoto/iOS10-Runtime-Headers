@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, UIScreen;
+@class NSDictionary, NSString, UIScreen;
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow <_UIScreenBasedObject> {
     bool_inDealloc;
@@ -19,6 +19,10 @@
     double _windowLevelStack[5];
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScreen * _intendedScreen;
 @property(readonly) NSDictionary * _options;
 @property bool useHostedInstance;
@@ -61,6 +65,7 @@
 - (void)sortSubviews;
 - (void)delayHideWindow;
 - (struct CGPoint { double x1; double x2; })_adjustPointForHostedDisplay:(struct CGPoint { double x1; double x2; })arg1 hasTarget:(bool)arg2 inset:(bool)arg3;
+- (void)applicationWindowRotated:(id)arg1;
 - (id)_intendedScreen;
 - (bool)_matchingOptions:(id)arg1;
 - (id)_initWithScreen:(id)arg1 options:(id)arg2;

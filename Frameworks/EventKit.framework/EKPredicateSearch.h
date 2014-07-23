@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSPredicate, EKEventStore;
+@class NSPredicate, NSString, EKEventStore;
 
 @interface EKPredicateSearch : NSObject <EKCancellableRemoteOperation> {
 
@@ -21,6 +21,11 @@
     bool_finished;
     bool_isCancelled;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 

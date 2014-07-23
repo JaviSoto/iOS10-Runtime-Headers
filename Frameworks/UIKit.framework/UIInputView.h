@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSArray, UIImage, CALayer, NSMutableDictionary, _UIInputViewContent, UIKBRenderConfig;
+@class UIView, NSString, NSArray, UIImage, CALayer, NSMutableDictionary, _UIInputViewContent, UIKBRenderConfig;
 
 @interface UIInputView : UIView <UISplittableInputView> {
     long long _style;
@@ -48,6 +48,10 @@
 @property(retain) UIImage * _splitImage;
 @property(retain) NSMutableDictionary * _mergedSliceMap;
 @property(retain) NSMutableDictionary * _splitSliceMap;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setupAppearanceIfNecessary;
 

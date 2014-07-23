@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface EDAlignmentInfo : NSObject <NSCopying, EDImmutableObject> {
     int mHorizontalAlignment;
     int mVerticalAlignment;
@@ -14,6 +16,11 @@
     boolmTextWrappedOveridden;
     boolmDoNotModify;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)alignmentInfo;
 

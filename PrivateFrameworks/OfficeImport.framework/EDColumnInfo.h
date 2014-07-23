@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReference, EDResources, EDWorksheet;
+@class EDResources, NSString, EDWorksheet, EDReference;
 
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
     EDResources *mResources;
@@ -13,6 +13,11 @@
     unsigned long long mStyleIndex;
     unsigned char mOutlineLevel;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
 

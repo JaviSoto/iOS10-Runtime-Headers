@@ -127,6 +127,7 @@
 - (id)oui;
 - (unsigned int)phyMode;
 - (unsigned int)channelWidth;
+- (unsigned int)channel;
 - (bool)isInVol;
 - (bool)isLinkUp;
 - (bool)hasVhtSupportedMcsSet;
@@ -175,6 +176,7 @@
 - (void)setChannelWidth:(unsigned int)arg1;
 - (bool)hasChannel;
 - (void)setHasChannel:(bool)arg1;
+- (void)setChannel:(unsigned int)arg1;
 - (bool)hasIsInVol;
 - (void)setHasIsInVol:(bool)arg1;
 - (void)setIsInVol:(bool)arg1;
@@ -198,10 +200,8 @@
 - (void)setHasFlags:(bool)arg1;
 - (bool)hasReason;
 - (void)setHasReason:(bool)arg1;
-- (void)setChannel:(unsigned int)arg1;
-- (unsigned int)channel;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)capabilities;

@@ -13,6 +13,11 @@
     bool_connected;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (bool)checkResponds:(bool)arg1 forSelector:(SEL)arg2;
 - (void)_sendClientRequest:(id)arg1;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIViewController, UIPopoverController;
+@class NSString, UIViewController, UIPopoverController;
 
 @interface _UITextServiceSession : NSObject <UIPopoverControllerDelegate> {
     long long _type;
@@ -22,6 +22,10 @@
 }
 
 @property(copy) id dismissedHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)textServiceSessionForType:(long long)arg1;
 + (id)showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;

@@ -48,6 +48,7 @@
 - (void)incrementColumnCount;
 - (void)increamentLayoutAreaCount;
 - (void)incrementParagraphCount;
+- (void)addRange:(struct { long long x1; long long x2; })arg1;
 - (long long)lineIndexForPoint:(struct CGPoint { double x1; double x2; })arg1 onPage:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })pageRangeForStringRange:(struct { long long x1; long long x2; })arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })stringRangeForTextRange:(struct { long long x1; long long x2; })arg1 onPageNumber:(unsigned long long)arg2;
@@ -80,7 +81,6 @@
 - (void)buildModel:(struct CGPDFDocument { }*)arg1 pageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)buildModel:(struct CGPDFDocument { }*)arg1;
 - (unsigned long long)lineCount;
-- (void)addRange:(struct { long long x1; long long x2; })arg1;
 - (id)attributedStringForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)attributedString;
 - (void)clearCache;

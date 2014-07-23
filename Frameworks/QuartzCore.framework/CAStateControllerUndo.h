@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CAState, NSMutableArray, CAStateControllerUndo;
+@class CAStateControllerUndo, NSString, NSMutableArray, CAState;
 
 @interface CAStateControllerUndo : NSObject <CAStateRecorder> {
     CAStateControllerUndo *_next;
@@ -15,6 +15,10 @@
 @property(retain) CAState * state;
 @property(retain) NSMutableArray * elements;
 @property(retain) NSMutableArray * transitions;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setTransitions:(id)arg1;

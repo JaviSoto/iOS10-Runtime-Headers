@@ -86,6 +86,10 @@
 @property(retain,readonly) NSString * stagedSecurityCode;
 @property(readonly) int stagedSecurityCodeType;
 @property bool circleWasReset;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)getStatusWithCompletion:(id)arg1;
 + (id)sharedManager;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, ABMembersController, _UIAccessDeniedView;
+@class CNContact, ABMembersController, NSString, _UIAccessDeniedView;
 
 @interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonEditDelegate> {
     ABMembersController *_membersController;
@@ -20,6 +20,10 @@
 @property(readonly) bool shouldShowGroups;
 @property(readonly) CNContact * unsavedContact;
 @property(readonly) _UIAccessDeniedView * accessDeniedView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;

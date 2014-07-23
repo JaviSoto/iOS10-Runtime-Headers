@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDFakeRemoteAccountStoreSession, ACRemoteDeviceProxy, ACDAccountStoreFilter, ACDAccessPluginManager, <ACDAccountStoreDelegate>, NSMutableArray, ACDDataclassOwnersManager, ACDDatabase, ACDAuthenticationDialogManager, ACDClient, ACDAuthenticationPluginManager, ACDClientAuthorizationManager;
+@class ACDFakeRemoteAccountStoreSession, ACRemoteDeviceProxy, ACDAccountStoreFilter, ACDAccessPluginManager, <ACDAccountStoreDelegate>, NSMutableArray, ACDDataclassOwnersManager, ACDDatabase, NSString, ACDAuthenticationDialogManager, ACDClient, ACDAuthenticationPluginManager, ACDClientAuthorizationManager;
 
 @interface ACDAccountStore : ACAccountStore <ACDAccountStoreProtocol> {
     NSMutableArray *_accountChanges;
@@ -32,6 +32,10 @@
 @property(retain) ACRemoteDeviceProxy * remoteDeviceProxy;
 @property bool notificationsEnabled;
 @property(getter=isMigrationInProgress) bool migrationInProgress;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setMigrationInProgress:(bool)arg1;

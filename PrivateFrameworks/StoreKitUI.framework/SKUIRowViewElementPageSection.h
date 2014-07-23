@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIViewElementLayoutContext, SKUIRowComponent;
+@class NSString, SKUIViewElementLayoutContext, SKUIRowComponent;
 
 @interface SKUIRowViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
 }
 
 @property(readonly) SKUIRowComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

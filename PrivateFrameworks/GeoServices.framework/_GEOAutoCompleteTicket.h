@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapServiceTraits, GEOSearchRequest;
+@class GEOMapServiceTraits, NSString, GEOSearchRequest;
 
 @interface _GEOAutoCompleteTicket : NSObject <GEOMapServiceCompletionTicket> {
     GEOSearchRequest *_searchRequest;
     GEOMapServiceTraits *_traits;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) GEOMapServiceTraits * traits;
 
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECMappingContext, EDWorksheet, EDWorkbook;
+@class ECMappingContext, EDWorkbook, EDWorksheet, NSString;
 
 @interface EDFormulaHelper : NSObject <EFHelper> {
     EDWorkbook *mWorkbook;
@@ -11,6 +11,11 @@
     int mColumnNumber;
     ECMappingContext *mMappingContext;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(int)arg3 columnNumber:(int)arg4;

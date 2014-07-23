@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextChecker, WebThreadSafeUndoManager, UITextInputTraits, DOMNode, NSDictionary, UIWebRotatingAlertController, DOMHTMLElement, WebHistoryItem, _UIWebHighlightLongPressGestureRecognizer, UILongPressGestureRecognizer, UITextRange, UITextPosition, UIImage, NSTimer, NSArray, NSString, DOMRange, UITextInteractionAssistant, _UITextServiceSession, UIWebSelectionAssistant, UIAutoscroll, <UITextInputTokenizer>, UIView, UIWebFileUploadPanel, _UIWebViewportHandler, UIPanGestureRecognizer, UIWebPlaybackTargetPicker, CALayer, <UITextInputDelegate>, UIColor, UITapGestureRecognizer, WebView;
+@class UITextChecker, WebThreadSafeUndoManager, UITextInputTraits, DOMNode, NSDictionary, UIWebRotatingAlertController, DOMHTMLElement, WebHistoryItem, _UIWebHighlightLongPressGestureRecognizer, UILongPressGestureRecognizer, NSString, UITextRange, UITextPosition, NSTimer, NSArray, UIImage, DOMRange, UITextInteractionAssistant, _UITextServiceSession, UIWebSelectionAssistant, UIAutoscroll, <UITextInputTokenizer>, UIView, UIWebFileUploadPanel, _UIWebViewportHandler, UIPanGestureRecognizer, UIWebPlaybackTargetPicker, CALayer, <UITextInputDelegate>, UIColor, UITapGestureRecognizer, WebView;
 
 @interface UIWebDocumentView : UIWebTiledView <DDDetectionControllerInteractionDelegate, _UIRotatingAlertControllerDelegate, UITextAutoscrolling, UIAutoscrollContainer, UIGestureRecognizerDelegate, UIKeyboardInput, UITextInputPrivate, UIKeyInput, UIModalViewDelegate, UITextInputTokenizer, _UIWebDoubleTapDelegate, UIWebFileUploadPanelDelegate> {
     WebView *_webView;
@@ -191,6 +191,10 @@
 }
 
 @property(getter=_acceptsFirstResponder,setter=_setAcceptsFirstResponder:) bool _acceptsFirstResponder;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) int selectionState;
 @property struct CGPoint { double x1; double x2; } autoscrollContentOffset;
 @property(getter=isDoubleTapEnabled) bool doubleTapEnabled;
@@ -204,6 +208,10 @@
 @property(readonly) unsigned long long renderTreeSize;
 @property unsigned long long renderTreeSizeThresholdForReset;
 @property(retain) DOMRange * rangeToRestoreAfterDictation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -329,7 +337,6 @@
 - (void)loadData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)contentView;
-- (id)typingAttributes;
 - (long long)selectionAffinity;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setDelegate:(id)arg1;
@@ -711,6 +718,7 @@
 - (void)selectAll;
 - (void)startAutoscroll:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSelectionAffinity:(long long)arg1;
+- (id)textStylingAtPosition:(id)arg1 inDirection:(long long)arg2;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
 - (id)metadataDictionariesForDictationResults;
@@ -751,7 +759,6 @@
 - (id)endOfDocument;
 - (id)beginningOfDocument;
 - (void)takeTraitsFrom:(id)arg1;
-- (void)setTypingAttributes:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)cancelAutoscroll;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionClipRect;

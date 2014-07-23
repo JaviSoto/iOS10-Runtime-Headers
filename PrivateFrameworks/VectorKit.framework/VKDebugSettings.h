@@ -31,6 +31,8 @@
     bool_paintLabelCollisionLines;
     bool_paintLabelCounts;
     bool_hideDirectionalArrows;
+    bool_labelHideLineFeatures;
+    bool_labelHidePointFeatures;
     bool_paintTrafficSkeleton;
     bool_loadGreenTraffic;
     bool_paintRoadsStitchedByName;
@@ -101,6 +103,8 @@
 @property bool paintLabelCollisionLines;
 @property bool paintLabelCounts;
 @property bool hideDirectionalArrows;
+@property bool labelHideLineFeatures;
+@property bool labelHidePointFeatures;
 @property bool paintTrafficSkeleton;
 @property bool loadGreenTraffic;
 @property bool useStaticTrafficFeed;
@@ -185,7 +189,8 @@
 - (bool)useStaticTrafficFeed;
 - (void)setLoadGreenTraffic:(bool)arg1;
 - (void)setPaintTrafficSkeleton:(bool)arg1;
-- (bool)hideDirectionalArrows;
+- (void)setLabelHidePointFeatures:(bool)arg1;
+- (void)setLabelHideLineFeatures:(bool)arg1;
 - (void)setPaintLabelCounts:(bool)arg1;
 - (void)setPaintLabelCollisionLines:(bool)arg1;
 - (void)setPaintLabelRoadFeatures:(bool)arg1;
@@ -261,6 +266,9 @@
 - (void)setAltitudeLodScale:(float)arg1;
 - (bool)dontMatchRouteLine;
 - (bool)paintTrafficSkeleton;
+- (bool)hideDirectionalArrows;
+- (bool)labelHidePointFeatures;
+- (bool)labelHideLineFeatures;
 - (bool)labelAlternatePositionsEnabled;
 - (bool)paintLabelCollisionLines;
 - (bool)paintLabelCounts;

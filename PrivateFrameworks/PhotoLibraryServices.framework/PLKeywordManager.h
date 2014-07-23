@@ -17,5 +17,6 @@
 - (bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
 - (id)keywordsForAssetWithUUID:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
+- (void)dealloc;
 
 @end

@@ -11,14 +11,15 @@
 + (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)emailAddressHostPart;
 + (id)_usernameWithHostname:(id)arg1;
++ (id)displayedAccountTypeString;
 + (bool)usernameIsEmailAddress;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (bool)isPredefinedAccountType;
 + (bool)usesSSL;
-+ (id)displayedAccountTypeString;
 + (id)hostname;
 
 - (id)iconString;
+- (id)displayUsername;
 - (bool)derivesDeliveryAccountInfoFromMailAccount;
 - (id)_defaultSpecialMailboxNameForType:(int)arg1;
 - (id)statisticsKind;
@@ -26,7 +27,6 @@
 - (bool)shouldFetchACEDBInfoForError:(id)arg1;
 - (void)setUsesSSL:(bool)arg1;
 - (bool)usesSSL;
-- (id)displayUsername;
 - (id)emailAddresses;
 - (void)setUsername:(id)arg1;
 - (void)setHostname:(id)arg1;

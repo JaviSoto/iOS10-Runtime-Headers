@@ -24,11 +24,11 @@
 @property double timestamp;
 
 
-- (bool)hasDestination;
-- (bool)hasBundleIdentifier;
-- (bool)hasSource;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasDestination;
+- (bool)hasSource;
+- (bool)hasBundleIdentifier;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;

@@ -11,7 +11,8 @@
     bool_includesActualByteCount;
     bool_adaptive;
     bool_zeroPadsFractionDigits;
-    int _reserved[6];
+    int _formattingContext;
+    int _reserved[5];
 }
 
 @property unsigned long long allowedUnits;

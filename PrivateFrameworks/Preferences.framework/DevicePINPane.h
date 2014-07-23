@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIView<PINEntryView>, UITransitionView, UIKeyboard;
+@class NSString, UITransitionView, UIKeyboard, UIView<PINEntryView>;
 
 @interface DevicePINPane : PSEditingPane <UIKeyInput, UITextInputTraits, PSPINEntryViewDelegate> {
     UITransitionView *_transitionView;
@@ -20,6 +20,10 @@
 }
 
 @property(retain) UIView<PINEntryView> * pinView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -31,17 +35,20 @@
 
 
 - (void)clearPassword;
+- (void)slideToNewPasscodeField:(bool)arg1 withKeyboard:(bool)arg2;
+- (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2;
 - (void)delayForTextEntryAnimationsWithCompletion:(id)arg1;
 - (void)setKeyboardUserInteractionEnabled:(bool)arg1;
 - (void)activateKeypadView;
 - (void)_setKeypadState:(bool)arg1 animated:(bool)arg2;
+- (void)setKeyboardIsNumeric:(bool)arg1;
 - (void)setPinView:(id)arg1;
 - (id)pinView;
 - (void)_setPlaysKeyboardClicks:(bool)arg1;
 - (void)pinView:(id)arg1 pinEntered:(id)arg2;
 - (void)pinView:(id)arg1 pinValueChanged:(id)arg2;
-- (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2;
-- (void)slideToNewPasscodeField:(bool)arg1 withKeyboard:(bool)arg2;
+- (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2 numericOnly:(bool)arg3;
+- (void)slideToNewPasscodeField:(bool)arg1 requiresKeyboard:(bool)arg2 numericOnly:(bool)arg3;
 - (void)okButtonPressed;
 - (bool)simplePIN;
 - (void)setPINPolicyString:(id)arg1 visible:(bool)arg2;

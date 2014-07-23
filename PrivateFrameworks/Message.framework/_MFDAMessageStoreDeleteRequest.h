@@ -9,9 +9,9 @@
 @property(readonly) bool isUserRequested;
 
 
+- (unsigned long long)generationNumber;
 - (bool)shouldSend;
 - (id)deferredOperation;
 - (bool)isUserRequested;
-- (unsigned long long)generationNumber;
 
 @end

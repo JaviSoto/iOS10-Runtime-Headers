@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMapTable, NSTimer, NSMutableDictionary, GEOUsageCollectionRequest, NSLock, GEORequester;
+@class NSTimer, NSString, NSLock, GEORequester, NSMutableDictionary, GEOUsageCollectionRequest, NSMapTable;
 
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
     GEORequester *_requester;
@@ -30,6 +30,10 @@
 
 @property(copy) id backgroundTaskStart;
 @property(copy) id backgroundTaskEnd;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedManager;
 
@@ -43,6 +47,7 @@
 - (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
+- (void)captureMapsLaunchFeedbackCollection:(id)arg1;
 - (void)_endBackgroundTaskForRequester:(id)arg1;
 - (void)_startBackgroundTaskForRequester:(id)arg1;
 - (void)_sendUsageToServer;
@@ -57,6 +62,7 @@
 - (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (id)_usageURL;
+- (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;

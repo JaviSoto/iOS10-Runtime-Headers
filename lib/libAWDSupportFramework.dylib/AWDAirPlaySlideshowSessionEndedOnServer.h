@@ -58,6 +58,7 @@
 @property unsigned int skipAheads;
 
 
+- (bool)hasDuration;
 - (unsigned int)skipAheads;
 - (unsigned int)skipBacks;
 - (bool)hasSkipAheads;
@@ -95,9 +96,8 @@
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

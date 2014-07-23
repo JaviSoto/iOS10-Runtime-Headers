@@ -57,6 +57,10 @@
 @property(copy) SKUIItemState * itemState;
 @property long long numberOfUserRatings;
 @property double userRating;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)numberOfUserRatings;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BRCPackageManifestForUpload, BRCLocalItem;
+@class BRCPackageManifestForUpload, BRCLocalItem, NSString;
 
 @interface BRCUploadDocumentOperation : BRCOperation <BRCUploadOperation> {
     BRCLocalItem *_item;
@@ -23,6 +23,10 @@
 
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) double budgetRequired;
 @property(copy) id progressBlock;
 @property(readonly) long long transferPriority;
@@ -31,6 +35,7 @@
 
 - (id)uploadAssetsOperationWithRecord:(id)arg1;
 - (bool)_isItemTooLarge;
+- (id)_copyThumnbailToStage:(id)arg1;
 - (void)setUploadCompletionBlock:(id)arg1;
 - (id)uploadCompletionBlock;
 - (double)budgetRequired;

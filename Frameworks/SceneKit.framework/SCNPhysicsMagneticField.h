@@ -19,5 +19,6 @@
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_createField;
      /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
 
+- (void)setDirection:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 
 @end

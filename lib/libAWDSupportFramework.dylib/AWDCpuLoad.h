@@ -18,10 +18,10 @@
 @property unsigned int duration;
 
 
-- (bool)hasProcName;
-- (void)setProcName:(id)arg1;
 - (bool)hasDuration;
 - (id)procName;
+- (bool)hasProcName;
+- (void)setProcName:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

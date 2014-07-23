@@ -43,8 +43,8 @@
 - (id)oui;
 - (bool)hasOui;
 - (void)setOui:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setEventType:(unsigned int)arg1;

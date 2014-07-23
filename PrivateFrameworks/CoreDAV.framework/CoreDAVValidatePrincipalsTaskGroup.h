@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL, NSMutableSet, NSSet;
+@class NSSet, NSString, NSURL, NSMutableSet;
 
 @interface CoreDAVValidatePrincipalsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
     NSMutableSet *_urlsToExamine;
@@ -16,6 +16,10 @@
 @property(retain) NSMutableSet * urlsToExamine;
 @property(retain) NSMutableSet * principalURLs;
 @property(retain) NSURL * urlBeingExamined;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPrincipalURLs:(id)arg1;

@@ -50,8 +50,8 @@
 - (id)stubDictionary;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)subject;
-- (id)challenge;
 - (id)URLString;
+- (id)challenge;
 - (void).cxx_destruct;
 - (id)description;
 

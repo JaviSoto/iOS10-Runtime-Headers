@@ -50,11 +50,11 @@
 - (void)addInfoFromRegion:(id)arg1;
 - (id)descriptionWithOptions:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2;
 - (unsigned int)protection;
+- (id)path;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (id)type;
-- (id)path;
 - (void)dealloc;
 - (id)description;
 

@@ -151,6 +151,10 @@
 @property double stretchFactor;
 @property double fresnelExponent;
 @property(copy) NSDictionary * propertyControllers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)particleSystemWithParticleSystemRef:(struct __C3DParticleSystem { }*)arg1;
 + (id)particleSystemNamed:(id)arg1 inDirectory:(id)arg2;

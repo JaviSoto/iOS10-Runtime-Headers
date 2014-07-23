@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, MPMovieView, MPMovieAccessLog, NSDictionary, MPAVController, NSMutableArray, MPNowPlayingObserver, <MPMoviePlayerControllerDelegate>, MPInlineVideoController, MPMovieErrorLog, NSMutableSet, NSArray, MPMoviePlayerController, NSError, UIWindow;
+@class NSMutableDictionary, MPMovieView, MPMovieAccessLog, NSDictionary, MPAVController, NSMutableArray, MPNowPlayingObserver, <MPMoviePlayerControllerDelegate>, MPInlineVideoController, MPMovieErrorLog, NSString, NSMutableSet, NSArray, MPMoviePlayerController, NSError, UIWindow;
 
 @interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
     long long _additionalButtons;
@@ -53,6 +53,10 @@
     MPMovieErrorLog *_cachedErrorLog;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool isPreparedToPlay;
 @property double currentPlaybackTime;
 @property float currentPlaybackRate;

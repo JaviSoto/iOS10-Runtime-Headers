@@ -37,7 +37,6 @@
 
 - (int)numberOfRatings;
 - (id)reviews;
-- (bool)hasURL;
 - (id)initWithSampleSizeForUserRatingScore:(unsigned int)arg1 normalizedUserRatingScore:(float)arg2;
 - (id)initWithPlaceDataRating:(id)arg1 reviews:(id)arg2;
 - (int)numberOfReviews;
@@ -59,6 +58,7 @@
 - (void)addReview:(id)arg1;
 - (void)setReviews:(id)arg1;
 - (id)uRL;
+- (bool)hasURL;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

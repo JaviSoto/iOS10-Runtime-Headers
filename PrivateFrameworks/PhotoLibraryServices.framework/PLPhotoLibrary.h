@@ -63,10 +63,10 @@
 + (id)photoDataCPLDerivativeDirectory;
 + (id)videosPath;
 + (id)photoMutationsDirectory;
-+ (id)mediaFilesDirectoryURL;
 + (bool)isStreamsLibraryUpdatingExpired;
 + (void)setStreamsLibraryUpdatingExpired:(bool)arg1;
 + (void)setDupeAnalysisNeeded:(bool)arg1;
++ (id)pauseTime;
 + (void)setICloudPhotosEnabled:(bool)arg1;
 + (void)setEnableICloudPhotos:(bool)arg1;
 + (void)setDisableICloudPhotos:(bool)arg1;
@@ -107,6 +107,7 @@
 + (bool)isEnableICloudPhotos;
 + (void)setPauseMarker:(bool)arg1;
 + (bool)isICloudPhotosPaused;
++ (void)setCameraRollCountedInQuota:(bool)arg1;
 + (void)clearICloudPhotosMarker;
 + (id)enableICloudPhotosFilePath;
 + (id)disableICloudPhotosFilePath;
@@ -116,6 +117,7 @@
 + (void)setLibraryAvailableIndicatorState:(bool)arg1;
 + (bool)libraryAvailableIndicatorState;
 + (id)persistedAlbumDataDirectoryURL;
++ (id)mediaFilesDirectoryURL;
 + (id)iTunesSyncedAssetsDirectory;
 + (id)pathToAssetsToAlbumsMapping;
 + (id)imageWriterIndicatorFilePath;
@@ -205,7 +207,6 @@
 - (void)addCompletionHandlerToCurrentTransaction:(id)arg1;
 - (void)performTransactionAndWait:(id)arg1 completionHandler:(id)arg2;
 - (void)performTransactionAndWait:(id)arg1;
-- (void)deleteITunesSyncedContent;
 - (bool)hasITunesSyncedContent;
 - (void)deleteAllImages;
 - (void)deleteImages:(id)arg1;
@@ -243,6 +244,7 @@
 - (void)_updateHasAtLeastOnePhotoWithGPSWithInsertedCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2 updatedAssets:(id)arg3;
 - (id)lastImportedPhotosAlbumCreateIfNeeded:(bool)arg1;
 - (id)allImportedPhotosAlbumCreateIfNeeded:(bool)arg1;
+- (void)deleteITunesSyncedContent;
 - (void)prepareDatabaseForOTAAssetsPhase;
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)_removeSyncedAlbumsInTransactionWithManagedObjectContext:(id)arg1;

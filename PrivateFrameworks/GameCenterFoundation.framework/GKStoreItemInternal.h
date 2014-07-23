@@ -41,6 +41,8 @@
 - (void)setTellAFriendMessageContentsUrl:(id)arg1;
 - (id)tellAFriendMessageContentsUrl;
 - (void)setAverageUserRating:(float)arg1;
+- (void)storeItemURLForGamePlatform:(unsigned char)arg1 withContext:(id)arg2 withHandler:(id)arg3;
+- (id)storeItemURLForURL:(id)arg1 gamePlatform:(unsigned char)arg2 extraQueryParams:(id)arg3;
 - (id)viewItemURL;
 - (void)setAdamID:(id)arg1;
 - (id)adamID;

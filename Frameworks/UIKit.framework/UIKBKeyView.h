@@ -39,6 +39,10 @@
 @property(readonly) long long cachedRenderFlags;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } displayInsets;
 @property(retain) NSString * cachedTraitsHashString;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * cacheKey;
 @property(readonly) bool cacheDeferable;
 @property(readonly) double cachedWidth;

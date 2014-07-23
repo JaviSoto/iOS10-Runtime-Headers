@@ -5,6 +5,7 @@
 @class SUScriptViewController, UIViewController, UIPopoverController;
 
 @interface SUScriptPopOver : SUScriptObject  {
+    UIViewController *_contentViewController;
     bool_ignoreDismiss;
 }
 
@@ -39,6 +40,7 @@
 - (id)nativePopoverController;
 - (void)_setNativeViewController:(id)arg1;
 - (id)_nativeViewController;
+- (id)_presentablePopoverController;
 - (void)_showAsModalViewController;
 - (bool)_isViewControllerVisible;
 - (id)_popOverController;
@@ -49,9 +51,9 @@
 - (void)tearDownUserInterface;
 - (id)_className;
 - (id)scriptAttributeKeys;
+- (id)activeViewController;
 - (double)contentHeight;
 - (void)setContentHeight:(double)arg1;
-- (id)activeViewController;
 - (bool)isVisible;
 - (id)attributeKeys;
 - (double)contentWidth;

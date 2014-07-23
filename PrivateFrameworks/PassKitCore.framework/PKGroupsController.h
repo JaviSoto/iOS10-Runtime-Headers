@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKPassLibrary, NSMutableDictionary, PKCatalog, NSArray, NSMutableArray, <PKGroupsControllerDelegate>;
+@class NSString, NSArray, <PKGroupsControllerDelegate>, NSMutableDictionary, PKCatalog, NSMutableArray, PKPassLibrary;
 
 @interface PKGroupsController : NSObject <PKPassLibraryDelegate> {
     PKPassLibrary *_passLibrary;
@@ -18,12 +18,17 @@
     NSMutableArray *_enqueuedUpdates;
     NSArray *_localPasses;
     bool_limitedMode;
+    bool_activePassesOnly;
     bool_reorderingEnabled;
     <PKGroupsControllerDelegate> *_delegate;
 }
 
 @property <PKGroupsControllerDelegate> * delegate;
 @property(getter=isReorderingEnabled,readonly) bool reorderingEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)reloadGroups;

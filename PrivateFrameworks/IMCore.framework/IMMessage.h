@@ -97,18 +97,17 @@
 - (void)_updateGUID:(id)arg1;
 - (void)_updateSender:(id)arg1;
 - (bool)isSystemMessage;
-- (bool)isLocatingMessage;
 - (bool)isInvitationMessage;
 - (id)_imMessageItem;
 - (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 messageSubject:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8 subject:(id)arg9;
 - (id)messageSubject;
+- (bool)isLocatingMessage;
 - (bool)isTypingMessage;
 - (bool)isAlert;
 - (bool)isEmote;
 - (bool)wasDowngraded;
 - (bool)wasDataDetected;
 - (bool)isPlayed;
-- (bool)isAudioMessage;
 - (bool)isDelivered;
 - (bool)isSent;
 - (id)guid;
@@ -120,6 +119,7 @@
 - (id)timeDelivered;
 - (id)timeRead;
 - (id)plainBody;
+- (bool)isAudioMessage;
 - (id)timePlayed;
 - (id)time;
 - (bool)isFromMe;
@@ -127,8 +127,8 @@
 - (long long)compare:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEmpty;
-- (id)sender;
 - (id)error;
+- (id)sender;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

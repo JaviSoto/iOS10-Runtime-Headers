@@ -44,6 +44,7 @@
 - (void)_callInvalidationHandler;
 - (bool)isExclusive;
 - (int)statusBarStyleOverrides;
+- (id)initWithStatusBarStyleOverridesAssertionData:(id)arg1;
 - (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(bool)arg3;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

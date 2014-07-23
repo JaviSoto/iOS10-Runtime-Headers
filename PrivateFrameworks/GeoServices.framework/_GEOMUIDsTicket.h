@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray, GEOMapRegion, GEOMapServiceTraits;
+@class NSArray, NSString, GEOMapServiceTraits, GEOMapRegion;
 
 @interface _GEOMUIDsTicket : NSObject <GEOMapServiceTicket> {
     NSArray *_muids;
@@ -12,12 +12,15 @@
 }
 
 @property(getter=isCanceled,readonly) bool canceled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) GEOMapServiceTraits * traits;
 @property(readonly) GEOMapRegion * resultBoundingRegion;
 
 
 - (id)resultBoundingRegion;
-- (bool)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (id)initWithMUIDs:(id)arg1 includeETA:(bool)arg2 traits:(id)arg3;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;

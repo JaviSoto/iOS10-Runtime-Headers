@@ -11,6 +11,10 @@
 
 @property(retain) NSArray * data;
 @property(retain) NSString * cachedStringValue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)EditScriptDataWithString:(id)arg1 chunkSize:(long long)arg2;
 + (id)EditScriptDataWithArray:(id)arg1;

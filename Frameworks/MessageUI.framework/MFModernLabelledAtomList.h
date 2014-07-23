@@ -30,6 +30,10 @@
 @property bool primary;
 @property double lineSpacing;
 @property(readonly) unsigned long long numberOfRows;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)atomLineHeight;
 + (double)spaceBetweenColonAndFirstAtomNaturalEdge;

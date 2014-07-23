@@ -23,6 +23,10 @@
 @property(retain) NSObject<PLAlbumContainer> * backingAlbumList;
 @property(copy) id sortComparator;
 @property(retain) NSMutableOrderedSet * _albums;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long containersCount;
 @property(readonly) unsigned long long albumsCount;
 @property(readonly) bool isFolder;

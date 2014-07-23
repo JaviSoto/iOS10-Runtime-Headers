@@ -42,6 +42,10 @@
 @property(setter=_setListenerID:,retain) NSString * _listenerID;
 @property id delegate;
 @property(readonly) bool isConnecting;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setApplicationWillTerminate;
 + (bool)_applicationWillTerminate;

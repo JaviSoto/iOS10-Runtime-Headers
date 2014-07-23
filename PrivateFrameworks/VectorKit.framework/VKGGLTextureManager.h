@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSObject<OS_dispatch_queue>, VKResourceManager;
+@class NSObject<OS_dispatch_queue>, VKResourceManager, NSString;
 
 @interface VKGGLTextureManager : NSObject <GEOResourceManifestTileGroupObserver> {
     unsigned int _tileGroupIdentifier;
@@ -28,6 +28,11 @@
     VKResourceManager *_resourceManager;
     struct Device { int (**x1)(); int x2; } *_device;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1;

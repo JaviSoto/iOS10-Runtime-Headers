@@ -25,6 +25,10 @@
 
 @property(copy) id dismissCompletionHandler;
 @property(setter=_setRotationDecider:,retain) UIWindow * _rotationDecider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned long long)arg2;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
@@ -47,10 +51,10 @@
 - (id)_defaultButtonImage;
 - (id)_diddlyDoViewLineColor;
 - (void)_installRequiredElementsOnViewController:(id)arg1;
-- (void)_dismissModalReferenceView:(id)arg1;
 - (void)_searchWeb:(id)arg1;
 - (void)pushDownloadManager:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
+- (void)_dismissModalReferenceView:(id)arg1;
 - (id)initWithTerm:(id)arg1;
 - (id)_colorAttributes;
 - (void)setDismissCompletionHandler:(id)arg1;

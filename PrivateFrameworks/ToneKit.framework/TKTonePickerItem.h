@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class TKTonePickerController, TKTonePickerSectionItem;
+@class NSString, TKTonePickerController, TKTonePickerSectionItem;
 
 @interface TKTonePickerItem : TKPickerSelectableItem <TKPickerContainerItem> {
     TKTonePickerController *_parentTonePickerController;
@@ -14,6 +14,10 @@
 @property(readonly) TKTonePickerSectionItem * parentSectionItem;
 @property(setter=_setParentTonePickerController:) TKTonePickerController * _parentTonePickerController;
 @property long long numberOfChildren;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)parentSectionItem;

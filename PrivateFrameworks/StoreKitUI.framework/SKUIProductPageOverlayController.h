@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, NSArray, SKUIOverlayContainerViewController, SKUIClientContext, <SKUIProductPageOverlayDelegate>, SKUIItem, UIViewController;
+@class UIView, NSString, NSArray, SKUIOverlayContainerViewController, SKUIClientContext, <SKUIProductPageOverlayDelegate>, SKUIItem, UIViewController;
 
 @interface SKUIProductPageOverlayController : NSObject <SKUIIPadProductPageDelegate, SKStoreProductViewControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -18,6 +18,10 @@
 @property(readonly) long long numberOfVisibleOverlays;
 @property(readonly) NSArray * URLs;
 @property(readonly) UIView * view;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)showWithInitialURLRequest:(id)arg1;
@@ -36,9 +40,9 @@
 - (void)iPadProductPageCannotOpen:(id)arg1;
 - (void)iPadProductPage:(id)arg1 openURL:(id)arg2 viewControllerBlock:(id)arg3;
 - (void)iPadProductPage:(id)arg1 openItem:(id)arg2;
+- (void)productViewControllerDidFinish:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)productViewControllerDidFinish:(id)arg1;
 - (id)parentViewController;
 - (id)view;
 - (void)setDelegate:(id)arg1;

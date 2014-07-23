@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SSLookupRequest, NSArray, NSObject<OS_dispatch_source>, CLLocationManager, NSDictionary, SKUIClientContext;
+@class CLLocationManager, NSArray, SSLookupRequest, NSString, SKUIClientContext, NSDictionary, NSObject<OS_dispatch_source>;
 
 @interface SKUINearMeController : NSObject <CLLocationManagerDelegate, SKUIItemStateCenterObserver> {
     NSArray *_items;
@@ -22,6 +22,10 @@
 @property(readonly) NSArray * items;
 @property(readonly) NSDictionary * responseDictionary;
 @property(readonly) long long status;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedController;
 

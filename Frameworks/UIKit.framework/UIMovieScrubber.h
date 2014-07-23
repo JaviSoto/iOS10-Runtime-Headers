@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIImageView, <UIMovieScrubberDataSource>, UIMovieScrubberTrackView, UIMovieScrubberEditingView, <UIMovieScrubberDelegate>, UILabel;
+@class NSString, UIImage, UIImageView, <UIMovieScrubberDataSource>, UIMovieScrubberTrackView, UIMovieScrubberEditingView, <UIMovieScrubberDelegate>, UILabel;
 
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
     UIImageView *_thumbView;
@@ -101,6 +101,10 @@
 @property double edgeInset;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentMargins;
 @property(getter=isEditing) bool editing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(bool)arg2 isElapsed:(bool)arg3;
 

@@ -19,6 +19,10 @@
 @property(retain,readonly) NSSet * accounts;
 @property(retain,readonly) NSSet * enabledAccounts;
 @property(retain,readonly) NSString * serviceName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;

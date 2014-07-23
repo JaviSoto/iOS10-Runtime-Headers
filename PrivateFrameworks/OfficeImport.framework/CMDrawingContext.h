@@ -37,7 +37,6 @@
 
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transformRectToPage:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)addPath:(struct CGPath { }*)arg1;
 - (void)addDebugPath:(struct CGPath { }*)arg1;
 - (void)setLineDash:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })currentTransform;
@@ -57,6 +56,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transformRectToGroup:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)restoreLastTransform;
 - (void)addTransform:(id)arg1;
+- (void)addPath:(struct CGPath { }*)arg1;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

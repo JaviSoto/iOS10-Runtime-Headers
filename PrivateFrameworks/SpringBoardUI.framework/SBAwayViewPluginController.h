@@ -40,6 +40,9 @@
 - (void)_setEffectivePresentationStyle:(unsigned long long)arg1;
 - (unsigned long long)_effectivePresentationStyle;
 - (bool)viewCanBeDisplayed;
+- (void)setNeedsLegibilityAppearanceUpdate;
+- (bool)isContentViewWhiteUnderSlideToUnlockText;
+- (bool)legibilitySettingsOverridesVibrancy;
 - (unsigned long long)overlayStyle;
 - (void)lockScreenMediaControlsShown:(bool)arg1;
 - (bool)wantsMesaAutoUnlock;

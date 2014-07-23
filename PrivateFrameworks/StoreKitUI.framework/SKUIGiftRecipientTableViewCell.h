@@ -16,6 +16,10 @@
 @property(copy) NSAttributedString * attributedPlaceholder;
 @property(copy) NSString * label;
 @property(copy) NSArray * recipientAddresses;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)searchControllerDidFinishSearch:(id)arg1;

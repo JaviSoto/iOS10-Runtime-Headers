@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDDefaultTextProperties, OADGraphicProperties, CHDPlotArea, EDWorkbook, CHDTitle, NSMutableArray, CHDLegend, EDSheet, CHDView3D;
+@class CHDDefaultTextProperties, NSString, OADGraphicProperties, CHDPlotArea, EDWorkbook, CHDTitle, NSMutableArray, CHDLegend, EDSheet, CHDView3D;
 
 @interface CHDChart : OADGraphic <OADDrawableContainer> {
     EDSheet *mSheet;
@@ -37,6 +37,11 @@
     } mLogicalBounds;
     NSMutableArray *mDrawables;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)binaryEffects:(bool)arg1;
 

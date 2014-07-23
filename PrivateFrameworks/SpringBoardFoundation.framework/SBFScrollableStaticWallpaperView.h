@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class UIColor, UIImageView, SBFLockScreenWallpaperParallaxSettings, UIScrollView, SBFSubject, <SBFCancelable>;
+@class UIScrollView, NSString, UIImageView, SBFLockScreenWallpaperParallaxSettings, <SBFCancelable>, SBFSubject, UIColor;
 
 @interface SBFScrollableStaticWallpaperView : SBFStaticWallpaperView <UIScrollViewDelegate> {
     UIImageView *_imageView;
@@ -18,6 +18,10 @@
 }
 
 @property(readonly) UIColor * averageColor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldScaleForParallax;
 
@@ -43,8 +47,8 @@
 - (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
 - (bool)supportsCropping;
 - (double)cropZoomScale;
-- (struct CGSize { double x1; double x2; })_imageSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (struct CGSize { double x1; double x2; })_imageSize;
 - (void)dealloc;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;

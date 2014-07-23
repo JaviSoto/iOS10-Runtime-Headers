@@ -26,7 +26,6 @@
 - (void)setPresetClass:(int)arg1;
 - (int)iterateType;
 - (int)presetClass;
-- (int)triggerType;
 - (void)setTriggerType:(int)arg1;
 - (void)setLevel2ParallelAttribute:(id)arg1;
 - (id)level3BehaviorAtNodeIndex:(unsigned long long)arg1 level2NodeIndex:(unsigned long long)arg2 level1NodeIndex:(unsigned long long)arg3;
@@ -34,6 +33,7 @@
 - (id)level1ParallelTimeNodeGroupAtNodeIndex:(unsigned long long)arg1;
 - (void)setPresetId:(int)arg1;
 - (int)presetId;
+- (int)triggerType;
 - (void)setGroupId:(id)arg1;
 - (id)groupId;
 - (void)setDirection:(double)arg1;

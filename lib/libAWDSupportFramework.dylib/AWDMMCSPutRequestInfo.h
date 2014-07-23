@@ -72,6 +72,8 @@
 @property(retain) NSMutableArray * errors;
 
 
+- (id)errors;
+- (bool)hasDuration;
 - (id)cancelErrors;
 - (id)completeHttpInfos;
 - (id)containerHttpInfos;
@@ -85,7 +87,6 @@
 - (id)requestErrorDomain;
 - (int)cancelledErrorCode;
 - (id)cancelledErrorDomain;
-- (id)clientId;
 - (bool)hasChunksUploaded;
 - (void)setHasChunksUploaded:(bool)arg1;
 - (void)setChunksUploaded:(int)arg1;
@@ -109,7 +110,6 @@
 - (void)setHasCancelledErrorCode:(bool)arg1;
 - (void)setCancelledErrorCode:(int)arg1;
 - (bool)hasCancelledErrorDomain;
-- (bool)hasClientId;
 - (id)errorAtIndex:(unsigned long long)arg1;
 - (void)clearErrors;
 - (unsigned long long)errorsCount;
@@ -142,12 +142,12 @@
 - (void)setChunkingInfos:(id)arg1;
 - (void)setRequestErrorDomain:(id)arg1;
 - (void)setCancelledErrorDomain:(id)arg1;
+- (id)clientId;
+- (bool)hasClientId;
 - (void)setClientId:(id)arg1;
-- (id)errors;
-- (bool)hasDuration;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasStartTime;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

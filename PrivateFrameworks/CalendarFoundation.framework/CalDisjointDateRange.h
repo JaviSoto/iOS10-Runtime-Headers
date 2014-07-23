@@ -14,12 +14,12 @@
 + (id)disjointRangeWithDistinctRanges:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (id)addRange:(id)arg1;
 - (void)setDistinctRanges:(id)arg1;
 - (id)subtractDisjointRange:(id)arg1;
 - (id)addDisjointRange:(id)arg1;
 - (double)totalDuration;
 - (id)sortedDistinctRanges;
-- (id)addRange:(id)arg1;
 - (id)distinctRanges;
 - (id)initWithDistinctRanges:(id)arg1;
 - (id)subtractRange:(id)arg1;

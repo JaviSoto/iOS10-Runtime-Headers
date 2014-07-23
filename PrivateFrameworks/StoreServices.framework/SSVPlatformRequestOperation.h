@@ -37,8 +37,8 @@
 
 
 - (void)setItemIdentifiers:(id)arg1;
-- (void)setImageProfile:(id)arg1;
 - (id)_URLBagContext;
+- (void)setImageProfile:(id)arg1;
 - (void)_makeLocalMescalRequest;
 - (void)_makeLocalJSSignRequest;
 - (void)_setUserAgent:(id)arg1;

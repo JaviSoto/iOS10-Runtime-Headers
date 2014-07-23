@@ -7,19 +7,26 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebCoreAuthenticationClientAsChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
     struct AuthenticationClient { int (**x1)(); } *m_client;
     struct _CFURLAuthChallenge { } *m_cfChallenge;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
-- (struct _CFURLAuthChallenge { }*)cfChallenge;
+
 - (void)setCFChallenge:(struct _CFURLAuthChallenge { }*)arg1;
 - (void)detachClient;
 - (id)initWithAuthenticationClient:(struct AuthenticationClient { int (**x1)(); }*)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (struct AuthenticationClient { int (**x1)(); }*)client;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (struct _CFURLAuthChallenge { }*)cfChallenge;
 
 @end

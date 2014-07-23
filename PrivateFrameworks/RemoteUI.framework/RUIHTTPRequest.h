@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSURLRequest, NSURLConnection, NSMutableData;
+@class NSString, NSMutableData, NSURLRequest, NSURLConnection;
 
 @interface RUIHTTPRequest : NSObject <NSURLConnectionDataDelegate> {
     NSURLRequest *_request;
@@ -13,6 +13,10 @@
 }
 
 @property id delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)safeBaseURL;
 + (bool)anyRequestLoading;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKGenericShieldDrawStyle, NSCache, VKResourceManager;
+@class VKResourceManager, NSString, VKGenericShieldDrawStyle, NSCache;
 
 @interface VKGenericShieldGenerator : NSObject <GEOResourceManifestTileGroupObserver> {
     VKGenericShieldDrawStyle *_defaultStyle;
@@ -10,6 +10,11 @@
     unsigned int _tileGroupIdentifier;
     VKResourceManager *_resourceManager;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)newArtworkWithScale:(double)arg1 style:(id)arg2 size:(long long)arg3 numberOfLines:(unsigned long long)arg4;

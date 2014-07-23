@@ -67,6 +67,10 @@
 @property(setter=_setExtensionContexts:,retain) NSMutableDictionary * _extensionContexts;
 @property(getter=_extensionState,setter=_setExtensionState:,copy) NSDictionary * _extensionState;
 @property NSObject<OS_dispatch_queue> * _safePluginQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
 + (id)predicateForActivationRule:(id)arg1;
@@ -84,7 +88,6 @@
 - (void)set_requestPostCompletionBlockWithItems:(id)arg1;
 - (void)set_requestPostCompletionBlock:(id)arg1;
 - (void)_setExtensionBundle:(id)arg1;
-- (void)setRequestInterruptionBlock:(id)arg1;
 - (void)setExtensionPointIdentifier:(id)arg1;
 - (void)setInfoDictionary:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -132,6 +135,7 @@
 - (void)setVersion:(id)arg1;
 - (int)pidForRequestIdentifier:(id)arg1;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(id)arg2;
+- (void)setRequestInterruptionBlock:(id)arg1;
 - (id)extensionPointIdentifier;
 - (void)setRequestCancellationBlock:(id)arg1;
 - (void)setRequestCompletionBlock:(id)arg1;

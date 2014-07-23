@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScreen, NSMutableDictionary, NSDictionary;
+@class UIScreen, NSMutableDictionary, NSString, NSDictionary;
 
 @interface UIKBGraphCache : NSObject <_UIScreenBasedObject> {
     UIScreen *_screen;
@@ -10,6 +10,10 @@
 }
 
 @property(readonly) NSMutableDictionary * graphCache;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScreen * _intendedScreen;
 @property(readonly) NSDictionary * _options;
 

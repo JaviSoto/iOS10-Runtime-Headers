@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAccount, NSError, NSDictionary;
+@class NSString, NSDictionary, NSError, SSAccount;
 
 @interface SSAuthenticateResponse : NSObject <SSXPCCoding> {
     SSAccount *_authenticatedAccount;
@@ -15,6 +15,10 @@
 @property long long authenticateResponseType;
 @property(readonly) NSError * error;
 @property(copy) NSDictionary * responseDictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setResponseDictionary:(id)arg1;

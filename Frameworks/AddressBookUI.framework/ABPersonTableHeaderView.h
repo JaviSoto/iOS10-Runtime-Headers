@@ -37,6 +37,10 @@
 @property(retain) UIView * customMessageView;
 @property(retain) UIView * extraHeaderView;
 @property bool extraHeaderViewAlignsToImage;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setExtraHeaderViewAlignsToImage:(bool)arg1;
@@ -71,6 +75,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageViewFrameWhenEditing:(bool)arg1;
 - (id)customMessageView;
 - (id)messageDetailFont;
+- (id)messageFont;
 - (id)messageDetail;
 - (id)namePropertyGroup;
 - (void)reloadNameDataAnimated:(bool)arg1;
@@ -86,7 +91,6 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (id)messageFont;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (void)setBackgroundColor:(id)arg1;

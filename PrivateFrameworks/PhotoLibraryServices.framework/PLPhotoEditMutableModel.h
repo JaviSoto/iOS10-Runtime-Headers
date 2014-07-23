@@ -55,7 +55,6 @@
 - (void)setSmartBWStatistics:(id)arg1;
 - (void)setColorCastLevelOffset:(double)arg1;
 - (void)setBlackPointLevelOffset:(double)arg1;
-- (void)setEffectFilterVersion:(long long)arg1;
 - (void)loadDataFromModel:(id)arg1;
 - (void)setOffsetInstanceVariable:(double*)arg1 toValue:(double)arg2;
 - (void)performChangesWithBlock:(id)arg1;
@@ -78,6 +77,7 @@
 - (void)setAutoEnhanceIsOn:(bool)arg1;
 - (void)setAutoEnhanceFilters:(id)arg1;
 - (void)setRedEyeCorrections:(id)arg1;
+- (void)setEffectFilterVersion:(long long)arg1;
 - (void)setEffectFilterName:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setRotation:(unsigned long long)arg1;

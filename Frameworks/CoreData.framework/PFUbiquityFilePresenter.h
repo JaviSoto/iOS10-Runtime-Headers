@@ -23,6 +23,10 @@
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSDictionary * locationToStatus;
 @property(readonly) NSDictionary * locationToSafeSaveFile;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 
 + (void)registerInitialSyncHandlerForURL:(id)arg1 andContainerID:(id)arg2 onQueue:(id)arg3 withBlock:(id)arg4;

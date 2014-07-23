@@ -14,6 +14,7 @@
 
 
 - (id)activityAnnotationView;
+- (id)appleActivityURL;
 - (id)activityURL;
 - (id)initWithMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1;

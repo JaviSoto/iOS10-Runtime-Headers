@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface VKRasterTrafficMapModel : VKMapTileModel <VKMapLayer> {
     struct shared_ptr<md::StyleQuery> { 
         struct StyleQuery {} *__ptr_; 
@@ -20,6 +22,11 @@
         } __ptr_; 
     } _trafficManager;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned char)commandBufferId;

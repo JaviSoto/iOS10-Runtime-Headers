@@ -2,11 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSLanguage, UIView, NSArray, PSLocaleSelector, NSString, UISearchDisplayController, UISearchBar, PSLanguageSelector, UITableView;
+@class PSLanguage, UIView, NSArray, PSLocaleSelector, NSString, UISearchBar, UITableView, PSLanguageSelector;
 
-@interface PSInternationalLanguageController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
+@interface PSInternationalLanguageController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
     UISearchBar *_searchBar;
-    UISearchDisplayController *_searchController;
     UITableView *_tableView;
     UIView *_contentView;
     bool_searchIsActive;
@@ -29,13 +28,18 @@
 @property(retain) NSArray * filteredOtherLanguages;
 @property(retain) NSString * savedSearchTerm;
 @property bool searchIsActive;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSearchIsActive:(bool)arg1;
 - (bool)searchIsActive;
 - (id)savedSearchTerm;
+- (void)reloadDataAndScrollToCheckedLanguageWithAnimation:(bool)arg1;
+- (id)filteredLanguagesForLanguageList:(id)arg1 searchString:(id)arg2;
 - (void)doneButtonTapped;
-- (void)reloadDataAndScrollToCheckedRegionWithAnimation:(bool)arg1;
 - (id)checkedLanguage;
 - (id)otherLanguages;
 - (id)deviceLanguages;
@@ -60,9 +64,10 @@
 - (void)cancelButtonTapped;
 - (id)init;
 - (void)dealloc;
-- (bool)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
-- (void)searchDisplayControllerDidEndSearch:(id)arg1;
-- (void)searchDisplayControllerDidBeginSearch:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)searchBarCancelButtonClicked:(id)arg1;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;

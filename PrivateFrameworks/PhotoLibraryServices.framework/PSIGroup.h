@@ -44,6 +44,7 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
+- (id)description;
 - (void)setCategory:(short)arg1;
 - (void)prepareForReuse;
 

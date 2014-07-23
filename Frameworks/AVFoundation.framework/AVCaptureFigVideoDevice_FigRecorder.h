@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormat_FigRecorder, NSObject<OS_dispatch_source>, NSDictionary, NSArray, NSObject<OS_dispatch_queue>, AVWeakReference;
+@class AVWeakReference, NSString, NSArray, NSDictionary, AVCaptureDeviceFormat_FigRecorder, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface AVCaptureFigVideoDevice_FigRecorder : AVCaptureDevice_FigRecorder <MCProfileConnectionObserver> {
     NSDictionary *_deviceProperties;
@@ -96,6 +96,11 @@
     struct OpaqueCMClock { } *_deviceClock;
     AVWeakReference *_weakReference;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_cameraAccessIsEnabled;
 + (id)_devices;

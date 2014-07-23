@@ -90,15 +90,14 @@
 - (void)setFacebookUserID:(id)arg1;
 - (id)facebookUserID;
 - (void)setLastPlayedGame:(id)arg1;
-- (bool)isAnonymousPlayer;
-- (bool)isUnknownPlayer;
-- (bool)isAutomatchPlayer;
 - (void)setCompositeName:(id)arg1;
 - (id)compositeName;
 - (void)setNumberOfAchievements:(unsigned int)arg1;
 - (bool)isFriend;
+- (bool)isAutomatchPlayer;
+- (bool)isAnonymousPlayer;
+- (bool)isUnknownPlayer;
 - (int)defaultFamiliarity;
-- (id)photos;
 - (unsigned short)numberOfTurns;
 - (unsigned short)numberOfChallenges;
 - (unsigned short)numberOfRequests;
@@ -119,6 +118,7 @@
 - (id)lastPlayedDate;
 - (unsigned int)numberOfAchievements;
 - (id)serverRepresentation;
+- (id)photos;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setPhotos:(id)arg1;
 - (id)emailAddresses;

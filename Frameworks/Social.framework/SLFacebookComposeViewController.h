@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SLFacebookPost, ALAssetsLibrary, SLFacebookPlaceManager, ACAccount, SLComposeSheetConfigurationItem, UIViewController<SLFacebookAudienceViewController>, SLFacebookPostPrivacyManager, SLSheetPlaceViewController, SLFacebookVideoOptionsViewController, SLFacebookAlbumManager, CLInUseAssertion, SLFacebookSession, SLFacebookAlbumChooserViewController, ACAccountStore, SLVideoQualityOption;
+@class SLFacebookPost, ALAssetsLibrary, SLFacebookPlaceManager, ACAccount, SLComposeSheetConfigurationItem, UIViewController<SLFacebookAudienceViewController>, SLFacebookPostPrivacyManager, SLSheetPlaceViewController, NSString, SLFacebookVideoOptionsViewController, SLFacebookAlbumManager, CLInUseAssertion, SLFacebookSession, SLFacebookAlbumChooserViewController, ACAccountStore, SLVideoQualityOption;
 
 @interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
     bool_hasAccessToAccount;
@@ -47,6 +47,10 @@
 @property(copy) id completionHandler;
 @property(retain) ACAccountStore * accountStore;
 @property(readonly) ACAccount * privilegedAccount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)serviceBundle;
 

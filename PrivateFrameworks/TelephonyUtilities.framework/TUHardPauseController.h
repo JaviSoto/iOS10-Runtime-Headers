@@ -14,20 +14,23 @@
 @property(readonly) NSString * displayString;
 @property unsigned short state;
 @property(retain) NSString * cachedDisplayString;
-@property unsigned short cachedAppropriateState;
 @property bool cachedValuesAreValid;
+@property unsigned short cachedAppropriateState;
 
 + (id)sharedHardPauseController;
 
 - (id)displayString;
-- (void)sendHardPauseDigits;
-- (void)resetCacheValidity;
 - (void)setCachedDisplayString:(id)arg1;
 - (void)setCachedAppropriateState:(unsigned short)arg1;
 - (bool)cachedValuesAreValid;
 - (unsigned short)cachedAppropriateState;
 - (id)cachedDisplayString;
 - (void)updateCachedValuesIfNecessary;
+- (void)sendHardPauseDigits;
+- (void)resetCacheValidity;
+- (void)sendHardPauseDigitsRelayed;
+- (void)sendHardPauseDigitsLocal;
+- (bool)canQueryHardPauseDigits;
 - (void)setCachedValuesAreValid:(bool)arg1;
 - (void)modelStateChangedNotification:(id)arg1;
 - (void)stopListeningForHardPauseEvents;

@@ -26,11 +26,11 @@
 @property(readonly) long long dataOffset;
 @property(readonly) long long dataStride;
 
-+ (id)geometrySourceWithTextureCoordinates:(struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2;
-+ (id)geometrySourceWithNormals:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
-+ (id)geometrySourceWithVertices:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
-+ (id)dataWithPointArray:(struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
-+ (id)dataWithVector3Array:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
++ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2;
++ (id)geometrySourceWithNormals:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
++ (id)geometrySourceWithVertices:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
++ (id)dataWithPointArray:(const struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
++ (id)dataWithVector3Array:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
 + (id)geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 floatComponents:(bool)arg4 componentsPerVector:(long long)arg5 bytesPerComponent:(long long)arg6 dataOffset:(long long)arg7 dataStride:(long long)arg8;
 + (id)SCNJSExportProtocol;
 + (bool)supportsSecureCoding;

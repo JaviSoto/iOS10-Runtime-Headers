@@ -14,15 +14,15 @@
 - (bool)isWiFiCall;
 - (void)emergencyCallStatusChangedNotification:(id)arg1;
 - (void)_refreshFaceTimeIDSStatus;
-- (bool)canBeRelayed;
 - (bool)allowsTTYSettingChanges;
 - (int)causeCode;
 - (bool)isEmergencyCall;
+- (bool)supportsRelayingAudioOrVideo;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
-- (id)initWithCall:(struct __CTCall { }*)arg1;
-- (bool)isVoicemail;
 - (void)unhold;
 - (void)hold;
+- (id)initWithCall:(struct __CTCall { }*)arg1;
+- (bool)isVoicemail;
 - (bool)isTTY;
 - (bool)managesAudioInterruptions;
 - (double)callDuration;

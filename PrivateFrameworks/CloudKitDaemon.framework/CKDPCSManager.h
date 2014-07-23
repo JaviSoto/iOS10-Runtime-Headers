@@ -2,36 +2,32 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, NSMutableDictionary, NSString, NSOperationQueue, CKDPCSCache, CKDPCSData;
+@class CKDClientContext, NSString, NSMutableDictionary, NSOperationQueue, CKDPCSCache;
 
 @interface CKDPCSManager : NSObject  {
     struct _PCSIdentityData { } *_publicZoneIdentity;
     CKDClientContext *_context;
+    NSString *_currentAccountIdentifier;
     NSOperationQueue *_operationQueue;
     CKDPCSCache *_zoneCache;
     CKDPCSCache *_shareCache;
-    CKDPCSCache *_publicRecordCache;
     NSMutableDictionary *_recordCacheByPrivateZoneID;
     struct _PCSIdentityData { } *_myPCSIdentity;
     NSString *_serviceName;
-    CKDPCSData *_defaultPublicZonePCSData;
 }
 
 @property(readonly) CKDClientContext * context;
+@property(retain) NSString * currentAccountIdentifier;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) CKDPCSCache * zoneCache;
 @property(retain) CKDPCSCache * shareCache;
-@property(retain) CKDPCSCache * publicRecordCache;
 @property(retain) NSMutableDictionary * recordCacheByPrivateZoneID;
 @property struct _PCSIdentityData { }* myPCSIdentity;
 @property(retain) NSString * serviceName;
-@property(readonly) CKDPCSData * defaultPublicZonePCSData;
 
 
-- (id)defaultPublicZonePCSData;
 - (struct _PCSIdentityData { }*)myPCSIdentity;
 - (void)setRecordCacheByPrivateZoneID:(id)arg1;
-- (void)setPublicRecordCache:(id)arg1;
 - (void)setShareCache:(id)arg1;
 - (void)setZoneCache:(id)arg1;
 - (id)referenceSignatureFromAssetKey:(id)arg1;
@@ -43,19 +39,22 @@
 - (void)setPCSData:(id)arg1 forFetchedZoneID:(id)arg2 withScope:(long long)arg3;
 - (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
 - (void)fetchPCSForRecordWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
+- (id)removeWebSharingIdentity:(struct _PCSIdentityData { }*)arg1 fromRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2;
+- (id)addWebSharingIdentity:(struct _PCSIdentityData { }*)arg1 toRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2;
+- (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 webSharingIdentity:(struct _PCSIdentityData { }*)arg2 error:(id*)arg3;
+- (struct _PCSIdentityData { }*)createWebSharingIdentityFromData:(id)arg1 error:(id*)arg2;
 - (id)etagFromRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)repairZonePCSData:(id)arg1 error:(id*)arg2;
 - (id)etagFromZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)referenceIdentifierStringFromAssetKey:(id)arg1;
 - (id)shareCache;
-- (id)publicRecordCache;
 - (id)_newPCSRecordCache;
 - (id)recordCacheByPrivateZoneID;
+- (void)_fetchPCSForRecordWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 zonePCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
 - (id)zoneCache;
-- (id)defaultPublicZonePCSDataWithError:(id*)arg1;
 - (void)_saveNewPCSOnDefaultZone:(id)arg1 operation:(id)arg2 cache:(id)arg3;
 - (struct _OpaquePCSShareProtection { }*)createZonePCSFromData:(id)arg1 error:(id*)arg2;
 - (struct _OpaquePCSShareProtection { }*)createZonePCSWithError:(id*)arg1;
@@ -63,14 +62,16 @@
 - (id)etagFromPCSData:(id)arg1;
 - (id)dataFromZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (struct _PCSIdentityData { }*)copyServiceIdentityWithError:(id*)arg1;
-- (struct _PCSIdentityData { }*)copyPublicZoneIdentity;
 - (void)setMyPCSIdentity:(struct _PCSIdentityData { }*)arg1;
-- (void)_fetchPCSForRecordWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
+- (void)setCurrentAccountIdentifier:(id)arg1;
+- (id)currentAccountIdentifier;
 - (void)_fetchPCSForShareWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (void)_fetchPCSForZoneWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
 - (id)_serviceNameForContainerID:(id)arg1;
 - (id)initWithClientContext:(id)arg1;
 - (void)clearPCSCaches;
+- (id)dataFromWebSharingIdentity:(struct _PCSIdentityData { }*)arg1 error:(id*)arg2;
+- (struct _PCSIdentityData { }*)createWebSharingIdentityWithError:(id*)arg1;
 - (void)setServiceName:(id)arg1;
 - (id)context;
 - (void)dealloc;

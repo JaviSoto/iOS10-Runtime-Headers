@@ -60,8 +60,12 @@
 @property unsigned long long maxImageAttachmentSize;
 @property(retain) SLSheetContentView * contentView;
 @property(retain) NSMutableArray * constraints;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
-+ (bool)_shouldForwardViewWillTransitionToSize;
++ (id)_imageAttachmentLoadDownsamplePreviewQueue;
 + (bool)_preventsAppearanceProxyCustomization;
 
 - (id)autoCompletionViewController;
@@ -99,13 +103,15 @@
 - (void)positionSheetView;
 - (id)sheetActions;
 - (void)animateSheetCancelWithDuration:(double)arg1;
-- (id)previewImageSource;
 - (long long)_previewDisplayFormat;
 - (void)_adjustContentViewIntrinsicHeightForPreviewView;
 - (id)loadPreviewView;
 - (unsigned long long)maxImageAttachmentSize;
+- (id)previewImageSource;
+- (void)_downsampleImageAttachment:(id)arg1;
+- (void)_imageAttachmentDataDidLoad:(id)arg1;
 - (bool)_areAttachmentsReady;
-- (void)downsampleImageAttachment:(id)arg1;
+- (void)_loadImageAttachmentData:(id)arg1;
 - (void)_addAttachment:(id)arg1;
 - (id)contentText;
 - (void)_updateContentViewWithCharactersRemaining;
@@ -125,7 +131,6 @@
 - (void)setServiceIconImage:(id)arg1;
 - (void)setAutoCompletionViewController:(id)arg1;
 - (void)setCharactersRemaining:(id)arg1;
-- (void)setMaxImageAttachmentSize:(unsigned long long)arg1;
 - (bool)wasPresented;
 - (void)presentationAnimationDidFinish;
 - (bool)isContentValid;
@@ -138,11 +143,13 @@
 - (void)reloadConfigurationItems;
 - (void)popConfigurationViewController;
 - (void)pushConfigurationViewController:(id)arg1;
+- (void)setMaxImageAttachmentSize:(unsigned long long)arg1;
 - (void)shouldShowNetworkActivityIndicator:(bool)arg1;
-- (void)setConstraints:(id)arg1;
-- (void)cancelButtonTapped:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
+- (void)cancelButtonTapped:(id)arg1;
+- (void)setConstraints:(id)arg1;
+- (void)addAttachment:(id)arg1;
 - (id)attachments;
 - (id)text;
 - (void)setTitle:(id)arg1;
@@ -155,7 +162,6 @@
 - (void).cxx_destruct;
 - (id)constraints;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)addAttachment:(id)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)_willAppearInRemoteViewController;
 - (id)sheetView;
@@ -164,6 +170,9 @@
 - (void)textViewDidChange:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
@@ -173,7 +182,6 @@
 - (void)setPlaceholder:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)navigationController;
 - (bool)shouldAutorotate;
 - (void)didReceiveMemoryWarning;

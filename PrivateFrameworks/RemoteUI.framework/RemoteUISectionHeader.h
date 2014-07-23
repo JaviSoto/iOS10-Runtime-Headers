@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UILabel, UIImageView;
+@class UILabel, UIImageView, NSString;
 
 @interface RemoteUISectionHeader : UIView <RemoteUITableHeader> {
     UILabel *_headerLabel;
@@ -12,6 +12,11 @@
     int _imageAlignment;
     bool_isFirstSection;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)detailHeaderLabel;

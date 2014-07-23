@@ -45,6 +45,10 @@
 @property(readonly) NSString * regionBasePhoneNumber;
 @property(readonly) NSDictionary * regionServerContext;
 @property(readonly) NSString * profileID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_callRegistrationDelegatesWithBlock:(id)arg1;
@@ -99,6 +103,7 @@
 - (id)pushTopic;
 - (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)device:(id)arg1 nsuuidChanged:(id)arg2;
+- (void)account:(id)arg1 localDeviceRemoved:(id)arg2;
 - (void)account:(id)arg1 localDeviceAdded:(id)arg2;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;

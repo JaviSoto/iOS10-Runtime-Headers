@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID;
+@class NSString, CKRecordID;
 
 @interface CKReference : NSObject <CKRecordValue, NSSecureCoding, NSCopying> {
     unsigned long long _referenceAction;
     CKRecordID *_recordID;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long referenceAction;
 @property(copy) CKRecordID * recordID;
 

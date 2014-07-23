@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock, SUClientInterface, ISURLRequestPerformance, NSSet, SSAuthenticationContext, SUScriptWindowContext, UIWebView, NSMapTable, <SUWebViewManagerDelegate>;
+@class NSLock, SUClientInterface, NSString, ISURLRequestPerformance, NSSet, SSAuthenticationContext, SUScriptWindowContext, UIWebView, NSMapTable, <SUWebViewManagerDelegate>;
 
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate> {
     SSAuthenticationContext *_authenticationContext;
@@ -32,6 +32,10 @@
 @property(retain) id originalPolicyDelegate;
 @property(retain) id originalResourceLoadDelegate;
 @property(retain) id originalUIDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultLocalStoragePath;
 

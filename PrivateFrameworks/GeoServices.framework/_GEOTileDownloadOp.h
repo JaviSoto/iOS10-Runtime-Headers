@@ -38,8 +38,10 @@
     int _attempts;
     double _startTime;
     double _timeout;
+    long long _eTagType;
 }
 
+@property long long eTagType;
 @property(retain) NSURL * url;
 @property(retain) NSString * cachedEtag;
 @property(retain) NSData * cachedData;
@@ -59,6 +61,10 @@
 @property(readonly) bool finished;
 @property double timeout;
 @property GEOSimpleTileRequester * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)requireWiFi;
@@ -77,6 +83,8 @@
 - (void)setEditionHeader:(id)arg1;
 - (id)editionHeader;
 - (void)setRequireWiFi:(bool)arg1;
+- (void)setETagType:(long long)arg1;
+- (long long)eTagType;
 - (id)responseEtag;
 - (unsigned int)tileEdition;
 - (id)localizationTile;

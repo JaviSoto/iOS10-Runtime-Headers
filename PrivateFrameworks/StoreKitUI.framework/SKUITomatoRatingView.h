@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImageView, SKUIAttributedStringView;
+@class UIImageView, NSString, SKUIAttributedStringView;
 
 @interface SKUITomatoRatingView : UIView <SKUIViewElementView> {
     UIImageView *_imageView;
     SKUIAttributedStringView *_labelView;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_tomatoImageForFreshness:(long long)arg1;
 + (id)_attributedStringForRating:(id)arg1 context:(id)arg2;

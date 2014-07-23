@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSData, NSError, NSObject<OS_dispatch_queue>, NSMutableData;
+@class NSString, NSData, NSError, NSObject<OS_dispatch_queue>, NSMutableData;
 
 @interface CKDProtobufResponseBodyParser : NSObject <CKDResponseBodyParser> {
     bool_isParsing;
@@ -21,6 +21,11 @@
     NSData *_parserData;
     NSMutableData *_tailParserData;
     unsigned long long _curObjectLength;
+    struct CC_SHA256state_st { 
+        unsigned int count[2]; 
+        unsigned int hash[8]; 
+        unsigned int wbuf[16]; 
+    } _mescalSignature;
 }
 
 @property Class messageClass;
@@ -31,8 +36,15 @@
 @property(retain) NSMutableData * tailParserData;
 @property unsigned long long curObjectLength;
 @property bool isParsing;
+@property struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; } mescalSignature;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (void)setMescalSignature:(struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })arg1;
+- (struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })mescalSignature;
 - (void)setParseQueue:(id)arg1;
 - (bool)_parseObjects:(bool)arg1;
 - (id)tailParserData;
@@ -40,7 +52,7 @@
 - (bool)isParsing;
 - (id)parseQueue;
 - (void)setTailParserData:(id)arg1;
-- (bool)_parseObjectFromData:(id)arg1;
+- (bool)_parseObjectFromData:(id)arg1 rawData:(id)arg2;
 - (void)setCurObjectLength:(unsigned long long)arg1;
 - (unsigned long long)curObjectLength;
 - (void)setParserData:(id)arg1;

@@ -7,11 +7,18 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebGeolocationProviderInitializationListener : NSObject <WebGeolocationProviderInitializationListener> {
     struct RefPtr<WebCore::Geolocation> { 
         struct Geolocation {} *m_ptr; 
     } m_geolocation;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)initializationDeniedWebView:(id)arg1;

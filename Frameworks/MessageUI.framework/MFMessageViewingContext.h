@@ -61,11 +61,6 @@
 + (bool)isAttachmentTooLarge:(id)arg1;
 + (unsigned long long)nextOffsetForOffset:(unsigned long long)arg1 totalLength:(unsigned long long)arg2 requestedAmount:(unsigned long long)arg3;
 
-- (void)_setSigners:(id)arg1;
-- (id)signers;
-- (bool)isPartial;
-- (id)attachmentManager;
-- (void)cancelLoad;
 - (id)messageAnalysisError;
 - (id)loadedPart;
 - (id)loadTask;
@@ -108,6 +103,11 @@
 - (void)loadMore;
 - (bool)hasLoaded;
 - (id)initWithMessage:(id)arg1 attachmentManager:(id)arg2;
+- (void)_setSigners:(id)arg1;
+- (id)signers;
+- (bool)isPartial;
+- (id)attachmentManager;
+- (void)cancelLoad;
 - (id)messageBody;
 - (id)message;
 - (id)attachments;

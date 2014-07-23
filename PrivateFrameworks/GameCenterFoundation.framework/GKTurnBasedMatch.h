@@ -41,6 +41,10 @@
 @property(readonly) bool isMyTurn;
 @property(readonly) bool localPlayerHasRecentTurn;
 @property(readonly) GKGame * game;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)findMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadMatchWithID:(id)arg1 withCompletionHandler:(id)arg2;

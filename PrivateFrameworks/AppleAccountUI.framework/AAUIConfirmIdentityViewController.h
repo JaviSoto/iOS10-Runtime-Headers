@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UIView, AAUIProfilePictureStore, UIImage, NSValue, UIButton, ACAccount, UIImagePickerController, <AAUIConfirmIdentityViewControllerDelegate>, UILabel, UIScrollView;
+@class UIView, AAUIProfilePictureStore, UIImage, NSString, NSValue, UIButton, ACAccount, UIImagePickerController, <AAUIConfirmIdentityViewControllerDelegate>, UILabel, UIScrollView;
 
 @interface AAUIConfirmIdentityViewController : UIViewController <UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate> {
     ACAccount *_account;
@@ -23,6 +23,10 @@
 }
 
 @property <AAUIConfirmIdentityViewControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_updateViewsInPhotoArea:(id)arg1;

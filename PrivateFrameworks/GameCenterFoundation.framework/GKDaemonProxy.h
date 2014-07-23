@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class <GKDaemonProxyNetworkActivityIndicatorDelegate>, NSXPCConnection, NSDictionary, GKThreadsafeDictionary, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_queue>, <GKDaemonProxyDataUpdateDelegate>;
+@class <GKDaemonProxyNetworkActivityIndicatorDelegate>, NSXPCConnection, NSString, NSDictionary, GKThreadsafeDictionary, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_queue>, <GKDaemonProxyDataUpdateDelegate>;
 
 @interface GKDaemonProxy : NSObject <NSXPCConnectionDelegate, GKClientProtocol> {
     int _hostPID;
@@ -20,6 +20,10 @@
 @property <GKDaemonProxyDataUpdateDelegate> * dataUpdateDelegate;
 @property <GKDaemonProxyNetworkActivityIndicatorDelegate> * networkActivityIndicatorDelegate;
 @property NSXPCConnection * connection;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)accountServicePrivateProxy;
 + (id)analyticsServicePrivateProxy;

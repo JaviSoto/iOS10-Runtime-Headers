@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface SUScriptDocumentInteractionControllerNativeObject : SUScriptNativeObject <UIDocumentInteractionControllerDelegate> {
     bool_didPickApplication;
     bool_isVisible;
@@ -16,6 +18,11 @@
 
     bool_redisplayAfterRotation;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)presentUsingBlock:(id)arg1;

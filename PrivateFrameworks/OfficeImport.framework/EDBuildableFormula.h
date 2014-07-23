@@ -7,10 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface EDBuildableFormula : NSObject <EDFormulaBuilding> {
     struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; boolx8; int x9; unsigned short x10; unsigned short x11; } *mTree;
     int mWarning;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned int)removeOptionalPtgArgs:(unsigned int)arg1 minArgs:(unsigned int)arg2;

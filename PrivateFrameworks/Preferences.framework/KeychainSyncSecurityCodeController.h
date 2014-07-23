@@ -24,6 +24,10 @@
 @property int securityCodeType;
 @property bool showsAdvancedSettings;
 @property(retain) NSString * firstPasscodeEntry;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShowsAdvancedSettings:(bool)arg1;

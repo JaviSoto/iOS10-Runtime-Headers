@@ -11,6 +11,10 @@
     } _userObject;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(getter=isValid,readonly) bool valid;
 @property(readonly) NSObject<NSSecureCoding> * userObject;
 @property(copy) NSString * accessoryViewCustomButtonTitle;

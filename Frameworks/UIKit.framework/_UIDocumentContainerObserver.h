@@ -43,8 +43,8 @@
 - (id)initWithDirectories:(id)arg1 sortDescriptors:(id)arg2 handler:(id)arg3;
 - (void)moveURL:(id)arg1 toURL:(id)arg2;
 - (void)removeURL:(id)arg1;
-- (void)processResults:(id)arg1;
 - (void)addURL:(id)arg1;
+- (void)processResults:(id)arg1;
 - (id)lastSnapshot;
 - (void)setLastSnapshotDate:(id)arg1;
 - (void)setLastSnapshot:(id)arg1;

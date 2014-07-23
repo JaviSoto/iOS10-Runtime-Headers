@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSURL, PFUbiquityLocation, NSOperationQueue;
+@class NSString, PFUbiquityLocation, NSURL, NSOperationQueue;
 
 @interface PFUbiquityMetadataFactoryFilePresenter : NSObject <NSFilePresenter> {
     NSURL *_presentedItemURL;
@@ -11,6 +11,10 @@
 
 @property(readonly) NSURL * presentedItemURL;
 @property(readonly) PFUbiquityLocation * presentedItemLocation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 

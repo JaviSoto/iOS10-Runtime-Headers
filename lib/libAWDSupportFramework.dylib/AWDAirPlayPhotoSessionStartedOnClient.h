@@ -22,13 +22,13 @@
 @property int status;
 
 
+- (bool)hasStatus;
 - (id)sessionUUID;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasStatus;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setHasStatus:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFProceduralWallpaper>, NSDictionary, NSTimer, UIImage;
+@class <SBFProceduralWallpaper>, NSString, NSDictionary, NSTimer, UIImage;
 
 @interface SBFProceduralWallpaperView : SBFWallpaperView <SBFProceduralWallpaperDelegate> {
     <SBFProceduralWallpaper> *_proceduralWallpaper;
@@ -11,15 +11,18 @@
     UIImage *_blur;
     int _thermalNotificationToken;
     bool_pausedForThermalReasons;
-    bool_amAppearing;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_allowsRasterization;
 + (bool)_allowsParallax;
 
 - (void)wallpaper:(id)arg1 didComputeAverageColor:(id)arg2 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)wallpaper:(id)arg1 didGenerateBlur:(void*)arg2 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-- (void)recomputeLegibilitySettings;
 - (void)_sample;
 - (bool)_shouldSampleContinuously;
 - (id)_newImageFromBlurSurface:(void*)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
@@ -39,6 +42,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 proceduralWallpaper:(id)arg2 options:(id)arg3;
 - (bool)_isVisible;
 - (void)invalidate;
+- (id)options;
 - (void)dealloc;
 - (void)layoutSubviews;
 

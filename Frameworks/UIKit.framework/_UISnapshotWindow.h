@@ -5,6 +5,7 @@
 @interface _UISnapshotWindow : UIWindow  {
 }
 
++ (bool)_isSystemWindow;
 
 - (bool)_isSettingFirstResponder;
 - (bool)_canBecomeKeyWindow;

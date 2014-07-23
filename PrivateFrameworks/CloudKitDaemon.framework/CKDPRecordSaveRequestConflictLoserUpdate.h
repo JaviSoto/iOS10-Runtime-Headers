@@ -16,6 +16,7 @@
 - (unsigned long long)conflictLoserEtagsCount;
 - (void)addConflictLoserEtags:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setConflictLoserEtags:(id)arg1;
 - (id)conflictLoserEtags;
 - (bool)readFrom:(id)arg1;

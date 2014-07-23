@@ -20,6 +20,7 @@
 + (void)setCloudEnabledStatus:(BOOL)arg1;
 + (id)descriptorWithIdentifier:(id)arg1;
 + (id)defaultPickerIdentifierForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
++ (id)enabledPickersForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
 + (id)allPickersForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
 + (id)allPickers;
 

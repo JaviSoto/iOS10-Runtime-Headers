@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKComposeHostedViewController, NSString, <GKFriendRequestComposeViewControllerDelegate>;
+@class GKComposeHostedViewController, NSString, <GKFriendRequestComposeViewControllerDelegate>, UIAlertController;
 
 @interface GKFriendRequestComposeViewController : UINavigationController  {
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
     GKComposeHostedViewController *_composeController;
     NSString *_message;
     unsigned long long _recipientCount;
+    UIAlertController *_alertController;
 }
 
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
@@ -16,6 +17,7 @@
 @property(retain) NSString * message;
 @property unsigned long long recipientCount;
 @property unsigned int rid;
+@property(retain) UIAlertController * alertController;
 
 + (unsigned long long)maxNumberOfRecipients;
 + (bool)_preventsAppearanceProxyCustomization;
@@ -38,6 +40,8 @@
 - (id)message;
 - (id)init;
 - (void)dealloc;
+- (id)alertController;
+- (void)setAlertController:(id)arg1;
 - (void)__viewControllerWillBePresented:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;

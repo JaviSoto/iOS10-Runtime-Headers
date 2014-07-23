@@ -34,6 +34,7 @@
 
 
 - (id)cb;
+- (id)targetQueue;
 - (id)hasWorkGroup;
 - (id)schedulerQueue;
 - (id)schedulerDelay;
@@ -41,11 +42,12 @@
 - (id)minHeap;
 - (void)closeSync;
 - (void)_throttleChangedHeapKey:(id)arg1;
+- (void)removeThrottle:(id)arg1;
 - (void)addThrottle:(id)arg1;
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2 workCallback:(id)arg3;
+- (void)unscheduleThrottle:(id)arg1;
 - (void)_scheduleIfNecessaryWhenThrottleChanged:(id)arg1;
 - (void)_schedule;
-- (id)targetQueue;
 - (void)resume;
 - (id)name;
 - (void)suspend;

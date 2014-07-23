@@ -44,6 +44,10 @@
 @property(setter=_setLastPublicURLSectionFooterTitle:,copy) NSString * _lastPublicURLSectionFooterTitle;
 @property(setter=_setLastMultiContributorsSectionFooterTitle:,copy) NSString * _lastMultiContributorsSectionFooterTitle;
 @property bool albumIsFamilyStream;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIsPresentedModally:(bool)arg1;

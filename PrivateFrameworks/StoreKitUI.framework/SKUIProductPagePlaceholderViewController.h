@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, SKUIProductPagePlaceholderScrollView, SKUIColorScheme, SKUIProductPageHeaderViewController, SKUIClientContext, UIActivityIndicatorView, UIScrollView;
+@class NSString, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPagePlaceholderScrollView, SKUIColorScheme, SKUIProductPageHeaderViewController, SKUIClientContext, UIActivityIndicatorView, UIScrollView;
 
 @interface SKUIProductPagePlaceholderViewController : UIViewController <UIScrollViewDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
@@ -16,6 +16,10 @@
 
 @property(retain) SKUIClientContext * clientContext;
 @property(retain) SKUIColorScheme * colorScheme;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScrollView * scrollView;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;

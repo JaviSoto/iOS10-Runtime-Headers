@@ -46,6 +46,7 @@
 
 
 - (id)dismissalID;
+- (id)externalID;
 - (void)setFirstDateAlertedForTravelAdvice:(id)arg1;
 - (id)firstDateAlertedForTravelAdvice;
 - (void)setLastFireTimeOfAlertOffsetFromTravelTime:(id)arg1;
@@ -54,13 +55,12 @@
 - (id)latestTravelAdvice;
 - (bool)isOffsetFromTravelTimeStart;
 - (bool)tentative;
-- (id)eventDate;
 - (id)eventTimeZone;
 - (id)initWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(bool)arg6 tentative:(bool)arg7 entityID:(id)arg8 action:(id)arg9 proximity:(long long)arg10 externalID:(id)arg11 acknowledged:(bool)arg12 dismissalID:(id)arg13 alarmID:(id)arg14 isOffsetFromTravelTimeStart:(bool)arg15;
 - (bool)allDay;
 - (id)alarmID;
 - (bool)acknowledged;
-- (id)externalID;
+- (id)eventDate;
 - (long long)proximity;
 - (id)location;
 - (id)entityID;

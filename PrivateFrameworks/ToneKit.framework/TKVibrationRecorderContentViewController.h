@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class UIAlertView, TKVibratorController, TLVibrationPattern, <TKVibrationRecorderViewControllerDelegate>, TKVibrationRecorderViewController, NSDictionary, UIBarButtonItem, TKVibrationRecorderView;
+@class UIAlertView, TKVibratorController, TLVibrationPattern, <TKVibrationRecorderViewControllerDelegate>, TKVibrationRecorderViewController, NSString, NSDictionary, UIBarButtonItem, TKVibrationRecorderView;
 
 @interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
     bool_waitingForEndOfCurrentVibrationComponent;
@@ -33,6 +33,10 @@
 @property(setter=_setVibrationNameAlertView:,retain) UIAlertView * _vibrationNameAlertView;
 @property(setter=_setVibratorController:,retain) TKVibratorController * _vibratorController;
 @property(setter=_setIndefiniteVibrationPattern:,retain) NSDictionary * _indefiniteVibrationPattern;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setParentVibrationRecorderViewController:(id)arg1;
@@ -74,9 +78,9 @@
 - (void)_setCancelButton:(id)arg1;
 - (void)_saveButtonTapped:(id)arg1;
 - (void)_setVibratorController:(id)arg1;
+- (void)_cancelButtonTapped:(id)arg1;
 - (id)_saveButton;
 - (void)_setSaveButton:(id)arg1;
-- (void)_cancelButtonTapped:(id)arg1;
 - (int)_mode;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

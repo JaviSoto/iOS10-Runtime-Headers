@@ -12,6 +12,10 @@
 @property <_SBUIWidgetHost> * widgetHost;
 @property(copy) NSString * widgetIdentifier;
 @property(readonly) struct CGSize { double x1; double x2; } preferredViewSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setWidgetHost:(id)arg1;

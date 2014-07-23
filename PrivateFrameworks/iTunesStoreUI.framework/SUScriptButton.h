@@ -24,6 +24,10 @@
 @property long long tag;
 @property(retain) NSString * title;
 @property(retain) WebScriptObject * target;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -46,10 +50,10 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)showingConfirmation;
+- (void)setLoading:(bool)arg1;
+- (bool)loading;
 - (id)canvas;
 - (void)setCanvas:(id)arg1;
-- (bool)loading;
-- (void)setLoading:(bool)arg1;
 - (bool)shouldPerformDefaultAction;
 - (bool)enabled;
 - (id)action;

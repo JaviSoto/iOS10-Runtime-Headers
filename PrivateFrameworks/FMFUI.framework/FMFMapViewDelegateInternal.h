@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class <FMFMapViewDelegateInternalDelegate>, FMFWildcardGestureRecognizer;
+@class NSString, <FMFMapViewDelegateInternalDelegate>, FMFWildcardGestureRecognizer;
 
 @interface FMFMapViewDelegateInternal : NSObject <MKMapViewDelegate> {
     bool_respondingToUserTouch;
@@ -13,10 +13,15 @@
 @property <FMFMapViewDelegateInternalDelegate> * delegate;
 @property bool respondingToUserTouch;
 @property(retain) FMFWildcardGestureRecognizer * gr;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)gr;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsWithMinApplied:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)regionIsValid:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_moveCenterByOffset:(struct CGPoint { double x1; double x2; })arg1 from:(struct { double x1; double x2; })arg2 mapView:(id)arg3;
 - (id)fmfOverlayColor;
 - (id)fmfOverlayColorSatellite;

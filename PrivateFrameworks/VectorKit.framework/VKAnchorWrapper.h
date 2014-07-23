@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAnchor, VKLayoutContext, MDDisplayLayer;
+@class MDDisplayLayer, NSString, VKLayoutContext, VKAnchor;
 
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
     VKAnchor *_anchor;
@@ -24,6 +24,10 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property bool followsTerrain;
 @property MDDisplayLayer * displayLayer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)displayLayer;

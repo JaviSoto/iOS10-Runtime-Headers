@@ -17,6 +17,11 @@
     NSMutableDictionary *_parentFactoriesBySectionID;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (void)initialize;
 
 - (void)ping:(id)arg1;

@@ -29,6 +29,7 @@
 @property(retain) NSString * name;
 
 
+- (bool)hasContents;
 - (id)zooms;
 - (bool)hasProperties;
 - (void)setInherits:(unsigned int*)arg1 count:(unsigned long long)arg2;
@@ -44,11 +45,11 @@
 - (void)addZooms:(id)arg1;
 - (void)addAttributes:(id)arg1;
 - (void)setZooms:(id)arg1;
-- (bool)hasContents;
 - (void)clearAttributes;
 - (unsigned long long)attributesCount;
 - (bool)hasName;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;

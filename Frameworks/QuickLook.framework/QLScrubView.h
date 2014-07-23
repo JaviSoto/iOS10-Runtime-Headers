@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLThumbnailView, <QLScrubViewDataSource>, NSMutableDictionary, QLPageNumberView, NSOperationQueue, NSMutableSet, NSMutableArray;
+@class QLThumbnailView, NSString, <QLScrubViewDataSource>, NSMutableDictionary, QLPageNumberView, NSOperationQueue, NSMutableSet, NSMutableArray;
 
 @interface QLScrubView : UIView <UIGestureRecognizerDelegate> {
     <QLScrubViewDataSource> *_dataSource;
@@ -25,6 +25,10 @@
 @property <QLScrubViewDataSource> * dataSource;
 @property id delegate;
 @property bool runOnMainThread;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)defaultWidth;
 

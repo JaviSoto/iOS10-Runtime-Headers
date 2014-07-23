@@ -5,7 +5,7 @@
 @interface BRCSyncOperationThrottleParams : NSObject  {
     double minWait;
     double maxWait;
-    double deltaOnSuccess;
+    double ratioOnSuccess;
     double ratioOnFailure;
     double inactivityKickbackDelay;
     double inactivityKickbackRatio;
@@ -13,7 +13,7 @@
 
 @property double minWait;
 @property double maxWait;
-@property double deltaOnSuccess;
+@property double ratioOnSuccess;
 @property double ratioOnFailure;
 @property double inactivityKickbackDelay;
 @property double inactivityKickbackRatio;
@@ -22,7 +22,7 @@
 - (void)setInactivityKickbackRatio:(double)arg1;
 - (void)setInactivityKickbackDelay:(double)arg1;
 - (void)setRatioOnFailure:(double)arg1;
-- (void)setDeltaOnSuccess:(double)arg1;
+- (void)setRatioOnSuccess:(double)arg1;
 - (void)setMaxWait:(double)arg1;
 - (void)setMinWait:(double)arg1;
 - (id)initWithParams:(id)arg1 defaults:(id)arg2;
@@ -30,8 +30,8 @@
 - (double)doubleForKey:(id)arg1 inParams:(id)arg2 defaults:(id)arg3;
 - (double)maxWait;
 - (double)ratioOnFailure;
+- (double)ratioOnSuccess;
 - (double)inactivityKickbackRatio;
-- (double)deltaOnSuccess;
 - (double)inactivityKickbackDelay;
 - (double)minWait;
 - (bool)check;

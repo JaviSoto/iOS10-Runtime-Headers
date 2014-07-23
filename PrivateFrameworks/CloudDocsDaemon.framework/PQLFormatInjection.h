@@ -2,19 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSMutableArray;
+@class NSString, NSMutableArray, NSData;
 
-@interface PQLFormatInjection : NSObject <PQLInjecting> {
+@interface PQLFormatInjection : PQLNameInjectionBase <PQLInjecting> {
     NSMutableArray *_binds;
-    NSData *_sql;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSData * sql;
 
 + (id)formatInjection:(id)arg1;
 
 - (int)bindWithStatement:(struct sqlite3_stmt { }*)arg1 startingAtIndex:(int)arg2;
-- (id)sql;
 - (id)initWithFormat:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;
 - (void).cxx_destruct;
 - (id)description;

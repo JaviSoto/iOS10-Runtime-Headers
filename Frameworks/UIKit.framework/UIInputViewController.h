@@ -15,6 +15,10 @@
 @property(copy) NSString * primaryLanguage;
 @property(readonly) UIKeyboard * _keyboard;
 @property bool _alignsToContentViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_requiresProxyInterface;
 
@@ -25,10 +29,11 @@
 - (void)requestSupplementaryLexiconWithCompletion:(id)arg1;
 - (void)returnToPreviousInputMode;
 - (void)advanceToNextInputMode;
+- (bool)_shouldForwardSystemLayoutFittingSizeChanges;
 - (id)extensionContext;
 - (void)_setTextDocumentProxy:(id)arg1;
-- (id)_textDocumentInterface;
 - (id)textDocumentProxy;
+- (id)_textDocumentInterface;
 - (id)_proxyInterface;
 - (void)_setupInputController;
 - (void)_didResetDocumentState;
@@ -42,6 +47,7 @@
 - (id)_compatibilityController;
 - (void)setInputView:(id)arg1;
 - (id)inputView;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)_setExtensionContext:(id)arg1;
 - (void)viewDidLoad;
 - (void)textDidChange:(id)arg1;

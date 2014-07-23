@@ -28,6 +28,10 @@
 @property struct CGSize { double x1; double x2; } offset;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } concaveInsets;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool isValid;
 @property(readonly) bool renderUnder;
 @property(readonly) SEL renderSelector;

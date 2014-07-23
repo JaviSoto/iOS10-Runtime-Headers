@@ -28,6 +28,7 @@
 - (bool)hasToken;
 - (bool)hasBundleIdentifier;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

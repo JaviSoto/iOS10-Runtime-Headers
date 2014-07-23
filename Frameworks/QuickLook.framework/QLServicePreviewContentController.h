@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class _UIHostedWindow, NSMutableDictionary, QLRemotePrintPageHelper, <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, QLPreviewContentController;
+@class NSString, <QLPreviewContentDelegate>, NSMutableDictionary, QLPreviewContentController, _UIHostedWindow, <QLPreviewContentDataSource>, <QLRemotePrintPageHelper>;
 
 @interface QLServicePreviewContentController : UIViewController <QLRemotePreviewContentControllerProtocol, QLPreviewContentDataSource, QLPreviewContentDelegate> {
     NSMutableDictionary *_previewItemCache;
@@ -12,7 +12,7 @@
     int _previewMode;
     bool_remoteInstantiationFinished;
     bool_blockRemoteImages;
-    QLRemotePrintPageHelper *_printPageHelper;
+    <QLRemotePrintPageHelper> *_printPageHelper;
     struct CGSize { 
         double width; 
         double height; 
@@ -21,6 +21,10 @@
 }
 
 @property(readonly) long long sourceUUID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <QLPreviewContentDataSource> * dataSource;
 @property <QLPreviewContentDelegate> * delegate;
 @property int previewMode;
@@ -31,8 +35,8 @@
 - (id)_remotePreviewItemAtIndex:(long long)arg1;
 - (void)_updateHostedWindowFrame;
 - (long long)sourceUUID;
-- (void)_getPDFPageAtIndex:(long long)arg1 size:(struct CGSize { double x1; double x2; })arg2 handler:(id)arg3;
-- (void)_prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_getPDFPageAtIndex:(long long)arg1 handler:(id)arg2;
+- (void)_prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_getNumberOfPagesForSize:(struct CGSize { double x1; double x2; })arg1 withHandler:(id)arg2;
 - (void)_setTransitioning:(bool)arg1;
 - (void)_setNumberOfPreviewItems:(long long)arg1;
@@ -68,6 +72,7 @@
 - (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)becomeForeground;
 - (void)enterBackground;
+- (void)stopLoadingCurrentPreviewItem;
 - (long long)numberOfPreviewItems;
 - (void)refreshCurrentPreviewItem;
 - (void)checkCurrentPreviewItem;

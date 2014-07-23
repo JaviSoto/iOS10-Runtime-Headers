@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MPAVItem, MPViewController, MPTransitionController, UIView, MPAVController;
+@class MPAVItem, NSString, MPViewController, MPTransitionController, UIView, MPAVController;
 
 @interface MPViewController : UIViewController <MPControllerProtocol, MPAVControllerNode> {
     id _delegate;
@@ -32,6 +32,10 @@
 @property(copy) id popViewControllerHandler;
 @property bool observesApplicationSuspendResumeEventsOnly;
 @property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) bool idleTimerDisabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(retain) MPAVItem * item;
 @property long long orientation;

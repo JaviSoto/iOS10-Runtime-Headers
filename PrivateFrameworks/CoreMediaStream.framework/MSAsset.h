@@ -42,6 +42,10 @@
 @property(retain) NSData * fileHash;
 @property(retain) NSString * type;
 @property unsigned long long protocolFileSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) NSString * MMCSUTI;
 @property unsigned long long MMCSItemID;
 @property(retain) NSData * MMCSHash;
@@ -109,6 +113,7 @@
 - (unsigned long long)_fileSize;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
+- (id)path;
 - (void)setUserInfo:(id)arg1;
 - (id)GUID;
 - (bool)isVideo;
@@ -119,7 +124,6 @@
 - (void)setType:(id)arg1;
 - (id)type;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;

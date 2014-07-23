@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class CUIStyleEffectConfiguration, NSTextContainer, CUICatalog, NSConcreteNotifyingMutableAttributedString, NSLayoutManager;
+@class NSString, CUIStyleEffectConfiguration, NSTextContainer, CUICatalog, NSConcreteNotifyingMutableAttributedString, NSLayoutManager;
 
 @interface NSStringDrawingTextStorage : NSTextStorage <NSLayoutManagerDelegate> {
     NSConcreteNotifyingMutableAttributedString *_contents;
@@ -26,6 +26,10 @@
 @property(retain) CUIStyleEffectConfiguration * cuiStyleEffects;
 @property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) bool usesSimpleTextEffects;
 @property double defaultTighteningFactor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)stringDrawingTextStorage;
 + (bool)_hasCustomSettings;

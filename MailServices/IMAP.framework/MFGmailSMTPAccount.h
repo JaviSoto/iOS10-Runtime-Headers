@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/MailServices/IMAP.framework/IMAP
  */
 
-@class GmailAccount;
+@class GmailAccount, NSString;
 
 @interface MFGmailSMTPAccount : SMTPAccount <MFGmailAccountClientTokenProtocol> {
     GmailAccount *_account;
 }
 
 @property(getter=mailAccountIfAvailable,retain) GmailAccount * mailAccount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)accountTypeIdentifier;
 

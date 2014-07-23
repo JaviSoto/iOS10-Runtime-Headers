@@ -66,7 +66,6 @@
 - (void)setRaw:(bool)arg1;
 - (bool)isRaw;
 - (void)setHasMetadata:(bool)arg1;
-- (void)setHasThumbnail:(bool)arg1;
 - (bool)fetchingMetadata;
 - (bool)fetchingThumbnail;
 - (struct CGImage { }*)originalThumbnail;
@@ -74,6 +73,7 @@
 - (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
 - (void)setFetchingMetadata:(bool)arg1;
 - (void)setFetchingThumbnail:(bool)arg1;
+- (void)setHasThumbnail:(bool)arg1;
 - (id)sidecarFiles;
 - (void)setFileSize:(long long)arg1;
 - (unsigned long long)orientation;

@@ -99,6 +99,7 @@
 - (void)_modifyLocalReadingListAttributes:(id)arg1;
 - (void)_modifyExtraReadingListAttributes:(id)arg1;
 - (id)_readingListPropertyNamed:(id)arg1;
+- (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1 hasIcon:(bool)arg2;
 - (id)initReadingListBookmarkWithTitle:(id)arg1 address:(id)arg2 previewText:(id)arg3;
 - (void)_setSyncable:(bool)arg1;
 - (void)_setInserted:(bool)arg1;
@@ -142,13 +143,13 @@
 - (void)setSyncData:(id)arg1;
 - (id)syncData;
 - (void)setSyncKey:(id)arg1;
+- (unsigned int)parentID;
 - (void)setServerID:(id)arg1;
 - (void)_markSpecial:(unsigned int)arg1;
 - (id)initFolderWithParentID:(unsigned int)arg1;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
 - (id)syncKey;
 - (id)serverID;
-- (unsigned int)parentID;
 - (void)setAddress:(id)arg1;
 - (void)setExtraAttributes:(id)arg1;
 - (bool)isInserted;

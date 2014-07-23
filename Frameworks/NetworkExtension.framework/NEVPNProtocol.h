@@ -65,6 +65,7 @@
 - (id)passwordReference;
 - (void)setPasswordReference:(id)arg1;
 - (void)initDisconnectOptions:(id)arg1;
+- (void)syncWithKeychainInDomainCommon:(long long)arg1;
 - (id)identityReferenceInternal;
 - (void)setIdentityReferenceInternal:(id)arg1;
 - (long long)keychainDomain;

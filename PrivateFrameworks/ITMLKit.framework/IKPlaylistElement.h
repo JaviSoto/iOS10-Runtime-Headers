@@ -5,17 +5,14 @@
 @class NSArray, IKAppPlayer;
 
 @interface IKPlaylistElement : IKViewElement  {
-    IKAppPlayer *_player;
 }
 
 @property(retain,readonly) NSArray * items;
 @property(retain,readonly) IKAppPlayer * player;
 
++ (id)supportedFeatures;
 
-- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (id)features;
 - (id)items;
 - (id)player;
-- (void).cxx_destruct;
 
 @end

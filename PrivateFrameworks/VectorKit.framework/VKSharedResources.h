@@ -21,6 +21,21 @@
         struct Device {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _device;
+    struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas> > { 
+        struct __compressed_pair<ggl::AlphaAtlas *, std::__1::default_delete<ggl::AlphaAtlas> > { 
+            struct AlphaAtlas {} *__first_; 
+        } __ptr_; 
+    } _alphaAtlas;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+            struct IsoAlphaAtlas {} *__first_; 
+        } __ptr_; 
+    } _highInflationAlphaAtlas;
+    struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+        struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
+            struct IsoAlphaAtlas {} *__first_; 
+        } __ptr_; 
+    } _isoAlphaAtlas;
 }
 
 @property(readonly) VKIconManager * iconManager;
@@ -30,6 +45,9 @@
 @property(readonly) VKStylesheetVendor * stylesheetVendor;
 @property(readonly) VKTrafficIncidentImageManager * trafficIncidentImageManager;
 @property(readonly) struct Device { int (**x1)(); int x2; }* device;
+@property(readonly) struct AlphaAtlas { unsigned int x1; boolx2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }* alphaAtlas;
+@property(readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }* highInflationAlphaAtlas;
+@property(readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }* isoAlphaAtlas;
 
 + (id)sharedResourcesForTileGroupIdentifier:(unsigned int)arg1;
 
@@ -39,6 +57,9 @@
 - (id)gglTextureManager;
 - (id)shieldManager;
 - (id)iconManager;
+- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)isoAlphaAtlas;
+- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)highInflationAlphaAtlas;
+- (struct AlphaAtlas { unsigned int x1; boolx2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*)alphaAtlas;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1;
 - (struct Device { int (**x1)(); int x2; }*)device;
 - (void)dealloc;

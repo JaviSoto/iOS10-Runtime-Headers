@@ -30,11 +30,26 @@
     } fBaseAltimeterSample;
     float fBarometricBaseAltitude;
     boolfBaselineReceived;
+    struct deque<float, std::__1::allocator<float> > { 
+        struct __split_buffer<float *, std::__1::allocator<float *> > { 
+            float **__first_; 
+            float **__begin_; 
+            float **__end_; 
+            struct __compressed_pair<float **, std::__1::allocator<float *> > { 
+                float **__first_; 
+            } __end_cap_; 
+        } __map_; 
+        unsigned long long __start_; 
+        struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
+            unsigned long long __first_; 
+        } __size_; 
+    } fPressureSamples;
 }
 
 
-- (id)initWithInfo:(id)arg1;
+- (id)init;
 - (void)dealloc;
+- (void).cxx_destruct;
 - (id).cxx_construct;
 
 @end

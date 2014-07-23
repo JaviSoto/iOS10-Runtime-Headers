@@ -21,9 +21,9 @@
 - (unsigned long long)countLimit;
 - (void)setCountLimit:(unsigned long long)arg1;
 - (void)setTotalCostLimit:(unsigned long long)arg1;
+- (void)setEvictsObjectsWithDiscardedContent:(bool)arg1;
 - (id)init;
 - (bool)evictsObjectsWhenApplicationEntersBackground;
-- (void)setEvictsObjectsWithDiscardedContent:(bool)arg1;
 - (unsigned long long)totalCostLimit;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned long long)arg3;
 - (bool)evictsObjectsWithDiscardedContent;

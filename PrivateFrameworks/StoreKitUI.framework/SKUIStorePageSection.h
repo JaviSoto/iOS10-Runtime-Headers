@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIPageComponent, SKUIProductPageOverlayController, NSArray, NSIndexPath, SKUIStorePageSectionContext;
+@class SKUIPageComponent, SKUIProductPageOverlayController, NSArray, NSString, NSIndexPath, SKUIStorePageSectionContext;
 
 @interface SKUIStorePageSection : NSObject <SKUIProductPageOverlayDelegate> {
     bool_bottomSection;
@@ -25,6 +25,10 @@
 @property(readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionContentInset;
 @property(readonly) NSIndexPath * firstAppearanceIndexPath;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -47,9 +51,9 @@
 - (bool)isTopSection;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (long long)applyUpdateType:(long long)arg1;
-- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)scrollToElementWithIndexBarEntryID:(id)arg1 relativeSectionIndex:(long long)arg2 animated:(bool)arg3;
 - (bool)containsElementWithIndexBarEntryID:(id)arg1;
+- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)firstAppearanceIndexPath;

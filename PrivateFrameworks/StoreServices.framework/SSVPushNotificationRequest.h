@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSVPushNotificationParameters;
+@class NSString, SSVPushNotificationParameters;
 
 @interface SSVPushNotificationRequest : SSRequest <SSXPCCoding> {
     SSVPushNotificationParameters *_parameters;
 }
 
 @property(copy) SSVPushNotificationParameters * pushNotificationParameters;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPushNotificationParameters:(id)arg1;

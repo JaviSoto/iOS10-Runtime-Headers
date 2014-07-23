@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateGridCollectionViewControllerDelegate>, UIView, NSArray, UIKBCandidateCollectionView, TIKeyboardCandidateResultSet, UIKeyboardCandidateGridLayout, UIButton, <UIKeyboardCandidateListDelegate>, UIKeyboardCandidateGridCollectionView;
+@class <UIKeyboardCandidateGridCollectionViewControllerDelegate>, UIView, NSArray, UIKBCandidateCollectionView, TIKeyboardCandidateResultSet, UIKeyboardCandidateGridLayout, UIButton, <UIKeyboardCandidateListDelegate>, NSString, UIKeyboardCandidateGridCollectionView;
 
 @interface UIKeyboardCandidateGridCollectionViewController : UIViewController <UICollectionViewDataSource, UIKeyboardCandidateList, UIKeyboardCandidateGridLayoutDelegate> {
     bool_alwaysShowExtensionCandidates;
@@ -54,6 +54,10 @@
 @property bool supportsNumberKeySelection;
 @property bool secondaryCandidatesViewIsCurrent;
 @property bool _usesDeemphasizedTextAppearance;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)currentIndex;

@@ -16,6 +16,10 @@
 @property(readonly) long long width;
 @property(readonly) NSURL * URL;
 @property(getter=_lookupDictionary,readonly) NSDictionary * _lookupDictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

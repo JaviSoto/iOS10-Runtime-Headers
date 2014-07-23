@@ -90,8 +90,8 @@
 - (id)categoryString;
 - (id)editorialBadgeString;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setClientContext:(id)arg1;
 - (void)setIconImage:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (id)releaseDateString;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;

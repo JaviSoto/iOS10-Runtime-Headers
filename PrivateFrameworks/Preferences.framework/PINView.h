@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel, <PSPINEntryViewDelegate>, FailureBarView;
+@class NSString, <PSPINEntryViewDelegate>, UILabel, FailureBarView;
 
 @interface PINView : UIView <PINEntryView> {
     UILabel *_titleLabel;
@@ -13,6 +13,11 @@
     <PSPINEntryViewDelegate> *_delegate;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)notifyDelegatePINEntered;
 - (void)notifyDelegatePINChanged;
@@ -20,6 +25,8 @@
 - (void)hidePasscodeField:(bool)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;
 - (void)showError:(id)arg1 animate:(bool)arg2;
+- (void)setTextFieldKeyboardAppearance:(long long)arg1;
+- (void)setTextFieldKeyboardType:(long long)arg1;
 - (void)setPINPolicyString:(id)arg1 visible:(bool)arg2;
 - (void)hideError;
 - (void)hideFailedAttempts;

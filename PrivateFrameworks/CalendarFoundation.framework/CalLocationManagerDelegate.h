@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, CLLocation;
+@class NSObject<OS_dispatch_source>, NSString, NSObject<OS_dispatch_queue>, CLLocation;
 
 @interface CalLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
     NSObject<OS_dispatch_source> *_timer;
@@ -23,6 +23,10 @@
 @property(retain) CLLocation * currentLocation;
 @property(copy) id completionBlock;
 @property bool didFinish;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDidFinish:(bool)arg1;

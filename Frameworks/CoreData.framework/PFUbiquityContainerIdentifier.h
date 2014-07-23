@@ -19,6 +19,10 @@
 @property(readonly) bool usedExistingUUIDFile;
 @property(readonly) NSURL * presentedItemURL;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;
 
 

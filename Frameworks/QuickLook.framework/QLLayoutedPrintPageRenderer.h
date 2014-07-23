@@ -4,14 +4,14 @@
 
 @class UIWebPaginationInfo, NSMutableArray;
 
-@interface QLLayoutedPrintPageRenderer : QLRemotePrintPageHelper  {
+@interface QLLayoutedPrintPageRenderer : QLWebViewPrintPageHelper  {
     NSMutableArray *_nodes;
     UIWebPaginationInfo *_paginationInfo;
 }
 
 
 - (id)_currentNodes;
-- (id)pdfDataForPageAtIndex:(long long)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 printingDone:(bool*)arg3;
+- (id)pdfDataForPageAtIndex:(long long)arg1 printingDone:(bool*)arg2;
 - (id)_htmlPageXPath;
 - (void)dealloc;
 - (void)prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

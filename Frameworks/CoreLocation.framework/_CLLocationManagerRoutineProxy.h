@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class CLLocationManagerRoutine, NSXPCConnection, NSObject<OS_dispatch_queue>, <CLLocationManagerDelegate>;
+@class CLLocationManagerRoutine, NSXPCConnection, NSString, NSObject<OS_dispatch_queue>, <CLLocationManagerDelegate>;
 
 @interface _CLLocationManagerRoutineProxy : NSObject <CLLocationManagerRoutineClientInterface> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -16,6 +16,10 @@
 @property <CLLocationManagerDelegate> * delegate;
 @property CLLocationManagerRoutine * locationManagerRoutine;
 @property bool updating;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setUpdating:(bool)arg1;

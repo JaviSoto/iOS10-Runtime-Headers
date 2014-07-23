@@ -41,6 +41,7 @@
 - (void)_enableWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_getAccountInfoWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (id)_CreateSecureBackupConnection:(id)arg1;
+- (id)syncQueue;
 - (id)changeSMSTargetWithInfo:(id)arg1;
 - (void)enableWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (void)disableWithInfo:(id)arg1 completionBlock:(id)arg2;
@@ -49,7 +50,6 @@
 - (id)enableWithInfo:(id)arg1;
 - (id)disableWithInfo:(id)arg1;
 - (id)getAccountInfoWithInfo:(id)arg1 results:(id*)arg2;
-- (id)syncQueue;
 - (id)replyQueue;
 - (void)setReplyQueue:(id)arg1;
 - (void).cxx_destruct;

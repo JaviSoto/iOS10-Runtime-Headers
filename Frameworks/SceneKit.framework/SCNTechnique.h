@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNOrderedDictionary, NSMutableDictionary, NSDictionary;
+@class NSMutableDictionary, NSDictionary, NSString, SCNOrderedDictionary;
 
 @interface SCNTechnique : NSObject <SCNAnimatable, NSCopying, NSSecureCoding> {
     id _reserved;
@@ -13,6 +13,10 @@
 }
 
 @property(readonly) NSDictionary * dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)techniqueWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;
 + (id)techniqueBySequencingTechniques:(id)arg1;

@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
+@class NSString;
+
 @interface UIPDFParserDelegate : NSObject <NSXMLParserDelegate> {
     struct CGPoint { 
         double x; 
@@ -13,10 +15,14 @@
 
 @property(readonly) struct CGPath { }* path;
 @property(readonly) bool parserError;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (id)init;
 - (struct CGPath { }*)path;
+- (id)init;
 - (void)dealloc;
 - (void)parserDidStartDocument:(id)arg1;
 - (bool)parserError;

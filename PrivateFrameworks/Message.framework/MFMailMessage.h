@@ -13,13 +13,17 @@
 
 @property unsigned long long modSequenceNumber;
 
-+ (unsigned int)displayablePriorityForPriority:(int)arg1;
-+ (unsigned int)validatePriority:(int)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(bool)arg1;
 + (Class)dataMessageStoreToUse;
++ (unsigned int)displayablePriorityForPriority:(int)arg1;
++ (unsigned int)validatePriority:(int)arg1;
 
 - (void)setModSequenceNumber:(unsigned long long)arg1;
-- (unsigned long long)relationToMessage:(id)arg1;
+- (id)loadMeetingExternalID;
+- (id)loadMeetingMetadata;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
+- (id)messageStore;
 - (bool)shouldSetSummary;
 - (id)mailMessageStore;
 - (id)subjectAndPrefixLength:(unsigned int*)arg1;
@@ -45,11 +49,6 @@
 - (unsigned short)numberOfAttachments;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (unsigned long long)messageFlags;
-- (id)loadMeetingExternalID;
-- (id)loadMeetingMetadata;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
-- (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
-- (id)messageStore;
 - (id)account;
 - (void)setSubject:(id)arg1;
 - (id)subject;

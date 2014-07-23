@@ -45,6 +45,7 @@
     bool_swipeDetected;
     bool_showIntlKey;
     bool_showDictationKey;
+    bool_suppressDeactivateKeys;
     bool_shiftLockReady;
     double _shiftLockFirstTapTime;
     UISwipeGestureRecognizer *_rightSwipeRecognizer;
@@ -203,6 +204,7 @@
 - (long long)currentKeyboardBias;
 - (void)finishHandBiasTransition;
 - (id)keyboardLayoutWithBias:(long long)arg1;
+- (long long)biasForKeyboard:(id)arg1;
 - (void)setKeyboardDim:(bool)arg1 amount:(double)arg2 withDuration:(double)arg3;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (void)showMenu:(id)arg1 forKey:(id)arg2;

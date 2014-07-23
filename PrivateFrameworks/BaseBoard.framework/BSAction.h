@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_source>, BSSettings, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+@class NSObject<OS_dispatch_source>, NSString, BSSettings, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
 @interface BSAction : NSObject <BSXPCCoding, BSSettingDescriptionProvider> {
     BSSettings *_info;
@@ -27,6 +27,10 @@
 }
 
 @property(copy,readonly) BSSettings * info;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)info;

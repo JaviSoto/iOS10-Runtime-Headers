@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMapTable, GEOPhoneNumberMUIDMapper, NSMutableSet, GEOPlaceDataCache, NSLock, NSMutableOrderedSet;
+@class NSLock, NSString, GEOPhoneNumberMUIDMapper, GEOPlaceDataCache, NSMutableSet, NSMutableOrderedSet, NSMapTable;
 
 @interface GEOPlaceDataLocalProxy : NSObject <GEOPlaceDataProxy> {
     NSMapTable *_pendingRequests;
@@ -13,18 +13,25 @@
     NSMutableOrderedSet *_placeHashes;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)_trackPlaceData:(id)arg1 forGeocodingParameters:(id)arg2;
 - (id)_cachedPlaceForGeocodingParameters:(id)arg1;
-- (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2;
+- (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2 shouldOptimizeWritesToDisk:(bool)arg3;
 - (void)startRequest:(id)arg1 traits:(id)arg2 finished:(id)arg3 networkActivity:(id)arg4 error:(id)arg5;
 - (long long)_invalidationStateForPlace:(id)arg1;
+- (void)_callHistoryRecentsClearedObserver:(id)arg1;
 - (void)cancelRequest:(id)arg1;
 - (void)calculateFreeableSpaceWithHandler:(id)arg1;
+- (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 requesterHandler:(id)arg3;
 - (void)trackPlaceData:(id)arg1;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(id)arg1;
-- (void)requestPhoneNumbers:(id)arg1 traits:(id)arg2 requesterHandler:(id)arg3;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3 requesterHandler:(id)arg4;
 - (void)requestMUIDs:(id)arg1 includeETA:(bool)arg2 traits:(id)arg3 requesterHandler:(id)arg4;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2;
 - (id)init;

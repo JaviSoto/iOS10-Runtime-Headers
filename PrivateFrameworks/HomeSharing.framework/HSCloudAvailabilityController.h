@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSObject<OS_dispatch_queue>, RadiosPreferences;
+@class NSObject<OS_dispatch_queue>, RadiosPreferences, NSString;
 
 @interface HSCloudAvailabilityController : NSObject <RadiosPreferencesDelegate, HSCloudAvailability> {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -23,6 +23,11 @@
     RadiosPreferences *_radiosPreferences;
     struct __SCNetworkReachability { } *reachabilityRef;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedController;
 

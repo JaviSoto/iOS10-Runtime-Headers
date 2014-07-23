@@ -2,13 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSRecursiveLock, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, NSMapTable, NSMutableDictionary;
 
 @interface PHCoreImageManager : NSObject  {
     int _CPLDownloadUpdateNotifyToken;
     NSObject<OS_dispatch_queue> *_requestLookupTableIsolationQueue;
     NSMapTable *_requestLookupTable;
-    NSRecursiveLock *_preheatLock;
     NSMutableDictionary *_preheatItemSources;
     NSMutableDictionary *_preheatItemMapTables;
     NSMapTable *_perDomainPreheatItemMapTables;
@@ -19,7 +18,6 @@
 
 @property(retain) NSObject<OS_dispatch_queue> * requestLookupTableIsolationQueue;
 @property(retain) NSMapTable * requestLookupTable;
-@property(retain) NSRecursiveLock * preheatLock;
 @property(retain) NSMutableDictionary * preheatItemSources;
 @property(retain) NSMutableDictionary * preheatItemMapTables;
 @property(retain) NSMapTable * perDomainPreheatItemMapTables;
@@ -50,7 +48,6 @@
 - (id)preheatItemMapTables;
 - (void)setPreheatItemSources:(id)arg1;
 - (id)preheatItemSources;
-- (void)setPreheatLock:(id)arg1;
 - (void)setRequestLookupTable:(id)arg1;
 - (void)setRequestLookupTableIsolationQueue:(id)arg1;
 - (void)_cancelAsynchronousRequestWithID:(int)arg1;
@@ -65,15 +62,17 @@
 - (void)_unregisterRequest:(id)arg1;
 - (void)_registerRequest:(id)arg1;
 - (id)_preheatItemWithAsset:(id)arg1 format:(int)arg2 domain:(id)arg3;
+- (id)_fastFetchAdjustmentDataWithRequest:(id)arg1;
+- (id)_originalPreheatlItemCreateTransientWithAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3 domain:(id)arg4;
 - (bool)_cancelAndFlushPreheatWithAsset:(id)arg1 preheatItem:(id)arg2 domain:(id)arg3;
 - (id)_resizeUIImage:(id)arg1 withRequest:(id)arg2;
 - (void)_fetchAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 sync:(bool)arg6 fireAndForgetCPLDownload:(bool)arg7 completionHandler:(id)arg8;
+- (void)_asyncGenerateLiveRenderedImageWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 desiredImagePixelSize:(struct CGSize { double x1; double x2; })arg4 completionHandler:(id)arg5;
 - (void)_fetchAnySizeImageAsNon5551BytesPossiblyThruAssetsdAndCPLWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 wantsProperties:(bool)arg5 networkAccessAllowed:(bool)arg6 networkAccessForced:(bool)arg7 trackCPLDownload:(bool)arg8 completionHandler:(id)arg9;
 - (id)_preheatItemSourceWithFormat:(int)arg1;
 - (id)_preheatItemMapTableWithFormat:(int)arg1 domain:(id)arg2 createIfNeeded:(bool)arg3;
 - (id)perDomainPreheatItemMapTables;
 - (id)perDomainHighPriorityRequestWaitGroups;
-- (id)preheatLock;
 - (int)CPLDownloadUpdateNotifyToken;
 - (id)CPLDownloadUpdateIsolationQueue;
 - (id)requestLookupTable;

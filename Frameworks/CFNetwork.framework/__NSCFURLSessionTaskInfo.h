@@ -26,6 +26,7 @@
     NSString *_bundleID;
     NSString *_sessionID;
     unsigned long long _retryCount;
+    unsigned long long _lowThroughputTimerRetryCount;
     long long _basePriority;
     NSString *_uniqueIdentifier;
     unsigned long long _AVAssetDownloadToken;
@@ -57,6 +58,7 @@
 @property bool expectingResumeCallback;
 @property bool establishedConnection;
 @property unsigned long long retryCount;
+@property unsigned long long lowThroughputTimerRetryCount;
 @property bool disablesRetry;
 @property bool shouldCancelOnDisconnect;
 @property long long basePriority;
@@ -78,6 +80,8 @@
 - (unsigned long long)identifier;
 - (void)setDisablesRetry:(bool)arg1;
 - (bool)disablesRetry;
+- (void)setLowThroughputTimerRetryCount:(unsigned long long)arg1;
+- (unsigned long long)lowThroughputTimerRetryCount;
 - (unsigned long long)retryCount;
 - (void)setEstablishedConnection:(bool)arg1;
 - (bool)establishedConnection;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPresentationController<_UISearchControllerPresenting>, _UISearchPresentationAssistant, UIView;
+@class NSString, _UISearchPresentationAssistant, UIPresentationController<_UISearchControllerPresenting>, UIView;
 
 @interface _UISearchPopoverPresentationController : UIPopoverPresentationController <_UISearchControllerPresenting> {
     _UISearchPresentationAssistant *_assistant;
@@ -18,6 +18,10 @@
     } finalFrameForContainerView;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) UIView * searchBarContainerView;
 @property(readonly) bool shouldAccountForStatusBar;
 @property(readonly) double statusBarAdjustment;
@@ -39,12 +43,12 @@
 - (id)searchBarContainerView;
 - (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
+- (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (long long)adaptivePresentationStyle;
 - (void)_transitionToWillBegin;
 - (void)_transitionFromWillBegin;
 - (void)presentationTransitionWillBegin;
 - (void)_transitionFromDidEnd;
 - (void)_transitionToDidEnd;
-- (id)initWithPresentingViewController:(id)arg1 presentedViewController:(id)arg2;
 
 @end

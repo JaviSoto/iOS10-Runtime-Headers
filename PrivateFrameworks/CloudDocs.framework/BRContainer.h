@@ -2,15 +2,24 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSDate, NSString, NSData, NSURL, NSSet, NSMutableDictionary, NSMultiReadUniWriteLock;
+@class NSData, NSString, NSURL, NSDate, NSSet, NSMutableDictionary, NSMultiReadUniWriteLock;
 
 @interface BRContainer : NSObject <NSSecureCoding> {
     NSString *_identifier;
     NSMutableDictionary *_propertiesByBundleID;
     NSMultiReadUniWriteLock *_readWriteLock;
+    long long _lastServerUpdateOnceToken;
+    NSDate *_lastServerUpdate;
+    long long _currentStatusOnceToken;
+    unsigned int _currentStatus;
+    bool_isOverQuota;
+    bool_isCloudSyncEnabled;
 }
 
 @property(readonly) NSData * propertiesData;
+@property unsigned int currentStatus;
+@property(retain) NSDate * lastServerUpdate;
+@property(getter=isOverQuota) bool overQuota;
 @property(copy,readonly) NSSet * bundleIdentifiers;
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * localizedName;
@@ -20,10 +29,13 @@
 @property(readonly) NSSet * documentsTypes;
 @property(readonly) NSSet * exportedTypes;
 @property(readonly) NSSet * importedTypes;
-@property(readonly) NSDate * lastServerUpdate;
+@property(retain,readonly) NSDate * lastServerUpdate;
 @property(readonly) unsigned int currentStatus;
+@property(getter=isOverQuota,readonly) bool overQuota;
+@property bool isCloudSyncEnabled;
 
 + (id)containerForContainerID:(id)arg1;
++ (void)postContainerStatusChangeNotificationWithID:(id)arg1 key:(id)arg2 value:(id)arg3;
 + (id)propertiesForContainerID:(id)arg1 usingBundle:(id)arg2 minimumBundleVersion:(id)arg3 bundleIcons:(id*)arg4;
 + (void)postContainerListUpdateNotification;
 + (void)_generateiOSIconsIntoDict:(id)arg1 usingBundle:(id)arg2;
@@ -41,6 +53,7 @@
 + (id)allContainersByContainerID;
 + (id)documentContainers;
 
+- (void)setIsCloudSyncEnabled:(bool)arg1;
 - (id)versionNumberForBundleIdentifier:(id)arg1;
 - (bool)setProperties:(id)arg1 stagedBundleIconPaths:(id)arg2 forBundleIdentifier:(id)arg3 salt:(id)arg4;
 - (bool)hasMetadataForBundleID:(id)arg1;
@@ -48,7 +61,11 @@
 - (bool)hasIconWithName:(id)arg1;
 - (bool)setPropertiesData:(id)arg1 stagedBundleIconPaths:(id)arg2 salt:(id)arg3 refresh:(bool)arg4;
 - (id)propertiesData;
+- (bool)isCloudSyncEnabled;
+- (bool)isOverQuota;
+- (void)setCurrentStatus:(unsigned int)arg1;
 - (unsigned int)currentStatus;
+- (void)setLastServerUpdate:(id)arg1;
 - (id)lastServerUpdate;
 - (id)importedTypes;
 - (id)exportedTypes;

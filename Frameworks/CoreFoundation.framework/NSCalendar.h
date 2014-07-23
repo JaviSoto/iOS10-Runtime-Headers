@@ -39,12 +39,12 @@
 + (void)initialize;
 + (bool)supportsSecureCoding;
 + (id)autoupdatingCurrentCalendar;
++ (id)_mapkit_gregorianCalendar;
 + (id)overlayCalendarForCalendarIdentifier:(id)arg1 timezone:(id)arg2;
 + (id)CalGregorianCalendarForTimeZone:(id)arg1;
 + (id)sharedAutoupdatingCurrentCalendar;
 + (id)CalGregorianGMTCalendar;
 + (id)CalCalendarWithUnsanitizedCalendarIdentifier:(id)arg1;
-+ (id)_mapkit_gregorianCalendar;
 
 - (id)PMSymbol;
 - (id)AMSymbol;
@@ -142,6 +142,8 @@
 - (bool)date:(id)arg1 isSameDayAsDate:(id)arg2;
 - (id)_timeOnlyComponentsForDate:(id)arg1;
 - (id)_dateOnlyComponentsForDate:(id)arg1;
+- (bool)_maps_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
+- (id)_maps_offsetDate:(id)arg1 toTimeZone:(id)arg2;
 - (id)CalDateFromComponents:(id)arg1 inTimeZone:(id)arg2;
 - (bool)dateIsFirstOfYear:(id)arg1;
 - (bool)dateIsFirstOfMonth:(id)arg1;
@@ -155,8 +157,6 @@
 - (long long)secondsInMinute;
 - (long long)hoursInDay;
 - (id)CalOccurrencesForBirthday:(id)arg1 inDateRange:(id)arg2;
-- (bool)_maps_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
-- (id)_maps_offsetDate:(id)arg1 toTimeZone:(id)arg2;
 - (bool)date:(id)arg1 isSameYearAsDate:(id)arg2;
 - (bool)date:(id)arg1 isSameDayAsDate:(id)arg2;
 - (id)_timeOnlyComponentsForDate:(id)arg1;

@@ -17,6 +17,10 @@
 
 @property(readonly) bool isActive;
 @property(retain,readonly) IDSAccount * account;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)sendServerMessage:(id)arg1 command:(id)arg2;
@@ -27,7 +31,6 @@
 - (bool)_shouldAcceptIncomingType:(id)arg1 forTopic:(id)arg2 toIdentifier:(id)arg3;
 - (id)_sendWithParameters:(id)arg1 options:(id)arg2 loggingType:(id)arg3 loggingDataSize:(unsigned long long)arg4;
 - (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
-- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2 indirectDelegateCallouts:(bool)arg3 delegateContext:(id)arg4;
@@ -40,6 +43,7 @@
 - (void)dataReceived:(id)arg1 withGUID:(id)arg2 forTopic:(id)arg3 toIdentifier:(id)arg4 fromID:(id)arg5 context:(id)arg6;
 - (void)messageReceived:(id)arg1 withGUID:(id)arg2 withPayload:(id)arg3 forTopic:(id)arg4 toIdentifier:(id)arg5 fromID:(id)arg6 context:(id)arg7;
 - (void)_callDelegatesWithBlock:(id)arg1;
+- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)_connect;
 - (id)account;

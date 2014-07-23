@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIColor, UIPDFPageView, UIPDFMarkupAnnotation, UIPDFAnnotation, CALayer, <NSObject><UIPDFAnnotationControllerDelegate>;
+@class UIPDFAnnotation, NSString, UIPDFMarkupAnnotation, UIPDFPageView, CALayer, <NSObject><UIPDFAnnotationControllerDelegate>, UIColor;
 
 @interface UIPDFAnnotationController : NSObject <UIGestureRecognizerDelegate> {
     UIPDFPageView *_pageView;
@@ -37,6 +37,10 @@
 @property CALayer * drawingSurface;
 @property <NSObject><UIPDFAnnotationControllerDelegate> * delegate;
 @property(readonly) bool tracking;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (struct CGImage { }*)newMaskImage:(struct CGPDFPage { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (bool)pageHasAnnotations:(id)arg1;

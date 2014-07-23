@@ -73,6 +73,7 @@
 - (void)setStillDuringVideoButton:(id)arg1;
 - (void)setImageWell:(id)arg1;
 - (void)setModeDial:(id)arg1;
+- (id)initWithOrientation:(long long)arg1;
 - (void)expandMenuButton:(id)arg1 animated:(bool)arg2;
 - (void)collapseMenuButton:(id)arg1 animated:(bool)arg2;
 - (void)_setHDRButtonExpanded:(bool)arg1;
@@ -125,7 +126,6 @@
 - (id)shutterButton;
 - (void)_commonCAMBottomBarInitialization;
 - (void)_updateBackgroundStyleAnimated:(bool)arg1;
-- (id)initWithOrientation:(long long)arg1;
 - (long long)orientation;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;

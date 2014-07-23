@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAnimation, VKMapModel, VKMapCanvas, GEOMapRegion, VKTrackingCameraController;
+@class VKAnimation, VKMapModel, NSString, VKMapCanvas, GEOMapRegion, VKTrackingCameraController;
 
 @interface VKMapCameraController : VKScreenCameraController <VKTrackingCameraControllerDelegate, VKInteractiveCameraController> {
     VKMapModel *_mapModel;
@@ -48,6 +48,10 @@
 @property double userZoomFocusStyleMinGroundspanMeters;
 @property double userZoomFocusStyleMaxGroundspanMeters;
 @property float navigationPuckSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct { double x1; double x2; double x3; } centerCoordinate;
 @property(readonly) double yaw;
 @property(readonly) double presentationYaw;

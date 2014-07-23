@@ -19,8 +19,8 @@
 
 - (bool)hasExpirationDate;
 - (void)setHasExpirationDate:(bool)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setExpirationDate:(long long)arg1;

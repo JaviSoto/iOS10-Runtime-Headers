@@ -28,8 +28,10 @@
 @property(retain) NSString * placeNameHint;
 
 
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (id)initWithCoordinateHint:(struct { double x1; double x2; })arg1 addressHint:(id)arg2 placeNameHint:(id)arg3;
 - (id)initWithMapItemToRefine:(id)arg1;
+- (id)initWithMuid:(unsigned long long)arg1 addressHint:(id)arg2 locationHint:(struct { double x1; double x2; })arg3 placeNameHint:(id)arg4 resultProviderId:(int)arg5;
 - (id)placeNameHint;
 - (id)addressHint;
 - (id)locationHint;

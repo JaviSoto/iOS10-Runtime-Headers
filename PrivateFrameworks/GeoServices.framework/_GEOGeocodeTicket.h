@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceSearchResponse, GEOMapServiceTraits, GEOMapRegion, GEOGeocodeRequest;
+@class NSString, GEOPlaceSearchResponse, GEOMapServiceTraits, GEOMapRegion, GEOGeocodeRequest;
 
 @interface _GEOGeocodeTicket : NSObject <GEOMapServiceTicket, _GEOLegacyMapServiceTicket> {
     GEOGeocodeRequest *_geocodeRequest;
@@ -10,18 +10,23 @@
     GEOMapServiceTraits *_traits;
     GEOMapRegion *_resultBoundingRegion;
     bool_isForwardGeocode;
+    bool_shiftLocationsIfNeeded;
 }
 
 @property(retain) GEOPlaceSearchResponse * response;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) GEOMapServiceTraits * traits;
 @property(readonly) GEOMapRegion * resultBoundingRegion;
 
 
 - (id)resultBoundingRegion;
-- (bool)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
-- (id)initWithReverseGeocodeRequest:(id)arg1 traits:(id)arg2;
+- (id)initWithReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(bool)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeRequest:(id)arg1 traits:(id)arg2;
+- (void)_reverseGeocodeWithRequest:(id)arg1 handler:(id)arg2 networkActivity:(id)arg3;
 - (id)_initWithGeocodeRequest:(id)arg1 traits:(id)arg2;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;

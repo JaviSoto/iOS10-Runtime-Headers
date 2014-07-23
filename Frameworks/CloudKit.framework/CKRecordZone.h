@@ -13,6 +13,8 @@
     NSData *_protectionData;
     NSString *_protectionEtag;
     NSString *_previousProtectionEtag;
+    long long _assetQuotaUsage;
+    long long _metadataQuotaUsage;
     CKContainerID *_containerID;
 }
 
@@ -24,20 +26,26 @@
 @property(retain) NSData * protectionData;
 @property(retain) NSString * protectionEtag;
 @property(retain) NSString * previousProtectionEtag;
+@property long long assetQuotaUsage;
+@property long long metadataQuotaUsage;
 @property(copy) CKContainerID * containerID;
 
 + (id)defaultRecordZone;
 + (bool)supportsSecureCoding;
 
+- (long long)metadataQuotaUsage;
+- (long long)assetQuotaUsage;
 - (int)deviceCount;
 - (id)clientChangeToken;
 - (id)currentServerContinuationToken;
+- (void)setMetadataQuotaUsage:(long long)arg1;
+- (void)setAssetQuotaUsage:(long long)arg1;
 - (void)setDeviceCount:(int)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setCurrentServerContinuationToken:(id)arg1;
-- (void)setPreviousProtectionEtag:(id)arg1;
-- (void)setProtectionEtag:(id)arg1;
 - (id)previousProtectionEtag;
+- (void)setProtectionEtag:(id)arg1;
+- (void)setPreviousProtectionEtag:(id)arg1;
 - (id)protectionEtag;
 - (id)initWithZoneID:(id)arg1;
 - (id)initWithZoneName:(id)arg1;

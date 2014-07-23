@@ -6,10 +6,12 @@
 
 @interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator> {
     <IKJSDOMDocumentAppBridge> *_appBridge;
+    unsigned long long _itmlIDSequence;
 }
 
 @property <IKJSDOMDocumentAppBridge> * appBridge;
 @property IKJSNavigationDocument * navigationDocument;
+@property unsigned long long itmlIDSequence;
 @property(readonly) IKDOMImplementation * implementation;
 @property(retain,readonly) IKDOMElement * documentElement;
 @property(retain,readonly) NSString * inputEncoding;
@@ -20,6 +22,8 @@
 @property(retain) NSString * documentURI;
 
 
+- (void)setItmlIDSequence:(unsigned long long)arg1;
+- (unsigned long long)itmlIDSequence;
 - (void)setNavigationDocument:(id)arg1;
 - (bool)markUpdated;
 - (id)initWithAppContext:(id)arg1 qualifiedName:(id)arg2;
@@ -27,6 +31,8 @@
 - (void)setStrictErrorChecking:(bool)arg1;
 - (bool)strictErrorChecking;
 - (void)runTest:(id)arg1 :(id)arg2;
+- (void)setITMLIDForNode:(id)arg1;
+- (void)_updateITMLIDRecursivelyForNodePtr:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 - (id)appBridge;
 - (void)scrollToTop;
 - (id)navigationDocument;

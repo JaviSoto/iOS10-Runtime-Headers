@@ -42,6 +42,8 @@
 
 
 - (void)cancelValidation;
+- (bool)accountIsValid;
+- (void)validateAccount:(id)arg1 useSSL:(bool)arg2;
 - (bool)accountSupportsSSL;
 - (id)validationInvocation;
 - (bool)accountValidationCanceled;
@@ -57,8 +59,6 @@
 - (void)_validateAccount:(id)arg1 withFallbacks:(bool)arg2;
 - (void)validateAccount:(id)arg1 useSSL:(bool)arg2 withCompletion:(id)arg3;
 - (id)initWithPerformsValidationInBackground:(bool)arg1;
-- (bool)accountIsValid;
-- (void)validateAccount:(id)arg1 useSSL:(bool)arg2;
 - (id)account;
 - (id)init;
 - (void)setDelegate:(id)arg1;

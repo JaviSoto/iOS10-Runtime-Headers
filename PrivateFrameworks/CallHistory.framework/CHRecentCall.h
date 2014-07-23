@@ -11,7 +11,7 @@
     bool_callerIdIsFormatted;
     bool_answered;
     bool_mobileOriginated;
-    int _callerIdAvailability;
+    unsigned int _callerIdAvailability;
     unsigned int _callType;
     unsigned int _callStatus;
     NSString *_callerNetworkName;
@@ -51,7 +51,7 @@
 @property(copy) NSString * mobileCountryCode;
 @property(copy) NSString * mobileNetworkCode;
 @property(copy) NSNumber * disconnectedCause;
-@property int callerIdAvailability;
+@property unsigned int callerIdAvailability;
 @property bool callerIdIsBlocked;
 @property(copy) NSString * callerNetworkFirstName;
 @property(copy) NSString * callerNetworkSecondName;
@@ -83,6 +83,7 @@
 - (id)callerName;
 - (bool)callerIdIsEmailAddress;
 - (id)addressBookCallerIDMultiValueId;
+- (bool)canCoalesceWithCall:(id)arg1 withStrategy:(id)arg2;
 - (id)callOccurrencesAsStringSync;
 - (void)setCallerIdIsFormatted:(bool)arg1;
 - (bool)callerIdIsFormatted;
@@ -120,13 +121,13 @@
 - (bool)callerIdIsBlocked;
 - (void)setPhoneBookManager:(id)arg1;
 - (void)setDevicePhoneId:(id)arg1;
-- (void)setCallerIdAvailability:(int)arg1;
+- (void)setCallerIdAvailability:(unsigned int)arg1;
 - (void)setCallerNetworkName:(id)arg1;
 - (void)setDisconnectedCause:(id)arg1;
 - (void)setCallerId:(id)arg1;
 - (bool)answered;
 - (id)devicePhoneId;
-- (int)callerIdAvailability;
+- (unsigned int)callerIdAvailability;
 - (id)callerNetworkName;
 - (id)bytesOfDataUsed;
 - (id)disconnectedCause;
@@ -135,13 +136,13 @@
 - (void)setMultiCall:(bool)arg1;
 - (void)setCallOccurrences:(id)arg1;
 - (void)setBytesOfDataUsed:(id)arg1;
-- (void)setCallStatus:(unsigned int)arg1;
-- (void)setCallType:(unsigned int)arg1;
 - (void)setUniqueId:(id)arg1;
 - (id)callOccurrences;
 - (unsigned long long)numberOfOccurrences;
 - (id)coalescingHash;
 - (bool)coalesceWithCall:(id)arg1 withStrategy:(id)arg2;
+- (void)setCallStatus:(unsigned int)arg1;
+- (void)setCallType:(unsigned int)arg1;
 - (unsigned int)callType;
 - (void)addressBookChanged;
 - (bool)read;

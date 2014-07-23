@@ -10,6 +10,7 @@
 
 @interface CKDModifyRecordsOperation : CKDDatabaseOperation  {
     CKDProtocolTranslator *_translator;
+    bool_retryPCSFailures;
     bool_retriedRecords;
     bool_shouldOnlySaveAssetContent;
     bool_haveOutstandingMetadatas;
@@ -33,6 +34,7 @@
     NSArray *_recordsToSave;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
     NSDictionary *_metadatasByRecordID;
     NSMutableDictionary *_modifyMetadatasByZoneID;
     long long _savePolicy;
@@ -41,6 +43,7 @@
     CKDRecordCache *_cache;
 }
 
+@property bool retryPCSFailures;
 @property(copy) id saveProgressBlock;
 @property(copy) id saveCompletionBlock;
 @property(copy) id deleteCompletionBlock;
@@ -49,6 +52,7 @@
 @property(retain) NSArray * recordsToSave;
 @property(retain) NSArray * recordIDsToDelete;
 @property(retain) NSDictionary * recordIDsToDeleteToEtags;
+@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
 @property(retain) NSDictionary * metadatasByRecordID;
 @property(retain) NSMutableDictionary * modifyMetadatasByZoneID;
 @property int numPCSRetries;
@@ -85,6 +89,7 @@
 - (void)_handleRecordDeleted:(id)arg1 metadata:(id)arg2 responseCode:(id)arg3;
 - (void)_handleRecordSaved:(id)arg1 metadata:(id)arg2 etag:(id)arg3 dateStatistics:(id)arg4 responseCode:(id)arg5 keysAssociatedWithETag:(id)arg6 recordForOplockFailure:(id)arg7;
 - (void)_clearProtectionDataForRecord:(id)arg1;
+- (bool)retryPCSFailures;
 - (id)recordsByServerID;
 - (void)_performCallbacksForAtomicZoneMetadatas:(id)arg1;
 - (void)_performCallbacksForNonAtomicZoneMetadatas:(id)arg1;
@@ -104,6 +109,7 @@
 - (id)deleteCompletionBlock;
 - (id)saveCompletionBlock;
 - (bool)_saveAssets;
+- (void)setRetryPCSFailures:(bool)arg1;
 - (id)translator;
 - (bool)makeStateTransition;
 - (id)nameForState:(unsigned long long)arg1;
@@ -111,6 +117,8 @@
 - (void)setDeleteCompletionBlock:(id)arg1;
 - (void)setSaveCompletionBlock:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (id)conflictLosersToResolveByRecordID;
 - (void)setAtomic:(bool)arg1;
 - (bool)atomic;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
@@ -125,8 +133,8 @@
 - (id)recordsToSave;
 - (void)setClientChangeTokenData:(id)arg1;
 - (id)clientChangeTokenData;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (id)cache;
 - (void).cxx_destruct;
 - (void)setCache:(id)arg1;

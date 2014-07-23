@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class DKDAAPElement;
+@class NSString, DKDAAPElement;
 
 @interface DKDAAPElementParser : DKDAAPParser <DKDAAPParserDelegate> {
 
@@ -16,10 +16,17 @@
 
     DKDAAPElement *_rootElement;
     DKDAAPElement *_curContainerElement;
+    bool_copyElementData;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)parseWithCompletionHandler:(id)arg1;
+- (id)initWithData:(id)arg1 copyElementData:(bool)arg2;
 - (void)_finishParserWithError:(id)arg1;
 - (void)parser:(id)arg1 didEndContainerCode:(unsigned int)arg2;
 - (void)parser:(id)arg1 didParseDataCode:(unsigned int)arg2 bytes:(char *)arg3 contentLength:(unsigned int)arg4;

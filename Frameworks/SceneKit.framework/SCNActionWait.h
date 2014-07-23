@@ -13,8 +13,8 @@
 
 @interface SCNActionWait : SCNAction  {
 
-  /* Error parsing encoded ivar type info: ^{SCNCActionWait=^^?f@BdddddBB@?^{__CFString}qdddd} */
-    struct SCNCActionWait { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; double x7; double x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; struct __CFString {} *x14; long long x15; double x16; double x17; double x18; double x19; } *_mycaction;
+  /* Error parsing encoded ivar type info: ^{SCNCActionWait=^^?f@?@BdddddBB@?^{__CFString}qdddd} */
+    struct SCNCActionWait { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; double x9; double x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; long long x17; double x18; double x19; double x20; double x21; } *_mycaction;
 
 }
 

@@ -22,6 +22,7 @@
 - (void)setInvitationId:(id)arg1;
 - (void)setParameters:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)parameters;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;

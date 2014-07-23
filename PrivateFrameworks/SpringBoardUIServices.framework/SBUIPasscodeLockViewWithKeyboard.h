@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBUIRingViewLabelButton, SBPasscodeKeyboard, UILabel, SBUIAlphanumericPasscodeEntryField, UIView;
+@class SBUIRingViewLabelButton, SBPasscodeKeyboard, NSString, UILabel, SBUIAlphanumericPasscodeEntryField, UIView;
 
 @interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate> {
     SBPasscodeKeyboard *_keyboard;
@@ -26,14 +26,16 @@
 
 @property(retain) UILabel * statusField;
 @property(retain) UILabel * statusSubtitleView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
 - (bool)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (void)passcodeEntryFieldDidAcceptEntry:(id)arg1;
-- (void)setStatusSubtitleView:(id)arg1;
-- (id)_newStatusSubtitleView;
 - (void)_maximize;
 - (void)_minimize;
 - (void)_setMinimized:(bool)arg1;
@@ -57,6 +59,8 @@
 - (void)_geometryChanged:(id)arg1;
 - (void)_hardwareReturnKeyPressed:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(long long)arg1;
+- (void)setStatusSubtitleView:(id)arg1;
+- (id)_newStatusSubtitleView;
 - (void)setStatusField:(id)arg1;
 - (id)_newStatusField;
 - (id)initWithLightStyle:(bool)arg1;

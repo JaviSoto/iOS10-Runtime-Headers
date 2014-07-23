@@ -17,6 +17,7 @@
 @property bool automaticallyConfiguresApplicationAudioSession;
 @property(readonly) struct OpaqueCMClock { }* masterClock;
 
++ (bool)automaticallyNotifiesObserversOfRunning;
 + (bool)automaticallyNotifiesObserversOfMasterClock;
 + (id)publicSessionPresets;
 + (id)dotString;
@@ -55,6 +56,7 @@
 - (void)_updateDeviceActiveFormats;
 - (void)_setMasterClock:(struct OpaqueCMClock { }*)arg1;
 - (void)setSessionPreset:(id)arg1;
+- (bool)videoFeature1EnabledForSomething:(id)arg1 format:(id)arg2 sessionPreset:(id)arg3;
 - (void)_rebuildGraph;
 - (bool)_stopFigCaptureSession;
 - (void)_postRuntimeError:(id)arg1;
@@ -86,10 +88,10 @@
 - (void)_beginConfiguration;
 - (int)_createFigCaptureSession;
 - (struct OpaqueCMClock { }*)masterClock;
-- (id)sessionPreset;
 - (void)removeConnection:(id)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (bool)notifiesOnMainThread;
+- (id)sessionPreset;
 - (bool)automaticallyConfiguresApplicationAudioSession;
 - (bool)usesApplicationAudioSession;
 - (void)addOutput:(id)arg1;

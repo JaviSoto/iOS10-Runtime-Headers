@@ -42,6 +42,7 @@
 @property int pinType;
 
 
+- (int)placeType;
 - (void)setBusinessIds:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 - (unsigned long long*)businessIds;
 - (void)setProblemTypes:(int*)arg1 count:(unsigned long long)arg2;
@@ -57,7 +58,6 @@
 - (id)devicePushToken;
 - (bool)hasDevicePushToken;
 - (void)setDevicePushToken:(id)arg1;
-- (int)placeType;
 - (bool)hasPlaceType;
 - (void)setHasPlaceType:(bool)arg1;
 - (void)setPlaceType:(int)arg1;

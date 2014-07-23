@@ -6,15 +6,15 @@
    See Warning(s) below.
  */
 
-@class GCController;
+@class GCController, CMMotionManager;
 
 @interface GCMotion : NSObject  {
-    struct GCAcceleration { 
+    struct { 
         double x; 
         double y; 
         double z; 
     } _gravity;
-    struct GCAcceleration { 
+    struct { 
         double x; 
         double y; 
         double z; 
@@ -30,29 +30,32 @@
         double y; 
         double z; 
     } _rotationRate;
-    GCController *controller;
+    CMMotionManager *_motionMgr;
+    GCController *_controller;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
-    id valueChangedHandler;
+    id _valueChangedHandler;
 
 }
 
 @property(readonly) GCController * controller;
 @property(copy) id valueChangedHandler;
-@property(readonly) struct GCAcceleration { double x1; double x2; double x3; } gravity;
-@property(readonly) struct GCAcceleration { double x1; double x2; double x3; } userAcceleration;
+@property(readonly) struct { double x1; double x2; double x3; } gravity;
+@property(readonly) struct { double x1; double x2; double x3; } userAcceleration;
 @property(readonly) struct GCQuaternion { double x1; double x2; double x3; double x4; } attitude;
 @property(readonly) struct { double x1; double x2; double x3; } rotationRate;
 
 
+- (void)_stopDeviceMotionUpdates;
+- (void)_startDeviceMotionUpdates;
 - (id)initWithController:(id)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (id)valueChangedHandler;
-- (struct GCAcceleration { double x1; double x2; double x3; })gravity;
+- (struct { double x1; double x2; double x3; })gravity;
 - (struct GCQuaternion { double x1; double x2; double x3; double x4; })attitude;
 - (struct { double x1; double x2; double x3; })rotationRate;
-- (struct GCAcceleration { double x1; double x2; double x3; })userAcceleration;
+- (struct { double x1; double x2; double x3; })userAcceleration;
 - (void).cxx_destruct;
 - (id)controller;
 

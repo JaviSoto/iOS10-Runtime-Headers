@@ -30,18 +30,18 @@
 @property unsigned int duration;
 
 
+- (bool)hasDuration;
+- (unsigned int)initiator;
 - (bool)hasInitiator;
 - (void)setHasInitiator:(bool)arg1;
+- (void)setInitiator:(unsigned int)arg1;
 - (id)sessionUUID;
 - (bool)hasReason;
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (void)setInitiator:(unsigned int)arg1;
-- (unsigned int)initiator;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

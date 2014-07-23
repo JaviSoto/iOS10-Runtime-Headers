@@ -55,6 +55,10 @@
 @property bool allowsHDOver3GUpload;
 @property bool shouldCancelPublish;
 @property(readonly) bool allowsCellularAccessForRequests;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
 

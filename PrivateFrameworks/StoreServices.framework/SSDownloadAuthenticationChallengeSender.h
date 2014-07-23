@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, SSDownloadAuthenticationSession;
+@class NSObject<OS_dispatch_queue>, SSDownloadAuthenticationSession, NSString;
 
 @interface SSDownloadAuthenticationChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -10,14 +10,18 @@
 }
 
 @property(readonly) SSDownloadAuthenticationSession * authenticationSession;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)authenticationSession;
 - (id)initWithAuthenticationSession:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)dealloc;
 

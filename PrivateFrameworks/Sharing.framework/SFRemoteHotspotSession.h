@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFRemoteHotspotProtocol>, <SFRemoteHotspotSessionDelegate>;
+@class <SFRemoteHotspotProtocol>, NSString, <SFRemoteHotspotSessionDelegate>;
 
 @interface SFRemoteHotspotSession : NSObject <SFRemoteHotspotClient, SFCompanionXPCManagerObserver> {
     bool_browsing;
@@ -13,6 +13,10 @@
 @property <SFRemoteHotspotSessionDelegate> * delegate;
 @property bool browsing;
 @property(retain) <SFRemoteHotspotProtocol> * connectionProxy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setConnectionProxy:(id)arg1;

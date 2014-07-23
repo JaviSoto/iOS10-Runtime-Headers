@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <AAUIRemoteUIRepairFlowDelegate>, ACAccount, AAUIAccountRepairRemoteUI;
+@class NSString, ACAccount, <AAUIRemoteUIRepairFlowDelegate>, AAUIAccountRepairRemoteUI;
 
 @interface AAUIRemoteUIRepairFlow : NSObject <AAUIAccountRepairRemoteUIDelegate> {
     ACAccount *_account;
@@ -20,6 +20,10 @@
 }
 
 @property <AAUIRemoteUIRepairFlowDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)accountRepairRemoteUIWillDismiss:(id)arg1;

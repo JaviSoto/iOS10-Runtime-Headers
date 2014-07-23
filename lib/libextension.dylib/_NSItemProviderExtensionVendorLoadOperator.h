@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/usr/lib/libextension.dylib
  */
 
-@class NSUUID;
+@class NSUUID, NSString;
 
 @interface _NSItemProviderExtensionVendorLoadOperator : NSObject <_NSItemProviderLoading> {
     NSUUID *_identifier;
@@ -11,6 +11,10 @@
 
 @property(copy) NSUUID * identifier;
 @property(copy) NSUUID * extensionContextIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)supportsSecureCoding;
 

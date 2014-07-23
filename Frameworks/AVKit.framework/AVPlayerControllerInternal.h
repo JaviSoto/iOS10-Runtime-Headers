@@ -13,9 +13,16 @@
     unsigned int _deviceBatteryMonitoringWasEnabled : 1;
     unsigned int _deviceBatteryChargingOrFull : 1;
     unsigned int _playingOnSecondScreen : 1;
+    NSObject<OS_dispatch_queue> *_optionsQueue;
+    NSArray *_audioMediaSelectionOptions;
+    NSArray *_legibleMediaSelectionOptions;
     id _timeObserverToken;
     id _playerItemTimeJumpedObserver;
     id _playerItemDidPlayToEndTimeObserver;
+    id _audioSessionInterruptionObserver;
+    unsigned int _audioSessionInterrupted : 1;
+    double _rateBeforeAudioSessionInterruption;
+    unsigned int _pausedDuringAudioSessionInterruption : 1;
     bool_looping;
     long long _actionAtItemEnd;
     NSObject<OS_dispatch_queue> *_seekQueue;

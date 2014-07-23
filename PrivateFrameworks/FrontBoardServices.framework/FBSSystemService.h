@@ -17,12 +17,11 @@
 - (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
 - (void)openApplication:(id)arg1 options:(id)arg2 withResult:(id)arg3;
 - (void)openDataActivationURL:(id)arg1 withResult:(id)arg2;
-- (bool)canOpenApplication:(id)arg1 reason:(int*)arg2;
+- (bool)canOpenApplication:(id)arg1 reason:(long long*)arg2;
 - (int)pidForApplication:(id)arg1;
 - (id)systemApplicationBundleIdentifier;
 - (void)shutdown;
 - (void)reboot;
-- (void)restartRenderServer;
 - (id)_badArgumentError;
 - (void)sendActions:(id)arg1 withResult:(id)arg2;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;

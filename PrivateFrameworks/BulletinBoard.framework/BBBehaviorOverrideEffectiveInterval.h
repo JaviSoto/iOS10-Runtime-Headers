@@ -19,6 +19,10 @@
 @property unsigned long long repeatInterval;
 @property(copy) NSCalendar * calendar;
 @property(copy) NSUUID * identifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)_dateComponentWithProvidedComponent:(long long)arg1 andBaseComponent:(long long)arg2;
 + (id)dateWithComponents:(id)arg1 immediatelyFollowingDate:(id)arg2 calendar:(id)arg3 repeatInterval:(unsigned long long)arg4;

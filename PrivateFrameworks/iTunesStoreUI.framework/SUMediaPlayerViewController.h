@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUMediaPlayerItem, UIView, NSMutableArray, SUClientInterface;
+@class SUMediaPlayerItem, NSString, UIView, NSMutableArray, SUClientInterface;
 
 @interface SUMediaPlayerViewController : MPMoviePlayerViewController <ISOperationDelegate> {
     UIView *_backgroundContainerView;
@@ -14,6 +14,10 @@
 
 @property(copy,readonly) SUMediaPlayerItem * mediaPlayerItem;
 @property(retain) SUClientInterface * clientInterface;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)sendDownloadPingRequestsForMediaPlayerItem:(id)arg1;
 + (bool)_URLIsITunesU:(id)arg1;

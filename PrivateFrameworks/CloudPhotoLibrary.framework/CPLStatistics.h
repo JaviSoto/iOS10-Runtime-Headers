@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSURL, NSObject<OS_dispatch_queue>;
+@class NSURL, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CPLStatistics : NSObject <CPLEngineComponent> {
     NSURL *_logfileURL;
@@ -41,6 +41,10 @@
 }
 
 @property bool statisticsEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setStatisticsEnabled:(bool)arg1;

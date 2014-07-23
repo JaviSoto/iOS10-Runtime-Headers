@@ -208,6 +208,7 @@
 - (bool)isAutomaticQuoteSubstitutionEnabled;
 - (id)styleDeclarationWithText:(id)arg1;
 - (id)typingStyle;
+- (void)setTypingStyle:(id)arg1;
 - (id)editableDOMRangeForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
 - (bool)_continuousCheckingAllowed;
@@ -341,13 +342,14 @@
 - (bool)allowsRemoteInspection;
 - (id)_openNewWindowWithRequest:(id)arg1;
 - (void)_setResourceLoadSchedulerSuspended:(bool)arg1;
+- (id)styleAtSelectionStart;
 - (void)_dispatchUnloadEvent;
 - (bool)_isClosed;
 - (bool)_viewClass:(Class*)arg1 andRepresentationClass:(Class*)arg2 forMIMEType:(id)arg3;
 - (void)updateLayoutIgnorePendingStyleSheets;
 - (void)_replaceCurrentHistoryItem:(id)arg1;
 - (void)_viewWillDrawInternal;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3 usesDocumentViews:(bool)arg4;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3;
 - (void)_dispatchPendingLoadRequests;
 - (void)_setBrowserUserAgentProductVersion:(id)arg1 buildVersion:(id)arg2 bundleVersion:(id)arg3;
 - (id)currentNodeHighlight;
@@ -369,7 +371,6 @@
 - (void)caretChanged;
 - (int)validationMessageTimerMagnification;
 - (bool)interactiveFormValidationEnabled;
-- (bool)_needsUnrestrictedGetMatchedCSSRules;
 - (bool)_needsPreHTML5ParserQuirks;
 - (id)preferencesIdentifier;
 - (id)_notificationProvider;
@@ -638,8 +639,6 @@
 - (bool)_isProcessingUserGesture;
 - (unsigned long long)_renderTreeSize;
 - (void)_setWantsTelephoneNumberParsing:(bool)arg1;
-- (void)setTypingStyle:(id)arg1;
-- (id)styleAtSelectionStart;
 - (void)applyStyle:(id)arg1;
 - (void)setContinuousSpellCheckingEnabled:(bool)arg1;
 - (bool)_setMediaLayer:(id)arg1 forPluginView:(id)arg2;

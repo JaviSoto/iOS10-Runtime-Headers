@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSURLRequest, <SSDownloadManifestRequestDelegate>;
+@class NSURLRequest, NSString, <SSDownloadManifestRequestDelegate>;
 
 @interface SSDownloadManifestRequest : SSRequest <SSXPCCoding> {
     long long _manifestFormat;
@@ -14,6 +14,10 @@
 @property bool shouldHideUserPrompts;
 @property <SSDownloadManifestRequestDelegate> * delegate;
 @property long long manifestFormat;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setManifestFormat:(long long)arg1;

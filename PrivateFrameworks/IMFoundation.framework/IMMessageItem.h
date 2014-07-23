@@ -42,6 +42,8 @@
 @property(readonly) bool wasDowngraded;
 @property(readonly) bool isPrepared;
 @property(readonly) bool isTypingMessage;
+@property(readonly) bool isLocatingMessage;
+@property(readonly) bool isEmote;
 @property(readonly) bool isAudioMessage;
 @property(readonly) bool isExpirable;
 @property(readonly) bool isFromExternalSource;
@@ -51,6 +53,7 @@
 - (void)setWasDataDetected:(bool)arg1;
 - (void)setHasDataDetectorResults:(bool)arg1;
 - (bool)isFromExternalSource;
+- (bool)isLocatingMessage;
 - (bool)isTypingMessage;
 - (bool)isPrepared;
 - (bool)isAlert;
@@ -58,12 +61,10 @@
 - (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
 - (id)initWithSender:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8;
 - (id)copyWithFlags:(unsigned long long)arg1;
-- (bool)isExpirable;
 - (bool)isEmote;
 - (bool)wasDowngraded;
 - (bool)wasDataDetected;
 - (bool)isPlayed;
-- (bool)isAudioMessage;
 - (bool)isDelivered;
 - (bool)isSent;
 - (void)_clearBodyData;
@@ -97,6 +98,8 @@
 - (id)timeRead;
 - (void)setPlainBody:(id)arg1;
 - (id)plainBody;
+- (bool)isAudioMessage;
+- (bool)isExpirable;
 - (id)timePlayed;
 - (bool)isFromMe;
 - (id)copyDictionaryRepresentation;
@@ -104,9 +107,9 @@
 - (void)setFlags:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEmpty;
-- (id)sender;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)sender;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

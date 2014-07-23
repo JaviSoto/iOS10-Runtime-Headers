@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BLAlertViewController, NSArray, BLAlertAction, BLAlert;
+@class BLAlertViewController, NSArray, NSString, BLAlertAction, BLAlert;
 
 @interface BLAlert : NSObject <BLAlertViewControllerDelegate, UIAlertViewDelegate> {
     BLAlertAction *_cancelAction;
@@ -31,6 +31,10 @@
 @property(copy) id conditionBlock;
 @property(retain) id context;
 @property(retain) BLAlert * strongSelf;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)performWithTitle:(id)arg1 message:(id)arg2 action:(id)arg3;
 + (void)pushPendingAlert:(id)arg1;
@@ -39,6 +43,7 @@
 
 - (id)strongSelf;
 - (void)setConditionBlock:(id)arg1;
+- (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
 - (void)hideWithDelay:(double)arg1;
 - (void)showWithExecutionBlock:(id)arg1;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 options:(int)arg3 cancelAction:(id)arg4 otherActions:(id)arg5;
@@ -50,7 +55,6 @@
 - (id)conditionBlock;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelAction:(id)arg3 otherActions:(id)arg4;
 - (void)alertViewController:(id)arg1 didPressButtonAtIndex:(long long)arg2;
-- (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
 - (void)hide:(bool)arg1;
 - (id)context;
 - (void)setContext:(id)arg1;

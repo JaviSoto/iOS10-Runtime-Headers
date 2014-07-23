@@ -40,6 +40,7 @@
 - (void)_throwIfNotEditable;
 - (void)setEntityMappings:(id)arg1;
 - (id)entityMappings;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -47,6 +48,5 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

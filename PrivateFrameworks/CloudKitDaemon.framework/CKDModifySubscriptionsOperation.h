@@ -45,8 +45,8 @@
 - (id)subscriptionIDsToDelete;
 - (void)setSubscriptionsToSave:(id)arg1;
 - (id)subscriptionsToSave;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

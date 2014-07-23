@@ -32,7 +32,6 @@
 - (id)installedPlugins;
 - (id)installedVPNPlugins;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
-- (bool)openApplicationWithBundleID:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3;
@@ -53,15 +52,16 @@
 - (bool)registerApplicationDictionary:(id)arg1 withObserverNotification:(unsigned long long)arg2;
 - (bool)uninstallApplication:(id)arg1 withOptions:(id)arg2 usingBlock:(id)arg3;
 - (id)installProgressForApplication:(id)arg1 withPhase:(unsigned long long)arg2;
-- (bool)applicationIsInstalled:(id)arg1;
 - (bool)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 sourceIsManaged:(bool)arg4 userInfo:(id)arg5 delegate:(id)arg6;
 - (bool)openURL:(id)arg1 withOptions:(id)arg2;
+- (bool)applicationIsInstalled:(id)arg1;
 - (id)remoteObserver;
 - (bool)establishConnection;
 - (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
+- (bool)openApplicationWithBundleID:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)allInstalledApplications;

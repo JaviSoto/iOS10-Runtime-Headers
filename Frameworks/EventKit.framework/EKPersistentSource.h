@@ -25,6 +25,8 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (void)setStrictestEventPrivateValue:(long long)arg1;
 - (void)setPreferredEventPrivateValue:(long long)arg1;
 - (void)setUUID:(id)arg1;
@@ -37,8 +39,6 @@
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
 - (int)entityType;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (int)sourceType;
 - (id)UUID;
 - (void)setEnabled:(bool)arg1;

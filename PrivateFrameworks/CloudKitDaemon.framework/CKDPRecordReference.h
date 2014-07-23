@@ -22,6 +22,7 @@
 - (bool)hasRecordIdentifier;
 - (void)setRecordIdentifier:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

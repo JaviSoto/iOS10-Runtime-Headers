@@ -33,6 +33,10 @@
 
 @property(readonly) struct CGSize { double x1; double x2; } tileSize;
 @property(readonly) struct CGSize { double x1; double x2; } mapSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)tileMapWithName:(id)arg1;
 

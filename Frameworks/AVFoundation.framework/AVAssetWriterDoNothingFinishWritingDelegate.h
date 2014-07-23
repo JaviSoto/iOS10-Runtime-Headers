@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface AVAssetWriterDoNothingFinishWritingDelegate : NSObject <AVAssetWriterFinishWritingHelperDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -14,6 +16,11 @@
 
     int _handlerCalled;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_callHandlerIfNotCalled;

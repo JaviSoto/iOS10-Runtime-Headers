@@ -14,6 +14,11 @@
     boolmDoNotModify;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)phoneticInfoWithResources:(id)arg1;
 
 - (void)setDoNotModify:(bool)arg1;

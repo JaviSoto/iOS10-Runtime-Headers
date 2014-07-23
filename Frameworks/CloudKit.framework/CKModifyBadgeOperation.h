@@ -7,7 +7,6 @@
  */
 
 @interface CKModifyBadgeOperation : CKOperation  {
-    bool_thisDeviceOnly;
     unsigned long long _badgeValue;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -17,15 +16,12 @@
 }
 
 @property unsigned long long badgeValue;
-@property bool thisDeviceOnly;
 @property(copy) id modifyBadgeCompletionBlock;
 
 
 - (id)initWithBadgeValue:(unsigned long long)arg1;
 - (void)setModifyBadgeCompletionBlock:(id)arg1;
 - (id)modifyBadgeCompletionBlock;
-- (void)setThisDeviceOnly:(bool)arg1;
-- (bool)thisDeviceOnly;
 - (void)performCKOperation;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

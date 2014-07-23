@@ -60,6 +60,7 @@
 @property unsigned int serverConfigTime;
 
 
+- (bool)hasStatus;
 - (unsigned int)serverConfigTime;
 - (unsigned int)serverAcceptTime;
 - (unsigned int)clientConfigMs;
@@ -96,12 +97,11 @@
 - (id)sessionUUID;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasStatus;
+- (void)setHasTimestamp:(bool)arg1;
 - (id)clientVersion;
 - (void)setHasStatus:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasTransportType;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)transportType;

@@ -22,6 +22,10 @@
 @property(retain) NSString * htmlString;
 @property unsigned long long startLocation;
 @property unsigned long long endLocation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)copyMutableConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSValue, SKUIMetricsController, NSMapTable, SKUILayoutCache, SKUIResourceLoader, SKUIProductPageOverlayController, UITapGestureRecognizer, SKUIStorePageSplitsDescription, NSMutableArray, SKUIStackedBar, UICollectionView, SKUICollectionView, NSArray, <SKUIStorePageSectionsDelegate>, SKUIColorScheme, SKUIIndexBarControl, NSIndexPath;
+@class NSValue, SKUIMetricsController, NSMapTable, SKUILayoutCache, SKUIResourceLoader, SKUIProductPageOverlayController, NSMutableIndexSet, UITapGestureRecognizer, NSMutableArray, SKUIStorePageSplitsDescription, SKUIStackedBar, UICollectionView, NSString, SKUICollectionView, NSArray, <SKUIStorePageSectionsDelegate>, SKUIColorScheme, SKUIIndexBarControl, NSIndexPath;
 
 @interface SKUIStorePageSectionsViewController : SKUIViewController <SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
     SKUIProductPageOverlayController *_activeOverlayController;
@@ -19,6 +19,9 @@
     <SKUIStorePageSectionsDelegate> *_delegate;
     bool_delegateWantsDidScroll;
     bool_didInitialReload;
+    NSMapTable *_expandSectionContexts;
+    NSMutableIndexSet *_expandInsertSections;
+    NSMutableIndexSet *_expandRemoveSections;
     long long _ignoreSectionsChangeCount;
     SKUIIndexBarControl *_indexBarControl;
     NSIndexPath *_indexPathOfEditedCell;
@@ -46,13 +49,17 @@
 @property long long pinningTransitionStyle;
 @property(readonly) NSArray * sections;
 @property(getter=isDisplayingOverlays,readonly) bool displayingOverlays;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
-- (id)indexBarControl;
 - (long long)pinningTransitionStyle;
 - (id)_newSectionsWithPageComponents:(id)arg1;
+- (id)_expandContextForMenuComponent:(id)arg1;
 - (id)_visibleMetricsImpressionsString;
 - (void)_updateSectionsForIndex:(long long)arg1 menuSection:(id)arg2;
 - (void)_setSelectedIndex:(long long)arg1 forMenuSection:(id)arg2;
@@ -61,6 +68,7 @@
 - (void)_insertSectionsWithComponents:(id)arg1 afterSection:(id)arg2;
 - (void)_endIgnoringSectionChanges;
 - (void)_beginIgnoringSectionChanges;
+- (void)skuiCollectionViewWillLayoutSubviews:(id)arg1;
 - (void)itemCollectionView:(id)arg1 didTapVideoForCollectionViewCell:(id)arg2;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)collectionView:(id)arg1 performDefaultActionForViewElement:(id)arg2 indexPath:(id)arg3;
@@ -88,6 +96,7 @@
 - (id)_prepareLayoutForSections;
 - (void)_enumerateVisibleSectionsUsingBlock:(id)arg1;
 - (id)_sectionsForChartsComponent:(id)arg1;
+- (id)indexBarControl;
 - (id)_collectionViewSublayouts;
 - (id)_childSectionsForMenuComponent:(id)arg1 selectedIndex:(long long)arg2;
 - (id)_menuContextForMenuComponent:(id)arg1;
@@ -95,18 +104,19 @@
 - (id)_textLayoutCache;
 - (id)defaultSectionForComponent:(id)arg1;
 - (id)_splitForSectionIndex:(long long)arg1;
-- (id)metricsController;
-- (void)_prefetchArtworkForVisibleSections;
-- (void)_invalidateLayoutWithNewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_scrollFirstAppearanceSectionToView;
 - (void)_reloadCollectionView;
 - (void)_setPageSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)metricsController;
+- (void)_prefetchArtworkForVisibleSections;
+- (void)_invalidateLayoutWithNewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (id)_currentBackdropGroupName;
 - (void)_invalidateIfLastKnownSizeChanged;
 - (void)_setActiveProductPageOverlayController:(id)arg1;
 - (void)dismissOverlays;
 - (void)_updateCollectionViewWithUpdates:(id)arg1;
 - (id)_newSectionsWithPageComponent:(id)arg1;
+- (id)_createSectionsForExpandPageComponent:(id)arg1 context:(id)arg2 newSections:(id)arg3 sectionCount:(long long)arg4 sectionsByViewElement:(id)arg5 updateStyle:(long long)arg6;
 - (id)_newSectionContext;
 - (void)setSectionsWithSplitsDescription:(id)arg1;
 - (id)_defaultSectionForSwooshComponent:(id)arg1;
@@ -142,7 +152,6 @@
 - (id)collectionView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (void)viewWillLayoutSubviews;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

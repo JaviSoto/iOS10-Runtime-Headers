@@ -38,9 +38,9 @@
 - (bool)isJPEG;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
+- (id)path;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (id)description;
 

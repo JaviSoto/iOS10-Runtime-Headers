@@ -23,6 +23,10 @@
 @property bool foundDevices;
 @property(retain) NSString * identifier;
 @property(retain) <SFCompanionBrowserProtocol> * connectionProxy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setFoundDevices:(bool)arg1;
@@ -35,12 +39,12 @@
 - (void)stopBluetooth;
 - (void)startBluetooth;
 - (id)_initWithServiceTypes:(id)arg1;
-- (id)serviceTypes;
 - (void)receivedActivitiesList:(id)arg1 fromDeviceWithIdentifier:(id)arg2;
 - (void)setConnectionProxy:(id)arg1;
 - (id)connectionProxy;
 - (void)startBrowsing;
 - (void)xpcManagerConnectionInterrupted;
+- (id)serviceTypes;
 - (id)serviceType;
 - (void)stopBrowsing;
 - (void)setIdentifier:(id)arg1;

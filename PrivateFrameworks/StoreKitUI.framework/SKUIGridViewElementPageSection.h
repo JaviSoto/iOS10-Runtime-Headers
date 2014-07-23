@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, NSArray, SKUIViewElementLayoutContext, SKUIGridComponent;
+@class UIColor, NSArray, SKUIViewElementLayoutContext, NSString, SKUIGridComponent;
 
 @interface SKUIGridViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver> {
     long long _cardVerticalSpacingStyle;
@@ -22,6 +22,10 @@
 }
 
 @property(readonly) SKUIGridComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;
@@ -52,8 +56,8 @@
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (long long)applyUpdateType:(long long)arg1;
 - (void)_reloadViewElementProperties;
-- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)scrollToElementWithIndexBarEntryID:(id)arg1 relativeSectionIndex:(long long)arg2 animated:(bool)arg3;
+- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)reloadVisibleCellsWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionViewWillScrollToOffset:(struct CGPoint { double x1; double x2; })arg1 visibleRange:(struct SKUIIndexPathRange { long long x1; long long x2; long long x3; long long x4; })arg2;
@@ -62,6 +66,7 @@
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;

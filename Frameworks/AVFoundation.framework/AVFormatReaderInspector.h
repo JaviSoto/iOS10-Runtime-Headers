@@ -15,6 +15,7 @@
 - (bool)_hasQTSaveRestriction;
 - (void)_setFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
+- (bool)containsMovieFragments;
 - (bool)canContainMovieFragments;
 - (bool)isComposable;
 - (bool)isReadable;

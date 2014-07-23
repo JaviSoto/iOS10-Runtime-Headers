@@ -22,6 +22,7 @@
 
 @property <SBUIBiometricEventMonitorDelegate> * delegate;
 @property(getter=isMatchingEnabled,readonly) bool matchingEnabled;
+@property(readonly) unsigned long long lockoutState;
 
 + (id)sharedInstance;
 
@@ -43,6 +44,7 @@
 - (void)_profileSettingsChanged:(id)arg1;
 - (bool)hasEnrolledIdentities;
 - (bool)isMatchingEnabled;
+- (unsigned long long)lockoutState;
 - (void)disableMatchingForPasscodeView:(id)arg1;
 - (void)enableMatchingForPasscodeView:(id)arg1;
 - (id)init;

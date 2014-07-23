@@ -46,6 +46,11 @@
     unsigned int mHasCaps : 1;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (void)initialize;
 
 - (void)setFormatKerningType:(int)arg1;
@@ -103,17 +108,16 @@
 - (bool)hasLatinFont;
 - (id)latinFont;
 - (bool)isItalic;
-- (bool)isBold;
 - (int)formatType;
 - (void)setStroke:(id)arg1;
 - (void)setFill:(id)arg1;
 - (int)caps;
 - (id)underline;
 - (id)clickHyperlink;
-- (bool)hasSize;
 - (void)setBaseline:(double)arg1;
 - (bool)hasFill;
 - (bool)hasStroke;
+- (bool)hasSize;
 - (void)setOpacity:(double)arg1;
 - (id)highlight;
 - (double)opacity;
@@ -125,6 +129,7 @@
 - (double)size;
 - (id)symbolFont;
 - (void)setHighlight:(id)arg1;
+- (bool)isBold;
 - (id)stroke;
 - (id)fill;
 

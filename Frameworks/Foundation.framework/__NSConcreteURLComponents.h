@@ -49,6 +49,7 @@
 
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
+- (id)path;
 - (void)setHost:(id)arg1;
 - (void)setPort:(id)arg1;
 - (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
@@ -66,7 +67,6 @@
 - (unsigned long long)hash;
 - (id)string;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (id)URL;
 - (void)finalize;
 - (void)dealloc;

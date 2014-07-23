@@ -70,6 +70,10 @@
 @property(readonly) double documentScale;
 @property(retain) NSArray * pageRects;
 @property(retain) NSArray * pageMinYs;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (void)setAsPDFDocRepAndView;

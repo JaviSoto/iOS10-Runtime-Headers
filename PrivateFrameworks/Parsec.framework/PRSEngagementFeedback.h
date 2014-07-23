@@ -14,6 +14,7 @@
 @property(retain) NSString * fbr;
 @property(retain) NSString * parsec_result;
 
++ (bool)supportsSecureCoding;
 
 - (void)setParsec_result:(id)arg1;
 - (id)parsec_result;
@@ -24,6 +25,8 @@
 - (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
 - (id)plist;
 - (id)type;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
 - (void)validate;
 

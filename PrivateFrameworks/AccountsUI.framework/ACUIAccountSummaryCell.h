@@ -21,11 +21,11 @@
 + (void)_configureSpecifier:(id)arg1 forAccount:(id)arg2 withStyle:(long long)arg3 valueText:(id)arg4;
 + (id)_nameForAccountSpecifier:(id)arg1 withStyle:(long long)arg2;
 
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)hideDataclass:(id)arg1;
 - (id)_numberFormatter;
 - (id)_enabledDataclassesTextForWidth:(double)arg1;
 - (id)_dataclassesLabel;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (id)_font;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

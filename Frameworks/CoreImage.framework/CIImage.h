@@ -27,6 +27,7 @@
 + (id)imageWithData:(id)arg1;
 
 - (id)imageByApplyingOrientation:(int)arg1;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (struct CGPoint { double x1; double x2; })calcIntersection:(struct CGPoint { double x1; double x2; })arg1 slope1:(struct CGPoint { double x1; double x2; })arg2 pt2:(struct CGPoint { double x1; double x2; })arg3 slope2:(struct CGPoint { double x1; double x2; })arg4;
 - (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage { }*)arg2 inputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -47,6 +48,7 @@
 - (id)smartColorStatistics;
 - (id)smartToneStatistics;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })regionOfInterestForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)printTree;
 - (id)imageByApplyingFilter:(id)arg1 withInputParameters:(id)arg2;
 - (id)_imageByMatchingColorSpaceWorkingSpace:(struct CGColorSpace { }*)arg1;
 - (id)_imageByMatchingWorkingSpaceToColorSpace:(struct CGColorSpace { }*)arg1;
@@ -89,7 +91,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)TIFFRepresentation;
-- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 options:(id)arg2;
 

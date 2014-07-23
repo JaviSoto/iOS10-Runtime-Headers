@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSData, <RUIParserDelegate>, NSURL, NSDictionary, NSMutableString, NSMutableArray, NSXMLParser, RUIObjectModel;
+@class NSData, <RUIParserDelegate>, NSURL, NSString, NSDictionary, NSMutableString, NSMutableArray, NSXMLParser, RUIObjectModel;
 
 @interface RUIParser : NSObject <NSXMLParserDelegate> {
     NSXMLParser *_parser;
@@ -23,6 +23,10 @@
 @property(retain) NSData * xmlData;
 @property(readonly) bool succeeded;
 @property <RUIParserDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)textAlignmentForString:(id)arg1;
 

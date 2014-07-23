@@ -9,16 +9,17 @@
     bool_wasCached;
     bool_open;
     bool_transaction;
+    bool_ownsTheAnchor;
     NSArray *_assets;
     CKRecord *_record;
     NSString *_recordKey;
     NSURL *_fileURL;
     NSString *_applicationBundleID;
-    NSURL *_openFileURL;
-    long long _packageID;
-    CKSQLite *_sqlite;
-    unsigned long long _nextItemIndex;
     NSString *_UUID;
+    NSString *_anchorPath;
+    CKSQLite *_sqlite;
+    long long _packageID;
+    unsigned long long _nextItemIndex;
 }
 
 @property(copy) NSData * signature;
@@ -26,17 +27,23 @@
 @property CKRecord * record;
 @property(copy) NSString * recordKey;
 @property struct _OpaquePCSShareProtection { }* recordPCS;
-@property(copy) NSURL * fileURL;
+@property(retain) NSURL * fileURL;
 @property(retain) NSString * applicationBundleID;
 @property bool wasCached;
-@property(retain) NSURL * openFileURL;
-@property long long packageID;
+@property(retain) NSString * UUID;
+@property(retain) NSString * anchorPath;
 @property(retain) CKSQLite * sqlite;
+@property long long packageID;
+@property unsigned long long nextItemIndex;
 @property(getter=isOpen) bool open;
 @property(getter=inTransaction) bool transaction;
-@property unsigned long long nextItemIndex;
-@property(retain) NSString * UUID;
+@property bool ownsTheAnchor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
++ (void)destroyPackageAnchoredAtURL:(id)arg1;
 + (id)_packagesPathForBundleID:(id)arg1;
 + (bool)supportsSecureCoding;
 
@@ -53,27 +60,32 @@
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setWasCached:(bool)arg1;
 - (void)setRecord:(id)arg1;
+- (id)initWithAnchorURL:(id)arg1;
 - (void)setUUID:(id)arg1;
-- (void)_openIfNecessary;
 - (void)setNextItemIndex:(unsigned long long)arg1;
 - (unsigned long long)nextItemIndex;
 - (void)setPackageID:(long long)arg1;
-- (void)setOpenFileURL:(id)arg1;
-- (id)openFileURL;
 - (void)setTransaction:(bool)arg1;
 - (id)_itemOrNilAtIndex:(unsigned long long)arg1;
 - (id)_itemWithColumnsByName:(id)arg1;
-- (long long)decReferenceCount;
+- (bool)decReferenceCount;
 - (bool)inTransaction;
-- (long long)incReferenceCount;
+- (void)incReferenceCount;
 - (void)setSqlite:(id)arg1;
+- (bool)isAnchorStillValid;
 - (void)_setReferenceCount:(long long)arg1;
+- (void)destroy;
+- (void)setOwnsTheAnchor:(bool)arg1;
+- (bool)ownsTheAnchor;
 - (long long)packageID;
 - (id)sqlite;
-- (id)assets;
 - (id)_packageDatabasePathWithUUID:(id)arg1;
 - (id)_initWithPath:(id)arg1 UUID:(id)arg2;
 - (id)applicationBundleID;
+- (void)setAnchorPath:(id)arg1;
+- (id)initWithArchivedAnchoredPackage:(id)arg1;
+- (id)assets;
+- (id)anchorPath;
 - (void)setAssets:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (id)recordKey;
@@ -100,6 +112,7 @@
 - (id)description;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)signature;
+- (id)replacementObjectForCoder:(id)arg1;
 - (id)_prettyDictionaryRepresentation;
 
 @end

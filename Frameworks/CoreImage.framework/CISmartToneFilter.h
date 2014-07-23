@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
+@class CIImage, NSNumber, CIContext;
 
 @interface CISmartToneFilter : CIFilter  {
     CIImage *inputImage;
@@ -14,6 +14,7 @@
     NSNumber *inputBlack;
     NSNumber *inputUseCube;
     CIImage *_cubeImage;
+    CIContext *_cubeContext;
 }
 
 @property(retain) CIImage * inputImage;

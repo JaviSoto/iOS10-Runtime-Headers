@@ -34,10 +34,12 @@
 
 - (void)setDeleted:(bool)arg1;
 - (bool)deleted;
-- (unsigned int)dateSentInterval;
+- (long long)generationCompare:(id)arg1;
+- (long long)generationNumber;
 - (unsigned int)dateReceivedInterval;
 - (bool)isKnownToHaveAttachments;
 - (bool)uidIsLibraryID;
+- (unsigned int)dateSentInterval;
 - (void)setKnownToHaveAttachments:(bool)arg1;
 - (void)setFlagged:(bool)arg1;
 - (void)setIsVIP:(bool)arg1;
@@ -51,8 +53,6 @@
 - (void)setUidIsLibraryID:(bool)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
 - (unsigned int)mailboxID;
-- (long long)generationCompare:(id)arg1;
-- (long long)generationNumber;
 - (bool)isVIP;
 - (void)setUid:(unsigned int)arg1;
 - (void)setRead:(bool)arg1;

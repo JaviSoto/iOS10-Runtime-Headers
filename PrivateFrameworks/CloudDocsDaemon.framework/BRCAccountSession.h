@@ -48,6 +48,10 @@
 @property(readonly) BRCThrottle * lostItemThrottle;
 @property(readonly) BRCThrottle * operationFailureThrottle;
 @property(readonly) BRCThrottle * syncAppContainerThrottle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)coreDuetSession;

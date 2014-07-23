@@ -21,6 +21,7 @@
 - (void)selectionChangedWithGestureAt:(struct CGPoint { double x1; double x2; })arg1 withGesture:(long long)arg2 withState:(long long)arg3 withFlags:(long long)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })selectionFrame;
 - (id)initWithView:(id)arg1;
+- (void)selectionChanged;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 

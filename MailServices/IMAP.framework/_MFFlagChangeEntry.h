@@ -23,9 +23,9 @@
 - (unsigned int)connectionTag;
 - (id)changes;
 - (id)initWithPath:(id)arg1 UID:(unsigned int)arg2 changes:(id)arg3;
+- (id)path;
 - (void)setCommitTime:(double)arg1;
 - (double)commitTime;
-- (id)path;
 - (void)dealloc;
 - (unsigned int)uid;
 

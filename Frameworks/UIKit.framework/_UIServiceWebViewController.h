@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIServiceWebView, WebUIBrowserLoadingController;
+@class _UIServiceWebView, WebUIBrowserLoadingController, NSString;
 
 @interface _UIServiceWebViewController : UIViewController <_UIServiceWebViewControllerProtocol, WebUIBrowserLoadingControllerDelegate> {
     _UIServiceWebView *_uiWebView;
     WebUIBrowserLoadingController *_loadingController;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;

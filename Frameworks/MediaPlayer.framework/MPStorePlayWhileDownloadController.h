@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class SSDownloadHandler, NSMutableSet, SSDownloadManager, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class NSString, SSDownloadHandler, NSMutableSet, SSDownloadManager, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface MPStorePlayWhileDownloadController : NSObject <SSDownloadHandlerDelegate, UIAlertViewDelegate> {
     NSMutableSet *_cellularRestrictedAlertViews;
@@ -11,6 +11,11 @@
     NSObject<OS_dispatch_queue> *_downloadSessionQueue;
     NSMutableArray *_downloadSessions;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedController;
 

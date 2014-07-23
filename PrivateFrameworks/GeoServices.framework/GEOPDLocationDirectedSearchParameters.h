@@ -29,6 +29,7 @@
 
 
 - (id)viewportInfo;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3;
 - (bool)hasSortOrder;
 - (void)setHasSortOrder:(bool)arg1;
 - (bool)hasViewportInfo;

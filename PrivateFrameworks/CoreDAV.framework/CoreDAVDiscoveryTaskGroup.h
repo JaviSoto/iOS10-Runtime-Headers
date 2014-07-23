@@ -24,6 +24,10 @@
 @property(retain) <CoreDAVAccountInfoProvider> * discoveredAccountInfo;
 @property(retain) NSString * wellKnownPath;
 @property(retain) NSArray * potentialContextPaths;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPotentialContextPaths:(id)arg1;

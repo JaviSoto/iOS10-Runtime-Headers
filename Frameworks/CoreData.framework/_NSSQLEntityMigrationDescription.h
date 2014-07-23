@@ -41,5 +41,6 @@
 - (id)sourceEntity;
 - (id)destinationEntity;
 - (void)dealloc;
+- (id)description;
 
 @end

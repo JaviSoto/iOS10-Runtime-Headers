@@ -22,6 +22,7 @@
 - (void)setHasVersion:(bool)arg1;
 - (bool)hasVersion;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

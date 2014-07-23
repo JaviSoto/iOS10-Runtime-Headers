@@ -5,15 +5,18 @@
 @class NSString;
 
 @interface SKUIWriteAReviewTemplateViewElement : SKUIViewElement  {
+    long long _itemIdentifier;
     NSString *_reviewMetadataURLString;
 }
 
+@property(readonly) long long itemIdentifier;
 @property(readonly) NSString * reviewMetadataURLString;
 
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)reviewMetadataURLString;
+- (long long)itemIdentifier;
 - (void).cxx_destruct;
 
 @end

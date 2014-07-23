@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <UIViewControllerInteractiveTransitioning>, NSArray, _UIViewControllerTransitionCoordinator, UIView, <UIViewControllerAnimatedTransitioning>;
+@class <UIViewControllerInteractiveTransitioning>, NSArray, NSString, _UIViewControllerTransitionCoordinator, UIView, <UIViewControllerAnimatedTransitioning>;
 
 @interface _UIViewControllerTransitionContext : NSObject <UIViewControllerContextTransitioningEx> {
     double _previousPercentComplete;
@@ -85,6 +85,10 @@
 @property(setter=_setPostInteractiveCompletionHandler:,copy) id _postInteractiveCompletionHandler;
 @property(setter=_setPresentationStyle:) long long presentationStyle;
 @property(setter=_setIsPresentation:) bool _isPresentation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_associatedTransitionContextForObject:(id)arg1;
 
@@ -112,8 +116,8 @@
 - (void)_setInitiallyInteractive:(bool)arg1;
 - (void)_setAuxContext:(id)arg1;
 - (bool)_transitionIsInFlight;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (bool)_isRotating;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (id)_containerViews;
 - (void)_setIsPresentation:(bool)arg1;
 - (id)_completionHandler;

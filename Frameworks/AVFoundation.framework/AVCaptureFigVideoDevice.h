@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSString, NSArray, NSMutableDictionary, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, AVCaptureDeviceFormat;
+@class AVWeakReference, NSString, NSArray, AVCaptureDeviceControlRequestQueue, NSDictionary, NSMutableDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, AVCaptureDeviceFormat;
 
 @interface AVCaptureFigVideoDevice : AVCaptureDevice  {
     NSObject<OS_dispatch_queue> *_fcsQueue;
@@ -53,6 +53,7 @@
         double y; 
     } _exposurePointOfInterest;
     bool_adjustingExposure;
+    bool_waitingForExposureAdjustmentBeforeLocking;
     long long _wbMode;
     struct { 
         float redGain; 
@@ -73,10 +74,10 @@
     double _wbSeedScale;
     bool_providesStortorgetMetadata;
     bool_automaticallyAdjustsImageControlMode;
-    struct opaqueCMSimpleQueue { } *_manualFocusControlRequests;
-    struct opaqueCMSimpleQueue { } *_manualExposureControlRequests;
-    struct opaqueCMSimpleQueue { } *_biasedExposureControlRequests;
-    struct opaqueCMSimpleQueue { } *_manualWhiteBalanceControlRequests;
+    AVCaptureDeviceControlRequestQueue *_manualFocusControlRequests;
+    AVCaptureDeviceControlRequestQueue *_manualExposureControlRequests;
+    AVCaptureDeviceControlRequestQueue *_biasedExposureControlRequests;
+    AVCaptureDeviceControlRequestQueue *_manualWhiteBalanceControlRequests;
     long long _imageControlMode;
     long long _flashMode;
     bool_flashActive;
@@ -102,6 +103,8 @@
     bool_automaticallyEnablesLowLightBoostWhenAvailable;
     bool_lowLightBoostEnabled;
     bool_highDynamicRangeSceneDetectionEnabled;
+    bool_automaticallyAdjustsVideoFeature1;
+    bool_videoFeature1Enabled;
     bool_sceneIsHighDynamicRange;
     float _saturation;
     float _contrast;
@@ -132,6 +135,7 @@
 + (void)initialize;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)setVideoFeature1Enabled:(bool)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
 - (void)setVideoZoomRampAcceleration:(float)arg1;
@@ -148,6 +152,7 @@
 - (long long)videoZoomDownscaleStageHint;
 - (void)setVideoZoomDrawOverlay:(bool)arg1;
 - (bool)videoZoomDrawOverlay;
+- (void)_drainManualControlRequestQueue:(id)arg1;
 - (void)_setLowLightBoostEnabled:(bool)arg1;
 - (void)_setVideoZoomFactor:(double)arg1;
 - (void)_setHighDynamicRangeScene:(bool)arg1;
@@ -168,13 +173,15 @@
 - (struct { float x1; float x2; })_chromaticityValuesForDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 atMix:(double)arg2;
 - (double)_predictedMixForGains:(struct { float x1; float x2; float x3; })arg1;
 - (bool)_ensureWhiteBalanceCalibrationUnpacked;
-- (int)_setWhiteBalanceWithMode:(long long)arg1 gains:(struct { float x1; float x2; float x3; })arg2;
-- (int)_setExposureWithMode:(long long)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ISO:(float)arg3;
-- (void)_callClientOnMainThreadWithDeviceControlCompletionHandler:(id)arg1 syncTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (int)_setWhiteBalanceWithMode:(long long)arg1 gains:(struct { float x1; float x2; float x3; })arg2 requestID:(int)arg3;
+- (int)_setExposureWithMode:(long long)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ISO:(float)arg3 requestID:(int)arg4;
+- (void)_handleManualControlCompletionForRequestQueue:(id)arg1 withPayload:(id)arg2;
 - (bool)_hasKeyValueObserversForHighFrequencyProperty:(id)arg1;
-- (int)_setFocusWithMode:(long long)arg1 lensPosition:(float)arg2;
+- (int)_setFocusWithMode:(long long)arg1 lensPosition:(float)arg2 requestID:(int)arg3;
 - (int)_setActiveVideoMinFrameDurationInternal:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (int)_setActiveVideoMaxFrameDurationInternal:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_performBlockOnMainThread:(id)arg1;
+- (void)_drainManualControlRequestQueues;
 - (int)_setFigCaptureSourceProperty:(struct __CFString { }*)arg1 withValue:(id)arg2;
 - (void)_updateFigCaptureSourceObserverCounts;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
@@ -206,6 +213,9 @@
 - (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
 - (void)setSaturation:(float)arg1;
 - (float)saturation;
+- (bool)isVideoFeature1Enabled;
+- (void)setAutomaticallyAdjustsVideoFeature1:(bool)arg1;
+- (bool)automaticallyAdjustsVideoFeature1;
 - (void)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (bool)automaticallyAdjustsImageControlMode;
 - (bool)isImageControlModeSupported:(long long)arg1;
@@ -278,6 +288,8 @@
 - (id)formats;
 - (bool)isInUseByAnotherApplication;
 - (bool)isMachineReadableCodeDetectionSupported;
+- (void)_setStillImageStabilizationAutomaticallyEnabled:(bool)arg1;
+- (void)_setVideoFeature1Enabled:(bool)arg1;
 - (bool)cachesFigCaptureSourceConfigurationChanges;
 - (void)setCachesFigCaptureSourceConfigurationChanges:(bool)arg1;
 - (bool)isHighDynamicRangeScene;

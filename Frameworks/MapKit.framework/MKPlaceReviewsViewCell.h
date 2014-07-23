@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKStarRatingAndLabelView, NSString, UIImageView, UIImage, UILabel, NSDate;
+@class MKStarRatingAndLabelView, NSString, UIImage, NSDate, UIImageView, NSMutableArray, UILabel;
 
 @interface MKPlaceReviewsViewCell : UITableViewCell  {
     UIImageView *_pictureView;
@@ -10,6 +10,7 @@
     UILabel *_authorLabel;
     UILabel *_dateLabel;
     UILabel *_reviewLabel;
+    NSMutableArray *_scaledConstraints;
 }
 
 @property UIImage * picture;
@@ -17,16 +18,24 @@
 @property NSDate * date;
 @property NSString * reviewText;
 @property unsigned long long rating;
+@property(retain) NSMutableArray * scaledConstraints;
 
++ (double)intrinsicContentHeight;
 + (id)reuseIdentifier;
 
+- (void)setScaledConstraints:(id)arg1;
+- (id)scaledConstraints;
 - (void)setReviewText:(id)arg1;
 - (void)setPicture:(id)arg1;
+- (id)fontForAuthor;
+- (void)contentSizeDidChange;
 - (void)setRating:(unsigned long long)arg1;
 - (void)setAuthor:(id)arg1;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)setDate:(id)arg1;
 - (void)prepareForReuse;
+- (void)updateConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

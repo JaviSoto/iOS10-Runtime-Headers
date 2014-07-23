@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary;
+@class NSString, NSMutableDictionary;
 
 @interface SSSoftwareLibraryItem : NSObject <SSXPCCoding> {
     NSMutableDictionary *_etags;
@@ -13,6 +13,10 @@
 
 @property(getter=isPlaceholder) bool placeholder;
 @property(getter=isProfileValidated) bool profileValidated;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isProfileValidated;

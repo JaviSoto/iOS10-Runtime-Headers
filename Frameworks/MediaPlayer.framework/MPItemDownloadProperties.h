@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, NSArray, NSURL, NSMutableSet;
+@class SSDownload, NSString, NSArray, NSURL, NSMutableSet;
 
 @interface MPItemDownloadProperties : NSObject <MPStoreDownloadManagerObserver, NSCopying> {
     long long _assetFileSize;
     NSURL *_destinationURL;
+    SSDownload *_download;
     bool_downloadExists;
     NSString *_downloadIdentifier;
     long long _downloadSizeLimit;
@@ -23,6 +24,10 @@
 @property unsigned long long downloadToken;
 @property(readonly) long long downloadSizeLimit;
 @property(readonly) NSURL * sourceURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDownloadToken:(unsigned long long)arg1;

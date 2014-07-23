@@ -6,6 +6,7 @@
 }
 
 + (void)presentWifiModePromptOnViewController:(id)arg1;
++ (id)_wifiMessageForKey:(id)arg1;
 + (void)presentDownloadErrorAlertOnViewController:(id)arg1 withMessage:(id)arg2;
 + (void)presentAirplaneModePromptOnViewController:(id)arg1;
 

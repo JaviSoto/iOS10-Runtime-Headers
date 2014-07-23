@@ -12,13 +12,14 @@
 }
 
 
-- (id)remoteID;
 - (id)customFlags;
 - (void)setHasTemporaryUid:(bool)arg1;
 - (void)setIsPartial:(bool)arg1;
 - (long long)compareByNumberWithMessage:(id)arg1;
 - (id)initWithFlags:(unsigned long long)arg1 customFlags:(id)arg2 size:(unsigned long long)arg3 uid:(unsigned int)arg4;
 - (id)mailboxName;
+- (id)remoteID;
+- (bool)isMessageContentsLocallyAvailable;
 - (id)remoteMailboxURL;
 - (bool)isPartial;
 - (void)setUniqueRemoteId:(unsigned long long)arg1;
@@ -26,7 +27,6 @@
 - (id)originalMailboxURL;
 - (bool)hasTemporaryUid;
 - (void)setPreferredEncoding:(unsigned int)arg1;
-- (bool)isMessageContentsLocallyAvailable;
 - (void)setUid:(unsigned int)arg1;
 - (unsigned long long)messageSize;
 - (id)messageID;

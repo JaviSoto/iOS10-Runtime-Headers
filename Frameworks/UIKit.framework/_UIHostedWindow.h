@@ -26,7 +26,11 @@
 - (void)_configureContextOptions:(id)arg1;
 - (bool)_isClippedByScreenJail;
 - (void)_updateTransformLayerForClassicPresentation;
+- (bool)_isOffsetByScreenJail;
+- (bool)_isScaledByScreenJail;
+- (bool)_isRotatedByScreenJail;
 - (bool)_usesWindowServerHitTesting;
+- (bool)_isConstrainedByScreenJail;
 - (bool)_isWindowServerHostingManaged;
 - (bool)_needsShakesWhenInactive;
 

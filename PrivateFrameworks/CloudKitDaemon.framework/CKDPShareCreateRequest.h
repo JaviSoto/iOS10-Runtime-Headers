@@ -27,6 +27,7 @@
 - (void)setInvitationImageUrl:(id)arg1;
 - (id)share;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setInvitationMessage:(id)arg1;
 - (id)invitationMessage;
 - (bool)readFrom:(id)arg1;

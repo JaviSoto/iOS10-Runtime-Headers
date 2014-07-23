@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class NSMutableDictionary, <WebBookmarksXPCConnectionDelegate>, NSObject<OS_xpc_object>, NSMutableArray;
+@class NSMutableDictionary, NSString, <WebBookmarksXPCConnectionDelegate>, NSObject<OS_xpc_object>, NSMutableArray;
 
 @interface WebBookmarksXPCListener : NSObject <WebBookmarksXPCConnectionDelegate> {
     NSObject<OS_xpc_object> *_listenerConnection;
@@ -10,6 +10,11 @@
     <WebBookmarksXPCConnectionDelegate> *_delegate;
     NSMutableDictionary *_messageHandlers;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initListenerForMachService:(const char *)arg1 delegate:(id)arg2;

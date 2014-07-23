@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableView, UIPrintPanelViewController, UIPickerView;
+@class UIPrintPanelViewController, NSString, UIPickerView, UITableView;
 
 @interface UIPrintRangeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIPrintPanelViewController *_printPanelViewController;
@@ -16,6 +16,11 @@
     UITableView *_tableView;
     double _pickerWidth;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)dealloc;

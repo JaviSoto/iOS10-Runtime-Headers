@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSWorkspaceClientDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSMutableArray, BSBasicServerClient;
+@class <FBSWorkspaceClientDelegate>, NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>, NSMutableArray, BSBasicServerClient;
 
 @interface FBSWorkspaceClient : BSBaseXPCClient <FBSSceneUpdater> {
     BSBasicServerClient *_client;
@@ -15,10 +15,13 @@
 
 @property(readonly) <FBSWorkspaceClientDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * callOutQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)queue_connectionWasInterrupted;
-- (void)queue_invalidate;
 - (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (id)_loggingProem;
 - (void)queue_handleMessage:(id)arg1;

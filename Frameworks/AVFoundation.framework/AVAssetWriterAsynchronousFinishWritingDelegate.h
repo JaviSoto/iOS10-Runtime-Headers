@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVAssetWriterFigAssetWriterNotificationHandler, AVWeakReference;
+@class NSString, AVAssetWriterFigAssetWriterNotificationHandler, AVWeakReference;
 
 @interface AVAssetWriterAsynchronousFinishWritingDelegate : NSObject <AVAssetWriterFigAssetWriterNotificationHandlerDelegate, AVAssetWriterFinishWritingHelperDelegate> {
 
@@ -19,6 +19,11 @@
     AVWeakReference *_weakReferenceToHelper;
     AVWeakReference *_weakReferenceToSelf;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_callHandlerIfNotCalled;

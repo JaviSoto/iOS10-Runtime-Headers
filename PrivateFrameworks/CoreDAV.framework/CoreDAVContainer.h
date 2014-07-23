@@ -72,7 +72,6 @@
 - (void)setAddMemberURL:(id)arg1;
 - (void)setSupportedReportSetItem:(id)arg1;
 - (void)setQuotaUsed:(id)arg1;
-- (void)setQuotaAvailable:(id)arg1;
 - (void)setResourceID:(id)arg1;
 - (void)setPushKey:(id)arg1;
 - (void)setPrivileges:(id)arg1;
@@ -85,7 +84,6 @@
 - (id)pushTransports;
 - (id)supportedReportsAsStringSet;
 - (id)quotaUsed;
-- (id)quotaAvailable;
 - (id)resourceID;
 - (id)pushKey;
 - (id)privilegesAsStringSet;
@@ -94,6 +92,8 @@
 - (id)resourceType;
 - (void)applyParsedProperties:(id)arg1;
 - (id)initWithURL:(id)arg1 andProperties:(id)arg2;
+- (void)setQuotaAvailable:(id)arg1;
+- (id)quotaAvailable;
 - (id)owner;
 - (id)url;
 - (void)setUrl:(id)arg1;

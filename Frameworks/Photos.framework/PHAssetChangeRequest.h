@@ -32,6 +32,10 @@
 @property(retain) NSString * imageTypeForInsertion;
 @property(retain) NSURL * videoURLForInsertion;
 @property(readonly) PHChangeRequestHelper * helper;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * managedEntityName;
 @property(readonly) NSString * uuid;
 @property(readonly) NSManagedObjectID * objectID;
@@ -43,28 +47,30 @@
 + (id)changeRequestForAsset:(id)arg1;
 + (id)creationRequestForAssetFromImageAtFileURL:(id)arg1;
 + (id)creationRequestForAssetFromVideoAtFileURL:(id)arg1;
-+ (bool)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
-+ (bool)validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
 + (void)deleteAssets:(id)arg1;
 + (id)creationRequestForAssetFromImage:(id)arg1;
 + (void)_createAssetFromVideoURL:(id)arg1 uuid:(id)arg2;
 + (void)_createAssetFromImageData:(id)arg1 imageType:(id)arg2 uuid:(id)arg3;
-+ (bool)validateImageDataForAssetCreation:(id)arg1 error:(id*)arg2;
-+ (bool)validateVideoURLForAssetCreation:(id)arg1 error:(id*)arg2;
 + (id)creationRequestForAssetFromImageData:(id)arg1 usingUUID:(id)arg2;
 + (id)_allAssetEditOperations;
 + (id)creationRequestForAssetFromImageData:(id)arg1;
 
-- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 hasSubstandardRender:(bool)arg5;
+- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(bool)arg5 fullSizeRenderSize:(struct CGSize { double x1; double x2; })arg6;
 - (id)placeholderForCreatedAsset;
 - (void)revertAssetContentToOriginal;
-- (id)contentEditingOutput;
-- (id)videoURLForInsertion;
+- (bool)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)validateImageDataForAssetCreation:(id)arg1 error:(id*)arg2;
+- (bool)_validateContentEditingOutput:(id)arg1 error:(id*)arg2;
+- (bool)validateVideoURLForAssetCreation:(id)arg1 error:(id*)arg2;
 - (id)imageTypeForInsertion;
-- (id)imageForInsertion;
-- (id)imageDataForInsertion;
 - (id)supportedEditOperations;
 - (void)setContentEditingOutput:(id)arg1;
+- (id)videoURLForInsertion;
+- (id)imageForInsertion;
+- (id)imageDataForInsertion;
+- (long long)_mediaTypeForCreatedAsset;
 - (void)setVideoURLForInsertion:(id)arg1;
 - (void)setImageForInsertion:(id)arg1;
 - (void)setImageDataForInsertion:(id)arg1;
@@ -81,6 +87,10 @@
 - (void)encodeToXPCDict:(id)arg1;
 - (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)isRevertingContentToOriginal;
+- (id)contentEditingOutput;
+- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (bool)isEntitled;
 - (id)managedEntityName;
 - (void)setFavorite:(bool)arg1;
@@ -97,5 +107,6 @@
 - (id)clientName;
 - (void)setLocation:(id)arg1;
 - (void).cxx_destruct;
+- (bool)isHiding;
 
 @end

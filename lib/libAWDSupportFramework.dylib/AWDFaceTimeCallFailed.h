@@ -170,6 +170,11 @@
 @property unsigned int onLockScreen;
 
 
+- (unsigned int)registrationError;
+- (void)setDataRate:(unsigned int)arg1;
+- (unsigned int)dataRate;
+- (unsigned int)isInitiator;
+- (void)setIsNetworkReachable:(unsigned int)arg1;
 - (int)gksReturnCode;
 - (unsigned int)isCallUpgrade;
 - (unsigned int)relayConnectDuration;
@@ -309,16 +314,11 @@
 - (void)setGenericError:(int)arg1;
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
-- (bool)hasGuid;
-- (unsigned int)registrationError;
-- (void)setDataRate:(unsigned int)arg1;
-- (unsigned int)dataRate;
-- (unsigned int)isInitiator;
-- (void)setIsNetworkReachable:(unsigned int)arg1;
-- (void)setIsVideo:(unsigned int)arg1;
 - (void)setConnectionType:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasGuid;
+- (void)setIsVideo:(unsigned int)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)linkQuality;

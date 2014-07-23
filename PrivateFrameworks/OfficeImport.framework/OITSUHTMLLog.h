@@ -30,11 +30,11 @@
 - (void)logBegin;
 - (void)setStylesheet:(id)arg1;
 - (id)stylesheet;
+- (id)path;
 - (void)clear;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)close;
-- (id)path;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void)setScript:(id)arg1;

@@ -157,8 +157,8 @@
 - (bool)hasWifi2P4GHzTxDuration;
 - (void)setHasWifi2P4GHzTxDuration:(bool)arg1;
 - (void)setWifi2P4GHzTxDuration:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

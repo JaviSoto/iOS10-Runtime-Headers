@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKStyleManager, NSSet, VKAnimation, VKTileKeyList, VKRouteLine, VKPolylineOverlay;
+@class VKPolylineOverlay, NSString, NSSet, VKTileKeyList, VKRouteLine, VKAnimation, VKStyleManager;
 
 @interface VKPolylineOverlayPainter : VKOverlayPainter <VKPolylineObserver> {
     VKRouteLine *_routeLine;
@@ -59,11 +59,13 @@
             struct RouteLineArrowManager {} *__first_; 
         } __ptr_; 
     } _arrowManager;
-    struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > { 
-        struct __compressed_pair<vk::RouteLineArrowLayer *, std::__1::default_delete<vk::RouteLineArrowLayer> > { 
-            struct RouteLineArrowLayer {} *__first_; 
-        } __ptr_; 
-    } _arrowLayer;
+    struct vector<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> >, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > > > { 
+        struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__begin_; 
+        struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__end_; 
+        struct __compressed_pair<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > *, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > > > { 
+            struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__first_; 
+        } __end_cap_; 
+    } _arrowLayers;
     struct unique_ptr<vk::RouteLineManager, std::__1::default_delete<vk::RouteLineManager> > { 
         struct __compressed_pair<vk::RouteLineManager *, std::__1::default_delete<vk::RouteLineManager> > { 
             struct RouteLineManager {} *__first_; 
@@ -156,6 +158,10 @@
 @property(retain) VKPolylineOverlay * routeOverlay;
 @property bool showTraffic;
 @property(readonly) VKPolylineOverlay * polyline;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShowTraffic:(bool)arg1;

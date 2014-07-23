@@ -46,6 +46,7 @@
 - (id)_absoluteURL;
 - (long long)statusOfValueForKey:(id)arg1;
 - (id)_comparisonToken;
+- (bool)containsMovieFragments;
 - (bool)canContainMovieFragments;
 - (bool)isCompatibleWithSavedPhotosAlbum;
 - (bool)isComposable;

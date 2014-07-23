@@ -19,6 +19,10 @@
 @property(readonly) NSTimeZone * timeZone;
 @property(readonly) NSString * title;
 @property(readonly) bool shouldLoadDefaultProperties;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
 + (id)predicateWithStartDate:(id)arg1 title:(id)arg2 calendars:(id)arg3;

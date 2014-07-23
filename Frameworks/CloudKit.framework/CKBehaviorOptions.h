@@ -20,6 +20,8 @@
 - (id)configBaseURL;
 - (double)flowControlRegenerationOverride;
 - (long long)flowControlBudgetOverride;
+- (unsigned long long)assetEvictionGracePeriodOnHighWatermarkWithDefaultValue:(unsigned long long)arg1;
+- (unsigned long long)assetEvictionGracePeriodWithDefaultValue:(unsigned long long)arg1;
 - (bool)evictRecentAssets;
 - (id)customDeviceServiceBaseURL;
 - (id)customShareServiceBaseURL;
@@ -29,7 +31,10 @@
 - (bool)useStingray;
 - (bool)useBackgroundSessions;
 - (bool)enableMescal;
+- (bool)shouldLogProtobufBinary;
+- (bool)validateMescalResponses;
 - (double)defaultRequestTimeout;
+- (void)setUseEncryption:(bool)arg1;
 - (bool)useEncryption;
 - (double)flowControlRegeneration;
 - (long long)flowControlBudget;
@@ -43,7 +48,6 @@
 - (void)setCachedPrefs:(id)arg1;
 - (void)setProductVersion:(id)arg1;
 - (void)setUseStingray:(bool)arg1;
-- (void)setUseEncryption:(bool)arg1;
 - (void)setOptimisticPCS:(bool)arg1;
 - (unsigned long long)PCSCacheSize;
 - (bool)sandboxCloudD;

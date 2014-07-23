@@ -2,34 +2,30 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSArray, NSObject<OS_xpc_object>;
+@class NSObject<OS_xpc_object>;
 
 @interface BKSTouchDeliveryPolicy : NSObject <NSSecureCoding> {
-    long long _type;
-    unsigned int _childContextId;
-    unsigned int _hostContextId;
-    NSArray *_policies;
-    NSObject<OS_xpc_object> *_assertionEndpoint;
 }
 
 @property(retain) NSObject<OS_xpc_object> * assertionEndpoint;
 
 + (id)policyByCombiningPolicies:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (bool)supportsSecureCoding;
++ (id)policyCancelingTouchesDeliveredToContextId:(unsigned int)arg1 withInitialTouchTimestamp:(double)arg2;
 + (id)policyRequiringSharingOfTouchesDeliveredToChildContextId:(unsigned int)arg1 withHostContextId:(unsigned int)arg2;
 
-- (id)assertionEndpoint;
 - (id)policyExcludingPolicy:(id)arg1;
 - (id)policyIncludingPolicy:(id)arg1;
+- (void)setAssertionEndpoint:(id)arg1;
+- (id)assertionEndpoint;
 - (id)policyByMappingContainedPoliciesWithBlock:(id)arg1;
 - (id)reducePolicyToObjectWithBlock:(id)arg1;
-- (id)matchOverridePolicy:(id)arg1 orCombinedPolicy:(id)arg2;
+- (id)matchSharingTouchesPolicy:(id)arg1 orCancelTouchesPolicy:(id)arg2 orCombinedPolicy:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)description;
-- (void)setAssertionEndpoint:(id)arg1;
 
 @end

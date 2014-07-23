@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSData;
+@class NSData, NSString;
 
 @interface CKEncryptedData : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
     NSData *_data;
@@ -11,6 +11,10 @@
 
 @property(copy) NSData * data;
 @property(copy) NSData * encryptedData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)supportsSecureCoding;
 

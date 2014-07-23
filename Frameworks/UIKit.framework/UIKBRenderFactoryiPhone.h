@@ -12,8 +12,9 @@
 - (id)shiftLockControlKeyTraits;
 - (double)dualStringBottomAdditionalOffsetForDisplayContents:(id)arg1;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned long long)arg2;
+- (bool)isTallPopup;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantPaddedFrameInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantSymbolFrameInsets:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantSymbolFrameInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantDisplayFrameInsets;
 - (bool)_popupStyleForKey:(id)arg1;
 - (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
@@ -23,12 +24,14 @@
 - (struct CGPoint { double x1; double x2; })variantSymbolTextOffset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPaddleInsets;
 - (struct CGPoint { double x1; double x2; })popupSymbolTextOffset;
+- (double)popupFontSize;
 - (struct CGPoint { double x1; double x2; })zhuyinFirstToneKeyOffset;
 - (double)zhuyinFirstToneKeyFontSize;
 - (struct CGPoint { double x1; double x2; })assistKeyOffset;
 - (double)assistKeyFontSize;
 - (struct CGPoint { double x1; double x2; })returnKeyOffset;
 - (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
+- (double)moreABCKeyFontSize;
 - (struct CGPoint { double x1; double x2; })more123KeyOffset;
 - (double)stringKeyFontSize;
 - (struct CGPoint { double x1; double x2; })stringKeyOffset;
@@ -37,6 +40,7 @@
 - (double)shiftKeyFontSize;
 - (struct CGPoint { double x1; double x2; })deleteKeyOffset;
 - (struct CGPoint { double x1; double x2; })dictationKeyOffset;
+- (struct CGPoint { double x1; double x2; })realEmojiKeyOffset;
 - (struct CGPoint { double x1; double x2; })internationalKeyOffset;
 - (id)controlKeyForegroundColorName;
 - (id)dictationKeyImageName;

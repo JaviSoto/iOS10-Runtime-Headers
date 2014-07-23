@@ -6,6 +6,7 @@
 }
 
 + (id)errorWithCode:(long long)arg1;
++ (bool)error:(id)arg1 hasCode:(long long)arg2;
 + (id)internalErrorWithMessage:(id)arg1;
 + (id)errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (void)checkErrorForException:(id)arg1;

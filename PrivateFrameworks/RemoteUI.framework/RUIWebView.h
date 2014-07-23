@@ -14,11 +14,15 @@
 @property id delegate;
 @property(copy) NSString * html;
 @property(retain) NSURL * baseURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (id)html;
 - (id)userStyleSheet;
 - (void)setHtml:(id)arg1;
+- (id)html;
 - (id)sourceURL;
 - (void)setBaseURL:(id)arg1;
 - (id)webView;

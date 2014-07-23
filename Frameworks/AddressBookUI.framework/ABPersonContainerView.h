@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView, ABPersonTableViewDataSource, UIScrollView<ABPersonTabsScrollView>, UISegmentedControl, UIImageView, ABPersonTableView, ABPersonOverlayingContainerView;
+@class UIView, NSString, ABPersonTableViewDataSource, UIScrollView<ABPersonTabsScrollView>, UISegmentedControl, UIImageView, ABPersonTableView, ABPersonOverlayingContainerView;
 
 @interface ABPersonContainerView : UIView <ABPersonTabsLayoutManager> {
     UISegmentedControl *_contentSwitchingTabs;
@@ -24,6 +24,10 @@
 @property(retain) UIView * nonScrollableHeaderView;
 @property ABPersonTableViewDataSource * dataSource;
 @property(readonly) UIScrollView<ABPersonTabsScrollView> * currentScrollView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)contentSwitchingTabsBorder;

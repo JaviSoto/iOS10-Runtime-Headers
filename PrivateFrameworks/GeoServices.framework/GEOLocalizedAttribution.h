@@ -19,7 +19,7 @@
 @property(retain) NSMutableArray * snippetLogoURLs;
 
 
-- (id)bestURLForLogos:(id)arg1 hiDPI:(bool)arg2;
+- (id)bestURLForLogos:(id)arg1 scale:(double)arg2;
 - (id)snippetLogoURLs;
 - (id)logoURLs;
 - (bool)hasDisplayName;

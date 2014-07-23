@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UILabel, MKLocationManager, UIView;
+@class NSString, MKLocationManager, UILabel, UIView;
 
 @interface MKStarkCompassView : UIView <MKLocationManagerObserver> {
     UIView *_contentsView;
@@ -15,6 +15,10 @@
 
 @property int compassPoint;
 @property double heading;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (int)compassPoint;

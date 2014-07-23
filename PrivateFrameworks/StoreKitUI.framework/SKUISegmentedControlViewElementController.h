@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, SKUISegmentedControlViewElement, SKUIMenuViewController, SKUIClientContext, SKUIMenuPopoverController, SKUIFlexibleSegmentedControl, UIViewController, UIBarButtonItem;
+@class UIView, NSString, SKUISegmentedControlViewElement, SKUIMenuViewController, SKUIClientContext, SKUIMenuPopoverController, SKUIFlexibleSegmentedControl, UIViewController, UIBarButtonItem;
 
 @interface SKUISegmentedControlViewElementController : NSObject <SKUIFlexibleSegmentedControlDelegate, SKUIMenuPopoverDelegate, SKUIMenuViewControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -22,6 +22,10 @@
 @property UIViewController * parentViewController;
 @property(readonly) UIView * segmentedControlView;
 @property(readonly) SKUISegmentedControlViewElement * viewElement;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_destroyPopoverController;

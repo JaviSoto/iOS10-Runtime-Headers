@@ -21,6 +21,7 @@
 - (id)fetchRequest;
 - (unsigned long long)requestType;
 - (void)dealloc;
+- (id)description;
 - (id)completionBlock;
 
 @end

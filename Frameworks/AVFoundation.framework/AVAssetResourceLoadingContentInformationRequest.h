@@ -18,6 +18,7 @@
 - (void)setRenewalDate:(id)arg1;
 - (bool)isDiskCachingPermitted;
 - (bool)isByteRangeAccessSupported;
+- (id)initWithLoadingRequest:(id)arg1;
 - (id)renewalDate;
 - (long long)contentLength;
 - (void)setContentType:(id)arg1;

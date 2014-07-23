@@ -9,7 +9,7 @@
     AVCaptureDevice *sourceDevice;
     AVWeakReference *outputWeakReference;
     AVWeakReference *videoPreviewLayerWeakReference;
-    boolinvalidated;
+    boolhasActiveObservers;
     boolactive;
     boolenabled;
     int changeSeed;
@@ -43,6 +43,7 @@
     long long feature0Mode;
     boolvideoStabilizationEnabled;
     long long activeFeature0Mode;
+    boolhasVideoMinFrameDurationObserver;
 }
 
 

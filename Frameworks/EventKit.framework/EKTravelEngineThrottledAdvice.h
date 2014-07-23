@@ -13,10 +13,10 @@
 @property(retain) <EKTravelAdvice> * advice;
 
 
-- (id)advice;
 - (void)setAdvice:(id)arg1;
 - (id)initWithEventExternalURL:(id)arg1;
 - (id)eventExternalURL;
+- (id)advice;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

@@ -250,8 +250,8 @@
 - (int)armUtilityPDFAtIndex:(unsigned long long)arg1;
 - (void)clearArmUtilityPDFs;
 - (unsigned long long)armUtilityPDFsCount;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

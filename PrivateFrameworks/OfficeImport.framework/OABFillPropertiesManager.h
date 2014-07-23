@@ -7,13 +7,18 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <OABPropertiesManager>;
+@class NSString, <OABPropertiesManager>;
 
 @interface OABFillPropertiesManager : NSObject <OABFillPropertiesManager> {
     const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; } *mFill;
     int mShapeType;
     <OABPropertiesManager> *mMasterManager;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithFill:(const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1 shapeType:(int)arg2 masterShape:(struct EshShape { }*)arg3;

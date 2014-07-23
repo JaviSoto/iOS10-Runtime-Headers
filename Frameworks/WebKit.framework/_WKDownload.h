@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURLRequest, WKWebView;
+@class NSURLRequest, WKWebView, NSString;
 
 @interface _WKDownload : NSObject <WKObject> {
     struct ObjectStorage<WebKit::DownloadProxy> { 
@@ -22,6 +22,10 @@
 
 @property(readonly) NSURLRequest * request;
 @property WKWebView * originatingWebView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

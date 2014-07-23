@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
+@class NSString;
+
 @interface GKMacGameIconBrush : GKImageBrush <GKBrushIdentification> {
     struct CGSize { 
         double width; 
@@ -10,6 +12,10 @@
 }
 
 @property struct CGSize { double x1; double x2; } outputSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setOutputSize:(struct CGSize { double x1; double x2; })arg1;

@@ -23,8 +23,6 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)actions;
-- (id)animationFencePort;
-- (id)animationSettings;
 - (id)transientLocalClientSettings;
 - (id)otherSettings;
 - (void)setActions:(id)arg1;
@@ -37,6 +35,8 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)animationSettings;
+- (id)animationFencePort;
 - (bool)isUISubclass;
 
 @end

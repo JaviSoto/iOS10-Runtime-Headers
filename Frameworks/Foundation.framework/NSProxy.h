@@ -15,6 +15,8 @@
 
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (bool)isFault;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
@@ -36,9 +38,9 @@
 + (unsigned long long)hash;
 + (id)mutableCopy;
 + (bool)isKindOfClass:(Class)arg1;
++ (Class)superclass;
 + (bool)isMemberOfClass:(Class)arg1;
 + (bool)isProxy;
-+ (Class)superclass;
 + (bool)allowsWeakReference;
 + (bool)retainWeakReference;
 + (bool)_isDeallocating;
@@ -78,9 +80,9 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (bool)isKindOfClass:(Class)arg1;
+- (Class)superclass;
 - (bool)isMemberOfClass:(Class)arg1;
 - (bool)isProxy;
-- (Class)superclass;
 - (bool)allowsWeakReference;
 - (bool)retainWeakReference;
 - (bool)_isDeallocating;

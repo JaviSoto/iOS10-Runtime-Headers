@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPercentDrivenInteractiveTransition, UICollectionViewLayout;
+@class UIPercentDrivenInteractiveTransition, UICollectionViewLayout, NSString;
 
 @interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     bool_crossFadeNavigationBar;
@@ -19,6 +19,10 @@
 @property UIPercentDrivenInteractiveTransition * interactionController;
 @property bool interactionAborted;
 @property long long operation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)transitionForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 

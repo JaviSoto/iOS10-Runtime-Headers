@@ -15,8 +15,9 @@
 @property(readonly) BRCAccountSession * accountSession;
 
 + (bool)isAccountStillUsingUbiquity;
++ (id)inSystemStoreAccountIDValidatingUbiquityEnabled:(bool)arg1;
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
-+ (id)_inSystemStoreAccountIDForUbiquityDataclass;
++ (id)inSystemStoreAccountIDForUbiquityDataclass;
 
 - (bool)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
 - (void)destroyCurrentSessionSynchronously;
@@ -29,6 +30,7 @@
 - (void)_destroyCurrentSessionSynchronously;
 - (bool)_loadCurrentOnDiskAccountSessionWithError:(id*)arg1;
 - (bool)setOnDiskAccountID:(id)arg1;
+- (void)_cleanupPushAndActivitiesStatesWhenNoSessionExists;
 - (id)onDiskAccountID;
 - (void)_watchAccountChanges;
 - (id)accountIDPath;

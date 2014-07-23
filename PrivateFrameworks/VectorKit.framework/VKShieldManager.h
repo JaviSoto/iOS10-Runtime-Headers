@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKGenericShieldGenerator, NSMapTable, NSArray, VKResourceManager;
+@class VKGenericShieldGenerator, NSMapTable, NSArray, NSString, VKResourceManager;
 
 @interface VKShieldManager : NSObject <GEOResourceManifestTileGroupObserver> {
     NSMapTable *_atlases;
@@ -104,6 +104,11 @@
     VKGenericShieldGenerator *_genericShieldGenerator;
     NSArray *_nonRegionalResourceNames;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedManager;
 

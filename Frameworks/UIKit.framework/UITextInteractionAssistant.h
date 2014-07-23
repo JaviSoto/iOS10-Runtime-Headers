@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder<UITextInput>, UILongPressGestureRecognizer, UITapGestureRecognizer, UITextChecker, NSHashTable, UIView, UIFieldEditor, NSMutableSet, NSMutableArray, UITextSelectionView, UIGestureRecognizer;
+@class UITapGestureRecognizer, NSMutableArray, UIView, UIFieldEditor, UILongPressGestureRecognizer, NSString, NSHashTable, UITextSelectionView, NSMutableSet, UIGestureRecognizer, UIResponder<UITextInput>, UITextChecker;
 
 @interface UITextInteractionAssistant : NSObject <UIGestureRecognizerDelegate> {
     UIResponder<UITextInput> *_view;
@@ -49,6 +49,10 @@
 @property(readonly) UIFieldEditor * fieldEditor;
 @property(retain) UITapGestureRecognizer * singleTapGesture;
 @property(getter=isExperimentalUIEnabled,readonly) bool experimentalUIEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)view;

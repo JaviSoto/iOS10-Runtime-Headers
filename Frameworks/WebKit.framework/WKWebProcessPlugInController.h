@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WKConnection;
+@class NSString, WKConnection;
 
 @interface WKWebProcessPlugInController : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundle> { 
@@ -23,6 +23,10 @@
 @property(readonly) struct OpaqueWKBundle { }* _bundleRef;
 @property(readonly) WKConnection * connection;
 @property(readonly) id parameters;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

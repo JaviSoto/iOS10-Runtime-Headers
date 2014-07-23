@@ -2,11 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEOCacheManagerRemoteProxy : NSObject <GEOCacheManaging> {
     NSObject<OS_dispatch_queue> *_queue;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)invalidationStateForPlace:(id)arg1;

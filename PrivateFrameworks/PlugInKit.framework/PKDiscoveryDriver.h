@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSSet;
+@class NSDictionary, NSSet, NSString;
 
 @interface PKDiscoveryDriver : NSObject <LSApplicationWorkspaceObserverProtocol> {
     int _annotationNotifyToken;
@@ -25,6 +25,10 @@
 @property(copy) id report;
 @property(retain) NSSet * lastResults;
 @property int annotationNotifyToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)attributes;

@@ -19,6 +19,7 @@
 - (id)user;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (void)_removeSWCACreatorAttribute;
 - (bool)_hasSWCACreatorAttribute;
 - (id)certificates;
 - (struct __SecIdentity { }*)identity;
@@ -29,9 +30,9 @@
 - (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned long long)arg3;
 - (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned long long)arg3;
 - (struct _CFURLCredential { }*)_cfurlcredential;
-- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

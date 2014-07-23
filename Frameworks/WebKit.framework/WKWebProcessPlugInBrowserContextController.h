@@ -7,12 +7,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WKBrowsingContextHandle, WKWebProcessPlugInPageGroup, _WKRemoteObjectRegistry, <WKWebProcessPlugInLoadDelegate>, WKDOMRange, WKDOMDocument, <WKWebProcessPlugInFormDelegatePrivate>, WKWebProcessPlugInFrame;
+@class WKBrowsingContextHandle, WKWebProcessPlugInPageGroup, _WKRemoteObjectRegistry, <WKWebProcessPlugInLoadDelegate>, NSString, WKDOMRange, WKDOMDocument, <WKWebProcessPlugInFormDelegatePrivate>, WKWebProcessPlugInFrame;
 
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[2000]; 
+            unsigned char __lx[2032]; 
         } data; 
     } _page;
     struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
@@ -37,6 +37,10 @@
 @property(readonly) WKWebProcessPlugInFrame * mainFrame;
 @property(readonly) WKWebProcessPlugInPageGroup * pageGroup;
 @property <WKWebProcessPlugInLoadDelegate> * loadDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 + (id)lookUpBrowsingContextFromHandle:(id)arg1;

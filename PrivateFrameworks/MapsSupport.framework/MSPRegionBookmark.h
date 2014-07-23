@@ -20,6 +20,7 @@
 - (bool)hasRegion;
 - (id)unknownFields;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)hasTitle;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

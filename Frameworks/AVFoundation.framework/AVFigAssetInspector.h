@@ -30,6 +30,7 @@
 - (unsigned long long)downloadToken;
 - (id)figChapters;
 - (id)figChapterGroupInfo;
+- (bool)containsMovieFragments;
 - (bool)canContainMovieFragments;
 - (bool)isCompatibleWithSavedPhotosAlbum;
 - (bool)isComposable;

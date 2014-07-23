@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardPropertyGroup, NSMutableArray, CNMutableContact;
+@class CNMutableContact, NSString, ABCardPropertyGroup, NSMutableArray;
 
 @interface ABPostalAddressEditorViewController : UITableViewController <ABPresenterDelegate, ABPropertyCellDelegate> {
     NSMutableArray *_propertyItems;
@@ -11,6 +11,10 @@
     ABCardPropertyGroup *_propertyGroup;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool isPresentingModalViewController;
 
 + (id)cellIdentifierForEditingProperty:(id)arg1;

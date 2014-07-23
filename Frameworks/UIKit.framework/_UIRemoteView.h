@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIColor, _UIHostedWindowHostingHandle;
+@class UIColor, _UIHostedWindowHostingHandle, NSString;
 
 @interface _UIRemoteView : UIView <UIStatusBarTinting> {
     bool_actsAsTintView;
@@ -24,6 +24,10 @@
 @property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
 @property(copy) id tintColorDidChangeHandler;
 @property(setter=_setInheritsSecurity:) bool _inheritsSecurity;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)viewWithRemoteContextID:(unsigned int)arg1;
 + (bool)_requiresWindowTouches;

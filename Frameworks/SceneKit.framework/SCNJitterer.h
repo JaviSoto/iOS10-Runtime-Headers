@@ -19,6 +19,7 @@
 + (void)initialize;
 
 - (bool)isAborting;
+- (void)delegateWillDie;
 - (void)jitter;
 - (void)stopIfNeeded;
 - (void)setEnabled:(bool)arg1;

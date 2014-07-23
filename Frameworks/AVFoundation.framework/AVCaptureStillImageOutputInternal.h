@@ -25,6 +25,7 @@
     boolSISSupported;
     boolSISEnabled;
     boolSISActive;
+    boolstillFeature2Var;
     unsigned int shutterSoundID;
     struct { 
         unsigned int imageCount; 

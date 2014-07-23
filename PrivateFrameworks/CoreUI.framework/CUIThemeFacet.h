@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
+@class NSString;
+
 @interface CUIThemeFacet : NSObject <CUIThemeImageSource, NSCopying, NSCoding> {
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_renditionKeyList;
     unsigned long long _themeIndex;
@@ -20,6 +22,11 @@
         unsigned int reserved : 14; 
     } _fFlags;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)assetExistsForRenditionKey:(id)arg1 fromTheme:(unsigned long long)arg2;
 + (id)cursorFacetWithName:(id)arg1 fromTheme:(unsigned long long)arg2;

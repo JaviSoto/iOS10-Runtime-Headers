@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSQLiteDatabase;
+@class SSSQLiteDatabase, NSString;
 
 @interface SSSQLiteEntity : NSObject <SSSQLiteEntity> {
     SSSQLiteDatabase *_database;
@@ -12,6 +12,10 @@
 @property(readonly) SSSQLiteDatabase * database;
 @property(readonly) long long persistentID;
 @property(readonly) bool existsInDatabase;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
 + (id)minValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;

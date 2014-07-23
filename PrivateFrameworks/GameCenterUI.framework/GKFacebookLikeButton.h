@@ -29,7 +29,6 @@
 @property(retain) UIView * containerSpacerRight;
 
 
-- (id)labelView;
 - (void)setContainerSpacerRight:(id)arg1;
 - (id)containerSpacerRight;
 - (void)setContainerSpacerLeft:(id)arg1;
@@ -52,15 +51,16 @@
 - (void)setReplaceableConstraints:(id)arg1;
 - (void)setStoreItem:(id)arg1;
 - (id)storeItem;
+- (id)labelView;
 - (bool)isEnabled;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)spinner;
+- (void)setButton:(id)arg1;
 - (void)buttonPressed:(id)arg1;
 - (id)viewForBaselineLayout;
 - (void)setContainerView:(id)arg1;
 - (id)containerView;
 - (id)button;
-- (void)setButton:(id)arg1;
 
 @end

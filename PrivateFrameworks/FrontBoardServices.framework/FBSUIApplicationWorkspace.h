@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSUIApplicationWorkspaceDelegate>;
+@class NSString, <FBSUIApplicationWorkspaceDelegate>;
 
 @interface FBSUIApplicationWorkspace : FBSWorkspace <FBSUIApplicationWorkspaceClientDelegate> {
 }
 
 @property <FBSUIApplicationWorkspaceDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isUIApplicationWorkspace;

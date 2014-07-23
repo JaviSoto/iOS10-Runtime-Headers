@@ -40,12 +40,12 @@
 + (id)currentMonitor;
 
 - (unsigned long long)bytesRead;
-- (id)statusMessage;
 - (void)setCurrentCount:(unsigned long long)arg1;
 - (unsigned long long)gotNewMessagesState;
 - (void)relinquishExclusiveAccessKey:(int)arg1;
 - (int)acquireExclusiveAccessKey;
 - (id)taskName;
+- (id)statusMessage;
 - (void)setInvocationQueue:(id)arg1;
 - (id)activityTargets;
 - (void)addActivityTargets:(id)arg1;

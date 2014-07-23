@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class MPAVRoutingController, UIWebDocumentView, MPAudioVideoRoutingPopoverController, MPAudioVideoRoutingActionSheet;
+@class MPAVRoutingController, UIWebDocumentView, MPAudioVideoRoutingPopoverController, MPAudioVideoRoutingActionSheet, NSString;
 
 @interface UIWebPlaybackTargetPicker : UIView <UIPopoverControllerDelegate> {
     MPAVRoutingController *_routingController;
@@ -10,6 +10,11 @@
     MPAudioVideoRoutingActionSheet *_actionSheet;
     UIWebDocumentView *_delegate;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;

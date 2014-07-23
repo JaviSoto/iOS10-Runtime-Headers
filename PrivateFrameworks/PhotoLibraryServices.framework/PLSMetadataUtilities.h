@@ -7,11 +7,11 @@
 
 + (id)allAlbumsDetailsWriteToPath:(id)arg1;
 + (id)allAssetsDetailsWriteToPath:(id)arg1 includingLocal:(bool)arg2 forAlbumTitled:(id)arg3;
++ (id)_nameForAdjustmentType:(int)arg1;
 + (id)_detailsForAlbum:(id)arg1;
 + (bool)_writeDetails:(id)arg1 forEntityNamed:(id)arg2 toFilepath:(id)arg3 withDefaultFilename:(id)arg4;
 + (id)_detailsForAsset:(id)arg1 includingLocal:(bool)arg2;
 + (id)_allAlbumsInPhotoLibrary:(id)arg1;
-+ (id)_nameForAdjustmentType:(int)arg1;
 
 
 @end

@@ -18,12 +18,12 @@
 @property(retain) GEOPlaceResult * placeResult;
 
 
-- (id)placeResult;
-- (bool)hasPlaceResult;
 - (void)setPlaceResult:(id)arg1;
 - (bool)hasStatusCode;
 - (void)setHasStatusCode:(bool)arg1;
 - (void)setStatusCode:(int)arg1;
+- (id)placeResult;
+- (bool)hasPlaceResult;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

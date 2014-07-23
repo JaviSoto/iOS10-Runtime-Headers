@@ -57,6 +57,7 @@
 @property bool sessionIDIsPersistent;
 
 
+- (void)setHasTimestamp:(bool)arg1;
 - (id)hwMachine;
 - (int)cellWifi;
 - (int)responseTime;
@@ -91,7 +92,6 @@
 - (void)setGeoService:(int)arg1;
 - (void)setHwMachine:(id)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasCountryCode;
 - (bool)hasSessionID;
 - (void)setHasSessionID:(bool)arg1;

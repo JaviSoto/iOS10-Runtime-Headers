@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class UIActionSheet, <SFAirDropDiscoveryActionSheetDelegate>, <SFAirDropDiscoveryControllerDelegate>;
+@class <SFAirDropDiscoveryControllerDelegate>, UIActionSheet, NSString, <SFAirDropDiscoveryActionSheetDelegate>;
 
 @interface SFAirDropDiscoveryController : NSObject <UIActionSheetDelegate> {
     id _delegate;
@@ -23,6 +23,10 @@
 @property(getter=isLegacyModeSettable,readonly) bool legacyModeSettable;
 @property <SFAirDropDiscoveryControllerDelegate> * delegate;
 @property <SFAirDropDiscoveryActionSheetDelegate> * actionSheetDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setActionSheetDelegate:(id)arg1;

@@ -18,6 +18,7 @@
 + (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(bool)arg3;
 
 - (bool)saveImageJobToDisk:(id)arg1;
+- (void)_writeJPEGToPath:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(bool)arg5;
 - (id)_cameraAssetExtensionForType:(short)arg1;
 
 @end

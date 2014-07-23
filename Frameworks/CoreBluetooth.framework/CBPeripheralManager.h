@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSLock, NSMutableDictionary, CBXpcConnection, NSMutableArray, <CBPeripheralManagerDelegate>, NSMapTable, CBPairingAgent;
+@class NSLock, NSString, NSMutableDictionary, CBXpcConnection, NSMutableArray, <CBPeripheralManagerDelegate>, NSMapTable, CBPairingAgent;
 
 @interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
     <CBPeripheralManagerDelegate> *_delegate;
@@ -35,6 +35,10 @@
 @property long long state;
 @property bool isAdvertising;
 @property(readonly) CBPairingAgent * sharedPairingAgent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)authorizationStatus;
 

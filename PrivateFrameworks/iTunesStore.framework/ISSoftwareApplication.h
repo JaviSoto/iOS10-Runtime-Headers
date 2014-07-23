@@ -47,6 +47,10 @@
 @property(copy) NSArray * versionOrdering;
 @property(readonly) NSDate * receiptExpirationDate;
 @property(readonly) unsigned long long vppStateFlags;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)versionOrdering;

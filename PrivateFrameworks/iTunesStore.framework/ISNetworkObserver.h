@@ -28,6 +28,10 @@
 @property(readonly) NSString * dataStatusIndicator;
 @property(readonly) NSString * modemRegistrationStatus;
 @property(readonly) NSString * operatorName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setWiFiEnabled:(bool)arg1;
 + (void)setAirplaneModeEnabled:(bool)arg1;

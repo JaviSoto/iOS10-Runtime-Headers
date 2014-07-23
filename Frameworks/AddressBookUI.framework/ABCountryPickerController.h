@@ -18,6 +18,10 @@
 @property(retain) UILocalizedIndexedCollation * collation;
 @property(copy) NSArray * countries;
 @property(copy) NSArray * sections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setTableViewController:(id)arg1;

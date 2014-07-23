@@ -25,7 +25,6 @@
 + (int)renderStyleID;
 
 - (bool)hasOffset;
-- (bool)hasSize;
 - (float)arrowBrightness;
 - (bool)hasArrowBrightness;
 - (struct Matrix<float, 4, 1> { float x1[4]; })arrowColorStale;
@@ -34,6 +33,7 @@
 - (bool)hasCircleBrightness;
 - (bool)hasArrowColor;
 - (struct Matrix<float, 4, 1> { float x1[4]; })arrowColor;
+- (bool)hasSize;
 - (float)offset;
 - (float)size;
 

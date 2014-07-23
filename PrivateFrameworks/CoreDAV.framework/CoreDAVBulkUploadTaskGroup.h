@@ -31,6 +31,10 @@
 @property(readonly) NSDictionary * hrefToStatus;
 @property(readonly) NSDictionary * uuidToErrorItems;
 @property(readonly) NSDictionary * hrefToErrorItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)validCTag;

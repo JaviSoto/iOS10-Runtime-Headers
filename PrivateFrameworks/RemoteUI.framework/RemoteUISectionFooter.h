@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSURL, UILabel, <RUITableFooterDelegate>, UIButton;
+@class NSString, NSURL, UILabel, <RUITableFooterDelegate>, UIButton;
 
 @interface RemoteUISectionFooter : UIView <RemoteUITableFooter> {
     UIButton *_linkButton;
@@ -16,12 +16,16 @@
 @property <RUITableFooterDelegate> * delegate;
 @property(retain) NSURL * linkURL;
 @property(readonly) UIButton * linkButton;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)linkURL;
 - (void)_linkPressed;
-- (void)setLinkURL:(id)arg1;
 - (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;
+- (void)setLinkURL:(id)arg1;
 - (id)linkButton;
 - (void)setText:(id)arg1 attributes:(id)arg2;
 - (id)initWithAttributes:(id)arg1;

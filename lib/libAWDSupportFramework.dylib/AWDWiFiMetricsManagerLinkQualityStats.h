@@ -23,8 +23,8 @@
 - (unsigned long long)statRecordsCount;
 - (void)addStatRecord:(id)arg1;
 - (void)setStatRecords:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

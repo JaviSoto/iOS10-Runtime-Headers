@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSBundle, CLInUseAssertion, NSObject<OS_dispatch_queue>, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>, NSCache;
+@class NSCache, NSString, CLInUseAssertion, NSObject<OS_dispatch_semaphore>, NSBundle, NSObject<OS_dispatch_queue>, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>;
 
 @interface SLWeiboSession : NSObject <SLWeiboClientSessionProtocol, SLMicroBlogSheetDelegate> {
     SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> *_remoteSession;
@@ -29,6 +29,10 @@
 
 @property(copy) id connectionResetBlock;
 @property(copy) id locationInformationChangedBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteInterface;
 

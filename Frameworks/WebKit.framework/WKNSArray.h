@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WKNSArray : NSArray <WKObject> {
     struct ObjectStorage<API::Array> { 
         struct type { 
@@ -15,6 +17,10 @@
     } _array;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

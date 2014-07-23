@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKPolylineOverlayPainter, VKPolylineOverlay, NSMapTable;
+@class VKPolylineOverlayPainter, NSMapTable, NSString, VKPolylineOverlay;
 
 @interface VKPolylineGroupOverlayPainter : VKOverlayPainter <VKPolylineGroupOverlayObserver> {
     VKPolylineOverlay *_selectedPolyline;
@@ -17,6 +17,10 @@
 
 @property(readonly) VKPolylineOverlayPainter * selectedPolylinePainter;
 @property bool showTraffic;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)selectedPolylinePainter;

@@ -17,11 +17,11 @@
 @property(retain) id context;
 
 
-- (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
 - (id)toFolder;
 - (id)fromFolder;
 - (void)setToFolder:(id)arg1;
 - (void)setFromFolder:(id)arg1;
+- (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setMessage:(id)arg1;

@@ -147,11 +147,11 @@
 - (void)setRemovalDisallowed:(bool)arg1;
 - (void)setClassicMode:(bool)arg1;
 - (void)setPageURL:(id)arg1;
-- (void)_updateCustomMediaLocationsWithWebClipLinkTags:(id)arg1 baseURL:(id)arg2;
+- (void)updateCustomMediaLocationsWithWebClipLinkTags:(id)arg1 baseURL:(id)arg2;
 - (void)setSupportedOrientations:(unsigned long long)arg1;
 - (void)setFullScreen:(bool)arg1;
 - (id)icons;
-- (long long)statusBarStyle;
 - (void)setStatusBarStyle:(long long)arg1;
+- (long long)statusBarStyle;
 
 @end

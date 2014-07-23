@@ -13,6 +13,7 @@
     bool_oplock;
     bool_sendAllFields;
     NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -26,6 +27,7 @@
 }
 
 @property(retain) NSDictionary * recordIDsToDeleteToEtags;
+@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
 @property bool atomic;
 @property(copy) id recordPostedBlock;
 @property(retain) NSArray * records;
@@ -54,6 +56,8 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (int)isolationLevel;
 - (id)requestOperations;
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (id)conflictLosersToResolveByRecordID;
 - (void)setAtomic:(bool)arg1;
 - (bool)atomic;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;

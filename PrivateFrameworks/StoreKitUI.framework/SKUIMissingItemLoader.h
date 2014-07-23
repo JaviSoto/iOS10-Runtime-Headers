@@ -17,6 +17,10 @@
 @property(copy) NSString * imageProfile;
 @property(copy) NSString * keyProfile;
 @property <SKUIMissingItemDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_requestItems:(id)arg1 withReason:(long long)arg2;

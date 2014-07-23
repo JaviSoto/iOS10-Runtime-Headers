@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIRowComponent, SKUIProductPageOverlayController, SKUIMissingItemLoader, SKUIClientContext, SKUILockupComponent, NSMapTable, NSMutableIndexSet;
+@class SKUIRowComponent, SKUIProductPageOverlayController, NSString, SKUIMissingItemLoader, SKUIClientContext, SKUILockupComponent, NSMapTable, NSMutableIndexSet;
 
 @interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     SKUIClientContext *_clientContext;
@@ -21,6 +21,10 @@
 }
 
 @property(readonly) SKUIRowComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

@@ -14,8 +14,8 @@
 @property(copy) NSString * displayname;
 
 
-- (void)setUrlString:(id)arg1;
 - (void)setDisplayname:(id)arg1;
+- (void)setUrlString:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setUserIdentifier:(id)arg1;

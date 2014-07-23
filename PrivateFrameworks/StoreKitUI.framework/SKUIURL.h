@@ -23,6 +23,7 @@
 
 - (void)setReferrerURLString:(id)arg1;
 - (void)setReferrerApplicationName:(id)arg1;
+- (id)_searchGroupForSearchKind:(id)arg1;
 - (id)initWithURLBagKey:(id)arg1;
 - (id)referrerURLString;
 - (id)referrerApplicationName;

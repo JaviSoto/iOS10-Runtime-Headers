@@ -45,7 +45,6 @@
 - (void)setPreviewImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSquareCropEnabled:(bool)arg1;
 - (void)setOutputSettings:(id)arg1;
-- (bool)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (void)setHDRMode:(long long)arg1;
 - (void)setShutterSound:(unsigned int)arg1;
 - (void)setNoiseReductionEnabled:(bool)arg1;
@@ -54,6 +53,7 @@
 - (bool)isRawCaptureEnabled;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
+- (bool)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (void)updateSISSupportedForSourceDevice:(id)arg1;
 - (id)outputSettings;
 - (unsigned int)imageDataFormatType;

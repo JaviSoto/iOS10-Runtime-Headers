@@ -9,6 +9,11 @@
     NSXPCConnection *_connection;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)getCardItemsWithHandler:(id)arg1;
 - (void)clearAllCardItems;

@@ -47,6 +47,10 @@
     UIView *_inputView;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 @property(setter=_setDrawsDebugBaselines:) bool _drawsDebugBaselines;
@@ -70,6 +74,10 @@
 @property(readonly) NSLayoutManager * layoutManager;
 @property(retain,readonly) NSTextStorage * textStorage;
 @property(copy) NSDictionary * linkTextAttributes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -209,6 +217,7 @@
 - (bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (bool)isAccessibilityElementByDefault;
 - (void)_keyboardDidShow:(id)arg1;
+- (void)_deleteBackwardAndNotify:(bool)arg1;
 - (void)setForceEnableDictation:(bool)arg1;
 - (bool)forceEnableDictation;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;

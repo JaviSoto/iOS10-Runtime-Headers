@@ -26,6 +26,7 @@
 - (bool)hasGenericShieldStyleInfo;
 - (id)variants;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setIdentifier:(id)arg1;

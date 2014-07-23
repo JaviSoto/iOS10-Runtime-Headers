@@ -178,8 +178,14 @@
 @property(readonly) bool shouldInvalidateForMemoryPurge;
 @property(readonly) long long ITunesStoreUIBarStyle;
 @property UIPopoverController * gkPopoverController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool ab_shouldShowNavBarButtons;
 @property(readonly) bool ab_shouldUseTransparentBackgroundInPopovers;
+@property(readonly) bool ab_isInPopover;
+@property(readonly) bool ab_isDirectlyInPopover;
 @property(retain) NSString * aggregateStatisticsDisplayCountKey;
 @property(retain) UITabBarItem * tabBarItem;
 @property(retain,readonly) UITabBarController * tabBarController;
@@ -191,7 +197,15 @@
 @property(readonly) UIView * _embeddedView;
 @property(readonly) <_UIViewControllerContentViewEmbedding> * _embeddedDelegate;
 @property struct CGSize { double x1; double x2; } preferedContentSizeInModalItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSExtensionContext * extensionContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIView * view;
 @property(copy) NSString * nibName;
 @property(retain) NSBundle * nibBundle;
@@ -273,6 +287,10 @@
 @property(retain,readonly) NSLayoutConstraint * _leftMarginGuideConstraint;
 @property(retain,readonly) NSLayoutConstraint * _rightMarginGuideConstraint;
 @property(setter=_setExtensionContext:,retain) NSExtensionContext * extensionContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UITraitCollection * traitCollection;
 
 + (id)XPCInterface;
@@ -375,6 +393,7 @@
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
 - (struct CGSize { double x1; double x2; })_resolvedPreferredContentSize;
 - (struct CGSize { double x1; double x2; })_resolvedPreferredContentSize;
+- (bool)_shouldForwardSystemLayoutFittingSizeChanges;
 - (id)extensionContext;
 - (void)_willAppearInRemoteViewController;
 - (int)_hostProcessIdentifier;
@@ -557,6 +576,7 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (id)_viewForModalPresentationInPopover;
 - (bool)modalInPopover;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)rightLayoutGuide;
 - (id)leftLayoutGuide;
@@ -564,7 +584,6 @@
 - (id)_topLayoutGuide;
 - (void)_setNavigationControllerContentOffsetAdjustment:(double)arg1;
 - (void)_primitiveSetNavigationControllerContentOffsetAdjustment:(double)arg1;
-- (void)_setNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_primitiveSetNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)_presentationControllerClassName;
 - (long long)_verticalSizeClass;
@@ -657,9 +676,10 @@
 - (bool)_isWaitingForDelayedPresentation;
 - (void)_presentViewController:(id)arg1 withAnimationController:(id)arg2 completion:(id)arg3;
 - (void)_windowControllerBasedPresentViewController:(id)arg1 withTransition:(int)arg2 completion:(id)arg3;
-- (void)_setPresentationSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (struct { long long x1; long long x2; })_presentationSizeClassPair;
 - (void)_setOriginalPresentationController:(id)arg1;
+- (void)_setPresentationSizeClassPair:(struct { long long x1; long long x2; })arg1;
+- (void)_replaceViewControllerInPresentationHierarchy:(id)arg1;
 - (void)_setPresentedStatusBarViewController:(id)arg1;
 - (id)transitionCoordinator;
 - (bool)modalPresentationCapturesStatusBarAppearance;
@@ -821,12 +841,14 @@
 - (void)_setUpLayoutGuideConstraintIfNecessaryAtTop:(bool)arg1;
 - (id)topLayoutGuide;
 - (void)_updateChildContentMargins;
-- (void)_setContentMargin:(double)arg1;
 - (id)_existingPresentationControllerImmediate:(bool)arg1 effective:(bool)arg2;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentOverlayInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
+- (void)_setContentMargin:(double)arg1;
+- (double)_contentMarginForChildViewController:(id)arg1;
 - (id)_parentViewController;
+- (void)_setNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)contentScrollView;
 - (void)_cancelDelayedPresentation:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
@@ -841,8 +863,8 @@
 - (void)_beginDelayingPresentation:(double)arg1 cancellationHandler:(id)arg2;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)_adaptedPresentationControllerForTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)_parentTraitEnvironment;
 - (id)_nonPresentationAppearanceContainer;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
@@ -991,6 +1013,9 @@
 - (void)popRecursivelyToRootController;
 - (bool)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (int)abViewControllerType;
+- (bool)_ab_isInPopoverRecursive:(bool)arg1;
+- (bool)ab_isDirectlyInPopover;
+- (bool)ab_isInPopover;
 - (bool)ab_shouldShowNavBarButtons;
 - (bool)ab_shouldUseTransparentBackgroundInPopovers;
 - (void)mf_setDataForUICustomization:(id)arg1;
@@ -1019,6 +1044,11 @@
 - (void)_gkSaveStatusBarStyle:(bool)arg1;
 - (void)_gkRestoreStatusBarStyle:(bool)arg1;
 - (void)_gkSaveStatusBarStyleAnimated:(bool)arg1 setToStyle:(long long)arg2;
+- (void)fmf_dismissModalViewController:(id)arg1;
+- (void)fmf_presentModalViewController:(id)arg1;
+- (void)fmf_afterDismissAnimation:(id)arg1;
+- (id)fmf_dimmingViewForViewController:(id)arg1;
+- (void)fmf_afterPresentAnimation:(id)arg1;
 - (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (long long)ITunesStoreUIBarStyle;

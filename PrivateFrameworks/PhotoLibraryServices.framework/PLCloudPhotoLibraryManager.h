@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLCloudTaskManager, NSMutableArray, CPLLibraryManager, NSObject<OS_dispatch_queue>, PLPhotoLibrary, NSObject<OS_xpc_object>;
+@class NSObject<OS_dispatch_source>, NSString, PLCloudTaskManager, NSMutableArray, CPLLibraryManager, NSObject<OS_dispatch_queue>, PLPhotoLibrary, NSObject<OS_xpc_object>;
 
 @interface PLCloudPhotoLibraryManager : NSObject <CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundObserver> {
     NSMutableArray *_uploadBatchArray;
@@ -33,7 +33,13 @@
     bool_pausing;
     unsigned long long _defaultResourceDownloadType;
     PLCloudTaskManager *_taskManager;
+    NSObject<OS_dispatch_source> *_unpauseDispatchTimer;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)descriptionForResourceType:(unsigned long long)arg1;
 
@@ -44,9 +50,9 @@
 - (void)libraryManager:(id)arg1 downloadDidProgress:(float)arg2 forResourceTransferTask:(id)arg3;
 - (void)libraryManager:(id)arg1 downloadDidStartForResourceTransferTask:(id)arg2;
 - (void)libraryManager:(id)arg1 downloadDidFinishForResourceTransferTask:(id)arg2 withError:(id)arg3;
-- (void)libraryManagerStatusDidChange:(id)arg1;
 - (bool)createPathIfNeeded:(id)arg1;
 - (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id)arg2;
+- (void)libraryManagerStatusDidChange:(id)arg1;
 - (id)_copyTemporaryAssetToFinalPhotoLocationWithResourceIdentity:(id)arg1 withExtension:(id)arg2 withName:(id)arg3;
 - (void)dumpStatusIncludingDaemon:(bool)arg1;
 - (void)doSoftResetSync;
@@ -54,7 +60,6 @@
 - (void)fetchPublicURLForAsset:(id)arg1 resourceType:(unsigned long long)arg2 completionHandler:(id)arg3;
 - (bool)isResourceTransferTaskAliveWithTaskWithIdentifier:(id)arg1;
 - (void)cancelResourceTransferTaskWithIdentifier:(id)arg1;
-- (void)unpause;
 - (void)foregroundMonitor:(id)arg1 changedStateToForeground:(bool)arg2 context:(id)arg3;
 - (void)libraryManagerDidStartSynchronization:(id)arg1;
 - (void)_updateThumbnailDataForAsset:(id)arg1 withImageFileURL:(id)arg2;
@@ -75,6 +80,7 @@
 - (void)_processUploadBatchWithStartupFailureCount:(unsigned long long)arg1;
 - (id)createBatchesForChanges:(id)arg1 withContainerChangeForAsset:(bool)arg2;
 - (id)filterCloudDeleteForKey:(const char *)arg1 fromEvent:(id)arg2;
+- (void)sortRelationshipData:(id)arg1 forRelationshipUpdate:(id*)arg2 inManagedObjectContext:(id)arg3;
 - (void)sortData:(id)arg1 withMode:(int)arg2 forAssets:(id*)arg3 adjustedAssets:(id*)arg4 andAlbums:(id*)arg5 andOrders:(id*)arg6 inManagedObjectContext:(id)arg7;
 - (bool)asset:(id)arg1 isIn:(id)arg2;
 - (bool)asset:(id)arg1 isInOrderList:(id)arg2;
@@ -98,14 +104,16 @@
 - (void)uploadFullPhotoLibraryToCloud;
 - (void)processUploadBatch;
 - (void)fetchNewEventsFromChangeHub;
-- (void)_createPowerAssertion;
 - (void)openCPLLibrary;
+- (void)unpause;
 - (void)_processNextTransaction;
 - (id)_debugNameForMode:(unsigned long long)arg1;
 - (void)setupHubConnection;
 - (void)deactivateCPLLibrary;
 - (void)deleteCPLPlist;
 - (void)resetFlags;
+- (bool)_setupTimerForUnpause;
+- (void)_stopUnpauseTimer;
 - (void)unregisterToChangeHubNotification;
 - (void)_resetCPLLibrary;
 - (bool)_canExternallyTransitionToNewLibraryModeIgnoringPause:(bool)arg1;
@@ -114,7 +122,6 @@
 - (void)_cleanupCPLLibrary;
 - (void)notifyCPLLibraryOnReset;
 - (void)transitionToState:(unsigned long long)arg1;
-- (void)_releasePowerAssertion;
 - (void)addLogMark:(id)arg1;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
 - (void)deleteExpiredTrashBinObjects;

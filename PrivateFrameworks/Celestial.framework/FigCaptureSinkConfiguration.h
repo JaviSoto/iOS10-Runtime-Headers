@@ -8,19 +8,27 @@
     NSString *_sinkID;
     int _sinkType;
     bool_videoDataDiscardsLateVideoFrames;
+    bool_videoDataDerivedFromPreview;
 }
 
 @property(copy) NSString * sinkID;
 @property int sinkType;
 @property bool videoDataDiscardsLateVideoFrames;
+@property bool videoDataDerivedFromPreview;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (int)sinkTypeForString:(id)arg1;
 + (id)stringForSinkType:(int)arg1;
 + (void)initialize;
 
+- (void)setVideoDataDerivedFromPreview:(bool)arg1;
 - (void)setVideoDataDiscardsLateVideoFrames:(bool)arg1;
 - (void)setSinkID:(id)arg1;
 - (void)setSinkType:(int)arg1;
+- (bool)videoDataDerivedFromPreview;
 - (bool)videoDataDiscardsLateVideoFrames;
 - (int)sinkType;
 - (id)sinkID;

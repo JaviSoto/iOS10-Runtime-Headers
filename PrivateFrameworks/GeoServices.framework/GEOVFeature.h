@@ -145,6 +145,7 @@
 
 
 - (int)sectionCount;
+- (int)placeType;
 - (int)roadClass;
 - (unsigned long long)businessID;
 - (id)characteristics;
@@ -167,7 +168,6 @@
 - (int)travelDirection;
 - (int)formOfWay;
 - (bool)polyIsConvex;
-- (int)placeType;
 - (bool)hasEntryPointMask;
 - (void)setHasEntryPointMask:(bool)arg1;
 - (void)setEntryPointMask:(unsigned int)arg1;

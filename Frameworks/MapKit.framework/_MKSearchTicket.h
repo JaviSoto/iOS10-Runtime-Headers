@@ -2,11 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, GEOMapServiceTraits, NSString, GEOMapRegion, NSError;
+@class NSString, NSArray, GEOMapServiceTraits, GEOMapRegion, NSError;
 
 @interface _MKSearchTicket : _MKTicket <MKMapServiceSearchTicket> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) GEOMapServiceTraits * traits;
 @property(readonly) NSArray * exactMapItems;
 @property(readonly) NSArray * refinedMapItems;

@@ -15,6 +15,9 @@
 + (id)identifierCode;
 + (bool)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 
 - (Class)changeRequestClass;

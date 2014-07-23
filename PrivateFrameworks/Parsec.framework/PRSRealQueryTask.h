@@ -25,13 +25,17 @@
 @property(retain) NSString * queryString;
 @property <PRSSessionController> * factory;
 @property double scaleFactor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setFactory:(id)arg1;
 - (void)setCollectedData:(id)arg1;
 - (void)setDoCache:(bool)arg1;
 - (void)triggerQuery:(bool)arg1;
-- (id)initWithSession:(id)arg1 handler:(id)arg2 factory:(id)arg3 queue:(id)arg4 feedback:(id)arg5;
+- (id)initWithSession:(id)arg1 handler:(id)arg2 factory:(id)arg3 queue:(id)arg4 scaleFactor:(double)arg5 feedback:(id)arg6;
 - (id)factory;
 - (id)collectedData;
 - (void)_processSearchResponseOnClientQueue:(id)arg1;

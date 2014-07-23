@@ -49,10 +49,10 @@
 - (void)conference:(id)arg1 didStartSession:(bool)arg2 withUserInfo:(id)arg3;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(bool)arg3;
 - (id)conferenceDidStopError;
+- (bool)_shouldIgnoreAVConferenceError:(id)arg1;
 - (void)setHasActiveConference:(bool)arg1;
 - (void)setConferenceDidStopError:(id)arg1;
 - (void)_stopAudioSession;
-- (void)_cleanUpConference;
 - (void)_setUpDidStartTimeoutForConference:(id)arg1 conferenceConnection:(id)arg2;
 - (void)_startAudioSession;
 - (void)setConference:(id)arg1;
@@ -63,6 +63,7 @@
 - (bool)hasActiveConference;
 - (id)activeConferenceConnections;
 - (id)conference;
+- (void)_cleanUpConference;
 - (void)setActiveConferenceConnections:(id)arg1;
 - (bool)isMuted;
 - (id)init;

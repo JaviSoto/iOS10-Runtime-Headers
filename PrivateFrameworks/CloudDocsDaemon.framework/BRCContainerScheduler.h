@@ -58,6 +58,7 @@
     unsigned int _containerMetadataSyncState;
     BRCOperation *_containerMetadataSyncOperation;
     BRCThrottle *_containerResetThrottle;
+    unsigned long long _availableQuota;
     BRCThrottledScheduler *_readerScheduler;
     BRCThrottledScheduler *_applyChangesScheduler;
     NSObject<OS_dispatch_group> *_lostScanGroup;
@@ -70,6 +71,7 @@
 }
 
 @property(readonly) BRCAccountSession * accountSession;
+@property unsigned long long availableQuota;
 @property(readonly) BRCThrottledScheduler * readerScheduler;
 @property(readonly) NSObject<OS_dispatch_group> * lostScanGroup;
 @property(readonly) NSObject<OS_dispatch_group> * writerGroup;
@@ -79,9 +81,14 @@
 @property(readonly) BRCSyncBudgetThrottle * syncUpBudget;
 @property(readonly) NSObject<OS_dispatch_group> * uploadGroup;
 @property(readonly) NSObject<OS_dispatch_group> * downloadGroup;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_containerMetadataRecordsToSave;
+- (unsigned long long)availableQuota;
 - (id)syncUpBudget;
 - (id)syncGroup;
 - (id)initialSyncDownGroup;
@@ -100,8 +107,10 @@
 - (void)lostScanResume;
 - (void)lostScanSuspend;
 - (void)lostScanSetupTargetQueue:(id)arg1 handler:(id)arg2;
+- (void)setAvailableQuota:(unsigned long long)arg1;
 - (void)refreshPushRegistrationAfterAppsListChanged;
 - (void)setupWithRoot:(id)arg1;
+- (void)resetContainerAsync:(id)arg1;
 - (void)containerDidBecomeBackground:(id)arg1;
 - (void)containerDidBecomeForeground:(id)arg1;
 - (void)didInitialSyncDownForContainer:(id)arg1;
@@ -122,7 +131,6 @@
 - (unsigned long long)_writeCoordinationCount;
 - (unsigned long long)_readCoordinationCount;
 - (bool)_createContainerOnDisk:(id)arg1 andDocumentsFolder:(bool)arg2 underRoot:(id)arg3;
-- (void)resetContainerAsync:(id)arg1;
 - (void)_addContainerToScheduler:(id)arg1;
 - (void)_signalContainersMetadataSync;
 - (void)_scheduleUpdatePushTopicsRegistration;

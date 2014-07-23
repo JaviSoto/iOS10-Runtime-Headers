@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableDictionary, NSDictionary, NSURL, NSSet, <CoreDAVTaskGroupDelegate>;
+@class NSMutableDictionary, NSDictionary, NSURL, NSSet, <CoreDAVTaskGroupDelegate>, NSString;
 
 @interface CalDAVAddDropBoxAttachmentsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
     int _state;
@@ -27,6 +27,10 @@
 @property(retain) NSDictionary * contentTypes;
 @property(retain) NSSet * attendeePrincipalURLs;
 @property(retain) NSSet * aceItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(bool)arg3;
 

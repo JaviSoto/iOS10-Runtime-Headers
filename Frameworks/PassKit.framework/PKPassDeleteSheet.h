@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassDeleteDelegate>, PKPassGroupView, UIActionSheet, PKPassView;
+@class <PKPassDeleteDelegate>, PKPassGroupView, UIActionSheet, PKPassView, NSString;
 
 @interface PKPassDeleteSheet : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
@@ -14,6 +14,10 @@
 @property <PKPassDeleteDelegate> * delegate;
 @property(retain,readonly) PKPassView * passView;
 @property(retain,readonly) PKPassGroupView * groupView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)performPassbookDeleteWithView:(id)arg1 completion:(id)arg2;
 

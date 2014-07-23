@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableDictionary, UIActionSheet, UITableView, UIAlertView, NSDictionary, NSMutableArray, UIView, <PSSpecifierDataSource>, NSString, UIPopoverController, UIKeyboard, NSArray;
+@class NSMutableDictionary, UIActionSheet, UITableView, UIAlertView, NSDictionary, NSMutableArray, UIView, <PSSpecifierDataSource>, NSString, UIPopoverController, UIKeyboard, NSArray, NSIndexPath;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSSpecifierObserver, PSViewControllerOffsetProtocol> {
     NSMutableArray *_prequeuedReusablePSTableCells;
@@ -39,6 +39,7 @@
     bool_isVisible;
     <PSSpecifierDataSource> *_dataSource;
     bool_requestingSpecifiersFromDataSource;
+    NSIndexPath *_savedSelectedIndexPath;
     bool_edgeToEdgeCells;
     NSDictionary *_pendingURLResourceDictionary;
     NSString *_specifierIDPendingPush;
@@ -48,11 +49,14 @@
 @property bool edgeToEdgeCells;
 @property(retain) NSDictionary * pendingURLResourceDictionary;
 @property(copy) NSString * specifierIDPendingPush;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long observerType;
 
 + (bool)displaysButtonBar;
 
-- (void)addSpecifier:(id)arg1;
 - (id)popupStylePopoverController;
 - (void)showPINSheet:(id)arg1;
 - (id)specifierIDPendingPush;
@@ -147,6 +151,8 @@
 - (Class)tableViewClass;
 - (bool)_isRegularWidth;
 - (bool)edgeToEdgeCells;
+- (void)contentSizeChangedNotificationPosted:(id)arg1;
+- (void)contentSizeDidChange:(id)arg1;
 - (void)_returnKeyPressed:(id)arg1;
 - (void)_unloadBundleControllers;
 - (void)dismissConfirmationViewForSpecifier:(id)arg1 animated:(bool)arg2;
@@ -185,8 +191,10 @@
 - (id)indexPathForIndex:(long long)arg1;
 - (bool)getGroup:(long long*)arg1 row:(long long*)arg2 ofSpecifierAtIndex:(long long)arg3;
 - (void)prepareSpecifiersMetadata;
+- (void)setSpecifier:(id)arg1;
 - (long long)indexOfSpecifier:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
+- (id)specifier;
 - (void)setSpecifierID:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (void)setReusesCells:(bool)arg1;
@@ -194,8 +202,7 @@
 - (void)reloadSpecifiers;
 - (id)specifiers;
 - (void)reloadSpecifier:(id)arg1;
-- (void)setSpecifier:(id)arg1;
-- (id)specifier;
+- (void)addSpecifier:(id)arg1;
 - (id)bundle;
 - (void)reload;
 - (void)handleURL:(id)arg1;

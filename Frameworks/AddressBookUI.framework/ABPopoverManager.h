@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView, <ABPopoverRepresentDelegate>, UIWindow, UIActionSheet, UIResponder, UIPopoverController, UIBarButtonItem;
+@class UIView, <ABPopoverRepresentDelegate>, NSString, UIWindow, UIActionSheet, UIResponder, UIPopoverController, UIBarButtonItem;
 
 @interface ABPopoverManager : NSObject <UIPopoverControllerDelegate, UIActionSheetDelegate> {
     UIView *_autorotateView;
@@ -25,6 +25,10 @@
 @property(retain) id realDelegate;
 @property(readonly) UIWindow * observedWindow;
 @property(retain) UIResponder * autorotateResponder;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)dismissPopoverForActionSheet:(id)arg1;
 + (void)actionSheet:(id)arg1 dismissWithClickedButtonIndex:(long long)arg2 animated:(bool)arg3;

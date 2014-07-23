@@ -13,7 +13,6 @@
 + (id)copyNewMimeBoundary;
 + (id)versionString;
 
-- (id)partWithNumber:(id)arg1;
 - (id)firstPartPassingTest:(id)arg1;
 - (id)mimeSubtype;
 - (void)setTopLevelPart:(id)arg1;
@@ -28,6 +27,7 @@
 - (bool)isRich;
 - (bool)isHTML;
 - (id)contentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2 asHTML:(bool)arg3 isComplete:(bool*)arg4;
+- (id)partWithNumber:(id)arg1;
 - (id)attachments;
 - (long long)numberOfAlternatives;
 - (id)init;

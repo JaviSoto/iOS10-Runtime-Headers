@@ -45,12 +45,17 @@
 @property(copy) NSString * localServiceName;
 @property(retain) NSInputStream * inputStream;
 @property(retain) NSOutputStream * outputStream;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)checkConstants;
 + (unsigned long long)sendDataLimit;
 + (unsigned long long)receiveDataLimit;
 
 - (void)setSyncQueue:(id)arg1;
+- (id)targetQueue;
 - (void)attachInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)connectToNetService:(id)arg1;
 - (void)syncHandleOutputStreamEvent:(unsigned long long)arg1;
@@ -75,15 +80,14 @@
 - (void)syncSendHello;
 - (void)setLocalServiceName:(id)arg1;
 - (id)connectedHandler;
-- (id)targetQueue;
 - (id)initWithLocalServiceName:(id)arg1;
 - (id)localServiceName;
 - (id)receiveDataHandler;
-- (void)setTargetQueue:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setReceiveDataHandler:(id)arg1;
 - (id)syncQueue;
+- (void)setTargetQueue:(id)arg1;
 - (id)inputStream;
 - (id)outputStream;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;

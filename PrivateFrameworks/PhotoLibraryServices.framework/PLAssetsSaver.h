@@ -20,7 +20,7 @@
 - (void)saveImage:(id)arg1 properties:(id)arg2 completionBlock:(id)arg3;
 - (void)saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionTarget:(id)arg4 completionSelector:(SEL)arg5 contextInfo:(void*)arg6;
 - (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(bool)arg5;
-- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(bool)arg4 progressStack:(id)arg5 eventUUID:(id)arg6 isSlalom:(bool)arg7 assetAdjustments:(id)arg8 videoHandler:(id)arg9 requestEnqueuedBlock:(id)arg10 completionBlock:(id)arg11;
+- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(bool)arg4 progressStack:(id)arg5 isSlalom:(bool)arg6 assetAdjustments:(id)arg7 videoHandler:(id)arg8 requestEnqueuedBlock:(id)arg9 completionBlock:(id)arg10;
 - (id)pathForNewAssetOfType:(short)arg1 extension:(id)arg2;
 - (void)regenerateVideoThumbnailsForVideo:(id)arg1 withCreationDate:(id)arg2 progressStack:(id)arg3 completionBlock:(id)arg4;
 - (void)set_pendingSaveAssetJobs:(id)arg1;
@@ -32,7 +32,6 @@
 - (void)savePhotoStreamImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;
 - (void)saveCameraAvalancheWithUUID:(id)arg1 allAssetUUIDs:(id)arg2 allAssets:(id)arg3 stackAsset:(id)arg4 completionBlock:(id)arg5;
 - (void)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 requestEnqueuedBlock:(id)arg4;
-- (id)_XMPDictionaryForAsset:(id)arg1 jobDictionary:(id)arg2;
 - (void)requestAsynchronousImageForAssetOID:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 trackCPLDownload:(bool)arg6 completionBlock:(id)arg7;
 - (id)requestSynchronousImageForAssetOID:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 networkAccessAllowed:(bool)arg5 trackCPLDownload:(bool)arg6 outImageDataInfo:(id*)arg7 outCPLDownloadContext:(id*)arg8;
 - (void)_requestAccess;
@@ -41,8 +40,8 @@
 - (id)_createWriteImageCompletionBlockWithImage:(id)arg1 target:(id)arg2 selector:(SEL)arg3 contextInfo:(void*)arg4;
 - (void)_saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;
 - (void)queueJobDictionary:(id)arg1 completionBlock:(id)arg2;
-- (id)_addCameraAssetToLibraryWithPath:(id)arg1 thumbnailImage:(id)arg2 assetUUID:(id)arg3 metadata:(id)arg4 assetType:(short)arg5 kind:(short)arg6 kindSubtype:(short)arg7 avalancheUUID:(id)arg8 adjustmentFilters:(id)arg9 effectFilters:(id)arg10 completionHandler:(id)arg11;
-- (id)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 adjustmentFilters:(id)arg4 effectFilters:(id)arg5 diagnostics:(id)arg6 previouslyPendingAsset:(id)arg7 requestEnqueuedBlock:(id)arg8;
+- (id)_addCameraAssetToLibraryWithPath:(id)arg1 thumbnailImage:(id)arg2 assetUUID:(id)arg3 metadata:(id)arg4 assetType:(short)arg5 kind:(short)arg6 kindSubtype:(short)arg7 avalancheUUID:(id)arg8 completionHandler:(id)arg9;
+- (id)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 diagnostics:(id)arg4 previouslyPendingAsset:(id)arg5 requestEnqueuedBlock:(id)arg6;
 - (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id)arg3 completionBlock:(id)arg4 imageSurface:(void*)arg5 previewImageSurface:(void*)arg6;
 - (void)_setIsTakingPhoto:(bool)arg1;
 - (id)_pendingSaveAssetJobs;

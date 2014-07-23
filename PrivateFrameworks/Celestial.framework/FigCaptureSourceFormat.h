@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary, NSArray;
+@class NSDictionary, NSArray, NSString;
 
 @interface FigCaptureSourceFormat : NSObject <FigXPCCoding> {
     NSDictionary *_formatDictionary;
@@ -24,11 +24,9 @@
 @property(readonly) float videoDefaultMaxFrameRate;
 @property(readonly) float videoFieldOfView;
 @property(getter=isVideoBinned,readonly) bool videoBinned;
-@property(getter=isVideoStabilizationSupported,readonly) bool videoStabilizationSupported;
 @property(getter=isVideoZoomSupported,readonly) bool videoZoomSupported;
 @property(readonly) float videoMaxZoomFactor;
 @property(readonly) float videoZoomFactorUpscaleThreshold;
-@property(readonly) float videoZoomFactorVISUpscaleThreshold;
 @property(getter=isVideoZoomDynamicSensorCropSupported,readonly) bool videoZoomDynamicSensorCropSupported;
 @property(getter=isVideoLowLightBinningSwitchSupported,readonly) bool videoLowLightBinningSwitchSupported;
 @property(readonly) int videoRawBitDepth;
@@ -46,33 +44,46 @@
 @property(readonly) int frontEndScalerCompanionIndex;
 @property(readonly) struct { int x1; int x2; } sensorCropDimensions;
 @property(readonly) struct { int x1; int x2; } sourceCropAspectRatio;
+@property(readonly) bool hasVideoFeature1Thingie;
+@property(readonly) int videoFeature1Thingie;
+@property(readonly) bool prefersVideoFeature1Enabled;
 @property(getter=isPhotoFormat,readonly) bool photoFormat;
 @property(getter=isHighResPhotoFormat,readonly) bool highResPhotoFormat;
 @property(readonly) bool needsPreviewDPCC;
 @property(getter=isStillImageStabilizationSupported,readonly) bool stillImageStabilizationSupported;
 @property(getter=isHDRSupported,readonly) bool hdrSupported;
+@property(getter=isStillFeature2Supported,readonly) bool stillFeature2Supported;
+@property(readonly) struct { int x1; int x2; } stillFeature2Shenanigans;
 @property(getter=isHighProfileH264Supported,readonly) bool highProfileH264Supported;
 @property(readonly) NSArray * AVCaptureSessionPresets;
 @property(readonly) float videoScaleFactor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 
-- (struct { int x1; int x2; })sourceCropAspectRatio;
-- (struct { int x1; int x2; })sensorCropDimensions;
+- (int)videoFeature1Thingie;
 - (int)frontEndScalerCompanionIndex;
+- (bool)isMultiStreamFormat;
 - (int)maxIntegrationTimeOverride;
 - (bool)ispChromaNoiseReduction;
 - (int)temporalNoiseReductionMode;
 - (float)videoScaleFactor;
-- (float)videoZoomFactorVISUpscaleThreshold;
 - (id)copyWithNewVideoPixelFormat:(unsigned int)arg1;
+- (bool)isFeature0ModeSupported:(int)arg1;
+- (struct { int x1; int x2; })sourceCropAspectRatio;
+- (struct { int x1; int x2; })sensorCropDimensions;
+- (struct { int x1; int x2; })_maxUseableSensorDimensions;
+- (bool)isStillFeature2Supported;
 - (bool)hasFrontEndScalerCompanionIndex;
 - (float)videoMinSupportedFrameRate;
 - (float)aeMaxGain;
 - (float)minISO;
-- (float)videoZoomFactorUpscaleThreshold;
-- (struct CGSize { double x1; double x2; })_maxUseableSensorDimensions;
+- (struct { int x1; int x2; })_luckyNumbersForBool:(bool)arg1;
 - (bool)isVideoZoomSupported;
+- (float)videoMaxSupportedFrameRate;
 - (struct { int x1; int x2; })sensorDimensions;
 - (float)videoDefaultMaxFrameRate;
 - (struct { int x1; int x2; })_outputDimensions;
@@ -90,10 +101,12 @@
 - (int)videoRawBitDepth;
 - (bool)isVideoZoomDynamicSensorCropSupported;
 - (bool)isVideoLowLightBinningSwitchSupported;
-- (bool)isMultiStreamFormat;
-- (float)videoMaxSupportedFrameRate;
+- (bool)prefersVideoFeature1Enabled;
+- (struct { int x1; int x2; })stillFeature2Shenanigans;
+- (bool)hasVideoFeature1Thingie;
 - (bool)isHighResPhotoFormat;
 - (bool)isExperimental;
+- (float)videoZoomFactorUpscaleThreshold;
 - (bool)isVideoBinned;
 - (float)videoFieldOfView;
 - (bool)isStillImageStabilizationSupported;
@@ -104,7 +117,6 @@
 - (bool)isDefaultActiveFormat;
 - (bool)isHDRSupported;
 - (bool)isPhotoFormat;
-- (bool)isVideoStabilizationSupported;
 - (float)videoMaxZoomFactor;
 - (unsigned int)mediaType;
 - (bool)isEqual:(id)arg1;

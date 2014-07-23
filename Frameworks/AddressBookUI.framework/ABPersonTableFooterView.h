@@ -18,6 +18,10 @@
 @property(readonly) NSString * attribution;
 @property(getter=isAttributionEnabled,readonly) bool attributionEnabled;
 @property(retain) UIView * accessoryView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setTableEditing:(bool)arg1;

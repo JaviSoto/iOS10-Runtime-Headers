@@ -9,6 +9,11 @@
     NSString *mName;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)formatWithFormat:(id)arg1 name:(id)arg2;
 
 - (void)setFormatName:(id)arg1;

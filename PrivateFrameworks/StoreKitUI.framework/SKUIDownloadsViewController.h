@@ -2,17 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIImageDataConsumer, NSMutableDictionary, SKUIIPadDownloadsViewController, SKUIIPhoneDownloadsViewController, SSDownloadManager, NSCache;
+@class NSString, NSArray, UIImage, NSMutableDictionary, SKUIImageDataConsumer, SKUIIPadDownloadsViewController, SKUIIPhoneDownloadsViewController, SSDownloadManager, NSCache;
 
 @interface SKUIDownloadsViewController : SKUIViewController <SSDownloadManagerObserver, SKUIDownloadsChildViewControllerDelegate> {
-    SKUIIPhoneDownloadsViewController *_iphoneViewController;
-    SKUIIPadDownloadsViewController *_ipadViewController;
+    SKUIImageDataConsumer *_consumer;
     SSDownloadManager *_downloadManager;
     NSArray *_downloads;
     NSMutableDictionary *_imageOperations;
     NSCache *_images;
-    SKUIImageDataConsumer *_consumer;
+    SKUIIPhoneDownloadsViewController *_iphoneViewController;
+    SKUIIPadDownloadsViewController *_ipadViewController;
+    UIImage *_nullImage;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)_sizeClassForSize:(struct CGSize { double x1; double x2; })arg1;
 

@@ -51,12 +51,12 @@
 - (void)setHasFlags:(bool)arg1;
 - (bool)hasReason;
 - (void)setHasReason:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setAvailable:(int)arg1;
 - (int)available;
 - (void)setHasVersion:(bool)arg1;
 - (bool)hasVersion;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

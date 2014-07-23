@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSOutputStream, NSData, NSObject<OS_dispatch_queue>, NSInputStream, <MFComposeActivityContinuationOperationDelegate>;
+@class NSOutputStream, NSString, NSData, NSObject<OS_dispatch_queue>, NSInputStream, <MFComposeActivityContinuationOperationDelegate>;
 
 @interface MFComposeActivityContinuationOperation : NSOperation <NSStreamDelegate> {
     bool_finished;
@@ -25,6 +25,10 @@
 @property(readonly) unsigned long long bytesExpected;
 @property unsigned long long transmissionType;
 @property <MFComposeActivityContinuationOperationDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sendingOperationWithDraftData:(id)arg1 inputStream:(id)arg2 outputStream:(id)arg3;
 + (id)receivingOperationWithInputStream:(id)arg1 outputStream:(id)arg2;
@@ -33,10 +37,11 @@
 - (unsigned long long)transmissionType;
 - (unsigned long long)bytesExpected;
 - (unsigned long long)bytesReceived;
+- (void)_commonContinuationStreamTeardownWithStream:(id*)arg1;
 - (void)_finishReceivingContinuationDataAndCloseStream;
+- (void)_checkInContinuationStream:(id)arg1;
 - (void)_failedToTransferContinuationPayload;
 - (void)_didFinishTransferringContinuationPayload;
-- (void)_commonContinuationStreamTeardownWithStream:(id*)arg1;
 - (void)_handleErrorCode:(unsigned long long)arg1 logString:(id)arg2;
 - (void)_sendingMessageStream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)_sendingDataStream:(id)arg1 handleEvent:(unsigned long long)arg2;

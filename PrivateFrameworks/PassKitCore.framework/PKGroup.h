@@ -34,9 +34,9 @@
 - (id)passWithUniqueID:(id)arg1;
 - (void)setFrontmostPassIndex:(unsigned long long)arg1;
 - (unsigned long long)indexForPassUniqueID:(id)arg1;
-- (unsigned long long)passCount;
-- (id)passAtIndex:(unsigned long long)arg1;
 - (unsigned long long)frontmostPassIndex;
+- (id)passAtIndex:(unsigned long long)arg1;
+- (unsigned long long)passCount;
 - (id)groupID;
 - (bool)isLocal;
 - (void)setDelegate:(id)arg1;

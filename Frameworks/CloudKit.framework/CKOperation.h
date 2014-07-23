@@ -60,7 +60,6 @@
 - (void)setTimeoutSource:(id)arg1;
 - (id)timeoutSource;
 - (void)setDeviceIdentifier:(id)arg1;
-- (id)sourceApplicationSecondaryIdentifier;
 - (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (long long)usesBackgroundSessionOverride;
 - (void)setOperationID:(id)arg1;
@@ -71,6 +70,7 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (Class)operationInfoClass;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (id)sourceApplicationSecondaryIdentifier;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;
 - (bool)CKOperationShouldRun:(id*)arg1;

@@ -37,6 +37,7 @@
 
 + (id)infiniteRegion;
 
+- (struct CGPath { }*)path;
 - (void)containsPoints:(const float*)arg1 locationStride:(long long)arg2 results:(char *)arg3 resultsStride:(long long)arg4 count:(int)arg5;
 - (id)regionByIntersectionWithRegion:(id)arg1;
 - (id)regionByDifferenceFromRegion:(id)arg1;
@@ -45,7 +46,6 @@
 - (id)initWithRadius:(float)arg1;
 - (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGPath { }*)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

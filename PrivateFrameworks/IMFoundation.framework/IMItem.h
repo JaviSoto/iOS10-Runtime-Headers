@@ -74,9 +74,9 @@
 - (unsigned long long)hash;
 - (void)setType:(long long)arg1;
 - (long long)type;
-- (id)sender;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)sender;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;

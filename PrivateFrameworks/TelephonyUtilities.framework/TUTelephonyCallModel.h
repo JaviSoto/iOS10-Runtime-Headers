@@ -9,6 +9,7 @@
     NSObject<OS_dispatch_semaphore> *_callManagementStateSemaphore;
 }
 
+@property(getter=isWiFiCallingCurrentlyAvailable,readonly) bool wiFiCallingCurrentlyAvailable;
 @property(retain) NSDictionary * callManagementState;
 @property(retain) NSObject<OS_dispatch_semaphore> * callManagementStateSemaphore;
 
@@ -24,6 +25,7 @@
 - (id)callManagementState;
 - (id)callManagementStateSemaphore;
 - (void)_invalidateCachedState;
+- (bool)isWiFiCallingCurrentlyAvailable;
 - (bool)isSendToVoicemailAllowed;
 - (bool)isHoldAndAnswerAllowed;
 - (bool)isEndAndAnswerAllowed;

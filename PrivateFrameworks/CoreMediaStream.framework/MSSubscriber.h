@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSMediaStreamDaemon, <MSSubscribeStorageProtocol>, MSSubscribeStreamsProtocol, NSMutableDictionary, MSObjectQueue, <MSSubscriberDelegate>, MSReauthorizationProtocol, NSMutableArray;
+@class MSMediaStreamDaemon, NSString, <MSSubscribeStorageProtocol>, MSSubscribeStreamsProtocol, NSMutableDictionary, MSObjectQueue, <MSSubscriberDelegate>, MSReauthorizationProtocol, NSMutableArray;
 
 @interface MSSubscriber : MSCupidStateMachine <MSSubscriber, MSSubscribeStreamsProtocolDelegate, MSSubscribeStorageProtocolDelegate, MSReauthorizationProtocolDelegate> {
     <MSSubscriberDelegate> *_delegate;
@@ -25,6 +25,10 @@
 @property long long targetRetrievalByteCount;
 @property int retrievalBatchSize;
 @property <MSSubscriberDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_descriptionForRetrievalState:(int)arg1;
 + (id)_descriptionForState:(int)arg1;

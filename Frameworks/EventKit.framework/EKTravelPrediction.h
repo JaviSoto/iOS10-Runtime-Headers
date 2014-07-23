@@ -23,13 +23,13 @@
 
 + (bool)supportsSecureCoding;
 
+- (id)predictionDate;
 - (double)validRadius;
 - (id)startingLocation;
-- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 pollAggressively:(bool)arg5;
-- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 validRadius:(double)arg4 predictionDate:(id)arg5 ttl:(double)arg6;
-- (id)predictionDate;
 - (bool)isExpiredWithLocation:(id)arg1 date:(id)arg2;
 - (id)advice;
+- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 validRadius:(double)arg4 predictionDate:(id)arg5 ttl:(double)arg6;
+- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 pollAggressively:(bool)arg5;
 - (id)arrivalDate;
 - (id)departureDate;
 - (double)ttl;

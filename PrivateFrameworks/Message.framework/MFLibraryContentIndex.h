@@ -49,10 +49,10 @@
 - (void)removeItemsWithDocumentIdentifiers:(id)arg1;
 - (void)indexItems:(id)arg1;
 - (void)invalidateAndWait;
+- (void)setTargetQueue:(id)arg1;
 - (id)initWithPath:(id)arg1 indexName:(id)arg2 dataSource:(id)arg3;
 - (bool)isSearchable;
 - (id)documentIdentifiersMatchingCriterion:(id)arg1 mailboxIDs:(id)arg2;
-- (void)setTargetQueue:(id)arg1;
 - (void)resume;
 - (void)refresh;
 - (void)wait;

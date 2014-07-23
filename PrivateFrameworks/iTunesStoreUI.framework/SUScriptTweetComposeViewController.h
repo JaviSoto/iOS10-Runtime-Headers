@@ -18,9 +18,9 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)canSendTweet;
+- (void)setInitialText:(id)arg1;
 - (id)attributeKeys;
 - (id)addURL:(id)arg1;
-- (void)setInitialText:(id)arg1;
 - (id)removeAllImages;
 
 @end

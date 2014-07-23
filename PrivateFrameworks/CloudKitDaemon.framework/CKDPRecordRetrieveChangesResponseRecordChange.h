@@ -37,6 +37,7 @@
 - (void)setEtag:(id)arg1;
 - (id)etag;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)recordType;
 - (void)setRecordType:(id)arg1;
 - (void)setHasType:(bool)arg1;

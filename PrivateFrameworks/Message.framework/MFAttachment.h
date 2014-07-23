@@ -63,12 +63,25 @@
 @property(readonly) bool isContainedInCompose;
 @property unsigned long long lastProgressBytes;
 @property double lastProgressTime;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 
 
 - (unsigned long long)setupComplete;
 - (void)fetchData;
+- (id)inferredMimeType;
+- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
+- (void)setAttachmentManager:(id)arg1;
+- (unsigned long long)decodedFileSize;
+- (id)fetchDataSynchronously:(id*)arg1;
+- (id)contentID;
+- (void)setContentID:(id)arg1;
+- (void)setMimeType:(id)arg1;
+- (void)setFileName:(id)arg1;
 - (void)setLastProgressTime:(double)arg1;
 - (double)lastProgressTime;
 - (void)setLastProgressBytes:(unsigned long long)arg1;
@@ -106,21 +119,12 @@
 - (id)attachmentManager;
 - (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(bool)arg2;
 - (bool)isImageFile;
-- (id)inferredMimeType;
-- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
-- (void)setAttachmentManager:(id)arg1;
-- (unsigned long long)decodedFileSize;
-- (id)fetchDataSynchronously:(id*)arg1;
-- (id)contentID;
-- (void)setContentID:(id)arg1;
-- (void)setMimeType:(id)arg1;
-- (void)setFileName:(id)arg1;
+- (id)path;
 - (id)url;
 - (void)setUrl:(id)arg1;
 - (void)setDisposition:(id)arg1;
 - (id)disposition;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
@@ -129,8 +133,7 @@
 - (id)previewItemURL;
 - (id)mimeType;
 - (id)fileName;
-- (id)meetingStorePersistentID;
-- (id)htmlRepresentationWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(double)arg3;
+- (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(double)arg3;
 - (bool)conformsToType:(id)arg1;
 - (id)icsRepresentation;
 - (id)eventID;
@@ -163,6 +166,7 @@
 - (unsigned long long)imageScalingFlags;
 - (bool)isDisplayableInline;
 - (struct CGSize { double x1; double x2; })markupSizeForImageScale:(unsigned long long)arg1;
+- (id)meetingStorePersistentID;
 - (void)setEventID:(id)arg1;
 - (id)contentType;
 - (id)pass;

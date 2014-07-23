@@ -15,6 +15,10 @@
 
 @property(readonly) long long selectedAmount;
 @property(readonly) NSString * selectedAmountString;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_reloadSelectedButton;

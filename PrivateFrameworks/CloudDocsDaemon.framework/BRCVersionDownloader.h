@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMutableDictionary, BRCTransferQueue, BRCLocalContainer, NSObject<OS_dispatch_queue>;
+@class NSMutableDictionary, BRCTransferQueue, NSString, BRCLocalContainer, NSObject<OS_dispatch_queue>;
 
 @interface BRCVersionDownloader : NSObject <BRCTransferQueueDelegate, BRCLifeCycle> {
     BRCTransferQueue *_transferQueue;
@@ -12,8 +12,13 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (void)cancelAllDownloads;
 - (bool)isDownloadingAddition:(id)arg1;
 - (void)signalNeedsDownloads;
 - (id)multiplexerForDesiredKeys:(id)arg1;

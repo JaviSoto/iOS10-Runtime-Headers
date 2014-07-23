@@ -26,5 +26,7 @@
 - (void)__mainThreadPostNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1;
 - (void)__mainThreadPostNotificationName:(id)arg1 object:(id)arg2;
+- (void)mf_removeObservers:(id)arg1;
+- (id)mf_addImmediateObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 
 @end

@@ -79,6 +79,10 @@
 @property(readonly) long long URLBagType;
 @property(copy,readonly) id URLBagURLBlock;
 @property(copy,readonly) NSArray * URLs;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)canBeResolved;

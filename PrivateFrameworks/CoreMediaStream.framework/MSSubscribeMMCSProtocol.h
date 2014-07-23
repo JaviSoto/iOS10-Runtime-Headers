@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSMutableDictionary, <MSSubscribeStorageProtocolDelegate>;
+@class NSString, NSMutableDictionary, <MSSubscribeStorageProtocolDelegate>;
 
 @interface MSSubscribeMMCSProtocol : MSMMCSProtocol <MSSubscribeStorageProtocol> {
     <MSSubscribeStorageProtocolDelegate> *_delegate;
@@ -13,6 +13,10 @@
     char **_authTokens;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <MSSubscribeStorageProtocolDelegate> * delegate;
 
 

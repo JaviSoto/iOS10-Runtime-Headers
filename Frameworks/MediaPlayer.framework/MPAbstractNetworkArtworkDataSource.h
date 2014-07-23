@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURLSession, NSMapTable, NSObject<OS_dispatch_queue>, NSURLSessionConfiguration;
+@class NSURLSession, NSMapTable, NSString, NSObject<OS_dispatch_queue>, NSURLSessionConfiguration;
 
 @interface MPAbstractNetworkArtworkDataSource : NSObject <NSURLSessionDataDelegate, MPArtworkDataSource> {
     NSURLSession *_URLSession;
@@ -14,6 +14,10 @@
 @property(retain) NSURLSession * URLSession;
 @property(retain) NSMapTable * catalogTaskMap;
 @property(retain) NSObject<OS_dispatch_queue> * accessQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAccessQueue:(id)arg1;

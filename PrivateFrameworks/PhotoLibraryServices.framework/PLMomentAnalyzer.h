@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSDate, NSDictionary, NSDateFormatter, NSOrderedSet, PLMomentAnalyzerWorkThread, <PLMomentGenerationDataManagement>, NSString, NSMutableOrderedSet, GEOPlace, NSObject<OS_dispatch_queue>, NSMutableSet;
+@class CLLocation, NSDate, NSDictionary, <GEOMapItemPrivate>, NSDateFormatter, NSOrderedSet, PLMomentAnalyzerWorkThread, <PLMomentGenerationDataManagement>, NSString, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface PLMomentAnalyzer : NSObject  {
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -29,7 +29,7 @@
     bool_needToUpdateInvalidMomentsWhenPossible;
     NSDictionary *_homeAddressDictionary;
     CLLocation *_homeLocation;
-    GEOPlace *_homePlace;
+    <GEOMapItemPrivate> *_homeMapItem;
     NSString *_languageAndLocale;
     NSString *_lastGeoProviderId;
     NSOrderedSet *_defaultDominantGeoOrderingForMoment;
@@ -65,7 +65,7 @@
 - (id)_simpleNamesForNameInfoArray:(id)arg1;
 - (unsigned long long)_significantPlaceCountInMap:(id)arg1;
 - (unsigned long long)_indexForGeoOrder:(unsigned long long)arg1 inPrioritySet:(id)arg2;
-- (id)_compactPlaceDescriptionForPlaceResult:(id)arg1;
+- (id)_compactPlaceDescriptionForMapItem:(id)arg1;
 - (void)updateInfoForInvalidMomentsIfNeeded;
 - (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(bool)arg2 invalidOnly:(bool)arg3;
 - (void)_setMomentAnalysisPaused:(bool)arg1;

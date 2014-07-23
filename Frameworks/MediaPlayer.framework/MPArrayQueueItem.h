@@ -24,10 +24,10 @@
 - (id)videoID;
 - (double)stopTime;
 - (void)setVideoID:(id)arg1;
+- (id)path;
 - (id)init;
 - (void)setStartTime:(double)arg1;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (double)startTime;
 - (void).cxx_destruct;
 - (id)item;

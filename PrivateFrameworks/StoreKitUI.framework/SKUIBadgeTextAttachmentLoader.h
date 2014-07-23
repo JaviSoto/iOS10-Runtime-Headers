@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIResourceLoader, NSMapTable, NSHashTable;
+@class NSMapTable, NSString, SKUIResourceLoader, NSHashTable;
 
 @interface SKUIBadgeTextAttachmentLoader : NSObject <SKUIArtworkRequestDelegate> {
     NSMapTable *_imageRequests;
     SKUIResourceLoader *_resourceLoader;
     NSHashTable *_stringViews;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)loadImageForBadge:(id)arg1 layout:(id)arg2 reason:(long long)arg3;

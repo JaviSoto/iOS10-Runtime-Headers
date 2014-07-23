@@ -48,7 +48,6 @@
 - (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2;
 - (bool)decodePropertiesFromObject:(id)arg1;
 - (bool)encodePropertiesInObject:(id)arg1;
-- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2 updatedProperties:(id*)arg3;
 - (bool)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned long long)arg3 updatedProperty:(id*)arg4;
 - (void)setSecondaryIdentifier:(id)arg1;
@@ -72,6 +71,7 @@
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
+- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (id)resourcesDescription;
 - (long long)dequeueOrder;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class NSArray, ACUIAccountViewProvidersManager;
+@class NSArray, NSString, ACUIAccountViewProvidersManager;
 
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
     bool_dontShowSecondLevelOtherAccountTypes;
@@ -12,8 +12,13 @@
 }
 
 @property(readonly) ACUIAccountViewProvidersManager * viewProvidersManager;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (id)specifiers;
 - (void)setupViewControllerDidDismiss:(id)arg1;
 - (id)viewProvidersManager;
 - (id)_specifierForRegionalAccountType:(id)arg1;
@@ -26,7 +31,6 @@
 - (id)_specifiersForRegionalMailAccounts;
 - (id)_specifierForExchangeAccount;
 - (id)_specifierForiCloudAccount;
-- (id)specifiers;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

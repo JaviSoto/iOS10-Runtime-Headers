@@ -58,6 +58,7 @@
 - (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(bool)arg4;
 - (int)visibility;
 - (void)queue_connectionWasCreated;
+- (void)queue_connectionWasInterrupted;
 - (void)queue_handleMessage:(id)arg1;
 - (bool)supportsTaskSuspension;
 - (void)setSupportsTaskSuspension:(bool)arg1;

@@ -10,11 +10,14 @@
 
 @property(copy) NSNumberFormatter * numberFormatter;
 @property long long unitStyle;
+@property(getter=isForPersonHeightUse) bool forPersonHeightUse;
 
 
 - (id)init;
 - (void)dealloc;
 - (id)unitStringFromMeters:(double)arg1 usedUnit:(long long*)arg2;
+- (void)setForPersonHeightUse:(bool)arg1;
+- (bool)isForPersonHeightUse;
 - (id)stringFromMeters:(double)arg1;
 - (long long)targetUnitFromMeters:(double)arg1;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;

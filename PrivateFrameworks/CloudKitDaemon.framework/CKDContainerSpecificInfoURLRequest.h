@@ -25,10 +25,10 @@
 - (bool)allowsAuthedAccount;
 - (bool)requiresConfiguration;
 - (bool)allowsAnonymousAccount;
-- (bool)requiresSignature;
 - (long long)partitionType;
 - (long long)serverType;
 - (void)requestDidParseJSONObject:(id)arg1;
+- (bool)requiresSignature;
 - (id)additionalHeaderValues;
 - (void)setContainerIdentifier:(id)arg1;
 - (id)containerIdentifier;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, CAMKeepDaemonAliveAssertion, <PLApplicationCameraViewControllerDelegate>, UIView, UIViewController;
+@class NSString, NSDictionary, CAMKeepDaemonAliveAssertion, <PLApplicationCameraViewControllerDelegate>, UIView, UIViewController;
 
 @interface CAMApplicationViewController : CAMCameraViewController <CAMCameraRollObserver, PLPhotoBrowserControllerDelegate, UINavigationControllerDelegate> {
 
@@ -56,6 +56,10 @@
 @property(readonly) UIView * _rootContainerView;
 @property(readonly) UIView * _autorotationCorrectionView;
 @property(readonly) int _lockToResetToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)stopCameraPreview;

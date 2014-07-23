@@ -2,19 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class FMFSession, NSMutableArray, FMFDevice;
+@class NSString, FMFSession, FMFDevice, NSMutableArray;
 
 @interface FMFActiveDeviceSelectionViewController : PSListController <FMFSessionDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray *_deviceList;
     FMFDevice *_currentActiveDevice;
     FMFDevice *_nowActiveDevice;
     FMFSession *_fmfSession;
+    long long _specifierStartIndex;
 }
 
 @property(retain) NSMutableArray * deviceList;
 @property(retain) FMFDevice * currentActiveDevice;
 @property(retain) FMFDevice * nowActiveDevice;
 @property(retain) FMFSession * fmfSession;
+@property long long specifierStartIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setCurrentActiveDevice:(id)arg1;
@@ -22,22 +28,29 @@
 - (void)cancelActiveDeviceSelection;
 - (void)saveActiveDeviceSelection;
 - (void)setNowActiveDevice:(id)arg1;
+- (bool)_hasThisDeviceAtIndex:(unsigned long long)arg1;
+- (bool)_hasActiveDeviceAtIndex:(unsigned long long)arg1;
+- (id)_specifierForRowIndex:(long long)arg1;
+- (long long)specifierStartIndex;
 - (void)setDeviceList:(id)arg1;
 - (id)nowActiveDevice;
+- (void)setSpecifierStartIndex:(long long)arg1;
 - (void)sortDevicesList;
 - (void)setFmfSession:(id)arg1;
 - (id)fmfSession;
+- (void)displayGenericErrorAlert;
 - (void)reloadSpecifiersOnMainQueue;
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
-- (id)specifiers;
 - (id)deviceList;
+- (id)specifiers;
 - (id)initWithSession:(id)arg1;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

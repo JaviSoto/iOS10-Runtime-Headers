@@ -30,6 +30,10 @@
 }
 
 @property(readonly) NSData * brc_containerMetadataPropertiesData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * recordType;
 @property(copy) CKRecordID * recordID;
 @property(copy,readonly) NSString * recordChangeTag;
@@ -62,7 +66,7 @@
 + (bool)accessInstanceVariablesDirectly;
 + (bool)supportsSecureCoding;
 + (id)desiredKeysWithMask:(unsigned short)arg1;
-+ (id)assetsOnlyDocumentContentsRecordForLocalItem:(id)arg1 thumbnail1024URL:(id)arg2 thumbnailMetadata:(id)arg3 packageManifest:(id*)arg4 error:(id*)arg5;
++ (id)assetsOnlyDocumentContentsRecordForLocalItem:(id)arg1 thumbnail1024Asset:(id)arg2 thumbnailMetadata:(id)arg3 packageManifest:(id*)arg4 error:(id*)arg5;
 + (id)documentStructureRecordForLocalItem:(id)arg1;
 + (id)directoryRecordForLocalItem:(id)arg1;
 + (id)aliasRecordForLocalItem:(id)arg1;
@@ -75,18 +79,18 @@
 + (id)brc_containerMetadataZoneID;
 
 - (bool)hasModifiedPropertiesRequiringEncryption;
+- (id)zoneProtectionEtag;
 - (bool)hasModifiedEncryptedData;
 - (id)copyWithOriginalValues;
 - (void)setZoneProtectionEtag:(id)arg1;
 - (bool)hasPropertiesRequiringEncryption;
-- (void)setPreviousProtectionEtag:(id)arg1;
+- (id)previousProtectionEtag;
 - (void)setProtectionEtag:(id)arg1;
+- (void)setPreviousProtectionEtag:(id)arg1;
+- (id)protectionEtag;
 - (bool)hasEncryptedData;
 - (bool)containsAssetValues;
 - (void)setSerializeProtectionData:(bool)arg1;
-- (id)zoneProtectionEtag;
-- (id)previousProtectionEtag;
-- (id)protectionEtag;
 - (void)setWasCached:(bool)arg1;
 - (void)setEtag:(id)arg1;
 - (id)etag;
@@ -157,7 +161,7 @@
 - (id)modificationDate;
 - (void)setNilValueForKey:(id)arg1;
 - (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2;
-- (void)serializeStatInfo:(id)arg1 container:(id)arg2 diffs:(unsigned long long)arg3;
+- (void)serializeStatInfo:(id)arg1 itemID:(id)arg2 container:(id)arg3 diffs:(unsigned long long)arg4;
 - (void)serializeStructuralPluginHints:(id)arg1;
 - (bool)deserializeVersion:(id*)arg1 container:(id)arg2 error:(id*)arg3;
 - (bool)deserializeStatInfo:(id*)arg1 itemID:(id)arg2 container:(id)arg3 error:(id*)arg4;
@@ -166,6 +170,8 @@
 - (void)serializeFilename:(id)arg1 forCreation:(bool)arg2;
 - (bool)_deserializeFilename:(id*)arg1 userInfo:(id)arg2 error:(id*)arg3;
 - (bool)_deserializeValue:(id*)arg1 forKey:(id)arg2 expectClass:(Class)arg3 allowNil:(bool)arg4 errorDescription:(id*)arg5;
+- (id)brc_updateDroppedReason;
+- (id)brc_oplockMergeEtag;
 - (bool)brc_isInterestingRecordForSyncDown;
 - (bool)saveDocumentContentsRecordInContainer:(id)arg1;
 - (bool)saveStructureRecordInContainer:(id)arg1;

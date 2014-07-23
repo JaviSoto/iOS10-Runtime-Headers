@@ -15,6 +15,11 @@
     NSRecursiveLock *mSaveLoadLock;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (id)rowBlockAtIndex:(unsigned long long)arg1;
 - (unsigned long long)expectedIndexOfRowBlockForRowNumber:(unsigned int)arg1;

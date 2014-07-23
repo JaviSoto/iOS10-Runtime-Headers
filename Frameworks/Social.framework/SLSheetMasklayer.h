@@ -49,6 +49,7 @@
 - (void)setClipCornerRadius:(double)arg1;
 - (id)clipBackgroundColor;
 - (double)clipCornerRadius;
+- (void)removeAllAnimations;
 - (void).cxx_destruct;
 
 @end

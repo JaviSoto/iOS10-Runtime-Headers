@@ -102,10 +102,10 @@
 - (id)highlightedAnimationImages;
 - (id)animationImages;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (void)_setTemplateImageRenderingEffects:(unsigned long long)arg1;
 - (void)_setDefaultRenderingMode:(long long)arg1;
 - (unsigned long long)_templateImageRenderingEffects;
+- (void)setHighlighted:(bool)arg1;
 - (void)setAnimationRepeatCount:(long long)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)tintColorDidChange;

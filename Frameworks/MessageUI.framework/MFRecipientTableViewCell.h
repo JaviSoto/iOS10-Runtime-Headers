@@ -26,6 +26,7 @@
 + (double)_constrainedWidthForDetailViewWithAccessoryWidth:(double)arg1 containerWidth:(double)arg2;
 + (double)_constrainedWidthForTitleViewWithAccessoryWidth:(double)arg1 containerWidth:(double)arg2;
 + (double)_realDetailButtonAccessoryMargin;
++ (double)_deviceSpecificLayoutMargin;
 + (id)_defaultTintColor;
 + (double)heightWithRecipient:(id)arg1 width:(double)arg2;
 + (double)height;

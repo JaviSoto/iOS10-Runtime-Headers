@@ -33,6 +33,7 @@
 
 + (id)requestViewControllerWithService:(id)arg1 serializedAppearanceCustomizations:(id)arg2 legacyAppearance:(bool)arg3 exportedHostingObject:(id)arg4 remoteViewControllerClass:(Class)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
 + (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(bool)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
++ (id)__requestRemoteViewController:(id)arg1 service:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 serializedAppearanceCustomizations:(id)arg4 legacyAppearance:(bool)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(id)arg8;
 
 - (void)dealloc;
 - (void)_didFinishEstablishingConnection;
@@ -43,9 +44,9 @@
 - (void)_connectToDeputyWithInterface:(id)arg1 fromExportedHostingObject:(id)arg2 successHandler:(id)arg3;
 - (void)_sendServiceViewControllerRequest;
 - (void)_connectToViewControllerOperator;
-- (void)_connectToPlugInKitService;
 - (id)_cancelWithError:(id)arg1;
 - (void)_connectToViewService;
+- (void)_connectToPlugInKitService;
 - (void)_cancelUnconditionallyThen:(id)arg1;
 
 @end

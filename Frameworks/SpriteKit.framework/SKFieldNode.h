@@ -11,6 +11,9 @@
 @interface SKFieldNode : SKNode  {
     PKPhysicsField *_field;
     SKRegion *_region;
+    float _smoothness;
+    float _animationSpeed;
+    SKTexture *_texture;
     bool_exclusive;
 }
 
@@ -69,6 +72,8 @@
 - (void)setExclusive:(bool)arg1;
 - (bool)isExclusive;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

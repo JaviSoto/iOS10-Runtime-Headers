@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUOverlayViewController, UISwipeGestureRecognizer, NSArray, <SUOverlayBackgroundDelegate>, NSMutableArray, SUTouchCaptureView, SUScalingFlipView;
+@class SUOverlayViewController, UISwipeGestureRecognizer, NSArray, <SUOverlayBackgroundDelegate>, NSString, NSMutableArray, SUTouchCaptureView, SUScalingFlipView;
 
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
     NSMutableArray *_actionQueue;
@@ -29,6 +29,10 @@
 @property <SUOverlayBackgroundDelegate> * delegate;
 @property(readonly) SUOverlayViewController * selectedViewController;
 @property(readonly) NSArray * viewControllers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)overlayPageViewTapped:(id)arg1;

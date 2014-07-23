@@ -2,18 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSMutableDictionary, FBSSerialQueue, NSArray, NSObject<OS_dispatch_queue>, FBSWorkspaceClient, <FBSWorkspaceDelegate>;
+@class NSString, NSArray, NSMutableDictionary, <FBSWorkspaceDelegate>, FBSSerialQueue, NSObject<OS_dispatch_queue>, FBSWorkspaceClient;
 
 @interface FBSWorkspace : NSObject <FBSWorkspaceClientDelegate> {
     NSObject<OS_dispatch_queue> *_queue;
     <FBSWorkspaceDelegate> *_delegate;
-    struct { 
-        unsigned int didBeginTransaction : 1; 
-        unsigned int didEndTransaction : 1; 
-        unsigned int didCreateScene : 1; 
-        unsigned int willDestroyScene : 1; 
-        unsigned int didReceiveActions : 1; 
-    } _delegateFlags;
     FBSWorkspaceClient *_client;
     NSMutableDictionary *_scenesByIdentifier;
     FBSSerialQueue *_callOutQueue;
@@ -22,6 +15,10 @@
 @property <FBSWorkspaceDelegate> * delegate;
 @property(retain,readonly) FBSSerialQueue * queue;
 @property(copy,readonly) NSArray * scenes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)queue;

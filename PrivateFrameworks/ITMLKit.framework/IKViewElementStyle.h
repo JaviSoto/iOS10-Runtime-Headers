@@ -65,7 +65,6 @@
 - (id)columnType;
 - (long long)maxTextLines;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementMargin;
-- (id)valueForStyle:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsFromString:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromString:(id)arg1;
 - (id)_urlFromString:(id)arg1;
@@ -85,6 +84,7 @@
 - (id)imagePlaceholderURL;
 - (unsigned long long)elementAlignment;
 - (id)dividerType;
+- (id)valueForStyle:(id)arg1;
 - (unsigned long long)elementPosition;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementPadding;
 - (id)lockupType;

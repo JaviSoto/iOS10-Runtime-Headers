@@ -52,6 +52,10 @@
 }
 
 @property NSMetadataQuery * query;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (id)willBeginPossibleCreationOfItemAtURL:(id)arg1;
@@ -60,7 +64,7 @@
 + (void)didEndPossibleFileOperation:(id)arg1;
 
 - (void)_processChanges:(id)arg1;
-- (void)_sendSingleShotHasUpdateNotificationIfNeeded;
+- (void)_sendHasUpdateNotificationIfNeeded;
 - (void)_postNote:(struct __CFString { }*)arg1 userInfo:(id)arg2;
 - (void)_processUpdates;
 - (id)_replacementObjectsForArrayOfQueryItem:(id)arg1;

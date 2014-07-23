@@ -15,7 +15,6 @@
 @property ABPersonTableViewDataSource * dataSource;
 
 
-- (id)people;
 - (bool)didChangePreferredPersonForImage;
 - (void)updateRecordImages;
 - (bool)hasImageChanges;
@@ -35,6 +34,7 @@
 - (bool)hasImageDataForPerson:(id)arg1;
 - (id)writablePeople;
 - (id)currentImageData;
+- (id)people;
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;

@@ -13,6 +13,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)_highQualityEffectConfig;
+- (id)_lowQualityEffectConfig;
+- (id)effectConfigForQuality:(long long)arg1;
 - (id)effectConfig;
 
 @end

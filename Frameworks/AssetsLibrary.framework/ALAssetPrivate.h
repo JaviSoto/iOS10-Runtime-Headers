@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class PLManagedAsset, PLPhotoLibrary, ALAssetsLibrary;
+@class PLPhotoLibrary, NSString, PLManagedAsset, ALAssetsLibrary;
 
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
     ALAssetsLibrary *_library;
@@ -16,6 +16,10 @@
 @property(getter=isDeletable,readonly) bool deletable;
 @property(retain) PLManagedAsset * photo;
 @property(retain) PLPhotoLibrary * _photoLibrary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isDeletable;

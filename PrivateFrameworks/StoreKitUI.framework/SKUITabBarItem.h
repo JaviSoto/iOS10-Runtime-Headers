@@ -36,9 +36,9 @@
 - (id)initWithTabIdentifier:(id)arg1;
 - (id)userInterfaceTintColor;
 - (id)metricsIdentifier;
-- (long long)barTintStyle;
 - (Class)rootViewControllerClass;
 - (bool)alwaysCreatesRootViewController;
+- (long long)barTintStyle;
 - (id)tabIdentifier;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

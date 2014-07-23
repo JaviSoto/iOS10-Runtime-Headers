@@ -2,9 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
+@class IKAppMenuBarDocument;
+
 @interface IKMenuBarElement : IKCollectionElement  {
+    IKAppMenuBarDocument *_menuBarDocument;
 }
 
+@property(readonly) IKAppMenuBarDocument * menuBarDocument;
 
++ (id)supportedFeatures;
+
+- (id)menuBarDocument;
+- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (void).cxx_destruct;
 
 @end

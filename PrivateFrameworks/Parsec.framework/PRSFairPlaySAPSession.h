@@ -16,8 +16,8 @@
 - (void)setSAPVersion:(id)arg1;
 - (id)SAPVersion;
 - (id)signatureStringForData:(id)arg1 error:(id*)arg2;
-- (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)processSignedData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
+- (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)signatureForData:(id)arg1 error:(id*)arg2;
 - (bool)isComplete;
 - (id)init;

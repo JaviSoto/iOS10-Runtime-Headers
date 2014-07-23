@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PHFetchResult, NSMutableDictionary;
+@class NSString, PHFetchResult, NSMutableDictionary;
 
 @interface PLAssetContainerDataSource : NSObject <PHAssetCollectionDataSource> {
     PHFetchResult *_assetCollectionsFetchResult;
@@ -13,6 +13,10 @@
     unsigned long long _lastAssetCollectionIndex;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) PHFetchResult * assetCollectionsFetchResult;
 
 

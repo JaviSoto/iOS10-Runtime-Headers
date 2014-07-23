@@ -13,6 +13,10 @@
 @property(copy) NSString * property;
 @property(copy) id value;
 @property long long comparisonType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(long long)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;

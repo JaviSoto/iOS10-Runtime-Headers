@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSString;
+
 @interface NSISLinearExpression : NSObject <NSISRowBody, NSFastEnumeration> {
     unsigned int inline_capacity;
     unsigned int var_count;
@@ -21,6 +23,10 @@
 }
 
 @property double constant;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)newExpressionWithCapacity:(unsigned long long)arg1;
 + (id)acquireFromPoolForUseCase:(long long)arg1;

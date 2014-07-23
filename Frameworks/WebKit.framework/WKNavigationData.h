@@ -21,6 +21,10 @@
 @property(readonly) NSURLRequest * originalRequest;
 @property(readonly) NSURL * destinationURL;
 @property(readonly) NSURLResponse * response;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

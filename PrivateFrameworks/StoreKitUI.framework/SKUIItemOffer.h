@@ -24,6 +24,10 @@
 @property(readonly) long long offerType;
 @property(readonly) float price;
 @property(readonly) NSString * variantIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

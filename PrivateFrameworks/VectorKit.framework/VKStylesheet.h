@@ -55,7 +55,7 @@
 - (int)styleAttributeValueForLocalization:(id)arg1;
 - (id)styleMatchingAttributes:(id)arg1 vectorType:(long long)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned long long)arg4 mapDisplayStyleVariant:(unsigned long long)arg5 canSelectIcons:(bool)arg6 selected:(bool)arg7;
 - (id)_styleMatchingAttributes:(id)arg1 clientAttributes:(struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
-- (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4 vendor:(id)arg5 targetDisplay:(long long)arg6 isDevResource:(bool)arg7;
+- (id)initWithData:(id)arg1 miniData:(id)arg2 forName:(id)arg3 scale:(float)arg4 ppi:(float)arg5 vendor:(id)arg6 targetDisplay:(long long)arg7 isDevResource:(bool)arg8;
 - (long long)rasterPolygonChangeoverZ;
 - (id)styleGlobalProperties;
 - (bool)supportsNightMode;

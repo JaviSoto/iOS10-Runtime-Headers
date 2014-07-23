@@ -72,7 +72,6 @@
 @property(retain) NSMutableArray * starRatings;
 
 
-- (bool)hasURL;
 - (id)photos;
 - (id)initWithBusinessURL:(id)arg1 phoneNumber:(id)arg2 muid:(unsigned long long)arg3 attributionID:(id)arg4 sampleSizeForUserRatingScore:(unsigned int)arg5 normalizedUserRatingScore:(float)arg6;
 - (bool)_booleanValueForAmenity:(id)arg1;
@@ -117,6 +116,7 @@
 - (bool)hasIsClosed;
 - (void)setHasIsClosed:(bool)arg1;
 - (void)setIsClosed:(bool)arg1;
+- (bool)hasURL;
 - (bool)hasTelephone;
 - (bool)hasPhoneticName;
 - (bool)hasUID;

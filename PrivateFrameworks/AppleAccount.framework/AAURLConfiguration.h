@@ -64,6 +64,7 @@
 @property(readonly) NSString * cloudKitStartMigrationURL;
 @property(readonly) NSString * familyPaymentInfoURL;
 @property(readonly) NSString * familyPaymentCardUIURL;
+@property(readonly) NSString * aboutURL;
 @property(readonly) NSString * registerDeviceURL;
 @property(readonly) NSString * unregisterDeviceURL;
 @property(readonly) NSString * getFamilyPushDetailsURL;
@@ -137,6 +138,7 @@
 - (id)accountCreationUIURL;
 - (id)genericTermsURL;
 - (id)loginDelegatesURL;
+- (id)aboutURL;
 - (id)authenticateURL;
 - (id)signingSessionURL;
 - (id)signingSessionCertURL;

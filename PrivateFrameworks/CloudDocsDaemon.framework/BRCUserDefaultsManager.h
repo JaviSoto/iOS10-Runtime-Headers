@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURLSession, NSMutableDictionary, NSDictionary, NSURL;
+@class NSURLSession, NSMutableDictionary, NSDictionary, NSURL, NSOperationQueue, NSString;
 
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
     NSURL *_serverConfigurationURL;
@@ -17,8 +17,14 @@
   /* Error parsing encoded ivar type info: @? */
     id _configurationPlistDidUpdateBlock;
 
+    NSOperationQueue *_downloadQueue;
     NSURLSession *_urlSession;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_saveServerConfigurationDictionaryToDB:(id)arg1;

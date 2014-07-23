@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKSkyModel, <GEORoutePreloadSession>;
+@class VKSkyModel, NSString, <GEORoutePreloadSession>;
 
 @interface VKRealisticMapModel : VKVectorMapModel <VKMapLayer> {
     double _fade;
@@ -259,6 +259,10 @@
 @property bool disableRealisticLand;
 @property float sceneAlpha;
 @property(retain) VKSkyModel * skyModel;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)_calculateZoomLevelWithContext:(id)arg1;

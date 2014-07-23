@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDatabase, ACDClient, ACDClientAuthorizationManager;
+@class NSString, ACDDatabase, ACDClientAuthorizationManager, ACDClient;
 
 @interface ACDOAuthSigner : NSObject <ACDOAuthSignerProtocol> {
     ACDDatabase *_database;
@@ -10,6 +10,11 @@
     ACDClientAuthorizationManager *_authorizationManager;
     bool_shouldIncludeAppIdInRequest;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)signedRequest:(id)arg1 withAccount:(id)arg2 applicationID:(id)arg3 timestamp:(id)arg4;

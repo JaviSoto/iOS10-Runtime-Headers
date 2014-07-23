@@ -85,6 +85,7 @@
 - (id)entitiesForConfiguration:(id)arg1;
 - (id)versionHash;
 - (id)entitiesByName;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)init;
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (bool)isEqual:(id)arg1;
@@ -95,6 +96,5 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

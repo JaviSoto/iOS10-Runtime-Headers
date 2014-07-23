@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, <UIViewControllerContextTransitioning>;
+@class UIView, NSString, <UIViewControllerContextTransitioning>;
 
 @interface UIViewControllerBuiltinTransitionViewAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
     <UIViewControllerContextTransitioning> *_transitionContext;
@@ -18,6 +18,10 @@
 @property UIView * fromView;
 @property bool removeFromView;
 @property int transition;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;

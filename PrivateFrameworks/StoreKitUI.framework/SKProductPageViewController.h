@@ -44,6 +44,10 @@
 @property(copy) NSString * affiliateIdentifier;
 @property(copy) NSDictionary * scriptContextDictionary;
 @property long long URLBagType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)getCanLoadWithURL:(id)arg1 completionBlock:(id)arg2;
 + (id)_defaultClientIdentifier;
@@ -112,12 +116,12 @@
 - (void)setRightBarButtonTitle:(id)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setAskToBuy:(bool)arg1;
-- (void)setShowsStoreButton:(bool)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
-- (void)setProductPageStyle:(long long)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
-- (void)loadProductWithRequest:(id)arg1;
 - (void)loadProductWithParameters:(id)arg1;
+- (void)loadProductWithRequest:(id)arg1;
+- (void)setProductPageStyle:(long long)arg1;
+- (void)setShowsStoreButton:(bool)arg1;
 - (long long)URLBagType;
 - (void)setURLBagType:(long long)arg1;
 - (void)_failWithError:(id)arg1;

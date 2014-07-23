@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@class NSString, NSDate;
 
 @interface EKTravelAdvice : NSObject <EKTravelAdvice> {
     NSDate *_predictedDepartureTime;
@@ -17,6 +17,10 @@
 @property(readonly) unsigned long long accidentState;
 @property(readonly) unsigned long long travelState;
 @property(readonly) double travelStateScore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithTrafficLevel:(unsigned long long)arg1 accidentState:(unsigned long long)arg2 travelState:(unsigned long long)arg3 travelStateScore:(double)arg4 predictedDepartureTime:(id)arg5;
@@ -26,5 +30,6 @@
 - (double)travelStateScore;
 - (unsigned long long)travelState;
 - (void)dealloc;
+- (id)description;
 
 @end

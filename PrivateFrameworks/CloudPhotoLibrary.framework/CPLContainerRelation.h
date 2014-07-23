@@ -16,8 +16,8 @@
 
 + (bool)supportsSecureCoding;
 
-- (bool)isKeyAsset;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
+- (bool)isKeyAsset;
 - (void)setKeyAsset:(bool)arg1;
 - (void)setContainerIdentifier:(id)arg1;
 - (id)containerIdentifier;

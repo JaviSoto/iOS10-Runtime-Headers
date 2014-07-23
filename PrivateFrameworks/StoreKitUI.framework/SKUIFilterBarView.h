@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIControl, NSMapTable, SKUIDividerView, SKUIMenuPopoverController, NSMutableArray;
+@class UIControl, NSMapTable, SKUIDividerView, NSString, SKUIMenuPopoverController, NSMutableArray;
 
 @interface SKUIFilterBarView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIMenuPopoverDelegate, SKUIViewElementView> {
     SKUIDividerView *_bottomDividerView;
@@ -20,6 +20,11 @@
     NSMutableArray *_rightElementViews;
     NSMapTable *_viewElementViews;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForButtonText:(id)arg1 style:(id)arg2 context:(id)arg3;
 + (id)_attributedStringForMenuItem:(id)arg1 context:(id)arg2;

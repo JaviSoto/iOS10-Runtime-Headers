@@ -33,6 +33,10 @@
 @property(copy) NSString * toneIdentifier;
 @property(copy) NSString * vibrationIdentifier;
 @property(copy) NSString * songPath;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)alertSoundWithSystemSoundID:(unsigned int)arg1;
 + (void)_removeCachedSound:(id)arg1;
@@ -50,6 +54,7 @@
 - (unsigned long long)soundBehavior;
 - (unsigned int)systemSoundID;
 - (void)setSongPath:(id)arg1;
+- (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 audioCategory:(id)arg4 maxDuration:(double)arg5;
 - (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 maxDuration:(double)arg4;
 - (void)setVibrationIdentifier:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;

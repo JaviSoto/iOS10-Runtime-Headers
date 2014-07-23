@@ -23,6 +23,7 @@
 + (id)applyChangesThrottleForContainer:(id)arg1;
 + (id)readerThrottleForContainer:(id)arg1;
 
+- (void)reschedule;
 - (void)needsScheduleAt:(long long)arg1;
 - (void)doneScheduling;
 - (bool)clearThrottle:(long long)arg1;
@@ -41,8 +42,10 @@
 - (long long)nextRetryTimestamp;
 - (bool)dumpToContext:(id)arg1 error:(id*)arg2;
 - (id)scheduler;
+- (void)deactivate;
 - (id)tableName;
 - (id)container;
 - (void).cxx_destruct;
+- (void)unschedule;
 
 @end

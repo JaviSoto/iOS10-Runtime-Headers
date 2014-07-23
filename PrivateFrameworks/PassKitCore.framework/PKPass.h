@@ -144,9 +144,9 @@
 - (id)frontFaceImage;
 - (id)partialFrontFaceImage;
 - (bool)supportsSharing;
-- (id)sharingURL;
-- (id)organizationName;
 - (id)serialNumber;
+- (id)organizationName;
+- (id)sharingURL;
 - (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
 - (id)initWithData:(id)arg1 error:(id*)arg2;

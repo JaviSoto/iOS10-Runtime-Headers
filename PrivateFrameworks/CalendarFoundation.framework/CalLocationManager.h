@@ -5,7 +5,9 @@
 @interface CalLocationManager : NSObject  {
 }
 
++ (void)strictGeocodeString:(id)arg1 withCompletionBlock:(id)arg2;
 + (void)currentLocationWithCompletionBlock:(id)arg1;
++ (void)_loadMapKit;
 + (void)placemarkForAddress:(id)arg1 withCompletionBlock:(id)arg2;
 + (void)placemarkForLocation:(id)arg1 withCompletionBlock:(id)arg2;
 

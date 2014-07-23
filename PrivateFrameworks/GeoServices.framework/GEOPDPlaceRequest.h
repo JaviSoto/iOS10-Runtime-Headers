@@ -34,13 +34,13 @@
 @property(retain) GEOPDPlaceRequestParameters * placeRequestParameters;
 
 
-- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2;
-- (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(bool)arg3;
 - (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeETA:(bool)arg3 includeEntryPoints:(bool)arg4;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 traits:(id)arg3;
+- (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 traits:(id)arg5;
 - (id)initWithCoordinateHint:(struct { double x1; double x2; })arg1 addressHint:(id)arg2 placeNameHint:(id)arg3 traits:(id)arg4;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(bool)arg5 traits:(id)arg6;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 maxResults:(unsigned int)arg4 suppressResultsRequiringAttribution:(bool)arg5 includeETA:(bool)arg6 traits:(id)arg7;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(bool)arg2 includeETA:(bool)arg3 traits:(id)arg4;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;

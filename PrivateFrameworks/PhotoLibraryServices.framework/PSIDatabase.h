@@ -38,7 +38,7 @@
 - (void)_query:(id)arg1 recursiveAddToGroupResults:(id)arg2 aggregate:(id)arg3 atIndex:(unsigned long long)arg4 outOf:(unsigned long long)arg5 inGroupArrays:(id)arg6;
 - (id)_inqNewGroupArraysFromGroupIdSets:(id)arg1 forQuery:(id)arg2;
 - (struct __CFSet { }*)_inqNewGroupIdsMatchingToken:(id)arg1;
-- (id)_inqNewTokens:(id)arg1 sorted:(bool)arg2 withWildcard:(bool)arg3 outCopyRanges:(id*)arg4;
+- (id)_inqNewTokens:(id)arg1 forIndexing:(bool)arg2 outCopyRanges:(id*)arg3;
 - (void)_inqExecutePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id)arg2;
 - (struct sqlite3_stmt { }*)_inqPreparedContainsStatementWithPrefix:(const char *)arg1 matchingIds:(const void**)arg2 count:(long long)arg3;
 - (struct __CFArray { }*)_inqNewAssetUUIDsForAssetIds:(const void**)arg1 count:(long long)arg2;
@@ -48,12 +48,13 @@
 - (void)_inqRemoveUUID:(id)arg1 isInBatch:(bool)arg2;
 - (struct sqlite3_stmt { }*)_inqPrepareStatement:(const char *)arg1;
 - (void)_inqPrepareAndExecuteStatement:(const char *)arg1;
-- (void)query:(id)arg1 searchString:(id)arg2;
+- (void)query:(id)arg1 searchString:(id)arg2 resultsHandler:(id)arg3;
 - (void)removeAssetWithUUID:(id)arg1;
 - (void)addAsset:(id)arg1;
+- (void)dropDatabaseWithCompletion:(id)arg1;
+- (id)path;
 - (id)initWithPath:(id)arg1 options:(long long)arg2;
 - (long long)options;
-- (id)path;
 - (void)dealloc;
 
 @end

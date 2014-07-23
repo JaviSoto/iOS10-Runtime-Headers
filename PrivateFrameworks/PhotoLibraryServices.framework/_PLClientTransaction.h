@@ -26,10 +26,10 @@
 - (void)completeTransaction;
 - (void)abortTransaction;
 - (void)setFileDescriptor:(int)arg1;
+- (id)path;
 - (id)init;
 - (void)setPath:(id)arg1;
 - (int)fileDescriptor;
-- (id)path;
 - (void)dealloc;
 - (id)description;
 

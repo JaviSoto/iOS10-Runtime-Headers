@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUILayoutCache, SKUIProductPageTableViewController, SKUIResourceLoader, NSMutableArray, UIScrollView, SKUIProductPageTableTextBoxSection, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIProductPageTableHeaderOnlySection, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController;
+@class SKUILayoutCache, SKUIProductPageTableViewController, SKUIResourceLoader, NSMutableArray, UIScrollView, SKUIProductPageTableTextBoxSection, NSString, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIProductPageTableHeaderOnlySection, <SKUIProductPageChildViewControllerDelegate>, SKUIProductPageHeaderViewController;
 
 @interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUITableViewSectionDelegate, SKUIProductPageChildViewController> {
     bool_askPermission;
@@ -25,6 +25,10 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(retain) NSOperationQueue * operationQueue;
 @property bool askPermission;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UIScrollView * scrollView;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;

@@ -35,6 +35,7 @@
 - (bool)stagePackageWithContentRecord:(id)arg1 error:(id*)arg2;
 - (bool)enumerateStagedItems:(id)arg1;
 - (bool)beginStageWithManifestPath:(id)arg1 error:(id*)arg2;
+- (id)manifestPath;
 - (id)initWithContainer:(id)arg1 itemID:(id)arg2 etag:(id)arg3;
 - (bool)enumerateItems:(id)arg1;
 - (bool)_stageExistingPackageItem:(id)arg1 withLiveFd:(int)arg2 stageFd:(int)arg3;
@@ -42,7 +43,6 @@
 - (bool)_packageItem:(id)arg1 matchesMode:(unsigned short)arg2;
 - (unsigned short)_computedFileModeForPackageItem:(id)arg1;
 - (bool)_enumerateItemsOfClass:(Class)arg1 fileID:(unsigned long long)arg2 handler:(id)arg3;
-- (id)manifestPath;
 - (id)itemID;
 - (void).cxx_destruct;
 

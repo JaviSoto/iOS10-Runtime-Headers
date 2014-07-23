@@ -11,6 +11,10 @@
 
 @property(copy) NSString * applicationIdentifier;
 @property(copy) NSSet * applicationStates;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setApplicationStates:(id)arg1;

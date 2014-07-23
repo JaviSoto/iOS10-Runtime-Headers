@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIColor, TPRevealingRingView, CALayer;
+@class UIColor, TPRevealingRingView, NSString, CALayer;
 
 @interface TPNumberPadButton : UIControl <TPNumberPadButtonProtocol> {
     TPRevealingRingView *_revealingRingView;
@@ -17,6 +17,10 @@
 @property double alphaOutsideAndInsideRing;
 @property(retain) CALayer * glyphLayer;
 @property(retain) CALayer * highlightedGlyphLayer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property unsigned int character;
 
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;

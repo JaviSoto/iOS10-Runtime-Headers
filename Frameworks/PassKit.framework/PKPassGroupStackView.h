@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSTimer, PKPass, PKReusablePassViewQueue, NSArray, NSMutableDictionary, PKPassGroupView, PKGroup, NSMutableArray, <PKPassGroupStackViewDelegate><UIScrollViewDelegate>, <PKPassGroupStackViewDatasource>;
+@class NSTimer, PKPass, PKReusablePassViewQueue, NSArray, NSString, NSMutableDictionary, PKPassGroupView, PKGroup, NSMutableArray, <PKPassGroupStackViewDelegate><UIScrollViewDelegate>, <PKPassGroupStackViewDatasource>;
 
 @interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPassGroupViewDelegate, PKPassDeleteHandler> {
     PKPassGroupView *_modallyPresentedGroupView;
@@ -79,6 +79,10 @@
 @property double headerHeight;
 @property(readonly) double pileHeight;
 @property(copy) NSArray * passthroughViews;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)standardHeaderHeight;
 
@@ -187,7 +191,7 @@
 - (bool)_defaultShowHeaderValue;
 - (void)_openHeaderIfNecessary;
 - (void)_closeHeaderIfNecessary;
-- (void)_animateGroupViewToStackPresentation:(id)arg1 atIndex:(unsigned long long)arg2 indexes:(id)arg3 animationIndex:(unsigned long long*)arg4;
+- (void)_animateGroupViewToStackPresentation:(id)arg1 atIndex:(unsigned long long)arg2 indexes:(id)arg3;
 - (id)_sortedAscendingGroupViewIndexes;
 - (unsigned long long)_indexOfGroupView:(id)arg1;
 - (id)_arrayOfStackedIndexes;

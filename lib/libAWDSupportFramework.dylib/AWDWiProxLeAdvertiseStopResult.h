@@ -22,11 +22,11 @@
 @property int type;
 
 
-- (void)setSessionId:(id)arg1;
-- (bool)hasSessionId;
-- (id)sessionId;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (void)setSessionId:(id)arg1;
+- (id)sessionId;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;

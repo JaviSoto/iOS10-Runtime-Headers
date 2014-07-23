@@ -53,10 +53,10 @@
 - (id)_verticalDialMeshTransform;
 - (id)_horizontalDialMeshTransform;
 - (void)_setupHorizontalDotConstraints;
+- (id)initWithOrientation:(long long)arg1;
 - (void)_layoutForVerticalOrientation;
 - (void)_layoutForHorizontalOrientation;
 - (id)_contentSizeCategory;
-- (id)initWithOrientation:(long long)arg1;
 - (long long)orientation;
 - (id)_items;
 - (void)setDataSource:(id)arg1;

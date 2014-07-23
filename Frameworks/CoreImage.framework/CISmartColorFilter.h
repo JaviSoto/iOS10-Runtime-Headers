@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
+@class CIImage, NSNumber, CIContext;
 
 @interface CISmartColorFilter : CIFilter  {
     CIImage *inputImage;
@@ -11,6 +11,7 @@
     NSNumber *inputCast;
     NSNumber *inputUseCube;
     CIImage *_cubeImage;
+    CIContext *_cubeContext;
 }
 
 @property(retain) CIImage * inputImage;
@@ -38,6 +39,7 @@
 - (void)setInputImage:(id)arg1;
 - (id)inputImage;
 - (id)outputImage;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
 
 @end

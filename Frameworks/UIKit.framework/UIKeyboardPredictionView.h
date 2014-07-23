@@ -6,7 +6,6 @@
 
 @interface UIKeyboardPredictionView : UIView  {
     UIKBBackgroundView *m_backgroundView;
-    UIKBKeyView *m_collapsedKeyView;
     UIKeyboardPredictionBarGrabber *m_grabber;
     NSMutableArray *m_predictionCells;
     unsigned long long m_activeIndex;
@@ -27,6 +26,7 @@
     UIView *m_leftDimmingView;
     UIView *m_rightDimmingView;
     boolm_touchOnDimmingView;
+    boolm_delayActive;
     int _state;
     UITouch *_activeTouch;
 }
@@ -37,12 +37,11 @@
 
 + (id)sharedInstance;
 + (double)overlapHeight;
-+ (double)predictionViewHeightForState:(int)arg1;
++ (double)predictionViewHeightForState:(int)arg1 orientation:(long long)arg2;
 + (unsigned long long)numberOfCandidates;
 + (id)activeInstance;
 
 - (bool)enabled;
-- (double)height;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)suspend;
@@ -54,14 +53,18 @@
 - (void)activateCandidateAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)acceptCandidate;
 - (unsigned long long)predictionCount;
+- (void)suppressLayoutSubviewsForCellLabels:(bool)arg1;
 - (void)showMessageWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)heightBeforeStateChangeForInterfaceOrientation:(long long)arg1;
 - (void)removeMessage;
 - (int)maxMessageCount;
 - (id)labelTextForPrediction:(id)arg1 typedString:(id)arg2;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)deactivateCandidate;
-- (void)setActiveCellWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)delayActivateCellForPrediction:(id)arg1;
+- (void)commitPrediction:(id)arg1;
 - (void)setActiveCellWithIndex:(unsigned long long)arg1;
+- (unsigned long long)indexForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTouchedCellState:(int)arg1;
 - (void)releaseMessage;
 - (void)inputModeDidChange;
@@ -70,6 +73,9 @@
 - (void)setActiveTouch:(id)arg1;
 - (void)setShow:(bool)arg1;
 - (void)setPredictionViewState:(int)arg1 animate:(bool)arg2;
+- (void)setPredictionViewState:(int)arg1 animate:(bool)arg2 notify:(bool)arg3;
+- (int)stateForCurrentPreferences;
+- (double)heightForInterfaceOrientation:(long long)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

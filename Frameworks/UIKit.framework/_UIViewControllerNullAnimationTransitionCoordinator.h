@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIView;
+@class NSString, NSMutableArray, UIView;
 
 @interface _UIViewControllerNullAnimationTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
     bool_transitionIsInFlight;
@@ -12,15 +12,19 @@
 }
 
 @property UIView * containerView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isCancelled;
 - (void)dealloc;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (double)completionVelocity;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id)arg2;
 - (id)_alongsideCompletions:(bool)arg1;
 - (id)_alongsideAnimations:(bool)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (bool)initiallyInteractive;
 - (void)notifyWhenInteractionEndsUsingBlock:(id)arg1;
 - (long long)completionCurve;

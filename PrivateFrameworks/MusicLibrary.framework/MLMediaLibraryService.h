@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSObject<OS_dispatch_queue>, <MLMediaLibraryServiceProtocol>, NSXPCConnection;
+@class NSString, NSXPCConnection, NSObject<OS_dispatch_queue>, <MLMediaLibraryServiceProtocol>;
 
 @interface MLMediaLibraryService : NSObject <MLMediaLibraryServiceClientProtocol, MLMediaLibraryServiceProtocol> {
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -10,6 +10,11 @@
     NSXPCConnection *_serviceConnection;
     <MLMediaLibraryServiceProtocol> *_serviceProxy;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setDaemonProcessInfo:(id)arg1;
 + (id)sharedMediaLibraryService;

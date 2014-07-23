@@ -38,6 +38,7 @@
 - (id)getPropertyPriority:(id)arg1;
 - (id)removeProperty:(id)arg1;
 - (id)parentRule;
+- (id)cssText;
 - (void)setWordSpacing:(id)arg1;
 - (id)wordSpacing;
 - (void)setWidows:(id)arg1;
@@ -263,7 +264,6 @@
 - (void)setBackground:(id)arg1;
 - (id)background;
 - (id)item:(unsigned int)arg1;
-- (id)cssText;
 - (void)setBorderStyle:(id)arg1;
 - (void)setFontSize:(id)arg1;
 - (void)setMarginTop:(id)arg1;

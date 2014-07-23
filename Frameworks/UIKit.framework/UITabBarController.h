@@ -37,6 +37,10 @@
     NSString *__backdropGroupName;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * viewControllers;
 @property UIViewController * selectedViewController;
 @property unsigned long long selectedIndex;
@@ -49,6 +53,10 @@
 @property(setter=_setAnimator:,retain) <UIViewControllerAnimatedTransitioning> * _animator;
 @property(setter=_setInteractor:,retain) <UIViewControllerInteractiveTransitioning> * _interactor;
 @property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_moreNavigationControllerClass;
 + (bool)doesOverridePreferredInterfaceOrientationForPresentation;
@@ -105,9 +113,9 @@
 - (void)_tabBarItemClicked:(id)arg1;
 - (bool)_isTabBarFocused;
 - (void)_performSelectGesture:(id)arg1;
-- (void)_showBarWithTransition:(int)arg1 isExplicit:(bool)arg2;
 - (id)customizableViewControllers;
 - (void)_setTabBarPosition:(long long)arg1;
+- (void)_showBarWithTransition:(int)arg1 isExplicit:(bool)arg2;
 - (void)_rebuildTabBarItemsAnimated:(bool)arg1;
 - (void)_updateLayoutForTraitCollection:(id)arg1;
 - (bool)_isBarHidden;

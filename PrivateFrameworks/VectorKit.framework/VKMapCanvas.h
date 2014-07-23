@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKTrackableAnnotation>, VKAnchorWrapper, VKMapCameraController, GEOMapRegion, VKCamera, VKStyleManager, VKPolylineOverlayPainter, VKMapModel, NSArray, <VKRouteMatchedAnnotationPresentation>, <VKInteractiveMapDelegate>, <GEORoutePreloadSession>;
+@class <VKTrackableAnnotation>, VKMapCameraController, GEOMapRegion, VKAnchorWrapper, VKCamera, NSString, VKPolylineOverlayPainter, VKMapModel, VKStyleManager, <VKRouteMatchedAnnotationPresentation>, NSArray, <VKInteractiveMapDelegate>, <GEORoutePreloadSession>;
 
 @interface VKMapCanvas : VKScreenCanvas <VKMapModelDelegate, VKOverlayContainerRouteDelegate, VKInteractiveMap> {
     VKMapModel *_map;
@@ -46,6 +46,10 @@
 @property double userZoomFocusStyleGroundspanMeters;
 @property double userZoomFocusStyleMinGroundspanMeters;
 @property double userZoomFocusStyleMaxGroundspanMeters;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(getter=isFullyPitched,readonly) bool fullyPitched;
 @property long long shieldSize;
 @property long long navigationShieldSize;

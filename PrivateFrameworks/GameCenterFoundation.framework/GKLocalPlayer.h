@@ -49,6 +49,10 @@
     UIViewController<GKAuthenticateViewController> *_signInViewController;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(getter=isAuthenticated) bool authenticated;
 @property(getter=isUnderage,readonly) bool underage;
 @property(copy) id authenticateHandler;

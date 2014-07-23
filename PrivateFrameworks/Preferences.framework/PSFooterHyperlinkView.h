@@ -21,6 +21,10 @@
 @property id target;
 @property SEL action;
 @property(retain) NSURL * URL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })linkRange;

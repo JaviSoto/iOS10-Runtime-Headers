@@ -56,10 +56,10 @@
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;
 - (void)setLabelLayoutCache:(id)arg1;
 - (id)initWithStorePageSectionContext:(id)arg1;
-- (void)setAggregateValue:(id)arg1 forKey:(id)arg2;
 - (bool)loadImageForArtwork:(id)arg1 reason:(long long)arg2;
 - (id)placeholderColor;
 - (void)setContainerViewElementType:(unsigned long long)arg1;
+- (void)setAggregateValue:(id)arg1 forKey:(id)arg2;
 - (id)initWithStorePageSectionContext:(id)arg1 previousLayoutContext:(id)arg2;
 - (void)setArtworkRequestDelegate:(id)arg1;
 - (void)setResourceLoader:(id)arg1;

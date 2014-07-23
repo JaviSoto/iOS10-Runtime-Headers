@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, SSURLConnectionResponse, NSMutableDictionary, NSError, SSPurchase;
+@class NSArray, SSURLConnectionResponse, NSMutableDictionary, NSError, SSPurchase, NSString;
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
     bool_cancelsPurchaseBatch;
@@ -24,6 +24,10 @@
 @property double requestStartTime;
 @property double responseEndTime;
 @property double responseStartTime;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)transactionIdentifierForItemIdentifier:(long long)arg1;
@@ -34,6 +38,7 @@
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setCancelsPurchaseBatch:(bool)arg1;
 - (bool)cancelsPurchaseBatch;
+- (id)responseMetrics;
 - (id)URLResponse;
 - (void)setRequestStartTime:(double)arg1;
 - (void)setResponseEndTime:(double)arg1;

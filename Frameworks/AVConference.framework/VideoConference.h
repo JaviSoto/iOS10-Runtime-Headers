@@ -143,7 +143,7 @@
 - (bool)onCaptureFrame:(struct __CVBuffer { }*)arg1 frameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 cameraStatusBits:(unsigned char)arg3;
 - (bool)initiateResolutionChangeToWidth:(int)arg1 height:(int)arg2 rate:(int)arg3;
 - (void)session:(id)arg1 changeVideoRulesToCaptureRule:(id)arg2 encodeRule:(id)arg3 featuresListString:(id)arg4;
-- (bool)stopVideoIO:(bool)arg1 error:(id*)arg2;
+- (bool)session:(id)arg1 didStopVideoIO:(bool)arg2 error:(id*)arg3;
 - (bool)session:(id)arg1 startVideoIO:(id*)arg2 captureRule:(id)arg3 isUnpausing:(bool)arg4;
 - (bool)session:(id)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 withScreenAttributes:(id)arg4 videoAttributes:(id)arg5 isFirstFrame:(bool)arg6 isVideoPaused:(bool)arg7;
 - (void)session:(id)arg1 didChangeVideoRule:(id)arg2;

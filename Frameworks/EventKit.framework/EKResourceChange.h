@@ -25,6 +25,10 @@
 @property(readonly) NSString * deletedTitle;
 @property(readonly) bool alerted;
 @property(readonly) unsigned int publicStatus;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_calendarItemRelation;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSMutableData;
+@class NSError, NSMutableData, NSString;
 
 @interface CKDPlistResponseBodyParser : NSObject <CKDResponseBodyParser> {
     NSError *_parserError;
@@ -21,6 +21,10 @@
 @property(copy) id objectParsedBlock;
 @property(retain) NSMutableData * parserData;
 @property(retain) NSError * parserError;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setParserData:(id)arg1;

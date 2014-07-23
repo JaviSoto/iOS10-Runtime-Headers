@@ -15,8 +15,6 @@
 + (id)sharedInstance;
 
 - (bool)_quickFetchFMIPEnabledstate;
-- (void)setXpcConnectionCreationQueue:(id)arg1;
-- (id)xpcConnectionCreationQueue;
 - (void)setLowBatteryLocateEnabled:(bool)arg1 withCompletion:(id)arg2;
 - (void)lowBatteryLocateEnabledWithCompletion:(id)arg1;
 - (void)initiateLostModeExitAuthWithCompletion:(id)arg1;
@@ -27,7 +25,6 @@
 - (id)disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2;
 - (id)enableFMIPInContext:(unsigned long long)arg1;
 - (void)didChangeFMIPAccountInfo:(id)arg1;
-- (id)fmipDeviceId;
 - (void)fmipStateWithCompletion:(id)arg1;
 - (bool)lockdownShouldDisableDevicePairing;
 - (bool)lockdownShouldDisableDeviceRestore;
@@ -35,11 +32,14 @@
 - (void)disableLostMode;
 - (id)enableLostModeWithInfo:(id)arg1;
 - (id)lostModeInfo;
-- (id)currentXPCConnection;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (void)_checkCallingOSUser;
-- (void)_destroyXPCConnection;
+- (void)setXpcConnectionCreationQueue:(id)arg1;
+- (id)xpcConnectionCreationQueue;
+- (id)fmipDeviceId;
+- (id)currentXPCConnection;
 - (id)fmipAccount;
+- (void)_destroyXPCConnection;
 - (bool)lostModeIsActive;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;

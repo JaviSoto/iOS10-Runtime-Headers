@@ -23,6 +23,10 @@
 
 @property int securityCodeType;
 @property(retain) NSString * securityCode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)disableRecovery;

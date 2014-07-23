@@ -19,6 +19,7 @@
 
 + (void)initialize;
 
+- (id)path;
 - (id)uuid;
 - (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
 - (const char *)versionString;
@@ -67,7 +68,6 @@
 - (long long)maximumRenditionKeyTokenCount;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)keyFormat;
 - (unsigned int)colorSpaceID;
-- (id)path;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

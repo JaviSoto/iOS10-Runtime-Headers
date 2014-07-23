@@ -2,11 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceSearchResponse, GEOPlaceSearchRequest, NSString;
+@class NSString, GEOPDPlaceResponse, GEOPlaceSearchRequest, GEOPDPlaceRequest, GEOPlaceSearchResponse;
 
 @interface GEORPCorrectedSearch : PBCodable <NSCopying> {
     unsigned int _correctedSearchResultIndex;
     unsigned int _originalSearchResultIndex;
+    GEOPDPlaceRequest *_placeRequest;
+    GEOPDPlaceResponse *_placeResponse;
     GEOPlaceSearchRequest *_placeSearchRequest;
     GEOPlaceSearchResponse *_placeSearchResponse;
     NSString *_preferredSearchDisplayLocation;
@@ -26,11 +28,20 @@
 @property unsigned int correctedSearchResultIndex;
 @property(readonly) bool hasPreferredSearchDisplayLocation;
 @property(retain) NSString * preferredSearchDisplayLocation;
+@property(readonly) bool hasPlaceRequest;
+@property(retain) GEOPDPlaceRequest * placeRequest;
+@property(readonly) bool hasPlaceResponse;
+@property(retain) GEOPDPlaceResponse * placeResponse;
 
 
+- (bool)containsReportableData;
+- (id)placeResponse;
+- (id)placeRequest;
 - (id)preferredSearchDisplayLocation;
 - (unsigned int)correctedSearchResultIndex;
 - (unsigned int)originalSearchResultIndex;
+- (bool)hasPlaceResponse;
+- (bool)hasPlaceRequest;
 - (bool)hasPreferredSearchDisplayLocation;
 - (bool)hasCorrectedSearchResultIndex;
 - (void)setHasCorrectedSearchResultIndex:(bool)arg1;
@@ -38,6 +49,8 @@
 - (bool)hasOriginalSearchResultIndex;
 - (void)setHasOriginalSearchResultIndex:(bool)arg1;
 - (void)setOriginalSearchResultIndex:(unsigned int)arg1;
+- (void)setPlaceResponse:(id)arg1;
+- (void)setPlaceRequest:(id)arg1;
 - (void)setPreferredSearchDisplayLocation:(id)arg1;
 - (id)placeSearchResponse;
 - (bool)hasPlaceSearchResponse;

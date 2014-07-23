@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIOfferViewDelegate>, NSMapTable, NSMutableArray;
+@class NSMapTable, NSString, <SKUIOfferViewDelegate>, NSMutableArray;
 
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
     unsigned long long _alignment;
@@ -24,6 +24,10 @@
 @property <SKUIOfferViewDelegate> * delegate;
 @property long long metadataPosition;
 @property(getter=isShowingConfirmation,readonly) bool showingConfirmation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;

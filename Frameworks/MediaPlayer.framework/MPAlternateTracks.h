@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAlternateTextTrack, NSMutableDictionary, NSDictionary, MPAVItem, NSArray, AVPlayerItemLegibleOutput;
+@class NSString, NSArray, NSMutableDictionary, NSDictionary, MPAVItem, AVPlayerItemLegibleOutput, MPAlternateTextTrack;
 
 @interface MPAlternateTracks : NSObject <AVPlayerItemLegibleOutputPushDelegate> {
     MPAVItem *_item;
@@ -18,6 +18,10 @@
 @property(retain) NSArray * outOfBandTextTracks;
 @property bool disableAlternateTextTrackRendering;
 @property(retain) MPAlternateTextTrack * selectedAlternateTextTrack;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)subtitleLanguages;
 

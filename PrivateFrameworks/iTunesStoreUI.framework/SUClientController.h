@@ -29,6 +29,10 @@
 @property(readonly) SUScriptExecutionContext * scriptExecutionContext;
 @property(readonly) NSString * storeContentLanguage;
 @property(readonly) bool storeFrontDidChangeSinceLastSuspend;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setSharedController:(id)arg1;
 + (id)sharedController;

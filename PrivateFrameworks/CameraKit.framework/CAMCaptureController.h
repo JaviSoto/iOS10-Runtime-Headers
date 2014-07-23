@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BKSAccelerometer, NSDictionary, AVCaptureMovieFileOutput, AVCaptureDeviceInput, NSObject<OS_dispatch_source>, NSMutableArray, NSString, AVCaptureMetadataOutput, AVCaptureDevice, AVCaptureOutput, AVCaptureSession, NSTimer, NSArray, NSMutableDictionary, CAMAvalancheCaptureService, CAMDebugCaptureService, AVCaptureStillImageOutput, <PLCameraControllerDelegate>, NSObject<OS_dispatch_queue>, AVCaptureDeviceFormat, CAMEffectsRenderer, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer;
+@class BKSAccelerometer, NSDictionary, AVCaptureMovieFileOutput, AVCaptureDeviceInput, NSObject<OS_dispatch_source>, NSMutableArray, NSString, AVCaptureMetadataOutput, AVCaptureDevice, AVCaptureOutput, AVCaptureSession, NSTimer, NSArray, NSMutableDictionary, CAMAvalancheCaptureService, CAMDebugCaptureService, AVCaptureStillImageOutput, <PLCameraControllerDelegate>, NSObject<OS_dispatch_queue>, AVCaptureDeviceFormat, CAMEffectsRenderer, AVCaptureVideoDataOutput, CIFilter, AVCaptureVideoPreviewLayer;
 
 @interface CAMCaptureController : NSObject <AVCaptureMetadataOutputObjectsDelegate, PLCameraEffectsRendererDelegate, BKSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     AVCaptureSession *_avCaptureSession;
@@ -257,7 +257,7 @@
 @property(copy) id postSessionSetupBlock;
 @property(readonly) long long cameraOrientation;
 @property(retain) CAMEffectsRenderer * effectsRenderer;
-@property(retain,readonly) NSArray * activeFilters;
+@property(retain,readonly) CIFilter * activeFilter;
 @property(copy) NSArray * supportedCameraModes;
 @property double videoZoomFactor;
 @property bool performingAvalancheCapture;
@@ -295,6 +295,10 @@
 @property(setter=_setLockLensPositionCompletionBlock:,copy) id _lockLensPositionCompletionBlock;
 @property(setter=_setLockLensPositionTarget:) float _lockLensPositionTarget;
 @property(readonly) bool _locationAcquiredForTimelapseCapture;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldExtractDiagnostics;
 + (id)_dateFormatterForVideoMetadata;
@@ -421,7 +425,6 @@
 - (void)_focusStarted;
 - (void)_disableSubjectAreaChangeMonitoringIfNeeded;
 - (bool)_isFocusModeContinuousAutoFocusAtCenter;
-- (void)_resetFocus:(bool)arg1 andExposure:(bool)arg2;
 - (void)_enableSubjectAreaChangedMonitoringIfNeeded;
 - (void)_autofocusAfterCapture;
 - (void)_resetFocusAndExposureIfNotExplicitlyLocked;
@@ -429,6 +432,8 @@
 - (bool)resetFocusWhenSubjectAreaChanged;
 - (void)_startContinuousAutoExposureAtCenter;
 - (void)_startContinuousAutoFocusAtCenter;
+- (void)_resetFocus:(bool)arg1 andExposure:(bool)arg2;
+- (bool)_useSmoothFocus;
 - (long long)_whiteBalanceModeForExposureMode:(long long)arg1;
 - (int)effectiveExposureMode;
 - (void)_updateWhiteBalanceModeForExposureMode:(long long)arg1;
@@ -508,9 +513,11 @@
 - (void)enqueueBlockInCaptureSessionQueue:(id)arg1;
 - (void)_updateEffectsRendererFilterIndexForceStateChange:(bool)arg1 renderNotifyBlock:(id)arg2;
 - (void)_startContinuousAEAFAtCenter;
-- (bool)_configureSessionWithCameraMode:(long long)arg1 cameraDevice:(long long)arg2 HDRDetectionEnabled:(bool)arg3;
+- (bool)_configureSessionWithCameraMode:(long long)arg1 cameraDevice:(long long)arg2 options:(id)arg3;
 - (void)_setModeChangeWaitingForConfigureSession:(bool)arg1;
 - (void)_setModeChangeWaitingForPreviewStarted:(bool)arg1;
+- (id)_captureMainQueueConfigurationOptions;
+- (void)_setCameraMode:(long long)arg1 cameraDevice:(long long)arg2 forceConfigure:(bool)arg3;
 - (void)_updatePreviewLayerEnabled;
 - (void)_updateEffectsVideoDataOutputEnabled;
 - (void)setCurrentInput:(id)arg1;
@@ -520,10 +527,10 @@
 - (void)_deviceConfigurationForPanoramaOptions:(struct __CFDictionary { }*)arg1 captureDevice:(id)arg2 deviceFormat:(id*)arg3 minFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg4 maxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg5;
 - (void)_setEffectsAvailable:(bool)arg1;
 - (bool)_canCapturePhotoFromVideoMode;
-- (id)_videoModeSessionPreset;
 - (void)_setConfiguringCamera:(bool)arg1;
 - (void)_cancelDelayedFocusRequests;
 - (id)_photoModeSessionPresetForMode:(long long)arg1 device:(long long)arg2;
+- (id)_videoModeSessionPresetForDevice:(long long)arg1 options:(id)arg2;
 - (id)currentOutput;
 - (bool)_safeSetCameraMode:(long long)arg1 cameraDevice:(long long)arg2;
 - (void)_updateEffectsRendererMirroring;
@@ -595,7 +602,7 @@
 - (double)maximumZoomFactorForDevice:(long long)arg1;
 - (bool)isCapturingPanorama;
 - (bool)canCaptureVideo;
-- (id)activeFilters;
+- (id)activeFilter;
 - (bool)supportsLiveEffects;
 - (void)stopPanoramaCapture;
 - (void)enqueuePanoramaRequest:(id)arg1;
@@ -618,7 +625,7 @@
 - (void)resumePreview;
 - (void)pausePreview;
 - (void)_startPreview:(id)arg1;
-- (void)_synchronizeHDRSettings;
+- (void)_synchronizeSettings;
 - (id)effectsRenderer;
 - (void)setDisableAllPreviewSuspensionDuringCapture:(bool)arg1;
 - (bool)supportsVideoCapture;

@@ -20,9 +20,9 @@
 - (bool)hasPowerState;
 - (void)setHasPowerState:(bool)arg1;
 - (void)setPowerState:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)powerState;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

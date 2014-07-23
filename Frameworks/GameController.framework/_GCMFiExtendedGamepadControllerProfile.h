@@ -2,14 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class _GCACHomeButton;
+@class GCMotion, NSString, _GCACHomeButton;
 
 @interface _GCMFiExtendedGamepadControllerProfile : _GCExtendedGamepad <_GCACHomeButtonDelegate> {
     _GCACHomeButton *_acHome;
+    GCMotion *_motion;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)toggleSuspendResume;
+- (void)set_motion:(id)arg1;
+- (id)motion;
 - (void)setPlayerIndex:(long long)arg1;
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
 - (id)initWithController:(id)arg1;

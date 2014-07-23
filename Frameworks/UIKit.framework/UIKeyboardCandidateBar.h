@@ -56,6 +56,10 @@
 @property bool shouldSkipLayoutUntilScrollViewAnimationEnds;
 @property bool didSkipLayout;
 @property(copy) id skippedSetCandidatesBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)height;
 + (double)defaultCandidateWidth;
@@ -97,7 +101,6 @@
 - (id)_indexPathForCurrentCandidateViewFromIndexPath:(id)arg1;
 - (void)_stepSelectedCandidateInDirection:(bool)arg1 candidateView:(id)arg2 section:(long long)arg3;
 - (unsigned long long)currentCandidateViewIndex;
-- (id)_indexPathForCandidateFromIndexPath:(id)arg1 inCandidateView:(id)arg2;
 - (void)_showPageAtIndexPath:(id)arg1;
 - (void)_showCandidateAtIndex:(unsigned long long)arg1 inSection:(long long)arg2 scrollCellToVisible:(bool)arg3 animated:(bool)arg4;
 - (id)filteredCandidates;
@@ -108,6 +111,8 @@
 - (bool)forceReloadInitiallyHiddenCandidates;
 - (void)setDidSkipLayout:(bool)arg1;
 - (void)setSkippedSetCandidatesBlock:(id)arg1;
+- (void)adjustSelectionToNearestVisibleCandidate;
+- (id)_indexPathForCandidateFromIndexPath:(id)arg1 inCandidateView:(id)arg2;
 - (id)_indexPathForLastVisibleItem;
 - (id)dragStartPreviousPageIndexPath;
 - (id)_candidateViewForSection:(long long)arg1;
@@ -174,6 +179,8 @@
 - (void)_stepSelectedCandidateInDirection:(bool)arg1;
 - (void)showCandidateAtIndex:(unsigned long long)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;

@@ -82,12 +82,12 @@
 - (void)setRightBarButtonTitle:(id)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setAskToBuy:(bool)arg1;
-- (void)setShowsStoreButton:(bool)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
-- (void)setProductPageStyle:(long long)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
 - (void)setAdditionalBuyParameters:(id)arg1;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id)arg2;
+- (void)setProductPageStyle:(long long)arg1;
+- (void)setShowsStoreButton:(bool)arg1;
 - (void)_resetRemoteViewController;
 - (void)_requestRemoteViewController;
 - (id)clientIdentifier;

@@ -19,6 +19,10 @@
 @property bool isValid;
 @property(retain) PLManagedAsset * photo;
 @property(retain) PLPhotoLibrary * _photoLibrary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setupFileDescriptorQueue;
 + (void)_clearFileDescriptorQueue;

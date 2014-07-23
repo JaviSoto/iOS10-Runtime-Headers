@@ -2,18 +2,28 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UILabel;
+@class UILabel, NSMutableArray;
 
 @interface _MKPlaceActionCell : UITableViewCell  {
     UILabel *_titleLabel;
+    NSMutableArray *_scaledConstraints;
 }
 
 @property(retain) UILabel * titleLabel;
+@property(retain) NSMutableArray * scaledConstraints;
 
++ (id)fontForLabel;
++ (double)intrinsicContentHeight;
 
+- (void)setScaledConstraints:(id)arg1;
+- (id)scaledConstraints;
+- (void)contentSizeDidChange;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;
+- (void)updateConstraints;
+- (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

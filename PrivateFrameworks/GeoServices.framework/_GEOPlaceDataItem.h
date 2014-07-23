@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapServiceTraits, NSMapTable, GEOMapRegion, GEOPDFlyover, NSDictionary, NSURL, GEOMapItemPlaceAttribution, GEOMapItemPhotosAttribution, GEOFeatureStyleAttributes, NSString, GEOMapItemReviewsAttribution, GEOPlace, GEOPDPlace, NSArray, NSData, GEOAddress, GEOMapItemClientAttributes;
+@class GEOMapServiceTraits, NSMapTable, GEOMapRegion, NSDate, NSDictionary, GEOPDFlyover, NSURL, GEOMapItemPlaceAttribution, GEOMapItemPhotosAttribution, GEOFeatureStyleAttributes, NSString, GEOMapItemReviewsAttribution, GEOPlace, GEOPDPlace, NSData, NSArray, GEOAddress, GEOMapItemClientAttributes;
 
 @interface _GEOPlaceDataItem : NSObject <GEOMapItemPrivate> {
     GEOPDPlace *_placeData;
@@ -11,7 +11,13 @@
     NSMapTable *_attributionMap;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * name;
+@property(readonly) NSData * encodedData;
+@property(readonly) NSData * data;
 @property(getter=isDisputed,readonly) bool disputed;
 @property(getter=isValid,readonly) bool valid;
 @property(readonly) struct { double x1; double x2; } coordinate;
@@ -27,13 +33,17 @@
 @property(readonly) NSString * contactSpokenName;
 @property(readonly) bool contactIsMe;
 @property(readonly) NSString * eventName;
+@property(readonly) NSDate * eventDate;
+@property(readonly) bool isEventAllDay;
 @property(getter=_place,readonly) GEOPlace * place;
 @property(getter=_placeData,readonly) GEOPDPlace * placeData;
 @property(getter=_clientAttributes,readonly) GEOMapItemClientAttributes * clientAttributes;
 @property(getter=_placeAsData,readonly) NSData * placeAsData;
 @property(getter=_placeDataAsData,readonly) NSData * placeDataAsData;
 @property(getter=_hasResolvablePartialInformation,readonly) bool hasResolvablePartialInformation;
+@property(getter=_placeType,readonly) int placeType;
 @property(getter=_roadAccessPoints,readonly) NSArray * roadAccessPoints;
+@property(getter=_hasSessionGUID,readonly) bool hasSessionGUID;
 @property(getter=_sessionGUID,readonly) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property(getter=_sequenceNumber,readonly) unsigned int sequenceNumber;
 @property(getter=_hasResultProviderID,readonly) bool hasResultProviderID;
@@ -42,6 +52,8 @@
 @property(getter=_flyover,readonly) GEOPDFlyover * flyover;
 @property(getter=_hasMUID,readonly) bool hasMUID;
 @property(getter=_muid,readonly) unsigned long long muid;
+@property(getter=_hasAreaInMeters,readonly) bool hasAreaInMeters;
+@property(getter=_areaInMeters,readonly) double areaInMeters;
 @property(getter=_businessURL,readonly) NSString * businessURL;
 @property(getter=_hasUserRatingScore,readonly) bool hasUserRatingScore;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
@@ -72,6 +84,7 @@
 @property(getter=_poiSurveyURLString,readonly) NSString * poiSurveyURLString;
 @property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
 @property(getter=_customIconID,readonly) unsigned long long customIconID;
+@property(getter=_additionalPlaceInfos,readonly) NSArray * additionalPlaceInfos;
 
 
 - (id)_logoPathForAttribution:(id)arg1 requirement:(int)arg2 scale:(double)arg3;
@@ -84,6 +97,8 @@
 - (id)_attributionInfoForAttribution:(id)arg1 requirement:(int)arg2;
 - (id)initWithPlaceData:(id)arg1 attributionMap:(id)arg2 traits:(id)arg3;
 - (id)initWithPlaceData:(id)arg1 traits:(id)arg2;
+- (bool)isEventAllDay;
+- (id)eventDate;
 - (id)eventName;
 - (bool)contactIsMe;
 - (id)contactSpokenName;
@@ -94,6 +109,7 @@
 - (id)geoFenceMapRegion;
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)spokenNameForLocale:(id)arg1;
+- (id)_additionalPlaceInfos;
 - (unsigned long long)_customIconID;
 - (id)_styleAttributes;
 - (id)_poiSurveyURLString;
@@ -108,15 +124,20 @@
 - (id)_operatingHours;
 - (bool)_hasCurrentOperatingHours;
 - (id)_businessURL;
+- (double)_areaInMeters;
+- (bool)_hasAreaInMeters;
 - (id)_flyover;
 - (bool)_hasFlyover;
 - (int)_resultProviderID;
 - (bool)_hasResultProviderID;
+- (bool)_hasSessionGUID;
+- (int)_placeType;
 - (bool)_hasResolvablePartialInformation;
 - (id)_placeDataAsData;
 - (id)_placeAsData;
 - (id)_clientAttributes;
 - (id)_placeData;
+- (id)_mapItemByStrippingOptionalData;
 - (id)_urlForWritingAReview;
 - (id)_urlForReviewWithUID:(id)arg1;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
@@ -144,6 +165,7 @@
 - (bool)_hasUserRatingScore;
 - (unsigned long long)_muid;
 - (bool)_hasMUID;
+- (id)encodedData;
 - (struct { unsigned long long x1; unsigned long long x2; })_sessionGUID;
 - (id)_place;
 - (bool)isDisputed;
@@ -156,6 +178,7 @@
 - (struct { double x1; double x2; })coordinate;
 - (id)name;
 - (bool)isValid;
+- (id)data;
 - (void)dealloc;
 - (id)description;
 

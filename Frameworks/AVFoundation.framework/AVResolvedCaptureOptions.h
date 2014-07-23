@@ -87,9 +87,9 @@
 - (id)baseCaptureOptions;
 - (void)addOutputSettings:(id)arg1 forConnection:(id)arg2;
 - (id)resolvedVideoSettingsForAssetWriter;
-- (id)sessionPreset;
 - (void)addMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forConnection:(id)arg2;
 - (void)addMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forConnection:(id)arg2;
+- (id)sessionPreset;
 - (void)dealloc;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 

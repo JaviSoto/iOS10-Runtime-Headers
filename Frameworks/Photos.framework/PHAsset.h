@@ -14,7 +14,6 @@
     int _avalanchePickType;
     long long _mediaType;
     unsigned long long _mediaSubtypes;
-    long long _assetSource;
     unsigned long long _pixelWidth;
     unsigned long long _pixelHeight;
     NSDate *_creationDate;
@@ -28,13 +27,13 @@
     NSString *_directory;
     NSString *_filename;
     NSDate *_trashedDate;
+    long long _assetSource;
     long long _cloudPlaceholderKind;
     NSData *_locationData;
 }
 
 @property(readonly) long long mediaType;
 @property(readonly) unsigned long long mediaSubtypes;
-@property(readonly) long long assetSource;
 @property(readonly) unsigned long long pixelWidth;
 @property(readonly) unsigned long long pixelHeight;
 @property(readonly) NSDate * creationDate;
@@ -61,30 +60,41 @@
 @property(readonly) bool isJPEG;
 @property(readonly) bool isPartOfBurst;
 @property(readonly) bool hasAdjustments;
+@property(readonly) long long assetSource;
 @property(readonly) long long cloudPlaceholderKind;
+@property(readonly) NSString * detailedDebugDescription;
 @property(readonly) int avalanchePickType;
 @property(readonly) NSData * locationData;
 @property(readonly) bool cloudIsDeletable;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)fetchAssetsWithBurstIdentifier:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithMediaType:(long long)arg1 options:(id)arg2;
-+ (id)entityKeyForPropertyKey:(id)arg1;
 + (bool)managedObjectSupportsBursts;
++ (bool)managedObjectSupportsHiddenState;
++ (id)_transformMediaSubtypeComparisonPredicate:(id)arg1;
 + (id)fetchAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithOptions:(id)arg1;
++ (id)fetchKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (unsigned long long)pl_phAssetMediaSubtypeForPLAssetSubtype:(short)arg1;
-+ (id)fetchKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)identifierCode;
 + (bool)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 + (id)pl_managedAssetsForAssets:(id)arg1;
 + (id)fetchAssetsWithALAssetURLs:(id)arg1 options:(id)arg2;
 
 - (id)trashedDate;
 - (unsigned long long)persistenceState;
+- (id)detailedDebugDescription;
 - (id)fileURLForMutationsDirectory;
 - (id)fileURLForDiagnosticFile;
 - (id)fileURLForXMPFile;
@@ -102,7 +112,7 @@
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
 - (long long)assetSource;
 - (id)fileURLForPenultimateFullsizeRenderImage;
-- (id)reservedFileURLForLargeDisplayableImageFileForceLarge:(bool)arg1 forceFullResolution:(bool)arg2 outImageType:(long long*)arg3;
+- (id)reservedFileURLForLargeDisplayableImageFileForceLarge:(bool)arg1 forceUpgradeFromSubstandardIfNecessary:(bool)arg2 outImageType:(long long*)arg3;
 - (id)fileURLForSubstandardFullsizeRenderImage;
 - (id)originalMetadataProperties;
 - (void)fetchPropertySetsIfNeeded;
@@ -110,7 +120,6 @@
 - (unsigned long long)pixelHeight;
 - (unsigned long long)pixelWidth;
 - (id)_createPropertyObjectOfClass:(Class)arg1 properties:(id)arg2 isExtraObject:(bool)arg3;
-- (bool)isPartOfBurst;
 - (void)cancelContentEditingInputRequest:(unsigned long long)arg1;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id)arg2;
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(bool)arg3 resultHandler:(id)arg4;
@@ -121,7 +130,10 @@
 - (id)managedAssetForPhotoLibrary:(id)arg1;
 - (Class)changeRequestClass;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (long long)originalImageOrientation;
 - (id)debugFilename;
+- (bool)isPartOfBurst;
+- (long long)cloudSharedAssetPlaceholderKind;
 - (unsigned long long)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (bool)isHDVideo;
 - (id)duplicateProperties;
@@ -133,9 +145,9 @@
 - (bool)isLocatedAtCoordinates:(struct { double x1; double x2; })arg1;
 - (id)fileURLForFullsizeRenderImage;
 - (id)fileURLForFullsizeRenderVideo;
-- (long long)originalImageOrientation;
 - (id)assetsLibraryURL;
 - (bool)isMogul;
+- (id)pathForAdjustmentFile;
 - (id)fileURLForPrebakedPortraitScrubberThumbnails;
 - (id)fileURLForPrebakedLandscapeScrubberThumbnails;
 - (id)pathForSubstandardFullsizeRenderImageFile;
@@ -149,7 +161,7 @@
 - (id)thumbnailIdentifier;
 - (bool)isInFlight;
 - (bool)isJPEG;
-- (id)reservedPathForLargeDisplayableImageFileForceLarge:(bool)arg1 forceFullResolution:(bool)arg2 outImageType:(long long*)arg3;
+- (id)reservedPathForLargeDisplayableImageFileForceLarge:(bool)arg1 forceUpgradeFromSubstandardIfNecessary:(bool)arg2 outImageType:(long long*)arg3;
 - (id)pathForPenultimateFullsizeRenderImageFile;
 - (bool)hasLegacyAdjustments;
 - (short)kindSubtype;

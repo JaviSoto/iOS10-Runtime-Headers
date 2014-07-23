@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSOutputStream, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSInputStream, NSError;
+@class NSOutputStream, NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>, NSInputStream, NSError;
 
 @interface MFStream : NSObject <NSStreamDelegate> {
     NSInputStream *_rStream;
@@ -32,6 +32,10 @@
 
 @property(readonly) NSError * streamError;
 @property(readonly) bool isOpen;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_networkDispatchQueue;
 + (void)setNetworkThread:(id)arg1;

@@ -15,9 +15,9 @@
 @property(readonly) NSString * HSAData;
 
 
-- (id)statusMessage;
 - (id)HSAData;
 - (id)HSAAction;
+- (id)statusMessage;
 - (id)personID;
 - (id)appleID;
 - (id)status;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController, _UIDocumentPickerContainerModel, _UINavigationControllerPalette, _UIDocumentPickerViewServiceViewController;
+@class UIViewController, NSString, _UIDocumentPickerContainerModel, _UINavigationControllerPalette, _UIDocumentPickerViewServiceViewController;
 
 @interface _UIDocumentPickerContainerViewController : UIViewController <_UIDocumentPickerServiceInvalidating> {
     bool_rootContainer;
@@ -17,6 +17,10 @@
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
 @property(retain) _UINavigationControllerPalette * searchPalette;
 @property(getter=isRootContainer) bool rootContainer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)model;

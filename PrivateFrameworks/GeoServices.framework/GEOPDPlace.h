@@ -39,14 +39,16 @@
 - (void)clearComponents;
 - (unsigned long long)componentsCount;
 - (void)addComponent:(id)arg1;
-- (void)setComponents:(id)arg1;
 - (unsigned long long)preferredMuid;
 - (bool)hasPreferredMuid;
+- (id)copyWithStrippedOptionalData;
 - (id)businessURL;
 - (bool)hasExpiredComponentsAsOf:(double)arg1;
+- (void)setComponents:(id)arg1;
 - (void)_removeETAComponents;
 - (id)_entityName;
 - (id)_cleanedPhoneNumberForPhoneNumberRepresentation:(id)arg1;
+- (void)setFirstSeenTimestamp:(double)arg1;
 - (id)copyWithoutETAComponents;
 - (id)compactDebugDescription;
 - (bool)hasMuid;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class m_tableSize;
+@class NSString, m_tableSize;
 
 @interface WebGeolocationProviderIOS : NSObject <WebGeolocationProvider> {
     struct RetainPtr<WebGeolocationCoreLocationProvider> { 
@@ -58,6 +58,11 @@
         void *m_ptr; 
     } _lastPosition;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedGeolocationProvider;
 

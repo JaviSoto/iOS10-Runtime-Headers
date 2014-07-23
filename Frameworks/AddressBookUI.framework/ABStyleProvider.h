@@ -2,11 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIColor, _UIGraphicsLetterpressStyle, UIFont, UIImage, UIView;
+@class UIColor, NSString, _UIGraphicsLetterpressStyle, UIFont, UIImage, UIView;
 
 @interface ABStyleProvider : NSObject <ABStyleProvider> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool cardTableShouldRemoveBackgroundView;
 @property(readonly) bool cardTableShouldAdjustForKeyboard;
 @property(readonly) _UIGraphicsLetterpressStyle * letterpressStyle;

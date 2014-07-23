@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UITableView, <SUMenuViewControllerDelegate>;
+@class UITableView, NSString, <SUMenuViewControllerDelegate>;
 
 @interface SUMenuViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     <SUMenuViewControllerDelegate> *_delegate;
@@ -12,6 +12,10 @@
 
 @property <SUMenuViewControllerDelegate> * delegate;
 @property long long selectedIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_sendDidCancel;

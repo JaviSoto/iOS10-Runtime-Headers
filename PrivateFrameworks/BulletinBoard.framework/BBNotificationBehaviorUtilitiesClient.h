@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSXPCConnection;
+@class NSString, NSXPCConnection;
 
 @interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol> {
     NSXPCConnection *_connection;
@@ -21,6 +21,11 @@
     id _activeBehaviorOverridesChangeHandler;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)clientInterface;
 

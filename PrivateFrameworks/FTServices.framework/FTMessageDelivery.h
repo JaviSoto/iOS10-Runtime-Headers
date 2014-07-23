@@ -43,7 +43,6 @@
 - (void)_setRetryTimer:(double)arg1;
 - (void)cancelMessage:(id)arg1;
 - (bool)hasQueuedItems;
-- (bool)busy;
 - (id)allMessages;
 - (id)currentMessage;
 - (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(long long)arg4;
@@ -55,6 +54,7 @@
 - (id)queuedMessages;
 - (void)_clearRetryTimer;
 - (void)networkStateChanged;
+- (bool)busy;
 - (id)userAgent;
 - (void)setUserAgent:(id)arg1;
 - (id)_queue;

@@ -161,6 +161,7 @@
 - (void)notifyDidSendMessageID:(id)arg1 shouldNotify:(bool)arg2;
 - (void)_updateRoutingForMessageGUID:(id)arg1 chatGUID:(id)arg2 error:(unsigned int)arg3;
 - (bool)canMakeDowngradeRoutingChecks;
+- (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 forceDate:(id)arg4;
 - (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(bool)arg5 date:(id)arg6 useMessageSuppression:(bool)arg7 completionBlock:(id)arg8;
 - (void)_didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(bool)arg5 date:(id)arg6 attempts:(long long)arg7 useMessageSuppression:(bool)arg8 completionBlock:(id)arg9;
 - (void)_didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(long long)arg3 completionBlock:(id)arg4;

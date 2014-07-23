@@ -19,6 +19,10 @@
 @property unsigned long long proximityDetectionModes;
 @property long long controlCenterRevealMode;
 @property long long notificationCenterRevealMode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
@@ -43,10 +47,10 @@
 - (void)setDefaultPNGName:(id)arg1;
 - (void)setDefaultStatusBarHidden:(bool)arg1;
 - (void)setDefaultStatusBarStyle:(long long)arg1;
+- (void)setStatusBarHidden:(bool)arg1;
+- (void)setStatusBarStyle:(long long)arg1;
 - (long long)statusBarStyle;
 - (bool)statusBarHidden;
-- (void)setStatusBarStyle:(long long)arg1;
-- (void)setStatusBarHidden:(bool)arg1;
 - (bool)isUISubclass;
 - (void)setIdleTimerDisabled:(bool)arg1;
 

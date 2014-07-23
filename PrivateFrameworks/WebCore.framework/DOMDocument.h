@@ -40,6 +40,7 @@
 
 
 - (id)implementation;
+- (id)head;
 - (id)origin;
 - (void)setBody:(id)arg1;
 - (id)body;
@@ -102,7 +103,6 @@
 - (id)charset;
 - (id)anchors;
 - (id)applets;
-- (id)head;
 - (id)cookie;
 - (id)referrer;
 - (id)styleSheets;

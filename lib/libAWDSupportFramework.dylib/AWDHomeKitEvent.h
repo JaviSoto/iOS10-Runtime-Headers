@@ -24,9 +24,9 @@
 
 - (bool)hasEventType;
 - (void)setHasEventType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setEventType:(unsigned int)arg1;

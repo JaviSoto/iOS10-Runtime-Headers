@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable, _UISearchPresentationAssistant, UIPresentationController<_UISearchControllerPresenting>, UIView;
+@class NSMapTable, _UISearchPresentationAssistant, NSString, UIView, UIPresentationController<_UISearchControllerPresenting>;
 
 @interface _UISearchPresentationController : UIPresentationController <_UISearchControllerPresenting> {
     _UISearchPresentationAssistant *_assistant;
@@ -26,6 +26,10 @@
     } _controllerFlags;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) UIView * searchBarContainerView;
 @property(readonly) bool shouldAccountForStatusBar;
 @property(readonly) double statusBarAdjustment;
@@ -53,6 +57,7 @@
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (bool)_shouldKeepCurrentFirstResponder;
+- (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (long long)adaptivePresentationStyle;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)_transitionToWillBegin;
@@ -66,7 +71,6 @@
 - (bool)_shouldRespectDefinesPresentationContext;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;
-- (id)initWithPresentingViewController:(id)arg1 presentedViewController:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 
 @end

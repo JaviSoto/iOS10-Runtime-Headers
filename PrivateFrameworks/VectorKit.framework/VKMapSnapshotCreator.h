@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKMapModel, VKMapCameraController, VKImageCanvas, NSLocale;
+@class VKMapModel, VKMapCameraController, NSString, VKImageCanvas, NSLocale;
 
 @interface VKMapSnapshotCreator : NSObject <VKMapModelDelegate> {
     VKImageCanvas *_canvas;
@@ -36,6 +36,10 @@
 @property long long labelScaleFactor;
 @property bool showsPointsOfInterest;
 @property bool showsBuildings;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)supportsSharingThumbnails;
 + (bool)supportsHighResolutionSnapshots;

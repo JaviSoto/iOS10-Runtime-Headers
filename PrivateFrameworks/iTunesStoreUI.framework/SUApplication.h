@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor, UIWindow;
+@class UIColor, UIWindow, NSString;
 
 @interface SUApplication : UIApplication <UIApplicationDelegate> {
     bool_terminateOnNextSuspend;
@@ -11,6 +11,10 @@
 }
 
 @property(copy) UIColor * interactionTintColor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) UIWindow * window;
 
 

@@ -20,6 +20,7 @@
 - (void)_keyboardWillShow:(id)arg1;
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1 inWindow:(id)arg2 transitionView:(id)arg3 fromViewController:(id)arg4;
+- (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)containerViewWillLayoutSubviews;
 - (void)_transitionToWillBegin;
@@ -35,7 +36,6 @@
 - (id)_presentationView;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;
-- (id)initWithPresentingViewController:(id)arg1 presentedViewController:(id)arg2;
 - (void)containerViewDidLayoutSubviews;
 - (bool)_presentationPotentiallyUnderlapsStatusBar;
 - (bool)shouldSubscribeToKeyboardNotifications;

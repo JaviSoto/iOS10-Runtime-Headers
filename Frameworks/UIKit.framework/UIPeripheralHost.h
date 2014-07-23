@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, UIPeripheralHostView, UIInputViewSet, UIResponder, UIInputViewTransition, UIKeyboardAutomatic, UITextEffectsWindow, UIPeripheralHostState, NSMutableArray, UIScrollView, UIInputViewPostPinningReloadState, UIView, UIKeyboard, NSMutableSet, UIKeyboardRotationState, CADisplayLink, UIPanGestureRecognizer;
+@class NSMutableDictionary, UIPeripheralHostView, UIInputViewSet, UIResponder, UIInputViewTransition, UIKeyboardAutomatic, UITextEffectsWindow, UIPeripheralHostState, NSMutableArray, UIScrollView, UIInputViewPostPinningReloadState, UIView, NSString, UIKeyboard, NSMutableSet, UIKeyboardRotationState, CADisplayLink, UIPanGestureRecognizer;
 
 @interface UIPeripheralHost : NSObject <UIScrollViewIntersectionDelegate, UIKeyboardKeyplaneTransitionDelegate, UIGestureRecognizerDelegate> {
     UIPeripheralHostView *_hostView;
@@ -190,6 +190,10 @@
 @property UIInputViewSet * _transientInputViews;
 @property double ambiguousControlCenterActivationMargin;
 @property(retain) UIResponder * selfHostingTrigger;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 + (Class)hostViewClass;

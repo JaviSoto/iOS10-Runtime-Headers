@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, <ABContactGroupPickerDelegate>, UITableView;
+@class NSArray, NSString, <ABContactGroupPickerDelegate>, UITableView;
 
 @interface ABContactGroupPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_pickableGroups;
@@ -11,6 +11,10 @@
 }
 
 @property <ABContactGroupPickerDelegate> * groupPickerDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)propertiesLeftToPickWithPickedGroups:(id)arg1;
 + (id)propertySections;

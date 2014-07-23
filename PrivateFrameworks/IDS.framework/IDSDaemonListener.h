@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSProtocolChecker, NSMutableDictionary, NSHashTable, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_group>;
+@class NSProtocolChecker, NSMutableDictionary, NSString, NSHashTable, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_group>;
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol> {
     NSObject<OS_dispatch_queue> *_ivarQueue;
@@ -22,6 +22,10 @@
 @property(readonly) bool isSetupComplete;
 @property(readonly) bool hasPostedSetupComplete;
 @property(setter=_setHidingDisconnect:) bool _hidingDisconnect;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)dependentDevicesForAccount:(id)arg1 blocking:(bool)arg2;
@@ -49,9 +53,7 @@
 - (void)continuityDidLosePeer:(id)arg1;
 - (void)continuityDidUpdateState:(long long)arg1;
 - (void)device:(id)arg1 nsuuidChanged:(id)arg2;
-- (void)session:(id)arg1 audioEnabled:(bool)arg2;
-- (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
-- (void)sessionStarted:(id)arg1;
+- (void)account:(id)arg1 localDeviceRemoved:(id)arg2;
 - (void)account:(id)arg1 localDeviceAdded:(id)arg2;
 - (void)account:(id)arg1 dependentDevicesUpdated:(id)arg2;
 - (void)activeDevicesUpdatedForAccount:(id)arg1;

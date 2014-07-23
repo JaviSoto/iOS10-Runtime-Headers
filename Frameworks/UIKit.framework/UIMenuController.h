@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
+@class NSString, NSArray;
 
 @interface UIMenuController : NSObject <UICalloutBarDelegate> {
     struct CGRect { 
@@ -18,6 +18,10 @@
     long long _arrowDirection;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(getter=isMenuVisible) bool menuVisible;
 @property long long arrowDirection;
 @property(copy) NSArray * menuItems;

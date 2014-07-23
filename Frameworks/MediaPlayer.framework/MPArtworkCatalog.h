@@ -46,6 +46,7 @@
 - (void)setCacheIdentifier:(id)arg1 forRequestingContext:(id)arg2;
 - (bool)isArtworkVisuallyIdenticalToCatalog:(id)arg1;
 - (void)setDestination:(id)arg1 configurationBlock:(id)arg2;
+- (id)bestImageFromDisk;
 - (void)requestImageWithCompletionHandler:(id)arg1;
 - (void)setFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })scaledFittingSize;

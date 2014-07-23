@@ -17,6 +17,7 @@
 - (void)addSubscriptions:(id)arg1;
 - (id)subscriptions;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setSubscriptions:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

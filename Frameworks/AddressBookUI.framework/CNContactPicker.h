@@ -48,6 +48,10 @@
 @property(copy) NSString * bannerValue;
 @property(getter=isDefaultViewControllerVisible,readonly) bool defaultViewControllerVisible;
 @property(retain) UIViewController<CNContactPickerContentViewController> * viewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setHidesPromptInLandscape:(bool)arg1;

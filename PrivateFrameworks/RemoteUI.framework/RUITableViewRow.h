@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSDate, NSData, UISwitch, RemoteUITableViewCell, <RUITableViewRowDelegate>, UIView, NSDictionary, <RUITextFieldChangeObserver>, NSMutableArray, UIControl, RUIWebContainerView;
+@class UISwitch, NSDate, NSDictionary, RemoteUITableViewCell, NSMutableArray, <RUITableViewRowDelegate>, UIView, NSString, RUIWebContainerView, <RUITextFieldChangeObserver>, UIControl, NSData;
 
 @interface RUITableViewRow : RUIElement <UIPickerViewDelegate, UITextFieldDelegate> {
     RemoteUITableViewCell *_tableCell;
@@ -42,6 +42,10 @@
 @property(getter=isSelected) bool selected;
 @property(readonly) UIControl * control;
 @property <RUITextFieldChangeObserver> * textFieldChangeObserver;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_timeZoneAdjustedDateFromDate:(id)arg1;
 + (id)_formatterForShortDate;
@@ -72,7 +76,6 @@
 - (long long)tableCellStyle;
 - (Class)tableCellClass;
 - (void)accessoryImageLoaded;
-- (id)pickerView;
 - (id)textColorForAttributeName:(id)arg1;
 - (void)_updateContentForDisabledState;
 - (void)setDeleteAction:(id)arg1;
@@ -81,6 +84,7 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)tableCell;
 - (void)setRowInvalid:(bool)arg1;
+- (id)pickerView;
 - (id)sourceURL;
 - (void)setHeight:(double)arg1;
 - (double)height;

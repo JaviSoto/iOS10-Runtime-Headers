@@ -133,6 +133,10 @@
 @property(copy) NSSet * alertSuppressionAppIDs_deprecated;
 @property(retain) NSMutableSet * observers;
 @property(retain) NSMutableArray * lifeAssertions;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)copyCachedBulletinWithBulletinID:(id)arg1;
 + (id)bulletinWithBulletin:(id)arg1;

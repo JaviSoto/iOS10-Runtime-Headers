@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextField, UIImageView, UILabel, UIPasscodeField;
+@class NSString, UITextField, UIImageView, UILabel, UIPasscodeField;
 
 @interface UIPrinterSetupPINView : UIControl <UITextFieldDelegate> {
     UILabel *_titleLabel;
@@ -21,6 +21,10 @@
 @property(retain) UILabel * failedLabel;
 @property(retain) UIImageView * failedBackground;
 @property long long failedAttemptCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)dealloc;

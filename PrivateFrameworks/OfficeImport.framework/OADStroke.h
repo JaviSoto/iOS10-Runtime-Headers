@@ -56,10 +56,10 @@
 - (bool)isColorOverridden;
 - (bool)isWidthOverridden;
 - (id)join;
+- (id)head;
 - (void)setWidth:(float)arg1;
 - (float)width;
 - (void)setParent:(id)arg1;
-- (id)head;
 - (id)color;
 - (void)setColor:(id)arg1;
 - (id)init;

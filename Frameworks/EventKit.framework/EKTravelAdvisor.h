@@ -12,13 +12,13 @@
     <EKTravelAdvisorWorld> *_world;
     Class _routePredictorClass;
     <EKTravelRoutePredictor> *_routePredictor;
+    bool_invalidated;
 }
 
 
 - (void)_setWakeupCriteriaFromCurrentPrediction;
 - (void)_setWakeupCriteriaForPeriodWhileWaitingForRouteHypothesis;
 - (void)_updatePredictionFromCurrentLocation:(id)arg1;
-- (void)_setNoWakeupCriteria;
 - (void)_updatePrediction;
 - (void)_forceInvalidatePrediction;
 - (id)initWithWorld:(id)arg1 routePredictorClass:(Class)arg2;
@@ -27,6 +27,7 @@
 - (void)setLocationAuthorizationCallback:(id)arg1;
 - (void)removeAgendaItem:(id)arg1;
 - (id)init;
+- (void)invalidate;
 - (void)dealloc;
 
 @end

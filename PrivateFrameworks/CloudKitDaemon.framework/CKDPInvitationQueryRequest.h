@@ -25,6 +25,7 @@
 - (void)setHasQueryType:(bool)arg1;
 - (void)setQueryType:(int)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setQueryAllContainers:(bool)arg1;
 - (bool)queryAllContainers;
 - (bool)readFrom:(id)arg1;

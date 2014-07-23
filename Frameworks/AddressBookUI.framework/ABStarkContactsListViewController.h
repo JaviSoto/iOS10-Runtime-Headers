@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel, ABMembersDataSource, AVExternalDevice, <ABStarkContactsListViewControllerDelegate>, ABStarkNoContentBannerView;
+@class NSString, ABModel, ABMembersDataSource, AVExternalDevice, <ABStarkContactsListViewControllerDelegate>, ABStarkNoContentBannerView;
 
 @interface ABStarkContactsListViewController : UITableViewController <ABMembersDataSourceDelegate, ABContactViewControllerDelegate> {
     ABMembersDataSource *_dataSource;
@@ -17,6 +17,10 @@
 @property(retain) ABStarkNoContentBannerView * overlayView;
 @property(retain) AVExternalDevice * externalDevice;
 @property bool limitedUI;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setExternalDevice:(id)arg1;

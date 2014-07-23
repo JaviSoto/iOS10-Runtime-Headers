@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class CADisplay;
+@class CADisplay, NSString;
 
 @interface FBSDisplay : NSObject <BSXPCCoding, NSCopying> {
     unsigned int _seed;
@@ -17,6 +17,10 @@
 @property(readonly) unsigned long long type;
 @property(readonly) long long tags;
 @property unsigned int seed;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)orientation;
@@ -26,6 +30,7 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)_nameForDisplayType;
+- (id)initWithCADisplay:(id)arg1;
 - (bool)isExternal;
 - (void)setSeed:(unsigned int)arg1;
 - (bool)isHiddenDisplay;
@@ -45,6 +50,5 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)scale;
-- (id)initWithCADisplay:(id)arg1;
 
 @end

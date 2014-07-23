@@ -88,6 +88,7 @@
     bool_shouldEnforceHDCP;
     NSMutableSet *_clientsWantingAirPlayVideo;
     bool_currentItemDidLoad;
+    bool_currentItemStartedAsCloudItem;
     bool_didResolveError;
     bool_disallowsAMRAudio;
     bool_disableAirPlayMirroringDuringPlayback;
@@ -148,6 +149,10 @@
 @property bool forceSynchronousQueueFilling;
 @property(readonly) AVAudioSessionMediaPlayerOnly * _playerAVAudioSession;
 @property bool disallowsAMRAudio;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) MPMediaItem * currentMediaItem;
 @property(readonly) MPMediaQuery * currentMediaQuery;
 @property unsigned long long displayOverridePlaybackState;

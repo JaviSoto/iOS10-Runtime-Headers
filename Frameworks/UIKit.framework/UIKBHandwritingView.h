@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBHandwritingBoxcarFilterPointFIFO, UIKBHandwritingQuadCurvePointFIFO, UIKBHandwritingStrokeView, UIBezierPath, NSMutableArray, UIKBHandwritingStrokePointFIFO;
+@class NSString, UIKBHandwritingBoxcarFilterPointFIFO, UIKBHandwritingQuadCurvePointFIFO, UIBezierPath, NSMutableArray, UIKBHandwritingStrokeView, UIKBHandwritingStrokePointFIFO;
 
 @interface UIKBHandwritingView : UIKBKeyView <UIGestureRecognizerDelegate> {
     UIKBHandwritingStrokeView *_strokeView;
@@ -25,6 +25,10 @@
 @property(retain) UIKBHandwritingBoxcarFilterPointFIFO * smoothingFIFO;
 @property(retain) UIKBHandwritingQuadCurvePointFIFO * interpolatingFIFO;
 @property(retain) UIKBHandwritingStrokeView * strokeView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

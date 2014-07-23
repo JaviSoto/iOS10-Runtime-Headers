@@ -13,6 +13,10 @@
 @property(retain,readonly) NSString * serviceName;
 @property <XPCNSServiceConnectionDelegate> * delegate;
 @property(retain) <NSObject> * context;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithXPCServiceConnection:(id)arg1;

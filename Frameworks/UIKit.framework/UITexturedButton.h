@@ -11,11 +11,11 @@
 - (id)titleShadowColorForState:(unsigned long long)arg1;
 - (id)titleColorForState:(unsigned long long)arg1;
 - (long long)buttonType;
-- (void)setHighlighted:(bool)arg1;
 - (id)backgroundImageForState:(unsigned long long)arg1;
 - (void)setTitleShadowColor:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forStates:(unsigned long long)arg2;
 - (void)setTitleColor:(id)arg1 forStates:(unsigned long long)arg2;
+- (void)setHighlighted:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

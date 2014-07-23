@@ -39,6 +39,7 @@
 - (void)createVisibleCells:(unsigned long long)arg1;
 - (void)updateCell:(id)arg1 atIndex:(unsigned long long)arg2 animated:(bool)arg3;
 - (void)updateNumberOfCellsWithNewValue:(unsigned long long)arg1 animated:(bool)arg2;
+- (bool)shouldReloadCellsWithNumberOfCells:(unsigned long long)arg1;
 - (id)_reloadQueue;
 - (void)setNeedsMerge;
 - (void)reloadDataAnimated:(bool)arg1;

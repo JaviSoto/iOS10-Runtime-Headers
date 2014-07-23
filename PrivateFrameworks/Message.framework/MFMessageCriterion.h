@@ -52,6 +52,7 @@
 + (id)messageIsDeletedCriterion:(bool)arg1;
 + (id)criterionForMailboxURL:(id)arg1;
 
+- (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
 - (bool)hasNonFullTextSearchableCriterion;
 - (id)extractedUnreadCriterion;
 - (id)extractedDateCriterion;
@@ -117,7 +118,6 @@
 - (void)setCriterionIdentifier:(id)arg1;
 - (bool)allCriteriaMustBeSatisfied;
 - (int)criterionType;
-- (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
 - (id)libraryIdentifiers;
 - (void)setExpression:(id)arg1;
 - (id)expression;

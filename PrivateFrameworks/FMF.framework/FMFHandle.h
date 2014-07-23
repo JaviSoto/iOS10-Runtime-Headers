@@ -11,6 +11,7 @@
     NSArray *_aliasServerIds;
     NSArray *_invitationSentToIds;
     NSDictionary *_expiresByGroupId;
+    NSString *_hashedDSID;
     NSNumber *_trackingTimestamp;
     NSString *__prettyNameInternal;
 }
@@ -20,6 +21,7 @@
 @property(copy) NSArray * aliasServerIds;
 @property(copy) NSArray * invitationSentToIds;
 @property(copy) NSDictionary * expiresByGroupId;
+@property(copy) NSString * hashedDSID;
 @property(getter=isPending) bool pending;
 @property(copy) NSNumber * trackingTimestamp;
 @property(copy) NSString * _prettyNameInternal;
@@ -39,13 +41,15 @@
 - (void)setICloudId:(id)arg1;
 - (id)_prettyNameInternal;
 - (id)prettyName;
+- (void)setHashedDSID:(id)arg1;
+- (id)hashedDSID;
 - (id)trackingTimestamp;
 - (void)setExpiresByGroupId:(id)arg1;
 - (id)expiresByGroupId;
 - (void)setTrackingTimestamp:(id)arg1;
 - (void)set_prettyNameInternal:(id)arg1;
-- (id)serverId;
 - (void)_addressBookChanged:(id)arg1;
+- (id)serverId;
 - (void)setServerId:(id)arg1;
 - (id)recordId;
 - (void)setIdentifier:(id)arg1;

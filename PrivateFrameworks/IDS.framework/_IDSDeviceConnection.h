@@ -29,6 +29,10 @@
 @property(readonly) int socket;
 @property(retain,readonly) NSInputStream * inputStream;
 @property(retain,readonly) NSOutputStream * outputStream;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;

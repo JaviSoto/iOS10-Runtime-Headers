@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSXPCListener, NSMutableSet;
+@class NSXPCListener, NSMutableSet, NSString;
 
 @interface PKUsageNotificationClient : NSObject <NSXPCListenerDelegate, PKUsageNotificationClientInterface> {
     NSXPCListener *_listener;
@@ -17,6 +17,11 @@
     id _handler;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPassUsageHandler:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIStorePageSectionsViewController, SKUIResourceLoader, SKUIIndexBarControlController, SKUIStackTemplateElement, NSMapTable;
+@class NSString, NSArray, SKUIResourceLoader, SKUIIndexBarControlController, SKUIStackTemplateElement, SKUIStorePageSectionsViewController, NSMapTable;
 
 @interface SKUIStackDocumentViewController : SKUIViewController <SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate, SKUIIndexBarEntryListControllerDelegate, SKUIModalSourceViewProvider, SKUIViewControllerTesting, SKUIDocumentViewController> {
     NSArray *_entryListControllers;
@@ -13,6 +13,11 @@
     SKUIStackTemplateElement *_templateElement;
     NSMapTable *_viewElementToEntryListController;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
 
@@ -29,10 +34,14 @@
 - (id)_indexBarControlController;
 - (bool)_shouldShowIndexBar;
 - (id)_pageComponentsWithViewElements:(id)arg1;
-- (id)_indexBarViewElement;
-- (void)_updateEntryListControllersWithReload:(bool)arg1;
+- (id)_indexPathFromGlobalIndex:(long long)arg1;
+- (long long)_maxGlobalIndex;
+- (long long)_globalIndexFromIndexPath:(id)arg1;
+- (bool)_tryToScrollToSectionAtIndexPath:(id)arg1;
 - (void)_configureIndexBarControl:(id)arg1;
 - (void)_updateIndexBarVisibility;
+- (void)_updateEntryListControllersWithReload:(bool)arg1;
+- (id)_indexBarViewElement;
 - (id)_pageSplitsDescription;
 - (long long)_pinningTransitionStyle;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;

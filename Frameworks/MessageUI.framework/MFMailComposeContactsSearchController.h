@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFContactsSearchResultsModel, MFContactsSearchManager, NSNumber, <MFMailComposeContactsSearchControllerDelegate>;
+@class MFContactsSearchResultsModel, MFContactsSearchManager, NSString, NSNumber, <MFMailComposeContactsSearchControllerDelegate>;
 
 @interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer> {
     MFContactsSearchManager *_manager;
@@ -16,6 +16,10 @@
 
 @property <MFMailComposeContactsSearchControllerDelegate> * delegate;
 @property(retain) NSNumber * taskID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_finishSearch;

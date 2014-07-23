@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDeleteContainerResponse, CKDPRecordDeleteResponse, CKDPPkiRegisterResponse, CKDPRecordRetrieveChangesResponse, CKDPDeleteCommentResponse, CKDPResponseOperationResult, CKDPInvitationDeclineResponse, CKDPNotificationMarkReadResponse, CKDPLikeResponse, CKDPShareParticipantDeleteResponse, CKDPRecordSaveResponse, CKDPPromoteContainerSchemaResponse, CKDPShareParticipantUpdateResponse, CKDPResetContainerResponse, CKDPShareRetrieveResponse, CKDPSubscriptionRetrieveResponse, CKDPSubscriptionDeleteResponse, CKDPTokenRegistrationResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPPulseResponse, CKDPShareCreateResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPRecordRetrieveResponse, CKDPMescalSignatureResponse, CKDPShareParticipantCreateResponse, CKDPInvitationQueryResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPNotificationSyncResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPUserPrivacySettingsResetResponse, CKDPGetCommentsResponse, CKDPOperation, CKDPGetCommentResponse, CKDPZoneSaveResponse, CKDPPkiRetrieveResponse, CKDPTokenUnregistrationResponse, CKDPSetBadgeCountResponse, CKDPZoneRetrieveResponse, CKDPUnlikeResponse, CKDPRecordRetrieveVersionsResponse, CKDPGetLikesResponse, CKDPQueryRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPPostCommentResponse, CKDPInvitationAcceptResponse, CKDPUserQueryResponse, CKDPAssetUploadTokenRetrieveResponse, CKDPShareDeleteResponse;
+@class CKDPDeleteContainerResponse, CKDPRecordDeleteResponse, CKDPPkiRegisterResponse, CKDPRecordRetrieveChangesResponse, CKDPDeleteCommentResponse, CKDPResponseOperationResult, CKDPInvitationDeclineResponse, CKDPNotificationMarkReadResponse, CKDPLikeResponse, CKDPPromoteContainerSchemaResponse, CKDPRecordSaveResponse, CKDPShareParticipantDeleteResponse, CKDPResetContainerResponse, CKDPShareParticipantUpdateResponse, CKDPShareRetrieveResponse, CKDPSubscriptionRetrieveResponse, CKDPSubscriptionDeleteResponse, CKDPTokenRegistrationResponse, CKDPUserPrivacySettingsBatchLookupResponse, CKDPPulseResponse, CKDPMescalSessionInfoResponse, CKDPShareCreateResponse, CKDPRecordRetrieveResponse, CKDPMescalSignatureResponse, CKDPShareParticipantCreateResponse, CKDPInvitationQueryResponse, CKDPUserAvailableQuotaResponse, CKDPNotificationSyncResponse, CKDPUserPrivacySettingsRetrieveResponse, CKDPUserPrivacySettingsUpdateResponse, CKDPUserPrivacySettingsResetResponse, CKDPGetCommentsResponse, CKDPOperation, CKDPGetCommentResponse, CKDPUserRetrieveResponse, CKDPZoneDeleteResponse, CKDPZoneSaveResponse, CKDPPkiRetrieveResponse, CKDPTokenUnregistrationResponse, CKDPSetBadgeCountResponse, CKDPZoneRetrieveResponse, CKDPUnlikeResponse, CKDPMescalCertificateResponse, CKDPRecordRetrieveVersionsResponse, CKDPGetLikesResponse, CKDPQueryRetrieveResponse, CKDPSubscriptionCreateResponse, CKDPPostCommentResponse, CKDPInvitationAcceptResponse, CKDPUserQueryResponse, CKDPAssetUploadTokenRetrieveResponse, CKDPShareDeleteResponse;
 
 @interface CKDPResponseOperation : PBCodable <NSCopying> {
     CKDPAssetUploadTokenRetrieveResponse *_assetUploadTokenRetrieveResponse;
@@ -15,6 +15,8 @@
     CKDPInvitationDeclineResponse *_invitationDeclineResponse;
     CKDPInvitationQueryResponse *_invitationQueryResponse;
     CKDPLikeResponse *_likeResponse;
+    CKDPMescalCertificateResponse *_mescalCertificateResponse;
+    CKDPMescalSessionInfoResponse *_mescalSessionInfoResponse;
     CKDPMescalSignatureResponse *_mescalSignatureResponse;
     CKDPNotificationMarkReadResponse *_notificationMarkReadResponse;
     CKDPNotificationSyncResponse *_notificationSyncResponse;
@@ -47,6 +49,7 @@
     CKDPTokenRegistrationResponse *_tokenRegistrationResponse;
     CKDPTokenUnregistrationResponse *_tokenUnregistrationResponse;
     CKDPUnlikeResponse *_unlikeResponse;
+    CKDPUserAvailableQuotaResponse *_userAvailableQuotaResponse;
     CKDPUserPrivacySettingsBatchLookupResponse *_userPrivacySettingsBatchLookupResponse;
     CKDPUserPrivacySettingsResetResponse *_userPrivacySettingsResetResponse;
     CKDPUserPrivacySettingsRetrieveResponse *_userPrivacySettingsRetrieveResponse;
@@ -77,6 +80,8 @@
 @property(retain) CKDPRecordRetrieveChangesResponse * recordRetrieveChangesResponse;
 @property(readonly) bool hasRecordDeleteResponse;
 @property(retain) CKDPRecordDeleteResponse * recordDeleteResponse;
+@property(readonly) bool hasUserAvailableQuotaResponse;
+@property(retain) CKDPUserAvailableQuotaResponse * userAvailableQuotaResponse;
 @property(readonly) bool hasUserRetrieveResponse;
 @property(retain) CKDPUserRetrieveResponse * userRetrieveResponse;
 @property(readonly) bool hasQueryRetrieveResponse;
@@ -155,16 +160,24 @@
 @property(retain) CKDPPkiRegisterResponse * pkiRegisterResponse;
 @property(readonly) bool hasPkiRetrieveResponse;
 @property(retain) CKDPPkiRetrieveResponse * pkiRetrieveResponse;
+@property(readonly) bool hasMescalSignatureResponse;
+@property(retain) CKDPMescalSignatureResponse * mescalSignatureResponse;
+@property(readonly) bool hasMescalSessionInfoResponse;
+@property(retain) CKDPMescalSessionInfoResponse * mescalSessionInfoResponse;
+@property(readonly) bool hasMescalCertificateResponse;
+@property(retain) CKDPMescalCertificateResponse * mescalCertificateResponse;
 @property bool hasOperationCost;
 @property unsigned int operationCost;
 @property(readonly) bool hasResponse;
 @property(retain) CKDPOperation * response;
 @property(readonly) bool hasResult;
 @property(retain) CKDPResponseOperationResult * result;
-@property(readonly) bool hasMescalSignatureResponse;
-@property(retain) CKDPMescalSignatureResponse * mescalSignatureResponse;
 
 
+- (id)mescalCertificateResponse;
+- (bool)hasMescalCertificateResponse;
+- (id)mescalSessionInfoResponse;
+- (bool)hasMescalSessionInfoResponse;
 - (id)pkiRetrieveResponse;
 - (bool)hasPkiRetrieveResponse;
 - (id)pkiRegisterResponse;
@@ -237,6 +250,8 @@
 - (bool)hasAssetUploadTokenRetrieveResponse;
 - (id)userRetrieveResponse;
 - (bool)hasUserRetrieveResponse;
+- (id)userAvailableQuotaResponse;
+- (bool)hasUserAvailableQuotaResponse;
 - (id)recordDeleteResponse;
 - (bool)hasRecordDeleteResponse;
 - (id)recordRetrieveChangesResponse;
@@ -253,10 +268,12 @@
 - (bool)hasZoneRetrieveResponse;
 - (id)zoneSaveResponse;
 - (bool)hasZoneSaveResponse;
-- (id)mescalSignatureResponse;
 - (bool)hasResponse;
 - (void)setHasOperationCost:(bool)arg1;
 - (void)setOperationCost:(unsigned int)arg1;
+- (void)setMescalCertificateResponse:(id)arg1;
+- (void)setMescalSessionInfoResponse:(id)arg1;
+- (void)setMescalSignatureResponse:(id)arg1;
 - (void)setPkiRetrieveResponse:(id)arg1;
 - (void)setPkiRegisterResponse:(id)arg1;
 - (void)setNotificationMarkReadResponse:(id)arg1;
@@ -291,6 +308,7 @@
 - (void)setSubscriptionDeleteResponse:(id)arg1;
 - (void)setSubscriptionRetrieveResponse:(id)arg1;
 - (void)setSubscriptionCreateResponse:(id)arg1;
+- (void)setUserAvailableQuotaResponse:(id)arg1;
 - (void)setPromoteContainerSchemaResponse:(id)arg1;
 - (void)setResetContainerResponse:(id)arg1;
 - (void)setDeleteContainerResponse:(id)arg1;
@@ -304,19 +322,20 @@
 - (void)setZoneDeleteResponse:(id)arg1;
 - (void)setZoneRetrieveResponse:(id)arg1;
 - (void)setZoneSaveResponse:(id)arg1;
-- (void)setMescalSignatureResponse:(id)arg1;
 - (id)pulseResponse;
 - (bool)hasPulseResponse;
 - (id)shareRetrieveResponse;
 - (bool)hasShareRetrieveResponse;
 - (id)queryRetrieveResponse;
 - (bool)hasQueryRetrieveResponse;
+- (id)mescalSignatureResponse;
 - (unsigned int)operationCost;
 - (bool)hasOperationCost;
 - (bool)hasMescalSignatureResponse;
 - (bool)hasResult;
 - (void)setResult:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)result;

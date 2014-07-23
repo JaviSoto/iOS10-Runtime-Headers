@@ -13,10 +13,10 @@
 @property(retain) UIColor * separatorColor;
 
 
-- (void)setLeftSeparatorInset:(double)arg1;
-- (double)leftSeparatorInset;
 - (bool)isSeparatorHidden;
 - (void)setSeparatorHidden:(bool)arg1;
+- (void)setLeftSeparatorInset:(double)arg1;
+- (double)leftSeparatorInset;
 - (void).cxx_destruct;
 - (void)setSeparatorColor:(id)arg1;
 - (id)separatorColor;

@@ -37,6 +37,10 @@
 @property(readonly) unsigned int reason;
 @property(readonly) bool valid;
 @property(copy) id invalidationHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)NameForReason:(unsigned int)arg1;
 

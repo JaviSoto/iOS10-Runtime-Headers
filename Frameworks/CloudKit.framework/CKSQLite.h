@@ -75,13 +75,13 @@
 - (void)rollback;
 - (id)creationDate;
 - (id)dateFormatter;
+- (id)path;
 - (unsigned long long)schemaVersion;
 - (void)begin;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)propertyForKey:(id)arg1;
 - (void)close;
 - (void)open;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)remove;

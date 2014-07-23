@@ -6,6 +6,7 @@
 
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
     bool_wasCached;
+    bool_hasSize;
     bool_uploaded;
     NSURL *_fileURL;
     NSData *_signature;
@@ -32,6 +33,10 @@
     NSString *_downloadBaseURL;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSURL * fileURL;
 @property(copy) NSData * signature;
 @property unsigned long long size;
@@ -47,6 +52,7 @@
 @property(retain) NSString * referenceIdentifierString;
 @property(copy) NSString * uploadReceipt;
 @property bool wasCached;
+@property bool hasSize;
 @property(getter=isUploaded) bool uploaded;
 @property CKRecord * record;
 @property(copy) NSString * recordKey;
@@ -77,6 +83,7 @@
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
 - (void)setWasCached:(bool)arg1;
 - (void)setRecord:(id)arg1;
+- (void)setHasSize:(bool)arg1;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (void)setUploaded:(bool)arg1;
@@ -102,6 +109,7 @@
 - (id)generationCountToSave;
 - (id)fileID;
 - (id)recordKey;
+- (bool)hasSize;
 - (bool)wasCached;
 - (id)CKPropertiesDescription;
 - (id)deviceID;

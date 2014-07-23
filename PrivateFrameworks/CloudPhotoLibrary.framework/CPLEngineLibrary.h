@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSURL, CPLConfiguration, CPLEngineSyncManager, CPLEngineScheduler, CPLEngineTransport, NSString, NSHashTable, CPLEngineSystemMonitor, NSObject<OS_dispatch_queue>, NSArray, CPLStatistics, CPLEngineStore, NSError, CPLPlatformObject;
+@class NSURL, CPLStatistics, CPLConfiguration, NSDate, CPLEngineSyncManager, CPLEngineScheduler, CPLEngineTransport, NSString, NSHashTable, CPLEngineSystemMonitor, NSObject<OS_dispatch_queue>, NSArray, CPLPlatformObject, CPLEngineStore, NSError, CPLStatus;
 
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
     NSArray *_components;
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_attachedObjects;
     NSError *_openingError;
+    CPLStatus *_status;
     bool_closed;
     CPLPlatformObject *_platformObject;
     NSURL *_clientLibraryBaseURL;
@@ -35,6 +36,13 @@
 @property(readonly) CPLStatistics * statistics;
 @property(readonly) CPLEngineSystemMonitor * systemMonitor;
 @property(readonly) CPLConfiguration * configuration;
+@property bool hasChangesToProcess;
+@property bool isExceedingQuota;
+@property(retain) NSDate * exitDeleteTime;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)platformImplementationProtocol;
@@ -52,9 +60,14 @@
 - (void)startSyncSession;
 - (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
-- (id)systemMonitor;
+- (void)updateLastSuccessfullSyncDate:(id)arg1;
 - (void)notifyAttachedObjectsPullQueueIsFull;
+- (id)systemMonitor;
 - (id)syncManager;
+- (void)setExitDeleteTime:(id)arg1;
+- (id)exitDeleteTime;
+- (void)setIsExceedingQuota:(bool)arg1;
+- (bool)isExceedingQuota;
 - (id)transport;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didProgress:(float)arg2;
@@ -62,6 +75,8 @@
 - (id)scheduler;
 - (void)closeAndDeactivate:(bool)arg1 completionHandler:(id)arg2;
 - (id)libraryIdentifier;
+- (void)setHasChangesToProcess:(bool)arg1;
+- (bool)hasChangesToProcess;
 - (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned long long)arg1;
 - (id)platformObject;
 - (id)cloudLibraryResourceStorageURL;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainerID, NSXPCConnection, CKRecordID, CKOperationCallbackManager, CKDatabase, NSOperationQueue, NSString, CKAccountInfo, NSMutableArray, CKOperationFlowControlManager, ACAccountStore;
+@class CKContainerID, NSXPCConnection, CKRecordID, CKOperationCallbackManager, CKDatabase, NSOperationQueue, CKAccountInfo, NSString, NSMutableArray, CKOperationFlowControlManager, ACAccountStore;
 
 @interface CKContainer : NSObject  {
     bool_connectionIsInvalid;
@@ -18,10 +18,11 @@
     NSOperationQueue *_throttlingOperationQueue;
     CKOperationCallbackManager *_callbackManager;
     CKOperationFlowControlManager *_flowControlManager;
-    NSString *_fakeBundleID;
     CKAccountInfo *_accountInfoOverride;
     ACAccountStore *_accountStore;
     NSMutableArray *_sandboxExtensionHandles;
+    NSString *_sourceApplicationBundleIdentifier;
+    NSString *_sourceApplicationSecondaryIdentifier;
 }
 
 @property(readonly) NSString * containerIdentifier;
@@ -36,12 +37,13 @@
 @property(retain) NSOperationQueue * throttlingOperationQueue;
 @property(retain) CKOperationCallbackManager * callbackManager;
 @property(retain) CKOperationFlowControlManager * flowControlManager;
-@property(retain) NSString * fakeBundleID;
 @property(copy) CKAccountInfo * accountInfoOverride;
 @property(retain) ACAccountStore * accountStore;
 @property int statusReportToken;
 @property int killSwitchToken;
 @property(retain) NSMutableArray * sandboxExtensionHandles;
+@property(retain) NSString * sourceApplicationBundleIdentifier;
+@property(retain) NSString * sourceApplicationSecondaryIdentifier;
 
 + (id)containerWithIdentifier:(id)arg1;
 + (id)defaultContainer;
@@ -83,10 +85,10 @@
 - (void)setContainerScopedUserID:(id)arg1;
 - (id)containerScopedUserID;
 - (void)setEffectiveClientBundleIdentifier:(id)arg1;
+- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(long long)arg2;
 - (id)throttlingOperationQueue;
-- (void)setFakeBundleID:(id)arg1;
 - (id)daemonWithErrorHandler:(id)arg1;
 - (id)convenienceOperationQueue;
 - (void)_synchronouslySendContextInformation;
@@ -106,7 +108,7 @@
 - (void)accountsDidGrantAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(id)arg1;
-- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (void)getNewWebSharingIdentity:(id)arg1;
 - (void)requestApplicationPermission:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)accountStatusWithCompletionHandler:(id)arg1;
@@ -115,8 +117,8 @@
 - (void)setShouldSendClientIDs:(bool)arg1;
 - (void)setConnectionIsInvalid:(bool)arg1;
 - (id)accountInfoOverride;
-- (id)fakeBundleID;
 - (id)_untrustedEntitlementForKey:(id)arg1;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)containerID;
 - (void)_cleanupSandboxExtensionHandles:(id)arg1;
 - (id)sandboxExtensionHandles;
@@ -135,6 +137,7 @@
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;
 - (void)addOperation:(id)arg1;
+- (id)sourceApplicationBundleIdentifier;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

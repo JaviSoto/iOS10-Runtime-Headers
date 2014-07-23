@@ -25,6 +25,7 @@
 @property long long delta;
 @property(retain) NSURLRequest * urlRequest;
 
++ (bool)supportsSecureCoding;
 
 - (void)setDelta_ref:(long long)arg1;
 - (long long)delta_ref;
@@ -44,6 +45,8 @@
 - (id)type;
 - (void)setError:(bool)arg1;
 - (bool)error;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
 - (void)setDelta:(long long)arg1;
 - (long long)delta;

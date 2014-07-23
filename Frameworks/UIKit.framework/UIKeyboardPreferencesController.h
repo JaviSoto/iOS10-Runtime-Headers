@@ -5,6 +5,8 @@
 @interface UIKeyboardPreferencesController : NSObject  {
 }
 
+@property long long handBias;
+
 + (id)sharedPreferencesController;
 + (void)handleSpecificHardwareKeyboard;
 
@@ -19,6 +21,8 @@
 - (void)setInputModeLastUsed:(id)arg1;
 - (bool)costlyCapture;
 - (void)preferencesControllerChanged:(id)arg1;
+- (void)setHandBias:(long long)arg1;
+- (long long)handBias;
 - (bool)typologyEnabled;
 - (bool)spaceConfirmationEnabled;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;

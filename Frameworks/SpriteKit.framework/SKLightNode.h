@@ -22,8 +22,8 @@
 
 
 - (unsigned int)lightCategoryBitMask;
-- (id)lightColor;
 - (double)lightDecay;
+- (id)lightColor;
 - (void)setLightDecay:(double)arg1;
 - (void)setLightCategoryBitMask:(unsigned int)arg1;
 - (void)setLightColor:(id)arg1;
@@ -38,6 +38,8 @@
 - (id)shadowColor;
 - (void)setShadowColor:(id)arg1;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

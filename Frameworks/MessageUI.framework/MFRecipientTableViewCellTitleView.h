@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIColor, NSAttributedString, UILabel;
+@class UIColor, NSString, UILabel, NSAttributedString;
 
 @interface MFRecipientTableViewCellTitleView : UIView <MFTinting> {
     NSAttributedString *_deselectedAttributedString;
@@ -14,6 +14,10 @@
 
 @property(readonly) UILabel * titleLabel;
 @property bool highlighted;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool shouldDim;
 
 + (id)regularStringAttributes;
@@ -28,8 +32,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (bool)highlighted;
-- (void)setHighlighted:(bool)arg1;
 - (id)titleLabel;
+- (void)setHighlighted:(bool)arg1;
 - (id)tintColor;
 
 @end

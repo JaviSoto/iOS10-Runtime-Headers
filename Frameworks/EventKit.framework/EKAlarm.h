@@ -32,6 +32,9 @@
 + (int)_currentAuthorizationStatus;
 + (id)alarmWithRelativeOffset:(double)arg1;
 
+- (id)externalID;
+- (void)setStructuredLocation:(id)arg1;
+- (void)setProximity:(long long)arg1;
 - (bool)validate:(id*)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (id)locationRelation;
@@ -44,8 +47,6 @@
 - (bool)isDefaultAlarm;
 - (id)ownerUUID;
 - (id)acknowledgedDate;
-- (void)setProximity:(long long)arg1;
-- (void)setStructuredLocation:(id)arg1;
 - (id)originalAlarm;
 - (id)_snoozedAlarmsRelation;
 - (id)_originalAlarmRelation;
@@ -62,7 +63,6 @@
 - (void)setAcknowledgedDate:(id)arg1;
 - (id)structuredLocation;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (id)externalID;
 - (long long)proximity;
 - (id)owner;
 - (id)UUID;

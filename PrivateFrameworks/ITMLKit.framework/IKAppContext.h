@@ -9,6 +9,7 @@
     struct __CFRunLoopSource { } *_jsThreadRunLoopSource;
     bool_isValid;
     bool_remoteInspectionEnabled;
+    bool_canAccessPendingQueue;
     <IKApplication> *_app;
     unsigned long long _mode;
     <IKAppContextDelegate> *_delegate;
@@ -29,15 +30,21 @@
 @property(retain) JSContext * jsContext;
 @property(retain) NSMutableArray * postEvaluationBlocks;
 @property(retain) IKJSFoundation * jsFoundation;
+@property bool canAccessPendingQueue;
 @property(copy) NSString * responseScript;
 @property(retain) NSError * responseError;
 @property(retain) id reloadData;
 @property(retain) NSMutableArray * pendingQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)setPostEvaluationBlocks:(id)arg1;
+- (void)_stopAndReload:(bool)arg1;
 - (void)setJsContext:(id)arg1;
 - (bool)remoteInspectionEnabled;
 - (id)responseScript;
@@ -50,11 +57,13 @@
 - (id)_errorWithMessage:(id)arg1;
 - (id)postEvaluationBlocks;
 - (void)_evaluate:(id)arg1;
-- (void)_stopAndReload:(bool)arg1;
+- (bool)canAccessPendingQueue;
+- (void)_addStopRecordToPendingQueueWithReload:(bool)arg1;
 - (void)_jsThreadMain;
+- (void)_startWithURL:(id)arg1 urlTrusted:(bool)arg2;
+- (void)setCanAccessPendingQueue:(bool)arg1;
 - (void)setPendingQueue:(id)arg1;
 - (id)pendingQueue;
-- (void)_startWithURL:(id)arg1 urlTrusted:(bool)arg2;
 - (bool)validateDOMDocument:(id)arg1 error:(id*)arg2;
 - (void)evaluate:(id)arg1 completionBlock:(id)arg2;
 - (void)addPostEvaluateBlock:(id)arg1;
@@ -63,8 +72,8 @@
 - (void)setJsFoundation:(id)arg1;
 - (id)jsFoundation;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
-- (id)app;
 - (void)evaluateDelegateBlockSync:(id)arg1;
+- (id)app;
 - (id)jsContext;
 - (void)exitAppWithOptions:(id)arg1;
 - (void)launchAppWithOptions:(id)arg1;

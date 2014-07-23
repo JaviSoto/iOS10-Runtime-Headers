@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSMutableArray, CLLocation, CLLocationManager;
+@class NSString, CLLocationManager, CLLocation, NSMutableArray;
 
 @interface CAMLocationController : NSObject <CLLocationManagerDelegate> {
     bool_enabled;
@@ -19,6 +19,10 @@
 @property(getter=_isMonitoringLocation,readonly) bool _monitoringLocation;
 @property(readonly) CLLocationManager * _locationManager;
 @property(readonly) NSMutableArray * _assetsWaitingForLocation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_sharedGPSDatestampFormatter;
 + (id)_sharedGPSTimestampFormatter;

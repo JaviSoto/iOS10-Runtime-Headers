@@ -134,6 +134,17 @@
     int _photoThumbnailFormat;
     PLAssetContainerDataSource *_assetContainerDataSource;
     PLPhotoTileViewController *_mostRecentlyActiveTile;
+    PLAssetContainerDataSource *__originalAssetContainerDataSource;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    } _menuControllerSourceRect;
 }
 
 @property <PLPhotoBrowserControllerDelegate> * delegate;
@@ -164,6 +175,7 @@
 @property bool canShowCopyCallout;
 @property(readonly) bool canEditVideo;
 @property(retain) UIScrollView * pageControllerScrollView;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } menuControllerSourceRect;
 @property(copy) NSDictionary * slideshowSettingsForCurrentAssetContainer;
 @property(readonly) PLAssetContainerDataSource * assetContainerDataSource;
 @property(readonly) <PLRootLibraryNavigationController> * rootNavigationController;
@@ -177,6 +189,11 @@
 @property(setter=_setSlideshowEndIndexPath:,retain) NSIndexPath * _slideshowEndIndexPath;
 @property(setter=_setScrubbedImageIndexPath:,retain) NSIndexPath * _scrubbedImageIndexPath;
 @property(setter=_setLastDisplayedRemoteSlideshowPhotoIndexPath:,retain) NSIndexPath * _lastDisplayedRemoteSlideshowPhotoIndexPath;
+@property(setter=_setOriginalAssetContainerDataSource:,retain) PLAssetContainerDataSource * _originalAssetContainerDataSource;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setPageControllerScrollViewClass:(Class)arg1;
 + (id)_imageRequestCacheQueue;
@@ -188,7 +205,9 @@
 - (bool)isCameraApp;
 - (bool)_currentItemHasAudio;
 - (bool)prepareForDismissingForced:(bool)arg1;
+- (void)_setOriginalAssetContainerDataSource:(id)arg1;
 - (int)photoThumbnailFormat;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })menuControllerSourceRect;
 - (bool)showsAirTunesOption;
 - (void)setDeletesDuplicatesWhenNecessary:(bool)arg1;
 - (id)_scrubbedImageIndexPath;
@@ -267,6 +286,8 @@
 - (void)videoViewDidBeginPlayback:(id)arg1;
 - (bool)videoViewCanBeginPlayback:(id)arg1;
 - (void)videoViewDidCreateAttachments:(id)arg1;
+- (id)photoTileViewControllerCustomCenterOverlay:(id)arg1;
+- (bool)photoTileViewControllerCanShowCenterOverlay:(id)arg1;
 - (void)photoTileViewController:(id)arg1 commentsControllerWillBeginScrolling:(id)arg2;
 - (void)photoTileViewController:(id)arg1 didExitEditModeInCommentsController:(id)arg2;
 - (void)photoTileViewController:(id)arg1 willEnterEditModeInCommentsController:(id)arg2;
@@ -291,6 +312,7 @@
 - (void)_airplayRouteWasPicked:(id)arg1;
 - (id)_airplayRemoteSlideshow;
 - (id)_mediaControlClient;
+- (void)setMenuControllerSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_configureTVOutPageController;
 - (void)_updateTVOutAfterAnimation;
 - (id)_buttonItemViewWithTag:(int)arg1;
@@ -377,7 +399,7 @@
 - (bool)canDelayImageLoading;
 - (void)setShouldPlayVideoWhenViewAppears:(bool)arg1;
 - (bool)shouldPlayVideoWhenViewAppears;
-- (void)_updateFilteredImagesAndShuffle:(bool)arg1;
+- (void)_shuffleAssets:(bool)arg1;
 - (void)_scrubberDidEndScrubbing:(id)arg1;
 - (void)_streamPhoto:(id)arg1 withTransition:(id)arg2;
 - (void)showCommentsTable;
@@ -390,6 +412,7 @@
 - (void)_photoScrubberDidEndScrubbing:(id)arg1;
 - (void)_photoScrubberValueDidChange:(id)arg1;
 - (void)_photoScrubberDidBeginScrubbing:(id)arg1;
+- (bool)_slideshowNotRunning;
 - (void)_updateForCommentsControllerEditMode:(id)arg1;
 - (id)newNavigationBar;
 - (void)_updateStatusBarVisibilityWithDuration:(double)arg1;
@@ -407,7 +430,6 @@
 - (id)remakerContainerView;
 - (void)_redisplayDeleteController:(id)arg1;
 - (void)_redisplayActionSheet:(id)arg1;
-- (id)currentVideoView;
 - (bool)barsAreVisible;
 - (void)_didLoadImage:(id)arg1 forObjectID:(id)arg2;
 - (id)commentsView;
@@ -450,19 +472,19 @@
 - (bool)dismissPopovers;
 - (void)endSlideshow;
 - (void)_displayLastImageForSlideshowPlugin:(id)arg1;
+- (id)currentVideoView;
 - (bool)_shouldPauseOrStopVideo;
 - (bool)setNextSlideshowState:(int)arg1;
 - (id)_playbackVideoView;
 - (void)_forceRemoveSavingPhotoHUD;
 - (void)_disableIdleTimer;
 - (void)_slideshowPlayTimerFired:(id)arg1;
-- (bool)isPlayingSlideshow;
 - (id)_tileForAsset:(id)arg1 shouldCreate:(bool)arg2 tileCache:(id)arg3;
 - (void)_updateFullScreenPreviewImageForPhoto:(id)arg1 inTile:(id)arg2 completionHandler:(id)arg3;
 - (void)_updateTileImageAfterZoomTransition;
 - (id)currentTile;
 - (id)mostRecentlyActiveTile;
-- (bool)_slideshowNotRunning;
+- (bool)isPlayingSlideshow;
 - (bool)canEditVideo;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)_willDisplayTileController:(id)arg1;
@@ -472,10 +494,10 @@
 - (void)_requestImageForPhoto:(id)arg1 imageFormat:(int)arg2 inTile:(id)arg3 resultHandler:(id)arg4;
 - (id)cachingImageManager;
 - (void)_setCurrentIndexPath:(id)arg1;
-- (void)_shuffleAssets:(bool)arg1 startingAsset:(id)arg2;
+- (id)assetContainerDataSource;
 - (id)currentAsset;
 - (id)assetCollectionsFetchResult;
-- (id)assetContainerDataSource;
+- (id)_originalAssetContainerDataSource;
 - (bool)wantsPhotoBrowserStyleStatusBar;
 - (void)_cleanUpCurrentAirplaySession;
 - (void)_flushTileCache;
@@ -494,8 +516,8 @@
 - (bool)airplayRemoteSlideshow:(id)arg1 requestAssetWithInfo:(id)arg2 completion:(id)arg3;
 - (bool)airplayRemoteSlideshow:(id)arg1 handleEvent:(id)arg2;
 - (void)photoLibraryDidChange:(id)arg1;
-- (bool)isRotationEnabled;
 - (void)viewDidAppear;
+- (bool)isRotationEnabled;
 - (void)_fadeOut;
 - (bool)isEditing;
 - (void)applicationWillEnterForeground:(id)arg1;

@@ -104,6 +104,7 @@
 @property(retain) PLAdditionalAssetAttributes * additionalAttributes;
 @property(retain) NSOrderedSet * adjustments;
 @property(retain) NSSet * albums;
+@property(retain) NSSet * albumsBeingCustomKeyAssetFor;
 @property(retain) NSSet * albumsBeingKeyAssetFor;
 @property(retain) NSSet * albumsBeingSecondaryKeyAssetFor;
 @property(retain) NSSet * albumsBeingTertiaryKeyAssetFor;
@@ -181,6 +182,10 @@
 @property(retain,readonly) UIImage * wallpaperFullScreenImage;
 @property(retain,readonly) NSURL * assetURL;
 @property int thumbnailIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
 @property(retain,readonly) NSString * cloudAssetGUID;
 
@@ -220,6 +225,7 @@
 + (id)_pathsByAssetUUIDFromFetchResults:(id)arg1 absolute:(bool)arg2;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2 creationDateString:(id*)arg3;
++ (void)extractDirectory:(id*)arg1 andFilename:(id*)arg2 fromMainFileURL:(id)arg3;
 + (struct { double x1; double x2; })locationFromAVAsset:(id)arg1;
 + (id)_insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(bool)arg7;
 + (short)_correctedOrientation:(short)arg1;
@@ -241,7 +247,6 @@
 + (id)uniformTypeIdentifierFromPathExtension:(id)arg1 assetType:(short)arg2;
 + (id)assetsWithUUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)diagnosticFilePathForMainFilePath:(id)arg1;
-+ (void)extractDirectory:(id*)arg1 andFilename:(id*)arg2 fromMainFileURL:(id)arg3;
 + (struct CGSize { double x1; double x2; })dimensionsForAVAsset:(id)arg1;
 + (id)_fakeGeo;
 + (id)baseSearchIndexPredicate;
@@ -269,7 +274,10 @@
 - (void)didSetCustomDateCreated;
 - (id)pl_photoLibrary;
 - (id)managedAssetForPhotoLibrary:(id)arg1;
+- (long long)originalImageOrientation;
 - (id)debugFilename;
+- (bool)isPartOfBurst;
+- (long long)cloudSharedAssetPlaceholderKind;
 - (id)userAddCloudSharedCommentWithText:(id)arg1;
 - (void)setUserCloudSharedLiked:(bool)arg1;
 - (void)userDeleteCloudSharedComment:(id)arg1;
@@ -352,7 +360,6 @@
 - (id)pathForSmallVideoFile;
 - (id)pathForMediumVideoFile;
 - (bool)migrateLegacyAdjustments;
-- (void)synchronouslyFetchAdjustmentDataWithCompletionHandler:(id)arg1;
 - (unsigned long long)CPLResourceTypeFromVideoFormat:(int)arg1;
 - (unsigned long long)CPLResourceTypeFromImageFormat:(int)arg1;
 - (id)allFileURLs;
@@ -377,6 +384,7 @@
 - (id)_compactDebugDescription;
 - (bool)_isValidUTI:(id)arg1 forService:(id)arg2;
 - (bool)hasGPS;
+- (id)mutableAlbumsBeingCustomKeyAssetFor;
 - (void)deleteFromDatabaseOnly;
 - (bool)isLocatedAtHome;
 - (id)reverseGeoDescription;
@@ -384,7 +392,6 @@
 - (bool)isLocatedAtCoordinates:(struct { double x1; double x2; })arg1;
 - (id)fileURLForFullsizeRenderImage;
 - (id)fileURLForFullsizeRenderVideo;
-- (long long)originalImageOrientation;
 - (id)assetsLibraryURL;
 - (id)uniqueObjectID;
 - (void)setReverseLocationDataIsValid:(bool)arg1;
@@ -403,10 +410,10 @@
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)inflightImage;
 - (bool)isMogul;
-- (void)safeSynchronouslyFetchAdjustmentDataWithCompletionHandler:(id)arg1;
+- (void)synchronouslyFetchAdjustmentDataWithCompletionHandler:(id)arg1;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize { double x1; double x2; })arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(long long)arg6 renderedImageFilePath:(id)arg7 completionHandler:(id)arg8;
 - (id)pathForFullsizeImageFile;
-- (void)asyncGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)synchronouslyGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)sortedSidecarFiles;
 - (id)fileURLForMetadataWithExtension:(id)arg1;
 - (id)pathForMetadataWithExtension:(id)arg1;
@@ -459,6 +466,7 @@
 - (id)cachedNonPersistedVideoPlaybackURLExpiration;
 - (void)setOriginalAssetsUUID:(id)arg1;
 - (id)originalAssetsUUID;
+- (void)updateAdjustmentsWithFiltersAndIdentifiers:(id)arg1;
 - (void)setEditorBundleID:(id)arg1;
 - (id)addAdjustment;
 - (id)_settingsDictionaryFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
@@ -497,14 +505,12 @@
 - (id)indexSheetImage;
 - (bool)isInFlight;
 - (bool)isJPEG;
-- (id)reservedPathForLargeDisplayableImageFileForceLarge:(bool)arg1 forceFullResolution:(bool)arg2 outImageType:(long long*)arg3;
+- (id)reservedPathForLargeDisplayableImageFileForceLarge:(bool)arg1 forceUpgradeFromSubstandardIfNecessary:(bool)arg2 outImageType:(long long*)arg3;
 - (id)pathForPenultimateFullsizeRenderImageFile;
 - (bool)hasLegacyAdjustments;
 - (id)imageWithFormat:(int)arg1;
 - (id)fileURLForLargeThumbnailFile;
 - (short)originalOrientation;
-- (short)originalWidth;
-- (short)originalHeight;
 - (id)customMomentUUID;
 - (id)customCollectionUUID;
 - (id)customCollectionName;
@@ -513,11 +519,13 @@
 - (void)setUniformTypeIdentifierFromPathExtension:(id)arg1;
 - (id)cloudResourceForResourceType:(unsigned long long)arg1;
 - (bool)setDefaultAdjustmentsIfNecessary;
-- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(long long)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 hasSubstandardRender:(bool)arg8;
+- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(long long)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7;
 - (bool)setVideoInfoFromFileAtURL:(id)arg1 fullSizeRenderURL:(id)arg2 overwriteOriginalProperties:(bool)arg3;
 - (void)generateLargeThumbnailFileIfNecessary;
+- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(long long)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(bool)arg8 fullSizeRenderSize:(struct CGSize { double x1; double x2; })arg9;
+- (short)originalHeight;
+- (short)originalWidth;
 - (void)setNeedsMomentUpdate:(bool)arg1;
-- (void)updateAdjustmentsWithFiltersAndIdentifiers:(id)arg1;
 - (void)setOriginalHash:(id)arg1;
 - (id)pathForVideoFile;
 - (void)setSearchCategoryData:(id)arg1;
@@ -581,8 +589,8 @@
 - (bool)isEditableFromAssetsLibrary;
 - (id)originalAsset;
 - (id)allUniformTypeIdentifiers;
-- (double)aspectRatio;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)aspectRatio;
 - (bool)isFavorite;
 - (void)setLongDescription:(id)arg1;
 - (void)delete;

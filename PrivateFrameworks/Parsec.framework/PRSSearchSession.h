@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSObject<OS_dispatch_queue>, NSTimer, <PRSSessionController>, NSObject<OS_dispatch_group>, NSMutableArray, NSMutableSet;
+@class NSTimer, NSString, <PRSSessionController>, NSMutableArray, NSObject<OS_dispatch_queue>, NSMutableSet, NSObject<OS_dispatch_group>;
 
 @interface PRSSearchSession : NSObject <PRSResourceProvider, PRSImageSource> {
     <PRSSessionController> *_client;
@@ -24,6 +24,10 @@
 @property(readonly) double searchRenderTimeout;
 @property double sessionStartTime;
 @property double retryAfter;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSessionStartTime:(double)arg1;
@@ -32,22 +36,25 @@
 - (void)syncFeedback;
 - (id)queryWithString:(id)arg1 handler:(id)arg2;
 - (bool)searchSupported:(bool)arg1;
+- (bool)sessionReady;
 - (bool)isLocaleSupported:(id)arg1;
 - (void)userDidCancelSession;
 - (void)userDidSelectCompletionListItem:(id)arg1;
 - (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2;
+- (id)createWarmupRequest;
 - (id)createFeedbackRequest:(id*)arg1;
 - (void)flushFeedback;
 - (id)resourceWithID:(id)arg1;
 - (double)searchRenderTimeout;
 - (id)queryWithString:(id)arg1 webSearch:(bool)arg2 handler:(id)arg3;
+- (id)queryWithString:(id)arg1 webSearch:(bool)arg2 scaleFactor:(double)arg3 handler:(id)arg4;
+- (id)cachedResultSetForQuery:(id)arg1 webSearch:(bool)arg2;
 - (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(struct { double x1; double x2; })arg5 storeFrontId:(id)arg6 locale:(id)arg7;
 - (void)reloadGuid;
 - (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
 - (void)setFeedbackStartTime;
 - (void)refreshGUID;
 - (void)pruneCache;
-- (id)createWarmupRequest;
 - (id)urlRequestFromURL:(id)arg1;
 - (void)setRetryAfter:(double)arg1;
 - (void)addFeedback:(id)arg1;

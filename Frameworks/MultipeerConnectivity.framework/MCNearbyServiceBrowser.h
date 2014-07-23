@@ -31,6 +31,10 @@
 @property(copy) NSString * formattedServiceType;
 @property bool isBrowsing;
 @property bool wasBrowsing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSyncQueue:(id)arg1;
@@ -67,13 +71,13 @@
 - (id)initWithPeer:(id)arg1 serviceType:(id)arg2;
 - (id)myPeerID;
 - (id)serviceType;
-- (id)invites;
 - (void)setPeers:(id)arg1;
 - (id)peers;
 - (id)syncQueue;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
+- (id)invites;
 - (void)setServiceType:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEODirectionsRequestFeedback, GEOLocationShifter, NSDate, <GEORouteHypothesizerDelegate>, GEORouteHypothesis, GEOLocation, GEOComposedRoute, GEOETAUpdater, GEORoute, GEORouteHypothesizerUpdater, GEOComposedWaypoint, NSData, GEOETARoute, GEORouteAttributes;
+@class GEODirectionsRequestFeedback, GEOLocationShifter, NSDate, <GEORouteHypothesizerDelegate>, GEORouteHypothesis, GEOLocation, GEOComposedRoute, GEOETAUpdater, GEORoute, GEORouteHypothesizerUpdater, NSString, GEOComposedWaypoint, NSData, GEOETARoute, GEORouteAttributes;
 
 @interface GEORouteHypothesizer : NSObject <GEORouteHypothesizerUpdaterDelegate, GEOETAUpdaterDelegate> {
     <GEORouteHypothesizerDelegate> *_delegate;
@@ -46,6 +46,10 @@
 @property(readonly) NSDate * arrivalDate;
 @property(readonly) NSDate * suggestedNextUpdateDate;
 @property(readonly) GEOComposedRoute * route;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)updateLocation:(id)arg1 hypothesisHandler:(id)arg2;

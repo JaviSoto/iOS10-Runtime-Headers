@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton, ABUnknownPersonViewController;
+@class UIButton, NSString, ABUnknownPersonViewController;
 
 @interface ABFMFActionButtons : NSObject <ABFMFActionButtonsDelegate> {
     ABUnknownPersonViewController *_upvc;
@@ -13,6 +13,10 @@
 
 @property void* displayedPerson;
 @property(readonly) bool hasTelephonyCapability;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithMessageButton:(id)arg1 facetimeButton:(id)arg2 callButton:(id)arg3;

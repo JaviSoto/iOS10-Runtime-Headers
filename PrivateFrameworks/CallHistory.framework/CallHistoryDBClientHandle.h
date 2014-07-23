@@ -26,7 +26,6 @@
 - (bool)createCallRecord:(id)arg1 error:(id*)arg2;
 - (bool)deleteObjectsWithUniqueIds:(id)arg1 error:(id*)arg2;
 - (bool)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2;
-- (bool)deleteAll:(id*)arg1;
 - (id)convertToCHRecentCalls_sync:(id)arg1;
 - (void)handleCallTimersSave_sync:(id)arg1;
 - (void)handleCallRecordSave_sync:(id)arg1;
@@ -37,6 +36,7 @@
 - (id)fetchWithCallTypes:(unsigned int)arg1;
 - (id)updateAllCallRecords:(id)arg1;
 - (id)updateCallRecords:(id)arg1;
+- (id)fetchAllNoLimit;
 - (id)fetchObjectsWithUniqueIds:(id)arg1;
 - (bool)deleteObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithPredicate:(id)arg1;
@@ -50,6 +50,7 @@
 - (bool)deleteObjectsWithUniqueIds:(id)arg1;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;
+- (bool)deleteAll:(id*)arg1;
 - (bool)deleteAll;
 - (id)init;
 - (void)dealloc;

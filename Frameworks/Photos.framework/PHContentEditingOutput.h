@@ -5,41 +5,51 @@
 @class NSURL, PHAdjustmentData, NSData;
 
 @interface PHContentEditingOutput : NSObject <NSSecureCoding> {
-    long long _mediaType;
     PHAdjustmentData *_adjustmentData;
     long long _baseVersion;
-    bool_hasSubstandardRender;
+    bool_isSubstandardRender;
     NSURL *_renderedContentURL;
+    long long _fullSizeRenderWidth;
+    long long _fullSizeRenderHeight;
     NSData *_penultimateRenderedJPEGData;
     NSURL *_editorBundleURL;
+    long long _mediaType;
 }
 
 @property(retain) PHAdjustmentData * adjustmentData;
 @property(copy) NSURL * renderedContentURL;
 @property long long baseVersion;
-@property bool hasSubstandardRender;
+@property bool isSubstandardRender;
+@property long long fullSizeRenderWidth;
+@property long long fullSizeRenderHeight;
 @property(retain) NSData * penultimateRenderedJPEGData;
 @property(retain) NSURL * editorBundleURL;
+@property(readonly) long long mediaType;
 
 + (unsigned long long)maximumAdjustmentDataLength;
 + (bool)supportsSecureCoding;
 
 - (void)setEditorBundleURL:(id)arg1;
+- (id)initWithPlaceholderForCreatedAsset:(id)arg1;
 - (id)initWithContentEditingInput:(id)arg1;
-- (bool)hasSubstandardRender;
+- (long long)fullSizeRenderHeight;
+- (long long)fullSizeRenderWidth;
+- (bool)isSubstandardRender;
 - (id)penultimateRenderedJPEGData;
-- (id)renderedContentURL;
-- (bool)validateContentMutationWithError:(id*)arg1;
 - (id)editorBundleURL;
-- (void)setHasSubstandardRender:(bool)arg1;
+- (void)setFullSizeRenderHeight:(long long)arg1;
+- (void)setFullSizeRenderWidth:(long long)arg1;
+- (void)setIsSubstandardRender:(bool)arg1;
 - (void)setPenultimateRenderedJPEGData:(id)arg1;
 - (void)setRenderedJPEGData:(id)arg1;
 - (void)setRenderedContentURL:(id)arg1;
 - (long long)baseVersion;
 - (id)initWithAdjustmentBaseVersion:(long long)arg1 mediaType:(long long)arg2;
 - (void)setBaseVersion:(long long)arg1;
+- (id)renderedContentURL;
 - (void)setAdjustmentData:(id)arg1;
 - (id)adjustmentData;
+- (long long)mediaType;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

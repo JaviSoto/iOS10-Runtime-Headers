@@ -54,6 +54,7 @@
 - (void)catalogChanged:(id)arg1 withNewPasses:(id)arg2;
 - (void)recomputeRelevantPassesWithSearchMode:(long long)arg1;
 - (void)logDelayExitReasons;
+- (void)sendPassbookUIServiceLaunched;
 - (void)sendUserEditedCatalog:(id)arg1;
 - (void)getPassesAndCatalog:(bool)arg1 withHandler:(id)arg2;
 - (void)shuffleGroups:(int)arg1;

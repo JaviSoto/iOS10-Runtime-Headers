@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFMessageDataConsumerFactory>, NSMutableData, <MFCollectingDataConsumer>, DAMailMessage;
+@class <MFMessageDataConsumerFactory>, NSString, NSMutableData, <MFCollectingDataConsumer>, DAMailMessage;
 
 @interface MFDAMessageContentConsumer : NSObject <MFDAStreamingContentConsumer> {
     int _requestedFormat;
@@ -24,6 +24,10 @@
 @property(retain,readonly) DAMailMessage * message;
 @property(retain,readonly) NSMutableData * bodyData;
 @property(readonly) double timeOfLastActivity;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (int)requestedFormat;

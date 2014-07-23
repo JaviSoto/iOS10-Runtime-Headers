@@ -55,14 +55,14 @@
 - (void)setDeauthSourceOui:(id)arg1;
 - (void)setSecurity:(id)arg1;
 - (void)setBssidOui:(id)arg1;
+- (int)channel;
 - (bool)hasChannel;
 - (void)setHasChannel:(bool)arg1;
-- (void)setHasError:(bool)arg1;
 - (void)setChannel:(int)arg1;
-- (int)channel;
+- (void)setHasError:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSignal:(int)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

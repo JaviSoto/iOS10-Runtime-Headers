@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSURLConnectionInternal, NSURLRequest;
+@class NSURLConnectionInternal, NSString, NSURLRequest;
 
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
     NSURLConnectionInternal *_internal;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSURLRequest * originalRequest;
 @property(copy,readonly) NSURLRequest * currentRequest;
 
@@ -44,12 +48,12 @@
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(bool)arg3 maxContentLength:(long long)arg4 startImmediately:(bool)arg5 connectionProperties:(id)arg6;
 - (void)start;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (id)originalRequest;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)currentRequest;
 - (void)cancel;
 - (void)dealloc;

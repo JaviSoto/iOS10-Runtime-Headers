@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVPropFindTask, ICSDocument, NSURL, <CoreDAVTaskGroupDelegate>;
+@class CoreDAVPropFindTask, ICSDocument, NSURL, <CoreDAVTaskGroupDelegate>, NSString;
 
 @interface CalDAVGetOfficeHoursTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
     NSURL *_inboxURL;
@@ -14,6 +14,10 @@
 @property(retain) ICSDocument * calendarAvailability;
 @property(retain) NSURL * inboxURL;
 @property(retain) CoreDAVPropFindTask * fetchTask;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)calendarAvailability;

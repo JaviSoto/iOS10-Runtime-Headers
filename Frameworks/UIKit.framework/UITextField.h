@@ -87,6 +87,10 @@
     _UIBaselineLayoutStrut *_baselineLayoutLabel;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 @property(copy) NSString * text;
@@ -117,6 +121,10 @@
 @property bool clearsOnInsertion;
 @property(setter=_setBaselineLayoutConstraint:,retain) NSLayoutConstraint * _baselineLayoutConstraint;
 @property(setter=_setBaselineLayoutLabel:,retain) _UIBaselineLayoutStrut * _baselineLayoutLabel;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -370,6 +378,7 @@
 - (void)setTextCentersHorizontally:(bool)arg1;
 - (void)setTextCentersVertically:(bool)arg1;
 - (void)setUndoEnabled:(bool)arg1;
+- (void)_deleteBackwardAndNotify:(bool)arg1;
 - (void)_clearButtonClicked:(id)arg1;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (void)setContinuousSpellCheckingEnabled:(bool)arg1;

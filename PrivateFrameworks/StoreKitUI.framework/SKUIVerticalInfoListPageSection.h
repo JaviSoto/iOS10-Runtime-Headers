@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIInfoListViewElement, SKUIViewElementLayoutContext, NSMutableArray;
+@class NSString, SKUIViewElementLayoutContext, SKUIInfoListViewElement, NSMutableArray;
 
 @interface SKUIVerticalInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
@@ -12,6 +12,11 @@
     SKUIInfoListViewElement *_infoList;
     long long _numberOfColumns;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

@@ -42,9 +42,9 @@
 - (id)recordIDs;
 - (id)desiredKeys;
 - (void)setDesiredKeys:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (bool)isDeleted;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

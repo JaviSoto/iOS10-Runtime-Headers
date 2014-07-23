@@ -2,22 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, <ABPropertyCellDelegate>, <ABContactHeaderViewDelegate>, UITableView;
+@class NSArray, NSString, <ABPropertyCellDelegate>, UITableView;
 
 @interface ABContactHeaderEditView : ABContactHeaderView <UITableViewDelegate, UITableViewDataSource, ABPropertyGroupItemDelegate, ABContactPhotoViewDelegate> {
     UITableView *_editingTable;
     NSArray *_editingGroups;
     <ABPropertyCellDelegate> *_namePropertyDelegate;
-    <ABContactHeaderViewDelegate> *_headerDelegate;
 }
 
 @property(retain) NSArray * editingGroups;
 @property <ABPropertyCellDelegate> * namePropertyDelegate;
-@property <ABContactHeaderViewDelegate> * headerDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2;
 
-- (void)setHeaderDelegate:(id)arg1;
 - (void)setNamePropertyDelegate:(id)arg1;
 - (id)editingGroups;
 - (id)selectEditingGroupAtIndex:(unsigned long long)arg1;
@@ -25,7 +26,6 @@
 - (void)setEditingGroups:(id)arg1 withUpdate:(bool)arg2;
 - (void)didUpdatePhoto;
 - (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
-- (id)headerDelegate;
 - (id)_phoneticNameForValue:(id)arg1 isFamilyName:(bool)arg2;
 - (id)namePropertyDelegate;
 - (void)setEditingGroups:(id)arg1;

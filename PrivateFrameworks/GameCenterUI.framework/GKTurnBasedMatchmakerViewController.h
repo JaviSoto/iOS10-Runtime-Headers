@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKTurnBasedMatchmakerViewControllerDelegate>, GKHostedTurnBasedViewController, GKMatchRequest, GKRemoteTurnBasedViewController;
+@class <GKTurnBasedMatchmakerViewControllerDelegate>, GKHostedTurnBasedViewController, GKMatchRequest, UIAlertController, GKRemoteTurnBasedViewController;
 
 @interface GKTurnBasedMatchmakerViewController : UINavigationController  {
     bool_showExistingMatches;
@@ -10,6 +10,7 @@
     GKHostedTurnBasedViewController *_hostedViewController;
     GKRemoteTurnBasedViewController *_remoteViewController;
     GKMatchRequest *_matchRequest;
+    UIAlertController *_alertController;
 }
 
 @property <GKTurnBasedMatchmakerViewControllerDelegate> * turnBasedMatchmakerDelegate;
@@ -17,6 +18,7 @@
 @property(retain) GKHostedTurnBasedViewController * hostedViewController;
 @property(retain) GKRemoteTurnBasedViewController * remoteViewController;
 @property(retain) GKMatchRequest * matchRequest;
+@property(retain) UIAlertController * alertController;
 
 + (bool)_preventsAppearanceProxyCustomization;
 
@@ -39,6 +41,9 @@
 - (void)dealloc;
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
+- (id)alertController;
+- (void)setAlertController:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;

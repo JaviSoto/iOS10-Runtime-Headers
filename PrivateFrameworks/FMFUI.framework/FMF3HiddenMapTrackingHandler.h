@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class MKMapView, <FMF3HiddenMapTrackingHandlerDelegate>;
+@class NSString, MKMapView, <FMF3HiddenMapTrackingHandlerDelegate>;
 
 @interface FMF3HiddenMapTrackingHandler : NSObject <MKMapViewDelegate> {
     MKMapView *_hiddenMapView;
@@ -11,6 +11,10 @@
 
 @property(retain) MKMapView * hiddenMapView;
 @property <FMF3HiddenMapTrackingHandlerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setHiddenMapView:(id)arg1;

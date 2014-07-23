@@ -26,14 +26,6 @@
 
 + (id)sourceForURL:(id)arg1;
 
-- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned int)arg3;
-- (id)initWithMimeBody:(id)arg1;
-- (id)attachmentManager;
-- (id)htmlData;
-- (id)mimePartForURL:(id)arg1;
-- (id)attachmentForURL:(id)arg1;
-- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
-- (void)setPreferredEncoding:(unsigned int)arg1;
 - (id)preferredCharacterSet;
 - (void)setAttachmentManager:(id)arg1;
 - (id)attachmentsInDocument;
@@ -42,6 +34,14 @@
 - (id)initWithMimePart:(id)arg1;
 - (id)mimeBody;
 - (unsigned int)preferredEncoding;
+- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned int)arg3;
+- (id)initWithMimeBody:(id)arg1;
+- (id)attachmentManager;
+- (id)htmlData;
+- (id)mimePartForURL:(id)arg1;
+- (id)attachmentForURL:(id)arg1;
+- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
+- (void)setPreferredEncoding:(unsigned int)arg1;
 - (id)fileWrapper;
 - (id)init;
 - (id)baseURL;

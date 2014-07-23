@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISStoreURLOperation, SUWebView;
+@class ISStoreURLOperation, SUWebView, NSString;
 
 @interface SUScriptExecutionContext : NSObject <ISStoreURLOperationDelegate, SUWebViewDelegate> {
     ISStoreURLOperation *_loadOperation;
@@ -11,6 +11,10 @@
 
 @property(readonly) id windowScriptObject;
 @property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)parentViewControllerForWebView:(id)arg1;

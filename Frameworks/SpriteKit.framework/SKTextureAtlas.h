@@ -14,6 +14,7 @@
 + (id)atlasWithDictionary:(id)arg1;
 + (id)getSupportedPostfixes;
 + (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id)arg2;
++ (bool)canUseObjectForAtlas:(id)arg1;
 + (id)atlasNamed:(id)arg1;
 + (id)findTextureNamed:(id)arg1;
 

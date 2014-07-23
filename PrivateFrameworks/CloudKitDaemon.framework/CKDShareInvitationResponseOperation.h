@@ -35,8 +35,8 @@
 - (id)invitationsToDecline;
 - (void)setInvitationsToAccept:(id)arg1;
 - (id)invitationsToAccept;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

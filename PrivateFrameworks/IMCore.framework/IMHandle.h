@@ -203,7 +203,6 @@
 - (long long)compareNormalizedIDs:(id)arg1;
 - (long long)compareLastNames:(id)arg1;
 - (long long)compareFirstNames:(id)arg1;
-- (id)statusMessage;
 - (id)idleString;
 - (id)offlineString;
 - (void)setStatusURLFromString:(id)arg1;
@@ -328,6 +327,7 @@
 - (id)publicAPIPropertiesDictionary;
 - (id)bestAccountSibling;
 - (void)setBlocked:(bool)arg1;
+- (id)statusMessage;
 - (bool)canBeDeleted;
 - (void)setEmail:(id)arg1;
 - (void)_postNotification:(id)arg1;

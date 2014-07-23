@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString, NSCache;
+@class NSString, NSCache, NSObject<OS_dispatch_queue>;
 
 @interface CPBitmapStore : NSObject  {
     NSString *_path;
@@ -10,6 +10,8 @@
     NSCache *_cache;
     int _version;
     NSString *_versionPath;
+    NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesBackground;
+    NSObject<OS_dispatch_queue> *_serialQueueRemoveImagesDefault;
     bool_lockOnRead;
 }
 

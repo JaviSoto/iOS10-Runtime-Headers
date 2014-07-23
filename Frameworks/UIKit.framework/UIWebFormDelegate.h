@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebBrowserView, _UIWebFormDelegateEditedFormsMap;
+@class NSString, UIWebBrowserView, _UIWebFormDelegateEditedFormsMap;
 
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
     UIWebBrowserView *_webBrowserView;
     _UIWebFormDelegateEditedFormsMap *_editedForms;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)willSendSubmitEventToForm:(id)arg1 inFrame:(id)arg2 withValues:(id)arg3;

@@ -2,14 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, NSArray, GEOBatchRevGeocodeRequest, NSObject<NSCopying>, PLRevGeoLocationInfo;
+@class NSString, NSArray, <GEOMapServiceTicket>, NSObject<NSCopying>, PLRevGeoLocationInfo;
 
 @interface PLMomentAnalyzerGeoRequestInfo : NSObject  {
     unsigned long long _requestType;
     NSObject<NSCopying> *_momentId;
     NSString *_momentUuid;
     NSArray *_assetIds;
-    struct GEOBatchRevGeocodeRequest { Class x1; struct { int *x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; id x3; id x4; boolx5; struct { unsigned int x_6_1_1 : 1; } x6; } *_reverseGeocodeRequest;
+    <GEOMapServiceTicket> *_reverseGeocodeRequest;
     unsigned long long _failureCount;
     NSArray *_extraAssetIds;
     NSArray *_extraLocations;
@@ -20,7 +20,7 @@
 @property(retain) NSObject<NSCopying> * momentId;
 @property(copy) NSString * momentUuid;
 @property(copy) NSArray * assetIds;
-@property(retain) GEOBatchRevGeocodeRequest * reverseGeocodeRequest;
+@property(retain) <GEOMapServiceTicket> * reverseGeocodeRequest;
 @property unsigned long long failureCount;
 @property(copy) NSArray * extraAssetIds;
 @property(copy) NSArray * extraLocations;
@@ -35,12 +35,12 @@
 - (void)setExtraAssetIds:(id)arg1;
 - (id)extraAssetIds;
 - (unsigned long long)failureCount;
-- (struct GEOBatchRevGeocodeRequest { Class x1; struct { int *x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; id x3; id x4; boolx5; struct { unsigned int x_6_1_1 : 1; } x6; }*)reverseGeocodeRequest;
+- (id)reverseGeocodeRequest;
 - (id)momentId;
 - (bool)hasExtraData;
-- (id)initWithRequestType:(unsigned long long)arg1 momentId:(id)arg2 momentUuid:(id)arg3 assetIds:(id)arg4 reverseGeocodeRequest:(struct GEOBatchRevGeocodeRequest { Class x1; struct { int *x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; id x3; id x4; boolx5; struct { unsigned int x_6_1_1 : 1; } x6; }*)arg5;
+- (id)initWithRequestType:(unsigned long long)arg1 momentId:(id)arg2 momentUuid:(id)arg3 assetIds:(id)arg4 reverseGeocodeRequest:(id)arg5;
 - (id)momentUuid;
-- (void)setReverseGeocodeRequest:(struct GEOBatchRevGeocodeRequest { Class x1; struct { int *x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; id x3; id x4; boolx5; struct { unsigned int x_6_1_1 : 1; } x6; }*)arg1;
+- (void)setReverseGeocodeRequest:(id)arg1;
 - (void)setMomentUuid:(id)arg1;
 - (void)setMomentId:(id)arg1;
 - (void)setAssetIds:(id)arg1;

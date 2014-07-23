@@ -19,6 +19,10 @@
 @property(copy) BBColor * color;
 @property long long style;
 @property(copy) NSString * viewClassName;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)appearanceWithTitle:(id)arg1;
 + (bool)supportsSecureCoding;

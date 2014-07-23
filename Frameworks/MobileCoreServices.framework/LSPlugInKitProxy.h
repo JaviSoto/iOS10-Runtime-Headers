@@ -36,13 +36,14 @@
 - (bool)isOnSystemPartition;
 - (id)registrationDate;
 - (id)infoPlist;
+- (id)containingBundle;
 - (id)pluginUUID;
 - (id)pluginIdentifier;
 - (id)_initWithUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 version:(id)arg4 bundleURL:(id)arg5;
 - (id)_initWithPlugin:(unsigned int)arg1;
 - (id)localizedShortName;
+- (id)iconDataForVariant:(int)arg1;
 - (id)localizedName;
-- (id)containingBundle;
 - (bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

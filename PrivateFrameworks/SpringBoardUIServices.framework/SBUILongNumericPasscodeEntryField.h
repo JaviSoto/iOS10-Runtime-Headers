@@ -25,11 +25,10 @@
 - (bool)showsPromptLabel;
 - (id)promptLabel;
 - (bool)showsOkButton;
-- (struct CGSize { double x1; double x2; })_okButtonSize;
 - (void)setShowsPromptLabel:(bool)arg1;
 - (void)setShowsOkButton:(bool)arg1;
+- (void)_getPasscodeFieldSize:(struct CGSize { double x1; double x2; }*)arg1 okButtonSize:(struct CGSize { double x1; double x2; }*)arg2;
 - (void)_okButtonHit;
-- (struct CGSize { double x1; double x2; })_passcodeFieldSize;
 - (struct CGSize { double x1; double x2; })_viewSize;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;

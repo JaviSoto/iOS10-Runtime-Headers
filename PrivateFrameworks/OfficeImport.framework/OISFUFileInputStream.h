@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface OISFUFileInputStream : NSObject <SFUInputStream> {
     int mFd;
     boolmIsCachingDisabled;
@@ -9,6 +11,11 @@
     long long mCurrentOffset;
     long long mEndOffset;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;

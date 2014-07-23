@@ -12,6 +12,7 @@
     NSData *_clientChangeTokenData;
     long long _savePolicy;
     NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
 }
 
 @property(retain) NSArray * recordsToSave;
@@ -21,9 +22,12 @@
 @property long long savePolicy;
 @property bool shouldOnlySaveAssetContent;
 @property(copy) NSDictionary * recordIDsToDeleteToEtags;
+@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
 
 + (bool)supportsSecureCoding;
 
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (id)conflictLosersToResolveByRecordID;
 - (void)setAtomic:(bool)arg1;
 - (bool)atomic;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;

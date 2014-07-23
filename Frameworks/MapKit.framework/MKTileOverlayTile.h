@@ -31,13 +31,13 @@
 @property(retain) NSData * image;
 
 
+- (struct { long long x1; long long x2; long long x3; double x4; })path;
 - (void)setScale:(double)arg1;
 - (void)setFrame:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (void)setImage:(id)arg1;
 - (id)image;
 - (void)setPath:(struct { long long x1; long long x2; long long x3; double x4; })arg1;
-- (struct { long long x1; long long x2; long long x3; double x4; })path;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)description;

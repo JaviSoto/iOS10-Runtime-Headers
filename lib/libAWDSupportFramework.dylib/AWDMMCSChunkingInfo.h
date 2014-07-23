@@ -40,6 +40,9 @@
 @property(retain) NSMutableArray * chunkingErrors;
 
 
+- (bool)hasDuration;
+- (long long)chunkCount;
+- (void)setChunkCount:(long long)arg1;
 - (id)chunkingErrors;
 - (long long)byteCount;
 - (bool)hasByteCount;
@@ -54,9 +57,6 @@
 - (void)setChunkingErrors:(id)arg1;
 - (bool)hasCancelled;
 - (void)setHasCancelled:(bool)arg1;
-- (bool)hasDuration;
-- (long long)chunkCount;
-- (void)setChunkCount:(long long)arg1;
 - (bool)hasStartTime;
 - (bool)hasErrorCode;
 - (void)setHasErrorCode:(bool)arg1;

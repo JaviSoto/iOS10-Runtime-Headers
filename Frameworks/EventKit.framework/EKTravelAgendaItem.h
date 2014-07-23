@@ -14,6 +14,8 @@
   /* Error parsing encoded ivar type info: @? */
     id _adviceBlock;
 
+    double _initialDistanceFromDestination;
+    bool_haveAdvised;
     NSMutableArray *_trace;
     int _travelMethod;
     CLLocation *_location;
@@ -29,10 +31,12 @@
 - (void)traceLocation:(id)arg1 date:(id)arg2;
 - (void)tracePrediction:(id)arg1 date:(id)arg2 delay:(double)arg3;
 - (bool)writeTraceToDisk;
-- (id)initWithLocation:(id)arg1 date:(id)arg2 adviceBlock:(id)arg3;
-- (void)advise:(id)arg1;
-- (int)travelMethod;
 - (bool)isEqualToTravelAgendaItem:(id)arg1;
+- (bool)haveAdvised;
+- (bool)isCloseToPersonAtLocation:(id)arg1;
+- (void)advise:(id)arg1;
+- (id)initWithLocation:(id)arg1 date:(id)arg2 adviceBlock:(id)arg3;
+- (int)travelMethod;
 - (id)initWithLocation:(id)arg1 date:(id)arg2 travelMethod:(int)arg3 adviceBlock:(id)arg4;
 - (id)location;
 - (id)date;

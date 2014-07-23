@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MKLocationManagerSingleUpdater, MKLocationManager;
+@class MKLocationManagerSingleUpdater, NSString, MKLocationManager;
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
 
@@ -21,6 +21,10 @@
 }
 
 @property(copy) id handler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithLocationManager:(id)arg1 desiredAccuracy:(double)arg2 handler:(id)arg3;

@@ -132,7 +132,6 @@
 - (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 style:(long long)arg3 barMetrics:(long long)arg4;
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 style:(long long)arg3 barMetrics:(long long)arg4;
-- (void)setHighlighted:(bool)arg1;
 - (id)_customOrAccessibilityBackgroundImageForState:(unsigned long long)arg1 style:(long long)arg2 isMini:(bool)arg3;
 - (id)_tintColor;
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned long long)arg2;
@@ -145,6 +144,7 @@
 - (void)_setTintColor:(id)arg1;
 - (void)_UIAppearance_setTintColor:(id)arg1;
 - (void)setBarStyle:(long long)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (bool)_wantsAccessibilityButtonShapes;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;

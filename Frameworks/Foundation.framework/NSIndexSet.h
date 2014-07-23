@@ -91,9 +91,9 @@
 - (Class)classForCoder;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)mf_commaSeparatedString;
 - (id)_gkIndexSetByAddingIndex:(long long)arg1;
 - (id)_gkIndexSetByRemovingIndex:(long long)arg1;
-- (id)mf_commaSeparatedString;
 - (id)pl_indexSetAdjustedForInsertions:(id)arg1;
 - (id)pl_indexSetAdjustedForDeletions:(id)arg1;
 - (id)_pl_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(bool)arg2;

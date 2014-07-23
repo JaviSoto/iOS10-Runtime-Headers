@@ -14,15 +14,15 @@
 
 + (id)sharedInstance;
 
-- (void)logSettingsDidChange;
+- (void)setIsInternalBuild:(bool)arg1;
+- (void)maxOutLogging;
 - (void)setLogLevelsMaxedOut:(bool)arg1;
 - (void)setLogLocationIndicatorSent:(bool)arg1;
 - (bool)logLocationIndicatorSent;
 - (bool)isInternalBuild;
 - (bool)logLevelsMaxedOut;
-- (void)maxOutLogging;
 - (void)logAtLevel:(long long)arg1 facility:(id)arg2 filename:(const char *)arg3 lineNumber:(long long)arg4 function:(const char *)arg5 message:(id)arg6;
-- (void)setIsInternalBuild:(bool)arg1;
+- (void)logSettingsDidChange;
 - (id)init;
 
 @end

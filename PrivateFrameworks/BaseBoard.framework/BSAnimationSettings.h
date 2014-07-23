@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class CAMediaTimingFunction;
+@class NSString, CAMediaTimingFunction;
 
 @interface BSAnimationSettings : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, BSXPCCoding> {
     double _duration;
@@ -15,6 +15,10 @@
 @property(readonly) double delay;
 @property(readonly) double frameInterval;
 @property(retain,readonly) CAMediaTimingFunction * timingFunction;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;

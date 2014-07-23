@@ -5,6 +5,7 @@
 @interface GEOPlaceDataRequester : GEOServiceRequester  {
 }
 
++ (id)_serviceTypeNumber;
 + (unsigned long long)_urlType;
 + (id)sharedInstance;
 

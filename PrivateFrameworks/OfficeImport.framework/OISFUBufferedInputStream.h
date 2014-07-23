@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUInputStream>;
+@class NSString, <SFUInputStream>;
 
 @interface OISFUBufferedInputStream : NSObject <OISFUBufferedInputStream> {
     <SFUInputStream> *mStream;
@@ -12,6 +12,11 @@
     long long mBufferStart;
     long long mBufferEnd;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)readToOwnBuffer:(const char **)arg1 size:(unsigned long long)arg2;

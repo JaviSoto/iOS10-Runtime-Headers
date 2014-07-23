@@ -44,6 +44,10 @@
 @property(getter=isSuspended) bool suspended;
 @property(retain) SKUIUber * uber;
 @property(readonly) NSString * visibleMetricsImpressions;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setItemList:(id)arg1;

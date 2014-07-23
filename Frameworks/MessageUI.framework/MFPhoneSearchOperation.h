@@ -12,6 +12,11 @@
     NSString *_searchTerm;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (int)property;
 
 - (struct __CFArray { }*)copyArrayOfUIDsMatchingText:(id)arg1 addresses:(const struct __CFArray {}**)arg2 identifiers:(const struct __CFArray {}**)arg3;

@@ -2,21 +2,27 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, <MKPlaceNearbyAppsViewControllerDelegate>;
+@class NSArray, <MKPlaceNearbyAppsViewControllerDelegate>, NSString;
 
-@interface MKPlaceNearbyAppsViewController : UITableViewController <MKPlaceViewNearbyAppsCellDelegate> {
+@interface MKPlaceNearbyAppsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse, MKPlaceViewNearbyAppsCellDelegate> {
     <MKPlaceNearbyAppsViewControllerDelegate> *_nearbyAppsDelegate;
     NSArray *_storeItems;
 }
 
 @property <MKPlaceNearbyAppsViewControllerDelegate> * nearbyAppsDelegate;
 @property(retain) NSArray * storeItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) bool requiresPreferredContentSizeInStackingView;
 
 
 - (id)nearbyAppsDelegate;
 - (void)nearbyAppsCell:(id)arg1 showStorePageWithURL:(id)arg2 storeID:(id)arg3;
 - (void)nearbyAppsCell:(id)arg1 openAppWithBundleID:(id)arg2 storeID:(id)arg3;
 - (id)storeItems;
+- (bool)requiresPreferredContentSizeInStackingView;
 - (void)setStoreItems:(id)arg1;
 - (void)setNearbyAppsDelegate:(id)arg1;
 - (id)init;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSUserActivity;
+@class NSString, NSUserActivity;
 
 @interface GCControllerSFDelegate : NSObject <NSUserActivityDelegate> {
     NSUserActivity *_activity;
@@ -18,6 +18,10 @@
 }
 
 @property(copy) id completionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startScan;

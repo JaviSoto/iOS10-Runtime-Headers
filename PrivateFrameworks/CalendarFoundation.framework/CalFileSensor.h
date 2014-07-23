@@ -26,20 +26,20 @@
 @property bool started;
 @property(copy) id eventBlock;
 
-+ (id)copyFileSensorTypeAsString:(int)arg1;
 + (unsigned long long)_maskForFileSensorType:(int)arg1;
++ (id)copyFileSensorTypeAsString:(int)arg1;
 
 - (void)setEventBlock:(id)arg1;
 - (void)setStarted:(bool)arg1;
 - (bool)started;
 - (id)initWithPath:(id)arg1 andType:(int)arg2;
 - (id)eventBlock;
+- (id)path;
 - (id)init;
 - (void)setType:(int)arg1;
 - (int)type;
 - (void)setPath:(id)arg1;
 - (void)start;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;

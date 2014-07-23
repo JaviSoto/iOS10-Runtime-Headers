@@ -30,7 +30,6 @@
 - (id)availableVideoCVPixelFormatTypes;
 - (id)vettedVideoSettingsForSettingsDictionary:(id)arg1;
 - (id)outputScalingModeForSourceFormat:(id)arg1;
-- (bool)usesPreviewSizedBuffers;
 - (int)requiredOutputFormatForConnection:(id)arg1;
 - (struct CGSize { double x1; double x2; })outputSizeForSourceFormat:(id)arg1;
 - (bool)hasRequiredOutputFormatForConnection:(id)arg1;
@@ -38,6 +37,7 @@
 - (bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
+- (bool)usesPreviewSizedBuffers;
 - (bool)alwaysDiscardsLateVideoFrames;
 - (id)connectionMediaTypes;
 - (id)sampleBufferCallbackQueue;

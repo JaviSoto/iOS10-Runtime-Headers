@@ -27,13 +27,13 @@
 + (id)camera;
 + (bool)supportsSecureCoding;
 
+- (bool)_validate;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (double)_precisePitch;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_enclosingGEOMapRectForAspectRatio:(float)arg1;
 - (void)_setPrecisePitch:(double)arg1;
 - (id)_mapView;
 - (void)_setMapView:(id)arg1;
-- (bool)_validate;
 - (struct { double x1; double x2; })centerCoordinate;
 - (void)setHeading:(double)arg1;
 - (void)setPitch:(double)arg1;

@@ -60,6 +60,10 @@
 @property(getter=_rightMarginWidth,setter=_setRightMarginWidth:) double rightMarginWidth;
 @property(getter=_stripPadding,setter=_setStripPadding:) bool stripPadding;
 @property(getter=_isTopHeader,setter=_setTopHeader:) bool topHeader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_defaultTextColorForTableViewStyle:(long long)arg1 isSectionHeader:(bool)arg2;
 + (id)_defaultFontForTableViewStyle:(long long)arg1 isSectionHeader:(bool)arg2;

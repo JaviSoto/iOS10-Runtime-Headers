@@ -28,9 +28,9 @@
 - (long long)generationCount;
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 error:(bool*)arg4;
 - (id)createRequestNewContentMessageForDaemon:(bool)arg1;
+- (bool)synchronize;
 - (bool)alreadylocked_requestNewData;
 - (struct __CFDictionary { }*)alreadylocked_copyDictionary;
-- (bool)alreadylocked_synchronize;
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
 - (void)unlock;
 - (void)lock;

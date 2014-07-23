@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMTimelapseState, NSObject<OS_dispatch_queue>, NSMutableArray, CAMTimelapseMovieWriter;
+@class CAMTimelapseState, NSString, NSObject<OS_dispatch_queue>, NSMutableArray, CAMTimelapseMovieWriter;
 
 @interface CAMTimelapseBackendController : NSObject <CAMNebulaDaemonProtocol> {
     bool__writingMovie;
@@ -19,6 +19,10 @@
 @property(readonly) CAMTimelapseMovieWriter * _movieWriter;
 @property(setter=_setCurrentState:,retain) CAMTimelapseState * _currentState;
 @property(getter=_isCapturing,setter=_setCapturing:) bool _capturing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 

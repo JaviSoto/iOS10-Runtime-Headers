@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <VKGlobeLineContainerDelegate>, VKPolylineOverlay, NSMutableSet, <VKRouteMatchedAnnotationPresentation>, NSMutableArray;
+@class <VKGlobeLineContainerDelegate>, VKPolylineOverlay, NSString, NSMutableSet, <VKRouteMatchedAnnotationPresentation>, NSMutableArray;
 
 @interface VKGlobeLineContainer : NSObject <VKPolylineGroupOverlayObserver, VKPolylineObserver> {
     bool_trafficEnabled;
@@ -36,6 +36,10 @@
 
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property <VKGlobeLineContainerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)clearLineSelection;

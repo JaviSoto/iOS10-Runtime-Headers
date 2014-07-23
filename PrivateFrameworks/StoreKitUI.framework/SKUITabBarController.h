@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITabBarBackgroundView, UIViewController, SKUIFloatingOverlayView;
+@class NSString, SKUITabBarBackgroundView, SKUIFloatingOverlayView, UIViewController;
 
 @interface SKUITabBarController : UITabBarController <SKUIMoreNavigationControllerDelegate> {
     SKUIFloatingOverlayView *_floatingOverlayView;
@@ -11,6 +11,10 @@
 }
 
 @property(readonly) UIViewController * floatingOverlayViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_moreNavigationControllerClass;
 

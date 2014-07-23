@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSURL;
+@class NSURL, NSString;
 
 @interface _UITextViewInteractableLink : _UITextViewInteractableItem <DDDetectionControllerInteractionDelegate> {
     NSURL *_link;
 }
 
 @property(retain) NSURL * link;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
@@ -23,8 +27,8 @@
 - (id)link;
 - (void)setLink:(id)arg1;
 - (id)localizedTitle;
-- (id)defaultAction;
 - (bool)allowInteraction;
+- (id)defaultAction;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 
 @end

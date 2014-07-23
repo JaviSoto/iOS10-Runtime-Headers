@@ -83,12 +83,12 @@
 - (void)setQueryDuration:(unsigned int)arg1;
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
+- (void)setConnectionType:(unsigned int)arg1;
 - (bool)hasSuccess;
 - (void)setHasSuccess:(bool)arg1;
-- (bool)hasGuid;
-- (void)setConnectionType:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasGuid;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)connectionType;

@@ -2,8 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
  */
 
+@class NSString;
+
 @interface _NCWidgetViewControllerAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)animateTransition:(id)arg1;

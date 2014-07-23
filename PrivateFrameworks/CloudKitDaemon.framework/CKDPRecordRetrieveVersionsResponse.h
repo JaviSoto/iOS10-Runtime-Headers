@@ -26,6 +26,7 @@
 - (unsigned long long)recordVersionsCount;
 - (void)addRecordVersions:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setIsDeleted:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

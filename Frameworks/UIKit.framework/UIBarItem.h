@@ -18,6 +18,10 @@
 @property long long tag;
 @property(setter=_setHasCustomizableInstanceAppearanceModifications:) bool _hasCustomizableInstanceAppearanceModifications;
 @property(setter=_setShouldArchiveUIAppearanceTags:) bool _shouldArchiveUIAppearanceTags;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_appearanceBlindViewClasses;
 + (id)appearanceForTraitCollection:(id)arg1 whenContainedIn:(Class)arg2;

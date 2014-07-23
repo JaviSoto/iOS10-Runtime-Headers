@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSString, NSArray, NSSet, NSMutableDictionary, NSMutableSet, IDSAccountController, NSMapTable;
+@class NSMapTable, NSString, NSArray, NSSet, NSMutableDictionary, NSMutableSet, IDSAccountController, IDSAccount;
 
 @interface _IDSService : NSObject <IDSAccountControllerDelegate, IDSConnectionDelegatePrivate> {
     IDSAccountController *_accountController;
@@ -18,8 +18,13 @@
 }
 
 @property(copy,readonly) NSSet * accounts;
+@property(retain,readonly) IDSAccount * iCloudAccount;
 @property(copy,readonly) NSArray * devices;
 @property(copy,readonly) NSString * serviceDomain;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_processAccountSet:(id)arg1;
@@ -30,6 +35,7 @@
 - (void)_logConnectionMap;
 - (id)uriForFromID:(id)arg1;
 - (id)deviceForFromID:(id)arg1;
+- (id)iCloudAccount;
 - (id)serviceDomain;
 - (bool)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (bool)cancelIdentifier:(id)arg1 error:(id*)arg2;

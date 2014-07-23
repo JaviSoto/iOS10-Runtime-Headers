@@ -28,6 +28,10 @@
 @property(retain) NSString * title;
 @property struct CGSize { double x1; double x2; } containerSize;
 @property(readonly) bool didCompleteLayout;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)supportedMIMETypes;
 + (Class)_representationClassForWebFrame:(id)arg1;

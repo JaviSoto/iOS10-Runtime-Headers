@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKStyleManager, VKMapModel;
+@class NSString, VKStyleManager, VKMapModel;
 
 @interface VKGridModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     VKMapModel *_mapModel;
@@ -66,24 +66,30 @@
     } _simpleGridRenderState;
     struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_gridRenderItem;
     struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } *_simpleGridRenderItem;
+    bool_needsUpdatedColor;
 }
 
 @property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
 @property VKMapModel * mapModel;
 @property bool simpleGridEnabled;
 @property unsigned char renderPass;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 + (bool)reloadOnStylesheetChange;
 
 - (unsigned char)renderPass;
 - (bool)simpleGridEnabled;
+- (void)updateGridColor;
 - (id)mapModel;
 - (unsigned long long)mapLayerPosition;
 - (void)setSimpleGridEnabled:(bool)arg1;
 - (void)stylesheetDoneChanging;
 - (void)stylesheetDidChange;
-- (void)updateGridColor;
+- (void)setNeedsUpdatedGridColor;
 - (void)setRenderPass:(unsigned char)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)setMapModel:(id)arg1;

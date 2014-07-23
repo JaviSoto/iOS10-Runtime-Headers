@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSObject<OS_dispatch_queue>, CUTWeakReference;
+@class NSObject<OS_dispatch_queue>, CUTWeakReference, NSString;
 
 @interface _IDSContinuity : NSObject <IDSDaemonListenerProtocol> {
     id _delegateContext;
@@ -12,6 +12,10 @@
 }
 
 @property(readonly) long long state;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_handleReconnect;
@@ -24,8 +28,12 @@
 - (void)continuityDidFailToStartAdvertisingOfType:(long long)arg1 withError:(id)arg2;
 - (void)continuityDidStopAdvertisingOfType:(long long)arg1;
 - (void)continuityDidStartAdvertisingOfType:(long long)arg1;
+- (void)continuityDidStopTrackingPeer:(id)arg1;
+- (void)continuityDidStartTrackingPeer:(id)arg1 error:(id)arg2;
 - (void)continuityDidLosePeer:(id)arg1;
 - (void)continuityDidUpdateState:(long long)arg1;
+- (void)stopTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1;
 - (void)stopScanningForType:(long long)arg1;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;

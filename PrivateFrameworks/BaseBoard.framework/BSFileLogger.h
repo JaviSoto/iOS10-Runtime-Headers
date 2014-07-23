@@ -26,6 +26,10 @@
 @property(readonly) NSString * logPreferenceName;
 @property(readonly) bool shouldEnableOnInternalBuilds;
 @property <BSFileLoggerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isEnabled;

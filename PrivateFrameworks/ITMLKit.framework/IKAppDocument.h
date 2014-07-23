@@ -34,6 +34,10 @@
 @property(readonly) IKJSObject * owner;
 @property(readonly) IKJSNavigationDocument * navigationDocument;
 @property(retain) JSManagedValue * jsManagedDocument;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setJsManagedDocument:(id)arg1;

@@ -84,5 +84,7 @@
 - (void)_registerForSystemSounds:(id)arg1;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (long long)userInterfaceIdiom;
+- (long long)_controlCenterGraphicsQuality;
+- (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 
 @end

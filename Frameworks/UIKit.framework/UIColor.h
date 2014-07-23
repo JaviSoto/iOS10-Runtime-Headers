@@ -143,7 +143,6 @@
 + (id)lightGrayColor;
 + (id)grayColor;
 + (id)verifiedColor;
-+ (id)_remoteUI_colorWithString:(id)arg1;
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeLightSeparatorColor;
@@ -219,6 +218,7 @@
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)_remoteUI_colorWithString:(id)arg1;
 + (id)colorWithC3DColor4:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 + (id)color:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
 + (id)SCNJSExportProtocol;
@@ -268,10 +268,10 @@
 - (id)_systemColorName;
 - (bool)_getWhite:(double*)arg1 alpha:(double*)arg2;
 - (id)initWithHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
-- (double)_gkLuminance;
 - (id)_mapkit_blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
 - (bool)_mapkit_isWhite;
 - (bool)_mapkit_getRed:(double*)arg1 green:(double*)arg2 blue:(double*)arg3 alpha:(double*)arg4;
+- (double)_gkLuminance;
 - (id)tpImageFromColor;
 - (id)colorByAlteringOpacityToPercentage:(float)arg1;
 - (id)darkerColorByPercentage:(float)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableString, UIPDFAnnotation;
+@class NSString, NSMutableString, UIPDFAnnotation;
 
 @interface UIPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
     NSMutableString *_characters;
@@ -12,6 +12,10 @@
 
 @property(retain) UIPDFAnnotation * annotation;
 @property(readonly) bool parseError;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)parseError;

@@ -15,10 +15,10 @@
 - (id)init;
 - (void)finalize;
 - (void)dealloc;
+- (id)copyReplyDictionaryForSequence:(unsigned long long)arg1;
 - (unsigned long long)sequenceForEvent:(id)arg1;
 - (id)progressForSequence:(unsigned long long)arg1;
 - (void)removeProgressSequence:(unsigned long long)arg1;
 - (unsigned long long)sequenceForProgress:(id)arg1;
-- (id)copyReplyDictionaryForSequence:(unsigned long long)arg1;
 
 @end

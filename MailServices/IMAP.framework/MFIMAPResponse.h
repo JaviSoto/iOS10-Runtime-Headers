@@ -92,8 +92,8 @@
 - (int)responseType;
 - (bool)isUntagged;
 - (id)fetchResultWithType:(int)arg1;
-- (id)permanentTag;
 - (void)setServerInfo:(id)arg1;
+- (id)permanentTag;
 - (id)capabilities;
 - (void)setCapabilities:(id)arg1;
 - (int)responseCode;

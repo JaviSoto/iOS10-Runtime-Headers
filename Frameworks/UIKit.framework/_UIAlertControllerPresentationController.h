@@ -2,16 +2,20 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIKeyboardLayoutAlignmentView, UIView;
+@class _UIKeyboardLayoutAlignmentView, NSString, UIView;
 
 @interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
     UIView *_dimmingView;
     _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
     UIView *keyboardLayoutAlignmentAvailableSpaceView;
-    booladdedConstraints;
+    boolconstraintsPrepared;
 }
 
 @property(readonly) UIView * _dimmingView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;
@@ -20,9 +24,11 @@
 - (long long)attributeToAlignAlertControllerViewBy;
 - (void)_occludePresentingWindow:(bool)arg1;
 - (id)_presentedAlertController;
-- (void)_addConstraints;
+- (void)_prepareConstraintsIfNecessary;
 - (id)_dimmingView;
+- (bool)_preserveResponderAcrossWindows;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
+- (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (long long)adaptivePresentationStyle;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)containerViewWillLayoutSubviews;
@@ -33,7 +39,6 @@
 - (id)presentedView;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;
-- (id)initWithPresentingViewController:(id)arg1 presentedViewController:(id)arg2;
 - (void)containerViewDidLayoutSubviews;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 

@@ -7,7 +7,7 @@
 
 + (id)sharedInstance;
 
-- (bool)useLightOnDarkPasscodeScreenForHints:(id)arg1;
+- (bool)useLightOnDarkPasscodeScreenWithPolicy:(long long)arg1 policyOptions:(id)arg2;
 - (long long)verifyPassword:(id)arg1 acmContext:(id)arg2;
 - (bool)isPasscodeSetWithError:(id*)arg1;
 

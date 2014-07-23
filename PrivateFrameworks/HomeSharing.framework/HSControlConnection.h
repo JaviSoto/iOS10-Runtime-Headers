@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class <HSControlConnectionDelegate>, NSOutputStream;
+@class <HSControlConnectionDelegate>, NSString, NSOutputStream;
 
 @interface HSControlConnection : NSObject <NSStreamDelegate> {
     unsigned int _key;
@@ -14,6 +14,10 @@
 
 @property <HSControlConnectionDelegate> * delegate;
 @property unsigned int protocolVersion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)sendTouchesMoved:(const unsigned int*)arg1 count:(unsigned long long)arg2 velocity:(struct { float x1; float x2; })arg3;

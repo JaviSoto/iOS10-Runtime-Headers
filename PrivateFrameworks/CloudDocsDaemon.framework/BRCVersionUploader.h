@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCTransferQueue, NSObject<OS_dispatch_queue>, BRCLocalContainer, BRCUploadOperationMultiplexer;
+@class NSString, BRCTransferQueue, NSObject<OS_dispatch_queue>, BRCLocalContainer, BRCUploadOperationMultiplexer;
 
 @interface BRCVersionUploader : NSObject <BRCTransferQueueDelegate, BRCLifeCycle> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -12,6 +12,10 @@
 }
 
 @property(readonly) BRCUploadOperationMultiplexer * uploadMultiplexer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)uploadMultiplexer;
@@ -19,7 +23,9 @@
 - (bool)_scheduleUploadForItem:(id)arg1;
 - (void)_didUploadContentWithItemID:(id)arg1 record:(id)arg2;
 - (void)_didFailUploadingContentWithItemID:(id)arg1 error:(id)arg2;
+- (void)clearOverQuotaItemsWithSizeLessThan:(unsigned long long)arg1;
 - (void)signalNeedsUploads;
+- (void)cancelAllUploads;
 - (id)initWithLocalContainer:(id)arg1;
 - (void)transferQueueDidRequestOperations:(id)arg1;
 - (void)cancelUploadForItemID:(id)arg1;

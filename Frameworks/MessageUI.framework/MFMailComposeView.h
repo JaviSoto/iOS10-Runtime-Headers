@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeToFieldDelegate>, MFComposeSubjectView, MFMailComposeRecipientView, MFComposeMultiView, <MFMailComposeViewDelegate>, UIResponder, MFComposeFromView, NSArray, MFMailComposeContactsSearchController, MFSearchResultsViewController, NSInvocation, MFComposeImageSizeView, <MFMailPopoverManagerDelegate>, MFComposeTextContentView, MFComposeScrollView, MFComposeBodyField, UIView, MFFromAddressViewController, UIPickerView, UITableView, <MFComposeRecipientTextViewDelegate>;
+@class <MFMailComposeToFieldDelegate>, MFComposeSubjectView, MFMailComposeRecipientView, NSString, MFComposeMultiView, <MFMailComposeViewDelegate>, UIResponder, MFComposeFromView, NSArray, MFMailComposeContactsSearchController, MFSearchResultsViewController, NSInvocation, MFComposeImageSizeView, <MFMailPopoverManagerDelegate>, MFComposeTextContentView, MFComposeScrollView, MFComposeBodyField, UIView, MFFromAddressViewController, UIPickerView, UITableView, <MFComposeRecipientTextViewDelegate>;
 
 @interface MFMailComposeView : UITransitionView <MFComposeHeaderViewDelegate, UITextContentViewDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate, MFDragContext> {
     <MFMailPopoverManagerDelegate> *_popoverOwner;
@@ -76,9 +76,12 @@
 @property(readonly) MFComposeScrollView * bodyScroller;
 @property(readonly) MFComposeTextContentView * bodyTextView;
 @property(readonly) MFSearchResultsViewController * searchViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (void)setLoading:(bool)arg1;
 - (id)searchViewController;
 - (id)bodyField;
 - (id)multiField;
@@ -181,6 +184,7 @@
 - (void)_setupField:(id*)arg1 withLabel:(id)arg2 navTitle:(id)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)composeViewDelegate;
 - (void)composeHeaderViewClicked:(id)arg1;
+- (void)setLoading:(bool)arg1;
 - (bool)isSearching;
 - (void)setAutoresizingMask:(unsigned long long)arg1;
 - (bool)isLoading;

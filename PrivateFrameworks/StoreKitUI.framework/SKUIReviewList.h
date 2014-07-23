@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSURL, NSMutableDictionary, NSMutableArray;
+@class NSArray, NSDictionary, NSURL, NSString, NSMutableArray, NSMutableDictionary;
 
 @interface SKUIReviewList : NSObject <SKUICacheCoding> {
     NSDictionary *_dictionary;
@@ -19,6 +19,10 @@
 @property(readonly) long long threeStarRatingCount;
 @property(readonly) long long twoStarRatingCount;
 @property(readonly) NSURL * writeReviewURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

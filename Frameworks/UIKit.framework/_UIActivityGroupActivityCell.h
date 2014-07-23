@@ -17,16 +17,16 @@
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (id)draggingView;
 - (void)initHighlightedImageViewIfNeeded;
 - (void)updateHighlightedImageViewIfNeeded;
 - (id)highlightedImageView;
 - (void)setHighlightedImageView:(id)arg1;
-- (id)draggingView;
 - (void)setImageView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)imageView;
 - (void)prepareForReuse;
-- (void)setHighlighted:(bool)arg1;
 - (id)titleLabel;
+- (void)setHighlighted:(bool)arg1;
 
 @end

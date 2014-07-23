@@ -2,21 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class TUCall, TUCallModelState, NSMutableArray, TUCallCenterCallsCache;
+@class TUCallCenterCallsCache, TUCall, NSArray, NSString, TUCallModelState, NSMutableArray;
 
 @interface TUCallCenter : NSObject <IDSIDQueryControllerDelegate> {
-    TUCall *_incomingCall;
     NSMutableArray *_displayedCalls;
     NSMutableArray *_conferenceParticipantCalls;
     TUCallCenterCallsCache *_callsCache;
     TUCallModelState *_callModelState;
 }
 
-@property(retain) TUCall * incomingCall;
+@property(retain,readonly) TUCall * incomingCall;
+@property(retain,readonly) NSArray * incomingCalls;
 @property(retain) NSMutableArray * displayedCalls;
 @property(retain) NSMutableArray * conferenceParticipantCalls;
 @property(retain) TUCallCenterCallsCache * callsCache;
 @property(retain) TUCallModelState * callModelState;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)emergencyCallBackModeIsActive;
 + (bool)isInCallServiceProcess;
@@ -37,11 +41,12 @@
 - (bool)canTakeCallsPrivate;
 - (void)resumeCall:(id)arg1;
 - (void)holdActiveAndAnswerCall:(id)arg1;
-- (void)answerAndEnableHoldMusicForCall:(id)arg1;
+- (void)answerCallWithHoldMusic:(id)arg1;
 - (void)sendFieldModeDigits:(id)arg1;
 - (id)dialVoicemail;
 - (id)dialEmergency:(id)arg1;
 - (id)dial:(id)arg1 service:(int)arg2;
+- (id)callsHostedOrAnEndpointElsewhere;
 - (bool)anyCallIsEndpointOnCurrentDevice;
 - (unsigned long long)callCountOnDefaultPairedDevice;
 - (id)callGroupsOnDefaultPairedDevice;
@@ -57,17 +62,21 @@
 - (id)_callStatusUserInfoForUserInfo:(id)arg1;
 - (void)handleCallStatusChanged:(id)arg1 userInfo:(id)arg2;
 - (bool)anyCallIsHostedOnCurrentDevice;
-- (void)answerCallWithHoldMusic:(id)arg1;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2 wantsHoldMusic:(bool)arg3;
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2;
+- (void)disconnectNonRelayingCalls;
+- (void)disconnectRelayingCalls;
 - (id)_dialTelephonyCall:(id)arg1 callID:(int)arg2 sourceIdentifier:(id)arg3;
 - (id)_dialFaceTimeCall:(id)arg1 isVideo:(bool)arg2 callID:(int)arg3 sourceIdentifier:(id)arg4;
+- (bool)canInitiateCallForService:(int)arg1;
 - (bool)canInitiateCalls;
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
 - (id)sourceAccount:(bool)arg1;
+- (id)callsWithAnEndpointElsewhere;
+- (id)callsHostedElsewhere;
 - (id)callsOnDefaultPairedDevice;
 - (id)_callGroupsFromCalls:(id)arg1;
-- (id)callWithStatus:(int)arg1;
+- (id)incomingCalls;
 - (void)_callStatusChangedInternal:(id)arg1;
 - (void)handleChatVideoStalledDidChange:(id)arg1;
 - (void)handleChatVideoQualityDidChange:(id)arg1;
@@ -104,6 +113,7 @@
 - (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (id)_allCalls;
 - (void)handleCallStatusChanged:(id)arg1;
+- (bool)allCallsAreOfService:(int)arg1;
 - (void)_handleCallControlFailure:(id)arg1;
 - (void)forceUpdateOfCallList;
 - (void)forceDisconnectOfCall:(id)arg1;
@@ -133,7 +143,6 @@
 - (void)_postDisplayedCallsChanged;
 - (id)conferenceParticipantCalls;
 - (id)displayedCalls;
-- (void)setIncomingCall:(id)arg1;
 - (void)setConferenceParticipantCalls:(id)arg1;
 - (void)setDisplayedCalls:(id)arg1;
 - (void)answerCall:(id)arg1;
@@ -141,6 +150,7 @@
 - (id)callsCache;
 - (unsigned long long)currentVideoCallCount;
 - (int)currentCallCount;
+- (id)callWithStatus:(int)arg1;
 - (bool)isAmbiguous;
 - (bool)isSendToVoicemailAllowed;
 - (bool)isHoldAndAnswerAllowed;

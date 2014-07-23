@@ -44,6 +44,10 @@
     } _sqlCoreFlags;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSURL * presentedItemURL;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(copy,readonly) NSURL * primaryPresentedItemURL;

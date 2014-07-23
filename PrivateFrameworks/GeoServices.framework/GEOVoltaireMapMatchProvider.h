@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class NSString, GEORequester;
 
 @interface GEOVoltaireMapMatchProvider : NSObject <PBRequesterDelegate> {
     GEORequester *_requester;
@@ -24,6 +24,10 @@
 }
 
 @property(retain) GEORequester * requester;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)providerURL;
 

@@ -53,6 +53,10 @@
 @property double spotOuterAngle;
 @property(readonly) SCNMaterialProperty * gobo;
 @property unsigned long long categoryBitMask;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) SCNTechnique * technique;
 
 + (id)lightWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; int x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned long long x10; boolx11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; }*)arg1;

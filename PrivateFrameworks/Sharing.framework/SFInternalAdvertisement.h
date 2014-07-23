@@ -19,5 +19,6 @@
 - (id)options;
 - (void)setOptions:(id)arg1;
 - (void)dealloc;
+- (id)description;
 
 @end

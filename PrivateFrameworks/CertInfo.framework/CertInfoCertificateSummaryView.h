@@ -30,6 +30,10 @@
 @property(retain) NSDate * expirationDate;
 @property(retain) CertInfoCertificateHeaderCell * headerCell;
 @property(retain) CertInfoCertificateSummaryDescriptionCell * descriptionCell;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)descriptionCell;

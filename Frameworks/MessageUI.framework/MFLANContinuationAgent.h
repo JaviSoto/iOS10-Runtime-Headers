@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class MFLANContinuationContext;
+
 @interface MFLANContinuationAgent : NSObject  {
     bool_serverRunning;
     struct __CFSocket { } *_socket;
@@ -15,9 +17,11 @@
   /* Error parsing encoded ivar type info: @? */
     id _connectCallbackBlock;
 
+    MFLANContinuationContext *_continuationContext;
 }
 
 @property(readonly) bool serverRunning;
+@property(readonly) MFLANContinuationContext * continuationContext;
 
 
 - (bool)serverRunning;
@@ -26,6 +30,7 @@
 - (id)_getDeviceHostname;
 - (void)_cleanupSocket;
 - (void)_cleanupRunLoopSource;
+- (id)continuationContext;
 - (id)startServerWithCompletion:(id)arg1;
 - (void)stopServer;
 - (id)init;

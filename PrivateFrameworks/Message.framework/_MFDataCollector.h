@@ -13,6 +13,11 @@
     bool_incomplete;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (id)pathForStorage;
 - (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(bool)arg4 incomplete:(bool)arg5;

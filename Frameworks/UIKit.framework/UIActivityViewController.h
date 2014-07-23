@@ -92,6 +92,10 @@
 @property bool willDismissActivityViewController;
 @property(retain) _UIActivityApplicationExtensionDiscovery * applicationExtensionDiscovery;
 @property bool performActivityForStateRestoration;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_clearActivityItems:(id)arg1;
 + (void)_addActivityItem:(id)arg1 activityViewController:(id)arg2 originalActivityItem:(id)arg3;
@@ -99,8 +103,8 @@
 + (id)_attachmentNameForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_thumbnailImageForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_subjectForActivityItem:(id)arg1 activity:(id)arg2;
-+ (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)_itemProviderForActivityItem:(id)arg1 typeIdentifier:(id)arg2 activity:(id)arg3;
++ (id)_dataTypeIdentifierForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void)_cancel;
@@ -200,6 +204,7 @@
 - (void)activityGroupViewController:(id)arg1 didSelectActivity:(id)arg2;
 - (id)_containedAlertController;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (bool)_requiresCustomPresentationController;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)viewDidDisappear:(bool)arg1;

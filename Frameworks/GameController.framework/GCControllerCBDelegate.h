@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, CBCentralManager;
+@class NSString, NSMutableArray, CBCentralManager;
 
 @interface GCControllerCBDelegate : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     NSMutableArray *_foundPeripherals;
@@ -21,6 +21,10 @@
 
 @property(retain) CBCentralManager * centralManager;
 @property(copy) id completionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setCentralManager:(id)arg1;

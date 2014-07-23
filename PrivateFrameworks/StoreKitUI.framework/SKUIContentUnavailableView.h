@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIControl, SKUIAttributedStringView, SKUIButtonViewElement, SKUIImageView, SKUIImageViewElement;
+@class UIControl, NSString, SKUIAttributedStringView, SKUIButtonViewElement, SKUIImageView, SKUIImageViewElement;
 
 @interface SKUIContentUnavailableView : SKUIViewReuseView <SKUIViewElementView> {
     UIControl *_button;
@@ -18,6 +18,11 @@
     SKUIAttributedStringView *_messageView;
     SKUIAttributedStringView *_titleView;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringWithButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringWithMessageLabel:(id)arg1 context:(id)arg2;

@@ -54,6 +54,10 @@
 @property(retain) UIView * leftCalloutAccessoryView;
 @property(retain) UIView * rightCalloutAccessoryView;
 @property(retain) UIView * detailCalloutAccessoryView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * subtitle;
 @property <VKAnnotationMarkerDelegate> * delegate;
 @property(readonly) NSString * reuseIdentifier;
@@ -76,6 +80,10 @@
 @property struct VKPoint { double x1; double x2; double x3; } projectedPoint;
 @property struct VKPoint { double x1; double x2; double x3; } projectedGroundPoint;
 @property float dropFraction;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingTitle;

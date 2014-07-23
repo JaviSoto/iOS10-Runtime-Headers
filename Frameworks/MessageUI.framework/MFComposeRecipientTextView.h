@@ -20,6 +20,8 @@
     <MFDraggableItem> *_pivotItem;
     bool_parentIsClosing;
     bool_textViewExclusionPathsAreValid;
+    bool_isTextFieldCollapsed;
+    bool_indicatesUnsafeRecipientsWhenCollapsed;
     NSTimer *_inputDelayTimer;
     NSTimer *_collapsableUpdateTimer;
     NSArray *_properties;
@@ -28,7 +30,6 @@
     bool_allowsDragAndDrop;
     bool_separatorHidden;
     bool_focused;
-    bool_hasUnsafeRecipients;
     bool_didIgnoreFirstResponderResign;
     int _hideLastAtomComma;
     UIFont *_baseFont;
@@ -46,7 +47,7 @@
 @property bool allowsDragAndDrop;
 @property(getter=isSeparatorHidden) bool separatorHidden;
 @property bool focused;
-@property bool hasUnsafeRecipients;
+@property bool indicatesUnsafeRecipientsWhenCollapsed;
 @property(readonly) bool didIgnoreFirstResponderResign;
 @property long long maxRecipients;
 @property double inputDelay;
@@ -60,6 +61,10 @@
 @property int hideLastAtomComma;
 @property(retain) _MFAtomTextAttachment * placeholderAttachment;
 @property(readonly) UIView * atomContainerView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultFont;
 
@@ -68,10 +73,9 @@
 - (int)hideLastAtomComma;
 - (void)setMaxRecipients:(long long)arg1;
 - (long long)maxRecipients;
-- (void)setHasUnsafeRecipients:(bool)arg1;
-- (bool)hasUnsafeRecipients;
 - (bool)focused;
 - (bool)isSeparatorHidden;
+- (bool)indicatesUnsafeRecipientsWhenCollapsed;
 - (id)atomContainerView;
 - (void)atomTextView:(id)arg1 didChangeWritingDirection:(long long)arg2;
 - (void)atomTextViewDidResignFirstResponder:(id)arg1;
@@ -152,6 +156,7 @@
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (id)uncommentedAddresses;
+- (void)setIndicatesUnsafeRecipientsWhenCollapsed:(bool)arg1;
 - (void)setAllowsDragAndDrop:(bool)arg1;
 - (void)setInputDelay:(double)arg1;
 - (bool)didIgnoreFirstResponderResign;

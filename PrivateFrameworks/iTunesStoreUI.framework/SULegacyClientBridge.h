@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUOverlayBackgroundViewController, SUPreviewOverlayViewController, UITabBarController, SUClientInterface;
+@class SUOverlayBackgroundViewController, SUPreviewOverlayViewController, NSString, UITabBarController, SUClientInterface;
 
 @interface SULegacyClientBridge : NSObject <MFMailComposeViewControllerDelegate, SUOverlayBackgroundDelegate> {
     SUClientInterface *_clientInterface;
@@ -15,6 +15,10 @@
 @property(retain) UITabBarController * rootViewController;
 @property(readonly) SUOverlayBackgroundViewController * overlayBackgroundViewController;
 @property(readonly) SUPreviewOverlayViewController * previewOverlayViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)showPreviewOverlayAnimated:(bool)arg1;

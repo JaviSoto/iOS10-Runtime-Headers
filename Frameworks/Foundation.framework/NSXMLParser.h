@@ -35,6 +35,7 @@
 
 
 - (void)abortParsing;
+- (id)initWithContentsOfURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)delegate;
@@ -65,6 +66,5 @@
 - (id)initForIncrementalParsing;
 - (void)_initializeSAX2Callbacks;
 - (id)initWithStream:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

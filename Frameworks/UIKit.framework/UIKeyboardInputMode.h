@@ -9,12 +9,14 @@
     NSString *primaryLanguage;
     NSString *languageWithRegion;
     NSString *identifier;
+    NSString *normalizedIdentifier;
     NSString *softwareLayout;
     NSString *hardwareLayout;
 }
 
 @property(retain) NSString * identifier;
 @property(readonly) NSString * identifierWithLayouts;
+@property(retain) NSString * normalizedIdentifier;
 @property(retain) NSString * primaryLanguage;
 @property(retain) NSString * languageWithRegion;
 @property(retain) NSString * softwareLayout;
@@ -51,6 +53,8 @@
 - (void)setHardwareLayout:(id)arg1;
 - (void)setSoftwareLayout:(id)arg1;
 - (void)setLanguageWithRegion:(id)arg1;
+- (void)setNormalizedIdentifier:(id)arg1;
+- (id)normalizedIdentifier;
 - (id)languageWithRegion;
 - (bool)isDesiredForTraits:(id)arg1 forceASCIICapable:(bool)arg2;
 - (void)setPrimaryLanguage:(id)arg1;

@@ -25,12 +25,13 @@
 
 - (void)_sharedCleanup;
 - (bool)volatilizeIfInvalidHomeDir;
-- (bool)handleErrorReply:(id)arg1 alreadyLocked:(bool)arg2 retryContinuation:(id)arg3;
+- (bool)handleErrorReply:(id)arg1 retryContinuation:(id)arg2;
 - (void)sendRequestNewDataMessage:(id)arg1 toConnection:(id)arg2 error:(bool*)arg3;
 - (void)addPIDImpersonationIfNecessary:(id)arg1;
-- (void)attachAccessTokenIfNecessary:(id)arg1 outError:(bool*)arg2;
 - (id)createSynchronizeMessage;
-- (bool)handleErrorReply:(id)arg1 fromMessageSettingKey:(struct __CFString { }*)arg2 toValue:(void*)arg3 alreadyLocked:(bool)arg4 retryContinuation:(id)arg5;
+- (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3;
+- (bool)attachAccessTokenToMessage:(id)arg1;
+- (bool)handleErrorReply:(id)arg1 fromMessageSettingKey:(struct __CFString { }*)arg2 toValue:(void*)arg3 retryContinuation:(id)arg4;
 - (void)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setContainer:(struct __CFString { }*)arg1;
 - (void)setUserIdentifier:(struct __CFString { }*)arg1;
@@ -47,10 +48,10 @@
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 error:(bool*)arg4;
 - (id)createRequestNewContentMessageForDaemon:(bool)arg1;
 - (void)mergeIntoDictionary:(struct __CFDictionary { }*)arg1;
+- (bool)synchronize;
 - (bool)alreadylocked_requestNewData;
 - (void*)copyValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)alreadylocked_copyDictionary;
-- (bool)alreadylocked_synchronize;
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFArray { }*)alreadylocked_copyKeyList;
 - (void)alreadylocked_setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;

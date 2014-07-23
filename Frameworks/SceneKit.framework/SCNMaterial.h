@@ -56,6 +56,10 @@
 @property bool writesToDepthBuffer;
 @property bool readsFromDepthBuffer;
 @property double fresnelExponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSDictionary * shaderModifiers;
 @property(retain) SCNProgram * program;
 

@@ -15,6 +15,10 @@
 @property(getter=isSecure) bool secure;
 @property(retain) NSString * title;
 @property(retain) NSString * value;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)textFieldWithTitle:(id)arg1;
 

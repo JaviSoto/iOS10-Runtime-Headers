@@ -29,6 +29,10 @@
 @property bool displaysCriticalBulletins;
 @property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
 @property(retain) NSMutableDictionary * allSubtypeParameters;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
 + (void)removeSectionParametersFromCache:(id)arg1;

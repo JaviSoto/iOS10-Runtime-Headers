@@ -39,6 +39,14 @@
 + (struct __SecIdentity { }*)copyEncryptionIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 + (struct __SecIdentity { }*)copySigningIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 
+- (int)encryptionStatus;
+- (void)setSendingAddress:(id)arg1;
+- (id)sendingAddress;
+- (int)encryptionPolicy;
+- (int)signingPolicy;
+- (id)sendingAccount;
+- (void)addRecipients:(id)arg1;
+- (void)removeRecipients:(id)arg1;
 - (bool)shouldAllowSend;
 - (int)signingStatus;
 - (id)initWithSigningPolicy:(int)arg1 encryptionPolicy:(int)arg2;
@@ -56,14 +64,6 @@
 - (bool)_updateSigningStatus_nts;
 - (id)initWithSendingAccount:(id)arg1 signingPolicy:(int)arg2 encryptionPolicy:(int)arg3;
 - (id)compositionSpecification;
-- (int)encryptionStatus;
-- (void)setSendingAddress:(id)arg1;
-- (id)sendingAddress;
-- (int)encryptionPolicy;
-- (int)signingPolicy;
-- (id)sendingAccount;
-- (void)addRecipients:(id)arg1;
-- (void)removeRecipients:(id)arg1;
 - (id)recipients;
 - (id)init;
 - (void)setDelegate:(id)arg1;

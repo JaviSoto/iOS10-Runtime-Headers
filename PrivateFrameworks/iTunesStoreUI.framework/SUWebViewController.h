@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SUDelayedNavigationItem, SUObjectPool, SSMutableAuthenticationContext, ISURLRequestPerformance, NSURL, SUMescalSession, SUWebView, SUStorePageProtocol, SSAuthenticationContext, SUWebViewManager;
+@class SUDelayedNavigationItem, SUObjectPool, SSMutableAuthenticationContext, ISURLRequestPerformance, NSURL, SUMescalSession, SUWebView, SUStorePageProtocol, SSAuthenticationContext, NSString, SUWebViewManager;
 
 @interface SUWebViewController : SUViewController <SUWebViewManagerDelegate, SUWebViewDelegate> {
     SUWebView *_webView;
@@ -37,6 +37,10 @@
 @property(readonly) SUWebView * webView;
 @property(getter=_mescalSession,setter=_setMescalSession:,retain) SUMescalSession * _mescalSession;
 @property(getter=_performanceMetrics,setter=_setPerformanceMetrics:,retain) ISURLRequestPerformance * _performanceMetrics;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setMescalSession:(id)arg1;

@@ -122,6 +122,7 @@
   /* Error parsing encoded ivar type info: @? */
     id m_keyInputCompletionHandler;
 
+    boolm_updatingLayout;
     boolm_showsCandidateBar;
     boolm_showsCandidateInline;
     boolcommittingCandidate;
@@ -180,6 +181,10 @@
 @property bool hardwareKeyboardIsSeen;
 @property bool softwareKeyboardShownByTouch;
 @property bool handlingKeyCommandFromHardwareKeyboard;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)applicationWillResignActive:(id)arg1;
 + (void)applicationWillEnterForeground:(id)arg1;
@@ -340,6 +345,7 @@
 - (void)saveInputModesPreference:(id)arg1;
 - (bool)keyboardsExpandedPreference;
 - (bool)swipeToTabPreference;
+- (bool)predictionPreferenceForTraits;
 - (void)cancelSplitTransition;
 - (bool)hideAccessoryViewsDuringSplit;
 - (unsigned long long)minimumTouchesForTranslation;
@@ -372,7 +378,6 @@
 - (void)setHardwareRepeatEvent:(id)arg1;
 - (void)hideKeyboard;
 - (void)showKeyboard;
-- (bool)predictionPreferenceForTraits;
 - (void)setHardwareRepeatTask:(id)arg1;
 - (void)handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (id)hardwareRepeatEvent;
@@ -479,6 +484,7 @@
 - (void)didHandleWebKeyEvent;
 - (void)setExternalTask:(id)arg1;
 - (bool)applyAutocorrection:(id)arg1;
+- (bool)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (void)updateDoubleSpacePeriodStateForCharacter:(unsigned int)arg1;
 - (bool)isInHardwareKeyboardMode;
 - (bool)callLayoutIgnoresShiftState;
@@ -730,7 +736,6 @@
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
 - (void)didMoveToSuperview;
 - (void)_moveWithEvent:(id)arg1;
 - (bool)canHandleEvent:(id)arg1;

@@ -32,7 +32,6 @@
 @property(retain) NSString * connection;
 
 
-- (void)setClientVersion:(id)arg1;
 - (id)baseVersion;
 - (void)setBaseVersion:(id)arg1;
 - (void)setHostApplicationIdentifier:(id)arg1;
@@ -42,11 +41,12 @@
 - (void)setWindowOrientation:(id)arg1;
 - (id)pageType;
 - (void)setPageType:(id)arg1;
+- (void)setClientVersion:(id)arg1;
 - (id)clientVersion;
-- (id)pageContext;
-- (void)setPageContext:(id)arg1;
 - (void)setPageID:(unsigned long long)arg1;
 - (unsigned long long)pageID;
+- (id)pageContext;
+- (void)setPageContext:(id)arg1;
 - (id)windowWidth;
 - (id)windowOrientation;
 - (id)windowHeight;

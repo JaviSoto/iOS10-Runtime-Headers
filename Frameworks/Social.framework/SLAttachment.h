@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, UIImage, NSItemProvider;
+@class NSString, NSItemProvider, UIImage, NSURL;
 
 @interface SLAttachment : NSObject <NSSecureCoding> {
 
@@ -20,11 +20,15 @@
     id _payloadUpdateObserver;
 
     NSString *_identifier;
+    bool_startedPayloadLoad;
+    bool_needsAnotherPreviewGeneration;
     long long _previewType;
     UIImage *_previewImage;
     long long _type;
     id _payload;
+    NSURL *_payloadSourceFileURL;
     NSItemProvider *_itemProvider;
+    NSString *_typeIdentifier;
     long long _itemProviderPreviewType;
     long long _downsampleStatus;
 }
@@ -34,16 +38,26 @@
 @property(readonly) NSString * identifier;
 @property long long type;
 @property(copy) id payload;
+@property(copy) NSURL * payloadSourceFileURL;
 @property(retain) NSItemProvider * itemProvider;
+@property(copy) NSString * typeIdentifier;
 @property(readonly) long long itemProviderPreviewType;
 @property long long downsampleStatus;
+@property bool startedPayloadLoad;
+@property bool needsAnotherPreviewGeneration;
 
 + (bool)attachmentTypeRepresentsAnImage:(long long)arg1;
 + (bool)supportsSecureCoding;
 
+- (void)setNeedsAnotherPreviewGeneration:(bool)arg1;
+- (bool)needsAnotherPreviewGeneration;
+- (void)setStartedPayloadLoad:(bool)arg1;
+- (bool)startedPayloadLoad;
 - (long long)itemProviderPreviewType;
+- (void)setPayloadSourceFileURL:(id)arg1;
 - (void)setPayloadUpdateObserverWithBlock:(id)arg1;
 - (void)setPreviewUpdateObserverWithBlock:(id)arg1;
+- (id)payloadSourceFileURL;
 - (long long)downsampleStatus;
 - (long long)previewType;
 - (void)setDownsampleStatus:(long long)arg1;
@@ -54,6 +68,8 @@
 - (id)itemProvider;
 - (void)setItemProvider:(id)arg1;
 - (id)identifier;
+- (void)setTypeIdentifier:(id)arg1;
+- (id)typeIdentifier;
 - (id)init;
 - (void)setType:(long long)arg1;
 - (id)_uniqueIdentifier;

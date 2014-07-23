@@ -15,10 +15,10 @@
 
 - (id)parentRule;
 - (id)parentStyleSheet;
+- (id)cssText;
 - (void)setCssText:(id)arg1;
 - (unsigned short)type;
 - (void)finalize;
 - (void)dealloc;
-- (id)cssText;
 
 @end

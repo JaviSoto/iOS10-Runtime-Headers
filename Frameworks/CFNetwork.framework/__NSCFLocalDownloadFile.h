@@ -67,6 +67,7 @@
 @property(copy) id finishCompletion;
 
 
+- (id)path;
 - (id)ioChannel;
 - (bool)skipUnlink;
 - (void)setWriteIO:(id)arg1;
@@ -82,15 +83,14 @@
 - (void)setWorkQueue:(id)arg1;
 - (void)setFinished:(bool)arg1;
 - (bool)finished;
-- (void)truncate;
 - (void)finishOnQueue:(id)arg1 completion:(id)arg2;
 - (id)fileURL;
 - (void)captureFile:(id*)arg1 outStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { long long x_8_1_1; long long x_8_1_2; } x8; struct timespec { long long x_9_1_1; long long x_9_1_2; } x9; struct timespec { long long x_10_1_1; long long x_10_1_2; } x10; struct timespec { long long x_11_1_1; long long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg2;
 - (void)writeBytes:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
-- (id)path;
 - (id)initWithExistingFile:(id)arg1 expectedSize:(long long)arg2;
 - (void)setSkipUnlink:(bool)arg1;
 - (id)initTempFileWithDirectory:(id)arg1;
+- (void)truncate;
 - (id)initWithExistingUnopenableFile:(id)arg1 fileProvider:(id)arg2;
 - (void)setError:(int)arg1;
 - (int)error;

@@ -24,6 +24,10 @@
 @property(readonly) NSString * shortDescription;
 @property double expectedCoordinateUpdateInterval;
 @property double expectedHeadingUpdateInterval;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)keyPathsForValuesAffectingSubtitle;
 + (void)_setAnnotationClass:(Class)arg1;

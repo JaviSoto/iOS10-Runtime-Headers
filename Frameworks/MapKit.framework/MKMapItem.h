@@ -30,6 +30,7 @@
 @property(getter=_geoMapItem,readonly) <GEOMapItemPrivate> * geoMapItem;
 @property(readonly) NSString * yelpID;
 @property(readonly) bool isPlaceHolder;
+@property(getter=_hasSessionGUID,readonly) bool hasSessionGUID;
 @property(getter=_sessionGUID,readonly) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property(getter=_sequenceNumber,readonly) unsigned int sequenceNumber;
 @property(getter=_coordinate,readonly) struct { double x1; double x2; } coordinate;
@@ -74,6 +75,10 @@
 @property(getter=_reviewsAttribution,readonly) _MKMapItemReviewsAttribution * reviewsAttribution;
 @property(getter=_styleAttributes,readonly) GEOFeatureStyleAttributes * styleAttributes;
 @property(getter=_customIconID,readonly) unsigned long long customIconID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (unsigned long long)_placeCardIDForMapsDataString:(id)arg1;
 + (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
@@ -84,11 +89,11 @@
 + (id)plistCompatibleDictionaryFromStandardOptions:(id)arg1;
 + (id)standardOptionsFromPlistCompatibleDictionary:(id)arg1;
 + (id)mapItemWithDictionary:(id)arg1;
++ (id)mapItemForCurrentLocation;
 + (bool)openMapsWithItems:(id)arg1 launchOptions:(id)arg2;
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
 + (id)_itemWithGeoMapItem:(id)arg1;
-+ (id)mapItemForCurrentLocation;
 
 - (id)formattedNumberOfReviewsIncludingProvider;
 - (id)formattedNumberOfReviews;
@@ -123,9 +128,9 @@
 - (id)_mapsDataString;
 - (id)_geoAddress;
 - (id)_placeCardContact;
+- (id)placemark;
 - (struct { double x1; double x2; })_coordinate;
 - (id)initWithCLLocation:(id)arg1;
-- (id)placemark;
 - (bool)isCurrentLocation;
 - (void)setIsCurrentLocation:(bool)arg1;
 - (id)_geoMapItem;
@@ -141,6 +146,7 @@
 - (unsigned int)_openState;
 - (id)_flyover;
 - (bool)_hasFlyover;
+- (bool)_hasSessionGUID;
 - (bool)_hasResolvablePartialInformation;
 - (id)_placeDataAsData;
 - (id)_placeAsData;

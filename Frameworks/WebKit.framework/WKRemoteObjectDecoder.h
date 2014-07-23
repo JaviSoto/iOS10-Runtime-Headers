@@ -31,6 +31,7 @@
 - (bool)containsValueForKey:(id)arg1;
 - (bool)decodeBoolForKey:(id)arg1;
 - (double)decodeDoubleForKey:(id)arg1;
+- (long long)decodeIntegerForKey:(id)arg1;
 - (bool)requiresSecureCoding;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void).cxx_destruct;

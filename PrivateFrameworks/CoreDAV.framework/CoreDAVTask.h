@@ -84,6 +84,10 @@
 @property(readonly) NSURL * url;
 @property(retain) NSDictionary * requestProperties;
 @property unsigned long long totalBytesReceived;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;

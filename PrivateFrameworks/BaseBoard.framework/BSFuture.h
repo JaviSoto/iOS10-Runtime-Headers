@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSError, NSMutableArray, NSConditionLock;
+@class NSString, NSConditionLock, NSError, NSMutableArray;
 
 @interface BSFuture : NSObject <BSFuture> {
     NSConditionLock *_stateLock;
@@ -11,6 +11,10 @@
     NSMutableArray *_completionBlocks;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(getter=isFinished,readonly) bool finished;
 @property(getter=isCancelled,readonly) bool cancelled;
 

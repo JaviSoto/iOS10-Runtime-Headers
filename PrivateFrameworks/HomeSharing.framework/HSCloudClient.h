@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class HSConnectionConfiguration, NSMutableSet, NSXPCConnection, NSObject<OS_dispatch_queue>;
+@class NSString, HSConnectionConfiguration, NSMutableSet, NSXPCConnection, NSObject<OS_dispatch_queue>;
 
 @interface HSCloudClient : NSObject <HSCloudAvailability> {
     bool_active;
@@ -26,6 +26,10 @@
 }
 
 @property(copy) id updateInProgressChangedHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_serverUpdateInProgressDidChange;

@@ -21,10 +21,10 @@
 - (unsigned long long)formulaCount;
 - (void)setGeometryCoordSpace:(struct CsRect<int> { int x1[4]; })arg1;
 - (unsigned long long)pathCount;
-- (void)addPath:(id)arg1;
 - (struct CsRect<int> { int x1[4]; })geometryCoordSpace;
 - (id)textBodyRectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)textBodyRectCount;
+- (void)addPath:(id)arg1;
 - (id)pathAtIndex:(unsigned long long)arg1;
 - (id)init;
 - (void)dealloc;

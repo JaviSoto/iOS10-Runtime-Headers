@@ -23,7 +23,6 @@
 - (void)setSender:(id)arg1;
 - (id)init;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
-- (id)sender;
 - (id)failureResponse;
 - (long long)previousFailureCount;
 - (id)proposedCredential;
@@ -32,6 +31,7 @@
 - (id)error;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)sender;
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
 - (void)dealloc;
 

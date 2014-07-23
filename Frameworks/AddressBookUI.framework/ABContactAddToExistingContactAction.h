@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController, CNContact;
+@class ABPeoplePickerNavigationController, NSString, CNContact;
 
 @interface ABContactAddToExistingContactAction : ABContactAction <ABPeoplePickerNavigationControllerDelegate, ABNewPersonViewControllerDelegate> {
     CNContact *_chosenContact;
@@ -11,6 +11,10 @@
 
 @property(retain) CNContact * chosenContact;
 @property(retain) ABPeoplePickerNavigationController * peoplePicker;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;

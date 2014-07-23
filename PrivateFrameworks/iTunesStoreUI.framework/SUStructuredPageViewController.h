@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UILabel, SUStructuredPage;
+@class UILabel, SUStructuredPage, NSString;
 
 @interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate> {
     Class _dataSourceClass;
@@ -12,6 +12,10 @@
 
 @property(retain) Class dataSourceClass;
 @property(retain) SUStructuredPage * structuredPage;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (Class)dataSourceClass;

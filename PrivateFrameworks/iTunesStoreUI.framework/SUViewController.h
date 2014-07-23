@@ -42,6 +42,10 @@
 @property(getter=_isEnteringForeground,readonly) bool _enteringForeground;
 @property(getter=_pendingDialogs,readonly) NSArray * _pendingDialogs;
 @property(getter=_restoredContext,readonly) SUViewControllerContext * _restoredContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)showsLibraryButton;
@@ -97,9 +101,9 @@
 - (id)copyArchivableContext;
 - (long long)ITunesStoreUIBarStyle;
 - (void)setClientInterface:(id)arg1;
-- (void)setLoading:(bool)arg1;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
+- (void)setLoading:(bool)arg1;
 - (id)clientInterface;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)operationFinished:(id)arg1;

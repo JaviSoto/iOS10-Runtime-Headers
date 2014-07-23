@@ -57,6 +57,7 @@
 @property double yRotation;
 
 + (id)nodeWithFileNamed:(id)arg1;
++ (unsigned long long)hashDataWithBuffer:(char *)arg1 ofSize:(unsigned long long)arg2;
 + (id)node;
 
 - (void)insertChild:(id)arg1 atIndex:(long long)arg2;
@@ -145,6 +146,8 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (void)removeChild:(id)arg1;
 - (id)init;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)name;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

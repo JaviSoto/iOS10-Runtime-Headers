@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMutableDictionary;
+@class NSString, NSMutableDictionary;
 
 @interface BRCCloudFileProvider : BRCFileProvider <BRItemNotificationReceiving, BRCReachabilityDelegate> {
     NSMutableDictionary *_pipeByURL;
     NSMutableDictionary *_readersURLAndIDToDocID;
     NSMutableDictionary *_downloadTrackersByDocID;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_unregisterPresenterForItemAtURL:(id)arg1 key:(id)arg2;

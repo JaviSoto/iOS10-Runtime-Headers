@@ -31,6 +31,10 @@
 @property short generationType;
 @property bool isRegisteredForChanges;
 @property bool didRegisteredWithUserInterfaceContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * localizedTitle;
 @property(readonly) unsigned long long approximateCount;
 @property(readonly) unsigned long long assetsCount;

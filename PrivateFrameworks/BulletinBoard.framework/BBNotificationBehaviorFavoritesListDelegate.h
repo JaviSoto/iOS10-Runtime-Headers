@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface BBNotificationBehaviorFavoritesListDelegate : NSObject <ABPredicateDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -13,6 +15,11 @@
     id _handlerBlock;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithHandlerBlock:(id)arg1;

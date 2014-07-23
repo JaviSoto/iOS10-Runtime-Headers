@@ -11,6 +11,10 @@
 
 @property(retain) NSURL * previewItemURL;
 @property(retain) NSString * previewItemTitle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPreviewItemTitle:(id)arg1;

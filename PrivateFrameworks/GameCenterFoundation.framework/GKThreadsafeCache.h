@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSMutableDictionary, GKLinkedList;
+@class GKLinkedList, NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>;
 
 @interface GKThreadsafeCache : NSObject <GKCache> {
     NSMutableDictionary *_dictionary;
@@ -19,6 +19,10 @@
 @property unsigned long long maxCount;
 @property unsigned long long count;
 @property NSObject<OS_dispatch_queue> * syncQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSyncQueue:(id)arg1;

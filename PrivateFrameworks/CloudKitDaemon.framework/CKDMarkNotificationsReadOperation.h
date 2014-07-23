@@ -35,8 +35,8 @@
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)setNotificationIDs:(id)arg1;
 - (id)notificationIDs;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

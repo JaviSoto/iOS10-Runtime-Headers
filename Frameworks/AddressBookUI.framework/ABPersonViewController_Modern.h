@@ -68,6 +68,10 @@
 @property int highlightedProperty;
 @property int highlightedMultiValueIdentifier;
 @property bool highlightedImportant;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
@@ -132,6 +136,7 @@
 - (bool)shouldShowLinkedPeople;
 - (id)customMessageView;
 - (id)messageDetailFont;
+- (id)messageFont;
 - (id)messageDetail;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -180,7 +185,6 @@
 - (bool)allowsCancel;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (id)messageFont;
 - (void)setAttribution:(id)arg1;
 - (id)attribution;
 - (void)setMessage:(id)arg1;

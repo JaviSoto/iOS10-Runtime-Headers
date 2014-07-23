@@ -5,7 +5,6 @@
 @class NSDictionary;
 
 @interface UIInputViewSetNotificationInfo : NSObject  {
-    bool_changedByUserInteraction;
     bool_changedAccessoryOnly;
     double _duration;
     unsigned long long _options;
@@ -55,7 +54,6 @@
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endFrame;
 @property double duration;
 @property unsigned long long options;
-@property bool changedByUserInteraction;
 @property bool changedAccessoryOnly;
 @property struct CGPoint { double x1; double x2; } beginCenter;
 @property struct CGPoint { double x1; double x2; } endCenter;
@@ -72,7 +70,6 @@
 - (void)setOptions:(unsigned long long)arg1;
 - (double)duration;
 - (void)setChangedAccessoryOnly:(bool)arg1;
-- (void)setChangedByUserInteraction:(bool)arg1;
 - (void)populateWithAnimationStyle:(id)arg1;
 - (void)logGeometry;
 - (id)privateUserInfo;
@@ -80,7 +77,6 @@
 - (void)setEndCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setBeginCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)changedAccessoryOnly;
-- (bool)changedByUserInteraction;
 - (struct CGPoint { double x1; double x2; })endCenter;
 - (struct CGPoint { double x1; double x2; })beginCenter;
 - (void)populateEndInfoWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

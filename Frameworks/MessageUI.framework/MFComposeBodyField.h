@@ -36,7 +36,6 @@
 
 + (void)addAdditionalItemsToCalloutBar;
 
-- (void)setLoading:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (id)htmlString;
 - (void)htmlString:(id*)arg1 otherHtmlStringsAndAttachments:(id*)arg2 charsets:(id*)arg3;
@@ -95,6 +94,7 @@
 - (bool)shouldShowStandardButtons;
 - (void)changeQuoteLevel:(long long)arg1;
 - (void)setShouldShowStandardButtons:(bool)arg1;
+- (void)setLoading:(bool)arg1;
 - (bool)isDirty;
 - (bool)becomeFirstResponder;
 - (void)_webthread_webView:(id)arg1 tileDidDraw:(id)arg2;

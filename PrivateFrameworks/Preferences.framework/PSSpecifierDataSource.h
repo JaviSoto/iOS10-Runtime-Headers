@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableSet, NSMutableArray;
+@class NSString, NSMutableSet, NSMutableArray;
 
 @interface PSSpecifierDataSource : NSObject <PSSpecifierDataSource> {
     NSMutableSet *_observerRefs;
@@ -11,6 +11,10 @@
 }
 
 @property(readonly) NSMutableArray * specifiers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)loadSpecifiersFromPlist:(id)arg1 inBundle:(id)arg2 target:(id)arg3 stringsTable:(id)arg4;
 + (id)sharedInstance;

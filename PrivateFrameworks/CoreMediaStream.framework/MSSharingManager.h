@@ -22,6 +22,10 @@
 }
 
 @property MSMediaStreamDaemon * daemon;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <MSSharingManagerDelegate> * delegate;
 @property(readonly) NSString * personID;
 @property(retain) NSArray * shares;

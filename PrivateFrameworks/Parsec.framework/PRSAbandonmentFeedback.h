@@ -8,11 +8,14 @@
 
 @property(readonly) unsigned long long method;
 
++ (bool)supportsSecureCoding;
 
 - (id)initWithInput:(id)arg1 timestamp:(long long)arg2 method:(unsigned long long)arg3;
 - (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
 - (id)plist;
 - (id)type;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)method;
 
 @end

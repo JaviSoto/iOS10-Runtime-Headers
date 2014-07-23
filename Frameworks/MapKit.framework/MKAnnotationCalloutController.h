@@ -15,6 +15,8 @@
 @property unsigned long long mapDisplayStyle;
 
 
+- (void)setAnnotationView:(id)arg1;
+- (id)annotationView;
 - (void)setMapDisplayStyle:(unsigned long long)arg1;
 - (unsigned long long)mapDisplayStyle;
 - (void)hideCalloutAnimated:(bool)arg1;
@@ -35,8 +37,6 @@
 - (void)_updateCalloutAnimated:(bool)arg1;
 - (bool)isCalloutExpanded;
 - (bool)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setAnnotationView:(id)arg1;
-- (id)annotationView;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

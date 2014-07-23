@@ -12,6 +12,7 @@
     NSString *_silhouetteImageName;
     long long _monogrammerStyle;
     UIColor *_tintColor;
+    double _scale;
     bool_textKnockout;
     double _diameter;
     UIColor *_backgroundColor;
@@ -36,6 +37,7 @@
 - (double)innerBorderWidth;
 - (void)setTextKnockout:(bool)arg1;
 - (void)setDiameter:(double)arg1;
+- (void)monogramsForStark;
 - (void)monogramsWithTint:(id)arg1;
 - (void)monogramsAsFlatImages;
 - (id)initWithStyle:(long long)arg1 diameter:(double)arg2;

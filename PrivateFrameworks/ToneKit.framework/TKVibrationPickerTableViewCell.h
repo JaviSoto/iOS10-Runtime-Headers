@@ -21,6 +21,10 @@
 @property(getter=isChecked) bool checked;
 @property(setter=_setRemovableTextField:,retain) UITextField * _removableTextField;
 @property(getter=_isDisplayingRemovableTextField,readonly) bool _displayingRemovableTextField;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)regularTextFont;
@@ -33,9 +37,9 @@
 - (void)makeTextFieldResignFirstResponderIfNeeded;
 - (void)setRegularTextColor:(id)arg1;
 - (void)setRegularTextFont:(id)arg1;
+- (id)labelText;
 - (void)setPlaceholderText:(id)arg1;
 - (id)placeholderText;
-- (id)labelText;
 - (void)setLabelText:(id)arg1;
 - (bool)isEditable;
 - (void)setDelegate:(id)arg1;

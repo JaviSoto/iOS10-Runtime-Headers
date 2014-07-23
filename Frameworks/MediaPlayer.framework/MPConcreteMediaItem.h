@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary;
+@class MPConcreteMediaEntityPropertiesCache, NSString, MPMediaLibrary;
 
 @interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPMediaItemArrayPIDEncodableItem, MPCacheableConcreteMediaEntity> {
     MPMediaLibrary *_library;
@@ -10,6 +10,10 @@
     MPConcreteMediaEntityPropertiesCache *_propertiesCache;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
 
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;

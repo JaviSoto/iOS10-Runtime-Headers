@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIProgressView, PKCaptureSession, NSURLConnection, UINavigationBar, NSSet, <PKCodeAcquisitionDelegate>, NSMutableData, PKReticleView, UILabel;
+@class UIProgressView, PKCaptureSession, NSURLConnection, UINavigationBar, NSSet, NSString, <PKCodeAcquisitionDelegate>, NSMutableData, PKReticleView, UILabel;
 
 @interface PKCodeAcquisitionViewController : UIViewController <PKCaptureDelegate, NSURLConnectionDataDelegate, UIGestureRecognizerDelegate> {
     UINavigationBar *_navBar;
@@ -20,6 +20,10 @@
 }
 
 @property <PKCodeAcquisitionDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_handleDownloadFailureWithReason:(id)arg1 errorToDisplay:(id)arg2;

@@ -44,8 +44,8 @@
 - (id)commentsToSave;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

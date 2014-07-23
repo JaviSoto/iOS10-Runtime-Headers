@@ -17,6 +17,7 @@
 @property(readonly) SKUISectionViewElement * rightSectionElement;
 @property(readonly) bool usesInlineSplitContent;
 
++ (id)supportedFeatures;
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
@@ -26,7 +27,6 @@
 - (id)_sectionElementForIndex:(long long)arg1;
 - (id)rightSectionElement;
 - (id)leftSectionElement;
-- (id)features;
 - (void).cxx_destruct;
 - (long long)preferredDisplayMode;
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, <MPVideoOverlayDelegate>, MPAVController, <MPVideoControllerProtocol>, MPAVItem, NSMutableDictionary, MPDetailSlider;
+@class UINavigationBar, <MPVideoOverlayDelegate>, NSString, MPAVController, <MPVideoControllerProtocol>, MPAVItem, NSMutableDictionary, MPDetailSlider;
 
 @interface MPVideoOverlay : UIView <MPVideoOverlay, MPDetailSliderDelegate> {
     <MPVideoControllerProtocol> *_videoViewController;
@@ -30,6 +30,10 @@
 @property unsigned long long desiredParts;
 @property unsigned long long visibleParts;
 @property unsigned long long disabledParts;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;

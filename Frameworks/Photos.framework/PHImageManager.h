@@ -2,11 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Photos.framework/Photos
  */
 
+@class NSString;
+
 @interface PHImageManager : NSObject <PHPhotoLibraryChangeObserver> {
     unsigned long long _managerID;
 }
 
 @property(readonly) unsigned long long managerID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)useNewImageManager;
 + (struct CGSize { double x1; double x2; })sizeForPLFormat:(int)arg1 fallBackSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long*)arg3;
@@ -21,6 +27,7 @@
 - (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(id)arg4;
 - (void)cancelImageRequest:(int)arg1;
+- (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (struct CGImage { }*)newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 contentMode:(long long)arg4;
 - (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (id)requestAsynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id)arg5;

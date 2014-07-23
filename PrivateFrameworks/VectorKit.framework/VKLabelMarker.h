@@ -33,6 +33,10 @@
 @property(retain) UIView * leftCalloutAccessoryView;
 @property(retain) UIView * rightCalloutAccessoryView;
 @property(retain) UIView * detailCalloutAccessoryView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * subtitle;
 @property(copy) NSString * subtitle;
 

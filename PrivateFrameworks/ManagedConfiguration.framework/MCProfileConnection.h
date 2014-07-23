@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <MCInteractionDelegate>, NSDictionary, NSData, NSObject<OS_dispatch_queue>, NSMutableArray, NSXPCConnection;
+@class NSData, NSString, NSXPCConnection, NSDictionary, NSMutableArray, <MCInteractionDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface MCProfileConnection : NSObject <MCProfileConnectionXPCProtocol> {
     struct __CFBag { } *_observers;
@@ -36,6 +36,10 @@
     NSXPCConnection *_xpcConnection;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSXPCConnection * xpcConnection;
 @property(readonly) NSXPCConnection * publicXPCConnection;
 
@@ -45,7 +49,10 @@
 - (bool)isCloudSyncAllowed:(id)arg1;
 - (void)lockDevice;
 - (void)recomputeUserComplianceWarning;
+- (id)managedEmailDomains;
 - (bool)isAutomaticAppUpdatesModificationAllowed;
+- (bool)isUninstalledAppNearMeSuggestionsAllowed;
+- (bool)isInstalledAppNearMeSuggestionsAllowed;
 - (void)setUserBookmarks:(id)arg1;
 - (id)defaultParametersForUnionSetting:(id)arg1;
 - (id)defaultParametersForIntersectionSetting:(id)arg1;
@@ -53,7 +60,6 @@
 - (bool)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (bool)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
 - (int)unlockScreenType;
-- (id)managedEmailDomains;
 - (id)effectiveWhitelistedAppBundleIDs;
 - (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
@@ -128,7 +134,9 @@
 - (bool)isSpotlightInternetResultsAllowed;
 - (id)appsRestrictedFromCloudSync;
 - (bool)isFeatureO1Allowed;
+- (bool)isFeatureS2Allowed;
 - (bool)isFeatureS1Allowed;
+- (bool)isPodcastsAllowed;
 - (bool)hasAppAnalyticsAllowedBeenSet;
 - (bool)isAppAnalyticsAllowed;
 - (bool)hasDiagnosticSubmissionAllowedBeenSet;

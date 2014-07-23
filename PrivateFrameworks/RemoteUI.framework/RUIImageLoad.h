@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSURL, NSURLConnection, NSMutableData;
+@class NSString, NSURL, NSMutableData, NSURLConnection;
 
 @interface RUIImageLoad : NSObject <NSURLConnectionDelegate> {
     NSURL *_URL;
@@ -10,6 +10,11 @@
     NSMutableData *_imageData;
     bool_invalidResponse;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)receivedValidResponse:(id)arg1;

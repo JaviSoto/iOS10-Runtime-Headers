@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIButton, UITextField;
+@class UIButton, UITextField, NSString;
 
 @interface MFComposeSubjectView : MFComposeHeaderView <UITextFieldDelegate> {
     unsigned int _delegateRespondsToTextChange : 1;
@@ -14,6 +14,10 @@
 
 @property(readonly) UITextField * textField;
 @property(readonly) UIButton * notifyButton;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)notifyButton;

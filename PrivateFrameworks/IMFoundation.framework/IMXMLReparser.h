@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableString, IMXMLReparserContext, NSError, NSXMLParser;
+@class NSString, NSMutableString, IMXMLReparserContext, NSError, NSXMLParser;
 
 @interface IMXMLReparser : NSObject <NSXMLParserDelegate> {
     NSXMLParser *_parser;
@@ -11,6 +11,11 @@
     NSError *_error;
     unsigned long long _depth;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)parseWithContext:(id)arg1;

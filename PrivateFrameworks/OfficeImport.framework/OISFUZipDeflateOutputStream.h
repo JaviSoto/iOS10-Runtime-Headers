@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <SFUOutputStream>;
+@class <SFUOutputStream>, NSString;
 
 @interface OISFUZipDeflateOutputStream : NSObject <SFUOutputStream> {
     <SFUOutputStream> *mOutputStream;
@@ -29,6 +29,11 @@
     } mDeflateStream;
     char *mOutBuffer;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long long)arg2;

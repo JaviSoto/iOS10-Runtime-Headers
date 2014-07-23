@@ -27,8 +27,8 @@
 - (bool)hasWifidBootTimeDiff;
 - (void)setHasWifidBootTimeDiff:(bool)arg1;
 - (void)setWifidBootTimeDiff:(double)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

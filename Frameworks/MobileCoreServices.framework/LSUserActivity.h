@@ -19,6 +19,7 @@
     bool_sendToServerPending;
     bool_inWillSaveCallback;
     bool_supportsContinuationStreams;
+    bool_forceImmediateSendToServer;
     bool_canCreateStreams;
     NSString *_typeIdentifier;
     NSUUID *_uniqueIdentifier;
@@ -35,12 +36,17 @@
 @property(getter=frameworkPayload,setter=setFrameworkPayload:,copy) NSDictionary * frameworkPayloadDictionary;
 @property(copy) NSDictionary * frameworkPayload;
 @property(copy) NSURL * webPageURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * typeIdentifier;
 @property(copy) NSString * title;
 @property(copy) NSDictionary * userInfo;
 @property(copy) NSURL * webpageURL;
 @property bool needsSave;
 @property bool supportsContinuationStreams;
+@property bool forceImmediateSendToServer;
 @property <LSUserActivityDelegate> * delegate;
 @property(copy) NSUUID * uniqueIdentifier;
 @property(readonly) unsigned long long suggestedActionType;
@@ -106,9 +112,11 @@
 - (id)webpageURL;
 - (void)sendUserActivityInfoToLSUserActivityd:(bool)arg1 onAsyncQueue:(bool)arg2;
 - (void)scheduleSendUserActivityInfoToLSUserActivityd;
-- (id)manager;
+- (bool)forceImmediateSendToServer;
+- (void)setForceImmediateSendToServer:(bool)arg1;
 - (unsigned long long)suggestedActionType;
 - (void)setNeedsSave:(bool)arg1;
+- (id)manager;
 - (void)tellServerAboutNewLSUserActivity;
 - (id)initWithTypeIdentifier:(id)arg1 suggestedActionType:(unsigned long long)arg2 options:(id)arg3;
 - (id)typeIdentifier;

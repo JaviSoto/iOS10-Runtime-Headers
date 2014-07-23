@@ -121,7 +121,6 @@
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
-- (union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })projectionMatrix;
 - (void)setInvModelviewMatrixLoc:(int)arg1;
 - (int)invModelviewMatrixLoc;
 - (void)setNormalMatrixLoc:(int)arg1;
@@ -144,6 +143,7 @@
 - (union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })normalMatrix;
 - (void)setShaderBindings;
 - (void)dirtyAllUniforms;
+- (union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })projectionMatrix;
 - (void)bind;
 - (id)init;
 - (void)dealloc;

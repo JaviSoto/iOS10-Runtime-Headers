@@ -19,6 +19,7 @@
     bool_prePrintDataDetectionPending;
     bool_showRemoteImages;
     bool_hasUnloadedRemoteImages;
+    bool_isReformatting;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */

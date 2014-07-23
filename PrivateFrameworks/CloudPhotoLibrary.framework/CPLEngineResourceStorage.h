@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSURL, NSMutableSet, CPLEngineFileStorage;
+@class NSString, CPLPlatformObject, NSURL, NSMutableSet, CPLEngineFileStorage;
 
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
     NSMutableSet *_identitiesToCommit;
@@ -14,6 +14,10 @@
 }
 
 @property(readonly) CPLEngineFileStorage * fileStorage;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 

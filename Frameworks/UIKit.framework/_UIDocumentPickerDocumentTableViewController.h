@@ -2,19 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIDocumentPickerViewServiceViewController, NSURL, _UIDocumentPickerContainerModel;
+@class _UIDocumentPickerSortOrderView, _UIDocumentPickerContainerModel, NSURL, _UIDocumentPickerViewServiceViewController;
 
 @interface _UIDocumentPickerDocumentTableViewController : UITableViewController  {
+    bool_shouldHideSortBar;
     _UIDocumentPickerViewServiceViewController *_serviceViewController;
     NSURL *_observedURL;
     _UIDocumentPickerContainerModel *_model;
     id _monitoringToken;
+    _UIDocumentPickerSortOrderView *_sortView;
 }
 
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
 @property(retain) NSURL * observedURL;
 @property(retain) _UIDocumentPickerContainerModel * model;
 @property(retain) id monitoringToken;
+@property bool shouldHideSortBar;
+@property(retain) _UIDocumentPickerSortOrderView * sortView;
 
 
 - (id)model;
@@ -24,16 +28,21 @@
 - (id)observedURL;
 - (void)setMonitoringToken:(id)arg1;
 - (id)monitoringToken;
+- (id)sortView;
+- (bool)shouldHideSortBar;
 - (void)setMonitoring:(bool)arg1;
 - (void)_dynamicTypeSizeChanged:(id)arg1;
+- (void)setSortView:(id)arg1;
 - (void)_sortViewChanged:(id)arg1;
+- (void)setShouldHideSortBar:(bool)arg1;
 - (id)initWithModel:(id)arg1;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)setModel:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (id)serviceViewController;
-- (void)viewDidAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

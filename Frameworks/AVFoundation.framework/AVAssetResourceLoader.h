@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetResourceLoaderInternal, <AVAssetResourceLoaderDelegate>, NSObject<OS_dispatch_queue>;
+@class AVAssetResourceLoaderInternal, NSString, <AVAssetResourceLoaderDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetResourceLoader : NSObject <NSURLAuthenticationChallengeSender> {
     AVAssetResourceLoaderInternal *_resourceLoader;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <AVAssetResourceLoaderDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 
@@ -27,14 +31,15 @@
 - (id)initWithAsset:(id)arg1;
 - (void)cancelLoading;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
+- (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)delegate;
 - (id)delegateQueue;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)finalize;
 - (void)dealloc;
 

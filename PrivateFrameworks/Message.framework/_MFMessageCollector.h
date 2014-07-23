@@ -24,9 +24,9 @@
 - (id)transmogrifier;
 - (void)setTransmogrifier:(id)arg1;
 - (id)copyMessages;
+- (id)messages;
 - (void)newMessagesAvailable:(id)arg1;
 - (bool)shouldCancel;
-- (id)messages;
 - (id)init;
 - (void)dealloc;
 

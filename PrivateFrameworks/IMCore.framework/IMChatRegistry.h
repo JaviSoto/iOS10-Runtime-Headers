@@ -65,7 +65,9 @@
 - (void)_clearMarkAsReadTimerIfNecessary;
 - (void)_startMarkAsReadTimerIfNecessary;
 - (id)_chatsWithMessage:(id)arg1;
-- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 message:(id)arg3 allowCreate:(bool)arg4 createdChat:(bool*)arg5 outGUID:(id*)arg6;
+- (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 allowCreate:(bool)arg3 createdChat:(bool*)arg4 outGUID:(id*)arg5;
+- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(bool)arg2;
+- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(bool)arg2 groupID:(id)arg3;
 - (id)existingChatWithGroupID:(id)arg1;
 - (id)_lookupExistingChatWithIMHandle:(id)arg1;
 - (unsigned long long)numberOfExistingChats;
@@ -73,6 +75,7 @@
 - (id)chatForURL:(id)arg1 outMessageText:(id*)arg2 outRecipientIDs:(id*)arg3 outService:(id*)arg4 outMessageGUID:(id*)arg5;
 - (id)messagesURLWithChat:(id)arg1 orHandles:(id)arg2 withMessageText:(id)arg3;
 - (id)chatForRoom:(id)arg1 onAccount:(id)arg2;
+- (id)chatForIMHandles:(id)arg1 chatName:(id)arg2;
 - (id)chatForIMHandles:(id)arg1;
 - (id)chatForIMHandle:(id)arg1;
 - (void)_unregisterChat:(id)arg1;
@@ -81,9 +84,7 @@
 - (id)_chatInstanceForGUID:(id)arg1;
 - (void)__blockUntilQueriesComplete;
 - (id)_existingChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
-- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(bool)arg2 groupID:(id)arg3;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2 allowRetargeting:(bool)arg3;
-- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(bool)arg2;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(bool)arg2;
 - (id)_existingChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 service:(id)arg3;
 - (id)_createdChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
@@ -91,13 +92,12 @@
 - (id)existingChatWithChatIdentifier:(id)arg1;
 - (id)_createdChatForRoom:(id)arg1 onAccount:(id)arg2;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2;
-- (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2 groupID:(id)arg3;
+- (id)existingChatForIMHandles:(id)arg1;
+- (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(bool)arg5;
+- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(bool)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(bool)arg5;
+- (id)chatForIMHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(bool)arg3;
 - (void)_registerChat:(id)arg1 isIncoming:(bool)arg2 guid:(id)arg3;
 - (id)_createdChatForIMHandle:(id)arg1;
-- (id)newChatForIMHandles:(id)arg1;
-- (id)existingChatForIMHandles:(id)arg1;
-- (id)chatForIMHandles:(id)arg1 chatName:(id)arg2;
-- (id)newChatForIMHandle:(id)arg1;
 - (id)existingChatForIMHandle:(id)arg1;
 - (id)existingChatWithGUID:(id)arg1;
 - (void)_unregisterChatWithGUID:(id)arg1;

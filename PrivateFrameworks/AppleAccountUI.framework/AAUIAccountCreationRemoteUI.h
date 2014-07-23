@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class AASetupAssistantService, UIAlertView, UINavigationController, AAAutoAccountVerifier, RUILoader, NSMutableArray, <AAUIAccountCreationDelegate>;
+@class AASetupAssistantService, UIAlertView, NSString, UINavigationController, AAAutoAccountVerifier, RUILoader, NSMutableArray, <AAUIAccountCreationDelegate>;
 
 @interface AAUIAccountCreationRemoteUI : NSObject <RUIObjectModelDelegate> {
     bool_isModal;
@@ -19,6 +19,10 @@
 }
 
 @property <AAUIAccountCreationDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;

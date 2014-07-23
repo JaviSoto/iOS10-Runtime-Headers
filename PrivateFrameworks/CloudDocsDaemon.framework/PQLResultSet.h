@@ -65,10 +65,8 @@
      /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@BB@@QQ@}24@0:8#16 */
 
 - (unsigned long long)unsignedLongAtIndex:(int)arg1;
-- (unsigned int)unsignedIntAtIndex:(int)arg1;
 - (id)generationIDAtIndex:(int)arg1;
 - (unsigned long long)rowNumber;
-- (id)numberAtIndex:(int)arg1;
 - (id)dataAtIndex:(int)arg1 noCopy:(bool)arg2;
 - (bool)boolAtIndex:(int)arg1;
 - (id)itemIDAtIndex:(int)arg1;
@@ -79,6 +77,8 @@
 - (id)archivedObjectOfClass:(Class)arg1 atIndex:(int)arg2;
 - (id)archivedObjectOfClasses:(id)arg1 atIndex:(int)arg2;
 - (unsigned long long)unsignedLongLongAtIndex:(int)arg1;
+- (id)numberAtIndex:(int)arg1;
+- (unsigned int)unsignedIntAtIndex:(int)arg1;
 - (struct sqlite3_stmt { }*)stmt;
 - (id)objectOfClass:(Class)arg1;
 - (BOOL)charAtIndex:(int)arg1;

@@ -52,6 +52,10 @@
     double _preferredMaxLayoutWidth;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 @property(readonly) double _capOffsetFromBoundsTop;
@@ -85,6 +89,10 @@
 @property long long lineSpacing;
 @property(getter=_synthesizedAttributedText,setter=_setSynthesizedAttributedText:,retain) NSAttributedString * _synthesizedAttributedText;
 @property(setter=_setTextColorFollowsTintColor:) bool _textColorFollowsTintColor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_insetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forAttributedString:(id)arg2 inView:(id)arg3;
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_insetsForString:(id)arg1 withFont:(id)arg2 inView:(id)arg3;
@@ -233,11 +241,11 @@
 - (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
 - (id)attributedText;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (void)_setFont:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (id)_synthesizedAttributedText;
 - (void)_accessibilityButtonShapesParametersDidChange;
+- (void)setHighlighted:(bool)arg1;
 - (void)_setLineBreakMode:(long long)arg1;
 - (void)updateConstraints;
 - (id)_scriptingInfo;

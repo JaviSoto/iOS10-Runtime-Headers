@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIViewControllerTransitionContext, <UIInputViewAnimationHost>, UIView, <UIViewControllerContextTransitioning>;
+@class _UIViewControllerTransitionContext, NSString, <UIInputViewAnimationHost>, UIView, <UIViewControllerContextTransitioning>;
 
 @interface UIInputViewAnimationControllerViewControllerContext : NSObject <UIViewControllerKeyboardContextTransitioning> {
     _UIViewControllerTransitionContext *_context;
@@ -31,6 +31,10 @@
     } _toRect;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <UIViewControllerContextTransitioning> * mainContext;
 @property(readonly) UIView * fromKeyboard;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } fromKeyboardFrame;

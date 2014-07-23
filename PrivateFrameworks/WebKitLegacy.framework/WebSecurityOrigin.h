@@ -31,7 +31,6 @@
 - (id)initWithURL:(id)arg1;
 - (id)stringValue;
 - (bool)isEqual:(id)arg1;
-- (id)domain;
 - (void)finalize;
 - (void)dealloc;
 - (id)applicationCacheQuotaManager;

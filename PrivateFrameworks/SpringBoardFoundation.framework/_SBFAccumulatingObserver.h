@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSError, NSMutableArray, NSObject<OS_dispatch_semaphore>;
+@class NSString, NSError, NSMutableArray, NSObject<OS_dispatch_semaphore>;
 
 @interface _SBFAccumulatingObserver : NSObject <SBFObserver> {
     NSMutableArray *_results;
@@ -10,6 +10,11 @@
     bool_didComplete;
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)waitForResults:(id*)arg1;

@@ -12,12 +12,20 @@
   /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
 
+    int _requestID;
+    int _errorCode;
 }
 
 @property(copy,readonly) id completionBlock;
+@property(readonly) int requestID;
+@property int errorCode;
 
++ (id)deviceControlRequestWithCompletionBlock:(id)arg1;
 
-- (id)initWithCompletionBlock:(id)arg1;
+- (id)_initWithCompletionBlock:(id)arg1;
+- (int)requestID;
+- (void)setErrorCode:(int)arg1;
+- (int)errorCode;
 - (void)dealloc;
 - (id)completionBlock;
 

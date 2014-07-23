@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UINavigationItem, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSURL, UINavigationController, RUIPage, RUILoader, NSMutableArray, UIViewController, UIActivityIndicatorView, UIBarButtonItem;
+@class UINavigationItem, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSURL, UINavigationController, NSString, RUIPage, RUILoader, NSMutableArray, UIViewController, UIActivityIndicatorView, UIBarButtonItem;
 
 @interface AAUICredentialRecoveryController : NSObject <RUIObjectModelDelegate, RUILoaderDelegate> {
     NSURL *_remoteUIURL;
@@ -21,6 +21,10 @@
 }
 
 @property NSObject<AAUICredentialRecoveryPresentationDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;

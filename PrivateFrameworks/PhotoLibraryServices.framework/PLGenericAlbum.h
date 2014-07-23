@@ -14,6 +14,8 @@
 @property(retain,readonly) PLPhotoLibrary * photoLibrary;
 @property short trashedState;
 @property(retain) NSDate * trashedDate;
+@property(retain) NSDate * startDate;
+@property(retain) NSDate * endDate;
 @property(retain) NSString * uuid;
 @property int kindValue;
 @property(retain) NSString * title;
@@ -30,6 +32,10 @@
 @property(readonly) bool shouldDeleteWhenEmpty;
 @property bool isRegisteredForChanges;
 @property bool didRegisteredWithUserInterfaceContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * localizedTitle;
 @property(retain,readonly) NSOrderedSet * assets;
 @property(readonly) unsigned long long approximateCount;
@@ -43,8 +49,6 @@
 @property(readonly) bool canShowComments;
 @property(readonly) bool canShowAvalancheStacks;
 @property(copy,readonly) NSArray * localizedLocationNames;
-@property(retain,readonly) NSDate * startDate;
-@property(retain,readonly) NSDate * endDate;
 @property(retain,readonly) NSNumber * kind;
 @property(retain,readonly) NSMutableOrderedSet * mutableAssets;
 @property bool hasUnseenContentBoolValue;
@@ -93,8 +97,9 @@
 + (id)rootFolderInLibrary:(id)arg1;
 + (id)uuidFromGroupURL:(id)arg1;
 + (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
-+ (id)insertNewEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)_insertNewAlbumWithKind:(int)arg1 title:(id)arg2 lastInterestingDate:(id)arg3 intoLibrary:(id)arg4;
++ (id)includeUnpushedParentsForAlbums:(id)arg1 limit:(unsigned long long)arg2;
++ (id)_unpushedParentsOfAlbums:(id)arg1;
 + (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumsWithCloudGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)wallpaperAlbumInLibrary:(id)arg1;
@@ -109,7 +114,6 @@
 + (id)albumsWithCloudGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumsToUploadInitiallyInLibrary:(id)arg1 limit:(unsigned long long)arg2;
 + (id)albumsForStreamID:(id)arg1 inLibrary:(id)arg2;
-+ (id)insertNewEventIntoLibrary:(id)arg1;
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
 + (id)syncProgressAlbumInLibrary:(id)arg1;
@@ -130,7 +134,6 @@
 
 - (id)_itemIdentifier;
 - (id)assetsByObjectIDAtIndexes:(id)arg1;
-- (bool)isRootFolder;
 - (id)childManagedObject;
 - (id)secondaryOrderSortKey;
 - (bool)isSpecial;
@@ -141,6 +144,7 @@
 - (void)enumerateDerivedAlbums:(id)arg1;
 - (void)setOrderValue:(long long)arg1;
 - (void)setIsRegisteredForChanges:(bool)arg1;
+- (bool)isRootFolder;
 - (void)_applyTrashedState:(short)arg1 date:(bool)arg2 :(id)arg3;
 - (void)setIsSpecial:(bool)arg1;
 - (void)unregisterAllDerivedAlbums;

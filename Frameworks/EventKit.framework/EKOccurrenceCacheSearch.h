@@ -21,6 +21,11 @@
     bool_canceled;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)searchWithCalendars:(id)arg1 searchTerm:(id)arg2 store:(id)arg3 callback:(id)arg4;
 
 - (id)initWithCalendars:(id)arg1 searchTerm:(id)arg2 store:(id)arg3 callback:(id)arg4;

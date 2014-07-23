@@ -58,6 +58,7 @@
 - (void)setHasAltitude:(bool)arg1;
 - (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setCourse:(double)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount, MKMapView, NSArray, NSObject<SLPlaceDataSource>, UISearchDisplayController, UISearchBar, NSBundle, UITableView, SLPlace, SLSheetPlaceSearchController, NSObject<SLSheetPlaceViewControllerDelegate>;
+@class UISearchDisplayController, UISearchBar, NSBundle, ACAccount, UITableView, NSString, SLPlace, SLSheetPlaceSearchController, NSObject<SLSheetPlaceViewControllerDelegate>, NSArray, MKMapView, NSObject<SLPlaceDataSource>;
 
 @interface SLSheetPlaceViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, MKMapViewDelegate, SLPlaceDataSourceDelegate> {
     NSArray *_places;
@@ -27,6 +27,10 @@
 @property(retain) ACAccount * account;
 @property(retain) NSObject<SLPlaceDataSource> * placeDataSource;
 @property(retain) NSArray * places;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setPlaceDataSource:(id)arg1;
@@ -53,8 +57,8 @@
 - (void)_centerMapWithSelectedPlace:(id)arg1;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
-- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (void)cancelButtonTapped:(id)arg1;
+- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (id)account;
 - (void)setAccount:(id)arg1;
 - (void)dealloc;

@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+@class NSString;
+
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
     struct CGSize { 
         double width; 
@@ -14,6 +16,10 @@
     double _contentScale;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct CGSize { double x1; double x2; } size;
 @property(readonly) double contentScale;
 @property(readonly) struct CGSize { double x1; double x2; } sizeInPixels;

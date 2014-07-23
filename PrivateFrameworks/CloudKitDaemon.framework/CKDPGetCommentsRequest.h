@@ -41,16 +41,17 @@
 - (bool)hasIdentifier;
 - (bool)hasPath;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
+- (id)path;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

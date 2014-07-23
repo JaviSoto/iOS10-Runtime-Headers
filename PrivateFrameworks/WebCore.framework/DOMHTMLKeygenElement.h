@@ -24,7 +24,6 @@
 - (void)setKeytype:(id)arg1;
 - (id)keytype;
 - (void)setChallenge:(id)arg1;
-- (id)challenge;
 - (void)setCustomValidity:(id)arg1;
 - (bool)checkValidity;
 - (id)labels;
@@ -36,6 +35,7 @@
 - (void)setDisabled:(bool)arg1;
 - (id)name;
 - (id)type;
+- (id)challenge;
 - (bool)disabled;
 - (id)form;
 

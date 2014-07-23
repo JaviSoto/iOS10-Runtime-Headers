@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSArray, UIAlertView;
+@class NSArray, UIAlertView, NSString;
 
 @interface SBAlertItem : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertSheet;
@@ -26,6 +26,10 @@
 @property(retain) NSArray * allowedBundleIDs;
 @property bool allowInCar;
 @property bool allowMessageInCar;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)activateAlertItem:(id)arg1;
 + (id)_alertItemsController;

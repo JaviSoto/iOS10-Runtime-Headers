@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <MDRenderTarget>, VKMemoryObserver, <MDMapControllerDelegate>, VKScene, NSArray, VKDispatch, VKLayoutContext, NSMutableArray, VKWorld, VKCamera;
+@class <MDRenderTarget>, VKMemoryObserver, <MDMapControllerDelegate>, VKScene, NSArray, NSString, VKDispatch, VKLayoutContext, NSMutableArray, VKWorld, VKCamera;
 
 @interface VKScreenCanvas : NSObject <VKWorldDelegate, VKAnimationRunner, VKCameraControllerDelegate, VKCameraDelegate> {
     VKDispatch *_dispatch;
@@ -79,6 +79,10 @@
 @property bool rendersInBackground;
 @property(getter=isGesturing) bool gesturing;
 @property bool iconsShouldAlignToPixels;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cameraControllers;

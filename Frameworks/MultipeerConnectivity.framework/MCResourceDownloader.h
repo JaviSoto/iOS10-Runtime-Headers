@@ -27,6 +27,10 @@
 @property MCSession * session;
 @property(copy) NSString * resourceName;
 @property(retain) MCPeerID * peerID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)urlSession;

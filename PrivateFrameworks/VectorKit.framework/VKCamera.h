@@ -57,6 +57,9 @@
     } _projectionMatrixUnscaled;
     struct { 
         double v[4][4]; 
+    } _projectionMatrixUnscaledWithoutOffset;
+    struct { 
+        double v[4][4]; 
     } _viewProjectionMatrixUnscaled;
     struct { 
         double v[4][4]; 
@@ -126,6 +129,7 @@
 @property(readonly) const struct { double x1[4][4]; }* viewMatrix;
 @property(readonly) const struct { double x1[4][4]; }* viewProjectionMatrixUnscaled;
 @property(readonly) const struct { double x1[4][4]; }* projectionMatrixUnscaled;
+@property(readonly) const struct { double x1[4][4]; }* projectionMatrixUnscaledWithoutOffset;
 @property(readonly) const struct { double x1[4][4]; }* viewMatrixUnscaled;
 @property(readonly) const struct { double x1[4][4]; }* worldMatrix;
 @property(readonly) VKViewVolume * viewVolume;
@@ -190,6 +194,7 @@
 - (id)viewVolume;
 - (const struct { double x1[4][4]; }*)worldMatrix;
 - (const struct { double x1[4][4]; }*)projectionMatrixUnscaled;
+- (const struct { double x1[4][4]; }*)projectionMatrixUnscaledWithoutOffset;
 - (const struct { double x1[4][4]; }*)viewProjectionMatrixUnscaled;
 - (const struct { double x1[4][4]; }*)viewMatrixUnscaled;
 - (const struct { double x1[4][4]; }*)viewMatrix;
@@ -211,10 +216,10 @@
 - (void)adjustClipPlanes;
 - (id)annotationCoordinateTest;
 - (id)annotationRectTest;
+- (struct Matrix<double, 3, 1> { double x1[3]; })forwardVector;
 - (bool)isWorldSpaceRectVisible:(const struct { double x1; double x2; double x3; double x4; }*)arg1;
 - (struct VKCameraState { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; })cameraState;
 - (double)widthOfViewAtDepth:(double)arg1;
-- (struct Matrix<double, 3, 1> { double x1[3]; })forwardVector;
 - (const struct { double x1[4][4]; }*)orientation;
 - (void)updateIfNeeded;
 - (void)setNeedsUpdate;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICoordinateSpace>, _UIScreenTransparentHitTestWindow, FBSDisplay, NSDictionary, UIScreen, UIScreenMode, NSMutableArray, _UIScreenFixedCoordinateSpace, UITraitCollection, UISoftwareDimmingWindow, NSArray, UIWindow;
+@class <UICoordinateSpace>, _UIScreenTransparentHitTestWindow, FBSDisplay, NSDictionary, UIScreen, UIScreenMode, NSMutableArray, NSString, _UIScreenFixedCoordinateSpace, UITraitCollection, UISoftwareDimmingWindow, NSArray, UIWindow;
 
 @interface UIScreen : NSObject <UICoordinateSpace, _UITraitEnvironmentInternal, UITraitEnvironment> {
     id _display;
@@ -135,6 +135,10 @@
 @property(getter=_defaultTraitCollection,setter=_setDefaultTraitCollection:) UITraitCollection * defaultTraitCollection;
 @property(getter=_overrideTraitCollection,setter=_setOverrideTraitCollection:) UITraitCollection * overrideTraitCollection;
 @property(getter=_lastNotifiedTraitCollection,setter=_setLastNotifiedTraitCollection:,retain) UITraitCollection * lastNotifiedTraitCollection;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) UITraitCollection * traitCollection;
 
 + (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toView:(id)arg2;
@@ -143,6 +147,8 @@
 + (id)mainScreen;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toView:(id)arg2;
 + (void)initialize;
++ (void)__connectDisplayIds:(id)arg1;
++ (id)__connectedDisplayIds;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1;
 + (id)_screenWithIntegerDisplayID:(unsigned int)arg1;
@@ -150,6 +156,7 @@
 + (void)_videoOutSettingsChanged;
 + (bool)_shouldDisableJail;
 + (void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(bool)arg1;
++ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2;
 + (id)_screenWithDisplayID:(id)arg1;
 + (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForScreenOriginRotation:(double)arg1;
 + (id)_screenWithDisplayName:(id)arg1;
@@ -162,7 +169,7 @@
 + (id)_workspaceCapableScreens;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1 forSceneDestruction:(id)arg2;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2 andPost:(bool)arg3;
-+ (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2;
++ (id)__createPlugInScreenForDisplay:(id)arg1;
 + (id)sbs_screenTypes;
 + (id)sbs_snapshotImagePathComponent:(long long)arg1;
 + (id)sbs_launchImageInfoPlistKeyModifier:(long long)arg1;
@@ -294,6 +301,7 @@
 - (double)_touchScaleFactor;
 - (bool)_areBoundsJailed;
 - (id)traitCollection;
+- (void)_setMainSceneReferenceBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_enumerateWindowsWithBlock:(id)arg1;
 - (void)_setScale:(double)arg1;
 - (void)_updateUserInterfaceIdiom;
@@ -301,13 +309,12 @@
 - (unsigned int)_integerDisplayID;
 - (id)_defaultTraitCollectionForInterfaceOrientation:(long long)arg1;
 - (void)_setInterfaceOrientation:(long long)arg1;
-- (void)_setMainSceneReferenceBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)fbsDisplay;
 - (long long)_userInterfaceIdiom;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForInterfaceOrientation:(long long)arg1;
+- (id)_mapkit_display;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_gkBounds;
 - (double)_gkScale;
-- (id)_mapkit_display;
 - (id)sbs_snapshotImagePathComponent;
 - (id)sbs_launchImageInfoPlistKeyModifier;
 - (bool)sbs_isMainScreen;

@@ -49,6 +49,10 @@
 @property bool hasPreheated;
 @property bool dictationStartedFromGesture;
 @property(retain) UIKeyboardInputMode * inputModeThatInvokedDictation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)stringForState:(int)arg1;
 + (bool)isRunning;

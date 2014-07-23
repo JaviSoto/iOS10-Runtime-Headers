@@ -79,6 +79,7 @@
 - (id)createdAt;
 - (id)recipient;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setInvitationMessage:(id)arg1;
 - (id)invitationMessage;
 - (void)setSignature:(id)arg1;

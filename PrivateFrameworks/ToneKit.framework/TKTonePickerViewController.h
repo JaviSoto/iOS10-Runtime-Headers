@@ -59,6 +59,10 @@
 @property(setter=_setStoredMusicPlayer:,retain) MPMusicPlayerController * _storedMusicPlayer;
 @property(readonly) MPMusicPlayerController * _musicPlayer;
 @property(setter=_setVibrationPickerViewController:,retain) TKVibrationPickerViewController * _vibrationPickerViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)removeMediaItems:(id)arg1;

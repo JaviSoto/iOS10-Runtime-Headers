@@ -11,7 +11,7 @@
 @property(retain) UIButton * button;
 
 
-- (id)button;
 - (void)setButton:(id)arg1;
+- (id)button;
 
 @end

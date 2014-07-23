@@ -15,6 +15,7 @@
 - (id)certificate;
 - (void)setCertificate:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)hasCertificate;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

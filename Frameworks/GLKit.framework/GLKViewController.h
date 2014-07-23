@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class UIScreen, CADisplayLink, GLKDisplayLinkMessenger, <GLKViewControllerDelegate>;
+@class UIScreen, NSString, CADisplayLink, GLKDisplayLinkMessenger, <GLKViewControllerDelegate>;
 
 @interface GLKViewController : UIViewController <NSCoding, GLKViewDelegate> {
     bool_displayLinkPaused;
@@ -65,6 +65,10 @@
 @property int (* updateIMP;
 @property long long screenFramesPerSecond;
 @property long long frameInterval;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)preferredFramesPerSecond;

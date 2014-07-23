@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSURLConnectionRequestDelegate>, SSURLRequestProperties, SSAuthenticationContext, SSVURLDataConsumer, NSURLRequest;
+@class <SSURLConnectionRequestDelegate>, SSURLRequestProperties, NSString, SSAuthenticationContext, SSVURLDataConsumer, NSURLRequest;
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSURLRequestProperties *_requestProperties;
@@ -21,6 +21,10 @@
 @property(retain) SSVURLDataConsumer * dataConsumer;
 @property bool runsInProcess;
 @property bool sendsResponseForHTTPFailures;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setRunsInProcess:(bool)arg1;

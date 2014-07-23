@@ -47,7 +47,6 @@
 - (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withBlendMode:(int)arg3 alpha:(double)arg4;
 - (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_queue_createImageRefIfNecessary;
-- (struct CGSize { double x1; double x2; })sizeMatchingScale:(double)arg1;
 - (id)imageHash;
 - (bool)stretches;
 - (bool)tiles;

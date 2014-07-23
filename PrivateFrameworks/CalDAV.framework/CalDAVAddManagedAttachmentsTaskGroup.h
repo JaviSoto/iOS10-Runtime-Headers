@@ -51,7 +51,6 @@
 - (void)setUpdatedScheduleTag:(id)arg1;
 - (void)setUpdatedResourcePayload:(id)arg1;
 - (id)filenamesToServerLocation;
-- (void)setResourceURL:(id)arg1;
 - (void)_sendAttachments;
 - (id)contentTypes;
 - (void)setContentTypes:(id)arg1;
@@ -61,11 +60,12 @@
 - (void)setPreviousETag:(id)arg1;
 - (id)previousETag;
 - (void)startTaskGroup;
+- (void)setResourceURL:(id)arg1;
+- (id)resourceURL;
 - (id)attachments;
 - (void)setState:(int)arg1;
 - (int)state;
 - (void)dealloc;
-- (id)resourceURL;
 - (void)setAttachments:(id)arg1;
 
 @end

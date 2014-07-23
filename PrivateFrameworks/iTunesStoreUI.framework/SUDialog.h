@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIAlertView, ISDialog;
+@class NSString, UIAlertView, ISDialog;
 
 @interface SUDialog : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertView;
@@ -19,6 +19,10 @@
 }
 
 @property(readonly) ISDialog * dialog;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_completeWithButtonIndex:(long long)arg1;

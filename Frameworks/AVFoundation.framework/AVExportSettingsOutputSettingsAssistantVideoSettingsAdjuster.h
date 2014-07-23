@@ -9,6 +9,11 @@
     NSDictionary *_exportSettings;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (id)initWithOutputSettingsPreset:(id)arg1;
 - (long long)averageBitRateForSourceDimensions:(struct CGSize { double x1; double x2; })arg1 andTargetFrameRate:(float)arg2;

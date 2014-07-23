@@ -11,12 +11,12 @@
 @property(copy) NSString * folderID;
 
 
+- (id)folderID;
 - (id)_folderID;
 - (void)setFolderID:(id)arg1;
 - (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folderID:(id)arg4;
 - (id)URLStringWithAccount:(id)arg1;
 - (bool)mergeWithUserInfo:(id)arg1;
-- (id)folderID;
 - (void)dealloc;
 - (id)description;
 

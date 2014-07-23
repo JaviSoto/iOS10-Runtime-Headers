@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADImageRecolorInfo, PDPlaceholder, PDAnimationInfo;
+@class OADImageRecolorInfo, PDAnimationInfo, NSString, PDPlaceholder;
 
 @interface PDOfficeArtClient : NSObject <OADClient, OADImageRecolorInfoClient> {
     OADImageRecolorInfo *mImageRecolorInfo;
@@ -14,6 +14,10 @@
 }
 
 @property int inheritedTextStylePlaceholderType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIsComment:(bool)arg1;

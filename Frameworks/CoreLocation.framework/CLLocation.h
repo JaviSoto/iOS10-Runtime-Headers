@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class CLFloor, NSString, NSDate, CLLocationMatchInfo;
+@class NSString, CLFloor, NSDate, CLLocationMatchInfo;
 
 @interface CLLocation : NSObject <NSCopying, NSSecureCoding, CKRecordValue> {
     id _internal;
@@ -13,6 +13,10 @@
 @property(readonly) bool hasMatch;
 @property(readonly) bool legacyHasMatch;
 @property(readonly) int _mapkit_source;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CLLocationMatchInfo * matchInfo;
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) double altitude;
@@ -35,10 +39,10 @@
 
 - (id)iso6709Notation;
 - (id)floor;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (double)rawCourse;
 - (id)snapToResolution:(double)arg1;
 - (id)propagateLocationToTime:(double)arg1;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (double)getDistanceFrom:(id)arg1;
 - (struct { double x1; double x2; })rawCoordinate;

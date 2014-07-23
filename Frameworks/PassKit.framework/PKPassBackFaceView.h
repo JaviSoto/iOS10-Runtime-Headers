@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableDictionary, UILabel, UITableView, UIAlertView, PKSettingTableCell, UIView, UIRefreshControl, UIButton, NSTimer, PKLinkedAppView, NSArray, BluetoothManager;
+@class NSMutableDictionary, UILabel, UITableView, UIAlertView, PKSettingTableCell, UIView, UIRefreshControl, UIButton, NSString, NSTimer, PKLinkedAppView, NSArray, BluetoothManager;
 
 @interface PKPassBackFaceView : PKPassFaceView <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
     UIRefreshControl *_refreshControl;
@@ -37,6 +37,10 @@
 @property bool showsLinkedApp;
 @property PKLinkedAppView * linkedApp;
 @property(retain) UIAlertView * storeDemoRefuseDeleteAlert;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_linkTextAttributes;
 + (id)_linkColor;

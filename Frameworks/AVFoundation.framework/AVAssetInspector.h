@@ -31,10 +31,12 @@
 @property(getter=isCompatibleWithSavedPhotosAlbum,readonly) bool compatibleWithSavedPhotosAlbum;
 @property(readonly) NSData * SHA1Digest;
 @property(readonly) bool canContainMovieFragments;
+@property(readonly) bool containsMovieFragments;
 @property(readonly) id propertyListForProxy;
 
 
 - (id)SHA1Digest;
+- (bool)containsMovieFragments;
 - (bool)canContainMovieFragments;
 - (bool)isCompatibleWithSavedPhotosAlbum;
 - (bool)isComposable;

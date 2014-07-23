@@ -33,6 +33,8 @@
 - (bool)changeActiveCategoryVolumeBy:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (bool)setActiveCategoryVolumeTo:(float)arg1;
 - (bool)changeActiveCategoryVolumeBy:(float)arg1;
+- (bool)getVibeIntensity:(float*)arg1;
+- (bool)setVibeIntensityTo:(float)arg1;
 - (bool)getVolume:(float*)arg1 forCategory:(id)arg2;
 - (bool)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2;
 - (bool)getActiveCategoryVolume:(float*)arg1 andName:(id*)arg2 fallbackCategory:(id)arg3;

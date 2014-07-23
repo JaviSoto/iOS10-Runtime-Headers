@@ -5,27 +5,19 @@
 @class NSData;
 
 @interface CKDPMescalSignatureRequest : PBRequest <NSCopying> {
-    unsigned int _messageLength;
-    NSData *_signature;
-    struct { 
-        unsigned int messageLength : 1; 
-    } _has;
+    NSData *_mescalData;
 }
 
-@property bool hasMessageLength;
-@property unsigned int messageLength;
-@property(readonly) bool hasSignature;
-@property(retain) NSData * signature;
+@property(readonly) bool hasMescalData;
+@property(retain) NSData * mescalData;
 
 + (id)options;
 
-- (unsigned int)messageLength;
-- (bool)hasMessageLength;
-- (void)setHasMessageLength:(bool)arg1;
-- (void)setMessageLength:(unsigned int)arg1;
-- (bool)hasSignature;
+- (bool)hasMescalData;
+- (void)setMescalData:(id)arg1;
+- (id)mescalData;
 - (void)copyTo:(id)arg1;
-- (void)setSignature:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
@@ -35,7 +27,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)signature;
 - (id)dictionaryRepresentation;
 
 @end

@@ -13,11 +13,11 @@
 }
 
 
+- (void)performBlock:(id)arg1 waitUntilDone:(bool)arg2;
+- (id)thread;
 - (bool)isCurrentThreadOtherwiseAssert:(bool)arg1;
 - (void)performBlock:(id)arg1 afterDelay:(double)arg2;
 - (void)_threadedMain;
-- (void)performBlock:(id)arg1 waitUntilDone:(bool)arg2;
-- (id)thread;
 - (void)performBlock:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (void)dealloc;

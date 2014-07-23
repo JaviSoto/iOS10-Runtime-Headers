@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UITapGestureRecognizer, MPSwipableView, UIPinchGestureRecognizer, MPAVItem, MPWeakTimer, MPInlineVideoController, MPVolumeController, MPVideoPlaybackOverlayView, UIActivityIndicatorView;
+@class NSString, UITapGestureRecognizer, MPSwipableView, UIPinchGestureRecognizer, MPAVItem, MPWeakTimer, MPInlineVideoController, MPVolumeController, MPVideoPlaybackOverlayView, UIActivityIndicatorView;
 
 @interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPVolumeControllerDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget> {
     bool_disableTaps;
@@ -24,6 +24,10 @@
 
 @property MPInlineVideoController * masterController;
 @property(retain) MPAVItem * item;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_showOverlayDidEnd;

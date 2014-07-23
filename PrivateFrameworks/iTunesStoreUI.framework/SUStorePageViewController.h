@@ -59,6 +59,10 @@
 @property <SUStorePageViewControllerDelegate> * delegate;
 @property(getter=_reloadsWhenCacheExpired,setter=_setReloadsWhenCacheExpired:) bool _reloadsWhenCacheExpired;
 @property(getter=_isCacheExpired,readonly) bool _cacheExpired;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)sectionSegmentedControl;
@@ -181,10 +185,10 @@
 - (void)showExternalURL:(id)arg1;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)setCanMoveToOverlay:(bool)arg1;
-- (void)setClientContext:(id)arg1;
-- (void)setLoading:(bool)arg1;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
+- (void)setLoading:(bool)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (id)URLRequest;

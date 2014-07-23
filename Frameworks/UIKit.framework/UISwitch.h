@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView<_UISwitchInternalViewProtocol>, UIColor, UIImage, UIPanGestureRecognizer, UILongPressGestureRecognizer;
+@class UIView<_UISwitchInternalViewProtocol>, UIColor, NSString, UIImage, UIPanGestureRecognizer, UILongPressGestureRecognizer;
 
 @interface UISwitch : UIControl <UIGestureRecognizerDelegate, NSCoding> {
     UILongPressGestureRecognizer *_pressGesture;
@@ -23,6 +23,10 @@
 @property(retain) UIImage * offImage;
 @property(getter=isOn) bool on;
 @property double enabledAlpha;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_internalViewClass;
 

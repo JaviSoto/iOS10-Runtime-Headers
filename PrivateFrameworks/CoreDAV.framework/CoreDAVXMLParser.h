@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, CoreDAVXMLElementGenerator, NSURL, CoreDAVErrorItem, NSError, CoreDAVItem;
+@class NSError, CoreDAVErrorItem, NSURL, NSString, NSSet, CoreDAVItem, CoreDAVXMLElementGenerator;
 
 @interface CoreDAVXMLParser : NSXMLParser <CoreDAVResponseBodyParser> {
     CoreDAVXMLElementGenerator *_rootElementGenerator;
@@ -17,6 +17,10 @@
 @property(readonly) CoreDAVErrorItem * rootError;
 @property(retain) CoreDAVXMLElementGenerator * rootElementGenerator;
 @property(retain) CoreDAVXMLElementGenerator * rootErrorGenerator;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSError * parserError;
 
 + (bool)canHandleContentType:(id)arg1;

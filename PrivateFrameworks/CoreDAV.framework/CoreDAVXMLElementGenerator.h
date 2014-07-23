@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVXMLElementGenerator, NSDictionary, NSURL, NSMutableData, CoreDAVItem;
+@class CoreDAVXMLElementGenerator, NSDictionary, NSURL, NSMutableData, NSString, CoreDAVItem;
 
 @interface CoreDAVXMLElementGenerator : NSObject <NSXMLParserDelegate> {
     int _parsingState;
@@ -30,6 +30,10 @@
 @property CoreDAVXMLElementGenerator * parentGenerator;
 @property(retain) NSDictionary * cachedElementParseRules;
 @property(retain) NSURL * baseURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setElement:(id)arg1;

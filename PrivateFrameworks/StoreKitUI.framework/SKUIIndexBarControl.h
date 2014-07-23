@@ -58,6 +58,8 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitTestEdgeInsets;
 - (struct CGSize { double x1; double x2; })_sizeForEntryAtIndexPath:(id)arg1;
 - (long long)_totalEntryCount;
+- (id)_allRequiredEntries;
+- (id)_displayEntriesThatFitInViewForGroupedEntries;
 - (id)_combinedEntry;
 - (struct CGSize { double x1; double x2; })_sizeForEntries:(id)arg1;
 - (id)_allEntries;

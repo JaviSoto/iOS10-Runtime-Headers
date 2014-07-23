@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface AOSNotifySession : NSObject <AOSXPCClientProtocol> {
     NSXPCConnection *_xpcConnection;
@@ -27,19 +27,22 @@
 @property(retain) NSObject<OS_dispatch_queue> * xpcConnectionCreationQueue;
 @property(copy) id fmfAppPushMsgHandler;
 @property(copy) id fmfAppPushTokenHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)copyStoreAccount;
 + (id)sharedInstance;
 
+- (id)iCloudAccount;
+- (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (void)setXpcConnectionCreationQueue:(id)arg1;
 - (id)xpcConnectionCreationQueue;
-- (id)fmipDeviceId;
-- (id)currentXPCConnection;
-- (id)newErrorForCode:(int)arg1 message:(id)arg2;
-- (void)_destroyXPCConnection;
 - (id)retrieveAllAccounts:(id*)arg1;
 - (void)stopListeningOnTopic:(id)arg1;
 - (void)startListeningOnTopic:(id)arg1;
+- (void)willDeleteiCloudAccountWithCompletion:(id)arg1;
 - (void)locationAuthorizationForShareMyLocationWithCompletion:(id)arg1;
 - (void)renewFMFAccountCredentialsUsingCallback:(id)arg1;
 - (void)retrieveFMFAccountUsingCallback:(id)arg1;
@@ -51,8 +54,9 @@
 - (void)didChangeFMFAccountInfo:(id)arg1;
 - (void)didExitFMFRegion:(id)arg1 atLocation:(id)arg2;
 - (void)didEnterFMFRegion:(id)arg1 atLocation:(id)arg2;
-- (id)iCloudAccount;
 - (id)fmfDeviceId;
+- (id)fmipDeviceId;
+- (id)currentXPCConnection;
 - (oneway void)didReceiveFMFAppPushToken:(id)arg1;
 - (oneway void)didReceiveFMFAppPushMessage:(id)arg1;
 - (id)fmipAccount;
@@ -63,6 +67,7 @@
 - (id)fmfAppPushMsgHandler;
 - (void)setFmfAppPushTokenHandler:(id)arg1;
 - (void)setFmfAppPushMsgHandler:(id)arg1;
+- (void)_destroyXPCConnection;
 - (bool)performMigration;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;

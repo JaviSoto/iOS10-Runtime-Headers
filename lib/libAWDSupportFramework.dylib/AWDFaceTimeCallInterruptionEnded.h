@@ -63,10 +63,10 @@
 - (void)setOnLockScreen:(unsigned int)arg1;
 - (bool)hasIsVideo;
 - (void)setHasIsVideo:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (void)setIsVideo:(unsigned int)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)linkQuality;

@@ -35,8 +35,8 @@
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
 - (void)setIsThumbnail:(bool)arg1;
 - (bool)isThumbnail;
-- (id)read;
 - (void)setFileName:(id)arg1;
+- (id)read;
 - (void)setDelegate:(id)arg1;
 - (id)data;
 - (bool)start;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, PSRootController, UIViewController<PSController>;
+@class PSRootController, PSSpecifier, NSString, UIViewController<PSController>;
 
 @interface PSViewController : UIViewController <PSController> {
     UIViewController<PSController> *_parentController;
@@ -10,8 +10,12 @@
     PSSpecifier *_specifier;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
-- (void)pushController:(id)arg1;
+
 - (void)formSheetViewDidDisappear;
 - (void)popupViewDidDisappear;
 - (void)pushController:(id)arg1 animate:(bool)arg2;
@@ -35,6 +39,7 @@
 - (id)rootController;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
+- (void)pushController:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (void)suspend;
 - (void)dealloc;

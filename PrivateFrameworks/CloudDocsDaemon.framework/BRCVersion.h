@@ -20,6 +20,7 @@
     NSData *_xattrSignature;
     NSData *_quarantineInfo;
     NSMutableSet *_conflictLoserEtags;
+    NSData *_lazyXattr;
     NSNumber *_lastEditorDeviceKey;
     NSString *_lastEditorDeviceName;
 }
@@ -33,6 +34,7 @@
 @property(readonly) bool isPackage;
 @property(readonly) bool hasThumbnail;
 @property(retain) NSData * xattrSignature;
+@property(retain) NSData * lazyXattr;
 @property(retain) NSData * quarantineInfo;
 @property(retain) NSData * contentSignature;
 @property(retain) NSData * thumbnailSignature;
@@ -59,6 +61,8 @@
 - (id)displayNameWithoutExtension:(bool)arg1;
 - (id)lastEditorDeviceNameWithDB:(id)arg1;
 - (id)descriptionWithContext:(id)arg1;
+- (void)setLazyXattr:(id)arg1;
+- (id)lazyXattr;
 - (void)setXattrSignature:(id)arg1;
 - (id)xattrSignature;
 - (void)setCkInfo:(id)arg1;

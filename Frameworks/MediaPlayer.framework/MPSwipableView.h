@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPSwipableViewDelegate>, MPSwipeGestureRecognizer, MPActivityGestureRecognizer, UIPinchGestureRecognizer, MPTapGestureRecognizer;
+@class <MPSwipableViewDelegate>, MPSwipeGestureRecognizer, MPActivityGestureRecognizer, UIPinchGestureRecognizer, MPTapGestureRecognizer, NSString;
 
 @interface MPSwipableView : UIView <UIGestureRecognizerDelegate> {
     long long _enabledGestureTypes;
@@ -17,6 +17,10 @@
 @property long long enabledGestureTypes;
 @property long long simultaneousGestureTypes;
 @property <MPSwipableViewDelegate> * swipeDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSimultaneousGestureTypes:(long long)arg1;

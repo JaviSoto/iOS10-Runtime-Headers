@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BRCDownloadContext, NSProgress;
+@class BRCDownloadContext, NSProgress, NSString;
 
 @interface BRCDownloadDocumentOperation : BRCOperation <BRCDownloadOperation> {
     BRCDownloadContext *_context;
@@ -43,6 +43,10 @@
 @property(copy) id downloadThumbnailCompletionBlock;
 @property(copy) id downloadCurrentVersionCompletionBlock;
 @property(copy) id downloadLoserVersionCompletionBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) double budgetRequired;
 @property(copy) id progressBlock;
 @property(readonly) long long transferPriority;

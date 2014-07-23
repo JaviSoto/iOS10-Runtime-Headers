@@ -30,6 +30,7 @@
     GEOLocation *_deviceLocation;
     NSString *_deviceSpokenLocale;
     GEOMapRegion *_mapRegion;
+    int _mode;
     NSMutableArray *_photoSizes;
     unsigned int _photosCount;
     NSMutableArray *_reviewUserPhotoSizes;
@@ -46,6 +47,7 @@
         unsigned int mapZoomLevel : 1; 
         unsigned int action : 1; 
         unsigned int carHeadunitInteractionModel : 1; 
+        unsigned int mode : 1; 
         unsigned int photosCount : 1; 
         unsigned int reviewUserPhotosCount : 1; 
         unsigned int sequenceNumber : 1; 
@@ -107,6 +109,8 @@
 @property double carHeadunitPixelHeight;
 @property bool hasMapZoomLevel;
 @property double mapZoomLevel;
+@property bool hasMode;
+@property int mode;
 
 
 - (void)setMapZoomLevel:(double)arg1;
@@ -115,6 +119,8 @@
 - (bool)hasReviewUserPhotosCount;
 - (void)setPhotosCount:(unsigned int)arg1;
 - (bool)hasPhotosCount;
+- (bool)hasMode;
+- (void)setHasMode:(bool)arg1;
 - (void)setHasMapZoomLevel:(bool)arg1;
 - (void)setHasCarHeadunitPixelHeight:(bool)arg1;
 - (void)setCarHeadunitPixelHeight:(double)arg1;
@@ -136,12 +142,10 @@
 - (void)setCarHeadunitManufacturer:(id)arg1;
 - (void)setReviewUserPhotoSizes:(id)arg1;
 - (void)setPhotoSizes:(id)arg1;
-- (bool)hasAppIdentifier;
 - (void)setTransportTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)transportTypes;
 - (void)addTransportType:(int)arg1;
 - (void)clearTransportTypes;
-- (id)appIdentifier;
 - (double)mapZoomLevel;
 - (bool)hasMapZoomLevel;
 - (double)carHeadunitPixelWidth;
@@ -166,16 +170,18 @@
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setHasSessionId:(bool)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)appIdentifier;
+- (bool)hasAppIdentifier;
 - (id)reviewUserPhotoSizes;
 - (unsigned int)reviewUserPhotosCount;
 - (id)photoSizes;
 - (bool)hasSource;
 - (bool)isAPICall;
 - (bool)hasIsAPICall;
-- (bool)hasSessionId;
 - (int)transportTypeAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transportTypesCount;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (bool)hasSessionId;
 - (id)deviceInstalledKeyboardLocales;
 - (id)deviceSpokenLocale;
 - (id)deviceKeyboardLocale;
@@ -218,6 +224,7 @@
 - (int)action;
 - (void)setAction:(int)arg1;
 - (void)setSource:(int)arg1;
+- (void)setMode:(int)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
@@ -226,5 +233,6 @@
 - (id)dictionaryRepresentation;
 - (bool)hasAction;
 - (void)setHasAction:(bool)arg1;
+- (int)mode;
 
 @end

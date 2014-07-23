@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSObject<OS_dispatch_queue>, NSMutableArray, CPLPlatformObject;
+@class NSString, CPLPlatformObject, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface CPLEngineResourceDownloadQueue : CPLEngineStorage <CPLAbstractObject> {
     NSObject<OS_dispatch_queue> *_downloadQueue;
@@ -17,6 +17,10 @@
     bool_shouldRequestABackgroundDownloadSyncPhase;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 

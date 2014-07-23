@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableData, NSError;
+@class NSMutableData, NSError, NSString;
 
 @interface CoreDAVOctetStreamParser : NSObject <CoreDAVResponseBodyParser> {
     NSMutableData *_octetStreamData;
@@ -10,6 +10,10 @@
 }
 
 @property(retain) NSMutableData * octetStreamData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSError * parserError;
 
 + (bool)canHandleContentType:(id)arg1;

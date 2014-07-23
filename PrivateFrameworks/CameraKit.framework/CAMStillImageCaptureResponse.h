@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSDictionary, UIImage, NSData, NSArray, NSString;
+@class NSMutableDictionary, NSString, UIImage, NSData, CIFilter, NSDictionary;
 
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse  {
     bool_transient;
@@ -27,8 +27,7 @@
   /* Error parsing encoded ivar type info: @? */
     id _stillImageCompletionBlock;
 
-    NSDictionary *_adjustmentFilters;
-    NSArray *_effectFilters;
+    CIFilter *_effectFilter;
     NSString *_avalancheUUID;
     NSString *_timelapseDestinationPath;
 }
@@ -45,17 +44,14 @@
 @property(retain) NSMutableDictionary * stillImageJob;
 @property(copy) id stillImageRequestEnqueuedBlock;
 @property(copy) id stillImageCompletionBlock;
-@property(copy) NSDictionary * adjustmentFilters;
-@property(copy) NSArray * effectFilters;
+@property(copy) CIFilter * effectFilter;
 @property(copy) NSString * avalancheUUID;
 @property(copy) NSString * timelapseDestinationPath;
 
 
 - (id)timelapseDestinationPath;
-- (void)setEffectFilters:(id)arg1;
-- (id)effectFilters;
-- (void)setAdjustmentFilters:(id)arg1;
-- (id)adjustmentFilters;
+- (void)setEffectFilter:(id)arg1;
+- (id)effectFilter;
 - (void)setStillImageCompletionBlock:(id)arg1;
 - (id)stillImageCompletionBlock;
 - (void)setStillImageRequestEnqueuedBlock:(id)arg1;

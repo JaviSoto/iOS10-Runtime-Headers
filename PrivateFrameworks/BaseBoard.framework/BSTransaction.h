@@ -41,6 +41,10 @@
 @property(copy) id completionBlock;
 @property(retain) BSTransaction * parentTransaction;
 @property(readonly) unsigned long long state;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isFailed;

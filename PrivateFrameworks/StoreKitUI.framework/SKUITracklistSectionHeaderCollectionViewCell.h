@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIControl, UIView, SKUIButtonViewElement, SKUITracklistColumnData, NSMutableArray;
+@class UIControl, UIView, NSString, SKUIButtonViewElement, SKUITracklistColumnData, NSMutableArray;
 
 @interface SKUITracklistSectionHeaderCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
     UIControl *_button;
@@ -11,6 +11,11 @@
     NSMutableArray *_labels;
     UIView *_separatorView;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)_titlesWidthForWidth:(double)arg1 columnData:(id)arg2;
 + (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;

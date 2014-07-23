@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <_WKDownloadDelegate>, _WKProcessPoolConfiguration, WKGeolocationProviderIOS;
+@class NSString, WKGeolocationProviderIOS, _WKProcessPoolConfiguration, <_WKDownloadDelegate>;
 
 @interface WKProcessPool : NSObject <WKObject> {
     struct RetainPtr<_WKProcessPoolConfiguration> { 
@@ -15,7 +15,7 @@
     } _configuration;
     struct ObjectStorage<WebKit::WebContext> { 
         struct type { 
-            unsigned char __lx[760]; 
+            unsigned char __lx[776]; 
         } data; 
     } _context;
     struct WeakObjCPtr<id<_WKDownloadDelegate> > { 
@@ -29,6 +29,10 @@
 @property(readonly) _WKProcessPoolConfiguration * _configuration;
 @property(setter=_setDownloadDelegate:) <_WKDownloadDelegate> * _downloadDelegate;
 @property(readonly) WKGeolocationProviderIOS * _geolocationProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 + (id)_websiteDataURLForContainerWithURL:(id)arg1;

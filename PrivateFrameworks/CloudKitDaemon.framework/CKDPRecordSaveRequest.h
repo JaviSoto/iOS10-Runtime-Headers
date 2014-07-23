@@ -6,6 +6,7 @@
 
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
     CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
+    NSMutableArray *_conflictLosersToResolves;
     NSString *_etag;
     NSMutableArray *_fieldsToDeleteIfExistOnMerges;
     CKDPRecord *_record;
@@ -34,9 +35,12 @@
 @property(retain) NSString * zoneProtectionInfoTag;
 @property(readonly) bool hasRecordProtectionInfoTag;
 @property(retain) NSString * recordProtectionInfoTag;
+@property(retain) NSMutableArray * conflictLosersToResolves;
 
 + (id)options;
 
+- (void)setConflictLosersToResolves:(id)arg1;
+- (id)conflictLosersToResolves;
 - (id)recordProtectionInfoTag;
 - (id)conflictLoserUpdate;
 - (void)setFieldsToDeleteIfExistOnMerges:(id)arg1;
@@ -51,11 +55,15 @@
 - (bool)hasMerge;
 - (void)setHasMerge:(bool)arg1;
 - (void)setMerge:(bool)arg1;
+- (id)conflictLosersToResolveAtIndex:(unsigned long long)arg1;
+- (void)clearConflictLosersToResolves;
+- (unsigned long long)conflictLosersToResolvesCount;
 - (void)setRecordProtectionInfoTag:(id)arg1;
 - (void)setConflictLoserUpdate:(id)arg1;
 - (id)fieldsToDeleteIfExistOnMergeAtIndex:(unsigned long long)arg1;
 - (void)clearFieldsToDeleteIfExistOnMerges;
 - (unsigned long long)fieldsToDeleteIfExistOnMergesCount;
+- (void)addConflictLosersToResolve:(id)arg1;
 - (void)addFieldsToDeleteIfExistOnMerge:(id)arg1;
 - (bool)hasRecord;
 - (id)zoneProtectionInfoTag;
@@ -66,6 +74,7 @@
 - (void)setEtag:(id)arg1;
 - (id)etag;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

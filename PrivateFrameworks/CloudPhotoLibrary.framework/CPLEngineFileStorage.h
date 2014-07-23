@@ -18,6 +18,10 @@
 @property(readonly) NSURL * baseURL;
 @property bool keepOriginals;
 @property bool deleteImmediately;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)platformImplementationProtocol;
@@ -46,10 +50,11 @@
 - (bool)discardAllRetainedFileURLsWithError:(id*)arg1;
 - (bool)deleteFileWithIdentity:(id)arg1 error:(id*)arg2;
 - (bool)storeUnretainedFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(bool)arg3 error:(id*)arg4;
-- (void)doRead:(id)arg1;
 - (bool)linkOrCopyFileWithIdentity:(id)arg1 destinationURL:(id)arg2 error:(id*)arg3;
 - (bool)hasFileWithIdentity:(id)arg1;
 - (bool)releaseFileURL:(id)arg1 error:(id*)arg2;
+- (void)doRead:(id)arg1;
+- (void)checkFileSizeForIdentity:(id)arg1;
 - (id)retainFileURLForIdentity:(id)arg1 resourceType:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)discardUncommittedFileWithIdentity:(id)arg1 error:(id*)arg2;
 - (bool)storeFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(bool)arg3 needsCommit:(bool*)arg4 error:(id*)arg5;

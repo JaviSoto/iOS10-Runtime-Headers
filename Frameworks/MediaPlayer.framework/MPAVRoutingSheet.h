@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIWindow, MPAVRoutingViewController, UIView, UIButton;
+@class UIWindow, MPAVRoutingViewController, NSString, UIView, UIButton;
 
 @interface MPAVRoutingSheet : UIView <MPAVRoutingViewControllerDelegate> {
     UIWindow *_presentationWindow;
@@ -22,6 +22,10 @@
 }
 
 @property(setter=setAVItemType:) unsigned long long avItemType;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct CGSize { double x1; double x2; })_maxRoutingViewSize;

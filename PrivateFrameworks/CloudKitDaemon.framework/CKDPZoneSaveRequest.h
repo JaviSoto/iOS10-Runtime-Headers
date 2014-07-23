@@ -29,6 +29,7 @@
 - (void)setEtag:(id)arg1;
 - (id)etag;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;

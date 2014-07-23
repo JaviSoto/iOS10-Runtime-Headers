@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, NSArray, SKUIColorScheme, SKUIClientContext, UIButton, UIPopoverController, UIControl, UILabel;
+@class UIView, NSString, NSArray, SKUIColorScheme, SKUIClientContext, UIButton, UIPopoverController, UIControl, UILabel;
 
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     UIButton *_appSupportButton;
@@ -23,6 +23,10 @@
 @property(readonly) UIControl * writeAReviewButton;
 @property long long selectedSortIndex;
 @property(copy) NSArray * sortTitles;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;

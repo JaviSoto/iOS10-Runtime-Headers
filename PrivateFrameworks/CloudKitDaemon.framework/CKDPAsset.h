@@ -98,9 +98,9 @@
 - (void)setProtectionInfo:(id)arg1;
 - (bool)hasSignature;
 - (void)setRecordId:(id)arg1;
-- (bool)hasSize;
 - (void)setHasSize:(bool)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setUploadReceipt:(id)arg1;
 - (void)setReferenceSignature:(id)arg1;
 - (void)setSignature:(id)arg1;
@@ -109,6 +109,7 @@
 - (id)uploadReceipt;
 - (id)requestor;
 - (id)owner;
+- (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)recordId;

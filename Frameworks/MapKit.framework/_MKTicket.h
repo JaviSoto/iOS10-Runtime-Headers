@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, GEOMapServiceTraits, <GEOMapServiceTicket>, NSError, GEOMapRegion;
+@class NSArray, NSString, <GEOMapServiceTicket>, NSError, GEOMapServiceTraits, GEOMapRegion;
 
 @interface _MKTicket : NSObject <MKMapServiceTicket> {
     <GEOMapServiceTicket> *_ticket;
@@ -11,6 +11,10 @@
     NSError *_error;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) GEOMapServiceTraits * traits;
 @property(readonly) NSArray * exactMapItems;
 @property(readonly) NSArray * refinedMapItems;
@@ -22,7 +26,6 @@
 - (id)refinedMapItems;
 - (id)exactMapItems;
 - (void)submitWithHandler:(id)arg1 queue:(id)arg2 networkActivity:(id)arg3;
-- (bool)isEqualForHistoryToTicket:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 queue:(id)arg3 networkActivity:(id)arg4;
 - (id)boundingRegion;

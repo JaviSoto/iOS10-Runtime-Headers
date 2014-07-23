@@ -143,11 +143,16 @@
 @property(retain) ABPropertyIDSRequest * faceTimeIDSRequest;
 @property(retain) NSDictionary * userActivityUserInfo;
 @property(retain) HKHealthStore * healthStore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool isPresentingModalViewController;
 
 + (id)boolStateRestorationProperties;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
+- (double)desiredHeightForWidth:(double)arg1;
 - (long long)indexOfGroup:(id)arg1;
 - (void)setCardEditingDeleteContactGroup:(id)arg1;
 - (void)setCardEditingActionsGroup:(id)arg1;
@@ -283,7 +288,7 @@
 - (void)setShouldShowLinkedContacts:(bool)arg1;
 - (void)setAllowsAddingToAddressBook:(bool)arg1;
 - (void)setAllowsAddToFavorites:(bool)arg1;
-- (bool)_shouldPresentViewControllerFullscreen:(id)arg1;
+- (long long)_modalPresentationStyleForViewController:(id)arg1;
 - (void)contactView:(id)arg1 didSelectItemAtIndex:(long long)arg2 inGroup:(id)arg3;
 - (bool)allowsPropertyActions;
 - (id)cardEditingDeleteContactGroup;
@@ -366,6 +371,7 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setPersonHeaderView:(id)arg1;
 - (id)personHeaderView;
+- (void)headerHeightDidChange;
 - (void)updateWithNewContact:(id)arg1;
 - (void)setNeedsReload;
 - (void)reloadDataIfNeeded;
@@ -392,7 +398,6 @@
 - (void)reloadDataPreservingChanges:(bool)arg1;
 - (id)contact;
 - (id)initWithContact:(id)arg1;
-- (double)desiredHeightForWidth:(double)arg1;
 - (void)saveChanges;
 - (void)setMessage:(id)arg1;
 - (id)message;

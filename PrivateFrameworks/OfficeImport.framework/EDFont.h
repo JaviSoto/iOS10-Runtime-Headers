@@ -28,6 +28,11 @@
     boolmDoNotModify;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)fontWithResources:(id)arg1;
 
 - (void)setColorReference:(id)arg1;
@@ -49,7 +54,6 @@
 - (bool)isStrike;
 - (bool)isStrikeOverridden;
 - (bool)isItalic;
-- (bool)isBold;
 - (bool)isHeightOverridden;
 - (int)underline;
 - (bool)isUnderlineOverridden;
@@ -70,5 +74,6 @@
 - (void)setShadow:(bool)arg1;
 - (void)setScript:(int)arg1;
 - (int)script;
+- (bool)isBold;
 
 @end

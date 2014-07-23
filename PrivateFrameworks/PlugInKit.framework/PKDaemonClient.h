@@ -30,6 +30,7 @@
 - (id)request:(const char *)arg1 paths:(id)arg2;
 - (void)setProtocolVersion:(long long)arg1;
 - (void)setPkd:(id)arg1;
+- (void)copyReceipt:(id)arg1;
 - (void)setPluginAnnotations:(id)arg1 annotations:(id)arg2 reply:(id)arg3;
 - (void)readyPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id)arg3;
 - (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id)arg3;

@@ -2,11 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class WebArchive, NSString, DOMNode;
+@class NSString, WebArchive, DOMNode;
 
 @interface DOMRange : DOMObject <UIWebSelectionBlock> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) WebArchive * webArchive;
 @property(copy,readonly) NSString * markupString;
 @property(readonly) DOMNode * startContainer;

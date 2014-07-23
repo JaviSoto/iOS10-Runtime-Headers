@@ -2,17 +2,39 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface IKDOMNodeList : IKJSObject <IKJSDOMNodeList> {
+@class NSArray, IKDOMNode, NSString;
+
+@interface IKDOMNodeList : IKJSObject <IKDOMObserver, IKJSDOMNodeList> {
+    IKDOMNode *_contextNode;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _evaluationBlock;
+
     NSArray *_nodes;
 }
 
+@property(retain) IKDOMNode * contextNode;
+@property(copy,readonly) id evaluationBlock;
 @property(copy) NSArray * nodes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long length;
 
++ (id)nodeListWithAppContext:(id)arg1 contextNode:(id)arg2 xpath:(id)arg3;
 
-- (id)initWithAppContext:(id)arg1 nodes:(id)arg2;
+- (void)setContextNode:(id)arg1;
+- (void)domDidUpdateForContextNode:(id)arg1;
+- (id)contextNode;
+- (id)evaluationBlock;
+- (void)_updateNodes;
+- (id)initWithAppContext:(id)arg1 contextNode:(id)arg2 evaluationBlock:(id)arg3;
 - (void)setNodes:(id)arg1;
 - (id)nodes;
 - (long long)length;

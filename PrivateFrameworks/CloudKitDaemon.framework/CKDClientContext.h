@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSURL, CKDServerConfiguration, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSBundle, CKDFlowControlManager, CKDAccount, CKContainerID, NSString, CKDPCSManager, CKDMMCS, NSObject<OS_dispatch_queue>, NSArray, CKAccountInfo;
+@class NSURL, CKDServerConfiguration, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSBundle, CKDFlowControlManager, CKDAccount, CKContainerID, NSString, CKDPCSManager, CKDMMCS, CKDMescalSession, NSObject<OS_dispatch_queue>, NSArray, CKAccountInfo;
 
 @interface CKDClientContext : NSObject <CKLoggingProtocol> {
     bool_canAccessAccounts;
@@ -26,7 +26,6 @@
     NSString *_oldApplicationCachesDirectory;
     NSString *_applicationCachesDirectory;
     NSArray *_sandboxExtensions;
-    NSString *_secondaryApplicationBundleID;
     NSString *_containerHardwareIDHash;
     long long _type;
     long long _usesAPSPublicToken;
@@ -35,9 +34,11 @@
     CKDFlowControlManager *_flowControlManager;
     CKDMMCS *_MMCS;
     CKDPCSManager *_pcsManager;
+    CKDMescalSession *_mescalSession;
     NSMutableDictionary *_fakeErrorByClassName;
     NSObject<OS_dispatch_semaphore> *_sema;
     NSObject<OS_dispatch_queue> *_accountLoaderQueue;
+    NSString *_contextID;
 }
 
 @property(retain) CKDServerConfiguration * config;
@@ -57,7 +58,6 @@
 @property(readonly) NSString * applicationPackageCacheDirectory;
 @property(readonly) NSString * applicationRecordCacheDirectory;
 @property(readonly) NSArray * sandboxExtensions;
-@property(retain) NSString * secondaryApplicationBundleID;
 @property(readonly) NSString * containerHardwareIDHash;
 @property(readonly) long long type;
 @property(setter=setAPSEnvironmentString:,retain) NSString * apsEnvironmentString;
@@ -71,12 +71,18 @@
 @property(retain) CKDFlowControlManager * flowControlManager;
 @property(retain) CKDMMCS * MMCS;
 @property(retain) CKDPCSManager * pcsManager;
+@property(retain) CKDMescalSession * mescalSession;
 @property(retain) NSMutableDictionary * fakeErrorByClassName;
 @property(retain) NSObject<OS_dispatch_semaphore> * sema;
 @property(retain) NSObject<OS_dispatch_queue> * accountLoaderQueue;
 @property bool accountRefreshInProgress;
 @property bool accountReloadRequired;
 @property(getter=isSandboxed) bool sandboxed;
+@property(readonly) NSString * contextID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedContextWithAppContainerTuple:(id)arg1;
 + (id)contextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
@@ -88,6 +94,8 @@
 - (void)setAccountLoaderQueue:(id)arg1;
 - (void)setSema:(id)arg1;
 - (id)sema;
+- (void)setMescalSession:(id)arg1;
+- (id)mescalSession;
 - (void)setPcsManager:(id)arg1;
 - (bool)canSetDeviceIdentifier;
 - (void)setHasDataContainer:(bool)arg1;
@@ -95,7 +103,6 @@
 - (bool)canAccessAccounts;
 - (long long)usesAPSPublicToken;
 - (id)containerHardwareIDHash;
-- (id)secondaryApplicationBundleID;
 - (id)oldApplicationCachesDirectory;
 - (void)setApplicationContainerPath:(id)arg1;
 - (id)applicationBundle;
@@ -109,38 +116,37 @@
 - (bool)setupAssetTransfersWithError:(id*)arg1;
 - (id)apsEnvironmentString;
 - (bool)setupMMCSWrapperWithError:(id*)arg1;
-- (id)MMCS;
 - (void)setMMCS:(id)arg1;
 - (id)initWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
+- (id)_issueSandboxExtensionForPath:(id)arg1 error:(id*)arg2;
+- (id)applicationPackageCacheDirectory;
+- (id)applicationAssetCacheDirectory;
+- (id)applicationCachesDirectory;
+- (bool)accountReloadRequired;
+- (void)setAccountRefreshInProgress:(bool)arg1;
+- (id)accountLoaderQueue;
+- (void)setAccountReloadRequired:(bool)arg1;
+- (bool)accountRefreshInProgress;
 - (bool)_createAssetCacheDirectoriesAndIssueExtensionsIfNeeded:(bool)arg1 error:(id*)arg2;
 - (bool)hasDataContainer;
 - (void)_createCacheDirectoryIfNecessary;
 - (void)_purgeOldCacheDirectories;
 - (void)_determineHardwareInfo;
 - (void)_loadApplicationContainerPathAndType;
-- (id)_issueSandboxExtensionForPath:(id)arg1 error:(id*)arg2;
-- (id)applicationPackageCacheDirectory;
-- (id)applicationAssetCacheDirectory;
-- (id)applicationCachesDirectory;
 - (void)reloadAccount;
-- (bool)accountReloadRequired;
-- (void)setAccountRefreshInProgress:(bool)arg1;
-- (id)accountLoaderQueue;
-- (void)setAccountReloadRequired:(bool)arg1;
-- (bool)accountRefreshInProgress;
-- (id)applicationContainerPath;
 - (void)setSandboxed:(bool)arg1;
-- (id)pcsManager;
-- (void)setSecondaryApplicationBundleID:(id)arg1;
+- (id)MMCS;
 - (void)setCanSetDeviceIdentifier:(bool)arg1;
 - (void)setCanAccessProtectionData:(bool)arg1;
 - (void)setFakeErrorByClassName:(id)arg1;
 - (void)setUsesAPSPublicToken:(long long)arg1;
 - (void)setAPSEnvironmentString:(id)arg1;
 - (id)fakeErrorByClassName;
+- (id)pcsManager;
 - (id)applicationDisplayName;
 - (void)tearDownAssetTransfers;
 - (id)applicationRecordCacheDirectory;
+- (id)applicationContainerPath;
 - (bool)canAccessProtectionData;
 - (bool)isSandboxed;
 - (void)setConfig:(id)arg1;
@@ -161,6 +167,7 @@
 - (id)CKPropertiesDescription;
 - (id)account;
 - (void)setAccount:(id)arg1;
+- (id)contextID;
 - (id)sandboxExtensions;
 - (long long)type;
 - (void)dealloc;

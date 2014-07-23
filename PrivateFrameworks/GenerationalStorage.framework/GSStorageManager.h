@@ -10,10 +10,10 @@
 + (id)manager;
 + (void)initialize;
 
+- (bool)isItemAtURLInsidePermanentStorage:(id)arg1 error:(id*)arg2;
 - (bool)deallocateDocumentIDOfItemAtURL:(id)arg1 error:(id*)arg2;
 - (id)stagingPrefixForDocumentID:(id)arg1;
 - (void)_connectionWithDaemonWasLost;
-- (bool)isItemAtURLInsidePermanentStorage:(id)arg1 error:(id*)arg2;
 - (bool)removeTemporaryStorage:(id)arg1 error:(id*)arg2;
 - (id)additionForItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 error:(id*)arg3;
 - (id)temporaryStorageForItemAtURL:(id)arg1 locatedAtURL:(id)arg2 error:(id*)arg3;

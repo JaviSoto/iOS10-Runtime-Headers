@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PRSFeedback : NSObject <NSCopying> {
+@interface PRSFeedback : NSObject <NSCopying, NSCoding, NSSecureCoding> {
     NSString *_input;
     long long _timestamp;
 }
@@ -14,6 +14,7 @@
 @property long long timestamp;
 
 + (id)JSONDictionaryForFeedbackArray:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
 - (id)plist;
@@ -23,6 +24,8 @@
 - (id)input;
 - (id)init;
 - (id)type;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copy;
 - (void).cxx_destruct;
 - (id)description;

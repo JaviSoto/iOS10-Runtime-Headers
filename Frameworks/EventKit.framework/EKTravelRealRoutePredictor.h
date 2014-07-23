@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKTravelAgendaItem, GEORouteHypothesizer, EKTravelRealRoutePredictorInternalDelegate, NSDate, GEOQuickETARequester, GEOComposedWaypoint;
+@class NSDate, NSString, GEOQuickETARequester, EKTravelRealRoutePredictorInternalDelegate, GEOComposedWaypoint, GEORouteHypothesizer, EKTravelAgendaItem;
 
 @interface EKTravelRealRoutePredictor : NSObject <EKTravelRoutePredictor> {
     bool_hypothesisInProgress;
@@ -18,17 +18,21 @@
 
 @property EKTravelAgendaItem * agendaItem;
 @property(readonly) int travelMethod;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (void)setAgendaItem:(id)arg1;
+- (id)agendaItem;
+- (void)updateLocation:(id)arg1 handler:(id)arg2;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 travelMethod:(int)arg4;
 - (void)_getOneshotPredictionFrom:(id)arg1 transportType:(int)arg2 handler:(id)arg3;
 - (void)_getAutomobilePredictionFrom:(id)arg1 handler:(id)arg2;
 - (void)_newQuickHypothesizerWithRequest:(id)arg1;
 - (void)_newHypothesizer;
-- (void)updateLocation:(id)arg1 handler:(id)arg2;
-- (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 travelMethod:(int)arg4;
 - (int)travelMethod;
-- (void)setAgendaItem:(id)arg1;
-- (id)agendaItem;
 - (void)dealloc;
 
 @end

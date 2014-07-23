@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CLLocation, NSObject<SLPlaceDataSourceDelegate>, CLLocationManager, ACAccount, NSMutableData, NSHTTPURLResponse, NSURLConnection;
+@class CLLocation, NSObject<SLPlaceDataSourceDelegate>, CLLocationManager, NSString, ACAccount, NSMutableData, NSHTTPURLResponse, NSURLConnection;
 
 @interface SLFacebookPlaceManager : NSObject <CLLocationManagerDelegate, SLPlaceDataSource> {
     CLLocationManager *_locationManager;
@@ -31,6 +31,10 @@
 @property(retain) CLLocation * currentLocation;
 @property NSObject<SLPlaceDataSourceDelegate> * delegate;
 @property(retain) ACAccount * account;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)currentLocationAccuracy;

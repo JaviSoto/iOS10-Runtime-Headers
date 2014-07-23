@@ -9,10 +9,10 @@
 }
 
 + (bool)bootUp;
-+ (long long)isBootUpRequired;
 + (id)dataStoreName;
 + (id)_create:(bool)arg1;
 + (id)modelURL;
++ (long long)isBootUpRequired;
 + (id)create;
 
 - (id)createManagedObjectContext;

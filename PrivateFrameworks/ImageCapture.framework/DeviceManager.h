@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class DeviceManagerThread, NSDictionary, NSMutableDictionary;
+@class NSMutableDictionary, NSDictionary, NSString, DeviceManagerThread;
 
 @interface DeviceManager : NSObject <ICDeviceManagerProtocol> {
     DeviceManagerThread *_thread;
     NSDictionary *_deviceMatchingInfo;
     NSMutableDictionary *_devices;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)postCommandCompletionNotification:(id)arg1;

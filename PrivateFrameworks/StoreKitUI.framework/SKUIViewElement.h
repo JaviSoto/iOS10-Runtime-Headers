@@ -24,6 +24,7 @@
 - (id)indexBarEntryID;
 - (void)enumerateViewElementsWithDictionary:(id)arg1 factory:(id)arg2 usingBlock:(id)arg3;
 - (bool)descendsFromElementWithType:(unsigned long long)arg1;
+- (id)featureWithName:(id)arg1;
 - (long long)pinStyle;
 - (id)personalizationLibraryItems;
 - (bool)isDescendentFromViewElement:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSObject<OS_dispatch_source>;
+@class NSObject<OS_dispatch_source>, GEOTileCache;
 
 @interface GEOTilePool : NSObject  {
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
@@ -52,6 +52,7 @@
         unsigned long long _currentCost; 
         unsigned long long _currentCount; 
     } _pool;
+    GEOTileCache *_cache;
 }
 
 @property(readonly) unsigned long long currentCount;
@@ -60,6 +61,7 @@
 @property unsigned long long maxCost;
 
 
+- (id)initWithSideCacheEnabled:(bool)arg1;
 - (unsigned long long)currentCost;
 - (unsigned long long)currentCount;
 - (void)removeTilesWithKeys:(id)arg1;
@@ -78,6 +80,7 @@
 - (void)_receivedMemoryNotification;
 - (id)init;
 - (void)removeAllObjects;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 

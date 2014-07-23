@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSMutableArray, NSArray, TPSlidingButton, <TPSuperBottomBarDelegateProtocol>, UIView, UIButton;
+@class UIView, NSString, NSArray, UIButton, NSMutableArray, TPSlidingButton, <TPSuperBottomBarDelegateProtocol>;
 
 @interface TPSuperBottomBar : UIView <TPSlidingButtonDelegateProtocol> {
     bool_declineAndRemindIsAvailable;
@@ -56,6 +56,10 @@
 @property(retain) TPSlidingButton * slidingButton;
 @property(retain) NSMutableArray * hijackedGestureRecognizers;
 @property(retain) NSMutableArray * stateStack;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)defaultInterButtonSpacing;
 + (double)defaultSideMarginForDoubleButton;
@@ -82,6 +86,7 @@
 - (void)_startShopDemoMode;
 - (void)setUsesLowerButtons:(bool)arg1;
 - (void)prepareButtonsForAnimationBegin;
+- (void)shrinkButtonFontSizesIfNecessary;
 - (void)animateFromOutgoingStateToCallbackAndMessageUIToState:(int)arg1 withCompletion:(id)arg2;
 - (void)animateFromOutgoingStateToInCallStateWithCompletion:(id)arg1;
 - (void)animateOutSupplementalBottomLeftButtonToState:(int)arg1 withCompletion:(id)arg2;
@@ -101,7 +106,6 @@
 - (id)_horizontalConstraintsForSupplementalButtonsUsingLabels:(id)arg1;
 - (void)setButtonLayoutConstraints:(id)arg1;
 - (id)constraintsForState:(int)arg1;
-- (void)shrinkButtonFontSizesIfNecessary;
 - (id)buttonLayoutConstraints;
 - (bool)declineAndRemindIsAvailable;
 - (bool)declineAndMessageIsAvailable;

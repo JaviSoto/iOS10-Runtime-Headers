@@ -28,6 +28,10 @@
 
 @property(readonly) int servicePID;
 @property(readonly) struct { unsigned int x1[8]; } serviceAuditToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)connectToViewService:(id)arg1 deputyInterfaces:(id)arg2 connectionHandler:(id)arg3;
 + (id)connectToViewServiceWithBundleIdentifier:(id)arg1 deputyInterfaces:(id)arg2 connectionHandler:(id)arg3;

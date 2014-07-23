@@ -22,6 +22,10 @@
 @property(getter=isInlineCompletionCandidate,readonly) bool inlineCompletionCandidate;
 @property(getter=isFullwidthCandidate,readonly) bool fullwidthCandidate;
 @property(readonly) unsigned int usageTrackingMask;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (int)type;
 + (bool)supportsSecureCoding;

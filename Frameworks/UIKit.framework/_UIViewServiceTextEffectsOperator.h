@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIWindow, _UIAsyncInvocation;
+@class UIWindow, NSArray, _UIAsyncInvocation, NSString;
 
 @interface _UIViewServiceTextEffectsOperator : NSObject <_UIViewServiceTextEffectsOperator_RemoteViewControllerInterface, _UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate> {
     id _remoteViewControllerProxy;
@@ -21,6 +21,11 @@
     int __automatic_invalidation_retainCount;
     bool__automatic_invalidation_invalidated;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)XPCInterface;
 + (id)operatorWithRemoteViewControllerProxy:(id)arg1 hostPID:(int)arg2;

@@ -35,7 +35,6 @@
 - (void)setRaw:(bool)arg1;
 - (bool)isRaw;
 - (void)setHasMetadata:(bool)arg1;
-- (void)setHasThumbnail:(bool)arg1;
 - (bool)fetchingMetadata;
 - (bool)fetchingThumbnail;
 - (void)setMetadata_hidden:(id)arg1;
@@ -46,6 +45,7 @@
 - (void)flushMetadataCache;
 - (void)requestThumbnail;
 - (void)requestMetadata;
+- (void)setHasThumbnail:(bool)arg1;
 - (void)setFileSize:(long long)arg1;
 - (unsigned long long)orientation;
 - (id)metadata;

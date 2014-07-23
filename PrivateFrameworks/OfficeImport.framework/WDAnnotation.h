@@ -19,9 +19,9 @@
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (void)setReferencePropertiesFixed;
 - (bool)referencePropertiesFixed;
-- (id)reference;
 - (int)runType;
 - (int)annotationType;
+- (id)reference;
 - (id)owner;
 - (id)text;
 - (void)setOwner:(id)arg1;

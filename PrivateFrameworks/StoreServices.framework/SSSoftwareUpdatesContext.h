@@ -13,6 +13,10 @@
 @property(getter=isForced,readonly) bool forced;
 @property(copy,readonly) NSArray * softwareTypes;
 @property(copy,readonly) NSString * clientIdentifierHeader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isForced;

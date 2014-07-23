@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UITextField;
+@class NSString, UITextField;
 
 @interface ABPropertySimpleEditingCell : ABPropertyEditingCell <UITextFieldDelegate> {
     UITextField *_textField;
 }
 
 @property(readonly) UITextField * textField;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)textFieldChanged:(id)arg1;

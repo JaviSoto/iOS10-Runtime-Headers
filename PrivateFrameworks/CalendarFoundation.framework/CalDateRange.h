@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSDate;
+@class NSString, NSDate;
 
 @interface CalDateRange : NSObject <NSCopying, CalDateRangeProtocol, NSSecureCoding> {
     NSDate *_startDate;
@@ -12,6 +12,10 @@
 @property(retain) NSDate * startDate;
 @property(retain) NSDate * endDate;
 @property(readonly) double duration;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)rangeByExpandingRange:(id)arg1 direction:(long long)arg2 duration:(double)arg3;
 + (id)rangeByExpandingRange:(id)arg1 direction:(long long)arg2 multiplier:(unsigned long long)arg3;
@@ -20,6 +24,7 @@
 + (bool)supportsSecureCoding;
 + (id)rangeWithRange:(id)arg1;
 
+- (void)setEndDate:(id)arg1;
 - (id)midnightsForRangeInTimeZoneString:(id)arg1;
 - (id)subtractRange:(id)arg1;
 - (id)unionRange:(id)arg1;
@@ -31,7 +36,6 @@
 - (bool)intersectsRange:(id)arg1;
 - (bool)intersectsRangeWithStartDate:(id)arg1 endDate:(id)arg2 allowSinglePointIntersection:(bool)arg3;
 - (bool)intersectsRange:(id)arg1 allowSinglePointIntersection:(bool)arg2;
-- (void)setEndDate:(id)arg1;
 - (id)initWithStartDate:(id)arg1 duration:(double)arg2;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setStartDate:(id)arg1 endDate:(id)arg2;

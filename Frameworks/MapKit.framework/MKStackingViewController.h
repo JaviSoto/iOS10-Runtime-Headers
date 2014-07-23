@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIView, NSArray, _MKStackingContentView, <MKStackingViewControllerDelegate>, _MKStackView, _MKStackingPlaceholderView, NSMutableSet, NSLayoutConstraint, UIViewController, NSMapTable, UIScrollView;
+@class NSMapTable, UIViewController, _MKStackingPlaceholderView, UIView, NSLayoutConstraint, NSString, UIScrollView, NSMutableSet, NSArray, _MKStackView, _MKStackingContentView, <MKStackingViewControllerDelegate>;
 
 @interface MKStackingViewController : UIViewController <UIScrollViewDelegate> {
     _MKStackView *_stackView;
@@ -33,6 +33,10 @@
 @property(copy) NSArray * viewControllers;
 @property UIViewController * selectedViewController;
 @property <MKStackingViewControllerDelegate> * stackingDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSelectedViewController:(id)arg1 animated:(bool)arg2;

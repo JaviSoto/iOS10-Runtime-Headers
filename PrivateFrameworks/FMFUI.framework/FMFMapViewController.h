@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class UIBarButtonItem, FMFRefreshBarButtonItem, UIImageView, FMFTitleView, FMF3HiddenMapTrackingHandler, UIColor, UIView, NSSet, FMFNoLocationView, MKUserTrackingBarButtonItem, FMFSession, UIToolbar, MKMapView, FMFMapViewDelegateInternal, <FMFMapViewControllerDelegate>;
+@class UIBarButtonItem, FMFRefreshBarButtonItem, UIImageView, FMFTitleView, FMF3HiddenMapTrackingHandler, UIColor, UIView, NSSet, FMFNoLocationView, MKUserTrackingBarButtonItem, FMFSession, UIToolbar, NSString, MKMapView, FMFMapViewDelegateInternal, FMFMapOptionsViewController, <FMFMapViewControllerDelegate>;
 
-@interface FMFMapViewController : UIViewController <FMFSessionDelegateInternal, FMFMapViewDelegateInternalDelegate, FMF3HiddenMapTrackingHandlerDelegate, FMFNoLocationViewDelegate> {
+@interface FMFMapViewController : UIViewController <FMFSessionDelegateInternal, FMFMapViewDelegateInternalDelegate, FMF3HiddenMapTrackingHandlerDelegate, FMFNoLocationViewDelegate, FMFMapOptionsViewControllerDelegate> {
     bool_shouldZoomToFitNewLocations;
     bool_shouldZoomToFitMeAndLocations;
     bool_showFloatingMapLocationButton;
@@ -13,6 +13,8 @@
     bool__refreshingIsPaused;
     bool__blockDidReceiveAnimation;
     bool__isRenderingInitialMap;
+    bool_viewWillAppearCalled;
+    bool_mapTypeLoaded;
     <FMFMapViewControllerDelegate> *_delegate;
     MKMapView *_mapView;
     UIColor *_annotationTintColor;
@@ -21,17 +23,19 @@
     NSSet *__preloadedHandles;
     FMFNoLocationView *_noLocationView;
     NSSet *__internalHandlesShowingLocations;
+    FMFMapOptionsViewController *_mapOptionsVC;
     FMFTitleView *_titleView;
     void *_addressBook;
     UIToolbar *_toolbar;
     MKUserTrackingBarButtonItem *_userLocationButton;
-    UIBarButtonItem *_openInMapsBarButtonItem;
+    UIBarButtonItem *_directionsBarButtonItem;
     UIBarButtonItem *_infoBarButtonItem;
     FMF3HiddenMapTrackingHandler *_hiddenMap;
     UIToolbar *_floatingLocationToolbar;
     UIView *_floatingToolbarView;
     FMFRefreshBarButtonItem *_refreshButton;
     UIImageView *_cachedMapView;
+    unsigned long long _defaultMapType;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -58,17 +62,25 @@
 @property bool _refreshingIsPaused;
 @property bool _blockDidReceiveAnimation;
 @property bool _isRenderingInitialMap;
+@property bool viewWillAppearCalled;
+@property(retain) FMFMapOptionsViewController * mapOptionsVC;
 @property(retain) FMFTitleView * titleView;
 @property void* addressBook;
 @property(retain) UIToolbar * toolbar;
 @property(retain) MKUserTrackingBarButtonItem * userLocationButton;
-@property(retain) UIBarButtonItem * openInMapsBarButtonItem;
+@property(retain) UIBarButtonItem * directionsBarButtonItem;
 @property(retain) UIBarButtonItem * infoBarButtonItem;
 @property(retain) FMF3HiddenMapTrackingHandler * hiddenMap;
 @property(retain) UIToolbar * floatingLocationToolbar;
 @property(retain) UIView * floatingToolbarView;
 @property(retain) FMFRefreshBarButtonItem * refreshButton;
 @property(retain) UIImageView * cachedMapView;
+@property unsigned long long defaultMapType;
+@property bool mapTypeLoaded;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)smallAnnotationViewImage;
 + (struct CGSize { double x1; double x2; })annotationImageSize;
@@ -76,8 +88,6 @@
 
 - (id)floatingToolbarView;
 - (id)floatingLocationToolbar;
-- (id)infoBarButtonItem;
-- (id)openInMapsBarButtonItem;
 - (void)setAnnotationTintColor:(id)arg1;
 - (bool)showFloatingMapLocationButton;
 - (void)zoomAndSelectHandle:(id)arg1;
@@ -88,8 +98,12 @@
 - (void)stopRefreshingLocations;
 - (id)initWithDelegate:(id)arg1 handles:(id)arg2;
 - (id)initSimpleMapWithDelegate:(id)arg1 handles:(id)arg2;
+- (void)mapTypeChanged:(unsigned long long)arg1;
+- (void)_dismiss:(id)arg1;
+- (void)openInMapsButtonTapped:(id)arg1;
 - (id)personImageForNoLocationView;
 - (void)hiddenMapTrackerDidUpdateMapToTrackingType:(long long)arg1;
+- (bool)viewWillAppearCalled;
 - (void)mapViewDidFinishRenderingMap;
 - (void)didUpdateUserLocation:(id)arg1;
 - (void)reZoomToFit;
@@ -98,6 +112,7 @@
 - (void)didDeselectLocation:(id)arg1;
 - (void)didSelectLocation:(id)arg1;
 - (id)annotationTintColor;
+- (void)_updateDirectionsButtonEnabled;
 - (id)_selectedHandleAnnotation;
 - (id)annotationImageForHandle:(id)arg1;
 - (void)zoomToFit;
@@ -112,6 +127,15 @@
 - (void)selectAnnotationIfSingleForMac;
 - (void)deselectAllAnnotations;
 - (void)set_refreshingIsPaused:(bool)arg1;
+- (bool)mapTypeLoaded;
+- (void)setDefaultMapType:(unsigned long long)arg1;
+- (void)setMapTypeLoaded:(bool)arg1;
+- (id)mapOptionsVC;
+- (id)infoBarButtonItem;
+- (bool)isCompact;
+- (void)setMapOptionsVC:(id)arg1;
+- (void)presentMapOptionsModal:(id)arg1;
+- (id)directionsBarButtonItem;
 - (bool)singleAnnotationOnMap;
 - (bool)_blockDidReceiveAnimation;
 - (bool)shouldZoomToFitNewLocations;
@@ -141,6 +165,8 @@
 - (void)addHandlesToSession;
 - (void)viewWillAppearWillMoveToWindowSetup;
 - (void)set_blockDidReceiveAnimation:(bool)arg1;
+- (unsigned long long)defaultMapType;
+- (void)setViewWillAppearCalled:(bool)arg1;
 - (void)_updateLocationButtonEnabled;
 - (void)setUserLocationButton:(id)arg1;
 - (id)hiddenMap;
@@ -153,8 +179,8 @@
 - (id)userLocationButton;
 - (void)setInfoBarButtonItem:(id)arg1;
 - (void)infoButtonTapped:(id)arg1;
-- (void)setOpenInMapsBarButtonItem:(id)arg1;
-- (void)openInMapsButtonTapped:(id)arg1;
+- (void)setDirectionsBarButtonItem:(id)arg1;
+- (void)getDirections;
 - (void)enablePreloadedHandles;
 - (void)loadDelegate;
 - (id)titleViewForSelectedHandle;
@@ -163,6 +189,7 @@
 - (id)cachedMapView;
 - (bool)isSimpleMap;
 - (void)set_isRenderingInitialMap:(bool)arg1;
+- (void)mapTypeChangedNotification:(id)arg1;
 - (void)updateAllAnnotationsDueToAddressBookUpdate;
 - (void)setShouldZoomToFitNewLocations:(bool)arg1;
 - (void)_authorizeMonitoringLocation;
@@ -176,7 +203,6 @@
 - (void)destroySession;
 - (void)setMapView:(id)arg1;
 - (id)mapView;
-- (void)dismiss:(id)arg1;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
 - (void)didMoveToParentViewController:(id)arg1;

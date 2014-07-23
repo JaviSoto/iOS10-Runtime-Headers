@@ -14,6 +14,7 @@
 }
 
 + (Class)_mutableStringClass;
++ (bool)supportsSecureCoding;
 
 - (id)init;
 - (unsigned long long)length;

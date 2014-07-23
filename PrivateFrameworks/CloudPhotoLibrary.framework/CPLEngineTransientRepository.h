@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSMutableArray, CPLPlatformObject;
+@class NSString, NSMutableArray, CPLPlatformObject;
 
 @interface CPLEngineTransientRepository : CPLEngineStorage <CPLAbstractObject> {
     unsigned long long _state;
@@ -12,6 +12,10 @@
 }
 
 @property unsigned long long maximumCountOfRecordsInBatches;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)orderedClassesForChanges;

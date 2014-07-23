@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIView, <TPStarkInCallViewControllerDelegate>, NSArray, TUCall, TPStarkInCallHardPauseButton, TPStarkPhoneCallGalleryView, NSTimer, TUReplyWithMessageStore, TPStarkInCallButtonsView;
+@class UIView, <TPStarkInCallViewControllerDelegate>, NSArray, TUCall, TPStarkInCallHardPauseButton, TPStarkPhoneCallGalleryView, NSTimer, NSString, TUReplyWithMessageStore, TPStarkInCallButtonsView;
 
 @interface TPStarkInCallViewController : UIViewController <TPStarkPhoneCallGalleryViewDelegate, TPStarkHardPauseButtonDelegate, TPStarkInCallButtonsViewDelegate, UIActionSheetDelegate> {
     TUReplyWithMessageStore *_replyWithMessageStore;
@@ -33,6 +33,10 @@
 @property(retain) TUCall * callToDecline;
 @property unsigned short currentMode;
 @property(retain) TUCall * failedCall;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isDismissable;
@@ -50,8 +54,8 @@
 - (void)setIsMuted:(bool)arg1;
 - (bool)isSpringBoardPasscodeLocked;
 - (bool)areIncomingCallOptionsAllowed;
-- (void)setFailedCall:(id)arg1;
 - (void)_sendMessageResponse:(id)arg1 toCall:(id)arg2;
+- (void)setFailedCall:(id)arg1;
 - (void)handleAlertControllerSendMessageResponse:(id)arg1;
 - (id)replyWithMessageStore;
 - (void)setCallToDecline:(id)arg1;

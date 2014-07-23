@@ -19,6 +19,10 @@
 @property(retain,readonly) NSArray * albumObjectIDs;
 @property(retain,readonly) PLPhotoLibrary * photoLibrary;
 @property(retain) NSFileManager * fileManager;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_isPTPAlbum:(id)arg1;

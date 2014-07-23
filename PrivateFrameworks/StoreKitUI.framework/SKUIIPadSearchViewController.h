@@ -28,6 +28,10 @@
 @property(readonly) NSString * previousRelatedSearchTerm;
 @property(retain) NSArray * searchFacets;
 @property(retain) NSDictionary * facetSelections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

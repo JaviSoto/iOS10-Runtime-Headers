@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSCountedSet, SSDownloadHandler, NSAsyncSSDownloadManager, NSTimer, NSMutableArray;
+@class NSCountedSet, NSString, SSDownloadHandler, NSAsyncSSDownloadManager, NSTimer, NSMutableArray;
 
 @interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadManagerObserver, SSDownloadHandlerDelegate> {
     struct __CFRunLoopSource { } *_source;
@@ -15,6 +15,11 @@
     bool_terminated;
     NSTimer *_deferredStartTimer;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_enableLogging;
 + (id)sharedDownloadManagerForMediaKind:(id)arg1 persistenceIdentifier:(id)arg2;
@@ -42,11 +47,11 @@
 - (void)start;
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; boolx5; long long x6; }*)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;

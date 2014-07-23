@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSMediaStreamDaemon, MSPublishStreamsProtocol, NSArray, NSURL, <MSPublisherDelegate>, NSMutableDictionary, MSObjectQueue, NSMutableArray, <MSPublishStorageProtocol>;
+@class MSMediaStreamDaemon, NSString, MSPublishStreamsProtocol, NSArray, NSURL, <MSPublisherDelegate>, NSMutableDictionary, MSObjectQueue, NSMutableArray, <MSPublishStorageProtocol>;
 
 @interface MSPublisher : MSCupidStateMachine <MSPublisher, MSPublishStreamsProtocolDelegate, MSPublishStorageProtocolDelegate> {
     <MSPublisherDelegate> *_delegate;
@@ -30,6 +30,10 @@
 @property(retain) NSURL * storageProtocolURL;
 @property long long publishTargetByteCount;
 @property int publishBatchSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <MSPublisherDelegate> * delegate;
 
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;

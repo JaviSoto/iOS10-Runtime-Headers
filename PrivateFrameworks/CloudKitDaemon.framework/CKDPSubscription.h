@@ -75,6 +75,7 @@
 - (bool)hasZoneIdentifier;
 - (void)setZoneIdentifier:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (int)owner;
 - (void)setNotification:(id)arg1;
 - (bool)readFrom:(id)arg1;

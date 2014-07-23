@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSArray, <CUIKSingleDayTimelineViewItem>, <CUIKSingleDayTimelineGeometryDelegate>, NSDate, NSMutableArray, <CUIKSingleDayTimelineLayoutScreenUtils>;
+@class NSDate, <CUIKSingleDayTimelineLayoutScreenUtils>, NSArray, NSCalendar, <CUIKSingleDayTimelineGeometryDelegate>, NSMutableArray, <CUIKSingleDayTimelineViewItem>;
 
 @interface CUIKSingleDayTimelineLayout : NSObject  {
     NSArray *_occurrences;
@@ -25,6 +25,7 @@
             double height; 
         } size; 
     } _frame;
+    NSCalendar *_calendar;
     <CUIKSingleDayTimelineGeometryDelegate> *_geometryDelegate;
     <CUIKSingleDayTimelineLayoutScreenUtils> *_screenUtilsDelegate;
 }
@@ -38,7 +39,7 @@
 - (void)_popOccurrencesInPartition:(id)arg1 endingBeforeTime:(double)arg2;
 - (double)_adjustedStartTimeForOccurrence:(id)arg1;
 - (double)_effectiveEndTimeForOccurrence:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForStartSeconds:(long long)arg1 endSeconds:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForStartSeconds:(long long)arg1 endSeconds:(long long)arg2;
 - (void)_capVisibleTextForBucket:(id)arg1;
 - (void)_stampOccurrenceFrames;
 - (void)_reclaimSpaceFromStackedOccurrences;

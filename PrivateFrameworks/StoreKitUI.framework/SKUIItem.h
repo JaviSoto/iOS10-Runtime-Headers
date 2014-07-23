@@ -71,6 +71,10 @@
 @property(readonly) long long newsstandBindingType;
 @property(readonly) SKUIArtworkList * newsstandArtworks;
 @property(readonly) NSString * _downloadKind;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 
 

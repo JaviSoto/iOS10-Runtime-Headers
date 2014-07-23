@@ -20,8 +20,8 @@
 
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (void)hide:(id)arg1;
 - (void)loadURLRequest:(id)arg1;
+- (void)hide:(id)arg1;
 - (id)isVisible;
 - (void)setHeight:(id)arg1;
 - (void)setWidth:(id)arg1;

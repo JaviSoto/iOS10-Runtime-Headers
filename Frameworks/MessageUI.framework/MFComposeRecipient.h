@@ -22,6 +22,10 @@
 @property(getter=isRemovableFromSearchResults,readonly) bool removableFromSearchResults;
 @property(readonly) bool showsAccessoryButton;
 @property(retain) NSString * countryCode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)mf_recipientWithGALResult:(id)arg1;
@@ -47,8 +51,8 @@
 - (id)placeholderName;
 - (id)uncommentedAddress;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (id)commentedAddress;
 - (id)compositeName;
+- (id)commentedAddress;
 - (void*)record;
 - (int)property;
 - (void)setCountryCode:(id)arg1;

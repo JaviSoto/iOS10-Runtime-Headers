@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UITapGestureRecognizer, SKUIViewElementLayoutContext, SKUILayoutCache, IKAppDocument, SKUIHorizontalLockupView, SUPlayerStatus;
+@class NSString, UITapGestureRecognizer, SKUIViewElementLayoutContext, IKAppDocument, SUPlayerStatus, SKUIHorizontalLockupView, SKUILayoutCache;
 
 @interface SKUIPreviewOverlayViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, UIGestureRecognizerDelegate> {
     long long _backgroundStyle;
@@ -15,6 +15,10 @@
 }
 
 @property long long backgroundStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)documentDidUpdate:(id)arg1;

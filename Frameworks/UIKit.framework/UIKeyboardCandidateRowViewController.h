@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateListDelegate>, NSArray, UIKBCandidateCollectionView, <UIKeyboardCandidateRowViewControllerDelegate>, TIKeyboardCandidateResultSet;
+@class <UIKeyboardCandidateListDelegate>, NSArray, UIKBCandidateCollectionView, NSString, <UIKeyboardCandidateRowViewControllerDelegate>, TIKeyboardCandidateResultSet;
 
 @interface UIKeyboardCandidateRowViewController : UIViewController <UIKeyboardCandidateList, UICollectionViewDelegate, UICollectionViewDataSource> {
     bool_showsHiddenCandidates;
@@ -19,6 +19,10 @@
 @property(readonly) NSArray * candidates;
 @property(readonly) UIKBCandidateCollectionView * collectionView;
 @property(retain) Class cellClass;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)suggestedHeightForCellClass:(Class)arg1;
 

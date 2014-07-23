@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSDeleterDelegate>, MSObjectQueue, MSMediaStreamDaemon, NSMutableArray, MSDeleteStreamsProtocol;
+@class <MSDeleterDelegate>, NSString, MSObjectQueue, MSMediaStreamDaemon, NSMutableArray, MSDeleteStreamsProtocol;
 
 @interface MSDeleter : MSCupidStateMachine <MSDeleter, MSDeleteStreamsProtocolDelegate> {
     MSDeleteStreamsProtocol *_protocol;
@@ -17,6 +17,10 @@
 
 @property MSMediaStreamDaemon * daemon;
 @property int batchSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <MSDeleterDelegate> * delegate;
 
 + (id)_clearInstantiatedDeletersByPersonID;

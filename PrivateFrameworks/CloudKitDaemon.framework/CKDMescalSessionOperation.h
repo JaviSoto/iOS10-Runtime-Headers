@@ -13,13 +13,14 @@
 @property(retain) CKDMescalSession * mescalSession;
 
 
-- (void)setMescalSession:(id)arg1;
 - (void)_handleCertRequestFinished:(id)arg1;
-- (void)_exchangeDataAndSendRequest:(id)arg1;
+- (void)_handleDataExchanged:(id)arg1 withError:(id)arg2;
 - (void)_handleSessionRequestFinished:(id)arg1;
-- (id)mescalSession;
+- (void)_exchangeDataAndSendRequest:(id)arg1;
 - (id)flowControlKey;
 - (bool)shouldCheckAppVersion;
+- (void)setMescalSession:(id)arg1;
+- (id)mescalSession;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)setServerVersion:(int)arg1;
 - (int)serverVersion;

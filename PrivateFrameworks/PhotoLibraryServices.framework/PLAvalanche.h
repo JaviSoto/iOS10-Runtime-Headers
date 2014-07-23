@@ -39,6 +39,10 @@
 @property(setter=_setANewPick:,retain) PLManagedAsset * _aNewPick;
 @property(setter=_setAnOldPick:,retain) PLManagedAsset * _anOldPick;
 @property(setter=_setCompletionHandler:,copy) id _completionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSString * title;
 @property(copy,readonly) NSString * localizedTitle;
 @property(readonly) unsigned long long approximateCount;

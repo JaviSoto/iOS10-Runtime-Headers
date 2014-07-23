@@ -64,6 +64,7 @@
 
 + (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
 
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setIsShifted:(bool)arg1;
 - (void)setIsMatchedLocation:(bool)arg1;
 - (void)setSpeedAccuracy:(double)arg1;
@@ -92,7 +93,6 @@
 - (bool)hasAltitude;
 - (void)setHasAltitude:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasAccurateCourse;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (double)courseAccuracy;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class <BRNotificationReceiverDelegate>, NSObject<OS_dispatch_source>, BRNotificationQueue, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class BRNotificationQueue, NSString, NSMutableDictionary, NSMutableArray, <BRNotificationReceiverDelegate>, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>;
 
 @interface BRNotificationReceiver : NSObject <BRReachabilityObserver, BRItemNotificationReceiving> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -26,6 +26,10 @@
 @property unsigned long long batchingChanges;
 @property double batchingDelay;
 @property(retain) <BRNotificationReceiverDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setBatchingDelay:(double)arg1;

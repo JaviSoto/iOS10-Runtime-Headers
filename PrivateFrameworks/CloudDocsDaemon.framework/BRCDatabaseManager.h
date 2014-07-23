@@ -39,6 +39,7 @@
 - (bool)validateDatabase:(id)arg1 serverTruth:(bool)arg2 error:(id*)arg3;
 - (bool)_checkIntegrity:(id)arg1 serverTruth:(bool)arg2 error:(id*)arg3;
 - (bool)_stepBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 newState:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 error:(id*)arg3;
+- (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject { Class x1; }*)arg2;
 - (bool)_attachDatabase:(id)arg1 toConnection:(id)arg2 error:(id*)arg3;
 - (bool)_setupConnection:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
 - (id)newConnection:(id)arg1;

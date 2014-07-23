@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateListDelegate>, _UIDynamicCaretInput, _UIDynamicCaretNoContentView, _UIDynamicCaretHelpLabel, TIKeyboardCandidateResultSet, _UIDynamicCaretAlternatives;
+@class _UIDynamicCaretNoContentView, NSString, _UIDynamicCaretInput, _UIDynamicCaretHelpLabel, TIKeyboardCandidateResultSet, <UIKeyboardCandidateListDelegate>, _UIDynamicCaretAlternatives;
 
 @interface UIDynamicCaret : UIImageView <UIKeyboardCandidateList, _UIDynamicCaretDocumentContentDelegate> {
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
@@ -21,6 +21,10 @@
 @property(retain) _UIDynamicCaretNoContentView * noContentView;
 @property(retain) _UIDynamicCaretHelpLabel * helpLabel;
 @property(retain) TIKeyboardCandidateResultSet * candidateSet;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)currentIndex;

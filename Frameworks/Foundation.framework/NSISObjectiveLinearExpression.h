@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray;
+@class NSString, NSMutableArray;
 
 @interface NSISObjectiveLinearExpression : NSObject <NSISRowBody> {
     struct __CFDictionary { } *_priorityMap;
     NSMutableArray *_variablesSortedByPriorityVectors;
     struct __CFData { } *_constant;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)init;

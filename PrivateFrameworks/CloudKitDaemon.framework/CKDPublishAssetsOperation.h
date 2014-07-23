@@ -52,8 +52,8 @@
 - (id)fileNamesByAssetFieldNames;
 - (void)setRecordIDs:(id)arg1;
 - (id)recordIDs;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void)cancel;
 - (void).cxx_destruct;
 

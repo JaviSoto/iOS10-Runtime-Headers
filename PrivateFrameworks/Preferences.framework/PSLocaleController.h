@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSRegion, NSArray, PSLocaleSelector, UIView, UISearchBar, UITableView;
+@class UIView, NSString, NSArray, PSRegion, PSLocaleSelector, UISearchBar, UITableView;
 
 @interface PSLocaleController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
     UITableView *_tableView;
@@ -21,15 +21,19 @@
 @property(retain) NSArray * sections;
 @property(retain) NSArray * regionsList;
 @property(retain) PSRegion * currentRegion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (id)filteredRegionsForRegionList:(id)arg1 searchString:(id)arg2;
 - (id)currentRegion;
 - (id)filteredListContent;
 - (void)reloadSections;
 - (void)loadRegions;
 - (void)reloadDataAndScrollToCheckedRegionAnimated:(bool)arg1;
 - (id)regionsList;
-- (void)textValueChanged:(id)arg1;
 - (void)setCurrentRegion:(id)arg1;
 - (void)setRegionsList:(id)arg1;
 - (void)setFilteredListContent:(id)arg1;
@@ -41,9 +45,10 @@
 - (id)init;
 - (void)dealloc;
 - (void)setSections:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarCancelButtonClicked:(id)arg1;
-- (void)_keyboardWillHide:(id)arg1;
-- (void)_keyboardWillShow:(id)arg1;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;

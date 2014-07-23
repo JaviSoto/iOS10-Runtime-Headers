@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
+@class NSString, NSAttributedString;
 
 @interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
+    NSAttributedString *_attributedText;
     double _fontSize;
     long long _fontWeight;
     long long _numberOfLines;
@@ -17,8 +18,13 @@
 @property long long fontWeight;
 @property unsigned char textAlignment;
 @property long long numberOfLines;
+@property(copy) NSAttributedString * attributedText;
 @property(copy) NSString * text;
 @property double width;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) Class layoutClass;
 
 
@@ -36,6 +42,8 @@
 - (long long)numberOfLines;
 - (void)setNumberOfLines:(long long)arg1;
 - (unsigned char)textAlignment;
+- (id)attributedText;
+- (void)setAttributedText:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(unsigned char)arg1;
 

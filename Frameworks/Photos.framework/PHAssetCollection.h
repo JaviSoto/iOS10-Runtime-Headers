@@ -82,18 +82,19 @@
 @property(readonly) bool canShowAvalancheStacks;
 @property(readonly) bool canContributeToCloudSharedAlbum;
 @property(readonly) bool canShowComments;
+@property(readonly) bool canContainCustomKeyAssets;
 @property(readonly) NSString * transientIdentifier;
 @property(readonly) int plAlbumKind;
 @property(readonly) NSArray * assets;
 @property(readonly) PHQuery * query;
 @property(getter=_canShowCloudComments,setter=_setCanShowCloudComments:) bool _canShowCloudComments;
 
++ (id)posterImageForAssetCollection:(id)arg1;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
-+ (id)posterImageForAssetCollection:(id)arg1;
 + (id)fetchMomentsWithOptions:(id)arg1;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithObjectIDs:(id)arg1 options:(id)arg2;
@@ -105,6 +106,9 @@
 + (id)identifierCode;
 + (bool)managedObjectSupportsTrashedState;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(long long)arg2;
 + (id)fetchRecentlyAddedAlbumWithOptions:(id)arg1;
@@ -120,14 +124,15 @@
 - (unsigned long long)approximateVideosCount;
 - (unsigned long long)approximatePhotosCount;
 - (void)_setCanShowCloudComments:(bool)arg1;
+- (bool)canContainCustomKeyAssets;
 - (bool)canContainAssets;
 - (bool)collectionCanBePinned;
 - (unsigned long long)estimatedVideosCount;
 - (unsigned long long)estimatedPhotosCount;
+- (unsigned long long)estimatedAssetCount;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5 subtype:(long long)arg6;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5;
-- (unsigned long long)estimatedAssetCount;
 - (bool)_canShowCloudComments;
 - (long long)assetCollectionSubtype;
 - (long long)assetCollectionType;

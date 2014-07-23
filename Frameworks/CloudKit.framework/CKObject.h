@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSSet, CKObjCClass;
+@class NSSet, NSString, CKObjCClass;
 
 @interface CKObject : NSObject <CKPropertyCoding> {
 }
 
 @property(readonly) CKObjCClass * objcClass;
 @property(readonly) NSSet * propertyNamesNotToEncode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)propertyNamesNotToEncode;

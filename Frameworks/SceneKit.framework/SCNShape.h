@@ -51,10 +51,10 @@
 - (bool)getBoundingBoxMin:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 max:(struct SCNVector3 { float x1; float x2; float x3; }*)arg2;
 - (id)presentationGeometry;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
+- (struct UIBezierPath { Class x1; struct CGPath {} *x2; double *x3; unsigned long long x4; double x5; double x6; double x7; double x8; int x9; int x10; boolx11; struct CGPath {} *x12; boolx13; }*)path;
 - (long long)primitiveType;
 - (id)init;
 - (void)setPath:(struct UIBezierPath { Class x1; struct CGPath {} *x2; double *x3; unsigned long long x4; double x5; double x6; double x7; double x8; int x9; int x10; boolx11; struct CGPath {} *x12; boolx13; }*)arg1;
-- (struct UIBezierPath { Class x1; struct CGPath {} *x2; double *x3; unsigned long long x4; double x5; double x6; double x7; double x8; int x9; int x10; boolx11; struct CGPath {} *x12; boolx13; }*)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copy;

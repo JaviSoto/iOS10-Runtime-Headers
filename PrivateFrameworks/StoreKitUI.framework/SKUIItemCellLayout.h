@@ -33,6 +33,10 @@
 @property(readonly) SKUIItemOfferButton * itemOfferButton;
 @property(readonly) UILabel * itemOfferNoticeLabel;
 @property(readonly) UIView * removeControlView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)itemOfferButton;

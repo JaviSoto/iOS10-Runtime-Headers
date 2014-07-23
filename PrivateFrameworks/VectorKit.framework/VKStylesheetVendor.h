@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableDictionary, NSDictionary, NSObject<OS_dispatch_queue>, VKResourceManager;
+@class NSMutableDictionary, NSDictionary, NSString, NSObject<OS_dispatch_queue>, VKResourceManager;
 
 @interface VKStylesheetVendor : NSObject <GEOResourceManifestTileGroupObserver> {
     unsigned int _tileGroupIdentifier;
@@ -12,6 +12,11 @@
     NSObject<OS_dispatch_queue> *_localizationToAttributeValueQueue;
     NSDictionary *_localizationToAttributeValue;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (int)styleAttributeValueForLocalization:(id)arg1;

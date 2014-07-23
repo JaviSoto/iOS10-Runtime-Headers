@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSError, NSString, QLPreviewThumbnailGenerator, NSURL, UIImage, UIDocumentInteractionController, NSMutableArray, NSOperation;
+@class NSError, NSString, QLPreviewThumbnailGenerator, NSURL, NSArray, NSOperationQueue, UIImage, UIDocumentInteractionController, NSMutableArray, NSOperation;
 
 @interface QLPreviewArchiveItem : NSObject <QLPreviewUIItem> {
     UIDocumentInteractionController *_archiveController;
@@ -10,11 +10,14 @@
     NSString *_path;
     NSURL *_unarchivedURL;
     NSOperation *_unarchiveOperation;
+    NSOperationQueue *_unarchiveOperationQueue;
     NSMutableArray *_completionBlocks;
     NSError *_unarchivingError;
     long long _previewItemIndex;
     long long _UIItemIndex;
     long long _level;
+    NSURL *_rootUnzippingURL;
+    NSArray *_subItems;
 }
 
 @property(readonly) NSString * path;
@@ -22,6 +25,12 @@
 @property long long previewItemIndex;
 @property long long UIItemIndex;
 @property long long level;
+@property(retain) NSURL * rootUnzippingURL;
+@property(copy) NSArray * subItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) UIImage * icon;
@@ -29,23 +38,28 @@
 
 
 - (bool)isFolder;
-- (void)setUIItemIndex:(long long)arg1;
 - (long long)UIItemIndex;
-- (void)setPreviewItemIndex:(long long)arg1;
 - (id)unarchivingError;
 - (bool)unarchived;
-- (id)initWithArchiveController:(id)arg1 path:(id)arg2;
 - (void)unarchiveWithCompletionBlock:(id)arg1;
+- (id)rootUnzippingURL;
+- (id)subItems;
+- (void)setSubItems:(id)arg1;
+- (void)setRootUnzippingURL:(id)arg1;
+- (void)setUIItemIndex:(long long)arg1;
+- (void)setPreviewItemIndex:(long long)arg1;
+- (id)initWithArchiveController:(id)arg1 path:(id)arg2;
 - (long long)previewItemIndex;
 - (void)cancelIconUpdate;
 - (void)updateIconWithSize:(struct CGSize { double x1; double x2; })arg1 completionBlock:(id)arg2;
 - (bool)isPromisedItem;
 - (id)icon;
+- (id)path;
 - (void)setLevel:(long long)arg1;
 - (long long)level;
 - (void)cleanup;
-- (id)path;
 - (void)dealloc;
+- (id)description;
 - (id)initWithPath:(id)arg1;
 - (id)previewItemURL;
 

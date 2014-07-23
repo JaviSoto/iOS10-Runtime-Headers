@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSString, NSHTTPURLResponse, NSMutableData, NSURLRequest;
+@class NSString, NSHTTPURLResponse, NSMutableData, NSError, NSURLRequest;
 
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
     NSString *_initialURLString;
@@ -21,10 +21,15 @@
 
     NSMutableData *_responseData;
     NSHTTPURLResponse *_response;
+    NSError *_error;
 }
 
 @property(readonly) NSURLRequest * urlRequest;
 @property bool flushCache;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)responseClass;
 + (id)protocolVersion;
@@ -35,6 +40,7 @@
 - (void)setDeviceProvisioningMachineId:(id)arg1;
 - (void)setDeviceProvisioningOneTimePassword:(id)arg1;
 - (id)initWithURLString:(id)arg1;
+- (id)_urlSession;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)performRequestWithHandler:(id)arg1;

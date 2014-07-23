@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSHashTable, UIAlertView, NSArray, SSPurchaseManager, NSMutableArray, NSObject<OS_dispatch_queue>, SSDownloadManager, NSMapTable;
+@class NSHashTable, UIAlertView, NSArray, NSString, SSPurchaseManager, NSMutableArray, NSObject<OS_dispatch_queue>, SSDownloadManager, NSMapTable;
 
 @interface MPStoreDownloadManager : NSObject <SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -20,6 +20,10 @@
 }
 
 @property(readonly) NSArray * downloads;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedManager;
 

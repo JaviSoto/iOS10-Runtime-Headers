@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage, MPAVRoutingSheet, MPVolumeSlider, MPAudioVideoRoutingPopoverController, UIButton, UILabel, MPAVRoutingController;
+@class NSString, UIImage, MPAVRoutingSheet, MPVolumeSlider, MPAudioVideoRoutingPopoverController, UIButton, UILabel, MPAVRoutingController;
 
 @interface MPVolumeView : UIView <MPAVRoutingControllerDelegate, NSCoding> {
     MPAVRoutingSheet *_routingSheet;
@@ -43,6 +43,10 @@
 @property(readonly) bool isShowingRouteButton;
 @property bool routeButtonShowsTouchWhenHighlighted;
 @property unsigned long long routePopoverPermittedArrowDirections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setRouteButtonImage:(id)arg1 forState:(unsigned long long)arg2;

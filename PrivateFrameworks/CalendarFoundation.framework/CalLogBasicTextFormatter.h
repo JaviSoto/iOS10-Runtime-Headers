@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSDateFormatter;
+@class NSString, NSDateFormatter;
 
 @interface CalLogBasicTextFormatter : NSObject <CalLogFormatter> {
     bool_includeFunction;
@@ -33,6 +33,10 @@
 @property bool useCompactForm;
 @property bool usePrettyTimestamp;
 @property(retain) NSDateFormatter * dateFormatter;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setUseCompactForm:(bool)arg1;

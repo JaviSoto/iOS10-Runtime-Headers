@@ -26,6 +26,7 @@
 
 - (void)setValues:(id)arg1;
 - (id)values;
+- (struct CGPath { }*)path;
 - (void)setTimingFunctions:(id)arg1;
 - (void)setKeyTimes:(id)arg1;
 - (void)setRotationMode:(id)arg1;
@@ -45,6 +46,5 @@
 - (void)CA_prepareRenderValue;
 - (void)setCalculationMode:(id)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
 
 @end

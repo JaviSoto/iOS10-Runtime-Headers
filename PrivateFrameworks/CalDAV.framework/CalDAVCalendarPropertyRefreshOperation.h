@@ -24,6 +24,10 @@
 @property <CalDAVCalendarPropertyRefreshDelegate> * delegate;
 @property bool useCalendarHomeSyncReport;
 @property(retain) NSString * calendarHomeSyncToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setUseCalendarHomeSyncReport:(bool)arg1;

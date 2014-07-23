@@ -97,9 +97,9 @@
 - (bool)hasNumHomes;
 - (void)setHasNumHomes:(bool)arg1;
 - (void)setNumHomes:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (unsigned int)databaseSize;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;

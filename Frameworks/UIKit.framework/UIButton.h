@@ -54,6 +54,10 @@
     } _internalTitlePaddingInsets;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * ab_text;
 @property(copy) NSDictionary * ab_textAttributes;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentEdgeInsets;
@@ -247,7 +251,6 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_pathTitleEdgeInsets;
 - (void)_sendSetNeedsLayoutToSuperviewOnTitleAnimationCompletionIfNecessary;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setHighlighted:(bool)arg1;
 - (id)backgroundImageForState:(unsigned long long)arg1;
 - (id)_createPreparedImageViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)imageForState:(unsigned long long)arg1;
@@ -274,6 +277,7 @@
 - (id)titleLabel;
 - (void)_setTitleShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTitleColor:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setHighlighted:(bool)arg1;
 - (id)_titleView;
 - (void)_updateTitleView;
 - (void)_setLineBreakMode:(long long)arg1;

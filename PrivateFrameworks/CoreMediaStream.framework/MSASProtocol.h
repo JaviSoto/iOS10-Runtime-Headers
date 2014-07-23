@@ -27,6 +27,10 @@
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property bool isShuttingDown;
 @property(readonly) NSString * headerVersion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)shutDownCompletionBlock:(id)arg1;
@@ -107,8 +111,8 @@
 - (void)setServerSideConfigVersion:(id)arg1;
 - (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
-- (id)personID;
 - (bool)isShuttingDown;
+- (id)personID;
 - (void)setBaseURL:(id)arg1;
 - (id)baseURL;
 - (void)setWorkQueue:(id)arg1;

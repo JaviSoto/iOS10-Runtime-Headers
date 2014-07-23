@@ -24,9 +24,9 @@
 - (void)_private_encodeWithCoder:(id)arg1;
 - (id)_private_initWithCoder:(id)arg1;
 - (id)initWithResponse:(id)arg1 data:(id)arg2 userInfo:(id)arg3 storagePolicy:(unsigned long long)arg4;
+- (unsigned long long)storagePolicy;
 - (id)initWithResponse:(id)arg1 data:(id)arg2;
 - (void)_reestablishInternalCFCachedURLResponse:(struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFCachedURLResponse {} *x2; }*)arg1;
-- (unsigned long long)storagePolicy;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)response;

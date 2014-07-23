@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, UIResponder, NSArray, UIView, NSMutableArray, <_UITouchPhaseChangeDelegate>;
+@class UIView, NSString, NSArray, UIWindow, UIResponder, NSMutableArray, <_UITouchPhaseChangeDelegate>;
 
 @interface UITouch : NSObject <_UIResponderForwardable> {
     double _movementMagnitudeSquared;
@@ -56,6 +56,10 @@
 @property(retain) UIWindow * window;
 @property(retain) UIView * view;
 @property(retain) UIView * warpedIntoView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(setter=_setForwardablePhase:) long long _forwardablePhase;
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 @property(readonly) double timestamp;

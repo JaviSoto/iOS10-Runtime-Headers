@@ -135,8 +135,8 @@
 - (unsigned long long)mostUsedNetworksCount;
 - (void)addMostUsedNetworks:(id)arg1;
 - (void)setMostUsedNetworks:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView, NSDictionary, CAMStillImageCaptureResponse, PLPhotoTileViewController, PLCropOverlay, PLVideoView;
+@class UIView, NSString, PLVideoView, NSDictionary, CAMStillImageCaptureResponse, PLCropOverlay, PLPhotoTileViewController;
 
 @interface PLImagePickerCameraView : CAMCameraView <PLVideoViewDelegate> {
     bool_allowsEditing;
@@ -43,6 +43,10 @@
 @property(readonly) bool _shouldSkipPostcaptureReview;
 @property(getter=_isRetakingPhoto,setter=_setRetakingPhoto:) bool _retakingPhoto;
 @property(setter=_setWindowEdgeClip:) int _windowEdgeClip;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (int)_windowEdgeClip;

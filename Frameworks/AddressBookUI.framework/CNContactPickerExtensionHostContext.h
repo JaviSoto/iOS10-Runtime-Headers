@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContactPickerHostViewController;
+@class NSString, CNContactPickerHostViewController;
 
 @interface CNContactPickerExtensionHostContext : NSExtensionContext <CNContactPickerServiceProtocol, CNContactPickerHostProtocol> {
     CNContactPickerHostViewController *_viewController;
 }
 
 @property CNContactPickerHostViewController * viewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;

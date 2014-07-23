@@ -12,6 +12,7 @@
 
 - (void)stopRelativeAltitudeUpdates;
 - (void)startRelativeAltitudeUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (float)getMedian:(struct deque<float, std::__1::allocator<float> > { struct __split_buffer<float *, std::__1::allocator<float *> > { float **x_1_1_1; float **x_1_1_2; float **x_1_1_3; struct __compressed_pair<float **, std::__1::allocator<float *> > { float **x_4_2_1; } x_1_1_4; } x1; unsigned long long x2; struct __compressed_pair<unsigned long, std::__1::allocator<float> > { unsigned long long x_3_1_1; } x3; })arg1;
 - (void)startRelativeAltitudeUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)stopRelativeAltitudeUpdatesPrivate;
 - (void)onFilteredPressure:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;

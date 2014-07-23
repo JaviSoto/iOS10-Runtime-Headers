@@ -2,12 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, NSString, _UIViewAnimationAttributes, UIColor, UIMorphingLabelGlyphSet, NSMutableArray;
+@class UIFont, NSString, _UIViewAnimationAttributes, UIView, NSMutableArray, UIMorphingLabelGlyphSet, UIColor;
 
 @interface UIMorphingLabel : UIView  {
     UIMorphingLabelGlyphSet *_srcGlyphSet;
     UIMorphingLabelGlyphSet *_dstGlyphSet;
     NSMutableArray *_hiddenGlyphViews;
+    UIView *_colorView;
     struct { 
         unsigned long long len; 
         unsigned long long dir; 
@@ -25,6 +26,7 @@
     } _alignment[100];
     unsigned long long _alignmentSize;
     _UIViewAnimationAttributes *_animationAttributes;
+    bool_suppressLayoutSubviews;
     NSString *_text;
     UIFont *_font;
     UIColor *_textColor;
@@ -46,6 +48,7 @@
 @property(retain) UIColor * textColor;
 @property long long textAlignment;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
+@property bool suppressLayoutSubviews;
 
 
 - (void)baseInit;
@@ -61,6 +64,7 @@
 - (double)requiredWidthForText:(id)arg1;
 - (void)animateTextColor;
 - (void)animateGlyphs;
+- (bool)suppressLayoutSubviews;
 - (void)saveAnimationAttributes;
 - (id)attributedStringForText:(id)arg1;
 - (void)animateAlignmentHunkAtIndex:(unsigned long long)arg1;
@@ -79,7 +83,8 @@
 - (unsigned long long)calculateHardAlignment:(struct { struct _NSRange { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; boolx3; }*)arg1 size:(unsigned long long)arg2 fromGlyphs:(const unsigned short*)arg3 count:(unsigned long long)arg4 toGlyphs:(const unsigned short*)arg5 count:(unsigned long long)arg6;
 - (double)alphaForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)hideGlyph:(id)arg1;
-- (id)glyphViewWithImage:(id)arg1;
+- (id)glyphViewWithImage:(id)arg1 isColorGlyph:(bool)arg2;
+- (void)setSuppressLayoutSubviews:(bool)arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)textAlignment;
 - (id)textColor;

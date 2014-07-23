@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSOperationQueue, NSArray, NSMutableDictionary;
+@class NSArray, NSMutableDictionary, NSOperationQueue, NSString;
 
 @interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
     NSOperationQueue *_queue;
@@ -27,6 +27,10 @@
 }
 
 @property(retain) NSArray * enteredRecipients;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setEnteredRecipients:(id)arg1;

@@ -74,6 +74,8 @@
 @property unsigned long long outBytes;
 
 
+- (void)setTriggerType:(unsigned int)arg1;
+- (bool)hasDuration;
 - (unsigned long long)outBytes;
 - (unsigned long long)inBytes;
 - (unsigned int)reassertCount;
@@ -86,6 +88,7 @@
 - (unsigned int)ipv6Installed;
 - (unsigned int)ipv4Installed;
 - (unsigned int)triggerTrafficClass;
+- (unsigned int)triggerType;
 - (bool)hasOutBytes;
 - (void)setHasOutBytes:(bool)arg1;
 - (void)setOutBytes:(unsigned long long)arg1;
@@ -125,11 +128,8 @@
 - (bool)hasTriggerType;
 - (void)setHasTriggerType:(bool)arg1;
 - (bool)hasProtocol;
-- (unsigned int)triggerType;
-- (void)setTriggerType:(unsigned int)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

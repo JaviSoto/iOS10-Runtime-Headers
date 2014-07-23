@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableActionDataSource, <ABFMFActionButtonsDelegate>, ABUIPerson, ABStyleProvider, ABPersonTableViewDataSource, ABPersonTableTinyActionCell;
+@class NSString, ABPersonTableActionDataSource, <ABFMFActionButtonsDelegate>, ABStyleProvider, ABPersonTableViewDataSource, ABPersonTableTinyActionCell, ABUIPerson;
 
 @interface ABPersonTableViewActionsDelegate : NSObject <UIActionSheetDelegate, ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate> {
     int _highlightedValueIdentifier;
@@ -27,6 +27,10 @@
 @property(readonly) ABPersonTableTinyActionCell * tinyActionCell;
 @property bool actionShouldPickHighlightedValue;
 @property(readonly) ABPersonTableActionDataSource * actionDataSource;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setHighlightedValueIdentifier:(int)arg1;

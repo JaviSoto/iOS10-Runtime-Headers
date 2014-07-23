@@ -176,6 +176,7 @@
 - (id)applicationVersion;
 - (bool)hasLocale;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (id)deviceIdentifier;
 - (bool)readFrom:(id)arg1;

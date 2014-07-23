@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSMutableArray, UIView;
+@class UIColor, NSString, UIView, NSMutableArray;
 
 @interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, NSCoding> {
     NSMutableArray *_segments;
@@ -37,6 +37,10 @@
 @property long long selectedSegmentIndex;
 @property(retain) UIColor * tintColor;
 @property(setter=_setTranslucentOptionsBackground:) bool _hasTranslucentOptionsBackground;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (double)defaultHeightForStyle:(long long)arg1;

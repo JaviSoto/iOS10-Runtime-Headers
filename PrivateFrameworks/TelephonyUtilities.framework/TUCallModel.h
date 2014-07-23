@@ -2,8 +2,6 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class <TUCallModelDelegate>;
-
 @interface TUCallModel : NSObject  {
     bool_ambiguous;
     bool_swappable;
@@ -16,10 +14,8 @@
     bool_holdAndAnswerAllowed;
     bool_sendToVoicemailAllowed;
     int _ambiguityState;
-    <TUCallModelDelegate> *_delegate;
 }
 
-@property <TUCallModelDelegate> * delegate;
 @property(getter=isAmbiguous,readonly) bool ambiguous;
 @property(readonly) int ambiguityState;
 @property(getter=isSwappable,readonly) bool swappable;
@@ -32,6 +28,7 @@
 @property(getter=isHoldAndAnswerAllowed,readonly) bool holdAndAnswerAllowed;
 @property(getter=isSendToVoicemailAllowed,readonly) bool sendToVoicemailAllowed;
 
++ (id)sharedInstance;
 
 - (bool)isAmbiguous;
 - (bool)isSendToVoicemailAllowed;
@@ -44,8 +41,6 @@
 - (bool)isHoldAllowed;
 - (bool)isMergeable;
 - (bool)isSwappable;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)description;
 
 @end

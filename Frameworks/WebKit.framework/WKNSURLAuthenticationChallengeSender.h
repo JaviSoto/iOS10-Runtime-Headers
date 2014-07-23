@@ -2,14 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
+@class NSString;
+
 @interface WKNSURLAuthenticationChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

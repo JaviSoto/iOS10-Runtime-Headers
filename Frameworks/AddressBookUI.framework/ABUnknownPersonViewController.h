@@ -55,6 +55,10 @@
 @property(retain) ABUIPerson * displayedUIPerson;
 @property(copy) NSArray * displayedProperties;
 @property(copy) NSString * attribution;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
 
@@ -123,6 +127,7 @@
 - (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (id)customMessageView;
 - (id)messageDetailFont;
+- (id)messageFont;
 - (id)messageDetail;
 - (void)setCustomMessageView:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -170,7 +175,6 @@
 - (void)updateNavigationButtons;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (id)messageFont;
 - (void)setAttribution:(id)arg1;
 - (id)attribution;
 - (void)setMessage:(id)arg1;

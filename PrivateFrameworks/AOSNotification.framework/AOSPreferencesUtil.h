@@ -5,6 +5,7 @@
 @interface AOSPreferencesUtil : NSObject  {
 }
 
++ (id)dictionaryForKey:(id)arg1 inDomain:(id)arg2;
 + (void)setData:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (id)dataForKey:(id)arg1 inDomain:(id)arg2;
 + (void)setArray:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
@@ -19,7 +20,6 @@
 + (void)setBool:(bool)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (void)removeKey:(id)arg1 inDomain:(id)arg2;
 + (bool)boolForKey:(id)arg1 inDomain:(id)arg2;
-+ (id)dictionaryForKey:(id)arg1 inDomain:(id)arg2;
 + (void)synchronizeDomain:(id)arg1;
 + (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;

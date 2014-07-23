@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UITextField;
+@class NSString, UITextField;
 
 @interface MPPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
 
@@ -19,6 +19,10 @@
 }
 
 @property(readonly) long long style;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithStyle:(long long)arg1 routeName:(id)arg2 completionHandler:(id)arg3;

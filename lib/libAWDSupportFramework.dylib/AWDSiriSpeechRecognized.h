@@ -29,8 +29,8 @@
 - (bool)hasDurationFromVoiceRecordingEnd;
 - (void)setHasDurationFromVoiceRecordingEnd:(bool)arg1;
 - (void)setDurationFromVoiceRecordingEnd:(unsigned long long)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -67,6 +67,10 @@
 @property(retain) NSIndexPath * indexPath;
 @property(readonly) unsigned long long representedElementCategory;
 @property(readonly) NSString * representedElementKind;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;

@@ -12,8 +12,14 @@
     bool_canPaste;
     bool_canMoveCursorLeft;
     bool_canMoveCursorRight;
+    bool_isBold;
+    bool_isItalicized;
+    bool_isUnderlined;
 }
 
+@property(readonly) bool isBold;
+@property(readonly) bool isItalicized;
+@property(readonly) bool isUnderlined;
 @property(readonly) bool canToggleBoldface;
 @property(readonly) bool canToggleItalics;
 @property(readonly) bool canToggleUnderline;
@@ -26,6 +32,9 @@
 
 + (id)traitsWithResponder:(id)arg1 editable:(bool)arg2;
 
+- (bool)isUnderlined;
+- (bool)isItalicized;
+- (bool)isBold;
 - (bool)canMoveCursorRight;
 - (bool)canMoveCursorLeft;
 - (bool)canPaste;

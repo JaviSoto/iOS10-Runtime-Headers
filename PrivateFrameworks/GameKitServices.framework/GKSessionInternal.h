@@ -100,7 +100,6 @@
 - (bool)filterService:(const char *)arg1 withPID:(unsigned int)arg2;
 - (void)setBusy:(bool)arg1;
 - (void)handleEvents;
-- (bool)isBusy;
 - (bool)checkDNSConnection;
 - (id)displayNameForPeer:(id)arg1;
 - (bool)passesSendDataSanityCheck:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
@@ -154,6 +153,7 @@
 - (void)setDisconnectTimeout:(double)arg1;
 - (id)initWithConnection:(id)arg1 session:(id)arg2 delegate:(id)arg3;
 - (id)initWithSessionID:(id)arg1 displayName:(id)arg2 session:(id)arg3 sessionMode:(int)arg4;
+- (bool)isBusy;
 - (void)setServiceType:(id)arg1;
 - (bool)isAvailable;
 - (id)peerID;

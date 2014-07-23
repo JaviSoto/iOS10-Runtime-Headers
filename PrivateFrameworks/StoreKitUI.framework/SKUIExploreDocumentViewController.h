@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIExploreTemplateElement, UINavigationController, CLLocationManager;
+@class SKUIExploreTemplateElement, UINavigationController, NSString, CLLocationManager;
 
 @interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIStackedBarDelegate, UINavigationControllerDelegate, SKUIDocumentViewController> {
     SKUIExploreTemplateElement *_exploreTemplate;
@@ -10,6 +10,11 @@
     UINavigationController *_navigationController;
     bool_nearMeEnabled;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)documentDidUpdate:(id)arg1;

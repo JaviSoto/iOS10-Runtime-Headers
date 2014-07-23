@@ -2,12 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, NSDictionary, ABContactPhotoView, NSMutableArray, <ABPresenterDelegate>;
+@class CNContact, NSDictionary, <ABContactHeaderViewDelegate>, ABContactPhotoView, <ABPresenterDelegate>, NSMutableArray;
 
 @interface ABContactHeaderView : UIView  {
     bool_needsReload;
     NSDictionary *_nameTextAttributes;
     <ABPresenterDelegate> *_delegate;
+    <ABContactHeaderViewDelegate> *_headerDelegate;
     NSMutableArray *_headerConstraints;
     ABContactPhotoView *_photoView;
     CNContact *_contact;
@@ -22,11 +23,14 @@
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentMargins;
 @property(copy) NSDictionary * nameTextAttributes;
 @property <ABPresenterDelegate> * delegate;
+@property <ABContactHeaderViewDelegate> * headerDelegate;
 @property(retain) NSMutableArray * headerConstraints;
 @property(readonly) ABContactPhotoView * photoView;
 @property(readonly) CNContact * contact;
 
 
+- (void)setHeaderDelegate:(id)arg1;
+- (id)headerDelegate;
 - (void)saveContactPhoto;
 - (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)updateFontSizes;

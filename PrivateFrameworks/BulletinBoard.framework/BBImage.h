@@ -15,6 +15,10 @@
 @property(copy) NSString * path;
 @property(copy) NSString * name;
 @property(copy) NSString * bundlePath;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)imageWithName:(id)arg1 inBundle:(id)arg2;
 + (id)imageWithPath:(id)arg1;
@@ -23,6 +27,7 @@
 
 - (id)initWithData:(id)arg1 path:(id)arg2 name:(id)arg3 bundlePath:(id)arg4;
 - (void)setBundlePath:(id)arg1;
+- (id)path;
 - (void)setName:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -30,7 +35,6 @@
 - (id)data;
 - (id)uniqueIdentifier;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

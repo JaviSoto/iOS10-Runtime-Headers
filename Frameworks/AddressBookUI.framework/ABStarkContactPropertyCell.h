@@ -24,6 +24,8 @@
 - (id)variableConstraints;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

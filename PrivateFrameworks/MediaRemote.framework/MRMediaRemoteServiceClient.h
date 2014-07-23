@@ -2,11 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@class NSObject<OS_dispatch_queue>, NSArray;
+@class NSObject<OS_dispatch_queue>, NSMutableArray, NSArray;
 
 @interface MRMediaRemoteServiceClient : NSObject  {
     NSObject<OS_dispatch_queue> *_serialQueue;
     unsigned long long _registeredNowPlayingObservers;
+    NSMutableArray *_registeredOrigins;
     bool_receivesSupportedCommandsNotifications;
     bool_receivesRoutesChangedNotifications;
     bool_receivesOriginChangedNotifications;
@@ -23,6 +24,7 @@
 @property bool receivesRoutesChangedNotifications;
 @property bool receivesOriginChangedNotifications;
 @property bool receivesPlaybackErrorNotifications;
+@property(readonly) NSArray * registeredOrigins;
 @property(retain) NSArray * nowPlayingNotificationObservers;
 @property(retain) NSArray * routingNotificationObservers;
 @property(retain) NSArray * originNotificationObservers;
@@ -37,6 +39,10 @@
 - (id)originNotificationObservers;
 - (id)routingNotificationObservers;
 - (id)nowPlayingNotificationObservers;
+- (void)unregisterAllOrigins;
+- (bool)unregisterOrigin:(struct _MROrigin { }*)arg1;
+- (bool)registerOrigin:(struct _MROrigin { }*)arg1;
+- (id)registeredOrigins;
 - (void)setReceivesOriginChangedNotifications:(bool)arg1;
 - (void)setReceivesRoutesChangedNotifications:(bool)arg1;
 - (bool)isRegisteredForNowPlayingNotifications;

@@ -22,7 +22,7 @@
 - (void)deallocPrivate;
 - (void)onNotification:(id)arg1;
 - (id)initPrivate;
-- (void)onDeviceOrientation:(const struct Sample { double x1; struct { int x_2_1_1; } x2; }*)arg1;
+- (void)onDeviceOrientation:(const struct Sample { double x1; int x2; }*)arg1;
 - (id)init;
 - (void)dealloc;
 

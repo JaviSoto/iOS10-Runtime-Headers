@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSTextContainer, NSTextStorage, NSLayoutManager;
+@class NSString, NSDictionary, NSTextContainer, NSTextStorage, NSLayoutManager;
 
 @interface _UITextContainerView : UIView <NSUITextViewCommonMethods> {
     struct UIEdgeInsets { 
@@ -44,6 +44,10 @@
 @property(copy) NSDictionary * linkTextAttributes;
 @property bool usesTiledViews;
 @property long long layoutOrientation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property struct _NSRange { unsigned long long x1; unsigned long long x2; } markedRange;
 
 + (Class)layerClass;

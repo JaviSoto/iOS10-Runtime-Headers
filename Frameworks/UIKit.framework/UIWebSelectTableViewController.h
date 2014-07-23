@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, DOMHTMLSelectElement, UIWebSelectPopover;
+@class NSArray, UIWebSelectPopover, NSString, DOMHTMLSelectElement;
 
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
     DOMHTMLSelectElement *_selectionNode;
@@ -21,6 +21,10 @@
 @property(retain) NSArray * _groupsAndOptions;
 @property(retain) NSArray * _cachedItems;
 @property UIWebSelectPopover * _popover;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

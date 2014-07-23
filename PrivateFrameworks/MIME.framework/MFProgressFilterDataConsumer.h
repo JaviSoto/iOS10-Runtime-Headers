@@ -20,9 +20,9 @@
 @property(readonly) unsigned long long expectedSize;
 
 
+- (unsigned long long)expectedSize;
 - (id)initWithConsumers:(id)arg1 expectedSize:(unsigned long long)arg2;
 - (id)initWithConsumer:(id)arg1 expectedSize:(unsigned long long)arg2;
-- (unsigned long long)expectedSize;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
 - (long long)appendData:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSHashTable, SSAppPurchaseHistoryDatabase, NSMutableDictionary, NSCountedSet, NSMutableArray, NSObject<OS_dispatch_queue>, SSDownloadManager, SSSoftwareUpdatesStore;
+@class NSHashTable, NSString, SSAppPurchaseHistoryDatabase, NSMutableDictionary, NSCountedSet, NSMutableArray, NSObject<OS_dispatch_queue>, SSDownloadManager, SSSoftwareUpdatesStore;
 
 @interface SKUIItemStateCenter : NSObject <SSDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -30,6 +30,10 @@
 @property(readonly) long long parentalControlsRank;
 @property(getter=isRunningInStoreDemoMode,readonly) bool runningInStoreDemoMode;
 @property(readonly) SSSoftwareUpdatesStore * appUpdatesStore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultCenter;
 

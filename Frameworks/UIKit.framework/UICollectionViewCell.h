@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILongPressGestureRecognizer, UIView;
+@class UILongPressGestureRecognizer, NSString, UIView;
 
 @interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate> {
     UIView *_contentView;
@@ -27,6 +27,10 @@
 @property(getter=isHighlighted) bool highlighted;
 @property(retain) UIView * backgroundView;
 @property(retain) UIView * selectedBackgroundView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_contentViewClass;
 
@@ -35,6 +39,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (bool)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (void)_setSelectionSegueTemplate:(id)arg1;
 - (void)_handleMenuGesture:(id)arg1;
 - (void)_teardownHighlightingSupportIfReady;
@@ -61,8 +66,8 @@
 - (bool)isSelected;
 - (void)_updateBackgroundView;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (bool)_gestureRecognizerShouldBegin:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;

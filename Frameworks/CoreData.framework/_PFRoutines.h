@@ -45,12 +45,12 @@
 + (id)_frameworkHash;
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (bool)_generateObjectIDMaptableForArray:(id)arg1 withMapping:(id*)arg2 andEntries:(id*)arg3;
-+ (bool)isUbiquitousItemAtURL:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byAddingItems:(id)arg2;
 + (id)newMutableOrderedSetFromCollection:(id)arg1;
 + (id)newOrderedSetFromCollection:(id)arg1 byRemovingItems:(id)arg2;
 + (id)_newCollectionFromCollection:(id)arg1 forParentContext:(id)arg2 andClass:(Class)arg3;
 + (void)initialize;
++ (bool)isUbiquitousItemAtURL:(id)arg1;
 
 
 @end

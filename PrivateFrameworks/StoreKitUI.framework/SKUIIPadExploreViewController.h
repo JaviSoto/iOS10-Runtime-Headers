@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIExploreTemplateElement, CLLocationManager, NSArray, UINavigationController, UISplitViewController, SKUIContentInsetScrollView, SKUIStorePageSectionsViewController;
+@class SKUIExploreTemplateElement, CLLocationManager, NSArray, UINavigationController, UISplitViewController, NSString, SKUIContentInsetScrollView, SKUIStorePageSectionsViewController;
 
 @interface SKUIIPadExploreViewController : SKUIViewController <CLLocationManagerDelegate, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate, SKUIDocumentViewController> {
     NSArray *_contentOffsets;
@@ -14,6 +14,11 @@
     SKUIStorePageSectionsViewController *_rightVC;
     UISplitViewController *_splitVC;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
 

@@ -26,6 +26,10 @@
 @property CKDClientContext * context;
 @property bool isAnonymousAccount;
 @property bool haveWarnedAboutServerPreferredPushEnvironment;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIsAnonymousAccount:(bool)arg1;
@@ -41,7 +45,7 @@
 - (void)fetchDeviceIDWithCompletionHandler:(id)arg1;
 - (void)fetchPublicURLForServerType:(long long)arg1 completionHandler:(id)arg2;
 - (id)baseURLForServerType:(long long)arg1 partitionType:(long long)arg2;
-- (void)renewMescalSessionWithCompletionHandler:(id)arg1;
+- (void)renewMescalSessionForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)resetMescalSession;
 - (void)fetchConfigurationWithCompletionHandler:(id)arg1;
 - (void)renewAuthTokenWithCompletionHandler:(id)arg1;
@@ -49,10 +53,10 @@
 - (id)hardwareID;
 - (id)trafficContainerIdentifier;
 - (id)mescalSession;
-- (bool)isFakeAccount;
 - (id)initPrimaryAccountWithContext:(id)arg1;
 - (id)initFakeAccountWithEmail:(id)arg1 password:(id)arg2 context:(id)arg3;
 - (id)initAnonymousAccountWithContext:(id)arg1;
+- (bool)isFakeAccount;
 - (id)serverPreferredPushEnvironment;
 - (void)fetchContainerScopedUserIDWithCompletionHandler:(id)arg1;
 - (bool)isAnonymousAccount;
@@ -63,7 +67,6 @@
 - (void)setAccountWantsPushRegistration:(bool)arg1;
 - (void)setIsUnitTestingAccount:(bool)arg1;
 - (bool)accountWantsPushRegistration;
-- (id)sourceApplicationSecondaryIdentifier;
 - (bool)isUnitTestingAccount;
 - (id)containerScopedUserID;
 - (id)containerID;

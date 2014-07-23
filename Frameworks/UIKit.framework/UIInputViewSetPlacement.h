@@ -18,8 +18,8 @@
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (bool)showsKeyboard;
-- (bool)inputViewWillAppear;
 - (bool)isUndocked;
+- (bool)inputViewWillAppear;
 - (bool)showsInputViews;
 - (bool)isInteractive;
 

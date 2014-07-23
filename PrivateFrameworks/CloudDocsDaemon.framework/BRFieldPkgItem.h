@@ -63,13 +63,13 @@
 - (void)setSignature:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)path;
 - (void)clear;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(int)arg1;
 - (int)type;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;

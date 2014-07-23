@@ -23,13 +23,14 @@
 + (id)reminderWithEventStore:(id)arg1;
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 
+- (id)parentID;
+- (id)externalURI;
 - (bool)validate:(id*)arg1;
 - (void)setHadRecurrences:(bool)arg1;
 - (bool)hadRecurrences;
 - (id)bestDisplayAlarm;
 - (void)clearParentID;
 - (void)setDueDateComponents:(id)arg1;
-- (id)parentID;
 - (void)setCompletionDate:(id)arg1;
 - (id)completionDate;
 - (void)setStartDateComponents:(id)arg1;
@@ -40,7 +41,6 @@
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)startDateForRecurrence;
 - (void)_sendModifiedNote;
-- (id)externalURI;
 - (void)setDisplayOrder:(unsigned long long)arg1;
 - (unsigned long long)displayOrder;
 - (id)_persistentReminder;

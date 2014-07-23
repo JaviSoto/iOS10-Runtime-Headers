@@ -11,6 +11,10 @@
 
 @property(readonly) NSArray * links;
 @property(readonly) NSString * title;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setLinksWithLinksArray:(id)arg1 context:(id)arg2;

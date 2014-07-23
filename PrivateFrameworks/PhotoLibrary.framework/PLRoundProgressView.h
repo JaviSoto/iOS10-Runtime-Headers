@@ -17,7 +17,10 @@
     double _realProgress;
     double _increaseRate;
     NSDate *_prevUpdateTime;
+    long long _style;
 }
+
+@property(readonly) long long style;
 
 
 - (void)setInitialIncreaseRatePerFrame:(double)arg1;
@@ -29,8 +32,11 @@
 - (void)resetProgress;
 - (void)startProgressTimer;
 - (void)stopProgressTimer;
+- (void)_setupSubviews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)style;
 - (void)dealloc;
 - (void)setProgress:(double)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 
 @end

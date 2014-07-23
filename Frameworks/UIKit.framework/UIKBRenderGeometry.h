@@ -6,6 +6,7 @@
 
 @interface UIKBRenderGeometry : NSObject <NSCopying> {
     bool_detachedVariants;
+    bool_tallPopup;
     int _roundRectCorners;
     int _popupBias;
     double _roundRectRadius;
@@ -68,6 +69,7 @@
 @property int popupBias;
 @property long long flickDirection;
 @property bool detachedVariants;
+@property bool tallPopup;
 @property(retain) NSValue * splitLeftRect;
 @property(retain) NSValue * splitRightRect;
 @property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } displayInsets;
@@ -89,8 +91,10 @@
 - (id)iPhoneVariantGeometries:(unsigned long long)arg1;
 - (void)applyShadowInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)overlayWithGeometry:(id)arg1;
+- (void)setTallPopup:(bool)arg1;
 - (void)setDetachedVariants:(bool)arg1;
 - (double)roundRectRadius;
+- (bool)tallPopup;
 - (bool)detachedVariants;
 - (int)popupBias;
 - (int)roundRectCorners;

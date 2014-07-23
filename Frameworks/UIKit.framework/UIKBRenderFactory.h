@@ -18,6 +18,7 @@
 @property(readonly) NSArray * segmentTraits;
 @property double rivenSizeFactor;
 @property bool lightweightFactory;
+@property(readonly) bool boldTextEnabled;
 
 + (Class)factoryClassForVisualStyle:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 + (id)segmentedControlColor:(bool)arg1;
@@ -38,6 +39,7 @@
 - (id)passcodeActiveControlKeyTraits;
 - (id)passcodeKeyEdgeColorName;
 - (double)passcodeEdgeWeight;
+- (bool)boldTextEnabled;
 - (void)setRivenSizeFactor:(double)arg1;
 - (double)rivenSizeFactor;
 - (id)thinTextFontName;

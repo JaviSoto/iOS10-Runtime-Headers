@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationRecorderStyleProvider>, TKVibrationRecorderTouchSurface, UIToolbar, <TKVibrationRecorderViewDelegate>, NSLayoutConstraint, TKVibrationRecorderProgressView, UILabel;
+@class NSString, <TKVibrationRecorderStyleProvider>, TKVibrationRecorderTouchSurface, UIToolbar, <TKVibrationRecorderViewDelegate>, NSLayoutConstraint, TKVibrationRecorderProgressView, UILabel;
 
 @interface TKVibrationRecorderView : UIView <TKVibrationRecorderTouchSurfaceDelegate> {
     bool_replayModeEnabled;
@@ -41,6 +41,10 @@
 @property(setter=_setCurrentVibrationComponentDidStartTimestamp:) double _currentVibrationComponentDidStartTimestamp;
 @property(getter=_isWaitingForEndOfCurrentVibrationComponent,setter=_setWaitingForEndOfCurrentVibrationComponent:) bool _waitingForEndOfCurrentVibrationComponent;
 @property(getter=_isAnimatingProgress,setter=_setAnimatingProgress:) bool _animatingProgress;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)vibrationRecorderTouchSurfaceDidFinishReplayingVibration:(id)arg1;

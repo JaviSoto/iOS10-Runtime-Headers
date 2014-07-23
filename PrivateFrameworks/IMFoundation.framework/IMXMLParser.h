@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSXMLParser, IMXMLParserContext, NSMutableArray, IMXMLParserFrame;
+@class NSXMLParser, IMXMLParserContext, NSString, NSMutableArray, IMXMLParserFrame;
 
 @interface IMXMLParser : NSObject <NSXMLParserDelegate> {
     NSXMLParser *_parser;
@@ -12,6 +12,11 @@
     struct _TidyDoc { int x1; } *_tidyDoc;
     struct __CFDictionary { } *_framespace;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 

@@ -18,6 +18,7 @@
 - (id)_initWithData:(id)arg1 maybeMutable:(bool)arg2;
 - (bool)mf_immutable;
 - (id)_initWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 from:(id)arg2 retainingParent:(bool)arg3;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)init;
 - (unsigned long long)length;
@@ -34,7 +35,6 @@
 - (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2;
 - (bool)writeToFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
-- (id)initWithContentsOfURL:(id)arg1;
 - (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
 - (bool)writeToFile:(id)arg1 atomically:(bool)arg2;
 - (id)subdataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

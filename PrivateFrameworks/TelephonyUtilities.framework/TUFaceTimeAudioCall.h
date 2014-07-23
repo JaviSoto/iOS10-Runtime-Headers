@@ -6,10 +6,10 @@
 }
 
 
+- (bool)shouldIgnoreStatusChange;
 - (void)removeCallConnectedObserver;
 - (void)addCallConnectedObserver;
 - (void)handleCallConnected:(id)arg1;
-- (bool)shouldIgnoreStatusChange;
 - (void)unhold;
 - (void)hold;
 - (id)audioMode;

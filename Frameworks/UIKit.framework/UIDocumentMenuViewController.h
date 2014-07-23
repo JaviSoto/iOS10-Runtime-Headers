@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertController, <UIDocumentMenuDelegate>, NSMutableArray, _UIDocumentPickerRemoteViewController;
+@class NSString, UIAlertController, <UIDocumentMenuDelegate>, NSMutableArray, _UIDocumentPickerRemoteViewController;
 
 @interface UIDocumentMenuViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining, UIAlertControllerContaining> {
     <UIDocumentMenuDelegate> *_weak_delegate;
@@ -17,6 +17,10 @@
 @property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) _UIDocumentPickerRemoteViewController * remoteViewController;
 @property(retain) UIAlertController * alertController;
 @property bool dismissDelegateCalled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;

@@ -18,6 +18,10 @@
 @property long long personalizationStyle;
 @property long long resultFilters;
 @property(copy,readonly) SSLookupProperties * _lookupProperties;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setResultFilters:(long long)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UITableView, UITextField, AlphanumericPINTableViewCell;
+@class NSString, UITextField, AlphanumericPINTableViewCell, UITableView;
 
 @interface AlphanumericPINView : PINView <UITableViewDataSource> {
     UITextField *_passcodeField;
@@ -10,11 +10,18 @@
     UITableView *_table;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)okButtonPressed:(id)arg1;
 - (void)setBlocked:(bool)arg1;
 - (void)hidePasscodeField:(bool)arg1;
 - (void)showError:(id)arg1 animate:(bool)arg2;
+- (void)setTextFieldKeyboardAppearance:(long long)arg1;
+- (void)setTextFieldKeyboardType:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (bool)resignFirstResponder;
 - (bool)becomeFirstResponder;

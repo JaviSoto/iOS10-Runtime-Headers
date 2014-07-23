@@ -10,7 +10,6 @@
 
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation  {
     bool_useCachedEtags;
-    bool_returnProtectionData;
     bool_shouldFetchAssetContent;
     NSArray *_fullRecordsToFetch;
 
@@ -39,10 +38,10 @@
     unsigned long long _requestedTTL;
     unsigned long long _URLOptions;
     CKDRecordCache *_cache;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 @property bool useCachedEtags;
-@property bool returnProtectionData;
 @property(retain) NSArray * fullRecordsToFetch;
 @property(copy) id recordFetchProgressBlock;
 @property(copy) id recordFetchCompletionBlock;
@@ -63,6 +62,7 @@
 @property unsigned long long requestedTTL;
 @property unsigned long long URLOptions;
 @property(retain) CKDRecordCache * cache;
+@property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 
 - (void)setDesiredPackageFileIndexSetsByPackage:(id)arg1;
@@ -71,8 +71,6 @@
 - (void)setAssetFetchGroupsByRecord:(id)arg1;
 - (void)setFetchRecordsGroup:(id)arg1;
 - (void)setCachedRecords:(id)arg1;
-- (void)setReturnProtectionData:(bool)arg1;
-- (bool)returnProtectionData;
 - (void)_didFetchPackage:(id)arg1 withError:(id)arg2;
 - (id)packagesToFetch;
 - (void)_didFetchAsset:(id)arg1 withError:(id)arg2;
@@ -112,6 +110,8 @@
 - (void)setRecordFetchCompletionBlock:(id)arg1;
 - (void)setRecordFetchProgressBlock:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
+- (void)setWebSharingIdentityDataByRecordID:(id)arg1;
+- (id)webSharingIdentityDataByRecordID;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (void)setDesiredPackageFileIndices:(id)arg1;
@@ -124,8 +124,8 @@
 - (unsigned long long)requestedTTL;
 - (void)setShouldFetchAssetContent:(bool)arg1;
 - (bool)shouldFetchAssetContent;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (id)cache;
 - (void).cxx_destruct;
 - (void)setCache:(id)arg1;

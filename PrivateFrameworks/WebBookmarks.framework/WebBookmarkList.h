@@ -18,6 +18,7 @@
 
 
 - (id)bookmarkArrayRequestingCount:(unsigned int)arg1;
+- (unsigned int)folderID;
 - (unsigned int)bookmarkCount;
 - (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)bookmarkAtIndex:(unsigned int)arg1;
@@ -25,7 +26,6 @@
 - (id)initWithBookmarksWhere:(id)arg1 collection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4;
 - (id)bookmarkArray;
 - (unsigned int)_reverseOrderIndex:(unsigned int)arg1;
-- (unsigned int)folderID;
 - (void)dealloc;
 
 @end

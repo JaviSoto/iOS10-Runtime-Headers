@@ -64,9 +64,9 @@
 - (void)setNumberOfUserRatings:(long long)arg1;
 - (void)_reloadUserRatingViews;
 - (id)categoryName;
-- (struct CGSize { double x1; double x2; })_imageSize;
 - (void)setTheme:(id)arg1;
 - (id)theme;
+- (struct CGSize { double x1; double x2; })_imageSize;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (float)userRating;

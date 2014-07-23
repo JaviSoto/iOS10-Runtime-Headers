@@ -16,14 +16,17 @@
 @property(copy) NSString * keyDelimiter;
 @property(retain) NSMutableDictionary * descriptionUnderConstruction;
 
-+ (id)autobuildDescriptionForObject:(id)arg1;
 
 - (void)setSortedByKey:(bool)arg1;
 - (void)setSuperclassDescription:(id)arg1;
 - (void)setDescriptionUnderConstruction:(id)arg1;
+- (void)setKey:(id)arg1 withDispatchSource:(id)arg2;
+- (void)setKey:(id)arg1 withDispatchQueue:(id)arg2;
 - (void)setKey:(id)arg1 withTimeInterval:(double)arg2;
+- (void)setKey:(id)arg1 withSize:(unsigned long long)arg2;
 - (void)setKey:(id)arg1 withSelector:(SEL)arg2;
 - (void)setKey:(id)arg1 withProcessID:(int)arg2;
+- (void)setKey:(id)arg1 withPointerAddress:(const void*)arg2;
 - (void)setKey:(id)arg1 withMachPort:(unsigned int)arg2;
 - (void)setKey:(id)arg1 withClass:(Class)arg2;
 - (void)setKey:(id)arg1 withUnsignedShort:(unsigned short)arg2;
@@ -37,12 +40,10 @@
 - (void)setKey:(id)arg1 withFloat:(float)arg2;
 - (void)setKey:(id)arg1 withChar:(BOOL)arg2;
 - (void)setKey:(id)arg1 withBoolean:(bool)arg2;
+- (void)setKey:(id)arg1 withString:(id)arg2;
 - (void)setKey:(id)arg1 withSet:(id)arg2;
 - (void)setKey:(id)arg1 withEnumNumericalValue:(long long)arg2 andStringValue:(id)arg3;
 - (void)setKey:(id)arg1 withArray:(id)arg2;
-- (void)setKey:(id)arg1 withString:(id)arg2;
-- (void)setKey:(id)arg1 withPointerAddress:(const void*)arg2;
-- (void)setKey:(id)arg1 withSize:(unsigned long long)arg2;
 - (void)setKey:(id)arg1 withDouble:(double)arg2;
 - (void)setKey:(id)arg1 withInt:(int)arg2;
 - (void)setKey:(id)arg1 withUnsignedInt:(unsigned int)arg2;

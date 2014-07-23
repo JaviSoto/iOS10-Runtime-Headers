@@ -2,29 +2,48 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString, CKFetchRecordVersionsOperation, NSURL, BRCStatInfo, <BRNonLocalVersionReceiving>, BRCLocalContainer, BRCXPCClient, BRCItemID;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface BRCNonLocalVersionsSender : NSObject <BRNonLocalVersionSending> {
+@class BRCItemID, NSString, <BRNonLocalVersionReceiving>, BRCXPCClient, BRCStatInfo, NSURL;
+
+@interface BRCNonLocalVersionsSender : BRCOperation <BRNonLocalVersionSending> {
     <BRNonLocalVersionReceiving> *_receiver;
     BRCItemID *_itemID;
-    BRCLocalContainer *_container;
     BRCStatInfo *_st;
     NSString *_currentEtag;
-    CKFetchRecordVersionsOperation *_fetchRecordVersionsOperation;
     NSString *_storagePathPrefix;
-    NSURL *_logicalURL;
     struct NSObject { Class x1; } *_storage;
     BRCXPCClient *_client;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _reply;
+
+    NSURL *_logicalURL;
     NSURL *_physicalURL;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) NSURL * logicalURL;
 @property(readonly) NSURL * physicalURL;
 
 
+- (id)_fetchVersionsOperationWithDepsOp:(id)arg1;
+- (id)_depsTrackingOperation;
+- (id)_fetchThumbnailOperationForVersionRecord:(id)arg1 faultURL:(id)arg2;
 - (id)physicalURL;
-- (id)initWithDocumentURL:(id)arg1 client:(id)arg2 root:(id)arg3 XPCReceiver:(id)arg4 error:(id*)arg5;
-- (void)listNonLocalVersionsAtURL:(id)arg1 reply:(id)arg2;
+- (id)initWithLookup:(id)arg1 client:(id)arg2 XPCReceiver:(id)arg3 error:(id*)arg4;
+- (bool)shouldRetryForError:(id)arg1;
+- (void)listNonLocalVersionsWithReply:(id)arg1;
+- (void)main;
+- (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (oneway void)invalidate;
 - (void).cxx_destruct;
+- (id)logicalURL;
 
 @end

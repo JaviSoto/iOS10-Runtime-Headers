@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BRCNotificationGatherer, NSMutableArray, BRCNotificationManager, <BRItemNotificationReceiving>, NSString, NSSet, BRCItemID, NSObject<OS_dispatch_queue>, NSNumber, BRCXPCClient, BRNotificationQueue, BRCRelativePath;
+@class BRNotificationQueue, NSString, BRCRelativePath, <BRItemNotificationReceiving>, NSSet, NSNumber, BRCNotificationGatherer, NSObject<OS_dispatch_queue>, BRCXPCClient, BRCNotificationManager, BRCItemID;
 
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending> {
     BRCNotificationManager *_manager;
@@ -30,15 +30,22 @@
     BRCItemID *_oldWatchedAncestorItemID;
     BRCItemID *_watchedAncestorItemID;
     NSNumber *_watchedAncestorFileObjectID;
-    NSMutableArray *_watchedAncestorPathComponentsToItem;
+    NSString *_watchedAncestorFilenameToItem;
     BRCNotificationGatherer *_gatherer;
     bool_hasUpdatesInFlight;
     bool_volumeIsCaseSensitive;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
+
+- (void)watchItemInProcessAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id)arg3;
 - (void)watchScopes:(unsigned short)arg1 trustedContainerIDs:(id)arg2 gatheringDone:(id)arg3;
 - (void)_stopWatchingItems;
+- (void)watchItemAtURL:(id)arg1 container:(id)arg2 lookup:(id)arg3 options:(unsigned short)arg4 reply:(id)arg5;
 - (int)_isInterestingUpdate:(id)arg1;
 - (void)_addIntraContainerUpdatesFromInterContainerUpdate:(id)arg1 toArray:(id)arg2;
 - (id)_initWithRoot:(id)arg1 manager:(id)arg2;

@@ -17,6 +17,7 @@
 + (id)textureManagerRootQueue;
 + (id)iconRenderQueue;
 + (id)tileDecodeStylingQueue;
++ (id)stylesheetLoadQueue;
 + (id)defaultDispatch;
 + (id)preemptiveLoadQueue;
 + (id)tileDecodeQueue;

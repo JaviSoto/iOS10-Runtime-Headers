@@ -14,12 +14,15 @@
 + (id)unarchiveObjectWithData:(id)arg1 ofClass:(Class)arg2;
 + (id)fullDescriptionForObject:(id)arg1;
 + (id)displayablePropertyListWithRootObject:(id)arg1;
++ (id)archivedDataWithRootObject:(id)arg1 usingBlock:(id)arg2;
++ (id)archivedPropertyListWithRootObject:(id)arg1 usingBlock:(id)arg2;
 + (id)archivedPropertyListWithRootObject:(id)arg1;
 + (id)archivedDataWithRootObject:(id)arg1;
 
 - (bool)forDisplay;
 - (void)encodePropertyList:(id)arg1;
 - (id)initWithArchive:(id)arg1 rootClass:(Class)arg2;
+- (id)initWithRootObject:(id)arg1 forDisplay:(bool)arg2 block:(id)arg3;
 - (id)archivedPropertyList;
 - (id)initWithRootObject:(id)arg1 forDisplay:(bool)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;

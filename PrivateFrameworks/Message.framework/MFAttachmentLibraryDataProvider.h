@@ -2,18 +2,22 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageLibrary;
+@class NSString, MFWeakReferenceHolder, MFMessageLibrary;
 
 @interface MFAttachmentLibraryDataProvider : NSObject <MFAttachmentDataProvider> {
-    MFMessageLibrary *_messageLibrary;
+    MFWeakReferenceHolder *_messageLibraryHolder;
 }
 
-@property(retain) MFMessageLibrary * messageLibrary;
+@property MFMessageLibrary * messageLibrary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (void)setMessageLibrary:(id)arg1;
 - (id)messageLibrary;
 - (id)messageForAttachment:(id)arg1;
+- (void)setMessageLibrary:(id)arg1;
 - (bool)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 error:(id*)arg3;
 - (id)initWithLibrary:(id)arg1;
 - (void)dealloc;

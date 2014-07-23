@@ -30,7 +30,7 @@
 - (bool)privateMatchesRawDescription:(id)arg1;
 - (id)dataSourceName;
 - (id)dataSourceID;
-- (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; }*)privateGetImplementation;
+- (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; }*)privateGetImplementation;
 - (id)location;
 - (id)init;
 - (bool)isEqual:(id)arg1;

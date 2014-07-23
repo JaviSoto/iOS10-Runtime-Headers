@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class _IDSDevice, NSString, NSUUID, NSData;
+@class _IDSDevice, NSString, NSUUID, NSArray, NSData;
 
 @interface IDSDevice : NSObject  {
     _IDSDevice *_internal;
@@ -10,6 +10,9 @@
 
 @property(retain,readonly) NSString * uniqueID;
 @property(retain,readonly) NSString * modelIdentifier;
+@property(readonly) NSString * productName;
+@property(readonly) NSString * productVersion;
+@property(readonly) NSString * productBuildVersion;
 @property(retain,readonly) NSString * name;
 @property(retain,readonly) NSString * service;
 @property(retain,readonly) NSString * deviceColor;
@@ -24,6 +27,7 @@
 @property(readonly) bool supportsSMSRelay;
 @property(readonly) bool supportsMMSRelay;
 @property(readonly) bool supportsPhoneCalls;
+@property(retain,readonly) NSArray * identities;
 @property(retain,readonly) NSData * pushToken;
 
 
@@ -51,11 +55,14 @@
 - (void)_setAccount:(id)arg1;
 - (bool)supportsiCloudPairing;
 - (bool)isDefaultLocalDevice;
-- (id)_identities;
+- (id)identities;
 - (id)pushToken;
 - (bool)isDefaultPairedDevice;
 - (id)nsuuid;
 - (id)_internal;
+- (id)productBuildVersion;
+- (id)productVersion;
+- (id)productName;
 - (id)initWithDictionary:(id)arg1;
 - (id)uniqueID;
 - (id)service;

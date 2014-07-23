@@ -14,8 +14,8 @@
 - (bool)automaticNumbering;
 - (id)initWithParagraph:(id)arg1 footnote:(bool)arg2;
 - (void)setAutomaticNumbering:(bool)arg1;
-- (id)reference;
 - (int)runType;
+- (id)reference;
 - (id)text;
 - (void)dealloc;
 

@@ -27,8 +27,8 @@
 - (void)_clearTimeout;
 - (void)_timeoutHit;
 - (id)topMessage;
-- (id)messages;
 - (void)removeAllMessages;
+- (id)messages;
 - (void)set_queue:(id)arg1;
 - (id)_queue;
 - (id)init;

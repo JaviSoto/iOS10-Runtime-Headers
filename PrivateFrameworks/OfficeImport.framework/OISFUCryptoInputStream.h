@@ -2,13 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OISFUCryptor, <SFUInputStream>;
+@class OISFUCryptor, <SFUInputStream>, NSString;
 
 @interface OISFUCryptoInputStream : NSObject <SFUInputStream> {
     <SFUInputStream> *mBaseStream;
     OISFUCryptor *mCryptor;
     long long mOffset;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initForDecryptionWithInputStream:(id)arg1 key:(id)arg2;

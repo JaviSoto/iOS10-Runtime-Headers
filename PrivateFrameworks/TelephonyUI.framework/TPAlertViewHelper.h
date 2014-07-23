@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIAlertView;
+@class NSString, UIAlertView;
 
 @interface TPAlertViewHelper : NSObject <UIAlertViewDelegate> {
 
@@ -18,6 +18,10 @@
 }
 
 @property(readonly) long long firstOtherButtonIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_allHelpersArray;
 + (id)_workQueue;

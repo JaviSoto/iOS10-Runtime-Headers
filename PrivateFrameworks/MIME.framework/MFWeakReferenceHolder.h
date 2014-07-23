@@ -12,6 +12,7 @@
 
 - (id)_initWithObject:(id)arg1;
 - (id)retainedReference;
+- (id)reference;
 - (id)init;
 - (void)dealloc;
 

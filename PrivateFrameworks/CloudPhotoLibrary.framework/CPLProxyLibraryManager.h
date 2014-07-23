@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSCountedSet, NSMutableDictionary, NSXPCConnection, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class NSCountedSet, NSMutableDictionary, NSXPCConnection, NSString, NSObject<OS_dispatch_queue>, NSMutableArray;
 
 @interface CPLProxyLibraryManager : CPLPlatformObject <CPLClientLibraryManagerProtocol, NSXPCConnectionDelegate, CPLLibraryManagerImplementation> {
     NSXPCConnection *_connection;
@@ -20,6 +20,10 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)clientProtocolInterface;
 + (id)daemonProtocolInterface;

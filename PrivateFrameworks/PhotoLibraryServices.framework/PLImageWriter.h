@@ -20,6 +20,7 @@
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
++ (bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 filteredImagePath:(id)arg3 isSubstandardRender:(bool)arg4;
 + (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(int)arg5;
 + (id)sharedWriter;
 
@@ -50,6 +51,7 @@
 - (void)_processDeletePhotoStreamDataJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;
+- (void)_removeInProgressExtendedAttributesForFileAtURL:(id)arg1;
 - (void)_removeTransientKeys:(id)arg1;
 - (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
 - (void)_writerThread;

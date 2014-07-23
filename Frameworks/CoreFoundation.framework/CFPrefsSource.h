@@ -42,7 +42,6 @@
 - (void)setValues:(const void**)arg1 forKeys:(const void**)arg2 count:(long long)arg3;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (struct __CFDictionary { }*)alreadylocked_copyDictionary;
-- (bool)alreadylocked_synchronize;
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
 - (void)unlock;
 - (void)alreadylocked_removeAllValues;

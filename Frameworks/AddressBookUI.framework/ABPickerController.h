@@ -32,6 +32,10 @@
 @property(copy) id itemLocalizationBlock;
 @property(retain) UITableViewController * tableViewController;
 @property(retain) NSIndexPath * selectedIndexPath;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)selectedIndexPath;

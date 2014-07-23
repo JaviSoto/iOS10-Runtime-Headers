@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, NSMutableArray, PSListController;
+@class PSSpecifier, NSString, NSMutableArray, PSListController;
 
 @interface PSExpandableListGroupController : NSObject <PSSpecifierGroupController> {
     PSListController *_listController;
@@ -13,6 +13,11 @@
     PSSpecifier *_showAllSpecifier;
     PSSpecifier *_spinnerSpecifier;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)removeAllSpecifiers;

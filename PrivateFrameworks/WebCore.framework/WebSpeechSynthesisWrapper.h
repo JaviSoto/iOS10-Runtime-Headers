@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebSpeechSynthesisWrapper : NSObject <AVSpeechSynthesizerDelegate> {
     struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; boolx3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; } *m_synthesizerObject;
     struct RefPtr<WebCore::PlatformSpeechSynthesisUtterance> { 
@@ -16,6 +18,11 @@
         void *m_ptr; 
     } m_synthesizer;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)resume;

@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, <UITextInputDelegate>, <UITextInputTokenizer>, UIImage, NSString, UITextRange, NSDictionary, UITextInteractionAssistant, UITextInputTraits, UITextPosition, UIColor;
+@class <UITextInputTokenizer>, NSString, <UITextInputDelegate>, UIView, UIImage, UITextRange, NSDictionary, UITextInteractionAssistant, UITextInputTraits, UITextPosition, UIColor;
 
 @interface UIDefaultKeyboardInput : UIView <UIKeyboardInput, UITextInputPrivate> {
     UITextInputTraits *m_traits;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

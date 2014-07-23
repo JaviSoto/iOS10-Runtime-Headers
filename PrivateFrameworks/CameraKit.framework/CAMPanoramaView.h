@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UIView, CADisplayLink, CAMPanoramaLevelView, UIImageView, CALayer, <PLCameraPanoramaViewDelegate>, CMMotionManager, NSOperationQueue, CAMPanoramaArrowView, CAMPanoramaLabel;
+@class UIView, NSString, CADisplayLink, CAMPanoramaLevelView, UIImageView, CALayer, <PLCameraPanoramaViewDelegate>, CMMotionManager, NSOperationQueue, CAMPanoramaArrowView, CAMPanoramaLabel;
 
 @interface CAMPanoramaView : UIView <UIAccelerometerDelegate> {
     <PLCameraPanoramaViewDelegate> *_delegate;
@@ -92,6 +92,10 @@
 
 @property <PLCameraPanoramaViewDelegate> * delegate;
 @property(readonly) CALayer * panoramaPreviewLayer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)panoramaPreviewLayer;

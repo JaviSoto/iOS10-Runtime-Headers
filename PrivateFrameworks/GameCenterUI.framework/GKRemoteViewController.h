@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIColor, NSMutableDictionary, GKHostedViewController, GKGame;
+@class UIColor, NSMutableDictionary, GKHostedViewController, GKGame, NSString;
 
 @interface GKRemoteViewController : _UIRemoteViewController <GKServiceViewControllerDelegate> {
     bool_didSetRemoteGame;
@@ -30,6 +30,10 @@
 @property GKHostedViewController * managingViewController;
 @property(retain) UIColor * previousStatusBarColor;
 @property(copy) id blockToPerformAfterViewDidAppear;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) GKGame * game;
 
 + (id)exportedInterface;

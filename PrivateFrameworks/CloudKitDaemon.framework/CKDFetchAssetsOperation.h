@@ -42,10 +42,10 @@
 - (void)_retryOrFinishWithError:(id)arg1;
 - (void)setMMCSContext:(id)arg1;
 - (void)_handleError:(id)arg1 forItem:(id)arg2;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void)cancel;
 - (void).cxx_destruct;
 

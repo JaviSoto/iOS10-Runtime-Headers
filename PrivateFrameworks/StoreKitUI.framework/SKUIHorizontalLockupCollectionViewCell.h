@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, UIImageView, UIButton, SKUIButtonViewElement, SKUIHorizontalLockupView, SKUICheckboxInputViewElement, SKUICellScrollView;
+@class UIView, NSString, UIImageView, UIButton, SKUIButtonViewElement, SKUIHorizontalLockupView, SKUICheckboxInputViewElement, SKUICellScrollView;
 
 @interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <UIScrollViewAccessibilityDelegate, SKUIPerspectiveView, SKUIViewElementView> {
     UIButton *_actionButton;
@@ -22,6 +22,10 @@
 
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property(getter=isScrollingCellToHideActionButton,readonly) bool scrollingCellToHideActionButton;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
 + (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;

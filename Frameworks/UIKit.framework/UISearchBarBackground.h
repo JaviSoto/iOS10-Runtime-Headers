@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, NSMutableDictionary, UIImage;
+@class UIColor, NSMutableDictionary, NSString, UIImage;
 
 @interface UISearchBarBackground : _UIBarBackgroundImageView <_UIBarPositioningInternal> {
     UIColor *_barTintColor;
@@ -26,6 +26,10 @@
 @property(readonly) UIImage * backgroundImage;
 @property(readonly) UIImage * backgroundImagePrompt;
 @property bool usesContiguousBarBackground;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -21,6 +21,10 @@
 
 @property(readonly) long long style;
 @property(copy) NSString * accountTextFieldPlaceholder;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAccountTextFieldPlaceholder:(id)arg1;

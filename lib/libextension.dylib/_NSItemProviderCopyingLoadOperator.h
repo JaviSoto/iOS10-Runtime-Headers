@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/usr/lib/libextension.dylib
  */
 
-@class NSDictionary, NSItemProvider;
+@class NSDictionary, NSString, NSItemProvider;
 
 @interface _NSItemProviderCopyingLoadOperator : NSObject <_NSItemProviderLoading> {
     NSItemProvider *_itemProvider;
@@ -11,6 +11,10 @@
 
 @property NSItemProvider * itemProvider;
 @property(retain) NSDictionary * loadedItems;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)supportsSecureCoding;
 

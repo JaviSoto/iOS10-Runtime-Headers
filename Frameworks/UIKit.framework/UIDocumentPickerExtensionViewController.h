@@ -17,6 +17,10 @@
 @property(copy) NSArray * validTypes;
 @property(copy) NSString * providerIdentifier;
 @property(copy) NSURL * documentStorageURL;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
@@ -33,8 +37,9 @@
 - (void)_setUploadURL:(id)arg1;
 - (id)documentStorageURL;
 - (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id)arg2;
+- (void)_documentPickerDidDismiss;
 - (unsigned long long)documentPickerMode;
-- (void)_setUploadURL:(id)arg1 withSandboxExtension:(id)arg2;
+- (void)_setUploadURLWrapper:(id)arg1;
 - (void)_setPickerMode:(unsigned long long)arg1;
 - (void)_setPickableTypes:(id)arg1;
 

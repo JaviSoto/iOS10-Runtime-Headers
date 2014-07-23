@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface _SBFBlockObserver : NSObject <SBFObserver> {
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -23,6 +25,11 @@
     id _failureBlock;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;

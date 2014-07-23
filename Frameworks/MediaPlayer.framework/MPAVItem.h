@@ -266,6 +266,7 @@
 - (id)asset;
 - (id)lyrics;
 - (long long)status;
+- (id)path;
 - (id)url;
 - (id)player;
 - (struct CGSize { double x1; double x2; })naturalSize;
@@ -276,7 +277,6 @@
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (unsigned long long)type;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;

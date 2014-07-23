@@ -17,6 +17,10 @@
 @property(retain) id embeddedPrincipal;
 @property(retain) NSXPCConnection * connection;
 @property(retain) NSUserDefaults * preferences;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * version;
 @property(readonly) NSURL * url;

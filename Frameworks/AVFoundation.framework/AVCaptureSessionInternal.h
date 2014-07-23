@@ -32,6 +32,8 @@
     boolwaitingForFigCaptureSessionToStopDueToEmptyConfig;
     struct OpaqueCMClock { } *masterClock;
     boolnotifiesOnMainThread;
+    booladjustingVideoFeature1;
+    boolsessionPresetChanging;
 }
 
 

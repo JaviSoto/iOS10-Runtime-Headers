@@ -10,6 +10,7 @@
 @class NSDate, NSString, NSArray, CKDatabase, CKServerChangeToken, CKContainer, BRCAccountSession, NSDictionary, BRCLocalContainer, PQLConnection, PQLNameInjection;
 
 @interface BRCServerContainer : NSObject <BRCContainer> {
+    NSDate *_lastSyncDownDate;
     BRCAccountSession *_session;
     unsigned int _schemaVersion;
     PQLConnection *_db;
@@ -17,7 +18,6 @@
     bool_needsSave;
     bool_hasRegisteredPushTopics;
     NSString *_containerID;
-    NSDate *_lastSyncDownDate;
     CKServerChangeToken *_changeToken;
     CKServerChangeToken *_pendingChangeToken;
     NSString *_containerMetadataEtag;
@@ -26,15 +26,17 @@
     PQLNameInjection *_itemsTable;
     PQLNameInjection *_pendingFetchesTable;
     NSArray *_tableNames;
+    PQLNameInjection *_xattrsTable;
 }
 
-@property(retain) NSDate * lastSyncDownDate;
+@property NSDate * lastSyncDownDate;
 @property(readonly) CKServerChangeToken * changeToken;
 @property(readonly) CKServerChangeToken * pendingChangeToken;
 @property(readonly) NSString * containerMetadataEtag;
 @property(readonly) unsigned long long clientRequestID;
 @property BRCLocalContainer * localContainer;
 @property(readonly) PQLNameInjection * itemsTable;
+@property(readonly) PQLNameInjection * xattrsTable;
 @property(readonly) PQLNameInjection * pendingFetchesTable;
 @property(readonly) PQLConnection * db;
 @property(retain) BRCAccountSession * accountSession;
@@ -45,6 +47,10 @@
 @property(readonly) NSString * pushTopic;
 @property bool hasRegisteredPushTopics;
 @property(retain) NSString * containerID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool needsSave;
 @property(readonly) NSString * zoneName;
 @property(readonly) NSDictionary * plist;
@@ -54,6 +60,7 @@
 + (struct PQLResultSet { Class x1; }*)containersEnumerator:(id)arg1;
 + (id)containerByID:(id)arg1 withDB:(id)arg2;
 
+- (id)xattrsTable;
 - (id)pendingFetchesTable;
 - (void)setHasRegisteredPushTopics:(bool)arg1;
 - (bool)hasRegisteredPushTopics;
@@ -67,8 +74,12 @@
 - (bool)deletePendingFetchRecords;
 - (bool)savePendingFetchStructureRecordsToServerTruth;
 - (bool)savePendingFetchContentRecordsToServerTruth;
+- (id)createUpdateQuotaOperation;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 stateIsInconsistent:(bool)arg3;
 - (void)collectTombstoneRanks:(id)arg1;
+- (id)xattrForSignature:(id)arg1;
+- (bool)storeXattr:(id)arg1;
+- (bool)hasXattrWithSignature:(id)arg1;
 - (id)prefixedContainerID;
 - (id)tableNames;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
@@ -90,6 +101,7 @@
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (bool)validateStructureLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 withDB:(id)arg2;
 - (bool)validateItemsLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 withDB:(id)arg2;
+- (id)descriptionWithContext:(id)arg1;
 - (id)localContainer;
 - (id)itemByParentID:(id)arg1 andName:(id)arg2;
 - (bool)dumpTablesToContext:(id)arg1 error:(id*)arg2;

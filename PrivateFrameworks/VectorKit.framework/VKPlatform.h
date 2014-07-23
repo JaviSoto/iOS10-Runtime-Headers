@@ -25,6 +25,7 @@
 @property(readonly) double mainScreenScale;
 @property(readonly) double mainScreenPPI;
 @property(readonly) double maxContentScaleForRendering;
+@property(readonly) bool supportsBuildingShadows;
 @property(readonly) bool supportsBuildingStrokes;
 @property(readonly) bool supports3DBuildingStrokes;
 @property(readonly) bool supportsHiResBuildings;
@@ -52,6 +53,7 @@
 - (void)_determineHardware;
 - (bool)shouldPregenerateLabelGlyphs;
 - (unsigned int)tileDecodeQueueWidth;
+- (bool)supportsBuildingShadows;
 - (bool)supports3DBuildingStrokes;
 - (bool)supportsBuildingStrokes;
 - (bool)isPad;

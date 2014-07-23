@@ -26,6 +26,7 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)initialize;
 
+- (void)setVideoFeature1Enabled:(bool)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
 - (void)setVideoZoomFactor:(double)arg1;
@@ -52,6 +53,9 @@
 - (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
 - (void)setSaturation:(float)arg1;
 - (float)saturation;
+- (bool)isVideoFeature1Enabled;
+- (void)setAutomaticallyAdjustsVideoFeature1:(bool)arg1;
+- (bool)automaticallyAdjustsVideoFeature1;
 - (void)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (bool)automaticallyAdjustsImageControlMode;
 - (bool)isImageControlModeSupported:(long long)arg1;
@@ -125,6 +129,8 @@
 - (id)formats;
 - (bool)isInUseByAnotherApplication;
 - (bool)isMachineReadableCodeDetectionSupported;
+- (void)_setStillImageStabilizationAutomaticallyEnabled:(bool)arg1;
+- (void)_setVideoFeature1Enabled:(bool)arg1;
 - (bool)cachesFigCaptureSourceConfigurationChanges;
 - (void)setCachesFigCaptureSourceConfigurationChanges:(bool)arg1;
 - (bool)isHighDynamicRangeScene;

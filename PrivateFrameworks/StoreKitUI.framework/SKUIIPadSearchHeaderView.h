@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, <SKUIIPadSearchHeaderViewDelegate>, SKUIClientContext, NSDictionary, NSMutableDictionary, UIPopoverController, NSMutableArray;
+@class NSString, NSArray, <SKUIIPadSearchHeaderViewDelegate>, SKUIClientContext, NSDictionary, NSMutableDictionary, UIPopoverController, NSMutableArray;
 
 @interface SKUIIPadSearchHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     long long _activeFacetIndex;
@@ -17,6 +17,10 @@
 @property <SKUIIPadSearchHeaderViewDelegate> * delegate;
 @property(readonly) NSArray * searchFacets;
 @property(readonly) NSDictionary * facetSelections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;

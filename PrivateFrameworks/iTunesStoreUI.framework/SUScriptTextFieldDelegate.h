@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSHashTable;
+@class NSString, NSHashTable;
 
 @interface SUScriptTextFieldDelegate : NSObject <SUScriptTextFieldDelegate> {
     NSHashTable *_delegates;
 }
 
 @property(readonly) long long numberOfDelegates;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)numberOfDelegates;

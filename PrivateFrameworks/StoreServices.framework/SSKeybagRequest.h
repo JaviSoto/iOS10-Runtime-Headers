@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber;
+@class NSNumber, NSString;
 
 @interface SSKeybagRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountID;
@@ -13,6 +13,10 @@
 @property(readonly) NSNumber * accountID;
 @property(copy) id contentIdentifier;
 @property long long keybagOptions;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)contentIdentifier;

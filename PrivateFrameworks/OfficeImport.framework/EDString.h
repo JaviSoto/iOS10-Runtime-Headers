@@ -11,6 +11,11 @@
     boolmDoNotModify;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)edStringWithString:(id)arg1 runs:(id)arg2;
 + (id)edStringWithString:(id)arg1;
 + (id)string;

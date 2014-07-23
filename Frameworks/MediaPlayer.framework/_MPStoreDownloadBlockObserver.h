@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MPStoreDownload;
+@class NSString, MPStoreDownload;
 
 @interface _MPStoreDownloadBlockObserver : NSObject <MPStoreDownloadManagerObserver> {
 
@@ -25,6 +25,10 @@
 @property(copy) id didFinishDownloadHandler;
 @property(copy) id didFinishPurchaseHandler;
 @property(readonly) MPStoreDownload * download;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)didFinishPurchaseHandler;

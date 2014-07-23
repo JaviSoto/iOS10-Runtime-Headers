@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class _UILegibilityView;
+@class _UILegibilityView, NSString;
 
 @interface SBLockScreenTimerDialView : UIView <SBLegibility> {
     _UILegibilityView *_dialView;
@@ -10,6 +10,10 @@
 }
 
 @property double strength;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_imageNameForCurrentContentSize:(id)arg1;

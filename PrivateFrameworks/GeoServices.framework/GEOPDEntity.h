@@ -43,6 +43,7 @@
 @property(retain) NSMutableArray * spokenNames;
 @property(retain) NSMutableArray * localizedCategorys;
 
++ (id)entityForPlaceData:(id)arg1;
 
 - (id)altUrls;
 - (id)altFaxs;

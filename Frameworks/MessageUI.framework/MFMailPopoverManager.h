@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableArray, NSArray, UIActionSheet, MFPopoverController, UIView, UIBarButtonItem;
+@class UIView, NSString, NSArray, UIActionSheet, NSMutableArray, MFPopoverController, UIBarButtonItem;
 
 @interface MFMailPopoverManager : NSObject <UIPopoverPresentationControllerDelegate, UIActionSheetDelegate> {
     id _delegate;
@@ -39,6 +39,10 @@
 @property(retain) UIView * currentView;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentRect;
 @property unsigned long long currentArrowDirections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)dismissPopover:(id)arg1 animated:(bool)arg2;
 + (void)enumerateManagersUsingBlock:(id)arg1;

@@ -2,11 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface WebResourceLoaderQuickLookDelegate : NSObject <NSURLConnectionDelegate> {
     struct RefPtr<WebCore::ResourceLoader> { 
         struct ResourceLoader {} *m_ptr; 
     } _resourceLoader;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithResourceLoader:(struct PassRefPtr<WebCore::ResourceLoader> { struct ResourceLoader {} *x1; })arg1;

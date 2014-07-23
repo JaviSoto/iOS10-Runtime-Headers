@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURL, NSArray, _WKFrameHandle;
+@class NSArray, NSString, NSURL, _WKFrameHandle;
 
 @interface WKWebProcessPlugInFrame : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebFrame> { 
@@ -21,6 +21,10 @@
 @property(readonly) NSArray * childFrames;
 @property(readonly) bool containsAnyFormElements;
 @property(readonly) _WKFrameHandle * handle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 + (id)lookUpFrameFromHandle:(id)arg1;

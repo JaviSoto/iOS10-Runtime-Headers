@@ -76,9 +76,9 @@
 - (bool)shouldSignalDiscovery;
 - (id)playerID;
 - (bool)parseServiceNameForInit:(id)arg1;
-- (void)setServiceName:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)syncQueue;
+- (void)setServiceName:(id)arg1;
 - (id)interfaces;
 - (void)setInterfaces:(id)arg1;
 - (void)setDeviceID:(id)arg1;

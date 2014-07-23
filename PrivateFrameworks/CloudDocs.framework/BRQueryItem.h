@@ -33,6 +33,8 @@
     NSURL *_localRepresentationURL;
     id _replacement;
     bool_isNetworkOffline;
+    long long _logicalHandle;
+    long long _physicalHandle;
 }
 
 @property(readonly) unsigned short diffs;
@@ -83,6 +85,7 @@
 - (void)markDead;
 - (unsigned int)uploadStatus;
 - (void)_mergeAttrs:(id)arg1;
+- (void)_mergeURL:(id)arg1;
 - (bool)isEqualToQueryItem:(id)arg1;
 - (id)initWithQueryItem:(id)arg1;
 - (id)localRepresentationURL;
@@ -100,11 +103,11 @@
 - (id)containerID;
 - (unsigned int)downloadStatus;
 - (bool)isLive;
+- (id)path;
 - (id)url;
 - (id)valueForKey:(id)arg1;
 - (bool)isDead;
 - (bool)isEqual:(id)arg1;
-- (id)path;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

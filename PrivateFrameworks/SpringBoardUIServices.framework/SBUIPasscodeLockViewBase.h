@@ -4,7 +4,7 @@
 
 @class <SBFLegibilitySettingsProvider>, NSString, <SBUIPasscodeLockViewDelegate>, _UILegibilitySettings, <SBUIPasscodeLockViewDelegate_Internal>, SBUIPasscodeEntryField, UIColor;
 
-@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricEventObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView> {
+@interface SBUIPasscodeLockViewBase : UIView <SBUIBiometricEventObserver, SBFLegibilitySettingsProviderDelegate, SBUIPasscodeLockView_Internal, SBUIPasscodeLockView> {
     <SBUIPasscodeLockViewDelegate_Internal> *_delegate;
     int _style;
     NSString *_passcode;
@@ -22,16 +22,24 @@
     bool_allowsStatusTextUpdatingOnResignFirstResponder;
     bool_mesaLockedOut;
     unsigned long long _biometricMatchMode;
+    bool_deviceHasBeenUnlockedOnceSinceBoot;
     bool_shouldResetForFailedPasscodeAttempt;
+    NSString *_statusText;
+    NSString *_statusSubtitleText;
     unsigned long long _statusState;
 }
 
 @property int style;
 @property(getter=_luminosityBoost,setter=_setLuminosityBoost:) double luminosityBoost;
 @property(getter=_entryField,setter=_setEntryField:,retain) SBUIPasscodeEntryField * _entryField;
-@property(getter=_defaultStatusText,readonly) NSString * defaultStatusText;
+@property(getter=_statusText,copy,readonly) NSString * statusText;
+@property(getter=_statusSubtitleText,copy,readonly) NSString * statusSubtitleText;
 @property bool shouldResetForFailedPasscodeAttempt;
 @property(getter=_statusState,setter=_setStatusState:) unsigned long long statusState;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <SBUIPasscodeLockViewDelegate> * delegate;
 @property(readonly) NSString * passcode;
 @property bool playsKeypadSounds;
@@ -65,6 +73,7 @@
 - (void)resetForFailedMesaAttemptWithStatusText:(id)arg1 andSubtitle:(id)arg2;
 - (void)resetForScreenOff;
 - (void)resetForFailedPasscode;
+- (void)_noteDeviceHasBeenUnlockedOnceSinceBoot:(bool)arg1;
 - (void)biometricEventMonitor:(id)arg1 handleBiometricEvent:(unsigned long long)arg2;
 - (void)_handleBiometricEvent:(unsigned long long)arg1;
 - (void)updateStatusTextForBioEvent:(unsigned long long)arg1 animated:(bool)arg2;
@@ -73,8 +82,12 @@
 - (double)_luminanceBoostFromLegibility;
 - (void)_screenBrightnessReallyDidChange;
 - (unsigned long long)biometricMatchMode;
-- (void)updateStatusTextAnimated:(bool)arg1;
+- (id)_statusSubtitleText;
+- (id)_statusText;
+- (void)_setStatusSubtitleText:(id)arg1;
+- (void)_setStatusText:(id)arg1;
 - (id)_defaultStatusText;
+- (unsigned long long)_statusStateForLockoutState:(unsigned long long)arg1;
 - (void)_setLuminosityBoost:(double)arg1;
 - (double)_luminosityBoost;
 - (void)_evaluateLuminance;
@@ -89,6 +102,8 @@
 - (void)_clearBrightnessChangeTimer;
 - (void)_noteBioMatchingEnabledDidChange;
 - (void)_noteScreenBrightnessDidChange;
+- (void)updateStatusTextAnimated:(bool)arg1;
+- (void)_updateStatusStateForLockout;
 - (bool)_wantsBiometricAuthentication;
 - (void)setShowsStatusField:(bool)arg1;
 - (void)setShowsEmergencyCallButton:(bool)arg1;

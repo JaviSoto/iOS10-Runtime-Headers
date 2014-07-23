@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIScreenshotDataConsumer, SKUIClientContext, <SKUISlideshowViewControllerDelegate>, NSOperationQueue, NSMutableArray, SKUIGiftThemeCollectionView, NSMutableDictionary, UIPageControl, <SKUISlideshowViewControllerDataSource>;
+@class SKUIScreenshotDataConsumer, NSString, SKUIClientContext, <SKUISlideshowViewControllerDelegate>, NSOperationQueue, NSMutableArray, SKUIGiftThemeCollectionView, NSMutableDictionary, UIPageControl, <SKUISlideshowViewControllerDataSource>;
 
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
@@ -25,6 +25,10 @@
 @property <SKUISlideshowViewControllerDataSource> * dataSource;
 @property <SKUISlideshowViewControllerDelegate> * delegate;
 @property long long currentIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setLowResImage:(id)arg1 atIndex:(long long)arg2;

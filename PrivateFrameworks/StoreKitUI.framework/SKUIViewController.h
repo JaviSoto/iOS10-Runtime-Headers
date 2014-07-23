@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageOverlayController, SKUIPopoverObserver, SKUINetworkErrorViewController, SKUIClientContext, NSOperationQueue, SKUIIPadSearchController, SKUIWishlistViewController, UIBarButtonItem;
+@class SKUIProductPageOverlayController, NSString, SKUIPopoverObserver, SKUINetworkErrorViewController, SKUIClientContext, NSOperationQueue, SKUIIPadSearchController, SKUIWishlistViewController, UIBarButtonItem;
 
 @interface SKUIViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUIWishlistDelegate, UIPopoverControllerDelegate, SKUITabBarItemRootViewController> {
     SKUIClientContext *_clientContext;
@@ -20,6 +20,10 @@
 @property(readonly) SKUIIPadSearchController * IPadSearchController;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) UIBarButtonItem * _wishlistButtonItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)wishlist:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;

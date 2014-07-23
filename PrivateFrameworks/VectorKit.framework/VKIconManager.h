@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class _VKLocalIconAtlas, NSMapTable, NSArray, NSMutableDictionary, VKResourceManager;
+@class _VKLocalIconAtlas, NSMapTable, NSArray, NSMutableDictionary, NSString, VKResourceManager;
 
 @interface VKIconManager : NSObject <GEOResourceManifestTileGroupObserver> {
     _VKLocalIconAtlas *_localAtlas;
@@ -12,6 +12,11 @@
     NSArray *_nonRegionalResourceNames;
     NSMutableDictionary *_nameToStyleManager;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedManager;
 
@@ -25,7 +30,7 @@
 - (id)artworkForName:(id)arg1 withResourceNames:(id)arg2 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(double)arg4 size:(long long)arg5;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
 - (id)imageForName:(id)arg1 contentScale:(double)arg2;
-- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(double)arg3 scaleFactor:(long long)arg4 customIconID:(unsigned long long)arg5;
+- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(double)arg3 size:(long long)arg4 customIconID:(unsigned long long)arg5;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)dealloc;

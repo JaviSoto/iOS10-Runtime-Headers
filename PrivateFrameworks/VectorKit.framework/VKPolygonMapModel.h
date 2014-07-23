@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKStyleManager;
+@class NSString, VKStyleManager;
 
 @interface VKPolygonMapModel : VKVectorMapModel <VKStyleManagerObserver> {
     bool_drawShapes;
@@ -191,6 +191,10 @@
 
 @property bool drawShapes;
 @property(readonly) bool shouldEverShowVegetation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 

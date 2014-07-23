@@ -21,6 +21,10 @@
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) MSASServerSideModelGroupedCommandQueue * commandQueue;
 @property(retain) MSASPendingChanges * pendingChanges;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain,readonly) NSString * personID;
 @property int maxGroupedCallbackEventBatchCount;
 @property double maxGroupedCallbackEventIdleInterval;

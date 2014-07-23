@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <RemoteUIWebViewControllerDelegate>, _UIBackdropView, UIWebView, UIToolbar;
+@class <RemoteUIWebViewControllerDelegate>, _UIBackdropView, UIWebView, UIToolbar, NSString;
 
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
     UIWebView *_webView;
@@ -25,6 +25,10 @@
 @property(readonly) UIToolbar * toolbar;
 @property(readonly) UIWebView * webView;
 @property bool scalesPageToFit;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)loadURL:(id)arg1;

@@ -52,10 +52,12 @@
 @property(readonly) unsigned int* characteristicTypes;
 
 
+- (bool)hasDuration;
 - (unsigned int)isClient;
 - (void)setCharacteristicTypes:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (unsigned int*)characteristicTypes;
 - (void)setServiceTypes:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (unsigned int*)serviceTypes;
 - (bool)hasIsClient;
 - (void)setHasIsClient:(bool)arg1;
 - (void)setIsClient:(unsigned int)arg1;
@@ -73,12 +75,10 @@
 - (bool)hasResultCode;
 - (void)setHasResultCode:(bool)arg1;
 - (void)setResultCode:(int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
-- (unsigned int*)serviceTypes;
-- (bool)hasDuration;
 - (void)setHasTransportType:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasTransportType;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)transportType;

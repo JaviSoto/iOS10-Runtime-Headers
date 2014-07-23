@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UINavigationBar, UIView, UIImage, MKMapView, <MKUserTrackingView>, _MKUserTrackingButtonController, UIToolbar, UIButton, _MKUserTrackingButton;
+@class UINavigationBar, UIView, UIImage, MKMapView, <MKUserTrackingView>, NSString, _MKUserTrackingButtonController, UIToolbar, UIButton, _MKUserTrackingButton;
 
 @interface MKUserTrackingBarButtonItem : UIBarButtonItem <MKUserTrackingButtonTarget> {
     bool_hasCustomAssociatedView;
@@ -26,6 +26,10 @@
 @property(retain) UINavigationBar * _navigationBar;
 @property(retain) UIView * _associatedView;
 @property(setter=_setUserTrackingView:,retain) <MKUserTrackingView> * _userTrackingView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_activityIndicatorClass;
 

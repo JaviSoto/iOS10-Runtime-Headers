@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSBundle, CLInUseAssertion, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSCache;
+@class NSString, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>, CLInUseAssertion, NSBundle, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSCache;
 
 @interface SLTwitterSession : NSObject <SLTwitterClientSessionProtocol, SLMicroBlogSheetDelegate> {
     SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol> *_remoteSession;
@@ -29,6 +29,10 @@
 
 @property(copy) id connectionResetBlock;
 @property(copy) id locationInformationChangedBlock;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_remoteInterface;
 

@@ -2,10 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
+@class NSString;
+
 @interface CertInfoBasicTrustDescription : NSObject <CertInfoTrustDescription> {
     struct __SecTrust { } *_trust;
     int _action;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isRootCertificate;

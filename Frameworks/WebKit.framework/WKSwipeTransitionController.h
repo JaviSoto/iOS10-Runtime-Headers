@@ -11,10 +11,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WKSwipeTransitionController : NSObject <_UINavigationInteractiveTransitionBaseDelegate> {
 
-  /* Unexpected information at end of encoded ivar type: @{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QQB} */
-  /* Error parsing encoded ivar type info: ^{ViewGestureController=^^?^{WebPageProxy}i{Timer<WebKit::ViewGestureController>=^^?dddiI^{Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow>}{function<void ()>={type=[24C]}^{__base<void ()>}}}@{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QQB} */
+  /* Unexpected information at end of encoded ivar type: @{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QB} */
+  /* Error parsing encoded ivar type info: ^{ViewGestureController=^^?^{WebPageProxy}i{Timer<WebKit::ViewGestureController>=^^?dddiI^{Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow>}{function<void ()>={type=[24C]}^{__base<void ()>}}}@{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QB} */
     struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); double x_4_1_2; double x_4_1_3; double x_4_1_4; int x_4_1_5; unsigned int x_4_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_4_1_7; struct function<void ()>={type=[24C] {} x_4_1_8; struct __base<void ()> {} *x_4_1_9; } x4; } *_gestureController;
 
     struct RetainPtr<_UINavigationInteractiveTransitionBase> { 
@@ -24,6 +26,11 @@
         void *m_ptr; 
     } _forwardTransitionController;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithViewGestureController:(struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); double x_4_1_2; double x_4_1_3; double x_4_1_4; int x_4_1_5; unsigned int x_4_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_4_1_7; struct function<void ()>={type=[24C] {} x_4_1_8; struct __base<void ()> {} *x_4_1_9; } x4; }*)arg1 gestureRecognizerView:(struct RetainPtr<UIView> { void *x1; })arg2;

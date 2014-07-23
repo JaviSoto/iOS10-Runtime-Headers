@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKTileKeyList, VKTileSource, <VKMapLayer>, NSLocale, _VKTileProviderTimerTarget, VKTileCache, VKStyleManager, VKMapRasterizer, NSSet, <VKTileProviderClient>, NSMutableSet, NSArray, VKTileSelection, GEOTileKeyList, VKTimer;
+@class VKTileKeyList, VKTileSource, <VKMapLayer>, NSLocale, _VKTileProviderTimerTarget, VKTileCache, VKStyleManager, VKMapRasterizer, NSSet, <VKTileProviderClient>, NSMutableSet, NSString, NSArray, VKTileSelection, GEOTileKeyList, VKTimer;
 
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
     <VKTileProviderClient> *_client;
@@ -90,6 +90,10 @@
 @property(retain) <VKMapLayer> * debugLayer;
 @property(readonly) GEOTileKeyList * debugLayerKeys;
 @property double lodBias;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)debugLayer;

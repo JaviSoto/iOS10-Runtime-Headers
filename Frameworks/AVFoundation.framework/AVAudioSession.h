@@ -26,10 +26,10 @@
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)privateUpdateOutputChannelCount:(id)arg1;
-- (void)privateUpdateInputChannelCount:(id)arg1;
 - (void)privateHandleSecondaryAudioHintChange:(id)arg1;
 - (void)privateHandleServerDied;
+- (void)privateHandleOutputChannelCount:(id)arg1;
+- (void)privateHandleInputChannelCount:(id)arg1;
 - (void)privateHandleFormatChange:(id)arg1;
 - (void)privateHandleFormatsChange:(id)arg1;
 - (void)privateHandlePromptStyleChange:(id)arg1;
@@ -53,6 +53,7 @@
 - (void)privateHandleServerReturned;
 - (id)privateRefreshAvailableInputs;
 - (id)availableInputs;
+- (double)speechDetectionDeviceSampleRate;
 - (unsigned int)opaqueSessionID;
 - (id)preferredInput;
 - (bool)setPreferredInput:(id)arg1 error:(id*)arg2;
@@ -99,6 +100,8 @@
 - (bool)setCategory:(id)arg1 withOptions:(unsigned long long)arg2 error:(id*)arg3;
 - (unsigned long long)categoryOptions;
 - (id)category;
+- (void)privateUpdateOutputChannelCount:(id)arg1;
+- (void)privateUpdateInputChannelCount:(id)arg1;
 - (void)privateUpdateAudioFormat:(id)arg1;
 - (void)privateUpdateAudioFormats:(id)arg1;
 - (void)privateUpdatePromptStyle:(id)arg1;

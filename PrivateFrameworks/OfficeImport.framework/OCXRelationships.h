@@ -16,8 +16,8 @@
 - (id)idForKey:(id)arg1;
 - (id)addRelationshipForKey:(id)arg1 type:(id)arg2 target:(id)arg3;
 - (id)addRelationshipForKey:(id)arg1 type:(id)arg2 target:(id)arg3 external:(bool)arg4;
-- (bool)isEmpty;
 - (id)path;
+- (bool)isEmpty;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 

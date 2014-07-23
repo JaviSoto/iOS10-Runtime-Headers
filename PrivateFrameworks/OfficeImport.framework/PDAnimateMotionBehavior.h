@@ -31,11 +31,11 @@
 - (void)setPointType:(int)arg1;
 - (int)pointType;
 - (bool)hasPath;
+- (id)path;
 - (double)angle;
 - (void)setAngle:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (id).cxx_construct;
 

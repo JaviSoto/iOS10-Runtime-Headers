@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSUndoManager, NSMutableArray, UIImage, UIPopoverController, NSTimer, NSArray, NSMutableDictionary, UIAlertView, UIView, PLEditOverlayTextView, EAGLContext, UIActionSheet, UIToolbar, PLImageAdjustmentView, UINavigationBar, NSObject<OS_dispatch_queue>, CIContext, CAMEffectSelectionViewController, UIScrollView, PLManagedAsset, CIFilter, PLProgressHUD;
+@class NSDictionary, NSUndoManager, NSMutableArray, NSString, UIImage, UIPopoverController, NSTimer, NSArray, NSMutableDictionary, UIAlertView, UIView, PLEditOverlayTextView, EAGLContext, UIActionSheet, UIToolbar, PLImageAdjustmentView, UINavigationBar, NSObject<OS_dispatch_queue>, CIContext, CAMEffectSelectionViewController, UIScrollView, PLManagedAsset, CIFilter, PLProgressHUD;
 
 @interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, CAMEffectSelectionViewControllerDelegate> {
     UIScrollView *_scrollView;
@@ -125,6 +125,10 @@
 @property(copy) id actionCompletionBlock;
 @property(setter=_setToolbarHidden:) bool _toolbarHidden;
 @property(setter=_setViewAnimationEnabledCount:) long long _viewAnimationEnabledCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 
@@ -254,9 +258,9 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedCropRect;
 - (double)straightenAngle;
 - (void)assetContainerDidChange:(id)arg1;
+- (void)_updateToolbar;
 - (void)setRotationAngle:(double)arg1;
 - (double)rotationAngle;
-- (void)_updateToolbar;
 - (bool)isEditing;
 - (void)_setUndoManager:(id)arg1;
 - (void)save:(id)arg1;

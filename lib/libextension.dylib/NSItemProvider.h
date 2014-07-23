@@ -31,6 +31,7 @@
 - (void)set_loadHandlers:(id)arg1;
 - (void)_loadPreviewImageOfClass:(Class)arg1 options:(id)arg2 coerceForCoding:(bool)arg3 completionHandler:(id)arg4;
 - (void)loadItemForTypeIdentifier:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (id)initWithContentsOfURL:(id)arg1;
 - (void)_loadItemOfClass:(Class)arg1 withLoadHandler:(id)arg2 options:(id)arg3 coerceForCoding:(bool)arg4 completionHandler:(id)arg5;
 - (bool)hasItemConformingToTypeIdentifier:(id)arg1;
 - (void)_loadItemOfClass:(Class)arg1 forTypeIdentifier:(id)arg2 options:(id)arg3 coerceForCoding:(bool)arg4 completionHandler:(id)arg5;
@@ -50,6 +51,5 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
 
 @end

@@ -14,6 +14,10 @@
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSURL * memberQueueDocumentStorageURL;
 @property(copy) NSString * memberQueueProviderIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)placeholderURLForURL:(id)arg1;
 + (bool)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;

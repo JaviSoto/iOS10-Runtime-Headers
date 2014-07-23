@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonViewControllerHelper, ABPersonTableViewDataSource, <ABPresenterDelegate>, CNContact, _UIAccessDeniedView, <ABStyleProvider>, ABContactViewController, <ABNewPersonViewControllerDelegate>, ABContactsFilter;
+@class ABPersonViewControllerHelper, ABPersonTableViewDataSource, <ABPresenterDelegate>, NSString, CNContact, _UIAccessDeniedView, <ABStyleProvider>, ABContactViewController, <ABNewPersonViewControllerDelegate>, ABContactsFilter;
 
 @interface ABNewPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate> {
     void *_addressBook;
@@ -37,6 +37,10 @@
 @property bool showsCancelButton;
 @property(readonly) _UIAccessDeniedView * accessDeniedView;
 @property bool isRealViewLoaded;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setParentContactsFilter:(id)arg1;

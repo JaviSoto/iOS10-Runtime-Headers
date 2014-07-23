@@ -10,6 +10,11 @@
     NSString *_activeAccountID;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (bool)_confirmUserWantsToOpenAuthenticationURLForAccount:(id)arg1;
 - (void)_launchDialogContainerAppForAccount:(id)arg1 shouldConfirm:(bool)arg2 completion:(id)arg3;

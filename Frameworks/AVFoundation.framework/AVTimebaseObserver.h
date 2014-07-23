@@ -27,10 +27,10 @@
 - (void)_effectiveRateChanged;
 - (void)_stopObservingTimebaseNotifications;
 - (void)_removeTimebaseFromTimerSource;
+- (bool)invalidated;
 - (void)_attachTimerSourceToTimebase;
 - (void)_startObservingTimebaseNotifications;
 - (id)_weakReference;
-- (bool)invalidated;
 - (void)invalidate;
 - (void)finalize;
 - (void)dealloc;

@@ -21,13 +21,13 @@
 - (void)setTargetType:(id)arg1;
 - (void)setSearchTerm:(id)arg1;
 - (id)searchTerm;
-- (id)targetURL;
 - (id)actionDetails;
 - (id)targetIdentifier;
 - (id)targetType;
 - (void)setTargetIdentifier:(id)arg1;
 - (void)setActionType:(id)arg1;
 - (id)actionType;
+- (id)targetURL;
 - (id)init;
 
 @end

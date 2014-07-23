@@ -29,6 +29,7 @@
     bool__forcesNewConnections;
     bool__supportsAVAssetDownloads;
     bool__proxySession;
+    bool__disallowsSPDY;
     bool__preventsIdleSleep;
     bool__usePipeliningHeuristics;
     int _TLSMinimumSupportedProtocol;
@@ -129,6 +130,7 @@
 @property(copy) NSDictionary * _socketStreamProperties;
 @property bool _supportsAVAssetDownloads;
 @property(getter=_isProxySession) bool _proxySession;
+@property bool _disallowsSPDY;
 @property bool _preventsIdleSleep;
 @property bool _usePipeliningHeuristics;
 @property(copy) NSArray * _contentDispHeadEncFallback;
@@ -147,6 +149,7 @@
 - (id)identifier;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (void)set_disallowsSPDY:(bool)arg1;
 - (id)sourceApplicationBundleIdentifier;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (id)initWithDisposition:(id)arg1;
@@ -256,6 +259,7 @@
 - (void)setNetworkServiceType:(unsigned long long)arg1;
 - (bool)allowsCellularAccess;
 - (unsigned long long)networkServiceType;
+- (bool)_disallowsSPDY;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (id)_ledBellyServiceIdentifier;
 - (struct OpaqueCFHTTPCookieStorage { }*)_copyCFCookieStorage;

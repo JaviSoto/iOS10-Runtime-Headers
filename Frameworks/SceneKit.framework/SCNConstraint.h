@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class SCNOrderedDictionary;
+@class SCNOrderedDictionary, NSString;
 
 @interface SCNConstraint : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     id _constraintReserved;
@@ -18,6 +18,10 @@
 }
 
 @property double influenceFactor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)SCNJSExportProtocol;
 + (bool)supportsSecureCoding;

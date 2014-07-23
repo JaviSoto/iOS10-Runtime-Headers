@@ -137,10 +137,12 @@
     NSString *_currentActivityUUID;
     NSString *_currentActivityType;
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsDiffInspector;
+    bool_saveStateRestorationArchiveWithFileProtectionCompleteUntilFirstUserAuthentication;
     double _lastTimestampWhenFirstTouchCameDown;
     double _lastTimestampWhenAllTouchesLifted;
     long long _virtualHorizontalSizeClass;
     long long _virtualVerticalSizeClass;
+    long long __expectedViewOrientation;
     NSString *_preferredContentSizeCategoryName;
     struct CGPoint { 
         double x; 
@@ -175,6 +177,7 @@
 @property(getter=isProtectedDataAvailable,readonly) bool protectedDataAvailable;
 @property(readonly) long long userInterfaceLayoutDirection;
 @property(readonly) NSString * preferredContentSizeCategory;
+@property(setter=_setExpectedViewOrientation:) long long _expectedViewOrientation;
 @property(readonly) struct CGSize { double x1; double x2; } _virtualWindowSizeInSceneReferenceSpace;
 @property(readonly) long long _virtualHorizontalSizeClass;
 @property(readonly) long long _virtualVerticalSizeClass;
@@ -183,6 +186,10 @@
 @property(getter=_lastTimestampWhenAllTouchesLifted,setter=_setLastTimestampWhenAllTouchesLifted:) double lastTimestampWhenAllTouchesLifted;
 @property(getter=_lastLocationWhereFirstTouchCameDown,setter=_setLastLocationWhereFirstTouchCameDown:) struct CGPoint { double x1; double x2; } lastLocationWhereFirstTouchCameDown;
 @property(getter=_lastLocationWhereAllTouchesLifted,setter=_setLastLocationWhereAllTouchesLifted:) struct CGPoint { double x1; double x2; } lastLocationWhereAllTouchesLifted;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedApplication;
 + (id)_defaultContentSizeCategory;
@@ -319,6 +326,7 @@
 - (void)setProximitySensingEnabled:(bool)arg1;
 - (void)completeStateRestoration;
 - (void)extendStateRestoration;
+- (void)_setSaveStateRestorationArchiveWithFileProtectionCompleteUntilFirstUserAuthentication;
 - (void)removeApplicationPreservationStateWithSessionIdentifier:(id)arg1;
 - (void)restoreApplicationPreservationStateWithSessionIdentifier:(id)arg1 viewController:(id)arg2 beginHandler:(id)arg3 completionHandler:(id)arg4;
 - (void)saveApplicationPreservationStateWithSessionIdentifier:(id)arg1 viewController:(id)arg2 beginHandler:(id)arg3 completionHandler:(id)arg4;
@@ -326,6 +334,8 @@
 - (void)_saveApplicationPreservationState:(id)arg1 viewController:(id)arg2 sessionIdentifier:(id)arg3 beginHandler:(id)arg4 completionHandler:(id)arg5;
 - (void)_restoreApplicationPreservationStateWithSessionIdentifier:(id)arg1 beginHandler:(id)arg2 completionHandler:(id)arg3;
 - (id)preferredContentSizeCategoryName;
+- (void)_setExpectedViewOrientation:(long long)arg1;
+- (long long)_expectedViewOrientation;
 - (long long)_virtualVerticalSizeClass;
 - (long long)_virtualHorizontalSizeClass;
 - (struct CGSize { double x1; double x2; })_virtualWindowSizeInSceneReferenceSpace;
@@ -433,7 +443,6 @@
 - (long long)_getSpringBoardOrientation;
 - (void)noteActiveInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(long long)arg3;
 - (void)noteActiveInterfaceOrientationWillChangeToOrientation:(long long)arg1;
-- (double)statusBarHeight;
 - (double)statusBarHeightForOrientation:(long long)arg1 ignoreHidden:(bool)arg2;
 - (void)statusBar:(id)arg1 didAnimateFromHeight:(double)arg2 toHeight:(double)arg3 animation:(int)arg4;
 - (void)statusBar:(id)arg1 willAnimateFromHeight:(double)arg2 toHeight:(double)arg3 duration:(double)arg4 animation:(int)arg5;
@@ -487,11 +496,15 @@
 - (bool)isHandlingOpenShortCut;
 - (bool)canOpenURL:(id)arg1;
 - (void)updateSuspendedSettings:(id)arg1;
+- (void)_headsetButtonUp:(struct __IOHIDEvent { }*)arg1;
+- (void)_headsetButtonDown:(struct __IOHIDEvent { }*)arg1;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
+- (void)_postSimpleRemoteNotificationForAction:(long long)arg1 andContext:(long long)arg2;
 - (void)resetIdleTimerAndUndim;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (void)volumeChanged:(struct __GSEvent { }*)arg1;
+- (void)setWantsLockEvents:(bool)arg1;
 - (void)setWantsVolumeButtonEvents:(bool)arg1;
 - (void)ringerChanged:(int)arg1;
 - (void)_scrollsToTopInitiatorView:(id)arg1 touchesEnded:(id)arg2 withEvent:(id)arg3;
@@ -524,7 +537,6 @@
 - (unsigned long long)_supportedInterfaceOrientationsForWindow:(id)arg1;
 - (void)_setSupportedInterfaceOrientationsIsEnabled:(bool)arg1;
 - (bool)_statusBarOrientationFollowsWindow:(id)arg1;
-- (long long)_statusBarOrientationForWindow:(id)arg1;
 - (void)setStatusBarOrientation:(long long)arg1;
 - (void)setStatusBarOrientation:(long long)arg1 animated:(bool)arg2;
 - (void)_setStatusBarOrientation:(long long)arg1;
@@ -607,6 +619,7 @@
 - (void)applicationDidResume;
 - (void)_sendWillEnterForegroundCallbacks;
 - (bool)_isLaunchedSuspended;
+- (void)_handleApplicationActivationWithScene:(id)arg1 transitionContext:(id)arg2 completion:(id)arg3;
 - (bool)_callContinueUserActivity:(id)arg1;
 - (bool)_callDelegateWillContinueActivityWithType:(id)arg1;
 - (void)_removeResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
@@ -698,14 +711,11 @@
 - (void)setProximityEventsEnabled:(bool)arg1;
 - (void)proximityStateChanged:(bool)arg1;
 - (bool)_shouldIgnoreHeadsetClicks;
-- (void)_postHeadsetOriginatedMediaRemoteCommand:(unsigned int)arg1;
+- (void)_sendHeadsetOriginatedMediaRemoteCommand:(unsigned int)arg1;
 - (void)_handleHeadsetButtonTripleClick;
 - (void)_handleHeadsetButtonDoubleClick;
 - (void)_handleHeadsetButtonClick;
-- (void)_finishHeadsetButton;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_startHeadsetButton;
-- (void)_postSimpleRemoteNotificationForAction:(long long)arg1 andContext:(long long)arg2;
 - (void)_postSimpleRemoteNotificationForAction:(long long)arg1 andContext:(long long)arg2 trackID:(id)arg3;
 - (void)suspendReturningToLastApp:(bool)arg1;
 - (void)applicationDidResumeFromUnderLock;
@@ -724,7 +734,6 @@
 - (void)setGlowAnimationEnabled:(bool)arg1 forStyle:(long long)arg2;
 - (void)addStatusBarStyleOverrides:(int)arg1;
 - (void)removeStatusBarStyleOverrides:(int)arg1;
-- (id)statusBar;
 - (unsigned long long)supportedInterfaceOrientationsForWindow:(id)arg1;
 - (void)_setStatusBarOrientation:(long long)arg1 animated:(bool)arg2;
 - (bool)_isAutorotationDisabledForAppWindows;
@@ -736,9 +745,11 @@
 - (void)setStatusBarHidden:(bool)arg1 withAnimation:(long long)arg2;
 - (void)setStatusBarHidden:(bool)arg1 duration:(double)arg2 changeApplicationFlag:(bool)arg3;
 - (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2 changeApplicationFlag:(bool)arg3;
+- (void)setStatusBarHidden:(bool)arg1;
 - (double)statusBarHeightForOrientation:(long long)arg1;
 - (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2;
 - (bool)_supportsCompactStatusBarHiding;
+- (void)setStatusBarStyle:(long long)arg1;
 - (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
 - (void)_setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2 changeApplicationFlag:(bool)arg3;
 - (id)_implicitStatusBarHiddenAnimationParametersWithViewController:(id)arg1 animation:(long long)arg2;
@@ -782,12 +793,10 @@
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)_currentTests;
 - (id)_extendLaunchTest;
-- (void)_handleApplicationActivationWithScene:(id)arg1 transitionContext:(id)arg2 completion:(id)arg3;
+- (void)_handleApplicationLifecycleEventWithScene:(id)arg1 transitionContext:(id)arg2 completion:(id)arg3;
 - (void)_handleApplicationDectivationWithScene:(id)arg1 shouldForceExit:(bool)arg2 transitionContext:(id)arg3 completion:(id)arg4;
 - (void)_handleApplicationLaunchEventWithCompletion:(id)arg1;
 - (void)_runWithMainScene:(id)arg1 transitionContext:(id)arg2 completion:(id)arg3;
-- (void)setStatusBarStyle:(long long)arg1;
-- (void)setStatusBarHidden:(bool)arg1;
 - (void)_setShouldZoom:(bool)arg1;
 - (void)_setSuspended:(bool)arg1;
 - (bool)_hasCalledRunWithMainScene;
@@ -825,6 +834,9 @@
 - (void)_fetchInfoPlistFlags;
 - (void)_deactivateForReason:(int)arg1 notify:(bool)arg2;
 - (void)setApplicationSupportsShakeToEdit:(bool)arg1;
+- (id)statusBar;
+- (double)statusBarHeight;
+- (long long)_statusBarOrientationForWindow:(id)arg1;
 - (id)_touchesEvent;
 - (void)finishedTest:(id)arg1;
 - (void)startedTest:(id)arg1;

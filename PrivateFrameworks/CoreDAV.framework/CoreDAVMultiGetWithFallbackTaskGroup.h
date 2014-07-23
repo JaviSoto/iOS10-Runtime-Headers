@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CoreDAVContainerMultiGetTask, <CoreDAVTaskManager>, NSMutableSet, <CoreDAVAccountInfoProvider>, NSError, NSSet;
+@class NSError, CoreDAVContainerMultiGetTask, NSString, <CoreDAVTaskManager>, NSSet, <CoreDAVAccountInfoProvider>, NSMutableSet;
 
 @interface CoreDAVMultiGetWithFallbackTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetSubmittable> {
     bool_shouldIgnoreResponseErrors;
@@ -21,6 +21,10 @@
     NSMutableSet *_parsedContents;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) id completionBlock;
 @property <CoreDAVTaskManager> * taskManager;
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;

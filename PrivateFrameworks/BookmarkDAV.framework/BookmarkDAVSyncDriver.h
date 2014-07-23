@@ -64,6 +64,10 @@
 @property(copy) id getAccountPropertiesHandler;
 @property(copy) id syncHandler;
 @property(readonly) BookmarkDAVSyncData * topLevelSyncData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_applyReturnedBookmarks:(id)arg1 withPushedBookmarks:(struct __CFArray { }*)arg2;

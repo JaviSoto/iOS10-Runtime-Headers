@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDTextBox, NSMutableDictionary, EDComment, EDAnchor, EDSheet;
+@class EDTextBox, NSMutableDictionary, EDComment, EDAnchor, NSString, EDSheet;
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
     EDSheet *mSheet;
@@ -23,6 +23,11 @@
     } mBounds;
     boolmIsBoundsSet;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setTextBox:(id)arg1;

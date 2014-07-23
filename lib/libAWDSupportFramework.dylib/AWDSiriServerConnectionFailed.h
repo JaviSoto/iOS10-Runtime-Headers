@@ -29,12 +29,12 @@
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
 - (void)setConnectionType:(int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasErrorCode;
 - (void)setHasErrorCode:(bool)arg1;
 - (bool)hasErrorDomain;
 - (void)setErrorDomain:(id)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)connectionType;

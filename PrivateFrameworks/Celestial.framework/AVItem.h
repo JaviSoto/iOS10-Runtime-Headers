@@ -30,12 +30,12 @@
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
 - (void)setVolume:(float)arg1;
 - (float)volume;
+- (id)path;
 - (id)url;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (id)errorLog;
 - (id)accessLog;
 - (id)init;
-- (id)path;
 - (void)dealloc;
 - (double)duration;
 

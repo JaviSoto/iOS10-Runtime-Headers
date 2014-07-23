@@ -26,9 +26,9 @@
 - (bool)hasDeduplicationInterval;
 - (void)setHasDeduplicationInterval:(bool)arg1;
 - (void)setDeduplicationInterval:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -2,15 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, MKSmallCalloutView, MKCalloutBackgroundView, UIView;
+@class UIView, NSString, MKSmallCalloutView, MKCalloutBackgroundView, <MKSmallCalloutViewControllerDelegate>;
 
 @interface MKSmallCalloutViewController : UIViewController <CalloutViewControllerProtocol> {
     MKSmallCalloutView *_smallCalloutView;
+    <MKSmallCalloutViewControllerDelegate> *_delegate;
 }
 
+@property <MKSmallCalloutViewControllerDelegate> * delegate;
 @property double maximumWidth;
 @property(retain) MKCalloutBackgroundView * calloutBackgroundView;
 @property unsigned long long mapDisplayStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * calloutTitle;
 @property(copy) NSString * calloutSubtitle;
 @property(retain) UIView * leftView;
@@ -35,6 +41,8 @@
 - (void)updatePreferredContentSize;
 - (void)setCalloutTitle:(id)arg1;
 - (id)calloutTitle;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void).cxx_destruct;
 - (void)reset;
 - (id)rightView;
@@ -43,6 +51,7 @@
 - (void)setLeftView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(bool)arg2;
 - (void)setLeftView:(id)arg1 animated:(bool)arg2;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

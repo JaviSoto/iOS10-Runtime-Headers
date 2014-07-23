@@ -17,6 +17,7 @@
     bool_hasPreparedAlertActions;
     bool_isPresented;
     bool_alertControllerShouldDismiss;
+    bool_dismissingAlertController;
 }
 
 @property <UIActionSheetDelegate> * delegate;
@@ -27,6 +28,10 @@
 @property long long destructiveButtonIndex;
 @property(readonly) long long firstOtherButtonIndex;
 @property(getter=isVisible,readonly) bool visible;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_popoverControllerClass;
 + (bool)_isAlertControllerShimClass;

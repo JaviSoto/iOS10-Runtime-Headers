@@ -50,9 +50,9 @@
 - (void)_removeBackgroundTintedView;
 - (void)_syncToBackgroundType;
 - (void)_installBackgroundView;
+- (void)setLabelText:(id)arg1;
 - (long long)backgroundType;
 - (void)setBackgroundType:(long long)arg1;
-- (void)setLabelText:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;

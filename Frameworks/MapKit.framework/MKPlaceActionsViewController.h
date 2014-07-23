@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, <MKPlaceActionsViewControllerDelegate>, MKMapItem;
+@class NSArray, NSString, MKMapItem, <MKPlaceActionsViewControllerDelegate>;
 
 @interface MKPlaceActionsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
     bool_showContactActions;
@@ -27,6 +27,10 @@
 @property bool showSimulateLocation;
 @property bool showOpenInSkyline;
 @property(retain) NSArray * actions;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool requiresPreferredContentSizeInStackingView;
 
 

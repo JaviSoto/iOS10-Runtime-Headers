@@ -51,6 +51,7 @@
     bool_allowsInlineMediaPlayback;
     bool_mediaPlaybackRequiresUserAction;
     bool_mediaPlaybackAllowsAirPlay;
+    long long _selectionGranularity;
 }
 
 @property(setter=_setRelatedWebView:) WKWebView * _relatedWebView;
@@ -64,6 +65,7 @@
 @property bool allowsInlineMediaPlayback;
 @property bool mediaPlaybackRequiresUserAction;
 @property bool mediaPlaybackAllowsAirPlay;
+@property long long selectionGranularity;
 @property(setter=_setContentProviderRegistry:) WKWebViewContentProviderRegistry * _contentProviderRegistry;
 
 
@@ -97,5 +99,7 @@
 - (void)setAllowsInlineMediaPlayback:(bool)arg1;
 - (void)setSuppressesIncrementalRendering:(bool)arg1;
 - (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
+- (void)setSelectionGranularity:(long long)arg1;
+- (long long)selectionGranularity;
 
 @end

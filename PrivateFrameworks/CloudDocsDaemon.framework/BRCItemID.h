@@ -15,6 +15,10 @@
 @property(readonly) NSString * itemIDString;
 @property(readonly) NSString * shortItemIDString;
 @property(readonly) const char * UTF8String;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)documentsItemID;
 + (id)rootItemID;
@@ -26,8 +30,8 @@
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (id)shortItemIDString;
-- (id)itemIDString;
 - (bool)isDocuments;
+- (id)itemIDString;
 - (bool)isEqualToItemID:(id)arg1;
 - (id)initWithSqlite3Value:(struct Mem { }*)arg1;
 - (bool)isRoot;

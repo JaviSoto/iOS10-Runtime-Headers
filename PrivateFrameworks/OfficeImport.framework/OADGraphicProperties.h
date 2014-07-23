@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADStroke, NSArray, OADFill, OADScene3D, OADShape3D;
+@class OADStroke, NSArray, NSString, OADFill, OADScene3D, OADShape3D;
 
 @interface OADGraphicProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
     OADFill *mFill;
@@ -14,6 +14,11 @@
     unsigned int mHasIsBehindText : 1;
     unsigned int mIsBehindText : 1;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)hasEffects;

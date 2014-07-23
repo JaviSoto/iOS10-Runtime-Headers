@@ -3,19 +3,16 @@
  */
 
 @interface CKDModifyBadgeURLRequest : CKDURLRequest  {
-    bool_thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
 @property(readonly) unsigned long long badgeValue;
-@property(readonly) bool thisDeviceOnly;
 
 
-- (id)initWithBadgeValue:(unsigned long long)arg1 thisDeviceOnly:(bool)arg2;
+- (id)initWithBadgeValue:(unsigned long long)arg1;
 - (id)requestOperationClasses;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperations;
-- (bool)thisDeviceOnly;
 - (int)operationType;
 - (unsigned long long)badgeValue;
 

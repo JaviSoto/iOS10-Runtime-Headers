@@ -74,6 +74,7 @@
     bool_includeFeatureSets;
     bool_includeGeoId;
     bool_includeMatchedToken;
+    bool_includeNameForForwardGeocodingResults;
     bool_includePhonetics;
     bool_includeQuads;
     bool_includeRevgeoRequestTemplate;
@@ -112,6 +113,7 @@
         unsigned int includeFeatureSets : 1; 
         unsigned int includeGeoId : 1; 
         unsigned int includeMatchedToken : 1; 
+        unsigned int includeNameForForwardGeocodingResults : 1; 
         unsigned int includePhonetics : 1; 
         unsigned int includeQuads : 1; 
         unsigned int includeRevgeoRequestTemplate : 1; 
@@ -251,14 +253,16 @@
 @property(readonly) int* optionalSuppressionReasons;
 @property(readonly) bool hasSearchLocation;
 @property(retain) GEOLatLng * searchLocation;
+@property bool hasIncludeNameForForwardGeocodingResults;
+@property bool includeNameForForwardGeocodingResults;
 
 
-- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasSessionGUID;
 - (bool)hasDeviceLocation;
-- (bool)isEqualForHistoryToRequest:(id)arg1;
 - (id)initWithTraits:(id)arg1 maxResults:(int)arg2;
 - (id)initWithTraits:(id)arg1 includeEntryPoints:(bool)arg2;
+- (bool)includeNameForForwardGeocodingResults;
 - (id)searchLocation;
 - (int)searchSource;
 - (bool)includeMatchedToken;
@@ -301,6 +305,9 @@
 - (int)businessSortOrder;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionGUID;
 - (bool)includePhonetics;
+- (bool)hasIncludeNameForForwardGeocodingResults;
+- (void)setHasIncludeNameForForwardGeocodingResults:(bool)arg1;
+- (void)setIncludeNameForForwardGeocodingResults:(bool)arg1;
 - (bool)hasSearchLocation;
 - (void)setOptionalSuppressionReasons:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)optionalSuppressionReasons;
@@ -406,6 +413,7 @@
 - (bool)hasIncludePhonetics;
 - (void)setHasIncludePhonetics:(bool)arg1;
 - (void)setIncludePhonetics:(bool)arg1;
+- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)additionalPlaceTypes;
 - (bool)hasSearch;
 - (bool)hasLocation;
@@ -476,7 +484,6 @@
 - (void)setClientCapabilities:(id)arg1;
 - (bool)hasAddress;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)setAddress:(id)arg1;
 - (int)knownAccuracy;
 - (bool)hasKnownAccuracy;

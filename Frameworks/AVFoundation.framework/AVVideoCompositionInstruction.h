@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, AVVideoCompositionInstructionInternal;
+@class NSArray, AVVideoCompositionInstructionInternal, NSString;
 
 @interface AVVideoCompositionInstruction : NSObject <NSSecureCoding, NSCopying, NSMutableCopying, AVVideoCompositionInstruction> {
     AVVideoCompositionInstructionInternal *_instruction;
@@ -14,6 +14,10 @@
 @property(readonly) bool enablePostProcessing;
 @property(readonly) NSArray * requiredSourceTrackIDs;
 @property(readonly) int passthroughTrackID;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool containsTweening;
 
 + (void)initialize;

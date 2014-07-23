@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSThread, NSTimer, NSMutableArray, GEOVoltaireSimpleTileRequester;
+@class NSThread, NSTimer, NSString, NSMutableArray, GEOVoltaireSimpleTileRequester;
 
 @interface GEOVoltaireTileRequester : GEOTileRequester <GEOVoltaireMultiTileDownloaderDelegate, GEOTileRequesterDelegate, GEOResourceManifestTileGroupObserver> {
     NSMutableArray *_activeDownloads;
@@ -11,6 +11,11 @@
     NSMutableArray *_errors;
     GEOVoltaireSimpleTileRequester *_simpleRequester;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)simpleRequesterClass;
 + (Class)multiDownloaderClass;

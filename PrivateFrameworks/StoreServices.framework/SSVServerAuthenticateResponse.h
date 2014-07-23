@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSURL;
+@class NSNumber, NSURL, NSString;
 
 @interface SSVServerAuthenticateResponse : NSObject <SSXPCCoding> {
     NSNumber *_authenticatedAccountIdentifier;
@@ -15,6 +15,10 @@
 @property long long performedButtonIndex;
 @property(copy) NSURL * redirectURL;
 @property long long selectedButtonIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSelectedButtonIndex:(long long)arg1;

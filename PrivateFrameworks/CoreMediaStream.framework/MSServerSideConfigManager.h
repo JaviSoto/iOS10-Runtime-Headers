@@ -16,6 +16,10 @@
 @property(readonly) NSString * personID;
 @property(retain) NSDictionary * config;
 @property MSMediaStreamDaemon * daemon;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)longValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long long)arg3;
 + (double)doubleValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(double)arg3;

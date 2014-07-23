@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/usr/lib/libextension.dylib
  */
 
-@class NSMutableDictionary;
+@class NSString, NSMutableDictionary;
 
 @interface _NSExtensionContextVendor : NSObject <NSXPCListenerDelegate, _NSExtensionContextVending> {
     NSMutableDictionary *__extensionServiceConnections;
@@ -15,6 +15,10 @@
 @property(setter=_setExtensionContexts:,retain) NSMutableDictionary * _extensionContexts;
 @property(setter=_setExtensionPrincipalObjects:,retain) NSMutableDictionary * _extensionPrincipalObjects;
 @property(setter=_setExtensionExpirationHandlers:,retain) NSMutableDictionary * _extensionExpirationHandlers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_completionConcurrentQueue;
 + (void)_startListening;

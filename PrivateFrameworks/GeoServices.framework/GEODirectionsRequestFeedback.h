@@ -22,13 +22,13 @@
 @property(retain) NSString * appIdentifier;
 
 
-- (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
 - (int)purpose;
+- (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
 - (bool)hasPurpose;
 - (void)setHasPurpose:(bool)arg1;
 - (void)setHasSource:(bool)arg1;
-- (bool)hasAppIdentifier;
 - (id)appIdentifier;
+- (bool)hasAppIdentifier;
 - (bool)hasSource;
 - (id)initWithPurpose:(int)arg1;
 - (void)setAppIdentifier:(id)arg1;

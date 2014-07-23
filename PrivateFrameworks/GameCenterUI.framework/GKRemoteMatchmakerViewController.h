@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGame, GKMatchmakerViewController;
+@class NSString, GKGame, GKMatchmakerViewController;
 
 @interface GKRemoteMatchmakerViewController : GKRemoteViewController <GKMatchmakerRemoteDelegate, GKMatchmakerServiceViewControllerDelegate> {
     GKMatchmakerViewController *_delegateWeak;
 }
 
 @property GKMatchmakerViewController * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) GKGame * game;
 
 + (id)exportedInterface;

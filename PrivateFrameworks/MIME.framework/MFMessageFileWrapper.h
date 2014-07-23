@@ -18,10 +18,6 @@
 + (id)supportedArchivedClassNames;
 
 - (void)setCreator:(unsigned int)arg1;
-- (unsigned int)creator;
-- (id)meetingStorePersistentID;
-- (id)symbolicLinkDestination;
-- (bool)isImageFile;
 - (id)icsRepresentation;
 - (bool)isPDFFile;
 - (id)inferredMimeType;
@@ -39,15 +35,19 @@
 - (void)setFinderFlags:(unsigned short)arg1;
 - (void)setMimeType:(id)arg1;
 - (void)_isImage:(bool*)arg1 orPDFFile:(bool*)arg2;
+- (id)meetingStorePersistentID;
+- (id)symbolicLinkDestination;
+- (bool)isImageFile;
+- (unsigned int)creator;
 - (void)setMessageID:(id)arg1;
 - (id)messageID;
+- (id)path;
 - (id)initRegularFileWithContents:(id)arg1;
 - (bool)isPlaceholder;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)type;
 - (void)setPath:(id)arg1;
 - (void)setURL:(id)arg1;
-- (id)path;
 - (id)URL;
 - (void)dealloc;
 - (id)description;

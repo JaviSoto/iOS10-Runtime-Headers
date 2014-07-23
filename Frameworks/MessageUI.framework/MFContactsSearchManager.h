@@ -31,7 +31,6 @@
 @property(readonly) NSArray * searchAccounts;
 
 
-- (void)cancelTaskWithID:(id)arg1;
 - (void)setIncludeUpcomingEventMembers:(bool)arg1;
 - (bool)includeUpcomingEventMembers;
 - (void)setImplicitGroupCreationThreshold:(unsigned long long)arg1;
@@ -61,6 +60,7 @@
 - (id)sendingAddress;
 - (void)setSearchTypes:(unsigned long long)arg1;
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
+- (void)cancelTaskWithID:(id)arg1;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (void)dealloc;

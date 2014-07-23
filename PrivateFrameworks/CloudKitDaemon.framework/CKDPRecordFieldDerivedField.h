@@ -58,6 +58,7 @@
 - (void)addFilters:(id)arg1;
 - (bool)hasIdentifier;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setIdentifier:(id)arg1;

@@ -6,7 +6,11 @@
 
 @interface QLPrintPageRenderer : UIPrintPageRenderer  {
     <QLPrintPageRendererDataSource> *_dataSource;
-    long long _numberOfPages;
+    long long _cachedNumberOfPages;
+    struct CGSize { 
+        double width; 
+        double height; 
+    } _sizeWhenNumberOfPagesWasCached;
     bool_printingDone;
     long long _numberOfPrintedPages;
 }

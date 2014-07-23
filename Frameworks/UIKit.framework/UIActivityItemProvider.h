@@ -17,6 +17,10 @@
 @property(copy) NSString * status;
 @property float progress;
 @property(retain) id providedItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setStatus:(id)arg1;

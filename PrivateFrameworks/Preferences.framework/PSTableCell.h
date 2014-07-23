@@ -43,7 +43,6 @@
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (long long)cellStyle;
 
-- (id)valueLabel;
 - (void)setLongTapRecognizer:(id)arg1;
 - (id)longTapRecognizer;
 - (void)setIsCopyable:(bool)arg1;
@@ -80,6 +79,7 @@
 - (bool)canReload;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
+- (id)valueLabel;
 - (SEL)action;
 - (void)setAction:(SEL)arg1;
 - (id)value;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCServerContainer;
+@class NSString, BRCServerContainer;
 
 @interface BRCSyncDownOperation : BRCOperation <BRCOperationSubclass> {
     BRCServerContainer *_serverContainer;
@@ -13,11 +13,16 @@
 
 @property(readonly) bool isConsistent;
 @property(readonly) bool hasCaughtUp;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)syncDownAckQueue;
 
 - (id)_zoneCreationOperationWithCompletionBlock:(id)arg1;
-- (id)_fetchRecordChangesOperation;
+- (void)scheduleFetchQuotaAndSyncDown;
+- (id)_fetchRecordChangesOperationWithCompletion:(id)arg1;
 - (void)_saveRecordBatchIfNecessaryWithRecords:(id)arg1 deletedStructureRecordIDs:(id)arg2;
 - (bool)isConsistent;
 - (bool)hasCaughtUp;

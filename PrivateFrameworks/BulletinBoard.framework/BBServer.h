@@ -68,6 +68,15 @@
     bool_entryFound;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)behaviorUtilitiesServerInterface;
 + (void)initialize;
 
@@ -210,6 +219,8 @@
 - (unsigned long long)effectivePushSettingsForSectionInfo:(id)arg1;
 - (void)_sendUpdateSectionOrderRule;
 - (void)_writeSectionOrder;
+- (id)bulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2;
+- (id)bulletinsRequestsForBulletinIDs:(id)arg1;
 - (id)universalSectionIDForSectionID:(id)arg1;
 - (unsigned long long)privilegedSenderTypes;
 - (id)futureBulletinIDsForSectionID:(id)arg1;
@@ -288,6 +299,7 @@
 - (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id)arg2;
 - (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id)arg3;
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id)arg2;
+- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id)arg2;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id)arg1;

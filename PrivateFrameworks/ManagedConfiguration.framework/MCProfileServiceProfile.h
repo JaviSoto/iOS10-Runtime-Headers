@@ -32,8 +32,8 @@
 - (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
 - (id)payloads;
 - (id)stubDictionary;
-- (id)challenge;
 - (id)URLString;
+- (id)challenge;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setURLString:(id)arg1;

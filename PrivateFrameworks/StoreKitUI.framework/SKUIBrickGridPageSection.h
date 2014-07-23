@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIMissingItemLoader, NSMapTable, UIImage, SKUIGridComponent;
+@class SKUIMissingItemLoader, NSMapTable, UIImage, SKUIGridComponent, NSString;
 
 @interface SKUIBrickGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
     NSMapTable *_artworkRequests;
@@ -17,6 +17,10 @@
 }
 
 @property(readonly) SKUIGridComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

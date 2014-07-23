@@ -51,6 +51,10 @@
 @property bool usesLocalRedownloadParametersIfPossible;
 @property(getter=isPreauthenticated) bool preauthenticated;
 @property(readonly) NSData * databaseEncoding;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)newPurchaseWithXPCEncoding:(id)arg1;
 + (id)newPurchaseWithDatabaseEncoding:(id)arg1;

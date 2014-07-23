@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIContentUnavailableView, SKUIViewElementLayoutContext, SKUILayoutCache, SKUIContentUnavailableTemplateElement;
+@class SKUIContentUnavailableView, NSString, SKUIViewElementLayoutContext, SKUILayoutCache, SKUIContentUnavailableTemplateElement;
 
 @interface SKUIContentUnavailableDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, SKUIDocumentViewController> {
     SKUIContentUnavailableView *_contentUnavailableView;
@@ -10,6 +10,11 @@
     SKUIContentUnavailableTemplateElement *_templateElement;
     SKUILayoutCache *_textLayoutCache;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)documentDidUpdate:(id)arg1;

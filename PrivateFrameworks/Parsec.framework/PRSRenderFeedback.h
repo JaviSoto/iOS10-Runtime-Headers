@@ -16,6 +16,7 @@
 @property(retain) NSString * fbq;
 @property(retain) NSArray * hidden;
 
++ (bool)supportsSecureCoding;
 
 - (void)setTrigger_timestamp:(long long)arg1;
 - (long long)trigger_timestamp;
@@ -28,6 +29,8 @@
 - (id)hidden;
 - (void)setResults:(id)arg1;
 - (id)type;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
 - (id)results;
 - (void)validate;

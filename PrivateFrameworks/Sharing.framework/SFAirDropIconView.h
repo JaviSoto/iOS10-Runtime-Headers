@@ -13,6 +13,5 @@
 - (void).cxx_destruct;
 - (void)setHighlighted:(bool)arg1;
 - (void)layoutSubviews;
-- (void)didMoveToWindow;
 
 @end

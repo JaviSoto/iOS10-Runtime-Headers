@@ -4,13 +4,14 @@
 
 @class NSString;
 
-@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
 }
 
 @property(copy,readonly) NSString * string;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)_setAttributedDictionaryClass:(Class)arg1;
++ (bool)supportsSecureCoding;
 + (id)_documentTypeForFileType:(id)arg1;
 + (id)attributedStringWithAttachment:(id)arg1;
 + (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3;

@@ -79,7 +79,6 @@
 - (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQueryForFeatureAttributes:(id)arg1 vectorType:(long long)arg2;
 - (unsigned long long)mapDisplayStyleVariant;
 - (void)setCanSelectIcons:(bool)arg1;
-- (void)setMapMode:(long long)arg1;
 - (void)setMapDisplayStyleVariant:(unsigned long long)arg1;
 - (id)styleGlobalProperties;
 - (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(long long)arg4 sharedResources:(id)arg5;
@@ -92,6 +91,7 @@
 - (long long)targetDisplay;
 - (bool)isDevResource;
 - (id)sheetName;
+- (void)setMapMode:(long long)arg1;
 - (void)clearCaches;
 - (id)init;
 - (void)dealloc;

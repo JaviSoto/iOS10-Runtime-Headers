@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableArray;
+@class NSString, NSMutableArray;
 
 @interface VKRasterOverlayMapModel : VKMapTileModel <VKMapLayer> {
     NSMutableArray *_sortedTiles;
@@ -28,6 +28,11 @@
         } __ptr_; 
     } _clearItem;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)mapLayerPosition;

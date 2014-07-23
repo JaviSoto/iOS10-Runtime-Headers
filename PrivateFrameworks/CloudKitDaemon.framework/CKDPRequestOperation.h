@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordRetrieveChangesRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPInvitationAcceptRequest, CKDPUserRetrieveRequest, CKDPUserPrivacySettingsResetRequest, CKDPRecordSaveRequest, CKDPShareParticipantCreateRequest, CKDPZoneRetrieveRequest, CKDPShareDeleteRequest, CKDPPkiRetrieveRequest, CKDPQueryRetrieveRequest, CKDPTokenUnregistrationRequest, CKDPNotificationSyncRequest, CKDPSubscriptionDeleteRequest, CKDPGetCommentRequest, CKDPRecordRetrieveVersionsRequest, CKDPPromoteContainerSchemaRequest, CKDPOperation, CKDPNotificationMarkReadRequest, CKDPRecordRetrieveRequest, CKDPAssetUploadTokenRetrieveRequest, CKDPLikeRequest, CKDPSubscriptionCreateRequest, CKDPShareRetrieveRequest, CKDPGetLikesRequest, CKDPInvitationDeclineRequest, CKDPResetContainerRequest, CKDPZoneSaveRequest, CKDPZoneDeleteRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPPostCommentRequest, CKDPShareParticipantUpdateRequest, CKDPUnlikeRequest, CKDPShareCreateRequest, CKDPPkiRegisterRequest, CKDPSetBadgeCountRequest, CKDPInvitationQueryRequest, CKDPMescalSignatureRequest, CKDPGetCommentsRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPPulseRequest, CKDPShareParticipantDeleteRequest, CKDPRecordDeleteRequest, CKDPShareSetKeyRequest, CKDPRequestOperationHeader;
+@class CKDPRecordRetrieveVersionsRequest, CKDPPulseRequest, CKDPShareDeleteRequest, CKDPSubscriptionCreateRequest, CKDPPostCommentRequest, CKDPNotificationSyncRequest, CKDPRequestOperationHeader, CKDPUserRetrieveRequest, CKDPRecordDeleteRequest, CKDPShareParticipantDeleteRequest, CKDPShareCreateRequest, CKDPSubscriptionRetrieveRequest, CKDPResetContainerRequest, CKDPLikeRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPRecordRetrieveChangesRequest, CKDPQueryRetrieveRequest, CKDPZoneDeleteRequest, CKDPUserPrivacySettingsResetRequest, CKDPSubscriptionDeleteRequest, CKDPShareRetrieveRequest, CKDPMescalSessionInfoRequest, CKDPUnlikeRequest, CKDPMescalCertificateRequest, CKDPInvitationAcceptRequest, CKDPUserAvailableQuotaRequest, CKDPShareParticipantCreateRequest, CKDPPkiRetrieveRequest, CKDPSetBadgeCountRequest, CKDPDeleteContainerRequest, CKDPGetCommentsRequest, CKDPZoneSaveRequest, CKDPAssetUploadTokenRetrieveRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPPkiRegisterRequest, CKDPInvitationDeclineRequest, CKDPRecordRetrieveRequest, CKDPGetLikesRequest, CKDPMescalSignatureRequest, CKDPPromoteContainerSchemaRequest, CKDPGetCommentRequest, CKDPTokenRegistrationRequest, CKDPUserQueryRequest, CKDPDeleteCommentRequest, CKDPRecordSaveRequest, CKDPNotificationMarkReadRequest, CKDPOperation, CKDPTokenUnregistrationRequest, CKDPZoneRetrieveRequest, CKDPShareParticipantUpdateRequest, CKDPShareSetKeyRequest, CKDPInvitationQueryRequest;
 
 @interface CKDPRequestOperation : PBCodable <NSCopying> {
     CKDPAssetUploadTokenRetrieveRequest *_assetUploadTokenRetrieveRequest;
@@ -16,6 +16,8 @@
     CKDPInvitationDeclineRequest *_invitationDeclineRequest;
     CKDPInvitationQueryRequest *_invitationQueryRequest;
     CKDPLikeRequest *_likeRequest;
+    CKDPMescalCertificateRequest *_mescalCertificateRequest;
+    CKDPMescalSessionInfoRequest *_mescalSessionInfoRequest;
     CKDPMescalSignatureRequest *_mescalSignatureRequest;
     CKDPNotificationMarkReadRequest *_notificationMarkReadRequest;
     CKDPNotificationSyncRequest *_notificationSyncRequest;
@@ -46,6 +48,7 @@
     CKDPTokenRegistrationRequest *_tokenRegistrationRequest;
     CKDPTokenUnregistrationRequest *_tokenUnregistrationRequest;
     CKDPUnlikeRequest *_unlikeRequest;
+    CKDPUserAvailableQuotaRequest *_userAvailableQuotaRequest;
     CKDPUserPrivacySettingsBatchLookupRequest *_userPrivacySettingsBatchLookupRequest;
     CKDPUserPrivacySettingsResetRequest *_userPrivacySettingsResetRequest;
     CKDPUserPrivacySettingsRetrieveRequest *_userPrivacySettingsRetrieveRequest;
@@ -73,6 +76,8 @@
 @property(retain) CKDPRecordRetrieveChangesRequest * recordRetrieveChangesRequest;
 @property(readonly) bool hasRecordDeleteRequest;
 @property(retain) CKDPRecordDeleteRequest * recordDeleteRequest;
+@property(readonly) bool hasUserAvailableQuotaRequest;
+@property(retain) CKDPUserAvailableQuotaRequest * userAvailableQuotaRequest;
 @property(readonly) bool hasUserRetrieveRequest;
 @property(retain) CKDPUserRetrieveRequest * userRetrieveRequest;
 @property(readonly) bool hasQueryRetrieveRequest;
@@ -151,14 +156,22 @@
 @property(retain) CKDPPkiRegisterRequest * pkiRegisterRequest;
 @property(readonly) bool hasPkiRetrieveRequest;
 @property(retain) CKDPPkiRetrieveRequest * pkiRetrieveRequest;
+@property(readonly) bool hasMescalSignatureRequest;
+@property(retain) CKDPMescalSignatureRequest * mescalSignatureRequest;
+@property(readonly) bool hasMescalSessionInfoRequest;
+@property(retain) CKDPMescalSessionInfoRequest * mescalSessionInfoRequest;
+@property(readonly) bool hasMescalCertificateRequest;
+@property(retain) CKDPMescalCertificateRequest * mescalCertificateRequest;
 @property(readonly) bool hasHeader;
 @property(retain) CKDPRequestOperationHeader * header;
 @property(readonly) bool hasRequest;
 @property(retain) CKDPOperation * request;
-@property(readonly) bool hasMescalSignatureRequest;
-@property(retain) CKDPMescalSignatureRequest * mescalSignatureRequest;
 
 
+- (id)mescalCertificateRequest;
+- (bool)hasMescalCertificateRequest;
+- (id)mescalSessionInfoRequest;
+- (bool)hasMescalSessionInfoRequest;
 - (id)pkiRetrieveRequest;
 - (bool)hasPkiRetrieveRequest;
 - (id)pkiRegisterRequest;
@@ -235,6 +248,8 @@
 - (bool)hasQueryRetrieveRequest;
 - (id)userRetrieveRequest;
 - (bool)hasUserRetrieveRequest;
+- (id)userAvailableQuotaRequest;
+- (bool)hasUserAvailableQuotaRequest;
 - (id)recordDeleteRequest;
 - (bool)hasRecordDeleteRequest;
 - (id)recordRetrieveChangesRequest;
@@ -251,9 +266,9 @@
 - (bool)hasZoneRetrieveRequest;
 - (id)zoneSaveRequest;
 - (bool)hasZoneSaveRequest;
-- (bool)hasMescalSignatureRequest;
-- (bool)hasRequest;
 - (bool)hasHeader;
+- (void)setMescalCertificateRequest:(id)arg1;
+- (void)setMescalSessionInfoRequest:(id)arg1;
 - (void)setPkiRetrieveRequest:(id)arg1;
 - (void)setPkiRegisterRequest:(id)arg1;
 - (void)setNotificationMarkReadRequest:(id)arg1;
@@ -286,6 +301,7 @@
 - (void)setSubscriptionDeleteRequest:(id)arg1;
 - (void)setSubscriptionRetrieveRequest:(id)arg1;
 - (void)setSubscriptionCreateRequest:(id)arg1;
+- (void)setUserAvailableQuotaRequest:(id)arg1;
 - (void)setPromoteContainerSchemaRequest:(id)arg1;
 - (void)setResetContainerRequest:(id)arg1;
 - (void)setDeleteContainerRequest:(id)arg1;
@@ -298,6 +314,7 @@
 - (void)setZoneDeleteRequest:(id)arg1;
 - (void)setZoneRetrieveRequest:(id)arg1;
 - (void)setZoneSaveRequest:(id)arg1;
+- (bool)hasMescalSignatureRequest;
 - (void)setPulseRequest:(id)arg1;
 - (id)shareRetrieveRequest;
 - (void)setShareRetrieveRequest:(id)arg1;
@@ -306,7 +323,9 @@
 - (id)mescalSignatureRequest;
 - (void)setMescalSignatureRequest:(id)arg1;
 - (void)setHeader:(id)arg1;
+- (bool)hasRequest;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setRequest:(id)arg1;

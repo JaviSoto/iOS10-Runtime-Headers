@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary;
+@class NSString, NSMutableDictionary;
 
 @interface AVRecorderAudioQueueImpl : NSObject <AVRecorderImpl> {
     bool_isActive;
@@ -35,6 +35,11 @@
     struct AudioQueueBuffer {} *_buffers[3];
     bool_bufferUsed[3];
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned int x_5_1_4; unsigned int x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned int x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned int)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;

@@ -2,28 +2,39 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UILabel, NSAttributedString, <MKPlaceReviewsViewCheckInWriteCellDelegate>;
+@class <MKPlaceReviewsViewCheckInWriteCellDelegate>, UILabel, NSMutableArray, NSAttributedString;
 
 @interface MKPlaceReviewsViewCheckInWriteCell : UITableViewCell  {
     UILabel *_checkInLabel;
     UILabel *_writeReviewLabel;
     <MKPlaceReviewsViewCheckInWriteCellDelegate> *_delegate;
+    NSMutableArray *_scaledConstraints;
 }
 
 @property(retain) NSAttributedString * checkInTitle;
 @property(retain) NSAttributedString * writeReviewTitle;
 @property <MKPlaceReviewsViewCheckInWriteCellDelegate> * delegate;
+@property(retain) NSMutableArray * scaledConstraints;
 
++ (double)intrinsicContentHeight;
 + (id)reuseIdentifier;
 
 - (void)setWriteReviewTitle:(id)arg1;
-- (id)writeReviewTitle;
 - (void)setCheckInTitle:(id)arg1;
+- (id)writeReviewTitle;
 - (id)checkInTitle;
+- (id)updatedAttributedString:(id)arg1 onlyUpdateColor:(bool)arg2;
 - (void)cellTapped:(id)arg1;
+- (id)newLabel;
+- (void)setScaledConstraints:(id)arg1;
+- (id)scaledConstraints;
+- (void)contentSizeDidChange;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
 - (void).cxx_destruct;
+- (void)updateConstraints;
+- (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

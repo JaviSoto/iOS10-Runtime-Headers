@@ -70,6 +70,17 @@
         double y; 
     } _scrollViewTransitionPreviousPoint;
     UIInputViewSetNotificationInfo *_scrollViewNotificationInfo;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    } _preLayoutHostViewFrame;
+    bool_didPostLayoutNotification;
     UIInputViewSetNotificationInfo *_keyboardHeightChangeNotificationInfo;
     bool_wasOnScreen;
     NSString *_lastKeyboardID;
@@ -108,8 +119,13 @@
 @property(retain) UIInputViewSetPlacement * postRotationPlacement;
 @property(retain) UIInputViewSetNotificationInfo * templateNotificationInfo;
 @property(retain) UIInputViewPlacementTransition * currentTransition;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) <_UIRemoteKeyboardControllerDelegate> * controllerDelegate;
 
++ (id)tranformedUserInfoForNotificationName:(id)arg1 userInfo:(id)arg2;
 + (bool)_shouldForwardViewWillTransitionToSize;
 + (bool)_doesOverrideLegacyFullScreenLayout;
 
@@ -122,7 +138,6 @@
 - (void)setInputView:(id)arg1 accessoryView:(id)arg2;
 - (void)moveFromPlacement:(id)arg1 toPlacement:(id)arg2 starting:(id)arg3 completion:(id)arg4;
 - (void)performOperations:(id)arg1 withTemplateNotificationInfo:(id)arg2;
-- (void)_updateBackdropViews;
 - (unsigned long long)changeToInputViewSet:(id)arg1;
 - (void)setInputAccessoryBackdropView:(id)arg1;
 - (void)set_inputAccessoryViewController:(id)arg1;
@@ -160,6 +175,7 @@
 - (id)viewMatchingConstraintForAttribute:(long long)arg1 primaryView:(id)arg2 secondaryView:(id)arg3;
 - (void)setTemplateNotificationInfo:(id)arg1;
 - (void)performWithoutAppearanceCallbacks:(id)arg1;
+- (void)_updateBackdropViews;
 - (void)registerPowerLogEvent:(bool)arg1;
 - (void)updateViewSizingConstraints;
 - (void)setControllerDelegate:(id)arg1;
@@ -178,9 +194,9 @@
 - (void)extendKeyboardBackdropHeight:(double)arg1 withDuration:(double)arg2;
 - (void)setInputViewSet:(id)arg1;
 - (void)finishScrollViewTransition;
-- (id)inputViewSet;
 - (void)setRotationAwarePlacement:(id)arg1;
 - (void)setPlacement:(id)arg1;
+- (id)inputViewSet;
 - (void)performOperations:(id)arg1 withAnimationStyle:(id)arg2;
 - (void)translateToPlacement:(id)arg1;
 - (void)syncToExistingAnimations;
@@ -209,8 +225,8 @@
 - (void)keyboardHeightChangeDone;
 - (void)prepareKeyboardHeightChangeWithDelta:(double)arg1 duration:(double)arg2;
 - (bool)isTranslating;
-- (id)placement;
 - (bool)isUndocked;
+- (id)placement;
 - (void)updateProgress:(double)arg1 startHeight:(double)arg2 endHeight:(double)arg3;
 - (int)_clipCornersOfView:(id)arg1;
 - (void)setInputViewsHidden:(bool)arg1;
@@ -232,6 +248,7 @@
 - (void)scrollView:(id)arg1 didFinishPanGesture:(id)arg2;
 - (void)scrollView:(id)arg1 didPanWithGesture:(id)arg2;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (unsigned long long)supportedInterfaceOrientations;
 - (bool)shouldAutorotate;
 - (void)didReceiveMemoryWarning;

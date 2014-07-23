@@ -27,6 +27,10 @@
 @property(readonly) unsigned long long storeItemIdentifier;
 @property(readonly) unsigned long long storePreorderIdentifier;
 @property(readonly) NSString * title;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_setItemKind:(id)arg1;

@@ -30,6 +30,10 @@
 @property(readonly) long long numberOfUserRatings;
 @property(readonly) SSItemImageCollection * imageCollection;
 @property(readonly) NSArray * thumbnailImages;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)tellAFriendSubject;

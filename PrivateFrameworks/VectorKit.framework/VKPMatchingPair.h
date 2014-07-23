@@ -18,6 +18,7 @@
 - (void)setAttributeValue:(unsigned long long)arg1;
 - (unsigned long long)attributeValue;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)isEqual:(id)arg1;

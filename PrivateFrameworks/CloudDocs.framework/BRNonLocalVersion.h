@@ -13,6 +13,7 @@
     NSString *_lastEditorDeviceName;
     bool_hasThumbnail;
     GSPermanentStorage *_versionsStore;
+    long long _sandboxHandle;
 }
 
 @property(readonly) NSURL * url;
@@ -22,13 +23,14 @@
 @property(readonly) unsigned long long size;
 @property(readonly) NSDate * modificationDate;
 @property(readonly) NSString * lastEditorDeviceName;
-@property(readonly) bool hasThumbnail;
+@property bool hasThumbnail;
 @property(readonly) bool isLatestVersion;
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
 
 - (id)lastEditorDeviceName;
-- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 etag:(id)arg3 lastEditorDeviceName:(id)arg4 versionsStore:(id)arg5;
+- (void)setHasThumbnail:(bool)arg1;
+- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 extension:(id)arg3 etag:(id)arg4 hasThumbnail:(bool)arg5 lastEditorDeviceName:(id)arg6 versionsStore:(id)arg7;
 - (bool)isLatestVersion;
 - (id)etag;
 - (id)url;

@@ -31,6 +31,7 @@
     id _modifyRecordsCompletionBlock;
 
     NSDictionary *_recordIDsToDeleteToEtags;
+    NSDictionary *_conflictLosersToResolveByRecordID;
     NSMutableArray *_savedRecords;
     NSMutableArray *_deletedRecordIDs;
     NSMutableDictionary *_recordsByRecordIDs;
@@ -48,6 +49,7 @@
 @property(copy) id modifyRecordsCompletionBlock;
 @property bool shouldOnlySaveAssetContent;
 @property(copy) NSDictionary * recordIDsToDeleteToEtags;
+@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
 @property(retain) NSMutableArray * savedRecords;
 @property(retain) NSMutableArray * deletedRecordIDs;
 @property(retain) NSMutableDictionary * recordsByRecordIDs;
@@ -68,6 +70,8 @@
 - (id)perRecordProgressBlock;
 - (id)assetsByRecordIDAndRecordKey;
 - (id)recordsByRecordIDs;
+- (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (id)conflictLosersToResolveByRecordID;
 - (void)setAtomic:(bool)arg1;
 - (bool)atomic;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;

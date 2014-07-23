@@ -26,8 +26,9 @@
 @property(copy) NSArray * setPositions;
 
 
-- (void)setSpecifier:(id)arg1;
 - (id)initWithSpecifier:(id)arg1;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 - (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; }*)arg1 range:(struct { long long x1; long long x2; })arg2;
 - (id)_parseDaysOfWeek:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; }*)arg1 range:(struct { long long x1; long long x2; })arg2;
 - (void)_appendIndexList:(id)arg1 toSpecifier:(id)arg2 propertyKey:(unsigned short)arg3;
@@ -35,7 +36,6 @@
 - (void)_parseSpecifierIfNeeded;
 - (void)_clearArrays;
 - (void)_updateSpecifier;
-- (id)specifier;
 - (id)weeksOfTheYear;
 - (id)daysOfTheYear;
 - (id)setPositions;

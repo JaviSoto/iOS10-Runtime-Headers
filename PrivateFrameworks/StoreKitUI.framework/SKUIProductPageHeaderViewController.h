@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemOffer, SKUIItemArtworkContext, <SKUIProductPageHeaderViewDelegate>, SKUIItem, SKUIProductPageHeaderFloatingView, SSVLoadURLOperation, UIPopoverController, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIFacebookLikeStatus, SKUIContentRatingArtworkResourceLoader, SKUIProductPageHeaderView, UIImage;
+@class SKUIItemOffer, SKUIItemArtworkContext, <SKUIProductPageHeaderViewDelegate>, SKUIItem, SKUIProductPageHeaderFloatingView, SSVLoadURLOperation, NSString, UIPopoverController, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIFacebookLikeStatus, SKUIContentRatingArtworkResourceLoader, SKUIProductPageHeaderView, UIImage;
 
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
     UIPopoverController *_activityPopoverController;
@@ -38,6 +38,10 @@
 @property(retain) NSOperationQueue * operationQueue;
 @property long long selectedSectionIndex;
 @property(readonly) SKUIProductPageHeaderFloatingView * floatingView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_destroyPopoverController;
@@ -72,9 +76,9 @@
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)setAskPermission:(bool)arg1;
+- (bool)_isRestricted;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (bool)_isRestricted;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

@@ -21,8 +21,8 @@
 - (id)hardwareVersion;
 - (bool)hasHardwareVersion;
 - (void)setHardwareVersion:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPKnockoutButton, <MPVideoOverlayDelegate>, UILabel, MPAVController, _UIBackdropView, UIStatusBar, UIButton, UIView, NSLayoutConstraint, MPDetailSlider, UIPopoverController, MPAVItem, UIActivityIndicatorView, <MPVideoControllerProtocol>, UINavigationBar, NSArray, MPAudioAndSubtitlesController, MPVolumeSlider;
+@class MPKnockoutButton, <MPVideoOverlayDelegate>, UILabel, MPAVController, _UIBackdropView, UIStatusBar, UIButton, UIView, NSLayoutConstraint, MPDetailSlider, UIPopoverController, MPAVItem, UIActivityIndicatorView, <MPVideoControllerProtocol>, NSString, NSArray, MPAudioAndSubtitlesController, UINavigationBar, MPVolumeSlider;
 
 @interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, UIPopoverControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
     MPDetailSlider *_scrubber;
@@ -61,6 +61,10 @@
 @property bool allowsDetailScrubbing;
 @property bool allowsExitFromFullscreen;
 @property(readonly) double bottomBarHeight;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <MPVideoControllerProtocol> * videoViewController;
 @property bool allowsWirelessPlayback;
 @property bool navigationBarHidden;

@@ -7,11 +7,10 @@
 @interface UIInputViewSet : NSObject  {
     UIView *_inputView;
     UIView *_inputAccessoryView;
-    bool_isKeyboard;
-    bool_supportsSplit;
     bool_isSplit;
     double _splitHeightDelta;
     UIResponder *_restorableResponder;
+    bool_restoreUsingBecomeFirstResponder;
     UIInputViewController *_inputViewController;
     UIInputViewController *_accessoryViewController;
 }
@@ -33,6 +32,7 @@
 @property(readonly) bool _inputViewIsSplit;
 @property double splitHeightDelta;
 @property(readonly) UIView * splitExemptSubview;
+@property bool restoreUsingBecomeFirstResponder;
 @property(readonly) UIView * layeringView;
 
 + (id)inputSetWithPlaceholderAndAccessoryView:(id)arg1;
@@ -51,10 +51,13 @@
 - (id)inputSetWithInputAccessoryViewOnly;
 - (bool)_inputAccessoryViewSupportsSplit;
 - (bool)_inputViewSupportsSplit;
+- (bool)_isKeyboard;
 - (bool)_inputViewIsVisible;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(bool)arg3;
 - (bool)_inputViewSetSupportsSplit;
+- (bool)restoreUsingBecomeFirstResponder;
 - (id)restorableResponder;
+- (void)setRestoreUsingBecomeFirstResponder:(bool)arg1;
 - (void)setRestorableResponder:(id)arg1;
 - (bool)usesKeyClicks;
 - (void)setAccessoryViewController:(id)arg1;

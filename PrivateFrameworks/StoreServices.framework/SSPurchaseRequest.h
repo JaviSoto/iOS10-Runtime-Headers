@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <SSPurchaseRequestDelegate>, NSArray, SSPurchaseManager, NSMutableSet;
+@class <SSPurchaseRequestDelegate>, NSArray, SSPurchaseManager, NSMutableSet, NSString;
 
 @interface SSPurchaseRequest : SSRequest <SSPurchaseManagerDelegate, SSXPCCoding> {
     bool_isBackgroundRequest;
@@ -39,6 +39,10 @@
 @property <SSPurchaseRequestDelegate> * delegate;
 @property bool createsDownloads;
 @property bool shouldValidatePurchases;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShouldValidatePurchases:(bool)arg1;

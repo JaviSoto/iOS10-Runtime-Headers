@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSOperationQueue, MSSearch, ACAccount;
+@class NSString, NSOperationQueue, MSSearch, ACAccount;
 
 @interface AAAutoAccountVerifier : NSObject <MSSearchDelegate> {
     NSOperationQueue *_requesterQueue;
@@ -22,12 +22,16 @@
 }
 
 @property(retain) ACAccount * account;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (bool)search:(id)arg1 didFindResults:(id)arg2;
-- (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (void)verifyWithHandler:(id)arg1;
 - (void)sendVerificationEmail;
+- (bool)search:(id)arg1 didFindResults:(id)arg2;
+- (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
 - (void)_resendVerificationEmailForAccount:(id)arg1 completion:(id)arg2;

@@ -91,7 +91,6 @@
 - (bool)hasAnchorPointX;
 - (void)setHasAnchorPointX:(bool)arg1;
 - (void)setAnchorPointX:(unsigned int)arg1;
-- (bool)hasSize;
 - (int)matchingStyleAttributeValue;
 - (unsigned long long)matchingStyleAttributeLongValue;
 - (unsigned int)matchingStyleAttributeKey;
@@ -102,6 +101,8 @@
 - (void)setHasSize:(bool)arg1;
 - (bool)hasName;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setName:(id)arg1;

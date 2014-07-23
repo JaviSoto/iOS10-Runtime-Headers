@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>, NSCache;
 
 @interface MPStoreCompletionOfferingController : NSObject <MCProfileConnectionObserver> {
     NSCache *_offeringCache;
@@ -11,6 +11,11 @@
     unsigned long long _nextTokenID;
     NSObject<OS_dispatch_queue> *_queue;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setWantsArtwork:(bool)arg1;
 + (id)storeOfferingController;

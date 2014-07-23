@@ -21,10 +21,12 @@
 + (void)clearSharedCollector;
 + (id)sharedCollector;
 
+- (void)setLogger:(id)arg1;
 - (void)setLogDispatchGroup:(id)arg1;
 - (void)logNoteActivityType:(id)arg1;
 - (void)stopAutomaticCollection;
 - (id)classifyStoresByType:(id)arg1;
+- (id)logger;
 - (id)freshContext;
 - (void)logStoreDeltaCount:(long long)arg1 forType:(id)arg2;
 - (void)logNoteDeltaCount:(long long)arg1 forStoreType:(id)arg2;
@@ -49,8 +51,6 @@
 - (void)setAutomaticCollectionOn:(bool)arg1;
 - (bool)isAutomaticCollectionOn;
 - (void)startAutomaticCollection;
-- (void)setLogger:(id)arg1;
-- (id)logger;
 - (id)accountStore;
 - (void)setAccountStore:(id)arg1;
 - (id)init;

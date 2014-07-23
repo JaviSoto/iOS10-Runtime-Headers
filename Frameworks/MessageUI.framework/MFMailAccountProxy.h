@@ -23,11 +23,6 @@
 
 
 - (id)fromEmailAddresses;
-- (bool)supportsSoftBankCodePoints;
-- (bool)supportsThreadNotifications;
-- (id)firstEmailAddress;
-- (id)fromEmailAddressesIncludingDisabled;
-- (id)fullUserName;
 - (bool)_isRestricted;
 - (bool)_isActive;
 - (id)_emailAddressesAndAliases;
@@ -35,6 +30,11 @@
 - (id)_initWithProperties:(id)arg1;
 - (bool)restrictsRepliesAndForwards;
 - (id)mailAccount;
+- (bool)supportsSoftBankCodePoints;
+- (bool)supportsThreadNotifications;
+- (id)firstEmailAddress;
+- (id)fromEmailAddressesIncludingDisabled;
+- (id)fullUserName;
 - (id)emailAddresses;
 - (id)username;
 - (id)uniqueID;

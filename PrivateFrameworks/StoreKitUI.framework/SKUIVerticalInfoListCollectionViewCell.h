@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSHashTable;
+@class NSString, NSMapTable, NSHashTable;
 
 @interface SKUIVerticalInfoListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
     NSHashTable *_titleViews;
     NSMapTable *_valueViews;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;

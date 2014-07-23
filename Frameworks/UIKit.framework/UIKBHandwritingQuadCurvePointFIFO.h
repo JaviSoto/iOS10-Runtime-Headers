@@ -15,10 +15,10 @@
 @property(retain) UIView<UIKBHandwritingStrokeEnabled> * strokeView;
 
 
+- (id)path;
 - (void)clear;
 - (void)flush;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void)dealloc;
 - (id)prevPoints;
 - (void)setPrevPoints:(id)arg1;

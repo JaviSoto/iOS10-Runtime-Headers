@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
  */
 
-@class NSOutputStream, NSObject<OS_dispatch_queue>, NSMutableArray, _DKDAAPWriterContainer;
+@class NSOutputStream, NSString, NSObject<OS_dispatch_queue>, NSMutableArray, _DKDAAPWriterContainer;
 
 @interface DKDAAPWriter : NSObject <NSStreamDelegate> {
     NSObject<OS_dispatch_queue> *_outputStreamAccessQueue;
@@ -14,6 +14,10 @@
 
 @property(readonly) NSOutputStream * outputStream;
 @property(readonly) unsigned long long state;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)writeBytes:(char *)arg1 ofLength:(unsigned int)arg2 withCode:(unsigned int)arg3;
@@ -21,7 +25,7 @@
 - (void)writeUInt16:(unsigned short)arg1 withCode:(unsigned int)arg2;
 - (void)writeCString:(const char *)arg1 withCode:(unsigned int)arg2;
 - (void)writeData:(id)arg1 withCode:(unsigned int)arg2;
-- (void)_writeDataToOutputStream:(id)arg1;
+- (id)_writeDataToOutputStream:(id)arg1;
 - (id)outputStream;
 - (void)writeString:(id)arg1 withCode:(unsigned int)arg2;
 - (void)writeUInt64:(unsigned long long)arg1 withCode:(unsigned int)arg2;

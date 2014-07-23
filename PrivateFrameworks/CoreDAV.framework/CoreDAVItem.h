@@ -19,6 +19,10 @@
 @property(retain) NSMutableArray * extraChildItems;
 @property(retain) NSData * payload;
 @property bool useCDATA;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)copyParseRules;
 + (id)parseRuleCache;

@@ -2,33 +2,39 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class _MKPlacePhotosCollectionView, MKMapItem, <MKPlaceCardPhotosControllerDelegate>;
+@class <MKPlaceCardPhotosControllerDelegate>, NSString, _MKPlacePhotosCollectionView, MKMapItem;
 
-@interface MKPlacePhotosViewController : UITableViewController <UICollectionViewDataSource, UICollectionViewDelegate, MKStackingViewControllerPreferredSizeUse> {
+@interface MKPlacePhotosViewController : UITableViewController <UICollectionViewDataSource, UICollectionViewDelegate, MKStackingViewControllerPreferredSizeUse, MKPlaceAttributionCellProvider> {
     bool_showAddPhotoButton;
     bool_showMorePhotosButton;
-    bool_showAttributionButtons;
+    bool_hasAttribution;
+    bool_showAttribution;
     MKMapItem *_mapItem;
     <MKPlaceCardPhotosControllerDelegate> *_photosControllerDelegate;
     unsigned long long _photosCount;
     double _photoWidth;
-    double _photoMargin;
     _MKPlacePhotosCollectionView *_photoGrid;
 }
 
 @property(retain) MKMapItem * mapItem;
 @property <MKPlaceCardPhotosControllerDelegate> * photosControllerDelegate;
-@property bool showAttributionButtons;
+@property bool hasAttribution;
+@property(readonly) bool showAttributionButtons;
 @property bool showMorePhotosButton;
 @property bool showAddPhotoButton;
 @property unsigned long long photosCount;
 @property double photoWidth;
-@property double photoMargin;
 @property(retain) _MKPlacePhotosCollectionView * photoGrid;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool requiresPreferredContentSizeInStackingView;
+@property bool showAttribution;
 
 
 - (double)photoWidth;
+- (id)photos;
 - (void)_morePhotos;
 - (void)_addPhoto;
 - (double)_photoCellHeight;
@@ -38,17 +44,17 @@
 - (bool)showAttributionButtons;
 - (id)photoGrid;
 - (void)setPhotoWidth:(double)arg1;
-- (double)photoMargin;
-- (void)setPhotoMargin:(double)arg1;
 - (void)_calculatePhotoSizeForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)photosControllerDelegate;
 - (void)setShowMorePhotosButton:(bool)arg1;
 - (void)setShowAddPhotoButton:(bool)arg1;
-- (void)setShowAttributionButtons:(bool)arg1;
+- (void)setHasAttribution:(bool)arg1;
+- (bool)showAttribution;
 - (bool)requiresPreferredContentSizeInStackingView;
 - (void)setPhotosCount:(unsigned long long)arg1;
+- (void)setShowAttribution:(bool)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
-- (id)photos;
+- (bool)hasAttribution;
 - (unsigned long long)photosCount;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;

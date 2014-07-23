@@ -47,10 +47,10 @@
 - (void)setLinkQuality:(int)arg1;
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
-- (bool)hasGuid;
 - (void)setConnectionType:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasGuid;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)linkQuality;

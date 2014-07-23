@@ -28,6 +28,10 @@
 @property <SKUIStorePageDelegate> * delegate;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) UIRefreshControl * refreshControl;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;

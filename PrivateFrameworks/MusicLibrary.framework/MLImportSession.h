@@ -91,7 +91,6 @@
 - (bool)updateEntityRevisionTable;
 - (bool)updateCollectionRepresentativePIDs;
 - (long long)_albumPIDForTrack:(id)arg1 albumArtistPID:(long long)arg2 isUpdate:(bool)arg3;
-- (long long)_locationKindPIDForTrack:(id)arg1;
 - (long long)_genrePIDForTrack:(id)arg1;
 - (long long)_composerPIDForTrack:(id)arg1;
 - (long long)_albumArtistPIDForTrack:(id)arg1 isUpdate:(bool)arg2;
@@ -103,7 +102,7 @@
 - (bool)begin:(unsigned long long)arg1;
 - (bool)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2;
 - (id)cachedNameOrders;
-- (struct { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; })collectionPIDSetForTrackPID:(long long)arg1;
+- (struct { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; })collectionPIDSetForTrackPID:(long long)arg1;
 - (id)library;
 - (void)setLibrary:(id)arg1;
 - (bool)removeTrack:(id)arg1;

@@ -61,9 +61,9 @@
 - (void)setStatusBarStyle:(long long)arg1 animated:(bool)arg2;
 - (id)isRunningInStoreDemoMode;
 - (void)setStatusBarHidden:(bool)arg1 withAnimation:(long long)arg2;
+- (void)setStatusBarHidden:(id)arg1;
+- (void)setStatusBarStyle:(long long)arg1;
 - (long long)statusBarStyle;
 - (id)statusBarHidden;
-- (void)setStatusBarStyle:(long long)arg1;
-- (void)setStatusBarHidden:(id)arg1;
 
 @end

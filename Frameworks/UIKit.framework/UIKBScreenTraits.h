@@ -23,9 +23,9 @@
 - (void)setOrientation:(long long)arg1;
 - (long long)idiom;
 - (id)screen;
+- (void)setKeyboardWidth:(double)arg1;
 - (double)keyboardWidth;
 - (bool)knobInput;
 - (id)initWithScreen:(id)arg1 orientation:(long long)arg2;
-- (void)setKeyboardWidth:(double)arg1;
 
 @end

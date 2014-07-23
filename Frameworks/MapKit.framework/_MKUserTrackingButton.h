@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, MKMapView, _MKUserTrackingButtonController, <MKUserTrackingView>;
+@class NSMutableDictionary, MKMapView, _MKUserTrackingButtonController, <MKUserTrackingView>, NSString;
 
 @interface _MKUserTrackingButton : UIButton <MKUserTrackingButtonTarget> {
     _MKUserTrackingButtonController *_controller;
@@ -16,6 +16,10 @@
 @property(retain) MKMapView * mapView;
 @property(retain) <MKUserTrackingView> * userTrackingView;
 @property(readonly) _MKUserTrackingButtonController * controller;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)buttonWithMapView:(id)arg1;
 + (Class)_activityIndicatorClass;

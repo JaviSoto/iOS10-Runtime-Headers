@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SKRemoteStorePageViewController, SKStoreProductViewController, _UIAsyncInvocation, SKInvocationQueueProxy<SKUIServiceStorePageViewController>;
+@class SKRemoteStorePageViewController, SKStoreProductViewController, _UIAsyncInvocation, NSString, SKInvocationQueueProxy<SKUIServiceStorePageViewController>;
 
 @interface SKStorePageViewController : UIViewController <SKStoreProductViewControllerDelegate> {
     _UIAsyncInvocation *_cancelRequest;
@@ -19,6 +19,11 @@
     SKRemoteStorePageViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceStorePageViewController> *_serviceProxy;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_showProductPageWithItemIdentifier:(id)arg1;

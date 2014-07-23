@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, <MPAVQueuePlayerFeederSource>, MPAVItem, NSMutableSet, NSObject<OS_dispatch_queue>, MPDownloadManager, MPQueuePlayer, NSMutableArray;
+@class NSString, NSArray, <MPAVQueuePlayerFeederSource>, MPAVItem, NSMutableSet, NSObject<OS_dispatch_queue>, MPDownloadManager, MPQueuePlayer, NSMutableArray;
 
 @interface MPAVQueuePlayerFeeder : NSObject <SSDownloadManagerObserver> {
     unsigned long long _desiredQueueDepth;
@@ -28,6 +28,10 @@
 @property unsigned long long maxQueueDepth;
 @property bool managesSystemDownloads;
 @property bool forceSynchronousQueueFilling;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_fillInQueue;

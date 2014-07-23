@@ -35,6 +35,8 @@
 - (bool)suspendsVideoProcessingDuringStillImageCapture;
 - (void)setRawCaptureEnabled:(bool)arg1;
 - (bool)isNoiseReductionEnabled;
+- (void)setStillFeature2Enabled:(bool)arg1;
+- (bool)isStillFeature2Enabled;
 - (void)setAutomaticallyEnablesStillImageStabilizationWhenAvailable:(bool)arg1;
 - (bool)isStillImageStabilizationActive;
 - (void)setEV0CaptureEnabled:(bool)arg1;
@@ -53,7 +55,6 @@
 - (id)_figCaptureStillImageSettingsForBracketedCaptureSettingsArray:(id)arg1 fromConnection:(id)arg2;
 - (bool)_bracketedSettingsAreValid:(id)arg1 fromConnection:(id)arg2 exceptionReason:(id*)arg3;
 - (id)_figCaptureStillImageSettingsForConnection:(id)arg1;
-- (bool)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (void)setHDRMode:(long long)arg1;
 - (void)setShutterSound:(unsigned int)arg1;
 - (void)setNoiseReductionEnabled:(bool)arg1;
@@ -63,6 +64,7 @@
 - (void)clearPreparedBracketIfNeeded;
 - (id)availableImageDataCodecTypes;
 - (id)availableImageDataCVPixelFormatTypes;
+- (bool)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (void)updateSISSupportedForSourceDevice:(id)arg1;
 - (id)outputSettings;
 - (unsigned int)imageDataFormatType;
@@ -74,6 +76,7 @@
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (bool)isHDRSupported;
+- (void)_setStillImageStabilizationAutomaticallyEnabled:(bool)arg1;
 - (id)connectionMediaTypes;
 - (id)init;
 - (void)dealloc;

@@ -2,12 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebDocumentView, NSObject<WebOpenPanelResultListener>, NSArray, <UIWebFileUploadPanelDelegate>, UIFallbackCompatibleViewController, UIPopoverController, UIViewController, UIAlertController, UIImagePickerController, DOMNode;
+@class UIViewController, NSObject<WebOpenPanelResultListener>, NSArray, NSString, <UIWebFileUploadPanelDelegate>, UIPopoverController, UIWebDocumentView, UIAlertController, UIImagePickerController, DOMNode;
 
 @interface UIWebFileUploadPanel : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate> {
     UIAlertController *_selectPickerTypeSheet;
     UIImagePickerController *_imagePicker;
-    UIFallbackCompatibleViewController *_rootViewController;
     UIViewController *_presentationViewController;
     UIPopoverController *_presentationPopover;
     bool_documentViewPresentedViewController;
@@ -30,6 +29,10 @@
 @property(retain) NSObject<WebOpenPanelResultListener> * resultListener;
 @property bool allowMultipleFiles;
 @property bool isUsingCamera;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_cancel;
@@ -41,7 +44,6 @@
 - (bool)isUsingCamera;
 - (bool)allowMultipleFiles;
 - (id)resultListener;
-- (void)_ensureInteractionElement;
 - (void)_chooseFilenames:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)_chooseFilename:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;

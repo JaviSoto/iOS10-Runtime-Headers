@@ -118,8 +118,6 @@
 - (id)accessKey;
 - (void)_setAutofilled:(bool)arg1;
 - (bool)_isAutofilled;
-- (void)_replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2 selectingFromIndex:(int)arg3;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_selectedRange;
 - (id)step;
 - (void)setDisabled:(bool)arg1;
 - (void)setSize:(id)arg1;

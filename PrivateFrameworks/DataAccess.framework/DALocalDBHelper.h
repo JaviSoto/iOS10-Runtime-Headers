@@ -15,7 +15,7 @@
     int _noteConnectionCount;
     void *_abDB;
     struct CalDatabase { } *_calDB;
-    NSString *_changeTrackingID;
+    NSString *_clientIdentifier;
     void *_bookmarkDB;
     NoteContext *_noteDB;
 
@@ -29,7 +29,7 @@
 @property int abConnectionCount;
 @property struct CalDatabase { }* calDB;
 @property int calConnectionCount;
-@property(retain) NSString * changeTrackingID;
+@property(retain) NSString * clientIdentifier;
 @property void* bookmarkDB;
 @property int bookmarkConnectionCount;
 @property(retain) NoteContext * noteDB;
@@ -63,7 +63,8 @@
 - (void*)bookmarkDB;
 - (int)calConnectionCount;
 - (bool)calSaveDBAndFlushCaches;
-- (void)calOpenDBWithChangeLogging;
+- (void)calClearSuperfluousChanges;
+- (void)calOpenDBAsGenericClient;
 - (id)abConstraintPlistPath;
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
@@ -71,7 +72,7 @@
 - (bool)noteSaveDB;
 - (id)calUnitTestCallbackBlock;
 - (bool)calSaveDB;
-- (void)setChangeTrackingID:(id)arg1;
+- (bool)_calOpenDBWithClientIdentifier:(id)arg1;
 - (void)_registerForCalendarYieldNotifications;
 - (void)_registerForAddressBookYieldNotifications;
 - (bool)calCloseDBAndSave:(bool)arg1;
@@ -82,6 +83,8 @@
 - (bool)abSaveDB;
 - (void*)abDB;
 - (void)abOpenDB;
+- (id)clientIdentifier;
 - (void).cxx_destruct;
+- (void)setClientIdentifier:(id)arg1;
 
 @end

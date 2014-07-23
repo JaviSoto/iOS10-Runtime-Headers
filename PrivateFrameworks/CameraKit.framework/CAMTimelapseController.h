@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSCountedSet, CAMTimelapseState, NSObject<OS_dispatch_source>, NSMutableSet, NSDate, CAMLowDiskSpaceAlertView;
+@class NSDate, NSString, CAMLowDiskSpaceAlertView, NSCountedSet, CAMTimelapseState, NSMutableSet, NSObject<OS_dispatch_source>;
 
 @interface CAMTimelapseController : NSObject <CAMStillImageCaptureRequestDelegate, UIAlertViewDelegate> {
     bool__ignoringTimerCallbacksForTearDown;
@@ -27,6 +27,10 @@
 @property(readonly) CAMLowDiskSpaceAlertView * _diskSpaceAlert;
 @property(setter=_setBackendRecoveryNeeded:) bool _backendRecoveryNeeded;
 @property(setter=_setPreviewStarted:) bool _previewStarted;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_videoPreviewImageForTimelapseState:(id)arg1;
 + (void)recoverFromCrashIfNeededForceEndLastSession:(bool)arg1;

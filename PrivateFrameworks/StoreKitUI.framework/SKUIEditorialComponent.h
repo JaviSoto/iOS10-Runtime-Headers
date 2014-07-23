@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSArray, SKUILabelViewElement;
+@class NSString, NSArray, NSAttributedString, SKUILabelViewElement;
 
 @interface SKUIEditorialComponent : SKUIPageComponent  {
+    NSAttributedString *_bodyAttributedText;
     NSString *_bodyText;
     NSArray *_links;
     long long _maximumBodyLines;
@@ -21,6 +22,7 @@
     bool_usesLockupTitle;
 }
 
+@property(readonly) NSAttributedString * bodyAttributedText;
 @property(readonly) NSString * bodyText;
 @property(readonly) NSString * titleText;
 @property(readonly) struct SKUIEditorialStyle { long long x1; long long x2; float x3; float x4; long long x5; float x6; float x7; } editorialStyle;
@@ -33,6 +35,7 @@
 - (bool)_usesLockupTitle;
 - (id)titleText;
 - (long long)maximumBodyLines;
+- (id)bodyAttributedText;
 - (void)_setTitleText:(id)arg1;
 - (id)initWithBrickRoomText:(id)arg1;
 - (struct SKUIEditorialStyle { long long x1; long long x2; float x3; float x4; long long x5; float x6; float x7; })editorialStyle;

@@ -63,6 +63,7 @@
 - (struct __CFString { }*)blockTimeIntervalKey;
 - (struct __CFString { }*)failedAttemptsKey;
 - (int)_getScreenType;
+- (bool)isNumericPIN;
 - (bool)validatePIN:(id)arg1;
 - (struct CGSize { double x1; double x2; })overallContentSizeForViewInPopover;
 - (void)_updateUI;

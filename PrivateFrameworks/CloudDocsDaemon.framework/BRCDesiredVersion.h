@@ -20,6 +20,10 @@
 @property(readonly) NSString * serverName;
 @property bool isFault;
 @property bool wantsContent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)supportsSecureCoding;
 

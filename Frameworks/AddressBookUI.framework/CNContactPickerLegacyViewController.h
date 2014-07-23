@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController;
+@class NSString, ABPeoplePickerNavigationController;
 
 @interface CNContactPickerLegacyViewController : CNContactPickerContentViewController <ABPeoplePickerNavigationControllerDelegate> {
     void *_addressBook;
@@ -12,6 +12,10 @@
 
 @property bool clientHasContactsAccess;
 @property(retain) ABPeoplePickerNavigationController * legacyPicker;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)clientHasContactsAccess;

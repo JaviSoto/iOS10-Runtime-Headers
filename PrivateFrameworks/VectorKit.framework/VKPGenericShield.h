@@ -20,6 +20,7 @@
 - (void)setVariants:(id)arg1;
 - (id)variants;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setStyle:(int)arg1;

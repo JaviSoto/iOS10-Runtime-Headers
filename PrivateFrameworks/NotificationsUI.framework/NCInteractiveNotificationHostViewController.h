@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@class NCViewServiceDescriptor, <NCInteractiveNotificationHostDelegate>;
+@class NSString, NCViewServiceDescriptor, <NCInteractiveNotificationHostDelegate>;
 
 @interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostInterface, NCInteractiveNotificationHostDelegate> {
     bool_proximityMonitoringEnabled;
@@ -10,6 +10,7 @@
     bool_modal;
     <NCInteractiveNotificationHostDelegate> *_delegate;
     double _bottomOverhangHeight;
+    double _maximumHeight;
     NCViewServiceDescriptor *_inlayViewService;
     NCViewServiceDescriptor *_accessoryViewService;
 }
@@ -18,8 +19,13 @@
 @property bool showsKeyboard;
 @property double bottomOverhangHeight;
 @property(getter=isModal) bool modal;
+@property double maximumHeight;
 @property(retain) NCViewServiceDescriptor * inlayViewService;
 @property(retain) NCViewServiceDescriptor * accessoryViewService;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)requestInteractiveNotificationControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id)arg4;
 + (void)initialize;
@@ -33,11 +39,13 @@
 - (void)setInlayViewService:(id)arg1;
 - (void)setBottomOverhangHeight:(double)arg1;
 - (void)setShowsKeyboard:(bool)arg1;
+- (double)maximumHeight;
 - (void)willPresentFromActionIdentifier:(id)arg1;
 - (void)handleActionIdentifier:(id)arg1;
 - (void)handleActionAtIndex:(long long)arg1;
 - (void)didChangeRevealPercent:(double)arg1;
 - (void)interactiveNotificationDidAppear;
+- (void)setMaximumHeight:(double)arg1;
 - (void)setModal:(bool)arg1;
 - (id)accessoryViewService;
 - (id)inlayViewService;

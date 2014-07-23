@@ -60,6 +60,7 @@
     NSObject<OS_dispatch_group> *_faultingGroup;
     NSMutableIndexSet *_pendingCoordinatedIOs;
     NSMutableSet *_pendingFileCoordinators;
+    bool_shouldForceContainerForeground;
     NSMutableSet *_foregroundXPCClients;
     NSMutableSet *_XPCClientsUsingUbiquity;
     bool_deactivated;
@@ -79,7 +80,6 @@
     PQLNameInjection *_pkgItemsTable;
     PQLNameInjection *_desiredAdditionsTable;
     PQLNameInjection *_serverItemsTable;
-    PQLNameInjection *_serverVersionsTable;
     NSArray *_tableNames;
     BRCDBThrottle *_readerThrottle;
     BRCDBThrottle *_applyThrottle;
@@ -113,7 +113,6 @@
 @property(readonly) PQLNameInjection * pkgItemsTable;
 @property(readonly) PQLNameInjection * desiredAdditionsTable;
 @property(readonly) PQLNameInjection * serverItemsTable;
-@property(readonly) PQLNameInjection * serverVersionsTable;
 @property(readonly) BRCDBThrottle * readerThrottle;
 @property(readonly) BRCDBThrottle * applyThrottle;
 @property(readonly) bool hasActiveQueries;
@@ -128,6 +127,10 @@
 @property(readonly) bool hasUploads;
 @property(readonly) bool hasDownloads;
 @property(readonly) bool isGreedy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool needsSave;
 @property(readonly) NSString * containerID;
 @property(readonly) NSString * zoneName;
@@ -138,7 +141,6 @@
 + (struct PQLResultSet { Class x1; }*)containersEnumerator:(id)arg1;
 + (id)containerByID:(id)arg1 withDB:(id)arg2;
 
-- (id)serverVersionsTable;
 - (void)setServerContainer:(id)arg1;
 - (bool)isRankPostponed:(id)arg1;
 - (void)notifyClient:(id)arg1 whenFaultingIsDone:(id)arg2;
@@ -148,9 +150,12 @@
 - (unsigned long long)documentSizeUsage;
 - (bool)hasLocalChanges;
 - (bool)hasUbiquitousDocuments;
+- (void)handleRootRecordDeletion;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 recoverFromRank:(id)arg2 caughtUpWithServer:(bool)arg3 flushClientTruth:(bool)arg4;
 - (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2;
 - (void)resetSyncBudget;
+- (void)didClearAllItemsMarkedOverQuota;
+- (void)didMarkItemUploadOverQuota;
 - (void)didUploadAllItems;
 - (bool)changedAtRelativePath:(id)arg1;
 - (id)deepScanStamp;
@@ -159,13 +164,13 @@
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithParentID:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)stagedItemsEnumerator;
 - (struct PQLResultSet { Class x1; }*)bouncedItemsEnumerator;
+- (struct PQLResultSet { Class x1; }*)itemsWithFailedUploadEnumeratorWithSizeSmallerThan:(unsigned long long)arg1;
 - (struct PQLResultSet { Class x1; }*)itemsNeedingUploadEnumeratorWithItemIDFilter:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)serverItemsEnumerator;
 - (struct PQLResultSet { Class x1; }*)itemsEnumerator;
 - (bool)existsByParentID:(id)arg1 andName:(id)arg2;
 - (bool)existsByItemID:(id)arg1;
 - (id)itemByRowID:(unsigned long long)arg1;
-- (bool)isGreedy;
 - (void)removeClientUsingUbiquity:(id)arg1;
 - (void)addClientUsingUbiquity:(id)arg1;
 - (void)removeForegroundClient:(id)arg1;
@@ -174,6 +179,7 @@
 - (void)_setupDuetIfNeeded;
 - (void)unregisterQueryWithAliases:(bool)arg1 isRecursive:(bool)arg2;
 - (id)documentsPath;
+- (bool)isGreedy;
 - (void)startDownloadItem:(id)arg1 options:(unsigned long long)arg2 group:(id)arg3;
 - (bool)evictItem:(id)arg1 group:(id)arg2 error:(id*)arg3;
 - (struct PQLResultSet { Class x1; }*)itemsWithInFlightDiffsEnumerator;
@@ -188,16 +194,17 @@
 - (void)_syncUpOfRecords:(id)arg1 didFinishWithError:(id)arg2;
 - (bool)hasUploads;
 - (unsigned long long)backoffBeforeProcessingLostItemWithStamp:(unsigned long long)arg1;
+- (struct PQLResultSet { Class x1; }*)_itemsNeedingUploadEnumeratorWithAdditionalClause:(id)arg1;
 - (id)resolveClashOfAlias:(id)arg1 atPath:(id)arg2 withAlias:(id)arg3 atPath:(id)arg4;
 - (bool)hasUbiquityClientsConnected;
 - (void)startDownloadingItemsUsingGroup:(id)arg1;
-- (void)_notifyFrameworkContainersMonitorWithState:(bool)arg1;
 - (void)tellDuetContainerWasAccessedByBundleID:(id)arg1;
 - (void)clearStateBits:(unsigned int)arg1;
-- (unsigned int)clearSyncStateBits:(unsigned int)arg1;
-- (unsigned int)setSyncStateBits:(unsigned int)arg1;
+- (void)clearSyncStateBits:(unsigned int)arg1;
+- (void)setSyncStateBits:(unsigned int)arg1;
 - (void)setStateBits:(unsigned int)arg1;
 - (void)_activateState:(unsigned int)arg1 origState:(unsigned int)arg2;
+- (void)_notifyFrameworkContainersMonitorWithState:(bool)arg1;
 - (unsigned long long)currentRequestID;
 - (unsigned long long)nextSyncUpRequestID;
 - (void)didDownloadAllItems;
@@ -209,6 +216,7 @@
 - (id)desiredLoserForItemID:(id)arg1 etag:(id)arg2;
 - (struct PQLResultSet { Class x1; }*)losersNeedingDownloadEnumeratorForItemID:(id)arg1;
 - (id)deviceKeyForName:(id)arg1;
+- (id)xattrForSignature:(id)arg1;
 - (id)tableNames;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
 - (void)_checkResultSetIsEmpty:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2 reason:(id)arg3 result:(bool*)arg4;
@@ -233,6 +241,7 @@
 - (long long)nextReadRetryTimestamp;
 - (id)coordinatorForItem:(id)arg1 forRead:(bool)arg2;
 - (id)nextItemToRead;
+- (void)availableQuotaDidIncreaseWithNewAvailableQuota:(long long)arg1;
 - (void)scheduleSyncDown;
 - (id)containerMetadata;
 - (id)_initWithContainerID:(id)arg1 path:(id)arg2 db:(id)arg3 accountSession:(id)arg4;
@@ -246,7 +255,6 @@
 - (bool)startReset;
 - (unsigned long long)lostHeapKey;
 - (void)markLatestSyncRequestFailed;
-- (void)updateFromFSAtPath:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (void)signalNeedsToApplyChanges;
 - (void)removeUnappliedRank:(id)arg1 isAppliedTombstone:(bool)arg2;
@@ -256,6 +264,7 @@
 - (unsigned long long)markChildrenLostForItemID:(id)arg1;
 - (void)didMarkItemRejected;
 - (void)didMarkItemNeedsUpload;
+- (void)didMarkDeadItemNeedsSyncUp;
 - (void)scheduleRead;
 - (void)didUpdateCurrentVersionOfItem:(id)arg1;
 - (void)reschedulePostponedRanks;
@@ -273,6 +282,7 @@
 - (id)pkgItemsTable;
 - (void)scheduleDeepScan;
 - (id)serverItemsTable;
+- (void)updateFromFSAtPath:(id)arg1;
 - (unsigned long long)allocateLostStampAddingBackoff:(bool)arg1;
 - (long long)throttleHashWithItemID:(id)arg1;
 - (bool)printStatusLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 withDB:(id)arg2;
@@ -314,6 +324,7 @@
 - (id)zoneName;
 - (void)setContainerID:(id)arg1;
 - (void)deactivate;
+- (id)path;
 - (id)url;
 - (id)root;
 - (bool)needsSave;
@@ -323,7 +334,6 @@
 - (unsigned long long)hash;
 - (bool)allowsCellularAccess;
 - (id)delegate;
-- (id)path;
 - (unsigned int)state;
 - (void).cxx_destruct;
 - (id)description;

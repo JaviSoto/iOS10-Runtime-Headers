@@ -15,6 +15,8 @@
 + (id)sharedCollector;
 + (bool)isEnabled;
 
+- (void)setLogger:(id)arg1;
+- (id)logger;
 - (void)_reallyLogIndexUsage;
 - (void)logAddProperty:(int)arg1 contact:(void*)arg2;
 - (void)logGroupsShown:(long long)arg1 totalGroups:(long long)arg2;
@@ -23,8 +25,6 @@
 - (void)logSearchUsage;
 - (void)logContactActionType:(id)arg1 attributes:(id)arg2;
 - (void)logRefreshUsage;
-- (void)setLogger:(id)arg1;
-- (id)logger;
 - (id)appIdentifier;
 - (void)setAppIdentifier:(id)arg1;
 - (id)init;

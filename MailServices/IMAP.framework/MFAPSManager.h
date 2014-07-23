@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/MailServices/IMAP.framework/IMAP
  */
 
-@class NSCountedSet, APSConnection, NSConditionLock, NSMutableSet, NSObject<OS_dispatch_queue>, NSData;
+@class NSData, NSString, NSConditionLock, APSConnection, NSCountedSet, NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface MFAPSManager : NSObject <APSConnectionDelegate, MFAPSManager> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -12,6 +12,11 @@
     NSConditionLock *_deviceTokenLock;
     NSData *_deviceToken;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)APSConnection;
 + (id)sharedManager;

@@ -87,6 +87,10 @@
 @property(setter=_setNeedsUpdateBackIndicatorImage:) bool _needsUpdateBackIndicatorImage;
 @property(setter=_setWantsLetterpressContent:) bool _wantsLetterpressContent;
 @property(readonly) long long _barTranslucence;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long barPosition;
 
 + (void)_setUseCustomBackButtonAction:(bool)arg1;
@@ -153,6 +157,7 @@
 - (id)buttonItemShadowColor;
 - (void)setForceFullHeightInLandscape:(bool)arg1;
 - (long long)_statusBarStyle;
+- (void)_evaluateBackIndicatorForHilightedState:(bool)arg1 ofBarButtonItem:(id)arg2 inNavigationItem:(id)arg3;
 - (void)_reenableUserInteractionWhenReadyWithContext:(id)arg1;
 - (void)_cancelInProgressPushOrPop;
 - (void)setNavigationItems:(id)arg1;

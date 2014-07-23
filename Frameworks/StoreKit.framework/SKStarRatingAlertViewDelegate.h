@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SKStarRatingAlertView;
+@class SKStarRatingAlertView, NSString;
 
 @interface SKStarRatingAlertViewDelegate : NSObject <UIAlertViewDelegate> {
     SKStarRatingAlertView *_alertView;
@@ -16,6 +16,11 @@
     id _completionBlock;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)showAlertView:(id)arg1 withCompletionBlock:(id)arg2;

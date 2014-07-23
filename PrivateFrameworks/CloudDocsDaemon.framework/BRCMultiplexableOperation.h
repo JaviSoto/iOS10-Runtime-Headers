@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class BRCOperationMultiplexer, BRCBatch;
+@class NSString, BRCOperationMultiplexer, BRCBatch;
 
 @interface BRCMultiplexableOperation : BRCOperation <BRCOperationSubclass> {
     BRCOperationMultiplexer *_multiplexer;
@@ -28,6 +28,10 @@
 @property bool autoRetry;
 @property(retain) BRCBatch * batch;
 @property bool hasSentCompletion;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setHasSentCompletion:(bool)arg1;

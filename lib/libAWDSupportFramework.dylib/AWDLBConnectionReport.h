@@ -174,11 +174,11 @@
 - (bool)hasConnectionCellularFallbackCount;
 - (void)setHasConnectionCellularFallbackCount:(bool)arg1;
 - (void)setConnectionCellularFallbackCount:(int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (long long)bytesReceived;
 - (long long)bytesSent;
 - (void)setBytesSent:(long long)arg1;
-- (long long)bytesReceived;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

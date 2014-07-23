@@ -7,12 +7,19 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface ESDBlipContext : NSObject <OCDDelayedMediaContext> {
     struct SsrwOOStream { int (**x1)(); } *mStream;
     unsigned int mStreamID;
     unsigned int mStartOffset;
     unsigned int mByteCount;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct SsrwOOStream { int (**x1)(); }*)stream;

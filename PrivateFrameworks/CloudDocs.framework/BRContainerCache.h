@@ -2,22 +2,26 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, <NSObject>;
 
 @interface BRContainerCache : NSObject  {
     NSMutableDictionary *_containersByID;
     bool_didFetchAllContainers;
+    <NSObject> *_containerStatusObserver;
 }
 
 + (id)containerCache;
 
 - (id)_allContainersByIDUnsafe;
+- (void)unsubscribeToContainerStatusUpdate;
 - (void)containerListDidChange;
+- (void)subscribeToContainerStatusUpdate;
 - (id)allContainers;
 - (id)allContainersByID;
 - (id)containerByID:(id)arg1 forURL:(id)arg2;
 - (id)init;
 - (void)invalidate;
+- (void)dealloc;
 - (id)documentContainers;
 
 @end

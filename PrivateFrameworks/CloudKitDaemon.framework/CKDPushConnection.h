@@ -23,6 +23,10 @@
 @property(retain) NSMutableSet * enabledTopics;
 @property(retain) NSMutableDictionary * topicsToWaitingAppContainerTuples;
 @property(retain) NSMutableSet * topicsAwaitingPublicToken;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedConnectionForAPSEnvironmentString:(id)arg1;
 

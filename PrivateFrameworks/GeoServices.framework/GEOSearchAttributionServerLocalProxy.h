@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMapTable, NSMutableArray;
+@class NSString, NSMapTable, NSMutableArray;
 
 @interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
     NSMapTable *_listeners;
@@ -10,6 +10,11 @@
     NSMutableArray *_updateManifestCompletionHandlers;
     NSMutableArray *_updateManifestErrorHandlers;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_updateManifestWithCompletionHandler:(id)arg1 errorHandler:(id)arg2;

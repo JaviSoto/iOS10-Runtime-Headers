@@ -6,6 +6,8 @@
 
 @interface CKDMMCSItem : NSObject  {
     bool_finished;
+    bool_hasSize;
+    bool_hasOffset;
     unsigned int _chunkCount;
     unsigned int _packageIndex;
     unsigned long long _itemID;
@@ -64,9 +66,12 @@
 @property(retain) NSData * referenceSignature;
 @property(retain) NSString * referenceIdentifierString;
 @property(getter=isFinished) bool finished;
+@property bool hasSize;
+@property bool hasOffset;
 
 + (int)openFileDescriptorForDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3 path:(id)arg4 error:(id*)arg5;
 
+- (void)setHasOffset:(bool)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setSectionItems:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
@@ -81,6 +86,8 @@
 - (void)setChunkCount:(unsigned int)arg1;
 - (int)openFileDescriptorWithError:(id*)arg1;
 - (bool)getFileSize:(unsigned long long*)arg1 withError:(id*)arg2;
+- (bool)hasOffset;
+- (void)setHasSize:(bool)arg1;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (void)setGenerationID:(id)arg1;
@@ -103,6 +110,7 @@
 - (id)owner;
 - (id)fileID;
 - (id)recordKey;
+- (bool)hasSize;
 - (void)setRecordID:(id)arg1;
 - (id)recordType;
 - (void)setRecordType:(id)arg1;
@@ -110,6 +118,7 @@
 - (void)setDeviceID:(id)arg1;
 - (id)deviceID;
 - (id)asset;
+- (id)path;
 - (id)initWithAsset:(id)arg1;
 - (unsigned long long)itemID;
 - (void)setOffset:(unsigned long long)arg1;
@@ -123,7 +132,6 @@
 - (void)setPath:(id)arg1;
 - (void)setFinished:(bool)arg1;
 - (id)fileURL;
-- (id)path;
 - (void)setError:(id)arg1;
 - (id)error;
 - (void).cxx_destruct;

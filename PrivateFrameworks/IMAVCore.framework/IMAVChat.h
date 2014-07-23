@@ -189,8 +189,8 @@
 + (id)_avChatConnectingFromIMHandle:(id)arg1;
 + (id)_avChatWithConferenceID:(id)arg1;
 + (id)_avChatWaitingForReplyFromIMHandle:(id)arg1 orConferenceID:(id)arg2;
-+ (id)incomingInvitations;
 + (id)chatList;
++ (id)incomingInvitations;
 
 - (void)__sendEndCallMetricToViceroyWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (void)__sendEndCallMetricToAWDWithReason:(unsigned int)arg1 andError:(int)arg2;
@@ -395,9 +395,9 @@
 - (void)setConnectionTimeoutTime:(double)arg1;
 - (id)initOutgoingTo:(id)arg1 isVideo:(bool)arg2;
 - (void)resetWantsHoldMusic;
+- (bool)wantsHoldMusic;
 - (bool)isSendingAudio;
 - (void)setIsSendingAudio:(bool)arg1;
-- (bool)wantsHoldMusic;
 - (id)localParticipant;
 - (id)dataDownloaded;
 - (id)dataUploaded;

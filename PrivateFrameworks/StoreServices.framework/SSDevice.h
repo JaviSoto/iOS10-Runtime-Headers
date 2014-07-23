@@ -37,6 +37,10 @@
 @property(copy) NSString * mediaLibraryIdentifier;
 @property(getter=isStoreFrontIdentifierTransient,readonly) bool storeFrontIdentifierTransient;
 @property(readonly) NSString * synchedStoreFrontIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setPromptWithIdentifier:(id)arg1 needsDisplay:(bool)arg2;
 + (void)setLastPromptAttemptDate:(id)arg1 forPromptWithIdentifier:(id)arg2;

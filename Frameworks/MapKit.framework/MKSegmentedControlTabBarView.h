@@ -6,9 +6,12 @@
    See Warning(s) below.
  */
 
-@class UISegmentedControl;
+@class NSString, UIVisualEffectView, MKViewWithHairline, UISegmentedControl;
 
-@interface MKSegmentedControlTabBarView : UIView  {
+@interface MKSegmentedControlTabBarView : UIView <MKStackingViewControllerSelectorView> {
+    MKViewWithHairline *_separator;
+    UIVisualEffectView *_blurView;
+    bool_isBlurred;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -19,12 +22,20 @@
 
 @property(readonly) UISegmentedControl * segmentedControl;
 @property(copy) id didChangeSelectedSegmentIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property bool isBlurred;
 
 
 - (void)setDidChangeSelectedSegmentIndex:(id)arg1;
 - (void)setContentFromViewController:(id)arg1;
 - (id)didChangeSelectedSegmentIndex;
 - (void)_segmentSelectionDidChange;
+- (void)setIsBlurred:(bool)arg1;
+- (bool)isBlurred;
+- (void)updateSelectorView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

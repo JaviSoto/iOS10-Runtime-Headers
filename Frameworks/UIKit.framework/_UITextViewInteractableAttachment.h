@@ -18,8 +18,8 @@
 - (void)_saveToCameraRoll;
 - (void)_copyImage;
 - (id)localizedTitle;
-- (id)defaultAction;
 - (bool)allowInteraction;
+- (id)defaultAction;
 - (id)attachment;
 - (void)setAttachment:(id)arg1;
 

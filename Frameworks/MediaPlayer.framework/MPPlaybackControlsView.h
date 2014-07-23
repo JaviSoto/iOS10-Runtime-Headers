@@ -54,6 +54,10 @@
 @property(readonly) UIImage * shuffleButtonImage;
 @property(readonly) unsigned long long shuffleType;
 @property(readonly) bool detailScrubbingHidesControls;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (unsigned long long)defaultVisibleParts;
 

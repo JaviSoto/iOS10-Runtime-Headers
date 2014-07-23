@@ -69,17 +69,18 @@
 + (id)mediaPlayerBundle;
 + (bool)mainBundleIsXcode;
 + (id)__geoBundle;
++ (id)__vkBundle;
++ (id)_mapkitBundle;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_gkBundleWithIdentifier:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
-+ (id)__vkBundle;
-+ (id)_mapkitBundle;
 + (id)pathForITunesResource:(id)arg1 ofType:(id)arg2;
 + (id)blj_localizedString:(id)arg1;
 
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)builtInPlugInsPath;
 - (id)resourcePath;
+- (id)resourceURL;
 - (id)infoDictionary;
 - (id)bundleIdentifier;
 - (unsigned long long)versionNumber;
@@ -117,7 +118,6 @@
 - (id)URLForAuxiliaryExecutable:(id)arg1;
 - (id)pathForAuxiliaryExecutable:(id)arg1;
 - (id)executableURL;
-- (id)resourceURL;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 localization:(id)arg3;
 - (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(id)arg2;

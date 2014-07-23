@@ -19,6 +19,7 @@
 - (id)settings;
 - (id)identifier;
 - (id)display;
+- (void)sendActions:(id)arg1;
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (void)detachSceneContext:(id)arg1;
 - (void)attachSceneContext:(id)arg1;
@@ -32,7 +33,6 @@
 - (id)delegate;
 - (id)_init;
 - (void)updateClientSettingsWithBlock:(id)arg1;
-- (void)sendActions:(id)arg1;
 - (void)detachContext:(id)arg1;
 - (void)attachContext:(id)arg1;
 - (id)fbsDisplay;

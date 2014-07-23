@@ -112,7 +112,6 @@
 + (bool)supportsSecureCoding;
 
 - (unsigned long long)parentHash;
-- (bool)isSubpathOfRelativePath:(id)arg1;
 - (void)closeDirectoryScan;
 - (id)nextDescendant;
 - (bool)openDirectoryForRecursiveScan;

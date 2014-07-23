@@ -35,11 +35,13 @@
 
 
 - (unsigned int)sessionType;
+- (unsigned int)initiator;
 - (bool)hasSessionType;
 - (void)setHasSessionType:(bool)arg1;
 - (void)setSessionType:(unsigned int)arg1;
 - (bool)hasInitiator;
 - (void)setHasInitiator:(bool)arg1;
+- (void)setInitiator:(unsigned int)arg1;
 - (unsigned int)audioCompressionType;
 - (bool)hasAudioCompressionType;
 - (void)setHasAudioCompressionType:(bool)arg1;
@@ -47,11 +49,9 @@
 - (id)sessionUUID;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (void)setInitiator:(unsigned int)arg1;
-- (unsigned int)initiator;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasTransportType;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)transportType;

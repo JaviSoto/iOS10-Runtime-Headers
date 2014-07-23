@@ -39,6 +39,10 @@
 @property(readonly) UITableView * currentTableView;
 @property(readonly) UISearchBar * searchBar;
 @property(retain) _UINavigationControllerPalette * searchPalette;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)newNameSearchOperationWithString:(id)arg1 contactsFilter:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(unsigned long long*)arg5;
 

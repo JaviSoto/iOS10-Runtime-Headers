@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject<NSLocking>, OITSUFlushingManager;
+@class NSObject<NSLocking>, NSString, OITSUFlushingManager;
 
 @interface OITSUFlushableObject : NSObject <TSUFlushable> {
     int _retainCount;
@@ -10,6 +10,11 @@
     OITSUFlushingManager *_flushingManager;
     NSObject<NSLocking> *_flushingManagerIvarLock;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

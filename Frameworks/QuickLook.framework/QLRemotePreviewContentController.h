@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class _UIRemoteView, NSMapTable, <QLPreviewContentDelegate>, <QLPreviewContentDataSource>, QLPreviewController, QLPrintPageRenderer;
+@class _UIRemoteView, NSString, <QLPreviewContentDelegate>, <QLPreviewContentDataSource>, QLPreviewController, NSMapTable, QLPrintPageRenderer;
 
 @interface QLRemotePreviewContentController : _UIRemoteViewController <QLPreviewContentControllerProtocol, QLPrintPageRendererDataSource> {
     QLPreviewController *_previewController;
@@ -19,6 +19,10 @@
 }
 
 @property QLPreviewController * previewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property <QLPreviewContentDataSource> * dataSource;
 @property <QLPreviewContentDelegate> * delegate;
 @property int previewMode;
@@ -43,9 +47,9 @@
 - (void)_previewContentControllerWillHideOverlayWithDuration:(double)arg1;
 - (void)_previewContentControllerWillShowOverlayWithDuration:(double)arg1;
 - (void)_previewContentControllerGetPreviewItemAtIndex:(long long)arg1 sourceUUID:(long long)arg2 handler:(id)arg3;
-- (id)printPageRenderer:(id)arg1 pdfDataForPageAtIndex:(long long)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 printingDone:(bool*)arg4;
+- (id)printPageRenderer:(id)arg1 pdfDataForPageAtIndex:(long long)arg2 printingDone:(bool*)arg3;
 - (void)printPageRenderer:(id)arg1 prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (long long)numberOfPageInPrintPageRenderer:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
+- (long long)numberOfPagesInPrintPageRenderer:(id)arg1;
 - (void)scrubToValue:(double)arg1;
 - (id)printPageHelper;
 - (int)previewMode;
@@ -58,6 +62,7 @@
 - (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)becomeForeground;
 - (void)enterBackground;
+- (void)stopLoadingCurrentPreviewItem;
 - (void)setPreviewController:(id)arg1;
 - (long long)numberOfPreviewItems;
 - (void)refreshCurrentPreviewItem;

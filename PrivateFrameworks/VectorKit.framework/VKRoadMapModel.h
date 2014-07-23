@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKStyleManager;
+@class NSString, VKStyleManager;
 
 @interface VKRoadMapModel : VKVectorMapModel <VKStyleManagerObserver> {
     struct unique_ptr<vk::RoadManager, std::__1::default_delete<vk::RoadManager> > { 
@@ -24,6 +24,10 @@
 }
 
 @property unsigned long long mapLayerPosition;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) VKStyleManager * styleManager;
 
 

@@ -22,6 +22,7 @@
 @property(retain) id cookie;
 
 + (void)setHeadersForURL:(id)arg1 inRequestProperties:(id)arg2;
++ (id)_URLBagContext;
 + (void)setITunesStoreHeaders:(id)arg1;
 
 - (void)setCookieURL:(id)arg1;

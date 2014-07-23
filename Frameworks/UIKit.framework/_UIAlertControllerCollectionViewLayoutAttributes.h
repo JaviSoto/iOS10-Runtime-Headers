@@ -14,6 +14,7 @@
 
 
 - (double)cornerRadius;
+- (bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)alignedDescriptiveLabelTextWidth;
 - (void)setAlignedDescriptiveLabelTextWidth:(double)arg1;

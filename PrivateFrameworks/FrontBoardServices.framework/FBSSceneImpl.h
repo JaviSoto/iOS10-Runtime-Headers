@@ -22,6 +22,7 @@
 - (id)settings;
 - (id)identifier;
 - (id)display;
+- (void)sendActions:(id)arg1;
 - (void)sceneContextDidInvalidate:(id)arg1;
 - (void)sceneContextDidUpdate:(id)arg1;
 - (bool)sceneContextShouldObserveUpdates:(id)arg1;
@@ -46,7 +47,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)updateClientSettingsWithBlock:(id)arg1;
-- (void)sendActions:(id)arg1;
 - (void)detachContext:(id)arg1;
 - (void)attachContext:(id)arg1;
 - (id)fbsDisplay;

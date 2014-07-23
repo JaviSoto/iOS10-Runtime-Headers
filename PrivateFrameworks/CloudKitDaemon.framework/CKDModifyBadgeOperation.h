@@ -3,16 +3,13 @@
  */
 
 @interface CKDModifyBadgeOperation : CKDDatabaseOperation  {
-    bool_thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
 @property(readonly) unsigned long long badgeValue;
-@property(readonly) bool thisDeviceOnly;
 
 
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (bool)thisDeviceOnly;
 - (void)main;
 - (unsigned long long)badgeValue;
 

@@ -81,6 +81,10 @@
 @property(readonly) id previewController;
 @property(retain) UIPopoverController * popoverController;
 @property(readonly) _UIPreviewItemProxy * previewItemProxy;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (id)_pathFilterPredicate;

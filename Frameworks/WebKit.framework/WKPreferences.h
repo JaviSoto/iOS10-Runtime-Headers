@@ -10,20 +10,29 @@
 
 @property(setter=_setTelephoneNumberDetectionIsEnabled:) bool _telephoneNumberDetectionIsEnabled;
 @property(setter=_setStorageBlockingPolicy:) long long _storageBlockingPolicy;
+@property(setter=_setCompositingBordersVisible:) bool _compositingBordersVisible;
+@property(setter=_setCompositingRepaintCountersVisible:) bool _compositingRepaintCountersVisible;
+@property(setter=_setTiledScrollingIndicatorVisible:) bool _tiledScrollingIndicatorVisible;
 @property(setter=_setOfflineApplicationCacheIsEnabled:) bool _offlineApplicationCacheIsEnabled;
 @property double minimumFontSize;
-@property(getter=isJavaScriptEnabled) bool javaScriptEnabled;
+@property bool javaScriptEnabled;
 @property bool javaScriptCanOpenWindowsAutomatically;
 
 
+- (void)_setTiledScrollingIndicatorVisible:(bool)arg1;
+- (bool)_tiledScrollingIndicatorVisible;
+- (void)_setCompositingRepaintCountersVisible:(bool)arg1;
+- (bool)_compositingRepaintCountersVisible;
+- (void)_setCompositingBordersVisible:(bool)arg1;
+- (bool)_compositingBordersVisible;
 - (void)_setOfflineApplicationCacheIsEnabled:(bool)arg1;
 - (bool)_offlineApplicationCacheIsEnabled;
 - (void)_setStorageBlockingPolicy:(long long)arg1;
 - (long long)_storageBlockingPolicy;
 - (void)_setTelephoneNumberDetectionIsEnabled:(bool)arg1;
 - (bool)_telephoneNumberDetectionIsEnabled;
+- (bool)javaScriptEnabled;
 - (bool)javaScriptCanOpenWindowsAutomatically;
-- (bool)isJavaScriptEnabled;
 - (double)minimumFontSize;
 - (void)setJavaScriptCanOpenWindowsAutomatically:(bool)arg1;
 - (void)setJavaScriptEnabled:(bool)arg1;

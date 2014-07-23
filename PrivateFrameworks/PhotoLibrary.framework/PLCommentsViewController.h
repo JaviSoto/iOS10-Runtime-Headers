@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCloudSharedComment, UIView, PLManagedAsset, <PLCommentsViewControllerDelegate>, UIImageView, _UIBackdropView, PLPhotoCommentEntryView, CAGradientLayer, UITableView, UIBarButtonItem, NSCache;
+@class UIBarButtonItem, NSCache, UITableView, <PLCommentsViewControllerDelegate>, _UIBackdropView, UIView, CAGradientLayer, NSString, PLCloudSharedComment, PLManagedAsset, PLPhotoCommentEntryView, UIImageView;
 
 @interface PLCommentsViewController : UIViewController <PLCloudCommentsChangeObserver, PLPhotoCommentEntryViewDelegate, PLDismissableViewController, UITableViewDelegate, UITableViewDataSource> {
     UITableView *_tableView;
@@ -42,11 +42,14 @@
 @property(readonly) UIBarButtonItem * cancelButton;
 @property <PLCommentsViewControllerDelegate> * commentsControllerDelegate;
 @property(retain) PLCloudSharedComment * justInsertedComment;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)prepareForDismissingForced:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availableBounds;
-- (bool)isCompact;
 - (id)commentsControllerDelegate;
 - (void)photoCommentEntryViewHeightDidChange:(id)arg1;
 - (void)setJustInsertedComment:(id)arg1;
@@ -81,6 +84,7 @@
 - (void)cancelCurrentAction:(id)arg1;
 - (bool)editMode;
 - (void)scrollToComment:(id)arg1 animated:(bool)arg2;
+- (bool)isCompact;
 - (void)cloudCommentsDidChange:(id)arg1;
 - (id)asset;
 - (void)dealloc;

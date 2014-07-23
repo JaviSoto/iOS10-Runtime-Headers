@@ -53,7 +53,7 @@
 + (void)setDefaultFormatterBehavior:(unsigned long long)arg1;
 + (id)CalSharedDateFormatter;
 + (id)mf_formatDate:(id)arg1 shortStyle:(bool)arg2;
-+ (id)monthYearStringFromDate:(id)arg1;
++ (id)monthYearStringFromDate:(id)arg1 calendar:(id)arg2;
 
 - (void)setDoesRelativeDateFormatting:(bool)arg1;
 - (void)setDateFormat:(id)arg1;
@@ -131,6 +131,9 @@
 - (bool)generatesCalendarDates;
 - (unsigned long long)timeStyle;
 - (unsigned long long)dateStyle;
+- (void)setLocalizedDateFormatFromTemplate:(id)arg1;
+- (void)_setDateFormat:(id)arg1 alreadyLocked:(bool)arg2;
+- (id)_getLocaleAlreadyLocked:(bool)arg1;
 - (void)setTimeStyle:(unsigned long long)arg1;
 - (void)setDateStyle:(unsigned long long)arg1;
 - (void)setFormatterBehavior:(unsigned long long)arg1;

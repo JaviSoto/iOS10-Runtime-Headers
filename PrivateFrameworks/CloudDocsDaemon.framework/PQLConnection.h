@@ -106,9 +106,9 @@
 - (void)setAutoRollbackHandler:(id)arg1;
 - (void)setLockedHandler:(id)arg1;
 - (bool)performWithFlags:(unsigned int)arg1 action:(id)arg2 whenFlushed:(id)arg3;
-- (void)setLastError:(id)arg1;
 - (void)forceBatchStart;
 - (long long)lastInsertedRowID;
+- (void)setLastError:(id)arg1;
 - (id)fetchObject:(id)arg1 sql:(id)arg2;
 - (void)groupInBatch:(id)arg1;
 - (bool)groupInTransaction:(id)arg1;

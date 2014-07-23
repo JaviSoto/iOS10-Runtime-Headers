@@ -18,6 +18,10 @@
     void *_addressBook;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool isPrimaryAddressAtom;
 @property bool hidesVIPIndicator;
 @property bool separatorHidden;

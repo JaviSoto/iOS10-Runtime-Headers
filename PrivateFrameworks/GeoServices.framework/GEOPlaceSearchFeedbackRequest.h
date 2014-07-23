@@ -45,6 +45,7 @@
 
 
 - (int)numberOfResults;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasSessionGUID;
 - (long long)businessID;
 - (int)positionInResults;
@@ -72,7 +73,6 @@
 - (void)setHasSequenceNumber:(bool)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

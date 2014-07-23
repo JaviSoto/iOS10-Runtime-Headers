@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISUniqueOperationContext, NSMutableDictionary, NSLock, NSMutableArray;
+@class ISUniqueOperationContext, NSMutableDictionary, NSString, NSLock, NSMutableArray;
 
 @interface ISUniqueOperationManager : NSObject <ISSingleton> {
     ISUniqueOperationContext *_activeContext;
@@ -10,6 +10,11 @@
     NSLock *_lock;
     NSMutableDictionary *_lockPool;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;

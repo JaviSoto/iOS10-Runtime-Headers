@@ -41,6 +41,10 @@
 @property(setter=setDB:,retain) PQLConnection * db;
 @property(readonly) BRCRelativePath * root;
 @property(readonly) bool volumeIsCaseSensitive;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)didProcessEventID:(unsigned long long)arg1;

@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableDictionary, <QLPreviewControllerDataSource>, NSMapTable, <QLPreviewItem>, QLPreviewController, NSMutableArray;
+@class <QLPreviewControllerDataSource>, NSString, NSURL, NSMutableDictionary, <QLPreviewItem>, NSMutableArray, QLPreviewController, NSMapTable;
 
-@interface QLPreviewItemsSource : NSObject  {
+@interface QLPreviewItemsSource : NSObject <UIDocumentInteractionControllerDelegatePrivate> {
     QLPreviewController *_previewController;
     <QLPreviewControllerDataSource> *_dataSource;
     <QLPreviewItem> *_previewItem;
@@ -17,6 +17,7 @@
     long long _archiveDataSourceIndex;
     NSMutableArray *_archiveItems;
     NSMapTable *_uiItems;
+    NSURL *_unzippingURL;
 }
 
 @property(readonly) long long UUID;
@@ -33,11 +34,16 @@
 @property(readonly) <QLPreviewItem> * realCurrentPreviewItem;
 @property(readonly) long long numberOfUIItems;
 @property(readonly) long long currentUIItemIndex;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_UIItemAtIndex:(long long)arg1;
 - (void)removeArchiveItemAtIndex:(long long)arg1;
 - (void)_setUIItem:(id)arg1 atIndex:(long long)arg2;
+- (void)addArchiveItem:(id)arg1;
 - (long long)numberOfUIItems;
 - (id)UIItemAtIndex:(long long)arg1;
 - (long long)currentUIItemIndex;
@@ -65,6 +71,8 @@
 - (void)setDataSource:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
+- (void)softReset;
 - (void)reset;
+- (id)documentInteractionControllerURLOfDirectoryForUnzippedDocument:(id)arg1;
 
 @end

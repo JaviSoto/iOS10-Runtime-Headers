@@ -26,15 +26,15 @@
 @property(retain) NSMutableArray * serviceTags;
 
 
-- (void)setSplitIntoClusters:(bool)arg1;
-- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (bool)hasSplitIntoClusters;
 - (void)setHasSplitIntoClusters:(bool)arg1;
+- (void)setSplitIntoClusters:(bool)arg1;
 - (bool)splitIntoClusters;
 - (void)clearLocations;
 - (void)addLocation:(id)arg1;
 - (id)locationAtIndex:(unsigned long long)arg1;
 - (unsigned long long)locationsCount;
+- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)additionalPlaceTypes;
 - (void)addAdditionalPlaceType:(int)arg1;
 - (int)additionalPlaceTypeAtIndex:(unsigned long long)arg1;

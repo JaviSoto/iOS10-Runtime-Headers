@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSInputStream, NSFileHandle;
+@class NSString, NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSInputStream, NSFileHandle;
 
 @interface __NSCFBackgroundDataTask : __NSCFBackgroundSessionTask <NSStreamDelegate> {
     NSInputStream *_requestBodyStream;
@@ -16,6 +16,10 @@
 
 @property(readonly) NSFileHandle * readHandle;
 @property(getter=isStreamBased,readonly) bool streamBased;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;

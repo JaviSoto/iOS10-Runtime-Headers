@@ -19,6 +19,10 @@
 @property(retain) NSXPCInterface * clientInterface;
 @property(retain) NSString * persistentStoreName;
 @property(retain) NSString * managedObjectModelPath;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setClientInterface:(id)arg1;

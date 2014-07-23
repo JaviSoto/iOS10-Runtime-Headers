@@ -12,11 +12,11 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)criteria;
-- (id)qualifier;
 - (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
 - (id)initWithCriteria:(id)arg1 allRequired:(bool)arg2;
 - (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
+- (id)criteria;
+- (id)qualifier;
 - (id)init;
 - (id)type;
 - (id)initWithCoder:(id)arg1;

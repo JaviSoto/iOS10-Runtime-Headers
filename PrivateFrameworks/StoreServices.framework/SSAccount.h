@@ -46,6 +46,10 @@
 @property(getter=isActiveLockerAccount) bool activeLockerAccount;
 @property(copy) NSString * ITunesPassSerialNumber;
 @property(getter=isNewCustomer) bool newCustomer;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)removeEnabledServiceTypes:(long long)arg1;

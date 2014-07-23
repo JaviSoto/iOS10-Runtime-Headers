@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSError, NSString, AVSampleBufferDisplayLayerInternal;
+@class NSString, NSError, AVSampleBufferDisplayLayerInternal;
 
 @interface AVSampleBufferDisplayLayer : CALayer <AVQueuedSampleBufferRendering, AVMediaDataRequesterConsumer, AVQueuedSampleBufferRenderingInternal> {
     AVSampleBufferDisplayLayerInternal *_sampleBufferDisplayLayerInternal;
 }
 
 @property(getter=isReadyForMoreMediaData,readonly) bool readyForMoreMediaData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long status;
 @property(readonly) NSError * error;
 @property(retain,readonly) struct OpaqueCMTimebase { }* timebase;
@@ -18,6 +22,10 @@
 @property(copy) NSString * videoGravity;
 @property(readonly) long long status;
 @property(readonly) NSError * error;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)automaticallyNotifiesObserversOfError;
 + (bool)automaticallyNotifiesObserversOfStatus;
@@ -34,17 +42,19 @@
 - (void)_removeFigVideoQueueListeners;
 - (void)_addFigVideoQueueListeners;
 - (void)_setOutputObscuredDueToInsufficientExternalProtection:(bool)arg1;
-- (void)_setStatus:(long long)arg1 error:(id)arg2;
+- (void)_resetStatusWithOSStatus:(int)arg1;
 - (void)_updatePresentationSize:(struct CGSize { double x1; double x2; })arg1;
 - (int)_createVideoQueue;
 - (int)_initializeTimebases;
 - (void)_setSynchronizerTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
+- (void)_setStatus:(long long)arg1 error:(id)arg2;
 - (void)_updateLayerTreeGeometryWithVideoGravity:(id)arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 presentationSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)_refreshAboveHighWaterLevel;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (bool)isReadyForMoreMediaData;
 - (bool)outputObscuredDueToInsufficientExternalProtection;
+- (void)_didFinishSuspension:(id)arg1;
 - (struct OpaqueCMTimebase { }*)timebase;
 - (id)videoGravity;
 - (id)_weakReference;

@@ -32,14 +32,14 @@
 + (void)registerPreferredLanguage:(id)arg1 usage:(unsigned long long)arg2 confidence:(float)arg3;
 + (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned long long)arg3 options:(unsigned long long)arg4;
 + (id)localeForBundleLanguage:(id)arg1;
-+ (id)canonicalLocaleIdentifier:(id)arg1 withNewLanguageIdentifier:(id)arg2;
-+ (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
++ (long long)_vk_indexForLocale:(id)arg1;
 + (id)deviceLanguageLocale;
++ (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
++ (id)canonicalLocaleIdentifier:(id)arg1 withNewLanguageIdentifier:(id)arg2;
 + (id)canonicalLocaleIdentifierFromComponents:(id)arg1;
 + (id)addLikelySubtagsForLocaleIdentifier:(id)arg1;
 + (id)deviceLanguageIdentifier;
 + (id)canonicalLanguageAndScriptCodeIdentifierForIdentifier:(id)arg1;
-+ (long long)_vk_indexForLocale:(id)arg1;
 + (void)_mapkit_overrideDistanceUnit:(long long)arg1;
 + (void)_mapkit_overrideGuidanceUnit:(long long)arg1;
 + (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;

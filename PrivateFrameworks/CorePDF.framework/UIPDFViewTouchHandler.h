@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UILongPressGestureRecognizer, UIPDFPageView, UIMenuController, UIPDFMagnifierController, UIPDFSelectionController, UITapGestureRecognizer;
+@class UILongPressGestureRecognizer, UIPDFMagnifierController, UIPDFPageView, UIPDFSelectionController, NSString, UITapGestureRecognizer, UIMenuController;
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
     UIPDFPageView *_pdfPageView;
@@ -23,6 +23,10 @@
 }
 
 @property bool allowMenu;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)releaseViewManager;
 

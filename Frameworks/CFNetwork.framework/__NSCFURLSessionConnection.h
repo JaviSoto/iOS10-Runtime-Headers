@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSURLSessionTask, NSURLResponse, <SessionConnectionDelegate>, NSObject<OS_dispatch_queue>, NSError, NSObject<OS_dispatch_data>;
+@class NSError, NSString, NSObject<OS_dispatch_data>, <SessionConnectionDelegate>, NSURLResponse, NSObject<OS_dispatch_queue>, NSURLSessionTask;
 
 @interface __NSCFURLSessionConnection : NSObject <NSURLAuthenticationChallengeSender, NSCopying> {
     struct SessionConnectionLoadable { int (**x1)(); long long x2; long long x3; long long x4; long long x5; int (**x6)(); int (**x7)(); id x8; } *_loaderClient;
@@ -37,6 +37,10 @@
 @property(copy) NSURLSessionTask * task;
 @property(retain) <SessionConnectionDelegate> * delegate;
 @property NSObject<OS_dispatch_queue> * delegateQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)resume;
@@ -51,7 +55,6 @@
 - (void)_didSendBodyData:(struct UploadProgressInfo { long long x1; long long x2; long long x3; })arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)_setupForCache:(bool)arg1 expectedLength:(long long)arg2 response:(id)arg3;
 - (void)_tick_finishing;
 - (void)_tick_running;
@@ -77,6 +80,7 @@
 - (void)setPriorityHint:(float)arg1;
 - (void)setPoolPriority:(long long)arg1;
 - (void)suspend;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)cancel;
 - (void)dealloc;

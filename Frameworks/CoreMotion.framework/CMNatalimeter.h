@@ -11,7 +11,7 @@
 @property(readonly) CMNatalimeterInternal * _internal;
 
 + (bool)isNatalimeterAvailable;
-+ (void)setUserProfile:(id)arg1;
++ (void)setUserProfile:(id)arg1 error:(id*)arg2;
 + (id)userProfile;
 
 - (void)stopAbsoluteNatalimetryDataUpdates;

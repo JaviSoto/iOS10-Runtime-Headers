@@ -14,6 +14,10 @@
 @property(copy) NSString * placeholder;
 @property(copy) NSString * value;
 @property double width;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_sendScriptDidChange;

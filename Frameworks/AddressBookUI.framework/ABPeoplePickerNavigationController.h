@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, ABModel, CNContactPicker, NSPredicate, <ABPeoplePickerNavigationControllerDelegate>, <ABStyleProvider>;
+@class UISplitViewController, ABModel, NSArray, CNContactPicker, NSPredicate, <ABStyleProvider>, <ABPeoplePickerNavigationControllerDelegate>;
 
 @interface ABPeoplePickerNavigationController : UINavigationController  {
     void *_addressBook;
@@ -37,6 +37,7 @@
     NSPredicate *_predicateForEnablingPerson;
     NSPredicate *_predicateForSelectionOfPerson;
     NSPredicate *_predicateForSelectionOfProperty;
+    UISplitViewController *_contactsSplitViewPresentationDelegate;
 }
 
 @property <ABPeoplePickerNavigationControllerDelegate> * peoplePickerDelegate;
@@ -50,16 +51,18 @@
 @property bool allowsContactBlocking;
 @property bool allowsOnlyPhoneActions;
 @property bool allowsOnlyFaceTimeActions;
+@property UISplitViewController * contactsSplitViewPresentationDelegate;
 @property(setter=ab_setDefaultToolbarItems:,retain) NSArray * ab_defaultToolbarItems;
 @property(retain) <ABStyleProvider> * styleProvider;
 
 + (void)notifyPreferencesChanged;
 
-- (void)saveState;
 - (void)setPredicateForSelectionOfPerson:(id)arg1;
 - (void)setPredicateForEnablingPerson:(id)arg1;
 - (void)setAllowsCardEditing:(bool)arg1;
 - (void)setHidesPromptInLandscape:(bool)arg1;
+- (void)saveState;
+- (void)setContactsSplitViewPresentationDelegate:(id)arg1;
 - (id)predicateForSelectionOfPerson;
 - (id)predicateForEnablingPerson;
 - (id)ab_defaultToolbarItems;
@@ -85,6 +88,7 @@
 - (void)setAllowsVibrations:(bool)arg1;
 - (void)presentContactViewController:(id)arg1;
 - (bool)shouldContinueAfterSelectingPerson:(void*)arg1 cell:(id)arg2;
+- (id)contactsSplitViewPresentationDelegate;
 - (void)setPrompt:(id)arg1 forViewControllerType:(int)arg2;
 - (bool)_shouldPreventCancelButtonsFromShowing;
 - (void)_updateViewControllerNavigationButtons;

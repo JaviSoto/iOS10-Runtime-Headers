@@ -11,6 +11,7 @@
 
 + (void)setAttributeData;
 + (bool)shouldAttributeData;
++ (id)_serviceTypeNumber;
 + (unsigned long long)_urlType;
 + (id)_debugRequestName;
 

@@ -51,7 +51,7 @@
 - (void)_markDead;
 - (void)_markAlmostDead;
 - (void)_markReserved;
-- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (unsigned long long)diffAgainstLocalInfo:(id)arg1;
 - (void)_clearBouncedName;
 - (void)_migrateBouncedNameToLocalName;
@@ -61,15 +61,15 @@
 - (void)_updateAliasTargetWithItemID:(id)arg1;
 - (void)_setCKInfo:(id)arg1;
 - (void)_setParentFileID:(id)arg1;
-- (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (id)processingStamp;
 - (id)lostStamp;
 - (void)_markRemovedFromFilesystem;
-- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1 itemID:(id)arg2;
 - (void)setFilename:(id)arg1 forceRename:(bool)arg2;
 - (id)initWithLocalStatInfo:(id)arg1;
-- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3 xattrSig:(id)arg4;
+- (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2 container:(id)arg3;
 - (bool)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;

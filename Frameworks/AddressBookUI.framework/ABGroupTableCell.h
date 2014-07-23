@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABStyleProvider, ABGroupWrapper;
+@class ABStyleProvider, NSString, ABGroupWrapper;
 
 @interface ABGroupTableCell : UITableViewCell <ABGroupWrapperDelegate> {
     ABGroupWrapper *_groupWrapper;
@@ -11,6 +11,10 @@
 
 @property(retain) ABGroupWrapper * groupWrapper;
 @property(retain) ABStyleProvider * styleProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)groupWrapper:(id)arg1 didBecomeSelected:(bool)arg2;

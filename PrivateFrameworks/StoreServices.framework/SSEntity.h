@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSArray, NSDictionary, SSXPCConnection, NSObject<OS_dispatch_queue>;
+@class NSMutableDictionary, NSArray, NSDictionary, SSXPCConnection, NSObject<OS_dispatch_queue>, NSString;
 
 @interface SSEntity : NSObject <SSXPCCoding> {
     SSXPCConnection *_connection;
@@ -19,6 +19,10 @@
 @property(getter=_localExternalValues,setter=_setLocalExternalValues:,copy) NSDictionary * _localExternalValues;
 @property(getter=_localValues,setter=_setLocalValues:,copy) NSDictionary * _localValues;
 @property(getter=_isManaged,readonly) bool _managed;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)_setValuesMessage;
 + (long long)_setExternalValuesMessage;

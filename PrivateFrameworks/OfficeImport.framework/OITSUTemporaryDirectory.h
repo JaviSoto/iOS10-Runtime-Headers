@@ -14,8 +14,8 @@
 - (id)initWithSignature:(id)arg1;
 - (void)_createDirectoryWithSignature:(id)arg1 subdirectory:(id)arg2;
 - (id)initWithSignature:(id)arg1 subdirectory:(id)arg2;
-- (id)init;
 - (id)path;
+- (id)init;
 - (id)URL;
 - (void)dealloc;
 

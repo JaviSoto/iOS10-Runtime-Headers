@@ -14,8 +14,9 @@
 
 + (id)imageSetForType:(long long)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
 + (id)archiveName;
++ (bool)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;
 + (id)_archiveURL:(id)arg1;
-+ (id)_archivedImageSet:(id)arg1;
++ (id)_archivedImageSet:(id)arg1 forDisplayProfile:(id)arg2;
 + (Class)classForImageSetType:(long long)arg1;
 + (Class)_classForDisplayProfileType:(long long)arg1;
 + (long long)imageSetType;
@@ -24,6 +25,7 @@
 + (bool)supportsSecureCoding;
 + (bool)shouldCache;
 
+- (bool)_isSetImage:(id)arg1 equalToImage:(id)arg2;
 - (void)saveCache:(id)arg1;
 - (id)originCacheURL;
 - (void)setOriginCacheURL:(id)arg1;

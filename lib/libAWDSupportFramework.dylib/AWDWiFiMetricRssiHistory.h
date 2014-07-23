@@ -26,8 +26,8 @@
 - (int)rssiHistoryAtIndex:(unsigned long long)arg1;
 - (void)clearRssiHistorys;
 - (unsigned long long)rssiHistorysCount;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

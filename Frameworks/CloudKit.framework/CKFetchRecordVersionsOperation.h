@@ -36,18 +36,18 @@
 
 
 - (void)setIsDeleted:(bool)arg1;
-- (void)setRecordErrors:(id)arg1;
 - (id)initWithRecordIDs:(id)arg1;
 - (void)setFetchRecordVersionsProgressBlock:(id)arg1;
 - (void)setFetchRecordVersionsCompletionBlock:(id)arg1;
 - (id)fetchRecordVersionsCompletionBlock;
 - (id)fetchRecordVersionsProgressBlock;
-- (id)recordErrors;
 - (void)setMinimumVersionETag:(id)arg1;
 - (id)minimumVersionETag;
 - (void)setRecordIDs:(id)arg1;
 - (id)recordIDs;
 - (id)desiredKeys;
+- (void)setRecordErrors:(id)arg1;
+- (id)recordErrors;
 - (void)setDesiredKeys:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

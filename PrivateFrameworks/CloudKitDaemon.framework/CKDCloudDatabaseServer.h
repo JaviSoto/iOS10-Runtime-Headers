@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSXPCListener, NSMutableArray, NSObject<OS_dispatch_source>;
+@class NSXPCListener, NSObject<OS_dispatch_source>, NSString, NSMutableArray;
 
 @interface CKDCloudDatabaseServer : NSObject <NSXPCListenerDelegate> {
     NSXPCListener *_xpcListener;
@@ -13,6 +13,10 @@
 @property(retain) NSXPCListener * xpcListener;
 @property(retain) NSMutableArray * connectedClients;
 @property(retain) NSObject<OS_dispatch_source> * sighandlerSource;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedServer;
 

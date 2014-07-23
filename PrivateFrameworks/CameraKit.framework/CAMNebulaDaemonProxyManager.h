@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
 @interface CAMNebulaDaemonProxyManager : NSObject <CAMNebulaDaemonClientProtocol, CAMNebulaDaemonProtocol> {
     NSObject<OS_dispatch_queue> *__queue;
@@ -13,6 +13,10 @@
 @property(readonly) NSObject<OS_dispatch_queue> * _queue;
 @property(readonly) NSXPCConnection * _connection;
 @property(readonly) long long _connectionCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_clientProtocolInterface;
 + (id)_daemonProtocolInterface;

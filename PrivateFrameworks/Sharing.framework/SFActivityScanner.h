@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSUUID, <SFActivityScannerDelegate>;
+@class NSUUID, NSString, <SFActivityScannerDelegate>;
 
 @interface SFActivityScanner : NSObject <SFContinuityScanManagerObserver> {
     bool_receiving;
@@ -13,6 +13,10 @@
 @property <SFActivityScannerDelegate> * delegate;
 @property bool receiving;
 @property(retain) NSUUID * identifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setReceiving:(bool)arg1;

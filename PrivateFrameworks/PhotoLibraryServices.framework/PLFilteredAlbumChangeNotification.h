@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSIndexSet, PLAssetContainerChangeNotification, PLIndexMapper, PLFilteredAlbum;
+@class NSIndexSet, PLAssetContainerChangeNotification, PLIndexMapper, NSString, PLFilteredAlbum;
 
 @interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLIndexMapperDataSource, PLDerivedNotification> {
     PLFilteredAlbum *_album;
@@ -15,6 +15,14 @@
 @property(retain,readonly) NSIndexSet * updatedFilteredIndexes;
 @property(copy) NSIndexSet * filteredIndexes;
 @property(retain,readonly) PLIndexMapper * indexMapper;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 

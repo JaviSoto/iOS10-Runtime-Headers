@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <UINavigationControllerDelegate>, SKUIClientContext, NSOperationQueue, SKUIPassbookLoader, <SKUIURLResolverDelegate>;
+@class NSString, <UINavigationControllerDelegate>, SKUIClientContext, NSOperationQueue, SKUIPassbookLoader, <SKUIURLResolverDelegate>;
 
 @interface SKUIURLResolver : NSObject <SKUIPassbookLoaderDelegate> {
     SKUIClientContext *_clientContext;
@@ -15,6 +15,10 @@
 @property <SKUIURLResolverDelegate> * delegate;
 @property <UINavigationControllerDelegate> * navigationControllerDelegate;
 @property(retain) NSOperationQueue * operationQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)tabIdentifierForURL:(id)arg1;
 

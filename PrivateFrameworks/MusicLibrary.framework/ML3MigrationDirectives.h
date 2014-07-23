@@ -9,6 +9,7 @@
     bool_needsToReloadStoreBookmarkMetadataIdentifiers;
     bool_needsToReloadContainerMediaTypes;
     bool_needsAnalyze;
+    bool_needsToAutogenerateArtworkVariants;
     int _originalUserVersion;
     int _currentUserVersion;
 }
@@ -21,8 +22,11 @@
 @property bool needsToReloadStoreBookmarkMetadataIdentifiers;
 @property bool needsToReloadContainerMediaTypes;
 @property bool needsAnalyze;
+@property bool needsToAutogenerateArtworkVariants;
 
 
+- (void)setNeedsToAutogenerateArtworkVariants:(bool)arg1;
+- (bool)needsToAutogenerateArtworkVariants;
 - (void)setNeedsAnalyze:(bool)arg1;
 - (bool)needsAnalyze;
 - (void)setNeedsToReloadContainerMediaTypes:(bool)arg1;

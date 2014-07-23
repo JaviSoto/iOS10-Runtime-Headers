@@ -62,10 +62,10 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (unsigned long long)resultsLimit;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, _UIKeyboardLayoutAlignmentView, NSLayoutConstraint, NSMutableArray, _UIDimmingKnockoutBackdropView, _UIAlertControllerCollectionViewFlowLayout, UIAlertController, UICollectionView, UILabel, _UIAlertControllerActionView;
+@class UIView, _UIKeyboardLayoutAlignmentView, NSLayoutConstraint, NSMutableArray, _UIDimmingKnockoutBackdropView, NSString, _UIAlertControllerCollectionViewFlowLayout, UIAlertController, UICollectionView, UILabel, _UIAlertControllerActionView;
 
 @interface _UIAlertControllerView : UIView <UICollectionViewDataSource> {
     UIAlertController *_alertController;
@@ -55,6 +55,11 @@
     NSMutableArray *_dimmingViewConstraintsForActionSheetStyle;
     NSMutableArray *_noDimmingViewConstraints;
     NSLayoutConstraint *_foregroundViewCenteringYConstraint;
+    bool_hasCachedLargestActionDimension;
+    struct CGSize { 
+        double width; 
+        double height; 
+    } _largestActionDimension;
 }
 
 @property UIAlertController * alertController;
@@ -68,6 +73,10 @@
 @property bool cancelActionIsDiscrete;
 @property bool hasBackdropView;
 @property bool alignsToKeyboard;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (bool)_retroactivelyRequiresConstraintBasedLayout;
@@ -79,7 +88,6 @@
 - (long long)layoutOrientation;
 - (void)dealloc;
 - (bool)_actionLayoutIsVertical;
-- (bool)alignsToKeyboard;
 - (void)_applyKeyboardAlignmentViewsConstraints;
 - (void)_reevaluateSuperviewSizingConstraints;
 - (void)_updateVisualAltitude;
@@ -91,6 +99,7 @@
 - (double)_singleLabelTopPixelOffset;
 - (double)_singleLabelPixelOffset;
 - (id)_singleLabelFont;
+- (id)defaultAction;
 - (id)_orderedActionsForCollectionView;
 - (id)_actionsForCollectionView;
 - (bool)_shouldHaveCancelActionInCollectionView;
@@ -102,6 +111,7 @@
 - (double)_bottomLabelScaledValue;
 - (double)_titleTopScaledValue;
 - (double)_titleScaledValue;
+- (bool)alignsToKeyboard;
 - (double)_styleAppropriateVisualAltitude;
 - (id)_messageColor;
 - (id)_titleColor;
@@ -170,12 +180,13 @@
 - (void)_updateLabelFontSizes;
 - (void)setCancelActionIsDiscrete:(bool)arg1;
 - (void)_recomputeAlignedDescriptiveLabelTextWidth;
-- (void)_propertiesChanged;
 - (void)setAlignsToKeyboard:(bool)arg1;
+- (void)_propertiesChanged;
 - (void)setHasBackdropView:(bool)arg1;
 - (void)setHasDimmingView:(bool)arg1;
 - (id)_flowLayout;
 - (void)setAlertController:(id)arg1;
+- (void)_actionsChanged;
 - (double)_contentVerticalInsets;
 - (bool)inPopover;
 - (double)_idealWidth;

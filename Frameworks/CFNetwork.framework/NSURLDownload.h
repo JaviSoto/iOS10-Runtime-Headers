@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSURLRequest, NSData, NSURLDownloadInternal;
+@class NSURLDownloadInternal, NSString, NSData, NSURLRequest;
 
 @interface NSURLDownload : NSObject <NSURLAuthenticationChallengeSender> {
     NSURLDownloadInternal *_internal;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSURLRequest * request;
 @property(copy,readonly) NSData * resumeData;
 @property bool deletesFileUponFailure;
@@ -59,8 +63,8 @@
 - (id)_delegate;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)request;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSDownloadPolicy, NSArray, NSMutableDictionary, SSDownloadMetadata, SSDownloadStatus, NSNumber, SSXPCConnection;
+@class SSDownloadPolicy, NSString, NSArray, NSMutableDictionary, SSDownloadMetadata, SSDownloadStatus, NSNumber, SSXPCConnection;
 
 @interface SSDownload : SSEntity <SSXPCCoding> {
     NSMutableDictionary *_localAssets;
@@ -21,6 +21,10 @@
 @property(copy) SSDownloadMetadata * metadata;
 @property(retain) SSDownloadStatus * status;
 @property(getter=_XPCConnection,readonly) SSXPCConnection * _XPCConnection;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)_setValuesMessage;
 + (long long)_setExternalValuesMessage;

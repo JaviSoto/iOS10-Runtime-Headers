@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLManagedAlbum, PLManagedAsset;
+@class PLManagedAlbum, NSString, PLManagedAsset;
 
 @interface PLAssetToAlbumOrder : PLManagedObject <PLOrderKeyObject> {
     bool_isSpecial;
@@ -12,6 +12,10 @@
 @property(retain) PLManagedAsset * asset;
 @property(retain) PLManagedAlbum * album;
 @property bool isSpecial;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)newAssetOrderForAsset:(id)arg1 album:(id)arg2;
 

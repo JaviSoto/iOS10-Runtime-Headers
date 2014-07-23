@@ -29,9 +29,9 @@
 - (void)insertNodeAtHead:(id)arg1;
 - (void)evictIfNecessary;
 - (void)dropTail;
+- (void)removeNode:(id)arg1;
 - (void)setReservedCapacity:(unsigned long long)arg1 maximumCapacity:(unsigned long long)arg2;
 - (id)initWithReservedCapacity:(unsigned long long)arg1 maximumCapacity:(unsigned long long)arg2;
-- (void)removeNode:(id)arg1;
 - (id)init;
 - (void)setObject:(id)arg1 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;

@@ -67,7 +67,6 @@
 - (void)setGeometriesList:(id)arg1;
 - (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
 - (bool)looksLike:(id)arg1;
-- (double)primaryKeylayoutOffset;
 - (bool)isLetters;
 - (bool)usesAdaptiveKeys;
 - (id)geometriesOrderedByPosition;
@@ -113,6 +112,7 @@
 - (bool)isSameAsTree:(id)arg1;
 - (void)setCache:(id)arg1;
 - (bool)isLeafType;
+- (double)primaryKeylayoutOffset;
 - (bool)dynamicDisplayTypeHint;
 - (void)orderVariantKeys:(bool)arg1;
 - (id)variantPopupBias;

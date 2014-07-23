@@ -2,11 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABSwellTextView;
+@class NSString, ABSwellTextView;
 
 @interface ABMultiCellContentView_Note : ABMultiCellContentView <ABSwellTextViewDelegate> {
     ABSwellTextView *_textView;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)labelTextForPropertyGroup:(id)arg1 info:(id)arg2 styleProvider:(id)arg3;
 + (id)swellTextViewForReuse;

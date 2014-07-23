@@ -37,12 +37,12 @@
 }
 
 + (void)logDebugOnce:(id)arg1 withFormat:(id)arg2;
-+ (void)logNoticeOnce:(id)arg1 withFormat:(id)arg2;
 + (void)logWarnOnce:(id)arg1 withFormat:(id)arg2;
 + (void)logWithLevel:(unsigned char)arg1 logger:(struct LoggerBase<std::__1::shared_ptr<ctu::LogServer> > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned long long x_1_5_1; unsigned long long x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[23]; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned char x2; unsigned char x3; struct shared_ptr<ctu::LogServer> { struct LogServer {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; }*)arg2 format:(id)arg3 argList:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg4;
 + (unsigned char)convertStringToLogLevel:(id)arg1;
-+ (void)logInfoOnce:(id)arg1 withFormat:(id)arg2;
 + (void)logErrorOnce:(id)arg1 withFormat:(id)arg2;
++ (void)logInfoOnce:(id)arg1 withFormat:(id)arg2;
++ (void)logNoticeOnce:(id)arg1 withFormat:(id)arg2;
 
 - (void)logDebug:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;
 - (void)logInfo:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2;

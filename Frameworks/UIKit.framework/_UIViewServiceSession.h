@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class _UIAsyncInvocation, _UIViewServiceDeputyManager, NSXPCConnection, NSObject<OS_dispatch_queue>;
+@class _UIAsyncInvocation, _UIViewServiceDeputyManager, NSXPCConnection, NSObject<OS_dispatch_queue>, NSString;
 
 @interface _UIViewServiceSession : NSObject <NSXPCConnectionDelegate, _UIViewServiceDeputyManagerDelegate, _UIViewServiceViewControllerOperatorDelegate> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -23,6 +23,10 @@
 }
 
 @property(copy) id terminationHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sessionWithConnection:(id)arg1;
 

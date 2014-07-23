@@ -2,11 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class BSMutableSettings;
+@class BSMutableSettings, NSString;
 
 @interface FBSSceneSettingsDiff : NSObject <BSXPCCoding> {
     BSMutableSettings *_changes;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 

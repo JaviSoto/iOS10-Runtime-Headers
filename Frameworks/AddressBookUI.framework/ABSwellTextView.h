@@ -29,6 +29,10 @@
 @property UIColor * textColor;
 @property(retain) UIColor * shadowColor;
 @property struct CGSize { double x1; double x2; } shadowOffset;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)lineHeightWithFont:(id)arg1;
 

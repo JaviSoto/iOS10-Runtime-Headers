@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSObject<OS_xpc_object>;
+@class NSObject<OS_xpc_object>, NSString;
 
 @interface BSBasicServerClient : NSObject <BSXPCServerClient> {
     NSObject<OS_xpc_object> *_connection;
 }
 
 @property(retain) NSObject<OS_xpc_object> * connection;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)wrapperWithConnection:(id)arg1;
 

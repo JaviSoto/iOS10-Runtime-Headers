@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UITableView, UITextLabel, UIView, UIProgressIndicator, UINavigationBar;
+@class UITableView, UITextLabel, NSString, UIView, UIProgressIndicator, UINavigationBar;
 
 @interface MPAlternateTracksViewController : MPAbstractAlternateTracksViewController <UITableViewDataSource, UITableViewDelegate> {
     UIView *_backgroundView;
@@ -11,6 +11,11 @@
     UIProgressIndicator *_progressIndicator;
     UITextLabel *_loadingLabel;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)removeLoadingUI;

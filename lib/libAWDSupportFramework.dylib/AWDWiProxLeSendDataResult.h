@@ -32,6 +32,8 @@
 @property unsigned int result;
 
 
+- (void)setDataLength:(unsigned int)arg1;
+- (bool)hasResult;
 - (id)peerId;
 - (bool)hasPeerId;
 - (void)setPeerId:(id)arg1;
@@ -41,15 +43,13 @@
 - (void)setResultString:(id)arg1;
 - (bool)hasDataLength;
 - (void)setHasDataLength:(bool)arg1;
-- (void)setDataLength:(unsigned int)arg1;
-- (bool)hasResult;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResult:(unsigned int)arg1;
 - (unsigned int)dataLength;
 - (void)setSessionId:(id)arg1;
-- (bool)hasSessionId;
 - (id)sessionId;
+- (bool)hasSessionId;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

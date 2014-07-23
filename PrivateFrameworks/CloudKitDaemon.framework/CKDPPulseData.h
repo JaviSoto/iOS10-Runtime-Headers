@@ -54,6 +54,7 @@
 - (void)setStateTTLMillis:(long long)arg1;
 - (void)setCustomState:(long long)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setLastInvisible:(id)arg1;
 - (id)lastInvisible;
 - (void)setLastCustom:(id)arg1;

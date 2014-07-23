@@ -17,7 +17,6 @@
 @property(retain) NSArray * policies;
 
 
-- (id)policies;
 - (id)propertyPicker;
 - (void)setPolicies:(id)arg1;
 - (double)ab_heightToFitForViewInPopoverView;
@@ -26,6 +25,7 @@
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
+- (id)policies;
 - (struct __CFArray { }*)properties;
 - (void)dealloc;
 - (void)setPerson:(id)arg1;

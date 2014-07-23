@@ -2,60 +2,54 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSString, NSMutableDictionary, NSMutableArray, <SFCompanionServiceManagerProtocol>;
+@class NSString, NSMutableDictionary, <SFCompanionServiceManagerProtocol>, NSObject<OS_dispatch_semaphore>;
 
 @interface SFCompanionManager : NSObject <SFCompanionServiceManagerClient, SFCompanionXPCManagerObserver> {
     NSString *_identifier;
-    NSMutableArray *_serviceTypes;
     <SFCompanionServiceManagerProtocol> *_managerProxy;
     NSString *_deviceID;
     NSString *_deviceIP;
     NSString *_deviceName;
-    NSMutableDictionary *_handlers;
     NSMutableDictionary *_services;
     NSMutableDictionary *_streamHandlers;
     NSObject<OS_dispatch_semaphore> *_managerSemaphore;
 }
 
 @property(copy) NSString * identifier;
-@property(retain) NSMutableArray * serviceTypes;
 @property(retain) <SFCompanionServiceManagerProtocol> * managerProxy;
 @property(copy) NSString * deviceID;
 @property(copy) NSString * deviceIP;
 @property(copy) NSString * deviceName;
-@property(retain) NSMutableDictionary * handlers;
 @property(retain) NSMutableDictionary * services;
 @property(retain) NSMutableDictionary * streamHandlers;
 @property NSObject<OS_dispatch_semaphore> * managerSemaphore;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)serviceManager;
 
 - (void)setManagerSemaphore:(id)arg1;
 - (id)managerSemaphore;
-- (void)setServiceTypes:(id)arg1;
-- (id)serviceTypes;
-- (void)enableServiceWithName:(id)arg1 withConnectionHandler:(id)arg2;
-- (id)enabledServiceNames;
+- (void)setStreamHandlers:(id)arg1;
+- (id)streamHandlers;
 - (id)deviceIP;
-- (id)captureWriteHandle:(id)arg1;
-- (id)captureReadHandle:(id)arg1;
+- (void)streamsFromFileHandle:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setDeviceIP:(id)arg1;
 - (void)setManagerProxy:(id)arg1;
+- (id)serviceForIdentifier:(id)arg1;
 - (id)managerProxy;
 - (void)signalSemaphore;
 - (void)retrieveManagerProxy;
-- (void)streamToService:(id)arg1 withReadHandle:(id)arg2 writeHandle:(id)arg3 acceptReply:(id)arg4;
-- (void)disableServiceWithName:(id)arg1;
-- (void)enableServiceWithName:(id)arg1 connectionHandler:(id)arg2 streamHandler:(id)arg3;
-- (id)companionServiceForType:(id)arg1;
+- (void)streamToService:(id)arg1 withFileHandle:(id)arg2 acceptReply:(id)arg3;
+- (void)disableStreamSupportForIdentifier:(id)arg1;
+- (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(id)arg2;
+- (void)getStreamsForData:(id)arg1 withStreamHandler:(id)arg2;
+- (id)streamDataForIdentifier:(id)arg1;
 - (void)xpcManagerDidInvalidate:(id)arg1;
-- (void)xpcManagerDidResumeConnection:(id)arg1;
 - (void)xpcManagerConnectionInterrupted;
-- (void)setStreamHandlers:(id)arg1;
-- (id)streamHandlers;
 - (id)services;
-- (void)setHandlers:(id)arg1;
-- (id)handlers;
 - (void)setServices:(id)arg1;
 - (void)setDeviceName:(id)arg1;
 - (void)setDeviceID:(id)arg1;

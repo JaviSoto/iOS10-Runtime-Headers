@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLEngineResourceStorage, CPLEngineIDMapping, CPLEngineResourceDownloadQueue, CPLEngineChangePipe, CPLEngineClientCache, NSMutableArray, CPLEngineResourceUploadQueue, CPLEngineLibrary, NSHashTable, CPLEngineTransientRepository, NSObject<OS_dispatch_queue>, CPLPlatformObject, NSArray, CPLEngineCloudCache;
+@class CPLEngineResourceStorage, CPLEngineIDMapping, CPLEngineResourceDownloadQueue, CPLEngineChangePipe, CPLEngineClientCache, NSMutableArray, CPLEngineResourceUploadQueue, CPLEngineLibrary, NSString, NSHashTable, CPLEngineTransientRepository, NSObject<OS_dispatch_queue>, CPLPlatformObject, CPLEngineRemappedDeletes, NSArray, CPLEngineCloudCache;
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent> {
     NSHashTable *_storages;
@@ -20,6 +20,7 @@
     CPLEngineResourceStorage *_resourceStorage;
     CPLEngineResourceDownloadQueue *_downloadQueue;
     CPLEngineResourceUploadQueue *_uploadQueue;
+    CPLEngineRemappedDeletes *_remappedDeletes;
     unsigned long long _state;
 }
 
@@ -33,13 +34,19 @@
 @property(readonly) CPLEngineResourceStorage * resourceStorage;
 @property(readonly) CPLEngineResourceDownloadQueue * downloadQueue;
 @property(readonly) CPLEngineResourceUploadQueue * uploadQueue;
+@property(readonly) CPLEngineRemappedDeletes * remappedDeletes;
 @property unsigned long long state;
 @property(readonly) NSArray * storages;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)stateDescriptionForState:(unsigned long long)arg1;
 + (id)platformImplementationProtocol;
 
+- (id)remappedDeletes;
 - (id)uploadQueue;
 - (id)downloadQueue;
 - (id)resourceStorage;

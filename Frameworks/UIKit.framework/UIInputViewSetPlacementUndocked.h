@@ -14,7 +14,7 @@
 - (double)normalizedOffset;
 - (void)setNormalizedOffset:(double)arg1;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
-- (bool)inputViewWillAppear;
 - (bool)isUndocked;
+- (bool)inputViewWillAppear;
 
 @end

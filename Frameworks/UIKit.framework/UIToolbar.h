@@ -48,6 +48,10 @@
 @property(getter=isCollapsed) bool collapsed;
 @property(getter=_isAdaptiveToolbarDisabled,setter=_setAdaptiveToolbarDisabled:) bool _adaptiveToolbarDisabled;
 @property(setter=_setWantsLetterpressContent:) bool _wantsLetterpressContent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long barPosition;
 
 + (double)defaultSelectionModeHeight;

@@ -21,6 +21,10 @@
     } _has;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool hasEnableTraffic;
 @property bool enableTraffic;
 @property bool hasMapType;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, UITableView, UIDatePicker, NSMutableArray, UIView, SKUIGiftSendDateSection, UIPopoverController, SKUIGiftValidator, SKUIGiftItemView, SKUIGiftValidationResponse, SKUIGiftAddressingSection, NSObject<OS_dispatch_source>, SKUIGiftTermsAndConditionsSection, SKUIGiftAmountSection, NSIndexPath;
+@class UIImage, UITableView, UIDatePicker, NSMutableArray, UIView, SKUIGiftSendDateSection, UIPopoverController, NSString, SKUIGiftValidator, SKUIGiftItemView, SKUIGiftValidationResponse, SKUIGiftAddressingSection, NSObject<OS_dispatch_source>, SKUIGiftTermsAndConditionsSection, SKUIGiftAmountSection, NSIndexPath;
 
 @interface SKUIGiftComposeViewController : SKUIGiftStepViewController <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     SKUIGiftAddressingSection *_addressingSection;
@@ -24,6 +24,11 @@
     NSObject<OS_dispatch_source> *_validationTimer;
     SKUIGiftValidator *_validator;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)tableView:(id)arg1 giftRecipientCell:(id)arg2 presentPeoplePicker:(id)arg3;

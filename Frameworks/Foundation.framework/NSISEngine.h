@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSISVariable, NSMapTable, <NSISEngineDelegate>, NSMutableSet, NSMutableDictionary, NSMutableArray;
+@class NSString, NSMutableDictionary, NSMutableSet, <NSISEngineDelegate>, NSMutableArray, NSMapTable, NSISVariable;
 
 @interface NSISEngine : NSObject <NSISVariableDelegate> {
     NSMapTable *_rows;
@@ -51,6 +51,10 @@
 @property(retain) NSMutableArray * variablesWithValueRestrictionViolations;
 @property(retain) NSMutableSet * variablesWithIntegralizationViolations;
 @property struct __CFDictionary { }* integralizationAdjustmentsForConstraintMarkers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)init;

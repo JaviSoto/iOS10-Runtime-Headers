@@ -78,6 +78,7 @@
 - (void)setHasFillColor:(bool)arg1;
 - (bool)hasFillColor;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setFillColor:(unsigned int)arg1;

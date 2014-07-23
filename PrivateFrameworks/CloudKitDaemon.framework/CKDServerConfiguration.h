@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableDictionary, NSDate;
+@class NSString, NSMutableDictionary, NSDate;
 
 @interface CKDServerConfiguration : NSObject <CKPropertyCoding> {
     NSDate *_expiry;
@@ -13,15 +13,18 @@
 @property(retain) NSDate * expiry;
 @property(retain) NSMutableDictionary * values;
 @property(retain) NSMutableDictionary * allowedAppVersionsCache;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)tokenRegisterDaysForContainer:(id)arg1;
 - (id)mescalSessionURLForContainer:(id)arg1;
 - (unsigned int)mescalServerVersionForContainer:(id)arg1;
-- (id)urlForOperationType:(int)arg1 forContainer:(id)arg2;
+- (id)valueForKeyPath:(id)arg1 forContainer:(id)arg2;
 - (void)setAllowedAppVersionsCache:(id)arg1;
 - (id)allowedAppVersionsCache;
-- (id)valueForKeyPath:(id)arg1 forContainer:(id)arg2;
 - (void)setExpiry:(id)arg1;
 - (id)initWithValues:(id)arg1;
 - (id)mescalCertURLForContainer:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIViewControllerTransitionContext, NSMutableArray;
+@class _UIViewControllerTransitionContext, NSMutableArray, NSString;
 
 @interface _UIViewControllerTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
     _UIViewControllerTransitionContext *__mainContext;
@@ -17,6 +17,10 @@
 @property(setter=_setAlongsideAnimationViews:,retain) NSMutableArray * _alongsideAnimationViews;
 @property(setter=_setAlongsideCompletions:,retain) NSMutableArray * _alongsideCompletions;
 @property(setter=_setInteractiveChangeHandlers:,retain) NSMutableArray * _interactiveChangeHandlers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isCancelled;
@@ -32,11 +36,11 @@
 - (void)_setAlongsideCompletions:(id)arg1;
 - (id)initWithMainContext:(id)arg1;
 - (id)_alongsideCompletions;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (double)completionVelocity;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id)arg2;
 - (id)_alongsideCompletions:(bool)arg1;
 - (id)_alongsideAnimations:(bool)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (bool)initiallyInteractive;
 - (id)_mainContext;
 - (void)notifyWhenInteractionEndsUsingBlock:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSError, <CPLLibraryManagerDelegate>, NSString, CPLChangeSession, NSURL, CPLConfiguration, NSObject<OS_dispatch_queue>, CPLPlatformObject, <CPLResourceProgressDelegate>;
+@class NSError, NSString, NSURL, CPLChangeSession, <CPLLibraryManagerDelegate>, CPLConfiguration, NSObject<OS_dispatch_queue>, CPLStatus, CPLPlatformObject, <CPLResourceProgressDelegate>;
 
 @interface CPLLibraryManager : NSObject <CPLAbstractObject> {
     CPLChangeSession *_currentSession;
@@ -10,7 +10,9 @@
     NSObject<OS_dispatch_queue> *_sessionLock;
     bool_sizeOfResourcesToUploadIsSet;
     long long _configurationOnce;
+    long long _statusOnce;
     CPLConfiguration *_configuration;
+    CPLStatus *_syncStatus;
     CPLPlatformObject *_platformObject;
     NSURL *_clientLibraryBaseURL;
     NSURL *_cloudLibraryStateStorageURL;
@@ -36,12 +38,17 @@
 @property <CPLLibraryManagerDelegate> * delegate;
 @property <CPLResourceProgressDelegate> * resourceProgressDelegate;
 @property(readonly) CPLConfiguration * configuration;
+@property(readonly) CPLStatus * syncStatus;
+@property bool diagnosticsEnabled;
 @property(readonly) unsigned long long status;
 @property(readonly) NSError * statusError;
-@property bool diagnosticsEnabled;
 @property unsigned long long state;
 @property(copy) NSString * userOverride;
 @property(copy) NSString * effectiveClientBundleIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (void)useCloudPhotoDaemonImplementation;
@@ -65,6 +72,7 @@
 - (bool)_setStatus:(unsigned long long)arg1 andError:(id)arg2;
 - (void)getLocalIdentifiersForCloudIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)getCloudIdentifiersForLocalIdentifiers:(id)arg1 completionHandler:(id)arg2;
+- (id)syncStatus;
 - (id)initForManagement;
 - (void)addInfoToLog:(id)arg1;
 - (void)resetCacheWithOption:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -92,6 +100,7 @@
 - (void)disableSynchronizationWithReason:(id)arg1;
 - (void)noteClientIsInBackground;
 - (void)noteClientIsInForeground;
+- (void)_statusDidChange;
 - (id)libraryIdentifier;
 - (id)libraryVersion;
 - (unsigned long long)sizeOfResourcesToUpload;

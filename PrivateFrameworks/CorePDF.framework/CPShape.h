@@ -56,6 +56,7 @@
 - (void)addShape:(id)arg1;
 - (id)initWithPDFShape:(struct CPPDFShape { struct CPPDFObject { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CPPDFStyle {} *x3; int x4; struct CGPath {} *x5; boolx6; struct CGAffineTransform { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; double x_7_1_5; double x_7_1_6; } x7; struct CGAffineTransform { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; double x_8_1_5; double x_8_1_6; } x8; }*)arg1;
 - (bool)isVisible;
+- (struct CGPath { }*)path;
 - (id)attributes;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (double)miterLimit;
@@ -68,7 +69,6 @@
 - (id)init;
 - (id)string;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
 - (void)finalize;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

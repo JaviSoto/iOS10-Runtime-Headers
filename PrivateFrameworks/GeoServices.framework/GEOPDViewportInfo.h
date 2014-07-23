@@ -24,9 +24,9 @@
 + (id)viewportInfoForTraits:(id)arg1;
 
 - (int)mapMode;
-- (void)setMapMode:(int)arg1;
 - (bool)hasMapMode;
 - (void)setHasMapMode:(bool)arg1;
+- (void)setMapMode:(int)arg1;
 - (unsigned int)timeSinceMapViewportChanged;
 - (bool)hasTimeSinceMapViewportChanged;
 - (void)setHasTimeSinceMapViewportChanged:(bool)arg1;

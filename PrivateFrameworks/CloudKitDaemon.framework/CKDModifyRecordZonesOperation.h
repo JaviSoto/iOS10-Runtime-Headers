@@ -58,12 +58,12 @@
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)setRecordZonesByZoneID:(id)arg1;
 - (id)recordZonesByZoneID;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (id)recordZoneIDsToDelete;
 - (void)setRecordZonesToSave:(id)arg1;
 - (id)recordZonesToSave;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

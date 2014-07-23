@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <BSWatchdogDelegate>, BSTimer, NSObject<OS_dispatch_queue>, <BSWatchdogProviding>;
+@class <BSWatchdogDelegate>, BSTimer, NSObject<OS_dispatch_queue>, NSDate, <BSWatchdogProviding>;
 
 @interface BSWatchdog : NSObject  {
     <BSWatchdogDelegate> *_delegate;
@@ -19,17 +19,23 @@
   /* Error parsing encoded ivar type info: @? */
     id _completion;
 
+    NSDate *_startDate;
     bool_invalidated;
     bool_completed;
+    bool_hasFired;
 }
 
 @property(retain) <BSWatchdogDelegate> * delegate;
 @property(retain,readonly) <BSWatchdogProviding> * provider;
 @property(retain,readonly) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) double timeout;
+@property(retain,readonly) NSDate * startDate;
+@property(getter=hasFired,readonly) bool fired;
 
 
 - (double)timeout;
+- (id)startDate;
+- (bool)hasFired;
 - (id)provider;
 - (id)initWithTimeout:(double)arg1 queue:(id)arg2;
 - (id)initWithProvider:(id)arg1 queue:(id)arg2;

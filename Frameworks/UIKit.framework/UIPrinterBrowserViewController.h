@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, PKPrinterBrowser, <UIPrinterBrowserOwner>, UIPrinterSearchingView, NSMutableArray, PKPrinter;
+@class NSString, NSArray, <UIPrinterBrowserOwner>, PKPrinterBrowser, UIPrinterSearchingView, NSMutableArray, PKPrinter;
 
 @interface UIPrinterBrowserViewController : UITableViewController <PKPrinterBrowserDelegate> {
     <UIPrinterBrowserOwner> *_ownerPanelViewController;
@@ -20,6 +20,10 @@
 }
 
 @property double maximumPopoverHeight;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)addPrinter:(id)arg1 moreComing:(bool)arg2;

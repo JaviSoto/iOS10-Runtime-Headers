@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonPickersDelegate, ABStyleProvider, UIDatePicker, ABPersonTableViewDataSource;
+@class ABPersonPickersDelegate, NSString, ABStyleProvider, UIDatePicker, ABPersonTableViewDataSource;
 
 @interface ABPersonTableViewMultiCellDelegate : NSObject <ABMultiCellContentViewUpdateDelegate, ABPersonTableHeaderViewDelegate, ABDatePickerViewControllerDismissDelegate> {
     UIDatePicker *_datePicker;
@@ -14,6 +14,10 @@
 @property(retain) ABStyleProvider * styleProvider;
 @property ABPersonTableViewDataSource * dataSource;
 @property ABPersonPickersDelegate * pickersDelegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_tableView:(id)arg1 isValidIndexPath:(id)arg2;

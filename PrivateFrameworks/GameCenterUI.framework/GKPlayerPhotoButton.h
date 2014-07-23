@@ -2,12 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKPlayer;
+@class NSString, GKPlayer;
 
 @interface GKPlayerPhotoButton : GKRoundButton <GKPlayerPhotoContainer> {
     GKPlayer *_player;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) GKPlayer * player;
 
 

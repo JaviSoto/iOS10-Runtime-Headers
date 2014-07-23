@@ -35,6 +35,10 @@
 @property(readonly) bool hasCompletedIndexing;
 @property(readonly) NSArray * rootEntries;
 @property(retain) PSSearchOperation * activeSearchOperation;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) long long observerType;
 
 + (id)sharedInstance;

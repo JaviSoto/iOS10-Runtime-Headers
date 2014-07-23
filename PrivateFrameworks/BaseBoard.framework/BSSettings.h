@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class <BSSettingDescriptionProvider>, NSMapTable;
+@class <BSSettingDescriptionProvider>, NSMapTable, NSString;
 
 @interface BSSettings : NSObject <NSCopying, NSMutableCopying, BSXPCCoding> {
     <BSSettingDescriptionProvider> *_descriptionProvider;
@@ -11,8 +11,13 @@
 }
 
 @property <BSSettingDescriptionProvider> * descriptionProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
+- (bool)boolForSetting:(unsigned long long)arg1;
 - (id)descriptionProvider;
 - (void)_applyToSettings:(id)arg1;
 - (id)_newMapTable;
@@ -39,6 +44,5 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)boolForSetting:(unsigned long long)arg1;
 
 @end

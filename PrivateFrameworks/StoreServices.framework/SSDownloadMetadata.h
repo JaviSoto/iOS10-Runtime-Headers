@@ -55,6 +55,10 @@
 @property(retain) NSString * sortCollectionName;
 @property(retain) NSString * sortTitle;
 @property(retain) NSArray * sinfs;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)isContentRestricted;

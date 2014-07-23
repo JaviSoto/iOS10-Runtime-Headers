@@ -13,6 +13,8 @@
 
 - (void)disconnectFromPeer:(id)arg1;
 - (void)connectToPeer:(id)arg1;
+- (void)stopTrackingPeer:(id)arg1;
+- (void)startTrackingPeer:(id)arg1;
 - (void)stopScanningForType:(long long)arg1;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;

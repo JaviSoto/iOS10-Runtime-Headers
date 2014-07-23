@@ -53,6 +53,10 @@
 @property long long maximumDisplayCount;
 @property(getter=isDisplayable,readonly) bool displayable;
 @property(readonly) bool allowsBioAuthorization;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (long long)displayCountForKey:(id)arg1;
 + (id)ITunesStoreNotAvailableDialog;

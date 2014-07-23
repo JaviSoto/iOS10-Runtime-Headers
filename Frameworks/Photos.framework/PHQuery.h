@@ -5,7 +5,9 @@
 @class NSString, PHFetchOptions, NSPredicate, PHPhotoLibrary, NSFetchRequest, NSManagedObjectID;
 
 @interface PHQuery : NSObject <NSCopying> {
+    NSPredicate *_cachedFetchOptionsPredicate;
     NSPredicate *_basePredicate;
+    NSPredicate *_filterPredicate;
     NSFetchRequest *_fetchRequest;
     long long _collectionFetchType;
     NSManagedObjectID *_containerIdentifier;
@@ -20,6 +22,7 @@
 @property(readonly) NSString * fetchType;
 @property(readonly) NSFetchRequest * fetchRequest;
 @property(readonly) NSPredicate * basePredicate;
+@property(readonly) NSPredicate * filterPredicate;
 @property(readonly) PHPhotoLibrary * photoLibrary;
 @property(setter=_setIncludesTrashedObjects:) bool _includesTrashedObjects;
 @property(setter=_setIncludesCameraRoll:) bool _includesCameraRoll;
@@ -29,12 +32,16 @@
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
 + (id)queryForAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)_rootFolderID;
++ (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 phClass:(Class)arg2;
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)defaultSortDescriptorForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)queryForAssetsWithOptions:(id)arg1;
++ (id)queryForTertiaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
++ (id)queryForSecondaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
++ (id)queryForCustomKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithBurstIdentifier:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
@@ -70,6 +77,7 @@
 - (long long)collectionFetchType;
 - (id)executeQuery;
 - (void)setFetchOptions:(id)arg1;
+- (id)filterPredicate;
 - (id)photoLibrary;
 - (id)fetchType;
 - (id)containerIdentifier;

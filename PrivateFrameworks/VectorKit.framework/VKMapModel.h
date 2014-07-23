@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKRasterTrafficMapModel, VKDebugModel, VKLabelMarker, NSMutableSet, NSMutableArray, VKRiverMapModel, VKStyleManager, VKSkyModel, <VKMapModelDelegate>, VKTrafficTileSource, VKRasterMapModel, VKSharedResources, GEOFeatureStyleAttributes, VKRasterOverlayTileSource, VKRasterOverlayMapModel, NSMapTable, VKOverlayTileSource, VKBuildingFootprintMapModel, VKPolylineOverlay, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKAnnotationModel, VKTileProvider, VKMapRasterizer, NSLocale, VKAnimation, <GEORoutePreloadSession>, <VKMapModeObserver>, <VKRouteMatchedAnnotationPresentation>, VKLabelModel, NSArray, VKHybridRasterMapModel, <VKOverlayContainerRouteDelegate>, VKGridModel, VKRealisticMapModel, VKRoadTrafficMapModel, VKAnnotationMarker, VKPolygonMapModel, NSSet, VKPolylineOverlayPainter, VKRoadMapModel;
+@class VKRasterTrafficMapModel, VKDebugModel, VKLabelMarker, NSMutableSet, NSMutableArray, VKRiverMapModel, VKStyleManager, VKSkyModel, <VKMapModelDelegate>, VKTrafficTileSource, VKRasterMapModel, VKSharedResources, GEOFeatureStyleAttributes, VKRasterOverlayTileSource, VKRasterOverlayMapModel, NSMapTable, VKOverlayTileSource, VKBuildingFootprintMapModel, VKPolylineOverlay, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKAnnotationModel, VKTileProvider, VKMapRasterizer, NSLocale, VKAnimation, <GEORoutePreloadSession>, <VKMapModeObserver>, <VKRouteMatchedAnnotationPresentation>, VKLabelModel, NSArray, VKHybridRasterMapModel, <VKOverlayContainerRouteDelegate>, NSString, VKGridModel, VKRealisticMapModel, VKRoadTrafficMapModel, VKAnnotationMarker, VKPolygonMapModel, NSSet, VKPolylineOverlayPainter, VKRoadMapModel;
 
 @interface VKMapModel : VKModelObject <VKOverlayContainerDelegate, VKLabelModelDelegate, GEOResourceManifestTileGroupObserver, VKTileProviderClient, VKPolylineGroupOverlayObserver> {
     unsigned long long _mapPurpose;
@@ -172,6 +172,10 @@
 @property(readonly) NSArray * visibleTileSets;
 @property <VKOverlayContainerRouteDelegate> * overlayContainerRouteDelegate;
 @property float navigationPuckSize;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (unsigned long long)numberOfRoadClasses;
 + (const char *)nameForRoadClass:(int)arg1;

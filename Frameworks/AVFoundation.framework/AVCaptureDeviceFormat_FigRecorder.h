@@ -20,7 +20,6 @@
 + (id)deviceFormatWithDictionary:(id)arg1;
 + (void)initialize;
 
-- (double)videoZoomFactorUpscaleThreshold;
 - (struct { int x1; int x2; })sensorDimensions;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
 - (int)visCompanionSupportedFormatsArrayIndex;
@@ -40,6 +39,7 @@
 - (bool)supportsLowLightBoost;
 - (id)_stringForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 frameRateRanges:(id)arg2;
 - (bool)isExperimental;
+- (double)videoZoomFactorUpscaleThreshold;
 - (int)supportedStabilizationMethod;
 - (bool)isVideoBinned;
 - (float)videoFieldOfView;

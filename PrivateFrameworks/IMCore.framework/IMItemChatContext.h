@@ -10,6 +10,8 @@
 }
 
 
+- (id)subject;
+- (id)sender;
 - (void)dealloc;
 
 @end

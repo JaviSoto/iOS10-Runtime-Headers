@@ -33,6 +33,7 @@
     NSMutableDictionary *_recordErrors;
     NSDictionary *_desiredPackageFileIndices;
     NSDictionary *_recordIDsToVersionETags;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 @property(copy) NSArray * recordIDs;
@@ -47,12 +48,15 @@
 @property(copy) NSDictionary * desiredPackageFileIndices;
 @property bool isFetchCurrentUserOperation;
 @property(retain) NSDictionary * recordIDsToVersionETags;
+@property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 + (id)fetchCurrentUserRecordOperation;
 
 - (void)setRecordIDsToRecords:(id)arg1;
 - (id)recordIDsToRecords;
 - (id)fetchRecordsCompletionBlock;
+- (void)setWebSharingIdentityDataByRecordID:(id)arg1;
+- (id)webSharingIdentityDataByRecordID;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (void)setDesiredPackageFileIndices:(id)arg1;
@@ -65,14 +69,14 @@
 - (void)setPerRecordProgressBlock:(id)arg1;
 - (id)perRecordCompletionBlock;
 - (id)perRecordProgressBlock;
-- (void)setRecordErrors:(id)arg1;
 - (id)initWithRecordIDs:(id)arg1;
-- (id)recordErrors;
 - (void)setRecordIDs:(id)arg1;
 - (id)recordIDs;
 - (void)setShouldFetchAssetContent:(bool)arg1;
 - (bool)shouldFetchAssetContent;
 - (id)desiredKeys;
+- (void)setRecordErrors:(id)arg1;
+- (id)recordErrors;
 - (void)setFetchRecordsCompletionBlock:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;

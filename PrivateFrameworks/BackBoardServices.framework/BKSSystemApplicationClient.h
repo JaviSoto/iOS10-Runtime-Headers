@@ -21,6 +21,7 @@
 - (void)_queue_handleWatchdogPing:(id)arg1;
 - (void)_sendMessageOfType:(long long)arg1 packer:(id)arg2;
 - (void)_sendMessageOfType:(long long)arg1 packer:(id)arg2 replyHandler:(id)arg3 waitForReply:(bool)arg4 waitDuration:(unsigned long long)arg5;
+- (void)sendActions:(id)arg1;
 - (void)restart;
 - (void)checkIn;
 - (id)initWithCalloutQueue:(id)arg1;

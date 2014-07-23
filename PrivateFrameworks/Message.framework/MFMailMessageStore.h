@@ -28,18 +28,17 @@
     MFActivityMonitor *_openMonitor;
 }
 
++ (Class)classForMimePart;
++ (Class)headersClass;
 + (unsigned long long)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(bool)arg3 deleteOriginals:(bool)arg4 isDeletion:(bool)arg5 unsuccessfulOnes:(id)arg6;
 + (unsigned long long)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(bool)arg3 deleteOriginals:(bool)arg4 isDeletion:(bool)arg5 unsuccessfulOnes:(id)arg6 newMessages:(id)arg7;
 + (bool)storeAtPathIsWritable:(id)arg1;
 + (bool)createEmptyStoreIfNeededForPath:(id)arg1;
 + (bool)createEmptyStoreForPath:(id)arg1;
-+ (Class)classForMimePart;
-+ (Class)headersClass;
 
-- (long long)fetchMobileSynchronously:(unsigned long long)arg1;
-- (bool)setPreferredEncoding:(unsigned int)arg1 forMessage:(id)arg2;
-- (void)structureDidChange;
-- (unsigned long long)growFetchWindow;
+- (id)_setOrGetBody:(id)arg1 forMessage:(id)arg2 updateFlags:(bool)arg3;
+- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
+- (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(bool)arg2;
 - (void)updateMessages:(id)arg1 updateNumberOfAttachments:(bool)arg2;
 - (void)_rebuildTableOfContentsSynchronously;
 - (int)archiveDestination;
@@ -52,6 +51,8 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (bool)shouldDownloadBodyDataForMessage:(id)arg1;
 - (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(bool)arg3;
+- (bool)setPreferredEncoding:(unsigned int)arg1 forMessage:(id)arg2;
+- (long long)fetchMobileSynchronously:(unsigned long long)arg1;
 - (void)setFlagForAllMessages:(id)arg1 state:(bool)arg2;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
 - (id)willSetFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
@@ -62,6 +63,7 @@
 - (id)messageForRemoteID:(id)arg1;
 - (bool)allowsAppend;
 - (void)messagesWereDeleted:(id)arg1;
+- (void)undeleteMessages:(id)arg1;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(bool)arg2;
 - (void)doCompact;
 - (bool)canCompact;
@@ -83,6 +85,7 @@
 - (bool)hasMessageForAccount:(id)arg1;
 - (unsigned long long)unreadCountMatchingCriterion:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned long long)arg1 keepingMessage:(id)arg2;
+- (unsigned long long)growFetchWindow;
 - (void)invalidateFetchWindow;
 - (bool)shouldGrowFetchWindow;
 - (unsigned long long)serverUnreadCount;
@@ -90,6 +93,7 @@
 - (void)messagesWillBeCompacted:(id)arg1;
 - (void)messagesWereCompacted:(id)arg1;
 - (void)messagesWereAdded:(id)arg1;
+- (void)structureDidChange;
 - (void)allMessageFlagsDidChange:(id)arg1;
 - (bool)isDrafts;
 - (id)storePathRelativeToAccount;
@@ -134,10 +138,6 @@
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)updateUserInfoToLatestValues;
 - (void)openSynchronously;
-- (void)undeleteMessages:(id)arg1;
-- (id)_setOrGetBody:(id)arg1 forMessage:(id)arg2 updateFlags:(bool)arg3;
-- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
-- (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(bool)arg2;
 - (void)setLibrary:(id)arg1;
 - (bool)isReadOnly;
 - (id)account;

@@ -3,17 +3,13 @@
  */
 
 @interface CKModifyBadgeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    bool_thisDeviceOnly;
     unsigned long long _badgeValue;
 }
 
 @property unsigned long long badgeValue;
-@property bool thisDeviceOnly;
 
 + (bool)supportsSecureCoding;
 
-- (void)setThisDeviceOnly:(bool)arg1;
-- (bool)thisDeviceOnly;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)badgeValue;

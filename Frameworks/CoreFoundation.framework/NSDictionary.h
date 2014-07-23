@@ -12,6 +12,10 @@
 @interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * title;
 @property(readonly) NSString * bundleId;
 @property(readonly) NSString * creator;
@@ -106,10 +110,10 @@
 - (id)keysSortedByValueUsingComparator:(id)arg1;
 - (id)allKeysForObject:(id)arg1;
 - (id)descriptionInStringsFileFormat;
+- (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
 - (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
 - (id)_stringToWrite;
 - (Class)classForCoder;
@@ -187,33 +191,17 @@
 - (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)ML3StringForKey:(id)arg1;
 - (id)_placeOrCurrentLocation:(bool*)arg1;
-- (id)_mapItemForCurrentLocation:(bool*)arg1;
 - (id)_geo_newXPCObject;
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)CDVMergeOverrideDictionary:(id)arg1;
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)filteredDictionaryPassingTest:(id)arg1;
-- (bool)CalHasKeyIn:(id)arg1;
-- (id)mutableCopyWithElementsCopy;
-- (id)CalMutableRecursiveCopy;
-- (id)_FTFilteredDictionaryForAPS;
-- (id)gksDeepMutableCopy;
-- (id)deepCopy;
 - (bool)writeToProtectedFile:(id)arg1 atomically:(bool)arg2;
-- (id)_gkValuesForKeys:(id)arg1;
-- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
-- (id)_gkSubDictionaryWithKeys:(id)arg1;
-- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
-- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
-- (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2;
-- (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2 foundSize:(out unsigned long long*)arg3;
 - (id)DAObjectForKeyCaseInsensitive:(id)arg1;
 - (id)DAMergeOverrideDictionary:(id)arg1;
 - (int)mf_integerForKey:(id)arg1;
 - (bool)mf_boolForKey:(id)arg1;
 - (long long)abCompare:(id)arg1;
-- (id)mf_filterUsingMap:(id)arg1 inverse:(bool)arg2;
 - (bool)isOfficialApp;
 - (id)transitModeKeys;
 - (id)bestImageURLForWidth:(double)arg1;
@@ -230,6 +218,21 @@
 - (id)bundleId;
 - (id)categories;
 - (bool)_mapkit_writeBinaryPlist:(id)arg1 atomically:(bool)arg2;
+- (id)filteredDictionaryPassingTest:(id)arg1;
+- (bool)CalHasKeyIn:(id)arg1;
+- (id)mutableCopyWithElementsCopy;
+- (id)CalMutableRecursiveCopy;
+- (id)_FTFilteredDictionaryForAPS;
+- (id)gksDeepMutableCopy;
+- (id)deepCopy;
+- (id)_gkValuesForKeys:(id)arg1;
+- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
+- (id)_gkSubDictionaryWithKeys:(id)arg1;
+- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
+- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
+- (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2;
+- (id)_gkImageURLForSize:(long long)arg1 scale:(double)arg2 foundSize:(out unsigned long long*)arg3;
+- (id)mf_filterUsingMap:(id)arg1 inverse:(bool)arg2;
 - (id)SCNMutableDeepCopy;
 - (id)MSDeepCopy;
 - (id)MSMutableDeepCopy;
@@ -277,6 +280,7 @@
 - (id)PKArrayForKey:(id)arg1;
 - (id)PKNumberForKey:(id)arg1;
 - (id)PKStringForKey:(id)arg1;
+- (bool)writeToFile:(id)arg1 atomically:(bool)arg2 withFileProtectionLevel:(id)arg3;
 - (id)scriptEntry;
 - (id)scriptPath;
 - (SEL)testSelector;

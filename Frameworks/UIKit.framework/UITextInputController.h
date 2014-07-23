@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, UITextPosition, UITextInputTraits, UIView<UITextInputPrivate>, UITextChecker, UIView<UITextInput>, UITextRange, _UITextKitTextRange, NSArray, _UITextUndoOperationTyping, _UITextServiceSession, UIView, <UITextInputControllerDelegate>, _UITextUndoManager, <UITextInputTokenizer>, _UITextInputControllerTokenizer, <UITextInputDelegate>, UIResponder<UITextInput>, NSLayoutManager, NSHashTable;
+@class NSDictionary, UITextPosition, UITextInputTraits, UIView<UITextInputPrivate>, UITextChecker, UIView<UITextInput>, UITextRange, NSString, _UITextKitTextRange, NSArray, _UITextUndoOperationTyping, _UITextServiceSession, UIView, <UITextInputControllerDelegate>, _UITextUndoManager, <UITextInputTokenizer>, _UITextInputControllerTokenizer, <UITextInputDelegate>, UIResponder<UITextInput>, NSLayoutManager, NSHashTable;
 
 @interface UITextInputController : NSObject <UITextInput_Internal, UITextInput, UITextInputAdditions> {
     <UITextInputDelegate> *_inputDelegate;
@@ -35,6 +35,7 @@
         unsigned int textOrSelectionChangeOriginatesWithMarkedText : 1; 
         unsigned int nextSelectionChangeMustUpdate : 1; 
         unsigned int hasTextAlternatives : 1; 
+        unsigned int suppressDelegateChangeNotifications : 1; 
     } _tiFlags;
     NSArray *_extraItemsBeforeTextStyleOptions;
     UIView<UITextInput> *_firstTextView;
@@ -62,6 +63,10 @@
 @property bool continuousSpellCheckingEnabled;
 @property struct _NSRange { unsigned long long x1; unsigned long long x2; } previousSelectedRange;
 @property(getter=_emptyStringAttributes,setter=_setEmptyStringAttributes:,copy) NSDictionary * emptyStringAttributes;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -324,6 +329,7 @@
 - (id)interactionAssistant;
 - (void)_textStorageDidProcessEditing:(id)arg1;
 - (id)initWithLayoutManager:(id)arg1;
+- (void)_performWhileSuppressingDelegateNotifications:(id)arg1;
 - (id)_parentScrollView;
 - (bool)_isDisplayingShortcutViewController;
 - (void)decreaseSize:(id)arg1;

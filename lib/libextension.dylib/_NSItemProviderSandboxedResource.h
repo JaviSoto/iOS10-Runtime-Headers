@@ -2,20 +2,28 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/usr/lib/libextension.dylib
  */
 
-@class NSData;
+@class NSURL, NSData;
 
 @interface _NSItemProviderSandboxedResource : NSObject <NSSecureCoding, NSCopying> {
-    NSData *_bookmarkData;
+    bool_accessingSecurityScopedResource;
+    NSURL *_resourceURL;
+    NSData *_sandboxExtensionToken;
 }
 
-@property(copy) NSData * bookmarkData;
+@property(copy) NSURL * resourceURL;
+@property(copy) NSData * sandboxExtensionToken;
+@property(getter=isAccessingSecurityScopedResource) bool accessingSecurityScopedResource;
 
 + (bool)supportsSecureCoding;
 
-- (id)bookmarkData;
-- (void)setBookmarkData:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (id)resolveURLAndReturnError:(id*)arg1;
+- (id)sandboxExtensionToken;
+- (void)setAccessingSecurityScopedResource:(bool)arg1;
+- (bool)isAccessingSecurityScopedResource;
+- (void)setSandboxExtensionToken:(id)arg1;
+- (void)setResourceURL:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
+- (id)resourceURL;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

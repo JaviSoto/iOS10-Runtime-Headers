@@ -25,6 +25,10 @@
 @property(retain) UIView * inputAccessoryView;
 @property bool clearsOnInsertion;
 @property(getter=isEditing) bool editing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -178,6 +182,7 @@
 - (bool)canResignFirstResponder;
 - (void)selectAll;
 - (void)setSelectionAffinity:(long long)arg1;
+- (id)textStylingAtPosition:(id)arg1 inDirection:(long long)arg2;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
 - (id)metadataDictionariesForDictationResults;

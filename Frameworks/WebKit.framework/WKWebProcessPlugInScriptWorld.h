@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WKWebProcessPlugInScriptWorld : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleScriptWorld> { 
         struct type { 
@@ -16,6 +18,10 @@
 }
 
 @property(readonly) struct InjectedBundleScriptWorld { int (**x1)(); id x2; struct RefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x_3_1_1; } x3; }* _scriptWorld;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 + (id)normalWorld;

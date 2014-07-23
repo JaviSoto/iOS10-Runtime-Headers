@@ -30,12 +30,12 @@
 
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setParentSectionID:(id)arg1;
-- (id)sourceApplicationSecondaryIdentifier;
 - (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (long long)usesBackgroundSessionOverride;
 - (void)setOperationID:(id)arg1;
 - (id)parentSectionID;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)operationID;
 - (id)parentOperation;
 - (void)setParentOperation:(id)arg1;

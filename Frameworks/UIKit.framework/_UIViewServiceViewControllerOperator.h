@@ -32,10 +32,20 @@
     _UIViewServiceDummyPopoverController *_dummyPopoverController;
     unsigned long long _supportedOrientations;
     bool_canShowTextServices;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    } _localViewControllerRequestedInsets;
     <_UIViewServiceViewControllerOperatorDelegate> *_delegate;
 }
 
 @property <_UIViewServiceViewControllerOperatorDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)XPCInterface;
 + (id)operatorWithRemoteViewControllerProxy:(id)arg1 hostPID:(int)arg2 hostBundleID:(id)arg3 hostAuditToken:(struct { unsigned int x1[8]; })arg4;
@@ -101,7 +111,7 @@
 - (void)__hostDidChangeStatusBarOrientationToInterfaceOrientation:(long long)arg1;
 - (void)_firstResponderDidChange:(id)arg1;
 - (void)__hostReadyToReceiveMessagesFromServiceViewController;
-- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 appearanceSerializedRepresentations:(id)arg3 legacyAppearance:(bool)arg4 hostAccessibilityServerPort:(id)arg5 canShowTextServices:(bool)arg6 replyHandler:(id)arg7;
+- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 screenDisplayIds:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(bool)arg5 hostAccessibilityServerPort:(id)arg6 canShowTextServices:(bool)arg7 replyHandler:(id)arg8;
 - (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)establishViewControllerDeputyWithProxy:(id)arg1 completionHandler:(id)arg2;
 - (void)addDeputyRotationDelegate:(id)arg1;
@@ -119,7 +129,9 @@
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (bool)shouldAutomaticallyForwardRotationMethods;
 - (void)viewDidLoad;
+- (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;
 - (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
 - (struct CGSize { double x1; double x2; })preferredContentSize;

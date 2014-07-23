@@ -26,15 +26,15 @@
 @property unsigned int dataLength;
 
 
+- (void)setDataLength:(unsigned int)arg1;
 - (bool)hasDataLength;
 - (void)setHasDataLength:(bool)arg1;
-- (void)setDataLength:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (unsigned int)dataLength;
 - (void)setSessionId:(id)arg1;
-- (bool)hasSessionId;
 - (id)sessionId;
+- (bool)hasSessionId;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;

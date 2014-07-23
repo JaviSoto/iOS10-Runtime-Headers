@@ -2,6 +2,8 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
+@class NSString;
+
 @interface FBSContext : NSObject <BSXPCCoding> {
     unsigned int _identifier;
     double _level;
@@ -9,6 +11,10 @@
 
 @property(readonly) unsigned int identifier;
 @property(readonly) double level;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)contextWithSceneContext:(id)arg1;
 

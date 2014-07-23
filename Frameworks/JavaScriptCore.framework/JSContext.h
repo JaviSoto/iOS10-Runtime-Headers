@@ -42,6 +42,8 @@
 - (bool)boolFromNotifyException:(struct OpaqueJSValue { }*)arg1;
 - (id)initWithGlobalContextRef:(struct OpaqueJSContext { }*)arg1;
 - (void)notifyException:(struct OpaqueJSValue { }*)arg1;
+- (void)_setDebuggerRunLoop:(struct __CFRunLoop { }*)arg1;
+- (struct __CFRunLoop { }*)_debuggerRunLoop;
 - (void)_setIncludesNativeCallStackWhenReportingExceptions:(bool)arg1;
 - (bool)_includesNativeCallStackWhenReportingExceptions;
 - (void)_setRemoteInspectionEnabled:(bool)arg1;

@@ -47,11 +47,11 @@
 - (id)otherButton;
 - (void)setOtherButton:(id)arg1;
 - (id)_createButton:(bool)arg1;
-- (id)messageFont;
 - (void)_createMessageLabelIfNeeded;
 - (id)_createConnectionButtonWithType:(unsigned long long)arg1;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
+- (id)messageFont;
 - (id)icon;
 - (void)setMessage:(id)arg1;
 - (id)message;

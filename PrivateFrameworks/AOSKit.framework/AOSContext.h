@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSThread;
+@class NSThread, NSString;
 
 @interface AOSContext : NSObject <NSPortDelegate> {
     struct AOSAccount { } *_account;
@@ -23,6 +23,11 @@
     NSThread *_callbackThread;
     id _info;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg2;
      /* Encoded args for previous method: @32@0:8^{AOSAccount=}16^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}24 */

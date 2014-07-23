@@ -35,8 +35,8 @@
 - (bool)isFetchAllSharesOperation;
 - (void)setShareIDsToFetch:(id)arg1;
 - (void)setIsFetchAllSharesOperation:(bool)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

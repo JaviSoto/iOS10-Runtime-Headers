@@ -72,6 +72,10 @@
 @property(setter=_setDefaultSectionHeaderView:,retain) TKLabelContainerView * _defaultSectionHeaderView;
 @property(setter=_setSystemSectionHeaderView:,retain) TKLabelContainerView * _systemSectionHeaderView;
 @property(setter=_setUserGeneratedSectionHeaderView:,retain) TKLabelContainerView * _userGeneratedSectionHeaderView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setAllowsDeletingDefaultVibration:(bool)arg1;

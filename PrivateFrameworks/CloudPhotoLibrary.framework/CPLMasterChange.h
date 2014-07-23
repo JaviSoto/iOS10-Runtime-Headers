@@ -14,6 +14,7 @@
     NSString *_mediaMetaDataType;
     NSData *_mediaMetaData;
     long long _originalOrientation;
+    unsigned long long _fullSizeJPEGSource;
 }
 
 @property(copy) NSArray * resources;
@@ -27,15 +28,19 @@
 @property(copy) NSString * mediaMetaDataType;
 @property(retain) NSData * mediaMetaData;
 @property long long originalOrientation;
+@property unsigned long long fullSizeJPEGSource;
 
 
 - (bool)isImage;
+- (void)setFullSizeJPEGSource:(unsigned long long)arg1;
 - (void)setImportGroupIdentifier:(id)arg1;
 - (id)importGroupIdentifier;
 - (bool)supportsResources;
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
+- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
+- (unsigned long long)fullSizeJPEGSource;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (long long)dequeueOrder;
 - (id)mediaMetaDataType;

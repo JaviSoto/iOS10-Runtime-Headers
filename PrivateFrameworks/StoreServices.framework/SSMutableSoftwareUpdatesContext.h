@@ -10,6 +10,10 @@
 @property(getter=isForced) bool forced;
 @property(copy) NSArray * softwareTypes;
 @property(copy) NSString * clientIdentifierHeader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setSoftwareTypes:(id)arg1;

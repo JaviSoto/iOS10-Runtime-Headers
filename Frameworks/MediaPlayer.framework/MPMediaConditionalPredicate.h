@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaPredicate;
+@class NSString, MPMediaPredicate;
 
 @interface MPMediaConditionalPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     MPMediaPredicate *_conditionPredicate;
@@ -13,6 +13,10 @@
 @property(copy,readonly) MPMediaPredicate * conditionPredicate;
 @property(copy,readonly) MPMediaPredicate * thenPredicate;
 @property(copy,readonly) MPMediaPredicate * elsePredicate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 

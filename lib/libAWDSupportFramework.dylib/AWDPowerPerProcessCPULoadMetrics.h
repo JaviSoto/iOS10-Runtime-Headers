@@ -23,8 +23,8 @@
 - (unsigned long long)loadsCount;
 - (void)addLoad:(id)arg1;
 - (void)setLoads:(id)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

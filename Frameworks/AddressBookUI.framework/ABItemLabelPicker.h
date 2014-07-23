@@ -30,6 +30,10 @@
 @property(retain) ABStyleProvider * styleProvider;
 @property void* addressBook;
 @property bool didCreateNewLabel;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultLabelForProperty:(int)arg1 person:(id)arg2 addressBook:(void*)arg3;
 + (id)defaultLabelsForPropertyGroup:(id)arg1 index:(long long)arg2 addressBook:(void*)arg3 outBestLabelIndex:(long long*)arg4 forceIncludeLabels:(id)arg5;

@@ -24,13 +24,13 @@
 
 + (id)newChildAccountWithParentAccount:(id)arg1 error:(id*)arg2;
 + (id)emailAddressHostPart;
++ (id)displayedAccountTypeString;
 + (bool)usernameIsEmailAddress;
 + (bool)primaryDeliveryAccountIsDynamic;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (bool)isPredefinedAccountType;
 + (id)accountTypeString;
 + (id)accountTypeIdentifier;
-+ (id)displayedAccountTypeString;
 
 - (void)_accountsChanged:(id)arg1;
 - (id)_aliasesFromOldData:(id)arg1;
@@ -61,6 +61,9 @@
 - (void)handleOverQuotaResponse:(id)arg1;
 - (void)handleAlertResponse:(id)arg1;
 - (bool)shouldRegisterForPush;
+- (id)displayUsername;
+- (id)appleAccount;
+- (id)personID;
 - (bool)canReceiveNewMailNotifications;
 - (bool)derivesDeliveryAccountInfoFromMailAccount;
 - (void)startListeningForNotifications;
@@ -86,9 +89,6 @@
 - (bool)usesSSL;
 - (void)persistentAccountDidChange:(id)arg1 previousAccount:(id)arg2;
 - (bool)supportsArchiving;
-- (id)displayUsername;
-- (id)appleAccount;
-- (id)personID;
 - (id)authToken;
 - (id)emailAddresses;
 - (void)setDisplayName:(id)arg1;

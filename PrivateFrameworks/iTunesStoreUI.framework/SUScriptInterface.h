@@ -121,6 +121,7 @@
 - (id)_className;
 - (id)applicationLocalStorage;
 - (id)applicationAccessibilityEnabled;
+- (void)setWebFrame:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (id)scriptWindowContext;
 - (id)deviceLocalStorage;
@@ -234,9 +235,9 @@
 - (void)setClientInterface:(id)arg1;
 - (id)application;
 - (void)dismissSheet;
+- (void)setLoggingEnabled:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
 - (id)primaryAccount;
-- (void)setLoggingEnabled:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setAccounts:(id)arg1;
 - (void)retryAllRestoreDownloads;
@@ -253,11 +254,9 @@
 - (id)accounts;
 - (id)protocol;
 - (void)openURL:(id)arg1;
-- (void)log:(id)arg1;
 - (id)parentViewController;
 - (id)attributeKeys;
 - (id)cookie;
-- (void)setWebFrame:(id)arg1;
 - (void)goBack;
 - (id)clientIdentifier;
 - (void)setOrientation:(id)arg1;
@@ -268,6 +267,7 @@
 - (void)setCookie:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)log:(id)arg1;
 - (bool)isRunningTest;
 - (bool)launchedToTest;
 - (id)viewController;

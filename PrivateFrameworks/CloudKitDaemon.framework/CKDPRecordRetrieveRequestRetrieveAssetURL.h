@@ -28,6 +28,7 @@
 - (bool)hasAssetFields;
 - (void)setAssetFields:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setRequestedTTL:(long long)arg1;
 - (long long)requestedTTL;
 - (void)setHasType:(bool)arg1;

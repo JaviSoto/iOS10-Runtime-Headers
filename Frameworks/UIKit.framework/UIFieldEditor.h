@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextInputController, UITextRange, <UITextInputTokenizer>, NSTextContainer, NSDictionary, UIAutoscroll, UIView, _UICascadingTextStorage, UITextField, NSTimer, UITextPosition, _UIFieldEditorContentView, <UITextInputDelegate>, _UIFieldEditorLayoutManager;
+@class UITextInputController, UITextRange, <UITextInputTokenizer>, NSTextContainer, NSDictionary, UIAutoscroll, UIView, _UICascadingTextStorage, NSString, UITextField, NSTimer, UITextPosition, _UIFieldEditorContentView, _UIFieldEditorLayoutManager, <UITextInputDelegate>;
 
 @interface UIFieldEditor : UIScrollView <UITextInputControllerDelegate, NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UITextInput, UITextAutoscrolling, UIKeyboardInput> {
     UITextInputController *_inputController;
@@ -45,6 +45,10 @@
 @property struct CGPoint { double x1; double x2; } autoscrollContentOffset;
 @property(copy) NSDictionary * typingAttributes;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long layoutOrientation;
 @property NSTextContainer * textContainer;
 @property struct _NSRange { unsigned long long x1; unsigned long long x2; } markedRange;
@@ -106,7 +110,6 @@
 - (void)_deleteBackwardAndNotify:(bool)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (id)_inputController;
-- (bool)notificationsDisabled;
 - (bool)hasMarkedText;
 - (unsigned long long)characterOffsetAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)revealSelection;
@@ -202,8 +205,8 @@
 - (bool)_isPasscodeStyle;
 - (bool)_shouldObscureInput;
 - (void)_textStorageDidProcessEditing:(id)arg1;
+- (void)_performWhileSuppressingDelegateNotifications:(id)arg1;
 - (void)becomeFieldEditorForView:(id)arg1;
-- (void)setNotificationsDisabled:(bool)arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContentView:(id)arg2;
 - (id)attributedText;
 - (void)setAttributedText:(id)arg1;

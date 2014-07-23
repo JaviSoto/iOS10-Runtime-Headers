@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIStyledImageDataConsumer, SKUIResourceLoader, NSArray, UIImage, NSMutableDictionary, SKUIItemArtworkContext, SKUIClientContext, <SKUIItemCollectionDelegate>, SKUIScreenshotDataConsumer;
+@class SKUIStyledImageDataConsumer, NSString, SKUIResourceLoader, NSArray, UIImage, NSMutableDictionary, SKUIItemArtworkContext, SKUIClientContext, <SKUIItemCollectionDelegate>, SKUIScreenshotDataConsumer;
 
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
     SKUIItemArtworkContext *_artworkContext;
@@ -32,6 +32,10 @@
 @property(copy) NSArray * items;
 @property long long numberOfItemsPerPage;
 @property double numberOfPagesToCacheAhead;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_memoryWarningNotification:(id)arg1;

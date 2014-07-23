@@ -113,6 +113,20 @@
 - (id)safeDecodeStringForKey:(id)arg1;
 - (id)_safeDecodeContainerForKey:(id)arg1 containerClass:(Class)arg2 valueClass:(Class)arg3;
 - (id)safeDecodeObjectForKey:(id)arg1 expectedClass:(Class)arg2;
+- (double)prs_doubleForKey:(id)arg1;
+- (id)prs_imageForKey:(id)arg1;
+- (double)prs_timestampForKey:(id)arg1;
+- (float)prs_floatForKey:(id)arg1;
+- (int)prs_intForKey:(id)arg1;
+- (long long)prs_integerForKey:(id)arg1;
+- (id)prs_URLForKey:(id)arg1;
+- (id)prs_dictionaryForKey:(id)arg1;
+- (id)prs_arrayForKey:(id)arg1;
+- (id)prs_dateForKey:(id)arg1;
+- (id)prs_dataForKey:(id)arg1;
+- (id)prs_stringForKey:(id)arg1;
+- (bool)prs_boolForKey:(id)arg1;
+- (id)prs_numberForKey:(id)arg1;
 - (void)safeEncodeUIColor:(id)arg1 forKey:(id)arg2;
 
 @end

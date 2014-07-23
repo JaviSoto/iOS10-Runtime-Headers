@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CBCentralManager, NSSet, NSMutableDictionary, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>;
+@class CBCentralManager, NSSet, NSMutableDictionary, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BTLEBrowser : NSObject <CBCentralManagerDelegate> {
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
@@ -45,6 +45,10 @@
 @property(copy) id lostHandler;
 @property(copy) id updateHandler;
 @property(copy) id stoppedHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setStoppedHandler:(id)arg1;

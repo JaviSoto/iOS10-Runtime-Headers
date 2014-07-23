@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UITableView, NSArray, SKUIClientContext, <SKUIDownloadsChildViewControllerDelegate>, _UIContentUnavailableView;
+@class UITableView, NSArray, SKUIClientContext, <SKUIDownloadsChildViewControllerDelegate>, NSString, _UIContentUnavailableView;
 
 @interface SKUIIPhoneDownloadsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
@@ -15,6 +15,10 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(retain) NSArray * downloads;
 @property <SKUIDownloadsChildViewControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_reload;

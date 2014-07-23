@@ -21,8 +21,8 @@
 @property(readonly) NSMutableArray * sortedETAs;
 
 
-- (id)sourceLocation;
 - (unsigned int)responseETASeconds;
+- (id)sourceLocation;
 - (unsigned int)baselineETASeconds;
 - (id)destinationLocation;
 - (id)initWithDirectionsResponse:(id)arg1 fromRequest:(id)arg2;

@@ -12,6 +12,7 @@
 
 
 - (double)_modifiedHorizontalAccuracy:(double)arg1 routeIndex:(unsigned int)arg2;
+- (void)_enumerateRouteSegmentsNearLocation:(id)arg1 withHandler:(id)arg2;
 - (struct { double x1; double x2; })_locationCoordinateFromRouteCoordinate:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg1;
 - (double)_closestDistanceFromCoordinate:(struct { double x1; double x2; })arg1 alongRoute:(double)arg2;
 - (void)_closestPointFromCoordinate:(const struct { double x1; double x2; }*)arg1 toSegmentStart:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg2 toSegmentEnd:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3 outRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg4 outLocationCoordinate:(struct { double x1; double x2; }*)arg5 outDistanceFromSegment:(double*)arg6;

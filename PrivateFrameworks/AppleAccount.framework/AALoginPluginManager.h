@@ -10,12 +10,16 @@
     bool_hasStashedLoginResponse;
     NSObject<OS_dispatch_queue> *_pluginNotificationQueue;
     <AASetupAssistantDelegateService> *_idsPlugin;
+    bool_shouldSkipiTunesPlugin;
 }
 
+@property bool shouldSkipiTunesPlugin;
 @property bool shouldStashLoginResponse;
 
 + (id)sharedInstance;
 
+- (void)setShouldSkipiTunesPlugin:(bool)arg1;
+- (bool)shouldSkipiTunesPlugin;
 - (void)unstashLoginResponse;
 - (void)setShouldStashLoginResponse:(bool)arg1;
 - (bool)shouldStashLoginResponse;

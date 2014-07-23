@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImageView, UIImage, UIView, CALayer;
+@class UIColor, NSString, UIImageView, UIImage, UIView, CALayer;
 
 @interface _UISwitchInternalView : UIView <_UISwitchInternalViewProtocol> {
     UIImage *_colorMask;
@@ -37,6 +37,10 @@
 @property(retain) UIImage * offImage;
 @property bool on;
 @property bool useAlternateColor;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_defaultOnTintColor;
 

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBRemoteDataProvider>, <BBRemoteDataProviderServerProxy>, NSObject<OS_dispatch_queue>, BBDataProviderIdentity;
+@class NSString, <BBRemoteDataProvider>, <BBRemoteDataProviderServerProxy>, NSObject<OS_dispatch_queue>, BBDataProviderIdentity;
 
 @interface BBDataProviderProxy : NSObject <BBRemoteDataProviderClientProxy> {
     <BBRemoteDataProvider> *_dataProvider;
@@ -16,6 +16,10 @@
 }
 
 @property(retain) BBDataProviderIdentity * identity;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)updateSectionInfoWithHandler:(id)arg1;

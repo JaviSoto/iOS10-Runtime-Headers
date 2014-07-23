@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAuthenticationContext, NSObject<OS_xpc_object>;
+@class SSAuthenticationContext, NSObject<OS_xpc_object>, NSString;
 
 @interface SSVServerAuthenticateRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
@@ -11,6 +11,10 @@
 
 @property(readonly) NSObject<OS_xpc_object> * encodedDialog;
 @property(copy) SSAuthenticationContext * authenticationContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)encodedDialog;

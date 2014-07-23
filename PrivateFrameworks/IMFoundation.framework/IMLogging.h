@@ -9,13 +9,14 @@
 + (id)timeFormatter;
 + (id)dateFormatter;
 + (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 simpleLogString:(id)arg5;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 simpleLogString:(id)arg5 time:(unsigned long long)arg6;
 + (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 format:(id)arg4 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg5;
 + (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 format:(id)arg5;
 + (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 format:(id)arg4;
 + (id)stringForDate;
 + (bool)loggingEnabledForLevel:(int)arg1;
 + (id)logFileDirectory;
-+ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 simpleLogString:(id)arg5 format:(id)arg6 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg7;
++ (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 simpleLogString:(id)arg5 format:(id)arg6 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg7 time:(unsigned long long)arg8;
 + (void)logString:(id)arg1 toFolder:(id)arg2 toFileNamed:(id)arg3;
 + (void)logAtLevel:(int)arg1 type:(id)arg2 category:(id)arg3 insertProcessInfo:(bool)arg4 format:(id)arg5 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg6;
 

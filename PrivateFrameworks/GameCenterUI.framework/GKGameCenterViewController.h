@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKHostedGameCenterViewController, NSMutableDictionary, GKRemoteGameCenterViewController, NSString, <GKGameCenterControllerDelegate>;
+@class GKHostedGameCenterViewController, NSMutableDictionary, GKRemoteGameCenterViewController, UIAlertController, <GKGameCenterControllerDelegate>, NSString;
 
 @interface GKGameCenterViewController : UINavigationController  {
     <GKGameCenterControllerDelegate> *_gameCenterDelegateWeak;
     GKHostedGameCenterViewController *_privateViewController;
     GKRemoteGameCenterViewController *_remoteViewController;
     NSMutableDictionary *_volatileProperties;
+    UIAlertController *_alertController;
 }
 
 @property <GKGameCenterControllerDelegate> * gameCenterDelegate;
@@ -18,6 +19,7 @@
 @property long long leaderboardTimeScope;
 @property(retain) NSString * leaderboardIdentifier;
 @property(retain) NSString * leaderboardCategory;
+@property(retain) UIAlertController * alertController;
 @property(retain) NSMutableDictionary * volatileProperties;
 
 + (bool)accessInstanceVariablesDirectly;
@@ -48,6 +50,8 @@
 - (void)dealloc;
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
+- (id)alertController;
+- (void)setAlertController:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;

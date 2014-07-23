@@ -21,12 +21,12 @@
 @property int connectionType;
 
 
+- (bool)hasDuration;
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
-- (bool)hasDuration;
 - (void)setConnectionType:(int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)connectionType;

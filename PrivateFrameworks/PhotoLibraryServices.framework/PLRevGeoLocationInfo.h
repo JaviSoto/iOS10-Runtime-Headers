@@ -2,12 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, GEOPlaceResult, PLRevGeoCompoundNameInfo;
+@class NSString, PLRevGeoCompoundNameInfo, <GEOMapItemPrivate>;
 
 @interface PLRevGeoLocationInfo : NSObject  {
     bool_isValid;
     bool_isHome;
-    GEOPlaceResult *_geoPlaceResult;
+    <GEOMapItemPrivate> *_geoMapItem;
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
     NSString *_providerId;
@@ -15,7 +15,7 @@
 }
 
 @property(readonly) bool isValid;
-@property(retain) GEOPlaceResult * geoPlaceResult;
+@property(retain) <GEOMapItemPrivate> * geoMapItem;
 @property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
 @property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
 @property bool isHome;
@@ -31,7 +31,7 @@
 - (unsigned long long)providerVersion;
 - (id)providerId;
 - (id)compoundSecondaryNameInfo;
-- (void)setGeoPlaceResult:(id)arg1;
+- (void)setGeoMapItem:(id)arg1;
 - (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(long long*)arg3;
 - (id)dataForInfo;
 - (void)setProviderVersion:(unsigned long long)arg1;
@@ -41,7 +41,7 @@
 - (void)setCompoundNameInfo:(id)arg1;
 - (bool)isHome;
 - (id)compoundNameInfo;
-- (id)geoPlaceResult;
+- (id)geoMapItem;
 - (id)countryCode;
 - (id)init;
 - (bool)isValid;

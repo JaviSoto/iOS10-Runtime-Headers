@@ -7,9 +7,15 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface NSSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, PQLBindable> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long count;
 
 + (id)setWithObject:(id)arg1;
@@ -30,6 +36,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (bool)supportsSecureCoding;
 + (bool)supportsSecureCoding;
++ (id)intersectionOfSet:(id)arg1 withSet:(id)arg2;
 + (id)intersectionOfSets:(id)arg1;
 + (bool)set:(id)arg1 isEqualToSet:(id)arg2;
 
@@ -114,17 +121,17 @@
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)CKAssignToContainerWithID:(id)arg1;
+- (id)setByIntersectingWithSet:(id)arg1;
+- (id)DACompactDescription;
+- (id)mf_getAllObjectsAsArray;
 - (id)allObjectsWithClass:(Class)arg1;
 - (id)CalMutableRecursiveCopy;
-- (id)setByIntersectingWithSet:(id)arg1;
 - (id)_gkSetByRemovingObject:(id)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapWithBlock:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
-- (id)DACompactDescription;
-- (id)mf_getAllObjectsAsArray;
 - (unsigned long long)pl_countOfObjectsPassingTest:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;

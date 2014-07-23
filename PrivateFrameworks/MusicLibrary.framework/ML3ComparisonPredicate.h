@@ -22,8 +22,8 @@
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(bool)arg4;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 transformFunction:(id)arg4;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(bool)arg4 treatNullAsString:(id)arg5;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 + (id)predicateWithProperty:(id)arg1 equalToInteger:(long long)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToInt64:(long long)arg2;
 

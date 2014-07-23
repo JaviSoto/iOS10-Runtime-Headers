@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class KeychainSyncPhoneSettingsFragment, UIAlertView, UILabel, <KeychainSyncViewControllerDelegate>;
+@class NSString, KeychainSyncPhoneSettingsFragment, UIAlertView, UILabel, <KeychainSyncViewControllerDelegate>;
 
 @interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate, KeychainSyncViewController> {
     KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;
@@ -11,6 +11,10 @@
 }
 
 @property <KeychainSyncViewControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)controllerDone;

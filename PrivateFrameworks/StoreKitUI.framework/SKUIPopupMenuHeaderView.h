@@ -21,6 +21,10 @@
 @property(copy) NSString * menuLabelTitle;
 @property long long selectedMenuItemIndex;
 @property(copy) NSString * title;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;

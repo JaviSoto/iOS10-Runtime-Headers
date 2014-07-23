@@ -18,13 +18,13 @@
 + (unsigned long long)indexOfEffectWithIdentifier:(id)arg1;
 + (id)allEffects;
 + (id)_effectWithIdentifier:(id)arg1 CIFilterName:(id)arg2 displayName:(id)arg3;
-+ (id)effectWithCIFilterName:(id)arg1;
 + (id)effectWithIdentifier:(id)arg1;
++ (id)effectWithCIFilterName:(id)arg1;
 
-- (long long)latestVersion;
 - (id)CIFilterName;
-- (id)filterIdentifier;
 - (id)newEffectFilter;
+- (long long)latestVersion;
+- (id)filterIdentifier;
 - (id)description;
 - (id)displayName;
 

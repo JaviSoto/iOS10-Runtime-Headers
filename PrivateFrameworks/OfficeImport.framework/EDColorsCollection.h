@@ -2,9 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface EDColorsCollection : EDCollection <OADColorPalette> {
     unsigned long long mDefaultColorsCount;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (int)oadSchemeColorIdFromThemeIndex:(int)arg1;
 + (unsigned int)xlColorIndexFromTCSystemColorIDEnum:(int)arg1;

@@ -21,7 +21,6 @@
 + (id)preferredFontForUsage:(id)arg1;
 + (double)buttonFontSize;
 + (id)systemFontOfSize:(double)arg1 weight:(double)arg2;
-+ (id)_thinSystemFontOfSize:(double)arg1;
 + (id)italicSystemFontOfSize:(double)arg1;
 + (id)fontNamesForFamilyName:(id)arg1;
 + (id)familyNames;
@@ -42,10 +41,11 @@
 + (id)systemFontOfSize:(double)arg1;
 + (void)initialize;
 + (id)classFallbacksForKeyedArchiver;
-+ (id)_lightSystemFontOfSize:(double)arg1;
 + (id)_opticalSystemFontOfSize:(double)arg1;
 + (id)_opticalBoldSystemFontOfSize:(double)arg1;
 + (double)labelFontSize;
++ (id)_thinSystemFontOfSize:(double)arg1;
++ (id)_lightSystemFontOfSize:(double)arg1;
 + (id)preferredFontForTextStyle:(id)arg1;
 + (id)defaultFontForTextStyle:(id)arg1;
 + (double)systemFontSize;
@@ -141,6 +141,7 @@
 - (double)capHeight;
 - (id)ab_italicFont;
 - (id)ab_boldFont;
+- (double)_mapkit_lineHeight;
 - (struct CGPoint { double x1; double x2; })mf_originPointFromMidlinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_caplinePointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_baselinePointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -148,6 +149,5 @@
 - (struct CGPoint { double x1; double x2; })mf_originPointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_originPointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_baselinePointFromOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (double)_mapkit_lineHeight;
 
 @end

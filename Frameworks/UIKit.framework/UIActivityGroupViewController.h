@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, _UIActivityUserDefaults, NSArray, UILongPressGestureRecognizer, NSIndexPath, NSDictionary, _UIUserDefaultsActivity, <UIActivityGroupViewControllerDelegate>;
+@class <UIActivityGroupViewControllerDelegate>, _UIActivityUserDefaults, NSArray, UILongPressGestureRecognizer, NSString, NSDictionary, _UIUserDefaultsActivity, NSIndexPath;
 
 @interface UIActivityGroupViewController : UICollectionViewController <_UIActivityGroupViewDelegateFlowLayout, UIGestureRecognizerDelegate> {
     bool_darkStyleOnLegacyApp;
@@ -19,7 +19,6 @@
     _UIActivityUserDefaults *_userDefaults;
     _UIUserDefaultsActivity *_userDefaultsActivity;
     UILongPressGestureRecognizer *_editingGestureRecognizer;
-    UIView *_draggingView;
     NSIndexPath *_indexPathForMenuActivity;
     struct CGPoint { 
         double x; 
@@ -40,17 +39,18 @@
 @property(retain) _UIUserDefaultsActivity * userDefaultsActivity;
 @property(retain) UILongPressGestureRecognizer * editingGestureRecognizer;
 @property struct CGPoint { double x1; double x2; } initialDraggingLocation;
-@property(retain) UIView * draggingView;
 @property bool activityIndexDidChangeWhileDragging;
 @property(copy) NSIndexPath * indexPathForMenuActivity;
 @property bool allowsUserCustomization;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)setDraggingView:(id)arg1;
-- (id)draggingView;
 - (void)setInitialDraggingLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })initialDraggingLocation;
 - (void)setVisibleActivities:(id)arg1;
@@ -65,10 +65,11 @@
 - (void)renameActivity:(id)arg1;
 - (void)setActivities:(id)arg1;
 - (id)initWithActivityCategory:(long long)arg1;
-- (bool)collectionView:(id)arg1 layout:(id)arg2 moveItemAtIndexPath:(id)arg3 toIndexPath:(id)arg4;
+- (id)collectionView:(id)arg1 layout:(id)arg2 needsContainerViewForDraggingItemAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 layout:(id)arg2 moveItemAtIndexPath:(id)arg3 toIndexPath:(id)arg4;
 - (void)activityUserDefaultsDidChange:(id)arg1;
 - (void)ignoreUserDefaultsChangesWhileUsingBlock:(id)arg1;
-- (bool)canMoveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (id)targetIndexPathForMoveFromRowAtIndexPath:(id)arg1 toProposedIndexPath:(id)arg2;
 - (void)hideActivity:(id)arg1;
 - (bool)activityIndexDidChangeWhileDragging;
 - (void)setActivityIndexDidChangeWhileDragging:(bool)arg1;

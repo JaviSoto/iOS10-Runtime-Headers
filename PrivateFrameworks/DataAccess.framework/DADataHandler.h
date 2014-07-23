@@ -14,9 +14,11 @@
 
 + (id)newDataHandlerForDataclass:(long long)arg1 container:(void*)arg2 changeTrackingID:(id)arg3;
 
+- (void)setChangeTrackingID:(id)arg1;
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;
 - (bool)closeDBAndSave:(bool)arg1;
 - (void)openDB;
+- (void)drainSuperfluousChanges;
 - (bool)wipeServerIds;
 - (void)drainContainer;
 - (id)copyOfAllLocalObjectsInContainer;
@@ -24,7 +26,6 @@
 - (void*)copyLocalObjectFromId:(int)arg1;
 - (int)getIdFromLocalObject:(void*)arg1;
 - (id)initWithContainer:(void*)arg1 changeTrackingID:(id)arg2;
-- (void)setChangeTrackingID:(id)arg1;
 - (id)changeTrackingID;
 - (long long)dataclass;
 - (void)setContainer:(void*)arg1;

@@ -17,6 +17,10 @@
 @property(copy) NSString * actionName;
 @property bool allowsBootstrapCellularData;
 @property bool waitsForPurchaseOperations;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)waitsForPurchaseOperations;

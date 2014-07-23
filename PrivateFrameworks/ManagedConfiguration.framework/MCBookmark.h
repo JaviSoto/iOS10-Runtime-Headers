@@ -17,12 +17,12 @@
 
 - (id)serializableDictionary;
 - (id)initWithSerializableDictionary:(id)arg1;
+- (id)path;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (bool)isEqual:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setURL:(id)arg1;
-- (id)path;
 - (id)URL;
 - (void).cxx_destruct;
 - (id)description;

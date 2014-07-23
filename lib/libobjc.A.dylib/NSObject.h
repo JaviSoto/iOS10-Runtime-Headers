@@ -7,12 +7,16 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSString, UIBezierPath, _UITraitStorageList;
+@class NSString, NSArray, UIBezierPath, _UITraitStorageList;
 
 @interface NSObject <NSObject, PQLResultSetInitializer> {
     Class isa;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) NSArray * accessibilityElements;
 @property(retain) NSArray * accessibilityCustomActions;
 @property bool isAccessibilityElement;
@@ -32,6 +36,10 @@
 @property(retain,readonly) id autoContentAccessingProxy;
 @property(readonly) Class classForKeyedArchiver;
 @property void* observationInfo;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)isFault;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
@@ -52,9 +60,9 @@
 + (unsigned long long)hash;
 + (id)mutableCopy;
 + (bool)isKindOfClass:(Class)arg1;
++ (Class)superclass;
 + (bool)isMemberOfClass:(Class)arg1;
 + (bool)isProxy;
-+ (Class)superclass;
 + (bool)allowsWeakReference;
 + (bool)retainWeakReference;
 + (bool)_isDeallocating;
@@ -179,9 +187,9 @@
 - (unsigned long long)hash;
 - (id)mutableCopy;
 - (bool)isKindOfClass:(Class)arg1;
+- (Class)superclass;
 - (bool)isMemberOfClass:(Class)arg1;
 - (bool)isProxy;
-- (Class)superclass;
 - (bool)allowsWeakReference;
 - (bool)retainWeakReference;
 - (bool)_isDeallocating;
@@ -410,12 +418,9 @@
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)_ICSStringWithOptions:(unsigned long long)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
-- (void)performBlockOnMainThreadSynchronously:(id)arg1;
-- (id)CalClassName;
-- (bool)isNull;
-- (bool)mf_tryLock;
-- (void)mf_lockWithPriority;
 - (bool)mf_tryLockWithPriority;
+- (void)mf_lockWithPriority;
+- (bool)mf_tryLock;
 - (void)_mf_checkToAllowLock:(id)arg1;
 - (void)_mf_checkToAllowExclusiveLocksWithLock:(id)arg1;
 - (void)_mf_checkToAllowStrictProgressionWithLock:(id)arg1;
@@ -428,6 +433,16 @@
 - (id)mf_lockOrdering;
 - (void)mf_unlock;
 - (void)mf_lock;
+- (void)da_performSelectorThatDoesntAffectRetainCount:(SEL)arg1 withObject:(id)arg2;
+- (void)addNullRunLoopSourceAndPerformSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 inModes:(id)arg4;
+- (void)mf_performOnewaySelectorInMainThread:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (void)ab_updateDictionaryForKey:(id)arg1 withChanges:(id)arg2;
+- (bool)_mapkit_isInternalAnnotation;
+- (bool)_mapkit_internalAnnotationAllowsCustomView;
+- (bool)_mapkit_isInternalAnnotationView;
+- (void)performBlockOnMainThreadSynchronously:(id)arg1;
+- (id)CalClassName;
+- (bool)isNull;
 - (void)_gkPopulateWithObject:(id)arg1 keymap:(id)arg2;
 - (id)_gkViewDebuggingChildren;
 - (id)_gkRecursiveDescription;
@@ -436,17 +451,10 @@
 - (id)_gkDescription;
 - (void)_gkRemoveObserverWithBlockToken:(id)arg1;
 - (id)_gkAddObserverForKeyPath:(id)arg1 options:(unsigned long long)arg2 withBlock:(id)arg3;
-- (void)da_performSelectorThatDoesntAffectRetainCount:(SEL)arg1 withObject:(id)arg2;
-- (void)addNullRunLoopSourceAndPerformSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 inModes:(id)arg4;
-- (void)mf_performOnewaySelectorInMainThread:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (void)ab_updateDictionaryForKey:(id)arg1 withChanges:(id)arg2;
 - (id)mf_objectWithHighest:(id)arg1;
 - (void)_gkSetupAccountWithParamaters:(id)arg1 completionHandler:(id)arg2;
 - (id)_gkAuthenticatedPlayerID;
 - (void)_gkRefreshPhotoForPlayer:(id)arg1 completionHandler:(id)arg2;
-- (bool)_mapkit_isInternalAnnotation;
-- (bool)_mapkit_internalAnnotationAllowsCustomView;
-- (bool)_mapkit_isInternalAnnotationView;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)storedClassNameForCPLArchiver:(id)arg1;

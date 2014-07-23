@@ -14,10 +14,10 @@
 @property(readonly) bool requiresAttributionInCallout;
 
 
-- (id)providerSnippetLogoImageForScale:(double)arg1;
-- (id)providerLogoImageForScale:(double)arg1;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
 - (bool)requiresAttributionInCallout;
+- (id)providerSnippetLogoImageForScale:(double)arg1;
+- (id)providerLogoImageForScale:(double)arg1;
 - (id)providerName;
 - (id)attributionApps;
 - (id)attributionURLs;

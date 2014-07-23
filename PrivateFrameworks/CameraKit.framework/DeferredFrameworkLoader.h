@@ -21,8 +21,8 @@
 - (void)setFrameworkHandle:(void*)arg1;
 - (void*)frameworkHandle;
 - (Class)classFromString:(id)arg1;
-- (void)setPath:(id)arg1;
 - (id)path;
+- (void)setPath:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)initWithPath:(id)arg1;

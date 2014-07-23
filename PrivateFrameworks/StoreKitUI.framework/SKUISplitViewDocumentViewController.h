@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UISplitViewController, SKUINavigationDocumentController, SKUISplitViewTemplateElement, UIViewController;
+@class UISplitViewController, SKUINavigationDocumentController, SKUISplitViewTemplateElement, NSString, UIViewController;
 
 @interface SKUISplitViewDocumentViewController : SKUIViewController <SKUINavigationDocumentDelegate, SKUIDocumentViewController> {
     UIViewController *_delayingPresentationViewController;
@@ -11,6 +11,11 @@
     UISplitViewController *_splitViewController;
     SKUISplitViewTemplateElement *_templateElement;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
 
@@ -22,6 +27,7 @@
 - (void)_reloadSplitViewControllers;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)delayPresentationIfNeededForParentViewController:(id)arg1;
+- (id)leftBarButtonItemsForDocument:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)loadView;

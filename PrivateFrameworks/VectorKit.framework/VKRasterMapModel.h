@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableArray;
+@class NSString, NSMutableArray;
 
 @interface VKRasterMapModel : VKMapTileModel <VKMapLayer> {
     NSMutableArray *_sortedTiles;
@@ -28,6 +28,10 @@
 @property unsigned long long mapLayerPosition;
 @property bool rasterViewer;
 @property(getter=isShowingNoDataPlaceholders,readonly) bool showingNoDataPlaceholders;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)reloadOnStylesheetChange;
 

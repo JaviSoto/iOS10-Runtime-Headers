@@ -73,8 +73,8 @@
 - (void)setVisibleTileSets:(id)arg1;
 - (void)setMapLocation:(id)arg1;
 - (void)setOriginalPlace:(id)arg1;
-- (bool)hasSessionId;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (bool)hasSessionId;
 - (bool)hasPlace;
 - (id)place;
 - (void)setPlace:(id)arg1;

@@ -2,20 +2,25 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUINavigationDocumentController, NSString, IKJSNavigationDocument, NSObject<OS_dispatch_queue>, IKAppContext, NSMutableArray;
+@class SKUINavigationDocumentController, NSString, IKJSNavigationDocument, NSMutableArray, IKAppContext;
 
-@interface SKUIJSDOMFeatureNavigationDocument : NSObject <IKAppNavigationController, IKJSDOMFeature> {
-    IKAppContext *_appContext;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_featureName;
+@interface SKUIJSDOMFeatureNavigationDocument : NSObject <IKAppNavigationController, SKUIDOMFeature> {
     IKJSNavigationDocument *_jsNavigationDocument;
     SKUINavigationDocumentController *_navigationDocumentController;
     NSMutableArray *_stackItems;
+    IKAppContext *_appContext;
+    NSString *_featureName;
 }
 
 @property(retain) SKUINavigationDocumentController * navigationDocumentController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(retain,readonly) NSString * featureName;
 @property IKAppContext * appContext;
 
++ (id)possibleFeatureNames;
 
 - (void)popToRootDocument;
 - (void)popToDocument:(id)arg1;
@@ -24,14 +29,13 @@
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (id)documents;
-- (id)retrieveJSFeature;
-- (void)migrateFromFeature:(id)arg1;
-- (id)featureName;
+- (id)featureJSObject;
+- (id)initWithFeatureName:(id)arg1;
 - (void)setAppContext:(id)arg1;
 - (id)appContext;
 - (id)navigationDocumentController;
+- (id)featureName;
 - (void)setNavigationDocumentController:(id)arg1;
-- (id)initWithFeatureName:(id)arg1;
 - (void)removeDocument:(id)arg1;
 - (void)clear;
 - (void).cxx_destruct;

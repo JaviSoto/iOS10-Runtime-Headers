@@ -17,14 +17,12 @@
 - (void)fireCompletion:(id)arg1 error:(id)arg2;
 - (id)initWithEndpoint:(id)arg1;
 - (void)queue_connectionWasCreated;
-- (void)queue_connectionWasInterrupted;
+- (bool)isUIApplicationClient;
 - (bool)isClientLoggingEnabled;
-- (void)fireCompletion:(id)arg1 reasonResult:(int)arg2 error:(id)arg3;
+- (void)fireCompletion:(id)arg1 openAppErrorCode:(long long)arg2;
 - (void)fireCompletion:(id)arg1 pidResult:(int)arg2 error:(id)arg3;
 - (void)fireCompletion:(id)arg1 bundleIDResult:(id)arg2 error:(id)arg3;
-- (bool)isUIApplicationClient;
 - (void)setUIApplicationClient:(bool)arg1;
-- (void)restartRenderServer;
 - (void)shutdownAndReboot:(bool)arg1;
 - (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 withResult:(id)arg5;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 withResult:(id)arg5;

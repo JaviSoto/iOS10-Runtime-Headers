@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSObject<OS_dispatch_queue>, BKSSystemApplicationClient, <BKSSystemApplicationDelegate>;
+@class NSString, NSObject<OS_dispatch_queue>, BKSSystemApplicationClient, <BKSSystemApplicationDelegate>;
 
 @interface BKSSystemApplication : NSObject <BKSSystemApplicationClientDelegate> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -11,9 +11,14 @@
 }
 
 @property <BKSSystemApplicationDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)clientIsAliveForWatchdog:(id)arg1;
+- (void)sendActions:(id)arg1;
 - (void)restart;
 - (void)setDelegate:(id)arg1;
 - (void)start;

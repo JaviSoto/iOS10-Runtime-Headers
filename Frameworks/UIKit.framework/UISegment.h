@@ -106,9 +106,9 @@
 - (bool)isSelected;
 - (int)controlSize;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (void)setBarStyle:(long long)arg1;
 - (void)setControlSize:(int)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (struct CGSize { double x1; double x2; })contentSize;
 - (void)updateConstraints;
 - (void)setContentOffset:(struct CGSize { double x1; double x2; })arg1;

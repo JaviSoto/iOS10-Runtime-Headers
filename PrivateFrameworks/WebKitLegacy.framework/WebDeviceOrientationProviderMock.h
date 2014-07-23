@@ -2,11 +2,16 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebDeviceOrientationProviderMockInternal;
+@class WebDeviceOrientationProviderMockInternal, NSString;
 
 @interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProvider> {
     WebDeviceOrientationProviderMockInternal *m_internal;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)shared;
 

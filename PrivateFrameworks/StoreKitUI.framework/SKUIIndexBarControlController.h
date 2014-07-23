@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, <SKUIIndexBarControlControllerDelegate>, SKUIIndexBarEntryDescriptor, <SKUIIndexBarControlControllerDataSource>, SKUIIndexBarControl, SKUIResourceLoader;
+@class NSString, SKUIResourceLoader, SKUIIndexBarEntryDescriptor, <SKUIIndexBarControlControllerDataSource>, <SKUIIndexBarControlControllerDelegate>, SKUIIndexBarControl, NSMapTable;
 
 @interface SKUIIndexBarControlController : NSObject <SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate> {
     SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;
@@ -27,6 +27,10 @@
 @property <SKUIIndexBarControlControllerDelegate> * delegate;
 @property(readonly) SKUIIndexBarControl * indexBarControl;
 @property(retain) SKUIResourceLoader * resourceLoader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)reloadEntryDescriptorAtIndexPath:(id)arg1;

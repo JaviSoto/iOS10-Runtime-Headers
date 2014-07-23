@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemCollectionController, UICollectionView, SKUIUber, NSMutableIndexSet, NSMutableArray, SKUIStyledImageDataConsumer, <SKUIItemGridDelegate>, NSOperationQueue, NSArray, SKUIClientContext, SKUIItemArtworkContext, UIImage;
+@class SKUIItemCollectionController, UICollectionView, SKUIUber, NSMutableIndexSet, NSMutableArray, SKUIStyledImageDataConsumer, <SKUIItemGridDelegate>, NSString, NSOperationQueue, NSArray, SKUIClientContext, SKUIItemArtworkContext, UIImage;
 
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
@@ -33,6 +33,10 @@
 @property(copy) NSArray * items;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) SKUIUber * uber;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (long long)_numberOfColumnsForOrientation:(long long)arg1;

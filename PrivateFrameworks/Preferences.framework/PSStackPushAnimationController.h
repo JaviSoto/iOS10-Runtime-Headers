@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSMutableArray, UINavigationController;
+@class UINavigationController, NSArray, NSString, NSMutableArray;
 
 @interface PSStackPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
     NSArray *_snapshots;
@@ -34,6 +34,10 @@
 @property double completionStagger;
 @property double pushDuration;
 @property double springDamping;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)resetDefaultAnimationParameters;
 + (void)setDefaultAnimationPreset:(long long)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSMutableArray, NSMutableSet, WAKView, WebDataSource;
+@class NSMutableArray, NSString, NSMutableSet, WAKView, WebDataSource;
 
 @interface WebPluginController : NSObject <WebPluginManualLoader, WebPluginContainerCheckController> {
     WAKView *_documentView;
@@ -11,6 +11,11 @@
     bool_started;
     NSMutableSet *_checksInProgress;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)addPlugInView:(id)arg1;
 + (bool)isPlugInView:(id)arg1;

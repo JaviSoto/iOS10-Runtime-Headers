@@ -72,7 +72,7 @@
 - (void)inputViewDidAnimate;
 - (void)inputViewWillAnimate;
 - (void)inputViewDidMove;
-- (void)inputViewWillMove;
+- (void)inputViewWillMove:(id)arg1;
 - (void)windowDidResignOrBecomeKey;
 - (void)didRotate:(id)arg1;
 - (void)willRotate:(id)arg1;

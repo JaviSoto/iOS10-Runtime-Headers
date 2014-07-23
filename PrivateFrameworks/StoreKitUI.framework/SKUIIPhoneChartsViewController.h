@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISegmentedTableHeaderView, NSArray, SKUIResourceLoader, UISegmentedControl, NSMutableDictionary, SKUIClientContext, NSOperationQueue, <SKUIChartsViewControllerDelegate>;
+@class SKUISegmentedTableHeaderView, NSArray, SKUIResourceLoader, UISegmentedControl, NSMutableDictionary, SKUIClientContext, NSOperationQueue, NSString, <SKUIChartsViewControllerDelegate>;
 
 @interface SKUIIPhoneChartsViewController : UIViewController <SKUIItemListTableDelegate> {
     SKUIResourceLoader *_artworkLoader;
@@ -28,6 +28,10 @@
 @property(retain) SKUIClientContext * clientContext;
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property <SKUIChartsViewControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_selectedViewController;

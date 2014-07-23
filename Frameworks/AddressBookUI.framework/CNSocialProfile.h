@@ -15,16 +15,16 @@
 @property(copy,readonly) NSString * displayname;
 @property(retain) NSMutableDictionary * profileDictionary;
 
++ (id)socialProfile;
 + (id)socialProfileWithUrlString:(id)arg1 username:(id)arg2 service:(id)arg3;
 + (id)socialProfileWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayname:(id)arg5;
 + (id)socialProfileWithDictionary:(id)arg1;
 + (id)socialProfileWithUsername:(id)arg1 service:(id)arg2;
-+ (id)socialProfile;
 
+- (id)urlString;
 - (void)setProfileDictionary:(id)arg1;
 - (id)profileDictionary;
 - (id)displayname;
-- (id)urlString;
 - (id)username;
 - (id)initWithDictionary:(id)arg1;
 - (id)service;

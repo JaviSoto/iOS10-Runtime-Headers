@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSMutableDictionary, GKLinkedList;
+@class NSString, NSMutableDictionary, GKLinkedList;
 
 @interface GKCache : NSObject <GKCache> {
     NSMutableDictionary *_dictionary;
@@ -15,6 +15,10 @@
 @property(retain) GKLinkedList * cacheList;
 @property unsigned long long maxCount;
 @property unsigned long long count;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setCacheList:(id)arg1;

@@ -62,8 +62,6 @@
 - (void)setShouldFetchAssetContents:(bool)arg1;
 - (bool)shouldFetchAssetContents;
 - (id)recordZoneID;
-- (void)setRecordErrors:(id)arg1;
-- (id)recordErrors;
 - (bool)moreComing;
 - (id)resultServerChangeToken;
 - (void)setResultServerChangeToken:(id)arg1;
@@ -72,6 +70,8 @@
 - (id)desiredKeys;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)setRecordZoneID:(id)arg1;
+- (void)setRecordErrors:(id)arg1;
+- (id)recordErrors;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (unsigned long long)resultsLimit;

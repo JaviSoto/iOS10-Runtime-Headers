@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSSet, VKPolylineOverlay, VKPolylineOverlayRenderRegion;
+@class NSSet, VKPolylineOverlayRenderRegion, NSString, VKPolylineOverlay;
 
 @interface VKRouteLine : NSObject <GEORouteMapMatchingDataSource> {
     bool_curve;
@@ -53,6 +53,10 @@
 @property(readonly) struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; } userLocationSection;
 @property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; }* userLocationIndex;
 @property bool hasNewRoadMatches;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)simplificationEpsilonPoints;

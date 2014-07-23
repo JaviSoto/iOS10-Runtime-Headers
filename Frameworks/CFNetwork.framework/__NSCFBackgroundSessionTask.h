@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NDBackgroundSessionProtocol>, NSError;
+@class <NDBackgroundSessionProtocol>, NSError, NSString;
 
 @interface __NSCFBackgroundSessionTask : NSURLSessionTask <NSURLSessionTaskSubclass> {
     bool_sentCancel;
@@ -14,6 +14,10 @@
 @property(retain) <NDBackgroundSessionProtocol> * remoteSession;
 @property(readonly) unsigned long long ident;
 @property(retain) NSError * immediateError;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)immediateError;

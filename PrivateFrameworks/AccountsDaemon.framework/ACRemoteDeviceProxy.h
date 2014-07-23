@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSMutableDictionary, ACRemoteCommandHandler, NSLock, IDSService;
+@class NSMutableDictionary, ACRemoteCommandHandler, NSString, NSLock, IDSService;
 
 @interface ACRemoteDeviceProxy : NSObject <IDSServiceDelegate> {
     IDSService *_messageSendingService;
@@ -10,6 +10,11 @@
     NSMutableDictionary *_completionHandlersByMessageID;
     NSLock *_completionHandlersLock;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;

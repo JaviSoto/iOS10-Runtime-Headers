@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_source>, NSObject<OS_dispatch_queue>, CKDURLRequest;
+@class NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSObject<OS_dispatch_queue>, CKDURLRequest;
 
 @interface CKDTokenRegistrationScheduler : NSObject <CKDSystemAvailabilityWatcher> {
     NSObject<OS_dispatch_queue> *_queue;
@@ -17,6 +17,10 @@
 @property(retain) NSMutableDictionary * callbackTimers;
 @property(retain) NSObject<OS_dispatch_source> * scheduleTimer;
 @property(retain) CKDURLRequest * request;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedScheduler;
 

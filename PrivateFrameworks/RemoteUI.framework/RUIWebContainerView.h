@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIWebContainerViewDelegate>, UIWebView;
+@class NSString, <RUIWebContainerViewDelegate>, UIWebView;
 
 @interface RUIWebContainerView : UIView <UIWebViewDelegate> {
     bool_highlighted;
@@ -14,6 +14,10 @@
 @property(readonly) UIWebView * webView;
 @property(getter=isHighlighted) bool highlighted;
 @property <RUIWebContainerViewDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)heightForWidth:(double)arg1;

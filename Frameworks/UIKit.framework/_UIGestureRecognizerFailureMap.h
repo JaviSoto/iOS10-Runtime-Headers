@@ -21,6 +21,7 @@
 - (id)initWithRelatedGestures:(id)arg1;
 - (void)_queueRecognizersForResetIfFinished;
 - (void)_gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
+- (void)_rebuildFailureMapDefferingRelease;
 - (void)rebuildFailureMap;
 - (void)gestureRecognizerBecameDirty:(id)arg1;
 - (bool)hasUnmetFailureRequirementsOrDependents;

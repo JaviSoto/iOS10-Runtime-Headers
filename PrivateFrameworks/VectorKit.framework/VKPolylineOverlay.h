@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOComposedRoute, VKTrafficSegmentsAlongRoute, GEOMapRegion;
+@class GEOComposedRoute, NSString, GEOMapRegion, VKTrafficSegmentsAlongRoute;
 
 @interface VKPolylineOverlay : NSObject <VKOverlay, GEOComposedRouteObserver> {
     struct __CFSet { } *_observers;
@@ -15,6 +15,10 @@
 @property(readonly) GEOComposedRoute * composedRoute;
 @property(readonly) VKTrafficSegmentsAlongRoute * trafficSegments;
 @property(readonly) double trafficTimeStamp;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) GEOMapRegion * boundingMapRegion;
 

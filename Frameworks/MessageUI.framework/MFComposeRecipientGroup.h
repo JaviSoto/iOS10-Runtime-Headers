@@ -19,8 +19,8 @@
 - (id)unlocalizedLabel;
 - (bool)isRemovableFromSearchResults;
 - (id)placeholderName;
-- (id)commentedAddress;
 - (id)compositeName;
+- (id)commentedAddress;
 - (void*)record;
 - (int)property;
 - (id)displayString;

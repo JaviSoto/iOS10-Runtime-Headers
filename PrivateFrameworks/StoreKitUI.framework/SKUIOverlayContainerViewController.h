@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIControl, NSArray, NSMutableArray, UITapGestureRecognizer;
+@class UIControl, NSArray, NSString, NSMutableArray, UITapGestureRecognizer;
 
 @interface SKUIOverlayContainerViewController : UIViewController <UIGestureRecognizerDelegate> {
     UIControl *_backstopView;
@@ -15,6 +15,10 @@
 
 @property(readonly) UIControl * backstopControl;
 @property(copy,readonly) NSArray * viewControllers;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_selectedViewController;

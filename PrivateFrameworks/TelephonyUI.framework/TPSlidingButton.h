@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class _UIActionSlider, UIImageView, <TPSlidingButtonDelegateProtocol>, UIButton;
+@class NSString, _UIActionSlider, UIImageView, <TPSlidingButtonDelegateProtocol>, UIButton;
 
 @interface TPSlidingButton : UIView <_UIActionSliderDelegate> {
     int _type;
@@ -17,6 +17,10 @@
 @property int type;
 @property <TPSlidingButtonDelegateProtocol> * delegate;
 @property(retain) UIImageView * dialImageView;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setDialImageView:(id)arg1;

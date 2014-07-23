@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, NSError, NSURLResponse;
+@class NSString, NSURLResponse, NSMutableData, NSError;
 
 @interface MFMessageURLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
     NSMutableData *_responseBody;
@@ -10,6 +10,11 @@
     NSError *_error;
     NSURLResponse *_response;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)connectionDidFinishLoading:(id)arg1;

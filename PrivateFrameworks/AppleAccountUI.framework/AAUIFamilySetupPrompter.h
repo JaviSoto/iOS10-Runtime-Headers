@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UIViewController, <AAUIFamilySetupPrompterDelegate>, NSOperationQueue, ACAccountStore, ACAccount, SSAccount;
+@class NSString, SSAccount, NSOperationQueue, <AAUIFamilySetupPrompterDelegate>, UIViewController, ACAccount, ACAccountStore;
 
 @interface AAUIFamilySetupPrompter : NSObject <AAUIFamilySetupDelegate> {
     ACAccountStore *_accountStore;
@@ -16,6 +16,10 @@
 }
 
 @property <AAUIFamilySetupPrompterDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)promptIfEligibleWithPresentingViewController:(id)arg1 isFirstRun:(bool)arg2;

@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WKWebProcessPlugInNodeHandle;
+@class WKWebProcessPlugInNodeHandle, NSString;
 
 @interface WKWebProcessPlugInNodeHandle : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleNodeHandle> { 
@@ -23,6 +23,10 @@
 @property(readonly) bool HTMLTextAreaElementIsUserEdited;
 @property(readonly) WKWebProcessPlugInNodeHandle * HTMLTableCellElementCellAbove;
 @property(readonly) struct InjectedBundleNodeHandle { int (**x1)(); id x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; }* _nodeHandle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 + (id)nodeHandleWithJSValue:(id)arg1 inContext:(id)arg2;

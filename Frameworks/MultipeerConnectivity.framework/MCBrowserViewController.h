@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class UINavigationBar, <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, NSMutableDictionary, UITableView, MCSession, NSMutableArray, MCPeerID, UIBarButtonItem, NSBundle;
+@class UINavigationBar, <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, NSString, NSMutableDictionary, UITableView, MCSession, NSMutableArray, MCPeerID, UIBarButtonItem, NSBundle;
 
 @interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UINavigationBarDelegate, MCNearbyServiceBrowserDelegate> {
     <MCBrowserViewControllerDelegate> *_delegate;
@@ -41,6 +41,10 @@
 @property unsigned long long declinedPeersCount;
 @property(readonly) bool maximumNumberOfPeersReached;
 @property(readonly) bool minimumNumberOfPeersReached;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setFrameworkBundle:(id)arg1;

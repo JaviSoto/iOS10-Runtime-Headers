@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSListController, PSSearchResults, NSMutableDictionary, UISearchDisplayController, <PSSearchControllerDelegate>, NSMutableArray, UISearchBar;
+@class PSListController, NSString, PSSearchResults, NSMutableDictionary, UISearchDisplayController, <PSSearchControllerDelegate>, NSMutableArray, UISearchBar;
 
 @interface PSSearchController : NSObject <PSSearchModelDelegate, PSSearchModelDataSource, UITableViewDelegate, UITableViewDataSource, UISearchDisplayDelegate, UISearchBarDelegate> {
     UISearchDisplayController *_displayController;
@@ -21,6 +21,10 @@
 @property(readonly) UISearchBar * searchBar;
 @property(readonly) PSListController * listController;
 @property <PSSearchControllerDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (double)_additionalHeightForLabelWithText:(id)arg1 font:(id)arg2 boundingWidth:(double)arg3;
 

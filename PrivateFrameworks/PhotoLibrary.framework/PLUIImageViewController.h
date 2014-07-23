@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLImageLoadingQueue, NSURL, UIImage, PLManagedAsset, PLVideoRemaker, PLCropOverlay, PLVideoView, PLImageSource, PLImageCache, PLPhotoTileViewController;
+@class PLImageLoadingQueue, NSString, NSURL, UIImage, PLManagedAsset, PLVideoRemaker, PLCropOverlay, PLVideoView, PLImageSource, PLImageCache, PLPhotoTileViewController;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate> {
     PLManagedAsset *_photo;
@@ -35,6 +35,11 @@
     unsigned int _remaking : 1;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(bool)arg2;
 - (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2 slalomRegionEditor:(id)arg3;
@@ -45,6 +50,8 @@
 - (id)initWithPhoto:(id)arg1;
 - (id)_trimMessage;
 - (void)attachScrubberPalette;
+- (void)resourcesForAsset:(id)arg1 didDownloadWithSuccess:(bool)arg2;
+- (void)downloadResourcesForAsset:(id)arg1;
 - (void)_enableCropOverlayIfNecessary;
 - (void)didChooseVideoAtURL:(id)arg1 options:(id)arg2;
 - (long long)desiredStatusBarAnimation;

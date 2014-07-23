@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class NSString, GEORequester;
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
     GEORequester *_submissionRequester;
@@ -43,6 +43,11 @@
     id _notificationAvailabilityFinishedHandler;
 
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;

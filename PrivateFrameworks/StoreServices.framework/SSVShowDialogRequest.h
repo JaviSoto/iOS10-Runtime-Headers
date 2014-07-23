@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_xpc_object>;
+@class NSObject<OS_xpc_object>, NSString;
 
 @interface SSVShowDialogRequest : SSRequest <SSXPCCoding> {
     NSObject<OS_xpc_object> *_dialog;
 }
 
 @property(readonly) NSObject<OS_xpc_object> * encodedDialog;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startWithDialogResponseBlock:(id)arg1;

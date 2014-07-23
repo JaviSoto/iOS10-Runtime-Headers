@@ -7,14 +7,17 @@
 @interface NCInteractiveNotificationViewController : UIViewController <NCInteractiveNotificationServiceInterface> {
     bool_modal;
     NSDictionary *_context;
+    double _maximumHeight;
 }
 
 @property(copy) NSDictionary * context;
 @property(getter=isModal) bool modal;
+@property double maximumHeight;
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
 
+- (double)maximumHeight;
 - (void)requestProximityMonitoringEnabled:(bool)arg1;
 - (void)setActionEnabled:(bool)arg1 atIndex:(unsigned long long)arg2;
 - (void)requestPreferredContentHeight:(double)arg1;
@@ -28,6 +31,7 @@
 - (void)_proximityStateDidChange:(bool)arg1;
 - (void)_interactiveNotificationDidAppear;
 - (void)_setModal:(bool)arg1;
+- (void)_setMaximumHeight:(double)arg1;
 - (void)_getInitialStateWithCompletion:(id)arg1;
 - (void)willPresentFromActionIdentifier:(id)arg1;
 - (void)handleActionIdentifier:(id)arg1;
@@ -37,6 +41,7 @@
 - (id)actionContext;
 - (void)didChangeRevealPercent:(double)arg1;
 - (void)interactiveNotificationDidAppear;
+- (void)setMaximumHeight:(double)arg1;
 - (void)setModal:(bool)arg1;
 - (id)accessoryViewService;
 - (id)inlayViewService;

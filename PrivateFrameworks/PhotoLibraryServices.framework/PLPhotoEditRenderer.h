@@ -78,7 +78,7 @@
 - (id)_smartColorAdjustments;
 - (id)_smartToneAdjustments;
 - (void)_invalidateCachedFilters;
-- (void)generateEditedImageWithCompletion:(id)arg1;
+- (void)createEditedImageWithCompletion:(id)arg1;
 - (void)setPhotoEditModel:(id)arg1;
 - (id)_renderingQueue;
 - (void)setRenderMode:(unsigned long long)arg1;

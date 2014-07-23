@@ -28,6 +28,10 @@
 @property(retain) NSString * selectedIdentifier;
 @property(retain) NSString * moreListTitle;
 @property(getter=_previewOverlayViewController,readonly) SUPreviewOverlayViewController * _previewOverlayViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (Class)_moreNavigationControllerClass;
 

@@ -2,13 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface UITableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, NSCoding> {
     NSArray *_sections;
 }
 
 @property(copy) NSArray * sections;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)staticDataSourceWithSections:(id)arg1;
 

@@ -76,6 +76,7 @@
 - (void)_getParametersIfNecessaryForSectionIDs:(id)arg1 withCompletion:(id)arg2;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2;
 - (void)clearBulletins:(id)arg1 inSection:(id)arg2;
+- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withCompletion:(id)arg3;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;

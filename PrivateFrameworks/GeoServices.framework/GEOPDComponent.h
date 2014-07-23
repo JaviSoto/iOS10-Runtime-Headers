@@ -5,7 +5,7 @@
 @class NSMutableArray, GEOPDSource, GEOPDAttribution;
 
 @interface GEOPDComponent : PBCodable <NSCopying> {
-    double _timestamp;
+    double _timestampFirstSeen;
     GEOPDAttribution *_attribution;
     int _cacheControl;
     GEOPDSource *_source;
@@ -18,7 +18,7 @@
     unsigned int _version;
     NSMutableArray *_versionDomains;
     struct { 
-        unsigned int timestamp : 1; 
+        unsigned int timestampFirstSeen : 1; 
         unsigned int cacheControl : 1; 
         unsigned int startIndex : 1; 
         unsigned int status : 1; 
@@ -29,12 +29,12 @@
     } _has;
 }
 
+@property bool hasTimestampFirstSeen;
+@property double timestampFirstSeen;
 @property bool hasType;
 @property int type;
 @property bool hasStatus;
 @property int status;
-@property bool hasTimestamp;
-@property double timestamp;
 @property bool hasTtl;
 @property unsigned int ttl;
 @property bool hasStartIndex;
@@ -54,6 +54,7 @@
 
 
 - (bool)hasStatus;
+- (void)setHasTimestampFirstSeen:(bool)arg1;
 - (int)valuesAvailable;
 - (void)setHasVersion:(bool)arg1;
 - (bool)hasValuesAvailable;
@@ -71,10 +72,13 @@
 - (void)addVersionDomain:(id)arg1;
 - (void)setVersionDomains:(id)arg1;
 - (void)setAttribution:(id)arg1;
+- (void)setTimestampFirstSeen:(double)arg1;
+- (bool)hasTimestampFirstSeen;
 - (id)attribution;
 - (bool)hasAttribution;
 - (bool)hasSource;
 - (bool)hasVersion;
+- (double)timestampFirstSeen;
 - (id)versionDomains;
 - (unsigned int)ttl;
 - (void)setHasStatus:(bool)arg1;
@@ -82,8 +86,6 @@
 - (bool)hasCacheControl;
 - (void)setHasCacheControl:(bool)arg1;
 - (void)setCacheControl:(int)arg1;
-- (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setTtl:(unsigned int)arg1;
@@ -94,8 +96,6 @@
 - (void)setStartIndex:(int)arg1;
 - (int)startIndex;
 - (id)valueAtIndex:(unsigned long long)arg1;
-- (void)setTimestamp:(double)arg1;
-- (double)timestamp;
 - (void)setValues:(id)arg1;
 - (id)values;
 - (id)source;

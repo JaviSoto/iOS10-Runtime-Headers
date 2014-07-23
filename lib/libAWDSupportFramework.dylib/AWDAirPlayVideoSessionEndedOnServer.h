@@ -74,6 +74,7 @@
 @property unsigned int remoteNonFairPlayCount;
 
 
+- (bool)hasDuration;
 - (unsigned int)fastFowards;
 - (unsigned int)rewinds;
 - (unsigned int)pauses;
@@ -127,9 +128,8 @@
 - (void)setHasReason:(bool)arg1;
 - (bool)hasSessionUUID;
 - (void)setSessionUUID:(id)arg1;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasDuration:(bool)arg1;

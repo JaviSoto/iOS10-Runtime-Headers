@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSXPCListener, NSArray, NSUUID, <_NSExtensionContextVending>, NSXPCConnection, <_NSExtensionContextHosting>;
+@class NSUUID, NSXPCConnection, NSArray, <_NSExtensionContextHosting>, NSString, <_NSExtensionContextVending>, NSXPCListener;
 
 @interface NSExtensionContext : NSObject <NSSecureCoding, NSCopying, NSXPCListenerDelegate, _NSExtensionAuxHostingBase> {
     NSArray *_inputItems;
@@ -31,6 +31,10 @@
 @property(setter=_setAuxiliaryConnection:,retain) NSXPCConnection * _auxiliaryConnection;
 @property(setter=_setAuxiliaryListener:,retain) NSXPCListener * _auxiliaryListener;
 @property(setter=_setPrincipalObject:) id _principalObject;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;

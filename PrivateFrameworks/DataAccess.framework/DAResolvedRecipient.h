@@ -20,7 +20,6 @@
 @property(retain) NSMutableDictionary * mResolvedEmailToX509Certs;
 
 
-- (id)resolvedEmailToX509Certs;
 - (void)setMergedFreeBusy:(id)arg1;
 - (void)setAvailabilityStatus:(long long)arg1;
 - (void)setCertificatesStatus:(long long)arg1;
@@ -30,6 +29,7 @@
 - (id)mergedFreeBusy;
 - (long long)certificatesStatus;
 - (id)mResolvedEmailToX509Certs;
+- (id)resolvedEmailToX509Certs;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (void).cxx_destruct;

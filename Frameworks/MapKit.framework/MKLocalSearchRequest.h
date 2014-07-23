@@ -17,6 +17,7 @@
             double longitudeDelta; 
         } span; 
     } _region;
+    bool_allowPhoneNumberLookupUsingCellular;
     <GEOCompletionItem> *_geoCompletionItem;
     CLLocation *_deviceLocation;
     NSArray *_phoneNumbers;
@@ -29,6 +30,7 @@
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property(getter=_deviceLocation,setter=_setDeviceLocation:,retain) CLLocation * deviceLocation;
 @property(getter=_phoneNumbers,setter=_setPhoneNumbers:,retain) NSArray * phoneNumbers;
+@property(getter=_allowPhoneNumberLookupUsingCellular,setter=_setAllowPhoneNumberLookupUsingCellular:) bool allowPhoneNumberLookupUsingCellular;
 @property(getter=_muids,setter=_setMuids:,retain) NSArray * muids;
 @property(getter=_contactsDataString,setter=_setContactsDataString:,retain) NSString * contactsDataString;
 @property(getter=_canonicalSearchString,setter=_setCanonicalSearchString:,retain) NSString * canonicalSearchString;
@@ -37,7 +39,8 @@
 
 + (id)searchRequestWithCompletion:(id)arg1;
 
-- (void)_setCanonicalSearchString:(id)arg1;
+- (void)_setContactsDataString:(id)arg1;
+- (void)_setAllowPhoneNumberLookupUsingCellular:(bool)arg1;
 - (id)_contactsDataString;
 - (void)_setDeviceLocation:(id)arg1;
 - (void)_setMuids:(id)arg1;
@@ -46,10 +49,11 @@
 - (id)_canonicalSearchString;
 - (bool)_hasRegion;
 - (id)_muids;
+- (bool)_allowPhoneNumberLookupUsingCellular;
 - (id)_phoneNumbers;
 - (id)_deviceLocation;
 - (id)geoCompletionItem;
-- (void)_setContactsDataString:(id)arg1;
+- (void)_setCanonicalSearchString:(id)arg1;
 - (id)_dictionaryRepresentation;
 - (void)_setPhoneNumbers:(id)arg1;
 - (void).cxx_destruct;

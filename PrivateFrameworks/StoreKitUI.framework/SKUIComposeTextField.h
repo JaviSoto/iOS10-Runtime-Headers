@@ -19,6 +19,10 @@
 @property(copy) NSString * text;
 @property(readonly) UITextField * textField;
 @property(getter=isValid,readonly) bool valid;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)labelColorForStyle:(long long)arg1;
 + (id)labelFontForStyle:(long long)arg1;

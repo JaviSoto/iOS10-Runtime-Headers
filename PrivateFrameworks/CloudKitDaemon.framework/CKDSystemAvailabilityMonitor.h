@@ -18,10 +18,10 @@
 
 - (void)setAvailabilityQueue:(id)arg1;
 - (void)setWatchers:(id)arg1;
-- (void)setSystemIsAvailable:(bool)arg1;
 - (void)_notifyWatchersOfStateChange;
-- (id)availabilityQueue;
+- (void)setSystemIsAvailable:(bool)arg1;
 - (id)watchers;
+- (id)availabilityQueue;
 - (bool)_systemMayNowBeReady;
 - (void)unregisterWatcher:(id)arg1;
 - (void)registerWatcher:(id)arg1;

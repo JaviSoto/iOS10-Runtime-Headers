@@ -20,15 +20,15 @@
 @property(retain) NSMutableArray * underlyingErrors;
 
 
+- (bool)hasCode;
 - (id)underlyingErrors;
-- (bool)hasDomain;
+- (void)setHasCode:(bool)arg1;
 - (id)underlyingErrorsAtIndex:(unsigned long long)arg1;
 - (void)clearUnderlyingErrors;
 - (unsigned long long)underlyingErrorsCount;
 - (void)addUnderlyingErrors:(id)arg1;
 - (void)setUnderlyingErrors:(id)arg1;
-- (bool)hasCode;
-- (void)setHasCode:(bool)arg1;
+- (bool)hasDomain;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

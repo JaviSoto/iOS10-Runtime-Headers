@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSCountedSet, CPLEngineLibrary, CPLPlatformObject, NSObject<OS_dispatch_queue>, NSDate;
+@class NSCountedSet, CPLEngineLibrary, CPLPlatformObject, NSString, NSObject<OS_dispatch_queue>, NSDate;
 
 @interface CPLEngineScheduler : NSObject <CPLAbstractObject, CPLEngineComponent> {
     unsigned long long _requiredFirstState;
@@ -23,6 +23,10 @@
 }
 
 @property(readonly) CPLEngineLibrary * engineLibrary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)platformImplementationProtocol;
@@ -30,6 +34,7 @@
 - (void)resetBackoffInterval;
 - (void)noteSyncSessionFailedDuringPhase:(unsigned long long)arg1 withError:(id)arg2;
 - (void)noteSyncSessionStateWillBeAttempted:(unsigned long long)arg1;
+- (void)noteNetworkStateDidChange;
 - (void)noteServerIsUnavailableWithError:(id)arg1;
 - (bool)isSynchronizationDisabledWithReasonError:(id*)arg1;
 - (void)enableSynchronizationWithReason:(id)arg1;

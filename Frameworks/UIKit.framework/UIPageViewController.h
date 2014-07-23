@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIPageViewControllerContentView, NSArray, UITapGestureRecognizer, <UIPageViewControllerDelegate>, _UIPageCurl, NSMutableDictionary, <UIPageViewControllerDataSource>, NSMutableArray, UIPanGestureRecognizer, NSDictionary, _UIQueuingScrollView;
+@class NSMutableDictionary, NSDictionary, _UIQueuingScrollView, UITapGestureRecognizer, <UIPageViewControllerDataSource>, <UIPageViewControllerDelegate>, NSMutableArray, NSString, _UIPageViewControllerContentView, _UIPageCurl, NSArray, UIPanGestureRecognizer;
 
 @interface UIPageViewController : UIViewController <UIGestureRecognizerDelegate, _UIQueuingScrollViewDelegate, _UIQueuingScrollViewDataSource> {
     <UIPageViewControllerDelegate> *_delegate;
@@ -79,6 +79,10 @@
 @property(readonly) _UIQueuingScrollView * _scrollView;
 @property(setter=_setPageSpacing:) double _pageSpacing;
 @property(getter=_isInterfaceRotating,readonly) bool _interfaceRotating;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_incomingViewControllerKeys;
 + (id)_outgoingViewControllerKeys;

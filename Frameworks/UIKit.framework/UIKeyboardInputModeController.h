@@ -9,6 +9,7 @@
     NSArray *_inputModesWithoutHardwareSupport;
     NSArray *_allowedExtensions;
     bool_skipExtensionInputModes;
+    bool_MCDidRejectExtensions;
     NSArray *keyboardInputModes;
     NSArray *enabledInputModes;
     NSArray *normalizedInputModes;
@@ -59,6 +60,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (id)preferredLanguages;
 - (id)enabledInputModeLanguages;
 - (id)inputModesWithoutHardwareSupport;
 - (id)enabledInputModeIdentifiers:(bool)arg1;
@@ -66,6 +68,7 @@
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)switchToCurrentSystemInputMode;
 - (id)extensionInputModes;
+- (id)suggestedInputModesForPreferredLanguages;
 - (id)suggestedInputModesForCurrentLocale;
 - (id)defaultEnabledInputModesForCurrentLocale:(bool)arg1;
 - (bool)currentLocaleRequiresExtendedSetup;

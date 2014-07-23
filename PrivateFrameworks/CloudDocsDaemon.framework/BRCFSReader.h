@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCRelativePath, NSObject<OS_dispatch_queue>;
+@class BRCAccountSession, BRCRelativePath, NSString, NSObject<OS_dispatch_queue>;
 
 @interface BRCFSReader : NSObject <BRCModule, BRCFSEventsDelegate, BRCFileCoordinationReading> {
     BRCAccountSession *_session;
@@ -11,6 +11,10 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)scanContainerAtPathIfNeeded:(id)arg1;

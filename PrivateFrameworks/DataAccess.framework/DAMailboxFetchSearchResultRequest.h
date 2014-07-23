@@ -15,11 +15,11 @@
 @property int maxSize;
 
 
-- (id)initRequestForBodyFormat:(int)arg1 withLongID:(id)arg2 withBodySizeLimit:(int)arg3;
 - (id)longID;
 - (void)setLongID:(id)arg1;
 - (void)setBodyFormat:(int)arg1;
 - (int)bodyFormat;
+- (id)initRequestForBodyFormat:(int)arg1 withLongID:(id)arg2 withBodySizeLimit:(int)arg3;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setMaxSize:(int)arg1;

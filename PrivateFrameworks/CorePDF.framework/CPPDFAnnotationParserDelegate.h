@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableString;
+@class NSString, NSMutableString;
 
 @interface CPPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
     NSMutableString *_characters;
@@ -36,6 +36,10 @@
 @property(readonly) struct __CFString { }* otherId;
 @property(readonly) struct __CFString { }* content;
 @property(readonly) struct CGColor { }* color;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct __CFString { }*)otherId;

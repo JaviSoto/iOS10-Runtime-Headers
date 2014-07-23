@@ -44,12 +44,13 @@
 - (id)from;
 - (void)setFrom:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (id)path;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setPath:(id)arg1;
-- (id)path;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

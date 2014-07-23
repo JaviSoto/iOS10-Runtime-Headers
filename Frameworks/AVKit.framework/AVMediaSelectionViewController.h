@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVMediaSelectionOption, AVPlayerController, UITableView;
+@class AVMediaSelectionOption, NSString, AVPlayerController, UITableView;
 
 @interface AVMediaSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *_tableView;
@@ -22,6 +22,10 @@
 
 @property(retain) AVPlayerController * playerController;
 @property(copy) id doneButtonHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_doneButtonTapped:(id)arg1;

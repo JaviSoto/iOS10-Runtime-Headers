@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IDSAccountController, NSArray;
+@class IDSAccountController, NSArray, NSString;
 
 @interface IMDIDSService : IMDService <IDSAccountControllerDelegate, IDSAccountRegistrationDelegate> {
     IDSAccountController *_accountController;
@@ -13,6 +13,10 @@
 @property(retain,readonly) IDSAccountController * idsAccountController;
 @property(retain,readonly) NSArray * accountsLoadedFromIdentityServices;
 @property(readonly) NSArray * activeAccountsFromIdentityServices;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)idsAccountController;

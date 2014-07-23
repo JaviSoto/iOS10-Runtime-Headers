@@ -44,6 +44,10 @@
 @property bool sharedItemsAvailable;
 @property bool otherActivityViewPresented;
 @property bool darkStyleOnLegacyApp;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)classesForItem:(id)arg1;
 + (bool)airDropActivityCanPerformActivityWithItems:(id)arg1;
@@ -64,6 +68,7 @@
 - (void)enableAirDropRequiredFeatures;
 - (void)adjustViewsToInterfaceOrientation:(long long)arg1;
 - (void)updateContentAreaAnimated:(bool)arg1;
+- (void)willEnterForeground:(id)arg1;
 - (void)startBrowsing;
 - (void)unsubscribeToProgresses;
 - (void)subscribeToProgresses;
@@ -72,13 +77,12 @@
 - (void)personCollectionViewCellDidStartTransfer:(id)arg1;
 - (bool)isBluetoothEnabled;
 - (void)wirelessSettingsDidChange:(id)arg1;
-- (void)willEnterForeground:(id)arg1;
 - (void)browserDidChangePeople:(id)arg1;
 - (void)browser:(id)arg1 didInsertPersonAtIndex:(unsigned long long)arg2;
 - (void)browser:(id)arg1 didDeletePersonAtIndex:(unsigned long long)arg2;
 - (void)browserWillChangePeople:(id)arg1;
-- (bool)isWifiEnabled;
 - (void)stopBrowsing;
+- (bool)isWifiEnabled;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIView, <MFMultiDragDestination>, NSArray, NSTimer, NSMutableDictionary, UIWindow, NSMutableArray, MFGobblerGestureRecognizer, UIGestureRecognizer;
+@class UIView, <MFMultiDragDestination>, NSArray, NSTimer, NSString, NSMutableDictionary, UIWindow, NSMutableArray, MFGobblerGestureRecognizer, UIGestureRecognizer;
 
 @interface MFMultiDragManager : NSObject <UIGestureRecognizerDelegate> {
     NSMutableArray *_dragContextValues;
@@ -40,6 +40,11 @@
     bool_dragWasSuccessful;
     bool_scrollingForDrag;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 

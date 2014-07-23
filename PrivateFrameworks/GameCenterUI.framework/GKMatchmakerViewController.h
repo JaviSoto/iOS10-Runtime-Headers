@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString, GKHostedMatchmakerViewController, GKRemoteMatchmakerViewController, GKMatch, NSMutableArray, <GKMatchmakerViewControllerDelegate>, GKInvite, GKMatchRequest;
+@class NSString, GKHostedMatchmakerViewController, GKRemoteMatchmakerViewController, GKMatch, NSMutableArray, <GKMatchmakerViewControllerDelegate>, UIAlertController, GKInvite, GKMatchRequest;
 
 @interface GKMatchmakerViewController : UINavigationController <GKMatchDelegate> {
     bool_hosted;
@@ -13,6 +13,7 @@
     GKInvite *_acceptedInvite;
     GKMatch *_match;
     NSMutableArray *_hostedPlayers;
+    UIAlertController *_alertController;
 }
 
 @property <GKMatchmakerViewControllerDelegate> * matchmakerDelegate;
@@ -24,6 +25,11 @@
 @property(retain) GKInvite * acceptedInvite;
 @property(retain) GKMatch * match;
 @property(retain) NSMutableArray * hostedPlayers;
+@property(retain) UIAlertController * alertController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)_preventsAppearanceProxyCustomization;
 
@@ -71,6 +77,9 @@
 - (void)dealloc;
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
+- (id)alertController;
+- (void)setAlertController:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

@@ -5,6 +5,8 @@
 @class NSRecursiveLock, NSString, NSDictionary, NSHashTable, NSMutableSet, NSNumber;
 
 @interface CUTWiFiManager : NSObject <CUTPowerMonitorDelegate> {
+    bool_isHostingHotSpot;
+    bool_isWifiEnabled;
     bool_isWakeOnWiFiEnabled;
     bool_isWakeOnWiFiSupported;
     bool_isWifiAssociated;
@@ -43,6 +45,10 @@
 @property(retain) NSHashTable * wowClients;
 @property(copy) NSDictionary * lastWiFiPowerInfo;
 @property(retain) NSMutableSet * wiFiAutoAssociationTokens;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)sharedInstance;
 
@@ -87,6 +93,7 @@
 - (id)currentSSID;
 - (void)currentWiFiNetworkPowerUsageWithCompletion:(id)arg1;
 - (double)_wifiMeasurementErrorForInterval:(double)arg1;
+- (void)_updateIsWiFiEnabled;
 - (void)_createDynamicStore;
 - (void)_createWiFiManager;
 - (bool)hasWoWClient:(id)arg1;

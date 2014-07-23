@@ -60,7 +60,6 @@
 - (void)_setHighlightOnMouseDown:(bool)arg1;
 - (bool)_hasActionForEventMask:(int)arg1;
 - (double)_highlightCornerRadius;
-- (void)sendActionsForControlEvents:(unsigned long long)arg1;
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned long long)arg2;
 - (unsigned long long)allControlEvents;
 - (id)allTargets;
@@ -87,9 +86,10 @@
 - (void)setSelected:(bool)arg1;
 - (bool)isSelected;
 - (bool)isHighlighted;
-- (void)setHighlighted:(bool)arg1;
 - (void)setContentVerticalAlignment:(long long)arg1;
 - (void)setContentHorizontalAlignment:(long long)arg1;
+- (void)sendActionsForControlEvents:(unsigned long long)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (bool)canBecomeFirstResponder;

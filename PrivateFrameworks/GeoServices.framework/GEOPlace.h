@@ -43,6 +43,10 @@
 @property(retain) NSString * inputLanguage;
 @property(readonly) bool hasPhoneticLocaleIdentifier;
 @property(retain) NSString * phoneticLocaleIdentifier;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool hasUID;
 @property long long uID;
 @property bool hasType;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateGridCollectionViewController, UIView, TIKeyboardCandidateResultSet, UIKeyboardCandidateSortControl;
+@class UIKeyboardCandidateGridCollectionViewController, NSString, UIView, TIKeyboardCandidateResultSet, UIKeyboardCandidateSortControl;
 
 @interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateGridCollectionViewControllerDelegate> {
     UIView *_clippingView;
@@ -24,6 +24,10 @@
 @property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
 @property(retain) UIKeyboardCandidateSortControl * scrollViewSortControl;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (unsigned long long)currentIndex;

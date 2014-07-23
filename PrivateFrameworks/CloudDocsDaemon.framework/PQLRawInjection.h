@@ -2,12 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData;
+@class NSString, NSData;
 
-@interface PQLRawInjection : NSObject <PQLInjecting> {
-    NSData *_sql;
+@interface PQLRawInjection : PQLNameInjectionBase <PQLInjecting> {
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSData * sql;
 
 + (id)rawInjection:(const char *)arg1 length:(unsigned long long)arg2;
@@ -15,8 +18,6 @@
 
 - (id)initWithUTF8String:(const char *)arg1 length:(unsigned long long)arg2;
 - (int)bindWithStatement:(struct sqlite3_stmt { }*)arg1 startingAtIndex:(int)arg2;
-- (id)sql;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

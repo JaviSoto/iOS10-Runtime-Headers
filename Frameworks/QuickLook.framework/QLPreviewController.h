@@ -94,15 +94,15 @@
 - (void)_configurePreviewContentController;
 - (void)_showOverlayWithStatusBar:(bool)arg1 duration:(double)arg2;
 - (void)_showContentsIfPossibleAnimated:(bool)arg1;
-- (void)_updateToolbar:(bool)arg1;
+- (void)_updateToolbarAnimated:(bool)arg1;
 - (void)setCurrentPreviewItemIndex:(long long)arg1;
 - (id)_displayedInteractionController;
 - (long long)currentPreviewItemIndex;
-- (void)_updateToolbarVisibility:(bool)arg1;
+- (void)_updateToolbarVisibilityAnimated:(bool)arg1;
 - (id)_currentNavigationController;
 - (void)setTransitioning:(bool)arg1 synchronizedWithBlock:(id)arg2;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
-- (void)_updateNavigationBar:(bool)arg1;
+- (void)_updateNavigationBarAnimated:(bool)arg1;
 - (id)currentPreviewItem;
 - (id)itemsSource;
 - (void)_unloadInternalViews;

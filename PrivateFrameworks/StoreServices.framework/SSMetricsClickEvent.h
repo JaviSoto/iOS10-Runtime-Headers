@@ -25,7 +25,6 @@
 - (void)setTargetURL:(id)arg1;
 - (void)setActionDetails:(id)arg1;
 - (void)setTargetType:(id)arg1;
-- (id)targetURL;
 - (void)setLocationDescription:(id)arg1;
 - (id)locationDescription;
 - (id)actionDetails;
@@ -37,6 +36,7 @@
 - (void)setTargetIdentifier:(id)arg1;
 - (void)setActionType:(id)arg1;
 - (id)actionType;
+- (id)targetURL;
 - (id)init;
 - (id)description;
 

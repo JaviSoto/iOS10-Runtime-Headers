@@ -9,10 +9,8 @@
     NSDictionary *_serverContainerConfigurationDict;
     NSMutableDictionary *_cache;
     NSString *_containerIdentifer;
-    bool_isAppleInternalInstall;
 }
 
-@property(readonly) bool isAppleInternalInstall;
 @property(readonly) unsigned int maxContainerNameLength;
 @property(readonly) unsigned long long maxXattrBlobSize;
 @property(readonly) unsigned int maxRecordCountInFetchRecordsOperation;
@@ -138,7 +136,6 @@
 - (double)transferQueueTransferBudget;
 - (int)transferQueueMaxConcurrentOperations;
 - (int)transferQueueMinConcurrentOperations;
-- (unsigned long long)maxXattrBlobSize;
 - (unsigned short)stageFileUmask;
 - (unsigned short)stageDirectoryUmask;
 - (double)lockedFileScanInterval;
@@ -175,6 +172,7 @@
 - (id)containerResetThrottleParams;
 - (int)syncOperationQueueWidth;
 - (id)serverConfigurationURL;
+- (unsigned long long)maxXattrBlobSize;
 - (unsigned int)minEvictableFilesize;
 - (id)applyThrottleParams;
 - (id)readerThrottleParams;
@@ -183,7 +181,6 @@
 - (double)dbBatchDelay;
 - (bool)dbTraced;
 - (int)logLevel;
-- (bool)isAppleInternalInstall;
 - (void).cxx_destruct;
 
 @end

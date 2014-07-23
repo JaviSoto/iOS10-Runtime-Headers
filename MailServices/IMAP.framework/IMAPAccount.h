@@ -160,6 +160,7 @@
 - (void)connectionDidDisconnect:(id)arg1;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg3;
 - (bool)connection:(id)arg1 shouldHandleUntaggedResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg3;
+- (id)mf_lockOrdering;
 - (id)errorForResponse:(id)arg1;
 - (id)fetchLimits;
 - (void)_readCustomInfoFromMailboxCache:(id)arg1;
@@ -170,6 +171,7 @@
 - (bool)supportsMailboxEditing;
 - (bool)supportsRemoteAppend;
 - (void)transferNotificationSessionToAccount:(id)arg1;
+- (void)stopListeningForNotifications;
 - (void)startListeningForNotifications;
 - (bool)newMailboxNameIsAcceptable:(id)arg1 reasonForFailure:(id*)arg2;
 - (id)allMailMailboxUid;
@@ -208,8 +210,6 @@
 - (void)releaseAllConnections;
 - (bool)deleteInPlaceForMailbox:(id)arg1;
 - (bool)shouldRestoreMessagesAfterFailedDelete;
-- (id)mf_lockOrdering;
-- (void)stopListeningForNotifications;
 - (void)checkInConnection:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (bool)requiresAuthentication;

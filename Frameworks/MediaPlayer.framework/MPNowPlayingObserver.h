@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSData, UIImage, MPImageCache, MPAVController, NSMutableDictionary, MPStoreDownload, NSObject<OS_dispatch_queue>;
+@class NSData, NSString, UIImage, MPImageCache, MPAVController, NSMutableDictionary, MPStoreDownload, NSObject<OS_dispatch_queue>;
 
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -21,9 +21,14 @@
 @property(getter=isEnabled) bool enabled;
 @property(readonly) MPImageCache * imageCache;
 @property(retain) MPAVController * player;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
+- (void)_playbackErrorNotification:(id)arg1;
 - (void)_repeatTypeDidChangeNotification:(id)arg1;
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
 - (void)_crossedTimeMarkerNotification:(id)arg1;

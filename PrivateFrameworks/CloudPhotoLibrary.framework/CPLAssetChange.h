@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString, NSArray, NSData, NSDate, CLLocation, CPLAdjustments;
+@class NSString, NSArray, CPLAdjustments, NSDate, CLLocation;
 
 @interface CPLAssetChange : CPLItemChange  {
     bool_favorite;
@@ -18,8 +18,6 @@
     long long _duration;
     CLLocation *_location;
     NSArray *_keywords;
-    NSString *_mediaMetaDataType;
-    NSData *_mediaMetaData;
     NSString *_timeZoneName;
     NSString *_momentIdentifier;
     NSString *_momentName;
@@ -31,7 +29,6 @@
     unsigned long long _assetHDRType;
     CPLAdjustments *_adjustments;
     unsigned long long _originalChoice;
-    unsigned long long _fullSizeJPEGSource;
 }
 
 @property(copy) NSString * masterIdentifier;
@@ -46,8 +43,6 @@
 @property long long duration;
 @property(retain) CLLocation * location;
 @property(copy) NSArray * keywords;
-@property(copy) NSString * mediaMetaDataType;
-@property(retain) NSData * mediaMetaData;
 @property(getter=isHidden) bool hidden;
 @property(copy) NSString * timeZoneName;
 @property(copy) NSString * momentIdentifier;
@@ -60,21 +55,16 @@
 @property unsigned long long assetHDRType;
 @property(retain) CPLAdjustments * adjustments;
 @property unsigned long long originalChoice;
-@property unsigned long long fullSizeJPEGSource;
 
 
 - (bool)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 usingClientCache:(id)arg3;
-- (void)setFullSizeJPEGSource:(unsigned long long)arg1;
 - (void)setOriginalChoice:(unsigned long long)arg1;
 - (void)setAssetHDRType:(unsigned long long)arg1;
-- (void)setAssetDate:(id)arg1;
-- (unsigned long long)fullSizeJPEGSource;
 - (unsigned long long)originalChoice;
 - (unsigned long long)assetHDRType;
 - (id)addedDate;
 - (id)assetDate;
-- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
 - (void)setMasterIdentifier:(id)arg1;
@@ -87,6 +77,7 @@
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
+- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (long long)dequeueOrder;
 - (unsigned long long)assetSubtype;
@@ -95,25 +86,22 @@
 - (id)extendedDescription;
 - (id)momentIdentifier;
 - (id)momentName;
-- (id)mediaMetaDataType;
-- (id)mediaMetaData;
 - (void)setAdjustments:(id)arg1;
 - (void)setAssetSubtype:(unsigned long long)arg1;
 - (void)setExtendedDescription:(id)arg1;
 - (void)setKeywords:(id)arg1;
+- (void)setAssetDate:(id)arg1;
 - (void)setLastSharedDate:(id)arg1;
 - (id)lastSharedDate;
 - (void)setBurstIdentifier:(id)arg1;
 - (void)setBurstFlags:(unsigned long long)arg1;
 - (void)setMomentName:(id)arg1;
 - (void)setMomentIdentifier:(id)arg1;
-- (void)setMediaMetaDataType:(id)arg1;
-- (void)setMediaMetaData:(id)arg1;
 - (void)setTimeZoneName:(id)arg1;
 - (void)setFavorite:(bool)arg1;
 - (id)timeZoneName;
-- (void)setAddedDate:(id)arg1;
 - (id)adjustments;
+- (void)setAddedDate:(id)arg1;
 - (id)keywords;
 - (bool)isFavorite;
 - (id)resources;

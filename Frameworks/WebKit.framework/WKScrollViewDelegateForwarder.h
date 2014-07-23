@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKWebView, <UIScrollViewDelegate>;
+@class NSString, WKWebView, <UIScrollViewDelegate>;
 
 @interface WKScrollViewDelegateForwarder : NSObject <UIScrollViewDelegate> {
     WKWebView *_internalDelegate;
     <UIScrollViewDelegate> *_externalDelegate;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)initWithInternalDelegate:(id)arg1 externalDelegate:(id)arg2;

@@ -47,17 +47,23 @@
     NSString *_folderTag;
 }
 
++ (id)displayedAccountTypeString;
++ (id)displayedShortAccountTypeString;
 + (id)accountIDForDirectoryName:(id)arg1 isAccountDirectory:(bool*)arg2;
 + (id)folderIDForRelativePath:(id)arg1 accountID:(id*)arg2;
 + (Class)_accountConduitClass;
 + (id)_URLScheme;
 + (id)accountTypeString;
-+ (id)displayedAccountTypeString;
-+ (id)displayedShortAccountTypeString;
 
 - (bool)supportsUserPushedMailboxes;
 - (id)pushedMailboxUids;
 - (id)iconString;
+- (bool)reconstituteOrphanedMeetingInMessage:(id)arg1;
+- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
+- (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
+- (int)secureCompositionSigningPolicyForAddress:(id)arg1;
+- (bool)secureMIMEEnabled;
+- (id)initWithDAAccount:(id)arg1;
 - (unsigned int)daysToSync;
 - (bool)supportsServerSearch;
 - (void)processRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
@@ -108,6 +114,7 @@
 - (bool)supportsMailboxEditing;
 - (bool)supportsRemoteAppend;
 - (bool)shouldAppearInMailSettings;
+- (void)stopListeningForNotifications;
 - (void)startListeningForNotifications;
 - (bool)newMailboxNameIsAcceptable:(id)arg1 reasonForFailure:(id*)arg2;
 - (void)fetchMailboxList;
@@ -142,13 +149,6 @@
 - (bool)shouldFetchAgainWithError:(id)arg1 foregroundRequest:(bool)arg2;
 - (bool)shouldRestoreMessagesAfterFailedDelete;
 - (bool)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(bool)arg4 unsuccessfulOnes:(id)arg5 newMessages:(id)arg6;
-- (id)initWithDAAccount:(id)arg1;
-- (bool)reconstituteOrphanedMeetingInMessage:(id)arg1;
-- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
-- (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
-- (int)secureCompositionSigningPolicyForAddress:(id)arg1;
-- (bool)secureMIMEEnabled;
-- (void)stopListeningForNotifications;
 - (void)_reachabilityChanged:(id)arg1;
 - (bool)isEnabledForDataclass:(id)arg1;
 - (id)accountPropertyForKey:(id)arg1;

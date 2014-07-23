@@ -94,6 +94,10 @@
 @property(retain) NSMutableArray * queryTasks;
 @property <PRSSessionController> * client;
 @property(retain) PRSFairPlaySAPSession * SAPSession;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) double sessionStartTime;
 @property(getter=isEnabled,readonly) bool enabled;
 @property(readonly) NSArray * supportedDomainIdentifiers;
@@ -141,7 +145,6 @@
 - (id)resourceWithID:(id)arg1;
 - (double)searchRenderTimeout;
 - (id)bag;
-- (void)triggerTaskWhenReady:(id)arg1;
 - (long long)minimumStringLength;
 - (long long)maximumCachedQueryCount;
 - (long long)maximumCachedResultCount;
@@ -154,6 +157,7 @@
 - (id)webSearchURL;
 - (bool)parsecEnabled;
 - (void)reloadBagFromClient:(id)arg1;
+- (void)triggerTaskWhenReady:(id)arg1;
 - (void)setGuidStartTime:(double)arg1;
 - (double)guidStartTime;
 - (id)waldoIP;

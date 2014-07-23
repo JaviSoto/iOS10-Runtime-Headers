@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class SKUIItem, ABPeoplePickerNavigationController, SKUIClientContext, UIViewController;
+@class SKUIItem, ABPeoplePickerNavigationController, SKUIClientContext, NSString, UIViewController;
 
 @interface SKUITonePurchaseController : NSObject <ABPeoplePickerNavigationControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -22,6 +22,10 @@
 
 @property(retain) SKUIClientContext * clientContext;
 @property UIViewController * parentViewController;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)_finishPeoplePicker:(id)arg1 withPerson:(void*)arg2;

@@ -37,8 +37,8 @@
 @property(retain) NSArray * attendees;
 
 
-- (bool)isAllDay;
 - (void)setEndDate:(id)arg1;
+- (bool)isAllDay;
 - (id)startDateForNextOccurrence;
 - (void)setAttendeeReplyChanged:(bool)arg1;
 - (void)setHasRecurrenceRules:(bool)arg1;

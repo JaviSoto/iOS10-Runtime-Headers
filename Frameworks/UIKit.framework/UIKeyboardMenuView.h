@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIInputSwitcherTableView, UIKBTree, UIKeyboardLayoutStar, UIInputSwitcherShadowView, UIInputSwitcherSelectionExtraView, UIDimmingView;
+@class NSTimer, NSString, UIInputSwitcherTableView, UIKBTree, UIKeyboardLayoutStar, UIInputSwitcherShadowView, UIInputSwitcherSelectionExtraView, UIDimmingView;
 
 @interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
     UIInputSwitcherTableView *m_table;
@@ -46,6 +46,10 @@
 @property bool usesDarkTheme;
 @property UIKBTree * referenceKey;
 @property UIKeyboardLayoutStar * layout;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)viewThatContainsBaseKey;
 
@@ -61,14 +65,18 @@
 - (id)table;
 - (void)setMode:(int)arg1;
 - (void)dealloc;
+- (bool)useItemAtIndexForPredictionToggle:(int)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popupRect;
 - (double)minYOfLastTableCellForSelectionExtraView;
 - (bool)centerPopUpOverKey;
+- (id)subtitleFont;
+- (id)titleForItemAtIndex:(int)arg1;
 - (void)setUsesDarkTheme:(bool)arg1;
 - (void)setHighlightForRowAtIndexPath:(id)arg1 highlight:(bool)arg2;
-- (id)subtitleFont;
+- (id)subtitleFontForItemAtIndex:(int)arg1;
 - (id)subtitleForItemAtIndex:(int)arg1;
-- (id)titleForItemAtIndex:(int)arg1;
+- (id)fontForItemAtIndex:(int)arg1;
+- (id)localizedTitleForItemAtIndex:(int)arg1;
 - (int)indexForIndexPath:(id)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
 - (void)endScrolling:(id)arg1;

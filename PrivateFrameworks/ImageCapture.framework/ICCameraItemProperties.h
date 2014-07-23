@@ -26,8 +26,8 @@
 
 
 - (bool)locked;
-- (id)parentFolder;
 - (void)setParentFolder:(id)arg1;
+- (id)parentFolder;
 - (void)setDevice:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (id)UTI;

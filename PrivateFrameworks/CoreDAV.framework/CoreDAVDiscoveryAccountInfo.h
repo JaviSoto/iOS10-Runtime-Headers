@@ -41,6 +41,10 @@
 @property bool success;
 @property(retain) NSError * error;
 @property(retain) <CoreDAVAccountInfoProvider> * backingAccountInfoProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setServerComplianceClasses:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, UITextField, PLTextView;
+@class PLTextView, UITextField, NSString, UILabel;
 
 @interface PLTableViewEditableCell : UITableViewCell <UITextViewDelegate, UITextFieldDelegate> {
     PLTextView *_textView;
@@ -14,6 +14,10 @@
 }
 
 @property int style;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)posterCellIdentifier;
 

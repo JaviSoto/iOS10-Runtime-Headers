@@ -18,6 +18,10 @@
 
 @property(copy) NSArray * targets;
 @property long long calculationMode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)morpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; int x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; boolx6; }*)arg1;
 + (id)morpher;

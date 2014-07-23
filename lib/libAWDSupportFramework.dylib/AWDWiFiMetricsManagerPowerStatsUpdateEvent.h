@@ -49,8 +49,8 @@
 - (bool)hasUnassociatedSleepDur;
 - (void)setHasUnassociatedSleepDur:(bool)arg1;
 - (void)setUnassociatedSleepDur:(unsigned int)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;

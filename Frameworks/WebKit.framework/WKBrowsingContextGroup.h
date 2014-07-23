@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WKBrowsingContextGroup : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPageGroup> { 
         struct type { 
@@ -19,6 +21,10 @@
 @property bool allowsJavaScript;
 @property bool allowsPlugIns;
 @property bool privateBrowsingEnabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 
 

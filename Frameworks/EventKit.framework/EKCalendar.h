@@ -84,6 +84,9 @@
 - (bool)canBePublished;
 - (void)setSharees:(id)arg1;
 - (void)setSymbolicColorName:(id)arg1;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (id)externalURI;
 - (bool)validate:(id*)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushKey:(id)arg1;
@@ -119,7 +122,6 @@
 - (bool)hasTasks;
 - (bool)hasEvents;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (id)externalURI;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
 - (void)setIsIgnoringSharedCalendarNotifications:(bool)arg1;
@@ -166,8 +168,6 @@
 - (bool)allowsEvents;
 - (bool)allowsTasks;
 - (int)entityType;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)source;
 - (void)setTitle:(id)arg1;
 - (id)title;

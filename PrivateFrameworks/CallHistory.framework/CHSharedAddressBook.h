@@ -19,7 +19,7 @@
 - (void)revertAddressBook:(bool)arg1;
 - (void)sendABChangedNotification:(id)arg1;
 - (id)addressBookCache;
-- (void)sendABChangedNotificationSync;
+- (void)sendABChangedNotificationSyncWithUserInfo:(id)arg1;
 - (void)createAddressBook;
 - (void)insertAddressBookInfoIntoCache:(id)arg1 forKey:(id)arg2;
 - (id)fetchAddressBookInfoFromCacheForKey:(id)arg1;

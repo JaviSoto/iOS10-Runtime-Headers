@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseMetadata, ML3AccountCacheDatabase, NSString, ML3DatabaseConnectionPool, ML3LibraryNotificationManager, NSMutableDictionary, <ML3MusicLibraryDelegate>, ML3ArtworkUtility, NSArray, NSObject<OS_dispatch_queue>, ML3Container;
+@class ML3DatabaseMetadata, ML3AccountCacheDatabase, NSString, ML3DatabaseConnectionPool, ML3LibraryNotificationManager, NSMutableDictionary, <ML3MusicLibraryDelegate>, NSArray, NSObject<OS_dispatch_queue>, ML3Container;
 
 @interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -16,7 +16,6 @@
     bool_isHomeSharingLibrary;
     <ML3MusicLibraryDelegate> *_delegate;
     ML3DatabaseConnectionPool *_connectionPool;
-    ML3ArtworkUtility *_artworkUtility;
     NSString *_databasePath;
     NSArray *_libraryEntityFilterPredicates;
     NSArray *_libraryContainerFilterPredicates;
@@ -25,7 +24,6 @@
 @property(readonly) bool supportsUbiquitousPlaybackPositions;
 @property <ML3MusicLibraryDelegate> * delegate;
 @property(readonly) ML3DatabaseConnectionPool * connectionPool;
-@property(readonly) ML3ArtworkUtility * artworkUtility;
 @property(readonly) NSString * databasePath;
 @property(readonly) NSString * libraryUID;
 @property(readonly) long long persistentID;
@@ -42,6 +40,10 @@
 @property(readonly) bool mediaRestrictionEnabled;
 @property(retain) NSArray * libraryEntityFilterPredicates;
 @property(retain) NSArray * libraryContainerFilterPredicates;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)unitTestableLibraryForTest:(id)arg1 basePath:(id)arg2 setupSQLFilenames:(id)arg3;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
@@ -71,7 +73,6 @@
 + (void)disableSharedLibrary;
 + (id)_purgeableTrackPredicateWithUrgency:(unsigned long long)arg1;
 + (id)_notInKeepLocalCollectionPredicate;
-+ (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(long long)arg2 mediaType:(unsigned int)arg3;
 + (bool)orderingLanguageMatchesSystemUsingConnection:(id)arg1;
 + (id)allTables;
 + (bool)userVersionMatchesSystemUsingConnection:(id)arg1;
@@ -83,7 +84,6 @@
 + (bool)deviceSupportsMultipleLibraries;
 + (bool)inTransactionUpdateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(bool)arg2;
 + (bool)updateTrackIntegrityOnConnection:(id)arg1;
-+ (void)autogenerateSupportedSizesForAllOriginalArtworkPostMigrationWithConnection:(id)arg1;
 + (id)mediaFolderPath;
 + (id)pathForResourceFileOrFolder:(int)arg1;
 + (bool)updateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(bool)arg2;
@@ -98,7 +98,6 @@
 - (id)databasePath;
 - (bool)prepareUnitTestDatabaseWithSQLFromContentsOfFile:(id)arg1 error:(id*)arg2;
 - (bool)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2;
-- (id)locationKindForKind:(id)arg1;
 - (void)updateUbiquitousDatabaseByRemovingUbiquitousMetadataFromTrackWithPersistentID:(long long)arg1;
 - (id)uppService;
 - (bool)populateArtworkCacheWithArtworkData:(id)arg1 trackValues:(id)arg2;
@@ -120,18 +119,19 @@
 - (bool)supportsUbiquitousPlaybackPositions;
 - (id)libraryContainerFilterPredicates;
 - (id)libraryEntityFilterPredicates;
-- (id)artworkUtility;
 - (id)connectionPool;
 - (id)_newGeniusDBConnectionAtPath:(id)arg1;
 - (void)deletePresignedValidity;
 - (bool)hasPresignedValidity;
 - (void)migratePresignedValidity;
 - (bool)deleteDatabaseProperty:(id)arg1;
+- (void)removeItemsWithFamilyAccountID:(unsigned long long)arg1 purchaserAccountID:(unsigned long long)arg2 downloaderAccountID:(unsigned long long)arg3;
 - (void)removeOrphanedTracks;
 - (void)removeTombstonesForDeletedItems;
 - (bool)deleteArtworkWithSourceType:(long long)arg1;
 - (bool)importOriginalArtworkFromFileURL:(id)arg1 withArtworkToken:(id)arg2 artworkType:(long long)arg3 sourceType:(long long)arg4 mediaType:(unsigned int)arg5;
 - (bool)importExistingOriginalArtworkWithArtworkToken:(id)arg1 artworkType:(long long)arg2 sourceType:(long long)arg3 mediaType:(unsigned int)arg4;
+- (void)autogenerateSupportedSizesForAllOriginalArtworkPostMigrationWithConnection:(id)arg1;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1;
 - (long long)autoFilledTracksTotalSize;
 - (unsigned long long)countOfChangedPersistentIdsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned long long)arg2 maximumRevisionType:(int)arg3;
@@ -176,6 +176,7 @@
 - (bool)verifyPresignedValidity;
 - (void)_deleteAllArtworkVariantsAtRelativePaths:(id)arg1;
 - (bool)_insertArtworkRowWithArtworkToken:(id)arg1 artworkType:(long long)arg2 sourceType:(long long)arg3 relativePath:(id)arg4;
+- (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(long long)arg2 mediaType:(unsigned int)arg3;
 - (void)purgeCloudAssets;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1 urgency:(unsigned long long)arg2 respectSongMattress:(bool)arg3;
 - (long long)deleteAutoFilledTracksOfAtLeastTotalSize:(long long)arg1 urgency:(unsigned long long)arg2;

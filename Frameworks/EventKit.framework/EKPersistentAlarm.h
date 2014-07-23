@@ -25,6 +25,9 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
+- (void)setProximity:(long long)arg1;
 - (bool)validate:(id*)arg1;
 - (void)setAlarmType:(int)arg1;
 - (int)alarmType;
@@ -35,7 +38,6 @@
 - (void)setDefaultAlarm:(bool)arg1;
 - (bool)isDefaultAlarm;
 - (id)acknowledgedDate;
-- (void)setProximity:(long long)arg1;
 - (id)originalAlarm;
 - (id)absoluteDate;
 - (void)setAbsoluteDate:(id)arg1;
@@ -45,8 +47,6 @@
 - (void)setRelativeOffset:(double)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
 - (int)entityType;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (long long)proximity;
 - (id)owner;
 - (id)location;

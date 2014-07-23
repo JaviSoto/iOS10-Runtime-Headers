@@ -17,8 +17,8 @@
     bool_databaseIsEncryptedAndUnreadable;
     bool_yieldingToSync;
     NSMutableDictionary *_eventExternalURLsToAgendaEntries;
-    EKTravelAdvisor *_travelAdvisor;
     EKTravelEngineThrottle *_throttle;
+    EKTravelAdvisor *_travelAdvisor;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -29,11 +29,8 @@
 @property(copy) id adviceBlock;
 
 + (bool)hasTravelEligibleEvents:(id)arg1;
-+ (id)_geoTransportTypeAsString:(int)arg1;
 + (int)_geoTransportTypeForCalLocationRoutingMode:(long long)arg1;
-+ (id)_calendarsToSearchInEventStore:(id)arg1;
 + (id)_engineIdentifier;
-+ (id)_stringForAuthorizationStatus:(int)arg1;
 
 - (void)_mobileKeyBagLockStatusNotificationReceived;
 - (void)_significantTimeChangeNotificationReceived;

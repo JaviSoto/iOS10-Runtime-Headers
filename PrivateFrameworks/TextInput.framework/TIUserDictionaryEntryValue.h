@@ -10,6 +10,10 @@
     NSNumber *_timestamp;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * phrase;
 @property(copy) NSString * shortcut;
 @property(retain) NSNumber * timestamp;

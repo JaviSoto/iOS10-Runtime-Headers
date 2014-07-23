@@ -4,7 +4,7 @@
 
 @class UIWebPaginationInfo, UIWebBrowserView, NSMutableArray;
 
-@interface QLSpreadsheetPrintPageRenderer : QLRemotePrintPageHelper  {
+@interface QLSpreadsheetPrintPageRenderer : QLWebViewPrintPageHelper  {
     UIWebBrowserView *_printView;
     UIWebPaginationInfo *_paginationInfo;
     bool_frameLoaded;
@@ -19,7 +19,7 @@
 - (bool)_loadNextURL;
 - (bool)_loadURLAtIndex:(unsigned long long)arg1;
 - (id)_documentURLs;
-- (id)pdfDataForPageAtIndex:(long long)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 printingDone:(bool*)arg3;
+- (id)pdfDataForPageAtIndex:(long long)arg1 printingDone:(bool*)arg2;
 - (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;

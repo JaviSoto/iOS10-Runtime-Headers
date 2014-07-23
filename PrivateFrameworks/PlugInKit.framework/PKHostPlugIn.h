@@ -54,6 +54,10 @@
 @property(retain) NSBundle * embeddedBundle;
 @property(retain) NSUserDefaults * defaults;
 @property(retain) NSDate * beganUsingAt;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * version;
 @property(readonly) NSURL * url;
@@ -90,7 +94,6 @@
 - (void)setNotificationBlock:(id)arg1;
 - (id)embeddedBundle;
 - (id)embeddedPrincipal;
-- (id)supersededBy;
 - (void)setReplyQueue:(id)arg1;
 - (id)defaults;
 - (void)setHostPrincipal:(id)arg1 withProtocol:(id)arg2;
@@ -133,5 +136,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
+- (id)supersededBy;
 
 @end

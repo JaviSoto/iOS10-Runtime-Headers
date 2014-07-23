@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSData, NSURL, NSError, MPHomeSharingML3DataProvider, SSAuthorizationRequest;
+@class NSData, NSString, NSURL, NSError, MPHomeSharingML3DataProvider, SSAuthorizationRequest;
 
 @interface MPHomeSharingErrorResolver : MPAVErrorResolver <SSAuthorizationRequestDelegate> {
     unsigned long long _accountID;
@@ -14,6 +14,10 @@
 }
 
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;

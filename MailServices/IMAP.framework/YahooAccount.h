@@ -20,6 +20,7 @@
 + (bool)deliveryAccountUsesSSL;
 + (id)deliveryAccountHostname;
 + (id)emailAddressHostPart;
++ (id)displayedAccountTypeString;
 + (bool)getConfigurationFromServerForEmail:(id)arg1;
 + (bool)usernameIsEmailAddress;
 + (bool)primaryDeliveryAccountIsDynamic;
@@ -28,7 +29,6 @@
 + (id)newAccountWithDictionary:(id)arg1;
 + (bool)usesSSL;
 + (id)accountTypeIdentifier;
-+ (id)displayedAccountTypeString;
 + (id)hostname;
 
 - (id)XYMPKISignature;
@@ -49,6 +49,7 @@
 - (unsigned long long)minUID;
 - (id)iconString;
 - (id)connectionForStore:(id)arg1 delegate:(id)arg2 options:(int)arg3;
+- (id)displayUsername;
 - (id)saveSentFolder;
 - (id)URLForMessage:(id)arg1;
 - (bool)derivesDeliveryAccountInfoFromMailAccount;
@@ -62,7 +63,6 @@
 - (unsigned long long)credentialAccessibility;
 - (unsigned int)portNumber;
 - (id)preferredAuthScheme;
-- (id)displayUsername;
 - (id)emailAddresses;
 - (void)setPassword:(id)arg1;
 - (id)hostname;

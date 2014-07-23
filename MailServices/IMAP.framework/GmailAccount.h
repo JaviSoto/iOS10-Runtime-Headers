@@ -12,16 +12,21 @@
     unsigned int _didEnable : 1;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)imapNotEnabledPrefix;
 + (id)authSchemesForAccountClass;
 + (unsigned int)deliveryAccountPortNumber;
 + (bool)deliveryAccountUsesSSL;
 + (id)deliveryAccountHostname;
 + (id)emailAddressHostPart;
++ (id)displayedAccountTypeString;
 + (bool)usernameIsEmailAddress;
 + (bool)isPredefinedAccountType;
 + (id)accountTypeIdentifier;
-+ (id)displayedAccountTypeString;
 + (id)hostname;
 
 - (bool)xListSupportedOnConnection:(id)arg1;

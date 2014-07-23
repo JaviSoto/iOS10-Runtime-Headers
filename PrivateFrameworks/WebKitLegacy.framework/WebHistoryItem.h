@@ -26,7 +26,6 @@
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (id)_transientPropertyForKey:(id)arg1;
 - (id)targetItem;
-- (void)setAlwaysAttemptToUsePageCache:(bool)arg1;
 - (void)setRSSFeedReferrer:(id)arg1;
 - (id)RSSFeedReferrer;
 - (bool)isTargetItem;

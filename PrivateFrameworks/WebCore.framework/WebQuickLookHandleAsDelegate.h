@@ -11,11 +11,18 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebQuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
     struct RefPtr<WebCore::SynchronousResourceHandleCFURLConnectionDelegate> { 
         struct SynchronousResourceHandleCFURLConnectionDelegate {} *m_ptr; 
     } m_connectionDelegate;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)clearHandle;

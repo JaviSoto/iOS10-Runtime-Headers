@@ -33,6 +33,10 @@
 @property(retain) id selfReference;
 @property bool didFailDueToMissingCredentials;
 @property bool shouldUseResponseBodyAsLoginPrompt;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)selfReference;

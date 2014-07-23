@@ -6,9 +6,14 @@
 
 @interface PHObjectPlaceholder : PHObject  {
     NSString *_localIdentifier;
+    long long _assetMediaType;
 }
 
+@property long long assetMediaType;
 
+
+- (long long)assetMediaType;
+- (void)setAssetMediaType:(long long)arg1;
 - (id)initWithLocalIdentifier:(id)arg1;
 - (id)localIdentifier;
 - (bool)isEqual:(id)arg1;

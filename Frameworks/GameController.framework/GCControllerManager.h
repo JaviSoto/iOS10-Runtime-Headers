@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSXPCConnection, <GameControllerDaemon>, NSObject<OS_dispatch_queue>, NSTimer;
+@class NSMutableDictionary, NSXPCConnection, <GameControllerDaemon>, NSObject<OS_dispatch_queue>, NSTimer, NSString;
 
 @interface GCControllerManager : NSObject <GameControllerDaemonListener> {
     NSXPCConnection *_connection;
@@ -36,13 +36,16 @@
 @property(retain) NSXPCConnection * connection;
 @property(retain) <GameControllerDaemon> * remote;
 @property bool idleTimerNeedsReset;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIdleTimerNeedsReset:(bool)arg1;
 - (bool)idleTimerNeedsReset;
 - (id)remote;
 - (void)setLogger:(id)arg1;
-- (id)logger;
 - (void)setHidManager:(struct __IOHIDManager { }*)arg1;
 - (struct __IOHIDManager { }*)hidManager;
 - (id)controllers;
@@ -56,6 +59,7 @@
 - (void)removeController:(id)arg1;
 - (void)addController:(id)arg1;
 - (void)updateIdleTimer:(id)arg1;
+- (id)logger;
 - (id)connection;
 - (id)init;
 - (void)open;

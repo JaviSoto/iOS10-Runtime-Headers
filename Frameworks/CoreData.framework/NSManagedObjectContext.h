@@ -5,10 +5,11 @@
 @class NSString, NSManagedObjectContext, NSSet, NSMutableDictionary, NSPersistentStoreCoordinator, NSMutableSet, NSUndoManager;
 
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
+    id _queueOwner;
+    void *_dispatchQueue;
+    void *_reserved1;
     int _spinLock;
     id _parentObjectStore;
-    id _reserved1;
-    void *_dispatchQueue;
     struct _managedObjectContextFlags { 
         unsigned int _registeredForCallback : 1; 
         unsigned int _propagatesDeletesAtEndOfEvent : 1; 
@@ -55,7 +56,6 @@
     id _reserved4;
     int _cd_rc;
     int _ignoreChangeNotification;
-    id _reserved5;
     id _reserved6;
     NSString *_contextLabel;
     id *_additionalPrivateIvars;

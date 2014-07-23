@@ -6,11 +6,14 @@
    See Warning(s) below.
  */
 
-@class PHImageManagerRequest, NSString, PLCPLDownloadContext, <_PLImageLoadingAsset>, NSObject<OS_dispatch_group>;
+@class PHImageManagerRequest, NSString, PLCPLDownloadContext, <_PLImageLoadingAsset>, NSObject<OS_dispatch_group>, PLPreheatItem;
 
 @interface PHImageManagerRequest : NSObject  {
     bool_cancelled;
+    long long _originalImageOrientation;
     bool_CPLDownloadDegraded;
+    bool_isCloudSharedAsset;
+    bool_isPartOfBurst;
     int _requestID;
     int _registrationRefCount;
     <_PLImageLoadingAsset> *_asset;
@@ -23,6 +26,9 @@
     PLCPLDownloadContext *_CPLDownloadContext;
     NSObject<OS_dispatch_group> *_CPLDownloadWaitGroup;
     PHImageManagerRequest *_nextRequest;
+    PLPreheatItem *_transientPreheatlItem;
+    NSString *_pathForAdjustmentFile;
+    long long _cloudSharedAssetPlaceholderKind;
     NSString *_debugFilename;
 }
 
@@ -36,9 +42,16 @@
 @property(retain) NSObject<OS_dispatch_group> * CPLDownloadWaitGroup;
 @property(readonly) int registrationRefCount;
 @property(retain) PHImageManagerRequest * nextRequest;
+@property(retain) PLPreheatItem * transientPreheatlItem;
+@property(readonly) NSString * pathForAdjustmentFile;
+@property(readonly) bool isCloudSharedAsset;
+@property(readonly) long long cloudSharedAssetPlaceholderKind;
+@property(readonly) bool isPartOfBurst;
 @property(readonly) NSString * debugFilename;
 
 
+- (void)setTransientPreheatlItem:(id)arg1;
+- (id)transientPreheatlItem;
 - (void)setNextRequest:(id)arg1;
 - (int)registrationRefCount;
 - (void)setCPLDownloadWaitGroup:(id)arg1;
@@ -55,7 +68,12 @@
 - (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
 - (id)initRequestWithAsset:(id)arg1 domain:(id)arg2;
 - (id)nextRequest;
+- (long long)originalImageOrientation;
 - (id)debugFilename;
+- (bool)isPartOfBurst;
+- (long long)cloudSharedAssetPlaceholderKind;
+- (id)pathForAdjustmentFile;
+- (bool)isCloudSharedAsset;
 - (id)asset;
 - (int)requestID;
 - (bool)isCancelled;

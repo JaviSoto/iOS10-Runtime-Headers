@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUClientInterface, NSArray, UIControl, SUSearchFieldConfiguration, UISearchBar, SUScriptTextFieldDelegate, ISStoreURLOperation, SUSearchDisplayController;
+@class SUClientInterface, NSString, NSArray, UIControl, SUSearchFieldConfiguration, UISearchBar, SUScriptTextFieldDelegate, ISStoreURLOperation, SUSearchDisplayController;
 
 @interface SUSearchFieldController : NSObject <ISStoreURLOperationDelegate, SUScriptTextFieldDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SUClientInterface *_clientInterface;
@@ -20,6 +20,10 @@
 @property(readonly) UISearchBar * searchBar;
 @property(copy) SUSearchFieldConfiguration * searchFieldConfiguration;
 @property long long searchFieldStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_cancelButtonView;

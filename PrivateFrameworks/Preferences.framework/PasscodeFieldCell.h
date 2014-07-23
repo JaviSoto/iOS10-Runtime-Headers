@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <KeychainSyncPasscodeFieldDelegate>, PSPasscodeField;
+@class <KeychainSyncPasscodeFieldDelegate>, NSString, PSPasscodeField;
 
 @interface PasscodeFieldCell : PSTableCell <UIKeyInput, PSPasscodeFieldDelegate> {
     PSPasscodeField *_passcodeField;
@@ -14,6 +14,10 @@
 @property <KeychainSyncPasscodeFieldDelegate> * delegate;
 @property bool convertsNumeralsToASCII;
 @property bool denyFirstResponder;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;

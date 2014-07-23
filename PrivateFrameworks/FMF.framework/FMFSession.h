@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class <FMFSessionDelegate>, NSXPCConnection, NSOperationQueue, NSMutableSet, NSSet, NSMutableDictionary;
+@class NSXPCConnection, NSString, NSSet, NSOperationQueue, NSMutableDictionary, NSMutableSet, <FMFSessionDelegate>;
 
 @interface FMFSession : NSObject <FMFXPCInternalClientProtocol> {
     bool_isModelInitialized;
@@ -28,6 +28,10 @@
 @property(retain) NSMutableDictionary * cachedOfferExpirationForHandleByHandle;
 @property(retain) NSMutableDictionary * cachedCanShareLocationWithHandleByHandle;
 @property bool isModelInitialized;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)FMFAllowed;
 + (bool)FMFRestricted;
@@ -72,7 +76,10 @@
 - (oneway void)didRemoveFollowerHandle:(id)arg1;
 - (oneway void)didAddFollowerHandle:(id)arg1;
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;
+- (oneway void)networkReachabilityUpdated:(bool)arg1;
 - (oneway void)modelDidLoad;
+- (void)stopSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
+- (void)startSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
 - (void)locatingInProgressChanged:(id)arg1;
 - (void)forceRefresh;
 - (void)sendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
@@ -86,7 +93,6 @@
 - (void)_sendFriendshipOfferWithoutTryingToSwitchMeDeviceForHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
 - (void)getAllLocations:(id)arg1;
 - (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(id)arg2;
-- (void)getActiveLocationSharingDevice:(id)arg1;
 - (void)getHandlesWithPendingOffers:(id)arg1;
 - (void)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
 - (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(id)arg3;
@@ -97,7 +103,6 @@
 - (void)getHandlesFollowingMyLocation:(id)arg1;
 - (void)getHandlesSharingLocationsWithMeWithGroupId:(id)arg1 completion:(id)arg2;
 - (void)getHandlesSharingLocationsWithMe:(id)arg1;
-- (void)setActiveDevice:(id)arg1 completion:(id)arg2;
 - (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id)arg4;
 - (void)locationForHandle:(id)arg1 completion:(id)arg2;
 - (void)dispatchOnDelegateQueue:(id)arg1;
@@ -108,11 +113,13 @@
 - (void)removeDevice:(id)arg1 completion:(id)arg2;
 - (oneway void)_iCloudAccountNameWithCompletion:(id)arg1;
 - (id)serverProxy;
+- (void)setActiveDevice:(id)arg1 completion:(id)arg2;
+- (void)getActiveLocationSharingDevice:(id)arg1;
 - (id)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (bool)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (id)getHandlesFollowingMyLocation;
-- (id)getHandlesSharingLocationsWithMe;
 - (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id)arg4;
+- (id)getHandlesSharingLocationsWithMe;
 - (id)cachedLocationForHandle:(id)arg1;
 - (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
 - (void)sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;

@@ -23,6 +23,7 @@
 - (void)setHasEncrypted:(bool)arg1;
 - (bool)encrypted;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (void)setEncrypted:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

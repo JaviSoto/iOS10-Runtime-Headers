@@ -8,6 +8,11 @@
     NSString *_zoneName;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 
 - (id)initWithZoneName:(id)arg1;
 - (void)main;

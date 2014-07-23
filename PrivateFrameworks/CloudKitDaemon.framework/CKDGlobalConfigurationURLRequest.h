@@ -15,11 +15,11 @@
 - (bool)requiresDeviceID;
 - (bool)requiresConfiguration;
 - (bool)allowsAnonymousAccount;
-- (bool)requiresSignature;
 - (long long)partitionType;
 - (long long)serverType;
 - (void)requestDidParsePlistObject:(id)arg1;
 - (Class)expectedResponseClass;
+- (bool)requiresSignature;
 - (id)additionalHeaderValues;
 - (id)httpMethod;
 - (id)url;

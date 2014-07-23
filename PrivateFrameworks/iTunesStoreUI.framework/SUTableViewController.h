@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UITableView, SUTableView, NSIndexPath, SUTableDataSource;
+@class UITableView, NSString, SUTableView, NSIndexPath, SUTableDataSource;
 
 @interface SUTableViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     SUTableDataSource *_dataSource;
@@ -18,6 +18,10 @@
 @property(retain) SUTableDataSource * dataSource;
 @property(readonly) UITableView * tableView;
 @property long long tableViewStyle;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)newTableView;

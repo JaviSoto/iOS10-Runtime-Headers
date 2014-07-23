@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABStyleProvider, ABImagePickerController;
+@class NSString, ABPersonViewControllerHelper, ABPersonTableViewDataSource, ABStyleProvider, ABImagePickerController;
 
 @interface ABPersonPickersDelegate : NSObject <ABPickerViewControllerDelegate, ABImagePickerControllerDelegate> {
     ABStyleProvider *_styleProvider;
@@ -14,6 +14,10 @@
 @property(retain) ABStyleProvider * styleProvider;
 @property ABPersonTableViewDataSource * dataSource;
 @property ABPersonViewControllerHelper * helper;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property bool popoverSizeUpdatesDisabled;
 @property(readonly) ABImagePickerController * imagePicker;
 

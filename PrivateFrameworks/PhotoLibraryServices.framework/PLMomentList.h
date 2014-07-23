@@ -26,6 +26,10 @@
 @property(retain,readonly) NSArray * localizedLocationNames;
 @property short generationType;
 @property(retain) NSOrderedSet * moments;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) unsigned long long containersCount;
 @property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
 @property(retain) NSArray * userTitles;

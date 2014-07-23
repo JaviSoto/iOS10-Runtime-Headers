@@ -14,6 +14,10 @@
 @property(getter=isMissingItemData,readonly) bool missingItemData;
 @property(readonly) NSString * metricsElementName;
 @property long long metricsLocationPosition;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)viewElement;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView<PLTilePlaceholderView>, UIImageView, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>, PHCachingImageManager, PHAsset, PLVideoView, PLImageScrollView, PLPhotoTileBadgeView, UIGestureRecognizer, NSObject<OS_dispatch_source>, PLCommentsViewController, PLTileContainerView, UIImage;
+@class UIView<PLTilePlaceholderView>, UIImageView, PLExpandableImageView, <PLPhotoTileViewControllerDelegate>, PHCachingImageManager, PHAsset, PLVideoView, PLImageScrollView, UIView, PLPhotoTileBadgeView, UIGestureRecognizer, NSString, NSObject<OS_dispatch_source>, NSArray, PLCommentsViewController, PLTileContainerView, UIImage;
 
 @interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PLCommentsViewControllerDelegate, PLPhotoTileCloudPlaceholderViewDelegate> {
     UIImage *_image;
@@ -116,9 +116,12 @@
     PLTileContainerView *_containerView;
     PHCachingImageManager *__cachingImageManager;
     int _fullSizeImageRequestID;
+    NSArray *_customCenterOverlayConstraints;
     bool_wantsCompactLayout;
     bool_reviewing;
     bool_picked;
+    bool_shouldHideProgressIndicator;
+    UIView *__customCenterOverlay;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -140,6 +143,12 @@
 @property bool wantsCompactLayout;
 @property bool reviewing;
 @property bool picked;
+@property bool shouldHideProgressIndicator;
+@property(setter=_setCustomCenterOverlay:,retain) UIView * _customCenterOverlay;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)shouldShowPlaceholderForAsset:(id)arg1;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
@@ -162,8 +171,8 @@
 - (double)currentToDefaultZoomRatio;
 - (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 minimalCropDimension:(double)arg2 withOptions:(int)arg3;
 - (void)updateForVisibleOverlays:(bool)arg1;
-- (bool)didRequestFullSizeImage;
 - (bool)hasFullSizeImage;
+- (void)setShouldHideProgressIndicator:(bool)arg1;
 - (void)setClientIsWallpaper:(bool)arg1;
 - (bool)userDidAdjustWallpaper;
 - (id)tileDelegate;
@@ -191,7 +200,6 @@
 - (float)_calculateZoomScale:(bool)arg1 inView:(id)arg2;
 - (double)minRotatedScale;
 - (void)_performDidEndZoomBlock;
-- (void)_updatePlaceholderVisibility;
 - (void)initializeCommentsTable;
 - (void)setBadgeVisible:(bool)arg1;
 - (bool)tileIsOnScreen;
@@ -201,6 +209,8 @@
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updateReviewCheckmark;
 - (void)_setupBadgeView;
+- (void)_updatePlaceholderVisibility;
+- (bool)shouldHideProgressIndicator;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })overlayInsets;
 - (bool)_clientIsWallpaper;
 - (void)_requestFullSizeImage;
@@ -209,6 +219,9 @@
 - (bool)photoShouldHaveAvalancheBadge;
 - (void)_repositionBadgeView;
 - (void)_showBadgeViewIfAppropriate;
+- (void)_updateSubviewOrdering;
+- (id)_customCenterOverlay;
+- (void)_setCustomCenterOverlay:(id)arg1;
 - (void)_updatePlaceholderImageRect;
 - (void)_updateVideoViewForModelPhoto;
 - (void)_teardownDispatchTimer;
@@ -250,6 +263,7 @@
 - (void)updateAfterZoomTransitionWithImage:(id)arg1;
 - (void)showContentView;
 - (void)hideContentView;
+- (void)updateCenterOverlay;
 - (void)cancelFullSizeImageRequest;
 - (void)setAvalancheBadgesHidden:(bool)arg1;
 - (void)setOrientationDelegate:(id)arg1;
@@ -278,6 +292,7 @@
 - (bool)allowsEditing;
 - (id)imageView;
 - (id)scrollView;
+- (void)updateViewConstraints;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;

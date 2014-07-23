@@ -13,6 +13,10 @@
 
 @property(readonly) NSString * personID;
 @property MSMediaStreamDaemon * daemon;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)resetServerObjectWithPersonID:(id)arg1 baseURL:(id)arg2;
 

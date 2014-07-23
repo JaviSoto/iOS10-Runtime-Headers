@@ -26,7 +26,7 @@
 - (id)privateGetID;
 - (bool)privateMatchesRawDescription:(id)arg1;
 - (bool)isEqualToPort:(id)arg1 compareStrict:(bool)arg2;
-- (struct PortDescriptionImpl { id x1; id x2; id x3; id x4; boolx5; id x6; id x7; id x8; }*)privateGetImplementation;
+- (struct PortDescriptionImpl { id x1; id x2; id x3; id x4; boolx5; id x6; id x7; id x8; id x9; }*)privateGetImplementation;
 - (id)UID;
 - (id)portType;
 - (id)selectedDataSource;

@@ -17,6 +17,10 @@
 @property double inset;
 @property(retain) UIKBGradient * gradient;
 @property double opacity;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) bool isValid;
 @property(readonly) bool renderUnder;
 @property(readonly) SEL renderSelector;

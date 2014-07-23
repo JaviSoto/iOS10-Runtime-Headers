@@ -10,10 +10,10 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (bool)hasPrefix:(id)arg1;
 - (bool)getBytes:(void*)arg1 maxLength:(unsigned long long)arg2 usedLength:(unsigned long long*)arg3 encoding:(unsigned long long)arg4 options:(unsigned long long)arg5 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 remainingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg7;
 - (unsigned long long)length;
 - (bool)hasSuffix:(id)arg1;
-- (bool)hasPrefix:(id)arg1;
 - (bool)isEqualToString:(id)arg1;
 - (const char *)_fastCStringContents:(bool)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;

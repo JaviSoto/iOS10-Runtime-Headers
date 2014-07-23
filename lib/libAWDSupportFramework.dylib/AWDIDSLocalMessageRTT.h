@@ -20,8 +20,8 @@
 - (bool)hasRtt;
 - (void)setHasRtt:(bool)arg1;
 - (void)setRtt:(long long)arg1;
-- (bool)hasTimestamp;
 - (void)setHasTimestamp:(bool)arg1;
+- (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

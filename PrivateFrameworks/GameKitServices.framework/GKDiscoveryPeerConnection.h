@@ -51,6 +51,7 @@
 + (unsigned long long)receiveDataLimit;
 
 - (void)setSyncQueue:(id)arg1;
+- (id)targetQueue;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
 - (void)syncAcceptedConnection;
 - (void)syncSendAccept;
@@ -66,17 +67,16 @@
 - (void)syncSendHello;
 - (void)setLocalServiceName:(id)arg1;
 - (id)connectedHandler;
-- (id)targetQueue;
 - (void)attachSocketDescriptor:(int)arg1;
 - (void)connectToSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 port:(unsigned short)arg2;
 - (id)initWithLocalServiceName:(id)arg1;
 - (id)localServiceName;
 - (id)receiveDataHandler;
-- (void)setTargetQueue:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setReceiveDataHandler:(id)arg1;
 - (id)syncQueue;
+- (void)setTargetQueue:(id)arg1;
 - (void)timeout:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;

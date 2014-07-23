@@ -29,17 +29,17 @@
 @property unsigned int result;
 
 
+- (bool)hasResult;
 - (id)resultString;
 - (void)setHasResult:(bool)arg1;
 - (bool)hasResultString;
 - (void)setResultString:(id)arg1;
-- (bool)hasResult;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResult:(unsigned int)arg1;
 - (void)setSessionId:(id)arg1;
-- (bool)hasSessionId;
 - (id)sessionId;
+- (bool)hasSessionId;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;

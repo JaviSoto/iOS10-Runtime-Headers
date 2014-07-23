@@ -65,6 +65,10 @@
 @property(copy,readonly) NSDictionary * userInfo;
 @property(copy) NSString * kind;
 @property(getter=isOld,readonly) bool old;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_removeSubscriber:(id)arg1;
 + (id)_addSubscriberForCategory:(id)arg1 usingPublishingHandler:(id)arg2;

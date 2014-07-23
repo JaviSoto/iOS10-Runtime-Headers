@@ -2,17 +2,24 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class NSData;
+@class NSData, NSString, GCMotion;
 
 @interface _GCGamepadSnapshot : _GCGamepad <_GCSnapshot> {
     NSData *_snapshotData;
+    GCMotion *_motion;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSData * snapshotData;
 
 
 - (id)initWithSnapshotData:(id)arg1;
 - (id)snapshotData;
+- (void)set_motion:(id)arg1;
+- (id)motion;
 - (id)initWithController:(id)arg1 snapshotData:(id)arg2;
 - (void)setSnapshotData:(id)arg1;
 - (void).cxx_destruct;

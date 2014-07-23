@@ -20,6 +20,10 @@
 @property(retain,readonly) NSString * name;
 @property(retain,readonly) NSDictionary * appleAttributes;
 @property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) NSURL * serverID;
 @property(readonly) NSData * dataPayload;
 @property(readonly) NSString * syncKey;

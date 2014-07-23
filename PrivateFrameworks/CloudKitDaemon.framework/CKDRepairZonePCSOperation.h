@@ -44,6 +44,7 @@
 - (id)pcsInfoByZoneID;
 - (void)setZoneIDs:(id)arg1;
 - (id)zoneIDs;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void).cxx_destruct;
 

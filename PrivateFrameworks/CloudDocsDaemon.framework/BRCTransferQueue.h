@@ -38,6 +38,7 @@
 - (id)inflightOperationForKey:(id)arg1;
 - (void)noteShouldRequestsOperations;
 - (void)dumpToContext:(id)arg1 name:(id)arg2;
+- (void)cancelAllOperations;
 - (void)resume;
 - (id)initWithName:(id)arg1;
 - (void)setDelegate:(id)arg1;

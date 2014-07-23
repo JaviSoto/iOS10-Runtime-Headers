@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMapTable, NSArray, <ABMembersDataSourceDelegate>, <ABStyleProvider>;
+@class NSMapTable, NSArray, NSString, <ABMembersDataSourceDelegate>, <ABStyleProvider>;
 
 @interface ABMembersFilteredDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     NSMapTable *_records;
@@ -18,6 +18,10 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(readonly) NSArray * records;
 @property bool isInPopover;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setIsInPopover:(bool)arg1;

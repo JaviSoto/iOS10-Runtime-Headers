@@ -34,9 +34,14 @@
 @property(readonly) UIView * _dimmingView;
 @property(readonly) long long _resolvedStyle;
 @property(readonly) bool _shouldProvideDimmingView;
+@property(readonly) bool _shouldAlignToKeyboard;
 @property(setter=_setShouldAllowNilParameters:) bool _shouldAllowNilParameters;
 @property(setter=_setCompatibilityPopoverController:) UIPopoverController * _compatibilityPopoverController;
 @property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
@@ -56,6 +61,7 @@
 - (id)_attributedMessage;
 - (void)_setAttributedTitle:(id)arg1;
 - (id)_attributedTitle;
+- (bool)_shouldSizeToFillSuperview;
 - (void)_updateViewFrameForLandscapePresentationInShimIfNecessary;
 - (id)linkedAlertControllers;
 - (void)unlinkAlertController:(id)arg1;
@@ -84,14 +90,15 @@
 - (void)_recomputePreferredContentSize;
 - (void)_resolvedStyleChanged;
 - (void)_clearActionHandlers;
-- (id)_alertControllerView;
 - (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2;
 - (id)_defaultAlertAction;
 - (id)textFields;
+- (void)_updateShouldAlignToKeyboard;
 - (void)setContentViewController:(id)arg1;
 - (long long)preferredStyle;
 - (id)_textFieldViewController;
 - (id)_actions;
+- (id)_alertControllerView;
 - (void)setCancelAction:(id)arg1;
 - (void)_updateModalPresentationStyle;
 - (void)addAction:(id)arg1;
@@ -99,6 +106,7 @@
 - (void)setPreferredStyle:(long long)arg1;
 - (id)_containedAlertController;
 - (double)_contentVerticalInsets;
+- (bool)_shouldAlignToKeyboard;
 - (id)_dismissGestureRecognizer;
 - (bool)_canDismissWithGestureRecognizer;
 - (id)_dimmingView;

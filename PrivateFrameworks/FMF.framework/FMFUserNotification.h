@@ -17,8 +17,8 @@
 + (void)showNetworkOfflineDuringStopOfferAlert;
 + (void)notLoggedIntoiCloudAlert;
 + (bool)showSwitchMeDeviceAlertUsingCurrentMeDeviceName:(id)arg1;
-+ (void)showNetworkOfflineDuringOfferAlert;
 + (void)showActiveDeviceChangedAlert;
++ (void)showNetworkOfflineDuringOfferAlert;
 + (void)showRestrictedAlert;
 
 

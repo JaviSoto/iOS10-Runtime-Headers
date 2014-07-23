@@ -8,20 +8,26 @@
     bool_authenticationRequired;
     int _port;
     NSString *_address;
+    long long _type;
     NSString *_username;
     NSString *_password;
 }
 
 @property(readonly) NSString * address;
 @property(readonly) int port;
+@property(readonly) long long type;
 @property bool authenticationRequired;
 @property(copy) NSString * username;
 @property(copy) NSString * password;
 
 + (bool)supportsSecureCoding;
 
-- (bool)authenticationRequired;
 - (id)initWithAddress:(id)arg1 andPort:(int)arg2;
+- (id)copyProtectionSpace;
+- (bool)authenticationRequired;
+- (id)initWithType:(long long)arg1 address:(id)arg2 port:(int)arg3;
+- (id)copyPassword;
+- (void)syncWithKeychain;
 - (id)descriptionWithIndent:(int)arg1;
 - (bool)checkValidityAndCollectErrors:(id)arg1;
 - (void)setPassword:(id)arg1;
@@ -29,6 +35,7 @@
 - (id)username;
 - (id)password;
 - (int)port;
+- (long long)type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;

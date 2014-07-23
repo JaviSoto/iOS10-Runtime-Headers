@@ -35,8 +35,8 @@
 - (void)setSubscriptionIDs:(id)arg1;
 - (id)subscriptionIDs;
 - (void)setIsFetchAllSubscriptionsOperation:(bool)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
-- (void)finishWithError:(id)arg1;
 - (void).cxx_destruct;
 
 @end

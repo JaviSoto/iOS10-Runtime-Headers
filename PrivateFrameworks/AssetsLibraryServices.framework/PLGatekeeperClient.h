@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSArray;
+@class NSObject<OS_dispatch_queue>, NSArray, NSObject<OS_xpc_object>;
 
 @interface PLGatekeeperClient : NSObject  {
     NSObject<OS_dispatch_queue> *_serialReplyQueue;
+    NSArray *_previewRenderedContentURLs;
     NSObject<OS_xpc_object> *connection;
-    NSArray *_assetLocalIdentifiersForDeleteConfirmation;
+    NSArray *_previewAssetLocalIdentifiers;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -20,7 +21,8 @@
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * replyQueue;
-@property NSArray * assetLocalIdentifiersForDeleteConfirmation;
+@property(readonly) unsigned long long previewRenderedContentURLCount;
+@property(retain) NSArray * previewAssetLocalIdentifiers;
 @property NSObject<OS_xpc_object> * connection;
 @property(copy) id CPLDownloadTransactionsLostHandler;
 
@@ -28,8 +30,11 @@
 + (id)sharedInstance;
 
 - (void)setCPLDownloadTransactionsLostHandler:(id)arg1;
-- (void)setAssetLocalIdentifiersForDeleteConfirmation:(id)arg1;
-- (id)assetLocalIdentifiersForDeleteConfirmation;
+- (void)setPreviewAssetLocalIdentifiers:(id)arg1;
+- (id)previewAssetLocalIdentifiers;
+- (id)previewRenderedContentURLAtIndex:(unsigned long long)arg1;
+- (unsigned long long)previewRenderedContentURLCount;
+- (void)setPreviewRenderedContentURLs:(id)arg1;
 - (id)cacheDeleteDebug:(id)arg1;
 - (void)downloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(bool)arg3;
 - (void)addLogMark:(id)arg1;
@@ -40,7 +45,7 @@
 - (void)dumpCloudPhotosStatusIncludingDaemon:(bool)arg1;
 - (void)unpauseCloudPhotos;
 - (void)pauseCloudPhotos;
-- (void)enableCloudPhotos:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)enableCloudPhotos:(bool)arg1;
 - (id)dictionaryWithContentsOfMediaFilePath:(id)arg1;
 - (void)softResetSyncStatusWithCompletionHandler:(id)arg1;
 - (void)resetSyncStatusWithCompletionHandler:(id)arg1;

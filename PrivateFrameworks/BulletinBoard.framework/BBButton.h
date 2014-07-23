@@ -16,6 +16,10 @@
 @property(copy) BBAction * action;
 @property(copy) NSString * identifier;
 @property(copy,readonly) NSData * glyphData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)buttonWithTitle:(id)arg1 glyphData:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;

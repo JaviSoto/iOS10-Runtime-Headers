@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABBannerView, ABModel, ABUIPerson, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray;
+@class ABModel, NSString, <ABMembersDataSourceDelegate>, <ABStyleProvider>, NSMutableArray, ABUIPerson, ABBannerView;
 
 @interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     <ABMembersDataSourceDelegate> *_delegate;
@@ -23,6 +23,10 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(retain) ABModel * model;
 @property void* addressBook;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)indexPathForDisplayedMemberIndex:(unsigned long long)arg1 inTableView:(id)arg2;

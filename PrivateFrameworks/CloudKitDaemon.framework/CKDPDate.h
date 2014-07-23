@@ -17,6 +17,7 @@
 - (void)setHasTime:(bool)arg1;
 - (bool)hasTime;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setTime:(double)arg1;

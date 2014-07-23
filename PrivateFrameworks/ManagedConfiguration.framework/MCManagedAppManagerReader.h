@@ -5,8 +5,8 @@
 @interface MCManagedAppManagerReader : NSObject  {
 }
 
-+ (id)managedAppIDsWithFlags:(int)arg1;
 + (id)attributesByAppID;
++ (id)managedAppIDsWithFlags:(int)arg1;
 
 
 @end

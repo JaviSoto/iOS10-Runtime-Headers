@@ -6,6 +6,7 @@
 
 @interface CHManager : CHSynchronizedLoggable  {
     bool_showsFaceTimeCalls;
+    bool_showsFaceTimeVideoCalls;
     bool_showsFaceTimeAudioCalls;
     bool_showsTelephonyCalls;
     bool_generateSyncTransactions;
@@ -26,6 +27,7 @@
 
 @property(retain) NSArray * recentCalls;
 @property bool showsFaceTimeCalls;
+@property bool showsFaceTimeVideoCalls;
 @property bool showsFaceTimeAudioCalls;
 @property bool showsTelephonyCalls;
 @property bool generateSyncTransactions;
@@ -51,6 +53,7 @@
 - (void)setGenerateSyncTransactions:(bool)arg1;
 - (bool)showsTelephonyCalls;
 - (bool)showsFaceTimeAudioCalls;
+- (bool)showsFaceTimeVideoCalls;
 - (bool)showsFaceTimeCalls;
 - (void)setRecentCalls:(id)arg1;
 - (void)callTimersReset;
@@ -59,6 +62,7 @@
 - (double)callTimersGetIncoming;
 - (void)setShowsTelephonyCalls:(bool)arg1;
 - (void)setShowsFaceTimeAudioCalls:(bool)arg1;
+- (void)setShowsFaceTimeVideoCalls:(bool)arg1;
 - (void)setShowsFaceTimeCalls:(bool)arg1;
 - (void)setCoalescingStrategy:(id)arg1;
 - (void)setLimitingEndDate:(id)arg1;

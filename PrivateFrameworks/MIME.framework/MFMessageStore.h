@@ -18,10 +18,6 @@
 + (Class)classForMimePart;
 + (Class)headersClass;
 
-- (bool)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withConsumer:(id)arg3 downloadIfNecessary:(bool)arg4;
-- (id)intKeyCaches;
-- (id)_cachedBodyDataContainerForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
-- (void)_flushAllMessageData;
 - (bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 partial:(bool*)arg4;
@@ -47,11 +43,16 @@
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (bool)bodyFetchRequiresNetworkActivity;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(bool)arg2;
 - (void)setMessageClass:(Class)arg1;
 - (void)setStoragePath:(id)arg1;
 - (id)storagePath;
 - (id)bodyDataForMessage:(id)arg1 isComplete:(bool*)arg2 isPartial:(bool*)arg3 downloadIfNecessary:(bool)arg4;
+- (bool)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withConsumer:(id)arg3 downloadIfNecessary:(bool)arg4;
+- (id)intKeyCaches;
+- (id)_cachedBodyDataContainerForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (void)_flushAllMessageData;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -117,6 +117,10 @@
 @property(retain) NSDictionary * errorsByRecipient;
 @property(copy) NSString * addressForMissingIdentity;
 @property(getter=isVerticallyCompact,readonly) bool verticallyCompact;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)isSetupForDeliveryAllowingRestrictedAccounts:(bool)arg1;
 + (id)preferenceForKey:(id)arg1;
@@ -124,8 +128,6 @@
 + (void)initialize;
 
 - (void)_accountsChanged:(id)arg1;
-- (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
-- (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
 - (id)popoverAlert;
 - (void)setOriginatingBundleID:(id)arg1;
 - (id)autosavedDate;
@@ -382,6 +384,8 @@
 - (bool)canShowFromField;
 - (id)popoverManager;
 - (void)insertPhotoOrVideo;
+- (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
+- (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
 - (bool)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (bool)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;

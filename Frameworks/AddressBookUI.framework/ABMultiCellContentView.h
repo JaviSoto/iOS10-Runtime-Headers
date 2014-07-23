@@ -41,7 +41,6 @@
 + (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(bool)arg6;
 + (Class)classForProperty:(int)arg1;
 
-- (id)pickerView;
 - (void)setShouldIgnoreEndEditing:(bool)arg1;
 - (bool)shouldIgnoreEndEditing;
 - (void)setUsesCustomPropertyCell:(bool)arg1;
@@ -69,6 +68,7 @@
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
 - (bool)canBeginEditingAnytime;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
+- (id)pickerView;
 - (id)viewForFirstResponder;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForView:(id)arg1;
 - (void)reloadLabelFromModel;

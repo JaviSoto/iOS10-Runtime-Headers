@@ -13,12 +13,13 @@
 @property(readonly) long long currentOffset;
 
 
-- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 canSupplyIncrementalDataImmediately:(bool)arg4;
 - (id)_loadingRequest;
+- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 canSupplyIncrementalDataImmediately:(bool)arg4;
 - (void)respondWithData:(id)arg1;
 - (long long)requestedOffset;
 - (long long)currentOffset;
 - (long long)requestedLength;
+- (id)init;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;

@@ -32,6 +32,8 @@
 @property(readonly) NSArray * annotations;
 
 
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
 - (void)setDraggedAnnotation:(id)arg1;
 - (id)draggedAnnotation;
 - (void)removeRepresentationForManagedAnnotation:(id)arg1;
@@ -68,8 +70,6 @@
 - (void)updateVisibleAnnotations;
 - (void)setAnnotationRepresentationsAreAddedImmediately:(bool)arg1;
 - (bool)annotationRepresentationsAreAddedImmediately;
-- (void)removeAnnotation:(id)arg1;
-- (void)addAnnotation:(id)arg1;
 - (id)annotations;
 - (id)init;
 - (void)setContainer:(id)arg1;

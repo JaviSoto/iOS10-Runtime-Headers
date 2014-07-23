@@ -15,11 +15,11 @@
 
 + (void)disableConfigurationFetching;
 
-- (void)refetchFromDisk;
 - (void)check;
-- (id)initWithClientLibraryBaseURL:(id)arg1;
 - (void)_setContents:(id)arg1;
 - (double)_updateInterval;
+- (void)refetchFromDisk;
+- (id)initWithClientLibraryBaseURL:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)_load;

@@ -33,6 +33,7 @@
 - (id)accessibilityMathRootIndexObject;
 - (id)accessibilityInvalidStatus;
 - (bool)accessibilityIsExpanded;
+- (bool)accessibilitySupportsARIAExpanded;
 - (bool)accessibilityARIALiveRegionIsAtomic;
 - (id)accessibilityARIARelevantStatus;
 - (id)accessibilityARIALiveRegionStatus;

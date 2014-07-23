@@ -2,17 +2,21 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
 @interface CKDDecryptRecordsOperationInfo : CKDatabaseOperationInfo  {
     NSArray *_recordsToDecrypt;
+    NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 @property(retain) NSArray * recordsToDecrypt;
+@property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 
 - (id)recordsToDecrypt;
 - (void)setRecordsToDecrypt:(id)arg1;
+- (void)setWebSharingIdentityDataByRecordID:(id)arg1;
+- (id)webSharingIdentityDataByRecordID;
 - (void).cxx_destruct;
 
 @end

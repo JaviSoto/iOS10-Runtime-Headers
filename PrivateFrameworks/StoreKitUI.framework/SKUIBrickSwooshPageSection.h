@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIMissingItemLoader, SKUISwooshPageComponent, SKUIBrickSwooshViewController, SKUIBrickSwooshArtworkLoader;
+@class SKUIMissingItemLoader, SKUISwooshPageComponent, SKUIBrickSwooshViewController, SKUIBrickSwooshArtworkLoader, NSString;
 
 @interface SKUIBrickSwooshPageSection : SKUIStorePageSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
     SKUIBrickSwooshArtworkLoader *_artworkLoader;
@@ -11,6 +11,10 @@
 }
 
 @property(readonly) SKUISwooshPageComponent * pageComponent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)cellForIndexPath:(id)arg1;

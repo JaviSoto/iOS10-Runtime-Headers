@@ -26,10 +26,11 @@
 @property unsigned long long conversationFlags;
 @property long long originalConversationId;
 
-+ (id)newWithMessage:(id)arg1;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
++ (id)newWithMessage:(id)arg1;
 
+- (void)setOriginalConversationId:(long long)arg1;
 - (long long)originalConversationId;
 - (id)_deliveryAccountForInitializers;
 - (id)_deliverSynchronouslyWithCurrentSettings:(bool)arg1;
@@ -41,11 +42,10 @@
 - (void)setArchiveAccount:(id)arg1;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
+- (id)initWithMessage:(id)arg1;
 - (id)originalHeaders;
 - (id)deliverSynchronously;
 - (id)compositionSpecification;
-- (void)setOriginalConversationId:(long long)arg1;
-- (id)initWithMessage:(id)arg1;
 - (id)message;
 - (id)account;
 - (void)setAccount:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIStyledImageDataConsumer, NSArray, UIImage, SKUIMissingItemLoader, SKUIResourceLoader, SKUIProductPageTableSeparatorView, SKUIProductPageTableHeaderView, NSMapTable;
+@class SKUIStyledImageDataConsumer, NSString, NSArray, UIImage, SKUIMissingItemLoader, SKUIResourceLoader, SKUIProductPageTableSeparatorView, SKUIProductPageTableHeaderView, NSMapTable;
 
 @interface SKUIProductPageTableLockupsSection : SKUIProductPageTableSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
     NSMapTable *_artworkRequests;
@@ -16,6 +16,10 @@
 }
 
 @property(retain) SKUIResourceLoader * resourceLoader;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)_productImageForItem:(id)arg1;

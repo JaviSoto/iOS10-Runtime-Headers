@@ -48,6 +48,7 @@
 + (bool)needsAVControls;
 + (double)allowedLoadingDelay;
 
+- (void)setLoading:(bool)arg1;
 - (void)setClientContext:(struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; })clientContext;
 - (id)gestureRecognizersForFullScreenDisplay;
@@ -83,7 +84,6 @@
 - (void)enterBackground;
 - (void)setPreviewItem:(id)arg1;
 - (id)previewItem;
-- (void)setLoading:(bool)arg1;
 - (void)cancelLoad;
 - (void)endScrubbing;
 - (void)beginScrubbing;

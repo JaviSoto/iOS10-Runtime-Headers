@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSURLResponse, AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingRequestInternal, NSURLRequest, AVAssetResourceLoadingDataRequest;
+@class NSString, NSURLResponse, AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingRequestInternal, NSURLRequest, AVAssetResourceLoadingDataRequest;
 
 @interface AVAssetResourceLoadingRequest : NSObject <AVAssetResourceLoaderRequest> {
     AVAssetResourceLoadingRequestInternal *_loadingRequest;
@@ -15,6 +15,10 @@
 @property(readonly) AVAssetResourceLoadingDataRequest * dataRequest;
 @property(copy) NSURLResponse * response;
 @property(copy) NSURLRequest * redirect;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (SEL)_selectorForInformingDelegateOfCancellationByFig;
 
@@ -46,6 +50,7 @@
 - (id)contentInformationRequest;
 - (void)finishLoadingWithError:(id)arg1;
 - (bool)isCancelled;
+- (id)init;
 - (bool)finished;
 - (id)request;
 - (void)setResponse:(id)arg1;

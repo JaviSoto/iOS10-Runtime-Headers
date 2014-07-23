@@ -38,6 +38,7 @@
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned long long)arg3;
 - (void)clearBulletinIDs:(id)arg1 inSection:(id)arg2;
 - (void)clearSection:(id)arg1;
+- (void)getBulletinsForPublisherBulletinIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id)arg2;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
 - (void)getPrivilegedSenderTypesWithHandler:(id)arg1;

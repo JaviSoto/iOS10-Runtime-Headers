@@ -7,7 +7,9 @@
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_directionsFeedbackCollections;
     NSMutableArray *_leaveNowFeedbackCollections;
+    NSMutableArray *_mapsLaunchFeedbackCollections;
     NSMutableArray *_mapsUsageFeedbackCollections;
+    NSMutableArray *_placeDataCacheFeedbackCollections;
     NSMutableArray *_stateTimingFeedbackCollections;
     NSMutableArray *_suggestionsFeedbackCollections;
     NSMutableArray *_trafficRerouteFeedbackCollections;
@@ -23,8 +25,12 @@
 @property(retain) NSMutableArray * stateTimingFeedbackCollections;
 @property(retain) NSMutableArray * trafficRerouteFeedbackCollections;
 @property(retain) NSMutableArray * leaveNowFeedbackCollections;
+@property(retain) NSMutableArray * mapsLaunchFeedbackCollections;
+@property(retain) NSMutableArray * placeDataCacheFeedbackCollections;
 
 
+- (id)placeDataCacheFeedbackCollections;
+- (id)mapsLaunchFeedbackCollections;
 - (id)leaveNowFeedbackCollections;
 - (id)trafficRerouteFeedbackCollections;
 - (id)stateTimingFeedbackCollections;
@@ -33,6 +39,12 @@
 - (id)transitAppLaunchFeedbackCollections;
 - (id)directionsFeedbackCollections;
 - (id)usageCollections;
+- (id)placeDataCacheFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (void)clearPlaceDataCacheFeedbackCollections;
+- (unsigned long long)placeDataCacheFeedbackCollectionsCount;
+- (id)mapsLaunchFeedbackCollectionAtIndex:(unsigned long long)arg1;
+- (void)clearMapsLaunchFeedbackCollections;
+- (unsigned long long)mapsLaunchFeedbackCollectionsCount;
 - (id)leaveNowFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (void)clearLeaveNowFeedbackCollections;
 - (unsigned long long)leaveNowFeedbackCollectionsCount;
@@ -57,6 +69,8 @@
 - (id)usageCollectionAtIndex:(unsigned long long)arg1;
 - (void)clearUsageCollections;
 - (unsigned long long)usageCollectionsCount;
+- (void)setPlaceDataCacheFeedbackCollections:(id)arg1;
+- (void)setMapsLaunchFeedbackCollections:(id)arg1;
 - (void)setLeaveNowFeedbackCollections:(id)arg1;
 - (void)setTrafficRerouteFeedbackCollections:(id)arg1;
 - (void)setStateTimingFeedbackCollections:(id)arg1;
@@ -70,8 +84,10 @@
 - (void)addStateTimingFeedbackCollection:(id)arg1;
 - (void)addMapsUsageFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
+- (void)addMapsLaunchFeedbackCollection:(id)arg1;
 - (void)addSuggestionsFeedbackCollection:(id)arg1;
 - (void)addDirectionsFeedbackCollection:(id)arg1;
+- (void)addPlaceDataCacheFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;

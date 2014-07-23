@@ -22,6 +22,7 @@
 - (void)addZooms:(id)arg1;
 - (void)setZooms:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setProperties:(id)arg1;

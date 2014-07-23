@@ -21,10 +21,10 @@
 - (id)initWithParentResult:(id)arg1;
 - (void)getBlobBytes:(const void**)arg1 outLength:(int*)arg2 forColumnIndex:(unsigned long long)arg3;
 - (double)doubleForColumnIndex:(unsigned long long)arg1;
-- (id)numberForColumnIndex:(unsigned long long)arg1;
 - (int)intForColumnIndex:(unsigned long long)arg1;
 - (id)stringForColumnName:(id)arg1;
 - (id)stringForColumnIndex:(unsigned long long)arg1;
+- (id)numberForColumnIndex:(unsigned long long)arg1;
 - (long long)int64ForColumnIndex:(unsigned long long)arg1;
 - (id)valueForColumnIndex:(unsigned long long)arg1;
 - (id)dataForColumnIndex:(unsigned long long)arg1;

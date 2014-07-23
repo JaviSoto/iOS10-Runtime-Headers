@@ -44,6 +44,10 @@
 @property bool allowsEditingTextAttributes;
 @property(copy) NSAttributedString * attributedText;
 @property(getter=isEditing) bool editing;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property long long autocapitalizationType;
 @property long long autocorrectionType;
 @property long long spellCheckingType;
@@ -186,6 +190,7 @@
 - (void)selectAll;
 - (void)startAutoscroll:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSelectionAffinity:(long long)arg1;
+- (id)textStylingAtPosition:(id)arg1 inDirection:(long long)arg2;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
 - (id)metadataDictionariesForDictationResults;

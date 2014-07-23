@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDimmingView, UIView, _UIPopoverView, NSArray, UIPopoverPresentationController, <UIPopoverControllerDelegate>, UIPanGestureRecognizer, UIViewController, _UIPopoverLayoutInfo, UIBarButtonItem, UIColor;
+@class UIBarButtonItem, _UIPopoverView, UIPopoverPresentationController, UIViewController, UIDimmingView, UIView, <UIPopoverControllerDelegate>, NSString, _UIPopoverLayoutInfo, UIColor, NSArray, UIPanGestureRecognizer;
 
 @interface UIPopoverController : NSObject <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate, UIAppearanceContainer> {
     id _delegate;
@@ -127,6 +127,10 @@
 @property bool showsOrientationMarker;
 @property bool showsPresentationArea;
 @property(getter=_retainsSelfWhilePresented,setter=_setRetainsSelfWhilePresented:) bool retainsSelfWhilePresented;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)_setForceModernPopoverUse:(bool)arg1;
 + (bool)_forceAttemptsToAvoidKeyboard;
@@ -153,7 +157,6 @@
 - (bool)showsOrientationMarker;
 - (void)setShowsTargetRect:(bool)arg1;
 - (bool)showsTargetRect;
-- (Class)popoverBackgroundViewClass;
 - (void)setDismissesOnRotation:(bool)arg1;
 - (bool)dismissesOnRotation;
 - (bool)allowResizePastTargetRect;
@@ -167,7 +170,6 @@
 - (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned long long)arg4;
 - (unsigned long long)popoverArrowDirection;
 - (void)setPopoverContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })popoverContentSize;
 - (void)_modalAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGSize { double x1; double x2; })_currentPopoverContentSize;
 - (void)_stopWatchingForWindowRotations;
@@ -190,6 +192,8 @@
 - (void)_updateDimmingViewTransformForInterfaceOrientationOfHostingWindow:(id)arg1;
 - (void)_commonPresentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned long long)arg3 animated:(bool)arg4;
 - (void)_setupPresentationController;
+- (struct CGSize { double x1; double x2; })popoverContentSize;
+- (Class)popoverBackgroundViewClass;
 - (void)_startWatchingForScrollViewNotifications;
 - (bool)isPresentingOrDismissing;
 - (bool)_shimPresentSlidingPopoverAnimated:(bool)arg1;
@@ -216,10 +220,10 @@
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
 - (bool)_isPresenting;
 - (void)setPreferredLayoutInfo:(id)arg1;
-- (bool)_shimPopoverPresentationController;
 - (double)_presentationAnimationDuration;
 - (id)_layoutInfoForCurrentKeyboardState;
 - (void)setAllowResizePastTargetRect:(bool)arg1;
+- (bool)_shimPopoverPresentationController;
 - (void)setContentViewController:(id)arg1 animated:(bool)arg2;
 - (void)_swipe:(id)arg1;
 - (void)_transitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(bool)arg3;

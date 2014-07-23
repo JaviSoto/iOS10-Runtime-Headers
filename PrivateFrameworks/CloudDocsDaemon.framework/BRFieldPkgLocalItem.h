@@ -25,13 +25,13 @@
 
 - (void)setHasGenerationID:(bool)arg1;
 - (bool)hasGenerationID;
-- (bool)hasSize;
 - (void)setHasSize:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)setGenerationID:(unsigned int)arg1;
 - (void)setFileID:(long long)arg1;
 - (unsigned int)generationID;
 - (long long)fileID;
+- (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setSize:(long long)arg1;

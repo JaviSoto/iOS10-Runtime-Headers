@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class BSAnimationSettings;
+@class NSString, BSAnimationSettings;
 
 @interface SBFAnimationFactory : NSObject <NSCopying, _UIBasicAnimationFactory> {
     BSAnimationSettings *_settings;
@@ -10,6 +10,10 @@
 
 @property(readonly) double duration;
 @property(readonly) double delay;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)factoryWithDuration:(double)arg1;
 + (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned long long)arg3 actions:(id)arg4;

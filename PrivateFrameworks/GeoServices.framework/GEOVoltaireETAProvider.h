@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class NSString, GEORequester;
 
 @interface GEOVoltaireETAProvider : GEOETAProvider <PBRequesterDelegate> {
     GEORequester *_requester;
@@ -32,6 +32,11 @@
 
     bool_cancelled;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)startSimpleETARequest:(id)arg1 finished:(id)arg2 error:(id)arg3;

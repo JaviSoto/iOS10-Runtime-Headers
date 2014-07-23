@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLInteractiveNavigationControllerDelegate>, PLExpandableView, PLInteractiveNavigationControllerView, UIView, NSMutableArray, UIViewController;
+@class UIView, NSString, <PLInteractiveNavigationControllerDelegate>, PLExpandableView, PLInteractiveNavigationControllerView, NSMutableArray, UIViewController;
 
 @interface PLInteractiveNavigationController : UIViewController <UINavigationBarDelegate, PLExpandableViewDelegate> {
     NSMutableArray *_stack;
@@ -36,6 +36,10 @@
 @property(retain) UIView * headerView;
 @property(getter=headerViewIsHidden) bool headerViewHidden;
 @property bool shouldPropagateEditingMode;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShouldPropagateEditingMode:(bool)arg1;

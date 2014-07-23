@@ -36,6 +36,10 @@
 @property(readonly) SSVPlatformContext * platformContext;
 @property(getter=_applicationController,setter=_setApplicationController:) SKUIApplicationController * _applicationController;
 @property(getter=_scriptAppContext,setter=_setScriptAppContext:,retain) IKAppContext * _scriptAppContext;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)defaultContext;
 + (id)_configurationDictionaryWithBagDictionary:(id)arg1;
@@ -64,7 +68,7 @@
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setApplicationController:(id)arg1;
 - (id)localizedAlertWithError:(id)arg1;
-- (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3;
+- (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (id)metricsPageContextForViewController:(id)arg1;
 - (void)sendOnXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id)arg1;

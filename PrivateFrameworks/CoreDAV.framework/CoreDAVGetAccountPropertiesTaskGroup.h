@@ -27,6 +27,10 @@
 @property bool fetchPrincipalSearchProperties;
 @property <CoreDAVGetAccountPropertiesTaskGroupDelegate> * delegate;
 @property bool shouldIgnoreHomeSetOnDifferentHost;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShouldIgnoreHomeSetOnDifferentHost:(bool)arg1;

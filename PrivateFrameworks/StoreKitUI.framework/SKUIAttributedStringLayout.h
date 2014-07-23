@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSStringDrawingContext;
+@class NSString, NSAttributedString, NSStringDrawingContext;
 
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout> {
     NSAttributedString *_attributedString;
@@ -11,6 +11,7 @@
         double height; 
     } _boundingSize;
     NSStringDrawingContext *_context;
+    double _topInset;
 }
 
 @property(readonly) NSAttributedString * attributedString;
@@ -19,11 +20,17 @@
 @property(readonly) struct CGSize { double x1; double x2; } boundingSize;
 @property(readonly) long long numberOfLines;
 @property(readonly) NSStringDrawingContext * stringDrawingContext;
+@property(readonly) double topInset;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)stringDrawingContext;
 - (struct CGSize { double x1; double x2; })boundingSize;
 - (id)initWithLayoutRequest:(id)arg1;
+- (double)topInset;
 - (double)baselineOffset;
 - (id)attributedString;
 - (void).cxx_destruct;

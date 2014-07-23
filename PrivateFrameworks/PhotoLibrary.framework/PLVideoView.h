@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, UIMovieScrubber, PLSlalomRegionEditor, PLProgressStack, NSMutableArray, NSString, PLPhotoBakedThumbnails, UIImage, UIActivityIndicatorView, NSTimer, PLVideoPosterFrameView, NSArray, <PLVideoViewDelegate>, PLMoviePlayerController, NSMutableDictionary, PLVideoEditingOverlayView, UIView<PLVideoOverlayButton>, NSLock, UIView, PFVideoAVObjectBuilder, AVAssetExportSession, NSObject<OS_dispatch_queue>, PLPhotoTileViewController, UIImageView, PLManagedAsset, NSURL;
+@class NSDictionary, UIMovieScrubber, PLSlalomRegionEditor, PLProgressStack, NSMutableArray, NSString, PLPhotoBakedThumbnails, UIImage, UIActivityIndicatorView, NSTimer, PLVideoPosterFrameView, NSArray, <PLVideoViewDelegate>, PLMoviePlayerController, NSMutableDictionary, PLVideoEditingOverlayView, UIView<PLVideoOverlayButton>, PFVideoAdjustments, NSLock, UIView, PFVideoAVObjectBuilder, AVAssetExportSession, NSObject<OS_dispatch_queue>, PLPhotoTileViewController, UIImageView, PLManagedAsset, NSURL;
 
 @interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate, PLSlalomRegionEditorDelegate> {
     PLManagedAsset *_videoCameraImage;
@@ -102,6 +102,7 @@
     bool__localVideoUnavailable;
     PFVideoAVObjectBuilder *__videoAVObjectBuilder;
     long long __expectedNotificationsCount;
+    PFVideoAdjustments *__adjustmentsToCommit;
 }
 
 @property(retain,readonly) NSString * pathForVideoFile;
@@ -141,11 +142,17 @@
 @property(readonly) bool _isFetchingVideo;
 @property(readonly) bool _localVideoUnavailable;
 @property(readonly) long long _expectedNotificationsCount;
+@property(readonly) PFVideoAdjustments * _adjustmentsToCommit;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)_dequeueOverlayPlayButton;
 + (void)_enqueueOverlayPlayButton:(id)arg1;
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
+- (id)_adjustmentsToCommit;
 - (long long)_expectedNotificationsCount;
 - (bool)_isFetchingVideo;
 - (id)_videoAVObjectBuilder;
@@ -191,6 +198,8 @@
 - (id)_metadataForFlattenedVideo;
 - (id)_readMetadataFromPath:(id)arg1;
 - (id)_filePathForFlattenedVideoMetadata;
+- (void)_commitPendingAdjustmentsUpdate;
+- (void)_cancelDelayedCommitPendingAdjustmentsUpdate;
 - (void)_setDidEditSlalom:(bool)arg1;
 - (bool)_didEditSlalom;
 - (void)_scrubToSlalomRegionEditorStartHandle:(bool)arg1;
@@ -208,7 +217,7 @@
 - (void)_resetTrimProgressTimer;
 - (void)_exportCompletedWithSuccess:(bool)arg1;
 - (bool)_canEditDuration:(double)arg1;
-- (void)_commitUpdatedAdjustmentsAndWait:(bool)arg1;
+- (void)_enqueueAdjustmentsForCommit;
 - (void)_thumbnailsWereRegenerated:(id)arg1 error:(id)arg2 contextInfo:(void*)arg3;
 - (void)_removeTrimProgressTimer;
 - (void)cancelTrim;
@@ -292,6 +301,7 @@
 - (void)_cancelAirplayExportSession;
 - (void)_clearImageGenerators;
 - (void)setTrimProgressStack:(id)arg1;
+- (void)_commitPendingAdjustmentsUpdateAndWait:(bool)arg1;
 - (void)_cancelRemaking:(id)arg1;
 - (bool)_canAccessVideo;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(long long)arg3;
@@ -309,6 +319,7 @@
 - (id)videoCameraImage;
 - (id)videoScrubber;
 - (id)imageTile;
+- (void)setShowsPlayOverlay:(bool)arg1;
 - (void)setShouldPlayVideoWhenViewAppears:(bool)arg1;
 - (bool)shouldPlayVideoWhenViewAppears;
 - (void)setShowsScrubber:(bool)arg1;
@@ -320,14 +331,14 @@
 - (bool)playingToVideoOut;
 - (bool)playingToAirTunes;
 - (void)setLoadMediaImmediately:(bool)arg1;
-- (void)setShowsPlayOverlay:(bool)arg1;
 - (void)setPrepareMoviePlayerForScrubberAutomatically:(bool)arg1;
 - (void)setCanEdit:(bool)arg1;
 - (void)_tearDownMoviePlayer;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (id)pathForVideoFile;
-- (bool)canEdit;
+- (void)applicationDidEnterBackground;
 - (void)viewDidAppear;
+- (bool)canEdit;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
 - (bool)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
@@ -360,6 +371,7 @@
 - (void)setProgress:(id)arg1;
 - (void)stop;
 - (double)duration;
+- (void)applicationWillResignActive;
 - (void)_reset;
 - (void)setMaximumTrimLength:(double)arg1;
 - (double)movieScrubberThumbnailAspectRatio:(id)arg1;

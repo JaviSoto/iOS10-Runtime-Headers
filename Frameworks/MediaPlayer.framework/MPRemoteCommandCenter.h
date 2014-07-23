@@ -75,6 +75,7 @@
 - (id)specialSeekForwardCommand;
 - (id)changeShuffleModeCommand;
 - (id)changeRepeatModeCommand;
+- (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 - (struct __CFArray { }*)_copySupportedCommands;
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
 - (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
@@ -101,6 +102,5 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 
 @end

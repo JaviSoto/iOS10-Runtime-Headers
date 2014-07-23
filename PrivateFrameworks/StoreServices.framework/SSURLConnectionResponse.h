@@ -24,6 +24,10 @@
 @property(readonly) NSURL * URL;
 @property(readonly) NSData * databaseEncoding;
 @property(retain) SSMetricsPageEvent * metricsPageEvent;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setMetricsPageEvent:(id)arg1;

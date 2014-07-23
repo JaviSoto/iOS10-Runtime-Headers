@@ -20,6 +20,7 @@
 
 
 - (void)setIsMDMProfile:(bool)arg1;
+- (bool)isMDMProfile;
 - (void)setIsCloudLocked:(bool)arg1;
 - (bool)isCloudLocked;
 - (void)setIsCloudProfile:(bool)arg1;
@@ -40,7 +41,6 @@
 - (id)_subjectSummaryFromCertificate:(struct __SecCertificate { }*)arg1;
 - (struct __SecCertificate { }*)copyCertificateFromPayloadWithUUID:(id)arg1;
 - (id)payloadWithUUID:(id)arg1;
-- (bool)isMDMProfile;
 - (id)payloads;
 - (id)_sortPayloads:(id)arg1;
 - (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;

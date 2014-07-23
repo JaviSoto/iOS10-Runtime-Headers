@@ -44,7 +44,6 @@
 - (id)port;
 - (void)closeFile;
 - (int)fileDescriptor;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
 - (void)dealloc;
@@ -53,7 +52,6 @@
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readInBackgroundAndNotify;
-- (id)initWithFileDescriptor:(int)arg1;
 - (id)_monitor:(int)arg1;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
@@ -71,9 +69,11 @@
 - (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id)availableData;
+- (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithURL:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3;
 - (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
 - (unsigned long long)seekToEndOfFile;
 - (unsigned long long)offsetInFile;
 - (void)synchronizeFile;

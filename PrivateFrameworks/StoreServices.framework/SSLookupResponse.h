@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, SSMetricsPageEvent, NSDate, NSMutableArray, SSMetricsConfiguration;
+@class NSDate, NSString, NSArray, SSMetricsPageEvent, NSDictionary, NSMutableArray, SSMetricsConfiguration;
 
 @interface SSLookupResponse : NSObject <SSXPCCoding> {
     NSDate *_expirationDate;
@@ -17,6 +17,10 @@
 @property(readonly) SSMetricsConfiguration * metricsConfiguration;
 @property(retain) SSMetricsPageEvent * metricsPageEvent;
 @property(readonly) NSDictionary * responseDictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (bool)mpFakeCompletionDataForBuys;
 + (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;

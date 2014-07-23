@@ -94,11 +94,11 @@
 - (void)setHasIsVideo:(bool)arg1;
 - (bool)hasConnectionType;
 - (void)setHasConnectionType:(bool)arg1;
+- (void)setConnectionType:(unsigned int)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (bool)hasGuid;
 - (void)setIsVideo:(unsigned int)arg1;
-- (void)setConnectionType:(unsigned int)arg1;
 - (bool)hasTimestamp;
-- (void)setHasTimestamp:(bool)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)connectionType;

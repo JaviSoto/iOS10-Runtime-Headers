@@ -9,5 +9,6 @@
 - (void)_setCurrentPage:(long long)arg1;
 - (id)_pageIndicatorCurrentImageForPage:(long long)arg1;
 - (id)_pageIndicatorImageForPage:(long long)arg1;
+- (void)layoutSubviews;
 
 @end

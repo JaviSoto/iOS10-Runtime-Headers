@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITableViewDataSource>, _UITableViewUpdateSupport, NSIndexPath, NSMutableArray, UITableViewIndexOverlaySelectionView, UILongPressGestureRecognizer, UIRefreshControl, UIImage, UITableViewCell, UITableViewRowData, NSTimer, NSMutableDictionary, UITableViewCountView, NSArray, UITouch, NSMutableSet, _UITableViewReorderingSupport, <UITableViewDelegate>, UIView, UITableViewWrapperView, UISwipeGestureRecognizer, UIGobblerGestureRecognizer, _UITableViewDeleteAnimationSupport, UITableViewIndexOverlayIndicatorView, UITableViewIndex, UIVisualEffect, UIColor, UIScrollView;
+@class <UITableViewDataSource>, _UITableViewUpdateSupport, NSIndexPath, NSMutableArray, UITableViewIndexOverlaySelectionView, UILongPressGestureRecognizer, UIRefreshControl, UIImage, UITableViewCell, UITableViewRowData, NSTimer, NSMutableDictionary, UITableViewCountView, NSArray, UITouch, NSMutableSet, _UITableViewReorderingSupport, <UITableViewDelegate>, NSString, UIView, UITableViewWrapperView, UISwipeGestureRecognizer, UIGobblerGestureRecognizer, _UITableViewDeleteAnimationSupport, UITableViewIndexOverlayIndicatorView, UITableViewIndex, UIVisualEffect, UIColor, UIScrollView;
 
 @interface UITableView : UIScrollView <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, NSCoding> {
     <UITableViewDataSource> *_dataSource;
@@ -312,6 +312,10 @@
 @property(getter=_manuallyManagesSwipeUI,setter=_setManuallyManagesSwipeUI:) bool manuallyManagesSwipeUI;
 @property(retain) UITouch * currentTouch;
 @property(getter=_defaultMarginWidth,readonly) double defaultMarginWidth;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (void)initialize;
 + (id)_alternateUISwitchableSelectorPairs;

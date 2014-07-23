@@ -65,6 +65,10 @@
 @property(readonly) NSArray * sections;
 @property(readonly) GEOMapRegion * boundingMapRegion;
 @property bool allowsNetworkTileLoad;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (struct { double x1; double x2; })locationAtDistance:(double)arg1 from:(id)arg2;

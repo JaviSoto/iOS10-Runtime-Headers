@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class AVAudioEngine, AVAudioTime;
+@class AVAudioEngine, NSString, AVAudioTime;
 
 @interface AVAudioNode : NSObject <AVAudioMixing> {
     void *_impl;
@@ -17,6 +17,10 @@
 @property(readonly) unsigned long long numberOfInputs;
 @property(readonly) unsigned long long numberOfOutputs;
 @property(readonly) AVAudioTime * lastRenderTime;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property float volume;
 
 

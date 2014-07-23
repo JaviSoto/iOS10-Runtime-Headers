@@ -81,13 +81,16 @@
 @property(retain) NSDictionary * middleToolbarButton;
 @property(readonly) NSArray * buttons;
 @property(readonly) NSArray * accessoryViews;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)parentPage;
 - (id)childPages;
 - (id)middleToolbarButtonItem;
 - (id)leftToolbarButtonItem;
-- (id)rightToolbarButtonItem;
 - (id)leftNavigationBarButtonItem;
 - (id)rightNavigationBarButtonItem;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })titleLabelPadding;
@@ -158,6 +161,7 @@
 - (void)setCustomMargin:(double)arg1;
 - (id)webViewOM;
 - (bool)hasWebView;
+- (id)rightToolbarButtonItem;
 - (void)setLoading:(bool)arg1;
 - (bool)needsToShowToolbarInPrefsAppRoot;
 - (id)tableViewOM;

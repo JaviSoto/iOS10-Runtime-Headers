@@ -49,9 +49,10 @@
 - (id)registerItemGroupSet:(id)arg1 completionHandler:(id)arg2;
 - (id)getProtocolVersion;
 - (id)getItemGroupSet:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
+- (id)statusReport;
 - (id)assetCache;
-- (void)setPath:(id)arg1;
 - (id)path;
+- (void)setPath:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 

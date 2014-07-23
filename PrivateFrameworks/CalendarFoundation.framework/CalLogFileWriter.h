@@ -19,10 +19,10 @@
 - (void)setFileDescriptorIsValid:(bool)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (id)initWithParameters:(id)arg1;
+- (id)path;
 - (void)write:(id)arg1;
 - (void)setPath:(id)arg1;
 - (int)fileDescriptor;
-- (id)path;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;

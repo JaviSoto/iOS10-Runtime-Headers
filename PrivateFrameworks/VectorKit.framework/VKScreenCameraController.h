@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAnimation, <VKTrackableAnnotation>, VKAnnotationTrackingCameraController;
+@class VKAnimation, VKAnnotationTrackingCameraController, <VKTrackableAnnotation>, NSString;
 
 @interface VKScreenCameraController : VKCameraController <VKCameraControllerDelegate> {
     VKAnimation *_zoomAnimation;
@@ -43,6 +43,10 @@
 @property(getter=isAnimatingToTrackAnnotation,readonly) bool animatingToTrackAnnotation;
 @property(readonly) <VKTrackableAnnotation> * trackingAnnotation;
 @property(getter=isTrackingHeading,readonly) bool trackingHeading;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (double)rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, CPLPlatformObject, CPLPullFromTransportTask, CPLBackgroundUploadsTask, NSMutableArray, CPLEngineSyncEmergencyTask, CPLEngineLibrary, CPLMinglePulledChangesTask, NSObject<OS_dispatch_queue>, CPLPushToTransportTask, <CPLEngineStoreUserIdentifier>, CPLBackgroundDownloadsTask, NSError, <CPLEngineTransportSetupTask>;
+@class NSMutableDictionary, CPLPlatformObject, CPLPullFromTransportTask, CPLBackgroundUploadsTask, NSMutableArray, CPLEngineSyncEmergencyTask, CPLEngineLibrary, NSString, CPLMinglePulledChangesTask, NSObject<OS_dispatch_queue>, CPLPushToTransportTask, <CPLEngineStoreUserIdentifier>, CPLBackgroundDownloadsTask, NSError, <CPLEngineTransportSetupTask>;
 
 @interface CPLEngineSyncManager : NSObject <CPLEngineSyncEmergencyTaskDelegate, CPLPushToTransportTaskDelegate, CPLPullFromTransportTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLBackgroundDownloadsTaskDelegate, CPLAbstractObject, CPLEngineComponent> {
     <CPLEngineStoreUserIdentifier> *_transportUserIdentifier;
@@ -41,6 +41,10 @@
 @property(readonly) CPLEngineLibrary * engineLibrary;
 @property(setter=_setState:) unsigned long long state;
 @property bool shouldTryToMingleImmediately;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) CPLPlatformObject * platformObject;
 
 + (id)shortDescriptionForState:(unsigned long long)arg1;

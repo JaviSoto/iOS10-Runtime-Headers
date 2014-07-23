@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class AVCaptureSession, AVCaptureDeviceInput, <PKCaptureDelegate>, NSObject<OS_dispatch_queue>, AVCaptureVideoPreviewLayer;
+@class AVCaptureSession, AVCaptureDeviceInput, <PKCaptureDelegate>, NSString, NSObject<OS_dispatch_queue>, AVCaptureVideoPreviewLayer;
 
 @interface PKCaptureSession : NSObject <AVCaptureMetadataOutputObjectsDelegate> {
     AVCaptureSession *_captureSession;
@@ -14,6 +14,11 @@
 
 @property(readonly) AVCaptureVideoPreviewLayer * previewLayer;
 @property(readonly) bool isRunning;
+@property <PKCaptureDelegate> * delegate;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)previewLayer;
@@ -25,6 +30,8 @@
 - (void)startRunning;
 - (bool)isRunning;
 - (id)initWithDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

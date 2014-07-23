@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSError, NSData;
+@class NSError, NSData, NSString;
 
 @interface SSPlayInfoResponse : NSObject <SSXPCCoding, NSCopying> {
     NSError *_error;
@@ -11,6 +11,10 @@
 
 @property(readonly) NSError * error;
 @property(readonly) NSData * playInfoData;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (id)playInfoData;

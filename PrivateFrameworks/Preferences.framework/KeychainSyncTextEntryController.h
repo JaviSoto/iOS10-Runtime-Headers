@@ -22,6 +22,10 @@
 @property bool textFieldHasRoundBorder;
 @property bool convertsNumeralsToASCII;
 @property(retain) NSString * textValue;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (bool)textFieldHasRoundBorder;

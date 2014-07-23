@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, SKUIItemStateCenter, SKUIClientContext, NSOperationQueue, NSDictionary, SKUIBannerView, NSMutableArray, SKUIItemArtworkContext, SSLookupItem, <SKUIBannerViewDelegate>;
+@class NSString, UIImage, SKUIItemStateCenter, SKUIClientContext, NSOperationQueue, NSDictionary, SKUIBannerView, NSMutableArray, SKUIItemArtworkContext, SSLookupItem, <SKUIBannerViewDelegate>;
 
 @interface SKUIBannerViewController : UIViewController <SKUIItemStateCenterObserver> {
     SKUIBannerView *_bannerView;
@@ -22,6 +22,10 @@
 @property <SKUIBannerViewDelegate> * delegate;
 @property(retain) NSOperationQueue * resourceOperationQueue;
 @property(copy) NSDictionary * scriptContextDictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)loadWithProductParameters:(id)arg1;
@@ -43,9 +47,9 @@
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (id)scriptContextDictionary;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
+- (void)setScriptContextDictionary:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)setScriptContextDictionary:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

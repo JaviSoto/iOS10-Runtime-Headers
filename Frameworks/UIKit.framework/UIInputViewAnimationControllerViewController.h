@@ -2,12 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerAnimatedTransitioning_Keyboard>, <UIViewControllerContextTransitioning>;
+@class <UIViewControllerAnimatedTransitioning_Keyboard>, NSString, <UIViewControllerContextTransitioning>;
 
 @interface UIInputViewAnimationControllerViewController : NSObject <UIInputViewAnimationController> {
     <UIViewControllerContextTransitioning> *_context;
     <UIViewControllerAnimatedTransitioning_Keyboard> *_animator;
 }
+
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 + (id)controllerWithContext:(id)arg1;
 

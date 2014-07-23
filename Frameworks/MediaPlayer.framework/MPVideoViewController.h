@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIView<MPVideoOverlay>, MPSwipableView, MPAVController, UIAlertView, _UIHostedWindow, MPVideoView, MPVideoBackgroundView, UIView, MPClosedCaptionDisplay, MPAVItem, UIColor, MPTVOutWindow, UIActivityIndicatorView, UIImage;
+@class UIView<MPVideoOverlay>, MPSwipableView, MPAVController, UIAlertView, _UIHostedWindow, MPVideoView, MPVideoBackgroundView, UIView, MPClosedCaptionDisplay, NSString, MPAVItem, UIColor, MPTVOutWindow, UIActivityIndicatorView, UIImage;
 
 @interface MPVideoViewController : MPViewController <MPVideoControllerProtocol, MPSwipableViewDelegate, UIModalViewDelegate> {
     MPVideoBackgroundView *_backgroundView;
@@ -47,6 +47,10 @@
 @property(readonly) bool showArtworkForTVOut;
 @property(readonly) bool canShowQTAudioOnlyUI;
 @property(readonly) UIView<MPVideoOverlay> * videoOverlayViewIfLoaded;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(retain) MPAVItem * item;
 @property long long orientation;

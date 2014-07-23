@@ -5,16 +5,22 @@
 @class PLPhotoLibrary;
 
 @interface iPhotoMigrationSupport : NSObject  {
+    int _inFlightMigrationCount;
     PLPhotoLibrary *_pl_library;
 }
 
+@property(readonly) bool migrationWasInterrupted;
 @property(setter=setPL_library:,retain) PLPhotoLibrary * pl_library;
 
 + (id)sharedInstance;
 
+- (void)fireMigrationOfiPhotoLibraryWithProgressHandler:(id)arg1;
+- (bool)_isMigrating;
+- (bool)migrationWasInterrupted;
+- (void)checkForUnmigratediPhotoContentWithCompletion:(id)arg1;
 - (void)_migrateiPhotoLibraryWorkerWithProgressHandler:(id)arg1 iPhotoLibraryDir:(id)arg2;
-- (id)_preMigratediPhotoDir;
 - (void)setPL_library:(id)arg1;
+- (void)_decrementInFlightMigrationCount;
 - (id)_iPhotoUuidsWithProjectDict:(id)arg1 type:(unsigned long long)arg2;
 - (id)_premigratedProjectUuidMapTable;
 - (bool)_createParentDirectoryIfNecessaryWithPath:(id)arg1;
@@ -24,10 +30,13 @@
 - (void)_deleteiPhotoSubDirectoryWithDirectoryPath:(id)arg1 subDirectoryName:(id)arg2 description:(id)arg3;
 - (id)_displayableUuidWithUuid:(id)arg1;
 - (id)_iPhotoToPhotosUuidMapTable;
+- (id)_iPhotoMediaDirUuidListSortedByDateCreatedWithDir:(id)arg1;
+- (void)_incrementInFlightMigrationCount;
 - (id)pl_library;
-- (bool)_validateUuid:(id)arg1;
 - (id)_migratediPhotoDir;
-- (void)fireMigrationOfiPhotoLibraryWithProgressHandler:(id)arg1;
+- (bool)_validateUuid:(id)arg1;
+- (id)_inFlightMigrationMarkerFilePath;
+- (id)_preMigratediPhotoDir;
 - (void).cxx_destruct;
 
 @end
