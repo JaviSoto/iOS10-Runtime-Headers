@@ -44,6 +44,7 @@
     AVFullScreenViewController *_fullScreenViewController;
     unsigned int _animateFullScreenTransitionForPresenting : 1;
     unsigned int _isTransitioningToOrFromFullScreen : 1;
+    unsigned int _animateFullScreenTransition : 1;
     AVPlayerController *_playerController;
     CALayer<AVVideoLayer> *_videoLayer;
     unsigned int _showsExitFullScreenButton : 1;
@@ -75,17 +76,19 @@
 + (void)initialize;
 
 - (void)showPlaybackControlsViewForVolumeChange;
+- (void)exitFullScreenAnimated:(bool)arg1 completionHandler:(id)arg2;
+- (void)enterFullScreenAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (id)iAdPrerollView;
 - (void)_showPlaybackControlsViewIfNeeded;
 - (id)contentOverlayView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoBounds;
 - (void)_hidePlaybackControlsViewIfPossibleAfterDelayIfPlaying;
-- (void)_transitionFromFullScreenViewControllerWithCompletionHandler:(id)arg1;
+- (void)_transitionFromFullScreenViewControllerAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (void)_showOrHidePlaybackControlsView;
 - (void)_firePlaybackControlsViewVisibilityTimer:(id)arg1;
 - (void)_showPlaybackControlsViewIfNeededAndHideIfPossibleAfterDelayIfPlayingWithDelay:(double)arg1;
 - (void)_hidePlaybackControlsViewIfPossible;
-- (void)_transitionToFullScreenViewControllerWithCompletionHandler:(id)arg1;
+- (void)_transitionToFullScreenViewControllerAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (void)_hidePlaybackControlsViewIfPossibleUntilFurtherUserInteraction;
 - (bool)_showsPlaybackControlsView;
 - (void)_setPlaybackControlsViewVisibilityNeedsUpdate;
@@ -139,6 +142,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;

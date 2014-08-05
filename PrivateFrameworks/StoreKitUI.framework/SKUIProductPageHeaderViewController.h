@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemOffer, SKUIItemArtworkContext, <SKUIProductPageHeaderViewDelegate>, SKUIItem, SKUIProductPageHeaderFloatingView, SSVLoadURLOperation, NSString, UIPopoverController, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIFacebookLikeStatus, SKUIContentRatingArtworkResourceLoader, SKUIProductPageHeaderView, UIImage;
+@class SKUIItemOffer, SKUIItemArtworkContext, <SKUIProductPageHeaderViewDelegate>, SKUIProductPageHeaderFloatingView, SSVLoadURLOperation, NSString, UIPopoverController, SKUIProductPage, NSOperationQueue, SKUIClientContext, SKUIItem, SKUIContentRatingArtworkResourceLoader, SKUIProductPageHeaderView, UIImage;
 
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
     UIPopoverController *_activityPopoverController;
@@ -11,7 +11,6 @@
     SKUIItemArtworkContext *_artworkContext;
     SKUIClientContext *_clientContext;
     <SKUIProductPageHeaderViewDelegate> *_delegate;
-    SKUIFacebookLikeStatus *_facebookLikeStatus;
     SKUIProductPageHeaderView *_headerView;
     UIImage *_iconImage;
     SKUIItem *_item;
@@ -32,7 +31,6 @@
 @property(readonly) SKUIItem * item;
 @property(retain) SKUIClientContext * clientContext;
 @property <SKUIProductPageHeaderViewDelegate> * delegate;
-@property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
 @property bool askPermission;
 @property(readonly) UIImage * iconImage;
 @property(retain) NSOperationQueue * operationQueue;
@@ -46,9 +44,6 @@
 
 - (void)_destroyPopoverController;
 - (void)_sectionControlAction:(id)arg1;
-- (id)facebookLikeStatus;
-- (void)setFacebookLikeStatus:(id)arg1;
-- (void)_itemOfferButtonAction:(id)arg1;
 - (void)_disableItemOfferButtonWithTitle:(id)arg1 animated:(bool)arg2;
 - (void)_showSynthesizedItemStateWithFlag:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_setUberWithImage:(id)arg1 error:(id)arg2;
@@ -61,7 +56,6 @@
 - (void)_artistButtonAction:(id)arg1;
 - (id)_contentRatingResourceLoader;
 - (void)_showActivityViewControllerFromView:(id)arg1;
-- (id)_facebookFriendsString;
 - (void)_reloadItemStateAnimated:(bool)arg1;
 - (long long)selectedSectionIndex;
 - (void)_loadUberImageIfAvailable;
@@ -72,13 +66,14 @@
 - (bool)askPermission;
 - (id)floatingView;
 - (id)_artworkContext;
+- (void)_itemOfferButtonAction:(id)arg1;
 - (void)setProductPage:(id)arg1;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)setAskPermission:(bool)arg1;
-- (bool)_isRestricted;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (bool)_isRestricted;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

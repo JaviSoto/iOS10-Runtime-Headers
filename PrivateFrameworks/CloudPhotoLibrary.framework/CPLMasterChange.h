@@ -32,9 +32,6 @@
 
 
 - (bool)isImage;
-- (void)setFullSizeJPEGSource:(unsigned long long)arg1;
-- (void)setImportGroupIdentifier:(id)arg1;
-- (id)importGroupIdentifier;
 - (bool)supportsResources;
 - (void)awakeFromStorage;
 - (void)prepareForStorage;
@@ -43,11 +40,14 @@
 - (unsigned long long)fullSizeJPEGSource;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
 - (long long)dequeueOrder;
+- (id)importGroupIdentifier;
 - (id)mediaMetaDataType;
 - (id)mediaMetaData;
+- (void)setImportGroupIdentifier:(id)arg1;
 - (void)setMediaMetaDataType:(id)arg1;
 - (void)setMediaMetaData:(id)arg1;
 - (void)setItemType:(id)arg1;
+- (void)setFullSizeJPEGSource:(unsigned long long)arg1;
 - (void)setImportDate:(id)arg1;
 - (void)setOriginalOrientation:(long long)arg1;
 - (long long)originalOrientation;

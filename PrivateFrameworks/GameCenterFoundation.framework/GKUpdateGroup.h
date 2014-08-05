@@ -27,6 +27,7 @@
 + (id)updateGroup;
 
 - (id)targetQueue;
+- (void)setTargetQueue:(id)arg1;
 - (void)setDispatchGroup:(id)arg1;
 - (void)setNotifiers:(id)arg1;
 - (void)cancelUpdates;
@@ -36,7 +37,6 @@
 - (void)join:(id)arg1;
 - (void)applyUpdates;
 - (id)dispatchGroup;
-- (void)setTargetQueue:(id)arg1;
 - (long long)updateCount;
 - (void)setLock:(id)arg1;
 - (void)setName:(id)arg1;

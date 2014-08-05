@@ -25,6 +25,7 @@
 - (bool)_shouldChangeStatusBarViewController;
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionDidEnd:(bool)arg1;
+- (void)transitionDidFinish:(bool)arg1;
 - (void)_adjustOrientationIfNecessaryInWindow:(id)arg1 forViewController:(id)arg2 preservingViewController:(id)arg3;
 - (bool)_shouldRespectDefinesPresentationContext;
 - (bool)shouldPresentInFullscreen;

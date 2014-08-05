@@ -48,6 +48,7 @@
 - (void)_writeMovieForSessionContext:(id)arg1;
 - (bool)_scheduleDelayedMovieWriteIfNeededForTimelapseUUID:(id)arg1;
 - (void)_permanentlyFailTimelapseUUID:(id)arg1;
+- (bool)_isCameraRunning;
 - (void)_dispatchToWorkQueueAfterDelay:(double)arg1 withBlock:(id)arg2;
 - (bool)_deleteItemAtPath:(id)arg1;
 - (void)_updatePendingWorkFromDiskForceEndLastSession:(bool)arg1;

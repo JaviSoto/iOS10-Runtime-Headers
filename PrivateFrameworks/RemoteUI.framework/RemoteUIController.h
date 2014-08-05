@@ -53,6 +53,7 @@
 - (void)_setHandlerWithKey:(id)arg1 forElementsMatching:(id)arg2 handler:(id)arg3;
 - (void)_didRemoveObjectModel:(id)arg1;
 - (void)_willPresentObjectModel:(id)arg1 modally:(bool)arg2;
+- (id)loader;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (void)setLoadCompletion:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
@@ -66,7 +67,6 @@
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)viewControllerForAlertPresentation;
 - (void)loadRequest:(id)arg1 completion:(id)arg2;
-- (id)loader;
 - (id)userAgentString;
 - (void)loadRequest:(id)arg1;
 - (id)init;

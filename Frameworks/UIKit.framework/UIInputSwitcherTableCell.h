@@ -3,14 +3,9 @@
  */
 
 @interface UIInputSwitcherTableCell : UITableViewCell  {
-    bool_isPredictionCell;
 }
 
-@property bool isPredictionCell;
 
-
-- (void)setIsPredictionCell:(bool)arg1;
-- (bool)isPredictionCell;
 - (void)layoutSubviews;
 
 @end

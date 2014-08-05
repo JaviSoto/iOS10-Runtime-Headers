@@ -90,10 +90,10 @@
 + (id)abImageNamed:(id)arg1;
 + (id)ab_tintedImageNamed:(id)arg1 withTint:(id)arg2;
 + (id)ab_imageNamed:(id)arg1;
-+ (id)_mapkit_imageNamed:(id)arg1;
 + (void)_gkloadRemoteImageForURL:(id)arg1 queue:(id)arg2 withCompletionHandler:(id)arg3;
 + (id)_gkImageWithRawData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 rowBytes:(unsigned long long)arg4 bitmapInfo:(unsigned int)arg5;
 + (id)_gkImageWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
++ (id)_mapkit_imageNamed:(id)arg1;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
 + (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForImageOrientation:(long long)arg1 andSize:(struct CGSize { double x1; double x2; })arg2;
 + (bool)isSizeSwappedForImageOrientation:(long long)arg1;
@@ -234,7 +234,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bitmapRectFromImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)imageWithShadow:(id)arg1;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(double)arg2;
-- (id)_mapkit_dimmedImage;
 - (id)_gkImageByTintingWithColor:(id)arg1;
 - (id)_gkImageByAddingAlpha;
 - (id)_gkImageByScalingToSize:(struct CGSize { double x1; double x2; })arg1;
@@ -245,12 +244,17 @@
 - (long long)_gkImageOrientation;
 - (struct CGImage { }*)_gkCGImage;
 - (double)_gkScale;
+- (id)_mapkit_dimmedImage;
 - (id)sbf_imageMaskedByColor:(id)arg1 withShadow:(id)arg2;
 - (id)sbf_imageWithEtchedBorderOfColor:(id)arg1 radius:(double)arg2;
 - (id)sbf_invertedMaskImage;
 - (id)sbf_maskImage;
 - (id)sbf_imageWithShadow:(id)arg1;
 - (id)sbf_imageMaskedByColor:(id)arg1;
+- (id)sbf_scaleImage:(double)arg1;
+- (id)sbf_resizeImageToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)sbf_resizeImageToSize:(struct CGSize { double x1; double x2; })arg1 preservingAspectRatio:(bool)arg2;
+- (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)newImageRotatedByDegrees:(float)arg1;
 - (id)newImageWithOrientation:(long long)arg1;
 - (void*)PL_imageContents;

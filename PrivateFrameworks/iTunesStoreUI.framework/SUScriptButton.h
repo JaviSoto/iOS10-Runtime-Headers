@@ -50,10 +50,10 @@
 - (id)_className;
 - (id)scriptAttributeKeys;
 - (id)showingConfirmation;
-- (void)setLoading:(bool)arg1;
-- (bool)loading;
 - (id)canvas;
 - (void)setCanvas:(id)arg1;
+- (bool)loading;
+- (void)setLoading:(bool)arg1;
 - (bool)shouldPerformDefaultAction;
 - (bool)enabled;
 - (id)action;

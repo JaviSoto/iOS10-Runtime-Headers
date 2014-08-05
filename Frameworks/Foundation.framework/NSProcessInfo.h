@@ -28,10 +28,10 @@
 
 + (id)processInfo;
 
-- (id)environment;
 - (int)processIdentifier;
 - (id)arguments;
 - (double)systemUptime;
+- (id)environment;
 - (unsigned long long)processorCount;
 - (void)dealloc;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id)arg3;

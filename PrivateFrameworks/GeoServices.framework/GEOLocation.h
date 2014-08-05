@@ -109,7 +109,6 @@
 - (void)writeTo:(id)arg1;
 - (bool)hasType;
 - (id)initWithLocation:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
@@ -119,6 +118,7 @@
 - (double)course;
 - (double)verticalAccuracy;
 - (int)altitude;
+- (void)setTimestamp:(double)arg1;
 - (void)setAltitude:(int)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

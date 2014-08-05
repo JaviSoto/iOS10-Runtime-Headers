@@ -40,12 +40,12 @@
 + (id)currentMonitor;
 
 - (unsigned long long)bytesRead;
+- (id)statusMessage;
 - (void)setCurrentCount:(unsigned long long)arg1;
 - (unsigned long long)gotNewMessagesState;
 - (void)relinquishExclusiveAccessKey:(int)arg1;
 - (int)acquireExclusiveAccessKey;
 - (id)taskName;
-- (id)statusMessage;
 - (void)setInvocationQueue:(id)arg1;
 - (id)activityTargets;
 - (void)addActivityTargets:(id)arg1;
@@ -85,7 +85,6 @@
 - (unsigned long long)expectedLength;
 - (void)setExpectedLength:(unsigned long long)arg1;
 - (id)mailbox;
-- (unsigned long long)bytesWritten;
 - (void)setPercentDone:(double)arg1;
 - (void)resetConnectionStats;
 - (void)setCanBeCancelled:(bool)arg1;
@@ -93,6 +92,7 @@
 - (bool)shouldCancel;
 - (void)addReason:(id)arg1;
 - (void)setMailbox:(id)arg1;
+- (unsigned long long)bytesWritten;
 - (void)setMaxCount:(unsigned long long)arg1;
 - (void)setDisplayName:(id)arg1;
 - (bool)isActive;

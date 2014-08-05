@@ -8,10 +8,10 @@
 }
 
 
+- (id)stop;
 - (double)midpoint;
 - (id)initWithStop:(id)arg1 midpoint:(id)arg2;
 - (long long)compare:(id)arg1;
 - (void)dealloc;
-- (id)stop;
 
 @end

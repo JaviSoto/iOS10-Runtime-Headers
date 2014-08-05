@@ -170,6 +170,7 @@
     AVAudioTierPicker *audioTierPicker_FaceTime;
     AVAudioTier *currentAudioTier;
     AVAudioTier *requestedAudioTier;
+    int audioTierChangeRequestCount;
     long long videoPayload;
     long long sampleRate;
     long long samplesPerFrame;
@@ -512,8 +513,10 @@
 - (void)useAudioTier:(id)arg1;
 - (void)startAudioIOWithCompletionHandler:(id)arg1;
 - (bool)setupAudioCookies;
+- (bool)setupAudioTierPicker;
 - (bool)allocateBundleBuffer;
 - (bool)setupAudioEncoders;
+- (void)setupAudioHeaderSize;
 - (void)stopAudioIOProc:(id)arg1;
 - (bool)setupCallerRTPChannelWithError:(id*)arg1;
 - (bool)sendSIPInviteWithError:(id*)arg1;
@@ -765,8 +768,6 @@
 - (void)updateNetworkCheckHint:(double)arg1;
 - (void)logDetailedNetworkInformation;
 - (void)disconnectWithNoRemotePackets:(long long)arg1;
-- (bool)setupAudioTierPicker;
-- (void)setupAudioHeaderSize;
 - (void)setupSecondaryRelayForCall:(unsigned int)arg1 callerRequired:(id)arg2;
 - (void)notifyDelegateToCancelRelay;
 - (void)getVideoSettings:(int)arg1 forInterface:(int)arg2 width:(int*)arg3 height:(int*)arg4 framerate:(int*)arg5 bitRate:(int*)arg6;

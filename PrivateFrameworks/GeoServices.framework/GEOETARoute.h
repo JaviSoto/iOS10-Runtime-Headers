@@ -84,7 +84,6 @@
 - (void)clearReroutedRoutes;
 - (void)addIncidentsOffReRoutes:(id)arg1;
 - (void)addIncidentsOnReRoutes:(id)arg1;
-- (void)addIncidentsOnETARoute:(id)arg1;
 - (void)addInvalidSectionZilchPoints:(id)arg1;
 - (void)addReroutedRoute:(id)arg1;
 - (void)setIncidentsOffReRoutes:(id)arg1;
@@ -97,6 +96,7 @@
 - (void)setReroutedRoutes:(id)arg1;
 - (id)reroutedRouteAtIndex:(unsigned long long)arg1;
 - (unsigned long long)reroutedRoutesCount;
+- (void)addIncidentsOnETARoute:(id)arg1;
 - (id)incidentsOnETARoutes;
 - (unsigned long long)incidentsOnETARoutesCount;
 - (unsigned int)historicTravelTime;

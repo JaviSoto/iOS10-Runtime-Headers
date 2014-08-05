@@ -24,10 +24,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorAscended:(int)arg5 floorDescended:(int)arg6 recordID:(int)arg7;
 - (id)floorsDescended;
 - (id)floorsAscended;
 - (id)numberOfSteps;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorAscended:(int)arg5 floorDescended:(int)arg6 recordID:(int)arg7;
 - (long long)recordId;
 - (id)endDate;
 - (id)startDate;

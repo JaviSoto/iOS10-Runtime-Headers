@@ -57,8 +57,8 @@
 - (id)initWithClientInterface:(id)arg1 cacheDirectory:(id)arg2;
 - (void)setMoreListImage:(id)arg1;
 - (id)moreListTitle;
-- (bool)isCacheable;
 - (long long)responseType;
+- (bool)isCacheable;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)sections;

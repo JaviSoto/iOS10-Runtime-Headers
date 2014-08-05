@@ -96,10 +96,10 @@
 + (id)sf_transferStateAsString:(long long)arg1;
 + (id)sf_publishingKeyForApp:(id)arg1 sessionID:(id)arg2;
 
+- (bool)isPaused;
 - (id)kind;
 - (long long)completedUnitCount;
 - (void)setKind:(id)arg1;
-- (bool)isPaused;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setPausingHandler:(id)arg1;
 - (bool)isPrioritizable;

@@ -14,10 +14,10 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setPeers:(id)arg1;
 - (id)peers;
 - (id)bagKey;
-- (id)messageBody;
 - (void)setReason:(id)arg1;
 - (id)reason;
 - (void)dealloc;

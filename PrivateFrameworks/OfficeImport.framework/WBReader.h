@@ -74,8 +74,8 @@
 - (struct WrdEshObjectFactory { int (**x1)(); boolx2; }*)eshObjectFactory;
 - (id)drawableForShapeId:(unsigned int)arg1;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
-- (id)read;
 - (id)styleAtIndex:(int)arg1;
+- (id)read;
 - (id)fontAtIndex:(int)arg1;
 - (bool)start;
 - (void)dealloc;

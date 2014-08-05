@@ -160,7 +160,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)modificationDate;
 - (void)setNilValueForKey:(id)arg1;
-- (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2;
+- (void)serializeVersion:(id)arg1 resolvedConflictEtag:(id)arg2 diffs:(unsigned long long)arg3;
 - (void)serializeStatInfo:(id)arg1 itemID:(id)arg2 container:(id)arg3 diffs:(unsigned long long)arg4;
 - (void)serializeStructuralPluginHints:(id)arg1;
 - (bool)deserializeVersion:(id*)arg1 container:(id)arg2 error:(id*)arg3;

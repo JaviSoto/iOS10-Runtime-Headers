@@ -21,6 +21,8 @@
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 
+- (void)pushController:(id)arg1;
+- (void)taskFinished:(id)arg1;
 - (void)didDismissFormSheetView;
 - (void)willDismissFormSheetView;
 - (void)didDismissPopupView;
@@ -31,7 +33,6 @@
 - (id)tasksDescription;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
 - (void)_delayedControllerReleaseAfterPop:(id)arg1;
-- (bool)busy;
 - (void)statusBarWillChangeHeight:(id)arg1;
 - (void)sendWillResignActive;
 - (void)sendWillBecomeActive;
@@ -54,11 +55,10 @@
 - (void)setRootController:(id)arg1;
 - (id)aggregateDictionaryPath;
 - (id)rootController;
+- (id)specifiers;
+- (bool)busy;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
-- (id)specifiers;
-- (void)pushController:(id)arg1;
-- (void)taskFinished:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (bool)respondsToSelector:(SEL)arg1;
 - (void)suspend;

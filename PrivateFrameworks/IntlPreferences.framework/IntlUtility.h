@@ -13,14 +13,10 @@
     NSMutableArray *mBidiTestedLanguagesArray;
 }
 
-+ (id)supportedCalendars;
-+ (id)defaultCalendarForLocaleID:(id)arg1;
 + (id)restrictedCountryCodes;
 + (id)preferredLanguagesForRegion:(id)arg1;
 + (void)setYearlessYear:(id)arg1 forCalendar:(id)arg2;
-+ (id)localeForCalendarID:(id)arg1;
 + (bool)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
-+ (id)preferredLunarCalendarForLocaleID:(id)arg1;
 + (bool)isLunarCalendarDefaultOn;
 + (id)alternateContinentOfRegion:(id)arg1;
 + (id)sharedIntlUtility;
@@ -33,22 +29,27 @@
 + (int)UDisplayContextForIUDisplayNameContext:(unsigned long long)arg1;
 + (id)nativeNameForLanguage:(id)arg1 context:(unsigned long long)arg2;
 + (long long)yearlessYearForMonth:(long long)arg1 withCalendar:(id)arg2;
++ (id)defaultCalendarForLocaleID:(id)arg1;
++ (id)preferredLunarCalendarForLocaleID:(id)arg1;
++ (bool)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)lunarCalendarsForLocaleID:(id)arg1;
 + (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id)arg2;
++ (id)supportedCalendars;
 + (id)capitalizeFirstWordOfName:(id)arg1 accordingToLanguage:(id)arg2;
 + (id)normalizedLanguageIDFromString:(id)arg1;
 + (id)stdLanguageIDs;
 + (id)stdLanguageIDsAndNativeNames;
++ (id)localeForCalendarID:(id)arg1;
 + (bool)performMigration;
 
-- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3;
-- (bool)canRenderLanguage:(id)arg1;
-- (id)displayNameForLabelForLunarCalendarID:(id)arg1 displayLanguage:(id)arg2;
 - (id)localizedNameForScript:(short)arg1;
+- (bool)canRenderLanguage:(id)arg1;
 - (id)localizedLanguageList;
+- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3;
 - (id)localizedLanguageForLanguage:(id)arg1;
 - (id)nativeLanguageForLanguage:(id)arg1;
+- (id)displayNameForLabelForLunarCalendarID:(id)arg1 displayLanguage:(id)arg2;
 - (id)languageList;
 - (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
 - (id)displayNameForLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;

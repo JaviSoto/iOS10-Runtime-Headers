@@ -62,9 +62,9 @@
 - (id)friendlyName;
 - (id)restrictions;
 - (void)setDisplayName:(id)arg1;
+- (id)UUID;
 - (long long)version;
 - (id)identifier;
-- (id)UUID;
 - (id)profile;
 - (id)title;
 - (id)type;

@@ -22,6 +22,7 @@
 
 + (id)allCloudResourcesInManagedObjectContext:(id)arg1;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3;
++ (void)markResource:(id)arg1 asLocallyAvailable:(bool)arg2 inPhotoLibrary:(id)arg3;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 

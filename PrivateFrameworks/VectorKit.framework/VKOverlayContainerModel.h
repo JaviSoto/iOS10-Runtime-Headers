@@ -89,6 +89,7 @@
 - (id)delegate;
 - (void)dealloc;
 - (id).cxx_construct;
+- (void)reset;
 - (void)didReceiveMemoryWarning;
 
 @end

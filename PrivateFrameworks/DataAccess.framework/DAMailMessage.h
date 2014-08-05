@@ -6,17 +6,9 @@
 }
 
 
-- (id)messageClass;
 - (id)remoteID;
 - (id)folderID;
-- (id)cc;
-- (id)conversationIndex;
-- (id)threadTopic;
-- (int)bodyTruncated;
-- (int)importance;
-- (id)displayTo;
-- (id)replyTo;
-- (id)longID;
+- (id)messageClass;
 - (id)rfc822Data;
 - (id)conversationId;
 - (bool)meetingRequestIsActionable;
@@ -30,6 +22,14 @@
 - (bool)readIsSet;
 - (id)meetingRequestUUID;
 - (int)bodySize;
+- (id)conversationIndex;
+- (id)threadTopic;
+- (int)bodyTruncated;
+- (int)importance;
+- (id)displayTo;
+- (id)replyTo;
+- (id)longID;
+- (id)cc;
 - (id)from;
 - (id)to;
 - (id)subject;

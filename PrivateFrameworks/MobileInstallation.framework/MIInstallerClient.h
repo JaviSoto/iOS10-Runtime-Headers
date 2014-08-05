@@ -24,6 +24,7 @@
 - (id)initWithProgressBlock:(id)arg1;
 - (void)_invalidateObject;
 - (void)updateAppDataProtectionWithOptions:(id)arg1 completion:(id)arg2;
+- (void)updateSinfForLSWithIdentifier:(id)arg1 withOptions:(id)arg2 sinfData:(id)arg3 completion:(id)arg4;
 - (void)updateSinfForIdentifier:(id)arg1 withOptions:(id)arg2 sinfData:(id)arg3 completion:(id)arg4;
 - (void)checkCapabilities:(id)arg1 withOptions:(id)arg2 completion:(id)arg3;
 - (void)listSafeHarborsOfType:(long long)arg1 withOptions:(id)arg2 completion:(id)arg3;

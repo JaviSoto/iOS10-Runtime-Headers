@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSTimer, NSString, UIView, QLProgressView, <QLPreviewItemInteractionDelegate>, <QLPreviewItem>, UIDocumentPasswordView, QLGenericView, QLDisplayBundle;
+@class NSTimer, NSString, UIView, QLProgressView, <QLPreviewItemInteractionDelegate>, <QLPreviewItem>, UIDocumentPasswordView, QLGenericView, QLDisplayBundle, NSLayoutConstraint;
 
 @interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, UIDocumentPasswordViewDelegate, QLSwippableItemProtocol> {
     <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
@@ -41,6 +41,7 @@
     NSString *_loadingTextForMissingFiles;
     bool_overlayHidden;
     UIDocumentPasswordView *_documentPasswordView;
+    NSLayoutConstraint *_documentPasswordViewKeyboardConstraint;
     QLGenericView *_airPlayPasswordView;
     bool_loadedWithPassword;
     bool_visible;
@@ -93,6 +94,7 @@
 - (void)_swapDisplayBundles;
 - (void)_scheduleShowProgressiveUI;
 - (void)_showGenericDisplayBundleForPreviewItem:(id)arg1;
+- (void)_keyboardVisibilityChanged:(id)arg1;
 - (void)_removeDisplayBundles;
 - (void)_hideProgressiveUI;
 - (void)_hidePasswordView;
@@ -137,8 +139,7 @@
 - (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
-- (void)_adjustContentOffsetForKeyboardIfNeeded;
-- (void)_keyboardDidShow:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (id)snapshotView;

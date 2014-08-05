@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <GLKViewDelegate>, NSMutableDictionary, EAGLContext;
+@class NSMutableDictionary, UIImage, <GLKViewDelegate>, EAGLContext;
 
 @interface GLKView : UIView <NSCoding> {
     bool_inDraw;
@@ -40,6 +40,7 @@
 @property int drawableDepthFormat;
 @property int drawableStencilFormat;
 @property int drawableMultisample;
+@property(readonly) UIImage * snapshot;
 @property bool enableSetNeedsDisplay;
 @property bool inDraw;
 @property(retain) NSMutableDictionary * drawableProperties;

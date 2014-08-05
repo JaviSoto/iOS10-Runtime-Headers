@@ -131,6 +131,7 @@
 - (id)initWithText:(id)arg1 andFont:(id)arg2;
 - (double)baselineOffsetFromBottomWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)_chevronPadding;
+- (struct CGSize { double x1; double x2; })_labelSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)needsTextUpdate;
 - (id)_highlightCompositingFilter;
 - (void)setHighlightView:(id)arg1;

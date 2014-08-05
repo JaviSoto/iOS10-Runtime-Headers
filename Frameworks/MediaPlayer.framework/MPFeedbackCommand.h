@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface MPFeedbackCommand : MPRemoteCommand  {
+    NSString *_localizedShortTitle;
     bool_active;
     NSString *_localizedTitle;
 }
@@ -14,6 +15,8 @@
 
 
 - (void)setLocalizedTitle:(id)arg1;
+- (void)setLocalizedShortTitle:(id)arg1;
+- (id)localizedShortTitle;
 - (id)_mediaRemoteCommandInfoOptions;
 - (id)keyPathsForValuesTriggeringCommandsChanged;
 - (bool)isActive;

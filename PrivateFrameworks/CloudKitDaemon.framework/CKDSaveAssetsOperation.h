@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CKDMMCSItemGroupSetContext, NSArray, NSObject<OS_dispatch_group>, NSMutableArray;
+@class NSArray, NSMutableArray, CKDMMCSItemGroupSetContext;
 
 @interface CKDSaveAssetsOperation : CKDDatabaseOperation  {
     bool_shouldAutomaticallyRetryNetworkErrors;
@@ -17,7 +17,6 @@
 
     NSArray *_assetsToSave;
     NSMutableArray *_assetsToRetry;
-    NSObject<OS_dispatch_group> *_saveAssetsGroup;
     CKDMMCSItemGroupSetContext *_MMCSContext;
 }
 
@@ -25,12 +24,10 @@
 @property bool shouldAutomaticallyRetryNetworkErrors;
 @property(retain) NSArray * assetsToSave;
 @property(retain) NSMutableArray * assetsToRetry;
-@property(readonly) NSObject<OS_dispatch_group> * saveAssetsGroup;
 @property(retain) CKDMMCSItemGroupSetContext * MMCSContext;
 
 + (bool)_isTransientError:(id)arg1;
 
-- (id)saveAssetsGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2 assetsToSave:(id)arg3;
 - (void)_saveAssets;
 - (void)setAssetsToSave:(id)arg1;
@@ -42,10 +39,10 @@
 - (id)_getMMCSItemsFromItemsToSave;
 - (id)assetsToSave;
 - (void)setShouldAutomaticallyRetryNetworkErrors:(bool)arg1;
+- (id)MMCSContext;
 - (void)setAssetsToRetry:(id)arg1;
 - (id)assetsToRetry;
 - (bool)_shouldRetryError:(id)arg1;
-- (id)MMCSContext;
 - (bool)shouldAutomaticallyRetryNetworkErrors;
 - (void)_retryOrFinishWithError:(id)arg1;
 - (void)setMMCSContext:(id)arg1;

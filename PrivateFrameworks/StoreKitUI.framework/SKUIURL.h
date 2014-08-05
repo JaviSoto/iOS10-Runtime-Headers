@@ -39,6 +39,8 @@
 - (id)queryStringDictionary;
 - (id)URLBagKey;
 - (id)initWithURL:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

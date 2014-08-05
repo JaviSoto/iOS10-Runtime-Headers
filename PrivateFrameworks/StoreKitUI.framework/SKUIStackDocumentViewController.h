@@ -45,6 +45,8 @@
 - (id)_pageSplitsDescription;
 - (long long)_pinningTransitionStyle;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
+- (void)skui_viewWillAppear:(bool)arg1;
+- (id)impressionableViewElements;
 - (id)_colorScheme;
 - (id)_resourceLoader;
 - (void)dealloc;

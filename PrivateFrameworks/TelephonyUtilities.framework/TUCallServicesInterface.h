@@ -37,7 +37,6 @@
 - (void)_tearDownXPCConnection;
 - (void)setXpcConnectionCreationSemaphore:(id)arg1;
 - (id)xpcConnectionCreationSemaphore;
-- (void)setXpcConnection:(id)arg1;
 - (void)setProxyCallModel:(id)arg1;
 - (void)setCallsCache:(id)arg1;
 - (void)setDaemonDelegate:(id)arg1;
@@ -70,8 +69,6 @@
 - (void)requestHandoffForAllCalls;
 - (id)daemonDelegateWithErrorHandler:(id)arg1;
 - (id)daemonDelegate;
-- (void)_setUpXPCConnection;
-- (id)xpcConnection;
 - (void)requestPendingCallNotifications;
 - (void)handleCallStatusChanged:(id)arg1;
 - (void)handleRelayCallingCapabilitiesChanged:(id)arg1;
@@ -89,6 +86,9 @@
 - (id)callsCache;
 - (void)sendHardPauseDigits;
 - (void)setRelayCallingEnabled:(bool)arg1;
+- (void)setXpcConnection:(id)arg1;
+- (id)xpcConnection;
+- (void)_setUpXPCConnection;
 - (id)remoteFrequency;
 - (id)localFrequency;
 - (void)handleCallModelStateChanged:(id)arg1;

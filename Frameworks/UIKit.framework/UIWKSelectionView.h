@@ -17,10 +17,12 @@
 }
 
 
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (void)updateFrameAndHandlesWithAnimation:(bool)arg1 showHandles:(bool)arg2;
 - (void)updateRangedSelectionData;
 - (double)handleOffsetForPoint:(struct CGPoint { double x1; double x2; })arg1 handlePosition:(int)arg2;
 - (void)switchToBlockModeForHandle:(id)arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unobscuredRect;
 - (void)blockSelectionChangedWithTouch:(long long)arg1 withFlags:(long long)arg2 growThreshold:(double)arg3 shrinkThreshold:(double)arg4;
 - (void)selectionChangedWithTouchAt:(struct CGPoint { double x1; double x2; })arg1 withSelectionTouch:(long long)arg2 withFlags:(long long)arg3;
 - (void)selectionCreationEndedWithPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -29,11 +31,8 @@
 - (void)setSelectionMode:(bool)arg1;
 - (void)touchChanged:(id)arg1 forHandleInText:(id)arg2;
 - (void)touchChanged:(id)arg1 forHandle:(id)arg2;
-- (void)autoscrollTimerFired:(id)arg1;
 - (bool)isHorizontalWritingMode;
 - (bool)shouldSwitchToBlockModeForHandle:(id)arg1;
-- (void)stopAnyAutoscrolling;
-- (void)updateAutoscrollForHandle:(id)arg1;
 - (void)switchToTextModeForHandle:(id)arg1;
 - (bool)shouldContractForActiveHandle;
 - (bool)shouldExpandForActiveHandle;
@@ -49,6 +48,7 @@
 - (void)updateSelectionCreationWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)startSelectionCreationWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)selectionRects;
+- (id)scroller;
 - (void)showControls;
 - (void)clearSelection;
 - (id)initWithView:(id)arg1;

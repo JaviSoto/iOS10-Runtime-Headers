@@ -26,7 +26,6 @@
 
 
 - (id)model;
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (void)setMonitoringToken:(id)arg1;
 - (id)monitoringToken;
@@ -46,6 +45,7 @@
 - (id)modelObjects;
 - (void)viewDidAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;

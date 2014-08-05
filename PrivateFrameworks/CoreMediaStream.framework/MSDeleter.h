@@ -52,11 +52,11 @@
 - (int)batchSize;
 - (id)daemon;
 - (void)deactivate;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 - (void)_stop;
 - (void)abort;
 

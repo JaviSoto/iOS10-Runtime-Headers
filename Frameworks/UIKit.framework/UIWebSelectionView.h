@@ -77,6 +77,7 @@
 
 
 - (void)removeFromSuperview;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (void)dealloc;
 - (bool)canFlip;
 - (void)touchChanged:(id)arg1 forHandleInText:(id)arg2;
@@ -131,6 +132,7 @@
 - (void)startSelectionCreationWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)hideControls;
 - (id)initWithWebDocumentView:(id)arg1;
+- (id)scroller;
 - (void)showControls;
 - (void)didEndScrollingOrZoomingPage;
 - (void)willStartScrollingOrZoomingPage;

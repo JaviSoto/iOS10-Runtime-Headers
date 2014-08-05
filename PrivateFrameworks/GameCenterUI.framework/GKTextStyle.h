@@ -46,6 +46,8 @@
 
 - (id)bold;
 - (id)light;
+- (id)headline;
+- (id)bannerTitle;
 - (void)setFontNameRebaseSelector:(SEL)arg1;
 - (void)setFontSizeRebaseSelector:(SEL)arg1;
 - (void)setOverrideUIKitFontSize:(bool)arg1;
@@ -160,8 +162,6 @@
 - (SEL)fontSizeRebaseSelector;
 - (id)baseFontRebaseSelector;
 - (id)replayOnBaseStyle:(id)arg1;
-- (id)headline;
-- (id)bannerTitle;
 - (id)body;
 - (id)attributes;
 - (void)setZPosition:(double)arg1;

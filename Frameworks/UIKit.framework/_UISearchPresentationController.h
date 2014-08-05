@@ -42,6 +42,7 @@
 
 - (void)dealloc;
 - (void)_placeSearchBarBackIntoOriginalContext;
+- (void)_updatePresentingViewControllerContentScrollViewWithOffsets:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_updateContainerFinalFrameForNonExcisedSearchBar;
 - (void)_exciseSearchBarFromCurrentContext;
 - (double)_visibleRefreshControlHeightForTableView:(id)arg1;

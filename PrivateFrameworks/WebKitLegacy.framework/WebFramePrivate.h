@@ -35,6 +35,11 @@
         void *m_ptr; 
     } provisionalURL;
     boolisCommitting;
+    struct unique_ptr<WebCore::ContentFilter, std::__1::default_delete<WebCore::ContentFilter> > { 
+        struct __compressed_pair<WebCore::ContentFilter *, std::__1::default_delete<WebCore::ContentFilter> > { 
+            struct ContentFilter {} *__first_; 
+        } __ptr_; 
+    } contentFilterForBlockedLoad;
 }
 
 

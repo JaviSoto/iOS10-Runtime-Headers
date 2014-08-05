@@ -57,10 +57,10 @@
 - (void)updateLocation:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)location;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (struct { double x1; double x2; })coordinate;
 - (id)title;
+- (void)setTimestamp:(id)arg1;
 - (id)label;
 - (void)setLocation:(id)arg1;
 - (void)setHandle:(id)arg1;

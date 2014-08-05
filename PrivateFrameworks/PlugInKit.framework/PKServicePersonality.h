@@ -36,7 +36,7 @@
 - (void)setHostPrincipal:(id)arg1;
 - (id)findProtocol:(id)arg1;
 - (id)defaultPrincipalObject;
-- (void)setupWithIdentifier:(id)arg1;
+- (id)setupWithIdentifier:(id)arg1;
 - (void)setPreferences:(id)arg1;
 - (id)embeddedPrincipal;
 - (void)setEmbeddedPrincipal:(id)arg1;
@@ -45,6 +45,7 @@
 - (void)prefsObjectForKey:(id)arg1 inPlugIn:(id)arg2 result:(id)arg3;
 - (void)shutdownPlugIn;
 - (void)beginUsingPlugIn:(id)arg1 ready:(id)arg2;
+- (void)prepareUsing:(id)arg1 reply:(id)arg2;
 - (void)prepareUsingPlugIn:(id)arg1 hostProtocol:(id)arg2 reply:(id)arg3;
 - (id)plugInPrincipal;
 - (void)setConnection:(id)arg1;

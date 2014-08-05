@@ -21,9 +21,10 @@
 
 + (bool)hasCategoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (id)categoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
-+ (id)categoryKeysForPlaceData:(id)arg1;
 + (id)_allCategoriesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 
+- (id)categoryId;
+- (bool)hasCategoryId;
 - (void)setHasLevel:(bool)arg1;
 - (id)localizedNameAtIndex:(unsigned long long)arg1;
 - (void)addLocalizedName:(id)arg1;
@@ -31,8 +32,6 @@
 - (void)clearLocalizedNames;
 - (void)setLocalizedNames:(id)arg1;
 - (unsigned long long)localizedNamesCount;
-- (id)categoryId;
-- (bool)hasCategoryId;
 - (id)localizedNames;
 - (bool)hasLevel;
 - (void)copyTo:(id)arg1;

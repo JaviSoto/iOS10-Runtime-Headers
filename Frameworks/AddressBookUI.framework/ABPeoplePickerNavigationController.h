@@ -57,11 +57,11 @@
 
 + (void)notifyPreferencesChanged;
 
+- (void)saveState;
 - (void)setPredicateForSelectionOfPerson:(id)arg1;
 - (void)setPredicateForEnablingPerson:(id)arg1;
 - (void)setAllowsCardEditing:(bool)arg1;
 - (void)setHidesPromptInLandscape:(bool)arg1;
-- (void)saveState;
 - (void)setContactsSplitViewPresentationDelegate:(id)arg1;
 - (id)predicateForSelectionOfPerson;
 - (id)predicateForEnablingPerson;

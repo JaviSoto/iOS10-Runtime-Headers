@@ -11,6 +11,7 @@
 
 + (id)sharedService;
 
+- (id)mapItemsForUpdatedPlacesInResolution:(id)arg1;
 - (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 traits:(id)arg3;
 - (void)_mapItemsForResponseData:(id)arg1 handler:(id)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
@@ -20,7 +21,7 @@
 - (id)ticketForReverseGeocodeDroppedPinCoordinate:(struct { double x1; double x2; })arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
 - (void)submitUsageForTraits:(id)arg1;
-- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 traits:(id)arg5;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(bool)arg2 includeETA:(bool)arg3 traits:(id)arg4;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3;

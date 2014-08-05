@@ -55,6 +55,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)canAddConnectionForMediaType:(id)arg1;
 - (void)setPaused:(bool)arg1;
+- (bool)isPaused;
 - (id)notReadyError;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
@@ -65,7 +66,6 @@
 - (id)connectionMediaTypes;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)liveConnections;
-- (bool)isPaused;
 - (void)setVideoGravity:(id)arg1;
 - (id)connection;
 - (void)layoutSublayers;

@@ -105,6 +105,5 @@
 - (id)soundName;
 - (id)alertBody;
 - (void)setRepeatInterval:(unsigned long long)arg1;
-- (void)triggerLocationArrow;
 
 @end

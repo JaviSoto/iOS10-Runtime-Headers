@@ -57,6 +57,7 @@
 + (id)mediaFolderRelativePath:(id)arg1;
 + (bool)defaultRememberBookmarkTimeForMediaType:(unsigned int)arg1;
 + (bool)defaultExcludeFromShuffleForMediaType:(unsigned int)arg1;
++ (id)mediaFolderPathByAppendingPathComponent:(id)arg1;
 + (bool)updateSortMapOnConnection:(id)arg1;
 + (id)sortMapNewSchemaSQL;
 + (bool)inTransactionUpdateSearchMapOnConnection:(id)arg1;
@@ -98,6 +99,8 @@
 - (id)databasePath;
 - (bool)prepareUnitTestDatabaseWithSQLFromContentsOfFile:(id)arg1 error:(id*)arg2;
 - (bool)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2;
+- (bool)removeSource:(int)arg1 fromTracksWithPersistentIDs:(id)arg2 usingConnection:(id)arg3;
+- (bool)removeSource:(int)arg1 usingConnection:(id)arg2;
 - (void)updateUbiquitousDatabaseByRemovingUbiquitousMetadataFromTrackWithPersistentID:(long long)arg1;
 - (id)uppService;
 - (bool)populateArtworkCacheWithArtworkData:(id)arg1 trackValues:(id)arg2;
@@ -152,6 +155,8 @@
 - (id)accountCacheDatabase;
 - (bool)clearAllGeniusData;
 - (bool)emptyAllTables;
+- (bool)dropItemIndexes;
+- (bool)createIndexes;
 - (int)currentDatabaseVersion;
 - (bool)automaticDatabaseValidationDisabled;
 - (void)performReadOnlyDatabaseTransactionWithBlock:(id)arg1;
@@ -174,6 +179,7 @@
 - (id)_allKeepLocalPlaylistTracks;
 - (void)updateTrackIntegrity;
 - (bool)verifyPresignedValidity;
+- (bool)deleteOrphanedArtworkWithSearchOptions:(long long)arg1 usingConnection:(id)arg2;
 - (void)_deleteAllArtworkVariantsAtRelativePaths:(id)arg1;
 - (bool)_insertArtworkRowWithArtworkToken:(id)arg1 artworkType:(long long)arg2 sourceType:(long long)arg3 relativePath:(id)arg4;
 - (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(long long)arg2 mediaType:(unsigned int)arg3;
@@ -202,14 +208,12 @@
 - (void)_effectiveSettingsDidChangeNotification:(id)arg1;
 - (id)initWithPath:(id)arg1 readOnly:(bool)arg2 populateUnitTestTablesBlock:(id)arg3;
 - (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned long long)arg2 maximumRevisionType:(int)arg3 usingBlock:(id)arg4;
-- (bool)createIndexes;
-- (bool)dropItemIndexes;
 - (void)notifyInvisiblePropertyDidChange;
 - (void)notifyNonContentsPropertyDidChange;
 - (bool)isCurrentThreadInTransaction;
 - (void)checkInDatabaseConnection:(id)arg1;
-- (id)checkoutWriterConnection;
 - (void)notifyContentsDidChange;
+- (id)checkoutWriterConnection;
 - (void)databaseConnectionAllowingWrites:(bool)arg1 withBlock:(id)arg2;
 - (id)fetchItemArtworkForPersistentID:(long long)arg1;
 - (void)performDatabaseTransactionWithBlock:(id)arg1;

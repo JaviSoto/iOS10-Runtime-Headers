@@ -2,27 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache, HSHomeSharingLibrary;
+@class HSHomeSharingLibrary;
 
 @interface MPHomeSharingArtworkDataSource : MPAbstractNetworkArtworkDataSource  {
     HSHomeSharingLibrary *_library;
-    NSCache *_artworkCache;
 }
 
 @property(retain) HSHomeSharingLibrary * library;
-@property(retain) NSCache * artworkCache;
 
 
 - (id)library;
-- (id)artworkCache;
-- (void)setArtworkCache:(id)arg1;
 - (void)setLibrary:(id)arg1;
-- (id)supportedSizesForCatalog:(id)arg1;
-- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (bool)shouldLookForLargerRepresentationsWhenBestRepresentationIsUnavailable;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id)arg2;
-- (id)existingRepresentationForArtworkCatalog:(id)arg1;
+- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)supportedSizesForCatalog:(id)arg1;
 - (bool)areRepresentationsAvailableForCatalog:(id)arg1;
-- (id)init;
 - (void).cxx_destruct;
 
 @end

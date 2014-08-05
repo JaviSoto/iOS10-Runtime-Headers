@@ -53,9 +53,9 @@
 - (bool)_isProtectedDataAvailable;
 - (void)setAdviceBlock:(id)arg1;
 - (void)_receivedTravelAdvice:(id)arg1 forEventWithExternalURL:(id)arg2;
+- (void)stop;
 - (id)init;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 
 @end

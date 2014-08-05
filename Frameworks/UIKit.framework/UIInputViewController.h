@@ -30,7 +30,7 @@
 - (void)returnToPreviousInputMode;
 - (void)advanceToNextInputMode;
 - (bool)_shouldForwardSystemLayoutFittingSizeChanges;
-- (id)extensionContext;
+- (id)_extensionContext;
 - (void)_setTextDocumentProxy:(id)arg1;
 - (id)textDocumentProxy;
 - (id)_textDocumentInterface;

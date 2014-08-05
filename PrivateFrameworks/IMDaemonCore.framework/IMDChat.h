@@ -73,8 +73,8 @@
 - (id)chatIdentifier;
 - (id)lastMessage;
 - (id)participants;
-- (void)setServiceName:(id)arg1;
 - (unsigned long long)unreadCount;
+- (void)setServiceName:(id)arg1;
 - (long long)rowID;
 - (void)setGroupID:(id)arg1;
 - (id)groupID;

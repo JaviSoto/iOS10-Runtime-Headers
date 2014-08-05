@@ -234,6 +234,7 @@
 - (bool)contentViewAccessorGuard;
 - (bool)applyingTransition;
 - (void)transitionIncrementallyToStyle:(long long)arg1 weighting:(double)arg2;
+- (void)transitionIncrementallyToSettings:(id)arg1 weighting:(double)arg2;
 - (void)computeAndApplySettingsForTransition;
 - (void)prepareForTransitionToSettings:(id)arg1;
 - (void)setApplyingTransition:(bool)arg1;

@@ -426,6 +426,8 @@
 - (double)_zoomRubberBandScaleForScale:(double)arg1;
 - (void)setZoomScale:(double)arg1 animated:(bool)arg2;
 - (void)_zoomToCenter:(struct CGPoint { double x1; double x2; })arg1 scale:(double)arg2 duration:(double)arg3 force:(bool)arg4;
+- (bool)_evaluateWantsConstrainedContentSize;
+- (void)_setWantsConstrainedContentSize:(bool)arg1;
 - (id)_layoutVariablesWithAmbiguousValue;
 - (void)_updatePanGesture;
 - (void)_resetScrollingWithUIEvent:(id)arg1;
@@ -507,9 +509,6 @@
 - (void)_applyConstrainedContentSizeIfNecessary;
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })_nsis_contentSize;
-- (void)_setWantsConstrainedContentSize:(bool)arg1;
-- (void)_evaluateWantsConstrainedContentSize;
-- (void)updateConstraints;
 - (bool)isZooming;
 - (id)_getDelegateZoomView;
 - (void)_updateContentFitDisableScrolling;

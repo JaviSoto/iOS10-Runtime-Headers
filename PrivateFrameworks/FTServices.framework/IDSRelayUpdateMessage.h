@@ -38,6 +38,7 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setSelfRelayNATPort:(id)arg1;
 - (void)setSelfRelayNATIP:(id)arg1;
 - (void)setRelayTokenAllocRes:(id)arg1;
@@ -67,7 +68,6 @@
 - (void)setPeerPushToken:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)messageBody;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

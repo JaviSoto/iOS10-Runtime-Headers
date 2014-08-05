@@ -18,7 +18,9 @@
 - (void)dealloc;
 - (id)item;
 - (void)setItem:(id)arg1;
+- (void)updateThumbnail;
 - (void)updateContents;
+- (void)reloadItem:(bool)arg1;
 - (id)viewControllerForDisplay;
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -20,9 +20,9 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)html;
 - (id)userStyleSheet;
 - (void)setHtml:(id)arg1;
-- (id)html;
 - (id)sourceURL;
 - (void)setBaseURL:(id)arg1;
 - (id)webView;

@@ -99,10 +99,10 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
+- (void)setTimestamp:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;

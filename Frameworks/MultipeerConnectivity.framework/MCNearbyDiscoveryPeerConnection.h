@@ -83,13 +83,13 @@
 - (id)initWithLocalServiceName:(id)arg1;
 - (id)localServiceName;
 - (id)receiveDataHandler;
+- (void)setTargetQueue:(id)arg1;
 - (void)setConnectedHandler:(id)arg1;
 - (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setReceiveDataHandler:(id)arg1;
 - (id)syncQueue;
-- (void)setTargetQueue:(id)arg1;
-- (id)inputStream;
 - (id)outputStream;
+- (id)inputStream;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)invalidate;
 - (void)dealloc;

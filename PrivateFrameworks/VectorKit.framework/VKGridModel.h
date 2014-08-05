@@ -92,6 +92,7 @@
 - (void)setNeedsUpdatedGridColor;
 - (void)setRenderPass:(unsigned char)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (bool)shouldLayoutWithoutStyleManager;
 - (void)setMapModel:(id)arg1;
 - (id)styleManager;
 - (struct Matrix<float, 4, 1> { float x1[4]; })fillColor;

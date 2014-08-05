@@ -24,11 +24,11 @@
 
 
 - (void)setReference:(id)arg1;
+- (id)reference;
 - (id)bcc;
 - (id)cc;
 - (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
-- (id)reference;
 - (id)to;
 - (void)setTo:(id)arg1;
 - (void)setSubject:(id)arg1;

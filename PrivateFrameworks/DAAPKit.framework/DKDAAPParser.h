@@ -2,54 +2,44 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/DAAPKit.framework/DAAPKit
  */
 
-@class NSData, NSString, NSInputStream, <DKDAAPParserDelegate>, NSObject<OS_dispatch_queue>, NSMutableData, NSMutableArray, DKDAAParserContext;
+@class <DKDAAPParserDelegate>, NSMutableArray, DKDAAPParserContext;
 
-@interface DKDAAPParser : NSObject <NSStreamDelegate> {
-    NSObject<OS_dispatch_queue> *_queue;
+@interface DKDAAPParser : NSObject  {
     NSMutableArray *_containerStack;
-    DKDAAParserContext *_propertyParseContext;
-    NSMutableData *_streamInputBuffer;
-    unsigned char _streamReadBuffer[10240];
-    NSData *_dataInputBuffer;
+    DKDAAPParserContext *_propertyParseContext;
     bool_parsing;
     bool_finished;
     bool_canceled;
     <DKDAAPParserDelegate> *_delegate;
-    NSInputStream *_inputStream;
 }
 
 @property <DKDAAPParserDelegate> * delegate;
-@property(readonly) NSInputStream * inputStream;
-@property(getter=isParsing,readonly) bool parsing;
-@property(getter=isFinished,readonly) bool finished;
-@property(getter=isCanceled,readonly) bool canceled;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * debugDescription;
+@property(getter=isParsing) bool parsing;
+@property(getter=isFinished) bool finished;
+@property(getter=isCanceled) bool canceled;
 
 
+- (void)setCanceled:(bool)arg1;
 - (bool)isParsing;
-- (void)_callDelegateDidEndContainerCode:(unsigned int)arg1;
-- (void)_callDelegateDidParseDataCode:(unsigned int)arg1 bytes:(char *)arg2 contentLength:(unsigned int)arg3;
-- (void)_callDelegateDidStartContainerCode:(unsigned int)arg1 contentLength:(unsigned int)arg2;
-- (bool)_callDelegateShouldParseCodeAsContainer:(unsigned int)arg1;
-- (bool)_callDelegateShouldParseCode:(unsigned int)arg1;
-- (void)_callDelegateDidFailWithError:(id)arg1;
-- (id)inputStream;
-- (void)_callDelegateDidCancel;
-- (void)_callDelegateDidFinish;
-- (unsigned int)_parseInputBuffer:(id)arg1;
-- (void)_callDelegateDidStart;
+- (void)callDelegateDidEndContainerCode:(unsigned int)arg1;
+- (void)callDelegateDidParseDataCode:(unsigned int)arg1 bytes:(char *)arg2 contentLength:(unsigned int)arg3;
+- (void)callDelegateDidStartContainerCode:(unsigned int)arg1 contentLength:(unsigned int)arg2;
+- (bool)callDelegateShouldParseCodeAsContainer:(unsigned int)arg1;
+- (bool)callDelegateShouldParseCode:(unsigned int)arg1;
+- (void)callDelegateDidStart;
+- (void)callDelegateDidFailWithError:(id)arg1;
+- (void)callDelegateDidFinish;
+- (unsigned int)parseInputBuffer:(id)arg1;
+- (void)callDelegateDidCancel;
+- (void)setParsing:(bool)arg1;
 - (bool)isCanceled;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (void)prepareForParse;
 - (void)setDelegate:(id)arg1;
-- (id)initWithData:(id)arg1;
-- (void)start;
+- (void)setFinished:(bool)arg1;
 - (id)delegate;
 - (void)cancel;
 - (void).cxx_destruct;
+- (void)parse;
 - (bool)isFinished;
-- (id)initWithStream:(id)arg1;
 
 @end

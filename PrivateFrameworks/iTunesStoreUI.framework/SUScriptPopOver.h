@@ -51,9 +51,9 @@
 - (void)tearDownUserInterface;
 - (id)_className;
 - (id)scriptAttributeKeys;
-- (id)activeViewController;
 - (double)contentHeight;
 - (void)setContentHeight:(double)arg1;
+- (id)activeViewController;
 - (bool)isVisible;
 - (id)attributeKeys;
 - (double)contentWidth;

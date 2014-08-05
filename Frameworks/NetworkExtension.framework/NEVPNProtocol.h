@@ -15,6 +15,7 @@
     int _disconnectOnIdleTimeout;
     NSString *_serverAddress;
     NSString *_username;
+    NSString *_identityDataPassword;
     NSUUID *_identifier;
     long long _type;
     NEKeychainItem *_passwordKeychainItem;
@@ -31,6 +32,7 @@
 @property(copy) NSData * passwordReference;
 @property(copy) NSData * identityReference;
 @property(copy) NSData * identityData;
+@property(copy) NSString * identityDataPassword;
 @property bool disconnectOnSleep;
 @property(copy) NSUUID * identifier;
 @property(readonly) long long type;
@@ -64,12 +66,12 @@
 - (void)setIdentityReference:(id)arg1;
 - (id)passwordReference;
 - (void)setPasswordReference:(id)arg1;
-- (void)initDisconnectOptions:(id)arg1;
 - (void)syncWithKeychainInDomainCommon:(long long)arg1;
 - (id)identityReferenceInternal;
 - (void)setIdentityReferenceInternal:(id)arg1;
 - (long long)keychainDomain;
 - (id)initFromLegacyDictionary:(id)arg1;
+- (void)initDisconnectOptions:(id)arg1;
 - (void)addDisconnectOptions:(id)arg1;
 - (id)type2str;
 - (void)setPasswordEncryption:(id)arg1;
@@ -81,6 +83,7 @@
 - (void)setProxySettings:(id)arg1;
 - (void)setIdentityDataHash:(id)arg1;
 - (void)setIdentityDataImported:(bool)arg1;
+- (void)setIdentityDataPassword:(id)arg1;
 - (void)setIdentityDataInternal:(id)arg1;
 - (void)setServerAddress:(id)arg1;
 - (id)initWithProtocolIdentifier:(id)arg1;
@@ -92,6 +95,7 @@
 - (id)proxySettings;
 - (id)identityDataHash;
 - (bool)identityDataImported;
+- (id)identityDataPassword;
 - (id)identityDataInternal;
 - (id)passwordEncryption;
 - (id)passwordKeychainItem;

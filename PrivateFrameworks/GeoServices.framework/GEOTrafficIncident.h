@@ -70,7 +70,6 @@
 - (void)setUID:(long long)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)hasTitle;
 - (void)setHasType:(bool)arg1;
 - (void)setHasStartTime:(bool)arg1;
 - (bool)readFrom:(id)arg1;
@@ -95,5 +94,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)setInfo:(id)arg1;
+- (bool)hasTitle;
 
 @end

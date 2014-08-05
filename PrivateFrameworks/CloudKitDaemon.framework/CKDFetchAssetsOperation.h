@@ -31,11 +31,11 @@
 - (void)setAssetsToFetch:(id)arg1;
 - (void)setShouldAutomaticallyRetryNetworkErrors:(bool)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2 assetsToFetch:(id)arg3;
+- (id)MMCSContext;
 - (void)_fetchAssets;
 - (void)setAssetsToRetry:(id)arg1;
 - (id)assetsToRetry;
 - (bool)_shouldRetryError:(id)arg1;
-- (id)MMCSContext;
 - (void)_sendMMCSItemGetForGroupSet:(id)arg1;
 - (id)assetsToFetch;
 - (bool)shouldAutomaticallyRetryNetworkErrors;

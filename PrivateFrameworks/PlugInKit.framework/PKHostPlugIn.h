@@ -10,8 +10,7 @@
 
 @interface PKHostPlugIn : PKPlugInCore <PKPlugInPrivate, NSXPCConnectionDelegate> {
     unsigned int _useCount;
-    long long _userElection;
-    NSDictionary *_extensionState;
+    NSUserDefaults *_defaults;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -32,7 +31,6 @@
     id _plugInPrincipal;
     id _embeddedPrincipal;
     NSBundle *_embeddedBundle;
-    NSUserDefaults *_defaults;
     NSDate *_beganUsingAt;
 }
 
@@ -52,7 +50,7 @@
 @property(retain) id plugInPrincipal;
 @property(retain) id embeddedPrincipal;
 @property(retain) NSBundle * embeddedBundle;
-@property(retain) NSUserDefaults * defaults;
+@property(readonly) NSUserDefaults * defaults;
 @property(retain) NSDate * beganUsingAt;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -108,7 +106,8 @@
 - (void)setPlugInPrincipal:(id)arg1;
 - (id)queuedHostPrincipal;
 - (id)service;
-- (void)unwind:(unsigned long long)arg1;
+- (void)setBootstrap;
+- (void)unwind:(unsigned long long)arg1 force:(bool)arg2;
 - (void)setService:(id)arg1;
 - (void)setPluginConnection:(id)arg1;
 - (void)setBeganUsingAt:(id)arg1;
@@ -124,7 +123,6 @@
 - (void)set_replyQueue:(id)arg1;
 - (id)_syncQueue;
 - (unsigned int)useCount;
-- (void)setDefaults:(id)arg1;
 - (void)setDiscoveryExtensions:(id)arg1;
 - (void)set_startQueue:(id)arg1;
 - (void)set_syncQueue:(id)arg1;

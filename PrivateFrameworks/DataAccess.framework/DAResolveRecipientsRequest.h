@@ -19,12 +19,12 @@
 @property(retain) NSDate * endTime;
 
 
+- (id)initWithEmailAddresses:(id)arg1;
 - (bool)retrieveAvailablilty;
 - (bool)retrieveCertificates;
 - (id)initWithEmailAddresses:(id)arg1 retrieveCertificates:(bool)arg2 retrieveAvailability:(bool)arg3 withStartTime:(id)arg4 endTime:(id)arg5;
 - (void)setRetrieveAvailablilty:(bool)arg1;
 - (void)setRetrieveCertificates:(bool)arg1;
-- (id)initWithEmailAddresses:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (id)emailAddresses;
 - (void)setEndTime:(id)arg1;

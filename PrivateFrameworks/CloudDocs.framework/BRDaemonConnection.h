@@ -8,6 +8,7 @@
     NSUUID *_uuid;
 }
 
++ (void)invalidateCachedURLProperties;
 + (void)t_setMobileDocumentsURL:(id)arg1;
 + (void)t_setDefaultConnection:(id)arg1;
 + (id)t_connectionForUUID:(id)arg1;

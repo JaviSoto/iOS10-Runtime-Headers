@@ -2,10 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIAlertControllerTextField, UIVisualEffectView, UITextField, UIView;
+@class _UIAlertControllerTextField, UITextField, UIView;
 
 @interface _UIAlertControllerTextFieldView : UIView  {
-    UIVisualEffectView *_borderContainerView;
+    UIView *_borderContainerView;
     UIView *_borderView;
     UIView *_innerContentView;
     _UIAlertControllerTextField *_textField;

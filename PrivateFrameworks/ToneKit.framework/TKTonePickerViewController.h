@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class MPMusicPlayerController, <TKTonePickerViewControllerDelegate>, UIBarButtonItem, NSIndexPath, <TKTonePickerStyleProvider>, TKTonePickerTableViewCellLayoutManager, NSMutableArray, UIView, MPMediaPickerController, NSString, TKTonePickerController, NSNumber, TKVibrationPickerViewController, UIImage;
+@class MPMusicPlayerController, <TKTonePickerViewControllerDelegate>, UIBarButtonItem, <TKTonePickerStyleProvider>, TKTonePickerTableViewCellLayoutManager, TKToneClassicsTableViewController, NSMutableArray, UIView, MPMediaPickerController, NSString, TKTonePickerController, NSNumber, TKVibrationPickerViewController, UIImage;
 
-@interface TKTonePickerViewController : UITableViewController <TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKToneClassicsTableViewControllerDelegate, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate, MPMediaPickerControllerDelegate> {
+@interface TKTonePickerViewController : UITableViewController <TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate, MPMediaPickerControllerDelegate> {
     bool_showsStoreButtonInNavigationBar;
     bool_needsScrollPositionReset;
     bool_showsMedia;
@@ -12,11 +12,10 @@
     TKTonePickerController *_tonePickerController;
     UIImage *_checkmarkImage;
     TKTonePickerTableViewCellLayoutManager *_tableViewCellLayoutManager;
+    TKToneClassicsTableViewController *_toneClassicsTableViewController;
     UIBarButtonItem *_storeBarButtonItem;
     TKVibrationPickerViewController *_vibrationPickerViewController;
     <TKTonePickerStyleProvider> *_styleProvider;
-    NSIndexPath *_selectedClassicAlertTonesIndexPath;
-    NSIndexPath *_selectedClassicRingtonesIndexPath;
     UIView *_defaultSectionHeaderView;
     UIView *_mediaSectionHeaderView;
     NSMutableArray *_regularToneSectionHeaderViews;
@@ -52,12 +51,11 @@
 @property(setter=_setDefaultSectionHeaderView:,retain) UIView * _defaultSectionHeaderView;
 @property(setter=_setMediaSectionHeaderView:,retain) UIView * _mediaSectionHeaderView;
 @property(setter=_setRegularToneSectionHeaderViews:,retain) NSMutableArray * _regularToneSectionHeaderViews;
-@property(setter=_setSelectedClassicAlertTonesIndexPath:,retain) NSIndexPath * _selectedClassicAlertTonesIndexPath;
-@property(setter=_setSelectedClassicRingtonesIndexPath:,retain) NSIndexPath * _selectedClassicRingtonesIndexPath;
 @property(setter=_setMediaPickerController:,retain) MPMediaPickerController * _mediaPickerController;
 @property(setter=_setMediaItems:,retain) NSMutableArray * _mediaItems;
 @property(setter=_setStoredMusicPlayer:,retain) MPMusicPlayerController * _storedMusicPlayer;
 @property(readonly) MPMusicPlayerController * _musicPlayer;
+@property(setter=_setToneClassicsTableViewController:,retain) TKToneClassicsTableViewController * _toneClassicsTableViewController;
 @property(setter=_setVibrationPickerViewController:,retain) TKVibrationPickerViewController * _vibrationPickerViewController;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -73,16 +71,17 @@
 - (bool)showsStoreButtonInNavigationBar;
 - (void)vibrationPickerViewControllerWasDismissed:(id)arg1;
 - (void)vibrationPickerViewController:(id)arg1 selectedVibrationWithIdentifier:(id)arg2;
-- (void)toneClassicsTableView:(id)arg1 willDimissWithNewSelectedIndexPath:(id)arg2;
-- (long long)preselectedIndexForToneClassicsTableView:(id)arg1;
-- (id)toneIdentifiersForToneClassicsTableView:(id)arg1;
-- (void)_pushClassicsToneTableViewController;
+- (void)tonePickerTableViewWillDisappear:(bool)arg1;
 - (void)_togglePlayMediaItemWithIdentifier:(id)arg1;
-- (id)_selectedClassicRingtonesIndexPath;
-- (id)_selectedClassicAlertTonesIndexPath;
+- (void)updateCell:(id)arg1 withDetailText:(id)arg2;
+- (void)updateCell:(id)arg1 withCheckedStatus:(bool)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forPickerRowItem:(id)arg3;
 - (void)_getTitle:(id*)arg1 customHeaderView:(id*)arg2 forHeaderInSection:(long long)arg3;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2 forPickerRowItem:(id)arg3;
+- (id)tableView:(id)arg1 cellForPickerRowItem:(id)arg2;
+- (id)_pickerRowItemForIndexPath:(id)arg1;
+- (void)tableView:(id)arg1 updateCell:(id)arg2 withSeparatorForPickerRowItem:(id)arg3;
 - (void)_configureTextColorOfLabelInCell:(id)arg1 checked:(bool)arg2;
-- (id)_tableViewCellLayoutManager;
 - (id)_musicPlayer;
 - (void)_playMediaItemWithIdentifier:(id)arg1;
 - (id)_storedMusicPlayer;
@@ -93,18 +92,20 @@
 - (void)setSelectedMediaIdentifier:(id)arg1;
 - (void)_handleMediaLibraryDidChangeNotification;
 - (void)_resetScrollingPosition;
+- (id)_tableViewCellLayoutManager;
+- (double)_minimumTextIndentationForTableView:(id)arg1 withCheckmarkImage:(id)arg2;
 - (id)_regularToneSectionHeaderViews;
 - (id)_mediaSectionHeaderView;
 - (id)_defaultSectionHeaderView;
 - (void)_setNeedsScrollPositionReset:(bool)arg1;
 - (bool)_needsScrollPositionReset;
+- (void)_updateMinimumTextIndentation;
+- (void)loadViewForTonePickerTableViewController:(id)arg1;
 - (void)_updateStyleOfTableView:(id)arg1 forStyleProvider:(id)arg2;
-- (id)_styleProvider;
 - (id)_storeBarButtonItem;
 - (void)_configureNavigationBarIfNeeded;
 - (bool)_showsStoreButtonInNavigationBar;
 - (id)_tonePickerController;
-- (void)_setStyleProvider:(id)arg1;
 - (void)_setStoreBarButtonItem:(id)arg1;
 - (void)_setRegularToneSectionHeaderViews:(id)arg1;
 - (void)_setMediaSectionHeaderView:(id)arg1;
@@ -113,10 +114,11 @@
 - (void)_setMediaItems:(id)arg1;
 - (void)_setMediaPickerController:(id)arg1;
 - (id)_mediaPickerController;
+- (void)_setToneClassicsTableViewController:(id)arg1;
+- (id)_toneClassicsTableViewController;
 - (void)_setVibrationPickerViewController:(id)arg1;
 - (id)_vibrationPickerViewController;
-- (void)_setSelectedClassicRingtonesIndexPath:(id)arg1;
-- (void)_setSelectedClassicAlertTonesIndexPath:(id)arg1;
+- (void)tonePickerTableViewControllerWillBeDeallocated:(id)arg1;
 - (bool)showsMedia;
 - (void)_setTableViewCellLayoutManager:(id)arg1;
 - (void)_setCheckmarkImage:(id)arg1;
@@ -124,6 +126,7 @@
 - (void)_setShowsStoreButtonInNavigationBar:(bool)arg1;
 - (bool)showsVibrations;
 - (void)setMediaAtTop:(bool)arg1;
+- (id)selectedTonePickerItem;
 - (void)setNoneString:(id)arg1;
 - (bool)showsNone;
 - (bool)showsDefault;
@@ -153,6 +156,7 @@
 - (id)noneString;
 - (id)defaultToneIdentifier;
 - (bool)isNoneAtTop;
+- (void)layoutMarginsDidChangeInTonePickerTableView:(id)arg1;
 - (int)alertType;
 - (id)selectedVibrationIdentifier;
 - (id)selectedToneIdentifier;
@@ -175,10 +179,13 @@
 - (void)dealloc;
 - (void)_reloadData;
 - (id)_checkmarkImage;
+- (void)_setStyleProvider:(id)arg1;
+- (id)_styleProvider;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithStyle:(long long)arg1;
+- (void)loadView;
 - (void)viewDidLayoutSubviews;
 - (void)applicationWillSuspend;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
@@ -189,5 +196,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

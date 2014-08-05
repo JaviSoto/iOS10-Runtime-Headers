@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSUUID, NSString, NSURL, NSDate, NSData, NSMutableDictionary, NSDictionary, LSUserActivityManager, SFCompanionAdvertiser, <LSUserActivityDelegate>;
+@class NSError, NSString, NSURL, NSUUID, NSDate, NSMutableDictionary, NSDictionary, NSData, LSUserActivityManager, SFCompanionAdvertiser, <LSUserActivityDelegate>;
 
 @interface LSUserActivity : NSObject <SFCompanionAdvertiserDelegate> {
     LSUserActivityManager *_manager;
@@ -12,10 +12,13 @@
     NSURL *_webpageURL;
     <LSUserActivityDelegate> *_delegate;
     SFCompanionAdvertiser *_advertiser;
+    SFCompanionAdvertiser *_resumerAdvertiser;
     double _lastSaveTime;
     bool_saveScheduled;
     bool_createsNewUUIDIfSaved;
+    NSError *_decodeUserInfoError;
     bool_needsSave;
+    bool_dirty;
     bool_sendToServerPending;
     bool_inWillSaveCallback;
     bool_supportsContinuationStreams;
@@ -55,6 +58,10 @@
 @property(copy) NSData * streamsData;
 @property bool canCreateStreams;
 @property(readonly) LSUserActivityManager * manager;
+@property bool dirty;
+@property bool sendToServerPending;
+@property bool createsNewUUIDIfSaved;
+@property(retain) NSError * decodeUserInfoError;
 
 + (void)unregisterForSuggestedActionNudgeOfType:(id)arg1;
 + (id)registerForSuggestedActionNudgeOfType:(unsigned long long)arg1 withOptions:(id)arg2 block:(id)arg3;
@@ -63,6 +70,7 @@
 + (id)userActivityFromUUID:(id)arg1 withError:(id*)arg2;
 + (bool)checkWebpageURL:(id)arg1 actionType:(unsigned long long)arg2 throwIfFailed:(bool)arg3;
 + (void)fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
++ (bool)userActivityContinuationSupported;
 + (id)userActivity;
 
 - (id)initWithUUID:(id)arg1;
@@ -73,7 +81,7 @@
 - (void)willSynchronizeUserActivityWithHandler:(id)arg1;
 - (id)initWithManager:(id)arg1 userActivityInfo:(id)arg2;
 - (void)didReceiveInputStream:(id)arg1 outputStream:(id)arg2;
-- (id)callWillSaveDelegateIfDirtyAndPackageUpData:(bool)arg1;
+- (id)callWillSaveDelegateIfDirtyAndPackageUpData:(bool)arg1 clearDirty:(bool)arg2;
 - (id)userActivityInfoForSelf;
 - (id)resourceURLForKey:(id)arg1;
 - (void)removeResourceURL:(id)arg1;
@@ -85,8 +93,6 @@
 - (void)removeActivityPayloadForKey:(id)arg1;
 - (void)updateActivityPayloadValue:(id)arg1 forKey:(id)arg2;
 - (void)removeFrameworkPayloadForKey:(id)arg1;
-- (void)setFrameworkPayload:(id)arg1;
-- (id)frameworkPayload;
 - (void)setOwningBundleIdentifier:(id)arg1;
 - (id)owningBundleIdentifier;
 - (void)setWebPageURL:(id)arg1;
@@ -100,28 +106,36 @@
 - (void)setStreamsData:(id)arg1;
 - (id)streamsData;
 - (void)setTypeIdentifier:(id)arg1;
+- (void)setCreatesNewUUIDIfSaved:(bool)arg1;
+- (bool)createsNewUUIDIfSaved;
+- (void)setSendToServerPending:(bool)arg1;
+- (bool)sendToServerPending;
 - (id)decodeUserInfo:(id)arg1;
 - (id)encodeUserInfo:(id)arg1;
 - (void)becomeCurrent;
 - (bool)needsSave;
+- (bool)dirty;
 - (void)setWebpageURL:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)initWithTypeIdentifier:(id)arg1;
 - (bool)isActive;
 - (id)title;
 - (id)webpageURL;
+- (id)decodeUserInfoError;
 - (void)sendUserActivityInfoToLSUserActivityd:(bool)arg1 onAsyncQueue:(bool)arg2;
 - (void)scheduleSendUserActivityInfoToLSUserActivityd;
+- (void)setNeedsSave:(bool)arg1;
+- (id)manager;
 - (bool)forceImmediateSendToServer;
 - (void)setForceImmediateSendToServer:(bool)arg1;
 - (unsigned long long)suggestedActionType;
-- (void)setNeedsSave:(bool)arg1;
-- (id)manager;
-- (void)tellServerAboutNewLSUserActivity;
+- (void)setDecodeUserInfoError:(id)arg1;
+- (void)tellDaemonAboutNewLSUserActivity;
 - (id)initWithTypeIdentifier:(id)arg1 suggestedActionType:(unsigned long long)arg2 options:(id)arg3;
 - (id)typeIdentifier;
 - (id)init;
 - (id)debugDescription;
+- (void)setDirty:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -138,6 +152,8 @@
 - (void)setLastActivityDate:(id)arg1;
 - (id)lastActivityDate;
 - (void)updateFrameworkPayloadValue:(id)arg1 forKey:(id)arg2;
+- (void)setFrameworkPayload:(id)arg1;
+- (id)frameworkPayload;
 - (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
 - (void)setSupportsContinuationStreams:(bool)arg1;
 - (bool)supportsContinuationStreams;

@@ -21,6 +21,9 @@
 @property(readonly) NSString * path;
 @property(readonly) long long options;
 
++ (void)_dropDatabase:(struct sqlite3 { }*)arg1 withCompletion:(id)arg2;
++ (struct sqlite3 { }*)_openDatabaseAtPath:(id)arg1 options:(long long)arg2;
++ (void)dropDatabaseAtPath:(id)arg1 withCompletion:(id)arg2;
 
 - (void)group:(id)arg1 fetchOwningContentString:(bool)arg2 assetUUIDs:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 completionHandler:(id)arg4;
 - (id)newQueryWithSearchText:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSManagedObject;
 
-@interface NSMergeConflict : NSObject <NSSecureCoding> {
+@interface NSMergeConflict : NSObject  {
     id _source;
     id _snapshot1;
     id _snapshot2;
@@ -20,7 +20,6 @@
 @property(readonly) unsigned long long newVersionNumber;
 @property(readonly) unsigned long long oldVersionNumber;
 
-+ (bool)supportsSecureCoding;
 
 - (unsigned long long)oldVersionNumber;
 - (unsigned long long)newVersionNumber;
@@ -29,13 +28,10 @@
 - (id)objectSnapshot;
 - (id)sourceObject;
 - (id)ancestorSnapshot;
-- (void)_doCleanupForXPCStore:(id)arg1 context:(id)arg2;
-- (id)initWithSource:(id)arg1 newVersion:(unsigned long long)arg2 oldVersion:(unsigned long long)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned long long)arg2 oldVersion:(unsigned long long)arg3 snapshot1:(id)arg4 snapshot2:(id)arg5 snapshot3:(id)arg6;
+- (id)initWithSource:(id)arg1 newVersion:(unsigned long long)arg2 oldVersion:(unsigned long long)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
 - (id)valueForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
 

@@ -15,13 +15,13 @@
 }
 
 + (void)registerAppleServiceDeliveryHostname:(id)arg1;
-+ (id)displayedAccountTypeString;
-+ (id)displayedShortAccountTypeString;
 + (id)saslProfileName;
 + (bool)isCommonPortNumber:(unsigned int)arg1;
 + (void*)legacyKeychainProtocol;
 + (unsigned int)defaultPortNumber;
 + (id)accountTypeString;
++ (id)displayedAccountTypeString;
++ (id)displayedShortAccountTypeString;
 + (id)newDefaultInstance;
 
 - (void)setDeliveryClass:(Class)arg1;

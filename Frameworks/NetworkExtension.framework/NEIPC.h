@@ -37,8 +37,8 @@
 - (id)messageHandler;
 - (void)setSocket:(int)arg1;
 - (void)setMessageHandler:(id)arg1;
-- (void).cxx_destruct;
 - (void)stop;
+- (void).cxx_destruct;
 - (int)socket;
 
 @end

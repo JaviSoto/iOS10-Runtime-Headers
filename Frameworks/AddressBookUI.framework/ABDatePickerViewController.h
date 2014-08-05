@@ -16,9 +16,9 @@
 
 + (struct CGSize { double x1; double x2; })datePickerSize;
 
-- (id)datePicker;
 - (void)setDatePicker:(id)arg1;
 - (double)ab_heightToFitForViewInPopoverView;
+- (id)datePicker;
 - (void*)context;
 - (void)setContext:(void*)arg1;
 - (void)dealloc;

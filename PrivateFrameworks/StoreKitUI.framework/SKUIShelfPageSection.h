@@ -4,7 +4,7 @@
 
 @class SKUIShelfPageComponent, SKUIViewElementLayoutContext, SKUIShelfLayoutData, NSArray, NSString, UICollectionView, SKUIShelfViewElement, SKUIViewElementSlideshowController;
 
-@interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     long long _lastNeedsMoreCount;
     long long _lockupType;
@@ -41,22 +41,26 @@
 - (void)_reloadViewElementProperties;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)collectionView:(id)arg1 layout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
+- (void)deselectItemsAnimated:(bool)arg1;
+- (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
+- (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)invalidateCachedLayoutInformation;
-- (void)deselectItemsAnimated:(bool)arg1;
+- (bool)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(bool)arg3;
 - (void)prefetchResourcesWithReason:(long long)arg1;
-- (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
 - (void)collectionView:(id)arg1 didConfirmButtonElement:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)viewElementSlideshowWillDismiss:(id)arg1;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;

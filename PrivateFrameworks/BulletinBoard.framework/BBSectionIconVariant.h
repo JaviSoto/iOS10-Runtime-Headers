@@ -27,9 +27,9 @@
 + (bool)supportsSecureCoding;
 
 - (id)imageName;
-- (void)setBundlePath:(id)arg1;
 - (void)setImageName:(id)arg1;
 - (void)setFormat:(long long)arg1;
+- (void)setBundlePath:(id)arg1;
 - (long long)format;
 - (void)setImageData:(id)arg1;
 - (id)imageData;

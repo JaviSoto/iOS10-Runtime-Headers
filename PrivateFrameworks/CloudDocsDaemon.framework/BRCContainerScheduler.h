@@ -8,7 +8,7 @@
 
 @class NSMutableDictionary, PQLConnection, BRCThrottle, APSConnection, BRCAccountSession, BRCContainerMetadataSyncPersistedState, BRCOperation, BRCCountedSet, NSObject<OS_dispatch_group>, NSString, BRCThrottledScheduler, BRCSyncBudgetThrottle, NSOperationQueue, BRCMinHeap, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, BRCRelativePath, CKContainer;
 
-@interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate> {
+@interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate, BRCLowDiskDelegate> {
     BRCAccountSession *_session;
     struct _opaque_pthread_rwlock_t { 
         long long __sig; 
@@ -59,6 +59,7 @@
     BRCOperation *_containerMetadataSyncOperation;
     BRCThrottle *_containerResetThrottle;
     unsigned long long _availableQuota;
+    bool_isInLowDisk;
     BRCThrottledScheduler *_readerScheduler;
     BRCThrottledScheduler *_applyChangesScheduler;
     NSObject<OS_dispatch_group> *_lostScanGroup;
@@ -96,12 +97,8 @@
 - (id)uploadGroup;
 - (id)writerGroup;
 - (id)lostScanGroup;
-- (id)applyChangesScheduler;
-- (id)readerScheduler;
 - (void)uploadResume;
 - (void)uploadSuspend;
-- (void)downloadResume;
-- (void)downloadSuspend;
 - (void)syncResume;
 - (void)syncSuspend;
 - (void)lostScanResume;
@@ -111,6 +108,7 @@
 - (void)refreshPushRegistrationAfterAppsListChanged;
 - (void)setupWithRoot:(id)arg1;
 - (void)resetContainerAsync:(id)arg1;
+- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(bool)arg2;
 - (void)containerDidBecomeBackground:(id)arg1;
 - (void)containerDidBecomeForeground:(id)arg1;
 - (void)didInitialSyncDownForContainer:(id)arg1;
@@ -124,6 +122,8 @@
 - (void)didChangeSyncStatusForContainer:(id)arg1;
 - (void)didChangeReaderStatusForContainer:(id)arg1;
 - (void)didChangeLostScanStatusForContainer:(id)arg1;
+- (void)downloadResume;
+- (void)downloadSuspend;
 - (void)scheduleSyncDownContainerMetadata;
 - (id)_containersMetadataSyncDatabase;
 - (id)ckContainerForContainersMetadataSync;
@@ -141,7 +141,8 @@
 - (void)endWriteCoordinationInContainer:(id)arg1;
 - (void)endReadCoordinationInContainer:(id)arg1;
 - (void)_removeContainerFromSyncList:(id)arg1;
-- (void)resetContainer:(id)arg1 isFullReset:(bool)arg2;
+- (void)scheduleReset:(unsigned long long)arg1 forContainer:(id)arg2;
+- (void)resetContainer:(id)arg1 resetType:(unsigned long long)arg2;
 - (id)createContainerIfNeeded:(id)arg1;
 - (void)_automaticSyncSchedule;
 - (void)_updatePushTopicsRegistration;
@@ -151,6 +152,8 @@
 - (void)_lostScanSchedule;
 - (long long)_readerScheduleContainer:(id)arg1;
 - (id)containerByMangledID:(id)arg1;
+- (id)applyChangesScheduler;
+- (id)readerScheduler;
 - (id)initWithAccountSession:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (void)enumerateContainers:(id)arg1;

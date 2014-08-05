@@ -22,6 +22,7 @@
 @property(retain) NSNumber * generationID;
 @property(retain) NSDate * lastUsedDate;
 
++ (bool)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forFileURL:(id)arg4 erorr:(id*)arg5;
 
 - (id)lastUsedDate;
 - (void)setLastUsedDate:(id)arg1;

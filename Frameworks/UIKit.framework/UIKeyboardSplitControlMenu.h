@@ -2,6 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableArray;
 
 @interface UIKeyboardSplitControlMenu : UIKeyboardMenuView  {
@@ -10,7 +14,14 @@
         double width; 
         double height; 
     } m_preferredSize;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _finishSplitTransitionBlock;
+
 }
+
+@property(copy) id finishSplitTransitionBlock;
 
 + (id)sharedInstance;
 + (id)activeInstance;
@@ -18,9 +29,12 @@
 - (long long)numberOfItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
+- (id)finishSplitTransitionBlock;
+- (void)setFinishSplitTransitionBlock:(id)arg1;
 - (id)titleForItemAtIndex:(int)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
 - (long long)defaultSelectedIndex;
 - (struct CGSize { double x1; double x2; })preferredSize;
+- (void)didFinishSplitTransition;
 
 @end

@@ -8,6 +8,7 @@
     NSMutableArray *_assets;
     CKDPRecordFieldIdentifier *_field;
     CKDPRecordType *_type;
+    NSMutableArray *_uploads;
 }
 
 @property(readonly) bool hasType;
@@ -15,9 +16,16 @@
 @property(readonly) bool hasField;
 @property(retain) CKDPRecordFieldIdentifier * field;
 @property(retain) NSMutableArray * assets;
+@property(retain) NSMutableArray * uploads;
 
 + (id)options;
 
+- (id)uploads;
+- (id)uploadsAtIndex:(unsigned long long)arg1;
+- (void)clearUploads;
+- (unsigned long long)uploadsCount;
+- (void)addUploads:(id)arg1;
+- (void)setUploads:(id)arg1;
 - (id)assetsAtIndex:(unsigned long long)arg1;
 - (void)clearAssets;
 - (void)addAssets:(id)arg1;

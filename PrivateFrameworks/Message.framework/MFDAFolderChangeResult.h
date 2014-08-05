@@ -18,9 +18,9 @@
 
 
 - (id)folderID;
-- (id)folderName;
 - (id)initWithStatusCode:(long long)arg1 error:(id)arg2 folderID:(id)arg3 folderName:(id)arg4;
 - (bool)wasSuccessful;
+- (id)folderName;
 - (id)error;
 - (long long)statusCode;
 - (void)dealloc;

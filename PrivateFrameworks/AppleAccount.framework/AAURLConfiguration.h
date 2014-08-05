@@ -62,6 +62,7 @@
 @property(readonly) NSString * familyLearnMoreURL;
 @property(readonly) NSString * cloudKitMigrationStateURL;
 @property(readonly) NSString * cloudKitStartMigrationURL;
+@property(readonly) NSString * cloudKitDevicesListURL;
 @property(readonly) NSString * familyPaymentInfoURL;
 @property(readonly) NSString * familyPaymentCardUIURL;
 @property(readonly) NSString * aboutURL;
@@ -110,6 +111,7 @@
 - (id)registerURL;
 - (id)updateAccountURL;
 - (id)accountCreationURL;
+- (id)cloudKitDevicesListURL;
 - (id)cloudKitStartMigrationURL;
 - (id)cloudKitMigrationStateURL;
 - (id)unregisterDeviceURL;

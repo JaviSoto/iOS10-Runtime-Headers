@@ -54,6 +54,7 @@
 
 
 - (id)versionOrdering;
+- (bool)isBeta;
 - (bool)isProfileValidated;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;
@@ -66,7 +67,6 @@
 - (id)receiptExpirationDate;
 - (void)setVendorName:(id)arg1;
 - (void)setDeviceIdentifierForVendor:(id)arg1;
-- (bool)isBeta;
 - (id)ITunesMetadataDictionary;
 - (unsigned long long)vppStateFlags;
 - (void)resetVPPStateFlags;

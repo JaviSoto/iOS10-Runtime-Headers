@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSString, NSHashTable, NSMutableArray;
+@class NSString, NSMutableArray, NSMapTable;
 
 @interface SKUINavigationPaletteView : SKUIViewReuseView <SKUIViewElementView> {
     struct UIEdgeInsets { 
@@ -12,7 +12,7 @@
         double right; 
     } _contentInset;
     NSMutableArray *_segmentedControls;
-    NSHashTable *_stretchViews;
+    NSMutableArray *_stretchViews;
     long long _verticalAlignment;
     NSMapTable *_viewElementViews;
     NSMapTable *_viewSpacings;

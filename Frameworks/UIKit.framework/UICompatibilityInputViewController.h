@@ -8,6 +8,7 @@
     UIKeyboardInputMode *_inputMode;
     UIKeyboard *_deferredSystemView;
     UIKeyboardInputMode *_incomingExtensionInputMode;
+    bool_shouldRegenerateSizingConstraints;
     UIViewController *_inputController;
 }
 
@@ -18,12 +19,12 @@
 + (id)deferredInputModeControllerWithKeyboard:(id)arg1;
 + (bool)_shouldForwardViewWillTransitionToSize;
 
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (void)didFinishTranslation;
 - (void)finishSplitTransition:(bool)arg1;
 - (void)willBeginTranslation;
 - (id)childCompatibilityController;
+- (id)_compatView;
 - (void)tearDownInputController;
 - (id)_initAsDeferredController;
 - (void)generateCompatibleSizeConstraintsIfNecessary;
@@ -40,6 +41,7 @@
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (bool)shouldAutomaticallyForwardRotationMethods;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (void)viewDidLayoutSubviews;
 

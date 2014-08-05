@@ -54,6 +54,7 @@
 - (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)prepareWithActivityItems:(id)arg1;
+- (bool)_canBeExcludedByActivityViewController:(id)arg1;
 - (void)_injectedJavaScriptResult:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1;
 - (id)presenterCompletion;

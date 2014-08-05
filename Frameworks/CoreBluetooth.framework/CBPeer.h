@@ -28,8 +28,8 @@
 - (void)handleHostStateUpdated:(id)arg1;
 - (void)setHostState:(long long)arg1;
 - (void)handleMsg:(int)arg1 args:(id)arg2;
-- (id)identifier;
 - (struct __CFUUID { }*)UUID;
+- (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

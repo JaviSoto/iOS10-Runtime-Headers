@@ -2,35 +2,50 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, <MPTermsViewControllerDelegate>;
+@class <MPTermsViewControllerDelegate>, UITextView, UIActivityIndicatorView, UIView, SSTermsAndConditions;
 
 @interface MPTermsViewController : UIViewController  {
-    unsigned long long _currentTermsVersion;
-    NSString *_terms;
-    NSString *_localizedAcceptButtonTitle;
+    bool_needToLoadTerms;
+    SSTermsAndConditions *_termsAndConditions;
     <MPTermsViewControllerDelegate> *_delegate;
+    UIActivityIndicatorView *_activityIndicatorView;
+    UIView *_topSpacerView;
+    UIView *_bottomSpacerView;
+    UITextView *_termsTextView;
 }
 
-@property unsigned long long currentTermsVersion;
-@property(copy) NSString * terms;
-@property(copy) NSString * localizedAcceptButtonTitle;
 @property <MPTermsViewControllerDelegate> * delegate;
+@property(retain) UIActivityIndicatorView * activityIndicatorView;
+@property(retain) UIView * topSpacerView;
+@property(retain) UIView * bottomSpacerView;
+@property(retain) UITextView * termsTextView;
 
 
-- (id)localizedAcceptButtonTitle;
-- (unsigned long long)currentTermsVersion;
-- (void)setLocalizedAcceptButtonTitle:(id)arg1;
-- (id)initWithCurrentTermsVersion:(unsigned long long)arg1 terms:(id)arg2;
-- (id)terms;
+- (void)_setupViewForFailedToAcceptTerms;
+- (void)_failedToAcceptTermsWithError:(id)arg1;
+- (void)_setupViewForFailedToLoadTerms;
+- (void)_setupViewForShowingTerms;
+- (void)_failedToLoadTermsWithError:(id)arg1;
+- (void)_loadedTerms:(id)arg1;
 - (void)_acceptAction:(id)arg1;
+- (id)bottomSpacerView;
+- (id)topSpacerView;
+- (void)setBottomSpacerView:(id)arg1;
+- (void)setTopSpacerView:(id)arg1;
+- (void)setActivityIndicatorView:(id)arg1;
+- (void)setTermsTextView:(id)arg1;
+- (void)_userAcceptedTerms;
+- (id)termsTextView;
+- (void)_startLoadingTerms;
+- (id)activityIndicatorView;
+- (void)_setupViewForLoadingTerms;
 - (void)_cancelAction:(id)arg1;
-- (void)setTerms:(id)arg1;
-- (void)setCurrentTermsVersion:(unsigned long long)arg1;
+- (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
 - (void)viewDidAppear:(bool)arg1;
-- (void)loadView;
+- (void)viewDidLoad;
 - (unsigned long long)supportedInterfaceOrientations;
 - (bool)shouldAutorotate;
 

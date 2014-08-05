@@ -30,6 +30,7 @@
 - (id)_avChatForConference:(id)arg1 callID:(long long)arg2 errorString:(id)arg3;
 - (void)_configureAVConference:(id)arg1 forChat:(id)arg2;
 - (void)_setAudioSessionPropertiesForChat:(id)arg1;
+- (id)_getFaceTimeUUID;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2;
 - (bool)_submitEndCallMetric:(id)arg1 forCallID:(long long)arg2;
 - (bool)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;

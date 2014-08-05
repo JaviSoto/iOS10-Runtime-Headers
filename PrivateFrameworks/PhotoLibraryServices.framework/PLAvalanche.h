@@ -64,6 +64,8 @@
 + (id)partialAvalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (id)avalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (unsigned long long)_calculateStackAssetForAssetCount:(unsigned long long)arg1 autoPicks:(id)arg2 userFavorites:(id)arg3;
++ (id)_assetAmongAssets:(id)arg1 fromIndexes:(id)arg2 excludingIndexes:(id)arg3;
++ (id)_visibleIndexesAmongAssets:(id)arg1 fromUserFavoriteIndexes:(id)arg2 stackIndex:(unsigned long long)arg3;
 + (void)_handleUpdatesForContextWillSave:(id)arg1;
 + (void)_updateMembershipForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(bool)arg5;
 + (id)_updatePropertiesForAssets:(id)arg1 autoPicks:(id)arg2 stackAsset:(id)arg3 userFavorites:(id)arg4 deleteNonPicks:(bool)arg5;
@@ -87,8 +89,8 @@
 - (id)_anOldPick;
 - (void)_setANewPick:(id)arg1;
 - (void)_setAnOldPick:(id)arg1;
-- (unsigned long long)_originalStackIndex;
 - (id)_originalUserFavoriteIndexes;
+- (unsigned long long)_originalStackIndex;
 - (void)addUserFavorite:(id)arg1;
 - (id)_userFavoriteIndexes;
 - (unsigned long long)_stackIndex;

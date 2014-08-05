@@ -80,8 +80,8 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameWithContainingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paddedFrameWithResolvedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setH:(struct { double x1; int x2; })arg1;
-- (struct { double x1; int x2; })h;
 - (void)setW:(struct { double x1; int x2; })arg1;
+- (struct { double x1; int x2; })h;
 - (struct { double x1; int x2; })w;
 - (id)shortDescription;
 - (struct { double x1; int x2; })paddingRight;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class _IDSDevice, NSString, NSUUID, NSArray, NSData;
+@class _IDSDevice, NSString, NSArray, NSUUID, NSData;
 
 @interface IDSDevice : NSObject  {
     _IDSDevice *_internal;
@@ -20,6 +20,7 @@
 @property(readonly) bool isDefaultPairedDevice;
 @property(getter=isNearby,readonly) bool nearby;
 @property(readonly) bool locallyPresent;
+@property(retain,readonly) NSArray * linkedUserURIs;
 @property(setter=setNSUUID:,retain) NSUUID * nsuuid;
 @property(readonly) bool supportsTethering;
 @property(readonly) bool supportsHandoff;
@@ -48,6 +49,7 @@
 - (bool)supportsPhoneCalls;
 - (bool)supportsMMSRelay;
 - (bool)supportsSMSRelay;
+- (id)linkedUserURIs;
 - (id)modelIdentifier;
 - (void)_addIdentity:(id)arg1;
 - (void)_updateNSUUID:(id)arg1;

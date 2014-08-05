@@ -34,6 +34,7 @@
 - (id)initWithRecordIDs:(id)arg1 desiredKeys:(id)arg2 minimumVersionETag:(id)arg3;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (id)recordIDByRequestID;
+- (id)zoneIDsToLock;
 - (id)requestOperationClasses;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;

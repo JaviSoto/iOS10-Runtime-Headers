@@ -28,8 +28,8 @@
 + (id)placemarkWithGEOMapItem:(id)arg1;
 + (bool)supportsSecureCoding;
 
-- (id)postalCode;
 - (id)ISOcountryCode;
+- (id)postalCode;
 - (id)_geoMapItem;
 - (id)areasOfInterest;
 - (id)addressDictionary;

@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, <MPArtworkDataSource>;
 
 @interface MPMediaLibraryDataProviderSystemML3 : MPMediaLibraryDataProviderML3  {
+    <MPArtworkDataSource> *_completeMyCollectionArtworkDataSource;
     long long _currentRevision;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -25,6 +26,7 @@
 - (id)errorResolverForMediaItem:(id)arg1;
 - (bool)isGeniusEnabled;
 - (id)initWithLibrary:(id)arg1;
+- (id)completeMyCollectionArtworkDataSource;
 - (void).cxx_destruct;
 
 @end

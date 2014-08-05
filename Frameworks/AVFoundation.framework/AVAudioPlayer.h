@@ -67,12 +67,12 @@
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (id)url;
 - (void)pause;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (id)data;
 - (id)delegate;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 - (double)duration;
 
 @end

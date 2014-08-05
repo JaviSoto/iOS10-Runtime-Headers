@@ -58,6 +58,7 @@
 - (bool)isNetworkAccessAllowed;
 - (void)setResizeMode:(long long)arg1;
 - (long long)resizeMode;
+- (void)setLoadingMode:(long long)arg1;
 - (long long)loadingMode;
 - (long long)deliveryMode;
 - (void)setAllowPlaceholder:(bool)arg1;
@@ -69,7 +70,6 @@
 - (void)setSynchronous:(bool)arg1;
 - (void)setDeliveryMode:(long long)arg1;
 - (void)setNetworkAccessAllowed:(bool)arg1;
-- (void)setLoadingMode:(long long)arg1;
 - (void)setProgressHandler:(id)arg1;
 - (id)progressHandler;
 - (id)init;

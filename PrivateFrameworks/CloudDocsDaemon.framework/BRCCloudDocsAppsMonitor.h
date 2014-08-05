@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
+@class NSString, NSDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
-@interface BRCCloudDocsAppsMonitor : NSObject  {
+@interface BRCCloudDocsAppsMonitor : NSObject <BRCAppListMonitorDelegate> {
     NSDictionary *_cloudDocsContainersByAppID;
     NSDictionary *_appIDsByContainerID;
     NSMutableSet *_observers;
@@ -12,11 +12,18 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+
 + (id)cloudDocsAppsMonitor;
 
+- (void)appListChanged;
 - (void)_refetchApps;
 - (id)applicationIdentifiersForContainerID:(id)arg1;
 - (bool)isApplicationInstalledForContainerID:(id)arg1;
+- (void)forceRefetchAppList;
 - (id)allApplicationIdentifiers;
 - (void)_start;
 - (id)init;

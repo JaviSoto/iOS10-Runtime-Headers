@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SUPlayerStatus, SKUIHorizontalLockupLayout, SKUIGradientView, SKUIPreviewProgressIndicator, NSMapTable, SKUILockupViewElement;
+@class NSString, UITapGestureRecognizer, SUPlayerStatus, SKUIHorizontalLockupLayout, NSMutableArray, SKUIGradientView, SKUIPreviewProgressIndicator, SKUILockupViewElement, NSMapTable;
 
-@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
+@interface SKUIHorizontalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, UIGestureRecognizerDelegate, SKUIPerspectiveView, SKUIPreviewContainerView, SKUIViewElementView> {
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -17,6 +17,8 @@
     SKUIGradientView *_offerConfirmationGradientView;
     SKUIPreviewProgressIndicator *_previewProgressIndicator;
     long long _previewState;
+    UITapGestureRecognizer *_tapGestureRecognizer;
+    NSMutableArray *_tappableViews;
     NSMapTable *_viewElementViews;
 }
 
@@ -26,6 +28,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 + (id)_attributedStringForOrdinal:(id)arg1 context:(id)arg2;
++ (bool)_usesEditorialLayoutForLabelViewElement:(id)arg1;
 + (void)_requestLayoutForViewElements:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;
@@ -39,9 +42,13 @@
 - (void)_buttonAction:(id)arg1;
 - (void)_previewIndicatorAction:(id)arg1;
 - (id)_columnForView:(id)arg1;
+- (void)_expandEditorialForLabel:(id)arg1;
+- (void)_performDefaultActionForImage:(id)arg1;
 - (void)togglePreviewPlaybackAnimated:(bool)arg1;
 - (void)_addConfirmationGradientForView:(id)arg1;
 - (void)_layoutConfirmationGradientRelativeToItemOfferView:(id)arg1 alpha:(double)arg2;
+- (struct CGSize { double x1; double x2; })_sizeViewsForColumn:(id)arg1 toFitWidth:(double)arg2;
+- (void)_tapGestureAction:(id)arg1;
 - (void)hidePreviewProgressAnimated:(bool)arg1;
 - (id)_previewMediaURL;
 - (id)_previewProgressIndicator;
@@ -55,7 +62,6 @@
 - (id)_viewElementForView:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)itemOfferButtonDidAnimateTransition:(id)arg1;
-- (void)_imageTapAction:(id)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;
@@ -69,6 +75,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 

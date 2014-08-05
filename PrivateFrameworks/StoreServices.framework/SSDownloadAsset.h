@@ -25,8 +25,8 @@
 + (long long)_existsMessage;
 
 - (id)URLRequestProperties;
-- (id)finalizedPath;
 - (id)downloadPath;
+- (id)finalizedPath;
 - (id)downloadFileName;
 - (id)initWithURLRequest:(id)arg1 type:(long long)arg2;
 - (id)URLRequest;

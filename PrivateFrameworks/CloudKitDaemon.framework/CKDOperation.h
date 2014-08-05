@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSDate, NSString, CKDClientProxy, CKDOperation, NSError, CKOperationResult, NSMutableArray, CKDClientContext, NSObject<OS_dispatch_queue>, CKDURLRequest, NSObject<OS_dispatch_group>;
+@class CKDClientContext, CKDURLRequest, NSDate, CKDClientProxy, NSMutableArray, NSObject<OS_dispatch_group>, CKOperationResult, NSString, <NSObject>, NSObject<OS_dispatch_queue>, CKDOperation, NSError;
 
 @interface CKDOperation : NSOperation <CKDFlowControllable> {
     bool_isFinished;
@@ -27,6 +27,7 @@
     NSString *_parentSectionID;
     NSMutableArray *_childOperations;
     NSMutableArray *_finishedChildOperationIDs;
+    <NSObject> *_powerAssertion;
 }
 
 @property(readonly) NSString * sectionID;
@@ -55,10 +56,13 @@
 @property(retain) NSString * parentSectionID;
 @property(retain) NSMutableArray * childOperations;
 @property(retain) NSMutableArray * finishedChildOperationIDs;
+@property(retain) <NSObject> * powerAssertion;
 @property(readonly) NSString * flowControlKey;
 
 + (id)_globalOperationCallbackQueueForQOS:(long long)arg1;
 
+- (void)setPowerAssertion:(id)arg1;
+- (id)powerAssertion;
 - (void)setFinishedChildOperationIDs:(id)arg1;
 - (void)setChildOperations:(id)arg1;
 - (void)setStateTransitionGroup:(id)arg1;
@@ -76,6 +80,7 @@
 - (bool)_errorShouldImpactFlowControl:(id)arg1;
 - (bool)_checkAppVersion;
 - (bool)shouldCheckAppVersion;
+- (bool)operationShouldBeFlowControlled;
 - (void)_continueOperationStart;
 - (id)childOperations;
 - (id)finishedChildOperationIDs;
@@ -86,6 +91,7 @@
 - (bool)usesBackgroundSession;
 - (void)setUsesBackgroundSession:(bool)arg1;
 - (void)setCallbackQueue:(id)arg1;
+- (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (id)requestUUIDs;
 - (void)setDeviceIdentifier:(id)arg1;

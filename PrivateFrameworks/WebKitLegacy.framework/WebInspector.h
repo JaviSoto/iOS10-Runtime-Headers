@@ -20,6 +20,7 @@
 - (void)stopProfilingJavaScript:(id)arg1;
 - (void)startProfilingJavaScript:(id)arg1;
 - (void)toggleProfilingJavaScript:(id)arg1;
+- (bool)isProfilingJavaScript;
 - (void)stopDebuggingJavaScript:(id)arg1;
 - (void)startDebuggingJavaScript:(id)arg1;
 - (void)toggleDebuggingJavaScript:(id)arg1;
@@ -28,7 +29,6 @@
 - (id)initWithWebView:(id)arg1;
 - (void)setTimelineProfilingEnabled:(bool)arg1;
 - (bool)isTimelineProfilingEnabled;
-- (bool)isProfilingJavaScript;
 - (bool)isDebuggingJavaScript;
 - (void)showWindow;
 - (void)dealloc;

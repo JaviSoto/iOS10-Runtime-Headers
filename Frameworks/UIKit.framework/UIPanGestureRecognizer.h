@@ -74,10 +74,10 @@
 - (void)setMinimumNumberOfTouches:(unsigned long long)arg1;
 - (unsigned long long)minimumNumberOfTouches;
 - (void)_setCanPanVertically:(bool)arg1;
+- (unsigned long long)numberOfTouches;
 - (void)setTranslation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (void)setFailsPastMaxTouches:(bool)arg1;
 - (void)_setIgnoresStationaryTouches:(bool)arg1;
-- (unsigned long long)numberOfTouches;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -26,6 +26,7 @@
 @property(getter=isHoldAndAnswerAllowed) bool holdAndAnswerAllowed;
 @property(getter=isSendToVoicemailAllowed) bool sendToVoicemailAllowed;
 
++ (id)sharedInstance;
 
 - (void)updateWithCallModelState:(id)arg1;
 - (void)setSendToVoicemailAllowed:(bool)arg1;

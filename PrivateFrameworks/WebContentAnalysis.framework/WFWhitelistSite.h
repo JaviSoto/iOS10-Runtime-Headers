@@ -17,9 +17,9 @@
 
 
 - (bool)hasMetasitePrefix:(id)arg1;
+- (void)setUrlString:(id)arg1;
 - (id)initWithURLString:(id)arg1;
 - (id)urlString;
-- (void)setUrlString:(id)arg1;
 - (id)domainName;
 - (id)url;
 - (void)setUrl:(id)arg1;

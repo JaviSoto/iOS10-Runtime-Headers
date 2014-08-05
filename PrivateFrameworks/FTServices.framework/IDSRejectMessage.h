@@ -18,6 +18,7 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)peerPushToken;
@@ -25,7 +26,6 @@
 - (void)setPeerPushToken:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)messageBody;
 - (void)setReason:(id)arg1;
 - (id)reason;
 - (void)dealloc;

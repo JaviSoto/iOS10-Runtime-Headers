@@ -280,6 +280,8 @@
         unsigned int needsDeleteConfirmationCleanup : 1; 
         unsigned int resetContentOffsetAfterLayout : 1; 
         unsigned int cellsSelfSize : 1; 
+        unsigned int usingCustomLayoutMargins : 1; 
+        unsigned int settingDefaultLayoutMargins : 1; 
     } _tableFlags;
 }
 
@@ -599,6 +601,7 @@
 - (void)_rectChangedWithNewSize:(struct CGSize { double x1; double x2; })arg1 oldSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_scrollFirstResponderCellToVisible:(bool)arg1;
 - (void)_updateWrapperFrame;
+- (void)_setDefaultLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)_tableViewCellForContentView:(id)arg1;
 - (void)_userSelectRowAtPendingSelectionIndexPath:(id)arg1;
 - (id)_nearestContentSubviewToPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -861,6 +864,7 @@
 - (void)resizeSubviewsWithOldSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutMarginsDidChange;
 - (bool)_shouldResignFirstResponderWithInteractionDisabled;
+- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_moveWithEvent:(id)arg1;
 - (bool)cancelTouchTracking;

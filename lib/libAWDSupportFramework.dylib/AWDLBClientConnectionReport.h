@@ -91,16 +91,16 @@
 - (void)setHasConnectionJoiningFailure:(bool)arg1;
 - (void)setConnectionJoiningFailure:(int)arg1;
 - (void)setHasTimestamp:(bool)arg1;
-- (long long)bytesReceived;
 - (long long)bytesSent;
 - (void)setBytesSent:(long long)arg1;
+- (long long)bytesReceived;
 - (bool)hasTimestamp;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

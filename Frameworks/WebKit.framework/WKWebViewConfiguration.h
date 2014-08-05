@@ -38,6 +38,9 @@
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     } _relatedWebView;
+    struct WeakObjCPtr<WKWebView> { 
+        id m_weakReference; 
+    } _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     } _groupIdentifier;
@@ -58,6 +61,7 @@
 @property(setter=_setGroupIdentifier:,copy) NSString * _groupIdentifier;
 @property(setter=_setVisitedLinkProvider:,retain) _WKVisitedLinkProvider * _visitedLinkProvider;
 @property(setter=_setWebsiteDataStore:,retain) _WKWebsiteDataStore * _websiteDataStore;
+@property(setter=_setAlternateWebViewForNavigationGestures:) WKWebView * _alternateWebViewForNavigationGestures;
 @property(retain) WKProcessPool * processPool;
 @property(retain) WKPreferences * preferences;
 @property(retain) WKUserContentController * userContentController;
@@ -70,9 +74,11 @@
 
 
 - (void)_setContentProviderRegistry:(id)arg1;
+- (void)_setAlternateWebViewForNavigationGestures:(id)arg1;
 - (void)_setWebsiteDataStore:(id)arg1;
 - (void)_setVisitedLinkProvider:(id)arg1;
 - (void)setUserContentController:(id)arg1;
+- (id)_alternateWebViewForNavigationGestures;
 - (id)_contentProviderRegistry;
 - (id)_groupIdentifier;
 - (id)_websiteDataStore;

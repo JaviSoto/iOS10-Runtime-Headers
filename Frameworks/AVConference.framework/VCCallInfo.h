@@ -14,6 +14,7 @@
     NSDictionary *relayUpdate;
     unsigned int auNumber;
     unsigned int maxBandwidth;
+    unsigned int cellBandwith;
     int cellTech;
     boolvideoIsPaused;
     boolisVideoQualityDegraded;
@@ -43,6 +44,7 @@
 @property(retain) NSDictionary * relayUpdate;
 @property unsigned int auNumber;
 @property unsigned int maxBandwidth;
+@property unsigned int cellBandwith;
 @property(copy) NSString * participantID;
 @property int cellTech;
 @property bool isVideoQualityDegraded;
@@ -64,6 +66,7 @@
 - (void)setVisibleRectCropping:(unsigned int)arg1;
 - (unsigned int)visibleRectCropping;
 - (void)setIsVideoQualityDegraded:(bool)arg1;
+- (int)cellTech;
 - (void)setRelayRequest:(id)arg1;
 - (id)relayRequest;
 - (bool)supportsDynamicContentsRectWithAspectPreservation;
@@ -94,7 +97,8 @@
 - (id)connectionData;
 - (bool)supportSDPCompression;
 - (void)resetLastGoodVideoQualityTime:(double)arg1;
-- (int)cellTech;
+- (unsigned int)cellBandwith;
+- (void)setCellBandwith:(unsigned int)arg1;
 - (void)setCellTech:(int)arg1;
 - (bool)supportsDynamicMaxBitrate;
 - (bool)isVideoQualityDegraded;

@@ -7,7 +7,7 @@
 
 + (void)disableLayersAsSnapshots;
 + (void)enableLayersAsSnapshots;
-+ (id)fetchViewHierarchy;
++ (id)fetchViewHierarchyWithOptions:(id)arg1;
 + (unsigned long long)minorVersion;
 + (unsigned long long)majorVersion;
 + (void)_collectClassInfoForSubviews:(id)arg1;
@@ -16,6 +16,7 @@
 + (id)_snapshotMethodForView:(id)arg1;
 + (id)_primaryWindowFromWindows:(id)arg1;
 + (id)_deepCopyLayer:(id)arg1;
++ (id)fetchViewHierarchy;
 + (id)_layerInfo:(id)arg1;
 + (id)_collectSubviewInfoForView:(id)arg1 representedLayer:(id)arg2;
 + (id)_layerInTree:(id)arg1 representingView:(id)arg2;

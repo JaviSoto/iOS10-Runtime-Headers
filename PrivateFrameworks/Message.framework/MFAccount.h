@@ -28,8 +28,6 @@
 
 + (id)authSchemesForAccountClass;
 + (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
-+ (id)displayedAccountTypeString;
-+ (id)displayedShortAccountTypeString;
 + (id)saslProfileName;
 + (bool)isSSLEditable;
 + (bool)isCommonPortNumber:(unsigned int)arg1;
@@ -53,16 +51,17 @@
 + (id)_accountClass;
 + (id)accountWithProperties:(id)arg1;
 + (bool)shouldHealAccounts;
++ (id)displayedAccountTypeString;
++ (id)displayedShortAccountTypeString;
 + (id)supportedDataclasses;
 + (id)hostname;
 
+- (id)_newConnection;
 - (id)valueInAccountPropertiesForKey:(id)arg1;
 - (id)copyDiagnosticInformation;
 - (id)authenticatedConnection;
 - (id)loginDisabledErrorWithTitle:(id)arg1;
 - (id)inaccessiblePasswordErrorWithTitle:(id)arg1;
-- (id)accountClass;
-- (id)syncStoreIdentifier;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
 - (bool)shouldDisplayHostnameInErrorMessages;
 - (bool)enableAccount;
@@ -104,7 +103,6 @@
 - (void)setPortNumber:(unsigned int)arg1;
 - (void)setUsesSSL:(bool)arg1;
 - (bool)_connectAndAuthenticate:(id)arg1;
-- (id)_newConnection;
 - (bool)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (unsigned int)portNumber;
 - (unsigned int)defaultPortNumber;
@@ -127,6 +125,8 @@
 - (void)setPersistentAccount:(id)arg1;
 - (void)_setAccountProperties:(id)arg1;
 - (id)initWithPersistentAccount:(id)arg1;
+- (id)syncStoreIdentifier;
+- (id)accountClass;
 - (bool)requiresAuthentication;
 - (void)setPassword:(id)arg1;
 - (void)setDisplayName:(id)arg1;

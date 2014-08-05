@@ -7,10 +7,12 @@
 @interface _UIAlertControllerTextFieldViewController : UITableViewController  {
     NSMutableArray *textFieldViews;
     NSMutableArray *textFields;
+    bool_textFieldsCanBecomeFirstResponder;
     <_UIAlertControllerTextFieldViewControllerContaining> *_container;
 }
 
 @property <_UIAlertControllerTextFieldViewControllerContaining> * container;
+@property bool textFieldsCanBecomeFirstResponder;
 @property(readonly) NSArray * textFields;
 
 
@@ -21,7 +23,9 @@
 - (long long)numberOfTextFields;
 - (void)_updatePreferredContentSize;
 - (void)_returnKeyPressedInTextField:(id)arg1;
+- (bool)textFieldsCanBecomeFirstResponder;
 - (void)removeAllTextFields;
+- (void)setTextFieldsCanBecomeFirstResponder:(bool)arg1;
 - (id)textFields;
 - (id)addTextFieldWithPlaceholder:(id)arg1 isSecure:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;

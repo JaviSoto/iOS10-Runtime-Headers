@@ -22,6 +22,7 @@
 - (void)_popNextBatchAndContinue;
 - (void)_pushTaskDidFinishWithError:(id)arg1;
 - (bool)_prepareResourcesToUploadInBatch:(id)arg1 error:(id*)arg2;
+- (bool)_discardResourcesToUploadFromBatch:(id)arg1 error:(id*)arg2;
 - (bool)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id*)arg2;
 - (void)_doOneIteration;
 - (id)initWithEngineLibrary:(id)arg1;

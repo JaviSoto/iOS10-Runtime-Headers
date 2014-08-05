@@ -100,9 +100,9 @@
 - (unsigned long long)_statusState;
 - (void)_resetForFailedPasscode:(bool)arg1;
 - (void)_clearBrightnessChangeTimer;
+- (void)updateStatusTextAnimated:(bool)arg1;
 - (void)_noteBioMatchingEnabledDidChange;
 - (void)_noteScreenBrightnessDidChange;
-- (void)updateStatusTextAnimated:(bool)arg1;
 - (void)_updateStatusStateForLockout;
 - (bool)_wantsBiometricAuthentication;
 - (void)setShowsStatusField:(bool)arg1;

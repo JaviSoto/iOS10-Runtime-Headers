@@ -30,8 +30,6 @@
 + (id)sharedInstance;
 
 - (void)reschedule;
-- (void)_killTimer;
-- (void)_timerFired:(id)arg1;
 - (void)_locationDaemonDidLaunch;
 - (void)_calendarNotificationSettingChanged;
 - (void)_timeDidChangeSignificantly;
@@ -43,11 +41,13 @@
 - (void)_syncDidEnd;
 - (void)_syncTimerFired:(id)arg1;
 - (void)_notifyAlarmsFired:(id)arg1;
+- (void)_timerFired:(id)arg1;
 - (void)_populateFinished;
 - (void)_storeAlarms:(id)arg1 nextScheduleLimit:(double)arg2 eventStore:(id)arg3;
 - (void)_adjustFences:(id)arg1;
 - (bool)_populateAlarmTable:(id)arg1;
 - (bool)_haveAlarmsChanged:(id)arg1;
+- (void)_killTimer;
 - (void)_rescheduleTimer;
 - (bool)_isDataProtected;
 - (void)_updateWithForceForAlarmTable:(bool)arg1 forFences:(bool)arg2;
@@ -61,9 +61,9 @@
 - (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
+- (void)stop;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 - (id)_dateFormatter;
 
 @end

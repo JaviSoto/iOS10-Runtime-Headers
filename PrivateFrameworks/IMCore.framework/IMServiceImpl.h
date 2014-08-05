@@ -80,6 +80,7 @@
 @property(retain,readonly) NSDictionary * cardMap;
 @property(readonly) bool handlesChatInvites;
 
++ (bool)systemSupportsSendingAttachmentsOfTypes:(id)arg1 error:(long long*)arg2;
 + (bool)systemSupportsSMSSending;
 + (id)supportedCountryCodes;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;

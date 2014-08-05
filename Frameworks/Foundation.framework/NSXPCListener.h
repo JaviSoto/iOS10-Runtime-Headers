@@ -28,6 +28,7 @@
 - (id)initWithServiceName:(id)arg1;
 - (void)resume;
 - (id)initWithMachServiceName:(id)arg1;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (void)invalidate;
 - (void)setOptions:(unsigned long long)arg1;
@@ -39,7 +40,6 @@
 - (id)_initShared;
 - (void)_setQueue:(id)arg1;
 - (id)serviceName;
-- (void)stop;
 - (id)_xpcConnection;
 
 @end

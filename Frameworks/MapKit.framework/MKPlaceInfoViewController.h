@@ -32,12 +32,6 @@
 @property bool showAttribution;
 
 
-- (double)contactView:(id)arg1 heightForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
-- (long long)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
-- (bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
-- (id)contactView:(id)arg1 cellForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
-- (id)contactHeaderView;
-- (id)initWithContact:(id)arg1;
 - (void)_launchMapsDirectionsWithSource:(id)arg1 destination:(id)arg2 directionsMode:(id)arg3;
 - (void)_showDeal;
 - (void)_launchMaps;
@@ -60,12 +54,16 @@
 - (void)setShowAttribution:(bool)arg1;
 - (void)updateInlineMapWithRefinedMapItem:(id)arg1;
 - (void)setInfoDelegate:(id)arg1;
-- (void)contentSizeDidChange;
+- (double)contactView:(id)arg1 heightForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
+- (long long)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
+- (bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
+- (id)contactView:(id)arg1 cellForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
+- (id)contactHeaderView;
+- (id)initWithContact:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
 - (id)owner;
 - (void)setOwner:(id)arg1;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (void)_updatePreferredContentSize;
 - (void)viewDidLoad;

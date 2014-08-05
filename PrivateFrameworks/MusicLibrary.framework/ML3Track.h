@@ -5,7 +5,6 @@
 @interface ML3Track : ML3Entity  {
 }
 
-+ (id)flattenedChapterDataFromDAAPInfoDictionary:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)databaseTable;
 + (id)_albumArtistProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
@@ -21,6 +20,7 @@
 + (id)_songProtocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (id)importChaptersByParsingAsset:(id)arg1;
++ (id)flattenedChapterDataFromDAAPInfoDictionary:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)flattenedChapterDataFromSyncInfoDictionaries:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)flattenedChapterDataWithImportChapters:(id)arg1 library:(id)arg2 trackPersistentID:(long long)arg3;
 + (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;
@@ -32,6 +32,7 @@
 + (id)composersDefaultOrderingTerms;
 + (id)albumAndArtistDefaultOrderingTerms;
 + (id)artistAllAlbumsDefaultOrderingTerms;
++ (bool)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingConnection:(id)arg3;
 + (bool)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2;
 + (bool)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(id)arg2 deletedFileSize:(long long*)arg3;
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
@@ -46,8 +47,9 @@
 + (id)subselectStatementForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
 + (bool)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4;
-+ (id)extraTablesToDelete;
 + (id)collectionClassesToUpdateBeforeDelete;
++ (id)extraTablesToDelete;
++ (bool)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4 usingConnection:(id)arg5;
 + (bool)libraryDynamicChangeForProperty:(id)arg1;
 + (bool)libraryContentsChangeForProperty:(id)arg1;
 + (id)predicateByOptimizingComparisonPredicate:(id)arg1;
@@ -85,7 +87,7 @@
 - (bool)updateIntegrity;
 - (id)absoluteFilePath;
 - (id)chapterTOC;
-- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3 usingConnection:(id)arg4;
 - (void)createVideoSnapshotAtTime:(double)arg1;
 - (bool)needsVideoSnapshot;
 - (id)_screenshotArtworkDataStoredAsItemArtwork;

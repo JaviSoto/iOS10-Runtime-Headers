@@ -111,8 +111,8 @@
 - (void)setServerSideConfigVersion:(id)arg1;
 - (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
-- (bool)isShuttingDown;
 - (id)personID;
+- (bool)isShuttingDown;
 - (void)setBaseURL:(id)arg1;
 - (id)baseURL;
 - (void)setWorkQueue:(id)arg1;

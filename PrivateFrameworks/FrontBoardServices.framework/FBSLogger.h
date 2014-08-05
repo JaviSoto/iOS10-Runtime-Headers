@@ -5,8 +5,8 @@
 @interface FBSLogger : NSObject  {
 }
 
-+ (id)environment;
 + (bool)isEnabled;
++ (id)environment;
 
 
 @end

@@ -32,10 +32,10 @@
 - (void)_searchRecentsUsingQuery:(id)arg1 synchronously:(bool)arg2 completion:(id)arg3;
 - (void)performRecentsSearch:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)_remoteLibraryWithErrorHandler:(id)arg1;
+- (id)_newConnection;
 - (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3;
 - (unsigned long long)maxDateEventsPerRecentContact;
 - (bool)removeRecentContacts:(id)arg1 error:(out id*)arg2;
-- (id)_newConnection;
 - (void)recordContactEvents:(id)arg1 recentsDomain:(id)arg2 sendingAddress:(id)arg3 userInitiated:(bool)arg4;
 - (id)init;
 - (void)start;

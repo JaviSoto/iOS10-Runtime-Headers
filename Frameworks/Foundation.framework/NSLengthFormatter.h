@@ -6,6 +6,8 @@
 
 @interface NSLengthFormatter : NSFormatter  {
     void *_formatter;
+    bool_isForPersonHeight;
+    void *_reserved[2];
 }
 
 @property(copy) NSNumberFormatter * numberFormatter;
@@ -17,9 +19,9 @@
 - (void)dealloc;
 - (id)unitStringFromMeters:(double)arg1 usedUnit:(long long*)arg2;
 - (void)setForPersonHeightUse:(bool)arg1;
-- (bool)isForPersonHeightUse;
 - (id)stringFromMeters:(double)arg1;
 - (long long)targetUnitFromMeters:(double)arg1;
+- (bool)isForPersonHeightUse;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)stringForObjectValue:(id)arg1;
 - (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;

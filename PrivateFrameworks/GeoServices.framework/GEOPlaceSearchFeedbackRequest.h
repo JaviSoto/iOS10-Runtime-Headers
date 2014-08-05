@@ -79,9 +79,9 @@
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (int)sequenceNumber;
+- (void)setTimestamp:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

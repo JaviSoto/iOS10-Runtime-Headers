@@ -23,8 +23,8 @@
 @property(retain) NSMutableData * data;
 
 
-- (id)urlString;
 - (void)setUrlString:(id)arg1;
+- (id)urlString;
 - (id)data;
 - (void).cxx_destruct;
 - (void)setCompletionHandler:(id)arg1;

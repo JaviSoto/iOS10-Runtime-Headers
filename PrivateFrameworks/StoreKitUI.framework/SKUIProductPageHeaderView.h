@@ -12,8 +12,6 @@
     SKUIItemContentRating *_contentRating;
     SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
     SKUIColorScheme *_colorScheme;
-    UILabel *_facebookFriendsLabel;
-    UIImageView *_facebookLogoImageView;
     double _headerImageHeight;
     UIImageView *_headerImageView;
     UIImageView *_iconImageView;
@@ -35,7 +33,6 @@
 }
 
 @property(copy) NSString * artistName;
-@property(copy) NSString * facebookFriendsString;
 @property(copy) NSString * title;
 @property(copy) NSString * inAppPurchasesString;
 @property(copy) NSString * editorialBadge;
@@ -75,14 +72,12 @@
 - (void)setItemOfferExplanationText:(id)arg1;
 - (void)setInAppPurchasesString:(id)arg1;
 - (void)setHeaderImageHeight:(double)arg1;
-- (void)setFacebookFriendsString:(id)arg1;
 - (void)setEditorialBadge:(id)arg1;
 - (void)setContentRatingArtworkLoader:(id)arg1;
 - (void)setAgeBandString:(id)arg1;
 - (id)itemOfferExplanationTitle;
 - (id)itemOfferExplanationText;
 - (id)inAppPurchasesString;
-- (id)facebookFriendsString;
 - (void)_finishButtonAnimation;
 - (void)_getBottomLayoutProperties:(struct { /* ? */ }**)arg1 origins:(double**)arg2 height:(double*)arg3 forWidth:(double)arg4;
 - (void)_getTopLayoutProperties:(struct { /* ? */ }**)arg1 origins:(double**)arg2 height:(double*)arg3 forWidth:(double)arg4;

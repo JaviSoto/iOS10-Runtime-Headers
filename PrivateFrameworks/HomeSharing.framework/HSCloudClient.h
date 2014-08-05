@@ -47,6 +47,7 @@
 - (void)cancelUpdateJaliscoGeniusDataInProgressWithCompletionHandler:(id)arg1;
 - (void)updateJaliscoGeniusDataWithCompletionHandler:(id)arg1;
 - (void)enableJaliscoGeniusWithCompletionHandler:(id)arg1;
+- (void)loadJaliscoGeniusLearnMoreURLWithCompletionHandler:(id)arg1;
 - (void)downloadGeniusDataWithCompletionHandler:(id)arg1;
 - (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
 - (void)updateJaliscoAppsLibraryForFamilyMemberStoreID:(id)arg1 withReason:(long long)arg2 completionHandler:(id)arg3;

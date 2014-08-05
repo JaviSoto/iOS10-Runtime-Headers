@@ -57,13 +57,13 @@
 - (void)setPayloadSourceFileURL:(id)arg1;
 - (void)setPayloadUpdateObserverWithBlock:(id)arg1;
 - (void)setPreviewUpdateObserverWithBlock:(id)arg1;
-- (id)payloadSourceFileURL;
 - (long long)downsampleStatus;
 - (long long)previewType;
 - (void)setDownsampleStatus:(long long)arg1;
 - (void)setPreviewType:(long long)arg1;
 - (void)setPreviewImage:(id)arg1;
 - (id)initWithPayload:(id)arg1 type:(long long)arg2 previewImage:(id)arg3;
+- (id)payloadSourceFileURL;
 - (id)previewImage;
 - (id)itemProvider;
 - (void)setItemProvider:(id)arg1;

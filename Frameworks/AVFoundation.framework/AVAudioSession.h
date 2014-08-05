@@ -45,6 +45,7 @@
 - (long long)currentHardwareInputNumberOfChannels;
 - (double)currentHardwareSampleRate;
 - (bool)inputIsAvailable;
+- (bool)clearInputPreferences:(id*)arg1;
 - (bool)setIAmTheAssistant:(bool)arg1 error:(id*)arg2;
 - (bool)setDefaultChatMode:(id)arg1 error:(id*)arg2;
 - (bool)silenceOutput:(unsigned long long)arg1 error:(id*)arg2;

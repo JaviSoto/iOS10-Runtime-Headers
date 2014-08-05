@@ -15,11 +15,11 @@
 @property(copy) NSString * headerTitle;
 
 
-- (void)_reload;
 - (id)titleAtIndex:(long long)arg1;
 - (void)setTitle:(id)arg1 atIndex:(long long)arg2;
 - (id)imageAtIndex:(long long)arg1;
 - (void)setImage:(id)arg1 atIndex:(long long)arg2;
+- (void)_reload;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)count;
 - (void).cxx_destruct;

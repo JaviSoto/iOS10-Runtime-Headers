@@ -27,6 +27,7 @@
 
 - (void)setDiagnostics:(id)arg1;
 - (void)setAdditionalInformation:(id)arg1;
+- (void)releaseCachedImages;
 - (id)additionalInformation;
 - (id)diagnostics;
 - (id)_parameterStorage;

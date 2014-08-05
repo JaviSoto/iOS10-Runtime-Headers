@@ -132,7 +132,7 @@
 - (void)didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
 - (void)didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
 - (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
-- (void)didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 date:(id)arg2;
+- (bool)didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 date:(id)arg2;
 - (void)didReceiveError:(unsigned int)arg1 forMessageID:(id)arg2 forceError:(bool)arg3;
 - (void)didReceiveErrorMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didReceiveReplaceMessageID:(int)arg1 forChat:(id)arg2 style:(unsigned char)arg3;

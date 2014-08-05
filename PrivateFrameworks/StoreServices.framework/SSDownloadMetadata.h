@@ -85,6 +85,7 @@
 - (id)copyWritableMetadata;
 - (id)appReceiptData;
 - (id)videoDetailsDictionary;
+- (id)sortTitle;
 - (id)sortCollectionName;
 - (id)sortArtistName;
 - (void)setSortCollectionName:(id)arg1;
@@ -216,7 +217,6 @@
 - (id)newDownloadProperties;
 - (void)setCopyright:(id)arg1;
 - (void)setSortTitle:(id)arg1;
-- (id)sortTitle;
 - (id)numberOfBytesToHash;
 - (id)sinfs;
 - (id)copyXPCEncoding;

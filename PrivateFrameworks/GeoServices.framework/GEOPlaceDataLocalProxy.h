@@ -2,12 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSString, GEOPhoneNumberMUIDMapper, GEOPlaceDataCache, NSMutableSet, NSMutableOrderedSet, NSMapTable;
+@class NSLock, NSString, GEOPhoneNumberMUIDMapper, NSMutableSet, GEOPlaceDataCacheRegister, NSMutableOrderedSet, NSMapTable;
 
 @interface GEOPlaceDataLocalProxy : NSObject <GEOPlaceDataProxy> {
     NSMapTable *_pendingRequests;
     NSLock *_pendingRequestsLock;
-    GEOPlaceDataCache *_cache;
+    GEOPlaceDataCacheRegister *_cacheRegister;
     GEOPhoneNumberMUIDMapper *_phoneNumberMapper;
     NSMutableSet *_requestsInProgress;
     NSMutableOrderedSet *_placeHashes;
@@ -20,7 +20,7 @@
 
 
 - (void)_trackPlaceData:(id)arg1 forGeocodingParameters:(id)arg2;
-- (id)_cachedPlaceForGeocodingParameters:(id)arg1;
+- (id)_cachedPlaceForForwardGeocodeRequest:(id)arg1;
 - (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2 shouldOptimizeWritesToDisk:(bool)arg3;
 - (void)startRequest:(id)arg1 traits:(id)arg2 finished:(id)arg3 networkActivity:(id)arg4 error:(id)arg5;
 - (long long)_invalidationStateForPlace:(id)arg1;

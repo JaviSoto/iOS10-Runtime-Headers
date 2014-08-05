@@ -2,13 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, UISwitch;
 
 @interface UIInputSwitcherView : UIKeyboardMenuView  {
     int m_currentInputModeIndex;
     boolm_keyboardSettingsFromSwitcher;
     NSMutableArray *m_inputModes;
-    boolm_predictionEnabled;
+    UISwitch *m_predictiveSwitch;
 }
 
 @property(retain) NSArray * inputModes;
@@ -24,17 +24,16 @@
 - (void)selectNextInputMode;
 - (void)selectRowForInputMode:(id)arg1;
 - (void)toggleKeyboardPredictionPreference;
-- (bool)selectedRowIsPredictionCell;
 - (bool)keyboardSettingsFromSwitcher;
 - (void)setInputModes:(id)arg1;
 - (void)setKeyboardSettingsFromSwitcher:(bool)arg1;
-- (bool)useItemAtIndexForPredictionToggle:(int)arg1;
 - (id)titleForItemAtIndex:(int)arg1;
 - (id)subtitleFontForItemAtIndex:(int)arg1;
 - (id)subtitleForItemAtIndex:(int)arg1;
 - (id)fontForItemAtIndex:(int)arg1;
 - (id)localizedTitleForItemAtIndex:(int)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
+- (id)predictiveSwitch;
 - (long long)defaultSelectedIndex;
 - (struct CGSize { double x1; double x2; })preferredSize;
 - (void)selectInputMode:(id)arg1;

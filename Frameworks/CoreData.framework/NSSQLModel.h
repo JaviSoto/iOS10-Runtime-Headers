@@ -19,10 +19,10 @@
 
 - (bool)_retainHashHack;
 - (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)_entityMapping;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(bool)arg3 brokenHashVersion:(unsigned long long)arg4;
 - (bool)_generateModel:(id)arg1 error:(id*)arg2;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (void)_addIndexedEntity:(id)arg1;
 - (id)_precomputedKeyOrderForEntity:(id)arg1;
 - (bool)_useSnowLeopardStyleHashing;

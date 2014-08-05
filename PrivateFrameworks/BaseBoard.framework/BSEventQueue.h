@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString, NSHashTable, NSObject<OS_dispatch_queue>, NSMutableArray, BSEventQueueEvent;
+@class NSString, NSArray, NSHashTable, NSObject<OS_dispatch_queue>, NSMutableArray, BSEventQueueEvent;
 
 @interface BSEventQueue : NSObject  {
     NSHashTable *_eventQueueLocks;
@@ -13,30 +13,35 @@
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * queue;
+@property(copy,readonly) NSArray * pendingEvents;
 @property(copy) NSString * name;
 @property(retain) BSEventQueueEvent * executingEvent;
 
 
 - (void)setName:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (id)executingEvent;
 - (bool)hasEventWithName:(id)arg1;
 - (bool)hasEventWithPrefix:(id)arg1;
 - (void)cancelEventsWithName:(id)arg1;
+- (void)flushAllEvents;
+- (void)flushPendingEvents;
 - (id)pendingEvents;
 - (void)executeOrInsertEvent:(id)arg1 atPosition:(int)arg2;
 - (id)initWithName:(id)arg1 onQueue:(id)arg2;
 - (void)_noteQueueDidUnlock;
 - (void)_noteQueueDidLock;
 - (void)relinquishLock:(id)arg1;
-- (void)_noteWillExecuteEvent:(id)arg1;
-- (id)acquireLockForReason:(id)arg1;
 - (void)setExecutingEvent:(id)arg1;
 - (void)_noteWillCancelEventsWithName:(id)arg1 count:(unsigned long long)arg2;
+- (void)flushEvents:(id)arg1;
+- (void)_noteWillExecuteEvent:(id)arg1;
+- (id)acquireLockForReason:(id)arg1;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;
 - (void)executeOrInsertEvents:(id)arg1 atPosition:(int)arg2;
 - (void)_processNextEvent;
 - (void)_noteWillPendEvents:(id)arg1 atPosition:(int)arg2;
-- (id)executingEvent;
+- (bool)_shouldProcessEvent:(id)arg1 enqueuedDuringExecutionOfEvent:(id)arg2;
 - (void)_removeEventQueueLock:(id)arg1;
 - (void)_addEventQueueLock:(id)arg1;
 - (id)queue;

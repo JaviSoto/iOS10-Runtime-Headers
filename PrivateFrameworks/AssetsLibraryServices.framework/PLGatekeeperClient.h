@@ -30,6 +30,7 @@
 + (id)sharedInstance;
 
 - (void)setCPLDownloadTransactionsLostHandler:(id)arg1;
+- (id)getCPLState;
 - (void)setPreviewAssetLocalIdentifiers:(id)arg1;
 - (id)previewAssetLocalIdentifiers;
 - (id)previewRenderedContentURLAtIndex:(unsigned long long)arg1;
@@ -55,6 +56,7 @@
 - (void)rebuildAllThumbnails;
 - (void)resetDupesAnalysis;
 - (void)rebuildCloudFeed;
+- (void)getNonLocalResourceInfo:(id)arg1;
 - (void)getSearchIndexProgress:(id)arg1;
 - (void)setSearchIndexPaused:(bool)arg1 andWait:(bool)arg2;
 - (void)dropSearchIndexWithCompletion:(id)arg1;
@@ -89,6 +91,7 @@
 - (void)recoverFromCrashIfNeeded;
 - (void)clearChangeStore;
 - (bool)hasCompletedMomentAnalysis;
+- (id)incompleteRestoreProcesses;
 - (bool)hasCompletedRestorePostProcessing;
 - (void)recalculateCachedAlbumCounts;
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;

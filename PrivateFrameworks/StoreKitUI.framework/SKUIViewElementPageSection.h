@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIViewElementLayoutContext;
+@class NSString, SKUIViewElementLayoutContext, SKUICollectionViewCell<SKUIViewElementView>;
 
-@interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver> {
+@interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     Class _cellClass;
     struct UIEdgeInsets { 
         double top; 
@@ -14,6 +14,7 @@
     } _cellContentInset;
     SKUIViewElementLayoutContext *_cellLayoutContext;
     double _firstSectionTopInset;
+    SKUICollectionViewCell<SKUIViewElementView> *_lastCell;
     bool_rendersWithPerspective;
     NSString *_reuseIdentifier;
     double _sectionBottomInset;
@@ -40,18 +41,20 @@
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (bool)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (bool)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
+- (void)expandEditorialForLabelElement:(id)arg1 indexPath:(id)arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
+- (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
+- (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
+- (bool)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(bool)arg3;
 - (void)prefetchResourcesWithReason:(long long)arg1;
-- (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
-- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 

@@ -10,6 +10,7 @@
 @class NSError, NSString, NSURL, NSURLSession, NSArray, NSValue, NSDictionary, NSURLResponse, NSURLRequest, NSObject<OS_dispatch_queue>;
 
 @interface NSURLSessionTask : NSObject <NSCopying> {
+    bool__shouldSkipPreferredClientCertificateLookup;
     bool__shouldPipelineHTTP;
     bool__shouldUsePipelineHeuristics;
     bool__shouldSkipPipelineProbe;
@@ -91,6 +92,7 @@
 @property long long _priorityValue;
 @property struct __PerformanceTiming { }* _performanceTiming;
 @property(copy) NSDictionary * _backgroundTaskTimingData;
+@property bool _shouldSkipPreferredClientCertificateLookup;
 @property(retain) NSDictionary * _legacySocketStreamProperties;
 @property(retain) struct _CFHSTSPolicy { }* _cfHSTS;
 @property(retain) struct _CFURLCache { }* _cfCache;
@@ -158,6 +160,7 @@
 - (id)_legacySocketStreamProperties;
 - (void)set_ledBellyFallbackURL:(id)arg1;
 - (void)set_priorityValue:(long long)arg1;
+- (void)set_shouldSkipPreferredClientCertificateLookup:(bool)arg1;
 - (void)setPriority:(float)arg1;
 - (void)set_strictContentLength:(bool)arg1;
 - (void)set_legacySocketStreamProperties:(id)arg1;
@@ -168,6 +171,8 @@
 - (void)setTaskIdentifier:(unsigned long long)arg1;
 - (void)set_currentCFURLRequest:(struct _CFURLRequest { }*)arg1;
 - (id)originalRequest_mainDocumentURL;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
+- (void)_releasePreventIdleSleepAssertionIfAppropriate;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (id)_ledBellyServiceIdentifier;
 - (id)_ledBellyFallbackURL;

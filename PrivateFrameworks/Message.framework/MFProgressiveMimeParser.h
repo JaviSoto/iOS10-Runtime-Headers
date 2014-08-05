@@ -25,7 +25,6 @@
 
 
 - (id)currentPart;
-- (id)topLevelPart;
 - (void)noteDataLengthChanged:(unsigned int)arg1;
 - (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
 - (void)_continueParsingBody;
@@ -34,6 +33,7 @@
 - (id)_currentBoundary;
 - (void)_continueParsing;
 - (void)_initializeTopLevelPartWithHeaders:(id)arg1;
+- (id)topLevelPart;
 - (id)context;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;

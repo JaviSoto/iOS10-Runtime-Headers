@@ -7,7 +7,7 @@
 @interface _UIAlertControllerShimPresenter : NSObject <UIPopoverControllerDelegate> {
     UIPopoverController *_popoverController;
     <UIPopoverControllerDelegate> *_popoverDelegate;
-    UIViewController *_presentedViewController;
+    UIViewController *_inPopoverViewController;
     _UIAlertControllerShimPresenterWindow *_window;
     UIAlertController *_alertController;
 }
@@ -30,6 +30,7 @@
 - (id)window;
 - (void)dealloc;
 - (id)popoverDelegate;
+- (void)_tearDownInPopoverViewController;
 - (void)_createWindowIfNecessary;
 - (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3 completion:(id)arg4;
 - (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(bool)arg2 completion:(id)arg3;

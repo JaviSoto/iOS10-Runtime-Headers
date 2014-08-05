@@ -253,6 +253,7 @@
 - (void)_cancelInteractiveTransition;
 - (unsigned long long)_subviewIndexAboveBackground;
 - (id)_nthNavigationItemFromTop:(long long)arg1;
+- (long long)effectiveInterfaceOrientation;
 - (bool)forceFullHeightInLandscape;
 - (void)_addItem:(id)arg1 withEffectiveDelegate:(id)arg2 transition:(int)arg3;
 - (void)setLocked:(bool)arg1;

@@ -19,11 +19,11 @@
 - (id)elapsedTimeAsString:(int)arg1;
 - (unsigned long long)elapsedTimeAsNumber:(int)arg1;
 - (unsigned long long)elapsedTimeInNanoseconds;
+- (void)stop;
 - (id)init;
 - (void)start;
 - (void).cxx_destruct;
 - (id)description;
 - (void)reset;
-- (void)stop;
 
 @end

@@ -2,12 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Social.framework/Social
  */
 
-@class UIImage, SLURLPreviewGenerator, UIView;
+@class SLURLPreviewGenerator, UIImageView, UIImage, UIView;
 
 @interface SLSheetURLPreviewView : SLSheetImagePreviewView  {
     UIImage *_shadowImage;
     SLURLPreviewGenerator *_webPreviewGenerator;
     UIView *_placeholderPreviewView;
+    UIImageView *_placeholderGlyphView;
 }
 
 

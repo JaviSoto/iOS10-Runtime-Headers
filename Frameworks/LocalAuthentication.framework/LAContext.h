@@ -20,6 +20,12 @@
 @property(getter=isFallbackButtonVisible) bool fallbackButtonVisible;
 
 
+- (void)setFallbackButtonVisible:(bool)arg1;
+- (bool)isFallbackButtonVisible;
+- (void)setCancelButtonVisible:(bool)arg1;
+- (bool)isCancelButtonVisible;
+- (void)setExternalizedContext:(id)arg1;
+- (void)setCreatorDisplayName:(id)arg1;
 - (void)setLocalizedFallbackTitle:(id)arg1;
 - (bool)canEvaluatePolicy:(long long)arg1 error:(id*)arg2;
 - (void)evaluatePolicy:(long long)arg1 localizedReason:(id)arg2 reply:(id)arg3;
@@ -27,18 +33,12 @@
 - (id)initWithExternalizedContext:(id)arg1;
 - (id)evaluatePolicy:(long long)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)localizedFallbackTitle;
-- (bool)isFallbackButtonVisible;
-- (bool)isCancelButtonVisible;
-- (void)setFallbackButtonVisible:(bool)arg1;
-- (void)setCancelButtonVisible:(bool)arg1;
-- (void)setExternalizedContext:(id)arg1;
-- (void)setCreatorDisplayName:(id)arg1;
 - (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;
-- (id)externalizedContext;
-- (id)creatorDisplayName;
 - (void)enterPassword:(id)arg1 reply:(id)arg2;
 - (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(id)arg3;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(id)arg3;
+- (id)externalizedContext;
+- (id)creatorDisplayName;
 - (id)init;
 - (void)invalidate;
 - (void).cxx_destruct;

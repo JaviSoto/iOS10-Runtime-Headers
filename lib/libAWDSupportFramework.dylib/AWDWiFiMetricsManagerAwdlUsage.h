@@ -145,8 +145,8 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setStates:(id)arg1;
 - (id)states;
 - (void)setFlags:(unsigned int)arg1;

@@ -2,32 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSString;
-
-@interface MPStoreOfferMediaItemArtwork : MPMediaItemArtwork  {
-    long long _itemPersistentID;
-    NSArray *_screenshotDictionaries;
-    NSArray *_itemArtworkDictionaries;
-    NSArray *_containerArtworkDictionaries;
-    unsigned long long _hash;
-    NSString *_cacheID;
+@interface MPStoreOfferMediaItemArtwork : MPConcreteMediaItemArtwork  {
 }
 
-@property(readonly) NSString * cacheID;
 
-
-- (id)cacheID;
-- (id)imageWithSize:(struct CGSize { double x1; double x2; })arg1 artworkCacheID:(id)arg2;
-- (id)albumImageDataWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)imageDataWithSize:(struct CGSize { double x1; double x2; })arg1 atPlaybackTime:(double)arg2;
-- (bool)hasArtworkAvailable;
-- (id)albumImageWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)_bestImageURLForSize:(struct CGSize { double x1; double x2; })arg1 artworkDictionaries:(id)arg2;
-- (id)_imageWithURL:(id)arg1;
-- (id)initWithItemPersistentID:(long long)arg1 screenshotDictionaries:(id)arg2 itemArtworkDictionaries:(id)arg3 containerArtworkDictionaries:(id)arg4;
-- (id)imageWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)imageWithSize:(struct CGSize { double x1; double x2; })arg1 atPlaybackTime:(double)arg2;
+- (id)_artworkDescriptor;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void).cxx_destruct;
 
 @end

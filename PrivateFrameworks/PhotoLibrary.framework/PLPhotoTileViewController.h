@@ -196,6 +196,7 @@
 - (bool)forceNativeScreenScale;
 - (bool)force1XCroppedImage;
 - (id)newCGImageBackedUIImage;
+- (void)_handleFullSizeImageRequestResult:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3;
 - (void)_resetZoomCommon;
 - (float)_calculateZoomScale:(bool)arg1 inView:(id)arg2;
 - (double)minRotatedScale;
@@ -214,6 +215,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })overlayInsets;
 - (bool)_clientIsWallpaper;
 - (void)_requestFullSizeImage;
+- (void)_removePlaceholderView;
 - (void)_updatePlaceholderViewAnimated:(bool)arg1;
 - (void)_installSubview:(id)arg1;
 - (bool)photoShouldHaveAvalancheBadge;
@@ -270,7 +272,7 @@
 - (void)setTileDelegate:(id)arg1;
 - (void)setTVOut:(bool)arg1;
 - (id)initWithModelPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
-- (void)removePlaceholderView;
+- (void)didLoadImage;
 - (void)showErrorPlaceholderView;
 - (void)updateCloudDownloadProgress:(double)arg1;
 - (id)cachingImageManager;

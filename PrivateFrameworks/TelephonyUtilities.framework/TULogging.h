@@ -8,8 +8,8 @@
 + (bool)sendDirectoryToCrashReporter:(id)arg1 error:(id*)arg2;
 + (void)unregisterForShouldLogChangedNotification;
 + (void)registerForShouldLogChangedNotification;
-+ (bool)shouldLogType:(id)arg1;
 + (void)logType:(id)arg1 topic:(id)arg2 category:(id)arg3 backtrace:(bool)arg4 format:(id)arg5;
++ (bool)shouldLogType:(id)arg1;
 
 
 @end

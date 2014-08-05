@@ -62,11 +62,11 @@
 - (id)_boundPublisherForPersonID:(id)arg1;
 - (bool)isInRetryState;
 - (id)nextActivityDate;
+- (void)stop;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)start;
 - (id)delegate;
 - (void).cxx_destruct;
-- (void)stop;
 
 @end

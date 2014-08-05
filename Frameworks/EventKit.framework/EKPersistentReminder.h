@@ -18,19 +18,19 @@
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 
-- (id)parentID;
-- (id)externalURI;
 - (bool)validate:(id*)arg1;
 - (void)setDueDateAllDay:(bool)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
 - (void)setDueDate:(id)arg1;
 - (void)setParentID:(id)arg1;
+- (id)parentID;
 - (void)setCompletionDate:(id)arg1;
 - (id)completionDate;
 - (bool)dueDateAllDay;
 - (id)dueDateTimeZone;
 - (id)dueDate;
 - (void)_sendModifiedNote;
+- (id)externalURI;
 - (void)setDisplayOrder:(unsigned long long)arg1;
 - (unsigned long long)displayOrder;
 - (int)entityType;

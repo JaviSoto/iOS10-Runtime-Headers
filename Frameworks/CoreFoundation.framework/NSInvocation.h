@@ -25,12 +25,12 @@
 
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
++ (id)_gkInvocationWithBlock:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
-+ (id)_gkInvocationWithBlock:(id)arg1;
 + (id)invocationWithBlock:(id)arg1;
 + (void)executeBlock:(id)arg1;
 
@@ -59,7 +59,6 @@
 - (bool)_hasBlockArgument;
 - (bool)wantsReturnValue;
 - (void)_webkit_invokeAndHandleException:(id)arg1;
-- (bool)mf_shouldLogInvocation;
 - (void)_gkClearArgumentAtIndex:(unsigned long long)arg1;
 - (void)__gkPrepareForFakeCallbackWithNoData:(bool)arg1 orError:(id)arg2;
 - (void)_gkPrintBlockSignature;
@@ -72,5 +71,6 @@
 - (void)_gkCopyArguments;
 - (void)_gkInvokeOnceWithTarget:(id)arg1;
 - (bool)_gkHasReplyBlock;
+- (bool)mf_shouldLogInvocation;
 
 @end

@@ -140,11 +140,13 @@
         unsigned int loadingOffscreenViews : 1; 
         unsigned int updating : 1; 
         unsigned int updatingVisibleCells : 1; 
+        unsigned int preRotationBoundsSet : 1; 
     } _collectionViewFlags;
     struct CGPoint { 
         double x; 
         double y; 
     } _lastLayoutOffset;
+    bool_usesLegacyExternalInputSupport;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -162,6 +164,7 @@
 @property(getter=_collectionViewData,readonly) UICollectionViewData * collectionViewData;
 @property(getter=_visibleViews,readonly) NSArray * visibleViews;
 @property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
+@property(getter=_usesLegacyExternalInputSupport,setter=_setUsesLegacyExternalInputSupport:) bool usesLegacyExternalInputSupport;
 @property(getter=_currentTouch,setter=_setCurrentTouch:,retain) UITouch * currentTouch;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
@@ -176,6 +179,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)_setUsesLegacyExternalInputSupport:(bool)arg1;
 - (id)_navigationCompletion;
 - (double)_trackedLayoutValueForKey:(id)arg1;
 - (void)_trackLayoutValue:(double)arg1 forKey:(id)arg2;
@@ -256,6 +260,7 @@
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(bool)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(bool)arg2 notifyDelegate:(bool)arg3;
 - (void)_unhighlightAllItemsAndHighlightGlobalItem:(long long)arg1;
+- (bool)_usesLegacyExternalInputSupport;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3 notifyDelegate:(bool)arg4;
 - (void)_deselectAllAnimated:(bool)arg1 notifyDelegate:(bool)arg2;
 - (void)_invalidateLayoutIfNecessary;

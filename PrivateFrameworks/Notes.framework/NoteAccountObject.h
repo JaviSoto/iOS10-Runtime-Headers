@@ -19,10 +19,10 @@
 @property(retain) NSDictionary * constraints;
 
 
+- (void)setConstraints:(id)arg1;
 - (bool)validateDefaultStore:(id*)arg1 error:(id*)arg2;
 - (id)pathToConstraintsPlist;
 - (void)setPathToConstraintsPlist:(id)arg1;
-- (void)setConstraints:(id)arg1;
 - (id)basicAccountIdentifier;
 - (id)storeForExternalId:(id)arg1;
 - (bool)shouldMarkNotesAsDeleted;

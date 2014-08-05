@@ -112,10 +112,6 @@
 + (void)setChatItemRulesClass:(Class)arg1;
 + (void)_initializeFMF;
 + (Class)chatItemRulesClass;
-+ (void)_postRefreshActiveChatNotification;
-+ (void)_handleOperationalAccountsChanged:(id)arg1;
-+ (void)_handleLoginStatusChange:(id)arg1;
-+ (void)initialize;
 
 - (id)dateCreated;
 - (void)_setAccount:(id)arg1;
@@ -254,6 +250,7 @@
 - (void)_clearTypingIndicatorTimeout;
 - (void)_clearIncomingTypingIndicators;
 - (void)_replaceChatItemsForItem:(id)arg1 withChatItemsForItem:(id)arg2;
+- (void)_insertChatItemsForItem:(id)arg1;
 - (void)_mapSendingItem:(id)arg1;
 - (bool)_isDuplicate:(id)arg1;
 - (bool)_handleIncomingItem:(id)arg1 shouldQueue:(bool)arg2;

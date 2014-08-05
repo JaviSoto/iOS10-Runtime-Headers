@@ -41,13 +41,14 @@
 @property(readonly) NSArray * supportedDataclasses;
 @property(readonly) int accountServiceType;
 
++ (id)accountTypeString;
 + (id)dataclassesBoundToSingleAccount;
 + (id)dataclassesBoundToSyncAccount;
 + (id)dataclassesBoundToPrimaryAccount;
-+ (id)accountTypeString;
 
 - (bool)useCellularForDataclass:(id)arg1;
 - (void)updateAccountPropertiesWithHandler:(id)arg1;
+- (id)syncStoreIdentifier;
 - (void)setFmipToken:(id)arg1;
 - (void)setNeedsToVerifyTerms:(bool)arg1;
 - (bool)needsToVerifyTerms;
@@ -88,7 +89,6 @@
 - (id)fmipToken;
 - (void)authenticateWithHandler:(id)arg1;
 - (id)personID;
-- (id)syncStoreIdentifier;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (id)initWithAccountIdentifier:(id)arg1;

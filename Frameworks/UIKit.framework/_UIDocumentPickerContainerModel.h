@@ -32,7 +32,7 @@
 - (void)setPickableTypes:(id)arg1;
 - (id)pickableTypes;
 - (void)setSortOrder:(int)arg1;
-- (void)refreshItem:(id)arg1;
+- (void)refreshItem:(id)arg1 thumbnailOnly:(bool)arg2;
 - (id)displayTitle;
 - (void)stopMonitoringChanges;
 - (void)startMonitoringChanges;

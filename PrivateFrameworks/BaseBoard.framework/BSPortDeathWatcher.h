@@ -2,23 +2,31 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSLock, BSDispatchSource;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSObject<OS_dispatch_queue>, BSMachSendRight, BSDispatchSource;
 
 @interface BSPortDeathWatcher : NSObject  {
-    NSLock *_lock;
+    NSObject<OS_dispatch_queue> *_queue;
     BSDispatchSource *_source;
-    unsigned int _port;
+    BSMachSendRight *_sendRight;
+
+  /* Unexpected information at end of encoded ivar type: ? */
+  /* Error parsing encoded ivar type info: @? */
+    id _handler;
+
 }
 
-@property(readonly) unsigned int port;
+@property(copy,readonly) BSMachSendRight * sendRight;
 
 
-- (bool)isWatchingValidPort;
-- (id)initWithPort:(unsigned int)arg1 deathHandler:(id)arg2;
 - (id)initWithPort:(unsigned int)arg1 queue:(id)arg2 deathHandler:(id)arg3;
-- (id)init;
-- (unsigned int)port;
+- (void)queue_handlePortDeathEvent;
+- (id)initWithSendRight:(id)arg1 queue:(id)arg2 deathHandler:(id)arg3;
 - (void)invalidate;
 - (void)dealloc;
+- (id)sendRight;
 
 @end

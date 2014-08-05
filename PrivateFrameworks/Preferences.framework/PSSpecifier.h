@@ -46,6 +46,7 @@
 @property SEL controllerLoadAction;
 @property bool showContentString;
 
++ (id)deleteButtonSpecifierWithName:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (long long)keyboardTypeForString:(id)arg1;
 + (long long)autoCapsTypeForString:(id)arg1;
 + (long long)autoCorrectionTypeForNumber:(id)arg1;
@@ -55,12 +56,11 @@
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
 + (id)groupSpecifierWithName:(id)arg1;
 + (id)emptyGroupSpecifier;
-+ (id)deleteButtonSpecifierWithName:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-+ (id)groupSpecifierWithFooterLinkButton:(id)arg1;
-+ (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2;
 + (id)groupSpecifierWithFooterText:(id)arg1 linkButtons:(id)arg2;
 + (id)groupSpecifierWithFooterText:(id)arg1 linkButton:(id)arg2;
 + (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2 linkButtons:(id)arg3;
++ (id)groupSpecifierWithFooterLinkButton:(id)arg1;
++ (id)groupSpecifierWithHeader:(id)arg1 footer:(id)arg2;
 + (id)acui_specifierForAppWithBundleID:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;
 + (id)acui_linkListCellSpecifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5;
 + (id)acui_specifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;

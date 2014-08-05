@@ -23,6 +23,7 @@
 - (id)initWithContainerID:(id)arg1;
 - (id)containerID;
 - (void)setContainerID:(id)arg1;
+- (void)clear;
 - (double)delay;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

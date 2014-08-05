@@ -139,8 +139,8 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (int)itemCount;
-- (void)setTimestamp:(long long)arg1;
 - (long long)timestamp;
+- (void)setTimestamp:(long long)arg1;
 - (void)setDuration:(long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

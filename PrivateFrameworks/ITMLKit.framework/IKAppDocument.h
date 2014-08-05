@@ -2,37 +2,41 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSError, NSString, IKViewElement, IKHeadElement, IKDOMDocument, <IKAppDocumentDelegate>, IKAppContext, JSManagedValue, IKJSNavigationDocument, IKJSObject;
+@class NSMutableDictionary, <IKAppDocumentDelegate>, IKHeadElement, NSString, IKDOMDocument, IKAppContext, IKViewElement, NSMutableSet, IKJSNavigationDocument, JSManagedValue, IKJSObject, NSError;
 
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge> {
     bool_updated;
     bool_subtreeUpdated;
     IKAppContext *_appContext;
     IKDOMDocument *_jsDocument;
-    <IKAppDocumentDelegate> *_delegate;
     NSString *_identifier;
     IKHeadElement *_headElement;
     IKViewElement *_navigationBarElement;
     IKViewElement *_templateElement;
-    NSString *_clientDocumentIdentifier;
     NSError *_error;
+    <IKAppDocumentDelegate> *_delegate;
+    double _impressionThreshold;
     IKJSObject *_owner;
+    NSMutableSet *_impressions;
+    NSMutableDictionary *_impressionsDict;
     JSManagedValue *_jsManagedDocument;
 }
 
-@property <IKAppDocumentDelegate> * delegate;
 @property(retain) NSString * identifier;
 @property(retain) IKHeadElement * headElement;
 @property(retain) IKViewElement * navigationBarElement;
 @property(retain) IKViewElement * templateElement;
-@property(retain) NSString * clientDocumentIdentifier;
 @property(retain) NSError * error;
+@property <IKAppDocumentDelegate> * delegate;
 @property(getter=isUpdated) bool updated;
 @property(getter=isSubtreeUpdated) bool subtreeUpdated;
+@property double impressionThreshold;
 @property(readonly) IKAppContext * appContext;
 @property(readonly) IKDOMDocument * jsDocument;
 @property(readonly) IKJSObject * owner;
 @property(readonly) IKJSNavigationDocument * navigationDocument;
+@property(retain) NSMutableSet * impressions;
+@property(retain) NSMutableDictionary * impressionsDict;
 @property(retain) JSManagedValue * jsManagedDocument;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -41,30 +45,37 @@
 
 
 - (void)setJsManagedDocument:(id)arg1;
-- (void)setClientDocumentIdentifier:(id)arg1;
 - (id)headElement;
-- (id)clientDocumentIdentifier;
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)onUpdate;
 - (void)onNeedsUpdateWithCompletion:(id)arg1;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
-- (void)scrollToTop;
-- (void)setNeedsUpdateForDocument:(id)arg1;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
+- (void)scrollToTop;
+- (id)recordedImpressions;
+- (id)snapshotImpressions;
+- (void)setNeedsUpdateForDocument:(id)arg1;
 - (void)updateForDocument:(id)arg1;
 - (bool)isSubtreeUpdated;
+- (void)setImpressionThreshold:(double)arg1;
 - (void)setSubtreeUpdated:(bool)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (id)navigationBarElement;
 - (void)setHeadElement:(id)arg1;
 - (void)setTemplateElement:(id)arg1;
 - (bool)_clearUpdatesForElement:(id)arg1;
+- (void)_impressionDataFromViewElements:(id)arg1 timestamp:(long long)arg2 impressions:(id)arg3 impressionsDict:(id)arg4;
+- (id)impressionsDict;
+- (double)impressionThreshold;
+- (void)setImpressionsDict:(id)arg1;
+- (void)setImpressions:(id)arg1;
 - (id)templateElement;
 - (id)navigationDocument;
 - (id)jsManagedDocument;
 - (void)_updateWithXML:(id)arg1;
 - (id)jsDocument;
 - (id)appContext;
+- (void)recordImpressionsForViewElements:(id)arg1;
 - (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id)arg2;
 - (void)onDisappear;
 - (void)onAppear;
@@ -72,6 +83,7 @@
 - (void)onUnload;
 - (void)setUpdated:(bool)arg1;
 - (id)owner;
+- (id)impressions;
 - (bool)isUpdated;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;

@@ -2,10 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageReviewsViewController, NSURLRequest, SKUINetworkErrorViewController, SKUIProductPage, SKUIClientContext, SKUIFacebookLikeStatus, SKUIIncompatibleAppViewController, SKUILoadProductPageOperation, NSString, SSMetricsPageEvent, SKUIMessageBanner, SKUIProductPageDetailsViewController, SKUIItem, SKUIProductPagePlaceholderViewController, NSOperationQueue, SKUISwooshArrayViewController, UIView, SKUIProductPageHeaderViewController, <SKUIIPadProductPageDelegate>, SKUIMetricsController, ACAccountStore, NSURL;
+@class SKUIProductPageReviewsViewController, NSURLRequest, SKUINetworkErrorViewController, SKUIProductPage, SKUIClientContext, SKUIIncompatibleAppViewController, SKUILoadProductPageOperation, NSString, SSMetricsPageEvent, SKUIMessageBanner, SKUIProductPageDetailsViewController, SKUIItem, SKUIProductPagePlaceholderViewController, UIView, NSOperationQueue, SKUISwooshArrayViewController, SKUIProductPageHeaderViewController, <SKUIIPadProductPageDelegate>, SKUIMetricsController, NSURL;
 
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, SKUIMessageBannerDelegate> {
-    ACAccountStore *_accountStore;
     bool_askPermission;
     SKUIMessageBanner *_banner;
     NSString *_bannerText;
@@ -14,7 +13,6 @@
     <SKUIIPadProductPageDelegate> *_delegate;
     SKUIProductPageDetailsViewController *_detailsViewController;
     bool_didSendCannotOpen;
-    SKUIFacebookLikeStatus *_facebookLikeStatus;
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIItem *_item;
     SKUIIncompatibleAppViewController *_incompatibleViewController;
@@ -57,10 +55,8 @@
 - (void)_showError:(id)arg1;
 - (void)_showViewController:(id)arg1;
 - (id)_viewControllerForSectionIndex:(long long)arg1;
-- (void)_setFacebookLikeStatus:(id)arg1;
 - (void)_reloadHeaderViewController;
 - (void)_sendCannotOpen;
-- (void)_reloadFacebookLikeStatus;
 - (id)_reviewsViewController;
 - (void)_selectSectionIndex:(long long)arg1;
 - (void)_showBanner;
@@ -88,7 +84,6 @@
 - (void)setAskPermission:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)_accountStoreDidChangeNotification:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;

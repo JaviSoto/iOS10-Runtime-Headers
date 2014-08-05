@@ -39,6 +39,7 @@
 - (void)resume;
 - (void)setBehavior:(unsigned long long)arg1;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (void)setTarget:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -46,7 +47,6 @@
 - (id)delegate;
 - (void)dealloc;
 - (id).cxx_construct;
-- (void)stop;
 - (id)target;
 - (void)_step;
 - (unsigned long long)behavior;

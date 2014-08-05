@@ -24,7 +24,6 @@
 - (void)setUploadedAssets:(id)arg1;
 - (id)uploadedAssets;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (void)removeConflictLoserEtag:(id)arg1;
 - (void)updateFromFSAtPath:(id)arg1;
 - (bool)isMissingUploadsWithDiffs:(unsigned long long)arg1;
 - (id)initWithServerVersion:(id)arg1;

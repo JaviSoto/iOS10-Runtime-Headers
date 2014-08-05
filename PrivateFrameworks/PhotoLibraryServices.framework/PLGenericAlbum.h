@@ -98,7 +98,6 @@
 + (id)uuidFromGroupURL:(id)arg1;
 + (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)_insertNewAlbumWithKind:(int)arg1 title:(id)arg2 lastInterestingDate:(id)arg3 intoLibrary:(id)arg4;
-+ (id)includeUnpushedParentsForAlbums:(id)arg1 limit:(unsigned long long)arg2;
 + (id)_unpushedParentsOfAlbums:(id)arg1;
 + (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumsWithCloudGUID:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -112,6 +111,7 @@
 + (id)insertNewFolderWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)albumWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsWithCloudGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)includeUnpushedParentsForAlbums:(id)arg1 limit:(unsigned long long)arg2;
 + (id)albumsToUploadInitiallyInLibrary:(id)arg1 limit:(unsigned long long)arg2;
 + (id)albumsForStreamID:(id)arg1 inLibrary:(id)arg2;
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;

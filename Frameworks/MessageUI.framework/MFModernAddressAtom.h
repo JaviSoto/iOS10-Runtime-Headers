@@ -42,6 +42,7 @@
 - (void)addressBookDidChange:(id)arg1;
 - (id)initWithAddress:(id)arg1 presentationOptions:(unsigned long long)arg2 isPhoneNumber:(bool)arg3 maxWidth:(double)arg4 addressBook:(void*)arg5;
 - (void)_updateABPerson;
+- (id)presentationOptionsDescription;
 - (void)_displayStringDidChange;
 - (void)_updateDisplayStringIncludingABPerson:(bool)arg1;
 - (void)setPresentationOptions:(unsigned long long)arg1;
@@ -62,6 +63,7 @@
 - (bool)respondsToSelector:(SEL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (struct CGPoint { double x1; double x2; })baselinePoint;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_highlightBounds;
 - (void)setHighlighted:(bool)arg1;

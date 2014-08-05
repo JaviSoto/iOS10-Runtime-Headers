@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class NSRecursiveLock, NSString, NSDictionary, NSHashTable, NSMutableSet, NSNumber;
+@class NSHashTable, NSString, NSRecursiveLock, NSThread, NSRunLoop, NSDictionary, NSMutableSet, NSNumber;
 
 @interface CUTWiFiManager : NSObject <CUTPowerMonitorDelegate> {
+    bool_shouldAutoAssociateAsForeground;
     bool_isHostingHotSpot;
     bool_isWifiEnabled;
     bool_isWakeOnWiFiEnabled;
@@ -20,6 +21,9 @@
     void *_wifiDevice;
     void *_dynamicStore;
     NSDictionary *_lastWiFiPowerInfo;
+    NSThread *_wifiThread;
+    struct __CFRunLoopSource { } *_runLoopSource;
+    NSRunLoop *_wifiRunLoop;
 }
 
 @property(readonly) bool isWiFiEnabled;
@@ -34,8 +38,12 @@
 @property(retain,readonly) NSNumber * wiFiScaledRSSI;
 @property(retain,readonly) NSNumber * wiFiScaledRate;
 @property(retain,readonly) NSString * currentSSID;
+@property(readonly) bool autoAssociateWiFiAsForegroundClient;
 @property(readonly) bool autoAssociateWiFi;
 @property(retain) NSRecursiveLock * lock;
+@property(retain) NSThread * wifiThread;
+@property(retain) NSRunLoop * wifiRunLoop;
+@property struct __CFRunLoopSource { }* runLoopSource;
 @property void* wifiManager;
 @property void* wifiDevice;
 @property void* currentNetwork;
@@ -66,7 +74,12 @@
 - (bool)willTryToAutoAssociateWiFiNetwork;
 - (bool)isHostingWiFiHotSpot;
 - (void)removeDelegate:(id)arg1;
-- (void)addDelegate:(id)arg1;
+- (void)setWifiRunLoop:(id)arg1;
+- (id)wifiRunLoop;
+- (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
+- (struct __CFRunLoopSource { }*)runLoopSource;
+- (void)setWifiThread:(id)arg1;
+- (id)wifiThread;
 - (void)setLastWiFiPowerInfo:(id)arg1;
 - (id)lastWiFiPowerInfo;
 - (void)setDynamicStore:(void*)arg1;
@@ -83,10 +96,10 @@
 - (id)wowClients;
 - (void)setDelegateMap:(id)arg1;
 - (id)delegateMap;
-- (void)setLock:(id)arg1;
 - (void)setWiFiAutoAssociationTokens:(id)arg1;
 - (id)wiFiAutoAssociationTokens;
 - (bool)isWoWSupported;
+- (bool)autoAssociateWiFiAsForegroundClient;
 - (bool)isWoWEnabled;
 - (bool)hasWiFiAutoAssociationClientToken:(id)arg1;
 - (bool)_isPrimaryCellular;
@@ -94,6 +107,7 @@
 - (void)currentWiFiNetworkPowerUsageWithCompletion:(id)arg1;
 - (double)_wifiMeasurementErrorForInterval:(double)arg1;
 - (void)_updateIsWiFiEnabled;
+- (void)_updateIsWiFiAssociatedAsync:(bool)arg1;
 - (void)_createDynamicStore;
 - (void)_createWiFiManager;
 - (bool)hasWoWClient:(id)arg1;
@@ -102,6 +116,8 @@
 - (void)_adjustWiFiAutoAssociationLocked;
 - (void)_adjustWoWState;
 - (void)_adjustWiFiAutoAssociation;
+- (void)setLock:(id)arg1;
+- (void)addDelegate:(id)arg1;
 - (id)init;
 - (id)lock;
 - (void)dealloc;

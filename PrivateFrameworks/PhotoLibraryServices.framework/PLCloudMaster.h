@@ -12,6 +12,7 @@
 @property short cloudServerState;
 @property(retain) NSDate * creationDate;
 @property(retain) NSString * filename;
+@property short fullSizeJPEGSource;
 @property(retain) NSDate * importDate;
 @property(retain) NSString * uniformTypeIdentifier;
 @property(retain) NSSet * assetAttributes;

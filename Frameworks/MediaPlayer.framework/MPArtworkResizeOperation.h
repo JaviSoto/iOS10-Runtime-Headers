@@ -5,6 +5,7 @@
 @class NSURL, NSObject<OS_dispatch_group>, NSError, UIImage;
 
 @interface MPArtworkResizeOperation : NSOperation  {
+    bool_usesExactFittingSizeAsDestinationSize;
     NSURL *_destinationURL;
     NSObject<OS_dispatch_group> *_operationGroup;
     NSError *_error;
@@ -13,7 +14,7 @@
     struct CGSize { 
         double width; 
         double height; 
-    } _destinationSize;
+    } _scaledFittingSize;
 }
 
 @property(readonly) NSURL * destinationURL;
@@ -21,16 +22,20 @@
 @property(readonly) NSError * error;
 @property(readonly) UIImage * resizedImage;
 @property(retain) UIImage * image;
-@property struct CGSize { double x1; double x2; } destinationSize;
+@property struct CGSize { double x1; double x2; } scaledFittingSize;
+@property bool usesExactFittingSizeAsDestinationSize;
 
 
 - (id)operationGroup;
-- (void)setDestinationSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })_scaledSizeForImageSize:(struct CGSize { double x1; double x2; })arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })destinationSize;
-- (id)initWithImage:(id)arg1 destinationSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setUsesExactFittingSizeAsDestinationSize:(bool)arg1;
+- (void)setScaledFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
+- (bool)usesExactFittingSizeAsDestinationSize;
+- (struct CGSize { double x1; double x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { double x1; double x2; })arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3;
+- (struct CGSize { double x1; double x2; })scaledFittingSize;
 - (id)resizedImage;
-- (id)initWithImage:(id)arg1 destinationSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 useExactFittingSizeAsDestinationSize:(bool)arg3 destinationURL:(id)arg4;
 - (void)main;
 - (void)setImage:(id)arg1;
 - (id)image;

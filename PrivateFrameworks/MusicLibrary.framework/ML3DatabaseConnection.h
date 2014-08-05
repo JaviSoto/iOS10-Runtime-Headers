@@ -76,10 +76,8 @@
 - (int)profilingLevel;
 - (bool)_databaseFileExists;
 - (id)_databaseFilePaths;
-- (bool)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
 - (int)checkpointDatabase;
-- (bool)_executeStatement:(id)arg1 withError:(id*)arg2;
-- (id)_prepareStatement:(id)arg1 error:(id*)arg2;
+- (bool)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
 - (id)_registeredModuleNamed:(id)arg1;
 - (bool)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
 - (bool)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned long long)arg2;
@@ -105,8 +103,8 @@
 - (void)_handleDatabaseCorruption;
 - (bool)_handleBusyLockWithNumberOfRetries:(int)arg1;
 - (void)_ensureConnectionIsOpen;
-- (bool)registerModule:(id)arg1;
 - (unsigned long long)journalingMode;
+- (bool)registerModule:(id)arg1;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(bool)arg4;
 - (id)executeQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
 - (bool)deleteDatabase;
@@ -129,6 +127,8 @@
 - (bool)executeUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
 - (id)executeQuery:(id)arg1 withParameters:(id)arg2;
 - (id)executeQuery:(id)arg1;
+- (bool)_executeStatement:(id)arg1 withError:(id*)arg2;
+- (id)_prepareStatement:(id)arg1 error:(id*)arg2;
 - (bool)isOpen;
 - (void)setReadOnly:(bool)arg1;
 - (bool)isReadOnly;

@@ -6,6 +6,7 @@
 
 @interface _UISearchFormSheetPresentationController : UIPresentationController <_UISearchControllerPresenting> {
     _UISearchPresentationAssistant *_assistant;
+    UIView *_wrapperView;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -38,10 +39,10 @@
 - (double)resultsControllerContentOffset;
 - (bool)_shouldSubscribeToKeyboardNotifications;
 - (void)setContentVisible:(bool)arg1;
+- (void)_presentedView:(id)arg1 enableFormSheetAccoutrements:(bool)arg2;
 - (double)statusBarAdjustment;
 - (bool)searchBarToBecomeTopAttached;
 - (id)searchBarContainerView;
-- (void)_presentedView:(id)arg1 enableFormSheetAccoutrements:(bool)arg2;
 - (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;

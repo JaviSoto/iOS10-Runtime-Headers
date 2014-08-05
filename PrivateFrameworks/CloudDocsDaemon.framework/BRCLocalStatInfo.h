@@ -7,11 +7,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRCGenerationID, NSString, NSSet, NSMutableSet, NSNumber;
+@class BRCGenerationID, NSString, NSSet, NSMutableSet, NSDictionary, NSNumber;
 
 @interface BRCLocalStatInfo : BRCStatInfo  {
     NSNumber *_processingStamp;
     NSMutableSet *_liveConflictLoserEtags;
+    NSMutableSet *_resolvedConflictLoserEtags;
     unsigned int _stagedGenerationID;
     NSNumber *_documentID;
     NSNumber *_fileID;
@@ -33,12 +34,17 @@
 @property(readonly) NSNumber * lostStamp;
 @property(readonly) NSNumber * fileObjectID;
 @property(readonly) NSSet * liveConflictLoserEtags;
+@property(readonly) NSSet * resolvedConflictLoserEtags;
+@property(readonly) NSDictionary * conflictLoserState;
 
 + (bool)supportsSecureCoding;
 
+- (id)resolvedConflictLoserEtags;
 - (id)bouncedName;
 - (unsigned int)stagedGenerationID;
 - (id)stagedFileID;
+- (void)clearResolvedConflictLoserEtags;
+- (void)addResolvedConflictLoserEtag:(id)arg1;
 - (void)clearLiveConflictLoserEtags;
 - (void)removeLiveConflictLoserEtag:(id)arg1;
 - (void)addLiveConflictLoserEtag:(id)arg1;
@@ -51,6 +57,7 @@
 - (void)_markDead;
 - (void)_markAlmostDead;
 - (void)_markReserved;
+- (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1 itemID:(id)arg2;
 - (void)updateLocationAndMetaFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (unsigned long long)diffAgainstLocalInfo:(id)arg1;
 - (void)_clearBouncedName;
@@ -64,9 +71,9 @@
 - (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
 - (id)processingStamp;
 - (id)lostStamp;
+- (id)conflictLoserState;
 - (void)_markRemovedFromFilesystem;
 - (void)_updateMetadataFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;
-- (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1 itemID:(id)arg2;
 - (void)setFilename:(id)arg1 forceRename:(bool)arg2;
 - (id)initWithLocalStatInfo:(id)arg1;
 - (void)updateFromFSAtPath:(id)arg1 itemID:(id)arg2 parentID:(id)arg3;

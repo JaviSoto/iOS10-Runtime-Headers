@@ -89,6 +89,7 @@
     float _realisticShieldNightBrightness;
     float _shieldNightBrightness;
     float _tiltLimitSatelliteScale;
+    bool_labelDisableAlternateTextPositions;
     struct { 
         unsigned int buildingChangeoverZ : 1; 
         unsigned int globalScaleFactor : 1; 
@@ -116,6 +117,7 @@
         unsigned int realisticShieldNightBrightness : 1; 
         unsigned int shieldNightBrightness : 1; 
         unsigned int tiltLimitSatelliteScale : 1; 
+        unsigned int labelDisableAlternateTextPositions : 1; 
     } _has;
 }
 
@@ -181,6 +183,8 @@
 @property float globalScaleFactor;
 @property bool hasLabelIconScale;
 @property float labelIconScale;
+@property bool hasLabelDisableAlternateTextPositions;
+@property bool labelDisableAlternateTextPositions;
 @property bool hasNavLabelRoadSignHeight;
 @property float navLabelRoadSignHeight;
 @property bool hasNavLabelRoadSignScaleSmall;
@@ -233,6 +237,10 @@
 - (bool)hasNavLabelRoadSignHeight;
 - (void)setHasNavLabelRoadSignHeight:(bool)arg1;
 - (void)setNavLabelRoadSignHeight:(float)arg1;
+- (bool)hasLabelDisableAlternateTextPositions;
+- (void)setHasLabelDisableAlternateTextPositions:(bool)arg1;
+- (void)setLabelDisableAlternateTextPositions:(bool)arg1;
+- (bool)labelDisableAlternateTextPositions;
 - (bool)hasGlobalScaleFactor;
 - (void)setHasGlobalScaleFactor:(bool)arg1;
 - (void)setGlobalScaleFactor:(float)arg1;

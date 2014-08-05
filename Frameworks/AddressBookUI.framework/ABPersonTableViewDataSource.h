@@ -151,6 +151,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)people;
 - (void)setBadgeEmailPropertiesForMailVIP:(bool)arg1;
 - (bool)badgeEmailPropertiesForMailVIP;
 - (bool)ignoreVibrationsDidChangeNotification;
@@ -340,7 +341,6 @@
 - (void)setInsertionLabel:(id)arg1;
 - (id)customMessageView;
 - (id)messageDetailFont;
-- (id)messageFont;
 - (id)messageDetail;
 - (id)namePropertyGroup;
 - (void)setCustomMessageView:(id)arg1;
@@ -382,9 +382,9 @@
 - (bool)allowsSounds;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (id)people;
 - (bool)canSave;
 - (void)updateRecord;
+- (id)messageFont;
 - (void)setPeople:(id)arg1;
 - (id)attribution;
 - (bool)isEditing;

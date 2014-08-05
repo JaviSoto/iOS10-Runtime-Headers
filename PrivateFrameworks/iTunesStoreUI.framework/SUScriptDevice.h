@@ -202,8 +202,8 @@
 - (id)capabilityNamePodcasts;
 - (long long)activeNetworkType;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(bool)arg2;
-- (id)hasCapability:(id)arg1;
 - (id)mainScreenScale;
+- (id)hasCapability:(id)arg1;
 - (id)attributeKeys;
 - (id)init;
 - (void)dealloc;

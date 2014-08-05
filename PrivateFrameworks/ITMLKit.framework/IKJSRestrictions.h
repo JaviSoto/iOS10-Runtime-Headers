@@ -13,9 +13,11 @@
 @property(readonly) bool allowsExplicit;
 @property(readonly) bool allowsErotica;
 @property(readonly) NSString * maxAppRating;
+@property(readonly) bool appInstallationAllowed;
 
 + (id)restrictionsDidChangeNotificationName;
 
+- (bool)appInstallationAllowed;
 - (id)maxAppRating;
 - (bool)allowsErotica;
 - (bool)allowsExplicit;

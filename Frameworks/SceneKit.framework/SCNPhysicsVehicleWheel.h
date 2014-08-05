@@ -76,7 +76,6 @@
 - (void)setSuspensionStiffness:(double)arg1;
 - (double)suspensionStiffness;
 - (void)setConnectionPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (id)node;
 - (void)setRadius:(double)arg1;
 - (double)radius;
 - (id)init;
@@ -87,5 +86,6 @@
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setNode:(id)arg1;
+- (id)node;
 
 @end

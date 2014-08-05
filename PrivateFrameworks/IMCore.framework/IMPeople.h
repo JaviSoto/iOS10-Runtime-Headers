@@ -30,11 +30,11 @@
 - (bool)hidePeople;
 - (bool)addIMHandle:(id)arg1;
 - (bool)removeIMHandle:(id)arg1;
+- (id)people;
 - (void)endCoalescedChanges;
 - (void)imHandle:(id)arg1 buddyStatusChanged:(bool)arg2;
 - (void)beginCoalescedChanges;
 - (void)setShouldHidePeople:(bool)arg1;
-- (id)people;
 - (id)groups;
 - (unsigned long long)count;
 - (void)dealloc;

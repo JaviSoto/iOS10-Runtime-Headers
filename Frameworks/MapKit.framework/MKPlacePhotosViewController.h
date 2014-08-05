@@ -34,7 +34,6 @@
 
 
 - (double)photoWidth;
-- (id)photos;
 - (void)_morePhotos;
 - (void)_addPhoto;
 - (double)_photoCellHeight;
@@ -54,6 +53,7 @@
 - (void)setPhotosCount:(unsigned long long)arg1;
 - (void)setShowAttribution:(bool)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
+- (id)photos;
 - (bool)hasAttribution;
 - (unsigned long long)photosCount;
 - (void)setMapItem:(id)arg1;
@@ -72,7 +72,6 @@
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
-- (void)traitCollectionDidChange:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

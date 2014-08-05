@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class BRFieldCKInfo, NSString, NSSet, NSData, NSMutableSet, NSNumber;
+@class BRFieldCKInfo, NSString, NSSet, NSData, NSNumber;
 
 @interface BRCVersion : NSObject <NSCopying, NSSecureCoding> {
     BRFieldCKInfo *_ckInfo;
@@ -19,7 +19,7 @@
     NSData *_contentSignature;
     NSData *_xattrSignature;
     NSData *_quarantineInfo;
-    NSMutableSet *_conflictLoserEtags;
+    NSSet *_conflictLoserEtags;
     NSData *_lazyXattr;
     NSNumber *_lastEditorDeviceKey;
     NSString *_lastEditorDeviceName;

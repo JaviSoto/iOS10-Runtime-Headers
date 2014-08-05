@@ -16,7 +16,7 @@
 
 
 - (void)cancelResizeImage:(id)arg1;
-- (id)resizeImage:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 saveToDestinationURL:(id)arg3 completionHandler:(id)arg4;
+- (id)resizeImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 useExactFittingSizeAsDestinationSize:(bool)arg3 saveToDestinationURL:(id)arg4 completionHandler:(id)arg5;
 - (id)artworkResizingOperations;
 - (id)artworkResizingAccessQueue;
 - (void)setArtworkResizingOperations:(id)arg1;

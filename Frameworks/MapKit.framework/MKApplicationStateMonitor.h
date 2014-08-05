@@ -9,13 +9,17 @@
     bool_inBackground;
     bool_active;
     unsigned long long _observerCount;
+    bool_forceBackboardServicesMonitoring;
 }
 
+@property bool forceBackboardServicesMonitoring;
 @property(getter=isInBackground,readonly) bool inBackground;
 @property(getter=isActive,readonly) bool active;
 
 + (id)sharedInstance;
 
+- (bool)forceBackboardServicesMonitoring;
+- (void)setForceBackboardServicesMonitoring:(bool)arg1;
 - (void)_becomeActive;
 - (void)_exitBackground;
 - (void)_enterBackground;

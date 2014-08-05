@@ -50,10 +50,10 @@
 - (unsigned long long)passLength;
 - (unsigned long long)socketIdentifier;
 - (id)flowUUID;
-- (void)setRegistered:(bool)arg1;
-- (bool)registered;
 - (long long)direction;
 - (long long)status;
+- (void)setRegistered:(bool)arg1;
+- (bool)registered;
 - (id)url;
 - (void).cxx_destruct;
 

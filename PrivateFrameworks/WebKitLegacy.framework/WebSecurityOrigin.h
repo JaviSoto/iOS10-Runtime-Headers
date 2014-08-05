@@ -14,6 +14,7 @@
     <WebQuotaManager> *_databaseQuotaManager;
 }
 
++ (id)webSecurityOriginFromDatabaseIdentifier:(id)arg1;
 
 - (id)toString;
 - (id)protocol;

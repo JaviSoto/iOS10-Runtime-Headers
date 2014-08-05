@@ -9,9 +9,13 @@
     _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
     UIView *keyboardLayoutAlignmentAvailableSpaceView;
     boolconstraintsPrepared;
+    bool__isCurrentContext;
+    bool__shouldRespectNearestCurrentContextPresenter;
 }
 
 @property(readonly) UIView * _dimmingView;
+@property(setter=_setIsCurrentContext:) bool _isCurrentContext;
+@property(setter=_setShouldRespectNearestCurrentContextPresenter:) bool _shouldRespectNearestCurrentContextPresenter;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -20,10 +24,14 @@
 
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
+- (void)_setShouldRespectNearestCurrentContextPresenter:(bool)arg1;
+- (void)_setIsCurrentContext:(bool)arg1;
 - (double)constantForAligningAlertControllerToAvailableSpace;
 - (long long)attributeToAlignAlertControllerViewBy;
 - (void)_occludePresentingWindow:(bool)arg1;
 - (id)_presentedAlertController;
+- (bool)_shouldRespectNearestCurrentContextPresenter;
+- (bool)_isCurrentContext;
 - (void)_prepareConstraintsIfNecessary;
 - (id)_dimmingView;
 - (bool)_preserveResponderAcrossWindows;
@@ -37,6 +45,7 @@
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (id)presentedView;
+- (bool)_shouldRespectDefinesPresentationContext;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;
 - (void)containerViewDidLayoutSubviews;

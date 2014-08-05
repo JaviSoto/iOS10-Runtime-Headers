@@ -44,7 +44,6 @@
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned long long)arg3 arrivalDate:(id)arg4;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned long long)arg3 departureDate:(id)arg4;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned long long)arg3 departureDate:(id)arg4 includeTravelTimes:(bool)arg5 includeTrafficIncidents:(bool)arg6 includeEntryPoints:(bool)arg7 includeRoutePoints:(bool)arg8;
-- (void)setArrivalDate:(id)arg1;
 - (void)setDepartureDate:(id)arg1;
 - (void)setRequestsAlternateRoutes:(bool)arg1;
 - (id)_additionalTransportTypesRequested;
@@ -57,6 +56,7 @@
 - (unsigned long long)_transportType;
 - (bool)_includeZilchRoutePoints;
 - (bool)_includeBasicRoutePoints;
+- (void)setArrivalDate:(id)arg1;
 - (id)arrivalDate;
 - (id)departureDate;
 - (void)setTransportType:(unsigned long long)arg1;

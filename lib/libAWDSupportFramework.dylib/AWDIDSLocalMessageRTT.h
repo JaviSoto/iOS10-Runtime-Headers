@@ -26,9 +26,9 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (long long)rtt;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

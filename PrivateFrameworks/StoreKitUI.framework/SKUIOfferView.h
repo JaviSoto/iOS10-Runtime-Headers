@@ -39,6 +39,7 @@
 - (bool)isShowingConfirmation;
 - (void)_buttonAction:(id)arg1;
 - (void)_positionNoticeForItemOfferButton:(id)arg1;
+- (bool)_shouldHideNotices:(id)arg1 context:(id)arg2;
 - (void)_sendWillAnimate;
 - (long long)metadataPosition;
 - (void)setMetadataPosition:(long long)arg1;

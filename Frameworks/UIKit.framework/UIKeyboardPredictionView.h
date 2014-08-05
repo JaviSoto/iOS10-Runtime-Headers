@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, UIKBKeyView, UIKBBackgroundView, NSMutableArray, UIKeyboardPredictionBarGrabber, UITouch, UILabel;
+@class UIKBBackgroundView, UILabel, NSDate, TIKeyboardCandidate, NSMutableArray, UIView, NSString, NSTimer, NSArray, UITouch, UIKBKeyView, UIKeyboardPredictionBarGrabber;
 
 @interface UIKeyboardPredictionView : UIView  {
     UIKBBackgroundView *m_backgroundView;
@@ -29,11 +29,19 @@
     boolm_delayActive;
     int _state;
     UITouch *_activeTouch;
+    NSTimer *_updateTimer;
+    NSArray *_scheduledPredictions;
+    TIKeyboardCandidate *_scheduledAutocorrection;
+    NSDate *_lastUpdateDate;
 }
 
 @property(retain) UITouch * activeTouch;
 @property bool show;
 @property int state;
+@property(retain) NSTimer * updateTimer;
+@property(retain) NSArray * scheduledPredictions;
+@property(retain) TIKeyboardCandidate * scheduledAutocorrection;
+@property(retain) NSDate * lastUpdateDate;
 
 + (id)sharedInstance;
 + (double)overlapHeight;
@@ -58,6 +66,15 @@
 - (double)heightBeforeStateChangeForInterfaceOrientation:(long long)arg1;
 - (void)removeMessage;
 - (int)maxMessageCount;
+- (void)touchUpdateTimer;
+- (id)lastUpdateDate;
+- (void)setUpdateTimer:(id)arg1;
+- (void)updateTimerFired:(id)arg1;
+- (void)setScheduledAutocorrection:(id)arg1;
+- (void)setScheduledPredictions:(id)arg1;
+- (void)_setPredictions:(id)arg1 autocorrection:(id)arg2;
+- (id)scheduledAutocorrection;
+- (id)scheduledPredictions;
 - (id)labelTextForPrediction:(id)arg1 typedString:(id)arg2;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)deactivateCandidate;
@@ -67,7 +84,9 @@
 - (unsigned long long)indexForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTouchedCellState:(int)arg1;
 - (void)releaseMessage;
+- (void)setLastUpdateDate:(id)arg1;
 - (void)inputModeDidChange;
+- (id)updateTimer;
 - (void)updateBackgroundWithRenderConfig:(id)arg1;
 - (id)activeTouch;
 - (void)setActiveTouch:(id)arg1;

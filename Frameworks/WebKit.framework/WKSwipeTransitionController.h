@@ -2,10 +2,6 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
@@ -14,11 +10,7 @@
 @class NSString;
 
 @interface WKSwipeTransitionController : NSObject <_UINavigationInteractiveTransitionBaseDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: @{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QB} */
-  /* Error parsing encoded ivar type info: ^{ViewGestureController=^^?^{WebPageProxy}i{Timer<WebKit::ViewGestureController>=^^?dddiI^{Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow>}{function<void ()>={type=[24C]}^{__base<void ()>}}}@{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<WKSwipeTransitionController>=^v}QB} */
-    struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); double x_4_1_2; double x_4_1_3; double x_4_1_4; int x_4_1_5; unsigned int x_4_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_4_1_7; struct function<void ()>={type=[24C] {} x_4_1_8; struct __base<void ()> {} *x_4_1_9; } x4; } *_gestureController;
-
+    struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; id x5; struct RetainPtr<UIView> { void *x_6_1_1; } x6; struct RetainPtr<UIView> { void *x_7_1_1; } x7; struct RetainPtr<UIView> { void *x_8_1_1; } x8; struct RetainPtr<WKSwipeTransitionController> { void *x_9_1_1; } x9; unsigned long long x10; boolx11; struct WeakObjCPtr<WKWebView> { id x_12_1_1; } x12; struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x_13_1_1; } x13; } *_gestureController;
     struct RetainPtr<_UINavigationInteractiveTransitionBase> { 
         void *m_ptr; 
     } _backTransitionController;
@@ -33,7 +25,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)initWithViewGestureController:(struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); double x_4_1_2; double x_4_1_3; double x_4_1_4; int x_4_1_5; unsigned int x_4_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow> {} *x_4_1_7; struct function<void ()>={type=[24C] {} x_4_1_8; struct __base<void ()> {} *x_4_1_9; } x4; }*)arg1 gestureRecognizerView:(struct RetainPtr<UIView> { void *x1; })arg2;
+- (id)initWithViewGestureController:(struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; id x5; struct RetainPtr<UIView> { void *x_6_1_1; } x6; struct RetainPtr<UIView> { void *x_7_1_1; } x7; struct RetainPtr<UIView> { void *x_8_1_1; } x8; struct RetainPtr<WKSwipeTransitionController> { void *x_9_1_1; } x9; unsigned long long x10; boolx11; struct WeakObjCPtr<WKWebView> { id x_12_1_1; } x12; struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x_13_1_1; } x13; }*)arg1 gestureRecognizerView:(id)arg2;
 - (int)directionForTransition:(id)arg1;
 - (void).cxx_destruct;
 - (id).cxx_construct;

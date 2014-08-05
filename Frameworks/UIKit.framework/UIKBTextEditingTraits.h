@@ -30,7 +30,7 @@
 @property(readonly) bool canMoveCursorLeft;
 @property(readonly) bool canMoveCursorRight;
 
-+ (id)traitsWithResponder:(id)arg1 editable:(bool)arg2;
++ (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned long long)arg2;
 
 - (bool)isUnderlined;
 - (bool)isItalicized;
@@ -45,6 +45,6 @@
 - (bool)canToggleUnderline;
 - (bool)canToggleItalics;
 - (bool)canToggleBoldface;
-- (id)initWithResponder:(id)arg1 editable:(bool)arg2;
+- (id)initWithResponder:(id)arg1 keyMaskFlags:(unsigned long long)arg2;
 
 @end

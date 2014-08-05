@@ -15,8 +15,8 @@
 @property unsigned long long type;
 
 
-- (id)initWithConnection:(id)arg1 generation:(unsigned long long)arg2;
 - (unsigned long long)generation;
+- (id)initWithConnection:(id)arg1 generation:(unsigned long long)arg2;
 - (id)connection;
 - (void)setType:(unsigned long long)arg1;
 - (unsigned long long)type;

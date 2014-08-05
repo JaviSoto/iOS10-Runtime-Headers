@@ -54,9 +54,9 @@
 - (void)_reloadUserRatingViews;
 - (id)_newDefaultLabel;
 - (void)setColoringWithColorScheme:(id)arg1;
+- (id)primaryTextColor;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (id)primaryTextColor;
 - (id)releaseDateString;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;

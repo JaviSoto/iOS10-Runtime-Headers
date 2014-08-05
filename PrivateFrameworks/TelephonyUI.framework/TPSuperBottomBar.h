@@ -114,12 +114,12 @@
 - (id)slidingButton;
 - (id)supplementalBottomRightButton;
 - (id)supplementalBottomLeftButton;
-- (id)supplementalTopRightButton;
-- (id)supplementalTopLeftButton;
 - (id)mainLeftButton;
 - (id)mainRightButton;
 - (bool)shouldShowActionTypeCameraFlip;
 - (bool)shouldShowActionTypeAudioRoute;
+- (id)supplementalTopLeftButton;
+- (id)supplementalTopRightButton;
 - (void)setSideButtonRight:(id)arg1;
 - (void)setSideButtonLeft:(id)arg1;
 - (bool)shouldShowActionTypeSendToVoicemail;

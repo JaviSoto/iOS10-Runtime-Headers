@@ -20,11 +20,11 @@
 - (id)headNode;
 - (void)insertNode:(id)arg1 before:(id)arg2;
 - (void)removeAllNodes;
+- (void)removeNode:(id)arg1;
 - (id)tailNode;
 - (id)insertNodeAtBeginningWithValue:(id)arg1 forKey:(id)arg2;
 - (void)insertNodeAtBeginning:(id)arg1;
 - (id)nodeForInsertionWithValue:(id)arg1;
-- (void)removeNode:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

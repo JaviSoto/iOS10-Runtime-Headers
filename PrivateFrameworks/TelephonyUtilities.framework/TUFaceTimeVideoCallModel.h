@@ -5,6 +5,7 @@
 @interface TUFaceTimeVideoCallModel : TUCallModel  {
 }
 
++ (id)sharedInstance;
 
 - (bool)isSendToVoicemailAllowed;
 - (bool)isHoldAndAnswerAllowed;

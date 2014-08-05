@@ -17,8 +17,9 @@
 - (void)prefetchAllThumbnails;
 - (void)prefetchResources;
 - (void)beginPopulatingResourcesOfType:(unsigned long long)arg1 importedSinceDate:(id)arg2;
-- (void)beginPrefetchingResources:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)beginPopulatingResourcesOfType:(unsigned long long)arg1 matchingPredicates:(id)arg2 inThisOrder:(id)arg3;
+- (void)beginPrefetchingResources:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)beginPopulatingResourcesOfType:(unsigned long long)arg1 matchingPredicates:(id)arg2 inThisOrder:(id)arg3 startingAtOffset:(unsigned long long)arg4;
 - (unsigned long long)batchSize;
 - (id)defaultPrefetchOrder;
 - (void)metadataStable:(id)arg1;

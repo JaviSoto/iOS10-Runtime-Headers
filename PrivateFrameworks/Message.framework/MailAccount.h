@@ -37,7 +37,6 @@
 @property(readonly) bool sourceIsManaged;
 
 + (void)updateAutoFetchSettings;
-+ (void)setMailAccounts:(id)arg1;
 + (void)setDataclassesConsideredActive:(id)arg1;
 + (id)_accountWithPath:(id)arg1;
 + (bool)getConfigurationFromServerForEmail:(id)arg1;
@@ -101,6 +100,7 @@
 + (id)predefinedValueForKey:(id)arg1;
 + (bool)canMoveMessagesFromAccount:(id)arg1 toAccount:(id)arg2;
 + (id)accountThatMessageIsFrom:(id)arg1;
++ (void)setMailAccounts:(id)arg1;
 + (id)activeAccounts;
 + (id)defaultMailAccountForDelivery;
 + (void)reloadAccounts;
@@ -122,12 +122,6 @@
 - (id)iconString;
 - (bool)shouldExpungeMessagesOnDelete;
 - (bool)_shouldLogDeleteActivity;
-- (bool)reconstituteOrphanedMeetingInMessage:(id)arg1;
-- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
-- (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
-- (int)secureCompositionSigningPolicyForAddress:(id)arg1;
-- (bool)secureMIMEEnabled;
-- (id)displayUsername;
 - (bool)supportsThreadNotifications;
 - (void)setCustomSignature:(id)arg1;
 - (id)customSignature;
@@ -163,7 +157,6 @@
 - (bool)shouldAppearInMailSettings;
 - (bool)canForwardWithoutDownload;
 - (void)transferNotificationSessionToAccount:(id)arg1;
-- (void)stopListeningForNotifications;
 - (void)startListeningForNotifications;
 - (id)mailboxUidForURL:(id)arg1;
 - (void)resetMailboxURLs;
@@ -308,6 +301,14 @@
 - (id)storeForMailboxUid:(id)arg1;
 - (void)setUnreadCount:(unsigned long long)arg1 forMailbox:(id)arg2;
 - (void)unregisterStore:(id)arg1 forUid:(id)arg2;
+- (id)displayUsername;
+- (bool)reconstituteOrphanedMeetingInMessage:(id)arg1;
+- (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
+- (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
+- (int)secureCompositionSigningPolicyForAddress:(id)arg1;
+- (bool)perMessageEncryptionEnabled;
+- (bool)secureMIMEEnabled;
+- (void)stopListeningForNotifications;
 - (void)setEmailAddresses:(id)arg1;
 - (id)emailAddresses;
 - (id)loggingIdentifier;

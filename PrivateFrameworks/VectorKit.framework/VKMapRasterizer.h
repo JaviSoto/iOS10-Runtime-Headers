@@ -77,7 +77,6 @@
 - (void)createRasterizationLayoutContext:(id)arg1 canvasPointSize:(unsigned int)arg2;
 - (void)prepRenderTargetWithTexture:(const struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)rasterizeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 scene:(id)arg2;
-- (bool)isBusy;
 - (void)flushTextureCache;
 - (id)mapModel;
 - (id)tileProvider;
@@ -88,6 +87,7 @@
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)setMapModel:(id)arg1;
 - (void)addSubmodel:(id)arg1;
+- (bool)isBusy;
 - (void)setBackgroundColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (struct Matrix<float, 4, 1> { float x1[4]; })backgroundColor;
 - (id)init;

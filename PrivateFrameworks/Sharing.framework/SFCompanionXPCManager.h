@@ -33,7 +33,7 @@
 + (id)sharedManager;
 + (void)initialize;
 
-- (void)streamsForService:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)streamsForMessage:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)companionConnectionProxyForService:(id)arg1 client:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)serviceManagerProxyForIdentifier:(id)arg1 client:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)companionBrowserProxyforIdentifier:(id)arg1 serviceType:(id)arg2 client:(id)arg3 withCompletionHandler:(id)arg4;

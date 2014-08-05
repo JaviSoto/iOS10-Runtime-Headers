@@ -79,9 +79,9 @@
 - (void)_updateTrack;
 - (id)_handleImage;
 - (double)endValue;
-- (double)startValue;
 - (void)setZoomMinValue:(double)arg1 maxValue:(double)arg2;
 - (void)setZoomAnimating:(bool)arg1;
+- (double)startValue;
 - (double)maxValue;
 - (void)setEnabled:(bool)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

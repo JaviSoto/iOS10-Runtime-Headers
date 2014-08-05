@@ -70,6 +70,7 @@
 - (struct { double x1; double x2; })_mercatorCenterCoordinateForMapRegion:(id)arg1;
 - (long long)minimumNormalizedZoomLevel;
 - (long long)maximumNormalizedZoomLevel;
+- (bool)canEnter3DModeNoUpdate;
 - (float)idealPitchForNormalizedZoomLevel:(float)arg1;
 - (void)pitch:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
 - (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { double x1; double x2; })arg2;

@@ -35,11 +35,11 @@
 
 - (id)handlerQueue;
 - (void)setHandlerQueue:(id)arg1;
-- (void)setCanceled:(bool)arg1;
 - (void)_callHandler;
 - (id)initWithRequest:(id)arg1 handler:(id)arg2;
-- (void)setIsExecuting:(bool)arg1;
+- (void)setCanceled:(bool)arg1;
 - (bool)isCanceled;
+- (void)setIsExecuting:(bool)arg1;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;

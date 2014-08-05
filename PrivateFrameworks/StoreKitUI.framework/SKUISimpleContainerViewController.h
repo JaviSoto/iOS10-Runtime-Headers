@@ -10,6 +10,7 @@
 
 @property(retain) UIViewController * contentViewController;
 
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)setContentViewController:(id)arg1;

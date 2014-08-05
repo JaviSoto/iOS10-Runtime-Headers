@@ -38,6 +38,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
++ (id)alertSoundWithSystemSoundPath:(id)arg1;
 + (id)alertSoundWithSystemSoundID:(unsigned int)arg1;
 + (void)_removeCachedSound:(id)arg1;
 + (id)_possiblyCachedAlertSoundForInitializedSound:(id)arg1;
@@ -47,13 +48,12 @@
 - (id)initWithToneAlert:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithToneAlert:(int)arg1;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3;
-- (id)songPath;
 - (id)vibrationIdentifier;
 - (id)toneIdentifier;
 - (id)ringtoneName;
 - (unsigned long long)soundBehavior;
+- (id)songPath;
 - (unsigned int)systemSoundID;
-- (void)setSongPath:(id)arg1;
 - (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 audioCategory:(id)arg4 maxDuration:(double)arg5;
 - (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 maxDuration:(double)arg4;
 - (void)setVibrationIdentifier:(id)arg1;
@@ -66,7 +66,11 @@
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(bool)arg3 audioCategory:(id)arg4;
 - (void)setSoundBehavior:(unsigned long long)arg1;
 - (void)setSystemSoundID:(unsigned int)arg1;
+- (void)setSongPath:(id)arg1;
+- (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;
+- (id)initWithSystemSoundID:(unsigned int)arg1 soundPath:(id)arg2 behavior:(unsigned long long)arg3 vibrationPattern:(id)arg4;
 - (id)initWithSystemSoundID:(unsigned int)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;
+- (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned long long)arg2;
 - (id)initWithSystemSoundID:(unsigned int)arg1 behavior:(unsigned long long)arg2;
 - (void)setAlertType:(int)arg1;
 - (int)alertType;

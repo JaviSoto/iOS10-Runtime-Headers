@@ -10,8 +10,8 @@
 }
 
 
-- (bool)hasActiveAssertions;
 - (void)removeAssertion:(id)arg1;
+- (bool)hasActiveAssertions;
 - (id)mkbAssertionOptions;
 - (void)addAssertion:(id)arg1;
 - (id)init;

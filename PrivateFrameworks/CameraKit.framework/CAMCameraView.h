@@ -514,6 +514,7 @@
 - (void)_snapshotView:(id)arg1 andLayoutForOrientation:(long long)arg2 leaveHidden:(bool)arg3 withBlock:(id)arg4;
 - (float)_effectiveExposureBias;
 - (bool)_canModifyExposureBias;
+- (bool)_allowExposureBiasForMode:(long long)arg1;
 - (long long)_deviceOrientationForPreviewView;
 - (int)_exposureBiasScheme;
 - (bool)_shouldHideHardwareLockIndicatorForMode:(long long)arg1;
@@ -755,7 +756,7 @@
 - (id)_videoCaptureRequestWithCurrentSettings;
 - (long long)_currentFlashMode;
 - (bool)_useHDR;
-- (void)_updateCaptureAggregateDictionaries;
+- (void)_updateCaptureAggregateDictionariesForResponse:(id)arg1;
 - (void)_avalancheCaptureTimerFired;
 - (void)_decrementInflightImageRequests;
 - (bool)_avalancheCaptureRecognized;

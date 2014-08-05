@@ -10,10 +10,10 @@
 
 @property(retain) NSNumber * number;
 
++ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedInteger:(unsigned long long)arg1;
 + (id)numberWithInteger:(long long)arg1;
 + (id)numberWithInt:(int)arg1;
-+ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (bool)supportsSecureCoding;
 
 - (id)number;

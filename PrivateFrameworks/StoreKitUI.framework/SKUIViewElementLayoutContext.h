@@ -37,7 +37,8 @@
 
 
 - (id)artworkRequestDelegate;
-- (void)addExpandedEditorialLayout:(id)arg1;
+- (void)invalidateAllEditorialLayouts;
+- (void)expandEditorialForLabelElement:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForItemOfferButton:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForBadgeElement:(id)arg1;
 - (struct CGSize { double x1; double x2; })_sizeForImageElement:(id)arg1 applyTransform:(bool)arg2;

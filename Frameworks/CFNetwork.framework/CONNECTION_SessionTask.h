@@ -35,6 +35,8 @@
 - (id)_cfHSTS;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (struct __CFURL { }*)originalRequest_mainDocumentURL;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
+- (void)_releasePreventIdleSleepAssertionIfAppropriate;
 - (void)_setConnectionIsCellular:(bool)arg1;
 - (float)priority;
 - (void)_takePreventIdleSleepAssertionIfAppropriate;

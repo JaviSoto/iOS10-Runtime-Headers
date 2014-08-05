@@ -23,9 +23,9 @@
 @property(readonly) id token;
 
 
+- (void)startObserving;
 - (id)initObservingObject:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3 block:(id)arg4;
 - (void)cancelObservation;
-- (void)startObserving;
 - (id)token;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

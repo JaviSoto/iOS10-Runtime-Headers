@@ -10,9 +10,9 @@
 }
 
 
+- (bool)dispatch:(id)arg1;
 - (void)from:(id)arg1 to:(id)arg2;
 - (void)scheme:(id)arg1 from:(id)arg2 to:(id)arg3;
-- (bool)dispatch:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

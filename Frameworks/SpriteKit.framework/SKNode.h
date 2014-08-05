@@ -124,8 +124,8 @@
 - (void)removeAction:(id)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setPaused:(bool)arg1;
-- (void)removeAllActions;
 - (bool)isPaused;
+- (void)removeAllActions;
 - (bool)needsUpdate;
 - (void)setName:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;

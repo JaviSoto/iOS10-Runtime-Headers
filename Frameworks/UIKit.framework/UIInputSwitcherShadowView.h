@@ -36,7 +36,6 @@
 - (void)setMode:(int)arg1;
 - (void)dealloc;
 - (void)setKeyRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setGradientColors:(id)arg1;
 - (void)setPointerOffset:(double)arg1;
 - (double)pointerOffset;
 - (id)gradientColors;
@@ -45,6 +44,7 @@
 - (id)menu;
 - (void)setBlurView:(id)arg1;
 - (id)blurView;
+- (void)setGradientColors:(id)arg1;
 - (int)mode;
 - (void)layoutSubviews;
 

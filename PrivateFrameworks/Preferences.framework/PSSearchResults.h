@@ -41,6 +41,7 @@
 - (id)sectionEntryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)totalNumberOfEntries;
 - (unsigned long long)numberOfEntriesInSectionAtIndex:(unsigned long long)arg1;
+- (void)addEntries:(id)arg1;
 - (unsigned long long)numberOfSectionEntries;
 - (id)entriesInSectionAtIndex:(unsigned long long)arg1;
 - (id)_initForCopyWithSectionEntries:(id)arg1 entriesBySection:(id)arg2 explicitlyAddedSectionEntries:(id)arg3;
@@ -50,7 +51,6 @@
 - (id)resultsByMergingWithResults:(id)arg1;
 - (void)sortResults;
 - (unsigned long long)removeEntries:(id)arg1;
-- (void)addEntries:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (id)init;
 - (void)dealloc;

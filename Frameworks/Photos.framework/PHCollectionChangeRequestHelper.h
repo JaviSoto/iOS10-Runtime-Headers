@@ -34,6 +34,7 @@
 @property(copy) id isDestinationObjectValid;
 @property(retain) PHChangeRequestHelper * changeRequestHelper;
 
++ (id)_offsetsFromSourceOIDs:(id)arg1 toManagedObjects:(id)arg2;
 
 - (void)setChangeRequestHelper:(id)arg1;
 - (id)changeRequestHelper;

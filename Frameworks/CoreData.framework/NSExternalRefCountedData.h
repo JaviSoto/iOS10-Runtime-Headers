@@ -31,11 +31,11 @@
 - (int)externalReferenceCount;
 - (int)decrementRefCount;
 - (void)incrementRefCount;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (id)initWithOptions:(unsigned int)arg1 andTimestamp:(double)arg2;
 - (void)_initializeRelationshipCaches;
 - (id)objectID;
+- (void)setTimestamp:(double)arg1;
 - (unsigned int)options;
 - (bool)_isDeallocating;
 - (bool)_tryRetain;

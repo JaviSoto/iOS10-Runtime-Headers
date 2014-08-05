@@ -17,16 +17,16 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 
 
+- (id)people;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)setPreinsertedPerson:(id)arg1;
 - (id)preinsertedPerson;
-- (id)people;
 - (bool)canSave;
 - (void)updateRecord;
-- (void)setPeople:(id)arg1;
 - (void)setHasChanges:(bool)arg1;
 - (void)reloadFromModel;
+- (void)setPeople:(id)arg1;
 - (int)property;
 - (bool)hasChanges;
 - (id)init;

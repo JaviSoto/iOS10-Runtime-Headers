@@ -43,10 +43,10 @@
 - (bool)isDefaultConfiguration;
 - (void)setTileGroupIdentifier:(unsigned int)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
-- (id)environment;
 - (void)setCountryCode:(id)arg1;
 - (id)countryCode;
 - (id)applicationIdentifier;
+- (id)environment;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

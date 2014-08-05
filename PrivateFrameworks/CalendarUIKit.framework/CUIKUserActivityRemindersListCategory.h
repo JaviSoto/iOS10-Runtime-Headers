@@ -13,6 +13,7 @@
 - (id)remindersListFromStore:(id)arg1;
 - (id)initWithRemindersList:(id)arg1;
 - (bool)_isMatchForRemindersList:(id)arg1;
+- (id)initWithRemindersList:(id)arg1 forceLocal:(bool)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (id)dictionary;
 - (void).cxx_destruct;

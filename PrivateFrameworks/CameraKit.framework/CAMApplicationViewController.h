@@ -35,6 +35,7 @@
     bool__handlesVolumeButtons;
     bool__ignoringVolumeButtons;
     bool__hasLockedSinceLastConfigurationChange;
+    bool__didApplyConfigurationToCameraView;
     int __lockToResetToken;
     UIViewController *__cameraRollViewController;
     UIView *__rootContainerView;
@@ -56,6 +57,7 @@
 @property(readonly) UIView * _rootContainerView;
 @property(readonly) UIView * _autorotationCorrectionView;
 @property(readonly) int _lockToResetToken;
+@property bool _didApplyConfigurationToCameraView;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -67,6 +69,8 @@
 - (void)dismissCameraRollForSuspension;
 - (void)prepareForDismissal;
 - (void)saveCameraConfiguration;
+- (void)set_didApplyConfigurationToCameraView:(bool)arg1;
+- (bool)_didApplyConfigurationToCameraView;
 - (int)_lockToResetToken;
 - (id)_autorotationCorrectionView;
 - (id)_rootContainerView;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, UIViewController, SKUIPreviewOverlayViewController, IKAppDataStorage, SKUIModalDocumentController, SKUIClientContext, NSMutableArray, NSString, SKUISimpleContainerViewController, NSArray, IKAppContext, SKUITabBarController, SKUIPreviewDocumentController, NSOperationQueue, <SKUIApplicationDelegate>, UITabBarController, SKUINavigationDocumentController, SKUIAppDeviceConfig, SKUIMetricsController, NSURL, SKUIURLResolver;
+@class NSDictionary, UIViewController, SKUIPreviewOverlayViewController, IKAppDataStorage, SKUIModalDocumentController, SKUIClientContext, NSMutableArray, NSString, SKUISimpleContainerViewController, NSArray, SKUIURL, IKAppContext, SKUITabBarController, SKUIPreviewDocumentController, NSOperationQueue, <SKUIApplicationDelegate>, UITabBarController, SKUINavigationDocumentController, SKUIAppDeviceConfig, SKUIMetricsController, NSURL, _SKUIApplicationShutdownHelper, SKUIURLResolver;
 
 @interface SKUIApplicationController : NSObject <IKAppContextDelegate, IKApplication, SKUIModalDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationDocumentDelegate, SKUIURLResolverDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate> {
     NSURL *_applicationScriptURL;
@@ -15,6 +15,7 @@
     long long _lastNavigationControllerOperation;
     UIViewController *_lastPoppedViewController;
     NSDictionary *_launchOptions;
+    SKUIURL *_legacyLaunchURL;
     IKAppDataStorage *_localStorage;
     SKUIModalDocumentController *_modalDocumentController;
     SKUIMetricsController *_metricsController;
@@ -26,6 +27,7 @@
     UIViewController *_rootViewController;
     IKAppContext *_scriptContext;
     long long _scriptLoadState;
+    _SKUIApplicationShutdownHelper *_shutdownHelper;
     SKUITabBarController *_tabBarController;
     NSArray *_tabBarItems;
     SKUINavigationDocumentController *_transientNavigationDocument;
@@ -71,6 +73,7 @@
 - (void)_setHidesTabBar:(bool)arg1;
 - (bool)_hidesTabBar;
 - (id)_transientNavigationController;
+- (void)_stopApplication;
 - (void)_setSelectedTabBarIndex:(long long)arg1;
 - (long long)_selectedTabBarIndex;
 - (void)_resetDocumentControllers;
@@ -83,15 +86,18 @@
 - (void)evaluateBlockWhenLoaded:(id)arg1;
 - (id)initWithClientContextClass:(Class)arg1;
 - (void)modalDocumentControllerDidFinish:(id)arg1;
+- (long long)modalDocumentController:(id)arg1 barStyleForStackItem:(id)arg2;
 - (void)_sendClientContextDidChange;
-- (void)loadApplication;
 - (void)_handleScriptUnavailable;
 - (void)_startScriptContextWithURL:(id)arg1;
 - (void)_reloadAfterNetworkChange:(id)arg1;
 - (long long)_applicationMode;
-- (void)_resetUserInterfaceAfterStoreFrontChange;
+- (void)_resetUserInteraceForAccountViewDisappear:(id)arg1;
+- (bool)_isDisplayingAccountViewController;
 - (bool)_isStoreFront:(id)arg1 equalToStoreFront:(id)arg2;
+- (void)_resetUserInterfaceAfterStoreFrontChange;
 - (id)_selectedNavigationDocument;
+- (void)loadApplication;
 - (void)_recordTabBarMetricsEventToSelectViewController:(id)arg1;
 - (id)_documentControllerForNavigationController:(id)arg1;
 - (void)recordMetricsEvent:(id)arg1 flushImmediately:(bool)arg2;
@@ -104,9 +110,10 @@
 - (void)_previewDocumentIsActiveChangeNotification:(id)arg1;
 - (void)_stopApplicationOnBackgroundNotification:(id)arg1;
 - (void)_stopScriptContextForReload;
-- (void)_invalidateApplication;
 - (void)_reloadApplicationOnForegroundNotification:(id)arg1;
 - (void)_reloadApplication;
+- (void)_invalidateApplication;
+- (void)_removeObserversForReloadNotifications;
 - (void)_fireBlocksAfterLoad;
 - (id)_newNavigationControllerWithTabBarItem:(id)arg1;
 - (id)_transientNavigationDocument;
@@ -134,12 +141,13 @@
 - (bool)URLResolver:(id)arg1 shouldPerformDefaultActionForURL:(id)arg2;
 - (id)presentationViewControllerForURLResolver:(id)arg1;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
+- (void)appContext:(id)arg1 didCompletePurchase:(id)arg2;
 - (void)appContext:(id)arg1 setPreviewOverlayDocument:(id)arg2 withOptions:(id)arg3;
 - (void)appContext:(id)arg1 didExitWithOptions:(id)arg2;
 - (id)presentationViewControllerForAppContext:(id)arg1;
 - (id)_operationQueue;
-- (id)vendorIdentifier;
 - (id)clientContext;
+- (id)vendorIdentifier;
 - (id)appIdentifier;
 - (void)_failWithError:(id)arg1;
 - (void)setDelegate:(id)arg1;

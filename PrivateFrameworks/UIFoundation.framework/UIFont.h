@@ -83,7 +83,6 @@
 - (double)_ascenderDeltaForBehavior:(long long)arg1;
 - (bool)_isHiraginoFont;
 - (struct __CTFont { }*)CTFont;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
 - (bool)isFixedPitch;
 - (id)_fontScaledByScaleFactor:(double)arg1;
 - (id)initWithName:(id)arg1 size:(double)arg2;
@@ -120,6 +119,7 @@
 - (void)setInContext:(struct CGContext { }*)arg1;
 - (void)getVerticalOriginTranslations:(struct CGSize { double x1; double x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned long long)arg3;
 - (void)getAdvancements:(struct CGSize { double x1; double x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned long long)arg3;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForFont;
 - (double)ascender;
 - (double)underlineThickness;
@@ -141,7 +141,6 @@
 - (double)capHeight;
 - (id)ab_italicFont;
 - (id)ab_boldFont;
-- (double)_mapkit_lineHeight;
 - (struct CGPoint { double x1; double x2; })mf_originPointFromMidlinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_caplinePointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_baselinePointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -149,5 +148,6 @@
 - (struct CGPoint { double x1; double x2; })mf_originPointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_originPointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })mf_baselinePointFromOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)_mapkit_lineHeight;
 
 @end

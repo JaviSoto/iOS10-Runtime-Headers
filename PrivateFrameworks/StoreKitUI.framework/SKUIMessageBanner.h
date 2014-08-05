@@ -21,9 +21,9 @@
 
 - (void)_buttonAction:(id)arg1;
 - (id)attributedMessage;
+- (void)setShowsClearButton:(bool)arg1;
 - (void)_clearButtonAction:(id)arg1;
 - (bool)showsClearButton;
-- (void)setShowsClearButton:(bool)arg1;
 - (void)setAttributedMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (id)message;

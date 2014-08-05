@@ -24,7 +24,7 @@
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
     NSMutableSet *items;
     NSObject<OS_dispatch_queue> *layersQ;
-    NSMutableSet *videoLayers;
+    struct __CFDictionary { } *videoLayers;
     NSMutableSet *subtitleLayers;
     NSMutableSet *closedCaptionLayers;
     struct CGSize { 

@@ -8,6 +8,7 @@
 + (id)authorizationStatusAsString:(int)arg1;
 + (id)calendarLocationBundle;
 + (id)geoTransportTypeAsString:(int)arg1;
++ (id)formattedLocationCoordinates:(id)arg1;
 
 
 @end

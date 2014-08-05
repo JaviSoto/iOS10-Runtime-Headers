@@ -79,11 +79,11 @@
 - (void)notificationsReceiverDidFinishGathering:(id)arg1;
 - (void)notificationsReceiverDidReceiveNotificationsBatch:(id)arg1;
 - (void)_performBlock:(id)arg1;
+- (void)stop;
 - (id)query;
 - (void)finalize;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 - (void)setQueryQueue:(id)arg1;
 - (void)setBatchingParameters:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; })arg1;
 - (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(id)arg4;

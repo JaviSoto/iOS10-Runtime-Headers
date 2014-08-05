@@ -68,7 +68,6 @@
 - (void)setSupportsLeaderboards:(bool)arg1;
 - (void)setPrerendered:(bool)arg1;
 - (id)defaultCategory;
-- (void)setValid:(bool)arg1;
 - (unsigned char)platform;
 - (id)storeItem;
 - (bool)supportsTurnBasedMultiplayer;
@@ -83,6 +82,7 @@
 - (id)serverRepresentation;
 - (void)setPlatform:(unsigned char)arg1;
 - (bool)isPrerendered;
+- (void)setValid:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (bool)isEqual:(id)arg1;

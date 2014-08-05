@@ -79,10 +79,10 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)hasError;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setGuid:(id)arg1;
 - (id)guid;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setError:(unsigned int)arg1;

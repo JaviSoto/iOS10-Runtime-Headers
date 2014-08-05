@@ -10,15 +10,15 @@
 }
 
 
+- (id)headersIfAvailable;
+- (void)setMutableHeaders:(id)arg1;
+- (void)setMessageBody:(id)arg1;
+- (id)mutableHeaders;
 - (id)messageBodyIfAvailable;
 - (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (id)messageStore;
-- (id)headersIfAvailable;
-- (void)setMutableHeaders:(id)arg1;
-- (id)mutableHeaders;
-- (unsigned long long)messageSize;
-- (void)setMessageBody:(id)arg1;
 - (id)messageBody;
+- (unsigned long long)messageSize;
 - (id)headers;
 - (void)dealloc;
 - (id)messageData;

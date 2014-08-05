@@ -41,7 +41,6 @@
 + (void)setNetworkThread:(id)arg1;
 + (id)networkThread;
 
-- (void)enableExcessiveKeepaliveDetection:(bool)arg1;
 - (void)openToHostName:(id)arg1 port:(long long)arg2;
 - (void)_closeAndReleaseStream:(id)arg1 logMessage:(id)arg2;
 - (void)_readBytesFromStream;

@@ -41,6 +41,7 @@
 - (id)_weakReference;
 - (long long)status;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (long long)priority;
 - (void)start;
@@ -50,6 +51,5 @@
 - (id)URL;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 
 @end

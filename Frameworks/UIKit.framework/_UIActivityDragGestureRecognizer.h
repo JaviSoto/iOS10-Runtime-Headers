@@ -7,8 +7,6 @@
 @interface _UIActivityDragGestureRecognizer : UILongPressGestureRecognizer <UIAutoscrollDelegate, _UIScrollNotification> {
     UIScrollView *_targetScrollView;
     UIAutoscroll *_autoscroll;
-    double _autoscrollFactor;
-    long long _autoscrollRamp;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -20,8 +18,6 @@
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } draggingInsets;
 @property(retain) UIScrollView * targetScrollView;
 @property(retain) UIAutoscroll * autoscroll;
-@property double autoscrollFactor;
-@property long long autoscrollRamp;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -33,10 +29,6 @@
 - (void)reset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })draggingInsets;
 - (int)autoscrollDirectionsForPoint:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
-- (double)autoscrollFactor;
-- (long long)autoscrollRamp;
-- (void)setAutoscrollRamp:(long long)arg1;
-- (void)setAutoscrollFactor:(double)arg1;
 - (id)targetScrollView;
 - (void)setAutoscroll:(id)arg1;
 - (id)autoscroll;

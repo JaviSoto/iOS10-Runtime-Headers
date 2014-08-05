@@ -14,7 +14,6 @@
 
 - (id)drainBatches;
 - (long long)currentBatchCount;
-- (bool)canAddMasterAssetPairToCurrentBatch;
 - (id)init;
 - (void)dealloc;
 - (void)reset;

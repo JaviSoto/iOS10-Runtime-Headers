@@ -17,6 +17,7 @@
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)globalKeyImageName;
+- (id)globalEmojiKeyImageName;
 - (double)skinnyKeyThreshold;
 - (id)deleteKeyImageName;
 - (struct CGPoint { double x1; double x2; })dismissKeyOffset;

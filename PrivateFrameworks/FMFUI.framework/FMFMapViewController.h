@@ -205,7 +205,6 @@
 - (id)mapView;
 - (void*)addressBook;
 - (void)setAddressBook:(void*)arg1;
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
@@ -222,6 +221,7 @@
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)setTitleView:(id)arg1;

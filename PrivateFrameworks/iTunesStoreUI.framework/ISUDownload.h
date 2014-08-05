@@ -35,9 +35,9 @@
 - (bool)isPurchase;
 - (id)copyLocalizedStatusString;
 - (double)estimatedSecondsRemaining;
-- (id)statusDescription;
 - (bool)isContentRestricted;
 - (id)initWithManagedDownload:(id)arg1;
+- (id)statusDescription;
 - (id)storePreorderIdentifier;
 - (id)storeItemIdentifier;
 - (id)thumbnailImageURL;

@@ -19,10 +19,10 @@
 - (id)allGroupIDs;
 - (bool)isNewerThanCatalog:(id)arg1;
 - (bool)isEquivalentToCatalog:(id)arg1;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (id)groups;
 - (void)setGroups:(id)arg1;
+- (void)setTimestamp:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

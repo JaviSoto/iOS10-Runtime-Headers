@@ -26,8 +26,6 @@
 
 
 - (void)setDirtyProperties:(id)arg1;
-- (id)propertyValueForKey:(id)arg1;
-- (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (bool)validate:(id*)arg1;
 - (void)setWeakRelations:(id)arg1;
 - (id)weakRelations;
@@ -39,6 +37,7 @@
 - (void)removeWeakRelation:(id)arg1;
 - (void)addWeakRelation:(id)arg1;
 - (void)childRelationChanged:(id)arg1;
+- (id)propertyValueForKey:(id)arg1;
 - (void)faultPropertiesWithNames:(id)arg1;
 - (bool)existsInStore;
 - (void)cachePropertyValue:(id)arg1 forKey:(id)arg2;
@@ -56,6 +55,7 @@
 - (void)updatePersistentObject;
 - (void)insertPersistentObjectIfNeeded;
 - (id)relationForKey:(id)arg1;
+- (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)persistentOrDirtyPropertyForKey:(id)arg1;
 - (id)persistentObject;
 - (void)didCommit;
@@ -69,8 +69,8 @@
 - (void)rollback;
 - (bool)hasChanges;
 - (id)objectID;
-- (id)dirtyProperties;
 - (bool)isPropertyDirty:(id)arg1;
+- (id)dirtyProperties;
 - (bool)refresh;
 - (void)setFlags:(unsigned int)arg1;
 - (bool)isEqual:(id)arg1;

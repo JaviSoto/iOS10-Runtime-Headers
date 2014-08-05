@@ -124,9 +124,9 @@
 - (id)initWithUserUUID:(id)arg1;
 - (id)initWithPluginType:(id)arg1;
 - (id)pluginType;
+- (long long)generation;
 - (id)helper;
 - (id)currentIndex;
-- (long long)generation;
 - (id)queue;
 - (id)init;
 - (void)setDelegate:(id)arg1;

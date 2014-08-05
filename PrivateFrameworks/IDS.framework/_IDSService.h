@@ -57,9 +57,9 @@
 - (void)connection:(id)arg1 incomingTopLevelMessage:(id)arg2 fromID:(id)arg3 messageContext:(id)arg4;
 - (void)connection:(id)arg1 incomingMessage:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 identifier:(id)arg2 hasBeenDeliveredWithContext:(id)arg3;
-- (void)connection:(id)arg1 identifier:(id)arg2 willSendToDestinations:(id)arg3 skippedDestinations:(id)arg4 registrationPropertyToDestinations:(id)arg5;
+- (void)connection:(id)arg1 identifier:(id)arg2 alternateCallbackID:(id)arg3 willSendToDestinations:(id)arg4 skippedDestinations:(id)arg5 registrationPropertyToDestinations:(id)arg6;
 - (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(bool)arg3 error:(id)arg4;
-- (void)connection:(id)arg1 messageIdentifier:(id)arg2 updatedWithResponseCode:(long long)arg3 error:(id)arg4 lastCall:(bool)arg5;
+- (void)connection:(id)arg1 messageIdentifier:(id)arg2 alternateCallbackID:(id)arg3 updatedWithResponseCode:(long long)arg4 error:(id)arg5 lastCall:(bool)arg6;
 - (void)connection:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)connection:(id)arg1 devicesChanged:(id)arg2;
 - (void)connection:(id)arg1 isActiveChanged:(bool)arg2;

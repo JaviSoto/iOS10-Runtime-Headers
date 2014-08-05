@@ -45,9 +45,6 @@
 + (int)daysSince1970;
 + (id)_geo_dateWithJulianDay:(double)arg1;
 + (id)_geo_calendar;
-+ (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
-+ (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
-+ (id)modificationDateForNoteBeingEdited;
 + (id)nextRoundedHour;
 + (id)dateWithDatePartFromDate:(id)arg1 timePartFromDate:(id)arg2 inCalendar:(id)arg3;
 + (id)CalDateForEndOfTomorrow;
@@ -59,6 +56,9 @@
 + (id)_nowComponents;
 + (id)CalDateForNow;
 + (long long)daysSpannedFromStartDate:(id)arg1 toEndDate:(id)arg2 allDay:(bool)arg3 inCalendar:(id)arg4;
++ (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
++ (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
++ (id)modificationDateForNoteBeingEdited;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkDateFromScalarServerTimestamp:(unsigned long long)arg1;
 + (id)_gkServerTimestamp;
@@ -118,9 +118,6 @@
 - (void)_geo_sunInformationForLocation:(struct { double x1; double x2; })arg1 previousRiseTransitSet:(out id*)arg2 currentRiseTransitSet:(out id*)arg3 nextRiseTransitSet:(out id*)arg4 altitude:(double)arg5;
 - (double)_geo_hoursAndMinutes;
 - (double)_geo_julianDay;
-- (id)mf_replyPrefixForSender:(id)arg1;
-- (id)mf_descriptionForMimeHeaders;
-- (bool)isWholeHour;
 - (id)localizedRelativeDateStringShortened:(bool)arg1;
 - (id)localizedWeekNumber;
 - (id)localizedWeekdayMonthYearStringShortened:(bool)arg1;
@@ -186,6 +183,9 @@
 - (id)_gkFormatedWhenStringWithOptions:(unsigned long long)arg1;
 - (id)_gkFormattedDateForStyle:(unsigned long long)arg1 relative:(bool)arg2;
 - (id)_gkServerTimestamp;
+- (id)mf_descriptionForMimeHeaders;
+- (id)mf_replyPrefixForSender:(id)arg1;
+- (bool)isWholeHour;
 - (bool)isBeforeDate:(id)arg1;
 - (bool)isAfterDate:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;

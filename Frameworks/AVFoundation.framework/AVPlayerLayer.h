@@ -21,6 +21,7 @@
 - (id)_subtitleLayer;
 - (id)_closedCaptionLayer;
 - (id)_videoLayer;
+- (void)setPixelBufferAttributes:(id)arg1;
 - (id)_subtitleGravity;
 - (void)_setItem:(id)arg1 readyForDisplay:(bool)arg2;
 - (void)setOverscanSubtitleSupportEnabled:(bool)arg1;
@@ -34,6 +35,7 @@
 - (void)_addAnimationsForMaskLayer:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
 - (void)_setSubtitleGravity:(id)arg1;
+- (id)pixelBufferAttributes;
 - (id)videoGravity;
 - (bool)isReadyForDisplay;
 - (id)player;

@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class NSString, DKDAAPElement;
+@class NSError, NSString, DKDAAPElement;
 
-@interface DKDAAPElementParser : DKDAAPParser <DKDAAPParserDelegate> {
+@interface DKDAAPElementParser : DKDAAPDataParser <DKDAAPParserDelegate> {
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */
@@ -16,6 +16,7 @@
 
     DKDAAPElement *_rootElement;
     DKDAAPElement *_curContainerElement;
+    NSError *_parseError;
     bool_copyElementData;
 }
 
@@ -26,6 +27,7 @@
 
 
 - (void)parseWithCompletionHandler:(id)arg1;
+- (id)parseElementDataWithError:(id*)arg1;
 - (id)initWithData:(id)arg1 copyElementData:(bool)arg2;
 - (void)_finishParserWithError:(id)arg1;
 - (void)parser:(id)arg1 didEndContainerCode:(unsigned int)arg2;

@@ -6,6 +6,7 @@
 
 @interface SKUIHorizontalLockupLayout : NSObject  {
     NSMutableArray *_columns;
+    double _tallestNonMetadataColumnHeight;
 }
 
 @property(readonly) NSArray * columns;

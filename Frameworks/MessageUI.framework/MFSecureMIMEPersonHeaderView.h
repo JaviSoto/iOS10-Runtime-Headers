@@ -27,6 +27,12 @@
 - (id)secureLabelText;
 - (id)signedLabelText;
 - (void)setSignedLabelText:(id)arg1;
+- (bool)showsButtons;
+- (double)widthForSizingToFitSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)heightOfBottomMargin;
+- (double)heightThatFitsButtons;
+- (double)heightThatFitsMainLabel:(struct CGSize { double x1; double x2; })arg1;
+- (double)heightThatFitsSubview:(id)arg1 padding:(double)arg2;
 - (void)_insert:(bool)arg1 subview:(id)arg2;
 - (id)_warningLabel;
 - (id)_secureLabel;

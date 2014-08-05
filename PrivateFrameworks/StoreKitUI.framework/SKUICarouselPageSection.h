@@ -53,7 +53,9 @@
 - (void)_reloadViewElementProperties;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
+- (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willAppearInContext:(id)arg1;
@@ -62,6 +64,8 @@
 - (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;

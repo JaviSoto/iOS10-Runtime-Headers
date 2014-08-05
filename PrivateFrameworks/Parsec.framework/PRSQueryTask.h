@@ -37,9 +37,9 @@
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4;
 - (id)fbq;
 - (long long)queryId;
-- (void)setCanceled:(bool)arg1;
 - (void)setStarted:(bool)arg1;
 - (bool)started;
+- (void)setCanceled:(bool)arg1;
 - (id)feedback;
 - (void)setFeedback:(id)arg1;
 - (void)resume;

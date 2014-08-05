@@ -39,10 +39,10 @@
 
 - (id)iso6709Notation;
 - (id)floor;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (double)rawCourse;
 - (id)snapToResolution:(double)arg1;
 - (id)propagateLocationToTime:(double)arg1;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (double)getDistanceFrom:(id)arg1;
 - (struct { double x1; double x2; })rawCoordinate;

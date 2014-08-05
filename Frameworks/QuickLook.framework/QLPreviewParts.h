@@ -71,7 +71,6 @@
 + (void)unregisterPreview:(id)arg1;
 + (void)registerPreview:(id)arg1;
 
-- (id)attachmentURLs;
 - (float)pageHeight;
 - (float)pageWidth;
 - (void)setProgressive:(bool)arg1;
@@ -99,14 +98,15 @@
 - (id)uti;
 - (bool)isComputed;
 - (void)setUti:(id)arg1;
+- (id)attachmentURLs;
 - (void)setFileName:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (id)url;
 - (id)previewResponse;
 - (id)safeRequestForRequest:(id)arg1;
 - (id)previewRequest;
-- (id)connection;
 - (bool)isCancelled;
+- (id)connection;
 - (void)setUrl:(id)arg1;
 - (id)password;
 - (void)setDelegate:(id)arg1;

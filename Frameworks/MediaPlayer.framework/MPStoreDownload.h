@@ -39,6 +39,7 @@
 + (id)_storeDownloadForContext:(id)arg1 type:(long long)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForContexts:(id)arg1 type:(long long)arg2 attributes:(id)arg3;
 
+- (bool)isCanceled;
 - (long long)storeItemIdentifier;
 - (long long)downloadSizeLimit;
 - (long long)downloadIdentifier;
@@ -55,7 +56,6 @@
 - (void)_setSSPurchase:(id)arg1 SSPurchaseResponse:(id)arg2;
 - (id)initWithType:(long long)arg1 attributes:(id)arg2;
 - (bool)isPurchasing;
-- (bool)isCanceled;
 - (id)phaseIdentifier;
 - (bool)isPaused;
 - (id)attributes;

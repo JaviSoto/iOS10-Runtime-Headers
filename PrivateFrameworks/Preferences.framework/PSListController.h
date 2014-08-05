@@ -57,6 +57,7 @@
 
 + (bool)displaysButtonBar;
 
+- (void)addSpecifier:(id)arg1;
 - (id)popupStylePopoverController;
 - (void)showPINSheet:(id)arg1;
 - (id)specifierIDPendingPush;
@@ -191,10 +192,8 @@
 - (id)indexPathForIndex:(long long)arg1;
 - (bool)getGroup:(long long*)arg1 row:(long long*)arg2 ofSpecifierAtIndex:(long long)arg3;
 - (void)prepareSpecifiersMetadata;
-- (void)setSpecifier:(id)arg1;
 - (long long)indexOfSpecifier:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
-- (id)specifier;
 - (void)setSpecifierID:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (void)setReusesCells:(bool)arg1;
@@ -202,7 +201,8 @@
 - (void)reloadSpecifiers;
 - (id)specifiers;
 - (void)reloadSpecifier:(id)arg1;
-- (void)addSpecifier:(id)arg1;
+- (void)setSpecifier:(id)arg1;
+- (id)specifier;
 - (id)bundle;
 - (void)reload;
 - (void)handleURL:(id)arg1;

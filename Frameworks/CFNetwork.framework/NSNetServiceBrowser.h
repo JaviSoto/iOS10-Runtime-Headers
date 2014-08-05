@@ -15,6 +15,7 @@
 @property bool includesPeerToPeer;
 
 
+- (void)stop;
 - (id)init;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
@@ -32,6 +33,5 @@
 - (id)delegate;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 
 @end

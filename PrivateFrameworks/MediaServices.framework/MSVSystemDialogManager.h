@@ -15,6 +15,7 @@
 - (id)systemDialogForUserNotification:(struct __CFUserNotification { }*)arg1;
 - (void)registerSystemDialog:(id)arg1 forUserNotification:(struct __CFUserNotification { }*)arg2;
 - (id)init;
+- (void)dealloc;
 - (void).cxx_destruct;
 
 @end

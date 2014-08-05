@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, NSString, NSOperationQueue, NSDate, CKDOperation;
+@class CKDClientContext, NSString, NSOperationQueue, NSObject<OS_dispatch_group>, NSDate, CKDOperation;
 
 @interface CKDPlaceholderOperation : NSOperation  {
+    NSObject<OS_dispatch_group> *_group;
     bool_isFinished;
     bool_isExecuting;
     NSDate *_startDate;

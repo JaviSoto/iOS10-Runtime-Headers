@@ -36,9 +36,9 @@
 - (id)playbackSessionID;
 - (unsigned long long)numberOfServerAddressChanges;
 - (id)serverAddress;
+- (id)URI;
 - (id)playbackStartDate;
 - (unsigned long long)numberOfSegmentsDownloaded;
-- (id)URI;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

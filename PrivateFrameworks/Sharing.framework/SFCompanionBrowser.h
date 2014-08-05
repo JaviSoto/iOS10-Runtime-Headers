@@ -49,12 +49,12 @@
 - (void)stopBrowsing;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)stop;
 - (id)initWithServiceType:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)clearCache;
 - (void)start;
 - (id)delegate;
 - (void)dealloc;
-- (void)stop;
 
 @end

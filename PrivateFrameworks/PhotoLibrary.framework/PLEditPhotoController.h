@@ -258,9 +258,9 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedCropRect;
 - (double)straightenAngle;
 - (void)assetContainerDidChange:(id)arg1;
-- (void)_updateToolbar;
 - (void)setRotationAngle:(double)arg1;
 - (double)rotationAngle;
+- (void)_updateToolbar;
 - (bool)isEditing;
 - (void)_setUndoManager:(id)arg1;
 - (void)save:(id)arg1;

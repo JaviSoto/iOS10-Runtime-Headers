@@ -3,19 +3,19 @@
  */
 
 @interface _MPHomeSharingArtworkCacheKey : NSObject  {
-    unsigned long long _persistentId;
+    unsigned long long _persistentID;
     struct CGSize { 
         double width; 
         double height; 
     } _size;
 }
 
-@property(readonly) unsigned long long persistentId;
+@property(readonly) unsigned long long persistentID;
 @property(readonly) struct CGSize { double x1; double x2; } size;
 
 
-- (unsigned long long)persistentId;
-- (id)initWithPersistentId:(unsigned long long)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)persistentID;
+- (id)initWithPersistentID:(unsigned long long)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (struct CGSize { double x1; double x2; })size;

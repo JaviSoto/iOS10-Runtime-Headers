@@ -27,7 +27,7 @@
 - (void)_startArbitratingItemsAtURLs:(id)arg1 withSuperarbitrationServer:(id)arg2;
 - (void)_addProvider:(id)arg1 ofItemsAtURL:(id)arg2;
 - (void)_removeReactorForID:(id)arg1;
-- (void)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 withLastEventID:(id)arg3;
+- (void)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 watchingFile:(bool)arg3 withLastEventID:(id)arg4;
 - (bool)_handleMessage:(id)arg1 ofKind:(id)arg2 withParameters:(id)arg3 embeddedServer:(id)arg4 fromClient:(id)arg5;
 - (void)_tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(id)arg2 toItemAtURL:(id)arg3 withClientID:(id)arg4 name:(id)arg5;

@@ -75,7 +75,6 @@
 - (bool)hasDownloadBaseURL;
 - (bool)hasData;
 - (bool)hasUploadReceipt;
-- (bool)hasRecordId;
 - (bool)hasRequestor;
 - (bool)hasContentBaseURL;
 - (bool)hasDerivedContentType;
@@ -91,6 +90,7 @@
 - (void)setContentBaseURL:(id)arg1;
 - (id)contentBaseURL;
 - (bool)hasHeader;
+- (bool)hasRecordId;
 - (id)downloadBaseURL;
 - (void)setHeader:(id)arg1;
 - (id)protectionInfo;

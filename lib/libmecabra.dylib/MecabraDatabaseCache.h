@@ -23,15 +23,16 @@
 - (void)setUniqueKeys:(id)arg1;
 - (void)updateSeedNumber:(unsigned long long)arg1;
 - (void)deleteEntry:(id)arg1;
-- (void)updateEntry:(id)arg1;
+- (void)updateEntry:(id)arg1 keyString:(id)arg2;
 - (id)entryForIdentifier:(unsigned long long)arg1;
 - (unsigned long long)identifierForEntry:(id)arg1;
+- (id)partialEntryForEntry:(id)arg1;
 - (id)allIdentifiers;
 - (void)setCurrentSeed:(unsigned long long)arg1;
 - (unsigned long long)currentSeed;
 - (id)identifierController;
+- (id)keyStringForEntry:(id)arg1;
 - (id)entryToIdentifierMapping;
-- (id)partialEntryForEntry:(id)arg1;
 - (id)uniqueKeys;
 - (id)identifierToEntryMapping;
 - (void)setIdentifierToEntryMapping:(id)arg1;

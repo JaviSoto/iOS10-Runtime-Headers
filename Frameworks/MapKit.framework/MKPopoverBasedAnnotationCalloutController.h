@@ -33,7 +33,6 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setMapDisplayStyle:(unsigned long long)arg1;
 - (void)smallCalloutViewControllerDidAppear:(id)arg1;
 - (void)embeddingView:(id)arg1 didMoveToWindow:(id)arg2;
@@ -54,6 +53,7 @@
 - (bool)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setAllowsPopoverWhenNotInWindow:(bool)arg1;
 - (bool)allowsPopoverWhenNotInWindow;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

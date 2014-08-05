@@ -94,9 +94,9 @@
 - (bool)useCachedEtags;
 - (void)_fetchPackages;
 - (id)assetFieldNamesToPublishURLs;
+- (void)setUseCachedEtags:(bool)arg1;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (void)_fetchRecords;
-- (void)setUseCachedEtags:(bool)arg1;
 - (void)setDesiredKeySet:(id)arg1;
 - (id)desiredKeySet;
 - (void)setRecordIDsToFetch:(id)arg1;

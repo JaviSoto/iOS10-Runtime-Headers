@@ -51,6 +51,7 @@
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 oplock:(bool)arg3 sendAllFields:(bool)arg4 clientChangeTokenData:(id)arg5;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (id)recordIDByRequestID;
+- (id)zoneIDsToLock;
 - (id)requestOperationClasses;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;

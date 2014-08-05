@@ -58,10 +58,10 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)hasType;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)setTimestamp:(double)arg1;
 - (void)setPosition:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, MPAVRoutingController, <MPAVRoutingViewControllerDelegate>, MPWeakTimer, NSString, UITableView;
+@class MPAVRoutingController, NSString, NSArray, <MPAVRoutingViewControllerDelegate>, MPWeakTimer, UITableView, UIColor;
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *_tableView;
     NSArray *_cachedRoutes;
     MPWeakTimer *_updateTimer;
     MPAVRoutingController *_routingController;
+    UIColor *_tableCellsBackgroundColor;
     int _airPlayPasswordAlertDidAppearToken;
     int _airPlayPasswordAlertDidCancelToken;
     bool_airPlayPasswordAlertDidAppearTokenIsValid;
@@ -35,6 +36,8 @@
 - (bool)allowMirroring;
 - (unsigned long long)avItemType;
 - (double)_tableViewHeightAccordingToDataSource;
+- (void)_setTableCellsBackgroundColor:(id)arg1;
+- (id)_tableCellsBackgroundColor;
 - (void)setAVItemType:(unsigned long long)arg1;
 - (void)_setupUpdateTimerIfNecessary;
 - (void)_updateDisplayedRoutes;
@@ -57,13 +60,13 @@
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (id)_tableView;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithStyle:(unsigned long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (id)_tableView;
 - (void)viewWillLayoutSubviews;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

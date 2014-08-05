@@ -68,9 +68,9 @@
 - (void)setTtl:(unsigned int)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (unsigned int)version;
+- (void)setTimestamp:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (int)statusCode;

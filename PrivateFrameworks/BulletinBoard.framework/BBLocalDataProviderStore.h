@@ -38,8 +38,8 @@
 - (void)performBlockOnDataProviders:(id)arg1;
 - (void)removeDataProvider:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;
-- (id)dataProviderForSectionID:(id)arg1;
 - (void)_queue_removeDataProvider:(id)arg1;
+- (id)dataProviderForSectionID:(id)arg1;
 - (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (void)addDataProvider:(id)arg1;

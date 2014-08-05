@@ -26,8 +26,8 @@
 - (id)profileDescription;
 - (id)friendlyName;
 - (id)expiryDate;
-- (id)identifier;
 - (id)UUID;
+- (id)identifier;
 - (void).cxx_destruct;
 
 @end

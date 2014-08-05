@@ -38,6 +38,7 @@
 - (id)adjustmentCreatorCode;
 - (id)adjustmentCompoundVersion;
 - (id)adjustmentType;
+- (id)adjustmentSimpleDescription;
 - (id)adjustmentData;
 - (void)setOtherAdjustmentsFingerprint:(id)arg1;
 - (id)otherAdjustmentsFingerprint;

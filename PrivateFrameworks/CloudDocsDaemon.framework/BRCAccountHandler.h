@@ -8,6 +8,8 @@
     BRCAccountSession *_accountSession;
     NSString *_currentAccountID;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_migrationStatusSetterQueue;
+    bool_hasSetMigrationComplete;
     <BRCAccountHandlerDelegate> *_delegate;
 }
 
@@ -15,10 +17,12 @@
 @property(readonly) BRCAccountSession * accountSession;
 
 + (bool)isAccountStillUsingUbiquity;
-+ (id)inSystemStoreAccountIDValidatingUbiquityEnabled:(bool)arg1;
++ (id)inSystemStoreAccountIDWithServiceValidation:(bool)arg1;
++ (id)inSystemStoreAccountIDWithServiceValidation:(bool)arg1 isServiceEnabled:(bool*)arg2;
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)inSystemStoreAccountIDForUbiquityDataclass;
 
+- (void)markMigrationCompletedForDSID:(id)arg1;
 - (bool)createCurrentAccountSessionWithID:(id)arg1 error:(id*)arg2;
 - (void)destroyCurrentSessionSynchronously;
 - (void)startAndLoadCurrentAccountSynchronously;
@@ -34,8 +38,8 @@
 - (id)onDiskAccountID;
 - (void)_watchAccountChanges;
 - (id)accountIDPath;
+- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(bool)arg3;
 - (id)accountSession;
-- (void)forceAccountUpdateAfterMigration;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

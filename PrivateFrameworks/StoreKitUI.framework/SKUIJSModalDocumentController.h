@@ -11,10 +11,12 @@
 @property(retain,readonly) NSArray * documents;
 
 
+- (void)replaceDocument:(id)arg1 :(id)arg2 :(id)arg3;
 - (void)popToDocument:(id)arg1;
 - (void)popDocument;
 - (void)pushDocument:(id)arg1 :(id)arg2;
 - (id)documents;
+- (id)_adjustedOptionsWithOptions:(id)arg1;
 - (id)initWithAppContext:(id)arg1 modalDocumentController:(id)arg2;
 - (void).cxx_destruct;
 

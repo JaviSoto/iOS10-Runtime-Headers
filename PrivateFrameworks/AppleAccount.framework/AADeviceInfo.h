@@ -40,9 +40,9 @@
 - (id)userAgentHeader;
 - (id)osVersion;
 - (id)productVersion;
-- (id)buildVersion;
 - (id)deviceName;
 - (id)productType;
 - (void).cxx_destruct;
+- (id)buildVersion;
 
 @end

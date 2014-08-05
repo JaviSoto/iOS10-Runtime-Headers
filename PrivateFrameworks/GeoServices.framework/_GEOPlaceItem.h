@@ -17,7 +17,6 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * name;
 @property(readonly) NSData * encodedData;
-@property(readonly) NSData * data;
 @property(getter=isDisputed,readonly) bool disputed;
 @property(getter=isValid,readonly) bool valid;
 @property(readonly) struct { double x1; double x2; } coordinate;
@@ -60,7 +59,6 @@
 @property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
 @property(getter=_hasPriceRange,readonly) bool hasPriceRange;
 @property(getter=_priceRange,readonly) unsigned int priceRange;
-@property(getter=_categoryKeys,readonly) NSArray * categoryKeys;
 @property(getter=_hasAnyAmenities,readonly) bool hasAnyAmenities;
 @property(getter=_hasDeliveryAmenity,readonly) bool hasDeliveryAmenity;
 @property(getter=_hasDelivery,readonly) bool hasDelivery;
@@ -73,6 +71,7 @@
 @property(getter=_operatingHours,readonly) NSArray * operatingHours;
 @property(getter=_hasTelephone,readonly) bool hasTelephone;
 @property(getter=_telephone,readonly) NSString * telephone;
+@property(getter=_disambiguationName,readonly) NSString * disambiguationName;
 @property(getter=_openState,readonly) unsigned int openState;
 @property(getter=_needsAttribution,readonly) bool needsAttribution;
 @property(getter=_webURL,copy,readonly) NSURL * webURL;
@@ -87,6 +86,7 @@
 @property(getter=_additionalPlaceInfos,readonly) NSArray * additionalPlaceInfos;
 
 
+- (id)encodedData;
 - (id)_logoPathForRequirement:(int)arg1 scale:(double)arg2;
 - (id)_displayNameForRequirement:(int)arg1;
 - (bool)_showAddForRequirement:(int)arg1;
@@ -117,6 +117,7 @@
 - (id)_providerURL;
 - (bool)_needsAttribution;
 - (unsigned int)_openState;
+- (id)_disambiguationName;
 - (bool)_hasTelephone;
 - (id)_operatingHours;
 - (bool)_hasCurrentOperatingHours;
@@ -158,7 +159,6 @@
 - (bool)_hasAnyAmenities;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
-- (id)_categoryKeys;
 - (unsigned int)_priceRange;
 - (bool)_hasPriceRange;
 - (float)_normalizedUserRatingScore;
@@ -166,7 +166,6 @@
 - (bool)_hasUserRatingScore;
 - (unsigned long long)_muid;
 - (bool)_hasMUID;
-- (id)encodedData;
 - (struct { unsigned long long x1; unsigned long long x2; })_sessionGUID;
 - (id)_place;
 - (bool)isDisputed;
@@ -179,7 +178,6 @@
 - (struct { double x1; double x2; })coordinate;
 - (id)name;
 - (bool)isValid;
-- (id)data;
 - (void)dealloc;
 - (id)description;
 

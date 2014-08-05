@@ -265,6 +265,7 @@
 - (void)setSelectionSegueTemplate:(id)arg1;
 - (void)setAccessoryActionSegueTemplate:(id)arg1;
 - (void)_setDrawsTopSeparatorDuringReordering:(bool)arg1;
+- (void)_contentViewLabelTextDidChange:(id)arg1;
 - (id)_disclosureChevronImage:(bool)arg1;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(bool)arg2;
 - (void)_handleSwipeDeleteCancelation:(id)arg1;
@@ -281,6 +282,7 @@
 - (void)setEditingStyle:(long long)arg1;
 - (id)_editableTextField;
 - (void)_updateSeparatorContent:(bool)arg1;
+- (void)_setSectionLocation:(int)arg1 animated:(bool)arg2 forceBackgroundSetup:(bool)arg3;
 - (void)setSectionLocation:(int)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_reorderingSeparatorView;
@@ -329,6 +331,8 @@
 - (void)_setupTableViewCellCommon;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (id)editingData:(bool)arg1;
+- (void)_releaseDetailTextLabel;
+- (void)_releaseTextLabel;
 - (void)setSelectionFadeDuration:(double)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_topSeparatorFrame;
@@ -373,7 +377,6 @@
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
 - (void)_grabberBeganReorder:(id)arg1;
 - (id)_removeControl;
-- (id)_tableView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_layoutDebuggingTitle;
 - (void)paste:(id)arg1;
@@ -497,6 +500,7 @@
 - (void)setSeparatorStyle:(long long)arg1;
 - (void)_setNeedsHeightCalculation:(bool)arg1;
 - (id)_indexPath;
+- (id)_tableView;
 - (void)_setIndexBarWidth:(double)arg1;
 - (void)_setDrawsTopShadow:(bool)arg1;
 - (void)setSectionBorderColor:(id)arg1;

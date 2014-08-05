@@ -20,12 +20,12 @@
 - (void)clearEntries;
 - (unsigned long long)entriesCount;
 - (void)addTextEntries:(id)arg1;
-- (void)addEntries:(id)arg1;
 - (void)setTextEntries:(id)arg1;
 - (void)setEntries:(id)arg1;
 - (id)textEntries;
 - (id)defaultArtworkIdentifierForFeatureType:(int)arg1;
 - (id)artworkIdentifierForShieldType:(long long)arg1 textSpecificIdentifiers:(id*)arg2;
+- (void)addEntries:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

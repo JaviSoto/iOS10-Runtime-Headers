@@ -18,6 +18,7 @@
 
 - (bool)supportsStreams;
 - (id)serviceType;
+- (void)stop;
 - (void)getContinuationStreamsWithEndpointData:(id)arg1 completionHandler:(id)arg2;
 - (id)serviceEndpointData;
 - (void)setSupportsStreams:(bool)arg1;
@@ -26,6 +27,5 @@
 - (void)start;
 - (id)delegate;
 - (void)dealloc;
-- (void)stop;
 
 @end

@@ -20,6 +20,7 @@
 - (void)setServerCacheTag:(id)arg1;
 - (id)serverCacheTag;
 - (id)picture;
+- (void)expire;
 - (void)setPicture:(id)arg1;
 - (void)setUpdating:(bool)arg1;
 - (bool)updating;

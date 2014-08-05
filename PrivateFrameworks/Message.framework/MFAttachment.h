@@ -73,15 +73,6 @@
 
 - (unsigned long long)setupComplete;
 - (void)fetchData;
-- (id)inferredMimeType;
-- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
-- (void)setAttachmentManager:(id)arg1;
-- (unsigned long long)decodedFileSize;
-- (id)fetchDataSynchronously:(id*)arg1;
-- (id)contentID;
-- (void)setContentID:(id)arg1;
-- (void)setMimeType:(id)arg1;
-- (void)setFileName:(id)arg1;
 - (void)setLastProgressTime:(double)arg1;
 - (double)lastProgressTime;
 - (void)setLastProgressBytes:(unsigned long long)arg1;
@@ -100,15 +91,17 @@
 - (bool)shouldAutoDownload;
 - (id)textEncodingGuessWithData:(id)arg1;
 - (unsigned long long)maxSizeAllowedOverCurrentNetwork;
-- (bool)isContainedInCompose;
 - (void)setFetchCompletionBlock:(id)arg1;
 - (id)fetchCompletionBlock;
+- (bool)isContainedInCompose;
+- (id)fetchLocalData:(id*)arg1 stripPrivateMetadata:(bool)arg2;
 - (bool)isContainedInRFC822;
+- (bool)isDataAvailableLocally;
 - (void)setIsUserFacing:(bool)arg1;
+- (id)readFromDisk;
 - (id)initWithURL:(id)arg1 attachmentManager:(id)arg2;
 - (bool)isUserFacing;
 - (void)writeToDiskWithData:(id)arg1;
-- (bool)isDataAvailableLocally;
 - (void)setDecodedFileSize:(unsigned long long)arg1;
 - (unsigned long long)encodedFileSize;
 - (id)decodeFilterWithDataConsumer:(id)arg1;
@@ -119,6 +112,16 @@
 - (id)attachmentManager;
 - (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(bool)arg2;
 - (bool)isImageFile;
+- (id)inferredMimeType;
+- (id)fetchLocalData;
+- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
+- (void)setAttachmentManager:(id)arg1;
+- (unsigned long long)decodedFileSize;
+- (id)fetchDataSynchronously:(id*)arg1;
+- (id)contentID;
+- (void)setContentID:(id)arg1;
+- (void)setMimeType:(id)arg1;
+- (void)setFileName:(id)arg1;
 - (id)path;
 - (id)url;
 - (void)setUrl:(id)arg1;
@@ -133,6 +136,7 @@
 - (id)previewItemURL;
 - (id)mimeType;
 - (id)fileName;
+- (id)meetingStorePersistentID;
 - (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(double)arg3;
 - (bool)conformsToType:(id)arg1;
 - (id)icsRepresentation;
@@ -166,7 +170,6 @@
 - (unsigned long long)imageScalingFlags;
 - (bool)isDisplayableInline;
 - (struct CGSize { double x1; double x2; })markupSizeForImageScale:(unsigned long long)arg1;
-- (id)meetingStorePersistentID;
 - (void)setEventID:(id)arg1;
 - (id)contentType;
 - (id)pass;

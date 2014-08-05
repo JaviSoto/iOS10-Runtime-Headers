@@ -2,14 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSError;
-
 @interface CKDFetchUserQuotaOperation : CKDDatabaseOperation  {
     unsigned long long _quotaAvailable;
 }
 
 @property unsigned long long quotaAvailable;
-@property(retain) NSError * error;
 
 
 - (void)fillOutOperationResult:(id)arg1;

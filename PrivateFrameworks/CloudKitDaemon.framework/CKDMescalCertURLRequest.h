@@ -14,6 +14,7 @@
 - (void)setMescalCert:(id)arg1;
 - (bool)hasRequestBody;
 - (bool)requiresDeviceID;
+- (bool)allowsAnonymousAccount;
 - (long long)partitionType;
 - (long long)serverType;
 - (void)requestDidParsePlaintextObject:(id)arg1;

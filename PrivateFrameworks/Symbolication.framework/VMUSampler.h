@@ -89,13 +89,13 @@
 - (double)timeLimit;
 - (void)setTimeLimit:(double)arg1;
 - (int)pid;
+- (bool)stop;
 - (void)setDelegate:(id)arg1;
 - (bool)start;
 - (id)delegate;
 - (id)initWithTask:(unsigned int)arg1;
 - (void)finalize;
 - (void)dealloc;
-- (bool)stop;
 - (unsigned int)mainThread;
 - (unsigned int)sampleCount;
 

@@ -10,7 +10,7 @@
     bool_hasValidIndexPathsForPinningItems;
     bool_hasValidPinnedBackdropViewStyle;
     bool_hasValidPinningLayoutInformation;
-    bool_isInLayoutAttributesForElementsInRect;
+    long long _inLayoutAttributesForElementsCount;
     NSMapTable *_indexPathToItemPinningConfiguration;
     NSMapTable *_indexPathToPinningLayoutInformation;
     NSArray *_indexPathsForPinningItems;
@@ -31,7 +31,6 @@
 }
 
 @property bool allowsPinningTransitions;
-@property(readonly) NSArray * indexPathsForPinningItems;
 @property double overrideContentHeight;
 @property double overrideContentWidth;
 @property(copy) NSIndexSet * expandChildPageSectionsIndexSet;
@@ -40,6 +39,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * backdropGroupName;
+@property(readonly) NSArray * indexPathsForPinningItems;
 @property bool rendersWithPerspective;
 
 + (Class)layoutAttributesClass;
@@ -47,30 +47,32 @@
 
 - (id)expandChildPageSectionsIndexSet;
 - (bool)allowsPinningTransitions;
-- (double)overrideContentWidth;
-- (double)overrideContentHeight;
 - (void)setOverrideContentHeight:(double)arg1;
+- (double)overrideContentHeight;
+- (void)setAllowsPinningTransitions:(bool)arg1;
 - (id)backdropGroupName;
 - (long long)_pinnedBackdropViewStyle;
 - (long long)_pinningTransitionStyleForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pinningFrameForStartingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemPinningConfiguration:(id)arg2 atIndexPath:(id)arg3;
 - (void)_calculatePinningLayoutInformation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetFrameForStartingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemPinningConfiguration:(id)arg2 layoutInformation:(id)arg3 atIndexPath:(id)arg4 returningIsPinning:(out bool*)arg5;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_pinningContentInsetForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
 - (long long)_pinningStyleForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pinningFrameForStartingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemPinningConfiguration:(id)arg2 atIndexPath:(id)arg3;
 - (bool)_allowsBackdropDecorationForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
 - (void)_configureCellLayoutAttributes:(id)arg1 forItemWithPinningConfiguration:(id)arg2 layoutInformation:(id)arg3 atIndexPath:(id)arg4 allowPinning:(bool)arg5 returningIsPinning:(out bool*)arg6;
+- (void)_appendAdditionalLayoutAttributesForPinningItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toArray:(id)arg2;
 - (id)_layoutAttributesForPinnedBackdropDecorationViewAtIndexPath:(id)arg1 pinningConfiguration:(id)arg2 layoutInformation:(id)arg3;
 - (id)_itemPinningLayoutInformationForItemAtIndexPath:(id)arg1;
 - (id)_itemPinningConfigurationForItemAtIndexPath:(id)arg1;
 - (void)_invalidatePinningLayoutInformation;
 - (id)_getCollectionViewUpdateItemForItemFromIndex:(long long)arg1 initalLayout:(bool)arg2;
 - (id)_indexPathsForPinningItems;
+- (id)pinnedLayoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForUnpinnedItemAtIndexPath:(id)arg1;
 - (void)setExpandChildPageSectionsIndexSet:(id)arg1;
-- (void)setAllowsPinningTransitions:(bool)arg1;
 - (void)setOverrideContentWidth:(double)arg1;
 - (void)setRendersWithPerspective:(bool)arg1;
+- (double)overrideContentWidth;
 - (id)indexPathsForPinningItems;
 - (bool)rendersWithPerspective;
 - (void)setBackdropGroupName:(id)arg1;

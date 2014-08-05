@@ -2,16 +2,19 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, NSString, NSMutableDictionary, NSOperationQueue, CKDPCSCache;
+@class CKDClientContext, NSString, CKDPCSFetchAggregator, NSOperationQueue, CKDPCSCache, NSMutableDictionary;
 
 @interface CKDPCSManager : NSObject  {
     struct _PCSIdentityData { } *_publicZoneIdentity;
     CKDClientContext *_context;
     NSString *_currentAccountIdentifier;
     NSOperationQueue *_operationQueue;
+    CKDPCSFetchAggregator *_recordFetchAggregator;
     CKDPCSCache *_zoneCache;
-    CKDPCSCache *_shareCache;
+    CKDPCSCache *_backgroundZoneCache;
     NSMutableDictionary *_recordCacheByPrivateZoneID;
+    NSMutableDictionary *_backgroundRecordCacheByPrivateZoneID;
+    CKDPCSCache *_shareCache;
     struct _PCSIdentityData { } *_myPCSIdentity;
     NSString *_serviceName;
 }
@@ -19,17 +22,23 @@
 @property(readonly) CKDClientContext * context;
 @property(retain) NSString * currentAccountIdentifier;
 @property(retain) NSOperationQueue * operationQueue;
+@property(retain) CKDPCSFetchAggregator * recordFetchAggregator;
 @property(retain) CKDPCSCache * zoneCache;
-@property(retain) CKDPCSCache * shareCache;
+@property(retain) CKDPCSCache * backgroundZoneCache;
 @property(retain) NSMutableDictionary * recordCacheByPrivateZoneID;
+@property(retain) NSMutableDictionary * backgroundRecordCacheByPrivateZoneID;
+@property(retain) CKDPCSCache * shareCache;
 @property struct _PCSIdentityData { }* myPCSIdentity;
 @property(retain) NSString * serviceName;
 
 
 - (struct _PCSIdentityData { }*)myPCSIdentity;
-- (void)setRecordCacheByPrivateZoneID:(id)arg1;
 - (void)setShareCache:(id)arg1;
+- (void)setBackgroundRecordCacheByPrivateZoneID:(id)arg1;
+- (void)setRecordCacheByPrivateZoneID:(id)arg1;
+- (void)setBackgroundZoneCache:(id)arg1;
 - (void)setZoneCache:(id)arg1;
+- (void)setRecordFetchAggregator:(id)arg1;
 - (id)referenceSignatureFromAssetKey:(id)arg1;
 - (id)newAssetKey;
 - (id)wrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 withError:(id*)arg3;
@@ -49,12 +58,16 @@
 - (id)etagFromZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)referenceIdentifierStringFromAssetKey:(id)arg1;
 - (id)shareCache;
-- (id)_newPCSRecordCache;
 - (id)recordCacheByPrivateZoneID;
+- (id)_newPCSRecordCache;
+- (id)backgroundRecordCacheByPrivateZoneID;
 - (void)_fetchPCSForRecordWithIDFromServer:(id)arg1 operation:(id)arg2 forCache:(id)arg3;
+- (void)_handleRecordFetchedFromServer:(id)arg1 withID:(id)arg2 forCache:(id)arg3 operation:(id)arg4 error:(id)arg5;
+- (id)recordFetchAggregator;
 - (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 fetchFromServer:(bool)arg3 withCompletionHandler:(id)arg4;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 zonePCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
 - (id)zoneCache;
+- (id)backgroundZoneCache;
 - (void)_saveNewPCSOnDefaultZone:(id)arg1 operation:(id)arg2 cache:(id)arg3;
 - (struct _OpaquePCSShareProtection { }*)createZonePCSFromData:(id)arg1 error:(id*)arg2;
 - (struct _OpaquePCSShareProtection { }*)createZonePCSWithError:(id*)arg1;

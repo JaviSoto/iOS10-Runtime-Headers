@@ -201,7 +201,7 @@
 - (bool)autoSwitchStreamVariants;
 - (id)externalPlaybackVideoGravity;
 - (id)expectedAssetTypes;
-- (void)_addLayer:(id)arg1;
+- (void)_addLayer:(id)arg1 withPixelBufferAttributes:(id)arg2;
 - (id)_stateDispatchQueue;
 - (void)_conformVideoLayer:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_noteDisplaySize:(struct CGSize { double x1; double x2; })arg1 forPlayerLayer:(id)arg2;
@@ -217,9 +217,9 @@
 - (bool)isExternalPlaybackActive;
 - (void)setClosedCaptionDisplayEnabled:(bool)arg1;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id)arg4;
-- (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)setAllowsExternalPlayback:(bool)arg1;
 - (void)setAppliesMediaSelectionCriteriaAutomatically:(bool)arg1;
+- (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (long long)externalPlaybackType;
 - (void)_removeAllLayers;

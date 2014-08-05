@@ -27,14 +27,17 @@
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (id)_fixedSpaceItemWithWidth:(double)arg1;
 - (void)_hideOverlayWithStatusBar:(bool)arg1 duration:(double)arg2;
+- (bool)_needsToolbar;
 - (bool)_updateAVState;
 - (id)_flexibleSpaceItem;
 - (bool)_updateActionItem;
 - (id)_listDescriptionStringWithTitle:(id)arg1;
 - (id)_indexFormatter;
-- (bool)_needsToolbar;
+- (bool)_needsToolbarForTraitCollection:(id)arg1;
 - (bool)_needsAVControls;
 - (void)wirelessRoutesDidChange:(id)arg1;
+- (void)_refreshListItem;
+- (void)_refreshArchiveItem;
 - (id)imageWithImage:(id)arg1 drawnOnTopOf:(id)arg2 stretchedToSize:(struct CGSize { double x1; double x2; })arg3 scale:(double)arg4;
 - (bool)canPrint;
 - (void)navigationGoBackAction:(id)arg1;
@@ -71,6 +74,10 @@
 - (bool)_canPrint;
 - (id)_pdfPreviewDataAtURL:(id)arg1;
 - (void)showArchiveContentAnimated:(bool)arg1;
+- (void)_updateToolbarVisibilityWithTraitCollection:(id)arg1 animated:(bool)arg2;
+- (void)_updateNavigationBarWithMode:(int)arg1 traitCollection:(id)arg2 animated:(bool)arg3;
+- (void)_updateToolbarWithMode:(int)arg1 traitCollection:(id)arg2 animated:(bool)arg3;
+- (void)_refreshListOrArchiveItem;
 - (id)_updatedArchiveButton;
 - (void)rightArrowAction:(id)arg1;
 - (void)leftArrowAction:(id)arg1;
@@ -84,6 +91,7 @@
 - (void)_setupPreferredModeWithParentViewController:(id)arg1;
 - (void)_setupWithMode:(int)arg1 parentViewController:(id)arg2;
 - (int)_preferredModeWithParentViewController:(id)arg1 presentingViewController:(id)arg2;
+- (int)_preferredModeWithParentViewController:(id)arg1 presentingViewController:(id)arg2 traitCollection:(id)arg3;
 - (void)_contentWasTapped;
 - (void)_setControlsOverlayVisible:(bool)arg1 withStatusBar:(bool)arg2 duration:(double)arg3;
 - (void)_showGenericDisplayBundle;
@@ -136,6 +144,7 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)_currentInteractionController;
 - (void)traitCollectionDidChange:(id)arg1;

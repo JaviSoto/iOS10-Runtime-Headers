@@ -7,20 +7,23 @@
 @interface PHChangeRequestHelper : NSObject  {
     bool_isMutated;
     bool_isNew;
+    bool_didRequestUUID;
     NSMutableDictionary *_mutations;
     id _changeRequest;
     NSString *_uuid;
+    NSString *_uuidSaveToken;
     NSManagedObjectID *_objectID;
 }
 
 @property id changeRequest;
 @property(readonly) NSString * uuid;
+@property(readonly) NSString * uuidSaveToken;
 @property(retain) NSManagedObjectID * objectID;
 @property(readonly) NSMutableDictionary * mutations;
 @property(getter=isNew) bool new;
 @property(getter=isMutated) bool mutated;
 
-+ (id)changeRequestWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
++ (id)changeRequestWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 + (id)changeRequestForObject:(id)arg1;
 
 - (void)setChangeRequest:(id)arg1;
@@ -30,9 +33,11 @@
 - (void)setMutated:(bool)arg1;
 - (bool)isMutated;
 - (void)didMutate;
+- (void)generateUUIDIfNecessary;
 - (id)initWithXPCDict:(id)arg1 changeRequest:(id)arg2;
 - (id)initForNewObjectWithChangeRequest:(id)arg1;
 - (id)mutations;
+- (id)uuidSaveToken;
 - (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
 - (id)changeRequest;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2 changeRequest:(id)arg3;

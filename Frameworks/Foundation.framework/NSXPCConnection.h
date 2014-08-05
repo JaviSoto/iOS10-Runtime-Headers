@@ -57,6 +57,7 @@
 + (void)dispatchMainIfCurrentXPCConnection:(id)arg1;
 + (id)callServicesDaemonObserverXPCInterface;
 + (id)callServicesDaemonDelegateXPCInterface;
++ (id)callServicesAccountsControllerDelegateXPCInterface;
 
 - (id)_queue;
 - (void)_killConnection:(int)arg1;
@@ -73,6 +74,7 @@
 - (void)resume;
 - (id)initWithMachServiceName:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (void)stop;
 - (id)initWithEndpoint:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
@@ -126,7 +128,6 @@
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
 - (id)initWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)_errorDescription;
-- (void)stop;
 - (id)_xpcConnection;
 - (id)_clientBundleID;
 - (bool)sl_clientHasEntitlement:(id)arg1;

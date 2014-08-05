@@ -32,9 +32,9 @@
 - (void)loadFromPreferencesWithCompletionHandler:(id)arg1;
 - (bool)hasLoaded;
 - (void)setPluginConfiguration:(id)arg1;
-- (id)entitlements;
 - (void)setEnabled:(bool)arg1;
 - (bool)isEnabled;
+- (id)entitlements;
 - (id)init;
 - (id)localizedDescription;
 - (id)configuration;

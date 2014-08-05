@@ -16,6 +16,7 @@
 @property(retain) UILabel * itemTitleLabel;
 @property(retain) UILabel * itemSubtitleLabel;
 
++ (double)titleOriginX;
 
 - (void)setItemSubtitleLabel:(id)arg1;
 - (void)setItemTitleLabel:(id)arg1;

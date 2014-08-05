@@ -2,10 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIProductPageReviewsViewController, NSURLRequest, SKUINetworkErrorViewController, SKUIProductPage, SKUIFacebookLikeStatus, SKUIIncompatibleAppViewController, SKUILoadProductPageOperation, NSString, SSMetricsPageEvent, SKUIMessageBanner, UIViewController<SKUIProductPageChildViewController>, SKUIProductPageDetailsViewController, SKUIItem, <SKUIIPhoneProductPageDelegate>, SKUIProductPagePlaceholderViewController, NSOperationQueue, SKUISwooshArrayViewController, SKUIProductPageHeaderViewController, SKUIMetricsController, ACAccountStore, NSURL;
+@class SKUIProductPagePlaceholderViewController, SKUILoadProductPageOperation, SKUIMessageBanner, SKUIMetricsController, SKUISwooshArrayViewController, SKUIProductPageReviewsViewController, NSURL, SKUINetworkErrorViewController, NSString, SKUIIncompatibleAppViewController, SSMetricsPageEvent, SKUIProductPage, NSURLRequest, SKUIProductPageDetailsViewController, NSOperationQueue, SKUIItem, UIViewController<SKUIProductPageChildViewController>, <SKUIIPhoneProductPageDelegate>, SKUIProductPageHeaderViewController;
 
 @interface SKUIIPhoneProductPageViewController : SKUIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, UIScrollViewDelegate, SKStoreProductViewControllerDelegate, SKUIMessageBannerDelegate> {
-    ACAccountStore *_accountStore;
     bool_askPermission;
     SKUIMessageBanner *_banner;
     NSString *_bannerText;
@@ -13,7 +12,6 @@
     <SKUIIPhoneProductPageDelegate> *_delegate;
     SKUIProductPageDetailsViewController *_detailsViewController;
     SKUINetworkErrorViewController *_errorViewController;
-    SKUIFacebookLikeStatus *_facebookLikeStatus;
     SKUIProductPageHeaderViewController *_headerViewController;
     SKUIIncompatibleAppViewController *_incompatibleViewController;
     SKUIItem *_item;
@@ -64,8 +62,6 @@
 - (bool)_isIncompatibleItem;
 - (void)_showError:(id)arg1;
 - (id)_viewControllerForSectionIndex:(unsigned long long)arg1;
-- (void)_setFacebookLikeStatus:(id)arg1;
-- (void)_reloadFacebookLikeStatus;
 - (id)_reviewsViewController;
 - (void)_showBanner;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
@@ -92,7 +88,6 @@
 - (void)setBannerText:(id)arg1;
 - (void)setAskPermission:(bool)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (void)_accountStoreDidChangeNotification:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)initWithURL:(id)arg1;

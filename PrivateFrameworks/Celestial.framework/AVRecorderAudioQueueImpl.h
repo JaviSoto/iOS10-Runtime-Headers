@@ -63,9 +63,9 @@
 - (id)attributeForKey:(id)arg1;
 - (bool)isRecording;
 - (bool)isActive;
+- (void)stop;
 - (id)init;
 - (bool)start;
 - (void)dealloc;
-- (void)stop;
 
 @end

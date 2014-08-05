@@ -20,7 +20,10 @@
 - (void)accountButtonsViewControllerDidSignOut:(id)arg1;
 - (void)accountButtonsViewControllerDidSignIn:(id)arg1;
 - (id)backgroundColorForIndexPath:(id)arg1;
+- (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
+- (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;

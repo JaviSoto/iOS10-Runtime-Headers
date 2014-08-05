@@ -96,6 +96,7 @@
     bool_allowSlalomEditor;
     bool_prepareMoviePlayerForScrubberAutomatically;
     bool_shouldPlayVideoWhenViewAppears;
+    bool__slalomRegionEditorCreatedForScrubber;
     bool__didInsertMoviePlayerView;
     bool__didEditSlalom;
     bool__isFetchingVideo;
@@ -131,6 +132,7 @@
 @property double scrubberWidth;
 @property double currentTime;
 @property(retain) PLProgressStack * trimProgressStack;
+@property(readonly) bool _slalomRegionEditorCreatedForScrubber;
 @property(retain,readonly) NSString * _pathForVideoPreviewFile;
 @property(retain,readonly) NSString * _pathForPrebakedLandscapeScrubberThumbnails;
 @property(retain,readonly) NSString * _pathForPrebakedPortraitScrubberThumbnails;
@@ -157,6 +159,7 @@
 - (bool)_isFetchingVideo;
 - (id)_videoAVObjectBuilder;
 - (void)set_didInsertMoviePlayerView:(bool)arg1;
+- (bool)_slalomRegionEditorCreatedForScrubber;
 - (bool)prepareMoviePlayerForScrubberAutomatically;
 - (void)setAllowSlalomEditor:(bool)arg1;
 - (id)posterFrameView;
@@ -293,6 +296,7 @@
 - (void)_updateSlalomRegionEditorState;
 - (void)_updateSlalomRegionEditorRange;
 - (double)_scrubberBackgroundHeight;
+- (void)_removeScrubber;
 - (bool)_shouldShowSlalomEditor;
 - (void)_hideTrimMessageView:(bool)arg1;
 - (bool)_didInsertMoviePlayerView;
@@ -336,9 +340,9 @@
 - (void)_tearDownMoviePlayer;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (id)pathForVideoFile;
+- (bool)canEdit;
 - (void)applicationDidEnterBackground;
 - (void)viewDidAppear;
-- (bool)canEdit;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenDidConnect:(id)arg1;
 - (bool)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
@@ -360,6 +364,7 @@
 - (bool)isEditing;
 - (double)endTime;
 - (void)pause;
+- (void)stop;
 - (void)_setDuration:(double)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)interfaceOrientation;
@@ -369,7 +374,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)setProgress:(id)arg1;
-- (void)stop;
 - (double)duration;
 - (void)applicationWillResignActive;
 - (void)_reset;

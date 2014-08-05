@@ -36,13 +36,13 @@
 - (id)_remoteMessageQueue;
 - (void)_noteSetupComplete;
 - (bool)removeListenerID:(id)arg1;
-- (bool)__isRemoteObjectValidOnQueue:(id)arg1;
-- (bool)__isLocalObjectValidOnQueue:(id)arg1;
 - (void)_listenerSetUpdated;
 - (bool)hasListenerForID:(id)arg1;
 - (void)_remoteObjectCleanup;
 - (void)_localObjectCleanup;
+- (bool)__isRemoteObjectValidOnQueue:(id)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;
+- (bool)__isLocalObjectValidOnQueue:(id)arg1;
 - (bool)remoteObjectExists;
 - (bool)localObjectExists;
 - (bool)isConnecting;

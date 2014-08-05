@@ -2,17 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSTimer, NSString, <PRSSessionController>, NSMutableArray, NSObject<OS_dispatch_queue>, NSMutableSet, NSObject<OS_dispatch_group>;
+@class NSTimer, NSString, <PRSSessionController>, NSArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSMutableArray, NSObject<OS_dispatch_group>;
 
 @interface PRSSearchSession : NSObject <PRSResourceProvider, PRSImageSource> {
     <PRSSessionController> *_client;
-    NSMutableArray *_cachedResponses;
-    NSMutableArray *_cachedWebResponses;
+    NSMutableSet *_cachedResults;
+    NSMutableSet *_cachedWebResults;
     NSObject<OS_dispatch_group> *_feedbackGroup;
     NSMutableSet *_feedbackTasks;
     NSMutableArray *_feedback;
     double _lastQueryTime;
-    NSTimer *timer;
+    NSTimer *_guidTimer;
     bool_valid;
     NSObject<OS_dispatch_queue> *_clientQueue;
     double _sessionStartTime;
@@ -23,6 +23,9 @@
 @property(getter=isValid,readonly) bool valid;
 @property(readonly) double searchRenderTimeout;
 @property double sessionStartTime;
+@property(readonly) NSString * fteLocString;
+@property(readonly) NSString * fteLearnMoreString;
+@property(readonly) NSArray * supportedServices;
 @property double retryAfter;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -34,8 +37,11 @@
 - (void)setClientQueue:(id)arg1;
 - (void)killFeedback;
 - (void)syncFeedback;
+- (id)cachedResultSetForCompletionString:(id)arg1 webSearch:(bool)arg2;
+- (id)copyCachedResult:(id)arg1 webSearch:(bool)arg2;
 - (id)queryWithString:(id)arg1 handler:(id)arg2;
 - (bool)searchSupported:(bool)arg1;
+- (id)supportedServices;
 - (bool)sessionReady;
 - (bool)isLocaleSupported:(id)arg1;
 - (void)userDidCancelSession;
@@ -49,8 +55,11 @@
 - (id)queryWithString:(id)arg1 webSearch:(bool)arg2 handler:(id)arg3;
 - (id)queryWithString:(id)arg1 webSearch:(bool)arg2 scaleFactor:(double)arg3 handler:(id)arg4;
 - (id)cachedResultSetForQuery:(id)arg1 webSearch:(bool)arg2;
-- (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(struct { double x1; double x2; })arg5 storeFrontId:(id)arg6 locale:(id)arg7;
+- (void)getCachedQueries:(id*)arg1 results:(id*)arg2 webSearch:(bool)arg3;
+- (id)createQueryURL:(id)arg1 userQueryString:(id)arg2 currentLocation:(id)arg3 locationSource:(id)arg4 currentCoordinates:(struct { double x1; double x2; })arg5 storeFrontId:(id)arg6 locale:(id)arg7 context:(id)arg8;
 - (void)reloadGuid;
+- (id)fteLearnMoreString;
+- (id)fteLocString;
 - (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
 - (void)setFeedbackStartTime;
 - (void)refreshGUID;

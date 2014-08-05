@@ -4,7 +4,7 @@
 
 @class NSDictionary, ABPropertyAction, ABContactAddFavoriteAction, ABContactAddToExistingContactAction, NSMutableArray, ABContactAddLinkedCardAction, NSString, ABCardFaceTimeGroup, ABContactToggleBlockCallerAction, ABSiriContactContextProvider, ABContactAction, NSArray, NSMutableDictionary, ABContactHeaderEditView, ABContactHeaderView, ABContactCreateNewContactAction, ABCardLinkedCardsGroup, ABContactAddNewFieldAction, ABMedicalIDAction, HKHealthStore, UIView, ABPropertyFaceTimeAction, ABContactHeaderDisplayView, <ABContactViewControllerDelegate>, CNContact, ABPropertyIDSRequest, ABContactView, <ABPresenterDelegate>, NSMapTable, ABPropertyLinkedCardsAction, ABCardGroup;
 
-@interface ABContactViewController : UITableViewController <ABPropertyActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, UIPopoverControllerDelegate, ABContactAddLinkedCardActionDelegate, ABContactHeaderViewDelegate, ABContactViewControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
+@interface ABContactViewController : UITableViewController <ABPropertyActionDelegate, ABPropertyCellDelegate, ABContactGroupPickerDelegate, ABPresenterDelegate, UIPopoverControllerDelegate, ABContactAddLinkedCardActionDelegate, ABContactHeaderViewDelegate, ABContactViewControllerDelegate, UIAdaptivePresentationControllerDelegate, ABContactViewDataSource, ABContactViewDelegate, UIViewControllerRestoration> {
     NSArray *_displayedProperties;
     bool_needsReload;
     int _animating;
@@ -152,7 +152,6 @@
 + (id)boolStateRestorationProperties;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
-- (double)desiredHeightForWidth:(double)arg1;
 - (long long)indexOfGroup:(id)arg1;
 - (void)setCardEditingDeleteContactGroup:(id)arg1;
 - (void)setCardEditingActionsGroup:(id)arg1;
@@ -390,7 +389,6 @@
 - (void)actionDidUpdate:(id)arg1;
 - (void)action:(id)arg1 presentViewController:(id)arg2 sender:(id)arg3;
 - (void)actionWasCanceled:(id)arg1;
-- (void)actionDidFinish:(id)arg1;
 - (void)setAllowsOnlyFaceTimeActions:(bool)arg1;
 - (bool)allowsOnlyFaceTimeActions;
 - (void)setAllowsOnlyPhoneActions:(bool)arg1;
@@ -398,6 +396,7 @@
 - (void)reloadDataPreservingChanges:(bool)arg1;
 - (id)contact;
 - (id)initWithContact:(id)arg1;
+- (double)desiredHeightForWidth:(double)arg1;
 - (void)saveChanges;
 - (void)setMessage:(id)arg1;
 - (id)message;
@@ -408,11 +407,13 @@
 - (void)setAllowsEditing:(bool)arg1;
 - (bool)allowsEditing;
 - (id)tableView;
+- (void)actionDidFinish:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (id)contentScrollView;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (double)heightForHeaderInTableView:(id)arg1;

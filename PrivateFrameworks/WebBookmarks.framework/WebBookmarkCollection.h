@@ -242,8 +242,8 @@
 - (void)commitSyncTransaction;
 - (bool)beginSyncTransaction;
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1;
-- (unsigned long long)purgeableSpace;
 - (unsigned long long)generation;
+- (unsigned long long)purgeableSpace;
 - (unsigned long long)purge:(unsigned long long)arg1;
 - (bool)isEmpty;
 - (void)dealloc;

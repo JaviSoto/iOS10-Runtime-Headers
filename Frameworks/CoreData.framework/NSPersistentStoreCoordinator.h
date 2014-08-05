@@ -42,8 +42,7 @@
 + (void)initialize;
 + (bool)accessInstanceVariablesDirectly;
 
-- (id)_objectIDForContactsIdentifier:(int)arg1 entityName:(id)arg2 store:(id)arg3;
-- (int)_contactsIdentifierForObjectID:(id)arg1;
+- (bool)_deleteAllRowsNoRelationshipIntegrityForStore:(id)arg1 andEntityWithAllSubentities:(id)arg2 error:(id*)arg3;
 - (bool)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id*)arg3;
 - (bool)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (void)_setIsRegisteredWithUbiquity:(bool)arg1;
@@ -71,6 +70,7 @@
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
 - (id)_retainedPersistentStores;
+- (id)persistentStores;
 - (bool)_removePersistentStore:(id)arg1;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
 - (void)_addPersistentStore:(id)arg1 identifier:(id)arg2;
@@ -81,7 +81,6 @@
 - (void)_copyMetadataFromStore:(id)arg1 toStore:(id)arg2 migrationManager:(id)arg3;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
 - (id)initWithManagedObjectModel:(id)arg1;
-- (id)persistentStores;
 - (void)performBlock:(id)arg1;
 - (id)managedObjectIDForURIRepresentation:(id)arg1 error:(id*)arg2;
 - (id)_persistentStoreForIdentifier:(id)arg1;

@@ -25,12 +25,12 @@
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)touchesForView:(id)arg1;
+- (id)touchesForWindow:(id)arg1;
 - (id)_unmodifiedInput;
 - (id)_modifiedInput;
 - (long long)_modifierFlags;
 - (double)_wheelVelocity;
 - (long long)_moveDirection;
-- (id)touchesForWindow:(id)arg1;
 - (void)_sendEventToResponder:(id)arg1;
 - (struct __IOHIDEvent { }*)_hidEvent;
 - (bool)_isKeyDown;

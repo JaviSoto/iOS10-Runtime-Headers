@@ -12,8 +12,8 @@
 }
 
 
-- (bool)hasActiveAssertions;
 - (void)removeAssertion:(id)arg1;
+- (bool)hasActiveAssertions;
 - (void)addAssertion:(id)arg1;
 - (id)init;
 - (void)dealloc;

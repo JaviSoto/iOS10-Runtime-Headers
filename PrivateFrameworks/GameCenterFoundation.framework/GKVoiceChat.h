@@ -53,10 +53,10 @@
 - (void)setVolume:(float)arg1;
 - (float)volume;
 - (bool)isActive;
+- (void)stop;
 - (id)name;
 - (void)start;
 - (void)dealloc;
 - (void)setActive:(bool)arg1;
-- (void)stop;
 
 @end

@@ -6,14 +6,14 @@
    See Warning(s) below.
  */
 
-@class NSData, GKSession, NSString, NSArray, GKConnection, NSDictionary, NSMutableDictionary, NSMutableArray, <GKMatchDelegate>;
+@class NSData, GKSession, NSString, NSArray, GKConnection, NSMutableDictionary, GKThreadsafeDictionary, NSMutableArray, NSDictionary, <GKMatchDelegate>;
 
 @interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
     unsigned char _version;
     bool_needHostScore;
     bool_hostScoreForQuery;
     unsigned int _packetSequenceNumber;
-    NSDictionary *_playersByIdentifier;
+    GKThreadsafeDictionary *_playersByIdentifier;
     <GKMatchDelegate> *_delegateWeak;
     GKSession *_session;
     GKConnection *_connection;
@@ -41,7 +41,7 @@
 @property(retain) GKSession * session;
 @property(retain) GKConnection * connection;
 @property(retain) NSMutableDictionary * playerEventQueues;
-@property(retain) NSDictionary * playersByIdentifier;
+@property(retain) GKThreadsafeDictionary * playersByIdentifier;
 @property(retain) NSMutableArray * reinvitedPlayers;
 @property(retain) NSData * selfBlob;
 @property unsigned char version;
@@ -81,6 +81,7 @@
 - (void)setReinvitedPlayers:(id)arg1;
 - (void)setPlayerEventQueues:(id)arg1;
 - (id)playerEventQueues;
+- (void)setPlayersByIdentifier:(id)arg1;
 - (void)session:(id)arg1 updateRelay:(id)arg2 forPeer:(id)arg3;
 - (void)preemptRelay:(id)arg1;
 - (void)acceptRelayResponse:(id)arg1 player:(id)arg2;
@@ -134,7 +135,6 @@
 - (void)sendStateCallbackToDelegate:(id)arg1 forPlayer:(id)arg2 state:(long long)arg3;
 - (void)updateRematchID;
 - (void)_delegate:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
-- (void)setPlayersByIdentifier:(id)arg1;
 - (id)playersByIdentifier;
 - (id)rematchID;
 - (bool)sendData:(id)arg1 toPlayers:(id)arg2 dataMode:(long long)arg3 error:(id*)arg4;

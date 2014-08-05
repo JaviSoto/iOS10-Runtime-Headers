@@ -16,11 +16,13 @@
 - (id)_addImageViewWithReuseIdentifier:(id)arg1 viewElement:(id)arg2 context:(id)arg3;
 - (void)_styleItemOfferButton:(id)arg1 forElement:(id)arg2 context:(id)arg3;
 - (id)_itemStateForButton:(id)arg1;
+- (id)addTextViewWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addLabelViewWithOrdinalElement:(id)arg1 width:(double)arg2 context:(id)arg3;
-- (id)addStarRatingViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addOfferViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addHorizontalListWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addHeaderViewWithElement:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (id)addStarRatingViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (id)addStarRatingControlViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addTomatoRatingViewWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)addDividerWithElement:(id)arg1 context:(id)arg2;
 - (void)addView:(id)arg1;

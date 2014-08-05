@@ -2,15 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, NSDictionary, NSArray;
+@class NSString, NSDictionary, NSArray, _UIDynamicValueAnimation;
 
 @interface PLPhotoEditMutableModel : PLPhotoEditModel  {
     long long _transactionDepth;
+    _UIDynamicValueAnimation *_currentCopyAnimation;
 }
 
 @property(copy) NSString * effectFilterName;
 @property long long effectFilterVersion;
 @property(getter=isSmartToneEnabled) bool smartToneEnabled;
+@property double autoSmartToneLevel;
+@property(copy) NSString * autoSmartToneIdentifier;
 @property double smartToneLevel;
 @property double brightnessLevelOffset;
 @property double contrastLevelOffset;
@@ -20,31 +23,47 @@
 @property double blackPointLevelOffset;
 @property(copy) NSDictionary * smartToneStatistics;
 @property(getter=isSmartColorEnabled) bool smartColorEnabled;
+@property double autoSmartColorLevel;
+@property(copy) NSString * autoSmartColorIdentifier;
 @property double smartColorLevel;
 @property double colorContrastLevelOffset;
 @property double colorVibrancyLevelOffset;
 @property double colorCastLevelOffset;
 @property(copy) NSDictionary * smartColorStatistics;
 @property(getter=isSmartBWEnabled) bool smartBWEnabled;
+@property(copy) NSDictionary * smartBWStatistics;
 @property double smartBWLevel;
 @property double bwStrengthLevelOffset;
 @property double bwNeutralGammaLevelOffset;
 @property double bwToneLevelOffset;
 @property double bwHueLevelOffset;
 @property double bwGrainLevelOffset;
-@property(copy) NSDictionary * smartBWStatistics;
+@property(getter=isWhiteBalanceEnabled) bool whiteBalanceEnabled;
+@property double whiteBalanceFaceI;
+@property double whiteBalanceFaceQ;
+@property double whiteBalanceFaceStrength;
+@property double whiteBalanceFaceWarmth;
 @property unsigned long long rotation;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedCropRect;
 @property double straightenAngle;
+@property(copy) NSDictionary * autoWhiteBalanceSettings;
+@property(copy) NSString * autoWhiteBalanceIdentifier;
 @property(copy) NSArray * redEyeCorrections;
 @property(copy) NSArray * autoRedEyeCorrections;
-@property(copy) NSArray * autoEnhanceFilters;
-@property bool autoEnhanceIsOn;
+@property(copy) NSArray * legacyAutoEnhanceFilters;
+@property bool legacyAutoEnhanceIsOn;
 
 
 - (void)removeRedEyeCorrections:(id)arg1;
 - (void)addRedEyeCorrections:(id)arg1;
+- (void)setAutoWhiteBalanceIdentifier:(id)arg1;
+- (void)setAutoWhiteBalanceSettings:(id)arg1;
 - (void)setCropConstraintWidth:(long long)arg1 height:(long long)arg2;
+- (void)setWhiteBalanceFaceWarmth:(double)arg1;
+- (void)setWhiteBalanceFaceStrength:(double)arg1;
+- (void)setWhiteBalanceFaceQ:(double)arg1;
+- (void)setWhiteBalanceFaceI:(double)arg1;
+- (void)setWhiteBalanceEnabled:(bool)arg1;
 - (void)setBwGrainLevelOffset:(double)arg1;
 - (void)setBwHueLevelOffset:(double)arg1;
 - (void)setBwToneLevelOffset:(double)arg1;
@@ -54,9 +73,14 @@
 - (void)setSmartBWEnabled:(bool)arg1;
 - (void)setSmartBWStatistics:(id)arg1;
 - (void)setColorCastLevelOffset:(double)arg1;
+- (void)setAutoSmartColorIdentifier:(id)arg1;
+- (void)setAutoSmartColorLevel:(double)arg1;
 - (void)setBlackPointLevelOffset:(double)arg1;
-- (void)loadDataFromModel:(id)arg1;
-- (void)setOffsetInstanceVariable:(double*)arg1 toValue:(double)arg2;
+- (void)setAutoSmartToneIdentifier:(id)arg1;
+- (void)setAutoSmartToneLevel:(double)arg1;
+- (void)copyValuesFromModel:(id)arg1 animated:(bool)arg2;
+- (void)_setLevelInstanceVariable:(double*)arg1 toValue:(double)arg2;
+- (id)_newModelChangeAnimation;
 - (void)performChangesWithBlock:(id)arg1;
 - (void)setSmartColorEnabled:(bool)arg1;
 - (void)setColorVibrancyLevelOffset:(double)arg1;
@@ -74,11 +98,12 @@
 - (void)setSmartToneStatistics:(id)arg1;
 - (void)setNormalizedCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setStraightenAngle:(double)arg1;
-- (void)setAutoEnhanceIsOn:(bool)arg1;
-- (void)setAutoEnhanceFilters:(id)arg1;
+- (void)setLegacyAutoEnhanceIsOn:(bool)arg1;
+- (void)setLegacyAutoEnhanceFilters:(id)arg1;
 - (void)setRedEyeCorrections:(id)arg1;
 - (void)setEffectFilterVersion:(long long)arg1;
 - (void)setEffectFilterName:(id)arg1;
+- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setRotation:(unsigned long long)arg1;
 

@@ -43,10 +43,10 @@
 
 - (long long)orientation;
 - (id)model;
-- (id)buildVersion;
 - (id)localizedModel;
 - (void)setOrientation:(long long)arg1;
 - (id)name;
+- (long long)_predictionGraphicsQuality;
 - (long long)_keyboardGraphicsQuality;
 - (void)_clearGraphicsQualityOverride;
 - (bool)_hasGraphicsQualityOverride;
@@ -64,6 +64,7 @@
 - (void)setBatteryMonitoringEnabled:(bool)arg1;
 - (bool)isBatteryMonitoringEnabled;
 - (id)identifierForVendor;
+- (id)buildVersion;
 - (id)systemName;
 - (void)_updateSystemSoundActiveStatus:(id)arg1;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
@@ -84,7 +85,11 @@
 - (void)_registerForSystemSounds:(id)arg1;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (long long)userInterfaceIdiom;
-- (long long)_controlCenterGraphicsQuality;
+- (long long)sbf_controlCenterGraphicsQuality;
+- (long long)sbf_bannerGraphicsQuality;
+- (id)_currentProduct;
+- (id)_mediumQualityProductsIncludingN41:(bool)arg1;
+- (long long)_graphicsQualityIncludingMediumN41:(bool)arg1;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 
 @end

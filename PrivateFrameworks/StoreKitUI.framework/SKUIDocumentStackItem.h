@@ -19,6 +19,8 @@
 @property(retain) UIViewController * viewController;
 @property(getter=isAnimated,readonly) bool animated;
 @property(readonly) NSString * presentationType;
+@property(readonly) NSString * sheetType;
+@property(readonly) NSString * overlayType;
 @property(readonly) NSString * sourceElementIdentifier;
 
 
@@ -26,6 +28,8 @@
 - (bool)usesNavigationControllerForModalPresentation;
 - (id)navigationDocumentController;
 - (id)sourceElementIdentifier;
+- (id)overlayType;
+- (id)sheetType;
 - (id)presentationType;
 - (id)initWithDocument:(id)arg1 presentationOptions:(id)arg2;
 - (void)setNavigationDocumentController:(id)arg1;

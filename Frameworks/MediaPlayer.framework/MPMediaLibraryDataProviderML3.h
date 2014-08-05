@@ -32,6 +32,7 @@
 @property(readonly) bool isGeniusEnabled;
 @property(readonly) NSArray * preferredAudioLanguages;
 @property(readonly) NSArray * preferredSubtitleLanguages;
+@property(readonly) <MPArtworkDataSource> * completeMyCollectionArtworkDataSource;
 @property(readonly) NSArray * localizedSectionIndexTitles;
 
 + (id)_unadjustedValueForItemPropertyVolumeNormalizationWithDefaultValue:(id)arg1;
@@ -48,7 +49,6 @@
 - (bool)isCurrentThreadInTransaction;
 - (id)library;
 - (bool)_removeEntitiesWithIdentifiers:(long long*)arg1 count:(unsigned long long)arg2 entityClass:(Class)arg3;
-- (void)loadBestArtworkImageDataForSize:(struct CGSize { double x1; double x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
 - (void)setLibrary:(id)arg1;
 - (void)_coalesceEvents;
 - (bool)_dataProviderSupportsEntityChangeTracking;

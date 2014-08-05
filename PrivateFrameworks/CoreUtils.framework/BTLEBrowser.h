@@ -69,10 +69,10 @@
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)setDispatchQueue:(id)arg1;
 - (id)dispatchQueue;
+- (void)stop;
 - (void)_start;
 - (id)init;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 
 @end

@@ -58,6 +58,7 @@
 - (id)_performBodyDataDownload:(id)arg1 usingConnection:(id)arg2 isPartial:(bool*)arg3;
 - (id)_downloadForMessageBodyData:(id)arg1;
 - (id)_dataForMessage:(id)arg1 readHeadersOnly:(bool)arg2;
+- (bool)setPreferredEncoding:(unsigned int)arg1 forMessage:(id)arg2;
 - (void)_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)addFlagChanges:(id)arg1 forMessages:(id)arg2;
 - (void)_synchronouslySetFlags:(id)arg1 clearFlags:(id)arg2 forMessages:(id)arg3 originalChanges:(id)arg4;
@@ -77,6 +78,7 @@
 - (unsigned long long)_fetchMessagesWithArguments:(id)arg1 idRange:(id)arg2 onConnection:(id)arg3 synchronize:(bool)arg4 limit:(unsigned long long)arg5 topUIDToCompact:(unsigned long long)arg6 topKnownUID:(unsigned long long)arg7 success:(bool*)arg8 examinedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg9 fetchableUIDsFound:(unsigned long long*)arg10 preserveUID:(unsigned long long*)arg11;
 - (id)_searchArgumentsForSynchronize;
 - (bool)_shouldContinueToPreservedUID:(unsigned long long)arg1;
+- (unsigned long long)growFetchWindow;
 - (void)updateDeletedCountWithNotDeletedCount:(unsigned long long)arg1;
 - (bool)performOperationRequiringConnection:(bool)arg1 withOptions:(int)arg2 operation:(id)arg3;
 - (void)_performActionsOnConnection:(id)arg1 uidsToFetch:(id*)arg2 uidsToSync:(id*)arg3 messagesToCompact:(id*)arg4 libraryDetails:(id)arg5 flagSearchResults:(id)arg6 shouldForce:(bool)arg7 newUIDsToFetch:(unsigned int*)arg8;
@@ -99,15 +101,9 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg3;
 - (bool)connection:(id)arg1 shouldHandleUntaggedResponse:(id)arg2 forCommand:(struct { int x1; id x2; id x3; unsigned long long x4; id x5; }*)arg3;
 - (void)willRemoveDelegation:(id)arg1;
-- (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
-- (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 partial:(bool*)arg4;
-- (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
-- (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
-- (bool)bodyFetchRequiresNetworkActivity;
 - (id)_fetchFullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 didDownload:(bool*)arg4;
 - (bool)_fetchDataForMimePart:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 isComplete:(bool*)arg3 consumer:(id)arg4;
 - (void)_handleFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
-- (bool)setPreferredEncoding:(unsigned int)arg1 forMessage:(id)arg2;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
 - (id)willSetFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)uniqueRemoteIDsForMessages:(id)arg1;
@@ -123,7 +119,6 @@
 - (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
 - (long long)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
 - (bool)canFetchSearchResults;
-- (unsigned long long)growFetchWindow;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(bool)arg2;
 - (void)_setFlagsForMessages:(id)arg1;
 - (long long)fetchNumMessages:(unsigned long long)arg1 preservingUID:(id)arg2 options:(unsigned long long)arg3;
@@ -132,6 +127,11 @@
 - (unsigned long long)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (unsigned long long)serverMessageCount;
+- (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 partial:(bool*)arg4;
+- (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (bool)bodyFetchRequiresNetworkActivity;
 - (void)setDownloadDelegate:(id)arg1;
 - (void)close;
 - (void)dealloc;

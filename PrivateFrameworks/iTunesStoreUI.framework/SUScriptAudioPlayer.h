@@ -69,10 +69,10 @@
 - (void)play;
 - (id)attributeKeys;
 - (void)pause;
+- (void)stop;
 - (id)URL;
 - (long long)state;
 - (void)dealloc;
-- (void)stop;
 - (double)duration;
 
 @end

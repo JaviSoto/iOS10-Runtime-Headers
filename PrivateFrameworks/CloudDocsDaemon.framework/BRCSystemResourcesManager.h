@@ -22,6 +22,7 @@
     NSHashTable *_lowMemoryObservers;
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     NSMapTable *_processObservers;
+    NSHashTable *_appListObservers;
 }
 
 @property(readonly) bool isNetworkReachable;
@@ -33,12 +34,11 @@
 
 + (id)manager;
 
+- (void)removeAppListObserver:(id)arg1;
 - (void)removeLowMemoryObserver:(id)arg1;
 - (void)addLowMemoryObserver:(id)arg1;
-- (bool)hasEnoughSpaceForDevice:(int)arg1;
 - (void)removePowerObserver:(id)arg1;
 - (void)addPowerObserver:(id)arg1;
-- (bool)isPowerOK;
 - (id)_createMonitoringObjectForProcessID:(int)arg1 observer:(id)arg2;
 - (void)_invalidateProcessMonitorObject:(id)arg1;
 - (void)_processLowDiskNotification:(bool)arg1;
@@ -49,20 +49,26 @@
 - (void)_resetLowDiskManager;
 - (void)_resetPowerManager;
 - (void)_resetReachability;
+- (void)_invalidateAppListObservers;
 - (void)_invalidateProcessObservers;
 - (void)_invalidateLowMemory;
 - (void)_invalidateLowDiskManager;
 - (void)_invalidatePowerManager;
 - (void)_invalidateReachability;
+- (void)_initXPCFSEvents;
+- (void)_initAppListObservers;
 - (void)_initProcessObservers;
 - (void)_initLowMemory;
 - (void)_initLowDiskManager;
 - (void)_initPowerManager;
 - (void)_initReachability;
+- (void)addAppListObserver:(id)arg1;
 - (void)removeProcessMonitor:(id)arg1;
 - (void)addProcessMonitor:(id)arg1 forProcessID:(int)arg2;
-- (void)removeLowDiskObserver:(id)arg1 forDevice:(int)arg2;
+- (bool)hasEnoughSpaceForDevice:(int)arg1;
+- (bool)isPowerOK;
 - (void)addLowDiskObserver:(id)arg1 forDevice:(int)arg2;
+- (void)removeLowDiskObserver:(id)arg1 forDevice:(int)arg2;
 - (void)removeReachabilityObserver:(id)arg1;
 - (void)addReachabilityObserver:(id)arg1;
 - (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(bool)arg2;

@@ -16,6 +16,7 @@
 - (void)setSessionData:(id)arg1;
 - (id)sessionData;
 - (bool)requiresDeviceID;
+- (bool)allowsAnonymousAccount;
 - (id)requestOperationClasses;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (void)setMescalData:(id)arg1;

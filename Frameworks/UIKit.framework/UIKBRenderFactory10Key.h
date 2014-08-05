@@ -5,6 +5,7 @@
 @interface UIKBRenderFactory10Key : UIKBRenderFactory  {
 }
 
++ (bool)_isActiveKeyplaneSwitchKey:(id)arg1;
 
 - (void)setupColumnLayoutSegmentsWithControlWidth:(double)arg1;
 - (id)shiftedWhiteControlKeyTraits;

@@ -23,11 +23,11 @@
 
 - (id)seeAllURL;
 - (id)unavailableItemIdentifiers;
-- (bool)isNewsstand;
 - (bool)showsIndexNumbers;
 - (id)initWithChartPageContext:(id)arg1;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
+- (bool)isNewsstand;
 - (id)items;
 - (id)title;
 - (void).cxx_destruct;

@@ -127,8 +127,6 @@
 - (void)_getTitle:(id*)arg1 customHeaderView:(id*)arg2 forHeaderInSection:(long long)arg3;
 - (id)_defaultSectionHeaderView;
 - (void)_updateStyleOfTableView:(id)arg1 forStyleProvider:(id)arg2;
-- (id)_styleProvider;
-- (void)_setStyleProvider:(id)arg1;
 - (void)_setDefaultSectionHeaderView:(id)arg1;
 - (void)_setAdditionalDelegate:(id)arg1;
 - (void)_setDismissalDelegate:(id)arg1;
@@ -158,6 +156,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_setStyleProvider:(id)arg1;
+- (id)_styleProvider;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)_navigationItem;
 - (void)viewDidDisappear:(bool)arg1;

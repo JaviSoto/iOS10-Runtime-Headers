@@ -61,12 +61,13 @@
 - (id)artworkContext;
 - (id)itemState;
 - (void)setItemState:(id)arg1;
+- (id)_titleColor;
 - (void)setNumberOfUserRatings:(long long)arg1;
 - (void)_reloadUserRatingViews;
 - (id)categoryName;
+- (struct CGSize { double x1; double x2; })_imageSize;
 - (void)setTheme:(id)arg1;
 - (id)theme;
-- (struct CGSize { double x1; double x2; })_imageSize;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (float)userRating;
@@ -78,7 +79,6 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)item;
-- (id)_titleColor;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 

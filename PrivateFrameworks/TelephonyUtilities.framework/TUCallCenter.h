@@ -51,7 +51,6 @@
 - (unsigned long long)callCountOnDefaultPairedDevice;
 - (id)callGroupsOnDefaultPairedDevice;
 - (id)callWithUniqueProxyIdentifier:(id)arg1;
-- (id)currentCallGroups;
 - (void)handleFilteredCall:(id)arg1;
 - (id)_videoCallUserInfoForUserInfo:(id)arg1;
 - (void)_handleCallEnded:(id)arg1 withReason:(unsigned int)arg2 error:(int)arg3;
@@ -66,14 +65,16 @@
 - (void)answerCall:(id)arg1 withSourceIdentifier:(id)arg2;
 - (void)disconnectNonRelayingCalls;
 - (void)disconnectRelayingCalls;
-- (id)_dialTelephonyCall:(id)arg1 callID:(int)arg2 sourceIdentifier:(id)arg3;
+- (id)_dialTelephonyCall:(id)arg1 callID:(int)arg2 sourceIdentifier:(id)arg3 callType:(struct __CFString { }*)arg4 isRelayCall:(bool)arg5;
 - (id)_dialFaceTimeCall:(id)arg1 isVideo:(bool)arg2 callID:(int)arg3 sourceIdentifier:(id)arg4;
 - (bool)canInitiateCallForService:(int)arg1;
 - (bool)canInitiateCalls;
+- (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3 sourceIdentifier:(id)arg4 isRelayCall:(bool)arg5;
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
 - (id)sourceAccount:(bool)arg1;
 - (id)callsWithAnEndpointElsewhere;
 - (id)callsHostedElsewhere;
+- (id)currentCallGroups;
 - (id)callsOnDefaultPairedDevice;
 - (id)_callGroupsFromCalls:(id)arg1;
 - (id)incomingCalls;

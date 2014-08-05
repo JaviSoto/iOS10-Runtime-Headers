@@ -31,10 +31,10 @@
 
 - (void)setRate:(float)arg1;
 - (float)rate;
+- (void)stop;
 - (double)currentPosition;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 - (double)duration;
 
 @end

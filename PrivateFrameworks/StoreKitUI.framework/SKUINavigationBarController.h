@@ -31,13 +31,13 @@
 - (id)navigationBarViewElement;
 - (void)updateNavigationItem:(id)arg1;
 - (void)setReusableSearchBarControllers:(id)arg1;
-- (id)navigationPaletteView;
 - (id)existingSearchBarControllers;
 - (id)_barButtonItemWithSearchBarViewElement:(id)arg1;
 - (id)_barButtonItemWithButtonViewElement:(id)arg1;
 - (double)_availableWidth;
 - (id)_addSearchBarControllerWithViewElement:(id)arg1;
 - (id)initWithNavigationBarViewElement:(id)arg1;
+- (id)navigationPaletteView;
 - (void)_fullyReloadSections:(id)arg1 withNavigationItem:(id)arg2;
 - (void)attachToNavigationItem:(id)arg1;
 - (void)detachFromNavigationItem:(id)arg1;
@@ -45,6 +45,7 @@
 - (id)_navigationBarContext;
 - (id)_titleViewWithViewElement:(id)arg1;
 - (id)_barButtonItemWithViewElement:(id)arg1;
+- (void)_viewElementEventNotification:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (id)viewForElementIdentifier:(id)arg1;

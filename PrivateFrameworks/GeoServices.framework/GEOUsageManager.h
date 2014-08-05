@@ -47,7 +47,7 @@
 - (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
-- (void)captureMapsLaunchFeedbackCollection:(id)arg1;
+- (void)captureMapsLaunchURLScheme:(id)arg1 sourceApplication:(id)arg2;
 - (void)_endBackgroundTaskForRequester:(id)arg1;
 - (void)_startBackgroundTaskForRequester:(id)arg1;
 - (void)_sendUsageToServer;

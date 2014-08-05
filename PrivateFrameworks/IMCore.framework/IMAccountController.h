@@ -87,8 +87,8 @@
 - (id)_bestAccountForAddresses:(id)arg1;
 - (id)_operationalPhoneAccountForService:(id)arg1;
 - (id)accountForUniqueID:(id)arg1;
-- (id)_accounts;
 - (bool)deleteAccount:(id)arg1;
+- (id)_accounts;
 - (bool)addAccount:(id)arg1;
 - (id)activeAccounts;
 - (void)setReadOnly:(bool)arg1;

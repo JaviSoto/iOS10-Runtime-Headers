@@ -11,7 +11,6 @@
     NSString *_deviceName;
     NSString *_deviceModelIdentifier;
     NSData *_activityPayload;
-    NSData *_advertisementData;
 }
 
 @property(retain,readonly) NSData * advertisementPayload;
@@ -20,13 +19,11 @@
 @property(retain,readonly) NSString * deviceName;
 @property(retain,readonly) NSString * deviceModelIdentifier;
 @property(retain) NSData * activityPayload;
-@property(retain,readonly) NSData * advertisementData;
 
 + (bool)supportsSecureCoding;
 
-- (id)advertisementData;
 - (id)deviceModelIdentifier;
-- (id)initWithAdvertisementData:(id)arg1 advertisementPayload:(id)arg2 options:(id)arg3 deviceName:(id)arg4 fromDeviceID:(id)arg5;
+- (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2 deviceName:(id)arg3 fromDeviceID:(id)arg4;
 - (id)advertisementPayload;
 - (id)deviceIdentifier;
 - (void)setActivityPayload:(id)arg1;

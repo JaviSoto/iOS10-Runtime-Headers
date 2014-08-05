@@ -64,7 +64,7 @@
         unsigned int isCrossfadingInTabBar : 1; 
         unsigned int skipContentInsetCalculation : 1; 
         unsigned int neverInWindow : 1; 
-        unsigned int useCurrentStatusBarHeight : 1; 
+        unsigned int useStandardStatusBarHeight : 1; 
         unsigned int allowUserInteractionDuringTransition : 1; 
         unsigned int enableBackButtonDuringTransition : 1; 
         unsigned int allowsGroupBlending : 1; 
@@ -73,6 +73,7 @@
         unsigned int nestedToolbarWasHidden : 1; 
         unsigned int isNested : 1; 
         unsigned int searchHidNavigationBar : 1; 
+        unsigned int suppressMixedOrientationPop : 1; 
     } _navigationControllerFlags;
     bool_interactiveTransition;
     bool_hidesBarsWhenKeyboardAppears;
@@ -83,7 +84,6 @@
     bool__barAnimationWasCancelled;
     Class _toolbarClass;
     double _customNavigationTransitionDuration;
-    UITapGestureRecognizer *_barHideOnTapGestureRecognizer;
     <UIViewControllerAnimatedTransitioning> *__transitionController;
     _UINavigationParallaxTransition *__cachedTransitionController;
     <UIViewControllerInteractiveTransitioning> *__interactionController;
@@ -163,6 +163,7 @@
 
 + (bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (bool)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (bool)doesOverrideSupportedInterfaceOrientations;
 + (bool)_directlySetsContentOverlayInsetsForChildren;
 
@@ -194,12 +195,11 @@
 - (bool)_barAnimationWasCancelled;
 - (id)_cachedInteractionController;
 - (id)_cachedTransitionController;
-- (id)barHideOnTapGestureRecognizer;
 - (bool)hidesBarsOnTap;
 - (bool)hidesBarsWhenVerticallyCompact;
 - (bool)hidesBarsWhenKeyboardAppears;
 - (Class)_toolbarClass;
-- (id)barHideGestureRecognizer;
+- (id)barHideOnTapGestureRecognizer;
 - (id)barHideOnSwipeGestureRecognizer;
 - (void)setCondensesBarsOnSwipe:(bool)arg1;
 - (bool)condensesBarsOnSwipe;
@@ -230,10 +230,13 @@
 - (void)_setBuiltinTransitionStyle:(long long)arg1;
 - (void)_setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setClipsToBounds:(bool)arg1;
+- (void)_setViewControllers_7_0:(id)arg1 transition:(int)arg2 animated:(bool)arg3;
 - (void)_setViewControllers:(id)arg1 transition:(int)arg2;
 - (void)setViewControllers:(id)arg1;
 - (void)setEnableBackButtonDuringTransition:(bool)arg1;
 - (void)setAllowUserInteractionDuringTransition:(bool)arg1;
+- (bool)_useCurrentStatusBarHeight;
+- (void)_setUseStandardStatusBarHeight:(bool)arg1;
 - (void)_setUseCurrentStatusBarHeight:(bool)arg1;
 - (void)_setDidExplicitlyHideTabBar:(bool)arg1;
 - (void)_setCrossfadingInTabBar:(bool)arg1;
@@ -324,7 +327,7 @@
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_startInteractiveNavbarTransition;
 - (void)_positionPaletteHidden:(bool)arg1 edge:(unsigned long long)arg2;
-- (bool)_useCurrentStatusBarHeight;
+- (bool)_useStandardStatusBarHeight;
 - (bool)_searchHidNavigationBar;
 - (void)_positionNavigationBarHidden:(bool)arg1 edge:(unsigned long long)arg2;
 - (bool)_animationParametersForHidingNavigationBar:(bool)arg1 lastOperation:(long long)arg2 edge:(unsigned long long*)arg3 duration:(double*)arg4;
@@ -367,6 +370,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (id)_transitionAnimationContext;
 - (void)_startInteractiveToolbarTransition;
+- (bool)isInteractiveTransition;
 - (bool)_shouldCrossFadeBottomBars;
 - (bool)_isUsingBuiltinAnimator;
 - (bool)isCustomTransition;
@@ -384,7 +388,6 @@
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(int)arg1;
 - (void)_propagateContentAdjustmentsForControllersWithSharedViews;
 - (void)_startDeferredTransitionIfNeeded;
-- (bool)isInteractiveTransition;
 - (double)customNavigationTransitionDuration;
 - (id)_customInteractionController:(id)arg1;
 - (bool)allowUserInteractionDuringTransition;
@@ -392,12 +395,14 @@
 - (id)_customTransitionController:(bool)arg1;
 - (bool)_usesTransitionController;
 - (void)setNeedsDeferredTransition;
-- (bool)needsDeferredTransition;
-- (void)_setViewControllers_7_0:(id)arg1 transition:(int)arg2 animated:(bool)arg3;
+- (void)_setViewControllers:(id)arg1 transition:(int)arg2 animated:(bool)arg3 operation:(long long)arg4;
+- (void)_setViewControllers_7_0:(id)arg1 transition:(int)arg2 animated:(bool)arg3 operation:(long long)arg4;
 - (id)_existingNavigationBar;
 - (id)interactivePopGestureRecognizer;
 - (id)_navigationItems;
 - (id)_outermostNavigationController;
+- (bool)needsDeferredTransition;
+- (bool)_transitionConflictsWithNavigationTransitions:(id)arg1;
 - (void)_setViewControllers:(id)arg1 transition:(int)arg2 animated:(bool)arg3;
 - (void)_prepareCollectionViewControllers:(id)arg1 forSharingInRange:(id)arg2;
 - (int)_transitionForOldViewControllers:(id)arg1 newViewControllers:(id)arg2;

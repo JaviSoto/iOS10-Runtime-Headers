@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_messageHandlingQueue;
     NSObject<OS_xpc_object> *_serverEndpoint;
+    bool_denied;
 }
 
 @property(copy) id handler;

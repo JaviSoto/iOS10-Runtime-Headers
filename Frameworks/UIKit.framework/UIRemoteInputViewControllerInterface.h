@@ -18,6 +18,7 @@
 + (id)_extensionAuxiliaryHostProtocol;
 
 - (void)_openURL:(id)arg1 completion:(id)arg2;
+- (void)_tearDownRemoteService;
 - (void)_handleInputViewControllerState:(id)arg1;
 - (void)_performInputViewControllerOutput:(id)arg1;
 - (void)setResponseDelegate:(id)arg1;

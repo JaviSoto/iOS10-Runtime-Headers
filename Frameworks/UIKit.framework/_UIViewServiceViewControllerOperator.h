@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, _UIHostedTextServiceSession, _UIViewServiceDummyPopoverController, <_UIViewServiceViewControllerOperatorDelegate>, UIActionSheet, NSMutableArray, _UIHostedWindow, _UIAsyncInvocation, UIViewController, UIPopoverController;
+@class NSString, NSArray, _UIHostedTextServiceSession, _UIViewServiceDummyPopoverController, <_UIViewServiceViewControllerOperatorDelegate>, UIActionSheet, NSMutableArray, _UIHostedWindow, UIViewController, _UIAsyncInvocation, UIPopoverController;
 
 @interface _UIViewServiceViewControllerOperator : UIViewController <_UIViewServiceViewControllerOperator_RemoteViewControllerInterface, _UIHostedTextServiceSessionDelegate, _UIViewServiceDummyPopoverControllerDelegate, _UIViewServiceDeputy, _UIViewServiceDeputyRotationSource> {
     int _hostPID;
@@ -12,6 +12,7 @@
     } _hostAuditToken;
     id _remoteViewControllerProxyToOperator;
     id _remoteViewControllerProxyToViewController;
+    NSArray *_plugInScenes;
     UIViewController *_localViewController;
     NSString *_presentationControllerClassName;
     _UIHostedWindow *_hostedWindow;
@@ -111,7 +112,7 @@
 - (void)__hostDidChangeStatusBarOrientationToInterfaceOrientation:(long long)arg1;
 - (void)_firstResponderDidChange:(id)arg1;
 - (void)__hostReadyToReceiveMessagesFromServiceViewController;
-- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 screenDisplayIds:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(bool)arg5 hostAccessibilityServerPort:(id)arg6 canShowTextServices:(bool)arg7 replyHandler:(id)arg8;
+- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(bool)arg5 hostAccessibilityServerPort:(id)arg6 canShowTextServices:(bool)arg7 replyHandler:(id)arg8;
 - (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)establishViewControllerDeputyWithProxy:(id)arg1 completionHandler:(id)arg2;
 - (void)addDeputyRotationDelegate:(id)arg1;

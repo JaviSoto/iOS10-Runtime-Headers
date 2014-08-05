@@ -33,6 +33,7 @@
 - (id)supportedVersions;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)dealloc;
 - (id)description;
 
 @end

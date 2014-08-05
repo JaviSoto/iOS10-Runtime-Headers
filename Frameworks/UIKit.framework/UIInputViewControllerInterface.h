@@ -22,6 +22,7 @@
 - (id)init;
 - (void)dealloc;
 - (void)setForwardingInterface:(id)arg1;
+- (void)_tearDownRemoteService;
 - (void)_setCachedState:(id)arg1;
 - (void)_handleInputViewControllerState:(id)arg1;
 - (id)forwardingInterface;

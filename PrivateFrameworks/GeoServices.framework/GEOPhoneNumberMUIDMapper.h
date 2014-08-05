@@ -2,19 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableDictionary, NSString, NSObject<OS_dispatch_queue>, NSMutableArray;
+@class NSObject<OS_dispatch_queue>, NSMutableArray, NSMutableDictionary;
 
 @interface GEOPhoneNumberMUIDMapper : NSObject  {
     NSObject<OS_dispatch_queue> *_writeQ;
     NSMutableArray *_uniquePhoneNumbers;
     NSMutableDictionary *_phoneNumberMuidMapping;
-    NSString *_filePath;
 }
 
 
 - (void)_pruneToSize:(unsigned long long)arg1;
-- (void)setMuid:(unsigned long long)arg1 forPhoneNumber:(unsigned long long)arg2;
-- (unsigned long long)muidForPhoneNumber:(unsigned long long)arg1;
+- (void)setMuid:(unsigned long long)arg1 providerId:(int)arg2 forPhoneNumber:(unsigned long long)arg3;
+- (bool)getMuid:(out unsigned long long*)arg1 providerId:(out int*)arg2 forPhoneNumber:(unsigned long long)arg3;
 - (id)initWithMappingFilePath:(id)arg1;
 - (void)dealloc;
 - (void)_save;

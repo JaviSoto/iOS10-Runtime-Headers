@@ -243,6 +243,7 @@
 - (id)viewForBaselineLayout;
 - (id)imageView;
 - (void)_setButtonType:(long long)arg1;
+- (void)updateConstraints;
 - (double)_highlightCornerRadius;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)setSelected:(bool)arg1;
@@ -283,7 +284,6 @@
 - (void)_setLineBreakMode:(long long)arg1;
 - (id)titleForState:(unsigned long long)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
-- (void)updateConstraints;
 - (id)_scriptingInfo;
 - (bool)_alwaysHandleScrollerMouseEvent;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;

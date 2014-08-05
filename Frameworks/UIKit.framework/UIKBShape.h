@@ -66,14 +66,14 @@
 - (void)scaleIfNeeded:(double)arg1 onlyYAxis:(bool)arg2;
 - (void)scaleWidth:(double)arg1;
 - (void)addRectFrom:(id)arg1 mergeActionFactors:(id)arg2;
-- (void)addRectFrom:(id)arg1 widthFraction:(double)arg2 adjustOriginFactor:(double)arg3;
+- (void)addRectFrom:(id)arg1 widthFraction:(double)arg2 heightFraction:(double)arg3 adjustOriginXFactor:(double)arg4 adjustOriginYFactor:(double)arg5;
 - (void)addRectFrom:(id)arg1;
 - (bool)shouldUseGeometry;
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)makeLikeOther:(id)arg1;
 - (id)initWithGeometry:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 paddedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inYAxis:(bool)arg2;
-- (void)addRectFrom:(id)arg1 widthFraction:(double)arg2 adjustOriginFactor:(double)arg3 absoluteOriginFactors:(bool)arg4;
+- (void)addRectFrom:(id)arg1 widthFraction:(double)arg2 heightFraction:(double)arg3 adjustOriginXFactor:(double)arg4 adjustOriginYFactor:(double)arg5 absoluteOriginFactors:(bool)arg6;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 resetOriginalFrame:(bool)arg2;
 - (unsigned long long)uid;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })originalFrame;

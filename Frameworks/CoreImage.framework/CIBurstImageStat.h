@@ -119,9 +119,9 @@
 
 
 - (int)orientation;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (int)version;
+- (void)setTimestamp:(double)arg1;
 - (void)setFullsizeJpegSize:(int)arg1;
 - (int)fullsizeJpegSize;
 - (int)AEDelta;

@@ -33,12 +33,12 @@
 + (id)specialNameForType:(int)arg1;
 
 - (unsigned long long)numberOfChildren;
+- (bool)setChildren:(id)arg1;
+- (id)childAtIndex:(unsigned long long)arg1;
 - (void)setPermanentTag:(id)arg1;
 - (id)descendantWithExtraAttribute:(id)arg1;
 - (id)descendantWithPermanentTag:(id)arg1;
 - (bool)userInfoBoolForKey:(id)arg1;
-- (bool)setChildren:(id)arg1;
-- (id)childAtIndex:(unsigned long long)arg1;
 - (void)setLastViewedMessageID:(id)arg1;
 - (bool)alwaysWriteFullMessageFile;
 - (void)setCriterion:(id)arg1;

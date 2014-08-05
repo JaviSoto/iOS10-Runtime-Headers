@@ -16,7 +16,6 @@
 @property(retain) NSXPCConnection * connection;
 
 
-- (id)connection;
 - (void)launchAppWithBestAppSuggestion:(id)arg1;
 - (void)launchAppWithBundleIdentifier:(id)arg1 taskContinuationIdentifier:(id)arg2;
 - (void)notifyBestAppChanged:(id)arg1 type:(unsigned long long)arg2 options:(id)arg3 bundleIdentifier:(id)arg4 activityType:(id)arg5 when:(id)arg6 confidence:(double)arg7 deviceName:(id)arg8 deviceIdentifier:(id)arg9 deviceType:(id)arg10;
@@ -31,6 +30,7 @@
 - (id)bestAppSuggestion;
 - (void)stopListeningForBestAppSuggestions;
 - (void)startListeningForBestAppSuggestions;
+- (id)connection;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

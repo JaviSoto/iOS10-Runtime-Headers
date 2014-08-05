@@ -217,6 +217,7 @@
 - (bool)collectionExistsContainedWithinPersistentIDs:(const unsigned long long*)arg1 count:(unsigned long long)arg2 groupingType:(long long)arg3 existentPID:(unsigned long long*)arg4;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;
 - (id)artworkDataSource;
+- (id)completeMyCollectionArtworkDataSource;
 - (id)protectedContentSupportStorageURL;
 - (long long)status;
 - (id)lastModifiedDate;

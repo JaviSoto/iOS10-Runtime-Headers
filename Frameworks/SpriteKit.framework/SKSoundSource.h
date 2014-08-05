@@ -30,12 +30,12 @@
 - (double)gain;
 - (void)setGain:(double)arg1;
 - (void)pause;
+- (void)stop;
 - (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
-- (void)stop;
 - (struct CGPoint { double x1; double x2; })position;
 
 @end

@@ -32,9 +32,9 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setToken:(id)arg1;
-- (id)token;
 - (id)bundleIdentifier;
+- (id)token;
+- (void)setToken:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void).cxx_destruct;

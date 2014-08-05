@@ -2,16 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class UIAlertView, TKVibratorController, TLVibrationPattern, <TKVibrationRecorderViewControllerDelegate>, TKVibrationRecorderViewController, NSString, NSDictionary, UIBarButtonItem, TKVibrationRecorderView;
+@class TKVibrationRecorderView, NSString, TLVibrationPattern, <TKVibrationRecorderViewControllerDelegate>, TKVibrationRecorderViewController, UIAlertAction, NSDictionary, UITextField, UIAlertController, UIBarButtonItem, TKVibratorController;
 
-@interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
+@interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UITextFieldDelegate> {
     bool_waitingForEndOfCurrentVibrationComponent;
     int _mode;
     <TKVibrationRecorderViewControllerDelegate> *_delegate;
     TKVibrationRecorderViewController *_parentVibrationRecorderViewController;
     UIBarButtonItem *_cancelButton;
     UIBarButtonItem *_saveButton;
-    UIAlertView *_vibrationNameAlertView;
+    UIAlertController *_vibrationNameAlertController;
+    UIAlertAction *_vibrationNameAlertSaveAction;
+    UITextField *_vibrationNameAlertTextField;
     TKVibratorController *_vibratorController;
     NSDictionary *_indefiniteVibrationPattern;
     TKVibrationRecorderView *_vibrationRecorderView;
@@ -30,7 +32,9 @@
 @property(getter=_isWaitingForEndOfCurrentVibrationComponent,setter=_setWaitingForEndOfCurrentVibrationComponent:) bool _waitingForEndOfCurrentVibrationComponent;
 @property(setter=_setCancelButton:,retain) UIBarButtonItem * _cancelButton;
 @property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
-@property(setter=_setVibrationNameAlertView:,retain) UIAlertView * _vibrationNameAlertView;
+@property(setter=_setVibrationNameAlertController:,retain) UIAlertController * _vibrationNameAlertController;
+@property(setter=_setVibrationNameAlertSaveAction:,retain) UIAlertAction * _vibrationNameAlertSaveAction;
+@property(setter=_setVibrationNameAlertTextField:,retain) UITextField * _vibrationNameAlertTextField;
 @property(setter=_setVibratorController:,retain) TKVibratorController * _vibratorController;
 @property(setter=_setIndefiniteVibrationPattern:,retain) NSDictionary * _indefiniteVibrationPattern;
 @property(readonly) unsigned long long hash;
@@ -39,6 +43,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)_vibrationNameAlertController;
 - (void)setParentVibrationRecorderViewController:(id)arg1;
 - (id)initWithVibratorController:(id)arg1;
 - (void)vibrationRecorderViewDidReachVibrationRecordingMaximumDuration:(id)arg1;
@@ -65,28 +70,35 @@
 - (double)_currentVibrationComponentDidStartTimeStamp;
 - (id)_vibratorController;
 - (void)_stopVibrating;
+- (id)_vibrationNameAlertSaveAction;
+- (id)_vibrationNameAlertTextField;
 - (id)_recordedVibrationPattern;
-- (id)_vibrationNameAlertView;
+- (void)_updateStateSaveButtonInAlert;
+- (void)_setVibrationNameAlertController:(id)arg1;
+- (void)_setVibrationNameAlertSaveAction:(id)arg1;
+- (void)_setVibrationNameAlertTextField:(id)arg1;
+- (void)_saveButtonInAlertTapped:(id)arg1;
+- (void)_cancelButtonInAlertTapped:(id)arg1;
+- (void)_vibrationNameTextFieldContentsDidChange:(id)arg1;
 - (id)parentVibrationRecorderViewController;
 - (void)_finishedWithRecorder;
 - (void)vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(int)arg2;
 - (id)_vibrationRecorderView;
-- (void)_setVibrationNameAlertView:(id)arg1;
+- (void)_cleanUpVibrationNameAlertController;
 - (void)_setRecordedVibrationPattern:(id)arg1;
 - (void)_setIndefiniteVibrationPattern:(id)arg1;
 - (void)_setVibrationRecorderView:(id)arg1;
 - (void)_setCancelButton:(id)arg1;
 - (void)_saveButtonTapped:(id)arg1;
 - (void)_setVibratorController:(id)arg1;
-- (void)_cancelButtonTapped:(id)arg1;
 - (id)_saveButton;
 - (void)_setSaveButton:(id)arg1;
+- (void)_cancelButtonTapped:(id)arg1;
 - (int)_mode;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void)_setMode:(int)arg1;
-- (bool)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
@@ -95,7 +107,6 @@
 - (bool)textFieldShouldReturn:(id)arg1;
 - (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (void)loadView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)applicationWillSuspend;
 

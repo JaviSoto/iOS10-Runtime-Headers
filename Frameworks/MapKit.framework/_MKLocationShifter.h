@@ -11,7 +11,9 @@
 @property(getter=isLocationShiftEnabled,readonly) bool locationShiftEnabled;
 
 
+- (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2 callbackQueue:(id)arg3;
 - (bool)isLocationShiftEnabled;
+- (void)_prepareShiftForLocation:(id)arg1 withCompletionHandler:(id)arg2 withShiftRequestBlock:(id)arg3;
 - (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
 - (void).cxx_destruct;

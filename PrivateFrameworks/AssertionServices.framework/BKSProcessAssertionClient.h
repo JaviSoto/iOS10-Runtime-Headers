@@ -11,6 +11,7 @@
 + (id)clientQueue;
 + (id)sharedInstance;
 
+- (void)_handleDestroy:(id)arg1;
 - (void)_sendEvent:(id)arg1 forMessageType:(unsigned long long)arg2 responseHandler:(id)arg3;
 - (void)_dispatchClientCalloutBlock:(id)arg1;
 - (id)_errorWithCode:(unsigned long long)arg1;

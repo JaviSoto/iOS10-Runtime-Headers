@@ -41,7 +41,6 @@
 @property(retain) UIFont * font;
 @property(getter=isWrapped) bool wrapped;
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } containerFrame;
-@property(readonly) struct CGSize { double x1; double x2; } textSize;
 @property(copy) NSString * truncationMode;
 @property(copy) NSString * alignmentMode;
 @property double chamferRadius;
@@ -93,7 +92,6 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAlignmentMode:(id)arg1;
-- (struct CGSize { double x1; double x2; })textSize;
 - (void)setFont:(id)arg1;
 - (void)setFlatness:(double)arg1;
 - (double)flatness;

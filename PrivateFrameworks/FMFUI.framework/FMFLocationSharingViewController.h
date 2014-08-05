@@ -6,6 +6,8 @@
 
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal> {
     bool_isMyLocationEnabled;
+    bool_useFamilyCirclePhotos;
+    bool_useFamilyCirclePhotosLoaded;
     NSArray *_allFollowersHandles;
     NSArray *_followersHandles;
     NSArray *_followersSpecifiers;
@@ -29,12 +31,17 @@
 @property bool isMyLocationEnabled;
 @property(retain) NSArray * familyMembers;
 @property(retain) UIAlertView * genericErrorAlert;
+@property bool useFamilyCirclePhotos;
+@property bool useFamilyCirclePhotosLoaded;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)setUseFamilyCirclePhotosLoaded:(bool)arg1;
+- (bool)useFamilyCirclePhotosLoaded;
+- (void)setUseFamilyCirclePhotos:(bool)arg1;
 - (void)setIsMyLocationEnabled:(bool)arg1;
 - (void)setHashedFamilyDsids:(id)arg1;
 - (id)dsidToFamilyPhoto;
@@ -43,6 +50,7 @@
 - (void)_showFamilyMemberDetails:(id)arg1;
 - (bool)noMeDeviceSelected:(id)arg1;
 - (void)_loadFamilyMemberPhotos;
+- (bool)useFamilyCirclePhotos;
 - (id)_followerHandleWithHashedDSID:(id)arg1;
 - (id)lastSelectedHandle;
 - (void)shareMyLocation:(id)arg1;
@@ -80,7 +88,6 @@
 - (void)_meDeviceSpecifierWasTapped:(id)arg1;
 - (id)_shareSwitchEnabled:(id)arg1;
 - (void)_setShareSwitchEnabled:(id)arg1 forSpecifier:(id)arg2;
-- (void)abChanged:(id)arg1;
 - (void)_loadFamilyMembers:(bool)arg1;
 - (void)reloadSpecifiersOnMainQueue;
 - (bool)isMyLocationEnabled;
@@ -92,6 +99,7 @@
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
 - (void)networkReachabilityUpdated:(bool)arg1;
+- (void)abChanged:(id)arg1;
 - (id)specifiers;
 - (void)setFamilyMembers:(id)arg1;
 - (void*)addressBook;

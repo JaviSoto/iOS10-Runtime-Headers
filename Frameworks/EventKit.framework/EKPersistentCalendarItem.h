@@ -62,9 +62,6 @@
 + (id)defaultPropertiesToLoad;
 
 - (bool)hasAttachments;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
-- (void)addAlarm:(id)arg1;
 - (bool)validate:(id*)arg1;
 - (id)organizer;
 - (bool)isAllDay;
@@ -133,6 +130,7 @@
 - (id)alarms;
 - (void)setDetachedItems:(id)arg1;
 - (void)setExceptionDates:(id)arg1;
+- (void)addAlarm:(id)arg1;
 - (id)attendees;
 - (id)participationStatusModifiedDate;
 - (bool)isDetached;
@@ -146,6 +144,8 @@
 - (id)calendarScale;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (void)setAllDay:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)location;
@@ -154,8 +154,8 @@
 - (id)action;
 - (void)setAction:(id)arg1;
 - (id)startDate;
-- (id)attachments;
 - (id)UUID;
+- (id)attachments;
 - (id)lastModifiedDate;
 - (void)setTitle:(id)arg1;
 - (id)title;

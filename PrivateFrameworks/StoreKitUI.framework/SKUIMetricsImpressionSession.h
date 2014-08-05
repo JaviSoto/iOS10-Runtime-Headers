@@ -2,19 +2,29 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableString, NSString, NSMutableArray;
+@class NSMapTable, NSMutableString, NSMutableOrderedSet, NSArray, NSMutableArray, NSString;
 
 @interface SKUIMetricsImpressionSession : NSObject  {
     NSMutableArray *_impressionIdentifiers;
     NSMutableString *_impressionsString;
+    NSMutableOrderedSet *_impressionableViewElements;
+    NSMapTable *_impressionableViewElementsTimerMap;
 }
 
 @property(copy,readonly) NSArray * impressionIdentifiers;
 @property(copy,readonly) NSString * impressionsString;
+@property(copy,readonly) NSArray * impressionableViewElements;
 
 
+- (void)_setTimer:(id)arg1 forViewElement:(id)arg2;
+- (void)_clearTimerForViewElement:(id)arg1;
+- (id)_getTimerForViewElement:(id)arg1;
 - (void)addItemIdentifier:(long long)arg1;
+- (void)endActiveImpressionForViewElement:(id)arg1;
+- (void)beginActiveImpressionForViewElement:(id)arg1;
+- (void)addItemViewElement:(id)arg1;
 - (id)impressionsString;
+- (id)impressionableViewElements;
 - (id)impressionIdentifiers;
 - (id)init;
 - (void).cxx_destruct;

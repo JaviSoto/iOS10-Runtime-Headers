@@ -28,10 +28,10 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (void)verifyWithHandler:(id)arg1;
-- (void)sendVerificationEmail;
 - (bool)search:(id)arg1 didFindResults:(id)arg2;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
+- (void)verifyWithHandler:(id)arg1;
+- (void)sendVerificationEmail;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
 - (void)_resendVerificationEmailForAccount:(id)arg1 completion:(id)arg2;

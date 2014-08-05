@@ -13,8 +13,8 @@
 @property(retain) id invocationTarget;
 
 
-- (void)setInvocationTarget:(id)arg1;
 - (id)initWithProtocol:(id)arg1;
+- (void)setInvocationTarget:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;

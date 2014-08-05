@@ -45,10 +45,10 @@
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 - (id)CKPropertiesDescription;
-- (long long)environment;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (long long)status;
+- (long long)environment;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

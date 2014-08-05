@@ -17,7 +17,7 @@
     bool_disableRoute;
     bool_labelHighlighting;
     bool_labelCollisionEnabled;
-    bool_labelAlternatePositionsEnabled;
+    bool_labelFlipAlternatePositionsEnable;
     bool_labelTileDecodeEnabled;
     bool_labelAllowDefaultStyle;
     bool_labelUpdateMapTilesContinuously;
@@ -89,7 +89,7 @@
 @property bool disableRoute;
 @property bool labelHighlighting;
 @property bool labelCollisionEnabled;
-@property bool labelAlternatePositionsEnabled;
+@property bool labelFlipAlternatePositionsEnable;
 @property bool labelTileDecodeEnabled;
 @property bool labelAllowDefaultStyle;
 @property bool labelUpdateMapTilesContinuously;
@@ -207,7 +207,7 @@
 - (void)setLabelAllowDefaultStyle:(bool)arg1;
 - (bool)labelAllowDefaultStyle;
 - (void)setLabelTileDecodeEnabled:(bool)arg1;
-- (void)setLabelAlternatePositionsEnabled:(bool)arg1;
+- (void)setLabelFlipAlternatePositionsEnable:(bool)arg1;
 - (void)setLabelCollisionEnabled:(bool)arg1;
 - (void)setLabelHighlighting:(bool)arg1;
 - (void)setDisableRoute:(bool)arg1;
@@ -269,7 +269,7 @@
 - (bool)hideDirectionalArrows;
 - (bool)labelHidePointFeatures;
 - (bool)labelHideLineFeatures;
-- (bool)labelAlternatePositionsEnabled;
+- (bool)labelFlipAlternatePositionsEnable;
 - (bool)paintLabelCollisionLines;
 - (bool)paintLabelCounts;
 - (bool)paintMapTiles;

@@ -11,6 +11,7 @@
 + (id)_generateCachedSpansFromSpans:(id)arg1;
 + (id)_clampDateRangeForSpans:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 
+- (id)spans;
 - (void)injectSpans:(id)arg1;
 - (id)gatherFreshlyCachedSpansBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_validateCachedSpansIfDebugLoggingIsEnabled;

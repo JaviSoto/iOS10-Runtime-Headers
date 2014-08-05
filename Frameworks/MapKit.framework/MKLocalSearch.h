@@ -12,9 +12,9 @@
 @property(getter=isSearching,readonly) bool searching;
 
 
-- (bool)isSearching;
 - (void)_startWithCompletionHandler:(id)arg1 queue:(id)arg2;
 - (void)_handleMapItems:(id)arg1 boundingRegion:(id)arg2 error:(id)arg3 withCompletionHandler:(id)arg4 queue:(id)arg5;
+- (bool)isSearching;
 - (void)_phoneOnlyStartWithCompletionHandler:(id)arg1 queue:(id)arg2;
 - (void)startWithCompletionHandler:(id)arg1;
 - (id)initWithRequest:(id)arg1;

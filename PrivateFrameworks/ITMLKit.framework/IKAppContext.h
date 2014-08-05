@@ -40,6 +40,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
++ (id)currentAppContext;
 
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
@@ -86,12 +87,12 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)reload;
+- (void)stop;
 - (bool)isValid;
 - (void)_sourcePerform;
 - (void)start;
 - (id)delegate;
 - (void).cxx_destruct;
-- (void)stop;
 - (unsigned long long)mode;
 - (id)reloadData;
 

@@ -45,6 +45,7 @@
 - (id)assetFieldNamesToPublishURLs;
 - (id)recordIDsToETags;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
+- (id)zoneIDsToLock;
 - (bool)allowsAnonymousAccount;
 - (id)requestOperationClasses;
 - (void)requestDidParseNodeFailure:(id)arg1;

@@ -29,8 +29,8 @@
 - (bool)findLocations;
 - (void)setFindGroups:(bool)arg1;
 - (bool)findGroups;
-- (id)terms;
 - (void)setTerms:(id)arg1;
+- (id)terms;
 - (unsigned long long)resultLimit;
 - (void)setResultLimit:(unsigned long long)arg1;
 

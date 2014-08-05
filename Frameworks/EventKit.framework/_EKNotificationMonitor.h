@@ -39,10 +39,12 @@
 @property(readonly) unsigned long long eventNotificationCount;
 @property(readonly) NSArray * notificationReferences;
 @property(readonly) NSArray * eventNotificationReferences;
+@property(readonly) NSArray * reminderNotificationReferences;
 
 
 - (void)_alertPrefChanged;
 - (void)_notificationCountChangedExternally;
+- (id)reminderNotificationReferences;
 - (id)eventNotificationReferences;
 - (id)notificationReferences;
 - (unsigned long long)notificationCount;
@@ -64,9 +66,9 @@
 - (id)initWithEventStore:(id)arg1;
 - (void)_databaseChanged;
 - (void)_timerFired;
+- (void)stop;
 - (id)init;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 
 @end

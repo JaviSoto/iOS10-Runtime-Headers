@@ -33,15 +33,15 @@
 - (bool)wantsAppAck;
 - (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(bool)arg3 wantsAppAck:(bool)arg4 compressed:(bool)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 protobuf:(id)arg8;
 - (unsigned short)isResponse;
-- (id)messageUUID;
 - (id)peerResponseIdentifier;
-- (void)setCompressed:(bool)arg1;
+- (id)messageUUID;
 - (bool)compressed;
 - (unsigned short)streamID;
 - (id)_nonHeaderData;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
 - (bool)expectsPeerResponse;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setCompressed:(bool)arg1;
 - (unsigned char)command;
 - (unsigned int)sequenceNumber;
 - (id)data;

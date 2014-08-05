@@ -24,15 +24,15 @@
 
 
 - (void)_sharedCleanup;
-- (bool)volatilizeIfInvalidHomeDir;
 - (bool)handleErrorReply:(id)arg1 retryContinuation:(id)arg2;
+- (bool)volatilizeIfInvalidHomeDir;
 - (void)sendRequestNewDataMessage:(id)arg1 toConnection:(id)arg2 error:(bool*)arg3;
 - (void)addPIDImpersonationIfNecessary:(id)arg1;
 - (id)createSynchronizeMessage;
 - (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3;
 - (bool)attachAccessTokenToMessage:(id)arg1;
 - (bool)handleErrorReply:(id)arg1 fromMessageSettingKey:(struct __CFString { }*)arg2 toValue:(void*)arg3 retryContinuation:(id)arg4;
-- (void)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (long long)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setContainer:(struct __CFString { }*)arg1;
 - (void)setUserIdentifier:(struct __CFString { }*)arg1;
 - (void)setDomainIdentifier:(struct __CFString { }*)arg1;

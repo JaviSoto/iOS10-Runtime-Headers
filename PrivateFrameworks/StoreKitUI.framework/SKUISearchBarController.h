@@ -42,6 +42,7 @@
 - (void)searchFieldController:(id)arg1 searchBarDidChangeText:(id)arg2;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (void)setShowsResultsForEmptyField:(bool)arg1;
+- (void)resignActive:(bool)arg1;
 - (void)setSearchBarViewElement:(id)arg1;
 - (id)initWithSearchBarViewElement:(id)arg1;
 - (void)reloadAfterDocumentUpdate;

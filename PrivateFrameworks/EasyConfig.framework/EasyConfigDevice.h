@@ -125,8 +125,8 @@
 - (int)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
      /* Encoded args for previous method: i24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
 
-- (int)_mfiSAPStart;
 - (int)_pairSetupStart;
+- (int)_mfiSAPStart;
 - (int)_setupClient:(id)arg1;
 - (int)_configureStart:(id)arg1;
 - (void)_postProgress:(int)arg1;
@@ -148,6 +148,7 @@
 - (id)dispatchQueue;
 - (id)model;
 - (void)setName:(id)arg1;
+- (void)stop;
 - (void)_start;
 - (id)init;
 - (id)name;
@@ -155,7 +156,6 @@
 - (void)start;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)stop;
 - (void)setModel:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 

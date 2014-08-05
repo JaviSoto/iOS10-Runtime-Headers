@@ -32,7 +32,6 @@
 @property(retain) UIImage * backgroundImage;
 
 
-- (void)_reload;
 - (id)countdown;
 - (id)initWithCountdown:(id)arg1 clientContext:(id)arg2;
 - (id)_newDateLabel;
@@ -47,13 +46,14 @@
 - (void)_reloadNumber;
 - (void)_reloadNumberFlapped;
 - (void)_setCountdownWithResponse:(id)arg1 error:(id)arg2;
+- (void)_reload;
 - (id)clientContext;
 - (void)_reloadFontSizes;
+- (void)stop;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)start;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 - (void)setBackgroundImage:(id)arg1;
 - (id)backgroundImage;
 - (void)layoutSubviews;

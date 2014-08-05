@@ -80,8 +80,8 @@
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 + (id)runBlock:(id)arg1 queue:(id)arg2;
-+ (id)unhide;
 + (id)setTexture:(id)arg1;
++ (id)unhide;
 + (id)fadeInWithDuration:(double)arg1;
 + (id)fadeOutWithDuration:(double)arg1;
 + (id)hide;

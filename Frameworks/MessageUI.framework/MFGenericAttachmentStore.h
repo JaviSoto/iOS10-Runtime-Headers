@@ -25,6 +25,7 @@
 + (void)endPreventingInlinePDFs;
 + (void)beginPreventingInlinePDFs;
 
+- (bool)setAttachment:(id)arg1 forURL:(id)arg2;
 - (unsigned long long)sizeForScale:(unsigned long long)arg1 imagesOnly:(bool)arg2;
 - (bool)scalingThrottled;
 - (void)removeAttachmentsForURLs:(id)arg1;
@@ -39,7 +40,6 @@
 - (void)removeAttachmentForURL:(id)arg1;
 - (void)setScalingThrottled:(bool)arg1;
 - (void)cancelImageScalingOperations;
-- (bool)setAttachment:(id)arg1 forURL:(id)arg2;
 - (bool)addAttachment:(id)arg1;
 - (id)attachments;
 - (void)dealloc;

@@ -20,7 +20,6 @@
     NSDate *_modificationDate;
     double _duration;
     NSString *_burstIdentifier;
-    NSString *_cloudIdentifier;
     NSString *_uniformTypeIdentifier;
     unsigned long long _persistenceState;
     unsigned long long _thumbnailIndex;
@@ -28,6 +27,7 @@
     NSString *_filename;
     NSDate *_trashedDate;
     long long _assetSource;
+    NSString *_cloudIdentifier;
     long long _cloudPlaceholderKind;
     NSData *_locationData;
 }
@@ -45,7 +45,6 @@
 @property(readonly) NSString * burstIdentifier;
 @property(readonly) unsigned long long burstSelectionTypes;
 @property(readonly) bool representsBurst;
-@property(copy,readonly) NSString * cloudIdentifier;
 @property(readonly) long long imageOrientation;
 @property(readonly) NSString * uniformTypeIdentifier;
 @property(readonly) unsigned long long persistenceState;
@@ -61,6 +60,7 @@
 @property(readonly) bool isPartOfBurst;
 @property(readonly) bool hasAdjustments;
 @property(readonly) long long assetSource;
+@property(copy,readonly) NSString * cloudIdentifier;
 @property(readonly) long long cloudPlaceholderKind;
 @property(readonly) NSString * detailedDebugDescription;
 @property(readonly) int avalanchePickType;
@@ -125,7 +125,6 @@
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(bool)arg3 resultHandler:(id)arg4;
 - (unsigned long long)mediaSubtypes;
 - (bool)isMediaSubtype:(unsigned long long)arg1;
-- (id)pl_photoLibrary;
 - (id)pl_managedAsset;
 - (id)managedAssetForPhotoLibrary:(id)arg1;
 - (Class)changeRequestClass;
@@ -147,15 +146,14 @@
 - (id)fileURLForFullsizeRenderVideo;
 - (id)assetsLibraryURL;
 - (bool)isMogul;
-- (id)pathForAdjustmentFile;
+- (id)pathForSubstandardFullsizeRenderImageFile;
 - (id)fileURLForPrebakedPortraitScrubberThumbnails;
 - (id)fileURLForPrebakedLandscapeScrubberThumbnails;
-- (id)pathForSubstandardFullsizeRenderImageFile;
 - (bool)isCloudPhotoLibraryAsset;
+- (id)pathForAdjustmentFile;
 - (bool)isAudio;
 - (unsigned long long)thumbnailIndex;
-- (long long)cloudPlaceholderKind;
-- (bool)hasAdjustments;
+- (bool)isTimelapsePlaceholder;
 - (bool)isCloudPlaceholder;
 - (bool)isStreamedVideo;
 - (id)thumbnailIdentifier;
@@ -164,13 +162,16 @@
 - (id)reservedPathForLargeDisplayableImageFileForceLarge:(bool)arg1 forceUpgradeFromSubstandardIfNecessary:(bool)arg2 outImageType:(long long*)arg3;
 - (id)pathForPenultimateFullsizeRenderImageFile;
 - (bool)hasLegacyAdjustments;
+- (id)pl_photoLibrary;
 - (short)kindSubtype;
+- (long long)cloudPlaceholderKind;
 - (id)directory;
 - (id)uniformTypeIdentifier;
 - (int)avalanchePickType;
 - (unsigned long long)effectiveThumbnailIndex;
-- (id)mainFileURL;
 - (id)locationData;
+- (bool)hasAdjustments;
+- (id)mainFileURL;
 - (short)savedAssetType;
 - (bool)isPhotoStreamPhoto;
 - (bool)canPerformEditOperation:(long long)arg1;

@@ -2,10 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSUUID, NSMutableDictionary, NSXPCConnection, NSString;
+@class NSMutableDictionary, NSXPCConnection, NSUUID, NSObject<OS_dispatch_queue>, NSString;
 
 @interface LSUserActivityManager : NSObject <LSUserActivityClientResponseProtocol> {
     NSXPCConnection *_connection;
+    NSObject<OS_dispatch_queue> *_serverQ;
     bool_connectionInitializationSucceeded;
     bool_needToSendInitialMessage;
     NSMutableDictionary *_userActivitiesByUUID;
@@ -18,21 +19,26 @@
 @property(copy) NSUUID * activeUserActivityUUID;
 @property(readonly) bool supportsActivityContinuation;
 @property(readonly) bool activityContinuationIsEnabled;
+@property(readonly) NSObject<OS_dispatch_queue> * serverQ;
+@property(retain) NSMutableDictionary * userActivitiesByUUID;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
++ (bool)userActivityContinuationSupported;
 + (bool)shouldSupportActivityContinuation;
 + (id)defaultManager;
 
+- (void)sendUserActivityInfoToLSUserActivityd:(id)arg1 makeCurrent:(bool)arg2;
+- (void)tellDaemonAboutNewLSUserActivity:(id)arg1;
 - (id)activeUserActivityUUID;
 - (void)removeUserActivity:(id)arg1;
 - (void)makeActive:(id)arg1;
 - (bool)userActivityIsActive:(id)arg1;
-- (id)connection;
-- (void)addUserActivity:(id)arg1;
+- (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(bool)arg2;
 - (void)fetchUUID:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setUserActivitiesByUUID:(id)arg1;
 - (bool)supportsActivityContinuation;
 - (id)createByDecodingUserActivity:(id)arg1;
 - (id)encodeUserActivity:(id)arg1;
@@ -41,10 +47,13 @@
 - (void)tellClientUserActivityItWasResumed:(id)arg1;
 - (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id)arg2;
 - (void)askClientUserActivityToSave:(id)arg1;
+- (void)addUserActivity:(id)arg1;
 - (id)_findUserActivityForUUID:(id)arg1;
 - (void)setActiveUserActivityUUID:(id)arg1;
+- (id)userActivitiesByUUID;
+- (id)connection;
+- (id)serverQ;
 - (void)sendInitialMessage;
-- (void)createConnectionIfNeeded;
 - (id)initWithConnection:(id)arg1;
 - (id)init;
 - (void)dealloc;

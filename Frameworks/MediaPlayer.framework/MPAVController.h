@@ -183,7 +183,6 @@
 - (void)restorePreviousFeederState;
 - (void)saveCurrentFeederState;
 - (void)switchToVideoPlayback:(bool)arg1 forItem:(id)arg2;
-- (void)switchToAudioPlayback:(bool)arg1 forItem:(id)arg2;
 - (void)applicationDidReceiveMemoryWarningAsUrgent:(bool)arg1;
 - (bool)isFullScreenVideoMode;
 - (id)routeNameForVolumeControl;
@@ -230,6 +229,8 @@
 - (id)embeddedDataTimesForItem:(id)arg1;
 - (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
 - (long long)EQPreset;
+- (void)switchToAudioPlayback:(bool)arg1 forItem:(id)arg2;
+- (bool)_shouldSwitchToAudioPlaybackWhenTransitioningFromVideo;
 - (void)_configureAVPlaylistManager:(id)arg1;
 - (void)_registerForAVPlaylistManagerObservation:(id)arg1;
 - (bool)_connectAVPlaylistManager;

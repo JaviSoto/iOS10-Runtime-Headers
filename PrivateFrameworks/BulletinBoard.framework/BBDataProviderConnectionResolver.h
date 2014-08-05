@@ -9,6 +9,7 @@
     BBDataProviderConnection *__dataProviderConnection;
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_connectionToServer;
+    int _listeningToken;
 }
 
 @property(readonly) unsigned long long hash;

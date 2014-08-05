@@ -159,9 +159,9 @@
 - (void)setHasDuration:(bool)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setReason:(int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (int)reason;
 - (bool)isEqual:(id)arg1;

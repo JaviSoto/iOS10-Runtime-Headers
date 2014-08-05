@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class SSNetworkConstraints, NSDictionary, NSArray, NSSet, SSURLBagContext;
+@class SSNetworkConstraints, NSDictionary, NSArray, NSSet, NSString, SSURLBagContext;
 
 @interface ISURLBag : NSObject  {
     SSURLBagContext *_context;
@@ -13,12 +13,14 @@
     NSDictionary *_headerPatterns;
     double _invalidationTime;
     bool_loadedFromDiskCache;
+    NSString *_storeFrontIdentifier;
 }
 
 @property(readonly) NSSet * availableStorefrontItemKinds;
 @property(getter=isValid,readonly) bool valid;
 @property double invalidationTime;
 @property bool loadedFromDiskCache;
+@property(copy) NSString * storeFrontIdentifier;
 @property(copy) SSURLBagContext * URLBagContext;
 @property(readonly) NSDictionary * URLBagDictionary;
 @property(readonly) long long versionIdentifier;
@@ -38,7 +40,9 @@
 - (id)URLForURL:(id)arg1 clientIdentifier:(id)arg2;
 - (id)URLBagDictionary;
 - (id)URLBagContext;
+- (void)setStoreFrontIdentifier:(id)arg1;
 - (id)initWithURLBagContext:(id)arg1;
+- (id)storeFrontIdentifier;
 - (void)setLoadedFromDiskCache:(bool)arg1;
 - (bool)loadedFromDiskCache;
 - (void)setURLBagContext:(id)arg1;

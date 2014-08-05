@@ -12,6 +12,7 @@
 @interface WebAVPlayerController : NSObject <AVPlayerViewControllerDelegate> {
     WebAVMediaSelectionOption *_currentAudioMediaSelectionOption;
     WebAVMediaSelectionOption *_currentLegibleMediaSelectionOption;
+    bool_canScanBackward;
     bool_canPlay;
     bool_canPause;
     bool_canTogglePlayback;
@@ -43,7 +44,7 @@
 @property(retain) AVPlayerController * playerControllerProxy;
 @property struct WebVideoFullscreenModel { int (**x1)(); }* delegate;
 @property(readonly) bool canScanForward;
-@property(readonly) bool canScanBackward;
+@property bool canScanBackward;
 @property(readonly) bool canSeekToBeginning;
 @property(readonly) bool canSeekToEnd;
 @property bool canPlay;
@@ -85,7 +86,6 @@
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingCanSeekToEnd;
 + (id)keyPathsForValuesAffectingCanSeekToBeginning;
-+ (id)keyPathsForValuesAffectingCanScanBackward;
 + (id)keyPathsForValuesAffectingCanScanForward;
 + (id)keyPathsForValuesAffectingHasLiveStreamingContent;
 + (id)keyPathsForValuesAffectingPlaying;
@@ -126,6 +126,8 @@
 - (void)setCanPause:(bool)arg1;
 - (bool)canPause;
 - (void)setCanPlay:(bool)arg1;
+- (void)setCanScanBackward:(bool)arg1;
+- (bool)canScanBackward;
 - (bool)isPlayingOnExternalScreen;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)currentLegibleMediaSelectionOption;
@@ -138,7 +140,6 @@
 - (bool)canSeekToBeginning;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
-- (bool)canScanBackward;
 - (void)endScanningForward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
 - (bool)canScanForward;

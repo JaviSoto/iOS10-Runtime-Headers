@@ -155,7 +155,6 @@
 - (bool)_isViewController;
 - (void)_endPinningInputViews;
 - (void)_beginPinningInputViews;
-- (id)_nextViewControllerInResponderChain;
 - (bool)_canBecomeFirstResponder;
 - (id)_textSelectingContainer;
 - (void)endSelectionChange;
@@ -190,6 +189,7 @@
 - (bool)_disableAutomaticKeyboardUI;
 - (bool)_disableAutomaticKeyboardBehavior;
 - (bool)isFirstResponder;
+- (id)_nextViewControllerInResponderChain;
 - (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_moveWithEvent:(id)arg1;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;

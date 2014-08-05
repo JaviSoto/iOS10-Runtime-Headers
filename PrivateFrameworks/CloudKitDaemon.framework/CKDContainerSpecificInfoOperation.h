@@ -4,7 +4,7 @@
 
 @class CKDContainerInfo, NSObject<OS_dispatch_group>;
 
-@interface CKDContainerSpecificInfoOperation : CKDDatabaseOperation  {
+@interface CKDContainerSpecificInfoOperation : CKDOperation  {
     bool_needUserID;
     CKDContainerInfo *_containerInfo;
     NSObject<OS_dispatch_group> *_infoFetchedGroup;

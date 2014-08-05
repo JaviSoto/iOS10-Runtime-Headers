@@ -36,7 +36,6 @@
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned long long initialPlaybackQueueDepth;
 @property(readonly) unsigned long long itemCount;
 
 + (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
@@ -68,9 +67,9 @@
 - (void)shuffleItemsWithAnchor:(unsigned long long*)arg1;
 - (void)setNextStartTime:(double)arg1 forIndex:(unsigned long long)arg2;
 - (void)_fixNextStartTimesByInsertingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (unsigned long long)initialPlaybackQueueDepth;
 - (bool)shouldReloadForChangeFromNetworkType:(long long)arg1 toNetworkType:(long long)arg2;
 - (bool)hasItemForIndex:(unsigned long long)arg1;
+- (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
 - (void)assumeOwnershipOfItems:(id)arg1;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (bool)_canPurgeNextStartTimes;

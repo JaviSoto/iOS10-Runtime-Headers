@@ -38,8 +38,8 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)hasError;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (id)table;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

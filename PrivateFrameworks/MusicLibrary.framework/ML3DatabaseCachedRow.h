@@ -13,12 +13,14 @@
 - (id)_numberOrZeroForColumnIndex:(unsigned long long)arg1;
 - (void)getBlobBytes:(const void**)arg1 outLength:(int*)arg2 forColumnName:(id)arg3;
 - (id)numberForColumnName:(id)arg1;
+- (const char *)cStringForColumnName:(id)arg1;
 - (long long)int64ForColumnName:(id)arg1;
 - (int)intForColumnName:(id)arg1;
 - (double)doubleForColumnName:(id)arg1;
 - (id)dataForColumnName:(id)arg1;
 - (id)valueForColumnName:(id)arg1;
 - (id)initWithParentResult:(id)arg1;
+- (const char *)cStringForColumnIndex:(unsigned long long)arg1;
 - (void)getBlobBytes:(const void**)arg1 outLength:(int*)arg2 forColumnIndex:(unsigned long long)arg3;
 - (double)doubleForColumnIndex:(unsigned long long)arg1;
 - (int)intForColumnIndex:(unsigned long long)arg1;

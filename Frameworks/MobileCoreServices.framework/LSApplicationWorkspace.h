@@ -15,6 +15,7 @@
 - (void)_clearCachedAdvertisingIdentifier;
 - (void)clearAdvertisingIdentifier;
 - (bool)invalidateIconCache:(id)arg1;
+- (bool)updateSINFWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (bool)unregisterPlugin:(id)arg1;
 - (bool)registerPlugin:(id)arg1;
 - (bool)unregisterApplication:(id)arg1;

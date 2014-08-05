@@ -22,9 +22,11 @@
 
 + (void)initialize;
 
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (id)privateImpl;
 - (id)peersWithConnectionState:(int)arg1;
 - (void)setBusy:(bool)arg1;
+- (bool)isBusy;
 - (id)displayNameForPeer:(id)arg1;
 - (void)disconnectFromAllPeers;
 - (id)privateDelegate;
@@ -45,8 +47,6 @@
 - (bool)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (double)disconnectTimeout;
 - (void)setDisconnectTimeout:(double)arg1;
-- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
-- (bool)isBusy;
 - (bool)isAvailable;
 - (id)peerID;
 - (id)connection;

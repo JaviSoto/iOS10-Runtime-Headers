@@ -34,6 +34,7 @@
 + (id)_templateByResolvingTemplate:(id)arg1 withDefault:(id)arg2;
 + (id)fieldTemplateWithTextAlignment:(long long)arg1;
 
+- (void)setValueFont:(id)arg1;
 - (void)setVerticalPadding:(double)arg1;
 - (void)setValueCanWrap:(bool)arg1;
 - (bool)valueCanWrap;
@@ -55,7 +56,6 @@
 - (id)boxedTextAlignment;
 - (void)setViewSubclass:(Class)arg1;
 - (id)valueFont;
-- (void)setValueFont:(id)arg1;
 - (double)verticalPadding;
 - (void)setLabelFont:(id)arg1;
 - (void)dealloc;

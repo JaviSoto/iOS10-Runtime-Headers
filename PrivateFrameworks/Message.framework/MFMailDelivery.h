@@ -20,17 +20,21 @@
     NSArray *_charsets;
     unsigned int _threaded : 1;
     unsigned int _useCellDataOnly : 1;
+    bool_isUserRequested;
     unsigned long long _conversationFlags;
 }
 
 @property(retain) NSDictionary * compositionSpecification;
 @property unsigned long long conversationFlags;
+@property bool isUserRequested;
 
-+ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
-+ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 + (bool)deliverMessage:(id)arg1;
 + (id)newWithMessage:(id)arg1;
++ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
++ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 
+- (void)setIsUserRequested:(bool)arg1;
+- (bool)isUserRequested;
 - (void)setConversationFlags:(unsigned long long)arg1;
 - (unsigned long long)conversationFlags;
 - (void)setCompositionSpecification:(id)arg1;
@@ -44,13 +48,13 @@
 - (id)archiveAccount;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
-- (id)initWithMessage:(id)arg1;
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (id)headersForDelivery;
 - (id)originalHeaders;
 - (id)newMessageWriter;
 - (id)deliverSynchronously;
 - (id)compositionSpecification;
+- (id)initWithMessage:(id)arg1;
 - (id)message;
 - (id)account;
 - (void)setAccount:(id)arg1;

@@ -11,7 +11,7 @@
 + (id)defaultBroadcaster;
 
 - (void)flushProxy:(id)arg1;
-- (bool)isSendQueueEmpty;
+- (void)blockUntilSendQueueIsEmpty;
 - (id)broadcastProxyForTargets:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3;
 - (id)broadcastProxyForTarget:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3;
 - (id)_queue;

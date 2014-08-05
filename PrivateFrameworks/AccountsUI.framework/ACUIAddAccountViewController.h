@@ -18,7 +18,6 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)specifiers;
 - (void)setupViewControllerDidDismiss:(id)arg1;
 - (id)viewProvidersManager;
 - (id)_specifierForRegionalAccountType:(id)arg1;
@@ -31,6 +30,7 @@
 - (id)_specifiersForRegionalMailAccounts;
 - (id)_specifierForExchangeAccount;
 - (id)_specifierForiCloudAccount;
+- (id)specifiers;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

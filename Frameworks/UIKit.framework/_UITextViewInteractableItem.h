@@ -2,13 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextView, NSArray, NSDictionary, NSString, _UIRotatingAlertController;
+@class UITextView, NSArray, NSDictionary, UIWindow, NSString, _UIRotatingAlertController;
 
 @interface _UITextViewInteractableItem : NSObject <_UIRotatingAlertControllerDelegate> {
     _UIRotatingAlertController *_linkInteractionAlertController;
+    bool_interactionIsFinished;
     UITextView *_textView;
     NSArray *_actions;
     NSDictionary *_defaultAction;
+    UIWindow *_windowForActionSheetPresentation;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -20,16 +22,23 @@
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSArray * actions;
 @property(readonly) NSDictionary * defaultAction;
+@property bool interactionIsFinished;
+@property(retain) UIWindow * windowForActionSheetPresentation;
 
 
 - (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (id)actions;
 - (id)textView;
+- (bool)interactionIsFinished;
+- (void)_cleanupWindowForActionSheetPresentation;
+- (void)setWindowForActionSheetPresentation:(id)arg1;
+- (id)windowForActionSheetPresentation;
 - (id)localizedTitle;
 - (void)_handleActionAndFinish:(id)arg1;
 - (void)_showActionSheet;
 - (bool)allowInteraction;
+- (void)setInteractionIsFinished:(bool)arg1;
 - (void)handleLongPress;
 - (bool)allowHighlight;
 - (id)defaultAction;

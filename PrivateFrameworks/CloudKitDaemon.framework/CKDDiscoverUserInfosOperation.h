@@ -23,6 +23,7 @@
 @property(retain) NSArray * userRecordIDsToDiscover;
 
 
+- (void)_discoverEmails:(id)arg1 userRecordIDs:(id)arg2 completionBlock:(id)arg3;
 - (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2;
 - (id)discoverUserInfosProgressBlock;
 - (void)setUserRecordIDsToDiscover:(id)arg1;

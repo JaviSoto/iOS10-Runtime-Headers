@@ -23,11 +23,11 @@
 - (void)_teardownReachability;
 - (void)_updateState:(unsigned long long)arg1;
 - (void)_setupReachability;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (void)start;
 - (id)delegate;
 - (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1;
-- (void)stop;
 
 @end

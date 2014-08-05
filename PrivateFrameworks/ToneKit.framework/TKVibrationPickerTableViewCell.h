@@ -37,9 +37,9 @@
 - (void)makeTextFieldResignFirstResponderIfNeeded;
 - (void)setRegularTextColor:(id)arg1;
 - (void)setRegularTextFont:(id)arg1;
-- (id)labelText;
 - (void)setPlaceholderText:(id)arg1;
 - (id)placeholderText;
+- (id)labelText;
 - (void)setLabelText:(id)arg1;
 - (bool)isEditable;
 - (void)setDelegate:(id)arg1;

@@ -27,10 +27,10 @@
 - (void)requestGeolocationAuthorization;
 - (id)initWithListener:(id)arg1;
 - (void)setEnableHighAccuracy:(bool)arg1;
+- (void)stop;
 - (void)start;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
-- (void)stop;
 
 @end

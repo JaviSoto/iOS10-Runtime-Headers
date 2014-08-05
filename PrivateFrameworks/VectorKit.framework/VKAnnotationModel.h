@@ -57,6 +57,7 @@
 - (struct { int x1; int x2; unsigned long long x3; unsigned long long x4; float x5; })styleTransitionState;
 - (void)setStyleTransitionState:(struct { int x1; int x2; unsigned long long x3; unsigned long long x4; float x5; })arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (bool)shouldLayoutWithoutStyleManager;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(bool)arg2 canvasSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)setMapModel:(id)arg1;
 - (void)deselectAnnotationMarker:(id)arg1;

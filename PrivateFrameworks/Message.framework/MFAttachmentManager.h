@@ -17,12 +17,6 @@
 + (id)allManagers;
 + (id)defaultManager;
 
-- (id)imageScalingQueue;
-- (void)updateAttachment:(id)arg1 withNewData:(id)arg2;
-- (id)attachmentForData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4 context:(id)arg5;
-- (id)attachmentsForContext:(id)arg1;
-- (void)removeAttachmentForURL:(id)arg1;
-- (id)attachmentForCID:(id)arg1;
 - (void)clearMetadataForAttachment:(id)arg1;
 - (id)attachmentsForTextAttachments:(id)arg1 error:(id*)arg2;
 - (bool)_setupAttachment:(id)arg1 error:(id*)arg2;
@@ -47,6 +41,14 @@
 - (void)_fetchCompletedForAttachment:(id)arg1 error:(id)arg2;
 - (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(unsigned long long)arg2 expectedSize:(unsigned long long)arg3;
 - (id)attachmentsForURLs:(id)arg1 error:(id*)arg2;
+- (id)imageScalingQueue;
+- (void)updateAttachment:(id)arg1 withNewData:(id)arg2;
+- (void)recordUndoAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
+- (void)recordPasteboardAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
+- (id)attachmentForData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4 context:(id)arg5;
+- (id)attachmentsForContext:(id)arg1;
+- (void)removeAttachmentForURL:(id)arg1;
+- (id)attachmentForCID:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (unsigned long long)sizeForScale:(unsigned long long)arg1 imagesOnly:(bool)arg2 forContext:(id)arg3;

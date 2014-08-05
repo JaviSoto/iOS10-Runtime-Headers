@@ -59,12 +59,11 @@
 
 - (bool)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 usingClientCache:(id)arg3;
-- (void)setOriginalChoice:(unsigned long long)arg1;
-- (void)setAssetHDRType:(unsigned long long)arg1;
 - (unsigned long long)originalChoice;
 - (unsigned long long)assetHDRType;
 - (id)addedDate;
 - (id)assetDate;
+- (id)adjustments;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;
 - (void)setMasterIdentifier:(id)arg1;
@@ -87,10 +86,12 @@
 - (id)momentIdentifier;
 - (id)momentName;
 - (void)setAdjustments:(id)arg1;
+- (void)setAssetHDRType:(unsigned long long)arg1;
 - (void)setAssetSubtype:(unsigned long long)arg1;
 - (void)setExtendedDescription:(id)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setAssetDate:(id)arg1;
+- (void)setOriginalChoice:(unsigned long long)arg1;
 - (void)setLastSharedDate:(id)arg1;
 - (id)lastSharedDate;
 - (void)setBurstIdentifier:(id)arg1;
@@ -100,7 +101,6 @@
 - (void)setTimeZoneName:(id)arg1;
 - (void)setFavorite:(bool)arg1;
 - (id)timeZoneName;
-- (id)adjustments;
 - (void)setAddedDate:(id)arg1;
 - (id)keywords;
 - (bool)isFavorite;

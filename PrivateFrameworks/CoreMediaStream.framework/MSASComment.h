@@ -61,13 +61,13 @@
 - (bool)isLike;
 - (void)setIsLike:(bool)arg1;
 - (void)setContent:(id)arg1;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;
 - (id)firstName;
 - (id)fullName;
+- (void)setTimestamp:(id)arg1;
 - (id)email;
 - (id)GUID;
 - (int)ID;

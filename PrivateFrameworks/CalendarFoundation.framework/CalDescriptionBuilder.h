@@ -17,6 +17,7 @@
 @property(retain) NSMutableDictionary * descriptionUnderConstruction;
 
 
+- (void)setKeyDelimiter:(id)arg1;
 - (void)setSortedByKey:(bool)arg1;
 - (void)setSuperclassDescription:(id)arg1;
 - (void)setDescriptionUnderConstruction:(id)arg1;
@@ -55,7 +56,6 @@
 - (id)descriptionUnderConstruction;
 - (id)initWithSuperclassDescription:(id)arg1;
 - (void)setKey:(id)arg1 withUnsignedInteger:(unsigned long long)arg2;
-- (void)setKeyDelimiter:(id)arg1;
 - (void)setKey:(id)arg1 withDate:(id)arg2;
 - (void)setKey:(id)arg1 withDictionary:(id)arg2;
 - (id)build;

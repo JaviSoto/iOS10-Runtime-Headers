@@ -6,7 +6,9 @@
 }
 
 
+- (void)_discoverEmailsByBatch:(id)arg1;
 - (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
+- (void)main;
 
 @end

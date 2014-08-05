@@ -19,11 +19,13 @@
 
 
 - (bool)requiresPreferredContentSizeInStackingView;
+- (void)contentSizeDidChange;
 - (void)setAttribution:(id)arg1;
 - (id)attribution;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;

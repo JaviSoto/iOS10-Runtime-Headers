@@ -262,6 +262,7 @@
 @property double videoZoomFactor;
 @property bool performingAvalancheCapture;
 @property bool disableAllPreviewSuspensionDuringCapture;
+@property(readonly) bool isStillImageStabilizationActive;
 @property(setter=_setEffectsAvailable:) bool _effectsAvailable;
 @property(setter=_setAtomicEffectsAvailable:) bool _atomicEffectsAvailable;
 @property(retain,readonly) NSObject<OS_dispatch_queue> * _effectFilterIndexQueue;
@@ -304,6 +305,8 @@
 + (id)_dateFormatterForVideoMetadata;
 + (id)videoMetadataArrayWithLocation:(id)arg1 date:(id)arg2 didSetLocationData:(bool*)arg3;
 + (bool)isStillImageMode:(long long)arg1;
++ (double)panoramaPreviewHorizontalInset;
++ (struct CGSize { double x1; double x2; })panoramaPreviewSize;
 + (float)focusLensPositionCurrentSentinel;
 + (bool)isVideoMode:(long long)arg1;
 + (id)sharedInstance;
@@ -328,7 +331,6 @@
 - (bool)_isConfiguringCamera;
 - (bool)disableAllPreviewSuspensionDuringCapture;
 - (bool)isHDRDetectionEnabled;
-- (struct CGSize { double x1; double x2; })panoramaPreviewSize;
 - (id)imageOutput;
 - (void)setCurrentDevice:(id)arg1;
 - (void)_panoramaDidReceiveErrorNotificationString:(struct __CFString { }*)arg1;
@@ -337,7 +339,6 @@
 - (void)_createAssetForPanoramaResponse:(id)arg1;
 - (void)_saveStillImageResponse:(id)arg1 completionBlock:(id)arg2;
 - (void)_updateOrientationForConnection:(id)arg1;
-- (struct CGSize { double x1; double x2; })_panoramaPreviewSize;
 - (double)currentMinFrameDuration;
 - (void)_faceMetadataDidChange:(id)arg1;
 - (void)_debugFocusState;
@@ -425,17 +426,17 @@
 - (void)_focusStarted;
 - (void)_disableSubjectAreaChangeMonitoringIfNeeded;
 - (bool)_isFocusModeContinuousAutoFocusAtCenter;
-- (void)_enableSubjectAreaChangedMonitoringIfNeeded;
+- (void)_enableSubjectAreaChangedMonitoringIfNeededFromFocusCompleted:(bool)arg1 fromExposureCompleted:(bool)arg2;
 - (void)_autofocusAfterCapture;
 - (void)_resetFocusAndExposureIfNotExplicitlyLocked;
 - (bool)resetExposureWhenSubjectAreaChanged;
+- (int)effectiveExposureMode;
 - (bool)resetFocusWhenSubjectAreaChanged;
 - (void)_startContinuousAutoExposureAtCenter;
 - (void)_startContinuousAutoFocusAtCenter;
 - (void)_resetFocus:(bool)arg1 andExposure:(bool)arg2;
 - (bool)_useSmoothFocus;
 - (long long)_whiteBalanceModeForExposureMode:(long long)arg1;
-- (int)effectiveExposureMode;
 - (void)_updateWhiteBalanceModeForExposureMode:(long long)arg1;
 - (void)_setExposureMode:(long long)arg1;
 - (void)_setFocusModeLockedWithLensPosition;
@@ -633,6 +634,7 @@
 - (void)setIsCameraApp:(bool)arg1;
 - (void)setPreviewOrientation:(int)arg1;
 - (void)_inCallStatusChanged:(bool)arg1;
+- (struct CGSize { double x1; double x2; })panoramaPreviewSize;
 - (void)notifyLocationAcquiredForTimelapse;
 - (void)resetFocusAndExposureIfNotExplicitlyLocked;
 - (void)unlockDeviceForFocusConfiguration;
@@ -685,6 +687,7 @@
 - (void)setVideoZoomFactor:(double)arg1;
 - (double)videoZoomFactor;
 - (void)_setSubjectAreaChangeMonitoringEnabled:(bool)arg1;
+- (bool)isStillImageStabilizationActive;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)cancelVideoZoomRamp;

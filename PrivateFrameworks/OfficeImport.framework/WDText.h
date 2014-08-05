@@ -32,11 +32,11 @@
 - (id)addParagraph;
 - (id)blockAt:(unsigned long long)arg1;
 - (unsigned long long)blockCount;
-- (id)tableCell;
 - (id)document;
 - (id)content;
 - (bool)isEmpty;
 - (void)dealloc;
 - (id)description;
+- (id)tableCell;
 
 @end

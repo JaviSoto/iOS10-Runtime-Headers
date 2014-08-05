@@ -27,7 +27,13 @@
 - (double)popupFontSize;
 - (struct CGPoint { double x1; double x2; })zhuyinFirstToneKeyOffset;
 - (double)zhuyinFirstToneKeyFontSize;
-- (struct CGPoint { double x1; double x2; })assistKeyOffset;
+- (struct CGPoint { double x1; double x2; })rightArrowKeyOffset;
+- (struct CGPoint { double x1; double x2; })leftArrowKeyOffset;
+- (struct CGPoint { double x1; double x2; })undoKeyOffset;
+- (struct CGPoint { double x1; double x2; })boldKeyOffset;
+- (struct CGPoint { double x1; double x2; })pasteKeyOffset;
+- (struct CGPoint { double x1; double x2; })copyKeyOffset;
+- (struct CGPoint { double x1; double x2; })cutKeyOffset;
 - (double)assistKeyFontSize;
 - (struct CGPoint { double x1; double x2; })returnKeyOffset;
 - (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
@@ -47,6 +53,7 @@
 - (id)globalKeyImageName;
 - (double)skinnyKeyThreshold;
 - (id)deleteKeyImageName;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
 - (double)moreKeyFontSize;
 - (double)deleteKeyFontSize;
 - (double)returnKeyFontSize;

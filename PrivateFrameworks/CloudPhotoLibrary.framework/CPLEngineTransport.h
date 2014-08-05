@@ -27,7 +27,7 @@
 - (id)resourceDownloadTaskForResource:(id)arg1 clientBundleID:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
 - (id)downloadBatchTaskForSyncAnchor:(id)arg1 completionHandler:(id)arg2;
 - (id)uploadBatchTaskForBatch:(id)arg1 completionHandler:(id)arg2;
-- (id)setupTaskWithCompletionHandler:(id)arg1;
+- (id)setupTaskCreateLibraryIfNecessary:(bool)arg1 withCompletionHandler:(id)arg2;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)getStatusDictionaryWithCompletionHandler:(id)arg1;
 - (void)getStatusWithCompletionHandler:(id)arg1;

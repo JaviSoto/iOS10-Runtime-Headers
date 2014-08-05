@@ -48,6 +48,7 @@
 - (void)activeTileGroupChanged;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
+- (bool)shouldLayoutWithoutStyleManager;
 - (void)didMoveToSupermodel;
 - (void)setMapModel:(id)arg1;
 - (id)styleManager;

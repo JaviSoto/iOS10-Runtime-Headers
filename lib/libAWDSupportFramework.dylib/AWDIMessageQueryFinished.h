@@ -95,12 +95,12 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (unsigned int)success;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setGuid:(id)arg1;
 - (id)guid;
 - (unsigned int)isPhoneNumber;
 - (void)setSuccess:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

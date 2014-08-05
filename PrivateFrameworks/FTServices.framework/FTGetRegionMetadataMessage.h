@@ -15,6 +15,7 @@
 
 - (id)requiredKeys;
 - (bool)wantsBinaryPush;
+- (id)messageBody;
 - (void)setResponseRegionInformation:(id)arg1;
 - (id)responseRegionInformation;
 - (long long)responseCommand;
@@ -27,7 +28,6 @@
 - (long long)command;
 - (void)setLanguage:(id)arg1;
 - (id)language;
-- (id)messageBody;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

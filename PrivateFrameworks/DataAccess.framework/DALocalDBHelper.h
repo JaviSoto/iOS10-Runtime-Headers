@@ -75,6 +75,7 @@
 - (bool)_calOpenDBWithClientIdentifier:(id)arg1;
 - (void)_registerForCalendarYieldNotifications;
 - (void)_registerForAddressBookYieldNotifications;
+- (void*)abDBThrowOnNil:(bool)arg1;
 - (bool)calCloseDBAndSave:(bool)arg1;
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDBWithClientIdentifier:(id)arg1;

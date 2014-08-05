@@ -26,13 +26,15 @@
 - (bool)wasSent;
 - (bool)isCritical;
 - (id)sendTimeoutTime;
+- (bool)isEager;
+- (id)eagernessTimeoutTime;
 - (unsigned long long)_effectiveSendTimeout;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setMessageID:(unsigned long long)arg1;
 - (unsigned long long)timeout;
 - (unsigned long long)messageID;
 - (bool)wasCancelled;
+- (void)setTimestamp:(id)arg1;
 - (void)setPriority:(long long)arg1;
 - (long long)priority;
 - (void)setTimeout:(unsigned long long)arg1;

@@ -9,11 +9,14 @@
 }
 
 @property bool enableTravelAdvisoriesForAutomaticBehavior;
+@property double travelEngineThrottlePeriod;
 
 + (id)shared;
 
 - (void)setEnableTravelAdvisoriesForAutomaticBehavior:(bool)arg1;
 - (bool)enableTravelAdvisoriesForAutomaticBehavior;
+- (void)setTravelEngineThrottlePeriod:(double)arg1;
+- (double)travelEngineThrottlePeriod;
 - (id)init;
 
 @end

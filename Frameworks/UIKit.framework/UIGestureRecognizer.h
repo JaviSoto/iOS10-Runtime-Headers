@@ -13,7 +13,6 @@
     <UIGestureRecognizerDelegate> *_delegate;
     NSMutableSet *_friends;
     long long _state;
-    long long _gestureRecognizerServerInstruction;
     struct { 
         unsigned int delegateShouldBegin : 1; 
         unsigned int delegateCanPrevent : 1; 
@@ -88,6 +87,7 @@
 - (void)removeFailureRequirement:(id)arg1;
 - (void)_addDynamicFailureRequirement:(id)arg1;
 - (void)_addDynamicFailureDependent:(id)arg1;
+- (void)_exclude;
 - (void)_cancelRecognition;
 - (bool)_isExcludedByGesture:(id)arg1;
 - (void)_addFriendGesture:(id)arg1;
@@ -118,7 +118,6 @@
 - (void)_updateGestureWithEvent:(id)arg1 buttonEvent:(id)arg2;
 - (void)_delayTouchesForEvent:(id)arg1;
 - (void)_willBeginAfterSatisfyingFailureRequirements;
-- (void)_exclude;
 - (void)_clearDelayedTouches;
 - (void)_delayTouch:(id)arg1 forEvent:(id)arg2;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
@@ -142,11 +141,11 @@
 - (void)setCancelsTouchesInView:(bool)arg1;
 - (bool)_isRecognized;
 - (id)_activeTouchesForEvent:(id)arg1;
+- (unsigned long long)numberOfTouches;
 - (void)requireGestureRecognizerToFail:(id)arg1;
 - (void)setDelaysTouchesEnded:(bool)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (bool)_requiresSystemGesturesToFail;
-- (unsigned long long)numberOfTouches;
 - (void)_setDirty;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

@@ -34,8 +34,8 @@
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
-- (void)_dismissViewController;
 - (void)setPublicController:(id)arg1;
+- (void)_dismissViewController;
 - (void)setExtension:(id)arg1;
 - (void)setExtensionRequestIdentifier:(id)arg1;
 

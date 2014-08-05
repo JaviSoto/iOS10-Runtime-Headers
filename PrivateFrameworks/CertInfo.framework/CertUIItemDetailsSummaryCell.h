@@ -2,24 +2,27 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSMutableArray;
+@class NSArray;
 
 @interface CertUIItemDetailsSummaryCell : UITableViewCell  {
-    NSMutableArray *_labels;
+    NSArray *_detailViews;
+    double _detailLabelOriginX;
 }
 
-@property(retain) NSMutableArray * labels;
+@property(retain) NSArray * detailViews;
+@property double detailLabelOriginX;
 
 
+- (double)detailLabelOriginX;
+- (void)createViewWithItemDetailArray:(id)arg1;
 - (void)createViewWithDescriptors:(id)arg1;
-- (void)_setupGroupViewInnerConstraints:(id)arg1;
-- (void)setupConstraints:(id)arg1;
-- (id)detailFont;
-- (void)setLabels:(id)arg1;
-- (id)labels;
+- (void)setDetailLabelOriginX:(double)arg1;
+- (void)setDetailViews:(id)arg1;
+- (id)detailViews;
 - (void).cxx_destruct;
-- (id)titleFont;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

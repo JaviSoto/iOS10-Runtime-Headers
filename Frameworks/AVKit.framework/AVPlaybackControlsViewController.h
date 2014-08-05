@@ -101,7 +101,6 @@
 - (void)_updateVolumeSliderVisibility;
 - (id)playerController;
 - (bool)isPlaying;
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)setPlayerViewController:(id)arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
@@ -119,6 +118,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
+- (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

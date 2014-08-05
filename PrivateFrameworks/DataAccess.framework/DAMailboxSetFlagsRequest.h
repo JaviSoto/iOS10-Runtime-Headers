@@ -11,11 +11,11 @@
 @property unsigned long long offFlags;
 
 
+- (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
 - (unsigned long long)offFlags;
 - (unsigned long long)onFlags;
 - (void)setOffFlags:(unsigned long long)arg1;
 - (void)setOnFlags:(unsigned long long)arg1;
-- (id)initRequestWithSetFlags:(unsigned long long)arg1 unsetFlags:(unsigned long long)arg2 message:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

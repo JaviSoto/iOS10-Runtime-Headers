@@ -15,6 +15,7 @@
 @property(copy) NSNumber * version;
 
 
+- (id)messageBody;
 - (void)setDeliveryStatusContext:(id)arg1;
 - (id)deliveryStatusContext;
 - (void)setWantsDeliveryStatus:(id)arg1;
@@ -23,7 +24,6 @@
 - (bool)wantsUserAgentInHeaders;
 - (bool)wantsHTTPHeaders;
 - (bool)wantsAPSRetries;
-- (id)messageBody;
 - (id)version;
 - (id)init;
 - (void)dealloc;

@@ -14,7 +14,6 @@
 }
 
 
-- (bool)isSearching;
 - (void)_markDirty;
 - (void)_fireRequest;
 - (void)_scheduleRequest;
@@ -24,6 +23,7 @@
 - (void)_handleCompletion:(id)arg1 forTicket:(id)arg2;
 - (void)setBoundingRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)resultsAreCurrent;
+- (bool)isSearching;
 - (void)retry;
 - (int)source;
 - (void)setSource:(int)arg1;

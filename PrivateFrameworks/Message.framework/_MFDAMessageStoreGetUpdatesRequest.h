@@ -10,11 +10,11 @@
 @property(readonly) bool isUserRequested;
 
 
-- (unsigned long long)generationNumber;
 - (bool)mf_alwaysReportFailures;
 - (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2 isUserRequested:(bool)arg3;
 - (bool)shouldSend;
 - (id)deferredOperation;
 - (bool)isUserRequested;
+- (unsigned long long)generationNumber;
 
 @end

@@ -65,6 +65,7 @@
 - (void)_enumerateAvailableItemsForLibraryItems:(id)arg1 usingBlock:(id)arg2;
 - (void)_updatesStoreChangeNotification:(id)arg1;
 - (void)_notifyObserversOfRestrictionsChange;
+- (void)_notifyObserversOfMediaLibraryChange;
 - (id)_copyItemsStatesForLibraryItems:(id)arg1;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
 - (void)reloadFromServerWithCompletionBlock:(id)arg1;

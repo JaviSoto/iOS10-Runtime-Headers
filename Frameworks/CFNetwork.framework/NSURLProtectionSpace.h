@@ -20,17 +20,17 @@
 + (bool)supportsSecureCoding;
 
 - (id)protocol;
+- (struct __SecTrust { }*)serverTrust;
+- (id)distinguishedNames;
+- (id)initWithHost:(id)arg1 port:(long long)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithProxyHost:(id)arg1 port:(long long)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (struct _CFURLProtectionSpace { }*)_CFURLProtectionSpace;
 - (id)init;
 - (long long)port;
 - (id)host;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (struct _CFURLProtectionSpace { }*)_CFURLProtectionSpace;
-- (struct __SecTrust { }*)serverTrust;
-- (id)distinguishedNames;
 - (bool)receivesCredentialSecurely;
-- (id)initWithProxyHost:(id)arg1 port:(long long)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)initWithHost:(id)arg1 port:(long long)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (id)proxyType;
 - (id)realm;
 - (id)authenticationMethod;

@@ -10,12 +10,9 @@
 }
 
 
-- (void)logWarn:(id)arg1;
-- (void)logNotice:(id)arg1;
-- (void)logInfo:(id)arg1;
 - (id)initWithName:(id)arg1 queue:(id)arg2;
-- (void)logError:(id)arg1;
-- (void)logDebug:(id)arg1;
+- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;
+- (bool)shouldLogForLevel:(unsigned int)arg1;
 - (bool)executeSyncWithBOOL:(id)arg1;
 - (id)executeSyncWithResult:(id)arg1;
 - (void)executeSync:(id)arg1;

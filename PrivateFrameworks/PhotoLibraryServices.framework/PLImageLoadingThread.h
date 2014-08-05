@@ -38,8 +38,8 @@
 - (id)initWithImageCache:(id)arg1;
 - (void)resume;
 - (void)pause;
+- (void)stop;
 - (void)_start;
 - (void)dealloc;
-- (void)stop;
 
 @end

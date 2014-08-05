@@ -30,16 +30,17 @@
 }
 
 
+- (void)stop;
 - (void)setURL:(id)arg1;
 - (void)start;
 - (void)dealloc;
 - (void)unsettle;
 - (void)handleFSEventPath:(id)arg1 flags:(unsigned int)arg2 id:(unsigned long long)arg3;
+- (void)_coalesceSubitemObservations;
 - (void)watchItem;
 - (void)settle;
 - (void)setLastObservedEventID:(unsigned long long)arg1;
 - (id)initWithQueue:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)stop;
 
 @end

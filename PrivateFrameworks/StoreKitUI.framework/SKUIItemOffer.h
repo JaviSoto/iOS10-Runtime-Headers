@@ -10,7 +10,7 @@
     NSString *_confirmationText;
     long long _fileSize;
     NSString *_fileSizeText;
-    long long _offerType;
+    NSString *_offerTypeString;
     float _price;
     NSString *_variantIdentifier;
 }

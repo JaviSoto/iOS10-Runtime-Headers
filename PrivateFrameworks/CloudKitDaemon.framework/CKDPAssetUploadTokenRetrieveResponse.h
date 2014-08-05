@@ -12,11 +12,11 @@
 
 
 - (void)setUploadTokens:(id)arg1;
-- (id)uploadTokens;
+- (id)uploadTokensAtIndex:(unsigned long long)arg1;
 - (void)clearUploadTokens;
 - (unsigned long long)uploadTokensCount;
 - (void)addUploadTokens:(id)arg1;
-- (id)uploadTokensAtIndex:(unsigned long long)arg1;
+- (id)uploadTokens;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

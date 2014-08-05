@@ -26,8 +26,8 @@
 - (id)actionParams;
 - (bool)infiniteDuration;
 - (long long)keyDelivery;
-- (id)adamID;
 - (id)contentID;
+- (id)adamID;
 - (id)url;
 - (long long)type;
 

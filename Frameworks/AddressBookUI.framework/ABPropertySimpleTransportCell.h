@@ -21,7 +21,6 @@
 @property(retain) UIColor * actionsColor;
 
 
-- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)actionsColor;
 - (id)standardStarView;
 - (id)standardTransportIcon;
@@ -40,6 +39,7 @@
 - (bool)shouldPerformDefaultAction;
 - (id)variableConstraints;
 - (void)setCardGroupItem:(id)arg1;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

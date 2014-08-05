@@ -16,12 +16,12 @@
 - (id)internalDevices;
 - (bool)isBrowsing;
 - (id)devices;
+- (void)stop;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (int)start;
 - (id)delegate;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 
 @end

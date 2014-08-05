@@ -8,8 +8,6 @@
     AVWeakReference *weakReference;
     NSString *sessionPreset;
     AVCaptureDevice *adjustingDeviceActiveFormat;
-    int videoDeviceChangeSeed;
-    int resolvedVideoDeviceChangeSeed;
     int beginConfigRefCount;
     FigCaptureSessionConfiguration *sessionConfig;
     struct OpaqueFigCaptureSession { } *figCaptureSession;

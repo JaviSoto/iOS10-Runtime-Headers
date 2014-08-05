@@ -24,13 +24,13 @@
 - (id)initWithPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
 - (void)setDistanceRange:(id)arg1;
 - (id)distanceRange;
-- (id)node;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setNode:(id)arg1;
+- (id)node;
 - (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })point;
 

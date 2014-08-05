@@ -98,6 +98,7 @@
 - (bool)isAnonymousPlayer;
 - (bool)isUnknownPlayer;
 - (int)defaultFamiliarity;
+- (id)photos;
 - (unsigned short)numberOfTurns;
 - (unsigned short)numberOfChallenges;
 - (unsigned short)numberOfRequests;
@@ -118,7 +119,6 @@
 - (id)lastPlayedDate;
 - (unsigned int)numberOfAchievements;
 - (id)serverRepresentation;
-- (id)photos;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setPhotos:(id)arg1;
 - (id)emailAddresses;

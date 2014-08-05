@@ -11,6 +11,7 @@
 @property(readonly) AVAssetTrack * track;
 @property(readonly) NSDictionary * outputSettings;
 @property(copy) NSString * audioTimePitchAlgorithm;
+@property bool appliesPreferredTrackTransform;
 @property(getter=_isAttachedToMetadataAdaptor,readonly) bool attachedToMetadataAdaptor;
 
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
@@ -23,11 +24,13 @@
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)audioTimePitchAlgorithm;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
+- (bool)appliesPreferredTrackTransform;
 - (id)_asset;
 - (id)outputSettings;
 - (struct opaqueCMSampleBuffer { }*)_copyNextSampleBufferForMetadataAdaptor;
 - (void)_attachToMetadataAdaptor:(id)arg1;
 - (bool)_isAttachedToMetadataAdaptor;
+- (void)setAppliesPreferredTrackTransform:(bool)arg1;
 - (id)mediaType;
 - (id)init;
 - (void)finalize;

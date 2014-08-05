@@ -2,18 +2,26 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion;
+@class GEOMapRegion, NSMutableArray;
 
 @interface GEOPDLocationDirectedSearchResult : PBCodable <NSCopying> {
+    NSMutableArray *_disambiguationLabels;
     GEOMapRegion *_displayMapRegion;
 }
 
 @property(readonly) bool hasDisplayMapRegion;
 @property(retain) GEOMapRegion * displayMapRegion;
+@property(retain) NSMutableArray * disambiguationLabels;
 
 
+- (id)disambiguationLabels;
 - (id)displayMapRegion;
 - (bool)hasDisplayMapRegion;
+- (id)disambiguationLabelAtIndex:(unsigned long long)arg1;
+- (void)clearDisambiguationLabels;
+- (unsigned long long)disambiguationLabelsCount;
+- (void)addDisambiguationLabel:(id)arg1;
+- (void)setDisambiguationLabels:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;

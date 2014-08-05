@@ -35,10 +35,10 @@
 - (id)mailComposeDelegate;
 - (id)_internalViewController;
 - (void)finalizeCompositionValues;
-- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
+- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setSubject:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)dealloc;

@@ -12,12 +12,12 @@
 @property(retain) DOMHTMLOptionElement * _node;
 
 
-- (id)node;
 - (void)dealloc;
 - (id)_node;
 - (id)initWithHTMLOptionNode:(id)arg1;
 - (void)unselect;
 - (bool)isGroup;
+- (id)node;
 - (void)set_node:(id)arg1;
 - (bool)selected;
 - (void)setSelected:(bool)arg1;

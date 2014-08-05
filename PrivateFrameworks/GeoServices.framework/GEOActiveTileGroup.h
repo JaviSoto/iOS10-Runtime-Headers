@@ -129,9 +129,9 @@
 - (void)addRegionalResourceRegion:(id)arg1;
 - (void)addResource:(id)arg1;
 - (unsigned long long)regionalResourceTilesCount;
+- (id)_activeTileSetForStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
 - (id)regionalResourceRegions;
 - (id)regionalResourceTiles;
-- (id)_activeTileSetForStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
 - (id)resources;
 - (unsigned long long)resourcesCount;
 - (bool)supportsTileStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;

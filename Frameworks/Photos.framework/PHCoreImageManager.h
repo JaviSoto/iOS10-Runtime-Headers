@@ -55,7 +55,7 @@
 - (void)_cancelAndFlushPreheatItemsForAssets:(id)arg1 domain:(id)arg2 passingTestHandler:(id)arg3;
 - (id)_highPriorityRequestWaitGroupWithDomain:(id)arg1;
 - (bool)_asyncFetchCloudSharedAnySizeImageAsNon5551BytesIfNecessaryWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 sync:(bool)arg6 completionHandler:(id)arg7;
-- (void)_fetchAnySizeImageAs5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 sync:(bool)arg5 fireAndForgetCPLDownload:(bool)arg6 completionHandler:(id)arg7;
+- (void)_fetchAnySizeImageAs5551BytesWithRequest:(id)arg1 format:(int)arg2 bestFormat:(int)arg3 sync:(bool)arg4 fireAndForgetCPLDownload:(bool)arg5 completionHandler:(id)arg6;
 - (void)_fetchPreheatableAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 preheatItem:(id)arg5 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg6 sync:(bool)arg7 fireAndForgetCPLDownload:(bool)arg8 completionHandler:(id)arg9;
 - (id)_preheatItemCreateIfNeededWithAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4 outDidExist:(bool*)arg5 domain:(id)arg6;
 - (void)_fetchAdjustmentDataThruAssetsdAndCPLHandlerWithRequest:(id)arg1 networkAccessAllowed:(bool)arg2 trackCPLDownload:(bool)arg3 completionHandler:(id)arg4;
@@ -68,7 +68,8 @@
 - (id)_resizeUIImage:(id)arg1 withRequest:(id)arg2;
 - (void)_fetchAnySizeImageAsNon5551BytesWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 bestFormat:(int)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 sync:(bool)arg6 fireAndForgetCPLDownload:(bool)arg7 completionHandler:(id)arg8;
 - (void)_asyncGenerateLiveRenderedImageWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 desiredImagePixelSize:(struct CGSize { double x1; double x2; })arg4 completionHandler:(id)arg5;
-- (void)_fetchAnySizeImageAsNon5551BytesPossiblyThruAssetsdAndCPLWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 wantsProperties:(bool)arg5 networkAccessAllowed:(bool)arg6 networkAccessForced:(bool)arg7 trackCPLDownload:(bool)arg8 completionHandler:(id)arg9;
+- (void)_fireAndForgetCPLDownloadWithRequest:(id)arg1 format:(int)arg2;
+- (void)_fetchAnySizeImageAsNon5551BytesPossiblyThruAssetsdAndCPLWithRequest:(id)arg1 library:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 wantsProperties:(bool)arg5 networkAccessAllowed:(bool)arg6 networkAccessForced:(bool)arg7 trackCPLDownload:(bool)arg8 sync:(bool)arg9 completionHandler:(id)arg10;
 - (id)_preheatItemSourceWithFormat:(int)arg1;
 - (id)_preheatItemMapTableWithFormat:(int)arg1 domain:(id)arg2 createIfNeeded:(bool)arg3;
 - (id)perDomainPreheatItemMapTables;

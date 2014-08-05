@@ -84,8 +84,8 @@
 - (bool)_shouldSkipPostcaptureReview;
 - (bool)_isRetakingPhoto;
 - (bool)_allowsVideoEditing;
-- (id)imagePickerOptions;
 - (void)_setRetakingPhoto:(bool)arg1;
+- (id)imagePickerOptions;
 - (bool)cropOverlayUsesTelephonyUI;
 - (struct CGSize { double x1; double x2; })_displaySizeForPreviewForCameraMode:(long long)arg1;
 - (bool)_isManipulatingCrop;

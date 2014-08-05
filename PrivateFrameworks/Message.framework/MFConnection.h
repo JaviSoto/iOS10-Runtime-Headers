@@ -67,7 +67,6 @@
 - (void)_setupNetworkLogging;
 - (bool)usesOpportunisticSockets;
 - (bool)isCellularConnection;
-- (void)enableExcessiveKeepaliveDetection:(bool)arg1;
 - (void)setAllowsFallbacks:(bool)arg1;
 - (bool)loginDisabled;
 - (bool)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;

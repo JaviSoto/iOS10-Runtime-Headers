@@ -9,13 +9,7 @@
 }
 
 
-- (bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
-- (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 partial:(bool*)arg4;
-- (id)additionalHeadersForForwardOfMessage:(id)arg1;
-- (id)additionalHeadersForReplyOfMessage:(id)arg1;
-- (id)bestAlternativeForPart:(id)arg1;
-- (id)defaultAlternativeForPart:(id)arg1;
-- (bool)bodyFetchRequiresNetworkActivity;
+- (unsigned long long)growFetchWindow;
 - (void)setServerFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)_additionalHeadersForAction:(int)arg1 ofMessage:(id)arg2;
 - (id)_fetchBodyDataForNormalMessage:(id)arg1 format:(int)arg2 part:(id)arg3 streamConsumer:(id)arg4;
@@ -34,12 +28,12 @@
 - (id)messageForRemoteID:(id)arg1;
 - (bool)allowsAppend;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(bool)arg2;
+- (id)remoteIDsMatchingSearchText:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
 - (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 error:(id*)arg3;
 - (long long)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
 - (bool)canFetchSearchResults;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (void)purgeMessagesBeyondLimit:(unsigned long long)arg1 keepingMessage:(id)arg2;
-- (unsigned long long)growFetchWindow;
 - (bool)shouldGrowFetchWindow;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(bool)arg2;
 - (long long)fetchNumMessages:(unsigned long long)arg1 preservingUID:(id)arg2 options:(unsigned long long)arg3;
@@ -47,5 +41,12 @@
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (unsigned long long)fetchWindow;
 - (bool)hasMoreFetchableMessages;
+- (bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
+- (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(bool)arg3 partial:(bool*)arg4;
+- (id)additionalHeadersForForwardOfMessage:(id)arg1;
+- (id)additionalHeadersForReplyOfMessage:(id)arg1;
+- (id)bestAlternativeForPart:(id)arg1;
+- (id)defaultAlternativeForPart:(id)arg1;
+- (bool)bodyFetchRequiresNetworkActivity;
 
 @end

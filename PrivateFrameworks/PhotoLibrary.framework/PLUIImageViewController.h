@@ -50,8 +50,6 @@
 - (id)initWithPhoto:(id)arg1;
 - (id)_trimMessage;
 - (void)attachScrubberPalette;
-- (void)resourcesForAsset:(id)arg1 didDownloadWithSuccess:(bool)arg2;
-- (void)downloadResourcesForAsset:(id)arg1;
 - (void)_enableCropOverlayIfNecessary;
 - (void)didChooseVideoAtURL:(id)arg1 options:(id)arg2;
 - (long long)desiredStatusBarAnimation;

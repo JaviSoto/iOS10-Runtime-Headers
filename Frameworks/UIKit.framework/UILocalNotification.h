@@ -43,13 +43,12 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)isTriggeredByRegion;
 - (void)clearNonSystemProperties;
 - (long long)compareFireDates:(id)arg1;
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
 - (bool)isTriggeredByDate;
 - (id)nextFireDateForLastFireDate:(id)arg1;
 - (void)validate;
-- (void)triggerLocationArrow;
-- (bool)isTriggeredByRegion;
 
 @end

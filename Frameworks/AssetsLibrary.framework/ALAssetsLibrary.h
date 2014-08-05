@@ -40,11 +40,11 @@
 - (void)_addGroupForAlbum:(struct NSObject { Class x1; }*)arg1 ofType:(unsigned long long)arg2 toArray:(id)arg3;
 - (bool)_libraryIsAvailable;
 - (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
-- (void)_performBlock:(id)arg1;
 - (id)publicErrorFromPrivateError:(id)arg1;
 - (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(long long)arg2;
 - (void)_writeVideoAtPathToSavedPhotosAlbum:(id)arg1 internalProperties:(id)arg2 completionBlock:(id)arg3;
 - (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(long long)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id)arg6;
+- (void)_performBlock:(id)arg1;
 - (id)internal;
 - (void)setInternal:(id)arg1;
 - (bool)hasCompletedRestorePostProcessing;

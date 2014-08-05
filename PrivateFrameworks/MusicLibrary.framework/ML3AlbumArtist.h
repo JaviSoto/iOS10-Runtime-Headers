@@ -7,10 +7,10 @@
 
 + (id)databaseTable;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (id)artworkCacheIDProperty;
-+ (id)propertiesForGroupingKey;
 + (id)effectiveAlbumArtistSortNameForAlbumArtistSortName:(id)arg1 albumArtistName:(id)arg2 artistSortName:(id)arg3 artistName:(id)arg4 compilation:(bool)arg5;
 + (id)effectiveAlbumArtistNameForAlbumArtistName:(id)arg1 artistName:(id)arg2 seriesName:(id)arg3 compilation:(bool)arg4;
++ (id)artworkCacheIDProperty;
++ (id)propertiesForGroupingKey;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)defaultOrderingTerms;

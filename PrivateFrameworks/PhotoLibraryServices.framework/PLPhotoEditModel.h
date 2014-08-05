@@ -9,6 +9,8 @@
     long long _effectFilterVersion;
     bool_smartToneEnabled;
     double _smartToneLevel;
+    double _autoSmartToneLevel;
+    NSString *_autoSmartToneIdentifier;
     double _brightnessLevelOffset;
     double _contrastLevelOffset;
     double _exposureLevelOffset;
@@ -16,6 +18,8 @@
     double _blackPointLevelOffset;
     double _highlightsLevelOffset;
     bool_smartColorEnabled;
+    double _autoSmartColorLevel;
+    NSString *_autoSmartColorIdentifier;
     double _smartColorLevel;
     double _colorContrastLevelOffset;
     double _colorVibrancyLevelOffset;
@@ -27,6 +31,11 @@
     double _bwToneLevelOffset;
     double _bwHueLevelOffset;
     double _bwGrainLevelOffset;
+    bool_whiteBalanceEnabled;
+    double _whiteBalanceFaceI;
+    double _whiteBalanceFaceQ;
+    double _whiteBalanceFaceStrength;
+    double _whiteBalanceFaceWarmth;
     double _straightenAngle;
     struct CGRect { 
         struct CGPoint { 
@@ -44,16 +53,20 @@
     NSDictionary *_smartToneStatistics;
     NSDictionary *_smartColorStatistics;
     NSDictionary *_smartBWStatistics;
+    NSDictionary *_autoWhiteBalanceSettings;
+    NSString *_autoWhiteBalanceIdentifier;
     NSArray *_redEyeCorrections;
     NSArray *_autoRedEyeCorrections;
-    NSArray *_autoEnhanceFilters;
-    bool_autoEnhanceIsOn;
+    NSArray *_legacyAutoEnhanceFilters;
+    bool_legacyAutoEnhanceIsOn;
 }
 
 @property(copy,readonly) NSString * effectFilterName;
 @property(readonly) long long effectFilterVersion;
 @property(getter=isSmartToneEnabled,readonly) bool smartToneEnabled;
 @property(copy,readonly) NSDictionary * smartToneStatistics;
+@property(readonly) double autoSmartToneLevel;
+@property(copy,readonly) NSString * autoSmartToneIdentifier;
 @property(readonly) double smartToneLevel;
 @property(readonly) double brightnessLevelOffset;
 @property(readonly) double contrastLevelOffset;
@@ -63,6 +76,8 @@
 @property(readonly) double blackPointLevelOffset;
 @property(getter=isSmartColorEnabled,readonly) bool smartColorEnabled;
 @property(copy,readonly) NSDictionary * smartColorStatistics;
+@property(readonly) double autoSmartColorLevel;
+@property(copy,readonly) NSString * autoSmartColorIdentifier;
 @property(readonly) double smartColorLevel;
 @property(readonly) double colorContrastLevelOffset;
 @property(readonly) double colorVibrancyLevelOffset;
@@ -75,21 +90,33 @@
 @property(readonly) double bwToneLevelOffset;
 @property(readonly) double bwHueLevelOffset;
 @property(readonly) double bwGrainLevelOffset;
+@property(getter=isWhiteBalanceEnabled,readonly) bool whiteBalanceEnabled;
+@property(readonly) double whiteBalanceFaceI;
+@property(readonly) double whiteBalanceFaceQ;
+@property(readonly) double whiteBalanceFaceStrength;
+@property(readonly) double whiteBalanceFaceWarmth;
 @property(readonly) unsigned long long rotation;
 @property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedCropRect;
 @property(readonly) long long cropConstraintWidth;
 @property(readonly) long long cropConstraintHeight;
 @property(readonly) double straightenAngle;
 @property(readonly) bool hasIdentityCrop;
+@property(copy,readonly) NSDictionary * autoWhiteBalanceSettings;
+@property(copy,readonly) NSString * autoWhiteBalanceIdentifier;
 @property(copy,readonly) NSArray * redEyeCorrections;
 @property(copy,readonly) NSArray * autoRedEyeCorrections;
-@property(copy,readonly) NSArray * autoEnhanceFilters;
-@property(readonly) bool autoEnhanceIsOn;
+@property(copy,readonly) NSArray * legacyAutoEnhanceFilters;
+@property(readonly) bool legacyAutoEnhanceIsOn;
 
 + (int)identityOrientation;
 + (double)_referenceValueOfType:(long long)arg1 fromLevels:(struct { double x1; double x2; double x3; })arg2;
 + (void)_loadSubfilterReferenceLevelsIfNeeded;
++ (void)_loadReferenceLevelsFromCIFilterWithName:(id)arg1 attributeKeys:(id)arg2 intoLevelStructs:(struct { /* ? */ }**)arg3;
 + (long long)identityCropConstraint;
++ (double)referenceWhiteBalanceFaceWarmthLevelOfType:(long long)arg1;
++ (double)referenceWhiteBalanceFaceStrengthLevelOfType:(long long)arg1;
++ (double)referenceWhiteBalanceFaceQLevelOfType:(long long)arg1;
++ (double)referenceWhiteBalanceFaceILevelOfType:(long long)arg1;
 + (double)referenceSmartBWLevelOfType:(long long)arg1;
 + (double)referenceSmartColorLevelOfType:(long long)arg1;
 + (double)referenceSmartToneLevelOfType:(long long)arg1;
@@ -114,10 +141,18 @@
 
 - (bool)hasIdentityCrop;
 - (bool)isIdentityModel;
+- (id)_debugDictionaryRepresentation;
+- (bool)isGeometryEqualToPhotoEditModel:(id)arg1;
 - (bool)isVisuallyEqualToPhotoEditModel:(id)arg1;
+- (id)autoWhiteBalanceIdentifier;
+- (id)autoWhiteBalanceSettings;
+- (id)autoSmartColorIdentifier;
+- (id)autoSmartToneIdentifier;
 - (long long)cropConstraintHeight;
 - (long long)cropConstraintWidth;
-- (void)_copyDataFromModel:(id)arg1;
+- (double)autoSmartColorLevel;
+- (double)autoSmartToneLevel;
+- (void)_copyValuesFromModel:(id)arg1 interpolationStartModel:(id)arg2 progress:(double)arg3;
 - (id)smartBWStatistics;
 - (double)smartBWLevel;
 - (double)smartColorLevel;
@@ -126,6 +161,11 @@
 - (double)straightenAngle;
 - (long long)effectFilterVersion;
 - (id)effectFilterName;
+- (double)whiteBalanceFaceWarmth;
+- (double)whiteBalanceFaceStrength;
+- (double)whiteBalanceFaceQ;
+- (double)whiteBalanceFaceI;
+- (bool)isWhiteBalanceEnabled;
 - (double)bwGrainLevelOffset;
 - (double)bwHueLevelOffset;
 - (double)bwToneLevelOffset;
@@ -143,10 +183,10 @@
 - (double)contrastLevelOffset;
 - (double)brightnessLevelOffset;
 - (bool)isSmartToneEnabled;
-- (id)autoEnhanceFilters;
+- (id)legacyAutoEnhanceFilters;
+- (bool)legacyAutoEnhanceIsOn;
 - (id)autoRedEyeCorrections;
 - (id)redEyeCorrections;
-- (bool)autoEnhanceIsOn;
 - (bool)isEqualToPhotoEditModel:(id)arg1;
 - (unsigned long long)rotation;
 - (id)smartColorStatistics;
@@ -156,6 +196,5 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dictionaryRepresentation;
 
 @end

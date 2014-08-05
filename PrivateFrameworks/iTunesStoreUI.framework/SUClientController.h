@@ -108,7 +108,6 @@
 - (void)resignActive;
 - (void)cancelAllOperations;
 - (bool)openURL:(id)arg1;
-- (void)setRootViewController:(id)arg1;
 - (bool)isActive;
 - (id)clientIdentifier;
 - (id)imageCache;
@@ -116,5 +115,6 @@
 - (void)dealloc;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
 
 @end

@@ -44,6 +44,7 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (id)relayTokenAllocReq;
 - (id)relayTransactionIdAlloc;
 - (id)relayConnectionId;
@@ -80,7 +81,6 @@
 - (void)setSelfBlob:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)messageBody;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

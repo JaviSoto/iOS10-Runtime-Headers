@@ -11,6 +11,7 @@
 
 @property(readonly) SKUICardViewElement * cardViewElement;
 @property(readonly) SKUIViewElementLayoutContext * layoutContext;
+@property(readonly) double horizontalContentInset;
 @property(readonly) long long layoutStyle;
 
 + (bool)allowsViewElement:(id)arg1;
@@ -21,6 +22,7 @@
 - (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
 - (id)attributedStringForLabel:(id)arg1;
 - (id)attributedStringForButton:(id)arg1;
+- (double)horizontalContentInset;
 - (long long)layoutStyle;
 - (id)layoutContext;
 - (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(double)arg2;

@@ -34,6 +34,7 @@
 - (void)setResultServerChangeTokenData:(id)arg1;
 - (id)serverChangeTokenData;
 - (id)resultServerChangeTokenData;
+- (id)zoneIDsToLock;
 - (id)requestOperationClasses;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperations;

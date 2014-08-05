@@ -73,7 +73,7 @@
 - (id)volume;
 - (id)attributeKeys;
 - (void)pause;
-- (void)dealloc;
 - (void)stop;
+- (void)dealloc;
 
 @end

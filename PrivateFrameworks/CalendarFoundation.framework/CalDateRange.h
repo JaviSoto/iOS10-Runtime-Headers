@@ -24,7 +24,6 @@
 + (bool)supportsSecureCoding;
 + (id)rangeWithRange:(id)arg1;
 
-- (void)setEndDate:(id)arg1;
 - (id)midnightsForRangeInTimeZoneString:(id)arg1;
 - (id)subtractRange:(id)arg1;
 - (id)unionRange:(id)arg1;
@@ -36,6 +35,7 @@
 - (bool)intersectsRange:(id)arg1;
 - (bool)intersectsRangeWithStartDate:(id)arg1 endDate:(id)arg2 allowSinglePointIntersection:(bool)arg3;
 - (bool)intersectsRange:(id)arg1 allowSinglePointIntersection:(bool)arg2;
+- (void)setEndDate:(id)arg1;
 - (id)initWithStartDate:(id)arg1 duration:(double)arg2;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setStartDate:(id)arg1 endDate:(id)arg2;

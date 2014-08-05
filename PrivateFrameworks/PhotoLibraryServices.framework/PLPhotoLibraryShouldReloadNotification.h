@@ -6,7 +6,7 @@
 }
 
 
-- (id)init;
+- (id)initNotification;
 - (id)object;
 - (id)name;
 - (id)userInfo;

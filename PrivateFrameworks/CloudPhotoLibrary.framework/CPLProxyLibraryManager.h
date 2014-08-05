@@ -42,6 +42,7 @@
 - (void)uploadOfResource:(id)arg1 didFinishForResourceTransferTask:(id)arg2 withError:(id)arg3;
 - (void)uploadOfResource:(id)arg1 didProgress:(float)arg2 forResourceTransferTask:(id)arg3;
 - (void)uploadDidStartForResource:(id)arg1 withResourceTransferTask:(id)arg2;
+- (void)backgroundDownloadDidFailForResource:(id)arg1;
 - (void)backgroundDownloadDidFinishForResource:(id)arg1;
 - (void)downloadDidFinishForResourceTransferTask:(id)arg1 finalResource:(id)arg2 withError:(id)arg3;
 - (void)downloadDidProgress:(float)arg1 forResourceTransferTask:(id)arg2;

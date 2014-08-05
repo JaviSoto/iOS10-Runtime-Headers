@@ -16,13 +16,13 @@
 @property(retain) MSTimerGate * gate;
 
 
-- (void)setServer:(id)arg1;
 - (void)setTimerQueue:(id)arg1;
 - (void)timerQueuePing;
 - (void)timerQueueTimerFired;
 - (id)initWithServer:(id)arg1;
 - (void)setGate:(id)arg1;
 - (id)gate;
+- (void)setServer:(id)arg1;
 - (id)timerQueue;
 - (void)resume;
 - (id)server;

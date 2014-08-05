@@ -15,6 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)messageLibrary;
 - (id)messageForAttachment:(id)arg1;
 - (void)setMessageLibrary:(id)arg1;

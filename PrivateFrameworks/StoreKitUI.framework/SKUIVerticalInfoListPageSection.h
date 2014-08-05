@@ -21,15 +21,18 @@
 
 - (id)cellForIndexPath:(id)arg1;
 - (long long)_numberOfColumnsForWidth:(double)arg1;
-- (void)_requestCellLayout;
 - (void)_enumerateVisibleIndexPathsUsingBlock:(id)arg1;
 - (id)_reloadColumnDataIfNecessary;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetForIndexPath:(id)arg1;
+- (void)_requestCellLayout;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (void)reloadVisibleCellsWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (long long)numberOfCells;
+- (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)willAppearInContext:(id)arg1;

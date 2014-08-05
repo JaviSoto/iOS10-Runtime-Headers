@@ -63,12 +63,12 @@
 - (void)peripheralManager:(id)arg1 didAddService:(id)arg2 error:(id)arg3;
 - (void)setDispatchQueue:(id)arg1;
 - (id)dispatchQueue;
+- (void)stop;
 - (void)_start;
 - (id)init;
 - (id)configuration;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 - (void)setConfiguration:(id)arg1;
 
 @end

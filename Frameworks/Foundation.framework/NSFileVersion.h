@@ -12,12 +12,12 @@
     NSURL *_contentsURL;
     bool_isBackup;
     NSString *_localizedName;
-    id _reserved4;
+    NSString *_localizedComputerName;
     NSDate *_modificationDate;
-    bool_reserved5;
+    bool_isResolved;
     bool_contentsURLIsAccessed;
-    id _reserved1;
-    id _reserved2;
+    NSString *_clientID;
+    NSString *_name;
     bool_discardable;
 }
 
@@ -68,6 +68,7 @@
 + (id)versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2;
 + (id)_versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 temporaryStorageIdentifier:(id)arg3;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
++ (id)_ubiquityOnlyVersionsOfItemAtURL:(id)arg1 includeSaved:(bool)arg2;
 + (id)_versionOfItemAtURL:(id)arg1 forClientID:(id)arg2 name:(id)arg3 temporaryStorageIdentifier:(id)arg4 evenIfDeleted:(bool)arg5;
 + (void)_removeTemporaryDirectoryAtURL:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
@@ -89,6 +90,7 @@
 - (void)setResolved:(bool)arg1;
 - (id)modificationDate;
 - (id)localizedNameOfSavingComputer;
+- (id)_oldReplaceItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (id)replaceItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)removeAndReturnError:(id*)arg1;
 - (bool)hasThumbnail;

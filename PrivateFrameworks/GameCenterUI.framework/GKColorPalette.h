@@ -36,6 +36,7 @@
 + (id)paletteFromImage:(id)arg1;
 + (id)sharedPalette;
 
+- (id)selectedCellBackgroundColor;
 - (id)cellActionColor;
 - (id)cellActionDestructiveColor;
 - (id)shareTintColor;
@@ -59,7 +60,6 @@
 - (id)emphasizedTextColor;
 - (id)standardTextColor;
 - (id)systemInteractionColor;
-- (id)selectedCellBackgroundColor;
 - (id)selectedTextColor;
 
 @end

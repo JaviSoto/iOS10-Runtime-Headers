@@ -2,11 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, AAFamilyDetailsResponse, SSFamilyCircle, NSOperationQueue, NSNumber, NSCache;
+@class NSCache, SKUIClientContext, SSFamilyCircle, NSOperationQueue, FAFamilyCircle, NSNumber;
 
 @interface SKUIFamilyCircleController : NSObject  {
     SSFamilyCircle *_iTunesFamily;
-    AAFamilyDetailsResponse *_iCloudFamily;
+    FAFamilyCircle *_iCloudFamily;
     NSNumber *_lastAccountID;
     NSCache *_imageCache;
     NSOperationQueue *_opQueue;
@@ -17,7 +17,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(readonly) bool hasLoaded;
 @property(readonly) SSFamilyCircle * familyCircle;
-@property(readonly) AAFamilyDetailsResponse * iCloudFamily;
+@property(readonly) FAFamilyCircle * iCloudFamily;
 
 + (id)sharedController;
 
@@ -26,10 +26,10 @@
 - (void)_setITunesFamily:(id)arg1 error:(id)arg2 iCloudFamily:(id)arg3 error:(id)arg4;
 - (id)familyCircle;
 - (id)profilePictureForFamilyMember:(id)arg1;
-- (bool)hasLoaded;
 - (void)_accountStoreDidChange:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (bool)hasLoaded;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;

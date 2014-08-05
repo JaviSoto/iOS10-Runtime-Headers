@@ -14,11 +14,11 @@
 @property(getter=isOpen,readonly) bool open;
 
 
-- (void)bindNullForProperty:(id)arg1;
-- (void)bindInt:(int)arg1 forProperty:(id)arg2;
-- (void)bindPersistentID:(long long)arg1;
 - (void)clearBindings;
+- (void)bindPersistentID:(long long)arg1;
 - (void)bindDouble:(double)arg1 forProperty:(id)arg2;
+- (void)bindInt:(int)arg1 forProperty:(id)arg2;
+- (void)bindNullForProperty:(id)arg1;
 - (id)initWithEntityClass:(Class)arg1 properties:(id)arg2 library:(id)arg3;
 - (void)bindValue:(id)arg1 forProperty:(id)arg2;
 - (bool)isOpen;

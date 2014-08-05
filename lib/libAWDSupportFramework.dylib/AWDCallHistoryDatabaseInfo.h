@@ -39,10 +39,10 @@
 - (bool)hasSize;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setFetchLimit:(unsigned int)arg1;
 - (unsigned int)fetchLimit;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setSize:(unsigned int)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -84,11 +84,16 @@
 + (id)contact;
 + (bool)supportsSecureCoding;
 
+- (id)note;
+- (id)textTone;
+- (id)ringtone;
 - (id)socialProfiles;
 - (id)relatedNames;
 - (id)instantMessageAddresses;
 - (id)dates;
-- (id)note;
+- (id)urlAddresses;
+- (id)preferredContactForName;
+- (id)birthdays;
 - (id)phoneticFamilyName;
 - (id)phoneticMiddleName;
 - (id)phoneticGivenName;
@@ -96,11 +101,6 @@
 - (id)nameSuffix;
 - (id)middleName;
 - (id)namePrefix;
-- (id)textTone;
-- (id)ringtone;
-- (id)urlAddresses;
-- (id)preferredContactForName;
-- (id)birthdays;
 - (bool)hasLinkedContacts;
 - (bool)isEqualToContact:(id)arg1;
 - (id)_CNLabelFromABLabel:(struct __CFString { }*)arg1;
@@ -129,7 +129,6 @@
 - (long long)nameOrder;
 - (id)givenName;
 - (id)largestAvailablePhoto;
-- (bool)isFacebook;
 - (id)preferredContactForPhoto;
 - (bool)isUnified;
 - (void)setImageData:(id)arg1 forFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -152,6 +151,7 @@
 - (void)setLinkedContacts:(id)arg1;
 - (id)linkedContacts;
 - (bool)hasValidRecordID;
+- (bool)isFacebook;
 - (void)setPhoto:(id)arg1;
 - (id)emailAddresses;
 - (unsigned int)recordType;
@@ -165,8 +165,8 @@
 - (void)setAddressBook:(void*)arg1;
 - (id)identifier;
 - (void)setSource:(void*)arg1;
-- (id)phoneNumbers;
 - (int)recordID;
+- (id)phoneNumbers;
 - (id)familyName;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

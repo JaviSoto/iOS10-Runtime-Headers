@@ -19,11 +19,11 @@
 @property(getter=isFinished,readonly) bool finished;
 @property(getter=isCancelled,readonly) bool cancelled;
 
++ (void)sleepForTimeInterval:(double)arg1;
 + (id)callStackSymbols;
 + (id)callStackReturnAddresses;
 + (void)detachNewThreadSelector:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
 + (void)exit;
-+ (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
 + (bool)isMultiThreaded;
 + (bool)isMainThread;

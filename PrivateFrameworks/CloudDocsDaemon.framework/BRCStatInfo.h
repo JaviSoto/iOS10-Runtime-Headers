@@ -71,10 +71,10 @@
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;
 - (id)aliasTargetContainerID;
 - (id)aliasTargetItemID;
-- (id)parentID;
-- (bool)isWritable;
 - (int)creator;
+- (bool)isWritable;
 - (void)setParentID:(id)arg1;
+- (id)parentID;
 - (void)setMode:(BOOL)arg1;
 - (void)setType:(BOOL)arg1;
 - (BOOL)type;

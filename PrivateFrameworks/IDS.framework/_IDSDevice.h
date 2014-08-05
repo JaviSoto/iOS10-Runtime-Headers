@@ -48,6 +48,7 @@
 @property(readonly) bool supportsPhoneCalls;
 @property(retain,readonly) NSString * deviceColor;
 @property(retain,readonly) NSString * enclosureColor;
+@property(retain,readonly) NSArray * linkedUserURIs;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -68,6 +69,7 @@
 - (bool)supportsPhoneCalls;
 - (bool)supportsMMSRelay;
 - (bool)supportsSMSRelay;
+- (id)linkedUserURIs;
 - (id)modelIdentifier;
 - (void)_nearbyStateChanged;
 - (void)_addIdentity:(id)arg1;

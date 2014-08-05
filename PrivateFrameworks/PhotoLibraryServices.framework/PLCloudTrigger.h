@@ -20,5 +20,6 @@
 - (id)initWithType:(unsigned long long)arg1;
 - (void)activate;
 - (unsigned long long)type;
+- (void)dealloc;
 
 @end

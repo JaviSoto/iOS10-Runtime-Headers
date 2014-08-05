@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIResponder, UIScreen, _UIWindowAnimationController, _UISystemGestureGateGestureRecognizer, UIViewController, NSMutableArray, CALayer, UIView, UIColor, NSString, NSUndoManager, _UIViewControllerNullAnimationTransitionCoordinator, UITraitCollection, NSMutableSet, _UISimulatedApplicationResizeGestureRecognizerDelegate, _UIResponderSelectionCursor, NSArray, FBSScene;
+@class UIResponder, UIScreen, _UIWindowAnimationController, _UISystemGestureGateGestureRecognizer, UIViewController, NSMutableArray, CALayer, UIView, UIColor, NSString, NSUndoManager, _UIViewControllerNullAnimationTransitionCoordinator, UITraitCollection, NSMutableSet, _UISimulatedApplicationResizeGestureRecognizerDelegate, _UIResponderSelectionCursor, NSArray, FBSScene, _UIWindowRotationAnimationController;
 
 @interface UIWindow : UIView <NSISEngineDelegate> {
     id _delegate;
@@ -78,6 +78,7 @@
     unsigned int _systemGesturesArePossible : 1;
     long long _verticalSizeClassStateRestorationOverride;
     long long _horizontalSizeClassStateRestorationOverride;
+    bool_shouldDisableTransformLayerScalingForSnapshotting;
     bool__containedGestureRecognizersShouldRespectGestureServerInstructions;
     bool__usesLegacySupportedOrientationChecks;
     bool__shouldHitTestEntireScreen;
@@ -103,6 +104,7 @@
     id __shouldPreventRotationHook;
 
     _UISimulatedApplicationResizeGestureRecognizerDelegate *__simulatedApplicationResizeGestureRecognizerDelegate;
+    _UIWindowRotationAnimationController *__windowRotationAnimationController;
 }
 
 @property(readonly) unsigned long long hash;
@@ -114,6 +116,7 @@
 @property(getter=isKeyWindow,readonly) bool keyWindow;
 @property(retain) UIViewController * rootViewController;
 @property(setter=_setContainedGestureRecognizersShouldRespectGestureServerInstructions:) bool _containedGestureRecognizersShouldRespectGestureServerInstructions;
+@property(setter=_setShouldDisableTransformLayerScalingForSnapshotting:) bool _shouldDisableTransformLayerScalingForSnapshotting;
 @property(setter=_setWindowInternalConstraints:,copy) NSArray * _windowInternalConstraints;
 @property(readonly) bool _usesLegacySupportedOrientationChecks;
 @property(setter=_setDeferredLaunchBlock:,copy) id _deferredLaunchBlock;
@@ -124,10 +127,12 @@
 @property(getter=_animationController,setter=_setAnimationController:,retain) _UIWindowAnimationController * _animationController;
 @property(readonly) struct { long long x1; long long x2; } __sizeClassPair;
 @property(setter=_setShouldPreventRotationHook:,copy) id _shouldPreventRotationHook;
+@property(getter=_potentiallyRotatedFrame,readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } potentiallyRotatedFrame;
 @property(setter=_setRootViewConstraints:,copy) NSArray * _rootViewConstraints;
 @property(setter=_setSimulatedApplicationResizeGestureRecognizerDelegate:,retain) _UISimulatedApplicationResizeGestureRecognizerDelegate * _simulatedApplicationResizeGestureRecognizerDelegate;
 @property(setter=_setShouldHitTestEntireScreen:) bool _shouldHitTestEntireScreen;
 @property(setter=_setTraitCollectionChangeTransitionCoordinator:,retain) _UIViewControllerNullAnimationTransitionCoordinator * _traitCollectionChangeTransitionCoordinator;
+@property(setter=_setWindowRotationAnimationController:,retain) _UIWindowRotationAnimationController * _windowRotationAnimationController;
 
 + (void)initialize;
 + (id)_findWithDisplayPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -175,8 +180,6 @@
 + (bool)_isSystemWindow;
 
 - (void)setHidden:(bool)arg1;
-- (void)makeKeyAndVisible;
-- (void)setRootViewController:(id)arg1;
 - (void)sendEvent:(id)arg1;
 - (bool)isKeyWindow;
 - (bool)becomeFirstResponder;
@@ -274,8 +277,6 @@
 - (void)_screenWillTransitionToTraitCollection:(id)arg1;
 - (struct { long long x1; long long x2; })__sizeClassPair;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)_allContainedGestureRecognizersWereReset;
-- (void)_updateContainedGestureRecognizerState;
 - (bool)_shouldDelayTouchForSystemGestures:(id)arg1;
 - (bool)_systemGestureRecognitionIsPossible;
 - (id)_appearanceContainer;
@@ -320,6 +321,7 @@
 - (void)_orderContextToFront;
 - (bool)_hasContext;
 - (void)_transformLayerShouldMaskToBounds:(bool)arg1;
+- (void)_updateTransformLayerSizeForClassicPresentation;
 - (id)initWithContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 debugName:(id)arg2;
 - (id)_debugName;
@@ -355,8 +357,10 @@
 - (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(long long)arg3 virtualVerticalSizeClass:(long long)arg4;
 - (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2;
 - (void)_updateWindowTraitsAndNotify:(bool)arg1;
+- (bool)_shouldPrepareScreenForWindow;
 - (bool)_alwaysGetsContexts;
-- (void)_updateAncestorGestureRecognizerState;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_potentiallyRotatedFrame;
+- (id)_windowRotationAnimationController;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(bool)arg4;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateStatusBarToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
@@ -384,10 +388,11 @@
 - (id)_rotationCompleteBlock;
 - (void)_willChangeToSize:(struct CGSize { double x1; double x2; })arg1 orientation:(long long)arg2 screen:(id)arg3 withTransitionCoordinator:(id)arg4;
 - (long long)_toWindowOrientation;
+- (void)_setWindowRotationAnimationController:(id)arg1;
 - (void)_setDeferredLaunchBlock:(id)arg1;
-- (id)_deferredLaunchBlock;
 - (void)_updateSimulatedApplicationResizeGestureForInterfaceOrientationChange;
 - (bool)_isAnyWindowRotating;
+- (bool)_shouldAutorotateToInterfaceOrientation:(long long)arg1 checkForDismissal:(bool)arg2 isRotationDisabled:(bool*)arg3;
 - (id)_shouldPreventRotationHook;
 - (bool)_legacyShouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)_clientsForRotation;
@@ -409,6 +414,7 @@
 - (double)_touchSloppinessFactor;
 - (void)_setHidden:(bool)arg1 forced:(bool)arg2;
 - (void)_updateToInterfaceOrientation:(long long)arg1 duration:(double)arg2 force:(bool)arg3;
+- (id)_deferredLaunchBlock;
 - (void)addRootViewControllerViewIfPossible;
 - (void)_resignKeyWindowStatus;
 - (void)makeKeyWindow;
@@ -433,6 +439,7 @@
 - (bool)_isOffsetByScreenJail;
 - (bool)_isScaledByScreenJail;
 - (bool)_isRotatedByScreenJail;
+- (bool)_shouldDisableTransformLayerScalingForSnapshotting;
 - (void)_setTraitCollectionChangeTransitionCoordinator:(id)arg1;
 - (void)_makeKeyWindowIgnoringOldKeyWindow:(bool)arg1;
 - (void)_endKeyWindowDeferral;
@@ -477,6 +484,7 @@
 - (void)_setStateRestorationVerticalSizeClass:(long long)arg1 horizontalSizeClass:(long long)arg2;
 - (void)_setFirstResponder:(id)arg1;
 - (void)_clearSizeClassesForStateRestoration;
+- (void)_setShouldDisableTransformLayerScalingForSnapshotting:(bool)arg1;
 - (double)windowLevel;
 - (id)traitCollection;
 - (bool)_isWindowServerHostingManaged;
@@ -507,10 +515,12 @@
 - (void)_orderFrontWithoutMakingKey;
 - (void)setWindowLevel:(double)arg1;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)setRootViewController:(id)arg1;
 - (void)_resizeWindowToFullScreenIfNecessary;
 - (void)setResizesToFullScreen:(bool)arg1;
 - (id)_initWithOrientation:(long long)arg1;
 - (bool)_isTextEffectsWindow;
+- (void)makeKeyAndVisible;
 - (bool)_clearMouseView;
 - (id)_animationController;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

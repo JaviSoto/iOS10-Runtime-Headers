@@ -14,13 +14,14 @@
 
 + (bool)createTablesWithDB:(id)arg1;
 
-- (void)_enumerateItemsForEvictSyncWithBlock:(id)arg1;
 - (void)documentWasAccessed:(id)arg1;
+- (void)unlinkInBackgroundItemsRenamedBeforeRestart;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (bool)containerWasReset:(id)arg1;
 - (bool)documentWasDeleted:(id)arg1;
 - (bool)documentChangedEvictability:(id)arg1;
 - (bool)documentWasCreated:(id)arg1;
+- (bool)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
 - (id)queue;
 - (void)close;

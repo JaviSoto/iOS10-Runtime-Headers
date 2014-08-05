@@ -25,8 +25,8 @@
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
-- (void)setToken:(id)arg1;
 - (id)token;
+- (void)setToken:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

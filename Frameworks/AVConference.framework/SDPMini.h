@@ -131,10 +131,10 @@
 - (id)composeSessionString;
 - (void)parseSDPFromString:(id)arg1;
 - (id)SDPUsername;
-- (id)origin;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (void)dealloc;
 - (void)setOrigin:(id)arg1;
+- (id)origin;
 
 @end

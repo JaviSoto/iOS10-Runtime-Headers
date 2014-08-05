@@ -32,7 +32,6 @@
 + (id)classNameForClass:(Class)arg1;
 + (void)setClassName:(id)arg1 forClass:(Class)arg2;
 + (bool)archiveRootObject:(id)arg1 toFile:(id)arg2;
-+ (bool)archiveRootObject:(id)arg1 toFile:(id)arg2 withFileProtectionLevel:(id)arg3;
 
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)setOutputFormat:(unsigned long long)arg1;

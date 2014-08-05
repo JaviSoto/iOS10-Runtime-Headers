@@ -13,7 +13,7 @@
     long long _currentStatusOnceToken;
     unsigned int _currentStatus;
     bool_isOverQuota;
-    bool_isCloudSyncEnabled;
+    bool_isCloudSyncTCCDisabled;
 }
 
 @property(readonly) NSData * propertiesData;
@@ -32,10 +32,11 @@
 @property(retain,readonly) NSDate * lastServerUpdate;
 @property(readonly) unsigned int currentStatus;
 @property(getter=isOverQuota,readonly) bool overQuota;
-@property bool isCloudSyncEnabled;
+@property bool isCloudSyncTCCDisabled;
 
 + (id)containerForContainerID:(id)arg1;
 + (void)postContainerStatusChangeNotificationWithID:(id)arg1 key:(id)arg2 value:(id)arg3;
++ (bool)validateContainerID:(id)arg1;
 + (id)propertiesForContainerID:(id)arg1 usingBundle:(id)arg2 minimumBundleVersion:(id)arg3 bundleIcons:(id*)arg4;
 + (void)postContainerListUpdateNotification;
 + (void)_generateiOSIconsIntoDict:(id)arg1 usingBundle:(id)arg2;
@@ -53,7 +54,7 @@
 + (id)allContainersByContainerID;
 + (id)documentContainers;
 
-- (void)setIsCloudSyncEnabled:(bool)arg1;
+- (void)setIsCloudSyncTCCDisabled:(bool)arg1;
 - (id)versionNumberForBundleIdentifier:(id)arg1;
 - (bool)setProperties:(id)arg1 stagedBundleIconPaths:(id)arg2 forBundleIdentifier:(id)arg3 salt:(id)arg4;
 - (bool)hasMetadataForBundleID:(id)arg1;
@@ -61,7 +62,7 @@
 - (bool)hasIconWithName:(id)arg1;
 - (bool)setPropertiesData:(id)arg1 stagedBundleIconPaths:(id)arg2 salt:(id)arg3 refresh:(bool)arg4;
 - (id)propertiesData;
-- (bool)isCloudSyncEnabled;
+- (bool)isCloudSyncTCCDisabled;
 - (bool)isOverQuota;
 - (void)setCurrentStatus:(unsigned int)arg1;
 - (unsigned int)currentStatus;

@@ -78,10 +78,11 @@
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;
 - (oneway void)networkReachabilityUpdated:(bool)arg1;
 - (oneway void)modelDidLoad;
+- (void)forceRefresh;
 - (void)stopSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
 - (void)startSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
 - (void)locatingInProgressChanged:(id)arg1;
-- (void)forceRefresh;
+- (void)sessionWasCreatedRefresh;
 - (void)sendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
 - (void)getPendingFriendshipRequestsWithCompletion:(id)arg1;
 - (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
@@ -89,8 +90,9 @@
 - (void)approveFriendshipRequest:(id)arg1 completion:(id)arg2;
 - (void)sendFriendshipInviteToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
 - (void)extendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
-- (void)_sendFriendshipOfferWithAutoSwitchMeDeviceForHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
-- (void)_sendFriendshipOfferWithoutTryingToSwitchMeDeviceForHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
+- (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
+- (void)_sendAutoSwitchMeDevice;
+- (void)_checkAndDisplayMeDeviceSwitchAlert;
 - (void)getAllLocations:(id)arg1;
 - (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(id)arg2;
 - (void)getHandlesWithPendingOffers:(id)arg1;
@@ -106,8 +108,11 @@
 - (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id)arg4;
 - (void)locationForHandle:(id)arg1 completion:(id)arg2;
 - (void)dispatchOnDelegateQueue:(id)arg1;
+- (bool)shouldHandleErrorInFWK:(id)arg1;
+- (bool)is5XXError:(id)arg1;
 - (id)verifyRestrictionsAndShowDialogIfRequired;
 - (void)getAllDevices:(id)arg1;
+- (void)setExpiredInitTimestamp;
 - (void)getAbRecordIdForHandle:(id)arg1 completion:(id)arg2;
 - (void)getPrettyNameForHandle:(id)arg1 completion:(id)arg2;
 - (void)removeDevice:(id)arg1 completion:(id)arg2;

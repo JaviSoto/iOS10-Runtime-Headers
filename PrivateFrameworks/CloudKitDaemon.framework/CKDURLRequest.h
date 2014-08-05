@@ -6,13 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSFileHandle, NSURLRequest, NSMutableData, <CKDAccountInfoProvider>, NSMutableArray, NSString, NSError, NSArray, NSMutableDictionary, NSInputStream, CKDProtobufStreamWriter, NSData, NSOperationQueue, NSRunLoop, NSURLSessionDataTask, NSHTTPURLResponse, <CKDResponseBodyParser>, NSURLSessionConfiguration, NSDate, CKDProtocolTranslator, NSURL, CKDClientContext;
+@class NSDictionary, NSFileHandle, NSURLRequest, NSMutableData, <CKDAccountInfoProvider>, NSMutableArray, NSString, NSError, NSArray, NSMutableDictionary, NSInputStream, CKDProtobufStreamWriter, NSData, NSOperationQueue, NSRunLoop, NSURLSessionDataTask, NSHTTPURLResponse, <CKDResponseBodyParser>, NSURLSessionConfiguration, CKDProtocolTranslator, NSDate, NSURL, CKDClientContext;
 
 @interface CKDURLRequest : NSObject <CKDURLSessionTaskDelegate, CKDProtobufMessageSigningDelegate, CKDFlowControllable> {
     <CKDAccountInfoProvider> *_accountInfoProvider;
     double _timeoutInterval;
     long long _responseStatusCode;
-    NSDate *_dateRequestWentOut;
     NSRunLoop *_runLoopToFireOn;
     NSString *_requestUUID;
     bool_didSendRequest;
@@ -37,7 +36,6 @@
   /* Error parsing encoded ivar type info: @? */
     id _completionBlock;
 
-    unsigned long long _numDownloadedElements;
     NSMutableDictionary *_overriddenHeaders;
     NSMutableArray *_redirectHistory;
     NSData *_fakeResponseData;
@@ -56,6 +54,7 @@
     NSMutableData *_receivedMescalData;
     bool_usesBackgroundSession;
     bool_allowsCellularAccess;
+    bool_cancelled;
     bool_haveCachedServerType;
     bool_haveCachedPartitionType;
     NSDictionary *_requestProperties;
@@ -64,16 +63,15 @@
     CKDProtocolTranslator *_translator;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
-    NSString *__testUnderscoreProperty;
     NSArray *_requestOperations;
     NSString *_flowControlKey;
     NSString *_hardwareIDOverride;
     NSError *_error;
+    NSOperationQueue *_delegateQueue;
     NSURLSessionConfiguration *_sessionConfiguration;
     NSURLSessionDataTask *_urlSessionTask;
     NSURLRequest *_request;
     NSHTTPURLResponse *_response;
-    NSOperationQueue *_delegateQueue;
     NSFileHandle *_responseFileHandle;
     NSFileHandle *_requestFileHandle;
     NSFileHandle *_binaryResponseFileHandle;
@@ -83,8 +81,10 @@
     NSString *_binaryResponseLogFilePath;
     NSString *_binaryRequestLogFilePath;
     NSString *_deviceID;
+    unsigned long long _numDownloadedElements;
     long long _cachedServerType;
     long long _cachedPartitionType;
+    NSDate *_dateRequestWentOut;
 }
 
 @property(retain) <CKDAccountInfoProvider> * accountInfoProvider;
@@ -102,7 +102,6 @@
 @property(copy) id requestProgressBlock;
 @property(copy) id responseProgressBlock;
 @property(copy) id completionBlock;
-@property(retain) NSString * _testUnderscoreProperty;
 @property(retain) <CKDResponseBodyParser> * responseBodyParser;
 @property(readonly) NSString * httpMethod;
 @property(readonly) NSDictionary * additionalHeaderValues;
@@ -129,12 +128,11 @@
 @property(readonly) long long responseStatusCode;
 @property(readonly) NSURL * lastRedirectURL;
 @property(readonly) NSString * requestUUID;
+@property(retain) NSOperationQueue * delegateQueue;
 @property(retain) NSURLSessionConfiguration * sessionConfiguration;
 @property(retain) NSURLSessionDataTask * urlSessionTask;
 @property(retain) NSURLRequest * request;
 @property(retain) NSHTTPURLResponse * response;
-@property(retain) NSOperationQueue * delegateQueue;
-@property unsigned long long numDownloadedElements;
 @property(retain) NSFileHandle * responseFileHandle;
 @property(retain) NSFileHandle * requestFileHandle;
 @property(retain) NSFileHandle * binaryResponseFileHandle;
@@ -144,10 +142,13 @@
 @property(retain) NSString * binaryResponseLogFilePath;
 @property(retain) NSString * binaryRequestLogFilePath;
 @property(copy) NSString * deviceID;
+@property unsigned long long numDownloadedElements;
+@property(getter=isCancelled) bool cancelled;
 @property bool haveCachedServerType;
-@property long long cachedServerType;
 @property bool haveCachedPartitionType;
+@property long long cachedServerType;
 @property long long cachedPartitionType;
+@property(retain) NSDate * dateRequestWentOut;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -158,19 +159,17 @@
 
 - (void)setCachedPartitionType:(long long)arg1;
 - (long long)cachedPartitionType;
-- (void)setHaveCachedPartitionType:(bool)arg1;
-- (bool)haveCachedPartitionType;
 - (void)setCachedServerType:(long long)arg1;
 - (long long)cachedServerType;
+- (void)setHaveCachedPartitionType:(bool)arg1;
+- (bool)haveCachedPartitionType;
 - (void)setHaveCachedServerType:(bool)arg1;
 - (bool)haveCachedServerType;
+- (void)setNumDownloadedElements:(unsigned long long)arg1;
 - (id)binaryRequestFileHandle;
 - (id)binaryResponseFileHandle;
 - (id)requestFileHandle;
 - (id)responseFileHandle;
-- (void)setNumDownloadedElements:(unsigned long long)arg1;
-- (void)set_testUnderscoreProperty:(id)arg1;
-- (id)_testUnderscoreProperty;
 - (id)translator;
 - (bool)expectsSingleObject;
 - (void)generateSignature:(id)arg1;
@@ -189,8 +188,10 @@
 - (id)defaultParserForContentType:(id)arg1;
 - (void)_logHTTPResponse:(id)arg1;
 - (void)_addResponseHeadersToReceivedSignature:(id)arg1;
+- (id)dateRequestWentOut;
 - (void)_flushRequestResponseLogs;
 - (void)setSessionConfiguration:(id)arg1;
+- (void)setDateRequestWentOut:(id)arg1;
 - (void)setUrlSessionTask:(id)arg1;
 - (void)_populateURLSessionConfiguration;
 - (void)_loadRequest:(id)arg1;
@@ -198,7 +199,9 @@
 - (id)acceptContentType;
 - (id)requestContentType;
 - (bool)hasRequestBody;
+- (id)zoneIDsToLock;
 - (void)_performRequest;
+- (void)_acquireZoneGates;
 - (bool)requiresTokenRegistration;
 - (void)_registerPushTokens;
 - (bool)requiresDeviceID;
@@ -225,11 +228,13 @@
 - (long long)_handleServerJSONResult:(id)arg1;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
-- (void)updateSignatureWithReceivedBytes:(id)arg1;
 - (long long)_handleServerProtobufResult:(id)arg1 rawData:(id)arg2;
+- (void)updateSignatureWithReceivedBytes:(id)arg1;
 - (void)_logParsedObject:(id)arg1;
 - (Class)expectedResponseClass;
 - (void)_handleMescalSignatureResponse:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)_handleAuthFailure;
+- (void)tearDownResourcesAndReleaseTheZoneLocks;
 - (id)streamWriter;
 - (id)operationRequestWithType:(int)arg1;
 - (void)_addRequestHeadersToTransmittedSignature:(id)arg1;
@@ -255,13 +260,12 @@
 - (void)_makeTrafficFileHandleWithPrefix:(id)arg1 outPath:(id*)arg2 outHandle:(id*)arg3;
 - (id)sessionConfiguration;
 - (id)urlSessionTask;
-- (id)requestUUID;
 - (void)setFlowControlKey:(id)arg1;
 - (void)setHardwareIDOverride:(id)arg1;
 - (void)inheritParentSectionID:(id)arg1;
+- (id)requestUUID;
 - (id)flowControlKey;
 - (void)performRequest;
-- (void)finishRequestWithError:(id)arg1;
 - (bool)usesBackgroundSession;
 - (void)setUsesBackgroundSession:(bool)arg1;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
@@ -306,6 +310,8 @@
 - (id)path;
 - (id)url;
 - (int)operationType;
+- (bool)isCancelled;
+- (void)finishWithError:(id)arg1;
 - (id)init;
 - (id)sourceApplicationBundleIdentifier;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
@@ -321,11 +327,13 @@
 - (void)setError:(id)arg1;
 - (id)error;
 - (id)response;
+- (void)cancel;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
 - (void)setCompletionBlock:(id)arg1;
 - (id)completionBlock;
 - (bool)isFinished;
+- (void)setCancelled:(bool)arg1;
 
 @end

@@ -45,6 +45,8 @@
 - (bool)allowInSetup;
 - (void)setIgnoreIfAlreadyDisplaying:(bool)arg1;
 - (bool)ignoreIfAlreadyDisplaying;
+- (bool)_dismissesOverlaysOnLockScreen;
+- (bool)dismissesAutomatically;
 - (id)prepareNewAlertSheetWithLockedState:(bool)arg1 requirePasscodeForActions:(bool)arg2;
 - (bool)displayActionButtonOnLockScreen;
 - (int)alertPriority;

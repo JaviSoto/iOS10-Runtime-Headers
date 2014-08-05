@@ -46,6 +46,7 @@
 - (bool)idleTimerNeedsReset;
 - (id)remote;
 - (void)setLogger:(id)arg1;
+- (id)logger;
 - (void)setHidManager:(struct __IOHIDManager { }*)arg1;
 - (struct __IOHIDManager { }*)hidManager;
 - (id)controllers;
@@ -59,7 +60,6 @@
 - (void)removeController:(id)arg1;
 - (void)addController:(id)arg1;
 - (void)updateIdleTimer:(id)arg1;
-- (id)logger;
 - (id)connection;
 - (id)init;
 - (void)open;

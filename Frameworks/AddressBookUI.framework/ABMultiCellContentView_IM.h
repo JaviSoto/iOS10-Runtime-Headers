@@ -7,9 +7,9 @@
 
 + (unsigned long long)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 
+- (id)pickerView;
 - (void)reloadFromModelIncludingRows:(bool)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
-- (id)pickerView;
 - (void)reloadFromModel;
 
 @end

@@ -40,6 +40,7 @@
 - (void)setRecordDecryptedBlock:(id)arg1;
 - (void)setRecordsToDecrypt:(id)arg1;
 - (bool)shouldCheckAppVersion;
+- (bool)operationShouldBeFlowControlled;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
 - (id)webSharingIdentityDataByRecordID;

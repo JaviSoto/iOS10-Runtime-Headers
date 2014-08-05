@@ -41,6 +41,8 @@
 - (id)colorBoxes;
 - (unsigned long long)_colorBoxSize;
 - (id)_computeAverageColor;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
+- (double)cropZoomScale;
 - (struct CGSize { double x1; double x2; })_imageSize;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentView:(id)arg1;

@@ -249,7 +249,6 @@
 - (void)setContinuousSpellCheckingEnabled:(bool)arg1;
 - (bool)_isDisplayingReferenceLibraryViewController;
 - (void)scrollRangeToVisible:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)_reanalyze:(id)arg1;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)select:(id)arg1;

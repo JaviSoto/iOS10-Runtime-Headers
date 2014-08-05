@@ -78,9 +78,8 @@
 + (id)privacyLevelAsString:(long long)arg1;
 + (id)eventWithEventStore:(id)arg1;
 
-- (void)setEndDate:(id)arg1;
-- (id)externalURI;
 - (bool)isAllDay;
+- (void)setEndDate:(id)arg1;
 - (id)_dateForNextOccurrence;
 - (void)revert;
 - (id)dirtyPropertiesToSkip;
@@ -183,6 +182,7 @@
 - (void)setOccurrenceEndDate:(id)arg1;
 - (void)setOccurrenceStartDate:(id)arg1;
 - (id)initWithEventStore:(id)arg1;
+- (id)externalURI;
 - (void)setInvitationStatus:(unsigned long long)arg1;
 - (unsigned long long)invitationStatus;
 - (bool)removeWithSpan:(int)arg1 error:(id*)arg2;

@@ -57,6 +57,7 @@
 - (void)setupLayoutSegments;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
+- (id)displayContentsForKey:(id)arg1;
 - (double)keyCornerRadius;
 - (id)thinKeycapsFontName;
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;

@@ -23,6 +23,7 @@
 + (id)imageNameForStatus:(unsigned long long)arg1;
 + (void)forgetStatusImageAppearance;
 
+- (void)launchIfNecessary;
 - (unsigned long long)requestVideoStillForPerson:(id)arg1;
 - (unsigned long long)requestAudioReflectorStop;
 - (unsigned long long)requestAudioReflectorStart;
@@ -32,7 +33,6 @@
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
 - (id)myAvailableMessages;
-- (void)launchIfNecessary;
 - (void)setMyStatus:(unsigned long long)arg1 message:(id)arg2;
 - (unsigned long long)vcCapabilities;
 - (id)myPictureData;

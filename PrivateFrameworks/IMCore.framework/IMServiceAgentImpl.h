@@ -14,12 +14,12 @@
 + (void)forgetStatusImageAppearance;
 + (void)initialize;
 
+- (void)launchIfNecessary;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (id)myAwayMessages;
 - (id)myAvailableMessages;
 - (void)_customMessagesChanged:(id)arg1;
-- (void)launchIfNecessary;
 - (void)_daemonDisconnected:(id)arg1;
 - (void)_daemonConnected:(id)arg1;
 - (void)_statusImageAppearanceChanged:(id)arg1;

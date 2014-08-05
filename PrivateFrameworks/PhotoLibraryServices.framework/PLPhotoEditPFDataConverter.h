@@ -12,14 +12,14 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
-+ (id)_settingsDictionaryForAutoEnhanceFilters:(id)arg1;
++ (id)_settingsDictionaryForLegacyAutoEnhanceFilters:(id)arg1;
 + (id)_supportedAdjustments;
-+ (id)_filtersForAutoEnhanceSettingsDictionary:(id)arg1;
++ (id)_filtersForLegacyAutoEnhanceSettingsDictionary:(id)arg1;
 + (long long)_supportLevelForSettings:(id)arg1 knownKeys:(id)arg2;
 + (id)_knownFormatVersions;
++ (id)formatIdentifier;
 + (id)debugDescriptionForPhotoEditData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3;
 + (bool)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
-+ (id)formatIdentifier;
 + (id)formatVersion;
 + (bool)loadPhotoEditData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 intoModel:(id)arg4 baseOrientation:(long long)arg5;
 + (id)dataFromPhotoEditModel:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 exifOrientation:(int)arg4;

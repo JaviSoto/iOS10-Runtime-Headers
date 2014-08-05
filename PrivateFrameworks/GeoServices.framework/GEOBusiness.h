@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString, NSArray, GEOLatLng, NSMutableArray;
+@class GEOLatLng, NSMutableArray, NSString;
 
 @interface GEOBusiness : PBCodable <NSCopying> {
     unsigned long long _uID;
@@ -36,7 +36,6 @@
 @property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
 @property(getter=_hasPriceRange,readonly) bool hasPriceRange;
 @property(getter=_priceRange,readonly) unsigned int priceRange;
-@property(getter=_categoryKeys,readonly) NSArray * categoryKeys;
 @property(getter=_hasAnyAmenities,readonly) bool hasAnyAmenities;
 @property(getter=_hasDeliveryAmenity,readonly) bool hasDeliveryAmenity;
 @property(getter=_hasDelivery,readonly) bool hasDelivery;
@@ -91,7 +90,6 @@
 - (bool)_hasAnyAmenities;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
-- (id)_categoryKeys;
 - (unsigned int)_priceRange;
 - (bool)_hasPriceRange;
 - (float)_normalizedUserRatingScore;

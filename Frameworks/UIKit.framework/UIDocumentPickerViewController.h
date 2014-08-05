@@ -2,19 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentPickerDelegate>, _UIDocumentPickerRemoteViewController, _UIRemoteViewService;
+@class _UIRemoteViewService, <UIDocumentPickerDelegate>, NSURL, _UIDocumentPickerRemoteViewController;
 
 @interface UIDocumentPickerViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining> {
     <UIDocumentPickerDelegate> *_weak_delegate;
     unsigned long long _documentPickerMode;
     _UIDocumentPickerRemoteViewController *_remoteViewController;
     _UIRemoteViewService *_remoteViewService;
+    NSURL *_uploadURL;
+    id _deletionStitchingToken;
 }
 
 @property <UIDocumentPickerDelegate> * delegate;
-@property(readonly) unsigned long long documentPickerMode;
+@property unsigned long long documentPickerMode;
 @property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) _UIDocumentPickerRemoteViewController * remoteViewController;
 @property(retain) _UIRemoteViewService * remoteViewService;
+@property(copy) NSURL * uploadURL;
+@property(retain) id deletionStitchingToken;
 
 + (id)localizedName;
 + (id)image;
@@ -28,20 +32,27 @@
 - (void)dealloc;
 - (void)setRemoteViewService:(id)arg1;
 - (id)remoteViewService;
-- (unsigned long long)documentPickerMode;
 - (id)initWithExistingDocumentAtURL:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)initForSelectingDocumentMatchingTypes:(id)arg1 inMode:(unsigned long long)arg2;
-- (id)_initWithRemoteViewController:(id)arg1;
+- (id)_initWithRemoteViewController:(id)arg1 inMode:(unsigned long long)arg2 uploadURLOrNil:(id)arg3;
 - (void)addAuxiliaryOptionWithTitle:(id)arg1 image:(id)arg2 identifier:(id)arg3;
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
-- (void)_dismissViewController;
 - (void)_didSelectURL:(id)arg1;
 - (id)initWithURL:(id)arg1 inMode:(unsigned long long)arg2;
 - (id)initWithDocumentTypes:(id)arg1 inMode:(unsigned long long)arg2;
+- (id)uploadURL;
+- (unsigned long long)documentPickerMode;
+- (void)_prepareForDeletionIfNecessary;
+- (void)setUploadURL:(id)arg1;
 - (void)_commonInitWithCompletion:(id)arg1;
+- (void)setDocumentPickerMode:(unsigned long long)arg1;
+- (void)_finishDeletionIfNecessary;
+- (void)setDeletionStitchingToken:(id)arg1;
+- (id)deletionStitchingToken;
 - (id)_remoteViewController;
+- (void)_dismissViewController;
 - (void)_setRemoteViewController:(id)arg1;
 
 @end

@@ -2,10 +2,17 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UITableViewCell;
+
 @interface UITableViewLabel : UILabel  {
+    UITableViewCell *_tableCell;
 }
 
+@property UITableViewCell * tableCell;
 
+
+- (id)tableCell;
+- (void)setTableCell:(id)arg1;
 - (void)setText:(id)arg1;
 
 @end

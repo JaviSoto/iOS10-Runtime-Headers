@@ -32,6 +32,7 @@
 - (id)chatsForMessage:(id)arg1;
 - (id)chatForMessage:(id)arg1;
 - (id)frequentRepliesForForChatIdentifiers:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3;
+- (id)messageActionItemsForOriginalMessageGUID:(id)arg1;
 - (id)attachmentsWithRoomNames:(id)arg1 onServices:(id)arg2;
 - (id)attachmentsWithHandles:(id)arg1 onServices:(id)arg2;
 - (id)lastMessageWithRoomNames:(id)arg1 onServices:(id)arg2;

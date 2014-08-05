@@ -28,6 +28,7 @@
 - (id)primaryEmail;
 - (id)accountStore;
 - (id)identifier;
+- (bool)allowsCellularAccess;
 - (void).cxx_destruct;
 
 @end

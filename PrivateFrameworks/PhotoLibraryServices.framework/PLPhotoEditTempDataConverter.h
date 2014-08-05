@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PLPhotoEditTempDataConverter : NSObject <PLPhotoEditDataImporter, PLPhotoEditDataExporter> {
+@interface PLPhotoEditTempDataConverter : NSObject <PLPhotoEditDataImporter> {
 }
 
 @property(readonly) unsigned long long hash;
@@ -14,10 +14,7 @@
 
 + (id)debugDescriptionForPhotoEditData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3;
 + (bool)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
-+ (id)formatIdentifier;
-+ (id)formatVersion;
 + (bool)loadPhotoEditData:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 intoModel:(id)arg4 baseOrientation:(long long)arg5;
-+ (id)dataFromPhotoEditModel:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 exifOrientation:(int)arg4;
 
 
 @end

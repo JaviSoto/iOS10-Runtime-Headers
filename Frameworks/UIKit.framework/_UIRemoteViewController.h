@@ -68,7 +68,6 @@
 + (id)requestViewControllerWithService:(id)arg1 connectionHandler:(id)arg2;
 + (id)serviceViewControllerInterface;
 
-- (void)didMoveToParentViewController:(id)arg1;
 - (bool)inheritsSecurity;
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
@@ -77,7 +76,6 @@
 - (oneway void)release;
 - (id)retain;
 - (id)disconnect;
-- (id)serviceViewControllerProxyWithErrorHandler:(id)arg1;
 - (id)_touchDeliveryPolicyAssertion;
 - (id)_cancelTouchesForCurrentEventInHostedContent;
 - (void)setServiceViewShouldShareTouchesWithHost:(bool)arg1;
@@ -114,6 +112,7 @@
 - (void)_restoreTextEffectsRemoteView;
 - (id)_clientDeferralProperties;
 - (id)_hostDeferralProperties;
+- (long long)__getPreferredInterfaceOrientation;
 - (id)_addAutoAllowedNotifications:(id)arg1;
 - (struct { unsigned int x1[8]; })serviceAuditToken;
 - (void)_terminateUnconditionallyThen:(id)arg1;
@@ -139,6 +138,7 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSizeForServiceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (int)__automatic_invalidation_logic;
+- (id)serviceViewControllerProxyWithErrorHandler:(id)arg1;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -157,6 +157,7 @@
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (id)serviceViewControllerProxy;
 - (void)loadView;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

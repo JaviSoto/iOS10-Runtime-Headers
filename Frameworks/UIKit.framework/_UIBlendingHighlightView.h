@@ -11,8 +11,8 @@
 
 @property double cornerRadius;
 
-+ (id)_blendingSeparatorView;
 + (id)_blendingPressedView;
++ (id)_blendingSeparatorView;
 
 - (double)cornerRadius;
 - (void)dealloc;

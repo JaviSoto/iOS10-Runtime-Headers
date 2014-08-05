@@ -78,8 +78,6 @@
 - (bool)canBePublished;
 - (void)setSharees:(id)arg1;
 - (void)setSymbolicColorName:(id)arg1;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (bool)validate:(id*)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setPushKey:(id)arg1;
@@ -155,6 +153,8 @@
 - (bool)allowsContentModifications;
 - (unsigned long long)allowedEntityTypes;
 - (int)entityType;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (void)setHidden:(bool)arg1;
 - (id)source;
 - (id)UUID;

@@ -11,6 +11,7 @@
     NSMutableSet *_inserts;
     NSMutableSet *_updates;
     NSMutableSet *_deletes;
+    NSMutableDictionary *_saveTokensToKnownUUIDs;
     NSMutableDictionary *_changeRequests;
     NSHashTable *_fetchResults;
     NSHashTable *_observers;
@@ -23,6 +24,7 @@
 @property(retain) NSMutableSet * inserts;
 @property(retain) NSMutableSet * updates;
 @property(retain) NSMutableSet * deletes;
+@property(retain) NSMutableDictionary * saveTokensToKnownUUIDs;
 @property(retain) NSMutableDictionary * changeRequests;
 @property(retain) NSHashTable * fetchResults;
 @property(retain) NSHashTable * observers;
@@ -32,16 +34,17 @@
 + (id)_effectiveRootEntity:(id)arg1;
 + (Class)PHObjectClassForOID:(id)arg1;
 + (Class)classForFetchType:(id)arg1;
-+ (id)uniquedOID:(id)arg1;
 + (Class)PHObjectClassForEntityName:(id)arg1;
 + (void)requestAuthorization:(id)arg1;
++ (id)uniquedOIDsFromObjects:(id)arg1;
++ (id)uniquedOID:(id)arg1;
 + (id)sharedPhotoLibrary;
 + (long long)authorizationStatus;
 
-- (bool)performChangesAndWait:(id)arg1 error:(id*)arg2;
 - (void)setChangeNotificationInfo:(id)arg1;
 - (id)changeNotificationInfo;
 - (void)setChangeRequests:(id)arg1;
+- (void)setSaveTokensToKnownUUIDs:(id)arg1;
 - (void)setDeletes:(id)arg1;
 - (void)setUpdates:(id)arg1;
 - (void)setInserts:(id)arg1;
@@ -56,12 +59,14 @@
 - (void)registerFetchResult:(id)arg1;
 - (id)transactionPLPhotoLibrary;
 - (id)fetchPHObjectsForOIDs:(id)arg1 propertyHint:(unsigned long long)arg2 includeTrash:(bool)arg3;
+- (id)saveTokensToKnownUUIDs;
 - (void)_commitTransaction:(id)arg1;
 - (id)changeRequests;
 - (id)deletes;
 - (id)inserts;
 - (void)handleMergeNotification:(id)arg1;
 - (id)initSharedLibrary;
+- (id)removeUuidForSaveToken:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
 - (id)fetchPHObjectsForOIDs:(id)arg1;
@@ -73,6 +78,8 @@
 - (void)recordDeleteRequest:(id)arg1;
 - (void)assertTransaction;
 - (id)fetchUpdatedObject:(id)arg1;
+- (bool)performChangesAndWait:(id)arg1 error:(id*)arg2;
+- (void)registerUUID:(id)arg1 forSaveToken:(id)arg2;
 - (void)setPhotoLibrary:(id)arg1;
 - (id)photoLibrary;
 - (void)setFetchResults:(id)arg1;

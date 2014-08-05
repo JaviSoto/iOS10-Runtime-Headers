@@ -23,10 +23,10 @@
 - (void)setTabItems:(id)arg1;
 - (id)appTabBar;
 - (id)tabItems;
-- (void)_reload;
 - (void)onSelect;
 - (void)onReload;
 - (id)initWithAppContext:(id)arg1 appTabBar:(id)arg2;
+- (void)_reload;
 - (void).cxx_destruct;
 
 @end

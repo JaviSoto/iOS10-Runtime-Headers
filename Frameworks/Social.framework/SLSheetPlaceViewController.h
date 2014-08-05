@@ -57,8 +57,8 @@
 - (void)_centerMapWithSelectedPlace:(id)arg1;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
-- (void)cancelButtonTapped:(id)arg1;
 - (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
+- (void)cancelButtonTapped:(id)arg1;
 - (id)account;
 - (void)setAccount:(id)arg1;
 - (void)dealloc;

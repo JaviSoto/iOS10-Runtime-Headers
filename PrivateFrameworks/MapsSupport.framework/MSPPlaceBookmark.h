@@ -2,19 +2,36 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class GEOMapItemStorage, PBUnknownFields;
+@class GEOMapItemStorage, NSString, GEOLatLng, PBUnknownFields;
 
 @interface MSPPlaceBookmark : PBCodable <NSCopying> {
     PBUnknownFields *_unknownFields;
+    GEOLatLng *_droppedPinCoordinate;
     GEOMapItemStorage *_mapItemStorage;
+    int _origin;
+    NSString *_title;
+    struct { 
+        unsigned int origin : 1; 
+    } _has;
 }
 
 @property(readonly) bool hasMapItemStorage;
 @property(retain) GEOMapItemStorage * mapItemStorage;
+@property bool hasOrigin;
+@property int origin;
+@property(readonly) bool hasTitle;
+@property(retain) NSString * title;
+@property(readonly) bool hasDroppedPinCoordinate;
+@property(retain) GEOLatLng * droppedPinCoordinate;
 @property(readonly) PBUnknownFields * unknownFields;
 
 
+- (id)droppedPinCoordinate;
+- (bool)hasDroppedPinCoordinate;
+- (void)setHasOrigin:(bool)arg1;
+- (void)setDroppedPinCoordinate:(id)arg1;
 - (id)unknownFields;
+- (bool)hasOrigin;
 - (bool)hasMapItemStorage;
 - (void)setMapItemStorage:(id)arg1;
 - (id)mapItemStorage;
@@ -22,11 +39,16 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)title;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
+- (bool)hasTitle;
+- (void)setOrigin:(int)arg1;
+- (int)origin;
 
 @end

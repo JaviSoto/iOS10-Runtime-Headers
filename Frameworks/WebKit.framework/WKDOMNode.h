@@ -24,9 +24,9 @@
 @property(readonly) NSArray * textRects;
 
 
-- (void)insertNode:(id)arg1 before:(id)arg2;
 - (struct OpaqueWKBundleNodeHandle { }*)_copyBundleNodeHandleRef;
 - (id)_initWithImpl:(struct Node { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; }*)arg1;
+- (void)insertNode:(id)arg1 before:(id)arg2;
 - (id)textRects;
 - (id)lastChild;
 - (id)document;

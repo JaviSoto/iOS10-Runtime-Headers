@@ -29,6 +29,7 @@
 - (id)recordZoneModifiedBlock;
 - (id)recordZoneIDByRequestID;
 - (void)setRecordZoneModifiedBlock:(id)arg1;
+- (id)zoneIDsToLock;
 - (id)requestOperationClasses;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;

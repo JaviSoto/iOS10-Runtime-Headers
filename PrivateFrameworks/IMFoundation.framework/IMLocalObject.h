@@ -15,6 +15,7 @@
 
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
 + (void)_setExceptionHandlingDisabled:(bool)arg1;
++ (id)_imLocalObjectQueue;
 + (void)_unregisterIMLocalObject:(id)arg1;
 + (void)_registerIMLocalObject:(id)arg1;
 + (void)initialize;
@@ -33,6 +34,7 @@
 - (void)_clearPort:(bool)arg1;
 - (void)_cancelHandlerCompleted;
 - (void)_handleNewInvocations;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(bool)arg4;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
 - (id)_currentMessageContext;
 - (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;

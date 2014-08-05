@@ -135,10 +135,10 @@
 - (void)setBackgroundStyle:(long long)arg1 animated:(bool)arg2;
 - (long long)backgroundStyle;
 - (void)setBackgroundStyle:(long long)arg1;
+- (void)updateConstraints;
 - (void)setCancelButton:(id)arg1;
 - (id)cancelButton;
 - (id)backgroundView;
-- (void)updateConstraints;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 

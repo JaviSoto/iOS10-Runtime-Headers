@@ -25,7 +25,6 @@
 
 - (id)model;
 - (id)url;
-- (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
@@ -51,5 +50,6 @@
 - (id)serviceViewController;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 
 @end

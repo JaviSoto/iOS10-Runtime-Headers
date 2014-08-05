@@ -13,6 +13,7 @@
     NSString *topicKey;
     long long latestReceivedTopicMessageNumber;
     NSString *lastMessage;
+    boolallowConcurrent;
     NSObject<OS_dispatch_queue> *outMessageQueue;
     struct tagHANDLE { int x1; } *handle;
     unsigned int p2pID;
@@ -35,7 +36,7 @@
 - (bool)isSendingEnabled;
 - (void)sendMessage:(id)arg1 withSequence:(long long)arg2 numRetries:(long long)arg3;
 - (void)setP2PID:(unsigned int)arg1;
-- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 receiveHandler:(id)arg3;
+- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 allowConcurrent:(bool)arg3 receiveHandler:(id)arg4;
 - (void)setIsSendingEnabled:(bool)arg1;
 - (void)passMessage:(id)arg1 sequence:(int)arg2;
 - (bool)isStringAssociated:(id)arg1;

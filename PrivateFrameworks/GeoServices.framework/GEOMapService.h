@@ -8,11 +8,12 @@
 + (id)sharedService;
 
 - (id)_geoMapItemForData:(id)arg1;
+- (id)_geoMapItemsForUpdatedPlacesInResolution:(id)arg1;
 - (id)ticketForProblem:(id)arg1 placeForProblemContext:(id)arg2 traits:(id)arg3;
 - (void)_geoMapItemsForResponseData:(id)arg1 handler:(id)arg2;
 - (void)submitUsageForTraits:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
-- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 traits:(id)arg5;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3;
 - (id)ticketForSectionedLocalitiesAndLandmarksSearchFragment:(id)arg1 traits:(id)arg2;

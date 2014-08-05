@@ -26,6 +26,7 @@
     UIPrintFormatter *_printFormatter;
     id _printingItem;
     NSArray *_printingItems;
+    <UIPrintInteractionControllerDelegate> *_printActivityDelegate;
 }
 
 @property(retain) UIPrintInfo * printInfo;
@@ -38,6 +39,7 @@
 @property(retain) UIPrintFormatter * printFormatter;
 @property(copy) id printingItem;
 @property(copy) NSArray * printingItems;
+@property <UIPrintInteractionControllerDelegate> * printActivityDelegate;
 @property(readonly) long long pageCount;
 @property struct _NSRange { unsigned long long x1; unsigned long long x2; } pageRange;
 @property(retain) PKPrinter * printer;
@@ -60,6 +62,8 @@
 - (void)_cancelManualPrintPage;
 - (void)_manualPrintPage;
 - (void)_enableManualPrintPage:(bool)arg1;
+- (void)setPrintActivityDelegate:(id)arg1;
+- (id)printActivityDelegate;
 - (void)setPrintingItems:(id)arg1;
 - (id)printingItems;
 - (void)setPrintFormatter:(id)arg1;

@@ -30,6 +30,10 @@
 + (bool)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3 info:(id*)arg4;
 + (void)initialize;
 
+- (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(bool)arg2 isSigned:(bool)arg3;
+- (id)signedData;
+- (id)decodeText;
+- (unsigned int)numberOfAttachments;
 - (id)rfc822DecodedMessageBody;
 - (id)decodeMultipart;
 - (id)decodeMultipartAlternative;
@@ -108,10 +112,6 @@
 - (id)contentToOffset:(unsigned long long)arg1 resultOffset:(unsigned long long*)arg2 asHTML:(bool)arg3;
 - (id)contentID;
 - (void)setContentID:(id)arg1;
-- (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(bool)arg2 isSigned:(bool)arg3;
-- (id)signedData;
-- (id)decodeText;
-- (unsigned int)numberOfAttachments;
 - (void)setLanguages:(id)arg1;
 - (id)languages;
 - (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

@@ -16,8 +16,8 @@
 
 - (bool)isEqualToShading:(id)arg1;
 - (void)setShading:(id)arg1;
-- (void)setForeground:(id)arg1;
 - (id)foreground;
+- (void)setForeground:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
 - (id)init;

@@ -26,6 +26,7 @@
 - (void)setQueryResponses:(id)arg1;
 - (unsigned long long)limit;
 - (void)setLimit:(unsigned long long)arg1;
+- (id)zoneIDsToLock;
 - (bool)allowsAnonymousAccount;
 - (id)requestOperationClasses;
 - (void)requestDidParseNodeFailure:(id)arg1;

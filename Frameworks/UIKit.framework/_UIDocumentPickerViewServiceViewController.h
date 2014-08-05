@@ -6,6 +6,7 @@
 
 @interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerRemoteViewControllerContaining, _UIDocumentPickerOverviewDelegate, _UIDocumentPickerViewController> {
     bool_displayedAsMenu;
+    bool_hasBeenDismissed;
     long long _displayMode;
     NSArray *_pickableTypes;
     unsigned long long _pickerMode;
@@ -23,6 +24,7 @@
 @property(setter=_setAuxiliaryOptions:,retain) NSArray * auxiliaryOptions;
 @property(retain) NSString * currentPickerIdentifier;
 @property bool displayedAsMenu;
+@property bool hasBeenDismissed;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -35,9 +37,9 @@
 - (void)_willAppearInRemoteViewController;
 - (void)setDisplayMode:(long long)arg1;
 - (void)overviewController:(id)arg1 selectedAuxiliaryOptionWithIdentifier:(id)arg2;
-- (void)dismissWithURL:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)overviewController:(id)arg1 selectedDocumentPickerWithIdentifier:(id)arg2;
 - (bool)displayedAsMenu;
+- (void)dismissWithURL:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_showLocationPopup:(id)arg1;
 - (void)_doneButton:(id)arg1;
 - (void)_showPicker:(id)arg1;
@@ -46,7 +48,8 @@
 - (void)_showTopLevelViewController;
 - (id)currentPickerIdentifier;
 - (void)setCurrentPickerIdentifier:(id)arg1;
-- (id)uploadURL;
+- (void)setHasBeenDismissed:(bool)arg1;
+- (bool)hasBeenDismissed;
 - (id)hostingViewController;
 - (void)beginDownloadingURL:(id)arg1 completion:(id)arg2;
 - (long long)displayMode;
@@ -62,12 +65,13 @@
 - (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_didSelectPicker;
-- (void)_dismissViewController;
 - (void)_didSelectURL:(id)arg1;
+- (id)uploadURL;
 - (void)_setUploadURLWrapper:(id)arg1;
 - (void)_setPickerMode:(unsigned long long)arg1;
 - (void)_setPickableTypes:(id)arg1;
 - (void)_prepareForDisplayWithCompletion:(id)arg1;
+- (void)_dismissViewController;
 - (void)_showDefaultPicker;
 
 @end

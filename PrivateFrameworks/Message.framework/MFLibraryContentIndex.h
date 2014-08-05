@@ -17,9 +17,12 @@
     unsigned long long _throttledBatchSize;
     <MFLibraryContentIndexDataSource> *_dataSource;
     NSObject<OS_dispatch_queue> *_dataSourceQueue;
+    NSObject<OS_dispatch_queue> *_utilityPriorityQueue;
+    NSObject<OS_dispatch_queue> *_foregroundPriorityQueue;
     _MFContentIndexWrapper *_contentIndexWrapper;
     int _invalidated;
     _MFLibraryContentIndexResultsCache *_resultsCache;
+    unsigned int _isForeground : 1;
     unsigned int _refreshing : 1;
     unsigned int _shouldReopen : 1;
     unsigned int _processPendingChangesScheduled : 1;
@@ -46,17 +49,20 @@
 - (void)scheduleProcessPendingItems;
 - (void)_transitionToNextStatePaused:(bool)arg1;
 - (void)_markInvalidated;
+- (void)_updateDataSourceQueueTargetIsForeground:(bool)arg1;
 - (void)removeItemsWithDocumentIdentifiers:(id)arg1;
 - (void)indexItems:(id)arg1;
+- (void)applicationWillResume;
 - (void)invalidateAndWait;
-- (void)setTargetQueue:(id)arg1;
 - (id)initWithPath:(id)arg1 indexName:(id)arg2 dataSource:(id)arg3;
 - (bool)isSearchable;
 - (id)documentIdentifiersMatchingCriterion:(id)arg1 mailboxIDs:(id)arg2;
+- (void)setTargetQueue:(id)arg1;
 - (void)resume;
 - (void)refresh;
 - (void)wait;
 - (void)suspend;
 - (void)dealloc;
+- (void)applicationWillSuspend;
 
 @end

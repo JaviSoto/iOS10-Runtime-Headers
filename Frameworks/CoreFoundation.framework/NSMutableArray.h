@@ -98,10 +98,15 @@
 - (void)setObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)moveItemFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeItemAtIndex:(unsigned long long)arg1;
+- (void)removeAllObjectsWithClass:(Class)arg1;
+- (void)cr_addNonNilObject:(id)arg1;
+- (void)cr_addObject:(id)arg1 orPlaceholder:(id)arg2;
+- (void)cr_insertObject:(id)arg1 usingComparator:(id)arg2;
+- (void)cr_removeObjectsStartingAtIndex:(unsigned long long)arg1;
+- (bool)mf_addObjectIfAbsent:(id)arg1;
 - (void)mf_moveObjectAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)mf_addObject:(id)arg1 orPlaceholder:(id)arg2;
 - (bool)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
-- (bool)mf_addObjectIfAbsent:(id)arg1;
 - (unsigned long long)mf_removeObject:(id)arg1 usingComparator:(id)arg2;
 - (unsigned long long)mf_insertObject:(id)arg1 usingComparator:(id)arg2 allowDuplicates:(bool)arg3;
 - (unsigned long long)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
@@ -110,6 +115,7 @@
 - (void)ps_insertObjectsFromArray:(id)arg1 afterObject:(id)arg2;
 - (void)ps_insertObject:(id)arg1 afterObject:(id)arg2;
 - (void)ps_addPossibleObject:(id)arg1;
+- (id)_gkMutableOrderedSet;
 - (void)_mapkit_makeObjectsPerformSelector:(SEL)arg1;
 - (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_mapkit_sortUsingLongitude;
@@ -120,12 +126,6 @@
 - (void)_mapkit_sortUsingLatitudeAscending:(bool)arg1;
 - (unsigned long long)_mapkit_insertSortedAnnotationView:(id)arg1;
 - (unsigned long long)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(bool)arg2;
-- (void)removeAllObjectsWithClass:(Class)arg1;
-- (void)cr_addNonNilObject:(id)arg1;
-- (void)cr_addObject:(id)arg1 orPlaceholder:(id)arg2;
-- (void)cr_insertObject:(id)arg1 usingComparator:(id)arg2;
-- (void)cr_removeObjectsStartingAtIndex:(unsigned long long)arg1;
-- (id)_gkMutableOrderedSet;
 - (void)MSRemoveOneObject:(id)arg1;
 - (void)MSRemoveOneObjectByPointerComparison:(id)arg1;
 - (void)removeAllObjectsWithClass:(Class)arg1;

@@ -16,10 +16,10 @@
 
 + (void)initialize;
 
-- (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (void)updateFromSQLRow:(id)arg1;
-- (id)initWithObjectID:(id)arg1 fromSQLRow:(id)arg2;
+- (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
+- (id)initWithObjectID:(id)arg1 fromSQLRow:(id)arg2;
 - (id)valueForPropertyDescription:(id)arg1;
 - (id)_propertyCache;
 - (id)_snapshot_;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSUUID, NSDictionary, NSString, NSDate, NSURL, NSData;
+@class NSError, NSUUID, NSString, NSDate, NSURL, NSData, NSDictionary;
 
 @interface LSUserActivityInfo : NSObject <NSCopying, NSSecureCoding> {
     NSUUID *_uuid;
@@ -15,7 +15,7 @@
     NSURL *_webpageURL;
     NSData *_streamsData;
     NSData *_activityPayload;
-    NSData *_frameworkPayload;
+    NSError *_error;
 }
 
 @property(copy) NSUUID * uuid;
@@ -28,7 +28,7 @@
 @property(copy) NSURL * webpageURL;
 @property(copy) NSData * streamsData;
 @property(copy) NSData * activityPayload;
-@property(copy) NSData * frameworkPayload;
+@property(copy) NSError * error;
 
 + (bool)supportsSecureCoding;
 
@@ -37,8 +37,6 @@
 - (id)activityDate;
 - (void)setActivityPayload:(id)arg1;
 - (id)activityPayload;
-- (void)setFrameworkPayload:(id)arg1;
-- (id)frameworkPayload;
 - (void)setStreamsData:(id)arg1;
 - (id)streamsData;
 - (void)setTypeIdentifier:(id)arg1;
@@ -54,6 +52,8 @@
 - (id)options;
 - (void)setOptions:(id)arg1;
 - (unsigned long long)type;
+- (void)setError:(id)arg1;
+- (id)error;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

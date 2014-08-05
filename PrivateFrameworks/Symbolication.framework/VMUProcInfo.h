@@ -41,9 +41,9 @@
 - (id)_infoFromCommandLine:(int)arg1;
 - (id)userAppName;
 - (id)realAppName;
-- (id)initWithPid:(int)arg1;
 - (bool)isApp;
 - (int)cpuType;
+- (id)initWithPid:(int)arg1;
 - (int)pid;
 - (id)arguments;
 - (void)update;

@@ -78,6 +78,13 @@
     AVCaptureDeviceControlRequestQueue *_manualExposureControlRequests;
     AVCaptureDeviceControlRequestQueue *_biasedExposureControlRequests;
     AVCaptureDeviceControlRequestQueue *_manualWhiteBalanceControlRequests;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _lastCustomExposureDuration;
+    float _lastCustomExposureISO;
     long long _imageControlMode;
     long long _flashMode;
     bool_flashActive;
@@ -130,6 +137,7 @@
 }
 
 + (bool)_cameraAccessIsEnabled;
++ (id)_newFigCaptureSources;
 + (id)_devices;
 + (id)alloc;
 + (void)initialize;
@@ -174,7 +182,7 @@
 - (double)_predictedMixForGains:(struct { float x1; float x2; float x3; })arg1;
 - (bool)_ensureWhiteBalanceCalibrationUnpacked;
 - (int)_setWhiteBalanceWithMode:(long long)arg1 gains:(struct { float x1; float x2; float x3; })arg2 requestID:(int)arg3;
-- (int)_setExposureWithMode:(long long)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ISO:(float)arg3 requestID:(int)arg4;
+- (int)_setExposureWithMode:(long long)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ISO:(float)arg3 requestID:(int)arg4 newMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg5;
 - (void)_handleManualControlCompletionForRequestQueue:(id)arg1 withPayload:(id)arg2;
 - (bool)_hasKeyValueObserversForHighFrequencyProperty:(id)arg1;
 - (int)_setFocusWithMode:(long long)arg1 lensPosition:(float)arg2 requestID:(int)arg3;

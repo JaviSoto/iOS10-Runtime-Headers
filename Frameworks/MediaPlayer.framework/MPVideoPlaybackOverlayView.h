@@ -170,8 +170,8 @@
 - (void)setHidden:(bool)arg1 animated:(bool)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setNavigationBarHidden:(bool)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (void)updateConstraints;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (id)navigationBar;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;

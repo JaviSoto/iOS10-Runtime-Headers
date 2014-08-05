@@ -20,6 +20,7 @@
 
 - (void)cancelTransientViewController:(id)arg1;
 - (id)floatingOverlayViewController;
+- (id)skui_activeNavigationController;
 - (void)setTabBarBackdropStyle:(long long)arg1;
 - (void)setFloatingOverlayViewController:(id)arg1 animated:(bool)arg2;
 - (void)_layoutFloatingOverlayView;

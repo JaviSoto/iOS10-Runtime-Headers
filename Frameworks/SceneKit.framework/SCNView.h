@@ -114,11 +114,11 @@
 - (id)_authoringEnvironment;
 - (bool)_canJitter;
 - (id)scene;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(id)arg2;
-- (void)setPreferredFramesPerSecond:(long long)arg1;
 - (id)renderer;
 - (void)_enterBackground:(id)arg1;
 - (void)_enterForeground:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(id)arg2;
+- (void)setPreferredFramesPerSecond:(long long)arg1;
 - (void)play:(id)arg1;
 - (bool)isPlaying;
 - (void*)context;

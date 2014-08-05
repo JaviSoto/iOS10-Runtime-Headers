@@ -7,6 +7,7 @@
 @interface SKUIItemListTableViewController : UITableViewController <SKUIItemCollectionDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIItemListTableDelegate> *_delegate;
+    bool_delegateWantsCanRemove;
     bool_delegateWantsDidRemove;
     bool_delegateWantsWillDisplay;
     bool_didLoadMore;

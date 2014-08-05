@@ -6,7 +6,12 @@
 }
 
 
+- (bool)_isClippedByScreenJail;
+- (bool)_isOffsetByScreenJail;
+- (bool)_isScaledByScreenJail;
+- (bool)_isRotatedByScreenJail;
 - (bool)_usesWindowServerHitTesting;
+- (bool)_isConstrainedByScreenJail;
 - (bool)_isWindowServerHostingManaged;
 
 @end

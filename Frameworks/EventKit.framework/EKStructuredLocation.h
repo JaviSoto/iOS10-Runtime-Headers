@@ -17,9 +17,9 @@
 
 + (id)locationWithTitle:(id)arg1;
 
-- (void)setGeoLocation:(id)arg1;
 - (bool)isEqualToLocation:(id)arg1;
 - (id)_asCalLocation;
+- (void)setGeoLocation:(id)arg1;
 - (id)_persistentLocation;
 - (void)setRouting:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;

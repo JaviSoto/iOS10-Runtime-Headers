@@ -70,7 +70,6 @@
 + (id)bodyWithCircleOfRadius:(double)arg1;
 + (id)bodyWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1;
 
-- (id)node;
 - (id)allContactedBodies;
 - (double)area;
 - (id)joints;
@@ -122,6 +121,7 @@
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)node;
 - (void)applyImpulse:(struct CGVector { double x1; double x2; })arg1;
 
 @end

@@ -23,10 +23,10 @@
 + (bool)deliveryAccountUsesSSL;
 + (id)deliveryAccountHostname;
 + (id)emailAddressHostPart;
-+ (id)displayedAccountTypeString;
 + (bool)usernameIsEmailAddress;
 + (bool)isPredefinedAccountType;
 + (id)accountTypeIdentifier;
++ (id)displayedAccountTypeString;
 + (id)hostname;
 
 - (bool)xListSupportedOnConnection:(id)arg1;

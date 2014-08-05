@@ -2,10 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NDBackgroundSessionProtocol>, NSURL;
+@class NSURL;
 
 @interface __NSCFBackgroundAVAssetDownloadTask : __NSCFBackgroundSessionTask  {
-    <NDBackgroundSessionProtocol> *_remoteAVSession;
     unsigned long long _downloadToken;
     unsigned long long _AVAssetDownloadToken;
     NSURL *_URL;
@@ -26,5 +25,6 @@
 - (id)destinationURL;
 - (unsigned long long)AVAssetDownloadToken;
 - (id)URL;
+- (void)dealloc;
 
 @end

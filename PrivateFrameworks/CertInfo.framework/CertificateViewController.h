@@ -48,12 +48,12 @@
 - (void)setShowCertificateButton:(bool)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(bool)arg4 handler:(id)arg5;
 - (void)setCertificateTitle:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 properties:(id)arg5 isRoot:(bool)arg6 action:(int)arg7;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1 action:(int)arg2;
-- (id)certificateExpiration;
-- (int)certUIAction;
 - (id)certificateButtonActionHandler;
 - (id)certificateProperties;
 - (bool)certificateButtonIsDestructiveAction;
 - (id)certificateButtonTitle;
+- (id)certificateExpiration;
+- (int)certUIAction;
 - (bool)certificateIsRoot;
 - (id)certificateIssuer;
 - (id)certificateTitle;
@@ -73,12 +73,12 @@
 - (void)setCertificateIssuer:(id)arg1;
 - (void)setCertificateTitle:(id)arg1;
 - (void)preferredContentSizeChanged:(id)arg1;
-- (id)details;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 - (void)didReceiveMemoryWarning;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

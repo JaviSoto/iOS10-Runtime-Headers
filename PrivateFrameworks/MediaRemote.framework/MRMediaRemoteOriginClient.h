@@ -59,9 +59,9 @@
 - (bool)isOverrideApp;
 - (void)setCanBeNowPlayingApp:(bool)arg1;
 - (unsigned int)routeDiscoveryMode;
-- (struct _MROrigin { }*)origin;
 - (void)setNowPlayingInfo:(id)arg1;
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;
 - (void)dealloc;
+- (struct _MROrigin { }*)origin;
 
 @end

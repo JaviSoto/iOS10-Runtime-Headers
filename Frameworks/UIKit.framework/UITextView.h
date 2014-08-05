@@ -27,6 +27,7 @@
         unsigned int inSecondConstraintsPass : 1; 
         unsigned int interactiveSelectionDisabled : 1; 
         unsigned int selectable : 1; 
+        unsigned int shouldPresentSheetsInAWindowLayeredAboveTheKeyboard : 1; 
     } _tvFlags;
     id _linkInteractionItem;
     _UITextViewRestorableScrollPosition *_scrollTarget;
@@ -173,6 +174,8 @@
 - (void)_didRecognizeSpeechTokens:(id)arg1;
 - (void)_enableSiriAnimationDictationStyleWithCharacterInsertionRate:(double)arg1 minimumDurationBetweenHypotheses:(double)arg2;
 - (void)_enableSiriAnimationDictationStyle;
+- (void)setShouldPresentSheetsInAWindowLayeredAboveTheKeyboard:(bool)arg1;
+- (bool)shouldPresentSheetsInAWindowLayeredAboveTheKeyboard;
 - (void)_setPreferredMaxLayoutWidth:(double)arg1;
 - (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (unsigned long long)_effectiveDataDetectorTypes;
@@ -236,7 +239,6 @@
 - (void)setMarginTop:(unsigned long long)arg1;
 - (unsigned long long)marginTop;
 - (void)setBecomesEditableWithGestures:(bool)arg1;
-- (void)_reanalyze:(id)arg1;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)select:(id)arg1;
@@ -281,6 +283,7 @@
 - (id)inputAccessoryView;
 - (id)inputView;
 - (bool)canResignFirstResponder;
+- (void)updateConstraints;
 - (void)startAutoscroll:(struct CGPoint { double x1; double x2; })arg1;
 - (id)textStylingAtPosition:(id)arg1 inDirection:(long long)arg2;
 - (id)textContainer;
@@ -351,7 +354,6 @@
 - (void)setAttributedText:(id)arg1;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(bool)arg2;
 - (void)setScrollEnabled:(bool)arg1;
-- (void)updateConstraints;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)tintColorDidChange;
 - (double)_firstBaselineOffsetFromTop;

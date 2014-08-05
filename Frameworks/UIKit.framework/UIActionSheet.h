@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIAlertController, _UIAlertControllerShimPresenter, NSMutableArray, <UIActionSheetDelegate>;
+@class <UIActionSheetDelegate>, NSString, UIAlertController, _UIAlertControllerShimPresenter, NSMutableArray, _UIWeakRef;
 
 @interface UIActionSheet : UIView <UIPopoverControllerDelegate> {
     UIAlertController *_alertController;
@@ -12,12 +12,13 @@
     long long _firstOtherButtonIndex;
     long long _destructiveButtonIndex;
     long long _actionSheetStyle;
-    id _delegate;
     id _context;
     bool_hasPreparedAlertActions;
     bool_isPresented;
     bool_alertControllerShouldDismiss;
+    bool_handlingAlertActionShouldDismiss;
     bool_dismissingAlertController;
+    _UIWeakRef *_weakDelegate;
 }
 
 @property <UIActionSheetDelegate> * delegate;
@@ -28,6 +29,7 @@
 @property long long destructiveButtonIndex;
 @property(readonly) long long firstOtherButtonIndex;
 @property(getter=isVisible,readonly) bool visible;
+@property(retain) _UIWeakRef * weakDelegate;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -91,10 +93,14 @@
 - (void)setBodyText:(id)arg1;
 - (void)_setIsPresented:(bool)arg1;
 - (long long)numberOfButtons;
-- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
 - (void)_prepareAlertActions;
+- (void)_performPresentationDismissalWithClickedButtonIndex:(long long)arg1 animated:(bool)arg2;
 - (id)_alertController;
-- (bool)_dismissForTappedIndex:(long long)arg1;
+- (id)weakDelegate;
+- (void)setWeakDelegate:(id)arg1;
+- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
+- (bool)_prepareToDismissForTappedIndex:(long long)arg1;
+- (void)_dismissForTappedIndex:(long long)arg1;
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;

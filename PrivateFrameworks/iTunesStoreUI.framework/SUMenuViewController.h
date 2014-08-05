@@ -30,11 +30,11 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (id)_tableView;
 - (void)setSelectedIndex:(long long)arg1;
 - (long long)selectedIndex;
 - (void)viewDidAppear:(bool)arg1;
 - (void)loadView;
+- (id)_tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

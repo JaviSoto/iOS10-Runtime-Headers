@@ -2,20 +2,20 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString, NSMutableDictionary, <BBDataProviderStoreDelegate>, NSObject<OS_dispatch_queue>;
+@class NSString, NSMutableDictionary, <BBRemoteDataProviderStoreDelegate>, NSObject<OS_dispatch_queue>;
 
-@interface BBRemoteDataProviderConnection : NSObject <BBDataProviderConnectionServerProxy, BBDataProviderStore> {
+@interface BBRemoteDataProviderConnection : NSObject <BBRemoteDataProviderDelegate, BBDataProviderConnectionServerProxy, BBDataProviderStore> {
     NSString *_serviceName;
     NSString *_bundleID;
     bool_connected;
-    <BBDataProviderStoreDelegate> *_delegate;
+    <BBRemoteDataProviderStoreDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_dataProvidersBySectionID;
     NSMutableDictionary *_dataProvidersByUniversalSectionID;
-    NSObject<OS_dispatch_queue> *_clientAccessQueue;
     bool_clientReady;
 }
 
+@property(readonly) bool isConnected;
 @property(readonly) NSString * serviceName;
 @property(readonly) NSString * bundleID;
 @property(readonly) unsigned long long hash;
@@ -30,13 +30,15 @@
 - (void)performBlockOnDataProviders:(id)arg1;
 - (void)removeDataProvider:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;
-- (id)dataProviderForSectionID:(id)arg1;
 - (void)_queue_removeDataProvider:(id)arg1;
+- (void)remoteDataProviderNeedsToWakeClient:(id)arg1;
+- (id)dataProviderForSectionID:(id)arg1;
 - (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (void)clientIsReady:(id)arg1;
 - (void)addParentSectionFactory:(id)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (void)addDataProviderWithSectionID:(id)arg1 clientProxy:(id)arg2 identity:(id)arg3 completion:(id)arg4;
+- (bool)isConnected;
 - (id)debugDescription;
 - (id)bundleID;
 - (void)dealloc;

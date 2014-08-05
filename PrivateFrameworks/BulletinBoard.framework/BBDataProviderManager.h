@@ -30,9 +30,9 @@
 - (id)localSectionIdentifierFromDismissalSectionIdentifer:(id)arg1;
 - (void)loadAllDataProviders;
 - (void)performBlockOnDataProviders:(id)arg1;
-- (id)dataProviderForSectionID:(id)arg1;
 - (void)dataProviderStore:(id)arg1 didAddParentSectionFactory:(id)arg2;
-- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2;
+- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2 completion:(id)arg3;
+- (id)dataProviderForSectionID:(id)arg1;
 - (void)dataProviderStore:(id)arg1 didRemoveDataProvider:(id)arg2;
 - (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;

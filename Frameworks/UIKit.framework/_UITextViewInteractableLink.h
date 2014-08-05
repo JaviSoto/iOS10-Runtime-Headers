@@ -29,6 +29,7 @@
 - (id)localizedTitle;
 - (bool)allowInteraction;
 - (id)defaultAction;
+- (void)actionDidFinish:(id)arg1;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 
 @end

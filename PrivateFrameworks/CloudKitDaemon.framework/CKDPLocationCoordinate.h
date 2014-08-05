@@ -64,7 +64,6 @@
 - (void)setHorizontalAccuracy:(double)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (void)setSpeed:(double)arg1;
 - (double)speed;
@@ -72,6 +71,7 @@
 - (double)course;
 - (double)verticalAccuracy;
 - (double)altitude;
+- (void)setTimestamp:(id)arg1;
 - (void)setLatitude:(double)arg1;
 - (void)setLongitude:(double)arg1;
 - (double)longitude;

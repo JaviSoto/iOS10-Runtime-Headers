@@ -37,7 +37,6 @@
 
 + (id)getConfigurationFromPlist:(id)arg1;
 
-- (struct sqlite3 { }*)db;
 - (id)dbFileName;
 - (id)cpSchema;
 - (id)extractRow:(id)arg1;
@@ -98,6 +97,7 @@
 - (void)flushDB;
 - (id)initWithDBName:(id)arg1 withConfiguration:(id)arg2 withWriteOptions:(int)arg3;
 - (id)initWithDBName:(id)arg1 withPlistPath:(id)arg2 withWriteOptions:(int)arg3;
+- (struct sqlite3 { }*)db;
 - (void)restart;
 - (void)dealloc;
 - (void).cxx_destruct;

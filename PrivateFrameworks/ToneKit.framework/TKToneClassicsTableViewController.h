@@ -2,45 +2,38 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKTonePickerStyleProvider>, <TKToneClassicsTableViewControllerDelegate>, NSArray, TKTonePickerViewController, NSIndexPath, UIImage;
+@class NSString, <TKTonePickerTableViewControllerHelper>, TKTonePickerItem;
 
-@interface TKToneClassicsTableViewController : UITableViewController  {
-    <TKToneClassicsTableViewControllerDelegate> *_delegate;
-    <TKTonePickerStyleProvider> *_styleProvider;
-    NSArray *_toneIdentifiers;
-    TKTonePickerViewController *_tonePickerViewController;
-    NSIndexPath *_selectedIndexPath;
-    UIImage *_checkmarkImage;
+@interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver> {
+    <TKTonePickerTableViewControllerHelper> *_tonePickerTableViewControllerHelper;
+    TKTonePickerItem *_classicTonesHeaderItem;
 }
 
-@property(retain) <TKTonePickerStyleProvider> * styleProvider;
-@property <TKToneClassicsTableViewControllerDelegate> * delegate;
-@property(retain) NSArray * toneIdentifiers;
-@property(retain) TKTonePickerViewController * tonePickerViewController;
-@property(retain) NSIndexPath * selectedIndexPath;
-@property(retain) UIImage * checkmarkImage;
+@property <TKTonePickerTableViewControllerHelper> * tonePickerTableViewControllerHelper;
+@property(setter=_setClassicTonesHeaderItem:,retain) TKTonePickerItem * _classicTonesHeaderItem;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
 
 
-- (id)checkmarkImage;
-- (id)toneIdentifiers;
-- (id)selectedIndexPath;
-- (void)setToneIdentifiers:(id)arg1;
-- (void)setCheckmarkImage:(id)arg1;
-- (void)setTonePickerViewController:(id)arg1;
-- (id)initWithDelegate:(id)arg1 tonePickerViewController:(id)arg2;
-- (void)setSelectedIndexPath:(id)arg1;
-- (id)tonePickerViewController;
-- (void)setStyleProvider:(id)arg1;
-- (id)styleProvider;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (id)_classicTonesHeaderItem;
+- (id)tonePickerTableViewControllerHelper;
+- (void)_setClassicTonesHeaderItem:(id)arg1;
+- (id)initWithClassicTonesHeaderItem:(id)arg1;
+- (void)didUpdateDetailText:(id)arg1 ofToneClassicsPickerItem:(id)arg2;
+- (void)didUpdateCheckedStatus:(bool)arg1 ofToneClassicsPickerItem:(id)arg2;
+- (void)didReloadTones;
+- (void)setTonePickerTableViewControllerHelper:(id)arg1;
+- (void)layoutMarginsDidChangeInTonePickerTableView:(id)arg1;
 - (void)dealloc;
 - (void)viewWillDisappear:(bool)arg1;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)loadView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

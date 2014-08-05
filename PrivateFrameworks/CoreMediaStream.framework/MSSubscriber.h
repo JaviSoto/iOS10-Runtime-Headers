@@ -90,11 +90,11 @@
 - (void)setDaemon:(id)arg1;
 - (id)daemon;
 - (void)deactivate;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 - (void)abort;
 
 @end

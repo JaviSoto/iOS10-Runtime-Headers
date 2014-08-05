@@ -15,7 +15,6 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)lastUpdateDate;
 - (void)routeHypothesizerUpdatedETA:(id)arg1 etaRoute:(id)arg2;
 - (void)routeHypothesizer:(id)arg1 receivedETAError:(id)arg2;
 - (void)routeHypothesizer:(id)arg1 receivedETAResponse:(id)arg2;
@@ -24,5 +23,6 @@
 - (void)routeHypothesizer:(id)arg1 willRequestNewRoute:(id)arg2;
 - (void)routeHypothesizer:(id)arg1 matchedToRoute:(id)arg2;
 - (void)routeHypothesizerArrived:(id)arg1;
+- (id)lastUpdateDate;
 
 @end

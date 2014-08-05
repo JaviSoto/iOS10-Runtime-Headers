@@ -13,10 +13,10 @@
 @property long long handle;
 
 
-- (void)setToken:(id)arg1;
-- (id)token;
 - (void)setHandle:(long long)arg1;
+- (id)token;
 - (long long)handle;
+- (void)setToken:(id)arg1;
 - (void)expel;
 - (void)consume;
 - (id)initWithExtension:(id)arg1;

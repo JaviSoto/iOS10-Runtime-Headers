@@ -22,11 +22,11 @@
 + (id)sharedInstance;
 
 - (void)removeDelegate:(id)arg1;
-- (void)addDelegate:(id)arg1;
 - (id)IPv4Addresses;
 - (id)IPv6Addresses;
 - (int)cellState;
 - (int)wifiState;
+- (void)addDelegate:(id)arg1;
 - (void)_handleNetworkChange:(id)arg1;
 - (void)_notifyDelegatesOfWifiChange:(int)arg1;
 - (void)_notifyDelegatesOfCellChange:(int)arg1;

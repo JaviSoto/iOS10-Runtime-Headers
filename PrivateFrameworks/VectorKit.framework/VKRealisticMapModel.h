@@ -300,6 +300,7 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
+- (void)reset;
 - (void)didReceiveMemoryWarning;
 
 @end

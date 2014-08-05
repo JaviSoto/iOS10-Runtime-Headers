@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSHTTPURLResponse, NSString, IKDOMDocument, JSManagedValue, ISURLOperation, NSDictionary, NSMutableArray, NSMutableData, NSMutableURLRequest, NSURLConnection;
+@class NSHTTPURLResponse, NSString, NSError, JSManagedValue, ISURLOperation, IKDOMDocument, NSDictionary, NSMutableArray, NSMutableData, NSMutableURLRequest, NSURLConnection;
 
 @interface IKJSXMLHTTPRequest : IKJSObject <ISStoreURLOperationDelegate, IKJSXMLHTTPRequest> {
     bool_shouldSquashOnReadyStateEvents;
@@ -13,6 +13,7 @@
     unsigned int _requestStatusCode;
     unsigned int _readyState;
     unsigned int _status;
+    unsigned long long timeout;
     ISURLOperation *_jingleOperation;
     NSMutableArray *_onReadyStateChangeMessageQueue;
     NSMutableURLRequest *_urlRequest;
@@ -24,6 +25,7 @@
     long long _requestReadyState;
     NSString *_requestStatusText;
     long long _requestResponseType;
+    NSError *_requestError;
     NSString *_statusText;
     NSDictionary *_performanceMetrics;
     JSManagedValue *_managedSelf;
@@ -42,6 +44,7 @@
 @property unsigned int requestStatusCode;
 @property(retain) NSString * requestStatusText;
 @property long long requestResponseType;
+@property(retain) NSError * requestError;
 @property unsigned int readyState;
 @property unsigned int status;
 @property(retain) NSString * statusText;
@@ -51,6 +54,7 @@
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
+@property unsigned long long timeout;
 @property(readonly) NSString * responseText;
 @property(readonly) IKDOMDocument * responseXML;
 @property unsigned int responseType;
@@ -70,14 +74,10 @@
 - (void)open:(id)arg1 :(id)arg2 :(id)arg3 :(id)arg4 :(id)arg5;
 - (void)setPerformanceMetrics:(id)arg1;
 - (id)_timeIntervalSince1970;
-- (void)_immediateOnReadyStateChangeCall;
-- (id)_dequeueReadyStateChangeMessage;
-- (void)_scheduleOnReadyStateChangeCall;
 - (void)_clearAllReadyStateChangeMessagesAndSquashFutureOnes;
 - (id)jingleOperation;
-- (id)requestStatusText;
-- (unsigned int)requestStatusCode;
 - (void)setUrlResponse:(id)arg1;
+- (void)setRequestError:(id)arg1;
 - (void)setRequestStatusText:(id)arg1;
 - (void)setRequestStatusCode:(unsigned int)arg1;
 - (void)setJingleOperation:(id)arg1;
@@ -86,8 +86,10 @@
 - (void)setRequestReadyState:(long long)arg1;
 - (void)setUrlConnection:(id)arg1;
 - (id)urlConnection;
-- (void)_enqueueReadyStateChangeMessageRespectingSquash;
-- (void)setReadyState:(unsigned int)arg1;
+- (id)_dequeueReadyStateChangeMessage;
+- (id)requestError;
+- (id)requestStatusText;
+- (unsigned int)requestStatusCode;
 - (id)performanceMetrics;
 - (id)responseXML;
 - (long long)requestResponseType;
@@ -96,7 +98,7 @@
 - (long long)requestReadyState;
 - (void)_openWithMethod:(id)arg1 url:(id)arg2 async:(bool)arg3 user:(id)arg4 password:(id)arg5;
 - (void)_setException:(id)arg1;
-- (void)_immediateUpdateReadyState:(unsigned int)arg1 statusCode:(unsigned int)arg2 statusText:(id)arg3 shouldCall:(bool)arg4;
+- (void)setReadyState:(unsigned int)arg1;
 - (void)setManagedSelf:(id)arg1;
 - (id)managedSelf;
 - (id)initWithAppContext:(id)arg1 jingleRequest:(bool)arg2;
@@ -116,11 +118,13 @@
 - (void)setPassword:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
+- (unsigned long long)timeout;
 - (void)setStatus:(unsigned int)arg1;
 - (unsigned int)status;
 - (void)send:(id)arg1;
 - (unsigned int)readyState;
 - (id)metrics;
+- (id)init;
 - (id)password;
 - (id)user;
 - (void)connectionDidFinishLoading:(id)arg1;
@@ -130,6 +134,7 @@
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (id)response;
 - (void).cxx_destruct;
+- (void)setTimeout:(unsigned long long)arg1;
 - (void)abort;
 
 @end

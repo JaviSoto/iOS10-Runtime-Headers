@@ -20,13 +20,13 @@
 
 - (void)cancelAllDownloads;
 - (bool)isDownloadingAddition:(id)arg1;
-- (void)signalNeedsDownloads;
 - (id)multiplexerForDesiredKeys:(id)arg1;
 - (id)initWithLocalContainer:(id)arg1;
 - (void)transferQueueDidRequestOperations:(id)arg1;
 - (void)_scheduleAllDownloads;
 - (bool)_scheduleDownloadForItem:(id)arg1;
 - (void)_downloadCompletedForItemID:(id)arg1 etag:(id)arg2 downloadedObject:(id)arg3 error:(id)arg4;
+- (void)signalNeedsDownloads;
 - (void)cancelDownloadForItemID:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (bool)isDownloadingItemID:(id)arg1;

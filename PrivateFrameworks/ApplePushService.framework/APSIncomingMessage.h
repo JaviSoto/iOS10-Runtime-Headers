@@ -18,10 +18,10 @@
 - (void)setLastMessageFromStorage:(bool)arg1;
 - (bool)wasLastMessageFromStorage;
 - (void)setFromStorage:(bool)arg1;
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
-- (void)setToken:(id)arg1;
+- (void)setTimestamp:(id)arg1;
 - (id)token;
+- (void)setToken:(id)arg1;
 - (void)setPriority:(long long)arg1;
 - (long long)priority;
 

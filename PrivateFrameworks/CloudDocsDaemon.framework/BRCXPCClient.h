@@ -37,13 +37,13 @@
 - (void)purgeAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id)arg3;
 - (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id)arg2;
 - (void)waitForFileSystemChangeProcessingWithReply:(id)arg1;
-- (void)forceSyncContainerID:(id)arg1 reply:(id)arg2;
 - (oneway void)log:(const char *)arg1 function:(const char *)arg2 source:(const char *)arg3 line:(int)arg4 message:(id)arg5;
 - (void)gatherInformationForPath:(id)arg1 reply:(id)arg2;
 - (void)printStatus:(id)arg1 reply:(id)arg2;
 - (void)performSelfCheck:(id)arg1 reply:(id)arg2;
 - (void)resetBudgets:(id)arg1 reply:(id)arg2;
 - (void)setIsUsingUbiquity:(bool)arg1;
+- (bool)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 enabledBundleIDs:(id)arg2;
 - (id)_enabledBundleIDs;
 - (void)_setupContainerID:(id)arg1 andSendReply:(id)arg2;
 - (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(bool)arg3 reply:(id)arg4;
@@ -95,7 +95,7 @@
 - (void)getApplicationStatus:(id)arg1;
 - (void)getApplicationStatusWithPID:(int)arg1 reply:(id)arg2;
 - (void)getMigrationStatusForPrimaryiCloudAccount:(id)arg1;
-- (oneway void)forceAccountUpdateAfterMigration;
+- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(bool)arg3 reply:(id)arg4;
 - (void)currentAccountIsUsingUbiquityWithReply:(id)arg1;
 - (void)performiWorkPublishingOperationAtURL:(id)arg1 forPublish:(bool)arg2 readonly:(bool)arg3 reply:(id)arg4;
 - (void)forceConflictForURL:(id)arg1 bookmarkData:(id)arg2 forcedEtag:(id)arg3 reply:(id)arg4;
@@ -110,6 +110,7 @@
 - (void)evictItemAtURL:(id)arg1 reply:(id)arg2;
 - (void)registerInitialSyncBarrierForID:(id)arg1 reply:(id)arg2;
 - (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(bool)arg2 requestedTTL:(unsigned long long)arg3 reply:(id)arg4;
+- (void)forceSyncContainerID:(id)arg1 reply:(id)arg2;
 - (void)getContainerURLForID:(id)arg1 reply:(id)arg2;
 - (void)getContainerURLForID:(id)arg1 forPid:(int)arg2 reply:(id)arg3;
 - (oneway void)updateContainerMetadataForID:(id)arg1 bundleID:(id)arg2;

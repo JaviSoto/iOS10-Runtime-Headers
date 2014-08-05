@@ -72,6 +72,7 @@
 - (bool)_setStatus:(unsigned long long)arg1 andError:(id)arg2;
 - (void)getLocalIdentifiersForCloudIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)getCloudIdentifiersForLocalIdentifiers:(id)arg1 completionHandler:(id)arg2;
+- (void)beginDownloadForResource:(id)arg1 highPriority:(bool)arg2 completionHandler:(id)arg3;
 - (id)syncStatus;
 - (id)initForManagement;
 - (void)addInfoToLog:(id)arg1;
@@ -103,12 +104,11 @@
 - (void)_statusDidChange;
 - (id)libraryIdentifier;
 - (id)libraryVersion;
-- (unsigned long long)sizeOfResourcesToUpload;
 - (id)platformObject;
 - (id)cloudLibraryResourceStorageURL;
-- (void)beginDownloadForResource:(id)arg1 highPriority:(bool)arg2 completionHandler:(id)arg3;
 - (void)beginPullChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
 - (void)beginPushChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
+- (unsigned long long)sizeOfResourcesToUpload;
 - (void)setResourceProgressDelegate:(id)arg1;
 - (id)currentSession;
 - (void)setEffectiveClientBundleIdentifier:(id)arg1;

@@ -16,8 +16,8 @@
 - (id)listeners;
 - (bool)addListenerID:(id)arg1;
 - (bool)hasListenerID:(id)arg1;
-- (bool)removeListenerID:(id)arg1;
 - (id)initWithService:(id)arg1;
+- (bool)removeListenerID:(id)arg1;
 - (void)setMonitor:(id)arg1;
 - (id)monitor;
 - (void)dealloc;

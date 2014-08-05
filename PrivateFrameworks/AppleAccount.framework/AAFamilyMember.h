@@ -41,12 +41,12 @@
 @property bool isAskToBuyEnabled;
 
 
-- (id)linkediTunesDSID;
 - (void)setIsAskToBuyEnabled:(bool)arg1;
 - (bool)isAskToBuyEnabled;
 - (void)setAreParentalControlsEnabled:(bool)arg1;
 - (bool)areParentalControlsEnabled;
 - (void)setLinkediTunesDSID:(id)arg1;
+- (id)linkediTunesDSID;
 - (void)setLinkediTunesAppleID:(id)arg1;
 - (id)linkediTunesAppleID;
 - (void)setITunesNotLinkedMessage:(id)arg1;
@@ -54,7 +54,6 @@
 - (void)setIsOrganizer:(bool)arg1;
 - (bool)isOrganizer;
 - (void)setIsSharingPurchases:(bool)arg1;
-- (bool)isSharingPurchases;
 - (void)setIsChild:(bool)arg1;
 - (bool)isChild;
 - (void)setJoinDate:(id)arg1;
@@ -67,6 +66,7 @@
 - (void)setIsMe:(bool)arg1;
 - (void)setAppleID:(id)arg1;
 - (id)appleID;
+- (bool)isSharingPurchases;
 - (void)setLastName:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (id)lastName;

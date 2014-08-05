@@ -53,8 +53,8 @@
 - (void)_setUpdatedTargetActions:(id)arg1;
 - (void)_setActiveTargetActions:(id)arg1;
 - (id)_displayLink;
-- (double)timestamp;
 - (bool)isPaused;
+- (double)timestamp;
 - (unsigned long long)frameInterval;
 - (id)init;
 - (void)dealloc;

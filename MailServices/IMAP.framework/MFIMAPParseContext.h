@@ -18,6 +18,7 @@
 + (void)resetWarningOrError;
 + (bool)hadWarningOrError;
 
+- (unsigned char)lookAhead;
 - (id)copyMessageSet;
 - (id)copyLiteral;
 - (bool)literalWithResponseConsumer:(id)arg1 section:(id)arg2;
@@ -40,7 +41,6 @@
 - (void)emitWarning:(id)arg1;
 - (bool)parseSpace;
 - (id)initWithConnection:(id)arg1 response:(id)arg2 start:(const char *)arg3 end:(const char *)arg4;
-- (unsigned char)lookAhead;
 - (void)setStart:(const char *)arg1;
 - (void)setEnd:(const char *)arg1;
 - (id)connection;

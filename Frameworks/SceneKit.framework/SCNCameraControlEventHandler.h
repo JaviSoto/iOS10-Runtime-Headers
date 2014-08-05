@@ -120,7 +120,6 @@
 - (bool)enableInertia;
 - (void)_translateTo:(struct CGPoint { double x1; double x2; })arg1;
 - (void)endDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setZoomFactor:(double)arg1;
 - (void)_beginTranslateAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_startBrowsingIfNeeded:(struct CGPoint { double x1; double x2; })arg1;
 - (void)rotateWithGestureRecognizer:(id)arg1;
@@ -157,6 +156,7 @@
 - (void)sceneDidChange;
 - (void)sceneWillChange;
 - (double)zoomFactor;
+- (void)setZoomFactor:(double)arg1;
 - (void)setFriction:(double)arg1;
 - (double)friction;
 - (void)viewWillDraw;

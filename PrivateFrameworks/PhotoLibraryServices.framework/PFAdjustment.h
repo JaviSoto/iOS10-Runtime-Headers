@@ -9,28 +9,29 @@
     unsigned long long _formatVersion;
     NSString *_identifier;
     NSDictionary *_settings;
+    NSString *_autoIdentifier;
+    NSDictionary *_autoSettings;
     NSString *_maskUUID;
-    NSString *_autoCalculationState;
-    NSString *_autoCalculationType;
 }
 
 @property(readonly) unsigned long long formatVersion;
 @property(readonly) NSString * identifier;
 @property(readonly) NSDictionary * settings;
+@property(readonly) NSString * autoIdentifier;
+@property(readonly) NSDictionary * autoSettings;
 @property(readonly) bool enabled;
 @property(readonly) NSString * maskUUID;
-@property(readonly) NSString * autoCalculationState;
-@property(readonly) NSString * autoCalculationType;
 
 + (bool)isValidArchiveDictionary:(id)arg1 errors:(id)arg2;
 
 - (id)initWithArchiveDictionary:(id)arg1;
-- (id)autoCalculationType;
-- (id)autoCalculationState;
 - (id)maskUUID;
+- (id)autoSettings;
+- (id)autoIdentifier;
 - (unsigned long long)formatVersion;
 - (id)initWithIdentifier:(id)arg1 settings:(id)arg2 enabled:(bool)arg3;
-- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 enabled:(bool)arg3 maskUUID:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(bool)arg5 maskUUID:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 settings:(id)arg2 autoIdentifier:(id)arg3 autoSettings:(id)arg4 enabled:(bool)arg5;
 - (bool)enabled;
 - (id)settings;
 - (id)identifier;

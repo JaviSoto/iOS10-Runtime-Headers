@@ -58,6 +58,7 @@
 - (double)restLength;
 - (struct CGPoint { double x1; double x2; })attachmentPointB;
 - (struct CGPoint { double x1; double x2; })attachmentPointA;
+- (id)layerB;
 - (id)layerA;
 - (void)setFunction:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
@@ -79,7 +80,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setAttachmentPointB:(struct CGPoint { double x1; double x2; })arg1;
-- (id)layerB;
 - (void)setLayerB:(id)arg1;
 - (void)setAttachmentPointA:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setLayerA:(id)arg1;

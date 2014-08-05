@@ -8,6 +8,7 @@
     PHCollectionList *_originalCollectionList;
     bool_entitled;
     NSString *_clientName;
+    int _clientProcessID;
     PHChangeRequestHelper *_helper;
     PHCollectionChangeRequestHelper *_collectionsHelper;
 }
@@ -25,6 +26,7 @@
 @property(readonly) NSManagedObjectID * objectID;
 @property(getter=isEntitled,readonly) bool entitled;
 @property(readonly) NSString * clientName;
+@property(readonly) int clientProcessID;
 @property(getter=isNew,readonly) bool new;
 @property(getter=isMutated,readonly) bool mutated;
 
@@ -55,9 +57,11 @@
 - (void)didMutate;
 - (id)mutations;
 - (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)canGenerateUUIDLocally;
 - (id)initForNewObject;
+- (int)clientProcessID;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
+- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;

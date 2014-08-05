@@ -4,7 +4,7 @@
 
 @class CKDMescalSession;
 
-@interface CKDMescalSessionOperationInfo : CKOperationInfo <NSSecureCoding> {
+@interface CKDMescalSessionOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     int _serverVersion;
     CKDMescalSession *_session;
 }

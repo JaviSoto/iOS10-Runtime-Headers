@@ -20,7 +20,7 @@
 
 
 - (double)backOff;
-- (id)initWithFactory:(id)arg1 resourceProvider:(id)arg2 array:(id)arg3;
+- (id)initWithFactory:(id)arg1 session:(id)arg2 webSearch:(bool)arg3 resourceProvider:(id)arg4 array:(id)arg5;
 - (id)completionResultSets;
 - (id)errorCodeString;
 - (long long)status;

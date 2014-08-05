@@ -35,9 +35,9 @@
 - (id)playbackSessionID;
 - (long long)numberOfServerAddressChanges;
 - (id)serverAddress;
+- (id)URI;
 - (id)playbackStartDate;
 - (long long)numberOfSegmentsDownloaded;
-- (id)URI;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (void)finalize;

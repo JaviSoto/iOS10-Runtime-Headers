@@ -12,6 +12,7 @@
 @property(readonly) SKUISectionViewElement * leftSplit;
 @property(readonly) SKUISectionViewElement * rightSplit;
 @property(readonly) SKUINavigationBarViewElement * navigationBarElement;
+@property(readonly) bool usesSplits;
 
 
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
@@ -20,5 +21,6 @@
 - (id)leftSplit;
 - (id)rightSplit;
 - (id)childViewElements;
+- (bool)usesSplits;
 
 @end

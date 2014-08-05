@@ -48,18 +48,12 @@
 @property bool dataContextActive;
 
 
-- (void)set_suspendDormancyAssertion:(void*)arg1;
-- (void*)_suspendDormancyAssertion;
 - (void)setDataContextActive:(bool)arg1;
 - (bool)dataContextActive;
 - (void)setShouldBringUpDataContext:(bool)arg1;
 - (bool)shouldBringUpDataContext;
-- (void)setRegistered:(bool)arg1;
-- (bool)registered;
 - (void)setCellularAutoAssociationTokens:(id)arg1;
 - (id)cellularAutoAssociationTokens;
-- (void)setDisableFastDormancyTokens:(id)arg1;
-- (id)disableFastDormancyTokens;
 - (bool)isDataSwitchEnabled;
 - (bool)hasLTEDataConnection;
 - (bool)has2GDataConnection;
@@ -78,10 +72,6 @@
 - (void)addCellularAutoAssociationClientToken:(id)arg1;
 - (bool)autoAssociateCellular;
 - (bool)isWiFiUsable;
-- (void)removeFastDormancyDisableToken:(id)arg1;
-- (void)addFastDormancyDisableToken:(id)arg1;
-- (bool)disableFastDormancy;
-- (void)_setFastDormancySuspended:(bool)arg1;
 - (bool)isAirplaneModeEnabled;
 - (void*)_getValueForKey:(id)arg1;
 - (void)_initializeSCPrefs:(id)arg1;
@@ -101,14 +91,24 @@
 - (bool)willTryToSearchForWiFiNetwork;
 - (bool)willTryToAutoAssociateWiFiNetwork;
 - (bool)isHostingWiFiHotSpot;
-- (void)__adjustFastDormancyTokens;
-- (void)_adjustFastDormancyTokens;
 - (void)_adjustCellularAutoAssociation;
 - (bool)isDataConnectionActive;
 - (void)setDataConnectionActive:(bool)arg1;
-- (void)setLock:(id)arg1;
 - (void)setWiFiAutoAssociationTokens:(id)arg1;
 - (id)wiFiAutoAssociationTokens;
+- (void)set_suspendDormancyAssertion:(void*)arg1;
+- (void*)_suspendDormancyAssertion;
+- (void)setRegistered:(bool)arg1;
+- (bool)registered;
+- (void)setDisableFastDormancyTokens:(id)arg1;
+- (id)disableFastDormancyTokens;
+- (void)setLock:(id)arg1;
+- (void)removeFastDormancyDisableToken:(id)arg1;
+- (void)addFastDormancyDisableToken:(id)arg1;
+- (bool)disableFastDormancy;
+- (void)_setFastDormancySuspended:(bool)arg1;
+- (void)__adjustFastDormancyTokens;
+- (void)_adjustFastDormancyTokens;
 - (void)refresh;
 - (id)init;
 - (id)lock;

@@ -46,6 +46,10 @@
 
 
 - (bool)isPresentedModally;
+- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)cancelButtonTapped:(id)arg1;
+- (void)returnPressedAtEnd;
+- (id)specifiers;
 - (void)setPresentedModally:(bool)arg1;
 - (void)_presentWrongAccountStatusAlert;
 - (id)descriptionPlaceholder;
@@ -103,10 +107,6 @@
 - (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(bool)arg3;
 - (id)_titleForError:(id)arg1 account:(id)arg2;
 - (id)_monogrammer;
-- (void)returnPressedAtEnd;
-- (id)specifiers;
-- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)cancelButtonTapped:(id)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (id)account;
 - (id)init;

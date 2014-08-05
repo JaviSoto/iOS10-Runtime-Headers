@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<HSCloudAvailability>, HSCloudClient;
+@class NSObject<HSCloudAvailability>, NSObject<OS_dispatch_queue>, HSCloudClient;
 
 @interface MPCloudController : NSObject  {
     NSObject<HSCloudAvailability> *_cloudAvailabilityController;
     bool_isUpdateInProgress;
     int _preferencesChangedNotifyToken;
     bool_preferencesChangedNotifyTokenIsValid;
+    NSObject<OS_dispatch_queue> *_queue;
     bool_isInitialImport;
     bool_isCloudEnabled;
     bool_jaliscoGeniusEnabled;
@@ -50,6 +51,7 @@
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)_initializeUpdateInProgressState;
 - (void)becomeActive;
+- (void)becomeActiveAndWaitUntilDone:(bool)arg1;
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (bool)canShowCloudDownloadButtons;

@@ -5,10 +5,12 @@
 @interface CFPDDataBuffer : NSObject  {
 }
 
++ (id)newBufferFromPropertyList:(void*)arg1;
 + (id)newBufferFromFile:(int)arg1 allowMappingIfSafe:(bool)arg2;
 + (id)newBufferFromCFData:(struct __CFData { }*)arg1;
 
 - (unsigned long long)length;
+- (void*)copyPropertyListWithMutability:(unsigned long long)arg1;
 - (id)copyXPCData;
 - (struct __CFData { }*)copyCFData;
 - (void*)bytes;

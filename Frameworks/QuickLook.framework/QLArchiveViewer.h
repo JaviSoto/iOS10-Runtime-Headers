@@ -34,6 +34,7 @@
 - (void)dealloc;
 - (void)dismissAnimated:(bool)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)prepareForPopoverPresentation:(id)arg1;
 - (long long)navigationControllerPreferredInterfaceOrientationForPresentation:(id)arg1;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;

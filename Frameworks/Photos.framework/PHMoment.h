@@ -2,9 +2,12 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSDate;
+@class NSData, NSDate;
 
 @interface PHMoment : PHAssetCollection  {
+    NSData *_approximateLocationData;
+    NSData *_reverseLocationData;
+    bool_reverseLocationDataIsValid;
     short _generationType;
     NSDate *_representativeDate;
 }
@@ -20,12 +23,15 @@
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)managedEntityName;
 
+- (void)_decodeTitlesIfNeeded;
 - (Class)changeRequestClass;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (bool)collectionHasFixedOrder;
 - (bool)isMeaningful;
 - (id)representativeDate;
+- (id)approximateLocation;
 - (short)generationType;
+- (id)localizedLocationNames;
 - (bool)canShowAvalancheStacks;
 - (bool)canPerformEditOperation:(long long)arg1;
 - (void).cxx_destruct;

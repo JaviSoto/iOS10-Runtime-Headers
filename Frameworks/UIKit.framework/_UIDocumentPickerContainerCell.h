@@ -45,6 +45,7 @@
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)observerToken;
 - (void)setModel:(id)arg1;
+- (void)reloadItem:(bool)arg1;
 - (id)viewControllerForDisplay;
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;

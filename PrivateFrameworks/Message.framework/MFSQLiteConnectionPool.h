@@ -38,11 +38,11 @@
 - (unsigned long long)writersWaiting;
 - (void)setCacheSize:(unsigned long long)arg1;
 - (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned long long)arg2;
+- (unsigned long long)cacheSize;
 - (void)checkInConnection:(id)arg1;
 - (id)writerConnection;
 - (id)readerConnection;
 - (void)flush;
-- (unsigned long long)cacheSize;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

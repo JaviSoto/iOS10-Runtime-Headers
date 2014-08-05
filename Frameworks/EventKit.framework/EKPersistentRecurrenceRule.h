@@ -29,8 +29,8 @@
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 
-- (void)setEndDate:(id)arg1;
 - (bool)validate:(id*)arg1;
+- (void)setEndDate:(id)arg1;
 - (long long)firstDayOfTheWeek;
 - (bool)shouldPinMonthDays;
 - (id)cachedEndDate;

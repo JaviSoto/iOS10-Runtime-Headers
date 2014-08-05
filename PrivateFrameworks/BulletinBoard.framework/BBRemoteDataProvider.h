@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString, NSObject<OS_dispatch_queue>, <BBRemoteDataProviderClientProxy>;
+@class <BBRemoteDataProviderDelegate>, NSString, NSObject<OS_dispatch_queue>, <BBRemoteDataProviderClientProxy>;
 
 @interface BBRemoteDataProvider : BBDataProvider <BBRemoteDataProviderServerProxy> {
     NSString *_sectionID;
@@ -11,6 +11,9 @@
     NSObject<OS_dispatch_queue> *_proxyQueue;
     <BBRemoteDataProviderClientProxy> *_clientProxy;
     bool_connected;
+    bool_serverIsReady;
+    NSObject<OS_dispatch_queue> *_serverControlQueue;
+    <BBRemoteDataProviderDelegate> *_delegate;
 }
 
 @property(readonly) unsigned long long hash;
@@ -19,6 +22,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)calloutToServer:(id)arg1;
 - (bool)checkResponds:(bool)arg1 forSelector:(SEL)arg2;
 - (void)_sendClientRequest:(id)arg1;
 - (void)_logDoesNotRespond:(SEL)arg1;
@@ -29,7 +33,8 @@
 - (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
 - (void)updateSectionInfoWithSectionInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
 - (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
-- (id)initWithSectionID:(id)arg1;
+- (void)setServerIsReady:(bool)arg1;
+- (id)initWithSectionID:(id)arg1 delegate:(id)arg2;
 - (void)setClientProxy:(id)arg1 completion:(id)arg2;
 - (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (void)setSectionInfo:(id)arg1;

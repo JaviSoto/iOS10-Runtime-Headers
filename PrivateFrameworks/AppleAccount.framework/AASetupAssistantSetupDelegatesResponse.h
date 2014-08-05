@@ -13,10 +13,10 @@
 @property(readonly) NSString * dsid;
 
 
+- (id)statusMessage;
 - (id)dsid;
 - (id)responseParametersForServiceIdentifier:(id)arg1;
 - (id)responseParameters;
-- (id)statusMessage;
 - (id)status;
 
 @end

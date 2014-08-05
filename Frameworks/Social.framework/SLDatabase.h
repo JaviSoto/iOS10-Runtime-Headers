@@ -17,8 +17,8 @@
 - (void)_removeFilesAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
 - (void)_setUpManagedObjectContext;
 - (id)initWithStoreName:(id)arg1 modelPath:(id)arg2;
-- (id)_managedObjectModel;
 - (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2;
+- (id)_managedObjectModel;
 - (id)_persistentStoreCoordinator;
 - (bool)save:(id*)arg1;
 - (void).cxx_destruct;

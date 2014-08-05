@@ -38,12 +38,11 @@
 - (void)sortDevicesList;
 - (void)setFmfSession:(id)arg1;
 - (id)fmfSession;
-- (void)displayGenericErrorAlert;
 - (void)reloadSpecifiersOnMainQueue;
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
-- (id)deviceList;
 - (id)specifiers;
+- (id)deviceList;
 - (id)initWithSession:(id)arg1;
 - (void).cxx_destruct;
 - (void)viewWillDisappear:(bool)arg1;

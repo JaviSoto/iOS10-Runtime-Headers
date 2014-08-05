@@ -56,8 +56,6 @@
 
 + (bool)requiresConstraintBasedLayout;
 
-- (void)setNameLabel:(id)arg1;
-- (id)nameLabel;
 - (void)setFallbackDistance:(double)arg1;
 - (void)setAlwaysUsesBusinessLayout:(bool)arg1;
 - (bool)alwaysUsesBusinessLayout;
@@ -106,6 +104,9 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
+- (struct CGSize { double x1; double x2; })_imageSize;
+- (void)setNameLabel:(id)arg1;
+- (id)nameLabel;
 - (id)initWithMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
@@ -128,8 +129,8 @@
 - (void)setNeedsUpdateConstraints;
 - (void)updateLayout;
 - (id)imageView;
-- (void)setSelected:(bool)arg1;
 - (void)updateConstraints;
+- (void)setSelected:(bool)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;

@@ -41,7 +41,6 @@
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (id)locationDirectedSearchParameters;
 - (id)siriSearchParameters;
-- (id)placeLookupParameters;
 - (id)canonicalLocationSearchParameters;
 - (bool)hasLocationDirectedSearchParameters;
 - (bool)hasSiriSearchParameters;
@@ -58,7 +57,6 @@
 - (void)setGeocodingParameters:(id)arg1;
 - (void)setSearchParameters:(id)arg1;
 - (id)initWithCoordinateHint:(struct { double x1; double x2; })arg1 addressHint:(id)arg2 placeNameHint:(id)arg3 traits:(id)arg4;
-- (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)initWithForwardGeocodeAddressString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)placeRefinementParameters;
@@ -67,6 +65,8 @@
 - (bool)hasSearchParameters;
 - (id)reverseGeocodingParameters;
 - (id)geocodingParameters;
+- (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
+- (id)placeLookupParameters;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

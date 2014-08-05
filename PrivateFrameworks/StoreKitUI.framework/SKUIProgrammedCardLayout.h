@@ -14,6 +14,7 @@
 - (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
 - (id)attributedStringForLabel:(id)arg1;
 - (id)attributedStringForButton:(id)arg1;
+- (double)horizontalContentInset;
 - (long long)layoutStyle;
 
 @end

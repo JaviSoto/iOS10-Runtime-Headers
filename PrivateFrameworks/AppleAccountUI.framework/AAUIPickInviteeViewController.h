@@ -13,7 +13,9 @@
     UITableView *_resultsTableView;
     NSString *_searchQuery;
     UIView *_container;
+    UIView *_contactSearchBarContainer;
     UITextField *_contactSearchBar;
+    UILabel *_toLabel;
     UILabel *_instructionsLabel;
     ABMonogrammer *_monogrammer;
     UIBarButtonItem *_nextButton;
@@ -53,6 +55,7 @@
 - (void).cxx_destruct;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
+- (id)contentScrollView;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldValueDidChange:(id)arg1;

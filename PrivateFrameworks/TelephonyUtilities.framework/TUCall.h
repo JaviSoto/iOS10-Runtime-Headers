@@ -85,6 +85,8 @@
 @property(retain,readonly) IMAVChatParticipant * remoteParticipant;
 @property(readonly) unsigned int endedReason;
 @property(readonly) int endedError;
+@property(copy,readonly) NSString * errorAlertTitle;
+@property(copy,readonly) NSString * errorAlertMessage;
 
 + (bool)supportsSecureCoding;
 
@@ -103,6 +105,8 @@
 - (void)setRequestingHandoff:(bool)arg1;
 - (bool)isRequestingHandoff;
 - (id)suggestedDisplayName;
+- (id)errorAlertMessage;
+- (id)errorAlertTitle;
 - (id)contactImageDataWithFormat:(int)arg1;
 - (bool)allowsTTYSettingChanges;
 - (bool)statusIsProvisional;

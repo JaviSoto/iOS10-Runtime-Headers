@@ -36,6 +36,8 @@
 + (id)_usernameFromAddress:(id)arg1;
 + (Class)_accountClassForAddress:(id)arg1;
 
+- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(bool)arg3;
+- (void)account:(id)arg1 isValid:(bool)arg2 validationError:(id)arg3;
 - (void)setupMailAccount:(id)arg1 password:(id)arg2 completion:(id)arg3;
 - (void)verifyAccountWithAppleID:(id)arg1 completion:(id)arg2;
 - (void)completeEnablingCloudServicesWithCompletion:(id)arg1;
@@ -52,8 +54,6 @@
 - (bool)_dataclassBoundToSingleAccountAndOnAlready:(id)arg1 withAccount:(id)arg2;
 - (void)_presentMergeConfirmationForDataclasses:(id)arg1 account:(id)arg2;
 - (bool)_shouldInitiallyEnableDataclass:(id)arg1 forAccount:(id)arg2;
-- (void)account:(id)arg1 isValid:(bool)arg2 validationError:(id)arg3;
-- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(bool)arg3;
 - (id)_account;
 - (id)init;
 - (void).cxx_destruct;

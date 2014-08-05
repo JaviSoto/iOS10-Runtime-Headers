@@ -27,11 +27,11 @@
 - (void)activityPayloadFromDeviceIdentifier:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
+- (void)stop;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)start;
 - (id)delegate;
 - (void)dealloc;
-- (void)stop;
 
 @end

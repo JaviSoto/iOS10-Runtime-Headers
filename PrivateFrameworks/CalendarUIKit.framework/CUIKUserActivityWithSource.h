@@ -11,9 +11,11 @@
 }
 
 
+- (bool)_isLocalSource;
 - (bool)_supportsConsistentExternalIDAcrossDevices;
 - (unsigned long long)isMatchForSource:(id)arg1;
 - (id)initWithSource:(id)arg1 type:(unsigned long long)arg2;
+- (bool)_supportsConsistentExternalIDAcrossDevices:(int)arg1;
 - (bool)_requiresHostAndOwner;
 - (id)initWithDictionary:(id)arg1;
 - (id)dictionary;

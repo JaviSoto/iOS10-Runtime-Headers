@@ -92,9 +92,9 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (id)attributeForKey:(id)arg1;
 - (void)setPaused:(bool)arg1;
+- (bool)isPaused;
 - (void)setEndTime:(double)arg1;
 - (double)endTime;
-- (bool)isPaused;
 - (id)root;
 - (id)init;
 - (void)unlock;

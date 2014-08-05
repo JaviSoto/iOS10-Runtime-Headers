@@ -39,7 +39,6 @@
 - (void)writeTo:(id)arg1;
 - (void)setDestinationName:(id)arg1;
 - (void)setRoute:(id)arg1;
-- (id)origin;
 - (id)destination;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -49,5 +48,6 @@
 - (id)dictionaryRepresentation;
 - (void)setDestination:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (id)origin;
 
 @end

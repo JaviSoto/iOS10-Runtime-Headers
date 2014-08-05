@@ -21,9 +21,9 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (void)_reload;
 - (void)setDownloads:(id)arg1;
 - (void)reloadDownloadsAtIndexes:(id)arg1;
+- (void)_reload;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (id)downloads;

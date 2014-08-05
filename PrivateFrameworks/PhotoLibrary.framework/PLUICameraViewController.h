@@ -38,6 +38,7 @@
 - (void)_editabilityChanged:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)setAllowsEditing:(bool)arg1;
 - (bool)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;

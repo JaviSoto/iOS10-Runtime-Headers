@@ -20,5 +20,6 @@
 - (void)setConsumer:(id)arg1;
 - (id)consumer;
 - (void)activate;
+- (void)dealloc;
 
 @end

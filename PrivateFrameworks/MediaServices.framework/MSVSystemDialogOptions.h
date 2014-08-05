@@ -5,6 +5,9 @@
 @class NSString;
 
 @interface MSVSystemDialogOptions : NSObject  {
+    bool_showAsTopmost;
+    bool_forceModalAlertAppearance;
+    bool_showOnLockscreen;
     NSString *_alertHeader;
     NSString *_alertMessage;
     NSString *_defaultButtonTitle;
@@ -15,12 +18,21 @@
 @property(copy) NSString * alertMessage;
 @property(copy) NSString * defaultButtonTitle;
 @property(copy) NSString * alternateButtonTitle;
+@property bool showAsTopmost;
+@property bool forceModalAlertAppearance;
+@property bool showOnLockscreen;
 
 
+- (void)setShowOnLockscreen:(bool)arg1;
+- (void)setForceModalAlertAppearance:(bool)arg1;
+- (void)setShowAsTopmost:(bool)arg1;
 - (void)setAlternateButtonTitle:(id)arg1;
 - (void)setDefaultButtonTitle:(id)arg1;
 - (void)setAlertMessage:(id)arg1;
 - (void)setAlertHeader:(id)arg1;
+- (bool)showOnLockscreen;
+- (bool)forceModalAlertAppearance;
+- (bool)showAsTopmost;
 - (id)alternateButtonTitle;
 - (id)defaultButtonTitle;
 - (id)alertMessage;

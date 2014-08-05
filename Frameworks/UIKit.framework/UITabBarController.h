@@ -61,6 +61,7 @@
 + (Class)_moreNavigationControllerClass;
 + (bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (bool)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (bool)doesOverrideSupportedInterfaceOrientations;
 + (bool)_directlySetsContentOverlayInsetsForChildren;
 

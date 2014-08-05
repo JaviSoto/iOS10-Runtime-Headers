@@ -17,6 +17,7 @@
 @property(readonly) NSSet * identifiers;
 
 
+- (id)identifiers;
 - (void)unregisterAllEndpoints;
 - (void)unregisterEndpoint:(id)arg1;
 - (void)registerEndpoint:(id)arg1 type:(long long)arg2 priority:(long long)arg3;
@@ -36,7 +37,6 @@
 - (void)handleStateUpdated:(id)arg1;
 - (bool)sendMsg:(int)arg1 args:(id)arg2;
 - (bool)isMsgAllowedWhenOff:(int)arg1;
-- (id)identifiers;
 - (id)initWithDelegate:(id)arg1;
 - (long long)state;
 - (void)dealloc;

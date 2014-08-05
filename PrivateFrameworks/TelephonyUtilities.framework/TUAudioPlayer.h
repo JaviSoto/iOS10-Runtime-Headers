@@ -12,12 +12,12 @@
 @property(readonly) bool playingSound;
 
 
+- (void)stop;
 - (bool)playingSound;
 - (void)playSound:(int)arg1 numOfLoops:(int)arg2 pauseDuration:(double)arg3;
 - (void)playSelectedSound;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)stop;
 
 @end

@@ -142,6 +142,8 @@
 - (id)gs_createTemporaryFileInDirectory:(id)arg1 withTemplate:(id)arg2 andExtension:(id)arg3 error:(id*)arg4;
 - (int)gs_createTemporaryFdInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (id)gs_createTemporarySubdirectoryOfItem:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
+- (void)mf_deleteFilesInSortedArray:(id)arg1 matchingPrefix:(id)arg2 fromDirectory:(id)arg3;
+- (bool)mf_makeCompletePath:(id)arg1 mode:(int)arg2;
 - (bool)mf_setValue:(id)arg1 forExtendedAttribute:(id)arg2 ofItemAtPath:(id)arg3 error:(id*)arg4;
 - (bool)mf_setValue:(id)arg1 forAttribute:(id)arg2 ofItemAtPath:(id)arg3 error:(id*)arg4;
 - (id)mf_pathsAtDirectory:(id)arg1 beginningWithString:(id)arg2;
@@ -149,8 +151,6 @@
 - (bool)mf_canWriteToDirectoryAtPath:(id)arg1;
 - (bool)mf_protectFileAtPath:(id)arg1 withClass:(int)arg2 error:(id*)arg3;
 - (id)mf_makeUniqueFileInDirectory:(id)arg1;
-- (void)mf_deleteFilesInSortedArray:(id)arg1 matchingPrefix:(id)arg2 fromDirectory:(id)arg3;
-- (bool)mf_makeCompletePath:(id)arg1 mode:(int)arg2;
 - (void)_gkSetExpirationInterval:(double)arg1 ofFileAtPath:(id)arg2;
 - (double)_gkExpirationIntervalOfFileAtPath:(id)arg1;
 - (void)_gkRemoveXattrNamed:(id)arg1 path:(id)arg2;

@@ -155,19 +155,20 @@
             double height; 
         } size; 
     } _clippingKeyboardAdjustmentEnd;
+    double _ambiguousControlCenterActivationMargin;
     NSMutableDictionary *_preservedAccessoryViewNextResponderSets;
     UIResponder *_responderWithoutAutomaticAppearanceEnabled;
     UITextEffectsWindow *_containerWindow;
     bool_springBoardLockStateIsLocked;
     int _hostedAnimationToggleCount;
     UIInputViewSet *_transientInputViewSet;
-    double _ambiguousControlCenterActivationMargin;
 }
 
 @property(readonly) UIView * view;
 @property(readonly) NSMutableArray * dropShadowViews;
 @property bool automaticAppearanceInternalEnabled;
 @property(getter=_isIgnoringReloadInputViews,readonly) bool ignoringReloadInputViews;
+@property double ambiguousControlCenterActivationMargin;
 @property(retain,readonly) UIResponder * responder;
 @property bool ignoresPinning;
 @property bool animationFencingEnabled;
@@ -188,7 +189,6 @@
 @property(readonly) UIKeyboardAutomatic * automaticKeyboard;
 @property(retain) UIInputViewSet * _inputViews;
 @property UIInputViewSet * _transientInputViews;
-@property double ambiguousControlCenterActivationMargin;
 @property(retain) UIResponder * selfHostingTrigger;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -224,7 +224,7 @@
 - (void)implBoundsHeightChangeDoneForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; })arg1;
 - (void)peripheralViewMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)prepareToAnimateClippedKeyboardWithOffsets:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orderingIn:(bool)arg2 onSnapshot:(bool)arg3;
-- (void)updateAmbiguousControlCenterActivationMargin;
+- (void)setAmbiguousControlCenterActivationMargin:(double)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visiblePeripheralFrame:(bool)arg1;
 - (bool)automaticAppearanceInternalEnabled;
 - (void)_clearPinningResponders;
@@ -271,8 +271,6 @@
 - (id)userInfoFromGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; })arg1 duration:(double)arg2 forWill:(bool)arg3 forShow:(bool)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenRectFromBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atCenter:(struct CGPoint { double x1; double x2; })arg2 applyingSourceHeightDelta:(double)arg3;
 - (double)keyboardAttachedViewHeight;
-- (void)setAmbiguousControlCenterActivationMargin:(double)arg1;
-- (double)ambiguousControlCenterActivationMargin;
 - (id)postPinningReloadState;
 - (id)selfHostingTrigger;
 - (void)set_transientInputViews:(id)arg1;
@@ -289,7 +287,6 @@
 - (void)setInputViews:(id)arg1 animationStyle:(id)arg2;
 - (id)_inputViewsForResponder:(id)arg1;
 - (bool)animationsEnabled;
-- (bool)automaticAppearanceReallyEnabled;
 - (id)nextAnimationStyle:(bool)arg1;
 - (void)orderOutWithAnimationStyle:(id)arg1;
 - (void)orderInWithAnimationStyle:(id)arg1;
@@ -301,6 +298,7 @@
 - (void)setPeripheralToolbarFrameForHostWidth:(double)arg1;
 - (void)createHostViewIfNeeded;
 - (void)createAutomaticKeyboardIfNeeded;
+- (bool)automaticAppearanceReallyEnabled;
 - (id)dropShadowViews;
 - (bool)hasDictationKeyboard;
 - (double)minimumOffsetForBuffer:(double)arg1;
@@ -352,6 +350,7 @@
 - (id)containerTextEffectsWindow;
 - (id)containerTextEffectsWindowAboveStatusBar;
 - (void)resetCurrentOrderOutAnimationDuration:(double)arg1;
+- (double)ambiguousControlCenterActivationMargin;
 - (void)finishTransitionWithCompletion:(id)arg1;
 - (void)showDropShadows:(bool)arg1;
 - (void)prepareForTransition;
@@ -435,10 +434,10 @@
 - (void)popAnimationStyle;
 - (void)pushAnimationStyle:(id)arg1;
 - (void)resetNextAutomaticOrderInDirectionAndDuration;
-- (void)setAutomaticAppearanceInternalEnabled:(bool)arg1;
 - (double)getVerticalOverlapForView:(id)arg1 usingKeyboardInfo:(id)arg2;
 - (void)scrollView:(id)arg1 didFinishPanGesture:(id)arg2;
 - (void)scrollView:(id)arg1 didPanWithGesture:(id)arg2;
+- (void)setAutomaticAppearanceInternalEnabled:(bool)arg1;
 - (id)responder;
 - (void)setResponder:(id)arg1;
 - (bool)_isCoordinatingWithSystemGestures;

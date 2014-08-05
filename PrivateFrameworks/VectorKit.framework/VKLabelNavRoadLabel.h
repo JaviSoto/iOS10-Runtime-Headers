@@ -27,7 +27,6 @@
 @property(readonly) bool isJunctionLabel;
 
 
-- (unsigned int)displayID;
 - (bool)isRoadLabel;
 - (bool)isJunctionLabel;
 - (bool)isShieldLabel;
@@ -38,6 +37,7 @@
 - (void)setDesiredOffsetDistance:(float)arg1;
 - (float)desiredOffsetDistance;
 - (void)setNavFeature:(id)arg1;
+- (unsigned int)displayID;
 - (const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)label;
 - (void)setAlignment:(long long)arg1;
 - (long long)alignment;

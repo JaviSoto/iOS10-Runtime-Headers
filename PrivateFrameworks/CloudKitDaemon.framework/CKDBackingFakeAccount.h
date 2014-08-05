@@ -42,6 +42,7 @@
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (id)password;
+- (bool)allowsCellularAccess;
 - (void).cxx_destruct;
 
 @end

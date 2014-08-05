@@ -173,6 +173,7 @@
 - (id)aliases;
 - (id)profileInfo;
 - (long long)registrationStatus;
+- (id)initWithService:(id)arg1;
 - (bool)justLoggedIn;
 - (id)loginIMHandle;
 - (id)accountSubtypeInfo;
@@ -414,7 +415,6 @@
 - (id)imHandleWithID:(id)arg1 alreadyCanonical:(bool)arg2;
 - (bool)_isUsableForSending;
 - (bool)isOperational;
-- (id)initWithService:(id)arg1;
 - (void)setUniqueID:(id)arg1;
 - (unsigned long long)capabilities;
 - (id)authorizationToken;

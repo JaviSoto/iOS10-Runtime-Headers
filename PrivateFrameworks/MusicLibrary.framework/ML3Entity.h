@@ -13,9 +13,9 @@
 @property(readonly) long long persistentID;
 @property(readonly) bool existsInLibrary;
 
-+ (id)replacerWithProperties:(id)arg1 library:(id)arg2;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)disambiguatedSQLForProperty:(id)arg1;
++ (id)replacerWithProperties:(id)arg1 library:(id)arg2;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3 propertyToCount:(id)arg4;
 + (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(bool)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirectionMappings:(id)arg4 usingSections:(bool)arg5;
@@ -32,6 +32,7 @@
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)defaultOrderingTerms;
++ (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3 usingConnection:(id)arg4;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
 + (id)newWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
@@ -41,12 +42,14 @@
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
 + (void)enumeratePersistentIDsInLibrary:(id)arg1 matchingPredicate:(id)arg2 orderingTerms:(id)arg3 persistentIDs:(const long long*)arg4 count:(unsigned long long)arg5 usingBlock:(id)arg6;
++ (bool)incrementRevisionForRevisionTypeContentWithLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(id)arg3;
 + (id)predisambiguatedProperties;
 + (bool)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4;
-+ (bool)incrementRevisionForRevisionTypeContentWithLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4;
-+ (id)extraTablesToDelete;
-+ (bool)_deleteRowForPersistentIDs:(const long long*)arg1 count:(unsigned long long)arg2 library:(id)arg3 table:(id)arg4 usingColumn:(id)arg5;
++ (bool)incrementRevisionForRevisionTypeContentWithConnection:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4;
 + (id)collectionClassesToUpdateBeforeDelete;
++ (id)extraTablesToDelete;
++ (bool)_deleteRowForPersistentIDs:(const long long*)arg1 count:(unsigned long long)arg2 library:(id)arg3 table:(id)arg4 usingColumn:(id)arg5 usingConnection:(id)arg6;
++ (bool)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4 usingConnection:(id)arg5;
 + (bool)libraryDynamicChangeForProperty:(id)arg1;
 + (bool)libraryContentsChangeForProperty:(id)arg1;
 + (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
@@ -65,8 +68,8 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (id)unsettableProperties;
 + (bool)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deletionType:(int)arg3 revisionType:(int)arg4 usingConnection:(id)arg5;
-+ (bool)incrementRevisionForRevisionTypeContentWithLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(id)arg3;
 + (bool)_shouldIncrementRevisionForType:(int)arg1 persistentID:(long long)arg2 usingConnection:(id)arg3;
++ (bool)incrementRevisionForRevisionTypeContentWithConnection:(id)arg1 deletionType:(int)arg2 persistentIDs:(id)arg3;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (bool)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 connection:(id)arg4;
 + (long long)revisionTrackingCode;
@@ -88,6 +91,7 @@
 - (bool)setValues:(id)arg1 forProperties:(id)arg2;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (id)initWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3 usingConnection:(id)arg4;
 - (id)library;
 - (long long)persistentID;
 - (void)setLibrary:(id)arg1;

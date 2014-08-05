@@ -36,7 +36,8 @@
 - (void)_applyAirPlayMusicMode;
 - (void)_handleMediaLibraryDidChange;
 - (void)_performWhileIgnoringShuffleChanges:(id)arg1;
-- (unsigned long long)_shuffleItemsInFeederQueryWithShuffleType:(unsigned long long)arg1 initialIndex:(unsigned long long)arg2;
+- (unsigned long long)_shuffleItemsInFeederQueryWithShuffleType:(unsigned long long)arg1 initialIndex:(unsigned long long)arg2 canInvalidateFeederContents:(bool)arg3;
+- (void)_itemTypeAvailableNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (id)mediaItemAtIndex:(unsigned long long)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
@@ -48,7 +49,7 @@
 - (bool)trackChangesCanEndPlayback;
 - (unsigned long long)itemTypeForIndex:(unsigned long long)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned long long*)arg1;
-- (unsigned long long)initialPlaybackQueueDepth;
+- (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (bool)hasValidItemAtIndex:(unsigned long long)arg1;
 - (bool)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(bool)arg2;

@@ -26,6 +26,7 @@
 - (bool)_isFullyPopulated;
 - (void)_reloadSplitViewControllers;
 - (id)initWithTemplateElement:(id)arg1;
+- (void)skui_viewWillAppear:(bool)arg1;
 - (void)delayPresentationIfNeededForParentViewController:(id)arg1;
 - (id)leftBarButtonItemsForDocument:(id)arg1;
 - (void)dealloc;

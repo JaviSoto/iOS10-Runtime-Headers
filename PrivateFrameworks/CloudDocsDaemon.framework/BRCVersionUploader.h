@@ -24,10 +24,10 @@
 - (void)_didUploadContentWithItemID:(id)arg1 record:(id)arg2;
 - (void)_didFailUploadingContentWithItemID:(id)arg1 error:(id)arg2;
 - (void)clearOverQuotaItemsWithSizeLessThan:(unsigned long long)arg1;
-- (void)signalNeedsUploads;
 - (void)cancelAllUploads;
 - (id)initWithLocalContainer:(id)arg1;
 - (void)transferQueueDidRequestOperations:(id)arg1;
+- (void)signalNeedsUploads;
 - (void)cancelUploadForItemID:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (bool)isUploadingItemID:(id)arg1;

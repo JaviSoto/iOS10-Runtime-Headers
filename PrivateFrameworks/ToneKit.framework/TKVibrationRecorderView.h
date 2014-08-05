@@ -84,8 +84,6 @@
 - (void)_setControlsToolbar:(id)arg1;
 - (void)_setControlsToolbarTopConstraint:(id)arg1;
 - (void)_setVibrationPatternMaximumDuration:(double)arg1;
-- (id)_styleProvider;
-- (void)_setStyleProvider:(id)arg1;
 - (void)stopAnimatingProgress;
 - (void)exitReplayMode;
 - (void)exitRecordingModeWithPlayButtonEnabled:(bool)arg1;
@@ -103,6 +101,8 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
+- (void)_setStyleProvider:(id)arg1;
+- (id)_styleProvider;
 - (void)didMoveToWindow;
 
 @end

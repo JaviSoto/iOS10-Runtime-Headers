@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString, FigSubtitleCALayer, AVPlayerItem, CALayer, NSObject<OS_dispatch_queue>, AVPlayer;
+@class NSString, AVPlayerItem, FigSubtitleCALayer, CALayer, NSDictionary, NSObject<OS_dispatch_queue>, AVPlayer;
 
 @interface AVPlayerLayerInternal : NSObject  {
     AVPlayer *_player;
@@ -49,6 +49,7 @@
         double height; 
     } latestPresentationSizeAtRendering;
     boolisInPIPMode;
+    NSDictionary *pixelBufferAttributes;
 }
 
 

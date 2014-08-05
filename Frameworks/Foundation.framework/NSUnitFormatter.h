@@ -18,7 +18,9 @@
 
 
 - (id)init;
+- (void)finalize;
 - (void)dealloc;
+- (id)stringForValue1:(double)arg1 unit1:(unsigned long long)arg2 value2:(double)arg3 unit2:(unsigned long long)arg4;
 - (id)stringForValue:(double)arg1 unit:(unsigned long long)arg2;
 - (id)unitStringFromValue:(double)arg1 unit:(unsigned long long)arg2;
 - (void)setUnitStyle:(long long)arg1;

@@ -27,6 +27,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void).cxx_destruct;
+- (void)webViewDidFinishLoad:(id)arg1;
 - (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)setUserStyleSheet:(id)arg1;
 - (bool)isHighlighted;

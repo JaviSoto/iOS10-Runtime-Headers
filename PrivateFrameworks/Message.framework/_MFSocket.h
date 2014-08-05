@@ -49,7 +49,6 @@
 - (id)serverCertificates;
 - (unsigned int)_bufferedByteCount;
 - (bool)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(bool)arg2 errorPtr:(id*)arg3;
-- (void)enableExcessiveKeepaliveDetection:(bool)arg1;
 - (id)sourceIPAddress;
 - (bool)isWritable;
 - (id)remoteHostname;

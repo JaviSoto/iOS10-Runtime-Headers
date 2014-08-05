@@ -15,8 +15,8 @@
 - (id)altSubBlip;
 - (void)setAltSubBlip:(id)arg1;
 - (void)setMainSubBlip:(id)arg1;
-- (unsigned int*)referenceCount;
 - (id)mainSubBlip;
+- (unsigned int*)referenceCount;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

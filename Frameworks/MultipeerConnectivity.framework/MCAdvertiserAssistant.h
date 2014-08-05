@@ -71,6 +71,7 @@
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)setIsAdvertising:(bool)arg1;
 - (void)setServiceType:(id)arg1;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)start;
@@ -78,7 +79,6 @@
 - (id)session;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 - (void)willPresentAlertView:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;

@@ -330,6 +330,7 @@
 - (id)accessLog;
 - (id)view;
 - (void)pause;
+- (void)stop;
 - (long long)interfaceOrientation;
 - (void)setDelegate:(id)arg1;
 - (unsigned long long)options;
@@ -339,7 +340,6 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)item;
-- (void)stop;
 - (double)duration;
 - (void)setItem:(id)arg1;
 - (id)backgroundView;

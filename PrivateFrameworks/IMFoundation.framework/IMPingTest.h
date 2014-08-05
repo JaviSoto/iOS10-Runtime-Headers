@@ -27,7 +27,7 @@
 - (void)startWithTimeout:(double)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (bool)writeResultsToFile:(id)arg1 error:(id*)arg2;
 - (id)initWithAddress:(id)arg1 wifi:(bool)arg2;
-- (void)dealloc;
 - (void)stop;
+- (void)dealloc;
 
 @end

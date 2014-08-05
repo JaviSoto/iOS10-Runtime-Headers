@@ -18,12 +18,12 @@
 
 + (id)relations;
 
-- (void)setFileName:(id)arg1;
 - (void)setIsBinary:(bool)arg1;
 - (void)setXProperties:(id)arg1;
 - (id)XProperties;
 - (void)setLocalURL:(id)arg1;
 - (void)setFileFormat:(id)arg1;
+- (void)setFileName:(id)arg1;
 - (bool)isBinary;
 - (int)entityType;
 - (void)setFileSize:(id)arg1;

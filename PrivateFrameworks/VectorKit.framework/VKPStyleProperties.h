@@ -1990,7 +1990,6 @@
 - (unsigned int)labelHaloColor;
 - (bool)hasLabelColor;
 - (void)setHasLabelColor:(bool)arg1;
-- (unsigned int)labelColor;
 - (bool)hasLabelFontFamily;
 - (bool)hasLabelIcon;
 - (bool)hasLabelLineWrap;
@@ -2116,6 +2115,7 @@
 - (unsigned int)lineColor;
 - (id)fillTexture;
 - (bool)hasFillTexture;
+- (unsigned int)labelColor;
 - (bool)hasWidth;
 - (void)setHasWidth:(bool)arg1;
 - (void)copyTo:(id)arg1;

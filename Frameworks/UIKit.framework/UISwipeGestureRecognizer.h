@@ -62,8 +62,8 @@
 - (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (unsigned long long)numberOfTouchesRequired;
 - (void)setMaximumDuration:(double)arg1;
-- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
 - (unsigned long long)numberOfTouches;
+- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -101,9 +101,9 @@
 - (id)copyArchivableContext;
 - (long long)ITunesStoreUIBarStyle;
 - (void)setClientInterface:(id)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
-- (void)setLoading:(bool)arg1;
 - (id)clientInterface;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)operationFinished:(id)arg1;

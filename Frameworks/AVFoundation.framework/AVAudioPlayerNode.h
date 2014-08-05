@@ -28,7 +28,7 @@
 - (bool)isPlaying;
 - (void)didAttachToEngine:(id)arg1;
 - (void)pause;
-- (id)init;
 - (void)stop;
+- (id)init;
 
 @end

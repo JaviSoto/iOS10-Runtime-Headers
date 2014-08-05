@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UIImageView, UIActivityIndicatorView, UIView;
+@class UIImageView, UIActivityIndicatorView, CAMTimelapseShutterRingView, UIView;
 
 @interface CAMShutterButton : UIButton  {
     bool_pulsing;
@@ -10,6 +10,7 @@
     long long _mode;
     UIView *__outerView;
     UIImageView *__outerImageView;
+    CAMTimelapseShutterRingView *__timelapseOuterView;
     UIView *__innerView;
     UIActivityIndicatorView *__progressActivityIndicatorView;
     struct CAMShutterButtonSpec { 
@@ -26,6 +27,7 @@
 @property(getter=isSpinning) bool spinning;
 @property(readonly) UIView * _outerView;
 @property(readonly) UIImageView * _outerImageView;
+@property(readonly) CAMTimelapseShutterRingView * _timelapseOuterView;
 @property(readonly) UIView * _innerView;
 @property(readonly) UIActivityIndicatorView * _progressActivityIndicatorView;
 
@@ -35,15 +37,17 @@
 + (id)shutterButton;
 
 - (id)_progressActivityIndicatorView;
-- (id)_outerImageView;
 - (bool)isSpinning;
 - (bool)isPulsing;
 - (void)setPulsing:(bool)arg1;
 - (bool)_isStopMode:(long long)arg1;
+- (id)_timelapseOuterView;
+- (id)_outerImageView;
 - (id)_colorForMode:(long long)arg1;
 - (id)_innerView;
 - (double)_borderWidthForMode:(long long)arg1;
 - (id)_outerView;
+- (bool)_shouldUseTimelapseOuterViewForMode:(long long)arg1;
 - (id)_outerImageForMode:(long long)arg1;
 - (bool)_shouldUseImageViewForMode:(long long)arg1;
 - (double)_innerCircleDiameter;

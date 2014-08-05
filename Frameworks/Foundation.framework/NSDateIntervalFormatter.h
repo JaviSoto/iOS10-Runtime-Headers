@@ -16,6 +16,7 @@
     bool_modified;
     bool_useTemplate;
     NSObject<OS_dispatch_semaphore> *_lock;
+    void *_reserved[4];
 }
 
 @property(copy) NSLocale * locale;

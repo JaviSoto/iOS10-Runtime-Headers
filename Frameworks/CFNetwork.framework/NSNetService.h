@@ -23,6 +23,7 @@
 + (id)dataFromTXTRecordDictionary:(id)arg1;
 
 - (void)resolve;
+- (void)stop;
 - (long long)port;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
@@ -57,7 +58,6 @@
 - (void)finalize;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 - (id)hostName;
 - (void)publish;
 - (bool)setTXTRecordData:(id)arg1;

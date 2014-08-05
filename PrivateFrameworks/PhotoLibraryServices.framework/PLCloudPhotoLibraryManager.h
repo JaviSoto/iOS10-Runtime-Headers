@@ -46,12 +46,14 @@
 - (void)libraryManagerHasChangesToPull:(id)arg1;
 - (void)libraryManager:(id)arg1 uploadDidFinishForResourceTransferTask:(id)arg2 withError:(id)arg3;
 - (void)libraryManager:(id)arg1 uploadDidStartForResourceTransferTask:(id)arg2;
+- (void)libraryManager:(id)arg1 backgroundDownloadDidFailForResource:(id)arg2;
 - (void)libraryManager:(id)arg1 backgroundDownloadDidFinishForResource:(id)arg2;
 - (void)libraryManager:(id)arg1 downloadDidProgress:(float)arg2 forResourceTransferTask:(id)arg3;
 - (void)libraryManager:(id)arg1 downloadDidStartForResourceTransferTask:(id)arg2;
 - (void)libraryManager:(id)arg1 downloadDidFinishForResourceTransferTask:(id)arg2 withError:(id)arg3;
 - (bool)createPathIfNeeded:(id)arg1;
 - (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id)arg2;
+- (void)sizeOfResourcesToUploadDidChangeForLibraryManager:(id)arg1;
 - (void)libraryManagerStatusDidChange:(id)arg1;
 - (id)_copyTemporaryAssetToFinalPhotoLocationWithResourceIdentity:(id)arg1 withExtension:(id)arg2 withName:(id)arg3;
 - (void)dumpStatusIncludingDaemon:(bool)arg1;
@@ -62,6 +64,7 @@
 - (void)cancelResourceTransferTaskWithIdentifier:(id)arg1;
 - (void)foregroundMonitor:(id)arg1 changedStateToForeground:(bool)arg2 context:(id)arg3;
 - (void)libraryManagerDidStartSynchronization:(id)arg1;
+- (void)_addAlternateOriginalResource:(id)arg1 forAsset:(id)arg2;
 - (void)_updateThumbnailDataForAsset:(id)arg1 withImageFileURL:(id)arg2;
 - (void)_linkFileFrom:(id)arg1 to:(id)arg2;
 - (void)_updateAsset:(id)arg1 withImageFileURL:(id)arg2;
@@ -122,14 +125,15 @@
 - (void)_cleanupCPLLibrary;
 - (void)notifyCPLLibraryOnReset;
 - (void)transitionToState:(unsigned long long)arg1;
+- (id)getCPLState;
 - (void)addLogMark:(id)arg1;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
 - (void)deleteExpiredTrashBinObjects;
 - (void)resume;
 - (void)pause;
+- (void)stop;
 - (void)sync;
 - (id)init;
 - (void)dealloc;
-- (void)stop;
 
 @end

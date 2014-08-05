@@ -51,11 +51,11 @@
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
 - (id)mailComposeDelegate;
 - (void)finalizeCompositionValues;
-- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setShowKeyboardImmediately:(bool)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setToRecipients:(id)arg1;
+- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)dealloc;

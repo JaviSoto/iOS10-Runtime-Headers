@@ -21,12 +21,12 @@
 - (void)handleBrowserCallBack;
 - (void)updateDiscoveredPeople;
 - (id)people;
+- (void)stop;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)start;
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 
 @end

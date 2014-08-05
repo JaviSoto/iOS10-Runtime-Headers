@@ -16,6 +16,7 @@
 
 
 - (void)dealloc;
+- (id)description;
 - (void)notifyObserver:(id)arg1;
 - (void)addAnnouncedMoveToPath:(id)arg1;
 - (void)addDetectedMoveToPath:(id)arg1;

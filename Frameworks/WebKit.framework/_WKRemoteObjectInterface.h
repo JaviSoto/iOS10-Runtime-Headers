@@ -30,6 +30,7 @@
 - (id)initWithProtocol:(id)arg1 identifier:(id)arg2;
 - (id)identifier;
 - (id)protocol;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (id)description;

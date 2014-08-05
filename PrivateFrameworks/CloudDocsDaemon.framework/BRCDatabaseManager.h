@@ -2,12 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSObject<OS_dispatch_source>, NSURL, PQLConnection, NSMutableDictionary, BRCServerPersistedState;
+@class NSURL, NSMutableDictionary, BRCAccountSession, NSObject<OS_dispatch_queue>, BRCServerPersistedState, NSObject<OS_dispatch_source>, PQLConnection;
 
 @interface BRCDatabaseManager : NSObject  {
     BRCAccountSession *_session;
     NSURL *_url;
     NSObject<OS_dispatch_source> *_watcher;
+    NSObject<OS_dispatch_queue> *_watcherQueue;
     PQLConnection *_serverTruthConnection;
     PQLConnection *_clientTruthConnection;
     NSMutableDictionary *_clientState;
@@ -32,7 +33,7 @@
 - (bool)_dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
 - (id)newConnectionWithLabel:(id)arg1 error:(id*)arg2;
 - (id)clientTruthConnection;
-- (void)_stopWatcher;
+- (void)stopWatcher;
 - (bool)_openServerTruthConnectionWithError:(id*)arg1;
 - (bool)_openClientTruthConnectionWithError:(id*)arg1;
 - (void)_startWatcher;

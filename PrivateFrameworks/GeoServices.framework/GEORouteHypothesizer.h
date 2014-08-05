@@ -28,7 +28,8 @@
     double _etaUpdateInterval;
     unsigned long long _etaUpdateFrequency;
     GEOETAUpdater *_etaUpdater;
-    GEOETARoute *_etaRoute;
+    GEOETARoute *_liveETARoute;
+    GEOETARoute *_baselineETARoute;
     GEORouteAttributes *_routeAttributes;
     GEORouteHypothesizerUpdater *_updater;
     GEORoute *_existingRoute;

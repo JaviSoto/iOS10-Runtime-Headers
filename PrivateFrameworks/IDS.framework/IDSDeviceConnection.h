@@ -17,8 +17,8 @@
 - (id)initStreamWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
 - (id)initSocketWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
-- (id)inputStream;
 - (id)outputStream;
+- (id)inputStream;
 - (id)_internal;
 - (void)close;
 - (void)dealloc;

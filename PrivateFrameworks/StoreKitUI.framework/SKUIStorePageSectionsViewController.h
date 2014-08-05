@@ -2,10 +2,11 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSValue, SKUIMetricsController, NSMapTable, SKUILayoutCache, SKUIResourceLoader, SKUIProductPageOverlayController, NSMutableIndexSet, UITapGestureRecognizer, NSMutableArray, SKUIStorePageSplitsDescription, SKUIStackedBar, UICollectionView, NSString, SKUICollectionView, NSArray, <SKUIStorePageSectionsDelegate>, SKUIColorScheme, SKUIIndexBarControl, NSIndexPath;
+@class SKUIColorScheme, SKUIResourceLoader, SKUIIndexBarControl, SKUIMetricsImpressionSession, NSIndexPath, NSMutableArray, SKUILayoutCache, NSString, SKUIProductPageOverlayController, NSMutableIndexSet, SKUIStackedBar, NSArray, NSValue, UICollectionView, UIView, <SKUIStorePageSectionsDelegate>, SKUIMetricsController, SKUICollectionView, NSMapTable, UITapGestureRecognizer, SKUIStorePageSplitsDescription;
 
-@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
+@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
     SKUIProductPageOverlayController *_activeOverlayController;
+    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     SKUICollectionView *_collectionView;
     UITapGestureRecognizer *_collectionViewTapGestureRecognizer;
     SKUIColorScheme *_colorScheme;
@@ -37,10 +38,12 @@
     bool_scrollOffsetHasChanged;
     NSMutableArray *_sections;
     SKUIStorePageSplitsDescription *_splitsDescription;
+    UIView *_splitsDividerView;
     SKUIStackedBar *_stackedBar;
     SKUILayoutCache *_textLayoutCache;
 }
 
+@property(retain) SKUIMetricsImpressionSession * activeMetricsImpressionSession;
 @property(readonly) UICollectionView * collectionView;
 @property(copy) SKUIColorScheme * colorScheme;
 @property <SKUIStorePageSectionsDelegate> * delegate;
@@ -58,20 +61,21 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (long long)pinningTransitionStyle;
+- (id)activeMetricsImpressionSession;
 - (id)_newSectionsWithPageComponents:(id)arg1;
 - (id)_expandContextForMenuComponent:(id)arg1;
+- (id)_impressionableViewElements;
 - (id)_visibleMetricsImpressionsString;
 - (void)_updateSectionsForIndex:(long long)arg1 menuSection:(id)arg2;
 - (void)_setSelectedIndex:(long long)arg1 forMenuSection:(id)arg2;
 - (void)_setRendersWithPerspective:(bool)arg1;
 - (void)_pageSectionDidDismissOverlayController:(id)arg1;
 - (void)_insertSectionsWithComponents:(id)arg1 afterSection:(id)arg2;
-- (void)_endIgnoringSectionChanges;
-- (void)_beginIgnoringSectionChanges;
 - (void)skuiCollectionViewWillLayoutSubviews:(id)arg1;
 - (void)itemCollectionView:(id)arg1 didTapVideoForCollectionViewCell:(id)arg2;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
 - (void)collectionView:(id)arg1 performDefaultActionForViewElement:(id)arg2 indexPath:(id)arg3;
+- (void)collectionView:(id)arg1 expandEditorialForLabelElement:(id)arg2 indexPath:(id)arg3;
 - (void)artworkLoaderDidIdle:(id)arg1;
 - (void)collectionView:(id)arg1 editorialView:(id)arg2 didSelectLink:(id)arg3;
 - (id)SKUIStackedBar;
@@ -80,6 +84,7 @@
 - (void)setSectionsWithPageComponents:(id)arg1;
 - (void)setMetricsController:(id)arg1;
 - (void)setPinningTransitionStyle:(long long)arg1;
+- (void)setActiveMetricsImpressionSession:(id)arg1;
 - (bool)isDisplayingOverlays;
 - (id)initWithLayoutStyle:(long long)arg1;
 - (bool)performTestWithName:(id)arg1 options:(id)arg2;
@@ -93,25 +98,29 @@
 - (void)collectionView:(id)arg1 didEndEditingItemAtIndexPath:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
+- (void)_endIgnoringSectionChanges;
+- (void)_beginIgnoringSectionChanges;
 - (id)_prepareLayoutForSections;
 - (void)_enumerateVisibleSectionsUsingBlock:(id)arg1;
 - (id)_sectionsForChartsComponent:(id)arg1;
 - (id)indexBarControl;
-- (id)_collectionViewSublayouts;
 - (id)_childSectionsForMenuComponent:(id)arg1 selectedIndex:(long long)arg2;
 - (id)_menuContextForMenuComponent:(id)arg1;
 - (void)_updateSectionsAfterMenuChange;
-- (id)_textLayoutCache;
 - (id)defaultSectionForComponent:(id)arg1;
 - (id)_splitForSectionIndex:(long long)arg1;
 - (void)_scrollFirstAppearanceSectionToView;
 - (void)_reloadCollectionView;
 - (void)_setPageSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)metricsController;
+- (id)_collectionViewSublayouts;
 - (void)_prefetchArtworkForVisibleSections;
+- (id)_textLayoutCache;
 - (void)_invalidateLayoutWithNewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (id)_currentBackdropGroupName;
 - (void)_invalidateIfLastKnownSizeChanged;
+- (void)skui_viewWillAppear:(bool)arg1;
+- (void)_deselectCellsForAppearance:(bool)arg1;
 - (void)_setActiveProductPageOverlayController:(id)arg1;
 - (void)dismissOverlays;
 - (void)_updateCollectionViewWithUpdates:(id)arg1;
@@ -127,6 +136,7 @@
 - (id)_newStorePageCollectionViewLayout;
 - (void)_initSKUIStorePageSectionsViewController;
 - (void)collectionView:(id)arg1 didConfirmButtonElement:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (id)_resourceLoader;
@@ -146,6 +156,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;

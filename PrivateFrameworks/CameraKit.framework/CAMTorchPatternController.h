@@ -26,7 +26,6 @@
 - (double)stepInterval;
 - (void)startPerformingPattern:(id)arg1;
 - (void)_applyTorchLevel:(float)arg1;
-- (void)displayLinkFired:(id)arg1;
 - (void)_resetTorchLevel;
 - (void)_setPerforming:(bool)arg1;
 - (bool)_performing;
@@ -37,6 +36,7 @@
 - (id)captureDevice;
 - (double)_startTime;
 - (id)_displayLink;
+- (void)displayLinkFired:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;
 

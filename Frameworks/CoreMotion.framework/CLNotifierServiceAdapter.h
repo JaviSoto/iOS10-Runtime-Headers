@@ -28,6 +28,7 @@
     struct CLNotifierBase { int (**x1)(); } *_notifier;
 }
 
+@property bool valid;
 @property(readonly) struct CLNotifierBase { int (**x1)(); }* notifier;
 
 

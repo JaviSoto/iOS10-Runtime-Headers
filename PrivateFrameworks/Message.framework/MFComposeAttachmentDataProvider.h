@@ -6,6 +6,8 @@
 
 @interface MFComposeAttachmentDataProvider : NSObject <MFAttachmentDataProvider> {
     NSMutableDictionary *_attachments;
+    NSMutableDictionary *_attachmentsPasteboard;
+    NSMutableDictionary *_attachmentsUndo;
 }
 
 @property(readonly) unsigned long long hash;
@@ -14,7 +16,11 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)_dataForAttachment:(id)arg1;
+- (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)messageForAttachment:(id)arg1;
+- (void)recordUndoDataForAttachments:(id)arg1;
+- (void)recordPasteboardDataForAttachments:(id)arg1;
 - (void)removeDataForAttachment:(id)arg1;
 - (id)initWithData:(id)arg1 forContentID:(id)arg2;
 - (void)addData:(id)arg1 forContentID:(id)arg2;

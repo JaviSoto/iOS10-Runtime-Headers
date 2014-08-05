@@ -81,6 +81,7 @@
     boolm_suppressGeometryChangeNotifications;
     boolm_acceptingCandidate;
     boolm_didAutomaticallyInsertSpace;
+    boolm_didSyncDocumentStateToInputDelegate;
     boolm_userChangedSelection;
     boolm_shouldChargeKeys;
     boolm_longPress;
@@ -335,6 +336,7 @@
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (bool)autocorrectSpellingEnabled;
 - (void)setCorrectionLearningAllowed:(bool)arg1;
+- (void)finishLayoutToCurrentInterfaceOrientation;
 - (void)updateLayoutToCurrentInterfaceOrientation;
 - (void)prepareLayoutForInterfaceOrientation:(long long)arg1;
 - (void)setInputModeToNextASCIICapableInPreferredList;
@@ -481,7 +483,6 @@
 - (void)acceptCurrentCandidateIfSelectedWithExecutionContext:(id)arg1;
 - (void)addInputEvent:(id)arg1 executionContext:(id)arg2;
 - (id)inputEventForInputString:(id)arg1;
-- (void)didHandleWebKeyEvent;
 - (void)setExternalTask:(id)arg1;
 - (bool)applyAutocorrection:(id)arg1;
 - (bool)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
@@ -618,6 +619,7 @@
 - (void)clearShiftState;
 - (void)stopAutoDelete;
 - (void)storeDelegateConformance;
+- (void)didHandleWebKeyEvent;
 - (void)setCaretVisible:(bool)arg1;
 - (void)stopKeyboardRecording;
 - (void)updateReturnKey;
@@ -625,6 +627,7 @@
 - (bool)shouldForceASCIICapable;
 - (id)privateInputDelegate;
 - (void)geometryChangeDone:(bool)arg1;
+- (void)updateStylingTraitsIfNeeded;
 - (void)setShiftLocked:(bool)arg1;
 - (void)prepareForGeometryChange;
 - (void)setOrientation;

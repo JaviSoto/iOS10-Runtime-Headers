@@ -40,9 +40,9 @@
 - (void)iPadProductPageCannotOpen:(id)arg1;
 - (void)iPadProductPage:(id)arg1 openURL:(id)arg2 viewControllerBlock:(id)arg3;
 - (void)iPadProductPage:(id)arg1 openItem:(id)arg2;
-- (void)productViewControllerDidFinish:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (void)productViewControllerDidFinish:(id)arg1;
 - (id)parentViewController;
 - (id)view;
 - (void)setDelegate:(id)arg1;

@@ -24,8 +24,6 @@
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)_persistentSharee;
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (id)lazyLoadRelationForKey:(id)arg1;
@@ -33,6 +31,8 @@
 - (int)shareeAccessLevel;
 - (void)setShareeStatus:(int)arg1;
 - (int)shareeStatus;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 - (id)owner;
@@ -42,8 +42,8 @@
 - (id)emailAddress;
 - (id)lastName;
 - (id)firstName;
-- (void)setName:(id)arg1;
 - (id)UUID;
+- (void)setName:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

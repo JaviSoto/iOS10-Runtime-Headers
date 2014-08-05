@@ -21,9 +21,9 @@
 + (id)valueWithEntry:(id)arg1;
 + (bool)supportsSecureCoding;
 
-- (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (bool)matchesEntry:(id)arg1;
+- (void)setTimestamp:(id)arg1;
 - (void)setShortcut:(id)arg1;
 - (id)shortcut;
 - (void)setPhrase:(id)arg1;

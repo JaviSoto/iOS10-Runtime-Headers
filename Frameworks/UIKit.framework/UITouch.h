@@ -81,9 +81,9 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(long long)arg2 view:(id)arg3;
 
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (id)view;
+- (void)setTimestamp:(double)arg1;
 - (long long)info;
 - (id)window;
 - (void)dealloc;

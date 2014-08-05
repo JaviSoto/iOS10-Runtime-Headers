@@ -25,8 +25,8 @@
 - (bool)readFromURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (id)initWithType:(id)arg1 error:(id*)arg2;
-- (id)_persistentStoreCoordinator;
 - (void)setManagedObjectContext:(id)arg1;
+- (id)_persistentStoreCoordinator;
 - (id)managedObjectModel;
 - (id)managedObjectContext;
 - (id)undoManager;

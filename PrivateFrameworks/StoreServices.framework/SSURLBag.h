@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableArray, NSDictionary, SSXPCConnection, NSObject<OS_dispatch_queue>, SSURLBagContext;
+@class NSMutableArray, NSString, NSDictionary, SSXPCConnection, NSObject<OS_dispatch_queue>, SSURLBagContext;
 
 @interface SSURLBag : NSObject  {
     SSXPCConnection *_connection;
@@ -12,6 +12,7 @@
     double _expirationTime;
     bool_ignoreCacheForNextLookup;
     NSMutableArray *_pendingLookups;
+    NSString *_storeFrontIdentifier;
 }
 
 @property(readonly) SSURLBagContext * URLBagContext;

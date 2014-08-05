@@ -52,7 +52,9 @@
 - (id)path;
 - (void)setHost:(id)arg1;
 - (void)setPort:(id)arg1;
+- (id)queryItems;
 - (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
+- (void)setQueryItems:(id)arg1;
 - (void)setScheme:(id)arg1;
 - (id)init;
 - (id)initWithString:(id)arg1;
@@ -72,8 +74,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setQueryItems:(id)arg1;
-- (id)queryItems;
 - (void)setPercentEncodedFragment:(id)arg1;
 - (void)setPercentEncodedPath:(id)arg1;
 - (void)setPercentEncodedHost:(id)arg1;

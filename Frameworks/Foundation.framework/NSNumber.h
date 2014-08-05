@@ -47,6 +47,7 @@
 @property(readonly) unsigned long long unsignedIntegerValue;
 @property(copy,readonly) NSString * stringValue;
 
++ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedInteger:(unsigned long long)arg1;
@@ -57,7 +58,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)numberWithLong:(long long)arg1;
-+ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (id)numberWithShort:(short)arg1;
 + (id)numberWithChar:(BOOL)arg1;
@@ -71,11 +71,11 @@
 + (bool)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
 + (id)numberWithItemIdentifier:(unsigned long long)arg1;
 + (id)boolFromICSString:(id)arg1;
-+ (id)numberWithCGFloat:(double)arg1;
 + (id)cr_numberWithCRContactGroupKind:(unsigned long long)arg1;
 + (id)cr_numberWithCRContactID:(long long)arg1;
 + (id)cr_numberWithCRRecentID:(long long)arg1;
 + (id)_gkServerTimeInterval:(double)arg1;
++ (id)numberWithCGFloat:(double)arg1;
 + (id)brc_fileObjectIDWithFolderID:(unsigned long long)arg1;
 + (id)brc_fileObjectIDWithDocumentID:(unsigned int)arg1;
 + (id)brc_fileObjectIDForURL:(id)arg1 allocateDocID:(bool)arg2;
@@ -148,11 +148,11 @@
 - (void)_ICSUTCOffsetAppendingToString:(id)arg1;
 - (void)_ICSBoolAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
-- (id)initWithCGFloat:(double)arg1;
-- (double)cgFloatValue;
 - (unsigned long long)cr_CRContactGroupKindValue;
 - (long long)cr_CRContactIDValue;
 - (long long)cr_CRRecentIDValue;
+- (id)initWithCGFloat:(double)arg1;
+- (double)cgFloatValue;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)brc_documentID;

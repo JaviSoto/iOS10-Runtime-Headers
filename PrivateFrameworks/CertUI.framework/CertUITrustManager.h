@@ -13,7 +13,6 @@
 + (void)_migrateVersionZeroFromAccessGroup:(id)arg1 toGroup:(id)arg2;
 + (id)defaultTrustManager;
 
-- (int)actionForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (void)clearSavedTrustSettingsForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
 - (void)removeAllTrusts;
 - (void)removeSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
@@ -23,6 +22,7 @@
 - (bool)_hasExceptionsForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (void)removeSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (void)addSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (int)actionForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (void)allowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 service:(id)arg3;
 - (void)addSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
 - (int)actionForSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;

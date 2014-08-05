@@ -50,7 +50,6 @@
 @property(readonly) NSString * contextID;
 
 
-- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setPrefersFirstLineSelection:(bool)arg1;
 - (void)setShowContentImmediately:(bool)arg1;
 - (void)setUsingDefaultAccount:(bool)arg1;
@@ -72,6 +71,7 @@
 - (id)bccRecipients;
 - (unsigned long long)caretPosition;
 - (bool)prefersFirstLineSelection;
+- (void)recordUndoAttachmentsForURLs:(id)arg1;
 - (void)setShowKeyboardImmediately:(bool)arg1;
 - (bool)includeAttachments;
 - (void)setOriginalContent:(id)arg1;
@@ -92,8 +92,10 @@
 - (id)loadingContext;
 - (int)composeType;
 - (int)sourceAccountManagement;
-- (void)removeAttachment:(id)arg1;
+- (void)setCaretPosition:(unsigned long long)arg1;
+- (void)recordPasteboardAttachmentsForURLs:(id)arg1;
 - (id)messageBody;
+- (void)removeAttachment:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (id)subject;
 - (id)attachments;

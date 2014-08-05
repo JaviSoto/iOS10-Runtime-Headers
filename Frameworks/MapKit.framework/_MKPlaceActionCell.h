@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setTitleLabel:(id)arg1;
-- (id)titleLabel;
 - (void)updateConstraints;
+- (id)titleLabel;
 - (void)tintColorDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

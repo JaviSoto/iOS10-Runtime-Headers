@@ -37,8 +37,8 @@
 
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1;
 - (id)dataWithName:(id)arg1 fromResourceManager:(id)arg2;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 mipmap:(bool)arg2;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 mipmap:(bool)arg3;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 mipmap:(bool)arg2 repeatWrap:(bool)arg3;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 mipmap:(bool)arg3 repeatWrap:(bool)arg4;
 - (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2 device:(struct Device { int (**x1)(); int x2; }*)arg3;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;

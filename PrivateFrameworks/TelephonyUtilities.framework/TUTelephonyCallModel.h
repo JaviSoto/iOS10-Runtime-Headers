@@ -13,6 +13,7 @@
 @property(retain) NSDictionary * callManagementState;
 @property(retain) NSObject<OS_dispatch_semaphore> * callManagementStateSemaphore;
 
++ (id)sharedInstance;
 
 - (void)setCallManagementStateSemaphore:(id)arg1;
 - (void)_invalidateNetworkCanTakeCallsPrivateCache;

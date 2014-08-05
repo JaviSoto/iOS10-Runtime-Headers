@@ -16,6 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)pushController:(id)arg1;
 - (void)formSheetViewDidDisappear;
 - (void)popupViewDidDisappear;
 - (void)pushController:(id)arg1 animate:(bool)arg2;
@@ -39,7 +40,6 @@
 - (id)rootController;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;
-- (void)pushController:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (void)suspend;
 - (void)dealloc;

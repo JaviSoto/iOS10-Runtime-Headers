@@ -93,6 +93,7 @@
 + (id)keyPathsForValuesAffectingCanSeekChapterForward;
 + (id)keyPathsForValuesAffectingCanSeekFrameBackward;
 + (id)keyPathsForValuesAffectingCanSeekFrameForward;
++ (id)keyPathsForValuesAffectingCanScanBackward;
 + (id)keyPathsForValuesAffectingCanSeek;
 + (id)keyPathsForValuesAffectingHasShareableContent;
 + (id)keyPathsForValuesAffectingHasTrimmableContent;
@@ -123,7 +124,6 @@
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingCanSeekToEnd;
 + (id)keyPathsForValuesAffectingCanSeekToBeginning;
-+ (id)keyPathsForValuesAffectingCanScanBackward;
 + (id)keyPathsForValuesAffectingCanScanForward;
 + (id)keyPathsForValuesAffectingHasLiveStreamingContent;
 + (id)keyPathsForValuesAffectingPlaying;
@@ -193,6 +193,7 @@
 - (id)_legibleEasyToReadOptions;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
+- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2;
 - (id)_auxillaryClosedCaptionOptions;
 - (id)_auxillarySDHOptions;
 - (id)_auxillarySubtitleOptions;
@@ -204,7 +205,7 @@
 - (id)_subtitleOptions;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
-- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2;
+- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2 preferAC3:(bool)arg3;
 - (id)_languageCodesForOptions:(id)arg1;
 - (id)_auxillaryAudioOptions;
 - (id)_DVSAudioOptions;
@@ -239,6 +240,7 @@
 - (bool)canSeek;
 - (bool)canTogglePlayback;
 - (bool)canPause;
+- (bool)canScanBackward;
 - (bool)isPlayingOnExternalScreen;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)currentLegibleMediaSelectionOption;
@@ -251,7 +253,6 @@
 - (bool)canSeekToBeginning;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
-- (bool)canScanBackward;
 - (void)endScanningForward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
 - (bool)canScanForward;

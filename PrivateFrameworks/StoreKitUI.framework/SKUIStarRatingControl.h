@@ -9,18 +9,26 @@
     UIImageView *_emptyStarsImageView;
     UIImageView *_filledStarsImageView;
     long long _userRating;
+    float _starSpacing;
+    float _starWidth;
 }
 
 @property(retain) UIImage * emptyStarsImage;
 @property(retain) UIImage * filledStarsImage;
 @property long long userRating;
+@property float starSpacing;
+@property float starWidth;
 
 
+- (void)setStarSpacing:(float)arg1;
 - (id)filledStarsImage;
 - (id)emptyStarsImage;
+- (float)starSpacing;
 - (void)_updateUserRatingWithTouch:(id)arg1;
 - (void)setFilledStarsImage:(id)arg1;
 - (void)setEmptyStarsImage:(id)arg1;
+- (void)setStarWidth:(float)arg1;
+- (float)starWidth;
 - (long long)userRating;
 - (void)setUserRating:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;

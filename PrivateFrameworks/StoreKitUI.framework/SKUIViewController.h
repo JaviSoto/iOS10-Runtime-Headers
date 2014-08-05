@@ -37,6 +37,7 @@
 - (bool)showingError;
 - (void)showError:(id)arg1;
 - (void)productPageOverlayDidDismiss:(id)arg1;
+- (void)skui_viewWillAppear:(bool)arg1;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)showDefaultNavigationItems;
 - (void)_setWishlistButtonHidden:(bool)arg1;

@@ -115,10 +115,10 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)hasType;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(unsigned int)arg1;

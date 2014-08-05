@@ -9,9 +9,9 @@
 }
 
 
-- (id)_managedObjectModel;
 - (void)_removeSqliteFiles;
 - (id)_urlForPersistentStore;
+- (id)_managedObjectModel;
 - (id)_pathForPersistentStore;
 - (id)rootDirectory;
 - (id)_settingForKey:(id)arg1;

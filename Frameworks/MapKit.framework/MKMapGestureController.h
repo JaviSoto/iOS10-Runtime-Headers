@@ -50,6 +50,7 @@
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;
 - (void)gestureRecognizerTouchesBegan:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_snapPointToDevicePixels:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_clearGesture:(id)arg1;
 - (void)endGesturing;
 - (void)beginGesturing;

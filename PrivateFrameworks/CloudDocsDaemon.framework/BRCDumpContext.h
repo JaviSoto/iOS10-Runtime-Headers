@@ -23,6 +23,8 @@
 
 + (id)stringFromBackoff:(double)arg1 context:(id)arg2;
 + (id)stringFromError:(id)arg1 context:(id)arg2;
++ (id)stringFromErrorString:(id)arg1 context:(id)arg2;
++ (id)stringFromByteCount:(long long)arg1 showActualByteCount:(bool)arg2 suffix:(id)arg3 context:(id)arg4;
 + (id)stringFromItemAsString:(id)arg1 context:(id)arg2;
 + (id)stringFromByteCount:(long long)arg1 context:(id)arg2;
 + (id)stringFromItemID:(id)arg1 context:(id)arg2;

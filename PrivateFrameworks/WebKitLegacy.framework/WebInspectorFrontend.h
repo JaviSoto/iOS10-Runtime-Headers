@@ -13,13 +13,13 @@
 
 
 - (void)detach;
+- (void)stopProfilingJavaScript;
+- (void)startProfilingJavaScript;
 - (id)initWithFrontendClient:(struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct RefPtr<WebCore::InspectorFrontendHost> { struct InspectorFrontendHost {} *x_4_1_1; } x4; struct unique_ptr<WebCore::InspectorFrontendClientLocal::Settings, std::__1::default_delete<WebCore::InspectorFrontendClientLocal::Settings> > { struct __compressed_pair<WebCore::InspectorFrontendClientLocal::Settings *, std::__1::default_delete<WebCore::InspectorFrontendClientLocal::Settings> > { struct Settings {} *x_1_2_1; } x_5_1_1; } x5; boolx6; int x7; struct Vector<WTF::String, 0, WTF::CrashOnOverflow> { struct String {} *x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; } x8; struct unique_ptr<WebCore::InspectorBackendDispatchTask, std::__1::default_delete<WebCore::InspectorBackendDispatchTask> > { struct __compressed_pair<WebCore::InspectorBackendDispatchTask *, std::__1::default_delete<WebCore::InspectorBackendDispatchTask> > { struct InspectorBackendDispatchTask {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1;
+- (bool)isProfilingJavaScript;
 - (void)attach;
 - (void)setTimelineProfilingEnabled:(bool)arg1;
 - (bool)isTimelineProfilingEnabled;
-- (void)startProfilingJavaScript;
-- (void)stopProfilingJavaScript;
-- (bool)isProfilingJavaScript;
 - (void)setDebuggingEnabled:(bool)arg1;
 - (bool)isDebuggingEnabled;
 - (void)showConsole;

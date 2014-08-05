@@ -47,6 +47,11 @@
 - (id)controlKeyForegroundColorName;
 - (id)defaultKeyShadowColorName;
 - (bool)shouldClearBaseDisplayStringForVariants;
+- (id)boldKeyImageName;
+- (id)undoKeyImageName;
+- (id)pasteKeyImageName;
+- (id)copyKeyImageName;
+- (id)cutKeyImageName;
 - (id)rightArrowKeyImageName;
 - (id)leftArrowKeyImageName;
 - (id)dictationKeyImageName;

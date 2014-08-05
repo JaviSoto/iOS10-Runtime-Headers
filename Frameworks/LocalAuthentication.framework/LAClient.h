@@ -19,14 +19,14 @@
 + (id)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 error:(id*)arg3;
 + (void)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 reply:(id)arg3;
 
-- (id)externalizedContext;
-- (id)creatorDisplayName;
 - (void)enterPassword:(id)arg1 reply:(id)arg2;
 - (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(id)arg3;
 - (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id)arg4;
 - (id)initWithDaemonConnection:(id)arg1 remoteContext:(id)arg2 constInfo:(id)arg3;
 - (void)_setPermanentError:(id)arg1;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(id)arg3;
+- (id)externalizedContext;
+- (id)creatorDisplayName;
 - (void)invalidate;
 - (void)dealloc;
 - (void).cxx_destruct;

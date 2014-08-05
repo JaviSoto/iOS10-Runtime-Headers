@@ -22,13 +22,13 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (void)_reload;
 - (void)_deleteAction:(id)arg1;
 - (void)_editAction:(id)arg1;
 - (void)_reloadNavigationItem;
 - (void)_reloadLayout;
 - (void)setDownloads:(id)arg1;
 - (void)reloadDownloadsAtIndexes:(id)arg1;
+- (void)_reload;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (id)downloads;

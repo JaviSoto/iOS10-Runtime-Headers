@@ -27,6 +27,7 @@
 @property(readonly) BRQueryItem * item;
 
 
+- (void)stop;
 - (void)setProgressHandler:(id)arg1;
 - (id)progressHandler;
 - (void)setQueue:(id)arg1;
@@ -35,7 +36,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)item;
-- (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)initWithItem:(id)arg1;
 

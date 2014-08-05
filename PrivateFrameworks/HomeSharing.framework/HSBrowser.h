@@ -45,9 +45,9 @@
 - (void)_startWithCurrentRetryCount:(unsigned long long)arg1 maximumRetryCount:(unsigned long long)arg2 addLibraryHandler:(id)arg3 removeLibraryHandler:(id)arg4;
 - (id)availableLibraries;
 - (void)startWithAddLibraryHandler:(id)arg1 removeLibraryHandler:(id)arg2;
+- (void)stop;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 
 @end

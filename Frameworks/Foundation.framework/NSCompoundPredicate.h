@@ -13,8 +13,8 @@
 @property(readonly) unsigned long long compoundPredicateType;
 @property(copy,readonly) NSArray * subpredicates;
 
-+ (id)notPredicateWithSubpredicate:(id)arg1;
 + (id)andPredicateWithSubpredicates:(id)arg1;
++ (id)notPredicateWithSubpredicate:(id)arg1;
 + (id)_operatorForType:(unsigned long long)arg1;
 + (bool)supportsSecureCoding;
 + (id)orPredicateWithSubpredicates:(id)arg1;

@@ -5,6 +5,7 @@
 @class NSArray, SKUILabelViewElement, SKUIItemViewElement;
 
 @interface SKUIMenuViewElement : SKUIViewElement  {
+    BOOL _enabled;
     SKUILabelViewElement *_menuLabel;
 }
 
@@ -15,11 +16,14 @@
 
 
 - (long long)selectedItemIndex;
+- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (id)applyUpdatesWithElement:(id)arg1;
 - (id)menuLabel;
 - (void)_enumerateItemElementsUsingBlock:(id)arg1;
 - (id)menuItemTitles;
 - (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
 - (id)titleItem;
+- (bool)isEnabled;
 - (void).cxx_destruct;
 
 @end

@@ -145,10 +145,10 @@
 - (void)pushConfigurationViewController:(id)arg1;
 - (void)setMaxImageAttachmentSize:(unsigned long long)arg1;
 - (void)shouldShowNetworkActivityIndicator:(bool)arg1;
+- (void)setConstraints:(id)arg1;
+- (void)cancelButtonTapped:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
-- (void)cancelButtonTapped:(id)arg1;
-- (void)setConstraints:(id)arg1;
 - (void)addAttachment:(id)arg1;
 - (id)attachments;
 - (id)text;

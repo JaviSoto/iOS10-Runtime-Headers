@@ -17,9 +17,9 @@
 
 - (id)initWithURL:(id)arg1 likeStatusDictionary:(id)arg2;
 - (bool)isUserLiked;
+- (id)friendNames;
 - (void)setUserLiked:(bool)arg1;
 - (void)setFriendNames:(id)arg1;
-- (id)friendNames;
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (void).cxx_destruct;

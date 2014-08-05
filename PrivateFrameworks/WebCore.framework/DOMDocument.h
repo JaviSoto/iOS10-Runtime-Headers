@@ -41,7 +41,6 @@
 
 - (id)implementation;
 - (id)head;
-- (id)origin;
 - (void)setBody:(id)arg1;
 - (id)body;
 - (id)createTouchList;
@@ -137,6 +136,7 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)forms;
 - (id)links;
+- (id)origin;
 - (id)images;
 - (id)URLWithAttributeString:(id)arg1;
 - (id)webFrame;

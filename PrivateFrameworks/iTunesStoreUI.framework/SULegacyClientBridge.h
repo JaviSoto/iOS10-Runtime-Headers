@@ -37,10 +37,10 @@
 - (id)overlayBackgroundViewController;
 - (id)initWithClientInterface:(id)arg1;
 - (id)clientInterface;
-- (void)setRootViewController:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
 
 @end

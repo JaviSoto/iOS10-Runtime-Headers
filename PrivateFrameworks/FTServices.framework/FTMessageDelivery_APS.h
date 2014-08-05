@@ -55,17 +55,16 @@
 - (void)_messageCompletelyTimedOut:(id)arg1;
 - (void)_invalidateTimerForMessageID:(id)arg1;
 - (void)_setEnabledTopics:(id)arg1;
-- (void)_updateWiFiAssertions;
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (void)_dequeueIfNeeded;
 - (void)_serverBagLoaded:(id)arg1;
 - (long long)maxLargeMessageSize;
 - (void)cancelMessage:(id)arg1;
+- (bool)busy;
 - (id)allMessages;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (long long)maxMessageSize;
 - (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
-- (bool)busy;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didSendOutgoingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;

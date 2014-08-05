@@ -18,6 +18,7 @@
     NSRecursiveLock *_componentQueueProcessingLock;
     bool_pendingComponentQueueProcessing;
     bool_busyForwarding;
+    bool_offMainThread;
 }
 
 

@@ -49,7 +49,7 @@
 - (void)declineInvitationWithData:(id)arg1;
 - (void)acceptInvitationWithData:(id)arg1;
 - (void)cancelInvitationWithData:(id)arg1;
-- (void)sendInvitationWithData:(id)arg1;
+- (void)sendInvitationWithData:(id)arg1 declineOnError:(bool)arg2;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4 delegateContext:(id)arg5;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 delegateContext:(id)arg4;

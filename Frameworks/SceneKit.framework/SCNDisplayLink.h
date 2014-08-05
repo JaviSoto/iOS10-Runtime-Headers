@@ -32,6 +32,7 @@
 
 - (int)queuedFrameCount;
 - (void)setPaused:(bool)arg1 nextFrameTimeHint:(double)arg2;
+- (void)willDie;
 - (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id)arg3;
 - (void)_callbackWithTime:(double)arg1 andDeltaTime:(double)arg2;
 - (bool)_isInvalidated;

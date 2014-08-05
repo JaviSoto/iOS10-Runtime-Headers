@@ -74,7 +74,6 @@
 - (id)performWriteTransactionWithBlock:(id)arg1 completionHandler:(id)arg2;
 - (void)_scheduleBatchedTransactionsLocked;
 - (void)_reallyPerformBatchedTransactionsLocked;
-- (void)_addNameToTransaction:(id)arg1 fromBlock:(id)arg2;
 - (void)_performTransaction:(id)arg1 withBlock:(id)arg2;
 - (void)_removeTransactionOnCurrentThread:(id)arg1;
 - (void)_setTransactionOnCurrentThread:(id)arg1;

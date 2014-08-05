@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class VKWorld, NSArray, VKModelObject, NSMutableArray, NSObject<OS_dispatch_semaphore>;
+@class VKWorld, NSArray, VKModelObject, VKStyleManager, NSMutableArray, NSObject<OS_dispatch_semaphore>;
 
 @interface VKModelObject : NSObject  {
     VKWorld *_world;
@@ -44,6 +44,7 @@
 @property VKWorld * world;
 @property(readonly) NSArray * submodels;
 @property(readonly) VKModelObject * supermodel;
+@property(readonly) VKStyleManager * styleManager;
 @property(getter=isActive) bool active;
 
 
@@ -53,6 +54,7 @@
 - (void)gglLayoutSceneIfNeeded:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 dispatchQueue:(id)arg4;
 - (void)unLockCommandBuffers:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (bool)shouldLayoutWithoutStyleManager;
 - (void)lockCommandBuffers:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (void)didRemoveFromSuperModel;
 - (void)removeSubmodel:(id)arg1;
@@ -67,6 +69,7 @@
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (void)addSubmodel:(id)arg1;
 - (void)runAnimation:(id)arg1;
+- (id)styleManager;
 - (id)world;
 - (bool)isActive;
 - (void)setNeedsDisplay;
@@ -76,6 +79,7 @@
 - (void).cxx_destruct;
 - (id).cxx_construct;
 - (void)setActive:(bool)arg1;
+- (void)reset;
 - (void)didReceiveMemoryWarning;
 
 @end

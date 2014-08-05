@@ -18,9 +18,6 @@
 - (unsigned int)minimumRemoteIDForMailbox:(id)arg1;
 - (id)getDetailsForMessages:(unsigned long long)arg1 absoluteBottom:(unsigned long long)arg2 topOfDesiredRange:(unsigned long long)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 fromMailbox:(id)arg5;
 - (void)setSequenceIdentifier:(id)arg1 forMessageWithLibraryID:(unsigned int)arg2;
-- (bool)hasCompleteDataForMimePart:(id)arg1;
-- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
-- (void)deleteAccount:(id)arg1;
 - (void)setStoredIntegerPropertyWithName:(id)arg1 value:(id)arg2;
 - (id)storedIntegerPropertyWithName:(id)arg1;
 - (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
@@ -121,6 +118,9 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (bool)shouldCancel;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (void)deleteAccount:(id)arg1;
+- (bool)hasCompleteDataForMimePart:(id)arg1;
+- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
 - (bool)isBusy;
 - (void)commit;
 - (void)dealloc;

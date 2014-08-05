@@ -47,11 +47,11 @@
 - (id)toneIdentifier;
 - (bool)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
+- (void)stop;
 - (id)initWithType:(int)arg1;
 - (void)_setTargetQueue:(id)arg1;
 - (int)type;
 - (void)dealloc;
-- (void)stop;
 - (void)_setType:(int)arg1;
 - (id)_completionHandler;
 - (void)_setCompletionHandler:(id)arg1;

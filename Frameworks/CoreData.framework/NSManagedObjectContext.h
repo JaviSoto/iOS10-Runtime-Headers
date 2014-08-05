@@ -238,8 +238,6 @@
 - (void)performBlockAndWait:(id)arg1;
 - (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_registerForNotificationsWithCoordinator:(id)arg1;
-- (void)_unlockObjectStore_oldSchool;
-- (void)_lockObjectStore_oldSchool;
 - (id)_implicitObservationInfoForEntity:(id)arg1 forResultingClass:(Class*)arg2;
 - (void)insertObject:(id)arg1;
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id*)arg2;

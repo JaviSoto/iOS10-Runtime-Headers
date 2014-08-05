@@ -14,6 +14,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)clearAllSafariHistory;
 - (id)getSafariDataUsageSummary;
 - (void)deleteSafariPersistentURLCacheStorage;
 - (void)deleteSafariSecurityOrigin:(id)arg1;

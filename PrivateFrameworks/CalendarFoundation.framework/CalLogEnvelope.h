@@ -31,11 +31,11 @@
 - (void)setMachPort:(unsigned int)arg1;
 - (void)setProcessID:(int)arg1;
 - (id)initWithLogName:(id)arg1 level:(int)arg2 message:(id)arg3;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (id)function;
+- (void)setTimestamp:(double)arg1;
 - (void)setFunction:(id)arg1;
 - (void)setLevel:(int)arg1;
 - (int)level;

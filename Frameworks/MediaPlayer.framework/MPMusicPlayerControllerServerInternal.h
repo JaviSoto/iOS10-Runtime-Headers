@@ -91,9 +91,9 @@
 - (void)prepareToPlay;
 - (id)numberOfItems;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 
 @end

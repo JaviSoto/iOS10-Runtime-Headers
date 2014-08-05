@@ -27,13 +27,13 @@
 - (id)transportUserIdentifier;
 - (void)_setCancelled:(bool)arg1;
 - (void)taskDidProgress:(float)arg1;
-- (void)setForeground:(bool)arg1;
 - (bool)foreground;
 - (unsigned long long)diskPressureState;
 - (void)taskDidFinishWithError:(id)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (id)engineLibrary;
 - (void)_setPaused:(bool)arg1;
+- (void)setForeground:(bool)arg1;
 - (bool)isPaused;
 - (void)resume;
 - (void)pause;

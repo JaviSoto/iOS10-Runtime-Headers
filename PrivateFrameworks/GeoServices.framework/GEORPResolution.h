@@ -22,7 +22,6 @@
 @property(retain) NSMutableArray * updatedPlaces;
 
 
-- (id)updatedPlaces;
 - (id)localizedChangeLists;
 - (id)displayRegion;
 - (double)resolutionDate;
@@ -41,6 +40,7 @@
 - (void)setUpdatedPlaces:(id)arg1;
 - (void)setLocalizedChangeLists:(id)arg1;
 - (void)setDisplayRegion:(id)arg1;
+- (id)updatedPlaces;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

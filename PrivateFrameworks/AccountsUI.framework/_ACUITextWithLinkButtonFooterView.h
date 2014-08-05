@@ -11,11 +11,11 @@
 }
 
 
-- (double)preferredHeightForWidth:(double)arg1;
-- (id)initWithSpecifier:(id)arg1;
 - (double)_heightForLinkButton:(id)arg1 constrainedToWidth:(double)arg2;
 - (double)_heightForEmptyLineConstrainedToWidth:(double)arg1;
 - (double)_heightForFooterTextConstrainedToWidth:(double)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
+- (id)initWithSpecifier:(id)arg1;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 

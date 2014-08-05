@@ -35,7 +35,6 @@
 + (id)gradientWithColor:(id)arg1;
 
 - (id)colorStopOffsets;
-- (struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })p1;
 - (struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })p0;
 - (struct CGGradient { }*)copyCGGradient;
 - (long long)gradientType;
@@ -46,6 +45,7 @@
 - (id)colorStopColors;
 - (long long)numberOfColorStops;
 - (id)initWithPropertyList:(id)arg1;
+- (struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })p1;
 - (id)initWithType:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

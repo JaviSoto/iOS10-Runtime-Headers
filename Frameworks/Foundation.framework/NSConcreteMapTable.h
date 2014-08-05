@@ -72,7 +72,6 @@
 }
 
 
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 - (id)init;
 - (id)allValues;
 - (id)allKeys;
@@ -114,5 +113,6 @@
 - (void)removeAllItems;
 - (void)_initBlock;
 - (Class)classForCoder;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 
 @end

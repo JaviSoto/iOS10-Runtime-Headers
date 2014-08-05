@@ -34,7 +34,6 @@
 - (id)connections;
 - (struct CGImage { }*)icon;
 - (id)model;
-- (id)node;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
 - (void)setName:(id)arg1;
@@ -50,5 +49,6 @@
 - (void)setNode:(id)arg1;
 - (void)setActivities:(id)arg1;
 - (id)activities;
+- (id)node;
 
 @end

@@ -44,5 +44,6 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)isUIApplicationClientSettings;
 
 @end

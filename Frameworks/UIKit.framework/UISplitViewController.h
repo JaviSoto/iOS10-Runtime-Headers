@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UISnapshotView, NSString, UIView, NSArray, <UISplitViewControllerDelegate>, UIPopoverController, UIViewController, UIBarButtonItem, UIGestureRecognizer;
+@class UISnapshotView, NSString, NSArray, UIView, UIResponder, <UISplitViewControllerDelegate>, UIPopoverController, UIViewController, UIBarButtonItem, UIGestureRecognizer;
 
 @interface UISplitViewController : UIViewController <UIGestureRecognizerDelegate, GKContentRefresh, GKURLHandling> {
     id _delegate;
@@ -15,6 +15,7 @@
     NSString *_buttonTitle;
     UIPopoverController *_hiddenPopoverController;
     UIView *_rotationSnapshotView;
+    UIResponder *_postTransitionResponder;
     UISnapshotView *_collapsingMasterSnapshotView;
     UISnapshotView *_collapsingDetailSnapshotView;
     double _masterColumnWidth;
@@ -181,7 +182,7 @@
 - (id)_primaryDimmingView;
 - (void)_updateMasterViewControllerFrame;
 - (void)_removeRoundedCorners;
-- (void)_setupUnderBarSeparatorViewForOrientation:(long long)arg1;
+- (void)_setupUnderBarSeparatorView;
 - (void)_setupRoundedCorners;
 - (void)snapshotForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2;
 - (void)snapshotAllViews;
@@ -195,7 +196,6 @@
 - (bool)_shouldPreventAutorotation;
 - (void)_setClearPreventRotationHook:(id)arg1;
 - (id)_clearPreventRotationHook;
-- (void)_prepareForInitialCompactLayout;
 - (void)_triggerDisplayModeAction:(id)arg1;
 - (id)_displayModeButtonItemTitle;
 - (long long)_defaultTargetDisplayMode;
@@ -206,8 +206,8 @@
 - (void)_setPrimaryHidingState:(long long)arg1;
 - (void)_setPrimaryHidingStateForCurrentOrientation:(long long)arg1;
 - (void)_displayModeWillChangeTo:(long long)arg1;
-- (long long)_defaultDisplayMode;
-- (void)_changeToDisplayMode:(long long)arg1 forCurrentOrientation:(bool)arg2;
+- (id)_defaultDisplayModes;
+- (void)_changeToDisplayMode:(long long)arg1 forCurrentOrientationOnly:(bool)arg2;
 - (long long)preferredDisplayMode;
 - (bool)presentsWithGesture;
 - (void)_showMasterViewAnimated:(bool)arg1;
@@ -220,12 +220,13 @@
 - (id)_didChangeBoundsBlock;
 - (id)_separateSecondaryViewControllerFromPrimaryViewController:(id)arg1;
 - (id)_primaryViewControllerForExpanding;
-- (void)_setCollapsedState:(long long)arg1;
 - (void)_collapseSecondaryViewController:(id)arg1 ontoPrimaryViewController:(id)arg2;
 - (id)_primaryViewControllerForCollapsing;
 - (id)_secondaryViewControllerForCollapsing;
 - (void)_setPreservedDetailController:(id)arg1;
 - (id)_childContainingSender:(id)arg1;
+- (void)_setCollapsedState:(long long)arg1;
+- (void)_prepareForInitialCompactLayout;
 - (void)_updateDisplayModeButtonItem;
 - (void)_viewControllerHiding:(id)arg1;
 - (bool)_canSlideMaster;
@@ -238,8 +239,6 @@
 - (void)toggleMasterVisible:(id)arg1;
 - (bool)_resizesDetailOnSlide;
 - (void)popoverWillAppear:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)gutterWidth;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -269,6 +268,8 @@
 - (void)_removeCollapsingSnapshotViews;
 - (void)_setMasterOverrideTraitCollectionActive:(bool)arg1;
 - (void)_setPresentsInFadingPopover:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame;
 - (id)masterViewController;
 - (bool)isCollapsed;
 - (id)_primaryContentResponder;
@@ -291,6 +292,7 @@
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
+- (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)unloadViewForced:(bool)arg1;
 - (bool)_shouldPersistViewWhenCoding;
 - (void)_updateChildContentMargins;
@@ -303,6 +305,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
+- (bool)_disableAutomaticKeyboardBehavior;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;

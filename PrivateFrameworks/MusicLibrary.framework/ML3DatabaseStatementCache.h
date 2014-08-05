@@ -13,11 +13,11 @@
 @property(readonly) unsigned long long cacheSize;
 
 
+- (unsigned long long)cacheSize;
 - (void)cacheStatement:(id)arg1;
 - (id)allStatements;
 - (id)cachedStatementForSQL:(id)arg1;
 - (id)initWithCacheSize:(unsigned long long)arg1;
-- (unsigned long long)cacheSize;
 - (void)clearCache;
 - (void)dealloc;
 - (void).cxx_destruct;

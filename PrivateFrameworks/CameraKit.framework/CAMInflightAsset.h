@@ -50,8 +50,8 @@
 - (void)setAvalancheUUID:(id)arg1;
 - (void)setVisibilityState:(short)arg1;
 - (id)pathForVideoFile;
-- (id)mainFileURL;
 - (void)setDateCreated:(id)arg1;
+- (id)mainFileURL;
 - (id)avalancheUUID;
 - (id)dateCreated;
 - (id)pathForOriginalFile;

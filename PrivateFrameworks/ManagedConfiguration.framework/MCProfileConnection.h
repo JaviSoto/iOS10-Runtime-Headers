@@ -49,7 +49,6 @@
 - (bool)isCloudSyncAllowed:(id)arg1;
 - (void)lockDevice;
 - (void)recomputeUserComplianceWarning;
-- (id)managedEmailDomains;
 - (bool)isAutomaticAppUpdatesModificationAllowed;
 - (bool)isUninstalledAppNearMeSuggestionsAllowed;
 - (bool)isInstalledAppNearMeSuggestionsAllowed;
@@ -60,6 +59,7 @@
 - (bool)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (bool)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
 - (int)unlockScreenType;
+- (id)managedEmailDomains;
 - (id)effectiveWhitelistedAppBundleIDs;
 - (int)effectiveRestrictedBoolValueForSetting:(id)arg1;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
@@ -160,6 +160,7 @@
 - (bool)isAppInstallationAllowed;
 - (bool)isLockScreenWiFiModificationAllowed;
 - (bool)isAdTrackingLimited;
+- (bool)isWebContentFilteringInEffect;
 - (bool)isWebTextDefineAllowed;
 - (void)setAutomaticAppUpdatesAllowed:(bool)arg1;
 - (bool)isOTAPKIUpdatesAllowed;

@@ -18,7 +18,6 @@
 @property bool isUserScroll;
 
 
-- (id)node;
 - (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPoint { double x1; double x2; })offset;
 - (void)dealloc;
@@ -27,5 +26,6 @@
 - (void)setNode:(id)arg1;
 - (bool)coalesceScrollForNode:(id)arg1 offset:(struct CGPoint { double x1; double x2; })arg2 isUserScroll:(bool)arg3;
 - (id)initWithNode:(id)arg1 offset:(struct CGPoint { double x1; double x2; })arg2 isUserScroll:(bool)arg3;
+- (id)node;
 
 @end

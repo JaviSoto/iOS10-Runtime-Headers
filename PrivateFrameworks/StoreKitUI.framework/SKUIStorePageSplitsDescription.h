@@ -15,6 +15,7 @@
 
 - (double)splitSpacing;
 - (void)setSplitSpacing:(double)arg1;
+- (void)sizeSplitsToFitWidth:(double)arg1 usingBlock:(id)arg2;
 - (void)setSplits:(id)arg1;
 - (id)splits;
 - (void).cxx_destruct;

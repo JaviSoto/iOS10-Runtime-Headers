@@ -69,8 +69,10 @@
 - (id)_dataForInFlightAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_anyImageTable;
 - (void)_horse_setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;
+- (void)newImageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 networkAccessAllowed:(bool)arg5 networkAccessForced:(bool)arg6 trackCPLDownload:(bool)arg7 completion:(id)arg8 sync:(bool)arg9;
 - (id)_dataForAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_thumbManagerForFormat:(int*)arg1;
+- (void)assetsdImageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(bool)arg3 wantURLOnly:(bool)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 networkAccessAllowed:(bool)arg6 networkAccessForced:(bool)arg7 trackCPLDownload:(bool)arg8 completion:(id)arg9;
 - (bool)_canAccessImageForAsset:(id)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 - (long long)_rebuildAssetThumbnailsWithLimit:(int)arg1 error:(id*)arg2;

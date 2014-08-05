@@ -9,9 +9,9 @@
 + (id)wrapSendRight:(unsigned int)arg1;
 + (bool)supportsSecureCoding;
 
-- (unsigned int)sendRight;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (unsigned int)sendRight;
 
 @end

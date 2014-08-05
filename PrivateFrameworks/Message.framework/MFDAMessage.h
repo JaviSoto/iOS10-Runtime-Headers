@@ -15,7 +15,6 @@
 
 
 - (id)remoteID;
-- (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 - (id)DAMailMessage;
 - (id)remoteMailboxURL;
@@ -23,8 +22,9 @@
 - (id)mailbox;
 - (id)headersIfAvailable;
 - (unsigned long long)messageFlags;
-- (unsigned long long)messageSize;
+- (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (id)messageBody;
+- (unsigned long long)messageSize;
 - (id)headers;
 - (void)dealloc;
 

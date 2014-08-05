@@ -11,10 +11,10 @@
 @property(retain) CNContact * contact;
 
 
-- (void)setContact:(id)arg1;
-- (id)contact;
 - (void)_setRecord:(void*)arg1 property:(int)arg2 stringValue:(id)arg3 label:(id)arg4;
 - (id)initWithMapItem:(id)arg1 contact:(id)arg2;
+- (void)setContact:(id)arg1;
+- (id)contact;
 - (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;

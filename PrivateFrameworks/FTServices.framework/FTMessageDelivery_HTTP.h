@@ -20,11 +20,11 @@
 - (void)_cleanupURLConnection;
 - (void)_serverBagLoaded:(id)arg1;
 - (void)cancelMessage:(id)arg1;
+- (bool)busy;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_clearRetryTimer;
 - (void)networkStateChanged;
-- (bool)busy;
 - (id)init;
 - (bool)sendMessage:(id)arg1;
 - (void)invalidate;

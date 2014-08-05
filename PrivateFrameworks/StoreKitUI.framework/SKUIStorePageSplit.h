@@ -2,32 +2,35 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIStorePageSectionContext;
+@class UIColor, NSArray, SKUIStorePageSectionContext;
 
 @interface SKUIStorePageSplit : NSObject <NSCopying> {
-    double _estimatedWidth;
+    UIColor *_dividerColor;
     long long _numberOfPageSections;
     NSArray *_pageComponents;
     SKUIStorePageSectionContext *_sectionContext;
+    double _widthFraction;
 }
 
-@property double estimatedWidth;
-@property(copy) NSArray * pageComponents;
+@property(copy) UIColor * dividerColor;
 @property long long numberOfPageSections;
+@property(copy) NSArray * pageComponents;
 @property(retain) SKUIStorePageSectionContext * sectionContext;
+@property double widthFraction;
 
 
-- (void)setEstimatedWidth:(double)arg1;
-- (double)estimatedWidth;
+- (double)widthFraction;
+- (void)setDividerColor:(id)arg1;
+- (void)setWidthFraction:(double)arg1;
 - (long long)numberOfPageSections;
 - (void)setNumberOfPageSections:(long long)arg1;
 - (void)setSectionContext:(id)arg1;
 - (id)sectionContext;
 - (id)pageComponents;
 - (void)setPageComponents:(id)arg1;
-- (id)init;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dividerColor;
 
 @end

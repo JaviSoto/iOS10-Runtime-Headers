@@ -23,6 +23,7 @@
 - (long long)_visibleColumnCountForWidth:(double)arg1;
 - (id)_newColumnViewControllersWithReusableViewControllers:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
+- (void)skui_viewWillAppear:(bool)arg1;
 - (void).cxx_destruct;
 - (id)contentScrollView;
 - (void)viewWillAppear:(bool)arg1;

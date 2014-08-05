@@ -72,11 +72,6 @@
 
 
 - (id)calendarItemExternalIdentifier;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
-- (id)externalURI;
-- (void)addAlarm:(id)arg1;
-- (void)setStructuredLocation:(id)arg1;
 - (bool)validate:(id*)arg1;
 - (id)organizer;
 - (bool)isAllDay;
@@ -134,6 +129,7 @@
 - (id)endTimeZone;
 - (id)startTimeZone;
 - (id)_persistentItem;
+- (void)setStructuredLocation:(id)arg1;
 - (id)_locationRelation;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)startDateForRecurrence;
@@ -152,6 +148,7 @@
 - (bool)allowsRecurrenceModifications;
 - (bool)allowsAttendeeModifications;
 - (bool)isAlarmAcknowledgedPropertyDirty;
+- (void)addAlarm:(id)arg1;
 - (id)findOriginalAlarmStartingWith:(id)arg1;
 - (id)attendees;
 - (bool)allowsAlarmModifications;
@@ -171,9 +168,12 @@
 - (id)calendarScale;
 - (bool)isFloating;
 - (id)lazyLoadRelationForKey:(id)arg1;
+- (id)externalURI;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
 - (void)updatePersistentObject;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (void)setAllDay:(bool)arg1;
 - (id)location;
 - (bool)isEditable;
@@ -181,8 +181,8 @@
 - (id)creationDate;
 - (id)action;
 - (void)setAction:(id)arg1;
-- (id)attachments;
 - (id)UUID;
+- (id)attachments;
 - (id)lastModifiedDate;
 - (void)setTitle:(id)arg1;
 - (id)title;

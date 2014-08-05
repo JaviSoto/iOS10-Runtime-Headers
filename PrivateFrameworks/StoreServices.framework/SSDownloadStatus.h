@@ -37,8 +37,8 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)setPaused:(bool)arg1;
-- (bool)isFailed;
 - (bool)isPaused;
+- (bool)isFailed;
 - (bool)isPausable;
 - (void)setPausable:(bool)arg1;
 - (void)setError:(id)arg1;

@@ -97,6 +97,8 @@
 + (id)iTunesSyncedFaceAlbumThumbnailsDirectory;
 + (bool)createSqliteErrorIndicatorFile;
 + (id)sqliteErrorIndicatorFilePath;
++ (bool)processWithID:(int)arg1 canWriteSandboxForPath:(id)arg2;
++ (bool)processWithID:(int)arg1 canReadSandboxForPath:(id)arg2;
 + (id)photoDataCPLDirectory;
 + (id)photoDataDirectoryURL;
 + (id)streamsLibraryUpdatingExpiredIndicatorFilePath;
@@ -115,11 +117,11 @@
 + (id)migrationIndicatorFilePath;
 + (void)postGlobalPhotoLibraryAvailableNotification;
 + (void)setLibraryAvailableIndicatorState:(bool)arg1;
-+ (bool)libraryAvailableIndicatorState;
 + (id)persistedAlbumDataDirectoryURL;
 + (id)mediaFilesDirectoryURL;
 + (id)iTunesSyncedAssetsDirectory;
 + (id)pathToAssetsToAlbumsMapping;
++ (bool)libraryAvailableIndicatorState;
 + (id)imageWriterIndicatorFilePath;
 + (id)takingPhotoIndicatorFilePath;
 + (id)takingVideoIndicatorFilePath;
@@ -129,6 +131,7 @@
 + (struct NSObject { Class x1; }*)savedPhotosAlbum;
 + (void)_doFilesystemImportIfNeeded;
 + (void)setApplicationIsWildcat:(bool)arg1;
++ (bool)photoLibraryIsObtainable;
 + (id)opportunisticTaskIsolationQueue;
 + (void)enqeueRecoveryJob:(id)arg1;
 + (id)crashRecoveryIndicatorFilePaths:(bool)arg1;
@@ -207,6 +210,7 @@
 - (void)addCompletionHandlerToCurrentTransaction:(id)arg1;
 - (void)performTransactionAndWait:(id)arg1 completionHandler:(id)arg2;
 - (void)performTransactionAndWait:(id)arg1;
+- (id)iTunesSyncedContentInfo;
 - (bool)hasITunesSyncedContent;
 - (void)deleteAllImages;
 - (void)deleteImages:(id)arg1;
@@ -273,6 +277,7 @@
 - (bool)_hasAtLeastOneItem:(bool)arg1;
 - (void)copyAssetToCameraRoll:(id)arg1;
 - (void)_releaseThumbnailManager;
+- (void)setManagedObjectContext:(id)arg1;
 - (void)loadDatabase:(const char *)arg1;
 - (id)initWithTransientContext:(bool)arg1 name:(const char *)arg2;
 - (struct NSObject { Class x1; }*)albumFromGroupURL:(id)arg1;
@@ -287,8 +292,8 @@
 - (id)photoStreamAlbums;
 - (void)cleanupForStoreDemoMode;
 - (bool)hasCompletedMomentAnalysis;
+- (id)incompleteRestoreProcesses;
 - (bool)hasCompletedRestorePostProcessing;
-- (void)setManagedObjectContext:(id)arg1;
 - (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
 - (unsigned long long)concurrencyType;
 - (void)performBlock:(id)arg1;

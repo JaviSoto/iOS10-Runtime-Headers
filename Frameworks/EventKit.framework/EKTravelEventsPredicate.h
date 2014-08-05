@@ -16,13 +16,16 @@
 
 - (void)setEndDate:(id)arg1;
 - (id)initWithCalendarIDs:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (id)defaultPropertiesToLoad;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;
 - (bool)evaluateWithObject:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)predicateFormat;
 
 @end

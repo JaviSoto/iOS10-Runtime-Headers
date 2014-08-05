@@ -15,12 +15,12 @@
 + (id)_setOfAllSources;
 + (id)allSources;
 
-- (void)removeAttachmentForURL:(id)arg1;
 - (void)setKeepRemovedAttachments:(bool)arg1;
 - (bool)keepRemovedAttachments;
 - (id)attachmentForURL:(id)arg1 includeRemoved:(bool)arg2;
 - (bool)setAttachment:(id)arg1 forURL:(id)arg2;
 - (id)attachmentForURL:(id)arg1;
+- (void)removeAttachmentForURL:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (id)description;

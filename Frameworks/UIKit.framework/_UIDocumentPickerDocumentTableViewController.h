@@ -22,7 +22,6 @@
 
 
 - (id)model;
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (void)setObservedURL:(id)arg1;
 - (id)observedURL;
@@ -42,6 +41,7 @@
 - (id)serviceViewController;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

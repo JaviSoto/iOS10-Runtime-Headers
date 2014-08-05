@@ -19,5 +19,6 @@
 - (id)actionView;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)prepareForReuse;
+- (void)setHighlighted:(bool)arg1;
 
 @end

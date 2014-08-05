@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSLock, NSString, NSProtocolChecker, NSSet, NSMutableDictionary, IMRemoteObject<IDSDaemonProtocol>, IDSDaemonListener, IMLocalObject, NSObject<OS_dispatch_queue>;
+@class NSString, NSProtocolChecker, NSSet, NSMutableDictionary, IMRemoteObject<IDSDaemonProtocol>, IDSDaemonListener, IMLocalObject, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_group>;
 
 @interface IDSDaemonController : NSObject <IDSDaemonProtocol> {
     id _delegate;
@@ -11,24 +11,18 @@
     IDSDaemonListener *_daemonListener;
     NSProtocolChecker *_protocol;
     NSString *_listenerID;
+    NSObject<OS_dispatch_queue> *_ivarQueue;
+    NSObject<OS_dispatch_group> *_daemonConnectedGroup;
+    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
     NSMutableDictionary *_listenerServices;
     NSSet *_services;
     NSSet *_cachedServices;
-    NSObject<OS_dispatch_queue> *_servicesLockQueue;
     NSMutableDictionary *_listenerCommands;
     NSSet *_commands;
     NSSet *_cachedCommands;
-    NSObject<OS_dispatch_queue> *_commandsLockQueue;
     NSMutableDictionary *_listenerCapabilities;
     unsigned int _cachedCapabilities;
     unsigned int _lastUpdateCaps;
-    NSObject<OS_dispatch_queue> *_capLockQueue;
-    NSLock *_connectionLock;
-    NSObject<OS_dispatch_queue> *_listenerLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteDaemonLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
-    NSObject<OS_dispatch_queue> *_localObjectLockQueue;
-    struct __CFRunLoopSource { } *_runLoopSource;
     bool_hasCheckedForDaemon;
     bool_preventReconnect;
     bool_acquiringDaemonConnection;
@@ -59,8 +53,7 @@
 - (void)sendXPCObject:(id)arg1 objectContext:(id)arg2;
 - (void)_agentDidLaunchNotification:(id)arg1;
 - (void)_noteSetupComplete;
-- (bool)_acquiringDaemonConnection;
-- (id)_remoteObject;
+- (void)blockUntilConnected;
 - (bool)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
 - (bool)removeListenerID:(id)arg1;
 - (bool)addListenerID:(id)arg1 services:(id)arg2;
@@ -69,11 +62,11 @@
 - (bool)_autoReconnect;
 - (bool)connectToDaemon;
 - (void)_disconnectFromDaemonWithForce:(bool)arg1;
-- (bool)__isRemoteObjectValidOnQueue:(id)arg1;
-- (bool)__isLocalObjectValidOnQueue:(id)arg1;
+- (void)_noteDisconnected;
 - (unsigned int)capabilitiesForListenerID:(id)arg1;
 - (id)commandsForListenerID:(id)arg1;
 - (id)servicesForListenerID:(id)arg1;
+- (void)_performBlock:(id)arg1;
 - (bool)addListenerID:(id)arg1 services:(id)arg2 commands:(id)arg3;
 - (void)_listenerSetUpdated;
 - (bool)setCommands:(id)arg1 forListenerID:(id)arg2;
@@ -92,6 +85,7 @@
 - (void)_remoteObjectCleanup;
 - (void)_localObjectCleanup;
 - (void)_setAutoReconnect:(bool)arg1;
+- (void)_performBlock:(id)arg1 wait:(bool)arg2;
 - (bool)_makeConnectionWithLaunch:(bool)arg1 completionBlock:(id)arg2;
 - (void)remoteObjectDiedNotification:(id)arg1;
 - (bool)remoteObjectExists;

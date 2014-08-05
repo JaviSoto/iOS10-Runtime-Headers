@@ -2,30 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
-@interface BSMachSendRight : NSObject <NSCopying, BSXPCCoding> {
-    unsigned int _sendRight;
+@interface BSMachSendRight : BSMachPort  {
 }
 
-@property unsigned int sendRight;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * debugDescription;
 
-+ (id)wrapSendRight:(unsigned int)arg1;
-+ (bool)portRightIsUsable:(unsigned int)arg1;
-
-- (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(bool)arg2;
 - (unsigned int)sendRight;
-- (void)setSendRight:(unsigned int)arg1;
-- (id)_initWithSendRight:(unsigned int)arg1 insertRight:(bool)arg2;
-- (id)initWithXPCDictionary:(id)arg1;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (void)invalidate;
-- (void)dealloc;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)isUsable;
 
 @end

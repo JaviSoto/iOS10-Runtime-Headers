@@ -64,9 +64,9 @@
 + (id)receiptPathForBundleAtPath:(id)arg1;
 
 - (id)parentalControls;
+- (id)dsid;
 - (id)downloadID;
 - (id)adamID;
-- (id)dsid;
 - (id)cancellationReason;
 - (id)organizationDisplayName;
 - (id)renewalDateString;

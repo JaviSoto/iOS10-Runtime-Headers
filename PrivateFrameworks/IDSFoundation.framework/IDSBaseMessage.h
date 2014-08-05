@@ -123,6 +123,7 @@
 - (bool)wantsBinaryPush;
 - (id)clientInfo;
 - (id)serviceData;
+- (bool)highPriority;
 - (void)setTimeoutRetries:(int)arg1;
 - (int)timeoutRetries;
 - (void)setForceCellular:(bool)arg1;
@@ -134,10 +135,10 @@
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setClientInfo:(id)arg1;
-- (bool)highPriority;
 - (void)setHighPriority:(bool)arg1;
 - (bool)wantsResponse;
 - (void)setWantsResponse:(bool)arg1;
+- (id)messageBody;
 - (void)setWantsBinaryPush:(bool)arg1;
 - (void)setWantsIntegerUniqueIDs:(bool)arg1;
 - (bool)_usingOutgoingPush;
@@ -195,7 +196,6 @@
 - (long long)command;
 - (id)context;
 - (void)setContext:(id)arg1;
-- (id)messageBody;
 - (void)setCreationDate:(id)arg1;
 - (id)creationDate;
 - (double)timeSent;

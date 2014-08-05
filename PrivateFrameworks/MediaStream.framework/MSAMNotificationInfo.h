@@ -28,13 +28,13 @@
 
 + (id)info;
 
-- (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
-- (struct __CFRunLoopSource { }*)runLoopSource;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (id)owner;
 - (void)setUserNotification:(struct __CFUserNotification { }*)arg1;
 - (struct __CFUserNotification { }*)userNotification;
+- (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
+- (struct __CFRunLoopSource { }*)runLoopSource;
 - (void)setOwner:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;

@@ -22,10 +22,10 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (struct SsrwOOStream { int (**x1)(); }*)stream;
 - (bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;
 - (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 stream:(struct SsrwOOStream { int (**x1)(); }*)arg3 streamID:(unsigned int)arg4;
 - (id)dataRep;
 - (bool)loadDelayedNode:(id)arg1;
+- (struct SsrwOOStream { int (**x1)(); }*)stream;
 
 @end

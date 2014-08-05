@@ -52,11 +52,11 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setSections:(id)arg1;
-- (id)_tableView;
 - (id)tableView;
 - (void)viewWillAppear:(bool)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)_tableView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

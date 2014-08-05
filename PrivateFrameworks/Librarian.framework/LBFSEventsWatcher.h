@@ -34,10 +34,10 @@
 - (id)updateHandler;
 - (void)setUpdateHandler:(id)arg1;
 - (id)url;
+- (void)stop;
 - (void)sendMessage:(id)arg1;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 - (void)enableUpdates;
 - (void)disableUpdates;
 

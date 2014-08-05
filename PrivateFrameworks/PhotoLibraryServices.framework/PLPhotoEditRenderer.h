@@ -13,6 +13,7 @@
     CIFilter *_smartToneFilter;
     CIFilter *_smartColorFilter;
     CIFilter *_smartBWFilter;
+    CIFilter *_faceBalanceFilter;
     CIFilter *_redEyeFilter;
     CIImage *_cachedEditedImage;
     PLPhotoEditModel *_photoEditModelInCachedEditedImage;
@@ -72,7 +73,9 @@
 - (struct CGSize { double x1; double x2; })outputImageSize;
 - (void)setSmartFiltersCubeSize:(long long)arg1;
 - (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
+- (struct CGImage { }*)newEditedImage;
 - (double)_smartBWBaseValueForKey:(id)arg1 defaultValue:(double)arg2;
+- (struct CGImage { }*)_newCGImageFromEditedCIImage:(id)arg1;
 - (id)_editedImage;
 - (id)_smartBWAdjustments;
 - (id)_smartColorAdjustments;

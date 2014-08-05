@@ -10,13 +10,17 @@
     unsigned char *_spec;
     PQLStatement *_next;
     bool_inUse;
+    bool_isTraced;
 }
+
+@property(readonly) bool isTraced;
 
 
 - (void)bindArguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg1;
 - (id)initWithStatement:(id)arg1 forDB:(id)arg2;
 - (id)translate:(id)arg1 hasInjections:(bool*)arg2 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg3;
 - (bool)_prepare:(const char *)arg1 withDB:(id)arg2;
+- (bool)isTraced;
 - (void)unbind;
 - (id)initWithFormat:(id)arg1 arguments:(struct __va_list_tag { unsigned int x1; unsigned int x2; void *x3; void *x4; }[1])arg2 db:(id)arg3 cache:(struct cache_s { }*)arg4;
 - (void)invalidate;

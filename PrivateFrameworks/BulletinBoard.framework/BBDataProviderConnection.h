@@ -31,6 +31,7 @@
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (void)invalidate;
+- (void)_invalidate;
 - (id)bundleID;
 - (void)dealloc;
 - (id)serviceName;

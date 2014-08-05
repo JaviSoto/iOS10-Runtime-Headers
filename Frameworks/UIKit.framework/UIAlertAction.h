@@ -6,13 +6,13 @@
    See Warning(s) below.
  */
 
-@class NSString, UIImage, <_UIAlertActionRepresenting>;
+@class <_UIAlertActionRepresenting>, NSString, UIAlertController, UIImage;
 
 @interface UIAlertAction : NSObject <NSCopying> {
+    NSString *_title;
     bool_enabled;
     bool_checked;
     bool__isDefault;
-    NSString *_title;
     long long _style;
 
   /* Unexpected information at end of encoded ivar type: ? */
@@ -32,6 +32,7 @@
 
     NSString *__descriptiveText;
     <_UIAlertActionRepresenting> *__representer;
+    UIAlertController *__alertController;
 }
 
 @property(copy) NSString * title;
@@ -44,6 +45,7 @@
 @property(setter=_setDescriptiveText:,copy) NSString * _descriptiveText;
 @property(setter=_setRepresenter:) <_UIAlertActionRepresenting> * _representer;
 @property(setter=_setIsDefault:) bool _isDefault;
+@property(setter=_setAlertController:) UIAlertController * _alertController;
 
 + (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(long long)arg4 handler:(id)arg5 shouldDismissHandler:(id)arg6;
 + (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 handler:(id)arg4 shouldDismissHandler:(id)arg5;
@@ -70,9 +72,11 @@
 - (void)_setIsDefault:(bool)arg1;
 - (void)_setChecked:(bool)arg1;
 - (void)_setDescriptiveText:(id)arg1;
+- (id)_alertController;
 - (id)simpleHandler;
 - (id)shouldDismissHandler;
 - (void)setShouldDismissHandler:(id)arg1;
 - (void)setSimpleHandler:(id)arg1;
+- (void)_setAlertController:(id)arg1;
 
 @end

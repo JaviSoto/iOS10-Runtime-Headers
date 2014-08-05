@@ -65,8 +65,8 @@
 - (void)setColorBlendFactor:(double)arg1;
 - (double)colorBlendFactor;
 - (id)nodeAtPoint:(struct CGPoint { double x1; double x2; })arg1 recursive:(bool)arg2;
-- (void)_initialize;
 - (id)fontColor;
+- (void)_initialize;
 - (id)text;
 - (double)fontSize;
 - (id)color;

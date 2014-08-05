@@ -39,6 +39,7 @@
 - (id)aliasServerIds;
 - (bool)isSharingThroughGroupId:(id)arg1;
 - (void)setICloudId:(id)arg1;
+- (void)addressBookDidChange;
 - (id)_prettyNameInternal;
 - (id)prettyName;
 - (void)setHashedDSID:(id)arg1;
@@ -48,19 +49,16 @@
 - (id)expiresByGroupId;
 - (void)setTrackingTimestamp:(id)arg1;
 - (void)set_prettyNameInternal:(id)arg1;
-- (void)_addressBookChanged:(id)arg1;
 - (id)serverId;
 - (void)setServerId:(id)arg1;
 - (id)recordId;
 - (void)setIdentifier:(id)arg1;
 - (id)identifier;
-- (id)init;
 - (id)debugDescription;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

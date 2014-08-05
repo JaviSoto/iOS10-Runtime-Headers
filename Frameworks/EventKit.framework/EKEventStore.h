@@ -71,10 +71,8 @@
 + (long long)authorizationStatusForEntityType:(unsigned long long)arg1;
 
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3;
-- (id)calendarItemsWithExternalIdentifier:(id)arg1;
-- (void)requestAccessToEntityType:(unsigned long long)arg1 completion:(id)arg2;
-- (bool)saveReminder:(id)arg1 commit:(bool)arg2 error:(id*)arg3;
 - (id)defaultCalendarForNewReminders;
+- (id)calendarItemsWithExternalIdentifier:(id)arg1;
 - (void)set_cachedValidatedEmails:(id)arg1;
 - (id)_cachedValidatedEmails;
 - (void)setDbChangedQueue:(id)arg1;
@@ -202,6 +200,7 @@
 - (id)defaultAllDayAlarmOffset;
 - (id)defaultTimedAlarmOffset;
 - (id)calendarsForEntityType:(unsigned long long)arg1;
+- (void)_waitOnSemaphore:(id)arg1;
 - (id)fetchEventsMatchingPredicate:(id)arg1 resultHandler:(id)arg2;
 - (void)_reregisterObject:(id)arg1 oldID:(id)arg2;
 - (void)_forgetRegisteredObjects;
@@ -227,6 +226,7 @@
 - (id)_calendarItemsMatchingPredicate:(id)arg1;
 - (id)calendarItemWithIdentifier:(id)arg1;
 - (bool)removeReminder:(id)arg1 commit:(bool)arg2 error:(id*)arg3;
+- (bool)saveReminder:(id)arg1 commit:(bool)arg2 error:(id*)arg3;
 - (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3 completion:(id)arg4;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
 - (void)_deleteObject:(id)arg1;
@@ -253,6 +253,7 @@
 - (void)set_defaultCalendarForNewReminders:(id)arg1;
 - (void)set_defaultCalendarForNewEvents:(id)arg1;
 - (void)_unregisterObject:(id)arg1;
+- (void)requestAccessToEntityType:(unsigned long long)arg1 completion:(id)arg2;
 - (void)_accessStatusChanged;
 - (void)_requestAccessForEntityType:(unsigned long long)arg1;
 - (id)initWithOptions:(unsigned int)arg1 path:(id)arg2;

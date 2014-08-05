@@ -13,10 +13,10 @@
 @property(readonly) NSURLRequest * urlRequest;
 
 
-- (id)urlRequest;
 - (void)setBusinessMetadata:(id)arg1;
 - (id)businessMetadata;
 - (void)handleData:(id)arg1;
+- (id)urlRequest;
 - (void)handleError:(id)arg1;
 - (id)url;
 - (void).cxx_destruct;

@@ -80,7 +80,6 @@
 - (void)populateLocationPropertiesWithPath:(id)arg1;
 - (id)chapters;
 - (unsigned long long)beatsPerMinute;
-- (id)effectiveAlbumArtist;
 - (bool)existsInLibrary;
 - (unsigned long long)rating;
 - (void)setRating:(unsigned long long)arg1;
@@ -119,6 +118,7 @@
 - (id)albumTitle;
 - (unsigned long long)albumArtistPersistentID;
 - (unsigned long long)albumPersistentID;
+- (id)effectiveAlbumArtist;
 - (id)_bestStoreURL;
 - (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
 - (bool)incrementPlayCountForStopTime:(double)arg1;
@@ -137,9 +137,9 @@
 - (id)_libraryLinkURL;
 - (id)_directStoreURL;
 - (id)representativeItem;
-- (id)screenshotArtworkCatalog;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
+- (id)screenshotArtworkCatalog;
 - (id)artworkCatalog;
 - (id)chapterOfType:(long long)arg1 atTime:(double)arg2;
 - (bool)isITunesU;

@@ -5,6 +5,8 @@
 @class NSObject<OS_dispatch_source>, NSMutableDictionary, NSOperationQueue, CKDGlobalConfigurationOperation, NSObject<OS_dispatch_queue>, CKDServerConfiguration;
 
 @interface CKDServerConfigurationManager : NSObject  {
+    bool_usesBackgroundSession;
+    bool_allowsCellularAccess;
     int _iCloudEnvNotifToken;
     NSObject<OS_dispatch_source> *_switchNotifSource;
     NSOperationQueue *_configurationQueue;
@@ -18,6 +20,8 @@
 }
 
 @property(retain) NSObject<OS_dispatch_source> * switchNotifSource;
+@property bool usesBackgroundSession;
+@property bool allowsCellularAccess;
 @property(retain) NSOperationQueue * configurationQueue;
 @property(retain) NSMutableDictionary * containerOperations;
 @property(retain) CKDServerConfiguration * globalConfiguration;
@@ -28,7 +32,9 @@
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property int iCloudEnvNotifToken;
 
-+ (id)sharedManager;
++ (id)sharedManagerUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2;
++ (void)expireConfigurationForContext:(id)arg1;
++ (void)expireGlobalConfiguration;
 
 - (void)setICloudEnvNotifToken:(int)arg1;
 - (int)iCloudEnvNotifToken;
@@ -38,6 +44,8 @@
 - (void)setContainerOperations:(id)arg1;
 - (id)containerOperations;
 - (void)setConfigurationQueue:(id)arg1;
+- (void)_expireConfigurationForContext:(id)arg1;
+- (void)_expireGlobalConfiguration;
 - (void)fetchContainerSpecificInfoForContext:(id)arg1 needUserID:(bool)arg2 completionHandler:(id)arg3;
 - (void)fetchGlobalConfigWithContext:(id)arg1 completionHandler:(id)arg2;
 - (id)globalConfiguration;
@@ -56,12 +64,14 @@
 - (void)containerScopedUserIDForContext:(id)arg1 completionHandler:(id)arg2;
 - (void)publicURLForServerType:(long long)arg1 context:(id)arg2 completionHandler:(id)arg3;
 - (void)configurationForContext:(id)arg1 completionHandler:(id)arg2;
-- (void)expireConfigurationForContext:(id)arg1;
-- (void)expireGlobalConfiguration;
+- (bool)usesBackgroundSession;
+- (void)setUsesBackgroundSession:(bool)arg1;
 - (void)setGlobalConfiguration:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (id)queue;
 - (id)init;
+- (void)setAllowsCellularAccess:(bool)arg1;
+- (bool)allowsCellularAccess;
 - (void)dealloc;
 - (void).cxx_destruct;
 

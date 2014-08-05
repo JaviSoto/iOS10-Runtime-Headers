@@ -82,5 +82,6 @@
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)dealloc;
 - (void)postNotification:(id)arg1;
+- (id)localAddress;
 
 @end

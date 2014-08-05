@@ -27,6 +27,7 @@
 
 + (id)currentDevice;
 
+- (id)udid;
 - (bool)isDevelopmentDevice;
 - (id)emitter;
 - (void)removeLockStatusObserver:(id)arg1;
@@ -42,12 +43,11 @@
 - (void)beginObservingKeyBagStatusWithCallback:(int (*)())arg1;
 - (void)setEmitter:(id)arg1;
 - (void)_initPlatform;
-- (id)udid;
 - (id)osVersion;
 - (id)userAgent;
-- (id)buildVersion;
 - (id)deviceName;
 - (id)init;
 - (void)dealloc;
+- (id)buildVersion;
 
 @end

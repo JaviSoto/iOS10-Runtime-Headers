@@ -208,9 +208,9 @@
 - (void)setCapabilities:(unsigned int)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setReason:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (unsigned int)reason;
 - (bool)isEqual:(id)arg1;

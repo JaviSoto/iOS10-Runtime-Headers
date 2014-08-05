@@ -21,8 +21,8 @@
 
 
 - (void)setPaused:(bool)arg1;
-- (double)timestamp;
 - (bool)isPaused;
+- (double)timestamp;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)display;

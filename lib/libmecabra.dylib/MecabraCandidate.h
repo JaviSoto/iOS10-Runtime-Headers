@@ -70,8 +70,8 @@
 - (id)dictionaryReading;
 - (id)surface;
 - (struct ConversionCandidate { int (**x1)(); long long x2; }*)rawConversionCandidate;
-- (unsigned short)matchType;
 - (unsigned long long)wordCount;
+- (unsigned short)matchType;
 - (unsigned short)kind;
 - (bool)isEmojiCandidate;
 - (bool)isExtensionCandidate;

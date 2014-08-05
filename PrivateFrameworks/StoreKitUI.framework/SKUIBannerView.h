@@ -43,9 +43,9 @@
 - (void)setItemState:(id)arg1;
 - (id)closeButton;
 - (id)_newDefaultLabel;
-- (void)setIconImage:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
+- (void)setIconImage:(id)arg1;
 - (void)setArtistName:(id)arg1;
 - (id)artistName;
 - (float)userRating;

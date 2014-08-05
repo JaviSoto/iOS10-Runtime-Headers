@@ -7,16 +7,15 @@
 
 + (id)deliveryHostName;
 + (id)emailAddressHostPart;
-+ (id)displayedAccountTypeString;
 + (bool)usernameIsEmailAddress;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (bool)isPredefinedAccountType;
 + (id)accountTypeString;
++ (id)displayedAccountTypeString;
 + (id)hostname;
 + (void)initialize;
 
 - (id)fromEmailAddresses;
-- (id)displayUsername;
 - (bool)derivesDeliveryAccountInfoFromMailAccount;
 - (void)setDeliveryAccount:(id)arg1;
 - (int)emptyFrequencyForMailboxType:(int)arg1;
@@ -28,6 +27,7 @@
 - (void)accountDidLoad;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (bool)supportsArchiving;
+- (id)displayUsername;
 - (id)emailAddresses;
 - (bool)isEnabledForDataclass:(id)arg1;
 - (void)setUsername:(id)arg1;

@@ -30,6 +30,7 @@
 @property unsigned long long numberOfThrottleAdviceObjectsToEmitLater;
 @property bool running;
 
++ (double)_throttlePeriodInSeconds;
 + (id)_throttleIdentifier;
 
 - (void)setThrottleQueue:(id)arg1;
@@ -57,10 +58,10 @@
 - (void)setAdviceBlock:(id)arg1;
 - (void)setRunning:(bool)arg1;
 - (bool)running;
+- (void)stop;
 - (id)init;
 - (void)start;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 
 @end

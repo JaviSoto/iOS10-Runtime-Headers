@@ -21,7 +21,6 @@
 @property(retain) NSMutableArray * accumulator;
 
 
-- (id)writer;
 - (void)setSubnodes:(id)arg1;
 - (id)allSubnodes;
 - (void)removeSubnode:(id)arg1;
@@ -30,6 +29,7 @@
 - (unsigned long long)accumulatorBufferSize;
 - (void)flushAccumulator;
 - (id)subnodes;
+- (id)writer;
 - (id)accumulator;
 - (int)minimumLevelOfNodeTree;
 - (void)addSubnode:(id)arg1;

@@ -41,9 +41,6 @@
 + (id)acuiAccountStore;
 + (bool)shouldPresentAsModalSheet;
 
-- (void)setCellsChecked:(bool)arg1;
-- (bool)shouldReloadSpecifiersOnResume;
-- (id)specifiers;
 - (void)setAccountChangeObserver:(id)arg1;
 - (void)setAccountOperationsHelper:(id)arg1;
 - (bool)isShowingActivityInProgressUI;
@@ -84,6 +81,9 @@
 - (void)cancelButtonTapped:(id)arg1;
 - (void)hideActivityInProgressUI;
 - (void)_preventSleepAndDimming:(bool)arg1;
+- (bool)shouldReloadSpecifiersOnResume;
+- (id)specifiers;
+- (void)setCellsChecked:(bool)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (id)accountStore;
 - (void)setAccountStore:(id)arg1;

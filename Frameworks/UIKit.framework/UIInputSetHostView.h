@@ -5,8 +5,10 @@
 @interface UIInputSetHostView : UIView  {
 }
 
++ (bool)_notifyOnExplicitLayout;
 + (bool)_retroactivelyRequiresConstraintBasedLayout;
 
+- (void)layoutIfNeeded;
 - (void)_resizeForKeyplaneSize:(struct CGSize { double x1; double x2; })arg1 splitWidthsChanged:(bool)arg2;
 - (int)_clipCornersOfView:(id)arg1;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

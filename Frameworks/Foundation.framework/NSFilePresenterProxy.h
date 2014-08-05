@@ -2,23 +2,28 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSFileWatcher;
+@class NSObject<OS_dispatch_queue>, NSFileWatcher, NSMutableArray;
 
 @interface NSFilePresenterProxy : NSFileReactorProxy  {
     NSObject<OS_dispatch_queue> *_queue;
     NSFileWatcher *_watcher;
     unsigned long long _writingRelinquishmentCount;
     id _currentWriterPurposeID;
+    NSMutableArray *_previousWriterPurposeIDs;
     bool_didObserveMovingByWriter;
     bool_didObserveVersionChangingByWriter;
     bool_disconnected;
+    bool_inSubarbiter;
 }
 
 @property(readonly) bool disconnected;
+@property bool inSubarbiter;
 
 + (id)urlWithItemURL:(id)arg1 subitemPath:(id)arg2;
 
 - (void)dealloc;
+- (void)setInSubarbiter:(bool)arg1;
+- (bool)inSubarbiter;
 - (bool)disconnected;
 - (void)observeVersionChangeOfKind:(id)arg1 withClientID:(id)arg2 name:(id)arg3 subitemPath:(id)arg4;
 - (void)observeDisappearanceAtSubitemPath:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSProtocolChecker, NSMutableDictionary, NSString, NSHashTable, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_group>;
+@class NSProtocolChecker, NSMutableDictionary, NSString, NSHashTable, NSObject<OS_dispatch_queue>;
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol> {
     NSObject<OS_dispatch_queue> *_ivarQueue;
@@ -11,9 +11,6 @@
     NSMutableDictionary *_topicToAccountDictionaries;
     NSMutableDictionary *_topicToEnabledAccounts;
     NSMutableDictionary *_accountToDevices;
-    NSObject<OS_dispatch_group> *_accountsLoadedGroup;
-    NSObject<OS_dispatch_group> *_enabledAccountsLoadedGroup;
-    NSObject<OS_dispatch_group> *_dependentDevicesLoadedGroup;
     bool_setupComplete;
     bool_postedSetupComplete;
     bool_hidingDisconnect;
@@ -28,9 +25,9 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)dependentDevicesForAccount:(id)arg1 blocking:(bool)arg2;
-- (id)enabledAccountsForService:(id)arg1 blocking:(bool)arg2;
-- (id)accountDictionariesForService:(id)arg1 blocking:(bool)arg2;
+- (id)dependentDevicesForAccount:(id)arg1;
+- (id)enabledAccountsForService:(id)arg1;
+- (id)accountDictionariesForService:(id)arg1;
 - (void)removeHandler:(id)arg1;
 - (void)addHandler:(id)arg1;
 - (bool)hasPostedSetupComplete;

@@ -26,6 +26,7 @@
 
 + (id)secureCodedPropertyKeys;
 
+- (bool)loginDisabled;
 - (void)setPlayerID:(id)arg1;
 - (id)playerID;
 - (id)passwordChangeURL;
@@ -35,7 +36,6 @@
 - (void)setPasswordChangeURL:(id)arg1;
 - (void)setPasswordChangeRequired:(bool)arg1;
 - (void)setLoginDisabled:(bool)arg1;
-- (bool)loginDisabled;
 - (id)authToken;
 - (void)setAuthToken:(id)arg1;
 - (void)setAccountName:(id)arg1;

@@ -21,11 +21,11 @@
 - (id)accountWithLoginID:(id)arg1 service:(id)arg2;
 - (id)enabledAccounts;
 - (id)_initWithService:(id)arg1 onIDSQueue:(bool)arg2;
+- (id)initWithService:(id)arg1;
 - (void)disableAccount:(id)arg1;
 - (void)enableAccount:(id)arg1;
 - (void)_removeAccount:(id)arg1;
 - (void)removeAccount:(id)arg1;
-- (id)initWithService:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)addAccount:(id)arg1;
 - (id)_internal;

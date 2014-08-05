@@ -202,16 +202,13 @@
 - (void)dismissHeadingCalibrationDisplay;
 - (long long)headingOrientation;
 - (void)setMatchInfoEnabled:(bool)arg1;
-- (double)distanceFilter;
 - (bool)isLocationServicesPreferencesDialogEnabled;
 - (double)desiredAccuracy;
 - (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
-- (void)setDistanceFilter:(double)arg1;
 - (void)setThrottledHeading:(id)arg1;
 - (double)headingUpdateTimeInterval;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (double)expectedGpsUpdateInterval;
-- (id)lastLocation;
 - (double)currentVehicleSpeed;
 - (double)currentVehicleHeading;
 - (bool)useCourseForHeading;
@@ -220,6 +217,9 @@
 - (void)setHeadingOrientation:(long long)arg1;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)stopHeadingUpdateWithObserver:(id)arg1;
+- (double)distanceFilter;
+- (void)setDistanceFilter:(double)arg1;
+- (id)lastLocation;
 - (void)setLastLocation:(id)arg1;
 - (bool)locationShiftEnabled;
 - (bool)hasLocation;

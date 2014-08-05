@@ -185,10 +185,10 @@
 - (void)showExternalURL:(id)arg1;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)setCanMoveToOverlay:(bool)arg1;
+- (void)setClientContext:(id)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)applicationWillEnterForeground;
 - (void)applicationDidEnterBackground;
-- (void)setLoading:(bool)arg1;
-- (void)setClientContext:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (id)authenticationContext;
 - (id)URLRequest;
@@ -197,7 +197,6 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)reload;
-- (void)didMoveToParentViewController:(id)arg1;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)invalidate;
@@ -217,6 +216,8 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)loadView;
+- (void)viewWillLayoutSubviews;
 
 @end

@@ -130,7 +130,6 @@
 - (Class)responseClass;
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
-- (id)origin;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
@@ -140,5 +139,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)setOrigin:(id)arg1;
+- (id)origin;
 
 @end

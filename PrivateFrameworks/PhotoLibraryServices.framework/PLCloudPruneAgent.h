@@ -15,8 +15,11 @@
 - (void)pruneFullSizeOlderThanOneMonth;
 - (void)pruneOriginalsOlderThanOneWeek;
 - (void)beginPruningResourcesOfType:(unsigned long long)arg1 importedBeforeDate:(id)arg2;
+- (void)beginPruningResourcesOfType:(unsigned long long)arg1 matchingPredicates:(id)arg2 inThisOrder:(id)arg3 startingAtOffset:(unsigned long long)arg4;
 - (void)beginPruningResourcesOfType:(unsigned long long)arg1 matchingPredicates:(id)arg2 inThisOrder:(id)arg3;
 - (id)defaultPruningOrder;
+- (bool)pruningEnabled;
+- (void)standardPruningKick:(id)arg1;
 - (unsigned long long)batchSize;
 - (void)appInForeground:(id)arg1;
 - (void)systemStarted:(id)arg1;

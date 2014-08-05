@@ -64,9 +64,9 @@
 - (void)setInternal:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (bool)isGameCenter;
-- (long long)environment;
 - (bool)isDownloading;
 - (bool)isInstalled;
+- (long long)environment;
 - (id)init;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -102,6 +102,6 @@
 - (id)imageSourceForiOSIconStyle:(long long)arg1;
 - (id)loadIconForStyle:(long long)arg1 withCompletionHandler:(id)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (void)presentStoreSheetFromViewController:(id)arg1 completionHandler:(id)arg2;
+- (void)presentStoreSheetFromViewController:(id)arg1 context:(id)arg2 completionHandler:(id)arg3;
 
 @end

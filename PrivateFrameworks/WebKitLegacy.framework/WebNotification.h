@@ -9,7 +9,6 @@
 }
 
 
-- (id)origin;
 - (id)body;
 - (id)lang;
 - (id)dir;
@@ -22,5 +21,6 @@
 - (id)title;
 - (id)tag;
 - (id)init;
+- (id)origin;
 
 @end

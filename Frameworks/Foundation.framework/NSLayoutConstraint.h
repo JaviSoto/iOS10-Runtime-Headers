@@ -43,6 +43,7 @@
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 constant:(double)arg6;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6;
 + (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 symbolicConstant:(id)arg7 theme:(id)arg8;
++ (void)_setLegacyDecodingOnly:(bool)arg1;
 + (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 views:(id)arg4;
 + (void)_addOrRemoveConstraints:(id)arg1 activate:(bool)arg2;
 + (id)_findCommonAncestorOfItem:(id)arg1 andItem:(id)arg2;
@@ -95,6 +96,8 @@
 - (double)_fudgeIncrement;
 - (bool)_isFudgeable;
 - (bool)_isIBPrototypingLayoutConstraint;
+- (bool)_loweredConstantNeedsUpdate;
+- (void)_setLoweredConstantNeedsUpdate:(bool)arg1;
 - (void)setSymbolicConstant:(id)arg1;
 - (void)_setSecondAttribute:(long long)arg1;
 - (void)_setSecondItem:(id)arg1;
@@ -151,10 +154,8 @@
 - (id)nsis_descriptionOfVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (double)multiplier;
-- (bool)_loweredConstantNeedsUpdate;
 - (bool)_loweredConstantIsRounded;
 - (bool)_nsib_isRedundant;
-- (void)_setLoweredConstantNeedsUpdate:(bool)arg1;
 - (void)_containerGeometryDidChange;
 - (bool)defaultResolvedValue:(double*)arg1 forSymbolicConstant:(id)arg2 error:(id*)arg3;
 - (void)_setEncodedConstant:(id)arg1;

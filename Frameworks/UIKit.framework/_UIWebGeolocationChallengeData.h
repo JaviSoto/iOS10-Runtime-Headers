@@ -17,8 +17,8 @@
 @property(retain) <WebAllowDenyPolicyListener> * listener;
 
 
-- (void)setToken:(id)arg1;
 - (id)token;
+- (void)setToken:(id)arg1;
 - (id)window;
 - (void)setListener:(id)arg1;
 - (id)listener;

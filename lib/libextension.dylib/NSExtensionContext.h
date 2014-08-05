@@ -59,15 +59,11 @@
 - (id)inputItems;
 - (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id)arg2;
 - (void)_loadItemForPayload:(id)arg1 completionHandler:(id)arg2;
-- (void)openURL:(id)arg1 completion:(id)arg2;
+- (void)openURL:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelRequestWithError:(id)arg1;
-- (void)completeRequestReturningItems:(id)arg1;
 - (void)didConnectToVendor:(id)arg1;
 - (bool)_isHost;
-- (void)openURL:(id)arg1 completionHandler:(id)arg2;
-- (void)completeRequestReturningItems:(id)arg1 expirationHandler:(id)arg2 completion:(id)arg3;
 - (void)_completeRequestReturningItemsSecondHalf:(id)arg1;
-- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id)arg2;
 - (id)initWithInputItems:(id)arg1;
 - (id)initWithInputItems:(id)arg1 contextUUID:(id)arg2;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
@@ -85,6 +81,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id)arg2;
 - (id)_auxiliaryConnection;
 - (void)_setRequestCleanUpBlock:(id)arg1;
 

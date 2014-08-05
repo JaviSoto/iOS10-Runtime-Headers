@@ -25,12 +25,12 @@
 + (long long)_errorCodeWithMMCSGetError:(id)arg1;
 + (long long)_commonErrorCodeWithMMCSError:(id)arg1;
 + (id)emptyFileSignature;
-+ (id)MMCSWrapperForApplicationBundleID:(id)arg1 path:(id)arg2 assetCachePath:(id)arg3 isUTAccount:(bool)arg4 error:(id*)arg5;
++ (id)MMCSWrapperForApplicationBundleID:(id)arg1 path:(id)arg2 assetDbPath:(id)arg3 assetDownloadPath:(id)arg4 isUTAccount:(bool)arg5 error:(id*)arg6;
 
 - (void)setMMCSEngineContext:(id)arg1;
 - (id)getSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
 - (id)putSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (void)unregisterItemID:(unsigned long long)arg1;
+- (void)unregisterItemIDs:(id)arg1;
 - (unsigned int)getMaxChunkCountForSection;
 - (id)_contextToGetSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
 - (id)_contextToPutSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;

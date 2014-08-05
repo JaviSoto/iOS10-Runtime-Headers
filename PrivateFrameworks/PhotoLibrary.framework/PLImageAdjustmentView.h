@@ -113,12 +113,12 @@
 - (void)setCropMode:(bool)arg1;
 - (void)beginAnimation:(double)arg1;
 - (void)_updateGestureRecognizers;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
-- (void)setRotationAngle:(double)arg1;
-- (double)rotationAngle;
 - (void)pan:(id)arg1;
 - (struct CGSize { double x1; double x2; })aspectRatio;
 - (void)setAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRotationAngle:(double)arg1;
+- (double)rotationAngle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)touch:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;

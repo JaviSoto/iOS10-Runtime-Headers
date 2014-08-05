@@ -45,10 +45,10 @@
 - (id)settings;
 - (id)url;
 - (void)pause;
+- (void)stop;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)finalize;
 - (void)dealloc;
-- (void)stop;
 
 @end

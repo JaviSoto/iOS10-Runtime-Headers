@@ -2,13 +2,14 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
+@class CIContext, CIVector, CIImage, NSNumber;
 
 @interface CIAreaHistogram : CIFilter  {
     CIImage *inputImage;
     CIVector *inputExtent;
     NSNumber *inputScale;
     NSNumber *inputCount;
+    CIContext *_context;
 }
 
 @property(retain) CIImage * inputImage;
@@ -29,6 +30,7 @@
 - (void)setInputExtent:(id)arg1;
 - (void)setInputScale:(id)arg1;
 - (void)setInputCount:(id)arg1;
+- (void)dealloc;
 - (id)outputData;
 
 @end

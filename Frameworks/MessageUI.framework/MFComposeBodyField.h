@@ -36,6 +36,7 @@
 
 + (void)addAdditionalItemsToCalloutBar;
 
+- (void)setLoading:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (id)htmlString;
 - (void)htmlString:(id*)arg1 otherHtmlStringsAndAttachments:(id*)arg2 charsets:(id*)arg3;
@@ -57,6 +58,7 @@
 - (void)unscaleImages;
 - (void)scaleImagesToScale:(unsigned long long)arg1;
 - (void)setLayoutInterval:(int)arg1;
+- (void)setCaretPosition:(unsigned long long)arg1;
 - (id)mailComposeViewDelegate;
 - (void)_removeInlineAttachment:(id)arg1;
 - (id)_addInlineAttachmentWithData:(id)arg1 text:(id)arg2 type:(id)arg3 contentID:(id)arg4;
@@ -79,6 +81,7 @@
 - (void)appendMarkupString:(id)arg1 quote:(bool)arg2;
 - (void)prependMarkupString:(id)arg1 quote:(bool)arg2 baseURL:(id)arg3 emptyFirst:(bool)arg4;
 - (void)addMarkupString:(id)arg1 quote:(bool)arg2 baseURL:(id)arg3 emptyFirst:(bool)arg4 prepended:(bool)arg5;
+- (void)_ensureQuotedImagesHaveAttachmentStyleForElement:(id)arg1;
 - (void)_nts_AddDOMNode:(id)arg1 quote:(bool)arg2 baseURL:(id)arg3 emptyFirst:(bool)arg4 prepended:(bool)arg5;
 - (void)setMarkupString:(id)arg1 baseURL:(id)arg2 quote:(bool)arg3;
 - (void)setMarkupString:(id)arg1;
@@ -94,7 +97,6 @@
 - (bool)shouldShowStandardButtons;
 - (void)changeQuoteLevel:(long long)arg1;
 - (void)setShouldShowStandardButtons:(bool)arg1;
-- (void)setLoading:(bool)arg1;
 - (bool)isDirty;
 - (bool)becomeFirstResponder;
 - (void)_webthread_webView:(id)arg1 tileDidDraw:(id)arg2;

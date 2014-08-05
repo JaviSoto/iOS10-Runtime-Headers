@@ -2,23 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLUIController, UIWindow, NSMutableDictionary, NSDictionary, NSMutableSet, BLActivityAlert;
+@class UIWindow, NSString, PLUIController, NSDictionary, BLActivityAlert;
 
-@interface PLPhotosApplication : UIApplication <UIApplicationDelegate, PLPublishingAgentDelegate> {
+@interface PLPhotosApplication : UIApplication <UIApplicationDelegate> {
     PLUIController *_uiController;
-    int _delaySuspendCount;
     bool_receivingRemoteControlEvents;
-    bool_wantsToSuspend;
-    unsigned long long _backgroundTaskIdentifier;
-    bool_isRemaking;
-    bool_cameraCancelledRemaking;
     UIWindow *_window;
-    NSMutableSet *_publishingAgents;
-    NSMutableDictionary *_publishingAgentsByMediaItem;
-    int _enableNetworkingFlagsCount;
-    bool_inactiveUnderTaskSwitcher;
     bool_urlNeedsHandling;
-    bool_shouldCancelPublishAfterRemaking;
     int _observeForRechabilityChanges;
     bool_isReachable;
     bool_isOnWifi;
@@ -46,8 +36,6 @@
 + (void)initialize;
 
 - (void)_applicationDidResignActive:(id)arg1;
-- (bool)isCameraApp;
-- (void)setDelaySuspend:(bool)arg1;
 - (void)setIPhotoMigrationActivityAlert:(id)arg1;
 - (id)iPhotoMigrationActivityAlert;
 - (void)setCurrentTestOptions:(id)arg1;
@@ -57,44 +45,26 @@
 - (bool)isReachable;
 - (void)_updateNetworkActivityIndicatorAsync;
 - (bool)visitViewControllersWithBlock:(id)arg1;
-- (id)publishingAgentForMediaItem:(id)arg1;
 - (void)photosPreferencesChanged;
 - (bool)useCompatibleSuspensionAnimation;
 - (void)_finishExtendedTest;
-- (void)publishingAgentDidEndPublishing:(id)arg1 error:(id)arg2;
 - (void)presentInternalSettingsController;
-- (void)cleanStateAfterPublishForAgent:(id)arg1;
-- (void)addPublishingAgent:(id)arg1;
-- (void)setEnableNetworkingFlags:(bool)arg1;
 - (void)_unregisterForPhotoStreamActivityNotifications;
 - (void)_updateSuspensionSettings;
-- (void)_clearPublishingSheetResponders;
 - (id)currentUIConfiguration;
 - (void)_updateSharedPhotoStreamProgressDisplay;
 - (void)_updatePhotoStreamProgressDisplay;
 - (void)_statusBarDoubleTap:(id)arg1;
 - (void)sharedFinishedLaunching:(bool)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
-- (void)_showAlertForInterruptionDuringRemaking;
 - (id)mainWindow;
 - (void)_setImageOptions;
-- (void)_cleanUpPendingRemakingAndPublishIfNeeded;
-- (void)_cancelPublish;
-- (void)_discardMediaFilesForPublishingAgentsIfNeeded;
 - (void*)getSharedAddressBook;
-- (void)publishingAgentDidEndRemaking:(id)arg1 didSucceed:(bool)arg2;
-- (void)publishingAgentDidStartRemaking:(id)arg1;
-- (void)publishingAgentWillBeDisplayed:(id)arg1;
-- (void)publishingAgentDidBeginPublishing:(id)arg1;
-- (void)publishingAgentDoneButtonClicked:(id)arg1;
-- (void)publishingAgentCancelButtonClicked:(id)arg1;
 - (bool)isOnWifi;
 - (void)disableNetworkObservation;
 - (void)enableNetworkObservation;
-- (void)setIsRemaking:(bool)arg1;
 - (bool)shouldAllowSBAlertSupression;
 - (void)setReceivingRemoteControlEvents:(bool)arg1;
-- (void)_cancelRemaking;
 - (void)_stopObservingReachabilityChanges;
 - (void)_startObservingReachabilityChanges;
 - (void)_networkReachabilityDidChange:(id)arg1;
@@ -102,8 +72,6 @@
 - (void)dealloc;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (id)rootViewController;
-- (bool)applicationSuspendWithSettings:(id)arg1;
-- (id)_extendLaunchTest;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 

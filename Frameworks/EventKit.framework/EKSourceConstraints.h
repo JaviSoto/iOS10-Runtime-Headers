@@ -51,11 +51,13 @@
         unsigned int supportsPrivateEvents : 1; 
         unsigned int prohibitsPrivateEventsWithAttendees : 1; 
         unsigned int supportsAvailabilityRequests : 1; 
+        unsigned int supportsIgnoringEventsInAvailabilityRequests : 1; 
         unsigned int supportsLocationDirectorySearches : 1; 
         unsigned int requiresSamePrivacyLevelAcrossRecurrenceSeries : 1; 
         unsigned int prohibitsMultipleMonthsInYearlyRecurrence : 1; 
         unsigned int prohibitsMultipleDaysInMonthlyRecurrence : 1; 
         unsigned int prohibitsYearlyRecurrenceInterval : 1; 
+        unsigned int prohibitsDetachmentOnCommentChange : 1; 
     } _flags;
 }
 
@@ -104,22 +106,25 @@
 @property bool prohibitsPrivateEventsWithAttendees;
 @property bool requiresSamePrivacyLevelAcrossRecurrenceSeries;
 @property bool supportsAvailabilityRequests;
+@property bool supportsIgnoringEventsInAvailabilityRequests;
 @property bool supportsLocationDirectorySearches;
 @property bool recurrenceSeriesMustIncludeMoreThanFirstOccurrence;
 @property bool prohibitsMultipleMonthsInYearlyRecurrence;
 @property bool prohibitsMultipleDaysInMonthlyRecurrence;
 @property bool prohibitsYearlyRecurrenceInterval;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; } flags;
+@property bool prohibitsDetachmentOnCommentChange;
+@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; } flags;
 
 
-- (bool)isFacebook;
 - (void)setMaxRecurrencesAllowed:(int)arg1;
 - (void)setMaxAlarmsAllowed:(int)arg1;
+- (void)setProhibitsDetachmentOnCommentChange:(bool)arg1;
 - (void)setProhibitsYearlyRecurrenceInterval:(bool)arg1;
 - (void)setProhibitsMultipleDaysInMonthlyRecurrence:(bool)arg1;
 - (void)setProhibitsMultipleMonthsInYearlyRecurrence:(bool)arg1;
 - (void)setRequiresSamePrivacyLevelAcrossRecurrenceSeries:(bool)arg1;
 - (void)setSupportsLocationDirectorySearches:(bool)arg1;
+- (void)setSupportsIgnoringEventsInAvailabilityRequests:(bool)arg1;
 - (void)setSupportsAvailabilityRequests:(bool)arg1;
 - (void)setProhibitsPrivateEventsWithAttendees:(bool)arg1;
 - (void)setSupportsPrivateEvents:(bool)arg1;
@@ -164,12 +169,14 @@
 - (void)setSupportsAlarmTriggerDates:(bool)arg1;
 - (void)setSupportsAlarmTriggerIntervals:(bool)arg1;
 - (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned long long)arg3;
+- (bool)isFacebook;
 - (bool)snoozeAlarmRequiresDetach;
 - (bool)supportsAllDayDueDates;
 - (bool)requiresAttendeeSearchInSingleAccount;
 - (bool)inviteesCanSeeAttendeeStatuses;
 - (bool)organizerCanSeeAttendeeStatuses;
 - (bool)supportsResponseComments;
+- (bool)prohibitsDetachmentOnCommentChange;
 - (bool)prohibitsYearlyRecurrenceInterval;
 - (bool)prohibitsMultipleDaysInMonthlyRecurrence;
 - (bool)prohibitsMultipleMonthsInYearlyRecurrence;
@@ -198,6 +205,7 @@
 - (bool)requiresMSFormattedUID;
 - (bool)requiresSamePrivacyLevelAcrossRecurrenceSeries;
 - (bool)supportsLocationDirectorySearches;
+- (bool)supportsIgnoringEventsInAvailabilityRequests;
 - (bool)supportsAvailabilityRequests;
 - (bool)prohibitsPrivateEventsWithAttendees;
 - (bool)supportsPrivateEvents;
@@ -213,8 +221,8 @@
 - (bool)supportsOutgoingInvitations;
 - (bool)supportsInvitationModifications;
 - (bool)supportsIncomingInvitations;
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; })arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; })arg1;
 - (id)init;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; })flags;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; })flags;
 
 @end

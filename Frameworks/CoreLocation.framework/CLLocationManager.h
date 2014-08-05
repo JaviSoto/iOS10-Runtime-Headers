@@ -36,9 +36,9 @@
 @property(getter=isDynamicAccuracyReductionEnabled) bool dynamicAccuracyReductionEnabled;
 
 + (bool)isRangingAvailable;
++ (bool)mapCorrectionAvailable;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (int)authorizationStatusForBundle:(id)arg1;
-+ (bool)mapCorrectionAvailable;
 + (void)setEntityAuthorization:(unsigned long long)arg1 forLocationDictionary:(id)arg2;
 + (void)setEntityAuthorized:(bool)arg1 forLocationDictionary:(id)arg2;
 + (unsigned long long)allowableAuthorizationForLocationDictionary:(id)arg1;
@@ -79,18 +79,15 @@
 + (int)authorizationStatus;
 + (id)sharedManager;
 
-- (void)requestAlwaysAuthorization;
 - (void)setDynamicAccuracyReductionEnabled:(bool)arg1;
 - (struct __CLClient { }*)internalClient;
 - (bool)locationServicesApproved;
 - (void)setHeadingFilter:(double)arg1;
 - (void)startUpdatingLocationWithPrompt;
-- (id)purpose;
 - (void)dismissHeadingCalibrationDisplay;
 - (int)headingOrientation;
 - (void)setMatchInfoEnabled:(bool)arg1;
 - (bool)isMatchInfoEnabled;
-- (double)distanceFilter;
 - (bool)isLocationServicesPreferencesDialogEnabled;
 - (double)desiredAccuracy;
 - (void)stopUpdatingVehicleHeading;
@@ -98,14 +95,16 @@
 - (void)stopUpdatingVehicleSpeed;
 - (void)startUpdatingVehicleSpeed;
 - (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
-- (void)setDistanceFilter:(double)arg1;
-- (id)initWithEffectiveBundle:(id)arg1;
 - (double)expectedGpsUpdateInterval;
 - (void)setHeadingOrientation:(int)arg1;
+- (id)purpose;
+- (double)distanceFilter;
 - (void)stopMonitoringSignificantLocationChanges;
+- (void)setDistanceFilter:(double)arg1;
 - (void)startMonitoringSignificantLocationChanges;
 - (void)stopMonitoringForRegion:(id)arg1;
 - (id)monitoredRegions;
+- (id)initWithEffectiveBundle:(id)arg1;
 - (void)setPurpose:(id)arg1;
 - (void)stopMonitoringVisits;
 - (void)startMonitoringVisits;
@@ -113,6 +112,7 @@
 - (bool)isDynamicAccuracyReductionEnabled;
 - (void)setPersistentMonitoringEnabled:(bool)arg1;
 - (bool)isPersistentMonitoringEnabled;
+- (void)requestAlwaysAuthorization;
 - (id)technologiesInUse;
 - (id)appsUsingLocationWithDetails;
 - (id)appsUsingLocation;
@@ -130,6 +130,7 @@
 - (void)historicLocationsFromDate:(id)arg1 forInterval:(double)arg2;
 - (void)disallowDeferredLocationUpdates;
 - (void)allowDeferredLocationUpdatesUntilTraveled:(double)arg1 timeout:(double)arg2;
+- (void)markAsHavingReceivedLocation;
 - (bool)privateMode;
 - (void)setPrivateMode:(bool)arg1;
 - (double)bestAccuracy;

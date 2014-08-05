@@ -22,14 +22,14 @@
 @property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } maskInsets;
 
 
+- (id)overlayImage;
+- (id)maskImage;
 - (void)setMaskInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })maskInsets;
 - (void)setOverlayImage:(id)arg1;
 - (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
 - (double)scaleForInput:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForInput:(id)arg1;
-- (id)overlayImage;
-- (id)maskImage;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setMaskImage:(id)arg1;

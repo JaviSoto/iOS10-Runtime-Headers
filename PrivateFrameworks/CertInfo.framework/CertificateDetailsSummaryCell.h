@@ -11,8 +11,8 @@
 @property(retain) NSArray * details;
 
 
-- (id)verifiedFont;
-- (void)_createViewWithDetails:(id)arg1;
+- (void)setDetailsWithCertificateTrust:(struct __SecTrust { }*)arg1 certificateExpiration:(id)arg2 certificateIsTrusted:(bool)arg3;
+- (void)setCertificateTrust:(struct __SecTrust { }*)arg1 certificateExpiration:(id)arg2 certificateIsTrusted:(bool)arg3;
 - (void)setDetails:(id)arg1;
 - (id)details;
 - (void).cxx_destruct;

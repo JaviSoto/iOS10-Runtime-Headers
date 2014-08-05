@@ -51,14 +51,10 @@
 @property(copy) NSArray * propertiesToGroupBy;
 @property(retain) NSPredicate * havingPredicate;
 
-+ (id)_newDenormalizedFetchProperties:(id)arg1;
-+ (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2;
 + (id)fetchRequestWithEntityName:(id)arg1;
 + (void)initialize;
 + (bool)accessInstanceVariablesDirectly;
 
-- (id)_newNormalizedFetchProperties:(id)arg1;
-- (id)encodeForXPC;
 - (id)stores;
 - (void)_incrementInUseCounter;
 - (void)_resolveEntityWithContext:(id)arg1;

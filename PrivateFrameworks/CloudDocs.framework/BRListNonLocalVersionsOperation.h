@@ -41,7 +41,6 @@
 - (id)fetchingVersionsDoneBlock;
 - (bool)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;
 - (bool)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
-- (void)setFetchingVersionsDoneBlock:(id)arg1;
 - (bool)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (bool)__finishIfCancelled;
 - (void)_senderInvalidate;
@@ -54,6 +53,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)versions;
+- (void)setFetchingVersionsDoneBlock:(id)arg1;
 - (id)initWithDocumentURL:(id)arg1;
 - (bool)isConcurrent;
 - (bool)isExecuting;

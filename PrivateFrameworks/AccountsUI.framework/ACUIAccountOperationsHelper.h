@@ -17,9 +17,9 @@
 @property bool isSavingAccount;
 
 
+- (void)removeAccount:(id)arg1;
 - (bool)isSavingAccount;
 - (bool)isRemovingAccount;
-- (void)removeAccount:(id)arg1;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2;
 - (void)saveAccount:(id)arg1;
 - (void)setIsRemovingAccount:(bool)arg1;

@@ -50,6 +50,7 @@
 + (bool)isCameraDeviceAvailable:(long long)arg1;
 + (bool)_isMediaTypeAvailable:(id)arg1 forSource:(long long)arg2;
 + (bool)isSourceTypeAvailable:(long long)arg1;
++ (id)aaui_fixedCropRect:(id)arg1 forOriginalImage:(id)arg2;
 
 - (long long)sourceType;
 - (id)init;

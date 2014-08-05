@@ -117,6 +117,7 @@
 - (id)frontFieldBuckets;
 - (id)embeddedBeacons;
 - (id)embeddedLocations;
+- (bool)hasLocationRelevancyInfo;
 - (id)relevantDate;
 - (void)setGroupingID:(id)arg1;
 - (id)_groupingIDFromPassDictionary:(id)arg1;
@@ -144,9 +145,9 @@
 - (id)frontFaceImage;
 - (id)partialFrontFaceImage;
 - (bool)supportsSharing;
-- (id)serialNumber;
-- (id)organizationName;
 - (id)sharingURL;
+- (id)organizationName;
+- (id)serialNumber;
 - (void)setExpirationDate:(id)arg1;
 - (id)expirationDate;
 - (id)initWithData:(id)arg1 error:(id*)arg2;

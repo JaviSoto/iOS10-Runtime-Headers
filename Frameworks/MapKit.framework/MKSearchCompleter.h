@@ -38,7 +38,6 @@
 
 + (id)alloc;
 
-- (bool)isSearching;
 - (void)setTimeSinceLastInBoundingRegion:(double)arg1;
 - (double)timeSinceLastInBoundingRegion;
 - (long long)listType;
@@ -46,6 +45,7 @@
 - (void)setBoundingRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRegion;
 - (bool)resultsAreCurrent;
+- (bool)isSearching;
 - (void)setEntriesType:(long long)arg1;
 - (void)setListType:(long long)arg1;
 - (id)deviceLocation;

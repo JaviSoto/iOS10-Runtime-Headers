@@ -22,6 +22,7 @@
 
 
 - (id)_selectedViewController;
+- (void)replaceViewController:(id)arg1 withViewController:(id)arg2;
 - (double)_overlaySpacingForOrientation:(long long)arg1;
 - (long long)_indexOfViewControllerForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_viewControllerForPoint:(struct CGPoint { double x1; double x2; })arg1;

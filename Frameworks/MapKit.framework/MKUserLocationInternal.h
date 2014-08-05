@@ -39,12 +39,12 @@
 - (void)setCourse:(double)arg1;
 - (void)setUpdating:(bool)arg1;
 - (id)location;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (id)heading;
 - (double)course;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)setTimestamp:(double)arg1;
 - (void)setLocation:(id)arg1;
 - (void).cxx_destruct;
 - (id)annotation;

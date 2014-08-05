@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIAlertController, _UIAlertControllerShimPresenter, NSMutableArray, UIViewController;
+@class _UIWeakRef, NSString, UIAlertController, _UIAlertControllerShimPresenter, NSMutableArray, UIViewController;
 
 @interface UIAlertView : UIView  {
     UIAlertController *_alertController;
@@ -11,16 +11,19 @@
     long long _cancelIndex;
     long long _defaultButtonIndex;
     long long _firstOtherButtonIndex;
+    NSString *_message;
+    NSString *_subtitle;
     long long _alertViewStyle;
     bool_runsModal;
-    id _delegate;
     id _context;
     bool_hasPreparedAlertActions;
     bool_isPresented;
     bool_alertControllerShouldDismiss;
+    bool_handlingAlertActionShouldDismiss;
     bool_dismissingAlertController;
     bool__currentlyRunningModal;
     UIViewController *externalViewControllerForPresentation;
+    _UIWeakRef *_weakDelegate;
 }
 
 @property id delegate;
@@ -35,6 +38,7 @@
 @property bool showsOverSpringBoardAlerts;
 @property(getter=_externalViewControllerForPresentation,setter=_setExternalViewControllerForPresentation:,retain) UIViewController * externalViewControllerForPresentation;
 @property(setter=_setCurrentlyRunningModal:) bool _currentlyRunningModal;
+@property(retain) _UIWeakRef * weakDelegate;
 
 + (id)_remoteAlertViewWithBlock:(id)arg1;
 + (id)_alertViewForSessionWithRemoteViewController:(id)arg1;
@@ -119,7 +123,6 @@
 - (void)popupAlertAnimated:(bool)arg1 atOffset:(double)arg2;
 - (bool)groupsTextFields;
 - (void)setGroupsTextFields:(bool)arg1;
-- (void)_setTextFieldsHidden:(bool)arg1;
 - (int)buttonCount;
 - (id)buttonTitleAtIndex:(long long)arg1;
 - (id)_buttonAtIndex:(long long)arg1;
@@ -137,6 +140,7 @@
 - (void)setTaglineText:(id)arg1;
 - (id)bodyText;
 - (void)setBodyText:(id)arg1;
+- (void)_changeButtonTitleAtIndex:(long long)arg1 toTitle:(id)arg2;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
@@ -154,17 +158,23 @@
 - (int)textFieldCount;
 - (long long)alertViewStyle;
 - (long long)numberOfButtons;
-- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
 - (bool)_currentlyRunningModal;
 - (void)_setCurrentlyRunningModal:(bool)arg1;
 - (bool)runsModal;
 - (void)_prepareAlertActions;
+- (void)_performPresentationDismissalWithClickedButtonIndex:(long long)arg1 animated:(bool)arg2;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (id)_alertController;
-- (bool)_dismissForTappedIndex:(long long)arg1;
+- (id)weakDelegate;
+- (void)setWeakDelegate:(id)arg1;
+- (void)_updateMessageAndSubtitle;
+- (id)_preparedAlertActionAtIndex:(unsigned long long)arg1;
+- (bool)_prepareToDismissForTappedIndex:(long long)arg1;
+- (void)_dismissForTappedIndex:(long long)arg1;
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;
+- (void)_setTextFieldsHidden:(bool)arg1;
 - (void)dismissAnimated:(bool)arg1;
 - (void)dismiss;
 - (id)keyboard;

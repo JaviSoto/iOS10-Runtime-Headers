@@ -38,8 +38,6 @@
 - (void)setPassword:(id)arg1;
 - (id)oauthToken;
 - (id)oauthTokenSecret;
-- (void)setToken:(id)arg1;
-- (id)token;
 - (void)setEmpty:(bool)arg1;
 - (void)setTokenExpiryDate:(id)arg1;
 - (id)tokenExpiryDate;
@@ -64,13 +62,15 @@
 - (void)setOauthRefreshToken:(id)arg1;
 - (void)setOauthToken:(id)arg1;
 - (id)credentialItems;
-- (id)dirtyProperties;
 - (void)setCredentialType:(id)arg1;
+- (id)dirtyProperties;
 - (id)credentialType;
 - (void)_markPropertyDirty:(id)arg1;
 - (void)_setOwningAccount:(id)arg1;
 - (void)_clearDirtyProperties;
 - (bool)isDirty;
+- (id)token;
+- (void)setToken:(id)arg1;
 - (id)init;
 - (void)setDirty:(bool)arg1;
 - (id)password;

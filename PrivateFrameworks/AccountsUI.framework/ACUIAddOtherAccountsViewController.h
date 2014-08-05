@@ -13,11 +13,11 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)specifiers;
 - (id)_viewProvidersManager;
 - (id)_specifiersForOtherCalendarAccounts;
 - (id)_specifiersForOtherContactsAccounts;
 - (id)_specifiersForOtherMailAccounts;
 - (void)setupViewControllerDidDismiss:(id)arg1;
+- (id)specifiers;
 
 @end

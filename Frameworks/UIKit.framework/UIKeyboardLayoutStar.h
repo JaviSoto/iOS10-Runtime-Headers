@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIKBBackgroundView, UISwipeGestureRecognizer, UIKeyboardKeyplaneTransition, UIKeyboardSplitTransitionView, UIView, NSString, UIKBRenderConfig, UIKBTree, UIDelayedAction, NSMutableSet, UIKBKeyplaneView, NSTimer, CADisplayLink;
+@class NSMutableDictionary, UIKBBackgroundView, UISwipeGestureRecognizer, UIKeyboardKeyplaneTransition, UIKeyboardSplitTransitionView, UIView, NSString, UIKBRenderConfig, UIKBTree, UIDelayedAction, NSMutableSet, UIKBKeyplaneView, NSTimer, CADisplayLink, _UIKeyboardTypingSpeedLogger;
 
 @interface UIKeyboardLayoutStar : UIKeyboardLayout  {
     UIKBTree *_keyboard;
@@ -66,6 +66,7 @@
     bool_isRebuilding;
     long long _initialBias;
     bool_edgeSwipeDetected;
+    bool_edgeSwipeInhibited;
     double _initialEdgeTranslation;
     double _edgeSwipeProgress;
     double _edgeSwipeVelocity;
@@ -84,6 +85,7 @@
     bool_keyboardImageViewIsDim;
     bool_isOutOfBounds;
     NSMutableSet *_keysUnderIndicator;
+    _UIKeyboardTypingSpeedLogger *_typingSpeedLogger;
     int playKeyClickSoundOn;
     UIKBRenderConfig *_renderConfig;
 }
@@ -155,6 +157,7 @@
 - (void)upActionShift;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2;
 - (void)continueFromInternationalActionForTouchUp:(id)arg1 withActions:(long long)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(bool)arg5 prevActions:(long long)arg6 executionContext:(id)arg7;
+- (bool)shouldYieldToControlCenterForFlickWithInitialPoint:(struct CGPoint { double x1; double x2; })arg1 finalPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)completeSendStringActionForTouchUp:(id)arg1 withActions:(long long)arg2 timestamp:(double)arg3 interval:(double)arg4 didLongPress:(bool)arg5 prevActions:(long long)arg6 executionContext:(id)arg7;
 - (id)flickStringForInputKey:(id)arg1 direction:(int)arg2;
 - (bool)shouldSendStringForFlick:(id)arg1;
@@ -202,8 +205,8 @@
 - (void)prepareForSplitTransition;
 - (void)rebuildKeyplaneTransitionWithTargetBias:(long long)arg1;
 - (long long)currentKeyboardBias;
-- (void)finishHandBiasTransition;
 - (id)keyboardLayoutWithBias:(long long)arg1;
+- (void)finishHandBiasTransition;
 - (long long)biasForKeyboard:(id)arg1;
 - (void)setKeyboardDim:(bool)arg1 amount:(double)arg2 withDuration:(double)arg3;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
@@ -321,11 +324,12 @@
 - (void)didClearInput;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
 - (bool)usesAutoShift;
+- (void)setTextEditingTraits:(id)arg1;
+- (unsigned long long)textEditingKeyMask;
 - (void)restoreDefaultsForKey:(id)arg1;
 - (void)updateKeyCentroids;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
-- (void)setTextEditingTraits:(id)arg1;
 - (void)_resizeForKeyplaneSize:(struct CGSize { double x1; double x2; })arg1 splitWidthsChanged:(bool)arg2;
 - (void)fadeWithInvocation:(id)arg1;
 - (void)setAutoshift:(bool)arg1;

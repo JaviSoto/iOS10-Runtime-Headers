@@ -129,6 +129,7 @@
 - (void)markLatestSyncRequestFailed;
 - (void)prepareForSyncUp;
 - (void)markNeedsUploadOrSyncingUpWithAliasTarget:(id)arg1;
+- (void)markOverQuotaWithError:(id)arg1;
 - (void)markForceNeedsSyncUp;
 - (void)appDidResolveConflictLoserWithEtag:(id)arg1;
 - (bool)changedAtRelativePath:(id)arg1 scanPackage:(bool)arg2;
@@ -180,6 +181,7 @@
 - (bool)saveToDBForServerEdit:(bool)arg1;
 - (void)markLostWhenReplacedByItem:(id)arg1;
 - (id)initWithLocalItem:(id)arg1;
+- (void)refreshLosersListIfNeededAtPath:(id)arg1;
 - (bool)updateXattrInfoFromPathPath:(id)arg1 error:(id*)arg2;
 - (bool)hasLocalContent;
 - (bool)isInDocumentScopeWithParent:(id)arg1;

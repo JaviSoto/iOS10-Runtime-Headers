@@ -28,16 +28,17 @@
 - (unsigned int)maxAllowedBitrateLTE;
 - (unsigned int)maxAllowedBitrate3G;
 - (unsigned int)maxAllowedBitrate2G;
+- (unsigned int)maxAllowedBitrateForConnection:(int)arg1;
 - (void)createSupportedBitrateRuleSets;
 - (void)readCarrierBundleValues;
 - (void)readStoreBagValues;
 - (void)readHardwareValues;
 - (unsigned int)maxAllowedCellularBitrate;
+- (id)initWithDeviceRole:(int)arg1;
 - (id)maxAllowedBitrateRuleForConnection:(int)arg1;
 - (unsigned int)maxAllowedBitrate;
 - (unsigned int)maxAllowedAudioOnlyBitrateForConnection:(int)arg1;
-- (unsigned int)maxAllowedBitrateForConnection:(int)arg1;
-- (id)init;
+- (unsigned int)maxAllowedBitrateForConnection:(int)arg1 operatingMode:(int)arg2;
 - (void)dealloc;
 
 @end

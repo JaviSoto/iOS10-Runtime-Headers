@@ -59,8 +59,10 @@
 + (id)errorWithCode:(int)arg1 description:(id)arg2;
 + (id)_defaultDescriptionForCode:(int)arg1;
 + (id)errorWithCADResult:(int)arg1 action:(id)arg2;
++ (id)errorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3;
 + (id)errorWithCode:(int)arg1;
 + (id)errorWithCADResult:(int)arg1;
++ (id)mf_timeoutError;
 + (id)AVConferenceServiceError:(long long)arg1 detailCode:(long long)arg2 description:(id)arg3;
 + (id)AVConferenceServiceError:(long long)arg1 detailedCode:(long long)arg2 filePath:(id)arg3 description:(id)arg4 reason:(id)arg5;
 + (id)AVConferenceServiceError:(long long)arg1 detailedCode:(long long)arg2 returnCode:(long long)arg3 filePath:(id)arg4 description:(id)arg5 reason:(id)arg6;
@@ -166,7 +168,10 @@
 - (bool)isPOSIXErrorCode:(long long)arg1;
 - (bool)CKIsNotFoundError;
 - (id)CKClientSuitableError;
+- (bool)mf_isTimeoutError;
+- (bool)mf_isCancelledError;
 - (id)userReadableError;
+- (bool)_gkIsUnauthenticatedError;
 - (id)DAExtendedDescription;
 - (bool)mf_isMissingAccountCredentialError;
 - (bool)mf_isInaccessibleAccountCredentialError;
@@ -184,7 +189,6 @@
 - (long long)_mapkit_directionsErrorCode;
 - (bool)_mapkit_isDirectionsError;
 - (id)_mapkit_directionsErrorWithDetail:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1;
-- (bool)_gkIsUnauthenticatedError;
 - (bool)MSASStateMachineIsCanceledError;
 - (id)MSMakePrimaryError;
 - (bool)MSContainsErrorWithDomain:(id)arg1 code:(long long)arg2;
@@ -227,14 +231,14 @@
 - (bool)br_isCloudKitErrorRequiringAssetReupload;
 - (bool)br_isCloudKitUnknownItemError;
 - (bool)br_isCloudKitCancellationError;
-- (bool)br_isResetError;
 - (id)br_cloudKitErrorForSubscriptionID:(id)arg1;
-- (bool)br_isResetErrorWithFullReset:(bool*)arg1;
+- (unsigned long long)br_containerResetError;
 - (id)br_wrappedError;
 - (bool)br_isCloudKitOutOfQuota;
 - (bool)br_isBlacklistError;
 - (bool)br_checkErrorsFromCloudKit:(id)arg1;
 - (bool)br_isCloudKitInternalErrorCode:(long long)arg1;
+- (bool)br_isResetError;
 - (double)br_suggestedRetryTimeInterval;
 - (bool)isSqliteErrorCode:(long long)arg1;
 - (long long)extendedSqliteCode;

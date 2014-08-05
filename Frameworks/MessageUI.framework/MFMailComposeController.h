@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UITapGestureRecognizer, NSDictionary, UIBarButtonItem, UIProgressView, ABPeoplePickerNavigationController, MFComposeTextContentView, _MFMailCompositionContext, MFMailAccountProxyGenerator, MFComposeImageSizeView, UIImagePickerController, MFMailPopoverManager, MFMessageContentProgressLayer, <NSCoding>, UIKeyCommand, UIAlertController, MFOutgoingMessageDelivery, MFMutableMessageHeaders, MFRecentComposeRecipient, MFModernComposeRecipientAtom, NSObject<OS_dispatch_group>, MFComposeActivityContinuationOperation, MFSecureMIMECompositionManager, UIView, MFLANContinuationAgent, NSArray, MFComposeBodyField, MFComposeRecipient, ABPersonViewController, MFMailComposeRecipientView, NSString, <MFMailComposeViewControllerDelegate>, MFMailboxUid, MFComposeSubjectView, MFAddressPickerReformatter, NSTimer, MFLock, ABUnknownPersonViewController, NSDate;
+@class UITapGestureRecognizer, NSDictionary, UIBarButtonItem, UIProgressView, ABPeoplePickerNavigationController, MFMailSignatureController, MFComposeTextContentView, _MFMailCompositionContext, MFMailAccountProxyGenerator, MFComposeImageSizeView, UIImagePickerController, MFMailPopoverManager, MFMessageContentProgressLayer, <NSCoding>, UIKeyCommand, UIAlertController, MFOutgoingMessageDelivery, MFMutableMessageHeaders, MFRecentComposeRecipient, MFModernComposeRecipientAtom, NSObject<OS_dispatch_group>, MFComposeActivityContinuationOperation, MFSecureMIMECompositionManager, UIView, MFLANContinuationAgent, NSArray, MFComposeBodyField, MFComposeRecipient, ABPersonViewController, MFMailComposeRecipientView, NSString, <MFMailComposeViewControllerDelegate>, MFMailboxUid, MFComposeSubjectView, MFAddressPickerReformatter, NSTimer, MFLock, ABUnknownPersonViewController, NSDate;
 
 @interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityContinuationOperationDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, MFGroupDetailViewControllerDelegate> {
     <MFMailComposeViewControllerDelegate> *_delegate;
@@ -37,9 +37,7 @@
     MFComposeImageSizeView *_imageSizeField;
     MFComposeBodyField *_bodyField;
     MFComposeTextContentView *_bodyTextView;
-    NSString *_signatureMarkupString;
-    bool_hasSignature;
-    bool_firstSignaturePassComplete;
+    MFMailSignatureController *_signatureController;
     MFRecentComposeRecipient *_recentRecipientPresentingCard;
     MFMailPopoverManager *_popoverManager;
     MFOutgoingMessageDelivery *_delivery;
@@ -128,6 +126,8 @@
 + (void)initialize;
 
 - (void)_accountsChanged:(id)arg1;
+- (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
+- (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
 - (id)popoverAlert;
 - (void)setOriginatingBundleID:(id)arg1;
 - (id)autosavedDate;
@@ -156,6 +156,7 @@
 - (void)groupDetailViewControllerDidCancel:(id)arg1;
 - (void)groupDetailViewController:(id)arg1 didAskToRemoveGroup:(id)arg2;
 - (void)groupDetailViewController:(id)arg1 didTapComposeRecipient:(id)arg2;
+- (void)addSignature:(bool)arg1;
 - (bool)hasAnyHiddenTrailingEmptyQuote;
 - (void)setSavedHeaders:(id)arg1;
 - (id)accountProxyGenerator;
@@ -182,7 +183,6 @@
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
 - (void)imageSizeView:(id)arg1 changedSelectedScaleTo:(unsigned long long)arg2;
 - (bool)sendingEmailDirtied;
-- (void)addSignature:(bool)arg1;
 - (long long)popoverPresentationStyleForViewController:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(bool)arg2;
 - (void)tappedSMIMEButton;
@@ -299,11 +299,6 @@
 - (id)addressesForField:(int)arg1;
 - (void)_setRecipients:(id)arg1 forField:(int)arg2;
 - (id)_addressFieldForField:(int)arg1;
-- (void)_addSignature:(bool)arg1 includeMarkup:(bool)arg2;
-- (void)_prependSignatureToNode:(id)arg1 includeMarkup:(bool)arg2;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_replaceSignature:(id)arg1 withSignature:(id)arg2 backwardsFromNode:(id)arg3 maxParagraphs:(unsigned long long)arg4;
-- (void)_updateSignatureMarkupString;
-- (id)_signatureString;
 - (void)_resetSecureCompositionManagerUsingNewAccount:(bool)arg1;
 - (id)sendingAccountProxy;
 - (bool)_setSendingEmailAddress:(id)arg1 addIfNotPresent:(bool)arg2;
@@ -364,6 +359,7 @@
 - (void)activityContinuationOperationReceivedBytes:(id)arg1;
 - (void)activityContinuationOperation:(id)arg1 didFinishSendingDataWithResult:(unsigned long long)arg2;
 - (void)activityContinuationOperation:(id)arg1 didFailWithError:(id)arg2;
+- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)didInsertAttachment:(id)arg1;
 - (id)compositionContext;
 - (int)compositionType;
@@ -384,8 +380,6 @@
 - (bool)canShowFromField;
 - (id)popoverManager;
 - (void)insertPhotoOrVideo;
-- (void)secureMIMECompositionManager:(id)arg1 encryptionStatusDidChange:(int)arg2 context:(id)arg3;
-- (void)secureMIMECompositionManager:(id)arg1 signingStatusDidChange:(int)arg2 context:(id)arg3;
 - (bool)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (bool)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;

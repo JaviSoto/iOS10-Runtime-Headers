@@ -26,16 +26,16 @@
 - (void)setScaledConstraints:(id)arg1;
 - (id)scaledConstraints;
 - (void)setReviewText:(id)arg1;
-- (void)setPicture:(id)arg1;
 - (id)fontForAuthor;
 - (void)contentSizeDidChange;
+- (void)setPicture:(id)arg1;
 - (void)setRating:(unsigned long long)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (void)setDate:(id)arg1;
-- (void)prepareForReuse;
 - (void)updateConstraints;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

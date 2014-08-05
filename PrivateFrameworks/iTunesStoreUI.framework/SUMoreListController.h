@@ -12,10 +12,10 @@
 - (void)_badgeDidChangeNotification:(id)arg1;
 - (void)_reloadPreviewOverlayVisibility;
 - (long long)ITunesStoreUIBarStyle;
-- (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;
 - (id)tabBarItem;
 - (void)viewWillAppear:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;

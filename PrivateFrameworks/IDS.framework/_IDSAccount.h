@@ -51,10 +51,10 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)_callDevicesChanged;
 - (void)_callRegistrationDelegatesWithBlock:(id)arg1;
 - (id)_registeredURIs;
 - (id)_keychainRegistration;
-- (void)_callDevicesChanged;
 - (void)_loadCachedDevices;
 - (void)_updateDependentDevicesWithDevicesInfo:(id)arg1;
 - (bool)_isiCloudPairingService;

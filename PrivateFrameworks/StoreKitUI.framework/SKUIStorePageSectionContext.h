@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemOfferButtonAppearance, SKUILayoutCache, SKUIResourceLoader, SKUIColorScheme, SKUIMetricsController, SKUIClientContext, SKUIStorePageSectionsViewController, UICollectionView, UIColor;
+@class SKUIItemOfferButtonAppearance, SKUILayoutCache, SKUIResourceLoader, SKUIColorScheme, SKUIMetricsController, SKUIClientContext, SKUIStorePageSectionsViewController, UICollectionView, SKUIMetricsImpressionSession, UIColor;
 
 @interface SKUIStorePageSectionContext : NSObject  {
+    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     double _activePageWidth;
     UICollectionView *_collectionView;
     SKUIColorScheme *_colorScheme;
@@ -20,6 +21,7 @@
     long long _layoutStyle;
 }
 
+@property(readonly) SKUIMetricsImpressionSession * activeMetricsImpressionSession;
 @property(readonly) SKUIClientContext * clientContext;
 @property(readonly) UICollectionView * collectionView;
 @property(readonly) SKUIColorScheme * colorScheme;
@@ -37,21 +39,23 @@
 
 
 - (id)textLayoutCache;
+- (double)portraitPageWidth;
+- (double)landscapePageWidth;
 - (id)placeholderColor;
 - (id)itemOfferButtonAppearance;
 - (long long)defaultPinningTransitionStyle;
-- (double)activePageWidth;
-- (double)landscapePageWidth;
-- (double)portraitPageWidth;
+- (id)activeMetricsImpressionSession;
 - (void)_setPortraitPageWidth:(double)arg1;
 - (void)_setLandscapePageWidth:(double)arg1;
-- (void)_setActivePageWidth:(double)arg1;
 - (void)_setTextLayoutCache:(id)arg1;
 - (void)_setResourceLoader:(id)arg1;
 - (void)_setLayoutStyle:(long long)arg1;
 - (id)metricsController;
+- (void)_setActivePageWidth:(double)arg1;
+- (double)activePageWidth;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setDefaultPinningTransitionStyle:(long long)arg1;
+- (void)_setActiveMetricsImpressionSession:(id)arg1;
 - (void)_setColorScheme:(id)arg1;
 - (void)_setParentViewController:(id)arg1;
 - (long long)layoutStyle;

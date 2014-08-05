@@ -34,7 +34,7 @@
 - (id)sessionQueue;
 - (void)configureSession;
 - (id)taskHandlers;
-- (id)_sessionConfiguration;
+- (id)_sessionConfigurationForBag:(bool)arg1;
 - (void)removeTask:(id)arg1;
 - (id)dataTaskForRequest:(id)arg1 withHandler:(id)arg2;
 - (id)urlSessionForImage:(id)arg1;

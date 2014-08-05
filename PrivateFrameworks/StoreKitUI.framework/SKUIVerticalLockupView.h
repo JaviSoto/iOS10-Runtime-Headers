@@ -15,10 +15,12 @@
     SKUILockupViewElement *_lockupElement;
     SKUISizeValue *_productImageBoundingSize;
     UIView *_productImageView;
+    long long _sizingStyle;
     NSMapTable *_topInsets;
     NSMapTable *_viewElementViews;
 }
 
+@property long long sizingStyle;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -35,6 +37,8 @@
 + (bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 
 - (void)_buttonAction:(id)arg1;
+- (long long)sizingStyle;
+- (void)setSizingStyle:(long long)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;

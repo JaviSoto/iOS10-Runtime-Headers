@@ -34,8 +34,8 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)callStatus;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

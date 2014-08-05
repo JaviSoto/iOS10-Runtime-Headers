@@ -37,7 +37,6 @@
 
 + (bool)shouldPresentAsModalSheet;
 
-- (id)specifiers;
 - (void)setIsMailSetupForced:(bool)arg1;
 - (id)deleteButtonSpecifier;
 - (void)appendDeleteAccountButton;
@@ -96,6 +95,7 @@
 - (void)operationsHelper:(id)arg1 didSaveAccount:(id)arg2 withSuccess:(bool)arg3 error:(id)arg4;
 - (void)operationsHelper:(id)arg1 willSaveAccount:(id)arg2;
 - (void)cancelButtonTapped:(id)arg1;
+- (id)specifiers;
 - (id)_accountIdentifier;
 - (void)doneButtonTapped:(id)arg1;
 - (id)account;

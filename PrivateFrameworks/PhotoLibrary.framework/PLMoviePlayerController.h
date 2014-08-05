@@ -121,11 +121,11 @@
 - (id)view;
 - (long long)externalPlaybackType;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
-- (void)stop;
 - (double)duration;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;

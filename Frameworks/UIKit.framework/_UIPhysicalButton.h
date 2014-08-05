@@ -29,8 +29,8 @@
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 
 
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (id)window;
 - (void)setType:(long long)arg1;
 - (long long)type;

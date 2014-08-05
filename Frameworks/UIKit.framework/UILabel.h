@@ -229,6 +229,7 @@
 - (id)_associatedScalingLabel;
 - (id)_disabledFontColor;
 - (struct CGSize { double x1; double x2; })textSize;
+- (void)updateConstraints;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(bool)arg1;
 - (long long)_measuredNumberOfLines;
@@ -247,7 +248,6 @@
 - (void)_accessibilityButtonShapesParametersDidChange;
 - (void)setHighlighted:(bool)arg1;
 - (void)_setLineBreakMode:(long long)arg1;
-- (void)updateConstraints;
 - (id)_scriptingInfo;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

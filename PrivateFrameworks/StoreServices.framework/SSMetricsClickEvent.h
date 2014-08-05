@@ -18,9 +18,9 @@
 @property(retain) NSString * targetURL;
 
 
+- (void)setImpressions:(id)arg1;
 - (void)setPositionY:(id)arg1;
 - (void)setPositionX:(id)arg1;
-- (void)setImpressions:(id)arg1;
 - (void)setLocationWithEventLocations:(id)arg1;
 - (void)setTargetURL:(id)arg1;
 - (void)setActionDetails:(id)arg1;

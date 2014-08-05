@@ -325,11 +325,11 @@
 - (unsigned int)connectionType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setGuid:(id)arg1;
 - (id)guid;
 - (unsigned int)isNetworkReachable;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)callDuration;
 - (unsigned int)isVideo;
 - (unsigned int)endedReason;

@@ -203,8 +203,6 @@
 
 - (id)selectedAnnotations;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)removeAnnotation:(id)arg1;
-- (void)addAnnotation:(id)arg1;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { double x1; double x2; double x3; })arg2 course:(double)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
@@ -252,8 +250,6 @@
 - (void)_setMaximumZoomLevel:(double)arg1;
 - (id)annotationCoordinateTest;
 - (id)annotationRectTest;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attributionFrame;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_convertMapPoint:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (struct { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toMapPointFromView:(id)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toMapRectFromView:(id)arg2;
@@ -583,7 +579,6 @@
 - (void)stopUpdatingUserLocation;
 - (void)startUpdatingUserLocation;
 - (bool)_canEnter3DMode;
-- (void)_updateInsets;
 - (void)_sizeDidChangeWithCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_sizeWillChange;
 - (double)_zoomScaleForMapRegion:(id)arg1;
@@ -632,6 +627,10 @@
 - (double)_maximumZoomLevel;
 - (double)_minimumZoomLevel;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsets;
+- (void)removeAnnotation:(id)arg1;
+- (void)addAnnotation:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attributionFrame;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)camera;
 - (unsigned long long)mapType;
@@ -661,11 +660,11 @@
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)awakeAfterUsingCoder:(id)arg1;
+- (void)_updateInsets;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewPrintFormatter:(id)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)_zoomScale;
-- (long long)_interfaceOrientation;
 - (bool)isZoomEnabled;
 - (void)setZoomEnabled:(bool)arg1;
 - (void)setScrollEnabled:(bool)arg1;
@@ -673,6 +672,7 @@
 - (void)willMoveToWindow:(id)arg1;
 - (void)layoutMarginsDidChange;
 - (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (long long)_interfaceOrientation;
 - (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)isScrollEnabled;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;

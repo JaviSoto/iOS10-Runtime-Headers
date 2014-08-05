@@ -46,9 +46,9 @@
 + (id)defaultPropertiesToLoad;
 
 - (void)removeAction:(id)arg1;
-- (void)setEndDate:(id)arg1;
 - (bool)validate:(id*)arg1;
 - (id)organizer;
+- (void)setEndDate:(id)arg1;
 - (long long)birthdayId;
 - (bool)isMeeting;
 - (id)committedStartDate;

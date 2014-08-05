@@ -42,13 +42,13 @@
 - (void)_daemonWillShutdown:(id)arg1;
 - (bool)isAccountActive:(id)arg1;
 - (void)deactivateAccount:(id)arg1;
+- (void)removeAccount:(id)arg1;
 - (void)deactivateAccounts:(id)arg1;
 - (void)activateAccounts:(id)arg1;
 - (id)connectedAccounts;
 - (id)accountsForService:(id)arg1;
 - (id)connectedAccountsForService:(id)arg1;
 - (id)activeAccountsForService:(id)arg1;
-- (void)removeAccount:(id)arg1;
 - (void)addAccount:(id)arg1;
 - (id)activeAccounts;
 - (void)save;

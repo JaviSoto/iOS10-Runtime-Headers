@@ -27,6 +27,7 @@
 
 - (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
 - (id)internalAccounts;
+- (void)_updateDelegatesWithOldAccounts:(id)arg1 newAccounts:(id)arg2;
 - (void)_loadCachedAccountsWithDictionaries:(id)arg1;
 - (void)_updateLocalAccountVisibility;
 - (void)_loadCachedAccounts;

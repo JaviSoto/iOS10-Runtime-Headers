@@ -106,6 +106,8 @@
 - (void)_savePngFromGLCache:(id)arg1;
 - (void)setTextureTarget:(unsigned int)arg1;
 - (void)setIsRotated:(bool)arg1;
+- (struct CGImage { }*)_rotateCGImage:(struct CGImage { }*)arg1;
+- (struct CGImage { }*)_newTextureFromGLCache;
 - (id)_initWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)setSubTextureName:(id)arg1;
 - (id)subTextureName;
@@ -149,7 +151,7 @@
 - (unsigned int*)alphaMap;
 - (void)setFilteringMode:(long long)arg1;
 - (struct CGSize { double x1; double x2; })pixelSize;
-- (struct CGImage { }*)_newTextureFromGLCache;
+- (struct CGImage { }*)_createCGImage;
 - (id)imageNameOrPath;
 - (int)glTextureId;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textureRect;

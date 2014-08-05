@@ -27,8 +27,8 @@
 - (unsigned int)vspace;
 - (void)setHspace:(unsigned int)arg1;
 - (unsigned int)hspace;
-- (void)start;
 - (void)stop;
+- (void)start;
 - (id)behavior;
 
 @end

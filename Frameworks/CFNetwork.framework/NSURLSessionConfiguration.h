@@ -16,6 +16,7 @@
     bool__preventsIdleSleepOnceConnected;
     bool__sessionSendsLaunchOnDemandEvents;
     bool__collectsTimingData;
+    bool__shouldSkipPreferredClientCertificateLookup;
     bool__allowsRetryForBackgroundDataTasks;
     bool__respectsAllowsCellularAccessForDiscretionaryTasks;
     bool__infersDiscretionaryFromOriginatingClient;
@@ -101,6 +102,7 @@
 @property bool _preventsIdleSleepOnceConnected;
 @property bool _sessionSendsLaunchOnDemandEvents;
 @property bool _collectsTimingData;
+@property bool _shouldSkipPreferredClientCertificateLookup;
 @property(copy) NSString * _ledBellyServiceIdentifier;
 @property double _connectionCachePurgeTimeout;
 @property double _connectionCacheCellPurgeTimeout;
@@ -248,6 +250,7 @@
 - (bool)_allowsExpensiveAccess;
 - (id)_socketStreamProperties;
 - (bool)_requiresPowerPluggedIn;
+- (void)set_shouldSkipPreferredClientCertificateLookup:(bool)arg1;
 - (double)timeoutIntervalForRequest;
 - (unsigned long long)requestCachePolicy;
 - (void)set_connectionCacheCellPurgeTimeout:(double)arg1;
@@ -259,6 +262,7 @@
 - (void)setNetworkServiceType:(unsigned long long)arg1;
 - (bool)allowsCellularAccess;
 - (unsigned long long)networkServiceType;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
 - (bool)_disallowsSPDY;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (id)_ledBellyServiceIdentifier;

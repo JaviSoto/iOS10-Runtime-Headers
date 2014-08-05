@@ -44,7 +44,6 @@
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (void)updateWithSFNode:(struct __SFNode { }*)arg1;
 - (bool)isUnknown;
-- (id)node;
 - (void)setDisplayName:(id)arg1;
 - (id)init;
 - (bool)isEqual:(id)arg1;
@@ -53,6 +52,7 @@
 - (id)description;
 - (id)displayName;
 - (void)setNode:(id)arg1;
+- (id)node;
 - (void)setMonogram:(bool)arg1;
 
 @end

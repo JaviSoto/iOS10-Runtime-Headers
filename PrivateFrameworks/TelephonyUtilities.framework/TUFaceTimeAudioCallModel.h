@@ -5,6 +5,7 @@
 @interface TUFaceTimeAudioCallModel : TUCallModel  {
 }
 
++ (id)sharedInstance;
 
 - (bool)isSendToVoicemailAllowed;
 - (bool)isHoldAndAnswerAllowed;

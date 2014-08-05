@@ -66,6 +66,7 @@
     long long _barPosition;
     unsigned long long _searchBarStyle;
     UISearchController *__searchController;
+    unsigned long long __scopeBarPosition;
 }
 
 @property long long barStyle;
@@ -94,6 +95,7 @@
 @property bool _forceCenteredPlaceholderLayout;
 @property(setter=_setSearchController:) UISearchController * _searchController;
 @property(setter=_setTransplanting:) bool _transplanting;
+@property(setter=_setScopeBarPosition:) unsigned long long _scopeBarPosition;
 @property(getter=_searchBarTextField,readonly) UISearchBarTextField * searchBarTextField;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -175,6 +177,7 @@
 - (void)_searchFieldBeginEditing;
 - (bool)pretendsIsInBar;
 - (id)_scopeBarBackgroundView;
+- (void)_setScopeBarPosition:(unsigned long long)arg1;
 - (void)_setTransplanting:(bool)arg1;
 - (bool)_transplanting;
 - (void)_setSearchController:(id)arg1;
@@ -211,6 +214,7 @@
 - (void)setSelectedScopeButtonIndex:(long long)arg1;
 - (id)_leftButton;
 - (bool)usesEmbeddedAppearance;
+- (bool)_wouldCombineLandscapeBarsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)combinesLandscapeBars;
 - (void)setCombinesLandscapeBars:(bool)arg1;
 - (void)_setShowsCancelButton:(bool)arg1;
@@ -237,19 +241,23 @@
 - (id)_navigationBarForShadow;
 - (double)_searchFieldHeight;
 - (void)_layoutBackgroundViewConsideringTopBarStatusAndChangedHeight:(bool)arg1;
+- (double)_scopeBarHeight;
 - (bool)_scopeBarIsVisible;
 - (id)_viewForChildViews;
 - (double)_landscapeSearchFieldWidth;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_scopeBarInsets;
 - (double)_availableBoundsWidth;
-- (bool)_searchFieldWidthShouldBeFlexible;
 - (double)_defaultHeight;
 - (bool)_shouldCombineLandscapeBars;
 - (double)_barHeightForBarMetrics:(long long)arg1;
 - (long long)_barMetricsForOrientation:(long long)arg1;
 - (void)_setupLeftButton;
 - (void)_setBarTintColor:(id)arg1 forceUpdate:(bool)arg2;
+- (bool)_searchFieldWidthShouldBeFlexible;
+- (double)_availableBoundsWidthForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_scopeBarInsets;
 - (double)_landscapeScopeBarWidth;
+- (unsigned long long)_scopeBarPosition;
+- (bool)_shouldCombineLandscapeBarsForOrientation:(long long)arg1;
 - (bool)drawsBackgroundInPalette;
 - (bool)_containedInNavigationPalette;
 - (void)_cancelButtonPressed;

@@ -79,9 +79,9 @@
 - (id)_web_HTTPReferrer;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
 - (void)_gkSetSAPSession:(id)arg1;
 - (id)_gkSAPSession;
 - (id)_gkDictionaryKey;
+- (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSURL, NSMutableData, CLLocation, NSURLSessionConfiguration, NSDictionary, <PRSSessionController>, CLLocationManager, NSMutableArray, PRSFairPlaySAPSession, NSString, CLInUseAssertion, NSObject<OS_dispatch_queue>, NSArray, NSURLSessionDataTask, NSError, PRSSharedParsecSession;
+@class NSURL, NSMutableData, CLLocation, NSURLSessionConfiguration, NSDictionary, <PRSSessionController>, CLLocationManager, NSMutableArray, PRSFairPlaySAPSession, NSString, NSSet, CLInUseAssertion, NSObject<OS_dispatch_queue>, NSArray, NSURLSessionDataTask, NSError, PRSSharedParsecSession;
 
 @interface PRSBagHandler : NSObject <PRSParsecDataHandler, PRSResourceProvider, PRSSessionController, CLLocationManagerDelegate> {
     PRSSharedParsecSession *_bagSession;
@@ -10,13 +10,16 @@
     struct __SCNetworkReachability { } *_networkReachability;
     NSObject<OS_dispatch_queue> *_bagQueue;
     bool_bagFailed;
+    NSSet *_appIdentifierWhitelist;
     bool_active;
     bool_parsecEnabled;
     bool_mescalEnabled;
     bool_ledbellyEnabled;
     bool_useGUID;
     bool_limitedFeedback;
+    NSArray *_enabledDomains;
     NSString *_userId;
+    double _userIdTimeout;
     NSURL *_searchURL;
     NSURL *_webSearchURL;
     NSURL *_feedbackURL;
@@ -46,6 +49,9 @@
     NSMutableData *_collectedData;
     NSURLSessionDataTask *_guidDataTask;
     NSMutableData *_guidCollectedData;
+    NSString *_appIdentifierListString;
+    NSString *_fteLocString;
+    NSString *_fteLearnMoreString;
     NSDictionary *_resources;
     NSMutableArray *_queryTasks;
     <PRSSessionController> *_client;
@@ -55,8 +61,10 @@
 @property bool active;
 @property bool parsecEnabled;
 @property bool mescalEnabled;
+@property(retain) NSArray * enabledDomains;
 @property bool ledbellyEnabled;
 @property(retain) NSString * userId;
+@property double userIdTimeout;
 @property bool useGUID;
 @property(readonly) NSURL * searchURL;
 @property(readonly) NSURL * webSearchURL;
@@ -90,6 +98,9 @@
 @property(retain) NSMutableData * collectedData;
 @property(retain) NSURLSessionDataTask * guidDataTask;
 @property(retain) NSMutableData * guidCollectedData;
+@property(retain) NSString * appIdentifierListString;
+@property(readonly) NSString * fteLocString;
+@property(readonly) NSString * fteLearnMoreString;
 @property(retain) NSDictionary * resources;
 @property(retain) NSMutableArray * queryTasks;
 @property <PRSSessionController> * client;
@@ -102,9 +113,10 @@
 @property(getter=isEnabled,readonly) bool enabled;
 @property(readonly) NSArray * supportedDomainIdentifiers;
 @property(readonly) NSURLSessionConfiguration * urlSessionConfiguration;
-@property(readonly) int useLedBelly;
+@property(readonly) long long useLedBelly;
 @property(readonly) NSString * userAgent;
 @property(readonly) NSString * applicationNameForUserAgent;
+@property(readonly) NSArray * excludedDomainIdentifiers;
 @property(readonly) NSString * parsecBaseURL;
 
 + (id)sharedHandler;
@@ -117,7 +129,9 @@
 - (id)fallbackGuidURL;
 - (id)guidURL;
 - (void)setUseGUID:(bool)arg1;
+- (void)setUserIdTimeout:(double)arg1;
 - (void)setLedbellyEnabled:(bool)arg1;
+- (void)setEnabledDomains:(id)arg1;
 - (void)setMescalEnabled:(bool)arg1;
 - (void)setParsecEnabled:(bool)arg1;
 - (void)setSAPSession:(id)arg1;
@@ -125,36 +139,45 @@
 - (bool)mescalEnabled;
 - (id)guidDataTask;
 - (void)_setupSAPSession:(id)arg1;
+- (void)setAppIdentifierListString:(id)arg1;
 - (void)setGuidCollectedData:(id)arg1;
 - (id)guidCollectedData;
 - (id)queryTasks;
 - (void)setQueryTasks:(id)arg1;
-- (int)useLedBelly;
+- (long long)useLedBelly;
 - (bool)useGUID;
 - (void)setGuidDataTask:(id)arg1;
 - (id)_locationManagerBundle;
 - (void)_deactivateLocationManager;
+- (void)discardRecentlyUsedAppIdentifiers;
 - (void)_activateLocationManager;
+- (void)updateRecentlyUsedAppIdentifiers;
 - (void)_setupLocationManager;
-- (id)supportedDomainIdentifiers;
 - (bool)ledbellyEnabled;
 - (id)parsecBaseURL;
 - (void)signRequest:(id)arg1 withData:(id)arg2;
 - (id)fallbackFeedbackURL;
 - (id)feedbackURL;
+- (long long)maximumCachedQueryCount;
+- (long long)maximumCachedResultCount;
 - (id)resourceWithID:(id)arg1;
 - (double)searchRenderTimeout;
 - (id)bag;
 - (long long)minimumStringLength;
-- (long long)maximumCachedQueryCount;
-- (long long)maximumCachedResultCount;
+- (id)appIdentifierListString;
 - (id)storeFrontId;
 - (id)locationSourceForLocation:(id)arg1;
 - (id)fallbackSearchURL;
 - (id)fallbackWebSearchURL;
+- (id)excludedDomainIdentifiers;
+- (id)supportedDomainIdentifiers;
 - (id)urlSessionConfiguration;
+- (double)userIdTimeout;
 - (void)loadUserID;
 - (id)webSearchURL;
+- (id)enabledDomains;
+- (id)fteLearnMoreString;
+- (id)fteLocString;
 - (bool)parsecEnabled;
 - (void)reloadBagFromClient:(id)arg1;
 - (void)triggerTaskWhenReady:(id)arg1;
@@ -181,6 +204,7 @@
 - (void)setStatus:(long long)arg1;
 - (long long)status;
 - (bool)isEnabled;
+- (id)applicationNameForUserAgent;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)setClient:(id)arg1;

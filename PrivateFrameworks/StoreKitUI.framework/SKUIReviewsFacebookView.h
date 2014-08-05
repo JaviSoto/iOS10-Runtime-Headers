@@ -31,12 +31,12 @@
 
 - (bool)isUserLiked;
 - (id)likeToggleButton;
+- (id)friendNames;
 - (void)setUserLiked:(bool)arg1;
 - (void)setFriendNames:(id)arg1;
 - (id)_composedStringForNames:(id)arg1 userLiked:(bool)arg2;
 - (void)_reloadLikeButtonState;
 - (void)_reloadFriendNamesLabel;
-- (id)friendNames;
 - (void)setColorScheme:(id)arg1;
 - (id)colorScheme;
 - (id)initWithClientContext:(id)arg1;

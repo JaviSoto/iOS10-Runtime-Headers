@@ -33,11 +33,12 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
-+ (id)defaultPath;
 + (void)removeLibraryAtPath:(id)arg1;
 + (void)_removeLibrary:(bool)arg1 atPath:(id)arg2;
++ (id)defaultPath;
 + (id)defaultInstance;
 
+- (id)_newConnection;
 - (void)setSequenceIdentifier:(id)arg1 forMessagesWithRemoteIDs:(id)arg2 inMailbox:(id)arg3;
 - (id)sequenceIdentifierForMessagesWithRemoteIDs:(id)arg1 inMailbox:(id)arg2;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned long long)arg1 forMailbox:(id)arg2;
@@ -45,9 +46,6 @@
 - (unsigned int)minimumRemoteIDForMailbox:(id)arg1;
 - (id)getDetailsForMessages:(unsigned long long)arg1 absoluteBottom:(unsigned long long)arg2 topOfDesiredRange:(unsigned long long)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 fromMailbox:(id)arg5;
 - (void)setSequenceIdentifier:(id)arg1 forMessageWithLibraryID:(unsigned int)arg2;
-- (bool)hasCompleteDataForMimePart:(id)arg1;
-- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
-- (void)deleteAccount:(id)arg1;
 - (id)_libraryMessageCache;
 - (id)allMailboxURLStrings;
 - (void)setMailboxPathProvider:(id)arg1;
@@ -147,6 +145,7 @@
 - (int)beginTransaction:(struct sqlite3 { }*)arg1 withType:(int)arg2;
 - (void)unlockDB:(struct sqlite3 { }*)arg1;
 - (struct sqlite3 { }*)getWriterDB;
+- (void)applicationWillResume;
 - (void)invalidateAndWait;
 - (void)_reconcileAfterKeybagUnlock;
 - (void)_setProtectedDataAvailabilityState:(int)arg1;
@@ -245,15 +244,18 @@
 - (long long)libraryIDForAccount:(id)arg1;
 - (bool)renameMailboxes:(id)arg1 to:(id)arg2;
 - (void)deleteMailboxes:(id)arg1;
-- (id)_newConnection;
 - (id)loadMeetingMetadataForMessage:(id)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (bool)shouldCancel;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (void)deleteAccount:(id)arg1;
+- (bool)hasCompleteDataForMimePart:(id)arg1;
+- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(bool)arg2 isEncrypted:(bool)arg3 forMessage:(id)arg4;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
+- (void)applicationWillSuspend;
 
 @end

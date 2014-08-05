@@ -6,17 +6,14 @@
     bool_hideSeparators;
     double _alignedDescriptiveLabelTextWidth;
     bool_shouldRoundFirstCell;
-    double _cornerRadius;
 }
 
 @property bool hideSeparators;
 @property bool shouldRoundFirstCell;
-@property double cornerRadius;
 @property double alignedDescriptiveLabelTextWidth;
 
 + (Class)layoutAttributesClass;
 
-- (double)cornerRadius;
 - (id)init;
 - (void)setShouldRoundFirstCell:(bool)arg1;
 - (double)_decorationDimension;
@@ -29,6 +26,5 @@
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHideSeparators:(bool)arg1;
-- (void)setCornerRadius:(double)arg1;
 
 @end

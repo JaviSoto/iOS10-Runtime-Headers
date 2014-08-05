@@ -38,7 +38,6 @@
 + (bool)isDNDScheduled;
 + (id)sharedController;
 
-- (void)setValid:(bool)arg1;
 - (void)setOverrideType:(unsigned long long)arg1;
 - (void)setIsEffectiveWhileUnlocked:(bool)arg1;
 - (bool)isEffectiveWhileUnlocked;
@@ -64,6 +63,7 @@
 - (void)setOverrides:(id)arg1;
 - (id)bbGateway;
 - (void)setRecordID:(int)arg1;
+- (void)setValid:(bool)arg1;
 - (bool)valid;
 - (int)recordID;
 - (id)init;

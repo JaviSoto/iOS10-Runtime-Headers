@@ -15,10 +15,10 @@
 
 - (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
 - (id)_initWithAccount:(id)arg1 commands:(id)arg2 indirectDelegateCallouts:(bool)arg3;
+- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2;
-- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (id)_internal;
 - (id)initWithAccount:(id)arg1;

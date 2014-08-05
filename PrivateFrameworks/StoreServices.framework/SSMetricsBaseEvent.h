@@ -43,10 +43,10 @@
 - (void)setPageType:(id)arg1;
 - (void)setClientVersion:(id)arg1;
 - (id)clientVersion;
-- (void)setPageID:(unsigned long long)arg1;
-- (unsigned long long)pageID;
 - (id)pageContext;
 - (void)setPageContext:(id)arg1;
+- (void)setPageID:(unsigned long long)arg1;
+- (unsigned long long)pageID;
 - (id)windowWidth;
 - (id)windowOrientation;
 - (id)windowHeight;

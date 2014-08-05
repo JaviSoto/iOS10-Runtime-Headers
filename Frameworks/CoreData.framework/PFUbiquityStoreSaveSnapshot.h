@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString, NSArray, PFUbiquityKnowledgeVector, NSMutableDictionary, NSDictionary, NSMutableArray, NSNumber, PFUbiquityGlobalObjectIDCache;
+@class NSString, NSArray, PFUbiquityKnowledgeVector, NSMutableDictionary, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSNumber, PFUbiquityGlobalObjectIDCache;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject  {
     NSMutableArray *_entityNames;
@@ -27,6 +27,7 @@
     NSArray *_filesDeletedInTransaction;
     PFUbiquityKnowledgeVector *_storeKV;
     PFUbiquityGlobalObjectIDCache *_gidCache;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly) NSArray * entityNames;
@@ -58,13 +59,14 @@
 - (void)finishGlobalIDReplacement;
 - (void)replaceGlobalObjectID:(id)arg1 withGlobalObjectID:(id)arg2;
 - (void)prepareForGlobalIDReplacement;
-- (void)replaceGlobalObjectIDsAtIndexes:(id)arg1 withGlobalObjectIDs:(id)arg2;
 - (void)setEntityNames:(id)arg1 globalObjectIDs:(id)arg2 primaryKeys:(id)arg3 forStoreName:(id)arg4 withRootLocation:(id)arg5;
 - (id)filesDeletedInTransaction;
 - (id)transactionNumberFromPeerStates:(id)arg1;
+- (id)checkIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
 - (id)createUbiquityDictionary:(id)arg1 withStoreExportContext:(id)arg2 error:(id*)arg3;
 - (id)globalObjectIDForManagedObject:(id)arg1 withStoreExportContext:(id)arg2;
-- (id)checkIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
+- (id)noSyncCheckIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
+- (id)checkIndecies:(id)arg1;
 - (id)primaryKeyToIndex;
 - (id)peerIDToIndex;
 - (id)entityNameToIndex;

@@ -12,10 +12,11 @@
 
 
 - (id)activityType;
+- (void)_cleanup;
 - (void)dealloc;
 - (id)wrapperViewController;
-- (id)printInteractionController;
 - (void)cancelPrintOptions;
+- (id)printInteractionController;
 - (void)setWrapperViewController:(id)arg1;
 - (id)_embeddedActivityViewController;
 - (void)prepareWithActivityItems:(id)arg1;

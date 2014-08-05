@@ -25,6 +25,7 @@
 
 + (id)groupForContact:(id)arg1;
 
+- (void)setUseSplitActions:(bool)arg1;
 - (void)setAddSpacerFromPreviousGroup:(bool)arg1;
 - (bool)addSpacerFromPreviousGroup;
 - (void)setContact:(id)arg1;
@@ -41,7 +42,6 @@
 - (id)_loadActionItems;
 - (id)initWithContact:(id)arg1;
 - (id)displayItems;
-- (void)setUseSplitActions:(bool)arg1;
 - (id)title;
 - (id)actions;
 - (void)dealloc;

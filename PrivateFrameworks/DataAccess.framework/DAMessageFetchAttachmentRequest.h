@@ -13,9 +13,9 @@
 @property(copy) NSString * attachmentName;
 
 
+- (id)initWithAttachmentName:(id)arg1 andMessageServerID:(id)arg2;
 - (id)attachmentName;
 - (void)setAttachmentName:(id)arg1;
-- (id)initWithAttachmentName:(id)arg1 andMessageServerID:(id)arg2;
 - (void)setMessageID:(id)arg1;
 - (id)messageID;
 - (bool)isEqual:(id)arg1;

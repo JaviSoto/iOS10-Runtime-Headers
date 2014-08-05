@@ -214,6 +214,7 @@
 - (void)_setPopoverController:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)completionHandler;
 - (void)viewDidLayoutSubviews;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

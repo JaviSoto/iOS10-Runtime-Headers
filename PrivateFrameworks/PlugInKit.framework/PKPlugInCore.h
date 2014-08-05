@@ -12,6 +12,7 @@
     NSURL *_url;
     NSURL *_containingUrl;
     NSDictionary *_bundleInfoDictionary;
+    unsigned long long _hubProtocolVersion;
     NSString *_localizedName;
     NSString *_localizedShortName;
     NSString *_localizedContainingName;
@@ -35,6 +36,7 @@
 @property(readonly) NSDictionary * attributes;
 @property(readonly) NSString * version;
 @property(readonly) id protocolSpec;
+@property unsigned long long hubProtocolVersion;
 @property(readonly) NSString * sdkSpec;
 @property(retain) NSString * localizedName;
 @property(retain) NSString * localizedShortName;
@@ -96,6 +98,7 @@
 - (void)setLastModified:(long long)arg1;
 - (void)setRequirement:(id)arg1;
 - (void)setCdhash:(id)arg1;
+- (void)setHubProtocolVersion:(unsigned long long)arg1;
 - (id)newMultiplesFrom:(id)arg1;
 - (id)newAttributesFrom:(id)arg1;
 - (id)newPlugInKitDictionaryFrom:(id)arg1;
@@ -110,10 +113,12 @@
 - (id)plugInDictionary;
 - (bool)onSystemVolume;
 - (id)containingUrl;
+- (unsigned long long)hubProtocolVersion;
 - (id)augmentInterface:(id)arg1;
 - (id)protocolSpec;
 - (id)diagnose;
 - (bool)isData;
+- (void)setAnnotation:(id)arg1 value:(id)arg2;
 - (id)annotations;
 - (id)initWithForm:(id)arg1;
 - (id)init;

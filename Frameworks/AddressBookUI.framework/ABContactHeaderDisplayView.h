@@ -36,6 +36,7 @@
 - (id)initWithContact:(id)arg1 personHeaderView:(id)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)updateFontSizes;
 - (void)setNameTextAttributes:(id)arg1;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (void)setBackgroundColor:(id)arg1;
@@ -46,6 +47,5 @@
 - (void)tintColorDidChange;
 - (bool)canBecomeFirstResponder;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)reloadData;
 
 @end

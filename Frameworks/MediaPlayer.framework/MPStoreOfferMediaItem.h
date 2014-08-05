@@ -2,13 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSNumber, MPStoreOfferContentRating;
+@class MPStoreOfferMediaItemArtworkDescriptor, NSDictionary, MPStoreOfferContentRating, NSNumber;
 
 @interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSSecureCoding, NSCopying> {
     NSDictionary *_lookupCollectionPropertyValues;
     NSNumber *_itemID;
     long long _preferredStoreOfferVariant;
     MPStoreOfferContentRating *_contentRating;
+    MPStoreOfferMediaItemArtworkDescriptor *_offerArtworkDescriptor;
+    long long _offerArtworkDescriptorOnceToken;
     id _pid;
     id _discNumber;
     id _trackNumber;
@@ -22,10 +24,11 @@
 + (id)itemLookupKeyForMediaProperty:(id)arg1;
 + (id)collectionLookupKeyForMediaProperty:(id)arg1;
 + (id)preferredAssetDictionaryInOfferDictionary:(id)arg1;
-+ (id)mediaitemsByRemovingRestrictedContentFromMediaItems:(id)arg1;
++ (id)mediaItemsByRemovingRestrictedContentFromMediaItems:(id)arg1;
 + (id)mediaItemsByMergingStoreOfferMediaItems:(id)arg1 localItems:(id)arg2;
 + (id)mediaItemsWithStoreLookupCollectionPropertyValues:(id)arg1 preferredStoreOfferVariant:(long long)arg2;
 + (id)offerDictionariesForLookupCollectionPropertyValues:(id)arg1 itemID:(id)arg2;
++ (id)offerArtworkDescriptorForLookupCollectionPropertyValues:(id)arg1 itemID:(id)arg2;
 + (bool)canMergeStoreOfferWithLocalMediaItems:(id)arg1;
 + (id)contentRatingForCollectionPropertyValues:(id)arg1 itemID:(id)arg2;
 + (id)mediaValueForStoreLookupCollectionPropertyValues:(id)arg1 itemID:(id)arg2 mediaProperty:(id)arg3;
@@ -42,6 +45,8 @@
 - (long long)preferredStoreOfferVariant;
 - (bool)isDownloadable;
 - (id)buyOfferForVariant:(long long)arg1;
+- (id)screenshotArtworkCatalog;
+- (id)offerArtworkDescriptor;
 - (id)mediaLibrary;
 - (unsigned long long)discNumber;
 - (unsigned long long)albumTrackNumber;

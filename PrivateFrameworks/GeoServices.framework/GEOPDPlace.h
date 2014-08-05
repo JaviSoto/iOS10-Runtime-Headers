@@ -50,6 +50,7 @@
 - (id)_cleanedPhoneNumberForPhoneNumberRepresentation:(id)arg1;
 - (void)setFirstSeenTimestamp:(double)arg1;
 - (id)copyWithoutETAComponents;
+- (bool)isCacheable;
 - (id)compactDebugDescription;
 - (bool)hasMuid;
 - (void)setHasMuid:(bool)arg1;

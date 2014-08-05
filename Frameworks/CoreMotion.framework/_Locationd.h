@@ -5,6 +5,8 @@
 @interface _Locationd : NSObject <CLIntersiloServiceProtocol> {
 }
 
+@property bool valid;
+
 + (id)getSilo;
 + (void)becameFatallyBlocked:(id)arg1;
 

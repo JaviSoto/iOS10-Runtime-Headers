@@ -7,5 +7,6 @@
 
 
 - (id)parseFromString:(id)arg1 :(id)arg2;
+- (id)init;
 
 @end

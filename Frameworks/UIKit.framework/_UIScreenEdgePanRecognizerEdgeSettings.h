@@ -34,7 +34,6 @@
 - (double)edgeAngleWindowDecayTime;
 - (double)backProjectionTime;
 - (double)bottomEdgeRegionSize;
-- (double)edgeRegionSize;
 - (double)hysteresis;
 - (void)setEdgeAngleWindowDegreees:(double)arg1;
 - (double)edgeAngleWindowDegreees;
@@ -46,6 +45,7 @@
 - (void)setEdgeAngleWindow:(double)arg1;
 - (void)setBackProjectionTime:(double)arg1;
 - (void)setBottomEdgeRegionSize:(double)arg1;
+- (double)edgeRegionSize;
 - (void)setEdgeRegionSize:(double)arg1;
 - (void)setHysteresis:(double)arg1;
 - (void)setDefaultValues;

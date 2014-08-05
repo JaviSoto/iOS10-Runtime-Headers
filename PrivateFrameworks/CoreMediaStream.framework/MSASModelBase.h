@@ -49,8 +49,8 @@
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (id)persistentObjectForKey:(id)arg1;
 - (void)shutDownForDestruction:(bool)arg1 completionBlock:(id)arg2;
-- (id)personID;
 - (struct sqlite3 { }*)db;
+- (id)personID;
 - (void)beginTransaction;
 - (void)endTransaction;
 - (void)dealloc;

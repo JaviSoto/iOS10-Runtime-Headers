@@ -28,6 +28,7 @@
 
 + (id)_batchFetchingArrayForObjectIDs:(id)arg1 fetchResult:(id)arg2;
 + (id)fetchObjectIDs:(id)arg1;
++ (id)bulkFetchResultForAssetsWithObjectIDs:(id)arg1 changeDetails:(bool)arg2;
 + (id)pl_fetchResultForStandInAssetCollection:(id)arg1;
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
 + (id)pl_fetchResultForAssetContainerList:(id)arg1;

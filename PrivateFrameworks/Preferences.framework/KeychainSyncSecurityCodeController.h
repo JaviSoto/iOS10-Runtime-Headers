@@ -2,18 +2,13 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIAlertView, UILabel, UIButton;
+@class NSString, UIButton, UILabel;
 
-@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController  {
     NSString *_generatedCode;
     UIButton *_footerButton;
     UILabel *_footerLabel;
     double _keyboardHeight;
-    UIAlertView *_forgotSecurityCodeAlert;
-    bool_forgotCodeAlertHasApproveButton;
-    UIAlertView *_resetKeychainAlert;
-    UIAlertView *_weakSecurityCodeAlert;
-    UIAlertView *_iCSCMismatchAlert;
     bool_showsAdvancedSettings;
     int _mode;
     int _securityCodeType;
@@ -24,10 +19,6 @@
 @property int securityCodeType;
 @property bool showsAdvancedSettings;
 @property(retain) NSString * firstPasscodeEntry;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * debugDescription;
 
 
 - (void)setShowsAdvancedSettings:(bool)arg1;
@@ -56,6 +47,5 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 
 @end

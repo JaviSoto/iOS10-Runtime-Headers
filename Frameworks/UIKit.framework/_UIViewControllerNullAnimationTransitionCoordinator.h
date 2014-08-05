@@ -39,6 +39,7 @@
 - (bool)isRotating;
 - (double)percentComplete;
 - (bool)isInteractive;
+- (id)viewForKey:(id)arg1;
 - (id)viewControllerForKey:(id)arg1;
 - (id)containerView;
 

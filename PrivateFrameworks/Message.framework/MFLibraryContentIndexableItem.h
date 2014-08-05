@@ -24,14 +24,14 @@
 
 
 - (id)initWithDocumentIdentifier:(unsigned int)arg1;
-- (id)cc;
-- (id)senders;
-- (void)setCc:(id)arg1;
 - (void)setDocumentIdentifier:(unsigned int)arg1;
 - (unsigned int)documentIdentifier;
 - (void)setSenders:(id)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
 - (unsigned int)mailboxID;
+- (id)cc;
+- (id)senders;
+- (void)setCc:(id)arg1;
 - (id)to;
 - (void)setTo:(id)arg1;
 - (void)setContent:(id)arg1;

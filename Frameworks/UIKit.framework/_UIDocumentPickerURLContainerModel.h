@@ -34,7 +34,7 @@
 - (void)modelChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)_containerListDidChange;
 - (void)setDisplayTitle:(id)arg1;
-- (void)refreshItem:(id)arg1;
+- (void)refreshItem:(id)arg1 thumbnailOnly:(bool)arg2;
 - (id)displayTitle;
 - (void)stopMonitoringChanges;
 - (void)startMonitoringChanges;

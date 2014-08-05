@@ -2,22 +2,23 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CLIntersiloInterface, CLSilo, CLIntersiloProxy, CLIntersiloInterfaceSelectorInfo;
+@class CLIntersiloInterface, <CLIntersiloProxyDelegateProtocol>, CLSilo, CLIntersiloProxy, CLIntersiloInterfaceSelectorInfo;
 
 @interface CLIntersiloProxy : NSProxy <CLIntersiloServiceProtocol> {
     CLIntersiloProxy *_peer;
     CLIntersiloProxy *_asymStrongPeer;
     CLIntersiloInterfaceSelectorInfo *_last;
-    id _delegate;
+    <CLIntersiloProxyDelegateProtocol> *_delegate;
     CLSilo *_delegateSilo;
     CLIntersiloInterface *_delegateInterface;
     CLIntersiloInterface *_proxiedInterface;
 }
 
-@property(readonly) id delegate;
+@property(readonly) <CLIntersiloProxyDelegateProtocol> * delegate;
 @property(readonly) CLSilo * delegateSilo;
 @property(copy,readonly) CLIntersiloInterface * delegateInterface;
 @property(copy,readonly) CLIntersiloInterface * proxiedInterface;
+@property bool valid;
 
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 + (id)getSilo;

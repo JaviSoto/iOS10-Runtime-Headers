@@ -22,7 +22,6 @@
 - (unsigned long long)LargestCapTier:(unsigned int)arg1;
 - (id)createTierForPayload:(id)arg1 bitrate:(unsigned int)arg2 sampleRate:(unsigned int)arg3 packetsPerBundle:(unsigned int)arg4 headerSize:(unsigned int)arg5;
 - (id)tierForNetworkBitrate:(unsigned int)arg1 duplication:(unsigned int)arg2;
-- (id)forcedAudioTier;
 - (id)defaultTier;
 - (id)initWithOperatingMode:(int)arg1 payloads:(id)arg2 sampleRate:(unsigned int)arg3 packetsPerBundle:(id)arg4 headerSize:(unsigned int)arg5 usingCellular:(bool)arg6 defaultMaxCap:(unsigned int)arg7;
 - (void)dealloc;

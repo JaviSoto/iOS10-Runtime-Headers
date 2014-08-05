@@ -19,8 +19,8 @@
 - (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
 - (id)plist;
 - (id)initWithFeedback:(id)arg1;
-- (void)setTimestamp:(long long)arg1;
 - (long long)timestamp;
+- (void)setTimestamp:(long long)arg1;
 - (id)input;
 - (id)init;
 - (id)type;

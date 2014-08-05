@@ -2,12 +2,18 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, UICollectionView, <MKPlaceViewNearbyAppsCellDelegate>, UILabel, NSString, _MKNearbyAppsFlowLayout;
+@class NSString, NSArray, <MKPlaceViewNearbyAppsCellDelegate>, UICollectionView, NSLayoutConstraint, UILabel, _MKNearbyAppsFlowLayout;
 
 @interface MKPlaceViewNearbyAppsCell : ABContactCell <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     UILabel *_headerLabel;
     UICollectionView *_collectionView;
     _MKNearbyAppsFlowLayout *_flowLayout;
+    NSLayoutConstraint *_headerBaselineConstraint;
+    NSLayoutConstraint *_collectionHeightConstraint;
+    struct CGSize { 
+        double width; 
+        double height; 
+    } _iconSize;
     NSArray *_storeItems;
     <MKPlaceViewNearbyAppsCellDelegate> *_delegate;
 }
@@ -19,13 +25,19 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
++ (struct CGSize { double x1; double x2; })_iconSize;
++ (double)_headerBaselineOffsetFromTop;
++ (id)_headerLabelFont;
++ (double)contentHeight;
 + (id)reuseIdentifier;
 + (bool)requiresConstraintBasedLayout;
 
 - (id)storeItems;
 - (void)setStoreItems:(id)arg1;
+- (void)contentSizeDidChange;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

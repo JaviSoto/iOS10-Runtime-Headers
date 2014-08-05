@@ -19,8 +19,8 @@
 - (void)_changeStatusToUserLiked:(bool)arg1;
 - (void)_toggleLike:(id)arg1;
 - (void)_reloadFacebookView;
-- (id)facebookLikeStatus;
 - (void)setFacebookLikeStatus:(id)arg1;
+- (id)facebookLikeStatus;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (void)setDelegate:(id)arg1;

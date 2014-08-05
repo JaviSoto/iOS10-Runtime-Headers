@@ -11,6 +11,9 @@
 }
 
 
+- (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(bool)arg3;
+- (void)writeUpdatedMessageDataToDisk;
+- (id)mailboxUid;
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
@@ -21,9 +24,6 @@
 - (id)storagePath;
 - (id)storePath;
 - (id)bodyDataForMessage:(id)arg1 isComplete:(bool*)arg2 isPartial:(bool*)arg3 downloadIfNecessary:(bool)arg4;
-- (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(bool)arg3;
-- (void)writeUpdatedMessageDataToDisk;
-- (id)mailboxUid;
 - (id)message;
 - (id)account;
 - (id)initWithData:(id)arg1;

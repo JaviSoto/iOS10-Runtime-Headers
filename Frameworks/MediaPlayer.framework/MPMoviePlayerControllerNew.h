@@ -217,12 +217,12 @@
 - (id)accessLog;
 - (id)view;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (void)_setDelegate:(id)arg1;
 - (id)_delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 - (double)duration;
 - (void)setAsset:(id)arg1;
 - (id)backgroundView;

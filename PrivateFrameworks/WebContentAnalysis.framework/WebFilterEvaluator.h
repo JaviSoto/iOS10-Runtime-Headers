@@ -4,7 +4,7 @@
 
 @class NSURL, NSString, NSMutableData;
 
-@interface WebFilterEvaluator : NSObject  {
+@interface WebFilterEvaluator : NSObject <NSSecureCoding> {
     unsigned long long _filterState;
     NSURL *_url;
     NSString *_pageTitle;
@@ -13,6 +13,7 @@
 
 + (id)createWithResponse:(id)arg1;
 + (bool)isManagedSession;
++ (bool)supportsSecureCoding;
 
 - (void)attemptUnblockWithCompletion:(id)arg1;
 - (id)blockPageForPageWithTitle:(id)arg1 origURL:(id)arg2;
@@ -23,6 +24,8 @@
 - (id)addData:(id)arg1;
 - (id)initWithResponse:(id)arg1;
 - (void)unblockWithCompletion:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 
 @end

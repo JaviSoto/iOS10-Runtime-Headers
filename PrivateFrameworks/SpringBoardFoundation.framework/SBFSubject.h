@@ -14,8 +14,8 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)subscribe:(id)arg1;
 - (id)_observers;
+- (id)subscribe:(id)arg1;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

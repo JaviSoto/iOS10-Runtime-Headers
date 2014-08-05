@@ -2,15 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSData;
+@class NSString;
 
 @interface BRiWorkSharingInfo : NSObject <NSSecureCoding, NSCopying> {
     BOOL _options;
-    NSData *_baseToken;
+    NSString *_baseToken;
 }
 
 @property BOOL options;
-@property(retain) NSData * baseToken;
+@property(retain) NSString * baseToken;
 
 + (bool)supportsSecureCoding;
 

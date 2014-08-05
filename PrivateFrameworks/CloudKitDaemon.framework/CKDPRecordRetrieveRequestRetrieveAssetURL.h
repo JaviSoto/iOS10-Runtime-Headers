@@ -22,11 +22,11 @@
 @property int type;
 
 
-- (id)assetFields;
 - (bool)hasRequestedTTL;
 - (void)setHasRequestedTTL:(bool)arg1;
 - (bool)hasAssetFields;
 - (void)setAssetFields:(id)arg1;
+- (id)assetFields;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (void)setRequestedTTL:(long long)arg1;

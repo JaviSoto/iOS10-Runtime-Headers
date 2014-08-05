@@ -21,6 +21,7 @@
 @property(retain) UITouch * activeTouch;
 @property(retain) UITouch * shiftKeyTouch;
 @property(readonly) long long orientation;
+@property(readonly) long long idiom;
 @property bool hideKeysUnderIndicator;
 @property(retain) NSString * layoutTag;
 @property long long cursorLocation;
@@ -33,6 +34,7 @@
 - (bool)canMultitap;
 - (bool)hasAccentKey;
 - (id)layoutTag;
+- (long long)idiom;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (bool)hideKeysUnderIndicator;
@@ -88,9 +90,10 @@
 - (void)didClearInput;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
 - (bool)usesAutoShift;
+- (void)setTextEditingTraits:(id)arg1;
+- (unsigned long long)textEditingKeyMask;
 - (void)restoreDefaultsForKey:(id)arg1;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
-- (void)setTextEditingTraits:(id)arg1;
 - (void)fadeWithInvocation:(id)arg1;
 - (bool)shouldFadeToLayout;
 - (bool)shouldFadeFromLayout;

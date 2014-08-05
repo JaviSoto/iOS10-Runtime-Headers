@@ -29,10 +29,10 @@
 }
 
 
-- (id)environment;
 - (int)processIdentifier;
 - (id)arguments;
 - (bool)resume;
+- (id)environment;
 - (bool)isRunning;
 - (id)init;
 - (bool)suspend;

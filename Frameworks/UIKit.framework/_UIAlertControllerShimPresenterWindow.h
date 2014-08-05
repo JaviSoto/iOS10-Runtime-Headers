@@ -14,8 +14,8 @@
 
 - (id)init;
 - (void)dealloc;
-- (void)presentAlertController:(id)arg1 completionBlock:(id)arg2;
 - (id)_presentationViewController;
+- (void)presentAlertController:(id)arg1 completionBlock:(id)arg2;
 - (id)alertController;
 
 @end

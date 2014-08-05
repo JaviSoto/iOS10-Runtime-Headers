@@ -22,13 +22,13 @@
 
 
 - (id)addTransactionEntryForGlobalID:(id)arg1 andTransactionType:(int)arg2;
+- (void)setStore:(id)arg1;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 forLocalPeerID:(id)arg3;
 - (id)transactionEntries;
 - (void)setCacheWrapper:(id)arg1;
 - (id)cacheWrapper;
 - (id)ubiquityRootLocation;
 - (id)localPeerID;
-- (void)setStore:(id)arg1;
 - (id)store;
 - (id)storeName;
 - (void)dealloc;

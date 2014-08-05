@@ -19,6 +19,7 @@
 - (id)operations;
 - (void)setPriority:(unsigned long long)arg1;
 - (unsigned long long)priority;
+- (void)dealloc;
 - (void)setProgress:(id)arg1;
 - (id)progress;
 - (void)setOperations:(id)arg1;

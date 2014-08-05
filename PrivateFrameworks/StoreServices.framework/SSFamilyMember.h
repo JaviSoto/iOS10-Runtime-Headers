@@ -11,6 +11,7 @@
     NSNumber *_iTunesIdentifier;
     NSString *_lastName;
     bool_me;
+    bool_sharingPurchases;
 }
 
 @property(retain) NSString * iCloudAccountName;
@@ -19,6 +20,7 @@
 @property(retain) NSString * firstName;
 @property(retain) NSString * lastName;
 @property(getter=isMe) bool me;
+@property(getter=isSharingPurchases) bool sharingPurchases;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -28,6 +30,8 @@
 - (id)iCloudAccountName;
 - (id)iCloudIdentifier;
 - (bool)isMe;
+- (void)setSharingPurchases:(bool)arg1;
+- (bool)isSharingPurchases;
 - (void)setMe:(bool)arg1;
 - (void)setITunesIdentifier:(id)arg1;
 - (void)setICloudIdentifier:(id)arg1;

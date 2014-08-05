@@ -65,7 +65,6 @@
 - (id)table;
 - (void)setMode:(int)arg1;
 - (void)dealloc;
-- (bool)useItemAtIndexForPredictionToggle:(int)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popupRect;
 - (double)minYOfLastTableCellForSelectionExtraView;
 - (bool)centerPopUpOverKey;
@@ -79,6 +78,7 @@
 - (id)localizedTitleForItemAtIndex:(int)arg1;
 - (int)indexForIndexPath:(id)arg1;
 - (void)didSelectItemAtIndex:(int)arg1;
+- (id)predictiveSwitch;
 - (void)endScrolling:(id)arg1;
 - (void)setNeedsDisplayForTopBottomCells;
 - (void)setNeedsDisplayForCell:(id)arg1;

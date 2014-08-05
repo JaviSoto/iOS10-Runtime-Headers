@@ -29,6 +29,7 @@
 - (void)_resolveDocumentID:(unsigned int)arg1 inContainer:(id)arg2;
 - (void)_processLostItem:(id)arg1;
 - (void)_startScan:(id)arg1;
+- (id)itemForCreatedDocumentsDirectory:(id)arg1 container:(id)arg2;
 - (void)fseventAtPath:(id)arg1 withFlags:(unsigned int)arg2;
 - (void)_unlinkAliasAtPath:(id)arg1;
 - (void)_cancelScan;

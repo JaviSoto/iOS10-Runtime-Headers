@@ -16,6 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)messageForAttachment:(id)arg1;
 - (id)initWithMessageData:(id)arg1 parentPart:(id)arg2;
 - (bool)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 error:(id*)arg3;

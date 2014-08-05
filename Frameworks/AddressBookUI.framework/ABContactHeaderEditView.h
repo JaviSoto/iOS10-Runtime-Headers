@@ -31,6 +31,7 @@
 - (void)setEditingGroups:(id)arg1;
 - (id)initWithContact:(id)arg1 editingGroups:(id)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)updateFontSizes;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (bool)hasPhoto;
 - (void)setBackgroundColor:(id)arg1;
 - (void)dealloc;
@@ -40,6 +41,5 @@
 - (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)reloadData;
 
 @end

@@ -2,9 +2,10 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, MPCloudAssetDownloadSessionIdentifier;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, MPCloudAssetDownloadSessionIdentifier;
 
 @interface MPCloudAssetDownloadController : NSObject  {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_downloadSessions;
     bool_downloadSessionsPaused;
     MPCloudAssetDownloadSessionIdentifier *_prioritizedDownloadSessionIdentifier;
@@ -14,17 +15,17 @@
 
 - (void)resumeAllDownloadSessions;
 - (void)pauseAllDownloadSessions;
-- (bool)contextHasDownloadSession:(id)arg1;
+- (bool)_downloadExistsWithSessionIdentifier:(id)arg1;
 - (void)_downloadFileSizeAvailableNotification:(id)arg1;
 - (void)_downloadFailedNotification:(id)arg1;
 - (void)_downloadSucceededNotification:(id)arg1;
 - (id)_downloadKeyCookieWithValue:(id)arg1 URL:(id)arg2;
 - (void)_removeNotificationObserversForDownloadSession:(id)arg1;
 - (void)_prioritizeDownloadSession:(id)arg1;
-- (bool)_downloadExistsWithSessionIdentifier:(id)arg1;
+- (id)_newAssetForExistingDownloadSession:(id)arg1 context:(id)arg2;
 - (id)_newAVAssetForPurchaseResponseDictionary:(id)arg1 context:(id)arg2 preferredAssetFlavor:(id)arg3;
 - (id)_urlConnectionRequestForContext:(id)arg1;
-- (id)_newAssetForExistingDownloadSession:(id)arg1 context:(id)arg2;
+- (id)_assetForExistingDownloadSession:(id)arg1 context:(id)arg2 downloadSessionID:(id)arg3 wantingHighQuality:(bool)arg4 returningShouldAttemptFurtherLoad:(out bool*)arg5;
 - (id)_newAVAssetForContext:(id)arg1;
 - (bool)_canPlayCachedAssetAtPath:(id)arg1;
 - (void)_stopDownloadsBasedOnCurrentNetworkIfNeeded;

@@ -35,6 +35,7 @@
 @property bool _isSharedSession;
 @property(copy) id _connBlock;
 
++ (void)_obliterateAllBackgroundSessionsWithCompletionHandler:(id)arg1;
 + (void)_getActiveSessionIdentifiersWithCompletionHandler:(id)arg1;
 + (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (id)sessionWithConfiguration:(id)arg1;

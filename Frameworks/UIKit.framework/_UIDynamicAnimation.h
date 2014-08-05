@@ -28,11 +28,11 @@
 + (void)_updateAnimations:(id)arg1 timer:(id)arg2;
 
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
+- (void)stop;
 - (id)init;
 - (int)state;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 - (bool)_isRunning;
 - (void)_setGrouped:(bool)arg1;
 - (bool)_isGrouped;

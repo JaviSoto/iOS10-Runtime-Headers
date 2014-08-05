@@ -14,9 +14,9 @@
 
 
 - (void)setPass:(unsigned char)arg1;
-- (unsigned char)pass;
 - (void)setSubmodel:(id)arg1;
 - (id)submodel;
+- (unsigned char)pass;
 - (void)dealloc;
 - (id)description;
 

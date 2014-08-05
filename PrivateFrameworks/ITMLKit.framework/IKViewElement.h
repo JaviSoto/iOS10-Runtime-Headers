@@ -6,6 +6,7 @@
 
 @interface IKViewElement : NSObject  {
     bool_disabled;
+    bool_impressionable;
     NSString *_elementID;
     unsigned long long _elementType;
     NSString *_elementName;
@@ -33,6 +34,7 @@
 @property(copy,readonly) NSString * accessibilityText;
 @property(copy,readonly) NSString * autoHighlightIdentifier;
 @property(getter=isDisabled) bool disabled;
+@property(getter=isImpressionable) bool impressionable;
 @property unsigned long long updateType;
 @property(copy,readonly) NSArray * features;
 @property IKAppDocument * appDocument;
@@ -44,6 +46,7 @@
 + (unsigned long long)evaluateElementUpdateTypeAndReset:(id)arg1;
 + (bool)shouldParseChildDOMElements;
 
+- (void)setImpressionable:(bool)arg1;
 - (id)autoHighlightIdentifier;
 - (void)setActiveSingularEvents:(id)arg1;
 - (id)activeSingularEvents;
@@ -55,6 +58,7 @@
 - (id)childImageElementWithType:(unsigned long long)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)appDocument;
+- (bool)isImpressionable;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)setAppDocument:(id)arg1;
 - (unsigned long long)elementType;

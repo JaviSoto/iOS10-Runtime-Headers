@@ -55,9 +55,9 @@
 - (unsigned long long)visibleFields;
 - (void)setVisibleFields:(unsigned long long)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (id)iconImageView;
-- (void)setClientContext:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void).cxx_destruct;

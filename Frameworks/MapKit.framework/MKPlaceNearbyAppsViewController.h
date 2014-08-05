@@ -25,7 +25,9 @@
 - (bool)requiresPreferredContentSizeInStackingView;
 - (void)setStoreItems:(id)arg1;
 - (void)setNearbyAppsDelegate:(id)arg1;
+- (void)contentSizeDidChange;
 - (id)init;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;

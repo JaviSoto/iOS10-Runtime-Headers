@@ -22,8 +22,6 @@
 
 + (id)_localizedNameForName:(id)arg1;
 
-- (id)nameSuffix;
-- (id)namePrefix;
 - (bool)suffixWhenPrefixOnly;
 - (bool)isContinuation;
 - (id)localizedSortedNames;
@@ -35,6 +33,8 @@
 - (void)setSortedNames:(id)arg1;
 - (id)dictionaryForInfo;
 - (id)sortedNames;
+- (id)nameSuffix;
+- (id)namePrefix;
 - (id)initWithDictionary:(id)arg1;
 - (void)dealloc;
 - (id)description;

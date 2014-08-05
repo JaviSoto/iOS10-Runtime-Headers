@@ -19,7 +19,6 @@
 @property(getter=isBeingRemoved) bool beingRemoved;
 
 
-- (id)node;
 - (id)superview;
 - (void)dealloc;
 - (bool)isBeingRemoved;
@@ -35,6 +34,7 @@
 - (void)setOverflowContentView:(id)arg1;
 - (id)initWithLayer:(id)arg1 node:(id)arg2 webBrowserView:(id)arg3;
 - (void)setNode:(id)arg1;
+- (id)node;
 - (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

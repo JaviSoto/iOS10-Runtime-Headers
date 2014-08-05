@@ -126,8 +126,6 @@
 - (void)_updateInstructionalTextBackground;
 - (void)_updateInstructionalText:(id)arg1;
 - (double)_ghostWidth;
-- (double)_previewContainerHorizontalInset;
-- (struct CGSize { double x1; double x2; })_previewSize;
 - (void)updateToContentSize:(id)arg1;
 - (void)setDeviceOrientation:(long long)arg1;
 - (void)setDelegate:(id)arg1;

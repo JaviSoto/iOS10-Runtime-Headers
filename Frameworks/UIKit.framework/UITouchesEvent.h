@@ -22,6 +22,8 @@
 - (id)_init;
 - (void)_windowNoLongerAwaitingSystemGestureNotification:(id)arg1;
 - (void)_addWindowAwaitingLatentSystemGestureNotification:(id)arg1 deliveredToEventWindow:(id)arg2;
+- (unsigned int)_windowServerHitTestContextId;
+- (double)_initialTouchTimestamp;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
 - (id)_touchesForGesture:(id)arg1 withPhase:(long long)arg2;
 - (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
@@ -31,12 +33,10 @@
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)touchesForView:(id)arg1;
+- (id)touchesForWindow:(id)arg1;
 - (id)_cloneEvent;
 - (id)_firstTouchForView:(id)arg1;
 - (void)_invalidateGestureRecognizerForWindowCache;
-- (double)_initialTouchTimestamp;
-- (unsigned int)_windowServerHitTestContextId;
-- (id)touchesForWindow:(id)arg1;
 - (id)_touchesForView:(id)arg1 withPhase:(long long)arg2;
 - (id)_viewsForWindow:(id)arg1;
 - (void)_touchesForGesture:(id)arg1 withPhase:(long long)arg2 intoSet:(id)arg3;

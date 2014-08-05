@@ -2,12 +2,15 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString, NSMutableDictionary;
+@class NSObject<OS_dispatch_queue>, NSMutableDictionary, NSString;
 
 @interface CKDURLSessionPool : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegate> {
-    NSMutableDictionary *_delegateByTask;
+    NSMutableDictionary *_delegateByTaskDescription;
     NSMutableDictionary *_sessionByIdentifier;
-    NSMutableDictionary *_ephemeralSessionByTask;
+    NSMutableDictionary *_ephemeralSessionByTaskDescription;
+    NSMutableDictionary *_sessionConfigurationReferenceByName;
+    NSMutableDictionary *_sessionConfigurationReferenceByIdentifier;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly) unsigned long long hash;
@@ -19,9 +22,11 @@
 
 - (void)_performAsyncOnDelegateOfSession:(id)arg1 task:(id)arg2 fromSelector:(SEL)arg3 block:(id)arg4;
 - (id)_URLSessionWithConfiguration:(id)arg1 forDelegate:(id)arg2;
-- (void)_cancelAllPendingTasksForSession:(id)arg1 forDelegate:(id)arg2;
+- (void)checkinSessionConfiguration:(id)arg1;
 - (void)invalidateDataTask:(id)arg1;
-- (id)dataTaskWithConfiguration:(id)arg1 request:(id)arg2 delegate:(id)arg3;
+- (void)setSessionConfiguration:(id)arg1 forName:(id)arg2;
+- (id)checkoutSessionConfigurationWithName:(id)arg1;
+- (id)dataTaskWithTaskDescription:(id)arg1 configuration:(id)arg2 request:(id)arg3 delegate:(id)arg4;
 - (id)init;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id)arg4;

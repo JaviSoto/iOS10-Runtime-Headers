@@ -53,10 +53,10 @@
 - (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)seekToTime:(double)arg1;
 - (void)pause;
+- (void)stop;
 - (id)initWithURL:(id)arg1;
 - (id)URL;
 - (void)dealloc;
-- (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

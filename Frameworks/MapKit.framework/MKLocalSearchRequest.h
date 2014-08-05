@@ -39,7 +39,6 @@
 
 + (id)searchRequestWithCompletion:(id)arg1;
 
-- (void)_setContactsDataString:(id)arg1;
 - (void)_setAllowPhoneNumberLookupUsingCellular:(bool)arg1;
 - (id)_contactsDataString;
 - (void)_setDeviceLocation:(id)arg1;
@@ -53,6 +52,7 @@
 - (id)_phoneNumbers;
 - (id)_deviceLocation;
 - (id)geoCompletionItem;
+- (void)_setContactsDataString:(id)arg1;
 - (void)_setCanonicalSearchString:(id)arg1;
 - (id)_dictionaryRepresentation;
 - (void)_setPhoneNumbers:(id)arg1;

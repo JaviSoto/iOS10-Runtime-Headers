@@ -293,9 +293,9 @@
 - (bool)isPageHeightOverridden;
 - (bool)isPageWidthOverridden;
 - (long long)headerMargin;
-- (unsigned int)pageScale;
 - (long long)pageHeight;
 - (long long)pageWidth;
+- (unsigned int)pageScale;
 - (long long)rightMargin;
 - (long long)leftMargin;
 - (long long)bottomMargin;

@@ -70,13 +70,13 @@
 - (id)txtRecordDataWithDiscoveryInfo:(id)arg1;
 - (id)myPeerID;
 - (id)serviceType;
+- (id)invites;
 - (void)setPeers:(id)arg1;
 - (id)peers;
 - (id)syncQueue;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
-- (id)invites;
 - (void)setIsAdvertising:(bool)arg1;
 - (void)setServiceType:(id)arg1;
 - (id)init;

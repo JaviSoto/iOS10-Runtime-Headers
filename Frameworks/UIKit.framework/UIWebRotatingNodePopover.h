@@ -25,7 +25,6 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (id)node;
 - (void)dealloc;
 - (void)setDismissDelegate:(id)arg1;
 - (id)dismissDelegate;
@@ -39,6 +38,7 @@
 - (void)presentPopoverAnimated:(bool)arg1;
 - (void)setPopoverController:(id)arg1;
 - (id)initWithDOMNode:(id)arg1;
+- (id)node;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)dismissPopoverAnimated:(bool)arg1;
 

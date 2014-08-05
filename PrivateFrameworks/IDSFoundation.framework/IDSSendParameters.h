@@ -17,7 +17,7 @@
 @property bool encryptPayload;
 @property bool compressPayload;
 @property double timeout;
-@property bool highPriority;
+@property long long priority;
 @property bool localDelivery;
 @property bool requireBluetooth;
 @property(retain) NSString * identifier;
@@ -34,6 +34,7 @@
 @property bool wantsResponse;
 @property(retain) NSData * dataToEncrypt;
 @property(retain) NSData * messageUUID;
+@property(retain) NSString * alternateCallbackID;
 @property(retain) NSNumber * command;
 @property bool wantsDeliveryStatus;
 @property(retain) NSDictionary * deliveryStatusContext;
@@ -63,6 +64,7 @@
 - (void)setLocalDelivery:(bool)arg1;
 - (void)setCompressPayload:(bool)arg1;
 - (void)setEncryptPayload:(bool)arg1;
+- (void)setAlternateCallbackID:(id)arg1;
 - (void)setMessageUUID:(id)arg1;
 - (void)setWantsAppAck:(bool)arg1;
 - (void)setCommand:(id)arg1;
@@ -76,8 +78,6 @@
 - (bool)bypassDuet;
 - (bool)requireBluetooth;
 - (bool)localDelivery;
-- (bool)highPriority;
-- (void)setHighPriority:(bool)arg1;
 - (bool)wantsResponse;
 - (void)setWantsResponse:(bool)arg1;
 - (bool)compressPayload;
@@ -88,13 +88,13 @@
 - (id)requireAllRegistrationProperties;
 - (id)bulkedPayload;
 - (void)setBulkedPayload:(id)arg1;
+- (id)alternateCallbackID;
 - (id)dataToEncrypt;
 - (id)accountUUID;
 - (id)fromID;
 - (id)protobuf;
-- (id)messageUUID;
 - (id)peerResponseIdentifier;
-- (void)setCompressed:(bool)arg1;
+- (id)messageUUID;
 - (bool)compressed;
 - (bool)expectsPeerResponse;
 - (void)setDeliveryStatusContext:(id)arg1;
@@ -103,6 +103,7 @@
 - (bool)wantsDeliveryStatus;
 - (void)setDestinations:(id)arg1;
 - (id)expirationDate;
+- (void)setCompressed:(bool)arg1;
 - (id)command;
 - (void)setMessage:(id)arg1;
 - (id)message;
@@ -114,6 +115,8 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (id)data;
+- (void)setPriority:(long long)arg1;
+- (long long)priority;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

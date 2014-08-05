@@ -17,9 +17,9 @@
 - (id)requestOperationClasses;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperations;
-- (void)setToken:(id)arg1;
-- (id)token;
 - (int)operationType;
+- (id)token;
+- (void)setToken:(id)arg1;
 - (id)bundleID;
 - (void)setBundleID:(id)arg1;
 - (void).cxx_destruct;

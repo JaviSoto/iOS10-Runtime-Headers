@@ -36,13 +36,13 @@
 - (void)garbageCollectDocuments;
 - (void)popAllDocuments;
 - (void)_unloadAllStackItems;
-- (void)_sendStackDidChange;
+- (void)_handleStackDidChange;
 - (id)_activeNavigationController;
 - (id)documentStackItems;
-- (void)removeDocument:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
 - (id)initWithNavigationController:(id)arg1;
+- (void)removeDocument:(id)arg1;
 - (void)clear;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;

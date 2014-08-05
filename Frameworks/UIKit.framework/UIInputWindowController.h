@@ -80,6 +80,7 @@
             double height; 
         } size; 
     } _preLayoutHostViewFrame;
+    bool_didOverridePreLayoutHostViewFrame;
     bool_didPostLayoutNotification;
     UIInputViewSetNotificationInfo *_keyboardHeightChangeNotificationInfo;
     bool_wasOnScreen;
@@ -95,6 +96,7 @@
     NSArray *_visibilityConstraints;
     NSLayoutConstraint *_verticalVisibilityConstraint;
     UIInputViewSetPlacement *_postRotationPlacement;
+    UIInputViewSet *_postRotationInputViewSet;
     UIInputViewSetNotificationInfo *_templateNotificationInfo;
     UIInputViewPlacementTransition *_currentTransition;
     <_UIRemoteKeyboardControllerDelegate> *_controllerDelegate;
@@ -117,6 +119,7 @@
 @property(retain) NSLayoutConstraint * inputViewHeightConstraint;
 @property(retain) NSLayoutConstraint * accessoryViewHeightConstraint;
 @property(retain) UIInputViewSetPlacement * postRotationPlacement;
+@property(retain) UIInputViewSet * postRotationInputViewSet;
 @property(retain) UIInputViewSetNotificationInfo * templateNotificationInfo;
 @property(retain) UIInputViewPlacementTransition * currentTransition;
 @property(readonly) unsigned long long hash;
@@ -144,6 +147,8 @@
 - (void)setInputBackdropView:(id)arg1;
 - (void)set_inputViewController:(id)arg1;
 - (void)setPlacement:(id)arg1 starting:(id)arg2 completion:(id)arg3;
+- (void)setPostRotationInputViewSet:(id)arg1;
+- (id)postRotationInputViewSet;
 - (id)postRotationPlacement;
 - (void)setPostRotationPlacement:(id)arg1;
 - (id)_viewControllerForAutorotation;
@@ -175,6 +180,7 @@
 - (id)viewMatchingConstraintForAttribute:(long long)arg1 primaryView:(id)arg2 secondaryView:(id)arg3;
 - (void)setTemplateNotificationInfo:(id)arg1;
 - (void)performWithoutAppearanceCallbacks:(id)arg1;
+- (void)_forcePreLayoutHostViewFrame;
 - (void)_updateBackdropViews;
 - (void)registerPowerLogEvent:(bool)arg1;
 - (void)updateViewSizingConstraints;
@@ -188,6 +194,7 @@
 - (id)_inputAccessoryBackdropView;
 - (id)_inputBackdropView;
 - (id)_inputViewController;
+- (void)candidateBarWillChangeHeight:(double)arg1 withDuration:(double)arg2;
 - (void)updateScrollViewContentInsetBottom:(double)arg1;
 - (void)hideScrollViewHorizontalScrollIndicator:(bool)arg1;
 - (void)animateAccessoryViewVisibility:(bool)arg1 withDuration:(double)arg2;
@@ -218,6 +225,7 @@
 - (id)hostView;
 - (void)finishTransitionWithCompletion:(id)arg1;
 - (void)prepareForTransition;
+- (id)windowForAutorotation;
 - (id)_inputAccessoryView;
 - (id)_inputView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrame;

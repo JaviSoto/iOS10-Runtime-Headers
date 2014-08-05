@@ -9,6 +9,7 @@
     NSManagedObjectID *_objectID;
     bool_entitled;
     NSString *_clientName;
+    int _clientProcessID;
 }
 
 @property(readonly) unsigned long long hash;
@@ -20,12 +21,14 @@
 @property(readonly) NSManagedObjectID * objectID;
 @property(getter=isEntitled,readonly) bool entitled;
 @property(readonly) NSString * clientName;
+@property(readonly) int clientProcessID;
 
 + (id)deleteRequestForObject:(id)arg1;
 
 - (id)initForNewObject;
+- (int)clientProcessID;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
+- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (bool)isEntitled;
 - (void)deleteManagedObject:(id)arg1 photoLibrary:(id)arg2;

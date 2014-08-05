@@ -20,6 +20,7 @@
 - (void)getTrustForURL:(id)arg1 completionBlock:(id)arg2;
 - (void)loadWithCompletionBlock:(id)arg1;
 - (void)loadValueForKey:(id)arg1 completionBlock:(id)arg2;
+- (id)storeFrontIdentifier;
 - (void)invalidate;
 - (void).cxx_destruct;
 

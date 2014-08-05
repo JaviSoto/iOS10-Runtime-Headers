@@ -17,8 +17,8 @@
 - (id)getValueForPreference:(id)arg1 expectedClass:(Class)arg2;
 - (bool)getBooleanPreference:(id)arg1 defaultValue:(bool)arg2;
 - (id)initWithDomain:(id)arg1;
-- (void)setValueForPreference:(id)arg1 value:(id)arg2 notificationName:(id)arg3;
 - (void)setBooleanPreference:(id)arg1 value:(bool)arg2 notificationName:(id)arg3;
+- (void)setValueForPreference:(id)arg1 value:(id)arg2 notificationName:(id)arg3;
 - (void)registerReflectionForPreferenceWithNotificationName:(id)arg1;
 - (id)init;
 - (void)dealloc;

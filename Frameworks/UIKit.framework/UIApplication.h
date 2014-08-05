@@ -258,9 +258,11 @@
 - (void)installNotificationObserverForNotificationName:(id)arg1 forOneNotification:(bool)arg2 usingBlock:(id)arg3;
 - (void)_alertSheetStackChanged;
 - (void)endRemoteSheet:(id)arg1;
+- (void)beginRemoteSheetController:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(bool)arg5 opaque:(bool)arg6 presentAnimated:(bool)arg7;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
 - (void)endRemoteSheet:(id)arg1 returnCode:(long long)arg2 dismissAnimated:(bool)arg3;
 - (void)endRemoteSheet:(id)arg1 returnCode:(long long)arg2;
+- (void)beginRemoteSheetController:(id)arg1 viewOrNil:(id)arg2 delegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void*)arg5 requireTopApplication:(bool)arg6 opaque:(bool)arg7 presentAnimated:(bool)arg8;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(bool)arg5 opaque:(bool)arg6 presentAnimated:(bool)arg7;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(bool)arg5 presentAnimated:(bool)arg6;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4 requireTopApplication:(bool)arg5;
@@ -626,6 +628,7 @@
 - (void)_addResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
 - (void)_cleanupUserActivity:(id)arg1 activityIdentifier:(id)arg2;
 - (void)_userActivityWillSave:(id)arg1;
+- (bool)isSuspendedEventsOnly;
 - (void)terminateWithSuccess;
 - (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { double x1; double x2; })arg1 virtualHorizontalSizeClass:(long long)arg2 virtualVerticalSizeClass:(long long)arg3;
 - (void)_updateSnapshotAndStateRestorationArchiveForBackgroundEvent:(id)arg1 saveState:(bool)arg2 exitIfCouldNotRestoreState:(bool)arg3;
@@ -659,7 +662,6 @@
 - (void)setStatusBarOrientation:(long long)arg1 animation:(int)arg2 duration:(double)arg3;
 - (void)setStatusBarMode:(int)arg1 interfaceOrientation:(long long)arg2 duration:(float)arg3 fenceID:(int)arg4 animation:(int)arg5 startTime:(double)arg6;
 - (long long)activeInterfaceOrientation;
-- (bool)isStatusBarHidden;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarFrame;
 - (void)_showEditAlertView;
 - (bool)applicationSupportsShakeToEdit;
@@ -697,8 +699,6 @@
 - (id)nameOfDefaultImageToUpdateAtSuspension;
 - (bool)_updateDefaultImage;
 - (void)_saveApplicationPreservationStateIfSupported;
-- (void)_setSuspendedEventsOnly:(bool)arg1;
-- (void)_setSuspendedUnderLock:(bool)arg1;
 - (double)defaultImageSnapshotExpiration;
 - (void)_terminateWithStatus:(int)arg1;
 - (void)applicationWillTerminate;
@@ -748,6 +748,7 @@
 - (void)setStatusBarHidden:(bool)arg1;
 - (double)statusBarHeightForOrientation:(long long)arg1;
 - (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2;
+- (bool)_isOrientationVerticallyCompact:(long long)arg1;
 - (bool)_supportsCompactStatusBarHiding;
 - (void)setStatusBarStyle:(long long)arg1;
 - (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
@@ -786,7 +787,8 @@
 - (bool)_applicationLaunchesIntoPortrait;
 - (bool)_supportedInterfaceOrientationsIsEnabled;
 - (bool)systemIsAnimatingApplicationLifecycleEvent;
-- (bool)isSuspendedEventsOnly;
+- (void)_setSuspendedUnderLock:(bool)arg1;
+- (void)_setSuspendedEventsOnly:(bool)arg1;
 - (long long)statusBarStyle;
 - (id)displayIdentifier;
 - (bool)_legacyAutorotationIsDisabled;
@@ -836,6 +838,7 @@
 - (void)setApplicationSupportsShakeToEdit:(bool)arg1;
 - (id)statusBar;
 - (double)statusBarHeight;
+- (bool)isStatusBarHidden;
 - (long long)_statusBarOrientationForWindow:(id)arg1;
 - (id)_touchesEvent;
 - (void)finishedTest:(id)arg1;

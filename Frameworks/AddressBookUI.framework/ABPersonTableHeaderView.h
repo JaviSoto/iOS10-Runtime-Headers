@@ -75,7 +75,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageViewFrameWhenEditing:(bool)arg1;
 - (id)customMessageView;
 - (id)messageDetailFont;
-- (id)messageFont;
 - (id)messageDetail;
 - (id)namePropertyGroup;
 - (void)reloadNameDataAnimated:(bool)arg1;
@@ -91,6 +90,7 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
+- (id)messageFont;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (void)setBackgroundColor:(id)arg1;

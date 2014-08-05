@@ -40,7 +40,6 @@
 + (id)defaultNotesSortDescriptors;
 + (id)fileProtectionOption;
 
-- (bool)isIndexing;
 - (void)setAccountUtilities:(id)arg1;
 - (bool)deleteIndexFile;
 - (id)findNotesWithText:(id)arg1 betweenDate:(id)arg2 andDate:(id)arg3;
@@ -88,14 +87,12 @@
 - (void)cleanUpLocks;
 - (struct __CXIndex { }*)searchIndex:(char *)arg1;
 - (bool)shouldResumeIndexing;
-- (id)propertyValueForKey:(id)arg1;
 - (void)destroySearchIndex;
 - (void)indexNotes:(id)arg1;
 - (void)saveNotesToResumeIndexing:(id)arg1;
 - (id)notesToResumeIndexing;
 - (id)notesForIntegerIds:(id)arg1;
 - (id)getNextIdObject;
-- (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)_notePropertyObjectForKey:(id)arg1;
 - (unsigned long long)countOfNotesInCollection:(id)arg1;
 - (unsigned long long)countOfStores;
@@ -141,6 +138,9 @@
 - (id)newlyAddedAccount;
 - (bool)deleteAccount:(id)arg1;
 - (void)enableChangeLogging:(bool)arg1;
+- (bool)isIndexing;
+- (id)propertyValueForKey:(id)arg1;
+- (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)storeOptions;
 - (void)clearCaches;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;

@@ -21,6 +21,7 @@
 + (id)lineInfosForPropertyGroup:(id)arg1 info:(id)arg2;
 + (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(bool)arg6;
 
+- (id)pickerView;
 - (void)removeStreetFieldAtIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)addStreetFieldAnimated:(bool)arg1;
 - (id)streetFieldAtLineIndex:(unsigned long long)arg1;
@@ -29,7 +30,6 @@
 - (void)removeTextFieldAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)textFieldTextDidChange:(id)arg1;
 - (long long)tagForPropertyKey:(id)arg1;
-- (id)pickerView;
 - (void)setPropertyGroupInfo:(id)arg1;
 - (void)reloadFromModel;
 - (void)reload;

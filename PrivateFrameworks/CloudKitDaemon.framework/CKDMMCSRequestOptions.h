@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
+@class NSString, NSArray;
 
 @interface CKDMMCSRequestOptions : NSObject  {
     bool_usesBackgroundSession;
@@ -10,19 +10,23 @@
     NSString *_applicationBundleID;
     NSString *_applicationSecondaryID;
     NSString *_containerID;
+    NSArray *_zoneNames;
 }
 
 @property(retain) NSString * applicationBundleID;
 @property(retain) NSString * applicationSecondaryID;
 @property(retain) NSString * containerID;
+@property(retain) NSArray * zoneNames;
 @property bool usesBackgroundSession;
 @property bool allowsCellularAccess;
 
 
 - (void)setApplicationSecondaryID:(id)arg1;
 - (id)MMCSOptions;
+- (id)zoneNames;
 - (id)applicationSecondaryID;
 - (void)setApplicationBundleID:(id)arg1;
+- (void)setZoneNames:(id)arg1;
 - (id)initWithOperation:(id)arg1;
 - (bool)usesBackgroundSession;
 - (void)setUsesBackgroundSession:(bool)arg1;

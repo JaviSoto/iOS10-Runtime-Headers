@@ -15,6 +15,7 @@
 - (void)fireAfter:(double)arg1;
 - (double)nextFireDate;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 queue:(id)arg3;
+- (void)disable;
 - (void)invalidate;
 - (void)dealloc;
 

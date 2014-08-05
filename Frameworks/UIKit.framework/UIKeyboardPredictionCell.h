@@ -75,7 +75,6 @@
 - (void)setIsTypedString:(bool)arg1;
 - (void)setIsAutocorrection:(bool)arg1;
 - (void)setActiveFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })collapsedFrame;
 - (id)prediction;
 - (void)setText:(id)arg1 prediction:(id)arg2 active:(bool)arg3;
 - (void)setBaseFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -83,6 +82,7 @@
 - (void)scrollLabelWithText:(id)arg1 force:(bool)arg2;
 - (void)setState:(int)arg1 withText:(id)arg2;
 - (void)setCellAttributes;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })collapsedFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrame;
 - (bool)isTypedString;
 - (bool)isAutocorrection;

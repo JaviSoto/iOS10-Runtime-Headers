@@ -23,10 +23,10 @@
 
 + (bool)supportsSecureCoding;
 
-- (id)predictionDate;
+- (bool)isExpiredWithLocation:(id)arg1 date:(id)arg2;
 - (double)validRadius;
 - (id)startingLocation;
-- (bool)isExpiredWithLocation:(id)arg1 date:(id)arg2;
+- (id)predictionDate;
 - (id)advice;
 - (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 validRadius:(double)arg4 predictionDate:(id)arg5 ttl:(double)arg6;
 - (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 pollAggressively:(bool)arg5;
@@ -36,5 +36,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
+- (id)description;
 
 @end

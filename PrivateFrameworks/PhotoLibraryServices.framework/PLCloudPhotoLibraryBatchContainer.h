@@ -18,6 +18,7 @@
 
 
 - (void)setBatch:(id)arg1;
+- (id)lastAddedRecord;
 - (void)setWasSplit:(bool)arg1;
 - (void)setReachedMinSplit:(bool)arg1;
 - (void)incrementRetryCount;

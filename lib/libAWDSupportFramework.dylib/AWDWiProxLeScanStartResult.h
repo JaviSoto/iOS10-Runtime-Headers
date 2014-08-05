@@ -47,8 +47,8 @@
 - (void)writeTo:(id)arg1;
 - (bool)hasType;
 - (unsigned int)result;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setType:(int)arg1;

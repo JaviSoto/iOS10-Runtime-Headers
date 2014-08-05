@@ -6,6 +6,7 @@
 }
 
 + (void)upselliCloudAlert;
++ (void)notLoggedIntoiCloudAlert;
 + (void)showForbiddenRegionAlert;
 + (void)showShareMyLocationiCloudSettingsOffAlert;
 + (void)showShareMyLocationSystemServiceOffAlert;
@@ -14,10 +15,12 @@
 + (bool)displayiCloudUserNotificationWithTitleLocKey:(id)arg1 messageLocKey:(id)arg2 switchString:(id)arg3 doNotSwitch:(id)arg4;
 + (void)displayUserNotificationWithTitleLocKey:(id)arg1 messageLocKey:(id)arg2;
 + (bool)shouldDisplayAlerts;
++ (void)show5XXDuringStopOfferAlert;
 + (void)showNetworkOfflineDuringStopOfferAlert;
-+ (void)notLoggedIntoiCloudAlert;
 + (bool)showSwitchMeDeviceAlertUsingCurrentMeDeviceName:(id)arg1;
++ (void)show5XXDuringStartOfferAlert;
 + (void)showActiveDeviceChangedAlert;
++ (void)showGenericErrorAlert;
 + (void)showNetworkOfflineDuringOfferAlert;
 + (void)showRestrictedAlert;
 

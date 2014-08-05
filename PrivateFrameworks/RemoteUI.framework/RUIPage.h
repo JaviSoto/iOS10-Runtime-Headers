@@ -161,11 +161,11 @@
 - (void)setCustomMargin:(double)arg1;
 - (id)webViewOM;
 - (bool)hasWebView;
-- (id)rightToolbarButtonItem;
 - (void)setLoading:(bool)arg1;
 - (bool)needsToShowToolbarInPrefsAppRoot;
 - (id)tableViewOM;
 - (double)_getKeyboardIntersectionHeight;
+- (id)rightToolbarButtonItem;
 - (bool)isLoading;
 - (id)init;
 - (void)dealloc;

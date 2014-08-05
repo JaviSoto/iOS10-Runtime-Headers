@@ -38,6 +38,8 @@
 @property(readonly) CPLConfiguration * configuration;
 @property bool hasChangesToProcess;
 @property bool isExceedingQuota;
+@property bool iCloudLibraryHasBeenWiped;
+@property bool iCloudLibraryExists;
 @property(retain) NSDate * exitDeleteTime;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
@@ -59,11 +61,16 @@
 - (id)clientLibraryBaseURL;
 - (void)startSyncSession;
 - (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4;
+- (void)notifyAttachedObjectsResourceDidFailBackgroundDownloadOfResource:(id)arg1;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
 - (void)updateLastSuccessfullSyncDate:(id)arg1;
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (id)systemMonitor;
 - (id)syncManager;
+- (void)setICloudLibraryExists:(bool)arg1;
+- (bool)iCloudLibraryExists;
+- (void)setICloudLibraryHasBeenWiped:(bool)arg1;
+- (bool)iCloudLibraryHasBeenWiped;
 - (void)setExitDeleteTime:(id)arg1;
 - (id)exitDeleteTime;
 - (void)setIsExceedingQuota:(bool)arg1;

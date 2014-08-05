@@ -23,5 +23,6 @@
 - (void)reporioritizeBacklogOperations;
 - (void)consumeScenario:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)initWithConfiguration:(id)arg1;
+- (void)dealloc;
 
 @end

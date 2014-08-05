@@ -43,6 +43,8 @@
 - (void)sendUninstalledNotificationForApp:(id)arg1 reply:(id)arg2;
 - (void)installationEndedForApplication:(id)arg1;
 - (void)sendFailedNotificationForApp:(id)arg1 isUninstall:(bool)arg2;
+- (void)endObservingConnection;
+- (void)beginObservingConnection;
 - (void)sendWillUninstallNotificationForApps:(id)arg1 Plugins:(id)arg2 isUpdate:(bool)arg3;
 - (void)removeObserverWithUUID:(id)arg1;
 - (void)addObserver:(id)arg1 withUUID:(id)arg2;

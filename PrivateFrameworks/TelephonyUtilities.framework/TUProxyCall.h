@@ -67,6 +67,8 @@
 - (bool)isUplinkMuted;
 - (bool)isOutgoing;
 - (void)answerWithSourceIdentifier:(id)arg1;
+- (id)audioMode;
+- (id)audioCategory;
 - (int)supportedModelType;
 - (int)service;
 - (void)setService:(int)arg1;

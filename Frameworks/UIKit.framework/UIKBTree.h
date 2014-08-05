@@ -25,6 +25,7 @@
 + (bool)shouldSkipCacheString:(id)arg1;
 + (id)treeOfType:(int)arg1;
 + (id)shapesForControlKeyShapes:(id)arg1 options:(int)arg2;
++ (long long)extraIPhoneIdiom:(long long)arg1 width:(double)arg2 landscape:(bool)arg3;
 + (id)stringForType:(int)arg1;
 + (id)uniqueName;
 + (id)keyboard;
@@ -67,6 +68,7 @@
 - (void)setGeometriesList:(id)arg1;
 - (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
 - (bool)looksLike:(id)arg1;
+- (long long)handBias;
 - (bool)isLetters;
 - (bool)usesAdaptiveKeys;
 - (id)geometriesOrderedByPosition;
@@ -124,6 +126,7 @@
 - (int)dragThreshold;
 - (bool)modifiesKeyplane;
 - (id)alternateKeyplaneName;
+- (bool)disablesEdgeSwipe;
 - (double)primaryKeylayoutWidthRatio;
 - (bool)avoidsLanguageIndicator;
 - (bool)setObject:(id)arg1 forProperty:(id)arg2;
@@ -136,6 +139,8 @@
 - (bool)forceMultitap;
 - (bool)shouldSkipCandidateSelectionForVariants;
 - (bool)usesKeyCharging;
+- (bool)isExemptFromInputManagerLayout;
+- (bool)isExemptFromInputManagerHitTesting;
 - (bool)supportsType:(long long)arg1;
 - (void)mergeKeyNames:(id)arg1;
 - (id)keysForMergeConditions;

@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString, PHFetchOptions, NSPredicate, PHPhotoLibrary, NSFetchRequest, NSManagedObjectID;
+@class NSString, NSArray, NSPredicate, NSManagedObjectID, PHFetchOptions, PHPhotoLibrary, NSFetchRequest;
 
 @interface PHQuery : NSObject <NSCopying> {
     NSPredicate *_cachedFetchOptionsPredicate;
@@ -15,6 +15,7 @@
     bool__includesCameraRoll;
     PHFetchOptions *_fetchOptions;
     NSString *_fetchType;
+    NSArray *_seedOIDs;
     PHPhotoLibrary *_photoLibrary;
 }
 
@@ -23,6 +24,7 @@
 @property(readonly) NSFetchRequest * fetchRequest;
 @property(readonly) NSPredicate * basePredicate;
 @property(readonly) NSPredicate * filterPredicate;
+@property(readonly) NSArray * seedOIDs;
 @property(readonly) PHPhotoLibrary * photoLibrary;
 @property(setter=_setIncludesTrashedObjects:) bool _includesTrashedObjects;
 @property(setter=_setIncludesCameraRoll:) bool _includesCameraRoll;
@@ -30,8 +32,8 @@
 + (id)queryForCloudSharedAlbums;
 + (id)queryForTopLevelUserCollections;
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
-+ (id)queryForAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)_rootFolderID;
++ (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 phClass:(Class)arg2;
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)defaultSortDescriptorForFetchType:(id)arg1 predicate:(id)arg2;
@@ -49,6 +51,7 @@
 + (id)queryForAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(bool)arg3;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
++ (id)queryForAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)queryForCollectionsInCollectionList:(id)arg1;
 + (id)queryForMomentListsWithSubType:(long long)arg1 options:(id)arg2;
 + (id)queryForMomentListsWithSubType:(long long)arg1 containingMoment:(id)arg2;
@@ -65,6 +68,7 @@
 + (id)queryForAssetCollectionsWithLocalIdentifiers:(id)arg1;
 + (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2;
 
+- (id)seedOIDs;
 - (id)_createFetchRequest;
 - (id)basePredicate;
 - (id)effectivePredicateForPHClass:(Class)arg1 request:(id)arg2;
@@ -73,6 +77,7 @@
 - (void)_setIncludesTrashedObjects:(bool)arg1;
 - (bool)_includesTrashedObjects;
 - (id)fetchOptions;
+- (id)initForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
 - (id)initForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
 - (long long)collectionFetchType;
 - (id)executeQuery;

@@ -35,11 +35,11 @@
 + (void)setLocaleOnly:(id)arg1;
 + (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
 + (void)updateAppleLanguages:(id)arg1 showPreferredLanguages:(bool)arg2;
++ (void)setLocaleAfterLanguageChange:(id)arg1;
 + (id)formattedMoneyAndNumbers:(id)arg1 country:(id)arg2;
 + (id)formattedTime:(id)arg1;
 + (id)formattedDate:(id)arg1;
 + (void)postNotificationForLanguageChange;
-+ (void)setLocaleAfterLanguageChange:(id)arg1;
 + (id)validateLocale:(id)arg1;
 + (id)reloadLocale:(id)arg1;
 + (void)setCountryForLocale:(id)arg1;

@@ -18,10 +18,10 @@
 
 + (id)requestWithBusinesMetadata:(id)arg1;
 
-- (id)urlRequest;
 - (id)dealHandler;
 - (void)handleData:(id)arg1;
 - (void)setDealHandler:(id)arg1;
+- (id)urlRequest;
 - (void)handleError:(id)arg1;
 - (id)url;
 - (void).cxx_destruct;

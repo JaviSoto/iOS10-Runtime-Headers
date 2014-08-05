@@ -34,10 +34,10 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (id)source;
 - (id)bundleIdentifier;
+- (void)setTimestamp:(double)arg1;
 - (void)setSource:(id)arg1;
 - (id)destination;
 - (bool)isEqual:(id)arg1;

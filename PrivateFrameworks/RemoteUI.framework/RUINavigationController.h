@@ -8,6 +8,7 @@
 
 
 - (void)setSupportedInterfaceOrientations:(unsigned long long)arg1;
+- (bool)canBeShownFromSuspendedState;
 - (unsigned long long)supportedInterfaceOrientations;
 
 @end

@@ -28,11 +28,11 @@
 - (struct CGSize { double x1; double x2; })_bestSizeForArtworkCatalog:(id)arg1;
 - (bool)_isRepresentation:(id)arg1 validForCatalog:(id)arg2;
 - (id)_cachedRepresentationForCatalog:(id)arg1;
-- (bool)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id)arg2;
 - (bool)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
+- (bool)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (bool)areRepresentationsAvailableForCatalog:(id)arg1;
 - (id)init;
 - (void).cxx_destruct;

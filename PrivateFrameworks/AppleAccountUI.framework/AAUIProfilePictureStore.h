@@ -49,12 +49,12 @@
 - (void)_fetchProfilePictureForAccountOwnerFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id)arg3;
 - (id)_meCardPicture;
 - (id)_correctlySizedImageFromImage:(id)arg1;
-- (double)pictureDiameter;
 - (id)_fallbackProfilePictureForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)profilePictureForAccountOwnerWithoutMonogramFallback;
 - (id)_monogrammer;
 - (void)_invalidateMonogrammer;
 - (id)initWithGrandSlamSigner:(id)arg1;
+- (double)pictureDiameter;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3;
 - (id)init;
 - (void)dealloc;

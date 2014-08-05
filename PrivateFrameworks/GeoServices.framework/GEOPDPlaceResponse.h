@@ -36,6 +36,7 @@
 - (void)addPlaceResult:(id)arg1;
 - (void)setPlaceResults:(id)arg1;
 - (void)setHasStatus:(bool)arg1;
+- (id)_disambiguationLabels;
 - (bool)hasRequestType;
 - (void)setHasRequestType:(bool)arg1;
 - (void)copyTo:(id)arg1;

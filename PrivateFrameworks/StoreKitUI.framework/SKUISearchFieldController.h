@@ -48,6 +48,7 @@
 - (void)_reloadTrendingVisibility;
 - (id)URLForTrendingSearchPageView:(id)arg1;
 - (void)setShowsResultsForEmptyField:(bool)arg1;
+- (void)resignActive:(bool)arg1;
 - (void)trendingSearchPageView:(id)arg1 didSelectSearch:(id)arg2;
 - (void)setNumberOfSearchResults:(long long)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;

@@ -101,8 +101,8 @@
 - (bool)isAppleInternalInstall;
 - (id)productVersion;
 - (id)productName;
-- (id)buildVersion;
 - (id)init;
 - (void).cxx_destruct;
+- (id)buildVersion;
 
 @end

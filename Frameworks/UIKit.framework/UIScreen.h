@@ -129,6 +129,7 @@
 @property(getter=_jailOrientation,setter=_setJailOrientation:) long long jailOrientation;
 @property(getter=_jailTouchInsets,setter=_setJailTouchInsets:) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } jailTouchInsets;
 @property(getter=_jailUsesHitTestWindow,setter=_setJailUsesHitTestWindow:) bool jailUsesHitTestWindow;
+@property(setter=_setInterfaceOrientation:) long long _interfaceOrientation;
 @property(setter=_setSoftwareDimmingWindow:,retain) UISoftwareDimmingWindow * _softwareDimmingWindow;
 @property(setter=_setLastNotifiedBacklightLevel:) long long _lastNotifiedBacklightLevel;
 @property(retain) FBSDisplay * fbsDisplay;
@@ -147,8 +148,7 @@
 + (id)mainScreen;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toView:(id)arg2;
 + (void)initialize;
-+ (void)__connectDisplayIds:(id)arg1;
-+ (id)__connectedDisplayIds;
++ (id)__connectedFBSDisplays;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1;
 + (id)_screenWithIntegerDisplayID:(unsigned int)arg1;
@@ -169,7 +169,7 @@
 + (id)_workspaceCapableScreens;
 + (void)_FBSDisplayDidPossiblyDisconnect:(id)arg1 forSceneDestruction:(id)arg2;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2 andPost:(bool)arg3;
-+ (id)__createPlugInScreenForDisplay:(id)arg1;
++ (id)__createPlugInScreenForFBSDisplay:(id)arg1;
 + (id)sbs_screenTypes;
 + (id)sbs_snapshotImagePathComponent:(long long)arg1;
 + (id)sbs_launchImageInfoPlistKeyModifier:(long long)arg1;
@@ -208,7 +208,6 @@
 - (void)_setCapability:(id)arg1 forKey:(id)arg2;
 - (void)_setOverrideTraitCollection:(id)arg1;
 - (id)fixedCoordinateSpace;
-- (bool)_isCarScreen;
 - (unsigned int)_seed;
 - (void)setOverscanCompensation:(long long)arg1;
 - (long long)overscanCompensation;
@@ -244,6 +243,7 @@
 - (bool)_isOverscanned;
 - (bool)_overscanAdjustmentNeedsUpdate;
 - (bool)_hasWindows;
+- (bool)_isCarScreen;
 - (void)_setSoftwareDimmingWindow:(id)arg1;
 - (void)_endObservingBacklightLevelNotifications;
 - (void)_beginObservingBacklightLevelNotifications;
@@ -260,7 +260,6 @@
 - (void)_computeMetrics;
 - (id)initWithDisplay:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_interfaceOrientedBounds;
-- (long long)_interfaceOrientation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(long long)arg1 usingStatusbarHeight:(double)arg2 ignoreStatusBar:(bool)arg3;
 - (void)_setLastNotifiedTraitCollection:(id)arg1;
 - (id)_overrideTraitCollection;
@@ -286,6 +285,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_unjailedReferenceBounds;
 - (id)_displayID;
 - (void)_prepareForWindow;
+- (long long)_interfaceOrientation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_mainSceneReferenceBounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_realDisplayBounds;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_jailedBoundsEdgeInsets;
@@ -312,9 +312,9 @@
 - (id)fbsDisplay;
 - (long long)_userInterfaceIdiom;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForInterfaceOrientation:(long long)arg1;
-- (id)_mapkit_display;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_gkBounds;
 - (double)_gkScale;
+- (id)_mapkit_display;
 - (id)sbs_snapshotImagePathComponent;
 - (id)sbs_launchImageInfoPlistKeyModifier;
 - (bool)sbs_isMainScreen;

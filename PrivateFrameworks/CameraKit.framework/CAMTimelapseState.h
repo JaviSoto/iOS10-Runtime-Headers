@@ -18,7 +18,6 @@
     double _captureTimeInterval;
     long long _frameIndexStride;
     long long _nextFrameIndex;
-    long long _startSystemBootTime;
 }
 
 @property(retain) NSString * timelapseUUID;
@@ -35,13 +34,10 @@
 @property(readonly) long long nextFrameIndex;
 @property float focusLensPosition;
 @property(readonly) long long connectionMode;
-@property(readonly) long long startSystemBootTime;
 
 + (id)stateWithContentsOfFile:(id)arg1;
-+ (long long)systemBootTime;
 + (double)maxTimeToWaitForWrittenFrameAfterStop;
 
-- (long long)startSystemBootTime;
 - (void)setFocusLensPosition:(float)arg1;
 - (float)focusLensPosition;
 - (double)captureTimeInterval;
@@ -50,14 +46,12 @@
 - (void)setCaptureOrientation:(int)arg1;
 - (void)setUsingFrontCamera:(bool)arg1;
 - (void)setTimelapseUUID:(id)arg1;
-- (void)updateFromSystemBootTime;
 - (long long)connectionMode;
 - (bool)writeToFile:(id)arg1 createDirectoryIfNeeded:(bool)arg2;
 - (id)filePathForNextFrameIndex;
 - (bool)incrementFrameIndex;
 - (void)setAllFramesWritten:(bool)arg1;
 - (bool)allFramesWritten;
-- (bool)_shouldStopDueToSystemReboot;
 - (void)setStopReasons:(long long)arg1;
 - (long long)nextFrameIndex;
 - (bool)isEqualToState:(id)arg1;

@@ -26,6 +26,7 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
+- (void)stop;
 - (void)dealloc;
 - (oneway void)addPublisher:(id)arg1 forID:(id)arg2 withValues:(id)arg3 isOld:(bool)arg4;
 - (void)startForCategory:(id)arg1;
@@ -33,6 +34,5 @@
 - (id)initWithPublishingHandler:(id)arg1;
 - (oneway void)removePublisherForID:(id)arg1;
 - (oneway void)observePublisherForID:(id)arg1 value:(id)arg2 forKey:(id)arg3 inUserInfo:(bool)arg4;
-- (void)stop;
 
 @end

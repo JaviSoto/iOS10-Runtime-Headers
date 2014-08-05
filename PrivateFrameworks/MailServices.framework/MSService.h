@@ -31,11 +31,11 @@
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (bool)_unitTestsAreEnabled;
 - (bool)isCanceled;
+- (void)stop;
 - (id)init;
 - (void)start;
 - (void)cancel;
 - (void)dealloc;
-- (void)stop;
 - (id)_connection;
 
 @end

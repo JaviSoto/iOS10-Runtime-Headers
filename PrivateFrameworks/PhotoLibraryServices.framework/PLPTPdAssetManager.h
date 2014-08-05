@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, NSArray, NSSet, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>, NSFileManager, PLPhotoLibrary;
+@class NSString, NSArray, NSSet, PLManagedObjectContext, NSObject<PhotoLibraryPTPDelegate>, NSObject<OS_dispatch_queue>, NSFileManager, PLPhotoLibrary;
 
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSObject<PhotoLibraryPTPDelegate> *_delegate;
@@ -11,6 +11,7 @@
     NSSet *_availableAssetIDs;
     PLPhotoLibrary *_photoLibrary;
     int _libraryStatus;
+    NSObject<OS_dispatch_queue> *availableAssetsQueue;
     NSFileManager *fileManager;
 }
 

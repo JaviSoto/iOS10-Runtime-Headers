@@ -63,6 +63,7 @@
     bool_shouldForceContainerForeground;
     NSMutableSet *_foregroundXPCClients;
     NSMutableSet *_XPCClientsUsingUbiquity;
+    int _notifyTokenForFramework;
     bool_deactivated;
     bool_needsSave;
     bool_containerMetadataNeedsSyncUp;
@@ -153,13 +154,12 @@
 - (void)handleRootRecordDeletion;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 recoverFromRank:(id)arg2 caughtUpWithServer:(bool)arg3 flushClientTruth:(bool)arg4;
 - (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2;
-- (void)resetSyncBudget;
+- (void)resetSyncBudgetAndThrottle;
 - (void)didClearAllItemsMarkedOverQuota;
-- (void)didMarkItemUploadOverQuota;
 - (void)didUploadAllItems;
 - (bool)changedAtRelativePath:(id)arg1;
 - (id)deepScanStamp;
-- (void)itemNeedsReading:(id)arg1 atPath:(id)arg2;
+- (void)scheduleCoordinatedReadForItem:(id)arg1 atPath:(id)arg2;
 - (struct PQLResultSet { Class x1; }*)evictableDocumentsEnumerator;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithParentID:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)stagedItemsEnumerator;
@@ -251,8 +251,9 @@
 - (void)setRoot:(id)arg1;
 - (bool)upgradeTables;
 - (unsigned int)syncState;
-- (bool)containerFinishedReset;
-- (bool)startReset;
+- (bool)finishedReset:(unsigned long long)arg1;
+- (void)reset:(unsigned long long)arg1;
+- (bool)startReset:(unsigned long long)arg1;
 - (unsigned long long)lostHeapKey;
 - (void)markLatestSyncRequestFailed;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
@@ -264,7 +265,8 @@
 - (unsigned long long)markChildrenLostForItemID:(id)arg1;
 - (void)didMarkItemRejected;
 - (void)didMarkItemNeedsUpload;
-- (void)didMarkDeadItemNeedsSyncUp;
+- (void)didMarkItemWithSizeDecreaseNeedsSyncUp;
+- (void)didMarkItemUploadOverQuota;
 - (void)scheduleRead;
 - (void)didUpdateCurrentVersionOfItem:(id)arg1;
 - (void)reschedulePostponedRanks;
@@ -335,8 +337,8 @@
 - (bool)allowsCellularAccess;
 - (id)delegate;
 - (unsigned int)state;
+- (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
-- (void)reset;
 
 @end

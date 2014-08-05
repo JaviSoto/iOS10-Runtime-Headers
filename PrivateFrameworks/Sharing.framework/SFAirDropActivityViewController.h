@@ -81,8 +81,8 @@
 - (void)browser:(id)arg1 didInsertPersonAtIndex:(unsigned long long)arg2;
 - (void)browser:(id)arg1 didDeletePersonAtIndex:(unsigned long long)arg2;
 - (void)browserWillChangePeople:(id)arg1;
-- (void)stopBrowsing;
 - (bool)isWifiEnabled;
+- (void)stopBrowsing;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
 - (void)dealloc;

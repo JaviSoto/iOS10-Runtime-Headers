@@ -40,10 +40,10 @@
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (bool)success;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setSuccess:(bool)arg1;
 - (unsigned int)version;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

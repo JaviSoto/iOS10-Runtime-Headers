@@ -51,6 +51,7 @@
 - (void)start;
 - (void)setError:(id)arg1;
 - (id)error;
+- (void)dealloc;
 - (id)documentURL;
 - (bool)isConcurrent;
 - (bool)isExecuting;

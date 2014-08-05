@@ -8,6 +8,7 @@
     bool_isDelete;
     CKRecord *_record;
     CKRecordID *_recordID;
+    CKRecord *_serverRecord;
     NSString *_etag;
     unsigned long long _uploadState;
     NSError *_error;
@@ -15,6 +16,7 @@
 
 @property(retain) CKRecord * record;
 @property(retain) CKRecordID * recordID;
+@property(retain) CKRecord * serverRecord;
 @property bool isDelete;
 @property(retain) NSString * etag;
 @property unsigned long long uploadState;
@@ -24,6 +26,8 @@
 + (id)modifyMetadataWithRecord:(id)arg1;
 + (id)_stringForUploadState:(unsigned long long)arg1;
 
+- (void)setServerRecord:(id)arg1;
+- (id)serverRecord;
 - (unsigned long long)uploadState;
 - (void)setUploadState:(unsigned long long)arg1;
 - (void)setIsDelete:(bool)arg1;

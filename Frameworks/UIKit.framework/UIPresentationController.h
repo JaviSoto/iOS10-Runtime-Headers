@@ -106,6 +106,7 @@
 - (bool)_forcesPreferredAnimationControllers;
 - (id)_descriptionForPrintingViewControllerHierarchy;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_baseContentInsets;
+- (id)_firstCurrentContextChildInWindow;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fullscreenFrameForViewController:(id)arg1 inWindow:(id)arg2 transitionView:(id)arg3;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_dismissWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
@@ -139,13 +140,14 @@
 - (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (id)presentedView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
 - (bool)_shouldGrabPresentersView;
 - (void)_transplantView:(id)arg1 toSuperview:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)_transplantView:(id)arg1 toSuperview:(id)arg2;
 - (bool)_transitioningFrom;
 - (bool)_transitioningTo;
 - (bool)_containerIgnoresDirectTouchEvents;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)transitionDidStart;
 - (void)transitionDidFinish:(bool)arg1;
 - (id)_fromViewForCurrentTransition;
@@ -153,10 +155,10 @@
 - (bool)_shouldDisableInteractionDuringTransitions;
 - (long long)presentationStyle;
 - (id)_currentInteractionController;
-- (id)_presentationView;
 - (id)_parentPresentationController;
 - (id)_parentPresentationControllerImmediate:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_flipSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_presentationView;
 - (id)_computeToEndFrameForCurrentTransition;
 - (id)_toViewForCurrentTransition;
 - (id)_currentPresentationSuperview;
@@ -177,9 +179,9 @@
 - (void)set_computeToEndFrameForCurrentTransition:(id)arg1;
 - (void)set_transitionViewForCurrentTransition:(id)arg1;
 - (void)_setCurrentPresentationSuperview:(id)arg1;
+- (void)_setCurrentTransitionController:(id)arg1;
 - (bool)_shouldDisablePresentersAppearanceCallbacks;
 - (void)_setCurrentInteractionController:(id)arg1;
-- (void)_setCurrentTransitionController:(id)arg1;
 - (bool)dismissing;
 - (void)_setPresentationView:(id)arg1;
 - (bool)presenting;

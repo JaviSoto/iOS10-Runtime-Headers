@@ -116,7 +116,7 @@
 - (bool)determineCGImageBlockFormatWithComponentType:(int)arg1 andPixelSize:(unsigned long long)arg2 andColorModel:(int)arg3;
 - (bool)shouldApplyPremultiplication;
 - (bool)shouldApplyReorientToGL;
-- (void*)alignmentFix:(unsigned long long)arg1 data:(const void*)arg2;
+- (void*)alignmentFix:(unsigned int)arg1 data:(const void*)arg2;
 - (bool)determinePVRFormat:(unsigned int)arg1;
 - (unsigned int)textureTarget;
 - (unsigned int)bindTarget;

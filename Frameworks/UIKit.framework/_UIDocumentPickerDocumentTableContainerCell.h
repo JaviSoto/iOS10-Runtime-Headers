@@ -19,11 +19,11 @@
 - (void)dealloc;
 - (void)setContainerIconView:(id)arg1;
 - (id)containerIconView;
-- (void)updateForItem;
 - (void)setObserverToken:(id)arg1;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)observerToken;
 - (void)setModel:(id)arg1;
+- (void)reloadItem:(bool)arg1;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

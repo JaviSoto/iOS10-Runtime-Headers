@@ -45,6 +45,7 @@
 - (id)playbackSessionID;
 - (long long)numberOfServerAddressChanges;
 - (id)serverAddress;
+- (id)URI;
 - (id)playbackStartDate;
 - (long long)numberOfSegmentsDownloaded;
 - (double)switchBitrate;
@@ -60,7 +61,6 @@
 - (double)transferDuration;
 - (long long)numberOfMediaRequests;
 - (id)serviceIdentifier;
-- (id)URI;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 - (void)finalize;

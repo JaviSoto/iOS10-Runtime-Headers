@@ -137,6 +137,7 @@
 - (void)describeTilesFromList:(id)arg1 output:(id)arg2;
 - (bool)canRenderTile:(id)arg1;
 - (void)cancelLoadForMapTile:(id)arg1;
+- (void)_disableTimers;
 - (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned long long)arg2;
 - (void)configureTileSelection;
 - (bool)cache:(id)arg1 willEvictObject:(id)arg2 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg3;

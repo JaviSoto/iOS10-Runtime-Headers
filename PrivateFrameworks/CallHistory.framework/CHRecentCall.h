@@ -100,7 +100,6 @@
 - (bool)canCoalesceSyncWithRecentsStrategyWithCall:(id)arg1;
 - (bool)isAddressBookContactASuggestion;
 - (bool)isAddressBookContactASuggestionSync;
-- (id)addressBookRecordId;
 - (id)phoneBookManager;
 - (void)setCallerName:(id)arg1;
 - (id)callerNameSync;
@@ -141,6 +140,7 @@
 - (unsigned long long)numberOfOccurrences;
 - (id)coalescingHash;
 - (bool)coalesceWithCall:(id)arg1 withStrategy:(id)arg2;
+- (id)addressBookRecordId;
 - (void)setCallStatus:(unsigned int)arg1;
 - (void)setCallType:(unsigned int)arg1;
 - (unsigned int)callType;
@@ -164,7 +164,6 @@
 - (bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

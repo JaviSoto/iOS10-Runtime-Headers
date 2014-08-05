@@ -21,7 +21,6 @@
 - (id)unknownFields;
 - (void)copyTo:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)hasTitle;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -32,6 +31,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
+- (bool)hasTitle;
 - (id)region;
 - (void)setRegion:(id)arg1;
 

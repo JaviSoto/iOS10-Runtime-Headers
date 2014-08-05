@@ -26,7 +26,6 @@
 
 + (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 ownerURI:(id)arg5 fireDate:(id)arg6 externalID:(id)arg7 acknowledgedDate:(id)arg8;
 
-- (id)externalID;
 - (id)initWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 ownerURI:(id)arg5 fireDate:(id)arg6 externalID:(id)arg7 acknowledgedDate:(id)arg8;
 - (id)alarmID;
 - (id)ownerTimeZone;
@@ -34,6 +33,7 @@
 - (id)ownerDate;
 - (id)ownerID;
 - (id)acknowledgedDate;
+- (id)externalID;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

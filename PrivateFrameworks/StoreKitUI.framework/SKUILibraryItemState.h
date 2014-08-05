@@ -9,6 +9,7 @@
     unsigned long long _avTypes;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
+    bool_highDefinition;
     bool_preview;
     bool_rental;
     NSNumber *_storeAccountIdentifier;
@@ -21,12 +22,14 @@
 @property unsigned long long AVTypes;
 @property(copy) NSString * bundleIdentifier;
 @property(copy) NSString * bundleVersion;
+@property(getter=isHighDefinition) bool highDefinition;
 @property(getter=isPreview) bool preview;
 @property(getter=isRental) bool rental;
 @property(copy) NSNumber * storeAccountIdentifier;
 @property(copy) NSString * storeFlavorIdentifier;
 @property(copy) NSString * storePlatformKind;
 @property(copy) NSNumber * storeVersionIdentifier;
+@property(readonly) NSString * itemStateVariantIdentifier;
 
 
 - (id)initWithApplication:(id)arg1;
@@ -39,6 +42,7 @@
 - (void)setStoreAccountIdentifier:(id)arg1;
 - (void)setAVTypes:(unsigned long long)arg1;
 - (unsigned long long)AVTypes;
+- (id)itemStateVariantIdentifier;
 - (bool)isPreview;
 - (id)newJavaScriptRepresentation;
 - (id)storePlatformKind;
@@ -47,6 +51,8 @@
 - (id)storeAccountIdentifier;
 - (bool)isRental;
 - (void)setRental:(bool)arg1;
+- (void)setHighDefinition:(bool)arg1;
+- (bool)isHighDefinition;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (id)bundleIdentifier;

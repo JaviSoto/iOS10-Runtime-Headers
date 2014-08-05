@@ -274,12 +274,12 @@
 - (bool)isGesturing;
 - (id)detailedDescription;
 - (id)mapCanvas;
+- (void)stop;
 - (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id).cxx_construct;
-- (void)stop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)_step;
 - (void)setZoomScale:(double)arg1;

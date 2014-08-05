@@ -2,20 +2,20 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray, NSMutableDictionary;
+@class NSMapTable;
 
 @interface CKDGetAuthTokensForPutURLRequest : CKDURLRequest  {
-    NSArray *_MMCSItems;
-    NSMutableDictionary *_MMCSItemByRequestID;
+    NSMapTable *_MMCSItemsByRecordIDs;
+    NSMapTable *_recordIDsByRequestIDs;
 }
 
-@property(readonly) NSArray * MMCSItems;
-@property(retain) NSMutableDictionary * MMCSItemByRequestID;
+@property(readonly) NSMapTable * MMCSItemsByRecordIDs;
+@property(retain) NSMapTable * recordIDsByRequestIDs;
 
 
-- (void)setMMCSItemByRequestID:(id)arg1;
-- (id)MMCSItemByRequestID;
-- (id)MMCSItems;
+- (id)recordIDsByRequestIDs;
+- (id)MMCSItemsByRecordIDs;
+- (void)setRecordIDsByRequestIDs:(id)arg1;
 - (id)initWithMMCSItems:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestDidParseProtobufObject:(id)arg1;

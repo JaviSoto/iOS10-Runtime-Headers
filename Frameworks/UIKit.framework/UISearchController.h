@@ -69,10 +69,10 @@
 - (void)_didPresentFromViewController:(id)arg1;
 - (void)_willPresentFromViewController:(id)arg1;
 - (void)_sizeSearchViewToPresentingViewController:(id)arg1;
-- (id)_locatePresentingViewController;
 - (void)_watchScrollView:(id)arg1 forScrolling:(bool)arg2;
 - (id)searchResultsUpdater;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
+- (id)_locatePresentingViewController;
 - (void)_performAutomaticPresentation;
 - (void)_resizeResultsControllerWithDelta:(struct CGSize { double x1; double x2; })arg1;
 - (id)_createAnimationCoordinator;
@@ -88,6 +88,7 @@
 - (void)set_resultsContentScrollViewPresentationOffset:(double)arg1;
 - (bool)_resultsControllerWillLayoutVisibleUnderContainerView;
 - (void)_updateTableHeaderBackgroundViewInTableView:(id)arg1 amountScrolledUnder:(double)arg2;
+- (bool)_searchBarShouldFinalizeBecomingFirstResponder;
 - (void)_searchBarSearchButtonClicked:(id)arg1;
 - (void)_searchBarTextDidBeginEditing:(id)arg1;
 - (void)_searchBarCancelButtonClicked:(id)arg1;

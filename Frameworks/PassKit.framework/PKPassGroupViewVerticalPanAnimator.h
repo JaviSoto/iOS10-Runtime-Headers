@@ -38,8 +38,8 @@
 - (void)layoutViewsWithY:(double)arg1;
 - (struct CGPoint { double x1; double x2; })panningViewStartPosition;
 - (id)initWithGroupView:(id)arg1;
-- (void)dealloc;
 - (void)stop;
+- (void)dealloc;
 - (id)gestureRecognizer;
 - (void)setGestureRecognizer:(id)arg1;
 

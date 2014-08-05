@@ -29,7 +29,6 @@
 - (bool)hasResource:(id)arg1;
 - (bool)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
 - (id)retainFileURLForResource:(id)arg1 error:(id*)arg2;
-- (unsigned long long)sizeOfResourcesToUpload;
 - (bool)markResourceFailedToUpload:(id)arg1 fromURL:(id)arg2 error:(id*)arg3;
 - (bool)markResourceDoesNotNeedToBeUploaded:(id)arg1 error:(id*)arg2;
 - (id)createFileURLForUploadForResource:(id)arg1 error:(id*)arg2;
@@ -39,6 +38,7 @@
 - (bool)resetWithError:(id*)arg1;
 - (bool)markResourceAsUploaded:(id)arg1 fromURL:(id)arg2 error:(id*)arg3;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
+- (unsigned long long)sizeOfResourcesToUpload;
 - (bool)openWithError:(id*)arg1;
 - (void).cxx_destruct;
 

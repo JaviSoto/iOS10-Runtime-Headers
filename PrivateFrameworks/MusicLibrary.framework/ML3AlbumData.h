@@ -17,13 +17,13 @@
 @property int albumYear;
 
 
+- (void)setAlbumPid:(long long)arg1;
 - (id)initWithState:(long long)arg1 sortAlbum:(id)arg2 userRating:(int)arg3 albumYear:(int)arg4;
-- (void)setSortAlbum:(id)arg1;
 - (void)setAlbumYear:(int)arg1;
 - (int)albumYear;
-- (void)setAlbumPid:(long long)arg1;
-- (long long)albumPid;
+- (void)setSortAlbum:(id)arg1;
 - (id)sortAlbum;
+- (long long)albumPid;
 - (int)userRating;
 - (void)setUserRating:(int)arg1;
 - (void).cxx_destruct;

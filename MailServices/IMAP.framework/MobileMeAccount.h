@@ -7,8 +7,8 @@
 
 + (id)deliveryHostName;
 + (id)emailAddressHostPart;
-+ (id)displayedAccountTypeString;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
++ (id)displayedAccountTypeString;
 + (id)hostname;
 + (void)initialize;
 

@@ -23,6 +23,8 @@
     NSArray *_uncoalescedRecentCalls;
     NSArray *_uncoalescedUnFilteredRecentCalls;
     long long _unreadCallCount;
+    id _databaseChangedNotificationRef;
+    id _addressBookChangedNotificationRef;
 }
 
 @property(retain) NSArray * recentCalls;
@@ -43,6 +45,8 @@
 @property(getter=uncoalescedRecentCallsSync,retain) NSArray * uncoalescedRecentCalls;
 @property(retain) NSArray * uncoalescedUnFilteredRecentCalls;
 @property long long unreadCallCount;
+@property(retain) id databaseChangedNotificationRef;
+@property(retain) id addressBookChangedNotificationRef;
 
 + (unsigned int)CHCallStatusForCallWithDuration:(double)arg1 isOriginated:(bool)arg2 isAnswered:(bool)arg3;
 
@@ -102,7 +106,11 @@
 - (id)fetchRecentCallsSyncWithCoalescing:(bool)arg1;
 - (void)setReCoalesce:(bool)arg1;
 - (void)setCacheIsDirty:(bool)arg1;
+- (id)addressBookChangedNotificationRef;
+- (id)databaseChangedNotificationRef;
+- (void)setAddressBookChangedNotificationRef:(id)arg1;
 - (void)addressBookChanged:(id)arg1;
+- (void)setDatabaseChangedNotificationRef:(id)arg1;
 - (void)databaseChanged:(id)arg1;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;

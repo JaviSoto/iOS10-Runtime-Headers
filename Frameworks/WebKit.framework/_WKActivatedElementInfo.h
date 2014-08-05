@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURL, NSString;
+@class NSURL, NSString, UIImage;
 
 @interface _WKActivatedElementInfo : NSObject  {
     struct RetainPtr<NSURL> { 
@@ -15,6 +15,13 @@
         double x; 
         double y; 
     } _interactionLocation;
+    struct RefPtr<WebKit::ShareableBitmap> { 
+        struct ShareableBitmap {} *m_ptr; 
+    } _image;
+    struct RetainPtr<UIImage> { 
+        void *m_ptr; 
+    } _uiImage;
+    long long _type;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -25,23 +32,24 @@
             double height; 
         } size; 
     } _boundingRect;
-    long long _type;
 }
 
 @property(readonly) NSURL * URL;
 @property(readonly) NSString * title;
 @property(readonly) long long type;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
+@property(copy,readonly) UIImage * image;
 @property(readonly) struct CGPoint { double x1; double x2; } _interactionLocation;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _boundingRect;
 
 
 - (struct CGPoint { double x1; double x2; })_interactionLocation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundingRect;
-- (id)_initWithType:(long long)arg1 URL:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 title:(id)arg4 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
+- (id)_initWithType:(long long)arg1 URL:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 title:(id)arg4 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 image:(struct ShareableBitmap { unsigned int x1; struct IntSize { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct RefPtr<WebKit::SharedMemory> { struct SharedMemory {} *x_4_1_1; } x4; void *x5; }*)arg6;
 - (id)title;
+- (id)image;
 - (long long)type;
 - (id)URL;
 - (void).cxx_destruct;
 - (id).cxx_construct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
 
 @end

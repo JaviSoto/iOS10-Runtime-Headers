@@ -52,6 +52,7 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (unsigned long long)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 
 @end

@@ -87,9 +87,9 @@
 - (id)uniqueID;
 - (id)companyName;
 - (id)initWithABRecordID:(int)arg1;
+- (int)recordID;
 - (id)phoneNumbers;
 - (id)emails;
-- (int)recordID;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

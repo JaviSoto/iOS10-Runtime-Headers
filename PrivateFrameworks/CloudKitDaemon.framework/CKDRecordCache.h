@@ -2,23 +2,27 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext;
+@class CKDClientContext, NSObject<OS_dispatch_queue>;
 
 @interface CKDRecordCache : CKSQLite  {
     CKDClientContext *_context;
     long long _scope;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(retain) CKDClientContext * context;
 @property long long scope;
+@property(retain) NSObject<OS_dispatch_queue> * queue;
 
 
 - (void)clearAssetAuthTokensForRecordWithID:(id)arg1;
+- (void)clearAllRecordsForZoneWithID:(id)arg1;
 - (void)clearAllRecords;
 - (void)deleteRecordWithID:(id)arg1;
 - (id)etagForRecordID:(id)arg1 requiredKeys:(id)arg2;
 - (id)recordsWithIDs:(id)arg1 requiredKeys:(id)arg2;
 - (id)recordWithID:(id)arg1 requiredKeys:(id)arg2;
+- (id)initWithPath:(id)arg1 queue:(id)arg2;
 - (void)addRecord:(id)arg1 knownUserKeys:(id)arg2;
 - (id)_trimRecord:(id)arg1 toRequiredKeys:(id)arg2;
 - (bool)_cachedRecordHasValidAssets:(id)arg1 forRequiredKeys:(id)arg2;
@@ -28,7 +32,8 @@
 - (long long)scope;
 - (void)setContext:(id)arg1;
 - (void)setScope:(long long)arg1;
+- (void)setQueue:(id)arg1;
+- (id)queue;
 - (void).cxx_destruct;
-- (id)initWithPath:(id)arg1;
 
 @end

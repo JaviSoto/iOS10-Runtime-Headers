@@ -22,7 +22,7 @@
 - (id)URL;
 - (void)dealloc;
 - (void)setAttachmentURLType:(long long)arg1;
-- (long long)attachmentURLType;
 - (void)setThumbnail:(id)arg1;
+- (long long)attachmentURLType;
 
 @end

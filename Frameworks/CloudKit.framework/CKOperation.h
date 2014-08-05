@@ -52,6 +52,7 @@
 - (void)setIsDiscretionary:(bool)arg1;
 - (void)setUsesBackgroundSession:(bool)arg1;
 - (void)setCallbackQueue:(id)arg1;
+- (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)processOperationResult:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (id)requestUUIDs;
@@ -63,8 +64,8 @@
 - (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (long long)usesBackgroundSessionOverride;
 - (void)setOperationID:(id)arg1;
-- (void)setPlaceholderOperation:(id)arg1;
 - (id)placeholderOperation;
+- (void)setPlaceholderOperation:(id)arg1;
 - (id)parentSectionID;
 - (id)sectionID;
 - (void)_handleCompletionCallback:(id)arg1;

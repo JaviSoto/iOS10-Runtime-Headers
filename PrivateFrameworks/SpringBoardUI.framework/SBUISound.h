@@ -47,19 +47,20 @@
 @property(copy) NSString * songPath;
 
 
-- (id)songPath;
 - (id)vibrationIdentifier;
 - (id)toneIdentifier;
 - (id)ringtoneName;
 - (unsigned long long)soundBehavior;
+- (id)songPath;
 - (unsigned int)systemSoundID;
-- (void)setSongPath:(id)arg1;
 - (void)setVibrationIdentifier:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
 - (void)setRepeats:(bool)arg1;
 - (void)setRingtoneName:(id)arg1;
 - (void)setSoundBehavior:(unsigned long long)arg1;
 - (void)setSystemSoundID:(unsigned int)arg1;
+- (void)setSongPath:(id)arg1;
+- (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;
 - (id)initWithSystemSoundID:(unsigned int)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;
 - (void)setAlertType:(int)arg1;
 - (int)alertType;
@@ -83,9 +84,9 @@
 - (bool)isPlaying;
 - (void)setAccountIdentifier:(id)arg1;
 - (id)accountIdentifier;
+- (void)stop;
 - (void)dealloc;
 - (id)description;
-- (void)stop;
 - (id)_completionBlock;
 - (long long)soundType;
 - (void)setSoundType:(long long)arg1;

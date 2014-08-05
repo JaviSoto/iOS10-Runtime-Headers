@@ -22,6 +22,7 @@
 @property(copy) NSString * identifier;
 @property(copy) NSNumber * nsxpcVersion;
 
++ (id)serviceFromAuthorData:(id)arg1;
 + (id)serviceFromDictionary:(id)arg1;
 + (bool)supportsSecureCoding;
 
@@ -48,5 +49,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)messageData;
 
 @end

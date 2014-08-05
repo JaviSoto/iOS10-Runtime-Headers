@@ -17,8 +17,8 @@
 - (id)initWithContainerIdentifier:(id)arg1 environment:(long long)arg2;
 - (id)CKPropertiesDescription;
 - (id)containerIdentifier;
-- (long long)environment;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (long long)environment;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;

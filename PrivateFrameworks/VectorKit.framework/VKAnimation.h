@@ -63,6 +63,7 @@
 - (bool)running;
 - (void)resume;
 - (void)pause;
+- (void)stop;
 - (void)setTimingFunction:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (id)timingFunction;
@@ -72,7 +73,6 @@
 - (void)dealloc;
 - (id).cxx_construct;
 - (id)description;
-- (void)stop;
 - (double)duration;
 - (id)initWithPriority:(int)arg1;
 - (void)setCompletionHandler:(id)arg1;

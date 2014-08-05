@@ -23,6 +23,8 @@
 + (id)overlayLocalizedStringForKey:(id)arg1 calendar:(id)arg2;
 + (unsigned long long)_overlayCalendarTypeForCalendarIdentifier:(id)arg1;
 + (id)_pathToStringsFileForCalendar:(id)arg1;
++ (id)_languageIDfromLocalID:(id)arg1;
++ (id)_significantLocaleComponents:(id)arg1;
 + (id)cachedDateFormatterForTemplate:(id)arg1 calendar:(id)arg2;
 + (id)_newDateFormatterForTemplate:(id)arg1 calendar:(id)arg2;
 + (id)_cachedDateFormatterForDomain:(id)arg1 calendar:(id)arg2 formatterKey:(id)arg3 creationBlock:(id)arg4;

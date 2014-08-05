@@ -2,9 +2,9 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSString, NSAttributedString, NSArray, NSSet, UIAlertAction, UIPopoverController, UIViewController, NSMutableArray;
+@class UIView, NSString, NSAttributedString, _UIAlertControllerTextFieldViewController, NSSet, UIAlertAction, NSArray, NSMutableArray, NSObject<UIAlertControllerVisualStyleProviding>, UIViewController, UIPopoverController;
 
-@interface UIAlertController : UIViewController <UIAlertControllerContaining, _UIAlertControllerTextFieldViewControllerContaining> {
+@interface UIAlertController : UIViewController <UIAlertControllerContaining, _UIAlertControllerTextFieldViewControllerContaining, UIAlertControllerVisualStyleProviding> {
     NSString *_message;
     NSAttributedString *_attributedTitle;
     NSAttributedString *_attributedMessage;
@@ -13,11 +13,16 @@
     UIAlertAction *_cancelAction;
     long long _resolvedStyle;
     long long _preferredStyle;
+    NSObject<UIAlertControllerVisualStyleProviding> *_styleProvider;
     UIViewController *_contentViewController;
+    _UIAlertControllerTextFieldViewController *_textFieldViewController;
+    bool_textFieldsHidden;
     id _ownedTransitioningDelegate;
+    bool_shouldEnsureContentControllerViewIsVisibleOnAppearance;
     bool__shouldAllowNilParameters;
-    UIPopoverController *__compatibilityPopoverController;
+    bool__shouldFlipFrameForShimDismissal;
     UIAlertAction *__defaultAlertAction;
+    UIPopoverController *__compatibilityPopoverController;
 }
 
 @property(readonly) NSArray * actions;
@@ -28,6 +33,9 @@
 @property(getter=_attributedTitle,setter=_setAttributedTitle:,copy) NSAttributedString * attributedTitle;
 @property(getter=_attributedMessage,setter=_setAttributedMessage:,copy) NSAttributedString * attributedMessage;
 @property(retain) UIViewController * contentViewController;
+@property(getter=_styleProvider,setter=_setStyleProvider:,retain) NSObject<UIAlertControllerVisualStyleProviding> * styleProvider;
+@property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
+@property(setter=_setShouldEnsureContentControllerViewIsVisibleOnAppearance:) bool _shouldEnsureContentControllerViewIsVisibleOnAppearance;
 @property(readonly) NSMutableArray * _actions;
 @property(readonly) UIAlertAction * _cancelAction;
 @property(readonly) UIView * _foregroundView;
@@ -37,13 +45,16 @@
 @property(readonly) bool _shouldAlignToKeyboard;
 @property(setter=_setShouldAllowNilParameters:) bool _shouldAllowNilParameters;
 @property(setter=_setCompatibilityPopoverController:) UIPopoverController * _compatibilityPopoverController;
-@property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
+@property(setter=_setTextFieldsHidden:) bool _textFieldsHidden;
+@property bool _shouldFlipFrameForShimDismissal;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * debugDescription;
 
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
++ (void)_setShouldUsePresentationController:(bool)arg1;
++ (bool)_shouldUsePresentationController;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
 + (bool)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (id)notifyMeConfirmationControllerWithHandler:(id)arg1;
@@ -53,15 +64,19 @@
 - (void)setTitle:(id)arg1;
 - (id)actions;
 - (void)dealloc;
-- (void)_setDefaultAlertAction:(id)arg1;
 - (void)_setCompatibilityPopoverController:(id)arg1;
 - (void)_setShouldAllowNilParameters:(bool)arg1;
+- (void)_setDefaultAlertAction:(id)arg1;
+- (void)_setShouldEnsureContentControllerViewIsVisibleOnAppearance:(bool)arg1;
+- (bool)_shouldEnsureContentControllerViewIsVisibleOnAppearance;
 - (void)_removeAllTextFields;
 - (void)_setAttributedMessage:(id)arg1;
 - (id)_attributedMessage;
 - (void)_setAttributedTitle:(id)arg1;
 - (id)_attributedTitle;
+- (bool)_shouldFitWidthToContentViewControllerWidth;
 - (bool)_shouldSizeToFillSuperview;
+- (void)_flipFrameForShimDismissalIfNecessary;
 - (void)_updateViewFrameForLandscapePresentationInShimIfNecessary;
 - (id)linkedAlertControllers;
 - (void)unlinkAlertController:(id)arg1;
@@ -70,15 +85,23 @@
 - (bool)_shouldDismissAction:(id)arg1;
 - (void)_actionViewTapped:(id)arg1;
 - (void)_actionViewHighlightChanged:(id)arg1;
+- (void)_setStyleProvider:(id)arg1;
+- (bool)_textFieldsHidden;
+- (void)_setTextFieldsHidden:(bool)arg1;
 - (void)addTextFieldWithConfigurationHandler:(id)arg1;
+- (void)_actionChanged:(id)arg1;
 - (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 handler:(id)arg4;
 - (void)_addActionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3;
 - (void)_returnKeyPressedInLastTextField;
 - (bool)_hasContentToDisplay;
 - (bool)_shouldAllowNilParameters;
-- (double)_contentHorizontalInsets;
 - (bool)_shouldProvideDimmingView;
+- (bool)_isPresentedAsPopover;
+- (id)_alertControllerContainer;
+- (bool)_shouldFlipFrameForShimDismissal;
 - (long long)_modalPresentationStyleForResolvedStyle;
+- (bool)_viewControllerIsPresentedInLegacyPopover:(id)arg1;
+- (bool)_viewControllerIsPresentedInPopover:(id)arg1;
 - (id)_compatibilityPopoverController;
 - (void)_fireOffActionOnTargetIfValidForAction:(id)arg1;
 - (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2 triggeredByPopoverDimmingView:(bool)arg3;
@@ -86,10 +109,15 @@
 - (void)_attemptAnimatedDismissWithGestureRecognizer:(id)arg1;
 - (void)_reevaluateResolvedStyle;
 - (id)_cancelAction;
+- (id)visualStyleForAlertControllerStyle:(long long)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
+- (id)_styleProvider;
+- (id)_currentDescriptor;
 - (long long)_resolvedStyle;
 - (void)_recomputePreferredContentSize;
 - (void)_resolvedStyleChanged;
+- (void)_updateProvidedStyle;
 - (void)_clearActionHandlers;
+- (void)setTextFieldsCanBecomeFirstResponder:(bool)arg1;
 - (void)_dismissAnimated:(bool)arg1 triggeringAction:(id)arg2;
 - (id)_defaultAlertAction;
 - (id)textFields;
@@ -100,6 +128,7 @@
 - (id)_actions;
 - (id)_alertControllerView;
 - (void)setCancelAction:(id)arg1;
+- (void)set_shouldFlipFrameForShimDismissal:(bool)arg1;
 - (void)_updateModalPresentationStyle;
 - (void)addAction:(id)arg1;
 - (void)_addActionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
@@ -127,6 +156,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (bool)shouldAutorotate;
 - (id)_foregroundView;

@@ -26,10 +26,10 @@
 + (id)launchedTaskWithDictionary:(id)arg1;
 + (id)currentTaskDictionary;
 
-- (id)environment;
 - (int)processIdentifier;
 - (id)arguments;
 - (bool)resume;
+- (id)environment;
 - (bool)isRunning;
 - (id)init;
 - (bool)suspend;

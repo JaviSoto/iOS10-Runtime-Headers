@@ -44,6 +44,8 @@
 - (void)setOrganizerFirstName:(id)arg1;
 - (id)organizerFirstName;
 - (void)setCode:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)code;
 - (void).cxx_destruct;
 

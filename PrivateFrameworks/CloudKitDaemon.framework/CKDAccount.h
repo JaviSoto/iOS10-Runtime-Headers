@@ -19,6 +19,7 @@
 @property(readonly) bool isFakeAccount;
 @property bool isUnitTestingAccount;
 @property bool accountWantsPushRegistration;
+@property(readonly) bool allowsCellularAccess;
 @property(retain) ACAccountStore * accountStore;
 @property(retain) ACAccountType * acAccountType;
 @property(readonly) NSString * accountID;
@@ -42,12 +43,12 @@
 - (id)backingAccount;
 - (id)_initWithContext:(id)arg1;
 - (id)cloudKitAuthToken;
-- (void)fetchDeviceIDWithCompletionHandler:(id)arg1;
-- (void)fetchPublicURLForServerType:(long long)arg1 completionHandler:(id)arg2;
+- (void)fetchDeviceIDUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2 withCompletionHandler:(id)arg3;
+- (void)fetchPublicURLUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2 serverType:(long long)arg3 completionHandler:(id)arg4;
 - (id)baseURLForServerType:(long long)arg1 partitionType:(long long)arg2;
 - (void)renewMescalSessionForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)resetMescalSession;
-- (void)fetchConfigurationWithCompletionHandler:(id)arg1;
+- (void)fetchConfigurationUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2 withCompletionHandler:(id)arg3;
 - (void)renewAuthTokenWithCompletionHandler:(id)arg1;
 - (id)enabledKeyboards;
 - (id)hardwareID;
@@ -58,7 +59,7 @@
 - (id)initAnonymousAccountWithContext:(id)arg1;
 - (bool)isFakeAccount;
 - (id)serverPreferredPushEnvironment;
-- (void)fetchContainerScopedUserIDWithCompletionHandler:(id)arg1;
+- (void)fetchContainerScopedUserIDUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2 withCompletionHandler:(id)arg3;
 - (bool)isAnonymousAccount;
 - (id)dsid;
 - (id)regionCode;
@@ -82,6 +83,7 @@
 - (id)accountIdentifier;
 - (id)languageCode;
 - (id)deviceName;
+- (bool)allowsCellularAccess;
 - (id)bundleID;
 - (void).cxx_destruct;
 - (id)description;

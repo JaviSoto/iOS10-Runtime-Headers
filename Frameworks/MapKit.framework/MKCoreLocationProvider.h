@@ -59,7 +59,6 @@
 - (void)dismissHeadingCalibrationDisplay;
 - (int)headingOrientation;
 - (void)setMatchInfoEnabled:(bool)arg1;
-- (double)distanceFilter;
 - (bool)isLocationServicesPreferencesDialogEnabled;
 - (void)_resetForNewEffectiveBundle;
 - (double)desiredAccuracy;
@@ -71,9 +70,10 @@
 - (void)_updateAuthorizationStatus;
 - (void)_createCLLocationManager;
 - (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
-- (void)setDistanceFilter:(double)arg1;
 - (double)expectedGpsUpdateInterval;
 - (void)setHeadingOrientation:(int)arg1;
+- (double)distanceFilter;
+- (void)setDistanceFilter:(double)arg1;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(id)arg2;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;

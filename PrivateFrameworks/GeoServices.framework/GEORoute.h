@@ -113,13 +113,13 @@
 - (id)convertToFullRoute:(id)arg1 includeDepartureRoutes:(bool)arg2 uniquePointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
 - (int)transportTypeForStep:(id)arg1;
 - (bool)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
-- (id)newETARoute;
 - (id)simplifiedDescription;
 - (unsigned long long)distanceFromStepIndex:(unsigned long long)arg1 toStepIndex:(unsigned long long)arg2;
 - (id)newETARouteFromStepIndex:(unsigned long long)arg1 stepPercentRemaining:(double)arg2;
 - (unsigned long long)indexForStepID:(unsigned long long)arg1;
 - (bool)unpackBasicPoints;
 - (bool)unpackZilchPoints;
+- (id)newETARoute;
 - (unsigned long long)stepIndexForPointIndex:(unsigned int)arg1;
 - (struct { double x1; double x2; })pointAt:(unsigned int)arg1;
 - (void*)controlPoints;

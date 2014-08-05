@@ -15,7 +15,6 @@
 @property(readonly) NSString * property;
 
 
-- (id)specifiers;
 - (id)_identitySpecifiers;
 - (bool)_allowIdentitySelection;
 - (void)_updateCell:(id)arg1 selected:(bool)arg2;
@@ -27,6 +26,7 @@
 - (bool)_isPropertyEnabled;
 - (struct __SecIdentity { }*)_selectedIdentity;
 - (void)_finishedFetchingIdentities:(id)arg1;
+- (id)specifiers;
 - (id)property;
 - (void).cxx_destruct;
 - (void)viewDidLoad;

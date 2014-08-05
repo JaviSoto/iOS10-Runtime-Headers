@@ -21,11 +21,12 @@
 + (id)customAttributes;
 
 - (id)inputFalloff;
+- (id)_negkernel;
+- (id)_poskernel;
 - (void)setInputFalloff:(id)arg1;
 - (id)inputCenter;
 - (void)setInputCenter:(id)arg1;
 - (id)inputIntensity;
-- (id)_kernel;
 - (void)setInputIntensity:(id)arg1;
 - (id)inputRadius;
 - (bool)_isIdentity;

@@ -13,6 +13,7 @@
     PHChangeRequestHelper *_helper;
     bool_entitled;
     NSString *_clientName;
+    int _clientProcessID;
     NSIndexSet *_supportedEditOperations;
     UIImage *_imageForInsertion;
     NSData *_imageDataForInsertion;
@@ -41,6 +42,7 @@
 @property(readonly) NSManagedObjectID * objectID;
 @property(getter=isEntitled,readonly) bool entitled;
 @property(readonly) NSString * clientName;
+@property(readonly) int clientProcessID;
 @property(getter=isNew,readonly) bool new;
 @property(getter=isMutated,readonly) bool mutated;
 
@@ -63,6 +65,7 @@
 - (bool)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
 - (bool)validateImageDataForAssetCreation:(id)arg1 error:(id*)arg2;
 - (bool)_validateContentEditingOutput:(id)arg1 error:(id*)arg2;
+- (bool)_validateContentURL:(id)arg1 error:(id*)arg2;
 - (bool)validateVideoURLForAssetCreation:(id)arg1 error:(id*)arg2;
 - (id)imageTypeForInsertion;
 - (id)supportedEditOperations;
@@ -83,9 +86,11 @@
 - (void)didMutate;
 - (id)mutations;
 - (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)canGenerateUUIDLocally;
 - (id)initForNewObject;
+- (int)clientProcessID;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4;
+- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (bool)isRevertingContentToOriginal;

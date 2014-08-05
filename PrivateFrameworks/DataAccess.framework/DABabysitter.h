@@ -18,7 +18,6 @@
 
 + (id)sharedBabysitter;
 
-- (void)setBuildVersion:(id)arg1;
 - (void)setRestrictedWaiters:(id)arg1;
 - (id)restrictedWaiters;
 - (void)setFailedWaiters:(id)arg1;
@@ -34,10 +33,11 @@
 - (void)_reloadBabysitterProperties;
 - (bool)accountWithIDShouldContinue:(id)arg1;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
-- (id)buildVersion;
+- (void)setBuildVersion:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)_init;
+- (id)buildVersion;
 
 @end

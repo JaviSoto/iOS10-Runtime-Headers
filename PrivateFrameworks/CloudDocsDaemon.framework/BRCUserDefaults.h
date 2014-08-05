@@ -11,7 +11,6 @@
     NSString *_containerIdentifer;
 }
 
-@property(readonly) unsigned int maxContainerNameLength;
 @property(readonly) unsigned long long maxXattrBlobSize;
 @property(readonly) unsigned int maxRecordCountInFetchRecordsOperation;
 @property(readonly) unsigned int maxRecordCountInModifyRecordsOperation;
@@ -56,7 +55,7 @@
 @property(readonly) bool dbTraced;
 @property(readonly) int dbBatchSize;
 @property(readonly) double dbBatchDelay;
-@property(readonly) bool forceGreedyContainer;
+@property(readonly) bool greedyContainer;
 @property(readonly) unsigned long long uploadMaxFileSize;
 @property(readonly) unsigned long long uploadMaxInPkgFileSize;
 @property(readonly) unsigned long long uploadBatchRecordsCount;
@@ -84,6 +83,11 @@
 @property(readonly) NSString * serverConfigurationURL;
 @property(readonly) unsigned int publishURLTimeout;
 @property(readonly) unsigned int minEvictableFilesize;
+@property(readonly) unsigned int logoutTimeout;
+@property(readonly) bool forceBatchFailureWhenReceivingAssetTokenExpiration;
+@property(readonly) unsigned long long accessTimeDeltaInLowUrgency;
+@property(readonly) unsigned long long accessTimeDeltaInMedUrgency;
+@property(readonly) unsigned long long accessTimeDeltaInHighUrgency;
 
 + (id)_userDefaultsManager;
 + (id)defaultsForMetadataContainer;
@@ -93,6 +97,8 @@
 + (id)defaultsForContainerIdentifier:(id)arg1;
 + (void)reset;
 
+- (unsigned long long)accessTimeDeltaInMedUrgency;
+- (unsigned long long)accessTimeDeltaInLowUrgency;
 - (double)fseventsResetBackoff;
 - (double)fseventsLatency;
 - (double)systemLowDiskLatency;
@@ -119,8 +125,8 @@
 - (unsigned short)_umaskForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1 min:(double)arg2 max:(double)arg3 byDefault:(double)arg4;
 - (int)intForKey:(id)arg1 min:(int)arg2 max:(int)arg3 byDefault:(int)arg4;
-- (unsigned long long)unsignedLongLongForKey:(id)arg1 min:(unsigned long long)arg2 max:(unsigned long long)arg3 byDefault:(unsigned long long)arg4;
 - (unsigned int)unsignedIntForKey:(id)arg1 min:(unsigned int)arg2 max:(unsigned int)arg3 byDefault:(unsigned int)arg4;
+- (unsigned long long)unsignedLongLongForKey:(id)arg1 min:(unsigned long long)arg2 max:(unsigned long long)arg3 byDefault:(unsigned long long)arg4;
 - (float)floatForKey:(id)arg1 inheritFromGlobal:(bool)arg2 min:(float)arg3 max:(float)arg4 byDefault:(float)arg5;
 - (id)objectForKey:(id)arg1 inheritFromGlobal:(bool)arg2 validateWithBlock:(id)arg3;
 - (id)configurationUpdateXPCActivity;
@@ -143,14 +149,16 @@
 - (unsigned short)stageInPackageDirectoryUmask;
 - (unsigned short)stageInPackageFileUmask;
 - (double)readerLostItemBackoff;
+- (unsigned long long)accessTimeDeltaInHighUrgency;
 - (id)syncThrottles;
 - (double)writerIOsCancelDelay;
 - (double)readerIOsCancelDelay;
-- (bool)forceGreedyContainer;
+- (bool)greedyContainer;
 - (id)syncUpThrottle;
 - (float)syncUpMinutelyBudget;
 - (float)syncUpHourlyBudget;
 - (float)syncUpDailyBudget;
+- (bool)forceBatchFailureWhenReceivingAssetTokenExpiration;
 - (float)syncUpDataCreateCost;
 - (float)syncUpDocumentCreateCost;
 - (float)syncUpDataEditCost;
@@ -167,7 +175,6 @@
 - (int)readerScanBatchSize;
 - (int)readerMaxConcurrentIOs;
 - (double)forcedSyncIntervalOnUse;
-- (unsigned int)maxContainerNameLength;
 - (id)forcedSyncXPCActivity;
 - (id)containerResetThrottleParams;
 - (int)syncOperationQueueWidth;
@@ -177,6 +184,7 @@
 - (id)applyThrottleParams;
 - (id)readerThrottleParams;
 - (unsigned int)maxRelativePathDepth;
+- (unsigned int)logoutTimeout;
 - (int)dbBatchSize;
 - (double)dbBatchDelay;
 - (bool)dbTraced;

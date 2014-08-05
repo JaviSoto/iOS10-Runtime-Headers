@@ -50,6 +50,7 @@
 + (id)copyTreeWithRoot:(id)arg1 parent:(id)arg2;
 + (void)setMasksWithRoot:(id)arg1 treeRoot:(id)arg2 mask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg3;
 
+- (void)setChildren:(id)arg1;
 - (void)setLoopVar:(id)arg1;
 - (void)setBlockText:(id)arg1;
 - (void)setIndexedMask:(bool)arg1;
@@ -60,7 +61,6 @@
 - (void)setPropertyClass:(int)arg1;
 - (int)propertyClass;
 - (int)unrollCt;
-- (void)setChildren:(id)arg1;
 - (void)setNext:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;

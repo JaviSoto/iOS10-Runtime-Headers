@@ -63,10 +63,10 @@
 - (struct CGSize { double x1; double x2; })fittingSize;
 - (bool)isLoadingRepresentation;
 - (id)initWithToken:(id)arg1 dataSource:(id)arg2;
-- (void)setToken:(id)arg1;
-- (id)token;
 - (void)setDataSource:(id)arg1;
 - (id)destination;
+- (id)token;
+- (void)setToken:(id)arg1;
 - (id)dataSource;
 - (id)cache;
 - (bool)isEqual:(id)arg1;

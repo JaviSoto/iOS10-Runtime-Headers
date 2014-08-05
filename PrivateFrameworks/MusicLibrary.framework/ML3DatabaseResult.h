@@ -22,12 +22,12 @@
 - (id)columnNameIndexMap;
 - (void)setLimitProperty:(id)arg1;
 - (unsigned long long)indexForColumnName:(id)arg1;
+- (id)_statement;
 - (void)setLimitValue:(long long)arg1;
 - (long long)limitValue;
 - (id)stringValueForFirstRowAndColumn;
 - (id)objectForFirstRowAndColumn;
 - (long long)int64ValueForFirstRowAndColumn;
-- (id)_statement;
 - (bool)hasAtLeastOneRow;
 - (void)enumerateRowsWithBlock:(id)arg1;
 - (id)init;

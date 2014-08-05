@@ -40,6 +40,7 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setPeerNatType:(id)arg1;
 - (void)setSelfNatType:(id)arg1;
 - (id)peerNatType;
@@ -72,7 +73,6 @@
 - (void)setPeerPushToken:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (id)peerID;
-- (id)messageBody;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

@@ -45,7 +45,6 @@
 + (id)bundleProxyForIdentifier:(id)arg1;
 + (id)bundleProxyForURL:(id)arg1;
 
-- (id)entitlements;
 - (unsigned long long)sequenceNumber;
 - (id)bundleIdentifier;
 - (id)bundleExecutable;
@@ -53,6 +52,7 @@
 - (id)localizedShortName;
 - (id)cacheGUID;
 - (id)environmentVariables;
+- (id)entitlements;
 - (id)signerIdentity;
 - (id)bundleVersion;
 - (void)setLocalizedShortName:(id)arg1;

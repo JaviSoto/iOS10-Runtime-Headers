@@ -41,8 +41,6 @@
 
 - (id)ownerAddresses;
 - (id)serverHost;
-- (id)externalID;
-- (void)setExternalID:(id)arg1;
 - (id)availabilityCache;
 - (bool)wantsCommentPromptWhenDeclining;
 - (int)displayOrderForNewCalendar;
@@ -70,6 +68,8 @@
 - (id)calendars;
 - (id)calendarsForEntityType:(unsigned long long)arg1;
 - (bool)commit:(id*)arg1;
+- (id)externalID;
+- (void)setExternalID:(id)arg1;
 - (int)sourceType;
 - (bool)isEnabled;
 - (void)setTitle:(id)arg1;

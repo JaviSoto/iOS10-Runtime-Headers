@@ -6,6 +6,7 @@
 }
 
 
+- (id)_firstCurrentContextChildInWindow;
 - (bool)_shouldRespectDefinesPresentationContext;
 - (bool)shouldPresentInFullscreen;
 - (bool)shouldRemovePresentersView;

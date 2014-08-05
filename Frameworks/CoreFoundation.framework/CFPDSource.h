@@ -24,6 +24,7 @@
     unsigned int _managed : 1;
     unsigned int _neverCache : 1;
     unsigned int _checkedForNonPrefsPlist : 1;
+    unsigned int _hasDrainedPendingChangesSinceLastReplyToOwner : 1;
     unsigned int _waitingForDeviceUnlock : 1;
 }
 
@@ -31,11 +32,10 @@
 + (void)synchronousWithSourceCache:(id)arg1;
 + (void)withSourceCache:(id)arg1;
 
-- (bool)validateReadAccessToken:(int)arg1;
-- (int)cacheSize;
 - (bool)byHost;
 - (int)validateMessage:(id)arg1 withNewKey:(struct __CFString { }*)arg2 newValue:(void*)arg3 currentPlistData:(id)arg4 containerPath:(const char *)arg5 diagnosticMessage:(const char **)arg6;
 - (bool)validateSandboxForRead:(id)arg1 containerPath:(const char *)arg2;
+- (bool)validateReadAccessToken:(int)arg1;
 - (bool)validateSandboxForWrite:(id)arg1 containerPath:(const char *)arg2 targetingContainer:(bool*)arg3;
 - (void)setPlist:(id)arg1;
 - (id)propertyListWithoutDrainingPendingChanges;

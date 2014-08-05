@@ -103,7 +103,7 @@
 - (void)finishedWithPicker;
 - (void)_handleItemPlaybackDidEndWithAVController:(id)arg1;
 - (void)_registerForItemPlaybackDidEndNotificationWithCurrentAVController;
-- (bool)didSelectTonePickerItem:(id)arg1 selectedItemDidChange:(bool*)arg2;
+- (bool)didSelectTonePickerItem:(id)arg1;
 - (id)_selectedIdentifier:(bool*)arg1;
 - (id)selectedTonePickerItem;
 - (id)indexPathForSelectedTone;
@@ -144,7 +144,7 @@
 - (void)_playToneWithIdentifier:(id)arg1;
 - (void)stopPlayingWithFadeOut:(bool)arg1;
 - (void)_goToStore;
-- (bool)_didSelectToneClassicsPickerItem:(id)arg1 selectedItemDidChange:(bool*)arg2;
+- (bool)_didSelectToneClassicsPickerItem:(id)arg1;
 - (id)_identifierAtIndexPath:(id)arg1 isMediaItem:(bool*)arg2;
 - (void)_didSelectToneWithIdentifier:(id)arg1;
 - (void)_setSelectedToneIdentifier:(id)arg1 currentlyReloadingTones:(bool)arg2;

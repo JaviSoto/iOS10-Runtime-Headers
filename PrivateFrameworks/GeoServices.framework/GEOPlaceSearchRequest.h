@@ -502,12 +502,12 @@
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (id)location;
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)setMaxResults:(int)arg1;
 - (int)maxResults;
 - (int)sequenceNumber;
 - (id)search;
+- (void)setTimestamp:(double)arg1;
 - (void)setLocation:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

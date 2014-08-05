@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, TCPBufferPool;
 
 @interface LoopbackIDSTunnel : NSObject <VideoConferenceRealTimeChannel> {
     int _socket;
     NSObject<OS_dispatch_queue> *_networkQueue;
     NSObject<OS_dispatch_source> *_readSource;
+    TCPBufferPool *_bufferPool;
 
   /* Unexpected information at end of encoded ivar type: ? */
   /* Error parsing encoded ivar type info: @? */

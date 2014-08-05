@@ -16,12 +16,12 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setPeers:(id)arg1;
 - (id)peers;
 - (void)setSelfPushToken:(id)arg1;
 - (id)selfPushToken;
 - (id)bagKey;
-- (id)messageBody;
 - (void)setReason:(id)arg1;
 - (id)reason;
 - (void)dealloc;

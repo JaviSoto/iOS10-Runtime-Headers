@@ -41,11 +41,11 @@
 - (void)setDispatchQueue:(id)arg1;
 - (id)dispatchQueue;
 - (id)devices;
+- (void)stop;
 - (void)setHandler:(id)arg1;
 - (id)handler;
 - (id)init;
 - (void)start;
 - (void)dealloc;
-- (void)stop;
 
 @end

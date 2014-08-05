@@ -165,6 +165,7 @@
 - (void)deregisterBlocksForVCNotifications;
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
+- (void)stopListeningForNotifications;
 - (void)listenForNotifications;
 - (void)registerBlocksForVCNotifications;
 - (void)serverDied;
@@ -172,9 +173,9 @@
 - (void)setShouldDisplayVideoInfoLayer:(bool)arg1;
 - (bool)shouldDisplayNetworkQualityGraph;
 - (void)setShouldDisplayNetworkQualityGraph:(bool)arg1;
+- (id)initWithClientUUID:(id)arg1;
 - (void)updateGKSConnectivitySettings;
 - (void)handleGKSConnectivitySettingsUpdate:(id)arg1;
-- (void)stopListeningForNotifications;
 - (void)stopCallID:(long long)arg1;
 - (bool)startConnectionWithCallID:(long long)arg1 usingInviteData:(id)arg2 isCaller:(bool)arg3 relayResponseDict:(id)arg4 didOriginateRelayRequest:(bool)arg5 capabilities:(id)arg6 idsSocket:(int)arg7 error:(id*)arg8;
 - (long long)initializeNewCallWithDeviceRole:(int)arg1;

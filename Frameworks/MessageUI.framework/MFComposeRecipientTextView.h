@@ -21,7 +21,9 @@
     bool_parentIsClosing;
     bool_textViewExclusionPathsAreValid;
     bool_isTextFieldCollapsed;
+    bool_collapsedStateInitialized;
     bool_indicatesUnsafeRecipientsWhenCollapsed;
+    bool_notifyDelegateOfSizeChange;
     NSTimer *_inputDelayTimer;
     NSTimer *_collapsableUpdateTimer;
     NSArray *_properties;
@@ -92,6 +94,7 @@
 - (id)_placeholderAttachmentForRecipient:(id)arg1;
 - (bool)allowsDragAndDrop;
 - (id)placeholderAttachment;
+- (void)_notifyDelegateOfSizeChange;
 - (void)_removeAddressAtomSubview:(id)arg1;
 - (bool)_shouldAnimateAtomViewChanges;
 - (void)_addAddressAtomSubview:(id)arg1;

@@ -31,8 +31,8 @@
 + (id)sharedTargetQueue;
 
 - (double)_availableBudgetForPriority:(long long)arg1;
-- (double)_budgetInFlightForPriority:(long long)arg1;
 - (void)_requestOperations;
+- (double)_budgetInFlightForPriority:(long long)arg1;
 - (bool)trySchedulingOperation:(id)arg1 forKey:(id)arg2;
 - (void)cancelOperationForKey:(id)arg1;
 - (id)inflightOperationForKey:(id)arg1;

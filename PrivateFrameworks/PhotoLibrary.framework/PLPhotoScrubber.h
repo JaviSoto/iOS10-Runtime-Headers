@@ -70,10 +70,10 @@
 - (bool)isFastScrubbing;
 - (void)setLoupeImage:(id)arg1;
 - (long long)displayedImageIndex;
-- (void)setSpeedDelegate:(id)arg1;
 - (void)reloadImageAtIndex:(long long)arg1;
 - (void)reloadDataWithNewDisplayedIndex:(unsigned long long)arg1;
 - (void)setDeferImageLoading:(bool)arg1;
+- (void)setSpeedDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1 reloadData:(bool)arg2;
 - (void)setImage:(id)arg1 atIndex:(long long)arg2;
 - (void)_rescheduleTimer;

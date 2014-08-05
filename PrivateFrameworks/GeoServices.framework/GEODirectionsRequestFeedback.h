@@ -22,8 +22,8 @@
 @property(retain) NSString * appIdentifier;
 
 
-- (int)purpose;
 - (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
+- (int)purpose;
 - (bool)hasPurpose;
 - (void)setHasPurpose:(bool)arg1;
 - (void)setHasSource:(bool)arg1;

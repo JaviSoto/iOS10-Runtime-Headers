@@ -24,6 +24,7 @@
 
 
 - (id)requiredKeys;
+- (id)messageBody;
 - (void)setRegionInformation:(id)arg1;
 - (id)canonicalizedPeers;
 - (void)setSelfNatIP:(id)arg1;
@@ -40,7 +41,6 @@
 - (id)selfPushToken;
 - (id)bagKey;
 - (void)setSelfBlob:(id)arg1;
-- (id)messageBody;
 - (id)init;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

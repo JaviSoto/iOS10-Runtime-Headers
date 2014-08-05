@@ -9,9 +9,9 @@
 @property(readonly) int diskHits;
 @property(readonly) int networkHits;
 
-+ (id)sharedLoader;
 + (void)useLocalLoader;
 + (id)modernLoaderForTileGroupIdentifier:(unsigned int)arg1 locale:(id)arg2;
++ (id)sharedLoader;
 + (void)setMemoryCacheMinCapacity:(unsigned long long)arg1;
 + (void)setMemoryCacheTotalCostLimit:(unsigned long long)arg1;
 + (void)useRemoteLoader;
@@ -26,12 +26,12 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)alloc;
 
-- (void)setInternalDelegate:(id)arg1;
 - (bool)reprioritizeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 forClient:(id)arg2 newPriority:(unsigned int)arg3;
 - (void)registerTileLoader:(Class)arg1;
 - (void)registerTileDecoder:(id)arg1;
 - (void)setSortPoint:(const struct { double x1; double x2; }*)arg1;
 - (id)cachedTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
+- (void)setInternalDelegate:(id)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1 finished:(id)arg2;
 - (id)expireTilesWithType:(unsigned char)arg1 provider:(unsigned short)arg2 olderThan:(double)arg3;
 - (void)preloadTiles:(id)arg1 requireWiFi:(bool)arg2 progress:(id)arg3 finished:(id)arg4 error:(id)arg5;

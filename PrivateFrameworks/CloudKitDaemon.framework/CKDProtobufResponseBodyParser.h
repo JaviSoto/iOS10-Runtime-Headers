@@ -49,7 +49,6 @@
 - (bool)_parseObjects:(bool)arg1;
 - (id)tailParserData;
 - (void)setIsParsing:(bool)arg1;
-- (bool)isParsing;
 - (id)parseQueue;
 - (void)setTailParserData:(id)arg1;
 - (bool)_parseObjectFromData:(id)arg1 rawData:(id)arg2;
@@ -64,6 +63,7 @@
 - (void)setObjectParsedBlock:(id)arg1;
 - (Class)messageClass;
 - (void)setMessageClass:(Class)arg1;
+- (bool)isParsing;
 - (id)init;
 - (void).cxx_destruct;
 - (id)parserError;

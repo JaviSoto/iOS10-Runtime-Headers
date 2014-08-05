@@ -179,16 +179,16 @@
 - (void)unregisterListener:(id)arg1;
 - (void)registerListener:(id)arg1;
 - (void)authenticateWithCompletionHandler:(id)arg1;
-- (long long)environment;
 - (void)setAuthenticated:(bool)arg1;
 - (bool)isAuthenticated;
 - (void)setStatus:(id)arg1;
-- (void)setRootViewController:(id)arg1;
+- (long long)environment;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
 - (void)setPhoto:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)deletePhoto;
 - (void)signOutWithCompletionHandler:(id)arg1;

@@ -26,8 +26,8 @@
 
 - (id)operationGroup;
 - (bool)overwriteExistingDestination;
-- (id)initWithSourceURL:(id)arg1 destinationSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3 overwriteExistingDestination:(bool)arg4;
 - (struct CGSize { double x1; double x2; })destinationSize;
+- (id)initWithSourceURL:(id)arg1 destinationSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3 overwriteExistingDestination:(bool)arg4;
 - (id)sourceURL;
 - (void)main;
 - (id)destinationURL;

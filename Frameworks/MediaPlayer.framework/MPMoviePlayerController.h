@@ -72,12 +72,12 @@
 - (id)initWithAsset:(id)arg1;
 - (id)view;
 - (void)pause;
+- (void)stop;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (void)dealloc;
 - (void).cxx_destruct;
-- (void)stop;
 - (double)duration;
 - (id)backgroundView;
 

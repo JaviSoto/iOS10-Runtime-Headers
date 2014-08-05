@@ -17,6 +17,7 @@
 @property(readonly) const char * objCType;
 @property(readonly) double doubleValue;
 
++ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedInteger:(unsigned long long)arg1;
@@ -35,7 +36,6 @@
 + (id)defaultBehavior;
 + (id)notANumber;
 + (id)numberWithLong:(long long)arg1;
-+ (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (id)numberWithShort:(short)arg1;
 + (id)numberWithChar:(BOOL)arg1;

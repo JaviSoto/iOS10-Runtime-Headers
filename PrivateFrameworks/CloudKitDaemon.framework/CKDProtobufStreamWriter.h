@@ -71,7 +71,6 @@
 - (bool)haveFinishedCompression;
 - (unsigned long long)bufferSize;
 - (void)_tearDownOutputStream;
-- (bool)shouldCompress;
 - (void)setHaveFinishedStreaming:(bool)arg1;
 - (bool)haveFinishedStreaming;
 - (void)setBinaryLogFileHandle:(id)arg1;
@@ -81,6 +80,7 @@
 - (id)initWithCompression:(bool)arg1;
 - (void)setStreamedObjects:(id)arg1;
 - (id)inputStream;
+- (bool)shouldCompress;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)open;
 - (void)dealloc;

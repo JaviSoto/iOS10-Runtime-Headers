@@ -26,6 +26,7 @@
 - (void)setError:(id)arg1;
 - (id)error;
 - (void)dealloc;
+- (id)description;
 - (void)setProgress:(double)arg1;
 - (double)progress;
 - (void)setCompleted:(bool)arg1;

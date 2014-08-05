@@ -43,6 +43,7 @@
 - (bool)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(bool)arg3 error:(id*)arg4 finishBlock:(id)arg5;
 - (void)monitorStateChanged:(id)arg1;
 - (void)containerStateChanged:(id)arg1;
+- (void)synchronouslyExecuteBlockOnPrivateQueue:(id)arg1;
 - (void)setupFinished;
 - (void)containerIdentifierChanged:(id)arg1;
 - (void)filePresenterNoticedBaselineFileChange:(id)arg1;

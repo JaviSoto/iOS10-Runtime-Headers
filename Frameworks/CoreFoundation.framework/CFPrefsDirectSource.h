@@ -13,7 +13,7 @@
 - (bool)sendMessage:(id)arg1;
 - (void*)copyReplyForDirectMessage:(id)arg1 error:(bool*)arg2;
 - (void)setManaged:(bool)arg1;
-- (void)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3;
 - (bool)managed;
 - (id)createRequestNewContentMessageForDaemon:(bool)arg1;
 - (unsigned char)alreadylocked_requestNewData;

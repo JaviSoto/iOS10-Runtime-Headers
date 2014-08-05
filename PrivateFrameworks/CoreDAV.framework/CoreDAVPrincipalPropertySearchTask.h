@@ -25,7 +25,7 @@
 - (void)setExtraAttributes:(id)arg1;
 - (id)extraAttributes;
 - (void)dealloc;
-- (id)searchItems;
 - (void)setSearchItems:(id)arg1;
+- (id)searchItems;
 
 @end

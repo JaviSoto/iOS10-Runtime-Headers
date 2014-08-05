@@ -17,7 +17,6 @@
 - (void)setCloudLibraryManager:(id)arg1;
 - (id)cloudLibraryManager;
 - (void)activate;
-- (id)init;
 - (void)start;
 
 @end

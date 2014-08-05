@@ -9,6 +9,7 @@
     bool_secondaryIsCustomGlyph;
     bool_fillPath;
     bool_force1xImages;
+    bool_stringKeycapOverImage;
     NSString *_displayString;
     NSString *_displayStringImage;
     NSString *_secondaryDisplayStringImage;
@@ -32,6 +33,7 @@
 @property long long displayPathType;
 @property bool fillPath;
 @property bool force1xImages;
+@property bool stringKeycapOverImage;
 @property(retain) UIKBKeyDisplayContents * fallbackContents;
 
 + (id)displayContents;
@@ -39,12 +41,14 @@
 - (id)displayString;
 - (void)dealloc;
 - (id)description;
+- (void)setStringKeycapOverImage:(bool)arg1;
 - (void)setFallbackContents:(id)arg1;
 - (void)setFillPath:(bool)arg1;
 - (void)setVariantDisplayImages:(id)arg1;
 - (void)setSecondaryIsCustomGlyph:(bool)arg1;
 - (void)setSecondaryDisplayString:(id)arg1;
 - (id)secondaryDisplayStringImage;
+- (bool)stringKeycapOverImage;
 - (id)fallbackContents;
 - (bool)force1xImages;
 - (bool)fillPath;

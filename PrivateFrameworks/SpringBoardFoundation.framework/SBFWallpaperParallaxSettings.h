@@ -12,10 +12,10 @@
 @property double overhangY;
 @property double perspectiveTransform;
 
-+ (struct CGSize { double x1; double x2; })overhangSizeForCurrentDevice;
-+ (struct CGSize { double x1; double x2; })bestWallpaperSizeForParallaxFactor:(double)arg1;
 + (struct CGSize { double x1; double x2; })_requiredOverhangSizeForCurrentDevice;
++ (struct CGSize { double x1; double x2; })overhangSizeForCurrentDevice;
 + (struct CGSize { double x1; double x2; })minimumWallpaperSizeForCurrentDevice;
++ (struct CGSize { double x1; double x2; })bestWallpaperSizeForParallaxFactor:(double)arg1;
 + (id)settingsControllerModule;
 
 - (double)overhangY;

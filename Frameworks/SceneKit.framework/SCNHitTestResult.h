@@ -31,8 +31,8 @@
 - (long long)geometryIndex;
 - (struct CGPoint { double x1; double x2; })textureCoordinatesWithMappingChannel:(long long)arg1;
 - (id)initWithResult:(struct __C3DHitTestResult { }*)arg1;
-- (id)node;
 - (void)dealloc;
 - (id)description;
+- (id)node;
 
 @end

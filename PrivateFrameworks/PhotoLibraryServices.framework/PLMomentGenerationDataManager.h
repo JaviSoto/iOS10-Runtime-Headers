@@ -88,9 +88,9 @@
 - (id)generator;
 - (bool)isMomentAnalysisNeeded;
 - (void)setMomentAnalysisNeeded:(bool)arg1;
+- (void)setManagedObjectContext:(id)arg1;
 - (id)analyzer;
 - (void*)_addressBook;
-- (void)setManagedObjectContext:(id)arg1;
 - (void)refreshObject:(id)arg1 mergeChanges:(bool)arg2;
 - (bool)hasChanges;
 - (bool)save:(id*)arg1;

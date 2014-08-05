@@ -25,7 +25,6 @@
 - (void)webViewFinishedLoading;
 - (bool)anyWebViewLoading;
 - (void)_finishLoad;
-- (void)_cleanupLoad;
 - (bool)allowNonSecureHTTP;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;

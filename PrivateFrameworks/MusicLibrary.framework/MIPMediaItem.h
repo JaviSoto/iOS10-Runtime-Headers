@@ -111,6 +111,7 @@
 - (id)movie;
 - (void)setLibraryIdentifiers:(id)arg1;
 - (void)copyTo:(id)arg1;
+- (id)sortTitle;
 - (void)setExplicitContent:(bool)arg1;
 - (void)setContentRating:(int)arg1;
 - (int)contentRating;
@@ -155,7 +156,6 @@
 - (bool)hasReleaseDateTime;
 - (void)setHasReleaseDateTime:(bool)arg1;
 - (bool)hasSortTitle;
-- (bool)hasTitle;
 - (void)setPodcast:(id)arg1;
 - (void)setMovie:(id)arg1;
 - (void)setTvShow:(id)arg1;
@@ -193,7 +193,6 @@
 - (void)setArtworkId:(int)arg1;
 - (void)setHasStoreId:(bool)arg1;
 - (void)setStoreId:(long long)arg1;
-- (id)sortTitle;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (long long)storeId;
@@ -213,6 +212,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)duration;
 - (id)dictionaryRepresentation;
+- (bool)hasTitle;
 - (id)shortDescription;
 
 @end

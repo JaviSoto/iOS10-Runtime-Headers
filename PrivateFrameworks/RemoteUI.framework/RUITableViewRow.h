@@ -76,15 +76,14 @@
 - (long long)tableCellStyle;
 - (Class)tableCellClass;
 - (void)accessoryImageLoaded;
+- (id)pickerView;
 - (id)textColorForAttributeName:(id)arg1;
 - (void)_updateContentForDisabledState;
 - (void)setDeleteAction:(id)arg1;
 - (id)selectOptions;
 - (id)deleteAction;
 - (void)populatePostbackDictionary:(id)arg1;
-- (id)tableCell;
 - (void)setRowInvalid:(bool)arg1;
-- (id)pickerView;
 - (id)sourceURL;
 - (void)setHeight:(double)arg1;
 - (double)height;
@@ -98,6 +97,7 @@
 - (id)delegate;
 - (void)dealloc;
 - (void).cxx_destruct;
+- (id)tableCell;
 - (long long)datePickerMode;
 - (void)setDate:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;

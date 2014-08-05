@@ -7,6 +7,7 @@
 @interface NSEnergyFormatter : NSFormatter  {
     void *_formatter;
     bool_isForFoodEnergyUse;
+    void *_reserved[2];
 }
 
 @property(copy) NSNumberFormatter * numberFormatter;

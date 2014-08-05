@@ -296,6 +296,7 @@
 - (void)setActiveBehaviorOverrideChangeUpdatesEnabled:(bool)arg1 forClient:(id)arg2;
 - (void)setNotificationPresentationFilteringStateChangeUpdatesEnabled:(bool)arg1 forClient:(id)arg2;
 - (void)getShouldPresentNotificationOfType:(int)arg1 fromSenderWithDestinationID:(id)arg2 handler:(id)arg3;
+- (void)_warmFavoritesListManagerToWorkaround17689168:(id)arg1;
 - (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id)arg2;
 - (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id)arg3;
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id)arg2;

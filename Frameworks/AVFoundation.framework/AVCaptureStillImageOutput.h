@@ -50,10 +50,10 @@
 - (void)handleNotificationForPrepareRequest:(id)arg1 withPayload:(id)arg2;
 - (void)playShutterSound:(unsigned int)arg1;
 - (void)handleNotificationForRequest:(id)arg1 withPayload:(id)arg2 imageIsEV0:(bool*)arg3;
-- (unsigned long long)maxBracketedCaptureStillImageCount;
 - (bool)_preparedForBracketedCaptureWithSettings:(id)arg1;
 - (id)_figCaptureStillImageSettingsForBracketedCaptureSettingsArray:(id)arg1 fromConnection:(id)arg2;
 - (bool)_bracketedSettingsAreValid:(id)arg1 fromConnection:(id)arg2 exceptionReason:(id*)arg3;
+- (unsigned long long)maxBracketedCaptureStillImageCount;
 - (id)_figCaptureStillImageSettingsForConnection:(id)arg1;
 - (void)setHDRMode:(long long)arg1;
 - (void)setShutterSound:(unsigned int)arg1;

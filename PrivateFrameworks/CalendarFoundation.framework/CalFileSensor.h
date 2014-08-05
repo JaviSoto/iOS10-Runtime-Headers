@@ -35,6 +35,7 @@
 - (id)initWithPath:(id)arg1 andType:(int)arg2;
 - (id)eventBlock;
 - (id)path;
+- (void)stop;
 - (id)init;
 - (void)setType:(int)arg1;
 - (int)type;
@@ -43,6 +44,5 @@
 - (void)dealloc;
 - (void).cxx_destruct;
 - (id)description;
-- (void)stop;
 
 @end

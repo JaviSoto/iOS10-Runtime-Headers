@@ -18,7 +18,7 @@
 - (void)mergeCommonDataForGEOMapItem:(id)arg1 updateExisting:(bool)arg2;
 - (void)removePlacesInPlaceInfoSet:(id)arg1 fromOrderType:(unsigned long long)arg2;
 - (unsigned long long)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned long long)arg2;
-- (void)addPlaceName:(id)arg1 originalMapItem:(id)arg2 forOrderType:(unsigned long long)arg3 updateExisting:(bool)arg4;
+- (void)addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned long long)arg3 updateExisting:(bool)arg4;
 - (void)mergeGEOMapItem:(id)arg1 updateExisting:(bool)arg2;
 - (void)setIsHome:(bool)arg1;
 - (bool)isHome;

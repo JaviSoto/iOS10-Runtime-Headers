@@ -99,13 +99,13 @@
 - (void)setFirstRippleInitialRadius:(double)arg1;
 - (void)setFingerMovingSpeed:(double)arg1;
 - (void)setFingerStillSpeed:(double)arg1;
-- (id)_styleProvider;
-- (void)_setStyleProvider:(id)arg1;
 - (void)_startAnimation;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)init;
 - (void)dealloc;
 - (void)_stopAnimation;
+- (void)_setStyleProvider:(id)arg1;
+- (id)_styleProvider;
 - (bool)_isAnimating;
 - (void)_setAnimating:(bool)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -32,19 +32,11 @@
 
 + (id)messageWithLibraryID:(unsigned int)arg1;
 
+- (id)remoteID;
 - (void)setMessageData:(id)arg1 isPartial:(bool)arg2;
 - (void)setHasTemporaryUid:(bool)arg1;
 - (void)setIsPartial:(bool)arg1;
 - (id)mailboxName;
-- (id)preferredEmailAddressToReplyWith;
-- (id)remoteID;
-- (id)_attachmentStorageLocation;
-- (bool)canBeDeleted;
-- (id)dataPathForMimePart:(id)arg1;
-- (id)dataConsumerForMimePart:(id)arg1;
-- (bool)isMessageContentsLocallyAvailable;
-- (id)messageStore;
-- (id)attachmentStorageLocation;
 - (id)deallocationHandler;
 - (id)metadataValueForKey:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
@@ -80,6 +72,14 @@
 - (unsigned int)mailboxID;
 - (void)setPreferredEncoding:(unsigned int)arg1;
 - (void)setMessageFlags:(unsigned long long)arg1;
+- (id)preferredEmailAddressToReplyWith;
+- (id)_attachmentStorageLocation;
+- (bool)canBeDeleted;
+- (id)dataPathForMimePart:(id)arg1;
+- (id)dataConsumerForMimePart:(id)arg1;
+- (bool)isMessageContentsLocallyAvailable;
+- (id)messageStore;
+- (id)attachmentStorageLocation;
 - (void)setUid:(unsigned int)arg1;
 - (unsigned long long)messageSize;
 - (void)setMessageSize:(unsigned long long)arg1;

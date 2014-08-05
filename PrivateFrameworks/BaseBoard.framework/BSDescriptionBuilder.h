@@ -16,7 +16,6 @@
 + (id)descriptionForObject:(id)arg1 withObjectsAndNames:(id)arg2;
 
 - (id)appendUnsignedInt:(int)arg1 withName:(id)arg2;
-- (id)appendBool:(bool)arg1 withName:(id)arg2;
 - (id)appendKeys:(id)arg1;
 - (id)appendKey:(id)arg1;
 - (id)appendObjectsAndNames:(id)arg1;
@@ -28,6 +27,7 @@
 - (id)appendInt:(int)arg1 withName:(id)arg2;
 - (id)appendUnsignedInteger:(unsigned long long)arg1 withName:(id)arg2;
 - (id)appendInteger:(long long)arg1 withName:(id)arg2;
+- (id)appendBool:(bool)arg1 withName:(id)arg2;
 - (void)tryAppendKey:(id)arg1;
 - (id)appendCString:(const char *)arg1 withName:(id)arg2;
 - (id)appendFloat:(double)arg1 withName:(id)arg2 decimalPrecision:(unsigned long long)arg3;

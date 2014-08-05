@@ -29,7 +29,7 @@
 - (unsigned long long)countOfQueuedDownloadTasks;
 - (id)enumeratorForDownloadedResources;
 - (bool)resetDequeuedBackgroundDownloadTasksWithError:(id*)arg1;
-- (bool)reenqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 bumpRetryCount:(bool)arg3 error:(id*)arg4;
+- (bool)reenqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned long long)arg2 bumpRetryCount:(bool)arg3 didDiscard:(bool*)arg4 error:(id*)arg5;
 - (bool)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 taskIdentifier:(unsigned long long)arg2 error:(id*)arg3;
 - (void)_processQueuedDownloadTasks;
 - (bool)_hasActiveForegroundTasks;

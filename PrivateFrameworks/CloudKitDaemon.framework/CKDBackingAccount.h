@@ -14,6 +14,7 @@
 @property(readonly) NSString * iCloudAuthToken;
 @property(readonly) NSString * serverPreferredPushEnvironment;
 @property(readonly) bool isFakeAccount;
+@property(readonly) bool allowsCellularAccess;
 @property(readonly) NSURL * privateCloudDBURL;
 @property(readonly) NSURL * privateShareServiceURL;
 @property(readonly) NSURL * privateDeviceServiceURL;
@@ -38,6 +39,7 @@
 - (id)primaryEmail;
 - (id)identifier;
 - (id)init;
+- (bool)allowsCellularAccess;
 - (id)_init;
 
 @end

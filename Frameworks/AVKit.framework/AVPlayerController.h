@@ -72,6 +72,7 @@
 - (bool)canTogglePlayback;
 - (void)setCanPause:(bool)arg1;
 - (bool)canPause;
+- (bool)canScanBackward;
 - (bool)isPlayingOnExternalScreen;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)currentLegibleMediaSelectionOption;
@@ -84,7 +85,6 @@
 - (bool)canSeekToBeginning;
 - (void)endScanningBackward:(id)arg1;
 - (void)beginScanningBackward:(id)arg1;
-- (bool)canScanBackward;
 - (void)endScanningForward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
 - (bool)canScanForward;

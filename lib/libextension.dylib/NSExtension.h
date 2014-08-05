@@ -92,6 +92,7 @@
 - (void)setInfoDictionary:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)_safelyEndUsing:(id)arg1;
+- (bool)_isSystemExtension;
 - (void)_kill:(int)arg1;
 - (int)_plugInProcessIdentifier;
 - (id)_itemProviderForPayload:(id)arg1 extensionContext:(id)arg2;
@@ -111,7 +112,7 @@
 - (void)_loadPreviewImageForPayload:(id)arg1 contextIdentifier:(id)arg2 completionHandler:(id)arg3;
 - (void)_loadItemForPayload:(id)arg1 contextIdentifier:(id)arg2 completionHandler:(id)arg3;
 - (void)_cancelRequestWithError:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id)arg3;
-- (void)_completeRequestReturningItems:(id)arg1 forExtensionContextWithUUID:(id)arg2 expirationHandlerUUID:(id)arg3 completion:(id)arg4;
+- (void)_completeRequestReturningItems:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id)arg3;
 - (void)_setExtensionContexts:(id)arg1;
 - (id)_extensionContexts;
 - (void)_setExtensionServiceConnections:(id)arg1;

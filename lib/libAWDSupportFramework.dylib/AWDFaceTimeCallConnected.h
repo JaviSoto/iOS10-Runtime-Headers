@@ -104,10 +104,10 @@
 - (unsigned int)connectionType;
 - (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)setGuid:(id)arg1;
 - (id)guid;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)isVideo;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

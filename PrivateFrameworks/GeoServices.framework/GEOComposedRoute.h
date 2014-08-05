@@ -159,7 +159,6 @@
 - (id)routeID;
 - (int)routeType;
 - (id)sections;
-- (id)origin;
 - (unsigned int)pointCount;
 - (id)destination;
 - (unsigned int)distance;
@@ -170,6 +169,7 @@
 - (id)description;
 - (void)setDestination:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (id)origin;
 - (id)instructionsForStep:(id)arg1;
 - (struct CGImage { }*)_mapKitImage;
 

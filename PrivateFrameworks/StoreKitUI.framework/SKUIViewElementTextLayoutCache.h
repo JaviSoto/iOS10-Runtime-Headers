@@ -22,6 +22,7 @@
 - (struct CGSize { double x1; double x2; })sizeForLabel:(id)arg1 width:(double)arg2;
 - (struct CGSize { double x1; double x2; })estimatedSizeForOrdinal:(id)arg1 width:(double)arg2;
 - (struct CGSize { double x1; double x2; })sizeForButton:(id)arg1 width:(double)arg2;
+- (void)invalidateLayoutsForUpdatedElements;
 - (struct CGSize { double x1; double x2; })estimatedSizeForLabel:(id)arg1 width:(double)arg2;
 - (void)requestLayoutForOrdinal:(id)arg1 attributedString:(id)arg2 width:(long long)arg3;
 - (id)layoutForWidth:(long long)arg1 viewElement:(id)arg2;

@@ -17,6 +17,7 @@
 - (void)sendInvitation;
 - (long long)invitationTimeOut;
 - (void)setInvitationTimeOut:(long long)arg1;
+- (void)sendInvitationWithData:(id)arg1;
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3;
 - (unsigned int)sessionEndedReason;
@@ -27,7 +28,7 @@
 - (void)declineInvitationWithData:(id)arg1;
 - (void)acceptInvitationWithData:(id)arg1;
 - (void)cancelInvitationWithData:(id)arg1;
-- (void)sendInvitationWithData:(id)arg1;
+- (void)sendInvitationWithData:(id)arg1 declineOnError:(bool)arg2;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (bool)isAudioEnabled;
 - (id)_internal;

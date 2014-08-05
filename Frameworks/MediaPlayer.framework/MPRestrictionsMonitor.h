@@ -8,12 +8,14 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_cachedSettings;
     MCProfileConnection *_connection;
+    bool_allowsAccountModification;
     bool_allowsDeletion;
     bool_allowsExplicitContent;
     bool_allowsStorePurchases;
     bool_allowsRadioPurchases;
 }
 
+@property(readonly) bool allowsAccountModification;
 @property(readonly) bool allowsDeletion;
 @property(readonly) bool allowsExplicitContent;
 @property(readonly) bool allowsStorePurchases;
@@ -28,6 +30,7 @@
 - (bool)allowsDeletion;
 - (id)effectiveValueForSetting:(id)arg1;
 - (bool)allowsRadioPurchases;
+- (bool)allowsAccountModification;
 - (bool)_isRunningInStoreDemoMode;
 - (void)_cacheValue:(id)arg1 forSetting:(id)arg2;
 - (void)_updateWithCanPostNotifications:(bool)arg1;

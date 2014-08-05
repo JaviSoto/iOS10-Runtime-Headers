@@ -55,7 +55,6 @@
 - (struct c3dAether { struct vector<c3dPhysicsField *, std::__1::allocator<c3dPhysicsField *> > { struct c3dPhysicsField {} **x_1_1_1; struct c3dPhysicsField {} **x_1_1_2; struct __compressed_pair<c3dPhysicsField **, std::__1::allocator<c3dPhysicsField *> > { struct c3dPhysicsField {} **x_3_2_1; } x_1_1_3; } x1; }*)_aetherHandle;
 - (bool)_needsRedraw;
 - (void)sceneWillDie;
-- (id)initWithScene:(id)arg1;
 - (id)_physicsContact;
 - (void)_didDecodeSCNPhysicsWorld:(id)arg1;
 - (void)_customDecodingOfSCNPhysicsWorld:(id)arg1;
@@ -76,6 +75,7 @@
 - (void)_removeFieldFromWorld:(id)arg1;
 - (void)_postCommandWithBlock:(id)arg1;
 - (id)scene;
+- (id)initWithScene:(id)arg1;
 - (void)setContactDelegate:(id)arg1;
 - (void)setSpeed:(double)arg1;
 - (void)setGravity:(struct SCNVector3 { float x1; float x2; float x3; })arg1;

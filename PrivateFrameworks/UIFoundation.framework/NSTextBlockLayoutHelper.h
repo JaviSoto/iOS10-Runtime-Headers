@@ -50,6 +50,8 @@
     double _bMargin;
 }
 
+@property(readonly) NSTextTableBlock * block;
+
 
 - (id)initWithTextTable:(id)arg1 charIndex:(unsigned long long)arg2 text:(id)arg3 layoutManager:(id)arg4 containerWidth:(double)arg5 collapseBorders:(bool)arg6;
 - (id)initWithTextBlock:(id)arg1 charIndex:(unsigned long long)arg2 text:(id)arg3 layoutManager:(id)arg4 containerWidth:(double)arg5 collapseBorders:(bool)arg6;

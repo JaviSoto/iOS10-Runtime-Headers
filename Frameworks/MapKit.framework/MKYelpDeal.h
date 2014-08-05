@@ -20,9 +20,9 @@
 
 + (id)dealWithJSONObject:(id)arg1;
 
-- (void)setEndDate:(id)arg1;
 - (void)setDealID:(id)arg1;
 - (id)dealID;
+- (void)setEndDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)endDate;
 - (id)startDate;

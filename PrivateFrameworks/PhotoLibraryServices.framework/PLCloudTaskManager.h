@@ -15,6 +15,7 @@
 - (void)removeTaskIdentifiersForResource:(id)arg1 highPriority:(bool)arg2;
 - (id)taskForResource:(id)arg1 highPriority:(bool)arg2;
 - (void)setTaskIdentifiers:(id)arg1 forResource:(id)arg2 highPriority:(bool)arg3;
+- (id)_identifierForResource:(id)arg1;
 - (id)firstTaskIdentifierForResource:(id)arg1 highPriority:(bool)arg2;
 - (id)taskIdentifiersForResource:(id)arg1 highPriority:(bool)arg2;
 - (void)reportProgress:(float)arg1 forResource:(id)arg2 highPriority:(bool)arg3;

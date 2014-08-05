@@ -11,7 +11,7 @@
     NSError *_error;
 }
 
-@property(retain) GKUpdateGroup * group;
+@property GKUpdateGroup * group;
 @property(retain) NSLock * lock;
 @property(retain) NSMutableArray * updateQueue;
 @property(retain) NSError * error;

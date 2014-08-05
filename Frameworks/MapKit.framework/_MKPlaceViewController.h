@@ -77,15 +77,6 @@
 @property(copy,readonly) NSString * debugDescription;
 
 
-- (void)setContactsNavigationController:(id)arg1;
-- (void)setShowShareActionsButton:(bool)arg1;
-- (void)setShowEditButton:(bool)arg1;
-- (id)initWithContact:(id)arg1 mapItem:(id)arg2;
-- (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
-- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
-- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (void)setContact:(id)arg1;
-- (id)contact;
 - (void)setShowFlyoverTour:(bool)arg1;
 - (void)setShowNearbyApps:(bool)arg1;
 - (void)setShowRerouting:(bool)arg1;
@@ -141,6 +132,8 @@
 - (void)_openAppWithBundleID:(id)arg1;
 - (id)metricsCoordinator;
 - (void)_findNearbyAppsAtCoordinate:(struct { double x1; double x2; })arg1;
+- (void)_searchForNearbyApps;
+- (bool)showNearbyApps;
 - (id)contactsNavigationController;
 - (bool)_removeMapsDataFromContactWithRecordID:(int)arg1;
 - (void)setShowOpenInSkyline:(bool)arg1;
@@ -162,8 +155,6 @@
 - (void)setPlaceHeaderView:(id)arg1;
 - (id)_mapTableKeyForSectionPosition:(long long)arg1;
 - (void)_updateViewControllers;
-- (void)_searchForNearbyApps;
-- (bool)showNearbyApps;
 - (void)_setViewControllersWithInformationViewControllers:(id)arg1;
 - (void)updateActionVisibility;
 - (void)setShowContactActions:(bool)arg1;
@@ -178,6 +169,7 @@
 - (bool)showInlineMapInHeader;
 - (void)resetHeaderViewAnimations;
 - (void)restartHeaderViewAnimations;
+- (void)_searchForNearbyAppsIfNecessary;
 - (void)_showShareSheet:(id)arg1;
 - (bool)showShareActionsButton;
 - (void)_showEditSheet:(id)arg1;
@@ -185,6 +177,15 @@
 - (void)_setupHeaderView;
 - (void)mapkitActivityViewController:(id)arg1 preCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
 - (void)mapkitActivityViewController:(id)arg1 postCompletedActivityOfType:(id)arg2 completed:(bool)arg3;
+- (void)setContactsNavigationController:(id)arg1;
+- (void)setShowShareActionsButton:(bool)arg1;
+- (void)setShowEditButton:(bool)arg1;
+- (id)initWithContact:(id)arg1 mapItem:(id)arg2;
+- (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)setContact:(id)arg1;
+- (id)contact;
 - (id)initWithMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;

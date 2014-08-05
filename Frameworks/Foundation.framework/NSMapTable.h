@@ -23,7 +23,6 @@
 + (id)mapTableWithWeakToWeakObjects;
 + (id)mapTableWithStrongToStrongObjects;
 
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 - (id)init;
 - (id)allValues;
 - (id)allKeys;
@@ -55,6 +54,7 @@
 - (id)initWithKeyOptions:(unsigned long long)arg1 valueOptions:(unsigned long long)arg2 capacity:(unsigned long long)arg3;
 - (id)enumerator;
 - (void)removeAllItems;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 - (id)bs_takeObjectForKey:(id)arg1;
 - (id)CKAllKeys;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

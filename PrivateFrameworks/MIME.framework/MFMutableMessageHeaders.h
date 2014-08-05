@@ -10,6 +10,10 @@
 }
 
 
+- (void)stripInternalHeaders;
+- (void)setAddressListForCc:(id)arg1;
+- (void)setAddressListForTo:(id)arg1;
+- (void)setAddressListForSender:(id)arg1;
 - (void)setReferences:(id)arg1;
 - (void)setAddressListForBcc:(id)arg1;
 - (void)mergeHeaders:(id)arg1;
@@ -25,10 +29,6 @@
 - (id)allHeaderKeys;
 - (id)_copyHeaderValueForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned long long*)arg2 decoded:(bool)arg3;
-- (void)setAddressListForCc:(id)arg1;
-- (void)setAddressListForTo:(id)arg1;
-- (void)setAddressListForSender:(id)arg1;
-- (void)stripInternalHeaders;
 - (id)mutableCopy;
 - (void)dealloc;
 - (id)description;

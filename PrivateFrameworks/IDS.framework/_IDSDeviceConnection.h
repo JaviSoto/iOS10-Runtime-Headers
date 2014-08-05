@@ -39,8 +39,8 @@
 - (id)initWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
 - (void)_cleanupCompletionBlock;
 - (void)_daemonDied:(id)arg1;
-- (id)inputStream;
 - (id)outputStream;
+- (id)inputStream;
 - (void)_connect;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 - (void)_close;

@@ -21,13 +21,13 @@
 + (id)defaultManager;
 + (void)initialize;
 
+- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id)arg5;
 - (id)requestAsynchronousVideoURLForImageLoadingAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (id)requestAsynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id)arg5;
 - (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 completionHandler:(id)arg5;
 - (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(id)arg4;
 - (void)cancelImageRequest:(int)arg1;
-- (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (struct CGImage { }*)newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 contentMode:(long long)arg4;
 - (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (id)requestAsynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id)arg5;
@@ -43,7 +43,7 @@
 - (id)_domain;
 - (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (void)photoLibraryDidChange:(id)arg1;
-- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id)arg5;
+- (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
 - (id)init;
 - (unsigned long long)hash;
 - (void)dealloc;

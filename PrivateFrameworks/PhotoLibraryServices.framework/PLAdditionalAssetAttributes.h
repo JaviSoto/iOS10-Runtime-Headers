@@ -24,6 +24,7 @@
 @property(retain) NSNumber * originalHeight;
 @property(retain) NSNumber * originalOrientation;
 @property(retain) NSString * originalPath;
+@property(retain) NSNumber * originalResourceChoice;
 @property(retain) NSNumber * originalWidth;
 @property(retain) NSString * publicGlobalUUID;
 @property(retain) NSData * reverseLocationData;

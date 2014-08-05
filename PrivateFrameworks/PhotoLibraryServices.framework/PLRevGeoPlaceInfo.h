@@ -6,17 +6,17 @@
 
 @interface PLRevGeoPlaceInfo : NSObject  {
     NSString *_placeName;
-    NSMutableSet *_geoMapItems;
+    NSMutableSet *_geoPlaceInfos;
 }
 
 @property(copy) NSString * placeName;
-@property(retain) NSMutableSet * geoMapItems;
+@property(retain) NSMutableSet * geoPlaceInfos;
 
 
 - (id)initWithPlaceName:(id)arg1;
-- (void)setGeoMapItems:(id)arg1;
+- (void)setGeoPlaceInfos:(id)arg1;
 - (void)setPlaceName:(id)arg1;
-- (id)geoMapItems;
+- (id)geoPlaceInfos;
 - (id)placeName;
 - (void)dealloc;
 

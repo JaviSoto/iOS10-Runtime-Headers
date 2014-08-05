@@ -27,6 +27,7 @@
 - (long long)settingsID;
 - (bool)isRecording;
 - (void)setPaused:(bool)arg1;
+- (bool)isPaused;
 - (void)setRecording:(bool)arg1;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 settingsID:(long long)arg3 connections:(id)arg4;
 - (id)outputFileURL;
@@ -34,7 +35,6 @@
 - (id)delegateStorage;
 - (void)setMetadata:(id)arg1;
 - (id)metadata;
-- (bool)isPaused;
 - (void)dealloc;
 
 @end

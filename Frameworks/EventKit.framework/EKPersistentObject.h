@@ -94,8 +94,8 @@
 - (void)primitiveSetStringValue:(id)arg1 forKey:(id)arg2;
 - (void)rollback;
 - (id)objectID;
-- (id)dirtyProperties;
 - (bool)isPropertyDirty:(id)arg1;
+- (id)dirtyProperties;
 - (void)_setObjectID:(id)arg1;
 - (bool)isDirty;
 - (bool)refresh;

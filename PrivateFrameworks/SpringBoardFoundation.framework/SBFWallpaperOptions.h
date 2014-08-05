@@ -26,10 +26,10 @@
 
 + (id)optionsWithParallaxFactor:(double)arg1 zoomScale:(double)arg2 supportsCropping:(bool)arg3 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 
-- (double)parallaxFactor;
+- (bool)supportsCropping;
 - (bool)parallaxEnabled;
 - (id)initWithParallaxFactor:(double)arg1 zoomScale:(double)arg2 supportsCropping:(bool)arg3 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
-- (bool)supportsCropping;
+- (double)parallaxFactor;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (double)zoomScale;
 

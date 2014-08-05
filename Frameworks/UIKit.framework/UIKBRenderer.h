@@ -63,8 +63,8 @@
 - (void)_drawKeyImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withStyle:(id)arg3 force1xImages:(bool)arg4;
 - (void)_renderVariantsFromKeyContents:(id)arg1 withTraits:(id)arg2;
 - (bool)renderKeyPathContents:(id)arg1 withTraits:(id)arg2;
-- (bool)renderKeyStringContents:(id)arg1 withTraits:(id)arg2;
 - (bool)renderKeyImageContents:(id)arg1 withTraits:(id)arg2;
+- (bool)renderKeyStringContents:(id)arg1 withTraits:(id)arg2;
 - (void)renderBackgroundTraits:(id)arg1 allowCaching:(bool)arg2;
 - (void)_completeCacheImageWithTraitsIfNecessary:(id)arg1;
 - (struct CGContext { }*)_contextForCacheImageSize:(struct CGSize { double x1; double x2; })arg1;

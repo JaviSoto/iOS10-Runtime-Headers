@@ -42,7 +42,6 @@
 - (long long)defaultItemPinningStyle;
 - (void)sendXEventWithLink:(id)arg1 completionBlock:(id)arg2;
 - (void)sendXEventWithItem:(id)arg1 completionBlock:(id)arg2;
-- (id)_newMoviePlayerWithURL:(id)arg1;
 - (void)showProductViewControllerWithItem:(id)arg1;
 - (void)playVideoForElement:(id)arg1;
 - (long long)_itemPinningStyle;
@@ -51,7 +50,7 @@
 - (bool)isTopSection;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (long long)applyUpdateType:(long long)arg1;
-- (void)scrollToElementWithIndexBarEntryID:(id)arg1 relativeSectionIndex:(long long)arg2 animated:(bool)arg3;
+- (id)targetScrollingIndexPathForElementWithIndexBarEntryID:(id)arg1 relativeSectionIndex:(long long)arg2;
 - (bool)containsElementWithIndexBarEntryID:(id)arg1;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
 - (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
@@ -62,14 +61,17 @@
 - (bool)fitsToHeight;
 - (void)reloadVisibleCellsWithReason:(long long)arg1;
 - (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)deselectItemsAnimated:(bool)arg1;
 - (void)collectionViewWillScrollToOffset:(struct CGPoint { double x1; double x2; })arg1 visibleRange:(struct SKUIIndexPathRange { long long x1; long long x2; long long x3; long long x4; })arg2;
 - (void)collectionViewDidTapVideoAtIndexPath:(id)arg1;
 - (void)collectionViewDidConfirmItemOfferAtIndexPath:(id)arg1;
 - (bool)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (bool)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
 - (bool)performDefaultActionForViewElement:(id)arg1;
+- (void)expandEditorialForLabelElement:(id)arg1 indexPath:(id)arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidConfirmButtonElement:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (long long)numberOfCells;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
@@ -81,8 +83,8 @@
 - (long long)pinningStyleForItemAtIndexPath:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
 - (void)invalidateCachedLayoutInformation;
+- (bool)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(bool)arg3;
 - (void)showPageWithLink:(id)arg1;
-- (void)deselectItemsAnimated:(bool)arg1;
 - (void)prefetchResourcesWithReason:(long long)arg1;
 - (void)willHideInContext:(id)arg1;
 - (void)willAppearInContext:(id)arg1;

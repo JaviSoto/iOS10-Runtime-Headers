@@ -24,6 +24,7 @@
 @property(readonly) float videoDefaultMaxFrameRate;
 @property(readonly) float videoFieldOfView;
 @property(getter=isVideoBinned,readonly) bool videoBinned;
+@property(readonly) int videoStabilizationTypeOverrideForStandard;
 @property(getter=isVideoZoomSupported,readonly) bool videoZoomSupported;
 @property(readonly) float videoMaxZoomFactor;
 @property(readonly) float videoZoomFactorUpscaleThreshold;
@@ -71,6 +72,7 @@
 - (bool)ispChromaNoiseReduction;
 - (int)temporalNoiseReductionMode;
 - (float)videoScaleFactor;
+- (int)videoStabilizationTypeOverrideForStandard;
 - (id)copyWithNewVideoPixelFormat:(unsigned int)arg1;
 - (bool)isFeature0ModeSupported:(int)arg1;
 - (struct { int x1; int x2; })sourceCropAspectRatio;

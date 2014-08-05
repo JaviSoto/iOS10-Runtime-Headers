@@ -20,8 +20,8 @@
 - (id)initWithTrustedPixelBufferAttributes:(id)arg1;
 - (bool)encoderIsAvailableOnCurrentSystemReturningError:(id*)arg1;
 - (bool)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
-- (id)pixelBufferAttributes;
 - (bool)willYieldCompressedSamples;
+- (id)pixelBufferAttributes;
 - (int)height;
 - (int)width;
 - (void)dealloc;

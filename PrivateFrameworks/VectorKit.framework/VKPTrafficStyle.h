@@ -45,6 +45,8 @@
 @property float fadingSlope;
 
 
+- (float)widthFraction;
+- (void)setWidthFraction:(float)arg1;
 - (float)fadingSlope;
 - (bool)hasFadingSlope;
 - (void)setHasFadingSlope:(bool)arg1;
@@ -69,8 +71,6 @@
 - (int)uNUSEDPattern;
 - (bool)hasWidthFraction;
 - (void)setHasWidthFraction:(bool)arg1;
-- (void)setWidthFraction:(float)arg1;
-- (float)widthFraction;
 - (float)fadingOffset;
 - (float)patternWidth;
 - (float)patternLength;

@@ -4,7 +4,7 @@
 
 @class SKUIFocusedTouchGestureRecognizer, UIView, UIImage, NSString, UIImageView, SKUIItemOfferButtonState, <SKUIItemOfferButtonDelegate>, NSMutableAttributedString, SKUICircleProgressIndicator, UILabel, UIColor;
 
-@interface SKUIItemOfferButton : UIControl  {
+@interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
     UIColor *_backgroundColor;
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
@@ -49,6 +49,11 @@
 @property long long confirmationTitleStyle;
 @property long long titleStyle;
 @property(getter=isUniversal) bool universal;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property <SKUIItemOfferButtonDelegate> * itemOfferDelegate;
 
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageInsetsForProgressType:(long long)arg1;
 + (id)_imageForProgressType:(long long)arg1;
@@ -99,6 +104,7 @@
 - (long long)confirmationTitleStyle;
 - (long long)progressType;
 - (void)showCloudImage;
+- (id)itemOfferDelegate;
 - (void)setUniversal:(bool)arg1;
 - (struct CGSize { double x1; double x2; })layoutSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)removeButtonStateAnimations;
@@ -107,6 +113,7 @@
 - (bool)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(bool)arg4;
 - (void)_removeCancelGestureRecognizer;
 - (void)setShowingConfirmation:(bool)arg1 animated:(bool)arg2;
+- (void)setItemOfferDelegate:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

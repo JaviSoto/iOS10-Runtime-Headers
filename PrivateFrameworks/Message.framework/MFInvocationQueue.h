@@ -30,7 +30,6 @@
 - (void)setThreadPriorityTrigger:(int)arg1;
 - (int)threadPriorityTrigger;
 - (unsigned long long)threadCount;
-- (void)applicationWillResume;
 - (unsigned long long)invocationCount;
 - (unsigned long long)maxThreadCount;
 - (void)_adjustThreadPrioritiesIsForeground:(bool)arg1;
@@ -38,6 +37,7 @@
 - (void)_drainQueue:(id)arg1;
 - (id)initWithMaxThreadCount:(unsigned long long)arg1;
 - (void)didCancel:(id)arg1;
+- (void)applicationWillResume;
 - (void)setThreadRecycleTimeout:(double)arg1;
 - (void)addInvocation:(id)arg1;
 - (void)setMaxThreadCount:(unsigned long long)arg1;

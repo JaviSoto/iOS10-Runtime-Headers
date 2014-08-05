@@ -138,8 +138,8 @@
 @property bool smallFace;
 
 
-- (void)setTimestamp:(double)arg1;
 - (double)timestamp;
+- (void)setTimestamp:(double)arg1;
 - (void)setMouthPleasant:(bool)arg1;
 - (void)setRightEyePleasant:(bool)arg1;
 - (void)setLeftEyePleasant:(bool)arg1;

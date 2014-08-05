@@ -4,10 +4,11 @@
 
 @class NSString, NSArray, UINavigationController, <UINavigationControllerDelegate>, SKUIClientContext, SKUIOverlayContainerViewController, NSMutableArray, <SKUIModalDocumentDelegate>, UIPopoverController, <SKUIModalSourceViewProvider>, UIViewController;
 
-@interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, UIPopoverControllerDelegate> {
+@interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, SKUIGiftViewControllerDelegate, UIPopoverControllerDelegate> {
     SKUIClientContext *_clientContext;
     NSMutableArray *_composeReviewViewControllers;
     <SKUIModalDocumentDelegate> *_delegate;
+    NSMutableArray *_giftViewControllers;
     <SKUIModalSourceViewProvider> *_modalSourceViewProvider;
     UINavigationController *_overlayNavigationController;
     SKUIOverlayContainerViewController *_overlayViewController;
@@ -31,11 +32,13 @@
 
 - (void)popToDocument:(id)arg1;
 - (void)popDocument;
+- (void)replaceDocument:(id)arg1 withDocument:(id)arg2 options:(id)arg3;
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (id)documents;
 - (id)navigationControllerDelegate;
 - (id)modalSourceViewProvider;
 - (id)navigationDocumentForDocument:(id)arg1;
+- (bool)_popoverController:(id)arg1 containsStackItem:(id)arg2;
 - (void)_overlayControllerBackstopAction:(id)arg1;
 - (id)_presenterViewController;
 - (void)_pushSheetDocument:(id)arg1 viewController:(id)arg2;
@@ -52,6 +55,7 @@
 - (void)_pushPopoverStackItem:(id)arg1;
 - (void)_garbageCollectActivityViewController:(id)arg1;
 - (void)_pushRedeemDocument:(id)arg1 options:(id)arg2;
+- (void)_pushPlaylistDocument:(id)arg1 options:(id)arg2;
 - (void)_pushGiftDocument:(id)arg1 options:(id)arg2;
 - (void)_pushFamilySetupDocument:(id)arg1 options:(id)arg2;
 - (void)_pushDialogDocument:(id)arg1 options:(id)arg2;
@@ -59,16 +63,17 @@
 - (void)_sendDidFinishIfApplicable;
 - (void)_popDocument:(bool)arg1;
 - (void)_presentOverlayViewControllersFromNavigationController:(id)arg1;
+- (id)navigationDocumentForNavigationController:(id)arg1;
 - (void)setOverlayNavigationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (void)setModalSourceViewProvider:(id)arg1;
 - (void)popAllDocuments;
 - (void)setNavigationControllerDelegate:(id)arg1;
-- (void)reviewComposeViewControllerDidFinish:(id)arg1;
-- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
+- (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
 - (void)setClientContext:(id)arg1;
 - (id)clientContext;
-- (void)setRootViewController:(id)arg1;
+- (void)reviewComposeViewControllerDidFinish:(id)arg1;
+- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
@@ -76,5 +81,6 @@
 - (void).cxx_destruct;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)rootViewController;
+- (void)setRootViewController:(id)arg1;
 
 @end

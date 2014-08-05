@@ -10,10 +10,10 @@
 + (id)urlIfyNode:(id)arg1 usingScanner:(struct __DDScanner { }*)arg2 phoneNumberTypes:(unsigned long long)arg3 withReferenceDate:(id)arg4 andTimeZone:(id)arg5;
 + (bool)urlIfyTextNode:(id)arg1 inNode:(id)arg2 forMatches:(id)arg3;
 + (id)urlMatchesForString:(id)arg1 phoneNumberTypes:(unsigned long long)arg2;
++ (id)urlMatchesForString:(id)arg1;
 + (bool)urlIfyNode:(id)arg1;
 + (id)urlMatchesForString:(id)arg1 includingTel:(bool)arg2;
 + (bool)urlIfyNode:(id)arg1 phoneNumberTypes:(unsigned long long)arg2;
-+ (id)urlMatchesForString:(id)arg1;
 + (void)initialize;
 
 

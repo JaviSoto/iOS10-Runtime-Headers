@@ -2,7 +2,7 @@
    Image: /Applications/Xcode6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.0.sdk/System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSURL, _MKMapItemPlaceAttribution, <GEOMapItemPrivate>, GEOPDFlyover, _MKMapItemReviewsAttribution, GEOMapRegion, _MKMapItemPhotosAttribution, MKPlacemark, NSString, GEOFeatureStyleAttributes, GEOPlace, NSArray, NSData, GEOAddress, MKMapItemMetadata;
+@class NSURL, _MKMapItemPlaceAttribution, <GEOMapItemPrivate>, GEOPDFlyover, _MKMapItemReviewsAttribution, GEOMapRegion, _MKMapItemPhotosAttribution, MKPlacemark, NSString, GEOFeatureStyleAttributes, GEOPlace, NSData, GEOAddress, MKMapItemMetadata;
 
 @interface MKMapItem : NSObject <GEOURLSerializable> {
     bool_isCurrentLocation;
@@ -41,7 +41,6 @@
 @property(getter=_flyover,readonly) GEOPDFlyover * flyover;
 @property(getter=_hasMUID,readonly) bool hasMUID;
 @property(getter=_muid,readonly) unsigned long long muid;
-@property(getter=_categoryKeys,readonly) NSArray * categoryKeys;
 @property(getter=_firstLocalizedCategoryName,readonly) NSString * firstLocalizedCategoryName;
 @property(getter=_hasUserRatingScore,readonly) bool hasUserRatingScore;
 @property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
@@ -59,8 +58,10 @@
 @property(getter=_hasTakesReservationsAmenity,readonly) bool hasTakesReservationsAmenity;
 @property(getter=_takesReservations,readonly) bool takesReservations;
 @property(getter=_hasResolvablePartialInformation,readonly) bool hasResolvablePartialInformation;
+@property(getter=_hasOperatingHours,readonly) bool hasOperatingHours;
 @property(getter=_hasLocalizedOperatingHours,readonly) bool hasLocalizedOperatingHours;
 @property(getter=_localizedOperatingHours,readonly) NSString * localizedOperatingHours;
+@property(getter=_disambiguationName,readonly) NSString * disambiguationName;
 @property(getter=_openState,readonly) unsigned int openState;
 @property(getter=_placeDataAsData,readonly) NSData * placeDataAsData;
 @property(getter=_placeAsData,readonly) NSData * placeAsData;
@@ -89,11 +90,11 @@
 + (id)plistCompatibleDictionaryFromStandardOptions:(id)arg1;
 + (id)standardOptionsFromPlistCompatibleDictionary:(id)arg1;
 + (id)mapItemWithDictionary:(id)arg1;
-+ (id)mapItemForCurrentLocation;
 + (bool)openMapsWithItems:(id)arg1 launchOptions:(id)arg2;
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
 + (id)_itemWithGeoMapItem:(id)arg1;
++ (id)mapItemForCurrentLocation;
 
 - (id)formattedNumberOfReviewsIncludingProvider;
 - (id)formattedNumberOfReviews;
@@ -102,6 +103,7 @@
 - (id)_reviewsAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_photoAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (id)_reviewsDisplayName;
+- (bool)_hasLocalizedOperatingHours;
 - (id)_shortAddress;
 - (id)_formattedTelephone;
 - (bool)_hasFormattedTelephone;
@@ -119,7 +121,6 @@
 - (id)_firstLocalizedCategoryName;
 - (id)_localizedOperatingHours;
 - (bool)_hasDisplayableAmenities;
-- (bool)_hasLocalizedOperatingHours;
 - (id)_infoAttributionWithSourceStringFormat:(id)arg1 moreSourceStringFormat:(id)arg2;
 - (void)_setRecord:(void*)arg1 property:(int)arg2 stringValue:(id)arg3 label:(id)arg4;
 - (id)thumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 annotationView:(id)arg2;
@@ -128,9 +129,9 @@
 - (id)_mapsDataString;
 - (id)_geoAddress;
 - (id)_placeCardContact;
-- (id)placemark;
 - (struct { double x1; double x2; })_coordinate;
 - (id)initWithCLLocation:(id)arg1;
+- (id)placemark;
 - (bool)isCurrentLocation;
 - (void)setIsCurrentLocation:(bool)arg1;
 - (id)_geoMapItem;
@@ -144,6 +145,7 @@
 - (id)_providerURL;
 - (bool)_needsAttribution;
 - (unsigned int)_openState;
+- (id)_disambiguationName;
 - (id)_flyover;
 - (bool)_hasFlyover;
 - (bool)_hasSessionGUID;
@@ -157,6 +159,7 @@
 - (int)_recommendedTransportType;
 - (id)_webURL;
 - (id)_urlForPhotoWithUID:(id)arg1;
+- (bool)_hasOperatingHours;
 - (bool)_takesReservations;
 - (bool)_hasTakesReservationsAmenity;
 - (bool)_goodForKids;
@@ -166,7 +169,6 @@
 - (bool)_hasAnyAmenities;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
-- (id)_categoryKeys;
 - (bool)_hasPriceRange;
 - (float)_normalizedUserRatingScore;
 - (unsigned int)_sampleSizeForUserRatingScore;

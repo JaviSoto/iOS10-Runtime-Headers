@@ -32,11 +32,11 @@
 - (void)detachNode:(id)arg1;
 - (void)attachNode:(id)arg1;
 - (void)pause;
+- (void)stop;
 - (bool)isRunning;
 - (id)init;
 - (void)dealloc;
 - (id)description;
 - (void)reset;
-- (void)stop;
 
 @end

@@ -28,6 +28,7 @@
     bool_splitFocusAndExposure;
     bool_showLockFocusAttachment;
     bool_showExposureBiasSliderOnChange;
+    bool_hideExposureBiasSlider;
     bool__showExposureBiasSlider;
     float _exposureBiasMin;
     float _exposureBiasMax;
@@ -70,6 +71,7 @@
 @property float exposureBiasMax;
 @property float exposureBiasValue;
 @property bool showExposureBiasSliderOnChange;
+@property bool hideExposureBiasSlider;
 @property(readonly) int _exposureBiasSide;
 @property(setter=_setShowExposureBiasSlider:) bool _showExposureBiasSlider;
 @property CAMCaptureController * _sharedCameraController;
@@ -84,6 +86,7 @@
 - (void)resetFocusViewFadeOutSuspensions;
 - (id)exposureBiasSlider;
 - (void)_setExposureBiasSliderAlpha:(double)arg1 animationDuration:(double)arg2;
+- (bool)hideExposureBiasSlider;
 - (bool)_shouldVendAttachment:(id)arg1;
 - (void)setDimmingStrength:(double)arg1 duration:(double)arg2;
 - (bool)showExposureBiasSliderOnChange;
@@ -111,6 +114,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lastFocusFrame;
 - (double)lastFocusFadeOutTime;
 - (id)focusPointView;
+- (void)setHideExposureBiasSlider:(bool)arg1;
 - (void)setExposureBiasValue:(float)arg1;
 - (void)setExposureBiasMax:(float)arg1;
 - (void)setExposureBiasMin:(float)arg1;

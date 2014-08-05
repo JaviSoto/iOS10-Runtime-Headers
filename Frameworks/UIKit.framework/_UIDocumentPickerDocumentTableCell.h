@@ -47,8 +47,8 @@
 - (void)setCloudButton:(id)arg1;
 - (void)setProgressTimer:(id)arg1;
 - (id)progressSubscriber;
-- (void)updateForItem;
 - (id)iconView;
+- (void)reloadItem:(bool)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)tableView;

@@ -17,12 +17,12 @@
 
 + (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(bool)arg6;
 
+- (id)pickerView;
 - (void)textFieldTextDidChange:(id)arg1;
 - (void)setPropertyGroup:(id)arg1 andInfo:(id)arg2;
 - (bool)tabToNextResponder:(bool)arg1 fromView:(id)arg2;
 - (bool)shouldSendTouchesToSuperviewForHitView:(id)arg1;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
-- (id)pickerView;
 - (id)viewForFirstResponder;
 - (void)updateSubviewsForNewStateAnimated:(bool)arg1;
 - (bool)canHandleProperty:(int)arg1;

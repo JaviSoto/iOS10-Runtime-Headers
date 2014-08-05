@@ -165,7 +165,6 @@
 - (struct CGPoint { double x1; double x2; })constrainedPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)cancelInteractionWithLink;
 - (bool)isInteractingWithLink;
-- (void)scheduleReanalysis;
 - (void)scheduleChineseTransliteration;
 - (void)scheduleReplacements;
 - (void)selectWord;

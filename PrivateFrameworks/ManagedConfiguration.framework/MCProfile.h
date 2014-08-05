@@ -100,6 +100,8 @@
 - (id)removalDate;
 - (bool)needsReboot;
 - (void)setEncrypted:(bool)arg1;
+- (id)appAccessibilityParameters;
+- (id)restrictionsWithHeuristicsAppliedOutError:(id*)arg1;
 - (bool)mayInstallWithOptions:(id)arg1 hasInteractionClient:(bool)arg2 outError:(id*)arg3;
 - (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id)arg1;
 - (struct __SecCertificate { }*)signerCertificate;
@@ -138,9 +140,9 @@
 - (id)expiryDate;
 - (id)productBuildVersion;
 - (id)productVersion;
+- (id)UUID;
 - (long long)version;
 - (id)identifier;
-- (id)UUID;
 - (void).cxx_destruct;
 - (id)description;
 - (id)displayName;

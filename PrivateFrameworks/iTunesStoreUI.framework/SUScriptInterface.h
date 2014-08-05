@@ -235,9 +235,9 @@
 - (void)setClientInterface:(id)arg1;
 - (id)application;
 - (void)dismissSheet;
-- (void)setLoggingEnabled:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
 - (id)primaryAccount;
+- (void)setLoggingEnabled:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setAccounts:(id)arg1;
 - (void)retryAllRestoreDownloads;

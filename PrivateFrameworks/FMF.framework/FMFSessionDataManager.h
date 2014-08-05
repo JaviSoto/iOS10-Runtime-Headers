@@ -21,8 +21,11 @@
 - (id)followerForHandle:(id)arg1;
 - (void)setFollowing:(id)arg1;
 - (void)setFollowers:(id)arg1;
+- (void)_registerABCallbacks;
 - (id)following;
 - (id)followers;
+- (void)abChanged:(id)arg1;
+- (void*)_loadAddressBook;
 - (id)locationForHandle:(id)arg1;
 - (id)locations;
 - (void).cxx_destruct;

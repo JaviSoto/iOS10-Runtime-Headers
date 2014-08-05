@@ -191,7 +191,6 @@
 - (void)popupAlertAnimated:(bool)arg1 atOffset:(double)arg2;
 - (bool)groupsTextFields;
 - (void)setGroupsTextFields:(bool)arg1;
-- (void)_setTextFieldsHidden:(bool)arg1;
 - (long long)buttonCount;
 - (id)buttonTitleAtIndex:(long long)arg1;
 - (void)_setDefaultButton:(id)arg1;
@@ -211,6 +210,7 @@
 - (void)_setFirstOtherButtonIndex:(long long)arg1;
 - (long long)firstOtherButtonIndex;
 - (void)setDefaultButtonIndex:(long long)arg1;
+- (void)_setTextFieldsHidden:(bool)arg1;
 - (void)dismissAnimated:(bool)arg1;
 - (void)dismiss;
 - (id)keyboard;

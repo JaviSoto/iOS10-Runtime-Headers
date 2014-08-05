@@ -13,12 +13,12 @@
 
 
 - (void)setResource:(id)arg1;
-- (bool)resourceLocallyAvailable;
 - (void)runOperationWithCompletionHandler:(id)arg1;
 - (unsigned long long)cost;
 - (void)requestCancel;
 - (void)markAsLocallyAvailable:(bool)arg1;
 - (id)resource;
 - (void)dealloc;
+- (id)description;
 
 @end

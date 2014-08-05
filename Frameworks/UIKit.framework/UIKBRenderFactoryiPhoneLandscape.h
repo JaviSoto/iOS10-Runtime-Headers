@@ -19,6 +19,11 @@
 - (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
 - (double)moreABCKeyFontSize;
 - (struct CGPoint { double x1; double x2; })more123KeyOffset;
+- (id)boldKeyImageName;
+- (id)undoKeyImageName;
+- (id)pasteKeyImageName;
+- (id)copyKeyImageName;
+- (id)cutKeyImageName;
 - (id)rightArrowKeyImageName;
 - (id)leftArrowKeyImageName;
 - (id)dictationKeyImageName;
@@ -31,5 +36,6 @@
 - (id)shiftKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)multitapCompleteKeyImageName;
+- (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 
 @end

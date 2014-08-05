@@ -131,10 +131,12 @@
     bool_deletesDuplicatesWhenNecessary;
     bool_shouldPlayVideoWhenViewAppears;
     bool_showsAirTunesOption;
+    bool__enableInteractionEventsAfterUpdatingTileIndex;
     int _photoThumbnailFormat;
     PLAssetContainerDataSource *_assetContainerDataSource;
     PLPhotoTileViewController *_mostRecentlyActiveTile;
     PLAssetContainerDataSource *__originalAssetContainerDataSource;
+    PHAsset *__pendingAssetForTileUpdate;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -190,6 +192,8 @@
 @property(setter=_setScrubbedImageIndexPath:,retain) NSIndexPath * _scrubbedImageIndexPath;
 @property(setter=_setLastDisplayedRemoteSlideshowPhotoIndexPath:,retain) NSIndexPath * _lastDisplayedRemoteSlideshowPhotoIndexPath;
 @property(setter=_setOriginalAssetContainerDataSource:,retain) PLAssetContainerDataSource * _originalAssetContainerDataSource;
+@property(setter=_setPendingAssetForTileUpdate:,retain) PHAsset * _pendingAssetForTileUpdate;
+@property(setter=_setEnableInteractionEventsAfterUpdatingTileIndex:) bool _enableInteractionEventsAfterUpdatingTileIndex;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * description;
@@ -253,6 +257,7 @@
 - (void)setCurrentIndexPath:(id)arg1;
 - (void)setCurrentAsset:(id)arg1;
 - (void)playSlideshowFromAlbumUsingOrigami:(bool)arg1;
+- (void)cleanupAfterDismissal;
 - (void)setPhotoScrubber:(id)arg1;
 - (void)revealComment:(id)arg1;
 - (void)removeAdjacentCommentsTables;
@@ -323,11 +328,17 @@
 - (void)_removeProgressView;
 - (void)removeRemakerContainerView;
 - (id)photoCountFormatter;
-- (void)_commonDidEndRemaking:(id)arg1 pathToTrimmedFile:(id)arg2 didSucceed:(bool)arg3;
+- (void)_timeoutPendingAsset;
+- (void)_cancelTimeoutForPendingAsset;
+- (bool)_enableInteractionEventsAfterUpdatingTileIndex;
+- (id)_pendingAssetForTileUpdate;
+- (void)_scheduleTimeoutForPendingAsset;
+- (void)_setEnableInteractionEventsAfterUpdatingTileIndex:(bool)arg1;
+- (void)_setPendingAssetForTileUpdate:(id)arg1;
+- (void)_commonDidEndRemaking:(id)arg1 pathToTrimmedFile:(id)arg2 didSucceed:(bool)arg3 shouldReenableInteractionEvents:(bool)arg4;
 - (void)_commonRemakingProgressDidChange:(float)arg1;
 - (void)updateProgressView;
 - (void)_commonDidBeginRemaking;
-- (void)_setIgnoreInteractionEventsForVideoViewRemaking:(bool)arg1;
 - (void)_delayedExitEditingMode;
 - (void)_showConfirmationForPassthroughTrimming:(id)arg1;
 - (bool)_canTrimCurrentVideoInPlace;
@@ -344,6 +355,7 @@
 - (void)setMostRecentlyActiveTile:(id)arg1;
 - (void)_cancelImageRequestsForPhoto:(id)arg1;
 - (void)_loadImageForTile:(id)arg1 format:(int)arg2;
+- (void)_handleImageResultForPhoto:(id)arg1 inTile:(id)arg2 objectID:(id)arg3 result:(id)arg4 info:(id)arg5;
 - (id)_currentAirplayRoute;
 - (void)setVideoEditingMode:(bool)arg1;
 - (void)mainScrollerDidEndSmoothScroll;
@@ -449,6 +461,7 @@
 - (id)_lastDisplayedRemoteSlideshowPhotoIndexPath;
 - (id)_slideshowEndIndexPath;
 - (id)_updateIndexPath:(id)arg1 withChange:(id)arg2 deleteAction:(int)arg3;
+- (void)_updateTileIndexForPendingAssetIfNeededAndAvailable;
 - (void)_setLastDisplayedRemoteSlideshowPhotoIndexPath:(id)arg1;
 - (void)_setDeletedIndexPath:(id)arg1;
 - (void)_setSlideshowEndIndexPath:(id)arg1;
@@ -506,6 +519,7 @@
 - (void)_forceDismissActionSheet:(bool)arg1 enableToolbarTimer:(bool)arg2;
 - (void)_clearFullScreenView;
 - (void)_removeTVOutWindow;
+- (void)_setIgnoreInteractionEventsForVideoViewRemaking:(bool)arg1;
 - (void)setPhotoThumbnailFormat:(int)arg1;
 - (void)setShouldShowOverlaysWhenViewDisappears:(bool)arg1;
 - (void)setShouldShowOverlaysWhenViewAppears:(bool)arg1;
@@ -516,8 +530,8 @@
 - (bool)airplayRemoteSlideshow:(id)arg1 requestAssetWithInfo:(id)arg2 completion:(id)arg3;
 - (bool)airplayRemoteSlideshow:(id)arg1 handleEvent:(id)arg2;
 - (void)photoLibraryDidChange:(id)arg1;
-- (void)viewDidAppear;
 - (bool)isRotationEnabled;
+- (void)viewDidAppear;
 - (void)_fadeOut;
 - (bool)isEditing;
 - (void)applicationWillEnterForeground:(id)arg1;
@@ -535,7 +549,6 @@
 - (id)pageController:(id)arg1 viewControllerAtIndex:(long long)arg2;
 - (void)setRotationDisabled:(bool)arg1;
 - (void)_longPressRecognized:(id)arg1;
-- (void)copy:(id)arg1;
 - (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
 - (id)rotatingFooterView;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
@@ -550,7 +563,6 @@
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)willPresentActionSheet:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (id)navigationBar;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

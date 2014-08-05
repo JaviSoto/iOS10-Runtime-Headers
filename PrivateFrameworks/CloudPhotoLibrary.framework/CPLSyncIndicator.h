@@ -9,8 +9,8 @@
 + (void)showSyncIndicator;
 + (void)_reallyHideSyncIndicator;
 + (void)_reallyShowSyncIndicator;
-+ (void)setForeground:(bool)arg1;
 + (void)_doProtected:(id)arg1;
++ (void)setForeground:(bool)arg1;
 
 
 @end

@@ -35,9 +35,9 @@
 - (void)_pauseRedeemer;
 - (bool)_isShowingRedeemer;
 - (void)_iTunesPassLearnMoreAction:(id)arg1;
-- (void)_tapGestureAction:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
 - (void)_landingButtonAction:(id)arg1;
+- (void)_tapGestureAction:(id)arg1;
 - (id)ITunesPassConfiguration;
 - (void)_termsButtonAction:(id)arg1;
 - (id)initWithClientContext:(id)arg1;

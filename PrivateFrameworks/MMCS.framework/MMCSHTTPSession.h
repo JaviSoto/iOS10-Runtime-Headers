@@ -38,9 +38,9 @@
 - (id)initWithName:(id)arg1 sessionConfigurationId:(id)arg2 configuration:(id)arg3;
 - (id)urlSession;
 - (id)dataTaskWithRequest:(id)arg1 uuid:(id)arg2 forHTTPContext:(id)arg3;
-- (bool)isBackground;
 - (id)sessionConfigurationId;
 - (void)setUrlSession:(id)arg1;
+- (bool)isBackground;
 - (id)sessionName;
 - (void)invalidateAndCancel;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
