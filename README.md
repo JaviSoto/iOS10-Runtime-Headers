@@ -1,7 +1,7 @@
 iOS 8 Runtime Headers
 ====================
 
-iOS 8 Beta 5
+iOS 8 GM
 
 ### How to export
 
